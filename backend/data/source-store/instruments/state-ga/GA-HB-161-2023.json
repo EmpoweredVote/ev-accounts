@@ -1,0 +1,68 @@
+{
+  "id": "GA-HB-161-2023",
+  "scope": "state:ga",
+  "title": "HB161 (2023-2024 Regular Session): Pediatric Health Safe Storage Act; enact",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/63828",
+    "https://www.legis.ga.gov/api/legislation/document/20232024/213237"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michelle Au",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9cdee7d8-43d6-4596-8982-55b006f7754c"
+    },
+    {
+      "name": "Mary Oliver",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "96b4b0dd-d110-4c17-9554-f17b05d03604"
+    },
+    {
+      "name": "Carl Gilliard",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "19c84a45-b496-41f7-918d-8b636286ba63"
+    },
+    {
+      "name": "Yasmin Neal",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f534f1f2-2e81-4812-91d5-b23b68949bf9"
+    },
+    {
+      "name": "Scott Holcomb",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b1819ac4-254b-4f4c-b163-59918efd9dee"
+    },
+    {
+      "name": "Omari Crawford",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "475c414e-270b-4b62-ad1a-bd7ed3ccbff9"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:46:27.022243Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-161-2023.introduced.pdf",
+      "sha256": "5ed76a0041ebd11fb28bc9498fbd20d9c08ded6645e8f1261541b5d856d0bc5f"
+    }
+  },
+  "operative_text": "SECTION 2 (adding O.C.G.A. 16-11-132.1): (5) 'Secure' means to take steps that a reasonable person would believe sufficient to prevent the access to a readily dischargeable firearm by a child, including, but not limited to, placing a firearm in a locked container or temporarily rendering the firearm inoperable by a trigger lock or other means.\nSECTION 2 (adding O.C.G.A. 16-11-132.1): (b) Except where possession of a firearm by a child is lawful under Code Section 16-11-132, a person commits the offense of making a firearm accessible to a child if such child gains access to a readily dischargeable firearm, and the person with criminal negligence: (1) Failed to secure the firearm; or (2) Left the firearm in a place to which the person knew or should have known the child could gain access.\nSECTION 2 (adding O.C.G.A. 16-11-132.1): (c) It shall be an affirmative defense to prosecution under this Code section that the child's access to the firearm: (1) Was supervised by a person older than 18 years of age and was for hunting, sporting, or other lawful purposes; (2) Consisted of lawful defense by the child of people or property; or (3) Was gained by entering property in violation of the law. (d)(1) Except as provided under paragraph (2) of this subsection, a violation of subsection (b) of this Code section shall be a misdemeanor. (2) A violation of subsection (b) of this Code section shall be a misdemeanor of a high and aggravated nature when the child discharges the firearm and causes death or serious bodily injury to himself or herself or another person.\nSECTION 2 (adding O.C.G.A. 16-11-132.1): (e)(1) A dealer shall post in a conspicuous position on the premises where the dealer conducts business a sign that contains the following warning in block letters not less than one inch in height: 'IT IS UNLAWFUL TO STORE, TRANSPORT, OR ABANDON AN UNSECURED FIREARM IN A PLACE WHERE CHILDREN CAN OBTAIN ACCESS TO THE FIREARM.' (2) A violation of this subsection shall be a misdemeanor of a high and aggravated nature punishable by a fine not to exceed $5,000.00.\""
+}

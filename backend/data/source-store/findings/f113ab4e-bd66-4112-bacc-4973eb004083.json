@@ -1,6 +1,38 @@
 {
   "politician_id": "f113ab4e-bd66-4112-bacc-4973eb004083",
-  "findings": [],
+  "findings": [
+    {
+      "id": "a34cc336a57333a5058694dc2d7b6b4fef80d451a9377e1248f4d55fddd63e35",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/70476",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-204-2025",
+      "act": "yea",
+      "motion": "Passage: House Vote #429",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "GA House, Passage: House Vote #429, 2025-04-04: yea (tally 99–74); census gate: multi-subject.",
+      "subjects": [
+        "local limits on gun storage and gun parts barred",
+        "lawful gun carriers may sue over local rules",
+        "state declares gun regulation a statewide matter"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-204-2025.enrolled.pdf",
+          "sha256": "f3383faa3b85b22922b268ff733c78969bf7745386e967a71e6a9f02136f1fc2"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -28,6 +60,29 @@
       "found": 0,
       "at": "2026-10-28T20:40:32.005Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "carry permits",
+        "school safety and guns",
+        "general statement on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site (angieosteen.com): home page has no issue text; /issues returned empty",
+        "Branch 2026 candidate profile (House District 169; public safety section says her site has nothing on it)",
+        "iVoterGuide profile: 2nd Amendment questions marked did not answer",
+        "Farm Monitor profile of 2026-05-27 (agriculture focus; nothing on the subject)",
+        "Ballotpedia (page returned nearly empty; not relied on)",
+        "web searches: 3 (no statement by her on guns found)"
+      ],
+      "found": 0,
+      "at": "2026-11-12T01:42:01.913Z",
+      "by": "source-collector"
     }
   ]
 }

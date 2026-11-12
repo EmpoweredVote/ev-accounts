@@ -115,6 +115,456 @@
           "sha256": "17943534917a39ee671fab99d8120acebcc4e61921a039e7c8f5bb13fc72114d"
         }
       }
+    },
+    {
+      "id": "f5910d0b75aaddcec1bed0087ec95f3925870d0e49399284f13a4db010530053",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/66265",
+      "date": "2024-02-27",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1018-2023",
+      "act": "nay",
+      "motion": "Passage: House Vote #581",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #581, 2024-02-27: nay (tally 106–60); census gate: none.",
+      "subjects": [
+        "banks barred from singling out firearms retailers by payment code",
+        "firearms registries by any person or government barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1018-2023.enrolled.pdf",
+          "sha256": "3073f18aecfd54c9c28d17feb9b9ef6f65e37967f1c92fad309d433378719fec"
+        }
+      }
+    },
+    {
+      "id": "ab2b6cbbf5ad2aa9f2c9e3c7ed2d3367bcce148eb8db4754bd5a93c703f8e9ce",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/73253",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1324-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #665",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #665, 2026-03-06: nay (tally 87–76); census gate: none.",
+      "subjects": [
+        "state ban on possessing a silencer repealed",
+        "silencer used in a crime still carries added penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1324-2025.comm-sub.pdf",
+          "sha256": "cac9c7cc0db7a3bfed34e302a4b693e66f6522544bcc39bdac7d05205d292d63"
+        }
+      }
+    },
+    {
+      "id": "6c9bb68144ec34d31e60691e88d39b4c478b1668f6c148ab46bd4d25a4f3c22b",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/60080",
+      "date": "2022-04-04",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-259-2021",
+      "act": "nay",
+      "motion": "Passage: House Vote #895",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #895, 2022-04-04: nay (tally 94–67); census gate: none.",
+      "subjects": [
+        "places of worship removed from banned carry locations",
+        "license-holder database ban gets a damages remedy",
+        "local limits on discharging firearms on parcels of ten acres or more",
+        "firearms barred from being seized or sales halted during a state of emergency",
+        "people with a past involuntary hospitalization can petition to be removed from the background-check list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-259-2021.comm-sub.pdf",
+          "sha256": "c424cfbbf905edebf2dd2cc87e8203dfd2af11b212bd3fa3556c84a8ccd93c16"
+        }
+      }
+    },
+    {
+      "id": "2c0c636c8c3504601f7671448c770aab6459f0480e889a99900fb239d4813d16",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/60797",
+      "date": "2022-03-30",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-319-2021",
+      "act": "nay",
+      "motion": "Passage: House Vote #817",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #817, 2022-03-30: nay (tally 100–67); census gate: none.",
+      "subjects": [
+        "carry license no longer required to carry a handgun",
+        "\"lawful weapons carrier\" replaces license holder across carry laws",
+        "police cannot stop a person only to check for a license"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-319-2021.enrolled.pdf",
+          "sha256": "17943534917a39ee671fab99d8120acebcc4e61921a039e7c8f5bb13fc72114d"
+        }
+      }
+    },
+    {
+      "id": "74859e9bf9cf16b5885371d68aa9bfef39ccc9ea65e59946daeb54395b96d0cf",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/63547",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-44-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-44-2023 (LegiScan sponsor list): HB44 (2023-2024 Regular Session): Brady Law Regulations; require universal background checks in all manner of firearm transfers and purchases.",
+      "subjects": [
+        "universal background checks for private firearm transfers",
+        "dealer must facilitate unlicensed transfers",
+        "misdemeanor then felony penalties"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-44-2023.introduced.pdf",
+          "sha256": "ab0b93fa7c5ef4974fa9824e99b046357e804166357bf6f7cf86a124435e8629"
+        }
+      }
+    },
+    {
+      "id": "2133258aaeab185117355cc98c5c2d76e292ec9971655b718b63a5eefcf5d351",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/70325",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-453-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-453-2025 (LegiScan sponsor list): HB453 (2025-2026 Regular Session): Georgia Red Flag Protective Order Act; enact.",
+      "subjects": [
+        "red flag orders on petition of family or police",
+        "firearms, ammunition and carry licenses surrendered",
+        "orders up to 12 months, extendable",
+        "violating an order is a high and aggravated misdemeanor"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-453-2025.introduced.pdf",
+          "sha256": "fcd5549b1ad64087ae153cb33f701f50d864bd97b7b60a6753455ee09867e79c"
+        }
+      }
+    },
+    {
+      "id": "c601027bfef6f36372394eea51be51405935ce3830c96232c8c567534e307564",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/69376",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-64-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-64-2025 (LegiScan sponsor list): HB64 (2025-2026 Regular Session): Crimes and offenses; require an owner of an assault weapon to procure and maintain sufficient liability insurance.",
+      "subjects": [
+        "liability insurance required for owners of semiautomatic rifles with high-capacity magazines",
+        "misdemeanor fines for no insurance or no proof",
+        "insurers may not ask for serial numbers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-64-2025.introduced.pdf",
+          "sha256": "bd82bd08d126282cd89c1c8a32495be67adf772c440b9bd18fd55235c3aecd5e"
+        }
+      }
+    },
+    {
+      "id": "b8dc83cc04310d960fa71a8ba2f153e0299c9a562e34507865e116d05c985c5f",
+      "kind": "own-words",
+      "url": "https://www.sheaforgeorgia.com/platform",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "So let’s address gun violence for what it is: a public health crisis. In addition to on-site modifications to school facilities, technologies, protocols, and training, a successful solution must include common sense gun safety laws and greater access to mental/behavioral health services.",
+      "note": "Campaign platform page treats gun violence as a public health crisis and calls for gun safety laws alongside school and mental health measures. Page carries no date.",
+      "subjects": [
+        "gun violence as a public health issue",
+        "common sense gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.228Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f7ef5cc03d840682b8943585a982ce7448806ed140ce6d4d68ae58890744b53b",
+      "kind": "own-words",
+      "url": "https://www.sheaforgeorgia.com/meet-shea",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I originally stepped up to run for office when I watched yet another community be devastated by gun violence. I still fight every day for common sense gun saftey solutions to keep our communities and families safe.",
+      "note": "Campaign biography page says she ran for office after gun violence hit a community and that she works on gun safety solutions. Page carries no date.",
+      "subjects": [
+        "common sense gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.228Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "09de5b50f7aabef5897f2bf8e0d4950498466d0f16d31842ce7afcd167afb510",
+      "kind": "own-words",
+      "url": "https://secure.actblue.com/donate/redflagnow",
+      "date": "2023",
+      "date_precision": "year",
+      "passage": "Last Session, I filed HB 584, the Georgia Red Flag Protective Order Reproductive Act. Chairman Collins never gave us a hearing, but the bill is still alive for the 2024 Session.",
+      "note": "Fundraising page for a red flag law campaign, written after the 2023 session. She says she filed HB 584 (title appears as written on the page). Year inferred from the text (2023 session, 2024 session ahead).",
+      "subjects": [
+        "red-flag or extreme-risk orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.228Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7f98e31b207a0e17179a3d787cf68db92795c25493d25155f5988f89e686bb17",
+      "kind": "own-words",
+      "url": "https://secure.actblue.com/donate/redflagnow",
+      "date": "2023",
+      "date_precision": "year",
+      "passage": "it's time to pass HB 584 which would provide to our police a path to ask a judge to temporarily bar dangerous individuals from possessing or purchasing a firearm.",
+      "note": "Same fundraising page: describes what the red flag bill would do and urges passage. Year inferred from the text.",
+      "subjects": [
+        "red-flag or extreme-risk orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.228Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f14511df13552ab96373abf2952e5c74a3e91236d2a53ec3285b6b8f7fee3a7",
+      "kind": "own-words",
+      "url": "https://www.wrdw.com/2025/04/05/georgia-lawmakers-pass-bill-that-could-let-people-sue-over-local-gun-control-measures/",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "passage": "“The Apalachee families have come here again and again, asking you to pass common-sense safe storage laws,” said Atlanta Democrat Shea Roberts. “And how do we respond? With a bill that precludes safe storage? SB 204 is a slap in the face to those families. And for what? To punish Savannah for trying to prevent gun theft and violence?”",
+      "note": "Quoted by AP (carried by WRDW) during House debate on SB 204, which let people sue local governments over local gun safety measures. The article says the bill passed Friday (2025-04-04).",
+      "subjects": [
+        "safe storage of guns",
+        "local gun safety ordinances"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.228Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0f40141f9a9a5dbdf3f4a835da3847faa404fa6c2a2e5bcf0ba96d8e2411f150",
+      "kind": "record",
+      "url": "https://secure.actblue.com/donate/redflagnow",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-584-2023",
+      "act": "sponsor",
+      "note": "HB 584, Georgia Red Flag Protective Order Act, is described by her as filed by her; she says it got no hearing. Source is her own page, not the legislature's list (sponsor list covered by LegiScan bulk check).",
+      "subjects": [
+        "red-flag or extreme-risk orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.228Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "951cd305c1cb08a73a6a49f61e8b2ba3447b1f7983a04fca49c30409c562a452",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/72353",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1023-2025",
+      "act": "yea",
+      "motion": "Passage: House Vote #546",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "GA House, Passage: House Vote #546, 2026-02-24: yea (tally 151–11); census gate: near-unanimous.",
+      "subjects": [
+        "weapon detection required at school building entrances",
+        "takes effect January 1, 2028"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1023-2025.comm-sub.pdf",
+          "sha256": "79e90ebc48e656276b1cf2a56ef9e94e0cf0286d51d38dec17f5f451ff55443d"
+        }
+      }
+    },
+    {
+      "id": "e65c4ac42c532c4eaf8d48178b8b3f799e8a3117f6ecec6e9af5590fe1e1184f",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/70476",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-204-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #429",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "GA House, Passage: House Vote #429, 2025-04-04: nay (tally 99–74); census gate: multi-subject.",
+      "subjects": [
+        "local limits on gun storage and gun parts barred",
+        "lawful gun carriers may sue over local rules",
+        "state declares gun regulation a statewide matter"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-204-2025.enrolled.pdf",
+          "sha256": "f3383faa3b85b22922b268ff733c78969bf7745386e967a71e6a9f02136f1fc2"
+        }
+      }
+    },
+    {
+      "id": "41004fd008f73ef6e077341cd7c7092f49d4ad769b4c4f01bd5fa2e4b4eb4deb",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/70324",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-452-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-452-2025 (LegiScan sponsor list): HB452 (2025-2026 Regular Session): Firearms; persons convicted of family violence offenses cannot possess or purchase; provide.",
+      "subjects": [
+        "gun ban for people convicted of family violence offenses",
+        "gun ban while a family violence protective order is in force",
+        "ban lifts when the protective order ends"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-452-2025.introduced.pdf",
+          "sha256": "1a91f6715481cf1d97f8b881f81006b21ecdf057a55ac4cc80fa3917abfeade8"
+        }
+      }
+    },
+    {
+      "id": "df5f99018ef512863ca42051d7aea9b39de85f18c809fc165db2314db45397fe",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/64814",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-584-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-584-2023 (LegiScan sponsor list): HB584 (2023-2024 Regular Session): Georgia Red Flag Protective Order Act; enact.",
+      "subjects": [
+        "risk protection orders to remove guns from dangerous people",
+        "temporary ex parte orders",
+        "surrender of firearms, ammunition and carry licenses",
+        "penalty for possessing a gun while under an order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-584-2023.introduced.pdf",
+          "sha256": "3d00179c8d764ab42677db348f717baa8c6a669f6b7537f0b083c7a30918eab9"
+        }
+      }
     }
   ],
   "searches": [
@@ -156,6 +606,30 @@
       "found": 3,
       "at": "2026-10-28T20:51:14.407Z",
       "by": "identity-ga-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red-flag or extreme-risk orders",
+        "safe storage of guns",
+        "gun violence as a public health issue",
+        "local gun safety ordinances",
+        "common sense gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.sheaforgeorgia.com (home, /platform, /meet-shea)",
+        "ActBlue red flag campaign page",
+        "Branch voter-guide profile",
+        "blocked: https://ballotpedia.org/Shea_Roberts (403)",
+        "blocked: Everytown press release gives no direct quote from her",
+        "sponsor list: covered by LegiScan bulk check",
+        "news search on name plus gun, firearm, Second Amendment, HB 584, permitless carry, background checks (5 searches)"
+      ],
+      "found": 6,
+      "at": "2026-11-12T01:42:02.228Z",
+      "by": "source-collector"
     }
   ]
 }

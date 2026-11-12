@@ -1,6 +1,286 @@
 {
   "politician_id": "91fbc0cb-1d87-4a5e-9b58-ddf462627b58",
-  "findings": [],
+  "findings": [
+    {
+      "id": "40663a66a69a1baf4ae0105d505d960681701416491521c1cff62ba98db6f8e4",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/73161",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-499-2025",
+      "act": "nay",
+      "motion": "Passage By Substitute: Senate Vote #686",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA Senate, Passage By Substitute: Senate Vote #686, 2026-03-06: nay (tally 30–20); census gate: none.",
+      "subjects": [
+        "general ban on possessing silencers repealed",
+        "silencer offence kept only for people barred from firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-499-2025.comm-sub.pdf",
+          "sha256": "9bd024fd2d64c29b3394a0fe59315418fd91f93aea89bb156b92369c35534b6e"
+        }
+      }
+    },
+    {
+      "id": "ebe79e5f7df16125fb8110628d7be90502724cd9fc42dea2c11520c4ddc958e6",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/69414",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "GA-SB-19-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-SB-19-2025 (LegiScan sponsor list): SB19 (2025-2026 Regular Session): Brady Law Regulations; purchase or transfer of certain firearms; require a ten-day waiting period.",
+      "subjects": [
+        "ten-day waiting period for semiautomatic assault weapons",
+        "definition of semiautomatic assault weapon",
+        "felony for dealers or buyers who evade it"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-19-2025.introduced.pdf",
+          "sha256": "84b5cfa20886a58636f87970ab00bccca25312366306140db48c0d0f9a0fe415"
+        }
+      }
+    },
+    {
+      "id": "c18eef2553894ba3869d14a46638c4e1a29f54934a5e24ba8dc921adb39558cb",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/69754",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "GA-SB-66-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-SB-66-2025 (LegiScan sponsor list): SB66 (2025-2026 Regular Session): Crimes; persons convicted of misdemeanor crimes of family violence from receiving, possessing, or transporting a firearm; prohibit.",
+      "subjects": [
+        "gun ban for misdemeanor family-violence convictions",
+        "gun ban for people under a family violence protective order",
+        "surrender of firearms to a licensed dealer within 24 hours"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-66-2025.introduced.pdf",
+          "sha256": "6326e41ecb8d6831df282a034cf07a8385a0e63682964c9f3404bd3d0352ca95"
+        }
+      }
+    },
+    {
+      "id": "e51993169f46b8024143778633a129f2fa0e2802e10c38dec87f660cefcc5de2",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/69889",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "GA-SB-92-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-SB-92-2025 (LegiScan sponsor list): SB92 (2025-2026 Regular Session): \"Georgia Red Flag Protective Order Act\"; enact.",
+      "subjects": [
+        "court orders removing guns from people who pose a significant danger",
+        "family members or police may petition",
+        "temporary order before hearing; final order up to 12 months",
+        "guns returned only after a background check"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-92-2025.introduced.pdf",
+          "sha256": "562f70c3ae58f6967fe44c8f47807daacb8d9f2df1873dcc62b478140c53a017"
+        }
+      }
+    },
+    {
+      "id": "dcb5381925d511f00b81471eef65c1ba16ddd27a44309eef394903d0b35a34e4",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/70476",
+      "date": "2026-01-13",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-204-2025",
+      "act": "nay",
+      "motion": "Agree To House Substitute: Senate Vote #494",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "GA Senate, Agree To House Substitute: Senate Vote #494, 2026-01-13: nay (tally 32–21); census gate: multi-subject.",
+      "subjects": [
+        "local limits on gun storage and gun parts barred",
+        "lawful gun carriers may sue over local rules",
+        "state declares gun regulation a statewide matter"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-204-2025.enrolled.pdf",
+          "sha256": "f3383faa3b85b22922b268ff733c78969bf7745386e967a71e6a9f02136f1fc2"
+        }
+      }
+    },
+    {
+      "id": "e9edf05ca17d7f0deb53b9f8428bd2438d37db3f7bbd1b68986a03dd7e5c51ca",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/72449",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "GA-SR-605-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-SR-605-2025 (LegiScan sponsor list): SR605 (2025-2026 Regular Session): Pretti, Alex; condemn the killing of and protect the constitutional rights of peaceful assembly and right to keep and bear arms.",
+      "subjects": [
+        "resolution declaring support for the right to keep and bear arms",
+        "calls on officials to reject equating lawful gun carrying with criminality"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SR-605-2025.introduced.pdf",
+          "sha256": "fc99754a68425d6ff2c64c88dbec9cd96d35d673d7ac7d98e30767f1452b49d6"
+        }
+      }
+    },
+    {
+      "id": "334bb846ae3b262c88520eb240d7119f6a4e015119a3ceab1d13d076e798073a",
+      "kind": "own-words",
+      "url": "https://www.fox5atlanta.com/news/gun-sales-tax-holiday-bill-passes-state-senate-moves-house",
+      "date": "2025-02-12",
+      "date_precision": "day",
+      "passage": "Mason, Christian, Richard and Christina were all killed by an AR-15 and yet today the first action we are taking in this senate body is to give a sales tax holiday so that people can buy more guns like this",
+      "note": "Floor remarks quoted by FOX 5 Atlanta during the Senate debate on SB 47, the gun, gun-safe and ammunition sales tax holiday bill, after the Apalachee High School shooting.",
+      "subjects": [
+        "sales tax holiday on guns",
+        "gun deaths at school"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:54:11.310Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "699dd60b11458305ebcb5cad28b62ccb5048cf89a3cab5a6cfa1d7146008088a",
+      "kind": "own-words",
+      "url": "https://gpb.org/node/1266536",
+      "date": "2025-02-12",
+      "date_precision": "day",
+      "passage": "If we had the opportunity, we would have attempted to exclude those types of guns, no matter what you call them, that was used in the shooting at Apalachee High School,",
+      "note": "Floor remarks quoted by Georgia Public Broadcasting during the Senate debate on SB 47. He says an attempt would have been made to exclude the type of gun used at Apalachee from the tax holiday.",
+      "subjects": [
+        "sales tax holiday on guns",
+        "assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:54:11.310Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c216bf093f4f47c282f0ad030dd391193bd01de317a51ac614265dfde62b274",
+      "kind": "own-words",
+      "url": "https://gpb.org/node/1266536",
+      "date": "2025-02-12",
+      "date_precision": "day",
+      "passage": "It's unfortunate that what we're doing today is extending from five to 11 days and giving an opportunity for folks to buy more guns like this. As I ask in my question, the gun that was used was legally bought, and so we are giving an opportunity for people to purchase these guns, whereas we could be trying to do something to ensure that we are keeping kids safe.",
+      "note": "Floor remarks quoted by Georgia Public Broadcasting on the SB 47 debate: he objects to lengthening the gun tax holiday and says the Senate could instead act to keep children safe.",
+      "subjects": [
+        "sales tax holiday on guns",
+        "keep guns from children"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:54:11.310Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c539e864ee7dbce10e07f6309c6086ad285fc7b267204cc27a6027f6826f800f",
+      "kind": "own-words",
+      "url": "https://nowhabersham.com/?p=334788",
+      "date": "2025-01-28",
+      "date_precision": "day",
+      "passage": "And as a former educator who had a student bring a gun to school, having information shared between schools is critically important and can’t just stop at academics.",
+      "note": "Quoted by the Georgia Recorder (republished by Now Georgia) at a Senate caucus announcement of gun-safety bills. He supports a statewide system sharing student safety information between schools, citing a student who brought a gun to his school.",
+      "subjects": [
+        "guns in schools",
+        "student threat information sharing"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:54:11.310Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "71a0efbc6b86f2a1310f165822d7c049fcd9eb8e1bf8a80f9ceed88d26cc823a",
+      "kind": "record",
+      "url": "https://www.atlantanewsfirst.com/2026/01/28/senate-democrats-get-behind-second-amendment-after-alex-pretti-fatal-shooting/",
+      "date": "2026-01-28",
+      "date_precision": "day",
+      "instrument_id": "GA-SR-605-2025",
+      "act": "sponsor",
+      "motion": "Named as a co-signer of Senate Resolution 605",
+      "note": "News report lists him among senators co-signing SR 605, introduced by another senator, which the caucus statement says condemns the killing of Alex Pretti and reasserts Georgians' right to the Second Amendment. Recorded as a co-sponsorship; no separate quote from him.",
+      "subjects": [
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:54:11.310Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -27,6 +307,67 @@
       "found": 0,
       "at": "2026-10-28T20:33:45.706Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "repeal of gun laws",
+        "general gun statements",
+        "safe storage"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web searches on name plus gun terms: nothing citable",
+        "blocked: https://courthousenews.com/georgia-democrats-condemn-passage-of-firearm-tax-holiday/",
+        "atlantanewsfirst 2026-01-28 and AJC 2026-01-28 pages on the Second Amendment resolution: fetched, do not name him",
+        "wrdw 2024-08-21 and newsfromthestates 2025-02-14: fetched, nothing by him",
+        "blocked: https://legiscan.com/GA/people/rashaun-kemp/id/20481",
+        "sponsor list: covered by LegiScan bulk check"
+      ],
+      "found": 0,
+      "at": "2026-11-12T01:42:02.160Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "repeal of gun laws",
+        "general gun statements",
+        "safe storage",
+        "gun sales tax holiday",
+        "gun in school safety",
+        "student threat database"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web searches on name plus gun terms: nothing citable",
+        "blocked: https://courthousenews.com/georgia-democrats-condemn-passage-of-firearm-tax-holiday/",
+        "atlantanewsfirst 2026-01-28 and AJC 2026-01-28 pages on the Second Amendment resolution: fetched, do not name him",
+        "wrdw 2024-08-21 and newsfromthestates 2025-02-14: fetched, nothing by him",
+        "blocked: https://legiscan.com/GA/people/rashaun-kemp/id/20481",
+        "sponsor list: covered by LegiScan bulk check",
+        "re-search 2026-11-11: 6 web searches run (name plus gun, Senate floor remarks, campaign and newsletter, press releases, former-principal statement)",
+        "fox5atlanta 2025-02-12, gpb.org 2025-02-13 and nowhabersham (Georgia Recorder) 2025-01-28: fetched, he is quoted",
+        "atlantanewsfirst 2026-01-28: fetched, names him as co-signer of SR 605",
+        "ivoterguide / campaign site: no campaign site found; legis.ga.gov member page needs JavaScript; senate.ga.gov and house.ga.gov listings returned empty to curl",
+        "blocked: https://api.courthousenews.com/georgia-senators-propose-bills-to-combat-child-gun-violence/ (bot check)",
+        "blocked: https://www.axios.com/local/atlanta/2025/02/13/sales-tax-holiday-guns-georgia"
+      ],
+      "found": 5,
+      "at": "2026-11-12T01:54:11.310Z",
+      "by": "source-collector"
     }
   ]
 }

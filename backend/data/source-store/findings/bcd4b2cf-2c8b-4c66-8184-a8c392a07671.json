@@ -22,6 +22,211 @@
         "fetched_at": "2026-10-28T20:51:14.415Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "f5910d0b75aaddcec1bed0087ec95f3925870d0e49399284f13a4db010530053",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/66265",
+      "date": "2024-02-27",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1018-2023",
+      "act": "nay",
+      "motion": "Passage: House Vote #581",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #581, 2024-02-27: nay (tally 106–60); census gate: none.",
+      "subjects": [
+        "banks barred from singling out firearms retailers by payment code",
+        "firearms registries by any person or government barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1018-2023.enrolled.pdf",
+          "sha256": "3073f18aecfd54c9c28d17feb9b9ef6f65e37967f1c92fad309d433378719fec"
+        }
+      }
+    },
+    {
+      "id": "ab2b6cbbf5ad2aa9f2c9e3c7ed2d3367bcce148eb8db4754bd5a93c703f8e9ce",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/73253",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1324-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #665",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #665, 2026-03-06: nay (tally 87–76); census gate: none.",
+      "subjects": [
+        "state ban on possessing a silencer repealed",
+        "silencer used in a crime still carries added penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1324-2025.comm-sub.pdf",
+          "sha256": "cac9c7cc0db7a3bfed34e302a4b693e66f6522544bcc39bdac7d05205d292d63"
+        }
+      }
+    },
+    {
+      "id": "0f6830cd5ca8a882d3e8d8c8ff069223e8be1ddf51c7a8e86c6cea931c2f31ee",
+      "kind": "own-words",
+      "url": "https://terry4ga.com/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I will vigorously fight to return to common-sense gun control laws which just got harder thanks to the “Constitutional Carry” law signed by Kemp in April. This new law allows residents to carry concealed handguns in public without a license or background check. As a retired federal law enforcement officer, I understand that citizens have a right to responsible gun ownership, but citizens also have the right to not live in fear of gun violence everywhere they turn. As your next representative, I will work to ensure guns do not fall in the hands of violent felons, individuals convicted of domestic abuse, and those with a history of serious mental health issues.",
+      "note": "Gun Control item under Terry's Priorities on her campaign site. The text refers to the April 2022 Constitutional Carry law and to being 'your next representative', so it was written for her 2022 run; the page itself is undated and is still on the site in 2026.",
+      "subjects": [
+        "carry a gun without a permit",
+        "keep guns from felons, domestic abusers and people with serious mental health history",
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.259Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f91ee116f0cbd4545d6eee45e9d9e77ad490eca5a6567c70d7d7b37ac9dbb130",
+      "kind": "own-words",
+      "url": "https://cobbcountycourier.com/?p=31604",
+      "date": "2022-05-14",
+      "date_precision": "day",
+      "passage": "And then gun control and the fact that we have constitutional carry, where you don’t even need a permit. As a former law enforcement officer, I can’t even wrap my head around that concept.",
+      "note": "Answer in a Cobb Courier Q and A with candidate Terry Cummings, quoted in the interview (the outlet published her answers in quotation marks). She objects to permitless carry.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.259Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1c9243eb3b9ac16b3fe836b01ea235afa9f2cfdba0711c153bfc5733d774205d",
+      "kind": "own-words",
+      "url": "https://cobbcountycourier.com/?p=31604",
+      "date": "2022-05-14",
+      "date_precision": "day",
+      "passage": "While I support the Second Amendment, I want people to have permits, I want people to get that background check. I don’t think that just because you’re walking means that you should have a gun.",
+      "note": "Same Cobb Courier Q and A. She says she supports the Second Amendment and wants carry permits and background checks.",
+      "subjects": [
+        "carry permits",
+        "check every gun buyer",
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.259Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ce9c19f25ed58a912b0804266774697c5776173fe113c04e1d72c68d713872c8",
+      "kind": "own-words",
+      "url": "https://cobbcountycourier.com/?p=31604",
+      "date": "2022-05-14",
+      "date_precision": "day",
+      "passage": "I think that owning a gun is a responsibility and it’s a privilege — I don’t think that it’s an absolute right.",
+      "note": "Same Cobb Courier Q and A. She describes gun ownership as a responsibility and a privilege rather than an absolute right.",
+      "subjects": [
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.259Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "951cd305c1cb08a73a6a49f61e8b2ba3447b1f7983a04fca49c30409c562a452",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/72353",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1023-2025",
+      "act": "yea",
+      "motion": "Passage: House Vote #546",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "GA House, Passage: House Vote #546, 2026-02-24: yea (tally 151–11); census gate: near-unanimous.",
+      "subjects": [
+        "weapon detection required at school building entrances",
+        "takes effect January 1, 2028"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1023-2025.comm-sub.pdf",
+          "sha256": "79e90ebc48e656276b1cf2a56ef9e94e0cf0286d51d38dec17f5f451ff55443d"
+        }
+      }
+    },
+    {
+      "id": "e65c4ac42c532c4eaf8d48178b8b3f799e8a3117f6ecec6e9af5590fe1e1184f",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/70476",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-204-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #429",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "GA House, Passage: House Vote #429, 2025-04-04: nay (tally 99–74); census gate: multi-subject.",
+      "subjects": [
+        "local limits on gun storage and gun parts barred",
+        "lawful gun carriers may sue over local rules",
+        "state declares gun regulation a statewide matter"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-204-2025.enrolled.pdf",
+          "sha256": "f3383faa3b85b22922b268ff733c78969bf7745386e967a71e6a9f02136f1fc2"
+        }
+      }
     }
   ],
   "searches": [
@@ -65,6 +270,33 @@
       "found": 1,
       "at": "2026-10-28T20:51:14.415Z",
       "by": "identity-ga-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "safe storage",
+        "gun rights and the Second Amendment",
+        "gun sales tax holiday",
+        "gun trafficking"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://terry4ga.com/ (home page, Priorities section: Gun Control) fetched; https://terry4ga.com/priorities and /about fetched, nothing further on the subject",
+        "Cobb Courier candidate Q and A https://cobbcountycourier.com/?p=31604 (2022-05-14), saved",
+        "House press page https://house-press.com/?p=14266 (committee assignments): nothing on the subject",
+        "blocked: https://terry4ga.com/platform (404)",
+        "Ballotpedia: not reviewed (returns empty to the fetch tool)",
+        "web searches run: 2 (name + 2026 gun Second Amendment; name + Mableton constitutional carry / gun violence / firearm); findings were found so no further searches needed",
+        "sponsor list: covered by LegiScan bulk check"
+      ],
+      "found": 4,
+      "at": "2026-11-12T01:42:02.259Z",
+      "by": "source-collector"
     }
   ]
 }

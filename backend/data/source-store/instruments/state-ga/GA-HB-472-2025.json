@@ -1,0 +1,67 @@
+{
+  "id": "GA-HB-472-2025",
+  "scope": "state:ga",
+  "title": "HB472 (2025-2026 Regular Session): Crimes and offenses; add certain facilities of the Geo. L. Smith II Georgia World Congress Center Authority to the locations in which the carrying of weapons or long guns is prohibited",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/70389",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/232634"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Rick Jasperse",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "acd089c9-56c4-4440-b346-a9a03e91bf38"
+    },
+    {
+      "name": "Clint Crowe",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9f3f381e-4d59-4a7e-9638-ba409556e800"
+    },
+    {
+      "name": "Ron Stephens",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "20f36029-8476-41aa-a1b9-f928aab234c3"
+    },
+    {
+      "name": "Scott Holcomb",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b1819ac4-254b-4f4c-b163-59918efd9dee"
+    },
+    {
+      "name": "Kimberly New",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "436d0c4e-8663-46e1-bbc8-28ec8bb1273c"
+    },
+    {
+      "name": "Marcus Wiedower",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-472-2025.introduced.pdf",
+      "sha256": "8f284e659d0be6f788ccc5ccf285f428f9d98c879a911d02a587e040e8607bd8"
+    }
+  },
+  "operative_text": "SECTION 1 (amending O.C.G.A. 16-11-127(b)): \"(8) Within facilities of the Geo. L. Smith II Georgia World Congress Center Authority, as described in Code Section 10-9-14.1, which are enclosed by fencing that is at least 8 feet in height and includes prominent postings of notice of such restrictions at all access points; provided, however, that such facility is not a location where vehicles are permitted to park.\""
+}

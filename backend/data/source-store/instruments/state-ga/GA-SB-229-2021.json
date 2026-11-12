@@ -1,0 +1,95 @@
+{
+  "id": "GA-SB-229-2021",
+  "scope": "state:ga",
+  "title": "SB229 (2021-2022 Regular Session): Carrying Weapons Within School Safety Zones; carrying and possession of handguns in certain manners; property owned or leased by public institutions of postsecondary education; repeal authorization",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/59961",
+    "https://www.legis.ga.gov/api/legislation/document/20212022/198378"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sally Harrell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "cd6e7cf0-87d8-4a0f-b3a9-3272eb69a77b"
+    },
+    {
+      "name": "Michelle Au",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9cdee7d8-43d6-4596-8982-55b006f7754c"
+    },
+    {
+      "name": "Jennifer Jordan",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Elena Parent",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "83ffefbf-8cc7-4971-95df-9970188dd013"
+    },
+    {
+      "name": "Nikki Merritt",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "46f32fee-0076-49db-a5cd-1526ef7316cb"
+    },
+    {
+      "name": "Nan Orrock",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "95c803e4-4853-41aa-b9d6-b4c108e9ea52"
+    },
+    {
+      "name": "Valencia Seay",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Kim Jackson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4a922565-16b3-4c1a-a654-7ef16a3316b6"
+    },
+    {
+      "name": "Sheikh Rahman",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a7ac9853-45dc-46fc-a604-9ec119a124db"
+    },
+    {
+      "name": "Gail Davenport",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8c65ec5b-05f6-42fd-a25a-a62c1f64fd67"
+    },
+    {
+      "name": "Gloria Butler",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-229-2021.introduced.pdf",
+      "sha256": "628e7a2317680d2c9504a2b699d79e8f79463a18f32aa071c90fd7de4d9df69d"
+    }
+  },
+  "operative_text": "SECTION 1 (amending O.C.G.A. 16-11-127.1(b)(2)): \"(2) Except as provided for in paragraph (20) of subsection (c) of this Code section, any Any license holder who violates this subsection shall be guilty of a misdemeanor.\nSECTION 1 (amending O.C.G.A. 16-11-127.1(c)(18)-(20)): (20)(A) Any weapons carry license holder when he or she is in any building or on real property owned by or leased to any public technical school, vocational school, college, or university, or other public institution of postsecondary education; provided, however, that such exception shall:\nSECTION 1 (amending O.C.G.A. 16-11-127.1(c)(18)-(20)): (vii) Only apply to the carrying of handguns which are concealed."
+}

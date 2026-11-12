@@ -1,0 +1,61 @@
+{
+  "id": "GA-SB-581-2023",
+  "scope": "state:ga",
+  "title": "SB581 (2023-2024 Regular Session): Firearms; election by a postsecondary education institution to allow concealed handguns upon campus; provide",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/68815",
+    "https://www.legis.ga.gov/api/legislation/document/20232024/227140"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sally Harrell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "cd6e7cf0-87d8-4a0f-b3a9-3272eb69a77b"
+    },
+    {
+      "name": "Nan Orrock",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "95c803e4-4853-41aa-b9d6-b4c108e9ea52"
+    },
+    {
+      "name": "Kim Jackson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4a922565-16b3-4c1a-a654-7ef16a3316b6"
+    },
+    {
+      "name": "Jason Esteves",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Elena Parent",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "83ffefbf-8cc7-4971-95df-9970188dd013"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-581-2023.introduced.pdf",
+      "sha256": "50b6b9a1221bae1ab3f969f4c8f103c0b2751e2938afeeb7050305a9357bfff4"
+    }
+  },
+  "operative_text": "SECTION 1 (amending O.C.G.A. 16-11-127.1(b)(2)): \"(2) Except as provided for in paragraph (20) of subsection (c) of this Code section, any Any lawful weapons carrier who violates this subsection shall be guilty of a misdemeanor. Any person who is not a lawful weapons carrier who violates this subsection shall be guilty of a felony and, upon conviction thereof, be punished by a fine of not more than $10,000.00, by imprisonment for not less than two nor more than ten years, or both.\"\nSECTION 1 (amending O.C.G.A. 16-11-127.1(c)(20)): \"(20)(A) Any lawful weapons carrier when he or she is in any building or on real property owned by or leased to any public technical school, vocational school, college, or university, or other public institution of postsecondary education that has elected to allow the carrying of weapons on campus; provided, however, that such exception shall: (i) Not apply to buildings or property used for athletic sporting events or student housing, including, but not limited to, fraternity and sorority houses; (ii) Not apply to any preschool or childcare space located within such buildings or real property; (iii) Not apply to any room or space being used for classes related to a college and career academy or other specialized school as provided for under Code Section 20-4-37; (iv) Not apply to any room or space being used for classes in which high school students are enrolled through a dual enrollment program, including, but not limited to, classes related to the 'Dual Enrollment Act' as provided for under Code Section 20-2-161.3; (v) Not apply to faculty, staff, or administrative offices or rooms where disciplinary proceedings are conducted; and (vi) Only apply to the carrying of handguns which are concealed and when the lawful weapons carrier demonstrates he or she has successfully completed a firearms safety course; and (vii) Only apply when such public technical school, vocational school, college, university, or other public institution of postsecondary education provides adequate storage for any handgun at the entrance of any building, property, room, or space where carrying or possession is prohibited pursuant to divisions (i) through (v) of this subparagraph.\nSECTION 1 (amending O.C.G.A. 16-11-127.1(c)(20)): (B) Any lawful weapons carrier who carries a handgun in a manner or in a building, property, room, or space in violation of this paragraph shall be guilty of a misdemeanor; provided, however, that, for a conviction of a first offense, such lawful weapons carrier shall be punished by a fine of $25.00 and not be sentenced to serve any term of confinement."
+}

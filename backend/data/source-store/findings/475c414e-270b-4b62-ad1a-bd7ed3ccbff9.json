@@ -22,6 +22,204 @@
         "fetched_at": "2026-10-28T20:51:14.415Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "f5910d0b75aaddcec1bed0087ec95f3925870d0e49399284f13a4db010530053",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/66265",
+      "date": "2024-02-27",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1018-2023",
+      "act": "nay",
+      "motion": "Passage: House Vote #581",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #581, 2024-02-27: nay (tally 106–60); census gate: none.",
+      "subjects": [
+        "banks barred from singling out firearms retailers by payment code",
+        "firearms registries by any person or government barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1018-2023.enrolled.pdf",
+          "sha256": "3073f18aecfd54c9c28d17feb9b9ef6f65e37967f1c92fad309d433378719fec"
+        }
+      }
+    },
+    {
+      "id": "ab2b6cbbf5ad2aa9f2c9e3c7ed2d3367bcce148eb8db4754bd5a93c703f8e9ce",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/73253",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1324-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #665",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #665, 2026-03-06: nay (tally 87–76); census gate: none.",
+      "subjects": [
+        "state ban on possessing a silencer repealed",
+        "silencer used in a crime still carries added penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1324-2025.comm-sub.pdf",
+          "sha256": "cac9c7cc0db7a3bfed34e302a4b693e66f6522544bcc39bdac7d05205d292d63"
+        }
+      }
+    },
+    {
+      "id": "f866f7205ef3ec645da1c5f6f35a27b4bb0f3a34590c422084455244e0b95623",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/72681",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-1127-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-1127-2025 (LegiScan sponsor list): HB1127 (2025-2026 Regular Session): Crimes; offense of unlawful possession of parts of a machine gun; provide.",
+      "subjects": [
+        "new felony for possessing machine gun parts",
+        "machine gun definition widened to one shot per trigger pull",
+        "exemption for federally licensed machine gun makers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1127-2025.introduced.pdf",
+          "sha256": "303e9e71ebfa3add7b0875871ff55ccbd2f62535259f02d3ce50d94c501b9cc9"
+        }
+      }
+    },
+    {
+      "id": "870bd77a6330e2b7e07b0069ca474b8d6f44b8b96e60532b98ad3ddc5b19c5b0",
+      "kind": "own-words",
+      "url": "https://www.fox5atlanta.com/news/gun-laws-georgia-house-bill-apalachee-high-school-shooting",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "passage": "While it's important that we did pass school safety legislation last year, we need to prioritize and emphasize legislation that would again prohibit a lot of people from gaining access to firearms,\" Crawford explained. \"We know that those weapons are not for hunting. They're not for protecting. They are used for mass destruction.",
+      "note": "Quoted by Fox 5 Atlanta while he backed HB 1127, a ban on machine-gun conversion devices (\"switches\"); he says lawmakers should prioritise bills that limit who can get firearms, and describes the weapons as not for hunting or protection.",
+      "subjects": [
+        "ban on machine-gun conversion devices",
+        "limit who can get a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.147Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "951cd305c1cb08a73a6a49f61e8b2ba3447b1f7983a04fca49c30409c562a452",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/72353",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1023-2025",
+      "act": "yea",
+      "motion": "Passage: House Vote #546",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "GA House, Passage: House Vote #546, 2026-02-24: yea (tally 151–11); census gate: near-unanimous.",
+      "subjects": [
+        "weapon detection required at school building entrances",
+        "takes effect January 1, 2028"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1023-2025.comm-sub.pdf",
+          "sha256": "79e90ebc48e656276b1cf2a56ef9e94e0cf0286d51d38dec17f5f451ff55443d"
+        }
+      }
+    },
+    {
+      "id": "e65c4ac42c532c4eaf8d48178b8b3f799e8a3117f6ecec6e9af5590fe1e1184f",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/70476",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-204-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #429",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "GA House, Passage: House Vote #429, 2025-04-04: nay (tally 99–74); census gate: multi-subject.",
+      "subjects": [
+        "local limits on gun storage and gun parts barred",
+        "lawful gun carriers may sue over local rules",
+        "state declares gun regulation a statewide matter"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-204-2025.enrolled.pdf",
+          "sha256": "f3383faa3b85b22922b268ff733c78969bf7745386e967a71e6a9f02136f1fc2"
+        }
+      }
+    },
+    {
+      "id": "2f88d9679b5cca35efef0d726e16fd3261e834d05f251e4605bed6353584296e",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/63828",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-161-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-161-2023 (LegiScan sponsor list): HB161 (2023-2024 Regular Session): Pediatric Health Safe Storage Act; enact.",
+      "subjects": [
+        "offense of letting a child reach a loaded firearm",
+        "safe-storage duty",
+        "dealer must post a storage warning sign"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-161-2023.introduced.pdf",
+          "sha256": "5ed76a0041ebd11fb28bc9498fbd20d9c08ded6645e8f1261541b5d856d0bc5f"
+        }
+      }
     }
   ],
   "searches": [
@@ -63,6 +261,32 @@
       "found": 1,
       "at": "2026-10-28T20:51:14.415Z",
       "by": "identity-ga-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm",
+        "background checks",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "gun rights and the Second Amendment",
+        "machine-gun conversion devices"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "branch.vote 2026 general page: confirms he is on the 2026 ballot, no position text",
+        "Fox 5 Atlanta article 2026-02-09",
+        "AP article 2024-08-21: does not mention him",
+        "Ballotpedia: empty via fetch tool",
+        "LegiScan person page: blocked: https://legiscan.com/GA/people/omari-crawford/id/20023",
+        "LegiScan HB207 sponsors: blocked: https://legiscan.com/GA/sponsors/HB207/2025",
+        "no campaign or issues site found"
+      ],
+      "found": 1,
+      "at": "2026-11-12T01:42:02.147Z",
+      "by": "source-collector"
     }
   ]
 }

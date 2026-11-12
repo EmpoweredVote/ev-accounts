@@ -1,0 +1,62 @@
+{
+  "id": "GA-HB-508-2025",
+  "scope": "state:ga",
+  "title": "HB508 (2025-2026 Regular Session): Crimes and offenses; prohibit sale, transfer, use, possession, importation, or manufacture of certain firearms and magazines",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/70480",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/232902"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Derrick Jackson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3ca554be-27d6-4d65-a6f4-b7567f73b1a3"
+    },
+    {
+      "name": "Kim Schofield",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2ad8d1f0-dc9e-41b5-82df-a1d25aaade2e"
+    },
+    {
+      "name": "Viola Davis",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "440aca35-1e90-45d5-93f5-4ce2bd101a0a"
+    },
+    {
+      "name": "Eric Bell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0465ec5b-c743-48a4-84da-7840ad16581a"
+    },
+    {
+      "name": "L.C. Myles",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "65a0990b-5a00-4f27-b395-edc42d08ba99"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-508-2025.introduced.pdf",
+      "sha256": "b384070135d84e00fd0af29db970c258cd1b462acf7bc39026d80765222e6069"
+    }
+  },
+  "operative_text": "SECTION 2 (adding O.C.G.A. 16-11-139(a)): (2) 'Large capacity ammunition feeding device' means any magazine, clip, drum, belt, feed strip, or similar device which is designed to supply or is capable of supplying ammunition to a semiautomatic assault weapon and has a capacity in excess of 20 rounds of ammunition. (5)(A) 'Semiautomatic assault weapon' means a rifle: (i) That uses the energy of an explosive in a fixed, center fire, metal cartridge to expel a single projectile through the bore of the rifle for each single pull of the trigger and to extract the fired cartridge case and chamber the next round; and (ii) Is capable of using a large capacity ammunition feeding device in its operation. (B) Such term shall not include a weapon that uses rimfire ammunition.\nSECTION 2 (adding O.C.G.A. 16-11-139(b)-(e)): (b) Except as otherwise provided in this Code section, it shall be unlawful to own, possess, use, sell, import, or manufacture semiautomatic assault weapons in this state. (c) Any semiautomatic assault weapon owned by a person in this state prior to July 1, 2025, may be retained by the owner if such semiautomatic assault weapon is securely stored. Such semiautomatic assault weapon may be sold or transferred by the owner of such weapon only if the owner has a criminal background check of the purchaser or transferee conducted by a dealer pursuant to the National Instant Criminal Background Check System created by the federal Brady Handgun Violence Prevention Act (P.L. No. 103-159) and such background check indicates that the person is eligible to purchase or receive such semiautomatic assault weapon under federal law. (d) Except as otherwise provided in this Code section, it shall be unlawful to own, possess, use, sell, import, or manufacture a large capacity ammunition feeding device in this state. (e) Any large capacity ammunition feeding devices owned by a person in this state prior to July 1, 2025, may be retained by the owner; provided, however, that the sale or transfer of any such devices shall be prohibited.\nSECTION 2 (adding O.C.G.A. 16-11-139(h)): (h)(1) Any person convicted of a first or second violation of this Code section shall be guilty of a misdemeanor and punished by a fine of not more than $250.00 for the first offense and not more than $500.00 for the second offense. (2) Any person convicted of a third or subsequent violation of this Code section shall be guilty of a misdemeanor of a high and aggravated nature, and the sentencing court shall be authorized to revoke such person's hunting rights in this state for a length of time deemed appropriate by the court. (3) Upon conviction of a violation of this Code section, any semiautomatic assault weapon or large capacity ammunition feeding device which is the subject of the violation shall be declared contraband. Such property shall be subject to civil forfeiture in accordance with Chapter 16 of Title 9, the 'Georgia Uniform Civil Forfeiture Procedure Act.'\""
+}

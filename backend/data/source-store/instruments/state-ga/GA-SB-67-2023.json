@@ -1,0 +1,79 @@
+{
+  "id": "GA-SB-67-2023",
+  "scope": "state:ga",
+  "title": "SB67 (2023-2024 Regular Session): 'Second Amendment Preservation Act'; enact",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/63891",
+    "https://www.legis.ga.gov/api/legislation/document/20232024/213377"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Colton Moore",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Carden Summers",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6ffadf75-49b6-4223-8b32-cf17b3c0290b"
+    },
+    {
+      "name": "Blake Tillery",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "83120430-c817-4f51-8be8-dffc817ec188"
+    },
+    {
+      "name": "Russ Goodman",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9bf773d5-7272-4fe0-9033-e3bd8930836c"
+    },
+    {
+      "name": "Clint Dixon",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5c0c3808-0d01-43d6-ba77-4ca78e868e99"
+    },
+    {
+      "name": "Jason Anavitarte",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0761f7c4-67ba-4f38-9ea0-cd22c17b9065"
+    },
+    {
+      "name": "Chuck Payne",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b8cc3d66-9849-4586-acf1-b933bc920036"
+    },
+    {
+      "name": "Greg Dolezal",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a9c06c0b-b8a0-4a2c-9762-ab1f4bea97fb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-67-2023.introduced.pdf",
+      "sha256": "c8361220f55044477aad78611a1eb5f5da1e7c9f28511fd64f5b211bc1e28240"
+    }
+  },
+  "operative_text": "SECTION 1 (adding O.C.G.A. 16-11-183): The following federal acts, laws, executive orders, administrative orders, rules, and regulations shall be considered infringements on the people's right to keep and bear arms, as guaranteed by the Second Amendment to the Constitution of the United States and Article I, Section I, Paragraph 8 of the Constitution of Georgia, within the borders of this state: (1) Any tax, levy, fee, or stamp imposed on firearms, firearm accessories, or ammunition not common to all other goods and services and that might reasonably be expected to create a chilling effect on the purchase or ownership of those items by law-abiding citizens; (2) Any registering or tracking of firearms, firearm accessories, or ammunition; (3) Any registering or tracking of the owners of firearms, firearm accessories, or ammunition; (4) Any act forbidding the possession, ownership, or use or transfer of a firearm, firearm accessory, or ammunition by law-abiding citizens; and (5) Any act ordering the confiscation of firearms, firearm accessories, or ammunition from law-abiding citizens.\nSECTION 1 (adding O.C.G.A. 16-11-184): All federal acts, laws, executive orders, administrative orders, rules, and regulations, regardless of whether enacted or issued before or after the effective date of this Act, that infringe on the people's right to keep and bear arms, as guaranteed by the Second Amendment to the Constitution of the United States and Article I, Section I, Paragraph 8 of the Constitution of Georgia, shall be invalid to this state, shall not be recognized by this state, shall be specifically rejected by this state, and shall not be enforced by this state.\nSECTION 1 (adding O.C.G.A. 16-11-186): No person or entity, including any public officer or employee of this state or any political subdivision thereof, shall have the authority to enforce or attempt to enforce any federal acts, laws, executive orders, administrative orders, rules, regulations, statutes, or ordinances infringing on the right to keep and bear arms set forth in Code Section 16-11-183.\nSECTION 1 (adding O.C.G.A. 16-11-187): (a) Any political subdivision or law enforcement agency that employs a law enforcement officer who knowingly violates Code Section 16-11-186 or otherwise knowingly deprives a citizen of this state of the rights and privileges ensured by the Second Amendment to the Constitution of the United States or Article I, Section I, Paragraph 8 of the Constitution of Georgia, while acting under the color of any state or federal law, shall be liable to the injured party in an action at law, suit in equity, or other proper proceeding for redress and subject to a civil penalty of $50,000.00 per occurrence."
+}

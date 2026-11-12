@@ -1,0 +1,68 @@
+{
+  "id": "GA-HB-64-2025",
+  "scope": "state:ga",
+  "title": "HB64 (2025-2026 Regular Session): Crimes and offenses; require an owner of an assault weapon to procure and maintain sufficient liability insurance",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/69376",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/229987"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mary Oliver",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "96b4b0dd-d110-4c17-9554-f17b05d03604"
+    },
+    {
+      "name": "Michelle Au",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9cdee7d8-43d6-4596-8982-55b006f7754c"
+    },
+    {
+      "name": "Saira Draper",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ef81fdd6-14af-4aef-b621-fee3f084402c"
+    },
+    {
+      "name": "Shea Roberts",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9f5a6746-3053-4e18-90c4-5418a240e679"
+    },
+    {
+      "name": "Karen Lupton",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "41b2aaee-62c1-48a3-8d88-7b4406ff2caf"
+    },
+    {
+      "name": "Mary Williams",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "03d68da6-c1e0-4c48-b732-4cd9bc4febfd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-64-2025.introduced.pdf",
+      "sha256": "bd82bd08d126282cd89c1c8a32495be67adf772c440b9bd18fd55235c3aecd5e"
+    }
+  },
+  "operative_text": "SECTION 2 (adding O.C.G.A. 16-11-180(1)): (1) 'Assault weapon' means a semiautomatic rifle that has the ability to accept a detachable high capacity magazine.\nSECTION 2 (adding O.C.G.A. 16-11-181(a)): (a) No later than January 1, 2026, except as provided for in subsection (d) of this Code section, an assault weapon owner shall procure and maintain in full force and effect liability insurance in an amount not less than $1 million for death, injury, or disability to a human being and for damage to property per incident arising out of the ownership, maintenance, operation, or use of an assault weapon. An assault weapon owner shall keep proof or evidence of the minimum insurance coverage required by this Code section at the location where such assault weapon is stored and in his or her immediate possession when such owner possesses the covered assault weapon in public.\nSECTION 2 (adding O.C.G.A. 16-11-181(b)): (b) An assault weapon owner shall provide proof or evidence of the minimum insurance coverage required by this Code section to a law enforcement officer upon the request of such officer. Such proof or evidence shall be satisfied by providing in paper or electronic format the insurance policy declarations page provided to such owner.\nSECTION 2 (adding O.C.G.A. 16-11-182(b)): (b) Except as provided for in subsection (d) of this Code section, any individual who fails to procure and maintain liability insurance in violation of subsection (a) of Code Section 16-11-181 shall be guilty of a misdemeanor and, upon conviction thereof, shall be fined not more than $100.00 for the first offense and not more than $1,000.00 for any subsequent offense.\nSECTION 2 (adding O.C.G.A. 16-11-182(c)): (c) Any individual who fails to provide proof or evidence of the minimum insurance coverage as provided for in violation of subsection (b) of Code Section 16-11-181 shall be guilty of a misdemeanor and, upon conviction thereof, shall be fined not more than $100.00 for the first offense and not more than $1,000.00 for any subsequent offense.\nSECTION 3 (adding O.C.G.A. 33-7-3.2(b)): (b) An insurer that issues a liability insurance policy as provided for in subsection (a) of this Code section shall not request or require an insured to provide the serial number of or any other information about the specific assault weapon to be covered as a condition of issuing such policy."
+}
