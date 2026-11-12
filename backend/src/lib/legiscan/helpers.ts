@@ -56,6 +56,9 @@ const NICKNAME_GROUPS: Array<[string, string]> = [
   ['clint', 'clinton'], ['priscilla', 'pricilla'],
   // gun-policy GA, 2026-11-12: Sen. Rick Williams (HD-145, then SD-25) is printed "Ricky" by LegiScan (people_id 18708).
   ['rick', 'ricky'],
+  // voting-rights TN, 2026-11-12: Sen. Janice Bowling (SD-16) is printed "Janince" by LegiScan on some records (people_id
+  // 15131; a LegiScan misspelling, as with Pricilla above), e.g. the 2013 SB 125 Senate concurrence roll call 259248.
+  ['janice', 'janince'],
 ];
 
 const NICKNAME_MAP: Map<string, Set<string>> = (() => {
