@@ -12,6 +12,8 @@ Python as `python3 -I scripts/stage5/<tool>.py`. `<batch>` is the batch folder, 
 
 | Step | Tool | What it does |
 |---|---|---|
+| code | `coder-inputs.ts --config <json> --rulings <md> --roster <tsv>… --ids <file> --unit state:xx\|federal --name <prefix> --out <dir> --coded-dir <dir> [--size 20] [--store <dir>]` | per coder batch: the brief, one compact findings file (refuses one that does not rebuild to the store) and an ids list; prints the rulings the unit's coders will not see, and characters before and after |
+| code | `split-codes.ts <coded batch file> --config <json> --codes <dir> [--ids <file>] [--store <dir>] [--replace]` | checks one coder file (`checkCode` plus the bill, label and quote checks in `lib/stage5Ingest.ts`), sets `coded_at` and `evidence_basis`, writes passing codes; the rest go to `<batch>.sendback.md` (exit 3) |
 | 0, 14 | `write-batch.sh <stage5> <batch> <topic> <units> [N\|apply]` | `topic:stage5-write` with `held.txt` / `moved.txt` codes set aside, then put back (even on failure); writes `pids-write.txt` for `readback.ts` |
 | held | `setup_batch.py <stage5> <new batch> --level federal\|state [--state XX] <pid>…` | a held follow-up batch: `pids.txt` = these ids, `moved.txt` = every other coded id in the unit (refuses an id not coded there) |
 | held | `drop_held.py <batch>` | drops `held.txt` / `moved.txt` people from `research.csv` and `evidence.csv`; the full set kept once as `*-with-held.csv` |
@@ -75,7 +77,7 @@ Notes:
   the action line beside the list (Warner, S. 2747). Only when there is none do they fall back to the old window.
 - **Checks.** `python3 -I scripts/stage5/check_tools.py` runs the Python tools on small made-up batches, one check per
   rule (no database, network or node_modules); `--tools <dir>` points it at a tampered copy. The TypeScript helpers are
-  tested with vitest (`lib.test.ts`, `federalVotesPlan.test.ts`).
+  tested with vitest (`lib.test.ts`, `federalVotesPlan.test.ts`, and `../lib/stage5Ingest.test.ts`, `../lib/stage5CoderInputs.test.ts` for the coding tools).
 - `lib.ts` holds the pure helpers (`readCsv`, `sweepHit`, `verifiableWindow`, `unverifiableNote`) and their tests;
   `batch-db.ts` resolves the topic id and the draft season; `_args.py` is the Python tools' argument reader.
 - One-off fixes for a single batch (a person's own sentence added by hand, a page uncited because the research text

@@ -101,9 +101,37 @@ written but not imported would be listed again. Commit the store's
 
 ### 4. Code
 
-Run [templates/stage5-coder-prompt.md](templates/stage5-coder-prompt.md) on the most capable model, one subagent
-per batch of about 20 people, writing `stage5/codes/<politician_id>.json`. The ladder text comes from
-`npm run topic:ladder-lint --prefix backend -- --topic <key> --season draft`.
+One Opus `stage5-coder` subagent per batch of about 20 people. Build the batches with `coder-inputs.ts`; never fill
+[templates/stage5-coder-prompt.md](templates/stage5-coder-prompt.md) by hand.
+
+1. Once per topic, write `stage5/coder-config.json` (topic, season, season and revision ids, codebook version, date,
+   the ladder text from `npm run topic:ladder-lint --prefix backend -- --topic <key> --season draft`, and the
+   evidence basis by level) and `stage5/coder-rulings.md`: the runner rulings and store notes the coders apply, as
+   `## Heading {scope}` sections of `- ` bullets. A scope is `{all}` (the default), `{federal}` or `{state:xx[,yy]}`;
+   a bullet may carry its own scope first. Tag a ruling to one state only when it is about that state's bills and
+   nothing else; a ruling that names another state's bill as an example of a general rule is `{all}`.
+2. Build the batches:
+
+   ```bash
+   npx tsx scripts/stage5/coder-inputs.ts --config <abs>/stage5/coder-config.json --rulings <abs>/stage5/coder-rulings.md \
+     --roster <abs>/stage5/roster.tsv --ids <ids file> --unit state:xx --name xx --out <abs>/stage5/code-briefs --coded-dir <abs>/stage5/coded
+   ```
+
+   Each batch gets a brief, one compact findings file (this topic only, word for word, without source-tracking
+   fields; it refuses to write a file that does not rebuild to exactly what the store holds) and an ids list. It
+   prints each ruling the unit's coders will not see: read that list.
+3. Each coder writes ONE file, `stage5/coded/<batch>.json`. Check it and write the codes:
+
+   ```bash
+   npx tsx scripts/stage5/split-codes.ts <abs>/stage5/coded/<batch>.json --config <abs>/stage5/coder-config.json \
+     --codes <abs>/stage5/codes --ids <abs>/stage5/code-briefs/<batch>.ids.txt
+   ```
+
+   It sets `coded_at` and computes `evidence_basis` from the cited findings (the coder never writes either), runs
+   `checkCode`, and also refuses a bill named in the reasoning that is not in the person's findings, an annex or
+   ruling label (S3, Q2, R5-AZ…) in the reasoning, and quote marks round words in no cited finding or bill text.
+   Passing codes go to `codes/<politician_id>.json`; the rest go, with their reasons, to `coded/<batch>.sendback.md`
+   (exit 3). Hand that file back to a coder for those people only. `--replace` for a re-code after a ruling.
 
 ### Pitfalls the first topic found (voting-rights, Season 3, 2026-10/11)
 
