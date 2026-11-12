@@ -34,18 +34,24 @@
 --     House 63   Lindauer  -> Kippenbrock  how_ended 'retired'
 --     Senate 39  Bassler   -> Ellington    how_ended 'retired'
 --   Office ids are the ones our API reported for each seat's holder on 2026-11-12.
---   Oliver already exists: her person row is read from CC_0381's candidacy row
---   (race_candidates ca3a0f51-5087-4735-84e8-f85b881236a6). Streeter, Kippenbrock and Ellington
---   are inserted unless a same-name person already exists — see the pre-gate, which RAISES rather than
---   guess, because Ellington in particular may already have a row from his earlier House years.
---   To reuse an existing row, put its id in the `reuse_id` column of ca0374_new below and re-run.
+--   All four winners already have person rows, none holding any term or race of their own except
+--   Oliver's candidacy. Measured on production 2026-11-12:
+--     Amy Oliver         a6926086-aa11-4f42-bcd7-bf74c1e1a540  (CC_0381's candidacy ca3a0f51-… links here;
+--                                                              the row is named "Amy Oliver", not "Amy Huffman Oliver")
+--     Kellie Streeter    65aadaef-c855-4fb7-907a-b7adae5d9559
+--     Amy Kippenbrock    d098cb69-71ae-4710-872d-8d43e3f55158
+--     Jeffrey Ellington  6a7a36f8-2fa5-4e1b-bdc6-6df3b63a4ac4  ("Jeffrey", so an exact first-name match missed
+--                                                              him; the pre-gate now compares 3-letter prefixes)
+--   These are reused (`reuse_id` in ca0374_new); nothing is inserted unless reuse_id is NULL.
 --
--- 🔴 PRIOR VALUES (an UPDATE is final; there is no history table). Read from our public API on
+-- 🔴 PRIOR VALUES (an UPDATE is final; there is no history table). Measured on production
 --   2026-11-12. The four outgoing terms are open: term_end NULL; their starts are Borders
 --   2014-11-05, Hall 2022-11-09, Lindauer 2017-01-01 (precision 'year'), Bassler 2014-11-05.
---   how_ended on them is not visible through the API; seat_officeholder only fills it when NULL
---   (COALESCE), so a value already there is kept. politicians.is_incumbent is true for all four.
---   Their office_terms.source values are appended to, never replaced.
+--   seat_officeholder only fills how_ended when NULL (COALESCE), so a value already there is kept.
+--   politicians.is_incumbent is true for the four who left.
+--   The four winners' rows all read source 'indiana_discovery', party NULL, is_active false,
+--   is_incumbent false, is_appointed NULL. This file sets is_active and is_incumbent true and fills
+--   party only where it is NULL. Office_terms.source values are appended to, never replaced.
 --
 -- 🔴 WHAT IS DELIBERATELY NOT WRITTEN.
 --   Senate 46  Andrea Hunley did not run; Allissa Impink was the Democratic nominee, but I could not
@@ -59,8 +65,7 @@
 -- Idempotent: seat_officeholder is idempotent on (office, person, start); the inserts, source appends
 -- and flag writes are guarded on the values they change.
 --
--- NOT YET DRY-RUN. Written without production access. Before applying:
---   node backend/scripts/dry-run-migration.mjs backend/migrations/CA_0374_in_legislature_nov4_seating.sql
+-- Dry-run against production: see the PR. Apply with backend/scripts/apply-migration-file.mjs.
 
 BEGIN;
 
@@ -91,11 +96,11 @@ SELECT * FROM (VALUES
 -- that row instead of inserting (the pre-gate tells you when you must decide).
 CREATE TEMP TABLE ca0374_new ON COMMIT DROP AS
 SELECT * FROM (VALUES
-  ('Kellie Streeter', 'Kellie', 'Streeter',    'Republican', NULL::uuid,
+  ('Kellie Streeter', 'Kellie', 'Streeter',    'Republican', '65aadaef-c855-4fb7-907a-b7adae5d9559'::uuid,
    'CA_0374 Indiana House District 45, elected 2026-11-03 (https://en.wikipedia.org/wiki/2026_Indiana_House_of_Representatives_election, read 2026-11-12)'),
-  ('Amy Kippenbrock', 'Amy',    'Kippenbrock', 'Republican', NULL::uuid,
+  ('Amy Kippenbrock', 'Amy',    'Kippenbrock', 'Republican', 'd098cb69-71ae-4710-872d-8d43e3f55158'::uuid,
    'CA_0374 Indiana House District 63, elected 2026-11-03 (https://en.wikipedia.org/wiki/2026_Indiana_House_of_Representatives_election, read 2026-11-12)'),
-  ('Jeff Ellington',  'Jeff',   'Ellington',   'Republican', NULL::uuid,
+  ('Jeff Ellington',  'Jeff',   'Ellington',   'Republican', '6a7a36f8-2fa5-4e1b-bdc6-6df3b63a4ac4'::uuid,
    'CA_0374 Indiana State Senate District 39, elected 2026-11-03 (https://en.wikipedia.org/wiki/2026_Indiana_Senate_election, read 2026-11-12)')
 ) v(full_name, first_name, last_name, party, reuse_id, source);
 
@@ -139,23 +144,24 @@ BEGIN
                     AND r.id = 'a1d1a61b-4c6f-45fa-805a-bcf8d74aa6b2'
                     AND r.office_id = '847135b4-5bd6-46e2-87e4-41bd792097bd'
                     AND rc.result = 'won'
-                    AND p.full_name = 'Amy Huffman Oliver') THEN
+                    AND p.id = 'a6926086-aa11-4f42-bcd7-bf74c1e1a540') THEN
     RAISE EXCEPTION 'CA_0374 pre-gate: Oliver''s House 62 candidacy is not the won row CC_0381 wrote, on this office';
   END IF;
 
   -- A winner we would insert must not already exist under another source, unless reuse_id says
-  -- which row to use. Raise rather than guess: a same-name row may be a different person.
+  -- which row to use. Raise rather than guess: a same-name row may be a different person. The
+  -- first-name test is a 3-letter prefix so that "Jeff" finds "Jeffrey".
   SELECT string_agg(format('%s (existing id(s): %s)', n.full_name,
-           (SELECT string_agg(p.id::text || ' source=' || coalesce(p.source, '∅'), ', ')
+           (SELECT string_agg(p.id::text || ' ' || p.full_name || ' source=' || coalesce(p.source, '∅'), ', ')
               FROM essentials.politicians p
              WHERE lower(p.last_name) = lower(n.last_name)
-               AND lower(p.first_name) = lower(n.first_name))), '; ')
+               AND left(lower(p.first_name), 3) = left(lower(n.first_name), 3))), '; ')
     INTO v_bad
     FROM ca0374_new n
    WHERE n.reuse_id IS NULL
      AND EXISTS (SELECT 1 FROM essentials.politicians p
                   WHERE lower(p.last_name) = lower(n.last_name)
-                    AND lower(p.first_name) = lower(n.first_name)
+                    AND left(lower(p.first_name), 3) = left(lower(n.first_name), 3)
                     AND coalesce(p.source, '') NOT LIKE 'CA_0374 %');
   IF v_bad IS NOT NULL THEN
     RAISE EXCEPTION 'CA_0374 pre-gate: a same-name person already exists — check each and set reuse_id in ca0374_new (or confirm a different person and rename the check): %', v_bad;
@@ -278,10 +284,16 @@ UPDATE essentials.politicians p SET is_incumbent = false
    AND p.is_incumbent IS DISTINCT FROM false
    AND NOT EXISTS (SELECT 1 FROM essentials.office_current_holder och WHERE och.politician_id = p.id);
 
-UPDATE essentials.politicians p SET is_incumbent = true
-  FROM ca0374_seats s
- WHERE p.id = s.incoming_id
-   AND p.is_incumbent IS DISTINCT FROM true;
+-- The four winners: active and incumbent, and their party where we stored none.
+UPDATE essentials.politicians p
+   SET is_incumbent = true,
+       is_active    = true,
+       party        = coalesce(p.party, w.party)
+  FROM (SELECT s.incoming_id,
+               CASE WHEN s.incoming_name = 'Amy Huffman Oliver' THEN 'Democratic' ELSE 'Republican' END AS party
+          FROM ca0374_seats s) w
+ WHERE p.id = w.incoming_id
+   AND (p.is_incumbent IS DISTINCT FROM true OR p.is_active IS DISTINCT FROM true OR p.party IS NULL);
 
 -- ▼▼ BLOCK B — PASTE AFTER YOUR LAST WRITE TO essentials.office_terms, BEFORE COMMIT ▼▼
 
