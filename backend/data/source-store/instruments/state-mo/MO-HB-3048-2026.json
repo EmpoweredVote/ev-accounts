@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-3048-2026",
+  "scope": "state:mo",
+  "title": "HB3048 (2026 Regular Session): Prohibits certain individuals from possessing a firearm due to domestic violence",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB3048&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/6701H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Del Taylor",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "500a0b90-6c1b-4bcc-8ee2-a2451eb207b0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-3048-2026.introduced.pdf",
+      "sha256": "c2616ec1c95ca1cac426e455a7a56504f27f3fbc1978875826fbdcb8307d5747"
+    }
+  },
+  "operative_text": "Section 455.050 (RSMo): 4. If, after a hearing for any full order of protection, the court issues an order of protection, the court may also: (1) Prohibit the respondent from knowingly possessing or purchasing any firearm while the order is in effect; (2) Inform the respondent of such prohibition in writing and, if the respondent is present, orally; and (3) Forward the order to the Missouri state highway patrol so that the Missouri state highway patrol can update the respondent's record in the National Instant Criminal Background Check System (NICS). Upon receiving an order under this subsection, the Missouri state highway patrol shall notify the Federal Bureau of Investigation within twenty-four hours.\nSection 455.523 (RSMo): 2. If, after a hearing for any full order of protection, the court issues an order of protection, the court may also: (1) Prohibit the respondent from knowingly possessing or purchasing any firearm while the order is in effect; (2) Inform the respondent of such prohibition in writing and, if the respondent is present, orally; and (3) Forward the order to the Missouri state highway patrol so that the Missouri state highway patrol can update the respondent's record in the National Instant Criminal Background Check System (NICS). Upon receiving an order under this subsection, the Missouri state highway patrol shall notify the Federal Bureau of Investigation within twenty-four hours.\nSection 565.076 (RSMo): 3. Upon a person's conviction for the offense of domestic assault in the fourth degree, the court shall forward the record of conviction to the Missouri state highway patrol so that the Missouri state highway patrol can update the respondent's record in the National Instant Criminal Background Check System (NICS). Upon receiving a record under this subsection, the Missouri state highway patrol shall notify the Federal Bureau of Investigation within twenty-four hours.\nSection 565.227 (RSMo): 5. Upon a person's conviction for the offense of stalking in the second degree, the court shall forward the record of conviction to the Missouri state highway patrol so that the Missouri state highway patrol can update the respondent's record in the National Instant Criminal Background Check System (NICS). Upon receiving a record under this subsection, the Missouri state highway patrol shall notify the Federal Bureau of Investigation within twenty-four hours.\nSection 571.070 (RSMo): 1. A person commits the offense of unlawful possession of a firearm if such person knowingly has any firearm in his or her possession and: (3) Such person has been convicted of a misdemeanor offense of domestic violence under the laws of this state, or of a crime under the laws of any state or of the United States that if committed in this state would be a misdemeanor offense of domestic violence; or (4) Such person is subject to an order of protection granted under sections 455.010 to 455.095 or sections 455.500 to 455.538 that was issued after a hearing of which the person had actual notice and at which the person had an opportunity to participate or such person is subject to an equivalent order issued under the laws of another state or the United States.\nSection 571.070 (RSMo): 4. (2) \"Misdemeanor offense of domestic violence\": (a) Domestic assault in the fourth degree under section 565.076; (b) Stalking in the second degree under section 565.227; or (c) Any misdemeanor offense committed by a family or household member of the victim that involves the use or attempted use of physical force or the threatened use of a deadly weapon."
+}

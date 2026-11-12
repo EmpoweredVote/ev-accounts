@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-759-2020",
+  "scope": "state:mo",
+  "title": "SB759 (2020 Regular Session): Increases the penalties for the offenses of unlawful transfer of weapons and fraudulent purchase of firearms",
+  "urls": [
+    "https://www.senate.mo.gov/20info/BTS_Web/Bill.aspx?SessionType=R&BillID=26838161",
+    "https://www.senate.mo.gov/20info/pdf-bill/intro/SB759.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Robert Onder",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8fd53bf9-95dc-44b4-9826-192c97979fd5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-759-2020.introduced.pdf",
+      "sha256": "0325751207ef1ec0a3c2db92fdfd095cf589ed4bfd8ddc4447e6724ce49bf08b"
+    }
+  },
+  "operative_text": "Section 571.060 (RSMo): Unlawful transfer of weapons under subdivision (1) of subsection 1 of this section is a class D felony; unlawful transfer of weapons under subdivisions (2) and (3) of subsection 1 of this section is a class E felony.\nSection 571.063 (RSMo): Fraudulent purchase of a firearm is a class D felony."
+}

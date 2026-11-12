@@ -1,0 +1,44 @@
+{
+  "id": "MO-HB-693-2025",
+  "scope": "state:mo",
+  "title": "HB693 (2025 Regular Session): Adds improperly transporting or storing a firearm in a motor vehicle to the offense of unlawful use of a weapon",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB693&year=2025&code=R",
+    "https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/1658H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Marty Murray",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "650a7d81-583a-4bc3-82e7-1579f15012df"
+    },
+    {
+      "name": "Tonya Rush",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d8b33ae2-38ba-40da-82fe-09c91a7298a8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-693-2025.introduced.pdf",
+      "sha256": "fb3a9527a3dbacfe79b462834e6ce0d870c8313394f303301bb1691f4f47ea17"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): Possesses a firearm while also knowingly in possession of a controlled substance that is sufficient for a felony violation of section 579.015; or\nSection 571.030 (RSMo): Transports or stores a loaded, concealed firearm in a motor vehicle and outside of a locked container or locked trunk.\nSection 571.030 (RSMo): Subdivisions (1) and (12) of subsection 1 of this section do not apply to any person nineteen years of age or older or eighteen years of age or older and a member of the United States Armed Forces, or honorably discharged from the United States Armed Forces, transporting a concealable firearm in the passenger compartment of a motor vehicle, so long as: (1) Such firearm is otherwise lawfully possessed; and (2) One of the following: (a) If the firearm is a handgun, the firearm is under the direct control of the person carrying the firearm; (b) The person is also in possession of an exposed firearm or projectile weapon for the lawful pursuit of game; (c) The person and motor vehicle are in the person's dwelling unit or upon premises over which the person has possession, authority, or control; or (d) The person is traveling on a continuous journey peaceably through this state.\nSection 571.030 (RSMo): Subdivision (1), (6), (7), (8), or (12) of subsection 1 of this section shall be guilty of a class B misdemeanor"
+}

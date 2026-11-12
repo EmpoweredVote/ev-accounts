@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-922-2026",
+  "scope": "state:mo",
+  "title": "SB922 (2026 Regular Session): Creates the offense of unlawful possession of a firearm by a minor",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=548",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB922.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Stephen Webber",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fade05cb-857d-4a1d-9323-7723fd9af94b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-922-2026.introduced.pdf",
+      "sha256": "83a37796444ea9d710a837f0d0d8bfece8c730a12020b058c03a1adab67963a3"
+    }
+  },
+  "operative_text": "Section 571.068 (RSMo): 1. A person who is less than eighteen years of age commits the offense of unlawful possession of a firearm by a minor if such person knowingly possesses a handgun or ammunition that is only suitable for a handgun.\nSection 571.068 (RSMo): 2. The offense of unlawful possession of a firearm by a minor is a class A misdemeanor.\nSection 571.068 (RSMo): 3. This offense shall not apply to: (2) A person under the age of eighteen who is a member of the Armed Forces of the United States or the National Guard who possesses or is armed with a handgun in the line of duty; (3) A transfer by inheritance of title of a handgun or ammunition to a person under the age of eighteen; or (4) The possession of a handgun or ammunition by a person under the age of eighteen taken in defense of the person or other persons against an intruder into the residence of the person or a residence in which the person is invited as a guest.\nSection 571.095 (RSMo): 2. A firearm or ammunition which is in the possession of a minor in violation of section 571.068, the possession of which is transferred to the minor in circumstances in which the transferor is not in violation of section 571.060 or section 571.080, shall not be subject to permanent confiscation if its possession by the minor subsequently becomes unlawful because of the conduct of the minor, but shall be returned to the lawful owner when such firearm is no longer required for the purposes of investigation or prosecution."
+}

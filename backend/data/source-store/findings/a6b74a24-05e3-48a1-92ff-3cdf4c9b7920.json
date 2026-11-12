@@ -110,6 +110,498 @@
         "fetched_at": "2026-11-04T14:14:55.219Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "99741e9ddbe5bf0c346c00500e1e973e9e4473153b6b122a46227f08504449ca",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB1462&year=2022&code=R",
+      "date": "2022-03-09",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1462-2022",
+      "act": "yea",
+      "motion": "Third Read and Passed (H) (House: HB 1462 HBs 3rd READ - INFORMAL)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HB 1462 HBs 3rd READ - INFORMAL), 2022-03-09: yea (tally 101–40); census gate: none.",
+      "subjects": [
+        "concealed carry permit age lowered to 18",
+        "carry allowed on public transit and bus lines",
+        "places of worship removed from banned carry list",
+        "new offense of negligent discharge in a city (Blair's Law)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1462-2022.engrossed.pdf",
+          "sha256": "6218c0dc6300071667b7cf2ddda8319623fdde5c11184edabffc7a8a1b362c4c"
+        }
+      }
+    },
+    {
+      "id": "1f04d6e5cf313fc3d77fdc51f9e6a7f0350086b202728e9a834772b29e9c4cf4",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB16&year=2020&code=S1",
+      "date": "2020-08-25",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-16-SP1-2020",
+      "act": "yea",
+      "motion": "Third Read and Passed (H) (House: HB 16 HBs FOR THIRD READING - INFORMAL)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HB 16 HBs FOR THIRD READING - INFORMAL), 2020-08-25: yea (tally 103–45); census gate: none.",
+      "subjects": [
+        "new felony for giving a firearm to a minor to evade arrest",
+        "unlawful firearm transfer wording and penalties revised"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-16-SP1-2020.comm-sub.pdf",
+          "sha256": "3a49fbdc8dd3ccfba23a9b8a172a0a95260c8a990cfff818363dfd35e462fb18"
+        }
+      }
+    },
+    {
+      "id": "302252f254f9ec52f30448e4e34852594a998240d4fea9d5f4fcbbabaacdff08",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB282&year=2023&code=R",
+      "date": "2023-04-17",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-282-2023",
+      "act": "yea",
+      "motion": "Third Read and Passed (H) (House: HB 282 HBs FOR THIRD READING)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HB 282 HBs FOR THIRD READING), 2023-04-17: yea (tally 102–45); census gate: none.",
+      "subjects": [
+        "concealed carry permit minimum age lowered to eighteen",
+        "carry on public transit allowed for permit holders",
+        "church and house of worship carry consent rule repealed",
+        "military pistol-qualification training route"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-282-2023.engrossed.pdf",
+          "sha256": "e5882fc078a239aefc01faf3f6b9567d04d41c7050879cd0f637ffcc5e12141e"
+        }
+      }
+    },
+    {
+      "id": "4a85d659231abd31ba77b2b1adae92453ea1e6f626cd3fd0b0266f6cecfc54f8",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB52&year=2021&code=R",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-52-2021",
+      "act": "yea",
+      "motion": "Third Read and Passed (H) (House: HB 52 HBs FOR THIRD READING)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HB 52 HBs FOR THIRD READING), 2021-03-08: yea (tally 124–32); census gate: none.",
+      "subjects": [
+        "concealed carry allowed on public transit and buses",
+        "bus and terminal weapon bans exempt permit holders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-52-2021.engrossed.pdf",
+          "sha256": "99f411c6e782840356eea35b7d6670999f38fc528e62fa0eba20a8cf0ab4a4bc"
+        }
+      }
+    },
+    {
+      "id": "6b25e4fcd508a52ec4819f0f04269c767bbe344b84349e48e0f68611d7bfe009",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB944&year=2021&code=R",
+      "date": "2021-04-19",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-944-2021",
+      "act": "yea",
+      "motion": "Third Read and Passed (H) (House: HB 944 HBs 3rd READ - INFORMAL)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HB 944 HBs 3rd READ - INFORMAL), 2021-04-19: yea (tally 109–36); census gate: none.",
+      "subjects": [
+        "firearm businesses essential and local limits preempted",
+        "concealed carry permit age lowered to eighteen",
+        "permit holders may use public transit while carrying",
+        "new offence of negligent discharge in a municipality (Blair's Law)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-944-2021.engrossed.pdf",
+          "sha256": "83bdd5e2d59647a35fb5fbc8cd91a45c72b290337d4b89c7e714db3ede02ff26"
+        }
+      }
+    },
+    {
+      "id": "a37037758314525673a63e821a51764bfff7c5dc40b291d533cd05fca0209d15",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB1462&year=2022&code=R",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-1462-2022",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-1462-2022 (LegiScan sponsor list): HB1462 (2022 Regular Session): Changes the law regarding firearms.",
+      "subjects": [
+        "concealed carry permit age lowered to 18",
+        "carry allowed on public transit and bus lines",
+        "places of worship removed from banned carry list",
+        "new offense of negligent discharge in a city (Blair's Law)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1462-2022.engrossed.pdf",
+          "sha256": "6218c0dc6300071667b7cf2ddda8319623fdde5c11184edabffc7a8a1b362c4c"
+        }
+      }
+    },
+    {
+      "id": "636a82a8b23a42c52bd07cadeea39a860e4e38a6e06f4eafcd88c782ab173d68",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB1708&year=2024&code=R",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-1708-2024",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-1708-2024 (LegiScan sponsor list): HB1708 (2024 Regular Session): Changes the law regarding firearm concealed carry permits.",
+      "subjects": [
+        "concealed carry permit age lowered to eighteen",
+        "permit holders may carry on public transit and buses",
+        "church carry restriction removed",
+        "more people exempt from weapons offences"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1708-2024.introduced.pdf",
+          "sha256": "b7bc077ea94928db6e73d9c6b474c4520f33ed5c46ceb3117d91d6bd036b3877"
+        }
+      }
+    },
+    {
+      "id": "bbe38cb6702a825ad29363beb3a5412a4bc951eb32a93700ed474672dbf0ad5c",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB1722&year=2020&code=R",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-1722-2020",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-1722-2020 (LegiScan sponsor list): HB1722 (2020 Regular Session): Allows concealed carrying of firearms on public transportation systems and transporting nonfunctional or unloaded firearms on public buses..",
+      "subjects": [
+        "concealed carry allowed on public transportation",
+        "transit weapon bans exempt permit holders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1722-2020.introduced.pdf",
+          "sha256": "3dc961f72c00493e4ce5078a2ed45cab5b4944b1ce82ba2d0a1713bff62662c7"
+        }
+      }
+    },
+    {
+      "id": "5aaabec467e05d1e4693daf22c692c9671cf2fbd7654ec6b7fab03078f8e83e3",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB282&year=2023&code=R",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-282-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-282-2023 (LegiScan sponsor list): HB282 (2023 Regular Session): Changes the law regarding firearm concealed carry permits.",
+      "subjects": [
+        "concealed carry permit minimum age lowered to eighteen",
+        "carry on public transit allowed for permit holders",
+        "church and house of worship carry consent rule repealed",
+        "military pistol-qualification training route"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-282-2023.engrossed.pdf",
+          "sha256": "e5882fc078a239aefc01faf3f6b9567d04d41c7050879cd0f637ffcc5e12141e"
+        }
+      }
+    },
+    {
+      "id": "8be7bf94fefcabf8f2efd10c10d455cd149269e65dd7de1c7e1b27fd4649b4ba",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB52&year=2021&code=R",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-52-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-52-2021 (LegiScan sponsor list): HB52 (2021 Regular Session): Allows concealed carrying of firearms on public transportation systems and transporting nonfunctional or unloaded firearms on public buses.",
+      "subjects": [
+        "concealed carry allowed on public transit and buses",
+        "bus and terminal weapon bans exempt permit holders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-52-2021.engrossed.pdf",
+          "sha256": "99f411c6e782840356eea35b7d6670999f38fc528e62fa0eba20a8cf0ab4a4bc"
+        }
+      }
+    },
+    {
+      "id": "bc026e73393d7e4d8082337dc08fba8cb08a8e7ac1da7437a4367b6ef4383b88",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=364",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-1078-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-1078-2026 (LegiScan sponsor list): SB1078 (2026 Regular Session): Modifies provisions relating to weapons.",
+      "subjects": [
+        "permit holders may carry on public transit and buses",
+        "weapons bans on bi-state agency property and buses made subject to section 571.107",
+        "attorney general and staff added to persons exempt from weapons offences"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1078-2026.introduced.pdf",
+          "sha256": "ff458fc35991beae06cd6165872dbdc865b86e52db30f0ed4370b03ad5746452"
+        }
+      }
+    },
+    {
+      "id": "0d67e291babdd44338cc45a414dfb031a979693c86012443190cac84ed5ad293",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=631",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-1205-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-1205-2026 (LegiScan sponsor list): SB1205 (2026 Regular Session): Modifies provisions relating to the carrying of weapons by the Attorney General.",
+      "subjects": [
+        "attorney general and staff added to weapons-offence exemption list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1205-2026.introduced.pdf",
+          "sha256": "a81534161242269b06aef1b346cec55e7bd2019b5acec057d95b6f08180eb49d"
+        }
+      }
+    },
+    {
+      "id": "a5d22660b27010715efc9f0ea8447bd8f209a33c706055b35d816a2fc2cb9354",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=34627",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-1459-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-1459-2026 (LegiScan sponsor list): SB1459 (2026 Regular Session): Creates the \"Anti-Red Flag Gun Seizure Act\".",
+      "subjects": [
+        "state and local agencies barred from enforcing red flag laws",
+        "$50,000 civil penalty per occurrence",
+        "no federal money to enforce such laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1459-2026.introduced.pdf",
+          "sha256": "a0dd1e718571b935e56a3b21d9febb39e9b02ac910b94e4561e008c958f1f056"
+        }
+      }
+    },
+    {
+      "id": "2164eb03390bc74366a0b6c908e851ba4333eb82b83537490df497f29decce3f",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/25info/BTS_Web/Bill.aspx?SessionType=R&BillID=188",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-77-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-77-2025 (LegiScan sponsor list): SB77 (2025 Regular Session): Modifies provisions relating to weapons.",
+      "subjects": [
+        "concealed carry allowed on public transportation",
+        "permit holders exempt from bus and transit weapon bans"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-77-2025.introduced.pdf",
+          "sha256": "1bfa483ae88854e46a84825dc51eff5b4a722c552cfbcbe9e1d5a6f546ef97c6"
+        }
+      }
+    },
+    {
+      "id": "9069915fd7b38d6bc826dc2430c8f8698ced542f8e01ce1e3502bfcd3e610f5f",
+      "kind": "own-words",
+      "url": "https://www.missourinet.com/2026/02/24/missouri-lawmakers-reload-gun-debate-with-new-tax-breaks-and-public-transit-carry-push/",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "passage": "In Missouri in a way, we actually strip it from them the moment they enter to a bus terminal or a tram, and that shouldn't be. We pay tax dollars for some of these transportation systems, and some of these systems are dangerous, and they do carry reputations for violent crime like rapes, murder, and assault.",
+      "note": "Quoted by Missourinet on his bill to let people carry guns on public transit; he says the right to self-defense is lost at transit stations and that transit is publicly funded and can be dangerous.",
+      "subjects": [
+        "carry a gun on public transit",
+        "right to self-defense"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.824Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "64b2d2b399584e17596dbbc98952c0d837e2813b8976d34cbf7b84bbef300873",
+      "kind": "own-words",
+      "url": "https://www.stlpr.org/government-politics-issues/2024-01-09/missouri-house-republican-again-introduces-bill-allowing-guns-on-public-transportation",
+      "date": "2024-01-09",
+      "date_precision": "day",
+      "passage": "It helps to secure our ability and your constituents' ability to defend themselves on the public transportation system, mind you that they pay for with tax dollars,",
+      "note": "Quoted by St. Louis Public Radio at a House committee hearing on his 2024 bill allowing carry on public transit (and in places of worship, and a lower permit age).",
+      "subjects": [
+        "carry a gun on public transit",
+        "right to self-defense"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.824Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f7ecebce9c565c5fd8f66d0ab2e9d3ee281733a922fbd2126ce940332df22aa8",
+      "kind": "own-words",
+      "url": "https://www.stlpr.org/government-politics-issues/2024-01-09/missouri-house-republican-again-introduces-bill-allowing-guns-on-public-transportation",
+      "date": "2024-01-09",
+      "date_precision": "day",
+      "passage": "If a member comes to you and says, 'Hey, I'd like to carry,' and you don't necessarily know that member, but you feel like as pastor you're taking on liability to say, 'Well, OK, you can carry,' he didn't want to be put in that position where he had to decide one way or another,",
+      "note": "Quoted by St. Louis Public Radio explaining why a pastor he spoke with wanted the default to allow permit holders to carry in churches.",
+      "subjects": [
+        "carry a gun in a place of worship"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.824Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6787d1af358275d5ac1f2f8011a7524d775eb4db3004f5f6a888db750a5f98c2",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/25info/pdf-jrnl/DAY36.pdf",
+      "date": "2025-03-12",
+      "date_precision": "day",
+      "instrument_id": "MO-SB-77-2025",
+      "act": "other",
+      "motion": "Moved SB 77 up for perfection, offered and moved adoption of Senate Substitute for SB 77 (weapons); placed on the Informal Calendar at his request with amendments pending",
+      "note": "Senate Journal shows him offering a substitute that rewrites eleven sections of Missouri weapons law, then setting the bill aside with amendments pending. An amendment from another senator would add a penalty for anyone who knowingly deprives a Missouri citizen of rights ensured by the Second Amendment.",
+      "subjects": [
+        "carry a gun on public transit",
+        "changes to Missouri weapons law",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.824Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -161,6 +653,38 @@
       "found": 4,
       "at": "2026-11-04T14:14:55.219Z",
       "by": "identity-mo-2026-11-04b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun on public transit",
+        "carry a gun in a place of worship",
+        "lower the age for a carry permit",
+        "Second Amendment rights",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "ghost guns",
+        "castle doctrine"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia: blocked: https://ballotpedia.org/Adam_Schnelting (403)",
+        "official Senate member page: blocked: https://www.senate.mo.gov/schnelting/ (server error page); https://senate.mo.gov/mem23 returned 404",
+        "campaign site: no campaign site found in search results",
+        "Missouri Senate Journal, Day 36 (2025-03-12): https://www.senate.mo.gov/25info/pdf-jrnl/DAY36.pdf (floor action on SB 77)",
+        "Missouri Senate Minute script 2025-03-13: nothing usable (short audio cue only, no readable quote)",
+        "Missouri Senate Minute video 2025-03-13: not reviewed: https://senate.mo.gov/Media/YouTubeLink/914",
+        "news: Missourinet 2026-02-24; St. Louis Public Radio 2024-01-09",
+        "sponsor list: covered by LegiScan bulk check",
+        "vote pages: covered by LegiScan bulk check",
+        "ontheissues.org and Wikipedia: leads only, not cited"
+      ],
+      "found": 4,
+      "at": "2026-11-12T21:23:45.824Z",
+      "by": "source-collector"
     }
   ]
 }

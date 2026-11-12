@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-700-2025",
+  "scope": "state:mo",
+  "title": "SB700 (2025 Regular Session): Lowers from 19 to 18 the age at which a person can obtain a concealed carry permit, and makes a corresponding change to the offense of unlawful use of weapons",
+  "urls": [
+    "https://www.senate.mo.gov/25info/BTS_Web/Bill.aspx?SessionType=R&BillID=4845585",
+    "https://www.senate.mo.gov/25info/pdf-bill/intro/SB700.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mike Moon",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3d0fda4e-1322-467e-bfcf-38a5c348b096"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-700-2025.introduced.pdf",
+      "sha256": "422e6238316f606980a979f217c76212841c1153dc3e66ce3114740e115bd590"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): 3. Subdivision (1) of subsection 1 of this section does not apply to any person eighteen years of age or older transporting a concealable firearm in the passenger compartment of a motor vehicle, so long as such concealable firearm is otherwise lawfully possessed, nor when the actor is also in possession of an exposed firearm or projectile weapon for the lawful pursuit of game, or is in his or her dwelling unit or upon premises over which the actor has possession, authority or control, or is traveling in a continuous journey peaceably through this state.\nSection 571.101 (RSMo): 2. A concealed carry permit issued pursuant to subsection 7 of this section shall be issued by the sheriff or his or her designee of the county or city in which the applicant resides, if the applicant: (1) Is at least eighteen years of age, is a citizen or permanent resident of the United States and either: (a) Has assumed residency in this state; or (b) Is a member of the Armed Forces stationed in Missouri, or the spouse of such member of the military;\nSection 571.101 (RSMo): 2. (2) Is at least eighteen years of age, is a citizen of the United States, and either: (a) Has assumed residency in this state; (b) Is a member of the Armed Forces stationed in Missouri; or (c) The spouse of such member of the military stationed in Missouri and eighteen years of age;\nSection 571.205 (RSMo): 3. A Missouri lifetime or extended concealed carry permit shall be issued by the sheriff or his or her designee of the county or city in which the applicant resides, if the applicant: (1) Is at least eighteen years of age, is a citizen or permanent resident of the United States, and has assumed residency in this state;"
+}

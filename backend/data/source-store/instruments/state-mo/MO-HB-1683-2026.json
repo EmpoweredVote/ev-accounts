@@ -1,0 +1,44 @@
+{
+  "id": "MO-HB-1683-2026",
+  "scope": "state:mo",
+  "title": "HB1683 (2026 Regular Session): Establishes the \"Anti-Red Flag Gun Seizure Act\"",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB1683&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/4404H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Burt Whaley",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "436ac3b6-8456-4f63-8705-a097722daa58"
+    },
+    {
+      "name": "John Hewkin",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "645cc8f7-5299-48bf-999c-0c1eb54788dc"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1683-2026.introduced.pdf",
+      "sha256": "007dbf4d0eb8b094366ede462d75effd5b75667a692102943927cbe54e838955"
+    }
+  },
+  "operative_text": "Section 1.486 (RSMo): 3. Any federal order of protection, other judicial order issued by a federal court, or federal executive order that is a red flag law or otherwise directs the confiscation of any firearm, firearm accessory, or ammunition from any law-abiding citizen within the borders of this state shall not be enforced in this state by any state agency, political subdivision, or state or local law enforcement agency.\nSection 1.486 (RSMo): 4. No state agency, political subdivision, or state or local law enforcement agency shall receive any federal moneys for the purpose of enforcing any federal statute, federal rule, federal executive order, or federal judicial order or findings, or for the purpose of enforcing any state statute, state rule, state executive order, or state judicial order or findings, that would have the effect of enforcing a red flag law against a Missouri resident.\nSection 1.486 (RSMo): 5. No state entity or employee thereof, political subdivision or employee thereof, or other entity or person shall have the authority to enforce or attempt to enforce a red flag law regardless of the red flag law's origin or the authority of the issuing entity. This subsection shall not apply to any agent of the federal government enforcing a federal law or federal order.\nSection 1.486 (RSMo): 7. (1) A political subdivision or state or local law enforcement agency that employs a law enforcement officer who knowingly acts to violate this section and enforce a red flag law under the color of any state or federal statute, rule, executive order, or judicial order or finding shall be liable to the party against whom the red flag law was enforced in an action at law, suit in equity, or other proper proceeding for redress and shall be subject to a civil penalty of fifty thousand dollars per occurrence."
+}

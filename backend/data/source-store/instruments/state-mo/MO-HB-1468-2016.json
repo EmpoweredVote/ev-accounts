@@ -1,0 +1,713 @@
+{
+  "id": "MO-HB-1468-2016",
+  "scope": "state:mo",
+  "title": "HB1468 (2016 Regular Session): Allows any person to carry a concealed firearm anywhere that isn't expressly prohibited by law",
+  "urls": [
+    "https://www.house.mo.gov/billsummary.aspx?bill=HB1468&year=2016&code=R",
+    "https://www.house.mo.gov/billtracking/bills161/billpdf/intro/HB1468I.PDF",
+    "https://www.house.mo.gov/billtracking/bills161/billpdf/perf/HB1468P.PDF"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Eric Burlison",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "df39a562-e7e8-481f-a2ed-fa0d2f0c3a79"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2016-04-26",
+      "body": "MO House",
+      "motion": "Third Read and Passed (H) (House: HB 1468 HBs FOR THIRD READING)",
+      "kind": "roll-call",
+      "yes": 112,
+      "no": 37,
+      "absent": 13,
+      "note": "LegiScan roll call 538072; NV counted with absent in the tally, members keep LegiScan marks",
+      "members": [
+        {
+          "name": "Sue Allen",
+          "vote": "yea"
+        },
+        {
+          "name": "Eric Burlison",
+          "vote": "yea",
+          "politician_id": "df39a562-e7e8-481f-a2ed-fa0d2f0c3a79"
+        },
+        {
+          "name": "Mike Colona",
+          "vote": "nay"
+        },
+        {
+          "name": "Pat Conway",
+          "vote": "nay"
+        },
+        {
+          "name": "Tony Dugger",
+          "vote": "yea"
+        },
+        {
+          "name": "Linda Black",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Flanigan",
+          "vote": "yea"
+        },
+        {
+          "name": "Denny Hoskins",
+          "vote": "yea",
+          "politician_id": "b7318128-42e4-4285-989d-11a849f76e95"
+        },
+        {
+          "name": "Jacob Hummel",
+          "vote": "nay"
+        },
+        {
+          "name": "Shelley Keeney Taylor",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeanne Kirkton",
+          "vote": "nay"
+        },
+        {
+          "name": "Andrew Koenig",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Kratky",
+          "vote": "nay"
+        },
+        {
+          "name": "Mike Lair",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Leara",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom McDonald",
+          "vote": "nay"
+        },
+        {
+          "name": "Margo McNeil",
+          "vote": "nay"
+        },
+        {
+          "name": "Stacey Newman",
+          "vote": "nay"
+        },
+        {
+          "name": "Charlie Norr",
+          "vote": "nay"
+        },
+        {
+          "name": "Sharon Pace",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Parkinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Rochelle Walton Gray",
+          "vote": "nay"
+        },
+        {
+          "name": "Stephen Webber",
+          "vote": "yea",
+          "politician_id": "fade05cb-857d-4a1d-9323-7723fd9af94b"
+        },
+        {
+          "name": "Anne Zerr",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Engler",
+          "vote": "yea"
+        },
+        {
+          "name": "Kurt Bahr",
+          "vote": "absent"
+        },
+        {
+          "name": "Jason Barnes",
+          "vote": "absent"
+        },
+        {
+          "name": "Mike Bernskoetter",
+          "vote": "yea",
+          "politician_id": "49fa67cb-ad0d-482f-8279-5df0fc745bbd"
+        },
+        {
+          "name": "Rick Brattin",
+          "vote": "yea",
+          "politician_id": "e9ec322c-e997-486d-8202-48423671c800"
+        },
+        {
+          "name": "Cloria Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Cierpiot",
+          "vote": "yea",
+          "politician_id": "64e62a86-0651-45d1-b1c6-04d8f3dceaff"
+        },
+        {
+          "name": "Steve Cookson",
+          "vote": "yea"
+        },
+        {
+          "name": "Sandy Crawford",
+          "vote": "yea",
+          "politician_id": "037a3dd2-f4d8-45d7-b560-081d5dfd85a7"
+        },
+        {
+          "name": "Gary Cross",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Curtman",
+          "vote": "yea"
+        },
+        {
+          "name": "Charlie Davis",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Fitzwater",
+          "vote": "yea"
+        },
+        {
+          "name": "Diane Franklin",
+          "vote": "yea"
+        },
+        {
+          "name": "Keith Frederick",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Hinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Delus Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Caleb Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Kelley",
+          "vote": "abstain"
+        },
+        {
+          "name": "Nick Marshall",
+          "vote": "yea"
+        },
+        {
+          "name": "Karla May",
+          "vote": "absent",
+          "politician_id": "615fdf2b-c769-4606-a024-fc8e214051bc"
+        },
+        {
+          "name": "Genise Montecillo",
+          "vote": "nay"
+        },
+        {
+          "name": "Mary Nichols",
+          "vote": "nay"
+        },
+        {
+          "name": "Donald Phillips",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Richardson",
+          "vote": "yea"
+        },
+        {
+          "name": "John Rizzo",
+          "vote": "nay"
+        },
+        {
+          "name": "Lindell Shumake",
+          "vote": "yea"
+        },
+        {
+          "name": "Clem Smith",
+          "vote": "absent"
+        },
+        {
+          "name": "Sheila Solon",
+          "vote": "yea"
+        },
+        {
+          "name": "Kathie Conway",
+          "vote": "yea"
+        },
+        {
+          "name": "William White",
+          "vote": "yea"
+        },
+        {
+          "name": "John McCaherty",
+          "vote": "yea"
+        },
+        {
+          "name": "Penny Hubbard",
+          "vote": "yea"
+        },
+        {
+          "name": "Craig Redmon",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeanie Lauer",
+          "vote": "yea"
+        },
+        {
+          "name": "Sue Entlicher",
+          "vote": "yea"
+        },
+        {
+          "name": "Lyle Rowland",
+          "vote": "yea"
+        },
+        {
+          "name": "Donna Lichtenegger",
+          "vote": "yea"
+        },
+        {
+          "name": "Galen Higdon",
+          "vote": "yea"
+        },
+        {
+          "name": "Bart Korman",
+          "vote": "yea"
+        },
+        {
+          "name": "Lincoln Hough",
+          "vote": "yea",
+          "politician_id": "08a9eced-e2bb-44f5-8e64-3f9b4ce75195"
+        },
+        {
+          "name": "T.J. Berry",
+          "vote": "yea"
+        },
+        {
+          "name": "Jay Houghton",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Lant",
+          "vote": "yea"
+        },
+        {
+          "name": "Ira Anders",
+          "vote": "nay"
+        },
+        {
+          "name": "Ben Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Reiboldt",
+          "vote": "yea"
+        },
+        {
+          "name": "Lyndall Fraker",
+          "vote": "yea"
+        },
+        {
+          "name": "Marsha Haefner",
+          "vote": "yea"
+        },
+        {
+          "name": "Wanda Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Chrissy Sommer",
+          "vote": "yea"
+        },
+        {
+          "name": "Tracy McCreery",
+          "vote": "nay",
+          "politician_id": "dfb23acf-0d76-4084-8c2a-90a51b5ef94e"
+        },
+        {
+          "name": "Brandon Ellington",
+          "vote": "nay"
+        },
+        {
+          "name": "Judy Morgan",
+          "vote": "nay"
+        },
+        {
+          "name": "Gail McCann Beatty",
+          "vote": "nay"
+        },
+        {
+          "name": "Noel Shull",
+          "vote": "yea"
+        },
+        {
+          "name": "Rocky Miller",
+          "vote": "absent"
+        },
+        {
+          "name": "Scott Fitzpatrick",
+          "vote": "yea",
+          "politician_id": "07c45d17-2e7c-4e9f-833e-b4da59042139"
+        },
+        {
+          "name": "Kevin Austin",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Muntzel",
+          "vote": "yea"
+        },
+        {
+          "name": "Donna Pfautsch",
+          "vote": "absent"
+        },
+        {
+          "name": "Keith English",
+          "vote": "yea"
+        },
+        {
+          "name": "Bryan Spencer",
+          "vote": "yea"
+        },
+        {
+          "name": "Nathan Walker",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Cornejo",
+          "vote": "yea"
+        },
+        {
+          "name": "Dean Dohrman",
+          "vote": "yea"
+        },
+        {
+          "name": "Elijah Haahr",
+          "vote": "absent"
+        },
+        {
+          "name": "Jim Hansen",
+          "vote": "yea"
+        },
+        {
+          "name": "Ronald Hicks",
+          "vote": "absent"
+        },
+        {
+          "name": "Tom Hurst",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeremy LaFaver",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Lynch",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Messenger",
+          "vote": "yea"
+        },
+        {
+          "name": "Bonnaye Mims",
+          "vote": "nay"
+        },
+        {
+          "name": "Tim Remole",
+          "vote": "yea"
+        },
+        {
+          "name": "Caleb Rowden",
+          "vote": "yea"
+        },
+        {
+          "name": "Kathryn Swan",
+          "vote": "yea"
+        },
+        {
+          "name": "Kenneth Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "David Wood",
+          "vote": "yea"
+        },
+        {
+          "name": "Elaine Gannon",
+          "vote": "absent"
+        },
+        {
+          "name": "Warren Love",
+          "vote": "yea"
+        },
+        {
+          "name": "Sonya Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Burns",
+          "vote": "nay"
+        },
+        {
+          "name": "Jon Carpenter",
+          "vote": "nay"
+        },
+        {
+          "name": "Courtney Curtis",
+          "vote": "nay"
+        },
+        {
+          "name": "Randy Dunn",
+          "vote": "nay"
+        },
+        {
+          "name": "Lynn Morris",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Otto",
+          "vote": "nay"
+        },
+        {
+          "name": "Shawn Rhoads",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Ross",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Butler",
+          "vote": "nay"
+        },
+        {
+          "name": "Joe McGaugh",
+          "vote": "yea"
+        },
+        {
+          "name": "Gina Mitten",
+          "vote": "nay"
+        },
+        {
+          "name": "Joe Runions",
+          "vote": "nay"
+        },
+        {
+          "name": "Tommie Pierson",
+          "vote": "nay"
+        },
+        {
+          "name": "Glen Kolkmeyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Kimberly Gardner",
+          "vote": "absent"
+        },
+        {
+          "name": "James Neely",
+          "vote": "yea"
+        },
+        {
+          "name": "Sue Meredith",
+          "vote": "nay"
+        },
+        {
+          "name": "Holly Thompson Rehder",
+          "vote": "yea"
+        },
+        {
+          "name": "Joshua Peters",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeffery Justus",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Moon",
+          "vote": "yea",
+          "politician_id": "3d0fda4e-1322-467e-bfcf-38a5c348b096"
+        },
+        {
+          "name": "Jeff Pogue",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Kidd",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Chipman",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Alferman",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane Roden",
+          "vote": "yea"
+        },
+        {
+          "name": "Kip Kendrick",
+          "vote": "absent"
+        },
+        {
+          "name": "Deb Lavender",
+          "vote": "nay"
+        },
+        {
+          "name": "Joe Adams",
+          "vote": "nay"
+        },
+        {
+          "name": "Kirk Mathews",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob Vescovo",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Hill",
+          "vote": "yea",
+          "politician_id": "dde576d5-0fdd-4221-9317-fa99788bc306"
+        },
+        {
+          "name": "Randy Pietzman",
+          "vote": "yea"
+        },
+        {
+          "name": "Nick King",
+          "vote": "yea"
+        },
+        {
+          "name": "Nathan Beard",
+          "vote": "yea"
+        },
+        {
+          "name": "Becky Ruth",
+          "vote": "yea"
+        },
+        {
+          "name": "Alan Green",
+          "vote": "nay"
+        },
+        {
+          "name": "J. Eggleston",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Corlew",
+          "vote": "yea"
+        },
+        {
+          "name": "Charles Basye",
+          "vote": "yea"
+        },
+        {
+          "name": "Tila Hubrecht",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Shaul",
+          "vote": "yea"
+        },
+        {
+          "name": "Don Rone",
+          "vote": "yea"
+        },
+        {
+          "name": "Shamed Dogan",
+          "vote": "yea"
+        },
+        {
+          "name": "John Wiemann",
+          "vote": "yea"
+        },
+        {
+          "name": "Rebecca Roeber",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrew McDaniel",
+          "vote": "yea"
+        },
+        {
+          "name": "Travis Fitzwater",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Bondon",
+          "vote": "yea"
+        },
+        {
+          "name": "Patricia Pike",
+          "vote": "yea"
+        },
+        {
+          "name": "Allen Andrews",
+          "vote": "yea"
+        },
+        {
+          "name": "Lauren Arthur",
+          "vote": "nay"
+        },
+        {
+          "name": "Jered Taylor",
+          "vote": "yea"
+        },
+        {
+          "name": "Daron McGee",
+          "vote": "nay"
+        },
+        {
+          "name": "Dean Plocher",
+          "vote": "yea"
+        },
+        {
+          "name": "Rory Rowland",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1468-2016.engrossed.pdf",
+      "sha256": "d2299e5281003cb6dfc7e30198349248e6e69f59eab820e3121d6e286a6253da"
+    }
+  },
+  "operative_text": "Section 537.786 (RSMo): 1. An owner or operator of a business shall not restrict any person from lawfully possessing a firearm in a motor vehicle in possession of such person except a motor vehicle owned or leased by such business.\nSection 537.786 (RSMo): 2. Any individual may bring a civil cause of action to enforce this section.\nSection 571.030 (RSMo): (12) Carries a firearm or any other weapon readily capable of lethal use into any meeting of the governing body of a unit of local government; or any meeting of the general assembly or a committee of the general assembly.\nSection 571.030 (RSMo): 7. A person who commits the crime of unlawful use of weapons under: (1) Subdivision (2), (3) or (4) of subsection 1 of this section shall be guilty of a class D felony; (2) Subdivision (1), (6), (7), (8), (11) or (12) of subsection 1 of this section shall be guilty of a class B misdemeanor, except when a concealed weapon is carried onto any private property whose owner has posted the premises as being off-limits to concealed firearms by means of one or more signs displayed in a conspicuous place of a minimum size of eleven inches by fourteen inches with the writing thereon in letters of not less than one inch, in which case the penalties of subsection 2 of section 571.107 shall apply; (3) Subdivision (5) or (10) of subsection 1 of this section shall be guilty of a class A misdemeanor if the firearm is unloaded and a class D felony if the firearm is loaded; (4) Subdivision (9) of subsection 1 of this section shall be guilty of a class B felony, except that if the violation of subdivision (9) of subsection 1 of this section results in injury or death to another person, it is a class A felony."
+}

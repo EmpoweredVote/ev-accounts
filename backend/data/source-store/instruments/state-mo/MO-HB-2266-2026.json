@@ -1,0 +1,45 @@
+{
+  "id": "MO-HB-2266-2026",
+  "scope": "state:mo",
+  "title": "HB2266 (2026 Regular Session): Modifies provisions relating to unlawful use of weapons",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB2266&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/5964H.01I.pdf",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/5964H.02C.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tim Taylor",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e5224ede-49a9-4027-8cc4-d4c56d38a8dd"
+    },
+    {
+      "name": "Jim Schulte",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "968f6aa6-5d43-4be9-9ad6-4c2c166f2b95"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2266-2026.introduced.pdf",
+      "sha256": "605b91bbf4b8c793d5fc0f82c65855098c1d9a3c63a4015119fbf65f448281d8"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): 1. A person commits the offense of unlawful use of weapons, except as otherwise provided by sections 571.101 to 571.121 and sections 571.205 to 571.230, if he or she knowingly:\nSection 571.030 (RSMo): (10) Any municipal or county prosecuting attorney or assistant prosecuting attorney; any circuit attorney or assistant circuit attorney; any municipal, associate, or circuit judge; the attorney general and any member of his or her staff; or any person appointed by a court to be a special prosecutor who has completed the firearms safety training course required under subsection 2 of section 571.111;\nSection 571.030 (RSMo): 4. Subdivisions (1), (8), and (10) of subsection 1 of this section shall not apply to any person who has a valid concealed carry permit issued pursuant to sections 571.101 to 571.121 or sections 571.205 to 571.230, a valid concealed carry endorsement issued before August 28, 2013, or a valid permit or endorsement to carry concealed firearms issued by another state or political subdivision of another state."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-212-2021",
+  "scope": "state:mo",
+  "title": "HB212 (2021 Regular Session): Specifies that lawful owners of firearms may transport or store the firearms in locked, privately-owned motor vehicles",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB212&year=2021&code=R",
+    "https://www.house.mo.gov/billtracking/bills211/hlrbillspdf/0140H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Justin Hill",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "dde576d5-0fdd-4221-9317-fa99788bc306"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-212-2021.introduced.pdf",
+      "sha256": "a930be5612cbe1ac441e3acfa932dad4579f4386efa00db110b4d7e5294057ea"
+    }
+  },
+  "operative_text": "Section 571.517 (RSMo): 1. Except as provided in subsection 4 of this section, a person who lawfully possesses a firearm may transport or store such firearm in a locked, privately owned motor vehicle in any parking lot, parking garage, or other designated parking area.\nSection 571.517 (RSMo): 3. No property owner, tenant, public or private employer, business entity, or business entity's agent or employee shall prohibit any person from transporting or storing a firearm under subsection 1 of this section. However, nothing in this section shall prohibit an employer or business entity from adopting policies specifying that firearms stored in locked, privately owned motor vehicles on property controlled by the employer or business entity be hidden from plain view or within a locked case or container within the vehicle.\nSection 571.030 (RSMo): 7. A person who commits the offense of unlawful use of weapons under:"
+}

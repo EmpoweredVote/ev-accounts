@@ -1,0 +1,44 @@
+{
+  "id": "MO-HB-1575-2025",
+  "scope": "state:mo",
+  "title": "HB1575 (2025 Regular Session): Modifies the offense of unlawful possession of a firearm to include any minor possessing a firearm on public property",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB1575&year=2025&code=R",
+    "https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/3213H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tonya Rush",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d8b33ae2-38ba-40da-82fe-09c91a7298a8"
+    },
+    {
+      "name": "Kem Smith",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5142eb41-a8af-49bf-85a5-dcd5e7f965e3"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1575-2025.introduced.pdf",
+      "sha256": "f6f622fe8b4ce3b698b78c7bf1b1d6f35216506bb8956baf960041b71c0cb189"
+    }
+  },
+  "operative_text": "Section 571.070 (RSMo): A person commits the offense of unlawful possession of a firearm if such person knowingly has any firearm in his or her possession and: (2) Such person is a fugitive from justice, is habitually in an intoxicated or drugged condition, or is currently adjudged mentally incompetent; or (3) Such person is under eighteen years of age and is on public property. However, possession under this subdivision is not an offense if such person possesses the firearm: (a) While accompanied by a person twenty-one years of age or older; (b) For the purposes of a school-sanctioned, firearm-related event or club event; (c) For the lawful pursuit of game; or (d) As otherwise authorized by law.\nSection 571.070 (RSMo): 2. Unlawful possession of a firearm is a class C felony, unless a person has been convicted of a dangerous felony as defined in section 556.061, or the person has a prior conviction for unlawful possession of a firearm in which case it is a class B felony."
+}

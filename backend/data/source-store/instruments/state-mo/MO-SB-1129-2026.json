@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-1129-2026",
+  "scope": "state:mo",
+  "title": "SB1129 (2026 Regular Session): Modifies provisions relating to concealed carry permits",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=103",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB1129.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jill Carter",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "aca02390-28c4-4df3-bedc-a7557580be9c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1129-2026.introduced.pdf",
+      "sha256": "d7c60cbea62417536687b0f2c6eeb4c55583888822da936561a56c46ed13355c"
+    }
+  },
+  "operative_text": "Section 571.121 (RSMo): Carrying and display of a concealed carry permit or endorsement as required under this subsection may be accomplished by the carrying and display of a digital copy of such concealed carry permit or endorsement, which includes but is not limited to a personal photograph of the permit or endorsement stored digitally on an electronic device.\nSection 571.230 (RSMo): Carrying and display of a permit as required under this subsection may be accomplished by the carrying and display of a digital copy of such permit, which includes but is not limited to a personal photograph of the permit stored digitally on an electronic device."
+}

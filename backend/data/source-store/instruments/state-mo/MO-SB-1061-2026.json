@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-1061-2026",
+  "scope": "state:mo",
+  "title": "SB1061 (2026 Regular Session): Creates provisions relating to firearms discrimination",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=98",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB1061.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jill Carter",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "aca02390-28c4-4df3-bedc-a7557580be9c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1061-2026.introduced.pdf",
+      "sha256": "5e4a6207e61a1e377dfa0226a4a4402231d6dab4d51c2cad5c3bd8f8b67355a8"
+    }
+  },
+  "operative_text": "Section 34.750 (RSMo, new): 2. This section applies only to a contract that: (1) Is between a public entity and a company with at least ten full-time employees; and (2) Has a value of at least one hundred thousand dollars that is paid wholly or partly from public funds of the public entity.\nSection 34.750 (RSMo, new): 3. Except as provided in subsection 4 of this section, a public entity shall not enter into a contract with a company for the purchase of goods or services unless the contract contains a written verification from the company that it: (1) Does not have a practice, policy, guidance, or directive that discriminates against a firearm entity or firearm trade association; and (2) Shall not discriminate during the term of the contract against a firearm entity or firearm trade association.\nSection 34.750 (RSMo, new): 4. This section shall not apply to a public entity that: (1) Contracts with a sole-source provider; or (2) Does not receive a bid from a company that is able to provide the written verification required by subsection 2 of this section."
+}

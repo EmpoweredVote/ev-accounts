@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-241-2017",
+  "scope": "state:mo",
+  "title": "HB241 (2017 Regular Session): Modifies the crime of unlawful transfer of weapons to include transfer of a firearms to any person on the terrorist screening center's no fly list",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB241&year=2017&code=R",
+    "https://www.house.mo.gov/billtracking/bills171/hlrbillspdf/0906H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Doug Beck",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "37f11659-587e-44ba-995f-5f6ebc5c3d6e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-241-2017.introduced.pdf",
+      "sha256": "d80463d55b452ee2d1cf0a5cfec18da7d3f64f73b32691e93f68bf02b7dd91a1"
+    }
+  },
+  "operative_text": "Section 571.060 (RSMo): 1. A person commits the offense of unlawful transfer of weapons if he: (4) Knowingly sells, leases, loans, gives away or delivers a firearm to any person whose name appears on the terrorist screening center's no fly list.\nSection 571.060 (RSMo): 2. Unlawful transfer of weapons under subdivisions (1) and (4) of subsection 1 of this section is a class E felony; unlawful transfer of weapons under subdivisions (2) and (3) of subsection 1 of this section is a class A misdemeanor."
+}

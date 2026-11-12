@@ -1,0 +1,50 @@
+{
+  "id": "MO-HB-3070-2026",
+  "scope": "state:mo",
+  "title": "HB3070 (2026 Regular Session): Reestablishes the Second Amendment Preservation Act",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB3070&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/6449H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bill Hardwick",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "453a51e6-77c2-468d-adbb-27a5d30d3dbc"
+    },
+    {
+      "name": "Mazzie Christensen",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "009598bc-d603-4750-8335-94bf65f8c2ad"
+    },
+    {
+      "name": "Bryant Wolfin",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "31cab7ee-2a04-4ba5-a4bb-3cfa2a4bb92f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-3070-2026.introduced.pdf",
+      "sha256": "0329445335c8174af60965759d29bdd6adbf3f2b24f56a7e5b8b008bfe9becd4"
+    }
+  },
+  "operative_text": "Section 1.421 (RSMo): No entity or person, including any public officer or employee of this state or any political subdivision of this state, shall have the authority to enforce or attempt to enforce the following federal acts, laws, executive orders, administrative orders, rules, and regulations: Any tax, levy, fee, or stamp imposed on firearms, firearm accessories, or ammunition not common to all other goods and services and that might reasonably be expected to create a chilling effect on the purchase or ownership of those items by law-abiding citizens; Any registration or tracking of firearms, firearm accessories, or ammunition; Any registration or tracking of the ownership of firearms, firearm accessories, or ammunition; Any act forbidding the possession, ownership, use, or transfer of a firearm, firearm accessory, or ammunition by law-abiding citizens; and Any act ordering the confiscation of firearms, firearm accessories, or ammunition from law-abiding citizens.\nSection 1.461 (RSMo): Any political subdivision or law enforcement agency that employs a law enforcement officer who acts knowingly, as defined under section 562.016, to violate the provisions of section 1.421 or otherwise knowingly deprives a citizen of Missouri of the rights or privileges ensured by Amendment II of the Constitution of the United States or Article I, Section 23 of the Constitution of Missouri while acting under the color of any state or federal law shall be liable to the injured party in an action at law, suit in equity, or other proper proceeding for redress, and subject to a civil penalty of fifty thousand dollars per occurrence.\nSection 1.471 (RSMo): Any political subdivision or law enforcement agency that knowingly employs an individual acting or who previously acted as an official, agent, employee, or deputy of the government of the United States, or otherwise acted under the color of federal law within the borders of this state, who has knowingly, as defined under section 562.016, after the adoption of this section: Enforced, attempted to enforce, or participated in any way in the enforcement or implementation of any federal acts, laws, executive orders, administrative orders, rules, or regulations listed in section 1.421; shall be subject to a civil penalty of fifty thousand dollars per employee hired by the political subdivision or law enforcement agency.\nSection 1.481 (RSMo): The provisions of sections 1.411 to 1.484 shall be applicable to offenses occurring on or after August 28, 2026."
+}

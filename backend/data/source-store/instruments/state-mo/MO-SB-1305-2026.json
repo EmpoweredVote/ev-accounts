@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-1305-2026",
+  "scope": "state:mo",
+  "title": "SB1305 (2026 Regular Session): Modifies provisions relating to the carrying of firearms or weapons into polling places on election days",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=653",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB1305.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Barbara Washington",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b9226e1d-7341-4e30-9799-88b88abcb3fd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1305-2026.introduced.pdf",
+      "sha256": "65a4e24f9ec3b4dbd41d360dbd3c2c8b8baa71451478c4498d1cecefbe795b41"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): (8) Carries a firearm or any other weapon readily capable of lethal use into any church or place where people have assembled for worship, or within three hundred feet of or into any election precinct or polling place on any election day, or into any building owned or occupied by any agency of the federal government, state government, or political subdivision thereof; or\nSection 571.107 (RSMo): (2) Within three hundred feet of any polling place on any election day. Possession of a firearm in a vehicle on the premises of the polling place shall not be a criminal offense so long as the firearm is not removed from the vehicle or brandished while the vehicle is on the premises;\nSection 571.215 (RSMo): (2) Within three hundred feet of any polling place on any election day. Possession of a firearm in a vehicle on the premises of the polling place shall not be a criminal offense so long as the firearm is not removed from the vehicle or brandished while the vehicle is on the premises;"
+}

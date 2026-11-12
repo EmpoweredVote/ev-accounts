@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-2401-2026",
+  "scope": "state:mo",
+  "title": "HB2401 (2026 Regular Session): Establishes provisions related to the safe storage of firearms",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB2401&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/6156H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Anthony Ealy",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "98bd690a-68fe-4017-811a-c89f2cae87b6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2401-2026.introduced.pdf",
+      "sha256": "3f6a3e8a1c478d690198458894a58aead43ddaefd12d954a31ccf3066b624e0c"
+    }
+  },
+  "operative_text": "Section 571.055 (RSMo): 3. A person commits the offense of unlawful storage of a firearm if the person fails to responsibly and securely store a firearm, as described under subsection 2 of this section, upon any premises that the person owns or controls, and: (1) The person knows or reasonably should know a child can gain access to the firearm without the permission of the child's parent or guardian and without direct adult supervision; or (2) The person knows or reasonably should know a cotenant is ineligible to possess a firearm under state or federal law.\nSection 571.055 (RSMo): 5. The offense of unlawful storage of a firearm is punishable by a five-hundred-dollar fine for a first violation and punishable as a class B misdemeanor for a second or subsequent violation.\nSection 571.055 (RSMo): 6. It is a defense to the offense of unlawful storage of a firearm if a child or cotenant gained possession of and used the firearm in a lawful act of self-defense, defense of others, or defense of livestock.\nSection 571.056 (RSMo): 1. Any firearms dealer licensed under 18 U.S.C. Section 923 shall post, in a conspicuous location on its premises and at any other location at which the dealer sells a firearm, the following notice, in writing, on a printed card, with each letter at a minimum of one inch in height: Notice Unlawful storage of a firearm may result in imprisonment or fine.\nSection 630.1040 (RSMo): 2. The department of public safety shall develop a notice intended to be displayed on the premises of a licensed firearms dealer, and designed to be printed with each letter at a minimum of one inch in height, that informs firearms purchasers that unlawful storage of a firearm may result in imprisonment or fine."
+}

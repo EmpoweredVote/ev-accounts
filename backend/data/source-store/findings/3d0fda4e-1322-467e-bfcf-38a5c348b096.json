@@ -162,6 +162,263 @@
         "fetched_at": "2026-11-04T14:14:55.217Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "d73370476f8debbc547d3b897daabeb9cf52717191f2c6440b87919bc73608ce",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/billsummary.aspx?bill=HB1468&year=2016&code=R",
+      "date": "2016-04-26",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1468-2016",
+      "act": "yea",
+      "motion": "Third Read and Passed (H) (House: HB 1468 HBs FOR THIRD READING)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HB 1468 HBs FOR THIRD READING), 2016-04-26: yea (tally 112–37); census gate: none.",
+      "subjects": [
+        "businesses may not bar lawful guns in customer vehicles",
+        "carrying into government meetings made an offence",
+        "unlawful use of weapons penalties restructured",
+        "concealed carry permit rules revised"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1468-2016.engrossed.pdf",
+          "sha256": "d2299e5281003cb6dfc7e30198349248e6e69f59eab820e3121d6e286a6253da"
+        }
+      }
+    },
+    {
+      "id": "bb680c8402f16bdbc9fb21798765b1b2f638d40166a5507c8138fc0d9ea2de6f",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB16&year=2020&code=S1",
+      "date": "2020-08-25",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-16-SP1-2020",
+      "act": "nay",
+      "motion": "Third Read and Passed (H) (House: HB 16 HBs FOR THIRD READING - INFORMAL)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HB 16 HBs FOR THIRD READING - INFORMAL), 2020-08-25: nay (tally 103–45); census gate: none.",
+      "subjects": [
+        "new felony for giving a firearm to a minor to evade arrest",
+        "unlawful firearm transfer wording and penalties revised"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-16-SP1-2020.comm-sub.pdf",
+          "sha256": "3a49fbdc8dd3ccfba23a9b8a172a0a95260c8a990cfff818363dfd35e462fb18"
+        }
+      }
+    },
+    {
+      "id": "d87cd6b73a25855f80b93fb4805979820f0119bc201b17b7e9f8f9ca5c358e6e",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/billsummary.aspx?bill=HB2057&year=2016&code=R",
+      "date": "2016-04-25",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-2057-2016",
+      "act": "yea",
+      "motion": "Third Read and Passed (H) (House: HB 2057 HBs FOR THIRD READING)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HB 2057 HBs FOR THIRD READING), 2016-04-25: yea (tally 115–34); census gate: none.",
+      "subjects": [
+        "concealed carry permit fee and card-fee rules",
+        "permit renewal grace for service members",
+        "online firearm safety course accepted",
+        "judges and prosecutors exempt from weapons offences"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2057-2016.engrossed.pdf",
+          "sha256": "d7aab639839e62cbe45d8bd136b6228f40e3066027534512a29563ab25e89d4b"
+        }
+      }
+    },
+    {
+      "id": "0a68668d3383b63c0befdaa157ac6a1983c3d11e9c66cda0ebca434d0e419d2e",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB1768&year=2018&code=R",
+      "date": "2018",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-1768-2018",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-1768-2018 (LegiScan sponsor list): HB1768 (2018 Regular Session): Eliminates the criminal penalty for carrying a concealed weapon into any area where firearms are restricted under Section 571.107, RSMo.",
+      "subjects": [
+        "concealed carry into restricted areas: no criminal penalty, small citations instead"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1768-2018.introduced.pdf",
+          "sha256": "d95101b7707aed772b850d22cb1e366530e5684a77faf02033b98ece594294e6"
+        }
+      }
+    },
+    {
+      "id": "9b2bb3ac6c477411e18bba6406615d63f10474968b1029535d435bee1ee847c3",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB2679&year=2020&code=R",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-2679-2020",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-2679-2020 (LegiScan sponsor list): HB2679 (2020 Regular Session): Changes the law regarding the concealed carrying of firearms..",
+      "subjects": [
+        "concealed-carry restrictions decriminalized for non-permit holders in listed places",
+        "permit-exempt carry circumstances widened"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2679-2020.introduced.pdf",
+          "sha256": "16ec19efad5fd5c0809fcbcf795a9231c8269e8d813c91ed98aceecf71daf89f"
+        }
+      }
+    },
+    {
+      "id": "bf0e471be042c25ef572eb09b9e2567512e35b601fa8c7ddb835b5626bb0a962",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB300&year=2017&code=R",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-300-2017",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-300-2017 (LegiScan sponsor list): HB300 (2017 Regular Session): Provides that if a business enterprise posts to prohibit the possession of concealed firearms on the property, the posting entity assumes responsibility for the safety of a person permitted to carry a firearm if harmed on the property.",
+      "subjects": [
+        "businesses banning concealed firearms liable for harm to permit holders",
+        "required wording on no-carry signs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-300-2017.introduced.pdf",
+          "sha256": "6d6c7cb8e80262b9e4e8bfc58d77c795b7ec5606faa0a8039dd510e947afc562"
+        }
+      }
+    },
+    {
+      "id": "de2a76e04e3934c7d431ea908317e5147b7f72135687c9f9a8ac6ebb1d1acdac",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=385",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-1102-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-1102-2026 (LegiScan sponsor list): SB1102 (2026 Regular Session): Modifies provisions relating to the restoration of certain firearm rights.",
+      "subjects": [
+        "automatic restoration of firearm rights after felony sentence",
+        "court petition to restore firearm rights after a violent felony",
+        "exemption from unlawful possession of a firearm offence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1102-2026.introduced.pdf",
+          "sha256": "fb709bcfb962f987a48e957c29ddb9a6019f5b086082b7f6e8dee8c8a7640ce1"
+        }
+      }
+    },
+    {
+      "id": "49cefb37b2fb1421c82da7a12e8371cf8fc215738fd5f57541b442897773d4c0",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/25info/BTS_Web/Bill.aspx?SessionType=R&BillID=4845585",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-700-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-700-2025 (LegiScan sponsor list): SB700 (2025 Regular Session): Lowers from 19 to 18 the age at which a person can obtain a concealed carry permit, and makes a corresponding change to the offense of unlawful use of weapons.",
+      "subjects": [
+        "concealed carry permit minimum age lowered to 18",
+        "vehicle concealed-firearm exception lowered to 18"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-700-2025.introduced.pdf",
+          "sha256": "422e6238316f606980a979f217c76212841c1153dc3e66ce3114740e115bd590"
+        }
+      }
+    },
+    {
+      "id": "d7f1d38f3265fa1dffcb3d98b67652ac81547035ecda46cb7f9833a51978a685",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/25info/BTS_Web/Bill.aspx?SessionType=R&BillID=6349115",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-768-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-768-2025 (LegiScan sponsor list): SB768 (2025 Regular Session): Modifies provisions relating to the restoration of the right to possess a firearm.",
+      "subjects": [
+        "firearm rights restored automatically after felony sentence is served",
+        "court petition to restore firearm rights for violent felonies",
+        "exceptions for sex offenders and listed violent felonies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-768-2025.introduced.pdf",
+          "sha256": "f75a8a130253562ce6c920e54ede2d9b9b4362de7a99b54d6b9d7579ce7c5472"
+        }
+      }
     }
   ],
   "searches": [
@@ -217,6 +474,38 @@
       "found": 4,
       "at": "2026-11-04T14:14:55.217Z",
       "by": "identity-mo-2026-11-04b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "concealed carry age",
+        "restoring gun rights",
+        "federal gun laws enforcement",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate page https://www.senate.mo.gov/moon: confirms Moon as District 29 senator; contact/legislative links only, nothing on the subject",
+        "Senate press release https://www.senate.mo.gov/Media/NewsDetails?id=2309: Moon's own words, but about lifetime protective orders, nothing on the subject",
+        "sponsor list: covered by LegiScan bulk check",
+        "Missouri Senate journal Day 36 https://www.senate.mo.gov/25info/pdf-jrnl/DAY36.pdf: SB 77 only pending that day, no vote by Moon shown; not recorded",
+        "not reviewed: Senate bill page for SB 952 (2026), page not found at the URL tried; sponsorship seen only in a search snippet",
+        "Ballotpedia https://ballotpedia.org/Mike_Moon: fetch returned an empty page",
+        "news search on name plus gun words: KBIA 2017 and 2025, KCTV5 2023, a 2025 anti-red-flag story pages fetched, no direct Moon quotes on guns",
+        "blocked: https://missouriindependent.com/2025/04/15/push-to-block-enforcement-of-federal-gun-laws-debated-by-missouri-senate-committee/ (403)",
+        "blocked: https://www.missourinet.com/2026/02/24/missouri-lawmakers-reload-gun-debate-with-new-tax-breaks-and-public-transit-carry-push/ (403)",
+        "blocked: https://www.aol.com/missouri-senator-proposes-bill-blocking-233002046.html (404)",
+        "not reviewed: https://jodigrace.transistor.fm/episodes/senator-mike-moon-the-safe-act-unconstitutional-legislation (podcast audio)",
+        "ontheissues.org, Wikipedia, campaign site: not reviewed, lead-only or none found"
+      ],
+      "found": 0,
+      "at": "2026-11-12T21:23:45.937Z",
+      "by": "source-collector"
     }
   ]
 }

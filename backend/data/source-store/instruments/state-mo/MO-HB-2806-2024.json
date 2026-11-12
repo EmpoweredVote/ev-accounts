@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-2806-2024",
+  "scope": "state:mo",
+  "title": "HB2806 (2024 Regular Session): Modifies provisions relating to firearms",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB2806&year=2024&code=R",
+    "https://documents.house.mo.gov/billtracking/bills241/hlrbillspdf/5892H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ashley Aune",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "cf3db797-26e1-425f-8004-deee75fc8a73"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2806-2024.introduced.pdf",
+      "sha256": "d4bfe89043f2ba9cdc8af4e71a19cdf5f791c0a3b3f5bfa9784f7575297aa3cd"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): A person commits the offense of unlawful use of weapons, except as otherwise provided by sections 571.101 to 571.121, if he or she knowingly: Carries concealed upon or about his or her person a knife, a firearm, a blackjack or any other weapon readily capable of lethal use; or\nSection 571.101 (RSMo): Submits proof that the applicant satisfies the requirements of section 571.111;\nSection 571.101 (RSMo): An affirmation that the applicant has satisfied the requirements of section 571.111;\nSection 571.101 (RSMo): In addition to the completed application, the applicant for a concealed carry permit must also submit the following with the application: Proof that the applicant satisfies the requirements of section 571.111; and\nSection 571.117 (RSMo): Defendant failed to submit proof that the applicant satisfies the requirements of section 571.111, RSMo."
+}

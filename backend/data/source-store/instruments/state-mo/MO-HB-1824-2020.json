@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1824-2020",
+  "scope": "state:mo",
+  "title": "HB1824 (2020 Regular Session): Requires a firearm owner to report lost or stolen firearms.",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB1824&year=2020&code=R",
+    "https://www.house.mo.gov/billtracking/bills201/hlrbillspdf/4442H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Rasheen Aldridge",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ef9f678d-93f6-45af-9cc9-48aab021571f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1824-2020.introduced.pdf",
+      "sha256": "9c3af238c5518fa03ca614aa42dcc097f9e304e60345c44cba5105e62e5ff6aa"
+    }
+  },
+  "operative_text": "Section 571.065 (RSMo): 1. An owner of a firearm shall report the loss or theft of the firearm within seventy-two hours of discovering the loss or theft to the local law enforcement agency in the city, town, or village or to the sheriff's office in the county in which the loss or theft occurred. The local law enforcement agency or sheriff's office shall enter the make, model, and serial number of the firearm into the Missouri uniform law enforcement system (MULES).\nSection 571.065 (RSMo): 2. Any person who fails to report the loss or theft of a firearm as required under this section shall, upon a plea or finding of guilt thereof, be guilty of: (1) An infraction punishable by a fine not to exceed one hundred dollars for a first violation; (2) An infraction punishable by a fine not to exceed one thousand dollars for a second violation; or (3) A misdemeanor punishable by imprisonment in a county jail not exceeding six months, a fine not exceeding one thousand dollars, or both for a third or subsequent violation."
+}

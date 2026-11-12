@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-758-2020",
+  "scope": "state:mo",
+  "title": "SB758 (2020 Regular Session): Modifies provisions relating to the offense of unlawful possession of a firearm for certain persons",
+  "urls": [
+    "https://www.senate.mo.gov/20info/BTS_Web/Bill.aspx?SessionType=R&BillID=26838001",
+    "https://www.senate.mo.gov/20info/pdf-bill/intro/SB758.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Robert Onder",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8fd53bf9-95dc-44b4-9826-192c97979fd5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-758-2020.introduced.pdf",
+      "sha256": "e21c66b9868311462d6309788584a129e6e16a7ae5b51aecc7b012f747f8f306"
+    }
+  },
+  "operative_text": "Section 571.070 (RSMo): A person commits the offense of unlawful possession of a firearm if such person knowingly has any firearm in his or her possession and: (1) Such person has been convicted of a felony under the laws of this state, or of a crime under the laws of any state or of the United States which, if committed within this state, would be a felony; or (2) Such person is a fugitive from justice, is habitually in an intoxicated or drugged condition, or is currently adjudged mentally incompetent.\nSection 571.070 (RSMo): Unlawful possession of a firearm is a class C felony."
+}

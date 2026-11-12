@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-94-2025",
+  "scope": "state:mo",
+  "title": "HB94 (2025 Regular Session): Prohibits persons from carrying firearms into parade zones",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB94&year=2025&code=R",
+    "https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/0492H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Anthony Ealy",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "98bd690a-68fe-4017-811a-c89f2cae87b6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-94-2025.introduced.pdf",
+      "sha256": "fac3172dfe559fa3c33feb6b514ed6115f3c92c1667cb89c531694d5826a781b"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): (8) Carries a firearm or any other weapon readily capable of lethal use into: (a) Any church or place where people have assembled for worship; (b) Any election precinct on any election day; (c) Any building owned or occupied by any agency of the federal government, state government, or political subdivision thereof; or (d) Any parade zone during parade hours, as such terms are defined in section 571.570; or\nSection 571.107 (RSMo): (18) Any parade zone during parade hours, as such terms are defined in section 571.570.\nSection 571.570 (RSMo): 2. No person shall carry a firearm into any parade zone during parade hours other than a peace officer.\nSection 571.570 (RSMo): 3. A parade host shall secure the parade zone by ensuring that any person who enters the parade zone during parade hours is required to enter through a checkpoint in which the person passes through a metal detector or is otherwise scanned by security officers to determine whether the person possesses a firearm. Any person who is found to possess a firearm at a checkpoint shall be barred from entry into the parade zone."
+}

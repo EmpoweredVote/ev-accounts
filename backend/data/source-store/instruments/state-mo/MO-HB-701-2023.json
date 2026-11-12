@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-701-2023",
+  "scope": "state:mo",
+  "title": "HB701 (2023 Regular Session): Establishes the Anti-Red Flag Gun Seizure Act",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB701&year=2023&code=R",
+    "http://reflect.legiscan.com/Proxy.php"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bill Hardwick",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "453a51e6-77c2-468d-adbb-27a5d30d3dbc"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-701-2023.introduced.pdf",
+      "sha256": "6580ba08d0a6e41aa46e5ca8da979e15f050d6e9f898e3ace06ee86cd9c639c0"
+    }
+  },
+  "operative_text": "Section 1.486 (RSMo): Any federal order of protection or other judicial order issued by a court to confiscate any firearm, firearm accessory, or ammunition from any law-abiding citizen shall be considered an infringement on the people's right to keep and bear arms, as guaranteed by Amendment II of the Constitution of the United States and Article I, Section 23 of the Constitution of Missouri, within the borders of this state.\nSection 1.486 (RSMo): No entity or person, including any public officer, agency, or employee of this state or any political subdivision of this state, shall have the authority to enforce or attempt to enforce any federal acts, laws, executive orders, administrative orders, rules, regulations, statutes, or ordinances infringing on the right to keep and bear arms as described under section 1.420.\nSection 1.486 (RSMo): No public agency, political subdivision, or law enforcement agency shall receive any federal funding for the purposes of enforcing any order of protection issued by a court to confiscate any firearms, firearm accessories, or ammunition."
+}

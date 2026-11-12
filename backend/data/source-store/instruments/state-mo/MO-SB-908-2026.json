@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-908-2026",
+  "scope": "state:mo",
+  "title": "SB908 (2026 Regular Session): Modifies provisions relating to firearms",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=465",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB908.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Brad Hudson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "528c1670-80b1-4ff5-bad2-de1e442c1479"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-908-2026.introduced.pdf",
+      "sha256": "0764e506276d8c32305ca51a641e4e9288e862c77dadf4842df90236929e40e9"
+    }
+  },
+  "operative_text": "Section 21.750 (RSMo): 2. No county, city, town, village, municipality, or other political subdivision of this state shall adopt any order, ordinance or regulation concerning in any way the sale, purchase, purchase delay, transfer, ownership, use, keeping, possession, bearing, transportation, licensing, permit, registration, taxation other than sales and compensating use taxes or other controls on firearms, components, ammunition, and supplies except as provided in subsection 3 of this section. 3. Nothing contained in this section shall prohibit any ordinance of any political subdivision which conforms exactly with any of the provisions of sections 571.010 to 571.070, with appropriate penalty provisions, or the discharge of firearms within a jurisdiction, provided such ordinance complies with the provisions of section 252.243. No ordinance shall be construed to preclude the use of a firearm in the defense of person or property, subject to the provisions of chapter 563.\nSection 21.750 (RSMo): 7. Any political subdivision who knowingly violates the provisions of this section or otherwise knowingly deprives a citizen of Missouri of the rights or privileges ensured by Amendment II of the Constitution of the United States or Article I, Section 23 of the Constitution of Missouri shall be liable to the injured party in an action at law, suit in equity, or other proper proceeding for redress, and subject to a civil penalty of fifty thousand dollars per occurrence. Any person injured under this section shall have standing to pursue an action for injunctive relief in the circuit court of the county in which the action allegedly occurred or in the circuit court of Cole County with respect to the actions of such individual. The court shall hold a hearing on the motion for temporary restraining order and preliminary injunction within thirty days of service of the petition. 8. In such actions, the court may award the prevailing party, other than the state of Missouri or any political subdivision of the state, reasonable attorney's fees and costs. 9. Sovereign immunity shall not be an affirmative defense in any action pursuant to this section.\nSection 571.030 (RSMo): Subdivision (1) of subsection 1 of this section does not apply to any person eighteen years of age or older transporting a concealable firearm in the passenger compartment of a motor vehicle, so long as such concealable firearm is otherwise lawfully possessed, nor when the actor is also in possession of an exposed firearm or projectile weapon for the lawful pursuit of game, or is in his or her dwelling unit or upon premises over which the actor has possession, authority or control, or is traveling in a continuous journey peaceably through this state.\nSection 571.101 (RSMo): (1) Is at least eighteen years of age, is a citizen or permanent resident of the United States and either: (a) Has assumed residency in this state; or (b) Is a member of the Armed Forces stationed in Missouri, or the spouse of such member of the military;"
+}

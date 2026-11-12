@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-273-2025",
+  "scope": "state:mo",
+  "title": "SB273 (2025 Regular Session): Modifies provisions relating to firearm suppressors",
+  "urls": [
+    "https://www.senate.mo.gov/25info/BTS_Web/Bill.aspx?SessionType=R&BillID=299",
+    "https://www.senate.mo.gov/25info/pdf-bill/intro/SB273.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nick Schroer",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b6dd336b-81d6-488c-93db-2473ced473b8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-273-2025.introduced.pdf",
+      "sha256": "1f59b4b0393509c4a9724f60a9e254b9e53ffe81f3e1f12b2bd1b9063e649b94"
+    }
+  },
+  "operative_text": "Section 571.020 (RSMo): 4. The offense of knowingly possessing, manufacturing, transporting, repairing, or selling a firearm silencer, as it existed immediately before August 28, 2025, shall not be prosecuted on or after August 28, 2025. If on August 28, 2025, a criminal action is pending for such offense, the action is dismissed on that date. However, a final conviction for such offense that exists on August 28, 2025, shall not be affected.\nSection 571.935 (RSMo): 2. (1) A firearm suppressor that is manufactured in this state and remains in this state shall not be subject to federal law or federal regulation, including registration, under the authority of the United States Congress to regulate interstate commerce.\nSection 571.935 (RSMo): 3. A firearm suppressor manufactured and sold in this state shall have the words \"Made in Missouri\" clearly stamped on it.\nSection 571.935 (RSMo): 4. On written notification to the attorney general by a United States citizen who resides in this state of the citizen's intent to manufacture a firearm suppressor to which subsection 2 of this section applies, the attorney general shall seek a declaratory judgment from a federal district court in this state that subsection 2 of this section is consistent with the United States Constitution.\nSection 571.940 (RSMo): 2. (1) An entity described in subsection 1 of this section shall not adopt a rule, order, ordinance, or policy under which the entity enforces, or by consistent action allows the enforcement of, a federal statute, order, rule, or regulation that purports to regulate a firearm suppressor if the statute, order, rule, or regulation imposes a prohibition, restriction, or other regulation that does not exist under the laws of this state.\nSection 571.940 (RSMo): 3. (1) An entity described in subsection 1 of this section shall not receive state grant funds if the entity adopts a rule, order, ordinance, or policy under which the entity enforces a federal law described in subdivision (1) of subsection 2 of this section or, by consistent action, allows the enforcement of a federal law described in subdivision (1) of subsection 2 of this section."
+}

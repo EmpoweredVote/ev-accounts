@@ -1,0 +1,40 @@
+{
+  "id": "MO-SB-1793-2026",
+  "scope": "state:mo",
+  "title": "SB1793 (2026 Regular Session): Creates the offense of unlawful possession of a firearm by a minor and creates an income tax deduction for compensation as a first responder",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=6618187",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB1793.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Stephen Webber",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fade05cb-857d-4a1d-9323-7723fd9af94b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "taxes: Section 143.178 — income tax deduction of 10-50% of pay for first responders by years of service"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1793-2026.introduced.pdf",
+      "sha256": "8471a1757b762e57f13e2ebc8be885c0a4876e5c8279627fd2516f840835c895"
+    }
+  },
+  "operative_text": "Section 571.068 (RSMo, new): 1. A person who is less than eighteen years of age commits the offense of unlawful possession of a firearm by a minor if such person knowingly possesses a handgun or ammunition that is only suitable for a handgun.\n2. The offense of unlawful possession of a firearm by a minor is a class A misdemeanor.\n3. This offense shall not apply to: (1) A temporary transfer of a handgun or ammunition to a person under the age of eighteen or the possession or use of a handgun or ammunition by a person under the age of eighteen if the handgun and ammunition are possessed and used by such person in accordance with state law and any ordinances of a political subdivision: (a) In the course of employment; (b) In the course of ranching or farming related to activities at the residence of the person or on property used for ranching or farming at which the person, with the permission of the property owner or lessee, is performing activities related to the operation of the farm or ranch; or (c) In the course of target practice, hunting, or during instruction in the safe and lawful use of a handgun.\nSection 571.095 (RSMo): 2. A firearm or ammunition which is in the possession of a minor in violation of section 571.068, the possession of which is transferred to the minor in circumstances in which the transferor is not in violation of section 571.060 or section 571.080, shall not be subject to permanent confiscation if its possession by the minor subsequently becomes unlawful because of the conduct of the minor, but shall be returned to the lawful owner when such firearm is no longer required for the purposes of investigation or prosecution."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1849-2018",
+  "scope": "state:mo",
+  "title": "HB1849 (2018 Regular Session): Applies the offense of unlawful possession of firearms to certain additional categories of individuals in possession of firearms",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB1849&year=2018&code=R",
+    "https://www.house.mo.gov/billtracking/bills181/hlrbillspdf/4668H.02I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tracy McCreery",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "dfb23acf-0d76-4084-8c2a-90a51b5ef94e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1849-2018.introduced.pdf",
+      "sha256": "3efbdd00179f992975d0a1e71646168dce732947bfa625949e43056d5d5ac86b"
+    }
+  },
+  "operative_text": "Section 571.070 (RSMo): A person commits the offense of unlawful possession of a firearm if such person knowingly has any firearm in his or her possession and: (1) Such person has been convicted of a felony under the laws of this state, or of a crime under the laws of any state or of the United States which, if committed within this state, would be a felony, or has been convicted in any court of a misdemeanor crime of domestic violence;\nSection 571.070 (RSMo): (2) Such person is a fugitive from justice, is habitually in an intoxicated or drugged condition, is currently adjudged mentally incompetent, is illegally or unlawfully in the United States, has been discharged from the Armed Forces under dishonorable conditions, or, having been a citizen of the United States, has renounced United States citizenship; or\nSection 571.070 (RSMo): (3) Such person is subject to a court order that: (a) Was issued after a hearing of which such person received actual notice, and at which such person had an opportunity to participate; (b) Restrains such person from harassing, stalking, or threatening a petitioner, as defined in subdivision (11) of section 455.010, or a child of such petitioner, or engaging in other conduct that would place such petitioner in reasonable fear of bodily injury to the petitioner or child; and: a. Includes a finding that such person represents a credible threat to the physical safety of such petitioner or child; or b. By its terms explicitly prohibits the use, attempted use, or threatened use of physical force against such petitioner or child that would reasonably be expected to cause bodily injury.\nSection 571.070 (RSMo): 2. Unlawful possession of a firearm is a class D felony."
+}

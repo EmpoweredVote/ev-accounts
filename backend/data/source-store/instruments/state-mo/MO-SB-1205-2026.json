@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-1205-2026",
+  "scope": "state:mo",
+  "title": "SB1205 (2026 Regular Session): Modifies provisions relating to the carrying of weapons by the Attorney General",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=631",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB1205.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Adam Schnelting",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a6b74a24-05e3-48a1-92ff-3cdf4c9b7920"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1205-2026.introduced.pdf",
+      "sha256": "a81534161242269b06aef1b346cec55e7bd2019b5acec057d95b6f08180eb49d"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): (10) Any municipal or county prosecuting attorney or assistant prosecuting attorney; circuit attorney or assistant circuit attorney; municipal, associate, or circuit judge; the attorney general or staff of the attorney general; or any person appointed by a court to be a special prosecutor who has completed the firearms safety training course required under subsection 2 of section 571.111;"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-225-2023",
+  "scope": "state:mo",
+  "title": "SB225 (2023 Regular Session): Creates provisions relating to the liability of businesses prohibiting firearms on the premises",
+  "urls": [
+    "https://www.senate.mo.gov/23info/BTS_Web/Bill.aspx?SessionType=R&BillID=44436",
+    "http://reflect.legiscan.com/Proxy.php"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nick Schroer",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b6dd336b-81d6-488c-93db-2473ced473b8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-225-2023.introduced.pdf",
+      "sha256": "51e674d10704bcc060528d9d7675084a3a4327e571764d96384bc4994aae818f"
+    }
+  },
+  "operative_text": "Section 571.069 (RSMo): 1. Any business that elects to prohibit the possession of firearms or other arms on its premises by posting a sign described under section 571.107 or by another method authorized under this chapter shall assume custodial responsibility for the safety and defense of any person who is authorized to carry firearms or other arms under this chapter while the person is on the premises of the business.\nSection 571.069 (RSMo): 3. If a person authorized to carry firearms or other arms under this chapter is injured, suffers bodily injury or death, incurs economic loss or expense, or suffers property damage as a result of a business breaching the duty to defend such person, the person shall have a cause of action against the business prohibiting the possession of firearms or other arms under this chapter.\nSection 571.069 (RSMo): 5. If a plaintiff is successful in an action brought under this section, the plaintiff shall be entitled to actual damages sustained as a result of the failure of the business to guard against criminal and harmful acts, and shall also be entitled to recover reasonable attorney's fees, expert witness costs, and court costs.\nSection 571.069 (RSMo): 7. Any business electing to allow invitees, employees, or other guests to lawfully possess firearms or other lawful weapons on its premises as authorized under section 571.107, or other provisions of this chapter, shall not be held liable for any bodily injury or death, economic loss or expense, property damage, emotional distress, or other injury any person suffers while such person is on the premises of the business unless the business, or an owner or agent thereof, acted purposely, in committing or assisting in committing the act that caused such injury."
+}

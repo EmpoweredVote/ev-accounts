@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1535-2020",
+  "scope": "state:mo",
+  "title": "HB1535 (2020 Regular Session): Adds public libraries to the list of places CCW permit holders are not authorized to carry concealed weapons.",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB1535&year=2020&code=R",
+    "https://www.house.mo.gov/billtracking/bills201/hlrbillspdf/3881H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Barbara Washington",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b9226e1d-7341-4e30-9799-88b88abcb3fd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1535-2020.introduced.pdf",
+      "sha256": "1a96cc6c784032cc1fafa55c7f71de98c1d4b7da28ec470b92f3bf6779c883f3"
+    }
+  },
+  "operative_text": "Section 571.107 (RSMo): (18) Any public library. Possession of a firearm in a vehicle on the premises of a public library shall not be a criminal offense so long as the fire arm is not removed from the vehicle or brandished while the vehicle is on the premises.\nSection 571.107 (RSMo): 2. Carrying of a concealed firearm in a location specified in subdivisions (1) to (18) of subsection 1 of this section by any individual who holds a concealed carry permit issued pursuant to sections 571.101 to 571.121, or a concealed carry endorsement issued prior to August 28, 2013, shall not be a criminal act but may subject the person to denial to the premises or removal from the premises."
+}

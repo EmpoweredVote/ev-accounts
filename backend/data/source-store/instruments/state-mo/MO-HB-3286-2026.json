@@ -1,0 +1,68 @@
+{
+  "id": "MO-HB-3286-2026",
+  "scope": "state:mo",
+  "title": "HB3286 (2026 Regular Session): Modifies provisions relating to firearms",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB3286&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/6933H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Elizabeth Fuchs",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e04827a2-770d-40ad-ae9c-1124d853dfec"
+    },
+    {
+      "name": "Jeremy Dean",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2b40ca6b-8bcf-42fb-8fc5-657bfa707c72"
+    },
+    {
+      "name": "Nick Kimble",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "16e6f252-440e-4345-83b4-1cffe83f6b87"
+    },
+    {
+      "name": "Jeff Hales",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fc6280f0-4102-49f0-b409-93539b137c88"
+    },
+    {
+      "name": "Michael Burton",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e87ff38e-7a43-4eed-adee-89b567143bcd"
+    },
+    {
+      "name": "Marlon Anderson",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "62ace91d-b62f-473f-8d4b-a4e45b207650"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-3286-2026.introduced.pdf",
+      "sha256": "4689ee6195a8d327df15ca16a314ec9b41834ad6bda7eb0afd30ddd6963367ba"
+    }
+  },
+  "operative_text": "Section 455.050 (RSMo): If, after a hearing for any full order of protection, the court issues an order of protection, the court shall also: (1) Prohibit the respondent from knowingly possessing or purchasing any firearm while the order is in effect; (2) Inform the respondent of such prohibition in writing and, if the respondent is present, orally; and (3) Forward the order to the Missouri state highway patrol so that the Missouri state highway patrol can update the respondent's record in the National Instant Criminal Background Check System (NICS). Upon receiving an order under this subsection, the Missouri state highway patrol shall notify the Federal Bureau of Investigation within twenty-four hours.\nSection 455.096 (RSMo): 2. In addition to any other jurisdictional grounds provided by law, a court shall have jurisdiction to enter an extreme risk order of protection restraining or enjoining a respondent from possessing any firearms.\nSection 455.096 (RSMo): 4. Upon issuance of any ex parte order of protection under subsection 3 of this section, the court shall order the respondent to surrender to the local law enforcement agency where the respondent resides all firearms in the respondent's custody, control, or possession. The law enforcement officer serving any ex parte order of protection shall provide the respondent to the order an opportunity to comply with the order by surrendering all firearms in his or her custody, control, or possession.\nSection 455.096 (RSMo): 5. Not later than fifteen days after the filing of a verified petition that meets the requirements of this section, a hearing shall be held unless the court deems, for good cause shown, that a continuance should be granted. At the hearing, if the law enforcement officer or agency has proved the allegation that the respondent poses a significant danger to himself or herself or others by clear and convincing evidence, the court shall issue a full extreme risk order of protection for a period of one year.\nSection 455.096 (RSMo): 6. (1) Upon issuance of any full extreme risk order of protection under subsection 5 of this section, the court shall order the respondent to surrender to the local law enforcement agency where the respondent resides all firearms in the respondent's custody, control, or possession. If the respondent has been identified in the petition as being required to carry a firearm as a condition of the respondent's employment, the court shall notify the respondent's employer of the existence of the order. If the respondent holds a concealed carry permit under section 571.101 or 571.205, the court shall order a revocation of the concealed carry permit.\nSection 571.070 (RSMo): 1. A person commits the offense of unlawful possession of a firearm if such person knowingly has any firearm in his or her possession and: (1) Such person has been convicted of a felony under the laws of this state, or of a crime under the laws of any state or of the United States which, if committed within this state, would be a felony; (2) Such person is a fugitive from justice, is habitually in an intoxicated or drugged condition, or is currently adjudged mentally incompetent; (3) Such person has been convicted of a misdemeanor offense of domestic violence under the laws of this state, or of a crime under the laws of any state or of the United States that if committed in this state would be a misdemeanor offense of domestic violence; or (4) Such person is subject to an order of protection granted under sections 455.010 to 455.095 or sections 455.500 to 455.538 that was issued after a hearing of which the person had actual notice and at which the person had an opportunity to participate or such person is subject to an equivalent order issued under the laws of another state or the United States. 2. Unlawful possession of a firearm is a class C felony, unless a person has been convicted of a dangerous felony as defined in section 556.061, or the person has a prior conviction for unlawful possession of a firearm in which case it is a class B felony."
+}
