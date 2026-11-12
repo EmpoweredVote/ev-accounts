@@ -1,0 +1,69 @@
+{
+  "id": "GA-HB-1454-2025",
+  "scope": "state:ga",
+  "title": "HB1454 (2025-2026 Regular Session): Crimes and offenses; firearms and carrying and possession of firearms and other weapons; revise various laws",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/73627",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/244011",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/244547"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Jason Ridley",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "97e7b5f9-94fe-4842-9b36-bd6e07cdddfa"
+    },
+    {
+      "name": "John Corbett",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a386c7f4-6801-4103-8755-61032e6b85e3"
+    },
+    {
+      "name": "Noel Williams",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7c216769-195a-4dff-90b1-e72e6f25f4c4"
+    },
+    {
+      "name": "Trey Rhodes",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "12cbcbb6-3106-493b-9caa-9c9e422176ad"
+    },
+    {
+      "name": "Charles Cannon",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "79878ead-3065-4c47-8f42-711a39a72678"
+    },
+    {
+      "name": "Lauren McDonald",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c9aaf920-9c5c-403e-9122-7c78c986a56a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1454-2025.comm-sub.pdf",
+      "sha256": "99dc1cc9456a0a760c0bdbf887dd4e93be1be941ee40b7c255e3ddcdd9b65b25"
+    }
+  },
+  "operative_text": "SECTION 1 (amending O.C.G.A. 16-11-129, subsection (k)): (2) No person or government entity shall knowingly and willfully: (A) Create or maintain a multijurisdictional data base database regarding persons issued or who have applied for weapons carry licenses; or (B) Keep, or cause to be kept, any list, record, or registry of privately owned firearms or owners of such firearms; provided, however, that nothing in this subparagraph shall prohibit a person from keeping, or causing to be kept, any list, record, or registry of firearms owned by such person. (3) Any person aggrieved by a violation of this subsection may bring an action for relief. Such person who proves by a preponderance of the evidence that he or she is or was contained in such a multijurisdictional database or in a list, record, or registry as forth in paragraph (2) of this subsection shall be entitled to obtain, in addition to appropriate declaratory or injunctive relief: (A) One hundred dollars or actual damages, whichever is greater; and (B) Expenses of litigation, including costs and reasonable attorney's fees.\"\nSECTION 2 (amending O.C.G.A. 16-11-173, subsection (e)): \"(e)(1) Except as provided for in paragraph (2) of this subsection, nothing Nothing contained in this Code section shall prohibit municipalities, or counties, or consolidated governments, by ordinance or resolution, from reasonably limiting or prohibiting the discharge of firearms within the boundaries of the municipal corporation, or county, or consolidated government. (2) No municipality, county, or consolidated government shall prohibit the discharge of firearms on a parcel of land that is five acres or more in size, provided that the owner or lawful occupants of such land consent to such discharging of firearms. Nothing in this paragraph shall preempt a zoning ordinance which prohibits or limits commercial shooting ranges or other commercial activity upon such parcel.\"\nSECTION 3 (amending O.C.G.A. 17-5-54, subsection (g)): \"(g)(1) With respect to unclaimed firearms, if the sheriff, chief of police, agency director, or designee of such official certifies that a firearm is unsafe because of wear, damage, age, or modification or because any federal or state law prohibits the sale or distribution of such firearm, at the discretion of such official, it shall be transferred to the Division of Forensic Sciences of the Georgia Bureau of Investigation, a municipal or county law enforcement forensic laboratory for training or experimental purposes, or be destroyed."
+}

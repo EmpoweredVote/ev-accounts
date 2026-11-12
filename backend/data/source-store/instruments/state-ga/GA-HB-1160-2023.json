@@ -1,0 +1,61 @@
+{
+  "id": "GA-HB-1160-2023",
+  "scope": "state:ga",
+  "title": "HB1160 (2023-2024 Regular Session): Crimes and offenses; prohibit sale, transfer, use, possession, importation, or manufacture of certain firearms and magazines",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/66743",
+    "https://www.legis.ga.gov/api/legislation/document/20232024/223090"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Derrick Jackson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3ca554be-27d6-4d65-a6f4-b7567f73b1a3"
+    },
+    {
+      "name": "El-Mahdi Holly",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d21a9506-f76d-429b-ad38-bd4dd84e4216"
+    },
+    {
+      "name": "Becky Evans",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Angela Moore",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "684b3c38-a040-4287-9353-f34106e3cec0"
+    },
+    {
+      "name": "Saira Draper",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ef81fdd6-14af-4aef-b621-fee3f084402c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1160-2023.introduced.pdf",
+      "sha256": "f6267f00afb60a5f1ce289fbd8782d18d633e19f310e1db34da13656cfcf5005"
+    }
+  },
+  "operative_text": "SECTION 2 (adding O.C.G.A. 16-11-139(a)(5)): (5) 'Semiautomatic assault weapon' means: (A) A rifle that which uses the energy of an explosive in a fixed, center fire, metal cartridge to expel a single projectile through the bore of the rifle for each single pull of the trigger and to extract the fired cartridge case and chamber the next round; and (B) Is capable of using a large capacity ammunition feeding device in its operation. The term 'semiautomatic assault weapon' shall not include a weapon that uses rimfire ammunition.\nSECTION 2 (adding O.C.G.A. 16-11-139(b)): (b) On and after July 1, 2024, except as provided in this Code section, it shall be illegal to own, possess, use, sell, import, or manufacture semiautomatic assault weapons in this state.\nSECTION 2 (adding O.C.G.A. 16-11-139(c)): (c) On and after July 1, 2024, all semiautomatic assault rifles which were owned prior to July 1, 2024, may be retained by the owner of the semiautomatic assault rifle if such semiautomatic assault rifle is securely stored. Such semiautomatic assault rifle may be sold or transferred by the owner of such rifle only if the owner has a criminal background check of the purchaser or transferee conducted by a dealer pursuant to the National Instant Criminal Background Check System created by the federal Brady Handgun Violence Prevention Act (P.L. No. 103-159) and the background check reveals that the person is eligible to purchase or receive such semiautomatic assault rifle.\nSECTION 2 (adding O.C.G.A. 16-11-139(d)): (d) On and after July 1, 2024, except as provided in this Code section, it shall be illegal to own, possess, use, sell, import, or manufacture a large capacity ammunition feeding device in this state.\nSECTION 2 (adding O.C.G.A. 16-11-139(e)): (e) On and after July 1, 2024, large capacity ammunition feeding devices which were owned prior to July 1, 2024, may continue to be possessed by the owner but shall not be sold or transferred.\nSECTION 2 (adding O.C.G.A. 16-11-139(g)): (g)(1) Any person who violates the provisions of this Code section shall be guilty of a misdemeanor on the first or second offense and, upon conviction thereof, shall be subject to a fine of not more than $250.00 for the first offense and a fine of not more than $500.00 for the second offense. (2) Any person who violates the provisions of this Code section for a third or subsequent time shall be guilty of a misdemeanor of a high and aggravated nature and may forfeit the right to hunt for a period of time as specified by the court. (3) Upon conviction of a violation of this Code section, the semiautomatic assault weapon or large capacity ammunition feeding device which is the subject of the violation shall be deemed to be contraband and shall be subject to forfeiture.\""
+}

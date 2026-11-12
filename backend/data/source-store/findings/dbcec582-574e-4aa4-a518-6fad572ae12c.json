@@ -1,0 +1,121 @@
+{
+  "politician_id": "dbcec582-574e-4aa4-a518-6fad572ae12c",
+  "findings": [
+    {
+      "id": "6d21cbeaa62bf3fe066488a0104a2c116234317fe1513e866ccdd526d96caf2b",
+      "kind": "own-words",
+      "url": "https://www.ajc.com/politics/2026/10/keisha-lance-bottoms-ajc-interview/",
+      "date": "2026-10-02",
+      "date_precision": "day",
+      "passage": "“I am very respectful and mindful of people’s Second Amendment rights and the right to bear arms. We’re not trying to infringe upon that at all,” she said.",
+      "note": "Quoted by the AJC in an interview held 2026-10-02, published 2026-10-05, on gun restrictions and the Second Amendment.",
+      "subjects": [
+        "Second Amendment rights",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.072Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a84d53b02e90078c34729e2b2dd57c0901168cf33c44f2ec5206631ccdecd1a1",
+      "kind": "own-words",
+      "url": "https://www.ajc.com/politics/2026/10/keisha-lance-bottoms-ajc-interview/",
+      "date": "2026-10-02",
+      "date_precision": "day",
+      "passage": "“You can balance both. We can protect people’s Second Amendment rights. We can be mindful of the Constitution, but we can also push for responsible gun ownership and gun access.”",
+      "note": "Quoted by the AJC in the same interview; she says gun safeguards and Second Amendment rights can both be kept.",
+      "subjects": [
+        "Second Amendment rights",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.072Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a78f9303b18c9d56b592ce10e57f0509177f0931db5bb74a874fdca90d359bc8",
+      "kind": "own-words",
+      "url": "https://www.ajc.com/politics/2026/10/keisha-lance-bottoms-ajc-interview/",
+      "date": "2026-10-02",
+      "date_precision": "day",
+      "passage": "She endorsed strengthening red-flag laws, which allow courts to temporarily restrict gun access for people deemed a danger to themselves or others, and closing the “gun show loophole” that allows speedier firearm purchases.",
+      "note": "This sentence is the AJC reporter's summary of what she endorsed in the interview, not her direct quote. Saved as a report of her stated position, from the outlet.",
+      "subjects": [
+        "red-flag or extreme-risk orders",
+        "closing the gun show loophole",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.072Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "952efbd7fec791dbcdfcf5ff4447f811421591b9ebdd7d6fbc2298337f820ff4",
+      "kind": "record",
+      "url": "https://www.ajc.com/news/local-govt--politics/atlanta-mayor-signs-letter-urging-senate-pass-gun-safety-laws/VMgpBx9ZokoxBkiYxQLjeI",
+      "date": "2019-08-08",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Signed U.S. Conference of Mayors letter urging the Senate to pass two House-passed gun safety bills (as Atlanta mayor)",
+      "local_record": true,
+      "note": "As Atlanta mayor she added her signature on a Thursday to a letter from 214 mayors asking the Senate to reconvene and pass two House-approved background-check bills. The AJC page text gives no calendar date; 2019-08-08 is the date other outlets report for the letter.",
+      "subjects": [
+        "check every gun buyer",
+        "federal gun safety legislation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.072Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "closing the gun show loophole",
+        "red-flag or extreme-risk orders",
+        "Second Amendment rights",
+        "federal gun safety legislation",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed in scope: nominee for governor in the 2026 general election (AJC interview 2026-10-05)",
+        "campaign site keishaforgeorgia.com home page: nothing on the subject; the issues, record and news pages returned 404: blocked: https://www.keishaforgeorgia.com/issues",
+        "keishalancebottoms.com: nothing on the subject",
+        "legislature sponsor list: not applicable, not a legislator",
+        "Ballotpedia: not reviewed, empty by fetch tool",
+        "news search on name plus gun words (3 searches)",
+        "Giffords endorsement page (third-party text, not her own words, not saved as own words)",
+        "ontheissues.org: lead only, original found at AJC 2019",
+        "blocked: https://atlantadailyworld.com/2019/08/09/mayor-bottoms-urges-immediate-senate-action-on-gun-safety-legislation (403)"
+      ],
+      "found": 4,
+      "at": "2026-11-12T01:42:02.072Z",
+      "by": "source-collector"
+    }
+  ]
+}

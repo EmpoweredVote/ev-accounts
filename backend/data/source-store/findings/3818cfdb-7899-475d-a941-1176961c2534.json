@@ -1,6 +1,118 @@
 {
   "politician_id": "3818cfdb-7899-475d-a941-1176961c2534",
-  "findings": [],
+  "findings": [
+    {
+      "id": "8c6b473d8068eab562c6c8591dfa7a5580b3a1658698a9cc72693fee496b12b6",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/73253",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1324-2025",
+      "act": "yea",
+      "motion": "Passage: House Vote #665",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #665, 2026-03-06: yea (tally 87–76); census gate: none.",
+      "subjects": [
+        "state ban on possessing a silencer repealed",
+        "silencer used in a crime still carries added penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1324-2025.comm-sub.pdf",
+          "sha256": "cac9c7cc0db7a3bfed34e302a4b693e66f6522544bcc39bdac7d05205d292d63"
+        }
+      }
+    },
+    {
+      "id": "951cd305c1cb08a73a6a49f61e8b2ba3447b1f7983a04fca49c30409c562a452",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/72353",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1023-2025",
+      "act": "yea",
+      "motion": "Passage: House Vote #546",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "GA House, Passage: House Vote #546, 2026-02-24: yea (tally 151–11); census gate: near-unanimous.",
+      "subjects": [
+        "weapon detection required at school building entrances",
+        "takes effect January 1, 2028"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1023-2025.comm-sub.pdf",
+          "sha256": "79e90ebc48e656276b1cf2a56ef9e94e0cf0286d51d38dec17f5f451ff55443d"
+        }
+      }
+    },
+    {
+      "id": "a34cc336a57333a5058694dc2d7b6b4fef80d451a9377e1248f4d55fddd63e35",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/70476",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-204-2025",
+      "act": "yea",
+      "motion": "Passage: House Vote #429",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "GA House, Passage: House Vote #429, 2025-04-04: yea (tally 99–74); census gate: multi-subject.",
+      "subjects": [
+        "local limits on gun storage and gun parts barred",
+        "lawful gun carriers may sue over local rules",
+        "state declares gun regulation a statewide matter"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-204-2025.enrolled.pdf",
+          "sha256": "f3383faa3b85b22922b268ff733c78969bf7745386e967a71e6a9f02136f1fc2"
+        }
+      }
+    },
+    {
+      "id": "d8a21ec0a3080faf6b4b13dd9548c0472c8d3e7b13260724915351d9669f2cf5",
+      "kind": "own-words",
+      "url": "https://jaclynforgeorgia.com/2026/03/16/2026-georgia-legislative-session-week-7-8/",
+      "date": "2026-03-16",
+      "date_precision": "day",
+      "passage": "HB 1023 – Creating safe learning environments for Georgia’s students, teachers and faculty has always been a priority, and my colleagues and I continued these efforts on Tuesday by passing House Bill 1023 with bipartisan support. This legislation would require local boards of education and other public school governing bodies to implement one or more weapon detection systems at all main points of entry for permanent school buildings in Georgia’s public schools to prevent individuals from unlawfully bringing weapons onto school campuses.",
+      "note": "Her weekly session newsletter on a school bill she reports the House passed (HB 1023, weapon detection systems at school entrances). She does not say whether she sponsored the bill. This is about keeping weapons out of schools, close to the edge of the subject.",
+      "subjects": [
+        "weapons in schools"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:54:11.309Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +138,58 @@
       "found": 0,
       "at": "2026-10-28T15:47:56.415Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on high-capacity magazines",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "safe storage of guns",
+        "carry a gun without a permit",
+        "general statement on gun rights or gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "legis.ga.gov member page (JavaScript, no list shown)",
+        "Ballotpedia (not relied on)",
+        "news search on name plus gun words",
+        "campaign site jaclynforgeorgia.com: not reviewed, not fetched",
+        "Wikipedia https://en.wikipedia.org/wiki/Jaclyn_Ford: not fetched, nothing on the subject in search results"
+      ],
+      "found": 0,
+      "at": "2026-11-12T01:42:02.024Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on high-capacity magazines",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "safe storage of guns",
+        "carry a gun without a permit",
+        "weapons in schools",
+        "general statement on gun rights or gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site https://jaclynforgeorgia.com/ home page: fetched; issues list names 'Safe Communities' with no text on firearms",
+        "campaign site /about/ and /district-170-information/: fetched, nothing on firearms",
+        "campaign site 2026 session newsletters (weeks 1, 2-4, 5-6, 7-8, 9-10, 11-12) and 2025 posts ?p=90, 95, 101, 112, 119, 186, 222: searched for gun, firearm, Second Amendment; only the week 7-8 entry on HB 1023 (weapon detection in schools) is on the subject, saved",
+        "iVoterGuide https://ivoterguide.com/candidate/80061/race/20141/election/1103: she did not answer the Second Amendment questions",
+        "house-press.com (House Media Services) press listing for Jaclyn Ford: nothing on firearms",
+        "Wikipedia: nothing on the subject",
+        "Ballotpedia: empty to the fetch tool, not relied on",
+        "web searches: 6"
+      ],
+      "found": 1,
+      "at": "2026-11-12T01:54:11.309Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -22,6 +22,240 @@
         "fetched_at": "2026-10-28T20:51:14.417Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "f5910d0b75aaddcec1bed0087ec95f3925870d0e49399284f13a4db010530053",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/66265",
+      "date": "2024-02-27",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1018-2023",
+      "act": "nay",
+      "motion": "Passage: House Vote #581",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #581, 2024-02-27: nay (tally 106–60); census gate: none.",
+      "subjects": [
+        "banks barred from singling out firearms retailers by payment code",
+        "firearms registries by any person or government barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1018-2023.enrolled.pdf",
+          "sha256": "3073f18aecfd54c9c28d17feb9b9ef6f65e37967f1c92fad309d433378719fec"
+        }
+      }
+    },
+    {
+      "id": "ab2b6cbbf5ad2aa9f2c9e3c7ed2d3367bcce148eb8db4754bd5a93c703f8e9ce",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/73253",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1324-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #665",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #665, 2026-03-06: nay (tally 87–76); census gate: none.",
+      "subjects": [
+        "state ban on possessing a silencer repealed",
+        "silencer used in a crime still carries added penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1324-2025.comm-sub.pdf",
+          "sha256": "cac9c7cc0db7a3bfed34e302a4b693e66f6522544bcc39bdac7d05205d292d63"
+        }
+      }
+    },
+    {
+      "id": "c601027bfef6f36372394eea51be51405935ce3830c96232c8c567534e307564",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/69376",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-64-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-64-2025 (LegiScan sponsor list): HB64 (2025-2026 Regular Session): Crimes and offenses; require an owner of an assault weapon to procure and maintain sufficient liability insurance.",
+      "subjects": [
+        "liability insurance required for owners of semiautomatic rifles with high-capacity magazines",
+        "misdemeanor fines for no insurance or no proof",
+        "insurers may not ask for serial numbers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-64-2025.introduced.pdf",
+          "sha256": "bd82bd08d126282cd89c1c8a32495be67adf772c440b9bd18fd55235c3aecd5e"
+        }
+      }
+    },
+    {
+      "id": "0c5b28f00539ecbbb4560b35a338013c07b080d968c457b50496128d7574e8b4",
+      "kind": "own-words",
+      "url": "https://www.ajc.com/opinion/opinion-our-kids-should-not-have-to-triage-their-own-generation/MKNUPECXN5H63AOFJCE2XAB4SQ",
+      "date": "2024-06-12",
+      "date_precision": "day",
+      "passage": "The General Assembly needs to repeal our permitless carry law, which removes every guardrail around carrying a loaded weapon in public.",
+      "note": "Op-ed by Karen Lupton ('Our kids should not have to triage their own generation'). Calls for repeal of the permitless carry law. Text obtained through the fetch tool's exact-sentence request, which returned the sentence in segments.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.058Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f71d29582c3216cf4f1346175265f1ddbfab91347ca70b92d82a015844b77703",
+      "kind": "own-words",
+      "url": "https://www.ajc.com/opinion/opinion-our-kids-should-not-have-to-triage-their-own-generation/MKNUPECXN5H63AOFJCE2XAB4SQ",
+      "date": "2024-06-12",
+      "date_precision": "day",
+      "passage": "we should require a background check with every gun purchase — no loopholes.",
+      "note": "Same op-ed. Calls for a background check on every gun purchase; the preceding clause says felons can buy guns easily online or at gun shows where no check is needed. Passage is the last part of that sentence as returned by the fetch tool.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.058Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6048f79fd827578fb013ae1702215f7e317e707434204db6a804ef8b9807630e",
+      "kind": "own-words",
+      "url": "https://www.ajc.com/opinion/opinion-our-kids-should-not-have-to-triage-their-own-generation/MKNUPECXN5H63AOFJCE2XAB4SQ",
+      "date": "2024-06-12",
+      "date_precision": "day",
+      "passage": "Safe gun storage can become the norm.",
+      "note": "Same op-ed. Backs safe storage of guns so children are less likely to find a loaded weapon.",
+      "subjects": [
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.058Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e65c4ac42c532c4eaf8d48178b8b3f799e8a3117f6ecec6e9af5590fe1e1184f",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/70476",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-204-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #429",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "GA House, Passage: House Vote #429, 2025-04-04: nay (tally 99–74); census gate: multi-subject.",
+      "subjects": [
+        "local limits on gun storage and gun parts barred",
+        "lawful gun carriers may sue over local rules",
+        "state declares gun regulation a statewide matter"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-204-2025.enrolled.pdf",
+          "sha256": "f3383faa3b85b22922b268ff733c78969bf7745386e967a71e6a9f02136f1fc2"
+        }
+      }
+    },
+    {
+      "id": "65c7b8a90273d1aebf1422015f4522d02db727bd0c8a3707b7333eb6347d9373",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/63765",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-135-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-135-2023 (LegiScan sponsor list): HB135 (2023-2024 Regular Session): Crimes and offenses; establish offense of failure to adequately secure a firearm.",
+      "subjects": [
+        "new offense for failing to securely store a firearm",
+        "minimum $500 fine"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-135-2023.introduced.pdf",
+          "sha256": "224d785ad79f4e8da2380928614cc4e2eb49e1e5d71270e023b7f39c48148f4b"
+        }
+      }
+    },
+    {
+      "id": "41004fd008f73ef6e077341cd7c7092f49d4ad769b4c4f01bd5fa2e4b4eb4deb",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/70324",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-452-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-452-2025 (LegiScan sponsor list): HB452 (2025-2026 Regular Session): Firearms; persons convicted of family violence offenses cannot possess or purchase; provide.",
+      "subjects": [
+        "gun ban for people convicted of family violence offenses",
+        "gun ban while a family violence protective order is in force",
+        "ban lifts when the protective order ends"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-452-2025.introduced.pdf",
+          "sha256": "1a91f6715481cf1d97f8b881f81006b21ecdf057a55ac4cc80fa3917abfeade8"
+        }
+      }
     }
   ],
   "searches": [
@@ -64,6 +298,30 @@
       "found": 1,
       "at": "2026-10-28T20:51:14.417Z",
       "by": "identity-ga-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "safe storage of guns",
+        "guns and the Second Amendment",
+        "limits on who may have a gun",
+        "suppressors and repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "op-ed in the Atlanta newspaper, 2024-06-12 (fetch tool returned the text; direct curl returned a different page)",
+        "personal campaign site not found (domain guess failed)",
+        "web searches on name plus gun words and bill numbers",
+        "blocked: https://www.ajc.com direct curl returned unrelated content"
+      ],
+      "found": 3,
+      "at": "2026-11-12T01:42:02.058Z",
+      "by": "source-collector"
     }
   ]
 }

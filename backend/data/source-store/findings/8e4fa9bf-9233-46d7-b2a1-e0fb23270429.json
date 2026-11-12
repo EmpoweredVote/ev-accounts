@@ -1,213 +1,547 @@
 {
-  "politician_id": "8e4fa9bf-9233-46d7-b2a1-e0fb23270429",
-  "findings": [
-    {
-      "id": "2a63e070ed9f2487a3192fce2576541e27582e6d6dd7338692d1ebe0216a3951",
-      "kind": "own-words",
-      "url": "https://branch.vote/races/2022-primary-elections-state-senator-ga-senate-32-R/candidates/kay-kirkpatrick",
-      "date": "2022",
-      "date_precision": "year",
-      "passage": "I supported SB 202 which strengthened our law in many ways, especially requiring an objective voter ID method",
-      "note": "Her statement as quoted by the Branch voter guide in its Voting and Elections section for the 2022 primary. The page gives no exact date. It refers to SB 202 (2021), which set ID-number checks for absentee ballots in place of signature matching.",
-      "subjects": [
-        "mail-ballot ID",
-        "voter ID at the polls"
-      ],
-      "topic_keys": [
-        "voting-rights"
-      ],
-      "provenance": {
-        "fetched_by": "source-collector-wave2",
-        "fetched_at": "2026-10-28T20:28:59.748Z",
-        "method": "webfetch"
-      }
-    },
-    {
-      "id": "db51fa75992092177fe579139f734c1c2b1c16d025d2b81c5602d6dcf3774268",
-      "kind": "record",
-      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
-      "date": "2021-03-25",
-      "date_precision": "day",
-      "instrument_id": "GA-SB-202-2021",
-      "act": "yea",
-      "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
-      "note": "Senate Journal roll call as printed ('Kirkpatrick'), linked to KAY KIRKPATRICK (district 32) via the official 2021 Senate member roll (identity step 2026-10-28).",
-      "subjects": [
-        "voter ID at the polls"
-      ],
-      "topic_keys": [
-        "voting-rights"
-      ],
-      "provenance": {
-        "fetched_by": "identity-ga-2026-10-28",
-        "fetched_at": "2026-10-28T20:51:14.413Z",
-        "method": "webfetch"
-      }
-    },
-    {
-      "id": "3fbba466be7fa8630200fcd382bbe3a54209a16ac9f91f2d8fcfa63322e91940",
-      "kind": "record",
-      "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
-      "date": "2021-02-23",
-      "date_precision": "day",
-      "instrument_id": "GA-SB-67-2021",
-      "act": "yea",
-      "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
-      "note": "Senate Journal roll call as printed ('Kirkpatrick'), linked to KAY KIRKPATRICK (district 32) via the official 2021 Senate member roll (identity step 2026-10-28).",
-      "subjects": [
-        "voter ID at the polls"
-      ],
-      "topic_keys": [
-        "voting-rights"
-      ],
-      "provenance": {
-        "fetched_by": "identity-ga-2026-10-28",
-        "fetched_at": "2026-10-28T20:51:14.413Z",
-        "method": "webfetch"
-      }
-    },
-    {
-      "id": "3e9d37fc3287bce81b3f284cac9840364f2ad68a4cfefdf4a2d6a9ccdd4ba3aa",
-      "kind": "record",
-      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
-      "date": "2024-03-28",
-      "date_precision": "day",
-      "instrument_id": "GA-SB-189-2024",
-      "act": "yea",
-      "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
-      "note": "Senate Journal roll call as printed ('Kirkpatrick'), linked to Kirkpatrick, Kay (district 32) via the official 2024 Senate member roll (identity step 2026-10-28).",
-      "subjects": [
-        "voter ID at the polls"
-      ],
-      "topic_keys": [
-        "voting-rights"
-      ],
-      "provenance": {
-        "fetched_by": "identity-ga-2026-10-28",
-        "fetched_at": "2026-10-28T20:51:14.413Z",
-        "method": "webfetch"
-      }
-    },
-    {
-      "id": "359fee5af4250857dba0e420a42a8312132c3e9522188bd15a023a036c8a0b6a",
-      "kind": "record",
-      "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf",
-      "date": "2019-03-13",
-      "date_precision": "day",
-      "instrument_id": "GA-HB-316-2019",
-      "act": "yea",
-      "motion": "Senate: On the passage of the bill (Senate Committee on Ethics substitute)",
-      "note": "Senate Journal roll call as printed ('Kirkpatrick'), linked to KAY KIRKPATRICK (district 32) via the official 2019 Senate member roll (identity step 2026-10-28).",
-      "subjects": [
-        "voter ID at the polls"
-      ],
-      "topic_keys": [
-        "voting-rights"
-      ],
-      "provenance": {
-        "fetched_by": "identity-ga-2026-10-28",
-        "fetched_at": "2026-10-28T20:51:14.413Z",
-        "method": "webfetch"
-      }
-    },
-    {
-      "id": "68a47320c129f64d7d10a51db6e7605d6283512165632f65278a2bc87eda6aa9",
-      "kind": "record",
-      "url": "https://law-journals-books.vlex.com/vid/sb-319-chairman-john-935400390",
-      "date": "2022-02-28",
-      "date_precision": "day",
-      "instrument_id": "GA-SB-319-2022",
-      "act": "yea",
-      "motion": "Passage (third reading)",
-      "gate_by_topic": {
-        "gun-policy": "none"
-      },
-      "note": "GA Senate, Passage (third reading), 2022-02-28: yea (tally 34–22); census gate: none.",
-      "subjects": [
-        "carry a gun without a licence"
-      ],
-      "topic_keys": [
-        "gun-policy"
-      ],
-      "provenance": {
-        "fetched_by": "orchestrator, gun-policy Stage 5, LegiScan API (getBill, getRollCall, getSessionPeople, getBillText)",
-        "fetched_at": "2026-10-30T18:00:00Z",
-        "method": "api",
-        "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage5/prefill/legiscan-ga/ga-sb319-enrolled.pdf",
-          "sha256": "17943534917a39ee671fab99d8120acebcc4e61921a039e7c8f5bb13fc72114d"
-        }
-      }
-    },
-    {
-      "id": "bf3205c5181cf565fa3b35de307a169f3e76243332fda872227de90b37ba2255",
-      "kind": "record",
-      "url": "https://law-journals-books.vlex.com/vid/sb-319-chairman-john-935400390",
-      "date": "2022-04-01",
-      "date_precision": "day",
-      "instrument_id": "GA-SB-319-2022",
-      "act": "yea",
-      "motion": "Final passage / agree to House version",
-      "gate_by_topic": {
-        "gun-policy": "none"
-      },
-      "note": "GA Senate, Final passage / agree to House version, 2022-04-01: yea (tally 34–22); census gate: none.",
-      "subjects": [
-        "carry a gun without a licence"
-      ],
-      "topic_keys": [
-        "gun-policy"
-      ],
-      "provenance": {
-        "fetched_by": "orchestrator, gun-policy Stage 5, LegiScan API (getBill, getRollCall, getSessionPeople, getBillText)",
-        "fetched_at": "2026-10-30T18:00:00Z",
-        "method": "api",
-        "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage5/prefill/legiscan-ga/ga-sb319-enrolled.pdf",
-          "sha256": "17943534917a39ee671fab99d8120acebcc4e61921a039e7c8f5bb13fc72114d"
-        }
-      }
+ "politician_id": "8e4fa9bf-9233-46d7-b2a1-e0fb23270429",
+ "findings": [
+  {
+   "id": "2a63e070ed9f2487a3192fce2576541e27582e6d6dd7338692d1ebe0216a3951",
+   "kind": "own-words",
+   "url": "https://branch.vote/races/2022-primary-elections-state-senator-ga-senate-32-R/candidates/kay-kirkpatrick",
+   "date": "2022",
+   "date_precision": "year",
+   "passage": "I supported SB 202 which strengthened our law in many ways, especially requiring an objective voter ID method",
+   "note": "Her statement as quoted by the Branch voter guide in its Voting and Elections section for the 2022 primary. The page gives no exact date. It refers to SB 202 (2021), which set ID-number checks for absentee ballots in place of signature matching.",
+   "subjects": [
+    "mail-ballot ID",
+    "voter ID at the polls"
+   ],
+   "topic_keys": [
+    "voting-rights"
+   ],
+   "provenance": {
+    "fetched_by": "source-collector-wave2",
+    "fetched_at": "2026-10-28T20:28:59.748Z",
+    "method": "webfetch"
+   }
+  },
+  {
+   "id": "db51fa75992092177fe579139f734c1c2b1c16d025d2b81c5602d6dcf3774268",
+   "kind": "record",
+   "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+   "date": "2021-03-25",
+   "date_precision": "day",
+   "instrument_id": "GA-SB-202-2021",
+   "act": "yea",
+   "motion": "Senate: Senator Burns of the 23rd moved that the Senate agree to the House substitute to SB 202. On the motion, a roll call was taken and the vote was as follows",
+   "note": "Senate Journal roll call as printed ('Kirkpatrick'), linked to KAY KIRKPATRICK (district 32) via the official 2021 Senate member roll (identity step 2026-10-28).",
+   "subjects": [
+    "voter ID at the polls"
+   ],
+   "topic_keys": [
+    "voting-rights"
+   ],
+   "provenance": {
+    "fetched_by": "identity-ga-2026-10-28",
+    "fetched_at": "2026-10-28T20:51:14.413Z",
+    "method": "webfetch"
+   }
+  },
+  {
+   "id": "3fbba466be7fa8630200fcd382bbe3a54209a16ac9f91f2d8fcfa63322e91940",
+   "kind": "record",
+   "url": "https://dlg.usg.edu/record/dlg_ggpd_y-ga-bl402-b2021-belec-p-btext",
+   "date": "2021-02-23",
+   "date_precision": "day",
+   "instrument_id": "GA-SB-67-2021",
+   "act": "yea",
+   "motion": "Senate: On the passage of the bill, a roll call was taken, and the vote was as follows (SB 67 by Senate Ethics substitute)",
+   "note": "Senate Journal roll call as printed ('Kirkpatrick'), linked to KAY KIRKPATRICK (district 32) via the official 2021 Senate member roll (identity step 2026-10-28).",
+   "subjects": [
+    "voter ID at the polls"
+   ],
+   "topic_keys": [
+    "voting-rights"
+   ],
+   "provenance": {
+    "fetched_by": "identity-ga-2026-10-28",
+    "fetched_at": "2026-10-28T20:51:14.413Z",
+    "method": "webfetch"
+   }
+  },
+  {
+   "id": "3e9d37fc3287bce81b3f284cac9840364f2ad68a4cfefdf4a2d6a9ccdd4ba3aa",
+   "kind": "record",
+   "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2024-senate-journal.pdf",
+   "date": "2024-03-28",
+   "date_precision": "day",
+   "instrument_id": "GA-SB-189-2024",
+   "act": "yea",
+   "motion": "Senate: Motion that the Senate agree to the House substitute to SB 189 (final vote)",
+   "note": "Senate Journal roll call as printed ('Kirkpatrick'), linked to Kirkpatrick, Kay (district 32) via the official 2024 Senate member roll (identity step 2026-10-28).",
+   "subjects": [
+    "voter ID at the polls"
+   ],
+   "topic_keys": [
+    "voting-rights"
+   ],
+   "provenance": {
+    "fetched_by": "identity-ga-2026-10-28",
+    "fetched_at": "2026-10-28T20:51:14.413Z",
+    "method": "webfetch"
+   }
+  },
+  {
+   "id": "359fee5af4250857dba0e420a42a8312132c3e9522188bd15a023a036c8a0b6a",
+   "kind": "record",
+   "url": "https://www.legis.ga.gov/api/document/docs/default-source/senate-journal-document-library/2019-senate-journal.pdf",
+   "date": "2019-03-13",
+   "date_precision": "day",
+   "instrument_id": "GA-HB-316-2019",
+   "act": "yea",
+   "motion": "Senate: On the passage of the bill (Senate Committee on Ethics substitute)",
+   "note": "Senate Journal roll call as printed ('Kirkpatrick'), linked to KAY KIRKPATRICK (district 32) via the official 2019 Senate member roll (identity step 2026-10-28).",
+   "subjects": [
+    "voter ID at the polls"
+   ],
+   "topic_keys": [
+    "voting-rights"
+   ],
+   "provenance": {
+    "fetched_by": "identity-ga-2026-10-28",
+    "fetched_at": "2026-10-28T20:51:14.413Z",
+    "method": "webfetch"
+   }
+  },
+  {
+   "id": "68a47320c129f64d7d10a51db6e7605d6283512165632f65278a2bc87eda6aa9",
+   "kind": "record",
+   "url": "https://law-journals-books.vlex.com/vid/sb-319-chairman-john-935400390",
+   "date": "2022-02-28",
+   "date_precision": "day",
+   "instrument_id": "GA-SB-319-2022",
+   "act": "yea",
+   "motion": "Passage (third reading)",
+   "gate_by_topic": {
+    "gun-policy": "none"
+   },
+   "note": "GA Senate, Passage (third reading), 2022-02-28: yea (tally 34–22); census gate: none.",
+   "subjects": [
+    "carry a gun without a licence"
+   ],
+   "topic_keys": [
+    "gun-policy"
+   ],
+   "provenance": {
+    "fetched_by": "orchestrator, gun-policy Stage 5, LegiScan API (getBill, getRollCall, getSessionPeople, getBillText)",
+    "fetched_at": "2026-10-30T18:00:00Z",
+    "method": "api",
+    "saved_copy": {
+     "path": ".planning/research/s3-prep-gun-policy/stage5/prefill/legiscan-ga/ga-sb319-enrolled.pdf",
+     "sha256": "17943534917a39ee671fab99d8120acebcc4e61921a039e7c8f5bb13fc72114d"
     }
-  ],
-  "searches": [
-    {
-      "topic_key": "voting-rights",
-      "season": 3,
-      "subjects": [
-        "voter ID at the polls",
-        "mail-ballot ID",
-        "proof of citizenship to register",
-        "what a voter with no ID does",
-        "voter-roll checks and non-citizen voting",
-        "election integrity laws in general"
-      ],
-      "places": [
-        "Ballotpedia page (confirms seat and November 3, 2026 general-election ballot): https://ballotpedia.org/Kay_Kirkpatrick (District 32)",
-        "campaign site https://senatorkaykirkpatrick.com/ and its on-the-issues page: nothing on the subject",
-        "blocked: https://eastcobbnews.com/east-cobb-republicans-vote-for-ga-elections-overhaul-bill/ (bot challenge page, not bypassed; a summary of it says she voted for SB 202 on 2021-03-25, floor vote is linked separately)",
-        "blocked: https://www.ajc.com/politics/georgia-senate-votes-to-eliminate-no-excuse-absentee-voting/NGQOBV6XB5GGDCCNLTAJFQIDJI and pressreader copy (paywalled; not opened). Her reported SB 241 comment about voter ID could not be confirmed from a page I fetched",
-        "Branch candidate profile (2022 primary)",
-        "On the Record extraction script not run (repo scripts are not allowed in this session): not reviewed",
-        "web search (several queries on name plus voter ID, absentee ID, election integrity)",
-        "legis.ga.gov bill pages not opened (login token needed)"
-      ],
-      "found": 1,
-      "at": "2026-10-28T20:28:59.748Z",
-      "by": "source-collector-wave2"
-    },
-    {
-      "topic_key": "voting-rights",
-      "season": 3,
-      "subjects": [
-        "roll calls",
-        "sponsor lists"
-      ],
-      "places": [
-        "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
-      ],
-      "found": 4,
-      "at": "2026-10-28T20:51:14.413Z",
-      "by": "identity-ga-2026-10-28"
+   }
+  },
+  {
+   "id": "bf3205c5181cf565fa3b35de307a169f3e76243332fda872227de90b37ba2255",
+   "kind": "record",
+   "url": "https://law-journals-books.vlex.com/vid/sb-319-chairman-john-935400390",
+   "date": "2022-04-01",
+   "date_precision": "day",
+   "instrument_id": "GA-SB-319-2022",
+   "act": "yea",
+   "motion": "Final passage / agree to House version",
+   "gate_by_topic": {
+    "gun-policy": "none"
+   },
+   "note": "GA Senate, Final passage / agree to House version, 2022-04-01: yea (tally 34–22); census gate: none.",
+   "subjects": [
+    "carry a gun without a licence"
+   ],
+   "topic_keys": [
+    "gun-policy"
+   ],
+   "provenance": {
+    "fetched_by": "orchestrator, gun-policy Stage 5, LegiScan API (getBill, getRollCall, getSessionPeople, getBillText)",
+    "fetched_at": "2026-10-30T18:00:00Z",
+    "method": "api",
+    "saved_copy": {
+     "path": ".planning/research/s3-prep-gun-policy/stage5/prefill/legiscan-ga/ga-sb319-enrolled.pdf",
+     "sha256": "17943534917a39ee671fab99d8120acebcc4e61921a039e7c8f5bb13fc72114d"
     }
-  ]
+   }
+  },
+  {
+   "id": "7e963a5d63695919ee3caedc267ad5b9885a7c37a521efdda8b8eccb70643e76",
+   "kind": "record",
+   "url": "https://www.legis.ga.gov/legislation/66265",
+   "date": "2024-03-26",
+   "date_precision": "day",
+   "instrument_id": "GA-HB-1018-2023",
+   "act": "yea",
+   "motion": "Passage: Senate Vote #777",
+   "gate_by_topic": {
+    "gun-policy": "none"
+   },
+   "note": "GA Senate, Passage: Senate Vote #777, 2024-03-26: yea (tally 33–19); census gate: none.",
+   "subjects": [
+    "banks barred from singling out firearms retailers by payment code",
+    "firearms registries by any person or government barred"
+   ],
+   "topic_keys": [
+    "gun-policy"
+   ],
+   "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+     "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1018-2023.enrolled.pdf",
+     "sha256": "3073f18aecfd54c9c28d17feb9b9ef6f65e37967f1c92fad309d433378719fec"
+    }
+   }
+  },
+  {
+   "id": "18900740b94347882540ed9224005ee5c340c86111a74b2257c3a355d8147409",
+   "kind": "record",
+   "url": "https://www.legis.ga.gov/legislation/59180",
+   "date": "2022-02-24",
+   "date_precision": "day",
+   "instrument_id": "GA-HB-218-2021",
+   "act": "yea",
+   "motion": "Agree To House Amendment To Senate Substitute: Senate Vote #559",
+   "gate_by_topic": {
+    "gun-policy": "none"
+   },
+   "note": "GA Senate, Agree To House Amendment To Senate Substitute: Senate Vote #559, 2022-02-24: yea (tally 34–20); census gate: none.",
+   "subjects": [
+    "Georgia honors carry licenses from any other state that honors its own",
+    "Attorney General must make reciprocity agreements with states that require one",
+    "90-day carry window for new residents holding another state's license"
+   ],
+   "topic_keys": [
+    "gun-policy"
+   ],
+   "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+     "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-218-2021.enrolled.pdf",
+     "sha256": "35053f645a4fe0d4cb64700443e051921e643e6f8f93fc6836b1613d11b098ce"
+    }
+   }
+  },
+  {
+   "id": "42ef99664900ffebd216990f4f4b20c23afe4d8c5413fe7406f45c3b58ae8af1",
+   "kind": "record",
+   "url": "https://www.legis.ga.gov/legislation/60080",
+   "date": "2022-02-28",
+   "date_precision": "day",
+   "instrument_id": "GA-SB-259-2021",
+   "act": "yea",
+   "motion": "Passage As Amended: Senate Vote #563",
+   "gate_by_topic": {
+    "gun-policy": "none"
+   },
+   "note": "GA Senate, Passage As Amended: Senate Vote #563, 2022-02-28: yea (tally 33–20); census gate: none.",
+   "subjects": [
+    "places of worship removed from banned carry locations",
+    "license-holder database ban gets a damages remedy",
+    "local limits on discharging firearms on parcels of ten acres or more",
+    "firearms barred from being seized or sales halted during a state of emergency",
+    "people with a past involuntary hospitalization can petition to be removed from the background-check list"
+   ],
+   "topic_keys": [
+    "gun-policy"
+   ],
+   "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+     "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-259-2021.comm-sub.pdf",
+     "sha256": "c424cfbbf905edebf2dd2cc87e8203dfd2af11b212bd3fa3556c84a8ccd93c16"
+    }
+   }
+  },
+  {
+   "id": "e9239241c8f6503afbba5646a4fd120b72ed61e9fdc03422e74ea9712bea246a",
+   "kind": "record",
+   "url": "https://www.legis.ga.gov/legislation/60797",
+   "date": "2022-04-01",
+   "date_precision": "day",
+   "instrument_id": "GA-SB-319-2021",
+   "act": "yea",
+   "motion": "Agree To House Substitute: Senate Vote #783",
+   "gate_by_topic": {
+    "gun-policy": "none"
+   },
+   "note": "GA Senate, Agree To House Substitute: Senate Vote #783, 2022-04-01: yea (tally 34–22); census gate: none.",
+   "subjects": [
+    "carry license no longer required to carry a handgun",
+    "\"lawful weapons carrier\" replaces license holder across carry laws",
+    "police cannot stop a person only to check for a license"
+   ],
+   "topic_keys": [
+    "gun-policy"
+   ],
+   "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+     "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-319-2021.enrolled.pdf",
+     "sha256": "17943534917a39ee671fab99d8120acebcc4e61921a039e7c8f5bb13fc72114d"
+    }
+   }
+  },
+  {
+   "id": "0ba54cd470c073810dd7f8aa2bbd4f760eb19202616e1e8bc26ae73afdfd5e8c",
+   "kind": "record",
+   "url": "https://www.legis.ga.gov/legislation/73161",
+   "date": "2026-03-06",
+   "date_precision": "day",
+   "instrument_id": "GA-SB-499-2025",
+   "act": "yea",
+   "motion": "Passage By Substitute: Senate Vote #686",
+   "gate_by_topic": {
+    "gun-policy": "none"
+   },
+   "note": "GA Senate, Passage By Substitute: Senate Vote #686, 2026-03-06: yea (tally 30–20); census gate: none.",
+   "subjects": [
+    "general ban on possessing silencers repealed",
+    "silencer offence kept only for people barred from firearms"
+   ],
+   "topic_keys": [
+    "gun-policy"
+   ],
+   "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+     "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-499-2025.comm-sub.pdf",
+     "sha256": "9bd024fd2d64c29b3394a0fe59315418fd91f93aea89bb156b92369c35534b6e"
+    }
+   }
+  },
+  {
+   "id": "129566b0fd92f12639e586f93d1182567f6edb06283a1a3a2fd6f52aa1b3c52b",
+   "kind": "record",
+   "url": "https://www.legis.ga.gov/legislation/60797",
+   "date": "2021",
+   "date_precision": "year",
+   "instrument_id": "GA-SB-319-2021",
+   "act": "sponsor",
+   "motion": "prime sponsor, LegiScan sponsor list",
+   "note": "prime sponsor of GA-SB-319-2021 (LegiScan sponsor list): SB319 (2021-2022 Regular Session): \"Georgia Constitutional Carry Act of 2021\"; enact.",
+   "subjects": [
+    "carry license no longer required to carry a handgun",
+    "\"lawful weapons carrier\" replaces license holder across carry laws",
+    "police cannot stop a person only to check for a license"
+   ],
+   "topic_keys": [
+    "gun-policy"
+   ],
+   "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+     "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-319-2021.enrolled.pdf",
+     "sha256": "17943534917a39ee671fab99d8120acebcc4e61921a039e7c8f5bb13fc72114d"
+    }
+   }
+  },
+  {
+   "id": "63d303fb90792574cae4cc95e56956434bc9e0d9793db6d1909367573f2d9f03",
+   "kind": "record",
+   "url": "https://www.legis.ga.gov/legislation/61935",
+   "date": "2021",
+   "date_precision": "year",
+   "instrument_id": "GA-SB-478-2021",
+   "act": "sponsor",
+   "motion": "prime sponsor, LegiScan sponsor list",
+   "note": "prime sponsor of GA-SB-478-2021 (LegiScan sponsor list): SB478 (2021-2022 Regular Session): Firearms; use or possession of any handgun in a park, historic site, or recreational area; provisions.",
+   "subjects": [
+    "carrying handguns and long guns without a license",
+    "places where carrying is barred, including government buildings, school zones and parks",
+    "no detention to check for a carry license",
+    "private-detective firearm permits repealed"
+   ],
+   "topic_keys": [
+    "gun-policy"
+   ],
+   "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+     "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-478-2021.introduced.pdf",
+     "sha256": "063c1b93679690b29aba6a65f8bfff7d1f1076ac71d1430f8778af1ff1f6c3cf"
+    }
+   }
+  },
+  {
+   "id": "acaf722ae454f5e3cd67a32c053ff4ee096ab6187e99653da57864d224a5e77c",
+   "kind": "own-words",
+   "url": "https://www.ajc.com/politics/georgia-senate-passes-bill-to-waive-sales-tax-on-gun-safes-safety-accessories/X3NI5CXEDBC4RBUQQWIEQSSXVY",
+   "date": "2024-02-13",
+   "date_precision": "day",
+   "passage": "“This bill is simply an incentive for lawful gun owners to purchase safe storage devices, including firearm safes and firearm safety devices, such as trigger locks, by exempting them from Georgia sales tax,” Kirkpatrick said.",
+   "note": "Quoted by the AJC on her SB 340, which exempts gun safes and firearm safety devices from sales tax; the same report says she filed it out of safety concerns for children and that it passed the Senate 46-1.",
+   "subjects": [
+    "safe storage of guns",
+    "sales tax exemption for gun safes"
+   ],
+   "topic_keys": [
+    "gun-policy"
+   ],
+   "provenance": {
+    "fetched_by": "source-collector",
+    "fetched_at": "2026-11-12T01:42:02.070Z",
+    "method": "webfetch"
+   }
+  },
+  {
+   "id": "7c02a51365aa84216211926558040b6e9dffbfb8baf8aea60e2843dff3e4286e",
+   "kind": "own-words",
+   "url": "https://newschannel9.com/news/local/georgia-school-shooting-stirs-debate-about-safe-storage-laws-for-guns",
+   "date": "2024-09-05",
+   "date_precision": "day",
+   "passage": "“I am certain that we will be continuing the conversation next session.”",
+   "note": "Same AP report: her remark after two competing safe-storage incentive bills (her Senate bill and a House tax-credit bill) did not both become law.",
+   "subjects": [
+    "safe storage of guns"
+   ],
+   "topic_keys": [
+    "gun-policy"
+   ],
+   "provenance": {
+    "fetched_by": "source-collector",
+    "fetched_at": "2026-11-12T01:42:02.070Z",
+    "method": "webfetch"
+   }
+  },
+  {
+   "id": "17937b9e5670579ab322523997945fbed283f7837f3601f0f8b8dac038312a66",
+   "kind": "own-words",
+   "url": "https://ivoterguide.com/candidate/46707/race/32069/election/1470",
+   "date": "2024",
+   "date_precision": "year",
+   "passage": "I believe current laws are sufficient. I would like to incentive safe storage.",
+   "note": "Her answer to the question 'What restrictions on gun ownership are needed to protect public safety?' on a voter-guide page that reproduces her Ballotpedia Candidate Connection survey (page says it was completed in 2024). The original Ballotpedia page was blocked, so this is a mirror; her wording is kept as printed, including 'incentive'.",
+   "subjects": [
+    "restrictions on gun ownership",
+    "safe storage of guns",
+    "general statement on gun safety laws"
+   ],
+   "topic_keys": [
+    "gun-policy"
+   ],
+   "provenance": {
+    "fetched_by": "source-collector",
+    "fetched_at": "2026-11-12T01:42:02.070Z",
+    "method": "webfetch"
+   }
+  },
+  {
+   "id": "90a47ae2d19b6e49defb0468fa38cb57144bc719a3a56301c3e7c35242d69c1a",
+   "kind": "record",
+   "url": "https://www.legis.ga.gov/legislation/70476",
+   "date": "2026-01-13",
+   "date_precision": "day",
+   "instrument_id": "GA-SB-204-2025",
+   "act": "yea",
+   "motion": "Agree To House Substitute: Senate Vote #494",
+   "gate_by_topic": {
+    "gun-policy": "multi-subject"
+   },
+   "note": "GA Senate, Agree To House Substitute: Senate Vote #494, 2026-01-13: yea (tally 32–21); census gate: multi-subject.",
+   "subjects": [
+    "local limits on gun storage and gun parts barred",
+    "lawful gun carriers may sue over local rules",
+    "state declares gun regulation a statewide matter"
+   ],
+   "topic_keys": [
+    "gun-policy"
+   ],
+   "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:46:27.022243Z",
+    "method": "api",
+    "saved_copy": {
+     "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-204-2025.enrolled.pdf",
+     "sha256": "f3383faa3b85b22922b268ff733c78969bf7745386e967a71e6a9f02136f1fc2"
+    }
+   }
+  }
+ ],
+ "searches": [
+  {
+   "topic_key": "voting-rights",
+   "season": 3,
+   "subjects": [
+    "voter ID at the polls",
+    "mail-ballot ID",
+    "proof of citizenship to register",
+    "what a voter with no ID does",
+    "voter-roll checks and non-citizen voting",
+    "election integrity laws in general"
+   ],
+   "places": [
+    "Ballotpedia page (confirms seat and November 3, 2026 general-election ballot): https://ballotpedia.org/Kay_Kirkpatrick (District 32)",
+    "campaign site https://senatorkaykirkpatrick.com/ and its on-the-issues page: nothing on the subject",
+    "blocked: https://eastcobbnews.com/east-cobb-republicans-vote-for-ga-elections-overhaul-bill/ (bot challenge page, not bypassed; a summary of it says she voted for SB 202 on 2021-03-25, floor vote is linked separately)",
+    "blocked: https://www.ajc.com/politics/georgia-senate-votes-to-eliminate-no-excuse-absentee-voting/NGQOBV6XB5GGDCCNLTAJFQIDJI and pressreader copy (paywalled; not opened). Her reported SB 241 comment about voter ID could not be confirmed from a page I fetched",
+    "Branch candidate profile (2022 primary)",
+    "On the Record extraction script not run (repo scripts are not allowed in this session): not reviewed",
+    "web search (several queries on name plus voter ID, absentee ID, election integrity)",
+    "legis.ga.gov bill pages not opened (login token needed)"
+   ],
+   "found": 1,
+   "at": "2026-10-28T20:28:59.748Z",
+   "by": "source-collector-wave2"
+  },
+  {
+   "topic_key": "voting-rights",
+   "season": 3,
+   "subjects": [
+    "roll calls",
+    "sponsor lists"
+   ],
+   "places": [
+    "official Georgia House and Senate Journals and bill texts in bills/ga-bills*.json (identity step 2026-10-28)"
+   ],
+   "found": 4,
+   "at": "2026-10-28T20:51:14.413Z",
+   "by": "identity-ga-2026-10-28"
+  },
+  {
+   "topic_key": "gun-policy",
+   "season": 3,
+   "subjects": [
+    "safe storage of guns",
+    "sales tax exemption for gun safes",
+    "restrictions on gun ownership",
+    "Second Amendment rights",
+    "permitless carry",
+    "carry permits",
+    "check every gun buyer"
+   ],
+   "places": [
+    "On the Record (0 meetings)",
+    "confirmed in scope: sitting Georgia state senator, district 32, on the 2026-11-03 general-election ballot (voter guide listing)",
+    "official Senate page and legislature member list: blocked: https://www.legis.ga.gov/members/senate (needs JavaScript, empty)",
+    "campaign site: blocked: https://www.kaykirkpatrick.com/ (HTTP 500); other guessed campaign addresses did not load",
+    "sponsor list: covered by LegiScan bulk check",
+    "Ballotpedia: blocked: https://ballotpedia.org/Kay_Kirkpatrick (403)",
+    "news searches on name plus gun words (3 searches)",
+    "voter guide mirror of the Ballotpedia candidate survey (found, saved with note)",
+    "AJC 2024-02-13 and AP 2024-09-07 reports (found, saved)",
+    "Atlanta News First 2026-01-28 report on SR 605: does not name her"
+   ],
+   "found": 4,
+   "at": "2026-11-12T01:42:02.070Z",
+   "by": "source-collector"
+  }
+ ]
 }
