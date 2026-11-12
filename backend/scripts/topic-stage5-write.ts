@@ -2,7 +2,7 @@
  * topic-stage5-write.ts — Stage 5 step 7: write a batch's research outcomes and checked passages to the DRAFT season.
  *
  *   npm run topic:stage5-write --prefix backend -- --topic <key> --research <abs topic folder> --season draft
- *        --csv-out <abs research.csv> [--units federal,state:in,…] [--store <abs store root>]
+ *        --csv-out <abs research.csv> [--units federal,state:in,…] [--skip-ids <abs file>] [--store <abs store root>]
  *   npm run topic:stage5-write … (same flags, without --csv-out) --apply
  *
  * Reads `<research>/stage5/roster.tsv`, every `<research>/stage5/codes/<politician_id>.json`, the people's saved
@@ -21,6 +21,9 @@
  * quote check's word and is listed.
  *
  * Opens its own pg Pool from DATABASE_URL, loaded by lib/cliEnv.ts; never prints it.
+ * `--skip-ids` names a file of politician ids (one per line, blanks ignored) that this run leaves out, as if their
+ * codes were not on file: the held and moved people of a batch (`write-batch.sh` passes them). Nothing is moved.
+ *
  * Exit 0 = planned (or written); 3 = some codes or passages were refused (listed); 2 = a usage or input error.
  */
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
@@ -75,6 +78,13 @@ async function main(): Promise<number> {
   if (unitsFlag) {
     const units = unitsFlag.split(',').map((u) => parseUnit(u.trim()));
     roster = roster.filter((r) => units.some((u) => u.level === r.level && (!u.state || u.state === r.state)));
+  }
+  const skipFile = flag('--skip-ids');
+  if (skipFile) {
+    const skip = new Set(readFileSync(abs('--skip-ids', skipFile), 'utf8').split(/\s+/).filter(Boolean));
+    const before = roster.length;
+    roster = roster.filter((r) => !skip.has(r.politician_id));
+    console.log(`left out ${before - roster.length} roster id(s) listed in ${skipFile} (${skip.size} listed)`);
   }
   const names = new Map(roster.map((r) => [r.politician_id, r.full_name]));
 

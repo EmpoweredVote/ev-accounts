@@ -17,7 +17,7 @@
  */
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { compactBatch, filterRulings, onTopic, roundTripProblems, type CompactBatch } from '../lib/stage5CoderInputs.js';
+import { batchLine, compactBatch, filterRulings, onTopic, roundTripProblems, type CompactBatch } from '../lib/stage5CoderInputs.js';
 import { REPO, STORE, findingsFileSize, instrumentIndex, parseArgs, readConfig, readPersonFindings, readRosters } from './coder-io.js';
 
 const TEMPLATE = join(REPO, '.claude/skills/season-topic-prep/templates/stage5-coder-prompt.md');
@@ -76,6 +76,14 @@ function main() {
   }
 
   const recordOnly = recordOnlyFlag(flags);
+  // A record-only code may be kept without a second pass (search_list.py recode), so its coder must know the
+  // seat: rebuild the roster (topic:stage5-roster writes an `office` column since 2026-11-12).
+  const noOffice = ids.filter((p) => !rosters.get(p)!.office?.trim());
+  if (noOffice.length) {
+    const msg = `${noOffice.length} of ${ids.length} have no office title on the roster, e.g. ${rosters.get(noOffice[0])!.full_name}`;
+    if (recordOnly) throw new Error(`${msg}. The record-only pass needs it: rebuild the roster with topic:stage5-roster, or add the office column by hand.`);
+    console.log(`warning: ${msg}; their brief lines name no office`);
+  }
   const kinds = recordOnly ? new Set(['record'] as const) : undefined;
   const rulings = filterRulings(readFileSync(one('rulings'), 'utf8'), unit);
   if (recordOnly) rulings.text = RECORD_ONLY_NOTE + rulings.text;
@@ -104,7 +112,7 @@ function main() {
       continue;
     }
     const findingsPath = join(out, `${batch}.findings.json`);
-    const lines = people.map(({ row }) => `- ${row.politician_id} — ${row.full_name}, ${row.level}, ${row.state.toUpperCase()}, ${row.scope}`);
+    const lines = people.map(({ row }) => batchLine(row));
     const brief = template
       .replaceAll('{{REPO}}', REPO).replaceAll('{{TOPIC_KEY}}', config.topic_key).replaceAll('{{DATE}}', config.date)
       .replaceAll('{{CODEBOOK_VERSION}}', config.codebook).replaceAll('{{SEASON_NUMBER}}', String(config.season))

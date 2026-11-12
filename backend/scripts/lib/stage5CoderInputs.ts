@@ -60,7 +60,18 @@ export interface CompactBatch {
   people: CoderPerson[];
 }
 
-export interface RosterRow { politician_id: string; full_name: string; level: string; state: string; scope: string }
+export interface RosterRow { politician_id: string; full_name: string; level: string; state: string; scope: string; office?: string }
+
+/**
+ * One line of the coder brief's batch list. The office title is what tells a coder what this seat can act on: a
+ * State Auditor's old House votes are a record from another office (Missouri pilot, Scott Fitzpatrick: the
+ * record-only coder saw "state, MO, sitting", seated him at rung 4, and only the second pass, which read his
+ * office in the search notes, coded him doesn't fit).
+ */
+export function batchLine(row: RosterRow): string {
+  const office = row.office?.trim() ? `${row.office.trim()}, ` : '';
+  return `- ${row.politician_id} — ${row.full_name}, ${office}${row.level}, ${row.state.toUpperCase()}, ${row.scope}`;
+}
 
 const ABOUT = 'One file per coder batch. Each finding is as the source store holds it, minus source-tracking fields. '
   + 'A record finding\'s subjects are its bill\'s subjects in "bills" unless the finding lists its own. "gate" is this '

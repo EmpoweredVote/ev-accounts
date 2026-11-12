@@ -70,8 +70,13 @@ Give exactly one outcome:
   reasoning. Write the rule in words ("removing a gun from a registration law is a rung 5 act").
 - **Only this person's bills.** Name only bills that are in this person's findings. A ruling's example bill is
   not their record: state the rule in words instead.
+- **Name a bill as voters would.** Write "SB 1176 (2026)" or "HB 2057 (2016)": chamber letters, number, year in
+  brackets. Never write a store id (`MO-SB-1176-2026`): the gate cannot read it as a bill.
 - **Quote marks are a promise.** Put them only round words copied exactly from a cited finding's `passage` or a
   cited bill's `operative_text` or title (or the rung text). Otherwise write without quote marks.
+- **End a quote where the source ends it.** Do not add a full stop the source does not have, and do not drop
+  words in the middle. If the source goes on past a comma, close the quote at the comma and put your own full
+  stop outside the quote marks.
 
 A check runs on every code as soon as your file is read, and sends back any code that breaks one of these
 rules, or any rule above, with the reason.
