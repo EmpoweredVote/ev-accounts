@@ -1,0 +1,35 @@
+{
+  "politician_id": "8faecbdb-437b-45ed-a061-4e7c92bb804d",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carrying guns and permits",
+        "repeal of gun laws",
+        "general Second Amendment or gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia (page returned empty; nothing usable)",
+        "web search on name plus gun words (nothing on the subject)",
+        "confirmed on the 2026 general ballot, Arizona House District 13: https://www.ballotready.org/people/racquel-rockee-armstrong",
+        "campaign site rockee4az.com home and priorities page (public safety text, nothing on guns)",
+        "Blog for Arizona interview (nothing on the subject)",
+        "animal-protection questionnaire PDF humanevotersaz.org (off subject)",
+        "iVoterGuide profile: did not answer the gun question",
+        "blocked: https://bluevoterguide.org/es/endorser-org/Gun_Sense_Voter/AZ/4895 (403)",
+        "gunsensevoter.org Arizona page (names no candidates)"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:17:21.443Z",
+      "by": "source-collector"
+    }
+  ]
+}

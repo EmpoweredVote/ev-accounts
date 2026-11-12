@@ -1,0 +1,98 @@
+{
+  "id": "AZ-HB-2535-2025",
+  "scope": "state:az",
+  "title": "HB2535 (Fifty-seventh Legislature - First Regular Session (2025)): Firearms dealers; firearms transfers; requirements",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/82357",
+    "https://www.azleg.gov/legtext/57leg/1r/bills/hb2535p.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Anna Abeytia",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1d2e925a-299f-4504-a4de-815d7a2ee7a6"
+    },
+    {
+      "name": "Cesar Aguilar",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "49b2db49-6438-437c-90ce-36b97670e30a"
+    },
+    {
+      "name": "Lorena Austin",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e2bd3486-1fcf-4726-8df8-564ad8ef2b62"
+    },
+    {
+      "name": "Sarah Liguori",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "eb8215ef-5e68-431a-a5cf-c226e8c0abf1"
+    },
+    {
+      "name": "Aaron Marquez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0df9cd85-3923-48bd-86c2-b7d4b31d510d"
+    },
+    {
+      "name": "Mariana Sandoval",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c37db938-9db2-47d5-b30e-7ac6a5f5c5ee"
+    },
+    {
+      "name": "Stephanie Simacek",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "84bb6849-a68d-42e0-999d-dd0456b9d0b4"
+    },
+    {
+      "name": "Stephanie Stahl Hamilton",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2405145c-f082-47f2-861d-d4efd19e8162"
+    },
+    {
+      "name": "Lauren Kuby",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "68308cfb-52ff-4a9c-8363-9a582ea9a989"
+    },
+    {
+      "name": "Catherine Miranda",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f1b19116-3c6f-4c44-9faf-bc32db5fc5d2"
+    },
+    {
+      "name": "Analise Ortiz",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+    "fetched_at": "2026-11-11T03:51:26.779713Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2535-2025.introduced.html",
+      "sha256": "7ba59d337386c2db8946fe8174f31df0bc177a20ebcd25b6ed25d275067b8e0d"
+    }
+  },
+  "operative_text": "Sec. 1 (adding A.R.S. 44-7862, subsection A, introduction): {+A. A FIREARMS DEALER THAT TRANSFERS FIREARMS TO PERSONS IN THIS STATE SHALL TAKE REASONABLE MEASURES TO PREVENT THE TRANSFER OF FIREARMS TO STRAW PURCHASERS OR FIREARMS TRAFFICKERS, INCLUDING:+}\nSec. 1 (A.R.S. 44-7862, subsection A, paragraph 6): {+6. LIMITING TRANSFERS OF FIREARMS TO ONE TRANSFER EVERY THIRTY DAYS PER CIVILIAN CUSTOMER WHO IS NOT A LAW ENFORCEMENT OFFICER.+}\nSec. 1 (A.R.S. 44-7862, subsection B, paragraph 1): {+1. REFUSING TO TRANSFER A FIREARM UNTIL A BACKGROUND CHECK HAS BEEN COMPLETED AND THE TRANSFEREE IS CLEARED TO PURCHASE THE FIREARM.+}\nSec. 1 (A.R.S. 44-7862, subsection B, paragraph 5): {+5. REFUSING TO SELL FIREARMS AT FIREARMS SHOWS UNLESS ALL FIREARMS TRANSFERS AT THE SHOWS ARE CONDUCTED ONLY ON COMPLETION OF A BACKGROUND CHECK.+}\nSec. 1 (A.R.S. 44-7862, subsection B, paragraph 6): {+6. PERFORMING BACKGROUND CHECKS FOR PRIVATE SELLERS FOR A REASONABLE FEE.+}\nSec. 1 (A.R.S. 44-7862, subsection C, paragraph 5): {+5. LIMITING PURCHASES OF FIREARMS TO ONE PURCHASE EVERY THIRTY DAYS PER CIVILIAN CUSTOMER WHO IS NOT A LAW ENFORCEMENT OFFICER.+}\nSec. 1 (A.R.S. 44-7862, subsection F, paragraph 2): {+2. IMMEDIATELY NOTIFYING LOCAL, STATE AND FEDERAL LAW ENFORCEMENT AUTHORITIES OF MULTIPLE HANDGUN PURCHASES BY THE SAME CUSTOMER THAT OCCUR WITHIN ANY NINETY-DAY PERIOD.+}\nSec. 1 (A.R.S. 44-7862, subsection G): {+G. A FIREARMS DEALER THAT TRANSFERS FIREARMS TO INDIVIDUALS SHALL MAINTAIN A LIABILITY INSURANCE POLICY WITH A MINIMUM POLICY LIMIT OF $1,000,000 TO COMPENSATE POTENTIAL VICTIMS FOR DAMAGE TO PROPERTY AND FOR INJURY TO OR DEATH OF ANY INDIVIDUAL AS A RESULT OF A FIREARMS DEALER'S WRONGFUL CONDUCT IN THE TRANSFER OF ANY FIREARM OR AMMUNITION.+}"
+}

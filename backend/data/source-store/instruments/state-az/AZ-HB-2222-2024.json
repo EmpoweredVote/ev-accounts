@@ -1,0 +1,66 @@
+{
+  "id": "AZ-HB-2222-2024",
+  "scope": "state:az",
+  "title": "HB2222 (Fifty-sixth Legislature - Second Regular Session (2024)): Firearm sales; transfers; background checks",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/80055",
+    "https://www.azleg.gov/legtext/56leg/2r/bills/hb2222p.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jennifer Longdon",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Lorena Austin",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e2bd3486-1fcf-4726-8df8-564ad8ef2b62"
+    },
+    {
+      "name": "Quanta Crews",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1482a2bc-75d8-4aee-865c-53378c415210"
+    },
+    {
+      "name": "Nancy Gutierrez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ce872623-f6bd-4e90-9eba-239ed00c7491"
+    },
+    {
+      "name": "Analise Ortiz",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8"
+    },
+    {
+      "name": "Jennifer Pawlik",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+    "fetched_at": "2026-11-11T03:51:26.779713Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2222-2024.introduced.html",
+      "sha256": "74a76bf24bb27f6ef9681bafc8e9ece2b167f6caf6d27bfb50eac9281bb296ca"
+    }
+  },
+  "operative_text": "Sec. 1 (adding A.R.S. 13-3123): {+A. A PERSON MAY NOT SELL OR TRANSFER A FIREARM UNLESS THE PERSON IS A LICENSED FIREARMS DEALER, THE PURCHASER OR TRANSFEREE IS A LICENSED FIREARMS DEALER OR A LICENSED FIREARMS DEALER FACILITATES THE TRANSFER PURSUANT TO SUBSECTION B OF THIS SECTION.+}\nSec. 1 (adding A.R.S. 13-3123): {+B. IF NEITHER PARTY TO A PROSPECTIVE FIREARMS SALE OR TRANSFER IS A LICENSED FIREARMS DEALER, THE PARTIES TO THE TRANSACTION SHALL COMPLETE THE SALE OR TRANSFER THROUGH A LICENSED FIREARMS DEALER IN THE FOLLOWING MANNER:+}\nSec. 1 (adding A.R.S. 13-3123): {+3. ON COMPLETION OF THE CHECK THROUGH THE NATIONAL INSTANT CRIMINAL BACKGROUND CHECK SYSTEM, IF THE DEALER RECEIVES NOTIFICATION THAT THE TRANSFEREE IS PROHIBITED BY STATE OR FEDERAL LAW FROM POSSESSING OR RECEIVING THE FIREARM, THE DEALER SHALL NOTIFY THE TRANSFEROR, AND BOTH THE TRANSFEROR AND THE DEALER MAY NOT TRANSFER THE FIREARM TO THE TRANSFEREE.+}\nSec. 1 (adding A.R.S. 13-3123): {+4. THE DEALER MAY REQUIRE THE PURCHASER OR TRANSFEREE TO PAY A FEE OF NOT MORE THAN $20 THAT COVERS THE ADMINISTRATIVE COSTS INCURRED BY THE DEALER FOR FACILITATING THE TRANSFER OF THE FIREARM, INCLUDING ANY APPLICABLE FEES PURSUANT TO FEDERAL, STATE OR LOCAL LAW.+}\nSec. 1 (adding A.R.S. 13-3123): {+9. A FIREARM TRANSFER THAT IS A BONA FIDE GIFT BETWEEN ANY COMBINATION OF IMMEDIATE FAMILY MEMBERS. FOR THE PURPOSES OF THIS PARAGRAPH, \"IMMEDIATE FAMILY MEMBERS\" MEANS SPOUSES, DOMESTIC PARTNERS, PARENTS, CHILDREN, SIBLINGS, GRANDPARENTS, GRANDCHILDREN, NIECES, NEPHEWS, FIRST COUSINS, AUNTS AND UNCLES.+}\nSec. 1 (adding A.R.S. 13-3123): {+D. A PERSON WHO VIOLATES THIS SECTION IS GUILTY OF A CLASS 5 FELONY+}."
+}

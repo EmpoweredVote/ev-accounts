@@ -1,0 +1,33 @@
+{
+  "politician_id": "07013ded-08dd-4a36-b5b6-308e481593eb",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carrying guns and permits",
+        "repeal of gun laws",
+        "general Second Amendment or gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia (page returned empty; nothing usable)",
+        "web search on name plus gun words (nothing on the subject)",
+        "confirmed on the 2026 general ballot, Arizona House District 4: https://www.ballotready.org/people/tammy-caputi",
+        "campaign site tammycaputi.com home and Issues page (Safer Communities lists police, domestic violence support; nothing on guns)",
+        "KJZZ LD4 candidates page (nothing on guns)",
+        "iVoterGuide profile: did not answer the gun question",
+        "blocked: https://www.newsfromthestates.com/node/433240 (403)"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:17:21.443Z",
+      "by": "source-collector"
+    }
+  ]
+}

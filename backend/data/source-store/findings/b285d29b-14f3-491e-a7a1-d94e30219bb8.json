@@ -44,6 +44,35 @@
         "fetched_at": "2026-10-28T22:53:15.888Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "239db5ab413461599717aeddabc749ff415648352b194de7b232c74c8d81c1ae",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/74500",
+      "date": "2021-03-30",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2111-2021",
+      "act": "nay",
+      "motion": "Senate - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ Senate, Senate - Third Reading, 2021-03-30: nay (tally 17–13); census gate: none.",
+      "subjects": [
+        "state and local non-cooperation with conflicting federal firearm rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2111-2021.chaptered.html",
+          "sha256": "45ea8e85fbc2a7e034e07d63f5e80f3b848ccbcefd65120293e76ac59569fecf"
+        }
+      }
     }
   ],
   "searches": [
@@ -60,6 +89,33 @@
       "found": 2,
       "at": "2026-10-28T22:53:15.888Z",
       "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope: https://navajotimes.com/reznews/taneeszahnii-ticket-maloney-joins-district-6-slate-as-rep-mae-peshlakai-seeks-re-election-daughter-jamescita-runs-for-senate (2026-02-19) says Jamescita is seeking the Arizona State Senate seat; https://ivoterguide.com/candidate/13781/race/30451/election/1455 lists her on the 2026 general ballot for State Senate District 6",
+        "sponsor list: covered by LegiScan bulk check",
+        "namesake check: a search result tied gun-bill sponsorship and a scorecard to Mae Peshlakai (a different person, her relative in the House); none of it was saved for Jamescita",
+        "campaign site: none found (jamescitaforaz.com does not resolve)",
+        "iVoterGuide 2026 page: gun question marked did not answer, nothing to save",
+        "Campaign for Liberty 2020 survey https://www.campaignforliberty.org/surveys2/?id=488: asks about permitless carry and Second Amendment, but her answers are image icons the fetch tool cannot read; not reviewed",
+        "blocked: https://justfacts.votesmart.org/candidate/biography/141360/ (HTTP 403)",
+        "Ballotpedia: not reviewed, page returns empty to the fetch tool",
+        "news searches on name plus gun words: nothing in her own words found"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:06:44.718Z",
+      "by": "source-collector"
     }
   ]
 }

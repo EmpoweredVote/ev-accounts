@@ -52,7 +52,154 @@
         "fetched_at": "2026-10-21T01:52:20.308Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "073814a45a28468bdaf102be91d551efa807cf469ff2cb188b82a4c80be1b40c",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/52550/race/11509/election/1211",
+      "date": "2024-01-01",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree It should be a government issued identification with picture ID.",
+      "note": "Candidate questionnaire on the 2024 general-election voter guide (exact answer date not printed; year only). He answered the statement 'People should be able to vote without photo identification' with 'Strongly Disagree' and added the comment that follows. Both lines are his questionnaire entries; the statement is the questionnaire's wording.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID required"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:29:21.812Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "83b481c1b0e50b737bd494bb4986a48ebea5ce02bc03bb909e102e05c92c1f46",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/hb374.html",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-374-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, orig_bill",
+      "note": "Listed as co sponsor of HB374 (2024 Regular Session) in LegiScan's bill record (sponsor order 3); the first version (orig_bill) carries the ID/citizenship text (identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d46ecb91a31ee5cd1e1e87159cd4301382bc37721ea5bb099f789780020ffed",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 22053 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 22053 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd4f0553eb6ef608e5f4f0880dfe9d952201740968402fd0ab748856330a3352",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "yea",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 22053 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship",
+        "noncitizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "iVoterGuide 2024 general profile https://ivoterguide.com/candidate/52550/race/11509/election/1211 (names him in the House District 10 race; questionnaire answer on photo ID saved)",
+        "iVoterGuide 2026 general profile https://ivoterguide.com/candidate/52550/race/11509/election/1461 (no questionnaire answers on the subject)",
+        "https://wkms.org 2026-03-06 HB 534 story and a yahoo noncitizen-voting story (do not name him)",
+        "legislature.ky.gov district 10 profile (reached by redirect; not used for text)",
+        "6 web searches: name + voter ID, election, citizenship, HB 534, HB 139 (no other own words on the subject; he is shown as sponsor of HB 259, a constitutional amendment on citizenship of officeholders, which is not about voter proof and sponsorships are linked separately)",
+        "blocked: ballotpedia.org not fetched (Ballotpedia refuses fetches)"
+      ],
+      "found": 1,
+      "at": "2026-11-11T18:29:21.812Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 4,
+      "at": "2026-11-11T21:12:46.603Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
 }

@@ -1,0 +1,174 @@
+{
+  "politician_id": "62f658fe-5680-45b4-88b6-e34214d2bfff",
+  "findings": [
+    {
+      "id": "8dba58f2720cb6bc1043eaef88645f4d8a5c1fcd1d19c95a1a7eb853c2cadd67",
+      "kind": "own-words",
+      "url": "https://www.owensborotimes.com/?p=265622",
+      "date": "2026-02-19",
+      "date_precision": "day",
+      "passage": "“Obviously, we don’t want to do anything that’s going to be cumbersome to our county clerks out there, so I would love to see you clean this up before we get to the House floor,” Bivens said. “But I do think the intent behind this is very good.”",
+      "note": "Same committee meeting on HB 534 (voter-roll maintenance, measures to keep felons and noncitizens from voting). Reporter Ryan Richardson of The Owensboro Times; page published 2026-02-20 and says the committee acted Thursday.",
+      "subjects": [
+        "noncitizen voting",
+        "voter-roll maintenance",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:34:26.493Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "50c0119ffd0c9f60e3977a17b75778944db29d5871b8903f0d6c340ab4f08f3b",
+      "kind": "own-words",
+      "url": "https://www.lpm.org/news/2026-02-19/local-kentucky-elections-officials-concerned-over-gop-bill-pushing-extensive-changes",
+      "date": "2026-02-19",
+      "date_precision": "day",
+      "passage": "“Obviously we want to not do anything that's going to be cumbersome to our county clerks out there. So I would love to see you clean this up before we get to the House floor,”",
+      "note": "House committee vote on HB 534 (2026 elections omnibus with federal citizenship-verification agreements). The story says he voted yes with reservations about clerk workload. Read on the original Louisville Public Media page.",
+      "subjects": [
+        "noncitizen voting",
+        "voter-roll maintenance",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T20:28:34.835Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d46ecb91a31ee5cd1e1e87159cd4301382bc37721ea5bb099f789780020ffed",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25769 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.607Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25769 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.607Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd4f0553eb6ef608e5f4f0880dfe9d952201740968402fd0ab748856330a3352",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "yea",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25769 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.607Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "voter-roll maintenance",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Ballotpedia: not tried (refuses our fetches)",
+        "bluevoterguide.org and justfacts.votesmart.org: not tried (refuse our fetches)",
+        "On the Record (0 meetings)",
+        "web searches (5) on name plus voter ID, photo ID, proof of citizenship, HB 534, interview, questionnaire",
+        "Campaign site ryanbivens.com (read; nothing on the subject)",
+        "iVoterGuide candidate page (read; nothing on the subject)",
+        "Legislature member page apps.legislature.ky.gov/Legislators/subs/House-024.html (bio only)",
+        "WKU Public Radio and Owensboro Times pages on HB 534 committee vote (read)",
+        "WUKY 2026-03-06 page on HB 534 House floor (read; no words by this person)",
+        "Hoptown Chronicle page 96474 reprinting a Kentucky Lantern story on HB 534 (read; no words by this person)",
+        "not reviewed: any floor video of HB 534"
+      ],
+      "found": 1,
+      "at": "2026-11-11T18:34:26.493Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Original Louisville Public Media story (Sylvia Goodman, 2026-02-19) opened by Chris in his browser 2026-11-11 and read there; replaces the held WKYU repost"
+      ],
+      "found": 1,
+      "at": "2026-11-11T20:28:34.835Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 3,
+      "at": "2026-11-11T21:12:46.607Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}

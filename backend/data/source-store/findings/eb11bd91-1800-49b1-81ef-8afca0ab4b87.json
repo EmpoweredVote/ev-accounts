@@ -146,7 +146,201 @@
         "fetched_at": "2026-10-21T01:52:20.308Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "d0e4d26f296dcc732046ed2eb4ec89b7b755e3d3d47cd0f56745d632ceda23be",
+      "kind": "own-words",
+      "url": "https://thelevisalazer.com/senator-phillip-wheelers-legislative-update-week-5-of-the-2024-regular-session/",
+      "date": "2024-02-02",
+      "date_precision": "day",
+      "passage": "Strengthens election integrity by refining Kentucky’s voter ID laws. The bill removes student or employee IDs and credit or debit cards as identification options, aligning with previous legislation focused on reasonable voter access.",
+      "note": "From his own weekly legislative update, describing SB 80 (2024) under the heading \"SB 80 – Election Integrity\". Describes what the bill does to the list of accepted voter ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws",
+        "acceptable ID types"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:46:21.050Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6b2d8ef2688625b22614e74317a809c0dc6de09c60bc4105cebbd1dbb6568e78",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/20RS/sb2.html",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "KY-SB-2-2020",
+      "act": "sponsor",
+      "motion": "co sponsor, orig_bill",
+      "note": "Listed as co sponsor of SB2 (2020 Regular Session) in LegiScan's bill record (sponsor order 11); the first version (orig_bill) carries the ID/citizenship text (identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c629e0aa026405cd80dc151d6b45e84522285729fd3b40330134e6670e6281ca",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/22RS/sb216/vote_history.pdf",
+      "date": "2022-03-07",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-216-2022",
+      "act": "yea",
+      "motion": "Senate: Senate third reading, passed with Senate committee substitute 1",
+      "note": "KY Senate roll call (Senate third reading, passed with Senate committee substitute 1, 22-10) on SB216 (2022 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 21348 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dc5ff336a639ab5900ef167d3b3a549505deb4cea313cfb82eccf4bc309e626",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/sb80/vote_history.pdf",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-80-2024",
+      "act": "yea",
+      "motion": "Senate: Senate third reading, passed",
+      "note": "KY Senate roll call (Senate third reading, passed, 27-7) on SB80 (2024 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 21348 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "964f43dd513a6a900fe46730c227d9b9c229eaaa4159401edbd436f6f4e82228",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate with Senate Committee Substitute (1)",
+      "note": "KY Senate roll call (third reading, passed Senate with Senate Committee Substitute (1), 31-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 21348 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa8ad840466678434828836de887f898e45dc3f627478ec4fe8931f410f4e2d2",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: override of the Governor's veto, final passage (Senate)",
+      "note": "KY Senate roll call (override of the Governor's veto, final passage (Senate), 32-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 21348 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8cb257bf2da3336ed900008c97f3e633ffee27db4f47f3bef14f6db1a9004902",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb154/vote_history.pdf",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-154-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate",
+      "note": "KY Senate roll call (third reading, passed Senate, 31-7) on SB154 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 21348 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.602Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "official legislative updates published at thelevisalazer.com",
+        "iVoterGuide: not listed on the 2026 Kentucky page seen",
+        "blocked: https://ballotpedia.org (not fetched, listed as refused)",
+        "blocked: https://justfacts.votesmart.org (not fetched, listed as refused)",
+        "Hoptown Chronicle page (https://hoptownchronicle.org/ky-senate-votes-to-tighten-voter-id-requirements-advance-felon-voting-rights-amendment/) is a reprint of a Kentucky Lantern story; it records only a floor vote (linked separately), no words of his, so not saved",
+        "3 web searches on name plus voter ID, photo ID, Social Security card, election integrity: one own-words item"
+      ],
+      "found": 1,
+      "at": "2026-11-11T18:46:21.050Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 6,
+      "at": "2026-11-11T21:12:46.602Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
 }

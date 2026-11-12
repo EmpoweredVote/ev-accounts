@@ -1,0 +1,224 @@
+{
+  "id": "KY-SB-80-2024",
+  "scope": "state:ky",
+  "title": "SB 80 (2024 Regular Session): AN ACT relating to elections.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/24RS/sb80.html",
+    "https://apps.legislature.ky.gov/record/24RS/sb80/vote_history.pdf"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) Section 1 (KRS 117.001(15), definition)\n(quote) \"Proof of identification\" means a document that was issued by: (a) The United States or the Commonwealth of Kentucky, and the document contains: 1. The name of the individual to whom the document was issued; and 2. A photograph of the individual to whom the document was issued; (b) The United States Department of Defense, a branch of the uniformed services, the Merchant Marine, or the Kentucky National Guard, and the document contains:\n(section) Section 1 (KRS 117.001(15)(c), deleted college paragraph)\n(quote) STRUCK: A public or private college, university, or postgraduate technical or professional school located within the United States, and the document contains: 1. The name of the individual to whom the document was issued; and 2. A photograph of the individual to whom the document was issued; or (d)\n(section) Section 1 (KRS 117.001(15)(d), kept paragraph, relettered)\n(quote) Any city government, county government, urban-county government, charter county government, consolidated local government, or unified local government, which is located within this state, and the document contains: 1. The name of the individual to whom the document was issued; and 2. A photograph of the individual to whom the document was issued;\n(b_no_id_remedy)\n(section) Section 2 (KRS 117.228(1))\n(quote) if a voter is unable to provide proof of identification as required under KRS 117.225, and as defined under KRS 117.001, a voter may cast a ballot if the individual: (a) Is eligible to vote under KRS 116.025; (b) Is entitled to vote in that precinct; and (c) In the presence of the election officer, executes a voter's affirmation, on a form prescribed and furnished by the State Board of Elections\n(section) Section 2 (KRS 117.228(2)(d)-(e))\n(quote) (d) Any food stamp identification card, electronic benefit transfer card, or supplemental nutrition assistance card, that is issued by this state and has the name of the voter stated\n(section) Section 2 (KRS 117.228(2)(e), deleted)\n(quote) STRUCK: A credit or debit card with the name of the voter stated\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Section 2 (KRS 117.228(1)(c)1, voter affirmation, reprinted)\n(quote) The voter is a citizen of the United States;\n(other) Section 1 (KRS 117.001): also adds definitions of 'election officer' and 'e-poll book' and excludes e-poll books from the definitions of 'voting machine' and 'voting system'; items renumbered.\n(other) Section 2 (KRS 117.228): the rest of the no-photo-ID affirmation process is reprinted unchanged (eight impediments, personal-knowledge affirmation by an election officer, processing as an oath of voter affidavit).\n(other) version: orig_bill (introduced, BR 334): carries slots a, b, e as above.\n(other) version: bill (furthest, header 'SB 80/GA' = as passed by the Senate): the text I compared line by line, after removing page headers, is the same as the introduced text; no Senate amendment is visible. No committee substitute exists in the action log.\n(other) note: Two bracketed removals: the college, university and postgraduate-school ID paragraph of 'proof of identification', and the credit-or-debit-card item (e) of the secondary-ID list. The skeleton's triage line says 'college/employee ID', but I found no employee-ID wording anywhere in the text (searched 'employ'); only the college and school paragraph is bracketed. Everything else shown is reprinted current law. This bill did not become law.",
+  "sponsors": [
+    {
+      "name": "Adrienne Southworth",
+      "role": "prime",
+      "version": "bill"
+    },
+    {
+      "name": "Gary Boswell",
+      "role": "co",
+      "version": "bill"
+    },
+    {
+      "name": "Donald Douglas",
+      "role": "co",
+      "version": "bill"
+    },
+    {
+      "name": "Stephen Meredith",
+      "role": "co",
+      "version": "bill"
+    },
+    {
+      "name": "Lindsey Tichenor",
+      "role": "co",
+      "version": "bill"
+    },
+    {
+      "name": "Mike Wilson",
+      "role": "co",
+      "version": "bill"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2024-01-30",
+      "body": "KY Senate",
+      "motion": "Senate third reading, passed [version voted: bill]",
+      "kind": "roll-call",
+      "yes": 27,
+      "no": 7,
+      "absent": 4,
+      "body_size": 38,
+      "note": "LegiScan roll call; tally checked against the official vote-history PDF | https://apps.legislature.ky.gov/record/24RS/sb80/vote_history.pdf",
+      "members": [
+        {
+          "name": "David Givens",
+          "vote": "yea"
+        },
+        {
+          "name": "Denise Harper Angel",
+          "vote": "nay"
+        },
+        {
+          "name": "Jimmy Higdon",
+          "vote": "absent"
+        },
+        {
+          "name": "Gerald Neal",
+          "vote": "nay"
+        },
+        {
+          "name": "John Schickel",
+          "vote": "yea"
+        },
+        {
+          "name": "Brandon Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Stivers",
+          "vote": "yea"
+        },
+        {
+          "name": "Damon Thayer",
+          "vote": "yea"
+        },
+        {
+          "name": "Robin Webb",
+          "vote": "nay"
+        },
+        {
+          "name": "Julie Raque Adams",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Nemes",
+          "vote": "yea"
+        },
+        {
+          "name": "Jared Carpenter",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "Christian McDaniel",
+          "vote": "absent"
+        },
+        {
+          "name": "Whitney Westerfield",
+          "vote": "absent"
+        },
+        {
+          "name": "Reginald Thomas",
+          "vote": "nay"
+        },
+        {
+          "name": "George Wise",
+          "vote": "yea"
+        },
+        {
+          "name": "Danny Carroll",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve West",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Girdler",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen Meredith",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Mills",
+          "vote": "yea"
+        },
+        {
+          "name": "Phillip Wheeler",
+          "vote": "yea"
+        },
+        {
+          "name": "Brandon Storm",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Adrienne Southworth",
+          "vote": "yea"
+        },
+        {
+          "name": "Karen Berg",
+          "vote": "nay"
+        },
+        {
+          "name": "David Yates",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnnie Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Donald Douglas",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Boswell",
+          "vote": "yea"
+        },
+        {
+          "name": "Lindsey Tichenor",
+          "vote": "yea"
+        },
+        {
+          "name": "Gex Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Amanda Mays Bledsoe",
+          "vote": "absent"
+        },
+        {
+          "name": "Matthew Deneen",
+          "vote": "yea"
+        },
+        {
+          "name": "Shelley Frommeyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Casey Chambers Armstrong",
+          "vote": "nay"
+        },
+        {
+          "name": "Greg Elkins",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 KY bill texts and roll calls (Sonnet readers R1-R4 + version pass; apps.legislature.ky.gov vote histories, voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "curl"
+  }
+}

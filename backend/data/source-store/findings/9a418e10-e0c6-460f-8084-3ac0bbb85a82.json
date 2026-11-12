@@ -1,0 +1,59 @@
+{
+  "politician_id": "9a418e10-e0c6-460f-8084-3ac0bbb85a82",
+  "findings": [
+    {
+      "id": "211b08226615496e0c8a440f723f280fe83a4d67837447f8b17e2f2e4480c26a",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/95992",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "I support common-sense gun safety measures such as universal background checks, keeping firearms away from people who pose a serious danger to themselves or others through due process, safe-storage requirements, and stronger enforcement against illegal gun trafficking, while respecting the rights of responsible gun owners.",
+      "note": "Her answer on the iVoterGuide 2026 questionnaire to 'What restrictions on gun ownership are needed to protect public safety?' Page is the Arizona General, Nov 3 2026 profile for state House district 23; answer undated.",
+      "subjects": [
+        "check every gun buyer",
+        "keep guns from people who pose a danger",
+        "safe storage",
+        "gun trafficking enforcement",
+        "respecting responsible gun owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:15:50.199Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (empty page or not reachable by fetch tool)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web search on name plus gun words",
+        "campaign site",
+        "KJZZ 2026 candidate guide",
+        "iVoterGuide profile",
+        "Gun Sense Voter Arizona list (names no candidates)",
+        "AzCDL recommended candidates page",
+        "campaign site home and issues-platform pages (nothing on the subject)",
+        "Arizona List profile (nothing on the subject)",
+        "blocked: https://bluevoterguide.org/endorser-org/Gun_Sense_Voter/AZ/4895",
+        "confirmed on the 2026-11-03 general ballot for state House, district 23 (iVoterGuide, KJZZ)"
+      ],
+      "found": 1,
+      "at": "2026-11-11T04:15:50.199Z",
+      "by": "source-collector"
+    }
+  ]
+}

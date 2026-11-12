@@ -1,0 +1,189 @@
+{
+  "politician_id": "3429ecef-5857-496b-9de6-85412b5caaaa",
+  "findings": [
+    {
+      "id": "ce704ad28c61932ecbfa533602f024e40b53c4b1d2ab512d8726a0d22a796ca0",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/60748/race/24311/election/1358",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification.\nStrongly Disagree",
+      "note": "Candidate questionnaire (iVoterGuide, 2026 cycle, State Senate District 10). The first line is the questionnaire statement; the second is the answer recorded as his. No written explanation printed for this item.",
+      "subjects": [
+        "photo ID to vote",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T19:00:42.298Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dc5ff336a639ab5900ef167d3b3a549505deb4cea313cfb82eccf4bc309e626",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/sb80/vote_history.pdf",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-80-2024",
+      "act": "yea",
+      "motion": "Senate: Senate third reading, passed",
+      "note": "KY Senate roll call (Senate third reading, passed, 27-7) on SB80 (2024 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23628 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "964f43dd513a6a900fe46730c227d9b9c229eaaa4159401edbd436f6f4e82228",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate with Senate Committee Substitute (1)",
+      "note": "KY Senate roll call (third reading, passed Senate with Senate Committee Substitute (1), 31-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23628 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa8ad840466678434828836de887f898e45dc3f627478ec4fe8931f410f4e2d2",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: override of the Governor's veto, final passage (Senate)",
+      "note": "KY Senate roll call (override of the Governor's veto, final passage (Senate), 32-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23628 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8cb257bf2da3336ed900008c97f3e633ffee27db4f47f3bef14f6db1a9004902",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb154/vote_history.pdf",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-154-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate",
+      "note": "KY Senate roll call (third reading, passed Senate, 31-7) on SB154 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23628 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail ballot rules",
+        "election integrity",
+        "SB 154 (2026) secondary ID list"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "confirmed who he is: https://ivoterguide.com/candidate/60748 names him as State Senator, Dist. 10, on the 2026 general-election ballot",
+        "iVoterGuide 2026 primary-cycle questionnaire https://ivoterguide.com/candidate/60748/race/24311/election/1358: the photo-ID question 'People should be able to vote without photo identification.' is marked Strongly Disagree with NO written comment, so there is no sentence of his own to copy (a ticked answer only)",
+        "iVoterGuide 2022 questionnaire https://ivoterguide.com/candidate/60748/race/15136/election/955 and https://ivoterguide.com/candidate/60748: photo-ID and voting-practices questions read 'Did not answer'",
+        "newsfromthestates.com reprint of a Kentucky Lantern story on HB 567 (photo ID for open-records requests, March 2026): it only says he chairs the committee and wanted changes; it is not about voting and has no words of his on the subject",
+        "WDRB 2022 election-night profile surfaced by search: not on the subject",
+        "Freedom Voter Guide, Sway endorsement page: no election-law passages",
+        "web searches on name plus voter ID, photo ID, proof of citizenship, noncitizen, SB 2, election security, questionnaire, Vote411: no own words found",
+        "his Senate page and Facebook/X pages: not reviewed (social media not fetchable; no own-words pages found on the subject)",
+        "blocked: https://ballotpedia.org (known to refuse fetches; not tried)",
+        "blocked: https://justfacts.votesmart.org (known to refuse fetches; not tried)"
+      ],
+      "found": 0,
+      "at": "2026-11-11T18:29:30.204Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail ballot rules",
+        "election integrity",
+        "SB 154 (2026) secondary ID list"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "confirmed who he is: https://ivoterguide.com/candidate/60748 names him as State Senator, Dist. 10, on the 2026 general-election ballot",
+        "iVoterGuide 2026 primary-cycle questionnaire https://ivoterguide.com/candidate/60748/race/24311/election/1358: the photo-ID question 'People should be able to vote without photo identification.' is marked Strongly Disagree with NO written comment, so there is no sentence of his own to copy (a ticked answer only)",
+        "iVoterGuide 2022 questionnaire https://ivoterguide.com/candidate/60748/race/15136/election/955 and https://ivoterguide.com/candidate/60748: photo-ID and voting-practices questions read 'Did not answer'",
+        "newsfromthestates.com reprint of a Kentucky Lantern story on HB 567 (photo ID for open-records requests, March 2026): it only says he chairs the committee and wanted changes; it is not about voting and has no words of his on the subject",
+        "WDRB 2022 election-night profile surfaced by search: not on the subject",
+        "Freedom Voter Guide, Sway endorsement page: no election-law passages",
+        "web searches on name plus voter ID, photo ID, proof of citizenship, noncitizen, SB 2, election security, questionnaire, Vote411: no own words found",
+        "his Senate page and Facebook/X pages: not reviewed (social media not fetchable; no own-words pages found on the subject)",
+        "blocked: https://ballotpedia.org (known to refuse fetches; not tried)",
+        "blocked: https://justfacts.votesmart.org (known to refuse fetches; not tried)",
+        "re-search 2026-11-11: fetched the 2026 iVoterGuide page once and saved the ticked answer to the photo-ID statement (no written comment on the page)"
+      ],
+      "found": 1,
+      "at": "2026-11-11T19:00:42.298Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 4,
+      "at": "2026-11-11T21:12:46.603Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}

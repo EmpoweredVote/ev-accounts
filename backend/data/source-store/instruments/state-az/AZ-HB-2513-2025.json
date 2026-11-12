@@ -1,0 +1,80 @@
+{
+  "id": "AZ-HB-2513-2025",
+  "scope": "state:az",
+  "title": "HB2513 (Fifty-seventh Legislature - First Regular Session (2025)): Misconduct involving weapons; instigation",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/82318",
+    "https://www.azleg.gov/legtext/57leg/1r/bills/hb2513p.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lydia Hernandez",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8deb34b4-a40d-4d26-8d3a-1b5a9e9f07f9"
+    },
+    {
+      "name": "Lupe Contreras",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d5466317-d90a-41ce-ba20-30c12429dcb3"
+    },
+    {
+      "name": "Brian Garcia",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ea0e5f51-f963-45ef-a104-429af91e5f90"
+    },
+    {
+      "name": "Alma Hernandez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444"
+    },
+    {
+      "name": "Sarah Liguori",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "eb8215ef-5e68-431a-a5cf-c226e8c0abf1"
+    },
+    {
+      "name": "Aaron Marquez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0df9cd85-3923-48bd-86c2-b7d4b31d510d"
+    },
+    {
+      "name": "Mariana Sandoval",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c37db938-9db2-47d5-b30e-7ac6a5f5c5ee"
+    },
+    {
+      "name": "Betty Villegas",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6dcc0e46-c944-480b-a432-7b36989d56e9"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+    "fetched_at": "2026-11-11T03:51:26.779713Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2513-2025.introduced.html",
+      "sha256": "4eb40a77b9b55444ba6205fa4f9411d669caba150d8714c5e81c9da07115d106"
+    }
+  },
+  "operative_text": "Sec. 1 (amending A.R.S. 13-3102, subsection A, paragraph 16): 16. Trafficking in weapons or explosives for financial gain in order to assist, promote or further the interests of a criminal street gang, a criminal syndicate or a racketeering enterprise{+; OR +}[-. -]\nSec. 1 (A.R.S. 13-3102, subsection A, paragraph 17): {+17. INSTIGATING ANOTHER PERSON TO COMMIT AN OFFENSE THAT IS LISTED IN PARAGRAPH 1 OR 8 OF THIS SUBSECTION AND THAT PERSON COMMITS THE OFFENSE.+}\nSec. 1 (A.R.S. 13-3102, subsection M, last sentence): Misconduct involving weapons under subsection A, paragraph 2 {+OR 17 +}of this section is a class 3 misdemeanor.\nSec. 1 (A.R.S. 13-3102, subsection N, paragraph 2): {+2. +}{+\"INSTIGATING+}{+\" MEANS ENCOURAGING OR DIRECTING ANOTHER PERSON TO COMMIT A CRIME OR TO ENGAGE IN AN ACT THAT IS LIKELY TO RESULT IN A CRIME.+}"
+}

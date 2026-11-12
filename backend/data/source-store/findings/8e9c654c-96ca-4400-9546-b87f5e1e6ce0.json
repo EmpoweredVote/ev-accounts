@@ -1,0 +1,37 @@
+{
+  "politician_id": "8e9c654c-96ca-4400-9546-b87f5e1e6ce0",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia (empty page or not reachable by fetch tool)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web search on name plus gun words",
+        "campaign site",
+        "KJZZ 2026 candidate guide",
+        "iVoterGuide profile",
+        "Gun Sense Voter Arizona list (names no candidates)",
+        "AzCDL recommended candidates page",
+        "campaign site lyonforarizona.com (nothing on the subject)",
+        "KOLD Tucson Now interview of 2026-10-28 (nothing on the subject)",
+        "Tucson Spotlight 2026-07-09 (nothing on the subject)",
+        "Giffords press release 2026-11-05 lists her name only, no words of hers",
+        "blocked: https://bluevoterguide.org/endorser-org/Gun_Sense_Voter/AZ/4895",
+        "iVoterGuide: 'Did not answer' on the gun question",
+        "confirmed on the 2026-11-03 general ballot for state House, district 17 (iVoterGuide, KJZZ)"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:15:50.200Z",
+      "by": "source-collector"
+    }
+  ]
+}

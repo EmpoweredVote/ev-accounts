@@ -1,0 +1,185 @@
+{
+  "politician_id": "2a6ca553-2e25-450c-a819-c515c7544dad",
+  "findings": [
+    {
+      "id": "0c5ac4906ed5739e3d01f34d891e965c7ab8ca56a49862cf15169e1b3334182a",
+      "kind": "own-words",
+      "url": "https://www.ksl.com/article/46738002/kentucky-governor-vetoes-voter-id-bill",
+      "date": "2020-04-03",
+      "date_precision": "day",
+      "passage": "In his veto message, the governor said the measure would create an obstacle to voting, resulting in fewer people casting ballots and “undermining our democracy.”",
+      "note": "AP report on his veto of the photo-ID bill SB 2. The sentence is the reporter's summary of his veto message with two words quoted from it.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:16.118Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db5dea17fa5548b7c352b4d15128af8214f0277443007f413ab51e398bd87af2",
+      "kind": "own-words",
+      "url": "https://www.ksl.com/article/46738002/kentucky-governor-vetoes-voter-id-bill",
+      "date": "2020-04-03",
+      "date_precision": "day",
+      "passage": "“The fact that someone would need something to vote that right now they absolutely can’t get because of the coronavirus, yes, I think is a wrong move, and it absolutely needed to be vetoed,” Beshear said at his daily coronavirus-related briefing.",
+      "note": "Quoted by AP at his briefing: objects to requiring an ID that offices were closed and could not issue during the pandemic.",
+      "subjects": [
+        "voter ID at the polls",
+        "access to obtaining ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:16.118Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e80dd8e8228422dc8a4cd432e4233c63c3ad4c4b7719bb916532041f3ceaae8a",
+      "kind": "own-words",
+      "url": "https://www.wvxu.org/post/beshear-vetoes-voter-id-bill-legislature-has-chance-override",
+      "date": "2020-04-03",
+      "date_precision": "day",
+      "passage": "“Furthermore, no documented evidence of recent voter fraud in the form of impersonation in Kentucky has been presented in support of Senate Bill 2 and, therefore, the legislation would be attempting to resolve a problem does not exist,” Beshear wrote.",
+      "note": "Quoted from his written veto message on SB 2 (WVXU, Ryland Barton): says no evidence of voter impersonation was presented.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter impersonation evidence"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:16.118Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ed535993898939d5722c38ca549e2d36787674c7bb314511a6bb1e65b399d684",
+      "kind": "record",
+      "url": "https://www.wvxu.org/post/beshear-vetoes-voter-id-bill-legislature-has-chance-override",
+      "date": "2020-04-03",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-2-2020",
+      "act": "vetoed",
+      "note": "Vetoed SB 2, which required a photo ID to vote, with a sworn-affidavit route using a non-photo document and a free ID at county clerks' offices; the legislature later overrode the veto.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "voters with no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:16.118Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7e2dd7a9dff0aa8ce62f9cd0fb51571a80d1197106453d7fb713a6d224e0deb6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/25rs/hb684.html",
+      "date": "2025-03",
+      "date_precision": "month",
+      "instrument_id": "KY-HB-684-2025",
+      "act": "vetoed",
+      "note": "Vetoed 2025 HB 684, an elections bill; the legislature's bill page lists a governor's veto message and veto override steps. A local news report says his message objected to reversing a 2020 rule that let voters show a debit or credit card as ID at the polls. Veto text itself was not read.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted ID documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:16.118Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bfbbfbe043493b4096154fbff19648d816c2d96c1aad71fa85ef05fb7d86c21f",
+      "kind": "own-words",
+      "url": "https://www.newsfromthestates.com/article/beshear-calls-trumps-mail-voting-order-entirely-unconstitutional",
+      "date": "2026-04-02",
+      "date_precision": "day",
+      "passage": "Asked about how the new executive order could impact Kentucky voters, Beshear said in his Thursday press conference that “it shouldn’t affect Kentuckians because it is wholly and entirely unconstitutional.”",
+      "note": "On the federal order limiting mail voting and having a list of citizens compiled for states; he calls it unconstitutional. Related topic: mail-ballot rules, citizen lists.",
+      "subjects": [
+        "mail-ballot rules",
+        "federal citizen-list order"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:16.118Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3eaf8d7b026b797f76e299344fdf25cdf76ae2713fea3ac5f9d51bd72bf51bcd",
+      "kind": "own-words",
+      "url": "https://www.wuky.org/wuky-news/2026-07-17/hes-lying-to-you-gov-beshear-ahead-of-presidents-address-on-election-integrity",
+      "date": "2026-07-17",
+      "date_precision": "day",
+      "passage": "“It was a full and fair election. That's a fact. Period,” Beshear said.",
+      "note": "Related remark at his weekly briefing: says Kentucky elections are secure and rejects claims about 2020. Does not address ID or citizenship directly.",
+      "subjects": [
+        "election integrity (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:16.118Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "free state ID for voters without ID",
+        "proof of citizenship to register (SAVE Act)",
+        "mail-ballot rules",
+        "election integrity (related)"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "web searches (7): photo ID statement; proof of citizenship / SAVE Act; free voter ID; SAVE Act and filibuster; election integrity; HB 684 veto; October 2026 free ID quote",
+        "governor.ky.gov/news: fetched, returned no readable content; no release on the subject reached",
+        "the legislature's bill page for 2025 HB 684 (apps.legislature.ky.gov/record/25rs/hb684.html): shows a governor's veto message, a veto and two override steps; veto text itself not read",
+        "news coverage of the 2020 SB 2 veto (KSL/AP, WVXU) read and quoted",
+        "WUKY 2026-07-17 and LEX18: related election-integrity remarks",
+        "News From The States 2026-04-02: mail-voting order remarks",
+        "not reviewed: Feb 2026 TV appearance on the SAVE Act (no transcript or original reached; only second-hand mention in a search summary)",
+        "not reviewed: October 2026 quote on the free Voter ID card (only found at spectrumnews1.com, which is on the do-not-fetch list)",
+        "blocked: ballotpedia.org (listed as refusing; a news.ballotpedia.org page was opened once and gave no usable text, nothing used)",
+        "blocked: bluevoterguide.org, justfacts.votesmart.org (not attempted, listed as refusing)",
+        "nothing found in a campaign-site or questionnaire search"
+      ],
+      "found": 7,
+      "at": "2026-11-11T18:21:16.118Z",
+      "by": "source-collector"
+    }
+  ]
+}

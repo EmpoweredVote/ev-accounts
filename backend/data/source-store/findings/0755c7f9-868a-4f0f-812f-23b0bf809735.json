@@ -1,0 +1,32 @@
+{
+  "politician_id": "0755c7f9-868a-4f0f-812f-23b0bf809735",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "guns",
+        "Second Amendment",
+        "gun violence",
+        "gun safety",
+        "firearms"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site lopezforarizona.com (home, about, priorities, endorsements pages): nothing on the subject",
+        "iVoterGuide candidate page: the gun-ownership question is marked 'Did not answer'",
+        "animal-protection group questionnaire PDF (humanevotersaz.org): nothing on the subject",
+        "Copper Courier article on her primary win (Arizona House District 21; confirms she won the primary): nothing on the subject",
+        "KOLD 'Tucson Now' candidate page: nothing on the subject",
+        "BlueVoterGuide and GoodParty profiles: nothing on the subject",
+        "sponsor list: covered by LegiScan bulk check (not a sitting legislator; no sponsorships)",
+        "Ballotpedia: not reviewed (page returns empty to the fetch tool)",
+        "one news search on name plus gun words: nothing found about her"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:16:25.625Z",
+      "by": "source-collector"
+    }
+  ]
+}

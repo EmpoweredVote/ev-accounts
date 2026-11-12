@@ -1,0 +1,115 @@
+{
+  "politician_id": "0d3555a9-6d72-4a8c-8e55-dc5f2cca5df7",
+  "findings": [
+    {
+      "id": "a25928f6651a1a63c0b5fc142c6506577dc9de80be5a0599fec7e36a0ce3b03b",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "nay",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25770 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.607Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "66d7488a685348429b625584d27155c3ad62b1a0d68d9f562d509f3e7302b9e6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "nay",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25770 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.607Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "121fcb8d83cdb77518dcfdab89ed949d5de64b621bdcdb306e7ab9a9e02793ea",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "nay",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25770 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.607Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "student ID as voter ID",
+        "proof of citizenship",
+        "noncitizen voting",
+        "mail-ballot rules",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "iVoterGuide profile (https://ivoterguide.com/candidate/83249/race/31240/election/1461): names her as State Rep., Dist. 76; the photo-ID question is marked did not answer",
+        "WEKU Democracy Optimist podcast, 2025-10-30: audio only, no transcript on page; not reviewed: https://www.weku.org/podcast/democracy-optimist/2025-10-30/anne-donworth",
+        "not reviewed: https://moving-kentucky-forward.castos.com/episodes/an-interview-with-anne-donworth (audio only)",
+        "Forward KY primary preview page: no voter-ID or citizenship text on the fetched page",
+        "campaign site not located by search",
+        "5 web searches on voter ID, photo ID, citizenship, student ID, HB 139, HB 534, campaign issues, floor debate: nothing on the subject in her own words",
+        "blocked: https://ballotpedia.org/Anne_Donworth (known to refuse fetches; not tried)",
+        "blocked: https://bluevoterguide.org (known to refuse fetches; not tried)",
+        "not reviewed: legislature bill pages (votes and sponsorships are linked separately)"
+      ],
+      "found": 0,
+      "at": "2026-11-11T18:22:52.779Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 3,
+      "at": "2026-11-11T21:12:46.607Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}

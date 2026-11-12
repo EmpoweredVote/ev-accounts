@@ -1,0 +1,134 @@
+{
+  "id": "AZ-HB-2578-2026",
+  "scope": "state:az",
+  "title": "HB2578 (Fifty-seventh Legislature - Second Regular Session (2026)): Failure to secure weapon; minor",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/84400",
+    "https://www.azleg.gov/legtext/57leg/2r/bills/hb2578p.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nancy Gutierrez",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ce872623-f6bd-4e90-9eba-239ed00c7491"
+    },
+    {
+      "name": "Anna Abeytia",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1d2e925a-299f-4504-a4de-815d7a2ee7a6"
+    },
+    {
+      "name": "Lorena Austin",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e2bd3486-1fcf-4726-8df8-564ad8ef2b62"
+    },
+    {
+      "name": "Seth Blattman",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "329dc518-7749-4671-b448-3ddaa396da9c"
+    },
+    {
+      "name": "Junelle Cavero",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2b044f08-b5ce-4b15-993e-b90c16603c25"
+    },
+    {
+      "name": "Janeen Connolly",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d6f22ab7-5f0a-4d58-b53a-fd69bf4ad556"
+    },
+    {
+      "name": "Patricia Contreras",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8dcf58fe-fea2-4dd4-81ac-542432b154cf"
+    },
+    {
+      "name": "Quanta Crews",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1482a2bc-75d8-4aee-865c-53378c415210"
+    },
+    {
+      "name": "Oscar De Los Santos",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fb949bda-e2f5-49ab-9069-a70da1fb13bd"
+    },
+    {
+      "name": "Brian Garcia",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ea0e5f51-f963-45ef-a104-429af91e5f90"
+    },
+    {
+      "name": "Alma Hernandez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444"
+    },
+    {
+      "name": "Sarah Liguori",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "eb8215ef-5e68-431a-a5cf-c226e8c0abf1"
+    },
+    {
+      "name": "Christopher Mathis",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a7675f41-2e50-413c-9864-8a64969f47f9"
+    },
+    {
+      "name": "Stephanie Simacek",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "84bb6849-a68d-42e0-999d-dd0456b9d0b4"
+    },
+    {
+      "name": "Stephanie Stahl Hamilton",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2405145c-f082-47f2-861d-d4efd19e8162"
+    },
+    {
+      "name": "Anastasia Travers",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c2c49ac4-8d5e-46e3-b663-ac1677021a1b"
+    },
+    {
+      "name": "Betty Villegas",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6dcc0e46-c944-480b-a432-7b36989d56e9"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+    "fetched_at": "2026-11-11T04:23:07.062663Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2578-2026.introduced.html",
+      "sha256": "b005eaf9e8d632ee1ccf8dfbab2964de1014b28c0502156fd0e25f872ca397f8"
+    }
+  },
+  "operative_text": "Sec. 1 (amending A.R.S. 13-3102, subsection A, new paragraph 17): {+17. FAILING TO SECURE A FIREARM FROM A MINOR BY NOT TAKING REASONABLE MEASURES TO PREVENT THE MINOR FROM ACCESSING THE FIREARM.+}\nSec. 1 (amending A.R.S. 13-3102, new subsection K): {+K. SUBSECTION A, PARAGRAPH 17 OF THIS SECTION SHALL NOT APPLY IF A MINOR HAS LAWFUL POSSESSION OF A FIREARM PURSUANT TO SECTION 13-3111.+}\nSec. 1 (amending A.R.S. 13-3102, subsection N): {+MISCONDUCT INVOLVING WEAPONS UNDER SUBSECTION A, PARAGRAPH 17 OF THIS SECTION IS A CLASS 6 FELONY IF THE MINOR ACCESSES THE FIREARM AND A CLASS 4 FELONY IF THE MINOR DISCHARGES THE FIREARM AND CAUSES DEATH OR SERIOUS PHYSICAL INJURY TO THE MINOR OR ANOTHER PERSON.+}"
+}

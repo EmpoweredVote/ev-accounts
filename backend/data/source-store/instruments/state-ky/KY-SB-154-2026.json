@@ -1,0 +1,219 @@
+{
+  "id": "KY-SB-154-2026",
+  "scope": "state:ky",
+  "title": "SB 154 (2026 Regular Session): AN ACT relating to elections.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/26RS/sb154.html",
+    "https://apps.legislature.ky.gov/record/26RS/sb154/vote_history.pdf"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) Section 1, KRS 117.228(1)\n(quote) if a voter is unable to provide proof of identification as required under KRS 117.225, and as defined under KRS 117.001, a voter may cast a ballot if the individual:\n(section) Section 1, KRS 117.228(2)(a)\n(quote) STRUCK: [The voter's Social Security card; (b) ]\n(section) Section 1, KRS 117.228(2)(c)-(d)\n(quote) STRUCK: [; or (d) Any food stamp identification card, electronic benefit transfer card, or supplemental nutrition assistance card, that is issued by this state and has the name of the voter stated]\n(section) Section 1, KRS 117.228(2)\n(quote) Any identification card issued by a county in this state which has the name of the voter stated and has been approved in writing by the State Board of Elections pursuant to administrative regulations promulgated under KRS Chapter 13A; or (b)[(c)] Any identification card with the voter's photograph and the name of the voter stated\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Section 1 is the only section: it reprints KRS 117.228 and strikes the Social Security card and the state food-stamp / EBT / SNAP card from the list of extra documents; the voter's affirmation and its impediment list (1)(c) and the personal-knowledge exception (4) are reprinted with no bracketed change.\n(other) version: orig_bill (as introduced): carries the same two strikes in slot b. Its bracket for the last strike is misplaced ('voter stated;[ or').\n(other) version: bill (furthest = Senate-passed/engrossed copy, header 26 RS SB 154/GA; actions show no committee substitute or floor amendment): same text; the only difference from orig_bill is a corrected bracket ('voter stated[; or') so the dangling 'or' strikes properly. Slots a, c, d, e not stated in either.\n(other) note: Passed the Senate 31-7 on 2026-02-20; received in House and sent to the Committee on Committees (2026-02-23); no later action recorded, so not enacted. The 117.228 affirmation item 'The voter is a citizen of the United States' is reprinted unchanged. 'Proof of identification' is only referenced, so slot a is not stated.",
+  "sponsors": [
+    {
+      "name": "Lindsey Tichenor",
+      "role": "prime",
+      "version": "bill"
+    },
+    {
+      "name": "Donald Douglas",
+      "role": "co",
+      "version": "bill"
+    },
+    {
+      "name": "Robert Mills",
+      "role": "co",
+      "version": "bill"
+    },
+    {
+      "name": "Matt Nunn",
+      "role": "co",
+      "version": "bill"
+    },
+    {
+      "name": "Aaron Reed",
+      "role": "co",
+      "version": "bill"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2026-02-20",
+      "body": "KY Senate",
+      "motion": "third reading, passed Senate [version voted: bill]",
+      "kind": "roll-call",
+      "yes": 31,
+      "no": 7,
+      "absent": 0,
+      "body_size": 38,
+      "note": "LegiScan roll call; tally checked against the official vote-history PDF | https://apps.legislature.ky.gov/record/26RS/sb154/vote_history.pdf",
+      "members": [
+        {
+          "name": "David Givens",
+          "vote": "yea"
+        },
+        {
+          "name": "Jimmy Higdon",
+          "vote": "yea"
+        },
+        {
+          "name": "Gerald Neal",
+          "vote": "nay"
+        },
+        {
+          "name": "Brandon Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Stivers",
+          "vote": "yea"
+        },
+        {
+          "name": "Robin Webb",
+          "vote": "nay"
+        },
+        {
+          "name": "Julie Raque Adams",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Nemes",
+          "vote": "yea"
+        },
+        {
+          "name": "Jared Carpenter",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "Christian McDaniel",
+          "vote": "yea"
+        },
+        {
+          "name": "Reginald Thomas",
+          "vote": "nay"
+        },
+        {
+          "name": "George Wise",
+          "vote": "yea"
+        },
+        {
+          "name": "Danny Carroll",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve West",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Girdler",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen Meredith",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Mills",
+          "vote": "yea"
+        },
+        {
+          "name": "Phillip Wheeler",
+          "vote": "yea"
+        },
+        {
+          "name": "Brandon Storm",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Karen Berg",
+          "vote": "nay"
+        },
+        {
+          "name": "Donald Douglas",
+          "vote": "yea"
+        },
+        {
+          "name": "Keturah Herron",
+          "vote": "nay"
+        },
+        {
+          "name": "Gary Boswell",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Rawlings",
+          "vote": "yea"
+        },
+        {
+          "name": "Lindsey Tichenor",
+          "vote": "yea"
+        },
+        {
+          "name": "Gex Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Amanda Mays Bledsoe",
+          "vote": "yea"
+        },
+        {
+          "name": "Matthew Deneen",
+          "vote": "yea"
+        },
+        {
+          "name": "Shelley Frommeyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Casey Chambers Armstrong",
+          "vote": "nay"
+        },
+        {
+          "name": "Greg Elkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Madon",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Nunn",
+          "vote": "yea"
+        },
+        {
+          "name": "Aaron Reed",
+          "vote": "yea"
+        },
+        {
+          "name": "Craig Richardson",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Clemons",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 KY bill texts and roll calls (Sonnet readers R1-R4 + version pass; apps.legislature.ky.gov vote histories, voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "curl"
+  }
+}

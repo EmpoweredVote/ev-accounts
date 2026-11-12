@@ -1,0 +1,604 @@
+{
+  "id": "KY-SB-169-2016",
+  "scope": "state:ky",
+  "title": "SB 169 (2016 Regular Session): AN ACT relating to elections.",
+  "urls": [
+    "http://www.lrc.ky.gov/record/16RS/SB169.htm",
+    "https://apps.legislature.ky.gov/record/16RS/sb169/vote_history.pdf"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 7, KRS 117.227\n(quote) Election officers shall confirm the identity of each voter by personal acquaintance or by a document, such as a motor vehicle operator's license, Social Security card, any identification card that has been issued by the county and which has been approved in writing by the State Board of Elections, any identification card with picture and signature, any United States government-issued identification card, any Kentucky state government-issued identification card with picture, or credit card. The election officer confirming the identity shall sign the precinct voter roster and list the method of identification.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 1 (KRS 121.180): campaign finance; delete duplicate paper copy filing requirement.\n(other) Sec. 2 (KRS 116.095): county clerk redacts a registered voter's Social Security number from registration records copied or inspected by a citizen.\n(other) Sec. 3 (KRS 116.0452): 4 p.m. local time deadline for registration applications before books close.\n(other) Sec. 4 (KRS 117.235): electioneering distance 100 feet; political signs on private non-polling property allowed.\n(other) Sec. 5 (new section of KRS ch. 160) and Sec. 6 (KRS 118.425): school-board candidates in districts that cross county lines; vote totalling and certificate.\n(other) Sec. 8 (KRS 117.087): challenges to mailed absentee ballots due before 8 a.m. (from 10 a.m.) on election day; county board counts beginning 8 a.m.\n(other) version: bill (only saved version; the House passed it 98-1 with no House amendment shown in actions, so this text matches the enrolled bill, but the record does not say so in words): carries ID text in slot a only (KRS 117.227, Sec. 7).\n(other) note: Slot a: KRS 117.227 allows identity to be confirmed \"by personal acquaintance or by a document, such as\" a list; the list is illustrative (\"such as\"), not closed, and includes a credit card. No photo requirement for every document, and no stated consequence of lacking one (slot b not stated). Underline marks lost. The bill description says Sec. 7 \"expand[s] list of identification cards\". Comparing with the 2012 bill, which brackets old law as \"a document, such as a motor vehicle operator's license, Social Security card, or credit card\", the county-issued card (approved in writing by the State Board of Elections), \"identification card with picture and signature\", US government-issued card and Kentucky state government-issued card with picture appear to be the additions; this is an inference from a text four years apart, not from marks, so treat new-versus-reprinted as unconfirmed. Roll calls appear only in actions (Senate 3rd reading 33-4 with floor amendment (1), 2016-02-23; House 3rd reading 98-1, 2016-03-29). The skeleton has no vote entries and no vote-history file, so no vote objects were filled. The Senate floor amendment (1) text is not saved separately.",
+  "sponsors": [
+    {
+      "name": "Albert Robinson",
+      "role": "prime",
+      "version": "bill"
+    }
+  ],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2016-02-23",
+      "body": "KY Senate",
+      "motion": "PASS SB 169 W/ SFA 1 [version voted: not saved (Senate: SB 169 with SFA 1)]",
+      "kind": "roll-call",
+      "yes": 33,
+      "no": 4,
+      "absent": 1,
+      "body_size": 38,
+      "note": "official vote-history PDF (scan), surnames as printed | https://apps.legislature.ky.gov/record/16RS/sb169/vote_history.pdf",
+      "members": [
+        {
+          "name": "Alvarado",
+          "vote": "yea"
+        },
+        {
+          "name": "Bowen",
+          "vote": "yea"
+        },
+        {
+          "name": "Buford",
+          "vote": "nay"
+        },
+        {
+          "name": "Carpenter",
+          "vote": "nay"
+        },
+        {
+          "name": "Carroll, Danny",
+          "vote": "absent"
+        },
+        {
+          "name": "Carroll, Julian",
+          "vote": "nay"
+        },
+        {
+          "name": "Clark",
+          "vote": "yea"
+        },
+        {
+          "name": "Embry",
+          "vote": "yea"
+        },
+        {
+          "name": "Gibson",
+          "vote": "yea"
+        },
+        {
+          "name": "Girdler",
+          "vote": "yea"
+        },
+        {
+          "name": "Givens",
+          "vote": "yea"
+        },
+        {
+          "name": "Harper Angel",
+          "vote": "yea"
+        },
+        {
+          "name": "Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Higdon",
+          "vote": "yea"
+        },
+        {
+          "name": "Hornback",
+          "vote": "yea"
+        },
+        {
+          "name": "Humphries",
+          "vote": "yea"
+        },
+        {
+          "name": "Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Kerr",
+          "vote": "yea"
+        },
+        {
+          "name": "McDaniel",
+          "vote": "yea"
+        },
+        {
+          "name": "McGarvey",
+          "vote": "yea"
+        },
+        {
+          "name": "Neal",
+          "vote": "yea"
+        },
+        {
+          "name": "Parrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Raque Adams",
+          "vote": "yea"
+        },
+        {
+          "name": "Ridley",
+          "vote": "yea"
+        },
+        {
+          "name": "Robinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Schickel",
+          "vote": "nay"
+        },
+        {
+          "name": "Schroder",
+          "vote": "yea"
+        },
+        {
+          "name": "Seum",
+          "vote": "yea"
+        },
+        {
+          "name": "Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Stivers",
+          "vote": "yea"
+        },
+        {
+          "name": "Thayer",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Webb",
+          "vote": "yea"
+        },
+        {
+          "name": "West",
+          "vote": "yea"
+        },
+        {
+          "name": "Westerfield",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "Wise",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2016-03-29",
+      "body": "KY House",
+      "motion": "For Consent Adoption (RCS# 406) [version voted: bill]",
+      "kind": "roll-call",
+      "yes": 98,
+      "no": 1,
+      "absent": 1,
+      "body_size": 100,
+      "note": "official vote-history PDF (scan), surnames as printed | https://apps.legislature.ky.gov/record/16RS/sb169/vote_history.pdf",
+      "members": [
+        {
+          "name": "Adkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Glenn",
+          "vote": "yea"
+        },
+        {
+          "name": "Meredith",
+          "vote": "yea"
+        },
+        {
+          "name": "Shell",
+          "vote": "yea"
+        },
+        {
+          "name": "Bechler",
+          "vote": "yea"
+        },
+        {
+          "name": "Gooch",
+          "vote": "yea"
+        },
+        {
+          "name": "Meyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Short",
+          "vote": "yea"
+        },
+        {
+          "name": "Belcher",
+          "vote": "yea"
+        },
+        {
+          "name": "Graham",
+          "vote": "yea"
+        },
+        {
+          "name": "Miles",
+          "vote": "yea"
+        },
+        {
+          "name": "Simpson",
+          "vote": "yea"
+        },
+        {
+          "name": "Bell",
+          "vote": "yea"
+        },
+        {
+          "name": "Greer",
+          "vote": "yea"
+        },
+        {
+          "name": "Miller C",
+          "vote": "yea"
+        },
+        {
+          "name": "Sinnette",
+          "vote": "yea"
+        },
+        {
+          "name": "Benvenuti",
+          "vote": "yea"
+        },
+        {
+          "name": "Hale",
+          "vote": "yea"
+        },
+        {
+          "name": "Miller J",
+          "vote": "yea"
+        },
+        {
+          "name": "Smart",
+          "vote": "yea"
+        },
+        {
+          "name": "Bratcher",
+          "vote": "yea"
+        },
+        {
+          "name": "Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Mills",
+          "vote": "yea"
+        },
+        {
+          "name": "St. Onge",
+          "vote": "yea"
+        },
+        {
+          "name": "Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Heath",
+          "vote": "yea"
+        },
+        {
+          "name": "Moffett",
+          "vote": "yea"
+        },
+        {
+          "name": "Steele",
+          "vote": "yea"
+        },
+        {
+          "name": "Bunch",
+          "vote": "yea"
+        },
+        {
+          "name": "Hoover",
+          "vote": "yea"
+        },
+        {
+          "name": "Montell",
+          "vote": "yea"
+        },
+        {
+          "name": "Stewart",
+          "vote": "yea"
+        },
+        {
+          "name": "Burch",
+          "vote": "yea"
+        },
+        {
+          "name": "Horlander",
+          "vote": "yea"
+        },
+        {
+          "name": "Moore",
+          "vote": "yea"
+        },
+        {
+          "name": "Stone",
+          "vote": "yea"
+        },
+        {
+          "name": "Butler",
+          "vote": "yea"
+        },
+        {
+          "name": "Howard",
+          "vote": "yea"
+        },
+        {
+          "name": "Nelson",
+          "vote": "yea"
+        },
+        {
+          "name": "Stumbo",
+          "vote": "yea"
+        },
+        {
+          "name": "Carney",
+          "vote": "yea"
+        },
+        {
+          "name": "Imes",
+          "vote": "yea"
+        },
+        {
+          "name": "Nicholls",
+          "vote": "yea"
+        },
+        {
+          "name": "Tackett",
+          "vote": "yea"
+        },
+        {
+          "name": "Clark",
+          "vote": "yea"
+        },
+        {
+          "name": "Jenkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Osborne",
+          "vote": "yea"
+        },
+        {
+          "name": "Taylor",
+          "vote": "yea"
+        },
+        {
+          "name": "Collins",
+          "vote": "yea"
+        },
+        {
+          "name": "Kay",
+          "vote": "yea"
+        },
+        {
+          "name": "Overly",
+          "vote": "yea"
+        },
+        {
+          "name": "Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "Combs",
+          "vote": "yea"
+        },
+        {
+          "name": "Keene",
+          "vote": "yea"
+        },
+        {
+          "name": "Owens",
+          "vote": "yea"
+        },
+        {
+          "name": "Tipton",
+          "vote": "yea"
+        },
+        {
+          "name": "Couch",
+          "vote": "yea"
+        },
+        {
+          "name": "Kerr",
+          "vote": "yea"
+        },
+        {
+          "name": "Palumbo",
+          "vote": "yea"
+        },
+        {
+          "name": "Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Crimm",
+          "vote": "yea"
+        },
+        {
+          "name": "King K",
+          "vote": "yea"
+        },
+        {
+          "name": "Rader",
+          "vote": "yea"
+        },
+        {
+          "name": "Upchurch",
+          "vote": "yea"
+        },
+        {
+          "name": "DeCesare",
+          "vote": "yea"
+        },
+        {
+          "name": "King M",
+          "vote": "yea"
+        },
+        {
+          "name": "Rand",
+          "vote": "yea"
+        },
+        {
+          "name": "Watkins D",
+          "vote": "yea"
+        },
+        {
+          "name": "Denham",
+          "vote": "yea"
+        },
+        {
+          "name": "Koenig",
+          "vote": "yea"
+        },
+        {
+          "name": "Richards",
+          "vote": "yea"
+        },
+        {
+          "name": "Watkins G",
+          "vote": "yea"
+        },
+        {
+          "name": "DeWeese",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee",
+          "vote": "yea"
+        },
+        {
+          "name": "Riggs",
+          "vote": "yea"
+        },
+        {
+          "name": "Wayne",
+          "vote": "yea"
+        },
+        {
+          "name": "Donohue",
+          "vote": "yea"
+        },
+        {
+          "name": "Linder",
+          "vote": "yea"
+        },
+        {
+          "name": "Riner",
+          "vote": "yea"
+        },
+        {
+          "name": "Webber",
+          "vote": "yea"
+        },
+        {
+          "name": "Dossett",
+          "vote": "yea"
+        },
+        {
+          "name": "Marzian",
+          "vote": "yea"
+        },
+        {
+          "name": "Rowland",
+          "vote": "yea"
+        },
+        {
+          "name": "Westrom",
+          "vote": "yea"
+        },
+        {
+          "name": "DuPlessis",
+          "vote": "yea"
+        },
+        {
+          "name": "Mayfield",
+          "vote": "yea"
+        },
+        {
+          "name": "Rudy",
+          "vote": "yea"
+        },
+        {
+          "name": "Wuchner",
+          "vote": "yea"
+        },
+        {
+          "name": "Elliott",
+          "vote": "yea"
+        },
+        {
+          "name": "McKee",
+          "vote": "yea"
+        },
+        {
+          "name": "Santoro",
+          "vote": "yea"
+        },
+        {
+          "name": "Yonts",
+          "vote": "yea"
+        },
+        {
+          "name": "Fischer",
+          "vote": "yea"
+        },
+        {
+          "name": "Meade",
+          "vote": "yea"
+        },
+        {
+          "name": "Schamore",
+          "vote": "yea"
+        },
+        {
+          "name": "York",
+          "vote": "yea"
+        },
+        {
+          "name": "Flood",
+          "vote": "yea"
+        },
+        {
+          "name": "Meeks",
+          "vote": "yea"
+        },
+        {
+          "name": "Floyd",
+          "vote": "nay"
+        },
+        {
+          "name": "Coursey",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 KY bill texts and roll calls (Sonnet readers R1-R4 + version pass; apps.legislature.ky.gov vote histories, voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "curl"
+  }
+}

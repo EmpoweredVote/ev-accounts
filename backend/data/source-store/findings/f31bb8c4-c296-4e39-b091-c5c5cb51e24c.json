@@ -197,7 +197,90 @@
           "sha256": "93266e8d17c0b31728a6c78573a4afda6517fbacbe2200b4273a5f2e422960c1"
         }
       }
+    },
+    {
+      "id": "aa88c91dabdd88a8f716919f2c245b2d810294a2008b6405163cb02853d2c7f9",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/16RS/sb169/vote_history.pdf",
+      "date": "2016-03-29",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-169-2016",
+      "act": "yea",
+      "motion": "House: For Consent Adoption (RCS# 406)",
+      "note": "KY House roll call (For Consent Adoption (RCS# 406), 98-1) on SB169 (2016 Regular Session); official vote-history PDF (scan; surname as printed: 'Elliott'); linked by LegiScan member id 17926 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.598Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 17926 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.598Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "noncitizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "iVoterGuide pages for Daniel B. Elliott, State Rep., Dist. 54 (2016 primary and 2016/2020 general pages fetched; they confirm the seat and list a 2026-11-03 general election; the photo-ID statement is shown as 'Did not answer', so no ticked answer to save)",
+        "Advocate-Messenger candidate Q&A 2020-10-10 (nothing on the subject)",
+        "Advocate-Messenger candidate survey page and Boyle legislators public meeting page (nothing on the subject)",
+        "2016 state committee candidate profile (nothing on the subject)",
+        "WEKU and WKMS 2026 elections-bill stories and Hoptown Chronicle reprint of a Kentucky Lantern story (curl; none names this person)",
+        "web searches: name + voter ID/election; name + questionnaire/photo identification; name + Judiciary chair + elections bill; name + campaign site/newsletter/SB 2 (nothing on the subject)",
+        "blocked: ballotpedia.org and votesmart.org (refused by instruction, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-11T18:57:30.900Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 2,
+      "at": "2026-11-11T21:12:46.598Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
 }

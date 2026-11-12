@@ -257,7 +257,157 @@
           "sha256": "93266e8d17c0b31728a6c78573a4afda6517fbacbe2200b4273a5f2e422960c1"
         }
       }
+    },
+    {
+      "id": "ff5738b731779da5975a0a039387532f2411df63b0484c72944639f3c2e300de",
+      "kind": "own-words",
+      "url": "https://www.columbiamagazine.com/index.php?sid=110138",
+      "date": "2020-04-14",
+      "date_precision": "day",
+      "passage": "“There have been many comments made about this not being the time to debate the issue, and I'll concede that,” he said, adding that the time was March 3 when SB 2 was originally passed.",
+      "note": "House floor remarks defending the vote to override the veto of SB 2 (voter photo ID), reported in a Legislative Research Commission story by Robert Weber. Not from a refused outlet. The same story reports he added that 41 of 120 counties had more registered voters than residents, but that is the reporter's paraphrase and is not saved as his words.",
+      "subjects": [
+        "voter ID at the polls",
+        "veto override of SB 2",
+        "voter-roll accuracy"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:46:56.175Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa88c91dabdd88a8f716919f2c245b2d810294a2008b6405163cb02853d2c7f9",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/16RS/sb169/vote_history.pdf",
+      "date": "2016-03-29",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-169-2016",
+      "act": "yea",
+      "motion": "House: For Consent Adoption (RCS# 406)",
+      "note": "KY House roll call (For Consent Adoption (RCS# 406), 98-1) on SB169 (2016 Regular Session); official vote-history PDF (scan; surname as printed: 'Osborne'); linked by LegiScan member id 1179 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.597Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d46ecb91a31ee5cd1e1e87159cd4301382bc37721ea5bb099f789780020ffed",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 1179 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.597Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 1179 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.597Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd4f0553eb6ef608e5f4f0880dfe9d952201740968402fd0ab748856330a3352",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "yea",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 1179 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.597Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship",
+        "noncitizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "columbiamagazine.com LRC story on the SB 2 veto override, 2020-04-14",
+        "wuky.org story 2020-04-14 (reporter paraphrase only, not saved)",
+        "iVoterGuide questionnaires 2020 primary, 2022 general: left the photo-ID statement unanswered; 2014 primary page showed no relevant answer",
+        "several web searches on name plus voter ID, photo ID, citizenship, election integrity; a 2026 post-election statement was found but is not on the subject",
+        "blocked: https://www.marshallcountydaily.com/2020/04/15/voter-photo-id-law-coming-to-ky/ (403)",
+        "blocked: https://ballotpedia.org (refused by instruction, not fetched)",
+        "blocked: https://justfacts.votesmart.org (refused by instruction, not fetched)",
+        "not reviewed: https://bluevoterguide.org (refused by instruction)"
+      ],
+      "found": 1,
+      "at": "2026-11-11T18:46:56.175Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 4,
+      "at": "2026-11-11T21:12:46.597Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
 }

@@ -1,0 +1,62 @@
+{
+  "id": "KY-HB-374-2024",
+  "scope": "state:ky",
+  "title": "HB 374 (2024 Regular Session): AN ACT relating to elections.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/24RS/hb374.html"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) Section 1, KRS 117.228(1)\n(quote) if a voter is unable to provide proof of identification as required under KRS 117.225, and as defined under KRS 117.001, a voter may cast a ballot if the individual:\n(section) Section 1, KRS 117.228(2)(d)-(e)\n(quote) STRUCK: [; or (e) A credit or debit card with the name of the voter stated]\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Section 1 is the only section. It reprints KRS 117.228 and its only change is to strike the credit or debit card from the documents a voter without photo ID may show (the Social Security card, county ID card, photo ID card and state benefit card stay in the list).\n(other) version: orig_bill (only saved version, as introduced): carries the slot b change; slots a, c, d, e not stated. Text is word-for-word the same as KY-HB-180-2025 apart from header lines.\n(other) note: The 117.228 voter affirmation (item 1: 'The voter is a citizen of the United States') and the personal-knowledge exception in subsection (4) are reprinted unchanged. 'Proof of identification' is only referenced ('as required under KRS 117.225, and as defined under KRS 117.001'), not restated, so slot a is not stated. The bill text is identical to the other year's card-removal bill (HB374 of 2024 and HB180 of 2025); only the bill-request number and print date in the header differ. Never left committee (last action 2024-01-24: to Committee on Committees (House)).",
+  "sponsors": [
+    {
+      "name": "Candy Massaroni",
+      "role": "prime",
+      "version": "orig_bill"
+    },
+    {
+      "name": "Emily Callaway",
+      "role": "co",
+      "version": "orig_bill"
+    },
+    {
+      "name": "Josh Calloway",
+      "role": "co",
+      "version": "orig_bill"
+    },
+    {
+      "name": "John Hodgson",
+      "role": "co",
+      "version": "orig_bill"
+    },
+    {
+      "name": "Savannah Maddox",
+      "role": "co",
+      "version": "orig_bill"
+    },
+    {
+      "name": "Marianne Proctor",
+      "role": "co",
+      "version": "orig_bill"
+    },
+    {
+      "name": "Steve Rawlings",
+      "role": "co",
+      "version": "orig_bill"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 KY bill texts and roll calls (Sonnet readers R1-R4 + version pass; apps.legislature.ky.gov vote histories, voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "curl"
+  }
+}

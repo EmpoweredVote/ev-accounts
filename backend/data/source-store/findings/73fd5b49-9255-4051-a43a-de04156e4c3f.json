@@ -1,0 +1,266 @@
+{
+  "politician_id": "73fd5b49-9255-4051-a43a-de04156e4c3f",
+  "findings": [
+    {
+      "id": "0de97d302cdb4ce6426e139c9fed46eb6e7ca2f348905ab5156694d141805e0f",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/60834/race/11173/election/955",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "People should be able to vote without photo identification.",
+      "note": "Questionnaire statement in the section 'Elections and Voting' of the iVoterGuide candidate questionnaire, with the ticked answer 'Strongly Disagree'. The page shows the answers for the Kentucky general election of November 8, 2022 (State Rep., Dist. 66); the date the answer was given is not shown.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID required to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:40:05.120Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b97b8e768569ae6f68e3a0552e3a34715080e87282978dabf1eadd7392cbfae0",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/60834/race/11173/election/955",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Photo identification is a very simple and fair means to confirm identity. It is a necessary measure to help to insure secure elections, and it is not unfair to anyone.",
+      "note": "His written comment under the photo-identification questionnaire statement in the 'Elections and Voting' section; the page shows the answers for the 2022 general election race (State Rep., Dist. 66).",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID required to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:40:05.120Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a8719881c6c3bb2888efbbda39b50cea6ef04de53d5fd89e38b0dd17ca7b9c0",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/60834/race/11173/election/955",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "I am an advocate for the elimination of electronic voting systems, and for a return to paper ballots and hand counting. For election security, no machine should be connected in any way to the internet. I would propose laws be passed to keep all private companies and private individuals out of the election process. Private money, which was part of the 2020 election voter fraud, should not be permitted. Mail in voting should not be allowed other than limited absentee voting. Elections should be held on one day only. There are many other voter integrity measures that could be put in place.",
+      "note": "His answer to the questionnaire question 'What laws would you propose to change present voting practices?' It covers voting machines, private money in elections, mail voting limited to absentee, one-day elections and other voter-integrity measures. The page shows the answers for the 2022 general election race (State Rep., Dist. 66).",
+      "subjects": [
+        "mail-ballot limits",
+        "voting machines and paper ballots",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:40:05.120Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "74241298f19316d68cff435811cc7b6b0d77c78d169ed2b74456922d8e5a3ceb",
+      "kind": "own-words",
+      "url": "https://bcrpky.net/ballot-amendment-1-preserving-our-elections/",
+      "date": "2024-09-03",
+      "date_precision": "day",
+      "passage": "I believe it is crucial that only U.S. citizens vote in elections. After all, we are the ones who live here, follow the laws, and care about what happens.",
+      "note": "From a column explaining the 2024 constitutional Amendment 1 (SB 143), which would bar anyone who is not a U.S. citizen from voting in Kentucky. The column is published on a county committee's site; the page's description names Rep. Steve Rawlings (District 66) as the author.",
+      "subjects": [
+        "noncitizen voting",
+        "citizen-only voting amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:40:05.120Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e7b12e9b950b6aa6e4628ca9b2209c42f590937992378a701d12eddadefe1426",
+      "kind": "own-words",
+      "url": "https://bcrpky.net/ballot-amendment-1-preserving-our-elections/",
+      "date": "2024-09-03",
+      "date_precision": "day",
+      "passage": "Before I continue, I want to emphasize that there have been no reported cases of non-citizens voting in Kentucky elections.",
+      "note": "Same 2024 column on Amendment 1 (SB 143); he states that no cases of noncitizen voting have been reported in Kentucky.",
+      "subjects": [
+        "noncitizen voting",
+        "citizen-only voting amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:40:05.120Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eb9c912419b14fabd9fd46f71186b4b8e874b5edb0e227d1300e02486a06ebc3",
+      "kind": "own-words",
+      "url": "https://bcrpky.net/week-12-legislative-update/",
+      "date": "2026-03-27",
+      "date_precision": "day",
+      "passage": "HB 139 modernizes Kentucky’s election laws by raising campaign contribution limits, improving election administration, tightening voter ID rules, and allowing data sharing with federal agencies to verify voter eligibility.",
+      "note": "In his Week 12 legislative update (signed Sen. Steve Rawlings, District 11, published on a county committee's site), this is his description of HB 139, listed among measures that advanced through the Senate that week. It describes the bill; it does not say how he voted.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll checks with federal data",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:40:05.120Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "83b481c1b0e50b737bd494bb4986a48ebea5ce02bc03bb909e102e05c92c1f46",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/hb374.html",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-374-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, orig_bill",
+      "note": "Listed as co sponsor of HB374 (2024 Regular Session) in LegiScan's bill record (sponsor order 7); the first version (orig_bill) carries the ID/citizenship text (identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "964f43dd513a6a900fe46730c227d9b9c229eaaa4159401edbd436f6f4e82228",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate with Senate Committee Substitute (1)",
+      "note": "KY Senate roll call (third reading, passed Senate with Senate Committee Substitute (1), 31-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23563 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa8ad840466678434828836de887f898e45dc3f627478ec4fe8931f410f4e2d2",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: override of the Governor's veto, final passage (Senate)",
+      "note": "KY Senate roll call (override of the Governor's veto, final passage (Senate), 32-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23563 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8cb257bf2da3336ed900008c97f3e633ffee27db4f47f3bef14f6db1a9004902",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb154/vote_history.pdf",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-154-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate",
+      "note": "KY Senate roll call (third reading, passed Senate, 31-7) on SB154 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23563 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail and absentee voting limits",
+        "voting machines and paper ballots",
+        "noncitizen voting and citizen-only voting amendment",
+        "election law modernization (HB 139)",
+        "candidate questionnaire"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://ivoterguide.com/candidate/60834/race/11173/election/955 (iVoterGuide questionnaire, page labelled Kentucky General, November 8, 2022, State Rep., Dist. 66; the same profile lists his 2024 Senate District 11 race; two answers saved)",
+        "https://bcrpky.net/ballot-amendment-1-preserving-our-elections/ (2024 column in his name on a county committee's site; two passages saved)",
+        "https://bcrpky.net/week-12-legislative-update/ (2026 weekly update in his name; one passage saved)",
+        "https://bcrpky.net/?p=6381 (SB 59 and SB 52 release: quotes about public funds and ballot questions, not about ID or citizenship; nothing saved)",
+        "https://bcrpky.net/week-6-legislative-update-sen-steve-rawlings/ and the week 7, 9, 11, 13 and session-close updates (nothing on ID or citizenship; week 9 and 12 cover SB 59 on public funds and ballot questions only)",
+        "https://bcrpky.net/tag/election-integrity/ and https://bcrpky.net/tag/sen-steve-rawlings/ (tag lists read)",
+        "positive control: the 2026 weekly updates and his 2024 column are signed 'Sen. Steve Rawlings (District 11)' and 'Rep. Steve Rawlings (District 66)'; he is the Burlington senator for District 11",
+        "web searches (5): name with voter ID, photo ID, questionnaire, election integrity, proof of citizenship, SAVE Act, noncitizen, mail-in voting; only the pages above named him on the subject",
+        "https://apps.legislature.ky.gov/Legislators/subs/Sen-11.html (seen in search results, not fetched)",
+        "blocked: https://ballotpedia.org/Steve_Rawlings and https://justfacts.votesmart.org and https://bluevoterguide.org (listed as refusing fetches, not tried)"
+      ],
+      "found": 6,
+      "at": "2026-11-11T18:40:05.120Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 4,
+      "at": "2026-11-11T21:12:46.603Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}

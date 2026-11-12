@@ -1,0 +1,34 @@
+{
+  "politician_id": "51d6205d-2e6e-48a5-b0ce-4b5a588b4791",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed: Teresa Leyba Ruiz, candidate for Arizona Superintendent of Public Instruction (https://www.kjzz.org/elections/2026-10-06/2026-arizona-superintendent-of-public-instruction-race-the-candidates-elex shows she won her primary by a wide margin); the same name is used in news coverage as Teresa Leyba Ruiz",
+        "not a legislator: no sponsored-bill list applies",
+        "blocked: https://ballotpedia.org/Teresa_Leyba_Ruiz_(Arizona) (fetch tool returned an empty page; curl returned 403)",
+        "blocked: https://bluevoterguide.org/endorser-org/Gun_Sense_Voter/AZ/4895 (403)",
+        "campaign site: not found by search (only a social media account named drruizforarizona was seen, not reviewed)",
+        "nothing on the subject: https://ivoterguide.com/candidate/95852/race/30440/election/1455 (the gun question is marked did not answer)",
+        "nothing on the subject: https://www.kjzz.org/elections/2026-10-06/2026-arizona-superintendent-of-public-instruction-race-the-candidates-elex",
+        "nothing on the subject: https://www.abc15.com/news/politics/where-az-superintendent-candidates-stand-on-key-education-issues (school safety answer names no gun policy)",
+        "nothing on the subject: https://www.predictionedge.com/elections/profile/teresa-leyba-ruiz/ (says her public comments give no clear position on gun regulation)",
+        "news search on name plus gun words: nothing on the subject; her school-safety remarks (school resource officers, safety grants) are about school staffing and name no gun law, so not saved"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:17:24.732Z",
+      "by": "source-collector"
+    }
+  ]
+}

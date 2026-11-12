@@ -1,0 +1,115 @@
+{
+  "politician_id": "6ddd5288-b0db-4d1e-8cf4-56d8669e7b0d",
+  "findings": [
+    {
+      "id": "964f43dd513a6a900fe46730c227d9b9c229eaaa4159401edbd436f6f4e82228",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate with Senate Committee Substitute (1)",
+      "note": "KY Senate roll call (third reading, passed Senate with Senate Committee Substitute (1), 31-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25786 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.609Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa8ad840466678434828836de887f898e45dc3f627478ec4fe8931f410f4e2d2",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: override of the Governor's veto, final passage (Senate)",
+      "note": "KY Senate roll call (override of the Governor's veto, final passage (Senate), 32-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25786 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.609Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8cb257bf2da3336ed900008c97f3e633ffee27db4f47f3bef14f6db1a9004902",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb154/vote_history.pdf",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-154-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate",
+      "note": "KY Senate roll call (third reading, passed Senate, 31-7) on SB154 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25786 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.609Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "noncitizen voting",
+        "voter-roll citizenship checks"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract-otr run with name)",
+        "legislature page confirming office: https://apps.legislature.ky.gov/Legislators/subs/Sen-03.html",
+        "web searches (name + voter ID, photo ID, proof of citizenship, noncitizen, SB 2, questionnaire, local outlets): nothing by this person on the subject",
+        "Kentucky Lantern story on the 2026 elections bill as reprinted by Hoptown Chronicle (https://hoptownchronicle.org/?p=96474): does not name this person",
+        "LPM story on the 2026 citizen-verification bill as hosted by WKMS (https://www.wkms.org/2026-03-06/kentucky-house-oks-bill-authorizing-federal-citizen-verification-for-state-elections): does not name this person",
+        "blocked: https://ballotpedia.org/ (refused by brief, not fetched)",
+        "blocked: https://bluevoterguide.org/ (refused by brief, not fetched)",
+        "blocked: https://justfacts.votesmart.org/ (refused by brief, not fetched)",
+        "not searched by design: floor votes and sponsorships (linked separately)",
+        "Kentucky Lantern Senate voter-ID story as reprinted by Hoptown Chronicle (https://hoptownchronicle.org/?p=96341): does not name this person",
+        "official Senate caucus press releases and local radio pages (kysenaterepublicans.com, lite987whop.com, wpkyonline.com): nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-11T18:28:43.530Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 3,
+      "at": "2026-11-11T21:12:46.609Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}
