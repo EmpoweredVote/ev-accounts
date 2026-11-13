@@ -7,11 +7,14 @@
  * resolving as current on its own date, with no trigger and no deploy. Three cached columns do
  * not follow it:
  *
- *   politicians.is_incumbent        read by four filters in essentialsBrowseService.ts and a
- *                                   fifth at essentialsService.ts:360. It defaulted to true
- *                                   until CA_0188, which left 1,817 active "incumbents" with no
- *                                   seat. Left stale, a departing holder stays an incumbent with
- *                                   no seat AND the arriving one is HIDDEN FROM ADDRESS SEARCH.
+ *   politicians.is_incumbent        NO LONGER READ by any request path (2026-11-13): every read
+ *                                   derives incumbency from office_terms via src/lib/incumbency.ts.
+ *                                   It used to be read by five reps filters, so a stale value hid
+ *                                   the arriving holder from address search on every seeded
+ *                                   handover date (Reno, 2026-11-13) and turned master CI red on
+ *                                   whoever pushed next. Drift here is still REPORTED and --apply
+ *                                   still tidies it, but it no longer fails --check: nothing a
+ *                                   voter sees depends on it.
  *   politicians.office_id           the deprecated point-in-time snapshot. It has NO foreign
  *                                   key, so it can point at a deleted office and nothing
  *                                   complains.
@@ -197,6 +200,15 @@ export function driftExitCode({ check, driftCount }) {
   return check && driftCount > 0 ? 1 : 0;
 }
 
+/**
+ * Which drift rows FAIL a --check run. `politicians.is_incumbent` is excluded on purpose: no read
+ * path uses it any more (src/lib/incumbency.ts), and it goes stale BY DESIGN on every seeded
+ * handover date — failing CI on it turned master red for whoever pushed after each one.
+ */
+export function blockingDrift(drift) {
+  return drift.filter((d) => d.column !== 'politicians.is_incumbent');
+}
+
 const invokedDirectly = process.argv[1]
   && import.meta.url === pathToFileURL(process.argv[1]).href;
 if (invokedDirectly) {
@@ -234,15 +246,22 @@ if (invokedDirectly) {
     if (apply) console.log(`applied: ${await applyIncumbencyFixes(pool, drift)}`);
     else console.log('read-only; pass --apply to write');
 
-    if (check && drift.length) {
+    const blocking = blockingDrift(drift);
+    if (check && drift.length > blocking.length) {
+      console.log(
+        `\n${drift.length - blocking.length} politicians.is_incumbent row(s) are stale. Not a ` +
+          'failure: no read path uses that column (src/lib/incumbency.ts).',
+      );
+    }
+    if (check && blocking.length) {
       console.error(
-        `\n${drift.length} row(s) disagree with essentials.office_terms.\n` +
+        `\n${blocking.length} row(s) disagree with essentials.office_terms.\n` +
           'Do NOT just run --apply: read the rows first. A predicate reads the SHAPE of a value, ' +
           'never what it is, and the first measurement of this reported 429 rows of which only 9 ' +
           'were real — applying the rest would have published 22 Senate CANDIDATES as sitting ' +
           'incumbents (see CC_0342).',
       );
-      process.exitCode = driftExitCode({ check, driftCount: drift.length });
+      process.exitCode = driftExitCode({ check, driftCount: blocking.length });
     }
   } finally {
     await pool.end();
