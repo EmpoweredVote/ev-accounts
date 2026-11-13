@@ -28,6 +28,7 @@ import { runCalibrationLapseJob } from '../lib/cronService.js';
 import { runFecScheduledJob, runAdapterForAll } from '../lib/campaignFinanceScheduler.js';
 import { runFecAutoMatchJob } from '../lib/fecResearch.js';
 import { runFecFinanceSummaryJob } from '../lib/fecFinanceSummary.js';
+import { refreshContributionTotals } from '../lib/contributionTotals.js';
 import { runNetfileIngestWithSummaries, runLocalFinanceSummaries } from '../lib/localFinanceSummary.js';
 import { runDistrictStalenessCheck } from '../lib/districtStalenessService.js';
 import { reapStaleIngestionRuns } from '../lib/reapStaleIngestionRuns.js';
@@ -52,7 +53,13 @@ export type JobFn = () => Promise<unknown>;
 export const JOBS: Record<string, JobFn> = {
   // Core (backend/src/cron/) — the always-on jobs the API ran in-process.
   'calibration-lapse': () => runCalibrationLapseJob(),
-  'fec-burst': () => runFecScheduledJob(),
+  // The FEC ingest, then the whole-table totals (CA_0379) that the briefing reads instead of scanning
+  // contributions itself (ev-cto decision 0038). fec-burst is the LAST step of ev-jobs-fec-burst, so the
+  // totals see the day's rows. A refresh failure is logged and does not fail the job.
+  'fec-burst': async () => {
+    await runFecScheduledJob();
+    await refreshContributionTotals();
+  },
   // Finds FEC ids for the federal research queue: new officeholders and candidates, plus a
   // re-check of needs_research rows older than 7 days. Until 2026-09-24 it ran only by hand
   // (admin endpoint / scripts). Runs as the FIRST step of ev-jobs-fec-burst, so links it

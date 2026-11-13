@@ -1003,8 +1003,52 @@ export async function upsertContributions(
  *   - A strictly-greater-than file_number must EXIST for a row to be deleted, so the newest
  *     version of any line is always kept and the rows just inserted can never be removed.
  */
+/**
+ * Which form of the supersession slice to use (ev-cto 0038 Part D, CA_0380).
+ *
+ * The slice must ride a partial expression index, or it scans every FEC row of the source. Before the
+ * Part D copy that index is idx_contrib_fec_supersession, on the raw_record JSON paths. The copy stops
+ * keeping FEC's JSON, fills the typed columns, and builds idx_contrib_fec_supersession_typed on them
+ * instead. A COALESCE of the two would match neither index, so the query is chosen by which index exists.
+ * Asked once per process; an ingest run is one process, and the swap happens outside the FEC window.
+ */
+let supersessionTypedPromise: Promise<boolean> | null = null;
+function supersessionUsesTypedColumns(): Promise<boolean> {
+  supersessionTypedPromise ??= pool
+    .query<{ typed: boolean }>(
+      `SELECT to_regclass('transparent_motivations.idx_contrib_fec_supersession_typed') IS NOT NULL AS typed`
+    )
+    .then((r) => r.rows[0]?.typed === true);
+  return supersessionTypedPromise;
+}
+
+const SUPERSESSION_SLICE_JSON = `
+         SELECT id, amount, contribution_date, donor_name_normalized,
+                (raw_record->>'file_number')::bigint AS fn
+           FROM transparent_motivations.contributions
+          WHERE politician_source_id = $1
+            AND data_source = 'fec'
+            AND raw_record ? 'file_number'
+            AND raw_record->>'committee_id' = $2
+            AND (raw_record->>'report_year')::int = $3
+            AND raw_record->>'report_type' = $4`;
+
+// Same rows on the copied table: each column holds the JSON value it replaces (CA_0380), and the copy
+// proves it on every row before the swap.
+const SUPERSESSION_SLICE_TYPED = `
+         SELECT id, amount, contribution_date, donor_name_normalized,
+                fec_file_number AS fn
+           FROM transparent_motivations.contributions
+          WHERE politician_source_id = $1
+            AND data_source = 'fec'
+            AND fec_file_number_present
+            AND fec_committee_id = $2
+            AND fec_report_year = $3
+            AND fec_report_type = $4`;
+
 async function retireSupersededFilings(filings: SupersededFiling[]): Promise<number> {
   let deleted = 0;
+  const slice = (await supersessionUsesTypedColumns()) ? SUPERSESSION_SLICE_TYPED : SUPERSESSION_SLICE_JSON;
   for (const f of filings) {
     // Per-line supersession via a window MAX, not a self-join. A self-join on these predicates
     // plans as a nested loop with the JSONB extraction in the join filter — both sides index-scan
@@ -1014,20 +1058,13 @@ async function retireSupersededFilings(filings: SupersededFiling[]): Promise<num
     //
     // The slice predicate is served by idx_contrib_fec_supersession (CA_0316), a partial
     // expression index that must keep matching these literals ('fec', 'file_number') and these
-    // three JSONB expressions — change them together. MATERIALIZED keeps the window sort to the
+    // three JSONB expressions — change them together. After the Part D copy, the typed slice is
+    // served by idx_contrib_fec_supersession_typed instead (see supersessionUsesTypedColumns).
+    // MATERIALIZED keeps the window sort to the
     // five narrow slice columns: inlined, the sort carried the whole row and spilled to disk on
     // large filings (18 MB on a 27k-row filing, vs 2.2 MB in memory materialized).
     const res = await pool.query(
-      `WITH slice AS MATERIALIZED (
-         SELECT id, amount, contribution_date, donor_name_normalized,
-                (raw_record->>'file_number')::bigint AS fn
-           FROM transparent_motivations.contributions
-          WHERE politician_source_id = $1
-            AND data_source = 'fec'
-            AND raw_record ? 'file_number'
-            AND raw_record->>'committee_id' = $2
-            AND (raw_record->>'report_year')::int = $3
-            AND raw_record->>'report_type' = $4
+      `WITH slice AS MATERIALIZED (${slice}
        ), ranked AS (
          SELECT id, fn,
                 max(fn) OVER (

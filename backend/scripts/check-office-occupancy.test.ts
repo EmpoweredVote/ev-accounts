@@ -114,6 +114,14 @@ describe('check-office-occupancy — reported line matches the source after bloc
     expect(reportedLine(r.out, rel)).toBe(realLine(src, 'INSERT INTO essentials.politicians'));
   });
 
+  it('branch gate: a MIGRATION naming is_incumbent is a record, not a violation', () => {
+    // CA_0374 ran in production before CA_0378 dropped the column; its file must still merge.
+    const rel = 'backend/migrations/CA_9999_applied_before_drop.sql';
+    const src = ['INSERT INTO essentials.politicians (full_name, is_incumbent)', "VALUES ('A', true);", ''].join('\n');
+    const r = run({ [rel]: src });
+    expect(r.code).toBe(0);
+  });
+
   it('branch gate: a politicians INSERT without is_incumbent passes', () => {
     const rel = 'backend/scripts/insert-ok.ts';
     const src = [HEADER, 'export const sql = `', '  INSERT INTO essentials.politicians (id, full_name)', '  VALUES ($1, $2)', '`;', ''].join('\n');

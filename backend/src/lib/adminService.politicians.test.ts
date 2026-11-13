@@ -40,3 +40,24 @@ describe('adminCreatePolitician — no incumbency column', () => {
     expect(params).toHaveLength(cols.length);
   });
 });
+
+import { adminUpdatePolitician } from './adminService.js';
+
+describe('adminUpdatePolitician — only real columns reach the UPDATE', () => {
+  beforeEach(() => vi.mocked(pool.query).mockReset());
+
+  it('drops office_title and is_candidate (not politicians columns: they made the UPDATE 500)', async () => {
+    const query = vi.mocked(pool.query);
+    query.mockResolvedValue({ rows: [{ id: 'p1' }] } as never);
+    await adminUpdatePolitician('p1', { full_name: 'A B', office_title: 'Mayor', is_candidate: true } as never);
+    const [sql, params] = query.mock.calls[0] as unknown as [string, unknown[]];
+    expect(sql).toContain('full_name = $1');
+    expect(sql).not.toMatch(/office_title|is_candidate/);
+    expect(params).toEqual(['A B', 'p1']);
+  });
+
+  it('refuses when only unknown fields were sent', async () => {
+    await expect(adminUpdatePolitician('p1', { office_title: 'Mayor' } as never)).rejects.toThrow('No fields to update');
+    expect(vi.mocked(pool.query)).not.toHaveBeenCalled();
+  });
+});

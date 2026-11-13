@@ -863,7 +863,9 @@ const UpdatePoliticianSchema = z.object({
   office_title: z.string().optional(),
   photo_origin_url: z.string().optional(),
   is_active: z.boolean().optional(),
-  is_candidate: z.boolean().optional(),
+  // office_title and is_candidate used to be accepted here, but neither is a column of
+  // essentials.politicians, so sending either made the UPDATE fail with a 500. A seat lives in
+  // office_terms; candidacy lives in race_candidates. Unknown keys are now stripped by zod.
 });
 
 const CreateCategorySchema = z.object({
