@@ -140,9 +140,14 @@ answers that file before coding starts** (a runner stop). The answers go into th
 > runner approved it for the next state on 2026-11-12. Do not use it for another topic yet. It rests on one
 > measurement: in Georgia, a record seat at rung 5 (244 people) or rung 2 (12) was never changed by the search;
 > rung 3 changed 2.3% of the time and rung 4 10%.
+>
+> **Ruling 2026-11-13 (runner, gun-policy):** record seats at **rung 3** are not searched either, with their own
+> control of 10 per state; the control for rungs 5 and 2 is 10, not 20. Three pilot states (Missouri, California,
+> Washington) searched 65 rung 3 record seats and 60 control seats, and own words changed none of the 125. Rung 4
+> record seats, record blanks and people with no record are still always searched, with no cap.
 
 0. **Round three (2026-11-13): the plain cases are coded by script, the rest by Opus** (`backend/scripts/stage5/README.md`
-   "Record pass by script"). `record-script.ts plan … --bill-table <table> --sides 1,2,3/4,5 --skip-rungs 5,2 --out
+   "Record pass by script"). `record-script.ts plan … --bill-table <table> --sides 1,2,3/4,5 --skip-rungs 5,2,3 --out
    <record-briefs-xx>` writes the script's codes into a holding folder and `<name>-coder-ids.txt`: the Opus lane plus
    the standing check (a seeded 10 of the script's people). Run step 1 on THAT ids file, with `--bill-table`. Then
    `record-script.ts adopt --out <record-briefs-xx> --name <name> --codes <stage5>/record-codes`. 🔴 Exit 4 = a check
@@ -153,8 +158,9 @@ answers that file before coding starts** (a runner stop). The answers go into th
    yet); a person with no record is listed in `<name>-no-record.txt` and searched. The roster must carry the
    `office` column (`topic:stage5-roster` writes it): a record-only code may be final (step 3), so its coder must
    know the seat.
-2. `python3 -I scripts/stage5/search_list.py plan --record-codes <stage5>/record-codes --roster <roster.tsv> --skip-rungs 5,2 --out <stage5>/search-plan-xx`
-   skips record seats at rungs 5 and 2, except a seeded random 20 of them (the control), which are searched.
+2. `python3 -I scripts/stage5/search_list.py plan --record-codes <stage5>/record-codes --roster <roster.tsv> --control-group 5,2:10 --control-group 3:10 --out <stage5>/search-plan-xx`
+   skips record seats at rungs 5, 2 and 3, except two seeded random controls of 10 (one from rungs 5 and 2, one
+   from rung 3), which are searched. A group with 10 seats or fewer is all control, so nothing in it is skipped.
 3. Search everyone in `search.tsv` and import. Then, before coding again:
    `python3 -I scripts/stage5/search_list.py recode --record-codes <stage5>/record-codes --record-briefs <record-only --out folder> --out <stage5>/search-plan-xx --wave-dir <search wave folder> --codes <stage5>/codes --apply`.
    Only people with a **new** on-topic finding (or no record-only code) go to the second pass (`recode-ids.txt`, as
@@ -162,9 +168,11 @@ answers that file before coding starts** (a runner stop). The answers go into th
    agent did not finish, is not "found nothing": search those people once more (`research-again-ids.txt`), import,
    and run `recode` again. Everyone else keeps the record-only code (`--apply` copies it into `codes/`). 🔴 Never
    show a coder its first code: the second pass is built blind, as usual.
-4. `search_list.py adopt ...` first checks the control (exit 4 when more than 1 in 20 changed outcome or rung: then
-   search the skipped people too, and report it), then copies the skipped people's record-only codes into `codes/`.
-5. `search_effect.py --roster <roster.tsv> --unit state:xx --record-codes ... --codes ... --plan ...` counts, by the
+4. `search_list.py adopt ...` first checks each control apart. **Any** change of outcome or rung in a control fails
+   its group: `adopt` exits 4, lists that group's skipped people in `reopened.tsv` (search and code them like anyone
+   in `search.tsv`, and report it), and still copies the other group's record-only codes into `codes/`. So a change
+   in the rung 3 control re-opens rung 3 only.
+5. `search_effect.py --roster <roster.tsv> --unit state:xx --ids <state ids file> --record-codes ... --codes ... --plan ...` counts, by the
    record's rung, how many searched people the search changed, and codings per person. Report it with the run.
 
 ### 4. Code
