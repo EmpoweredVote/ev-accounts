@@ -1,0 +1,137 @@
+{
+  "id": "GA-SB-66-2025",
+  "scope": "state:ga",
+  "title": "SB66 (2025-2026 Regular Session): Crimes; persons convicted of misdemeanor crimes of family violence from receiving, possessing, or transporting a firearm; prohibit",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/69754",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/230888"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Elena Parent",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "83ffefbf-8cc7-4971-95df-9970188dd013"
+    },
+    {
+      "name": "Harold Jones",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "07f1594a-b9ac-409e-b074-fc65c9316c8e"
+    },
+    {
+      "name": "Kim Jackson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4a922565-16b3-4c1a-a654-7ef16a3316b6"
+    },
+    {
+      "name": "Jason Esteves",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Nan Orrock",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "95c803e4-4853-41aa-b9d6-b4c108e9ea52"
+    },
+    {
+      "name": "Sonya Halpern",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5ae018ad-1a87-4f30-a9d2-63296f88a04c"
+    },
+    {
+      "name": "Nikki Merritt",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "46f32fee-0076-49db-a5cd-1526ef7316cb"
+    },
+    {
+      "name": "Freddie Sims",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Michael Rhett",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1295e8c6-a9a2-43aa-9eee-2113e3a21142"
+    },
+    {
+      "name": "Kenya Wicks",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3dab8c6b-e257-4528-b5e2-22b4b72df2ea"
+    },
+    {
+      "name": "Gail Davenport",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8c65ec5b-05f6-42fd-a25a-a62c1f64fd67"
+    },
+    {
+      "name": "David Lucas",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6b522fd5-b059-4132-8702-ac6fd600efdf"
+    },
+    {
+      "name": "Nabilah Islam Parkes",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Ed Harbison",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ab37d478-2f5a-4545-8c80-281efb9ca9a2"
+    },
+    {
+      "name": "Tonya Anderson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0f8e373f-bfcb-43b0-b84a-4ab524bff191"
+    },
+    {
+      "name": "Josh McLaurin",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ce3bc454-d297-44f7-b145-601cb592d9c2"
+    },
+    {
+      "name": "Derek Mallow",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "58745dbd-d1d8-4662-90b0-6bb56a84fcf4"
+    },
+    {
+      "name": "RaShaun Kemp",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "91fbc0cb-1d87-4a5e-9b58-ddf462627b58"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-66-2025.introduced.pdf",
+      "sha256": "6326e41ecb8d6831df282a034cf07a8385a0e63682964c9f3404bd3d0352ca95"
+    }
+  },
+  "operative_text": "SECTION 3 (amending O.C.G.A. 16-5-23.1, new (f.1)): \"(f.1) If the offense of battery is committed between past or present spouses, persons who are parents of the same child, parents and children, stepparents and stepchildren, foster parents and foster children, or other persons living or formerly living in the same household, the court, upon conviction, shall inform such offender orally and in writing that such offender is prohibited from receiving, possessing, or transporting a firearm under subsection (b) of Code Section 16-11-131, indicate such prohibition on the record of conviction, order such offender orally and in writing to transfer any and all firearms in his or her possession or control, and ensure transfer is made as provided under subsection (b.1) of Code Section 16-11-131.\"\nSECTION 5 (amending O.C.G.A. 16-11-131(a)): (4) 'Misdemeanor crime of family violence' means any offense provided for under Code Section 16-5-20, 16-5-23, 16-5-23.1, or 16-11-102 that: (A) Is committed between past or present spouses, persons who are parents of the same child, parents and children, stepparents and stepchildren, foster parents and foster children, or other persons living in or formerly living in the same household; and (B) Involves the use or attempted use of physical force or the use or threatened use of a firearm.\nSECTION 5 (amending O.C.G.A. 16-11-131(b)): (b) Any person who is on probation as a felony first offender pursuant to Article 3 of Chapter 8 of Title 42, who is on probation and was sentenced for a felony under subsection (a) or (c) of Code Section 16-13-2, or who is subject to a family violence protective order, or who has been convicted of a misdemeanor offense of family violence, or a felony by a court of this state or any other state; by a court of the United States including its territories, possessions, and dominions; or by a court of any foreign nation and who receives, possesses, or transports any a firearm commits a felony and, upon conviction thereof, shall be imprisoned for not less than one year nor more than ten years; provided, however, that upon a second or subsequent conviction, such person shall be imprisoned for not less than five nor more than ten years; provided, further, that if the felony for which the person is on probation or has been previously convicted is a forcible felony, then upon conviction of receiving, possessing, or transporting a firearm, such person shall be imprisoned for a period of five years.\nSECTION 5 (amending O.C.G.A. 16-11-131(b.1)): (b.1)(1) Upon entering a conviction for a misdemeanor crime of family violence, a court shall immediately: (A) Inform such offender orally and in writing that, pursuant to subsection (b) of this Code section, the offender shall not receive, possess, or transport any firearm; (B) Order such offender orally and in writing to surrender all firearms in the offender's possession, within 24 hours of the order to a federally licensed firearms dealer; (C) Provide such offender the opportunity to attest orally and in writing that he or she at the time of the conviction, has no firearms in his or her possession or control; and (D)    If such offender does not attest orally and in writing as provided in subparagraph (C) of this paragraph, schedule a hearing to occur within 72 hours, during which time the offender shall either: (i) Present a receipt showing that any firearms in the offender's possession or control at the time of conviction were physically surrendered to a federally licensed firearms dealer and attest orally and in writing that such firearms have been physically surrendered to a federally licensed firearms dealer and that the offender, at the time of the hearing, has no firearms in the offender's possession or control; or (ii) Attest orally and in writing that the offender, at the time of the conviction, had no firearms in his or her possession or control and, at the time of the hearing, has no firearm in his or her possession or control.\nSECTION 6 (amending O.C.G.A. 19-13-4, new (a.1)(1)): \"(a.1)(1) An order issued pursuant to subsection (a) of this Code section that was granted after notice was provided to the respondent and after such respondent was given an opportunity to be heard shall prohibit such respondent from receiving, possessing, or transporting a firearm. Upon issuance of such an order a court shall immediately: (A) Inform such respondent in writing that, pursuant to subsection (b) of Code Section 16-11-131, the offender shall not receive, possess, or transport a firearm; (B) Order such respondent in writing to surrender all firearms in his or her possession within 24 hours of the order to a federally licensed firearms dealer;"
+}

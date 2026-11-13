@@ -1,0 +1,32 @@
+{
+  "politician_id": "a271fc70-2cf1-4374-b579-82ae4007b1f3",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "gun safety laws",
+        "firearm restrictions",
+        "carry a gun without a permit",
+        "ban on assault-style guns",
+        "check every gun buyer"
+      ],
+      "places": [
+        "scope: candidate for Arizona House District 24 on the 2026 general-election ballot (https://www.ballotready.org/people/alberto-flores)",
+        "On the Record (0 meetings)",
+        "iVoterGuide questionnaire https://ivoterguide.com/candidate/95993/race/30499/election/1455: Second Amendment item marked did not answer",
+        "BallotReady issue stances: economy, education, healthcare only; nothing on the subject",
+        "campaign site: none found (GoodParty profile is unclaimed)",
+        "sponsor list: covered by LegiScan bulk check (not a sitting legislator)",
+        "blocked: https://bluevoterguide.org/es/AZ/candidate_Alberto_Flores/744693",
+        "Ballotpedia: not reviewed, page returns empty to the fetch tool",
+        "news search on name plus gun words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:13:41.559Z",
+      "by": "source-collector"
+    }
+  ]
+}

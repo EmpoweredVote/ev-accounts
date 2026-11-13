@@ -1,0 +1,74 @@
+{
+  "politician_id": "42c171d8-3a23-46b8-8593-e29374274a3e",
+  "findings": [
+    {
+      "id": "f3350366e08866a0ff8aff8984082755b8780863e537a5dfef29bb4d16946d30",
+      "kind": "own-words",
+      "url": "https://www.yourvalley.net/mesa-independent/stories/ld-10-candidates-talk-issues-heading-into-primary,694426",
+      "date": "2026-05-31",
+      "date_precision": "day",
+      "passage": "Protecting our Second Amendment rights: Strengthen Arizona's Second Amendment Firearm Freedom Act to ensure that state and local resources are not used to enforce federal gun control measures and to make that law's requirements more enforceable.",
+      "note": "Candidate Q&A in the Mesa Independent; answer to what bills he would introduce. Wants to tighten Arizona's law so state and local resources are not used to enforce federal gun control, and make that law easier to enforce.",
+      "subjects": [
+        "state non-cooperation with federal gun control",
+        "repeal or limit of gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:17:07.176Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8b6c276b2fe7fa6b210bbe8f0d096f3bf30442a2c15365f58e2d07e39c9868fd",
+      "kind": "own-words",
+      "url": "https://www.yourvalley.net/mesa-independent/stories/ld-10-candidates-talk-issues-heading-into-primary,694426",
+      "date": "2026-05-31",
+      "date_precision": "day",
+      "passage": "There are six issues we need to tackle: fixing our election laws, making it affordable to start families, protecting children from radical gender ideology, defending the pre-born, protecting our Second Amendment rights, and fighting illegal immigration.",
+      "note": "Same Q&A, answer on the biggest issues facing the state; lists protecting Second Amendment rights as one of six.",
+      "subjects": [
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:17:07.176Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general statement on gun rights or gun safety laws",
+        "sponsored gun bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "ballotready profile (confirms 2026 general-election candidacy for AZ House District 10; guns stance line is a short slogan only): https://www.ballotready.org/people/james-rogers-bee519bf-ffd5-44e7-98e0-f8040b7c9fd3",
+        "Mesa Independent LD10 candidate Q&A, 2026-05-31 (found, saved)",
+        "AzCDL PAC recommended list: lists him with no statement of his own (third-party listing)",
+        "campaign site: not found by search",
+        "Ballotpedia: not reviewed (empty to the fetch tool)"
+      ],
+      "found": 2,
+      "at": "2026-11-11T04:17:07.176Z",
+      "by": "source-collector"
+    }
+  ]
+}

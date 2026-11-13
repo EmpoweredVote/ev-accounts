@@ -1,0 +1,157 @@
+{
+  "id": "TN-HB-2062-2011",
+  "scope": "state:tn",
+  "title": "HB 2062 (107th General Assembly): As introduced, allows a voter, who does not possess the required proof of identification, to appear in person at the county election commission office during the early voting period, sign an affidavit of identity, and pose for a digital photograph; thereupon, the voter would be allowed to vote in the election. - Amends TCA Section 2-7-112.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB2062/2011",
+    "https://legiscan.com/TN/rollcall/HB2062/id/172423",
+    "https://legiscan.com/TN/rollcall/HB2062/id/175555"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) 2-7-112 (new subsection, unnumbered)\n(quote) Any voter, other than one described in subsection (f), who does not possess the required proof of identification may appear in person at the county election commission office during the early voting period for an election and execute an affidavit of identity on a form approved by the state coordinator of elections and provided by the county election commission, at which time an employee of the commission shall digitally photograph the voter. Thereupon, the voter may cast a vote for such election, at the county election commission office.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Same new subsection: the affidavit is filed and the photograph digitally retained by the commission under guidelines approved by the state coordinator of elections.\n(other) Section 2: effective July 1, 2011.\n(other) Amends 2-7-112 'as amended by Senate Bill 16 / House Bill 7 (Chapter No. __ of the Public Acts of 2011)' (the 2011 photo-ID act).\n(other) version: 182922-Draft (2011-02-17): early-voting affidavit-and-photograph remedy at the county election commission office (slot b); Senate companion SB1829 in header.\n(other) version: 523985-Draft (2011-12-11): identical body text; no change.\n(other) note: The bill's wording says the voter may vote 'at the county election commission office' during early voting, so it is an in-person early-voting remedy only. The 2012-03-20 roll call is the motion to recommend; tally 7-8 and the log shows the bill failed. Slot b only.",
+  "sponsors": [
+    {
+      "name": "Craig Fitzhugh",
+      "role": "prime",
+      "version": "523985-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2012-03-14",
+      "body": "TN House",
+      "motion": "Subcommittee recommends passage, 4 yes to 3 no [version voted: Draft (no amendments in saved actions)]",
+      "kind": "roll-call",
+      "yes": 4,
+      "no": 3,
+      "absent": 0,
+      "body_size": 7,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB2062/id/172423",
+      "members": [
+        {
+          "name": "Ryan Haynes",
+          "vote": "nay"
+        },
+        {
+          "name": "Gerald McCormick",
+          "vote": "nay"
+        },
+        {
+          "name": "Curry Todd",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Tommie Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Williams",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2012-03-20",
+      "body": "TN House",
+      "motion": "Committee recommends passage motion, 7 yes to 8 no (2 not voting) [version voted: Draft (no amendments in saved actions)]",
+      "kind": "roll-call",
+      "yes": 7,
+      "no": 8,
+      "absent": 2,
+      "body_size": 17,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB2062/id/175555",
+      "members": [
+        {
+          "name": "Jim Cobb",
+          "vote": "absent"
+        },
+        {
+          "name": "Joshua Evans",
+          "vote": "nay"
+        },
+        {
+          "name": "Ryan Haynes",
+          "vote": "nay"
+        },
+        {
+          "name": "Gerald McCormick",
+          "vote": "nay"
+        },
+        {
+          "name": "Harry Tindell",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Dunn",
+          "vote": "absent"
+        },
+        {
+          "name": "Curry Todd",
+          "vote": "nay"
+        },
+        {
+          "name": "Eric Watson",
+          "vote": "nay"
+        },
+        {
+          "name": "Vince Dean",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Pruitt",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Ramsey",
+          "vote": "nay"
+        },
+        {
+          "name": "Larry Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Tommie Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Gotto",
+          "vote": "nay"
+        },
+        {
+          "name": "Antonio Parkinson",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

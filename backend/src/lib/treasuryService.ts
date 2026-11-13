@@ -18,6 +18,11 @@
  */
 
 import { pool } from './db.js';
+// ⚠⚠ The source-chip href rule lives in its own module ON PURPOSE — this file
+// imports `db.js`, which imports `env.js`, which `process.exit(1)`s when the
+// environment is not configured. Keeping the rule out here is what lets it be
+// tested with no database. See treasuryCitation.ts for what it decides and why.
+import { dataSourceInfoFor } from './treasuryCitation.js';
 
 // ---------------------------------------------------------------------------
 // geo_id resolution — link treasury.municipalities to the TIGER geofence backbone
@@ -457,21 +462,7 @@ function mapBudget(row: BudgetRow): TreasuryBudget {
     audit_grade: row.audit_grade,
     accounting_basis: row.accounting_basis,
     data_source: row.data_source,
-    data_source_info: row.ds_display_name && row.ds_url
-      ? {
-          displayName: row.ds_display_name,
-          url: row.ds_url,
-          datasetUrl: row.ds_base_url ?? null,
-          fetchedAt: row.ds_last_synced_at ?? null,
-        }
-      : (row.data_source && row.source_url && row.source_date)
-      ? {
-          displayName: row.data_source,
-          url: row.source_url,
-          datasetUrl: row.source_url,
-          fetchedAt: row.source_date,
-        }
-      : null,
+    data_source_info: dataSourceInfoFor(row),
     hierarchy: row.hierarchy,
     generated_at: row.generated_at,
     created_at: row.created_at,

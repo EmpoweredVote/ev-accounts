@@ -68,6 +68,7 @@ import {
 } from './districtQueries.js';
 import { PHOTO_RESTRICTION_SELECT_SQL, type PhotoRestriction } from './photoRestriction.js';
 import { PHOTO_CREDIT_SELECT_SQL, type PhotoCredit } from './photoCredit.js';
+import { IS_INCUMBENT_SELECT_SQL } from './incumbency.js';
 export { GeocodingError };
 
 /**
@@ -367,16 +368,15 @@ export async function getPoliticiansFlatList(
 ): Promise<PoliticianFlatRecord[]> {
   // Candidate placeholder offices ("Candidate for U.S. Senate — ...", mig 196) are excluded from
   // the incumbents-only view: their holders can be incumbents of OTHER offices (Talarico TX House,
-  // Paxton AG), so is_incumbent alone cannot exclude them.
+  // Paxton AG), so holding a seat alone cannot exclude them.
   //
   // 🔴 `och.office_id IS NOT NULL` — an incumbent HOLDS A SEAT NOW, and only office_terms can say so.
-  // is_incumbent is a cached flag, and it defaulted to true until CA_0188, so every insert that
-  // omitted it created an "incumbent": this list returned 1,817 active rows with no office at all
-  // (2026-09-23; cleared by CA_0181-CA_0187). The flag stays in the filter because it is what marks
-  // a seated person as not-a-candidate, but it can no longer admit someone the view says holds nothing.
+  // The cached `politicians.is_incumbent` flag (dropped, CA_0378; see incumbency.ts)
+  // defaulted to true until CA_0188 (1,817 seatless "incumbents", 2026-09-23), and it did not
+  // follow the calendar, so a seeded handover hid the arriving holder on its own date.
   const incumbentFilter = includeCandidates
     ? ''
-    : "AND och.office_id IS NOT NULL AND p.is_incumbent = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'";
+    : "AND och.office_id IS NOT NULL AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'";
 
   const params: unknown[] = [];
   let searchFilter = '';
@@ -425,11 +425,16 @@ export async function getPoliticiansFlatList(
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
            ${PHOTO_RESTRICTION_SELECT_SQL},
            p.web_form_url,
-           p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+           p.urls, p.email_addresses, p.bio_text, p.slug, ${IS_INCUMBENT_SELECT_SQL},
            p.finance_summary,
-           COALESCE(p.valid_from, '') AS term_start,
-           COALESCE(p.valid_to, '') AS term_end,
-           COALESCE(p.term_date_precision, '') AS term_date_precision,
+           -- 🔴 Term dates come from the TENURE (office_current_holder -> office_terms), never from
+           -- p.valid_from / p.valid_to / p.term_date_precision — the deprecated per-person snapshot
+           -- this used to read, which left 4,033 current dated tenures showing no date to a voter.
+           -- to_char is load-bearing: a raw 'date' becomes a JS Date and stringifies to "Thu Jan 14".
+           -- Full rationale and the measurements are on DISTRICT_SELECT_FIELDS in districtQueries.ts.
+           COALESCE(to_char(och.term_start, 'YYYY-MM-DD'), '') AS term_start,
+           COALESCE(to_char(och.term_end, 'YYYY-MM-DD'), '') AS term_end,
+           COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.id AS office_id,
            -- CC_0341 transition fields. All three are NULL for a seat with no successor
@@ -439,7 +444,7 @@ export async function getPoliticiansFlatList(
            -- disappear, at midnight, with no write.
            ont.politician_id AS incoming_holder_id,
            inc.full_name AS incoming_holder_name,
-           ont.term_start AS incoming_on,
+           to_char(ont.term_start, 'YYYY-MM-DD') AS incoming_on,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.voting_powers, o.representation_note,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
@@ -1409,11 +1414,16 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
            ${PHOTO_CREDIT_SELECT_SQL},
            p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug,
-           p.total_years_in_office, p.is_incumbent, p.is_appointed, p.is_vacant,
+           p.total_years_in_office, ${IS_INCUMBENT_SELECT_SQL}, p.is_appointed, p.is_vacant,
            p.is_active, p.office_id, p.notes, p.finance_summary,
-           COALESCE(p.valid_from, '') AS term_start,
-           COALESCE(p.valid_to, '') AS term_end,
-           COALESCE(p.term_date_precision, '') AS term_date_precision,
+           -- 🔴 Term dates come from the TENURE (office_current_holder -> office_terms), never from
+           -- p.valid_from / p.valid_to / p.term_date_precision — the deprecated per-person snapshot
+           -- this used to read, which left 4,033 current dated tenures showing no date to a voter.
+           -- to_char is load-bearing: a raw 'date' becomes a JS Date and stringifies to "Thu Jan 14".
+           -- Full rationale and the measurements are on DISTRICT_SELECT_FIELDS in districtQueries.ts.
+           COALESCE(to_char(och.term_start, 'YYYY-MM-DD'), '') AS term_start,
+           COALESCE(to_char(och.term_end, 'YYYY-MM-DD'), '') AS term_end,
+           COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.voting_powers, o.representation_note,
@@ -1887,14 +1897,14 @@ export async function getDistrictById(id: string): Promise<DistrictDetail | null
 
   // Fetch active politicians for this district
   const politiciansResult = await pool.query(
-    `SELECT p.id, p.full_name, p.party, p.is_incumbent, p.photo_origin_url
+    `SELECT p.id, p.full_name, p.party, ${IS_INCUMBENT_SELECT_SQL}, p.photo_origin_url
      FROM essentials.offices o
      -- ADR 0002 phase 3: occupant via essentials.office_current_holder, not the snapshot column.
      JOIN essentials.office_current_holder och ON och.office_id = o.id
      JOIN essentials.politicians p ON p.id = och.politician_id
      WHERE o.district_id = $1
        AND p.is_active = true
-     ORDER BY p.is_incumbent DESC, p.full_name`,
+     ORDER BY is_incumbent DESC, p.full_name`,
     [id]
   );
 
@@ -1989,7 +1999,7 @@ export async function getRepresentativesByJurisdiction(
     ${JOINS}
     WHERE (${conditions.join(' OR ')})
     AND (p.is_active = true OR o.is_vacant = true)
-    AND COALESCE(p.is_incumbent, true) = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
+    AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
     ORDER BY ${OFFICE_DEDUP_KEY}
   `;
 
@@ -2139,7 +2149,7 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
     WHERE d.district_type IN ('LOCAL', 'LOCAL_EXEC')
       AND d.geo_id = ANY($1::text[])
       AND (p.is_active = true OR o.is_vacant = true)
-      AND COALESCE(p.is_incumbent, true) = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
+      AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
     ORDER BY ${OFFICE_DEDUP_KEY}
   `;
 

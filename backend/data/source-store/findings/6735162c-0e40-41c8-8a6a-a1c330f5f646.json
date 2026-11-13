@@ -1,0 +1,93 @@
+{
+  "politician_id": "6735162c-0e40-41c8-8a6a-a1c330f5f646",
+  "findings": [
+    {
+      "id": "879fd17211bfcce10a83d7d48b13f02002142c9c75c998728ba2ef57c4060d2a",
+      "kind": "own-words",
+      "url": "https://charlestoncitypaper.com/2026/09/18/shr-25-39-on-election-safety-gas-tax-storms-merger/",
+      "date": "2026-09-18",
+      "date_precision": "day",
+      "passage": "“I feel from all the conversations I’ve had that the professionals are still in charge, both here in Charleston and at the state level,” Sutton said.",
+      "note": "Quoted by the Charleston City Paper on confidence in South Carolina's election administration; the same story reports he is concerned that federal demands for state voter data and federal monitors could suppress turnout. No statement on photo ID or citizenship proof.",
+      "subjects": [
+        "election integrity",
+        "voter-roll data demands",
+        "election administration confidence"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:20:35.569Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 26268 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.825Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "mail or absentee ballot ID",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site (nothing on the subject)",
+        "scstatehouse.gov member page and Senate Journal search (nothing on the subject)",
+        "vote411 guide (not reviewed: page returned HTTP 500)",
+        "blocked: https://ballotpedia.org",
+        "blocked: https://justfacts.votesmart.org",
+        "blocked: https://bluevoterguide.org",
+        "Charleston City Paper 2026-09-18 (one quote on election confidence and federal voter-data demands)",
+        "blocked: https://x.com/EdCSutton/status/2058168763657101337 (HTTP 402)",
+        "a 2019 blog account of a meeting is the blogger's paraphrase, not his words: not used"
+      ],
+      "found": 1,
+      "at": "2026-11-10T21:20:35.569Z",
+      "by": "search-sc-2026-11-10"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T23:17:03.825Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
+}

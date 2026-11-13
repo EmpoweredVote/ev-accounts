@@ -1,0 +1,157 @@
+{
+  "politician_id": "0f7609c6-1285-4b00-aeca-17343045ebfe",
+  "findings": [
+    {
+      "id": "a984a5df71e7b9ce0d49ef1fd35c9d8f8cf044c076e62afacee24cf6471ce525",
+      "kind": "own-words",
+      "url": "https://kysenaterepublicans.com/press-releases/2025/8/13/drivers-license-fraud-scandal-shows-failure-of-beshear-leadership-need-for-border-security",
+      "date": "2025-08-12",
+      "date_precision": "day",
+      "passage": "When the integrity of our driver’s licensing system is compromised, public safety is at risk. Allowing illegal aliens to obtain driver’s licenses, whether through negligence or willful disregard, creates vulnerabilities that no Kentuckian should accept.",
+      "note": "Statement issued in his name (caucus release dated 2025-08-13, statement dated 2025-08-12) on reports of driver's licenses issued to people in the country illegally; about the integrity of the state ID issuing system, not directly about voting. Related to ID integrity and noncitizens.",
+      "subjects": [
+        "driver's license integrity",
+        "noncitizens obtaining state ID (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:20:46.785Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "964f43dd513a6a900fe46730c227d9b9c229eaaa4159401edbd436f6f4e82228",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate with Senate Committee Substitute (1)",
+      "note": "KY Senate roll call (third reading, passed Senate with Senate Committee Substitute (1), 31-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25785 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.609Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa8ad840466678434828836de887f898e45dc3f627478ec4fe8931f410f4e2d2",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: override of the Governor's veto, final passage (Senate)",
+      "note": "KY Senate roll call (override of the Governor's veto, final passage (Senate), 32-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25785 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.609Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8cb257bf2da3336ed900008c97f3e633ffee27db4f47f3bef14f6db1a9004902",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb154/vote_history.pdf",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-154-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate",
+      "note": "KY Senate roll call (third reading, passed Senate, 31-7) on SB154 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25785 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.609Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3875ccf2b0bce127b499bb16cf622216ac29c8ac8bdb66e44fe7b8f864ce052f",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb154.html",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "KY-SB-154-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, orig_bill",
+      "note": "Listed as co sponsor of SB154 (2026 Regular Session) in LegiScan's bill record (sponsor order 5); the first version (orig_bill) carries the ID/citizenship text (identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.609Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity",
+        "driver's license integrity (related)"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "the Senate caucus site (press release 2025-08-13 names him; his member page URL not found)",
+        "Kentucky legislature sponsor page for him (confirms identity; sponsorships not collected per instructions)",
+        "web searches x6: voter ID, proof of citizenship/noncitizen, 2024 campaign questionnaire/forum, campaign site, 2026 floor statements: nothing on voter ID or proof of citizenship by him",
+        "campaign site not found; a voter guide listing said his 2024 site had nothing on voting and elections (lead only)",
+        "commonwealthpolicycenter.org 2024-S7 one-page sheet: nothing on the subject",
+        "archive.kftc.org Shelby County forum page: nothing on the subject by him",
+        "blocked: https://ballotpedia.org/Aaron_Reed (listed as refusing fetches, not tried)",
+        "not reviewed: lpm.org 2024-05-23 nominee article (site not allowed)"
+      ],
+      "found": 1,
+      "at": "2026-11-11T18:20:46.785Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 4,
+      "at": "2026-11-11T21:12:46.609Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "politician_id": "c20da1c7-53b8-41b8-8e18-293de23a7b4e",
+  "findings": [
+    {
+      "id": "2e340ee1f679050df0385796283fde1b4b79536038c33149bb7e2c2bfe815e1a",
+      "kind": "own-words",
+      "url": "https://www.ismaelluna.com/priorities",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Pass gun safety legislation to prevent violence and deaths by suicide",
+      "note": "One bullet on his campaign priorities page, under the Public Safety Through Housing and Prevention heading. It names no specific gun law. The page carries no date.",
+      "subjects": [
+        "gun safety legislation",
+        "gun suicide"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.261Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety legislation",
+        "gun suicide",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status: 2026 general-election candidate for Wisconsin Assembly District 8, listed against the other party's nominee on the 2026-11-03 ballot (WUWM voter guide https://www.wuwm.com/wisconsin-state-assembly-district-8-candidates)",
+        "campaign site https://www.ismaelluna.com/ and its priorities page https://www.ismaelluna.com/priorities",
+        "campaign releases on wispolitics.com and Urban Milwaukee (primary coalition and primary-win releases; nothing on guns in the text read; wispolitics full text behind a login: not reviewed)",
+        "Our Lives Wisconsin profile https://ourliveswisconsin.com/?p=83629 (names public safety as a top issue; nothing on guns)",
+        "WUWM voter guide (nothing on guns)",
+        "legislature page: not applicable, not a legislator; sponsor list: nothing to review",
+        "Ballotpedia (not fetched: page comes back empty to the fetch tool)",
+        "web search: 1 search; no questionnaire answers on guns found"
+      ],
+      "found": 1,
+      "at": "2026-11-10T22:15:40.261Z",
+      "by": "source-collector"
+    }
+  ]
+}

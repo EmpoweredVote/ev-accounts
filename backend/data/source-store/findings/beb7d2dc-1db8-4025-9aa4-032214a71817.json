@@ -1,0 +1,30 @@
+{
+  "politician_id": "beb7d2dc-1db8-4025-9aa4-032214a71817",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and Second Amendment",
+        "gun safety laws",
+        "background checks",
+        "carry permits",
+        "assault-style guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed on the 2026 general-election ballot for Assembly District 88: https://ivoterguide.com/candidate/97007/race/34281/election/1497",
+        "campaign site https://www.brandyforwisconsin.com: nothing on the subject (issues are health care, costs, public education)",
+        "voter-guide questionnaire on the Second Amendment: candidate did not answer",
+        "news article https://upnorthnewswi.com/news/elections/mom-on-a-mission-can-district-88-flip-the-wisconsin-assembly/: nothing on the subject",
+        "Ballotpedia: not reviewed (pages return empty to the fetch tool)",
+        "sponsor list: not applicable (not a sitting legislator)",
+        "web searches on name plus gun words: no statement found"
+      ],
+      "found": 0,
+      "at": "2026-11-10T22:15:40.212Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -234,8 +234,16 @@ const joinInitials = (s: string): string =>
  * Surnames LegiScan is known to misspell, each checked by hand against the official record: our spelling →
  * LegiScan's. Exact entries only (never a fuzzy match): the first name must still fit as usual.
  * - GA, 2026-10-31: Timothy Bearden is printed "Timothy Beardon" (SB 86 of 2009 House roll call).
+ * - CA, 2026-11-13: Tasha Boerner is printed under her former surname "Tasha Boerner Horvath" (AB 1127 of 2025
+ *   Assembly roll call 1584327; she dropped "Horvath" in 2024).
  */
-const LEGISCAN_SURNAME_MISSPELLINGS: Readonly<Record<string, readonly string[]>> = { bearden: ['beardon'] };
+const LEGISCAN_SURNAME_MISSPELLINGS: Readonly<Record<string, readonly string[]>> = {
+  bearden: ['beardon'],
+  boerner: ['boerner horvath'],
+};
+
+/** A title before the name ("Dr. Darshana R. Patel", CA 2026-11-13) is not a given name. */
+const TITLE = /^\s*(?:dr|rev|hon|sen|rep)\.?\s+/i;
 
 /** Does LegiScan's person fit the politician's own name? */
 function personFits(p: Json, fullName: string, lastName: string): boolean {
@@ -247,7 +255,7 @@ function personFits(p: Json, fullName: string, lastName: string): boolean {
   const printedLast = fold(p.name ?? '').split(' ').pop() ?? '';
   if (recLast !== last && !(recLast.split(' ').includes(last) && printedLast === last)) return false;
   // A leading initial ("A. Reece Pyrtle") gives way to the given name the person goes by.
-  const words = fold(joinInitials(fullName)).split(' ');
+  const words = fold(joinInitials(fullName.replace(TITLE, ''))).split(' ');
   const wants = [words[0] ?? ''];
   if (wants[0].length === 1 && words[1] && words[1] !== last) wants.push(words[1]);
   const first = fold(joinInitials(p.first_name ?? '')).split(' ')[0];

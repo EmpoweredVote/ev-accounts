@@ -152,6 +152,467 @@
         "fetched_at": "2026-10-28T23:15:12.945Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "67d122bdc6bbf3ade0775c98eb199e1b1661294dbc980e2380571ea0d003851f",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/83587",
+      "date": "2026-03-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1012-2026",
+      "act": "nay",
+      "motion": "Senate - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ Senate, Senate - Third Reading, 2026-03-09: nay (tally 16–13); census gate: none.",
+      "subjects": [
+        "concealed carry allowed in restaurants with permit if not drinking",
+        "restaurant liquor license protected from penalty for permitted concealed carry",
+        "restaurant not liable for harm from a concealed handgun unless it served the carrier"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1012-2026.engrossed.html",
+          "sha256": "edd1b50cee2ac36f4e1ef9f71a4f4af8718440275c82936b62e7b896bea34a8b"
+        }
+      }
+    },
+    {
+      "id": "3f3c244a91e08b13706fb6f9d06858b19e5cbc11ce17b2c81655ddc578676829",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/81618",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1014-2025",
+      "act": "nay",
+      "motion": "Senate - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ Senate, Senate - Third Reading, 2025-02-27: nay (tally 17–11); census gate: none.",
+      "subjects": [
+        "suppressors removed from prohibited weapons list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1014-2025.engrossed.html",
+          "sha256": "b2dd35263b91234cc18cb85cbaead9f17129367666b0db3d5e89dfe1d41ca1d2"
+        }
+      }
+    },
+    {
+      "id": "54497d6477919a6aaf124742fd0e954221fe49a123f23bc8ab034aa972764b27",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/81624",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1020-2025",
+      "act": "nay",
+      "motion": "Senate - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ Senate, Senate - Third Reading, 2025-02-27: nay (tally 17–11); census gate: none.",
+      "subjects": [
+        "concealed carry by permit holders allowed on public college campuses",
+        "college rules on lawful firearm transport and storage barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1020-2025.engrossed.html",
+          "sha256": "79b1ac81c16852f980eca39e01d29f811e00c83bc2932943269784b17f37fa15"
+        }
+      }
+    },
+    {
+      "id": "2bb27bf27834334245b19d6181af56dcc03d9c9f506cb5c0e90b02f2ff6da4d0",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/83676",
+      "date": "2026-02-23",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1053-2026",
+      "act": "nay",
+      "motion": "Senate - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ Senate, Senate - Third Reading, 2026-02-23: nay (tally 17–10); census gate: none.",
+      "subjects": [
+        "concealed carry permit fee for residents set at ten percent of nonresident fee"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1053-2026.engrossed.html",
+          "sha256": "88390e6e99370de81ddc56eb4c13c5f83ea8b39eec66d06ecaec39b20d84f3b8"
+        }
+      }
+    },
+    {
+      "id": "8750756b960aa021d8a96e8e23d43bcb13ec7bb6d83f9df5016dcdbff56818bf",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/83682",
+      "date": "2026-02-23",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1058-2026",
+      "act": "nay",
+      "motion": "Senate - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ Senate, Senate - Third Reading, 2026-02-23: nay (tally 17–10); census gate: none.",
+      "subjects": [
+        "government firearm registry banned",
+        "firearm retailer payment category code banned",
+        "attorney general enforces by injunction and civil penalty up to $1,000"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1058-2026.engrossed.html",
+          "sha256": "826faeabdd54287682a44b14d856f43aa3001c30898e9825c43cc8e10eef9898"
+        }
+      }
+    },
+    {
+      "id": "7781a1dddf93533f877c7c6313f03f3379342e620cafdf7cdf187adb1b57421b",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/83692",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1068-2026",
+      "act": "nay",
+      "motion": "Senate - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ Senate, Senate - Third Reading, 2026-02-25: nay (tally 16–12); census gate: none.",
+      "subjects": [
+        "concealed carry by permit holders allowed on public college campuses",
+        "college rules on lawful firearm transport and storage barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1068-2026.engrossed.html",
+          "sha256": "2296931c42bd70870830664d7faaab872aa3389853a059e8d4d45586e639ea1a"
+        }
+      }
+    },
+    {
+      "id": "a573eac906a5620a072bef364b849e3940d740cd721c97dfbd02ba78f17298c9",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/83693",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1069-2026",
+      "act": "nay",
+      "motion": "Senate - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ Senate, Senate - Third Reading, 2026-02-24: nay (tally 17–10); census gate: none.",
+      "subjects": [
+        "suppressors removed from prohibited weapons list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1069-2026.engrossed.html",
+          "sha256": "1b9b614d94727510d7f6335d10236521e119209c31921d9c42975ad015217493"
+        }
+      }
+    },
+    {
+      "id": "4963dddfea1076016617617a3e95214da62bd96cf810beddfffb1eb324b88ca7",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/82152",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1143-2025",
+      "act": "nay",
+      "motion": "Senate - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ Senate, Senate - Third Reading, 2025-03-05: nay (tally 17–12); census gate: none.",
+      "subjects": [
+        "government registry of privately owned firearms banned",
+        "separate payment merchant code for firearm retailers banned",
+        "attorney general or county attorney enforcement with injunction and civil penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1143-2025.engrossed.html",
+          "sha256": "910ae9256e51486509b17b17510b1244056149a2bb5b732a3a0dd68c34ad3026"
+        }
+      }
+    },
+    {
+      "id": "ce51961cfae5b1e399d0e1897f9e50c6847e2f1b1f6bf726ea0727c9d25b7846",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/83036",
+      "date": "2025-05-06",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1591-2025",
+      "act": "nay",
+      "motion": "Senate - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ Senate, Senate - Third Reading, 2025-05-06: nay (tally 17–11); census gate: none.",
+      "subjects": [
+        "concealed carry permit fee for residents set at ten percent of nonresident fee",
+        "in-state applicants prioritized for permits",
+        "annual concealed permit report to budget committee"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1591-2025.engrossed.html",
+          "sha256": "5acf4ec5c895742a76aa688f189d80eeef091f613d6bfa9be334846059ceaea4"
+        }
+      }
+    },
+    {
+      "id": "d2dc6eccbd31e88544c0bf7f0a3ae78235f5ec80b8cee1e2ce7275ec277684af",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/82357",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2535-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of AZ-HB-2535-2025 (LegiScan sponsor list): HB2535 (Fifty-seventh Legislature - First Regular Session (2025)): Firearms dealers; firearms transfers; requirements.",
+      "subjects": [
+        "dealers must complete background check before transfer",
+        "one firearm transfer per 30 days",
+        "dealers must prevent straw purchases and theft",
+        "dealer liability insurance and civil penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2535-2025.introduced.html",
+          "sha256": "7ba59d337386c2db8946fe8174f31df0bc177a20ebcd25b6ed25d275067b8e0d"
+        }
+      }
+    },
+    {
+      "id": "7b05600268d7bdac501a4845ec806f6b483d383fa1a76e1845973c1ea78c138a",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/82358",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2536-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of AZ-HB-2536-2025 (LegiScan sponsor list): HB2536 (Fifty-seventh Legislature - First Regular Session (2025)): Sentencing; concealed weapons permits; surrender.",
+      "subjects": [
+        "concealed weapons permit surrendered on conviction",
+        "permit revoked under firearm-prohibiting protective order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2536-2025.introduced.html",
+          "sha256": "e4d49ea046a353c8929051531bcaf3a20a2c88eabcc0d6bf79519bf092b53c18"
+        }
+      }
+    },
+    {
+      "id": "3fb67149ed4bd6612802fa127951a6f6c9d2707bd948979a034ed3e85ecd87ad",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/83207",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2747-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of AZ-HB-2747-2025 (LegiScan sponsor list): HB2747 (Fifty-seventh Legislature - First Regular Session (2025)): Weapons; permit; firearms safety training.",
+      "subjects": [
+        "permit required to carry a deadly weapon (permitless carry ended)",
+        "concealed carry permit training must be state-authorized, at least eight hours with live fire",
+        "instructor background checks and fingerprints"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2747-2025.introduced.html",
+          "sha256": "ad06906297d69478d9c80a725b005de74ac0a3bcc772d5105fdbb91f3a53ec9c"
+        }
+      }
+    },
+    {
+      "id": "807c82c4b52ba810215efb43b101fff594cbcb9f0e8555da153200b5fe20eefb",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/84930",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "AZ-SB-1378-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of AZ-SB-1378-2026 (LegiScan sponsor list): SB1378 (Fifty-seventh Legislature - Second Regular Session (2026)): Domestic violence; firearm transfers.",
+      "subjects": [
+        "domestic violence conviction bars gun possession",
+        "must hand guns to police or a licensed dealer within 24 hours",
+        "protective order after hearing bars guns and requires transfer",
+        "search warrant if guns are not surrendered"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1378-2026.introduced.html",
+          "sha256": "555ce5885004985ac1c9b6bbfdcf34c45e2334c113545c0e74f07ca7205b602b"
+        }
+      }
+    },
+    {
+      "id": "67d2dce64d3116ad5f68bc3e03f932efb1d86251b9e77ca4385914729da9b896",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/82819",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "AZ-SB-1414-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of AZ-SB-1414-2025 (LegiScan sponsor list): SB1414 (Fifty-seventh Legislature - First Regular Session (2025)): Domestic violence; firearm transfers.",
+      "subjects": [
+        "domestic violence conviction bars gun possession",
+        "must hand guns to police or a licensed dealer within 24 hours",
+        "protective order after hearing bars guns and requires transfer",
+        "search warrant if guns are not surrendered"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1414-2025.introduced.html",
+          "sha256": "394f5be0f6afaf275d9f49b317d49653b30fbffd28365d86f6a41c194ce290d4"
+        }
+      }
+    },
+    {
+      "id": "c2fbe5af76d64eaa4e9e90e0cf7d4071a800bbf48e0687f75a3c8592479ad421",
+      "kind": "record",
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/SB1359P.htm",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "AZ-SB-1359-2026",
+      "act": "sponsor",
+      "note": "Bill text reads 'Introduced by Senators Kuby: Alston, Gabaldón, Hatathlie, Miranda, Ortiz' (prime sponsor). SB 1359, firearms; destruction by state, amends sections 12-945 and 13-3108 on how a firearm held by an agency is disposed of. Her own campaign record page https://kubyforsenate.com/record also lists it, with SB 1378, under a 'Gun Reform' heading. Exact introduction date not shown on the page.",
+      "subjects": [
+        "rules on destroying surrendered or seized firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:12:44.213Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4daa6759ad1c2bff0012dddd1dbe53212792528d26787ff1e9bfe907b35459f6",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/84900",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "AZ-SB-1359-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of AZ-SB-1359-2026 (LegiScan sponsor list): SB1359 (Fifty-seventh Legislature - Second Regular Session (2026)): Firearms; destruction by state.",
+      "subjects": [
+        "government may destroy or facilitate destruction of firearms and ammunition",
+        "ban on government destroying surrendered guns struck"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T04:23:07.062663Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1359-2026.introduced.html",
+          "sha256": "149d7474ae33f3558091f1e7fe97dba59780ef5e4f731e28d14e5c174b5aaa12"
+        }
+      }
     }
   ],
   "searches": [
@@ -214,6 +675,30 @@
       "found": 1,
       "at": "2026-10-28T23:15:12.945Z",
       "by": "identity-az-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or large magazines",
+        "background checks and permits to buy",
+        "red-flag orders and who may have a gun",
+        "ghost guns and federal agency gun rules",
+        "carry permits and permitless carry",
+        "repealing gun laws",
+        "general statements on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed sitting Senate member on the legislature's member roster https://www.azleg.gov/memberroster/ and a 2026 candidate per https://srpmic-nsn.gov/wp-content/uploads/2026/07/Legislative-Dist-8-StateSenate-Social-Media.pdf",
+        "sponsor list: covered by LegiScan bulk check (SB 1359 added from the legislature's own bill text because it is not on file)",
+        "campaign site https://kubyforsenate.com/ , /issues , /priorities , /in-the-news , /media: no gun text in her own words; /record lists gun bills under a Gun Reform heading",
+        "web searches (4) on name plus gun safety, SB 1414, debate quotes: no quoted statement on guns found",
+        "Ballotpedia: not fetched (returns empty to fetch tool)"
+      ],
+      "found": 1,
+      "at": "2026-11-11T04:12:44.213Z",
+      "by": "source-collector"
     }
   ]
 }

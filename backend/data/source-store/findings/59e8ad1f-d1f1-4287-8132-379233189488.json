@@ -25,7 +25,201 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "2d018a294744710583fce790c911cf002bbc00d651e9414d857f9be8b1a36b65",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess118_2009-2010/sj10/20100128.htm",
+      "date": "2010-01-28",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3418-2009",
+      "act": "yea",
+      "motion": "Senate: Senate second reading of H. 3418 (passed)",
+      "note": "SC Senate roll call (Senate second reading of H. 3418 (passed), 36-2) on H3418 (118th General Assembly), official journal (printed as 'Massey'); linked by LegiScan member id 2351 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c83214a6c818adb434c7a55e1607578e6f2fa239868738b8a607409a21d7664e",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=2831",
+      "date": "2011-05-11",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3003-2011",
+      "act": "yea",
+      "motion": "Senate: to adopt the conference report",
+      "note": "SC Senate roll call (to adopt the conference report, 26-16) on H3003 (119th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 2351 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b7c857312ada1e14a041f203e98b752af382fc1405849350214c1281a1727025",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0304&session=119&summary=B",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "SC-S-304-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, 2010-12-15_Introduced",
+      "note": "Listed as co sponsor of S0304 (119th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2010-12-15_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6faf09ea6e8effee660b59b459517d907eecd19de63e7bc874b2c5dba3d3fd59",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=20955",
+      "date": "2022-04-21",
+      "date_precision": "day",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "yea",
+      "motion": "Senate: 3rd Reading",
+      "note": "SC Senate roll call (3rd Reading, 43-0) on H4919 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 2351 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 2351 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "blocked: https://scsenategop.com/meet-majority-leader-shane-massey/ (403 to curl; a fetch-tool summary mentions photo ID but is not copyable text)",
+        "blocked: https://x.com/shanemassey (page shell with no readable posts)",
+        "blocked: https://myscma.com/wp-content/uploads/2025/08/Shane-Massey-Biographical-Info.pdf (404)",
+        "https://repbio.org/shane-massey/ and vote-usa.org page: nothing on the subject",
+        "On the Record (0 appearances)",
+        "blocked: https://ballotpedia.org (refuses fetches, not tried)",
+        "blocked: https://justfacts.votesmart.org (refuses fetches, not tried)",
+        "web searches (6+): name with voter ID, photo ID, proof of citizenship, H. 3003, questionnaire, outlet names: nothing on the subject in the person's own words",
+        "Senate Journal 2025-26 pages surfaced by search (2025-04-16, 04-29, 04-30, 05-08, 2026-03-03, 03-26, 04-30): no remarks on the subject",
+        "scvotes.gov: not needed"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:25:45.822Z",
+      "by": "sc-search-r2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "blocked: https://scsenategop.com/meet-majority-leader-shane-massey/ (403 to curl; a fetch-tool summary mentions photo ID but is not copyable text)",
+        "blocked: https://x.com/shanemassey (page shell with no readable posts)",
+        "blocked: https://myscma.com/wp-content/uploads/2025/08/Shane-Massey-Biographical-Info.pdf (404)",
+        "https://repbio.org/shane-massey/ and vote-usa.org page: nothing on the subject",
+        "On the Record (0 appearances)",
+        "blocked: https://ballotpedia.org (refuses fetches, not tried)",
+        "blocked: https://justfacts.votesmart.org (refuses fetches, not tried)",
+        "web searches (6+): name with voter ID, photo ID, proof of citizenship, H. 3003, questionnaire, outlet names: nothing on the subject in the person's own words",
+        "Senate Journal 2025-26 pages surfaced by search (2025-04-16, 04-29, 04-30, 05-08, 2026-03-03, 03-26, 04-30): no remarks on the subject",
+        "scvotes.gov: not needed",
+        "re-search: Senate Journal 2011-02-23: leave of absence for the week printed for Massey, so absent from the main H. 3003 debate",
+        "re-search: Senate Journal 2011-04-27 'Remarks by Senator MASSEY' printed: about an unemployment hiring amendment, off subject",
+        "re-search: blocked: https://scsenategop.com (403 in earlier pass, not retried)",
+        "re-search: Senate Journal 2022-04-20 Massey remarks ordered printed on an amendment about election commission membership, but no text found in the journal pages fetched",
+        "re-search: Senate Journal 2011-02-23 and 2011-02-24 (H. 3003 floor debate; fetched, remarks printed are other senators')",
+        "re-search: Senate Journal 2011 sj11 days 2011-03-01 to 2011-05-12 (Tue-Thu, 33 pages fetched; H. 3003 on 04-12, 04-13, 04-14, 04-26, 05-11; no remarks by these three on the subject)",
+        "re-search: Senate Journal 2022-04-12, 04-20, 04-21 (H. 4919): only procedural lines or 'spoke on the amendment' with no words printed",
+        "re-search: Senate Journal 2024-02-29, 04-03, 04-04 (S. 1126): no remarks on the subject printed",
+        "re-search: Senate Journal 2025-04-24 and 04-29 (S. 582): roll call and readings only, no remarks printed",
+        "re-search: bill history S. 1054 (introduced and referred only) and S. 128 (referred only): no floor debate",
+        "re-search: blocked: https://www.scstatehouse.gov/sess119_2011-2012/sj11/ (directory page, HTTP 403)",
+        "re-search: 2 further web searches on name + voter ID / photo ID / citizens only: nothing in own words",
+        "re-search: blocked: https://ballotpedia.org",
+        "re-search: blocked: https://justfacts.votesmart.org",
+        "re-search: blocked: https://bluevoterguide.org"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:55:09.746Z",
+      "by": "sc-research-re"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 5,
+      "at": "2026-11-10T23:17:03.818Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

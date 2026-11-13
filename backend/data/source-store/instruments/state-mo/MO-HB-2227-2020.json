@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-2227-2020",
+  "scope": "state:mo",
+  "title": "HB2227 (2020 Regular Session): Establishes the offense of unlawful possession of a handgun, which prohibits the possession of a handgun by a minor.",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB2227&year=2020&code=R",
+    "https://www.house.mo.gov/billtracking/bills201/hlrbillspdf/4205H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Barbara Washington",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b9226e1d-7341-4e30-9799-88b88abcb3fd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2227-2020.introduced.pdf",
+      "sha256": "7d64cf2221dd4ef3931820482720d39e563e011b263ce5b5b2e4a260b6d5404f"
+    }
+  },
+  "operative_text": "Section 571.075 (RSMo, new): 2. A person commits the offense of unlawful possession of a handgun if the person is a minor and knowingly possesses a handgun.\nSection 571.075 (RSMo, new): 3. The offense of unlawful possession of a handgun is punishable by imposition of a fine not to exceed two hundred dollars, imprisonment in a juvenile detention facility for a period not to exceed ten days, or both.\nSection 571.075 (RSMo, new): 1. (3) \"Minor\", a person who is under nineteen years of age or, if a member of the United States Armed Forces, under eighteen years of age."
+}

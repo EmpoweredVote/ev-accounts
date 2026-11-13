@@ -1,0 +1,136 @@
+{
+  "id": "TN-SB-133-2025",
+  "scope": "state:tn",
+  "title": "SB 133 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2; Title 4; Title 38; Title 39; Title 41 and Title 55, relative to determining voter eligibility.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB0133/2025",
+    "https://legiscan.com/TN/rollcall/SB0133/id/1534376",
+    "https://legiscan.com/TN/rollcall/SB0133/id/1548924"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 3 of Draft (2-7-112(c)(1))\n(quote) Tennessee Code Annotated, Section 2-7-112(c)(1), is amended by adding the language \"that is not a temporary driver license\" immediately after the language \"Tennessee driver license\".\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 1, new 2-2-401(a)\n(quote) The coordinator of elections, in collaboration with the department of safety, shall, prior to January 1, 2028, create a secure, electronic portal through which each county administrator of elections may access information to verify, prior to processing an applicant's application to register to vote, whether the applicant is a United States citizen based upon records on file at the time of issuance of the most recent driver license or identification card or other credential from the department of safety.\n(section) Sec. 1, new 2-2-401(d)\n(quote) If a county administrator rejects an application based upon information received pursuant to this section, the administrator shall provide written notice to the applicant of the applicant's right to appeal the decision in accordance with § 2-2-125.\n(section) Sec. 1, new 2-2-403\n(quote) It is the intent that this part be funded by federal grant funding. This part has no effect until such sufficient funding has been obtained.\n(e_other_rule)\n(section) Sec. 1, new 2-2-402(a)\n(quote) The coordinator of elections, in collaboration with the Tennessee bureau of investigation (TBI), shall, prior to January 1, 2028, create a secure, electronic portal through which each county administrator of elections may access information to verify, prior to processing an applicant's application to register to vote, whether the applicant is ineligible to vote based upon records on file as the result of a Tennessee felony conviction, or alternatively, whether a person is eligible to vote.\n(other) Chaptered Sec. 1, 2-2-401(b)-(c): the safety-department agreement must cover portal inputs, outputs, offline fallback, misuse and penalties; portal data is confidential.\n(other) Chaptered Sec. 1, 2-2-404: severability.\n(other) Chaptered Sec. 2: 2-2-125(b) rewritten: administrator gives written notice of a 10-day appeal right to the commission, with an appeal form.\n(other) Chaptered Sec. 3: 38-6-118(d)(3): the TBI shares expunged records with the coordinator of elections on request to decide eligibility.\n(other) Draft Secs. 4-8 (dropped in the rewrite): driver licence rules for lawful permanent residents (temporary licence class, proof-of-citizenship on renewal from 1/1/2026, visual marker, licence documents).\n(other) Chaptered Sec. 6: effective on becoming law.\n(other) version: 3055361-Draft: slot a (2-7-112(c)(1) adds 'not a temporary driver license'); slot d (portal to check whether an applicant is a NON-citizen from records on file); slot e (felony portal; licence rules in Secs. 4-8 incl. visual marker for temporary licences 'used as a photo identification for voting purposes').\n(other) version: amend-249275-SA0409 (Senate State & Local Gov't amendment 1; 'adopted' flag 0): full rewrite after the enacting clause; keeps both portals, 2-2-125 change, adds 38-6-118(d)(3); DROPS the 2-7-112(c)(1) change and all licence sections (slot a gone). Slot d now phrased as checking whether the applicant is a non-citizen (same as Draft).\n(other) version: amend-249276-SA0410 (Senate State & Local Gov't amendment 2; 'adopted' flag 0): replaces 2-2-401 so the portal checks whether the applicant IS a U.S. citizen from records at issue of the latest licence/ID; adds agreement list, confidentiality, 2-2-403 grant-funding clause (renumbers severability to 2-2-404).\n(other) version: 3246004-Chaptered (PC 473, HB0069): equals SA0409 + SA0410 combined. Slot d only; no in-person ID text.\n(other) note: The enacted law has NO in-person ID, provisional-ballot or absentee-ID rule. Its citizenship rule is an agency record check on every registration applicant through a portal (not a document the applicant must show); an applicant rejected on that data can appeal. Only two Senate committee votes are recorded on SB0133; no floor vote is recorded on it because the House companion was substituted. LegiScan marks both amendments 'adopted: 0' and dates them 2025-04-14, after the 4/2 committee vote, so which amendment each roll call was on is inferred from the chaptered text.",
+  "sponsors": [
+    {
+      "name": "Jack Johnson",
+      "role": "prime",
+      "version": "amend-249276-SA0410"
+    },
+    {
+      "name": "Ken Yager",
+      "role": "co",
+      "version": "amend-249276-SA0410"
+    },
+    {
+      "name": "Adam Lowe",
+      "role": "co",
+      "version": "amend-249276-SA0410"
+    },
+    {
+      "name": "John Stevens",
+      "role": "co",
+      "version": "amend-249276-SA0410"
+    }
+  ],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2025-04-02",
+      "body": "TN Senate",
+      "motion": "Senate State & Local Government Committee, recommended with amendment(s) [version voted: Draft 3055361 + committee amendment(s), probably SA0409 (full rewrite) and SA0410 (inferred, not confirmed: files are dated 4/14/2025 and flagged 'adopted: 0')]",
+      "kind": "roll-call",
+      "yes": 7,
+      "no": 0,
+      "absent": 0,
+      "body_size": 7,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB0133/id/1534376",
+      "members": [
+        {
+          "name": "Kerry Roberts",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Briggs",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Yarbro",
+          "vote": "yea"
+        },
+        {
+          "name": "Edward Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Sara Kyle",
+          "vote": "yea"
+        },
+        {
+          "name": "Page Walley",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Hatcher",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2025-04-15",
+      "body": "TN Senate",
+      "motion": "Senate Finance, Ways and Means Committee, recommended for passage [version voted: Draft + SA0409 + SA0410 (inferred; equals the chaptered text; no further amendment recorded)]",
+      "kind": "roll-call",
+      "yes": 10,
+      "no": 0,
+      "absent": 0,
+      "body_size": 10,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB0133/id/1548924",
+      "members": [
+        {
+          "name": "Joseph Hensley",
+          "vote": "yea"
+        },
+        {
+          "name": "Bo Watson",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ferrell Haile",
+          "vote": "yea"
+        },
+        {
+          "name": "John Stevens",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Yarbro",
+          "vote": "yea"
+        },
+        {
+          "name": "London Lamar",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Rose",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Powers",
+          "vote": "yea"
+        },
+        {
+          "name": "Page Walley",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

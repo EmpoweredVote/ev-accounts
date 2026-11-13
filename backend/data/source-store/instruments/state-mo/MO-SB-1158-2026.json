@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-1158-2026",
+  "scope": "state:mo",
+  "title": "SB1158 (2026 Regular Session): Creates provisions relating to an extreme risk order of protection",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=568",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB1158.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Patty Lewis",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "954796f5-cbda-41c1-9871-8dce23376d3c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1158-2026.introduced.pdf",
+      "sha256": "61ee0252496a3da91205d7dc6ceb15b94c4911b5851ebd082076542bc6714e6c"
+    }
+  },
+  "operative_text": "Section 571.801 (RSMo, new): Sections 571.801 to 571.815 shall be known and may be cited as the \"Firearm Violence Prevention Act\".\nSection 542.271 (RSMo): 5. A warrant may be issued to search for and seize any firearm in the possession of a person subject to an extreme risk protection order or temporary extreme risk protection order under sections 571.801 to 571.815 if there is probable cause to believe the person is in possession of one or more firearms.\nSection 571.803 (RSMo, new): 3. If a court finds by a preponderance of the evidence that, based on the evidence presented under subsection 3 of section 571.805, the respondent poses a significant risk of causing personal injury to self or others by having in his or her custody or control a firearm or by purchasing, possessing, or receiving a firearm, the court shall issue a temporary extreme risk protection order.\nSection 571.805 (RSMo, new): 2. Upon hearing the matter, if the court finds by clear and convincing evidence, based on the evidence presented under subsection 3 of this section, that the respondent poses a significant risk of causing personal injury to self or others by having in his or her custody or control a firearm or by purchasing, possessing, or receiving a firearm, the court shall issue an extreme risk protection order for a period of one hundred eighty-two days.\nSection 571.809 (RSMo, new): 1. (1) Upon issuance of an extreme risk protection order under sections 571.801 to 571.815, including a temporary extreme risk protection order, the court shall order the respondent to surrender all firearms by either: (a) Selling or transferring possession of a firearm to a federally licensed firearms dealer defined under 18 U.S.C. Section 921, as amended. However, this paragraph shall not be interpreted to require any federally licensed firearms dealer to purchase or accept possession of any firearm. If the respondent elects to sell his or her firearms, the respondent is entitled to the proceeds; or (b) Arranging for the storage of a firearm by a law enforcement agency. (2) The court shall order the respondent to surrender any concealed carry permit to the law enforcement officer serving the extreme risk protection order.\nSection 571.812 (RSMo, new): Any person who has in his or her custody or control a firearm or purchases, possesses, or receives a firearm with knowledge that he or she is prohibited from doing so by an extreme risk protection order or temporary extreme risk protection order shall be guilty of a class B misdemeanor. However, such person shall be guilty of a class E felony if the person has two or more previous convictions for violating an extreme risk protection order."
+}

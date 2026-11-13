@@ -1,0 +1,176 @@
+{
+  "politician_id": "2670bf78-e05d-4c04-b2f4-86be8fc9a785",
+  "findings": [
+    {
+      "id": "054fa0d27d04d7a07cc525b82491e1375de5292d63a870189933a20b1d85ca8f",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/67240/race/15685/election/896",
+      "date": "2022-01-01",
+      "date_precision": "year",
+      "passage": "There sholudn't be a problem having to supply ID to vote, just to help avoid in election fraud.",
+      "note": "Candidate questionnaire answer (2022 primary profile) beside the statement 'People should be able to vote without photo identification'; the page shows the choice 'Strongly Disagree'. Date given is the race date on the profile; the answer's own date is not shown.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:49:29.898Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eb62b03d65099a3ebad64dcf5d6b10f0d0926dc4a7c2f4dcadfd07c14d35c6cb",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/67240/race/15685/election/896",
+      "date": "2022-01-01",
+      "date_precision": "year",
+      "passage": "Honestly, the way an election is carried out in our county, no machines connected to a computer, self-sufficient machines there are no way for fraud with those machines.  This is something I would want to look at statewide to see what needs to be improved or changed.",
+      "note": "Answer to 'What laws would you propose to change present voting practices?' in the same questionnaire: talks about voting machines not connected to a computer and wanting to look at statewide changes.",
+      "subjects": [
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:49:29.898Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b69705978735755fc3161fe7425539e5c8c056e5bb1a736ccd972677ac8c508",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/67240/race/15685/election/1242",
+      "date": "2024-01-01",
+      "date_precision": "year",
+      "passage": "I feel this is a great added security that every voter provide photo ID",
+      "note": "Candidate questionnaire answer (2024 general profile) beside the statement 'People should be able to vote without photo identification'; the page shows the choice 'Strongly Disagree'. Date given is the race date on the profile; the answer's own date is not shown.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:49:29.898Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6bf6d81a82db697d74298b2d427ff9b8ac3a5267f7ae33bbaa137ed285b615aa",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/HB1316/id/1538770",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1316-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION, 83-7) on HB1316 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + HA0118 (adopted on the floor 2025-04-07 per action log); linked by LegiScan member id 23881 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.081Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad92ee221bdade53f1ad4bb273813b351662b750a615bdacabc84af573a8a288",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0626/id/1550047",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-626-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION, 72-22) on SB0626 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft 3093364 + SA0305 (full rewrite = chaptered text) as engrossed by the Senate; linked by LegiScan member id 23881 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.081Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfc0f401b5e1e11d23ee20ace873f4d6d7b4216789ab4da3a289d27d0ae2ae27",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1477618",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION, 71-19) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text) as engrossed by the Senate; linked by LegiScan member id 23881 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.081Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting and voter-roll checks",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "8 web searches on name plus voter ID, proof of citizenship, noncitizen voting, SAVE, election, questionnaire: only the questionnaires below found",
+        "iVoterGuide https://ivoterguide.com/candidate/67240/race/15685/election/896 (2022 primary profile) and /election/1242 (2024 general profile): saved",
+        "iVoterGuide https://ivoterguide.com/candidate/67240/race/15685/election/979 appeared in search; not fetched",
+        "House caucus site https://tnhousegop.org/?p=3138 (a House Bill 1835 press release on summer food benefits; nothing on the subject)",
+        "https://wjle.com/?p=53094 returned 404: blocked",
+        "On the Record (0 appearances; extract-otr run)",
+        "blocked: https://ballotpedia.org (not fetched, listed as blocked per instructions)",
+        "blocked: bluevoterguide.org and justfacts.votesmart.org (not fetched, listed as blocked per instructions)",
+        "not fetched by rule: capitol.tn.gov and wapp.capitol.tn.gov (official member pages and bill pages)",
+        "not reviewed: tennesseelookout.com (refuses AI agents; its 2021 story on student-ID voter bills was a lead only)"
+      ],
+      "found": 3,
+      "at": "2026-11-12T01:49:29.898Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 3,
+      "at": "2026-11-12T15:13:42.081Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -27,5 +27,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "reasonable-impediment affidavit and provisional ballot",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "status: sitting House District 44 member (page: https://thecandidate.com/states/sc/legislature/house/44/mike-neese)",
+        "https://ivoterguide.com/candidate/53454/race/27727/election/1421: nothing on the subject (the photo ID question is marked did not answer)",
+        "https://thecandidate.com/states/sc/legislature/house/44/mike-neese: nothing on the subject (quotes section empty)",
+        "https://www.aclusc.org/news/statehouse-dispatch-6-questions-for-every-s-c-house-candidate/: no answers by him",
+        "House Journal 2026-05-19, 2025-04-23, 2024-12-03, 2024-05-09: nothing by him on the subject",
+        "campaign site and local forums: none found by search",
+        "On the Record (0 appearances, checked by id and name)",
+        "Ballotpedia: blocked (listed as refusing our fetches, not fetched)",
+        "justfacts.votesmart.org: blocked (listed as refusing our fetches, not fetched)",
+        "blocked: https://picso101.sci.pitt.edu/CivicWatch/who/72252909 (HTTP 403)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:31:05.689Z",
+      "by": "sc-search-r3"
+    }
+  ]
 }

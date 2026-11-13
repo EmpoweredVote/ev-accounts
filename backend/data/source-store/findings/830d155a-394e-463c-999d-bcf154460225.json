@@ -1,0 +1,115 @@
+{
+  "politician_id": "830d155a-394e-463c-999d-bcf154460225",
+  "findings": [
+    {
+      "id": "f1108456ea74d375fba606f6bf6d0dfea1a35023be38698fb1569e3b4907b6cb",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/HB2489/2021",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "TN-HB-2489-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, 2501361-Draft",
+      "note": "Listed as prime sponsor of HB2489 (112th General Assembly) in LegiScan's bill record (sponsor order 1); the first version (2501361-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6930988a8505122e603380b4a817086271b34430e05e7cc3610482e5b39efdb3",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0626/id/1550047",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-626-2025",
+      "act": "nay",
+      "motion": "House: REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION, 72-22) on SB0626 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft 3093364 + SA0305 (full rewrite = chaptered text) as engrossed by the Senate; linked by LegiScan member id 20339 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b1bdab27c8e46b6dfd18fda952a09d982a3c0ae502b88906bafcd6d25276e5d0",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1477618",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "nay",
+      "motion": "House: REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION, 71-19) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text) as engrossed by the Senate; linked by LegiScan member id 20339 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting / voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "confirmed in office and race: Ballotpedia and Lookout guide hits show him in the 2026 District 54 race (search results only)",
+        "https://www.newschannel5.com/news/tennessee-rep-vincent-dixie-launches-campaign-for-congress-in-newly-drawn-7th-district fetched: his words are about redistricting and voting power, nothing on ID or citizenship proof",
+        "https://dixie4tn.com/media fetched: congressional special primary campaign page, nothing on the subject",
+        "https://www.campusvoteproject.org/post/new-nashville-lawmakers-aim-to-expand-student-voting-access: blocked (HTTP 404)",
+        "not reviewed: tennesseelookout.com voter guide and 2021 college-ID story (outlet refused)",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "Ballotpedia: blocked (fetch refused by site, not tried)",
+        "bluevoterguide.org and justfacts.votesmart.org: blocked (not tried)",
+        "capitol.tn.gov / wapp.capitol.tn.gov: not fetched (site refuses bots); votes and sponsorships linked separately",
+        "LegiScan-based aggregator hits: leads only, nothing on the subject in the person's own words",
+        "web searches (5+ on name with voter ID, photo ID, proof of citizenship/SAVE Act/noncitizen, election, questionnaire): nothing on the subject in own words"
+      ],
+      "found": 0,
+      "at": "2026-11-12T01:56:38.148Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 3,
+      "at": "2026-11-12T15:13:42.076Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -66,6 +66,65 @@
         "fetched_at": "2026-10-28T23:15:12.788Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "ebef6ea9ab2ae91420259dc69b20ceb45cc9ec0b4afe2566d3c08f6f504519c7",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb466",
+      "date": "2024-01-18",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-466-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and concurred in, 2024-01-18: yea (tally 62–35); census gate: none.",
+      "subjects": [
+        "payment networks barred from firearms-retailer merchant codes",
+        "government lists of gun owners banned",
+        "background-check records may not be turned into a purchaser list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-466-2023.enrolled.pdf",
+          "sha256": "6d089108620592801f50b209f20b361fb9a3c5e87a5f8243957c44092e2874a2"
+        }
+      }
+    },
+    {
+      "id": "951b12a2942af6eaca26d3161b93c704c9e346f57573e6c7ce4b3640f5fd2a95",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb466",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-466-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SB-466-2023 (LegiScan sponsor list): SB466 (2023-2024 Regular Session): Prohibiting firearms merchant category codes in payment card transactions, prohibiting government lists of firearm owners, and providing a penalty..",
+      "subjects": [
+        "payment networks barred from firearms-retailer merchant codes",
+        "government lists of gun owners banned",
+        "background-check records may not be turned into a purchaser list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-466-2023.enrolled.pdf",
+          "sha256": "6d089108620592801f50b209f20b361fb9a3c5e87a5f8243957c44092e2874a2"
+        }
+      }
     }
   ],
   "searches": [
@@ -82,6 +141,33 @@
       "found": 3,
       "at": "2026-10-28T23:15:12.788Z",
       "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status: confirmed 2026 general-election candidate for Wisconsin Senate District 11 (campaign announcement https://www.wispolitics.com/2026/schutt-campaign-conservative-fighter-ellen-schutt-announces-run-for-state-senate-following-sen-steve-nasss-retirement/ and https://en.wikipedia.org/wiki/Ellen_Schutt)",
+        "campaign site https://www.ellenschuttforsenate.com/ (home page only; nothing on the subject; its public-safety line names no gun policy; endorsements and why-im-running pages returned 404)",
+        "campaign announcement and endorsement releases on wispolitics.com (preview text only, nothing on the subject; full text behind a login: not reviewed)",
+        "WUWM voter guide https://www.wuwm.com/Wisconsin-State-Senate-District-11-candidates (nothing on the subject)",
+        "iVoterGuide https://ivoterguide.com/candidate/70768/race/3408/election/985 (candidate listed as 'Did not answer' on gun restrictions and on suing gun dealers; no words of her own)",
+        "Ballotpedia https://ballotpedia.org/Ellen_Schutt (page came back empty: gap)",
+        "Wikipedia (nothing on the subject)",
+        "legislature member page https://legis.wisconsin.gov/assembly/59/schutt/ (blocked: 404)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web search: 2 searches, no statement of her own found"
+      ],
+      "found": 0,
+      "at": "2026-11-10T22:15:40.254Z",
+      "by": "source-collector"
     }
   ]
 }

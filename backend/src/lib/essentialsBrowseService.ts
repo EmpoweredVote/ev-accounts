@@ -13,6 +13,7 @@ import { cache } from './cache.js';
 import type { PoliticianFlatRecord, FinanceSummary } from './essentialsService.js';
 import { MTFCC_DISTRICT_TYPE_GUARD, type GeoPair } from './geoIdGuard.js';
 import { PHOTO_RESTRICTION_SELECT_SQL, type PhotoRestriction } from './photoRestriction.js';
+import { IS_INCUMBENT_SELECT_SQL } from './incumbency.js';
 
 // Overlap resolution is pure geometry — it only changes when geofence boundaries
 // are (re)loaded, which happens during seeding, not at request time. Caching the
@@ -439,11 +440,16 @@ export async function getPoliticiansByArea(
            p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party, COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url, p.web_form_url,
            ${PHOTO_RESTRICTION_SELECT_SQL},
-           p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+           p.urls, p.email_addresses, p.bio_text, p.slug, ${IS_INCUMBENT_SELECT_SQL},
            p.finance_summary,
-           COALESCE(p.valid_from, '') AS term_start,
-           COALESCE(p.valid_to, '') AS term_end,
-           COALESCE(p.term_date_precision, '') AS term_date_precision,
+           -- 🔴 Term dates come from the TENURE (office_current_holder -> office_terms), never from
+           -- p.valid_from / p.valid_to / p.term_date_precision — the deprecated per-person snapshot
+           -- this used to read, which left 4,033 current dated tenures showing no date to a voter.
+           -- to_char is load-bearing: a raw 'date' becomes a JS Date and stringifies to "Thu Jan 14".
+           -- Full rationale and the measurements are on DISTRICT_SELECT_FIELDS in districtQueries.ts.
+           COALESCE(to_char(och.term_start, 'YYYY-MM-DD'), '') AS term_start,
+           COALESCE(to_char(och.term_end, 'YYYY-MM-DD'), '') AS term_end,
+           COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.id AS office_id,
            o.title AS office_title, o.representing_state, o.representing_city,
@@ -489,11 +495,16 @@ export async function getPoliticiansByArea(
              p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
              p.preferred_name, p.name_suffix, p.party, COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url, p.web_form_url,
              ${PHOTO_RESTRICTION_SELECT_SQL},
-             p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+             p.urls, p.email_addresses, p.bio_text, p.slug, ${IS_INCUMBENT_SELECT_SQL},
              p.finance_summary,
-           COALESCE(p.valid_from, '') AS term_start,
-           COALESCE(p.valid_to, '') AS term_end,
-           COALESCE(p.term_date_precision, '') AS term_date_precision,
+           -- 🔴 Term dates come from the TENURE (office_current_holder -> office_terms), never from
+           -- p.valid_from / p.valid_to / p.term_date_precision — the deprecated per-person snapshot
+           -- this used to read, which left 4,033 current dated tenures showing no date to a voter.
+           -- to_char is load-bearing: a raw 'date' becomes a JS Date and stringifies to "Thu Jan 14".
+           -- Full rationale and the measurements are on DISTRICT_SELECT_FIELDS in districtQueries.ts.
+           COALESCE(to_char(och.term_start, 'YYYY-MM-DD'), '') AS term_start,
+           COALESCE(to_char(och.term_end, 'YYYY-MM-DD'), '') AS term_end,
+           COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
              o.id AS office_id,
              o.title AS office_title, o.representing_state, o.representing_city,
@@ -522,10 +533,9 @@ export async function getPoliticiansByArea(
       WHERE d.district_type IN ('NATIONAL_UPPER', 'STATE_EXEC', 'NATIONAL_EXEC')
       AND (d.state = $1 OR d.district_type = 'NATIONAL_EXEC')
       AND p.is_active = true
-      AND p.is_incumbent = true
       -- Candidate placeholder offices (mig 196 pattern, e.g. "Candidate for U.S. Senate — Texas")
       -- exist for compass/stance reachability only; their holders can be incumbents of OTHER
-      -- offices (Talarico TX House, Paxton AG), so is_incumbent alone cannot exclude them.
+      -- offices (Talarico TX House, Paxton AG), so holding a seat alone cannot exclude them.
       AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
       ORDER BY p.id
     `;
@@ -666,11 +676,16 @@ const DISTRICT_POLITICIAN_SELECT = `
   p.preferred_name, p.name_suffix, p.party,
   COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url, p.web_form_url,
   ${PHOTO_RESTRICTION_SELECT_SQL},
-  p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+  p.urls, p.email_addresses, p.bio_text, p.slug, ${IS_INCUMBENT_SELECT_SQL},
   p.finance_summary,
-  COALESCE(p.valid_from, '') AS term_start,
-  COALESCE(p.valid_to, '') AS term_end,
-  COALESCE(p.term_date_precision, '') AS term_date_precision,
+  -- 🔴 Term dates come from the TENURE (office_current_holder -> office_terms), never from
+  -- p.valid_from / p.valid_to / p.term_date_precision — the deprecated per-person snapshot
+  -- this used to read, which left 4,033 current dated tenures showing no date to a voter.
+  -- to_char is load-bearing: a raw 'date' becomes a JS Date and stringifies to "Thu Jan 14".
+  -- Full rationale and the measurements are on DISTRICT_SELECT_FIELDS in districtQueries.ts.
+  COALESCE(to_char(och.term_start, 'YYYY-MM-DD'), '') AS term_start,
+  COALESCE(to_char(och.term_end, 'YYYY-MM-DD'), '') AS term_end,
+  COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision,
   COALESCE(p.appointment_date::text, '') AS appointment_date,
   o.id AS office_id,
   o.title AS office_title, o.representing_state, o.representing_city,
@@ -741,11 +756,16 @@ export async function getPoliticiansByGovernmentList(
            p.preferred_name, p.name_suffix, p.party,
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
            ${PHOTO_RESTRICTION_SELECT_SQL},
-           p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+           p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, ${IS_INCUMBENT_SELECT_SQL},
            p.finance_summary,
-           COALESCE(p.valid_from, '') AS term_start,
-           COALESCE(p.valid_to, '') AS term_end,
-           COALESCE(p.term_date_precision, '') AS term_date_precision,
+           -- 🔴 Term dates come from the TENURE (office_current_holder -> office_terms), never from
+           -- p.valid_from / p.valid_to / p.term_date_precision — the deprecated per-person snapshot
+           -- this used to read, which left 4,033 current dated tenures showing no date to a voter.
+           -- to_char is load-bearing: a raw 'date' becomes a JS Date and stringifies to "Thu Jan 14".
+           -- Full rationale and the measurements are on DISTRICT_SELECT_FIELDS in districtQueries.ts.
+           COALESCE(to_char(och.term_start, 'YYYY-MM-DD'), '') AS term_start,
+           COALESCE(to_char(och.term_end, 'YYYY-MM-DD'), '') AS term_end,
+           COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.id AS office_id,
            o.title AS office_title, o.representing_state, o.representing_city,
@@ -798,11 +818,16 @@ export async function getPoliticiansByGovernmentList(
              p.preferred_name, p.name_suffix, p.party,
              COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
              ${PHOTO_RESTRICTION_SELECT_SQL},
-             p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+             p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, ${IS_INCUMBENT_SELECT_SQL},
              p.finance_summary,
-             COALESCE(p.valid_from, '') AS term_start,
-             COALESCE(p.valid_to, '') AS term_end,
-             COALESCE(p.term_date_precision, '') AS term_date_precision,
+             -- 🔴 Term dates come from the TENURE (office_current_holder -> office_terms), never from
+             -- p.valid_from / p.valid_to / p.term_date_precision — the deprecated per-person snapshot
+             -- this used to read, which left 4,033 current dated tenures showing no date to a voter.
+             -- to_char is load-bearing: a raw 'date' becomes a JS Date and stringifies to "Thu Jan 14".
+             -- Full rationale and the measurements are on DISTRICT_SELECT_FIELDS in districtQueries.ts.
+             COALESCE(to_char(och.term_start, 'YYYY-MM-DD'), '') AS term_start,
+             COALESCE(to_char(och.term_end, 'YYYY-MM-DD'), '') AS term_end,
+             COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision,
              COALESCE(p.appointment_date::text, '') AS appointment_date,
              o.id AS office_id,
              o.title AS office_title, o.representing_state, o.representing_city,
@@ -829,10 +854,9 @@ export async function getPoliticiansByGovernmentList(
       WHERE d.district_type IN ('NATIONAL_UPPER', 'STATE_EXEC', 'NATIONAL_EXEC', 'NATIONAL_JUDICIAL')
         AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
         AND p.is_active = true
-        AND p.is_incumbent = true
       -- Candidate placeholder offices (mig 196 pattern, e.g. "Candidate for U.S. Senate — Texas")
       -- exist for compass/stance reachability only; their holders can be incumbents of OTHER
-      -- offices (Talarico TX House, Paxton AG), so is_incumbent alone cannot exclude them.
+      -- offices (Talarico TX House, Paxton AG), so holding a seat alone cannot exclude them.
       AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
       ORDER BY p.id
     `, [stateAbbrev]);
@@ -1051,11 +1075,16 @@ export async function getStatewideOfficials(stateAbbrev: string): Promise<Politi
            p.preferred_name, p.name_suffix, p.party,
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
            ${PHOTO_RESTRICTION_SELECT_SQL},
-           p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+           p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, ${IS_INCUMBENT_SELECT_SQL},
            p.finance_summary,
-           COALESCE(p.valid_from, '') AS term_start,
-           COALESCE(p.valid_to, '') AS term_end,
-           COALESCE(p.term_date_precision, '') AS term_date_precision,
+           -- 🔴 Term dates come from the TENURE (office_current_holder -> office_terms), never from
+           -- p.valid_from / p.valid_to / p.term_date_precision — the deprecated per-person snapshot
+           -- this used to read, which left 4,033 current dated tenures showing no date to a voter.
+           -- to_char is load-bearing: a raw 'date' becomes a JS Date and stringifies to "Thu Jan 14".
+           -- Full rationale and the measurements are on DISTRICT_SELECT_FIELDS in districtQueries.ts.
+           COALESCE(to_char(och.term_start, 'YYYY-MM-DD'), '') AS term_start,
+           COALESCE(to_char(och.term_end, 'YYYY-MM-DD'), '') AS term_end,
+           COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.id AS office_id,
            o.title AS office_title, o.representing_state, o.representing_city,
@@ -1091,10 +1120,9 @@ export async function getStatewideOfficials(stateAbbrev: string): Promise<Politi
       )
       AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
       AND p.is_active = true
-      AND p.is_incumbent = true
       -- Candidate placeholder offices (mig 196 pattern, e.g. "Candidate for U.S. Senate — Texas")
       -- exist for compass/stance reachability only; their holders can be incumbents of OTHER
-      -- offices (Talarico TX House, Paxton AG), so is_incumbent alone cannot exclude them.
+      -- offices (Talarico TX House, Paxton AG), so holding a seat alone cannot exclude them.
       AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
     ORDER BY p.id
   `, [abbrev]);
@@ -1123,11 +1151,16 @@ export async function getFederalOfficials(): Promise<PoliticianFlatRecord[]> {
            p.preferred_name, p.name_suffix, p.party,
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
            ${PHOTO_RESTRICTION_SELECT_SQL},
-           p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+           p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, ${IS_INCUMBENT_SELECT_SQL},
            p.finance_summary,
-           COALESCE(p.valid_from, '') AS term_start,
-           COALESCE(p.valid_to, '') AS term_end,
-           COALESCE(p.term_date_precision, '') AS term_date_precision,
+           -- 🔴 Term dates come from the TENURE (office_current_holder -> office_terms), never from
+           -- p.valid_from / p.valid_to / p.term_date_precision — the deprecated per-person snapshot
+           -- this used to read, which left 4,033 current dated tenures showing no date to a voter.
+           -- to_char is load-bearing: a raw 'date' becomes a JS Date and stringifies to "Thu Jan 14".
+           -- Full rationale and the measurements are on DISTRICT_SELECT_FIELDS in districtQueries.ts.
+           COALESCE(to_char(och.term_start, 'YYYY-MM-DD'), '') AS term_start,
+           COALESCE(to_char(och.term_end, 'YYYY-MM-DD'), '') AS term_end,
+           COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.id AS office_id,
            o.title AS office_title, o.representing_state, o.representing_city,
@@ -1153,10 +1186,9 @@ export async function getFederalOfficials(): Promise<PoliticianFlatRecord[]> {
       AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
     WHERE d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL', 'NATIONAL_UPPER', 'NATIONAL_LOWER')
       AND p.is_active = true
-      AND p.is_incumbent = true
       -- Candidate placeholder offices (mig 196 pattern, e.g. "Candidate for U.S. Senate — Texas")
       -- exist for compass/stance reachability only; their holders can be incumbents of OTHER
-      -- offices (Talarico TX House, Paxton AG), so is_incumbent alone cannot exclude them.
+      -- offices (Talarico TX House, Paxton AG), so holding a seat alone cannot exclude them.
       AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'
     ORDER BY p.id
   `);

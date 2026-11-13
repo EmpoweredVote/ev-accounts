@@ -257,7 +257,91 @@
           "sha256": "93266e8d17c0b31728a6c78573a4afda6517fbacbe2200b4273a5f2e422960c1"
         }
       }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 20474 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.599Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "121fcb8d83cdb77518dcfdab89ed949d5de64b621bdcdb306e7ab9a9e02793ea",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "nay",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 20474 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.599Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot rules",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: legislature page https://apps.legislature.ky.gov/Legislators/subs/House-097.html names Rep. Bobby McCool for District 97 (Johnson, Martin, Pike part); iVoterGuide lists him on the 2026 general ballot for Dist. 97",
+        "On the Record (0 appearances)",
+        "iVoterGuide 2026 profile https://ivoterguide.com/candidate/20835/race/31261/election/1461: statement 'People should be able to vote without photo identification.' shows 'Did not answer'; no ticked answer, so no finding",
+        "campaign site: none found in searches; not reviewed",
+        "legislature page: no bill list printed; bills linked separately",
+        "web searches run (6): name + voter ID/photo ID/election; questionnaire/survey/voter guide; local outlets + voter/election; SB 2 2020 comments; none returned a statement by him on the subject",
+        "blocked/not tried per instructions: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (refuse fetches); vrsws.sos.ky.gov never fetched; refused outlets not opened",
+        "not reviewed: https://thelevisalazer.com and https://mountaincitizen.com results (the second is a letter about addiction recovery, not the subject)"
+      ],
+      "found": 0,
+      "at": "2026-11-11T18:38:45.639Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 2,
+      "at": "2026-11-11T21:12:46.599Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
 }

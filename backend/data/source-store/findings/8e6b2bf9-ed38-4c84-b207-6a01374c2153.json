@@ -1,0 +1,33 @@
+{
+  "politician_id": "8e6b2bf9-ed38-4c84-b207-6a01374c2153",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: https://morganforsc.com/ (campaign site for Alan Morgan, South Carolina House District 18, Greer and Taylors) and the Greenville Journal 2026 voter guide (https://greenvillejournal.com/government/meet-the-candidates-local-u-s-house-and-senate-general-election-candidates/), which says he did not respond to its questions",
+        "campaign site home, /positions/ and /about/: priorities are taxes, border, education, life, gun rights, roads, anti-corruption; nothing on the subject",
+        "web searches with name plus voter ID, photo ID, proof of citizenship, SAVE Act, noncitizen, election integrity, questionnaire, Vote411, iVoterGuide: nothing on the subject in his own words",
+        "Greenville Patriot Caucus voter guide: not read for his text beyond listing",
+        "not reviewed: https://ivoterguide.com/voter-guide/state/sc (rating page, no first-hand text found)",
+        "not reviewed: https://simplecivicsgreenvillecounty.org/district-18-meet-your-candidates-for-south-carolina-house-of-representatives/ (same host showed a security checkpoint for another page)",
+        "not reviewed: https://www.facebook.com/morganforsc/ (social page)",
+        "blocked: ballotpedia.org, justfacts.votesmart.org (listed as refusing fetches)",
+        "House Journal floor remarks: search found none by him on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:31:43.421Z",
+      "by": "sc-search-r3"
+    }
+  ]
+}

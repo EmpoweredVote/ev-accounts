@@ -1,0 +1,67 @@
+{
+  "politician_id": "381865b2-0b41-4456-a45b-bc649898b338",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship",
+        "noncitizen voting",
+        "election integrity",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web searches: voter ID / election integrity / citizenship, name search, questionnaire / voter guide, House Journal remarks, Greenville County clerk of court and council statements (nothing on the subject)",
+        "ACLU of South Carolina 2026 candidate survey page https://www.aclusc.org/campaigns-initiatives/2026-candidate-survey/ (his answers not shown on the page; individual answer pages and PDF not reviewed)",
+        "not reviewed: https://simplecivicsgreenvillecounty.org/district-22-meet-your-candidates-for-south-carolina-house-of-representatives/ (fetch returned no response; timed video answers)",
+        "not reviewed: Palmetto Family candidate survey PDF and iVoterGuide 2026 guide (answers not visible in results)",
+        "Greenville Journal 2026 voter guide (search result only: answer on education; nothing on the subject)",
+        "blocked: https://justfacts.votesmart.org/candidate/216305/paul-wickensimer (refuses our fetches)",
+        "blocked: Ballotpedia (do-not-fetch list)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:31:03.523Z",
+      "by": "sc-search-r3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship",
+        "noncitizen voting",
+        "election integrity",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web searches: voter ID / election integrity / citizenship, name search, questionnaire / voter guide, House Journal remarks, Greenville County clerk of court and council statements (nothing on the subject)",
+        "ACLU of South Carolina 2026 candidate survey page https://www.aclusc.org/campaigns-initiatives/2026-candidate-survey/ (his answers not shown on the page; individual answer pages and PDF not reviewed)",
+        "not reviewed: https://simplecivicsgreenvillecounty.org/district-22-meet-your-candidates-for-south-carolina-house-of-representatives/ (fetch returned no response; timed video answers)",
+        "not reviewed: Palmetto Family candidate survey PDF and iVoterGuide 2026 guide (answers not visible in results)",
+        "Greenville Journal 2026 voter guide (search result only: answer on education; nothing on the subject)",
+        "blocked: https://justfacts.votesmart.org/candidate/216305/paul-wickensimer (refuses our fetches)",
+        "blocked: Ballotpedia (do-not-fetch list)",
+        "re-search: https://ivoterguide.com/candidate/80574/race/27705/election/1421 (2026 profile, House District 22: item 'People should be able to vote without photo identification.' recorded 'Did not answer'; no other voting items; nothing to save)",
+        "re-search: https://ivoterguide.com/race/27705/election/1421 (race page: two candidates; questionnaire tab shows no voting answers)",
+        "re-search: https://ivoterguide.com/robots.txt (allows)",
+        "re-search: https://www.aclusc.org/campaigns-initiatives/2026-candidate-survey/ (robots checked, allows; six questions: gerrymandering, closed primaries, reproductive rights, ICE agreements, youth, censorship; none on voter ID or citizenship; his responses not on the page; the PDF of responses was not opened)",
+        "re-search: https://www.palmettofamily.org/s/FALL-Palmetto-Family-Candidate-Survey-3.pdf (robots checked; voter guide lists him only in an endorsed-names list; no answers of his; its voter-ID/SAVE question is for U.S. Senate candidates)",
+        "re-search: https://www.simplecivicsgreenvillecounty.org/district-22-meet-your-candidates-for-south-carolina-house-of-representatives/ (page text empty; video only, not transcribed)",
+        "re-search: web search: name + iVoterGuide; name + Palmetto Family survey; name + voter ID / photo ID / citizenship / House Journal (no hits naming him on the subject)",
+        "re-search: blocked: https://justfacts.votesmart.org (known refusal, not fetched)",
+        "re-search: blocked: https://ballotpedia.org and https://bluevoterguide.org (known refusals, not fetched)",
+        "re-search: earlier file raw/381865b2...json places repeated by reference",
+        "re-search: nothing new on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:55:09.746Z",
+      "by": "sc-research-re"
+    }
+  ]
+}

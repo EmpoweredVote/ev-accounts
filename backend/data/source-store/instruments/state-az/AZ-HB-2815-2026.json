@@ -1,0 +1,38 @@
+{
+  "id": "AZ-HB-2815-2026",
+  "scope": "state:az",
+  "title": "HB2815 (Fifty-seventh Legislature - Second Regular Session (2026)): Misconduct involving weapons; elected officials",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/84638",
+    "https://www.azleg.gov/legtext/57leg/2r/bills/hb2815p.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Junelle Cavero",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2b044f08-b5ce-4b15-993e-b90c16603c25"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+    "fetched_at": "2026-11-11T04:23:07.062663Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2815-2026.introduced.html",
+      "sha256": "67cbc94d91a6313d6e87690b4fb3d6c1f9c72884bd450134c4607c7c609f4c50"
+    }
+  },
+  "operative_text": "Sec. 1 (amending A.R.S. 13-3102, subsection D): D. Subsection A, paragraph 10 of this section{+:+} {+1. APPLIES TO A STATE ELECTED OFFICIAL.+} {+2. +}Does not apply to an elected or appointed judicial officer in the court facility where the judicial officer works if the judicial officer has demonstrated competence with a firearm as prescribed in section 13-3112, subsection N, except that the judicial officer shall comply with any rule or policy adopted by the presiding judge of the superior court while in the court facility. For the purposes of this subsection, appointed judicial officer does not include a hearing officer or a judicial officer pro tempore who is not a full-time officer."
+}

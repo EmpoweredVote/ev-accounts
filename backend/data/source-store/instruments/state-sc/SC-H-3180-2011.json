@@ -1,0 +1,32 @@
+{
+  "id": "SC-H-3180-2011",
+  "scope": "state:sc",
+  "title": "H 3180 (119th General Assembly): Voting",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3180&session=119&summary=B"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) SECTION 1 (amends 7-13-710)\n(quote) or a college identification card containing a photograph\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) SECTION 1 also changes 'any person' to 'a person' and 'any ballot' to 'a ballot' (wording only).\n(other) SECTION 2: takes effect upon approval by the Governor.\n(other) version: 2010-12-07_Introduced (only version): adds a photo college identification card to the ID list in slot a. No slot b, c or d text.\n(other) note: Same college-ID text as H 3078 of 2009, filed before Act 27 of 2011 (it reprints the 1996 form of 7-13-710, 'Department of Public Safety', 'if he is not licensed to drive'). One version, introduced only; no floor action found in the saved record.",
+  "sponsors": [
+    {
+      "name": "Todd Rutherford",
+      "role": "prime",
+      "version": "2010-12-07_Introduced"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

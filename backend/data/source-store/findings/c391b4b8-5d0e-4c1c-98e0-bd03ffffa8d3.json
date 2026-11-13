@@ -66,6 +66,204 @@
         "fetched_at": "2026-11-04T14:14:55.221Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "bb680c8402f16bdbc9fb21798765b1b2f638d40166a5507c8138fc0d9ea2de6f",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB16&year=2020&code=S1",
+      "date": "2020-08-25",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-16-SP1-2020",
+      "act": "nay",
+      "motion": "Third Read and Passed (H) (House: HB 16 HBs FOR THIRD READING - INFORMAL)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HB 16 HBs FOR THIRD READING - INFORMAL), 2020-08-25: nay (tally 103–45); census gate: none.",
+      "subjects": [
+        "new felony for giving a firearm to a minor to evade arrest",
+        "unlawful firearm transfer wording and penalties revised"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-16-SP1-2020.comm-sub.pdf",
+          "sha256": "3a49fbdc8dd3ccfba23a9b8a172a0a95260c8a990cfff818363dfd35e462fb18"
+        }
+      }
+    },
+    {
+      "id": "da64b720434601a62cab08c3b8debbab79446517d646f1636d93d2d5386ba6cb",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB1599&year=2020&code=R",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-1599-2020",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-1599-2020 (LegiScan sponsor list): HB1599 (2020 Regular Session): Modifies the offense of unlawful use of a weapon to apply to the open or concealed carrying of a firearm in the City of St. Louis without a concealed carry permit..",
+      "subjects": [
+        "open or concealed firearm carry banned in St. Louis city",
+        "penalty: misdemeanor then felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1599-2020.introduced.pdf",
+          "sha256": "2672a5eabe2d0d34e0408b642c716b5e29d704b6b44faf72a751517f8afe0957"
+        }
+      }
+    },
+    {
+      "id": "beba093bcd8e2da54202b4f126078d726c49da6c69a55e26dc62329a7ca0daef",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=197",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-1169-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-1169-2026 (LegiScan sponsor list): SB1169 (2026 Regular Session): Modifies provisions relating to the offense of unlawful use of weapons.",
+      "subjects": [
+        "firearm carry offence in St. Louis City",
+        "exemptions for permit holders and officers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1169-2026.introduced.pdf",
+          "sha256": "66bcae6bab597a9be4e63a3aedbb4d66be75b4d34c64c4de7cedfe8cb77599fb"
+        }
+      }
+    },
+    {
+      "id": "40e4184d12a46427986b7175322244d8779c13916d2b6c855f74288a738abf86",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=184",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-868-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-868-2026 (LegiScan sponsor list): SB868 (2026 Regular Session): Creates the offense of unlawful possession of a firearm by a minor.",
+      "subjects": [
+        "minors barred from possessing handguns and handgun ammunition",
+        "return of seized firearm to lawful owner"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-868-2026.introduced.pdf",
+          "sha256": "f5ff943d2cb46c48cd9dc8f837198aea67555da128930355187ccd47f5367b40"
+        }
+      }
+    },
+    {
+      "id": "c6aa328291cad55e3a9b9c213ccb45d9318b6efe04ca7202714e46bdaaa27ba8",
+      "kind": "own-words",
+      "url": "https://labortribune.com/majority-of-missourians-support-background-checks/",
+      "date": "2019-10-28",
+      "date_precision": "day",
+      "passage": "We can show that you can support the Second Amendment and background checks, and red flag laws.",
+      "note": "Op-ed bylined Steve Roberts (then a state representative) citing a poll; he calls for Jefferson City to act on gun reform, naming background checks and red flag laws alongside Second Amendment support. The piece also cites poll support for a ban on assault-style weapons.",
+      "subjects": [
+        "check every gun buyer",
+        "red flag orders",
+        "ban on assault-style guns",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.960Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ceb6577feab7774e6416dc25a72a6022c96e5a7be3c28792bfd507d3c236f014",
+      "kind": "own-words",
+      "url": "https://labortribune.com/majority-of-missourians-support-background-checks/",
+      "date": "2019-10-28",
+      "date_precision": "day",
+      "passage": "Missourians can support the Second Amendment and stricter gun laws.",
+      "note": "Same op-ed; general statement that gun rights and stricter gun laws can go together.",
+      "subjects": [
+        "general statement on gun rights",
+        "stricter gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.960Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b17a4fa70a2782e03965f480ec7561ab3b6479835ed39f71f07c14aeb4e24cb",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/newsDetails?id=543",
+      "date": "2022-12-01",
+      "date_precision": "day",
+      "passage": "The Missouri Legislature’s 2021 passage of the ‘Second Amendment Preservation Act’ means Missouri is the only state in the union to have zero checks on kids who are too young to possess guns. This has tied up our police and made the citizens in our neighborhoods fearful. Fixing this problem makes our communities safer.",
+      "note": "Senate press release on his pre-filed bill making it unlawful for a minor to possess a concealable firearm or handgun (exceptions for ranges and supervised use). He ties the gap to the Second Amendment Preservation Act and says gun violence must be a legislative priority.",
+      "subjects": [
+        "minimum age for gun possession",
+        "Second Amendment Preservation Act",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.960Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3a1377b89c69000c373198af335c0956d479a31d908102c1f5b99d560a2878d5",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/camedwards/2022/01/11/st-louis-lawmaker-carveout-n54259",
+      "date": "2022-01-11",
+      "date_precision": "day",
+      "passage": "It would create a conceal carry permit requirement if you want to conceal or open carry a firearm in public. If you want to keep a firearm in your house, personal safety, I understand,",
+      "note": "A gun-news site quoting Roberts (relaying a TV station report) on his idea of a carry permit requirement for St. Louis, moving away from permitless carry; the same story quotes him saying permits help police tell lawful from unlawful gun owners. Surrounding commentary is the outlet's, not his.",
+      "subjects": [
+        "carry a gun without a permit",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.960Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -124,6 +322,32 @@
       "found": 3,
       "at": "2026-11-04T14:14:55.221Z",
       "by": "identity-mo-2026-11-04b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "red flag orders",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "guns and minors",
+        "Second Amendment Preservation Act",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Missouri Senate member page and press releases: confirms Sen. Steven Roberts, 5th district, sitting",
+        "sponsor list: covered by LegiScan bulk check (Senate sponsored-bills page https://www.senate.mo.gov/BillTracking/Bills/sponsoredbills?district=5 shows only SB 868 on the subject, already on file)",
+        "blocked: https://ballotpedia.org/Steven_Roberts_(Missouri) (403)",
+        "official site / campaign site: not reviewed separately beyond Senate press release search; only one release on the subject found",
+        "news search on name plus gun words: one 2022 news-relay quote, one 2019 op-ed under his byline",
+        "https://www.senate.mo.gov/22web/?p=71045 returned 404",
+        "https://themissouritimes.com/opinion-majority-of-missourians-support-background-checks/ is a guest-bylined copy of the same op-ed; Labor Tribune copy with his byline used instead"
+      ],
+      "found": 4,
+      "at": "2026-11-12T21:23:45.960Z",
+      "by": "source-collector"
     }
   ]
 }

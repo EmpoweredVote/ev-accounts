@@ -5,73 +5,54 @@ import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest';
 const poolQueryMock = vi.fn();
 vi.mock('../db.js', () => ({ pool: { query: (...args: unknown[]) => poolQueryMock(...args) } }));
 
-import { createNetfileAdapter, assertNetfileRunHealthy } from './netfileAdapter.js';
+import {
+  createNetfileAdapter,
+  assertNetfileRunHealthy,
+  dropRepeatedReports,
+  queryWords,
+  type Connect2Transaction,
+} from './netfileAdapter.js';
 import type { PoliticianSource } from '../campaignFinanceService.js';
 import type { ContributionInsert } from './adapterInterface.js';
 
 // ---------------------------------------------------------------------------
-// Fixtures: the shapes the live API returned on 2026-09-24 for LACO.
+// Fixtures: the shapes NetFile's Connect2 public API returned on 2026-11-12.
 //
-// FPPC id 1417140 (Henderson) is NetFile committee 209512005. `filings/byFiler` answers
-// `{"filings":[],"totalCount":0}` when handed the FPPC id; only `IdSearch?sosId=` maps one
-// to the other.
+// FPPC id 1417140 is Henderson's committee, NetFile local id LACO-112501. Its rows carry the committee name as it
+// was when each report was filed, so its 2024 reports read "... Board 2024" while the filer list says "... 2028".
 // ---------------------------------------------------------------------------
 
-interface Filing {
-  id: string;
-  formName: string;
-  filerName: string;
-  filingDate: string;
-  sequenceNumber?: string;
-  periodStart?: string | null;
-  periodEnd?: string | null;
+const LACO = 625;
+const WEHO = 197;
+
+interface Filer {
+  fppcId: string;
+  localAgencyId: string;
+  name: string;
 }
 
-interface Tx {
-  id: string;
-  filingId: string;
-  filerName: string;
-  date?: string;
-  amount?: number;
-  schedule?: string;
-  name?: string;
-}
-
-function filing(f: Filing) {
+function tx(t: Partial<Connect2Transaction> & { id: string; filingId: string; filerName: string }): Connect2Transaction {
   return {
-    formId: 'f', formGroupId: 'g', sequenceNumber: '0', reportNumber: '', periodStart: null,
-    periodEnd: null, imageExternalReference: '', obfuscatedId: '', hasAttachment: false, ...f,
-  };
-}
-
-function tx(t: Tx) {
-  return {
-    date: '2026-05-21T07:00:00Z', amount: 100, transactionType: 'F460A (Monetary contributions)',
-    schedule: '460A', name: 'Donor, Dana', vendor: null, address: 'Los Angeles, CA, 90067',
-    spendingCode: '', employer: '', occupation: '', ...t,
+    agency: LACO, filerFppcId: '1417140', filerLocalId: 'LACO-112501', date: '2026-05-21T00:00:00.0000000-07:00',
+    amount: 100, transactionType: 0, name: 'Dana Donor', occupation: '', employer: '', line1: '', line2: '',
+    city: 'Los Angeles', state: 'CA', zip: '90067', ...t,
   };
 }
 
 interface Api {
-  /**
-   * The one agency these fixtures belong to (default LACO). Asked under any other agency the
-   * mock answers as the live API does for an id that agency does not know: no committee, no
-   * filing, no row. That is how the three West Hollywood links read 0 rows under LACO.
-   */
-  agency?: string;
-  /** FPPC id → NetFile committee ids, as IdSearch answers. */
-  idSearch?: Record<string, string[]>;
-  /** NetFile filer id → its filings. Any other id answers the empty list, like the live API. */
-  filings?: Record<string, ReturnType<typeof filing>[]>;
-  /** Every transaction the search can return; a query matches on its words. */
-  transactions?: ReturnType<typeof tx>[];
-  /** Force a status for a path fragment, e.g. { SearchCampaignTransactions: 503 }. */
+  /** Agency code → its committees, as campaign/list/filer answers. */
+  filers?: Record<string, Filer[]>;
+  /** Every transaction the search can return; a query matches when every word is in the filer or donor name. */
+  transactions?: Connect2Transaction[];
+  /** Words the profanity filter refuses (HTTP 400 ProfaneSearchException). */
+  profane?: string[];
+  /** Force a status for a path fragment, e.g. { 'transaction/query': 503 }. */
   status?: Record<string, number>;
-  /** Override totalCount on the search, to model a short page walk. */
+  /** Override totalMatchingCount on full searches, to model a short page walk. */
   totalCountBump?: number;
 }
 
-/** Serves the four NetFile endpoints the adapter reads, from in-memory fixtures. */
+/** Serves the two Connect2 endpoints the adapter reads, from in-memory fixtures. */
 function mockApi(api: Api): ReturnType<typeof vi.fn> {
   const fetchMock = vi.fn(async (input: string) => {
     const url = new URL(input);
@@ -80,34 +61,33 @@ function mockApi(api: Api): ReturnType<typeof vi.fn> {
       if (path.includes(fragment)) return new Response('{}', { status });
     }
     const json = (body: unknown) => new Response(JSON.stringify(body), { status: 200 });
-    const agency = url.searchParams.get('aid') ?? url.searchParams.get('agencyCode');
-    const known = agency === (api.agency ?? 'LACO');
 
-    if (path.endsWith('/IdSearch')) {
-      const ids = (known && api.idSearch?.[url.searchParams.get('sosId') ?? '']) || [];
-      return json({ committees: ids.map(id => ({ id, name: `committee ${id}` })), measures: [] });
+    if (path.endsWith('/campaign/list/filer')) {
+      const all = (api.filers?.[url.searchParams.get('AID') ?? ''] ?? []).map((f, i) => ({
+        id: `guid-${i}`, agency: url.searchParams.get('AID'), application: 'Campaign', ...f,
+      }));
+      const size = Number(url.searchParams.get('pageSize'));
+      const page = Number(url.searchParams.get('currentPageIndex'));
+      return json({ totalMatchingCount: all.length, filers: all.slice(page * size, (page + 1) * size) });
     }
-    if (path.endsWith('/filings/byFiler')) {
-      const list = (known && api.filings?.[url.searchParams.get('filerId') ?? '']) || [];
-      return json({ filings: list, totalCount: 0 });
-    }
-    if (path.endsWith('/SearchCampaignTransactions')) {
-      const query = url.searchParams.get('query') ?? '';
-      // The live search 500s on a ':' and matches nothing once a ',' is in the query.
-      if (query.includes(':')) return new Response('{}', { status: 500 });
-      if (query.includes(',')) return json({ items: [], totalCount: 0, hasNextPage: false });
+    if (path.endsWith('/campaign/search/transaction/query')) {
+      const query = url.searchParams.get('QueryString') ?? '';
       const words = query.toLowerCase().split(/\s+/).filter(Boolean);
-      const hits = (known ? api.transactions ?? [] : []).filter(t => {
+      if (words.some(w => (api.profane ?? []).includes(w))) {
+        return new Response('{"responseStatus":{"errorCode":"ProfaneSearchException"}}', { status: 400 });
+      }
+      const agency = Number(url.searchParams.get('Agency'));
+      const hits = (api.transactions ?? []).filter(t => {
         const hay = `${t.filerName} ${t.name}`.toLowerCase();
-        return words.every(w => hay.includes(w));
+        return t.agency === agency && words.every(w => hay.split(/[^a-z0-9]+/).includes(w));
       });
-      const pageSize = Number(url.searchParams.get('pageSize'));
-      const page = Number(url.searchParams.get('currentPage'));
-      const items = hits.slice((page - 1) * pageSize, page * pageSize);
+      const size = Number(url.searchParams.get('pageSize'));
+      const page = Number(url.searchParams.get('currentPageIndex'));
+      const bump = size > 1 ? api.totalCountBump ?? 0 : 0;
       return json({
-        aid: agency, items, pageSize, currentPage: page, pageCount: 0,
-        totalCount: hits.length + (api.totalCountBump ?? 0),
-        hasNextPage: page * pageSize < hits.length, hasPreviousPage: page > 1,
+        totalMatchingCount: hits.length + bump,
+        totalMatchingPages: Math.max(1, Math.ceil(hits.length / size)),
+        results: hits.slice(page * size, (page + 1) * size),
       });
     }
     return new Response('not found', { status: 404 });
@@ -121,6 +101,10 @@ function source(externalId: string, id = `src-${externalId}`, agency: string | n
 }
 
 const HENDERSON = 'Henderson for LA Community College Board 2028';
+const HENDERSON_2024 = 'Henderson for College Board 2024';
+const HENDERSON_FILER: Filer = { fppcId: '1417140', localAgencyId: 'LACO-112501', name: HENDERSON };
+
+const ids = (records: Record<string, unknown>[]) => records.map(r => r.id).sort();
 
 beforeEach(() => {
   poolQueryMock.mockReset();
@@ -131,236 +115,221 @@ afterEach(() => {
 });
 
 describe('netfileAdapter fetch: finding the committee', () => {
-  it('maps the stored FPPC id to the NetFile committee id before reading filings', async () => {
-    const fetchMock = mockApi({
-      idSearch: { '1417140': ['209512005'] },
-      filings: {
-        '209512005': [filing({ id: '216803119', formName: 'FPPC 460', filerName: HENDERSON, filingDate: '2026-05-21T00:00:00Z' })],
-      },
-      transactions: [tx({ id: 'a', filingId: '216803119', filerName: HENDERSON })],
+  it("reads an FPPC id's committee by its NetFile local id, which also covers reports filed while the FPPC id was Pending", async () => {
+    mockApi({
+      filers: { LACO: [HENDERSON_FILER] },
+      transactions: [
+        tx({ id: 'with-fppc', filingId: '2', filerName: HENDERSON }),
+        tx({ id: 'pending', filingId: '1', filerName: HENDERSON, filerFppcId: 'Pending', name: 'Early Donor' }),
+      ],
     });
 
     const got = await createNetfileAdapter(2026).fetch(source('1417140'));
 
-    expect(got.records.map(r => r.id)).toEqual(['a']);
-    const byFiler = fetchMock.mock.calls
-      .map(c => new URL(c[0] as string))
-      .filter(u => u.pathname.endsWith('/filings/byFiler'));
-    expect(byFiler.map(u => u.searchParams.get('filerId'))).toEqual(['209512005']);
+    expect(ids(got.records)).toEqual(['pending', 'with-fppc']);
   });
 
-  it('reads the stored id as a NetFile id when IdSearch knows no committee for it', async () => {
-    const name = 'LA County: Lindsey Horvath for Supervisor 2026';
+  it('reads a link that stores the NetFile local id itself (CA_0375)', async () => {
+    const luna = 'LA County: Luna for Sheriff 2026';
     mockApi({
-      filings: { '216785710': [filing({ id: '217000001', formName: 'FPPC 460', filerName: name, filingDate: '2026-07-31T00:00:00Z' })] },
-      transactions: [tx({ id: 'h', filingId: '217000001', filerName: name })],
+      filers: { LACO: [{ fppcId: '1479270', localAgencyId: 'LACO-113718', name: luna }] },
+      transactions: [tx({ id: 'l1', filingId: '9', filerName: luna, filerFppcId: '1479270', filerLocalId: 'LACO-113718' })],
     });
 
-    const got = await createNetfileAdapter(2026).fetch(source('216785710'));
+    const got = await createNetfileAdapter(2026).fetch(source('LACO-113718'));
 
-    expect(got.records.map(r => r.id)).toEqual(['h']);
+    expect(ids(got.records)).toEqual(['l1']);
   });
 
-  it('returns no rows, without failing, when NetFile has no committee for the id at all', async () => {
-    mockApi({});
+  it("fails a link that still stores the retired REST API's 9-digit filer id, rather than reading nothing", async () => {
+    mockApi({ filers: { LACO: [HENDERSON_FILER] } });
+
+    await expect(createNetfileAdapter(2026).fetch(source('216785710'))).rejects.toThrow(/retired REST API.*CA_0375/);
+  });
+
+  it('returns no rows, without failing, when the agency lists no committee for the id', async () => {
+    mockApi({ filers: { LACO: [HENDERSON_FILER] } });
 
     const got = await createNetfileAdapter(2026).fetch(source('1450349'));
 
     expect(got.records).toEqual([]);
   });
+
+  it('reads the filer list once per run, however many links share the agency', async () => {
+    const fetchMock = mockApi({ filers: { LACO: [HENDERSON_FILER] } });
+    const adapter = createNetfileAdapter(2026);
+
+    await adapter.fetch(source('1450349'));
+    await adapter.fetch(source('1450350'));
+
+    expect(fetchMock.mock.calls.filter(c => String(c[0]).includes('/campaign/list/filer'))).toHaveLength(1);
+  });
+
+  it('reads every page of a filer list longer than one page', async () => {
+    const many: Filer[] = Array.from({ length: 1_500 }, (_, i) => ({ fppcId: String(2_000_000 + i), localAgencyId: `LACO-${i}`, name: `Committee ${i}` }));
+    mockApi({ filers: { LACO: [...many, HENDERSON_FILER] }, transactions: [tx({ id: 'h', filingId: '1', filerName: HENDERSON })] });
+
+    const got = await createNetfileAdapter(2026).fetch(source('1417140'));
+
+    expect(ids(got.records)).toEqual(['h']);
+  });
 });
 
 describe('netfileAdapter fetch: the agency comes from the link', () => {
-  // Measured 2026-09-24: Chelsea Byers' committee 202019492 is a City of West Hollywood
-  // filer. Under WEHO it has 15 filings and 282 Schedule A rows; under LACO, IdSearch,
-  // filings/byFiler and the search all answer nothing, with HTTP 200.
-  const BYERS = 'Chelsea Byers for West Hollywood City Council 2022';
+  const byers = 'Chelsea Byers for West Hollywood City Council 2022';
   const weho: Api = {
-    agency: 'WEHO',
-    filings: { '202019492': [filing({ id: '203000001', formName: 'FPPC 460', filerName: BYERS, filingDate: '2022-11-01T00:00:00Z' })] },
-    transactions: [tx({ id: 'b', filingId: '203000001', filerName: BYERS })],
+    filers: { WEHO: [{ fppcId: '1443689', localAgencyId: 'WEHO-112739', name: byers }] },
+    transactions: [tx({ id: 'b1', filingId: '5', filerName: byers, agency: WEHO, filerFppcId: '1443689', filerLocalId: 'WEHO-112739' })],
   };
 
-  it("reads all three endpoints under the link's own agency", async () => {
+  it("searches under the link's own agency number", async () => {
     const fetchMock = mockApi(weho);
 
-    const got = await createNetfileAdapter(2026).fetch(source('202019492', 'src-byers', 'WEHO'));
+    const got = await createNetfileAdapter(2026).fetch(source('WEHO-112739', 'src-byers', 'WEHO'));
 
-    expect(got.records.map(r => r.id)).toEqual(['b']);
-    const agencies = fetchMock.mock.calls.map(c => {
-      const u = new URL(c[0] as string);
-      return u.searchParams.get('aid') ?? u.searchParams.get('agencyCode');
-    });
-    expect(new Set(agencies)).toEqual(new Set(['WEHO']));
+    expect(ids(got.records)).toEqual(['b1']);
+    const searched = fetchMock.mock.calls
+      .map(c => new URL(String(c[0])))
+      .filter(u => u.pathname.endsWith('/transaction/query'))
+      .map(u => u.searchParams.get('Agency'));
+    expect(new Set(searched)).toEqual(new Set([String(WEHO)]));
   });
 
   it('fails a link that names no agency, rather than guessing LA County', async () => {
     const fetchMock = mockApi(weho);
 
-    await expect(createNetfileAdapter(2026).fetch(source('202019492', 'src-byers', null))).rejects.toThrow(
-      /netfile_agency/
+    await expect(createNetfileAdapter(2026).fetch(source('WEHO-112739', 'src-byers', null))).rejects.toThrow(
+      /no netfile_agency/
     );
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it('fails a link whose agency has no Connect2 number, rather than searching every agency', async () => {
+    const fetchMock = mockApi(weho);
+
+    await expect(createNetfileAdapter(2026).fetch(source('1443689', 'src-x', 'SMCO'))).rejects.toThrow(/AGENCY_NUMBERS/);
     expect(fetchMock).not.toHaveBeenCalled();
   });
 });
 
 describe('netfileAdapter fetch: reading the transactions', () => {
-  it('drops punctuation from the committee name, which the search cannot take', async () => {
-    const name = 'Tina Fredericks for PUSD Board Member, 2024';
+  it('finds the reports filed under an older committee name through its rarest word', async () => {
     mockApi({
-      idSearch: { '1461887': ['211581987'] },
-      filings: { '211581987': [filing({ id: '212000001', formName: 'FPPC 460', filerName: name, filingDate: '2024-10-24T00:00:00Z' })] },
-      transactions: [tx({ id: 't', filingId: '212000001', filerName: name })],
-    });
-
-    const got = await createNetfileAdapter(2026).fetch(source('1461887'));
-
-    expect(got.records.map(r => r.id)).toEqual(['t']);
-  });
-
-  it("keeps only rows reported on the committee's own filings", async () => {
-    mockApi({
-      idSearch: { '1417140': ['209512005'] },
-      filings: { '209512005': [filing({ id: 'own', formName: 'FPPC 460', filerName: HENDERSON, filingDate: '2026-05-21T00:00:00Z' })] },
+      filers: { LACO: [HENDERSON_FILER] },
       transactions: [
-        tx({ id: 'mine', filingId: 'own', filerName: HENDERSON }),
-        // Another committee's filing, on which Henderson's committee is the DONOR.
-        tx({ id: 'gave', filingId: 'other', filerName: 'Coalition for LA Community College Reform', name: HENDERSON }),
+        tx({ id: 'old', filingId: '1', filerName: HENDERSON_2024, name: 'Early Donor' }),
+        tx({ id: 'new', filingId: '2', filerName: HENDERSON }),
+        // Many rows share the common words, so "Henderson" is the rarest.
+        ...Array.from({ length: 5 }, (_, i) => tx({ id: `x${i}`, filingId: '7', filerName: 'Rivera for LA Community College Board', filerFppcId: '9', filerLocalId: 'LACO-9' })),
       ],
     });
 
     const got = await createNetfileAdapter(2026).fetch(source('1417140'));
 
-    expect(got.records.map(r => r.id)).toEqual(['mine']);
+    expect(ids(got.records)).toEqual(['new', 'old']);
   });
 
-  it('drops the rows of a Form 460 that a later amendment replaced', async () => {
-    const period = { periodStart: '2025-01-01T00:00:00+00:00', periodEnd: '2025-06-30T00:00:00+00:00' };
+  it("keeps only the committee's own rows, never a row on which it is the donor", async () => {
     mockApi({
-      idSearch: { '1417140': ['209512005'] },
-      filings: {
-        '209512005': [
-          filing({ id: 'amended', formName: 'FPPC 460 (Amendment)', filerName: HENDERSON, filingDate: '2025-07-17T00:00:00Z', sequenceNumber: '1', ...period }),
-          filing({ id: 'original', formName: 'FPPC 460', filerName: HENDERSON, filingDate: '2025-07-16T00:00:00Z', ...period }),
-          filing({ id: 'next', formName: 'FPPC 460', filerName: HENDERSON, filingDate: '2026-01-27T00:00:00Z', periodStart: '2025-07-01T00:00:00+00:00', periodEnd: '2025-12-31T00:00:00+00:00' }),
-        ],
-      },
+      filers: { LACO: [HENDERSON_FILER] },
       transactions: [
-        tx({ id: 'o1', filingId: 'original', filerName: HENDERSON }),
-        tx({ id: 'a1', filingId: 'amended', filerName: HENDERSON }),
-        tx({ id: 'n1', filingId: 'next', filerName: HENDERSON }),
+        tx({ id: 'own', filingId: '1', filerName: HENDERSON }),
+        tx({ id: 'as-donor', filingId: '8', filerName: 'Other Committee', name: HENDERSON, filerFppcId: '1400000', filerLocalId: 'LACO-1' }),
       ],
     });
 
     const got = await createNetfileAdapter(2026).fetch(source('1417140'));
 
-    expect(got.records.map(r => r.id).sort()).toEqual(['a1', 'n1']);
+    expect(ids(got.records)).toEqual(['own']);
   });
 
-  // Horvath's committee (216785710), 2026-09-24: its history was imported as a second copy of
-  // each report. For 2025-01-01..06-30 the copy filed LATER (07-30) holds no rows at all; the
-  // one filed 07-24 holds all 289.
-  it('keeps the copy of a report that carries rows when a later copy carries none', async () => {
-    const name = 'LA County: Lindsey Horvath for Supervisor 2026';
-    const period = { periodStart: '2025-01-01T00:00:00+00:00', periodEnd: '2025-06-30T00:00:00+00:00' };
+  it('drops a word the profanity filter refuses instead of failing the search', async () => {
+    const prang = 'LA County: Jeffrey Prang for Assessor 2026';
     mockApi({
-      filings: {
-        '216785710': [
-          filing({ id: 'empty', formName: 'FPPC 460', filerName: name, filingDate: '2025-07-30T00:00:00+00:00', ...period }),
-          filing({ id: 'full', formName: 'FPPC 460', filerName: name, filingDate: '2025-07-24T00:00:00+00:00', ...period }),
-        ],
-      },
-      transactions: [tx({ id: 'r1', filingId: 'full', filerName: name }), tx({ id: 'r2', filingId: 'full', filerName: name })],
+      filers: { LACO: [{ fppcId: '1477771', localAgencyId: 'LACO-113732', name: prang }] },
+      transactions: [tx({ id: 'p1', filingId: '3', filerName: prang, filerFppcId: '1477771', filerLocalId: 'LACO-113732' })],
+      profane: ['assessor'],
     });
 
-    const got = await createNetfileAdapter(2026).fetch(source('216785710'));
+    const got = await createNetfileAdapter(2026).fetch(source('1477771'));
 
-    expect(got.records.map(r => r.id).sort()).toEqual(['r1', 'r2']);
+    expect(ids(got.records)).toEqual(['p1']);
   });
 
-  // Same committee: a full-year 2023 report (filed 2024-01-24) repeats the 160 rows of the
-  // 2023-01-01..06-30 report (filed 2023-07-27). Keeping both counts each gift twice.
-  it('drops a report whose period a later report with rows contains', async () => {
+  it("drops a report whose Schedule A rows all reappear on a later report (a consolidated report)", async () => {
+    const day = (d: string) => `${d}T00:00:00.0000000-07:00`;
     mockApi({
-      idSearch: { '1417140': ['209512005'] },
-      filings: {
-        '209512005': [
-          filing({ id: 'h1', formName: 'FPPC 460', filerName: HENDERSON, filingDate: '2023-07-27T00:00:00+00:00', periodStart: '2023-01-01T00:00:00+00:00', periodEnd: '2023-06-30T00:00:00+00:00' }),
-          filing({ id: 'year', formName: 'FPPC 460', filerName: HENDERSON, filingDate: '2024-01-24T00:00:00+00:00', periodStart: '2023-01-01T00:00:00+00:00', periodEnd: '2023-12-31T00:00:00+00:00' }),
-          filing({ id: 'next', formName: 'FPPC 460', filerName: HENDERSON, filingDate: '2024-07-24T00:00:00+00:00', periodStart: '2024-01-01T00:00:00+00:00', periodEnd: '2024-06-30T00:00:00+00:00' }),
-        ],
-      },
+      filers: { LACO: [HENDERSON_FILER] },
       transactions: [
-        tx({ id: 'h1-a', filingId: 'h1', filerName: HENDERSON }),
-        tx({ id: 'year-a', filingId: 'year', filerName: HENDERSON }),
-        tx({ id: 'next-a', filingId: 'next', filerName: HENDERSON }),
+        tx({ id: 'h1-a', filingId: '100', filerName: HENDERSON, date: day('2023-03-01'), amount: 500, name: 'Ann' }),
+        tx({ id: 'h1-e', filingId: '100', filerName: HENDERSON, transactionType: 6, name: 'Printer' }),
+        tx({ id: 'fy-a', filingId: '200', filerName: HENDERSON, date: day('2023-03-01'), amount: 500, name: 'Ann' }),
+        tx({ id: 'fy-b', filingId: '200', filerName: HENDERSON, date: day('2023-09-01'), amount: 250, name: 'Bo' }),
       ],
     });
 
     const got = await createNetfileAdapter(2026).fetch(source('1417140'));
 
-    expect(got.records.map(r => r.id).sort()).toEqual(['next-a', 'year-a']);
-  });
-
-  it('keeps both reports when their periods only partly overlap', async () => {
-    mockApi({
-      idSearch: { '1417140': ['209512005'] },
-      filings: {
-        '209512005': [
-          filing({ id: 'a', formName: 'FPPC 460', filerName: HENDERSON, filingDate: '2024-02-01T00:00:00+00:00', periodStart: '2024-01-01T00:00:00+00:00', periodEnd: '2024-01-20T00:00:00+00:00' }),
-          filing({ id: 'b', formName: 'FPPC 460', filerName: HENDERSON, filingDate: '2024-03-01T00:00:00+00:00', periodStart: '2024-01-20T00:00:00+00:00', periodEnd: '2024-02-17T00:00:00+00:00' }),
-        ],
-      },
-      transactions: [tx({ id: 'a1', filingId: 'a', filerName: HENDERSON }), tx({ id: 'b1', filingId: 'b', filerName: HENDERSON })],
-    });
-
-    const got = await createNetfileAdapter(2026).fetch(source('1417140'));
-
-    expect(got.records.map(r => r.id).sort()).toEqual(['a1', 'b1']);
+    expect(ids(got.records)).toEqual(['fy-a', 'fy-b']);
   });
 
   it('reads every page when the search holds more rows than one page', async () => {
-    const many = Array.from({ length: 10_050 }, (_, i) => tx({ id: `r${i}`, filingId: 'own', filerName: HENDERSON }));
-    mockApi({
-      idSearch: { '1417140': ['209512005'] },
-      filings: { '209512005': [filing({ id: 'own', formName: 'FPPC 460', filerName: HENDERSON, filingDate: '2026-05-21T00:00:00Z' })] },
-      transactions: many,
-    });
+    const many = Array.from({ length: 5_050 }, (_, i) => tx({ id: `r${i}`, filingId: '1', filerName: HENDERSON, amount: i }));
+    mockApi({ filers: { LACO: [HENDERSON_FILER] }, transactions: many });
 
     const got = await createNetfileAdapter(2026).fetch(source('1417140'));
 
-    expect(got.records).toHaveLength(10_050);
+    expect(got.records).toHaveLength(5_050);
+  });
+});
+
+describe('dropRepeatedReports', () => {
+  const row = (id: string, filingId: string, name: string, amount = 100) =>
+    tx({ id, filingId, filerName: HENDERSON, name, amount });
+
+  it('keeps both reports when the later one repeats only some of the earlier rows', () => {
+    const rows = [row('a1', '1', 'Ann'), row('a2', '1', 'Bo'), row('b1', '2', 'Ann')];
+
+    expect(dropRepeatedReports(rows).map(r => r.id)).toEqual(['a1', 'a2', 'b1']);
+  });
+
+  it('counts repeats with multiplicity: two equal gifts are not covered by one', () => {
+    const rows = [row('a1', '1', 'Ann'), row('a2', '1', 'Ann'), row('b1', '2', 'Ann')];
+
+    expect(dropRepeatedReports(rows).map(r => r.id)).toEqual(['a1', 'a2', 'b1']);
+  });
+
+  it('never drops the later report, even when the earlier one repeats it in full', () => {
+    const rows = [row('a1', '1', 'Ann'), row('b1', '2', 'Ann')];
+
+    expect(dropRepeatedReports(rows).map(r => r.id)).toEqual(['b1']);
+  });
+});
+
+describe('queryWords', () => {
+  it('keeps letters only: a year, a colon or a comma would narrow or break the search', () => {
+    expect(queryWords('LA County: Luna for Sheriff 2026')).toEqual(['LA', 'County', 'Luna', 'for', 'Sheriff']);
+    expect(queryWords('Tina Fredericks for PUSD Board Member, 2028')).toEqual(['Tina', 'Fredericks', 'for', 'PUSD', 'Board', 'Member']);
   });
 });
 
 describe('netfileAdapter fetch: an error is never an empty answer', () => {
   it('fails when the transaction search answers an HTTP error', async () => {
-    mockApi({
-      idSearch: { '1417140': ['209512005'] },
-      filings: { '209512005': [filing({ id: 'own', formName: 'FPPC 460', filerName: HENDERSON, filingDate: '2026-05-21T00:00:00Z' })] },
-      status: { SearchCampaignTransactions: 503 },
-    });
+    mockApi({ filers: { LACO: [HENDERSON_FILER] }, status: { 'transaction/query': 503 } });
 
     await expect(createNetfileAdapter(2026).fetch(source('1417140'))).rejects.toThrow(/503/);
   });
 
-  it('fails when the filings list answers an HTTP error', async () => {
-    mockApi({ idSearch: { '1417140': ['209512005'] }, status: { 'filings/byFiler': 429 } });
+  it('fails when the filer list answers an HTTP error — the 2026-11-01 run met a 401', async () => {
+    mockApi({ status: { 'list/filer': 401 } });
 
-    await expect(createNetfileAdapter(2026).fetch(source('1417140'))).rejects.toThrow(/429/);
-  });
-
-  it('fails when the committee lookup answers an HTTP error', async () => {
-    mockApi({ status: { IdSearch: 500 } });
-
-    await expect(createNetfileAdapter(2026).fetch(source('1417140'))).rejects.toThrow(/500/);
+    await expect(createNetfileAdapter(2026).fetch(source('1417140'))).rejects.toThrow(/401/);
   });
 
   it('fails when the page walk returns fewer distinct rows than the search counted', async () => {
     mockApi({
-      idSearch: { '1417140': ['209512005'] },
-      filings: { '209512005': [filing({ id: 'own', formName: 'FPPC 460', filerName: HENDERSON, filingDate: '2026-05-21T00:00:00Z' })] },
-      transactions: [tx({ id: 'a', filingId: 'own', filerName: HENDERSON })],
+      filers: { LACO: [HENDERSON_FILER] },
+      transactions: [tx({ id: 'a', filingId: '1', filerName: HENDERSON })],
       totalCountBump: 1,
     });
 
@@ -370,7 +339,7 @@ describe('netfileAdapter fetch: an error is never an empty answer', () => {
 
 describe('netfileAdapter normalize', () => {
   const ps = source('1417140');
-  const raw = (records: ReturnType<typeof tx>[]) => ({
+  const raw = (records: Connect2Transaction[]) => ({
     records: records as unknown as Record<string, unknown>[], totalExpected: records.length, totalFetched: records.length,
   });
 
@@ -386,9 +355,9 @@ describe('netfileAdapter normalize', () => {
   it('counts the other schedules as deliberate exclusions, not as defects', async () => {
     const norm = await createNetfileAdapter(2026).normalize(
       raw([
-        tx({ id: 'a', filingId: 'f', filerName: HENDERSON, schedule: '460A' }),
-        tx({ id: 'e', filingId: 'f', filerName: HENDERSON, schedule: '460E' }),
-        tx({ id: 'l', filingId: 'f', filerName: HENDERSON, schedule: '497P1' }),
+        tx({ id: 'a', filingId: 'f', filerName: HENDERSON, transactionType: 0 }),
+        tx({ id: 'e', filingId: 'f', filerName: HENDERSON, transactionType: 6 }),
+        tx({ id: 'l', filingId: 'f', filerName: HENDERSON, transactionType: 20 }),
       ]), ps,
     );
 
@@ -397,13 +366,26 @@ describe('netfileAdapter normalize', () => {
     expect(norm.skipped).toBe(0);
   });
 
-  it('dates a contribution by its UTC calendar day and rounds the cycle up to an even year', async () => {
+  it('reads the local-midnight date as the same instant the REST API gave, and rounds the cycle up', async () => {
     const norm = await createNetfileAdapter(2026).normalize(
-      raw([tx({ id: 'd', filingId: 'f', filerName: HENDERSON, date: '2025-12-31T08:00:00Z' })]), ps,
+      raw([tx({ id: 'd', filingId: 'f', filerName: HENDERSON, date: '2025-07-01T00:00:00.0000000-07:00' })]), ps,
     );
 
-    expect(norm.contributions[0].contribution_date?.toISOString().slice(0, 10)).toBe('2025-12-31');
+    expect(norm.contributions[0].contribution_date?.toISOString()).toBe('2025-07-01T07:00:00.000Z');
     expect(norm.contributions[0].election_cycle).toBe('2026');
+  });
+
+  it('keys a row by filing id and transaction id, as every row stored before 2026-11 is keyed', async () => {
+    const norm = await createNetfileAdapter(2026).normalize(
+      raw([tx({ id: '1a38e7a2-bdaa-4a23-8f2e-b4cf012d6f66', filingId: '217500560', filerName: HENDERSON, employer: 'LAUSD', occupation: 'Teacher', line1: '1 Main St' })]), ps,
+    );
+
+    const c = norm.contributions[0];
+    expect(c.source_transaction_id).toBe('217500560-1a38e7a2-bdaa-4a23-8f2e-b4cf012d6f66');
+    expect(c.raw_record).toMatchObject({
+      schedule: '460A', contributor_name: 'Dana Donor', contributor_employer: 'LAUSD',
+      contributor_occupation: 'Teacher', contributor_address: '1 Main St, Los Angeles, CA 90067',
+    });
   });
 });
 

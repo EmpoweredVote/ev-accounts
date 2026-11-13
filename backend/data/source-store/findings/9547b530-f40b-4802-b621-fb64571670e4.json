@@ -1,6 +1,89 @@
 {
   "politician_id": "9547b530-f40b-4802-b621-fb64571670e4",
-  "findings": [],
+  "findings": [
+    {
+      "id": "24074366700497d2df92d3082c512b96a1b22b3f1abc77e99495864e77a0dd2e",
+      "kind": "own-words",
+      "url": "https://giffords.org/press-release/2026/08/giffords-pac-endorses-david-crowley-for-governor-and-sarah-godlewski-for-lieutenant-governor-in-wisconsin/",
+      "date": "2026-08-27",
+      "date_precision": "day",
+      "passage": "“Thoughts and prayers aren’t enough, Wisconsin families deserve leaders who will fight for commonsense gun safety laws, and that’s exactly what I’ll do as Lieutenant Governor.”",
+      "note": "Quoted in an endorsement press release from a gun-violence-prevention group. She says she will work for gun safety laws as Lieutenant Governor. No specific policy named.",
+      "subjects": [
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.358Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "13c020c1ed7bc7e4e27cd79248a01de0875ad204ea63efb042121de4b00ec5a1",
+      "kind": "own-words",
+      "url": "https://giffords.org/press-release/2026/08/giffords-pac-endorses-david-crowley-for-governor-and-sarah-godlewski-for-lieutenant-governor-in-wisconsin/",
+      "date": "2026-08-27",
+      "date_precision": "day",
+      "passage": "“I’m honored to receive GIFFORDS PAC’s endorsement and stand with them in the fight to end gun violence in Wisconsin. As a mom, I know every parent deserves to send their child to school without fear,”",
+      "note": "Quoted in the same release. She accepts the group's endorsement and says she stands with it in the fight to end gun violence.",
+      "subjects": [
+        "general statement on gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.358Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c3a62843d12693278fcf2d4e32ae2aeccc8145ed32e292f50f974ae0dd846363",
+      "kind": "record",
+      "url": "https://giffords.org/press-release/2026/08/giffords-pac-endorses-david-crowley-for-governor-and-sarah-godlewski-for-lieutenant-governor-in-wisconsin/",
+      "date": "2022-06-03",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Declared June 3 Gun Violence Awareness Day in Wisconsin (2022), as described in the endorsing group's release; official proclamation not seen",
+      "note": "The release says that in 2022 she declared June 3 to be Gun Violence Awareness Day in Wisconsin. This is the group's description, not the proclamation itself.",
+      "subjects": [
+        "general statement on gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.358Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c7105354b99c3cbb79fbfe704e2b85d0d844a2c0d6edddd317b73af7b7efa75e",
+      "kind": "record",
+      "url": "https://giffords.org/press-release/2026/08/giffords-pac-endorses-david-crowley-for-governor-and-sarah-godlewski-for-lieutenant-governor-in-wisconsin/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "act": "other",
+      "motion": "Called on the State of Wisconsin Investment Board to divest from any potential holdings in gun companies, as described in the endorsing group's release; date and original letter not seen",
+      "note": "The release says she called on the investment board to divest from any potential holdings in gun companies. Date not given.",
+      "subjects": [
+        "public money out of gun companies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.358Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -25,6 +108,33 @@
       "found": 0,
       "at": "2026-10-28T23:00:57.416Z",
       "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders",
+        "large-capacity magazines",
+        "general gun safety laws",
+        "gun company investments"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web search: 3 searches run; confirmed she is the 2026 candidate for Lieutenant Governor through an August 27, 2026 release that names her in that race (after the August 11 primary)",
+        "blocked: https://www.wispolitics.com/2022/godlewski-campaign-statement-on-texas-school-shooting-tragedy/",
+        "blocked: https://www.wispolitics.com/2022/godlewski-campaign-applauds-senate-passage-of-bipartisan-gun-safety-legislation-slams-johnson-for-voting-no/",
+        "blocked: https://www.wispolitics.com/2022/sarah-for-wisconsin-sarah-godlewski-urges-senate-to-pass-commonsense-gun-legislation/",
+        "blocked: https://sarahgodlewski.com (connection reset)",
+        "not found: https://www.sarahforwi.com (404)",
+        "not found: https://sos.wi.gov/about-secretary-state (404)",
+        "Ballotpedia: not reviewed (pages return empty to the fetch tool)",
+        "news search on name plus subject words: found only the 2022 statements (blocked above) and the 2026 endorsement release"
+      ],
+      "found": 4,
+      "at": "2026-11-10T22:15:40.358Z",
+      "by": "source-collector"
     }
   ]
 }

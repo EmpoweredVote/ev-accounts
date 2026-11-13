@@ -66,6 +66,248 @@
         "fetched_at": "2026-11-04T14:14:55.220Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1f04d6e5cf313fc3d77fdc51f9e6a7f0350086b202728e9a834772b29e9c4cf4",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB16&year=2020&code=S1",
+      "date": "2020-08-25",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-16-SP1-2020",
+      "act": "yea",
+      "motion": "Third Read and Passed (H) (House: HB 16 HBs FOR THIRD READING - INFORMAL)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HB 16 HBs FOR THIRD READING - INFORMAL), 2020-08-25: yea (tally 103–45); census gate: none.",
+      "subjects": [
+        "new felony for giving a firearm to a minor to evade arrest",
+        "unlawful firearm transfer wording and penalties revised"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-16-SP1-2020.comm-sub.pdf",
+          "sha256": "3a49fbdc8dd3ccfba23a9b8a172a0a95260c8a990cfff818363dfd35e462fb18"
+        }
+      }
+    },
+    {
+      "id": "4d6ff4d12cc411d69cb63a9cb66643ab6207f18fd683963d6d4a4c29b1b36562",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB1496&year=2020&code=R",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-1496-2020",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-1496-2020 (LegiScan sponsor list): HB1496 (2020 Regular Session): Modifies the offenses of unlawful transfer of weapons and unlawful possession of a firearm..",
+      "subjects": [
+        "firearm transfer and possession barred for No Fly List names",
+        "terror-group members barred from firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1496-2020.introduced.pdf",
+          "sha256": "2807da76df5c0ebb60e2a81d235ebf9be947edec8bcf23bb3759fe3058297c14"
+        }
+      }
+    },
+    {
+      "id": "da06dfbee537ef9bcbb21b2e02e8604c3db1273f09aa07bcfcc59f0baf2d6880",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB2131&year=2020&code=R",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-2131-2020",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-2131-2020 (LegiScan sponsor list): HB2131 (2020 Regular Session): Prohibits certain individuals from possessing a firearm due to domestic violence protection orders..",
+      "subjects": [
+        "firearm ban for people under full protection orders",
+        "firearm ban after domestic violence misdemeanor convictions",
+        "reporting of orders and convictions to NICS"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2131-2020.introduced.pdf",
+          "sha256": "869b5a144555fb88fa3b2d077aa36156c48ad3a815ba46635dc58b1ad15fde1b"
+        }
+      }
+    },
+    {
+      "id": "ab39fcb598b7f13a033b3865155784768f8585f7f87774206c10cc98554623e6",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB241&year=2017&code=R",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-241-2017",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-241-2017 (LegiScan sponsor list): HB241 (2017 Regular Session): Modifies the crime of unlawful transfer of weapons to include transfer of a firearms to any person on the terrorist screening center's no fly list.",
+      "subjects": [
+        "firearm transfer to no-fly-list persons made a felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-241-2017.introduced.pdf",
+          "sha256": "d80463d55b452ee2d1cf0a5cfec18da7d3f64f73b32691e93f68bf02b7dd91a1"
+        }
+      }
+    },
+    {
+      "id": "bba57b6b50befbc606828582311710bafb9f7fe68ae1dede1a53d1a63f968122",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/24info/BTS_Web/Bill.aspx?SessionType=R&BillID=49",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-1033-2024",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-1033-2024 (LegiScan sponsor list): SB1033 (2024 Regular Session): Modifies provisions relating to unlawful possession of firearms.",
+      "subjects": [
+        "firearm ban while a full protective order is in effect",
+        "misdemeanor domestic-violence convictions added to prohibited-possessor list",
+        "conviction and order records forwarded for background-check system"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1033-2024.introduced.pdf",
+          "sha256": "81dc267e645259203a221d2084e59705cd92fe59a4fb7c17f9061f5aefa95c15"
+        }
+      }
+    },
+    {
+      "id": "5774977d296293a88b938fa168ba91f4be94e6f8c436966a91fec0b38e74e2a9",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/24info/BTS_Web/Bill.aspx?SessionType=R&BillID=50",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-1034-2024",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-1034-2024 (LegiScan sponsor list): SB1034 (2024 Regular Session): Modifies provisions relating to firearms.",
+      "subjects": [
+        "firearm possession and transfers barred for No Fly List names",
+        "firearm ban for members of terrorism-engaged groups"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1034-2024.introduced.pdf",
+          "sha256": "6aa20769ea2a64247771d02030495a9d844bb81a816a063aa64071774aeb2614"
+        }
+      }
+    },
+    {
+      "id": "176602a3d1e1637a06f2e966e0a97702772a384f2e510041471056c92f050857",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/22info/BTS_Web/Bill.aspx?SessionType=R&BillID=71259727",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-894-2022",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-894-2022 (LegiScan sponsor list): SB894 (2022 Regular Session): Modifies provisions relating to the unlawful possession of firearms.",
+      "subjects": [
+        "firearm ban for people under full protective orders",
+        "domestic-violence misdemeanants barred from possessing firearms",
+        "convictions and orders reported to NICS"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-894-2022.introduced.pdf",
+          "sha256": "86ab3bad998a58f6be7942bd519b867d3277218c63a431c1d138332279a247ca"
+        }
+      }
+    },
+    {
+      "id": "87bda3c7b9614403bcd59118c24a5a56603b9610eaa299948d9ac7545d25e72d",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/22info/BTS_Web/Bill.aspx?SessionType=R&BillID=71259729",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-895-2022",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-895-2022 (LegiScan sponsor list): SB895 (2022 Regular Session): Modifies provisions relating the offenses of unlawful transfer of weapons and the unlawful possession of firearms.",
+      "subjects": [
+        "firearm transfer and possession barred for No Fly List names",
+        "firearm bar for members of terrorism-engaged groups"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-895-2022.introduced.pdf",
+          "sha256": "ce9fbe7eb5150bf48e9ab7fdf7ccaf763f489a4f75b375b138ffd7e5424f5b81"
+        }
+      }
+    },
+    {
+      "id": "775be0a9c91f1b1262c1c06cd39d544cd832e974d6273b6a0280917145b132f9",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/newsDetails?id=132",
+      "date": "2022-10-28",
+      "date_precision": "day",
+      "passage": "“Right now, Missouri is wrestling with a gut wrenching, but simple truth: If Missouri had a Red Flag Law, a child and a teacher would still be alive,” Sen. Beck said. “The need for a Red Flag Law in Missouri has never been clearer. I am calling on legislators who previously opposed this legislation to search their hearts and change their minds before any more children are killed in our state.”",
+      "note": "Official Senate release issued after a school shooting: Beck says he will file a red flag bill again for the 2023 session. The release says the bill would let courts issue an extreme risk order requiring surrender of firearms, and that he filed similar bills in 2021 and 2022.",
+      "subjects": [
+        "red-flag or extreme-risk orders",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.873Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -141,6 +383,36 @@
       "found": 3,
       "at": "2026-11-04T14:14:55.220Z",
       "by": "identity-mo-2026-11-04b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red-flag or extreme-risk orders",
+        "limits on who may have a gun",
+        "carry permits and permitless carry",
+        "bans on assault-style guns or large magazines",
+        "background checks",
+        "general statements on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Missouri Senate member page https://senate.mo.gov/beck: no gun wording on the page",
+        "Missouri Senate media archive https://senate.mo.gov/Senators/MediaArchive/1: no gun items found by text search",
+        "Missouri Senate news release 2022-10-28 https://www.senate.mo.gov/Media/newsDetails?id=132: red flag statement, saved",
+        "Missouri Senate video page https://www.senate.mo.gov/Media/NewsDetails?id=2128: SB 865 committee presentation, page does not say it concerns guns, nothing saved",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: https://ballotpedia.org/Doug_Beck (403)",
+        "blocked: https://missouriindependent.com/2023/02/23/red-flag-gun-laws-targeted-by-bill-pushed-missouri-republican-legislator/ (403)",
+        "St. Louis Public Radio 2025-02-11 firearm-restrictions story: fetched, no Beck words found on the page",
+        "News search on name plus gun words (2 searches): leads only, no further first-hand Beck words reachable",
+        "not reviewed: https://www.newstribune.com/news/2019/mar/27/Your-opinion-Expanding-concealed-carry-law-dangero/ (fetch returned no text naming Beck)",
+        "not reviewed: https://www.ontheissues.org (lead-only site, not fetched)",
+        "campaign site: none found"
+      ],
+      "found": 1,
+      "at": "2026-11-12T21:23:45.873Z",
+      "by": "source-collector"
     }
   ]
 }

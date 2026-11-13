@@ -22,6 +22,140 @@
         "fetched_at": "2026-10-28T20:33:45.717Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "ab2b6cbbf5ad2aa9f2c9e3c7ed2d3367bcce148eb8db4754bd5a93c703f8e9ce",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/73253",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1324-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #665",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #665, 2026-03-06: nay (tally 87–76); census gate: none.",
+      "subjects": [
+        "state ban on possessing a silencer repealed",
+        "silencer used in a crime still carries added penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1324-2025.comm-sub.pdf",
+          "sha256": "cac9c7cc0db7a3bfed34e302a4b693e66f6522544bcc39bdac7d05205d292d63"
+        }
+      }
+    },
+    {
+      "id": "196a71c281840d7da3a52d1809a7a73ce0ce57f806710150b5e3b559467cbca0",
+      "kind": "own-words",
+      "url": "https://www.sanchezforgeorgia.com/newsletter-2",
+      "date": "2025-01-24",
+      "date_precision": "day",
+      "passage": "As a longtime advocate for gun reform in our state, I was honored to be asked to co-sponsor this bill and help keep our communities safe from the threat of gun violence.",
+      "note": "Campaign newsletter; says he co-sponsored HB 2, the Safe Storage Tax Credit Act (tax credits for firearm safe storage devices), authored by another member.",
+      "subjects": [
+        "safe storage of guns",
+        "tax credit for gun safes",
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.008Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d95319e87fb0df08f1e9c694e51c71f8d99d59bd9c4e3a88104ca23b77d74d85",
+      "kind": "own-words",
+      "url": "https://www.sanchezforgeorgia.com/newsletter-2",
+      "date": "2025-01-24",
+      "date_precision": "day",
+      "passage": "I also signed on to HB 3 and 4, which require Universal Background Checks and a 3-day waiting period to purchase a gun respectively.",
+      "note": "Same newsletter; says he signed on to HB 3 (check every gun buyer) and HB 4 (3-day waiting period).",
+      "subjects": [
+        "check every gun buyer",
+        "waiting period"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.008Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "04ccc77b110d54715c08a8fc745021531774285d7c55c178d13c7e3b548dd114",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/72353",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1023-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #546",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "GA House, Passage: House Vote #546, 2026-02-24: nay (tally 151–11); census gate: near-unanimous.",
+      "subjects": [
+        "weapon detection required at school building entrances",
+        "takes effect January 1, 2028"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1023-2025.comm-sub.pdf",
+          "sha256": "79e90ebc48e656276b1cf2a56ef9e94e0cf0286d51d38dec17f5f451ff55443d"
+        }
+      }
+    },
+    {
+      "id": "e65c4ac42c532c4eaf8d48178b8b3f799e8a3117f6ecec6e9af5590fe1e1184f",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/70476",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-204-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #429",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "GA House, Passage: House Vote #429, 2025-04-04: nay (tally 99–74); census gate: multi-subject.",
+      "subjects": [
+        "local limits on gun storage and gun parts barred",
+        "lawful gun carriers may sue over local rules",
+        "state declares gun regulation a statewide matter"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-204-2025.enrolled.pdf",
+          "sha256": "f3383faa3b85b22922b268ff733c78969bf7745386e967a71e6a9f02136f1fc2"
+        }
+      }
     }
   ],
   "searches": [
@@ -50,6 +184,30 @@
       "found": 1,
       "at": "2026-10-28T20:33:45.717Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns",
+        "check every gun buyer",
+        "waiting period",
+        "red flag orders",
+        "carry a gun without a permit",
+        "safe storage",
+        "general statement on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site about page (nothing on the subject)",
+        "campaign newsletter dated 1/24/2025",
+        "web searches on name plus subject words",
+        "Ballotpedia (not fetched; search lead only)"
+      ],
+      "found": 2,
+      "at": "2026-11-12T01:42:02.008Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1,0 +1,50 @@
+{
+  "politician_id": "11b9a76e-e35b-4855-9acd-ef962d77024f",
+  "findings": [
+    {
+      "id": "90331eebf7d738602f3b4bb6a2befd824f944ef4c2e8a907990956067b1798e0",
+      "kind": "record",
+      "url": "https://www.predictionedge.com/elections/profile/nikki-porcher/",
+      "date": "2026",
+      "date_precision": "year",
+      "act": "other",
+      "motion": "Signed the 2026 Gun Safety Candidate Pledge",
+      "note": "Profile page says she signed the 2026 Gun Safety Candidate Pledge; the page's own passage reads: \"Nikki Porcher signed the 2026 Gun Safety Candidate Pledge\". Pledge text itself not opened; signing date not given. Candidate for Georgia Commissioner of Labor.",
+      "subjects": [
+        "gun safety pledge"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.143Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety pledge",
+        "public safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site: not found (https://www.nikkiporcher.com returned 404)",
+        "Prediction Edge profile",
+        "branch.vote profile (nothing on the subject)",
+        "The Story Exchange profile (nothing on the subject)",
+        "blocked: https://goodparty.org/candidate/nikki-porcher/georgia-labor-commission (429)",
+        "Ballotpedia (empty to fetch tool)",
+        "not reviewed: https://159secondswithnikkiporcher.buzzsprout.com/2561376/episodes/18384796-what-a-modern-department-of-labor-should-actually-do (podcast audio)",
+        "web searches on name plus gun subjects"
+      ],
+      "found": 1,
+      "at": "2026-11-12T01:42:02.143Z",
+      "by": "source-collector"
+    }
+  ]
+}

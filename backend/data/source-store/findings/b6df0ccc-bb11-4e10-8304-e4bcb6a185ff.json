@@ -1,0 +1,32 @@
+{
+  "politician_id": "b6df0ccc-bb11-4e10-8304-e4bcb6a185ff",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "member page on scstatehouse.gov (used only to identify the person)",
+        "House and Senate Journal searches: no remarks on the subject found",
+        "BallotReady profile (nothing on the subject)",
+        "ivoterguide.com guide: lists the person but prints no answers on the subject",
+        "candidate and campaign site search",
+        "web searches (voter ID, photo ID, proof of citizenship, noncitizen, questionnaire): nothing on the subject",
+        "blocked: Ballotpedia (refuses fetches)",
+        "blocked: https://picso101.sci.pitt.edu/CivicWatch/who/360709597?topic=20 (403)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:25:08.690Z",
+      "by": "sc-search-r2"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "politician_id": "5595cf84-1d51-4126-8c3a-acfdfd5730e9",
+  "findings": [
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 26270 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.825Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ea5a5a4f1e09b7bcfa4335790c642610f0a275b7f866bf77bbf81559174018d0",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0872&session=126&summary=B",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "SC-S-872-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, 2026-01-29_Introduced",
+      "note": "Listed as co sponsor of S0872 (126th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2026-01-29_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.825Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "https://www.scstatehouse.gov/member.php?code=1999431789 (member page confirms Senate District 36)",
+        "https://theitem.com/stories/4-candidates-vying-for-sc-senate-district-36-seat,415874 (candidate Q&A: nothing on the subject)",
+        "Senate Journal search: no remarks by this senator on the subject found",
+        "On the Record (0 meetings, extract-otr)",
+        "web search: name + voter ID / photo ID / citizenship / noncitizen / election integrity",
+        "web search: name + questionnaire / candidate survey / voter guide",
+        "blocked: https://ballotpedia.org (refuses fetches, not tried)",
+        "blocked: https://justfacts.votesmart.org (refuses fetches, not tried)",
+        "blocked: https://bluevoterguide.org (refuses fetches, not tried)",
+        "no result from a news outlet on the do-not-fetch list was opened"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:24:50.704Z",
+      "by": "sc-search-r2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 2,
+      "at": "2026-11-10T23:17:03.825Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
+}

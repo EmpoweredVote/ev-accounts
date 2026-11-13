@@ -1,0 +1,33 @@
+{
+  "politician_id": "8d5cb94a-4110-4e86-9f06-2c4f89bb7c71",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "gun rights and Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://markpulido.com/ (home, /assembly-1, /news): nothing on the subject",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia: fetched page came back empty, no gun content",
+        "news search on name plus gun words: nothing on the subject",
+        "https://www.loscerritosnews.net/2026/04/27/op-ed-a-familiar-name-with-a-long-record-mark-pulido-seeks-state-assembly-seat/ : nothing on the subject",
+        "https://bluevoterguide.org/CA/candidate_Mark_Pulido/746115 : nothing on the subject",
+        "blocked: https://crpa.org/wp-content/uploads/2026/04/2026-VOTING-GUIDEDraft-Assembly2.4.pdf (returned HTML, not the PDF)",
+        "scope: search results show him as a 67th Assembly District candidate for the 2026 general election; the source was a secondary news summary"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.529Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,6 +1,73 @@
 {
   "politician_id": "d468e390-4d5f-4337-a9e6-ba8c04f9e061",
-  "findings": [],
+  "findings": [
+    {
+      "id": "5b0054adc9fc64aecb9281166292d7afe95f49bc864e67fe2856e48515d3eb04",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/80158/race/30551/election/1455",
+      "date": "2026-11-03",
+      "date_precision": "unknown",
+      "passage": "I support individual freedom, limited government, prudency in spending, free markets without government interference or government subsidies, a strong national defense, our rights shall not be infringed, and the National Firearms Act of 1934 must be repealed.",
+      "note": "Her written statement on the voter-guide profile for the 2026 general election (Mesa Public Schools Governing Board race). The answer itself is undated; the date given is only the election date on the page. She calls for repeal of the National Firearms Act of 1934.",
+      "subjects": [
+        "repeal the National Firearms Act",
+        "rights shall not be infringed",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:18:39.893Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "be7f1f7dfe52aecb39e4aa12683a5418e1b3c9734db0b31545350db522b7ed64",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/80158/race/30551/election/1455",
+      "date": "2026-11-03",
+      "date_precision": "unknown",
+      "passage": "Your 2A rights should not end because you are at work. However, from listening to experts and law enforcement, the best method to not have a school shooting is have metal detectors (which I voted for and we have in my district).",
+      "note": "Her answer on the voter guide to the statement that licensed, trained faculty should be allowed to carry guns at school, to which she answered 'Strongly Agree'. She adds that she voted for metal detectors in her district. Answer undated; the date is the election date on the page.",
+      "subjects": [
+        "teachers carrying guns at school",
+        "Second Amendment",
+        "metal detectors in schools"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:18:39.893Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5fe3061b26607c9056ba119e8a26f224cdd1f735815457ced3c254b92dd85f3a",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/80158/race/11091/election/1243",
+      "date": "2024-11-05",
+      "date_precision": "unknown",
+      "passage": "Legal residents of the United States should be allowed to own any firearms and ammunition",
+      "note": "Her written answer on the voter-guide profile for the 2024 general election (Corporation Commissioner race) to 'What restrictions on gun ownership are needed to protect public safety?'. She also answered 'Yes' to 'Should teachers be allowed to carry guns at school?'. Answer undated; the date is the election date on the page. The text has no closing full stop on the page.",
+      "subjects": [
+        "limits on who may own a gun",
+        "teachers carrying guns at school",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:18:39.893Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -49,6 +116,33 @@
       "found": 0,
       "at": "2026-10-28T23:31:40.443Z",
       "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "guns",
+        "Second Amendment",
+        "National Firearms Act",
+        "carry on school grounds",
+        "limits on gun ownership"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Arizona Corporation Commission biography page (azcc.gov): says elected to the Commission in 2024 and serves as Vice Chair; also serves on the Mesa Public Schools Governing Board; nothing on the subject",
+        "azcc.gov Walden news page: nothing on the subject",
+        "campaign site electrachelwalden.com: nothing on the subject",
+        "iVoterGuide pages for her 2024 Corporation Commission primary and general races and her 2026 Mesa Public Schools Governing Board race (all one profile; saved below)",
+        "azvoterguide.com profile: nothing on the subject",
+        "12news article on her 2024 campaign: nothing on the subject",
+        "status note: sources conflict on whether she is on the 2026 ballot for the Commission (her own site says General Election November 3, 2026; iVoterGuide lists her on the 2026 ballot for the Mesa school board); she is a sitting commissioner either way",
+        "sponsor list: covered by LegiScan bulk check (she is a commissioner, not a legislator)",
+        "Ballotpedia: not reviewed (page returns empty to the fetch tool)",
+        "two news searches on name plus gun words: nothing found in her own words"
+      ],
+      "found": 3,
+      "at": "2026-11-11T04:18:39.893Z",
+      "by": "source-collector"
     }
   ]
 }

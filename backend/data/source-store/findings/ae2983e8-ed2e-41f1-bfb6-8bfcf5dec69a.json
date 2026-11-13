@@ -1,0 +1,35 @@
+{
+  "politician_id": "ae2983e8-ed2e-41f1-bfb6-8bfcf5dec69a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum ages",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment or gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name matches)",
+        "campaign site home, about, why-running, press and endorsements pages: nothing on the subject; the /issues page returned 404",
+        "campaign press list: an opinion piece on public safety and government surveillance (https://www.picketfencemedia.com/sanclementetimes/soapbox/public-safety-shouldn-t-mean-giving-up-local-control/article_47e8937a-6aa6-40f4-a3c3-e30d9a8ba50c.html) read in full, nothing on guns; the other press items are on homelessness and his campaign launch",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia: blocked: https://ballotpedia.org/Sergio_Farias (HTTP 202, empty page)",
+        "news search on name plus gun, firearm and Second Amendment words: nothing by or quoting him; a 2011-era local news story on a park gun ban predates his 2016 council start and does not name him, so not used",
+        "news search on name plus the Assembly District 74 race and public safety: no gun statement or questionnaire found",
+        "identity and ballot status: campaign site and search results show him as a San Juan Capistrano councilmember running for Assembly District 74; a party endorsement list for the general election names him; the Secretary of State primary results page showed him advancing (fetched only as a search result, not by me)",
+        "not reviewed: https://www.cft.org/pod/cft-endorsements-0",
+        "not reviewed: Instagram account linked from the campaign site"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.454Z",
+      "by": "source-collector"
+    }
+  ]
+}

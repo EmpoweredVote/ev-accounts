@@ -1,0 +1,66 @@
+{
+  "id": "AZ-HB-2221-2024",
+  "scope": "state:az",
+  "title": "HB2221 (Fifty-sixth Legislature - Second Regular Session (2024)): Firearm purchases; waiting period; offense",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/80054",
+    "https://www.azleg.gov/legtext/56leg/2r/bills/hb2221p.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jennifer Longdon",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Lorena Austin",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e2bd3486-1fcf-4726-8df8-564ad8ef2b62"
+    },
+    {
+      "name": "Quanta Crews",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1482a2bc-75d8-4aee-865c-53378c415210"
+    },
+    {
+      "name": "Nancy Gutierrez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ce872623-f6bd-4e90-9eba-239ed00c7491"
+    },
+    {
+      "name": "Analise Ortiz",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8"
+    },
+    {
+      "name": "Jennifer Pawlik",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+    "fetched_at": "2026-11-11T03:51:26.779713Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2221-2024.introduced.html",
+      "sha256": "9609c77ab7212a50571c99f026b8b12e8f608151cff0b19e4fbfc249444a4be9"
+    }
+  },
+  "operative_text": "Sec. 1 (adding A.R.S. 13-3123): {+A. IT IS UNLAWFUL FOR A RETAILER TO DELIVER A FIREARM BEFORE THE EXPIRATION OF A MANDATORY WAITING PERIOD.+}\nSec. 1 (adding A.R.S. 13-3123): {+C. A VIOLATION OF THIS SECTION IS A CLASS 6 FELONY.+}\nSec. 1 (adding A.R.S. 13-3123): {+1. \"MANDATORY WAITING PERIOD\" MEANS THREE DAYS AFTER THE PURCHASE OF A FIREARM, EXCLUDING WEEKENDS AND LEGAL HOLIDAYS.+}\nSec. 1 (adding A.R.S. 13-3123): {+B. THIS SECTION DOES NOT APPLY TO LAW ENFORCEMENT AUTHORITIES OR LICENSED PRIVATE SECURITY PERSONNEL WHO REQUIRE FIREARMS FOR USE IN THE COURSE AND SCOPE OF EMPLOYMENT.+}"
+}

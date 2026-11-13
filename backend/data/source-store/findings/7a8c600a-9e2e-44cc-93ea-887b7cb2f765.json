@@ -78,7 +78,165 @@
         "fetched_at": "2026-10-21T01:52:20.308Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "e8d097d5960ae44d493291c9dfe7c70077ccd13933ba466bdefd1b1a2c94df46",
+      "kind": "own-words",
+      "url": "https://jenniferhensondecker.com",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "The absentee portal must verify identity, while drop boxes and ballot handling are subject to monitoring and custody requirements.",
+      "note": "Campaign-site summary of her 2021 HB 574 (page carries no date; it lists a 2026 bill, so it was written in 2026 or later). Says the mail-ballot portal must check the voter's identity.",
+      "subjects": [
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:42:07.828Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b486652444a38a8d5578150e0fff16814860c5ac78d61cf8e98ab90a1bf7895f",
+      "kind": "own-words",
+      "url": "https://jenniferhensondecker.com",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "Paper ballots, restrictions on internet-connected voting machines, photo identification, post-election audits, voter-roll maintenance, anti-harvesting measures, early voting, and absentee-ballot procedures.",
+      "note": "Campaign-site list under the heading 'Election Integrity' in 'Policy Priorities'; names photo identification among the subjects that define her record. Page carries no date.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:42:07.828Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d46ecb91a31ee5cd1e1e87159cd4301382bc37721ea5bb099f789780020ffed",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 22054 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.604Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 22054 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.604Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd4f0553eb6ef608e5f4f0880dfe9d952201740968402fd0ab748856330a3352",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "yea",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 22054 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.604Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship",
+        "noncitizen voting",
+        "mail and absentee ballot identity checks",
+        "voter-roll maintenance",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr run by id and by name)",
+        "campaign site https://jenniferhensondecker.com (read the home page, which carries the legislative record and priorities)",
+        "legislature's bill page https://apps.legislature.ky.gov/RECORD/25rs/HB684.html (a record only, not saved: sponsorships are linked separately)",
+        "https://apps.legislature.ky.gov/recorddocuments/bill/24RS/HB580/HFA1.pdf (PDF text unreadable by the fetch tool; not reviewed)",
+        "https://web.sos.ky.gov/CandidateFilings/Default.aspx?cand=11521 (filed 1/6/2026 for State Representative 58th; confirms she is on the 2026 ballot track; one aggregator says withdrawn, another says unopposed and moving to the general election; the task brief says she won on 2026-11-03)",
+        "https://ivoterguide.com/race/31222/election/1461 (2026 general listing; shows only a rating and a description, no questionnaire answers on the subject)",
+        "https://www.ballotready.org/people/jennifer-henson-decker (nothing on the subject)",
+        "https://branch.vote/races/2026-kentucky-primary-election-ky-state-state-representative-ky-state-house-58-r/candidates/jennifer-decker (site's own summaries only, nothing on the subject)",
+        "https://linknky.com/tag/jennifer-decker/ (headlines only, nothing on the subject)",
+        "https://www.weku.org/politics/2021-02-11/ky-lawmakers-discuss-mystery-election-bill-supported-by-rand-paul (2021 quote saved)",
+        "https://commonwealthpolicycenter.org/h58 (404)",
+        "a Messenger-Inquirer story reprinted on Yahoo (https://www.yahoo.com/news/election-bills-pass-senate-committee-035900259.html) was opened by mistake before its author was known; it is a refused outlet's story and nothing from it is saved",
+        "blocked: https://ballotpedia.org (refuses our fetches, not tried)",
+        "blocked: https://bluevoterguide.org (refuses our fetches, not tried)",
+        "blocked: https://justfacts.votesmart.org (refuses our fetches, not tried)",
+        "web searches run: 5 (name + voter ID; name + election integrity site; name + photo ID / proof of citizenship / noncitizen; name + questionnaire / voter guide; name + SB 2 / voter identification / HB 684)"
+      ],
+      "found": 2,
+      "at": "2026-11-11T18:42:07.828Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 3,
+      "at": "2026-11-11T21:12:46.604Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
 }

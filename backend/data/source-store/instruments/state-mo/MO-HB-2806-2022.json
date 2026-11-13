@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-2806-2022",
+  "scope": "state:mo",
+  "title": "HB2806 (2022 Regular Session): Modifies the offense of unlawful use of weapons by exempting commissioned school officers who carry a firearm on school property from the offense",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB2806&year=2022&code=R",
+    "https://www.house.mo.gov/billtracking/bills221/hlrbillspdf/5518H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bishop Davidson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1d928e37-3e42-45e1-9f99-213ed73d58d2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2806-2022.introduced.pdf",
+      "sha256": "08cd8fc10535bc0bd84c46f4ff90699ba3201465424acef15362efcf11c974c6"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): 1. (10) Carries a firearm, whether loaded or unloaded, or any other weapon readily capable of lethal use into any school, onto any school bus, or onto the premises of any function or activity sponsored or sanctioned by school officials or the district school board;\nSection 571.030 (RSMo): 7. (1) Subdivision (10) of subsection 1 of this section shall not apply to a person who is a school officer commissioned by the district school board under section 162.215 or who is a school protection officer, as described under section 160.665."
+}

@@ -1,0 +1,31 @@
+{
+  "politician_id": "64f80fdd-c79f-4384-9e6c-9b94cef2b847",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general statement on gun rights or gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope confirmed: BallotReady lists her as a 2026 general-election candidate for Arizona Corporation Commissioner (https://www.ballotready.org/people/clara-pratte), nothing on the subject",
+        "iVoterGuide https://ivoterguide.com/candidate/95850/race/30437/election/1455: gun question shown as not answered (its summary line about gun control is an automated inference, not her words, so not saved)",
+        "local TV interview https://www.kold.com/2026/07/17/tucson-now-clara-prattes-plan-arizona-corporation-commission/: nothing on the subject",
+        "Arizona Citizens Defense League recommended-candidates page https://azcdl.org/azcdlpacs-recommended-candidates-page/: her name does not appear",
+        "not reviewed: https://www.claraforaz.com/ (site is built with scripts and returned no readable page text; issues and about subpages return 404)",
+        "Ballotpedia not fetched (returns empty pages)",
+        "sponsor list: covered by LegiScan bulk check (not a sitting legislator; the office regulates utilities)",
+        "2 web searches run, none found any gun statement by her"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:14:56.669Z",
+      "by": "source-collector"
+    }
+  ]
+}

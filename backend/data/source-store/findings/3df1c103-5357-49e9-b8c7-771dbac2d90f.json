@@ -1,0 +1,33 @@
+{
+  "politician_id": "3df1c103-5357-49e9-b8c7-771dbac2d90f",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general statement on gun rights or gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope confirmed: BallotReady lists him as a candidate for Arizona Mine Inspector in the 2026 general election (https://www.ballotready.org/people/brian-matlock-5220c310-7ee4-4553-8f0a-d67defbce32b), nothing on the subject",
+        "iVoterGuide https://ivoterguide.com/candidate/95851/race/30435/election/1455: gun question shown as not answered",
+        "local TV interview https://www.kold.com/2026/09/29/tucson-now-midterms-brian-matlocks-plan-az-state-mine-inspector/: nothing on the subject",
+        "state voter education guide https://www.azcleanelections.gov/arizona-elections/voter-education-guide/general-text-state-mine-inspector: page carries another candidate's statement only",
+        "Arizona Citizens Defense League recommended-candidates page https://azcdl.org/azcdlpacs-recommended-candidates-page/: his name does not appear",
+        "blocked: https://goodparty.org/candidate/brian-matlock/arizona-mine-inspector (429)",
+        "blocked: https://ballotpedia.org/Brian_Matlock_(Arizona) (empty page)",
+        "campaign site: no personal URL found; not reviewed",
+        "sponsor list: covered by LegiScan bulk check (not a sitting legislator; office is a mine inspector with no gun authority)",
+        "2 web searches run, none found any gun statement"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:13:43.724Z",
+      "by": "source-collector"
+    }
+  ]
+}

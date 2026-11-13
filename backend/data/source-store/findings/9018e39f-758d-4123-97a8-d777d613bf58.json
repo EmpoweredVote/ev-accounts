@@ -25,7 +25,90 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "0eedbbf3d10cf186c01e4d955a88aef5abd5c648ad289520a58d56f7610c2f86",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/65987/race/16324/election/1175",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification.",
+      "note": "Questionnaire statement under ELECTIONS AND VOTING on the candidate's voter-guide profile for the 2024-06-11 primary (SC State Rep., Dist. 40); recorded response: 'Strongly Disagree'. Exact response date not printed.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID required to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:31:41.599Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9dd0ee89ef8fb9c67f15a50957cb3e8a79add9496d84b8f019ce8ee30b63c4b9",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4295&session=126&summary=B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "SC-H-4295-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, 2025-04-03_Introduced",
+      "note": "Listed as co sponsor of H4295 (126th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2025-04-03_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.824Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "election integrity",
+        "absentee ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "iVoterGuide profile, 2024 primary (SC House District 40)",
+        "iVoterGuide profile, 2026 primary (SC House District 40): the photo-identification statement is marked 'Did not answer', so nothing saved from it",
+        "official member page (District 40, Newberry; seat confirmed via search; used only to identify)",
+        "web searches: voter ID/photo ID/election integrity; ivoterguide; newsletter/forum/questionnaire; noncitizen/citizenship/voter rolls (no statements of his found beyond the voter-guide profile)",
+        "not reviewed: a 2022 runoff news story naming his election-integrity priorities (hosted by a publisher on the do-not-fetch list, so not opened)",
+        "blocked: Ballotpedia (listed as refused, not fetched)",
+        "not reviewed: sponsorship and vote records (linked separately)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T21:31:41.599Z",
+      "by": "sc-search-r3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T23:17:03.824Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

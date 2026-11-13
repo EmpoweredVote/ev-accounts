@@ -1,0 +1,24 @@
+{
+  "id": "KY-HB-258-2017",
+  "scope": "state:ky",
+  "title": "HB 258 (2017 Regular Session): AN ACT relating to elections.",
+  "urls": [
+    "http://www.lrc.ky.gov/record/17RS/HB258.htm"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 4, KRS 117.227\n(quote) Election officers shall confirm the identity of each voter by personal acquaintance or by one (1) of the following documents:[a document, such as] (1) A motor vehicle operator's license;[,] (2) An instruction permit for a motor vehicle or motorcycle; (3) An intermediate license to operate a motor vehicle; (4) A Social Security card;[,] (5) Any identification card that has been issued by a city or[the] county government\n(section) Sec. 4, KRS 117.227 items (5)-(9)\n(quote) (5) Any identification card that has been issued by a city or[the] county government that includes a picture of the voter and which has been approved in writing by the State Board of Elections;[, any identification card with picture and signature,] (6) Any United States government-issued identification card;[,] (7) Any Kentucky state government-issued identification card that includes a picture of the voter;[with picture, or credit card.] (8) Any public or private college- or university-issued identification card that includes a picture of the voter; or (9) Any public or private high school-issued identification card that includes a picture of the voter.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 1 (KRS 117.075): disabled, ill or aged voters may vote by mail-in or in-person absentee ballot; application deadline moves from 7 to 12 days before election.\n(other) Sec. 2 (KRS 117.085): mail-in absentee application rules; legal guardian may request an application; 12-day deadlines; in-person absentee voting open to voters with disabilities; uniformed-service in-person request window 7 to 12 days.\n(other) Sec. 3 (KRS 117.077): legal guardian may request and deliver a mail-in absentee ballot application in a medical emergency.\n(other) version: bill (only saved version): carries ID text in slot a only (KRS 117.227, Sec. 4). Absentee sections (Sec. 1-3) were read for ID or citizenship words and contain none (slot c: not stated).\n(other) note: Status 1; last action 2017-03-01 \"posted for passage in the Regular Orders of the Day\"; no later action, no roll call, no enactment. Floor amendments (1), (2) and (3) were filed 2017-02-27/28 and are not saved; the saved text may be the committee-reported version, and what the amendments did is not available. Bracketed words are deleted: \"[a document, such as]\", \"[,]\", \"[the]\", \"[, any identification card with picture and signature,]\", \"[with picture, or credit card.]\". So the bill turns the illustrative list into a closed list of nine items (one of which must be shown unless the officer knows the voter personally), removes the credit card, removes the generic \"identification card with picture and signature\"; the instruction permit, intermediate licence, city-issued card, college- or university-issued photo card and high-school-issued photo card are not bracketed, so they are either new or reprinted (the marks are lost; the 2016 text of KRS 117.227, saved in SB 169, lacks them, which suggests they are new). Photo is required only for items 5, 7, 8 and 9; a Social Security card, licence, permit or US government-issued card needs none in the text. Personal acquaintance remains an alternative. The bill's own description says \"photo forms of identification\" but the text does not require a photo for every item.",
+  "sponsors": [
+    {
+      "name": "James Tipton",
+      "role": "prime",
+      "version": "bill"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 KY bill texts and roll calls (Sonnet readers R1-R4 + version pass; apps.legislature.ky.gov vote histories, voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "curl"
+  }
+}

@@ -22,6 +22,195 @@
         "fetched_at": "2026-10-28T20:51:14.416Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "f5910d0b75aaddcec1bed0087ec95f3925870d0e49399284f13a4db010530053",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/66265",
+      "date": "2024-02-27",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1018-2023",
+      "act": "nay",
+      "motion": "Passage: House Vote #581",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #581, 2024-02-27: nay (tally 106–60); census gate: none.",
+      "subjects": [
+        "banks barred from singling out firearms retailers by payment code",
+        "firearms registries by any person or government barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1018-2023.enrolled.pdf",
+          "sha256": "3073f18aecfd54c9c28d17feb9b9ef6f65e37967f1c92fad309d433378719fec"
+        }
+      }
+    },
+    {
+      "id": "ab2b6cbbf5ad2aa9f2c9e3c7ed2d3367bcce148eb8db4754bd5a93c703f8e9ce",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/73253",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1324-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #665",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #665, 2026-03-06: nay (tally 87–76); census gate: none.",
+      "subjects": [
+        "state ban on possessing a silencer repealed",
+        "silencer used in a crime still carries added penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1324-2025.comm-sub.pdf",
+          "sha256": "cac9c7cc0db7a3bfed34e302a4b693e66f6522544bcc39bdac7d05205d292d63"
+        }
+      }
+    },
+    {
+      "id": "52bd8ca8520c6d8eaf0271ba974b46fd7d1b4cc5dba4edb424cdb64720cea732",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/69283",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-3-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-3-2025 (LegiScan sponsor list): HB3 (2025-2026 Regular Session): Brady Law Regulations; require universal background checks in all manner of firearm transfers.",
+      "subjects": [
+        "background check required on all firearm transfers",
+        "dealer must run the check for private sales",
+        "first offense a misdemeanor, repeat offense a felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-3-2025.introduced.pdf",
+          "sha256": "537b7d28dc733b24ab2287744ac6f1aceaacb6a091a192c2d3a006ede5fb1362"
+        }
+      }
+    },
+    {
+      "id": "946ba3dea8d57ff971f46035e78ef7251c61ff4c49c86409879c39c4d17cb6aa",
+      "kind": "own-words",
+      "url": "https://house-press.com/?p=12129",
+      "date": "2023-08-30",
+      "date_precision": "day",
+      "passage": "We will continue to call for a renewed focus on common-sense gun legislation that ensures the safety of all citizens.",
+      "note": "Statement issued in her name by the House Media Services Office after a shooting in Jacksonville, Florida. She calls for renewed focus on what she terms common-sense gun legislation; no specific bill or measure is named.",
+      "subjects": [
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:54:11.309Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "56bbbbb71041173ee36142f6e4ffcf3296badfa46d1f717e5448ea0372bd9638",
+      "kind": "own-words",
+      "url": "https://tanyaforgeorgia.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Target and dismantle violent criminal networks, human trafficking rings and those who traffic illegal guns and deadly drugs like fentanyl into our state.",
+      "note": "Issues page of her 2026 campaign for attorney general, public safety plan item (page is undated). It commits the office to going after people who traffic illegal guns; it names no gun law.",
+      "subjects": [
+        "gun trafficking"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:54:11.309Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "951cd305c1cb08a73a6a49f61e8b2ba3447b1f7983a04fca49c30409c562a452",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/72353",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1023-2025",
+      "act": "yea",
+      "motion": "Passage: House Vote #546",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "GA House, Passage: House Vote #546, 2026-02-24: yea (tally 151–11); census gate: near-unanimous.",
+      "subjects": [
+        "weapon detection required at school building entrances",
+        "takes effect January 1, 2028"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1023-2025.comm-sub.pdf",
+          "sha256": "79e90ebc48e656276b1cf2a56ef9e94e0cf0286d51d38dec17f5f451ff55443d"
+        }
+      }
+    },
+    {
+      "id": "e65c4ac42c532c4eaf8d48178b8b3f799e8a3117f6ecec6e9af5590fe1e1184f",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/70476",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-204-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #429",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "GA House, Passage: House Vote #429, 2025-04-04: nay (tally 99–74); census gate: multi-subject.",
+      "subjects": [
+        "local limits on gun storage and gun parts barred",
+        "lawful gun carriers may sue over local rules",
+        "state declares gun regulation a statewide matter"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-204-2025.enrolled.pdf",
+          "sha256": "f3383faa3b85b22922b268ff733c78969bf7745386e967a71e6a9f02136f1fc2"
+        }
+      }
     }
   ],
   "searches": [
@@ -66,6 +255,80 @@
       "found": 1,
       "at": "2026-10-28T20:51:14.416Z",
       "by": "identity-ga-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "safe storage",
+        "gun rights and the Second Amendment",
+        "gun sales tax holiday",
+        "gun trafficking"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://tanyaforgeorgia.com/issues (fetched; one gun-related line, saved)",
+        "House press page https://house-press.com/?p=12129 (statement, saved)",
+        "advocacy group endorsement page https://giffords.org/candidates/tanya-miller/ fetched: text is the group's words about her, not hers, so not saved",
+        "blocked: https://www.aol.com/rep-tanya-miller-why-easier-100626893.html (404; her op-ed on gun storage and minors, not readable)",
+        "blocked: https://theatlantavoice.com/?p=286391 (403; same op-ed)",
+        "blocked: https://app.legiplex.com/profile/tanya-miller-1822/legislation (not fetched, tracker only)",
+        "TV report https://www.fox5atlanta.com/news/georgia-ag-candidates-tanya-miller-brian-strickland: paraphrase by the outlet, no direct gun quote",
+        "Ballotpedia: not reviewed (returns empty to the fetch tool)",
+        "web searches run: 5 (gun violence; AG candidate safe storage background checks; op-ed title; Savannah Morning News op-ed; caucus chair Apalachee statement)",
+        "sponsor list: covered by LegiScan bulk check"
+      ],
+      "found": 2,
+      "at": "2026-11-12T01:42:02.258Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "safe storage",
+        "gun rights and the Second Amendment",
+        "gun sales tax holiday",
+        "gun trafficking",
+        "ban on minors owning AR-style rifles",
+        "extreme risk protection orders",
+        "ghost guns",
+        "lawsuits against gun dealers"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://tanyaforgeorgia.com/issues (fetched; one gun-related line, saved)",
+        "House press page https://house-press.com/?p=12129 (statement, saved)",
+        "advocacy group endorsement page https://giffords.org/candidates/tanya-miller/ fetched: text is the group's words about her, not hers, so not saved",
+        "blocked: https://www.aol.com/rep-tanya-miller-why-easier-100626893.html (404; her op-ed on gun storage and minors, not readable)",
+        "blocked: https://theatlantavoice.com/?p=286391 (403; same op-ed)",
+        "blocked: https://app.legiplex.com/profile/tanya-miller-1822/legislation (not fetched, tracker only)",
+        "TV report https://www.fox5atlanta.com/news/georgia-ag-candidates-tanya-miller-brian-strickland: paraphrase by the outlet, no direct gun quote",
+        "Ballotpedia: not reviewed (returns empty to the fetch tool)",
+        "sponsor list: covered by LegiScan bulk check",
+        "re-search r-ga-4: web searches run: 7 new (op-ed title; op-ed teen-vs-vote; op-ed red flag/background check; AG gun safety plan; caucus chair statements; caucus press conference extreme risk/storage; op-ed syndication and floor debate)",
+        "blocked: https://theatlantavoice.com/?p=286391 (403 again with a browser user-agent curl; op-ed still unread)",
+        "blocked: https://www.aol.com/rep-tanya-miller-why-easier-100626893.html (404 again with a browser user-agent curl; the Yahoo copy returned 429)",
+        "blocked: https://web.archive.org/web/2024/https://theatlantavoice.com/?p=286391 and the same for the AOL address (curl returned no connection; the fetch tool refuses the host)",
+        "other copies of the op-ed (Savannah Morning News original, Yahoo, MSN): not reachable; search returned only the AOL and Atlanta Voice addresses",
+        "blocked: https://www.house.ga.gov and https://www.senate.ga.gov press-release listings (curl returned no connection); https://www.legis.ga.gov answered but needs JavaScript",
+        "House Media Services site https://house-press.com/representative/Tanya-Miller (listing, pages 1-2) and its search for gun: only the 2023-08-30 statement already saved",
+        "campaign site pages https://www.tanyaforgeorgia.com/issues, /about, /what-does-the-attorney-general-do, /news/news-1: only the trafficking line already saved; the what-does-the-attorney-general-do page lists gang violence and illegal gun trafficking among threats (no gun law named)",
+        "Giffords candidate page re-read: group's words, not hers, not saved",
+        "news pages checked, no quotation from her on the subject: gpb.org 2024-09-09, thecurrentga.org 2024-09-07, spotlightsouthcobbnews.com, atlantanewsfirst.com 2022-06-03, fox5atlanta.com Capitol gun reform, idahonews.com gun-safety piece, newschannel9.com Senate storage study, bearingarms.com 2025-02-05 (not about her)",
+        "Capital B profile https://atlanta.capitalbnews.org/tanya-miller-georgia-attorney-general/: no gun passage"
+      ],
+      "found": 2,
+      "at": "2026-11-12T01:54:11.309Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1,0 +1,69 @@
+{
+  "id": "TN-SB-2692-2011",
+  "scope": "state:tn",
+  "title": "SB 2692 (107th General Assembly): As introduced, allows any registered voter in Tennessee to vote by absentee ballot; revises other voting provisions. - Amends TCA Title 2, Chapter 6 and Title 2, Chapter 3.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB2692/2011",
+    "https://legiscan.com/TN/rollcall/SB2692/id/179212"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) TCA 2-6-202(a)(2)(C) (second item lettered C), as rewritten by Section 2\n(quote) The request serves as an application for a ballot if the request contains the following information: (A) The name of the registered voter; (B) The address of the voter's residence; (C) The voter's date of birth; (C) The voter's social security number; (D) The address to mail the ballot; and (E) The election in which the voter wishes to participate.\n(section) TCA 2-6-202(a)(2), Section 2\n(quote) A voter may make the request or submit an application to vote by mail facsimile transmission or e-mail with an attached document that includes a scanned signature.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec 1: rewrites 2-6-201 so any registered voter may vote absentee by mail by application, subject to 2-2-115(b)(7); keeps the permanent absentee register for people unable to appear because of illness or disability.\n(other) Sec 2: rewrites 2-6-202(a): request 90 to 7 days before the election, by mail, fax or e-mail with scanned signature.\n(other) Sec 3: 2-6-401(c) deletes the words 'or that category of persons otherwise'.\n(other) Sec 4: 2-3-109(e)(2) deletes subdivision (B) (content not shown in the text).\n(other) Sec 5: 2-6-202 deletes subsection (f) (content not shown in the text).\n(other) Sec 6: effective July 1, 2012.\n(other) version: Draft (only version saved): reprints 2-6-202(a) in full; the social security number line is the only identifier item beyond name, address and date of birth, but the saved text cannot show whether that line is new or existing law. No in-person ID, remedy, or citizenship text.\n(other) note: Whole 2-6-202(a) is replaced by instruction 'deleting subsection (a) in its entirety and substituting', so no marks show what is new. Existing 2-6-202(a) text is not saved. Two items are lettered (C) in the Draft. House companion HB2709 (Turner M). Senate committee failed 3-6; no further action.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2012-03-27",
+      "body": "TN Senate",
+      "motion": "Senate committee, recommended for passage: failed 3-6 [version voted: Draft]",
+      "kind": "roll-call",
+      "yes": 3,
+      "no": 6,
+      "absent": 0,
+      "body_size": 9,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB2692/id/179212",
+      "members": [
+        {
+          "name": "Stacey Campfield",
+          "vote": "nay"
+        },
+        {
+          "name": "Ken Yager",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Ketron",
+          "vote": "nay"
+        },
+        {
+          "name": "Thelma Harper",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Faulk",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Norris",
+          "vote": "nay"
+        },
+        {
+          "name": "Joe Haynes",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Lowe Finney",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "_comment": "Reviewed pairs for check-duplicate-people.mjs. The gate fails on any pair NOT listed here. Set verdict to different_people (quiet for ever) or same_person (needs a merge migration) and add a note naming the source you checked. \"unreviewed\" is the backlog and should only shrink. split = the seated row holds nothing while the same-named unseated row holds the compass answers or the candidacies (voter-visible harm).",
-  "_updated": "2026-11-07",
+  "_updated": "2026-11-11",
   "pairs": {
     "006cec13-0c52-46b2-a509-703826a0f06b|04afc704-a4eb-42f7-bae4-dcacd6490e09": {
       "names": "Lawrence J Demoss ~ Lawrence Demoss",
@@ -161,15 +161,6 @@
     "2d6a4519-d5fe-4c11-9fca-00ee0b31cac6|9a83c931-0295-40a9-aaa3-95eb10e1c236": {
       "names": "Kevin Craig ~ Kevin Craig",
       "state": "mo",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": false,
-      "verdict": "unreviewed"
-    },
-    "2dbf3032-65b1-4898-813b-0f62dac0192e|a0ea7354-d1ff-49d2-a6c4-44a0a8099222": {
-      "names": "Romaine Quinn ~ Romaine Robert Quinn",
-      "state": "wi",
       "why": [
         "NAME_STATE"
       ],
@@ -468,6 +459,16 @@
       "split": true,
       "verdict": "different_people",
       "note": "DIFFERENT PEOPLE, checked 2026-10-20 (CC_0269). Bill Brown is the elected Sheriff-Coroner of Santa Barbara County. William Brown Jr. is a candidate for California State Senate District 12 (Central Valley) created from the SOS certified general-election list. Geometry: Santa Barbara County against SD-12 returns ST_Intersects = TRUE but an area share of 0.0% -- they touch along a boundary line and share no territory; control SD-19 returns false/0.0%. A sheriff of a county that lies wholly outside the district is not that district's senate candidate, and the suffix on the candidate's name points the same way. NOTE THE TRAP: the boolean said yes, the area said no -- read the area share, never ST_Intersects alone."
+    },
+    "cb43b926-69a8-49c6-90b8-9a8714b3b7fb|f902aef2-ce79-47d8-83ac-5b3a95e7b510": {
+      "names": "Matthew Gene Johnson ~ Matthew Johnson",
+      "state": "sc",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "different_people",
+      "note": "DIFFERENT PEOPLE, checked 2026-11-09 against both bodies (CC_0387). Matthew Gene Johnson is a sitting Soil and Water Conservation District Commissioner in Horry County, SOUTH CAROLINA (external_id -2745440). Matthew Johnson won Reno NEVADA City Council Ward 2 at the 2026-11-03 general election and is sworn in 2026-11-13 (City of Reno City Clerk candidate filing \"Matthew Johnson\"). Two states, two seats, both current; the middle names also differ. The pair is keyed state \"sc\" because the Reno row has no CURRENT seat to take a state from - his term is future-dated."
     },
     "ce8aef29-b9da-4e25-b7ea-d7a746de317b|d71c4160-9380-4788-88f1-4627b4abcb62": {
       "names": "Lawrence Kyle Clark ~ Jason Clark",

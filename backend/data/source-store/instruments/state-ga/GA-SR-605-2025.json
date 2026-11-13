@@ -1,0 +1,146 @@
+{
+  "id": "GA-SR-605-2025",
+  "scope": "state:ga",
+  "title": "SR605 (2025-2026 Regular Session): Pretti, Alex; condemn the killing of and protect the constitutional rights of peaceful assembly and right to keep and bear arms",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/72449",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/240462"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Josh McLaurin",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ce3bc454-d297-44f7-b145-601cb592d9c2"
+    },
+    {
+      "name": "Harold Jones",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "07f1594a-b9ac-409e-b074-fc65c9316c8e"
+    },
+    {
+      "name": "Kim Jackson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4a922565-16b3-4c1a-a654-7ef16a3316b6"
+    },
+    {
+      "name": "Derek Mallow",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "58745dbd-d1d8-4662-90b0-6bb56a84fcf4"
+    },
+    {
+      "name": "Ed Harbison",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ab37d478-2f5a-4545-8c80-281efb9ca9a2"
+    },
+    {
+      "name": "David Lucas",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6b522fd5-b059-4132-8702-ac6fd600efdf"
+    },
+    {
+      "name": "Freddie Sims",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Sonya Halpern",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5ae018ad-1a87-4f30-a9d2-63296f88a04c"
+    },
+    {
+      "name": "Jaha Howard",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ea9e7082-78f2-4c12-92a5-aa1e764d5503"
+    },
+    {
+      "name": "Nikki Merritt",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "46f32fee-0076-49db-a5cd-1526ef7316cb"
+    },
+    {
+      "name": "Nabilah Islam Parkes",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Emanuel Jones",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7b1648c9-2426-44ff-bb8f-3f66af0db31a"
+    },
+    {
+      "name": "Nan Orrock",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "95c803e4-4853-41aa-b9d6-b4c108e9ea52"
+    },
+    {
+      "name": "Sheikh Rahman",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a7ac9853-45dc-46fc-a604-9ec119a124db"
+    },
+    {
+      "name": "Elena Parent",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "83ffefbf-8cc7-4971-95df-9970188dd013"
+    },
+    {
+      "name": "RaShaun Kemp",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "91fbc0cb-1d87-4a5e-9b58-ddf462627b58"
+    },
+    {
+      "name": "Sally Harrell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "cd6e7cf0-87d8-4a0f-b3a9-3272eb69a77b"
+    },
+    {
+      "name": "Michael Rhett",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1295e8c6-a9a2-43aa-9eee-2113e3a21142"
+    },
+    {
+      "name": "Kenya Wicks",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3dab8c6b-e257-4528-b5e2-22b4b72df2ea"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "civil-rights: RESOLVED clauses — condemns a killing during a protest and commits to protect the right of peaceful assembly"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:46:27.022243Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SR-605-2025.introduced.pdf",
+      "sha256": "fc99754a68425d6ff2c64c88dbec9cd96d35d673d7ac7d98e30767f1452b49d6"
+    }
+  },
+  "operative_text": "RESOLVED (lines 49-51): NOW, THEREFORE, BE IT RESOLVED BY THE SENATE that the members of this body condemn the killing of Alex Pretti, and condemn the killing of any American citizen where the asserted justification is the lawful exercise of constitutional rights.\nRESOLVED (lines 55-57): BE IT FURTHER RESOLVED that the Senate calls upon all elected officials, regardless of party affiliation, to reject rhetoric that equates peaceful protest or lawful firearm possession with criminality or terrorism.\nRESOLVED (lines 58-62): BE IT FURTHER RESOLVED that the members of this body commit to working together to protect the constitutional rights of peaceful assembly and the right to keep and bear arms, as guaranteed under both state and federal law, from encroachment or abuse by federal immigration law enforcement agencies that have demonstrated a pattern of disregard for the civil liberties of American citizens."
+}

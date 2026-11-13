@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1437-2024",
+  "scope": "state:mo",
+  "title": "HB1437 (2024 Regular Session): Establishes \"Blair's Law\", which creates the offense of unlawful discharge of a firearm for discharging a firearm within or into the limits of a municipality with criminal negligence",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB1437&year=2024&code=R",
+    "https://documents.house.mo.gov/billtracking/bills241/hlrbillspdf/3342H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sherri Gallick",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "040c537c-dda3-42ca-9425-d25b01bd058f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1437-2024.introduced.pdf",
+      "sha256": "adbb7da14cb3ab23ccab5042a6beeff8ad37fd8998e78640d223505217eb6d85"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): (9) Discharges or shoots a firearm: (a) At or from a motor vehicle, as defined in section 301.010, unless discharged from a stationary vehicle as authorized under the Missouri wildlife code; (b) At any person; (c) At any other self-propelled vehicle excluded from the definition of motor vehicle under section 301.010; or (d) At any building or habitable structure, unless the person was lawfully acting in self-defense; or\nSection 571.031 (RSMo), new: 571.031. 1. This section shall be known and may be cited as \"Blair's Law\". 2. A person commits the offense of unlawful discharge of a firearm if, with criminal negligence, he or she discharges a firearm within or into the limits of any municipality. 3. This section shall not apply if the firearm is discharged: (1) As allowed by a defense of justification under chapter 563; (2) On a properly supervised shooting range; (3) To lawfully take wildlife during an open season established by the department of conservation. Nothing in this subdivision shall prevent a municipality from adopting an ordinance restricting the discharge of a firearm within one-quarter mile of an occupied structure; (4) For the control of nuisance wildlife as permitted by the department of conservation or the United States Fish and Wildlife Service; (5) By special permit of the chief of police of the municipality; (6) As required by an animal control officer in the performance of his or her duties; (7) Using blanks; (8) More than one mile from any occupied structure; (9) In self-defense or defense of another person against an animal attack if a reasonable person would believe that deadly physical force against the animal is immediately necessary and reasonable under the circumstances to protect oneself or the other person; or (10) By law enforcement personnel, as defined in section 590.1040, or a member of the United States Armed Forces if acting in an official capacity. 4. A person who commits the offense of unlawful discharge of a firearm shall be guilty of: (1) For a first offense, a class A misdemeanor; (2) For a second offense, a class E felony; and (3) For a third or subsequent offense, a class D felony."
+}

@@ -1,0 +1,90 @@
+{
+  "politician_id": "17a63642-5855-489f-8bd6-caae4a7ebbea",
+  "findings": [
+    {
+      "id": "5258a571d069b33e899023780314861e9e5ce0244989cd999557bc5edb8f3480",
+      "kind": "own-words",
+      "url": "https://www.fitsnews.com/2024/11/19/defeated-south-carolina-senator-files-election-protest/",
+      "date": "2024-11-19",
+      "date_precision": "day",
+      "passage": "“Over two weeks of early voting and Election Day, Gerald Malloy raised zero concerns about the voting process,” Chaplin said in a statement provided to FITSNews. “Now, former Senator Malloy is complaining because he lost. We must not tolerate election deniers who want to overturn the will of the people.",
+      "note": "Statement to FITSNews, quoted by the outlet, about a protest of his own 2024 Senate race result. It concerns election-result challenges, not ID or citizenship.",
+      "subjects": [
+        "election integrity in general",
+        "challenges to election results"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:24:48.846Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 26263 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.824Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member page https://www.scstatehouse.gov/member.php?code=346590868 (confirms Senator JD Chaplin, District 29)",
+        "campaign site https://votejdchaplin.com/key-issues (nothing on the subject)",
+        "Senate Journal 2026-05-26 and 2026-06-10 (search summary says his printed remarks concern moving the congressional election date and redistricting; not reviewed in full, off the subject of ID or citizenship)",
+        "FITSNews 2024-11-19 (one election-integrity statement saved)",
+        "podcast interview 2025-12-18 https://freedomsfenceline.podbean.com/e/in-studio-with-south-carolina-state-senator-jd-chaplin: not reviewed (audio)",
+        "6 web searches (voter ID, photo ID, citizenship/noncitizen, journal remarks, campaign site, interview outlets): no own words on ID or citizenship found",
+        "blocked: https://ballotpedia.org/J.D._Chaplin (listed as blocked per instructions, not fetched)",
+        "blocked: https://bluevoterguide.org (listed as blocked per instructions, not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T21:24:48.846Z",
+      "by": "sc-search-r2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T23:17:03.824Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
+}

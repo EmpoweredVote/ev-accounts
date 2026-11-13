@@ -221,8 +221,8 @@ async function createFederalPolitician(
   // Insert politician
   const polResult = await pool.query<{ id: string }>(
     `INSERT INTO essentials.politicians
-       (full_name, first_name, last_name, is_active, is_incumbent, source)
-     VALUES ($1, $2, $3, true, false, 'federal_2026_bulk_seed')
+       (full_name, first_name, last_name, is_active, source)
+     VALUES ($1, $2, $3, true, 'federal_2026_bulk_seed')
      RETURNING id`,
     [fullName, toTitleCase(firstName), toTitleCase(lastName)]
   );

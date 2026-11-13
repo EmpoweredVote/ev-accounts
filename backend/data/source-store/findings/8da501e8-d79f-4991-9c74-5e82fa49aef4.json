@@ -1,0 +1,54 @@
+{
+  "politician_id": "8da501e8-d79f-4991-9c74-5e82fa49aef4",
+  "findings": [
+    {
+      "id": "9bc72da8ddf12800af2e0ee0a4acd0beeb175dde21f53e8baf30d15ffffd86ba",
+      "kind": "record",
+      "url": "https://www.predictionedge.com/elections/profile/lydia-powell/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Her campaign materials otherwise emphasize education and do not publicly spell out a detailed gun policy platform.",
+      "act": "other",
+      "motion": "Signed 2026 gun safety candidate pledge",
+      "note": "Third-party profile reports she signed a 2026 gun safety candidate pledge to support evidence-based gun safety legislation in Georgia; the pledge text itself was not reached. Secondary source, flagged for checking.",
+      "subjects": [
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.103Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders",
+        "carry permits",
+        "safe storage",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status: won the 2026-11-03 general election for State School Superintendent (WTOC report, search result only); candidate not a legislator so no sponsor list",
+        "campaign site: not found (ActBlue page has no gun text)",
+        "candidate questionnaire https://ivoterguide.com/candidate/95095/race/32035/election/1470 (gun question marked did not answer)",
+        "Ballotpedia (empty to fetch tool)",
+        "blocked: https://bluevoterguide.org/endorser-org/Gun_Sense_Voter/GA/4895 (403)",
+        "not reviewed: debate and forum videos",
+        "web searches on name plus gun words"
+      ],
+      "found": 1,
+      "at": "2026-11-12T01:42:02.103Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -51,7 +51,163 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "3ec9e330bd9530d2f4ebf58f0be869ba86e787465f90b9cb268afbc084bd3318",
+      "kind": "own-words",
+      "url": "https://www.peoplefor.org/press-releases/sc-african-american-ministers-voter-id-decision-shows-continued-need-for-voting-rights-act",
+      "date": "2012-10-11",
+      "date_precision": "day",
+      "passage": "“Today’s decision shows the continued necessity of the Voting Rights Act,” said Rev. Terry Alexander, pastor of Wayside Chapel Baptist Church in Florence and member of the South Carolina House of Representatives. “Because of the VRA’s preclearance provisions, South Carolina had to reinterpret a law that would otherwise have disenfranchised many African Americans. We now urge the state of South Carolina to enforce this law in a way that lives up to its promises in court, ensuring that every South Carolinian, with or without photo ID, can cast a vote that counts. If even one person is disenfranchised because of this law, that will be one person too many.”",
+      "note": "Quoted in a People For the American Way press release the day after a federal court upheld the state photo ID law but delayed it past the 2012 election. He says the law as first written would have disenfranchised many African Americans, and asks the state to enforce it so voters with or without photo ID can cast a counted vote.",
+      "subjects": [
+        "voter ID at the polls",
+        "voters without photo ID",
+        "voting rights act preclearance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:36:04.193Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "63be19d25d52aa610596ef4b8aadb493d2324834fef229ac24abb6a0c39fa37c",
+      "kind": "own-words",
+      "url": "https://alexanderforsc.com/",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Every legally eligible citizen should be able to vote, stress free and without worry that more stringent voter ID laws are put into place.",
+      "note": "From the 'Protecting the right to vote' section of his campaign site: says eligible citizens should vote without worry that stricter voter ID laws will be put into place. Page undated.",
+      "subjects": [
+        "voter ID at the polls",
+        "stricter voter ID laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:36:04.193Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "089ee888b6e005e95f65d7b52c8678e72d8b5b12001480a9d5b0245d9883f7b0",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess118_2009-2010/hj10/20100615.htm",
+      "date": "2010-06-15",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3418-2009",
+      "act": "nay",
+      "motion": "House: adopt the Conference Report on H. 3418 (adopted)",
+      "note": "SC House roll call (adopt the Conference Report on H. 3418 (adopted), 69-47) on H3418 (118th General Assembly), official journal (printed as 'Alexander'); linked by LegiScan member id 2202 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "75bc19fff25d3ea6fc3cab77b359f4fa28efb804d24a1515fe53732df9b01c5a",
+      "kind": "own-words",
+      "url": "https://www.peoplefor.org/press-releases/sc-african-american-ministers-voter-id-decision-shows-continued-need-for-voting-rights-act",
+      "date": "2012-10-11",
+      "date_precision": "day",
+      "passage": "Because of the VRA’s preclearance provisions, South Carolina had to reinterpret a law that would otherwise have disenfranchised many African Americans. We now urge the state of South Carolina to enforce this law in a way that lives up to its promises in court, ensuring that every South Carolinian, with or without photo ID, can cast a vote that counts. If even one person is disenfranchised because of this law, that will be one person too many.",
+      "note": "Second quoted run of his words in a People For the American Way press release the day after a federal court upheld the state photo ID law but delayed it past the 2012 election; saved alone so the release's attribution sentence is not shown as his words. He asks the state to enforce the law so every voter, with or without photo ID, can cast a counted vote.",
+      "subjects": [
+        "voter ID at the polls",
+        "voters without photo ID",
+        "voting rights act preclearance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "alexander-split-2026-11-10",
+        "fetched_at": "2026-11-11T04:02:30.986Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and reasonable-impediment affidavit",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "voting rights and election law in general"
+      ],
+      "places": [
+        "confirmed in office: WMBF 2026-11-04 results page shows him winning House District 59 unopposed",
+        "On the Record (0 appearances)",
+        "campaign site alexanderforsc.com (one issue paragraph on voting)",
+        "People For the American Way press release (2012)",
+        "House Journal personal index search (2011-2016 index pages are bill lists, no remarks on the subject seen)",
+        "web searches: voter ID, photo ID, proof of citizenship, SAVE Act, noncitizen, absentee, questionnaire, voting rights statements",
+        "blocked: https://scnow.com/news/local/terry-alexander-make-black-lives-matter-by-voting/article_f256de7e-f6a8-11ea-a2f2-33bb34992e70.html (HTTP 429)",
+        "blocked: Ballotpedia (refuses fetches, not tried)",
+        "blocked: justfacts.votesmart.org (refuses fetches, not tried)",
+        "not reviewed: https://ivoterguide.com/voter-guide/state/sc (search lead only, no questionnaire answer from him seen)"
+      ],
+      "found": 2,
+      "at": "2026-11-10T21:36:04.193Z",
+      "by": "sc-search-r4"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T23:17:03.816Z",
+      "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID and reasonable-impediment affidavit",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "voting rights and election law in general"
+      ],
+      "places": [
+        "confirmed in office: WMBF 2026-11-04 results page shows him winning House District 59 unopposed",
+        "On the Record (0 appearances)",
+        "campaign site alexanderforsc.com (one issue paragraph on voting)",
+        "People For the American Way press release (2012)",
+        "House Journal personal index search (2011-2016 index pages are bill lists, no remarks on the subject seen)",
+        "web searches: voter ID, photo ID, proof of citizenship, SAVE Act, noncitizen, absentee, questionnaire, voting rights statements",
+        "blocked: https://scnow.com/news/local/terry-alexander-make-black-lives-matter-by-voting/article_f256de7e-f6a8-11ea-a2f2-33bb34992e70.html (HTTP 429)",
+        "blocked: Ballotpedia (refuses fetches, not tried)",
+        "blocked: justfacts.votesmart.org (refuses fetches, not tried)",
+        "not reviewed: https://ivoterguide.com/voter-guide/state/sc (search lead only, no questionnaire answer from him seen)"
+      ],
+      "found": 1,
+      "at": "2026-11-11T04:02:30.986Z",
+      "by": "alexander-split-2026-11-10"
+    }
+  ]
 }

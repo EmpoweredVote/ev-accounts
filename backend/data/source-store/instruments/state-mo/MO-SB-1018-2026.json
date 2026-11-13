@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-1018-2026",
+  "scope": "state:mo",
+  "title": "SB1018 (2026 Regular Session): Authorizes a voluntary self-exclusion list for the purchase of firearms",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=564",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB1018.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Patty Lewis",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "954796f5-cbda-41c1-9871-8dce23376d3c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1018-2026.introduced.pdf",
+      "sha256": "add15a343d6594d464f60951baa4c93716e7013f683c505e238f23d2bee914c5"
+    }
+  },
+  "operative_text": "Section 571.014 (RSMo): 3. Notwithstanding any other provision of law to the contrary, other than the provisions of section 571.515, no federal firearms dealer licensed under 18 U.S.C. Section 923 who engages in the sale of firearms within this state shall fail or refuse to complete the sale of a firearm to a customer in every case in which the sale is authorized by federal law.\nSection 571.515 (RSMo, new): 2. (1) A person may voluntarily waive the right to purchase a firearm. While such waiver is in effect, no person shall sell or otherwise transfer a firearm to a person who voluntarily waived the right to purchase a firearm.\nSection 571.515 (RSMo, new): (4) No later than twenty-four hours after accepting a voluntary waiver, the department shall enter the voluntary waiver into the national instant criminal background check system and any other federal or state computer-based systems used by law enforcement agencies or others to identify prohibited purchasers of firearms.\nSection 571.515 (RSMo, new): 4. Within twenty-four hours of an attempted transfer of a firearm to a person with a voluntary waiver, the department shall notify each contact person for such person.\nSection 571.515 (RSMo, new): 5. (1) To revoke a voluntary waiver, a person shall file for revocation with the department. The department shall verify the person's identity prior to accepting the revocation. The waiver shall remain in effect for thirty days after the department accepts the revocation.\nSection 571.515 (RSMo, new): 6. The submission of a voluntary waiver shall be made only by the person to whom the voluntary waiver shall apply. Any person that attempts to submit a voluntary waiver on behalf of another person shall be guilty of a class A misdemeanor."
+}

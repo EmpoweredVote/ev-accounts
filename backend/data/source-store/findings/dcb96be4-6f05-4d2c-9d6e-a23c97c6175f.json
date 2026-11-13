@@ -1,0 +1,30 @@
+{
+  "politician_id": "dcb96be4-6f05-4d2c-9d6e-a23c97c6175f",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.ballotready.org/people/amy-slavensky (confirms 2026 general-election candidate, Assembly District 7; issue stances list only abortion, education, housing; nothing on the subject)",
+        "blocked: https://bluevoterguide.org/CA/candidate_Amy_Slavensky/746057",
+        "Ballotpedia (page returned empty; not reviewed: https://ballotpedia.org/Amy_Slavensky)",
+        "campaign site (web search did not surface one; not reviewed)",
+        "web search: name plus gun, firearm, Second Amendment words (nothing on the subject)",
+        "web search: name plus campaign site, public safety (nothing on the subject)",
+        "sponsor list: covered by LegiScan bulk check"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.449Z",
+      "by": "source-collector"
+    }
+  ]
+}

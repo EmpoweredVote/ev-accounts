@@ -45,6 +45,10 @@ describe('names and jurisdictions', () => {
     // LegiScan prints NC Rep. Phil Shepard as "Phillip" (2026-11-06); "Philip" stays matched too.
     expect(getNameVariants('Phil')).toEqual(expect.arrayContaining(['phil', 'philip', 'phillip']));
     expect(getNameVariants('Phillip')).toEqual(expect.arrayContaining(['phillip', 'phil']));
+    // LegiScan prints WI Reps. Clint Anderson and Priscilla Prado as "Clinton" and "Pricilla" (2026-11-10).
+    expect(getNameVariants('Clint')).toEqual(expect.arrayContaining(['clint', 'clinton']));
+    expect(getNameVariants('Priscilla')).toEqual(expect.arrayContaining(['priscilla', 'pricilla']));
+    expect(getNameVariants('Janice')).toEqual(expect.arrayContaining(['janice', 'janince']));
   });
 });
 

@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-2131-2026",
+  "scope": "state:mo",
+  "title": "HB2131 (2026 Regular Session): Reinstates the requirement for a permit to carry concealed firearms",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB2131&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/4082H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mark Boyko",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0cb13116-90e4-430c-8720-ab660743d579"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2131-2026.introduced.pdf",
+      "sha256": "ac9a658ba650c5912ab4d433889121279a67086d790367abf4c4e7125c7c25d2"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): 571.030. 1. A person commits the offense of unlawful use of weapons, except as otherwise provided by sections 571.101 to 571.121 and sections 571.205 to 571.230, if he or she knowingly: (1) Carries concealed upon or about his or her person a knife, a firearm, a blackjack or any other weapon readily capable of lethal use; or\nSection 571.030 (RSMo): 4. Subdivisions (1), (8), and (10) of subsection 1 of this section shall not apply to any person who has a valid concealed carry permit issued pursuant to sections 571.101 to 571.121 or sections 571.205 to 571.230, a valid concealed carry endorsement issued before August 28, 2013, or a valid permit or endorsement to carry concealed firearms issued by another state or political subdivision of another state.\nSection 571.030 (RSMo): (2) Subdivision (1), (6), (7), or (8) of subsection 1 of this section shall be guilty of a class B misdemeanor;"
+}

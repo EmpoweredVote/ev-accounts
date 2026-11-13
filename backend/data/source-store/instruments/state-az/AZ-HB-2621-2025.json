@@ -1,0 +1,74 @@
+{
+  "id": "AZ-HB-2621-2025",
+  "scope": "state:az",
+  "title": "HB2621 (Fifty-seventh Legislature - First Regular Session (2025)): Firearm sales; transfers; background checks",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/82446",
+    "https://www.azleg.gov/legtext/57leg/1r/bills/hb2621p.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Aaron Marquez",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0df9cd85-3923-48bd-86c2-b7d4b31d510d"
+    },
+    {
+      "name": "Anna Abeytia",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1d2e925a-299f-4504-a4de-815d7a2ee7a6"
+    },
+    {
+      "name": "Quanta Crews",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1482a2bc-75d8-4aee-865c-53378c415210"
+    },
+    {
+      "name": "Brian Garcia",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ea0e5f51-f963-45ef-a104-429af91e5f90"
+    },
+    {
+      "name": "Alma Hernandez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444"
+    },
+    {
+      "name": "Lydia Hernandez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8deb34b4-a40d-4d26-8d3a-1b5a9e9f07f9"
+    },
+    {
+      "name": "Mariana Sandoval",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c37db938-9db2-47d5-b30e-7ac6a5f5c5ee"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+    "fetched_at": "2026-11-11T03:51:26.779713Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2621-2025.introduced.html",
+      "sha256": "097e163193d916a09551d51938568439de6f7ef237f71d281daa219dcd4beaa3"
+    }
+  },
+  "operative_text": "Sec. 1 (adding A.R.S. 13-3123), subsections A-B: {+A. A PERSON MAY NOT SELL OR TRANSFER A FIREARM UNLESS THE PERSON IS A LICENSED FIREARMS DEALER, THE PURCHASER OR TRANSFEREE IS A LICENSED FIREARMS DEALER OR A LICENSED FIREARMS DEALER FACILITATES THE TRANSFER PURSUANT TO SUBSECTION B OF THIS SECTION.+} {+B. IF NEITHER PARTY TO A PROSPECTIVE FIREARMS SALE OR TRANSFER IS A LICENSED FIREARMS DEALER, THE PARTIES TO THE TRANSACTION SHALL COMPLETE THE SALE OR TRANSFER THROUGH A LICENSED FIREARMS DEALER IN THE FOLLOWING MANNER:+} {+1. BEFORE THE TRANSFER, BOTH THE SELLER OR TRANSFEROR AND THE PURCHASER OR TRANSFEREE MUST APPEAR IN PERSON BEFORE A LICENSED FIREARMS DEALER WITH THE FIREARM IN HAND AND REQUEST THAT THE DEALER PERFORM A CRIMINAL BACKGROUND CHECK ON THE TRANSFEREE PURSUANT TO 18 UNITED STATES CODE SECTION 922(+}t{+) AND STATE AND LOCAL LAW, UNLESS THE TRANSFEREE DISPLAYS A PERMIT THAT EXEMPTS THE TRANSFEREE FROM THE BACKGROUND CHECK.+} {+2. A LICENSED FIREARMS DEALER WHO AGREES TO COMPLETE A TRANSFER OF A FIREARM UNDER THIS SECTION SHALL COMPLY WITH ALL REQUIREMENTS OF FEDERAL AND STATE LAW AS IF THE DEALER WERE TRANSFERRING THE FIREARM FROM THE INVENTORY OF THE DEALER TO THE TRANSFEREE, INCLUDING A CHECK OF THE NATIONAL INSTANT CRIMINAL BACKGROUND CHECK SYSTEM, IF APPLICABLE.+} {+3. ON COMPLETION OF THE CHECK THROUGH THE NATIONAL INSTANT CRIMINAL BACKGROUND CHECK SYSTEM, IF THE DEALER RECEIVES NOTIFICATION THAT THE TRANSFEREE IS PROHIBITED BY STATE OR FEDERAL LAW FROM POSSESSING OR RECEIVING THE FIREARM, THE DEALER SHALL NOTIFY THE TRANSFEROR, AND BOTH THE TRANSFEROR AND THE DEALER MAY NOT TRANSFER THE FIREARM TO THE TRANSFEREE.+} {+4. THE DEALER MAY REQUIRE THE PURCHASER OR TRANSFEREE TO PAY A FEE OF NOT MORE THAN $20 THAT COVERS THE ADMINISTRATIVE COSTS INCURRED BY THE DEALER FOR FACILITATING THE TRANSFER OF THE FIREARM, INCLUDING ANY APPLICABLE FEES PURSUANT TO FEDERAL, STATE OR LOCAL LAW.+}\nSec. 1 (adding A.R.S. 13-3123), subsection C (start): {+C. THIS SECTION DOES NOT APPLY TO ANY OF THE FOLLOWING:+} {+1. A LAW ENFORCEMENT AGENCY IN THIS STATE, THE STATE DEPARTMENT OF CORRECTIONS AND ANY PEACE OFFICER OR CORRECTIONS OFFICER WHO IS ACTING WITHIN THE COURSE AND SCOPE OF THE OFFICER'S EMPLOYMENT OR OFFICIAL DUTIES.+} {+2. A UNITED STATES MARSHAL, A MEMBER OF THE ARMED FORCES OF THE UNITED STATES OR THE NATIONAL GUARD OR A FEDERAL OFFICIAL TRANSFERRING OR RECEIVING A FIREARM AS REQUIRED IN THE OPERATION OF OFFICIAL DUTIES.+}\nSec. 1 (adding A.R.S. 13-3123), subsection D: {+D. A PERSON WHO VIOLATES THIS SECTION IS GUILTY OF A CLASS 5 FELONY+}."
+}

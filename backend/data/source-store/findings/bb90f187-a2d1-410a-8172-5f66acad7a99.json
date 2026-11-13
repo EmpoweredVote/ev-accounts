@@ -1,0 +1,212 @@
+{
+  "politician_id": "bb90f187-a2d1-410a-8172-5f66acad7a99",
+  "findings": [
+    {
+      "id": "fe9b7f941079e7891392f05b99e764bf5fc51a824172a593c4087becaf31fce3",
+      "kind": "own-words",
+      "url": "https://wpln.org/post/tennessee-election-officials-asking-more-than-14000-voters-to-prove-citizenship/",
+      "date": "2024-06-26",
+      "date_precision": "day",
+      "passage": "“The fact legal citizens of the United States and residents of Tennessee are being accused of not being eligible to vote is an affront to democracy,” said state Rep. Jason Powell, a Democrat from Nashville, in a statement. “These fine Tennesseans are being burdened with re-proving their own voter eligibility and threatened with imprisonment in a scare tactic reminiscent of Jim Crow laws.”",
+      "note": "WPLN quotes Powell's statement on the state's letters to over 14,000 registered voters asking for proof of citizenship, after a comparison of voter rolls with Department of Safety data. Date is the story's publication date.",
+      "subjects": [
+        "proof of citizenship for registered voters",
+        "noncitizen voting and voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T02:02:23.261Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b156da78d41c0a44d1802d79a5fb6b0d2c6d47a81a333f869f9e455b461cba4",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0125/id/253215",
+      "date": "2013-03-25",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-125-2013",
+      "act": "nay",
+      "motion": "House: AS AMENDED PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (AS AMENDED PASSAGE ON THIRD CONSIDERATION, 65-30) on SB0125 (108th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + HA0155 + HA0156 (not saved); linked by LegiScan member id 15504 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.075Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b9d27469c4ba05efe7c2675e0c5b9630bd294e8d5b21a0e8688155da261ac0e",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/HB0553/2015",
+      "date": "2015",
+      "date_precision": "year",
+      "instrument_id": "TN-HB-553-2015",
+      "act": "sponsor",
+      "motion": "co sponsor, 1115892-Draft",
+      "note": "Listed as co sponsor of HB0553 (109th General Assembly) in LegiScan's bill record (sponsor order 4); the first version (1115892-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "ID with a mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.075Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6bf6d81a82db697d74298b2d427ff9b8ac3a5267f7ae33bbaa137ed285b615aa",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/HB1316/id/1538770",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1316-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION, 83-7) on HB1316 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + HA0118 (adopted on the floor 2025-04-07 per action log); linked by LegiScan member id 15504 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.075Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b1bdab27c8e46b6dfd18fda952a09d982a3c0ae502b88906bafcd6d25276e5d0",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1477618",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "nay",
+      "motion": "House: REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION, 71-19) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text) as engrossed by the Senate; linked by LegiScan member id 15504 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.075Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b19a6e8307519d5bcc37d4bd1d3cd4c653b39b39ab433203b89fa12339659c3",
+      "kind": "own-words",
+      "url": "https://wpln.org/post/tennessee-election-officials-asking-more-than-14000-voters-to-prove-citizenship/",
+      "date": "2024-06-26",
+      "date_precision": "day",
+      "passage": "The fact legal citizens of the United States and residents of Tennessee are being accused of not being eligible to vote is an affront to democracy,",
+      "note": "WPLN quotes Powell's statement on the state's letters to over 14,000 registered voters asking for proof of citizenship, after a comparison of voter rolls with Department of Safety data. Date is the story's publication date. Saved alone, without the reporter's attribution words, so only the person's own quoted words are shown (split 2026-11-12, SC Alexander / KY precedent; first of the two quoted sentences).",
+      "subjects": [
+        "proof of citizenship for registered voters",
+        "noncitizen voting and voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "attrib-split-2026-11-12",
+        "fetched_at": "2026-11-12T16:01:06.647Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9ee8b5009909c21b039e7e658d73dbd2cf8441948b056ed8c0ec8929dbc7d087",
+      "kind": "own-words",
+      "url": "https://wpln.org/post/tennessee-election-officials-asking-more-than-14000-voters-to-prove-citizenship/",
+      "date": "2024-06-26",
+      "date_precision": "day",
+      "passage": "These fine Tennesseans are being burdened with re-proving their own voter eligibility and threatened with imprisonment in a scare tactic reminiscent of Jim Crow laws.",
+      "note": "WPLN quotes Powell's statement on the state's letters to over 14,000 registered voters asking for proof of citizenship, after a comparison of voter rolls with Department of Safety data. Date is the story's publication date. Saved alone, without the reporter's attribution words, so only the person's own quoted words are shown (split 2026-11-12, SC Alexander / KY precedent; second of the two quoted sentences).",
+      "subjects": [
+        "proof of citizenship for registered voters",
+        "noncitizen voting and voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "attrib-split-2026-11-12",
+        "fetched_at": "2026-11-12T16:01:06.647Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "student ID as voter ID",
+        "proof of citizenship to register or vote",
+        "noncitizen voting and voter-roll checks",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract command run)",
+        "campaign site powellfortennessee.com: blocked: https://www.powellfortennessee.com/ (404, site expired)",
+        "iVoterGuide 2022 profile https://ivoterguide.com/candidate/11531/race/15663/election/979: photo-ID question shown as did not answer",
+        "WPLN 2024 story (own words quoted)",
+        "House caucus site and 8 web searches: nothing further on the subject",
+        "not reviewed: https://x.com/JasonLPowell",
+        "capitol.tn.gov not opened by rule",
+        "blocked: https://ballotpedia.org",
+        "blocked: https://justfacts.votesmart.org"
+      ],
+      "found": 1,
+      "at": "2026-11-12T02:02:23.261Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 4,
+      "at": "2026-11-12T15:13:42.075Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship for registered voters",
+        "noncitizen voting and voter-roll checks"
+      ],
+      "places": [
+        "split of finding fe9b7f941079 (same page)"
+      ],
+      "found": 2,
+      "at": "2026-11-12T16:01:06.647Z",
+      "by": "attrib-split-2026-11-12"
+    }
+  ]
+}

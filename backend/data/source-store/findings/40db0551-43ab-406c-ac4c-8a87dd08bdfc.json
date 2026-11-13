@@ -1,0 +1,68 @@
+{
+  "politician_id": "40db0551-43ab-406c-ac4c-8a87dd08bdfc",
+  "findings": [
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 26265 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.825Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail or absentee ballot ID",
+        "2024 constitutional amendment on citizen voting"
+      ],
+      "places": [
+        "On the Record: not run for this person; nothing found elsewhere",
+        "official member page https://www.scstatehouse.gov/member.php?code=0703124916 (confirms him as the District 35 senator; no text used)",
+        "campaign site jeffreygrahamforscsenate.com: page returned no text on the subject",
+        "The Item (Sumter) 2024-10-30 forum article read in full text: it says in the reporter's words that he called an unnamed constitutional amendment question 'a scare tactic' (a two-word fragment, the amendment is not named, so not saved); no other words on the subject",
+        "blocked: ballotpedia.org (listed as refusing fetches, not tried)",
+        "blocked: justfacts.votesmart.org (listed as refusing fetches, not tried)",
+        "5 web searches (name with voter ID, photo ID, proof of citizenship, questionnaire or forum, amendment): nothing on the subject in his own words",
+        "Journal remarks: he took office in 2024-11, no remarks on the subject found in search"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:27:06.646Z",
+      "by": "sc-search-r2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T23:17:03.825Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
+}

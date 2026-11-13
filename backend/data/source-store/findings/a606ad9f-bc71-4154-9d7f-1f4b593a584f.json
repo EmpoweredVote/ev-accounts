@@ -1,0 +1,32 @@
+{
+  "politician_id": "a606ad9f-bc71-4154-9d7f-1f4b593a584f",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed: Tyler Andrew Farnsworth, candidate for Arizona House, District 14; ballotready and ivoterguide list the 2026 general election; news search shows him leading his primary field (https://www.yourvalley.net/queen-creek-independent/stories/ld-14-house-republicans-ticket-leads-primary-as-lyons-congratulates-farnsworth,707005 not fetched, a lead only)",
+        "not a sitting legislator: no sponsored-bill list applies",
+        "nothing on the subject: https://ivoterguide.com/candidate/92276/race/28208/election/1426 (the gun question is marked did not answer)",
+        "nothing on the subject: https://www.ballotready.org/people/tyler-andrew-farnsworth",
+        "nothing on the subject: https://www.yourvalley.net/queen-creek-independent/stories/gop-candidates-have-their-say-on-ld-14-primary-race,694869 (his questionnaire answers cover spending, education, water, background)",
+        "Ballotpedia: not reviewed (blocked for the fetch tool in this batch)",
+        "campaign site: not found by search",
+        "news search on name plus gun words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:17:24.732Z",
+      "by": "source-collector"
+    }
+  ]
+}

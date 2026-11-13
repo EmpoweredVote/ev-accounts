@@ -1,0 +1,32 @@
+{
+  "id": "KY-SB-122-2022",
+  "scope": "state:ky",
+  "title": "SB 122 (2022 Regular Session): AN ACT relating to elections.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/22RS/sb122.html"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Section 1 (KRS 117.001(13), definition)\n(quote) \"Proof of identification\" means a document that was issued by: (a) The United States or the Commonwealth of Kentucky, and the document contains: 1. The name of the individual to whom the document was issued; and 2. A photograph of the individual to whom the document was issued; (b) The United States Department of Defense, a branch of the uniformed services, the Merchant Marine, or the Kentucky National Guard, and the document contains:\n(section) Section 1 (KRS 117.001(13)(c), deleted college paragraph)\n(quote) STRUCK: A public or private college, university, or postgraduate technical or professional school located within the United States, and the document contains: 1. The name of the individual to whom the document was issued; and 2. A photograph of the individual to whom the document was issued; or (d)\n(section) Section 1 (KRS 117.001(13)(d), kept paragraph, relettered (c))\n(quote) Any city government, county government, urban-county government, charter county government, consolidated local government, or unified local government, which is located within this state, and the document contains: 1. The name of the individual to whom the document was issued; and 2. A photograph of the individual to whom the document was issued;\n(b_no_id_remedy)\n(section) Section 2 (KRS 117.228(1))\n(quote) if a voter is unable to provide proof of identification as required under KRS 117.225, and as defined under KRS 117.001, a voter may cast a ballot if the individual: (a) Is eligible to vote under KRS 116.025; (b) Is entitled to vote in that precinct; and (c) In the presence of the election officer, executes a voter's affirmation, on a form prescribed and furnished by the State Board of Elections\n(section) Section 2 (KRS 117.228(2)(d)-(e))\n(quote) (d) Any food stamp identification card, electronic benefit transfer card, or supplemental nutrition assistance card, that is issued by this state and has the name of the voter stated\n(section) Section 2 (KRS 117.228(2)(e), deleted)\n(quote) STRUCK: A credit or debit card with the name of the voter stated\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Section 2 (KRS 117.228(1)(c)1, voter affirmation, reprinted)\n(quote) The voter is a citizen of the United States;\n(other) Section 1 (KRS 117.001): the rest of the definitions section is reprinted (audit log, ballot, federal provisional voter and ballot, risk-limiting audit, voting system and so on); no other changes seen.\n(other) Section 2 (KRS 117.228): the rest of the affirmation process is reprinted unchanged (eight impediments, election officer personal-knowledge affirmation).\n(other) version: orig_bill (introduced, 22 RS BR 896): the only saved version; carries slots a, b, e as above. Same two removals as SB 80 (2024).\n(other) note: Same two bracketed removals as SB 80 (2024): the college and school ID paragraph and the credit-or-debit-card item. No votes. Not enacted. Underline marks are lost, but the removals are bracketed and the remaining text matches the current-law reprint in HB 574 (2021).",
+  "sponsors": [
+    {
+      "name": "Adrienne Southworth",
+      "role": "prime",
+      "version": "orig_bill"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 KY bill texts and roll calls (Sonnet readers R1-R4 + version pass; apps.legislature.ky.gov vote histories, voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "curl"
+  }
+}

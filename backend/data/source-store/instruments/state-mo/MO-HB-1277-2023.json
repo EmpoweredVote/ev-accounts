@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1277-2023",
+  "scope": "state:mo",
+  "title": "HB1277 (2023 Regular Session): Modifies provisions relating to firearms",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB1277&year=2023&code=R",
+    "http://reflect.legiscan.com/Proxy.php"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jim Schulte",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "968f6aa6-5d43-4be9-9ad6-4c2c166f2b95"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1277-2023.introduced.pdf",
+      "sha256": "ff5524f71cf68d6f8fdfdb17803af3d594eac13e631cbde7e7ccbc09056e6727"
+    }
+  },
+  "operative_text": "Section 21.750 (RSMo): In any jurisdiction in which the open carrying of firearms is prohibited by ordinance: (a) Any person with a valid concealed carry endorsement or permit who is open carrying a firearm shall be required to have a valid concealed carry endorsement or permit from this state, or a permit from another state that is recognized by this state, in his or her possession at all times; (b) Any person open carrying a firearm in such jurisdiction shall display his or her concealed carry endorsement or permit upon demand of a law enforcement officer; (c) Any minor open carrying a firearm in violation of such ordinance shall have such firearm subject to temporary seizure by a law enforcement officer. If a law enforcement officer temporarily seizes any firearm under this paragraph, the law enforcement officer shall give the minor a receipt for each seized firearm. The receipt shall indicate the identification or serial number or other identifying characteristic of each seized firearm and the location the seized firearm may be claimed. The parent or legal guardian of a minor subject to temporary seizure of a firearm under this paragraph may claim any such firearm upon production of the issued receipt within thirty days; and (d) Except as provided in paragraph (c) of this subdivision, any person who violates this subdivision shall be subject to the penalty provided in section 571.121."
+}

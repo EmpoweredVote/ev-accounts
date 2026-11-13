@@ -1,0 +1,18 @@
+{
+  "id": "SC-H-5081-2023",
+  "scope": "state:sc",
+  "title": "H 5081 (125th General Assembly): Constitutional amendment",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=5081&session=125&summary=B"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 1 (Const. Art. II, Sec. 4)\n(quote) Only a citizen of the United States and of this State of the age of eighteen and upwards who is properly registered is entitled to vote as provided by law.\n(section) Sec. 2 (ballot question)\n(quote) Must Section 4, Article II of the Constitution of this State, relating to voter qualifications, be amended so as to clarify that only a citizen of the United States and of this State of the age of eighteen and upwards who is properly registered is entitled to vote as provided by law?\n(other) Sec. 2: amendment goes to voters at the next general election for representatives, with the ballot wording quoted above.\n(other) version: Only one version (Introduced, 2024-02-13). Joint resolution proposing a constitutional amendment; no ID or citizenship-proof text in slots a-d. The only change is 'Every' struck and 'Only a' added before 'citizen'.\n(other) note: Citizens-only constitutional amendment (resolution, not a bill). Strike/new marker for 'Every'/'Only a' read from the HTML styling. Only the introduced text is saved.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

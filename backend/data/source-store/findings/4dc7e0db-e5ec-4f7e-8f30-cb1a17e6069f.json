@@ -1,0 +1,201 @@
+{
+  "politician_id": "4dc7e0db-e5ec-4f7e-8f30-cb1a17e6069f",
+  "findings": [
+    {
+      "id": "48e48f8fb7e965f95c53651e0122aa433652ba9446818ec6b28e76956979d4bf",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/62087",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "Photo identification is required for almost everything from buying alcohol to flying on a plane.  Voting is a privilege of being an US citizen, and should be limited to only those who are eligible to vote and can prove so by government issued photo ID.",
+      "note": "Candidate's own questionnaire answer, given when she was a first-time candidate for the House seat; the page's default view is the May 17, 2022 primary race and lists later races too, so the exact answer date is not printed beside the text. She explains why photo ID should be required to vote and ties voting to citizenship.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:28:34.072Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3bb745a8ce8e9d1794d4a4e4328166ea64a5c030439d6faa94c202cadcbe54c4",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/62087",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "I would like to limit the number of days of early voting to no more than a week; you must request an absentee ballot and have signature/photo verification to cast a vote if you are not available/unable to vote in person on regular voting days.",
+      "note": "Same questionnaire, answer to what laws she would propose on voting practices. She names signature or photo verification for absentee ballots and a short early-voting window.",
+      "subjects": [
+        "photo ID for absentee or mail ballots",
+        "early voting length"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:28:34.072Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "257acc51475e21273009078fe0f744829d19918d35377f774ed73139d7ffb2d4",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/62087",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "Return to paper ballots, and remove any cellular modem and  any connectivity of the internet to the voting machines.  Require government issued photo ID.  Eliminate drop boxes, and ballot harvesting.",
+      "note": "Same answer, continued: paper ballots, disconnected machines, government-issued photo ID, no drop boxes, no ballot harvesting.",
+      "subjects": [
+        "voter ID at the polls",
+        "voting machine connectivity and paper ballots",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:28:34.072Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "83b481c1b0e50b737bd494bb4986a48ebea5ce02bc03bb909e102e05c92c1f46",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/hb374.html",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-374-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, orig_bill",
+      "note": "Listed as co sponsor of HB374 (2024 Regular Session) in LegiScan's bill record (sponsor order 6); the first version (orig_bill) carries the ID/citizenship text (identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d46ecb91a31ee5cd1e1e87159cd4301382bc37721ea5bb099f789780020ffed",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23622 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23622 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd4f0553eb6ef608e5f4f0880dfe9d952201740968402fd0ab748856330a3352",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "yea",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23622 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for absentee or mail ballots",
+        "proof of citizenship to vote",
+        "early voting length and drop boxes",
+        "voting machine connectivity and paper ballots",
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=60 (403 to plain curl); identity confirmed instead from the iVoterGuide profile titled State Rep., Dist. 60 and listing the 2026 general race",
+        "iVoterGuide candidate questionnaire profile",
+        "iVoterGuide 2024 general-election version of the questionnaire (a one-line agree/disagree answer only)",
+        "Freedom Voter Guide (nothing on the subject)",
+        "blocked: https://nkytribune.com/2024/05/opinion-marianne-proctor-why-voters-should-choose-me-to-return-to-legislature-from-60th-district/",
+        "LINK nky 2024 candidate story (nothing on the subject)",
+        "blocked: https://onyourballot.vote411.org/m/candidate-detail.do?id=3140481 (server error page)",
+        "blocked: Ballotpedia and Vote Smart (refuse fetches, not tried)",
+        "5 web searches run (name with voter ID, photo ID, proof of citizenship, election integrity, questionnaire, candidate forum); no further own words found"
+      ],
+      "found": 3,
+      "at": "2026-11-11T18:28:34.072Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 4,
+      "at": "2026-11-11T21:12:46.603Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}

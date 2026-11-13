@@ -110,6 +110,234 @@
         "fetched_at": "2026-10-28T23:15:12.779Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "821551fc5f99ecd4b2fe26b478624163211248f6ce053b008bdd22dca7065c95",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/asm/bill/ab495",
+      "date": "2022-02-15",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-495-2021",
+      "act": "nay",
+      "motion": "Senate: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Senate, Senate: Read a third time and concurred in, 2022-02-15: nay (tally 20–12); census gate: none.",
+      "subjects": [
+        "licensees may keep a firearm in a locked vehicle on school grounds",
+        "firearm within 1,000 feet of a school becomes a forfeiture"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-495-2021.enrolled.pdf",
+          "sha256": "bcb0941e36d8430d4e80f6360c613083e04acb4ab7dd500f5b3ad6001baa0e94"
+        }
+      }
+    },
+    {
+      "id": "17238af0339f53c634e8c07d6b1981d1aab8b73f310c08dc9777dce56982b464",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb466",
+      "date": "2024-01-16",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-466-2023",
+      "act": "nay",
+      "motion": "Senate: Read a third time and passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Senate, Senate: Read a third time and passed, 2024-01-16: nay (tally 22–10); census gate: none.",
+      "subjects": [
+        "payment networks barred from firearms-retailer merchant codes",
+        "government lists of gun owners banned",
+        "background-check records may not be turned into a purchaser list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-466-2023.enrolled.pdf",
+          "sha256": "6d089108620592801f50b209f20b361fb9a3c5e87a5f8243957c44092e2874a2"
+        }
+      }
+    },
+    {
+      "id": "a59cf3e77e5a76c0748bc9909b61873b7a3fb457af9de7a3db0ba0019b8732d3",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/sen/bill/sb570",
+      "date": "2021-11-08",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-570-2021",
+      "act": "nay",
+      "motion": "Senate: Read a third time and passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Senate, Senate: Read a third time and passed, 2021-11-08: nay (tally 20–12); census gate: none.",
+      "subjects": [
+        "limits civil lawsuits against gun and ammunition makers and sellers",
+        "defendants win attorney fees when a barred suit is dismissed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-570-2021.enrolled.pdf",
+          "sha256": "29c3c905eadc72bf48ca38dd1c01f5ea7582fa8733684688d6d5ce79a216b9db"
+        }
+      }
+    },
+    {
+      "id": "15e540178127385ecd197425f74a764d40d69081894b26d9d1cf5ce0d8ca0b68",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab325",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-325-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-325-2025 (LegiScan sponsor list): AB325 (2025-2026 Regular Session): Sales and transfers of firearms and providing a penalty. (FE).",
+      "subjects": [
+        "background check required for private firearm transfers",
+        "universal transfers through licensed dealers with family-gift exception",
+        "penalty and 2-year firearm ban for illegal transfer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-325-2025.introduced.pdf",
+          "sha256": "ab2e9cc55e3b3cf8840766c9cc0ff162e60a1250455ffc793fdb6950b9517865"
+        }
+      }
+    },
+    {
+      "id": "2262781ba2e1e880d866af5aa1098a7e70b4893b03c875b9b46aaa47619e2b41",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/sen/bill/sb330",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-330-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SB-330-2025 (LegiScan sponsor list): SB330 (2025-2026 Regular Session): Waiting period for purchase of handguns..",
+      "subjects": [
+        "48-hour waiting period for handgun purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-330-2025.introduced.pdf",
+          "sha256": "d1c8aca51be26a8ce7048274dfed3b9489e5b8f31c6cc4aefc64d15a44aa86f7"
+        }
+      }
+    },
+    {
+      "id": "b15051eebfc3c4afdaebe6128781b4f9be1ddc7c5367f6f5e6da7f04db2be0fc",
+      "kind": "own-words",
+      "url": "https://upnorthnewswi.com/2022/08/02/dem-congressional-candidate-brad-pfaff-like-the-retiring-ron-kind-not-keen-on-an-assault-weapons-ban/",
+      "date": "2022-08-02",
+      "date_precision": "day",
+      "passage": "“I think we all recognize the fact that people here in Wisconsin enjoy the outdoors,” Pfaff said. “We’ve got a tremendous sporting heritage and it brings together families … as they enjoy the great deer hunt around Thanksgiving.”",
+      "note": "Radio interview with UpNorthNews during his 2022 congressional primary, quoted by that outlet. Asked about a ban on a type of firearm, he points to hunting heritage.",
+      "subjects": [
+        "ban on assault-style guns",
+        "hunting and sporting heritage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.209Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c7c2ffed6ae40afa2941068dae0e2b10c9286d7e82adeb44ed4bf9896858a9f",
+      "kind": "own-words",
+      "url": "https://upnorthnewswi.com/2022/08/02/dem-congressional-candidate-brad-pfaff-like-the-retiring-ron-kind-not-keen-on-an-assault-weapons-ban/",
+      "date": "2022-08-02",
+      "date_precision": "day",
+      "passage": "“I hear you on that,” he replied. “The thing is—the question becomes—when we begin to have a conversation, as far as we start talking about shotguns and rifles, we start talking about, you know, what is the definition? And that’s an important conversation to have. I mean, I have been very clear. There is no place for weapons of war on our streets.”",
+      "note": "Same interview, quoted by UpNorthNews. Asked whether hunting uses semi-automatic guns, he says the definition of the guns covered matters and that weapons of war have no place on streets. The outlet reports he gave indications he would oppose a ban; that is the outlet's reading, not his words.",
+      "subjects": [
+        "ban on assault-style guns",
+        "weapons of war"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.209Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8f99a2ba90a6f9085659b9bfb3690be6cb8faf7ed8c30e8a476843659d91614",
+      "kind": "own-words",
+      "url": "https://wisdems.org/wisdems-news/icymi-wisdems-rally-for-common-sense-gun-safety-solutions",
+      "date": "2024-02-09",
+      "date_precision": "day",
+      "passage": "‘It is important, in our heritage and our culture. We recognize that. But we also recognize there’s common sense solutions that can be done. Like background checks. Like making sure that we do have red flag laws put in place. Making sure that we do fund mental health, which is so very important. These are things that are bipartisan—should be bipartisan. The vast majority of Wisconsin residents support this. This is common sense.’",
+      "note": "Quoted in a news roundup (the page quotes a local TV report) reposted on the state party's site, so the outlet is secondhand; event was in La Crosse on 2024-02-09 (page published 2024-02-12). He names background checks, red flag laws and mental health funding.",
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.209Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d1a3051b38a63267f4d27c3adbf26da2a65fe4f4fb484bad700ad2a3976fb724",
+      "kind": "own-words",
+      "url": "https://wizmnews.com/2024/02/09/pfaff-and-la-crosse-students-want-more-gun-safety-regulations-in-wisconsin",
+      "date": "2024-02-09",
+      "date_precision": "day",
+      "passage": "“This should not be a controversial topic, to insure that our children can go to school, go to a mall, or go to a movie theater without fear that it may be the last thing they do.”",
+      "note": "Quoted by WIZM at a La Crosse event on gun violence in schools; he calls for more gun safety laws.",
+      "subjects": [
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.209Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -151,6 +379,32 @@
       "found": 5,
       "at": "2026-10-28T23:15:12.779Z",
       "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "guns and minors",
+        "bills sponsored on firearms"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site: not opened separately; news and party-site items reviewed",
+        "sponsor list: covered by LegiScan bulk check",
+        "UpNorthNews 2022-08-02 radio interview",
+        "WIZM 2024-02-09 La Crosse event",
+        "state party site 2024-02-12 roundup quoting him (his quote is original, outlet noted)",
+        "WisPolitics 2026-02-05 page: only a lede sentence visible, rest behind a login, no quote on the subject",
+        "Ballotpedia: fetch returns empty, not relied on"
+      ],
+      "found": 4,
+      "at": "2026-11-10T22:15:40.209Z",
+      "by": "source-collector"
     }
   ]
 }

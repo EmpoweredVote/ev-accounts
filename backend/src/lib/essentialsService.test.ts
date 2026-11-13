@@ -174,7 +174,9 @@ describe('getPoliticiansFlatList incumbents-only filter', () => {
   it('requires a current seat when candidates are excluded', async () => {
     const sql = await sqlFor(false);
     expect(sql).toContain('och.office_id IS NOT NULL');
-    expect(sql).toContain('p.is_incumbent = true');
+    expect(sql).toContain("NOT ILIKE 'Candidate for%'");
+    // The cached flag went stale on every seeded handover date; incumbency comes from the dates.
+    expect(sql).not.toContain('p.is_incumbent = true');
   });
 
   it('does not require a seat when candidates are included', async () => {

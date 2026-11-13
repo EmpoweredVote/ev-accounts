@@ -1,0 +1,34 @@
+{
+  "politician_id": "7c0a855e-1b95-4f9f-976a-24fbe41a7352",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "student ID as voter ID",
+        "proof of citizenship",
+        "SAVE Act",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr run by id and by name)",
+        "https://governor.ky.gov/about/lt-governor-jacqueline-coleman (confirms she is the sitting Lieutenant Governor; nothing on the subject)",
+        "campaign site https://www.jacquelineforky.com/ and its news page https://www.jacquelineforky.com/news (nothing on the subject; /issues and /about returned 404 or empty)",
+        "https://ky.aflcio.org/news/gov-beshear-early-voting-open-kentuckians-now-through-saturday (2023 early-voting event release; she is named as attending only, no words of hers; nothing on the subject)",
+        "no Governor or Lieutenant Governor news-list page beyond the profile page was found that carries her own words on the subject; nothing on the subject",
+        "caution: many search hits for this name are about the Attorney General of the same surname, a different person; none used",
+        "blocked: https://ballotpedia.org (refuses our fetches, not tried)",
+        "blocked: https://justfacts.votesmart.org (refuses our fetches, not tried)",
+        "web searches run: 5 (name + voter ID; name + voting rights / photo ID / proof of citizenship / SAVE Act; name + 2027 campaign + voting; name + questionnaire / forum / interview / student ID; name + SAVE Act / noncitizen voting)"
+      ],
+      "found": 0,
+      "at": "2026-11-11T18:38:49.248Z",
+      "by": "source-collector"
+    }
+  ]
+}

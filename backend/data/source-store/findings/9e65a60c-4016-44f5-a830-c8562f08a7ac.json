@@ -25,7 +25,163 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "b506837854b0adf9fc5c780a99d6c8040710317478de36513a259ec81071eb61",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=11554",
+      "date": "2016-04-27",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3167-2016",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 90-9) on H3167 (121st General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 15975 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.819Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8d3982b32acd0e2d6c0e2e074cf10cc65b6726c75d22d4a3c6839c334714a28d",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4162&session=124&summary=B",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "SC-H-4162-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, 2021-04-06_Introduced",
+      "note": "Listed as co sponsor of H4162 (124th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2021-04-06_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.819Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "348ca87b33927efca7450a06906bc28906495e1533c3260622d18e6d5b951f86",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=20247",
+      "date": "2022-03-02",
+      "date_precision": "day",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 114-0) on H4919 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 15975 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.819Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c57ac76bd3a1ee6b9e7e899c1b45c493788dafb46c6c33fdaf8d0f113ec60060",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4919&session=124&summary=B",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, 2022-02-03_Introduced",
+      "note": "Listed as co sponsor of H4919 (124th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2022-02-03_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.819Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cebba425407e0560fa0727d36dcd6d2c9e3c39cb153b2e7cae5ed40936a29b73",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=21123",
+      "date": "2022-05-03",
+      "date_precision": "day",
+      "instrument_id": "SC-S-108-2022",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 109-0) on S0108 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 15975 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.819Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "constitutional amendment on citizen-only voting (S. 1126, 2024)",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: Greenville Journal 2026 voter guide lists Mike Burns for House District 17 (https://greenvillejournal.com/government/meet-the-candidates-local-u-s-house-and-senate-general-election-candidates/); his answer there is about the senior homestead exemption only, nothing on the subject",
+        "Greenville Patriot Caucus county voter guide: lists his name only, nothing on the subject",
+        "BallotReady person page: office and links only, nothing on the subject",
+        "House Journals 2024-04-25, 2024-05-01, 2024-05-02 (S. 1126 citizen-only voting amendment): no floor remarks by him printed, nothing on the subject",
+        "SC Policy Council page on the 2024 amendment: nothing on the subject by him",
+        "web searches with name plus voter ID, photo ID, proof of citizenship, noncitizen, election integrity, questionnaire, op-ed: nothing on the subject in his own words",
+        "blocked: https://simplecivicsgreenvillecounty.org/district-17-meet-your-candidates-for-south-carolina-house-of-representatives/ (security checkpoint page; a search summary says an interview there touches voter integrity, but the text could not be read)",
+        "blocked: https://www.facebook.com/mikeburnsforschouse/ (not fetched; social page, not reviewed)",
+        "blocked: https://www.scpolicycouncil.org (403 on one page)",
+        "not reviewed: https://www.decodethevote.com/candidate/cand-os-ea4d02c9 (aggregator, lead only)",
+        "blocked: ballotpedia.org, justfacts.votesmart.org (listed as refusing fetches)",
+        "a 2024 news report of a House floor remark by him on the amendment came only from a do-not-fetch outlet: not opened, not cited"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:30:44.798Z",
+      "by": "sc-search-r3"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 5,
+      "at": "2026-11-10T23:17:03.819Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

@@ -1,0 +1,42 @@
+{
+  "id": "TN-HB-934-2025",
+  "scope": "state:tn",
+  "title": "HB 934 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2, relative to voting.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB0934/2025"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec 1, 2-7-112(a)(1)(B) (rewritten: name, photo AND residential address)\n(quote) At the time a voter presents an application for ballot, the voter shall present to the precinct registrar one (1) form of identification for voter identification that bears the name and photograph and residential address of the voter.\n(section) Sec 1, 2-7-112(a)(1)(B) (exceptions)\n(quote) provided, however, that a person voting in accordance with § 2-6-401(a) and (b) or § 2-6-601 is not required to show an identification with a photograph and residential address of the voter.\n(section) Sec 1, 2-7-112(a)(1)(C)(ii)-(iii) (what the ID must show)\n(quote) Include the voter's photograph, current residential address, and expiration date of the identification; (iii) Indicate that the individual meets eligibility requirements for voting, including citizenship of the United States;\n(section) Sec 1, 2-7-112(a)(1)(C)(v)\n(quote) Not be an identification card issued to a student by an institution of higher education.\n(b_no_id_remedy)\n(section) Sec 5, 2-7-112(d) (verification of residential address for the provisional-ballot process; digital sources barred)\n(quote) For purposes of processing the voter's application to vote pursuant to subdivision (a)(3), \"verification of residential address\" includes, but is not limited to, a Tennessee driver license, a residential lease agreement, a utility bill, or other document bearing the applicant's residential address. The \"verification of residential address\" must not include a digital source or sources.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec 1, 2-7-112(a)(1)(C)(i) (ID must have been obtained with proof of citizenship; not a check at the polls itself)\n(quote) Have been obtained with documented proof of citizenship of the United States;\n(e_other_rule)\n(section) Sec 2 (strikes the existing accepted-ID list; instruction words only, deleted list text not saved)\n(quote) Tennessee Code Annotated, Section 2-7-112(c), is amended by deleting the subsection.\n(section) Sec 1, 2-7-112(a)(1)(A) (application must carry residence address)\n(quote) The application for ballot must include a space for the address of the voter's current residence, and the voter shall write or print such address on the application when the voter signs the application for ballot.\n(other) Sec 1 also keeps the rule that the registrar checks address and inactive status via the e-poll book (2-7-140, 2-7-141), registrar initials the application, and the coordinator trains poll workers and informs the public how to obtain voter ID.\n(other) Sec 3: removes the word 'punchcard' in 2-7-112(a)(3)(A)(vi).\n(other) Sec 4: provisional ballots on hand-marked or ballot-marker paper tabulated by optical scan counted by coordinator rules.\n(other) Sec 6: effective on becoming law.\n(other) version: 3100008-Draft (2025-02-04): the only saved version; carries slots a, b, d and e text as described (header already shows companion Senate Bill 732, Pody).\n(other) note: Introduced only; last action 2026-03-10 taken off notice in the House Elections & Campaign Finance Subcommittee. No roll calls. The existing 2-7-112(c) accepted-ID list is deleted outright and replaced by the (C) test (photo, address, expiry, shows eligibility incl. citizenship, obtained with proof of citizenship, not a student card). The 2-7-112(a)(3) provisional-ballot process and the (f) indigency affidavit are not reprinted.",
+  "sponsors": [
+    {
+      "name": "Monty Fritts",
+      "role": "prime",
+      "version": "3100008-Draft"
+    },
+    {
+      "name": "Bud Hulsey",
+      "role": "co",
+      "version": "3100008-Draft"
+    },
+    {
+      "name": "Jody Barrett",
+      "role": "co",
+      "version": "3100008-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

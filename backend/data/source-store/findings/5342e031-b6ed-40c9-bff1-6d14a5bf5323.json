@@ -1,0 +1,225 @@
+{
+  "politician_id": "5342e031-b6ed-40c9-bff1-6d14a5bf5323",
+  "findings": [
+    {
+      "id": "1f721d7bb5b69bbe407218ce48d909f3d038dccfda65e994c898de4bd6c7964e",
+      "kind": "own-words",
+      "url": "https://johnhodgson.substack.com/p/january-2026-newsletter",
+      "date": "2026-01-03",
+      "date_precision": "day",
+      "passage": "HB44 Voter roll cleanup Bill passed 75-17 watch video here . HB53 Post-election “eyeball” audits passed 87-8 watch video here .",
+      "note": "From his own newsletter, in the list headed 'Bills I have authored and passed into KY law in previous years' (2024 long session). Line items, not full sentences; the text is joined from separate lines of the page. He lists a voter-roll cleanup bill and a post-election audit bill among his own enacted bills. The same list appears in his February, April and May 2026 issues.",
+      "subjects": [
+        "voter-roll cleanup",
+        "post-election audits",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:34:26.491Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c7c4db21b20a04a082291020ccbcf40cadfebd12a81eb8cf2be11c72b4a84ff4",
+      "kind": "own-words",
+      "url": "https://johnhodgson.substack.com/p/district-36-newsletter",
+      "date": "2026-05-04",
+      "date_precision": "day",
+      "passage": "HR7- Resolution affirming Election Integrity principles PASSED HOUSE UNANIIMOUSLY",
+      "note": "From his own May 2026 newsletter, in his legislative-update list: he reports the House passed his election integrity principles resolution. Line item, not a full sentence; the text is joined from separate lines and the page spells the last word as printed. The official record shows adoption by voice vote on 2026-02-02.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:34:26.491Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "40239292865a79c41605c9757cf6f86355059e666805480a80624f5ab00583ed",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/HR7.html",
+      "date": "2026-01-07",
+      "date_precision": "day",
+      "instrument_id": "KY-HR-7-2026",
+      "act": "sponsor",
+      "note": "House Resolution 7, 'recognizing the guiding principles of elections in Kentucky'; the record page lists J. Hodgson under Sponsors and shows it adopted by voice vote on 02/02/26. Its bill text says policymakers should ensure that only citizens are able to vote in federal, state, and local elections, and does not name voter ID or proof of citizenship documents.",
+      "subjects": [
+        "election integrity in general",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:34:26.491Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "83b481c1b0e50b737bd494bb4986a48ebea5ce02bc03bb909e102e05c92c1f46",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/hb374.html",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-374-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, orig_bill",
+      "note": "Listed as co sponsor of HB374 (2024 Regular Session) in LegiScan's bill record (sponsor order 4); the first version (orig_bill) carries the ID/citizenship text (identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d62c3dcb1e6af7ecf8feded4d9a758deb105f2b1e1d7c0f283a7bce58cd68f67",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/25RS/hb180.html",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-180-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, orig_bill",
+      "note": "Listed as co sponsor of HB180 (2025 Regular Session) in LegiScan's bill record (sponsor order 2); the first version (orig_bill) carries the ID/citizenship text (identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d46ecb91a31ee5cd1e1e87159cd4301382bc37721ea5bb099f789780020ffed",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23620 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23620 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd4f0553eb6ef608e5f4f0880dfe9d952201740968402fd0ab748856330a3352",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "yea",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 23620 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "citizenship marked on state ID cards (HB 70)",
+        "proof of citizenship to vote",
+        "non-citizen voting",
+        "voter-roll cleanup",
+        "post-election audits",
+        "election integrity resolution (HR 7)"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "his Substack newsletter (johnhodgson.substack.com): read the January, February, April and May 2026 issues; nothing else on ID beyond what is saved",
+        "not reviewed: the other newsletter issues (June to November 2026, 2025 essays) were returned empty in the archive listing and were not opened one by one",
+        "the House record page for HR 7 (apps.legislature.ky.gov) and its bill text PDF",
+        "westkentuckystar.com reprint of the January 30, 2026 Kentucky Today story on HB 70 (quotes him)",
+        "jessaminejournal.com reprint of the same story (same text, not saved twice)",
+        "blocked: https://fox56news.com/news/kentucky/kentucky-lawmaker-wants-to-add-citizenship-status-on-drivers-licenses-id-cards/ (429)",
+        "blocked: https://www.dailysignal.com/2026/07/31/exclusive-kentucky-findings-add-to-growing-concerns-over-noncitizen-voting/ (403)",
+        "blocked: https://onyourballot.vote411.org/m/candidate-detail.do?id=3140256 (server error page)",
+        "blocked: legislature.ky.gov member page, Ballotpedia, Vote Smart (refuse fetches or not tried)",
+        "not reviewed: https://www.facebook.com/Hodgson4KY/ (social media, not opened)",
+        "5 web searches run (name with voter ID, HB 70, HB 44, voter guide or survey, HR 7 election integrity); no photo-ID statement found"
+      ],
+      "found": 3,
+      "at": "2026-11-11T18:34:26.491Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 5,
+      "at": "2026-11-11T21:12:46.603Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}

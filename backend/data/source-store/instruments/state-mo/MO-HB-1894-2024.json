@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1894-2024",
+  "scope": "state:mo",
+  "title": "HB1894 (2024 Regular Session): Establishes the \"Firearm Violence Prevention Act\"",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB1894&year=2024&code=R",
+    "https://documents.house.mo.gov/billtracking/bills241/hlrbillspdf/4354H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Stephanie Hein",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0c22ce6d-f215-48e2-9a9c-1b1c78871432"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1894-2024.introduced.pdf",
+      "sha256": "db638bdf7cabb96154942e2b6a6cba563b33c129403a1e7b9225fcacc10c3da0"
+    }
+  },
+  "operative_text": "Section 542.271 (RSMo): A warrant may be issued to search for and seize, or photograph, copy or record any of the following: (1) Property, article, material, or substance that constitutes evidence of the commission of a criminal offense; or (2) Property which has been stolen or acquired in any other manner declared an offense by chapters 569 and 570; or (3) Property owned by any person furnishing public communications services to the general public subject to the regulations of the public service commission if such person has failed to remove the property within a reasonable time after receipt of a written notice from a peace officer stating that such property is being used as an instrumentality in the commission of an offense; or (4) Property for which possession is an offense under the law of this state; or (5) Property for which seizure is authorized or directed by any statute of this state; or (6) Property which has been used by the owner or used with his acquiescence or consent as a raw material or as an instrument to manufacture or produce any thing for which possession is an offense under the laws of this state. 2. A warrant may be issued to search for and rescue a kidnapped person. 3. A warrant may be issued to search for any person for whom a valid felony arrest warrant is outstanding. 4. A warrant may be issued to search for and seize any deceased human fetus or corpse, or part thereof. 5. A warrant may be issued to search for and seize any firearm in the possession of a person subject to an extreme risk protection order or temporary extreme risk protection order if there is probable cause to believe the person is in possession of one or more firearms.\nSection 571.803 (RSMo): 3. If a court finds by a preponderance of the evidence that, based on the evidence presented under subsection 3 of section 571.805, the respondent poses a significant risk of causing personal injury to self or others by having in his or her custody or control a firearm or by purchasing, possessing, or receiving a firearm, the court shall issue a temporary extreme risk protection order.\nSection 571.809 (RSMo): 1. (1) Upon issuance of an extreme risk protection order under sections 571.801 to 571.815, including a temporary extreme risk protection order, the court shall order the respondent to surrender all firearms by either: (a) Selling or transferring possession of a firearm to a federally licensed firearms dealer defined under 18 U.S.C. Section 921, as amended. However, this paragraph shall not be interpreted to require any federally licensed firearms dealer to purchase or accept possession of any firearm. If the respondent elects to sell his or her firearms, the respondent is entitled to the proceeds; or (b) Arranging for the storage of a firearm by a law enforcement agency.\nSection 571.811 (RSMo): 3. The issuing court shall, within three court days after issuance of an extreme risk protection order or a temporary extreme risk protection order, forward all identifying information the court has regarding the respondent, along with the date the order is issued, to the county sheriff in the jurisdiction where the respondent resides. Upon receipt of the information, the county sheriff shall determine if the respondent has a concealed carry permit. If the respondent does have a concealed carry permit, the issuing county sheriff shall immediately revoke the permit. The respondent may reapply for a concealed carry permit after the temporary extreme risk protection order and extreme risk protection order, if ordered, are no longer in effect.\nSection 571.812 (RSMo): Any person who has in his or her custody or control a firearm or purchases, possesses, or receives a firearm with knowledge that he or she is prohibited from doing so by an extreme risk protection order or temporary extreme risk protection order shall be guilty of a class B misdemeanor. However, such person shall be guilty of a class E felony if the person has two or more previous convictions for violating an extreme risk protection order."
+}

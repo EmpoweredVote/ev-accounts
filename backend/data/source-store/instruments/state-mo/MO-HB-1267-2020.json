@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1267-2020",
+  "scope": "state:mo",
+  "title": "HB1267 (2020 Regular Session): Modifies provisions relating to the transport and storage of firearms in motor vehicles.",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB1267&year=2020&code=R",
+    "https://www.house.mo.gov/billtracking/bills201/hlrbillspdf/3026H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gretchen Bangert",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d3e2f42f-45bf-4fbb-aa05-8264ee7e94c7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1267-2020.introduced.pdf",
+      "sha256": "6c16db55e23626ffa7aafcf7c5b40a485007f9b12666858d72f1f61ec7f3ec43"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): A person commits the offense of unlawful use of weapons, except as otherwise provided by sections 571.101 to 571.121, if he or she knowingly: Transports or stores a concealed firearm in a motor vehicle loaded and outside of a locked container or locked trunk.\nSection 571.030 (RSMo): Subdivisions (1) and (12) of subsection 1 of this section do not apply to any person nineteen years of age or older or eighteen years of age or older and a member of the United States Armed Forces, or honorably discharged from the United States Armed Forces, transporting a concealable firearm in the passenger compartment of a motor vehicle, so long as: Such firearm is otherwise lawfully possessed; and One of the following: If the firearm is a handgun, the firearm is under the direct control of the person carrying the firearm; The person is also in possession of an exposed firearm or projectile weapon for the lawful pursuit of game; The person and motor vehicle are in the person's dwelling unit or upon premises over which the person has possession, authority, or control; or The person is traveling on a continuous journey peaceably through this state.\nSection 571.030 (RSMo): Subdivision (1), (6), (7), (8), or (12) of subsection 1 of this section shall be guilty of a class B misdemeanor, except when a concealed weapon is transported or carried onto any private property whose owner has posted the premises as being off-limits to concealed firearms by means of one or more signs displayed in a conspicuous place of a minimum size of eleven inches by fourteen inches with the writing thereon in letters of not less than one inch, in which case the penalties of subsection 2 of section 571.107 shall apply;"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "SC-H-3157-2017",
+  "scope": "state:sc",
+  "title": "H 3157 (122nd General Assembly): Applications for Driver's License and Voter registration",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3157&session=122&summary=B"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) SECTION 1 (amends 7-5-320): a state ID card application or driver's license application (including renewal) given to the Department of Motor Vehicles counts as a voter registration application; the applicant consents to use of the signature already on the licence or ID card; the old rule that an unsigned form means declining is struck.\n(other) Same section: a person who will be under 18 on the date of the next election has name and identifying information kept out of public records.\n(other) Same section: the county board must notify each person how to decline; if the person does not decline within fifteen calendar days of the notice, the registration is complete.\n(other) Same section: change-of-address form for a licence or ID card also updates voter registration unless the elector says otherwise; the State Election Commission and DMV executive directors must work together on compliance.\n(other) SECTION 2: takes effect upon approval by the Governor.\n(other) version: 2016-12-15_Introduced (only version): no slot a-d text; DMV automatic-registration text, same as the 2015 versions apart from a comma and sub-item numbering.\n(other) note: Automatic-registration-through-DMV bill; no ID-to-vote, no no-ID remedy, no mail-ballot ID, and no proof-of-citizenship text. The only citizenship words are the existing statement that the registration form lists each eligibility requirement 'including citizenship', reprinted unchanged in 7-5-320(C)(2)(c)(i). One version. Substance is the same as H 3978 (2015).\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "politician_id": "3ce8b7fa-a703-45be-9e07-71b1a8ebfa8d",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ghost guns",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry permits",
+        "general gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web search: name plus gun words (a search summary said a candidate profile mentions ghost guns, but the page could not be fetched so nothing is saved from it)",
+        "blocked: https://goodparty.org/candidate/sara-hernandez/california-state-senate-district-26 (HTTP 429, twice)",
+        "blocked: https://bluevoterguide.org/endorser-org/Gun_Sense_Voter/CA/4895 (bot check, 403)",
+        "https://criticalreport.substack.com/p/2026-ca-senate-primaries (news roundup: she placed first in the 2026-06-02 primary for Senate District 26 and advanced to the general; nothing on the subject)",
+        "https://dp.electionresults.sos.ca.gov/returns/state-senate/district/26 (state results page, script-rendered, nothing readable)",
+        "https://www.streetsforall.org/2026/sara-hernandez (candidate page, nothing on the subject)",
+        "https://dogfish-lychee-pgsl.squarespace.com/sarahernandez (third-party festival page listing her, nothing on the subject)",
+        "not reviewed: https://ballotpedia.org/Sara_Hernandez (fetch returned no text)",
+        "not reviewed: her own campaign site (address not found)",
+        "not reviewed: https://www.foxla.com/video/fmc-3w7fafjybdmfwe7y (video)",
+        "not reviewed: https://gunownersca.com/resources/talking-to-media/ (grade page, no entry for her seen)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.540Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "SC-H-3628-2025",
+  "scope": "state:sc",
+  "title": "H 3628 (126th General Assembly): Secure, Accurate, and Verifiable Elections Act",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3628&session=126&summary=B"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 3 (7-5-160)\n(quote) A person registering to vote must provide valid identification to confirm his residency and citizenship to the county board of voter registration and elections prior to the completion of the voter registration process. The county board of voter registration and elections must issue a new voter identification card each time a person successfully registers to vote.\n(e_other_rule)\n(section) Sec. 7 (new 7-13-700)\n(quote) Only qualified electors who comply with all constitutional and statutory requirements to vote may be permitted to vote in an election.\n(section) Sec. 13 (7-15-320(A))\n(quote) Only U.S. citizens with a current and valid voter registration shall be allowed to vote.\n(section) Sec. 14 (7-15-330(B)(5))\n(quote) Each request for an application to vote by absentee ballot must include the signature of the person requesting the application and a witness to that signature.\n(other) Sec. 1: short title, Secure, Accurate, and Verifiable Elections Act or SAVE Act.\n(other) Sec. 2 (7-3-20(D)): executive director keeps separate databases of active, inactive and archived registrations and gives voter rolls free to qualified electors.\n(other) Sec. 3 (7-5-160): registration lasts ten years (replaces permanent registration).\n(other) Sec. 4 (new 7-5-200): paper poll books only.\n(other) Sec. 5 (new 7-7-715): precinct size limits; felony for a director who violates.\n(other) Sec. 6 (7-13-72): four election managers per 250 voters.\n(other) Sec. 8 (7-13-730): ballot must carry initials of two poll managers or is void.\n(other) Sec. 9-10 (new 7-13-870, 7-13-880): hand-marked paper ballots counted by hand at the precinct in public view; chain-of-custody records.\n(other) Sec. 11-12 (7-13-1110, 7-13-1160): public may watch the count; counties post results before reporting.\n(other) Sec. 13 (7-15-320): removes early-voting references, strikes absentee eligibility for people 65 or older, adds women expecting to give birth within three weeks and homebound persons and nursing home occupants.\n(other) Sec. 15 (7-15-420(A)): absentee ballots are sorted by precinct, taken to the precinct and counted after polls close; void if the voter also voted in person.\n(other) Sec. 16 (53-5-10): general election day a legal holiday.\n(other) Sec. 17: effective on approval by the Governor.\n(other) version: Introduced (2024-12-12): carries slot d (valid identification to confirm residency and citizenship at registration) and slot e items; no in-person ID rule (slot a), no no-ID remedy (b), no mail-ballot ID (c).\n(other) version: Draft (2025-02-05, after 'Scrivener's error corrected'): operative text identical; the only change is a comma added in the bill title ('ACTIVE, INACTIVE, AND ARCHIVED').\n(other) note: Strike/new markers restored from the HTML styling. 'Valid identification' at registration is not defined in this bill; the quote says what it must confirm (residency and citizenship). No amended or enacted text saved.",
+  "sponsors": [
+    {
+      "name": "Rob Harris",
+      "role": "prime",
+      "version": "2025-02-05_Draft"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

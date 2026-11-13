@@ -58,7 +58,8 @@
  *   BAD_GEOMETRY      occupied, reachable district whose polygon is null / invalid / empty.
  *                                                                      [baselined]
  *   REPS_FILTER_HIDDEN  district HAS an active holder, yet the full reps-feed predicate
- *                     (`is_active OR is_vacant`, `is_incumbent`, `NOT ILIKE 'Candidate for%'`)
+ *                     (`is_active OR is_vacant`, `NOT ILIKE 'Candidate for%'`; incumbency is
+ *                     the occupancy join itself, see src/lib/incumbency.ts)
  *                     returns nothing for it.                          [ZERO TOLERANCE]
  *   ST_COVERS_ROUNDTRIP  the real spatial probe: take ST_PointOnSurface of the district's own
  *                     polygon and run the actual address-search join; the district must come back.
@@ -263,7 +264,6 @@ const CLASSIFY = `
            count(*) FILTER (WHERE p.is_active) AS active_holders,
            count(*) FILTER (WHERE off.is_vacant) AS vacant_offices,
            bool_or((p.is_active = true OR off.is_vacant = true)
-                   AND coalesce(p.is_incumbent, true) = true
                    AND coalesce(off.title, '') NOT ILIKE 'Candidate for%') AS passes_reps
       FROM g
       JOIN essentials.offices off ON off.district_id = g.id
@@ -344,7 +344,6 @@ async function roundTrip() {
           LEFT JOIN essentials.politicians p ON p.id = och.politician_id
          WHERE d.id = s.did
            AND (p.is_active = true OR o.is_vacant = true)
-           AND coalesce(p.is_incumbent, true) = true
            AND coalesce(o.title, '') NOT ILIKE 'Candidate for%'
            AND public.ST_Covers(gp.geometry, s.pt)
       )

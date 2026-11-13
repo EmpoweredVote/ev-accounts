@@ -66,6 +66,48 @@
         "fetched_at": "2026-10-28T23:15:12.782Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "5a04e91f7e4d186708b16ffb535533a94f39933f489103c9e2fba24079490ec2",
+      "kind": "own-words",
+      "url": "https://severson4senate.com/issues/",
+      "date": "2026-11-10",
+      "date_precision": "unknown",
+      "passage": "Protect your 2nd Amendment rights — no red flag laws, no new gun restrictions, no compromise on the constitutional right to self-defense",
+      "note": "Campaign issues page, Guns heading; page carries no publication date, so the date is the day it was read. The same sentence appears on his BallotReady profile.",
+      "subjects": [
+        "no red flag orders",
+        "no new gun restrictions",
+        "gun rights and self-defense"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.257Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f462f10073cf422179b532f7c7c69038cea8a6f975044cce50e74f7c5a03c9a2",
+      "kind": "own-words",
+      "url": "https://severson4senate.com/",
+      "date": "2026-11-10",
+      "date_precision": "unknown",
+      "passage": "As a staunch advocate for the 2nd Amendment, Erik will protect the rights of responsible gun owners across Wisconsin.",
+      "note": "Campaign home page, section headed Second Amendment Support; written about him in the third person on his own site. Undated page, so the date is the day it was read.",
+      "subjects": [
+        "gun rights and self-defense"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.257Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -82,6 +124,34 @@
       "found": 3,
       "at": "2026-10-28T23:15:12.782Z",
       "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights",
+        "Second Amendment",
+        "red flag orders",
+        "new gun restrictions",
+        "right to self-defense",
+        "background checks",
+        "concealed carry"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope: Erik Severson is the nominee for State Senate District 25 after winning the August 11, 2026 primary (https://www.branch.vote/races/2026-wisconsin-primary-election-wi-state-state-senator-wi-state-senate-25-r); former two-term Assembly member (https://www.wispolitics.com/2026/primary-interview-series-former-lawmakers-sapik-severson-vie-for-gop-nomination-in-25th-sd-primary/)",
+        "campaign site home page and issues page (fetched with curl; two statements saved)",
+        "BallotReady profile https://www.ballotready.org/people/erik-severson (same issue text as campaign site)",
+        "iVoterGuide https://ivoterguide.com/candidate/1638/race/27857/election/1423 (gun question left unanswered)",
+        "WPR interview and WPR open-seat story (nothing on the subject)",
+        "WisPolitics primary interview and endorsement release (nothing on the subject; release text partly behind a login)",
+        "Ballotpedia: page came back empty to the fetch tool",
+        "web search: name plus gun and Second Amendment words (nothing further in his own words)",
+        "sponsor list: covered by LegiScan bulk check"
+      ],
+      "found": 2,
+      "at": "2026-11-10T22:15:40.257Z",
+      "by": "source-collector"
     }
   ]
 }

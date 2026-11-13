@@ -66,8 +66,8 @@ try {
 
   // 🔴 STATES 3, 4 AND 5, WHICH THIS CONTROL USED TO SKIP ENTIRELY. Stopping at state 2 is how
   // a real defect survived review: the term-start subquery was anchored on TODAY, so state 5
-  // was unreachable by construction and a seat fell BACKWARDS from 4 to 3 on the morning it was
-  // sworn in. A control that never looks past state 2 cannot see that.
+  // was unreachable by construction and a seat fell BACKWARDS from 4 to 3 on the morning its
+  // term began. A control that never looks past state 2 cannot see that.
   await client.query(
     `UPDATE essentials.race_candidates SET result_certainty = 'certified' WHERE id = $1`, [cand[0].id]);
   const certified = await buildStatus(client, { levels: ['federal'] });
@@ -84,14 +84,16 @@ try {
 
   const seated = await buildStatus(client, { levels: ['federal'], today: '2026-11-04' });
   const sRow = seated.seats.find((s) => s.raceId === target.raceId);
-  if (sRow?.seatState !== 4) fail(`seated-but-not-sworn reads state ${sRow?.seatState}, expected 4`);
+  if (sRow?.seatState !== 4) fail(`a term dated ahead reads state ${sRow?.seatState}, expected 4`);
   else ok('seated with a future term → state 4');
 
-  // The same data, read as if the calendar had reached the swearing-in date. Nothing is written:
-  // the whole model turns on this being a date comparison, so this is the assertion that matters.
-  const sworn = await buildStatus(client, { levels: ['federal'], today: '2027-01-03' });
-  const wRow = sworn.seats.find((s) => s.raceId === target.raceId);
-  if (wRow?.seatState !== 5) fail(`on swearing-in day the seat reads state ${wRow?.seatState}, expected 5 — it must not regress`);
+  // The same data, read as if the calendar had reached the term start. Nothing is written: the
+  // whole model turns on this being a date comparison, so this is the assertion that matters.
+  // ⚠ 2027-01-03 is when these members' TERM begins, which is the only thing state 5 claims.
+  // Whether anyone has taken an oath by then is a separate fact, in office_swearing_in.
+  const started = await buildStatus(client, { levels: ['federal'], today: '2027-01-03' });
+  const wRow = started.seats.find((s) => s.raceId === target.raceId);
+  if (wRow?.seatState !== 5) fail(`on the term-start date the seat reads state ${wRow?.seatState}, expected 5 — it must not regress`);
   else ok('on 2027-01-03 the same row reads state 5, with nothing written');
 
   // 🔴 FAILURE MODE 4 — A WINNER WE HAVE NEVER SEEN BEFORE. The plan named this and the branch

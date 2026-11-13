@@ -1,0 +1,117 @@
+{
+  "politician_id": "ffd4502e-701e-4607-bd99-e5db43f60a01",
+  "findings": [
+    {
+      "id": "a25928f6651a1a63c0b5fc142c6506577dc9de80be5a0599fec7e36a0ce3b03b",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "nay",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25773 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.607Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "66d7488a685348429b625584d27155c3ad62b1a0d68d9f562d509f3e7302b9e6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "nay",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25773 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.607Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "121fcb8d83cdb77518dcfdab89ed949d5de64b621bdcdb306e7ab9a9e02793ea",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "nay",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25773 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.607Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Kentucky Secretary of State candidate filing page https://web.sos.ky.gov/CandidateFilings/Default.aspx?cand=11520 (confirms Erika Hancock filed for State Representative, 57th District, 2025-11-24)",
+        "official/campaign site https://erika4ky.com/ and its news page and the 2026-07-15 new-laws post: nothing on voter ID, citizenship or voting",
+        "branch.vote race page: not fetched for Hancock (search result says her site had nothing on voting)",
+        "Kentucky Lantern story on HB 534 reprinted at https://hoptownchronicle.org/?p=96474: one own-words quote saved",
+        "Kentucky Lantern story reprinted on Yahoo (yahoo.com/news/articles/sweeping-elections-bill-draws-bipartisan-231536624.html): empty on plain curl, same story as the saved one",
+        "https://www.yahoo.com/news/articles/bill-changing-ky-election-law-100000571.html: Herald-Leader story reprinted on Yahoo; her quotes there are about partisan judicial candidates, not on the subject",
+        "WKMS story (Louisville Public Media, by Sylvia Goodman) on HB 534: her quotes are about judicial candidates, not on the subject",
+        "WUKY story 2026-03-06 and WKMS story 2026-02-19: do not name her",
+        "official legislature bill pages (HB 534 / HB 139): not reviewed for own words; votes and sponsorships are linked separately",
+        "candidate questionnaires and voter guides: none found; bluevoterguide.org not tried",
+        "blocked: https://ballotpedia.org (not fetched, per instruction)",
+        "blocked: bluevoterguide.org and justfacts.votesmart.org (refuse fetches, not tried)"
+      ],
+      "found": 0,
+      "at": "2026-11-11T18:57:01.623Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 3,
+      "at": "2026-11-11T21:12:46.607Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}

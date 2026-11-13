@@ -1,0 +1,42 @@
+{
+  "id": "TN-HB-574-2025",
+  "scope": "state:tn",
+  "title": "HB 574 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2, relative to voter identification.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB0574/2025"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) Sec 1, new 2-7-112(c)(2) (existing law keeps (c)(1) accepted-ID list)\n(quote) \"Evidence of identification,\" as described in subdivision (c)(1), does not include a license, identification card, passport, or other document that has expired or that is invalid for any reason.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec 2, new 2-2 section (no registration without valid unexpired ID)\n(quote) a county election commission shall not register a person to vote unless the applicant has provided proof satisfactory to the respective commission that the person holds valid, unexpired evidence of identification as described in § 2-7-112(c)(1) at the time of processing the applicant's application to register.\n(other) Sec 1 also designates existing 2-7-112(c) as (c)(1) (accepted-ID list unchanged).\n(other) Sec 3: effective on becoming law.\n(other) version: 3090275-Draft (2025-01-29): both operative sections as above (slots a and e).\n(other) version: 3094839-Draft (2025-01-31): same words; header adds companion Senate Bill 658 (Hensley).\n(other) note: Introduced only. Last real action 2025-02-18: taken off notice in the House Elections & Campaign Finance Subcommittee. No roll calls. Sec 2 would apply a valid-ID test to the registration step (a registration rule), separate from voting.",
+  "sponsors": [
+    {
+      "name": "Clay Doggett",
+      "role": "prime",
+      "version": "3094839-Draft"
+    },
+    {
+      "name": "Jody Barrett",
+      "role": "co",
+      "version": "3094839-Draft"
+    },
+    {
+      "name": "Tim Rudd",
+      "role": "co",
+      "version": "3094839-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

@@ -48,6 +48,10 @@ function fakeApi(): { query: LegiscanQuery; calls: string[] } {
         { ...person(24971, 'Joshua', 'Thomas', { middle_name: 'E.' }), sponsor_type_id: 2, sponsor_order: 12, committee_sponsor: 0 },
         { ...person(12439, 'Salvatore', 'DiDomenico', { middle_name: 'N.' }), sponsor_type_id: 2, sponsor_order: 13, committee_sponsor: 0 },
         { ...person(19410, 'Cindy', 'Friedman', { middle_name: 'F.' }), sponsor_type_id: 2, sponsor_order: 14, committee_sponsor: 0 },
+        // CA records, 2026-11-13: our "Dr. Darshana R. Patel" is printed "Darshana Patel"; Tasha Boerner is
+        // printed under her former surname, "Tasha Boerner Horvath".
+        { ...person(27001, 'Darshana', 'Patel'), sponsor_type_id: 2, sponsor_order: 15, committee_sponsor: 0 },
+        { ...person(19717, 'Tasha', 'Boerner Horvath'), sponsor_type_id: 2, sponsor_order: 16, committee_sponsor: 0 },
       ] },
     2000102: { bill_id: 2000102, state: 'TX', bill_number: 'SB16', session: SESSION, url: 'https://legiscan.com/TX/bill/SB16/2025', sponsors: [] },
     2100001: { bill_id: 2100001, state: 'TX', bill_number: 'HB5337', session: special, url: SPECIAL_URL, sponsors: [
@@ -244,6 +248,15 @@ describe('verifyLegiscanLine', () => {
     expect(verifyLegiscanLine(line, BILL_URL, rec, { fullName: 'Timothy Bearden', lastName: 'Bearden' }).verdict).toBe('verified');
     expect(verifyLegiscanLine(line, BILL_URL, rec, { fullName: 'Thomas Bearden', lastName: 'Bearden' }).verdict).toBe('name_not_present');
     expect(verifyLegiscanLine(line, BILL_URL, rec, { fullName: 'Timothy Bearder', lastName: 'Bearder' }).verdict).toBe('name_not_present');
+  });
+  it('drops a title before the name, and fits a former surname only by its exact entry (CA 2026-11-13)', async () => {
+    const rec = await record(BILL_URL);
+    const patel = 'LegiScan TX 89th Legislature Regular Session HB5337: Darshana Patel is listed as a cosponsor.';
+    expect(verifyLegiscanLine(patel, BILL_URL, rec, { fullName: 'Dr. Darshana R. Patel', lastName: 'Patel' }).verdict).toBe('verified');
+    expect(verifyLegiscanLine(patel, BILL_URL, rec, { fullName: 'Dr. Anand Patel', lastName: 'Patel' }).verdict).toBe('name_not_present');
+    const tasha = 'LegiScan TX 89th Legislature Regular Session HB5337: Tasha Boerner Horvath is listed as a cosponsor.';
+    expect(verifyLegiscanLine(tasha, BILL_URL, rec, { fullName: 'Tasha Boerner', lastName: 'Boerner' }).verdict).toBe('verified');
+    expect(verifyLegiscanLine(tasha, BILL_URL, rec, { fullName: 'Mary Boerner', lastName: 'Boerner' }).verdict).toBe('name_not_present');
   });
   it('verifies a vote line field by field', async () => {
     const rec = await record(RC_URL);

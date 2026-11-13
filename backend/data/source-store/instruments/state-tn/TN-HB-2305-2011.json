@@ -1,0 +1,75 @@
+{
+  "id": "TN-HB-2305-2011",
+  "scope": "state:tn",
+  "title": "HB 2305 (107th General Assembly): As introduced, adds to evidences of identification to vote, a valid photo identification card issued free of charge by the county election commission of the county in which a person is registered to vote, provided the person meets the current requirements to obtain a free photo ID to vote and signs an affidavit verifying such person's qualifications. - Amends TCA Section 2-7-112.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB2305/2011",
+    "https://legiscan.com/TN/rollcall/HB2305/id/172352"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) 2-7-112(c)(7) (Section 1)\n(quote) (7) A valid photo identification card issued free of charge by the county election commission of the county in which a person is registered to vote, provided the person meets the requirements of § 55-50-336(g) and signs an affidavit required pursuant to such subsection; provided that prior to issuing such card to any person, the administrator of elections shall verify the identification of the registered voter by comparing the signature of the person signing the affidavit with the permanent voter registration records of the voter;\n(b_no_id_remedy)\n(section) 2-7-112(c)(7) (Section 1)\n(quote) provided the person meets the requirements of § 55-50-336(g) and signs an affidavit required pursuant to such subsection\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Section 2: effective on becoming law.\n(other) version: 511867-Draft (2012-01-10): the only saved version; adds a free county-election-commission photo ID card to the accepted list (slots a and b).\n(other) note: Deferred once to a 'Photo ID Calendar' then failed 3-4 on 2012-03-14. The text of 55-50-336(g) is not saved, so the eligibility terms of the free card are not quoted.",
+  "sponsors": [
+    {
+      "name": "Craig Fitzhugh",
+      "role": "prime",
+      "version": "511867-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2012-03-14",
+      "body": "TN House",
+      "motion": "Subcommittee recommends passage, 3 yes to 4 no; action log says Failed In subcommittee [version voted: Draft (no amendments in saved actions)]",
+      "kind": "roll-call",
+      "yes": 3,
+      "no": 4,
+      "absent": 0,
+      "body_size": 7,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB2305/id/172352",
+      "members": [
+        {
+          "name": "Ryan Haynes",
+          "vote": "nay"
+        },
+        {
+          "name": "Gerald McCormick",
+          "vote": "nay"
+        },
+        {
+          "name": "Curry Todd",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Turner",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Tommie Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Williams",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

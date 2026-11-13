@@ -1,0 +1,32 @@
+{
+  "politician_id": "c4844e6a-8463-4611-86c5-fc3b418e8307",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general statement on gun safety or gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.juliaforarizona.com (home page read; nothing on the subject; the /issues page returned 404)",
+        "blocked: https://ballotpedia.org/Julia_Romero_Gusse (page came back empty)",
+        "https://ivoterguide.com/candidate/95987/race/30491/election/1455 (names her in the 2026 Arizona House LD16 race; its gun-restriction question is marked 'Did not answer')",
+        "https://blogforarizona.net/ld-16-house-candidate-julia-romero-gusse-wants-to-fight-for-strong-schools-safe-communities-and-leaders-who-put-people-over-politics/ (nothing on the subject)",
+        "https://inmaricopa.com/gusse-kicks-off-state-house-run-from-maricopa/ (nothing on the subject)",
+        "https://www.arizonalist.org/?p=14973 (nothing on the subject)",
+        "https://www.dlcc.org/?p=19021 (nothing on the subject)",
+        "sponsor list: covered by LegiScan bulk check (not a sitting legislator; she is a first-time legislative candidate)",
+        "news search on name plus gun words (no hits naming her)"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:15:12.496Z",
+      "by": "source-collector"
+    }
+  ]
+}

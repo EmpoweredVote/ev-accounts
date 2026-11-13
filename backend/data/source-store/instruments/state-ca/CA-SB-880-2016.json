@@ -1,0 +1,595 @@
+{
+  "id": "CA-SB-880-2016",
+  "scope": "state:ca",
+  "title": "SB880 (2015-2016): Firearms: assault weapons.",
+  "urls": [
+    "http://www.leginfo.ca.gov/cgi-bin/postquery?bill_number=sb_880&sess=1516&house=S",
+    "http://www.leginfo.ca.gov/pub/15-16/bill/sen/sb_0851-0900/sb_880_bill_20160630_enrolled.html",
+    "http://www.leginfo.ca.gov/pub/15-16/bill/sen/sb_0851-0900/sb_880_bill_20160517_amended_sen_v97.html"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Isadore Hall",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Steve Glazer",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Marty Block",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Loni Hancock",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Bob Hertzberg",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Jerry Hill",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Mark Leno",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Mike Gipson",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "6133e73c-4c33-4cfc-9fd3-de1382729f42"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2016-05-19",
+      "body": "CA Senate",
+      "motion": "Senate 3rd Reading SB880 Hall",
+      "kind": "roll-call",
+      "yes": 24,
+      "no": 14,
+      "absent": 2,
+      "note": "LegiScan roll call 547038; taken on the text 'Amended' of 2016-05-17",
+      "members": [
+        {
+          "name": "Joel Anderson",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Beall",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Berryhill",
+          "vote": "nay"
+        },
+        {
+          "name": "Marty Block",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin de Leon",
+          "vote": "yea"
+        },
+        {
+          "name": "Jean Fuller",
+          "vote": "nay"
+        },
+        {
+          "name": "Ted Gaines",
+          "vote": "nay",
+          "politician_id": "fc97cf9f-3695-4c2d-9219-9a9ff6378db4"
+        },
+        {
+          "name": "Cathleen Galgiani",
+          "vote": "nay"
+        },
+        {
+          "name": "Isadore Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "Edward Hernandez",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Tony Mendoza",
+          "vote": "yea"
+        },
+        {
+          "name": "William Monning",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Nielsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Robert Huff",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Leno",
+          "vote": "yea"
+        },
+        {
+          "name": "Carol Liu",
+          "vote": "yea"
+        },
+        {
+          "name": "Fran Pavley",
+          "vote": "yea"
+        },
+        {
+          "name": "Lois Wolk",
+          "vote": "yea"
+        },
+        {
+          "name": "Loni Hancock",
+          "vote": "yea"
+        },
+        {
+          "name": "Ricardo Lara",
+          "vote": "yea",
+          "politician_id": "bab3379b-d64e-423b-b62e-4efa04cee750"
+        },
+        {
+          "name": "Holly Mitchell",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Pan",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Wieckowski",
+          "vote": "yea"
+        },
+        {
+          "name": "Benjamin Hueso",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Morrell",
+          "vote": "nay"
+        },
+        {
+          "name": "Anthony Cannella",
+          "vote": "nay"
+        },
+        {
+          "name": "Hannah-Beth Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Roth",
+          "vote": "nay"
+        },
+        {
+          "name": "Andy Vidak",
+          "vote": "nay"
+        },
+        {
+          "name": "Benjamin Allen",
+          "vote": "yea",
+          "politician_id": "4486f856-118b-475c-83f0-078581a7b268"
+        },
+        {
+          "name": "Patricia Bates",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Hertzberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Connie Leyva",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike McGuire",
+          "vote": "yea",
+          "politician_id": "974bfe8b-afb8-424c-bfd2-7805f033b1a0"
+        },
+        {
+          "name": "Janet Nguyen",
+          "vote": "abstain"
+        },
+        {
+          "name": "Jeff Stone",
+          "vote": "nay"
+        },
+        {
+          "name": "John Moorlach",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Glazer",
+          "vote": "yea"
+        },
+        {
+          "name": "Sharon Runner",
+          "vote": "abstain"
+        }
+      ]
+    },
+    {
+      "date": "2016-06-30",
+      "body": "CA Assembly",
+      "motion": "SB 880 Hall Senate Third Reading By JONES-SAWYER",
+      "kind": "roll-call",
+      "yes": 44,
+      "no": 30,
+      "absent": 6,
+      "note": "LegiScan roll call 556778; taken on the text 'Enrolled' of 2016-06-30",
+      "members": [
+        {
+          "name": "Mike Gatto",
+          "vote": "yea"
+        },
+        {
+          "name": "Luis Alejo",
+          "vote": "absent"
+        },
+        {
+          "name": "Toni Atkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Bonilla",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Gordon",
+          "vote": "yea"
+        },
+        {
+          "name": "Das Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Kristin Olsen",
+          "vote": "nay"
+        },
+        {
+          "name": "K H Achadjian",
+          "vote": "nay"
+        },
+        {
+          "name": "Nora Campos",
+          "vote": "yea"
+        },
+        {
+          "name": "Shannon Grove",
+          "vote": "nay",
+          "politician_id": "03ee06fb-9b51-41cc-8942-4632f3a724e3"
+        },
+        {
+          "name": "Donald Wagner",
+          "vote": "nay",
+          "politician_id": "c09bed40-e329-45a5-a5f1-5293e038cc66"
+        },
+        {
+          "name": "Roger Hernandez",
+          "vote": "yea"
+        },
+        {
+          "name": "Beth Gaines",
+          "vote": "nay"
+        },
+        {
+          "name": "Franklin Bigelow",
+          "vote": "nay"
+        },
+        {
+          "name": "Richard Bloom",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob Bonta",
+          "vote": "yea",
+          "politician_id": "8b183a30-3afb-4d9e-aa40-aa2ad2c674aa"
+        },
+        {
+          "name": "Cheryl Brown",
+          "vote": "absent"
+        },
+        {
+          "name": "Edwin Chau",
+          "vote": "yea"
+        },
+        {
+          "name": "Rocky Chavez",
+          "vote": "nay"
+        },
+        {
+          "name": "Ken Cooley",
+          "vote": "nay"
+        },
+        {
+          "name": "Brian Dahle",
+          "vote": "nay"
+        },
+        {
+          "name": "Tom Daly",
+          "vote": "absent"
+        },
+        {
+          "name": "Susan Eggman",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Frazier",
+          "vote": "nay"
+        },
+        {
+          "name": "Cristina Garcia",
+          "vote": "yea"
+        },
+        {
+          "name": "Jimmy Gomez",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Gray",
+          "vote": "absent"
+        },
+        {
+          "name": "Chris Holden",
+          "vote": "yea"
+        },
+        {
+          "name": "Ian Calderon",
+          "vote": "yea"
+        },
+        {
+          "name": "Reginald Jones-Sawyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Marc Levine",
+          "vote": "yea"
+        },
+        {
+          "name": "Eric Linder",
+          "vote": "nay"
+        },
+        {
+          "name": "Brian Maienschein",
+          "vote": "nay"
+        },
+        {
+          "name": "Jose Medina",
+          "vote": "nay"
+        },
+        {
+          "name": "Melissa Melendez",
+          "vote": "nay"
+        },
+        {
+          "name": "Kevin Mullin",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Patterson",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Quirk",
+          "vote": "yea"
+        },
+        {
+          "name": "Anthony Rendon",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Stone",
+          "vote": "yea"
+        },
+        {
+          "name": "Philip Ting",
+          "vote": "yea"
+        },
+        {
+          "name": "Marie Waldron",
+          "vote": "nay"
+        },
+        {
+          "name": "Shirley Weber",
+          "vote": "yea",
+          "politician_id": "4ba62f32-dd20-48ce-8d84-d09bb129ad59"
+        },
+        {
+          "name": "Scott Wilk",
+          "vote": "nay"
+        },
+        {
+          "name": "Adrin Nazarian",
+          "vote": "yea"
+        },
+        {
+          "name": "Lorena Gonzalez Fletcher",
+          "vote": "yea"
+        },
+        {
+          "name": "Freddie Rodriguez",
+          "vote": "absent"
+        },
+        {
+          "name": "Matt Dababneh",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Jones",
+          "vote": "nay",
+          "politician_id": "ee130fd3-649d-49e1-bda4-13d9bbed2f6c"
+        },
+        {
+          "name": "Catharine Baker",
+          "vote": "yea"
+        },
+        {
+          "name": "William Brough",
+          "vote": "nay"
+        },
+        {
+          "name": "Autumn Burke",
+          "vote": "yea"
+        },
+        {
+          "name": "Ling Ling Chang",
+          "vote": "yea"
+        },
+        {
+          "name": "David Chiu",
+          "vote": "yea"
+        },
+        {
+          "name": "Kansen Chu",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Cooper",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Dodd",
+          "vote": "yea"
+        },
+        {
+          "name": "Eduardo Garcia",
+          "vote": "yea"
+        },
+        {
+          "name": "James Gallagher",
+          "vote": "nay",
+          "politician_id": "0a283c28-344c-40c9-ae48-bb2dcf1c7c4d"
+        },
+        {
+          "name": "Mike Gipson",
+          "vote": "yea",
+          "politician_id": "6133e73c-4c33-4cfc-9fd3-de1382729f42"
+        },
+        {
+          "name": "David Hadley",
+          "vote": "absent"
+        },
+        {
+          "name": "Matthew Harper",
+          "vote": "nay"
+        },
+        {
+          "name": "Jacqui Irwin",
+          "vote": "yea",
+          "politician_id": "97285c92-b664-4687-a1e4-6d88cf9c7fe4"
+        },
+        {
+          "name": "Young Kim",
+          "vote": "nay"
+        },
+        {
+          "name": "Tom Lackey",
+          "vote": "nay",
+          "politician_id": "e8bdd8a7-a1b2-43e3-afd4-df975980819e"
+        },
+        {
+          "name": "Evan Low",
+          "vote": "yea"
+        },
+        {
+          "name": "Devon Mathis",
+          "vote": "nay"
+        },
+        {
+          "name": "Kevin McCarty",
+          "vote": "yea"
+        },
+        {
+          "name": "Patrick O'Donnell",
+          "vote": "yea"
+        },
+        {
+          "name": "Jay Obernolte",
+          "vote": "nay"
+        },
+        {
+          "name": "Miguel Santiago",
+          "vote": "yea"
+        },
+        {
+          "name": "Marc Steinorth",
+          "vote": "nay"
+        },
+        {
+          "name": "Tony Thurmond",
+          "vote": "yea",
+          "politician_id": "f8808ac0-8a9d-4657-8bf7-2ae60d96399c"
+        },
+        {
+          "name": "Travis Allen",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Wood",
+          "vote": "yea"
+        },
+        {
+          "name": "Chad Mayes",
+          "vote": "nay"
+        },
+        {
+          "name": "Patty Lopez",
+          "vote": "yea"
+        },
+        {
+          "name": "Rudy Salas",
+          "vote": "nay"
+        },
+        {
+          "name": "Sebastian Ridley-Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "Joaquin Arambula",
+          "vote": "nay",
+          "politician_id": "9edab965-ac61-4227-a8d6-601c07821f53"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2016-05-17, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-SB-880-2016.amended-2016-05-17.html",
+      "sha256": "28430c78237b3c8bf7cfcf75eadc7690b5b5588440e16224cb829e864f8d4cd7"
+    },
+    "note": "Two versions: Senate vote 2016-05-19 (24-14) was on Amended 2016-05-17; Assembly vote 2016-06-30 (44-30) was on Enrolled 2016-06-30 (read as the later text). Enrolled file has no add/strike marks, so quoted text is the full enrolled wording of the amended sections; sections 30515(c)-(d) (Olympic pistol exemptions) and fixed-magazine rifle/shotgun rules (a)(2)-(3), (5)-(8) not quoted. The gun parts do not differ materially: the earlier version's new Section 30680 began 'Notwithstanding the meaning of \"assault weapon\" under Section 30515, as amended by the act that added this section, Section 30605 does not apply...' and its (a) and (c) pointed to 'subdivision (c) of Section 30900'; enrolled drops that lead-in and points to 'subdivision (b) of Section 30900'. The bill adds paragraph numbering of 30900(b) as the registration rule for post-2001 weapons without a fixed magazine."
+  },
+  "operative_text": "Section 30515 (Penal Code): (a) Notwithstanding Section 30510, \"assault weapon\" also means any of the following: (1) A semiautomatic, centerfire rifle that does not have a fixed magazine but has any one of the following: (A) A pistol grip that protrudes conspicuously beneath the action of the weapon. (B) A thumbhole stock. (C) A folding or telescoping stock. (D) A grenade launcher or flare launcher. (E) A flash suppressor. (F) A forward pistol grip.\nSection 30515 (Penal Code): (a) (4) A semiautomatic pistol that does not have a fixed magazine but has any one of the following: (A) A threaded barrel, capable of accepting a flash suppressor, forward handgrip, or silencer. (B) A second handgrip. (C) A shroud that is attached to, or partially or completely encircles, the barrel that allows the bearer to fire the weapon without burning the bearer's hand, except a slide that encloses the barrel. (D) The capacity to accept a detachable magazine at some location outside of the pistol grip.\nSection 30515 (Penal Code): (b) For purposes of this section, \"fixed magazine\" means an ammunition feeding device contained in, or permanently attached to, a firearm in such a manner that the device cannot be removed without disassembly of the firearm action.\nSection 30680 (Penal Code): Section 30605 does not apply to the possession of an assault weapon by a person who has possessed the assault weapon prior to January 1, 2017, if all of the following are applicable: (a) Prior to January 1, 2017, the person was eligible to register that assault weapon pursuant to subdivision (b) of Section 30900. (b) The person lawfully possessed that assault weapon prior to January 1, 2017. (c) The person registers the assault weapon by January 1, 2018, in accordance with subdivision (b) of Section 30900.\nSection 30900 (Penal Code): (b) (1) Any person who, from January 1, 2001, to December 31, 2016, inclusive, lawfully possessed an assault weapon that does not have a fixed magazine, as defined in Section 30515, including those weapons with an ammunition feeding device that can be readily removed from the firearm with the use of a tool, shall register the firearm before January 1, 2018, but not before the effective date of the regulations adopted pursuant to paragraph (5), with the department pursuant to those procedures that the department may establish by regulation pursuant to paragraph (5).\nSection 30900 (Penal Code): (b) (4) The department may charge a fee in an amount of up to fifteen dollars ($15) per person but not to exceed the reasonable processing costs of the department."
+}

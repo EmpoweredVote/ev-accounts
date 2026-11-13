@@ -257,7 +257,160 @@
           "sha256": "93266e8d17c0b31728a6c78573a4afda6517fbacbe2200b4273a5f2e422960c1"
         }
       }
+    },
+    {
+      "id": "5f275d38bb4b4e209731852c3972acc093cf5f55a70a6c99ced8f9f38c53ec73",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/recorddocuments/bill/20RS/SB2/HFA19.pdf",
+      "date": "2020-02-24",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-2-2020",
+      "act": "other",
+      "motion": "House floor amendment HFA 19 to SB 2/HCS 1, filed in her name (Rep. Lisa Willner)",
+      "note": "The amendment form for the 2020 voter-ID bill adds that if a person's name is not on the precinct list, the election officer shall offer the person the opportunity to register and to vote at the precinct. The bill's record page lists floor amendment (19) as filed 02/24/20 and, on 03/03/20, among those ruled out of order. Filed in her name, so no vote on it was taken.",
+      "subjects": [
+        "registering or voting at the precinct without being on the roll",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:34:10.550Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "736a359567fa7ab7f2eb4567c3ec98b54afaf517d2a2950e9da68a2a20bc6141",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/recorddocuments/bill/20RS/SB2/HFA31.pdf",
+      "date": "2020-02-24",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-2-2020",
+      "act": "other",
+      "motion": "House floor amendment HFA 31 to SB 2/GA, filed in her name (Rep. Lisa Willner)",
+      "note": "The amendment form for the 2020 voter-ID bill adds the same offer to register and vote at the precinct for a person not on the precinct list, plus related changes to how precinct registration forms are handled and a change to the registration deadline in KRS 116.025. The bill's record page lists floor amendment (31) as filed 02/24/20 and, on 03/03/20, among those ruled out of order.",
+      "subjects": [
+        "registering or voting at the precinct without being on the roll",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:34:10.550Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a25928f6651a1a63c0b5fc142c6506577dc9de80be5a0599fec7e36a0ce3b03b",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "nay",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 20269 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.599Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "66d7488a685348429b625584d27155c3ad62b1a0d68d9f562d509f3e7302b9e6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "nay",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 20269 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.599Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "121fcb8d83cdb77518dcfdab89ed949d5de64b621bdcdb306e7ab9a9e02793ea",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "nay",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 20269 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.599Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for absentee or mail ballots",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "registering or voting at the precinct without being on the roll",
+        "election law in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the Kentucky legislature's SB 2 (2020) record page and the text of two House floor amendments in her name (HFA 19 and HFA 31)",
+        "iVoterGuide profile for the 2026 District 35 race (confirms she is a 2026 general-election candidate; her answer on voting without photo ID and every other answer is marked 'Did not answer': nothing on the subject)",
+        "blocked: https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=35 (not opened; identity taken from the iVoterGuide profile and the amendment forms)",
+        "blocked: Ballotpedia, Vote Smart, bluevoterguide.org (refuse fetches, not tried)",
+        "not reviewed: https://twitter.com/lgwillner (social media, not opened)",
+        "not reviewed: the Louisville-area candidate Q&A found by search is on a Gannett paper (refused outlet), not opened",
+        "nothing on the subject: Kentucky Academy of Science 2022 survey and the 2026 WGTK voter-guide PDF were not opened (search summaries say they cover other topics)",
+        "5 web searches run (name with voter ID, photo ID, proof of citizenship, HB 574, SB 2, questionnaire, voter guide, floor amendment); no own-words statement on the subject found"
+      ],
+      "found": 2,
+      "at": "2026-11-11T18:34:10.550Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 3,
+      "at": "2026-11-11T21:12:46.599Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
 }

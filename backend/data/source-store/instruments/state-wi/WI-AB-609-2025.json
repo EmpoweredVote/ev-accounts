@@ -1,0 +1,158 @@
+{
+  "id": "WI-AB-609-2025",
+  "scope": "state:wi",
+  "title": "AB609 (2025-2026 Regular Session): Right to carry a weapon in this state, licenses to carry a concealed weapon, and providing a penalty. (FE)",
+  "urls": [
+    "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab609",
+    "https://docs.legis.wisconsin.gov/document/proposaltext/2025/REG/AB609.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chanz Green",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5c631466-ba33-4731-89a3-ca017444cf78"
+    },
+    {
+      "name": "David Armstrong",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "374fcadb-a124-4a02-b529-5a63ec494bbf"
+    },
+    {
+      "name": "Elijah Behnke",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d68b3730-048f-4cb5-a952-104dd75409df"
+    },
+    {
+      "name": "Calvin Callahan",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1073fd5c-0bac-4f03-8254-892351795937"
+    },
+    {
+      "name": "Joy Goeben",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3d9e1ffb-1e2e-445a-a86d-259c630360aa"
+    },
+    {
+      "name": "Rob Kreibich",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6b10e440-3ab9-4e5e-be02-c61616ea4cf0"
+    },
+    {
+      "name": "Dave Maxey",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1d1a1f40-a1e4-4208-bdc0-810571bd11a9"
+    },
+    {
+      "name": "David Murphy",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3d3b7e41-b4d9-44e9-940e-e65fa85489b7"
+    },
+    {
+      "name": "Jim Piwowarczyk",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1e6711f8-190e-4edd-a2d7-75584e192ce9"
+    },
+    {
+      "name": "Shae Sortwell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9f534346-6384-4fac-be10-a040ea62c664"
+    },
+    {
+      "name": "Rob Summerfield",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fa25d156-89a7-4a29-ade3-e55688cfcee5"
+    },
+    {
+      "name": "Rob Swearingen",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0404c82e-7503-4b12-b44d-49d2c990a5a9"
+    },
+    {
+      "name": "Duke Tucker",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "00d0e0fc-ac5d-4610-bf25-d858a85a4b80"
+    },
+    {
+      "name": "Brent Jacobson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1adb3e54-9f6d-475c-9c4b-9a499f7a9f29"
+    },
+    {
+      "name": "Andre Jacque",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d677bfee-6bc5-4ad1-bb6a-fb6e5b6fe284"
+    },
+    {
+      "name": "Julian Bradley",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7fdcb712-d201-49d4-9d2b-c28bfa780702"
+    },
+    {
+      "name": "Dan Feyen",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8ebb711d-55b2-49f6-ad4c-ea9c0ff066ca"
+    },
+    {
+      "name": "Steve Nass",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f8901d87-cb68-480a-84cd-b40290c1bb8b"
+    },
+    {
+      "name": "Romaine Quinn",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2dbf3032-65b1-4898-813b-0f62dac0192e"
+    },
+    {
+      "name": "Rob Stafsholt",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "31542340-858b-49de-8f46-f3054f00709d"
+    },
+    {
+      "name": "Eric Wimberger",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "47addb29-85ad-4c09-8886-7e5e224da353"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+    "fetched_at": "2026-11-10T23:03:34.524773Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-609-2025.introduced.pdf",
+      "sha256": "e7626966e4cf1b8cb1ab34dfdfb2b7b2a43443808df4408ec5e1314bfd60b6f3"
+    }
+  },
+  "operative_text": "Sec. 59 (repealing 941.23): 941.23 of the statutes is repealed.\nSec. 24 (amending 175.60 (2) (c)): 175.60 (2) (c) Unless expressly provided in this section, this section does not limit an individual’s right to carry a firearm{+, whether+} that {+firearm is concealed or+} is not concealed {+or whether or not the individual is a licensee or an out-of-state licensee+}.\nSec. 25 (repealing 175.60 (2g)): 175.60 (2g) of the statutes is repealed.\nSec. 33 (amending 175.60 (9g) (a) 2.): ... to determine whether the applicant is prohibited from possessing a firearm under federal law[-; whether the applicant is prohibited from possessing a firearm under s. 941.29; ... and if the applicant is prohibited from possessing a dangerous weapon as a condition of release under s. 969.01-].\nSec. 7 (amending 167.31 (2) (c)): 167.31 (2) (c) Except as provided in sub. (4), no person may [-load a firearm, other than a handgun, in a vehicle or-] discharge a firearm or airgun or shoot a bolt or an arrow from a bow or crossbow in or from a vehicle.\nSec. 45 (renumbering and amending 175.60 (15m)): 103.08 (2) An employer may not prohibit [- a licensee or an out-of-state licensee-] {+an employee+}, as a condition of employment, from carrying a [-concealed-] weapon, a particular type of [-concealed-] weapon, or ammunition or from storing a weapon, a particular type of weapon, or ammunition in the [-licensee’s or out-of-state licensee’s-] {+employee’s+} own motor vehicle, regardless of whether the motor vehicle is used in the course of employment or whether the motor vehicle is driven or parked on property used by the employer.\nSec. 60 (repealing and recreating 941.235): 941.235 Prohibited places for firearms. (1) No person may go armed with a firearm in any of the following places: ... (h) A place that has been declared or adjudged a nuisance, as defined in s. 289.55 (1) (a). (i) Any place where federal law prohibits a person from going armed with a firearm. (2) A person who violates sub. (1) is guilty of a Class A misdemeanor.\nSec. 64 (creating 943.13 (1p)): 943.13 (1p) Unless sub. (1m) (c) specifically allows a person to prohibit entering or remaining in or at the location while carrying a firearm, an individual does not violate this section only because he or she is carrying a firearm while entering or remaining in or at a location.\nSec. 63 (amending 943.13 (1m) (c) 4.): 943.13 (1m) (c) 4. While carrying a firearm, enters or remains in any part of a building that is owned, occupied, or controlled by the state or any local governmental unit, excluding any building or portion of a building under s. [-175.60 (16) (a)-] {+941.235+}, if the state or local governmental unit has notified the actor not to enter or remain in the building while carrying a firearm or with that type of firearm."
+}

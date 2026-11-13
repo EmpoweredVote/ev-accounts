@@ -1,0 +1,224 @@
+{
+  "politician_id": "e4f4c7bc-9f03-42dc-bac1-bf137ece3d35",
+  "findings": [
+    {
+      "id": "c1972bc2d3fb84fd4bf2fc50558a975af04ace8911ce07b769ebbdf6ac96fea8",
+      "kind": "own-words",
+      "url": "https://www.wkms.org/government-politics/2019-11-22/sec-of-state-elect-michael-adams-clean-voter-rolls-voter-id-before-2020-elections",
+      "date": "2019-11-22",
+      "date_precision": "day",
+      "passage": "“I don’t want to go into this election without a photo ID law and without cleaning up our voter rolls. This is a problem that we’ve known about and just haven’t adequately addressed,” Adams said.",
+      "note": "As Secretary of State-elect, speaking to a legislative committee, he says he wants a photo ID law and cleaner voter rolls before the 2020 elections. Quoted by WKMS (Ryland Barton).",
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll cleanup"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:13.540Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d426cb34a39c0b4d8c430d9a78f3ec74537a80f4500665a715ff260ff1a1abac",
+      "kind": "own-words",
+      "url": "https://www.wkms.org/government-politics/2019-11-22/sec-of-state-elect-michael-adams-clean-voter-rolls-voter-id-before-2020-elections",
+      "date": "2019-11-22",
+      "date_precision": "day",
+      "passage": "“For two reasons that needs to be in there — one because it’s humane, and the other is because I want a version that will pass court muster. And I simply don’t think that a version of photo ID without this component would be constitutional,” Adams said.",
+      "note": "Explains why a photo ID bill should include free IDs for people who cannot afford them. Quoted by WKMS.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID for voters without one"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:13.540Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3975bcf7ca30e1944ef09057931485e1f81b6990d486e7bf9edd8bc29b7bb506",
+      "kind": "own-words",
+      "url": "https://www.wkms.org/government-politics/2019-11-22/sec-of-state-elect-michael-adams-clean-voter-rolls-voter-id-before-2020-elections",
+      "date": "2019-11-22",
+      "date_precision": "day",
+      "passage": "“The left think that the right are stealing elections through voter suppression, the right think that the left are stealing elections through the dead voting, through illegal immigrants voting,” Adams said.",
+      "note": "Describes the two sides' competing fears about elections while saying he will govern with progressive concerns in mind. Quoted by WKMS.",
+      "subjects": [
+        "election integrity laws in general",
+        "noncitizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:13.540Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6d85d9631d4148ee0943ef376b68b6d11bfe8d58a8c746a04e27780584b00cec",
+      "kind": "own-words",
+      "url": "https://www.semafor.com/article/05/16/2023/kentuckys-gop-secretary-of-state-takes-on-the-kooks",
+      "date": "2023-05-16",
+      "date_precision": "day",
+      "passage": "I’ve talked about how I implemented photo ID to vote, how I cleaned up the voter rolls, how I transitioned the state to paper ballots so we can audit.",
+      "note": "In an interview transcript (Semafor, Americana), he lists photo ID to vote among his accomplishments in a primary campaign. Date taken from the article URL.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll cleanup",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:13.540Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e8b3e7cded299bcd423de71d0b76be540cf8245e0db174662395b5382181ca7f",
+      "kind": "own-words",
+      "url": "https://www.wkyufm.org/news/2024-10-16/kentucky-amendment-1-mirrors-national-gop-efforts-to-prevent-noncitizens-voting",
+      "date": "2024-10-16",
+      "date_precision": "day",
+      "passage": "“It’s a practical impossibility for a noncitizen to vote in a Kentucky election because we require ID,” Adams said.",
+      "note": "On the 2024 ballot amendment on citizen-only voting, he ties the photo ID requirement to preventing noncitizen voting. Quoted by WKYU.",
+      "subjects": [
+        "voter ID at the polls",
+        "noncitizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:13.540Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1889aa23b7c2bdd7533307cdb57a0a37d9bed21f77d7b2c48314aa2a948eab57",
+      "kind": "own-words",
+      "url": "https://www.wkyufm.org/news/2024-10-16/kentucky-amendment-1-mirrors-national-gop-efforts-to-prevent-noncitizens-voting",
+      "date": "2024-10-16",
+      "date_precision": "day",
+      "passage": "“We have undertaken common sense election integrity measures to make sure that we have clean elections,” Adams said. “One of those is the first thing we implemented when I got into office in 2020 which was photo-ID to vote.\"",
+      "note": "Names photo ID to vote as his first election integrity measure. Quoted by WKYU.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:13.540Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4ca59feded0c6a3d7fb27055cbf9257765ca3dd1380368e97d19875150309b2f",
+      "kind": "own-words",
+      "url": "https://www.wkyufm.org/news/2024-10-16/kentucky-amendment-1-mirrors-national-gop-efforts-to-prevent-noncitizens-voting",
+      "date": "2024-10-16",
+      "date_precision": "day",
+      "passage": "“The notion of people coming to our polls and voting illegally is about the least of our problems,” Adams said.",
+      "note": "Says illegal voting is a small concern next to getting eligible people to vote. Quoted by WKYU.",
+      "subjects": [
+        "noncitizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:13.540Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "78f999178bda072f95983980674cf53b3bc7b1815e4ce6033b5956d14bef23bc",
+      "kind": "own-words",
+      "url": "https://www.wkms.org/2026-09-18/doj-escalates-threats-on-kentucky-voter-data-in-letter-to-sec-adams",
+      "date": "2026-09-18",
+      "date_precision": "day",
+      "passage": "“Kentucky law protects voters’ personal information, and I will not voluntarily commit a data breach by providing Kentuckians’ personal data to the federal bureaucracy unless a court order tells me to.”",
+      "note": "Statement after the February 2026 federal lawsuit over voter data; the exact statement date is not given, so the article date is used. Related to voter-roll data sharing, not ID.",
+      "subjects": [
+        "voter-roll data sharing with federal government"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:13.540Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "26ea60b93c6e7990351a51f673759036f6a8ae17f7108f82dbf5dea4f214b574",
+      "kind": "own-words",
+      "url": "https://michaelgadams.com/promises-kept",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "While other states became lax on voter verification in 2020, Michael took Kentucky in the opposite direction. Kentucky was the only state to implement Photo ID to Vote in 2020.",
+      "note": "Campaign page (a statement issued under his campaign, written in the third person) listing photo ID to vote among his accomplishments; page is undated.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:21:13.540Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID for voters without one",
+        "proof of citizenship to register or vote",
+        "noncitizen voting",
+        "voter-roll cleanup",
+        "election integrity measures"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site michaelgadams.com/promises-kept (one passage on photo ID)",
+        "official statewide office site: not reached directly; the state press-release page was blocked",
+        "blocked: https://www.kentucky.gov/Pages/Activity-stream.aspx?n=SOS&prId=289 (curl returned a request-blocked page)",
+        "blocked: https://www.wpsdlocal6.com/news/podcast-kentucky-secretary-of-state-reflects-on-voting-access-ahead-of-primary-elections/article_ab95a7e3-0f61-4c6c-ac8f-df3fdf531905.html (empty response)",
+        "blocked: Ballotpedia (listed refusing our fetches, not tried)",
+        "KET Connections page ket.org (fetched; no readable transcript text, video not reviewed)",
+        "not reviewed: https://www.pbs.org/video/kentucky-secretary-of-state-michael-adams-8cVNzZ/ (video)",
+        "WKMS 2019 and 2026 articles, WKYU 2024 article, Semafor interview 2023 (fetched and copied)",
+        "web searches run: voter ID/photo ID; proof of citizenship/SAVE Act/noncitizen; SAVE Act immigration checks; photo ID op-ed/interview local outlets; SAVE Act 2026 modifications",
+        "nothing on the subject: KSL article (text not retrievable by curl); newsfromthestates FBI-call article (statement on federal call only, no ID or citizenship words by the person)"
+      ],
+      "found": 9,
+      "at": "2026-11-11T18:21:13.540Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "politician_id": "e609dce3-0d0e-4685-b6f9-9d959000e2de",
+  "findings": [
+    {
+      "id": "36d0f4ec7e911369e41ef140c218f059f531f9b2ee2b20091d2677a9a2f27cf5",
+      "kind": "own-words",
+      "url": "https://www.washingtoncountyinsider.com/bradley-petersen-running-59th-assembly/",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "passage": "Petersen is pro-life, pro-Second Amendment, and a strong supporter of law enforcement.",
+      "note": "Line in his campaign launch release for the 59th Assembly District as published by Washington County Insider; it is the release's own description of him, not a direct quote, and says nothing specific on any gun law.",
+      "subjects": [
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.210Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "guns and minors",
+        "bills sponsored on firearms"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://votebradleypetersen.com: not reviewed, page is script-rendered and returns no text (issues and about pages return nothing)",
+        "news item on his campaign launch (washingtoncountyinsider.com), fetched",
+        "blocked: https://goodparty.org/candidate/bradley-petersen/wisconsin-state-assembly-district-59 (429)",
+        "blocked: https://www.wispolitics.com/2026/petersen-campaign-bradley-petersen-secures-major-endorsement-coalition-in-bid-for-59th-assembly-district/ (403)",
+        "Ballotpedia: fetch returns empty, not relied on",
+        "not a legislator: no sponsor list",
+        "news searches on his name plus gun words: only campaign material"
+      ],
+      "found": 1,
+      "at": "2026-11-10T22:15:40.210Z",
+      "by": "source-collector"
+    }
+  ]
+}

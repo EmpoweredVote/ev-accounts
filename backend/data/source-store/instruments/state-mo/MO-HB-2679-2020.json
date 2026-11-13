@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-2679-2020",
+  "scope": "state:mo",
+  "title": "HB2679 (2020 Regular Session): Changes the law regarding the concealed carrying of firearms.",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB2679&year=2020&code=R",
+    "https://www.house.mo.gov/billtracking/bills201/hlrbillspdf/5699H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mike Moon",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3d0fda4e-1322-467e-bfcf-38a5c348b096"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2679-2020.introduced.pdf",
+      "sha256": "16ec19efad5fd5c0809fcbcf795a9231c8269e8d813c91ed98aceecf71daf89f"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): 4. Subdivisions (1), (8), and (10) of subsection 1 of this section shall not apply to any person who has a valid concealed carry permit issued pursuant to sections 571.101 to 571.121, a valid concealed carry endorsement issued before August 28, 2013, a valid permit or endorsement to carry concealed firearms issued by another state or political subdivision of another state, or any person who carries a concealed weapon in a circumstance described under subsection 3 of this section.\nSection 571.107 (RSMo): 2. Carrying of a concealed firearm in a location specified in subdivisions (1) to (17) of subsection 1 of this section by any individual shall not be a criminal act but may subject the person to denial to the premises or removal from the premises."
+}

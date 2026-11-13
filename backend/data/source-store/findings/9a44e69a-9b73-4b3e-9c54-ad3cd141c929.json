@@ -1,0 +1,156 @@
+{
+  "politician_id": "9a44e69a-9b73-4b3e-9c54-ad3cd141c929",
+  "findings": [
+    {
+      "id": "0163468abe7ef6cc7868a6546830d4095296324325aa2540d7bc350fe651df73",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/HB1316/id/1543681",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1316-2025",
+      "act": "yea",
+      "motion": "Senate: Third Consideration",
+      "note": "TN Senate floor roll call (Third Consideration, 27-1) on HB1316 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: House bill as engrossed: Draft + HA0118 (no Senate amendment adopted; SA0055 withdrawn, text not saved). Equals the Chaptered act.; linked by LegiScan member id 19609 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.082Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f0348f24a72db024f3a1a9c793f0dac0385e4fb82378e2fbb2b145afd1d30976",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0626/id/1541445",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-626-2025",
+      "act": "yea",
+      "motion": "Senate: as Amended Third Consideration",
+      "note": "TN Senate floor roll call (as Amended Third Consideration, 22-4) on SB0626 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft 3093364 + SA0305 (full rewrite = chaptered text); linked by LegiScan member id 19609 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.082Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f8a29e050605e952b8e872f91b22e62b5903d6a21e006a82f4a13a544ca6dcb5",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/SB1297/2025",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-1297-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, 3106048-Draft",
+      "note": "Listed as co sponsor of SB1297 (114th General Assembly) in LegiScan's bill record (sponsor order 2); the first version (3106048-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.082Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f980e3e7619c55dde318902ee75c0bcffeab049f3ac02af140c30fb2d2daf2c1",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1476571",
+      "date": "2025-01-29",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "yea",
+      "motion": "Senate: as Amended Third Consideration",
+      "note": "TN Senate floor roll call (as Amended Third Consideration, 26-7) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text); linked by LegiScan member id 19609 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.082Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0aae2c97a5f529071dced8b38c17fc0088f41a097037e7f68fef9d9d763b3453",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/bill/SB6002/2025",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, 3072439-Draft",
+      "note": "Listed as co sponsor of SB6002 (114th General Assembly) in LegiScan's bill record (sponsor order 7); the first version (3072439-Draft) carries the ID/citizenship text (identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.082Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "voter-roll checks",
+        "election laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://www.reevesfortn.com/2019/06/21/2019-legislative-update (names Senator Shane Reeves; nothing on the subject)",
+        "WPLN college-ID tag page https://wpln.org/tag/college-id/ (2013 articles, about a different senator; does not name him)",
+        "blocked: https://ballotpedia.org/Shane_Reeves (refuses our fetches, not tried)",
+        "capitol.tn.gov not fetched (a votervoice link redirected there; not followed)",
+        "not reviewed (refused outlet): https://tennesseelookout.com/race-details/state-senate-district-14/",
+        "7 web searches (voter ID, proof of citizenship/noncitizen/SAVE Act, questionnaire, Rutherford County voting/ballot, exact-title voter ID); no statement of his on the subject found",
+        "records (SB 726 voting centers, paper-audit-trail cosponsorship) seen only as leads in search; votes and sponsorships are linked separately and not saved"
+      ],
+      "found": 0,
+      "at": "2026-11-12T01:57:28.892Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 5,
+      "at": "2026-11-12T15:13:42.082Z",
+      "by": "source-collector"
+    }
+  ]
+}

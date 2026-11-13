@@ -1,0 +1,117 @@
+{
+  "id": "MO-HB-434-2025",
+  "scope": "state:mo",
+  "title": "HB434 (2025 Regular Session): Establishes the \"Anti-Red Flag Gun Seizure Act\"",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB434&year=2025&code=R",
+    "https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/1549H.01I.pdf",
+    "https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/1549H.05C.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bill Hardwick",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "453a51e6-77c2-468d-adbb-27a5d30d3dbc"
+    },
+    {
+      "name": "Bishop Davidson",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1d928e37-3e42-45e1-9f99-213ed73d58d2"
+    },
+    {
+      "name": "Holly Jones",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "55d13ee9-0d12-41a0-aa96-0bac5b32a947"
+    },
+    {
+      "name": "Tim Taylor",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e5224ede-49a9-4027-8cc4-d4c56d38a8dd"
+    },
+    {
+      "name": "Matthew Overcast",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "35cabeb8-6828-4518-9ca3-48e5f5923f73"
+    },
+    {
+      "name": "Lisa Durnell",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b7ce8e06-f568-4135-bb06-25cf6ccb717b"
+    },
+    {
+      "name": "Bryant Wolfin",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "31cab7ee-2a04-4ba5-a4bb-3cfa2a4bb92f"
+    },
+    {
+      "name": "Bob Titus",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3a9073dc-015c-4df9-b4f0-86e698fd6378"
+    },
+    {
+      "name": "Sean Pouche",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "64c23ac5-4b76-4b58-961b-93b1856e3d60"
+    },
+    {
+      "name": "Michael Davis",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "63f9e8ec-4dfb-4a30-85f2-36b7c1ab7997"
+    },
+    {
+      "name": "Tara Peters",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "80e5d8ce-284c-43df-bfc1-bd3684f1b958"
+    },
+    {
+      "name": "John Hewkin",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "645cc8f7-5299-48bf-999c-0c1eb54788dc"
+    },
+    {
+      "name": "John Simmons",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4378bec1-76bb-4263-a882-6b61a2e40521"
+    },
+    {
+      "name": "Jamie Gragg",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0eb62660-6092-4d15-9fed-cabe0077f8f3"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-434-2025.introduced.pdf",
+      "sha256": "b976191553914418aa47ac5bdc94e6a94166386f6baa39ce3ef6b167f6fc8643"
+    }
+  },
+  "operative_text": "Section 1.486 (RSMo): Any federal order of protection, other judicial order issued by a federal court, or federal executive order that is a red flag law or otherwise directs the confiscation of any firearm, firearm accessory, or ammunition from any law-abiding citizen within the borders of this state shall not be enforced in this state by any state agency, political subdivision, or state or local law enforcement agency.\nSection 1.486 (RSMo): No state entity or employee thereof, political subdivision or employee thereof, or other entity or person shall have the authority to enforce or attempt to enforce a red flag law regardless of the red flag law's origin or the authority of the issuing entity.\nSection 1.486 (RSMo): A political subdivision or state or local law enforcement agency that employs a law enforcement officer who knowingly acts to violate this section and enforce a red flag law under the color of any state or federal statute, rule, executive order, or judicial order or finding shall be liable to the party against whom the red flag law was enforced in an action at law, suit in equity, or other proper proceeding for redress and shall be subject to a civil penalty of fifty thousand dollars per occurrence."
+}

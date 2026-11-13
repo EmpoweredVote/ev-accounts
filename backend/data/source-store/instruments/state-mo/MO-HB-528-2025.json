@@ -1,0 +1,44 @@
+{
+  "id": "MO-HB-528-2025",
+  "scope": "state:mo",
+  "title": "HB528 (2025 Regular Session): Modifies the offense of unlawful possession of a firearm",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB528&year=2025&code=R",
+    "https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/1566H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Steve Butz",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "356841a9-5ff2-46ba-87d7-b65f7879f6df"
+    },
+    {
+      "name": "Mark Boyko",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0cb13116-90e4-430c-8720-ab660743d579"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-528-2025.introduced.pdf",
+      "sha256": "7a72611f6b04291f50de7d7c1c9a33a08b48a29c1b3f8235cb64d6a117db8b4a"
+    }
+  },
+  "operative_text": "Section 571.070 (RSMo): A person commits the offense of unlawful possession of a firearm if such person knowingly has any firearm in his or her possession and: (1) Such person has been convicted of a felony under the laws of this state, or of a crime under the laws of any state or of the United States which, if committed within this state, would be a felony; (2) Such person is a fugitive from justice, is habitually in an intoxicated or drugged condition, or is currently adjudged mentally incompetent; or (3) Such person is under eighteen years of age and is on public property. However, possession under this subdivision is not an offense if such person has completed the hunter education course that is required by the department of conservation to obtain a hunting permit in this state. 2. Unlawful possession of a firearm is a class C felony, unless a person has been convicted of a dangerous felony as defined in section 556.061, or the person has a prior conviction for unlawful possession of a firearm in which case it is a class B felony. 3. The provisions of subdivision (1) of subsection 1 of this section shall not apply to the possession of an antique firearm."
+}

@@ -1,0 +1,30 @@
+{
+  "politician_id": "f42d0120-f51e-451c-b79e-2a7db2aec953",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "check every gun buyer",
+        "red-flag or extreme-risk orders",
+        "carry a gun",
+        "gun rights / Second Amendment statements",
+        "bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: name plus gun and Second Amendment words (several searches)",
+        "candidate for Assembly District 53 on the 2026 ballot (https://ivoterguide.com/candidate/96990/race/34246/election/1497); declared victory 2026-11-03 (https://www.wispolitics.com/?p=431830): nothing on the subject",
+        "voter-guide profile: gun question not answered",
+        "campaign site: not found; beckynichols.com is a different person (an artist), not used",
+        "goodparty profile: blocked: https://goodparty.org/candidate/becky-nichols/wisconsin-state-assembly-district-53 (429)",
+        "sponsor list: not applicable, not a legislator before 2027; Ballotpedia not reviewed (returns empty to fetch tool)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T22:15:40.196Z",
+      "by": "source-collector"
+    }
+  ]
+}

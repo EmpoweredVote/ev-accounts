@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-998-2024",
+  "scope": "state:mo",
+  "title": "SB998 (2024 Regular Session): Creates the Anti-Red Flag Gun Seizure Act",
+  "urls": [
+    "https://www.senate.mo.gov/24info/BTS_Web/Bill.aspx?SessionType=R&BillID=176",
+    "https://www.senate.mo.gov/24info/pdf-bill/intro/SB998.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Denny Hoskins",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b7318128-42e4-4285-989d-11a849f76e95"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-998-2024.introduced.pdf",
+      "sha256": "934c020f75157238e53f8e3b96dadf2fb7f8b8b9cfaea8730d53396e9dd74691"
+    }
+  },
+  "operative_text": "Section 1.486 (RSMo): 2. Any federal order of protection or other judicial order issued by a court to confiscate any firearm, firearm accessory, or ammunition from any law-abiding citizen shall be considered an infringement on the people's right to keep and bear arms, as guaranteed by Amendment II of the Constitution of the United States and Article I, Section 23 of the Constitution of Missouri, within the borders of this state.\nSection 1.486 (RSMo): 3. No entity or person, including any public officer, agency, or employee of this state or any political subdivision of this state, shall have the authority to enforce or attempt to enforce any federal acts, laws, executive orders, administrative orders, rules, regulations, statutes, or ordinances infringing on the right to keep and bear arms as described under section 1.420.\nSection 1.486 (RSMo): 5. No public agency, political subdivision, or law enforcement agency shall receive any federal funding for the purposes of enforcing any order of protection issued by a court to confiscate any firearms, firearm accessories, or ammunition."
+}

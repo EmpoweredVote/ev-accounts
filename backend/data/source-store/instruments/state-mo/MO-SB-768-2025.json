@@ -1,0 +1,40 @@
+{
+  "id": "MO-SB-768-2025",
+  "scope": "state:mo",
+  "title": "SB768 (2025 Regular Session): Modifies provisions relating to the restoration of the right to possess a firearm",
+  "urls": [
+    "https://www.senate.mo.gov/25info/BTS_Web/Bill.aspx?SessionType=R&BillID=6349115",
+    "https://www.senate.mo.gov/25info/pdf-bill/intro/SB768.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mike Moon",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3d0fda4e-1322-467e-bfcf-38a5c348b096"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "voting-rights: Section 561.026 — people with firearm rights restored are exempt from the lifetime voting disqualification for election-related offences"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-768-2025.introduced.pdf",
+      "sha256": "f75a8a130253562ce6c920e54ede2d9b9b4362de7a99b54d6b9d7579ce7c5472"
+    }
+  },
+  "operative_text": "Section 571.070 (RSMo): The provisions of subdivision (1) of subsection 1 of this section shall not apply to: (1) Any person who has had his or her civil right to ship, transport, possess, or receive a firearm restored under section 571.074 after each crime that would otherwise have been the basis for a violation of subdivision (1) of subsection 1 of this section; or (2) The possession of an antique firearm.\nSection 571.074 (RSMo): 1. Except as provided in subsection 2 of this section, any person who has been deprived of his or her civil right to ship, transport, possess, or receive a firearm because of a conviction for a felony under the laws of this state or of a crime under the laws of any state or of the United States which, if committed within this state, would be a felony shall have his or her civil right to ship, transport, possess, or receive a firearm automatically restored upon such person's discharge from confinement, probation, or parole, whichever occurs later. 2. The provisions of subsection 1 of this section shall not apply to: (1) Any person who has been convicted of an offense which requires registration as a sex offender unless such person has been removed from the sex offender registry or exempted from having to register as a sex offender; (2) Any person convicted of any offense listed in subsection 1 of section 566.147; or (3) Any person who has been convicted of a violent felony as defined in subsection 3 of this section.\nSection 571.074 (RSMo): 4. Any person who has been convicted of a violent felony as defined in subsection 3 of this section and who has been deprived of his or her civil right to ship, transport, possess, or receive a firearm as a result of such conviction may file a petition in the circuit court of the county in which he or she was convicted or in the county in which he or she resides to restore such person's civil right to ship, transport, possess, or receive a firearm. The court may grant the relief sought if the person shows good cause to do so, the person has been discharged from confinement, probation, or parole, whichever occurred later, the conviction occurred three or more years before the filing of the petition, and the person has not been convicted at any other time for a felony under the laws of this state or of a crime under the laws of any state or of the United States which, if committed within this state, would be a felony. If the petition is denied, the person shall not file another petition until three years have elapsed without the permission of the court. If the petition is granted, the petitioner’s civil right to ship, transport, possess, or receive a firearm shall be restored and the court's order shall so provide.\nSection 561.026 (RSMo): 2. The provisions of subdivision (2) of subsection 1 of this section shall not apply to any person who has had his or her civil rights restored under section 571.074."
+}

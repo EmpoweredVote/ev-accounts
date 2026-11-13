@@ -424,14 +424,8 @@ export async function reviewPolitician(
  *
  * Always sets: is_active = true.
  *
- * 🔴 ON A RE-PROMOTION IT NO LONGER TOUCHES is_incumbent. It used to force `is_incumbent = true`
- * in the ON CONFLICT update, which silently reverted every correction made elsewhere — including
- * by `scripts/reconcile-incumbency.mjs`, whose whole job is to keep that flag true to
- * `office_terms`. A promotion knows that a row arrived from staging; it does not know whether
- * that person still holds a seat today, and only `essentials.office_current_holder` does.
- * A FIRST insert still sets it true explicitly (staging carries sitting officials), because the
- * column defaults to false and a seated person inserted without it is hidden from address
- * search. `scripts/reconcile-incumbency.test.ts` guards the absence of the update line by text.
+ * It does not set incumbency: that column was dropped (CA_0378). Whether someone holds a seat
+ * is read from `essentials.office_terms` (src/lib/incumbency.ts), never from a stored flag.
  *
  * external_id type mismatch: staging stores text, essentials stores bigint.
  * Attempt Number(external_id) — if NaN or null, use NULL in essentials.
@@ -449,8 +443,8 @@ async function promoteToEssentials(politician: StagingPolitician): Promise<void>
     await pool.query(
       `INSERT INTO essentials.politicians
          (full_name, party, bio_text, photo_origin_url, is_appointed, is_vacant,
-          valid_from, valid_to, total_years_in_office, is_active, is_incumbent, external_id)
-       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, true, true, $10)
+          valid_from, valid_to, total_years_in_office, is_active, external_id)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, true, $10)
        ON CONFLICT (external_id) DO UPDATE SET
          full_name = EXCLUDED.full_name,
          party = EXCLUDED.party,
@@ -480,8 +474,8 @@ async function promoteToEssentials(politician: StagingPolitician): Promise<void>
     await pool.query(
       `INSERT INTO essentials.politicians
          (full_name, party, bio_text, photo_origin_url, is_appointed, is_vacant,
-          valid_from, valid_to, total_years_in_office, is_active, is_incumbent)
-       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, true, true)`,
+          valid_from, valid_to, total_years_in_office, is_active)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, true)`,
       [
         politician.fullName,
         politician.party,

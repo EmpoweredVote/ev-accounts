@@ -1,0 +1,32 @@
+{
+  "politician_id": "cb3d61dd-5569-4083-b732-3926afa80fa1",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "gun safety laws",
+        "firearm restrictions",
+        "carry a gun without a permit",
+        "ban on assault-style guns",
+        "check every gun buyer"
+      ],
+      "places": [
+        "scope: candidate for Arizona House District 12 on the 2026 general-election ballot (https://www.ballotready.org/people/armando-a-montero)",
+        "On the Record (0 meetings)",
+        "iVoterGuide questionnaire https://ivoterguide.com/candidate/95982/race/30487/election/1455: gun restrictions question marked did not answer",
+        "BallotReady issue stances: no guns statement; nothing on the subject",
+        "https://blogforarizona.net/gen-z-candidate-armando-montero-continues-his-meteoric-political-rise-with-a-campaign-for-the-arizona-state-house: only a school safety remark, no gun statement",
+        "sponsor list: covered by LegiScan bulk check (not a sitting legislator)",
+        "Ballotpedia: not reviewed, page returns empty to the fetch tool (https://ballotpedia.org/Armando_Montero)",
+        "campaign site: not opened, not located",
+        "news search on name plus gun words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:13:41.559Z",
+      "by": "source-collector"
+    }
+  ]
+}

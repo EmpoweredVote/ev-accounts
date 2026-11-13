@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1034-2019",
+  "scope": "state:mo",
+  "title": "HB1034 (2019 Regular Session): Establishes \"Blair's Law,\" which modifies the offense of unlawful use of a weapon by adding provisions regarding the discharge of a firearm within or into the limits of a municipality.",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB1034&year=2019&code=R",
+    "https://www.house.mo.gov/billtracking/bills191/hlrbillspdf/2183H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nick Schroer",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b6dd336b-81d6-488c-93db-2473ced473b8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1034-2019.introduced.pdf",
+      "sha256": "f70604af1fe23455713d7a898ab39db741e3136381da0bd471b447406b806f2b"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): 2. (1) This subsection shall be known and may be cited as \"Blair's Law\". (2) A person commits the offense of unlawful use of weapons if, with criminal negligence, he or she discharges a firearm within or into the limits of any municipality. (3) This subsection shall not apply if the firearm is discharged: (a) As allowed by a defense of justification under chapter 563; (b) On a properly supervised range; (c) To lawfully take wildlife during an open season established by the department of conservation. Nothing in this subdivision shall prevent a municipality from adopting an ordinance restricting the discharge of a firearm within one-quarter mile of an occupied structure; (d) For the control of nuisance wildlife as permitted by the department of conservation or the United States Fish and Wildlife Service; (e) By special permit of the chief of police of the municipality; (f) As required by an animal control officer in the performance of his or her duties; (g) Using blanks; (h) More than one mile from any occupied structure; or (i) In self-defense or defense of another person against an animal attack if a reasonable person would believe that deadly physical force against the animal is immediately necessary and reasonable under the circumstances to protect oneself or another person.\nSection 571.030 (RSMo): (4) Notwithstanding any other provision of this section, a person who commits the offense of unlawful use of weapons under this subsection shall be guilty of a class D felony, except if such person commits a violation under subdivision (9) of subsection 1 of this section in which case the penalties of subdivision (4) of subsection 9 of this section shall apply."
+}

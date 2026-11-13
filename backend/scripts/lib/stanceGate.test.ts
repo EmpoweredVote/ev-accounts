@@ -603,3 +603,19 @@ describe('blank-unexamined-fallback — a blank removes a visible chair only aft
     expect(canonicalUrl('https://a.gov/x?id=1')).not.toBe(canonicalUrl('https://a.gov/x?id=2'));
   });
 });
+
+describe('instrument-not-cited: South Carolina bare bill numbers (2026-11-10)', () => {
+  const snip = (t: string) => [{ ...ev[0], snippet: `${t} South Carolina General Assembly bill documents sponsors history status` }];
+  it('reads "H 3003" as an instrument and matches LegiScan "H3003" or the journal "H. 3003"', () => {
+    const row = { ...good, reasoning: 'Co-sponsor of SC H 3003 (2011) as filed.' };
+    expect(ids(row, { evidence: snip('LegiScan SC 119th General Assembly H3003: Jane Doe is listed as a sponsor.') })).not.toContain('record-no-instrument');
+    expect(ids(row, { evidence: snip('LegiScan SC 119th General Assembly H3003: Jane Doe is listed as a sponsor.') })).not.toContain('instrument-not-cited');
+    expect(ids(row, { evidence: snip('H. 3003 -- Reps. Doe and Roe: A BILL TO AMEND') })).not.toContain('instrument-not-cited');
+    expect(ids(row, { evidence: snip('LegiScan SC 119th General Assembly H3030: Jane Doe is listed as a sponsor.') })).toContain('instrument-not-cited');
+  });
+  it('reads a bare "S 108" as naming an instrument, and matches LegiScan "S0108"', () => {
+    const row = { ...good, reasoning: 'Co-sponsor of SC S 108 (2022) as filed.' };
+    expect(ids(row, { evidence: snip('LegiScan SC 124th General Assembly S0108: Jane Doe is listed as a sponsor.') })).not.toContain('record-no-instrument');
+    expect(ids(row, { evidence: snip('LegiScan SC 124th General Assembly S0108: Jane Doe is listed as a sponsor.') })).not.toContain('instrument-not-cited');
+  });
+});

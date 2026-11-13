@@ -1,9 +1,10 @@
 """State votes and sponsorships cited on an official page the verifier cannot use -> LegiScan URLs (STAGE5 step 7.1).
 For a state whose findings print NO roll-call number (so legiscan_pairs.py cannot key on one): a vote is matched by
 bill, chamber, DATE and TALLY through legiscan-rollcalls.ts. Only a single LegiScan roll call on the finding's date
-with its tally is used; same-day ties are broken on the motion text, then on a "Roll Call #N" in the motion, then
+with its tally is used; same-day ties are broken on the motion text, then on a "Roll Call #N" (Kentucky: "RSN# N" / "RCS# N") in the motion, then
 (identical descriptions) on the lowest roll-call id. Anything else goes to legiscan/unmapped.json: hold the person; do
-not guess. Committee votes are never mapped (a "Conference Committee Report" is a floor vote and is).
+not guess. Committee votes are never mapped (a "Conference Committee Report", and in Kentucky a "Committee Substitute"
+or "Committee Amendment" adopted on the floor, is a floor vote and is).
   python3 -I scripts/stage5/state_legiscan.py plan <batch dir> <store findings dir> --state XX --host <host>[,<host>]
       [--bill-pad N] [--year-shift N]                                                    -> legiscan/vote-pages.json
   npx tsx --env-file=.env scripts/stage5/legiscan-rollcalls.ts XX <batch>/legiscan/vote-pages.json <batch>/legiscan/rollcall-hits.json
@@ -39,13 +40,19 @@ VOTE = ('yea', 'nay', 'abstain'); AUTH = ('author', 'coauthor', 'sponsor', 'cosp
 
 def key(f):
     """bill, year, chamber, tally and date of a vote finding; None when any is missing."""
-    m = re.match(ST + r'-([A-Z]+)-(\d+)-(\d{4})$', f.get('instrument_id') or '')
+    m = re.match(ST + r'-([A-Z]+)-(\d+)-(?:SP(\d)-)?(\d{4})$', f.get('instrument_id') or '')  # MO-HB-16-SP1-2020: a special session (mo-01)
     if not m: return None
     txt = (f.get('note') or '') + ' ' + (f.get('motion') or '')
-    ch = f.get('chamber') or ('H' if re.search(rf'\b{ST} House\b|\bHouse\b', txt) and not re.search(rf'\b{ST} Senate\b', txt) else 'S' if re.search(r'\bSenate\b', txt) else None)
-    t = re.search(r'tally (\d+)\s*[–-]\s*(\d+)', txt)
+    # A note that opens with the voting body ("CA Assembly, SB 2 ... Senate Third Reading") names the chamber; the
+    # motion text names the bill's house of origin, so it must not decide (ca-01: 10 Assembly votes on Senate bills).
+    lead = re.match(rf'{ST} (House|Assembly|Senate)\b', f.get('note') or '')
+    ch = f.get('chamber') or ({'House': 'H', 'Assembly': 'A', 'Senate': 'S'}[lead.group(1)] if lead else None) or ('H' if re.search(rf'\b{ST} House\b|\bHouse\b', txt) and not re.search(rf'\b{ST} Senate\b', txt)
+                              # a lower chamber named the Assembly (WI, CA, NY, NV, NJ) is chamber 'A' in LegiScan
+                              else 'A' if re.search(r'\bAssembly\b', txt) and not re.search(r'\bSenate\b', txt)
+                              else 'S' if re.search(r'\bSenate\b', txt) else None)
+    t = re.search(r'tally (\d+)\s*[–-]\s*(\d+)', txt) or re.search(r', (\d+)-(\d+)\) on ', txt)  # notes that print '(<motion>, 76-17) on HB139' carry no 'tally' word (ky-01)
     if not ch or not t or not f.get('date'): return None
-    return {'bill': m.group(1) + m.group(2).zfill(PAD), 'year': int(m.group(3)) + YS, 'chamber': ch, 'yea': int(t.group(1)), 'nay': int(t.group(2)), 'date': f['date'], 'instrument': f['instrument_id']}
+    return {'bill': m.group(1) + m.group(2).zfill(PAD), 'year': int(m.group(4)) + YS, 'sp': m.group(3), 'chamber': ch, 'yea': int(t.group(1)), 'nay': int(t.group(2)), 'date': f['date'], 'instrument': f['instrument_id']}
 
 
 def acts():
@@ -73,17 +80,20 @@ else:
         n, act, ins = r['full_name'], (f.get('act') or '').lower(), f.get('instrument_id') or ''
         if act in VOTE:
             k = key(f)
-            if (re.search(r'\bCommittee\b', f.get('motion') or '') and not re.search(r'Conference Committee Report', f.get('motion') or '', re.I)) or not k: unmapped.append([n, u, ins, f'{act}: no chamber/tally/date or committee']); continue
+            if (re.search(r'\bCommittee\b', f.get('motion') or '') and not re.search(r'Conference Committee Report|Committee Substitute|Committee Amendment', f.get('motion') or '', re.I)) or not k: unmapped.append([n, u, ins, f'{act}: no chamber/tally/date or committee']); continue
             hs = [h for h in hits.get(kid(k), {}).get('hits', []) if h['date'] == k['date']]
+            # A special session reuses the regular session's bill numbers: keep only the hits from the matching
+            # session (LegiScan's special-session bill URL ends /X<n>; a regular one ends with the year).
+            hs = [h for h in hs if (re.search(r'/X(\d+)/?$', h['bill_url']) or [None, None])[1] == k['sp']]
             if len(hs) > 1:  # same day, same tally: break the tie on the motion text, then on identical duplicates
                 mo = re.sub(r'[^a-z0-9 ]', '', (f.get('motion') or '').lower()).strip()
                 by = [h for h in hs if mo and re.sub(r'[^a-z0-9 ]', '', (h.get('desc') or '').lower()).startswith(mo)]
                 if by: hs = by
-                rc = re.search(r'Roll Call #?\s*(\d+)', f.get('motion') or '', re.I)
+                rc = re.search(r'(?:Roll Call|RSN|RCS) ?#?\s*(\d+)', f.get('motion') or '', re.I)  # KY numbers roll calls RSN#/RCS# (ky-01)
                 if len(hs) > 1 and rc: hs = [h for h in hs if re.search(r'#\s*' + rc.group(1) + r'\b', h.get('desc') or '')] or hs
                 if len({(h.get('desc') or '').lower() for h in hs}) == 1: hs = sorted(hs, key=lambda h: int(h['roll_call_id']))[:1]
             if len(hs) != 1: unmapped.append([n, u, ins, f'{act}: {len(hs)} LegiScan roll calls on {k["date"]} with {k["yea"]}-{k["nay"]}']); continue
-            bill = hs[0]['bill_url'].rstrip('/').split('/')[-2]
+            bill = re.search(r'/bill/([^/]+)/', hs[0]['bill_url']).group(1)  # .../bill/HB16/2020 or .../bill/HB16/2020/X1
             ls = f"https://legiscan.com/{ST}/rollcall/{bill}/id/{hs[0]['roll_call_id']}"; rmap[kid(k)] = {**hs[0], 'legiscan': ls}
         elif act in AUTH:
             m = re.match(ST + r'-([A-Z]+)-(\d+)-(?:SP(\d)-)?(\d{4})$', ins)

@@ -22,6 +22,77 @@
         "fetched_at": "2026-10-28T23:15:12.790Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "d8f253f5088ceea80689bb3e1d025dd2953713d71bac8c12fba9e645fffea0ca",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab427",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-427-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-427-2025 (LegiScan sponsor list): AB427 (2025-2026 Regular Session): Prohibiting possessing a firearm on college and university campuses and providing a penalty..",
+      "subjects": [
+        "firearm possession banned on college and university grounds",
+        "concealed-carry licence no longer allows campus carry",
+        "trespass-notice route for campus buildings removed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-427-2025.introduced.pdf",
+          "sha256": "65c0f7cfa897072e03ca3ec003af221631c207001575158e641d5348ed367e69"
+        }
+      }
+    },
+    {
+      "id": "eec3f535ec92a6eabbdecf6d4e4a4725052613abf64f9148ff4888da8181c5e4",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ab325",
+      "date": "2025-07-24",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-325-2025",
+      "act": "sponsor",
+      "note": "Assembly history line '7/24/2025 Asm. Representative McCarville added as a coauthor' on AB 325, relating to sales and transfers of firearms with a penalty. Recorded as a co-authorship.",
+      "subjects": [
+        "check every gun buyer",
+        "sales and transfers of firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.321Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "877c158a345e79a4a717701a6fa4d25728444b591c5ecdd430bfb6e5c060a618",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/ajr61",
+      "date": "2025-05-30",
+      "date_precision": "day",
+      "instrument_id": "WI-AJR-61-2025",
+      "act": "sponsor",
+      "note": "McCarville is named among the Representatives on the introduced-by line of AJR 61, a resolution proclaiming June 6, 2025 as Gun Violence Awareness Day in Wisconsin. Recorded as a co-sponsorship. It failed to adopt on 2026-03-23.",
+      "subjects": [
+        "gun violence awareness"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.321Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -64,6 +135,32 @@
       "found": 1,
       "at": "2026-10-28T23:15:12.790Z",
       "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "sales and transfers of firearms",
+        "gun violence awareness",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Assembly page https://legis.wisconsin.gov/assembly/42/mccarville/ (confirms her as District 42 representative; nothing on the subject)",
+        "campaign site https://mccarville4assembly.com/ and /about (lists a 'Safer Communities' priority only; nothing on the subject; no election year stated, so 2026 ballot status not confirmed there)",
+        "bill page https://docs.legis.wisconsin.gov/2025/proposals/ab325 (coauthor line read)",
+        "blocked: https://wisconsinexaminer.com/2022/05/26/for-a-gun-violence-activist-turned-lawmaker-a-grim-reminder-of-why-she-ran/ (403); this article title may be about another lawmaker, not confirmed to be her",
+        "Ballotpedia: not reviewed",
+        "news search on name plus subject words: no direct statement from her found",
+        "sponsor list: covered by LegiScan bulk check",
+        "bill page https://docs.legis.wisconsin.gov/2025/proposals/ajr61 (read on a second try)"
+      ],
+      "found": 2,
+      "at": "2026-11-10T22:15:40.321Z",
+      "by": "source-collector"
     }
   ]
 }

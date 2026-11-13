@@ -1,0 +1,33 @@
+{
+  "politician_id": "fbf60a79-0f60-43c3-93d3-83b5e01e900c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "background checks",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "gun rights and Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 appearances; no meetings)",
+        "campaign site https://www.idaforassembly.com (home page, /issues and /public-safety fetched; no gun or firearm text found; page is script-rendered so text may be incomplete)",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: https://ballotpedia.org/Ida_Obeso-Martinez (403)",
+        "blocked: https://bluevoterguide.org/CA/candidate_Ida_Obeso-Martinez/746084 (403)",
+        "blocked: https://www.nbcpalmsprings.com/decision-2026/2026/05/14/candidates-outline-priorities-in-californias-36th-assembly-district-race (429)",
+        "not reviewed: https://www.ballotready.org/people/ida-s-obeso-martinez",
+        "web search: candidate name plus gun/firearm/Second Amendment/gun safety words; results held nothing by or about her on the subject",
+        "scope check: search results show she advanced from the 2026-06-02 primary to the November general for Assembly District 36 (Imperial councilmember); lead only, results page not fetched"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.515Z",
+      "by": "source-collector"
+    }
+  ]
+}

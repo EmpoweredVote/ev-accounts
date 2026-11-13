@@ -60,7 +60,14 @@ describe('government-list browse resolves the full district stack', () => {
     // King County's council was filed under "Sheriff", state legislators got '' (rendered as Local).
     const start = BROWSE.indexOf('export async function getPoliticiansByGovernmentList');
     const step = BROWSE.slice(start, BROWSE.indexOf('let statewideRows', start));
-    const caseBody = step.match(/CASE\s+(WHEN[\s\S]*?)END AS district_type/);
+    // 🔴 The capture must not be allowed to span an earlier CASE. This read `CASE\s+(WHEN[\s\S]*?)`
+    // and so anchored on the FIRST `CASE` in the step, which made it hostage to anything added
+    // above: CC_0391 introduced a one-line `CASE WHEN och.term_start IS NOT NULL THEN
+    // och.start_precision END` in the same select, and this assertion started reading THAT case's
+    // first WHEN and failing — while the district_type CASE it is about was untouched. Forbidding
+    // `END` inside the capture pins it to the CASE that actually ends at `END AS district_type`.
+    // ▶ A TEXT-SCANNING TEST ASSERTS WHERE IT LOOKS AS MUCH AS WHAT IT FINDS.
+    const caseBody = step.match(/CASE\s+(WHEN(?:(?!\bEND\b)[\s\S])*?)END AS district_type/);
     expect(caseBody).not.toBeNull();
     expect(caseBody![1].trimStart()).toMatch(
       /^WHEN\s+COALESCE\(d\.district_type,\s*''\)\s*<>\s*''\s+THEN\s+d\.district_type\b/

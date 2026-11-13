@@ -1,0 +1,32 @@
+{
+  "id": "TN-HB-402-2011",
+  "scope": "state:tn",
+  "title": "HB 402 (107th General Assembly): As introduced, requires a voter to present qualified photographic identification before voting; voters without proper identification shall be allowed to cast provisional ballots. - Amends TCA Title 2, Chapter 7, Part 1.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB0402/2011"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1 (amends 2-7-112(a)(1))\n(quote) In addition, the voter shall present to the registrar one (1) form of identification that bears the name, address and photograph of the voter.\n(section) Sec. 2 (replaces 2-7-112(c))\n(quote) For purposes of comparing the person's signature on the application for ballot, \"evidence of identification\" means: (1) A Tennessee driver license; (2) A valid identification card issued by a branch, department, agency or entity of the state of Tennessee, any other state or the United States authorized by law to issue personal identification, provided that such identification card contains a photograph of the voter; (3) A valid identification card issued pursuant to § 55-50-336; (4) A valid United States passport;\n(b_no_id_remedy)\n(section) Sec. 3 (new 2-7-112(e))\n(quote) If a voter is unable to present any evidence of identification specified in subsection (c), the voter shall be entitled to vote a provisional ballot under the procedures of this section. Such provisional ballot shall only be counted if the central provisional ballot counting board is able to verify current and valid identification of the voter as provided in subsection (c)\n(section) Sec. 3 (new 2-7-112(f)(1))\n(quote) If a voter does not have any of the identification described in subsection (c) and is unable to afford a valid identification card issued pursuant to § 55-50-336, such identification card shall be issued to the voter upon the voter's signing a pauper's oath.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec. 2 also lists employee ID card and military ID (each with photograph) in (c).\n(other) Sec. 3 new (f)(2): indigency affidavit to the department of safety to waive the card fee.\n(other) Sec. 4 severability; Sec. 5 effective on becoming law.\n(other) version: 141095-Draft (filed 2011-02-08) and 516690-Draft (2011-12-28 re-copy): identical text. Carry a and b. Differs from the 2009 HB0267 Draft only in drafting: 'means' for 'shall be', the free-card paragraph moved into new 2-7-112(f), and a comma change in severability.\n(other) note: Taken off notice in House subcommittee 2011-03-02; withdrawn 2012-02-09. Companion SB0375 (Bell) not in this group.",
+  "sponsors": [
+    {
+      "name": "Eric Watson",
+      "role": "prime",
+      "version": "516690-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

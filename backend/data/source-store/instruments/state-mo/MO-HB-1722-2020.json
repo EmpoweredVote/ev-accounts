@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1722-2020",
+  "scope": "state:mo",
+  "title": "HB1722 (2020 Regular Session): Allows concealed carrying of firearms on public transportation systems and transporting nonfunctional or unloaded firearms on public buses.",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB1722&year=2020&code=R",
+    "https://www.house.mo.gov/billtracking/bills201/hlrbillspdf/3413H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Adam Schnelting",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a6b74a24-05e3-48a1-92ff-3cdf4c9b7920"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1722-2020.introduced.pdf",
+      "sha256": "3dc961f72c00493e4ce5078a2ed45cab5b4944b1ce82ba2d0a1713bff62662c7"
+    }
+  },
+  "operative_text": "Section 571.107 (RSMo): 3. Notwithstanding any provision of this chapter or chapter 70, 577, or 578 to the contrary, a person carrying a firearm concealed on or about his or her person who is lawfully in possession of a valid concealed carry permit or endorsement shall not be prohibited or impeded from accessing or using any publicly-funded transportation system and shall not be harassed or detained for carrying a concealed firearm on the property, vehicles, or conveyances owned, contracted, or leased by such systems that are accessible to the public. For purposes of this subsection, \"publicly-funded transportation system\" means the property, equipment, rights-of-way, or buildings, either publicly or privately owned and operated, of an entity that receives public funds and holds itself out to the general public for the transportation of persons. This includes portions of a public transportation system provided through a contract with a private entity but excludes any corporation that provides intercity passenger train service on railroads throughout the United States or any private partnership in which the corporation engages.\nSection 70.441 (RSMo): (11) Except as otherwise provided under section 571.107, no weapon or other instrument intended for use as a weapon may be carried in or on any facility or conveyance, except for law enforcement personnel.\nSection 577.703 (RSMo): 4. Except as otherwise provided under section 571.107, any passenger who boards a bus with a dangerous or deadly weapon or other means capable of inflicting serious bodily injury concealed upon his or her person or effects is guilty of the felony of \"possession and concealment of a dangerous or deadly weapon\" upon a bus.\nSection 577.703 (RSMo): (3) Persons carrying a concealed firearm who lawfully possess a valid concealed carry permit or endorsement in accordance with section 571.107.\nSection 577.712 (RSMo): 2. Except as otherwise provided under section 571.107, it is unlawful for any person to carry a deadly or dangerous weapon or any explosives or hazardous material into a terminal or aboard a bus."
+}

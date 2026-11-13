@@ -1,0 +1,35 @@
+{
+  "id": "TN-HB-324-2011",
+  "scope": "state:tn",
+  "title": "HB 324 (107th General Assembly): As enacted, requires the coordinator of elections to compare the statewide voter registration database with the department of safety database to ensure non-United States citizens are not registered to vote in this state. - Amends TCA Title 2, Chapter 2, Part 1.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB0324/2011",
+    "https://legiscan.com/TN/rollcall/HB0324/id/59422",
+    "https://legiscan.com/TN/rollcall/HB0324/id/65625",
+    "https://legiscan.com/TN/rollcall/HB0324/id/77011"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 4 (new section) (a)\n(quote) The administrator of elections shall reject any application for registration that is not accompanied by satisfactory evidence of United States citizenship. Satisfactory evidence of citizenship shall include, but not be limited to, any of the following:\n(section) Sec. 4(a)(2)\n(quote) A legible photocopy of the applicant's birth certificate that verifies citizenship to the satisfaction of the administrator of elections;\n(section) Sec. 4(b)\n(quote) This section shall only apply to new registrations. Notwithstanding subsection (a), any person who is registered in this state on the effective date of this section is deemed to have provided satisfactory evidence of citizenship and shall not be required to resubmit evidence of citizenship.\n(e_other_rule)\n(section) Sec. 3 (rewrites 2-2-115(b)(2))\n(quote) The printed registration forms shall also include a statement that the applicant shall submit evidence of United States citizenship with the application and that the registrar shall reject the application if no evidence of citizenship is attached.\n(section) Sec. 1 (replaces 2-2-116(c))\n(quote) I, being duly sworn on oath (or affirmation) declare that I am a citizen of the United States\n(other) Sec. 2: 'postal card' becomes 'registration' in 2-2-115(a).\n(other) Sec. 4(a)(1),(3)-(6): driver licence number if issuing agency marks citizenship proof, passport, naturalization papers or number (verified with USCIS), proof under the 1986 federal immigration act, BIA/tribal card number.\n(other) Sec. 4(c)-(d): no resubmission in that county; noted in voter file; documents may be destroyed after two years.\n(other) Sec. 5: intent that new forms be used from January 1, 2012 and online forms be revised soon after.\n(other) Sec. 7 effective on becoming law. Preamble says the act is meant to further, not contravene, the National Voter Registration Act.\n(other) version: 133705-Draft (filed 2011-02-07) and 525701-Draft (2011-12-28 re-copy): same operative text, layout differences only. Both carry d (new-registrant documentary proof; 'but not be limited to') and e. No a, b, c. Committee amendments not saved; enacted text (SB0352, Pub. Ch. 235) not saved.\n(other) note: The LegiScan title says the ENACTED law makes the elections coordinator compare the voter registration database with the department of safety database for non-citizens. The saved Draft does NOT contain that database check; it is the proof-of-citizenship-at-registration bill. The enacted text (companion SB0352, Pub. Ch. 235, 2011-05-25) is not saved, so the database-comparison rule cannot be quoted. The House bill was 'Comp. SB subst.' 2011-05-11.",
+  "sponsors": [
+    {
+      "name": "Curry Todd",
+      "role": "prime",
+      "version": "525701-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

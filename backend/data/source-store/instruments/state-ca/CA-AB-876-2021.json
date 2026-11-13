@@ -1,0 +1,50 @@
+{
+  "id": "CA-AB-876-2021",
+  "scope": "state:ca",
+  "title": "AB876 (2021-2022): Firearms.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202120220AB876",
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202120220AB876#97AMD"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Jesse Gabriel",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf"
+    },
+    {
+      "name": "David Chiu",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Buffy Wicks",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "5821d0a9-672e-44c0-bac7-1a802a2e8368"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2021-04-07, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-876-2021.amended-2021-04-07.html",
+      "sha256": "04ce6e3372573ff4afc89dfeb3181afd6bef08e33bd237a724e145c6b25d442d"
+    },
+    "note": "Amended 2021-04-07 (last version; no floor vote). Section 13660 is printed unmarked in the text file (not shown as added), while Section 31910 carries the marks. The bill strikes 'Commencing July 1, 2022,' from paragraphs (4) and (5) and makes them apply to pistols not on the roster 'as of January 1, 2006'; it adds a (6) microstamping rule for Jan 1, 2010 to July 1, 2022."
+  },
+  "operative_text": "Section 13660 (Penal Code): (a) All handguns purchased or acquired on or after July 1, 2023, which are described in subdivision (b), shall, within 90 days of purchase or acquisition, be equipped with a microscopic array of characters used to identify the make, model, and serial number of the handgun, etched or otherwise imprinted in one or more places on the interior surface or internal working parts of the handgun, and that are transferred by imprinting on each cartridge case when the firearm is fired.\nSection 13660 (Penal Code): (b)(2) This section does not apply to a handgun that is a revolver.\nSection 31910 (Penal Code): (4) For all centerfire semiautomatic pistols that are not, as of January 1, 2006, already listed on the roster pursuant to Section 32015, it does not have a chamber load indicator.\nSection 31910 (Penal Code): (5) For all centerfire or rimfire semiautomatic pistols that are not, as of January 1, 2006, already listed on the roster pursuant to Section 32015, it does not have a magazine disconnect mechanism if it has a detachable magazine.\nSection 31910 (Penal Code): (A) Commencing July 1, 2022, for all semiautomatic pistols that are not already listed on the roster pursuant to Section 32015, it is not designed and equipped with a microscopic array of characters used to identify the make, model, and serial number of the pistol, etched or otherwise imprinted in one or more places on the interior surface or internal working parts of the pistol, and that are transferred by imprinting on each cartridge case when the firearm is fired."
+}

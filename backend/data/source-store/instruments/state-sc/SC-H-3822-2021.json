@@ -1,0 +1,109 @@
+{
+  "id": "SC-H-3822-2021",
+  "scope": "state:sc",
+  "title": "H 3822 (124th General Assembly): Voting",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3822&session=124&summary=B"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 8 (7-13-710(A))\n(quote) (5) South Carolina voter registration card containing a photograph of the voter pursuant to Section 7-5-675; or (6) a college or university identification card containing a photograph.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 1 (new 7-5-145(B)(2))\n(quote) provide proof of residence by presenting any of the following valid documents that show the person's current name and current residence address: a South Carolina drivers license, another form of identification containing a photograph issued by the South Carolina Department of Motor Vehicles, or any of the documents listed in Section 7-13-710.\n(section) Sec. 4 (new 7-15-425(B))\n(quote) The voter may cure the deficiency or deficiencies identified by the county board by filing a duly signed affirmation attesting to the same information required by the return-addressed envelope and attesting that the signer of the oath is the same person who submitted such absentee ballot return-addressed envelope.\n(other) Sec. 1 (new 7-5-145): same-day in-person registration and voting at an in-person absentee location, with proof of residence; county and State Election Commission verify the ID within two business days.\n(other) Sec. 2 (new 7-13-200): elections by mail or secure drop box; ballot mailed to each active elector 14-20 days before the election; signature on return envelope checked against registration record.\n(other) Sec. 3 (new 7-15-325): no-excuse absentee voting and a thirty-day in-person absentee period.\n(other) Sec. 4 (new 7-15-425): cure process for unsigned or mismatched-signature absentee envelopes (affirmation within seven business days).\n(other) Sec. 5 (new 7-15-427): absentee ballot counts if postmarked by election day and delivered by close of business on the last business day before county canvass.\n(other) Sec. 6-7 (new 24-3-185, 24-3-980): corrections and probation agencies must tell released felons about restoration of voting rights and registration eligibility.\n(other) Sec. 9, 11-13: remove the witness requirement from the absentee oath (7-15-220, 7-15-380, 7-15-385, 7-15-420).\n(other) Sec. 10 (7-15-340): removes references to the reason for requesting an absentee ballot.\n(other) Sec. 14: repeals 7-15-320 (list of who may vote absentee).\n(other) version: Only one version (Introduced, 2021-02-04). Slot a: adds college or university photo ID card to the 7-13-710(A) list; other items reprinted unchanged. No change to the no-ID remedy (7-13-710(D) not reprinted). No mail-ballot ID, no citizenship proof.\n(other) note: Only the introduced text is saved. 7-13-710(A) is reprinted with the struck 'or' words only; the five existing ID items are unchanged. The same-day registration proof-of-residence rule (7-5-145) is listed under slot e.",
+  "sponsors": [
+    {
+      "name": "Gilda Cobb-Hunter",
+      "role": "prime",
+      "version": "2021-02-04_Introduced"
+    },
+    {
+      "name": "Wendy Brawley",
+      "role": "co",
+      "version": "2021-02-04_Introduced"
+    },
+    {
+      "name": "John King",
+      "role": "co",
+      "version": "2021-02-04_Introduced"
+    },
+    {
+      "name": "Patricia Henegan",
+      "role": "co",
+      "version": "2021-02-04_Introduced"
+    },
+    {
+      "name": "William Wheeler",
+      "role": "co",
+      "version": "2021-02-04_Introduced"
+    },
+    {
+      "name": "Krystle Matthews",
+      "role": "co",
+      "version": "2021-02-04_Introduced"
+    },
+    {
+      "name": "William Clyburn",
+      "role": "co",
+      "version": "2021-02-04_Introduced"
+    },
+    {
+      "name": "Leon Howard",
+      "role": "co",
+      "version": "2021-02-04_Introduced"
+    },
+    {
+      "name": "Michael Rivers",
+      "role": "co",
+      "version": "2021-02-04_Introduced"
+    },
+    {
+      "name": "Shedron Williams",
+      "role": "co",
+      "version": "2021-02-04_Introduced"
+    },
+    {
+      "name": "Deon Tedder",
+      "role": "co",
+      "version": "2021-02-04_Introduced"
+    },
+    {
+      "name": "Kimberly Johnson",
+      "role": "co",
+      "version": "2021-02-04_Introduced"
+    },
+    {
+      "name": "Joseph Jefferson",
+      "role": "co",
+      "version": "2021-02-04_Introduced"
+    },
+    {
+      "name": "Robert Williams",
+      "role": "co",
+      "version": "2021-02-04_Introduced"
+    },
+    {
+      "name": "Kambrell Garvin",
+      "role": "co",
+      "version": "2021-02-04_Introduced"
+    },
+    {
+      "name": "Annie McDaniel",
+      "role": "co",
+      "version": "2021-02-04_Introduced"
+    },
+    {
+      "name": "Rosalyn Henderson-Myers",
+      "role": "co",
+      "version": "2021-02-04_Introduced"
+    },
+    {
+      "name": "Jermaine Johnson",
+      "role": "co",
+      "version": "2021-02-04_Introduced"
+    }
+  ],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

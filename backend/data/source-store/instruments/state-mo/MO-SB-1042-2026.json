@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-1042-2026",
+  "scope": "state:mo",
+  "title": "SB1042 (2026 Regular Session): Creates the offense of unlawful possession of a handgun",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=638",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB1042.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Barbara Washington",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b9226e1d-7341-4e30-9799-88b88abcb3fd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1042-2026.introduced.pdf",
+      "sha256": "8ff90a465b9f5ce55ba81dad71acf51981b2382d674f635625b520e6af264866"
+    }
+  },
+  "operative_text": "Section 571.075 (RSMo): 2. A person commits the offense of unlawful possession of a handgun if the person is a minor and knowingly possesses a handgun.\nSection 571.075 (RSMo): 3. The offense of unlawful possession of a handgun is punishable by imposition of a fine not to exceed two hundred dollars, imprisonment in a juvenile detention facility for a period not to exceed ten days, or both."
+}

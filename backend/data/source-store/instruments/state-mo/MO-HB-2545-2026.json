@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-2545-2026",
+  "scope": "state:mo",
+  "title": "HB2545 (2026 Regular Session): Modifies provisions relating to unlawful possession of a firearm",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB2545&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/4270H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mitch Boggs",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3bc3991d-b06f-4ac8-b1e2-c515c47414d1"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2545-2026.introduced.pdf",
+      "sha256": "7ac69fa573c2ed25c40d5d586a84b58f49dc959e9c905d63700d331ef57048e6"
+    }
+  },
+  "operative_text": "Section 571.070 (RSMo): A person commits the offense of unlawful possession of a firearm if such person knowingly has any firearm in his or her possession and: (2) Such person is a fugitive from justice, is habitually in an intoxicated or drugged condition, or is currently adjudged mentally incompetent; or (3) Such person, being an alien: (a) Is illegally or unlawfully in the United States; or (b) Has been admitted to the United States under a nonimmigrant visa, as defined in 8 U.S.C. Section 1101(a)(26), and does not qualify for an exception to the federal prohibition on possession for such aliens under 18 U.S.C. Section 922(y)(2).\nSection 571.070 (RSMo): Unlawful possession of a firearm is a class C felony, unless a person has been convicted of a dangerous felony as defined in section 556.061, or the person has a prior conviction for unlawful possession of a firearm in which case it is a class B felony."
+}

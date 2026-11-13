@@ -1,0 +1,243 @@
+{
+  "politician_id": "220beec0-b596-4685-895b-2d19ebb03246",
+  "findings": [
+    {
+      "id": "43fc78d723c4ee826df00d6963f9328e6f0fa133872214dffffcdd8fcd5b86a2",
+      "kind": "own-words",
+      "url": "https://www.wuky.org/wuky-news/2026-02-20/kentucky-bill-rolls-back-two-forms-of-accepted-voter-id",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "passage": "\"It concerns me that every year we're seeing laws passed through this body that make it more difficult to vote despite not having any evidence that there's a problem that we're trying to solve,\" Sen. Cassie Chambers Armstrong countered.",
+      "note": "Floor debate on SB 154 (2026): she objects to removing a secondary ID route that about a thousand people used validly in the last cycle. Quoted by WUKY.",
+      "subjects": [
+        "secondary ID with affidavit at the polls",
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:25:32.020Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "995302a32ae4ea3072f4688812417d8f168794f01fbb1ed7b040cf34987bd5c4",
+      "kind": "own-words",
+      "url": "https://www.wkyufm.org/2026-02-18/kentucky-senate-advances-bill-to-restrict-more-forms-of-voter-id",
+      "date": "2026-02-18",
+      "date_precision": "day",
+      "passage": "\"It's really essential to democracy that everybody have the ability to vote,\" Chambers Armstrong said.",
+      "note": "On SB 154 (2026) restricting secondary voter ID forms. Quoted by WKU Public Radio; the same page quotes her adding concern about new laws making voting harder with no evidence of a problem.",
+      "subjects": [
+        "secondary ID with affidavit at the polls",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:25:32.020Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0a1b4532a3b4241e5d4d33cbffc2c4df35dcd1cb30ce6f7e1f73ddabca9fb704",
+      "kind": "own-words",
+      "url": "https://www.wkms.org/2024-01-24/ky-senate-bill-rejecting-student-ids-as-valid-voter-identification-passes-committee",
+      "date": "2024-01-24",
+      "date_precision": "day",
+      "passage": "I'm a little worried this is a solution in search of a problem.",
+      "note": "Committee hearing on the 2024 bill rejecting college-issued student IDs as voter ID (SB 80). She asked whether the Secretary of State or State Board of Elections favoured the change. Quoted by WKMS.",
+      "subjects": [
+        "student ID as voter ID",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:25:32.020Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1e5f4acb1c11a9085e9be5b42256684adc832d249c6c7e97c2c217d44b235f4e",
+      "kind": "own-words",
+      "url": "https://www.wvxu.org/politics/2026-03-26/kentucky-elections-bill-would-increase-donor-limits-restrict-forms-of-voter-id",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "passage": "I am still concerned about the data sharing with the federal government — the lack of specificity — this body losing control as we sort of enter into some of those negotiations and concerns around false positives in other states, and making sure that we are not disenfranchising voters through that process,",
+      "note": "On HB 139 (2026) elections bill, which lets the State Board of Elections share voter rolls with the federal government to identify noncitizens. Date is the article date; the committee remarks were around then. Quoted by WVXU.",
+      "subjects": [
+        "voter-roll citizenship checks",
+        "noncitizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:25:32.020Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5b20eca16eeebb5f6224c7a2b2bbd2ed1ff795780754565fa6b73fddeea20908",
+      "kind": "own-words",
+      "url": "https://justthenews.com/nation/states/center-square/kentucky-senator-pushes-constitutional-amendment-ban-noncitizen-voting",
+      "date": "2024-02-09",
+      "date_precision": "day",
+      "passage": "“I believe this is already covered, and I worry that we are passing a lot of legislation this session focused on hypothetical problems that might spring up when we have real problems in our communities right now,” Armstrong said.",
+      "note": "On SB 143 (2024), the constitutional amendment barring noncitizens from voting; she was one of two votes against. Date is the article date. Quoted by The Center Square.",
+      "subjects": [
+        "noncitizen voting",
+        "constitutional amendment on who may vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:25:32.020Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5bf6dbdba4299458f89733411f293f16bf5b15cafda2d6a5a8bdecfe46962b5c",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/sb80/vote_history.pdf",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-80-2024",
+      "act": "nay",
+      "motion": "Senate: Senate third reading, passed",
+      "note": "KY Senate roll call (Senate third reading, passed, 27-7) on SB80 (2024 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 24909 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.604Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3b567d0b3b9d0917c72eab25705eac4fcdb4f1c18b5336fc1c8d847b9e66b665",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "nay",
+      "motion": "Senate: third reading, passed Senate with Senate Committee Substitute (1)",
+      "note": "KY Senate roll call (third reading, passed Senate with Senate Committee Substitute (1), 31-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 24909 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.604Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "763ea165d7dd607ae87a851dfc93bc0796aa12a9e07101112235b0eebe57a9e5",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "nay",
+      "motion": "Senate: override of the Governor's veto, final passage (Senate)",
+      "note": "KY Senate roll call (override of the Governor's veto, final passage (Senate), 32-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 24909 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.604Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad0682ba8f72e0136a4858141ce12fc45e14f6cb15fc397bebc4a35695f2bc3c",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb154/vote_history.pdf",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-154-2026",
+      "act": "nay",
+      "motion": "Senate: third reading, passed Senate",
+      "note": "KY Senate roll call (third reading, passed Senate, 31-7) on SB154 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 24909 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.604Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "secondary ID (Social Security card, benefit card) with affidavit",
+        "student ID as voter ID",
+        "proof of citizenship / noncitizen voting",
+        "voter-roll citizenship checks",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site cassiechambers.com (nothing on the subject on the front page)",
+        "legislature.ky.gov member page (nothing to copy)",
+        "official bill pages: SB 154 (2026), SB 143 (2024) located via search",
+        "web searches on voter ID, photo ID, proof of citizenship, noncitizen, mail ballot, op-ed/newsletter, SB 2 (no own words on SB 2 or mail ballots found)",
+        "ballotpedia.org: blocked (refuses fetches, not tried)",
+        "blocked: spectrumnews1.com (listed as refused, not opened)",
+        "nothing on the subject: https://www.weku.org/the-commonwealth/2024-01-30/kentucky-senate-adopts-toughened-voter-id-legislation (paraphrase only, no direct quote)",
+        "nothing on the subject: https://www.wkyufm.org/news/2024-10-16/kentucky-amendment-1-mirrors-national-gop-efforts-to-prevent-noncitizens-voting (does not name her)",
+        "blocked: https://wvrecord.com/stories/654775405-kentucky-bill-to-make-u-s-citizenship-a-voting-requirement-passes-senate (empty page)"
+      ],
+      "found": 5,
+      "at": "2026-11-11T18:25:32.020Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 4,
+      "at": "2026-11-11T21:12:46.604Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}

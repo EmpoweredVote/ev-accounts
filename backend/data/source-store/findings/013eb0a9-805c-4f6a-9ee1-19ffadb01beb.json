@@ -21,6 +21,27 @@
         "fetched_at": "2026-11-04T04:59:03.355Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "bcaad16c1a90c2278ae6f90893c0a63a78c0895d29731f24e9e90874d41f93e9",
+      "kind": "own-words",
+      "url": "https://vivekmalek.com/",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Vivek Malek is a proud member of the NRA and believes strongly that Missourians' Second Amendment rights shall not be infringed upon.",
+      "note": "Campaign site biography statement issued in his name; page is undated, year is approximate (2024 campaign).",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment",
+        "membership in a gun-rights group"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.970Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -70,6 +91,33 @@
       "found": 0,
       "at": "2026-11-04T13:26:32.249Z",
       "by": "research-mo-r2-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "status: in scope, sitting Missouri State Treasurer since 2023, won a full term in the 2024 general election (https://en.wikipedia.org/wiki/Vivek_Malek)",
+        "On the Record (0 meetings)",
+        "campaign site https://vivekmalek.com/",
+        "official treasurer site https://treasurer.mo.gov/content/about-the-office/treasurer_vivek_malek: nothing on the subject",
+        "blocked: https://ballotpedia.org/Vivek_Malek (403)",
+        "sponsor list: covered by LegiScan bulk check",
+        "news search on name plus gun words (two searches): only general campaign-coverage mentions; KBIA story https://www.kbia.org/missouri-news/2024-03-26/missouri-treasurer-announces-campaign-for-full-four-year-term paraphrases rather than quotes, so not saved",
+        "not reviewed: https://ivoterguide.com/candidate/80788/race/9718/election/1245 (search snippet only; reported as unanswered gun questions)",
+        "not reviewed: https://newspressnow.com/?p=18440 (fetch failed)",
+        "nothing on the subject: treasurer is not a legislator, so no bills or floor votes"
+      ],
+      "found": 1,
+      "at": "2026-11-12T21:23:45.970Z",
+      "by": "source-collector"
     }
   ]
 }

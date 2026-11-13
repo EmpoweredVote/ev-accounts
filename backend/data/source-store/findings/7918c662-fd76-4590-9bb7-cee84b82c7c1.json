@@ -25,7 +25,133 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "b506837854b0adf9fc5c780a99d6c8040710317478de36513a259ec81071eb61",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=11554",
+      "date": "2016-04-27",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3167-2016",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 90-9) on H3167 (121st General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 16329 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.820Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "122877ebb9244cbe54752dd4a490999d41a6d116369b65dd7f74b573ed4b7c0c",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3167&session=121&summary=B",
+      "date": "2016",
+      "date_precision": "year",
+      "instrument_id": "SC-H-3167-2016",
+      "act": "sponsor",
+      "motion": "co sponsor, 2014-12-11_Introduced",
+      "note": "Listed as co sponsor of H3167 (121st General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2014-12-11_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.820Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "348ca87b33927efca7450a06906bc28906495e1533c3260622d18e6d5b951f86",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=20247",
+      "date": "2022-03-02",
+      "date_precision": "day",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 114-0) on H4919 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 16329 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.820Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cebba425407e0560fa0727d36dcd6d2c9e3c39cb153b2e7cae5ed40936a29b73",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=21123",
+      "date": "2022-05-03",
+      "date_precision": "day",
+      "instrument_id": "SC-S-108-2022",
+      "act": "yea",
+      "motion": "House: Passage of Bill",
+      "note": "SC House roll call (Passage of Bill, 109-0) on S0108 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 16329 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.820Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "reasonable impediment affidavit",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://rogerthatsc.com/ and /kirby101 (confirms House District 101; issue list covers education, roads, health care, jobs; nothing on the subject)",
+        "iVoterGuide 2026 District 101 profile (confirms he is on the 2026 general-election ballot): the photo-identification questionnaire item is marked Did not answer; nothing to save",
+        "House Journal personal index 2017-18 (bill numbers only, no subject text) and journal searches: nothing on the subject",
+        "South Carolina Public Radio, Pee Dee local news, news searches: nothing on the subject",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (refuse fetches; not tried)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:45:25.376Z",
+      "by": "sc-search-r5"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 4,
+      "at": "2026-11-10T23:17:03.820Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

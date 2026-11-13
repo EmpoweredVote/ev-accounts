@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-1159-2026",
+  "scope": "state:mo",
+  "title": "SB1159 (2026 Regular Session): Creates provisions relating to the sale and transfer of firearms",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=569",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB1159.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Patty Lewis",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "954796f5-cbda-41c1-9871-8dce23376d3c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1159-2026.introduced.pdf",
+      "sha256": "5796fe8fb6205226d968f8e1092b87b322c2db4ccf9314a3296ff070fbc4b059"
+    }
+  },
+  "operative_text": "Section 571.202 (RSMo): 1. No person shall sell or otherwise transfer a firearm, including through online interactions, unless: (1) Such person is a licensed dealer; (2) The purchaser or transferee is a licensed dealer; or (3) The sale or transfer satisfies the requirements of subsection 2 or 3 of this section.\nSection 571.202 (RSMo): 2. If neither party to a firearms transaction is a licensed dealer, the parties may have a licensed dealer facilitate the sale or transfer. A licensed dealer shall process the sale or other transfer as if the licensed dealer is the seller or transferor. The licensed dealer shall comply with all requirements of federal, state, and local law that would apply if the licensed dealer were the seller or transferor of the firearm. The licensed dealer shall conduct a background check on the purchaser or transferee in accordance with 18 U.S.C. Section 922(t) and other state and local law and, if the transaction is not prohibited, deliver the firearm to the purchaser or transferee after all legal requirements are satisfied.\nSection 571.202 (RSMo): 3. A trustee, under the authority of a trust, or a personal representative, executor, or administrator of an estate shall, before transferring any firearm to an heir or devisee, have a licensed dealer facilitate the sale or transfer through the process described under subsection 2 of this section.\nSection 571.202 (RSMo): 5. The provisions of subsections 1 and 2 of this section shall not apply to: (5) A person who transfers a firearm to a relative who is related within the first degree by consanguinity or affinity.\nSection 571.202 (RSMo): 6. A violation of a provision of this section is a class B misdemeanor. Each day a violation of this section is committed or continued shall be considered a separate violation and punished accordingly."
+}

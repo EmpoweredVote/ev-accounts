@@ -1,0 +1,22 @@
+# Raw source bytes and downloaded portraits are the wave's EVIDENCE and are kept on disk for
+# the length of the wave, not committed: they are large (29 MB across the two KS/KY directories)
+# and every one of them is re-fetchable from a URL this wave recorded.
+# A trailing comment on a pattern line is NOT a comment -- git reads the whole line, spaces and
+# all, as the pattern. Keep every comment on its own line.
+#
+# What IS committed: the derived rosters, the portrait manifest -- which carries each portrait's
+# source URL, byte count, dimensions and QA metrics -- and the district geometry.
+
+# archived member pages and statute texts
+*.html
+member-pages/
+statutes/
+# meeting minutes and canvasses, cited by date in the rosters
+*.pdf
+*.docx
+# downloaded portraits; every URL is in ks-portrait-manifest.json
+portraits/
+wichita-portraits/
+sgco-headers/
+# raw API and probe responses, named _<what-was-asked>
+_*

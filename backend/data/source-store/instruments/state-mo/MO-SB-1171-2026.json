@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-1171-2026",
+  "scope": "state:mo",
+  "title": "SB1171 (2026 Regular Session): Creates the offense of community endangerment due to unsafe storage of a firearm",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=644",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB1171.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Barbara Washington",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b9226e1d-7341-4e30-9799-88b88abcb3fd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1171-2026.introduced.pdf",
+      "sha256": "36839fdd0920bc293f47d81eee36b6e0912f8d1a2cdea7f6b36084b3e8c44cf6"
+    }
+  },
+  "operative_text": "Section 571.400 (RSMo): 2. A person commits the offense of community endangerment due to unsafe storage of a firearm in the first degree if a person stores or leaves a firearm in a location where the person knows or reasonably should know that an unauthorized person may gain access to the firearm and such unauthorized person causes personal injury or death with the firearm.\nSection 571.400 (RSMo): 3. The offense of community endangerment due to unsafe storage of a firearm in the first degree is a class C felony.\nSection 571.400 (RSMo): 4. It shall not be a violation of this section if: (1) The firearm is stored in a secure gun storage, or other secured storage with a trigger lock or similar device that is designed to prevent the unauthorized use or discharge of the firearm;\nSection 571.401 (RSMo): 2. A person commits the offense of community endangerment due to unsafe storage of a firearm in the second degree if a person stores or leaves a firearm in a location where the person knows or reasonably should know that an unauthorized person may gain access to the firearm and such unauthorized person: (1) Causes the firearm to discharge; (2) Carries, exhibits, or displays the firearm in a public place in a manner that is intended to intimidate another or that warrants alarm for the safety of other persons; or (3) Uses the firearm in the commission of a crime.\nSection 571.401 (RSMo): 3. The offense of community endangerment due to unsafe storage of a firearm in the second degree is a class D felony."
+}

@@ -1,0 +1,136 @@
+{
+  "politician_id": "c236893a-126e-45ae-83db-ae62be4f0554",
+  "findings": [
+    {
+      "id": "964f43dd513a6a900fe46730c227d9b9c229eaaa4159401edbd436f6f4e82228",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate with Senate Committee Substitute (1)",
+      "note": "KY Senate roll call (third reading, passed Senate with Senate Committee Substitute (1), 31-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25784 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.609Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa8ad840466678434828836de887f898e45dc3f627478ec4fe8931f410f4e2d2",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: override of the Governor's veto, final passage (Senate)",
+      "note": "KY Senate roll call (override of the Governor's veto, final passage (Senate), 32-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25784 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.609Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8cb257bf2da3336ed900008c97f3e633ffee27db4f47f3bef14f6db1a9004902",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb154/vote_history.pdf",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-154-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate",
+      "note": "KY Senate roll call (third reading, passed Senate, 31-7) on SB154 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 25784 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.609Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3875ccf2b0bce127b499bb16cf622216ac29c8ac8bdb66e44fe7b8f864ce052f",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb154.html",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "KY-SB-154-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, orig_bill",
+      "note": "Listed as co sponsor of SB154 (2026 Regular Session) in LegiScan's bill record (sponsor order 4); the first version (orig_bill) carries the ID/citizenship text (identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.609Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "identity confirmed: https://apps.legislature.ky.gov/Legislators/smembers_alpha.html lists Matt Nunn for Senate District 17; campaign site https://www.nunnforky.com/about names him as a candidate for the 17th State Senate District",
+        "nothing on the subject: campaign site https://www.nunnforky.com/issues (headings cover life, free speech and the Second Amendment, business, income tax, public education and law enforcement)",
+        "nothing on the subject: https://linknky.com/2024-kentucky-general-election/2024/09/18/senate-district-17-candidates (his quoted remarks cover a school-funding ballot amendment only)",
+        "nothing on the subject: https://linknky.com/elections/2024/05/02/kentucky-17th-senate-primary-julia-jaddock-matt-nunn/ (his quotes cover business policy, income tax, community engagement)",
+        "web searches: name + voter ID; name + election bill/proof of citizenship/noncitizen/photo ID/mail ballot; name + questionnaire/iVoterGuide/campaign website; name + local outlets + election/voter (no own words on the subject found)",
+        "not reviewed: https://onyourballot.vote411.org/m/race-detail.do?id=68133087 (server error 500 on fetch; 2024 primary guide)",
+        "no iVoterGuide profile surfaced for him",
+        "blocked: Ballotpedia (not fetched, refused for fetches)",
+        "floor votes and sponsorships are linked separately and were not searched"
+      ],
+      "found": 0,
+      "at": "2026-11-11T18:47:05.760Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 4,
+      "at": "2026-11-11T21:12:46.609Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
+}

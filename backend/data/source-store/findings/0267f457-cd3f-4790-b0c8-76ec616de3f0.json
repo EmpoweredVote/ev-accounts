@@ -194,6 +194,552 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "8168ebb515ff522ca6b50ac1fa4be5734dc37b97aaffedf53670119ae3bdfb90",
+      "kind": "record",
+      "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB1078",
+      "date": "2025-09-09",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1078-2025",
+      "act": "yea",
+      "motion": "Assembly 3rd Reading AB1078 Berman et al. By Blakespear",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CA Senate, Assembly 3rd Reading AB1078 Berman et al. By Blakespear, 2025-09-09: yea (tally 29–10); census gate: none.",
+      "subjects": [
+        "limit of 3 firearm purchases in 30 days from April 1, 2026",
+        "concealed-carry licenses for nonresidents and new disqualifiers",
+        "lock-box carry on public transit",
+        "out-of-state felony relief restores gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2025-09-04, via LegiScan getBillText)",
+        "fetched_at": "2026-11-13T00:19:36.330153Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-1078-2025.amended-2025-09-04.html",
+          "sha256": "2d6fe79df8825a8fd94165aa15e84e1ce105b1a2c02e27ddf07b67dc9de843bd"
+        }
+      }
+    },
+    {
+      "id": "065bbf326874e83f40b7162b59867346d05ac87e2b81089e6e7202af97625b65",
+      "kind": "record",
+      "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB1127",
+      "date": "2025-09-12",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1127-2025",
+      "act": "yea",
+      "motion": "Assembly 3rd Reading AB1127 Gabriel et al. By Blakespear",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CA Senate, Assembly 3rd Reading AB1127 Gabriel et al. By Blakespear, 2025-09-12: yea (tally 29–9); census gate: none.",
+      "subjects": [
+        "dealers barred from selling pistols easily converted to automatic fire",
+        "pistol converters count as machineguns",
+        "handgun roster testing path for modified pistols"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2025-09-09, via LegiScan getBillText)",
+        "fetched_at": "2026-11-13T00:19:36.330153Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-1127-2025.amended-2025-09-09.html",
+          "sha256": "2f947f635c96636539dc6babde491f725986fe4c54b880ff2db276769d320902"
+        }
+      }
+    },
+    {
+      "id": "b3e41cd96a668e46910cff9c6cf46b44b11e2c8716bc1a6e67be408d8fa8b52a",
+      "kind": "record",
+      "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB1263",
+      "date": "2025-09-11",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1263-2025",
+      "act": "yea",
+      "motion": "Assembly 3rd Reading AB1263 Gipson et al. By Blakespear",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CA Senate, Assembly 3rd Reading AB1263 Gipson et al. By Blakespear, 2025-09-11: yea (tally 30–10); census gate: none.",
+      "subjects": [
+        "crime and lawsuits for aiding unlawful gun manufacture (ghost guns)",
+        "liability for sharing 3D-printing gun files and website presumption",
+        "sale notices for gun barrels, accessories and gun-making machines",
+        "10-year gun ban after ghost-gun convictions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2025-09-05, via LegiScan getBillText)",
+        "fetched_at": "2026-11-13T00:19:36.330153Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-1263-2025.amended-2025-09-05.html",
+          "sha256": "8da6706d1a392b00ac7c11124595531dfbe15d32b8604fa7b6780cfc00ec7f8a"
+        }
+      }
+    },
+    {
+      "id": "c020c74304cf33f8f7379fc4715c4e9e403a308042fa340bcbe5a90eb4b279ec",
+      "kind": "record",
+      "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB1344",
+      "date": "2025-09-04",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1344-2025",
+      "act": "yea",
+      "motion": "Assembly 3rd Reading AB1344 Irwin et al. By Arreguín",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CA Senate, Assembly 3rd Reading AB1344 Irwin et al. By Arreguín, 2025-09-04: yea (tally 32–4); census gate: none.",
+      "subjects": [
+        "district attorneys may petition for gun violence restraining orders in four-county pilot"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2025-06-23, via LegiScan getBillText)",
+        "fetched_at": "2026-11-13T00:19:36.330153Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-1344-2025.amended-2025-06-23.html",
+          "sha256": "0ec017dcba23f7b98d63fdc6e9c95d01157395ae5b1d98caa7ea0c632316bedc"
+        }
+      }
+    },
+    {
+      "id": "3aa5d3ed71b58fda07205f452864b14ff612275b2d2453e74d4dc8e26d75f204",
+      "kind": "record",
+      "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB1615",
+      "date": "2026-08-26",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1615-2026",
+      "act": "yea",
+      "motion": "Assembly 3rd Reading AB1615 Nguyen et al. By Arreguín",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "CA Senate, Assembly 3rd Reading AB1615 Nguyen et al. By Arreguín, 2026-08-26: yea (tally 39–0); census gate: near-unanimous.",
+      "subjects": [
+        "unsafe-handgun sale offence reprinted with wording fix to its exemptions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2026-08-19, via LegiScan getBillText)",
+        "fetched_at": "2026-11-13T00:19:36.330153Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-1615-2026.amended-2026-08-19.html",
+          "sha256": "9ad0cec3d97186835b8ec4fb4a69135df15f39769f773f0141ef443d12885b79"
+        }
+      }
+    },
+    {
+      "id": "18a2fa78890889872937682530d1d4e84706ce9beabd40c3bcd9a78afd95f2ed",
+      "kind": "record",
+      "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB1743",
+      "date": "2026-08-20",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1743-2026",
+      "act": "yea",
+      "motion": "Assembly 3rd Reading AB1743 Wicks et al. By Grayson",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CA Senate, Assembly 3rd Reading AB1743 Wicks et al. By Grayson, 2026-08-20: yea (tally 28–10); census gate: none.",
+      "subjects": [
+        "recovered-firearm trace data access for researchers and local governments",
+        "annual reports on dealer inspections and handgun roster"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2026-08-13, via LegiScan getBillText)",
+        "fetched_at": "2026-11-13T00:19:36.330153Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-1743-2026.amended-2026-08-13.html",
+          "sha256": "b4e8877f6d394190d6841d80ee180b08b7f0d5493858793902c5634ddf4d7bca"
+        }
+      }
+    },
+    {
+      "id": "852691b9faea06d5145722c41e72fafd9003e079c6cd34244072898f450cf3f5",
+      "kind": "record",
+      "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB1753",
+      "date": "2026-08-26",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1753-2026",
+      "act": "yea",
+      "motion": "Assembly 3rd Reading AB1753 Stefani et al. By Blakespear",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "CA Senate, Assembly 3rd Reading AB1753 Stefani et al. By Blakespear, 2026-08-26: yea (tally 31–1); census gate: multi-subject.",
+      "subjects": [
+        "ammunition relinquished along with firearms under protective orders",
+        "10-year gun ban after hate-crime and protective-order misdemeanors",
+        "out-of-state extreme risk orders enforceable",
+        "agencies must handle court notices of unrelinquished guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2026-08-21, via LegiScan getBillText)",
+        "fetched_at": "2026-11-13T00:19:36.330153Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-1753-2026.amended-2026-08-21.html",
+          "sha256": "916ee6aad1e936b857d1756f0b1f4e4db96c1738890f9db38892c54b93818323"
+        }
+      }
+    },
+    {
+      "id": "f1b182aa03dc9187b9b38dfbe8501cf67c3aaa524f660862e2eca234c39f0703",
+      "kind": "record",
+      "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB1912",
+      "date": "2026-08-10",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1912-2026",
+      "act": "yea",
+      "motion": "Consent Calendar 2nd AB1912 Hadwick et al",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "CA Senate, Consent Calendar 2nd AB1912 Hadwick et al, 2026-08-10: yea (tally 39–0); census gate: near-unanimous.",
+      "subjects": [
+        "ends permission to carry a concealable firearm while archery deer hunting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2026-03-25, via LegiScan getBillText)",
+        "fetched_at": "2026-11-13T00:19:36.330153Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-1912-2026.amended-2026-03-25.html",
+          "sha256": "91b4c7f0e9c847762b0eff7a4ab660f3940e9b1e0e7336ae38dc5a83ac2f4151"
+        }
+      }
+    },
+    {
+      "id": "d0c39d97620ca0f6701fc80724f8a34bf2935ff14b07a526607d928ea710d339",
+      "kind": "record",
+      "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB1943",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1943-2026",
+      "act": "yea",
+      "motion": "Assembly 3rd Reading AB1943 Gipson et al. By Blakespear",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "CA Senate, Assembly 3rd Reading AB1943 Gipson et al. By Blakespear, 2026-08-25: yea (tally 40–0); census gate: near-unanimous.",
+      "subjects": [
+        "yearly school notice to parents on secure firearm storage",
+        "storage notice added to school drill and suicide-prevention guidance"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2026-08-20, via LegiScan getBillText)",
+        "fetched_at": "2026-11-13T00:19:36.330153Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-1943-2026.amended-2026-08-20.html",
+          "sha256": "9a1035b59fdcf9666c25d9ab1419669144f62d0fbe4b60188a0fbae50ac561fb"
+        }
+      }
+    },
+    {
+      "id": "4607e4df74790953ae4c4dbe5e565b35119525695dda087526c7f6ab29ac928b",
+      "kind": "record",
+      "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB1974",
+      "date": "2026-08-28",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1974-2026",
+      "act": "yea",
+      "motion": "Assembly 3rd Reading AB1974 Stefani By Blakespear",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "CA Senate, Assembly 3rd Reading AB1974 Stefani By Blakespear, 2026-08-28: yea (tally 36–3); census gate: near-unanimous.",
+      "subjects": [
+        "voluntary firearm storage programs at police and sheriff departments",
+        "exemptions for transporting a firearm to such a program"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2026-05-28, via LegiScan getBillText)",
+        "fetched_at": "2026-11-13T00:19:36.330153Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-1974-2026.amended-2026-05-28.html",
+          "sha256": "e54833480d7b3928c7b8b51d21153dbefa4b1ef8368b4028d12cd4db3fb9f2ce"
+        }
+      }
+    },
+    {
+      "id": "ca2f00ef098f7ffe1f93fb19dd1bf36072c781ba77d67d6d0a9dfb9591aef222",
+      "kind": "record",
+      "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB2047",
+      "date": "2026-08-31",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-2047-2026",
+      "act": "yea",
+      "motion": "Assembly 3rd Reading AB2047 Bauer-Kahan et al. By Blakespear",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CA Senate, Assembly 3rd Reading AB2047 Bauer-Kahan et al. By Blakespear, 2026-08-31: yea (tally 30–10); census gate: none.",
+      "subjects": [
+        "3D printers must block printing of guns and auto-conversion parts",
+        "state Justice Department sets blocking standards"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2026-08-28, via LegiScan getBillText)",
+        "fetched_at": "2026-11-13T00:19:36.330153Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-2047-2026.amended-2026-08-28.html",
+          "sha256": "e27017df9c03015f5f08249f833097c1b66051b0c600b5bc662a2311def6e5d5"
+        }
+      }
+    },
+    {
+      "id": "46f2b43956135d0ad1f83dc3da8a2e04aaf2d7bb15195b203f9a649c60611eff",
+      "kind": "record",
+      "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB2339",
+      "date": "2026-08-20",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-2339-2026",
+      "act": "yea",
+      "motion": "Special Consent AB2339 Gipson",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "CA Senate, Special Consent AB2339 Gipson, 2026-08-20: yea (tally 39–0); census gate: near-unanimous.",
+      "subjects": [
+        "juvenile court reports dismissals of gun-prohibiting petitions",
+        "5-year gun ban continues after release from intensive treatment",
+        "mental-health records kept confidential, misdemeanor for misuse"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2026-04-23, via LegiScan getBillText)",
+        "fetched_at": "2026-11-13T00:19:36.330153Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-2339-2026.amended-2026-04-23.html",
+          "sha256": "3536a47e879fd6870c976a2ddc31f9d0853d8f089cb9767f7ae3c045d7dafb1d"
+        }
+      }
+    },
+    {
+      "id": "30a463ca7068c21e95e0bd669ae20820686960ace9a158a2e3354a1e363373c2",
+      "kind": "record",
+      "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB383",
+      "date": "2025-09-08",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-383-2025",
+      "act": "yea",
+      "motion": "Assembly 3rd Reading AB383 Davies By Ochoa Bogh",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "CA Senate, Assembly 3rd Reading AB383 Davies By Ochoa Bogh, 2025-09-08: yea (tally 39–0); census gate: near-unanimous.",
+      "subjects": [
+        "firearm relinquishment after conviction or juvenile adjudication",
+        "search warrants for guns not turned in",
+        "minors' exceptions for sport and hunting use"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2025-07-16, via LegiScan getBillText)",
+        "fetched_at": "2026-11-13T00:19:36.330153Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-383-2025.amended-2025-07-16.html",
+          "sha256": "bce018071d8b500125274980c66bf8477ee9e3d7d60e8a0b1863ab87aabf4a10"
+        }
+      }
+    },
+    {
+      "id": "32761b905f9b51258dae1cffb7df78ed32febb9887a866496b46fc9f8bf4f0a9",
+      "kind": "record",
+      "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB584",
+      "date": "2025-06-27",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-584-2025",
+      "act": "yea",
+      "motion": "Consent Calendar 2nd AB584 Hadwick",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "CA Senate, Consent Calendar 2nd AB584 Hadwick, 2025-06-27: yea (tally 38–0); census gate: near-unanimous.",
+      "subjects": [
+        "secure-facility door standards for gun dealers and makers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2025-03-12, via LegiScan getBillText)",
+        "fetched_at": "2026-11-13T00:19:36.330153Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-584-2025.amended-2025-03-12.html",
+          "sha256": "5b2601e40e7e05f3f93f3e120bdcf3984b806aef33c0086a935af945592e88ab"
+        }
+      }
+    },
+    {
+      "id": "905710392455094f9b57ed32b7fba37c82a590621bf413b8a87453768268e46e",
+      "kind": "record",
+      "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260SB1220",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-1220-2026",
+      "act": "yea",
+      "motion": "Unfinished Business SB1220 Hurtado Concurrence",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CA Senate, Unfinished Business SB1220 Hurtado Concurrence, 2026-08-25: yea (tally 30–9); census gate: none.",
+      "subjects": [
+        "10-year firearm ban after conviction for removing a gun's serial number or marks",
+        "firearm ban after hate-crime misdemeanors (if combined with AB 1753)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2026-08-19, via LegiScan getBillText)",
+        "fetched_at": "2026-11-13T00:19:36.330153Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-SB-1220-2026.amended-2026-08-19.html",
+          "sha256": "9fbf11604362a3793eaa68d539c73a849e842d25bbe36c464a437afffd391049"
+        }
+      }
+    },
+    {
+      "id": "a4d4de7a3cd623f9f5152ef2456e4f9bad010dc519c75c2d23b4a0080eb94cb1",
+      "kind": "record",
+      "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260SB248",
+      "date": "2025-06-04",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-248-2025",
+      "act": "yea",
+      "motion": "Senate 3rd Reading SB248 Rubio",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CA Senate, Senate 3rd Reading SB248 Rubio, 2025-06-04: yea (tally 28–11); census gate: none.",
+      "subjects": [
+        "state letter to new gun owners on safe storage and legal duties",
+        "information on gun violence restraining orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2025-05-23, via LegiScan getBillText)",
+        "fetched_at": "2026-11-13T00:19:36.330153Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-SB-248-2025.amended-2025-05-23.html",
+          "sha256": "5e7faf9adcac0b2994d4f410ed45c8167e87b7a649d25f6f89f422f399bcd32e"
+        }
+      }
+    },
+    {
+      "id": "ee14865c6f2d4de803e4a7ee597de7cd119442fe3affc8ae15f3da127243c279",
+      "kind": "record",
+      "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260SB704",
+      "date": "2025-09-09",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-704-2025",
+      "act": "yea",
+      "motion": "Unfinished Business SB704 Arreguín et al. Concurrence",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CA Senate, Unfinished Business SB704 Arreguín et al. Concurrence, 2025-09-09: yea (tally 29–10); census gate: none.",
+      "subjects": [
+        "firearm barrels sold only in person through licensed dealers",
+        "eligibility check and minimum age 18 to buy a barrel",
+        "dealer records of barrel sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2025-09-02, via LegiScan getBillText)",
+        "fetched_at": "2026-11-13T00:19:36.330153Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-SB-704-2025.amended-2025-09-02.html",
+          "sha256": "34f2c07e0eabccb6e3076fdef0df1f4418137aa36650a768b9ff0127491ae23f"
+        }
+      }
+    },
+    {
+      "id": "63abd7a82e0a8bc05ce37d051862e53bd265fedb67e9281e353dc983e24da34f",
+      "kind": "record",
+      "url": "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260SB948",
+      "date": "2026-08-25",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-948-2026",
+      "act": "yea",
+      "motion": "Unfinished Business SB948 Arreguín et al. Concurrence",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "CA Senate, Unfinished Business SB948 Arreguín et al. Concurrence, 2026-08-25: yea (tally 28–12); census gate: none.",
+      "subjects": [
+        "4-hour live-fire training to get a firearm safety certificate",
+        "gun importers certify safety certificate under penalty of perjury"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2026-08-13, via LegiScan getBillText)",
+        "fetched_at": "2026-11-13T00:19:36.330153Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-SB-948-2026.amended-2026-08-13.html",
+          "sha256": "536f00f29c569f2bf3f9968f5b207a4d88b38d35650fce4b857f868ce76cf5b9"
+        }
+      }
     }
   ],
   "searches": [

@@ -1,0 +1,68 @@
+{
+  "id": "GA-HB-1378-2021",
+  "scope": "state:ga",
+  "title": "HB1378 (2021-2022 Regular Session): Crimes and offenses; remove places of worship from unauthorized locations a weapon or long gun may be carried",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/62206",
+    "https://www.legis.ga.gov/api/legislation/document/20212022/207089",
+    "https://www.legis.ga.gov/api/legislation/document/20212022/208120"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Rick Jasperse",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "acd089c9-56c4-4440-b346-a9a03e91bf38"
+    },
+    {
+      "name": "Alan Powell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0df6f5b5-44f5-4e3a-8359-d032a379cf0e"
+    },
+    {
+      "name": "Mandi Ballinger",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Jason Ridley",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "97e7b5f9-94fe-4842-9b36-bd6e07cdddfa"
+    },
+    {
+      "name": "Steve Tarvin",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fae951c7-1001-41f9-86bb-e2c5fbf3f733"
+    },
+    {
+      "name": "Matt Barton",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e9460b8d-70fa-440a-a2e9-f0601fae2d94"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1378-2021.comm-sub.pdf",
+      "sha256": "81c42e42551855c1e03369a8776be7cc769506367303174233b8a910cbaaa639"
+    }
+  },
+  "operative_text": "SECTION 1 (amending O.C.G.A. 16-11-127(b)(4)): \"(4) In a place of worship, unless the governing body or authority of the place of worship permits the carrying of weapons or long guns by license holders Reserved;\"\nSECTION 1 (amending O.C.G.A. 16-11-127(e)(2)): (2) Any license holder who violates subsection (b) of this Code section in a place of worship shall not be arrested but shall be fined not more than $100.00. Any person who is not a license holder who violates subsection (b) of this Code section in a place of worship shall be punished as for a misdemeanor.\"\nSECTION 2 (amending O.C.G.A. 16-11-129(a), new paragraph (4)): \"(4) The judge of the probate court shall be authorized to implement online application processes for weapons carry licenses and renewal licenses. The probate court shall also be authorized to accept a weapons carry license or renewal license application by first-class mail.\"\nSECTION 3 (amending O.C.G.A. 17-5-54(g)(1)): \"(g)(1) With respect to unclaimed firearms, if the sheriff, chief of police, agency director, or designee of such official certifies that a firearm is unsafe because of wear, damage, age, or modification or because any federal or state law prohibits the sale or distribution of such firearm, at the discretion of such official, it shall be transferred to the Division of Forensic Sciences of the Georgia Bureau of Investigation, a municipal or county law enforcement forensic laboratory for training or experimental purposes, or be destroyed.\nSECTION 4 (amending O.C.G.A. 38-3-37(b)): (b) No official or employee of the state or any political subdivision thereof, member of the National Guard in the service of the state, or any person operating pursuant to or under color of state law, while acting during or pursuant to a declared state of emergency, shall: (1) Temporarily or permanently seize, Seize or authorize the seizure of, any firearm, or ammunition or any component thereof, ammunition reloading equipment and supplies, or weapon, the possession of which was not prohibited by law at the time immediately prior to the declaration of a state of emergency, and other than as provided by the criminal or forfeiture laws of this state; (2) Prohibit possession of any firearm, or ammunition or any component thereof, ammunition reloading equipment and supplies, or weapon, or promulgate any rule, regulation, or order prohibiting possession of any firearm or ammunition or any component thereof if such if possession was not otherwise prohibited by law at the time immediately prior to the declaration of a state of emergency; (3) Prohibit any license holder from carrying any weapon or promulgate any rule, regulation, or order prohibiting such carrying if such carrying was not otherwise prohibited by law at the time immediately prior to the declaration of a state of emergency; or (4) Prohibit the manufacture, sale, or transfer of any firearm, ammunition or any component thereof, ammunition reloading equipment and supplies, or weapon, or promulgate any rule, regulation, or order prohibiting the manufacture, sale, or transfer of such if the manufacture, sale, or transfer was not otherwise prohibited by law at the time immediately prior to the declaration of a state of emergency; (5)   Suspend or revoke any weapons carry license issued pursuant to Code Section 16-11-129, except as authorized by such Code section; (6) Refuse to accept an application for a weapons carry license which has been properly submitted in accordance with Code Section 16-11-129 if the building or courthouse is otherwise open to the public; provided, however, that no probate judge shall be responsible for any delay or closure caused by circumstances or actions outside of the control of such probate judge; (7) Close or limit the operational hours of or place any other restrictions upon any business engaged in the lawful manufacture, sale, or repair of firearms, ammunition or any component thereof, ammunition reloading equipment and supplies, or weapons unless closure, limitation upon hours, or other restrictions have been required of all businesses within the jurisdiction; (8) Close or limit the operational hours of any lawful indoor or outdoor shooting range unless closure or limitation upon hours has been required of all businesses within the jurisdiction; or (4)(9) Require the registration of any firearm."
+}

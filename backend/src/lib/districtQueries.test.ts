@@ -48,9 +48,12 @@ describe('buildDistrictQuery', () => {
   });
 
   it('excludes challengers by default and admits them on request', () => {
-    expect(buildDistrictQuery(base)).toContain("NOT ILIKE 'Candidate for%'");
+    // Match the row filter on THIS row's office (`o.title`), not the bare phrase: the is_incumbent
+    // SELECT item (incumbency.ts) carries the same placeholder test on its own alias `o_inc`.
+    const rowFilter = "COALESCE(o.title, '') NOT ILIKE 'Candidate for%'";
+    expect(buildDistrictQuery(base)).toContain(rowFilter);
     expect(buildDistrictQuery({ ...base, includeChallengers: true }))
-      .not.toContain("NOT ILIKE 'Candidate for%'");
+      .not.toContain(rowFilter);
   });
 
   it('appends orderByTail after the DISTINCT ON key', () => {

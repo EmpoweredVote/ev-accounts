@@ -1,0 +1,338 @@
+{
+  "politician_id": "36120b17-6913-4ac0-bbc2-deaba73e8cf7",
+  "findings": [
+    {
+      "id": "99014f5f964a84084cd5be2cab9674c7b1f13598d5873e522a731883f722aab9",
+      "kind": "own-words",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-issues-statement-on-voter-id-ruling/",
+      "date": "2012-10-10",
+      "date_precision": "day",
+      "passage": "The fact remains, voter ID laws do not discriminate or disenfranchise; they ensure integrity at the ballot box.",
+      "note": "Statement issued in his name after the federal court upheld South Carolina's 2011 photo ID law (South Carolina v. United States). He also said the ruling affirms the law is valid under the Voting Rights Act and that his office will work to implement it.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID law"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:20:18.977Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0f26befa87d8f169e42f2f239d54a98d445da3d8d02f726a13a66c60fc4f095a",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/24114/race/27677/election/1421",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I believe voter ID laws are important to ensure the integrity and confidence of our elections.",
+      "note": "His written answer on a candidate questionnaire to the statement 'People should be able to vote without photo identification.' (answer rating given on the page: Strongly Disagree). Year is the 2026 governor race; day not shown. Text read through the fetch tool.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID law"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:20:18.977Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e8ec2a4e0f7d5b3b9acf0554635dcbb306ed8b69f670bd75c5625d552732962",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/24114/race/27677/election/1421",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I've defended election integrity time and time again and even sued the federal government when the Obama administration tried to outlaw our voter ID laws here in South Carolina.",
+      "note": "Rest of the same questionnaire answer: points to his past lawsuit defending the state's photo ID law. Text read through the fetch tool.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID law"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:20:18.977Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "64346d8d6181bc36adc15558f5129c338a03079006e161f75259e580d68d9e7f",
+      "kind": "own-words",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-calls-on-congress-to-pass-the-safeguard-american-voter-eligibility-save-act/",
+      "date": "2024-07-16",
+      "date_precision": "day",
+      "passage": "“This couldn’t be simpler. The upcoming election needs to be fair and honest, and this act would ensure that only U.S. citizens vote in federal elections,” Attorney General Wilson said.",
+      "note": "Quote in his office's release about a 22-state letter to Congress urging passage of the SAVE Act; the release says the act requires proof of citizenship to register to vote.",
+      "subjects": [
+        "SAVE Act",
+        "proof of citizenship to register",
+        "noncitizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:20:18.977Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "69f1d722db755d7848513f45a3fbbbb832db0efdaae18998ebde43dc44205318",
+      "kind": "own-words",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-asks-supreme-court-to-hear-proof-of-citizenship-for-voter-registration-case/",
+      "date": "2024-08-20",
+      "date_precision": "day",
+      "passage": "“This would seem like common sense. If only citizens can vote, what’s wrong with requiring proof of citizenship to register to vote?” asks Attorney General Wilson.",
+      "note": "Quote in a release about a 24-state friend-of-the-court brief backing Arizona's proof-of-citizenship-to-register law.",
+      "subjects": [
+        "proof of citizenship to register",
+        "noncitizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:20:18.977Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e9f148ab730451fac6a9aabac2526f49de1592a601eca286364ceb9a6776125",
+      "kind": "record",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-asks-supreme-court-to-hear-proof-of-citizenship-for-voter-registration-case/",
+      "date": "2024-08-20",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Joined 24-state friend-of-the-court brief asking the U.S. Supreme Court to let Arizona's proof-of-citizenship-to-register law take effect",
+      "note": "Official letter/brief signed on by his office; no bill instrument.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:20:18.977Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4b7eb626cf3685a75b120f39582ac8d2dcb5de6c863f9915ac883301b755311f",
+      "kind": "record",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-calls-on-congress-to-pass-the-safeguard-american-voter-eligibility-save-act/",
+      "date": "2024-07-16",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Joined 22-state attorneys general letter to Congress urging passage of the SAVE Act",
+      "note": "Official letter; the release says the act requires proof of citizenship when registering to vote.",
+      "subjects": [
+        "SAVE Act",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:20:18.977Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "40a44b4a298df924c402275bf1ad563f80aed2af0ca2eeac0d52ebc27ca0cb2a",
+      "kind": "own-words",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-co-leads-coalition-of-ags-urging-homeland-security-to-uphold-integrity-of-upcoming-elections/",
+      "date": "2024-10-15",
+      "date_precision": "day",
+      "passage": "“Every citizen treasures the right to vote. The states are required by law to protect our election process and are trying to do that, and the Department of Homeland Security is required by law to verify voter information upon request, but DHS has either delayed or given us inadequate information,” Attorney General Wilson said.",
+      "note": "Quote in a release about a 16-state letter he co-led asking the federal homeland security department to verify the immigration status of registered voters on request.",
+      "subjects": [
+        "voter-roll citizenship checks",
+        "noncitizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:20:18.977Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c96f1019709caed00035fd812635a1307c8c13647d1efd526a6a1ab6b754285",
+      "kind": "record",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-co-leads-coalition-of-ags-urging-homeland-security-to-uphold-integrity-of-upcoming-elections/",
+      "date": "2024-10-15",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Co-led 16-state attorneys general letter to the Homeland Security Secretary urging verification of voters' immigration status on request",
+      "note": "Official letter co-led with Ohio's attorney general.",
+      "subjects": [
+        "voter-roll citizenship checks",
+        "noncitizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:20:18.977Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5047ee0bc66fe73a0c270a4df220a0c7820c9a4d9febdf3282fe11d9a4a25943",
+      "kind": "own-words",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-backs-rule-requiring-proof-of-citizenship-to-vote-in-federal-elections/",
+      "date": "2025-10-21",
+      "date_precision": "day",
+      "passage": "Requiring proof of citizenship is just common sense; it protects our democracy and restores public trust.",
+      "note": "Part of his quoted statement in a release about a 14-state comment letter urging the federal Election Assistance Commission to require documents proving citizenship to register for federal elections.",
+      "subjects": [
+        "proof of citizenship to register",
+        "noncitizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:20:18.977Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3fb3adf46b1a0255437b2776c81e5eac95f20f9a5a334ffbf5d13e3aeefc9970",
+      "kind": "record",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-backs-rule-requiring-proof-of-citizenship-to-vote-in-federal-elections/",
+      "date": "2025-10-21",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Joined 14-state attorneys general comments urging the Election Assistance Commission to require documentary proof of citizenship to register in federal elections",
+      "note": "Official comment letter supporting a petition to change the federal registration form rules.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:20:18.977Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "525dad057f98f7dec247a769ad8d6243ecf65f413dc6d3feda19340605770daa",
+      "kind": "own-words",
+      "url": "https://www.scag.gov/about-the-office/news/scotus-agrees-with-attorney-general-alan-wilson-on-protecting-ballot-integrity/",
+      "date": "2026-01-14",
+      "date_precision": "day",
+      "passage": "“We want to protect the integrity of everyone’s ballots, including people who vote by mail, and it’s our position that counting mail-in ballots that come in after Election Day opens up the system to fraud,” Attorney General Wilson said.",
+      "note": "Quote about mail-ballot receipt deadlines (not ID). Related election-rules statement kept because it is in the same breath as election integrity.",
+      "subjects": [
+        "mail-ballot rules",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:20:18.977Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39f2f9fa3f1a7b55c165261613694f449468e4f18f4d0c406d2781ec12737d1d",
+      "kind": "own-words",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-asks-supreme-court-to-allow-president-trump-s-executive-order-protecting-upcoming-elections-to-take-effect/",
+      "date": "2026-07-29",
+      "date_precision": "day",
+      "passage": "“It’s already against the law for non-citizens to vote in federal elections, so it’s hard to understand why there’s opposition to President Trump’s executive order to help states make sure the law is followed,” Attorney General Wilson said.",
+      "note": "Quote in a release about 12 attorneys general asking the U.S. Supreme Court to stay an injunction against an executive order on citizens-only federal voting, state citizenship lists and mail-ballot security.",
+      "subjects": [
+        "noncitizen voting",
+        "voter-roll citizenship checks",
+        "mail-ballot rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:20:18.977Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0de52b4c1eab80e5232998e2540938802a981a9afe9ade6a3483657f95f7ee26",
+      "kind": "record",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-asks-supreme-court-to-allow-president-trump-s-executive-order-protecting-upcoming-elections-to-take-effect/",
+      "date": "2026-07-29",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Joined 12-state application asking the U.S. Supreme Court to stay an injunction against the President's elections executive order",
+      "note": "Official court filing; the order covers state citizenship lists and mail-ballot rules.",
+      "subjects": [
+        "noncitizen voting",
+        "voter-roll citizenship checks",
+        "mail-ballot rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:20:18.977Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID law",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "noncitizen voting",
+        "mail-ballot rules",
+        "voter-roll citizenship checks"
+      ],
+      "places": [
+        "status: elected Governor 2026-11-03 (a Nov 2026 news search shows him as governor-elect); stays in scope",
+        "On the Record (0 appearances found)",
+        "Attorney General's own news pages at scag.gov (read 10 releases)",
+        "iVoterGuide candidate questionnaire (https://ivoterguide.com/candidate/24114/race/27677/election/1421), read through the fetch tool; the raw page is script-rendered so a plain curl showed no answer text",
+        "iVoterGuide second profile (https://ivoterguide.com/candidate/24114/race/33518/election/1484): script-rendered, nothing readable",
+        "campaign site alanwilson.com: nothing readable on the subject (fetch returned no election text)",
+        "FITSNews interview https://www.fitsnews.com/2026/06/26/one-on-one-with-gop-gubernatorial-nominee-alan-wilson/: nothing on the subject came back from the page",
+        "blocked: https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-responds-to-u-s-supreme-court-s-ruling-on-mail-in-ballots/ (404 on fetch and curl)",
+        "blocked: https://www.scag.gov/about-the-office/news/s-c-files-legal-challenge-to-doj-s-denial-of-voter-i-d-law/ (404 on fetch and curl)",
+        "blocked: https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-defends-integrity-in-south-carolina-s-elections/ (404)",
+        "blocked: Ballotpedia (refuses fetches, not tried)",
+        "not a legislator: no legislature bill pages searched; votes and sponsorships are linked separately",
+        "web searches run: voter ID/photo ID; scag.gov mail-in ruling; proof of citizenship/noncitizen; campaign site platform; photo ID quotes. Sources on the refused-site list were not opened."
+      ],
+      "found": 14,
+      "at": "2026-11-10T21:20:18.977Z",
+      "by": "search-sc-2026-11-10"
+    }
+  ]
+}

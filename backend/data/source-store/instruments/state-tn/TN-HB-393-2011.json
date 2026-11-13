@@ -1,0 +1,32 @@
+{
+  "id": "TN-HB-393-2011",
+  "scope": "state:tn",
+  "title": "HB 393 (107th General Assembly): As introduced, requires citizenship status to be proven prior to registration to vote and requires certain procedures to ensure identity and citizenship status prior to voting. - Amends TCA Title 2.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB0393/2011"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 5 (amends 2-7-112(a)(1), after its second sentence)\n(quote) In addition, the voter shall present to the registrar one (1) form of identification that bears the name, address and photograph of the voter.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 4 (new section) (a)\n(quote) The administrator of elections shall reject any application for registration that is not accompanied by satisfactory evidence of United States citizenship. Satisfactory evidence of citizenship shall include any of the following:\n(section) Sec. 4(a)(1)-(2)\n(quote) The number of the applicant's driver license issued by the department of safety or a driver license, driver certificate, or nonoperating identification license issued by the equivalent governmental agency of another state within the United States if the agency indicates on the applicant's driver license, driver certificate or nonoperating identification license that the person has provided satisfactory proof of United States citizenship; (2) A legible photocopy of the applicant's birth certificate that verifies citizenship to the satisfaction of the administrator of elections;\n(section) Sec. 4(b)\n(quote) any person who is registered in this state on the effective date of this section is deemed to have provided satisfactory evidence of citizenship and shall not be required to resubmit evidence of citizenship unless the person is changing voter registration from one county to another.\n(e_other_rule)\n(section) Sec. 2 (2-2-115(b)(2)(U), registration form)\n(quote) A statement that the applicant shall submit evidence of United States citizenship with the application and that the registrar shall reject the application if no evidence of citizenship is attached.\n(section) Sec. 3 (replaces 2-2-116(c))\n(quote) I, being duly sworn on oath (or affirmation) declare that I am a citizen of the United States\n(other) Sec. 1: 'postal card' becomes 'registration' in 2-2-115(a).\n(other) Sec. 2: rewrites 2-2-115(b)(2), listing the contents of printed registration forms (items (A)-(T) largely existing, new item (U) is the citizenship statement).\n(other) Sec. 4(a)(3)-(6): other accepted proof is a passport (copy or shown), naturalization documents or certificate number (number verified with USCIS before the person goes on the rolls), proof under the 1986 federal immigration act, or a BIA/tribal card number.\n(other) Sec. 4(c)-(e): proof of registration in another state/county is not citizenship proof; no resubmission once shown in that county; administrator notes it in the voter file and may destroy documents after two years.\n(other) Sec. 6 severability; Sec. 7 effective on becoming law.\n(other) version: 139824-Draft (filed 2011-02-08) and 515124-Draft (2011-12-28 re-copy): identical text to each other and to the 2009 HB0270 Draft (apart from header). Carry a, d, e; no b or c.\n(other) note: Taken off notice in House subcommittee 2011-03-02; withdrawn 2012-02-09. Companion SB0377 (Bell) not in this group.",
+  "sponsors": [
+    {
+      "name": "Eric Watson",
+      "role": "prime",
+      "version": "515124-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

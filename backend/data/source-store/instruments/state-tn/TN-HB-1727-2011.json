@@ -1,0 +1,33 @@
+{
+  "id": "TN-HB-1727-2011",
+  "scope": "state:tn",
+  "title": "HB 1727 (107th General Assembly): As introduced, allows student attending a state university to use student identification card as evidence of identification. - Amends TCA Title 2, Chapter 7.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB1727/2011",
+    "https://legiscan.com/TN/rollcall/HB1727/id/98339"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) 2-7-112 (new subsection, unnumbered)\n(quote) Notwithstanding any other provision of this section to the contrary, a student attending a state university may use their student identification card as evidence of identification.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Section 2: effective on becoming law.\n(other) version: 180586-Draft (2011-02-17): student-ID subsection (slot a), with Senate companion SB1381 in header.\n(other) version: 524506-Draft (2011-12-10): identical body text (same size, only header/placement differences); no change.\n(other) note: Died in House State & Local Government Committee 2011-03-08. LegiScan's motion line reads 'recommended for passage' while the action log says 'Failed In'; the voice vote has no tally, so read the action log for the outcome. Does not say whether the card must carry a photo. Slot a only; no remedy, mail, or citizenship text.",
+  "sponsors": [
+    {
+      "name": "Joe Armstrong",
+      "role": "prime",
+      "version": "524506-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "id": "AZ-HB-2747-2025",
+  "scope": "state:az",
+  "title": "HB2747 (Fifty-seventh Legislature - First Regular Session (2025)): Weapons; permit; firearms safety training",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/83207",
+    "https://www.azleg.gov/legtext/57leg/1r/bills/hb2747p.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Aaron Marquez",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0df9cd85-3923-48bd-86c2-b7d4b31d510d"
+    },
+    {
+      "name": "Anna Abeytia",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1d2e925a-299f-4504-a4de-815d7a2ee7a6"
+    },
+    {
+      "name": "Cesar Aguilar",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "49b2db49-6438-437c-90ce-36b97670e30a"
+    },
+    {
+      "name": "Lorena Austin",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e2bd3486-1fcf-4726-8df8-564ad8ef2b62"
+    },
+    {
+      "name": "Junelle Cavero",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2b044f08-b5ce-4b15-993e-b90c16603c25"
+    },
+    {
+      "name": "Janeen Connolly",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d6f22ab7-5f0a-4d58-b53a-fd69bf4ad556"
+    },
+    {
+      "name": "Patricia Contreras",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8dcf58fe-fea2-4dd4-81ac-542432b154cf"
+    },
+    {
+      "name": "Brian Garcia",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ea0e5f51-f963-45ef-a104-429af91e5f90"
+    },
+    {
+      "name": "Consuelo Hernandez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5e9c9ca6-5267-4d01-b19d-a7da775d89d9"
+    },
+    {
+      "name": "Lydia Hernandez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8deb34b4-a40d-4d26-8d3a-1b5a9e9f07f9"
+    },
+    {
+      "name": "Sarah Liguori",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "eb8215ef-5e68-431a-a5cf-c226e8c0abf1"
+    },
+    {
+      "name": "Elda Luna-Najera",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8d470040-0f53-4881-8b58-5e9563a85f94"
+    },
+    {
+      "name": "Mariana Sandoval",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c37db938-9db2-47d5-b30e-7ac6a5f5c5ee"
+    },
+    {
+      "name": "Stephanie Stahl Hamilton",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2405145c-f082-47f2-861d-d4efd19e8162"
+    },
+    {
+      "name": "Kevin Volk",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c72622ac-61d7-4e8b-83a8-565cfca045c0"
+    },
+    {
+      "name": "Denise Epstein",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "feecd8fc-b007-450a-8779-8e6f68e80dd6"
+    },
+    {
+      "name": "Brian Fernandez",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2aa0cf37-6c3a-405d-9cd2-0fafc7cf8636"
+    },
+    {
+      "name": "Lauren Kuby",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "68308cfb-52ff-4a9c-8363-9a582ea9a989"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+    "fetched_at": "2026-11-11T03:51:26.779713Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2747-2025.introduced.html",
+      "sha256": "ad06906297d69478d9c80a725b005de74ac0a3bcc772d5105fdbb91f3a53ec9c"
+    }
+  },
+  "operative_text": "Sec. 5 (amending A.R.S. 13-3102), subsection A, new paragraph 1: {+1. CARRYING A DEADLY WEAPON WITHOUT A PERMIT PURSUANT TO SECTION 13-3112 EXCEPT A POCKET KNIFE CONCEALED ON HIS PERSON; OR+}\nSec. 5 (amending A.R.S. 13-3102), subsection B: B. Subsection A, [-paragraph-] {+PARAGRAPHS 1 AND +}2 of this section shall not apply to:\nSec. 7 (amending A.R.S. 13-3112), subsection E paragraph 6: {+6. HAS EVER SATISFACTORILY COMPLETED A FIREARMS SAFETY TRAINING PROGRAM AUTHORIZED BY THE DEPARTMENT OF PUBLIC SAFETY PURSUANT TO SUBSECTION N OF THIS SECTION AND PROVIDES ADEQUATE DOCUMENTATION THAT THE AUTHORIZED TRAINING PROGRAM WAS SATISFACTORILY COMPLETED. FOR THE PURPOSES OF THIS PARAGRAPH, \"ADEQUATE DOCUMENTATION\" MEANS:+} {+(+}a{+) A CERTIFICATE, CARD OR DOCUMENT OF COMPLETION FROM A FIREARMS SAFETY TRAINING PROGRAM AUTHORIZED PURSUANT TO SUBSECTION N OF THIS SECTION THAT IS DATED NOT MORE THAN FIVE YEARS EARLIER THAN THE DATE OF APPLICATION AND THAT HAS AFFIXED TO IT THE STAMP, SIGNATURE OR SEAL OF THE INSTRUCTOR OR ORGANIZATION THAT CONDUCTED THE PROGRAM.+}\nSec. 7 (amending A.R.S. 13-3112), subsection N: {+N. AN ORGANIZATION SHALL APPLY TO THE DEPARTMENT OF PUBLIC SAFETY FOR AUTHORIZATION TO PROVIDE FIREARMS SAFETY TRAINING. THE DEPARTMENT SHALL AUTHORIZE AN ENTITY TO PROVIDE FIREARMS SAFETY TRAINING IF THE TRAINING MEETS ALL OF THE FOLLOWING REQUIREMENTS:+} {+1. IS AT LEAST EIGHT HOURS IN LENGTH.+} {+2. IS CONDUCTED ON A PASS OR FAIL BASIS.+}\nSec. 7 (amending A.R.S. 13-3112), subsection N paragraphs 3-4: {+3. ADDRESSES ALL OF THE FOLLOWING TOPICS IN A FORMAT APPROVED BY THE DIRECTOR OF THE DEPARTMENT:+} {+(+}a{+) LEGAL ISSUES RELATING TO THE USE OF DEADLY FORCE.+} {+(+}b{+) WEAPON CARE AND MAINTENANCE.+} {+(+}c{+) MENTAL CONDITIONING FOR THE USE OF DEADLY FORCE.+} {+(+}d{+) SAFE HANDLING AND STORAGE OF WEAPONS.+} {+(+}e{+) MARKSMANSHIP.+} {+(+}f{+) JUDGMENTAL SHOOTING.+} {+(+}g{+) LIVE FIRING OF THE FIREARM UNDER THE SUPERVISION OF A QUALIFIED INSTRUCTOR. +} {+4. IS CONDUCTED BY INSTRUCTORS WHO ARE AUTHORIZED BY THE DEPARTMENT OF PUBLIC SAFETY AND WHO SUBMIT TO A BACKGROUND INVESTIGATION, INCLUDING A CHECK FOR WARRANTS AND A CRIMINAL HISTORY RECORDS CHECK.+}\nSec. 7 (amending A.R.S. 13-3112), subsection C (added sentences): shall immediately suspend the permit. {+THE PERMITTEE SHALL PRESENT THE PERMIT TO THE LAW ENFORCEMENT AGENCY OR THE COURT. ON NOTIFICATION OF THE PRESENTATION OF THE PERMIT, THE DEPARTMENT SHALL RESTORE THE PERMIT.+}"
+}

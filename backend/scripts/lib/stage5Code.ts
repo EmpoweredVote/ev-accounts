@@ -13,6 +13,11 @@ import { z } from 'zod';
 import { BLANK_CLASSES, type BlankClass } from './seatRate.js';
 import type { Finding, PersonFindings } from './sourceStore.js';
 
+/** `coded_by` of a code written by the record-only rule (lib/stage5RecordRule.ts), not by a coder. */
+export const SCRIPT_CODER = 'stage5-record-script';
+/** The one problem a script-made code has until the standing check passes. Its exact text is tested for. */
+export const NEEDS_STANDING_CHECK = 'a script-made code needs the standing check before it counts: run record-script.ts adopt';
+
 export const STARTER_TAGS = ['between-rungs', 'related-question', 'unnamed-position', 'direction-only', 'other-level-lever'] as const;
 export type StarterTag = (typeof STARTER_TAGS)[number];
 
@@ -35,6 +40,11 @@ export const Stage5CodeSchema = z.object({
   codebook: z.string().min(1),
   coded_by: z.string().min(1),
   coded_at: z.string().min(1),
+  /**
+   * Only on a code the record script wrote (`coded_by` = SCRIPT_CODER): the standing check it passed, set by
+   * `record-script.ts adopt` (a seeded sample of the script's people coded blind by Opus, all agreeing).
+   */
+  script_check: z.string().min(1).optional(),
 });
 export type Stage5Code = z.infer<typeof Stage5CodeSchema>;
 
@@ -50,6 +60,8 @@ export function checkCode(code: Stage5Code, pf: PersonFindings): string[] {
   const parsed = Stage5CodeSchema.safeParse(code);
   if (!parsed.success) return parsed.error.issues.map((i) => `${i.path.join('.')}: ${i.message}`);
   if (pf.politician_id !== code.politician_id) out.push('the findings file is for another person');
+  // A seat voters will see never rests on an unchecked script rule: this runs at ingest, in the report and at write.
+  if (code.coded_by === SCRIPT_CODER && !code.script_check) out.push(NEEDS_STANDING_CHECK);
 
   const byId = new Map(pf.findings.map((f) => [f.id, f]));
   const cited: Finding[] = [];

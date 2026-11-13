@@ -1,0 +1,18 @@
+{
+  "id": "SC-H-4207-2009",
+  "scope": "state:sc",
+  "title": "H 4207 (118th General Assembly): Authorize A Person To Vote By Absentee Ballot If He Or A Parent Last Resided In This State Immediately Before His Or His Parent's Departure From The United States.",
+  "urls": [
+    "https://www.scstatehouse.gov/cgi-bin/web_bh10.exe?bill1=4207&session=118"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) SECTION 1 (amends 7-5-120, new subsection (C), as the Judiciary Committee amendment of 2/4/2010 rewrites it)\n(quote) If a United States citizen outside the United States who has never lived in the United States has a parent who is a qualified elector, then that person is eligible to register and vote where the person's parent is a qualified elector; provided the person is not registered to vote in any other state or territory of the United States.\n(section) SECTION 2 (amends 7-15-110(5)(a))\n(quote) if a citizen or his parent last resided in South Carolina immediately before his or his parent's departure from the United States;\n(other) SECTION 2 (7-15-110): adjusts the list of overseas and military persons who may register using the federal Standard Form 76 (plural wording, parent-residence rule for citizens living abroad).\n(other) SECTION 3: takes effect upon approval by the Governor.\n(other) version: latest-2010_bill-page is the only saved text and it holds the whole history page: the Judiciary Committee report of 2/4/2010 (corrected 2/5/2010 for a scrivener's error) followed by the bill text as introduced. The introduced text gives subsection (C) with no proviso; the committee amendment replaces (C) and adds 'provided the person is not registered to vote in any other state or territory'. Separate files for the 11/17/2009 and 2/4/2010 versions are not saved. No slot a-d text in any version.\n(other) note: Slot e quotes the committee-amended (C) (the furthest version; the bill was recommitted on 2/17/2010 and went no further). The introduced version of (C), still printed in the file, lacks the proviso. The 7-5-120 reprint keeps the existing 'Every citizen of this State and the United States' language unchanged. Title mentions absentee ballots but the text amends 7-15-110 on registering with the federal form. No voter ID or proof-of-citizenship document rule.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

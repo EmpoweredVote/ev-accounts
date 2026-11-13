@@ -66,6 +66,65 @@
         "fetched_at": "2026-10-28T23:15:12.787Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "ebef6ea9ab2ae91420259dc69b20ceb45cc9ec0b4afe2566d3c08f6f504519c7",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb466",
+      "date": "2024-01-18",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-466-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and concurred in, 2024-01-18: yea (tally 62–35); census gate: none.",
+      "subjects": [
+        "payment networks barred from firearms-retailer merchant codes",
+        "government lists of gun owners banned",
+        "background-check records may not be turned into a purchaser list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-466-2023.enrolled.pdf",
+          "sha256": "6d089108620592801f50b209f20b361fb9a3c5e87a5f8243957c44092e2874a2"
+        }
+      }
+    },
+    {
+      "id": "951b12a2942af6eaca26d3161b93c704c9e346f57573e6c7ce4b3640f5fd2a95",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb466",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-466-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SB-466-2023 (LegiScan sponsor list): SB466 (2023-2024 Regular Session): Prohibiting firearms merchant category codes in payment card transactions, prohibiting government lists of firearm owners, and providing a penalty..",
+      "subjects": [
+        "payment networks barred from firearms-retailer merchant codes",
+        "government lists of gun owners banned",
+        "background-check records may not be turned into a purchaser list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-466-2023.enrolled.pdf",
+          "sha256": "6d089108620592801f50b209f20b361fb9a3c5e87a5f8243957c44092e2874a2"
+        }
+      }
     }
   ],
   "searches": [
@@ -82,6 +141,33 @@
       "found": 3,
       "at": "2026-10-28T23:15:12.787Z",
       "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "teachers carrying guns",
+        "suing gun makers and dealers",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "status: in scope; former Assembly member (27th District), 2026 candidate for State Senate District 9, named in the 2026-03-23 local news story https://www.seehafernews.com/?p=208623; Wikipedia https://en.wikipedia.org/wiki/Amy_Binsfeld reports her as winning the 2026 general election with 56 percent (secondary source, not confirmed on an official page)",
+        "On the Record (0 meetings)",
+        "official pages: https://legis.wisconsin.gov/assembly/27/binsfeld/ and https://legis.wisconsin.gov/senate/9/binsfeld/ returned 404 (not found; she is a former member and a not-yet-seated member-elect)",
+        "campaign site: could not find an address; guessed addresses did not resolve (no site found)",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Amy_Binsfeld (page returns empty to the fetch tool; search summary says she did not complete the candidate survey)",
+        "iVoterGuide https://ivoterguide.com/candidate/70605/race/3403/election/1251 and https://ivoterguide.com/candidate/70605/race/3404/election/985 (gun questions marked Did not answer)",
+        "blocked: https://goodparty.org/people/amy-binsfeld-90bdc7c0 (HTTP 429)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web searches (2): nothing on the subject in her own words"
+      ],
+      "found": 0,
+      "at": "2026-11-10T22:15:40.182Z",
+      "by": "source-collector"
     }
   ]
 }

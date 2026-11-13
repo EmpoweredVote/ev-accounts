@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-2135-2026",
+  "scope": "state:mo",
+  "title": "HB2135 (2026 Regular Session): Modifies provisions relating to concealed carry permits",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB2135&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/5342H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bob Titus",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3a9073dc-015c-4df9-b4f0-86e698fd6378"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2135-2026.introduced.pdf",
+      "sha256": "330a95ab3cccc468fd494be8d4527f890b3adbed709afe98dddc84c3e1005369"
+    }
+  },
+  "operative_text": "Section 571.101 (RSMo): 2. A concealed carry permit issued pursuant to subsection 7 of this section shall be issued by the sheriff or his or her designee of the county or city in which the applicant resides, if the applicant: (1) Is eighteen years of age or older, is a citizen or permanent resident of the United States, and either: (a) Has assumed residency in this state; or (b) Is a member of the Armed Forces of the United States stationed in Missouri or the spouse of such member of the military;\nSection 571.101 (RSMo): 3. A Missouri lifetime or extended concealed carry permit shall be issued by the sheriff or his or her designee of the county or city in which the applicant resides, if the applicant: (1) Is eighteen years of age or older, is a citizen or permanent resident of the United States, and has assumed residency in this state;\nSection 571.205 (RSMo): Defendant is not at least eighteen years of age. … Defendant has pled guilty to or been convicted of a crime punishable by imprisonment for a term exceeding one year under the laws of any state or of the United States other than a crime classified as a misdemeanor under the laws of any state and punishable by a term of imprisonment of two years or less that does not involve an explosive weapon, firearm, firearm silencer, or gas gun."
+}

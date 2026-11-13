@@ -1,0 +1,68 @@
+{
+  "id": "AZ-HB-2354-2026",
+  "scope": "state:az",
+  "title": "HB2354 (Fifty-seventh Legislature - Second Regular Session (2026)): Prohibited weapon; bump-fire device; accessory",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/84108",
+    "https://www.azleg.gov/legtext/57leg/2r/bills/hb2354p.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Quanta Crews",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1482a2bc-75d8-4aee-865c-53378c415210"
+    },
+    {
+      "name": "Patricia Contreras",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8dcf58fe-fea2-4dd4-81ac-542432b154cf"
+    },
+    {
+      "name": "Brian Garcia",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ea0e5f51-f963-45ef-a104-429af91e5f90"
+    },
+    {
+      "name": "Sarah Liguori",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "eb8215ef-5e68-431a-a5cf-c226e8c0abf1"
+    },
+    {
+      "name": "Anastasia Travers",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c2c49ac4-8d5e-46e3-b663-ac1677021a1b"
+    },
+    {
+      "name": "Betty Villegas",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6dcc0e46-c944-480b-a432-7b36989d56e9"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+    "fetched_at": "2026-11-11T04:23:07.062663Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2354-2026.introduced.html",
+      "sha256": "f13fd0983e5d7ed88dfedeb985311bf7eb2386fe747a5e247ab214b87de03fbd"
+    }
+  },
+  "operative_text": "Sec. 1 (amending A.R.S. 13-3101, subsection A, paragraph 8, subdivision (a), new item (ix)): {+(+}ix{+) A TRIGGER CRANK, A BUMP-FIRE DEVICE OR ANY PART, COMBINATION OF PARTS, COMPONENT, DEVICE, ATTACHMENT OR ACCESSORY THAT IS DESIGNED OR THAT FUNCTIONS TO ACCELERATE THE RATE OF FIRE OF A SEMIAUTOMATIC RIFLE BUT THAT DOES NOT CONVERT THE SEMIAUTOMATIC RIFLE INTO A MACHINE GUN. FOR THE PURPOSES OF THIS ITEM, \"MACHINE GUN\" HAS THE SAME MEANING PRESCRIBED IN 26 UNITED STATES CODE SECTION 5845(+}b{+) AND \"SEMIAUTOMATIC RIFLE\" HAS THE SAME MEANING PRESCRIBED IN 18 UNITED STATES CODE SECTION 921(+}a{+)(29).+}"
+}

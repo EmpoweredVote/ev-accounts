@@ -1,0 +1,138 @@
+{
+  "id": "GA-SB-19-2025",
+  "scope": "state:ga",
+  "title": "SB19 (2025-2026 Regular Session): Brady Law Regulations; purchase or transfer of certain firearms; require a ten-day waiting period",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/69414",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/230052"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "David Lucas",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6b522fd5-b059-4132-8702-ac6fd600efdf"
+    },
+    {
+      "name": "Emanuel Jones",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7b1648c9-2426-44ff-bb8f-3f66af0db31a"
+    },
+    {
+      "name": "Harold Jones",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "07f1594a-b9ac-409e-b074-fc65c9316c8e"
+    },
+    {
+      "name": "Kim Jackson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4a922565-16b3-4c1a-a654-7ef16a3316b6"
+    },
+    {
+      "name": "Elena Parent",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "83ffefbf-8cc7-4971-95df-9970188dd013"
+    },
+    {
+      "name": "Nan Orrock",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "95c803e4-4853-41aa-b9d6-b4c108e9ea52"
+    },
+    {
+      "name": "Sonya Halpern",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5ae018ad-1a87-4f30-a9d2-63296f88a04c"
+    },
+    {
+      "name": "Sally Harrell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "cd6e7cf0-87d8-4a0f-b3a9-3272eb69a77b"
+    },
+    {
+      "name": "RaShaun Kemp",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "91fbc0cb-1d87-4a5e-9b58-ddf462627b58"
+    },
+    {
+      "name": "Jason Esteves",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Kenya Wicks",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3dab8c6b-e257-4528-b5e2-22b4b72df2ea"
+    },
+    {
+      "name": "Freddie Sims",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Josh McLaurin",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ce3bc454-d297-44f7-b145-601cb592d9c2"
+    },
+    {
+      "name": "Ed Harbison",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ab37d478-2f5a-4545-8c80-281efb9ca9a2"
+    },
+    {
+      "name": "Gail Davenport",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8c65ec5b-05f6-42fd-a25a-a62c1f64fd67"
+    },
+    {
+      "name": "Michael Rhett",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1295e8c6-a9a2-43aa-9eee-2113e3a21142"
+    },
+    {
+      "name": "Donzella James",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4e367596-c6c9-44a3-af63-10c3670ed2af"
+    },
+    {
+      "name": "Nikki Merritt",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "46f32fee-0076-49db-a5cd-1526ef7316cb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-19-2025.introduced.pdf",
+      "sha256": "84b5cfa20886a58636f87970ab00bccca25312366306140db48c0d0f9a0fe415"
+    }
+  },
+  "operative_text": "SECTION 1 (amending O.C.G.A. 16-11-171): (7) 'Semiautomatic assault weapon' means: (A) Any selective firearm capable of fully semiautomatic or burst fire at the option of the user; (B) Any revolving cylinder shotgun; (C) Any semiautomatic rifle that can accommodate a detachable magazine and that has at least two of the following: (i) A folding or telescoping stock; (ii) A pistol grip that protrudes conspicuously beneath the action of the weapon; (iii) A bayonet mount; (iv)   A flash suppressor or threaded barrel designed to accommodate a flash suppressor; or (v) A grenade launcher; (D) A semiautomatic pistol that can accommodate a detachable magazine and that has at least two of the following: (i) An ammunition magazine that attaches to the pistol outside of the pistol grip; (ii) A threaded barrel that can accommodate a barrel extender, flash suppressor, forward handgrip, or silencer; (iii) A shroud that is attached to, or partially or completely encircles, the barrel and that allows the shooter to hold the firearm with the nontrigger hand without being burned; (iv) A manufactured weight of 50 ounces or more when the pistol is unloaded; or (v) A semiautomatic version of an automatic firearm; or (E) A semiautomatic shotgun that has at least two of the following: (i) A folding or telescoping stock; (ii) A pistol grip that protrudes conspicuously beneath the action of the weapon; (iii) A fixed magazine capacity in excess of five rounds; or (iv) The capability to accommodate a detachable magazine.\"\nSECTION 2 (adding O.C.G.A. 16-11-172.1): (a) No transfer or purchase of a semiautomatic assault weapon conducted by a licensed importer, licensed manufacturer, or licensed dealer shall be completed until the tenth day after the initiation of such transfer or purchase; provided, however, that the calculation of the ten days shall not include Saturdays, Sundays, or state or federal holidays; and provided, further, that an NICS check may be conducted within such ten days. (b) Licensed importers, licensed manufacturers, and licensed dealers shall, during normal business hours, make records available for inspection by any law enforcement agency for purposes of any criminal investigation. (c) Subsection (a) of this Code section shall not apply when a semiautomatic assault weapon is being transferred to or purchased by: (1) The holder of a weapons carry license issued pursuant to Code Section 16-11-129; or (2) Any person provided for under Code Section 16-11-130. (d) Any licensed importer, licensed manufacturer, or licensed dealer that violates this Code section or any purchaser or transferee that uses fraud or false representation to avoid the requirements of subsection (a) of this Code section shall be guilty of a felony and, upon conviction, shall be punished by imprisonment for not less than one nor more than five years.\""
+}

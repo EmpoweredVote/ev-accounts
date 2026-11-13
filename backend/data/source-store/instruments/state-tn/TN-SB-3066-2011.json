@@ -1,0 +1,32 @@
+{
+  "id": "TN-SB-3066-2011",
+  "scope": "state:tn",
+  "title": "SB 3066 (107th General Assembly): As introduced, requires the coordinator of elections, in conjunction with the commissioner of safety, to equip a mobile unit or units to travel throughout the state to issue photo identifications to those meeting the requirements to obtain a photo identification free of charge to vote. - Amends TCA Section 2-11-202; Section 2-7-112 and Section 55-50-336.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB3066/2011"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy)\n(section) TCA 2-11-202(c)(1), new, Section 1\n(quote) the coordinator of elections, in coordination with the commissioner of safety, shall establish a mobile unit program to equip a mobile unit or units ... to issue photo identifications free of charge to those persons who meet the requirements of § 55-50-336 for the purpose of voting.\n(section) TCA 2-11-202(c)(2)-(3), Section 1\n(quote) The mobile unit or units shall be moved throughout the state to predetermined locations on established dates and times with emphasis on traveling to those areas ... having a high concentration of residents who are unable to travel to distant locations ... The focus of these mobile units shall be to provide services to the elderly, the disabled and indigent residents living in remote areas\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec 1(3): coordinator of elections posts mobile unit times and places on its website and notifies county election commissions, which notify voters in the county.\n(other) Sec 1(1): units must be available by July 1, 2012.\n(other) Sec 2: effective on becoming law.\n(other) Title also names 2-7-112 and 55-50-336, but the body amends neither.\n(other) version: Draft (only version saved): the whole bill is the mobile-unit program for free photo IDs for voting (slot b). No other slot.\n(other) note: Title lists Sections 2-7-112 and 55-50-336 but the body text amends only 2-11-202. Never left committee (assigned to general subcommittee 2012-03-20). No votes recorded.",
+  "sponsors": [
+    {
+      "name": "Ken Yager",
+      "role": "prime",
+      "version": "551096-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

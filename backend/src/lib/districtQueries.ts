@@ -20,6 +20,7 @@
 
 import { FALLBACK_EXCLUDED_MTFCC_SQL_LIST } from './geoIdGuard.js';
 import { PHOTO_RESTRICTION_SELECT_SQL } from './photoRestriction.js';
+import { IS_INCUMBENT_SELECT_SQL } from './incumbency.js';
 
 /**
  * Next primary/general date per office, as a lateral so a politician with no
@@ -82,11 +83,33 @@ export const DISTRICT_SELECT_FIELDS = `
     p.preferred_name, p.name_suffix, p.party,
     COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
     ${PHOTO_RESTRICTION_SELECT_SQL},
-    p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+    p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, ${IS_INCUMBENT_SELECT_SQL},
     p.finance_summary,
-    COALESCE(p.valid_from, '') AS term_start,
-    COALESCE(p.valid_to, '') AS term_end,
-    COALESCE(p.term_date_precision, '') AS term_date_precision,
+    -- 🔴 THE TERM DATES COME FROM THE TENURE, NOT FROM THE PERSON. Until CC_0391 these three read
+    -- p.valid_from / p.valid_to / p.term_date_precision — the DEPRECATED per-person snapshot that
+    -- ADR 0002 replaced and that CLAUDE.md has said not to read in new code ever since. Measured
+    -- on prod the day this changed: 4,169 office_terms rows carry a start date, 693 people carry
+    -- a valid_from, so 4,033 current dated tenures rendered as NO DATE AT ALL to a voter, and 39
+    -- showed a date that DISAGREED with the term row. The data was correct and the read path was
+    -- not — the same shape as office_description and the CC_0341 transition fields above, found
+    -- the same way: by asking the live endpoint instead of reasoning about it.
+    -- ⚠ valid_from is TEXT and holds values like '2024', so it was never even a date column.
+    -- 🔴 to_char, NOT the raw column. office_terms.term_start is a real 'date', and node-postgres
+    -- parses OID 1082 into a JS Date at LOCAL midnight. Every consumer here stringifies, and
+    -- String(new Date('2021-01-14')).slice(0, 10) is "Thu Jan 14" — a weekday and no year. That
+    -- is not hypothetical: it is what incoming_on was serving live (see below). Formatting in SQL
+    -- makes the column a string before it can become a Date, which is why governorTerms.ts has
+    -- always done it this way.
+    COALESCE(to_char(och.term_start, 'YYYY-MM-DD'), '') AS term_start,
+    COALESCE(to_char(och.term_end, 'YYYY-MM-DD'), '') AS term_end,
+    -- The precision describes term_start, so it is emitted only when there IS one. office_terms
+    -- also uses 'unknown' (a real tenure whose start is not established, 6,959 rows); sending that
+    -- where the API previously sent '' would put a new word in front of a renderer we do not own.
+    -- 'day' | 'month' | 'year' are unchanged — the two vocabularies already agreed.
+    COALESCE(CASE WHEN och.term_start IS NOT NULL THEN och.start_precision END, '') AS term_date_precision,
+    -- ⚠ STILL THE PERSON, DELIBERATELY. office_terms has no appointment date — the nearest thing
+    -- is how_started = 'appointed', which is a different fact. Moving this one needs a column
+    -- that does not exist yet, so it is left alone rather than guessed at.
     COALESCE(p.appointment_date::text, '') AS appointment_date,
     -- 🔴 THE ONLY KEY A VACANT ROW HAS. office_current_holder LEFT JOINs from offices, so a seat
     -- with no current term returns a row whose p.* columns are all NULL — no p.id, no name. Until
@@ -103,7 +126,15 @@ export const DISTRICT_SELECT_FIELDS = `
     -- (DISTINCT ON (o.id)) and office_next_term is one row per office, so the join cannot fan out.
     ont.politician_id AS incoming_holder_id,
     inc.full_name AS incoming_holder_name,
-    ont.term_start AS incoming_on,
+    -- 🔴🔴 THIS WAS SERVING "Fri Nov 13" TO VOTERS — a weekday with no year. Measured live on
+    -- 2026-11-10 for a Reno address: City Attorney and Mayor both returned
+    -- incoming_on: "Fri Nov 13". The column was selected raw, node-postgres turned the 'date'
+    -- into a JS Date, and the mapper's String(row.incoming_on).slice(0, 10) cut up the Date's
+    -- human-readable form instead of an ISO string. The slice is harmless now that SQL emits
+    -- text, and it stays as a guard in case this ever selects a timestamp.
+    -- ▶ A FIELD CAN BE POPULATED, NON-NULL AND STILL NONSENSE. Nothing was null, nothing errored,
+    -- CI was green, and the value was unusable.
+    to_char(ont.term_start, 'YYYY-MM-DD') AS incoming_on,
     o.title AS office_title, o.representing_state, o.representing_city,
     -- 🔴 WITHOUT THIS THE ADDRESS PATH DROPPED EVERY OFFICE DESCRIPTION ON THE FLOOR. The mapper
     -- has always read row.office_description, and this select never produced it, so the field
@@ -225,7 +256,7 @@ export const GEOFENCE_DISTRICT_JOIN = `
 
 /** Excludes challenger/placeholder rows unless a caller opts in. */
 export const INCUMBENTS_ONLY_CLAUSE =
-  "AND COALESCE(p.is_incumbent, true) = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'";
+  "AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'";
 
 /**
  * buildDistrictQuery — the ONE geofence->districts->officials query, parameterized

@@ -77,7 +77,160 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "375db5614054b2cbc0f1d976b8975a0765ea8689e6bca75b9c1ccd3c35f6203c",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess125_2023-2024/bills/1126.htm",
+      "date": "2024-04-03",
+      "date_precision": "day",
+      "instrument_id": "SC-S-1126-2024",
+      "act": "sponsor",
+      "note": "Joint resolution proposing a change to Section 4, Article II of the state constitution so that only a citizen of the United States and of this state, properly registered, is entitled to vote; it went to voters in 2024. Added as a co-sponsor on this Senate Journal day (co-sponsors added: Corbin and Verdin).",
+      "subjects": [
+        "citizen-only voting amendment",
+        "proof of citizenship to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:21:26.209Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d018a294744710583fce790c911cf002bbc00d651e9414d857f9be8b1a36b65",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess118_2009-2010/sj10/20100128.htm",
+      "date": "2010-01-28",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3418-2009",
+      "act": "yea",
+      "motion": "Senate: Senate second reading of H. 3418 (passed)",
+      "note": "SC Senate roll call (Senate second reading of H. 3418 (passed), 36-2) on H3418 (118th General Assembly), official journal (printed as 'Verdin'); linked by LegiScan member id 2369 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b7c857312ada1e14a041f203e98b752af382fc1405849350214c1281a1727025",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0304&session=119&summary=B",
+      "date": "2011",
+      "date_precision": "year",
+      "instrument_id": "SC-S-304-2011",
+      "act": "sponsor",
+      "motion": "co sponsor, 2010-12-15_Introduced",
+      "note": "Listed as co sponsor of S0304 (119th General Assembly) in LegiScan's bill record, matching the official bill page; the first version (2010-12-15_Introduced) carries the ID/citizenship text (identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6faf09ea6e8effee660b59b459517d907eecd19de63e7bc874b2c5dba3d3fd59",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=20955",
+      "date": "2022-04-21",
+      "date_precision": "day",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "yea",
+      "motion": "Senate: 3rd Reading",
+      "note": "SC Senate roll call (3rd Reading, 43-0) on H4919 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 2369 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 2369 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.818Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "citizen-only voting amendment"
+      ],
+      "places": [
+        "campaign site dannyverdin.com (news and about pages): nothing on the subject",
+        "On the Record (0 meetings)",
+        "Senate Journals (2024-02-29, 2024-03-05, 2024-04-03, 2024-04-04): bill and sponsor lines only, no remarks printed",
+        "scvotes.gov photo ID page seen in search only, not a statement by this person",
+        "Ballotpedia: blocked (refuses fetches, not tried)",
+        "bluevoterguide.org: blocked (not tried)",
+        "justfacts.votesmart.org: blocked (not tried)",
+        "blocked: https://legalnewsline.com/stories/657553317-south-carolina-senate-passes-citizen-only-voting-amendment (HTTP 429)",
+        "blocked: https://legalnewsline.com/stories/658249042-s-c-lawmakers-put-citizen-only-voting-amendment-on-november-ballot (HTTP 429)",
+        "not opened: outlets on the do-not-fetch list (snippets were leads only)",
+        "iVoterGuide 2024 profile: question on voting without photo identification marked Did not answer; no statements",
+        "Greenville Journal 2024 candidate guide: answer covers health care, nothing on the subject",
+        "Greenville Patriot Caucus voter guide: contact details only, nothing on the subject",
+        "Senate Journal 2024-04-03 co-sponsors added: S. 1126"
+      ],
+      "found": 1,
+      "at": "2026-11-10T21:21:26.209Z",
+      "by": "search-sc-2026-11-10"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 4,
+      "at": "2026-11-10T23:17:03.818Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

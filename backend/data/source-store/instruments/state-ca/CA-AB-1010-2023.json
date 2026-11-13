@@ -1,0 +1,39 @@
+{
+  "id": "CA-AB-1010-2023",
+  "scope": "state:ca",
+  "title": "AB1010 (2023-2024): Firearms.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202320240AB1010",
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB1010#99INT"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Heath Flora",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "a0c59a09-fa45-4765-b6c5-17843699991d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Introduced 2023-02-15, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-1010-2023.introduced-2023-02-15.html",
+      "sha256": "7ed2ed8daff5fda56438dab58ee8a2c954cafea9be61591afce2522dfad4dce9"
+    },
+    "note": "Spot bill, no floor vote; saved at Introduced 2/15/2023 (its last version). The only marked change is in (c)(6)(A): \"the unexpended ammunition\" becomes \"any unexpended ammunition\" (struck: \"the\"). Digest calls it technical and nonsubstantive."
+  },
+  "operative_text": "Section 25400 (Penal Code): (a) A person is guilty of carrying a concealed firearm when the person does any of the following: (1) Carries concealed within any vehicle that is under the person’s control or direction any pistol, revolver, or other firearm capable of being concealed upon the person. (2) Carries concealed upon the person any pistol, revolver, or other firearm capable of being concealed upon the person. (3) Causes to be carried concealed within any vehicle in which the person is an occupant any pistol, revolver, or other firearm capable of being concealed upon the person.\nSection 25400 (Penal Code): (6) If both of the following conditions are met, by imprisonment pursuant to subdivision (h) of Section 1170, or by imprisonment in a county jail not to exceed one year, by a fine not to exceed one thousand dollars ($1,000), or by both that fine and imprisonment: (A) The pistol, revolver, or other firearm capable of being concealed upon the person is loaded, or both it and any unexpended ammunition capable of being discharged from it are in the immediate possession of the person or readily accessible to that person. (B) The person is not listed with the Department of Justice pursuant to paragraph (1) of subdivision (c) of Section 11106 as the registered owner of that pistol, revolver, or other firearm capable of being concealed upon the person."
+}

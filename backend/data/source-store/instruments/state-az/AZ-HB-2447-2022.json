@@ -1,0 +1,100 @@
+{
+  "id": "AZ-HB-2447-2022",
+  "scope": "state:az",
+  "title": "HB2447 (Fifty-fifth Legislature - Second Regular Session (2022)): Firearms; universities; community colleges; campus",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/76942",
+    "https://www.azleg.gov/legtext/55leg/2r/bills/hb2447p.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Quang Nguyen",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9cc152b6-c83b-4501-9e1a-2ab50e1db6a7"
+    },
+    {
+      "name": "Leo Biasiucci",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b1b97401-d1a9-4442-9f78-2749f1853f6e"
+    },
+    {
+      "name": "Walter Blackman",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a88f4ecd-5c4f-4caf-a88c-1d06c92bfdc7"
+    },
+    {
+      "name": "Shawnna Bolick",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2785d691-2404-400e-8dde-bcc5a58e419b"
+    },
+    {
+      "name": "Neal Carter",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9a81dfd3-b70b-45bf-8851-3907d6e12508"
+    },
+    {
+      "name": "Lupe Diaz",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0ac7beee-f298-4d41-8981-30c3c307fe3d"
+    },
+    {
+      "name": "John Fillmore",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Travis Grantham",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Gail Griffin",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "188c386e-087b-4587-9510-da7fc5805575"
+    },
+    {
+      "name": "Jake Hoffman",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "66ca210e-deab-4d07-8a18-48f7079f6f9b"
+    },
+    {
+      "name": "Jacqueline Parker",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Ben Toma",
+      "role": "co",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+    "fetched_at": "2026-11-11T03:51:26.779713Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2447-2022.introduced.html",
+      "sha256": "8a793bae9df4795ed97b67172d66337929866d9eb627eb5be80827a69493b720"
+    }
+  },
+  "operative_text": "Sec. 1 (amending A.R.S. 13-2911, new subsec. H): {+H. NOTWITHSTANDING SUBSECTION D OF THIS SECTION, THE CHIEF ADMINISTRATIVE OFFICER, THE CHIEF ADMINISTRATIVE OFFICER'S DESIGNEE, THE ARIZONA BOARD OF REGENTS OR A COMMUNITY COLLEGE DISTRICT GOVERNING BOARD MAY NOT ADOPT OR ENFORCE ANY POLICY OR RULE THAT RESTRICTS OR PROHIBITS A FACULTY MEMBER OR REGISTERED STUDENT FROM CARRYING OR TRANSPORTING A FIREARM ON THE PROPERTY OF THE PUBLIC UNIVERSITY OR COMMUNITY COLLEGE IF THE FACULTY MEMBER OR REGISTERED STUDENT POSSESSES A VALID PERMIT THAT IS ISSUED PURSUANT TO SECTION 13-3112 AND SUBMITS A REGISTRATION TO THE INSTITUTION'S ADMINISTRATION INDICATING THAT THE FACULTY MEMBER OR REGISTERED STUDENT IS ARMED AND POSSESSES A VALID PERMIT THAT IS ISSUED PURSUANT TO SECTION 13-3112. THE CHIEF ADMINISTRATIVE OFFICER, THE CHIEF ADMINISTRATIVE OFFICER'S DESIGNEE, THE ARIZONA BOARD OF REGENTS OR A COMMUNITY COLLEGE DISTRICT GOVERNING BOARD SHALL ADOPT AND ENFORCE GUIDELINES FOR USING A FIREARM IN AN ACTIVE SHOOTER INCIDENT. THE GUIDELINES MAY BE MODELED AFTER THE FEDERAL BUREAU OF INVESTIGATION OR THE UNITED STATES DEPARTMENT OF HOMELAND SECURITY PROTOCOLS OR GUIDELINES FOR AN ACTIVE SHOOTER INCIDENT.+}\nSec. 2 (amending A.R.S. 13-3102, subsec. G): {+2. A FACULTY MEMBER OR REGISTERED STUDENT OF A PUBLIC UNIVERSITY OR COMMUNITY COLLEGE WHO IS CARRYING OR TRANSPORTING A FIREARM ON THE PROPERTY OF THE PUBLIC UNIVERSITY OR COMMUNITY COLLEGE IF THE FACULTY MEMBER OR REGISTERED STUDENT POSSESSES A VALID PERMIT THAT IS ISSUED PURSUANT TO SECTION 13-3112 AND SUBMITS A REGISTRATION TO THE INSTITUTION'S ADMINISTRATION INDICATING THAT THE FACULTY MEMBER OR REGISTERED STUDENT IS ARMED AND POSSESSES A VALID PERMIT THAT IS ISSUED PURSUANT TO SECTION 13-3112.+}"
+}

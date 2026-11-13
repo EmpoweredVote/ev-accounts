@@ -44,6 +44,121 @@
         "fetched_at": "2026-11-04T14:14:55.231Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "91c8a751e1be6a1d419cf5648cd5d41f84296bad2caa8d467f1c8fe64305c70f",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB1175&year=2025&code=R",
+      "date": "2025-03-27",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1175-2025",
+      "act": "nay",
+      "motion": "Third Read and Passed with Amendments (H) - HPA 1 adopted AYES: 100 NOES: 51 PRESENT: 0 (House: HBs FOR THIRD READING HCS HB 1175, A.A.)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed with Amendments (H) - HPA 1 adopted AYES: 100 NOES: 51 PRESENT: 0 (House: HBs FOR THIRD READING HCS HB 1175, A.A.), 2025-03-27: nay (tally 100–51); census gate: none.",
+      "subjects": [
+        "bar on enforcing federal gun laws by state and local officials",
+        "$50,000 civil penalties on agencies and subdivisions",
+        "suits for injunctions by residents"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1175-2025.engrossed.pdf",
+          "sha256": "ab67707e14c64e50b9b9f0f9d83f1b3001c41f790fb19c7d786aba98c78d5f2e"
+        }
+      }
+    },
+    {
+      "id": "bd2a6345ae6fa490f77918936b33c56b76dfa72dfe0200e6396044ea344c8022",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB328&year=2025&code=R",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-328-2025",
+      "act": "nay",
+      "motion": "Third Read and Passed (H) (House: HBs FOR THIRD READING HCS HB 328)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HBs FOR THIRD READING HCS HB 328), 2025-04-10: nay (tally 106–45); census gate: none.",
+      "subjects": [
+        "concealed carry age lowered to eighteen",
+        "permit holders may use public transit while carrying",
+        "military pistol-qualification path to training certificate"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-328-2025.engrossed.pdf",
+          "sha256": "41b0d81a8aceeffd3d45f4c047675629a13bd0bf639014307bdf0a372f278044"
+        }
+      }
+    },
+    {
+      "id": "cd1f99c1f0e13fb0ca92df29251283e46ba4a812430e72f48ea312257a9c7d5f",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB1575&year=2025&code=R",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-1575-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-1575-2025 (LegiScan sponsor list): HB1575 (2025 Regular Session): Modifies the offense of unlawful possession of a firearm to include any minor possessing a firearm on public property.",
+      "subjects": [
+        "minors barred from possessing firearms on public property"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1575-2025.introduced.pdf",
+          "sha256": "f6f622fe8b4ce3b698b78c7bf1b1d6f35216506bb8956baf960041b71c0cb189"
+        }
+      }
+    },
+    {
+      "id": "c040d2f41920a1aa996b079b217a885ec8f28fb6a9b4fa6b4c53649b19e09ea1",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB693&year=2025&code=R",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-693-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MO-HB-693-2025 (LegiScan sponsor list): HB693 (2025 Regular Session): Adds improperly transporting or storing a firearm in a motor vehicle to the offense of unlawful use of a weapon.",
+      "subjects": [
+        "new offence for loaded concealed gun in vehicle outside locked container",
+        "vehicle-carry exemptions narrowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-693-2025.introduced.pdf",
+          "sha256": "fb3a9527a3dbacfe79b462834e6ce0d870c8313394f303301bb1691f4f47ea17"
+        }
+      }
     }
   ],
   "searches": [
@@ -121,6 +236,33 @@
       "found": 1,
       "at": "2026-11-04T14:14:55.231Z",
       "by": "identity-mo-2026-11-04b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment and gun safety statements",
+        "ghost guns",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed in scope: the Missouri House member page for district 67 names Representative Tonya Rush, and https://www.ballotready.org/people/tonya-rush shows her as sitting District 67 member and a candidate on the 2026 general-election ballot",
+        "sponsor list: covered by LegiScan bulk check",
+        "official House member page (https://house.mo.gov/MemberDetails.aspx?year=2026&district=067): nothing on the subject",
+        "blocked: https://ballotpedia.org/Tonya_Rush (403 on direct fetch; fetch tool returned an empty page)",
+        "campaign site: none found in search; only directory listings",
+        "news searches on her name plus gun, firearm, Second Amendment, red flag, public safety: no quote or statement by her on the subject",
+        "the House caucus profile page and aggregator pages (billtrack50, legiplex, thecandidate, wtfvote): lead-only, nothing on the subject",
+        "not reviewed: URL-pattern list in the researcher agent file, beyond the official page, Ballotpedia and search steps above"
+      ],
+      "found": 0,
+      "at": "2026-11-12T21:23:45.967Z",
+      "by": "source-collector"
     }
   ]
 }

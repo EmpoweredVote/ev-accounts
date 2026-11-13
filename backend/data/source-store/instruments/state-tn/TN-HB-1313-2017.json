@@ -1,0 +1,37 @@
+{
+  "id": "TN-HB-1313-2017",
+  "scope": "state:tn",
+  "title": "HB 1313 (110th General Assembly): As introduced, allows persons 60 years of age or older who possess a valid non-photo bearing license issued by this state on or before January 1, 2013, to vote at a polling place without having to present photo identification; adds a valid non-photo bearing license issued by this state on or before January 1, 2013, to persons 60 years of age or older as evidence of identification for voting purposes. - Amends TCA Title 2, Chapter 7.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB1313/2017"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) TCA 2-7-112(a)(1) (changed)\n(quote) that persons sixty (60) years of age or older who possess a valid non-photo bearing license issued by the state of Tennessee on or before January 1, 2013, and persons voting in accordance with § 2-6-401(a) and (b) or § 2-6-601 are not required to show an identification with a photograph of the voter.\n(section) TCA 2-7-112(c) (new item)\n(quote) A valid non-photo bearing license issued by the state of Tennessee on or before January 1, 2013, to persons sixty (60) years of age or older.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Section 3\n(quote) If any provision of this act or its application to any person or circumstance is held invalid, then the invalidity thereof shall not affect other provisions or applications of this act that can be given effect without the invalid provision or application, and to that end any invalid provision or application of this act shall be severable.\n(other) Section 1: rewrites the photo-ID exemption in 2-7-112(a)(1) to add persons 60 or older with an old non-photo state license; keeps the exemption for voters under 2-6-401(a),(b) and 2-6-601.\n(other) Section 2: adds that non-photo license to the accepted-ID list in (c).\n(other) Section 3: severability.\n(other) Section 4: takes effect on becoming law.\n(other) version: Draft 1506798 (2017-02-09): only version saved; carries slots a and e. No amendments saved.\n(other) note: Stopped after assignment to House Local Government Subcommittee; no votes. No amendments saved.",
+  "sponsors": [
+    {
+      "name": "Johnnie Turner",
+      "role": "prime",
+      "version": "1506798-Draft"
+    },
+    {
+      "name": "G Hardaway",
+      "role": "co",
+      "version": "1506798-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

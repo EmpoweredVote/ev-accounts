@@ -115,6 +115,378 @@
           "sha256": "17943534917a39ee671fab99d8120acebcc4e61921a039e7c8f5bb13fc72114d"
         }
       }
+    },
+    {
+      "id": "b6130accc7a1efcdce82e357742f575837a5e2277a5be10d64479042bc3a663f",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/66265",
+      "date": "2024-02-27",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1018-2023",
+      "act": "yea",
+      "motion": "Passage: House Vote #581",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #581, 2024-02-27: yea (tally 106–60); census gate: none.",
+      "subjects": [
+        "banks barred from singling out firearms retailers by payment code",
+        "firearms registries by any person or government barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1018-2023.enrolled.pdf",
+          "sha256": "3073f18aecfd54c9c28d17feb9b9ef6f65e37967f1c92fad309d433378719fec"
+        }
+      }
+    },
+    {
+      "id": "8c6b473d8068eab562c6c8591dfa7a5580b3a1658698a9cc72693fee496b12b6",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/73253",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1324-2025",
+      "act": "yea",
+      "motion": "Passage: House Vote #665",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #665, 2026-03-06: yea (tally 87–76); census gate: none.",
+      "subjects": [
+        "state ban on possessing a silencer repealed",
+        "silencer used in a crime still carries added penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1324-2025.comm-sub.pdf",
+          "sha256": "cac9c7cc0db7a3bfed34e302a4b693e66f6522544bcc39bdac7d05205d292d63"
+        }
+      }
+    },
+    {
+      "id": "84f18f687513a03980c89566476d96c92949fea8ea2f802919454c80f898ed52",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/59180",
+      "date": "2022-02-03",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-218-2021",
+      "act": "yea",
+      "motion": "Agree To Senate Sub As Am: House Vote #477",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Agree To Senate Sub As Am: House Vote #477, 2022-02-03: yea (tally 96–70); census gate: none.",
+      "subjects": [
+        "Georgia honors carry licenses from any other state that honors its own",
+        "Attorney General must make reciprocity agreements with states that require one",
+        "90-day carry window for new residents holding another state's license"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-218-2021.enrolled.pdf",
+          "sha256": "35053f645a4fe0d4cb64700443e051921e643e6f8f93fc6836b1613d11b098ce"
+        }
+      }
+    },
+    {
+      "id": "021d5ac71aac50612400b8c3a3f0fe7c11494c9e56818c7073b14227d8fe3a70",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/50346",
+      "date": "2017-03-30",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-280-2017",
+      "act": "yea",
+      "motion": "House Vote #427",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, House Vote #427, 2017-03-30: yea (tally 96–70); census gate: none.",
+      "subjects": [
+        "license holders may carry concealed handguns on public college campuses",
+        "exceptions for dorms, athletics, childcare, offices",
+        "first offense in excluded spaces fined $25"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-280-2017.enrolled.pdf",
+          "sha256": "908c9be0b0cc1206f2ef757194a36b74dbb222e9e5f44164ed0fe9d6dcc66c6e"
+        }
+      }
+    },
+    {
+      "id": "9645b847c23f12290576d867598b8897cb7b9cbcfe2d8a8de34a00c64cd59905",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/50371",
+      "date": "2017-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-292-2017",
+      "act": "yea",
+      "motion": "House Vote #364",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, House Vote #364, 2017-03-28: yea (tally 110–49); census gate: none.",
+      "subjects": [
+        "out-of-state carry licenses recognized only for non-residents",
+        "new residents get 90 days to carry before getting a Georgia license",
+        "retired law enforcement officers may carry anywhere in the state",
+        "faster license checks and replacement licenses",
+        "civil immunity for firearm instructors",
+        "banks barred from refusing service to firearms businesses"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-292-2017.enrolled.pdf",
+          "sha256": "7bc498345ee67aff5fa921dfce0d695223ee8c2e64bbd6fb11783d34d38e5faa"
+        }
+      }
+    },
+    {
+      "id": "956f7e38d0e3a4f97e153448674760fefc41e0e6f190c23ab37c30d3701876c0",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/60080",
+      "date": "2022-04-04",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-259-2021",
+      "act": "yea",
+      "motion": "Passage: House Vote #895",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #895, 2022-04-04: yea (tally 94–67); census gate: none.",
+      "subjects": [
+        "places of worship removed from banned carry locations",
+        "license-holder database ban gets a damages remedy",
+        "local limits on discharging firearms on parcels of ten acres or more",
+        "firearms barred from being seized or sales halted during a state of emergency",
+        "people with a past involuntary hospitalization can petition to be removed from the background-check list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-259-2021.comm-sub.pdf",
+          "sha256": "c424cfbbf905edebf2dd2cc87e8203dfd2af11b212bd3fa3556c84a8ccd93c16"
+        }
+      }
+    },
+    {
+      "id": "4c9e83850915a713699d4a891d88adb1a6f40e80b4001940f55f4e70721c8653",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/60797",
+      "date": "2022-03-30",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-319-2021",
+      "act": "yea",
+      "motion": "Passage: House Vote #817",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #817, 2022-03-30: yea (tally 100–67); census gate: none.",
+      "subjects": [
+        "carry license no longer required to carry a handgun",
+        "\"lawful weapons carrier\" replaces license holder across carry laws",
+        "police cannot stop a person only to check for a license"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-319-2021.enrolled.pdf",
+          "sha256": "17943534917a39ee671fab99d8120acebcc4e61921a039e7c8f5bb13fc72114d"
+        }
+      }
+    },
+    {
+      "id": "df39318edf07d0d225e5e06c0fb1bdadcd23e860f07e39acf4acc198bd56335c",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/64735",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-560-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-560-2023 (LegiScan sponsor list): HB560 (2023-2024 Regular Session): Crimes and offenses; revise various laws pertaining to the carrying and possession of firearms and other weapons.",
+      "subjects": [
+        "places of worship removed from the list where carrying is barred",
+        "ban on carry-licence databases",
+        "local rules on discharging firearms limited",
+        "no gun seizures or sale bans during declared emergencies",
+        "mental-health records used in gun background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-560-2023.introduced.pdf",
+          "sha256": "3e0f263eb2a15b77fe4148358644c8d3b45054deb6e796b308b4246942ee687e"
+        }
+      }
+    },
+    {
+      "id": "099071dfd2bc61974bf9f55872f7d22d4b122638588dbf4b3c0bc250e817b314",
+      "kind": "own-words",
+      "url": "https://weneedkaren.com/issues",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Our rights are not given to us by government, they are OUR rights given to us by God. The 2nd Amendment is there to protect our rights from government. I will work to ensure that our 2nd Amendment Rights are protected in Georgia.",
+      "note": "Campaign site issues page, '2nd Amendment Rights' section; undated page.",
+      "subjects": [
+        "guns and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.059Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bad342e2f6e5d588718a11385d8e5c3daee8046789c17ca1fd80e532a9309401",
+      "kind": "own-words",
+      "url": "https://weneedkaren.com/8-legislative-session-recap-2025",
+      "date": "2025-03-07",
+      "date_precision": "day",
+      "passage": "Proper firearm storage is crucial in preventing accidents, unauthorized access and theft.",
+      "note": "Her week 8 recap, about HB 79 (Firearm Safe Handling and Secure Storage Tax Credit Act, credit up to $300 for training and secure storage devices); the House took it up as a bipartisan measure. Date is the page date reported by the fetch tool.",
+      "subjects": [
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.059Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a89917ea8cb6db97d6cd4c9f8a2be69385ff4501f5aa59b03b8f9e7812af995c",
+      "kind": "record",
+      "url": "https://house-press.com/?p=11469",
+      "date": "2023-02-08",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Hosted GA2A Day at the Capitol (March 2023 event of a gun-owners group)",
+      "note": "House media release announcing she would host GA2A Day at the Capitol; GA2A describes itself as informing gun owners about Second Amendment liberties. Release date is the post date.",
+      "subjects": [
+        "guns and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.059Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "951cd305c1cb08a73a6a49f61e8b2ba3447b1f7983a04fca49c30409c562a452",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/72353",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1023-2025",
+      "act": "yea",
+      "motion": "Passage: House Vote #546",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "GA House, Passage: House Vote #546, 2026-02-24: yea (tally 151–11); census gate: near-unanimous.",
+      "subjects": [
+        "weapon detection required at school building entrances",
+        "takes effect January 1, 2028"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1023-2025.comm-sub.pdf",
+          "sha256": "79e90ebc48e656276b1cf2a56ef9e94e0cf0286d51d38dec17f5f451ff55443d"
+        }
+      }
+    },
+    {
+      "id": "a34cc336a57333a5058694dc2d7b6b4fef80d451a9377e1248f4d55fddd63e35",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/70476",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-204-2025",
+      "act": "yea",
+      "motion": "Passage: House Vote #429",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "GA House, Passage: House Vote #429, 2025-04-04: yea (tally 99–74); census gate: multi-subject.",
+      "subjects": [
+        "local limits on gun storage and gun parts barred",
+        "lawful gun carriers may sue over local rules",
+        "state declares gun regulation a statewide matter"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-204-2025.enrolled.pdf",
+          "sha256": "f3383faa3b85b22922b268ff733c78969bf7745386e967a71e6a9f02136f1fc2"
+        }
+      }
     }
   ],
   "searches": [
@@ -157,6 +529,31 @@
       "found": 3,
       "at": "2026-10-28T20:51:14.407Z",
       "by": "identity-ga-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "safe storage of guns",
+        "guns and the Second Amendment",
+        "limits on who may have a gun",
+        "suppressors and repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site https://weneedkaren.com (home, issues page 'The 2nd Amendment', 2025 week 8 recap)",
+        "House media office release on GA2A Day 2023",
+        "iVoterGuide questionnaire (Second Amendment questions unanswered)",
+        "web searches on name plus gun words and bill numbers: no further own words",
+        "blog page https://weneedkaren.com/karens-blog returned 404"
+      ],
+      "found": 3,
+      "at": "2026-11-12T01:42:02.059Z",
+      "by": "source-collector"
     }
   ]
 }

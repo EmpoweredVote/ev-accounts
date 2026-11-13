@@ -1,0 +1,30 @@
+{
+  "politician_id": "78c53e55-a6f2-407e-8d04-56a6f20fe1df",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "check every gun buyer",
+        "red-flag or extreme-risk orders",
+        "carry a gun",
+        "gun rights / Second Amendment statements",
+        "bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: name plus gun and Second Amendment words (several searches)",
+        "candidate on the 2026 ballot for Assembly District 56, unopposed (https://ivoterguide.com/candidate/70904/race/27921/election/1423)",
+        "campaign site home and about pages (https://phillipsforwisconsin.com/, https://phillipsforwisconsin.com/about/): nothing on the subject",
+        "voter-guide profile: gun question not answered; no profile text on guns",
+        "2024 Senate-run news item (https://wrco.com/news/2024/4/5/anthony-phillips-runs-for-18th-state-senate-district): nothing on the subject",
+        "sponsor list: not applicable, not a sitting legislator in 2026 and no bills found; Ballotpedia not reviewed (returns empty to fetch tool)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T22:15:40.193Z",
+      "by": "source-collector"
+    }
+  ]
+}

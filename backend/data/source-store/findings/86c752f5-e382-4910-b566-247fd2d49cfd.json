@@ -27,5 +27,37 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: name + voter ID / photo ID",
+        "web search: name + proof of citizenship / SAVE Act / noncitizen",
+        "web search: name + H. 3003 / photo ID law",
+        "web search: name + questionnaire / candidate survey / voter guide",
+        "web search: site:scstatehouse.gov journal remarks",
+        "blocked: https://ballotpedia.org (known refusal, not fetched)",
+        "blocked: https://justfacts.votesmart.org (known refusal, not fetched)",
+        "blocked: https://bluevoterguide.org (known refusal, not fetched)",
+        "sponsorship and vote records: linked separately, not searched",
+        "https://www.scstatehouse.gov/member.php?code=1865908867 (member page confirms David Vaughan, House District 27, Greenville County; no voting-law bills shown)",
+        "https://ivoterguide.com/race/31915/election/1469 (2026 race page: questionnaire tab shows no answers)",
+        "3 further web searches on name + election/voting/ballot, Simpsonville and Greenville outlets: no own words found",
+        "nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:30:27.415Z",
+      "by": "sc-search-r3"
+    }
+  ]
 }

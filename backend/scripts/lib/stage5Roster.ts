@@ -28,6 +28,9 @@ export type RosterRow = {
   scope: 'sitting' | 'candidate' | 'both';
   leaving: 'yes' | 'no' | 'unknown';
   race_ids: string[];
+  /** The office's title ("State Auditor"), so a coder knows what the seat can act on. Absent in rosters built
+   *  before 2026-11-12, whose header has no `office` column. */
+  office?: string;
 };
 
 export type RosterGap = { kind: 'candidate-no-politician' | 'no-level' | 'level-out-of-scope'; id: string; note: string };
@@ -39,6 +42,9 @@ type OfficeFields = {
   office_id: string | null; chamber_id: string | null; district_type: string | null; is_judicial: boolean | null;
   district_label: string | null; office_labels: (string | null)[] | null; state: string | null;
 };
+
+/** The office's own title, else its chamber's name. */
+const titleOf = (r: OfficeFields): string => (r.office_labels ?? []).find((x) => x && x.trim())?.trim() ?? '';
 
 const levelOf = (r: OfficeFields): Level | null =>
   levelForDistrict(r.district_type ?? null, r.is_judicial ?? null, r.district_label ?? null, r.office_labels ?? []);
@@ -117,7 +123,7 @@ export async function loadRoster(
     if (old && old._rank >= LEVEL_RANK[level]) continue;
     byPerson.set(r.politician_id, {
       politician_id: r.politician_id, full_name: r.full_name, office_id: r.office_id, level, state: r.state || null,
-      scope: 'sitting', leaving: 'unknown', race_ids: [], _rank: LEVEL_RANK[level],
+      scope: 'sitting', leaving: 'unknown', race_ids: [], office: titleOf(r), _rank: LEVEL_RANK[level],
     });
   }
 
@@ -135,7 +141,7 @@ export async function loadRoster(
     if (!level) continue;
     byPerson.set(r.politician_id, {
       politician_id: r.politician_id, full_name: r.full_name, office_id: r.office_id, level, state: r.state || null,
-      scope: 'candidate', leaving: 'no', race_ids: [], _rank: LEVEL_RANK[level],
+      scope: 'candidate', leaving: 'no', race_ids: [], office: titleOf(r), _rank: LEVEL_RANK[level],
     });
   }
 
@@ -149,35 +155,39 @@ export async function loadRoster(
       else if (row.office_id && ballotKnown.has(row.office_id)) row.leaving = 'yes';
       else row.leaving = 'unknown';
     }
-    const { politician_id, full_name, office_id, level, state, scope, leaving, race_ids } = row;
-    out.push({ politician_id, full_name, office_id, level, state, scope, leaving, race_ids });
+    const { politician_id, full_name, office_id, level, state, scope, leaving, race_ids, office } = row;
+    out.push({ politician_id, full_name, office_id, level, state, scope, leaving, race_ids, office });
   }
   return out.sort((a, b) => LEVEL_RANK[b.level] - LEVEL_RANK[a.level] || (a.state ?? '').localeCompare(b.state ?? '') || a.full_name.localeCompare(b.full_name));
 }
 
 // ---- tsv --------------------------------------------------------------------------------------
 
-export const ROSTER_COLUMNS = ['politician_id', 'full_name', 'office_id', 'level', 'state', 'scope', 'leaving', 'race_ids'] as const;
+export const ROSTER_COLUMNS = ['politician_id', 'full_name', 'office_id', 'level', 'state', 'scope', 'leaving', 'race_ids', 'office'] as const;
+/** The header before the `office` column (2026-11-12); still read, so older rosters keep working. */
+const OLD_COLUMNS = ROSTER_COLUMNS.slice(0, 8);
 
 const clean = (s: string) => s.replace(/[\t\r\n]+/g, ' ');
 
 export function formatRosterTsv(rows: RosterRow[]): string {
-  const lines = rows.map((r) => [r.politician_id, clean(r.full_name), r.office_id ?? '', r.level, r.state ?? '', r.scope, r.leaving, r.race_ids.join(',')].join('\t'));
+  const lines = rows.map((r) => [r.politician_id, clean(r.full_name), r.office_id ?? '', r.level, r.state ?? '', r.scope, r.leaving, r.race_ids.join(','), clean(r.office ?? '')].join('\t'));
   return [ROSTER_COLUMNS.join('\t'), ...lines].join('\n') + '\n';
 }
 
 export function parseRosterTsv(text: string): RosterRow[] {
   const lines = text.split('\n').filter((l) => l.trim());
-  if (lines[0] !== ROSTER_COLUMNS.join('\t')) throw new Error(`roster.tsv: header must be: ${ROSTER_COLUMNS.join(' ')}`);
+  const withOffice = lines[0] === ROSTER_COLUMNS.join('\t');
+  if (!withOffice && lines[0] !== OLD_COLUMNS.join('\t')) throw new Error(`roster.tsv: header must be: ${ROSTER_COLUMNS.join(' ')}`);
   return lines.slice(1).map((line, i) => {
     const c = line.split('\t');
-    const [politician_id, full_name, office_id, level, state, scope, leaving, race_ids] = c;
+    const [politician_id, full_name, office_id, level, state, scope, leaving, race_ids, office] = c;
     if (!LEVELS.includes(level as Level)) throw new Error(`roster.tsv line ${i + 2}: bad level "${level}"`);
     if (!['sitting', 'candidate', 'both'].includes(scope)) throw new Error(`roster.tsv line ${i + 2}: bad scope "${scope}"`);
     if (!['yes', 'no', 'unknown'].includes(leaving)) throw new Error(`roster.tsv line ${i + 2}: bad leaving "${leaving}"`);
     return {
       politician_id, full_name, office_id: office_id || null, level: level as Level, state: state || null,
       scope: scope as RosterRow['scope'], leaving: leaving as RosterRow['leaving'], race_ids: race_ids ? race_ids.split(',') : [],
+      ...(withOffice ? { office: office ?? '' } : {}),
     };
   });
 }

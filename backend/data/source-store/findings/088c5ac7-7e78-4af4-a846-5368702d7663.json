@@ -78,7 +78,159 @@
         "fetched_at": "2026-10-21T01:52:20.308Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "36f7369c2426d6ecfc724a8b58207a3cb724af8856a3460882ef2c2dbe843443",
+      "kind": "own-words",
+      "url": "https://www.wkms.org/government-politics/2021-02-25/ky-election-bill-aims-to-balance-voting-access-and-security",
+      "date": "2021-02-25",
+      "date_precision": "day",
+      "passage": "“Let’s pick some low-hanging fruit and some things that will really benefit our elections, make them more secure and uphold the integrity of our elections,” Branscum said.",
+      "note": "Quoted by WKMS (Kentucky Public Radio, published 2021-02-25) on the day the House elections committee passed HB 574, his omnibus elections bill. The story does not say he was speaking of voter ID; it covers absentee rules, vote centers and early voting.",
+      "subjects": [
+        "election security in general",
+        "HB 574 omnibus elections bill"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:23:05.330Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a03fe32821ebbd6d6d8ed514f1641d338381e45be3f2bd049730aba87066c49e",
+      "kind": "own-words",
+      "url": "https://ridingthewave.com/local-news/629792",
+      "date": "2022-04",
+      "date_precision": "month",
+      "passage": "I have and continue to believe that elections are the fabric of our democracy and it is critical that we uphold the security and integrity of the election process.",
+      "note": "His end-of-session legislative update (posted on a local radio station's news page after the 2022 session ended in mid-April), under the heading 'Election Security'. He then lists what HB 564 does: in-person absentee voting, tamper-resistant seals, a ban on connecting voting equipment to the internet, and a risk-limiting audit pilot. No mention of voter ID.",
+      "subjects": [
+        "election security in general",
+        "absentee and early voting rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:23:05.330Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d46ecb91a31ee5cd1e1e87159cd4301382bc37721ea5bb099f789780020ffed",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 22051 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.604Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 22051 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.604Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd4f0553eb6ef608e5f4f0880dfe9d952201740968402fd0ab748856330a3352",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "yea",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 22051 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.604Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election security"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "iVoterGuide 2020 general profile (fetched; photo ID question left unanswered)",
+        "iVoterGuide 2022 primary profile (fetched; photo ID question left unanswered)",
+        "iVoterGuide 2026 profile (fetched; no questionnaire answers)",
+        "WKMS 2021-02-25 (fetched, saved)",
+        "Riding the Wave / WHVE legislative update 2022 (fetched, saved)",
+        "Owensboro Times 2026-02-20 (fetched; he asked at a committee hearing whether lawmakers should pause one section of HB 534; only a two-word fragment is in quotation marks, so not saved)",
+        "blocked: https://nkytribune.com/2024/02/ky-rep-josh-branscum-discusses-how-state-is-addressing-data-privacy-deep-fakes-in-elections/ (HTTP 403)",
+        "blocked: https://joshbranscum.com/vote (HTTP 404; no campaign issue page reached)",
+        "blocked: Ballotpedia (refuses fetches, not tried)",
+        "not reviewed: https://apps.legislature.ky.gov/Legislators/subs/House-083.html",
+        "web searches run: 5"
+      ],
+      "found": 2,
+      "at": "2026-11-11T18:23:05.330Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 3,
+      "at": "2026-11-11T21:12:46.604Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
 }

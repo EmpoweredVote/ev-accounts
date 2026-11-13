@@ -197,6 +197,309 @@
         "fetched_at": "2026-10-28T23:15:12.784Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "ebef6ea9ab2ae91420259dc69b20ceb45cc9ec0b4afe2566d3c08f6f504519c7",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb466",
+      "date": "2024-01-18",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-466-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and concurred in, 2024-01-18: yea (tally 62–35); census gate: none.",
+      "subjects": [
+        "payment networks barred from firearms-retailer merchant codes",
+        "government lists of gun owners banned",
+        "background-check records may not be turned into a purchaser list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-466-2023.enrolled.pdf",
+          "sha256": "6d089108620592801f50b209f20b361fb9a3c5e87a5f8243957c44092e2874a2"
+        }
+      }
+    },
+    {
+      "id": "951b12a2942af6eaca26d3161b93c704c9e346f57573e6c7ce4b3640f5fd2a95",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb466",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-466-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SB-466-2023 (LegiScan sponsor list): SB466 (2023-2024 Regular Session): Prohibiting firearms merchant category codes in payment card transactions, prohibiting government lists of firearm owners, and providing a penalty..",
+      "subjects": [
+        "payment networks barred from firearms-retailer merchant codes",
+        "government lists of gun owners banned",
+        "background-check records may not be turned into a purchaser list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-466-2023.enrolled.pdf",
+          "sha256": "6d089108620592801f50b209f20b361fb9a3c5e87a5f8243957c44092e2874a2"
+        }
+      }
+    },
+    {
+      "id": "228d2ccde35f4d39b822684561143ebb75affbec5624e1402e4fd3424d55cf1c",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/sen/bill/sb607",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-607-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SB-607-2025 (LegiScan sponsor list): SB607 (2025-2026 Regular Session): Right to carry a weapon in this state, licenses to carry a concealed weapon, and providing a penalty. (FE).",
+      "subjects": [
+        "permitless concealed carry (licence no longer required)",
+        "loaded-firearm-in-vehicle ban repealed",
+        "list of places where firearms are prohibited rewritten",
+        "employers may not bar carrying or storing weapons in an employee’s vehicle"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-607-2025.introduced.pdf",
+          "sha256": "9c15b7c2f009be0489a31087fcad7afd74130ebeab0157288f50e1d9b5e1fea2"
+        }
+      }
+    },
+    {
+      "id": "fb53f964931aaeb097968848ebb91a05157bbfe782ba7e734b9fc926e6d7bb14",
+      "kind": "own-words",
+      "url": "https://drydenwire.com/news/chanz-green-running-for-re-election-to-represent-74th-assembly-district/",
+      "date": "2026-04-20",
+      "date_precision": "day",
+      "passage": "He has also supported measures to strengthen election integrity, advocated for hunters’ rights and commonsense reforms at the DNR, and authored legislation to strengthen Second Amendment rights.",
+      "note": "Re-election announcement issued in his name (posted as a press release on DrydenWire). It describes his record in the third person and says he authored legislation to strengthen Second Amendment rights; it names no bill.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.219Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ae670ab5a945e12e4b4133c8055206b67df58a9f5db580cc239926db93469876",
+      "kind": "own-words",
+      "url": "https://spectrumnews1.com/wi/green-bay/news/2026/01/28/guns-firearms-second-amendment",
+      "date": "2026-01-28",
+      "date_precision": "day",
+      "passage": "“As a gun owner and a proud advocate for the Second Amendment, I don’t feel that me having to get a permit to conceal and carry is necessary,” Green said.",
+      "note": "Quoted by Spectrum News on Assembly Bill 609, the bill to allow concealed carry without a permit. He says a carry permit is not necessary.",
+      "subjects": [
+        "carry a gun without a permit",
+        "general statement on gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.219Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3066c01e04d89fcd8af1b83aa6d58a4200f9dab88814a37cc6e9585e14b367f7",
+      "kind": "own-words",
+      "url": "https://spectrumnews1.com/wi/green-bay/news/2026/01/28/guns-firearms-second-amendment",
+      "date": "2026-01-28",
+      "date_precision": "day",
+      "passage": "“I don’t want to punish good-behaving, gun-owning citizens in Wisconsin because bad actors can’t get their stuff together,” Green said.",
+      "note": "Quoted by Spectrum News in the same story, answering the argument that more people carrying without a permit could cause harm. He says rule-following owners should not be penalised for others' misuse.",
+      "subjects": [
+        "carry a gun without a permit",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.219Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8162bde95d220410c44300f67370387ea2e13564ee5879d9548791565f1652bf",
+      "kind": "own-words",
+      "url": "https://spectrumnews1.com/wi/green-bay/news/2026/01/28/guns-firearms-second-amendment",
+      "date": "2026-01-28",
+      "date_precision": "day",
+      "passage": "“If Tony Evers chooses to veto this, well that’s him infringing on the Second Amendment as far as I’m concerned,” Green said.",
+      "note": "Quoted by Spectrum News about a possible governor's veto of the permitless carry bill.",
+      "subjects": [
+        "carry a gun without a permit",
+        "general statement on gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.219Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5202056108be7a7a0e9ff5beeebcd9488ca10b40751b9871dc603e746d6a316f",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/2026/01/07/republican-legislators-consider-bills-to-expand-gun-rights/",
+      "date": "2026-01-07",
+      "date_precision": "day",
+      "passage": "“Rights do not require permit slips from the government,” said Rep. Chanz Green, R-Grand View, who cosponsored the bill. “Criminals, by definition, do not follow permitting laws. It is time to stop restricting responsible gun owners and remov(e) bureaucratic hurdles.”",
+      "note": "Quoted in a Wisconsin Public Radio report (republished by Urban Milwaukee) at the hearing on the permitless carry bill. The story calls him a cosponsor; other sources call him the author. The bracketed letter is as printed.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.219Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a4083f20329d584f471836d0245900925cfbb43fc6813c4233f7ddfd0d794538",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab609",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-609-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-609-2025 (LegiScan sponsor list): AB609 (2025-2026 Regular Session): Right to carry a weapon in this state, licenses to carry a concealed weapon, and providing a penalty. (FE).",
+      "subjects": [
+        "permitless concealed carry (general ban repealed)",
+        "license kept but background check limited to federal prohibitions",
+        "list of places firearms are barred rewritten, Class A misdemeanor",
+        "employer may not bar weapons stored in employee vehicle",
+        "loaded firearm in vehicle ban dropped"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T23:03:34.524773Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-609-2025.introduced.pdf",
+          "sha256": "e7626966e4cf1b8cb1ab34dfdfb2b7b2a43443808df4408ec5e1314bfd60b6f3"
+        }
+      }
+    },
+    {
+      "id": "1faff1fda6eea2a638b4be07322419dac5f0dd82b1b80737edddc694bd53b080",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/joint_resolution/ajr112",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AJR-112-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AJR-112-2025 (LegiScan sponsor list): AJR112 (2025-2026 Regular Session): The right to keep and bear arms (first consideration)..",
+      "subjects": [
+        "constitutional right to bear arms made inalienable",
+        "any gun restriction must pass strict scrutiny"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T23:03:34.524773Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AJR-112-2025.introduced.pdf",
+          "sha256": "4a5891db107d79f5a0da8091eef17592df50450f084f490052f2c42014abc8c4"
+        }
+      }
+    },
+    {
+      "id": "f148127e3c137e2928888554610c1acb42a89916690464e60e7d7132b726b65c",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb256",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-256-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SB-256-2023 (LegiScan sponsor list): SB256 (2023-2024 Regular Session): Possession of a firearm on school grounds by school employees and fees for licenses to carry a concealed weapon. (FE).",
+      "subjects": [
+        "licensed school employees may carry on school grounds if school adopts policy",
+        "concealed-carry license fees waived for teachers",
+        "firearm within 1,000 feet of a school becomes a forfeiture"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T23:03:34.524773Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-256-2023.introduced.pdf",
+          "sha256": "fd08df5afd774292beb782d8076e4bdb8b82493d3a6f17497ef9d121c452e381"
+        }
+      }
+    },
+    {
+      "id": "50ac833738e5cad9376ef55e0d790f63acf942c22f318d095e1bb1d093d9d98d",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/sen/joint_resolution/sjr105",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SJR-105-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SJR-105-2025 (LegiScan sponsor list): SJR105 (2025-2026 Regular Session): The right to keep and bear arms (first consideration)..",
+      "subjects": [
+        "constitutional right to bear arms made inalienable",
+        "any gun restriction must pass strict scrutiny"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T23:03:34.524773Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SJR-105-2025.introduced.pdf",
+          "sha256": "623b89b606cfd9f7d718fe1fe40c25440e25ddd2d3bb71c60d7ad3cf0f634fa3"
+        }
+      }
     }
   ],
   "searches": [
@@ -236,6 +539,31 @@
       "found": 6,
       "at": "2026-10-28T23:15:12.784Z",
       "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "right to keep and bear arms in the state constitution",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "scope: member of the Wisconsin Assembly for the 74th District (not the Senate); his own 2026-04-20 statement says he is running for a third term; no loss or withdrawal found. The brief calls him a state official and candidate, which fits",
+        "official member page legis.wisconsin.gov/senate/25/green/: 404 (wrong chamber; he sits in the Assembly), assembly member page not opened",
+        "campaign site: not reviewed (not found in search results)",
+        "Ballotpedia: not reviewed (known to come back empty to the fetch tool)",
+        "news searches on name plus gun words: two news stories opened with direct quotes of him",
+        "Wisconsin Gun Owners page and NRA-ILA page: opened as leads only, used to learn the bill numbers (AB 609, AJR 112, AB 610), not cited for any act"
+      ],
+      "found": 5,
+      "at": "2026-11-10T22:15:40.219Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -12,12 +12,24 @@ Python as `python3 -I scripts/stage5/<tool>.py`. `<batch>` is the batch folder, 
 
 | Step | Tool | What it does |
 |---|---|---|
-| 0, 14 | `write-batch.sh <stage5> <batch> <topic> <units> [N\|apply]` | `topic:stage5-write` with `held.txt` / `moved.txt` codes set aside, then put back (even on failure); writes `pids-write.txt` for `readback.ts` |
+| 3a | `scan_bills.py <ds_root> <XX,YY> <out.json> --topic gun-policy` | the topic's bills in a state's LegiScan datasets, with sponsors and votes (moved from the gun-policy folder's `scan_gun.py`; same output on GA and MO) |
+| 3a | `sponsor_cover.py <bills.json> --state XX --roster <tsv>… --core <json> --ds <dir> [--idmap <tsv>] [--since 2017] [--candidates <json>] [--triage <json> --write <json>] [--refile-tolerance 0.02 \| --keep-refiled] [--refiled-out <json>]` | every non-resolution topic bill a roster member sponsored that is not core yet; writes candidates for an Opus title triage, then core + the "fill" bills (refuses while any is untriaged); prints LegiScan people matched by name for `idmap.tsv`. **Re-file trim** (default on): among "fill" bills of one title and prime sponsor, keeps the newest, and an older copy only when it adds a roster sponsor or its introduced text's size differs by more than the tolerance; dropped copies → `<write>.refiled.json`. Missouri: 277 → 213 (2%), 165 with text ignored (`--refile-tolerance 1000`); the hand script kept 163. **Text fill only where it can matter** (round three): the triage may answer `stub` (on the topic, but the title shows no rung is possible); a stub is not filled and is listed for the runner in `<write>.stubs.json` (`--stubs-out`). 🔴 A bill a roster member voted on in a floor roll call is always filled: the tool turns that `stub` into `fill` and prints it (each candidate carries `floor_voters` and the summary line `desc`). California replay, 117 candidates, blind triage: 12 stubs, **11 fills saved of 109**, **0 bills that ended with a rung left unfilled**; the vote guard caught one (SB 368 (2023), a dealer-rules title with a rung 3 part) |
+| 3b | `bill_table.py check\|questions <table.json> [--ids <file>] [--store <dir>] [--rungs 5] [--out <md>]` | `check`: every bill has an instrument file, a rung in range, deciding words found in its operative text, and a well-formed `per_vote` (optional: `{"rungs": [3, null], "note": …}` when a ruling reads one vote on the bill differently from the row); with `--ids`, bills people have findings on that the table leaves out (exit 2). `questions`: flagged bills and people with a Yes on both sides of the middle rung, gated votes left out |
+| pilot | `search_list.py plan\|control\|adopt\|recode --record-codes <dir> [--roster <tsv> --skip-rungs 5,2 --control 20] [--codes <dir>] [--record-briefs <dir> --wave-dir <dir> --apply] --out <dir>` | **Pilot states only** (STAGE5.md "Pilot rule"). `plan`: skip record seats at the skip rungs, except a seeded control; `recode` (after the search import): second pass only for people with a new on-topic finding their record-only coder was not shown, or no record-only code; search again once when the search found nothing and read none of the person's own pages, or its agent did not finish; everyone else keeps the record-only code (`--apply` copies it). Missouri replay: 45 second pass, 8 search again, 35 kept (0 of 35 differ from the final code); `control`: exit 4 when more than 1 in 20 control people changed; `adopt`: runs `control`, then copies skipped people's record-only codes |
+| code | `record-script.ts plan --config <json> --rulings <md> --roster <tsv> --ids <file> --unit state:xx --bill-table <json> --sides 1,2,3/4,5 --name <prefix> --out <dir> [--check 10] [--skip-rungs 5,2]` · `record-script.ts adopt --out <dir> --name <prefix> --codes <record-codes>` | **Record-only pass by rule, with an Opus lane and a standing check** (round three; see "Record pass by script" below). `plan` writes a script-made code for each plain case into a holding folder, and lists everyone else for Opus with the reason; `adopt` compares a seeded sample of the script's people with their blind Opus codes and releases the script codes only when all agree (exit 4 on any difference: nothing released) |
+| code | `coder-inputs.ts --config <json> --rulings <md> --roster <tsv>… --ids <file> --unit state:xx\|federal --name <prefix> --out <dir> --coded-dir <dir> [--size 20] [--store <dir>] [--record-only] [--bill-table <json>]` | per coder batch (`--record-only`: record findings only, no-stance forbidden, people with no record listed apart): the brief, one compact findings file (refuses one that does not rebuild to the store) and an ids list; prints the rulings the unit's coders will not see, and characters before and after. Each brief line names the office (roster `office` column); `--record-only` refuses a person with none, because a kept record-only code is final. `--bill-table` (round three) collapses each person's plain record to one line per bill and act (finding id, date, chamber, tally, gate, the table's rung) and states each bill's rung, deciding words and reason once; a record whose note says more than the pre-fill's fixed sentence is never collapsed and stays word for word; the file is refused unless every finding, note included, rebuilds exactly. California batch 1 (20 people, 1,321 findings): 680,549 → 363,153 characters, 0 ids lost, all 12 other notes kept; all six record batches: 3.21M → 1.75M |
+| code | `split-codes.ts <coded batch file> --config <json> --codes <dir> [--ids <file>] [--store <dir>] [--replace]` | checks one coder file (`checkCode` plus the bill, label and quote checks in `lib/stage5Ingest.ts`), sets `coded_at` and `evidence_basis`, writes passing codes; the rest go to `<batch>.sendback.md` (exit 3) |
+| 0-12 | `run_recipe.py <batch> [--from N] [--to 12] [--print] [--check-only N]` · `run_recipe.py <batch> --replay [--to 9] [--no-reapply] [--print]` | runs recipe steps 0-12 from `<batch>/recipe.json`; stops at the first failed check (exit 2) or at an agent or hand step (exit 10, with the `--from` to resume); step 9 refuses while step 7 ran after step 8; step 5 writes an empty `fallback/urls.txt` when no blank sits over a shown answer; prints the PREVIEW numbers. `--replay` (round three), after a tool fix: keeps the current files as `*-before-replay-<k>.csv`, puts the pre-step-7 copies back, then runs step 7, `drop_held.py` (when anyone is held), step 8, the saved trims (`uncite.json`, `overrides.json` with `--skip-changed`; `--no-reapply` leaves them out) and step 9. It refuses when the pre-step-7 copies are missing or an earlier step ran after them. A step-7 re-run no longer overwrites those copies while they are current |
+| waves | `wave.py <jobs.tsv> --out <dir> [--max 8] [--full] [--add-dir <dir>]…` | one wave of headless agents (`claude -p`), at most 8 at a time, slim by default; one result file per agent; skips agents already done |
+| measure | `search_effect.py --roster <tsv> --unit state:xx --record-codes <dir> --codes <dir> --plan <dir> [--json <out>]` | per state: searched people whose outcome or rung changed between the record-only code and the final code, split by the record-only result; codings per person (Missouri: 4 of 82 changed, 1.62 codings per person) |
+| measure | `stage5_usage.py --session <main .jsonl> [--wave-dir <dir>]… [--people N] [--since ISO] [--until ISO] [--json <out>]` | the pilot's token numbers: weighted units, per person, main-session share and steps, agents by kind with their starting size (Georgia replay: 40.0M, 196k per person, 39%) |
+| 0, 14 | `write-batch.sh <stage5> <batch> <topic> <units> [N\|apply]` | `topic:stage5-write --skip-ids <batch>/skip-ids.txt` (the `held.txt` and `moved.txt` ids); moves no code file (until 2026-11-12 it moved them aside, which a session's permission check refused); writes `pids-write.txt` for `readback.ts` |
 | held | `setup_batch.py <stage5> <new batch> --level federal\|state [--state XX] <pid>…` | a held follow-up batch: `pids.txt` = these ids, `moved.txt` = every other coded id in the unit (refuses an id not coded there) |
 | held | `drop_held.py <batch>` | drops `held.txt` / `moved.txt` people from `research.csv` and `evidence.csv`; the full set kept once as `*-with-held.csv` |
 | 2 | `add_hand_rows.py <batch> <stage5> <findings> --topic <key>` | appends the rows in `hand-rows.json` (`{id: "no-evidence" \| "direction-only"}`) |
 | 4 | `build_evidence.py <batch> <roster.tsv> <findings> [--fetch] [--level state --state XX] [--max-urls N] [--from-research\|--from-pre]` | builds `evidence.csv`; lists unread pages in `evidence-missing.json`. A `research.csv` replaced since its last run stops it: `--from-research` rebuilds from the new file, `--from-pre` from the saved copy. `--max-urls`: most sources a row keeps (default 8 federal, 20 state; federal-01 needed 20) |
 | 4 | `congress-pages.ts <pages dir> <url>…` | congress.gov text through the verifier's api.congress.gov reader (`build_evidence.py` calls it through `_congress.py`; a plain fetch gets a bot check) |
+| 4 | `archive-pages.ts <pages dir> <url>…` | archive.org text through the verifier's own `fetchViaWayback` (`build_evidence.py` calls it through `_archive.py` when the live page is refused, thin or a challenge page, the verifier's `looksLikeRealPage` test) |
 | 4 | `pdf_pages.py <batch>` | reads PDF sources with `pdftotext` |
 | 5 | `s1-sources.ts --topic <key> <batch>` | old-season sources behind each blank over a shown answer → `fallback/fallback-required.json` |
 | 5 | `fallback-fetch.ts <batch>/fallback` | loads `fallback/urls.txt` through the verifier's own fetch steps |
@@ -44,6 +56,53 @@ Python as `python3 -I scripts/stage5/<tool>.py`. `<batch>` is the batch folder, 
 | 9 | `apply_overrides.py <batch> [--file <json>] [--skip-changed]` | research-text trims from `overrides.json` (`{"trims": [...]}`), never a stance or value. `--skip-changed`: a trim whose words an earlier trim already changed is skipped and listed, not fatal (several trim tools feed one file) |
 | 14 | `readback.ts --topic <key> <ids file> [--batch-id <id>]` | outcomes, passages and review rows the draft season now holds |
 | 15 | `approve-batch.ts <editor uuid> <batch,...> [--skip "Name"]… [--unverifiable-blank "Name"]…` | 🛑 approves pending review rows, on the runner's separate "approve"; `--unverifiable-blank` approves a queued blank whose old sources cannot be verified with no source, its reason on the review row (ruling 2026-10-31) — never write such a blank by hand |
+
+## Record pass by script (round three, 2026-11-13)
+
+The state's bill table already says which rung a Yes on each bill supports. `record-script.ts` applies it to each
+person's record and decides **only the plain cases**; an Opus coder decides the rest.
+
+**The script may decide** (and nothing else):
+- a **seat at the furthest rung**, when every counted Yes act (an ungated Yes vote, or a sponsorship that is not gated)
+  on a bill with a rung sits on one side of the ladder (`--sides`, e.g. `1,2,3/4,5`);
+- a **No-votes-only blank** (`nay-only`, shows a side), when no Yes act counts, the person has no sponsorship, and
+  every counted No is on bills of one side.
+
+**The script hands to Opus**, with the reason in `<name>-lanes.tsv`:
+
+| Lane | Why a script cannot decide it |
+|---|---|
+| Yes acts on both sides of the ladder | the licence rule (a carry easing beside a limit) or a two-sided record: a judgment |
+| A later No on a bill at the seat's rung | a later vote on the same provision may replace the Yes (Missouri, transit carry) |
+| No usable rung act, but sponsorships | what the sponsored bills show is a reading |
+| A person the state's rulings name | a ruling about a person is applied by a coder |
+| A `per_vote` bill, when one of its rungs would change the result | a vote taken on an earlier text |
+| An office that is not a legislative seat; a bill of another legislature | the record may come from another office |
+| A bill missing from the table or the store; a bill with an open flag | nothing to apply |
+| A record whose note says more than the plain facts; an act the rule does not read | doubts are flagged in notes |
+| Any other blank | only gated votes, No votes on both sides, or only no-rung bills |
+| The script's own text failed a coding check | never fixed by hand: the person goes to Opus |
+
+**Guards.** A script code is marked `coded_by: stage5-record-script`. It passes the same `checkAtIngest` as a coder's
+code, plus the party sweep. It sits in `<out>/script-codes/` until `adopt` passes, and `checkCode` refuses it without
+its `script_check` stamp at ingest, in the report and at write time, so it cannot reach the database unchecked.
+**Standing check, every state:** a seeded random 10 of the script's people (half of them seats at `--skip-rungs`,
+which the pilot rule never searches) are coded blind by Opus in the same wave as the Opus lane. Any difference in
+outcome or rung stops the run (exit 4), releases nothing, and goes to the runner.
+
+**Replay against the Opus record-only codes** (2026-11-13; `record-coded/`):
+
+| | California | Missouri |
+|---|---|---|
+| People with a record | 101 | 127 |
+| Decided by the script | 83 (82%) | 106 (83%) |
+| Of those, same outcome and rung as Opus | **83 of 83** | **106 of 106** |
+| Handed to Opus | 18 | 21 |
+
+The bare rule with no lanes agreed for 99 of 101 and 122 of 127. Its 7 misses all fall in a lane: five licence-rule
+records (Opus right), one superseded Yes (Opus right), and one person the rulings name, where the script matched the
+bill table and the Opus second pass, and the Opus record-only coder did not. Missouri's roster had no office column,
+so that lane was replayed with a stand-in. Georgia has no bill table and no record-only codes: not replayed.
 
 Notes:
 
@@ -72,9 +131,23 @@ Notes:
   built from the verifier's own `matchSnippet`, `matchedSpan` and `checkNameProximity` plus `sweepHit`. It need not
   contain the name, only sit near it: on a congress.gov cosponsor list, where every name carries a party label, it is
   the action line beside the list (Warner, S. 2747). Only when there is none do they fall back to the old window.
+- **Slim agents.** A headless agent started in this repo reads CLAUDE.md, the skills, plugins and MCP servers before
+  its prompt: measured 2026-11-12, its first turn was **175k tokens**; with `--strict-mcp-config
+  --disable-slash-commands` 56k; with `--safe-mode` (no CLAUDE.md, skills, plugins, hooks, MCP or custom agents)
+  **4.9k**. `wave.py` uses `--safe-mode` unless `--full`. That is safe only for a self-contained prompt, one that
+  names every file the agent reads and states every rule it applies: the coder brief, the bill-table, triage and
+  quote-check prompts are. A separate `CLAUDE_CONFIG_DIR` (for example `~/.claude-ev`) also works but needs its own
+  `/login` once. Re-measure with `stage5_usage.py` after a change to CLAUDE.md or the installed plugins.
+- **The roster names the office.** `topic:stage5-roster` writes an `office` column (the office title, else its chamber)
+  since 2026-11-12; older rosters still read. A record-only coder that does not know the seat cannot tell a record from
+  another office (Missouri, Scott Fitzpatrick: House votes, now State Auditor).
+- **Pre-fill one unit.** `topic:stage5-prefill ... --units state:xx` writes findings only for that unit's people.
+  Without it the pre-fill merges every roster person with a vote on file (Georgia: 3,173 people for a 193-person
+  state), which rewrote other states' files in WI, AZ and GA.
+- **Triage prompt slots.** `templates/stage5-sponsor-triage-prompt.md` takes `{{RUNG_ACTS}}` and `{{NO_RUNG_KINDS}}` per topic (the gun-policy text is in its comment), with `{{LADDER_TEXT}}`.
 - **Checks.** `python3 -I scripts/stage5/check_tools.py` runs the Python tools on small made-up batches, one check per
   rule (no database, network or node_modules); `--tools <dir>` points it at a tampered copy. The TypeScript helpers are
-  tested with vitest (`lib.test.ts`, `federalVotesPlan.test.ts`).
+  tested with vitest (`lib.test.ts`, `federalVotesPlan.test.ts`, and `../lib/stage5Ingest.test.ts`, `../lib/stage5CoderInputs.test.ts`, `../lib/stage5RecordRule.test.ts` for the coding tools).
 - `lib.ts` holds the pure helpers (`readCsv`, `sweepHit`, `verifiableWindow`, `unverifiableNote`) and their tests;
   `batch-db.ts` resolves the topic id and the draft season; `_args.py` is the Python tools' argument reader.
 - One-off fixes for a single batch (a person's own sentence added by hand, a page uncited because the research text

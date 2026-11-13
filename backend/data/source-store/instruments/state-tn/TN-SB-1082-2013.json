@@ -1,0 +1,88 @@
+{
+  "id": "TN-SB-1082-2013",
+  "scope": "state:tn",
+  "title": "SB 1082 (108th General Assembly): As introduced, allows any photo identification issued by public institution of higher learning to be used as evidence of identification for voting purposes. - Amends TCA Title 2, Chapter 7.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB1082/2013",
+    "https://legiscan.com/TN/rollcall/SB1082/id/311307"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) TCA 2-7-112(c)(2), Section 1\n(quote) A valid identification card issued by a branch, department, agency, or entity of this state, any other state, or the United States authorized by law to issue personal identification including any public institution of higher education; provided, that such identification card contains a photograph of the voter;\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec 2: effective on becoming law.\n(other) version: Draft (only version saved): rewrites (c)(2) so photo IDs from other states and public colleges or universities count (slot a).\n(other) note: Failed in Senate State and Local Government Committee 2-7 on 2014-01-21. Same text as HB252.",
+  "sponsors": [
+    {
+      "name": "James Kyle",
+      "role": "prime",
+      "version": "717455-Draft"
+    },
+    {
+      "name": "Darren Jernigan",
+      "role": "co",
+      "version": "717455-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2014-01-21",
+      "body": "TN Senate",
+      "motion": "Senate committee, recommended for passage: failed 2-7 [version voted: Draft]",
+      "kind": "roll-call",
+      "yes": 2,
+      "no": 7,
+      "absent": 0,
+      "body_size": 9,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB1082/id/311307",
+      "members": [
+        {
+          "name": "Ken Yager",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Ketron",
+          "vote": "nay"
+        },
+        {
+          "name": "Reginald Tate",
+          "vote": "yea"
+        },
+        {
+          "name": "Thelma Harper",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Norris",
+          "vote": "nay"
+        },
+        {
+          "name": "Jack Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Green",
+          "vote": "nay"
+        },
+        {
+          "name": "John Stevens",
+          "vote": "nay"
+        },
+        {
+          "name": "Janince Bowling",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-895-2022",
+  "scope": "state:mo",
+  "title": "SB895 (2022 Regular Session): Modifies provisions relating the offenses of unlawful transfer of weapons and the unlawful possession of firearms",
+  "urls": [
+    "https://www.senate.mo.gov/22info/BTS_Web/Bill.aspx?SessionType=R&BillID=71259729",
+    "https://www.senate.mo.gov/22info/pdf-bill/intro/SB895.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Doug Beck",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "37f11659-587e-44ba-995f-5f6ebc5c3d6e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-895-2022.introduced.pdf",
+      "sha256": "ce9fbe7eb5150bf48e9ab7fdf7ccaf763f489a4f75b375b138ffd7e5424f5b81"
+    }
+  },
+  "operative_text": "Section 571.060 (RSMo): (4) Knowingly sells, leases, loans, gives away, or delivers a firearm to any person whose name appears on the Terrorist Screening Center's No Fly List; or\n(5) Knowingly sells, leases, loans, gives away, or delivers a firearm to any person who is a member of a group of two or more individuals, regardless if organized, that engages in or has a subgroup that engages in international or domestic terrorism.\nSection 571.060 (RSMo): Unlawful transfer of weapons under subdivisions (2), (3), (4), and (5) of subsection 1 of this section is a class A misdemeanor.\nSection 571.070 (RSMo): (3) Such person's name appears on the Terrorist Screening Center's No Fly List; or\n(4) Such person is a member of a group of two or more individuals, regardless if organized, that engages in or has a subgroup that engages in international or domestic terrorism."
+}

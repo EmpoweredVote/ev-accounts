@@ -292,6 +292,153 @@
         "fetched_at": "2026-11-04T14:14:55.221Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "d73370476f8debbc547d3b897daabeb9cf52717191f2c6440b87919bc73608ce",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/billsummary.aspx?bill=HB1468&year=2016&code=R",
+      "date": "2016-04-26",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1468-2016",
+      "act": "yea",
+      "motion": "Third Read and Passed (H) (House: HB 1468 HBs FOR THIRD READING)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HB 1468 HBs FOR THIRD READING), 2016-04-26: yea (tally 112–37); census gate: none.",
+      "subjects": [
+        "businesses may not bar lawful guns in customer vehicles",
+        "carrying into government meetings made an offence",
+        "unlawful use of weapons penalties restructured",
+        "concealed carry permit rules revised"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1468-2016.engrossed.pdf",
+          "sha256": "d2299e5281003cb6dfc7e30198349248e6e69f59eab820e3121d6e286a6253da"
+        }
+      }
+    },
+    {
+      "id": "4bc6a8ba87058e4fc384b1f1f335d2ff864e5b18736c885ad6c91b69c6af147a",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB16&year=2020&code=S1",
+      "date": "2020-09-02",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-16-SP1-2020",
+      "act": "yea",
+      "motion": "Third Read and Passed with Amendments (S) - SA 3, SA 5, SA 6 adopted AYES: 25 NOES: 3 PRESENT: 0 (Senate: Third Reading)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO Senate, Third Read and Passed with Amendments (S) - SA 3, SA 5, SA 6 adopted AYES: 25 NOES: 3 PRESENT: 0 (Senate: Third Reading), 2020-09-02: yea (tally 25–3); census gate: none.",
+      "subjects": [
+        "new felony for giving a firearm to a minor to evade arrest",
+        "unlawful firearm transfer wording and penalties revised"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-16-SP1-2020.comm-sub.pdf",
+          "sha256": "3a49fbdc8dd3ccfba23a9b8a172a0a95260c8a990cfff818363dfd35e462fb18"
+        }
+      }
+    },
+    {
+      "id": "d87cd6b73a25855f80b93fb4805979820f0119bc201b17b7e9f8f9ca5c358e6e",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/billsummary.aspx?bill=HB2057&year=2016&code=R",
+      "date": "2016-04-25",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-2057-2016",
+      "act": "yea",
+      "motion": "Third Read and Passed (H) (House: HB 2057 HBs FOR THIRD READING)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HB 2057 HBs FOR THIRD READING), 2016-04-25: yea (tally 115–34); census gate: none.",
+      "subjects": [
+        "concealed carry permit fee and card-fee rules",
+        "permit renewal grace for service members",
+        "online firearm safety course accepted",
+        "judges and prosecutors exempt from weapons offences"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2057-2016.engrossed.pdf",
+          "sha256": "d7aab639839e62cbe45d8bd136b6228f40e3066027534512a29563ab25e89d4b"
+        }
+      }
+    },
+    {
+      "id": "cf0d802a101798e94119cf68de3b90325f5ededaf531f454a782dd65e93fd1ea",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/19info/BTS_Web/Bill.aspx?SessionType=R&BillID=4941205",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-436-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-436-2019 (LegiScan sponsor list): SB436 (2019 Regular Session): Defines the term \"fugitive from justice\", which is used in various criminal offenses involving weapons and concealed carry permits.",
+      "subjects": [
+        "new definition of fugitive from justice for weapons offences"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-436-2019.introduced.pdf",
+          "sha256": "7bb644a7c0060b0eb64bd05b0d126355560e5d8ba5cc48689c302000de1ea096"
+        }
+      }
+    },
+    {
+      "id": "c80a27843260b02e9f7f620662ef84dc1a3e133b4695dc7c8bf0807dca43a24c",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/24info/BTS_Web/Bill.aspx?SessionType=R&BillID=176",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-998-2024",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-998-2024 (LegiScan sponsor list): SB998 (2024 Regular Session): Creates the Anti-Red Flag Gun Seizure Act.",
+      "subjects": [
+        "bars enforcement of firearm confiscation orders",
+        "no federal funds to enforce gun-removal protective orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-998-2024.introduced.pdf",
+          "sha256": "934c020f75157238e53f8e3b96dadf2fb7f8b8b9cfaea8730d53396e9dd74691"
+        }
+      }
     }
   ],
   "searches": [

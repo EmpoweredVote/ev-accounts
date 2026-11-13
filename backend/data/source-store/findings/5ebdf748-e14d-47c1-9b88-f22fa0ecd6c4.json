@@ -25,7 +25,135 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "9dcad360b0d74946203daa143ec23bd30e6bed1cecc63939def6416fbcf64050",
+      "kind": "own-words",
+      "url": "https://justthenews.com/politics-policy/elections/citizen-only-voting-amendment-will-be-south-carolina-2024-ballot",
+      "date": "2024-05-04",
+      "date_precision": "day",
+      "passage": "“Today South Carolina took an important step forward in defending the value of citizenship,” Senator Josh Kimbrell said, according to Legal Newsline . “We will never allow a non-citizen to vote in any election in our state, but we will make it easy for legal, law-abiding citizens of the United States and of our state to vote in all our elections. Citizenship matters, and this vote proves that point.”",
+      "note": "Quoted by Just the News after the legislature sent the citizen-only voting amendment (S. 1126) to the 2024 ballot; he says non-citizens will not vote and citizens should find voting easy. The page attributes the quote to Legal Newsline (legalnewsline.com answered 429 to the searcher); passage restored to the page text by the orchestrator.",
+      "subjects": [
+        "citizen-only voting amendment",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:22:03.028Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "77f8ab6de6380abc19258f33ba1b74776bfe6a7477a6128cdac7b22125797ea5",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess125_2023-2024/bills/1126.htm",
+      "date": "2024-02-29",
+      "date_precision": "day",
+      "instrument_id": "SC-S-1126-2024",
+      "act": "sponsor",
+      "note": "Joint resolution proposing a change to Section 4, Article II of the state constitution so that only a citizen of the United States and of this state, properly registered, is entitled to vote; it went to voters in 2024. First-named sponsor; the Senate Journal of the day prints that he spoke on the resolution.",
+      "subjects": [
+        "proof of citizenship to register or vote",
+        "citizen-only voting amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:22:03.028Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9a097e6df2898313c493689e7aa28953a892c037364b98dca296496727cfe3c",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess126_2025-2026/bills/1054.htm",
+      "date": "2026-03-25",
+      "date_precision": "day",
+      "instrument_id": "SC-S-1054-2026",
+      "act": "sponsor",
+      "note": "Concurrent resolution titled Limit Vote to Citizens; first-named sponsor. Sits in the Senate Judiciary Committee.",
+      "subjects": [
+        "non-citizen voting",
+        "citizen-only voting amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "sc-newton-verified",
+        "fetched_at": "2026-11-10T21:22:03.028Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6faf09ea6e8effee660b59b459517d907eecd19de63e7bc874b2c5dba3d3fd59",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=20955",
+      "date": "2022-04-21",
+      "date_precision": "day",
+      "instrument_id": "SC-H-4919-2022",
+      "act": "yea",
+      "motion": "Senate: 3rd Reading",
+      "note": "SC Senate roll call (3rd Reading, 43-0) on H4919 (124th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 21756 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.823Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "citizen-only voting amendment"
+      ],
+      "places": [
+        "campaign site not located; governor-race coverage searched, nothing on the subject",
+        "Senate Journal 2024-02-29: prints that Senator Kimbrell spoke on S. 1126, content not printed",
+        "On the Record (0 meetings)",
+        "Senate Journals (2024-02-29, 2024-03-05, 2024-04-03, 2024-04-04): bill and sponsor lines only, no remarks printed",
+        "scvotes.gov photo ID page seen in search only, not a statement by this person",
+        "Ballotpedia: blocked (refuses fetches, not tried)",
+        "bluevoterguide.org: blocked (not tried)",
+        "justfacts.votesmart.org: blocked (not tried)",
+        "blocked: https://legalnewsline.com/stories/657553317-south-carolina-senate-passes-citizen-only-voting-amendment (HTTP 429)",
+        "blocked: https://legalnewsline.com/stories/658249042-s-c-lawmakers-put-citizen-only-voting-amendment-on-november-ballot (HTTP 429)",
+        "not opened: outlets on the do-not-fetch list (snippets were leads only)",
+        "iVoterGuide 2024 profile: question on voting without photo identification marked Did not answer; no statements"
+      ],
+      "found": 3,
+      "at": "2026-11-10T21:22:03.028Z",
+      "by": "search-sc-2026-11-10"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T23:17:03.823Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

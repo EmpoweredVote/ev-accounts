@@ -144,6 +144,134 @@
         "fetched_at": "2026-10-28T20:33:45.950Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "7579f46591f6714ce585860a559cc3c2d05f54fa9e6ec238478512674fe444df",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/48602",
+      "date": "2016-03-24",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1060-2015",
+      "act": "yea",
+      "motion": "House Vote #859",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, House Vote #859, 2016-03-24: yea (tally 101–60); census gate: none.",
+      "subjects": [
+        "banks barred from refusing service to firearms businesses",
+        "new residents may carry for 90 days",
+        "license holders leaving a place of worship when told are not in violation",
+        "people may petition to clear hospitalization record used in gun checks",
+        "firearm instructors immune from civil liability"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1060-2015.enrolled.pdf",
+          "sha256": "7eceeb8c0f6a0aa7ee24f97fefb9cf963598fcaade1a31e20df2ef398bfbae0d"
+        }
+      }
+    },
+    {
+      "id": "021d5ac71aac50612400b8c3a3f0fe7c11494c9e56818c7073b14227d8fe3a70",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/50346",
+      "date": "2017-03-30",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-280-2017",
+      "act": "yea",
+      "motion": "House Vote #427",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, House Vote #427, 2017-03-30: yea (tally 96–70); census gate: none.",
+      "subjects": [
+        "license holders may carry concealed handguns on public college campuses",
+        "exceptions for dorms, athletics, childcare, offices",
+        "first offense in excluded spaces fined $25"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-280-2017.enrolled.pdf",
+          "sha256": "908c9be0b0cc1206f2ef757194a36b74dbb222e9e5f44164ed0fe9d6dcc66c6e"
+        }
+      }
+    },
+    {
+      "id": "9645b847c23f12290576d867598b8897cb7b9cbcfe2d8a8de34a00c64cd59905",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/50371",
+      "date": "2017-03-28",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-292-2017",
+      "act": "yea",
+      "motion": "House Vote #364",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, House Vote #364, 2017-03-28: yea (tally 110–49); census gate: none.",
+      "subjects": [
+        "out-of-state carry licenses recognized only for non-residents",
+        "new residents get 90 days to carry before getting a Georgia license",
+        "retired law enforcement officers may carry anywhere in the state",
+        "faster license checks and replacement licenses",
+        "civil immunity for firearm instructors",
+        "banks barred from refusing service to firearms businesses"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-292-2017.enrolled.pdf",
+          "sha256": "7bc498345ee67aff5fa921dfce0d695223ee8c2e64bbd6fb11783d34d38e5faa"
+        }
+      }
+    },
+    {
+      "id": "3b57fea3e5d7e21e274b5d2c3d73cdb2153cd7127254bb030780df3f642dad2d",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/47863",
+      "date": "2016-02-22",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-859-2015",
+      "act": "yea",
+      "motion": "House Vote #579",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, House Vote #579, 2016-02-22: yea (tally 113–59); census gate: none.",
+      "subjects": [
+        "concealed handguns allowed for license holders on public college campuses",
+        "athletic events and student housing excluded"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-859-2015.enrolled.pdf",
+          "sha256": "21f9f2dbcc37111b269cb26519e6550f6c2d1341abde65a7c253cc5679a913f4"
+        }
+      }
     }
   ],
   "searches": [

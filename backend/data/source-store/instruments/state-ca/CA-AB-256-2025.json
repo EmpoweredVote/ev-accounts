@@ -1,0 +1,39 @@
+{
+  "id": "CA-AB-256-2025",
+  "scope": "state:ca",
+  "title": "AB256 (2025-2026 Regular): Crimes: intoxication and firearms.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB256",
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB256#98AMD"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Carl DeMaio",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "a6d96375-a61c-4a13-9afa-99914456e8c2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2026-01-05, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-256-2025.amended-2026-01-05.html",
+      "sha256": "400d5354699e1e9550839e0283fb3e28c3bafc56e9c296c3175d70f844434b9b"
+    },
+    "note": "Version read: Amended 2026-01-05; no floor vote on file. The amendment strikes the earlier one-sentence intent section. Section 1524(a)(23) is the only change to the long search-warrant section; the rest of Section 1524 is reprinted unchanged."
+  },
+  "operative_text": "Section 12022.57 (Penal Code), added: 12022.57. (a) Any person who, while armed with a firearm in the commission or attempted commission of a felony, is under the influence of a controlled substance they are prohibited from possessing pursuant to Division 10 (commencing with Section 11000) of the Health and Safety Code, shall be punished by an additional and consecutive term of imprisonment pursuant to subdivision (h) of Section 1170 for one year. (b) An enhancement charged pursuant to this section does not preclude prosecution under subdivision (e) of Section 11550 of the Health and Safety Code.\nSection 1524 (Penal Code), new paragraph (23) of subdivision (a): (23) When a sample of the blood of a person constitutes evidence that tends to show a violation of Section 12022.57, and the sample will be drawn from the person in a reasonable, medically approved manner. This paragraph is not intended to abrogate a court’s mandate to determine the propriety of the issuance of a search warrant on a case-by-case basis."
+}

@@ -218,6 +218,649 @@
         "fetched_at": "2026-10-28T23:23:11.508Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "4f23bbaa40e47a4d39c59bbc597dbafdb6ad86174aa62fa49ccb29ab63d5975b",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/78523",
+      "date": "2023-02-21",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2394-2023",
+      "act": "yea",
+      "motion": "House - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ House, House - Third Reading, 2023-02-21: yea (tally 31–29); census gate: none.",
+      "subjects": [
+        "no state help enforcing special federal taxes on guns and ammunition"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2394-2023.engrossed.html",
+          "sha256": "199e1da01376ea5bfcc4a3058e5bebb025c34a22056f6d967647ca0c5c36a9fe"
+        }
+      }
+    },
+    {
+      "id": "632cb0f69f41008b2535ab2268e875a68b9a40dec65281fbaa47abc3c5f88e5c",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/78934",
+      "date": "2023-03-01",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2544-2023",
+      "act": "yea",
+      "motion": "House - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ House, House - Third Reading, 2023-03-01: yea (tally 31–28); census gate: none.",
+      "subjects": [
+        "state-made gun law extended to modified firearms",
+        "Modified in Arizona stamp"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2544-2023.engrossed.html",
+          "sha256": "ee3d7340e8027c711c74ad32db9562eb61527b5b7ead19af01ba77467ced4c4f"
+        }
+      }
+    },
+    {
+      "id": "b931310f000168a37e759ad28089e681dbc839ef6f75dd7f55b497d71eeef074",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/79521",
+      "date": "2023-03-01",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2667-2023",
+      "act": "yea",
+      "motion": "House - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ House, House - Third Reading, 2023-03-01: yea (tally 31–28); census gate: none.",
+      "subjects": [
+        "campus ban on concealed carry by permit holders barred at colleges and universities",
+        "firearm transport and storage on campus protected"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2667-2023.engrossed.html",
+          "sha256": "426e99608dd3434f4109a75d5b47f866808dbc2cd245680ec46b9ebd10e9fae7"
+        }
+      }
+    },
+    {
+      "id": "e2312decea8a2a2a037dd77febf76138c953f2b526fb5e30fd03a4a127c8a522",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/84518",
+      "date": "2026-03-11",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2676-2026",
+      "act": "yea",
+      "motion": "House - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ House, House - Third Reading, 2026-03-11: yea (tally 44–7); census gate: none.",
+      "subjects": [
+        "juvenile firearm-rights restoration age lowered from 30 to 25 for serious offences",
+        "restoration for other felonies tied to completing conditions, probation or discharge"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2676-2026.engrossed.html",
+          "sha256": "d8fced73d8b620ffff57c41f39eaaa48bb2653aaef71b2a674cf0ca2cf3722ef"
+        }
+      }
+    },
+    {
+      "id": "984897fa6ba25f77cbfe648fbbe360f19ef3f2603664e4d7ce05971328d9a6c7",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/83587",
+      "date": "2026-06-11",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1012-2026",
+      "act": "yea",
+      "motion": "House - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ House, House - Third Reading, 2026-06-11: yea (tally 32–23); census gate: none.",
+      "subjects": [
+        "concealed carry allowed in restaurants with permit if not drinking",
+        "restaurant liquor license protected from penalty for permitted concealed carry",
+        "restaurant not liable for harm from a concealed handgun unless it served the carrier"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1012-2026.engrossed.html",
+          "sha256": "edd1b50cee2ac36f4e1ef9f71a4f4af8718440275c82936b62e7b896bea34a8b"
+        }
+      }
+    },
+    {
+      "id": "5fb45480e8296a8db686a8fd517e7574d66d0b605133fdee09eb6987d4d80d15",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/81618",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1014-2025",
+      "act": "yea",
+      "motion": "House - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ House, House - Third Reading, 2025-05-01: yea (tally 31–25); census gate: none.",
+      "subjects": [
+        "suppressors removed from prohibited weapons list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1014-2025.engrossed.html",
+          "sha256": "b2dd35263b91234cc18cb85cbaead9f17129367666b0db3d5e89dfe1d41ca1d2"
+        }
+      }
+    },
+    {
+      "id": "30d8a512a2d3532041bda3b4f93526f329be1851c2fdfc18c823b254b6334740",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/81624",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1020-2025",
+      "act": "yea",
+      "motion": "House - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ House, House - Third Reading, 2025-05-01: yea (tally 31–27); census gate: none.",
+      "subjects": [
+        "concealed carry by permit holders allowed on public college campuses",
+        "college rules on lawful firearm transport and storage barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1020-2025.engrossed.html",
+          "sha256": "79b1ac81c16852f980eca39e01d29f811e00c83bc2932943269784b17f37fa15"
+        }
+      }
+    },
+    {
+      "id": "aa924ac3ba0cadbf233fa424365a1644c8f9efed1d1aebcd5619a39bff343dd5",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/83676",
+      "date": "2026-06-11",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1053-2026",
+      "act": "yea",
+      "motion": "House - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ House, House - Third Reading, 2026-06-11: yea (tally 32–25); census gate: none.",
+      "subjects": [
+        "concealed carry permit fee for residents set at ten percent of nonresident fee"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1053-2026.engrossed.html",
+          "sha256": "88390e6e99370de81ddc56eb4c13c5f83ea8b39eec66d06ecaec39b20d84f3b8"
+        }
+      }
+    },
+    {
+      "id": "f0fabd4e474f5f5c5541674bd1a6dd0b7348199ce254666ca0bb448ca6870320",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/83682",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1058-2026",
+      "act": "yea",
+      "motion": "House - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ House, House - Third Reading, 2026-04-09: yea (tally 31–21); census gate: none.",
+      "subjects": [
+        "government firearm registry banned",
+        "firearm retailer payment category code banned",
+        "attorney general enforces by injunction and civil penalty up to $1,000"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1058-2026.engrossed.html",
+          "sha256": "826faeabdd54287682a44b14d856f43aa3001c30898e9825c43cc8e10eef9898"
+        }
+      }
+    },
+    {
+      "id": "3054adb5bdb28a99e061682cdc32a4218f47dd6f6beb6db701eb110af3a85c5c",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/83692",
+      "date": "2026-06-11",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1068-2026",
+      "act": "yea",
+      "motion": "House - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ House, House - Third Reading, 2026-06-11: yea (tally 32–25); census gate: none.",
+      "subjects": [
+        "concealed carry by permit holders allowed on public college campuses",
+        "college rules on lawful firearm transport and storage barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1068-2026.engrossed.html",
+          "sha256": "2296931c42bd70870830664d7faaab872aa3389853a059e8d4d45586e639ea1a"
+        }
+      }
+    },
+    {
+      "id": "36ef0b044d3ee83c7a0dc696a99784d2fb112fed8a72ba315632982300430973",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/83693",
+      "date": "2026-06-11",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1069-2026",
+      "act": "yea",
+      "motion": "House - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ House, House - Third Reading, 2026-06-11: yea (tally 32–25); census gate: none.",
+      "subjects": [
+        "suppressors removed from prohibited weapons list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1069-2026.engrossed.html",
+          "sha256": "1b9b614d94727510d7f6335d10236521e119209c31921d9c42975ad015217493"
+        }
+      }
+    },
+    {
+      "id": "d96d878b9595e3655f0deb05fde29619aa2ea4e91c08ca2f9d0b8193f9777183",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/78706",
+      "date": "2023-04-04",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1109-2023",
+      "act": "yea",
+      "motion": "House - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ House, House - Third Reading, 2023-04-04: yea (tally 31–28); census gate: none.",
+      "subjects": [
+        "suppressors removed from prohibited weapons list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1109-2023.engrossed.html",
+          "sha256": "837e8c7cea691c075629d0bad7c7740938a2973ca4d251f8fe3874dfc6f46db3"
+        }
+      }
+    },
+    {
+      "id": "2a6c45db2ac92e3fcd545f897ee28ef3c067d4f1aac21455da24515169b5d45c",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/82152",
+      "date": "2025-05-05",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1143-2025",
+      "act": "yea",
+      "motion": "House - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ House, House - Third Reading, 2025-05-05: yea (tally 32–25); census gate: none.",
+      "subjects": [
+        "government registry of privately owned firearms banned",
+        "separate payment merchant code for firearm retailers banned",
+        "attorney general or county attorney enforcement with injunction and civil penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1143-2025.engrossed.html",
+          "sha256": "910ae9256e51486509b17b17510b1244056149a2bb5b732a3a0dd68c34ad3026"
+        }
+      }
+    },
+    {
+      "id": "27910bb9c8d318f55f7e05fd4cf2ac703d3a9889e4353e6c14c140ff21762ebc",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/78984",
+      "date": "2023-04-11",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1331-2023",
+      "act": "yea",
+      "motion": "House - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ House, House - Third Reading, 2023-04-11: yea (tally 31–26); census gate: none.",
+      "subjects": [
+        "permit-holding parents may carry on school grounds",
+        "school boards barred from banning such carry",
+        "exception to school-grounds weapons offence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1331-2023.engrossed.html",
+          "sha256": "340c166fe3fc1891d31da368cc2af33848661f748b1c6757143b7546a3ea5d47"
+        }
+      }
+    },
+    {
+      "id": "d57891bc4c1ef4b8797d6a9130d8f7f06ec053e717f0155d226a2f2f76ce69c3",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/83036",
+      "date": "2025-04-23",
+      "date_precision": "day",
+      "instrument_id": "AZ-SB-1591-2025",
+      "act": "yea",
+      "motion": "House - Third Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "AZ House, House - Third Reading, 2025-04-23: yea (tally 33–27); census gate: none.",
+      "subjects": [
+        "concealed carry permit fee for residents set at ten percent of nonresident fee",
+        "in-state applicants prioritized for permits",
+        "annual concealed permit report to budget committee"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-SB-1591-2025.engrossed.html",
+          "sha256": "5acf4ec5c895742a76aa688f189d80eeef091f613d6bfa9be334846059ceaea4"
+        }
+      }
+    },
+    {
+      "id": "9f4642342a573084e2759957978fcabf34f5efa3e53b1d723c8ee393b7ecb32f",
+      "kind": "record",
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview/78934",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "AZ-HB-2544-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of AZ-HB-2544-2023 (LegiScan sponsor list): HB2544 (Fifty-sixth Legislature - First Regular Session (2023)): Arizona manufactured; modified firearms.",
+      "subjects": [
+        "state-made gun law extended to modified firearms",
+        "Modified in Arizona stamp"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+        "fetched_at": "2026-11-11T03:51:26.779713Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2544-2023.engrossed.html",
+          "sha256": "ee3d7340e8027c711c74ad32db9562eb61527b5b7ead19af01ba77467ced4c4f"
+        }
+      }
+    },
+    {
+      "id": "3c5c6c94cca6b89ee5b420b75ebe7bfe59155542962585dfa2f504eaaaab3221",
+      "kind": "own-words",
+      "url": "https://www.azleg.gov/press/house/56LEG/1R/231023BLISSAZCDL.pdf",
+      "date": "2023-10-23",
+      "date_precision": "day",
+      "passage": "“I am immensely honored to be recognized by the Arizona Citizens Defense League,” said Representative Bliss. “They are a terrific organization, dedicated to legislative action in support of the Second Amendment. Like them, I believe fervently in safeguarding our citizens’ right to bear arms – a cornerstone of our Constitution. As a state legislator, it is my privilege to work alongside fellow Arizonans in safeguarding and preserving the freedoms that define our great state, and to stand against any attempts to undermine those cherished liberties.”",
+      "note": "Her statement in an official House news release on receiving a 2023 award from a gun-rights group for Second Amendment support. She says she believes strongly in safeguarding the right to bear arms and opposes attempts to undermine it.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:20:54.489Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "24aa5dc7a6f28ec2ad56c95f6efdae6de3c0866b0bb0966d925b6c338d9ff4a7",
+      "kind": "own-words",
+      "url": "https://abc15.com/news/politics/arizona-house-panel-plans-to-reduce-school-gun-violence-by-allowing-more-guns-on-campus",
+      "date": "2025-01-16",
+      "date_precision": "day",
+      "passage": "\"We're not advocating to go out and find the active shooter, we're advocating for them to protect their children in the best manner possible,\" ... \"And this is the very last step if they were pushed to that situation.\"",
+      "note": "Quoted by ABC15 on HB 2022, which she sponsored (the outlet says a gun-rights group wrote it): it would let teachers and school staff carry guns on campus. She describes it as a last step to protect children.",
+      "subjects": [
+        "armed teachers and school staff",
+        "carrying guns in schools"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:20:54.489Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7a46c24e7f36a3a33b64a663b31dfe45d112bf646ee564cf59e653c28f6f6b57",
+      "kind": "own-words",
+      "url": "https://abc15.com/news/politics/arizona-house-panel-plans-to-reduce-school-gun-violence-by-allowing-more-guns-on-campus",
+      "date": "2025-01-16",
+      "date_precision": "day",
+      "passage": "\"This will require proficiency beyond a police officer's training,\" she said. \"It's incredibly intense to be able to get to this level.\"",
+      "note": "Quoted by ABC15 on the training standard that HB 2022 would require of school staff who carry guns.",
+      "subjects": [
+        "armed teachers and school staff",
+        "training required to carry a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:20:54.489Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "07fab4e8973f15effa03099407a0edfd005fcbae26b40619c749098e9c97851d",
+      "kind": "own-words",
+      "url": "https://coppercourier.com/story/republicans-push-to-make-middle-and-high-schools-offer-firearms-training/",
+      "date": "2023-02-23",
+      "date_precision": "day",
+      "passage": "“The purpose of this bill is for children to learn about firearm safety from qualified individuals with the focus on safety rather than on popular culture in various forms of media,” said Bliss, a nurse, concealed weapons instructor and mother.",
+      "note": "Quoted by Cronkite News (carried by Copper Courier) on HB 2332, which she sponsored: an optional firearms safety training elective in grades six to twelve.",
+      "subjects": [
+        "firearm safety training in schools"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:20:54.489Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53e1e75ce69a98e3a62b0db5e074f2a812acf5038c472456eaa1ddd4e9469b8a",
+      "kind": "own-words",
+      "url": "https://sites.google.com/view/selinasbliss-com/bio",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "Proud Member of the National Rifle Association, Board Member of the Arizona State Rifle and Pistol Association, Member of the Arizona Citizens Defense League, and Member of The Well-Armed Woman - Gunsite and Chino Valley Chapters",
+      "note": "From the biography page of her campaign site (the page is undated; it refers to 2026 awards). She lists her memberships in gun-rights and shooting groups.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:20:54.489Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a668f649d85b52db3a8f708945441e7d51781af8443a03411305019dfaedfe91",
+      "kind": "own-words",
+      "url": "https://sites.google.com/view/selinasbliss-com/endorsements",
+      "date": "unknown",
+      "date_precision": "unknown",
+      "passage": "NRA-ILA supports candidates that stand for the protection of the Second Amendment which guarantees a citizen’s right to keep and bear arms. Officially endorsed by the NRA with an A rating.",
+      "note": "From the endorsements page of her campaign site (undated): it presents a national gun-rights group's endorsement and its description of that group, so the wording describes the endorser rather than being her own argument.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:20:54.489Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "219c1ded5fe789a2a03552188df120d5cc520e0c239a520b7222afeb624ea350",
+      "kind": "record",
+      "url": "https://cronkitenews.azpbs.org/2026/03/19/gun-rights-advocates-lawmakers-firearm-legislation/",
+      "date": "2026-03-19",
+      "date_precision": "day",
+      "instrument_id": "AZ-HB-2076-2026",
+      "act": "other",
+      "note": "Cronkite News reports she spoke at a gun-rights event about HB 2076, the Save Our Children School Safety Program: school staff training, crisis preparation and an optional certification for designated staff to carry firearms on campus. The report calls the three speakers the bill sponsors.",
+      "subjects": [
+        "armed teachers and school staff",
+        "carrying guns in schools"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:20:54.489Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "29ea859c616ea5cf12d216aa1e1318970dc28ea3d9fdf3e6e3222aea55ee5514",
+      "kind": "record",
+      "url": "https://arizonaglobe.com/local/az-reps-nguyen-selina-bliss-petition-ag-mayes-over-citys-2a-violation",
+      "date": "2024-11",
+      "date_precision": "month",
+      "act": "other",
+      "motion": "Joint request with Rep. Quang Nguyen to the Attorney General to open an SB 1487 investigation of Sedona Ordinance 12.30.090 (firearms and weapons in parks and open spaces) under the state firearm preemption law",
+      "note": "The Arizona Globe (19 Nov 2024) reports she joined this request. The quoted statement in the article is Rep. Nguyen's, not hers. News report only; no official page was found.",
+      "subjects": [
+        "state preemption of local gun rules",
+        "carrying guns in parks and open spaces"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T04:20:54.489Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -272,6 +915,33 @@
       "found": 1,
       "at": "2026-10-28T23:23:11.508Z",
       "by": "identity-az-2026-10-28b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "armed teachers and school staff",
+        "firearm safety training in schools",
+        "state preemption of local gun rules",
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "general statements on gun rights or the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status: in scope. The Arizona Legislature member page https://www.azleg.gov/House/House-member/?legislature=57&session=130&legislator=2296 names her as a House member for District 1, and the county results page https://journalaz.com/?p=44635 lists her among the top two in the 2026 primary for her House seat",
+        "official legislature member page: biography lists membership in two gun groups; no co-sponsored bill title names a firearm; HB2045 (drive-by shooting) is her own bill but names no firearm",
+        "sponsor list: covered by LegiScan bulk check",
+        "House news release page (official PDF) fetched: saved",
+        "campaign site pages (bio, home, endorsements): bio and endorsements saved; home page had no text on the subject; issues page not found",
+        "Ballotpedia: page came back empty to the fetch tool, not reviewed",
+        "news: ABC15, Cronkite News/Copper Courier, Arizona Globe fetched; Arizona Daily Independent and KNAU items on the Sedona request seen in search only, not reviewed",
+        "not reviewed: https://arizonadailyindependent.com/?p=267401 (2026 gun rights and safety bills article, seen in search only)"
+      ],
+      "found": 8,
+      "at": "2026-11-11T04:20:54.489Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -44,6 +44,227 @@
         "fetched_at": "2026-11-04T14:14:55.230Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "ab250f1e98000d1c882dcef0a5ad0c646ac6ec2fe701b1e3150d6316cbabfbe2",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB1730&year=2026&code=R",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-1730-2026",
+      "act": "nay",
+      "motion": "Third Read and Passed (H) (House: HBs FOR THIRD READING HB 1730)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HBs FOR THIRD READING HB 1730), 2026-04-09: nay (tally 95–44); census gate: none.",
+      "subjects": [
+        "state ban on firearm silencers repealed",
+        "Missouri-made suppressors declared outside federal regulation",
+        "state and local enforcement of federal suppressor rules barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1730-2026.engrossed.pdf",
+          "sha256": "bffbe9889de656bb447afd8bbd17634e56393b2d47ee17e636ff6ad1ba186d95"
+        }
+      }
+    },
+    {
+      "id": "8302dee32c05bed2718f74424ee81f3d7f4b4bc9fa39f8676ef12178ac6b0f4b",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB282&year=2023&code=R",
+      "date": "2023-04-17",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-282-2023",
+      "act": "nay",
+      "motion": "Third Read and Passed (H) (House: HB 282 HBs FOR THIRD READING)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HB 282 HBs FOR THIRD READING), 2023-04-17: nay (tally 102–45); census gate: none.",
+      "subjects": [
+        "concealed carry permit minimum age lowered to eighteen",
+        "carry on public transit allowed for permit holders",
+        "church and house of worship carry consent rule repealed",
+        "military pistol-qualification training route"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-282-2023.engrossed.pdf",
+          "sha256": "e5882fc078a239aefc01faf3f6b9567d04d41c7050879cd0f637ffcc5e12141e"
+        }
+      }
+    },
+    {
+      "id": "912da2f4d66f77dde1292d277305325ad6c68e24fddcdd6aecdfecce560eebe8",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB2928&year=2026&code=R",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-2928-2026",
+      "act": "yea",
+      "motion": "Third Read and Passed (H) (House: HBs 3rd READ - INFORMAL HB 2928)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HBs 3rd READ - INFORMAL HB 2928), 2026-03-05: yea (tally 148–0); census gate: near-unanimous.",
+      "subjects": [
+        "USCCA instructors qualify to certify concealed carry training"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2928-2026.engrossed.pdf",
+          "sha256": "2b7844e1ffff738d5d212f8cbbf955f7dfd5d828f09a1943bce12533a882c33c"
+        }
+      }
+    },
+    {
+      "id": "4d2b4101cdb1051ea1bb7b2988774998d8d36389b46fc53e43ffa7aa31779cb8",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB2113&year=2026&code=R",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-2113-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MO-HB-2113-2026 (LegiScan sponsor list): HB2113 (2026 Regular Session): Establishes provisions related to the safe storage of firearms.",
+      "subjects": [
+        "safe-storage rules and offence for firearms",
+        "dealer must post storage-penalty notice",
+        "state suicide-prevention page on firearm storage law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2113-2026.introduced.pdf",
+          "sha256": "01d8f05431f5247fbd3411c1ec113ac0c264eadef8fd27fff961aa9ce6f9f33d"
+        }
+      }
+    },
+    {
+      "id": "b80fc6ce598eac6e34fb93944c4fdfda37cf7da7251f67ce9e8ee19f77a79693",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB2334&year=2026&code=R",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-2334-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, LegiScan sponsor list",
+      "note": "co sponsor of MO-HB-2334-2026 (LegiScan sponsor list): HB2334 (2026 Regular Session): Prohibits persons under eighteen years of age from carrying firearms into public areas within urban areas.",
+      "subjects": [
+        "under-18 firearm carry in urban public areas made an offence",
+        "exemptions for work, hunting, target practice, instruction"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2334-2026.introduced.pdf",
+          "sha256": "3344182a9a2c3046175b5370f154afc687f7a7f944484011ad3f2011ff01bd46"
+        }
+      }
+    },
+    {
+      "id": "714fad81a21f2a0e6080e2161fdf74a35a4afe8c3dd7b49420c5576ba34169bf",
+      "kind": "record",
+      "url": "https://house.mo.gov/Bill.aspx?bill=HB550&year=2025&code=R",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-550-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-550-2025 (LegiScan sponsor list): HB550 (2025 Regular Session): Modifies provisions relating to firearms.",
+      "subjects": [
+        "permit required to buy or sell concealable firearms",
+        "state preemption of local gun rules repealed",
+        "Second Amendment Preservation Act repealed",
+        "lifetime concealed carry permit sections repealed",
+        "concealed-carry in restricted areas and posted-sign penalty rules repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-550-2025.introduced.pdf",
+          "sha256": "4442bd6b5a70af83ea203fb98cf7774223b1f61dd4ca3baf9b2ac27f2f27ce87"
+        }
+      }
+    },
+    {
+      "id": "1b1f728ad1f01fce6d7d15bf984a29c374252a2477a0c37cb229f065984a866d",
+      "kind": "own-words",
+      "url": "https://abc17news.com/voter-guide-2024/2024/10/15/interview-with-adrian-plank-candidate-for-missouris-47th-house-district/",
+      "date": "2024-10-15",
+      "date_precision": "day",
+      "passage": "I think it's extremely important that we have training and maybe even recertification. So, if you get certified on a gun that you know how to use it and use it safely as a union carpenter ... get trained and retrained and re-certified on things that can hurt, kill, or kill others I mean that's to minimalize the deaths or the injuries. If we don't take guns that seriously, it's a failure on our part.",
+      "note": "Interview answer in a TV station's voter guide. He says he has owned guns his whole adult life and calls for training and periodic recertification of gun owners to cut deaths and injuries. Passage joins two parts of the same answer; the middle words are as printed in the transcript.",
+      "subjects": [
+        "training and recertification for gun owners",
+        "gun safety laws",
+        "gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.826Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d3779d2be116d1e566c28e851986e627b140f4ccff8823128207012c332e97d",
+      "kind": "own-words",
+      "url": "https://www.adrianplank.com/values/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I am proud to have received the Moms Demand Action Gun Sense Candidate Distinction every single time I’ve run for state representative. Since my first run for office in 2018, 53 people have been killed and 150 have been injured in 95 school shootings. That’s absolutely unacceptable. While I’m glad Congress has passed bipartisan gun safety reforms, the only thing standing between extremists and our safety is state legislatures.",
+      "note": "Guns section of his campaign values page. He cites a gun-safety group's candidate distinction, calls school shootings unacceptable, welcomes the federal gun safety law and says state legislatures are the remaining safeguard. Page is undated; the year is the fetch year and the wording suggests it was written for the 2022 or a later cycle.",
+      "subjects": [
+        "gun safety laws",
+        "school shootings",
+        "gun-safety group distinction"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.826Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -96,6 +317,39 @@
       "found": 1,
       "at": "2026-11-04T14:14:55.230Z",
       "by": "identity-mo-2026-11-04b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety laws",
+        "training and recertification for gun owners",
+        "school shootings",
+        "gun-rights ownership statement",
+        "assault-style gun ban",
+        "background checks",
+        "red-flag orders",
+        "permitless carry",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: BallotReady page shows him holding Missouri House District 47 and a candidate in the 2026 general election (https://www.ballotready.org/people/adrian-plank); the November 2026 result was not found",
+        "campaign site values page (https://www.adrianplank.com/values/): has a Guns section",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: https://ballotpedia.org/Adrian_Plank (empty page)",
+        "blocked: https://mohousedemcaucus.com/common-sense-gun-safety (connection reset)",
+        "blocked: https://missouriindependent.com/2024/02/19/democrats-hope-to-put-gun-safety-measure-on-ballot-following-kansas-city-mass-shooting/ (403)",
+        "blocked: https://justfacts.votesmart.org/public-statement/1473350/issue-position-safer-communities (403)",
+        "news search on name plus gun words: found a 2024 TV station voter-guide interview with direct answers; a news-site article on a school-shooting-era caucus gun push did not mention him",
+        "https://www.thepitchkc.com/missouri-house-dems-take-steps-to-combat-state-gun-violence/ : fetched, does not name him",
+        "official House newsroom gun-control tag page: no statement by him found",
+        "not reviewed: https://www.mohousedems.com/adrian-plank-information-library",
+        "not reviewed: https://news.yahoo.com/democratic-candidates-missouri-district-47-124513405.html (2022 forum, search lead only)"
+      ],
+      "found": 2,
+      "at": "2026-11-12T21:23:45.826Z",
+      "by": "source-collector"
     }
   ]
 }

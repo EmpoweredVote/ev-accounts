@@ -54,7 +54,7 @@ const { rows } = await pool.query(`
     JOIN essentials.offices o     ON o.id = och.office_id
     JOIN essentials.districts d   ON d.id = o.district_id
     JOIN essentials.politicians p ON p.id = och.politician_id
-   WHERE d.district_type IN ('NATIONAL_LOWER', 'NATIONAL_UPPER') AND p.is_incumbent`);
+   WHERE d.district_type IN ('NATIONAL_LOWER', 'NATIONAL_UPPER')`);
 const holders: OurHolder[] = rows.map((r) => ({
   politician_id: r.politician_id, full_name: r.full_name, last_name: r.last_name, bioguide_id: r.bioguide_id,
   chamber: r.district_type === 'NATIONAL_LOWER' ? 'House' : 'Senate',

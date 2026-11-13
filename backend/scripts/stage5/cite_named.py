@@ -19,7 +19,9 @@ for l in open(G):
     if not m: continue
     n, can = m.groups(); r = by[n]
     d = json.load(open(f'{F}/{pid[n]}.json')); fs = d if isinstance(d, list) else d['findings']
-    fs = [f for f in fs if f.get('kind') == 'record' and canon(f.get('instrument_id')) == can and f.get('url')]
+    # Same topic only: a gun row naming "SJR 2" must not cite the person's voting-rights SJR 2 roll call (wi-01).
+    fs = [f for f in fs if f.get('kind') == 'record' and canon(f.get('instrument_id')) == can and f.get('url')
+          and (not f.get('topic_keys') or r['topic_key'] in f['topic_keys'])]
     if not fs: none.append((n, can)); continue
     uc = [c for c in cols if c.startswith('source_url_')]; urls = [r[c] for c in uc if r.get(c)]
     for f in fs:

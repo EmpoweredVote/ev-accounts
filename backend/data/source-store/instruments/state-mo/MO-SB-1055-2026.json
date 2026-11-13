@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-1055-2026",
+  "scope": "state:mo",
+  "title": "SB1055 (2026 Regular Session): Modifies provisions relating to firearms",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=330",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB1055.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nick Schroer",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b6dd336b-81d6-488c-93db-2473ced473b8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1055-2026.introduced.pdf",
+      "sha256": "428aab0aec08a383fb059cde4a7eb823a20375bb2d42f91203898aeab3f5111e"
+    }
+  },
+  "operative_text": "Section 1.486 (RSMo): 5. No state entity or employee thereof, political subdivision or employee thereof, or other entity or person shall have the authority to enforce or attempt to enforce a red flag law regardless of the red flag law's origin or the authority of the issuing entity. This subsection shall not apply to any agent of the federal government enforcing a federal law or federal order.\nSection 1.486 (RSMo): 7. (1) A political subdivision or state or local law enforcement agency that employs a law enforcement officer who knowingly acts to violate this section and enforce a red flag law under the color of any state or federal statute, rule, executive order, or judicial order or finding shall be liable to the party against whom the red flag law was enforced in an action at law, suit in equity, or other proper proceeding for redress and shall be subject to a civil penalty of fifty thousand dollars per occurrence.\nSection 144.049 (RSMo): all retail sales of personal computers or computer peripheral devices not to exceed one thousand five hundred dollars, and all retail sales of firearms and ammunition, during a three-day period beginning at 12:01 a.m. on the first Friday in August and ending at midnight on the Sunday following.\nSection 571.020 (RSMo): 4. The offense of knowingly possessing, manufacturing, transporting, repairing, or selling a firearm silencer, as it existed immediately before August 28, 2026, shall not be prosecuted on or after August 28, 2026.\nSection 571.935 (RSMo): 2. (1) A firearm suppressor that is manufactured in this state and remains in this state shall not be subject to federal law or federal regulation, including registration, under the authority of the United States Congress to regulate interstate commerce.\nSection 571.935 (RSMo): 3. A firearm suppressor manufactured and sold in this state shall have the words \"Made in Missouri\" clearly stamped on it.\nSection 571.940 (RSMo): 2. (1) An entity described in subsection 1 of this section shall not adopt a rule, order, ordinance, or policy under which the entity enforces, or by consistent action allows the enforcement of, a federal statute, order, rule, or regulation that purports to regulate a firearm suppressor if the statute, order, rule, or regulation imposes a prohibition, restriction, or other regulation that does not exist under the laws of this state.\nSection 571.095 (RSMo): The department making a sale pursuant to this section shall ensure that the sale is not made to any person who is ineligible to purchase or possess a firearm or ammunition under any applicable state or federal law."
+}

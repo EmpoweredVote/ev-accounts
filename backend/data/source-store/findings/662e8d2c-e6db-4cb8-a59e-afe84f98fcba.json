@@ -1,0 +1,33 @@
+{
+  "politician_id": "662e8d2c-e6db-4cb8-a59e-afe84f98fcba",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation general",
+        "assault-style guns and magazines",
+        "background checks",
+        "red-flag orders",
+        "carry permits",
+        "Second Amendment general statement"
+      ],
+      "places": [
+        "in scope: on the 2026 general-election ballot for Arizona Senate District 13 (https://www.kjzz.org/elections/2026-10-06/2026-arizona-senate-13th-legislative-district-race-the-candidates-elex)",
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web search by name plus gun words: no page of their own on the subject",
+        "not reviewed: Ballotpedia (fetch returns empty)",
+        "campaign site https://kristieforaz.com and /priorities: nothing on the subject (priorities are affordability, health costs, sustainability)",
+        "https://blogforarizona.net/in-battleground-arizona-ld-13-kristie-obrien-pledges-to-be-a-problem-solver-and-leader-for-all: nothing on the subject",
+        "https://www.arizonalist.org/?p=14424: nothing on the subject",
+        "blocked: https://bluevoterguide.org/endorser-org/Gun_Sense_Voter/AZ/4895 (403)",
+        "a search result says an outside gun-safety group lists her as endorsed; that is a third-party statement, not saved"
+      ],
+      "found": 0,
+      "at": "2026-11-11T04:17:17.474Z",
+      "by": "source-collector"
+    }
+  ]
+}

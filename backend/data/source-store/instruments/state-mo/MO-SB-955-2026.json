@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-955-2026",
+  "scope": "state:mo",
+  "title": "SB955 (2026 Regular Session): Modifies provisions regarding the rights of firearms owners",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=402",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB955.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jason Bean",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "107243f5-5a0a-4b95-8339-3a067ebaa908"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-955-2026.introduced.pdf",
+      "sha256": "f8c3f5c10b06a7749b1b43e7c6c7b26bce8fd42ecaf2685c33e79b2146b1c60f"
+    }
+  },
+  "operative_text": "Section 1.451 (RSMo, new): No public officer or employee of this state or any political subdivision of this state shall have the authority to knowingly violate a law-abiding citizen's legal rights regarding firearms, firearm accessories, or ammunition. Nothing in sections 1.451 to 1.484 shall be construed to prohibit Missouri officials from accepting aid from federal officials or rendering aid to federal officials. Nothing in sections 1.451 to 1.484 shall prohibit law enforcement from working on federal task forces.\nSection 1.461 (RSMo, new): 1. Any political subdivision or law enforcement agency that employs a law enforcement officer who acts knowingly, as defined under section 562.016, to violate the provisions of section 1.451 or otherwise knowingly deprives a law-abiding citizen of Missouri of the rights or privileges ensured by the Second Amendment of the Constitution of the United States or Article I, Section 23 of the Constitution of Missouri while acting under the color of any state or federal law shall investigate such employee for potential discipline up to and including termination of employment.\nSection 1.461 (RSMo, new): 2. The attorney general or the prosecuting attorney of the county in the jurisdiction where an individual has taken action violating the provisions of this section shall have standing to pursue an action for injunctive or other equitable relief in the circuit court of the county in which the action allegedly occurred.\nSection 1.481 (RSMo, new): For sections 1.451 to 1.461, the term \"law-abiding citizen\" shall mean a person who is eighteen years of age or older, not under arrest or in the process of being investigated for being arrested or charged with a crime, where valid probable cause exists, a person who is not a danger to self or others, and is not otherwise precluded under state law from possessing a firearm, but shall not be construed to include anyone who is not legally present in the United States or the state of Missouri.\nSection 1.484 (RSMo, new): It shall not be considered a violation of sections 1.451 or 1.461 to provide material aid to federal authorities in the investigation, arrest, detention, or prosecution of any case in which there is reasonable suspicion to believe that the suspect or suspects engaged in criminal conduct."
+}

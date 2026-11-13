@@ -257,7 +257,158 @@
           "sha256": "93266e8d17c0b31728a6c78573a4afda6517fbacbe2200b4273a5f2e422960c1"
         }
       }
+    },
+    {
+      "id": "0f19e9559a3592c06e0be0e895d07a392f62fa78a45da9d32f42dd15d4ab280a",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/19741/race/11187/election/885?culture=en-us",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "I think in Kentucky we do elections right with strong election security measures, like requiring a photo identification to vote. The Kentucky General Assembly should always work to make elections secure.",
+      "note": "His written answer to the iVoterGuide question 'What laws would you propose to change present voting practices?' He cites the photo-ID requirement as a security measure and says the legislature should keep working to secure elections. He also marked Strongly Disagree on 'People should be able to vote without photo identification.' Page is the 2022 general-election profile; exact answer date not printed.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "election security laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-11T18:30:04.307Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa88c91dabdd88a8f716919f2c245b2d810294a2008b6405163cb02853d2c7f9",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/16RS/sb169/vote_history.pdf",
+      "date": "2016-03-29",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-169-2016",
+      "act": "yea",
+      "motion": "House: For Consent Adoption (RCS# 406)",
+      "note": "KY House roll call (For Consent Adoption (RCS# 406), 98-1) on SB169 (2016 Regular Session); official vote-history PDF (scan; surname as printed: 'Rudy'); linked by LegiScan member id 1191 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.598Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d46ecb91a31ee5cd1e1e87159cd4301382bc37721ea5bb099f789780020ffed",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: final passage, House concurred in Senate Committee Substitute (1)",
+      "note": "KY House roll call (final passage, House concurred in Senate Committee Substitute (1), 76-17) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 1191 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.598Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9d1cc56372773c897daa5108e69d4a07df5ffa947a543f55af89a207bd976d6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "House: override of the Governor's veto (House)",
+      "note": "KY House roll call (override of the Governor's veto (House), 80-20) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 1191 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.598Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd4f0553eb6ef608e5f4f0880dfe9d952201740968402fd0ab748856330a3352",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb534/vote_history.pdf",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-534-2026",
+      "act": "yea",
+      "motion": "House: third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title)",
+      "note": "KY House roll call (third reading, passed House with Committee Substitute (2) and Committee Amendment (1-title), 53-40) on HB534 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 1191 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.598Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail ballot rules",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "confirmed who he is: iVoterGuide profile names him as State Rep., Dist. 1, with a Kentucky General Election listing for November 3, 2026",
+        "iVoterGuide questionnaire on the 2022 general-election page (1 passage saved; the same answers also appear on his 2024 primary-cycle page)",
+        "iVoterGuide 2026 page https://ivoterguide.com/candidate/19741/race/31165/election/1461: no photo-ID answer on the page",
+        "iVoterGuide 2016 and earlier profiles: photo-ID question reads 'Did not answer'",
+        "web searches on name plus voter ID, photo ID, proof of citizenship, noncitizen, election integrity, questionnaire: only the iVoterGuide hit on the subject",
+        "his legislature page, campaign site, news hits (westkentuckystar.com 2nd Amendment item): nothing on the subject",
+        "blocked: https://justfacts.votesmart.org (known to refuse fetches; not tried)",
+        "blocked: https://ballotpedia.org (known to refuse fetches; not tried)"
+      ],
+      "found": 1,
+      "at": "2026-11-11T18:30:04.307Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 4,
+      "at": "2026-11-11T21:12:46.598Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
 }

@@ -1,0 +1,109 @@
+{
+  "politician_id": "dda3dce4-f827-4f69-ba0b-c60cc71864d6",
+  "findings": [
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 26266 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.825Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "mail or absentee ballot ID",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site (nothing on the subject)",
+        "scstatehouse.gov member page and Senate Journal search (nothing on the subject)",
+        "vote411 guide (not reviewed: page returned HTTP 500)",
+        "blocked: https://ballotpedia.org",
+        "blocked: https://justfacts.votesmart.org",
+        "blocked: https://bluevoterguide.org",
+        "campaign site votecarlislekennedy.com (nothing on the subject)",
+        "blocked: https://www.wltx.com (HTTP 403)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:20:35.569Z",
+      "by": "search-sc-2026-11-10"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "mail or absentee ballot ID",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site (nothing on the subject)",
+        "scstatehouse.gov member page and Senate Journal search (nothing on the subject)",
+        "vote411 guide (not reviewed: page returned HTTP 500)",
+        "blocked: https://ballotpedia.org",
+        "blocked: https://justfacts.votesmart.org",
+        "blocked: https://bluevoterguide.org",
+        "campaign site votecarlislekennedy.com (nothing on the subject)",
+        "blocked: https://www.wltx.com (HTTP 403)",
+        "re-search: Kennedy took the Senate seat after the 2024 election, so 2011 and 2022 journals could not carry his remarks (not confirmed by roster check)",
+        "re-search: Senate Journal 2011-02-23 and 2011-02-24 (H. 3003 floor debate; fetched, remarks printed are other senators')",
+        "re-search: Senate Journal 2011 sj11 days 2011-03-01 to 2011-05-12 (Tue-Thu, 33 pages fetched; H. 3003 on 04-12, 04-13, 04-14, 04-26, 05-11; no remarks by these three on the subject)",
+        "re-search: Senate Journal 2022-04-12, 04-20, 04-21 (H. 4919): only procedural lines or 'spoke on the amendment' with no words printed",
+        "re-search: Senate Journal 2024-02-29, 04-03, 04-04 (S. 1126): no remarks on the subject printed",
+        "re-search: Senate Journal 2025-04-24 and 04-29 (S. 582): roll call and readings only, no remarks printed",
+        "re-search: bill history S. 1054 (introduced and referred only) and S. 128 (referred only): no floor debate",
+        "re-search: blocked: https://www.scstatehouse.gov/sess119_2011-2012/sj11/ (directory page, HTTP 403)",
+        "re-search: 2 further web searches on name + voter ID / photo ID / citizens only: nothing in own words",
+        "re-search: blocked: https://ballotpedia.org",
+        "re-search: blocked: https://justfacts.votesmart.org",
+        "re-search: blocked: https://bluevoterguide.org"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:55:09.751Z",
+      "by": "sc-research-re"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T23:17:03.825Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
+}

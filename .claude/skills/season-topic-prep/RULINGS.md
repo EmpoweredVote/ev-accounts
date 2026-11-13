@@ -411,7 +411,8 @@ topic; if a topic seems to need the same reading, ask for a ruling and point to 
   2026-11-05**, Chris Andrews, Michigan Stage 5 ("Seat them at rung 3"): the 2026-11-03 text said a place ban still
   conflicts; it no longer does. 31 Michigan records moved to rung 3; no record already written for the federal list,
   VA, TX, PA, IN or MA had this shape (`.planning/research/s3-prep-gun-policy/stage5/README.md`, Michigan and
-  "Place-ban re-check").
+  "Place-ban re-check"). Which carry easings count as rung 4 acts here was narrowed 2026-11-12 (next entry but one,
+  "what counts as a rung 4 act").
 - **Scope:** the Season 3 revision 5 of `gun-policy` only. Not offered to other topics until a second topic shows the
   same shape (runner, 2026-11-03).
 
@@ -419,16 +420,69 @@ topic; if a topic seems to need the same reading, ask for a ruling and point to 
 - **Reading:** a bill that only widens where serving or retired law-enforcement officers may carry (US-HR-354-2024,
   US-HR-2243-2025, IN HB 1391-2020) is out of scope (`adjacent`). So is a bill that only lets **one named
   professional group** carry for its work: NC H 194 (2021, federal judges and US attorneys who hold a permit) and
-  NC H 48 (2021, emergency medical staff serving with a police tactical team). A vote or sponsorship on either kind
-  neither seats nor blanks anyone and does not make a record two-sided; it is not a rung 4 act.
+  NC H 48 (2021, emergency medical staff serving with a police tactical team). **Teachers and other school staff
+  carrying on school grounds** are the same case: a candidate's "Yes" to teacher carry, or the school-employee part
+  of WI SB 256 (2023). **State officers, lawmakers and their staff carrying at the state capitol** are the same
+  case too: IN SB 43 (2017) and the capitol part of IN HB 1084 (2024). A vote or sponsorship on any of these kinds
+  neither seats nor blanks anyone and does not make a record two-sided; it is not a rung 4 act. Another part of
+  the same bill is read on its own: SB 256's carry-licence fee waiver for teachers is a rung 4 act (annex S2).
 - **Date and source:** police carry 2026-10-30, Chris Andrews, Stage 5 coding (`.planning/research/s3-prep-gun-policy/stage5/README.md`,
   "RULINGS (runner, 2026-10-30, during coding)"). Named professional group 2026-11-06, Chris Andrews, North Carolina
   Stage 5 ("No, like police carry"): H 194 alone had seated four people at rung 4 whose every other carry and permit
   vote was a No; under the ruling three became blanks (two nay-only, one wording), one stayed at rung 4 on another bill, and Ball's
-  record stopped being two-sided (`write/nc-01/PREVIEW.md`). Until now the police-carry reading lived only in the
+  record stopped being two-sided (`write/nc-01/PREVIEW.md`). Teacher and school-staff carry 2026-11-10, Chris
+  Andrews, Wisconsin Stage 5 ("Out of scope"): four codes used it, and no outcome changed (`write/wi-01/PREVIEW.md`).
+  Capitol carry for state officers and lawmakers 2026-11-12, Chris Andrews, process-efficiency review ("I approve
+  your recommendations"; annex R4-1): Indiana was coded on 2026-10-31, before the named-group ruling, and 31
+  approved Indiana rung 4 seats rest only on these bills, or on them plus IN HB 1071 (2017), now direction only
+  (`.planning/research/process-efficiency-2026-11/RUNG4-DECISION-SHEET.md`, `RUNG4-RULINGS-HANDOVER.md`).
+  Until now the police-carry reading lived only in the
   coder script (`make_code_batches.py`).
 - **Open:** NC H 47 (2021, elected officials carry on duty) fits the wording but was not named; the NC re-coders read
   it as out of scope and no outcome depends on it.
+- **Scope:** the Season 3 revision 5 of `gun-policy` only.
+
+### gun-policy — what counts as a rung 4 act (permit costs, narrow situations, emergencies)
+- **Reading:** rung 4 is "Make carrying a gun easier". A law that keeps the carry permit makes it "easier to get"
+  only when the applicant must **pay, prove or do less**: a lower fee or a fee waiver, more training courses that
+  count, a training waiver (rung 4). A change to how or where the paperwork is handled (applying in any county or at
+  the nearest sheriff, a free re-application after an error) and a carry change for one narrow situation (bow
+  hunters, protection-order holders, abuse victims) are `direction-only` on the loosening side: they seat no one and
+  do not make a record two-sided. A bill that stops a governor or agency from limiting guns in a declared emergency
+  is `direction-only` too; a bill that repeals an emergency carry limit already in law (PA HB 1747, 2019) stays
+  rung 4. Carry allowed in one more kind of place (a church that shares school grounds) stays rung 4, mirroring the
+  rung 3 ban on guns in a named kind of place. Bills for each kind: annex R4-2 to R4-4.
+- **Narrows:** the 2026-11-03 Session C reading (annex S2) that rung 4 "also covers a law that keeps the carry permit
+  but makes it easier to get". Its phrase "applying online or at a nearer office" is now direction only. The
+  2026-11-05 Michigan examples in the annex's S4 narrowing (a free re-application, applying in any county, a pistol
+  while bow hunting, emergency carry) now conflict with nothing, so the rung 3 seats they touched stand.
+- **Date and source:** 2026-11-12, Chris Andrews, process-efficiency review ("I approve your recommendations"; the
+  fee-and-training part confirmed the same day, "Settled as written"), on
+  `.planning/research/process-efficiency-2026-11/RUNG4-DECISION-SHEET.md`. Why: in the record-only test, 6 of 58
+  people seated at rung 4 on their record alone were corrected by their own words, and their seats rested on these
+  small acts. Written into the Season 3 annex (`docs/codebook/annex/season3/gun-policy.md`, R4-1 to R4-4).
+- **Scope:** the Season 3 revision 5 of `gun-policy` only.
+
+### gun-policy — R5-L (a ban on gun-owner lists where no registry exists is not rung 5)
+- **Reading:** rung 5 says "Repeal laws that require a permit or registration". A law that forbids a government list
+  of gun owners, or a registry, where no registration requirement exists (WI SB 466, 2023) repeals nothing, so it is
+  not a rung 5 act; it shows the loosening side only (`direction-only`), like annex Q2 and Q4. The rung wording is
+  kept. Its merchant-code part stays a dealer business rule (`adjacent`), and a bar on enforcing federal gun rules
+  stays under closure C2. Repealing an existing registration requirement is still rung 5 (annex S8).
+- **Date and source:** 2026-11-10, Chris Andrews, Wisconsin Stage 5 ("Rule A: keep wording"), on the memo
+  `.planning/research/s3-prep-gun-policy/stage5/rung5-registry-ban-memo.md` (theme pass 7, theme 1). It affects 8
+  Wisconsin people, who stay blank; Michigan and North Carolina had none. No written row changes. Recorded in the
+  Season 3 annex (`docs/codebook/annex/season3/gun-policy.md`, R5-L) and its rung backlog.
+- **Scope:** the Season 3 revision 5 of `gun-policy` only.
+
+### gun-policy — R5-AZ (taking an accessory off a ban that excepts only federal registration is rung 5)
+- **Reading:** a state ban whose only exception is federal registration (NFA) works as a registration law. A bill
+  that takes an accessory off it — AZ SB 1109 (2023), SB 1014 (2025), SB 1069 (2026), suppressors off A.R.S.
+  13-3101's prohibited-weapons list — is "removing a type of firearm or accessory from a registration law", rung 5,
+  as TX SB 1596 (2025) was read. A rate-of-fire accessory (bump-fire) still has no rung (annex S3).
+- **Date and source:** 2026-11-11, Chris Andrews, Arizona Stage 5 ("ok, rung 5"). 23 of the 25 rung 5 seats
+  written in `write/az-01` rest on these bills alone; one person with a rung 3 act stays two-sided (Fernandez).
+  Recorded in the Season 3 annex (`docs/codebook/annex/season3/gun-policy.md`, R5-AZ).
 - **Scope:** the Season 3 revision 5 of `gun-policy` only.
 
 ### education-equity-programs — R1 (single-subject scope)

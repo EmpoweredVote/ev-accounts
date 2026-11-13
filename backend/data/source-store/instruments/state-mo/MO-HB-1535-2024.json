@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1535-2024",
+  "scope": "state:mo",
+  "title": "HB1535 (2024 Regular Session): Modifies the offense of unlawful possession of a firearm to include any minor possessing a firearm on public property",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB1535&year=2024&code=R",
+    "https://documents.house.mo.gov/billtracking/bills241/hlrbillspdf/3542H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Donna Baringer",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b0aba2ae-616c-4575-8b44-cef3534c8542"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1535-2024.introduced.pdf",
+      "sha256": "39560ecb8753f91646ae0b6bd482239fff16a9e3b627aa3075fcaf3a4cae7d10"
+    }
+  },
+  "operative_text": "Section 571.070 (RSMo): A person commits the offense of unlawful possession of a firearm if such person knowingly has any firearm in his or her possession and: Such person is under eighteen years of age and is on public property. However, possession under this subdivision is not an offense if such person possesses the firearm: While accompanied by a person twenty-one years of age or older; For the purposes of a school-sanctioned, firearm-related event or club event; For the lawful pursuit of game; or As otherwise authorized by law."
+}

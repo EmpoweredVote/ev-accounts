@@ -1,0 +1,49 @@
+{
+  "id": "CA-AB-2206-2020",
+  "scope": "state:ca",
+  "title": "AB2206 (2019-2020): Firearms: concealed carry.",
+  "urls": [
+    "http://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=201920200AB2206",
+    "http://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200AB2206"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jay Obernolte",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Shannon Grove",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "03ee06fb-9b51-41cc-8942-4632f3a724e3"
+    },
+    {
+      "name": "Mike Morrell",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Introduced 2020-02-12, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-2206-2020.introduced-2020-02-12.html",
+      "sha256": "cf5ed97a9c09b1193a20140ba4449861a1eb461dddc727c8dd5da0bc2a47188e"
+    },
+    "note": "Introduced text of 2020-02-12; no floor vote recorded."
+  },
+  "operative_text": "Section 25660 (Penal Code (added)): 25660. (a) Section 25400 does not apply to, or affect, the carrying of a pistol, revolver, or other firearm capable of being concealed upon the person by a person who meets both of the following conditions: (1) The person is carrying the firearm in a jurisdiction that has made a declaration pursuant to subdivision (b). (2) The person is carrying the firearm in compliance with a valid license to carry a concealed firearm that was issued by another state. (b) A city council or county board of supervisors may declare that city or county to be a jurisdiction in which persons may carry a concealed firearm in compliance with a valid license to carry a concealed firearm that was issued by another state. If a county board of supervisors makes a declaration pursuant this subdivision, the declaration shall additionally require the approval of the sheriff of that county."
+}

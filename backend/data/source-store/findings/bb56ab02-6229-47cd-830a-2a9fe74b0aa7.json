@@ -1,0 +1,91 @@
+{
+  "politician_id": "bb56ab02-6229-47cd-830a-2a9fe74b0aa7",
+  "findings": [
+    {
+      "id": "6bf6d81a82db697d74298b2d427ff9b8ac3a5267f7ae33bbaa137ed285b615aa",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/HB1316/id/1538770",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1316-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION, 83-7) on HB1316 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + HA0118 (adopted on the floor 2025-04-07 per action log); linked by LegiScan member id 20348 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.080Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfc0f401b5e1e11d23ee20ace873f4d6d7b4216789ab4da3a289d27d0ae2ae27",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1477618",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION, 71-19) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text) as engrossed by the Senate; linked by LegiScan member id 20348 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.080Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "noncitizen voting and voter-roll checks",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract-otr run with --names)",
+        "Tennessee Firefly race page https://tnfirefly.com/elections/general-assembly/house/82 (fetched; shows he ran unopposed and won House District 82 on 2026-11-03)",
+        "the House caucus member page https://tnhousegop.org/members/representative-chris-hurt/ (fetched; nothing on the subject)",
+        "blocked: https://www.chris-hurt.com/ and https://chris-hurt.com/ (campaign site did not connect; no response)",
+        "iVoterGuide: no profile found for him in search results (state listing page fetched; no statements)",
+        "web searches (5): name + photo ID/voter ID, + election/voting/citizenship, + campaign site/questionnaire/voter guide, + citizenship/election integrity/noncitizens, + iVoterGuide photo identification; nothing of his own words on the subject; he appears only in bill-tracker lists as a sponsor of a resolution (sponsorships are linked separately)",
+        "blocked: https://justfacts.votesmart.org/candidate/biography/182507/ (refused-list host, not fetched)",
+        "blocked: https://ballotpedia.org/Tennessee_House_of_Representatives_District_82 (refused-list host, not fetched)",
+        "not opened by rule: capitol.tn.gov and wapp.capitol.tn.gov"
+      ],
+      "found": 0,
+      "at": "2026-11-12T02:03:04.449Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 2,
+      "at": "2026-11-12T15:13:42.080Z",
+      "by": "source-collector"
+    }
+  ]
+}

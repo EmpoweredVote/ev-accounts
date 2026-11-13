@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1772-2024",
+  "scope": "state:mo",
+  "title": "HB1772 (2024 Regular Session): Changes the offense of unlawful possession of a firearm by allowing persons who have completed their sentence for a nonviolent felony to possess firearms",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB1772&year=2024&code=R",
+    "https://documents.house.mo.gov/billtracking/bills241/hlrbillspdf/3534H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chad Perkins",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b07a955b-5ed5-4e85-97fa-cadd07aa6ff9"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1772-2024.introduced.pdf",
+      "sha256": "378338af1f33027ef5da7770e1ae920f3293e2c633390cdc5fd150ad95c426da"
+    }
+  },
+  "operative_text": "Section 571.070 (RSMo): 1. A person commits the offense of unlawful possession of a firearm if such person knowingly has any firearm in his or her possession and: (1) Such person has been convicted of a violent felony under the laws of this state or of a crime under the laws of any state or of the United States that, if committed within this state, would be a violent felony; or (2) Such person is on probation or parole for a nonviolent felony under the laws of this state or for a crime under the laws of any state or the United States that, if committed within this state, would be a nonviolent felony; or (3) Such person is a fugitive from justice, is habitually in an intoxicated or drugged condition, or is currently adjudged mentally incompetent.\nSection 571.070 (RSMo): For purposes of this section, a \"violent felony\" is any felony offense that involves the use of threat or force against another person and a \"nonviolent felony\" is any felony offense that does not involve the use of threat or force against another person.\nSection 571.070 (RSMo): 3. The provisions of subdivisions (1) and (2) of subsection 1 of this section shall not apply to the possession of an antique firearm."
+}

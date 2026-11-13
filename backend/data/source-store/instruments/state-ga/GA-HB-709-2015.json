@@ -1,0 +1,38 @@
+{
+  "id": "GA-HB-709-2015",
+  "scope": "state:ga",
+  "title": "HB709 (2015-2016 Regular Session): Firearms; completion of safety training course by certain persons for issuance of weapons carry license; require",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/45250",
+    "https://www.legis.ga.gov/api/legislation/document/20152016/154132"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Keisha Waites",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "698a8687-8ba2-4a0e-bb2b-3ab589bf5ccc"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:46:27.022243Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-709-2015.introduced.pdf",
+      "sha256": "07b8e7b0b77b79d58cdf6848125be2f7871be5d893394cebd1ee2c4b3da475e2"
+    }
+  },
+  "operative_text": "SECTION 1 (amending O.C.G.A. 16-11-129(a)), new paragraph (2): (2) An applicant shall demonstrate completion of firearms safety training within three years prior to the date of the application for a weapons carry license as provided for under paragraph (1) of this subsection. An applicant may satisfy such training requirement by submitting proof that he or she: (A) Is a peace officer, as such term is defined in Code Section 35-8-2; (B) Is serving on active duty with the United States armed forces; (C) Is serving in an active reserve component of the United States armed forces or in the Georgia National Guard; (D) Is a firearms safety instructor certified by the National Rifle Association holding a rating as a personal protection instructor or pistol marksmanship instructor; or (E) Has received basic firearms training provided by a law enforcement officer, a nationally recognized organization that promotes firearm safety, or a licensed firearms dealer. Such training shall include instruction on the features of a handgun and a brief explanation of loading, firing, and unloading of the weapon; provided, however, that live firing shall not be required. Proof of such training shall be a notarized affidavit signed by the person providing the training with his or her address, position, and identifying number, such as a badge number or firearm dealer license number, or a certificate of training issued by a nationally recognized organization that promotes firearm safety. Such nationally recognized organizations that promote firearm safety shall be as provided for by rule of the Council of Probate Court Judges of Georgia. This paragraph shall not be applicable to renewal licenses.\""
+}

@@ -1,0 +1,31 @@
+{
+  "politician_id": "fdef0c7a-452d-4d7b-a1a9-d4865de379ff",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "member page https://www.scstatehouse.gov/member.php?code=1527840726 (confirms House District 70, Kershaw and Richland Counties)",
+        "https://frogmorestew.substack.com/p/here-are-your-sc-house-candidates-ac9: his candidate answers cover energy and affordability, nothing on the subject",
+        "https://www.cubnsc.com/post/snowed-in-but-showing-up-rep-robert-t-reese-s-town-hall-and-the-fight-for-south-carolina-s-democr: write-up of a town hall; no direct quotes of him, so not saved",
+        "web searches: name + voter ID / photo ID / proof of citizenship / SAVE Act / questionnaire (none surfaced own words on the subject)",
+        "blocked: https://ballotpedia.org (not fetched, listed as blocked per instructions)",
+        "blocked: https://justfacts.votesmart.org (not fetched, listed as blocked per instructions)",
+        "South Carolina House Journal search (scstatehouse.gov): nothing on the subject by this member"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:37:21.513Z",
+      "by": "sc-search-r4"
+    }
+  ]
+}

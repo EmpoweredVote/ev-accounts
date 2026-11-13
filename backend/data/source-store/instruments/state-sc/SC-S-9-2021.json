@@ -1,0 +1,18 @@
+{
+  "id": "SC-S-9-2021",
+  "scope": "state:sc",
+  "title": "S 9 (124th General Assembly): Driver's license and voter registration application",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0009&session=124&summary=B"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 1 (7-5-320(A)(1))\n(quote) Each state identification card application or motor vehicle driver's license application, including a renewal application, submitted to the Department of Motor Vehicles serves as an application for voter registration. For voter registration purposes, the applicant shall consent to the use of his signature from his state identification card or driver's license issued by the Department of Motor Vehicles.\n(section) Sec. 1 (7-5-320(E)(3))\n(quote) If a person notified pursuant to this subsection does not decline to be registered as a voter within fifteen calendar days after the county board issues the notification, the person's voter registration portion shall constitute a completed registration for purposes of this chapter.\n(other) Sec. 1: automatic voter registration through DMV driver's licence and ID card applications (opt-out); keeps the eligibility statement including citizenship and attestation; minors' registration information is not a public record; DMV and State Election Commission directors must work together.\n(other) Sec. 2: effective on approval by the Governor.\n(other) version: Only one version (Introduced, 2020-12-09). No ID or citizenship text in slots a-d; the reprinted statement 'states each eligibility requirement, including citizenship' is existing text and an attestation only.\n(other) note: Automatic voter registration bill. The citizenship wording is the existing eligibility statement and attestation, not a documentary proof or database check. Only the introduced text is saved.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 SC bill texts and roll calls (Sonnet readers R1-R5 + official vote/journal pages, voting-rights, 2026-11-10)",
+    "fetched_at": "2026-11-10",
+    "method": "curl"
+  }
+}

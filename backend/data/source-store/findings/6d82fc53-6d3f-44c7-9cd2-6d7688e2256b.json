@@ -27,5 +27,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "member page https://www.scstatehouse.gov/member.php?code=1649715712 (confirms House District 46, York County; used only to identify him)",
+        "https://www.ballotready.org/people/heath-sessions (confirms District 46 and 2026 candidacy; nothing on the subject)",
+        "his campaign site https://www.heathsessions.com/ : nothing on the subject",
+        "iVoterGuide https://ivoterguide.com/candidate/66241/race/31934/election/1469 : questionnaire item on voting without photo identification is marked Did not answer, nothing saved",
+        "House Journals 2025-04-30 and 2025-05-07: only procedural lines (explained the amendment / the Bill), no printed remarks on voting",
+        "6 web searches (name plus voter ID, photo ID, citizenship, noncitizen, questionnaire, journal, interview/newsletter): nothing on the subject",
+        "blocked: Ballotpedia, bluevoterguide.org, justfacts.votesmart.org (refused by rule)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:37:43.588Z",
+      "by": "sc-search-r4"
+    }
+  ]
 }

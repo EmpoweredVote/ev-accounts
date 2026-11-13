@@ -1,0 +1,50 @@
+{
+  "id": "AZ-HB-2431-2025",
+  "scope": "state:az",
+  "title": "HB2431 (Fifty-seventh Legislature - First Regular Session (2025)): Firearms regulated by state; repeal",
+  "urls": [
+    "https://apps.azleg.gov/BillStatus/BillOverview/82218",
+    "https://www.azleg.gov/legtext/57leg/1r/bills/hb2431p.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nancy Gutierrez",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ce872623-f6bd-4e90-9eba-239ed00c7491"
+    },
+    {
+      "name": "Quanta Crews",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1482a2bc-75d8-4aee-865c-53378c415210"
+    },
+    {
+      "name": "Betty Villegas",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6dcc0e46-c944-480b-a432-7b36989d56e9"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official azleg.gov HTML of the version named in note (via LegiScan getBillText; change marks kept)",
+    "fetched_at": "2026-11-11T04:23:07.062663Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/AZ-HB-2431-2025.introduced.html",
+      "sha256": "1147d85bb66a8b6c2ab0f6b148231e926103896c316060ae1bc48bc76483254c"
+    }
+  },
+  "operative_text": "Sec. 1 (repealing A.R.S. 13-3108): Section [-1.-]1. Repeal Section 13-3108, Arizona Revised Statutes, is repealed.\nSec. 2 (amending A.R.S. 15-341, subsection A, paragraph 23): 23. Notwithstanding [-sections 13-3108 and-] {+SECTION +}13-3120, prescribe and enforce policies and procedures that prohibit a person from carrying or possessing a weapon on school grounds unless the person is a peace officer or has obtained specific authorization from the school administrator."
+}

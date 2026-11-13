@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-2736-2024",
+  "scope": "state:mo",
+  "title": "HB2736 (2024 Regular Session): Modifies the offense of unlawful possession of a firearm to include any minor possessing a firearm on public property",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB2736&year=2024&code=R",
+    "https://documents.house.mo.gov/billtracking/bills241/hlrbillspdf/5697H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jamie Johnson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "163790d1-c6ce-4644-a223-9f81116e3f21"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2736-2024.introduced.pdf",
+      "sha256": "62cf461e456f65c3fb9aba28f93c971564c04bdae04b27a227be3ecc135c4431"
+    }
+  },
+  "operative_text": "Section 571.070 (RSMo): A person commits the offense of unlawful possession of a firearm if such person knowingly has any firearm in his or her possession and: (2) Such person is a fugitive from justice, is habitually in an intoxicated or drugged condition, or is currently adjudged mentally incompetent; or (3) Such person is under eighteen years of age and is on public property. However, possession under this subdivision is not an offense if such person possesses the firearm: (a) While accompanied by a person twenty-one years of age or older; (b) For the purposes of a school-sanctioned, firearm-related event or club event; (c) For the lawful pursuit of game; or (d) As otherwise authorized by law."
+}

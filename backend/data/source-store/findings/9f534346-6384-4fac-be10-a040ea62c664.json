@@ -154,6 +154,419 @@
         "fetched_at": "2026-10-28T23:15:12.785Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "13244cbcab0b9298111a339603a02186a431005108339971c6aa627092ccd107",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/asm/bill/ab293",
+      "date": "2021-06-09",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-293-2021",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and passed, 2021-06-09: yea (tally 61–36); census gate: none.",
+      "subjects": [
+        "no state or local money to confiscate lawful firearms",
+        "state-made firearms must be stamped",
+        "enforcing new federal gun restrictions made a misdemeanor"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-293-2021.enrolled.pdf",
+          "sha256": "fb9a15b92bd62f92f60a44d4c3def338f5e22c6d253b72fd1ec5e8d381a8369a"
+        }
+      }
+    },
+    {
+      "id": "ebef6ea9ab2ae91420259dc69b20ceb45cc9ec0b4afe2566d3c08f6f504519c7",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb466",
+      "date": "2024-01-18",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-466-2023",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and concurred in, 2024-01-18: yea (tally 62–35); census gate: none.",
+      "subjects": [
+        "payment networks barred from firearms-retailer merchant codes",
+        "government lists of gun owners banned",
+        "background-check records may not be turned into a purchaser list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-466-2023.enrolled.pdf",
+          "sha256": "6d089108620592801f50b209f20b361fb9a3c5e87a5f8243957c44092e2874a2"
+        }
+      }
+    },
+    {
+      "id": "1867d7d4b85e816eb13baa216473ebcb94aefc5aa96b5767301d1ff31a69baed",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/sen/bill/sb570",
+      "date": "2022-02-23",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-570-2021",
+      "act": "yea",
+      "motion": "Assembly: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Assembly, Assembly: Read a third time and concurred in, 2022-02-23: yea (tally 61–35); census gate: none.",
+      "subjects": [
+        "limits civil lawsuits against gun and ammunition makers and sellers",
+        "defendants win attorney fees when a barred suit is dismissed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-570-2021.enrolled.pdf",
+          "sha256": "29c3c905eadc72bf48ca38dd1c01f5ea7582fa8733684688d6d5ce79a216b9db"
+        }
+      }
+    },
+    {
+      "id": "4d4d2570f50a77d0491390cdebb2b36e52a2edaea5b3be2dc37994a09153bb86",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/asm/bill/ab293",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-293-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-293-2021 (LegiScan sponsor list): AB293 (2021-2022 Regular Session): Restrictions on enforcing federal laws regulating firearms, firearm accessories, and ammunition, the use of public resources to confiscate firearms, and providing a penalty..",
+      "subjects": [
+        "no state or local money to confiscate lawful firearms",
+        "state-made firearms must be stamped",
+        "enforcing new federal gun restrictions made a misdemeanor"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-293-2021.enrolled.pdf",
+          "sha256": "fb9a15b92bd62f92f60a44d4c3def338f5e22c6d253b72fd1ec5e8d381a8369a"
+        }
+      }
+    },
+    {
+      "id": "2d20a2d7c2a246b5eceed7f7ca67c6aac831464059bf979eeb13f9cf8102c756",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/asm/bill/ab498",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-498-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-498-2021 (LegiScan sponsor list): AB498 (2021-2022 Regular Session): Minimum age to be eligible for a license to carry a concealed weapon..",
+      "subjects": [
+        "minimum age for concealed-carry license lowered from 21 to 18"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-498-2021.introduced.pdf",
+          "sha256": "f2b8d6fb2fd58914c897b872782763f83a33ee4d93d68337f489790ea7dc2f03"
+        }
+      }
+    },
+    {
+      "id": "892d1bfa2491cb83de385d49e162ada30ea8bd69bb02715bcb26e39361ade18d",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/asm/bill/ab518",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-518-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-518-2021 (LegiScan sponsor list): AB518 (2021-2022 Regular Session): Reciprocity for out-of-state licenses to carry a concealed weapon..",
+      "subjects": [
+        "any other state's concealed-carry permit recognized",
+        "conditions on out-of-state licenses repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-518-2021.enrolled.pdf",
+          "sha256": "469859a5ee6fc17b715889737c29fbedd7f319ad1ae770e092db717467163bc7"
+        }
+      }
+    },
+    {
+      "id": "91c7b600bcb1a3f39f913abb57fc1b37c1954c44105292a9e5e81b1d5ac48681",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/asm/bill/ab801",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-801-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-801-2023 (LegiScan sponsor list): AB801 (2023-2024 Regular Session): Possession of a firearm by a licensee in a place of worship located on the grounds of a private school..",
+      "subjects": [
+        "licensees may carry in a place of worship on private school grounds",
+        "licensees exempt from 1,000-foot school-zone forfeiture",
+        "definition of school narrowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-801-2023.introduced.pdf",
+          "sha256": "16c20b1a45da21cfdd8ed1a9e8fe7da04b46b52f2f89506a5b7be328f58bee41"
+        }
+      }
+    },
+    {
+      "id": "9c1b7c7c475fcc4309de3c8897b6a0c4b9b43eebb4b23988b443dba5ec38c9b5",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/sen/bill/sb570",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-570-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SB-570-2021 (LegiScan sponsor list): SB570 (2021-2022 Regular Session): Limiting civil liability for firearm, firearm accessory, and ammunition manufacturers, distributors, importers, trade associations, sellers, and dealers..",
+      "subjects": [
+        "limits civil lawsuits against gun and ammunition makers and sellers",
+        "defendants win attorney fees when a barred suit is dismissed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-570-2021.enrolled.pdf",
+          "sha256": "29c3c905eadc72bf48ca38dd1c01f5ea7582fa8733684688d6d5ce79a216b9db"
+        }
+      }
+    },
+    {
+      "id": "228d2ccde35f4d39b822684561143ebb75affbec5624e1402e4fd3424d55cf1c",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/sen/bill/sb607",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-607-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SB-607-2025 (LegiScan sponsor list): SB607 (2025-2026 Regular Session): Right to carry a weapon in this state, licenses to carry a concealed weapon, and providing a penalty. (FE).",
+      "subjects": [
+        "permitless concealed carry (licence no longer required)",
+        "loaded-firearm-in-vehicle ban repealed",
+        "list of places where firearms are prohibited rewritten",
+        "employers may not bar carrying or storing weapons in an employee’s vehicle"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-607-2025.introduced.pdf",
+          "sha256": "9c15b7c2f009be0489a31087fcad7afd74130ebeab0157288f50e1d9b5e1fea2"
+        }
+      }
+    },
+    {
+      "id": "d4c54194e717d2617ebf621a53a8917cb289e2a6ed51f2614b210b8dfa750562",
+      "kind": "own-words",
+      "url": "https://wpr.org/wisconsin-assembly-passes-package-gun-bills",
+      "date": "2022-01-20",
+      "date_precision": "day",
+      "passage": "“This simply says we’re going to treat you all like the adults you are,” Rep. Shae Sortwell, R-Two Rivers, said. “We’re going to trust you to be responsible.”",
+      "note": "Quoted by Wisconsin Public Radio on the Assembly floor about his bill lowering the concealed carry permit age from 21 to 18.",
+      "subjects": [
+        "lower the age to carry a concealed gun",
+        "carry a gun with a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.364Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e1f3a6876f767677ff338cdefd1604f2a221aaf1597c341f886bb63ce3b8c738",
+      "kind": "own-words",
+      "url": "https://fox11online.com/news/nation-world/a-14th-amendment-issue-wi-representative-wants-to-lower-age-for-concealed-carry",
+      "date": "2022-01-26",
+      "date_precision": "day",
+      "passage": "“I think it's a basic premise of equality under the law. While some people talk about this being a Second Amendment issue — and to an extent it is — it’s actually more of a 14th Amendment issue where all adults should be treated equally under the law,” Sortwell said.",
+      "note": "Interview quoted by Fox 11 on why he wants the concealed carry permit age lowered to 18.",
+      "subjects": [
+        "lower the age to carry a concealed gun",
+        "Second Amendment and equal treatment of adults"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.364Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e8f6e2df35d1fa03cc82bc3e0c3e6e825247d0e3504efc37f9d0f6423a5c3b5c",
+      "kind": "own-words",
+      "url": "https://fox11online.com/news/nation-world/a-14th-amendment-issue-wi-representative-wants-to-lower-age-for-concealed-carry",
+      "date": "2022-01-26",
+      "date_precision": "day",
+      "passage": "“You’re not talking about 18- and 19-year-olds being able to carry guns around school property. The current law on restrictions to that don’t change,” Sortwell said.",
+      "note": "Quoted by Fox 11 on his bill's effect on carrying near schools: the school-grounds restrictions stay the same for permit holders.",
+      "subjects": [
+        "carry a gun with a permit",
+        "guns on school grounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.364Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3e6fbc91fd43348e980803fce67be56dfee801bfdd44417070a537af5f8bdf61",
+      "kind": "own-words",
+      "url": "https://fox11online.com/news/nation-world/a-14th-amendment-issue-wi-representative-wants-to-lower-age-for-concealed-carry",
+      "date": "2022-01-26",
+      "date_precision": "day",
+      "passage": "“The Department of Justice here in Wisconsin is the one that — under current law — approves the process from other states and they're supposed to basically be checking to make sure they're meeting our standards,” said Sortwell. “There are some states that don't have some of those restrictions in place but that's not going to change the fact that you can already possess a gun right now under current law without necessarily going through a background check.”",
+      "note": "Quoted by Fox 11 on the bill to honor other states' carry permits; he says a gun can already be possessed without a background check.",
+      "subjects": [
+        "honor other states' carry permits",
+        "background checks on gun sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.364Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b49d508cd309875e48c547bf6598eee180e9e5e3182c6aa99494cd0b5008f833",
+      "kind": "own-words",
+      "url": "https://fox11online.com/news/nation-world/a-14th-amendment-issue-wi-representative-wants-to-lower-age-for-concealed-carry",
+      "date": "2022-01-26",
+      "date_precision": "day",
+      "passage": "“Once again, this is not about the Second Amendment. It’s pretty clear. We even had an appellate court case recently that said this is a violation of the federal constitution to have these kinds of arbitrary restrictions in place for adults,” he said. “This is a constitutional issue under the 14th Amendment saying that every adult has the inherent right of self-defense.”",
+      "note": "Quoted by Fox 11 saying age limits on carry for adults are arbitrary and a constitutional issue.",
+      "subjects": [
+        "lower the age to carry a concealed gun",
+        "right of self-defense"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.364Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "705bff61d92262185357d00a021545519cb4cb0f2e0f291a5d0cb2e33c3dbc56",
+      "kind": "own-words",
+      "url": "https://www.wpr.org/justice/gun-retailers-could-help-suicide-prevention-under-gop-bill",
+      "date": "2023-07-18",
+      "date_precision": "day",
+      "passage": "Sortwell said the bill aims to give people a place to temporarily store firearms “so that while somebody is getting the help they need, while they’re working through their personal problems, they don’t have this temptation in the house,” he said.",
+      "note": "WPR report on his suicide-prevention bill with gun retailers storing firearms voluntarily surrendered; WPR also says he framed it as respecting constitutional rights.",
+      "subjects": [
+        "voluntary temporary gun storage during a crisis",
+        "gun suicide prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.364Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a4083f20329d584f471836d0245900925cfbb43fc6813c4233f7ddfd0d794538",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab609",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-609-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-609-2025 (LegiScan sponsor list): AB609 (2025-2026 Regular Session): Right to carry a weapon in this state, licenses to carry a concealed weapon, and providing a penalty. (FE).",
+      "subjects": [
+        "permitless concealed carry (general ban repealed)",
+        "license kept but background check limited to federal prohibitions",
+        "list of places firearms are barred rewritten, Class A misdemeanor",
+        "employer may not bar weapons stored in employee vehicle",
+        "loaded firearm in vehicle ban dropped"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T23:03:34.524773Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-609-2025.introduced.pdf",
+          "sha256": "e7626966e4cf1b8cb1ab34dfdfb2b7b2a43443808df4408ec5e1314bfd60b6f3"
+        }
+      }
     }
   ],
   "searches": [
@@ -224,6 +637,31 @@
       "found": 0,
       "at": "2026-10-28T23:31:40.409Z",
       "by": "source-collector-wave3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "lower the minimum age for a concealed carry permit",
+        "carry a gun in a vehicle on school grounds",
+        "honor other states' carry permits",
+        "gun storage for people in suicide crisis",
+        "Second Amendment and 14th Amendment equality"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: https://www.branch.vote/races/2026-wisconsin-primary-election-wi-state-state-representative-wi-state-house-2-r shows him unopposed in the 2026 primary and moving to the general election; https://legis.wisconsin.gov/assembly/02/sortwell/ names him as State Representative",
+        "official Assembly site: home, about page and press releases list (nothing on the subject; releases cover nuclear power, school buses, DEI, courts)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia: not reviewed, returns empty to the fetch tool",
+        "news search on name plus gun words: WPR 2022, Fox 11 2022, WPR 2023",
+        "not reviewed: campaign site (no address found; searches turned up none)",
+        "not reviewed: nraila.org alerts (third-party advocacy, not his words)",
+        "ballotready and ivoterguide pages: no gun statements on them"
+      ],
+      "found": 6,
+      "at": "2026-11-10T22:15:40.364Z",
+      "by": "source-collector"
     }
   ]
 }

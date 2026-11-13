@@ -1,0 +1,39 @@
+{
+  "id": "MO-SB-225-2021",
+  "scope": "state:mo",
+  "title": "SB225 (2021 Regular Session): Allows the concealed carry of firearms on public transportation systems and the transporting of non-functioning or unloaded firearms on public buses",
+  "urls": [
+    "https://www.senate.mo.gov/21info/BTS_Web/Bill.aspx?SessionType=R&BillID=54238713",
+    "https://www.senate.mo.gov/21info/pdf-bill/intro/SB225.pdf",
+    "https://www.senate.mo.gov/21info/pdf-bill/SCSfromResearch/SB225.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Robert Onder",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8fd53bf9-95dc-44b4-9826-192c97979fd5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-225-2021.introduced.pdf",
+      "sha256": "fe7f8a9e4e2403ec75e1edc1daff3a62acde33ea3a26edc0eb6b7034c44cc589"
+    }
+  },
+  "operative_text": "Section 571.107 (RSMo): 3. Notwithstanding any provision of this chapter, chapters 70, 577, or 578 to the contrary, a person carrying a firearm concealed on or about his or her person who is lawfully in possession of a valid concealed carry permit or endorsement shall not be prohibited or impeded from accessing or using any publicly funded transportation system, nor shall such person be harassed or detained for carrying a concealed firearm on the property, vehicles, or conveyances owned, contracted, or leased by such systems that are accessible to the public.\nSection 577.703 (RSMo): 4. Except as otherwise provided under section 571.107, any passenger who boards a bus with a dangerous or deadly weapon or other means capable of inflicting serious bodily injury concealed upon his or her person or effects is guilty of the felony of \"possession and concealment of a dangerous or deadly weapon\" upon a bus. Possession and concealment of a dangerous and deadly weapon by a passenger upon a bus is a class D felony. The provisions of this subsection shall not apply to: (1) Duly elected or appointed law enforcement officers or commercial security personnel who are in possession of weapons used within the course and scope of their employment; (2) Persons who are in possession of weapons or other means of inflicting serious bodily injury with the consent of the owner of such bus, his or her agent, or the lessee or bailee of such bus; (3) Persons carrying concealed firearms who lawfully possess a valid concealed carry permit or endorsement in accordance with section 571.107; or (4) Persons transporting a firearm in a nonfunctioning state or in an unloaded state when ammunition is not readily accessible.\nSection 577.712 (RSMo): The provisions of this section shall not apply to persons transporting a firearm in a nonfunctioning state or in an unloaded state when ammunition is not readily accessible."
+}

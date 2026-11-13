@@ -1,0 +1,69 @@
+{
+  "politician_id": "735c3fda-cf6f-4487-8bf2-c8cf91c58160",
+  "findings": [
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 26264 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.824Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "https://thecandidate.com/states/sc/legislature/senate/39/tom-fernandez (names him as District 39 senator; no words of his on the subject)",
+        "Live5 2024 candidate video listed in search, video not reviewed: https://www.live5news.com/video/2024/10/19/video-meet-candidates-sc-senate-district-39-tom-fernandez/ (outlet on do-not-fetch list, not opened)",
+        "On the Record (0 meetings, extract-otr)",
+        "web search: name + voter ID / photo ID / citizenship / noncitizen / election integrity",
+        "web search: name + questionnaire / candidate survey / voter guide",
+        "blocked: https://ballotpedia.org (refuses fetches, not tried)",
+        "blocked: https://justfacts.votesmart.org (refuses fetches, not tried)",
+        "blocked: https://bluevoterguide.org (refuses fetches, not tried)",
+        "no result from a news outlet on the do-not-fetch list was opened"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:24:50.704Z",
+      "by": "sc-search-r2"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T23:17:03.824Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "politician_id": "9c9dd1c6-f7ee-4de4-9500-9438ab103807",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment or gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed in scope: candidate for State Board of Equalization District 4, on the 2026 general ballot (https://www.ballotready.org/people/denis-r-bilodeau, https://ivoterguide.com/candidate/91577/race/30582/election/1454); a news search says he finished first in the June primary",
+        "campaign site https://bilodeauforboe.com/ (nothing on the subject; issue pages cover economy, housing, taxes)",
+        "https://www.ballotready.org/people/denis-r-bilodeau (nothing on the subject)",
+        "https://ivoterguide.com/candidate/91577/race/30582/election/1454 (gun-restriction questionnaire item shown as unanswered)",
+        "blocked: https://ballotpedia.org/Denis_Bilodeau_(California) (fetch returned an empty page)",
+        "sponsor list: covered by LegiScan bulk check",
+        "news search on name plus gun/Second Amendment words (nothing on the subject)",
+        "the political-office record: not a legislator; no bills or votes in the state legislature"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.459Z",
+      "by": "source-collector"
+    }
+  ]
+}

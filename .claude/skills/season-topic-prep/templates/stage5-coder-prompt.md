@@ -1,9 +1,9 @@
-# Stage 5 coder — {{TOPIC_KEY}} — {{DATE}}
+# Stage 5 coder — {{TOPIC_KEY}} — {{BATCH}} — {{DATE}}
 
-<!-- Orchestrator: fill every {{…}} and delete these comments. Run on the most capable model, one subagent per
-     batch of about 20 people. Give it ONLY the files named under "Read these". Its output goes to
-     <research folder>/stage5/codes/<politician_id>.json, one file per person. Then
-     `topic:stage5-report` checks every code (stage5Code.checkCode) before anything is counted. -->
+<!-- Do not fill this by hand. `backend/scripts/stage5/coder-inputs.ts` fills every {{…}} slot from the run's
+     coder config and rulings digest, writes the batch's compact findings file, and refuses to leave a slot
+     unfilled. Run it on the most capable model, one subagent per batch of about 20 people. The coder writes ONE
+     file; `backend/scripts/stage5/split-codes.ts` checks every code in it and writes `codes/<politician_id>.json`. -->
 
 You code one compass topic for each person in your batch, **from their saved findings only**. You do not search
 the web, fetch pages or read any other file. If the findings do not support a seat, the honest code is a blank.
@@ -13,18 +13,21 @@ stance from silence: an absence is not evidence.
 
 ## Read these, and nothing else
 
-1. The codebook: `docs/codebook/stance-and-quote-codebook.md` (version {{CODEBOOK_VERSION}}). It governs.
+1. The codebook: `{{REPO}}/docs/codebook/stance-and-quote-codebook.md` (version {{CODEBOOK_VERSION}}). It governs.
 2. The question and the five rungs, from the draft season's pin (season {{SEASON_NUMBER}}, revision
    {{REVISION_ID}}):
 
 {{LADDER_TEXT}}
 
-3. The topic's annex: `docs/codebook/annex/season3/{{TOPIC_KEY}}.md`.
-4. `.claude/skills/season-topic-prep/RULINGS.md` (rulings are applied, not re-argued).
-5. For each person in your batch: `backend/data/source-store/findings/<politician_id>.json`.
-6. For a record finding with an `instrument_id`, that instrument's file in the store
-   (`backend/data/source-store/instruments/<scope>/<instrument_id>.json`): its `operative_text` and
-   `single_subject` verdicts are what the vote acted on. Quote the operative words in your reasoning.
+3. The topic's annex: `{{REPO}}/docs/codebook/annex/season3/{{TOPIC_KEY}}.md`.
+4. `{{REPO}}/.claude/skills/season-topic-prep/RULINGS.md` (rulings are applied, not re-argued), and the rulings
+   and notes at the end of this brief.
+5. Your batch's findings, all in one file: `{{FINDINGS_FILE}}`. Its `about` line says how it is laid out. It
+   holds this topic's findings only, word for word from the source store, without the source-tracking fields.
+6. For a record finding with an `instrument_id`, that instrument's file: the `bills` table in the findings file
+   gives its path under `{{INSTRUMENTS_DIR}}/`. Its `operative_text` and `single_subject` verdicts are what the
+   vote acted on. Quote the operative words in your reasoning. A bill with no `file` has no instrument in the
+   store.
 
 Your batch (politician id, office, level, state; the level decides the evidence basis):
 
@@ -39,8 +42,8 @@ evidence, but never seats anyone alone.
 Work through the codebook in its fixed order (V1 attribution → V2 relevance → V3 evidence class → V4 shape →
 V5 time → V6 chair) for each finding, then decide the row. Apply the furthest-act rule, "an escape open to
 everyone", "a fallback does not erase a stated requirement" and every gate in RULINGS.md. A pre-filled vote's
-`gate_by_topic["{{TOPIC_KEY}}"]` says which census gate it met on this topic (`none` = no gate); a gated vote
-cannot seat. Cite only findings whose `topic_keys` include `{{TOPIC_KEY}}`.
+`gate` says which census gate it met on this topic (`none` = no gate); a gated vote cannot seat. Every
+finding in your file is on this topic; cite them by `id`.
 
 Give exactly one outcome:
 
@@ -61,29 +64,49 @@ Give exactly one outcome:
   what voters see: a side is written as `direction-only`, no side as `no-evidence` (RULINGS.md "Mapping a blank to a
   V6 reason"). With the `direction-only` tag it must be true.
 
-`evidence_basis` is `record`, `own-words` or `joint` (both), by what you cite. Leave it out for `no-stance`.
+## The reasoning is read by voters
 
-## Output — one file per person, exactly this JSON
+- **No labels.** Never write an annex, codebook-clause or ruling label (S3, Q2, C2, H12, R5-AZ…) in the
+  reasoning. Write the rule in words ("removing a gun from a registration law is a rung 5 act").
+- **Only this person's bills.** Name only bills that are in this person's findings. A ruling's example bill is
+  not their record: state the rule in words instead.
+- **Name a bill as voters would.** Write "SB 1176 (2026)" or "HB 2057 (2016)": chamber letters, number, year in
+  brackets. Never write a store id (`MO-SB-1176-2026`): the gate cannot read it as a bill.
+- **Quote marks are a promise.** Put them only round words copied exactly from a cited finding's `passage` or a
+  cited bill's `operative_text` or title (or the rung text). Otherwise write without quote marks.
+- **End a quote where the source ends it.** Do not add a full stop the source does not have, and do not drop
+  words in the middle. If the source goes on past a comma, close the quote at the comma and put your own full
+  stop outside the quote marks.
+
+A check runs on every code as soon as your file is read, and sends back any code that breaks one of these
+rules, or any rule above, with the reason.
+
+## Output — ONE file for the whole batch
+
+Write `{{CODED_FILE}}` once, when every person is coded, in exactly this shape:
 
 ```json
 {
-  "politician_id": "…",
-  "topic_key": "{{TOPIC_KEY}}",
-  "season": {{SEASON_NUMBER}},
-  "season_id": "{{SEASON_ID}}",
-  "revision_id": "{{REVISION_ID}}",
-  "outcome": "doesnt-fit",
-  "reasoning": "…",
-  "blank_class": "wording",
-  "open_note": "…",
-  "tags": ["direction-only"],
-  "shows_side": true,
-  "finding_ids": ["<64-hex id from the findings file>"],
-  "evidence_basis": "own-words",
-  "codebook": "{{CODEBOOK_VERSION}}",
-  "coded_by": "stage5-coder",
-  "coded_at": "<ISO timestamp>"
+  "batch": "{{BATCH}}",
+  "codes": [
+    {
+      "politician_id": "…",
+      "outcome": "doesnt-fit",
+      "reasoning": "…",
+      "blank_class": "wording",
+      "open_note": "…",
+      "tags": ["direction-only"],
+      "shows_side": true,
+      "finding_ids": ["<64-hex id from the findings file>"]
+    }
+  ]
 }
 ```
 
-Omit `value` unless `seated`, and `shows_side` unless `doesnt-fit`. `tags` may be `[]`. Return one line per person: id, outcome, value or tags.
+One entry per person in your batch. Give `value` only when `seated`; `blank_class`, `open_note`, `tags` and
+`shows_side` only when `doesnt-fit`. Do not write `evidence_basis`, `coded_at`, the season or the revision: the
+ingest sets them from your cited findings and the run. Return one line per person: id, outcome, value or tags.
+
+## Rulings and notes for this batch
+
+{{RULINGS}}

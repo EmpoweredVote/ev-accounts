@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-2131-2020",
+  "scope": "state:mo",
+  "title": "HB2131 (2020 Regular Session): Prohibits certain individuals from possessing a firearm due to domestic violence protection orders.",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB2131&year=2020&code=R",
+    "https://www.house.mo.gov/billtracking/bills201/hlrbillspdf/4263H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Doug Beck",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "37f11659-587e-44ba-995f-5f6ebc5c3d6e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2131-2020.introduced.pdf",
+      "sha256": "869b5a144555fb88fa3b2d077aa36156c48ad3a815ba46635dc58b1ad15fde1b"
+    }
+  },
+  "operative_text": "Section 455.050 (RSMo): If the court issues, after a hearing for any full order of prote ction, an order of protection, the court shall also: (1) Prohibit the respondent from knowingly possessing or purchasing any firearm while the order is in effect; (2) Inform the respondent of such prohibition in writing and, if the re spondent is present, orally; and (3) Forward the order to the state highway patrol so that the state highway patrol can update the respondent's record in the National Instant Criminal Background Check System (NICS). Upon receiving an order under this subs e ction, the state highway patrol shall notify the Federal Bureau of Investigation within twenty-four hours.\nSection 565.076 (RSMo): 3. Upon a conviction for the offense of domestic assault in the fourth degree, the court shall forward the re cord of conviction to the state highway patrol so that the state highway patrol can update the respondent's record in the National Instant Criminal Background Che ck Sys tem (NICS). Upon receiving a record under this subsection, the state highway patrol shall notify the Federal Bureau of Investigation within twenty-four hours.\nSection 565.227 (RSMo): 5. Upon a conviction for the offense of stalking in the second degree, the court shall forward the record of conviction to the state highway patrol so that the state highway patrol can update the respondent's record in the National Instant Criminal Background Check System (NICS). Upon receiving a record under this subsection, the state highway patrol shall notify the Federal Bureau of Investigation within twenty-four hours.\nSection 571.070 (RSMo): A person commits the offense of unlawful possession of a firearm if such person knowingly has any firearm in his or her possession and: (1) Such person has been convicted of a felony under the laws of this state, or of a crime under the laws of any state or of the United States which, if committed within this state, would be a felony; (2) Such person is a fugitive from justice, is habitually in an intoxicated or drugged condition, or is currently adjudged mentally incompetent; (3) Such person has been convicted of a misdemeanor offense of domestic violence under the laws of this state, or of a crime under the laws of any state or of the United States that, if committed in this state, would be a misdemeanor offense of domestic violence; or (4) Such person is subject to an order of protection granted under sections 455.010 to 455.095 or sections 455.500 to 455.538 that was issued afte r a hearing of which the pe rs on had actual notice and at which the person had an opportunity to participate or subject to an equivalent order issued under the laws of another state or the United States. 2. Unlawful possession of a firearm is a class D felony. 3. The provisions of subdivision (1) of subsection 1 of this section shall not apply to the possession of an antique firearm. 4. As used in this section, the following terms mean: (1) \"Family or household member\", the s ame meaning as such term is defined under section 455.010; (2) \"Misdemeanor offense of domestic violence\": (a) Domestic assault in the fourth degree under section 565.076; (b) Stalking in the second degree under section 565.227; or (c) Any misdemeanor offense committed by a family or house hold member of the victim that involves the use or attempted use of physical force or the threatened use of a deadly weapon."
+}

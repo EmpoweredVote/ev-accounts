@@ -1,0 +1,39 @@
+{
+  "id": "CA-AB-2618-2020",
+  "scope": "state:ca",
+  "title": "AB2618 (2019-2020): Firearms: possession by misdemeanant.",
+  "urls": [
+    "http://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=201920200AB2618",
+    "http://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200AB2618"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jesse Gabriel",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Introduced 2020-02-20, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-2618-2020.introduced-2020-02-20.html",
+      "sha256": "79738284b1454e78644b3f9f237fbb3a78dab0382b417ba1c5cfdcc00e5d0cef"
+    },
+    "note": "Introduced text of 2020-02-20 (no floor vote). The only change is adding Section 25400 to the list of misdemeanors in subdivision (a); the rest of 29805 (subds. (b)-(d)) is reprinted unchanged."
+  },
+  "operative_text": "Section 29805 (Penal Code): (a) Except as provided in Section 29855, subdivision (a) of Section 29800, or subdivision (b), any person who has been convicted of, or has an outstanding warrant for, a misdemeanor violation of Section 71, 76, 136.1, 136.5, or 140, subdivision (d) of Section 148, subdivision (f) of Section 148.5, Section 171b, paragraph (1) of subdivision (a) of Section 171c, Section 171d, 186.28, 240, 241, 242, 243, 243.4, 244.5, 245, 245.5, 246.3, 247, 273.5, 273.6, 417, 417.6, 422, 422.6, 626.9, 646.9, 830.95, 17500, 17510, 25300, 25400, 25800, 30315, or 32625, subdivision (b) or (d) of Section 26100, or Section 27510, or Section 8100, 8101, or 8103 of the Welfare and Institutions Code, any firearm-related offense pursuant to Sections 871.5 and 1001.5 of the Welfare and Institutions Code, Section 487 if the property taken was a firearm, or of the conduct punished in subdivision (c) of Section 27590, and who, within 10 years of the conviction, or if the individual has an outstanding warrant, owns, purchases, receives, or has in possession or under custody or control, any firearm is guilty of a public offense, punishable by imprisonment in a county jail not exceeding one year or in the state prison, by a fine not exceeding one thousand dollars ($1,000), or by both that imprisonment and fine."
+}

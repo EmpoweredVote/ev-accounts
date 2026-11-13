@@ -1,0 +1,625 @@
+{
+  "id": "WI-AB-65-2017",
+  "scope": "state:wi",
+  "title": "AB65 (2017-2018 Regular Session): Sales and transfers of firearms and providing a criminal penalty. (FE)",
+  "urls": [
+    "https://docs.legis.wisconsin.gov/2017/proposals/reg/asm/bill/ab65",
+    "https://docs.legis.wisconsin.gov/document/proposaltext/2017/REG/AB65.pdf",
+    "https://docs.legis.wisconsin.gov/document/proposaltext/2017/REG/AB65-engrossed.pdf",
+    "https://docs.legis.wisconsin.gov/2017/related/proposals/ab65-engrossed.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Terese Berceau",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Chris Taylor",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Evan Goyke",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Jason Fields",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "David Crowley",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e9945090-3a5e-4e7e-8601-acb525294a5a"
+    },
+    {
+      "name": "Debra Kolste",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Tod Ohnstad",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Jimmy Anderson",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Melissa Sargent",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Lisa Subeck",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "dc0e341f-b827-45f7-bcc6-35b8376979b3"
+    },
+    {
+      "name": "Mark Spreitzer",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9767d4aa-c6d5-43be-90b9-e619893b535c"
+    },
+    {
+      "name": "Jonathan Brostoff",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Leon Young",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Dianne Hesselbein",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "171dbfaa-58dd-45f4-8526-231d78530461"
+    },
+    {
+      "name": "Jocasta Zamarripa",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4892ed26-cdcc-4c88-82a4-b673f0b43bc9"
+    },
+    {
+      "name": "Daniel Riemer",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Christine Sinicki",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1c73491e-50bd-4a4f-ac7b-b8e65acdd2bb"
+    },
+    {
+      "name": "Jill Billings",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7b6ec364-24fc-446e-91e2-617c91d14b8f"
+    },
+    {
+      "name": "Dana Wachs",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "David Bowen",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "LaTonya Johnson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7660721c-b379-48ea-a286-f6ce60a22af4"
+    },
+    {
+      "name": "Timothy Carpenter",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5130ee75-9b4e-4095-8a78-245f7402d287"
+    },
+    {
+      "name": "Mark Miller",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Christopher Larson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "76a1c7f6-4493-462a-aabd-2307c7cda820"
+    },
+    {
+      "name": "Fred Risser",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Lena Taylor",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "education-school-police: Sec. 3 (165.988) — grants to school districts to employ armed police or former officers as school safety officers",
+        "judicial-criminal-justice: Sec. 13 (939.6195) — mandatory minimum sentence for repeaters whose crime involves a firearm, reaching any crime in chs. 939-951 and 961"
+      ]
+    }
+  ],
+  "votes": [
+    {
+      "date": "2018-02-20",
+      "body": "WI Assembly",
+      "motion": "Assembly: Read a third time and passed",
+      "kind": "roll-call",
+      "yes": 71,
+      "no": 24,
+      "absent": 3,
+      "note": "LegiScan roll call 706482; NV counted with absent in the tally, members keep LegiScan marks",
+      "members": [
+        {
+          "name": "Terese Berceau",
+          "vote": "nay"
+        },
+        {
+          "name": "Sondy Pope",
+          "vote": "nay"
+        },
+        {
+          "name": "Christine Sinicki",
+          "vote": "nay",
+          "politician_id": "1c73491e-50bd-4a4f-ac7b-b8e65acdd2bb"
+        },
+        {
+          "name": "Peter Barca",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Fields",
+          "vote": "yea"
+        },
+        {
+          "name": "Leon Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Tauchen",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Hebl",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeffrey Mursau",
+          "vote": "yea",
+          "politician_id": "58b777cf-d5d6-436b-9229-93ab72d783fb"
+        },
+        {
+          "name": "Dan Knodl",
+          "vote": "yea",
+          "politician_id": "5cf0f099-b460-40f4-9e1a-0663315da02d"
+        },
+        {
+          "name": "Gordon Hintz",
+          "vote": "nay"
+        },
+        {
+          "name": "Joan Ballweg",
+          "vote": "yea"
+        },
+        {
+          "name": "Nick Milroy",
+          "vote": "yea"
+        },
+        {
+          "name": "Samantha Kerkman",
+          "vote": "yea"
+        },
+        {
+          "name": "Ed Brooks",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee Nerison",
+          "vote": "yea"
+        },
+        {
+          "name": "Josh Zepnick",
+          "vote": "nay"
+        },
+        {
+          "name": "John Nygren",
+          "vote": "yea"
+        },
+        {
+          "name": "Frederick Kessler",
+          "vote": "nay"
+        },
+        {
+          "name": "Robin Vos",
+          "vote": "yea",
+          "politician_id": "07e3c239-1edf-47c5-8666-cdc7b8ef52ae"
+        },
+        {
+          "name": "Jim Ott",
+          "vote": "yea"
+        },
+        {
+          "name": "Joel Kleefisch",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Petersen",
+          "vote": "yea",
+          "politician_id": "bfba6969-db1a-4506-8940-530518b6c907"
+        },
+        {
+          "name": "Jeremy Thiesfeldt",
+          "vote": "yea"
+        },
+        {
+          "name": "Kathleen Bernier",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Krug",
+          "vote": "yea",
+          "politician_id": "28d9e7b4-9922-4b53-8def-25f779d2e4d2"
+        },
+        {
+          "name": "Jim Steineke",
+          "vote": "yea"
+        },
+        {
+          "name": "Travis Tranel",
+          "vote": "yea",
+          "politician_id": "99444f5f-9093-4d8a-b7bd-1fb6a4157409"
+        },
+        {
+          "name": "Mike Kuglitsch",
+          "vote": "yea"
+        },
+        {
+          "name": "Andre Jacque",
+          "vote": "yea",
+          "politician_id": "d677bfee-6bc5-4ad1-bb6a-fb6e5b6fe284"
+        },
+        {
+          "name": "Jocasta Zamarripa",
+          "vote": "yea",
+          "politician_id": "4892ed26-cdcc-4c88-82a4-b673f0b43bc9"
+        },
+        {
+          "name": "Tyler August",
+          "vote": "yea",
+          "politician_id": "dfa3c0a6-c750-4b80-9b60-34689836ad32"
+        },
+        {
+          "name": "Dale Kooyenga",
+          "vote": "yea"
+        },
+        {
+          "name": "Amy Loudenbeck",
+          "vote": "yea"
+        },
+        {
+          "name": "Warren Petryk",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Doyle",
+          "vote": "yea",
+          "politician_id": "d08c31db-7c13-4e19-871d-47c76100867d"
+        },
+        {
+          "name": "Chris Taylor",
+          "vote": "nay"
+        },
+        {
+          "name": "Robert Brooks",
+          "vote": "yea",
+          "politician_id": "9419fa91-b7e4-48df-a00b-fc10d225f321"
+        },
+        {
+          "name": "Jill Billings",
+          "vote": "nay",
+          "politician_id": "7b6ec364-24fc-446e-91e2-617c91d14b8f"
+        },
+        {
+          "name": "Rob Swearingen",
+          "vote": "yea",
+          "politician_id": "0404c82e-7503-4b12-b44d-49d2c990a5a9"
+        },
+        {
+          "name": "Mark Born",
+          "vote": "yea",
+          "politician_id": "1351c459-aa30-45bb-abe9-feca27e78d92"
+        },
+        {
+          "name": "Mary Felzkowski",
+          "vote": "yea",
+          "politician_id": "d36c9fc0-3aef-4cb7-8e0f-e8d7a4f5576b"
+        },
+        {
+          "name": "Rob Hutton",
+          "vote": "yea",
+          "politician_id": "80dec07a-0ae9-4512-8d04-4134c11a4af1"
+        },
+        {
+          "name": "John Jagler",
+          "vote": "yea",
+          "politician_id": "6500d1e2-b7f3-4df4-9ca9-c973d91dd573"
+        },
+        {
+          "name": "David Murphy",
+          "vote": "abstain",
+          "politician_id": "3d3b7e41-b4d9-44e9-940e-e65fa85489b7"
+        },
+        {
+          "name": "Joe Sanfelippo",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Schraa",
+          "vote": "yea"
+        },
+        {
+          "name": "John Spiros",
+          "vote": "yea",
+          "politician_id": "94794832-a1f2-475f-93eb-2e8d896fd8be"
+        },
+        {
+          "name": "Paul Tittl",
+          "vote": "yea",
+          "politician_id": "0d122b39-f293-465a-8d3c-bfde10471705"
+        },
+        {
+          "name": "Thomas Weatherston",
+          "vote": "yea"
+        },
+        {
+          "name": "Evan Goyke",
+          "vote": "nay"
+        },
+        {
+          "name": "Eric Genrich",
+          "vote": "yea"
+        },
+        {
+          "name": "Dianne Hesselbein",
+          "vote": "nay",
+          "politician_id": "171dbfaa-58dd-45f4-8526-231d78530461"
+        },
+        {
+          "name": "Debra Kolste",
+          "vote": "nay"
+        },
+        {
+          "name": "Tod Ohnstad",
+          "vote": "nay"
+        },
+        {
+          "name": "Daniel Riemer",
+          "vote": "nay"
+        },
+        {
+          "name": "Melissa Sargent",
+          "vote": "nay"
+        },
+        {
+          "name": "Katrina Shankland",
+          "vote": "yea"
+        },
+        {
+          "name": "Dana Wachs",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Neylon",
+          "vote": "yea",
+          "politician_id": "8ec2e2fd-f691-4e2c-8b0b-17563155c843"
+        },
+        {
+          "name": "Jessie Rodriguez",
+          "vote": "yea",
+          "politician_id": "9931d562-9502-474b-bb10-911134b2c0f0"
+        },
+        {
+          "name": "Robert Kulp",
+          "vote": "yea"
+        },
+        {
+          "name": "Kenneth Skowronski",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Allen",
+          "vote": "yea",
+          "politician_id": "f08a79e9-42fe-4047-b7b1-ba5da9b31018"
+        },
+        {
+          "name": "David Bowen",
+          "vote": "nay"
+        },
+        {
+          "name": "Janel Brandtjen",
+          "vote": "yea"
+        },
+        {
+          "name": "Jonathan Brostoff",
+          "vote": "nay"
+        },
+        {
+          "name": "Dave Considine",
+          "vote": "nay"
+        },
+        {
+          "name": "James Edming",
+          "vote": "yea"
+        },
+        {
+          "name": "Cody Horlacher",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Jarchow",
+          "vote": "abstain"
+        },
+        {
+          "name": "Terry Katsma",
+          "vote": "yea"
+        },
+        {
+          "name": "Joel Kitchens",
+          "vote": "yea",
+          "politician_id": "450a9dfb-a01f-4ad1-b660-517e519c9c0e"
+        },
+        {
+          "name": "Jesse Kremer",
+          "vote": "abstain"
+        },
+        {
+          "name": "John Macco",
+          "vote": "yea"
+        },
+        {
+          "name": "Beth Meyers",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Novak",
+          "vote": "yea",
+          "politician_id": "a84e1f91-5598-46b3-9a90-6d77cf71083c"
+        },
+        {
+          "name": "Romaine Quinn",
+          "vote": "yea",
+          "politician_id": "2dbf3032-65b1-4898-813b-0f62dac0192e"
+        },
+        {
+          "name": "Michael Rohrkaste",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Spreitzer",
+          "vote": "nay",
+          "politician_id": "9767d4aa-c6d5-43be-90b9-e619893b535c"
+        },
+        {
+          "name": "David Steffen",
+          "vote": "yea",
+          "politician_id": "6a2b1e44-55d7-4f9d-b179-d4522bf78e98"
+        },
+        {
+          "name": "Amanda Stuck",
+          "vote": "nay"
+        },
+        {
+          "name": "Lisa Subeck",
+          "vote": "nay",
+          "politician_id": "dc0e341f-b827-45f7-bcc6-35b8376979b3"
+        },
+        {
+          "name": "Nancy Vander Meer",
+          "vote": "yea",
+          "politician_id": "cff417b2-5774-4295-beac-151d5015feb6"
+        },
+        {
+          "name": "Tyler Vorpagel",
+          "vote": "yea"
+        },
+        {
+          "name": "Cindi Duchow",
+          "vote": "yea",
+          "politician_id": "9fe7f550-979e-47d1-befe-667bbadf3018"
+        },
+        {
+          "name": "Jimmy Anderson",
+          "vote": "nay"
+        },
+        {
+          "name": "David Crowley",
+          "vote": "nay",
+          "politician_id": "e9945090-3a5e-4e7e-8601-acb525294a5a"
+        },
+        {
+          "name": "Treig Pronschinske",
+          "vote": "yea",
+          "politician_id": "59538da9-a7ca-4e7d-a57b-e576c7d66621"
+        },
+        {
+          "name": "Patrick Snyder",
+          "vote": "yea",
+          "politician_id": "f59396a3-66bf-481d-8180-0cf1cfea5280"
+        },
+        {
+          "name": "Rob Stafsholt",
+          "vote": "yea",
+          "politician_id": "31542340-858b-49de-8f46-f3054f00709d"
+        },
+        {
+          "name": "Rob Summerfield",
+          "vote": "yea",
+          "politician_id": "fa25d156-89a7-4a29-ade3-e55688cfcee5"
+        },
+        {
+          "name": "Ron Tusler",
+          "vote": "yea",
+          "politician_id": "62d727b1-8ea6-4607-8759-1db943de2c05"
+        },
+        {
+          "name": "Chuck Wichgers",
+          "vote": "yea",
+          "politician_id": "3db74c79-d91c-4bfb-9d1e-7cfc022cde25"
+        },
+        {
+          "name": "Shannon Zimmerman",
+          "vote": "yea",
+          "politician_id": "842f6e36-3ffa-423c-b445-f38f63060de6"
+        },
+        {
+          "name": "Greta Neubauer",
+          "vote": "nay",
+          "politician_id": "4e65b04a-e607-4905-93ef-1e6ec0552fb6"
+        },
+        {
+          "name": "Rick Gundrum",
+          "vote": "yea",
+          "politician_id": "fff18b53-315b-4091-81ca-6f96d881613f"
+        },
+        {
+          "name": "Don Vruwink",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+    "fetched_at": "2026-11-10T21:23:49.722488Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-65-2017.engrossed.pdf",
+      "sha256": "2e7ee03408a90c9c4b974da88807713557d8c903e33a989618307f9a3a296900"
+    }
+  },
+  "operative_text": "Sec. 16 (creating 941.2905(1)): Whoever intentionally furnishes, purchases, or possesses a firearm for a person, knowing that the person is prohibited from possessing a firearm under s. 941.29 (1m), is guilty of a Class G felony.\nSec. 5 (creating 175.35(2g)(b) 2.): The department of justice shall ensure that each notification form under subd. 1. requires the transferee to indicate that he or she is not purchasing the firearm with the purpose or intent to transfer the firearm to a person who is prohibited from possessing a firearm under state or federal law and that each notification form informs the transferee that making a false statement with regard to this purpose or intent is a Class H felony.\nSec. 7 (creating 175.35(3)(b) 2.): A person who violates sub. (2e) by intentionally providing false information regarding whether he or she is purchasing the firearm with the purpose or intent to transfer the firearm to another who the person knows or reasonably should know is prohibited from possessing a firearm under state or federal law is guilty of a Class H felony. The penalty shall include a fine that is not less than $500.\nSec. 12 (creating 939.46(3)): A petitioner under s. 813.12 or 813.122, or an individual whose parent, stepparent, or legal guardian filed a petition under s. 813.122 on behalf of the individual as a child victim, as defined in s. 813.122 (1) (c), has an affirmative defense for an offense under s. 175.35 (2e) that is punishable under s. 175.35 (3) (b) 2., or for an offense under s. 941.2905, if the person prohibited from possessing a firearm was the respondent in the action under s. 813.12 or 813.122.\nSec. 13 (creating 939.6195(1)(a)): “Firearm violation\" means any of the following: 1. A violation of s. 941.29 or 941.2905. 2. A commission of any crime specified under chs. 939 to 951 and 961 if the person uses a firearm in the commission of the crime.\nSec. 13 (creating 939.6195(2)): If a person who is a repeater is convicted of a firearm violation, the court shall impose a bifurcated sentence under s. 973.01. Notwithstanding s. 973.01 (2) (b), the term of confinement in prison portion of the bifurcated sentence shall be at least 4 years, but otherwise the penalties for the crime apply, subject to any applicable penalty enhancement. The court may not place the person on probation.\nSec. 13 (creating 939.6195(3)): This section does not apply to sentences imposed after July 1, 2022.\nSec. 3 (creating 165.988(2)): The department of justice may provide grants from the appropriation under s. 20.455 (3) (g) to school districts to employ law enforcement officers or former law enforcement officers as armed school safety officers.\nSec. 3 (creating 165.988(5)): In the first year, the grant shall cover 75 percent of the costs associated with employing armed school safety officers; in the 2nd year, the grant shall cover 50 percent of the costs associated with employing armed school safety officers; and in the 3rd year, the grant shall cover 25 percent of the costs associated with employing armed school safety officers."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "CA-SB-1375-2020",
+  "scope": "state:ca",
+  "title": "SB1375 (2019-2020): Firearms.",
+  "urls": [
+    "http://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=201920200SB1375",
+    "http://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200SB1375"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Tom Umberg",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "712be98b-a05d-4605-9603-cd5d86abfad1"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2020-03-26, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-SB-1375-2020.amended-2020-03-26.html",
+      "sha256": "de701bcb2e52a7fe51503ccb379fa73d00ee3dcda4dab0bdc2142b754d085f6d"
+    },
+    "note": "Amended Mar 26, 2020; no floor vote recorded, saved at last version. Section 27520 strikes \"No\" and the old lettered list and re-letters it; adds \"acquire within this state or bring into this state\" and subdivision (b). Section 5343.5 (Food and Agricultural Code border sign) is reprinted with no marks, omitted."
+  },
+  "operative_text": "Section 27520 (Penal Code): (a) A person, corporation, or dealer shall not acquire within this state or bring into this state a firearm for the purpose of selling, loaning, or transferring the firearm, if the person, corporation, or dealer has either of the following:\n(1) In the case of a dealer, intent to violate Section 27510 or 27540.\n(2) In any other case, intent to avoid either of the following:\n(A) The provisions of Section 27545.\n(B) The requirements of any exemption to the provisions of Section 27545.\n(b) The provisions of this section are cumulative and shall not be construed as restricting the application of any other law. However, an act or omission punishable in different ways by different provisions of this code shall not be punished under more than one provision.\nSection 27570 (Penal Code): (b) Sections 27560 and 27565 shall not apply to a person who reports ownership of a firearm after the applicable grace period specified in Section 27560 or 27565 expires if evidence of that violation arises only as the result of the person submitting the report described in Section 27560 or 27565.\nSection 27590 (Penal Code): (c)(2) A violation of Section 27505 involving the sale, loan, or transfer of a handgun or a centerfire semiautomatic rifle to a minor.\n(3) A violation of Section 27510 involving the delivery of a handgun or a centerfire semiautomatic rifle.\n(4) A violation of subdivision (a), (c), (d), (e), or (f) of Section 27540 involving a handgun or a centerfire semiautomatic rifle.\n(5) A violation of Section 27545 involving a handgun or a centerfire semiautomatic rifle.\n(7) A violation of Section 27585 involving a handgun or a centerfire semiautomatic rifle."
+}

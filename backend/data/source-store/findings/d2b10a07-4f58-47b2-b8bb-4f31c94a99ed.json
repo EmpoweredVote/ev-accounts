@@ -25,7 +25,70 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "d0408510b99d35090c40b5547c5404fecb3f57da7fe854e2d44c61a9a8fb44fb",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=27457",
+      "date": "2026-04-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-872-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "note": "SC Senate roll call (2nd Reading, 44-0) on S0872 (126th General Assembly), official vote page (LegiScan row checked name by name against it); linked by LegiScan member id 25027 to the roster (name and current seat checked; identity step 2026-11-10).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-sc-2026-11-10",
+        "fetched_at": "2026-11-10T23:17:03.824Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "noncitizen voting",
+        "mail-ballot ID",
+        "H. 3003 photo ID law"
+      ],
+      "places": [
+        "On the Record (0 appearances; also searched by name)",
+        "Ballotpedia: blocked (listed as refused, not fetched): https://ballotpedia.org/",
+        "blocked: https://justfacts.votesmart.org (listed as refused, not fetched)",
+        "legislature member page https://www.scstatehouse.gov/member.php?code=0477840852 (Senate District 19)",
+        "Senate Journals 2025-02-20, 2025-02-25, 2025-04-15, 2026-01-22, 2026-03-03: read, no remarks by her on the subject",
+        "campaign site https://devineforsenate.com home page: no voting content",
+        "6 web searches (name + voter ID, photo ID, proof of citizenship/SAVE Act/H. 3594/S. 128, 2026 Senate debate, campaign/newsletter/questionnaire): nothing on the subject",
+        "blocked: https://bluevoterguide.org (listed as refused, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-10T21:21:28.813Z",
+      "by": "search-sc-2026-11-10"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official SC vote pages and House/Senate Journals, LegiScan bill records, in bills/sc-bills.json (identity step 2026-11-10)"
+      ],
+      "found": 1,
+      "at": "2026-11-10T23:17:03.824Z",
+      "by": "identity-sc-2026-11-10"
+    }
+  ]
 }

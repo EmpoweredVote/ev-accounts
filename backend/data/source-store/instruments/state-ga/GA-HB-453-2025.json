@@ -1,0 +1,62 @@
+{
+  "id": "GA-HB-453-2025",
+  "scope": "state:ga",
+  "title": "HB453 (2025-2026 Regular Session): Georgia Red Flag Protective Order Act; enact",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/70325",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/232439"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shea Roberts",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9f5a6746-3053-4e18-90c4-5418a240e679"
+    },
+    {
+      "name": "Esther Panitch",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6db8c29a-78a2-4038-b80e-7bd79fb585ff"
+    },
+    {
+      "name": "Lisa Campbell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1838536a-ea4d-4054-ad51-dcf9bde3f8b9"
+    },
+    {
+      "name": "Bryce Berry",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4e119c6a-8ded-423f-9227-6e9d30236f4b"
+    },
+    {
+      "name": "Tangie Herring",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e1c88a0c-fbe5-44a2-a3b2-ac705b709d89"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-453-2025.introduced.pdf",
+      "sha256": "fcd5549b1ad64087ae153cb33f701f50d864bd97b7b60a6753455ee09867e79c"
+    }
+  },
+  "operative_text": "SECTION 1 (adding O.C.G.A. 16-11-142): (b) A petition for a risk protection order may be filed by a family or household member of a respondent or by a law enforcement officer.\nSECTION 1 (adding O.C.G.A. 16-11-143): (b) Upon notice and a hearing on the matter, if the court finds by clear and convincing evidence that the respondent poses a significant danger of causing personal injury to himself or herself or others by having in his or her custody or control, or by purchasing, possessing, or receiving, a firearm or any ammunition, the court shall issue a risk protection order for a period of time that it deems appropriate, but not exceeding 12 months.\nSECTION 1 (adding O.C.G.A. 16-11-144): (c) After a request under subsection (a) of this Code section, if the court finds there is reasonable cause to believe that the respondent poses a significant danger of causing personal injury to himself or herself or others in the near future by having in his or her custody or control, or by purchasing, possessing, or receiving, a firearm or ammunition, the court shall issue a temporary ex parte risk protection order.\nSECTION 1 (adding O.C.G.A. 16-11-147): (a) Upon issuance of a risk protection order or temporary ex parte risk protection order under this part, the court shall order the respondent to surrender to the local law enforcement agency all firearms and ammunition owned by the respondent in the respondent's custody, control, or possession, except as provided in Code Section 16-11-149, and any weapons carry license or renewal license issued under Code Section 16-11-129 held by the respondent.\nSECTION 1 (adding O.C.G.A. 16-11-148): (a) If a risk protection order is vacated or ends without extension, a law enforcement agency holding a firearm or any ammunition owned by the respondent, or a weapons carry license or renewal license issued under Code Section 16-11-129 held by the respondent, that has been surrendered or seized pursuant to this part shall return such surrendered or seized firearm, ammunition, or license as requested by a respondent only after confirming through a background check that the respondent is currently eligible to own or possess firearms and ammunition under federal and state law and after confirming with the court that the risk protection order has been vacated or has ended without extension.\nSECTION 1 (adding O.C.G.A. 16-11-149.1): (b) The issuing court shall, within three business days after issuance of a risk protection order or temporary ex parte risk protection order, forward all available identifying information concerning the respondent, along with the date of issuance of the order, to the Georgia Crime Information Center.\nSECTION 1 (adding O.C.G.A. 16-11-149.2): (b) A person who has in his or her custody or control a firearm or any ammunition or who purchases, possesses, or receives a firearm or any ammunition with knowledge that he or she is prohibited from doing so by a risk protection order or temporary ex parte risk protection order issued under this part commits a misdemeanor of a high and aggravated nature, punishable as provided in Code Section 17-10-4."
+}

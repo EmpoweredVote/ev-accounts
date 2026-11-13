@@ -85,7 +85,167 @@
           "sha256": "93266e8d17c0b31728a6c78573a4afda6517fbacbe2200b4273a5f2e422960c1"
         }
       }
+    },
+    {
+      "id": "5dc5ff336a639ab5900ef167d3b3a549505deb4cea313cfb82eccf4bc309e626",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/sb80/vote_history.pdf",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-80-2024",
+      "act": "yea",
+      "motion": "Senate: Senate third reading, passed",
+      "note": "KY Senate roll call (Senate third reading, passed, 27-7) on SB80 (2024 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 1241 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "964f43dd513a6a900fe46730c227d9b9c229eaaa4159401edbd436f6f4e82228",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate with Senate Committee Substitute (1)",
+      "note": "KY Senate roll call (third reading, passed Senate with Senate Committee Substitute (1), 31-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 1241 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa8ad840466678434828836de887f898e45dc3f627478ec4fe8931f410f4e2d2",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb139/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-139-2026",
+      "act": "yea",
+      "motion": "Senate: override of the Governor's veto, final passage (Senate)",
+      "note": "KY Senate roll call (override of the Governor's veto, final passage (Senate), 32-6) on HB139 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 1241 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8cb257bf2da3336ed900008c97f3e633ffee27db4f47f3bef14f6db1a9004902",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb154/vote_history.pdf",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-154-2026",
+      "act": "yea",
+      "motion": "Senate: third reading, passed Senate",
+      "note": "KY Senate roll call (third reading, passed Senate, 31-7) on SB154 (2026 Regular Session); LegiScan roll call, tally checked against the official vote-history PDF; linked by LegiScan member id 1241 to the roster (name and current seat checked; identity step 2026-11-11).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "identity-ky-2026-11-11",
+        "fetched_at": "2026-11-11T21:12:46.603Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "secondary ID (SB 154 / HB 139, 2026)",
+        "proof of citizenship / noncitizen voter-roll checks (HB 139, 2026)",
+        "SB 2 (2020)",
+        "election integrity"
+      ],
+      "places": [
+        "status: sitting Senator from Hazard, named in a Senate caucus release as chair of the Natural Resources and Energy Committee (https://kysenaterepublicans.com/press-releases/2026/4/6/smiths-public-service-commission-reform-bill-makes-final-passage); brief gives the 2026-11-03 win",
+        "On the Record (0 meetings)",
+        "blocked: https://www.hazard-herald.com/opinion/week-12-of-the-2026-legislative-session/article_9ea14876-5eb5-443b-b056-0241ca6dbd60.html (HTTP 429 Too Many Requests; a search summary says it is his 2026-04-01 column on the HB 139 elections bill, so his own words on the subject may be there and were not read)",
+        "blocked: https://www.kentuckynewera.com/news/state/article_a5304253-9543-527d-8ceb-16de2a3792c6.html (returned a 66-byte error body, not read)",
+        "the Senate caucus press-release site kysenaterepublicans.com: his releases found are about the Public Service Commission, flood relief, and other topics, nothing on the subject",
+        "https://www.wkyufm.org/2026-03-25/kentucky-elections-bill-would-increase-donor-limits-restrict-forms-of-voter-id read: does not quote him",
+        "legislature.ky.gov sponsored-bills page https://apps.legislature.ky.gov/record/IndividualSponsorPages/292.html (sponsorships not collected per instructions)",
+        "web searches (6): voter ID / photo ID; his column on HB 139; citizenship / noncitizen / SB 2; caucus release search; questionnaire / forum / interview: no readable own-words passage found",
+        "campaign site: none found",
+        "blocked: Ballotpedia (refuses fetches)",
+        "blocked: justfacts.votesmart.org (refuses fetches)"
+      ],
+      "found": 0,
+      "at": "2026-11-11T18:31:50.818Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "secondary ID (SB 154 / HB 139, 2026)",
+        "proof of citizenship / noncitizen voter-roll checks (HB 139, 2026)",
+        "SB 2 (2020)",
+        "election integrity"
+      ],
+      "places": [
+        "status: sitting Senator from Hazard, named in a Senate caucus release as chair of the Natural Resources and Energy Committee (https://kysenaterepublicans.com/press-releases/2026/4/6/smiths-public-service-commission-reform-bill-makes-final-passage); brief gives the 2026-11-03 win",
+        "On the Record (0 meetings)",
+        "blocked: https://www.hazard-herald.com/opinion/week-12-of-the-2026-legislative-session/article_9ea14876-5eb5-443b-b056-0241ca6dbd60.html (HTTP 429 Too Many Requests; a search summary says it is his 2026-04-01 column on the HB 139 elections bill, so his own words on the subject may be there and were not read)",
+        "blocked: https://www.kentuckynewera.com/news/state/article_a5304253-9543-527d-8ceb-16de2a3792c6.html (returned a 66-byte error body, not read)",
+        "the Senate caucus press-release site kysenaterepublicans.com: his releases found are about the Public Service Commission, flood relief, and other topics, nothing on the subject",
+        "https://www.wkyufm.org/2026-03-25/kentucky-elections-bill-would-increase-donor-limits-restrict-forms-of-voter-id read: does not quote him",
+        "legislature.ky.gov sponsored-bills page https://apps.legislature.ky.gov/record/IndividualSponsorPages/292.html (sponsorships not collected per instructions)",
+        "web searches (6): voter ID / photo ID; his column on HB 139; citizenship / noncitizen / SB 2; caucus release search; questionnaire / forum / interview: no readable own-words passage found",
+        "campaign site: none found",
+        "blocked: Ballotpedia (refuses fetches)",
+        "blocked: justfacts.votesmart.org (refuses fetches)",
+        "re-search 2026-11-11: blocked: https://www.hazard-herald.com/opinion/week-12-of-the-2026-legislative-session/article_9ea14876-5eb5-443b-b056-0241ca6dbd60.html (HTTP 429 again on the one allowed retry); no original copy of the column found elsewhere"
+      ],
+      "found": 0,
+      "at": "2026-11-11T19:00:42.299Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "official KY vote-history PDFs (apps.legislature.ky.gov) and LegiScan bill records, in bills/ky-bills.json (identity step 2026-11-11)"
+      ],
+      "found": 4,
+      "at": "2026-11-11T21:12:46.603Z",
+      "by": "identity-ky-2026-11-11"
+    }
+  ]
 }

@@ -1,0 +1,59 @@
+{
+  "politician_id": "87e1fa15-179e-44bf-9fbe-e0aef80945e1",
+  "findings": [
+    {
+      "id": "c6d8281c06e1527b12376ad340ef7182f75c49f7ae0a9480ac8b74e3e105fbd9",
+      "kind": "own-words",
+      "url": "https://www.ballotready.org/people/alexandra-duarte",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Alexandra will protect our God-given 2nd Amendment rights, making permits more available, ammo cheaper, and guns easier to buy.",
+      "note": "Guns issue summary on her BallotReady candidate profile, written in the third person as the candidate's own issue text (the matching issue page on her own site was not found). Says she will protect Second Amendment rights, make permits more available, lower ammunition prices and make guns easier to buy.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "permits to buy or carry",
+        "cost of ammunition",
+        "easier gun purchase"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.462Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "permits to buy or carry",
+        "cost of ammunition",
+        "ease of buying guns",
+        "bans on a type of firearm",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site home, about, issues and endorsements pages (nothing on the subject; issues page has crime but no guns)",
+        "sponsor list: covered by LegiScan bulk check",
+        "BallotReady candidate profile (confirms 2026 general-election candidacy for State Senate District 4; guns issue summary saved)",
+        "blocked: https://goodparty.org/candidate/alexandra-duarte/california-state-senate-district-4 (HTTP 429)",
+        "Ballotpedia: page came back empty, not reviewed: https://ballotpedia.org/Alexandra_Duarte",
+        "web search on her name plus gun rights and Second Amendment (nothing on her beyond an agriculture-outlet profile with no firearms mention)",
+        "web search on her name and 2026 candidacy (candidate pages, primary result lists)",
+        "not reviewed: https://agnetwest.com/?p=155827",
+        "not reviewed: https://www.joincalifornia.com/candidate/15146"
+      ],
+      "found": 1,
+      "at": "2026-11-13T01:27:26.462Z",
+      "by": "source-collector"
+    }
+  ]
+}

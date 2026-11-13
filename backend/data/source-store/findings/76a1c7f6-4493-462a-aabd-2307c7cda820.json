@@ -458,6 +458,594 @@
         "fetched_at": "2026-10-28T23:15:12.774Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "821551fc5f99ecd4b2fe26b478624163211248f6ce053b008bdd22dca7065c95",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/asm/bill/ab495",
+      "date": "2022-02-15",
+      "date_precision": "day",
+      "instrument_id": "WI-AB-495-2021",
+      "act": "nay",
+      "motion": "Senate: Read a third time and concurred in",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Senate, Senate: Read a third time and concurred in, 2022-02-15: nay (tally 20–12); census gate: none.",
+      "subjects": [
+        "licensees may keep a firearm in a locked vehicle on school grounds",
+        "firearm within 1,000 feet of a school becomes a forfeiture"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-495-2021.enrolled.pdf",
+          "sha256": "bcb0941e36d8430d4e80f6360c613083e04acb4ab7dd500f5b3ad6001baa0e94"
+        }
+      }
+    },
+    {
+      "id": "17238af0339f53c634e8c07d6b1981d1aab8b73f310c08dc9777dce56982b464",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/sen/bill/sb466",
+      "date": "2024-01-16",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-466-2023",
+      "act": "nay",
+      "motion": "Senate: Read a third time and passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Senate, Senate: Read a third time and passed, 2024-01-16: nay (tally 22–10); census gate: none.",
+      "subjects": [
+        "payment networks barred from firearms-retailer merchant codes",
+        "government lists of gun owners banned",
+        "background-check records may not be turned into a purchaser list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-466-2023.enrolled.pdf",
+          "sha256": "6d089108620592801f50b209f20b361fb9a3c5e87a5f8243957c44092e2874a2"
+        }
+      }
+    },
+    {
+      "id": "a59cf3e77e5a76c0748bc9909b61873b7a3fb457af9de7a3db0ba0019b8732d3",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2021/proposals/reg/sen/bill/sb570",
+      "date": "2021-11-08",
+      "date_precision": "day",
+      "instrument_id": "WI-SB-570-2021",
+      "act": "nay",
+      "motion": "Senate: Read a third time and passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WI Senate, Senate: Read a third time and passed, 2021-11-08: nay (tally 20–12); census gate: none.",
+      "subjects": [
+        "limits civil lawsuits against gun and ammunition makers and sellers",
+        "defendants win attorney fees when a barred suit is dismissed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-570-2021.enrolled.pdf",
+          "sha256": "29c3c905eadc72bf48ca38dd1c01f5ea7582fa8733684688d6d5ce79a216b9db"
+        }
+      }
+    },
+    {
+      "id": "8d249c737efcd12830329e8fbb19ba0e1356d73f70d91ba86004496bc2652a3e",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab319",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-319-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-319-2025 (LegiScan sponsor list): AB319 (2025-2026 Regular Session): Extreme risk protection temporary restraining orders and injunctions, making an appropriation, and providing a penalty. (FE).",
+      "subjects": [
+        "extreme risk protection orders that remove firearms",
+        "firearm surrender and return rules",
+        "felony for possessing a firearm under such an order",
+        "training grants for police on these orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-319-2025.introduced.pdf",
+          "sha256": "9d2bc9995dfe36189209ab49eb0822f8742213209bff822dc3b93e4b245062d3"
+        }
+      }
+    },
+    {
+      "id": "4d47c43ac5e1956992aa84573125d68212f67bc576871cfe76736b0e29a74e86",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab321",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-321-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-321-2025 (LegiScan sponsor list): AB321 (2025-2026 Regular Session): Prohibition against undetectable firearms, possessing a frame or receiver of a firearm without a serial number, and providing a penalty..",
+      "subjects": [
+        "undetectable firearms banned",
+        "unserialized frames and receivers banned",
+        "felony penalties for manufacture, sale and possession"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-321-2025.introduced.pdf",
+          "sha256": "c772127383cb636a604d984fd0a761553ac3167317db9fe3ee6994c4a2ba5349"
+        }
+      }
+    },
+    {
+      "id": "15e540178127385ecd197425f74a764d40d69081894b26d9d1cf5ce0d8ca0b68",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab325",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-325-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-325-2025 (LegiScan sponsor list): AB325 (2025-2026 Regular Session): Sales and transfers of firearms and providing a penalty. (FE).",
+      "subjects": [
+        "background check required for private firearm transfers",
+        "universal transfers through licensed dealers with family-gift exception",
+        "penalty and 2-year firearm ban for illegal transfer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-325-2025.introduced.pdf",
+          "sha256": "ab2e9cc55e3b3cf8840766c9cc0ff162e60a1250455ffc793fdb6950b9517865"
+        }
+      }
+    },
+    {
+      "id": "1ad38e1ac21066281a97ea43d871c2d175cbf347f11d3fb0b537b1fed041e13b",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab356",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-356-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-356-2025 (LegiScan sponsor list): AB356 (2025-2026 Regular Session): Storage of a firearm in a residence if child is present and providing a penalty..",
+      "subjects": [
+        "safe-storage requirement for firearms in homes with children",
+        "misdemeanor then felony penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-356-2025.introduced.pdf",
+          "sha256": "49994cd5ace41385117c48f6e7444422d22bced446d6441a130696e0f0fc0003"
+        }
+      }
+    },
+    {
+      "id": "d8f253f5088ceea80689bb3e1d025dd2953713d71bac8c12fba9e645fffea0ca",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab427",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-427-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-427-2025 (LegiScan sponsor list): AB427 (2025-2026 Regular Session): Prohibiting possessing a firearm on college and university campuses and providing a penalty..",
+      "subjects": [
+        "firearm possession banned on college and university grounds",
+        "concealed-carry licence no longer allows campus carry",
+        "trespass-notice route for campus buildings removed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-427-2025.introduced.pdf",
+          "sha256": "65c0f7cfa897072e03ca3ec003af221631c207001575158e641d5348ed367e69"
+        }
+      }
+    },
+    {
+      "id": "80099d32061d668474aa01481ba94e3782c043564a11bd338021946d4d439900",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab484",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-484-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-484-2025 (LegiScan sponsor list): AB484 (2025-2026 Regular Session): Training requirements for a license to carry a concealed weapon..",
+      "subjects": [
+        "live-fire and safety content required in concealed-carry training",
+        "continuing training required to renew license",
+        "hunter education no longer proves training"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-484-2025.introduced.pdf",
+          "sha256": "79576779721ab50f3b682354b5a877afb40901dd18d642df8026af7f52666765"
+        }
+      }
+    },
+    {
+      "id": "9d48cfa32272e111b51a88b40ae5db5d795387a12fef81ec17e0256eaed4a532",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2017/proposals/reg/asm/bill/ab65",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-65-2017",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-65-2017 (LegiScan sponsor list): AB65 (2017-2018 Regular Session): Sales and transfers of firearms and providing a criminal penalty. (FE).",
+      "subjects": [
+        "straw purchase of firearms made a felony",
+        "felony for lying on the purchase form about buying for a prohibited person",
+        "4-year minimum prison term for repeat offenders with firearm crimes",
+        "state grants for armed school safety officers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-65-2017.engrossed.pdf",
+          "sha256": "2e7ee03408a90c9c4b974da88807713557d8c903e33a989618307f9a3a296900"
+        }
+      }
+    },
+    {
+      "id": "2d68fec7939037bb20b71dd44e89fa798dee6d164804fc6fbe6a1852c9fbc331",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/asm/bill/ab686",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-686-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-686-2023 (LegiScan sponsor list): AB686 (2023-2024 Regular Session): Possession of a dangerous weapon by a person under the age of 18..",
+      "subjects": [
+        "minors' hunting exemption for rifles and shotguns narrowed",
+        "no exemption for minors with short-barrel firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-686-2023.introduced.pdf",
+          "sha256": "641eb1c9551030acba8f7361bfb9cbaed2679eb8d8981fdb961ae3ae4801b613"
+        }
+      }
+    },
+    {
+      "id": "1fd3442384f2a10a8682c46f8f692b79ed713bbe1a7b2759544c6cde0c17f7d5",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2023/proposals/reg/asm/bill/ab717",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-717-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-717-2023 (LegiScan sponsor list): AB717 (2023-2024 Regular Session): Prohibiting firearm accessories that accelerate the rate of fire of a semiautomatic firearm and providing a penalty..",
+      "subjects": [
+        "ban on bump-fire devices and rate-of-fire accessories",
+        "Class G felony penalty",
+        "180-day grace period for possession"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-717-2023.introduced.pdf",
+          "sha256": "5d1d595fbade75b2695a4381ef2f148f22f234dedd15eeb8a62cda325e94847a"
+        }
+      }
+    },
+    {
+      "id": "2262781ba2e1e880d866af5aa1098a7e70b4893b03c875b9b46aaa47619e2b41",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/sen/bill/sb330",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-SB-330-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-SB-330-2025 (LegiScan sponsor list): SB330 (2025-2026 Regular Session): Waiting period for purchase of handguns..",
+      "subjects": [
+        "48-hour waiting period for handgun purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T21:23:49.722488Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-SB-330-2025.introduced.pdf",
+          "sha256": "d1c8aca51be26a8ce7048274dfed3b9489e5b8f31c6cc4aefc64d15a44aa86f7"
+        }
+      }
+    },
+    {
+      "id": "c6bbceae25b796cdad721bd9f0bca1a507166d022a9b894fe41d71ca9d9f0455",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/senate/07/Larson/press-releases/sen-larson-commends-gov-evers-passionate-plea-for-gun-reform",
+      "date": "2025-01-22",
+      "date_precision": "day",
+      "passage": "By calling for universal background checks, a red flag law, safe storage requirements, and mandatory waiting periods for firearm purchases, Evers has aligned himself with the vast majority of our Wisconsin neighbors, who - regardless of who they voted for in the last election - overwhelmingly support these common-sense, life-saving measures.",
+      "note": "His statement on the governor's State of the State address, speaking for background checks on all sales, a red-flag law, safe storage rules and waiting periods.",
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders",
+        "safe storage",
+        "waiting period for gun purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.223Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5c7653e7ebd2cfeb5c9b279eaf8eccef9bb35ed8d355bbd7f3877897f4be1aa",
+      "kind": "own-words",
+      "url": "https://legis.wisconsin.gov/senate/07/Larson/press-releases/sen-larson-commends-gov-evers-passionate-plea-for-gun-reform",
+      "date": "2025-01-22",
+      "date_precision": "day",
+      "passage": "We cannot change that now, but we can ensure that men and women struggling with depression and suicidal thoughts don’t have ready access to a gun. 85% of suicide attempts with a gun are successful versus less than 3% of attempts by drug overdose. Over 60% of all gun deaths in Wisconsin are by suicide.",
+      "note": "Same release; he links gun access to suicide and says laws should limit access for people in crisis, naming a friend and former legislator who died by suicide with a gun.",
+      "subjects": [
+        "limit who may have a gun",
+        "gun suicide"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.223Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "68ee62c5512d96845dd735d670a08df6e6763e8853e6fd7af16ec22ac0b727c7",
+      "kind": "own-words",
+      "url": "https://wpr.org/news/wisconsin-democrats-reintroduce-gun-regulations-after-republicans-pull-them-from-budget",
+      "date": "2025-06-03",
+      "date_precision": "day",
+      "passage": "Every suicide is preventable, and adding a waiting period … puts a barrier between somebody making an irrational decision and an irreversible harm,",
+      "note": "Quoted by WPR (the outlet quoted him; the ellipsis is in the outlet's text). He argues a waiting period would reduce impulsive homicides and suicides.",
+      "subjects": [
+        "waiting period for gun purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.223Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4716884c9fa9ad53b96282f28c855ae149a7f2f41dfcc71cedc5dd2a979a86ce",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/republicans-again-did-nothing-to-address-gun-violence",
+      "date": "2018-03-20",
+      "date_precision": "day",
+      "passage": "They rejected an amendment I offered which would have prevented individuals convicted of domestic violence from purchasing and possessing firearms.",
+      "note": "His statement (posted on Urban Milwaukee) after the last day of session: he offered an amendment barring people convicted of domestic violence from buying or having guns. The same release says Senate colleagues' amendments for universal background checks and a return of the 48-hour waiting period were also rejected.",
+      "subjects": [
+        "limit who may have a gun",
+        "domestic violence and guns",
+        "check every gun buyer",
+        "waiting period for gun purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.223Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dbf821ebb3a2af06849576292dcb992f446b1a42eaf3ec0db78b075926286d3c",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/republicans-again-did-nothing-to-address-gun-violence",
+      "date": "2018-03-20",
+      "date_precision": "day",
+      "passage": "They even rejected an amendment that would require universal background checks for all gun purchases.",
+      "note": "Same release; he supports requiring background checks on all gun purchases.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.223Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9932ce16c211832b7101e251e456d9426184994dec5b86182a42fe93a1e8feed",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/statement-from-sen-larson-on-gop-repealing-48-hour-cooling-off-period-for-gun-purchases/",
+      "date": "2015-04-21",
+      "date_precision": "day",
+      "passage": "Instead of focusing on ways to make our communities safer and implementing background checks for all types of firearm sales – which polling has shown a vast majority of the public and even 74% of National Rifle Association members support – Republicans took a completely irresponsible step backwards by ignoring the public safety and mental health needs of our community.",
+      "note": "His statement (posted on Urban Milwaukee) opposing repeal of the 48-hour handgun waiting period and calling for background checks on all firearm sales.",
+      "subjects": [
+        "waiting period for gun purchases",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.223Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7354ee5e4bf20366b0857221ec350109948bef1ae0fcd96d095c99f5da024463",
+      "kind": "own-words",
+      "url": "https://urbanmilwaukee.com/pressrelease/irresponsible-republican-bill-proposes-arming-teens",
+      "date": "2017-03-28",
+      "date_precision": "day",
+      "passage": "Instead of fighting this public health crisis, Republicans in control of the Legislature are proposing to give guns to teens with no training – an idea that is unwarranted, absurd, and dangerous.",
+      "note": "His statement (posted on Urban Milwaukee) opposing a bill that would put more handguns in teens' hands, skip concealed-carry training and allow more guns in school zones; he names stronger background check laws as the alternative.",
+      "subjects": [
+        "minimum age for guns",
+        "carry a gun without training",
+        "guns near schools",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.223Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e2eb8722ed192af60d43bf95d615f47c887fcbe90f4650b119e060525d956f5f",
+      "kind": "own-words",
+      "url": "https://senatorchrislarson.substack.com/p/big-meh-energy-wrapping-up-the-2025-26-04-22",
+      "date": "2026-04-22",
+      "date_precision": "day",
+      "passage": "The topics were quite varied, including healthcare, the environment, consumer protection, campaign finance, criminal justice reform, gun safety, worker rights, and - perhaps most important - public education.",
+      "note": "From his own newsletter wrapping up the 2025-26 session. He says the bills he co-sponsored covered many topics, gun safety among them. No bill number is given in this sentence. [kept from the first search pass]",
+      "subjects": [
+        "gun safety bills",
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.223Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c22869df7cfeed10944f0b8df53df863e5b67edf9365b1d14453465c2940b4d1",
+      "kind": "own-words",
+      "url": "https://senatorchrislarson.substack.com/p/what-is-government-for-25-10-02",
+      "date": "2025-10-02",
+      "date_precision": "day",
+      "passage": "Two distinct, troubling ingredients of modern American life - extremism and gun violence - have come together to form a deadly cocktail, and the President and his allies have already begun to weaponize the latest example (the cowardly murder of right-wing personality Charlie Kirk) as a pretext to dismantle one of the most fundamental American freedoms - the freedom of speech.",
+      "note": "From his own newsletter after the killing of Charlie Kirk. He names gun violence as a troubling feature of American life; the passage is mainly about free speech and proposes no gun measure. [kept from the first search pass]",
+      "subjects": [
+        "gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-10T22:15:40.223Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b71ba74c9790ab4bc175a062262239f6602f39e7d8aa6dc4d5ae1bd608c73b43",
+      "kind": "record",
+      "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab324",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WI-AB-324-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of WI-AB-324-2025 (LegiScan sponsor list): AB324 (2025-2026 Regular Session): Waiting period for purchase of handguns..",
+      "subjects": [
+        "48-hour waiting period before handgun purchase",
+        "dealer may not transfer if buyer found prohibited"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official docs.legis.wisconsin.gov HTML of the same version (change marks kept), checked against the saved official PDF",
+        "fetched_at": "2026-11-10T23:03:34.524773Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WI-AB-324-2025.introduced.pdf",
+          "sha256": "d814ae14dfcc4c45223cdbba60030204499773c3386b2eafc65e75acd3f7ac1a"
+        }
+      }
     }
   ],
   "searches": [
@@ -499,6 +1087,35 @@
       "found": 18,
       "at": "2026-10-28T23:15:12.774Z",
       "by": "identity-wi-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "waiting period for gun purchases",
+        "red-flag orders",
+        "safe storage",
+        "domestic abusers and guns",
+        "carry a gun without a permit or training",
+        "guns near schools",
+        "gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status: sitting Senate District 7 member and 2026 general-election candidate (WUWM voter guide https://www.wuwm.com/wisconsin-state-senate-district-7-candidates)",
+        "official Senate press releases https://legis.wisconsin.gov/senate/07/Larson/press-releases/ (2025 release opened; the older releases were read in their Urban Milwaukee copies)",
+        "campaign site https://voteforlarson.org/ (home page only; nothing on the subject)",
+        "Urban Milwaukee copies of his press releases (2015, 2017, 2018)",
+        "WPR 2025-06-03 news story quoting him",
+        "Ballotpedia (not fetched: page comes back empty to the fetch tool)",
+        "sponsor list: covered by LegiScan bulk check (AB 319, 321, 325 already on file)",
+        "web search: 3 searches",
+        "first search pass stopped early; 2 finding(s) kept from it"
+      ],
+      "found": 9,
+      "at": "2026-11-10T22:15:40.223Z",
+      "by": "source-collector"
     }
   ]
 }

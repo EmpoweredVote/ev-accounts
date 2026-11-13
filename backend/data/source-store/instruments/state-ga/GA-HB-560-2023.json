@@ -1,0 +1,62 @@
+{
+  "id": "GA-HB-560-2023",
+  "scope": "state:ga",
+  "title": "HB560 (2023-2024 Regular Session): Crimes and offenses; revise various laws pertaining to the carrying and possession of firearms and other weapons",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/64735",
+    "https://www.legis.ga.gov/api/legislation/document/20232024/215646"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karen Mathiak",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4a2dbdf1-1076-4b50-9e18-b296a0578f53"
+    },
+    {
+      "name": "Alan Powell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0df6f5b5-44f5-4e3a-8359-d032a379cf0e"
+    },
+    {
+      "name": "Leesa Hagan",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ff67c697-abc4-4f4c-aae9-a5e8d557eb44"
+    },
+    {
+      "name": "Rick Jasperse",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "acd089c9-56c4-4440-b346-a9a03e91bf38"
+    },
+    {
+      "name": "Stan Gunter",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e55a8fb1-8fd5-4fa0-8254-eaf9422c127e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-560-2023.introduced.pdf",
+      "sha256": "3e0f263eb2a15b77fe4148358644c8d3b45054deb6e796b308b4246942ee687e"
+    }
+  },
+  "operative_text": "SECTION 1 (amending O.C.G.A. 16-11-127): \"(4) In a place of worship, unless the governing body or authority of the place of worship permits the carrying of weapons or long guns by persons who are lawful weapons carriers Reserved;\"\nSECTION 1 (amending O.C.G.A. 16-11-127, subsection (e)(2)): (2) Any lawful weapons carrier who violates subsection (b) of this Code section in a place of worship shall not be arrested but shall be fined not more than $100.00. Any person who is not a lawful weapons carrier who violates subsection (b) of this Code section in a place of worship shall be punished as for a misdemeanor.\"\nSECTION 2 (amending O.C.G.A. 16-11-129, subsection (k)): \"(k) Data base prohibition. (1) As used in this subsection, the term 'multijurisdictional' means between or among more than one department, agency, or office. (2) A person or entity shall not create or maintain a multijurisdictional data base of information regarding persons who have been issued or who have applied for weapons carry licenses. (3) Any person aggrieved by a violation of this subsection may bring an action for relief. Such person who proves by a preponderance of the evidence that he or she is or was contained in such a multijurisdictional data base shall be entitled to obtain, in addition to appropriate declaratory or injunctive relief: (A) One hundred dollars or actual damages, whichever is greater; and (B) Expenses of litigation, including costs and reasonable attorney's fees.\"\nSECTION 3 (amending O.C.G.A. 16-11-173, subsection (e)): (2) No municipality, county, or consolidated government shall prohibit the discharge of firearms on a parcel of land that is ten acres or more in size, provided that the owner or lawful occupants of such land consent to such discharge of firearms. Nothing in this paragraph shall preempt a zoning ordinance which prohibits or limits commercial shooting ranges or other commercial activity upon such parcel.\"\nSECTION 8 (amending O.C.G.A. 38-3-37): (b) No official or employee of the state or any political subdivision thereof, member of the National Guard in the service of the state, or any person operating pursuant to or under color of state law, while acting during or pursuant to a declared state of emergency, shall: (1) Temporarily or permanently seize, Seize or authorize the seizure of, any firearm, or ammunition or any component thereof, ammunition reloading equipment and supplies, or weapon, the possession of which was not prohibited by law at the time immediately prior to the declaration of a state of emergency, and other than as provided by the criminal or forfeiture laws of this state; (2) Prohibit possession of any firearm, or ammunition or any component thereof, ammunition reloading equipment and supplies, or weapon, or promulgate any rule, regulation, or order prohibiting possession of any firearm or ammunition or any component thereof if such if possession was not otherwise prohibited by law at the time immediately prior to the declaration of a state of emergency; (3) Prohibit any license holder from carrying any weapon or promulgate any rule, regulation, or order prohibiting such carrying if such carrying was not otherwise prohibited by law at the time immediately prior to the declaration of a state of emergency; or (4) Prohibit the manufacture, sale, or transfer of any firearm, ammunition or any component thereof, ammunition reloading equipment and supplies, or weapon, or promulgate any rule, regulation, or order prohibiting the manufacture, sale, or transfer of such if the manufacture, sale, or transfer was not otherwise prohibited by law at the time immediately prior to the declaration of a state of emergency;"
+}

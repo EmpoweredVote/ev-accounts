@@ -1,0 +1,37 @@
+{
+  "id": "TN-HB-292-2013",
+  "scope": "state:tn",
+  "title": "HB 292 (108th General Assembly): As introduced, allows photo identification issued by county election commission to be used as proper evidence of identification for voting purposes. - Amends TCA Title 2, Chapter 7.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB0292/2013"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) TCA 2-7-112(c)(8), new, Section 1\n(quote) A valid photo identification card issued free of charge by the county election commission of the county in which a person is registered to vote, provided the person meets the requirements of § 55-50-336(g) and signs an affidavit required pursuant to such subsection;\n(b_no_id_remedy)\n(section) TCA 2-7-112(c)(8), new, Section 1\n(quote) provided that prior to issuing such card to any person, the administrator of elections shall verify the identification of the registered voter by comparing the signature of the person signing the affidavit with the permanent voter registration records of the voter;\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec 2: effective on becoming law.\n(other) version: Draft (only version saved): adds a free county election commission photo ID card to the accepted list (slot a) with signature check and affidavit before issue (slot b, free ID).\n(other) note: Never left House Local Government Subcommittee (taken off notice 2013-03-13). No votes recorded. Same text as SB1098.",
+  "sponsors": [
+    {
+      "name": "Craig Fitzhugh",
+      "role": "prime",
+      "version": "712507-Draft"
+    },
+    {
+      "name": "James Kyle",
+      "role": "co",
+      "version": "712507-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}
