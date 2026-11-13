@@ -9,6 +9,10 @@ usage: python3 -I bill_table.py check <table.json> [--store <source-store dir>] 
   question, or too mixed). A null rung needs a `why`.
 - deciding_words: words copied from the bill's operative_text that decide the rung. They must be found there.
 - flag: a question for the runner, or "". A flagged bill is not coded from the table until the runner answers.
+- per_vote (optional, round three): {"rungs": [3, null], "note": "..."} when a ruling reads some vote on the bill differently
+  from the row (a vote taken on an earlier text). `rungs` lists every rung one of its votes may carry, the row's own
+  included. record-script.ts sends a person to Opus when one of those rungs would change their result. Write it at stop 1,
+  with the ruling.
 
 check      validates the table against the store: each bill has an instrument file, each rung is in range, each
            `deciding_words` is found in the bill's operative_text (whitespace and case folded). With --ids it also lists
@@ -57,6 +61,10 @@ def check(table, store, ids, rungs):
         r = row.get('rung')
         if r is not None and (not isinstance(r, int) or not 1 <= r <= rungs): problems.append(f'{bid}: rung {r!r} is not 1..{rungs} or null')
         if r is None and not (row.get('why') or '').strip(): problems.append(f'{bid}: a null rung needs a why')
+        pv = row.get('per_vote')
+        if pv is not None and not (isinstance(pv, dict) and isinstance(pv.get('rungs'), list) and len(pv['rungs']) >= 2
+                                   and all(x is None or (isinstance(x, int) and 1 <= x <= rungs) for x in pv['rungs']) and r in pv['rungs']):
+            problems.append(f'{bid}: per_vote needs "rungs": two or more of 1..{rungs} or null, the row\'s own rung among them')
         words = (row.get('deciding_words') or '').strip()
         if r is not None and not words: problems.append(f'{bid}: rung {r} with no deciding_words')
         if words:
