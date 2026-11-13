@@ -343,6 +343,22 @@ each was first learned.
   before accepting it as a headshot.** **A bare CDN URL is not the original** — both the resize and
   the quality loss can be hiding in the query string.
 
+## Never aggregate the big tables in production
+
+E.V Backend runs on the Small compute size, which has a daily Disk IO budget. One whole-table read of a large
+table uses gigabytes of it; in November 2026 audit scripts and ad-hoc counts used it up (ev-cto decision 0038).
+
+- 🔴 **Never run `count(*)`, `sum()`, `count(DISTINCT …)` or any other unfiltered aggregate in production on:**
+  `transparent_motivations.contributions` (~19 GB per scan), `treasury.budgets`, `treasury.budget_categories`,
+  `treasury.transactions`, `essentials.legislative_votes`.
+- **Row estimate:** `pg_class.reltuples`; distinct counts: `pg_stats.n_distinct`. **Sample:** `TABLESAMPLE SYSTEM (1)`.
+- **Campaign-finance totals:** read `transparent_motivations.contribution_totals` (CA_0379, refreshed daily after
+  `fec-burst`). **Whole-table work on contributions:** use the local FEC mirror
+  (`backend/scripts/033-fec-mirror-bootstrap.ts`), not production.
+- **Never page a function that scans a whole table with PostgREST `.range()`** — every page re-runs it. Page by key.
+- After adding a script or job that reads the database, run it once and check `extensions.pg_stat_statements`
+  (`shared_blks_read`, `temp_blks_written`).
+
 ## Repo facts worth knowing — in `backend/src/CLAUDE.md`
 
 Moved to [`backend/src/CLAUDE.md`](backend/src/CLAUDE.md): antipartisan party storage, FIPS vs USPS in
