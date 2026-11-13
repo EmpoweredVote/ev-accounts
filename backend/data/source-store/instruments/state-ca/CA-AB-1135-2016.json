@@ -6,8 +6,8 @@
     "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=201520160AB1135 (403 via WebFetch and curl)",
     "Lead pages from search, not fetched: https://www.leginfo.ca.gov/pub/15-16/bill/asm/ab_1101-1150/ab_1135_bill_20160701_history.html ; https://legiscan.com/CA/rollcall/AB1135/id/556724"
   ],
-  "version": "enrolled",
-  "operative_text": "text not read: text not read",
+  "version": "other",
+  "operative_text": "Section 30515 (Penal Code): (a) Notwithstanding Section 30510, \"assault weapon\" also means any of the following:\nSection 30515 (Penal Code): (a)(1) A semiautomatic, centerfire rifle that does not have a fixed magazine but has any one of the following: (A) A pistol grip that protrudes conspicuously beneath the action of the weapon. (B) A thumbhole stock. (C) A folding or telescoping stock. (D) A grenade launcher or flare launcher. (E) A flash suppressor. (F) A forward pistol grip.\nSection 30515 (Penal Code): (a)(2) A semiautomatic, centerfire rifle that has a fixed magazine with the capacity to accept more than 10 rounds.\nSection 30515 (Penal Code): (a)(5) A semiautomatic pistol with a fixed magazine that has the capacity to accept more than 10 rounds.\nSection 30515 (Penal Code): (a)(8) Any shotgun with a revolving cylinder.\nSection 30680 (Penal Code): Section 30605 does not apply to the possession of an assault weapon by a person who has possessed the assault weapon prior to January 1, 2017, if all of the following are applicable:\nSection 30680 (Penal Code): (c) The person registers the assault weapon by January 1, 2018, in accordance with subdivision (b) of Section 30900.\nSection 30900 (Penal Code): (b) (1) Any person who, from January 1, 2001, to December 31, 2016, inclusive, lawfully possessed an assault weapon that does not have a fixed magazine, as defined in Section 30515, including those weapons with an ammunition feeding device that can be readily removed from the firearm with the use of a tool, shall register the firearm before January 1, 2018, but not before the effective date of the regulations adopted pursuant to paragraph (5), with the department pursuant to those procedures that the department may establish by regulation pursuant to paragraph (5).",
   "sponsors": [
     {
       "name": "Marc Levine",
@@ -50,7 +50,15 @@
       "version": "LegiScan sponsor list (author / coauthor)"
     }
   ],
-  "single_subject": [],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
   "higher_law_duty": "not read",
   "votes": [
     {
@@ -919,6 +927,10 @@
     "fetched_by": "E (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
     "fetched_at": "2026-10-29T23:15:37.091Z",
     "method": "webfetch",
-    "note": "Votes and sponsors added 2026-11-13 from the LegiScan bulk dataset (gun-policy Stage 5, California)."
+    "note": "Votes and sponsors added 2026-11-13 from the LegiScan bulk dataset (gun-policy Stage 5, California). Operative text added 2026-11-13 (was a \"text not read\" placeholder): read by a Sonnet fill agent from the official text, Amended 2016-05-11 (the text of the last floor votes), via LegiScan getBillText. Amended 2016-05-11 (text of the last floor votes). In Section 30680 this amendment strikes the lead-in 'Notwithstanding the meaning of \"assault weapon\" under Section 30515, as amended by the act that added this section,' and strikes 'was' / '(c)' (now 'would have been eligible ... subdivision (b)'). Section 30515 list is quoted in condensed whole-subparagraph form.",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-1135-2016.amended-2016-05-11.html",
+      "sha256": "fc9ae2fb16e805ebd3494e9ba944e554f979a49588a6806603c0fe8e21c3b284"
+    }
   }
 }
