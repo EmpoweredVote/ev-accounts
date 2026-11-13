@@ -1,6 +1,52 @@
 {
   "politician_id": "ea85dfe3-1092-468e-a799-cb8054c135db",
-  "findings": [],
+  "findings": [
+    {
+      "id": "43576a7c93e9db6e2b9d4da06d07ba08ae32caed7e81ef24024450da88c5a63d",
+      "kind": "own-words",
+      "url": "https://www.cbsnews.com/sanfrancisco/news/san-francisco-supervisors-approve-restrictions-on-ammunition/",
+      "date": "2013-03-05",
+      "date_precision": "day",
+      "passage": "While this is not a panacea to fix and solve our gun violence, I think we can all agree that we should do everything in our power as a city to address the impacts.",
+      "note": "Quoted by a TV station news story while she was a San Francisco supervisor, speaking on two ammunition ordinances she co-sponsored (a ban on possessing certain hollow-point bullets and a notice-to-police rule for purchases of 500+ rounds). The story says the board gave unanimous initial approval.",
+      "subjects": [
+        "limits on ammunition sales and possession",
+        "gun violence",
+        "local gun ordinance"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.617Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ff005d59e1d65dcb7ab08053fd501724884dbf249d235f72475f76e4d4ee1b92",
+      "kind": "record",
+      "url": "https://www.cbsnews.com/sanfrancisco/news/san-francisco-supervisors-approve-restrictions-on-ammunition/",
+      "date": "2013-03-05",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "San Francisco ordinances on ammunition: ban on possessing certain hollow-point bullets, and notice to police of purchases of 500+ rounds (co-sponsored with the mayor)",
+      "local_record": true,
+      "note": "A news story reports she co-sponsored two city ordinances limiting certain ammunition; the board gave them unanimous initial approval, with final approval due the next week. Ordinance numbers not confirmed.",
+      "subjects": [
+        "limits on ammunition sales and possession",
+        "local gun ordinance"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.617Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -25,6 +71,35 @@
       "found": 0,
       "at": "2026-10-28T16:08:58.173Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on large-capacity magazines",
+        "limits on ammunition sales and possession",
+        "gun violence",
+        "background checks",
+        "assault-style weapons",
+        "carry permits",
+        "red-flag orders",
+        "ghost guns",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://en.wikipedia.org/wiki/Malia_Cohen (confirms current Controller and a 2026 re-election run; mentions a 2013 San Francisco magazine-limit ordinance, whose cited news story was not fetched)",
+        "campaign site https://www.maliacohen.com (fetched, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Malia_Cohen",
+        "blocked: https://www.sco.ca.gov/eo_about_bio.html",
+        "blocked: https://www.sco.ca.gov/search.html?q=firearm",
+        "sponsor list: covered by LegiScan bulk check",
+        "one web search on name plus gun words (found the 2013 San Francisco ordinance coverage)",
+        "official Controller site: nothing on the subject reachable (blocked, see above)"
+      ],
+      "found": 2,
+      "at": "2026-11-13T01:27:26.617Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -2245,6 +2245,32 @@
       "found": 2,
       "at": "2026-10-28T15:59:22.496Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "gun and ammunition excise tax",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate site sr32.senate.ca.gov home and news list: no gun statement in text; one 2023-09-07 post titled as a floor speech on AB 28 (gun and ammunition excise tax) holds only an embedded video, not reviewed: https://sr32.senate.ca.gov/content/senator-seyarto-speaks-ab-28-firearm-ammunition-excise-tax",
+        "official site 2026 legislative wrap-up and news pages: nothing on the subject",
+        "blocked: https://ballotpedia.org/Kelly_Seyarto (403)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web search snippets show a 2023 news story quoting him against AB 28; the story text could not be retrieved to copy a passage, so not saved: https://www.theepochtimes.com/us/california-becomes-first-state-to-pass-11-percent-tax-on-guns-and-ammunition-now-awaiting-governors-signature-5488751",
+        "web search (2 searches on name plus gun terms): nothing else on the subject",
+        "scope: incumbent for State Senate District 32, shown as a November 2026 general-election candidate in search results; Ballotpedia page blocked, so not confirmed from the page itself"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.490Z",
+      "by": "source-collector"
     }
   ]
 }

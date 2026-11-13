@@ -3426,6 +3426,72 @@
           "sha256": "27e2ebe83d755fcffc1b007b7c5195a0e6cceef3b84c7f77807b9f2b4c437b57"
         }
       }
+    },
+    {
+      "id": "19862ba9a8ad24280912cb29232e7622d4881bdfab4b768c16b7b15d20465d7d",
+      "kind": "own-words",
+      "url": "https://a14.asmdc.org/press-releases/20210610-ca-legislators-and-gun-control-advocates-back-ag-bonta-appeal-uphold",
+      "date": "2021-06-10",
+      "date_precision": "day",
+      "passage": "I and my colleagues stand in solidarity with AG Bonta as he pursues an appeal — because we won’t relent on this issue until there is not a single gun death in our state.",
+      "note": "Quoted in her official press release on a federal judge's ruling striking down California's assault weapons ban (Miller v. Bonta); she backs the Attorney General's appeal and calls the ruling dangerous.",
+      "subjects": [
+        "ban on assault-style guns",
+        "defend state assault weapons law in court"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.550Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f4922c92bd95d1beb67bd728092c5826c495a738f24119f8fb8cf2290e40a371",
+      "kind": "own-words",
+      "url": "https://a46.asmdc.org/news/20220526-california-assembly-advances-gun-violence-prevention-package",
+      "date": "2022-05-26",
+      "date_precision": "day",
+      "passage": "Our number one job as legislators is to keep our communities safe — and on the issue of gun violence, our federal lawmakers are failing horrifically",
+      "note": "Quoted in another Assembly member's release on a Assembly floor gun bill package; she says California should do more under state law since Congress has not acted. The release lists her AB 2156 on firearm manufacturing.",
+      "subjects": [
+        "gun violence prevention",
+        "limit on making many guns without a licence",
+        "state action where federal government has not acted"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.550Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d379848ff0471d77d358ca11f69ad469520571c4d86af538f701066f779bb07c",
+      "kind": "record",
+      "url": "https://www.gov.ca.gov/2026/09/26/governor-newsom-signs-new-bills-to-further-prevent-gun-violence-and-strengthen-californias-gun-safety-leadership/",
+      "date": "2026-09-26",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1743-2026",
+      "act": "other",
+      "motion": "AB 1743 (Wicks), firearms: listed among bills the Governor signed",
+      "note": "Governor's release lists her AB 1743 (firearms) among gun bills signed in September 2026; the release names her as author.",
+      "subjects": [
+        "gun violence prevention",
+        "crime gun data"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.550Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -3452,6 +3518,30 @@
       "found": 1,
       "at": "2026-10-28T15:56:32.467Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "gun manufacturing limits",
+        "gun violence prevention",
+        "Second Amendment court rulings",
+        "federal inaction on guns"
+      ],
+      "places": [
+        "On the Record (1 meeting, a May 2026 governor housing forum; nothing on the subject)",
+        "official Assembly site (two press releases and a photo page on guns fetched)",
+        "campaign site: not reviewed",
+        "Ballotpedia: fetch returned an empty page (blocked: https://ballotpedia.org/California_State_Assembly_District_14)",
+        "web search: she is the incumbent for Assembly District 14 and listed as a candidate in the 2026 general election (state results pages and endorsement lists); no primary loss or withdrawal found",
+        "news search on name plus gun words",
+        "sponsor list: covered by LegiScan bulk check",
+        "governor's office signing release, September 2026"
+      ],
+      "found": 3,
+      "at": "2026-11-13T01:27:26.550Z",
+      "by": "source-collector"
     }
   ]
 }

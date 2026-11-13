@@ -1975,6 +1975,35 @@
       "found": 3,
       "at": "2026-10-28T16:15:35.916Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on types of guns or magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "excise tax on guns and ammunition",
+        "Second Amendment general statements",
+        "suspension of gun and ammo sales"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site https://sr01.senate.ca.gov/about-megan-dahle (confirms current office: California 1st Senate District, elected 2024; bio mentions free hunting days, nothing on gun regulation)",
+        "official Senate site search and news list https://sr01.senate.ca.gov/news (nothing on the subject found)",
+        "blocked: https://myrcns.com/2020/05/20/assemblywoman-dahle-responds-to-letter-calling-for-statewide-suspension-of-all-gun-and-ammo-sales (HTTP 525; search snippet only, not citable)",
+        "blocked: https://ad01.asmrc.org/?p=1402 (bot check)",
+        "https://ad01.asmrc.org/?p=652 (empty page, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Megan_Dahle (HTTP 403)",
+        "two news searches on name plus gun words (no usable result about this person)",
+        "sponsor list: covered by LegiScan bulk check",
+        "not reviewed: campaign site, other URL-pattern pages (not reached)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.630Z",
+      "by": "source-collector"
     }
   ]
 }

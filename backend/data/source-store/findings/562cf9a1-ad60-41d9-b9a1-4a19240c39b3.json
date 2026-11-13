@@ -1959,6 +1959,27 @@
           "sha256": "1d3dcf4476ab959013a7d030f7108ff35a6a97c8953345fc126914a1d71ff33c"
         }
       }
+    },
+    {
+      "id": "b10118c9131c9fd46717dcfcf4d582fb1be189a2bc5348f859f39ec4bdeacb68",
+      "kind": "own-words",
+      "url": "https://sr19.senate.ca.gov/content/senator-ochoa-bogh-calls-full-investigation-department-justice-following-release",
+      "date": "2022-06-30",
+      "date_precision": "day",
+      "passage": "I am deeply concerned at the mishandling of such private information by the DOJ,” said Senator Ochoa Bogh. “The unlawful release of personal information for hundreds of thousands of Californians was publicized and accessible for a significant period of time.",
+      "note": "Senate release quoting her after the state Department of Justice released personal data of gun owners, including concealed-carry permit holders. She asks for a full investigation and accountability. It concerns privacy of gun-owner data, not a gun rule itself.",
+      "subjects": [
+        "privacy of gun owner and carry-permit data",
+        "concealed carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.634Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -1985,6 +2006,32 @@
       "found": 1,
       "at": "2026-10-28T15:57:17.804Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "concealed carry and carry permits",
+        "gun owner data privacy",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate site sr19.senate.ca.gov (identity confirmed; site search page returned no gun results; one gun-related release found via web search)",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: https://ballotpedia.org/Rosilicie_Ochoa_Bogh (403)",
+        "blocked: https://ochoabogh.cdn.sen.ca.gov/ (no response)",
+        "not reviewed: campaign site (no address found)",
+        "web news searches on name plus gun words: nothing further on the subject",
+        "nothing on the subject: sr23.senate.ca.gov (page belongs to a different senator)"
+      ],
+      "found": 1,
+      "at": "2026-11-13T01:27:26.634Z",
+      "by": "source-collector"
     }
   ]
 }

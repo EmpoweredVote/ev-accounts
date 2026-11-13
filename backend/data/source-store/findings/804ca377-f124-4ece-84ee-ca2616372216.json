@@ -1,0 +1,33 @@
+{
+  "politician_id": "804ca377-f124-4ece-84ee-ca2616372216",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "Second Amendment / gun safety general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 sources)",
+        "campaign site https://www.andraegonzales.com/ (home page issue list and site search for 'gun': nothing on the subject; candidate statement page nothing on the subject)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web search: candidacy and 2026 primary status (state results summary shows him advancing to the November general; certified result and general result not reviewed)",
+        "Ballotpedia https://ballotpedia.org/Andrae_Gonzales: nothing on the subject",
+        "news search on name plus gun words: nothing on the subject",
+        "blocked: https://bluevoterguide.org/CA/candidate_Andrae_Gonzales/1493 (bot check)",
+        "not reviewed: https://dp.electionresults.sos.ca.gov/returns/state-assembly/district/35",
+        "https://www.turnto23.com/news/local-news/andrae-gonzales-suspends-campaign-for-state-assembly-announces-run-for-ward-2-reelection (an earlier suspension, Sept 2023, of a previous Assembly bid; not the 2026 race)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.513Z",
+      "by": "source-collector"
+    }
+  ]
+}

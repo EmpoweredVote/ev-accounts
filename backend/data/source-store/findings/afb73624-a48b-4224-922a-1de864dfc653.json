@@ -1,0 +1,33 @@
+{
+  "politician_id": "afb73624-a48b-4224-922a-1de864dfc653",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "gun rights / Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed in scope: candidate for State Senate District 10, advanced from the 2026-06-02 primary to the 2026-11-03 general (news search results; Rafu Shimpo profile https://rafu.com/2026/05/scott-sakakihara-running-for-state-senate-in-bay-area/ fetched, nothing on the subject)",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site: not found (guessed domains did not resolve; https://www.sakakihara.com is an unrelated landing page with no content)",
+        "ActBlue donation page https://secure.actblue.com/donate/scott-sakakihara-web-primary: nothing on the subject",
+        "blocked: https://ballotpedia.org/Scott_Sakakihara (403)",
+        "news search on name plus gun/firearm words: nothing on the subject",
+        "news search for candidate questionnaire with gun words: nothing on the subject",
+        "not reviewed: Union City council minutes and videos (no leads surfaced in search)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.534Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -2261,6 +2261,50 @@
           "sha256": "df5d76d39c52c20ffff9d5f6ba4fe64780aa0943ecd88a249938f4e4157b1877"
         }
       }
+    },
+    {
+      "id": "5c8eacf13e84f5069b54a79c80114facb76ce6ff96708542b974af10fe144862",
+      "kind": "own-words",
+      "url": "https://a24.asmdc.org/press-releases/20210504-assemblymember-alex-lee-debunks-myths-about-ab-1509",
+      "date": "2021-05-04",
+      "date_precision": "day",
+      "passage": "“This bill is about undoing failed policies of systemic racism in our justice system that have led to overincarceration,” said Lee. “When we talk about safety and prevention – what that looks like is universal background checks for gun purchases, making sure guns don’t fall in the wrong hands, and uplifting socioeconomic status for all so violence doesn’t happen in the first place.”",
+      "note": "From his office press release defending AB 1509; he names universal background checks for gun purchases as what safety and prevention look like.",
+      "subjects": [
+        "check every gun buyer",
+        "gun sentencing enhancements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.545Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a41014406ec079f2be91e46b526f2dd86330c715563d7ff7ffaea0d343fc1645",
+      "kind": "own-words",
+      "url": "https://a49.asmdc.org/sites/a49.asmdc.org/files/2023-04/4.17.23_federal_government_gun_reform_letter.pdf",
+      "date": "2023-04-17",
+      "date_precision": "day",
+      "passage": "These weapons of war have no place in our communities, and federal leaders must act to keep them off our streets.",
+      "note": "Joint letter to federal leaders signed by Lee among other state legislators (signature block lists him as Assemblymember, 24th District). It urges passage of the federal Assault Weapons Ban of 2023 and the Keep Americans Safe Act (high-capacity magazine ban) and backs moves toward universal background checks. A group statement, not his alone.",
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines",
+        "check every gun buyer",
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.545Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -2286,6 +2330,28 @@
       "found": 1,
       "at": "2026-10-28T15:57:17.728Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "high-capacity magazines",
+        "gun sentencing enhancements",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site a24.asmdc.org (two press releases fetched; site-wide subject-word search not run)",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: https://ballotpedia.org/Alex_Lee",
+        "one web search on name plus gun words; one on 2026 ballot status (search results show a 2026 general-election matchup for AD-24 with a primary result, so still in scope)",
+        "not reviewed: campaign site, news interviews, questionnaires, URL-pattern list in the researcher agent file"
+      ],
+      "found": 2,
+      "at": "2026-11-13T01:27:26.545Z",
+      "by": "source-collector"
     }
   ]
 }

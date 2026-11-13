@@ -1,0 +1,56 @@
+{
+  "politician_id": "b04e1f2d-d1a4-43de-80db-bdc29dadfaeb",
+  "findings": [
+    {
+      "id": "337781b8a27315b6f851c82ee43db957fe943a2169af62a087d96a4db5ee18db",
+      "kind": "record",
+      "url": "https://www.sandiegounified.org/about/newscenter/all_news/city_attorney_san_diego_unified_announce_joint",
+      "date": "2020-02-11",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "San Diego Unified board item on safe gun storage (Gun Violence Prevention Week); joint announcement with City Attorney and Superintendent on the city's firearm safe storage ordinance",
+      "local_record": true,
+      "note": "A district news release says that as board vice president he would join the superintendent and city attorney to announce a joint effort to reduce gun violence and inform families of the city's safe storage law for firearms, ahead of a board discussion of safe gun storage. The release is the district's text, not his own words; the year is inferred from the Feb. 11 Tuesday meeting and the release's 2020 context.",
+      "subjects": [
+        "safe storage of firearms",
+        "gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.471Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "safe storage of firearms",
+        "gun violence prevention",
+        "gun laws",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "scope check: candidate for state Superintendent of Public Instruction; news search results report the November 3, 2026 general election was held with him leading and his opponent conceding (not fetched by me: https://edsource.org/2026/sonja-shaw-concedes-california-superintendent-race/769867)",
+        "On the Record (0 meetings)",
+        "campaign site https://barreraforedu.com (home page fetched; nothing on the subject)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia https://ballotpedia.org/Richard_Barrera (fetched; nothing on the subject)",
+        "news search on name plus gun words (two searches; only the 2020 district release below was usable)",
+        "https://www.sandiegounified.org/about/newscenter/all_news/students_leaders_call_for_gun_laws (fetched; does not name him)",
+        "not reviewed: https://edsource.org/2026/richard-barrera-is-a-powerful-school-leader-with-ties-to-labor-will-that-help-him-win-the-state-superintendent-race/768882 (no gun passage found in fetched text)",
+        "not reviewed: debate/forum videos and candidate questionnaires (none located)"
+      ],
+      "found": 1,
+      "at": "2026-11-13T01:27:26.471Z",
+      "by": "source-collector"
+    }
+  ]
+}

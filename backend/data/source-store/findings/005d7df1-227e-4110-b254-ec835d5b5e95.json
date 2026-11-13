@@ -704,6 +704,30 @@
       "found": 2,
       "at": "2026-10-28T15:57:25.935Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "gun rights and gun safety statements"
+      ],
+      "places": [
+        "scope: https://api.sos.ca.gov/returns/state-assembly/district/54 shows him as incumbent on the 2026 general-election ballot for Assembly District 54 (84,311 votes, 83.5%, 100% precincts reporting as of 2026-11-12)",
+        "On the Record (0 appearances; script returned no sources)",
+        "official site https://a54.asmdc.org/ : site search for 'gun' returned one press release about federal immigration enforcement, not on the subject; site search for 'firearm' returned nothing",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: https://ballotpedia.org/Mark_Gonzalez_(California) (403)",
+        "web search: name plus gun/firearm/Second Amendment words found nothing by this person; results were about other lawmakers",
+        "campaign site, questionnaires, interviews: not reviewed (no page located within the searches run)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.596Z",
+      "by": "source-collector"
     }
   ]
 }

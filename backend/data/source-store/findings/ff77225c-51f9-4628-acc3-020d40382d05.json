@@ -1888,6 +1888,89 @@
           "sha256": "13c9c2268ad4b5ea957aa7ec61da76d1c606d2329d12033161892515e9dc7002"
         }
       }
+    },
+    {
+      "id": "c3598dfb3fa9fcac723675859e20a8f8719ba926c0cdbc59a5ae86baf27daa67",
+      "kind": "own-words",
+      "url": "https://a51.asmdc.org/press-releases/20240410-assemblymember-zbur-announces-bill-prevent-hate-based-gun-violence",
+      "date": "2024-04-10",
+      "date_precision": "day",
+      "passage": "California has adopted strong laws to prevent mass shootings and other acts of violence, but those tools need to be clarified and codified so that all California courts are empowered to consider threats of hate-based or political violence when temporarily restricting access to guns, preventing needless deaths and potentially saving innocent lives.",
+      "note": "Quote in his press release announcing AB 2917, which tells civil courts to weigh hate-based and political threats when deciding on a gun violence restraining order.",
+      "subjects": [
+        "red-flag / gun violence restraining orders",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.611Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1930bf6c2913c37d4d3dfef0ec0be6dbbce6ccc6f9aab9e1380cd9086e7cab5a",
+      "kind": "own-words",
+      "url": "https://a51.asmdc.org/press-releases/20240523-california-marks-10-years-isla-vista-killings-california-assembly-passes",
+      "date": "2024-05-23",
+      "date_precision": "day",
+      "passage": "Make no mistake, California's GVRO bill has been essential in preventing more tragedies like this from occurring, and the Hate-Based Gun Violence Prevention Act further serves as a reminder to civil courts that threats of violence should be taken seriously.",
+      "note": "His quote in a release on the Assembly passing AB 2917, issued alongside a gun-safety advocacy group's statement.",
+      "subjects": [
+        "red-flag / gun violence restraining orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.611Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5b26a5601ae16460d9cf0a0727e4a35cd0bd62fc366f741f362ac781d2d6810",
+      "kind": "own-words",
+      "url": "https://a51.asmdc.org/press-releases/20240830-california-strengthens-landmark-gvro-law-hate-based-gun-violence-prevention",
+      "date": "2024-08-30",
+      "date_precision": "day",
+      "passage": "By promptly and temporarily removing firearms from individuals who pose a risk to themselves or others, GVROs have been instrumental in preventing mass shootings and suicides. AB 2917 strengthens this vital tool by ensuring that courts consider threats of violence motivated by hate or extremist ideologies.",
+      "note": "His quote when AB 2917 passed both houses and went to the Governor; describes gun violence restraining orders as an effective tool.",
+      "subjects": [
+        "red-flag / gun violence restraining orders",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.611Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc8076ec093a19098856f12006b214453a23bfd718f01bdff0037b392d4f0bc7",
+      "kind": "own-words",
+      "url": "https://a51.asmdc.org/press-releases/20250312-zbur-releases-statement-ab-1333",
+      "date": "2025-03-12",
+      "date_precision": "day",
+      "passage": "I remain committed to keeping our communities safe and will continue working with law enforcement, legal experts, and public and gun safety advocates to advance smart policies that protect victims and safeguard the right to self defense.",
+      "note": "His statement withdrawing AB 1333, a bill on armed aggressors in public and self-defense law; he says it did not change the Castle Doctrine and that he values the right to self defense.",
+      "subjects": [
+        "self-defense law and guns in public",
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.611Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -1915,6 +1998,29 @@
       "found": 1,
       "at": "2026-10-28T16:25:46.194Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red-flag / gun violence restraining orders",
+        "hate-based and political threats as grounds to remove guns",
+        "self-defense and gun safety bill withdrawn (AB 1333)",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "official Assembly site press releases (a51.asmdc.org): four releases on the subject read",
+        "campaign site: not reviewed",
+        "sponsor list: covered by LegiScan bulk check",
+        "California Secretary of State certified candidate list for the 2026 general election: lists Rick Chavez Zbur, State Assembly District 51, on the ballot",
+        "blocked: https://ballotpedia.org/Rick_Chavez_Zbur",
+        "two web searches (gun violence statements; 2026 ballot status)",
+        "other URL patterns, news search beyond these, interview and debate video: not reviewed (search cut short)"
+      ],
+      "found": 4,
+      "at": "2026-11-13T01:27:26.611Z",
+      "by": "source-collector"
     }
   ]
 }

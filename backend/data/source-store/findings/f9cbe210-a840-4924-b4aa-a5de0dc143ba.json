@@ -301,6 +301,27 @@
           "sha256": "8c99d6924d02cec52487dbff563cd651183a7042ec595c56f729c0054ede1957"
         }
       }
+    },
+    {
+      "id": "df2d47efa84851cb433b421c1c9be8e9f4824e9bfcacca8e2f581e5052869709",
+      "kind": "own-words",
+      "url": "https://a43.asmdc.org/2025-legislation",
+      "date": "2025",
+      "date_precision": "year",
+      "passage": "AB 1187 - Firearm Safety Certificate Training Act - Requires people applying for a firearm safety certificate after July 1, 2027, to complete a course with live-fire shooting exercises on a shooting range. Strengthens gun importer protocols by requiring those moving to California to obtain a firearm safety certificate.",
+      "note": "Her Assembly office's own description of her bill AB 1187 (sponsor listed there as an advocacy group); status on the page: 2-year bill in Senate Inactive File.",
+      "subjects": [
+        "firearm safety certificate with live-fire training",
+        "gun safety rules for people moving to California"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.555Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -328,6 +349,34 @@
       "found": 0,
       "at": "2026-10-28T16:23:17.794Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm safety certificate training",
+        "gun importer rules for people moving to California",
+        "bans on a type of firearm",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "Second Amendment / gun safety laws general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://a43.asmdc.org/ (official Assembly site; site search for gun and firearm; 2025 legislation page)",
+        "https://a43.asmdc.org/press-releases (fetched; nothing on the subject)",
+        "https://votecelesterodriguez.com/ (campaign site home, priorities and news pages; nothing on the subject)",
+        "https://ballotpedia.org/Celeste_Rodriguez (returned an empty/202 response, not reviewed)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web search: name plus gun/firearm/Second Amendment terms (found only other people named Rodriguez; nothing on the subject)",
+        "scope: official and campaign site present her as sitting 43rd District Assemblymember seeking re-election in 2026; I did not fetch a Secretary of State page confirming the general-election ballot",
+        "not reviewed: debate/interview video (none found)"
+      ],
+      "found": 1,
+      "at": "2026-11-13T01:27:26.555Z",
+      "by": "source-collector"
     }
   ]
 }

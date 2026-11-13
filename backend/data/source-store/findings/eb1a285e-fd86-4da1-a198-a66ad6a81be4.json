@@ -3631,6 +3631,27 @@
           "sha256": "9a813c9a5bf1fecb1a4a8c7e9174df2a5cc834e12cd1fe3398f0afa775570041"
         }
       }
+    },
+    {
+      "id": "ae1a01e9d22f2b50905c7a9781c9012f5ebfaf0a66c90549f225a043b3d92021",
+      "kind": "own-words",
+      "url": "https://a25.asmdc.org/press-releases/20210527-san-jose-assemblymember-ash-kalra-releases-statement-wake-mass-shooting",
+      "date": "2021-05-27",
+      "date_precision": "day",
+      "passage": "No one should risk losing their life from senseless gun violence just by showing up to work, going to school, or visiting a store. We must provide more than thoughts and prayers; we must act to curb gun violence now.",
+      "note": "Statement issued in his name after the San Jose VTA railyard shooting; says action is needed to curb gun violence, no specific measure named.",
+      "subjects": [
+        "general statement on gun safety laws",
+        "act to curb gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.547Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -3656,6 +3677,35 @@
       "found": 2,
       "at": "2026-10-28T16:23:22.566Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun violence",
+        "gun safety laws",
+        "assault-style weapons",
+        "ghost guns",
+        "Second Amendment",
+        "background checks",
+        "red-flag orders",
+        "carry permits"
+      ],
+      "places": [
+        "scope: a news headline (https://www.newindiaabroad.com/news/darshana-patel-and-ash-kalra-advance-to-november-election-for-california-state-assembly) says Kalra advanced to the November 2026 general election for Assembly District 25; page body did not render as text, so only the headline and search result support it",
+        "On the Record (0 appearances, 0 candidate meetings)",
+        "official Assembly site, press release of 2021-05-27 (a25.asmdc.org)",
+        "official Assembly site press release list (https://kalra.asmdc.org/press-releases): no gun/firearm/shooting items found in the page text fetched",
+        "campaign site https://www.ashkalra.com/meet-ash: page is script-rendered, nothing on the subject readable",
+        "blocked: https://ballotpedia.org/Ash_Kalra (403)",
+        "sponsor list: covered by LegiScan bulk check",
+        "news searches on name plus gun/firearm terms: no direct Kalra quote beyond the saved one; items seen on San Jose local gun ordinance were opposition-side accounts, not his words",
+        "not reviewed: https://a49.asmdc.org/sites/a49.asmdc.org/files/2023-04/4.17.23_federal_government_gun_reform_letter.pdf (unclear whether he signed)",
+        "not reviewed: AAPI Legislative Caucus joint statement on gun violence 2023 (his role unclear)"
+      ],
+      "found": 1,
+      "at": "2026-11-13T01:27:26.547Z",
+      "by": "source-collector"
     }
   ]
 }

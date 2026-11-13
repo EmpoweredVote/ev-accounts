@@ -1,0 +1,31 @@
+{
+  "politician_id": "ad4809b3-48bc-42c3-9ebc-ea898543b188",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "general gun rights or gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site priorities page https://www.clarissacervantes.com/priorities: public safety text only on police and firefighter staffing, nothing on guns",
+        "campaign site home page https://www.clarissacervantes.com: no gun or firearm text found",
+        "Ballotpedia https://ballotpedia.org/Clarissa_Cervantes: fetch returned an empty page, no usable text (blocked)",
+        "web search: candidate identity (search results show a campaign site and a candidate listing for Assembly District 58, 2026; a ballot-status page was not fetched, so general-election status is not confirmed from a fetched page)",
+        "web search: name plus gun, firearm, assault weapon, background check words: nothing on the subject",
+        "sponsor list: covered by LegiScan bulk check",
+        "not reviewed: https://aquarius.riversideca.gov/clerkdb/0/doc/354556/Page1.aspx (Riverside city clerk records, search lead only)",
+        "not reviewed: news stories, debate or forum videos, questionnaires (https://bluevoterguide.org/CA/candidate_Clarissa_Cervantes/337105, https://www.ballotready.org/people/clarissa-cervantes)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.522Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -732,6 +732,35 @@
       "found": 2,
       "at": "2026-10-28T16:08:28.682Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "gun safety laws in general",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "scope: a May 2026 news story (https://www.krcb.org/20260511100985/news-feed/rogers-highlights-wildfire-resilience-and-north-coast-investment-in-bid-for-state-assembly) shows Chris Rogers, Assembly District 2, campaigning for 2026 with a November election ahead; no page found confirming the final November ballot line-up",
+        "blocked: https://ballotpedia.org/Chris_Rogers_(California) (fetch returned an empty page)",
+        "blocked: https://dp.electionresults.sos.ca.gov/returns/state-assembly/district/2 (no usable text)",
+        "official site press-release list, first page: nothing on the subject (https://rogers.asmdc.org/press-releases)",
+        "official site search for gun: blocked: https://rogers.asmdc.org/search?keys=gun (empty page)",
+        "official site press-release page 2 (https://rogers.asmdc.org/press-releases?page=1): nothing on the subject in the returned text",
+        "campaign site: not found separately; not reviewed",
+        "sponsor list: covered by LegiScan bulk check",
+        "news search on name plus gun/firearm words: nothing on the subject by this person",
+        "news story on the 2026 campaign (KRCB): nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.557Z",
+      "by": "source-collector"
     }
   ]
 }

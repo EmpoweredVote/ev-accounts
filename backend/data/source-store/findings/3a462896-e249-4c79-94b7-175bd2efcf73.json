@@ -1657,6 +1657,26 @@
           "sha256": "76db6927bb736d728dac443b3126cadd70cee5b8166c695db7f614a2c7762c88"
         }
       }
+    },
+    {
+      "id": "acf9635cf0723da04f4dfc08e2a21bae0f3f6dec605921ef747d0905fbaacfa6",
+      "kind": "own-words",
+      "url": "https://sd18.senate.ca.gov/news/senator-padillas-statement-gun-violence-and-hate-attack-america-and-australia",
+      "date": "2025-12-15",
+      "date_precision": "day",
+      "passage": "These senseless acts of hatred, both here at home and across the globe, are painful and stark reminders of the price of the failure to ad dress gun violence and antisemitism.",
+      "note": "Statement issued in his name after shootings at Brown University and in Sydney; says failure to address gun violence has a price. No specific policy named.",
+      "subjects": [
+        "general statement on gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.637Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -1683,6 +1703,30 @@
       "found": 1,
       "at": "2026-10-28T15:58:38.090Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "general statement on gun violence",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidate matches)",
+        "official Senate site sd18.senate.ca.gov: press release page 2 fetched (nothing on the subject); two statements fetched (one saved, one about a shooting with no policy content); site-wide search for gun terms not available, not reviewed beyond web-search hits",
+        "sponsor list: covered by LegiScan bulk check",
+        "web search (2 searches): results mostly about a different person, U.S. Senator Alex Padilla; excluded",
+        "ballot status: news search shows Steve Padilla won the June 2026 primary and is on the 2026-11-03 general ballot for Senate District 18 (https://www.10news.com/news/local-news/america-votes/4-state-senate-seats-7-assembly-races-to-be-decided-by-san-diego-county-voters-110326), search result only, page not fetched",
+        "not reviewed: https://ballotpedia.org/Steve_Padilla",
+        "not reviewed: campaign site, questionnaires, interviews, newsletters, debate videos"
+      ],
+      "found": 1,
+      "at": "2026-11-13T01:27:26.637Z",
+      "by": "source-collector"
     }
   ]
 }

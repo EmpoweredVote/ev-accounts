@@ -27,6 +27,32 @@
       "found": 0,
       "at": "2026-10-28T15:57:02.199Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "general statement on gun rights or gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status not confirmed by a fetched page: web search leads show a 2026 race for the State Board of Equalization, District 2 (a tax board, not a legislature), but no page was fetched to confirm the primary result or general-election ballot",
+        "blocked: https://ballotpedia.org/Sally_Lieber (curl timed out; the fetch tool returned an empty page)",
+        "blocked: https://www.sallylieber.com (no response, HTTP 000)",
+        "official site and campaign site: not reviewed beyond the above attempt",
+        "sponsor list: covered by LegiScan bulk check",
+        "two web searches on her name plus gun, firearm, Second Amendment and gun safety words: no result named her; nothing on the subject",
+        "URL patterns in the researcher agent file: not reviewed",
+        "interviews, questionnaires, newsletters: not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.488Z",
+      "by": "source-collector"
     }
   ]
 }

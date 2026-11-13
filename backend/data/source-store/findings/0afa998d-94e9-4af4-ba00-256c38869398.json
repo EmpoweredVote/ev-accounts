@@ -2209,6 +2209,32 @@
       "found": 1,
       "at": "2026-10-28T15:57:58.919Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances; no meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "official Assembly site https://calderon.asmdc.org/press-releases (first page of releases: nothing on the subject)",
+        "official Assembly site search for gun: nothing on the subject",
+        "blocked: https://ballotpedia.org/Lisa_Calderon_%28California%29 (403/empty page)",
+        "not reviewed: https://dp.electionresults.sos.ca.gov/returns/state-assembly/district/56 (page text empty on fetch; a search summary shows her ahead in the June 2026 primary count, not verified by me)",
+        "blocked: https://crpa.org/wp-content/uploads/2026/04/2026-VOTING-GUIDEDraft-Assembly2.4.pdf (404)",
+        "two web searches on her name plus gun/firearm words: nothing by her on the subject",
+        "not reviewed: campaign site, questionnaires, news interviews (search budget not exhausted but no leads found)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.590Z",
+      "by": "source-collector"
     }
   ]
 }

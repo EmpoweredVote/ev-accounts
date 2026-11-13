@@ -8,7 +8,7 @@ The batch folder holds `recipe.json`, written once by hand:
   {"stage5": "<abs>/stage5", "topic": "gun-policy", "unit": "state:mo", "level": "state", "state": "MO",
    "roster": "<abs>/stage5/roster.tsv", "codes": "<abs>/stage5/codes", "saved_root": "<abs>/.planning/research",
    "votes": "legiscan" | "legiscan-plan" | "iga" | "ma" | "federal" | "none", "official_host": "house.mo.gov",
-   "max_urls": 20}
+   "max_urls": 20, "legiscan_args": "--session-start odd"}     (legiscan_args optional: extra state_legiscan.py flags)
 
 Each step's commands are the ones STAGE5.md names. After each step a check reads what it left; the run stops on:
 - a command that fails, or a check that fails (exit 2), with the file to read;
@@ -75,15 +75,17 @@ def steps(c, b):
     st, key, unit, lvl, state = c['stage5'], c['topic'], c['unit'], c['level'], c.get('state', '')
     scope = f"--level {lvl}" + (f" --state {state}" if lvl == 'state' else '')
     host = c.get('official_host', '')
+    # optional extra state_legiscan.py flags, e.g. "--session-start odd" (CA, OH: sponsor pages use the session's start year)
+    la = (' ' + c['legiscan_args']) if c.get('legiscan_args') else ''
     write = f"zsh scripts/stage5/write-batch.sh {st} {b} {key} {unit}"
     gate = f"npx tsx scripts/stance-gate.ts --dir {b}"
     verify = f"{TSX} scripts/verify-stance-research.ts --dir {b} --season draft --threshold 1 --batch-id {os.path.basename(b)}"
     votes = {
         'legiscan': [f"{TSX} scripts/stage5/legiscan-rollcalls.ts {state} {b}/legiscan/vote-pages.json {b}/legiscan/rollcall-map.json",
                      f"{PY} scripts/stage5/legiscan_pairs.py {b} {FINDINGS} --topic {key} --state {state} --host {host} --rollcalls {b}/legiscan/rollcall-map.json"],
-        'legiscan-plan': [f"{PY} scripts/stage5/state_legiscan.py plan {b} {FINDINGS} --state {state} --host {host}",
+        'legiscan-plan': [f"{PY} scripts/stage5/state_legiscan.py plan {b} {FINDINGS} --state {state} --host {host}{la}",
                           f"{TSX} scripts/stage5/legiscan-rollcalls.ts {state} {b}/legiscan/vote-pages.json {b}/legiscan/rollcall-hits.json",
-                          f"{PY} scripts/stage5/state_legiscan.py pairs {b} {FINDINGS} --state {state} --host {host} --topic {key}"],
+                          f"{PY} scripts/stage5/state_legiscan.py pairs {b} {FINDINGS} --state {state} --host {host} --topic {key}{la}"],
         'iga': [f"{TSX} scripts/stage5/iga-votes.ts {b} {FINDINGS} --topic {key}"],
         'ma': [f"{TSX} scripts/stage5/ma-rollcall-votes.ts {b} {FINDINGS} --topic {key}"],
         'federal': [f"{TSX} scripts/stage5/federal-votes.ts {b} {FINDINGS} --topic {key}"],

@@ -1750,6 +1750,35 @@
       "found": 4,
       "at": "2026-10-28T16:06:23.032Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or large-capacity magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum ages",
+        "red-flag or extreme-risk orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general statements on gun rights, Second Amendment, gun safety"
+      ],
+      "places": [
+        "status check: sitting state senator for Senate District 28; the Secretary of State results page (https://api.sos.ca.gov/returns/state-senate/district/28) shows her as incumbent on the 2026 general-election ballot, so still in scope",
+        "On the Record (0 appearances, 0 candidates)",
+        "official Senate site https://sd28.senate.ca.gov/ (home page fetched; site search for 'gun' and 'firearm' returned nothing on the subject; press releases and 2025/2026 legislation pages checked for gun terms, nothing on the subject; press release pages node/678, node/686, node/690 nothing on the subject)",
+        "campaign site: not found separately from the official site",
+        "sponsor list: covered by LegiScan bulk check",
+        "Wikipedia page: nothing on the subject",
+        "blocked: https://ballotpedia.org/Lola_Smallwood-Cuevas (fetch returned an empty page)",
+        "blocked: https://ballotpedia.org/California_State_Senate_District_28 (fetch returned an empty page)",
+        "web searches (4): name plus gun violence, firearm, Second Amendment, gun violence prevention bill; nothing on the subject by her",
+        "not reviewed: ontheissues.org and vote411 (leads only; no original found)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.627Z",
+      "by": "source-collector"
     }
   ]
 }

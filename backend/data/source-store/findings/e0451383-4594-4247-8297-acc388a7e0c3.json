@@ -1802,6 +1802,33 @@
       "found": 2,
       "at": "2026-10-28T16:06:25.071Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carrying guns",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "In scope: https://api.sos.ca.gov/returns/state-assembly/district/80 lists David A. Alvarez as incumbent on the November 2026 general-election ballot",
+        "On the Record (0 meetings)",
+        "official site press-release list https://alvarez.asmdc.org/press-releases: first page, nothing on the subject",
+        "official site search https://alvarez.asmdc.org/search?keys=firearm: empty result, nothing on the subject",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: https://ballotpedia.org/David_Alvarez_(California) (empty page)",
+        "blocked: https://dp.electionresults.sos.ca.gov/returns/state-assembly/district/80 (redirected away)",
+        "web search: name plus gun/firearm/Second Amendment words, two searches, nothing by him on the subject",
+        "not reviewed: https://alvarez.asmdc.org/videos",
+        "not reviewed: campaign site, questionnaires, news interviews (no hit in searches)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.559Z",
+      "by": "source-collector"
     }
   ]
 }

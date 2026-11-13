@@ -603,6 +603,33 @@
       "found": 0,
       "at": "2026-10-28T15:59:36.896Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "repeal of gun laws",
+        "general gun rights or gun safety statements"
+      ],
+      "places": [
+        "scope: the Secretary of State returns page for Assembly District 53 (https://api.sos.ca.gov/returns/state-assembly/district/53/county/san-bernardino) lists Michelle Rodriguez and Rafaela Romero as the two candidates, so she is on the November 2026 ballot",
+        "On the Record (0 meetings)",
+        "official site press release list https://mrodriguez.asmdc.org/press-releases: nothing on the subject (no gun, firearm, Second Amendment, background check or assault-weapon items)",
+        "official site biography https://mrodriguez.asmdc.org/biography: only a background line describing her as a survivor of gun violence; no policy statement, not saved",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: https://ballotpedia.org/Michelle_Rodriguez_(California) (bot challenge, empty page)",
+        "campaign site: no separate campaign site found",
+        "news and web search on name plus gun words: nothing by her on the subject; the ghost-gun arrest-reporting bill AB 97 belongs to a different legislator (Freddie Rodriguez), not saved",
+        "not reviewed: https://calmatters.digitaldemocracy.org/hearings/258825 (committee transcript mentioning a firearm bill; author not shown)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.598Z",
+      "by": "source-collector"
     }
   ]
 }

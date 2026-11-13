@@ -1,0 +1,54 @@
+{
+  "politician_id": "f1f9d53e-2972-406d-9979-90119d893508",
+  "findings": [
+    {
+      "id": "213b400e2c20962799006d93d38f1ac71123dc17da54314198863a18e6126f43",
+      "kind": "own-words",
+      "url": "https://deborahkleinlopez.com/issues/",
+      "date": "2026-11-12",
+      "date_precision": "year",
+      "passage": "Addressing gun violence as a public health crisis",
+      "note": "One bullet in the Healthcare priorities list on the campaign issues page. Names no specific gun law. Page undated; date is the fetch date and the year is the 2026 campaign.",
+      "subjects": [
+        "gun violence as a public health issue",
+        "general statement on gun safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.517Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun violence",
+        "firearm regulation",
+        "Second Amendment",
+        "assault-style weapons",
+        "background checks",
+        "red-flag orders",
+        "concealed carry",
+        "public safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://deborahkleinlopez.com/ (issues, about, news, media pages checked for gun words; news and media pages had nothing on the subject)",
+        "confirmed in scope: appears in the Los Angeles County November 3, 2026 general-election candidate list for Assembly District 42 (https://www.lavote.gov/additional-election-information) via search result; not fetched",
+        "blocked: https://ballotpedia.org/Deborah_Klein_Lopez (403)",
+        "web search: name plus gun, firearm, Second Amendment terms returned nothing about this person",
+        "sponsor list: covered by LegiScan bulk check",
+        "not reviewed: ontheissues.org, vote411 (no fetch budget used; leads only)"
+      ],
+      "found": 1,
+      "at": "2026-11-13T01:27:26.517Z",
+      "by": "source-collector"
+    }
+  ]
+}

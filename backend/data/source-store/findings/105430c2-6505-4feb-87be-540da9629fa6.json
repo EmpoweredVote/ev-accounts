@@ -1,0 +1,33 @@
+{
+  "politician_id": "105430c2-6505-4feb-87be-540da9629fa6",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "repeal of gun laws",
+        "general statement on gun rights or gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "status check: a June 2026 local news story (https://voiceofoc.org/2026/06/two-santa-ana-councilmembers-could-face-off-in-november-assembly-race/) shows him leading the 68th Assembly District primary count on 2026-06-09, with a November matchup expected; no certified final result was fetched",
+        "campaign site https://davidpenaloza.com/candidate-statement/ (nothing on the subject; only a general line about neighborhood safety and 911 response times)",
+        "campaign demo site https://penaloza-demo.pages.dev/ (nothing on the subject; a general line about safer neighborhoods and hiring police)",
+        "not reviewed: https://ballotpedia.org/David_Penaloza (fetch returned an empty page; search summary shows only council-seat bio, nothing on guns)",
+        "official council page https://santa-ana.org/david-penaloza (seen in search results only; not fetched; summary shows priorities on infrastructure, parks, quality of life)",
+        "web searches on his name plus gun, firearm, assault weapon, background check, ghost gun, gun safety, Second Amendment (nothing on the subject)",
+        "sponsor list: covered by LegiScan bulk check",
+        "not reviewed: Santa Ana city council agenda and minutes archive for gun-related items"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.446Z",
+      "by": "source-collector"
+    }
+  ]
+}
