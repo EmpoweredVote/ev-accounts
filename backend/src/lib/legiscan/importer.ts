@@ -25,6 +25,7 @@ import {
   type DatasetListEntry,
   type SessionLabel,
 } from './helpers.js';
+import { archiveDataset } from './archive.js';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type Json = any;
@@ -291,16 +292,18 @@ function zipBufferFrom(data: Json, sessionId: number): Buffer {
 export async function openDataset(
   apiKey: string,
   ds: DatasetListEntry,
+  archive?: { state: string; dryRun: boolean },
 ): Promise<DatasetReader> {
-  const reader = await readDatasetZip(
-    zipBufferFrom(
-      await legiscanQuery(apiKey, 'getDataset', {
-        id: String(ds.session_id),
-        access_key: ds.access_key,
-      }),
-      ds.session_id,
-    ),
+  const zip = zipBufferFrom(
+    await legiscanQuery(apiKey, 'getDataset', {
+      id: String(ds.session_id),
+      access_key: ds.access_key,
+    }),
+    ds.session_id,
   );
+  // Keep a copy so research reads ours instead of downloading it again (archive.ts says why).
+  if (archive) await archiveDataset(archive.state, ds, zip, { dryRun: archive.dryRun });
+  const reader = await readDatasetZip(zip);
   const { entries, bytesScanned, fullParseFallbacks } = reader.indexStats;
   log(
     `dataset ${ds.session_id} indexed: ${reader.billIds.length} bills, ${reader.rollCallCount} roll calls ` +
@@ -757,7 +760,7 @@ export async function importState(
       continue;
     }
 
-    const reader = await openDataset(apiKey, ds);
+    const reader = await openDataset(apiKey, ds, { state: stateCode, dryRun });
     const sessionId = await getOrCreateSession(
       jurisdiction, sessionName(stateName, ds), ds.session_id, label === 'current',
     );
