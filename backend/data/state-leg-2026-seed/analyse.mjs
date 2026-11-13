@@ -16,6 +16,7 @@
 //   is printed, never smoothed.
 import fs from 'node:fs';
 import path from 'node:path';
+import { maDistrictKey } from './ma-district-key.mjs';
 
 const apDir = process.argv[2];
 const ourFile = process.argv[3];
@@ -28,12 +29,6 @@ if (!apDir || !ourFile || !out) {
 // AP ballot lines that are not people. Excluded BY ID, never by reading the name (CC_0381).
 const PSEUDO_CANDIDATE_IDS = new Set(['100008', '100013']); // Total Write-ins · None of These Candidates
 const OFFICE_CHAMBER = { Y: 'STATE_LOWER', Z: 'STATE_UPPER' };
-const ORDINALS = {
-  first: '1st', second: '2nd', third: '3rd', fourth: '4th', fifth: '5th', sixth: '6th',
-  seventh: '7th', eighth: '8th', ninth: '9th', tenth: '10th', eleventh: '11th', twelfth: '12th',
-  thirteenth: '13th', fourteenth: '14th', fifteenth: '15th', sixteenth: '16th',
-  seventeenth: '17th', eighteenth: '18th', nineteenth: '19th', twentieth: '20th',
-};
 
 const fold = (s) => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '');
 // Accents folded, case dropped, and every space, hyphen, apostrophe and period removed. This is
@@ -42,19 +37,9 @@ const fold = (s) => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '');
 // "Fluker Reid" where ours reads "Fluker-Reid". Neither is a different name.
 const squash = (s) => fold(s).toLowerCase().replace(/[^a-z0-9]/g, '');
 
-// A Massachusetts district name, reduced to its ordinal and its counties IN ORDER.
-function maNameKey(raw) {
-  const tokens = fold(raw)
-    .toLowerCase()
-    .replace(/&/g, ' ')
-    .replace(/[,\-/]/g, ' ')
-    .replace(/[^a-z0-9 ]/g, ' ')
-    .split(/\s+/)
-    .filter(Boolean)
-    .filter((t) => t !== 'district' && t !== 'and')
-    .map((t) => ORDINALS[t] || t);
-  return tokens.join('-');
-}
+// A Massachusetts district name, reduced to its ordinal and its counties IN ORDER. Shared with
+// verify-ma-soc.mjs so the two cannot drift apart — see ma-district-key.mjs.
+const maNameKey = maDistrictKey;
 
 const states = [...new Set(fs.readdirSync(apDir).map((f) => f.split('-')[0]))].sort();
 const ourRaces = JSON.parse(fs.readFileSync(ourFile, 'utf8'));
@@ -125,12 +110,19 @@ for (const st of states) {
       for (const id of prById.keys()) if (!byId.has(id)) problems.push(`${st} ${chamber} ${k}: candidate ${id} in progress and not in metadata`);
 
       const lines = [];
-      for (const [id, c] of byId) {
+      for (let [id, c] of byId) {
         if (PSEUDO_CANDIDATE_IDS.has(id)) continue;
         const prc = prById.get(id) || {};
+        // 🔴 AP MARKS A DECLARED WRITE-IN INSIDE THE SURNAME FIELD — "LaPointe (write-in)" — so
+        //   the marker reaches `last_name` and the display name unless it is lifted out. It is a
+        //   COLUMN of ours (`is_write_in`), not part of anybody's name.
+        const writeIn = /\(write-?in\)/i.test([c.first, c.middle, c.last, c.suffix].filter(Boolean).join(' '));
+        const clean = (s) => (s ? s.replace(/\s*\(write-?in\)\s*/i, '').trim() || null : null);
+        c = { ...c, first: clean(c.first), middle: clean(c.middle), last: clean(c.last), suffix: clean(c.suffix) };
         const nameParts = [c.nickname || c.first, c.middle, c.last, c.suffix].filter(Boolean);
         lines.push({
           candidateID: id,
+          is_write_in: writeIn,
           first: c.first || null,
           middle: c.middle || null,
           last: c.last || null,

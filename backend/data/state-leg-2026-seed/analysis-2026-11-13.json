@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-13T19:32:27.635Z",
+ "generated": "2026-11-13T19:43:47.242Z",
  "apDir": "ap-2026-11-13",
  "ourFile": "our-races-2026-11-13.json",
  "races": [
@@ -45,6 +45,7 @@
    "lines": [
     {
      "candidateID": "165959",
+     "is_write_in": false,
      "first": "Mark",
      "middle": "D.",
      "last": "Sylvia",
@@ -61,6 +62,7 @@
     },
     {
      "candidateID": "179358",
+     "is_write_in": false,
      "first": "Brendalee",
      "middle": "A.",
      "last": "Smith",
@@ -119,6 +121,7 @@
    "lines": [
     {
      "candidateID": "123540",
+     "is_write_in": false,
      "first": "Daniel",
      "middle": "Francis",
      "last": "Cahill",
@@ -177,6 +180,7 @@
    "lines": [
     {
      "candidateID": "123205",
+     "is_write_in": false,
      "first": "Carlos",
      "middle": null,
      "last": "Gonzalez",
@@ -224,7 +228,7 @@
    "holder": {
     "politician_id": "baddd174-93ea-47b6-9cbd-c48fc3acf2f6",
     "our_name": "John J. Lawn",
-    "ap_name": "John J.  Lawn",
+    "ap_name": "John J. Lawn",
     "candidateID": "122807",
     "last_agrees": true,
     "first_agrees": true,
@@ -235,12 +239,13 @@
    "lines": [
     {
      "candidateID": "122807",
+     "is_write_in": false,
      "first": "John",
-     "middle": "J. ",
+     "middle": "J.",
      "last": "Lawn",
      "suffix": null,
      "nickname": null,
-     "full_name": "John J.  Lawn",
+     "full_name": "John J. Lawn",
      "party": "Dem",
      "ap_incumbent": true,
      "ballotOrder": 1,
@@ -293,6 +298,7 @@
    "lines": [
     {
      "candidateID": "122831",
+     "is_write_in": false,
      "first": "Jeffrey",
      "middle": "N.",
      "last": "Roy",
@@ -351,6 +357,7 @@
    "lines": [
     {
      "candidateID": "123270",
+     "is_write_in": false,
      "first": "Michelle",
      "middle": "Marie",
      "last": "DuBois",
@@ -409,6 +416,7 @@
    "lines": [
     {
      "candidateID": "166053",
+     "is_write_in": false,
      "first": "William",
      "middle": "F.",
      "last": "MacGregor",
@@ -425,6 +433,7 @@
     },
     {
      "candidateID": "179363",
+     "is_write_in": false,
      "first": "Devin",
      "middle": "Allen",
      "last": "Kreinbring",
@@ -483,6 +492,7 @@
    "lines": [
     {
      "candidateID": "123663",
+     "is_write_in": false,
      "first": "Brian",
      "middle": "W.",
      "last": "Murray",
@@ -541,6 +551,7 @@
    "lines": [
     {
      "candidateID": "124069",
+     "is_write_in": false,
      "first": "Christopher",
      "middle": "M.",
      "last": "Hendricks",
@@ -599,6 +610,7 @@
    "lines": [
     {
      "candidateID": "165960",
+     "is_write_in": false,
      "first": "Sean",
      "middle": "Daniel",
      "last": "Reid",
@@ -657,6 +669,7 @@
    "lines": [
     {
      "candidateID": "123554",
+     "is_write_in": false,
      "first": "Bud",
      "middle": "L.",
      "last": "Williams",
@@ -715,6 +728,7 @@
    "lines": [
     {
      "candidateID": "165976",
+     "is_write_in": false,
      "first": "Amy",
      "middle": "Mah",
      "last": "Sangiolo",
@@ -773,6 +787,7 @@
    "lines": [
     {
      "candidateID": "122482",
+     "is_write_in": false,
      "first": "Paul",
      "middle": null,
      "last": "McMurtry",
@@ -831,6 +846,7 @@
    "lines": [
     {
      "candidateID": "125151",
+     "is_write_in": false,
      "first": "Rita",
      "middle": "A.",
      "last": "Mendes",
@@ -889,6 +905,7 @@
    "lines": [
     {
      "candidateID": "125164",
+     "is_write_in": false,
      "first": "Judith",
      "middle": null,
      "last": "Garcia",
@@ -947,6 +964,7 @@
    "lines": [
     {
      "candidateID": "123671",
+     "is_write_in": false,
      "first": "Hannah",
      "middle": "Elizabeth",
      "last": "Kane",
@@ -994,7 +1012,7 @@
    "holder": {
     "politician_id": "c77f1324-a106-4d45-a044-0174bddfe8e0",
     "our_name": "Norman J. Orrall",
-    "ap_name": "Norman J.  Orrall",
+    "ap_name": "Norman J. Orrall",
     "candidateID": "124255",
     "last_agrees": true,
     "first_agrees": true,
@@ -1005,12 +1023,13 @@
    "lines": [
     {
      "candidateID": "124255",
+     "is_write_in": false,
      "first": "Norman",
-     "middle": "J. ",
+     "middle": "J.",
      "last": "Orrall",
      "suffix": null,
      "nickname": null,
-     "full_name": "Norman J.  Orrall",
+     "full_name": "Norman J. Orrall",
      "party": "GOP",
      "ap_incumbent": true,
      "ballotOrder": 1,
@@ -1063,6 +1082,7 @@
    "lines": [
     {
      "candidateID": "123459",
+     "is_write_in": false,
      "first": "Thomas",
      "middle": "P.",
      "last": "Walsh",
@@ -1110,7 +1130,7 @@
    "holder": {
     "politician_id": "9b3772d3-3602-457a-82e7-479b5e557b13",
     "our_name": "Angelo J. Puppolo",
-    "ap_name": "Angelo J.  Puppolo Jr.",
+    "ap_name": "Angelo J. Puppolo Jr.",
     "candidateID": "122449",
     "last_agrees": true,
     "first_agrees": true,
@@ -1121,12 +1141,13 @@
    "lines": [
     {
      "candidateID": "122449",
+     "is_write_in": false,
      "first": "Angelo",
-     "middle": "J. ",
+     "middle": "J.",
      "last": "Puppolo",
      "suffix": "Jr.",
      "nickname": null,
-     "full_name": "Angelo J.  Puppolo Jr.",
+     "full_name": "Angelo J. Puppolo Jr.",
      "party": "Dem",
      "ap_incumbent": true,
      "ballotOrder": 1,
@@ -1179,6 +1200,7 @@
    "lines": [
     {
      "candidateID": "165979",
+     "is_write_in": false,
      "first": "Greg",
      "middle": null,
      "last": "Schwartz",
@@ -1237,6 +1259,7 @@
    "lines": [
     {
      "candidateID": "54538",
+     "is_write_in": false,
      "first": "John",
      "middle": "Healy",
      "last": "Rogers",
@@ -1295,6 +1318,7 @@
    "lines": [
     {
      "candidateID": "124205",
+     "is_write_in": false,
      "first": "Kathleen",
      "middle": null,
      "last": "LaNatra",
@@ -1311,12 +1335,13 @@
     },
     {
      "candidateID": "125255",
+     "is_write_in": false,
      "first": "Eric",
-     "middle": "J. ",
+     "middle": "J.",
      "last": "Meschino",
      "suffix": null,
      "nickname": null,
-     "full_name": "Eric J.  Meschino",
+     "full_name": "Eric J. Meschino",
      "party": "GOP",
      "ap_incumbent": false,
      "ballotOrder": 2,
@@ -1369,6 +1394,7 @@
    "lines": [
     {
      "candidateID": "124648",
+     "is_write_in": false,
      "first": "Brandy",
      "middle": null,
      "last": "Fluker Reid",
@@ -1427,6 +1453,7 @@
    "lines": [
     {
      "candidateID": "124671",
+     "is_write_in": false,
      "first": "Meghan",
      "middle": null,
      "last": "Kilcoyne",
@@ -1443,6 +1470,7 @@
     },
     {
      "candidateID": "125380",
+     "is_write_in": false,
      "first": "Lisa",
      "middle": "K.",
      "last": "Mair",
@@ -1501,6 +1529,7 @@
    "lines": [
     {
      "candidateID": "54454",
+     "is_write_in": false,
      "first": "Antonio",
      "middle": "F. D.",
      "last": "Cabral",
@@ -1559,6 +1588,7 @@
    "lines": [
     {
      "candidateID": "124559",
+     "is_write_in": false,
      "first": "Sally",
      "middle": "Patrice",
      "last": "Kerans",
@@ -1607,6 +1637,7 @@
    "lines": [
     {
      "candidateID": "177147",
+     "is_write_in": false,
      "first": "Ravi",
      "middle": null,
      "last": "Simon",
@@ -1665,6 +1696,7 @@
    "lines": [
     {
      "candidateID": "166043",
+     "is_write_in": false,
      "first": "Joshua",
      "middle": "Brian",
      "last": "Tarsky",
@@ -1712,7 +1744,7 @@
    "holder": {
     "politician_id": "5c36a94c-9006-4550-a37e-978a65d2725c",
     "our_name": "Daniel J. Hunt",
-    "ap_name": "Daniel J.  Hunt",
+    "ap_name": "Daniel J. Hunt",
     "candidateID": "123297",
     "last_agrees": true,
     "first_agrees": true,
@@ -1723,12 +1755,13 @@
    "lines": [
     {
      "candidateID": "123297",
+     "is_write_in": false,
      "first": "Daniel",
-     "middle": "J. ",
+     "middle": "J.",
      "last": "Hunt",
      "suffix": null,
      "nickname": null,
-     "full_name": "Daniel J.  Hunt",
+     "full_name": "Daniel J. Hunt",
      "party": "Dem",
      "ap_incumbent": true,
      "ballotOrder": 1,
@@ -1770,7 +1803,7 @@
    "holder": {
     "politician_id": "50838d91-2ce4-4aa6-8950-b87579860a4b",
     "our_name": "John J. Mahoney",
-    "ap_name": "John J.  Mahoney",
+    "ap_name": "John J. Mahoney",
     "candidateID": "123805",
     "last_agrees": true,
     "first_agrees": true,
@@ -1781,12 +1814,13 @@
    "lines": [
     {
      "candidateID": "123805",
+     "is_write_in": false,
      "first": "John",
-     "middle": "J. ",
+     "middle": "J.",
      "last": "Mahoney",
      "suffix": null,
      "nickname": null,
-     "full_name": "John J.  Mahoney",
+     "full_name": "John J. Mahoney",
      "party": "Dem",
      "ap_incumbent": true,
      "ballotOrder": 1,
@@ -1839,6 +1873,7 @@
    "lines": [
     {
      "candidateID": "124548",
+     "is_write_in": false,
      "first": "Adam",
      "middle": "J.",
      "last": "Scanlon",
@@ -1897,6 +1932,7 @@
    "lines": [
     {
      "candidateID": "125054",
+     "is_write_in": false,
      "first": "Adrianne",
      "middle": "Pusateri",
      "last": "Ramos",
@@ -1944,7 +1980,7 @@
    "holder": {
     "politician_id": "918296a2-5def-4ddf-8986-860d542900e7",
     "our_name": "Simon Cataldo",
-    "ap_name": "Simon J.  Cataldo",
+    "ap_name": "Simon J. Cataldo",
     "candidateID": "125104",
     "last_agrees": true,
     "first_agrees": true,
@@ -1955,12 +1991,13 @@
    "lines": [
     {
      "candidateID": "125104",
+     "is_write_in": false,
      "first": "Simon",
-     "middle": "J. ",
+     "middle": "J.",
      "last": "Cataldo",
      "suffix": null,
      "nickname": null,
-     "full_name": "Simon J.  Cataldo",
+     "full_name": "Simon J. Cataldo",
      "party": "Dem",
      "ap_incumbent": true,
      "ballotOrder": 1,
@@ -2013,6 +2050,7 @@
    "lines": [
     {
      "candidateID": "122485",
+     "is_write_in": false,
      "first": "Alice",
      "middle": "Hanlon",
      "last": "Peisch",
@@ -2071,6 +2109,7 @@
    "lines": [
     {
      "candidateID": "123089",
+     "is_write_in": false,
      "first": "Rob",
      "middle": null,
      "last": "Consalvo",
@@ -2118,7 +2157,7 @@
    "holder": {
     "politician_id": "9b754d96-e0e7-4f6b-b3ae-e0d1c12ef1bf",
     "our_name": "James J. O'Day",
-    "ap_name": "James J.  O'Day",
+    "ap_name": "James J. O'Day",
     "candidateID": "122526",
     "last_agrees": true,
     "first_agrees": true,
@@ -2129,12 +2168,13 @@
    "lines": [
     {
      "candidateID": "122526",
+     "is_write_in": false,
      "first": "James",
-     "middle": "J. ",
+     "middle": "J.",
      "last": "O'Day",
      "suffix": null,
      "nickname": null,
-     "full_name": "James J.  O'Day",
+     "full_name": "James J. O'Day",
      "party": "Dem",
      "ap_incumbent": true,
      "ballotOrder": 1,
@@ -2187,6 +2227,7 @@
    "lines": [
     {
      "candidateID": "125059",
+     "is_write_in": false,
      "first": "Ryan",
      "middle": "M.",
      "last": "Hamilton",
@@ -2203,6 +2244,7 @@
     },
     {
      "candidateID": "177339",
+     "is_write_in": false,
      "first": "Ronald",
      "middle": "L.",
      "last": "Heiseler",
@@ -2261,6 +2303,7 @@
    "lines": [
     {
      "candidateID": "124143",
+     "is_write_in": false,
      "first": "Michelle",
      "middle": null,
      "last": "Ciccolo",
@@ -2319,6 +2362,7 @@
    "lines": [
     {
      "candidateID": "124192",
+     "is_write_in": false,
      "first": "Tommy",
      "middle": null,
      "last": "Vitolo",
@@ -2377,6 +2421,7 @@
    "lines": [
     {
      "candidateID": "125180",
+     "is_write_in": false,
      "first": "Samantha",
      "middle": null,
      "last": "Montaño",
@@ -2435,6 +2480,7 @@
    "lines": [
     {
      "candidateID": "122861",
+     "is_write_in": false,
      "first": "Mary",
      "middle": "S.",
      "last": "Keefe",
@@ -2483,6 +2529,7 @@
    "lines": [
     {
      "candidateID": "177136",
+     "is_write_in": false,
      "first": "Celina",
      "middle": "A.",
      "last": "Reyes",
@@ -2531,6 +2578,7 @@
    "lines": [
     {
      "candidateID": "177148",
+     "is_write_in": false,
      "first": "Lorena",
      "middle": "G.",
      "last": "Betts",
@@ -2547,12 +2595,13 @@
     },
     {
      "candidateID": "125231",
+     "is_write_in": false,
      "first": "Karla",
-     "middle": "J. ",
+     "middle": "J.",
      "last": "Miller",
      "suffix": null,
      "nickname": null,
-     "full_name": "Karla J.  Miller",
+     "full_name": "Karla J. Miller",
      "party": "GOP",
      "ap_incumbent": false,
      "ballotOrder": 2,
@@ -2605,6 +2654,7 @@
    "lines": [
     {
      "candidateID": "124654",
+     "is_write_in": false,
      "first": "Jessica",
      "middle": "Ann",
      "last": "Giannino",
@@ -2663,6 +2713,7 @@
    "lines": [
     {
      "candidateID": "123311",
+     "is_write_in": false,
      "first": "Daniel",
      "middle": "M.",
      "last": "Donahue",
@@ -2721,6 +2772,7 @@
    "lines": [
     {
      "candidateID": "122795",
+     "is_write_in": false,
      "first": "Frank",
      "middle": "A.",
      "last": "Moran",
@@ -2769,6 +2821,7 @@
    "lines": [
     {
      "candidateID": "124002",
+     "is_write_in": false,
      "first": "John",
      "middle": "M.",
      "last": "Drinkwater",
@@ -2827,6 +2880,7 @@
    "lines": [
     {
      "candidateID": "54570",
+     "is_write_in": false,
      "first": "Kevin",
      "middle": "G.",
      "last": "Honan",
@@ -2885,6 +2939,7 @@
    "lines": [
     {
      "candidateID": "124250",
+     "is_write_in": false,
      "first": "David",
      "middle": "Henry Argosky",
      "last": "LeBoeuf",
@@ -2933,6 +2988,7 @@
    "lines": [
     {
      "candidateID": "177137",
+     "is_write_in": false,
      "first": "Connor",
      "middle": "A.",
      "last": "Murray",
@@ -2949,6 +3005,7 @@
     },
     {
      "candidateID": "179222",
+     "is_write_in": false,
      "first": "Christopher",
      "middle": "C.",
      "last": "Shepley",
@@ -3007,6 +3064,7 @@
    "lines": [
     {
      "candidateID": "125113",
+     "is_write_in": false,
      "first": "Tara",
      "middle": null,
      "last": "Hong",
@@ -3054,7 +3112,7 @@
    "holder": {
     "politician_id": "9b3c9aa8-d22a-4761-93e3-8054c762f4a5",
     "our_name": "Michael J. Moran",
-    "ap_name": "Michael J.  Moran",
+    "ap_name": "Michael J. Moran",
     "candidateID": "122514",
     "last_agrees": true,
     "first_agrees": true,
@@ -3065,12 +3123,13 @@
    "lines": [
     {
      "candidateID": "122514",
+     "is_write_in": false,
      "first": "Michael",
-     "middle": "J. ",
+     "middle": "J.",
      "last": "Moran",
      "suffix": null,
      "nickname": null,
-     "full_name": "Michael J.  Moran",
+     "full_name": "Michael J. Moran",
      "party": "Dem",
      "ap_incumbent": true,
      "ballotOrder": 1,
@@ -3123,6 +3182,7 @@
    "lines": [
     {
      "candidateID": "123340",
+     "is_write_in": false,
      "first": "Joseph",
      "middle": "D.",
      "last": "McKenna",
@@ -3139,6 +3199,7 @@
     },
     {
      "candidateID": "177333",
+     "is_write_in": false,
      "first": "Jenifer",
      "middle": null,
      "last": "Heck",
@@ -3197,6 +3258,7 @@
    "lines": [
     {
      "candidateID": "124168",
+     "is_write_in": false,
      "first": "David",
      "middle": "Allen",
      "last": "Robertson",
@@ -3255,6 +3317,7 @@
    "lines": [
     {
      "candidateID": "125187",
+     "is_write_in": false,
      "first": "Jeffrey",
      "middle": "Rosario",
      "last": "Turco",
@@ -3313,6 +3376,7 @@
    "lines": [
     {
      "candidateID": "125193",
+     "is_write_in": false,
      "first": "Kate",
      "middle": null,
      "last": "Donaghue",
@@ -3361,6 +3425,7 @@
    "lines": [
     {
      "candidateID": "177062",
+     "is_write_in": false,
      "first": "Christopher",
      "middle": null,
      "last": "Lambton",
@@ -3377,6 +3442,7 @@
     },
     {
      "candidateID": "179356",
+     "is_write_in": false,
      "first": "Joe",
      "middle": "B.",
      "last": "Glynn",
@@ -3435,6 +3501,7 @@
    "lines": [
     {
      "candidateID": "177064",
+     "is_write_in": false,
      "first": "John",
      "middle": null,
      "last": "Barrett",
@@ -3493,6 +3560,7 @@
    "lines": [
     {
      "candidateID": "125365",
+     "is_write_in": false,
      "first": "Michael",
      "middle": null,
      "last": "Chaisson",
@@ -3551,6 +3619,7 @@
    "lines": [
     {
      "candidateID": "125392",
+     "is_write_in": false,
      "first": "Dawne",
      "middle": "Frances",
      "last": "Shand",
@@ -3599,6 +3668,7 @@
    "lines": [
     {
      "candidateID": "177139",
+     "is_write_in": false,
      "first": "Lora",
      "middle": "L.",
      "last": "Wondolowski",
@@ -3615,6 +3685,7 @@
     },
     {
      "candidateID": "179359",
+     "is_write_in": false,
      "first": "Amy",
      "middle": "E.",
      "last": "Lavallee",
@@ -3673,6 +3744,7 @@
    "lines": [
     {
      "candidateID": "122551",
+     "is_write_in": false,
      "first": "Todd",
      "middle": "M.",
      "last": "Smola",
@@ -3731,6 +3803,7 @@
    "lines": [
     {
      "candidateID": "124122",
+     "is_write_in": false,
      "first": "Lindsay",
      "middle": "N.",
      "last": "Sabadosa",
@@ -3789,6 +3862,7 @@
    "lines": [
     {
      "candidateID": "125078",
+     "is_write_in": false,
      "first": "Margaret",
      "middle": "R.",
      "last": "Scarsdale",
@@ -3805,6 +3879,7 @@
     },
     {
      "candidateID": "177341",
+     "is_write_in": false,
      "first": "Christopher",
      "middle": "M.",
      "last": "Lyons",
@@ -3852,7 +3927,7 @@
    "holder": {
     "politician_id": "3582a053-ee20-4391-904f-3905a2d13a52",
     "our_name": "Bruce J. Ayers",
-    "ap_name": "Bruce J.  Ayers",
+    "ap_name": "Bruce J. Ayers",
     "candidateID": "122581",
     "last_agrees": true,
     "first_agrees": true,
@@ -3863,12 +3938,13 @@
    "lines": [
     {
      "candidateID": "122581",
+     "is_write_in": false,
      "first": "Bruce",
-     "middle": "J. ",
+     "middle": "J.",
      "last": "Ayers",
      "suffix": null,
      "nickname": null,
-     "full_name": "Bruce J.  Ayers",
+     "full_name": "Bruce J. Ayers",
      "party": "Dem",
      "ap_incumbent": true,
      "ballotOrder": 1,
@@ -3921,6 +3997,7 @@
    "lines": [
     {
      "candidateID": "166044",
+     "is_write_in": false,
      "first": "Michelle",
      "middle": "L.",
      "last": "Badger",
@@ -3937,6 +4014,7 @@
     },
     {
      "candidateID": "177346",
+     "is_write_in": false,
      "first": "David",
      "middle": "Michael",
      "last": "Golden",
@@ -3995,6 +4073,7 @@
    "lines": [
     {
      "candidateID": "123635",
+     "is_write_in": false,
      "first": "Adrian",
      "middle": "C.",
      "last": "Madaro",
@@ -4043,6 +4122,7 @@
    "lines": [
     {
      "candidateID": "177327",
+     "is_write_in": false,
      "first": "Krista",
      "middle": "Suzanne",
      "last": "Ferrante",
@@ -4059,6 +4139,7 @@
     },
     {
      "candidateID": "177349",
+     "is_write_in": false,
      "first": "Stephanie",
      "middle": "R.",
      "last": "Mulroy",
@@ -4107,6 +4188,7 @@
    "lines": [
     {
      "candidateID": "177344",
+     "is_write_in": false,
      "first": "Trevor",
      "middle": "David",
      "last": "Currier",
@@ -4123,6 +4205,7 @@
     },
     {
      "candidateID": "177153",
+     "is_write_in": false,
      "first": "Joseph",
      "middle": null,
      "last": "Markey",
@@ -4181,6 +4264,7 @@
    "lines": [
     {
      "candidateID": "123054",
+     "is_write_in": false,
      "first": "Kenneth",
      "middle": "Ira",
      "last": "Gordon",
@@ -4239,6 +4323,7 @@
    "lines": [
     {
      "candidateID": "122373",
+     "is_write_in": false,
      "first": "Marc",
      "middle": "T.",
      "last": "Lombardo",
@@ -4255,6 +4340,7 @@
     },
     {
      "candidateID": "177154",
+     "is_write_in": false,
      "first": "Daniel",
      "middle": "Ronald",
      "last": "Darris-O'Connor",
@@ -4313,6 +4399,7 @@
    "lines": [
     {
      "candidateID": "122460",
+     "is_write_in": false,
      "first": "Sean",
      "middle": null,
      "last": "Garballey",
@@ -4371,6 +4458,7 @@
    "lines": [
     {
      "candidateID": "122815",
+     "is_write_in": false,
      "first": "David",
      "middle": "M.",
      "last": "Rogers",
@@ -4429,6 +4517,7 @@
    "lines": [
     {
      "candidateID": "122817",
+     "is_write_in": false,
      "first": "Marjorie",
      "middle": "C.",
      "last": "Decker",
@@ -4487,6 +4576,7 @@
    "lines": [
     {
      "candidateID": "123059",
+     "is_write_in": false,
      "first": "Mike",
      "middle": null,
      "last": "Connolly",
@@ -4535,6 +4625,7 @@
    "lines": [
     {
      "candidateID": "177157",
+     "is_write_in": false,
      "first": "Ben",
      "middle": null,
      "last": "Ewen-Campen",
@@ -4593,6 +4684,7 @@
    "lines": [
     {
      "candidateID": "123229",
+     "is_write_in": false,
      "first": "Joseph",
      "middle": "W.",
      "last": "McGonagle",
@@ -4651,6 +4743,7 @@
    "lines": [
     {
      "candidateID": "124616",
+     "is_write_in": false,
      "first": "Steven",
      "middle": "Charles",
      "last": "Owens",
@@ -4709,6 +4802,7 @@
    "lines": [
     {
      "candidateID": "124804",
+     "is_write_in": false,
      "first": "Kip",
      "middle": "A.",
      "last": "Diggs",
@@ -4767,6 +4861,7 @@
    "lines": [
     {
      "candidateID": "63073",
+     "is_write_in": false,
      "first": "Tricia",
      "middle": null,
      "last": "Farley-Bouvier",
@@ -4825,6 +4920,7 @@
    "lines": [
     {
      "candidateID": "124063",
+     "is_write_in": false,
      "first": "James",
      "middle": "Kimball",
      "last": "Hawkins",
@@ -4841,6 +4937,7 @@
     },
     {
      "candidateID": "179357",
+     "is_write_in": false,
      "first": "Andrew",
      "middle": null,
      "last": "Nelson",
@@ -4899,6 +4996,7 @@
    "lines": [
     {
      "candidateID": "125018",
+     "is_write_in": false,
      "first": "Kristin",
      "middle": "Elena",
      "last": "Kassner",
@@ -4915,6 +5013,7 @@
     },
     {
      "candidateID": "165831",
+     "is_write_in": false,
      "first": "Daniel",
      "middle": "James",
      "last": "Kelly",
@@ -4973,6 +5072,7 @@
    "lines": [
     {
      "candidateID": "122900",
+     "is_write_in": false,
      "first": "Susannah",
      "middle": "M.",
      "last": "Whipps",
@@ -5031,6 +5131,7 @@
    "lines": [
     {
      "candidateID": "122446",
+     "is_write_in": false,
      "first": "Brian",
      "middle": "Michael",
      "last": "Ashe",
@@ -5047,6 +5148,7 @@
     },
     {
      "candidateID": "177340",
+     "is_write_in": false,
      "first": "Peter",
      "middle": null,
      "last": "Warren",
@@ -5105,6 +5207,7 @@
    "lines": [
     {
      "candidateID": "165969",
+     "is_write_in": false,
      "first": "Homar",
      "middle": null,
      "last": "Gomez",
@@ -5163,6 +5266,7 @@
    "lines": [
     {
      "candidateID": "122451",
+     "is_write_in": false,
      "first": "James",
      "middle": null,
      "last": "Arciero",
@@ -5221,6 +5325,7 @@
    "lines": [
     {
      "candidateID": "122188",
+     "is_write_in": false,
      "first": "Tackey",
      "middle": null,
      "last": "Chan",
@@ -5237,6 +5342,7 @@
     },
     {
      "candidateID": "125239",
+     "is_write_in": false,
      "first": "Sharon",
      "middle": "Marie",
      "last": "Cintolo",
@@ -5295,6 +5401,7 @@
    "lines": [
     {
      "candidateID": "166153",
+     "is_write_in": false,
      "first": "John",
      "middle": "Robert",
      "last": "Gaskey",
@@ -5311,6 +5418,7 @@
     },
     {
      "candidateID": "123614",
+     "is_write_in": false,
      "first": "Sarah",
      "middle": "G.",
      "last": "Hewins",
@@ -5358,7 +5466,7 @@
    "holder": {
     "politician_id": "6ab8e9cc-6315-40d8-bb99-eb00faed61fa",
     "our_name": "Daniel J. Ryan",
-    "ap_name": "Daniel J.  Ryan",
+    "ap_name": "Daniel J. Ryan",
     "candidateID": "123283",
     "last_agrees": true,
     "first_agrees": true,
@@ -5369,12 +5477,13 @@
    "lines": [
     {
      "candidateID": "123283",
+     "is_write_in": false,
      "first": "Daniel",
-     "middle": "J. ",
+     "middle": "J.",
      "last": "Ryan",
      "suffix": null,
      "nickname": null,
-     "full_name": "Daniel J.  Ryan",
+     "full_name": "Daniel J. Ryan",
      "party": "Dem",
      "ap_incumbent": true,
      "ballotOrder": 1,
@@ -5417,6 +5526,7 @@
    "lines": [
     {
      "candidateID": "177328",
+     "is_write_in": false,
      "first": "Michael",
      "middle": "Joseph",
      "last": "Nicholson",
@@ -5433,6 +5543,7 @@
     },
     {
      "candidateID": "179365",
+     "is_write_in": false,
      "first": "John",
      "middle": "D.",
      "last": "Reilly",
@@ -5491,6 +5602,7 @@
    "lines": [
     {
      "candidateID": "124176",
+     "is_write_in": false,
      "first": "Richard",
      "middle": "M.",
      "last": "Haggerty",
@@ -5549,6 +5661,7 @@
    "lines": [
     {
      "candidateID": "123234",
+     "is_write_in": false,
      "first": "Michael",
      "middle": "Seamus",
      "last": "Day",
@@ -5565,6 +5678,7 @@
     },
     {
      "candidateID": "177345",
+     "is_write_in": false,
      "first": "Stephen",
      "middle": "G.",
      "last": "Ternullo",
@@ -5613,6 +5727,7 @@
    "lines": [
     {
      "candidateID": "177161",
+     "is_write_in": false,
      "first": "Leila",
      "middle": "Bhatti",
      "last": "Migliorelli",
@@ -5671,6 +5786,7 @@
    "lines": [
     {
      "candidateID": "123237",
+     "is_write_in": false,
      "first": "Steven",
      "middle": null,
      "last": "Ultrino",
@@ -5719,6 +5835,7 @@
    "lines": [
     {
      "candidateID": "177162",
+     "is_write_in": false,
      "first": "Will",
      "middle": null,
      "last": "Mbah",
@@ -5766,7 +5883,7 @@
    "holder": {
     "politician_id": "a73b7873-74df-484f-bfab-3b0d905972d9",
     "our_name": "Paul J. Donato",
-    "ap_name": "Paul J.  Donato",
+    "ap_name": "Paul J. Donato",
     "candidateID": "122473",
     "last_agrees": true,
     "first_agrees": true,
@@ -5777,12 +5894,13 @@
    "lines": [
     {
      "candidateID": "122473",
+     "is_write_in": false,
      "first": "Paul",
-     "middle": "J. ",
+     "middle": "J.",
      "last": "Donato",
      "suffix": null,
      "nickname": null,
-     "full_name": "Paul J.  Donato",
+     "full_name": "Paul J. Donato",
      "party": "Dem",
      "ap_incumbent": true,
      "ballotOrder": 1,
@@ -5793,6 +5911,7 @@
     },
     {
      "candidateID": "177954",
+     "is_write_in": false,
      "first": "James",
      "middle": "C.",
      "last": "Seibel",
@@ -5851,6 +5970,7 @@
    "lines": [
     {
      "candidateID": "122577",
+     "is_write_in": false,
      "first": "Colleen",
      "middle": "M.",
      "last": "Garry",
@@ -5909,6 +6029,7 @@
    "lines": [
     {
      "candidateID": "124622",
+     "is_write_in": false,
      "first": "Danillo",
      "middle": "A.",
      "last": "Sena",
@@ -5967,6 +6088,7 @@
    "lines": [
     {
      "candidateID": "122326",
+     "is_write_in": false,
      "first": "David",
      "middle": "T.",
      "last": "Vieira",
@@ -5983,6 +6105,7 @@
     },
     {
      "candidateID": "177063",
+     "is_write_in": false,
      "first": "Jack",
      "middle": "Peter",
      "last": "Richardson",
@@ -6041,6 +6164,7 @@
    "lines": [
     {
      "candidateID": "165953",
+     "is_write_in": false,
      "first": "Leigh",
      "middle": "Susan",
      "last": "Davis",
@@ -6099,6 +6223,7 @@
    "lines": [
     {
      "candidateID": "177126",
+     "is_write_in": false,
      "first": "Lisa",
      "middle": "M.",
      "last": "Field",
@@ -6115,6 +6240,7 @@
     },
     {
      "candidateID": "177334",
+     "is_write_in": false,
      "first": "Lawrence",
      "middle": "Joseph",
      "last": "Quintal",
@@ -6173,6 +6299,7 @@
    "lines": [
     {
      "candidateID": "124327",
+     "is_write_in": false,
      "first": "Andres",
      "middle": "Xavier",
      "last": "Vargas",
@@ -6231,6 +6358,7 @@
    "lines": [
     {
      "candidateID": "122360",
+     "is_write_in": false,
      "first": "Nicholas",
      "middle": "A.",
      "last": "Boldyga",
@@ -6247,6 +6375,7 @@
     },
     {
      "candidateID": "177141",
+     "is_write_in": false,
      "first": "Thomas",
      "middle": "D.",
      "last": "Hendrickson",
@@ -6263,6 +6392,7 @@
     },
     {
      "candidateID": "179360",
+     "is_write_in": false,
      "first": "Jason",
      "middle": "M.",
      "last": "Perron",
@@ -6321,6 +6451,7 @@
    "lines": [
     {
      "candidateID": "124134",
+     "is_write_in": false,
      "first": "Mindy",
      "middle": null,
      "last": "Domb",
@@ -6379,6 +6510,7 @@
    "lines": [
     {
      "candidateID": "122452",
+     "is_write_in": false,
      "first": "Kate",
      "middle": null,
      "last": "Hogan",
@@ -6437,6 +6569,7 @@
    "lines": [
     {
      "candidateID": "54530",
+     "is_write_in": false,
      "first": "Ronald",
      "middle": null,
      "last": "Mariano",
@@ -6495,6 +6628,7 @@
    "lines": [
     {
      "candidateID": "123811",
+     "is_write_in": false,
      "first": "Joan",
      "middle": null,
      "last": "Meschino",
@@ -6553,6 +6687,7 @@
    "lines": [
     {
      "candidateID": "122500",
+     "is_write_in": false,
      "first": "Aaron",
      "middle": null,
      "last": "Michlewitz",
@@ -6611,6 +6746,7 @@
    "lines": [
     {
      "candidateID": "124661",
+     "is_write_in": false,
      "first": "Michael",
      "middle": "P.",
      "last": "Kushmerek",
@@ -6669,6 +6805,7 @@
    "lines": [
     {
      "candidateID": "165951",
+     "is_write_in": false,
      "first": "Hadley",
      "middle": null,
      "last": "Luddy",
@@ -6727,6 +6864,7 @@
    "lines": [
     {
      "candidateID": "122333",
+     "is_write_in": false,
      "first": "Steven",
      "middle": "S.",
      "last": "Howitt",
@@ -6785,6 +6923,7 @@
    "lines": [
     {
      "candidateID": "125025",
+     "is_write_in": false,
      "first": "Estela",
      "middle": null,
      "last": "Reyes",
@@ -6843,6 +6982,7 @@
    "lines": [
     {
      "candidateID": "124692",
+     "is_write_in": false,
      "first": "Kelly",
      "middle": "W.",
      "last": "Pease",
@@ -6859,6 +6999,7 @@
     },
     {
      "candidateID": "177142",
+     "is_write_in": false,
      "first": "Colby",
      "middle": "Walshe",
      "last": "Hoffman",
@@ -6917,6 +7058,7 @@
    "lines": [
     {
      "candidateID": "122454",
+     "is_write_in": false,
      "first": "Danielle",
      "middle": "W.",
      "last": "Gregoire",
@@ -6975,6 +7117,7 @@
    "lines": [
     {
      "candidateID": "122477",
+     "is_write_in": false,
      "first": "James",
      "middle": "Michael",
      "last": "Murphy",
@@ -7033,6 +7176,7 @@
    "lines": [
     {
      "candidateID": "124197",
+     "is_write_in": false,
      "first": "Patrick",
      "middle": "Joseph",
      "last": "Kearney",
@@ -7091,6 +7235,7 @@
    "lines": [
     {
      "candidateID": "124206",
+     "is_write_in": false,
      "first": "David",
      "middle": "M.",
      "last": "Biele",
@@ -7107,12 +7252,13 @@
     },
     {
      "candidateID": "168952",
+     "is_write_in": false,
      "first": "Charles",
-     "middle": "J. ",
+     "middle": "J.",
      "last": "Delaney",
      "suffix": null,
      "nickname": null,
-     "full_name": "Charles J.  Delaney",
+     "full_name": "Charles J. Delaney",
      "party": "Ind",
      "ap_incumbent": false,
      "ballotOrder": 2,
@@ -7165,6 +7311,7 @@
    "lines": [
     {
      "candidateID": "123653",
+     "is_write_in": false,
      "first": "Natalie",
      "middle": "Marie",
      "last": "Higgins",
@@ -7181,6 +7328,7 @@
     },
     {
      "candidateID": "177350",
+     "is_write_in": false,
      "first": "Josh",
      "middle": "William",
      "last": "Bowdridge",
@@ -7239,6 +7387,7 @@
    "lines": [
     {
      "candidateID": "124672",
+     "is_write_in": false,
      "first": "Steven",
      "middle": "G.",
      "last": "Xiarhos",
@@ -7297,6 +7446,7 @@
    "lines": [
     {
      "candidateID": "125389",
+     "is_write_in": false,
      "first": "Justin",
      "middle": "E.",
      "last": "Thurber",
@@ -7313,6 +7463,7 @@
     },
     {
      "candidateID": "177128",
+     "is_write_in": false,
      "first": "Jamison",
      "middle": "D.",
      "last": "Souza",
@@ -7371,6 +7522,7 @@
    "lines": [
     {
      "candidateID": "170420",
+     "is_write_in": false,
      "first": "Andrew",
      "middle": "Francis Robert",
      "last": "Tarr",
@@ -7387,6 +7539,7 @@
     },
     {
      "candidateID": "170421",
+     "is_write_in": false,
      "first": "Christina",
      "middle": null,
      "last": "Delisio",
@@ -7403,6 +7556,7 @@
     },
     {
      "candidateID": "171353",
+     "is_write_in": false,
      "first": "Gil",
      "middle": null,
      "last": "Frieden",
@@ -7461,6 +7615,7 @@
    "lines": [
     {
      "candidateID": "124574",
+     "is_write_in": false,
      "first": "Patricia",
      "middle": "A.",
      "last": "Duffy",
@@ -7477,6 +7632,7 @@
     },
     {
      "candidateID": "179361",
+     "is_write_in": false,
      "first": "Jose",
      "middle": "Ramon",
      "last": "Candelario Gonzalez",
@@ -7535,6 +7691,7 @@
    "lines": [
     {
      "candidateID": "122455",
+     "is_write_in": false,
      "first": "David",
      "middle": "Paul",
      "last": "Linsky",
@@ -7551,6 +7708,7 @@
     },
     {
      "candidateID": "177343",
+     "is_write_in": false,
      "first": "Luisa",
      "middle": "A.",
      "last": "Cestari",
@@ -7598,7 +7756,7 @@
    "holder": {
     "politician_id": "99206e70-8173-4d6c-803c-1ae2d1109e30",
     "our_name": "Mark J. Cusack",
-    "ap_name": "Mark J.  Cusack",
+    "ap_name": "Mark J. Cusack",
     "candidateID": "122192",
     "last_agrees": true,
     "first_agrees": true,
@@ -7609,12 +7767,13 @@
    "lines": [
     {
      "candidateID": "122192",
+     "is_write_in": false,
      "first": "Mark",
-     "middle": "J. ",
+     "middle": "J.",
      "last": "Cusack",
      "suffix": null,
      "nickname": null,
-     "full_name": "Mark J.  Cusack",
+     "full_name": "Mark J. Cusack",
      "party": "Dem",
      "ap_incumbent": true,
      "ballotOrder": 1,
@@ -7625,6 +7784,7 @@
     },
     {
      "candidateID": "179362",
+     "is_write_in": false,
      "first": "Stephen",
      "middle": "M.",
      "last": "Foley",
@@ -7683,6 +7843,7 @@
    "lines": [
     {
      "candidateID": "123275",
+     "is_write_in": false,
      "first": "David",
      "middle": "F.",
      "last": "DeCoste",
@@ -7699,6 +7860,7 @@
     },
     {
      "candidateID": "177267",
+     "is_write_in": false,
      "first": "Lori",
      "middle": null,
      "last": "Childs",
@@ -7746,7 +7908,7 @@
    "holder": {
     "politician_id": "bca54df2-f059-44ce-81c3-f208f1e20752",
     "our_name": "Christopher J. Worrell",
-    "ap_name": "Christopher J.  Worrell",
+    "ap_name": "Christopher J. Worrell",
     "candidateID": "125156",
     "last_agrees": true,
     "first_agrees": true,
@@ -7757,12 +7919,13 @@
    "lines": [
     {
      "candidateID": "125156",
+     "is_write_in": false,
      "first": "Christopher",
-     "middle": "J. ",
+     "middle": "J.",
      "last": "Worrell",
      "suffix": null,
      "nickname": null,
-     "full_name": "Christopher J.  Worrell",
+     "full_name": "Christopher J. Worrell",
      "party": "Dem",
      "ap_incumbent": true,
      "ballotOrder": 1,
@@ -7815,6 +7978,7 @@
    "lines": [
     {
      "candidateID": "123323",
+     "is_write_in": false,
      "first": "Donald",
      "middle": "Roger",
      "last": "Berthiaume",
@@ -7873,6 +8037,7 @@
    "lines": [
     {
      "candidateID": "123153",
+     "is_write_in": false,
      "first": "Carole",
      "middle": "A.",
      "last": "Fiola",
@@ -7889,6 +8054,7 @@
     },
     {
      "candidateID": "177335",
+     "is_write_in": false,
      "first": "Robert",
      "middle": "G.",
      "last": "Anctil",
@@ -7947,6 +8113,7 @@
    "lines": [
     {
      "candidateID": "177133",
+     "is_write_in": false,
      "first": "Hannah",
      "middle": "Louise",
      "last": "Bowen",
@@ -8005,6 +8172,7 @@
    "lines": [
     {
      "candidateID": "122175",
+     "is_write_in": false,
      "first": "Michael",
      "middle": "James",
      "last": "Finn",
@@ -8063,6 +8231,7 @@
    "lines": [
     {
      "candidateID": "125087",
+     "is_write_in": false,
      "first": "Priscila",
      "middle": "S.",
      "last": "Sousa",
@@ -8111,6 +8280,7 @@
    "lines": [
     {
      "candidateID": "177213",
+     "is_write_in": false,
      "first": "Lisa",
      "middle": "R.",
      "last": "Lopez",
@@ -8169,6 +8339,7 @@
    "lines": [
     {
      "candidateID": "125249",
+     "is_write_in": false,
      "first": "Kenneth",
      "middle": "Peter",
      "last": "Sweezey",
@@ -8185,6 +8356,7 @@
     },
     {
      "candidateID": "177269",
+     "is_write_in": false,
      "first": "Jessica",
      "middle": "Marie",
      "last": "Rushing",
@@ -8243,6 +8415,7 @@
    "lines": [
     {
      "candidateID": "122218",
+     "is_write_in": false,
      "first": "Russell",
      "middle": "Earl",
      "last": "Holmes",
@@ -8290,7 +8463,7 @@
    "holder": {
     "politician_id": "9dd7276b-1c24-466c-a530-d2297607a784",
     "our_name": "John J. Marsi",
-    "ap_name": "John J.  Marsi Jr.",
+    "ap_name": "John J. Marsi Jr.",
     "candidateID": "166156",
     "last_agrees": true,
     "first_agrees": true,
@@ -8301,12 +8474,13 @@
    "lines": [
     {
      "candidateID": "166156",
+     "is_write_in": false,
      "first": "John",
-     "middle": "J. ",
+     "middle": "J.",
      "last": "Marsi",
      "suffix": "Jr.",
      "nickname": null,
-     "full_name": "John J.  Marsi Jr.",
+     "full_name": "John J. Marsi Jr.",
      "party": "GOP",
      "ap_incumbent": true,
      "ballotOrder": 1,
@@ -8317,6 +8491,7 @@
     },
     {
      "candidateID": "177329",
+     "is_write_in": false,
      "first": "Jeanne",
      "middle": "Renaud",
      "last": "Costello",
@@ -8375,6 +8550,7 @@
    "lines": [
     {
      "candidateID": "63079",
+     "is_write_in": false,
      "first": "Alan",
      "middle": null,
      "last": "Silvia",
@@ -8391,6 +8567,7 @@
     },
     {
      "candidateID": "177336",
+     "is_write_in": false,
      "first": "Talos",
      "middle": "D.",
      "last": "Farris",
@@ -8449,6 +8626,7 @@
    "lines": [
     {
      "candidateID": "125032",
+     "is_write_in": false,
      "first": "Manny",
      "middle": null,
      "last": "Cruz",
@@ -8507,6 +8685,7 @@
    "lines": [
     {
      "candidateID": "177144",
+     "is_write_in": false,
      "first": "Aaron",
      "middle": "L.",
      "last": "Saunders",
@@ -8565,6 +8744,7 @@
    "lines": [
     {
      "candidateID": "123580",
+     "is_write_in": false,
      "first": "Jack",
      "middle": "Patrick",
      "last": "Lewis",
@@ -8623,6 +8803,7 @@
    "lines": [
     {
      "candidateID": "166040",
+     "is_write_in": false,
      "first": "Richard",
      "middle": "Gerard",
      "last": "Wells",
@@ -8681,6 +8862,7 @@
    "lines": [
     {
      "candidateID": "124293",
+     "is_write_in": false,
      "first": "Alyson",
      "middle": "M.",
      "last": "Sullivan-Almeida",
@@ -8697,6 +8879,7 @@
     },
     {
      "candidateID": "177271",
+     "is_write_in": false,
      "first": "Rosemary",
      "middle": null,
      "last": "Aahanna-Hill",
@@ -8755,6 +8938,7 @@
    "lines": [
     {
      "candidateID": "123644",
+     "is_write_in": false,
      "first": "Chynah",
      "middle": "T.",
      "last": "Tyler",
@@ -8813,6 +8997,7 @@
    "lines": [
     {
      "candidateID": "54579",
+     "is_write_in": false,
      "first": "Paul",
      "middle": "K.",
      "last": "Frost",
@@ -8829,6 +9014,7 @@
     },
     {
      "candidateID": "177330",
+     "is_write_in": false,
      "first": "Nicholas",
      "middle": null,
      "last": "Lazzaro",
@@ -8845,6 +9031,7 @@
     },
     {
      "candidateID": "123658",
+     "is_write_in": false,
      "first": "Terry",
      "middle": "Burke",
      "last": "Dotson",
@@ -8903,6 +9090,7 @@
    "lines": [
     {
      "candidateID": "165958",
+     "is_write_in": false,
      "first": "Steven",
      "middle": "J.",
      "last": "Ouellette",
@@ -8919,6 +9107,7 @@
     },
     {
      "candidateID": "168197",
+     "is_write_in": false,
      "first": "Jesse",
      "middle": "W.",
      "last": "St. Gelais",
@@ -8977,6 +9166,7 @@
    "lines": [
     {
      "candidateID": "125036",
+     "is_write_in": false,
      "first": "Jennifer",
      "middle": "WB",
      "last": "Armini",
@@ -9035,6 +9225,7 @@
    "lines": [
     {
      "candidateID": "125067",
+     "is_write_in": false,
      "first": "Shirley",
      "middle": null,
      "last": "Arriaga",
@@ -9093,6 +9284,7 @@
    "lines": [
     {
      "candidateID": "125091",
+     "is_write_in": false,
      "first": "James",
      "middle": "C.",
      "last": "Arena-DeRosa",
@@ -9151,6 +9343,7 @@
    "lines": [
     {
      "candidateID": "124634",
+     "is_write_in": false,
      "first": "Ted",
      "middle": null,
      "last": "Philips",
@@ -9209,6 +9402,7 @@
    "lines": [
     {
      "candidateID": "166047",
+     "is_write_in": false,
      "first": "Dennis",
      "middle": "C.",
      "last": "Gallagher",
@@ -9225,6 +9419,7 @@
     },
     {
      "candidateID": "177348",
+     "is_write_in": false,
      "first": "John",
      "middle": "Edward",
      "last": "Norris",
@@ -9283,6 +9478,7 @@
    "lines": [
     {
      "candidateID": "123287",
+     "is_write_in": false,
      "first": "Jay",
      "middle": "D.",
      "last": "Livingstone",
@@ -9330,7 +9526,7 @@
    "holder": {
     "politician_id": "51e50b38-dbb2-4131-91bb-23c24bf6d741",
     "our_name": "Michael J. Soter",
-    "ap_name": "Michael J.  Soter",
+    "ap_name": "Michael J. Soter",
     "candidateID": "123445",
     "last_agrees": true,
     "first_agrees": true,
@@ -9341,12 +9537,13 @@
    "lines": [
     {
      "candidateID": "123445",
+     "is_write_in": false,
      "first": "Michael",
-     "middle": "J. ",
+     "middle": "J.",
      "last": "Soter",
      "suffix": null,
      "nickname": null,
-     "full_name": "Michael J.  Soter",
+     "full_name": "Michael J. Soter",
      "party": "GOP",
      "ap_incumbent": true,
      "ballotOrder": 1,
@@ -9389,6 +9586,7 @@
    "lines": [
     {
      "candidateID": "177130",
+     "is_write_in": false,
      "first": "Edward",
      "middle": "M.",
      "last": "Pacheco",
@@ -9405,6 +9603,7 @@
     },
     {
      "candidateID": "177338",
+     "is_write_in": false,
      "first": "Chester",
      "middle": "M.",
      "last": "Tam",
@@ -9463,6 +9662,7 @@
    "lines": [
     {
      "candidateID": "122344",
+     "is_write_in": false,
      "first": "Donald",
      "middle": "H.",
      "last": "Wong",
@@ -9479,6 +9679,7 @@
     },
     {
      "candidateID": "177134",
+     "is_write_in": false,
      "first": "Peter",
      "middle": null,
      "last": "Meaney",
@@ -9537,6 +9738,7 @@
    "lines": [
     {
      "candidateID": "124582",
+     "is_write_in": false,
      "first": "Orlando",
      "middle": null,
      "last": "Ramos",
@@ -9595,6 +9797,7 @@
    "lines": [
     {
      "candidateID": "122570",
+     "is_write_in": false,
      "first": "Thomas",
      "middle": "M.",
      "last": "Stanley",
@@ -9653,6 +9856,7 @@
    "lines": [
     {
      "candidateID": "125245",
+     "is_write_in": false,
      "first": "Marcus",
      "middle": "S.",
      "last": "Vaughn",
@@ -9669,6 +9873,7 @@
     },
     {
      "candidateID": "177219",
+     "is_write_in": false,
      "first": "Thomas",
      "middle": "R.",
      "last": "Melville",
@@ -9727,6 +9932,7 @@
    "lines": [
     {
      "candidateID": "166048",
+     "is_write_in": false,
      "first": "Bridget",
      "middle": "Marie",
      "last": "Plouffe",
@@ -9743,6 +9949,7 @@
     },
     {
      "candidateID": "125251",
+     "is_write_in": false,
      "first": "Lawrence",
      "middle": "Peter",
      "last": "Novak",
@@ -9801,6 +10008,7 @@
    "lines": [
     {
      "candidateID": "166052",
+     "is_write_in": false,
      "first": "John",
      "middle": "Francis",
      "last": "Moran",
@@ -9859,6 +10067,7 @@
    "lines": [
     {
      "candidateID": "123329",
+     "is_write_in": false,
      "first": "David",
      "middle": "Kent",
      "last": "Muradian",
@@ -9917,6 +10126,7 @@
    "lines": [
     {
      "candidateID": "165950",
+     "is_write_in": false,
      "first": "Thomas",
      "middle": "W.",
      "last": "Moakley",
@@ -9975,6 +10185,7 @@
    "lines": [
     {
      "candidateID": "63072",
+     "is_write_in": false,
      "first": "Paul",
      "middle": "W.",
      "last": "Mark",
@@ -10033,6 +10244,7 @@
    "lines": [
     {
      "candidateID": "123991",
+     "is_write_in": false,
      "first": "Paul",
      "middle": "Richard",
      "last": "Feeney",
@@ -10091,6 +10303,7 @@
    "lines": [
     {
      "candidateID": "123483",
+     "is_write_in": false,
      "first": "Julian",
      "middle": null,
      "last": "Cyr",
@@ -10139,6 +10352,7 @@
    "lines": [
     {
      "candidateID": "124485",
+     "is_write_in": false,
      "first": "Kate",
      "middle": null,
      "last": "Lipper-Garabedian",
@@ -10197,6 +10411,7 @@
    "lines": [
     {
      "candidateID": "54449",
+     "is_write_in": false,
      "first": "Michael",
      "middle": "J.",
      "last": "Rodrigues",
@@ -10213,6 +10428,7 @@
     },
     {
      "candidateID": "176885",
+     "is_write_in": false,
      "first": "Gabriel",
      "middle": "Boomer",
      "last": "Amaral",
@@ -10271,6 +10487,7 @@
    "lines": [
     {
      "candidateID": "54597",
+     "is_write_in": false,
      "first": "Bruce",
      "middle": "E.",
      "last": "Tarr",
@@ -10329,6 +10546,7 @@
    "lines": [
     {
      "candidateID": "123107",
+     "is_write_in": false,
      "first": "Pavel",
      "middle": "M.",
      "last": "Payano",
@@ -10387,6 +10605,7 @@
    "lines": [
     {
      "candidateID": "124598",
+     "is_write_in": false,
      "first": "Vanna",
      "middle": null,
      "last": "Howard",
@@ -10403,6 +10622,7 @@
     },
     {
      "candidateID": "170422",
+     "is_write_in": false,
      "first": "Sam",
      "middle": null,
      "last": "Meas",
@@ -10419,6 +10639,7 @@
     },
     {
      "candidateID": "170601",
+     "is_write_in": false,
      "first": "Joe",
      "middle": null,
      "last": "Espinola",
@@ -10477,6 +10698,7 @@
    "lines": [
     {
      "candidateID": "176891",
+     "is_write_in": false,
      "first": "Patrick",
      "middle": "M.",
      "last": "O'Connor",
@@ -10535,6 +10757,7 @@
    "lines": [
     {
      "candidateID": "122208",
+     "is_write_in": false,
      "first": "Nicholas",
      "middle": "P.",
      "last": "Collins",
@@ -10593,6 +10816,7 @@
    "lines": [
     {
      "candidateID": "124958",
+     "is_write_in": false,
      "first": "Robyn",
      "middle": null,
      "last": "Kennedy",
@@ -10651,6 +10875,7 @@
    "lines": [
     {
      "candidateID": "124011",
+     "is_write_in": false,
      "first": "Cindy",
      "middle": "F.",
      "last": "Friedman",
@@ -10709,6 +10934,7 @@
    "lines": [
     {
      "candidateID": "123197",
+     "is_write_in": false,
      "first": "John",
      "middle": "Christopher",
      "last": "Velis",
@@ -10767,6 +10993,7 @@
    "lines": [
     {
      "candidateID": "124513",
+     "is_write_in": false,
      "first": "Adam",
      "middle": null,
      "last": "Gomez",
@@ -10825,6 +11052,7 @@
    "lines": [
     {
      "candidateID": "124577",
+     "is_write_in": false,
      "first": "Jacob",
      "middle": "R.",
      "last": "Oliveira",
@@ -10883,6 +11111,7 @@
    "lines": [
     {
      "candidateID": "124334",
+     "is_write_in": false,
      "first": "Joanne",
      "middle": "M.",
      "last": "Comerford",
@@ -10941,6 +11170,7 @@
    "lines": [
     {
      "candidateID": "122428",
+     "is_write_in": false,
      "first": "Karen",
      "middle": "E.",
      "last": "Spilka",
@@ -10999,6 +11229,7 @@
    "lines": [
     {
      "candidateID": "63057",
+     "is_write_in": false,
      "first": "Sal",
      "middle": "N.",
      "last": "DiDomenico",
@@ -11057,6 +11288,7 @@
    "lines": [
     {
      "candidateID": "122429",
+     "is_write_in": false,
      "first": "James",
      "middle": "Bradley",
      "last": "Eldridge",
@@ -11073,6 +11305,7 @@
     },
     {
      "candidateID": "123760",
+     "is_write_in": false,
      "first": "Joseph",
      "middle": "Timothy",
      "last": "Shea",
@@ -11131,6 +11364,7 @@
    "lines": [
     {
      "candidateID": "54609",
+     "is_write_in": false,
      "first": "Cynthia",
      "middle": "Stone",
      "last": "Creem",
@@ -11189,6 +11423,7 @@
    "lines": [
     {
      "candidateID": "122137",
+     "is_write_in": false,
      "first": "John",
      "middle": "F.",
      "last": "Keenan",
@@ -11205,6 +11440,7 @@
     },
     {
      "candidateID": "123822",
+     "is_write_in": false,
      "first": "Alexander",
      "middle": null,
      "last": "Mendez",
@@ -11253,6 +11489,7 @@
    "lines": [
     {
      "candidateID": "176879",
+     "is_write_in": false,
      "first": "Persis",
      "middle": "S.",
      "last": "Yu",
@@ -11311,6 +11548,7 @@
    "lines": [
     {
      "candidateID": "123602",
+     "is_write_in": false,
      "first": "William",
      "middle": "J.",
      "last": "Driscoll",
@@ -11369,6 +11607,7 @@
    "lines": [
     {
      "candidateID": "124017",
+     "is_write_in": false,
      "first": "Rebecca",
      "middle": "L.",
      "last": "Rausch",
@@ -11427,6 +11666,7 @@
    "lines": [
     {
      "candidateID": "123514",
+     "is_write_in": false,
      "first": "Dylan",
      "middle": "A.",
      "last": "Fernandes",
@@ -11443,6 +11683,7 @@
     },
     {
      "candidateID": "124989",
+     "is_write_in": false,
      "first": "Kari",
      "middle": "Della",
      "last": "MacRae",
@@ -11501,6 +11742,7 @@
    "lines": [
     {
      "candidateID": "122425",
+     "is_write_in": false,
      "first": "Mark",
      "middle": "C. W.",
      "last": "Montigny",
@@ -11517,6 +11759,7 @@
     },
     {
      "candidateID": "125200",
+     "is_write_in": false,
      "first": "Robert",
      "middle": "Scott",
      "last": "McConnell",
@@ -11575,6 +11818,7 @@
    "lines": [
     {
      "candidateID": "54472",
+     "is_write_in": false,
      "first": "Barry",
      "middle": "R.",
      "last": "Finegold",
@@ -11591,6 +11835,7 @@
     },
     {
      "candidateID": "176890",
+     "is_write_in": false,
      "first": "Theodore",
      "middle": "T.",
      "last": "Semesnyei",
@@ -11649,6 +11894,7 @@
    "lines": [
     {
      "candidateID": "63045",
+     "is_write_in": false,
      "first": "Joan",
      "middle": "B.",
      "last": "Lovely",
@@ -11697,6 +11943,7 @@
    "lines": [
     {
      "candidateID": "124607",
+     "is_write_in": false,
      "first": "Erika",
      "middle": null,
      "last": "Uyterhoeven",
@@ -11755,6 +12002,7 @@
    "lines": [
     {
      "candidateID": "122587",
+     "is_write_in": false,
      "first": "Michael",
      "middle": "D.",
      "last": "Brady",
@@ -11813,6 +12061,7 @@
    "lines": [
     {
      "candidateID": "124215",
+     "is_write_in": false,
      "first": "Liz",
      "middle": null,
      "last": "Miranda",
@@ -11871,6 +12120,7 @@
    "lines": [
     {
      "candidateID": "63064",
+     "is_write_in": false,
      "first": "Michael",
      "middle": "O.",
      "last": "Moore",
@@ -11929,6 +12179,7 @@
    "lines": [
     {
      "candidateID": "63063",
+     "is_write_in": false,
      "first": "William",
      "middle": "N.",
      "last": "Brownsberger",
@@ -11945,6 +12196,7 @@
     },
     {
      "candidateID": "179354",
+     "is_write_in": false,
      "first": "Brandon",
      "middle": "Charles",
      "last": "Wood",
@@ -12003,6 +12255,7 @@
    "lines": [
     {
      "candidateID": "124676",
+     "is_write_in": false,
      "first": "Kelly",
      "middle": "A.",
      "last": "Dooner",
@@ -12061,6 +12314,7 @@
    "lines": [
     {
      "candidateID": "123171",
+     "is_write_in": false,
      "first": "Brendan",
      "middle": "Peter",
      "last": "Crighton",
@@ -12108,7 +12362,7 @@
    "holder": {
     "politician_id": "60e4da77-0c2b-4ca4-8d02-a4210bd91d90",
     "our_name": "Michael J. Barrett",
-    "ap_name": "Michael J.  Barrett",
+    "ap_name": "Michael J. Barrett",
     "candidateID": "63050",
     "last_agrees": true,
     "first_agrees": true,
@@ -12119,12 +12373,13 @@
    "lines": [
     {
      "candidateID": "63050",
+     "is_write_in": false,
      "first": "Michael",
-     "middle": "J. ",
+     "middle": "J.",
      "last": "Barrett",
      "suffix": null,
      "nickname": null,
-     "full_name": "Michael J.  Barrett",
+     "full_name": "Michael J. Barrett",
      "party": "Dem",
      "ap_incumbent": true,
      "ballotOrder": 1,
@@ -12177,6 +12432,7 @@
    "lines": [
     {
      "candidateID": "123904",
+     "is_write_in": false,
      "first": "Lydia",
      "middle": "Marie",
      "last": "Edwards",
@@ -12235,6 +12491,7 @@
    "lines": [
     {
      "candidateID": "122408",
+     "is_write_in": false,
      "first": "Ryan",
      "middle": "C.",
      "last": "Fattman",
@@ -12293,6 +12550,7 @@
    "lines": [
     {
      "candidateID": "122397",
+     "is_write_in": false,
      "first": "Peter",
      "middle": "J.",
      "last": "Durant",
@@ -12309,6 +12567,7 @@
     },
     {
      "candidateID": "176884",
+     "is_write_in": false,
      "first": "Shannon",
      "middle": "M.",
      "last": "Teabo",
@@ -12367,6 +12626,7 @@
    "lines": [
     {
      "candidateID": "124528",
+     "is_write_in": false,
      "first": "John",
      "middle": null,
      "last": "Cronin",
@@ -12383,6 +12643,7 @@
     },
     {
      "candidateID": "179355",
+     "is_write_in": false,
      "first": "Ming",
      "middle": null,
      "last": "Zhang",
@@ -12441,6 +12702,7 @@
    "lines": [
     {
      "candidateID": "174194",
+     "is_write_in": false,
      "first": "Nancy",
      "middle": "Marie",
      "last": "McDowell",
@@ -12457,6 +12719,7 @@
     },
     {
      "candidateID": "174196",
+     "is_write_in": false,
      "first": "Nancy",
      "middle": "J.",
      "last": "Theriault",
@@ -12515,6 +12778,7 @@
    "lines": [
     {
      "candidateID": "120223",
+     "is_write_in": false,
      "first": "Matthew",
      "middle": null,
      "last": "Moonen",
@@ -12573,6 +12837,7 @@
    "lines": [
     {
      "candidateID": "162239",
+     "is_write_in": false,
      "first": "Yusuf",
      "middle": "M.",
      "last": "Yusuf",
@@ -12621,6 +12886,7 @@
    "lines": [
     {
      "candidateID": "174289",
+     "is_write_in": false,
      "first": "Michael",
      "middle": "P.",
      "last": "Dixon",
@@ -12637,6 +12903,7 @@
     },
     {
      "candidateID": "162237",
+     "is_write_in": false,
      "first": "Jacob",
      "middle": "Murray",
      "last": "Wakem",
@@ -12685,6 +12952,7 @@
    "lines": [
     {
      "candidateID": "174290",
+     "is_write_in": false,
      "first": "Jason",
      "middle": "J.",
      "last": "Shedlock",
@@ -12733,6 +13001,7 @@
    "lines": [
     {
      "candidateID": "178681",
+     "is_write_in": false,
      "first": "Lucy",
      "middle": "Louisa",
      "last": "Perkins",
@@ -12749,6 +13018,7 @@
     },
     {
      "candidateID": "174292",
+     "is_write_in": false,
      "first": "Meagan",
      "middle": "J.",
      "last": "Smith",
@@ -12807,6 +13077,7 @@
    "lines": [
     {
      "candidateID": "161519",
+     "is_write_in": false,
      "first": "Matthew",
      "middle": "D.",
      "last": "Beck",
@@ -12865,6 +13136,7 @@
    "lines": [
     {
      "candidateID": "162242",
+     "is_write_in": false,
      "first": "Michelle",
      "middle": "N.",
      "last": "Boyer",
@@ -12913,6 +13185,7 @@
    "lines": [
     {
      "candidateID": "174294",
+     "is_write_in": false,
      "first": "Scott",
      "middle": "W.",
      "last": "Doherty",
@@ -12929,6 +13202,7 @@
     },
     {
      "candidateID": "177866",
+     "is_write_in": false,
      "first": "Mary",
      "middle": "Shannon",
      "last": "Lindstrom",
@@ -12945,6 +13219,7 @@
     },
     {
      "candidateID": "174293",
+     "is_write_in": false,
      "first": "Eric",
      "middle": "James",
      "last": "Nathanson",
@@ -13003,6 +13278,7 @@
    "lines": [
     {
      "candidateID": "122084",
+     "is_write_in": false,
      "first": "Kelly",
      "middle": "Noonan",
      "last": "Murphy",
@@ -13061,6 +13337,7 @@
    "lines": [
     {
      "candidateID": "121980",
+     "is_write_in": false,
      "first": "Andrew",
      "middle": null,
      "last": "Gattine",
@@ -13077,6 +13354,7 @@
     },
     {
      "candidateID": "174295",
+     "is_write_in": false,
      "first": "Ethan",
      "middle": "E.",
      "last": "Mongue",
@@ -13135,6 +13413,7 @@
    "lines": [
     {
      "candidateID": "121984",
+     "is_write_in": false,
      "first": "Morgan",
      "middle": "J.",
      "last": "Rielly",
@@ -13193,6 +13472,7 @@
    "lines": [
     {
      "candidateID": "177867",
+     "is_write_in": false,
      "first": "Lawrence",
      "middle": "P.",
      "last": "McWilliams",
@@ -13209,6 +13489,7 @@
     },
     {
      "candidateID": "120344",
+     "is_write_in": false,
      "first": "Suzanne",
      "middle": "M.",
      "last": "Salisbury",
@@ -13267,6 +13548,7 @@
    "lines": [
     {
      "candidateID": "162245",
+     "is_write_in": false,
      "first": "Marshall",
      "middle": "F.",
      "last": "Archer",
@@ -13325,6 +13607,7 @@
    "lines": [
     {
      "candidateID": "121689",
+     "is_write_in": false,
      "first": "Lynn",
      "middle": "Holland",
      "last": "Copeland",
@@ -13341,6 +13624,7 @@
     },
     {
      "candidateID": "177868",
+     "is_write_in": false,
      "first": "Todd",
      "middle": "M.",
      "last": "Davis",
@@ -13389,6 +13673,7 @@
    "lines": [
     {
      "candidateID": "177869",
+     "is_write_in": false,
      "first": "Kenneth",
      "middle": "Craig",
      "last": "Blow",
@@ -13405,6 +13690,7 @@
     },
     {
      "candidateID": "174296",
+     "is_write_in": false,
      "first": "Robert",
      "middle": "James",
      "last": "Kelly",
@@ -13463,6 +13749,7 @@
    "lines": [
     {
      "candidateID": "120312",
+     "is_write_in": false,
      "first": "Ryan",
      "middle": null,
      "last": "Fecteau",
@@ -13521,6 +13808,7 @@
    "lines": [
     {
      "candidateID": "177870",
+     "is_write_in": false,
      "first": "Marc",
      "middle": "P.",
      "last": "Lessard",
@@ -13537,6 +13825,7 @@
     },
     {
      "candidateID": "121992",
+     "is_write_in": false,
      "first": "Marc",
      "middle": "G.",
      "last": "Malon",
@@ -13595,6 +13884,7 @@
    "lines": [
     {
      "candidateID": "177871",
+     "is_write_in": false,
      "first": "Allen",
      "middle": "Anthony",
      "last": "Daggett",
@@ -13611,6 +13901,7 @@
     },
     {
      "candidateID": "121424",
+     "is_write_in": false,
      "first": "Traci",
      "middle": null,
      "last": "Gere",
@@ -13659,6 +13950,7 @@
    "lines": [
     {
      "candidateID": "162247",
+     "is_write_in": false,
      "first": "Scott",
      "middle": "E.",
      "last": "Craig",
@@ -13675,6 +13967,7 @@
     },
     {
      "candidateID": "174298",
+     "is_write_in": false,
      "first": "Lisa",
      "middle": "Joy",
      "last": "Pratt",
@@ -13733,6 +14026,7 @@
    "lines": [
     {
      "candidateID": "162248",
+     "is_write_in": false,
      "first": "Michelle",
      "middle": "K.",
      "last": "Conners",
@@ -13749,6 +14043,7 @@
     },
     {
      "candidateID": "162249",
+     "is_write_in": false,
      "first": "John",
      "middle": null,
      "last": "Eder",
@@ -13807,6 +14102,7 @@
    "lines": [
     {
      "candidateID": "121434",
+     "is_write_in": false,
      "first": "Nathan",
      "middle": "M.",
      "last": "Carlow",
@@ -13823,6 +14119,7 @@
     },
     {
      "candidateID": "174299",
+     "is_write_in": false,
      "first": "Charles",
      "middle": null,
      "last": "Tilburg",
@@ -13871,6 +14168,7 @@
    "lines": [
     {
      "candidateID": "120209",
+     "is_write_in": false,
      "first": "Jonathan",
      "middle": "Lee",
      "last": "Kinney",
@@ -13887,6 +14185,7 @@
     },
     {
      "candidateID": "174300",
+     "is_write_in": false,
      "first": "Oliver",
      "middle": "D.",
      "last": "McAvoy",
@@ -13935,6 +14234,7 @@
    "lines": [
     {
      "candidateID": "174301",
+     "is_write_in": false,
      "first": "Dean",
      "middle": "P.",
      "last": "LePage",
@@ -13951,6 +14251,7 @@
     },
     {
      "candidateID": "174302",
+     "is_write_in": false,
      "first": "Jamie",
      "middle": "K.",
      "last": "Newton",
@@ -14009,6 +14310,7 @@
    "lines": [
     {
      "candidateID": "120048",
+     "is_write_in": false,
      "first": "Wayne",
      "middle": "R.",
      "last": "Parry",
@@ -14025,6 +14327,7 @@
     },
     {
      "candidateID": "122004",
+     "is_write_in": false,
      "first": "Kirstan",
      "middle": "L.",
      "last": "Watson",
@@ -14073,6 +14376,7 @@
    "lines": [
     {
      "candidateID": "174305",
+     "is_write_in": false,
      "first": "Marc",
      "middle": "A.",
      "last": "Boisse",
@@ -14089,6 +14393,7 @@
     },
     {
      "candidateID": "174303",
+     "is_write_in": false,
      "first": "Rebecca",
      "middle": "L.",
      "last": "Flood Andrews",
@@ -14105,6 +14410,7 @@
     },
     {
      "candidateID": "177872",
+     "is_write_in": false,
      "first": "David",
      "middle": "R.",
      "last": "Mongeau",
@@ -14153,6 +14459,7 @@
    "lines": [
     {
      "candidateID": "174306",
+     "is_write_in": false,
      "first": "Ayn",
      "middle": "M.",
      "last": "Hanselmann",
@@ -14169,6 +14476,7 @@
     },
     {
      "candidateID": "178279",
+     "is_write_in": false,
      "first": "Domingo",
      "middle": "E.",
      "last": "Torres",
@@ -14217,6 +14525,7 @@
    "lines": [
     {
      "candidateID": "174307",
+     "is_write_in": false,
      "first": "John",
      "middle": "R.",
      "last": "Henkelman",
@@ -14233,6 +14542,7 @@
     },
     {
      "candidateID": "178280",
+     "is_write_in": false,
      "first": "Melissa",
      "middle": "A.",
      "last": "Simpson",
@@ -14281,6 +14591,7 @@
    "lines": [
     {
      "candidateID": "122019",
+     "is_write_in": false,
      "first": "Corinna",
      "middle": null,
      "last": "Cole",
@@ -14297,6 +14608,7 @@
     },
     {
      "candidateID": "120325",
+     "is_write_in": false,
      "first": "Karen",
      "middle": "A.",
      "last": "Gerrish",
@@ -14345,6 +14657,7 @@
    "lines": [
     {
      "candidateID": "174310",
+     "is_write_in": false,
      "first": "Caleb",
      "middle": "J.",
      "last": "Chase",
@@ -14361,6 +14674,7 @@
     },
     {
      "candidateID": "174309",
+     "is_write_in": false,
      "first": "Kristin",
      "middle": "T.",
      "last": "Davis",
@@ -14419,6 +14733,7 @@
    "lines": [
     {
      "candidateID": "120055",
+     "is_write_in": false,
      "first": "Bradley",
      "middle": "S.",
      "last": "Moulton",
@@ -14435,6 +14750,7 @@
     },
     {
      "candidateID": "122023",
+     "is_write_in": false,
      "first": "Walter",
      "middle": "Gerard",
      "last": "Runte",
@@ -14493,6 +14809,7 @@
    "lines": [
     {
      "candidateID": "122026",
+     "is_write_in": false,
      "first": "Holly",
      "middle": "T.",
      "last": "Sargent",
@@ -14551,6 +14868,7 @@
    "lines": [
     {
      "candidateID": "122034",
+     "is_write_in": false,
      "first": "Thomas",
      "middle": "Arthur",
      "last": "Lavigne",
@@ -14567,6 +14885,7 @@
     },
     {
      "candidateID": "178682",
+     "is_write_in": false,
      "first": "Marissa",
      "middle": "L.",
      "last": "Tasker",
@@ -14615,6 +14934,7 @@
    "lines": [
     {
      "candidateID": "174311",
+     "is_write_in": false,
      "first": "Mallory",
      "middle": "A.",
      "last": "Cook",
@@ -14631,6 +14951,7 @@
     },
     {
      "candidateID": "174312",
+     "is_write_in": false,
      "first": "Timothy",
      "middle": "R.",
      "last": "Towne",
@@ -14679,6 +15000,7 @@
    "lines": [
     {
      "candidateID": "174313",
+     "is_write_in": false,
      "first": "Alexandros",
      "middle": null,
      "last": "Orestis",
@@ -14695,6 +15017,7 @@
     },
     {
      "candidateID": "162257",
+     "is_write_in": false,
      "first": "Mark",
      "middle": "F.",
      "last": "Zimmer",
@@ -14753,6 +15076,7 @@
    "lines": [
     {
      "candidateID": "162258",
+     "is_write_in": false,
      "first": "Suzanne",
      "middle": null,
      "last": "Johnson",
@@ -14769,6 +15093,7 @@
     },
     {
      "candidateID": "121412",
+     "is_write_in": false,
      "first": "Kristi",
      "middle": "M.",
      "last": "Mathieson",
@@ -14817,6 +15142,7 @@
    "lines": [
     {
      "candidateID": "178677",
+     "is_write_in": false,
      "first": "Jennifer",
      "middle": "L.",
      "last": "Levesque",
@@ -14833,6 +15159,7 @@
     },
     {
      "candidateID": "121764",
+     "is_write_in": false,
      "first": "Austin",
      "middle": null,
      "last": "Theriault",
@@ -14891,6 +15218,7 @@
    "lines": [
     {
      "candidateID": "121768",
+     "is_write_in": false,
      "first": "Roger",
      "middle": "C.",
      "last": "Albert",
@@ -14907,6 +15235,7 @@
     },
     {
      "candidateID": "120504",
+     "is_write_in": false,
      "first": "Roland",
      "middle": "Daniel",
      "last": "Martin",
@@ -14955,6 +15284,7 @@
    "lines": [
     {
      "candidateID": "121643",
+     "is_write_in": false,
      "first": "Susan",
      "middle": null,
      "last": "Bernard",
@@ -14971,6 +15301,7 @@
     },
     {
      "candidateID": "121205",
+     "is_write_in": false,
      "first": "David",
      "middle": "H.",
      "last": "McCrea",
@@ -15029,6 +15360,7 @@
    "lines": [
     {
      "candidateID": "120664",
+     "is_write_in": false,
      "first": "Timothy",
      "middle": "Conrad",
      "last": "Guerrette",
@@ -15077,6 +15409,7 @@
    "lines": [
     {
      "candidateID": "174173",
+     "is_write_in": false,
      "first": "Douglas",
      "middle": "C.",
      "last": "Carlisle",
@@ -15093,6 +15426,7 @@
     },
     {
      "candidateID": "178678",
+     "is_write_in": false,
      "first": "Lori",
      "middle": "G.",
      "last": "Kenneson",
@@ -15151,6 +15485,7 @@
    "lines": [
     {
      "candidateID": "121777",
+     "is_write_in": false,
      "first": "Donald",
      "middle": "James",
      "last": "Ardell",
@@ -15167,6 +15502,7 @@
     },
     {
      "candidateID": "162141",
+     "is_write_in": false,
      "first": "Melanie",
      "middle": null,
      "last": "Tompkins",
@@ -15215,6 +15551,7 @@
    "lines": [
     {
      "candidateID": "174174",
+     "is_write_in": false,
      "first": "Jantzen",
      "middle": "Stephen",
      "last": "Craine",
@@ -15231,6 +15568,7 @@
     },
     {
      "candidateID": "162013",
+     "is_write_in": false,
      "first": "Matthew",
      "middle": "J.",
      "last": "Rush",
@@ -15289,6 +15627,7 @@
    "lines": [
     {
      "candidateID": "121684",
+     "is_write_in": false,
      "first": "Tracy",
      "middle": "Lynn",
      "last": "Quint",
@@ -15347,6 +15686,7 @@
    "lines": [
     {
      "candidateID": "162145",
+     "is_write_in": false,
      "first": "Arthur",
      "middle": "K.",
      "last": "Mingo",
@@ -15363,6 +15703,7 @@
     },
     {
      "candidateID": "174175",
+     "is_write_in": false,
      "first": "Nicole",
      "middle": "N.",
      "last": "Richards",
@@ -15421,6 +15762,7 @@
    "lines": [
     {
      "candidateID": "174176",
+     "is_write_in": false,
      "first": "Genevieve",
      "middle": "M.",
      "last": "Lemire",
@@ -15437,6 +15779,7 @@
     },
     {
      "candidateID": "120494",
+     "is_write_in": false,
      "first": "William",
      "middle": "R.",
      "last": "Tuell",
@@ -15495,6 +15838,7 @@
    "lines": [
     {
      "candidateID": "174178",
+     "is_write_in": false,
      "first": "Keith",
      "middle": "A.",
      "last": "Newman",
@@ -15511,6 +15855,7 @@
     },
     {
      "candidateID": "121786",
+     "is_write_in": false,
      "first": "Tiffany",
      "middle": null,
      "last": "Strout",
@@ -15559,6 +15904,7 @@
    "lines": [
     {
      "candidateID": "122048",
+     "is_write_in": false,
      "first": "Roy",
      "middle": "D.",
      "last": "Gott",
@@ -15575,6 +15921,7 @@
     },
     {
      "candidateID": "174179",
+     "is_write_in": false,
      "first": "Thomas",
      "middle": "Arthur",
      "last": "Hart",
@@ -15633,6 +15980,7 @@
    "lines": [
     {
      "candidateID": "174180",
+     "is_write_in": false,
      "first": "Michael",
      "middle": "H.",
      "last": "Cunningham",
@@ -15649,6 +15997,7 @@
     },
     {
      "candidateID": "162149",
+     "is_write_in": false,
      "first": "Russell",
      "middle": "P.",
      "last": "White",
@@ -15707,6 +16056,7 @@
    "lines": [
     {
      "candidateID": "163115",
+     "is_write_in": false,
      "first": "Gary",
      "middle": "R.",
      "last": "Friedmann",
@@ -15765,6 +16115,7 @@
    "lines": [
     {
      "candidateID": "121797",
+     "is_write_in": false,
      "first": "Holly",
      "middle": "R.",
      "last": "Eaton",
@@ -15781,6 +16132,7 @@
     },
     {
      "candidateID": "177859",
+     "is_write_in": false,
      "first": "Clifford",
      "middle": "John",
      "last": "Noyes",
@@ -15839,6 +16191,7 @@
    "lines": [
     {
      "candidateID": "121802",
+     "is_write_in": false,
      "first": "Nina",
      "middle": "Azella",
      "last": "Milliken",
@@ -15855,6 +16208,7 @@
     },
     {
      "candidateID": "174181",
+     "is_write_in": false,
      "first": "Eric",
      "middle": "M.",
      "last": "White",
@@ -15913,6 +16267,7 @@
    "lines": [
     {
      "candidateID": "162151",
+     "is_write_in": false,
      "first": "Steven",
      "middle": "Matthew",
      "last": "Bishop",
@@ -15929,6 +16284,7 @@
     },
     {
      "candidateID": "121993",
+     "is_write_in": false,
      "first": "Ronald",
      "middle": "B.",
      "last": "Russell",
@@ -15987,6 +16343,7 @@
    "lines": [
     {
      "candidateID": "121702",
+     "is_write_in": false,
      "first": "Jonathan",
      "middle": "C.",
      "last": "Goble",
@@ -16003,6 +16360,7 @@
     },
     {
      "candidateID": "162152",
+     "is_write_in": false,
      "first": "Mathew",
      "middle": "David",
      "last": "McIntyre",
@@ -16061,6 +16419,7 @@
    "lines": [
     {
      "candidateID": "22321",
+     "is_write_in": false,
      "first": "Richard",
      "middle": "H.",
      "last": "Campbell",
@@ -16077,6 +16436,7 @@
     },
     {
      "candidateID": "174182",
+     "is_write_in": false,
      "first": "David",
      "middle": null,
      "last": "Ulrich",
@@ -16135,6 +16495,7 @@
    "lines": [
     {
      "candidateID": "167341",
+     "is_write_in": false,
      "first": "Patrick",
      "middle": "A.",
      "last": "Jude",
@@ -16151,6 +16512,7 @@
     },
     {
      "candidateID": "162153",
+     "is_write_in": false,
      "first": "Dani",
      "middle": null,
      "last": "O'Halloran",
@@ -16209,6 +16571,7 @@
    "lines": [
     {
      "candidateID": "174183",
+     "is_write_in": false,
      "first": "Frank",
      "middle": "Joseph",
      "last": "Casella",
@@ -16225,6 +16588,7 @@
     },
     {
      "candidateID": "121106",
+     "is_write_in": false,
      "first": "Ambureen",
      "middle": null,
      "last": "Rana",
@@ -16283,6 +16647,7 @@
    "lines": [
     {
      "candidateID": "121596",
+     "is_write_in": false,
      "first": "Laura",
      "middle": "D.",
      "last": "Supica",
@@ -16331,6 +16696,7 @@
    "lines": [
     {
      "candidateID": "174188",
+     "is_write_in": false,
      "first": "Brian",
      "middle": "A.",
      "last": "Ames",
@@ -16347,6 +16713,7 @@
     },
     {
      "candidateID": "120239",
+     "is_write_in": false,
      "first": "Victoria",
      "middle": "P.",
      "last": "Kornfield",
@@ -16405,6 +16772,7 @@
    "lines": [
     {
      "candidateID": "174189",
+     "is_write_in": false,
      "first": "Sean",
      "middle": "F.",
      "last": "Faircloth",
@@ -16421,12 +16789,13 @@
     },
     {
      "candidateID": "120687",
+     "is_write_in": true,
      "first": "Daniel",
      "middle": null,
-     "last": "LaPointe (write-in)",
+     "last": "LaPointe",
      "suffix": null,
      "nickname": null,
-     "full_name": "Daniel LaPointe (write-in)",
+     "full_name": "Daniel LaPointe",
      "party": "GOP",
      "ap_incumbent": false,
      "ballotOrder": 2,
@@ -16479,6 +16848,7 @@
    "lines": [
     {
      "candidateID": "121590",
+     "is_write_in": false,
      "first": "Laurie",
      "middle": null,
      "last": "Osher",
@@ -16495,6 +16865,7 @@
     },
     {
      "candidateID": "174190",
+     "is_write_in": false,
      "first": "Anthony",
      "middle": "M.",
      "last": "Weaver",
@@ -16553,6 +16924,7 @@
    "lines": [
     {
      "candidateID": "119906",
+     "is_write_in": false,
      "first": "James",
      "middle": "F.",
      "last": "Dill",
@@ -16569,6 +16941,7 @@
     },
     {
      "candidateID": "177860",
+     "is_write_in": false,
      "first": "Adam",
      "middle": "Joseph",
      "last": "Shaw",
@@ -16617,6 +16990,7 @@
    "lines": [
     {
      "candidateID": "174191",
+     "is_write_in": false,
      "first": "Devan",
      "middle": "C.",
      "last": "Arnold",
@@ -16633,6 +17007,7 @@
     },
     {
      "candidateID": "174192",
+     "is_write_in": false,
      "first": "David",
      "middle": null,
      "last": "Giles",
@@ -16691,6 +17066,7 @@
    "lines": [
     {
      "candidateID": "122070",
+     "is_write_in": false,
      "first": "Irene",
      "middle": "A.",
      "last": "Gifford",
@@ -16707,6 +17083,7 @@
     },
     {
      "candidateID": "174193",
+     "is_write_in": false,
      "first": "Gordon",
      "middle": "P.",
      "last": "Street",
@@ -16765,6 +17142,7 @@
    "lines": [
     {
      "candidateID": "174197",
+     "is_write_in": false,
      "first": "John",
      "middle": null,
      "last": "Contreni",
@@ -16781,6 +17159,7 @@
     },
     {
      "candidateID": "121824",
+     "is_write_in": false,
      "first": "James",
      "middle": "L.",
      "last": "White",
@@ -16829,6 +17208,7 @@
    "lines": [
     {
      "candidateID": "174198",
+     "is_write_in": false,
      "first": "Eric",
      "middle": "J.",
      "last": "Boothroyd",
@@ -16845,6 +17225,7 @@
     },
     {
      "candidateID": "174199",
+     "is_write_in": false,
      "first": "Andrew",
      "middle": "R.",
      "last": "Torbett",
@@ -16893,6 +17274,7 @@
    "lines": [
     {
      "candidateID": "174200",
+     "is_write_in": false,
      "first": "Shawn",
      "middle": "L.",
      "last": "Lancaster",
@@ -16951,6 +17333,7 @@
    "lines": [
     {
      "candidateID": "174201",
+     "is_write_in": false,
      "first": "Michael",
      "middle": "A.",
      "last": "Brayson",
@@ -16967,6 +17350,7 @@
     },
     {
      "candidateID": "66373",
+     "is_write_in": false,
      "first": "Kenneth",
      "middle": "Wade",
      "last": "Fredette",
@@ -17015,6 +17399,7 @@
    "lines": [
     {
      "candidateID": "119911",
+     "is_write_in": false,
      "first": "Stacey",
      "middle": "K.",
      "last": "Guerin",
@@ -17031,6 +17416,7 @@
     },
     {
      "candidateID": "174202",
+     "is_write_in": false,
      "first": "James",
      "middle": "P.",
      "last": "McClymer",
@@ -17089,6 +17475,7 @@
    "lines": [
     {
      "candidateID": "174203",
+     "is_write_in": false,
      "first": "Debora",
      "middle": "S.",
      "last": "Farnham",
@@ -17105,6 +17492,7 @@
     },
     {
      "candidateID": "121564",
+     "is_write_in": false,
      "first": "James",
      "middle": "E.",
      "last": "Thorne",
@@ -17163,6 +17551,7 @@
    "lines": [
     {
      "candidateID": "174205",
+     "is_write_in": false,
      "first": "Clifton",
      "middle": "Guy",
      "last": "Foster",
@@ -17179,6 +17568,7 @@
     },
     {
      "candidateID": "162162",
+     "is_write_in": false,
      "first": "Kimberly",
      "middle": "M.",
      "last": "Haggan",
@@ -17237,6 +17627,7 @@
    "lines": [
     {
      "candidateID": "174206",
+     "is_write_in": false,
      "first": "Alan",
      "middle": "Lee",
      "last": "Orcutt",
@@ -17253,6 +17644,7 @@
     },
     {
      "candidateID": "121834",
+     "is_write_in": false,
      "first": "Reagan",
      "middle": "L.",
      "last": "Paul",
@@ -17311,6 +17703,7 @@
    "lines": [
     {
      "candidateID": "121840",
+     "is_write_in": false,
      "first": "Benjamin",
      "middle": "C.",
      "last": "Hymes",
@@ -17327,6 +17720,7 @@
     },
     {
      "candidateID": "174207",
+     "is_write_in": false,
      "first": "Kayla",
      "middle": "M.T.",
      "last": "Miller",
@@ -17375,6 +17769,7 @@
    "lines": [
     {
      "candidateID": "174208",
+     "is_write_in": false,
      "first": "Madison",
      "middle": "Crissey",
      "last": "Cook",
@@ -17391,6 +17786,7 @@
     },
     {
      "candidateID": "174209",
+     "is_write_in": false,
      "first": "Michael",
      "middle": "J.",
      "last": "Nicholson",
@@ -17449,6 +17845,7 @@
    "lines": [
     {
      "candidateID": "122072",
+     "is_write_in": false,
      "first": "Joseph",
      "middle": "M.",
      "last": "McLaughlin",
@@ -17465,6 +17862,7 @@
     },
     {
      "candidateID": "162164",
+     "is_write_in": false,
      "first": "D. Michael",
      "middle": null,
      "last": "Ray",
@@ -17513,6 +17911,7 @@
    "lines": [
     {
      "candidateID": "174210",
+     "is_write_in": false,
      "first": "Joshua",
      "middle": "D.",
      "last": "Gerritsen",
@@ -17529,6 +17928,7 @@
     },
     {
      "candidateID": "162165",
+     "is_write_in": false,
      "first": "Cory",
      "middle": "Christopher",
      "last": "Raymond",
@@ -17587,6 +17987,7 @@
    "lines": [
     {
      "candidateID": "174212",
+     "is_write_in": false,
      "first": "Melissa",
      "middle": "Joy",
      "last": "Byer",
@@ -17603,6 +18004,7 @@
     },
     {
      "candidateID": "121557",
+     "is_write_in": false,
      "first": "Valli",
      "middle": "D.",
      "last": "Geiger",
@@ -17651,6 +18053,7 @@
    "lines": [
     {
      "candidateID": "174215",
+     "is_write_in": false,
      "first": "Christopher",
      "middle": "Paul",
      "last": "Austin",
@@ -17667,6 +18070,7 @@
     },
     {
      "candidateID": "174213",
+     "is_write_in": false,
      "first": "Rhiannon",
      "middle": "Corey",
      "last": "Hampson",
@@ -17715,6 +18119,7 @@
    "lines": [
     {
      "candidateID": "177861",
+     "is_write_in": false,
      "first": "Shawn",
      "middle": null,
      "last": "Saindon",
@@ -17731,6 +18136,7 @@
     },
     {
      "candidateID": "162167",
+     "is_write_in": false,
      "first": "Ray",
      "middle": "A.",
      "last": "Thombs",
@@ -17779,6 +18185,7 @@
    "lines": [
     {
      "candidateID": "121856",
+     "is_write_in": false,
      "first": "Clinton",
      "middle": "E.",
      "last": "Collamore",
@@ -17795,6 +18202,7 @@
     },
     {
      "candidateID": "174218",
+     "is_write_in": false,
      "first": "Rebecca",
      "middle": "M.",
      "last": "Stephens",
@@ -17843,6 +18251,7 @@
    "lines": [
     {
      "candidateID": "174219",
+     "is_write_in": false,
      "first": "Jennifer",
      "middle": "F.",
      "last": "Mayher",
@@ -17859,6 +18268,7 @@
     },
     {
      "candidateID": "177862",
+     "is_write_in": false,
      "first": "Kristine",
      "middle": "A.",
      "last": "Poland",
@@ -17917,6 +18327,7 @@
    "lines": [
     {
      "candidateID": "121547",
+     "is_write_in": false,
      "first": "Wayne",
      "middle": "K.",
      "last": "Farrin",
@@ -17933,6 +18344,7 @@
     },
     {
      "candidateID": "174220",
+     "is_write_in": false,
      "first": "Chester",
      "middle": "B.",
      "last": "Grover",
@@ -17981,6 +18393,7 @@
    "lines": [
     {
      "candidateID": "174221",
+     "is_write_in": false,
      "first": "Erik",
      "middle": "D.",
      "last": "Hobson",
@@ -17997,6 +18410,7 @@
     },
     {
      "candidateID": "167361",
+     "is_write_in": false,
      "first": "Charlotte",
      "middle": null,
      "last": "Nutt",
@@ -18045,6 +18459,7 @@
    "lines": [
     {
      "candidateID": "174223",
+     "is_write_in": false,
      "first": "Suzanne",
      "middle": "R.",
      "last": "Andresen",
@@ -18061,6 +18476,7 @@
     },
     {
      "candidateID": "174222",
+     "is_write_in": false,
      "first": "Trent",
      "middle": "E.",
      "last": "Vellella",
@@ -18119,6 +18535,7 @@
    "lines": [
     {
      "candidateID": "174225",
+     "is_write_in": false,
      "first": "Jedediah",
      "middle": "James",
      "last": "Rice",
@@ -18135,6 +18552,7 @@
     },
     {
      "candidateID": "72920",
+     "is_write_in": false,
      "first": "David",
      "middle": "A.",
      "last": "Sinclair",
@@ -18193,6 +18611,7 @@
    "lines": [
     {
      "candidateID": "162173",
+     "is_write_in": false,
      "first": "Rafael",
      "middle": null,
      "last": "Macias",
@@ -18209,6 +18628,7 @@
     },
     {
      "candidateID": "174227",
+     "is_write_in": false,
      "first": "Annalyse",
      "middle": "O.",
      "last": "Sarvinas",
@@ -18267,6 +18687,7 @@
    "lines": [
     {
      "candidateID": "122076",
+     "is_write_in": false,
      "first": "Sally Jeane",
      "middle": null,
      "last": "Cluchey",
@@ -18283,6 +18704,7 @@
     },
     {
      "candidateID": "162174",
+     "is_write_in": false,
      "first": "David",
      "middle": "W.",
      "last": "Guilmette",
@@ -18341,6 +18763,7 @@
    "lines": [
     {
      "candidateID": "162176",
+     "is_write_in": false,
      "first": "Richard",
      "middle": "Marc",
      "last": "Goldman",
@@ -18357,6 +18780,7 @@
     },
     {
      "candidateID": "121076",
+     "is_write_in": false,
      "first": "Michael",
      "middle": "H.",
      "last": "Lemelin",
@@ -18415,6 +18839,7 @@
    "lines": [
     {
      "candidateID": "121870",
+     "is_write_in": false,
      "first": "Karen",
      "middle": "L.",
      "last": "Montell",
@@ -18431,6 +18856,7 @@
     },
     {
      "candidateID": "174228",
+     "is_write_in": false,
      "first": "Michelle",
      "middle": "M.",
      "last": "Tucker",
@@ -18479,6 +18905,7 @@
    "lines": [
     {
      "candidateID": "174229",
+     "is_write_in": false,
      "first": "Maureen",
      "middle": null,
      "last": "AuCoin",
@@ -18495,6 +18922,7 @@
     },
     {
      "candidateID": "174231",
+     "is_write_in": false,
      "first": "Charles",
      "middle": "L.",
      "last": "Hippler",
@@ -18553,6 +18981,7 @@
    "lines": [
     {
      "candidateID": "120422",
+     "is_write_in": false,
      "first": "Randall",
      "middle": "Adam",
      "last": "Greenwood",
@@ -18569,6 +18998,7 @@
     },
     {
      "candidateID": "174233",
+     "is_write_in": false,
      "first": "Robin",
      "middle": "L.",
      "last": "Upton-Sukeforth",
@@ -18627,6 +19057,7 @@
    "lines": [
     {
      "candidateID": "121540",
+     "is_write_in": false,
      "first": "Tavis",
      "middle": "Rock",
      "last": "Hasenfus",
@@ -18643,6 +19074,7 @@
     },
     {
      "candidateID": "162178",
+     "is_write_in": false,
      "first": "David",
      "middle": "R.",
      "last": "Potvin",
@@ -18701,6 +19133,7 @@
    "lines": [
     {
      "candidateID": "174236",
+     "is_write_in": false,
      "first": "Dexter",
      "middle": "E.",
      "last": "Bridges",
@@ -18717,6 +19150,7 @@
     },
     {
      "candidateID": "167347",
+     "is_write_in": false,
      "first": "Sharon",
      "middle": "C.",
      "last": "Frost",
@@ -18765,6 +19199,7 @@
    "lines": [
     {
      "candidateID": "174238",
+     "is_write_in": false,
      "first": "Katrina",
      "middle": null,
      "last": "Couch Ray-Saulis",
@@ -18781,6 +19216,7 @@
     },
     {
      "candidateID": "174240",
+     "is_write_in": false,
      "first": "John",
      "middle": null,
      "last": "Reny",
@@ -18839,6 +19275,7 @@
    "lines": [
     {
      "candidateID": "174241",
+     "is_write_in": false,
      "first": "Wyatt",
      "middle": "Albert",
      "last": "Beaulieu",
@@ -18855,6 +19292,7 @@
     },
     {
      "candidateID": "121887",
+     "is_write_in": false,
      "first": "William",
      "middle": "R.",
      "last": "Bridgeo",
@@ -18913,6 +19351,7 @@
    "lines": [
     {
      "candidateID": "162183",
+     "is_write_in": false,
      "first": "Alicia",
      "middle": "Carol",
      "last": "Collins",
@@ -18929,6 +19368,7 @@
     },
     {
      "candidateID": "174242",
+     "is_write_in": false,
      "first": "Robin",
      "middle": "G.",
      "last": "Crawley",
@@ -18987,6 +19427,7 @@
    "lines": [
     {
      "candidateID": "121559",
+     "is_write_in": false,
      "first": "Katrina",
      "middle": "J.",
      "last": "Smith",
@@ -19003,6 +19444,7 @@
     },
     {
      "candidateID": "121889",
+     "is_write_in": false,
      "first": "Pamela",
      "middle": "Jo",
      "last": "Swift",
@@ -19061,6 +19503,7 @@
    "lines": [
     {
      "candidateID": "162185",
+     "is_write_in": false,
      "first": "Paul",
      "middle": "R.",
      "last": "Flynn",
@@ -19077,6 +19520,7 @@
     },
     {
      "candidateID": "174243",
+     "is_write_in": false,
      "first": "Taylor",
      "middle": "Marie",
      "last": "West",
@@ -19135,6 +19579,7 @@
    "lines": [
     {
      "candidateID": "162187",
+     "is_write_in": false,
      "first": "Flavia",
      "middle": "M.",
      "last": "DeBrito",
@@ -19151,6 +19596,7 @@
     },
     {
      "candidateID": "174244",
+     "is_write_in": false,
      "first": "Shawn",
      "middle": "M.",
      "last": "Packard",
@@ -19209,6 +19655,7 @@
    "lines": [
     {
      "candidateID": "162189",
+     "is_write_in": false,
      "first": "Cassie",
      "middle": "Lynn",
      "last": "Julia",
@@ -19225,6 +19672,7 @@
     },
     {
      "candidateID": "178679",
+     "is_write_in": false,
      "first": "Jeremy",
      "middle": "R.",
      "last": "McArthur",
@@ -19273,6 +19721,7 @@
    "lines": [
     {
      "candidateID": "120726",
+     "is_write_in": false,
      "first": "Michael",
      "middle": "D.",
      "last": "Perkins",
@@ -19321,6 +19770,7 @@
    "lines": [
     {
      "candidateID": "174245",
+     "is_write_in": false,
      "first": "Shawn",
      "middle": "M.",
      "last": "Dixon",
@@ -19337,6 +19787,7 @@
     },
     {
      "candidateID": "162191",
+     "is_write_in": false,
      "first": "Matthew",
      "middle": "C.",
      "last": "Townsend",
@@ -19395,6 +19846,7 @@
    "lines": [
     {
      "candidateID": "121567",
+     "is_write_in": false,
      "first": "Amanda",
      "middle": "Noelle",
      "last": "Collamore",
@@ -19411,6 +19863,7 @@
     },
     {
      "candidateID": "177863",
+     "is_write_in": false,
      "first": "Zachary",
      "middle": "S.",
      "last": "Lejonhud",
@@ -19469,6 +19922,7 @@
    "lines": [
     {
      "candidateID": "167348",
+     "is_write_in": false,
      "first": "Jessica",
      "middle": "B.",
      "last": "Blanchard",
@@ -19485,6 +19939,7 @@
     },
     {
      "candidateID": "119916",
+     "is_write_in": false,
      "first": "Dean",
      "middle": "A.",
      "last": "Cray",
@@ -19543,6 +19998,7 @@
    "lines": [
     {
      "candidateID": "174246",
+     "is_write_in": false,
      "first": "Joseph",
      "middle": "R.",
      "last": "Almand",
@@ -19559,6 +20015,7 @@
     },
     {
      "candidateID": "121568",
+     "is_write_in": false,
      "first": "Jennifer",
      "middle": "Lynn",
      "last": "Poirier",
@@ -19617,6 +20074,7 @@
    "lines": [
     {
      "candidateID": "121572",
+     "is_write_in": false,
      "first": "John",
      "middle": "E.",
      "last": "Ducharme",
@@ -19665,6 +20123,7 @@
    "lines": [
     {
      "candidateID": "121132",
+     "is_write_in": false,
      "first": "Cynthia",
      "middle": "J.",
      "last": "Soma-Hernandez",
@@ -19681,6 +20140,7 @@
     },
     {
      "candidateID": "119912",
+     "is_write_in": false,
      "first": "Douglas",
      "middle": "Andrew",
      "last": "Thomas",
@@ -19739,6 +20199,7 @@
    "lines": [
     {
      "candidateID": "174247",
+     "is_write_in": false,
      "first": "Daniel",
      "middle": "J.",
      "last": "Simonds",
@@ -19755,6 +20216,7 @@
     },
     {
      "candidateID": "121906",
+     "is_write_in": false,
      "first": "Michael",
      "middle": null,
      "last": "Soboleski",
@@ -19803,6 +20265,7 @@
    "lines": [
     {
      "candidateID": "120008",
+     "is_write_in": false,
      "first": "Russell",
      "middle": "J.",
      "last": "Black",
@@ -19819,6 +20282,7 @@
     },
     {
      "candidateID": "174249",
+     "is_write_in": false,
      "first": "Marc",
      "middle": null,
      "last": "Edwards",
@@ -19867,6 +20331,7 @@
    "lines": [
     {
      "candidateID": "162196",
+     "is_write_in": false,
      "first": "Randall",
      "middle": "D.",
      "last": "Gauvin",
@@ -19883,6 +20348,7 @@
     },
     {
      "candidateID": "120840",
+     "is_write_in": false,
      "first": "H. Scott",
      "middle": null,
      "last": "Landry",
@@ -19941,6 +20407,7 @@
    "lines": [
     {
      "candidateID": "174250",
+     "is_write_in": false,
      "first": "Trevor",
      "middle": "Alex",
      "last": "Doiron",
@@ -19957,6 +20424,7 @@
     },
     {
      "candidateID": "121535",
+     "is_write_in": false,
      "first": "Sheila",
      "middle": "Ann",
      "last": "Lyman",
@@ -20015,6 +20483,7 @@
    "lines": [
     {
      "candidateID": "174251",
+     "is_write_in": false,
      "first": "Arlie",
      "middle": "E.",
      "last": "Hetrick",
@@ -20031,6 +20500,7 @@
     },
     {
      "candidateID": "121911",
+     "is_write_in": false,
      "first": "Tammy",
      "middle": "L.",
      "last": "Schmersal-Burgess",
@@ -20089,6 +20559,7 @@
    "lines": [
     {
      "candidateID": "122078",
+     "is_write_in": false,
      "first": "Rachel",
      "middle": "A.",
      "last": "Henderson",
@@ -20105,6 +20576,7 @@
     },
     {
      "candidateID": "174253",
+     "is_write_in": false,
      "first": "Woodleigh",
      "middle": "H.",
      "last": "Hughes",
@@ -20163,6 +20635,7 @@
    "lines": [
     {
      "candidateID": "162200",
+     "is_write_in": false,
      "first": "Michael",
      "middle": "J.",
      "last": "Lance",
@@ -20179,6 +20652,7 @@
     },
     {
      "candidateID": "174254",
+     "is_write_in": false,
      "first": "Brianna",
      "middle": "Fern",
      "last": "Lueck",
@@ -20227,6 +20701,7 @@
    "lines": [
     {
      "candidateID": "177864",
+     "is_write_in": false,
      "first": "Azalea",
      "middle": "D.",
      "last": "Cormier",
@@ -20243,6 +20718,7 @@
     },
     {
      "candidateID": "174255",
+     "is_write_in": false,
      "first": "Ernest",
      "middle": "M.",
      "last": "Fitts",
@@ -20301,6 +20777,7 @@
    "lines": [
     {
      "candidateID": "174257",
+     "is_write_in": false,
      "first": "Christopher",
      "middle": "A.",
      "last": "Easton",
@@ -20317,6 +20794,7 @@
     },
     {
      "candidateID": "162203",
+     "is_write_in": false,
      "first": "Peter",
      "middle": "C.",
      "last": "Wood",
@@ -20365,6 +20843,7 @@
    "lines": [
     {
      "candidateID": "174258",
+     "is_write_in": false,
      "first": "Christopher",
      "middle": "Alfred",
      "last": "Lewey",
@@ -20381,6 +20860,7 @@
     },
     {
      "candidateID": "121919",
+     "is_write_in": false,
      "first": "Caleb",
      "middle": "J.",
      "last": "Ness",
@@ -20439,6 +20919,7 @@
    "lines": [
     {
      "candidateID": "174259",
+     "is_write_in": false,
      "first": "Timothy",
      "middle": "J.",
      "last": "Becker",
@@ -20455,6 +20936,7 @@
     },
     {
      "candidateID": "162206",
+     "is_write_in": false,
      "first": "Marygrace",
      "middle": "Caroline",
      "last": "Cimino",
@@ -20513,6 +20995,7 @@
    "lines": [
     {
      "candidateID": "162207",
+     "is_write_in": false,
      "first": "Cassandra",
      "middle": "Anne",
      "last": "Dove",
@@ -20529,6 +21012,7 @@
     },
     {
      "candidateID": "121376",
+     "is_write_in": false,
      "first": "Mark",
      "middle": null,
      "last": "Walker",
@@ -20577,6 +21061,7 @@
    "lines": [
     {
      "candidateID": "174261",
+     "is_write_in": false,
      "first": "Adrienne",
      "middle": null,
      "last": "Paul",
@@ -20593,6 +21078,7 @@
     },
     {
      "candidateID": "174260",
+     "is_write_in": false,
      "first": "Paul",
      "middle": "Harris",
      "last": "Welch",
@@ -20651,6 +21137,7 @@
    "lines": [
     {
      "candidateID": "174263",
+     "is_write_in": false,
      "first": "Abigail",
      "middle": "N.",
      "last": "Geer",
@@ -20667,6 +21154,7 @@
     },
     {
      "candidateID": "162209",
+     "is_write_in": false,
      "first": "Rolf",
      "middle": "A.",
      "last": "Olsen",
@@ -20725,6 +21213,7 @@
    "lines": [
     {
      "candidateID": "121925",
+     "is_write_in": false,
      "first": "David",
      "middle": "Wayne",
      "last": "Boyer",
@@ -20783,6 +21272,7 @@
    "lines": [
     {
      "candidateID": "162213",
+     "is_write_in": false,
      "first": "Quentin",
      "middle": "James",
      "last": "Chapman",
@@ -20799,6 +21289,7 @@
     },
     {
      "candidateID": "174264",
+     "is_write_in": false,
      "first": "Dana",
      "middle": "N.",
      "last": "Staples",
@@ -20857,6 +21348,7 @@
    "lines": [
     {
      "candidateID": "174265",
+     "is_write_in": false,
      "first": "James",
      "middle": "D.",
      "last": "Berube",
@@ -20873,6 +21365,7 @@
     },
     {
      "candidateID": "121928",
+     "is_write_in": false,
      "first": "Adam",
      "middle": "R.",
      "last": "Lee",
@@ -20921,6 +21414,7 @@
    "lines": [
     {
      "candidateID": "174266",
+     "is_write_in": false,
      "first": "Pamela",
      "middle": "B.",
      "last": "Hart",
@@ -20937,6 +21431,7 @@
     },
     {
      "candidateID": "120539",
+     "is_write_in": false,
      "first": "James",
      "middle": "W.",
      "last": "Sorcek",
@@ -20985,6 +21480,7 @@
    "lines": [
     {
      "candidateID": "120013",
+     "is_write_in": false,
      "first": "Jeffrey",
      "middle": "L.",
      "last": "Timberlake",
@@ -21043,6 +21539,7 @@
    "lines": [
     {
      "candidateID": "167362",
+     "is_write_in": false,
      "first": "Scott",
      "middle": "G.",
      "last": "Girardin",
@@ -21059,6 +21556,7 @@
     },
     {
      "candidateID": "119980",
+     "is_write_in": false,
      "first": "Stephen",
      "middle": "J.",
      "last": "Wood",
@@ -21117,6 +21615,7 @@
    "lines": [
     {
      "candidateID": "178680",
+     "is_write_in": false,
      "first": "Susan",
      "middle": "G.",
      "last": "Longchamps",
@@ -21133,6 +21632,7 @@
     },
     {
      "candidateID": "162217",
+     "is_write_in": false,
      "first": "Julia",
      "middle": null,
      "last": "McCabe",
@@ -21191,6 +21691,7 @@
    "lines": [
     {
      "candidateID": "121933",
+     "is_write_in": false,
      "first": "Janet",
      "middle": "Inger",
      "last": "Beaudoin",
@@ -21207,6 +21708,7 @@
     },
     {
      "candidateID": "169533",
+     "is_write_in": false,
      "first": "Scott",
      "middle": "A.",
      "last": "Harriman",
@@ -21255,6 +21757,7 @@
    "lines": [
     {
      "candidateID": "174270",
+     "is_write_in": false,
      "first": "Kiernan",
      "middle": "Innes",
      "last": "Majerus-Collins",
@@ -21271,6 +21774,7 @@
     },
     {
      "candidateID": "174271",
+     "is_write_in": false,
      "first": "Bret",
      "middle": "M.",
      "last": "Martel",
@@ -21319,6 +21823,7 @@
    "lines": [
     {
      "candidateID": "162222",
+     "is_write_in": false,
      "first": "Kerryl",
      "middle": "Lee",
      "last": "Clement",
@@ -21335,6 +21840,7 @@
     },
     {
      "candidateID": "120386",
+     "is_write_in": false,
      "first": "Luke",
      "middle": "Dylan",
      "last": "Jensen",
@@ -21383,6 +21889,7 @@
    "lines": [
     {
      "candidateID": "69175",
+     "is_write_in": false,
      "first": "Dale",
      "middle": "John",
      "last": "Crafts",
@@ -21441,6 +21948,7 @@
    "lines": [
     {
      "candidateID": "174272",
+     "is_write_in": false,
      "first": "William",
      "middle": "J.",
      "last": "St. Michel",
@@ -21457,6 +21965,7 @@
     },
     {
      "candidateID": "162223",
+     "is_write_in": false,
      "first": "Kilton",
      "middle": "McCarthy",
      "last": "Webb",
@@ -21515,6 +22024,7 @@
    "lines": [
     {
      "candidateID": "121940",
+     "is_write_in": false,
      "first": "Cheryl",
      "middle": "A.",
      "last": "Golek",
@@ -21531,6 +22041,7 @@
     },
     {
      "candidateID": "174273",
+     "is_write_in": false,
      "first": "Braeden",
      "middle": "D.",
      "last": "Webber",
@@ -21589,6 +22100,7 @@
    "lines": [
     {
      "candidateID": "121941",
+     "is_write_in": false,
      "first": "Daniel",
      "middle": "Joseph",
      "last": "Ankeles",
@@ -21605,6 +22117,7 @@
     },
     {
      "candidateID": "174274",
+     "is_write_in": false,
      "first": "Brett",
      "middle": "Y.",
      "last": "Barrett",
@@ -21663,6 +22176,7 @@
    "lines": [
     {
      "candidateID": "121499",
+     "is_write_in": false,
      "first": "Poppy",
      "middle": "T.",
      "last": "Arford",
@@ -21679,6 +22193,7 @@
     },
     {
      "candidateID": "121945",
+     "is_write_in": false,
      "first": "Ravi",
      "middle": null,
      "last": "Jackson",
@@ -21727,6 +22242,7 @@
    "lines": [
     {
      "candidateID": "174275",
+     "is_write_in": false,
      "first": "Henry",
      "middle": "Lloyd",
      "last": "Lawrence",
@@ -21743,6 +22259,7 @@
     },
     {
      "candidateID": "174276",
+     "is_write_in": false,
      "first": "Maura",
      "middle": "H.",
      "last": "Pillsbury",
@@ -21791,6 +22308,7 @@
    "lines": [
     {
      "candidateID": "174277",
+     "is_write_in": false,
      "first": "Karin",
      "middle": null,
      "last": "Orenstein",
@@ -21839,6 +22357,7 @@
    "lines": [
     {
      "candidateID": "177865",
+     "is_write_in": false,
      "first": "L.",
      "middle": "Samuel",
      "last": "Pfeifle",
@@ -21855,6 +22374,7 @@
     },
     {
      "candidateID": "174278",
+     "is_write_in": false,
      "first": "R.",
      "middle": "Melissa",
      "last": "Winslow",
@@ -21913,6 +22433,7 @@
    "lines": [
     {
      "candidateID": "120024",
+     "is_write_in": false,
      "first": "Anne",
      "middle": "Palmer",
      "last": "Graham",
@@ -21971,6 +22492,7 @@
    "lines": [
     {
      "candidateID": "121950",
+     "is_write_in": false,
      "first": "Barbara",
      "middle": null,
      "last": "Bagshaw",
@@ -21987,6 +22509,7 @@
     },
     {
      "candidateID": "174280",
+     "is_write_in": false,
      "first": "Bradley",
      "middle": "M.",
      "last": "Youngs",
@@ -22045,6 +22568,7 @@
    "lines": [
     {
      "candidateID": "174281",
+     "is_write_in": false,
      "first": "Joseph",
      "middle": "A.",
      "last": "Campbell",
@@ -22061,6 +22585,7 @@
     },
     {
      "candidateID": "162228",
+     "is_write_in": false,
      "first": "Mark",
      "middle": "C.",
      "last": "Cooper",
@@ -22119,6 +22644,7 @@
    "lines": [
     {
      "candidateID": "174282",
+     "is_write_in": false,
      "first": "Kelly",
      "middle": "L.",
      "last": "Dearborn",
@@ -22135,6 +22661,7 @@
     },
     {
      "candidateID": "162229",
+     "is_write_in": false,
      "first": "Parnell",
      "middle": "W.",
      "last": "Terry",
@@ -22183,6 +22710,7 @@
    "lines": [
     {
      "candidateID": "174283",
+     "is_write_in": false,
      "first": "Diana",
      "middle": null,
      "last": "Kushnar",
@@ -22199,6 +22727,7 @@
     },
     {
      "candidateID": "162232",
+     "is_write_in": false,
      "first": "Seven",
      "middle": "R.",
      "last": "Siegel",
@@ -22257,6 +22786,7 @@
    "lines": [
     {
      "candidateID": "174284",
+     "is_write_in": false,
      "first": "Jason",
      "middle": "Lewis",
      "last": "Copp",
@@ -22273,6 +22803,7 @@
     },
     {
      "candidateID": "162233",
+     "is_write_in": false,
      "first": "Christina",
      "middle": "R.C.",
      "last": "Mitchell",
@@ -22331,6 +22862,7 @@
    "lines": [
     {
      "candidateID": "121960",
+     "is_write_in": false,
      "first": "Amy",
      "middle": "D.",
      "last": "Kuhn",
@@ -22379,6 +22911,7 @@
    "lines": [
     {
      "candidateID": "174286",
+     "is_write_in": false,
      "first": "Lauren",
      "middle": "Chelsea",
      "last": "Jones",
@@ -22395,6 +22928,7 @@
     },
     {
      "candidateID": "174285",
+     "is_write_in": false,
      "first": "Sean",
      "middle": "M.",
      "last": "Mahoney",
@@ -22453,6 +22987,7 @@
    "lines": [
     {
      "candidateID": "121462",
+     "is_write_in": false,
      "first": "Grayson",
      "middle": "Benjamin",
      "last": "Lookner",
@@ -22501,6 +23036,7 @@
    "lines": [
     {
      "candidateID": "120978",
+     "is_write_in": false,
      "first": "April",
      "middle": "D.",
      "last": "Fournier",
@@ -22549,6 +23085,7 @@
    "lines": [
     {
      "candidateID": "174288",
+     "is_write_in": false,
      "first": "Andrew",
      "middle": "J.",
      "last": "Zarro",
@@ -22607,6 +23144,7 @@
    "lines": [
     {
      "candidateID": "121476",
+     "is_write_in": false,
      "first": "Samuel",
      "middle": "Lewis",
      "last": "Zager",
@@ -22665,6 +23203,7 @@
    "lines": [
     {
      "candidateID": "120767",
+     "is_write_in": false,
      "first": "Harold",
      "middle": "L.",
      "last": "Stewart",
@@ -22681,6 +23220,7 @@
     },
     {
      "candidateID": "178254",
+     "is_write_in": false,
      "first": "Janel",
      "middle": "C.",
      "last": "Underwood-Charette",
@@ -22729,6 +23269,7 @@
    "lines": [
     {
      "candidateID": "178255",
+     "is_write_in": false,
      "first": "Ester",
      "middle": "B.",
      "last": "Franklin",
@@ -22745,6 +23286,7 @@
     },
     {
      "candidateID": "120452",
+     "is_write_in": false,
      "first": "Joel",
      "middle": "R.",
      "last": "Stetkis",
@@ -22793,6 +23335,7 @@
    "lines": [
     {
      "candidateID": "174150",
+     "is_write_in": false,
      "first": "Lisa",
      "middle": "G.",
      "last": "Kalp",
@@ -22809,6 +23352,7 @@
     },
     {
      "candidateID": "121582",
+     "is_write_in": false,
      "first": "Chad",
      "middle": "Richard",
      "last": "Perkins",
@@ -22857,6 +23401,7 @@
    "lines": [
     {
      "candidateID": "70434",
+     "is_write_in": false,
      "first": "Elizabeth",
      "middle": "M.",
      "last": "Caruso",
@@ -22873,6 +23418,7 @@
     },
     {
      "candidateID": "174154",
+     "is_write_in": false,
      "first": "Robert",
      "middle": "F.",
      "last": "Sullebarger",
@@ -22921,6 +23467,7 @@
    "lines": [
     {
      "candidateID": "177854",
+     "is_write_in": false,
      "first": "Aaron",
      "middle": "M.",
      "last": "Dana",
@@ -22937,6 +23484,7 @@
     },
     {
      "candidateID": "121789",
+     "is_write_in": false,
      "first": "Billy Bob",
      "middle": null,
      "last": "Faulkingham",
@@ -22995,6 +23543,7 @@
    "lines": [
     {
      "candidateID": "121275",
+     "is_write_in": false,
      "first": "Nicole",
      "middle": "C.",
      "last": "Grohoski",
@@ -23011,6 +23560,7 @@
     },
     {
      "candidateID": "162148",
+     "is_write_in": false,
      "first": "Cheryl",
      "middle": "A.",
      "last": "Hewes",
@@ -23069,6 +23619,7 @@
    "lines": [
     {
      "candidateID": "162016",
+     "is_write_in": false,
      "first": "Leo",
      "middle": "C.",
      "last": "Kenney",
@@ -23085,6 +23636,7 @@
     },
     {
      "candidateID": "121709",
+     "is_write_in": false,
      "first": "Michael",
      "middle": null,
      "last": "Tipping",
@@ -23133,6 +23685,7 @@
    "lines": [
     {
      "candidateID": "177855",
+     "is_write_in": false,
      "first": "Stephen",
      "middle": "Richard",
      "last": "Carey",
@@ -23149,6 +23702,7 @@
     },
     {
      "candidateID": "121594",
+     "is_write_in": false,
      "first": "Amy",
      "middle": "J.",
      "last": "Roeder",
@@ -23207,6 +23761,7 @@
    "lines": [
     {
      "candidateID": "120268",
+     "is_write_in": false,
      "first": "Jaric",
      "middle": "T.",
      "last": "Fontaine",
@@ -23223,6 +23778,7 @@
     },
     {
      "candidateID": "120667",
+     "is_write_in": false,
      "first": "David",
      "middle": "G.",
      "last": "Haggan",
@@ -23281,6 +23837,7 @@
    "lines": [
     {
      "candidateID": "121364",
+     "is_write_in": false,
      "first": "Glenn",
      "middle": "Chip",
      "last": "Curry",
@@ -23297,6 +23854,7 @@
     },
     {
      "candidateID": "174156",
+     "is_write_in": false,
      "first": "Ryan",
      "middle": "C.",
      "last": "Otis",
@@ -23345,6 +23903,7 @@
    "lines": [
     {
      "candidateID": "177856",
+     "is_write_in": false,
      "first": "Nicole",
      "middle": "Lynn",
      "last": "Kalloch",
@@ -23361,6 +23920,7 @@
     },
     {
      "candidateID": "121086",
+     "is_write_in": false,
      "first": "Ann",
      "middle": "H.",
      "last": "Matlack",
@@ -23419,6 +23979,7 @@
    "lines": [
     {
      "candidateID": "177857",
+     "is_write_in": false,
      "first": "Edwin",
      "middle": "M.",
      "last": "Mitchell",
@@ -23435,6 +23996,7 @@
     },
     {
      "candidateID": "121722",
+     "is_write_in": false,
      "first": "Cameron",
      "middle": null,
      "last": "Reny",
@@ -23493,6 +24055,7 @@
    "lines": [
     {
      "candidateID": "119997",
+     "is_write_in": false,
      "first": "Craig",
      "middle": "V.",
      "last": "Hickman",
@@ -23509,6 +24072,7 @@
     },
     {
      "candidateID": "174157",
+     "is_write_in": false,
      "first": "Steven",
      "middle": "A.",
      "last": "McGee",
@@ -23557,6 +24121,7 @@
    "lines": [
     {
      "candidateID": "174158",
+     "is_write_in": false,
      "first": "Amanda",
      "middle": "Ann",
      "last": "Heath",
@@ -23573,6 +24138,7 @@
     },
     {
      "candidateID": "174159",
+     "is_write_in": false,
      "first": "Kati",
      "middle": null,
      "last": "McCormick",
@@ -23631,6 +24197,7 @@
    "lines": [
     {
      "candidateID": "120548",
+     "is_write_in": false,
      "first": "Scott",
      "middle": "Wynn",
      "last": "Cyrway",
@@ -23647,6 +24214,7 @@
     },
     {
      "candidateID": "174160",
+     "is_write_in": false,
      "first": "Patric",
      "middle": "Aaron",
      "last": "Moore",
@@ -23695,6 +24263,7 @@
    "lines": [
     {
      "candidateID": "121729",
+     "is_write_in": false,
      "first": "Jo-Jean",
      "middle": "C.",
      "last": "Keller",
@@ -23711,6 +24280,7 @@
     },
     {
      "candidateID": "120866",
+     "is_write_in": false,
      "first": "Richard",
      "middle": "G.",
      "last": "Mason",
@@ -23759,6 +24329,7 @@
    "lines": [
     {
      "candidateID": "121038",
+     "is_write_in": false,
      "first": "John",
      "middle": "E.",
      "last": "Andrews",
@@ -23775,6 +24346,7 @@
     },
     {
      "candidateID": "174161",
+     "is_write_in": false,
      "first": "Elizabeth",
      "middle": "D.",
      "last": "Bosworth",
@@ -23833,6 +24405,7 @@
    "lines": [
     {
      "candidateID": "162130",
+     "is_write_in": false,
      "first": "David",
      "middle": "A.",
      "last": "Duguay",
@@ -23849,6 +24422,7 @@
     },
     {
      "candidateID": "120530",
+     "is_write_in": false,
      "first": "Joseph",
      "middle": "E.",
      "last": "Martin",
@@ -23865,6 +24439,7 @@
     },
     {
      "candidateID": "174162",
+     "is_write_in": false,
      "first": "Peter",
      "middle": "J.",
      "last": "Southam",
@@ -23923,6 +24498,7 @@
    "lines": [
     {
      "candidateID": "119970",
+     "is_write_in": false,
      "first": "Bruce",
      "middle": "A.",
      "last": "Bickford",
@@ -23939,6 +24515,7 @@
     },
     {
      "candidateID": "119971",
+     "is_write_in": false,
      "first": "Michael",
      "middle": "R.",
      "last": "Scott",
@@ -23987,6 +24564,7 @@
    "lines": [
     {
      "candidateID": "174163",
+     "is_write_in": false,
      "first": "Shanna",
      "middle": null,
      "last": "Cox",
@@ -24003,6 +24581,7 @@
     },
     {
      "candidateID": "177858",
+     "is_write_in": false,
      "first": "Eryn",
      "middle": "M.",
      "last": "Soule",
@@ -24051,6 +24630,7 @@
    "lines": [
     {
      "candidateID": "121027",
+     "is_write_in": false,
      "first": "Nathan",
      "middle": null,
      "last": "Burnett",
@@ -24067,6 +24647,7 @@
     },
     {
      "candidateID": "121924",
+     "is_write_in": false,
      "first": "Kimberly",
      "middle": "J.",
      "last": "Pomerleau",
@@ -24125,6 +24706,7 @@
    "lines": [
     {
      "candidateID": "120244",
+     "is_write_in": false,
      "first": "Matthea",
      "middle": "Elisabeth",
      "last": "Daughtry",
@@ -24141,6 +24723,7 @@
     },
     {
      "candidateID": "174164",
+     "is_write_in": false,
      "first": "Bernard",
      "middle": null,
      "last": "Porter",
@@ -24199,6 +24782,7 @@
    "lines": [
     {
      "candidateID": "119951",
+     "is_write_in": false,
      "first": "Denise",
      "middle": null,
      "last": "Tepler",
@@ -24257,6 +24841,7 @@
    "lines": [
     {
      "candidateID": "120362",
+     "is_write_in": false,
      "first": "Teresa",
      "middle": "S.",
      "last": "Pierce",
@@ -24315,6 +24900,7 @@
    "lines": [
     {
      "candidateID": "162136",
+     "is_write_in": false,
      "first": "Kenneth",
      "middle": "James",
      "last": "Cianchette",
@@ -24331,6 +24917,7 @@
     },
     {
      "candidateID": "121745",
+     "is_write_in": false,
      "first": "Timothy",
      "middle": "E.",
      "last": "Nangle",
@@ -24389,6 +24976,7 @@
    "lines": [
     {
      "candidateID": "120632",
+     "is_write_in": false,
      "first": "Jill",
      "middle": "C.",
      "last": "Duson",
@@ -24447,6 +25035,7 @@
    "lines": [
     {
      "candidateID": "121474",
+     "is_write_in": false,
      "first": "Rachel",
      "middle": "Talbot",
      "last": "Ross",
@@ -24505,6 +25094,7 @@
    "lines": [
     {
      "candidateID": "120955",
+     "is_write_in": false,
      "first": "Anne",
      "middle": "M.",
      "last": "Carney",
@@ -24521,6 +25111,7 @@
     },
     {
      "candidateID": "174166",
+     "is_write_in": false,
      "first": "Vincent",
      "middle": "A.",
      "last": "Maietta",
@@ -24569,6 +25160,7 @@
    "lines": [
     {
      "candidateID": "162230",
+     "is_write_in": false,
      "first": "M. Thad",
      "middle": null,
      "last": "Moody",
@@ -24585,6 +25177,7 @@
     },
     {
      "candidateID": "121656",
+     "is_write_in": false,
      "first": "Sophia",
      "middle": "Bailey",
      "last": "Warren",
@@ -24643,6 +25236,7 @@
    "lines": [
     {
      "candidateID": "120587",
+     "is_write_in": false,
      "first": "Donna",
      "middle": null,
      "last": "Bailey",
@@ -24659,6 +25253,7 @@
     },
     {
      "candidateID": "121989",
+     "is_write_in": false,
      "first": "Scott",
      "middle": "Benedetto",
      "last": "Eccleston",
@@ -24717,6 +25312,7 @@
    "lines": [
     {
      "candidateID": "120927",
+     "is_write_in": false,
      "first": "Henry",
      "middle": "L.",
      "last": "Ingwersen",
@@ -24733,6 +25329,7 @@
     },
     {
      "candidateID": "121307",
+     "is_write_in": false,
      "first": "Jason",
      "middle": "G.",
      "last": "Litalien",
@@ -24791,6 +25388,7 @@
    "lines": [
     {
      "candidateID": "120531",
+     "is_write_in": false,
      "first": "Matthew",
      "middle": "A.",
      "last": "Harrington",
@@ -24807,6 +25405,7 @@
     },
     {
      "candidateID": "174169",
+     "is_write_in": false,
      "first": "Mark",
      "middle": "H.",
      "last": "Vigliotta",
@@ -24855,6 +25454,7 @@
    "lines": [
     {
      "candidateID": "174170",
+     "is_write_in": false,
      "first": "Jonathan",
      "middle": "R.",
      "last": "Fallon",
@@ -24871,6 +25471,7 @@
     },
     {
      "candidateID": "121998",
+     "is_write_in": false,
      "first": "Daniel",
      "middle": "R.",
      "last": "Sayre",
@@ -24919,6 +25520,7 @@
    "lines": [
     {
      "candidateID": "120921",
+     "is_write_in": false,
      "first": "Michele",
      "middle": null,
      "last": "Meyer",
@@ -24935,6 +25537,7 @@
     },
     {
      "candidateID": "121761",
+     "is_write_in": false,
      "first": "Julie",
      "middle": "N.",
      "last": "Rakic",
@@ -24983,6 +25586,7 @@
    "lines": [
     {
      "candidateID": "162139",
+     "is_write_in": false,
      "first": "Lucien",
      "middle": "J.B.",
      "last": "Daigle",
@@ -24999,6 +25603,7 @@
     },
     {
      "candidateID": "162012",
+     "is_write_in": false,
      "first": "Vaughn",
      "middle": "J.",
      "last": "McLaughlin",
