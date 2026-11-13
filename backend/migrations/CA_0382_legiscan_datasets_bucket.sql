@@ -19,6 +19,11 @@
 --
 -- Creates only; overwrites no value.
 --
+-- STATUS: APPLIED to prod 2026-11-13 via apply-migration-file.mjs (operator approval: Chris Andrews, "Yes, apply it").
+--   Dry run OK before, plus a tamper control (public = true fails the gate). Verified after with a control object
+--   (ZZ/0/control.zip, then deleted): the service key uploads, lists and reads it; the publishable key lists
+--   nothing and its read is refused.
+--
 -- ROLLBACK (empty the bucket first in the dashboard, or delete its storage.objects rows):
 --   delete from storage.buckets where id = 'legiscan-datasets';
 
