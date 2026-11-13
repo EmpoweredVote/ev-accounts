@@ -1,0 +1,39 @@
+{
+  "id": "CA-AB-1955-2026",
+  "scope": "state:ca",
+  "title": "AB1955 (2025-2026 Regular): Crimes: firearm enhancements.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB1955",
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB1955#98AMD"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Juan Alanis",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "7520a629-a0ec-44b3-9460-c7e4574a897d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2026-03-09, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-1955-2026.amended-2026-03-09.html",
+      "sha256": "76689eb11a1f351c55d0e9d5f202ff4f8e59d6e9526f4cdf0f72221f9ed03f02"
+    },
+    "note": "Amended version of 2026-03-09 (no floor vote recorded). The bill text struck \"public officer,\" in (l) and now reads \"peace officer,\". The new subdivision (m) exempts peace officers unless the gun use did not arise out of or in the course of employment, with the prosecution bearing the burden. A struck earlier Penal Code 71 amendment appears at the end of the file and is not part of this version. Subdivisions (b) and (c) are existing law reprinted unchanged; (d)-(k) omitted for length."
+  },
+  "operative_text": "Section 12022.53(b) (Penal Code): (b) Notwithstanding any other law, a person who, in the commission of a felony specified in subdivision (a), personally uses a firearm, shall be punished by an additional and consecutive term of imprisonment in the state prison for 10 years. The firearm need not be operable or loaded for this enhancement to apply.\nSection 12022.53(c) (Penal Code): (c) Notwithstanding any other law, a person who, in the commission of a felony specified in subdivision (a), personally and intentionally discharges a firearm, shall be punished by an additional and consecutive term of imprisonment in the state prison for 20 years.\nSection 12022.53(l) (Penal Code): (l) The enhancements specified in this section shall not apply to the lawful use or discharge of a firearm by a peace officer, as provided in Section 196, or by any person in lawful self-defense, lawful defense of another, or lawful defense of property, as provided in Sections 197, 198, and 198.5.\nSection 12022.53(m) (Penal Code): (m) (1) Notwithstanding any other provisions of this section, the enhancements provided in this section shall not apply to a peace officer, as defined in Chapter 4.5 (commencing with Section 830) of Title 3 of Part 2, unless the use or discharge of the firearm did not arise out of and was not in the course of the employment. (2) The prosecution shall bear the burden of proving by a preponderance of the evidence that the exemption in this subdivision does not apply. If the prosecution fails to meet this burden, the court shall not impose the enhancement, and any reference to the enhancement shall be stricken from the charging document or verdict. (3) This subdivision does not affect the underlying charge or any other applicable enhancements or penalties unrelated to firearm use. (4) For purposes of this subdivision, “arise out of and in the course of employment” shall be determined based on the facts and circumstances at the time of the incident, including whether the officer was performing services arising out of or incidental to their employment or was acting within the course of their employment."
+}

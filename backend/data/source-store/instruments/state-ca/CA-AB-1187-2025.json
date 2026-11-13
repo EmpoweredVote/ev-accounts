@@ -1,0 +1,39 @@
+{
+  "id": "CA-AB-1187-2025",
+  "scope": "state:ca",
+  "title": "AB1187 (2025-2026 Regular): Firearms: safety certificates.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB1187",
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB1187#98AMD"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Celeste Rodriguez",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "f9cbe210-a840-4924-b4aa-a5de0dc143ba"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2025-04-10, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-1187-2025.amended-2025-04-10.html",
+      "sha256": "8c99d6924d02cec52487dbff563cd651183a7042ec595c56f729c0054ede1957"
+    },
+    "note": "No floor vote; saved at Amended 2025-04-10 (last version). Section 31615 strikes \"either\" and adds \"any\" and limits the misdemeanor to (a)(1) and (a)(2), so bringing in a firearm without a certificate [(a)(3)] is a prohibition without the misdemeanor penalty stated there."
+  },
+  "operative_text": "Section 27560 (Penal Code): A personal firearm importer shall obtain a valid firearm safety certificate, pursuant to paragraph (3) of subdivision (a) of Section 31615, and include a copy of the valid firearm safety certificate within the report.\nSection 31615 (Penal Code): A person shall not do any of the following: (1) Purchase or receive any firearm, except an antique firearm, without a valid firearm safety certificate, except that in the case of a handgun, an unexpired handgun safety certificate may be used. (2) Sell, deliver, loan, or transfer any firearm, except an antique firearm, to any person who does not have a valid firearm safety certificate, except that in the case of a handgun, an unexpired handgun safety certificate may be used. (3) Bring any firearm, except an antique firearm, into this state without obtaining a valid firearm safety certificate within 60 days of bringing that firearm into this state if the person is required to report the importation of the firearm to the department pursuant to subparagraph (A) of paragraph (1) of subdivision (a) of Section 27560.\nSection 31615 (Penal Code): (b) Any person who violates paragraph (1) or (2) of subdivision (a) is guilty of a misdemeanor.\nSection 31640.5 (Penal Code): An applicant for a firearm safety certificate on or after July 1, 2027, shall have completed a training course that meets all of the following conditions: (1) The training shall be no less than eight hours in length, including at least one hour of live shooting.\nSection 31640.5 (Penal Code): (4) The live-fire shooting exercises shall take place on a firing range and shall include a demonstration by the applicant of safe handling of firearms and basic firearm shooting proficiency."
+}

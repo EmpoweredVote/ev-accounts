@@ -1,0 +1,39 @@
+{
+  "id": "CA-AB-216-2021",
+  "scope": "state:ca",
+  "title": "AB216 (2021-2022): Peace officers: firearms: establishment serving the public.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202120220AB216",
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202120220AB216#99INT"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "James Ramos",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "01dd07dc-ded1-4ba5-aff3-2dc2b386af12"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Introduced 2021-01-11, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-216-2021.introduced-2021-01-11.html",
+      "sha256": "66b8b754362107b72e38f87599634aff87f28a1a3d27adc0eb921adc26881a30"
+    },
+    "note": "No floor vote; saved text is the Introduced version of 2021-01-11, which is the last version. 'Weapon' is not limited to firearms in the text, but the definition of peace officer refers to the concealed-firearm exemption in Section 25450."
+  },
+  "operative_text": "Section 366 (Penal Code): (a) It is unlawful for an establishment serving the public to prohibit or otherwise restrict a peace officer from carrying a weapon on the establishment’s premises that the peace officer is otherwise authorized to carry, regardless of whether the peace officer is engaged in the actual discharge of the officer’s duties while carrying the weapon.\nSection 366 (Penal Code): (b) A violation of subdivision (a) is an infraction for a first offense, punishable by a fine not to exceed five hundred dollars ($500). A second or subsequent violation of subdivision (a) is a misdemeanor, punishable by imprisonment in a county jail not exceeding six months, by a fine not exceeding one thousand dollars ($1,000), or by both that fine and imprisonment."
+}

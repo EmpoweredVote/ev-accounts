@@ -1,0 +1,39 @@
+{
+  "id": "CA-AB-1121-2019",
+  "scope": "state:ca",
+  "title": "AB1121 (2019-2020): Firearms: prohibited persons.",
+  "urls": [
+    "http://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=201920200AB1121",
+    "http://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200AB1121"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Rebecca Bauer-Kahan",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "2cca193f-574d-4ec7-b0c8-e0fcd27d5eab"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2019-03-19, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-1121-2019.amended-2019-03-19.html",
+      "sha256": "423daab04b5a6b9abeff252ae54ff7a7b005cac3c8269f30d2c872654a7ff194"
+    },
+    "note": "Amended Mar 19, 2019; no floor vote recorded, saved at last version. The quote of 8103(i)(2) is shortened with ellipses (omitting procedural sentences on transfer of venue, continuances, in camera hearings). The bill was originally a gun violence restraining order bill (Section 18125, now struck)."
+  },
+  "operative_text": "Section 1001.36 (Penal Code): (j) A defendant granted pretrial diversion pursuant to this section shall be advised that, pursuant to subdivision (i) of Section 8103 of the Welfare and Institutions Code, the defendant is prohibited from purchasing, receiving, attempting to purchase or receive, or having possession, custody, or control of any firearm or other dangerous or deadly weapon.\nSection 8103 (Welfare and Institutions Code): (i) (1) A person who has been granted pretrial diversion pursuant to Section 1001.36 of the Penal Code shall not purchase or receive, or attempt to purchase or receive, or have possession, custody, or control of any firearm or any other deadly weapon.\n(2) Upon successful completion of diversion, or upon adjudication of reinstated charges, a person may request a hearing from the superior court of their county of residence for an order that they may own, possess, control, receive, or purchase a firearm or other deadly weapon. The clerk of the court shall set a hearing date and notify the person, the Department of Justice, and the district attorney. ... The court shall set the hearing within 60 days of receipt of the request for a hearing. ... The people bear the burden of showing by a preponderance of the evidence that the person would not be likely to use a firearm or other deadly weapon in a safe and lawful manner.\n(j) Every person who owns or possesses or has custody or control of, or purchases or receives, or attempts to purchase or receive, any firearm or any other deadly weapon in violation of this section shall be punished by imprisonment pursuant to subdivision (h) of Section 1170 of the Penal Code or in a county jail for not more than one year."
+}

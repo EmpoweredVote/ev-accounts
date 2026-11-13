@@ -1,0 +1,227 @@
+{
+  "id": "CA-SB-220-2019",
+  "scope": "state:ca",
+  "title": "SB220 (2019-2020): Firearms dealers: storage and security.",
+  "urls": [
+    "http://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=201920200SB220",
+    "http://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200SB220"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jerry Hill",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Rebecca Bauer-Kahan",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "2cca193f-574d-4ec7-b0c8-e0fcd27d5eab"
+    },
+    {
+      "name": "Buffy Wicks",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "5821d0a9-672e-44c0-bac7-1a802a2e8368"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2019-05-02",
+      "body": "CA Senate",
+      "motion": "Senate 3rd Reading SB220 Hill et al",
+      "kind": "roll-call",
+      "yes": 26,
+      "no": 10,
+      "absent": 2,
+      "note": "LegiScan roll call 858191; taken on the text 'Introduced' of 2019-02-07",
+      "members": [
+        {
+          "name": "Jim Beall",
+          "vote": "yea"
+        },
+        {
+          "name": "Steven Bradford",
+          "vote": "yea"
+        },
+        {
+          "name": "Anna Caballero",
+          "vote": "yea",
+          "politician_id": "8b15f324-ed8b-4cc9-92b4-fdaf07896b20"
+        },
+        {
+          "name": "Cathleen Galgiani",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "William Monning",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Nielsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Anthony Portantino",
+          "vote": "yea"
+        },
+        {
+          "name": "Nancy Skinner",
+          "vote": "yea"
+        },
+        {
+          "name": "Toni Atkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Holly Mitchell",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Pan",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Wieckowski",
+          "vote": "yea"
+        },
+        {
+          "name": "Shannon Grove",
+          "vote": "nay",
+          "politician_id": "03ee06fb-9b51-41cc-8942-4632f3a724e3"
+        },
+        {
+          "name": "Benjamin Hueso",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Morrell",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott Wilk",
+          "vote": "nay"
+        },
+        {
+          "name": "Hannah-Beth Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Roth",
+          "vote": "abstain"
+        },
+        {
+          "name": "Brian Jones",
+          "vote": "nay",
+          "politician_id": "ee130fd3-649d-49e1-bda4-13d9bbed2f6c"
+        },
+        {
+          "name": "Ling Ling Chang",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Dodd",
+          "vote": "yea"
+        },
+        {
+          "name": "Benjamin Allen",
+          "vote": "yea",
+          "politician_id": "4486f856-118b-475c-83f0-078581a7b268"
+        },
+        {
+          "name": "Patricia Bates",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Hertzberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Connie Leyva",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike McGuire",
+          "vote": "yea",
+          "politician_id": "974bfe8b-afb8-424c-bfd2-7805f033b1a0"
+        },
+        {
+          "name": "Jeff Stone",
+          "vote": "nay"
+        },
+        {
+          "name": "John Moorlach",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Glazer",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Wiener",
+          "vote": "yea",
+          "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f"
+        },
+        {
+          "name": "Henry Stern",
+          "vote": "yea",
+          "politician_id": "f3671de4-514f-441c-8ad4-4a9ab7c65ae6"
+        },
+        {
+          "name": "Andreas Borgeas",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Archuleta",
+          "vote": "yea",
+          "politician_id": "29e15a5d-d98f-4536-ad62-05b2612f30ca"
+        },
+        {
+          "name": "Maria Durazo",
+          "vote": "yea",
+          "politician_id": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93"
+        },
+        {
+          "name": "Melissa Hurtado",
+          "vote": "abstain",
+          "politician_id": "d3b4ee4d-4cf5-4a3d-8e86-2320fc4a7c26"
+        },
+        {
+          "name": "Tom Umberg",
+          "vote": "yea",
+          "politician_id": "712be98b-a05d-4605-9603-cd5d86abfad1"
+        },
+        {
+          "name": "Susan Rubio",
+          "vote": "yea",
+          "politician_id": "b3937fff-ebcf-48d9-b20d-bdf98196e119"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Introduced 2019-02-07, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-SB-220-2019.introduced-2019-02-07.html",
+      "sha256": "27e2ebe83d755fcffc1b007b7c5195a0e6cceef3b84c7f77807b9f2b4c437b57"
+    },
+    "note": "Introduced text of 2019-02-07; the Senate vote 2019-05-02 was on it. Section 1 amends 26890 only until it becomes inoperative July 1, 2020; Section 2 adds the new 26890 operative July 1, 2020, which is quoted. Quote leaves out (b)(2)-(3) bollard details, (d)-(f) local-authority and exemption provisions."
+  },
+  "operative_text": "Section 26890 (Penal Code), added by Section 2, operative July 1, 2020: 26890. (a) Except as provided in subdivisions (b) and (c) of Section 26805, any time when the licensee is not open for business, each particular firearm shall be secured by storing the firearm in a secure facility that is part of, or that constitutes, the licensee’s business premises. (b) (1) All firearms shall also be secured using one of the following methods as to each particular firearm, unless the licensee complies with subdivision (c): (A) Secure the firearm with a hardened steel rod or cable of at least one-eighth inch in diameter through the trigger guard of the firearm. The steel rod or cable shall be secured with a hardened steel lock that has a shackle. The lock and shackle shall be protected or shielded from the use of a boltcutter, and the rod or cable shall be anchored in a manner that prevents the removal of the firearm from the premises. (B) Store the firearm in a locked fireproof safe or vault in the licensee’s business premises. The safe shall meet the safety standards established by the Attorney General pursuant to Section 23650. (C) Store the firearm in a display case that is made with a steel frame that is no thinner than 12 gauge, is fitted with a hardened steel lock where the case opens to access the firearm, and that complies with one of the following: (i) The display case is fitted with smash-proof polycarbonate panels that are at least one-quarter inch thick. (ii) The display case is fitted with glass that is protected with a security or protective laminate film that is specifically designed to delay entry and unauthorized access, with a minimum thickness of at least 8 mils (eight-thousandths of an inch), and that includes an anchoring system on all seams of each glass panel and is also anchored to the frame. (D) Store the firearm in a windowless room equipped with a steel security door fitted with a deadbolt lock, and that does not have a door exposed to the outside of the building. (E) Store the firearm behind a steel roll-down door or security gate, or secure the firearm in a locked steel gun rack by use of a hardened steel bar. (c) Unless the licensee complies with subdivision (b), the licensee shall install locking steel roll-down doors on any perimeter doors and floor-to-ceiling windows. Emergency exits are exempt from this requirement where installation would be in violation of a state or local fire code. (g) This section shall become operative July 1, 2020."
+}

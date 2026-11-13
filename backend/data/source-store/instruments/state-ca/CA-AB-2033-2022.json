@@ -1,0 +1,44 @@
+{
+  "id": "CA-AB-2033-2022",
+  "scope": "state:ca",
+  "title": "AB2033 (2021-2022): Firearms: licenses to carry concealed firearms.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202120220AB2033",
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202120220AB2033#98AMD"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Thurston Smith",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Kelly Seyarto",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "4fccbf85-d794-4cdc-a8b8-674ff1b48784"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2022-04-18, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-2033-2022.amended-2022-04-18.html",
+      "sha256": "3b945a031e86db9bd1a608a5fc7783402ad2832cb12fdfb133ea7229ba23b2e6"
+    },
+    "note": "Amended April 18, 2022 (no floor vote recorded in the file). Section 1 strikes \"five\" and adds \"four\" years and \"until January 1, 2031\"; Section 2 (operative Jan 1, 2031) sets the two-year default. Subdivision (b) (90-day employment-based licenses) is reprinted existing law, omitted here."
+  },
+  "operative_text": "Section 26220 (Penal Code) (SEC. 1, in effect until Jan 1, 2031): (a) Except as otherwise provided in subdivision (b), and in subdivision (c) of Section 26210, until January 1, 2031, a license issued pursuant to Section 26150 or 26155 is valid for any period of time not to exceed four years from the date of the license.\n(c) On or before June 1, 2031, the Department of Justice shall prepare and submit a report to the Legislature analyzing the impact, if any, that extended periods of license validity have had on incidents involving licensees. The report shall be submitted in compliance with Section 9795 of the Government Code.\nSection 26220 (Penal Code) (SEC. 2, operative Jan 1, 2031): (a) Except as otherwise provided in this section and in subdivision (c) of Section 26210, a license issued pursuant to Section 26150 or 26155 is valid for any period of time not to exceed two years from the date of the license.\n(c) A license issued pursuant to Section 26150 or 26155 is valid for any period of time not to exceed three years from the date of the license if the license is issued to any of the following individuals:\n(1) A judge of a California court of record.\n(2) A full-time court commissioner of a California court of record.\n(3) A judge of a federal court.\n(4) A magistrate of a federal court.\n(d) A license issued pursuant to Section 26150 or 26155 is valid for any period of time not to exceed four years from the date of the license if the license is issued to a custodial officer who is an employee of the sheriff as provided in Section 831.5, except that the license shall be invalid upon the conclusion of the person’s employment pursuant to Section 831.5 if the four-year period has not otherwise expired or any other condition imposed pursuant to this chapter does not limit the validity of the license to a shorter time period."
+}

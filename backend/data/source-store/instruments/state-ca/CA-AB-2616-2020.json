@@ -1,0 +1,117 @@
+{
+  "id": "CA-AB-2616-2020",
+  "scope": "state:ca",
+  "title": "AB2616 (2019-2020): Peace officer training: gun violence restraining orders.",
+  "urls": [
+    "http://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=201920200AB2616",
+    "http://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200AB2616"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jesse Gabriel",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf"
+    },
+    {
+      "name": "Cecilia Aguiar-Curry",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257"
+    },
+    {
+      "name": "Marc Berman",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "4cfacf31-d285-40ac-8373-e350912fddda"
+    },
+    {
+      "name": "Rob Bonta",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "8b183a30-3afb-4d9e-aa40-aa2ad2c674aa"
+    },
+    {
+      "name": "Laura Friedman",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Todd Gloria",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Marc Levine",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Monique Limon",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "c7a56941-597a-456b-8fd8-e4bd840014c1"
+    },
+    {
+      "name": "Luz Rivas",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Mark Stone",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Kevin McCarty",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Cottie Petrie-Norris",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "065c6e87-8778-43ee-ab44-b9982a677aa7"
+    },
+    {
+      "name": "Sharon Quirk-Silva",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "1e29ce86-9e02-4079-b50d-bb0d039613a2"
+    },
+    {
+      "name": "Buffy Wicks",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "5821d0a9-672e-44c0-bac7-1a802a2e8368"
+    },
+    {
+      "name": "Scott Wiener",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Introduced 2020-02-20, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-2616-2020.introduced-2020-02-20.html",
+      "sha256": "27974f8f2fd12e98dd73a8297b4f9393dae69381fcaa88e30f4b3affb927d23c"
+    },
+    "note": "No floor vote; saved at Introduced 2020-02-20 (its last version). Training mandate only; it does not itself remove guns."
+  },
+  "operative_text": "Section 13519.11 (Penal Code): The commission shall develop and implement, on or before January 1, 2022, a course of training regarding gun violence restraining orders issued pursuant to Chapter 4 (commencing with Section 18170) of Division 3.2 of Title 2 of Part 6. In developing the training, the commission shall consult with members of law enforcement and the community who have expertise in the areas of gun violence and gun violence restraining orders.\nSection 13519.11 (Penal Code): (2) Situational training to assist officers in identifying when a gun violence restraining order is appropriate. (3) How law enforcement can respond effectively to situations that might necessitate a filing for a gun violence restraining order."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "CA-AB-2591-2020",
+  "scope": "state:ca",
+  "title": "AB2591 (2019-2020): Peace officers: firearms: establishment serving the public.",
+  "urls": [
+    "http://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=201920200AB2591",
+    "http://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200AB2591"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "James Ramos",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "01dd07dc-ded1-4ba5-aff3-2dc2b386af12"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2020-03-05, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-2591-2020.amended-2020-03-05.html",
+      "sha256": "3fcd67951d383eaab501f962c45308422b3eff8db815739212b142e7b8eec08d"
+    },
+    "note": "Amended in Assembly 2020-03-05 (no floor vote; last version). The earlier spot text (POST aid, Section 13523) was struck. 'Weapon' is not limited to firearms in the text but the definition ties to the concealed-firearm exemption."
+  },
+  "operative_text": "Section 366 (Penal Code): (a) It is unlawful for an establishment serving the public to prohibit or otherwise restrict a peace officer from carrying a weapon on the establishment’s premises that the peace officer is otherwise authorized to carry, regardless of whether the peace officer is engaged in the actual discharge of the officer’s duties while carrying the weapon.\nSection 366 (Penal Code): (b) A violation of subdivision (a) is an infraction for a first offense, punishable by a fine not to exceed five hundred dollars ($500). A second or subsequent violation of subdivision (a) is a misdemeanor, punishable by imprisonment in a county jail not exceeding six months, by a fine not exceeding one thousand dollars ($1,000), or by both that fine and imprisonment.\nSection 366 (Penal Code): (c) (1) “Peace officer” means any peace officer made exempt from the prohibition on carrying a concealed firearm by Section 25450."
+}

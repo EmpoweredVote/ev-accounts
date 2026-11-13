@@ -1,0 +1,39 @@
+{
+  "id": "CA-AB-1316-2025",
+  "scope": "state:ca",
+  "title": "AB1316 (2025-2026 Regular): Hunting licenses: information on firearms.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB1316",
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB1316#99INT"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dawn Addis",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "2ba6e476-1d62-4ac5-a70d-f4bcbe704f39"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Introduced 2025-02-21, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-1316-2025.introduced-2025-02-21.html",
+      "sha256": "104c17fdf8f00a2727dc10964f347f29d3df5550c47a52d8b6c9c254e05f1581"
+    },
+    "note": "Introduced text of 2025-02-21 (no floor vote; this is the last version saved)."
+  },
+  "operative_text": "Section 3031.1 (Fish and Game Code): (a) Beginning July 1, 2027, the department shall ensure that every person who purchases a hunting license receives, at minimum, information on all of the following topics:\n(1) The safe storage of firearms.\n(2) California’s child access prevention laws.\n(3) Liability for parents and guardians who should have known their child could access a firearm at home.\n(4) Basic California firearm laws.\n(5) How to legally transfer or relinquish a firearm.\nSection 3031.1 (Fish and Game Code): (b) The department, in cooperation with the Department of Justice, may promulgate regulations regarding the implementation of the requirement in subdivision (a), and may include additional information to be provided with a hunting license."
+}

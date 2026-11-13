@@ -1,0 +1,51 @@
+{
+  "id": "CA-SB-15-2024",
+  "scope": "state:ca",
+  "title": "SB15 (2025-2026 Regular): Firearms.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260SB15",
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB15#96AMD"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Catherine Blakespear",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "fad61dc3-a3ad-4056-b2f2-1f5d32fb886d"
+    },
+    {
+      "name": "Monique Limon",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "c7a56941-597a-456b-8fd8-e4bd840014c1"
+    },
+    {
+      "name": "Susan Rubio",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "b3937fff-ebcf-48d9-b20d-bdf98196e119"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2025-03-26, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-SB-15-2024.amended-2025-03-26.html",
+      "sha256": "5ce07213280b85d5624baa407c85cebc40c1cae8abd4a85f30a4ebfe4f192b07"
+    },
+    "note": "Amended 2025-03-26 (no floor vote recorded; last saved version). In Section 26715(b)(7)(A) the amendment strikes 'civil' and 'not exceeding one thousand dollars ($1,000)' so the penalty is just 'a fine'. Sections 28460 (dealer/federal licensee fee, 15 percent cap) and 29055 (manufacturer fees) also amended; not quoted. Digest mentions perjury expansion for the 26807 affidavit."
+  },
+  "operative_text": "Section 26715 (Penal Code): (b)(4) The department may remove from this list a person who willfully fails to comply with the requirements of this article, including failure to comply with an inspection conducted pursuant to Section 26720.\nSection 26715 (Penal Code): (b)(5) The department may remove from this list a person who fails to remedy violations discovered as a result of an inspection, within 90 days of the inspection, as provided in paragraph (5) of subdivision (a) of Section 26720.\nSection 26715 (Penal Code): (b)(7)(A) A person removed from the centralized list pursuant to paragraph (4) or (5) shall be subject to a fine and shall be ineligible to be placed on the centralized list for a period of two years from the date of removal.\nSection 26715 (Penal Code): (b)(7)(B) A person who has been removed from a centralized list is also ineligible to own, operate, or be employed by a firearms dealer or ammunition vendor for a period of two years.\nSection 26720 (Penal Code): (a)(2) Each year, the department shall conduct an inspection of the 10 firearm dealer locations with the highest percentage of total sales that were recovered by law enforcement and found to be illegally possessed, used in a crime, or suspected to have been used in a crime, as described in the report specified in subdivision (e) of Section 11108.3. A firearm dealer location shall only be inspected pursuant to this paragraph if it is reported to be the source of no fewer than 20 firearms that were illegally possessed, used in a crime, or suspected to have been used in a crime.\nSection 26720 (Penal Code): (a)(4) Inspections of dealers pursuant to this subdivision shall include an audit of dealer records that includes a sampling of at least 25 percent of each record type.\nSection 26720 (Penal Code): (a)(5) A dealer found to have committed a violation of the requirements specified in paragraph (1) shall remedy the violation within 90 days of the inspection and submit proof of that remedy to the department.\nSection 26807 (Penal Code): (a) Commencing January 1, 2028, every dealer shall maintain inventory records at the dealer’s place of business in a form and for a period as required by the Department of Justice. Inventory records shall include, but not be limited to, the following:\n(1) The manufacturer, model, caliber or gauge, and serial number of all firearms that are acquired or disposed of not later than one business day after their acquisition or disposition.\n(2) All firearms acquired, but not yet disposed of, shall be accounted for through an inventory check prepared once each month.\nSection 26807 (Penal Code): (b) Inventory records, including a written affidavit certifying the accuracy of all inventory records, under penalty of perjury, shall be made available to the department during inspections and upon a department request. The written affidavit shall be completed in a manner prescribed by the department."
+}

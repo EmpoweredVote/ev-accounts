@@ -1,0 +1,99 @@
+{
+  "id": "CA-AB-18-2018",
+  "scope": "state:ca",
+  "title": "AB18 (2019-2020): Firearms and ammunition: excise tax.",
+  "urls": [
+    "http://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=201920200AB18",
+    "http://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200AB18"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Rob Bonta",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "8b183a30-3afb-4d9e-aa40-aa2ad2c674aa"
+    },
+    {
+      "name": "Marc Levine",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Adrin Nazarian",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Richard Bloom",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "David Chiu",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Mike Gipson",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "6133e73c-4c33-4cfc-9fd3-de1382729f42"
+    },
+    {
+      "name": "Monique Limon",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "c7a56941-597a-456b-8fd8-e4bd840014c1"
+    },
+    {
+      "name": "Kevin McCarty",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Sharon Quirk-Silva",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "1e29ce86-9e02-4079-b50d-bb0d039613a2"
+    },
+    {
+      "name": "Robert Rivas",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4"
+    },
+    {
+      "name": "Philip Ting",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Scott Wiener",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2019-08-26, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-18-2018.amended-2019-08-26.html",
+      "sha256": "06c3dd247bea865771b85db4ff503ce1b249b9fb2f6ee0ac859e902372af86db"
+    },
+    "note": "Amended 2019-08-26 (last version; no floor vote). This amendment adds ammunition to the tax (rate is blank '___ percent') and renames the fund. The firearm tax and the grant program that it funds are treated as one gun-policy subject (gun taxes and gun-violence programs)."
+  },
+  "operative_text": "Section 36011 (Revenue and Taxation Code): On and after January 1, 2020, an excise tax is hereby imposed on every retailer upon the sale in this state of a firearm sold as new at the rate of twenty-five dollars ($25) per firearm.\nSection 36012 (Revenue and Taxation Code): On and after January 1, 2020, an excise tax is hereby imposed on every retailer upon the sale in this state of ammunition sold at retail at the rate of ___ percent of the gross receipts of each ammunition sale.\nSection 36021 (Revenue and Taxation Code): There are exempted from the taxes imposed by this part, the sale of any firearm or ammunition purchased by any peace officer or by any law enforcement agency employing that peace officer, for use in the normal course of employment.\nSection 36041 (Revenue and Taxation Code): All amounts required to be paid pursuant to Section 36011 and 36012 shall be paid to the department in the form of remittances payable to the department, and those revenues, net of refunds and costs of administration, shall be deposited in the CalVIP Firearm and Ammunition Tax Fund, established pursuant to Section 14132 of the Penal Code.\nSection 14131 (Penal Code): (a) The California Violence Intervention and Prevention Grant Program (CalVIP) is hereby created to be administered by the Board of State and Community Corrections.\nSection 14132 (Penal Code): There is hereby established in the State Treasury the CalVIP Firearm and Ammunition Tax Fund to receive moneys pursuant to Section 36041 of the Revenue and Taxation Code."
+}
