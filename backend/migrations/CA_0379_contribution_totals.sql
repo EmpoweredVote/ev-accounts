@@ -27,8 +27,10 @@
 --
 -- Creates only; overwrites no value. RLS on, no policies: only ev_api and postgres read it.
 --
--- STATUS: NOT YET APPLIED. Dry run OK 2026-11-13 (plus a tamper control: dropping the anon revoke fails the gate).
---   Apply BEFORE the code that calls it deploys, or the next fec-burst logs a refresh error (non-fatal).
+-- STATUS: APPLIED to prod 2026-11-13 via apply-migration-file.mjs (operator approval: Chris Andrews, "Yes, apply it").
+--   Dry run OK before (plus a tamper control: dropping the anon revoke fails the gate). Verified after: table and
+--   function exist, RLS on, ev_api can read and run, anon cannot. The table is EMPTY until the first refresh, which
+--   runs with the first fec-burst after this PR deploys.
 --
 -- ROLLBACK:
 --   drop function if exists transparent_motivations.refresh_contribution_totals();
