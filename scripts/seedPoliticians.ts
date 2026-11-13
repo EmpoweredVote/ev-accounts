@@ -47,11 +47,12 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
 /**
  * Each record must have first_name + last_name at minimum.
  * full_name in essentials.politicians is a regular column (NOT GENERATED) —
- * include it explicitly. is_active and is_incumbent are set for all records.
+ * include it explicitly. is_active is set for all records. (Incumbency is not stored:
+ * it is derived from essentials.office_terms — politicians.is_incumbent was dropped in CA_0378.)
  *
  * Note: essentials.politicians does not have district_type, district_id,
  * office_title, chamber_name, representing_city, etc. — those were inform-
- * specific columns. Essentials uses party, is_incumbent, slug, bio_text.
+ * specific columns. Essentials uses party, slug, bio_text.
  */
 const seedRecords = [
   // -----------------------------------------------------------------------
@@ -69,7 +70,6 @@ const seedRecords = [
     bio_text: null as string | null,
     is_active: true,
     is_vacant: false,
-    is_incumbent: true,
   },
   // -----------------------------------------------------------------------
   // Bloomington, Indiana — Indiana Senate District 40
@@ -86,7 +86,6 @@ const seedRecords = [
     bio_text: null as string | null,
     is_active: true,
     is_vacant: false,
-    is_incumbent: true,
   },
   // -----------------------------------------------------------------------
   // Bloomington, Indiana — Indiana House District 60
@@ -103,7 +102,6 @@ const seedRecords = [
     bio_text: null as string | null,
     is_active: true,
     is_vacant: false,
-    is_incumbent: true,
   },
   // -----------------------------------------------------------------------
   // Los Angeles, California — LA County (county-level only per Alpha scope)
@@ -120,7 +118,6 @@ const seedRecords = [
     bio_text: null as string | null,
     is_active: true,
     is_vacant: false,
-    is_incumbent: true,
   },
 ];
 
@@ -136,7 +133,7 @@ async function main() {
     .schema('essentials')
     .from('politicians')
     .insert(seedRecords)
-    .select('id, full_name, party, is_incumbent');
+    .select('id, full_name, party');
 
   if (error) {
     console.error('[seedPoliticians] ERROR during insert:', error.message);
@@ -147,7 +144,7 @@ async function main() {
   console.log('[seedPoliticians] Insert complete. Records written:');
   for (const row of data ?? []) {
     console.log(
-      `  - [${row.party ?? 'no-party'}] ${row.full_name ?? row.id} (incumbent: ${row.is_incumbent})`
+      `  - [${row.party ?? 'no-party'}] ${row.full_name ?? row.id}`
     );
   }
 

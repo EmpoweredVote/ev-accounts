@@ -19,7 +19,7 @@ const { rows: cov } = await pool.query(`
     JOIN essentials.offices o  ON o.id = ot.office_id
     JOIN essentials.chambers c ON c.id = o.chamber_id
     JOIN essentials.politicians p ON p.id = ot.politician_id
-    WHERE c.id IN ($1,$2) AND (ot.term_end IS NULL OR ot.term_end > CURRENT_DATE) AND p.is_incumbent
+    WHERE c.id IN ($1,$2) AND (ot.term_end IS NULL OR ot.term_end > CURRENT_DATE) AND (ot.term_start IS NULL OR ot.term_start <= CURRENT_DATE)
     ORDER BY p.id, ot.term_start DESC)
   SELECT leg.pid, leg.chamber, (SELECT count(*) FROM inform.politician_answers a WHERE a.politician_id = leg.pid::uuid) AS n
   FROM leg`, [SENATE, HOUSE]);

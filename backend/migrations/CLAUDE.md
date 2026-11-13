@@ -297,11 +297,13 @@ Honesty rules that the schema enforces:
 - **A vacancy is a fact about a span**, so `office_terms.politician_id` is nullable. But do **not**
   write a vacancy span whose start date you don't know — set `offices.is_vacant` and leave the span
   unwritten.
-- 🔴 **Set `politicians.is_incumbent` explicitly on every insert** — `true` when you seat the person,
-  `false` for a candidate or former officeholder. It is a cached flag the incumbents-only reads filter
-  on. It defaulted to `true` until `CA_0188`, and that created **1,817 active "incumbents" with no
-  seat** (cleared by `CA_0181`-`CA_0187`). It defaults to `false` now, so a seated person inserted
-  without it is **hidden** from address search. `check:occupancy` fails an INSERT that omits it.
+- 🔴 **`politicians.is_incumbent` WAS DROPPED (CA_0378). Incumbency is derived, never stored.**
+  It was a cached copy of `office_terms`: it defaulted to `true` until `CA_0188` (1,817 active
+  "incumbents" with no seat, cleared by `CA_0181`-`CA_0187`), then went stale on every seeded
+  handover date (Reno, 2026-11-13). Reads use `isIncumbentSql()` / `IS_INCUMBENT_SELECT_SQL` in
+  `backend/src/lib/incumbency.ts`; seat someone with `seat_officeholder` and nothing else.
+  `check:occupancy` fails an INSERT that still names the column. `race_candidates.is_incumbent` is a
+  different, still-live column.
 - **`politicians.valid_from` / `valid_to` are DEPRECATED** — wrong entity (dates belong to a tenure,
   and people hold two offices). Don't read them in new code. `politicians.office_id` is a legacy
   point-in-time snapshot with the same flaw; prefer the view.

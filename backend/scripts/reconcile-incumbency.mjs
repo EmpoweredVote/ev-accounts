@@ -1,35 +1,25 @@
 #!/usr/bin/env node
 /**
- * reconcile-incumbency.mjs — recompute the cached columns that do NOT move when the calendar
+ * reconcile-incumbency.mjs — recompute the cached column that does NOT move when the calendar
  * does.
  *
  * WHY THIS EXISTS. `essentials.office_terms` is self-executing: a future-dated term starts
- * resolving as current on its own date, with no trigger and no deploy. Three cached columns do
+ * resolving as current on its own date, with no trigger and no deploy. One cached column does
  * not follow it:
  *
- *   politicians.is_incumbent        NO LONGER READ by any request path (2026-11-13): every read
+ *   race_candidates.is_incumbent    filtered at compassService.ts as the "challengers only" read.
+ *
+ * Two others used to be listed here and are not reconciled:
+ *
+ *   politicians.is_incumbent        DROPPED (CA_0378). It was a stored copy of office_terms that
+ *                                   went stale on every seeded handover date (Reno, 2026-11-13) and
+ *                                   turned master CI red on whoever pushed next. Every read now
  *                                   derives incumbency from office_terms via src/lib/incumbency.ts.
- *                                   It used to be read by five reps filters, so a stale value hid
- *                                   the arriving holder from address search on every seeded
- *                                   handover date (Reno, 2026-11-13) and turned master CI red on
- *                                   whoever pushed next. Drift here is still REPORTED and --apply
- *                                   still tidies it, but it no longer fails --check: nothing a
- *                                   voter sees depends on it.
- *   politicians.office_id           the deprecated point-in-time snapshot. It has NO foreign
- *                                   key, so it can point at a deleted office and nothing
- *                                   complains.
- *   race_candidates.is_incumbent    its own column, filtered at compassService.ts:629 as the
- *                                   "challengers only" read.
+ *   politicians.office_id           the deprecated point-in-time snapshot — see below.
  *
  * At one seat the fix is a dated companion migration (CC_0202 is the worked example, with a
  * guard refusing to run before its date). At 2,159 seats that is thousands of files, so this
  * reconciles instead.
- *
- * 🔴 RECONCILING IS ONLY HALF. `stagingService` used to force `is_incumbent = true` on every
- * ON CONFLICT promotion, so a scheduled reconciler was silently undone by the next promotion.
- * The obvious control — plant drift, run this, watch it get fixed — PASSES while that is true,
- * because it never exercises the writer that reverts it. That line is gone, and
- * `reconcile-incumbency.test.ts` guards its absence by SQL text.
  *
  * Read-only unless `--apply` is passed.
  */
@@ -38,37 +28,12 @@ import { Pool } from 'pg';
 import { pathToFileURL } from 'node:url';
 
 /**
- * The pure core: given the three row sets, what disagrees with office_terms?
+ * The pure core: given the race-candidate rows, which disagree with office_terms?
  *
- * Truth is `currentHolders` — whoever resolves as holding an office TODAY.
- *
- * ⚠ A person can hold two seats (27 active people do), so the holder set is collapsed to
- * distinct politician ids before comparing. Counting rows instead of people would report the
- * same person twice.
+ * Each row carries its own expected value, computed by the caller's SQL.
  */
-export function findDrift({ politicians, currentHolders, raceCandidates = [] }) {
-  // 🔴 A PLACEHOLDER OFFICE IS NOT A SEAT. `currentHolders` must already exclude
-  // 'Candidate for ...' offices (migration 196) — the caller's SQL does it, and so does the read
-  // path this flag feeds (essentialsService.ts:360). The first version of this function did not,
-  // and reported 25 "missing incumbents" of whom 22 were CANDIDATES holding only a placeholder:
-  // Roy Cooper, Sherrod Brown, Mary Peltola and 19 others. Applying that would have published
-  // them as sitting incumbents. See CC_0342.
-  const holds = new Set();
-  for (const h of currentHolders) if (h.politician_id) holds.add(h.politician_id);
-
+export function findDrift({ raceCandidates = [] }) {
   const drift = [];
-
-  for (const p of politicians) {
-    const expected = holds.has(p.id);
-    if (Boolean(p.is_incumbent) !== expected) {
-      drift.push({
-        politicianId: p.id,
-        column: 'politicians.is_incumbent',
-        current: Boolean(p.is_incumbent),
-        expected,
-      });
-    }
-  }
 
   // race_candidates.is_incumbent — RULED 2026-11-04: it means "incumbent OF THE SEAT THIS RACE
   // IS FOR". Each row therefore carries its own expected value, computed by the caller's SQL
@@ -117,18 +82,7 @@ export function findDrift({ politicians, currentHolders, raceCandidates = [] }) 
  */
 
 export async function computeIncumbencyDrift(client) {
-  const [politicians, currentHolders, raceCandidates] = await Promise.all([
-    client.query(
-      `SELECT id, is_incumbent FROM essentials.politicians WHERE is_active = true`),
-    // 🔴 NOT ILIKE 'Candidate for%' — A PLACEHOLDER OFFICE IS NOT A SEAT. Without this clause
-    // the query calls 22 Senate CANDIDATES incumbents, Roy Cooper and Sherrod Brown among them.
-    // It mirrors the filter the read path already applies at essentialsService.ts:360.
-    client.query(
-      `SELECT DISTINCT och.politician_id
-         FROM essentials.office_current_holder och
-         JOIN essentials.offices o ON o.id = och.office_id
-        WHERE och.politician_id IS NOT NULL
-          AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'`),
+  const raceCandidates = await
     // Seat-scoped and measured AT THE ELECTION DATE — see findDrift. The expected value is
     // computed here, in SQL, because it is a fact about this row's own race and office.
     //
@@ -156,14 +110,9 @@ export async function computeIncumbencyDrift(client) {
          JOIN essentials.offices ro ON ro.id = r.office_id
          JOIN essentials.elections e ON e.id = r.election_id
         WHERE e.election_date >= CURRENT_DATE - INTERVAL '1 year'
-          AND rc.politician_id IS NOT NULL`),
-  ]);
+          AND rc.politician_id IS NOT NULL`);
 
-  return findDrift({
-    politicians: politicians.rows,
-    currentHolders: currentHolders.rows,
-    raceCandidates: raceCandidates.rows,
-  });
+  return findDrift({ raceCandidates: raceCandidates.rows });
 }
 
 export async function applyIncumbencyFixes(client, rows) {
@@ -172,12 +121,7 @@ export async function applyIncumbencyFixes(client, rows) {
     // ⚠ COUNT WHAT THE DATABASE DID, NOT HOW MANY TIMES WE ASKED. Every UPDATE is guarded on the
     // value it changes, so a row already correct writes nothing — `applied += 1` would have
     // reported work that never happened.
-    if (row.column === 'politicians.is_incumbent') {
-      const res = await client.query(
-        `UPDATE essentials.politicians SET is_incumbent = $2 WHERE id = $1 AND is_incumbent IS DISTINCT FROM $2`,
-        [row.politicianId, row.expected]);
-      applied += res.rowCount ?? 0;
-    } else if (row.column === 'race_candidates.is_incumbent') {
+    if (row.column === 'race_candidates.is_incumbent') {
       const res = await client.query(
         `UPDATE essentials.race_candidates SET is_incumbent = $2 WHERE id = $1 AND is_incumbent IS DISTINCT FROM $2`,
         [row.raceCandidateId, row.expected]);
@@ -198,15 +142,6 @@ export async function applyIncumbencyFixes(client, rows) {
  */
 export function driftExitCode({ check, driftCount }) {
   return check && driftCount > 0 ? 1 : 0;
-}
-
-/**
- * Which drift rows FAIL a --check run. `politicians.is_incumbent` is excluded on purpose: no read
- * path uses it any more (src/lib/incumbency.ts), and it goes stale BY DESIGN on every seeded
- * handover date — failing CI on it turned master red for whoever pushed after each one.
- */
-export function blockingDrift(drift) {
-  return drift.filter((d) => d.column !== 'politicians.is_incumbent');
 }
 
 const invokedDirectly = process.argv[1]
@@ -241,27 +176,20 @@ if (invokedDirectly) {
     if (!drift.length) {
       // 🔴 A uniform answer is a broken detector until a control passes. Say so rather than
       // letting "0" read as proof.
-      console.log('0 is only meaningful if this script read the right rows — run control-reconcile-incumbency.mjs.');
+      console.log('0 is only meaningful if this script read the right rows — reconcile-incumbency.test.ts pins its SQL.');
     }
     if (apply) console.log(`applied: ${await applyIncumbencyFixes(pool, drift)}`);
     else console.log('read-only; pass --apply to write');
 
-    const blocking = blockingDrift(drift);
-    if (check && drift.length > blocking.length) {
-      console.log(
-        `\n${drift.length - blocking.length} politicians.is_incumbent row(s) are stale. Not a ` +
-          'failure: no read path uses that column (src/lib/incumbency.ts).',
-      );
-    }
-    if (check && blocking.length) {
+    if (check && drift.length) {
       console.error(
-        `\n${blocking.length} row(s) disagree with essentials.office_terms.\n` +
+        `\n${drift.length} row(s) disagree with essentials.office_terms.\n` +
           'Do NOT just run --apply: read the rows first. A predicate reads the SHAPE of a value, ' +
           'never what it is, and the first measurement of this reported 429 rows of which only 9 ' +
           'were real — applying the rest would have published 22 Senate CANDIDATES as sitting ' +
           'incumbents (see CC_0342).',
       );
-      process.exitCode = driftExitCode({ check, driftCount: blocking.length });
+      process.exitCode = driftExitCode({ check, driftCount: drift.length });
     }
   } finally {
     await pool.end();

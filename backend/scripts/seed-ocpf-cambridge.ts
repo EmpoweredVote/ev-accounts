@@ -289,8 +289,8 @@ async function seedNov2026(pool: pg.Pool): Promise<void> {
 
         const insertResult = await pool.query<{ id: string }>(
           `INSERT INTO essentials.politicians
-             (full_name, first_name, last_name, middle_initial, office_id, party, is_active, is_incumbent, data_source)
-           VALUES ($1, $2, $3, $4, $5, 'Democrat', true, true, 'ocpf_seed')
+             (full_name, first_name, last_name, middle_initial, office_id, party, is_active, data_source)
+           VALUES ($1, $2, $3, $4, $5, 'Democrat', true, 'ocpf_seed')
            ON CONFLICT DO NOTHING
            RETURNING id`,
           [parsedName, firstName, lastName, middleInitial, officeId]

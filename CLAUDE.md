@@ -30,7 +30,7 @@ vacancies or politicians. Its hardest traps, in one line each:
 - A politician-rooted join on the view fans out one row **per seat held**; it needs `DISTINCT ON (p.id)`.
 - `count(*)` on the view counts vacancies too: **count `och.politician_id`**.
 - `seat_officeholder` does **not** clear `is_vacant`; clear it in the same migration.
-- Set `politicians.is_incumbent` explicitly on every insert. **Never raise the drift baseline.**
+- `politicians.is_incumbent` is gone (CA_0378): read incumbency with `isIncumbentSql()` (`backend/src/lib/incumbency.ts`). **Never raise the drift baseline.**
 
 ## Migrations — read `backend/migrations/CLAUDE.md` first
 

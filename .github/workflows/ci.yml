@@ -648,8 +648,8 @@ jobs:
 
       # 🔴 THE RECONCILER SHIPPED RUNNING NOWHERE. It was built, tested and controlled while
       # nothing invoked it, so incumbency drift would have accumulated silently again — the one
-      # thing it exists to stop. politicians.is_incumbent and race_candidates.is_incumbent are
-      # CACHED, nothing recomputes them, and terms start and end on their own dates with no
+      # thing it exists to stop. race_candidates.is_incumbent is CACHED, nothing recomputes it,
+      # (politicians.is_incumbent was dropped in CA_0378; reads derive it from office_terms) and terms start and end on their own dates with no
       # commit involved, so this is drift that happens with nobody touching the repo.
       #
       # ⚠ REPORTS, NEVER WRITES. Correcting a drifted row means deciding what that row IS, and

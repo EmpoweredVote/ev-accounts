@@ -13,7 +13,7 @@
  * reconciler by hand, and master CI red on whoever pushed next.
  *
  * Reads now derive incumbency from the dates, so a handover needs nothing on the day. The column
- * still exists and is still written (staging, admin), but NO READ PATH may use it. Measured
+ * was then dropped (CA_0378), so nothing can read or write it again. Measured
  * 2026-11-13 before switching: the derived value agreed with the column for every ACTIVE
  * politician (0 of ~14,400 differ); the only disagreements were 110 INACTIVE people the column
  * still called incumbents — former officeholders the dates correctly say are not.
