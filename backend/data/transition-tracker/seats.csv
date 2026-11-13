@@ -821,7 +821,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,ID,Lieutenant Governor,Lieutenant Governor,2,Called,Scott Bedke,Scott Bedke,called,0,0,0,0,,,,58fa8025-81ff-45a5-ab3e-b2f8d37a4e02
 4,Wave 4 — State,state,WA,State Representative (Position 2),WA House of Representatives Legislative District 23 Position 2,2,Called,Greg Nance,Greg Nance,called,0,0,0,0,,,,5903deaf-db34-4636-877e-a391d4f316c8
 4,Wave 4 — State,state,WI,Representative to the Assembly,Assembly District 77,2,Called,Renuka Mayadev,Renuka Mayadev,called,0,0,0,0,,,,590b94f5-54eb-4b71-9be9-a8d6f0483bc8
-4,Wave 4 — State,state,CA,Senator,State Senate District 24,2,Called,Benjamin Allen,Brian Goldsmith,called,0,0,1,1,,,,5919881b-f2b0-47f7-8e72-83ca1cd78c06
+4,Wave 4 — State,state,CA,Senator,State Senate District 24,2,Called,Benjamin Allen,Brian Goldsmith,called,0,0,1,0,,,,5919881b-f2b0-47f7-8e72-83ca1cd78c06
 4,Wave 4 — State,state,MD,Delegate,MD House Delegate Subdistrict 44B,1,Not looked at,Aletheia McCaskill,,,1,0,0,0,,,,59531d14-0c66-49cb-b5ba-a4ceca994d40
 4,Wave 4 — State,state,ME,Senator,ME State Senate District 14,1,Not looked at,Craig V. Hickman,,,1,0,0,0,,,,5953e0cc-6588-4d41-8f40-7b8027092ac4
 3,Wave 3 — December locals,local,CA,Council Member (District 2),Compton City Council District 2,1,Not looked at,Andre Spicer,,,0,0,0,0,,2026-12-01,estimated,595688b7-e659-4576-a9f5-9769a3d705d2
@@ -1601,7 +1601,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 4,Wave 4 — State,state,WA,State Representative (Position 1),WA House of Representatives Legislative District 39 Position 1,2,Called,Sam Low,Sam Low,called,0,0,0,0,,,,b16dcc11-f6f1-4847-873e-206f9d383d4e
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area E),Castaic Union School Board - Trustee Area E,1,Not looked at,Mayreen Burk,,,0,0,0,0,,2026-12-11,statute,b1d3ead6-1c0d-47b8-a598-314f558dba16
 4,Wave 4 — State,state,AZ,State Representative,State House District 25,2,Called,Nick Kupper,"Michael Carbone, Nick Kupper",called,0,0,0,0,,,,b1f476f9-c8b7-4c14-8e6d-e01d4679b95b
-4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 50,2,Called,Robert Garcia,Robert Garcia,called,0,0,1,1,,,,b1fc465d-5637-427e-ba37-3678009cb949
+4,Wave 4 — State,state,CA,Assembly Member,State Assembly District 50,2,Called,Robert Garcia,Robert Garcia,called,0,0,1,0,,,,b1fc465d-5637-427e-ba37-3678009cb949
 3,Wave 3 — December locals,local,CA,Vice Mayor,South Gate City Council,1,Not looked at,Al Rios,,,0,0,0,0,,2026-12-01,estimated,b213f0f7-ae62-41ef-871d-04884e683f58
 4,Wave 4 — State,state,MD,Senator,MD State Senate District 15,1,Not looked at,Brian J. Feldman,,,1,0,0,0,,,,b2397923-dc3d-4cbf-b389-8a9d2eb21afa
 3,Wave 3 — December locals,local,CA,Board Member (Trustee Area 4),Mt. San Antonio Community College Board - Trustee Area 4,1,Not looked at,Robert F. Hidalgo,,,0,0,0,0,,2026-12-11,statute,b25fec31-a220-5b21-b46e-3f04b10b44f7
@@ -1659,7 +1659,7 @@ wave,wave_label,level,state,office,contest,seat_state,seat_state_label,current_h
 5,Wave 5 — Remaining locals,local,TX,"Judge, 141st District Court",Texas 141st District Court,1,Not looked at,John P. Chupp,,,0,0,0,0,,,,b6dbc9f0-1f9e-4e41-a20f-8bdad76f8724
 4,Wave 4 — State,state,AZ,State Representative,State House District 15,2,Called,Neal Carter,"Michael Way, Neal Carter",called,0,0,0,0,,,,b6f2851e-cb17-4361-8d3a-04db32cbf919
 4,Wave 4 — State,state,MA,"Representative, 25th Middlesex District",MA House 25th Middlesex District,2,Called,Marjorie C. Decker,Marjorie Decker,called,0,0,0,0,,,,b6f796e2-e363-450c-b5ae-a34df3c5184e
-4,Wave 4 — State,state,CA,Senator,State Senate District 40,2,Called,Brian W. Jones,Mara Elliott,called,0,0,1,1,,,,b6fb8bc6-a065-4a94-8e47-7aed5512b901
+4,Wave 4 — State,state,CA,Senator,State Senate District 40,2,Called,Brian W. Jones,Mara Elliott,called,0,0,1,0,,,,b6fb8bc6-a065-4a94-8e47-7aed5512b901
 2,Wave 2 — House,federal,MS,U.S. Representative,U.S. Representative District 1,2,Called,Trent Kelly,Trent Kelly,called,0,0,0,0,,2027-01-03,statute,b74193b3-7f42-4dba-87f3-1dcd7b5a139c
 5,Wave 5 — Remaining locals,local,CA,Director (Division 1),Santa Clarita Valley Water Agency Board - Division 1,1,Not looked at,Bill Cooper,,,0,0,0,0,,2027-01-04,published,b771c0d8-412a-558c-9341-7ba227eabee3
 4,Wave 4 — State,state,OR,Representative,OR State House District 20,1,Not looked at,Paul Evans,,,1,0,0,0,,,,b79e5df3-ee4e-4d9a-9099-039245f4f331
