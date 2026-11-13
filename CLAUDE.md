@@ -356,6 +356,9 @@ table uses gigabytes of it; in November 2026 audit scripts and ad-hoc counts use
   `fec-burst`). **Whole-table work on contributions:** use the local FEC mirror
   (`backend/scripts/033-fec-mirror-bootstrap.ts`), not production.
 - **Never page a function that scans a whole table with PostgREST `.range()`** — every page re-runs it. Page by key.
+- 🔴 **Read `contributions` donor fields through `backend/src/lib/contributionFields.ts`, never `raw_record->>'…'`.**
+  CA_0380 moved every key anything reads into typed columns, and the Part D copy (ev-cto 0038) stops keeping FEC's
+  `raw_record`: a new direct JSON read returns NULL for ~28M FEC rows after that.
 - After adding a script or job that reads the database, run it once and check `extensions.pg_stat_statements`
   (`shared_blks_read`, `temp_blks_written`).
 

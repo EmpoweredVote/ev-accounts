@@ -141,8 +141,8 @@ for (const [k, w] of pending) {
          FROM transparent_motivations.contributions
         WHERE politician_source_id = ANY($1::uuid[])
           AND data_source = 'fec'
-          AND NOT (raw_record ? 'file_number')
-          AND raw_record->>'committee_id' = $2
+          AND NOT (COALESCE(fec_file_number_present, raw_record ? 'file_number'))
+          AND COALESCE(fec_committee_id, raw_record->>'committee_id') = $2
           AND contribution_date = $3::date
           AND election_cycle ~ '^[0-9]{4}$'`,
       [[...w.sources], w.cmte, w.date]
@@ -199,8 +199,8 @@ for (const [k, w] of pending) {
            FROM transparent_motivations.contributions c
           WHERE c.politician_source_id = $1
             AND c.data_source = 'fec'
-            AND NOT (c.raw_record ? 'file_number')
-            AND c.raw_record->>'committee_id' = $3
+            AND NOT (COALESCE(c.fec_file_number_present, c.raw_record ? 'file_number'))
+            AND COALESCE(c.fec_committee_id, c.raw_record->>'committee_id') = $3
             AND c.contribution_date = $4::date`,
         [ps, subIds, w.cmte, w.date]
       );
@@ -213,13 +213,20 @@ for (const [k, w] of pending) {
       // politician_source_id first so the UPDATE rides idx_contrib_src_cycle.
       const { rowCount } = await pool.query(
         `UPDATE transparent_motivations.contributions c
-            SET raw_record = c.raw_record || v.patch,
+            SET raw_record = c.raw_record || v.patch,   -- NULL stays NULL (FEC rows after the Part D copy)
+                -- Write the typed columns too (CA_0380). Where raw_record is set, the fill trigger
+                -- recomputes them from the merged JSON to the same values; where it is NULL, these are
+                -- the only copy.
+                fec_file_number         = (v.patch->>'file_number')::bigint,
+                fec_file_number_present = true,
+                fec_report_year         = (v.patch->>'report_year')::int,
+                fec_report_type         = v.patch->>'report_type',
                 updated_at = NOW()
            FROM (SELECT * FROM unnest($2::text[], $3::jsonb[]) AS t(sub_id, patch)) v
           WHERE c.politician_source_id = $1
             AND c.data_source = 'fec'
             AND c.source_transaction_id = v.sub_id
-            AND NOT (c.raw_record ? 'file_number')`,
+            AND NOT (COALESCE(c.fec_file_number_present, c.raw_record ? 'file_number'))`,
         [ps, subIds, patches]
       );
       wUpdated += rowCount ?? 0;

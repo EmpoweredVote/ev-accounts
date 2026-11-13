@@ -24,17 +24,17 @@
 
 WITH slice AS (
   SELECT id,
-         raw_record->>'committee_id'          AS cmte,
-         (raw_record->>'report_year')::int    AS ry,
-         raw_record->>'report_type'           AS rt,
+         COALESCE(fec_committee_id, raw_record->>'committee_id')          AS cmte,
+         COALESCE(fec_report_year, (raw_record->>'report_year')::int)    AS ry,
+         COALESCE(fec_report_type, raw_record->>'report_type')           AS rt,
          donor_name_normalized                AS donor,
          amount,
          contribution_date,
-         (raw_record->>'file_number')::bigint AS fn
+         COALESCE(fec_file_number, (raw_record->>'file_number')::bigint) AS fn
     FROM transparent_motivations.contributions
    WHERE politician_source_id = :src
      AND data_source = 'fec'
-     AND raw_record ? 'file_number'
+     AND COALESCE(fec_file_number_present, raw_record ? 'file_number')
 ), ranked AS (
   SELECT *,
          max(fn) OVER (
@@ -75,4 +75,4 @@ SELECT
   -- Rows the backfill could not resolve are invisible to the rule and stay put.
   (SELECT count(*) FROM transparent_motivations.contributions
     WHERE politician_source_id = :src AND data_source = 'fec'
-      AND NOT (raw_record ? 'file_number'))                        AS unresolvable_untouched;
+      AND NOT (COALESCE(fec_file_number_present, raw_record ? 'file_number')))                        AS unresolvable_untouched;
