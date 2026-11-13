@@ -43,7 +43,10 @@ def key(f):
     m = re.match(ST + r'-([A-Z]+)-(\d+)-(?:SP(\d)-)?(\d{4})$', f.get('instrument_id') or '')  # MO-HB-16-SP1-2020: a special session (mo-01)
     if not m: return None
     txt = (f.get('note') or '') + ' ' + (f.get('motion') or '')
-    ch = f.get('chamber') or ('H' if re.search(rf'\b{ST} House\b|\bHouse\b', txt) and not re.search(rf'\b{ST} Senate\b', txt)
+    # A note that opens with the voting body ("CA Assembly, SB 2 ... Senate Third Reading") names the chamber; the
+    # motion text names the bill's house of origin, so it must not decide (ca-01: 10 Assembly votes on Senate bills).
+    lead = re.match(rf'{ST} (House|Assembly|Senate)\b', f.get('note') or '')
+    ch = f.get('chamber') or ({'House': 'H', 'Assembly': 'A', 'Senate': 'S'}[lead.group(1)] if lead else None) or ('H' if re.search(rf'\b{ST} House\b|\bHouse\b', txt) and not re.search(rf'\b{ST} Senate\b', txt)
                               # a lower chamber named the Assembly (WI, CA, NY, NV, NJ) is chamber 'A' in LegiScan
                               else 'A' if re.search(r'\bAssembly\b', txt) and not re.search(r'\bSenate\b', txt)
                               else 'S' if re.search(r'\bSenate\b', txt) else None)
