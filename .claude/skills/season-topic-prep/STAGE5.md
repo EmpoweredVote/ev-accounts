@@ -8,6 +8,26 @@ The rulings it rests on: [RULINGS.md](RULINGS.md) "Stage 5 rulings".
 
 Output folder: `<research folder>/stage5/`. Every command takes absolute paths (SKILL.md "Running the CLIs").
 
+## Session cards (read this first when running a state)
+
+A state run is two fresh sessions, set-up (A) and run (B). Each reads **one short card**, not this file:
+
+```bash
+python3 -I scripts/stage5/session_card.py A --profile <stage5>/topic-profile.json --state xx --state-name <Name>
+python3 -I scripts/stage5/session_card.py B --profile <stage5>/topic-profile.json --state xx --state-name <Name>
+```
+
+The card holds the commands in order with real paths, the runner stops, the hard rules and the settled rulings, and
+it names the section of this file to open for each step. Why: a session that reads this file, the skill file, the
+runbook and the tools README carries about 31,000 tokens on every later step (three-state review, 2026-11-13).
+
+Everything about the topic comes from its **profile**, `<stage5>/topic-profile.json`
+([templates/stage5-topic-profile.example.json](templates/stage5-topic-profile.example.json)). 🔴 A new topic starts
+with `"control_groups": []` and `"record_script": false`: search everyone and let Opus code everyone, until that
+topic has its own measurement and the runner's ruling. Another topic's skip rule does not carry over.
+
+Each session ends with `close_state.py` (tools README), as its last act.
+
 ## Hard rules
 
 - 🔴 **No database write before the early check passes.** Findings and codes stay in the research folder and the
