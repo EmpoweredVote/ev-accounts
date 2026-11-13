@@ -41,7 +41,10 @@ const squash = (s) => fold(s).toLowerCase().replace(/[^a-z0-9]/g, '');
 // verify-ma-soc.mjs so the two cannot drift apart — see ma-district-key.mjs.
 const maNameKey = maDistrictKey;
 
-const states = [...new Set(fs.readdirSync(apDir).map((f) => f.split('-')[0]))].sort();
+// An optional 4th argument limits the run to named states, so one AP directory can hold every
+// state the programme has fetched and each wave still reads only its own.
+const only = (process.argv[5] || '').split(',').map((s) => s.trim().toUpperCase()).filter(Boolean);
+const states = [...new Set(fs.readdirSync(apDir).map((f) => f.split('-')[0]))].sort().filter((s) => !only.length || only.includes(s));
 const ourRaces = JSON.parse(fs.readFileSync(ourFile, 'utf8'));
 
 const problems = [];
@@ -60,15 +63,21 @@ for (const st of states) {
     summary[`${st} ${chamber}`] = { ap: apIds.length, ours: ours.length };
 
     // ── keys ────────────────────────────────────────────────────────────────────────────────
+    // 🔴 A NUMBERED DISTRICT IS NOT ALWAYS A NUMBER. Maryland splits a legislative district into
+    //    LETTERED SUBDISTRICTS — "District 42A", `sldl:47B` — so a key that takes `(\d+)` off
+    //    each side reads 42A and 42B as the same district 42, and ours (which ends in a letter)
+    //    yields no key at all under `:(\d+)$`. Both sides therefore take an alphanumeric token,
+    //    upper-cased, and the form is REQUIRED rather than guessed at: anything that is not
+    //    "District <token>" is reported, never keyed on whatever digits happen to be in it.
     const apKey = (m) => {
       if (stLower === 'ma') return maNameKey(m.seatName);
-      const n = String(m.seatName || '').match(/(\d+)/);
-      return n ? `d${n[1]}` : null;
+      const n = String(m.seatName || '').match(/^District\s+([0-9]+[A-Za-z]?)$/i);
+      return n ? `d${n[1].toUpperCase()}` : null;
     };
     const ourKey = (r) => {
       if (stLower === 'ma') return maNameKey(r.district_label);
-      const n = String(r.ocd_id || '').match(/:(\d+)$/);
-      return n ? `d${n[1]}` : null;
+      const n = String(r.ocd_id || '').match(/:([0-9]+[A-Za-z]?)$/);
+      return n ? `d${n[1].toUpperCase()}` : null;
     };
 
     const apByKey = new Map();
@@ -150,30 +159,60 @@ for (const st of states) {
       // The incumbent cross-check: AP's flag against our own roster, for this same office.
       let holder = null;
       const apIncumbents = lines.filter((l) => l.ap_incumbent);
-      if (apIncumbents.length > 1) problems.push(`${st} ${chamber} ${k}: AP flags ${apIncumbents.length} incumbents in one race`);
-      if (r.current_holder_id && apIncumbents.length === 1) {
-        const l = apIncumbents[0];
-        const lastAgrees = squash(r.current_holder_last) === squash(l.last);
-        const firstAgrees = squash(r.current_holder_first) === squash(l.first)
-          || (!!l.nickname && squash(r.current_holder_first) === squash(l.nickname));
-        const fullAgrees = squash(r.current_holder_name) === squash(l.full_name);
-        // Each basis is NAMED. None of them is "relaxed until it matched".
-        const basis = fullAgrees ? 'holder-exact-full-name'
-          : lastAgrees && firstAgrees ? 'holder-exact-first-last'
-            : lastAgrees ? 'holder-surname-plus-roster'
-              : 'holder-DISAGREES';
-        holder = {
-          politician_id: r.current_holder_id,
-          our_name: r.current_holder_name,
-          ap_name: l.full_name,
-          candidateID: l.candidateID,
-          last_agrees: lastAgrees, first_agrees: firstAgrees, full_agrees: fullAgrees,
-          basis,
-          link: basis !== 'holder-DISAGREES',
+      // 🔴 A MULTI-MEMBER DISTRICT HAS SEVERAL SITTING MEMBERS AND WE MODEL ONE HOLDER PER
+      //    OFFICE. Maryland elects up to three delegates from one district on one race row, so
+      //    AP rightly flags two or three incumbents while `office_current_holder` — one row per
+      //    office by construction — names exactly one of them. That is not a disagreement, and
+      //    the first version of this analyser reported all 41 such districts as problems.
+      //    ▶ The rule is therefore: link the ONE AP incumbent our roster names, and leave every
+      //    other incumbent on the ballot with politician_id NULL. They are real sitting members;
+      //    we simply hold no office row for them to be the holder of.
+      if (r.current_holder_id && apIncumbents.length) {
+        const ourLast = squash(r.current_holder_last);
+        const ourFirst = squash(r.current_holder_first);
+        const ourFull = squash(r.current_holder_name);
+        const rank = (l) => {
+          const apLast = squash(l.last);
+          const apFirst = squash(l.first);
+          const apNick = squash(l.nickname);
+          if (ourFull === squash(l.full_name)) return ['holder-exact-full-name', 0];
+          if (ourLast === apLast && (ourFirst === apFirst || (apNick && ourFirst === apNick))) return ['holder-exact-first-last', 1];
+          // A suffix stored inside our surname ("Schmidt, Jr." against AP's "Schmidt" + "Jr."),
+          // or a compound surname one side prints whole ("Zermeño Moore" against "Moore").
+          // Each is an exact comparison once that field artefact is removed, and each still
+          // requires the FIRST name to agree exactly.
+          const ourLastNoSuffix = ourLast.replace(/(jr|sr|ii|iii|iv)$/, '');
+          const apWithSuffix = squash([l.last, l.suffix].filter(Boolean).join(''));
+          if (ourFirst === apFirst && (ourLast === apWithSuffix || ourLastNoSuffix === apLast)) return ['holder-suffix-folded', 2];
+          if (ourFirst === apFirst && apLast.length > 2 && ourLast.includes(apLast)) return ['holder-compound-surname', 3];
+          // ⚠ AN INITIAL CAN LIVE IN THE FIRST-NAME FIELD. Our Nevada row reads first "Max E.",
+          //    surname "Carter II", where AP splits "Max" / "Carter" / "II". The first token is
+          //    identical and the remainder is a single initial, so this is the same field
+          //    artefact as the two rungs above, met from the other side.
+          const initialOnly = ourFirst.startsWith(apFirst) && ourFirst.length - apFirst.length <= 2;
+          if (initialOnly && (ourLastNoSuffix === apLast || ourLast === apWithSuffix)) return ['holder-initial-in-first-name-field', 3];
+          if (ourLast === apLast) return ['holder-surname-plus-roster', 4];
+          return [null, 99];
         };
-        if (!holder.link) {
-          problems.push(`${st} ${chamber} ${k}: AP's incumbent "${l.full_name}" and our holder "${r.current_holder_name}" DISAGREE — not linked`);
+        const ranked = apIncumbents.map((l) => ({ l, r: rank(l) })).filter((x) => x.r[0]).sort((a, b) => a.r[1] - b.r[1]);
+        if (ranked.length) {
+          const { l, r: [basis] } = ranked[0];
+          holder = {
+            politician_id: r.current_holder_id, our_name: r.current_holder_name,
+            ap_name: l.full_name, candidateID: l.candidateID, basis, link: true,
+            ap_incumbents: apIncumbents.length,
+          };
+        } else {
+          holder = {
+            politician_id: r.current_holder_id, our_name: r.current_holder_name,
+            ap_name: apIncumbents.map((x) => x.full_name).join(' / '), candidateID: null,
+            basis: 'holder-DISAGREES', link: false, ap_incumbents: apIncumbents.length,
+          };
+          problems.push(`${st} ${chamber} ${k}: our holder "${r.current_holder_name}" is not among AP's incumbent(s) ${holder.ap_name} — nothing is linked in this race`);
         }
+      }
+      if (apIncumbents.length > r.seats) {
+        problems.push(`${st} ${chamber} ${k}: AP flags ${apIncumbents.length} incumbents for ${r.seats} seat(s)`);
       }
 
       races.push({

@@ -213,3 +213,164 @@ code you can judge. Read it in Playwright.
    hold.
 5. 🔴 **Sal DiDomenico's zero-vote row is still the one open item from that wave**, and it is a
    Massachusetts senate race: Everett has published nothing. Unblocks from **2026-11-18**.
+
+---
+---
+
+# The same pass for Maryland, Oregon and Nevada (`CC_0415`, `CC_0416`, `CC_0417`)
+
+**527 candidacies across 244 races — 303 won, 202 lost, 22 with no result.** The unseeded
+legislative backlog goes **259 → 15**, and every one of the 15 that remain is an Oregon senate
+race for a seat that was never on the 2026 ballot (see below). The legislative tier now holds
+**1,167 recorded winners**.
+
+| state | our races | seeded | rows | won | lost | no result | linked to a person |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| MD | 118 | 118 | 289 | 178 | 91 | 20 | 98 |
+| OR | 90 | 73 | 143 | 73 | 70 | 0 | 59 |
+| NV | 53 | 53 | 95 | 52 | 41 | 2 | 43 |
+
+Verified after applying: `15` races still empty · `1167` legislative winners · occupancy
+`294 / 56 / 238`, the drift baseline unmoved.
+
+---
+
+## 🔴🔴 OREGON WAS ON OUR BALLOT TWICE OVER: WE HOLD 30 SENATE RACES AND 15 SEATS WERE UP
+
+Oregon's Senate runs four-year terms, half the chamber at a time. AP carries **15** senate
+contests; we hold a 2026 race for **all 30 districts**. The 15 extra races are 1, 2, 5, 9, 12,
+14, 18, 21, 22, 23, 25, 27, 28, 29 and 30.
+
+🟢 **THAT IS CONFIRMED FROM OREGON'S OWN SOURCE, NOT INFERRED FROM AP'S SILENCE.** The Secretary
+of State's own results site lists exactly the same 15 districts — 3, 4, 6, 7, 8, 10, 11, 13, 15,
+16, 17, 19, 20, 24, 26 — and its machine-readable Legislative Export carries no row for any
+other. An absence AP did not report is not a finding; an absence two publishers agree on is.
+
+▶ **THIS FILE SEEDS THE 15 THAT HAPPENED AND LEAVES THE OTHER 15 UNTOUCHED.** They assert an
+election that did not take place, they are invisible to every read that needs a candidate, and
+they are the whole of the remaining "blocked" count on the transition board. Deleting a race is
+a separate act with its own evidence, and it is not this wave's to perform — but it is the next
+thing to decide about Oregon.
+
+---
+
+## 🔴 MARYLAND BREAKS THREE ASSUMPTIONS THE OTHER FOUR STATES NEVER TESTED
+
+- 🔴 **A NUMBERED DISTRICT IS NOT ALWAYS A NUMBER.** Maryland splits a legislative district into
+  LETTERED SUBDISTRICTS — AP's "District 42A", our `sldl:47B`. The key both sides had been using,
+  `(\d+)`, reads 42A and 42B as one district 42, and our side (ending in a letter) yielded no key
+  at all under `:(\d+)$`. Both now take an alphanumeric token, and the form `District <token>` is
+  REQUIRED rather than guessed at.
+- 🔴 **A MULTI-MEMBER DISTRICT HAS SEVERAL SITTING MEMBERS AND WE MODEL ONE HOLDER PER OFFICE.**
+  Maryland elects up to three delegates from one district on one race row (`races.seats = 3`), so
+  AP rightly flags two or three incumbents while `office_current_holder` — one row per office by
+  construction — names exactly one. **The first run of the analyser reported all 41 such districts
+  as problems.** The rule is now: link the ONE AP incumbent our roster names, and leave every
+  other incumbent on that ballot with `politician_id` NULL. They are real sitting members; we
+  simply hold no office row for them to hold.
+- 🔴🔴 **AP REUSES ONE CANDIDATE ID FOR TWO DIFFERENT PEOPLE.** Id `120083` is "Mark Fisher" in
+  **Subdistrict 27C** — where AP flags him incumbent, our roster names the holder "Mark N.
+  Fisher", and he wins with 10,852 — and in **District 13**, another county, where AP flags the
+  SAME id as not incumbent and he loses with 11,214. Maryland's own returns name them separately.
+  ▶ So the key of a candidacy is the PAIR (AP race, AP candidate), and `external_id` now reads
+  `ap-2026-11-03-<race>-<candidate>`. ⚠ `CC_0413` and `CC_0414` used the candidate id alone and
+  are already applied; the two shapes coexist and the later files say why.
+  **`A NAME THAT MATCHES IS NOT A PERSON THAT MATCHES` — and neither is a published id.**
+
+### 🔴 Six Maryland races link nobody, and each one is a real finding
+
+Our roster's holder for the district is **not on AP's 2026 ballot at all**:
+
+| district | our holder | AP's incumbents on that ballot |
+| --- | --- | --- |
+| 24 | Tiffany T. Alston | Derrick L. Coley / Andrea Fletcher Harrison |
+| 23 | Adrian Boafo | Marvin E. Holmes Jr. / Kym Taylor |
+| 22 | Anne Healey | Ashanti Martinez |
+| 10 | Adrienne A. Jones | N. Scott Phillips / Jennifer White Holland |
+| 5 | Christopher Eric Bouchat | April R. Rose / Chris Tomlinson |
+| 4 | Barrie S. Ciliberti | April Fleming Miller / Jesse T. Pippy |
+
+⚠ **Tiffany Alston is on the State SENATE District 24 ballot** in the same file, which is what a
+delegate moving up looks like. The others are retirements or departures. In every case the
+candidacies are seeded with `politician_id` NULL and the disagreement is printed rather than
+resolved by a name.
+
+---
+
+## 🟢 ALL THREE STATES PUBLISH THEIR OWN RETURNS, AND ALL THREE AGREE WITH AP COMPLETELY
+
+| state | the state's own publication | agreement |
+| --- | --- | --- |
+| MD | State Board of Elections unofficial returns, two pages | **118 of 118 races, 289 of 289 lines** |
+| OR | Secretary of State **Legislative Export** (CSV) | **75 of 75 races, 146 of 146 lines, every one exact** |
+| NV | the results feed behind silverstateelection.nv.gov | **53 of 53 races, 95 of 95 lines** |
+
+🔴 **NOT ONE OF THE THREE PUBLISHES A WINNER FLAG.** Oregon's export, Nevada's feed and
+Maryland's returns all carry counts and no call. **A state canvasses; it does not call.** So the
+ballot is read twice and the call rests on AP, and the citations say which is which.
+
+- ⚠ **MATCHING ON THE PARTS BOTH SIDES PRINT IS STILL EXACT, AND EACH RUNG IS NAMED.** Nevada's
+  feed omits middle names where AP prints them, so 27 of its 95 lines matched on first-and-last;
+  8 more matched on surname-and-district and are listed in full for reading (AP "Drew
+  Teitelbaum" against the state's "Andrew Teitelbaum"; "Duy Nguyen" against "Ngoc Nguyen").
+  Maryland needed that rung three times ("S. I. Rosenberg" against "Si Sandy Rosenberg").
+- ⚠ **A COMPOUND SURNAME IS PRINTED WHOLE BY ONE SIDE AND IN PART BY THE OTHER**, and the
+  containment runs both ways: Nevada's "Davila-Uzcategui" and "La Rue Hatch" against AP's
+  "Davila" and "Hatch".
+- ⚠ **MARYLAND ANNOTATES THE NAME CELL IN PARENTHESES** — "(Write-In)" for a declared write-in
+  and "(Caroline County)" where a district spans counties. Neither is part of a name, and the two
+  declared write-ins (12B Timothy McGarrahan, 23 Lisa Russell) are exactly why the state's 216
+  names reconcile to AP's 214.
+
+---
+
+## 🔴 OREGON'S RESULTS PAGE SHOWS HALF A CHAMBER AND LOOKS COMPLETE
+
+`resultsSW.aspx?type=HOUSE` lists districts **1 to 30 and stops**. Oregon has 60. Read as the
+whole chamber it reports 30 contests and 58 candidates, with no pager, no "more" link and
+nothing marking the cut. Only the comparison against AP's 60 exposed it. ▶ **The machine-readable
+Legislative Export is the source**, and it is reached by selecting CSV and clicking an ASP.NET
+postback, which Playwright can do and `curl` cannot.
+
+## 🔴 Three more parser artefacts, each one a plausible wrong table
+
+1. **A nickname in parentheses dropped a real candidate.** Oregon prints "JACK (JAKE) D HUFF",
+   and a name pattern that allowed no parentheses silently skipped him — **dropping a candidate is
+   the dangerous direction of that mistake**. The discriminator that works on that page is CASE:
+   names are printed in capitals and parties in title case.
+2. **An escape lost in a `sed` erased every name.** Rewritten by hand the regex read
+   `/([^)]*)/g`, which matches the empty string everywhere, and the Oregon adapter produced 146
+   empty names. The cross-check reported 146 differences — **loudly**, rather than as a quiet
+   pass. ▶ Edit a regex in an editor, not through a shell quoting layer.
+3. **A tamper deleted the last row of a VALUES list** and took the statement's semicolon with it,
+   so the file stopped parsing and the count gate it was aimed at never ran. That reads exactly
+   like a shadowed control. A row in the MIDDLE of the list is the right target.
+
+## Controls — 28 across the three states, all behaved
+
+**Oregon 10 of 10, Maryland 9 of 9, Nevada 9 of 9.** The suite is the same as the Massachusetts
+and Maine one and now takes the state as an argument.
+
+⚠ **V3 — a race that already carries candidacies — can only run in Oregon**, which holds two such
+races (House 53 and 54). Maryland and Nevada have none, because an empty race is the premise of
+the whole file. The gate is asserted in all three and proven in one, and each run prints what it
+could not control, alongside the `external_id` collision gate and the occupancy baseline.
+
+## ▶ What is next
+
+1. 🔴 **Decide what the 15 Oregon senate races are.** They are now the entire remaining "blocked"
+   count on the transition board. Two publishers agree those seats were not on the ballot.
+2. **The 6 uncalled races** — MD 4, NV 1 (and the 4 from Massachusetts and Maine) — carry ballot
+   lines and no result; they shrink themselves as AP calls them.
+3. **Seating.** Nobody is seated by any of these five files. Each chamber convenes in 2027 and
+   each state's date needs its own authority.
+4. ⚠ **The 6 Maryland districts whose sitting member is not on the ballot** are worth a second
+   look at our roster: one of them (Alston) is a move to the Senate, and a move is the case where
+   a stale holder row does real harm.
+
+⚠ **RE-RUNNING THE EMITTER NOW PRODUCES A DIFFERENT CC_0413 AND CC_0414, AND THAT IS EXPECTED.**
+Those two files were applied before the Maryland collision was found, so they carry the short
+external_id and no section about the key. The difference is 34 lines, all of them the key shape and
+its explanation: the candidate rows, the outcomes and the links regenerate byte for byte. The three
+later files re-emit byte-identical to what was applied, which is the check that the pipeline is
+still reproducible from the committed inputs.

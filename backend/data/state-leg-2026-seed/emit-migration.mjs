@@ -27,6 +27,24 @@ const STATE = {
     second_source_url: 'https://www.maine.gov/sos/elections-voting/upcoming-elections',
     crosscheck: 'me-sos-crosscheck-2026-11-13.json',
   },
+  md: {
+    name: 'Maryland',
+    second_source: "the State Board of Elections' own unofficial returns for State Senator and the House of Delegates",
+    second_source_url: 'https://elections.maryland.gov/elections/2026/general_results/index.html',
+    crosscheck: 'md-crosscheck-2026-11-13.json',
+  },
+  or: {
+    name: 'Oregon',
+    second_source: "the Secretary of State's own machine-readable Legislative Export",
+    second_source_url: 'https://results.oregonvotes.gov/ResultsExport.aspx',
+    crosscheck: 'or-crosscheck-2026-11-13.json',
+  },
+  nv: {
+    name: 'Nevada',
+    second_source: "the Secretary of State's own results feed behind silverstateelection.nv.gov",
+    second_source_url: 'https://silverstateelection.nv.gov/',
+    crosscheck: 'nv-crosscheck-2026-11-13.json',
+  },
 }[st];
 if (!STATE) throw new Error(`no state profile for ${st}`);
 
@@ -92,9 +110,17 @@ for (const x of rows) {
   if (seen.has(x.holder_id)) throw new Error(`politician ${x.holder_id} would be linked twice (${seen.get(x.holder_id)} and ${x.district})`);
   seen.set(x.holder_id, x.district);
 }
-// AP's candidate id is the file's key and must be unique within it.
+// 🔴 AP'S CANDIDATE ID IS NOT A PERSON, AND IN MARYLAND IT IS NOT EVEN UNIQUE. Id 120083 is
+//    "Mark Fisher" in BOTH Subdistrict 27C — where AP flags him incumbent and our roster names
+//    the holder "Mark N. Fisher" — and District 13, 60 miles away, where AP flags the same id as
+//    NOT incumbent and he loses. Maryland's own returns name them separately. So the key of a
+//    candidacy is the PAIR (AP race, AP candidate), which is what a candidacy is, and this guard
+//    refuses anything else. `A NAME THAT MATCHES IS NOT A PERSON THAT MATCHES`, met from the
+//    other side: a published id can be reused too.
+const pairs = new Set(rows.map((x) => `${x.ap_race_id}-${x.ap_candidate_id}`));
+if (pairs.size !== rows.length) throw new Error(`(AP race, AP candidate) is not unique in this file: ${rows.length} rows, ${pairs.size} pairs`);
 const ids = new Set(rows.map((x) => x.ap_candidate_id));
-if (ids.size !== rows.length) throw new Error(`AP candidate ids are not unique in this file: ${rows.length} rows, ${ids.size} ids`);
+const sharedIds = ids.size !== rows.length;
 
 const uncalled = races.filter((x) => !x.called).map((x) => `${x.our.district_label} (AP race ${x.ap.raceID}, ${x.ap.raceCallStatus})`);
 const basisLines = Object.entries(count.basis).map(([k, v]) => `--   ${k.padEnd(26)} ${String(v).padStart(3)}`).join('\n');
@@ -149,6 +175,25 @@ ${uncalled.length ? `--    The uncalled race(s) here:\n${uncalled.map((u) => `--
 -- citation names the SHARE it reported; where AP publishes none it says so.
 --
 -- ============================================================================================
+-- THE KEY OF A CANDIDACY IS THE PAIR (AP RACE, AP CANDIDATE)
+-- ============================================================================================
+-- \`external_id\` reads \`ap-2026-11-03-<AP race>-<AP candidate>\`. ⚠ \`CC_0413\` and \`CC_0414\`
+-- (Massachusetts and Maine, already applied) used the candidate id alone, and this file does
+-- not, for a reason found in Maryland:
+${sharedIds ? `--
+-- 🔴 AP REUSES ONE CANDIDATE ID FOR TWO DIFFERENT PEOPLE IN THIS STATE. Id 120083 is "Mark
+--    Fisher" in BOTH Subdistrict 27C — where AP flags him incumbent, our roster names the
+--    holder "Mark N. Fisher", and he wins — and District 13, in another county, where AP flags
+--    the SAME id as not incumbent and he loses. Maryland's own returns name them separately
+--    ("Mark N. Fisher" and "Mark Fisher"). Whether AP has merged two namesakes or contradicted
+--    itself about one man, our side holds two candidacies, and keying on the person's id would
+--    have collided them. \`A NAME THAT MATCHES IS NOT A PERSON THAT MATCHES\` — and neither is a
+--    published id.` : `--
+-- 🔴 A PUBLISHED CANDIDATE ID IS NOT A PERSON. Maryland's file carries one AP id used for two
+--    different people in two districts, so the pair is the only safe key; this state has no
+--    such collision, and the key is the same shape anyway rather than per-state.`}
+--
+-- ============================================================================================
 -- HOW A CANDIDACY IS LINKED TO A PERSON WE ALREADY HOLD
 -- ============================================================================================
 -- ⚠ Most of these people are not in \`essentials.politicians\` at all, and SEEDING A PERSON IS A
@@ -183,7 +228,7 @@ CREATE TEMP TABLE seed (
   office_title     text NOT NULL,
   seats            int  NOT NULL,
   ap_race_id       text NOT NULL,
-  ap_candidate_id  text PRIMARY KEY,
+  ap_candidate_id  text NOT NULL,
   full_name        text NOT NULL,
   first_name       text,
   last_name        text,
@@ -198,7 +243,8 @@ CREATE TEMP TABLE seed (
   outcome          text,            -- 'won' | 'lost' | NULL when AP has not called the race
   holder_id        uuid,            -- the politician to link, or NULL
   holder_basis     text,
-  holder_name      text
+  holder_name      text,
+  PRIMARY KEY (ap_race_id, ap_candidate_id)   -- the candidacy, not the person: see the header
 );
 
 INSERT INTO seed VALUES
@@ -311,7 +357,7 @@ BEGIN
   -- AP's candidate id becomes this row's external_id, so it must not already be in use.
   SELECT string_agg(rc.external_id, '; ') INTO txt
     FROM essentials.race_candidates rc
-   WHERE rc.external_id IN (SELECT 'ap-2026-11-03-' || ap_candidate_id FROM seed);
+   WHERE rc.external_id IN (SELECT 'ap-2026-11-03-' || ap_race_id || '-' || ap_candidate_id FROM seed);
   IF txt IS NOT NULL THEN RAISE EXCEPTION '${slot}: external_id already in use: %', txt; END IF;
 END $$;
 
@@ -328,7 +374,7 @@ SELECT s.race_id,
        s.ap_incumbent,
        s.is_write_in,
        'active',
-       'ap-2026-11-03-' || s.ap_candidate_id,
+       'ap-2026-11-03-' || s.ap_race_id || '-' || s.ap_candidate_id,
        'Associated Press ballot for the 2026-11-03 general election, read ${READ_ON} from AP''s own '
          || 'per-state results feed (interactives.apelections.org/election-results/data-live/'
          || '2026-11-03/results/races/${st.toUpperCase()}/, race ' || s.ap_race_id || ', candidate '
@@ -351,7 +397,7 @@ SELECT s.race_id,
   FROM seed s
  WHERE NOT EXISTS (
    SELECT 1 FROM essentials.race_candidates rc
-    WHERE rc.external_id = 'ap-2026-11-03-' || s.ap_candidate_id);
+    WHERE rc.external_id = 'ap-2026-11-03-' || s.ap_race_id || '-' || s.ap_candidate_id);
 
 -- ─── 4. Post-verify ───
 DO $$
@@ -359,13 +405,13 @@ DECLARE n int; txt text; total int; flagged int; unflagged int;
 BEGIN
   SELECT count(*) INTO n
     FROM essentials.race_candidates rc
-    JOIN seed s ON rc.external_id = 'ap-2026-11-03-' || s.ap_candidate_id;
+    JOIN seed s ON rc.external_id = 'ap-2026-11-03-' || s.ap_race_id || '-' || s.ap_candidate_id;
   IF n <> ${count.rows} THEN RAISE EXCEPTION '${slot}: expected ${count.rows} rows written, found %', n; END IF;
 
   -- The outcome, the name and the link each read back from production, not from the file's copy.
   SELECT count(*) INTO n
     FROM essentials.race_candidates rc
-    JOIN seed s ON rc.external_id = 'ap-2026-11-03-' || s.ap_candidate_id
+    JOIN seed s ON rc.external_id = 'ap-2026-11-03-' || s.ap_race_id || '-' || s.ap_candidate_id
    WHERE rc.race_id = s.race_id
      AND rc.full_name = s.full_name
      AND rc.result IS NOT DISTINCT FROM s.outcome
@@ -376,7 +422,7 @@ BEGIN
 
   SELECT count(*) INTO n
     FROM essentials.race_candidates rc
-    JOIN seed s ON rc.external_id = 'ap-2026-11-03-' || s.ap_candidate_id
+    JOIN seed s ON rc.external_id = 'ap-2026-11-03-' || s.ap_race_id || '-' || s.ap_candidate_id
    WHERE rc.result IS NOT NULL AND coalesce(btrim(rc.result_source), '') = '';
   IF n <> 0 THEN RAISE EXCEPTION '${slot}: % written row(s) carry a result with no citation', n; END IF;
 
@@ -384,7 +430,7 @@ BEGIN
   --    promised: a zero AP publishes for an uncontested race is not a tally.
   SELECT string_agg(rc.full_name, '; ') INTO txt
     FROM essentials.race_candidates rc
-    JOIN seed s ON rc.external_id = 'ap-2026-11-03-' || s.ap_candidate_id
+    JOIN seed s ON rc.external_id = 'ap-2026-11-03-' || s.ap_race_id || '-' || s.ap_candidate_id
    WHERE rc.result_source ~ '[0-9][0-9,]* votes';
   IF txt IS NOT NULL THEN RAISE EXCEPTION '${slot}: a citation quotes a vote count: %', txt; END IF;
 
@@ -404,7 +450,7 @@ BEGIN
      AND lower(d.state) = '${st}'
      AND d.district_type IN ('STATE_LOWER', 'STATE_UPPER')
      AND rc.external_id LIKE 'ap-2026-11-03-%'
-     AND NOT EXISTS (SELECT 1 FROM seed s WHERE 'ap-2026-11-03-' || s.ap_candidate_id = rc.external_id);
+     AND NOT EXISTS (SELECT 1 FROM seed s WHERE 'ap-2026-11-03-' || s.ap_race_id || '-' || s.ap_candidate_id = rc.external_id);
   IF n <> 0 THEN RAISE EXCEPTION '${slot}: % AP-seeded row(s) exist in this state that this file does not name', n; END IF;
 
   -- 🔴 THE MIRROR TRIGGER. An INSERT carrying a politician_id fires
@@ -412,7 +458,7 @@ BEGIN
   --    politician. Both columns here are NULL, so it must have done nothing at all.
   SELECT count(*) INTO n
     FROM essentials.race_candidates rc
-    JOIN seed s ON rc.external_id = 'ap-2026-11-03-' || s.ap_candidate_id
+    JOIN seed s ON rc.external_id = 'ap-2026-11-03-' || s.ap_race_id || '-' || s.ap_candidate_id
    WHERE rc.photo_url IS NOT NULL OR rc.website_url IS NOT NULL;
   IF n <> 0 THEN RAISE EXCEPTION '${slot}: % written row(s) carry a photo or website url, which this file never writes', n; END IF;
 
