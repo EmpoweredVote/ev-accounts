@@ -236,7 +236,10 @@ for (const rel of files) {
       break; // one finding per file is enough to act on
     }
   }
-  if (!SCAN_ALL) {
+  // Migrations are records of SQL that already ran (or will be dry-run first, which fails on a
+  // missing column with 42703). A migration applied before CA_0378 legitimately names is_incumbent,
+  // and flagging it would block merging the record of work already in production (CA_0374, #1399).
+  if (!SCAN_ALL && !rel.startsWith("backend/migrations/")) {
     POLITICIAN_INSERT.lastIndex = 0;
     let m;
     while ((m = POLITICIAN_INSERT.exec(code)) !== null) {
