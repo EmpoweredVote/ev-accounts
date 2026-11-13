@@ -31,7 +31,11 @@
 --
 -- Apply as the table owner (ALTER TABLE ... DROP COLUMN). No migration runner exists; this file records SQL applied
 -- by hand. Dry run first: `node scripts/dry-run-migration.mjs migrations/CA_0378_drop_politicians_is_incumbent.sql`.
--- STATUS: NOT APPLIED. Dry-run OK 2026-11-12 (rolled back). Awaiting operator approval after the code deploy.
+-- STATUS: APPLIED to prod 2026-11-13 ~02:20 UTC (operator approval: Chris Andrews, "Yes, apply it"), via
+--   apply-migration-file.mjs as postgres, after deploy ef2c3ed27 (contains PR #1421) went live. Dry run x2 before
+--   (rolled back, confirmed). Verified after: column gone; race_candidates.is_incumbent present; archive 91,858 rows =
+--   politicians 91,858; archive RLS on, no anon SELECT; re-run dry run OK (idempotent); /api/essentials/politicians
+--   200 with is_incumbent still in the response; no 42703 in API logs.
 --
 -- ROLLBACK (restores the column, its default and every stored value):
 --   ALTER TABLE essentials.politicians ADD COLUMN is_incumbent boolean NOT NULL DEFAULT false;
