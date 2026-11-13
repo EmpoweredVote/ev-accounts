@@ -148,7 +148,8 @@ since no rung is about which level decides (see Q5 for the one exception).
     accessory off it is "removing a type of firearm or accessory from a registration law" → 5: AZ SB 1109 (2023),
     SB 1014 (2025) and SB 1069 (2026) strike suppressors from A.R.S. 13-3101's prohibited-weapons list, whose only
     exception is items held "in compliance with federal law" (NFA registration); TX SB 1596 (2025) has the same
-    shape. A rate-of-fire accessory (bump-fire device) still has no rung (S3). A person with a rung 1-3 act who
+    shape. A ban on a rate-of-fire accessory (bump-fire device) still has no rung; it is `direction-only`
+    (S3). A person with a rung 1-3 act who
     also voted for such a bill has a two-sided record (Arizona: Fernandez).
 
 ## Hard cases
@@ -164,7 +165,10 @@ since no rung is about which level decides (see Q5 for the one exception).
 - **Home-made and unserialised firearm rules:** Q6 (direction-only) is **replaced by S1** (2026-11-03): rung 3.
 - **S3 (ruled 2026-11-03).** A ban on auto sears or other parts that convert a gun to automatic fire copies the
   federal machine-gun ban: no rung act and no direction (like a state copy of any federal ban). A bump stock or other
-  accessory is not a type of firearm or magazine, so it is not rung 2.
+  accessory is not a type of firearm or magazine, so it is not rung 2. A ban on a rate-of-fire accessory (bump stock,
+  burst trigger, trigger crank, binary or forced-reset trigger) is `direction-only`, restriction side: it shows a
+  side, seats no one and does not make a record two-sided (runner, 2026-11-13: "Direction only"; e.g. CA SB 1346,
+  2018). In a bill that bans both, the auto-sear part shows no side and the accessory part shows the restriction side.
 - **S4 — licence rule (ruled 2026-11-03).** A rung 4 act that keeps the permit (honoring other states' permits, carry
   in more places for licence holders, lifting a carry ban during a declared emergency, tenant or hotel carry, an easier
   permit; *since 2026-11-12 only a repeal of an emergency carry limit already in law (R4-3) and a permit that costs,
