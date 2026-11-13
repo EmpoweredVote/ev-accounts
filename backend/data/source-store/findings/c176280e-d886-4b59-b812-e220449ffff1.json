@@ -1923,7 +1923,57 @@
           "sha256": "7215f5c2a65ea33ee8cb847037ed14c645905dd730f30d66c41b9e12d7be8214"
         }
       }
+    },
+    {
+      "id": "78d86f1ef22447700388c0c2d9dbb1b5d0da7f5b12113166ad5b22a03fb43fda",
+      "kind": "own-words",
+      "url": "https://www.debralekanoff.com",
+      "date": "2026-11-13",
+      "date_precision": "day",
+      "passage": "She invests in laws for gun control, and safe schools.",
+      "note": "Campaign site biography text, written in the third person in her name; date is the fetch date because the page is undated. Says she backs gun control laws.",
+      "subjects": [
+        "gun control laws",
+        "safe schools"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:38:54.075Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun control laws",
+        "firearm restrictions for public safety",
+        "Second Amendment",
+        "background checks",
+        "assault-style weapons",
+        "carry permits",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status: sitting 40th District Position 1 state representative, on the 2026 ballot against Cindy Carter per a news search; general-election result not found",
+        "campaign site https://www.debralekanoff.com (one line on gun control)",
+        "blocked: https://housedemocrats.wa.gov/lekanoff/ (403)",
+        "blocked: https://ballotpedia.org/Debra_Lekanoff (403)",
+        "iVoterGuide https://ivoterguide.com/candidate/41823/race/35009/election/1502: Second Amendment questionnaire item left unanswered; nothing on the subject in her own words",
+        "news search on name plus gun/firearm words: nothing on the subject",
+        "https://arcwa.org/wp-content/uploads/2026/06/Debra_Lekanoff-1.pdf: not reviewed (could not read)",
+        "https://www.cascadiadaily.com/?p=527934: nothing on the subject",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:38:54.075Z",
+      "by": "source-collector"
+    }
+  ]
 }

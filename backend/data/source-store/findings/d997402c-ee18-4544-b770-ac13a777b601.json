@@ -1658,7 +1658,76 @@
           "sha256": "cdf1d7129bcbec8f5dd6caee80796349c89d2f12cebca7dee2a36b69e9654f63"
         }
       }
+    },
+    {
+      "id": "53d48c56bd9c63b2d734f416bdb71a3d68b0c9c1d902f979a7ce0232a4227036",
+      "kind": "own-words",
+      "url": "https://chrisgildon.src.wastateleg.org/?p=2216",
+      "date": "2023-04-12",
+      "date_precision": "day",
+      "passage": "While the constitutional issues are significant, my opposition runs deeper. Until we address the root causes of violence, we will not move the needle. Throughout my legislative career, I have advocated solutions that address our mental health and behavioral health problems, public safety and the disorder in our streets, and the scourge of drug abuse and addiction. Simplistic responses that consider only the instrument of violence will not resolve this problem.",
+      "note": "E-newsletter sent to his subscribers about HB 1240 (semi-automatic rifle sales), HB 1143 (gun-safety training for buyers) and SB 5078 (attorney general suits against gun makers and dealers). He says he voted against HB 1240 and expects court challenges, and he points to root causes of violence instead.",
+      "subjects": [
+        "ban on assault-style guns",
+        "gun-safety training before purchase",
+        "lawsuits against gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:37:39.893Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "da0e8d416ccdd529fbe1663e2e1d2f6d6bfe8c439157f4c36ff29047dca8c42e",
+      "kind": "own-words",
+      "url": "https://chrisgildon.src.wastateleg.org/?p=2216",
+      "date": "2023-04-12",
+      "date_precision": "day",
+      "passage": "All three bills are very close to final passage in the Legislature, and the governor has promised to sign them when delivered. We also can be certain they will face court challenges because they appear to contradict both our federal and state constitutions.",
+      "note": "Says the three 2023 gun bills appear to conflict with the federal and state constitutions.",
+      "subjects": [
+        "ban on assault-style guns",
+        "gun rights and the constitution"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:37:39.893Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "gun-safety training before purchase",
+        "lawsuits against gun makers and dealers",
+        "permit to purchase",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://senaterepublicans.wa.gov/gildon/ (confirms Chris Gildon, 25th District senator; no gun item found on the page fetched)",
+        "his legislative newsletter site: one gun newsletter found (2023-04-12)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Chris_Gildon (fetch returned empty page)",
+        "two web news searches on name plus gun words: no other first-person gun statements found",
+        "not reviewed: https://ontheissues.org (lead-only site)",
+        "not reviewed: campaign site (no address found)",
+        "not reviewed: video linked from the 2023 newsletter"
+      ],
+      "found": 2,
+      "at": "2026-11-13T20:37:39.893Z",
+      "by": "source-collector"
+    }
+  ]
 }

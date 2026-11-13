@@ -2259,7 +2259,79 @@
           "sha256": "d693047e94f8c84cca7c428c86e23cd4771154ebd754ee1e5130e50ab3791933"
         }
       }
+    },
+    {
+      "id": "438a758094abfc709474e7838a174baa6a6187a48980683b4ff059420ebfce56",
+      "kind": "own-words",
+      "url": "https://lynnwoodtimes.com/2025/02/03/permit-firearms",
+      "date": "2025-02-03",
+      "date_precision": "day",
+      "passage": "It’s about preventing tragedies before they happen,",
+      "note": "Quoted in a Washington State Journal story (carried by the Lynnwood Times) about SB 5099, which sets added requirements for licensed firearms dealers. He is described there as its prime sponsor.",
+      "subjects": [
+        "rules for licensed gun dealers",
+        "general gun safety statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:42:49.847Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ea805ae071527c93fc3c04e4213141d4922eec101848a5e92c76621b5898e001",
+      "kind": "record",
+      "url": "https://www.spokesman.com/stories/2025/jan/22/washington-democrats-push-for-gun-permits-safe-sto/",
+      "date": "2025-01-22",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5099-2025",
+      "act": "sponsor",
+      "note": "News story says he is prime sponsor of SB 5099, adding requirements for licensed firearms dealers; heard in Senate Law & Justice on 2025-01-21.",
+      "subjects": [
+        "rules for licensed gun dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:42:49.847Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "rules for licensed gun dealers",
+        "ban on assault-style guns",
+        "permit to buy a gun",
+        "safe storage",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://senatedemocrats.wa.gov/lovick/ (official site; home page shows a notice that it is not updated until results are certified; no gun page found; site search not run)",
+        "blocked: https://ballotpedia.org/John_Lovick (403)",
+        "web search: BallotReady listing shows him as a 2026 primary candidate for State Senate District 44; the 2026 primary and general results were not found, so general-ballot status is unconfirmed",
+        "https://ivoterguide.com/candidate/31611/race/34925/election/1502 (candidate page; 2nd Amendment question shown as 'Did not answer'; lists a gun-safety group endorsement; no own words)",
+        "https://www.heraldnet.com/news/qa-john-lovick-and-jeb-brewer-discuss-priorites-in-the-44th (2022 Q&A; fetch returned nothing usable)",
+        "https://washingtonstatestandard.com/2025/01/31/plans-for-new-gun-regulations-progress-in-washington-legislature/ (no Lovick quote found on fetch)",
+        "news search: gun bills 2025 session (Spokesman-Review, Lynnwood Times)",
+        "legislature sponsor lists and roll calls: covered by bulk bill data",
+        "not reviewed: ontheissues.org, vote411, campaign site (none found)"
+      ],
+      "found": 2,
+      "at": "2026-11-13T20:42:49.847Z",
+      "by": "source-collector"
+    }
+  ]
 }

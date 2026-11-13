@@ -124,5 +124,58 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and open carry",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "blocked: https://housedemocrats.wa.gov/scott/ (403 Access Denied)",
+        "campaign site: could not be reached (https://shaunscottforwa.com, no connection); not reviewed",
+        "blocked: https://ballotpedia.org/Shaun_Scott (403)",
+        "web search for name plus district and gun words: search results show him as the District 43 Position 2 House member; no statement of his on guns found",
+        "web search for name plus gun, firearm, Second Amendment: nothing naming him; results were about other people or advocacy-group bill releases that do not name him",
+        "sponsor list: covered by bulk bill data",
+        "nothing on the subject: news search",
+        "not reviewed: general-election result (2026-11-03) not confirmed by a fetched page; ballot status relies on a search summary only"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:47:42.394Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "general gun rights and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "House caucus member page https://housedemocrats.wa.gov/scott/ (fetched; no gun content)",
+        "blocked: https://ballotpedia.org/Shaun_Scott (403 on direct fetch; search-result summary only, which shows him as incumbent in the 2026-08-04 primary for House District 43 Position 2; general-election ballot status not confirmed by a fetched page)",
+        "blocked: https://app.leg.wa.gov/ (403)",
+        "not reviewed: https://results.vote.wa.gov/results/20260804/legislative-district-43-state-representative-pos-2.html (404, 2026 primary result not retrieved)",
+        "campaign site: not found in search",
+        "news search on name plus gun words: nothing on the subject",
+        "web searches: 4 run; nothing on the subject from his own words"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:52:48.773Z",
+      "by": "source-collector"
+    }
+  ]
 }

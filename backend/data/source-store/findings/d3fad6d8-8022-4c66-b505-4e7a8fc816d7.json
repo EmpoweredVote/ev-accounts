@@ -2076,7 +2076,229 @@
           "sha256": "fa263c513699fb66de266241b54f6a032c04effa38f37078685d3bf633ce2d5e"
         }
       }
+    },
+    {
+      "id": "bb06f016f74ad65e7570046300e3aab557b8a7823539b94429b44d3c0791da45",
+      "kind": "own-words",
+      "url": "https://philfortunato.src.wastateleg.org/fortunato-opposes-unconstitutional-permit-purchase-legislation/",
+      "date": "2025-04-15",
+      "date_precision": "day",
+      "passage": "“This is not just bad policy, it’s unconstitutional,” Fortunato said. “The government cannot convert a fundamental right into a privilege that must be bought, licensed, and approved by bureaucrats. If you have to ask for permission, it’s not a right.”",
+      "note": "Senate release quoting him against HB 1163, a permit-to-purchase bill, as a violation of the Second Amendment.",
+      "subjects": [
+        "permit to buy a gun",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:46:42.038Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cbf45221a525ac0c0fab7bf9e6e327e0c67e8e531ab8eb272b7a1bd6135005ad",
+      "kind": "own-words",
+      "url": "https://philfortunato.src.wastateleg.org/fortunato-opposes-unconstitutional-permit-purchase-legislation/",
+      "date": "2025-04-15",
+      "date_precision": "day",
+      "passage": "“This bill won’t stop criminals. It will only make it harder for law-abiding citizens, especially victims of domestic violence and working-class Washingtonians, to protect themselves,” said Fortunato. “Criminals don’t wait for permits or take classes. This is about control, not safety.”",
+      "note": "Same release: he says the permit bill would burden lawful gun owners and not stop criminals.",
+      "subjects": [
+        "permit to buy a gun",
+        "training requirement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:46:42.038Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "51374d4cfd897ae04574f2d4338d96f08248a1b9c8499095932908489466f83f",
+      "kind": "own-words",
+      "url": "https://philfortunato.src.wastateleg.org/fortunato-opposes-unconstitutional-permit-purchase-legislation/",
+      "date": "2025-04-15",
+      "date_precision": "day",
+      "passage": "“The Legislature is playing politics with public safety while ignoring the real drivers of gun violence, crime, not legal gun ownership,” he said. “If they were serious about protecting people, they’d be funding law enforcement and fixing the broken court system.”",
+      "note": "Same release: he points to crime and courts, not lawful gun ownership, as the cause of gun violence.",
+      "subjects": [
+        "gun violence causes",
+        "permit to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:46:42.038Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a36382c181f8c3e9be302ef03e1b0fc924d70beec108d748c260ef7fc3fe8849",
+      "kind": "own-words",
+      "url": "https://philfortunato.src.wastateleg.org/fortunato-opposes-unconstitutional-permit-purchase-legislation/",
+      "date": "2025-04-15",
+      "date_precision": "day",
+      "passage": "Fortunato’s amendments to exempt concealed carry holders and to reimburse costs should the bill be ruled unconstitutional, similar to what was done in the Blake decision, were rejected by the other side of the aisle.",
+      "note": "Release text issued in his name describing two of his floor amendments to HB 1163 that failed; a third, covering armed private investigators and security guards, was adopted.",
+      "subjects": [
+        "permit to buy a gun",
+        "carry permit holders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:46:42.038Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "34d997dd204be04c85f52e7bcd93ea4e77f144fce48ad10b3c6121b56e53bec5",
+      "kind": "own-words",
+      "url": "https://philfortunato.src.wastateleg.org/video-gun-control-right-bear-arms-think-state-senator-phil-fortunato/",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "passage": "Sen. Phil Fortunato, R-Auburn, discusses gun control in Washington, expressing concern that legislative restrictions, including magazine limits and storage requirements, disadvantage law-abiding citizens. He maintains that under the state constitution, requirements such as training mandates may be considered an impairment of the right to self-defense.",
+      "note": "Written summary on his Senate site of a video; the words are the site's description of his view, not a transcript. Video not watched.",
+      "subjects": [
+        "magazine limits",
+        "safe storage rules",
+        "training requirement",
+        "right to self-defense"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:46:42.038Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c5ab231f62d0323726c4982486c15be4f82b61af9c3a9e566756fdcfdef8ea8",
+      "kind": "own-words",
+      "url": "https://philfortunato.src.wastateleg.org/fortunato-introduces-legislation-protect-privacy-concealed-pistol-license-holders/",
+      "date": "2018-01-11",
+      "date_precision": "day",
+      "passage": "“I am very concerned that the privacy of law-abiding citizens will be infringed,” said Fortunato, R-Auburn. “I predicted before the session that anti-gun legislators who now control of all levels of state government could be problematic for gun owners in our state. The fact that a state agency is seeking this guidance when state law is clear necessitates legislative action.”",
+      "note": "Release on his co-sponsoring SB 6173 to keep concealed pistol license holders' personal information out of public disclosure.",
+      "subjects": [
+        "concealed pistol license privacy",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:46:42.038Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5a66f85bfd437c572e080f53f5e33e78fd469239046cd1f516fc34781ecda29e",
+      "kind": "own-words",
+      "url": "https://philfortunato.src.wastateleg.org/senate-presidents-gun-ban-opening-salvo-2nd-amendment/",
+      "date": "2017-11-29",
+      "date_precision": "day",
+      "passage": "“As presiding officer of the Senate, the lieutenant governor can do many things to preserve the decorum of the proceedings,” said Fortunato. “However, violating the public’s constitutional rights is not one of those. People lawfully carrying a concealed weapon is not a disruption and this action is unenforceable for numerous reasons that I’ve pointed out in my letter.”",
+      "note": "Release on his letter objecting to a rule banning firearms from the Senate public gallery.",
+      "subjects": [
+        "guns in the Senate gallery",
+        "places where carry is allowed",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:46:42.038Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0a215c844d1eb2aa92ce590953b8bec9ff0bc82abc7cf98b4e78c3198583b2b0",
+      "kind": "record",
+      "url": "https://philfortunato.src.wastateleg.org/fortunato-introduces-legislation-protect-privacy-concealed-pistol-license-holders/",
+      "date": "2018-01-11",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-6173-2018",
+      "act": "sponsor",
+      "note": "Co-sponsored SB 6173, which would clarify that concealed pistol license holders' information is shielded from public disclosure. Sponsorship known from his release; sponsor list not checked on the legislature site.",
+      "subjects": [
+        "concealed pistol license privacy",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:46:42.038Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "49b84b51c0a5a9f8b5afa56d78ccee45240c6dd597c0e4b251f28920c239a6bc",
+      "kind": "record",
+      "url": "https://philfortunato.src.wastateleg.org/fortunato-opposes-unconstitutional-permit-purchase-legislation/",
+      "date": "2025-04-14",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1163-2025",
+      "act": "other",
+      "motion": "Floor amendments to HB 1163 offered by Fortunato",
+      "note": "Per his release, one amendment (exempting armed private investigators and armed security guards from the training requirement) was adopted; amendments exempting concealed carry holders and reimbursing costs if the bill is struck down were rejected.",
+      "subjects": [
+        "permit to buy a gun",
+        "training requirement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:46:42.038Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permit to purchase a firearm",
+        "magazine limits and storage rules",
+        "training requirements for gun owners",
+        "concealed pistol license privacy",
+        "guns in the Senate gallery",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "his Senate site philfortunato.src.wastateleg.org: 2nd Amendment tag page and four gun posts read",
+        "sponsor list: covered by bulk bill data (legislature pages not opened)",
+        "blocked: https://ballotpedia.org/Phil_Fortunato (returned a near-empty page)",
+        "one news search on name plus Second Amendment; one search on 2026 ballot status",
+        "2026 ballot status not confirmed from a page I fetched: a search result listed him as a 31st District senate candidate in the 2026-08-04 primary, but I did not fetch it and found no general-election page",
+        "not reviewed: https://tvw.org/video/senator-phil-fortunato-news-conference-2023011226 (video)",
+        "not reviewed: the April 2026 gun-control video itself (only its written summary was read)",
+        "no separate campaign site, vote411 or ontheissues pages checked"
+      ],
+      "found": 9,
+      "at": "2026-11-13T20:46:42.038Z",
+      "by": "source-collector"
+    }
+  ]
 }

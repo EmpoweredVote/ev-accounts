@@ -124,5 +124,61 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on firearm types or magazines",
+        "background checks and permits",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "general gun rights and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official House caucus site: biography page names him as representing the Olympic Peninsula, no gun content; site search for 'gun' returned nothing; site frozen since 2026-05-04",
+        "https://ivoterguide.com/candidate/81768/race/34977/election/1502 (shows him on the 2026-11-03 general election ballot, House District 24 Pos. 1; gun questionnaire item left unanswered)",
+        "blocked: https://ballotpedia.org/Adam_Bernbaum (403)",
+        "web search on name plus gun words: nothing on the subject",
+        "campaign site: not found by search, not reviewed",
+        "sponsor list: covered by bulk bill data",
+        "nothing on the subject: own-words statements, press releases, news quotes"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:35:43.082Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "permit to purchase",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://housedemocrats.wa.gov/Bernbaum/ (member site; confirms 24th District Position 1 seat; site frozen from 2026-05-04 until after general election; nothing on the subject)",
+        "https://housedemocrats.wa.gov/tmp/sites/85/2026/04/2026-session-report-24th-District.pdf (2026 session report; nothing on the subject)",
+        "https://housedemocrats.wa.gov/bernbaum/news/ and /e-newsletter/ (no gun or firearm text)",
+        "https://ivoterguide.com/race/34977/election/1502 (shows Bernbaum on the 2026 general-election ballot for 24th District Position 1; no own gun answers)",
+        "https://en.wikipedia.org/wiki/Adam_Bernbaum (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Adam_Bernbaum (403)",
+        "blocked: https://goodparty.org/candidate/adam-bernbaum/washington-house-of-representatives-district-24-position-1 (429)",
+        "campaign site: could not locate a working address; guessed domains did not resolve",
+        "news search on name plus gun words (two searches): no quote from him on the subject",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://www.peninsuladailynews.com/?p=269936 (candidate forum story, date unclear)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:52:48.790Z",
+      "by": "source-collector"
+    }
+  ]
 }

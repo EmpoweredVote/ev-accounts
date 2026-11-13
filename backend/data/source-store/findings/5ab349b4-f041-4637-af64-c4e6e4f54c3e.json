@@ -1754,5 +1754,35 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "background checks",
+        "red-flag orders",
+        "carry permits",
+        "general Second Amendment statements",
+        "restrictions on gun ownership"
+      ],
+      "places": [
+        "scope: a 2026 election-results page lists Drew C MacEwen in the Senate District 35 race and shows a winner flag (https://branch.vote/races/2026-washington-primary-election-wa-state-state-senator-wa-state-legislative-35); a search result gave a preliminary primary share of 51.70 percent; official results page not confirmed",
+        "On the Record (0 appearances, 0 candidate-name matches)",
+        "campaign/caucus member site https://drewmacewen.src.wastateleg.org/ : nothing on the subject",
+        "caucus site search https://src.wastateleg.org/?s=MacEwen+firearm : nothing on the subject",
+        "not reviewed: https://src.wastateleg.org/?p=8553 (audio-only 2023-04-11 radio interview on KMAS tagged firearms bans; no transcript, only a one-line summary by the caucus, not his words)",
+        "blocked: https://ballotpedia.org/Drew_MacEwen (403)",
+        "https://ivoterguide.com/candidate/24154/race/18096/election/984 : gun questions shown as did not answer",
+        "https://thecandidate.com/states/wa/legislature/senate/35/drew-macewen : nothing on the subject",
+        "https://en.wikipedia.org/wiki/Drew_MacEwen : nothing on the subject",
+        "news search on name plus gun words: nothing on the subject",
+        "not reviewed: https://arcwa.org/wp-content/uploads/2026/07/Drew_MacEwen.pdf (disability-advocacy survey, not fetched; unlikely on subject)",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:39:48.843Z",
+      "by": "source-collector"
+    }
+  ]
 }

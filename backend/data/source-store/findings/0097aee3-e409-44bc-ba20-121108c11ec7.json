@@ -2593,7 +2593,116 @@
           "sha256": "0c3652de4fd43a1d3a9fdcdf0a6177219b48711dcf3786ff5e1b35a8a13717be"
         }
       }
+    },
+    {
+      "id": "ae51d4d7404a8f5f134de9c5457efd230219bc346a255464648e43e7e8e9189d",
+      "kind": "own-words",
+      "url": "https://senatedemocrats.wa.gov/dhingra/2021/04/21/dhingra-shooting-shows-need-for-action-to-stop-gun-violence/",
+      "date": "2021-04-21",
+      "date_precision": "day",
+      "passage": "In Washington state, the people have taken the lead by voting to allow for guns to be removed from people who are a danger to themselves or others.",
+      "note": "Statement issued in her name after the Indianapolis shooting. She also says the state passed a bill creating an Office of Gun Safety and Violence Prevention, and that violence should be addressed before shots are fired.",
+      "subjects": [
+        "red-flag or extreme-risk orders",
+        "gun violence prevention office",
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:44:18.862Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0b1c8b2a95b4aa2f587bf73958e4e8684ec6304b0e7d34222a0a2f10ca345564",
+      "kind": "own-words",
+      "url": "https://senatedemocrats.wa.gov/dhingra/2021/04/21/dhingra-shooting-shows-need-for-action-to-stop-gun-violence/",
+      "date": "2021-04-21",
+      "date_precision": "day",
+      "passage": "We need to understand where violence occurs in our communities and how we can address it. We don’t need to wait until shots have been fired — we need to intervene to prevent violence before it happens.",
+      "note": "Same statement: she calls for understanding where violence occurs and intervening before it happens.",
+      "subjects": [
+        "gun violence prevention",
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:44:18.862Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0be3b8b241981399ded642fc5ab58ef91d503cfca0188e0e264f29f30091e636",
+      "kind": "own-words",
+      "url": "https://senatedemocrats.wa.gov/dhingra/2020/02/10/improved-data-could-help-washington-state-get-ahead-of-gun-violence-says-bill-sponsor/",
+      "date": "2020-02-10",
+      "date_precision": "day",
+      "passage": "“This is a way of getting ahead of gun violence in our state,”",
+      "note": "A Senate site story quotes her as prime sponsor describing her gun violence data-collection bill. The story is written about her, with her quoted.",
+      "subjects": [
+        "gun violence data collection",
+        "gun violence prevention office"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:44:18.862Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1bb8f65626dd486e7839d0a05a79ca02c22a010d1cc3ddf667bce000d474ffcd",
+      "kind": "own-words",
+      "url": "https://senatedemocrats.wa.gov/dhingra/2026/03/18/what-we-accomplished-this-session/",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "SB 5974 ensures law enforcement leaders are held to the same standards of professionalism and accountability that we ask of every other officer in the state. It will now be clear that a sheriff’s duty, first and foremost, is to uphold the Constitution and the laws of Washington state, including the Keep Washington Working Act, which is critical for the safety of our immigrant community as well as ensuring weapons are removed from domestic violence abusers.",
+      "note": "Her 2026 session recap describes SB 5974 (sheriff standards), which she ties to the state law on removing weapons from domestic violence abusers.",
+      "subjects": [
+        "removing weapons from domestic violence abusers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:44:18.862Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun violence data and prevention office",
+        "removing guns from people who are a danger (extreme risk orders)",
+        "weapons removal from domestic violence abusers",
+        "gun safety laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract script found no meetings)",
+        "scope check: a web search listing shows her as the sitting 45th District senator running for re-election in 2026 (primary 2026-08-04, general 2026-11-03); I could not fetch a results page, so ballot status rests on that search listing only",
+        "official Senate site search for 'gun' (https://senatedemocrats.wa.gov/dhingra/?s=gun): reviewed the 2021 shooting statement and the 2020 data-bill story; other listed items (2020 Senate vote and signing stories, 2020 threats-and-guns penalties story, outside-outlet links) not opened: not reviewed",
+        "official Senate site 2026 session recap",
+        "blocked: https://ballotpedia.org/Manka_Dhingra (403)",
+        "one news/web search on name plus firearm words: nothing on the subject by her beyond the official site",
+        "campaign site: not reviewed (no campaign site located)",
+        "other URL patterns in the researcher agent file (vote411, ontheissues, Vote Smart): not reviewed",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 4,
+      "at": "2026-11-13T20:44:18.862Z",
+      "by": "source-collector"
+    }
+  ]
 }

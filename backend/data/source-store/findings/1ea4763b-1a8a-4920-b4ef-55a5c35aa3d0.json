@@ -1924,5 +1924,63 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on firearm types or large magazines",
+        "background checks and permits to buy",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general statements on gun rights or gun safety laws"
+      ],
+      "places": [
+        "scope: https://branch.vote/races/2026-washington-general-election-wa-state-state-representative-wa-state-legislative-2-post-1 lists Andrew Barkis on the 2026 general-election ballot for House District 2, Position 1, against William Dehnel",
+        "On the Record (0 meetings)",
+        "blocked: https://electandrewbarkis.org/ (campaign site returned HTTP 500; issues page and ?p=562 also HTTP 500)",
+        "blocked: https://ballotpedia.org/Andrew_Barkis (HTTP 403)",
+        "https://votesmart.org/candidate/biography/167730 (nothing on the subject)",
+        "https://hroc.us/candidate/andrew-barkis/ (HTTP 404, nothing)",
+        "https://src.wastateleg.org/barkis/ (HTTP 404, nothing)",
+        "two news searches on name plus gun words: no statement by him on firearms found",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: the House caucus official member page and news archive (no fetch of an own-words gun statement was reached)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:35:59.358Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and Second Amendment statements",
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings, 0 candidates by name)",
+        "scope: a ballot-listing page shows Andrew Barkis, 2nd Legislative District Position 1, on the 2026-11-03 general-election ballot (https://branch.vote/races/2026-washington-general-election-wa-state-state-representative-wa-state-legislative-2-post-1); fetch tool summarised it, state results page not reachable",
+        "blocked: https://www.andrewbarkis.com (redirects to a lander page with no content)",
+        "blocked: https://housegop.wa.gov/barkis/ (no connection)",
+        "blocked: https://ballotpedia.org/Andrew_Barkis (empty page returned to curl and fetch tool)",
+        "not reviewed: https://results.vote.wa.gov 2026 primary and general pages (returned no text)",
+        "web search 1: name plus gun/Second Amendment words, nothing about him",
+        "web search 2: name plus district, gun bill: only bill-tracker pages for bulk-covered sponsorships, nothing in his own words",
+        "web search 3: 2026 ballot status, confirmed on ballot",
+        "sponsor list: covered by bulk bill data",
+        "nothing on the subject in his own words found in the places reached"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:52:48.767Z",
+      "by": "source-collector"
+    }
+  ]
 }

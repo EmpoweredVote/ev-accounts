@@ -1853,5 +1853,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "background checks",
+        "red flag orders",
+        "ghost guns",
+        "carry permits",
+        "general gun safety / Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 sources)",
+        "official House caucus site, welcome page https://housedemocrats.wa.gov/thai/ (confirms My-Linh Thai, 41st District; nothing on the subject; site content frozen since 2026-05-04)",
+        "official site news list https://housedemocrats.wa.gov/thai/news/ (nothing on the subject)",
+        "not reviewed: https://housedemocrats.wa.gov/tmp/sites/54/2026/05/46990_Thai_EOS_2026.pdf (2026 session report; page summary mentioned no firearms, PDF not read)",
+        "blocked: https://ballotpedia.org/My-Linh_Thai (empty page)",
+        "https://www.bellevuereporter.com/?p=71928 (news story: she filed for 2026 re-election to Position 2, primary 2026-08-04, general 2026-11-03; no gun content)",
+        "not reviewed: 2026 primary results (https://results.vote.wa.gov/results/20260804/legislative-district-41-state-representative-pos-2.html and legislativedistrict41.html both returned 404); general-ballot status not confirmed by a results page",
+        "campaign site: not found in search",
+        "web searches (3): name plus gun/firearm words returned nothing in her own words",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:45:34.329Z",
+      "by": "source-collector"
+    }
+  ]
 }

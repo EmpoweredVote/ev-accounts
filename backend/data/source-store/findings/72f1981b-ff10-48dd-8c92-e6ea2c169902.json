@@ -1173,5 +1173,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "high-capacity magazines",
+        "check every gun buyer",
+        "red flag orders",
+        "carry permits",
+        "Second Amendment general statements",
+        "ghost guns"
+      ],
+      "places": [
+        "identity: the Senate campaign committee page https://www.srcc.org/jeremie-dufault names him as a sitting 15th District House member running for the 15th District Senate seat; whether he is on the 2026 general ballot is not confirmed by any page I could read (results page https://results.vote.wa.gov/results/20261103/ returned 404; the state campaign-finance page https://www.pdc.wa.gov/node/26285 did not show his name in the fetched text)",
+        "On the Record (0 appearances)",
+        "the campaign committee page https://www.srcc.org/jeremie-dufault: nothing on the subject",
+        "blocked: https://ballotpedia.org/Jeremie_Dufault (403)",
+        "news story https://www.fox41yakima.com/?p=828974 (Senate run announcement): nothing on the subject",
+        "web search: name plus Second Amendment, gun, firearm, magazine, assault weapons, permit: no own words by him found",
+        "sponsor list: covered by bulk bill data",
+        "roll-call pages: covered by bulk bill data",
+        "not reviewed: official House member page and the House caucus site (not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:41:47.826Z",
+      "by": "source-collector"
+    }
+  ]
 }

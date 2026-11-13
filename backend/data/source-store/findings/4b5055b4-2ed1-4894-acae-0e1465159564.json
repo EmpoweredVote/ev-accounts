@@ -206,7 +206,59 @@
           "sha256": "94b984934095112c128ea57c3a6b6d0f8c03ee5eefd39970afb718b33e489762"
         }
       }
+    },
+    {
+      "id": "693ad8ab528832d73afb62558a056606b57e8ee7c30c9a4d49cfd007a5bb6c75",
+      "kind": "own-words",
+      "url": "https://katu.com/news/politics/washington-lawmakers-3d-ghost-guns-olympia-federal-prosecutors-printer-manufacturing-operations-chinatown-international-district-cid-cnc",
+      "date": "2026-01-21",
+      "date_precision": "day",
+      "passage": "With a 3D printer that costs a few hundred and a digital file that can be downloaded online, someone can now manufacture an untraceable firearm at home. No background check, no serial number, and no accountability.",
+      "note": "Quoted by KATU/KOMO news story (published date given) at the House committee hearing on his HB 2320, describing home manufacture of untraceable guns with 3D printers.",
+      "subjects": [
+        "home-made unserialised (ghost) guns",
+        "3D-printed guns",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:45:44.909Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "unserialised 3D-printed (ghost) guns",
+        "digital gun-making files",
+        "background checks",
+        "gun restrictions for public safety",
+        "assault-style weapons",
+        "carry permits",
+        "red-flag orders",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://ivoterguide.com/candidate/87891/race/28867/election/1435 (confirms 2026 general ballot, State Rep. Dist. 48 Pos. 1; questionnaire gun question shows 'Did not answer')",
+        "blocked: https://housedemocrats.wa.gov/salahuddin/ (403, including site search pages)",
+        "blocked: https://geekwire.com/2026/proposals-take-aim-at-3d-printing-tech-to-strengthen-washington-state-laws-against-ghost-guns (403)",
+        "House caucus release pages (2026-01-16 session start, 2026-02-23, 2026-03-03): fetched, nothing on the subject",
+        "campaign site: could not be reached (https://osmanforwa.com, no response)",
+        "legislature sponsor lists and roll calls: covered by bulk bill data",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Osman_Salahuddin",
+        "web search (2 searches): news coverage of HB 2320; one news story with a direct quote found",
+        "not reviewed: https://www.everytown.org/press/washington-governor-signs-landmark-bill-to-address-threat-of-3d-printed-ghost-guns/ (no quote by him found in the text)"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:45:44.909Z",
+      "by": "source-collector"
+    }
+  ]
 }

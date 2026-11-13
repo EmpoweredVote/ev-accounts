@@ -1569,7 +1569,100 @@
           "sha256": "3243a76da2b60edc66d013a33ec42ec3a90429c95317177eacd70e4d0463e69a"
         }
       }
+    },
+    {
+      "id": "341832208314a5f1b3cca16982f52d51189a6c2d07de8262a0f9edb9cac02c52",
+      "kind": "own-words",
+      "url": "https://www.fox13seattle.com/news/fourth-year-in-the-legislature-and-rep-liz-berrys-main-purpose-is-to-pass-gun-laws",
+      "date": "2024-01-16",
+      "date_precision": "day",
+      "passage": "With these great rights come great responsibility. We want to make sure these deadly weapons are getting into the right hands,",
+      "note": "Quoted by a TV news story (FOX 13 Seattle) on her gun bills: the ghost-gun ban, and the safety-training and 10-day waiting period already law.",
+      "subjects": [
+        "safety training and waiting period before buying a gun",
+        "ban on untraceable home-made guns",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:41.436Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "df6bb62815d7c870f345749882e1e10a2ac43eea982d70cc471d77be499d71f3",
+      "kind": "own-words",
+      "url": "https://www.fox13seattle.com/news/fourth-year-in-the-legislature-and-rep-liz-berrys-main-purpose-is-to-pass-gun-laws",
+      "date": "2024-01-16",
+      "date_precision": "day",
+      "passage": "Two hundred thousand to 500,000 guns are stolen every year in America and the number one source of stolen guns are parked cars,",
+      "note": "Quoted by the same news story in support of her bill to require owners to report lost or stolen guns within 24 hours. The story also says she was pushing a permit-to-purchase system.",
+      "subjects": [
+        "report lost or stolen guns",
+        "permit to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:41.436Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43aa836753362a02e02181c7991f07c74259e14948d464c2ce9864922306f000",
+      "kind": "own-words",
+      "url": "https://www.fox13seattle.com/news/fourth-year-in-the-legislature-and-rep-liz-berrys-main-purpose-is-to-pass-gun-laws",
+      "date": "2024-01-16",
+      "date_precision": "day",
+      "passage": "We always expect to be challenged in the courts with our laws. We’ve been successful so far and hope to prevail,",
+      "note": "Quoted by the news story on expected court challenges to her permit-to-purchase proposal and other gun laws.",
+      "subjects": [
+        "permit to buy a gun",
+        "court challenges to gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:41.436Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on a type of firearm",
+        "background checks and permits to buy",
+        "waiting period and safety training",
+        "lost or stolen gun reporting",
+        "ghost guns",
+        "carry rules",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "candidacy confirmed: https://www.ballotready.org/people/liz-berry lists her as a candidate for the 2026 general election, House District 36 Position 2",
+        "web search (2 searches): results were mostly the House caucus site, a TV news story and a state news site",
+        "blocked: https://housedemocrats.wa.gov/berry/2024/03/26/24-hour-reporting-of-lost-or-stolen-firearms-becomes-law-in-washington-state/ (403)",
+        "blocked: https://housedemocrats.wa.gov/berry/2023/04/25/governor-signs-historic-gun-safety-legislation-into-law/ (403)",
+        "blocked: https://ballotpedia.org/Liz_Berry (403)",
+        "blocked: https://washingtonstatestandard.com/2025/01/31/plans-for-new-gun-regulations-progress-in-washington-legislature/ (bot check)",
+        "not reviewed: https://housedemocrats.wa.gov/berry/?p=262 (caucus release on a Council of State Governments award, other caucus pages seen only in search results)",
+        "not reviewed: campaign site, newsletter PDF https://housedemocrats.wa.gov/tmp/sites/64/2024/05/42423_Berry-2024-EOS-Newsletter_WEB.pdf, questionnaires",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 3,
+      "at": "2026-11-13T20:43:41.436Z",
+      "by": "source-collector"
+    }
+  ]
 }

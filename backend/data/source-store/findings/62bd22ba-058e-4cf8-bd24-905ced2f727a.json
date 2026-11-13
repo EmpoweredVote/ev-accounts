@@ -1788,5 +1788,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Joe_Schmick (empty/403 on fetch; 2026 candidacy for District 9 Position 2 seen only in web search results, not confirmed from a fetched page)",
+        "blocked: https://housegop.wa.gov/schmick/ (no response)",
+        "official site search for firearm on src.wastateleg.org/schmick: nothing on the subject (empty result)",
+        "https://ivoterguide.com/candidate/23966/race/34948/election/1502: 2026 primary voter guide; the gun-restrictions question is marked 'Did not answer', so no own words",
+        "web search on name plus gun/Second Amendment words: nothing on the subject",
+        "web search for 2026 general election result/filing: no 2026 confirmation beyond Ballotpedia listing",
+        "not reviewed: campaign site (none found)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:41:38.503Z",
+      "by": "source-collector"
+    }
+  ]
 }

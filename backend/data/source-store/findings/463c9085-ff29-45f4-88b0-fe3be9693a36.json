@@ -333,5 +333,68 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "secure storage",
+        "Second Amendment / gun safety general statements",
+        "restrictions on gun ownership"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Greg_Nance (403)",
+        "blocked: https://housedemocrats.wa.gov/nance/ (403)",
+        "blocked: https://app.leg.wa.gov/ (403)",
+        "sponsor list: covered by bulk bill data",
+        "scope: a Kitsap Daily News story (2026-07-08) names him as the incumbent in the 23rd District Position 2 race, and a voter-guide profile lists him on the 2026-11-03 general ballot; the official 2026 primary results page returned no candidate data, so advancement is not confirmed there",
+        "https://ivoterguide.com/candidate/80852/race/34976/election/1502 (questionnaire gun question shown as 'Did not answer'; lists an advocacy-group endorsement and 2024 scorecard, which are third-party, not his words)",
+        "https://www.kitsapdailynews.com/2026/07/08/rep-nance-faces-two-challengers-in-23rd-ld-position-2-primary/ (candidate Q&A: nothing on the subject)",
+        "https://washingtonstatestandard.com/voter-guides/contests/washington-state-house-district-23-2026-primary/ (fetched, no usable text on the subject)",
+        "news search on name plus gun words: nothing in his own words",
+        "not reviewed: https://app.legiplex.com/profile/greg-nance-17475/legislation (search lead showing other gun bills, e.g. HB 1152, HB 1963, HB 2332; not fetched, sponsorships come from bulk bill data)",
+        "not reviewed: https://www.cascadiadaily.com/2022/oct/07/gun-legislation-splits-candidates-neatly-but-not-perfectly-by-party-lines/ (2022 story, before he held office)",
+        "not reviewed: campaign site (none found)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:40:36.728Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "ghost guns",
+        "carry permits",
+        "Second Amendment",
+        "gun safety laws general statement"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "https://www.kitsapdailynews.com/?p=123354 (primary candidate Q&A, fetched: confirms Nance ran in the 2026 23rd District Position 2 primary; his answers cover ferries, Puget Sound, cost of living; nothing on the subject)",
+        "https://ivoterguide.com/candidate/80852/race/34976/election/1502 (fetched: lists a gun-safety group endorsement; the Second Amendment question is marked 'Did not answer'; no own words)",
+        "web search: Nance gun safety / firearms (no own words found; leads only: scorecard and vote-tracking pages)",
+        "web search: 2026 primary / general result (could not confirm he is on the November ballot; no 2026 results page found; results.vote.wa.gov 2026 URL returned 404)",
+        "blocked: https://ballotpedia.org/Greg_Nance",
+        "blocked: https://housedemocrats.wa.gov/nance/",
+        "blocked: https://washingtonstatestandard.com/voter-guides/contests/washington-state-house-district-23-2026-primary/",
+        "blocked: https://justfacts.votesmart.org/candidate/212759",
+        "not reviewed: campaign site (no address found in search results)",
+        "not reviewed: https://gunresponsibility.org/wp-content/uploads/2024/05/2024-Scorecard.pdf (third-party scorecard, not own words)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:52:48.775Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -2220,7 +2220,54 @@
           "sha256": "894ebc713ee3c9f2a3dc219b60fa838be171cd6738ecc83ae9e9d50c252e11b5"
         }
       }
+    },
+    {
+      "id": "5bb0771b03601eb63c5ee9558c76b07e4ebdb0da47862122c9320b99aab24d76",
+      "kind": "own-words",
+      "url": "https://www.thegunmag.com/?p=26505",
+      "date": "2023-01-27",
+      "date_precision": "day",
+      "passage": "There’s just no way to say it, the permit is a bold and brash impairment of rights. They’re just looking for a fight.",
+      "note": "Quoted by a gun-rights magazine (telephone interview) on the purchase-permit bill HB 1143. He also said the permit and the semi-auto ban bill (HB 1240) are of \"constitutional dubious nature\" and that pressing them suggests \"an ideological belief that Bruen is wrong\" (the article prints \"anideological\").",
+      "subjects": [
+        "permit to buy a gun",
+        "ban on assault-style guns",
+        "Bruen and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:41:32.174Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permit to buy a gun",
+        "ban on assault-style guns",
+        "magazine limits",
+        "general statements on gun rights and Bruen",
+        "state preemption of local gun rules"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "ballot status: the branch.vote 2026 general-election page for WA House District 19 Position 1 lists Jim Walsh and Kevin Moynihan (https://branch.vote/races/2026-washington-general-election-wa-state-state-representative-wa-state-legislative-19-post-1)",
+        "blocked: https://ballotpedia.org/Jim_Walsh_(Washington) (403)",
+        "official site and campaign site (jimwalsh.org): not reviewed: https://jimwalsh.org",
+        "sponsor list: covered by bulk bill data",
+        "web search: name plus gun subject words (one result used: a 2023 gun-rights magazine interview)",
+        "not reviewed: https://hroc.us/?p=3955 (a report of a floor debate on magazine limits; fetched, but no Walsh text could be read from the page, so nothing saved)",
+        "other news and questionnaire searches: nothing further saved"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:41:32.174Z",
+      "by": "source-collector"
+    }
+  ]
 }

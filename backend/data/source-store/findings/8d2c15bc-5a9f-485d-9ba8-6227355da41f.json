@@ -1,0 +1,31 @@
+{
+  "politician_id": "8d2c15bc-5a9f-485d-9ba8-6227355da41f",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "Second Amendment and gun safety laws in general"
+      ],
+      "places": [
+        "scope: a web search result and a voter guide list her in the 2026 Washington House District 17 Position 2 race, primary and general; result of the 2026-11-03 general not checked",
+        "On the Record (0 meetings)",
+        "campaign site https://electdianaperez.com (home page has a 'Keeping People Safe' section on public safety, with nothing on guns; /issues returned no text)",
+        "https://ivoterguide.com/candidate/93039/race/34964/election/1502 (her answer to the gun-restrictions question is listed as not answered)",
+        "blocked: https://washingtonstatestandard.com/voter-guides/contests/legislative-district-17-house-position-2/",
+        "Ballotpedia (https://ballotpedia.org/Diana_Perez): fetch returned no content",
+        "news search on her name plus gun words: nothing on the subject",
+        "she is a Vancouver, WA city councilor, not a legislator: sponsor list: covered by bulk bill data; no council gun ordinance found",
+        "not reviewed: arcwa.org questionnaire PDF https://arcwa.org/wp-content/uploads/2026/06/Diana_Perez-1.pdf"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:39:14.919Z",
+      "by": "source-collector"
+    }
+  ]
+}

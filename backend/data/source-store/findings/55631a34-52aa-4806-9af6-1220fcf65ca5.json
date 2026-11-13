@@ -911,5 +911,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "waiting periods and safety training",
+        "red-flag orders",
+        "carry permits",
+        "ghost guns",
+        "general gun rights / Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House caucus member page https://housedemocrats.wa.gov/bronoske/ (no gun items; site search returned nothing on the subject)",
+        "campaign site: none found",
+        "blocked: https://ballotpedia.org/Dan_Bronoske (403)",
+        "ivoterguide profile https://ivoterguide.com/candidate/54493/race/34986/election/1502 (confirms 2026 general-election candidacy for WA House District 28 Pos. 2; Second Amendment questionnaire item shows 'Did not answer'; a gun-safety group scorecard rating is a third-party grade, not saved)",
+        "sponsor list: covered by bulk bill data",
+        "news search on name plus firearm words (nothing in his own words)",
+        "news search on 2026 ballot status (no 2026 result totals found)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:38:00.544Z",
+      "by": "source-collector"
+    }
+  ]
 }

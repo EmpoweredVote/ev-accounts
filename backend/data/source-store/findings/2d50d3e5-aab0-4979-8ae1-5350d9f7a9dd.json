@@ -124,5 +124,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or large-capacity magazines",
+        "background checks, permits, waiting periods, minimum ages",
+        "red-flag orders",
+        "ghost guns and federal agency gun rules",
+        "carry permits and open carry",
+        "repeal of gun laws",
+        "general Second Amendment or gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page https://leg.wa.gov/legislators/member/35416 (confirms Representative Joshua Penner; nothing on the subject; sponsor list: covered by bulk bill data)",
+        "campaign site https://votepenner.com/ (home page reviewed; nothing on the subject)",
+        "blocked: https://briefing.votepenner.com/",
+        "blocked: https://ballotpedia.org/Josh_Penner",
+        "blocked: https://ballotpedia.org/Josh_Penner_(Washington)",
+        "web search: name plus Second Amendment/firearms (nothing on the subject by him)",
+        "web search: campaign plus gun/firearms (nothing on the subject by him)",
+        "web search: 2026 primary results (not found; a search summary says he filed for the 2026 primary; general-election ballot status not independently confirmed)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:42:19.128Z",
+      "by": "source-collector"
+    }
+  ]
 }

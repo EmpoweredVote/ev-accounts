@@ -1519,5 +1519,59 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "general statements on gun rights and gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status: not confirmed. Search results show him as a declared 2026 candidate for state Senate, district 13 (primary 2026-08-04), with his House term running to 2027-01-08; no fetched page showed the primary result or a general-election ballot listing",
+        "blocked: https://ballotpedia.org/Alex_Ybarra_(Washington) (403, and the fetch of https://ballotpedia.org/Alex_Ybarra came back empty)",
+        "blocked: https://washingtonstatestandard.com/voter-guides/contests/washington-state-house-district-13-2026-primary/ (403)",
+        "blocked: https://goodparty.org/candidate/alex-ybarra/washington-state-senate-district-13 (429)",
+        "not reviewed: https://results.vote.wa.gov/results/20260804/legislative-district-13-state-senator.html (404 at the guessed address)",
+        "not reviewed: https://pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/candidates/93082 (page loaded, no useful text extracted)",
+        "the House caucus member page: 404 at the guessed address (https://houserepublicans.wa.gov/ybarra/); official site and campaign site not found, so no site search on gun words was done",
+        "two web searches on his name plus gun words: nothing about him on the subject",
+        "sponsor list: covered by bulk bill data",
+        "roll-call pages: covered by bulk bill data",
+        "not searched: news search beyond the above, debate or forum video, questionnaires (search allowance not exhausted, but no source located)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:36:02.344Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "permit to purchase",
+        "check every gun buyer",
+        "red flag orders",
+        "carry permits",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Alex_Ybarra_(Washington) (empty page)",
+        "blocked: https://pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/candidates/93082 (empty page)",
+        "not reviewed: official House caucus site (host did not resolve / unreachable)",
+        "not reviewed: https://www.alexybarra.com (host did not resolve); no campaign site found",
+        "news search on name plus gun words: no quote from him found; a search snippet only suggests a 2026 Senate District 13 run, general-election ballot status not confirmed by a fetched page",
+        "https://www.spokesman.com/stories/2025/mar/09/controversial-permit-to-purchase-gun-bill-clears-w: fetched, he is not quoted"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:52:48.782Z",
+      "by": "source-collector"
+    }
+  ]
 }

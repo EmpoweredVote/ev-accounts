@@ -2003,7 +2003,81 @@
           "sha256": "64954d8900df328780b794e7b82fc13dd8662d27df7e50a9016708ee76c59be4"
         }
       }
+    },
+    {
+      "id": "e139edb6956191f69aa8c46ae9d8d3bc4983d036d80df21da3519796985d7039",
+      "kind": "own-words",
+      "url": "https://senatedemocrats.wa.gov/cleveland/2023/03/30/only-a-few-weeks-left-to-go/",
+      "date": "2023-03-30",
+      "date_precision": "day",
+      "passage": "I want to extend my gratitude to all who participated in our most recent  49th Legislative District town hall. Rep. Monica Stonier, Rep. Sharon Wylie and I discussed everything from health care to housing, and firearm safety to law enforcement training.",
+      "note": "Her legislative newsletter says firearm safety was among the topics at a district town hall, and lists a resident question on whether anything is being done to ban AR-15 rifles. It states no position on the question.",
+      "subjects": [
+        "firearm safety",
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:52:48.792Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "permit to purchase",
+        "red-flag orders",
+        "carrying guns",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate caucus site https://senatedemocrats.wa.gov/cleveland/ (home page confirms Sen. Annette Cleveland, 49th District, since 2013; site search for 'firearm' returned no results; nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Annette_Cleveland (HTTP 403)",
+        "blocked: https://washingtonstatestandard.com/2025/04/15/permit-requirement-for-gun-purchases-clears-washington-senate/ (bot check)",
+        "news search on name plus gun words: no quote from her on the subject found; a gun-responsibility group scorecard is a rating by a third party, not her words or a record, so not saved",
+        "not reviewed: https://columbian.com/news/2024/apr/08/49th-district-lawmakers-hold-contentious-town-hall (page returned no readable text)",
+        "not reviewed: https://columbian.com/news/2024/apr/12/state-sen-annette-cleveland-cites-record-in-health-care-housing-in-bid-to-retain-seat-in-washingtons-49th-district (page returned no readable text)",
+        "not reviewed: https://columbian.com/news/2023/apr/24/clark-county-legislators-see-bills-resolutions-pass (page returned no readable text)",
+        "not reviewed: https://columbian.com/news/2022/mar/10/gun-measures-resonate-as-washington-legislative-session-ends"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:36:40.299Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "permit to purchase",
+        "firearm safety",
+        "background checks",
+        "red flag orders",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate caucus site (https://senatedemocrats.wa.gov/cleveland/): confirms sitting 49th District senator; home page and a site search for firearm; one newsletter touches the subject",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Annette_Cleveland (fetch returned an empty page)",
+        "news search on name plus gun-policy words: no passages in her own words found; 2024 gun-policy group scorecard PDF and news stories on permit-to-purchase and assault-weapon bills were leads only, not fetched",
+        "not reviewed: https://senatedemocrats.wa.gov/cleveland/news-releases/ (listing page not opened)",
+        "campaign site and other URL-pattern pages: not reviewed",
+        "not reviewed: the town hall audio linked in the newsletter"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:52:48.792Z",
+      "by": "source-collector"
+    }
+  ]
 }

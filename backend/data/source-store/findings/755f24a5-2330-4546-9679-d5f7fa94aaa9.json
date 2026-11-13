@@ -1866,7 +1866,55 @@
           "sha256": "f9367415be046e9386e56cfb0fc1ab0a2d80121077b0ededb1133ac3eabedd38"
         }
       }
+    },
+    {
+      "id": "d829d356ac5f26e7f53f12a4e5aa5da2920ed6b2aa856513a34032ea21400754",
+      "kind": "own-words",
+      "url": "https://columbiabasinherald.com/news/2025/jan/29/wa-gun-control-bills-spark-debate",
+      "date": "2025-01-29",
+      "date_precision": "day",
+      "passage": "I just think they're going down the wrong path,",
+      "note": "Quoted by the Columbia Basin Herald, speaking to reporters about the 2025 package of gun bills, which included a permit-to-purchase bill (HB 1163), storage rules and limits on carrying in parks and public buildings. The quote is a fragment, not a full sentence; the story's date is taken from its URL.",
+      "subjects": [
+        "permit to purchase a gun",
+        "gun storage rules",
+        "carrying guns in public buildings and parks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:50:28.608Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permit to purchase a gun",
+        "ban on assault-style guns and large magazines",
+        "background checks",
+        "Second Amendment general statements",
+        "carry rules"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the senator's official Senate caucus site search for firearm: no gun pages returned",
+        "https://src.wastateleg.org/blog/src-air-sen-john-braun-lars-larson-show-19 (caucus radio-appearance post; page text has only a title, no transcript or quote)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/John_Braun",
+        "one web search on name plus gun words (mostly returned a different person in another state); one search on name plus permit-to-purchase and magazine ban",
+        "https://columbiabasinherald.com/news/2025/jan/29/wa-gun-control-bills-spark-debate (news story quoting him)",
+        "https://wjla.com/news/nation-world/measure-to-ban-high-capacity-gun-magazines-heads-to-gov-inslee-who-plans-to-sign-it (news story; no usable quote of him found in fetched text)",
+        "campaign site, URL-pattern pages and Lars Larson audio: not reviewed"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:50:28.608Z",
+      "by": "source-collector"
+    }
+  ]
 }

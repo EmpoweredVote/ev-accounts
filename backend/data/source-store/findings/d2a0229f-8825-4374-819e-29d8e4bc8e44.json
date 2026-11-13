@@ -1802,7 +1802,101 @@
           "sha256": "5e37fcaad5fa9b7f3a66dab84c8fe6d9db6254fdc200270c896f43f9763edf4f"
         }
       }
+    },
+    {
+      "id": "5401f5bbd066c65f718133219c8d3ef8d598db765fd4f3a9548d839c3f169c8d",
+      "kind": "own-words",
+      "url": "https://dangriffey.houserepublicans.wa.gov/2025/03/08/35th-district-representatives-fight-to-protect-second-amendment-rights/",
+      "date": "2025-03-08",
+      "date_precision": "day",
+      "passage": "The oppressive nature of this policy is shocking, and I dare say one of the scariest proposals I have seen in my more than 10 years of serving as a state legislator. It goes far beyond just infringing on Washingtonians' Second Amendment rights, including posing significant privacy concerns.",
+      "note": "Quote in his House site release on floor debate over HB 1163 (permit-to-purchase with live-fire training course). He criticises the permit plan and says it infringes on Second Amendment rights and privacy.",
+      "subjects": [
+        "permit to buy a gun",
+        "Second Amendment",
+        "live-fire training requirement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:38:29.651Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6beba5a62d9a552828f7e7d3bbb3f4ac7d0e45e6ea74c7f2a20461c591d67254",
+      "kind": "own-words",
+      "url": "https://dangriffey.houserepublicans.wa.gov/2025/03/08/35th-district-representatives-fight-to-protect-second-amendment-rights/",
+      "date": "2025-03-08",
+      "date_precision": "day",
+      "passage": "Under this policy, an application for a permit-to-purchase is the equivalent of a waiver to the state for all of your medical and mental health records. That level of government overreach that should scare every one of us.",
+      "note": "Quote in the same release; he objects that the permit application waives confidentiality of health records.",
+      "subjects": [
+        "permit to buy a gun",
+        "privacy of health records"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:38:29.651Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d9678ab44c589fc1e61801f216ffcb0fdcc5d461f2ae951a552be8968fda9909",
+      "kind": "own-words",
+      "url": "https://dangriffey.houserepublicans.wa.gov/2025/03/08/35th-district-representatives-fight-to-protect-second-amendment-rights/",
+      "date": "2025-03-08",
+      "date_precision": "day",
+      "passage": "Washington state already has some of the most restrictive gun laws in the nation,",
+      "note": "Quote in the same release; he says state gun laws are already among the most restrictive, and objects that his amendments to exempt veterans, National Guard and reservists were rejected.",
+      "subjects": [
+        "state gun laws general",
+        "permit to buy a gun",
+        "exemption for veterans"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:38:29.651Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permit to buy a gun",
+        "Second Amendment",
+        "gun ownership limits",
+        "firearm background checks",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "his official House site, searched for firearm (one release on the subject)",
+        "blocked: https://src.wastateleg.org/griffey/ (404)",
+        "sponsor list: covered by bulk bill data",
+        "Ballotpedia (page returned empty; nothing on the subject)",
+        "ivoterguide 2026 primary page (race confirmed; gun question unanswered)",
+        "branch.vote 2026 general page (lists him on the Nov 3 2026 ballot; nothing on the subject)",
+        "Wikipedia (nothing on the subject)",
+        "Kitsap Daily News primary story (crime comments only, nothing on guns)",
+        "thecandidate.com (nothing on the subject)",
+        "blocked: https://votesmart.org/public-statement/1270315/issue-position-second-amendment-rights (404)",
+        "web search, one news search on name plus subject words"
+      ],
+      "found": 3,
+      "at": "2026-11-13T20:38:29.651Z",
+      "by": "source-collector"
+    }
+  ]
 }

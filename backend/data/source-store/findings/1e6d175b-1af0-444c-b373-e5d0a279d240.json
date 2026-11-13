@@ -1381,7 +1381,54 @@
           "sha256": "b640663a21ea4a03e59211a19d46dcb96f7e81b22c3d24b294d9b0652d79d401"
         }
       }
+    },
+    {
+      "id": "194dd1fdfd5082be56eae0d9daffb26682ae3b52813e7f20c9dbc8bc11449a0b",
+      "kind": "own-words",
+      "url": "https://senatedemocrats.wa.gov/bateman/2025/10/31/last-legislative-session-and-the-next/",
+      "date": "2025-10-31",
+      "date_precision": "day",
+      "passage": "Gun safety – HB 1163 requires most people who purchase a gun to apply for a permit. Applicants must submit fingerprints and prove they completed a certified firearms safety training program within the last five years or else provide a valid exemption. All applicants undergo a robust background check. This legislation is about saving lives, supporting responsible gun ownership, and building safer communities across Washington. Twelve states have enacted permit-to-purchase laws, and the results are clear: they reduce gun-related deaths, curb gun trafficking, and improve law enforcement officer safety.",
+      "note": "Her newsletter describes HB 1163 (permit to buy a gun, with fingerprints, safety training and background check) and gives her reasons for it.",
+      "subjects": [
+        "permit to buy a gun",
+        "background checks on gun buyers",
+        "gun safety training"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:41:10.155Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permit to buy a gun",
+        "background checks on gun buyers",
+        "gun safety training requirement",
+        "firearm removal from domestic abusers"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate caucus site: biography page confirms Senator Jessica Bateman, 22nd Legislative District",
+        "official Senate caucus site: newsletter of 2025-10-31",
+        "official Senate caucus site: site search for 'firearm' (results page loaded, no extra gun items beyond the newsletter)",
+        "official Senate caucus site: 2026-04-24 post on SB 5974 (a column co-signed by two other senators; not her words, nothing of hers on the subject)",
+        "web search: one news search on name plus gun words (leads only: Alliance for Gun Responsibility 2024 scorecard, Yahoo story on permit-to-purchase; not fetched)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://gunresponsibility.org/wp-content/uploads/2024/05/2024-Scorecard.pdf",
+        "not reviewed: Ballotpedia, campaign site, other URL patterns (allowance not exhausted but no further own-words found in the pages checked)"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:41:10.155Z",
+      "by": "source-collector"
+    }
+  ]
 }

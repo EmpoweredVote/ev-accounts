@@ -1787,5 +1787,61 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "permits and waiting periods",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://ivoterguide.com/candidate/22732/race/34991/election/1502 (2026 voter guide page; lists him for the 2026-11-03 general election, House District 31 Position 1; he did not answer the Second Amendment question)",
+        "https://ivoterguide.com/candidate/22732/race/28833/election/1435 (2024 voter guide page; did not answer the Second Amendment question; nothing else on the subject)",
+        "blocked: https://ballotpedia.org/Drew_Stokesbary (empty page)",
+        "not reviewed: https://src.wastateleg.org/stokesbary/ (404; the House caucus site was not reached, so no site search done)",
+        "web search: name plus firearms/Second Amendment (nothing on the subject)",
+        "web search: name plus assault weapons, magazine, permit-to-purchase (nothing on the subject)",
+        "web search: 2026 election status (confirmed on the 2026 general ballot; his result not checked)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: official site issue pages, campaign site, news archive, floor remarks (not reached)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:39:26.544Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permit to purchase",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "gun rights and the Second Amendment in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: name plus Second Amendment/firearms (nothing on the subject; no result named him)",
+        "web search: name plus permit-to-purchase statement (nothing on the subject)",
+        "a reference encyclopedia page (shows him as House member for the 31st district and House minority leader; shows no 2026 filing, so 2026 ballot status not confirmed)",
+        "blocked: https://ballotpedia.org/Drew_Stokesbary (page came back empty)",
+        "blocked: https://src.wastateleg.org/stokesbary/ (404)",
+        "the House caucus site member page https://houserepublicans.wa.gov/stokesbary/ (nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: campaign site, vote411, ontheissues, interview/debate videos, questionnaires"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:52:48.778Z",
+      "by": "source-collector"
+    }
+  ]
 }

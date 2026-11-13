@@ -2391,7 +2391,61 @@
           "sha256": "f4eef29dc0e7e2fb1a4ea206296cd0b3e3f163b9281195936ce98fe6a17ab772"
         }
       }
+    },
+    {
+      "id": "d303d1fc4998a11fbad0832a1261d9880f930df7914599e040becd650c7cd5b2",
+      "kind": "own-words",
+      "url": "https://housedemocrats.wa.gov/tmp/sites/11/2025/07/45648_Fitzgibbon-EOS-Newsletter_2025.pdf",
+      "date": "2025-07",
+      "date_precision": "month",
+      "passage": "Gun violence in the number one cause of death for children and teens. As a parent, this is a scary statistic and I want safer communities for our children, as I’m sure we all do. That’s why I’m glad we passed HB 1163 this year, which will help keep guns out of the hands of those who may use them to harm themselves or others. It establishes a coordinated system to check eligibility of firearm permitholders and requires a “permit to purchase” that includes participating in safety training and ensuring background checks. Washingtonians have overwhelmingly supported gun safety measures, and this bill is an important way to ensure responsible gun ownership.",
+      "note": "His 2025 end-of-session report, in his name, describing HB 1163 (permit to purchase with training and background checks) and why he backs it. Date is the PDF upload month, approximate.",
+      "subjects": [
+        "permit to purchase a firearm",
+        "check every gun buyer",
+        "keep guns from people who may harm themselves or others",
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:41:38.020Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "permit to purchase a firearm",
+        "keeping guns from people who may harm themselves or others",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "general gun safety statements"
+      ],
+      "places": [
+        "status: listed on the voter guide as a candidate for the 2026-11-03 general election, 34th District Position 2 (https://ivoterguide.com/candidate/24149/race/34998/election/1502); the state results page for the 2026 primary returned 404, so primary result not seen",
+        "On the Record (0 meetings)",
+        "the House caucus member site: blocked: https://housedemocrats.wa.gov/fitzgibbon/ (403)",
+        "blocked: https://housedemocrats.wa.gov/fitzgibbon/?p=39928",
+        "blocked: https://housedemocrats.wa.gov/fitzgibbon/2017/11/27/update-on-gun-safety-and-atlantic-salmon-in-2018/",
+        "blocked: https://housedemocrats.wa.gov/fitzgibbon/2018/03/02/legislative-update-sb-6617-veto-reducing-gun-violence-voter-registration-and-more/",
+        "2025 end-of-session newsletter PDF (read; one gun passage saved)",
+        "legislature bill pages: sponsor list: covered by bulk bill data",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Joe_Fitzgibbon (fetch returned empty page)",
+        "gun-responsibility foundation 2016 page: nothing on the subject from this person (not among signers)",
+        "web search on name plus gun words (one search); campaign site not found; other URL patterns not reviewed for lack of leads"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:41:38.020Z",
+      "by": "source-collector"
+    }
+  ]
 }

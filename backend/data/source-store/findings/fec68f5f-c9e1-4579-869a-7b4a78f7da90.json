@@ -1895,5 +1895,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "Second Amendment",
+        "background checks",
+        "assault-style weapons and magazines",
+        "red flag orders",
+        "concealed carry",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings, 0 candidates)",
+        "https://curtisking.src.wastateleg.org/ site search for gun, firearm, Second Amendment: all three returned zero results (page loaded, HTTP 200)",
+        "https://leg.wa.gov/legislators/member/13199 (official legislature member page: confirms Senator Curtis King; nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Curtis_King (fetch returned empty content)",
+        "web search: two searches on name plus gun/Second Amendment words; no statement by him found; one 2017 news story (https://www.nwpb.org/2017/03/23/tearful-testimony-senators-consider-crackdown-prohibited-gun-buyers) does not name him, nothing saved",
+        "not reviewed: https://senatorcurtisking.src.wastateleg.org (no connection; wrong host, the real site is curtisking.src.wastateleg.org)",
+        "not reviewed: https://curtisking.src.wastateleg.org/wp-content/uploads/sites/24/2023/11/40855_King_EOS_Newsletter_2023.pdf and the 2024 newsletter PDF (end-of-session newsletters, not opened)",
+        "not reviewed: campaign site, vote411, Vote Smart; no 2026 ballot check made (his seat is not up in 2026 per term cycle, unverified), treated as sitting senator"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:37:58.365Z",
+      "by": "source-collector"
+    }
+  ]
 }

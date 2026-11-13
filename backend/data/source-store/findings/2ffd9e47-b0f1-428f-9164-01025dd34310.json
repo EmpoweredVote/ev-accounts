@@ -154,5 +154,64 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation in general",
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "permit to buy a gun",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: Senate caucus pages name Sen. Victoria Hunt, 5th District, sitting state senator",
+        "Senate caucus site: newsletters of 2026-01-29 and 2026-04-27 fetched, nothing on the subject",
+        "Senate caucus site search for 'gun': no results",
+        "House caucus site (Hunt page and search for 'gun'): nothing on the subject",
+        "Ballotpedia: page fetched, nothing on the subject",
+        "two web searches on name plus gun words: nothing tying her own words to the subject",
+        "blocked: https://justfacts.votesmart.org/public-statement/1289255/issue-position-gun-violence-prevention",
+        "sponsor list: covered by bulk bill data",
+        "roll-call pages: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:48:49.893Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation generally",
+        "check every gun buyer",
+        "permit to purchase",
+        "safe storage",
+        "ban on assault-style guns",
+        "carry permits and open carry",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://senatedemocrats.wa.gov/hunt/2026/01/29/the-2026-legislative-session-is-in-full-swing/ (newsletter): nothing on the subject",
+        "https://senatedemocrats.wa.gov/hunt/2026/01/30/legislative-action-to-keep-our-communities-safe-and-supported/ (newsletter): nothing on the subject",
+        "https://senatedemocrats.wa.gov/hunt/2026/04/27/reminder-5th-district-town-hall-tomorrow/ (newsletter): nothing on the subject",
+        "https://senatedemocrats.wa.gov/hunt/ (official Senate page): nothing on the subject",
+        "blocked: https://housedemocrats.wa.gov/hunt/ (403)",
+        "blocked: https://housedemocrats.wa.gov/hunt/issues/ (403)",
+        "blocked: https://housedemocrats.wa.gov/hunt/?p=44 (no gun text retrieved)",
+        "blocked: https://ballotpedia.org/Victoria_Hunt (403)",
+        "two news searches on name plus gun words: no quote of her on the subject found",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:52:48.771Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -519,7 +519,77 @@
           "sha256": "da656b648898af17ae7edc650443c93f8a38f7613af74f16685630a98fc0fad8"
         }
       }
+    },
+    {
+      "id": "35878d244ebeca1a8e9094c7f54ca3c876f246de8da5cc78eb170a1a380d7352",
+      "kind": "own-words",
+      "url": "https://justthenews.com/nation/states/center-square/lawmaker-washingtons-new-gun-laws-will-completely-decimate-industry",
+      "date": "2023-04-01",
+      "date_precision": "month",
+      "passage": "we are going to see (shooting) competitions in Washington state slow down. It’s a chilling effect overall that we keep adding gun laws to Washington state. My bigger concern is it will completely decimate the industry.",
+      "note": "Quoted by The Center Square (republished by Just the News) after passage of HB 1240 (assault weapons) and SB 5078 (marketing firearms to minors); she says more gun laws will hurt shooting sports in the state.",
+      "subjects": [
+        "ban on assault-style guns",
+        "shooting sports and gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:36:18.222Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3092e132d6081892c4d276b7553911a50dc4997948a81267ead42474b8e9b3ac",
+      "kind": "own-words",
+      "url": "https://justthenews.com/nation/states/center-square/lawmaker-washingtons-new-gun-laws-will-completely-decimate-industry",
+      "date": "2023-04-01",
+      "date_precision": "month",
+      "passage": "why would anyone want to come to Washington state?",
+      "note": "Quoted by The Center Square on HB 1240's ban on importing defined assault weapons and the legal risk to out-of-state competition shooters.",
+      "subjects": [
+        "ban on assault-style guns",
+        "shooting sports and gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:36:18.222Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "limit on magazine size",
+        "marketing guns to minors",
+        "shooting sports and gun laws",
+        "Second Amendment",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/April_Connors (403); a search summary says she is the sitting 8th District Position 2 member and declared for the 2026 primary, general-election ballot status not confirmed from a fetched page",
+        "web search on name plus firearms words (one search)",
+        "web search on 2026 race status (one search)",
+        "https://justthenews.com/nation/states/center-square/lawmaker-washingtons-new-gun-laws-will-completely-decimate-industry (fetched, quotes her)",
+        "https://www.nwnewsnetwork.org/post/washington-lawmaker-wants-ban-openly-carried-guns-state-capitol (fetched, nothing by her on the subject)",
+        "official House member page and campaign site: not reviewed, no address fetched",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 2,
+      "at": "2026-11-13T20:36:18.222Z",
+      "by": "source-collector"
+    }
+  ]
 }

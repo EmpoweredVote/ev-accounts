@@ -996,7 +996,119 @@
           "sha256": "05cd48513b223e8fe1f11f6d4925175a593d0f061bd18299b38744e6606a4133"
         }
       }
+    },
+    {
+      "id": "1aa0364e282ad7e76fe5ac974b47cae390e5469918310b4766b45cd7e35a5b2e",
+      "kind": "own-words",
+      "url": "https://jeffwilson.src.wastateleg.org/senate-freedom-caucus-ready-last-stand-attack-second-amendment-rights/",
+      "date": "2023-04-05",
+      "date_precision": "day",
+      "passage": "We are seeing an effort to divert our attention from the very real mental health problems rampant in our society. It is an effort to weaponize our fears, undermine the Second Amendment and promote greater government control over our lives. Guns have always been available in America. What is different today is our reluctance to effectively confront behavioral problems, mental illness, a breakdown in social order and other issues many elected officials are reluctant to acknowledge. Firearms make an easy scapegoat. We need to address root causes, not offer false hope.",
+      "note": "Quote in a Senate caucus release about HB 1240 (rifle/magazine sale ban) and HB 1143 (gun-safety course certificate to buy); says the gun bills distract from mental health and social causes and undermine the Second Amendment.",
+      "subjects": [
+        "ban on assault-style guns",
+        "training certificate to buy a gun",
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:41:21.980Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "773dd723b41eaf3ebaf27b8fd76954919c9352d6d9ae39b4d3307ca4bf14e45f",
+      "kind": "own-words",
+      "url": "https://jimmccune.src.wastateleg.org/wp-content/uploads/sites/56/2024/05/42198_McCune_EOS_2024_print.pdf",
+      "date": "2024-05",
+      "date_precision": "month",
+      "passage": "During debate on SB 5444, I was able to get passage of an amendment that restored concealed carry as a whole, with restrictions being limited to only certain locations like zoo’s, aquarium’s, public libraries, transit stations and regional park facilities, among others.",
+      "note": "2024 end-of-session newsletter: describes his amendment on SB 5444 (places where guns may be carried) that kept concealed carry broadly allowed with limited place restrictions.",
+      "subjects": [
+        "places where carry is allowed",
+        "concealed carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:41:21.980Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0a8bbd5450c1b873b10d0812ce149a8764134ad644d2b007eea63d1ab90ae436",
+      "kind": "own-words",
+      "url": "https://jimmccune.src.wastateleg.org/wp-content/uploads/sites/56/2024/05/42198_McCune_EOS_2024_print.pdf",
+      "date": "2024-05",
+      "date_precision": "month",
+      "passage": "HB 2118, which was signed by the governor and will go into effect on July 1, is by far the worst of these bills. It is an attack on small business and an attack on legal gun owners.",
+      "note": "2024 newsletter: opposes HB 2118 (new rules on firearm dealers) and calls it an attack on small business and legal gun owners.",
+      "subjects": [
+        "rules on gun dealers",
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:41:21.980Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c85b9cc49a52b1ac6509ce17f347d0784971b7c61d1843327a2c152bc5c6c31b",
+      "kind": "own-words",
+      "url": "https://jimmccune.src.wastateleg.org/wp-content/uploads/sites/56/2024/05/42198_McCune_EOS_2024_print.pdf",
+      "date": "2024-05",
+      "date_precision": "month",
+      "passage": "majority members continued their disturbing assault on our Second Amendment rights, with one new measure essentially driving local, federally-licensed firearms dealers out of business.",
+      "note": "2024 newsletter: says the majority's gun bills, including one on dealers, are an assault on Second Amendment rights.",
+      "subjects": [
+        "rules on gun dealers",
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:41:21.980Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "gun-safety training certificate to buy",
+        "carry restrictions and concealed carry",
+        "gun dealer regulation",
+        "lost or stolen firearm reporting",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate site https://jimmccune.src.wastateleg.org/ (home page confirms Sen. Jim McCune, 2nd Legislative District; 2024 end-of-session newsletter PDF read)",
+        "Senate caucus release at https://jeffwilson.src.wastateleg.org/senate-freedom-caucus-ready-last-stand-attack-second-amendment-rights/",
+        "sponsor list: covered by bulk bill data",
+        "roll-call pages: covered by bulk bill data",
+        "one web search on name plus Second Amendment; results were leads only",
+        "not reviewed: Ballotpedia",
+        "not reviewed: campaign site",
+        "not reviewed: votesmart.org, news stories (chronline.com, odessarecord.com)"
+      ],
+      "found": 4,
+      "at": "2026-11-13T20:41:21.980Z",
+      "by": "source-collector"
+    }
+  ]
 }

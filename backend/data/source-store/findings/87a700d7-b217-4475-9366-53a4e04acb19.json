@@ -1755,5 +1755,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large magazines",
+        "background checks and permit to purchase",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "in scope: a June 2026 Herald news story (https://www.heraldnet.com/2026/06/30/incumbent-seeks-sixth-term-against-two-primary-challengers/) and an August 2026 primary-results story (https://www.heraldnet.com/?p=901409) show him as the sitting District 12 Position 2 representative who advanced to the 2026 general election",
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Mike_Steele (empty page returned)",
+        "iVoterGuide candidate page https://ivoterguide.com/candidate/31777/race/28796/election/1435: gun-restriction question marked as not answered; nothing on the subject in his own words",
+        "Cascadia Daily gun-legislation candidate story https://www.cascadiadaily.com/2022/oct/07/gun-legislation-splits-candidates-neatly-but-not-perfectly-by-party-lines/: does not mention him; nothing on the subject",
+        "Herald stories on his 2026 race: no gun statements; nothing on the subject",
+        "caucus site https://housedemocrats.wa.gov/ (checked as the only caucus page reached): nothing on the subject",
+        "web news searches on name plus gun words: no quotes from him on guns",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: his own House caucus member page and campaign site (not reached within the search)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:50:28.608Z",
+      "by": "source-collector"
+    }
+  ]
 }

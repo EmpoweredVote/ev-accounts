@@ -519,7 +519,141 @@
           "sha256": "da656b648898af17ae7edc650443c93f8a38f7613af74f16685630a98fc0fad8"
         }
       }
+    },
+    {
+      "id": "0bb173de56047333170e6627db019719b85bc812568e92d77c54849ad23b9426",
+      "kind": "own-words",
+      "url": "https://newstalk870.am/bill-would-toughen-penalties-for-unlawful-firearm-possession/",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "Really it's about going after these people in gun crimes who've already lost their rights to have guns, and yet here they are with guns.",
+      "note": "Quoted by The Center Square (carried by NEWStalk 870) on why he backs HB 1139, mandatory jail for unlawful possession of a firearm in the first degree.",
+      "subjects": [
+        "limits on who may have a gun",
+        "jail for people barred from guns who have them"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:50:28.609Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8078d6ca942f3b6d672d1dda7873334e108704fe77a27480315440d8adc5390",
+      "kind": "own-words",
+      "url": "https://newstalk870.am/bill-would-toughen-penalties-for-unlawful-firearm-possession/",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "The other side of the aisle seems to want to make it tougher for law-abiding citizens to have guns, and that seems to be what we have year after year.",
+      "note": "Quoted by The Center Square (carried by NEWStalk 870), describing the other chamber side's gun bills as aimed at law-abiding gun owners, and presenting HB 1139 as a different approach.",
+      "subjects": [
+        "gun safety laws in general",
+        "law-abiding gun owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:50:28.609Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d35dee9a10fe0abe75a2fbc3ffcd11d7720d40a07c6a36e7eb392bd003f1e37a",
+      "kind": "own-words",
+      "url": "https://newstalk870.am/bill-would-toughen-penalties-for-unlawful-firearm-possession/",
+      "date": "2025-01-14",
+      "date_precision": "day",
+      "passage": "It's giving some mandatory jail with it, which gets some people a little anxious, but really gun violence has to stop. It's going after those who aren't supposed to have weapons and holding them accountable that is the most important.",
+      "note": "Quoted by The Center Square (carried by NEWStalk 870) on the mandatory-jail feature of HB 1139.",
+      "subjects": [
+        "jail for people barred from guns who have them",
+        "gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:50:28.609Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4a2446120636b6334e41ecb28b75f2f61f71b0114898bce20e5fcbc67b329f3b",
+      "kind": "own-words",
+      "url": "https://www.heraldnet.com/2025/01/09/bill-seeks-increased-penalties-for-unlawful-firearm-possession/",
+      "date": "2025-01-09",
+      "date_precision": "day",
+      "passage": "This legislation is about accountability and ensuring that those who unlawfully possess firearms face appropriate consequences.",
+      "note": "Statement in his press release, quoted by the Everett Herald, about HB 1139.",
+      "subjects": [
+        "penalties for unlawful gun possession",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:50:28.609Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c8575e45dd9fcaace28a8c20c4b0fe1aa2980cc6fa20562fc90b6099133d7695",
+      "kind": "record",
+      "url": "https://www.heraldnet.com/2025/01/09/bill-seeks-increased-penalties-for-unlawful-firearm-possession/",
+      "date": "2025-01-09",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1139-2025",
+      "act": "sponsor",
+      "note": "Herald story says HB 1139, sponsored by Low, would require jail for every person convicted of first-degree unlawful possession of a firearm (those with a prior serious offense). Sponsor list: covered by bulk bill data.",
+      "subjects": [
+        "limits on who may have a gun",
+        "penalties for unlawful gun possession"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:50:28.609Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "limits on who may have a gun (unlawful possession)",
+        "penalties for gun crimes",
+        "gun rights and gun safety laws in general",
+        "assault-style weapons and magazines",
+        "background checks and permits",
+        "red-flag orders",
+        "carry permits and permitless carry"
+      ],
+      "places": [
+        "scope: Herald story of 2026-07-14 names Low as the House 39th District Position 1 incumbent seeking re-election; a candidate-guide page lists him in the 2026 general election; no page fetched showing the primary result, so general-election status rests on that guide listing (not fetched)",
+        "On the Record (0 appearances; no meetings)",
+        "campaign site https://electsamlow.com/current-issues (public safety page; nothing on guns)",
+        "campaign site https://electsamlow.com/about-sam (nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Sam_Low (fetch returned blank; not read)",
+        "web searches on name plus gun, firearm, Second Amendment, concealed carry (two searches; only HB 1139 coverage found)",
+        "sponsor list: covered by bulk bill data",
+        "House caucus profile page: not reviewed",
+        "Everytown-affiliated 2024 scorecard https://gunresponsibility.org/wp-content/uploads/2024/05/2024-Scorecard.pdf: not reviewed (a rating by an outside group, not his words)"
+      ],
+      "found": 5,
+      "at": "2026-11-13T20:50:28.609Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -1940,5 +1940,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety laws",
+        "assault-style weapons and magazines",
+        "background checks",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidates)",
+        "the House caucus member page https://housedemocrats.wa.gov/ortiz-self/ (fetched; nothing on the subject; says the site is frozen for the election year, so 2026 candidacy is implied, not confirmed on the page)",
+        "blocked: https://ballotpedia.org/Lillian_Ortiz-Self (empty page returned)",
+        "not reviewed: https://www.ballotready.org/people/lillian-ortiz-self (curl returned no gun text; a search summary mentions a gun-violence-prevention line but I could not read it on the page)",
+        "not reviewed: https://bluevoterguide.org/WA/candidate_Lillian_Ortiz-Self/34703 (curl returned no gun text; a search summary mentions a gun-safety group endorsement, unverified)",
+        "web searches (2): no gun statements by her found in results",
+        "sponsor list: covered by bulk bill data",
+        "legislature roll-call pages: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:43:39.920Z",
+      "by": "source-collector"
+    }
+  ]
 }

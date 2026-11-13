@@ -1803,7 +1803,79 @@
           "sha256": "894ebc713ee3c9f2a3dc219b60fa838be171cd6738ecc83ae9e9d50c252e11b5"
         }
       }
+    },
+    {
+      "id": "0230de66b9f0ce21d5be3af2ee1e9aa35c598c079dc14de64c0c7ca9cb735e18",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/23989/race/28797/election/1435",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "none, restrictions on the 2nd amendment have continued to split our society without positive results. my son was shot by someone who did not have the legal right to have a firearm!! we have to hold people accountable for their actions, and the punishment has to fit the crime.",
+      "note": "Answer given by the candidate on a voter-guide page to the question 'What restrictions on gun ownership are needed to protect public safety?'. Says none are needed, and stresses punishing people for their actions.",
+      "subjects": [
+        "restrictions on gun ownership",
+        "Second Amendment",
+        "punish misuse rather than restrict ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:48:36.674Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59e32c469140a8f381498d7a6a02ceafb6fb945126e67f4635aca3786c200bfe",
+      "kind": "own-words",
+      "url": "https://columbiabasinherald.com/news/2014/sep/30/tom-dent-solid-2nd-amendment-supporter-2",
+      "date": "2014-09-30",
+      "date_precision": "day",
+      "passage": "And I have been endorsed by the Gun Owners Action League (GOAL),",
+      "note": "Quoted in a 2014 local news profile while a 13th District House candidate. The story also says he describes himself as 'a solid 2nd amendment supporter' and lists NRA, Gun Owners of America and Citizens Committee for the Right to Keep and Bear Arms life memberships.",
+      "subjects": [
+        "Second Amendment",
+        "gun rights group membership and endorsements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:48:36.674Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "restrictions on gun ownership",
+        "gun rights group membership and endorsements",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "House vote pages: covered by bulk bill data",
+        "https://columbiabasinherald.com/news/2026/apr/07/representative-tom-dent-announces-reelection-bid/ (confirms 13th District House reelection bid for 2026; nothing on the subject)",
+        "https://kpq.com/tom-dent-reelection-washington-house/ (reelection announcement; nothing on the subject)",
+        "https://ivoterguide.com/candidate/23989/race/28797/election/1435 (voter guide listing him as a State Rep. Dist. 13 Pos. 1 candidate for the 2026 primary and general; candidate-supplied gun answer saved; primary result not confirmed by me)",
+        "https://columbiabasinherald.com/news/2014/sep/30/tom-dent-solid-2nd-amendment-supporter-2 (2014 candidate profile with own words saved)",
+        "blocked: https://ballotpedia.org/Tom_Dent (empty page returned)",
+        "campaign site / official House site: not reviewed (not fetched within this session)",
+        "web search on name plus gun words: one news/web search run; no other statements found"
+      ],
+      "found": 2,
+      "at": "2026-11-13T20:48:36.674Z",
+      "by": "source-collector"
+    }
+  ]
 }

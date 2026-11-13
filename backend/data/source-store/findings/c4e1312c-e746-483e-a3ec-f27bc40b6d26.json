@@ -1842,7 +1842,95 @@
           "sha256": "8491c3afe0604fe3c68206f1d7d07fbbf7fa6337a7f1c590d3a1b361933ca68d"
         }
       }
+    },
+    {
+      "id": "1cbed8bde1d217e6e17d73b89c3fe73948e7cf484aa4574d208cd6c0ef8e2fd6",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/24005/race/3964/election/899",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "Age and mental health status",
+      "note": "Answer in a voter-guide questionnaire to 'What restrictions on gun ownership are needed to protect public safety?' Year inferred from page data (donor entries dated up to 2021).",
+      "subjects": [
+        "limits on who may have a gun",
+        "minimum age for gun buyers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:46:36.351Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ea5ec983e8cd7f190871158234efba0d59f47092ecb9d55cfb49e5026aec72b5",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/24005/race/3964/election/899",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "The individual is responsible",
+      "note": "Comment attached to his 'Disagree' answer on the statement 'Victims of gun violence should be able to sue firearms dealers and manufacturers.' Year inferred.",
+      "subjects": [
+        "suing gun makers and dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:46:36.351Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "93911376a1e315ed6e50e26baf6ed5d68f6b49b13220131e11f98b8c78db798d",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/24005/race/3964/election/802",
+      "date": "2020",
+      "date_precision": "year",
+      "passage": "mental stability and prior felony crimes",
+      "note": "Answer in an earlier voter-guide questionnaire to 'What restrictions on gun ownership are needed to protect public safety?' Year inferred from page content (mentions Covid-19, donor entries dated 2019). Same answer on a second copy of the page (election/707).",
+      "subjects": [
+        "limits on who may have a gun",
+        "no guns for people with felony records or mental illness"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:46:36.351Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "restrictions on who may own a gun",
+        "suing gun makers and dealers",
+        "teachers carrying guns",
+        "Second Amendment general statements",
+        "statewide gun regulation"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "https://en.wikipedia.org/wiki/Paul_Harris_(politician): confirms current state senator for the 17th district, term from 2025-01-13; nothing on the subject",
+        "the Senate caucus site for Paul Harris (news list and site searches for 'gun' and 'firearm'): nothing on the subject",
+        "blocked: https://ballotpedia.org/Paul_Harris_(Washington) (page came back empty)",
+        "web search x2 (name plus gun words): no press release, floor remark or interview on guns found",
+        "iVoterGuide questionnaire pages for several cycles: gun answers saved; the 2022 copy (race 20730) left the gun questions unanswered",
+        "https://columbian.com/news/2022/jul/13/17th-district-candidates-harris-kear-split-on-taxes-gun-control-climate-policy: not reviewed past the intro (paywalled; reporter summary only, no quoted words)",
+        "blocked: https://votesmart.org/public-statement/1114618/issue-position-guns (404)"
+      ],
+      "found": 3,
+      "at": "2026-11-13T20:46:36.351Z",
+      "by": "source-collector"
+    }
+  ]
 }

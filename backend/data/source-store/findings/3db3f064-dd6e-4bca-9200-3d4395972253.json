@@ -1816,7 +1816,140 @@
           "sha256": "f9367415be046e9386e56cfb0fc1ab0a2d80121077b0ededb1133ac3eabedd38"
         }
       }
+    },
+    {
+      "id": "aa2c382908553d477c2007b24d75ba50d52e29cde58edf65b2965ed4c710ddb0",
+      "kind": "own-words",
+      "url": "https://keithwagoner.src.wastateleg.org/wagoner-says-bill-will-infringe-on-second-amendment-rights/",
+      "date": "2018-03-02",
+      "date_precision": "day",
+      "passage": "Instead of a limited category of semi-automatic weapons, the bill now targets all semi-automatic rifles.  These are normal everyday hunting and target shooting rifles that millions of law-abiding citizens own and use in a responsible manner.",
+      "note": "Senate release quoting him against SB 6620, which would bar sales of semi-automatic rifles to people under 21 and widen background checks for those sales; he voted against moving it out of committee.",
+      "subjects": [
+        "minimum age to buy a gun",
+        "ban on assault-style guns",
+        "background checks on gun sales",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:31.843Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "369e204101e8a18730288205931d000499961c8dfac4d6ba1cffae1dca392365",
+      "kind": "own-words",
+      "url": "https://keithwagoner.src.wastateleg.org/wagoner-says-bill-will-infringe-on-second-amendment-rights/",
+      "date": "2018-03-02",
+      "date_precision": "day",
+      "passage": "To put this bill in perspective, it would infringe on the rights of hundreds of thousands of law-abiding Washington citizens because of a description that fits only three mass shooters nationwide in the past 52 years,",
+      "note": "Same release: he argues the under-21 semi-automatic rifle purchase limit would burden many lawful owners relative to the shooters it would have covered.",
+      "subjects": [
+        "minimum age to buy a gun",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:31.843Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0650c378b7c4bb77bf544ec8eafa1163ecf874dd1fee4be596ac5abdcbb29a5",
+      "kind": "own-words",
+      "url": "https://keithwagoner.src.wastateleg.org/?p=250",
+      "date": "2018-01-26",
+      "date_precision": "day",
+      "passage": "Saying “I love the Second Amendment,” but adding, “if I thought this bill would save lives, I would vote for it,” Senator Keith Wagoner votes against ESB 5992, which bans the “use and possession of a trigger modification device,” commonly known as a ‘bump stock.’",
+      "note": "Caucus post describing his no vote on the bump stock ban (ESB 5992, passed 29-20) and quoting his reasons; the sentence is written about him, with his two quoted phrases inside it. The video was not watched.",
+      "subjects": [
+        "bump stock ban",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:31.843Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7f42a6fa4703792cb0f2ac51b82a2b940bdbd2a9c8f11fb4f0414cf05c00ee16",
+      "kind": "own-words",
+      "url": "https://keithwagoner.src.wastateleg.org/tag/firearm-transfers/",
+      "date": "2018-01-24",
+      "date_precision": "day",
+      "passage": "Having multiple background checks for a single transaction is a needless requirement on gun owners who have already undergone the process,",
+      "note": "Release on his SB 6476: a concealed pistol licence holder's earlier background check would count for a sale or transfer, so no second check.",
+      "subjects": [
+        "background checks on gun sales",
+        "concealed carry permit",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:31.843Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c2448289ddac50a1e6f75e23b296e4e182ca82c160f60e3702f9577dd9f9809c",
+      "kind": "own-words",
+      "url": "https://src.wastateleg.org/?p=21922",
+      "date": "2025-03-10",
+      "date_precision": "day",
+      "passage": "Wagoner says WA’s HB 1163 forces costly, nonexistent training, hurting low-income citizens.",
+      "note": "Caucus summary of his radio interview on the Lars Larson show, about HB 1163 (permit to purchase firearms); the summary is the caucus's wording, audio not heard. Summary also says he said the laws will fail to reduce crime.",
+      "subjects": [
+        "permit to buy a gun",
+        "gun training requirement",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:31.843Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "age limits on buying semi-automatic rifles",
+        "bump stock ban",
+        "background checks on transfers",
+        "Second Amendment general",
+        "new gun training requirement (permit to purchase)"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official senate site (keithwagoner.src.wastateleg.org): Second Amendment tag, firearm-transfers tag, background-check search, two news posts",
+        "Senate caucus site audio page (SRC On Air, 2025-03-10): page text only; the audio itself not reviewed: https://src.wastateleg.org/wp-content/uploads/2025/03/Sen_Wagoner_LARS_3_10_25.mp3",
+        "legislature bill pages: sponsor list: covered by bulk bill data",
+        "web search on name plus gun words (one search; Lynnwood Times April 2026 op-ed lead only surfaced a reader-comment page, original op-ed not found, not reviewed)",
+        "Ballotpedia: not reviewed",
+        "campaign site: not reviewed"
+      ],
+      "found": 5,
+      "at": "2026-11-13T20:43:31.843Z",
+      "by": "source-collector"
+    }
+  ]
 }

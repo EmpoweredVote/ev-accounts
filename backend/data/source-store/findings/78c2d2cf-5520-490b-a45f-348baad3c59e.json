@@ -490,7 +490,59 @@
           "sha256": "da656b648898af17ae7edc650443c93f8a38f7613af74f16685630a98fc0fad8"
         }
       }
+    },
+    {
+      "id": "4c4c166de3ceabdd6418ac71d1a384a4504ff2dffb8ed80927696db4b7ca8ea5",
+      "kind": "record",
+      "url": "http://stephaniebarnard.houserepublicans.wa.gov/2023/03/10/rep-stephanie-barnard-speaks-against-bill-that-restricts-constitutionally-protected-gun-rights/",
+      "date": "2023-03-10",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1143-2023",
+      "act": "other",
+      "motion": "House floor speech on HB 1143 before the 52-44 House passage vote",
+      "note": "A release from the House caucus communications office (not her own wording) says she spoke on the floor against HB 1143, describing it as a measure that would restrict constitutionally protected gun rights through added training, permitting and waiting-period requirements on gun owners and dealers. Speech video not reviewed.",
+      "subjects": [
+        "permit and waiting period to buy a gun",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:48:26.474Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "waiting periods and permits to buy",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "ghost guns",
+        "general statement on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page https://leg.wa.gov/legislators/member/34025 (confirms Representative, District 8 Position 1)",
+        "member website http://stephaniebarnard.houserepublicans.wa.gov/ (site search for firearm and gun: one hit, a floor-speech release)",
+        "blocked: https://ballotpedia.org/Stephanie_Barnard (empty page returned)",
+        "not reviewed: floor speech video linked from the 2023-03-10 release",
+        "Wikipedia page: lists her as incumbent, says nothing on guns or a 2026 run",
+        "web search: a gun-safety scorecard group graded her F for 2023 and 2024 (a third-party grade, not saved); a votesmart Second Amendment page and a newhouse.house.gov column belong to other people, not used",
+        "sponsor list: covered by bulk bill data",
+        "2026 candidacy: a news search says she filed for re-election in the 2026 primary of 2026-08-04; I could not fetch 2026 primary or general results (the state results page returned nothing), so her place on the general ballot is not confirmed by a page I read",
+        "nothing on the subject: campaign site not found separately; no questionnaires, interviews or newsletters found"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:48:26.474Z",
+      "by": "source-collector"
+    }
+  ]
 }

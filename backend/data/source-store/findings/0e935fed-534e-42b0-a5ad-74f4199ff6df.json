@@ -575,7 +575,183 @@
           "sha256": "1dde0656c6310814ce28bf2836365f95858737f4ea41a91d15aa5b350dc44cc8"
         }
       }
+    },
+    {
+      "id": "2d43027619cc15471c533ee8059cb694b02ff45697821bbaa194c2c6df4c8138",
+      "kind": "own-words",
+      "url": "https://leonardchristian.src.wastateleg.org/an-update-from-rep-leonard-christian-thank-you-for-attending-town-hall-meeting/",
+      "date": "2023-03-24",
+      "date_precision": "day",
+      "passage": "I voted no on both bills when they were debated in the House because I believe they violate Article I, Section 24 of the Washington State Constitution, and the Second Amendment of the U.S. Constitution.",
+      "note": "Newsletter in his name explaining his no votes on HB 1143 (training, permit and waiting period rules for gun buyers and dealers) and HB 1240 (ban on sale/manufacture of so-called assault weapons).",
+      "subjects": [
+        "ban on assault-style guns",
+        "training, permit and waiting period rules for gun buyers",
+        "Second Amendment and state constitution"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:56.625Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9f29994a9a57dbd16bdf6b6c1c2ab2b7f338ad480d14e51334653c62b1c9b726",
+      "kind": "own-words",
+      "url": "https://src.wastateleg.org/leonard-christian/an-update-from-rep-leonard-christian-town-hall-this-saturday-stopping-bad-bills/",
+      "date": "2023-03-17",
+      "date_precision": "day",
+      "passage": "I voted no on both bills because I believe they violate Article I, Section 24 of the Washington State Constitution, and the Second Amendment of the U.S. Constitution:",
+      "note": "Newsletter in his name giving the same reason for voting no on HB 1143 and HB 1240; also lists HB 1144 (safety-training certificate before a dealer transfers a gun) among bills that died.",
+      "subjects": [
+        "ban on assault-style guns",
+        "training, permit and waiting period rules for gun buyers",
+        "Second Amendment and state constitution"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:56.625Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1a5251d1fbba6ef734b1436836f70d1f5c50cac6c6cadb7911e0e775af023f82",
+      "kind": "own-words",
+      "url": "https://leonardchristian.src.wastateleg.org/an-update-from-rep-leonard-christian-parental-rights-police-pursuit-firearm-industry-housing/",
+      "date": "2023-04-14",
+      "date_precision": "day",
+      "passage": "This egregiously bad bill could empower the attorney general to shut down gun retailers in Washington state. No other industry has this kind of liability, and I am positive there will be a legal challenge.",
+      "note": "Newsletter in his name criticizing SB 5078, which makes gun makers and sellers legally responsible for misuse of their products.",
+      "subjects": [
+        "legal liability for gun makers and sellers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:56.625Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ca7bfe1e08f0a97aad05ec6b62f6d177677314b21faa3e4a53502d98695c4261",
+      "kind": "own-words",
+      "url": "https://src.wastateleg.org/leonard-christian/senate-approves-bill-exposing-law-abiding-gun-owners-prosecution-christian-says/",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "passage": "“This kind of legislation doesn’t protect anyone,” Christian said.",
+      "note": "Caucus release quoting his Senate floor remarks against SB 5098 (no guns in public buildings, parks, playgrounds and county fairgrounds); he said it would only enable prosecution of gun owners with no malicious intent and cited a 2017 school shooting at a gun-free school.",
+      "subjects": [
+        "places where guns may be carried",
+        "gun-free zones"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:56.625Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "309252ce4fcca0ba14d64be113bbc897932480fab39c1f5348199a9fc3dfd357",
+      "kind": "own-words",
+      "url": "https://src.wastateleg.org/leonard-christian/senate-approves-bill-exposing-law-abiding-gun-owners-prosecution-christian-says/",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "passage": "We do it for our hunters, we do it for our fishers – we can do it for our law-abiding gun owners,",
+      "note": "Quoted in the same release defending his two failed amendments to SB 5098: a warning instead of prosecution for a first offense, and a state booklet showing where weapons are restricted.",
+      "subjects": [
+        "places where guns may be carried",
+        "gun-free zones"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:56.625Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0cd500adf91910e6e500e12c1a8438cb143c1b4ddb0c543a18ee22b84c707be",
+      "kind": "own-words",
+      "url": "https://src.wastateleg.org/leonard-christian/senate-approves-bill-exposing-law-abiding-gun-owners-prosecution-christian-says/",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "passage": "Christian, who is serving his fourth year in the Legislature and his first in the Senate, said this year’s gun legislation “blows my mind.”",
+      "note": "Release reports his remarks that 2025 proposals would penalize law-abiding gun owners, naming gun and ammunition taxes, bulk ammunition purchase limits, new transfer restrictions and home/vehicle storage rules. The wording is the release's paraphrase around a short quote.",
+      "subjects": [
+        "gun and ammunition taxes",
+        "safe storage rules",
+        "limits on ammunition purchases",
+        "general statement on gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:56.625Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1272113568319fe5d7f204bc0421996809bc27de568722514a51cfec82243306",
+      "kind": "own-words",
+      "url": "https://leonardchristian.src.wastateleg.org/rep-leonard-christian-opposes-so-called-assault-weapons-ban/",
+      "date": "2023-03-08",
+      "date_precision": "day",
+      "passage": "Rep. Leonard Christian, R-Spokane Valley, opposed House Bill 1240, a measure proposed by Washington’s attorney general that would outlaw the manufacture, importation, distribution, sale, or offer for sale of any “assault weapon.”",
+      "note": "Caucus release in his name stating he opposed HB 1240, the assault-weapon sales ban.",
+      "subjects": [
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:56.625Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "training, permit and waiting period rules for gun buyers",
+        "gun-free zones / places where guns may be carried",
+        "gun maker liability",
+        "general statements on gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate caucus site (leonardchristian.src.wastateleg.org): confirmed as sitting 4th District senator; read four newsletters/releases from 2023 and 2025 on the subject",
+        "sponsor list: covered by bulk bill data",
+        "web search: name plus gun/firearm/Second Amendment words, and a second search on SB 5098",
+        "blocked: https://ballotpedia.org/Leonard_Christian (fetch returned an empty page)",
+        "not reviewed: Senate floor speech video on SB 5098 linked from the 2025-03-05 release",
+        "not reviewed: Spokane radio program appearance mentioned in search results (no page fetched)",
+        "not reviewed: https://ivoterguide.com/candidate/54530/race/3926/election/984",
+        "not reviewed: campaign site (none located)",
+        "nothing on the subject found in On the Record"
+      ],
+      "found": 7,
+      "at": "2026-11-13T20:43:56.625Z",
+      "by": "source-collector"
+    }
+  ]
 }

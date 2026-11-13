@@ -792,5 +792,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, no meetings)",
+        "campaign site https://www.joelmcentire.com (home, issues and about pages: nothing on the subject)",
+        "blocked: https://ballotpedia.org/Joel_McEntire (403)",
+        "blocked: https://housedemocrats.wa.gov (403; not a source for this person, noted only)",
+        "not reviewed: https://housegop.wa.gov/mcentire/ (no response)",
+        "https://hroc.us/members/joel-mcentire/ (member page, nothing on the subject)",
+        "https://ivoterguide.com/candidate/41777/race/34968/election/1502 (confirms listing for the 2026-11-03 general election, State Rep. Dist. 19 Pos. 2; only a third-party rating, no own words)",
+        "web search: name plus Second Amendment/firearms (one search; a magazine-limit floor debate item names him as a participant but quotes no words of his; a Vote Smart Second Amendment statement URL returned 404)",
+        "web search: 2026 results (no official 2026 results page found)",
+        "sponsor list: covered by bulk bill data",
+        "floor votes: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:42:01.476Z",
+      "by": "source-collector"
+    }
+  ]
 }

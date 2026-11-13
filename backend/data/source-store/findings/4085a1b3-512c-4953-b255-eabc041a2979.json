@@ -1,0 +1,33 @@
+{
+  "politician_id": "4085a1b3-512c-4953-b255-eabc041a2979",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "Second Amendment general statements",
+        "gun safety laws"
+      ],
+      "places": [
+        "in scope: a Herald news story of 2026-08-05 (https://www.heraldnet.com/?p=901412) shows Steve Ewing of Lake Stevens advancing to the Nov. 3 general election for 39th District, Position 2; no gun statement in it",
+        "On the Record (0 meetings)",
+        "campaign site: blocked: https://electsteveewing.com (403)",
+        "blocked: https://ballotpedia.org/Steve_Ewing (403)",
+        "blocked: https://washingtonstatestandard.com/voter-guides/contests/washington-state-house-district-39-2026-primary/ (403)",
+        "https://ivoterguide.com/candidate/93117/race/35008/election/1502: his answer to the gun-restrictions question is listed as 'Did not answer'; it lists an NRA-PVF endorsement but that is not his own words or a record act",
+        "https://www.heraldnet.com/2026/07/17/four-candidates-vie-for-open-district-39-seat-in-primary/ and https://www.heraldnet.com/2026/04/02/former-lake-stevens-council-member-to-run-for-39th-district-seat/: nothing on the subject",
+        "web searches on his name plus gun words: nothing on the subject",
+        "official legislature pages: not applicable, never served as a state legislator; sponsor list: covered by bulk bill data",
+        "Lake Stevens City Council record: no gun-related items found"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:48:06.197Z",
+      "by": "source-collector"
+    }
+  ]
+}

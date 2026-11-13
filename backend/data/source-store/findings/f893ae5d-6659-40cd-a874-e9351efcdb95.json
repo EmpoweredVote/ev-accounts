@@ -1892,7 +1892,73 @@
           "sha256": "f9367415be046e9386e56cfb0fc1ab0a2d80121077b0ededb1133ac3eabedd38"
         }
       }
+    },
+    {
+      "id": "993aa8e89e9bb2de52483404da2ea809338c24ea2fcb140ece40da7bb622c215",
+      "kind": "own-words",
+      "url": "https://www.cascadepbs.org/politics/2023/04/washington-senate-passes-ban-assault-style-rifles",
+      "date": "2023-04-08",
+      "date_precision": "day",
+      "passage": "They are a sporting weapon, to shoot birds, clay pigeons, self-defense,",
+      "note": "Quoted in a news story (Cascade PBS) from Senate floor debate on HB 1240; he objected to semiautomatic shotguns being covered by the ban. Story also quotes him: \"To include 'a legitimate sporting product into this witch hunt is a very scary thought for legitimate sportsmen,\" he added.",
+      "subjects": [
+        "ban on assault-style guns",
+        "semiautomatic shotguns",
+        "sporting use of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:44:23.640Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2b941ec3feae46b4bbc33eefd7138281243e87f2caff830bf878efa4c6490bb3",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/permit-purchase-clears-washington-senate-035900356.html",
+      "date": "2025-04-14",
+      "date_precision": "day",
+      "passage": "There is absolutely no way that that average taxpayer out in Othello isn't going to get hit trying to legitimately buy a firearm, upgrade a firearm,",
+      "note": "Quoted in a Spokesman-Review story (via Yahoo) on Senate floor debate on the permit-to-purchase bill; he said it was an \"assault on the hardworking taxpayers\" and focused on added fees to buyers. Date inferred from the Senate passage vote on file for HB 1163.",
+      "subjects": [
+        "permit to buy a gun",
+        "fees on gun buyers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:44:23.640Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "permit to buy a gun",
+        "large-capacity magazines",
+        "gun rights and Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://src.wastateleg.org/ (bot check on the caucus site search)",
+        "not reviewed: https://senatorschoesler.src.wastateleg.org/ (did not load)",
+        "blocked: https://ballotpedia.org/Mark_Schoesler (403)",
+        "sponsor list: covered by bulk bill data",
+        "two news searches on name plus gun subjects; two news stories fetched",
+        "campaign site, questionnaires, interviews: not found in search results"
+      ],
+      "found": 2,
+      "at": "2026-11-13T20:44:23.640Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -1,0 +1,53 @@
+{
+  "politician_id": "37d2c462-b512-47e5-9753-1667cfa86693",
+  "findings": [
+    {
+      "id": "f74f33a233ff5d8d467720465cb563948d87fd168d15088122ea0bf83303f01d",
+      "kind": "own-words",
+      "url": "https://electdaria.com/platform",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Ensure safer neighborhoods  by improving coordination on trafficking, violence, and hate crimes, giving law enforcement the staffing and tools they need, and keeping guns away from people who may harm themselves or others.",
+      "note": "Campaign platform page lists keeping guns away from people who may harm themselves or others as one item under safer neighborhoods; no specific measure named. Page date not shown.",
+      "subjects": [
+        "keep guns from people who may harm themselves or others"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:38:34.721Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "keeping guns from people who may harm themselves or others",
+        "gun control general",
+        "Second Amendment",
+        "background checks",
+        "assault-style weapons",
+        "carry permits",
+        "red flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://electdaria.com (home, platform, policies, meet-daria, media pages checked; only the platform page mentions guns)",
+        "https://ivoterguide.com/candidate/93057/race/34975/election/1502 (confirms 2026 general-election candidate for WA House District 23 Pos. 1; Second Amendment question marked did not answer)",
+        "https://arcwa.org/wp-content/uploads/2026/07/Daria_Ilgen.pdf (disability survey, nothing on the subject)",
+        "Ballotpedia: page returned nothing usable on the subject",
+        "web search: name plus gun/Second Amendment words, nothing on the subject beyond the campaign platform",
+        "sponsor list: covered by bulk bill data",
+        "not a sitting legislator: no floor votes or sponsorships of her own to look up"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:38:34.721Z",
+      "by": "source-collector"
+    }
+  ]
+}

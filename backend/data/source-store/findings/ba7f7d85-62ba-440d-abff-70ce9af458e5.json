@@ -152,5 +152,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and Second Amendment statements",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Hunter_Abell (bot-check page, HTTP 202); only a search summary showed he declared for the 2026 primary for House District 7 Position 2, so his general-election status is not confirmed by a fetched page",
+        "official legislature member page https://leg.wa.gov/legislators/member/35407: confirms Representative, District 7 Position 2; nothing on the subject",
+        "Statesman-Examiner interview https://www.statesmanexaminer.com/articles/local-representative-motivated-by-constituents-as-he-looks-forward-to-upcoming-session: nothing on the subject (hunting and fishing fees only)",
+        "7th District 2026 session report mailer (https://shellyshort.src.wastateleg.org/wp-content/uploads/sites/47/2026/04/FINAL-47063_7th-District_Short-Abell-Engell_EOS-Mailer_2026_11x25.5.pdf): nothing on the subject",
+        "Pend Oreille River Valley profile https://www.pendoreillerivervalley.com/article/557,state-representative-legislative-district-7-position-2-hunter-abell: nothing on the subject",
+        "blocked: the House caucus site (host did not resolve)",
+        "web searches (3): no statement by him on guns found",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://tvw.org/video/legislator-profile-representative-hunter-abell-2025011748/ (video)",
+        "not reviewed: his campaign site (not located), Vote Smart, news archive beyond the searches"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:40:39.435Z",
+      "by": "source-collector"
+    }
+  ]
 }

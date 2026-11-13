@@ -1,0 +1,56 @@
+{
+  "politician_id": "3052e007-9a24-40c9-9682-3fdd12009cb3",
+  "findings": [
+    {
+      "id": "62353d2d825f40d5dce0960a968167025229de76709754ffaf174bdee8b5bb38",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/93017/race/34937/election/1502",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Gun ownership is the constitutional right that protects against government overreach and tyranny. However, smart measures to prevent criminals, dangerous and violent felons from obtaining weapons is necessary for public safety.",
+      "note": "Her answer in a voter guide questionnaire to the question 'What restrictions on gun ownership are needed to protect public safety?' She calls gun ownership a constitutional right and supports measures keeping guns from criminals and violent felons.",
+      "subjects": [
+        "general statement on gun rights",
+        "Second Amendment",
+        "keep guns from violent felons and criminals"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:40:02.457Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "restrictions on gun ownership",
+        "Second Amendment",
+        "keeping guns from violent felons",
+        "assault-style weapons",
+        "background checks",
+        "red flag orders",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed in scope: voter guide page shows her on the 2026-11-03 general ballot for State Rep., Dist. 4 Pos. 1 (https://ivoterguide.com/candidate/93017/race/34937/election/1502)",
+        "voter guide questionnaire page: one answer on gun ownership (saved)",
+        "Spokane Public Radio interview 2026-07-18: nothing on the subject",
+        "Ballotpedia: nothing on the subject (no usable page text)",
+        "campaign site: not found by search; guessed addresses did not load",
+        "web search for campaign site plus gun words: nothing on her",
+        "sponsor list: covered by bulk bill data (she holds no legislative seat; was a legislative assistant)",
+        "not reviewed: https://www.ballotready.org/people/hillary-pham"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:40:02.457Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -881,7 +881,54 @@
           "sha256": "94b984934095112c128ea57c3a6b6d0f8c03ee5eefd39970afb718b33e489762"
         }
       }
+    },
+    {
+      "id": "3f6390457c7c84469012ed42db54b1466369d0e61d864d960973e7af285983a9",
+      "kind": "own-words",
+      "url": "https://housedemocrats.wa.gov/tmp/sites/64/2025/07/45591-36th-District-Joint-EOS-Newsletter_2025_Print.pdf",
+      "date": "2025-07",
+      "date_precision": "month",
+      "passage": "My bill to establish a Permit to Purchase system (HB 1163) is a commonsense policy that will reduce gun violence, curb illegal gun trafficking and ensure firearms are only in the hands of responsible gun owners.",
+      "note": "End-of-session newsletter statement in her name backing her own permit-to-purchase bill, HB 1163, and describing what she says it does; she also says she won't stop fighting to keep communities safe from gun violence.",
+      "subjects": [
+        "permit to buy a gun",
+        "gun violence",
+        "illegal gun trafficking",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:42:35.866Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permit to purchase a gun",
+        "gun violence and children",
+        "illegal gun trafficking",
+        "general gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the House caucus member page and its October 2025 session-preview post (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Julia_Reed (empty page returned; 2026 ballot status not confirmed from a fetched page, a search summary said she is the incumbent seeking re-election to District 36 Position 1)",
+        "campaign site: not found",
+        "sponsor list: covered by bulk bill data",
+        "one news search on name plus firearms: a rating-group scorecard and a state news story, neither fetched as a source",
+        "not reviewed: https://gunresponsibility.org/wp-content/uploads/2024/05/2024-Scorecard.pdf (third-party grade, not her words)",
+        "debates, interviews, questionnaires: no result found in the allowed searches"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:42:35.866Z",
+      "by": "source-collector"
+    }
+  ]
 }

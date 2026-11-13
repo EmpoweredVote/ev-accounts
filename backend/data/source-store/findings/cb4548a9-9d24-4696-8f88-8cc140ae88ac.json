@@ -1015,5 +1015,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "gun safety laws",
+        "Second Amendment",
+        "assault-style weapons",
+        "background checks",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://tre.wa.gov/node/430 (state treasurer's site: confirms sworn in as Washington State Treasurer; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Mike_Pellicciotti (fetch returned empty page)",
+        "web search: name plus firearms / Second Amendment (nothing on the subject)",
+        "web search: name plus gun safety / assault weapons (nothing on the subject)",
+        "official site search for gun words: not reviewed: no site search available; search engine query returned an error page",
+        "campaign site: not reviewed: https://www.mikeforwa.com",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:44:34.050Z",
+      "by": "source-collector"
+    }
+  ]
 }

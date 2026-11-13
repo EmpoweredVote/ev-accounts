@@ -1517,7 +1517,82 @@
           "sha256": "34d56a4fd96cfd2246a8637c80fe92e2c342d95cda98296fe24cd57dc72aaf56"
         }
       }
+    },
+    {
+      "id": "cc1af4357815c6dfc7a219a964c990da3cbc3028a3ac1b519406b422393b54fa",
+      "kind": "record",
+      "url": "https://src.wastateleg.org/keith-goehner/rep-goehner-and-steele-speak-on-kpq-about-ghost-gun-legislation/",
+      "date": "2022-02-11",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Radio interview on KPQ about the House-passed ghost gun bill",
+      "note": "A caucus post says he and a seatmate joined a radio station to discuss the home-manufactured, unserialised gun bill that passed the House. The post describes the bill; his own remarks are in audio that was not reviewed, so no position is recorded here.",
+      "subjects": [
+        "home-made or unserialised guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:52:48.788Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "permit to buy a gun",
+        "home-made or unserialised guns",
+        "carry permits",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the Senate caucus site for Keith Goehner, 12th Legislative District (confirms office; site search for 'gun' and the news list had nothing on the subject)",
+        "https://src.wastateleg.org/keith-goehner/rep-goehner-and-steele-speak-on-kpq-about-ghost-gun-legislation/ (2022-02-11 caucus summary of a radio interview on a ghost-gun bill; no quoted words from him, so not saved)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Keith_Goehner (403)",
+        "news search on name plus gun words (two searches): nothing in his own words; results were mostly about a different senator",
+        "LegiPlex profile (seen in search results only): no gun bills listed",
+        "campaign site: no address found in search results, not reviewed",
+        "not reviewed: vote411 and ontheissues (leads only, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:42:46.316Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "permit to purchase",
+        "home-made or unserialised guns",
+        "carry permits",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "scope confirmed: official Senate caucus page lists Keith Goehner as senator, 12th Legislative District (https://src.wastateleg.org/keith-goehner/)",
+        "On the Record (0 appearances; extract script returned no sources)",
+        "official site: site search for gun/firearm did not return usable result links; one archived 2022 post found",
+        "official site newsletter https://keithgoehner.src.wastateleg.org/?p=2338: nothing on the subject",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Keith_Goehner (403)",
+        "news search on name plus gun words (two searches): no direct quotes of him on guns found",
+        "not reviewed: audio of the KPQ radio interview (no transcript)",
+        "not reviewed: https://chronline.com/stories/state-lawmaker-takes-aim-at-proposed-gun-legislation-in-washington-state-legislature,307129 (page text did not load; not confirmed to name him)",
+        "not reviewed: gunresponsibility.org scorecards (third-party grades, not his words)"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:52:48.788Z",
+      "by": "source-collector"
+    }
+  ]
 }

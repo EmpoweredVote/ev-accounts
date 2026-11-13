@@ -1923,7 +1923,56 @@
           "sha256": "c983aaaee8c293ff1df519a3efb3e9d91391596f78046a1622fb07c8fc179778"
         }
       }
+    },
+    {
+      "id": "78eebf345f74d24b931a0cb018656094ece708fc4a53968af4fd9de104525482",
+      "kind": "own-words",
+      "url": "https://www.alexramel.com/about-alex",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Preventing gun violence. It's time for common sense policies that will save lives.",
+      "note": "Issues list on the campaign site's About page; page is undated, date is approximate (page current when fetched 2026-11-13). Heading and one-line text are as shown on the page; no specific policy named.",
+      "subjects": [
+        "general statement on gun safety laws",
+        "preventing gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:36:18.896Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun violence prevention",
+        "common sense gun policies",
+        "assault-style weapons",
+        "background checks",
+        "red flag orders",
+        "carry permits",
+        "general statement on gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings; name search also 0)",
+        "campaign site https://www.alexramel.com (home, About page issues list; endorsements page had nothing on the subject)",
+        "House caucus member page https://housedemocrats.wa.gov/ramel/ (site search for firearm and news list: nothing on the subject)",
+        "blocked: https://ballotpedia.org/Alex_Ramel (403)",
+        "Wikipedia page for Alex Ramel: confirms House member since 2020; nothing on the subject",
+        "scope: a web search shows Ramel as incumbent in the 2026-08-04 primary for House District 40 Pos 2 (iVoter Guide and a Cascadia Daily preview); general-election ballot listing not confirmed: https://results.vote.wa.gov 2026 general page returned 404 and primary results page not found",
+        "news/web searches (3) on name plus gun words: no direct quotes found; only bill trackers and an advocacy scorecard (not fetched)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://gunresponsibility.org/wp-content/uploads/2024/05/2024-Scorecard.pdf"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:36:18.896Z",
+      "by": "source-collector"
+    }
+  ]
 }

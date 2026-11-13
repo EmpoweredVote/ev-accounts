@@ -1,0 +1,156 @@
+{
+  "politician_id": "88ca3cb2-b5eb-409a-aeb5-6b22fcbf72f1",
+  "findings": [
+    {
+      "id": "df08a6be38debcde12bacaa5144a1a5198356301569d57788ae0353dfa3d27cc",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/WAOSPI/bulletins/208343a",
+      "date": "2018-08-23",
+      "date_precision": "day",
+      "passage": "I will not authorize, permit, or distribute any resources to support efforts to arm teachers. State law is clear that our schools are gun-free zones for teachers and students. The law allows exceptions for commissioned police officers on our school grounds, and for designated and trained school resource officers.",
+      "note": "OSPI statement responding to a reported federal plan to let grant money buy guns for teachers; he says he will not support arming teachers.",
+      "subjects": [
+        "guns in schools",
+        "arming teachers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:37:22.558Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "40f59db3ee0f92c072bbb87f733446a114a394aca78e37f1369be894594da83d",
+      "kind": "own-words",
+      "url": "https://content.govdelivery.com/accounts/WAOSPI/bulletins/208343a",
+      "date": "2018-08-23",
+      "date_precision": "day",
+      "passage": "While no research indicates arming teachers improves student safety, an abundance of research clearly shows gun density is strongly correlated with higher rates of homicide and suicide.",
+      "note": "Same statement; cites research linking how many guns are around to homicide and suicide rates.",
+      "subjects": [
+        "arming teachers",
+        "fewer guns in the community"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:37:22.558Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5419344be9f2ba2657b1e3a379cbd0e90bf5812abba075fb64d8cb0698369e4b",
+      "kind": "own-words",
+      "url": "https://spokesman.com/stories/2022/may/24/reykdal-after-texas-school-shooting-consider-keepi",
+      "date": "2022-05-24",
+      "date_precision": "day",
+      "passage": "As a father, community member, and our state’s schools chief, I am making a personal appeal to you today to please reconsider gun possession in your home if you are a gun owner today",
+      "note": "Statement after the Texas school shooting, quoted by a news outlet (The Spokesman-Review); asks gun owners to reconsider keeping guns at home.",
+      "subjects": [
+        "guns in the home",
+        "gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:37:22.558Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9c51f85232778bc3c8e24c67e83561c658cee658f7d95e72abc58303b06e2e59",
+      "kind": "own-words",
+      "url": "https://spokesman.com/stories/2022/may/24/reykdal-after-texas-school-shooting-consider-keepi",
+      "date": "2022-05-24",
+      "date_precision": "day",
+      "passage": "There is simply no debate: Our homes are safer when there are no guns inside them.",
+      "note": "Same statement as quoted by The Spokesman-Review.",
+      "subjects": [
+        "guns in the home",
+        "gun safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:37:22.558Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eca3d18ce1bb10e8b94d5a627cb4e83168c9f1a90169a620145184383c4ff95e",
+      "kind": "own-words",
+      "url": "https://ospi.k12.wa.us/about-ospi/news-center/news-releases/superintendent-chris-reykdals-statement-tragic-death-seattle-high-school-student",
+      "date": "2024-06-07",
+      "date_precision": "day",
+      "passage": "Easy access to guns is a public health crisis! Our young people should not have this kind of access to firearms.",
+      "note": "OSPI statement after a Seattle high school student's death; date taken from the page's listed date.",
+      "subjects": [
+        "youth access to firearms",
+        "gun violence as public health"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:37:22.558Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8b0be7ef3a8647860dd1a311722e540749a8f260605b3db510b415e22839373a",
+      "kind": "own-words",
+      "url": "https://ospi.k12.wa.us/about-ospi/news-center/news-releases/superintendent-chris-reykdals-statement-tragic-death-seattle-high-school-student",
+      "date": "2024-06-07",
+      "date_precision": "day",
+      "passage": "For our families, I am pleading with you that if you have firearms in your home, lock them up safely!",
+      "note": "Same statement; urges safe storage of guns at home.",
+      "subjects": [
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:37:22.558Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "guns in schools / arming teachers",
+        "gun ownership in the home and safe storage",
+        "youth access to firearms",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "OSPI news center (statement pages fetched; no site-wide search run)",
+        "one web search on name plus gun/firearm/schools terms",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: Ballotpedia",
+        "not reviewed: campaign site",
+        "not reviewed: https://mynorthwest.com/911055/reykdal-trump-guns-teachers/",
+        "not reviewed: https://mynorthwest.com/local/gun-violence-health-epidemic/994900",
+        "Confirmed as sitting statewide official (State Superintendent of Public Instruction) by the OSPI pages; Superintendent is not a bill sponsor or legislative voter"
+      ],
+      "found": 6,
+      "at": "2026-11-13T20:37:22.558Z",
+      "by": "source-collector"
+    }
+  ]
+}

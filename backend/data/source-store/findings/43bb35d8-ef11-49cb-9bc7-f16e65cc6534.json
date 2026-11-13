@@ -854,7 +854,57 @@
           "sha256": "da656b648898af17ae7edc650443c93f8a38f7613af74f16685630a98fc0fad8"
         }
       }
+    },
+    {
+      "id": "aa17a1577d24d5f280d3368b2550501467445408f98815b547bf4b075e51a1c6",
+      "kind": "record",
+      "url": "https://policyrisk.com/state-bill/WA-HB1799-2025-2026",
+      "date": "2026-01-12",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1799-2025",
+      "act": "sponsor",
+      "note": "Listed as a cosponsor of HB 1799, concerning persons convicted of violent offenses with a firearm. The tracker shows it failed, last action first reading and referral to Community Safety on 2026-01-12. Source is a third-party bill tracker, not the legislature's own page. Date is the last action listed, not the cosponsor-signing date.",
+      "subjects": [
+        "limits on who may have a gun",
+        "people convicted of violent crimes with a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:37:48.085Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on gun types or magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "limits on who may have a gun",
+        "carry permits",
+        "repealing gun laws",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Cyndy_Jacobsen (empty response)",
+        "blocked: https://housedemocrats.wa.gov (403)",
+        "not reviewed: official House caucus page (src.wastateleg.org/jacobsen returned 404)",
+        "one web search on name plus firearms and Second Amendment: no own words on the subject found",
+        "sponsor list: covered by bulk bill data",
+        "https://policyrisk.com/state-bill/WA-HB1799-2025-2026 (bill tracker page; lists her as a cosponsor; bill not in the on-file list)",
+        "campaign site: not found",
+        "news search: nothing on the subject in her own words"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:37:48.085Z",
+      "by": "source-collector"
+    }
+  ]
 }

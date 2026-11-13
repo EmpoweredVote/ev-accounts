@@ -1026,7 +1026,117 @@
           "sha256": "f80b68c77a83637977c0a328aad6ef05fd7a04afb1953a3b9269676cf9369fca"
         }
       }
+    },
+    {
+      "id": "8ed8d3d5b2360e70b095a123c1befe2df52409bcc8b5aa2c02eb1164171547ea",
+      "kind": "own-words",
+      "url": "https://perrydozier.src.wastateleg.org/e-news-budget-proposals-way-anti-firearm-bills-bring-strong-response/",
+      "date": "2023-03-17",
+      "date_precision": "day",
+      "passage": "Over the past few sessions, we have seen various gun control laws introduced. I share the frustration and oppose efforts to further restrict our constitutional rights.",
+      "note": "In a newsletter reply to a constituent about HB 1240 (assault weapons ban) and HB 1143, he says he opposes further gun restrictions.",
+      "subjects": [
+        "ban on assault-style guns",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:46:16.551Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43131bebdae9ec41e17c290d6610f125807df21d31d11773c4016e1676e86565",
+      "kind": "own-words",
+      "url": "https://perrydozier.src.wastateleg.org/e-news-budget-proposals-way-anti-firearm-bills-bring-strong-response/",
+      "date": "2023-03-17",
+      "date_precision": "day",
+      "passage": "I will stand up for our Second Amendment rights and do all that I can to slow the progress of these bad pieces of legislation. Given the makeup of the Legislature, stopping it altogether may not be possible, but I will voice your concerns and the concerns of many who have contacted me and my colleagues in opposition.",
+      "note": "Says he will work to slow the gun bills (HB 1240, HB 1143) and voice opposition.",
+      "subjects": [
+        "Second Amendment",
+        "ban on assault-style guns",
+        "permit to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:46:16.551Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ce353d834d776013af01791d2eb5b6cbf55d55d097dfbf2abebe6c9681dad3ac",
+      "kind": "own-words",
+      "url": "https://perrydozier.src.wastateleg.org/e-news-budget-proposals-way-anti-firearm-bills-bring-strong-response/",
+      "date": "2023-03-17",
+      "date_precision": "day",
+      "passage": "Problems with gun violence around our state are not due to law abiding citizens, they are caused by criminals with guns, many of whom obtained them illegally.",
+      "note": "Newsletter statement on the source of gun violence, in the same reply.",
+      "subjects": [
+        "general statement on gun rights",
+        "gun violence and criminals"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:46:16.551Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "150d367b3687504ea91fd7e7bcc569b79eea7cd7a7bf53ef277385576d908b90",
+      "kind": "own-words",
+      "url": "https://perrydozier.src.wastateleg.org/?p=309",
+      "date": "2023-01-20",
+      "date_precision": "day",
+      "passage": "Additionally, this bill seeks to undermine federal law. In 2005 Congress pass a law that immunizes gun manufacturers, distributors and retail sellers from lawsuits arising out of injuries caused by criminal misuse of a firearm. This legislation could also drive manufacturers out of our state. I am firmly opposed to this legislation.",
+      "note": "Newsletter on SB 5078 (lawsuits against gun makers, dealers and sellers); he says he is firmly opposed. Page header title not confirmed; dated by the newsletter text.",
+      "subjects": [
+        "lawsuits against gun makers and sellers",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:46:16.551Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "lawsuits against gun makers and sellers",
+        "Second Amendment general statements",
+        "background checks",
+        "red flag orders",
+        "carry permits",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Senate caucus site for Perry Dozier: confirmed as 16th District senator; newsletters fetched (2023-01-20 and 2023-03-17); Second Amendment tag page has nothing",
+        "sponsor list: covered by bulk bill data",
+        "one web search on name plus Second Amendment/firearms (one 2024 advocacy scorecard result seen, not fetched)",
+        "not reviewed: Ballotpedia, campaign site, other news searches, questionnaires (allowance not spent beyond the steps above)",
+        "nothing found on background checks, red-flag orders, carry permits, ghost guns in the pages reviewed"
+      ],
+      "found": 4,
+      "at": "2026-11-13T20:46:16.551Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -1,0 +1,80 @@
+{
+  "politician_id": "21a8e1cc-f52d-439e-a0d0-50c5f6720bed",
+  "findings": [
+    {
+      "id": "6d2cdb7f76c933d0b49f865efe9f7d4931e765703418abcd225a1a5436c566b6",
+      "kind": "own-words",
+      "url": "https://electvanessakritzer.com/priorities",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Vanessa is also committed to taking action to end gun violence to keep our kids and communities safe. She will support Community Violence Intervention programs and ensure students have access to the mental health and counseling resources they need to thrive.",
+      "note": "Campaign priorities page: says she is committed to action against gun violence, backs community violence intervention programs and student mental health resources. No specific gun law named.",
+      "subjects": [
+        "end gun violence",
+        "gun violence prevention programs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:49:20.973Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "40d58a769b29c83b73a38a6411b169e36b16270878b1a41bf1868dd00494556b",
+      "kind": "own-words",
+      "url": "https://electvanessakritzer.com/meet-vanessa",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Vanessa has also pushed for the city to lead in advocating for stronger state and federal laws on gun responsibility and is committed to working locally on gun violence prevention.",
+      "note": "Campaign bio page (third-person text on her own site): says she pushed Redmond to advocate for stronger state and federal gun responsibility laws and to work locally on gun violence prevention.",
+      "subjects": [
+        "stronger state and federal gun responsibility laws",
+        "gun violence prevention locally"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:49:20.973Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "end gun violence",
+        "stronger state and federal gun responsibility laws",
+        "gun violence prevention programs",
+        "Second Amendment / restrictions on gun ownership",
+        "assault-style weapons and magazines",
+        "background checks",
+        "red flag orders",
+        "carry permits",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://electvanessakritzer.com (home, priorities, meet-vanessa pages reviewed; /issues does not exist)",
+        "sponsor list: covered by bulk bill data",
+        "confirmed in race: King County primary candidate list for LD45 Position 2 and iVoterGuide profile showing 2026-11-03 general election; the Position 2 general-election result itself not independently verified",
+        "iVoterGuide https://ivoterguide.com/candidate/93140/race/35020/election/1502: questionnaire on restrictions on gun ownership, did not answer",
+        "Washington State Standard primary voter guide: nothing on the subject (no responses)",
+        "Arc of Washington questionnaire docx: nothing on the subject",
+        "Ballotpedia: nothing on the subject (no usable page text)",
+        "blocked: https://bluevoterguide.org/WA/candidate_Vanessa_Kritzer/679496",
+        "news web search on name plus gun words: nothing on the subject",
+        "Redmond council gun-related ordinances/resolutions: not reviewed: https://www.redmond.gov"
+      ],
+      "found": 2,
+      "at": "2026-11-13T20:49:20.973Z",
+      "by": "source-collector"
+    }
+  ]
+}

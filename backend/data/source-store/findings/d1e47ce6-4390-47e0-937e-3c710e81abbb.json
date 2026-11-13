@@ -3018,7 +3018,101 @@
           "sha256": "83cf1fd8da1b2d8a4aa73d600fb251e73c76ee8a22a3bfa5e14e4fb11286f52d"
         }
       }
+    },
+    {
+      "id": "0fc55f9bdbaa62d91cf17d432166dd0fe21e4975cec620527a1d37d8e2832ece",
+      "kind": "own-words",
+      "url": "https://senatedemocrats.wa.gov/valdez/2026/01/21/valdez-bill-restricting-weapons-in-certain-public-spaces-passes-senate/",
+      "date": "2026-01-21",
+      "date_precision": "day",
+      "passage": "“Safety isn’t partisan, and it shouldn’t be controversial,” Valdez said. “This bill is a commonsense approach to protecting kids, families, and public servants while respecting constitutional rights. I’m grateful my colleagues recognized how important this is and voted to pass it again. I hope the House will act this session, so we can finally get this bill to the governor’s desk and signed into law.”",
+      "note": "Quote in a caucus release on Senate passage of SB 5098, which restricts weapons at parks, public buildings and county fairs, with exemptions including concealed pistol license holders.",
+      "subjects": [
+        "weapons banned in parks, public buildings and fairs",
+        "gun safety laws",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:40:50.490Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "11afd7b0ee87c92d601b10839887a6f40ce95caac3695e1c8273d4d56b6968ee",
+      "kind": "own-words",
+      "url": "https://senatedemocrats.wa.gov/blog/2025/03/05/valdez-bill-to-enhance-public-safety-passes-senate/",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "passage": "Gun violence remains a persistent crisis in Washington, where someone is killed by a firearm every 12 hours. It is the leading cause of death for children and teens in the state.",
+      "note": "Release text issued by his office on Senate passage of SB 5098 (2025 version); not a direct quote of him. Describes gun violence as a crisis and the bill as building on his 2024 SB 5444.",
+      "subjects": [
+        "gun violence",
+        "weapons banned in parks, public buildings and fairs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:40:50.490Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8141092ec7747df1aa9b8f6d00a520240a8b69263acd151f17b2018bcb6aa669",
+      "kind": "own-words",
+      "url": "https://senatedemocrats.wa.gov/valdez/2026/01/27/defending-our-values-and-our-communities/",
+      "date": "2026-01-27",
+      "date_precision": "day",
+      "passage": "SB 5098 – Gun Safety in Family Spaces\nLimits firearms in places where children and families gather, including parks, playgrounds, community centers, public buildings, and county fairgrounds. The bill passed the Senate last week and has moved to the House for consideration.",
+      "note": "Newsletter from his office listing SB 5098 among the session's priority bills, under the heading 'Gun Safety in Family Spaces'.",
+      "subjects": [
+        "weapons banned in parks, public buildings and fairs",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:40:50.490Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "weapons in public places",
+        "gun safety in family spaces",
+        "firearms in libraries, transit centers, parks",
+        "general gun safety statements",
+        "bans on firearm types",
+        "background checks",
+        "red flag orders",
+        "carry permits",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate caucus site for Valdez: posts reviewed for gun content (SB 5098 2026 and 2025 releases, 2026-01-27 newsletter); 2026-05-03 newsletter had nothing on the subject",
+        "status: a search summary lists him as the 46th District incumbent on the 2026 ballot (primary 2026-08-04); I could not confirm the general-election ballot or result from a page I fetched",
+        "blocked: https://ballotpedia.org/Javier_Valdez (empty page returned)",
+        "news search on name plus gun words: found only the caucus releases and two Yahoo-hosted news stories (not fetched, not saved)",
+        "sponsor list: covered by bulk bill data",
+        "campaign site: not found in search results",
+        "not reviewed: https://www.yahoo.com/news/washington-lawmakers-propose-expansion-gun-053603136.html",
+        "not reviewed: https://www.yahoo.com/news/state-senate-bill-proposed-restrictions-195200508.html"
+      ],
+      "found": 3,
+      "at": "2026-11-13T20:40:50.490Z",
+      "by": "source-collector"
+    }
+  ]
 }

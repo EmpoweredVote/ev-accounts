@@ -1453,7 +1453,83 @@
           "sha256": "bdd9df442e8209370a571727f6b891019f2289bac4c8bbe52c61238b24a47bf5"
         }
       }
+    },
+    {
+      "id": "f058c99008425888deea020e1ef3150edc30cab3cbe0d7978bd50682d97c8289",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/41750/race/3954/election/707",
+      "date": "2020-08",
+      "date_precision": "month",
+      "passage": "Criminals should not have access to guns. Law abiding citizens have their Right to gun ownership protected in the 2nd Amendment.",
+      "note": "His written answer to a voter guide question on what limits on gun ownership are needed for public safety (2020 race, 14th District). The same page records his answer of Yes to whether teachers should be allowed to carry guns at school. The page is undated, so the month is taken from the 2020 primary.",
+      "subjects": [
+        "who may own a gun",
+        "Second Amendment rights",
+        "teachers carrying guns at school"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:37:47.356Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8c45227dc7f885eaf1de7feb040c9fefcaa710f8f03be1af399d5570963c1119",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/41750/race/3957/election/1118",
+      "date": "2024-08",
+      "date_precision": "month",
+      "passage": "We need to enforce laws on those who misuse guns (criminals) and not punish law-abiding gun owners. When a gun bill was presented in 2023 in the State House, we offered an amendment to increase penalties on criminals who used guns in the commission of a crime.",
+      "note": "His written answer to a voter guide question on what limits on gun ownership are needed (2024 race, 15th District). The same page records his answer of Yes to whether teachers should be allowed to carry guns at school. The page is undated, so the month is taken from the 2024 primary.",
+      "subjects": [
+        "penalties for criminals who use guns",
+        "limits on lawful gun owners",
+        "teachers carrying guns at school"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:37:47.356Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "restrictions on who may own a gun",
+        "Second Amendment rights",
+        "teachers carrying guns at school",
+        "penalties for criminals who use guns",
+        "permit to buy a gun",
+        "gun bans and magazine limits",
+        "background checks",
+        "red flag orders",
+        "carry permits"
+      ],
+      "places": [
+        "status: Washington 15th District state representative, listed as a candidate on the 2026 general election ballot (Nov 3, 2026) on the voter guide site https://ivoterguide.com/candidate/41750/race/3957/election/1118; Wikipedia page https://en.wikipedia.org/wiki/Chris_Corry confirms the office",
+        "On the Record (0 appearances; extract script returned nothing)",
+        "official House caucus page and campaign site: blocked or unreachable (no response from https://housegop.wa.gov/chris-corry, https://repcorry.com, https://www.electcorry.com)",
+        "legislature sponsor lists and roll-call pages: sponsor list: covered by bulk bill data",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Chris_Corry",
+        "Wikipedia: nothing on the subject",
+        "voter guide (2020 and 2024 candidate answers): reviewed, two answers saved",
+        "news search on name plus gun words: a Fox 41 Yakima story on the 2025 permit-to-purchase bill (https://www.fox41yakima.com/?p=827109) reportedly quotes him, but the link now redirects to another site, so not reviewed and nothing saved from it",
+        "Washington State Standard, Spokesman-Review and Yahoo stories on HB 1163: fetched, no Corry quote found",
+        "votesmart.org: not reviewed: https://votesmart.org/public-statement/1270315/issue-position-second-amendment-rights (not confirmed to be this person)",
+        "gunresponsibility.org 2024 scorecard: not reviewed: https://gunresponsibility.org/wp-content/uploads/2024/05/2024-Scorecard.pdf"
+      ],
+      "found": 2,
+      "at": "2026-11-13T20:37:47.356Z",
+      "by": "source-collector"
+    }
+  ]
 }

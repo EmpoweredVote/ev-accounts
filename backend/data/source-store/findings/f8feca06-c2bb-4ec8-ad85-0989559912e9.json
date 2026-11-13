@@ -154,5 +154,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "permit to purchase",
+        "safe storage of guns",
+        "carry a gun without a permit",
+        "guns in public places",
+        "Second Amendment / gun safety statements"
+      ],
+      "places": [
+        "status: sitting state senator for the 18th district, term runs to the 2028 election (per a news search result); not on the 2026 ballot, so still in scope",
+        "On the Record (0 meetings)",
+        "official Senate site: https://senatedemocrats.wa.gov/cortes/ home page, biography and the 2026-01-23, 2026-02-20 and 2026-03-25 newsletters and the 2026-01-26 bills release: nothing on the subject",
+        "blocked: https://ballotpedia.org/Adrian_Cortes (403)",
+        "not reviewed: https://www.aol.com/news/watch-bill-secure-guns-vehicles-014000395.html (404 on fetch)",
+        "campaign site: none found",
+        "news searches on name plus gun words: no direct quote from him on the subject found",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:35:55.643Z",
+      "by": "source-collector"
+    }
+  ]
 }

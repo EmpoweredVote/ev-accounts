@@ -1,0 +1,118 @@
+{
+  "politician_id": "6a1076f3-43ed-4eae-954a-3a26d815000c",
+  "findings": [
+    {
+      "id": "8b56a845acc299d97ccca1a76c36b11658fb08fb3eb4f37d1462241347fd547e",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/81212/race/34942/election/1502",
+      "date": "2026-01-01",
+      "date_precision": "year",
+      "passage": "I don't exactly know the line here. I don't think a citizen should be able to own a nuclear weapon. But, I also think that a well armed population deters tyrannical government. At the very least, anything the police can use against the citizenry should be allowed to be owned and operated by citizens.",
+      "note": "Answer to a voter-guide question on what restrictions on gun ownership are needed for public safety. Date is the 2026 election cycle; exact answer date not shown on page.",
+      "subjects": [
+        "limits on which guns citizens may own",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:50:28.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bba1e19fec98dce4d99aea046ddcf0e9f74fcddc7966889966fc03dc57f7da24",
+      "kind": "own-words",
+      "url": "https://spokesman.com/stories/2024/jul/08/spokane-city-council-approves-local-gun-control-ex",
+      "date": "2024-07-08",
+      "date_precision": "day",
+      "passage": "You know what’s more dangerous than a gun you can see? A gun you can’t see.",
+      "note": "Quoted by the Spokesman-Review, from his remarks at the council meeting on the city gun ordinance. The story also reports he said he concealed carries and called the law “an affront to people’s rights to defend themselves”.",
+      "subjects": [
+        "carry in public buildings",
+        "open carry versus concealed carry",
+        "local gun ordinance"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:50:28.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b4d1c44913236f18c64850269b8cec2b4399b0cf9030db0b38b7217497395222",
+      "kind": "own-words",
+      "url": "https://www.spokanepublicradio.org/regional-news/2024-07-09/todays-headlines-july-9-2024",
+      "date": "2024-07-08",
+      "date_precision": "day",
+      "passage": "I think that this fails. I think it’s a miss and I actually think it’s going to make us less safe.",
+      "note": "Quoted by Spokane Public Radio on his council remarks about the city gun ordinance (C36534).",
+      "subjects": [
+        "local gun ordinance",
+        "carry in public buildings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:50:28.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9d23f6d02331892a050b71e7829f6754fdd5bdcc5f2c40ab5a11d127a4fb642",
+      "kind": "record",
+      "url": "https://spokesman.com/stories/2024/jul/08/spokane-city-council-approves-local-gun-control-ex",
+      "date": "2024-07-08",
+      "date_precision": "day",
+      "act": "nay",
+      "motion": "Ordinance C36534, Gun Violence Prevention for a Safer Spokane",
+      "local_record": true,
+      "note": "Voted no as the Spokane City Council passed 5-2 an ordinance limiting open carry in city facilities, widening where firearm discharge is barred, and providing for destruction of seized weapons.",
+      "subjects": [
+        "carry in public buildings",
+        "local gun ordinance"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:50:28.608Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "limits on who may own which guns",
+        "carry in public buildings (open vs concealed)",
+        "local gun ordinance",
+        "Second Amendment general statement"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://jonathanbingle.com (home page and /about: nothing on the subject; no gun issue listed; /issues pages return 404)",
+        "ballot status: a voter-guide profile lists him on the 2026-11-03 general ballot for State Rep., Dist. 6 Pos. 2 (https://ivoterguide.com/candidate/81212/race/34942/election/1502); official primary results not found, so advancement is not independently confirmed",
+        "sponsor list: covered by bulk bill data",
+        "Spokane City Council ordinance C36534 (2024): Spokesman-Review story and Spokane Public Radio headlines read",
+        "news search on name plus gun words (2 searches)",
+        "not reviewed: Ballotpedia",
+        "not reviewed: Spokane council meeting video of 2024-07-08",
+        "not reviewed: Facebook and Instagram campaign pages"
+      ],
+      "found": 4,
+      "at": "2026-11-13T20:50:28.608Z",
+      "by": "source-collector"
+    }
+  ]
+}

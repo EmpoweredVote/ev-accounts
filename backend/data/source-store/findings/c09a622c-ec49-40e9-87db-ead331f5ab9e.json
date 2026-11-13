@@ -1103,7 +1103,77 @@
           "sha256": "0ea2f3802ab66f58a848cacf422b43a027d5996d26e7b5ed831e0e6b236de0cb"
         }
       }
+    },
+    {
+      "id": "ece37e2b13560b16de78c7a77e6de7f609864fef19ec7489b85fb6e70e07c124",
+      "kind": "own-words",
+      "url": "https://www.heraldnet.com/news/wa-senate-panel-oks-assault-weapon-ban-a-day-after-nashville-shooting",
+      "date": "2023-03-28",
+      "date_precision": "day",
+      "passage": "I am here as a mother of small children that fears every day that moment when my kid is going to come and ask me why they are preparing for the next mass shooting. I know we all grieve for those children. We have an opportunity to do more today than share thoughts and prayers.",
+      "note": "Quoted by the Everett Herald in a story on the Senate Law and Justice Committee passing HB 1240; she also read the names of the Nashville victims and noted two guns used there are covered by the bill. Date inferred from the story (the Tuesday after the Monday Nashville shooting).",
+      "subjects": [
+        "ban on assault-style guns",
+        "gun violence general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:48:57.786Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ac1eadaccf775858a429f436a58436c6a304f3f4899065d74773db1e0611d824",
+      "kind": "own-words",
+      "url": "https://senatedemocrats.wa.gov/trudeau/2023/05/10/2992/",
+      "date": "2023-05-10",
+      "date_precision": "day",
+      "passage": "In 105 days, we accomplished a lot. We acted to protect reproductive freedom and gender-affirming care, reduce gun violence by banning assault weapons, worked hard rapidly address our housing supply and invested in building out our behavioral health systems.",
+      "note": "End-of-session newsletter post from her official site listing the assault weapons ban among the session's accomplishments.",
+      "subjects": [
+        "ban on assault-style guns",
+        "gun violence general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:48:57.786Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "waiting period and safety training",
+        "gun violence general statements",
+        "carry permits",
+        "red-flag orders",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate caucus site, https://senatedemocrats.wa.gov/trudeau/ (site search for 'gun': one newsletter post)",
+        "official biography page https://senatedemocrats.wa.gov/trudeau/biography/ (nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Yasmin_Trudeau",
+        "news search on name plus gun words (one news story found, another outlet reprint not reviewed)",
+        "https://columbian.com/news/2023/apr/03/washington-lawmakers-cite-nashville-school-shooting-as-they-advance-assault-weapon-ban (fetched; no quote of her located in page text)",
+        "campaign site: not found separately from the official site",
+        "not reviewed: debate or interview videos (none located)"
+      ],
+      "found": 2,
+      "at": "2026-11-13T20:48:57.786Z",
+      "by": "source-collector"
+    }
+  ]
 }

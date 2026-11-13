@@ -884,5 +884,35 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on large-capacity magazines",
+        "ban on assault-style guns",
+        "carry in public places",
+        "permit to buy a gun",
+        "general gun rights and Second Amendment statements"
+      ],
+      "places": [
+        "status unconfirmed: a search result lists him as a 2026 candidate for 20th District House Position 1, but no fetched page showed the primary result or the general-election ballot",
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Peter_Abbarno (bot challenge, empty page)",
+        "blocked: https://www.reddit.com/r/LewisCounty/comments/1b2t4wh/ (network block; a search-result mirror reports he spoke against SB 5444 on the floor, not fetched or verified)",
+        "official House caucus site http://peterabbarno.houserepublicans.wa.gov: site search for gun and firearm returned no matching items",
+        "https://src.wastateleg.org/abbarno/: 404; https://src.wastateleg.org/?p=8534: nothing on the subject for him",
+        "https://www.chronline.com/stories/local-republican-lawmakers-take-stance-against-bill-banning-high-capacity-gun-magazines,284941: paywalled, no Abbarno text visible, not reviewed",
+        "https://chronline.com/stories/republicans-lawmakers-criticize-bill-limiting-assault-weapons-after-state-senate-passage,317078: paywalled, no Abbarno text visible, not reviewed",
+        "https://spokesman.com/stories/2023/mar/09/republican-legislators-say-assault-weapons-ban-won: no Abbarno text found",
+        "https://washingtonstatestandard.com/2024/03/21/another-explosive-year-for-gun-bills-in-washington-legislature/: no Abbarno text found",
+        "https://www.thegreenpapers.com/G26/WA: no Abbarno text found",
+        "news searches on his name plus gun words: only leads, no fetched page with his own words",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:47:08.371Z",
+      "by": "source-collector"
+    }
+  ]
 }

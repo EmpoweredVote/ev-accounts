@@ -606,7 +606,144 @@
           "sha256": "9836decaad682e1f1f37f3efe0bc5a777bb490a7588cec071560a81354079c69"
         }
       }
+    },
+    {
+      "id": "453226219a915c4618f6aafaf824426e1ff91c3c2bd2fdcfcd7127a88f2dd738",
+      "kind": "own-words",
+      "url": "https://nikkitorres.src.wastateleg.org/torres-pushes-protections-accountability-controversial-firearm-permit-bill/",
+      "date": "2025-04-14",
+      "date_precision": "day",
+      "passage": "While I have deep concerns about HB 1163 as a whole, it’s critical that we do everything we can to protect those who are most at risk and to hold our systems accountable to the people,",
+      "note": "Quoted in her official release on her two floor amendments to HB 1163 (permit required before buying or transferring a firearm).",
+      "subjects": [
+        "permit to buy a gun",
+        "state permit system"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:47:15.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8089096486d0374f9019c2729af8950f7225f163703365f15993930ba66b645",
+      "kind": "own-words",
+      "url": "https://nikkitorres.src.wastateleg.org/torres-pushes-protections-accountability-controversial-firearm-permit-bill/",
+      "date": "2025-04-14",
+      "date_precision": "day",
+      "passage": "This provision ensures that those under threat are not forced to wait for a bureaucratic process while their safety hangs in the balance,",
+      "note": "On her amendment to exempt protected parties under valid protection orders, such as domestic violence victims, from the HB 1163 permit requirement.",
+      "subjects": [
+        "permit to buy a gun",
+        "protection order exemption"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:47:15.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a64dbf73d86ab8a971dd39fd3202d9e035f7d91f100dacad2d92142b3c1e1ba0",
+      "kind": "own-words",
+      "url": "https://nikkitorres.src.wastateleg.org/torres-pushes-protections-accountability-controversial-firearm-permit-bill/",
+      "date": "2025-04-14",
+      "date_precision": "day",
+      "passage": "If the government is going to mandate a new permitting system, it has a responsibility to operate efficiently,",
+      "note": "On her amendment requiring State Patrol to reimburse permit fees if it does not issue or deny within 30 days. The release continues: “Taxpayers should not be on the hook for delays that deny them their constitutional rights.”",
+      "subjects": [
+        "permit to buy a gun",
+        "permit fees",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:47:15.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad13c4905acfa223a4ec121a780db442498a832fe01defaa16dd4022bc94b3e0",
+      "kind": "record",
+      "url": "https://nikkitorres.src.wastateleg.org/torres-pushes-protections-accountability-controversial-firearm-permit-bill/",
+      "date": "2025-04-14",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1163-2025",
+      "act": "other",
+      "motion": "Offered two floor amendments to HB 1163: exempt protected parties under protection orders from the permit requirement; require State Patrol to refund permit fees if no decision within 30 days",
+      "note": "Her release says both amendments were offered; HB 1163 passed the Senate without them.",
+      "subjects": [
+        "permit to buy a gun",
+        "permit fees"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:47:15.754Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "08e4e053b07cba4cb6a1dfc900d7ccbdf9647f0c0193a800c6909b14ae7695be",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/70237/race/34889/election/1502",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I strongly support the Second Amendment and the constitutional rights of law-abiding citizens to own and responsibly use firearms. We should holding violent criminals accountable, and not put additional burdens on the rights of responsible gun owners.",
+      "note": "Voter-guide answer under '2nd Amendment' to the question on what restrictions on gun ownership are needed. The identical text also appears on her earlier-race profile, so the exact date is uncertain; it is her stated answer on a voter guide.",
+      "subjects": [
+        "Second Amendment",
+        "gun rights",
+        "limits on gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:47:15.754Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permit to buy a gun",
+        "background checks",
+        "Second Amendment",
+        "gun rights",
+        "assault-style guns and magazines",
+        "red flag orders",
+        "concealed carry"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "Senate caucus member site (nikkitorres.src.wastateleg.org): site search for 'firearm' returned one post; public-safety category page had nothing on the subject",
+        "iVoterGuide 2026 District 8 profile (https://ivoterguide.com/candidate/70237/race/34889/election/1502): confirms she is a 2026 general-election candidate for State Senator, Dist. 8; has a Second Amendment answer; other gun items 'Did not answer'",
+        "iVoterGuide earlier-race profile (https://ivoterguide.com/candidate/70237/race/28878/election/1435): same Second Amendment answer text",
+        "blocked: https://ballotpedia.org/Nikki_Torres (403)",
+        "two web searches (standard); one news search on name plus gun words found only her caucus-site post",
+        "not reviewed: floor debate audio or video (TVW)",
+        "not reviewed: campaign site (none located)"
+      ],
+      "found": 5,
+      "at": "2026-11-13T20:47:15.754Z",
+      "by": "source-collector"
+    }
+  ]
 }

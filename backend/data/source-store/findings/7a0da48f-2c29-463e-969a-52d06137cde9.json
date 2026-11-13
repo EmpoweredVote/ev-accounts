@@ -741,7 +741,157 @@
           "sha256": "94b984934095112c128ea57c3a6b6d0f8c03ee5eefd39970afb718b33e489762"
         }
       }
+    },
+    {
+      "id": "f52b6f565e54c385af3bd5c42fa3c2e93610d35c0ea4eb43148061b5f5e82a40",
+      "kind": "own-words",
+      "url": "https://electchipalo.com/priorities/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Protect “red flag” laws that empower families and law enforcement to prevent gun tragedies by temporarily RESTRICTING ACCESS to guns for individuals at an elevated risk of harming themselves or others",
+      "note": "Campaign priorities page, under 'Reducing gun violence': lists protecting red flag laws as something he will fight for. Page is undated; year is the fetch-time campaign cycle.",
+      "subjects": [
+        "red flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:38:14.286Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b19753d6b3c8bec903e7a93ccee0036313f52ec7476ce76c551b103cc6dead01",
+      "kind": "own-words",
+      "url": "https://electchipalo.com/priorities/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "RAISE THE AGE to buy a semi-automatic rifle",
+      "note": "Same campaign list of things he will fight for: a higher minimum age to buy a semi-automatic rifle.",
+      "subjects": [
+        "minimum age to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:38:14.286Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f1056e7025214bc36fe127309cf19bd465cc0881142b19eb5fbcc49374588d3",
+      "kind": "own-words",
+      "url": "https://electchipalo.com/priorities/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "RESTRICT GUNS at city and county council meetings, school board meetings and ballot counting centers",
+      "note": "Same list: limit guns at local government meetings, school board meetings and ballot counting centers.",
+      "subjects": [
+        "places where guns are allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:38:14.286Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8064f91ea3823fd9b8ae17b8e8dd30146c1945c3b2fa01dd44a4e8f9c96e4e87",
+      "kind": "own-words",
+      "url": "https://electchipalo.com/priorities/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "BAN GHOST GUNS that people can buy online and assemble at home to evade background checks",
+      "note": "Same list: ban home-assembled unserialised guns.",
+      "subjects": [
+        "ghost guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:38:14.286Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "579e661935933fe01453a7598d68e25148c76f03b754bcad4594882fc94aa3ba",
+      "kind": "own-words",
+      "url": "https://electchipalo.com/priorities/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "A person is killed in Washington State with a gun every 14 hours. Gun violence is all too common now in our society, and the debates that have followed have been predictable. I have lost many friends and community members to gun violence. This is the horrible reality for me and America. Although gun violence is preventable, we all know someone affected by it.",
+      "note": "Introduction to his gun violence section; says gun violence is preventable.",
+      "subjects": [
+        "gun violence general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:38:14.286Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f65c084a4f6d77a21f5274e7d69fc26624a68c636fb5b0a951d247bf6240ec87",
+      "kind": "own-words",
+      "url": "https://electchipalo.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "As your State Representative I’ve earned the trust of elected officials, labor, environmental, & community leaders by delivering progressive wins for the 37th, from passing the Millionaire’s tax, to advancing rent stabilization, and enacting an assault weapons ban.",
+      "note": "Campaign home page lists enacting an assault weapons ban among his accomplishments.",
+      "subjects": [
+        "ban on assault-style guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:38:14.286Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red flag orders",
+        "minimum age for semi-automatic rifles",
+        "guns at public meetings and ballot centers",
+        "ghost guns",
+        "ban on assault-style weapons",
+        "gun violence general statement"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://electchipalo.com/ (priorities page and home page read; site search for 'gun' returned a results page with no extra items)",
+        "scope: the county-party endorsement questionnaire (https://37dems.org/wp-content/uploads/2026/06/State-Senate-LD-37-Senator-Chipalo-Street.pdf) shows a 2026 run for the LD 37 state Senate seat; a search snippet reported a first-night primary lead, but I did not fetch a page confirming the November ballot",
+        "endorsement questionnaire: nothing on the subject",
+        "blocked: https://www.chipalo.com",
+        "blocked: https://ballotpedia.org/Chipalo_Street",
+        "blocked: https://housedemocrats.wa.gov/street/",
+        "blocked: https://www.newsfromthestates.com/node/420956",
+        "https://www.chipalostreet.com is an under-construction page",
+        "https://en.wikipedia.org/wiki/Chipalo_Street: nothing on the subject",
+        "news searches on name plus gun words: nothing on the subject",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 6,
+      "at": "2026-11-13T20:38:14.286Z",
+      "by": "source-collector"
+    }
+  ]
 }

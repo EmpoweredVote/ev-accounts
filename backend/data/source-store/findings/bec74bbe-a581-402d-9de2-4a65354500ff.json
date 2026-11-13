@@ -1728,7 +1728,56 @@
           "sha256": "97f81ce4ebfb198c0a82344be65e8e194cd5e73142bb91539696683b4360cb42"
         }
       }
+    },
+    {
+      "id": "c3299881974b99bd364e05d41954e156f4041210d9dd0eabe6656a5a72c236cb",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/31761/race/3941/election/802",
+      "date": "2016",
+      "date_precision": "year",
+      "passage": "We need to respect the civil rights that are protected in the Constitution. The Second Amendment rights are fundamental to protection of liberties. We have many laws that regulate gun purchases. They are sufficient to provide assurance that legal purchases are made by responsible people that will not pose a threat to public safety.",
+      "note": "Her written answer on a voter-guide questionnaire (2016 race page) to what restrictions on gun ownership are needed for public safety. Year taken from the page's listing of the 2016 endorsement; exact questionnaire date not shown.",
+      "subjects": [
+        "general statement on Second Amendment rights",
+        "existing gun purchase laws are sufficient",
+        "restrictions on gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:44:37.217Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on firearm types or magazines",
+        "background checks and permits to buy",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "general Second Amendment statements",
+        "guns in schools"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "voter guide profile pages https://ivoterguide.com/candidate/31761/race/3941/election/802 (2016 questionnaire, used), /election/644, /election/1118, /election/1247 (questions unanswered), /election/507 (no usable answer); also lists her on the 2026 primary and general ballot pages",
+        "state disclosure commission candidate page https://www.pdc.wa.gov/political-disclosure-reporting-data/browse-search-data/candidates/93681 (page was an empty template, nothing on the subject)",
+        "Wikipedia page (office and district only, nothing on the subject)",
+        "one news search on her name plus Second Amendment/firearm words (nothing beyond voter-guide pages)",
+        "House caucus site: not reviewed: https://housereplicans.wa.gov/dye/ (host did not resolve)",
+        "Ballotpedia https://ballotpedia.org/Mary_Dye: no usable page returned by fetch",
+        "sponsor list: covered by bulk bill data",
+        "no statewide-office or campaign site found in search; no debate or interview video found"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:44:37.217Z",
+      "by": "source-collector"
+    }
+  ]
 }

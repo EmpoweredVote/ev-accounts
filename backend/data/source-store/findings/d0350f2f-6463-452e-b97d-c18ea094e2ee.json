@@ -2028,7 +2028,85 @@
           "sha256": "e94451b12e4acdc8772845b7af9f67fab93ebb940f06f12e1f820ce5bed8cf43"
         }
       }
+    },
+    {
+      "id": "96870b65613c7954c4ecd3a3b96ca5be50c5d2a2ee90bd09e8f35b83de33a240",
+      "kind": "own-words",
+      "url": "https://www.spokesman.com/stories/2025/apr/15/permit-to-purchase-clears-washington-senate-heads-/",
+      "date": "2025-04-15",
+      "date_precision": "day",
+      "passage": "“So it’s not just ‘Yes, everything is going full speed ahead on this.’ This is a controversial issue,” Holy said.",
+      "note": "Quoted by the Spokesman-Review from Holy's Senate floor remarks on the permit-to-purchase bill (HB 1163). The story also reports he said the bill will likely “generate litigation immediately” and that similar laws were challenged in other states.",
+      "subjects": [
+        "permit to buy a gun",
+        "court challenge to gun law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:52:48.786Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "permit to purchase",
+        "red flag orders",
+        "carry a gun without a permit",
+        "open carry limits",
+        "general gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "roll-call pages: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Jeff_Holy",
+        "blocked: https://www.yahoo.com/news/permit-purchase-clears-washington-senate-035900356.html",
+        "blocked: https://mynorthwest.com/mynorthwest-politics/republicans-gun-bill/4068979",
+        "blocked: https://src.wastateleg.org/?p=8561",
+        "blocked: https://goodparty.org/people/jeff-holy-6d4c22e0",
+        "not reviewed: https://chronline.com/stories/state-lawmaker-takes-aim-at-proposed-gun-legislation-in-washington-state-legislature,307129 (paywalled; excerpt does not name him)",
+        "https://en.wikipedia.org/wiki/Jeff_Holy: confirms identity as state senator, nothing on the subject, does not confirm 2026 ballot",
+        "Washington election results pages for 2026 primary and general: not found (404); 2026 ballot status not confirmed",
+        "https://www.nraila.org/articles/20250415/washington-permit-to-purchase-bill-passes-senate: does not mention him",
+        "official Senate caucus site and campaign site: not found or not reachable; nothing on the subject",
+        "web search snippet (a lead only, not saved) attributes a permit-to-purchase quote to him from a blocked news page; not verified"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:41:07.797Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permit to purchase a gun",
+        "gun rights and litigation risk",
+        "general gun-law statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Jeff_Holy (403; 2026 ballot status not confirmed from a fetched page; a search summary said he ran in the 2026 primary, not verified)",
+        "blocked: https://washingtonstatestandard.com/2025/03/27/washington-ag-backs-gun-permit-bill-as-it-advances-in-state-senate/ (403)",
+        "https://src.wastateleg.org/holy/ (404)",
+        "official site news tag page https://jeffholy.src.wastateleg.org/tag/sen-jeff-holy (fetched; nothing on the subject; site's own search for gun words and news list pages not reviewed)",
+        "https://www.spokanepublicradio.org/post/state-rep-takes-health-care-advocate-wa-senate-seat (2018 story; nothing on the subject)",
+        "one news story on the 2025 permit-to-purchase Senate vote (Spokesman-Review)",
+        "not reviewed: https://www.spokesman.com/stories/2025/mar/14/lawmakers-consider-new-permit-for-gun-purchases-as (committee remarks seen only in a search summary)",
+        "not reviewed: other news stories, campaign site, vote411, questionnaires",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:52:48.786Z",
+      "by": "source-collector"
+    }
+  ]
 }

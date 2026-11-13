@@ -1,0 +1,30 @@
+{
+  "politician_id": "9864f822-2c4b-49e8-88d8-ee6ea08f4bda",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "carry permits",
+        "Second Amendment and gun safety laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://ivoterguide.com/candidate/93040/race/34965/election/1502 (lists her in the 2026-11-03 general election for State Rep. District 18 Pos. 1; gun question shown as did not answer)",
+        "https://arcwa.org/wp-content/uploads/2026/07/Randi_Knott.pdf (disability-focused candidate survey; no gun text found)",
+        "campaign site https://electrandi.com (page is script-rendered; no readable gun text; not reviewed beyond the home page)",
+        "blocked: https://washingtonstatestandard.com/voter-guides/contests/legislative-district-18-house-position-1/ (403)",
+        "Ballotpedia: page came back empty; not reviewed",
+        "web searches on name plus gun/Second Amendment words: nothing on the subject",
+        "sponsor list: covered by bulk bill data (she is not a sitting legislator)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:46:35.366Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1980,5 +1980,30 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "Second Amendment / gun safety general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate caucus site https://senatedemocrats.wa.gov/hasegawa/ (confirms Sen. Bob Hasegawa; front page items not on the subject)",
+        "official site search for 'gun': https://senatedemocrats.wa.gov/hasegawa/?s=gun (no results)",
+        "blocked: https://ballotpedia.org/Bob_Hasegawa (403)",
+        "web search (2 queries) on name plus gun/firearm words: nothing on the subject in his own words",
+        "legislature sponsor lists and roll calls: covered by bulk bill data",
+        "campaign site: not reviewed (none found in search)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:36:39.753Z",
+      "by": "source-collector"
+    }
+  ]
 }

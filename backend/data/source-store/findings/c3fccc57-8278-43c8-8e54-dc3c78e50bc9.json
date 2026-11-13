@@ -2038,5 +2038,63 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://housedemocrats.wa.gov/?p=39258 (403 to curl; a 2018 end-of-session update that mentions a gun-violence roundtable with students, seen only in a fetch summary, so not quoted)",
+        "blocked: https://housedemocrats.wa.gov/riccelli/ (410 gone)",
+        "blocked: https://ballotpedia.org/Marcus_Riccelli (page came back empty)",
+        "web search 1: name plus firearms statement, nothing on him",
+        "web search 2: name plus Spokane gun violence prevention, results were mainly other legislators; Riccelli only in listings",
+        "not reviewed: https://spokesman.com/stories/2023/mar/08/state-house-passes-bills-to-ban-assault-weapons-an",
+        "not reviewed: https://washingtonstatestandard.com/2024/03/21/another-explosive-year-for-gun-bills-in-washington-legislature/",
+        "campaign site: not reviewed",
+        "scope not confirmed from a fetched page: office and 2026 ballot status unverified"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:44:20.210Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large-capacity magazines",
+        "check every gun buyer",
+        "permit to purchase",
+        "ghost guns",
+        "red flag orders",
+        "carry permits",
+        "general statements on gun rights and gun safety laws"
+      ],
+      "places": [
+        "status: sitting state senator for the 3rd district since 2025-01-13 (previously in the House 2013-2025), confirmed at https://en.wikipedia.org/wiki/Marcus_Riccelli",
+        "On the Record (0 meetings, 0 candidates)",
+        "blocked: https://housedemocrats.wa.gov/riccelli/ (HTTP 410 via fetch tool, 403 via curl)",
+        "blocked: https://ballotpedia.org/Marcus_Riccelli (403)",
+        "official Senate and House caucus pages: not reviewed beyond the blocked address above",
+        "campaign site: not reviewed, none located",
+        "sponsor list: covered by bulk bill data",
+        "web search, 3 queries on name plus gun subject words: nothing on the subject in his own words",
+        "https://www.spokesman.com/stories/2022/mar/04/new-restrictions-for-gun-magazines-one-step-away-f: a news story that only lists his vote on the 2022 magazine bill (already on file); no quote from him",
+        "https://www.spokanepublicradio.org/regional-news/2025-02-02/plans-for-new-gun-regulations-progress-in-washington-legislature and https://www.heraldnet.com/northwest/democrats-turn-attention-to-30-round-magazines-ghost-guns: nothing from him on the subject",
+        "https://en.wikipedia.org/wiki/Marcus_Riccelli: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:52:48.794Z",
+      "by": "source-collector"
+    }
+  ]
 }

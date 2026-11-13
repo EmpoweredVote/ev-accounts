@@ -854,7 +854,82 @@
           "sha256": "da656b648898af17ae7edc650443c93f8a38f7613af74f16685630a98fc0fad8"
         }
       }
+    },
+    {
+      "id": "fdd16332dd30e201cf6eeb694b751958abdf0624f1fb3d5e81d8fb39c23c4d2e",
+      "kind": "own-words",
+      "url": "https://markklicker.houserepublicans.wa.gov/2022/03/16/2022-session-recap-more-spending-no-tax-relief-and-still-no-emergency-powers-reform/",
+      "date": "2022-03-16",
+      "date_precision": "day",
+      "passage": "The majority also passed additional gun control this session that will turn many law-abiding citizens into criminals and make our communities less safe. Senate Bill 5078 bans the sale, manufacturer, or transfer of firearms magazines able to hold more than 10 rounds. Additionally, House Bill 1630 prohibits openly carrying firearms at local government meetings and county election offices. Concealed pistol licenses would still be allowed. Lastly, House Bill 1705 will limit the purchase of firearms and firearm parts, including receivers and frames purchased in the state that don’t have unique serial numbers or a registration. This effectively restricts hobby firearm owners from building and assembling firearms at home. Blaming lawful gun owners for societal problems is misguided. Let’s hold people accountable for their actions instead of going after law-abiding gun owners.",
+      "note": "Session recap on his caucus site, written in the first person plural for the three 16th District legislators. It describes SB 5078 (magazines over 10 rounds), HB 1630 (open carry at government meetings) and HB 1705 (unserialised parts) and criticises the new gun laws as harming law-abiding owners.",
+      "subjects": [
+        "ban on large-capacity magazines",
+        "open carry at government meetings",
+        "home-made and unserialised guns",
+        "general gun-law statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:45:05.180Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5187c670d42899465a691a3654173b7b7edcfd9e16e12e36d3ed4c457b544f33",
+      "kind": "own-words",
+      "url": "https://markklicker.houserepublicans.wa.gov/2025/06/05/end-of-session-update-budget-and-taxes-governor-vetoes-my-bill-16th-district-projects-funded-and-what-passed-and-what-didnt/",
+      "date": "2025-06-05",
+      "date_precision": "day",
+      "passage": "This is not what our nation’s founders had in mind when they ratified the Second Amendment, and I voted against this bill because it places unnecessary barriers on law-abiding citizens who exercise their constitutional rights. A huge amount of taxpayer money will be spent to create these barriers while not addressing the root causes of violent crime.",
+      "note": "In his end-of-session newsletter he explains his vote against HB 1163 (permit to purchase, safety training, enhanced background check, new concealed pistol licence training). He calls it a barrier to Second Amendment rights and says it costs a lot without addressing root causes of violent crime.",
+      "subjects": [
+        "permit to purchase a firearm",
+        "safety training requirement",
+        "enhanced background check",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:45:05.180Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on high-capacity magazines",
+        "permit to purchase a firearm",
+        "home-built and unserialised guns",
+        "open carry limits at government meetings",
+        "Second Amendment rights",
+        "background checks",
+        "red-flag orders",
+        "permitless carry"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name candidates)",
+        "his House caucus site (https://markklicker.houserepublicans.wa.gov/): searched 'firearm' and 'gun'; read the 2022 session recap, 2023-04-12 update, 2025-04-15 update, 2025-06-05 end-of-session update; 2026 session recap and 2026-05-01 update had nothing on the subject",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Mark_Klicker (403)",
+        "blocked: https://ballotpedia.org/Washington_House_of_Representatives_elections,_2026 (empty page)",
+        "not found: https://results.vote.wa.gov/results/20260804/legislative-district-16-state-representative-pos-1.html (404); 2026 general-ballot status not confirmed from a fetched page. A web search result says he is seeking re-election to District 16 Position 1 in 2026, and his own site is still live as the sitting representative",
+        "web search: his name plus Second Amendment and firearms (leads only: gun-safety scorecard, voter-guide pages, none quoted); web search for 2026 ballot status",
+        "not reviewed: votesmart.org Second Amendment public statement (search lead, not fetched; unclear it is this person)",
+        "no separate campaign site found"
+      ],
+      "found": 2,
+      "at": "2026-11-13T20:45:05.180Z",
+      "by": "source-collector"
+    }
+  ]
 }

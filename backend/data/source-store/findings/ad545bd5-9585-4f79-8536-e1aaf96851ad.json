@@ -1,0 +1,31 @@
+{
+  "politician_id": "ad545bd5-9585-4f79-8536-e1aaf96851ad",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "general gun rights and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: voter guide page https://ivoterguide.com/candidate/93033/race/34953/election/1502 lists her as a candidate for WA State Rep., District 12 Position 1 on the 2026-11-03 general-election ballot",
+        "voter guide questionnaire https://ivoterguide.com/candidate/93033/race/34953/election/1502: gun-ownership restrictions question shown as 'Did not answer'; nothing on the subject",
+        "https://bluevoterguide.org/WA/candidate_Stacy_Willoughby/745394: nothing on the subject",
+        "https://kpq.com/stacy-willoughby-12th-district-race/ (candidacy news story): nothing on the subject",
+        "campaign site: not found in search",
+        "web searches for her name plus gun, firearm and Second Amendment words: nothing from her",
+        "blocked: https://ballotpedia.org/Stacy_Willoughby (no usable page returned)",
+        "sponsor list: covered by bulk bill data (not a legislator)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:48:03.220Z",
+      "by": "source-collector"
+    }
+  ]
+}

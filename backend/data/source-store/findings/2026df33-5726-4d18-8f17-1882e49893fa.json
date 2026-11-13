@@ -92,5 +92,63 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on firearm types or magazines",
+        "background checks and permits to buy",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and places where carry is allowed",
+        "repeal of gun laws",
+        "general Second Amendment or gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings, none under the linked id or the name Zach Hall)",
+        "web search: name plus firearm words (results gave only profile pages and scorecards, no own words on guns)",
+        "web search: 2026 ballot status (snippets say incumbent for District 5 Position 1, appointed 2025, running in 2026; no fetched page shows the general-election ballot or a primary result, so ballot status not confirmed)",
+        "https://en.wikipedia.org/wiki/Zach_Hall (fetched: confirms sitting House member for the 5th district since 2025-06-03; nothing on guns)",
+        "blocked: https://housedemocrats.wa.gov/hall/ (403)",
+        "blocked: https://ballotpedia.org/Zach_Hall_(Washington) (empty page)",
+        "blocked: https://washingtonstatestandard.com/voter-guides/contests/washington-state-house-district-5-2026-primary/ (bot check)",
+        "not reviewed: campaign site (no address found; guessed domains did not resolve)",
+        "sponsor list: covered by bulk bill data",
+        "roll-call pages: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:48:48.398Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or large-capacity magazines",
+        "background checks and permits to buy",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general statements on gun rights or gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://housedemocrats.wa.gov/hall/ (official caucus page: nothing on the subject; only a menu link about public safety)",
+        "https://ballotpedia.org/Zach_Hall_(Washington) (fetch returned an empty page; curl was not run successfully because of a shell quoting error, so not reviewed)",
+        "https://ivoterguide.com/candidate/93020/race/34939/election/1502 (shows Zach Hall as the sitting House member for District 5 Position 1 in the 2026 races; the gun-restrictions questionnaire item is marked 'Did not answer'; no stated position)",
+        "https://results.vote.wa.gov/results/20260804/legislative-district-5-state-representative-pos-1.html (returned nothing usable; primary result and general-election ballot status not confirmed by me)",
+        "news search on name plus gun words (2 web searches): no statement by Zach Hall on the subject found",
+        "campaign site: not found in search results, not reviewed",
+        "sponsor list: covered by bulk bill data",
+        "roll-call pages: covered by bulk bill data",
+        "not reviewed: https://app.leg.wa.gov/ (skipped per brief)",
+        "not reviewed: ontheissues.org and vote411 (no leads surfaced)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:52:48.769Z",
+      "by": "source-collector"
+    }
+  ]
 }

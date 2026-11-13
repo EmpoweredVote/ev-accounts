@@ -1838,7 +1838,56 @@
           "sha256": "89bcad6305756787f7924b96fb0ce69589ced9e302b8faa1ea0be568d48b0143"
         }
       }
+    },
+    {
+      "id": "2f391abae6640249f64530c858ab56db0a15a30c8f1704ad578a76191422ff25",
+      "kind": "own-words",
+      "url": "http://edorcutt.houserepublicans.wa.gov/2021/03/29/open-carry-radio-report/",
+      "date": "2021-03-29",
+      "date_precision": "day",
+      "passage": "That’s what I hear from my constituents. Why are you needlessly turning me into a criminal when I have no criminal intent? I’m just exercising my Second Amendment right.",
+      "note": "Quoted in a House caucus radio report on SB 5038 (ban on open carry of firearms and weapons within 250 feet of permitted events); he is speaking against the bill during floor debate.",
+      "subjects": [
+        "carrying guns in public",
+        "open carry near permitted events",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:40:00.908Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "open carry near events",
+        "Second Amendment",
+        "permit to purchase",
+        "assault-style weapons and magazines",
+        "background checks",
+        "red flag orders",
+        "concealed carry"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: confirmed Ed Orcutt is a 2026 candidate for the 20th District House Position 2 (Ballotpedia and ballot-listing pages in search results; not fetched)",
+        "blocked: https://ballotpedia.org/Ed_Orcutt (403)",
+        "official House caucus site, site search for 'gun' (two pages of results reviewed; one 2021 radio report with his quote; the 2026 town hall news page had no body text on the subject)",
+        "campaign site: not reviewed, none found in search",
+        "legislature bill pages and roll calls: sponsor list: covered by bulk bill data",
+        "news search on name plus gun-bill terms: nothing naming him",
+        "web search for his Second Amendment statements: nothing on him"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:40:00.908Z",
+      "by": "source-collector"
+    }
+  ]
 }

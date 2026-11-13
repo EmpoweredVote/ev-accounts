@@ -2003,7 +2003,55 @@
           "sha256": "f4eef29dc0e7e2fb1a4ea206296cd0b3e3f163b9281195936ce98fe6a17ab772"
         }
       }
+    },
+    {
+      "id": "3eacdc37784414fe41fefbdf8de4f1e9087e9b5bc04797611b647ec4992799c1",
+      "kind": "own-words",
+      "url": "https://komonews.com/news/local/house-panel-oks-bump-stock-ban",
+      "date": "2018-02-15",
+      "date_precision": "day",
+      "passage": "I'm also interested in thinking about how are we preparing our students and our school settings and our communities and our places of worship and parks,",
+      "note": "Quoted by KOMO/AP in a story on a House committee approving a bump stock ban. She speaks of preparing schools, communities, places of worship and parks; the quote does not say whether she backs the bill.",
+      "subjects": [
+        "bump stock ban",
+        "safety of schools and public places"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:45:27.670Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bump stock / trigger device ban",
+        "school and community safety after shootings",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders",
+        "carry permits",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House caucus page https://housedemocrats.wa.gov/stonier/ (no gun content)",
+        "Ballotpedia https://ballotpedia.org/Monica_Jurado_Stonier (page returned empty to the fetch tool; not reviewed)",
+        "Columbian candidate page https://columbian.com/elections/candidate/monica-jurado-stonier (confirms 2026 general ballot, 49th District Position 2; nothing on the subject)",
+        "news search on name plus gun words (one 2018 news story with a quote)",
+        "sponsor list: covered by bulk bill data",
+        "campaign site: not reviewed (not located in search)",
+        "TVW floor debate videos: not reviewed"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:45:27.670Z",
+      "by": "source-collector"
+    }
+  ]
 }

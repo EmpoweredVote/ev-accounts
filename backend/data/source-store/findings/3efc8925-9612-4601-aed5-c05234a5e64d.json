@@ -485,5 +485,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation in general",
+        "Second Amendment",
+        "restrictions on gun ownership",
+        "assault-style weapons and magazines",
+        "background checks",
+        "carry permits and permitless carry"
+      ],
+      "places": [
+        "On the Record (0 appearances; no meetings found by id or by name)",
+        "scope check: a June 2026 Spokane newspaper story and a voter-guide race page (https://ivoterguide.com/race/34938/election/1502) name Rob Chase as the sitting District 4 Position 2 representative and as a listed 2026 general-election candidate against Rob Tupper; the August 2026 primary result page on the state results site returned 404 (blocked: https://results.vote.wa.gov/results/20260804/legislative-district-4-state-representative-pos-2.html)",
+        "news story https://spokesman.com/stories/2026/jun/07/rob-rob-and-bob-face-off-for-valley-state-house-se/ : covers taxes, state split, climate, abortion; nothing on the subject",
+        "Spokane newspaper candidate profile page for 2026: nothing on the subject",
+        "voter guide candidate page https://ivoterguide.com/candidate/54062/race/34938/election/1502 : the Second Amendment question is marked did not answer",
+        "Ballotpedia: blocked (page returned empty to the fetch tool and curl)",
+        "House caucus member page: not reviewed (returned empty)",
+        "official legislature site and campaign site: not fetched, no address found in search",
+        "bill pages and sponsor list: covered by bulk bill data",
+        "two web searches on name plus gun words: no statement by him found"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:47:27.682Z",
+      "by": "source-collector"
+    }
+  ]
 }

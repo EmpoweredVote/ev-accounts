@@ -232,7 +232,76 @@
           "sha256": "3243a76da2b60edc66d013a33ec42ec3a90429c95317177eacd70e4d0463e69a"
         }
       }
+    },
+    {
+      "id": "d1eceebd22deb2f75e749fbfb595fe7c1ff7cd2a9eff92481234ef307b9b2989",
+      "kind": "own-words",
+      "url": "https://docs.google.com/document/d/1xApfW2eQ7m9qvfGLh2ciU-Cx-fdrJKqB/export?format=pdf",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Yes, we should regulate firearms. I supported the bills which would require training and require secure firearms in cars/vehicles. Firearms are the second leading cause of death in children (1-17 years old), 71% of gun deaths are suicides, and over 900 people were killed in 2024 in Washington. Other states have shown that the higher the number of guns the more likely there will be mass shootings and violent deaths will be from guns. So, yes, I for gun regulation.",
+      "note": "Her written answer to question 8 of the Olympia Indivisible LD22 candidate questionnaire, asked whether more laws on sale or ownership of firearms should pass. She says yes and names support for bills on training and on secure storage of guns in vehicles. Exact date not shown on the document; 2026 inferred from the race.",
+      "subjects": [
+        "more laws on gun sales and ownership",
+        "gun training requirement",
+        "secure storage of guns in vehicles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:48.484Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f1f820e73be154ff95de426c0ce27f737ff12282d3f4a5ceb5f5bfe8556a41a",
+      "kind": "own-words",
+      "url": "https://docs.google.com/document/d/1xApfW2eQ7m9qvfGLh2ciU-Cx-fdrJKqB/export?format=pdf",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I do have guidelines that include no fossil fuel companies, no large corporations, no gun companies or pro-gun lobbyists, no tobacco or nicotine companies, no hospitals, and no banks.",
+      "note": "Her answer to question 12 of the same questionnaire on limits on campaign revenue; she says she takes no money from gun companies or pro-gun lobbyists.",
+      "subjects": [
+        "campaign money from gun companies and gun lobbyists"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:48.484Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "secure storage of guns in vehicles",
+        "gun training requirements",
+        "gun industry campaign money",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "blocked: https://housedemocrats.wa.gov/parshley/ (403)",
+        "blocked: https://ballotpedia.org/Lisa_Parshley (403)",
+        "blocked: https://bluevoterguide.org/district/WA/Washington_House_of_Representatives_District_22/56204/721 (403)",
+        "campaign site: no working address found; not reviewed",
+        "Wikipedia page: nothing on the subject",
+        "legislature sponsor list: covered by bulk bill data",
+        "two web searches (name plus gun terms; name plus 2026 race and gun-safety groups); results used only as leads",
+        "https://ivoterguide.com/candidate/81766/race/34974/election/1502 (shows 2026 general election of November 3, 2026 on her record; lists a gun-safety group among endorsements; her 2nd Amendment question marked 'Did not answer')",
+        "Olympia Indivisible candidate questionnaire (PDF) - one gun answer and one campaign-money answer"
+      ],
+      "found": 2,
+      "at": "2026-11-13T20:43:48.484Z",
+      "by": "source-collector"
+    }
+  ]
 }
