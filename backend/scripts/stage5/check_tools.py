@@ -576,6 +576,97 @@ def search_effect_counts_changes_by_record_rung_and_codings(t):
     assert o['codings'] == {'record_only': 3, 'second_pass': 4, 'total': 7, 'per_person': 1.75}, 'e is not on the id list, so it is not counted'
 
 
+def profile(t, **over):
+    p = {'topic_key': 'made-up-topic', 'label': 'made-up-topic S9 Stage 5', 'research': f'{t}/research', 'stage5': f'{t}/research/stage5',
+         'sides': None, 'record_script': False, 'control_groups': [], 'settled': ['Trim rule: keep (runner, 2026-01-01).']}
+    p.update(over); os.makedirs(p['stage5'], exist_ok=True)
+    json.dump(p, open(f'{t}/profile.json', 'w')); return f'{t}/profile.json'
+
+
+@check
+def session_card_takes_every_topic_value_from_the_profile(t):
+    """A card names no topic, side or rung of its own; an unfilled slot or a half-filled profile writes nothing."""
+    os.makedirs(t)
+    T = os.path.normpath(os.path.join(HERE, '..', '..', '..', '.claude', 'skills', 'season-topic-prep', 'templates'))
+    for leg in 'AB':
+        text = open(f'{T}/stage5-card-{leg}.md').read()
+        for word in ('gun', 'firearm', '1,2,3/4,5', '5,2', 'rung 3', 'rung 5'): assert word not in text, f'card {leg} template names {word!r}'
+    card = lambda leg, *a, ok=True: run('session_card.py', leg, '--state', 'zz', '--state-name', 'Zedland', '--out', f'{t}/card-{leg}.md', *a, ok=ok)
+    P = profile(t)  # no skip rule, no script
+    card('A', '--profile', P); card('B', '--profile', P)
+    a, b = open(f'{t}/card-A.md').read(), open(f'{t}/card-B.md').read()
+    assert '{{' not in a + b and 'made-up-topic' in a and 'Zedland' in b and f'{t}/research/stage5/zz/HANDOVER-A.md' in b
+    assert 'Trim rule: keep' in a and 'Trim rule: keep' in b, 'settled rulings are on both cards'
+    assert f'"saved_root": "{t}"' in b and '"topic": "made-up-topic"' in b, 'the recipe on the card is filled from the profile'
+    assert 'search_list.py plan --' not in b and 'record-script.ts' not in b and 'Search everyone' in b, 'no skip rule: no plan command'
+    assert len(a) < 14000 and len(b) < 16000, 'a card is a short page'
+    P = profile(t, sides='1,2/3', record_script=True, control_groups=['1:7', '3,2:4'])
+    card('B', '--profile', P); b = open(f'{t}/card-B.md').read()
+    assert '--control-group 1:7 --control-group 3,2:4' in b and '--sides 1,2/3 --skip-rungs 1,3,2' in b and '{{' not in b, b[:300]
+    assert 'rung 1 (control of 7); rungs 3 and 2 (control of 4)' in b
+    P = profile(t, control_groups=['1:7'])  # skip rule without the script
+    card('B', '--profile', P); b = open(f'{t}/card-B.md').read()
+    assert 'search_list.py plan --' in b and 'record-script.ts' not in b and 'not approved for this topic' in b
+    os.remove(f'{t}/card-B.md')
+    for bad in ({'record_script': True}, {'control_groups': ['5,2']}, {'stage5': 'relative/stage5'}, {'record_script': True, 'sides': '1/2', 'control_groups': []}):
+        json.dump({**json.load(open(P)), **bad}, open(f'{t}/bad.json', 'w'))
+        assert card('B', '--profile', f'{t}/bad.json', ok=False).returncode != 0 and not os.path.exists(f'{t}/card-B.md'), bad
+    W = f'{t}/wt/.claude/skills/season-topic-prep/templates'; os.makedirs(W)
+    open(f'{W}/stage5-card-B.md', 'w').write('{{TOPIC}} {{NOT_A_SLOT}}\n')
+    r = card('B', '--profile', P, '--worktree', f'{t}/wt', ok=False)
+    assert r.returncode != 0 and 'NOT_A_SLOT' in r.stderr + r.stdout and not os.path.exists(f'{t}/card-B.md'), 'an unfilled slot must write nothing'
+
+
+def transcript(path, turns):
+    """A main-session transcript: turns are (kind, timestamp, payload)."""
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, 'w') as fh:
+        for i, (kind, at, x) in enumerate(turns):
+            if kind == 'say': o = {'type': 'user', 'timestamp': at, 'message': {'content': x}}
+            elif kind == 'answer': o = {'type': 'user', 'timestamp': at, 'message': {'content': [{'type': 'tool_result', 'tool_use_id': x, 'content': 'ok'}]}}
+            elif kind == 'note': o = {'type': 'file-history-snapshot', 'timestamp': at}
+            else:
+                content = [{'type': 'tool_use', 'id': x, 'name': 'AskUserQuestion', 'input': {'questions': [{'question': 'Carry on?'}]}}] if kind == 'ask' else [{'type': 'text', 'text': 'x'}]
+                o = {'type': 'assistant', 'timestamp': at, 'message': {'id': f'm{i}', 'model': 'claude-opus-5-5', 'content': content,
+                     'usage': {'input_tokens': 100, 'cache_creation_input_tokens': 0, 'cache_read_input_tokens': 1000, 'output_tokens': 10}}}
+            fh.write(json.dumps(o) + '\n')
+
+
+@check
+def close_state_measures_whole_sessions_waits_and_refuses_to_replace_hand_work(t):
+    """One command: units of every session and wave folder, waits a runner message ended, and no hand-written file replaced."""
+    P = profile(t); S = f'{t}/research/stage5'
+    os.makedirs(f'{S}/batches'); os.makedirs(f'{S}/waves/zz-search/out'); os.makedirs(f'{S}/waves/yy-search/out')
+    open(f'{S}/batches/zz-ids.txt', 'w').write('a\nb\nc\nd\n')
+    T = lambda h, m: f'2026-01-01T{h:02d}:{m:02d}:00.000Z'
+    A, B = f'{t}/proj/main/aaaa.jsonl', f'{t}/proj/main/bbbb.jsonl'
+    transcript(A, [('say', T(1, 0), 'go'), ('step', T(1, 1), 0), ('ask', T(1, 2), 'q1'), ('answer', T(1, 32), 'q1'), ('step', T(1, 33), 0)])
+    transcript(B, [('say', T(2, 0), 'go'), ('step', T(2, 1), 0), ('note', T(2, 20), 0), ('say', T(2, 21), 'Yes, write it'), ('step', T(2, 22), 0),
+                   ('step', T(2, 40), 0), ('answer', T(2, 50), 'not-a-question')])  # an ordinary tool result after a slow tool: not a wait on the runner
+    transcript(f'{t}/proj/agents/cccc.jsonl', [('say', T(1, 5), 'search this person'), ('step', T(1, 6), 0)])
+    transcript(f'{t}/proj/agents/dddd.jsonl', [('say', T(1, 5), 'search another state'), ('step', T(1, 6), 0)])
+    json.dump({'session_id': 'cccc'}, open(f'{S}/waves/zz-search/out/find-a.result.json', 'w'))
+    json.dump({'session_id': 'dddd'}, open(f'{S}/waves/yy-search/out/find-z.result.json', 'w'))
+    step = 100 + 0.1 * 1000 + 5 * 10  # one made-up step, in weighted units
+    args = ['--profile', P, '--state', 'zz', '--projects', f'{t}/proj']
+    run('close_state.py', *args, '--session', A, '--leg', 'A')
+    assert json.load(open(f'{S}/zz/usage-A.json'))['main_units'] == 3 * step and not os.path.exists(f'{S}/search-effect-zz.json')
+    run('close_state.py', *args, '--session', A, '--session', B)
+    u = json.load(open(f'{S}/zz/usage-zz.json'))
+    assert u['main_units'] == 6 * step and u['total_units'] == 7 * step and u['people'] == 4, 'both sessions, this state\'s wave only'
+    assert list(u['waves']) == ['zz-search'] and u['waves']['zz-search']['agents'] == 1, u['waves']
+    waits = [(w['minutes'], w['ended_by']) for s in u['sessions'] for w in s['waits']]
+    assert waits == [(30, 'an answer to a question'), (20, 'Yes, write it')], f'a snapshot line or a tool result is not the runner: {waits}'
+    md = open(f'{S}/zz/MEASURES.md').read()
+    assert f'{7 * step / 4:,.0f}' in md and 'Carry on?' in md and 'made-up-topic' in md and '| Gate runs | __' in md, md[:400]
+    assert os.path.exists(f'{S}/zz/HANDOVER-B-skeleton.md')
+    run('close_state.py', *args, '--session', A, '--session', B)  # its own page may be written again
+    open(f'{S}/zz/MEASURES.md', 'w').write('# written by hand\n')
+    r = run('close_state.py', *args, '--session', A, '--session', B, ok=False)
+    assert r.returncode != 0 and open(f'{S}/zz/MEASURES.md').read() == '# written by hand\n', 'a hand-written page is never replaced'
+    assert run('close_state.py', *args, '--session', f'{t}/proj/main/none.jsonl', ok=False).returncode != 0
+
+
 @check
 def wave_starts_agents_slim_and_only_with_named_tools(t):
     os.makedirs(t); open(f'{t}/p.md', 'w').write('x')
