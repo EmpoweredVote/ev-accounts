@@ -48,6 +48,7 @@ describe('names and jurisdictions', () => {
     // LegiScan prints WI Reps. Clint Anderson and Priscilla Prado as "Clinton" and "Pricilla" (2026-11-10).
     expect(getNameVariants('Clint')).toEqual(expect.arrayContaining(['clint', 'clinton']));
     expect(getNameVariants('Priscilla')).toEqual(expect.arrayContaining(['priscilla', 'pricilla']));
+    expect(getNameVariants('Janice')).toEqual(expect.arrayContaining(['janice', 'janince']));
   });
 });
 

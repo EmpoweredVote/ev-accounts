@@ -1,0 +1,138 @@
+{
+  "politician_id": "dc50a463-773d-4aa3-8b04-9325bba10d2b",
+  "findings": [
+    {
+      "id": "527f16181f5774a0c5a84b67c0f8c54422db92644680b9585ab27974481df22f",
+      "kind": "own-words",
+      "url": "https://compassknox.com/2020/10/07/election-2020-16th-state-house-district/",
+      "date": "2020-10-07",
+      "date_precision": "day",
+      "passage": "“I’m very strong in the fact that we have the right to vote in our country,” she said. “Men and women lost their lives for it.",
+      "note": "Compass Knox quotes her in a 2020 candidate profile, as a candidate for the District 16 seat. She speaks of the right to vote in general. She does not mention ID, citizenship or any election rule. The page date is taken from the URL.",
+      "subjects": [
+        "right to vote in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T02:02:53.853Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6bf6d81a82db697d74298b2d427ff9b8ac3a5267f7ae33bbaa137ed285b615aa",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/HB1316/id/1538770",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1316-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION, 83-7) on HB1316 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + HA0118 (adopted on the floor 2025-04-07 per action log); linked by LegiScan member id 21757 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.081Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad92ee221bdade53f1ad4bb273813b351662b750a615bdacabc84af573a8a288",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0626/id/1550047",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-626-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION, 72-22) on SB0626 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft 3093364 + SA0305 (full rewrite = chaptered text) as engrossed by the Senate; linked by LegiScan member id 21757 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.081Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfc0f401b5e1e11d23ee20ace873f4d6d7b4216789ab4da3a289d27d0ae2ae27",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1477618",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION, 71-19) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text) as engrossed by the Senate; linked by LegiScan member id 21757 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.081Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "noncitizen voting and voter-roll checks",
+        "election integrity",
+        "mail-ballot ID",
+        "right to vote in general"
+      ],
+      "places": [
+        "confirmed in office and on the 2026 ballot: https://tnfirefly.com/elections/general-assembly/house/16 (search result lists her among two candidates on the 2026-11-03 ballot; the House caucus and Compass Knox pages name her for District 16)",
+        "On the Record (0 meetings)",
+        "Compass Knox 2020 candidate profile https://compassknox.com/2020/10/07/election-2020-16th-state-house-district/: one quote on the right to vote (saved)",
+        "House caucus tag page https://tnhousegop.org/tag/michele-carringer: Capitol Report titles only, nothing on the subject",
+        "House caucus page https://tnhousegop.org/?p=3395: 404",
+        "iVoterGuide 2026 https://ivoterguide.com/race/34574/election/1499: questionnaire tab shows no content, nothing on the subject",
+        "https://www.electmichele.com/post/hb-851-protects-tennessee-s-constitutional-standard-for-voting: NOT her; it is by a different state representative (Michele Reneau, District 27), a namesake-style trap, nothing saved",
+        "blocked: https://ballotpedia.org/Michele_Carringer",
+        "blocked: bluevoterguide.org",
+        "blocked: justfacts.votesmart.org",
+        "not reviewed (outlet refused by rule): Tennessee Lookout voter guide https://tennesseelookout.com/voter-guides/contests/house-district-16/",
+        "not fetched by rule: capitol.tn.gov and wapp.capitol.tn.gov",
+        "6 web searches (voter ID, election integrity/noncitizen, photo ID/SAVE Act/proof of citizenship, questionnaire/newsletter/forum): no other page with her own words on the subject"
+      ],
+      "found": 1,
+      "at": "2026-11-12T02:02:53.853Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 3,
+      "at": "2026-11-12T15:13:42.081Z",
+      "by": "source-collector"
+    }
+  ]
+}

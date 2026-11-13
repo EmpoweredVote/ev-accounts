@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1768-2018",
+  "scope": "state:mo",
+  "title": "HB1768 (2018 Regular Session): Eliminates the criminal penalty for carrying a concealed weapon into any area where firearms are restricted under Section 571.107, RSMo",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB1768&year=2018&code=R",
+    "https://www.house.mo.gov/billtracking/bills181/hlrbillspdf/5284H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mike Moon",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3d0fda4e-1322-467e-bfcf-38a5c348b096"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1768-2018.introduced.pdf",
+      "sha256": "d95101b7707aed772b850d22cb1e366530e5684a77faf02033b98ece594294e6"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): 1. A person commits the offense of unlawful use of weapons, except as otherwise provided by sections 571.101 to 571.121, if he or she knowingly: (1) Carries concealed upon or about his or her person a knife, a firearm, a blackjack or any other weapon readily capable of lethal use into any area where firearms are restricted under section 571.107; or\nSection 571.030 (RSMo): 8. A person who commits the offense of unlawful use of weapons under: (2) Subdivision (6), (7), or (8) of subsection 1 of this section shall be guilty of a class B misdemeanor;\nSection 571.030 (RSMo): 8. (5) Subdivision (1) of section 1 of this section shall not be subject to a criminal penalty but may be subject to denial to the premises or removal from the premises. If such person refuses to leave the premises and a peace officer is summoned, such person may be issued a citation for an amount not to exceed one hundred dollars for the first offense. If a second citation for a similar violation occurs within a six-month period, such person shall be fined an amount not to exceed two hundred dollars. If a third or subsequent citation for a similar violation is issued within one year of the first citation, such person shall be fined an amount not to exceed five hundred dollars."
+}

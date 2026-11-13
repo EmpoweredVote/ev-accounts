@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-300-2017",
+  "scope": "state:mo",
+  "title": "HB300 (2017 Regular Session): Provides that if a business enterprise posts to prohibit the possession of concealed firearms on the property, the posting entity assumes responsibility for the safety of a person permitted to carry a firearm if harmed on the property",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB300&year=2017&code=R",
+    "https://www.house.mo.gov/billtracking/bills171/hlrbillspdf/0735H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mike Moon",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3d0fda4e-1322-467e-bfcf-38a5c348b096"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-300-2017.introduced.pdf",
+      "sha256": "6d6c7cb8e80262b9e4e8bfc58d77c795b7ec5606faa0a8039dd510e947afc562"
+    }
+  },
+  "operative_text": "Section 571.068 (RSMo): Any business enterprise authorized to pos t s igns on property prohibiting the possession of a concealed firearm by a person authorized to carry a concealed firearm under sections 571.101 to 571.121 shall assume absolute custodial responsibility for the safety and defense of the endorsement or permit holder while such person is on the premises of the business enterprise and on any prope rty owned by the business enterprise that the endorsement or permit holder is required to traverse in order to trave l to and from the location where the endorsement or permit holder's firearm is stored. The provis ions of this section shall not apply to private property not used for commercial purposes or to private re s ide nce s of any type. For purposes of this section, \"business enterprise\" means any business that sells or provides goods or services to the general public. 2. The responsibility of the business enterprise for the safety and defense of the endorsement or permit holder shall extend to the conduct of other invitees, trespassers, or employees of the business enterprise. 3. (1) Any fire arm carry endorsement or permit holder who is injured, suffers bodily injury or death, incurs economic loss or expense, property damage, or any other compensable loss as a result of the conduct occurring on property where signs are posted prohibiting concealed firearms shall have a cause of action against the business enterprise posting such signs so long as s uch person is an invitee on such property. In addition to damages, such person shall be entitled to reasonable attorney's fees, expert witness costs, and other costs necessary to bring the cause of action. (2) The statute of limitations for an action under this subsection shall be two years from the date of the occurrence giving rise to the damages, loss, or injury. 4. Any notice or sign prohibiting concealed firearms on the property shall also contain language citing the provisions of this section and stating that any endorsement or permit holder on the posted property is under the custodial responsibility of the busine s s enterprise. 5. To prevail in an action brought under this section, the plaintiff s hall show by a preponderance of the evidence that: (1) The plaintiff was authorized to carry a concealed firearm under sections 571.101 to 571.121 at the time of the incident giving rise to the action; (2) The plaintiff was prohibited from carrying a concealed firearm on the property where the incident occurred because signs were posted prohibiting concealed firearms on the property; (3) The property was not required to post signs prohibiting concealed firearms on the property by state or federal law but was posted by choice of the defendant; and (4) The business enterprise's prohibition on carrying concealed firearms or other arms was the proximate cause of the damages, loss, or injury suffered by the plaintiff. 6. This section shall be liberally construed to effectuate its purpose."
+}

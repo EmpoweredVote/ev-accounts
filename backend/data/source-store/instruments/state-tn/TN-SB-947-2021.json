@@ -1,0 +1,32 @@
+{
+  "id": "TN-SB-947-2021",
+  "scope": "state:tn",
+  "title": "SB 947 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2, relative to evidence of identification for voting.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB0947/2021"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) Sec.1, amends TCA 2-7-112(c)(2)\n(quote) (2) A valid identification card that contains a photograph of the voter, and that was issued by this state, or by the United States where authorized by law to issue personal identification;\n(section) Sec.2, adds 2-7-112(c)(8)\n(quote) (8) A valid identification card that contains a photograph of the voter and that was issued by an accredited postsecondary institution of education in this state.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec.3: secretary of state must study use of student ID cards for voting (security concerns, benefits, recommended card changes), consulting higher-education bodies and the department of safety; report due Jan 31, 2022; second report on the new (c)(8) due Jan 31, 2023; subsection repealed Feb 1, 2023.\n(other) Sec.4: effective on becoming law.\n(other) version: Draft 2285258 (only version saved): carries slot a (student photo ID added as item (c)(8); item (2) restated).\n(other) note: Last action 2021-04-13: assigned to the General Subcommittee of Senate State and Local Government; no vote on record. The Sec.1 rewrite of (c)(2) is shown only as what the bill substitutes; the saved text does not mark what changed in wording.",
+  "sponsors": [
+    {
+      "name": "Sara Kyle",
+      "role": "prime",
+      "version": "2285258-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

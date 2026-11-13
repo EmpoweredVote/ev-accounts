@@ -514,14 +514,12 @@ async function insertPolitician(
   await client.query(`SAVEPOINT ${spName}`);
 
   try {
-    // NOTE: is_incumbent=false — SoS filing data does NOT distinguish incumbents.
-    // Two-pass incumbent matching from importElectionData.ts is out of scope here.
     // NOTE: office_title, representing_state, district_id left NULL — the XLSX
     //   gives us raw strings like "Monroe County Council District 3" that require
     //   a separate mapping pass (backfill-indiana-office-titles.ts pattern).
     const insertRes = await client.query<{ id: string }>(
-      `INSERT INTO essentials.politicians (full_name, first_name, last_name, is_active, is_incumbent, is_vacant)
-       VALUES ($1, $2, $3, true, false, false)
+      `INSERT INTO essentials.politicians (full_name, first_name, last_name, is_active, is_vacant)
+       VALUES ($1, $2, $3, true, false)
        ON CONFLICT DO NOTHING
        RETURNING id`,
       [parsed.fullName, parsed.firstName, parsed.lastName]

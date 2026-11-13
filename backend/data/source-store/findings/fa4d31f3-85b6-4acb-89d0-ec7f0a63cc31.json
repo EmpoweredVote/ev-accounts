@@ -1,0 +1,31 @@
+{
+  "politician_id": "fa4d31f3-85b6-4acb-89d0-ec7f0a63cc31",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "Second Amendment general statements",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name candidates)",
+        "https://www.ballotready.org/people/david-couch: confirms candidate for Assembly District 32 in the 2026 general election; public safety text mentions backing police and first responders, nothing on guns",
+        "https://www.turnto23.com/news/local-news/supervisor-david-couch-enters-32nd-assembly-race-after-ellis-opts-out: news story on entering the race; one unrelated budget quote, nothing on guns",
+        "blocked: https://ballotpedia.org/David_Couch (empty page returned to fetch and curl)",
+        "not reviewed: campaign site (guessed address returned an empty page; no verified campaign site address found in search)",
+        "web search, 4 queries (name plus candidate, name plus gun words, name plus general election): nothing on the subject",
+        "sponsor list: covered by LegiScan bulk check",
+        "not reviewed: official county supervisor site, county board meeting minutes and videos"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.508Z",
+      "by": "source-collector"
+    }
+  ]
+}

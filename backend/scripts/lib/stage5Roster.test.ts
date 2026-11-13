@@ -118,14 +118,26 @@ describe('loadRoster', () => {
 
 describe('roster tsv', () => {
   const rows: RosterRow[] = [
-    { politician_id: 'p1', full_name: 'A One', office_id: 'o1', level: 'state', state: 'IN', scope: 'both', leaving: 'no', race_ids: ['r1', 'r2'] },
-    { politician_id: 'p2', full_name: 'E Two', office_id: null, level: 'federal', state: null, scope: 'candidate', leaving: 'no', race_ids: [] },
+    { politician_id: 'p1', full_name: 'A One', office_id: 'o1', level: 'state', state: 'IN', scope: 'both', leaving: 'no', race_ids: ['r1', 'r2'], office: 'State Auditor' },
+    { politician_id: 'p2', full_name: 'E Two', office_id: null, level: 'federal', state: null, scope: 'candidate', leaving: 'no', race_ids: [], office: '' },
   ];
 
   it('round-trips', () => {
     const text = formatRosterTsv(rows);
-    expect(text.split('\n')[0]).toBe('politician_id\tfull_name\toffice_id\tlevel\tstate\tscope\tleaving\trace_ids');
+    expect(text.split('\n')[0]).toBe('politician_id\tfull_name\toffice_id\tlevel\tstate\tscope\tleaving\trace_ids\toffice');
     expect(parseRosterTsv(text)).toEqual(rows);
+  });
+
+  it('still reads a roster written before the office column', () => {
+    const old = 'politician_id\tfull_name\toffice_id\tlevel\tstate\tscope\tleaving\trace_ids\np1\tA One\to1\tstate\tIN\tboth\tno\tr1\n';
+    const [r] = parseRosterTsv(old);
+    expect(r).toMatchObject({ politician_id: 'p1', race_ids: ['r1'] });
+    expect(r.office).toBeUndefined();
+  });
+
+  it('writes the office title, else the chamber name', async () => {
+    const { roster } = await run({ sitting: [{ politician_id: 'p9', full_name: 'Nine', ...state('o9') }] });
+    expect(roster[0].office).toBe('Representative');
   });
 
   it('counts by level, state, scope and leaving', () => {

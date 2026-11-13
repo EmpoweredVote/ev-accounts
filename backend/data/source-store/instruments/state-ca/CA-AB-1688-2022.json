@@ -1,0 +1,76 @@
+{
+  "id": "CA-AB-1688-2022",
+  "scope": "state:ca",
+  "title": "AB1688 (2021-2022): Firearms.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202120220AB1688",
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202120220AB1688#99INT"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Vince Fong",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Heath Flora",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "a0c59a09-fa45-4765-b6c5-17843699991d"
+    },
+    {
+      "name": "Tom Lackey",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "e8bdd8a7-a1b2-43e3-afd4-df975980819e"
+    },
+    {
+      "name": "Devon Mathis",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Melissa Melendez",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Jim Nielsen",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Kelly Seyarto",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "4fccbf85-d794-4cdc-a8b8-674ff1b48784"
+    },
+    {
+      "name": "Thurston Smith",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Introduced 2022-01-24, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-1688-2022.introduced-2022-01-24.html",
+      "sha256": "12a14621b9d043f3370f1536ee2293d158a2262b68bbe42a24358e96fddb3d95"
+    },
+    "note": "Introduced text of 2022-01-24; no floor vote. Section 31910 strikes paragraph (b)(6) (microstamping: subparagraphs (A)-(C)) and paragraph (b)(7) (the Department of Justice must remove exactly three semiautomatic pistols from the roster for each one newly added). The quoted text is what remains after the strike; paragraphs (b)(4) and (b)(5) (chamber load indicator, magazine disconnect) are kept."
+  },
+  "operative_text": "Section 31910 (Penal Code): 31910. As used in this part, “unsafe handgun” means any pistol, revolver, or other firearm capable of being concealed upon the person, for which any of the following is true: (a) For a revolver: (1) It does not have a safety device that, either automatically in the case of a double-action firing mechanism, or by manual operation in the case of a single-action firing mechanism, causes the hammer to retract to a point where the firing pin does not rest upon the primer of the cartridge. (2) It does not meet the firing requirement for handguns. (3) It does not meet the drop safety requirement for handguns. (b) For a pistol: (1) It does not have a positive manually operated safety device, as determined by standards relating to imported guns promulgated by the federal Bureau of Alcohol, Tobacco, Firearms and Explosives. (2) It does not meet the firing requirement for handguns. (3) It does not meet the drop safety requirement for handguns. (4) Commencing July 1, 2022, for all centerfire semiautomatic pistols that are not already listed on the roster pursuant to Section 32015, it does not have a chamber load indicator. (5) Commencing July 1, 2022, for all centerfire or rimfire semiautomatic pistols that are not already listed on the roster pursuant to Section 32015, it does not have a magazine disconnect mechanism if it has a detachable magazine."
+}

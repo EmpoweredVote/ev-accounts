@@ -1,0 +1,44 @@
+{
+  "id": "MO-HB-1823-2026",
+  "scope": "state:mo",
+  "title": "HB1823 (2026 Regular Session): Creates the offense of unlawful possession of an ammunition feeding device that holds more than ten rounds",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB1823&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/3868H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tiffany Price",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c8052fd4-c734-4e36-8fa8-f9f82b845542"
+    },
+    {
+      "name": "Pattie Mansur",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a0ad9cb9-5306-4542-a5fb-af6895fded8f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1823-2026.introduced.pdf",
+      "sha256": "273af1d79f7005cf441ed3695d5a0981e081102a4060ccc31bb4bdb8efaf42df"
+    }
+  },
+  "operative_text": "Section 571.010 (RSMo): (14) \"Large-capacity ammunition feeding device\", a magazine, belt, drum, feed strip, or similar device that has a capacity of, or that can be readily restored or converted to accept, more than ten rounds of ammunition;\nSection 571.020 (RSMo): 1. A person commits an offense if such person knowingly possesses, manufactures, transports, repairs, or sells: … (6) A large-capacity ammunition feeding device; or\nSection 571.020 (RSMo): An offense pursuant to subdivision (4), (5), or (6) of subsection 1 of this section is a class A misdemeanor."
+}

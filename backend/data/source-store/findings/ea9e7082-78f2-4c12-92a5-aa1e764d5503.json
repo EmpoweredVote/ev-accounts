@@ -1,6 +1,118 @@
 {
   "politician_id": "ea9e7082-78f2-4c12-92a5-aa1e764d5503",
-  "findings": [],
+  "findings": [
+    {
+      "id": "40663a66a69a1baf4ae0105d505d960681701416491521c1cff62ba98db6f8e4",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/73161",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-499-2025",
+      "act": "nay",
+      "motion": "Passage By Substitute: Senate Vote #686",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA Senate, Passage By Substitute: Senate Vote #686, 2026-03-06: nay (tally 30–20); census gate: none.",
+      "subjects": [
+        "general ban on possessing silencers repealed",
+        "silencer offence kept only for people barred from firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-499-2025.comm-sub.pdf",
+          "sha256": "9bd024fd2d64c29b3394a0fe59315418fd91f93aea89bb156b92369c35534b6e"
+        }
+      }
+    },
+    {
+      "id": "f75050e9b8a9213661587d855e27782324586c97fc653bb63bd19b859016f101",
+      "kind": "record",
+      "url": "https://www.atlantanewsfirst.com/2026/01/28/senate-democrats-get-behind-second-amendment-after-alex-pretti-fatal-shooting/",
+      "date": "2026-01-27",
+      "date_precision": "day",
+      "instrument_id": "GA-SR-605-2025",
+      "act": "sponsor",
+      "motion": "Senate Resolution 605, affirming the right to keep and bear arms",
+      "note": "Listed among the state senators who co-signed Senate Resolution 605, introduced on a Tuesday (2026-01-27) by another senator. The caucus statement in the same article says the resolution condemns the killing of Alex Pretti and reasserts Georgians' right to the Second Amendment. Recorded as a co-sponsorship. The article is dated 2026-01-28.",
+      "subjects": [
+        "general statement on gun rights or gun safety laws",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.026Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dcb5381925d511f00b81471eef65c1ba16ddd27a44309eef394903d0b35a34e4",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/70476",
+      "date": "2026-01-13",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-204-2025",
+      "act": "nay",
+      "motion": "Agree To House Substitute: Senate Vote #494",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "GA Senate, Agree To House Substitute: Senate Vote #494, 2026-01-13: nay (tally 32–21); census gate: multi-subject.",
+      "subjects": [
+        "local limits on gun storage and gun parts barred",
+        "lawful gun carriers may sue over local rules",
+        "state declares gun regulation a statewide matter"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-204-2025.enrolled.pdf",
+          "sha256": "f3383faa3b85b22922b268ff733c78969bf7745386e967a71e6a9f02136f1fc2"
+        }
+      }
+    },
+    {
+      "id": "e9edf05ca17d7f0deb53b9f8428bd2438d37db3f7bbd1b68986a03dd7e5c51ca",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/72449",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "GA-SR-605-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-SR-605-2025 (LegiScan sponsor list): SR605 (2025-2026 Regular Session): Pretti, Alex; condemn the killing of and protect the constitutional rights of peaceful assembly and right to keep and bear arms.",
+      "subjects": [
+        "resolution declaring support for the right to keep and bear arms",
+        "calls on officials to reject equating lawful gun carrying with criminality"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SR-605-2025.introduced.pdf",
+          "sha256": "fc99754a68425d6ff2c64c88dbec9cd96d35d673d7ac7d98e30767f1452b49d6"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +138,30 @@
       "found": 0,
       "at": "2026-10-28T20:40:31.973Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on high-capacity magazines",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "safe storage of guns",
+        "carry a gun without a permit",
+        "general statement on gun rights or gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "legis.ga.gov member page (JavaScript, no list shown)",
+        "Ballotpedia (not relied on)",
+        "news search on name plus gun words",
+        "Georgia Senate caucus statement via https://www.atlantanewsfirst.com/2026/01/28/senate-democrats-get-behind-second-amendment-after-alex-pretti-fatal-shooting/",
+        "senatepress.net search results: other bills (data centers, immigration), nothing on guns"
+      ],
+      "found": 1,
+      "at": "2026-11-12T01:42:02.026Z",
+      "by": "source-collector"
     }
   ]
 }

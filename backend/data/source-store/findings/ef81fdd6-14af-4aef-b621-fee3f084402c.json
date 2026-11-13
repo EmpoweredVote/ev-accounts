@@ -102,6 +102,402 @@
         "fetched_at": "2026-10-28T20:51:14.416Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "f5910d0b75aaddcec1bed0087ec95f3925870d0e49399284f13a4db010530053",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/66265",
+      "date": "2024-02-27",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1018-2023",
+      "act": "nay",
+      "motion": "Passage: House Vote #581",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #581, 2024-02-27: nay (tally 106–60); census gate: none.",
+      "subjects": [
+        "banks barred from singling out firearms retailers by payment code",
+        "firearms registries by any person or government barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1018-2023.enrolled.pdf",
+          "sha256": "3073f18aecfd54c9c28d17feb9b9ef6f65e37967f1c92fad309d433378719fec"
+        }
+      }
+    },
+    {
+      "id": "ab2b6cbbf5ad2aa9f2c9e3c7ed2d3367bcce148eb8db4754bd5a93c703f8e9ce",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/73253",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1324-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #665",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #665, 2026-03-06: nay (tally 87–76); census gate: none.",
+      "subjects": [
+        "state ban on possessing a silencer repealed",
+        "silencer used in a crime still carries added penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1324-2025.comm-sub.pdf",
+          "sha256": "cac9c7cc0db7a3bfed34e302a4b693e66f6522544bcc39bdac7d05205d292d63"
+        }
+      }
+    },
+    {
+      "id": "bcf6c9d10030e08091c1a21332a414e0181d2134ca3928894bddaadddb5b3a7e",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/66743",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-1160-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-1160-2023 (LegiScan sponsor list): HB1160 (2023-2024 Regular Session): Crimes and offenses; prohibit sale, transfer, use, possession, importation, or manufacture of certain firearms and magazines.",
+      "subjects": [
+        "ban on owning, selling, importing or making certain semiautomatic rifles",
+        "ban on magazines over 20 rounds",
+        "existing owners may keep them if securely stored; sales need a background check",
+        "misdemeanor penalties and forfeiture"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1160-2023.introduced.pdf",
+          "sha256": "f6267f00afb60a5f1ce289fbd8782d18d633e19f310e1db34da13656cfcf5005"
+        }
+      }
+    },
+    {
+      "id": "dce1114d7b4ce7e063dbda36bd6f5b4013d58c9b9d2f954f4ac05a72955056bd",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/69284",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-4-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-4-2025 (LegiScan sponsor list): HB4 (2025-2026 Regular Session): Brady Law Regulations; three-day waiting period for purchase or transfer of certain firearms; require.",
+      "subjects": [
+        "three-day waiting period for firearm sales",
+        "felony for dealers or buyers who evade it",
+        "exception for carry licence holders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-4-2025.introduced.pdf",
+          "sha256": "d82bc0450c50d8e498e583c82871dc55d15072bcc12750daeb1f7b03721595b3"
+        }
+      }
+    },
+    {
+      "id": "c601027bfef6f36372394eea51be51405935ce3830c96232c8c567534e307564",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/69376",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-64-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-64-2025 (LegiScan sponsor list): HB64 (2025-2026 Regular Session): Crimes and offenses; require an owner of an assault weapon to procure and maintain sufficient liability insurance.",
+      "subjects": [
+        "liability insurance required for owners of semiautomatic rifles with high-capacity magazines",
+        "misdemeanor fines for no insurance or no proof",
+        "insurers may not ask for serial numbers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-64-2025.introduced.pdf",
+          "sha256": "bd82bd08d126282cd89c1c8a32495be67adf772c440b9bd18fd55235c3aecd5e"
+        }
+      }
+    },
+    {
+      "id": "46dcbc7bc627b46d238f5429dfc14819477a8611e175d2e0a20a4ac8f3a192a1",
+      "kind": "own-words",
+      "url": "https://sairadraper.com/news/the-draper-paper-week-4",
+      "date": "2025-02-10",
+      "date_precision": "day",
+      "passage": "It’s as cowardly as it is unacceptable. You cannot purport to care about Georgia students and teachers and not address our gun laws.",
+      "note": "Her newsletter says a school-safety bill that leaves out guns is not enough; gun laws must be part of school safety.",
+      "subjects": [
+        "gun safety laws as part of school safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.205Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aff92bb9dd7898e41aaf28ba46bbeaf3525f1355c2c77917398ab3d9acf14d94",
+      "kind": "own-words",
+      "url": "https://sairadraper.com/news/the-draper-paper-week-4",
+      "date": "2025-02-10",
+      "date_precision": "day",
+      "passage": "HB 3 would require a universal background check whenever gun ownership changes – not just when a handgun is sold by a licensed gun dealer.",
+      "note": "She lists HB 3 among bills she supports and says belong in a school safety package.",
+      "subjects": [
+        "check every gun buyer",
+        "background checks on private sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.205Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "57ab40090c1279e2c6733487e723d1627244b240d64213b8f76ac648c8c3b260",
+      "kind": "own-words",
+      "url": "https://sairadraper.com/news/the-draper-paper-week-4",
+      "date": "2025-02-10",
+      "date_precision": "day",
+      "passage": "HB 4 would require a three day wait before the sale or transfer of a gun is completed.",
+      "note": "She lists HB 4 among bills she supports and says belong in a school safety package.",
+      "subjects": [
+        "waiting period for gun purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.205Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "835acc962cc6ae747a0002b03557f2b6ed3c35552bd54428792fc2f19f1ebf37",
+      "kind": "own-words",
+      "url": "https://sairadraper.com/news/the-draper-paper-week-4",
+      "date": "2025-02-10",
+      "date_precision": "day",
+      "passage": "HB 64 would require anyone who owns an assault rifle to have sufficient liability insurance.",
+      "note": "She lists HB 64 among bills she supports and says belong in a school safety package.",
+      "subjects": [
+        "liability insurance for assault-style rifle owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.205Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "408d3ec9669e169e2da3cb83afa4fb24fc7542c81375bb9da543ea64e091421e",
+      "kind": "own-words",
+      "url": "https://sairadraper.com/news/the-draper-paper-week-4",
+      "date": "2025-02-10",
+      "date_precision": "day",
+      "passage": "HB207 would require safe storage of guns left in a parked car or truck, taking away the opportunity to steal a firearms to be used in a holdup, sexual assault or murder.",
+      "note": "She lists HB 207 (locked storage of guns in vehicles) among bills she supports.",
+      "subjects": [
+        "safe storage of guns in vehicles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.205Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bee6fa688a5596ba382ff6c0e7aef57b6870bff41e45b2c3abd5541ed5d30836",
+      "kind": "own-words",
+      "url": "https://sairadraper.com/news/the-draper-paper-week-8-crossover",
+      "date": "2025-03-15",
+      "date_precision": "day",
+      "passage": "Passing just HB 79 is like offering a tax credit to parents of newborns for using an infant car seat, rather than requiring the use of the car seat.",
+      "note": "She says the HB 79 gun-safe tax credit alone is not enough and should come with a safe-storage requirement.",
+      "subjects": [
+        "safe storage requirement",
+        "tax credit for gun safes"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.205Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d01dc7dc0bb364dfb0b69041256b931e28295d8dc9d17b04dc6c9011143bffa5",
+      "kind": "own-words",
+      "url": "https://sairadraper.com/news/the-draper-paper-week-8-crossover",
+      "date": "2025-03-15",
+      "date_precision": "day",
+      "passage": "It’s a fine bill, but it is not sufficient.",
+      "note": "Her view of HB 79, the tax credit for buying a gun locker.",
+      "subjects": [
+        "tax credit for gun safes",
+        "safe storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.205Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fc03d4c2c540400303c0b6f3bbca0e5b576f05a9b9fedb8a885aaf122430f5bd",
+      "kind": "own-words",
+      "url": "https://sairadraper.com/news/the-draper-paper-week-8-crossover",
+      "date": "2025-03-15",
+      "date_precision": "day",
+      "passage": "I don’t say this lightly: it is offensive to me that the GOP would purport to address school safety when they refuse to even acknowledge that common sense gun safety laws are a critical component to any kind of comprehensive school security package.",
+      "note": "On crossover day, she says gun safety laws are a necessary part of a school security package.",
+      "subjects": [
+        "gun safety laws as part of school safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T01:42:02.205Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "951cd305c1cb08a73a6a49f61e8b2ba3447b1f7983a04fca49c30409c562a452",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/72353",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1023-2025",
+      "act": "yea",
+      "motion": "Passage: House Vote #546",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "GA House, Passage: House Vote #546, 2026-02-24: yea (tally 151–11); census gate: near-unanimous.",
+      "subjects": [
+        "weapon detection required at school building entrances",
+        "takes effect January 1, 2028"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1023-2025.comm-sub.pdf",
+          "sha256": "79e90ebc48e656276b1cf2a56ef9e94e0cf0286d51d38dec17f5f451ff55443d"
+        }
+      }
+    },
+    {
+      "id": "e65c4ac42c532c4eaf8d48178b8b3f799e8a3117f6ecec6e9af5590fe1e1184f",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/70476",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-204-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #429",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "GA House, Passage: House Vote #429, 2025-04-04: nay (tally 99–74); census gate: multi-subject.",
+      "subjects": [
+        "local limits on gun storage and gun parts barred",
+        "lawful gun carriers may sue over local rules",
+        "state declares gun regulation a statewide matter"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-204-2025.enrolled.pdf",
+          "sha256": "f3383faa3b85b22922b268ff733c78969bf7745386e967a71e6a9f02136f1fc2"
+        }
+      }
+    },
+    {
+      "id": "65c7b8a90273d1aebf1422015f4522d02db727bd0c8a3707b7333eb6347d9373",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/63765",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-135-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-135-2023 (LegiScan sponsor list): HB135 (2023-2024 Regular Session): Crimes and offenses; establish offense of failure to adequately secure a firearm.",
+      "subjects": [
+        "new offense for failing to securely store a firearm",
+        "minimum $500 fine"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-135-2023.introduced.pdf",
+          "sha256": "224d785ad79f4e8da2380928614cc4e2eb49e1e5d71270e023b7f39c48148f4b"
+        }
+      }
     }
   ],
   "searches": [
@@ -144,6 +540,35 @@
       "found": 1,
       "at": "2026-10-28T20:51:14.416Z",
       "by": "identity-ga-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "background checks",
+        "waiting periods",
+        "safe storage",
+        "liability insurance",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "suppressors",
+        "general Second Amendment or gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: sitting House member, 2026 nominee for Georgia Senate District 44; her campaign site calls her State Senator-elect (https://sairadraper.com/issues)",
+        "campaign site news tagged Gun Safety (https://sairadraper.com/news/gun-safety): two newsletters with gun passages saved; third item is an endorsement notice, nothing on the subject",
+        "campaign issues page (https://sairadraper.com/issues): no gun section; lists an endorsement by a gun-safety group, not her own words",
+        "blocked: https://www.sairadraper.com/gun-safety (404)",
+        "sponsor list: covered by LegiScan bulk check (HB 4, HB 64, HB 1160 already on file; her newsletter lists HB 3 and HB 207 as bills she supports, not as her sponsorship)",
+        "Ballotpedia: not relied on (fetch tool returns empty)",
+        "4 web searches run: name + gun safety; name + Second Amendment; name + floor speech/permitless carry/suppressor HB 1324; plus site fetches. No Second Amendment statement and nothing on permitless carry or suppressors found."
+      ],
+      "found": 8,
+      "at": "2026-11-12T01:42:02.205Z",
+      "by": "source-collector"
     }
   ]
 }

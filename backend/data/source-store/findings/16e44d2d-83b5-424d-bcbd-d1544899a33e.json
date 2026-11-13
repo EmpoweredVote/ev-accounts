@@ -1,0 +1,52 @@
+{
+  "politician_id": "16e44d2d-83b5-424d-bcbd-d1544899a33e",
+  "findings": [
+    {
+      "id": "f443f23eedbd731f9438c00cae874ea45b89efd52b3952c2580cd96ee71be20e",
+      "kind": "own-words",
+      "url": "https://paulaswiftforcongress.com",
+      "date": "2026-08-13",
+      "date_precision": "month",
+      "passage": "This fight became deeply personal when gun violence shattered my world, leaving me to rebuild as a widowed single mother. That's when I learned that resilience isn't just about surviving, it's about transforming pain into purpose.",
+      "note": "Campaign-site statement signed Dr. Paula Swift. She says gun violence took her spouse and shaped her run. It names no policy, bill or type of gun law. Date is the site's last-updated stamp, not the date written.",
+      "subjects": [
+        "gun violence",
+        "personal experience of gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.531Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun violence",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry permits",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "confirmed in scope: candidate for State Assembly District 70, on the November 2026 general ballot (Secretary of State results page https://api.sos.ca.gov/returns/state-assembly/district/70); she first ran for a congressional seat and switched to the Assembly in December 2025 (https://theliberaloc.com/2025/12/09/swift-pivots-from-ca-40-to-state-assembly, no gun statements)",
+        "campaign site https://paulaswiftforcongress.com (now titled for State Assembly): one gun-related passage on the home page; no issues page found in the fetched page text",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: https://ballotpedia.org/Paula_Swift (fetch returned an empty page)",
+        "news search on name plus gun words: nothing on the subject about this person",
+        "not reviewed: the campaign site's other subpages, questionnaires, debate or forum videos, social media posts (search allowance used on scope checks)"
+      ],
+      "found": 1,
+      "at": "2026-11-13T01:27:26.531Z",
+      "by": "source-collector"
+    }
+  ]
+}

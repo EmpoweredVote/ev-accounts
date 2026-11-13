@@ -648,8 +648,8 @@ jobs:
 
       # 🔴 THE RECONCILER SHIPPED RUNNING NOWHERE. It was built, tested and controlled while
       # nothing invoked it, so incumbency drift would have accumulated silently again — the one
-      # thing it exists to stop. politicians.is_incumbent and race_candidates.is_incumbent are
-      # CACHED, nothing recomputes them, and terms start and end on their own dates with no
+      # thing it exists to stop. race_candidates.is_incumbent is CACHED, nothing recomputes it,
+      # (politicians.is_incumbent was dropped in CA_0378; reads derive it from office_terms) and terms start and end on their own dates with no
       # commit involved, so this is drift that happens with nobody touching the repo.
       #
       # ⚠ REPORTS, NEVER WRITES. Correcting a drifted row means deciding what that row IS, and
@@ -1386,6 +1386,71 @@ jobs:
             # over an empty corpus would be a vacuous green, not a check.
             python scripts/check-headshot-faces.py --external-only --workers 8 --fail-on-unreachable
           fi
+
+  headshot-column:
+    name: headshot column
+    runs-on: ubuntu-latest
+    # 🔴 ITS OWN JOB PER THE RULE AT THE TOP OF THIS FILE — and NOT a step inside `headshot faces`,
+    # even though it is the same subject matter and the same schedule. It needs `pg`, so it cannot
+    # join `static guards`, and "similar subject matter is NOT a reason to couple failure reporting"
+    # is exactly the line that rule draws. It would also be the wrong way round: this check says
+    # whether the face sweep in that job can SEE the corpus it claims to have swept, which is not a
+    # thing to hide behind that sweep's own red.
+    #
+    # WHAT IT WATCHES. An import is not finished when the `politician_images` row is inserted:
+    # `politicians.photo_custom_url` must carry the same CDN url, because check-headshot-faces.py
+    # resolves what it judges as COALESCE(photo_custom_url, photo_origin_url). Leave the column NULL
+    # and the row lands in one of two holes, and EITHER WAY the Sunday full-corpus sweep — the one
+    # that would actually look at the face — never selects it:
+    #   * origin is the source PAGE, so the nightly off-site scope picks it up instead, fetches an
+    #     HTML document and false-flags UNDECODABLE against a good portrait;
+    #   * origin is NULL too, so NULLIF(COALESCE(...)) is NULL, `NULL LIKE anything` is NULL rather
+    #     than false, and the row matches NEITHER scope.
+    # The second is the dangerous one: nothing goes red, nothing even reports as skipped, a
+    # published photograph is simply not looked at.
+    #
+    # 📏 That is not hypothetical. 34 rows were in those holes on 2026-11-12, and 20 of them (the
+    # Anchorage cohort, which recorded provenance in `photo_license` and left BOTH url columns NULL)
+    # had gone 16 days unchecked by anything since they shipped. The class was invisible until the
+    # face gate was run by hand. The predicate, both holes and the repair are in
+    # scripts/check-headshot-column.mjs.
+    #
+    # 🔴 THE POSITIVE CONTROL IS MANUFACTURED, and it plants ONE OF EACH KIND: a healthy database
+    # holds zero offenders, and the predicate has two independent halves (NULL column, off-CDN
+    # column) either of which could silently match nothing on its own. The script opens a
+    # transaction, blanks one real politician's column and points another's off our storage, confirms
+    # BOTH come back under their own reason, and ALWAYS rolls back — it cannot write. If either plant
+    # is unseen the check ERRORS rather than passing, because an empty result would then mean nothing.
+    #
+    # 💰 SCHEDULE ONLY — NOT ON PUSH/PR, and the header above requires stating the price of a new job.
+    # ~30 billed minutes a month (one nightly run at the one-minute minimum; the query itself is
+    # sub-second over 9,459 rows). What it measures is PROD state: headshots are imported into prod
+    # from a session, not by a merge, so a push applies nothing here and a per-push run would bill
+    # ~494 minutes a month re-reading unchanged prod. Same reasoning as `chamber-less orphans`,
+    # `rls coverage` and `spatial_ref_sys baseline`.
+    #
+    # Skips itself GREEN when DATABASE_URL is absent (forks / manual runs with no secret).
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          # Read the pin rather than repeating it (see the note on the other jobs).
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check every published headshot is reachable by the face gate
+        run: npm run check:headshot-column:verbose
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
   chamberless-orphans:
     name: chamber-less orphans

@@ -1,0 +1,62 @@
+{
+  "id": "GA-HR-61-2025",
+  "scope": "state:ga",
+  "title": "HR61 (2025-2026 Regular Session): AHIMSA-End Gun Violence; commend",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/69521",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/230346"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michelle Au",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9cdee7d8-43d6-4596-8982-55b006f7754c"
+    },
+    {
+      "name": "Long Tran",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ca3cb38d-d5fc-4cc4-a065-3a09c13104b6"
+    },
+    {
+      "name": "Samuel Park",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0e03704f-d0a0-4a5b-9d7d-9035cc09cbee"
+    },
+    {
+      "name": "Marvin Lim",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0f1d954b-e9f2-4e1b-a140-296fa9996f32"
+    },
+    {
+      "name": "Ruwa Romman",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "21676ab2-d5a7-4c16-86db-e69f3de496ed"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:46:27.022243Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HR-61-2025.introduced.pdf",
+      "sha256": "40bf81ffd61920360f7840d54e6a40533741a57c0914cb387fe0cb4c7bdc19fb"
+    }
+  },
+  "operative_text": "RESOLVED (lines 14-16): NOW, THEREFORE, BE IT RESOLVED BY THE HOUSE OF REPRESENTATIVES that the members of this body commend AHIMSA-End Gun Violence for their student mentorship and advocacy as well as extend best wishes for its future success."
+}

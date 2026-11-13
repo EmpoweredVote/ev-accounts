@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-208-2023",
+  "scope": "state:mo",
+  "title": "HB208 (2023 Regular Session): Prohibits the selling or purchasing of semi-automatic and fully automatic firearms by anyone under twenty years of age",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB208&year=2023&code=R",
+    "http://reflect.legiscan.com/Proxy.php"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "David Smith",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c4f3c035-2b1f-40b2-a1c7-875c8734fa41"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-208-2023.introduced.pdf",
+      "sha256": "900edb468253bac97d3b91b08a174188f83a42c9ae4e0f1c8e66f7b03459433e"
+    }
+  },
+  "operative_text": "Section 571.060 (RSMo): (4) Knowingly, in a commercial transaction, sells, leases, loans, or trades a fully automatic firearm or semi-automatic firearm to any person under twenty years of age, provided that this does not prohibit the delivery of such weapons to any peace officer or member of the United States Armed Forces or National Guard while performing his or her official duty.\nSection 571.060 (RSMo): 2. A person commits the offense of unlawful transfer of weapons if he or she is under twenty years of age and knowingly, in a commercial transaction, buys, trades, or leases a fully automatic firearm or semi-automatic firearm, provided that this does not prohibit the acceptance of such weapons by any peace officer or member of the United States Armed Forces or National Guard while performing his or her official duty.\nSection 571.060 (RSMo): 4. Unlawful transfer of weapons under subdivision (1) of subsection 1 of this section is a class E felony; unlawful transfer of weapons under subdivision (2), (3), (4) of subsection 1 of this section or under subsection 2 of this section is a class A misdemeanor."
+}

@@ -1,0 +1,37 @@
+{
+  "id": "TN-HB-252-2013",
+  "scope": "state:tn",
+  "title": "HB 252 (108th General Assembly): As introduced, allows any photo identification issued by public institution of higher learning to be used as evidence of identification for voting purposes. - Amends TCA Title 2, Chapter 7.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB0252/2013"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id)\n(section) TCA 2-7-112(c)(2), Section 1\n(quote) A valid identification card issued by a branch, department, agency, or entity of this state, any other state, or the United States authorized by law to issue personal identification including any public institution of higher education; provided, that such identification card contains a photograph of the voter;\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec 2: effective on becoming law.\n(other) version: Draft (only version saved): rewrites (c)(2) so photo IDs from other states and from public colleges or universities count (slot a).\n(other) note: Never left House Local Government Subcommittee (taken off notice 2013-04-02). No votes recorded. Same text as SB1082.",
+  "sponsors": [
+    {
+      "name": "Darren Jernigan",
+      "role": "prime",
+      "version": "712136-Draft"
+    },
+    {
+      "name": "James Kyle",
+      "role": "co",
+      "version": "712136-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

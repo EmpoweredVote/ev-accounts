@@ -1,0 +1,137 @@
+{
+  "politician_id": "19829b74-5605-467e-8a6f-0c61b6384d2a",
+  "findings": [
+    {
+      "id": "392efdc8ab393853e95a585df80271d13d515114e0d823fd05c89632073529c7",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0125/id/259248",
+      "date": "2013-04-04",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-125-2013",
+      "act": "yea",
+      "motion": "Senate: CONCUR IN HOUSE AMEND# 2",
+      "note": "TN Senate floor roll call (CONCUR IN HOUSE AMEND# 2, 27-3) on SB0125 (108th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: House Amendment 2 not saved; linked by LegiScan member id 15132 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0163468abe7ef6cc7868a6546830d4095296324325aa2540d7bc350fe651df73",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/HB1316/id/1543681",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1316-2025",
+      "act": "yea",
+      "motion": "Senate: Third Consideration",
+      "note": "TN Senate floor roll call (Third Consideration, 27-1) on HB1316 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: House bill as engrossed: Draft + HA0118 (no Senate amendment adopted; SA0055 withdrawn, text not saved). Equals the Chaptered act.; linked by LegiScan member id 15132 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f0348f24a72db024f3a1a9c793f0dac0385e4fb82378e2fbb2b145afd1d30976",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0626/id/1541445",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-626-2025",
+      "act": "yea",
+      "motion": "Senate: as Amended Third Consideration",
+      "note": "TN Senate floor roll call (as Amended Third Consideration, 22-4) on SB0626 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft 3093364 + SA0305 (full rewrite = chaptered text); linked by LegiScan member id 15132 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3eb2b8cb8e28469b4d579efd6f24f87d728715f7c104a8692eb338a8949bf4c6",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1476571",
+      "date": "2025-01-29",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "nay",
+      "motion": "Senate: as Amended Third Consideration",
+      "note": "TN Senate floor roll call (as Amended Third Consideration, 26-7) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text); linked by LegiScan member id 15132 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.076Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "noncitizen voting",
+        "absentee/mail ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "In scope: holds Senate District 10, term runs to 2028 per the brief; the iVoterGuide 2024 pages name him in this office",
+        "On the Record (extract-otr: 0 appearances)",
+        "iVoterGuide https://ivoterguide.com/candidate/6654/race/20605/election/1242 and https://ivoterguide.com/candidate/6654/race/20605/election/1116 (2024 general and primary): every questionnaire item, including the photo-ID statement, shows 'Did not answer'; nothing on the subject",
+        "Times Free Press 2019 stories on a voter-registration-group bill: https://www.timesfreepress.com/news/2019/apr/04/tennessee-bill-penalizes-paid-voter-signup-groups-/ and https://www.timesfreepress.com/news/2019/apr/15/house-bill-penalize-voter-registration/ fetched, neither quotes him; the Senate-committee story that a search summary says quotes him as calling it an election-security measure could not be read (the two addresses found returned 404), so nothing saved; that bill concerns paid registration drives, not ID",
+        "blocked: https://www.pressreader.com/usa/chattanooga-times-free-press/20190410/281784220472744 (403, Cloudflare check; not retried)",
+        "not fetched (blocked-by-rule site): https://sos.tn.gov/newsroom/press-releases/tennessee-secretary-of-state-tre-hargett-presents-the-nass-medallion-0 (a 2026 award release naming his voter-integrity work, known to block automated visits)",
+        "not reviewed (refused outlets, lead only): newschannel9.com result pages on citizenship checks; tennesseelookout.com 2026 citizenship-check bill story",
+        "Project Vote 2011 post (https://www.projectvote.org/blog/tenn-photo-id-law-scrutinized-for-creating-undue-hardship/): the 'Senator' of its title is a U.S. senator, not him; nothing on the subject",
+        "blocked: https://justfacts.votesmart.org/candidate/biography/138996/todd-gardenhire and Ballotpedia (known to refuse fetches, not tried)",
+        "capitol.tn.gov member page not fetched (robots rule); no campaign site or own column found by search",
+        "web searches run: 6 (iVoterGuide; registration bill/award; photo ID in Times Free Press; 'Gardenhire said'; Times Free Press 2019; name + noncitizen/voter ID)"
+      ],
+      "found": 0,
+      "at": "2026-11-12T01:53:51.903Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 4,
+      "at": "2026-11-12T15:13:42.076Z",
+      "by": "source-collector"
+    }
+  ]
+}

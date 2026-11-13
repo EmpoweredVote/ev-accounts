@@ -1,0 +1,94 @@
+{
+  "politician_id": "c6b4e101-42a6-4b1a-89d9-ef9d1a034dd1",
+  "findings": [
+    {
+      "id": "6bf6d81a82db697d74298b2d427ff9b8ac3a5267f7ae33bbaa137ed285b615aa",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/HB1316/id/1538770",
+      "date": "2025-04-07",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1316-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR AS AMENDED PASSAGE ON THIRD CONSIDERATION, 83-7) on HB1316 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + HA0118 (adopted on the floor 2025-04-07 per action log); linked by LegiScan member id 25239 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.082Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6930988a8505122e603380b4a817086271b34430e05e7cc3610482e5b39efdb3",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0626/id/1550047",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-626-2025",
+      "act": "nay",
+      "motion": "House: REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION, 72-22) on SB0626 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft 3093364 + SA0305 (full rewrite = chaptered text) as engrossed by the Senate; linked by LegiScan member id 25239 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.082Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "noncitizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Confirmed in scope: sitting House District 60 member, re-elected 2026-11-03 (wsmv.com result headline from search)",
+        "https://ivoterguide.com/race/34618/election/1499 (questionnaire answers not shown on page)",
+        "https://tylerfortn.substack.com/p/on-the-issues-tyler-brasher-and-shaundelle (2024 forum; answers are in a video, not reviewed)",
+        "not reviewed: forum video linked from that Substack post",
+        "blocked: https://ballotpedia.org (not fetched, listed as refusing)",
+        "blocked: https://justfacts.votesmart.org and bluevoterguide.org (listed as refusing, not fetched)",
+        "not fetched by rule: capitol.tn.gov and wapp.capitol.tn.gov (votes and sponsorships are linked separately)",
+        "blocked: https://tennesseelookout.com/voter-guides/... (403; fetched once by mistake, refused-list site, nothing saved)",
+        "web searches run (5+ with name plus voter ID, photo ID, proof of citizenship, noncitizen, questionnaire, local outlets): no page with the person's own words on the subject found",
+        "https://www.ballotready.org profile: nothing on the subject in own words"
+      ],
+      "found": 0,
+      "at": "2026-11-12T02:02:08.654Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 2,
+      "at": "2026-11-12T15:13:42.082Z",
+      "by": "source-collector"
+    }
+  ]
+}

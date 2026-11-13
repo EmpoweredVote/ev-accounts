@@ -85,6 +85,236 @@
         "fetched_at": "2026-10-28T20:51:14.418Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "f5910d0b75aaddcec1bed0087ec95f3925870d0e49399284f13a4db010530053",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/66265",
+      "date": "2024-02-27",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1018-2023",
+      "act": "nay",
+      "motion": "Passage: House Vote #581",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #581, 2024-02-27: nay (tally 106–60); census gate: none.",
+      "subjects": [
+        "banks barred from singling out firearms retailers by payment code",
+        "firearms registries by any person or government barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1018-2023.enrolled.pdf",
+          "sha256": "3073f18aecfd54c9c28d17feb9b9ef6f65e37967f1c92fad309d433378719fec"
+        }
+      }
+    },
+    {
+      "id": "ab2b6cbbf5ad2aa9f2c9e3c7ed2d3367bcce148eb8db4754bd5a93c703f8e9ce",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/73253",
+      "date": "2026-03-06",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1324-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #665",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "GA House, Passage: House Vote #665, 2026-03-06: nay (tally 87–76); census gate: none.",
+      "subjects": [
+        "state ban on possessing a silencer repealed",
+        "silencer used in a crime still carries added penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1324-2025.comm-sub.pdf",
+          "sha256": "cac9c7cc0db7a3bfed34e302a4b693e66f6522544bcc39bdac7d05205d292d63"
+        }
+      }
+    },
+    {
+      "id": "dce1114d7b4ce7e063dbda36bd6f5b4013d58c9b9d2f954f4ac05a72955056bd",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/69284",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-4-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-4-2025 (LegiScan sponsor list): HB4 (2025-2026 Regular Session): Brady Law Regulations; three-day waiting period for purchase or transfer of certain firearms; require.",
+      "subjects": [
+        "three-day waiting period for firearm sales",
+        "felony for dealers or buyers who evade it",
+        "exception for carry licence holders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:05:59.946376Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-4-2025.introduced.pdf",
+          "sha256": "d82bc0450c50d8e498e583c82871dc55d15072bcc12750daeb1f7b03721595b3"
+        }
+      }
+    },
+    {
+      "id": "5b1ade51838d8e5e2aa0ddca2d5604f579cb0599659cf6b82733ae3bea80c32c",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/72353",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "GA-HB-1023-2025",
+      "act": "abstain",
+      "motion": "Passage: House Vote #546",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "GA House, Passage: House Vote #546, 2026-02-24: abstain (tally 151–11); census gate: near-unanimous.",
+      "subjects": [
+        "weapon detection required at school building entrances",
+        "takes effect January 1, 2028"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-1023-2025.comm-sub.pdf",
+          "sha256": "79e90ebc48e656276b1cf2a56ef9e94e0cf0286d51d38dec17f5f451ff55443d"
+        }
+      }
+    },
+    {
+      "id": "e65c4ac42c532c4eaf8d48178b8b3f799e8a3117f6ecec6e9af5590fe1e1184f",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/70476",
+      "date": "2025-04-04",
+      "date_precision": "day",
+      "instrument_id": "GA-SB-204-2025",
+      "act": "nay",
+      "motion": "Passage: House Vote #429",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "GA House, Passage: House Vote #429, 2025-04-04: nay (tally 99–74); census gate: multi-subject.",
+      "subjects": [
+        "local limits on gun storage and gun parts barred",
+        "lawful gun carriers may sue over local rules",
+        "state declares gun regulation a statewide matter"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-204-2025.enrolled.pdf",
+          "sha256": "f3383faa3b85b22922b268ff733c78969bf7745386e967a71e6a9f02136f1fc2"
+        }
+      }
+    },
+    {
+      "id": "65c7b8a90273d1aebf1422015f4522d02db727bd0c8a3707b7333eb6347d9373",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/63765",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-135-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-135-2023 (LegiScan sponsor list): HB135 (2023-2024 Regular Session): Crimes and offenses; establish offense of failure to adequately secure a firearm.",
+      "subjects": [
+        "new offense for failing to securely store a firearm",
+        "minimum $500 fine"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-135-2023.introduced.pdf",
+          "sha256": "224d785ad79f4e8da2380928614cc4e2eb49e1e5d71270e023b7f39c48148f4b"
+        }
+      }
+    },
+    {
+      "id": "35c12f15b1ffdd516690cd621b619c89b4258159cf467d68ce657fbe2002464d",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/63548",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "GA-HB-45-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HB-45-2023 (LegiScan sponsor list): HB45 (2023-2024 Regular Session): Brady Law Regulations; three-day waiting period for purchase or transfer of certain firearms; require.",
+      "subjects": [
+        "three-day waiting period for dealer firearm sales",
+        "exception for carry-license holders",
+        "felony for dealers or buyers who evade it"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-45-2023.introduced.pdf",
+          "sha256": "59016a789fd2d1151832ca6cd0808c3f2318ddd9d3f73c2e42422b1887c5f8f7"
+        }
+      }
+    },
+    {
+      "id": "0662aa57fdfed8e4a448d112a7c383c297b763bdabdb014672309a4ccb172cb8",
+      "kind": "record",
+      "url": "https://www.legis.ga.gov/legislation/69521",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "GA-HR-61-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of GA-HR-61-2025 (LegiScan sponsor list): HR61 (2025-2026 Regular Session): AHIMSA-End Gun Violence; commend.",
+      "subjects": [
+        "resolution commending a gun violence prevention group"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T01:46:27.022243Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HR-61-2025.introduced.pdf",
+          "sha256": "40bf81ffd61920360f7840d54e6a40533741a57c0914cb387fe0cb4c7bdc19fb"
+        }
+      }
     }
   ],
   "searches": [
@@ -131,6 +361,34 @@
       "found": 1,
       "at": "2026-10-28T20:51:14.418Z",
       "by": "identity-ga-2026-10-28"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "background checks",
+        "waiting periods",
+        "safe storage",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "general Second Amendment or gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: sitting House member who ran for Georgia Senate District 7, won the June 16 2026 runoff and faces a November opponent (https://www.newarab.com/news/palestinian-american-ruwa-romman-wins-runoff-georgia); she is no longer on the House District 97 ballot (https://www.branch.vote/races/2026-georgia-general-election-ga-state-state-representative-ga-house-97); she ended her governor bid in February 2026",
+        "campaign site home page, about, media and endorsements pages (https://ruwa4georgia.com/): fetched with curl, nothing on guns or the Second Amendment",
+        "earlier site ruwaforgeorgia.com: same site, nothing on the subject",
+        "ruwaromman.com: 404; ruwa4georgia.com/issues and /policies: 404",
+        "blocked: https://www.ruwaromman.com/ (certificate error in fetch tool)",
+        "sponsor list: covered by LegiScan bulk check (a tracker page shows her among six sponsors of HB 4, 2025, three-day waiting period, already on file)",
+        "Ballotpedia: not relied on (fetch tool returns empty)",
+        "6 web searches run: name + gun violence bill; name + Second Amendment; name + governor primary result (status); name + governor primary lost (status); name + safe storage/waiting period/background check; name + HB 4 waiting period. No own-words passage on guns found; a news article on Georgia gun-safety lawmakers does not mention her."
+      ],
+      "found": 0,
+      "at": "2026-11-12T01:42:02.203Z",
+      "by": "source-collector"
     }
   ]
 }

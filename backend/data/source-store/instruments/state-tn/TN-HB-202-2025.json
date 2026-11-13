@@ -1,0 +1,32 @@
+{
+  "id": "TN-HB-202-2025",
+  "scope": "state:tn",
+  "title": "HB 202 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2, relative to elections.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB0202/2025"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec 1, new 2-2-141(a)(1) (everyone, at registration)\n(quote) After July 1, 2025, a person registering to vote in this state shall submit, along with the registration forms, proof that the applicant is a United States citizen for purposes of voting in elections in this state.\n(section) Sec 1, 2-2-141(a)(2) (database check, monthly)\n(quote) The coordinator of elections shall compare monthly the statewide voter registration database with the department of safety database to ensure non-United States citizens are not registered to vote in this state.\n(section) Sec 1, 2-2-141(a)(2) (other databases, optional)\n(quote) The coordinator of elections may compare the statewide voter registration database with those of relevant federal and state agencies, including the systematic alien verification for entitlements (SAVE) program database, the social security database, naturalization records, public health and public assistance records, and county records for the same purpose.\n(section) Sec 1, 2-2-141(b) (only voters a check flags must then show proof)\n(quote) A registered voter who receives a notice pursuant to subdivision (a)(4)(B) shall, no later than thirty (30) days after the receipt of such notice, provide proof of citizenship to the county election commission.\n(section) Sec 1, 2-2-141(c) (purge)\n(quote) if the registered voter or person who responds to the notice does not provide proof of citizenship to the county election commission during the period specified under subsection (b), the administrator of elections of the county where the person is registered to vote shall purge the voter from the voter registration database\n(e_other_rule)\n(section) Sec 1, 2-2-141(a)(3) (unverified applicant gets only a provisional ballot)\n(quote) the individual may only vote a provisional ballot, which must not be counted until the individual's citizenship is verified.\n(section) Sec 2, 2-2-201(2)(C) (registration form attestation incl. SSN validity)\n(quote) Shall include a statement that specifies each eligibility requirement for voting as set forth in this title, including an attestation that the applicant meets each such requirement, including citizenship and the validity of the applicant's social security number, and that requires the signature of the applicant under penalty of perjury;\n(other) Sec 1 (2-2-141 rewrite): notice by certified mail to a flagged voter, 14-day appeal to the state election commission with an in-person or video hearing, orders confidential except a finding of non-citizenship, which is public and reported to the district attorney general.\n(other) Sec 2: 2-2-201(2)(D) registration form must be made available to the coordinator of elections to ensure compliance with 2-2-141.\n(other) Sec 3: takes effect July 1, 2025.\n(other) version: 3061007-Draft (2025-01-16): carries slot d and e text as described (proof of citizenship with registration after July 1, 2025; monthly database check; provisional ballot for unverified applicants; flagged voter shows proof in 30 days).\n(other) version: 3084952-Draft (2025-01-28): same operative words as the first Draft; only the header changes (adds companion Senate Bill 348 by Hensley).\n(other) note: Introduced only. Last action 2025-03-04: taken off notice in the House Elections & Campaign Finance Subcommittee. No roll calls. Slots a, b, c are not stated: the bill has no voter-ID rule; the only provisional ballot is for an applicant whose citizenship is unverified.",
+  "sponsors": [
+    {
+      "name": "Kelly Keisling",
+      "role": "prime",
+      "version": "3084952-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

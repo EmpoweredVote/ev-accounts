@@ -26,6 +26,35 @@
       "found": 0,
       "at": "2026-11-04T04:58:53.159Z",
       "by": "search-mo-2026-11-03"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment general statements",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope: confirmed by news results and the lieutenant governor's office site as the sitting Missouri Lieutenant Governor (statewide office, not a legislator)",
+        "official site https://ltgov.mo.gov: site searches for gun, firearm, second amendment returned nothing on the subject (only an unrelated boat-race 'Top Gun' award); the 2025-01-22 release is about a court workplace-diversity rule, not guns",
+        "https://ltgov.mo.gov/blog/page/2: nothing on the subject",
+        "campaign site https://www.wasingerformissouri.com: fetched, no gun or Second Amendment text found",
+        "sponsor list: covered by LegiScan bulk check (a statewide officer has no bill sponsorships)",
+        "blocked: https://ballotpedia.org/David_Wasinger (returned HTTP 202, empty page)",
+        "blocked: https://missouriindependent.com/2024/10/14/meet-the-disrupter-who-is-about-to-become-missouris-next-lieutenant-governor/ (403)",
+        "https://stlpr.org/podcast/politically-speaking/2024-10-16/missouri-lt-gov-hopeful-david-wasinger-touts-outsider-change-state-politics: fetched page text, nothing on the subject; audio not reviewed",
+        "https://www.newstribune.com/news/2025/feb/27/outsider-wasinger-finding-home-at-capitol/: fetched, nothing on the subject",
+        "web news searches on name plus gun, firearm, Second Amendment, concealed carry: no statement or record found",
+        "not reviewed: ontheissues.org (lead-only, no congressional record)"
+      ],
+      "found": 0,
+      "at": "2026-11-12T21:23:45.865Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-1099-2026",
+  "scope": "state:mo",
+  "title": "SB1099 (2026 Regular Session): Establishes provisions protecting Second Amendment rights",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=489",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB1099.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Rick Brattin",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e9ec322c-e997-486d-8202-48423671c800"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1099-2026.introduced.pdf",
+      "sha256": "8cb095b23afa01af61d7beba33c1b21fac26ba9a0799866ddfc1836d29d24b9f"
+    }
+  },
+  "operative_text": "Section 1.487 (RSMo): Notwithstanding any provision of law to the contrary, all federal acts, laws, executive orders, administrative orders, rules, and regulations, regardless of whether they were enacted before or after the provisions of this section, that restrict the people's right to keep and bear the following types of arms, as guaranteed by the Second Amendment to the Constitution of the United States and Article I, Section 23 of the Constitution of Missouri, shall be invalid to this state, shall not be recognized by this state, shall be specifically rejected by this state, and shall not be enforced by this state: (1) Any weapon which shoots, is designed to shoot, or can be readily restored to shoot, automatically more than one shot, without manual reloading, by a single function of the trigger; (2) The frame or receiver of any weapon described in subdivision (1) of this subsection, or any part designed and intended solely and exclusively, or combination of parts designed and intended, for use in converting a weapon into a weapon described in subdivision (1) of this subsection; (3) Any combination of parts from which a weapon can be assembled as described in subdivision (1) of this subsection if such parts are in the possession or under the control of a person; and (4) Any other weapon or part that meets the definition of \"machinegun\" as provided in 26 U.S.C. 5845(b).\nSection 1.487 (RSMo): It shall be the duty of the courts and law enforcement agencies of this state to protect the rights of law-abiding citizens to keep and bear arms within the borders of this state and to protect these rights from the infringements by the federal government."
+}

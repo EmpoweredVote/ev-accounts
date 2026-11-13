@@ -1,0 +1,44 @@
+{
+  "id": "MO-HB-1050-2025",
+  "scope": "state:mo",
+  "title": "HB1050 (2025 Regular Session): Repeals provisions that prohibit political subdivisions from adopting orders, ordinances, or regulations relating to firearms",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB1050&year=2025&code=R",
+    "https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/2484H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Wick Thomas",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "20338188-90ae-43ca-b5e6-726e0d3a04cb"
+    },
+    {
+      "name": "Elizabeth Fuchs",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e04827a2-770d-40ad-ae9c-1124d853dfec"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1050-2025.introduced.pdf",
+      "sha256": "f7c1f26f56618d01d0e9a9c81d1f143a9e3bc980f9ee3742a3aa5c38723880ac"
+    }
+  },
+  "operative_text": "Section 21.750 (RSMo): The general assembly hereby occupies and preempts the entire field of legislation touching in any way firearms, components, ammunition and supplies to the complete exclusion of any order, ordinance or regulation by any political subdivision of this state.\nSection 21.750 (RSMo): No county, city, town, village, municipality, or other political subdivision of this state shall adopt any order, ordinance or regulation concerning in any way the sale, purchase, purchase delay, transfer, ownership, use, keeping, possession, bearing, transportation, licensing, permit, registration, taxation other than sales and compensating use taxes or other controls on firearms, components, ammunition, and supplies except as provided in subsection 3 of this section.\nSection 21.750 (RSMo): The lawful design, marketing, manufacture, distribution, or sale of firearms or ammunition to the public is not an abnormally dangerous activity and does not constitute a public or private nuisance."
+}

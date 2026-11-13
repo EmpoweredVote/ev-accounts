@@ -1,0 +1,49 @@
+{
+  "id": "CA-SB-8-2022",
+  "scope": "state:ca",
+  "title": "SB8 (2023-2024): Firearms liability insurance.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202320240SB8",
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240SB8#97AMD"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Catherine Blakespear",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "fad61dc3-a3ad-4056-b2f2-1f5d32fb886d"
+    },
+    {
+      "name": "Nancy Skinner",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Anthony Portantino",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2023-03-23, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-SB-8-2022.amended-2023-03-23.html",
+      "sha256": "8adab63e6e45223330176ce62f58aa2b1a734b2636cf65a98c3eb513a3dad79d"
+    },
+    "note": "Version read: Amended in Senate 2023-03-23 (last version; no floor vote listed). This amendment strikes the Civil Code Section 3343.8 owner civil-liability part and the 'civil law' framing, leaving only the Insurance Code insurance requirement, renumbering the Commissioner's section from 11627.5 to 11627.6."
+  },
+  "operative_text": "Section 11627.5 (Insurance Code): (a) A person who owns a firearm shall obtain and continuously maintain in full force and effect a homeowner’s, renter’s, or gun liability insurance policy from an insurer that is authorized to do business in this state, specifically covering losses or damages resulting from the use of that firearm, including, but not limited to, death or injury to another, including without limitation a household member, guest, or invitee, and property damage.\nSection 11627.5 (Insurance Code): (c) A person who owns a firearm shall keep valid and current written evidence of the coverage described in subdivision (a) readily available at the location where each firearm is stored.\nSection 11627.5 (Insurance Code): (e) This section shall become operative on January 1, 2025.\nSection 11627.6 (Insurance Code): (a) The Commissioner shall, by no later than December 31, 2024, develop a standard form of evidence of liability coverage for a policy of insurance that satisfies the requirement for coverage prescribed in Section 11627.5.\nSection 11627.6 (Insurance Code): (b) The Commissioner shall, by no later than July 1, 2024, set minimum coverage requirements for a policy described in Section 11627.5."
+}

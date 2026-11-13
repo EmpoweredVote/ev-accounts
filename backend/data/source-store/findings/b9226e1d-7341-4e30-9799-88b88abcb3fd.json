@@ -87,6 +87,305 @@
         "fetched_at": "2026-11-04T14:14:55.221Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "bb680c8402f16bdbc9fb21798765b1b2f638d40166a5507c8138fc0d9ea2de6f",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB16&year=2020&code=S1",
+      "date": "2020-08-25",
+      "date_precision": "day",
+      "instrument_id": "MO-HB-16-SP1-2020",
+      "act": "nay",
+      "motion": "Third Read and Passed (H) (House: HB 16 HBs FOR THIRD READING - INFORMAL)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MO House, Third Read and Passed (H) (House: HB 16 HBs FOR THIRD READING - INFORMAL), 2020-08-25: nay (tally 103–45); census gate: none.",
+      "subjects": [
+        "new felony for giving a firearm to a minor to evade arrest",
+        "unlawful firearm transfer wording and penalties revised"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-16-SP1-2020.comm-sub.pdf",
+          "sha256": "3a49fbdc8dd3ccfba23a9b8a172a0a95260c8a990cfff818363dfd35e462fb18"
+        }
+      }
+    },
+    {
+      "id": "165ad761fe7e492ae6fc114a2689792f0a97c6304cce989c98320b68c364c724",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB1533&year=2020&code=R",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-1533-2020",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-1533-2020 (LegiScan sponsor list): HB1533 (2020 Regular Session): Creates a class C felony for manufacturing, importing, possessing, purchasing, sell, or transfer any assault weapon or large capacity magazine..",
+      "subjects": [
+        "assault weapon and large-capacity magazine ban",
+        "class C felony",
+        "existing owners exempt"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1533-2020.introduced.pdf",
+          "sha256": "99fc937121de82fff94cfe148b79e88e66dc83d88161fdb82018332bb69f7f81"
+        }
+      }
+    },
+    {
+      "id": "e80c34e72ee71836eb846987a60c01578694a9bc8196af3dbdcae37e12c1d9bd",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB1535&year=2020&code=R",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-1535-2020",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-1535-2020 (LegiScan sponsor list): HB1535 (2020 Regular Session): Adds public libraries to the list of places CCW permit holders are not authorized to carry concealed weapons..",
+      "subjects": [
+        "public libraries added to places concealed carry permits do not cover"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1535-2020.introduced.pdf",
+          "sha256": "1a96cc6c784032cc1fafa55c7f71de98c1d4b7da28ec470b92f3bf6779c883f3"
+        }
+      }
+    },
+    {
+      "id": "55e93cb34155b936e46d8df90778ade6a320e0c8d90fcccee03d381dce324450",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB2227&year=2020&code=R",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-2227-2020",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-2227-2020 (LegiScan sponsor list): HB2227 (2020 Regular Session): Establishes the offense of unlawful possession of a handgun, which prohibits the possession of a handgun by a minor..",
+      "subjects": [
+        "new offense of handgun possession by a minor",
+        "fine and short juvenile detention penalty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2227-2020.introduced.pdf",
+          "sha256": "7d64cf2221dd4ef3931820482720d39e563e011b263ce5b5b2e4a260b6d5404f"
+        }
+      }
+    },
+    {
+      "id": "3f1bdeb26e3088715de65572350aea4543efda403c25b8de295c953b08b7dd2c",
+      "kind": "record",
+      "url": "https://www.house.mo.gov/Bill.aspx?bill=HB24&year=2019&code=S1",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MO-HB-24-SP1-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-HB-24-SP1-2019 (LegiScan sponsor list): HB24 (2019 1st Extraordinary Session): Makes it a class C felony to manufacture, import, possess, purchase, sell, or transfer any assault weapon or large capacity magazine.",
+      "subjects": [
+        "assault weapon and large-capacity magazine ban",
+        "class C felony penalty",
+        "exemption for existing lawful owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-24-SP1-2019.introduced.pdf",
+          "sha256": "03362fe72acf8e6f6dd9af9949743db797017ec176b051ff97585583749f8bcf"
+        }
+      }
+    },
+    {
+      "id": "d8715ec7bbb738e9ef55abde31f97e1a3ffc929cbe0dc9df6ee78e0845e4754b",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=638",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-1042-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-1042-2026 (LegiScan sponsor list): SB1042 (2026 Regular Session): Creates the offense of unlawful possession of a handgun.",
+      "subjects": [
+        "new offence of minor possessing a handgun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1042-2026.introduced.pdf",
+          "sha256": "8ff90a465b9f5ce55ba81dad71acf51981b2382d674f635625b520e6af264866"
+        }
+      }
+    },
+    {
+      "id": "04890ba279dea3382c3110dd7666b2abebc2bbaad3d5164e222e040eee601997",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=644",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-1171-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-1171-2026 (LegiScan sponsor list): SB1171 (2026 Regular Session): Creates the offense of community endangerment due to unsafe storage of a firearm.",
+      "subjects": [
+        "felony for unsafe firearm storage that leads to injury or death",
+        "lesser felony for unsafe storage that leads to misuse",
+        "safe-storage defence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1171-2026.introduced.pdf",
+          "sha256": "36839fdd0920bc293f47d81eee36b6e0912f8d1a2cdea7f6b36084b3e8c44cf6"
+        }
+      }
+    },
+    {
+      "id": "3b978d05cc016da5ef0222ed55a9db4c6e9063d4c3a40a747c90f1005920de5b",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=653",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-1305-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-1305-2026 (LegiScan sponsor list): SB1305 (2026 Regular Session): Modifies provisions relating to the carrying of firearms or weapons into polling places on election days.",
+      "subjects": [
+        "no-firearm zone around polling places widened to 300 feet",
+        "election-day carry offence extended to near polling places"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1305-2026.introduced.pdf",
+          "sha256": "65a4e24f9ec3b4dbd41d360dbd3c2c8b8baa71451478c4498d1cecefbe795b41"
+        }
+      }
+    },
+    {
+      "id": "12ebf8c6a4a2c0a02ac0b4085f8c12fdc5811cc92cef95e174d69ffa497aab81",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=658",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-1337-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-1337-2026 (LegiScan sponsor list): SB1337 (2026 Regular Session): Creates provisions relating to firearms.",
+      "subjects": [
+        "assault weapon and large-capacity magazine ban",
+        "grandfathering for prior lawful owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1337-2026.introduced.pdf",
+          "sha256": "abddc627a125cfc3f184442eee36b785b79f51c5738cecc56012225751e287a0"
+        }
+      }
+    },
+    {
+      "id": "b8e7f3610ca6974e08c267b91bb9f6cb26063289aa13663380840d62aaa0e4ea",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=665",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-1382-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-1382-2026 (LegiScan sponsor list): SB1382 (2026 Regular Session): Prohibits the carrying of concealed firearms in any public library.",
+      "subjects": [
+        "concealed carry barred in public libraries"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1382-2026.introduced.pdf",
+          "sha256": "491518b9124e60dc15a16ac2ed9cdcbe31aea671fd16dd734922d8b5494fb314"
+        }
+      }
+    },
+    {
+      "id": "50c43801febad71e2d801a7c2527bf04be2e0f4b694cc1719557efe2e0c1e8f0",
+      "kind": "record",
+      "url": "https://www.senate.mo.gov/25info/BTS_Web/Bill.aspx?SessionType=R&BillID=285",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MO-SB-450-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, LegiScan sponsor list",
+      "note": "prime sponsor of MO-SB-450-2025 (LegiScan sponsor list): SB450 (2025 Regular Session): Modifies provisions relating to concealed firearms.",
+      "subjects": [
+        "concealed carry barred in public libraries"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+        "fetched_at": "2026-11-12T20:46:00.851643Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-450-2025.introduced.pdf",
+          "sha256": "189bbf11b71e5316e17ef4c0c26e5eb195460e4b900ddb1a88dd3368c167b292"
+        }
+      }
     }
   ],
   "searches": [

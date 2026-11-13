@@ -1,0 +1,746 @@
+{
+  "id": "CA-SB-1200-2018",
+  "scope": "state:ca",
+  "title": "SB1200 (2017-2018): Firearms: gun violence restraining orders.",
+  "urls": [
+    "http://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=201720180SB1200",
+    "http://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201720180SB1200"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Nancy Skinner",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2018-05-29",
+      "body": "CA Senate",
+      "motion": "Senate 3rd Reading SB1200 Skinner",
+      "kind": "roll-call",
+      "yes": 30,
+      "no": 8,
+      "absent": 1,
+      "note": "LegiScan roll call 757036; taken on the text 'Amended' of 2018-03-21",
+      "members": [
+        {
+          "name": "Joel Anderson",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Beall",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Berryhill",
+          "vote": "abstain"
+        },
+        {
+          "name": "Steven Bradford",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin de Leon",
+          "vote": "yea"
+        },
+        {
+          "name": "Jean Fuller",
+          "vote": "nay"
+        },
+        {
+          "name": "Ted Gaines",
+          "vote": "nay",
+          "politician_id": "fc97cf9f-3695-4c2d-9219-9a9ff6378db4"
+        },
+        {
+          "name": "Cathleen Galgiani",
+          "vote": "yea"
+        },
+        {
+          "name": "Edward Hernandez",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "William Monning",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Nielsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Anthony Portantino",
+          "vote": "yea"
+        },
+        {
+          "name": "Nancy Skinner",
+          "vote": "yea"
+        },
+        {
+          "name": "Toni Atkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Ricardo Lara",
+          "vote": "yea",
+          "politician_id": "bab3379b-d64e-423b-b62e-4efa04cee750"
+        },
+        {
+          "name": "Holly Mitchell",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Pan",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Wieckowski",
+          "vote": "yea"
+        },
+        {
+          "name": "Benjamin Hueso",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Morrell",
+          "vote": "nay"
+        },
+        {
+          "name": "Anthony Cannella",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Wilk",
+          "vote": "yea"
+        },
+        {
+          "name": "Hannah-Beth Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Roth",
+          "vote": "yea"
+        },
+        {
+          "name": "Andy Vidak",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Dodd",
+          "vote": "yea"
+        },
+        {
+          "name": "Benjamin Allen",
+          "vote": "yea",
+          "politician_id": "4486f856-118b-475c-83f0-078581a7b268"
+        },
+        {
+          "name": "Patricia Bates",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Hertzberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Connie Leyva",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike McGuire",
+          "vote": "yea",
+          "politician_id": "974bfe8b-afb8-424c-bfd2-7805f033b1a0"
+        },
+        {
+          "name": "Janet Nguyen",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Stone",
+          "vote": "nay"
+        },
+        {
+          "name": "John Moorlach",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Glazer",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Wiener",
+          "vote": "yea",
+          "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f"
+        },
+        {
+          "name": "Henry Stern",
+          "vote": "yea",
+          "politician_id": "f3671de4-514f-441c-8ad4-4a9ab7c65ae6"
+        },
+        {
+          "name": "Josh Newman",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2018-08-31",
+      "body": "CA Senate",
+      "motion": "Unfinished Business SB1200 Skinner Concurrence",
+      "kind": "roll-call",
+      "yes": 22,
+      "no": 5,
+      "absent": 13,
+      "note": "LegiScan roll call 774156; taken on the text 'Amended' of 2018-08-20",
+      "members": [
+        {
+          "name": "Joel Anderson",
+          "vote": "abstain"
+        },
+        {
+          "name": "Jim Beall",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Berryhill",
+          "vote": "abstain"
+        },
+        {
+          "name": "Steven Bradford",
+          "vote": "abstain"
+        },
+        {
+          "name": "Kevin de Leon",
+          "vote": "yea"
+        },
+        {
+          "name": "Jean Fuller",
+          "vote": "abstain"
+        },
+        {
+          "name": "Ted Gaines",
+          "vote": "nay",
+          "politician_id": "fc97cf9f-3695-4c2d-9219-9a9ff6378db4"
+        },
+        {
+          "name": "Cathleen Galgiani",
+          "vote": "yea"
+        },
+        {
+          "name": "Edward Hernandez",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "William Monning",
+          "vote": "abstain"
+        },
+        {
+          "name": "Jim Nielsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Anthony Portantino",
+          "vote": "yea"
+        },
+        {
+          "name": "Nancy Skinner",
+          "vote": "yea"
+        },
+        {
+          "name": "Toni Atkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Ricardo Lara",
+          "vote": "yea",
+          "politician_id": "bab3379b-d64e-423b-b62e-4efa04cee750"
+        },
+        {
+          "name": "Holly Mitchell",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Pan",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Wieckowski",
+          "vote": "abstain"
+        },
+        {
+          "name": "Benjamin Hueso",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Morrell",
+          "vote": "nay"
+        },
+        {
+          "name": "Anthony Cannella",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Wilk",
+          "vote": "yea"
+        },
+        {
+          "name": "Hannah-Beth Jackson",
+          "vote": "abstain"
+        },
+        {
+          "name": "Richard Roth",
+          "vote": "yea"
+        },
+        {
+          "name": "Andy Vidak",
+          "vote": "nay"
+        },
+        {
+          "name": "Ling Ling Chang",
+          "vote": "abstain"
+        },
+        {
+          "name": "Bill Dodd",
+          "vote": "abstain"
+        },
+        {
+          "name": "Benjamin Allen",
+          "vote": "yea",
+          "politician_id": "4486f856-118b-475c-83f0-078581a7b268"
+        },
+        {
+          "name": "Patricia Bates",
+          "vote": "abstain"
+        },
+        {
+          "name": "Bob Hertzberg",
+          "vote": "abstain"
+        },
+        {
+          "name": "Connie Leyva",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike McGuire",
+          "vote": "yea",
+          "politician_id": "974bfe8b-afb8-424c-bfd2-7805f033b1a0"
+        },
+        {
+          "name": "Janet Nguyen",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Stone",
+          "vote": "nay"
+        },
+        {
+          "name": "John Moorlach",
+          "vote": "abstain"
+        },
+        {
+          "name": "Steve Glazer",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Wiener",
+          "vote": "yea",
+          "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f"
+        },
+        {
+          "name": "Henry Stern",
+          "vote": "abstain",
+          "politician_id": "f3671de4-514f-441c-8ad4-4a9ab7c65ae6"
+        },
+        {
+          "name": "Vanessa Delgado",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2018-08-31",
+      "body": "CA Assembly",
+      "motion": "SB 1200 Skinner Senate Third Reading By GIPSON",
+      "kind": "roll-call",
+      "yes": 64,
+      "no": 1,
+      "absent": 15,
+      "note": "LegiScan roll call 774157; taken on the text 'Amended' of 2018-08-20",
+      "members": [
+        {
+          "name": "Anna Caballero",
+          "vote": "yea",
+          "politician_id": "8b15f324-ed8b-4cc9-92b4-fdaf07896b20"
+        },
+        {
+          "name": "Franklin Bigelow",
+          "vote": "abstain"
+        },
+        {
+          "name": "Richard Bloom",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob Bonta",
+          "vote": "yea",
+          "politician_id": "8b183a30-3afb-4d9e-aa40-aa2ad2c674aa"
+        },
+        {
+          "name": "Edwin Chau",
+          "vote": "yea"
+        },
+        {
+          "name": "Rocky Chavez",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Cooley",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Dahle",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Daly",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Eggman",
+          "vote": "abstain"
+        },
+        {
+          "name": "Jim Frazier",
+          "vote": "abstain"
+        },
+        {
+          "name": "Cristina Garcia",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Gray",
+          "vote": "abstain"
+        },
+        {
+          "name": "Chris Holden",
+          "vote": "yea"
+        },
+        {
+          "name": "Ian Calderon",
+          "vote": "yea"
+        },
+        {
+          "name": "Reginald Jones-Sawyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Marc Levine",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Maienschein",
+          "vote": "yea"
+        },
+        {
+          "name": "Jose Medina",
+          "vote": "yea"
+        },
+        {
+          "name": "Melissa Melendez",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Mullin",
+          "vote": "yea"
+        },
+        {
+          "name": "Al Muratsuchi",
+          "vote": "yea",
+          "politician_id": "ea803096-927f-41fe-98e1-deab56291810"
+        },
+        {
+          "name": "Jim Patterson",
+          "vote": "abstain"
+        },
+        {
+          "name": "Sharon Quirk-Silva",
+          "vote": "yea",
+          "politician_id": "1e29ce86-9e02-4079-b50d-bb0d039613a2"
+        },
+        {
+          "name": "Bill Quirk",
+          "vote": "yea"
+        },
+        {
+          "name": "Anthony Rendon",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Stone",
+          "vote": "yea"
+        },
+        {
+          "name": "Philip Ting",
+          "vote": "yea"
+        },
+        {
+          "name": "Marie Waldron",
+          "vote": "yea"
+        },
+        {
+          "name": "Shirley Weber",
+          "vote": "yea",
+          "politician_id": "4ba62f32-dd20-48ce-8d84-d09bb129ad59"
+        },
+        {
+          "name": "Adrin Nazarian",
+          "vote": "yea"
+        },
+        {
+          "name": "Lorena Gonzalez Fletcher",
+          "vote": "yea"
+        },
+        {
+          "name": "Freddie Rodriguez",
+          "vote": "yea"
+        },
+        {
+          "name": "Catharine Baker",
+          "vote": "yea"
+        },
+        {
+          "name": "William Brough",
+          "vote": "abstain"
+        },
+        {
+          "name": "Autumn Burke",
+          "vote": "yea"
+        },
+        {
+          "name": "David Chiu",
+          "vote": "yea"
+        },
+        {
+          "name": "Kansen Chu",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Cooper",
+          "vote": "abstain"
+        },
+        {
+          "name": "Eduardo Garcia",
+          "vote": "yea"
+        },
+        {
+          "name": "James Gallagher",
+          "vote": "yea",
+          "politician_id": "0a283c28-344c-40c9-ae48-bb2dcf1c7c4d"
+        },
+        {
+          "name": "Mike Gipson",
+          "vote": "yea",
+          "politician_id": "6133e73c-4c33-4cfc-9fd3-de1382729f42"
+        },
+        {
+          "name": "Matthew Harper",
+          "vote": "yea"
+        },
+        {
+          "name": "Jacqui Irwin",
+          "vote": "yea",
+          "politician_id": "97285c92-b664-4687-a1e4-6d88cf9c7fe4"
+        },
+        {
+          "name": "Tom Lackey",
+          "vote": "yea",
+          "politician_id": "e8bdd8a7-a1b2-43e3-afd4-df975980819e"
+        },
+        {
+          "name": "Evan Low",
+          "vote": "yea"
+        },
+        {
+          "name": "Devon Mathis",
+          "vote": "abstain"
+        },
+        {
+          "name": "Kevin McCarty",
+          "vote": "yea"
+        },
+        {
+          "name": "Patrick O'Donnell",
+          "vote": "yea"
+        },
+        {
+          "name": "Jay Obernolte",
+          "vote": "abstain"
+        },
+        {
+          "name": "Miguel Santiago",
+          "vote": "yea"
+        },
+        {
+          "name": "Marc Steinorth",
+          "vote": "yea"
+        },
+        {
+          "name": "Tony Thurmond",
+          "vote": "yea",
+          "politician_id": "f8808ac0-8a9d-4657-8bf7-2ae60d96399c"
+        },
+        {
+          "name": "Travis Allen",
+          "vote": "abstain"
+        },
+        {
+          "name": "Jim Wood",
+          "vote": "yea"
+        },
+        {
+          "name": "Chad Mayes",
+          "vote": "abstain"
+        },
+        {
+          "name": "Rudy Salas",
+          "vote": "yea"
+        },
+        {
+          "name": "Steven Choi",
+          "vote": "abstain",
+          "politician_id": "8dfb3b1f-622d-434d-9106-9eeb75bc9a66"
+        },
+        {
+          "name": "Eloise Reyes",
+          "vote": "yea",
+          "politician_id": "1571da4a-b832-4792-917c-184c155b1700"
+        },
+        {
+          "name": "Ash Kalra",
+          "vote": "yea",
+          "politician_id": "eb1a285e-fd86-4da1-a198-a66ad6a81be4"
+        },
+        {
+          "name": "Phillip Chen",
+          "vote": "nay",
+          "politician_id": "ed32efa5-b455-4323-a12f-5fe79bc4ffd6"
+        },
+        {
+          "name": "Cecilia Aguiar-Curry",
+          "vote": "yea",
+          "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257"
+        },
+        {
+          "name": "Heath Flora",
+          "vote": "abstain",
+          "politician_id": "a0c59a09-fa45-4765-b6c5-17843699991d"
+        },
+        {
+          "name": "Kevin Kiley",
+          "vote": "abstain"
+        },
+        {
+          "name": "Tim Grayson",
+          "vote": "yea",
+          "politician_id": "29389f8b-de23-4312-af73-264289dc7774"
+        },
+        {
+          "name": "Marc Berman",
+          "vote": "yea",
+          "politician_id": "4cfacf31-d285-40ac-8373-e350912fddda"
+        },
+        {
+          "name": "Jordan Cunningham",
+          "vote": "yea"
+        },
+        {
+          "name": "Monique Limon",
+          "vote": "yea",
+          "politician_id": "c7a56941-597a-456b-8fd8-e4bd840014c1"
+        },
+        {
+          "name": "Dante Acosta",
+          "vote": "yea"
+        },
+        {
+          "name": "Laura Friedman",
+          "vote": "yea"
+        },
+        {
+          "name": "Blanca Rubio",
+          "vote": "yea",
+          "politician_id": "51d15b77-71bb-475e-b86e-c6e1b37b869d"
+        },
+        {
+          "name": "Sabrina Cervantes",
+          "vote": "yea",
+          "politician_id": "7e588ebb-d17c-43c6-9eef-558871b55330"
+        },
+        {
+          "name": "Randy Voepel",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Gloria",
+          "vote": "yea"
+        },
+        {
+          "name": "Vince Fong",
+          "vote": "abstain"
+        },
+        {
+          "name": "Joaquin Arambula",
+          "vote": "yea",
+          "politician_id": "9edab965-ac61-4227-a8d6-601c07821f53"
+        },
+        {
+          "name": "Wendy Carrillo",
+          "vote": "yea"
+        },
+        {
+          "name": "Sydney Kamlager-Dove",
+          "vote": "yea"
+        },
+        {
+          "name": "Jesse Gabriel",
+          "vote": "yea",
+          "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf"
+        },
+        {
+          "name": "Luz Rivas",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2018-08-20, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-SB-1200-2018.amended-2018-08-20.html",
+      "sha256": "749a89ede0beb323b1fdfa22e903b5558e9378259f44d6f390011243469c15eb"
+    },
+    "note": "Amended Aug 20, 2018 (later floor votes were on this text; an earlier vote was on the March 21, 2018 text). Gun-parts-and-components language (unfinished frames/receivers) was struck from 18100 and the notice wording in 18135, 18160, 18180 in this version; magazines remain in \"ammunition\". Sections 11106, 18105, 18125, 18135, 18160, 18180 are reprinted with small notice-wording changes and omitted for length. The Government Code 6103.2 quote is abbreviated with an ellipsis (the sentence is long); verify against the file if exact wording is needed."
+  },
+  "operative_text": "Section 18100 (Penal Code): (a) A gun violence restraining order is an order, in writing, signed by the court, prohibiting and enjoining a named person from having in his or her custody or control, owning, purchasing, possessing, or receiving any firearms or ammunition. This division establishes a civil restraining order process to accomplish that purpose.\n(b) For purposes of this chapter, the term “ammunition” includes a “magazine” as defined in Section 16890.\nSection 18120 (Penal Code): (e) Within one business day of receiving the receipt referred to in paragraph (2) of subdivision (b), the court that issued the order shall transmit a copy of the receipt to the Department of Justice in a manner and pursuant to a process prescribed by the department.\nSection 18121 (Penal Code): There is no filing fee for an application, a responsive pleading, or an order to show cause that seeks to obtain, modify, or enforce a gun violence restraining order or other order authorized by this division if the request for the other order is necessary to obtain or give effect to a gun violence restraining order or other order authorized by this division. There is no fee for a subpoena filed in connection with that application, responsive pleading, or order to show cause.\nSection 18148 (Penal Code): Within 21 days after the date on the order, the court that issued the order or another court in the same jurisdiction, shall hold a hearing pursuant to Section 18175 to determine if a gun violence restraining order should be issued pursuant to Chapter 4 (commencing with Section 18170) after notice and hearing.\nSection 6103.2 (Government Code): (b)(4) The requirement for prepayment of a fee deposit does not apply to orders or injunctions described in ... Division 3.2 (commencing with Section 18100) of Title 2 of Part 6 of the Penal Code (Gun Violence Restraining Orders) ..."
+}

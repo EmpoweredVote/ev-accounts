@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-24-SP1-2019",
+  "scope": "state:mo",
+  "title": "HB24 (2019 1st Extraordinary Session): Makes it a class C felony to manufacture, import, possess, purchase, sell, or transfer any assault weapon or large capacity magazine",
+  "urls": [
+    "https://www.house.mo.gov/Bill.aspx?bill=HB24&year=2019&code=S1",
+    "https://www.house.mo.gov/billtracking/bills193/hlrbillspdf/2553H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Barbara Washington",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b9226e1d-7341-4e30-9799-88b88abcb3fd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-24-SP1-2019.introduced.pdf",
+      "sha256": "03362fe72acf8e6f6dd9af9949743db797017ec176b051ff97585583749f8bcf"
+    }
+  },
+  "operative_text": "Section 571.023 (RSMo): No person, corporation, or other entity in the state of Missouri shall manufacture, import, possess, purchase, sell, or transfer any assault weapon or large capacity magazine.\nSection 571.023 (RSMo): \"Large capacity magazine\", any ammunition feeding device with the capacity to accept more than ten rounds, but shall not be construed to include any of the following: (a) A feeding device that has been permanently altered so that it cannot accommodate more than ten rounds; (b) A twenty-two caliber tube ammunition feeding device; or (c) A tubular magazine that is contained in a lever-action firearm.\nSection 571.023 (RSMo): Any person who, prior to the effective date of this section, was legally in possession of an assault weapon or large capacity magazine.\nSection 571.023 (RSMo): Unlawful manufacture, import, possession, purchase, sale, or transfer of an assault weapon or a large capacity magazine is a class C felony."
+}

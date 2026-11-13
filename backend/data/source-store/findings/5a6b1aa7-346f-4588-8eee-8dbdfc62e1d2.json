@@ -1,0 +1,31 @@
+{
+  "politician_id": "5a6b1aa7-346f-4588-8eee-8dbdfc62e1d2",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "repeal of gun laws",
+        "Second Amendment / gun safety general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.ballotready.org/people/tiffanie-tate (lists her as a candidate for California State Senate District 32 in the 2026 primary and the Nov 3 2026 general; no policy positions listed)",
+        "blocked: https://ballotpedia.org/Tiffanie_Tate (fetch returned an empty page; a search summary said it covers a US House race, unconfirmed)",
+        "campaign site https://drtateforcongress.com (home page only; nothing on the subject, only a general line about safety, fairness and respect)",
+        "web search: name plus gun/firearm words (nothing on the subject)",
+        "sponsor list: covered by LegiScan bulk check",
+        "not reviewed: other pages of the campaign site (JavaScript-built pages, only the home page was read)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.460Z",
+      "by": "source-collector"
+    }
+  ]
+}

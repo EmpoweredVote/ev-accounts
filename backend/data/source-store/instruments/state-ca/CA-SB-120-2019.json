@@ -1,0 +1,216 @@
+{
+  "id": "CA-SB-120-2019",
+  "scope": "state:ca",
+  "title": "SB120 (2019-2020): Firearms: prohibited persons.",
+  "urls": [
+    "http://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=201920200SB120",
+    "http://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200SB120"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Henry Stern",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "f3671de4-514f-441c-8ad4-4a9ab7c65ae6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2019-05-22",
+      "body": "CA Senate",
+      "motion": "Senate 3rd Reading SB120 Stern",
+      "kind": "roll-call",
+      "yes": 24,
+      "no": 11,
+      "absent": 3,
+      "note": "LegiScan roll call 870215; taken on the text 'Amended' of 2019-04-25",
+      "members": [
+        {
+          "name": "Jim Beall",
+          "vote": "yea"
+        },
+        {
+          "name": "Steven Bradford",
+          "vote": "yea"
+        },
+        {
+          "name": "Anna Caballero",
+          "vote": "nay",
+          "politician_id": "8b15f324-ed8b-4cc9-92b4-fdaf07896b20"
+        },
+        {
+          "name": "Cathleen Galgiani",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "William Monning",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Nielsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Anthony Portantino",
+          "vote": "yea"
+        },
+        {
+          "name": "Nancy Skinner",
+          "vote": "yea"
+        },
+        {
+          "name": "Toni Atkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Holly Mitchell",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Pan",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Wieckowski",
+          "vote": "yea"
+        },
+        {
+          "name": "Shannon Grove",
+          "vote": "nay",
+          "politician_id": "03ee06fb-9b51-41cc-8942-4632f3a724e3"
+        },
+        {
+          "name": "Benjamin Hueso",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Morrell",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott Wilk",
+          "vote": "nay"
+        },
+        {
+          "name": "Hannah-Beth Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Roth",
+          "vote": "abstain"
+        },
+        {
+          "name": "Brian Jones",
+          "vote": "nay",
+          "politician_id": "ee130fd3-649d-49e1-bda4-13d9bbed2f6c"
+        },
+        {
+          "name": "Ling Ling Chang",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Dodd",
+          "vote": "yea"
+        },
+        {
+          "name": "Benjamin Allen",
+          "vote": "yea",
+          "politician_id": "4486f856-118b-475c-83f0-078581a7b268"
+        },
+        {
+          "name": "Patricia Bates",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Hertzberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Connie Leyva",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike McGuire",
+          "vote": "yea",
+          "politician_id": "974bfe8b-afb8-424c-bfd2-7805f033b1a0"
+        },
+        {
+          "name": "Jeff Stone",
+          "vote": "nay"
+        },
+        {
+          "name": "John Moorlach",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Glazer",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Wiener",
+          "vote": "yea",
+          "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f"
+        },
+        {
+          "name": "Henry Stern",
+          "vote": "yea",
+          "politician_id": "f3671de4-514f-441c-8ad4-4a9ab7c65ae6"
+        },
+        {
+          "name": "Andreas Borgeas",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Archuleta",
+          "vote": "yea",
+          "politician_id": "29e15a5d-d98f-4536-ad62-05b2612f30ca"
+        },
+        {
+          "name": "Maria Durazo",
+          "vote": "yea",
+          "politician_id": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93"
+        },
+        {
+          "name": "Melissa Hurtado",
+          "vote": "abstain",
+          "politician_id": "d3b4ee4d-4cf5-4a3d-8e86-2320fc4a7c26"
+        },
+        {
+          "name": "Tom Umberg",
+          "vote": "yea",
+          "politician_id": "712be98b-a05d-4605-9603-cd5d86abfad1"
+        },
+        {
+          "name": "Susan Rubio",
+          "vote": "abstain",
+          "politician_id": "b3937fff-ebcf-48d9-b20d-bdf98196e119"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2019-04-25, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-SB-120-2019.amended-2019-04-25.html",
+      "sha256": "f5bb47fd91f227781767e93d1e19ab94d1c58806681bb4c41a504a56917e152d"
+    },
+    "note": "Read Amended 2019-04-25 (text of the only floor vote). The change strikes 'or in the state prison' from subdivision (c): the possession offense is no longer punishable by state prison. Subdivisions (a), (b), (d) reprinted unchanged."
+  },
+  "operative_text": "Section 29805 (Penal Code): (c) Any person who is convicted, on or after January 1, 2020, of a misdemeanor violation of Section 25400, 25850, or 26350, and who, within 10 years of the conviction, owns, purchases, receives, or has in possession or under custody or control, any firearm, is guilty of a public offense, punishable by imprisonment in a county jail not exceeding one year, by a fine not exceeding one thousand dollars ($1,000), or by both that imprisonment and fine."
+}

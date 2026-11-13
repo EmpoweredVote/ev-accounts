@@ -1,0 +1,143 @@
+{
+  "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+  "findings": [
+    {
+      "id": "1a980b8b8fb5da99ec4608ae300e304fefcb4a713cfead6b870502f80d5466c4",
+      "kind": "own-words",
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-becerra-and-giffords-law-center-lead-lawsuit-demanding-trump",
+      "date": "2020-09-29",
+      "date_precision": "day",
+      "passage": "Ghost guns are untraceable weapons that have been used in mass shootings throughout the country and right here in California — from Santa Monica in 2013, to Tehama County in 2017, and at Saugus High School just last year,” said Attorney General Becerra. “We can’t afford to wait for another tragedy to happen before we take action. It’s time for ATF to prioritize the safety of our communities by calling these products what they are: firearms, and regulating them accordingly.",
+      "note": "Statement issued as California attorney general when filing a suit asking a federal court to make ATF treat unfinished frames and receivers (ghost gun parts) as firearms.",
+      "subjects": [
+        "home-made untraceable ghost guns",
+        "federal agency gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.497Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6aa467cc1bc1766596a5201b79db8eaf6559eb1fb4ae04432d8cd0baa215d4b4",
+      "kind": "record",
+      "url": "https://oag.ca.gov/news/press-releases/attorney-general-becerra-and-giffords-law-center-lead-lawsuit-demanding-trump",
+      "date": "2020-09-29",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Lawsuit against ATF over ghost-gun frames and receivers, filed by the attorney general with a gun-violence-prevention legal group",
+      "note": "As attorney general he led a coalition suit in the Northern District of California asking the court to vacate ATF determinations and require 80 percent frames and receivers to be treated as firearms.",
+      "subjects": [
+        "home-made untraceable ghost guns",
+        "federal agency gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.497Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bc188e4422d6384eeff5e8b6adfb3f3a536e18b9181fa01a1d6abccf97d27501",
+      "kind": "own-words",
+      "url": "https://oag.ca.gov/node/183377",
+      "date": "2019-10-11",
+      "date_precision": "day",
+      "passage": "California continues to lead when it comes to implementing common-sense measures that protect our communities from gun violence,” said Attorney General Becerra. “The signing of these bills – SB 376 and AB 1669 – strengthens existing law to deter and prevent needless gun violence. The California Department of Justice will continue to work in conjunction with the legislature to protect and promote public safety in our state.",
+      "note": "Statement as attorney general welcoming two signed bills: SB 376 (caps on unlicensed firearm sales and home manufacture, closes the no-background-check raffle and auction gap) and AB 1669 (same licensing for all gun show vendors).",
+      "subjects": [
+        "check every gun buyer",
+        "limits on unlicensed gun sales",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.497Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2f3b81118d42fd7789028bd6a39dbd0ee1db0eb18b9f4e7a43e95f6f47c749f6",
+      "kind": "record",
+      "url": "https://oag.ca.gov/node/183377",
+      "date": "2019-10-11",
+      "date_precision": "day",
+      "instrument_id": "CA-SB-376-2019",
+      "act": "sponsor",
+      "note": "The press release says the attorney general's office sponsored SB 376, which caps annual unlicensed firearm sales at five transactions or 50 firearms, caps home manufacture at 50 a year, and requires background checks for firearms auctioned or raffled.",
+      "subjects": [
+        "limits on unlicensed gun sales",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.497Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "865bacb1c587abed79e8c0a4f9373806d8d4d02000a9d52df55e2690a776405b",
+      "kind": "record",
+      "url": "https://oag.ca.gov/node/183377",
+      "date": "2019-10-11",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1669-2019",
+      "act": "sponsor",
+      "note": "The press release says the attorney general's office sponsored AB 1669, which requires all gun show vendors to hold the same licences and follow the same reporting rules.",
+      "subjects": [
+        "gun dealer licensing",
+        "gun shows"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.497Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large-capacity magazines",
+        "check every gun buyer",
+        "ammunition background checks",
+        "ghost guns and unserialised firearms",
+        "limits on unlicensed gun sales",
+        "carry permits",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (21 meetings, all read for gun words; nothing on the subject)",
+        "campaign site https://www.xavierbecerra.com and /issues (nothing on the subject; news list shows no gun items)",
+        "blocked: https://ballotpedia.org/Xavier_Becerra (fetch returned an empty page)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web search on name plus gun words; the 2026-09-30 general-election debate coverage had no gun remarks",
+        "https://ontheissues.org/CA/Xavier_Becerra_Gun_Control.htm (lead only; old congressional votes, not cited)",
+        "attorney general office press releases (2019 and 2020 gun items fetched)",
+        "a gun-violence-prevention group's 2026-10 endorsement release (fetched; third-party words, not saved as his own)",
+        "status check: appeared on the 2026 general-election ballot for governor (news coverage of the November 2026 result)"
+      ],
+      "found": 5,
+      "at": "2026-11-13T01:27:26.497Z",
+      "by": "source-collector"
+    }
+  ]
+}

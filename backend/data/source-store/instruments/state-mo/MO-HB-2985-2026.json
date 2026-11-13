@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-2985-2026",
+  "scope": "state:mo",
+  "title": "HB2985 (2026 Regular Session): Requires universal background checks for all sales or transfers of firearms",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB2985&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/4596H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michael Burton",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "e87ff38e-7a43-4eed-adee-89b567143bcd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2985-2026.introduced.pdf",
+      "sha256": "48c448a719e64fd8aa9ce26f06cc060fe5a9facae598218cf6182c3ecfa468b3"
+    }
+  },
+  "operative_text": "Section 571.201 (RSMo): 2. Any person who is not a licensed dealer, before transferring or attempting to transfer possession of a firearm, shall require that a background check be conducted on the prospective transferee and shall obtain approval of the transfer from the central repository after a background check. A person who is not a licensed dealer shall arrange for either a licensed dealer or law enforcement agency to obtain the background check.\nSection 571.201 (RSMo): (3) A licensed dealer or law enforcement agency may charge a fee for conducting a background check, which shall not exceed twenty-five dollars or the cost of conducting the background check, whichever is greater.\nSection 571.201 (RSMo): 4. (1) A prospective firearm transferee shall not accept possession of a firearm unless the prospective firearm transferor has obtained approval of the transfer from the central repository after a background check. (2) A prospective firearm transferee shall not knowingly provide false information to a prospective firearm transferor or to a licensed dealer for the purpose of acquiring a firearm.\nSection 571.201 (RSMo): 5. If the central repository approves a transfer of a firearm in accordance with this section, the approval shall be valid for thirty calendar days, during which time the transferor and transferee may complete the transfer.\nSection 571.201 (RSMo): 7. A violation of a provision of this section is a class B misdemeanor. Each day a violation of this section is committed or continued shall be considered a separate violation and punished accordingly.\nSection 571.201 (RSMo): 8. In addition to any other penalty or remedy, the investigating law enforcement agency shall report any violation of this section committed by a licensed dealer to the attorney general, who shall report the violation to the Bureau of Alcohol, Tobacco, Firearms and Explosives within the United States Department of Justice."
+}

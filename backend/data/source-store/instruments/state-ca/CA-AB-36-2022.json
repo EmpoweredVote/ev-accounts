@@ -1,0 +1,111 @@
+{
+  "id": "CA-AB-36-2022",
+  "scope": "state:ca",
+  "title": "AB36 (2023-2024): Domestic violence protective orders: possession of a firearm.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202320240AB36",
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB36#97AMD"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Jesse Gabriel",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf"
+    },
+    {
+      "name": "Josh Becker",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "64eda290-d172-48de-8827-6ebca668cf5a"
+    },
+    {
+      "name": "Marc Berman",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "4cfacf31-d285-40ac-8373-e350912fddda"
+    },
+    {
+      "name": "Sabrina Cervantes",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "7e588ebb-d17c-43c6-9eef-558871b55330"
+    },
+    {
+      "name": "Damon Connolly",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "ab26d178-4f69-4ffc-9485-ac03f87643e2"
+    },
+    {
+      "name": "Mike Gipson",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "6133e73c-4c33-4cfc-9fd3-de1382729f42"
+    },
+    {
+      "name": "Ash Kalra",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "eb1a285e-fd86-4da1-a198-a66ad6a81be4"
+    },
+    {
+      "name": "Mike Fong",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "cacdb3e3-f716-4914-9e32-a95cc632af42"
+    },
+    {
+      "name": "Blanca Pacheco",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "c9205ba1-d0c8-4f17-a165-fb2a8fdae742"
+    },
+    {
+      "name": "Diane Papan",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "fb44c938-26fd-40ca-9333-e842693a1ad4"
+    },
+    {
+      "name": "Cottie Petrie-Norris",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "065c6e87-8778-43ee-ab44-b9982a677aa7"
+    },
+    {
+      "name": "Sharon Quirk-Silva",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "1e29ce86-9e02-4079-b50d-bb0d039613a2"
+    },
+    {
+      "name": "Buffy Wicks",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "5821d0a9-672e-44c0-bac7-1a802a2e8368"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2023-05-01, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-36-2022.amended-2023-05-01.html",
+      "sha256": "9a813c9a5bf1fecb1a4a8c7e9174df2a5cc834e12cd1fe3398f0afa775570041"
+    },
+    "note": "Amended 2023-05-01 is the last version (no floor vote recorded; saved at its last version). Protective orders issued on or after July 1, 2024 after notice and hearing carry the three-year post-expiration ban. The same 3-year ban and notice language is repeated in Code of Civil Procedure 527.8, 527.85 and 527.9, and Welfare and Institutions Code 15657.03 (not quoted). This amendment struck the earlier Penal Code 136.2 change and split the 527.6(u)(3) penalty into (A) during the order and (B) after the order, adding a maximum-fine rule for willful violations. Only a few provisions are quoted because of the bill's length."
+  },
+  "operative_text": "Section 527.6 (Code of Civil Procedure): (u)(1)(A) A person subject to a protective order issued pursuant to this section shall not own, possess, purchase, receive, or attempt to purchase or receive a firearm or ammunition while the protective order is in effect.\nSection 527.6 (Code of Civil Procedure): (u)(1)(B) If, after notice and hearing, the protective order is issued on or after July 1, 2024, a person subject to the protective order shall not own, possess, purchase, or receive a firearm or ammunition within three years after expiration of the order.\nSection 527.6 (Code of Civil Procedure): (u)(3)(B) A person who owns, possesses, purchases, or receives, or attempts to purchase or receive, a firearm or ammunition within three years after the expiration of an order described in subparagraph (B) of paragraph (1) is punishable pursuant to subdivision (b) of Section 29825 of the Penal Code. If the court finds that the person has willfully violated this subparagraph, the court shall impose the maximum fine allowed under Section 29825 of the Penal Code.\nSection 6389 (Family Code): (a)(2) If, after notice and hearing, a protective order is issued on or after July 1, 2024, a person subject to the protective order shall not own, possess, purchase, or receive a firearm or ammunition within three years after expiration of the order. A person who owns, possesses, purchases, or receives, or attempts to purchase or receive a firearm or ammunition within three years after expiration of an order described in this paragraph, is punishable pursuant to subdivision (b) of Section 29825 of the Penal Code. If the court finds that the person has willfully violated this paragraph, the court shall impose the maximum fine allowed under Section 29825 of the Penal Code.\nSection 1524 (Penal Code): (a)(11) When the property or things to be seized include a firearm that is owned by, or in the possession of, or in the custody or control of, a person who is subject to any civil or criminal protective order that includes a prohibition on owning, possessing, or having custody or control of a firearm, including, but not limited to, the prohibitions regarding firearms pursuant to Section 6389 of the Family Code, if a prohibited firearm is possessed, owned, in the custody of, or controlled by a person against whom a protective order has been issued, the person has been lawfully served with that order, and the person has failed to relinquish the firearm as required by law.\nSection 29825 (Penal Code): (d) The Judicial Council shall provide notice on all protective orders issued within the state that the respondent is prohibited from owning, possessing, purchasing, receiving, or attempting to purchase or receive a firearm while the protective order is in effect."
+}

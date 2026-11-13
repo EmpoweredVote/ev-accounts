@@ -1,0 +1,67 @@
+{
+  "id": "GA-HB-45-2023",
+  "scope": "state:ga",
+  "title": "HB45 (2023-2024 Regular Session): Brady Law Regulations; three-day waiting period for purchase or transfer of certain firearms; require",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/63548",
+    "https://www.legis.ga.gov/api/legislation/document/20232024/212545"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michelle Au",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9cdee7d8-43d6-4596-8982-55b006f7754c"
+    },
+    {
+      "name": "Samuel Park",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0e03704f-d0a0-4a5b-9d7d-9035cc09cbee"
+    },
+    {
+      "name": "Marvin Lim",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0f1d954b-e9f2-4e1b-a140-296fa9996f32"
+    },
+    {
+      "name": "Farooq Mughal",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Ruwa Romman",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "21676ab2-d5a7-4c16-86db-e69f3de496ed"
+    },
+    {
+      "name": "Long Tran",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ca3cb38d-d5fc-4cc4-a065-3a09c13104b6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:46:27.022243Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-45-2023.introduced.pdf",
+      "sha256": "59016a789fd2d1151832ca6cd0808c3f2318ddd9d3f73c2e42422b1887c5f8f7"
+    }
+  },
+  "operative_text": "SECTION 1 (adding O.C.G.A. 16-11-172.1): (a) No transfer or purchase of a firearm conducted by a licensed importer, licensed manufacturer, or licensed dealer shall be completed until the third day after the initiation of such transfer or purchase; provided, however, that the calculation of the three days shall not include Saturdays, Sundays, or state or federal holidays and provided, further, that the NICS check provided for under Code Section 16-11-172 may be conducted within the three days.\nSECTION 1 (adding O.C.G.A. 16-11-172.1): (c) Subsection (a) of this Code section shall not apply when a firearm is being purchased by or transferred to: (1) The holder of a weapons carry license issued pursuant to Code Section 16-11-129; or (2) Any person provided for under Code Section 16-11-130. (d) Any licensed importer, licensed manufacturer, or licensed dealer who violates this Code section, or any purchaser or transferee who uses fraud or false representation to avoid the requirements of subsection (a) of this Code section, shall be guilty of a felony and, upon conviction, shall be punished by imprisonment for not less than one nor more than five years.\""
+}

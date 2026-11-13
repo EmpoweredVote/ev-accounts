@@ -1,0 +1,32 @@
+{
+  "id": "TN-HB-1422-2009",
+  "scope": "state:tn",
+  "title": "HB 1422 (106th General Assembly): As introduced, allows voters attending college outside the county where they are registered who register by mail and have not voted in election to receive an absentee ballot; requires such voter to provide student identification and evidence of residency. - Amends TCA Section 2-2-115(b)(7) and Section 2-6-201(2).",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB1422/2009"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) Sec. 2 (adds to 2-6-201(2))\n(quote) In order for the absentee application of a first time by mail registrant to be processed pursuant to § 2-2-115(b)(7), the voter must provide: (A) A copy of the front and back of the student's current school identification; and (B) Evidence of residence from the county in which the voter is registered as defined in § 2-7-112(d);\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 1 (adds to 2-2-115(b)(7))\n(quote) or, pursuant to § 2-6-201(2), a person who is enrolled as a full-time student in an accredited college, university or similar accredited institution of learning in this state outside the county where the person is registered to vote or their spouse who resides with the student.\n(other) Sec. 3: takes effect July 1, 2009.\n(other) Companion in the Senate is SB1418 (Ketron), not in this group.\n(other) version: 396397-Draft (filed 2009-02-17), the only version saved: carries c (school ID copy and residence evidence with an absentee application) and e (opens the first-time-by-mail absentee exception to full-time students outside their county and their spouses). No a, b or d.\n(other) note: Died: taken off notice in House subcommittee 2009-03-03. The first-time-by-mail-registrant ID rule in 2-2-115(b)(7) is existing law and is cited, not reprinted. The bill gives students an exception to that rule and attaches school-ID/residence documents to the application.",
+  "sponsors": [
+    {
+      "name": "Curry Todd",
+      "role": "prime",
+      "version": "396397-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

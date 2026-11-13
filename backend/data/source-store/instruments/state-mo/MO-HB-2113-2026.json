@@ -1,0 +1,50 @@
+{
+  "id": "MO-HB-2113-2026",
+  "scope": "state:mo",
+  "title": "HB2113 (2026 Regular Session): Establishes provisions related to the safe storage of firearms",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB2113&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/4909H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kathy Steinhoff",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f7512c7b-f2d1-4ec9-9bcc-6213000d8649"
+    },
+    {
+      "name": "Adrian Plank",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "885683bb-b31d-45de-bda3-cee124358dde"
+    },
+    {
+      "name": "Gregg Bush",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "28cfc3ba-72a0-461d-bfae-c5194bbcf471"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2113-2026.introduced.pdf",
+      "sha256": "01d8f05431f5247fbd3411c1ec113ac0c264eadef8fd27fff961aa9ce6f9f33d"
+    }
+  },
+  "operative_text": "Section 571.055 (RSMo): 2. The following actions shall be deemed responsible and secure storage of a firearm: (1) With the exception of a concealed or openly carried firearm in a secure holster, firearms shall be kept unloaded until ready to use; (2) With the exception of a concealed or openly carried firearm in a secure holster, firearms shall be securely stored in a manner that ensures: (a) The firearms are not accessible to unauthorized persons, including children. Examples of secure storage include, but are not limited to, trigger locks, cable locks, locking gun cases, strongboxes, security cases, locking gun cabinets, and gun safes; and (b) Unauthorized persons and children do not have access to the key, combination, or other unlocking mechanism necessary to open the storage container or remove the locking device; and (3) With the exception of a concealed or openly carried firearm in a secure holster, a personalized firearm's safety characteristics shall be activated. 3. A person commits the offense of unlawful storage of a firearm if the person fails to responsibly and securely store a firearm, as described under subsection 2 of this section, upon any premises that the person owns or controls, and: (1) The person knows or reasonably should know a child can gain access to the firearm without the permission of the child's parent or guardian and without direct adult supervision; or (2) The person knows or reasonably should know a cotenant is ineligible to possess a firearm under state or federal law. 4. This section shall not apply to the storing of an antique firearm, as defined under 18 U.S.C. Section 921, or a curio or relic, as defined under 27 CFR 478.11. 5. The offense of unlawful storage of a firearm is punishable by a five-hundred-dollar fine for a first violation and punishable as a class B misdemeanor for a second or subsequent violation. 6. It is a defense to the offense of unlawful storage of a firearm if a child or cotenant gained possession of and used the firearm in a lawful act of self-defense, defense of others, or defense of livestock.\nSection 571.056 (RSMo): 1. Any firearms dealer licensed under 18 U.S.C. Section 923 shall post, in a conspicuous location on its premises and at any other location at which the dealer sells a firearm, the following notice, in writing, on a printed card, with each letter at a minimum of one inch in height: Notice Unlawful storage of a firearm may result in imprisonment or fine. 2. A violation of this section by a licensed firearms dealer is punishable by a warning for a first violation and punishable by a fine of not more than five hundred dollars for a second or subsequent violation.\nSection 630.1040 (RSMo): 1. (1) The department of public safety shall include on a public page of the department's website addressing suicide prevention the following information: (a) The offense of unlawful storage of a firearm under section 571.055; and (b) The penalties for an offense related to providing a firearm to a child or allowing a child to possess a firearm in violation of section 571.060. 6 The information shall be in both English and Spanish. (2) The department shall include references to the offenses described under subdivision (1) of this subsection and direction to the department website for more information about those offenses in any materials provided to: (a) Licensed firearms dealers, shooting ranges, and safety instructors; and (b) Health care providers, including facilities licensed under chapters 197 and 198. 2. The department of public safety shall develop a notice intended to be displayed on the premises of a licensed firearms dealer, and designed to be printed with each letter at a minimum of one inch in height, that informs firearms purchasers that unlawful storage of a firearm may result in imprisonment or fine. The department shall make electronic copies of the notice publicly available for download from its website without charge."
+}

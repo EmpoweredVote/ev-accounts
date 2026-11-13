@@ -1,0 +1,56 @@
+{
+  "politician_id": "afef17f9-221d-4f3d-98e9-084e233a6a13",
+  "findings": [
+    {
+      "id": "c2536e1f956e31d5b647728be45f2a99a6f74837f0328cc1b20beb064c48bb82",
+      "kind": "own-words",
+      "url": "https://votechrisduncan.com/about",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Chris is committed to Enforce tougher gun safety laws.",
+      "note": "Campaign site 'About' page, issued in the candidate's name and written in the third person, lists enforcing tougher gun safety laws among his commitments. Gives no detail on which laws. Page is undated; year is approximate.",
+      "subjects": [
+        "tougher gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.542Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "tougher gun safety laws",
+        "gun violence reduction",
+        "bans on assault-style guns or magazines",
+        "background checks",
+        "red-flag orders",
+        "carry permits",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://votechrisduncan.com (home page, about page; district and media pages loaded as an app shell with nothing on the subject)",
+        "https://secure.actblue.com/donate/duncanwebsite (fundraising page, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Chris_Duncan_(California) (403)",
+        "blocked: https://www.publicnow.com/view/C5EEBBCD53677747165DC8F164A68309E6EA59D2 (bot check; the 2023 San Clemente mayor release is known only from a search snippet)",
+        "news search on name plus gun words: nothing on the subject beyond the snippet above",
+        "sponsor list: covered by LegiScan bulk check",
+        "scope: campaign site and fundraising page confirm a 2026 run for State Senate District 36 (San Clemente former mayor); a search of the state results page shows him as a top-two finisher in the June 2026 primary, but I did not fetch or confirm a page naming him on the November ballot",
+        "not reviewed: https://www.ballotready.org/people/chris-duncan-3b84ce10-2a67-4f62-afc7-262e4d965374",
+        "not reviewed: https://dp.electionresults.sos.ca.gov/returns/state-senate/district/36",
+        "not reviewed: ontheissues.org, vote411, candidate questionnaires, debate or interview video"
+      ],
+      "found": 1,
+      "at": "2026-11-13T01:27:26.542Z",
+      "by": "source-collector"
+    }
+  ]
+}

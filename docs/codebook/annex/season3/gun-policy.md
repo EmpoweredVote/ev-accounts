@@ -7,7 +7,8 @@ keeps Draft B's rungs 1, 2, 4 and 5 and rewrites rung 3 after Stage 5 (Session C
 **Status:** drafted 2026-10-30 in the Stage 4 package of the season-topic-prep skill (research folder
 `~/Documents/GitHub/.planning/research/s3-prep-gun-policy/`). The Season 2 annex (`../gun-policy.md`) stays as it is
 for Season 2 rows. Rulings by Chris Andrews: R0a-1, census Q1, J1–J8, Stage 2 Q1–Q7 (2026-10-29); D1–D4 and P1
-(2026-10-30); the Stage 4 package (2026-10-30); Stage 5 Session C (2026-11-03): S1–S8 below.
+(2026-10-30); the Stage 4 package (2026-10-30); Stage 5 Session C (2026-11-03): S1–S8 below; rung 4 acts
+(2026-11-12): R4-1–R4-4 below.
 
 **Question:** "How should the government regulate firearms?"
 
@@ -101,10 +102,35 @@ since no rung is about which level decides (see Q5 for the one exception).
   - **D3 (ruled 2026-10-30).** Protection for carrying an unloaded, locked gun through a state between places where
     it is lawful (18 U.S.C. 926A, as in S.Amdt 715, 2013, Sec. 128) does not widen where a gun may be carried → not a
     rung 4 act. S.Amdt 715 stays on 3.
-  - **S2 (ruled 2026-11-03; annex only).** A law that keeps the carry permit but makes it easier to get is rung 4: more
-    training courses that count, applying online or at a nearer office, a lower fee or a fee waiver. Permit holders
-    exempted from local carry bans (VA HB 5020, 2020 Special I; SB 61, 2022) → 4. Voters do not yet see this in the
-    rung 4 wording (rev 5 T7: 0 of 3).
+  - **S2 (ruled 2026-11-03; annex only; narrowed 2026-11-12 by R4-2).** A law that keeps the carry permit but makes
+    it easier to get is rung 4: more training courses that count, ~~applying online or at a nearer office,~~ a lower
+    fee or a fee waiver. Permit holders exempted from local carry bans (VA HB 5020, 2020 Special I; SB 61, 2022) → 4.
+    Voters do not yet see this in the rung 4 wording (rev 5 T7: 0 of 3). *Since 2026-11-12, applying online or at a
+    nearer office is direction only (R4-2).*
+  - **R4-1 (ruled 2026-11-12) — named officials at the state capitol.** A bill that only lets state officers,
+    lawmakers or their staff carry at the capitol lets one named group carry for its work. It is out of scope
+    (`adjacent`), like the named-group ruling of 2026-11-06 (RULINGS.md "carry for officers and for one named
+    professional group is out of scope"): it neither seats anyone nor makes a record two-sided. Bills: IN SB 43
+    (2017), and the capitol part of IN HB 1084 (2024); HB 1084's registry and card-code parts stay under R5-L.
+  - **R4-2 (ruled 2026-11-12) — "easier to get" means the applicant pays, proves or does less.** Still rung 4: a
+    lower fee or a fee waiver, more training courses that count, a training waiver (MI HB 4030, 2021; MI HB 4284,
+    2025; VA HB 2767, 2025; NC H 49, 2021). The carry-licence fee waiver for teachers in WI SB 256 (2023) is a fee
+    waiver and reads the same way: it eases getting the general licence, not carry at work. **Direction only**
+    (loosening side; seats no one and does not make a record two-sided): a change to how or where the paperwork is
+    handled — applying in any county (MI HB 4980, 2025), at the nearest sheriff (PA HB 1953, 2025), a free
+    re-application after an error (MI HB 5113, 2025) — and a carry change for one narrow situation: a pistol while
+    bow hunting (MI HB 4855, 2025), 60 days of carry for protection-order holders (IN HB 1071, 2017), abuse victims
+    with protective orders (VA HB 540, 2026).
+  - **R4-3 (ruled 2026-11-12) — emergency powers.** A bill that stops a governor or agency from limiting gun sales,
+    carry or permits in a declared emergency eases no rule in normal times. Like R5-L it repeals nothing →
+    `direction-only` (loosening side). Bills: MI HB 5187 (2021), MI SB 11 (2021). **Exception:** a bill that repeals
+    an emergency carry limit already in law is rung 4. PA HB 1747 (2019) does: its as-filed text strikes 18 Pa.C.S.
+    6107(a), which barred carry on public streets and public property during a declared emergency (it also strikes
+    "firearms" from the governor's power to limit sales, which alone would be direction only).
+  - **R4-4 (ruled 2026-11-12) — carry in one more kind of place.** Allowing permit holders to carry in one more kind
+    of place stays rung 4, as a ban on guns in a named kind of place is rung 3. Bills: NC H 134 (2021), H 174
+    (2017), H 49 (2023), S 43 (2021), WI AB 801 (2023) — a church that shares school grounds. No change.
+  - Honoring other states' permits and permit holders carrying in more places stay rung 4 (the rung's own words).
 - **Rung 5** needs a law that repeals a permit, licence or registration requirement for owning, buying or carrying a
   gun: removing the permit to carry for adults; removing a type of firearm or accessory from a registration law. A
   state law that removes its own carry permit → 5 (it also widens carry; furthest act). A minimum carry age that the
@@ -122,7 +148,8 @@ since no rung is about which level decides (see Q5 for the one exception).
     accessory off it is "removing a type of firearm or accessory from a registration law" → 5: AZ SB 1109 (2023),
     SB 1014 (2025) and SB 1069 (2026) strike suppressors from A.R.S. 13-3101's prohibited-weapons list, whose only
     exception is items held "in compliance with federal law" (NFA registration); TX SB 1596 (2025) has the same
-    shape. A rate-of-fire accessory (bump-fire device) still has no rung (S3). A person with a rung 1-3 act who
+    shape. A ban on a rate-of-fire accessory (bump-fire device) still has no rung; it is `direction-only`
+    (S3). A person with a rung 1-3 act who
     also voted for such a bill has a two-sided record (Arizona: Fernandez).
 
 ## Hard cases
@@ -138,10 +165,14 @@ since no rung is about which level decides (see Q5 for the one exception).
 - **Home-made and unserialised firearm rules:** Q6 (direction-only) is **replaced by S1** (2026-11-03): rung 3.
 - **S3 (ruled 2026-11-03).** A ban on auto sears or other parts that convert a gun to automatic fire copies the
   federal machine-gun ban: no rung act and no direction (like a state copy of any federal ban). A bump stock or other
-  accessory is not a type of firearm or magazine, so it is not rung 2.
+  accessory is not a type of firearm or magazine, so it is not rung 2. A ban on a rate-of-fire accessory (bump stock,
+  burst trigger, trigger crank, binary or forced-reset trigger) is `direction-only`, restriction side: it shows a
+  side, seats no one and does not make a record two-sided (runner, 2026-11-13: "Direction only"; e.g. CA SB 1346,
+  2018). In a bill that bans both, the auto-sear part shows no side and the accessory part shows the restriction side.
 - **S4 — licence rule (ruled 2026-11-03).** A rung 4 act that keeps the permit (honoring other states' permits, carry
   in more places for licence holders, lifting a carry ban during a declared emergency, tenant or hotel carry, an easier
-  permit) does not conflict with a rung 3 act that limits who may have a gun or how guns are bought or made (checks,
+  permit; *since 2026-11-12 only a repeal of an emergency carry limit already in law (R4-3) and a permit that costs,
+  proves or demands less (R4-2) count here; the rest of those two kinds are direction only*) does not conflict with a rung 3 act that limits who may have a gun or how guns are bought or made (checks,
   red-flag orders, minimum ages, licences to buy, waiting periods, purchase limits, serial-number and unserialised-gun
   rules); the record sits at rung 3. It does conflict with a type ban (rungs 1–2): those records stay
   `adjacent-chairs`. Permit repeal (rung 5) conflicts with every rung 1–3 act. The rule always resolves toward rung 3:
@@ -157,6 +188,10 @@ since no rung is about which level decides (see Q5 for the one exception).
     rung 3, and the one that stayed two-sided also co-sponsored a magazine ban. The records already written for the
     federal list, Virginia, Texas, Pennsylvania, Indiana and Massachusetts held no record of this shape (in Virginia
     the only easing, the 2026 online permit application, passed 99-0 and is gated), so none changed.
+    *Since 2026-11-12 (R4-2, R4-3), applying in any county (HB 4980), a free re-application (HB 5113), a pistol while
+    bow hunting (HB 4855) and the emergency-powers bills (HB 5187, SB 11) are direction only, so they conflict with
+    nothing. The 31 rung 3 seats stand on their rung 3 acts; a fee cut (HB 4030, HB 4284) and honoring other states'
+    permits are still rung 4 acts read under this narrowing.*
 - **A No vote** on any firearms bill → BLANK `direction-only` (V4.1). A No on a different bill never cancels a Yea.
 - **Single-subject (codebook V4.1; replaces the Season 2 line "budget and omnibus votes with a firearms item →
   multi-subject").** A firearms bill is `multi-subject` only when an operative part other than the firearms part
@@ -205,6 +240,6 @@ From revision 4 (P1 ruled 2026-10-30):
 Kept in `preview/rung-backlog.md` of the research folder; none is ruled yet, and coders apply the lines above:
 votes to cancel a federal agency gun rule (pistol braces); "no new limits" with no step to loosen; mixed records on
 both sides of the middle across a person's records; a permit removal in vehicles only (4 or 5); title-only seats
-(fetch bill text before Stage 5 writes); a cheaper carry permit (fee cut). Voters did not place "raise the age to 21
+(fetch bill text before Stage 5 writes); ~~a cheaper carry permit (fee cut)~~ (ruled 2026-11-12, R4-2: rung 4). Voters did not place "raise the age to 21
 and add a waiting period" or "a licence to buy" on rung 3 (T7 24/30): Draft B seats those laws; its wording does not
 yet show them to voters.

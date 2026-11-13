@@ -1,0 +1,355 @@
+{
+  "id": "TN-HJR-808-2025",
+  "scope": "state:tn",
+  "title": "HJR 808 (114th General Assembly): A RESOLUTION to propose an amendment to Article IV, Section 1, of the Constitution of Tennessee, to specify that only citizens of the United States may vote in state, county, or municipal elections.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HJR0808/2025",
+    "https://legiscan.com/TN/rollcall/HJR0808/id/1651800",
+    "https://legiscan.com/TN/rollcall/HJR0808/id/1665612",
+    "https://legiscan.com/TN/rollcall/HJR0808/id/1674963",
+    "https://legiscan.com/TN/rollcall/HJR0808/id/1678070"
+  ],
+  "version": "as-filed",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Const. Art. IV, Sec. 1 (proposed text)\n(quote) Every person, being eighteen years of age, being a citizen of the United States, being a resident of the State for a period of time as prescribed by the General Assembly, and being duly registered in the county of residence for a period of time prior to the day of any election as prescribed by the General Assembly, shall be entitled to vote in all federal, state, and local elections held in the county or district in which such person resides.\n(section) Const. Art. IV, Sec. 1 (proposed text)\n(quote) No person who is not a citizen of the United States shall be entitled to vote in any election held in this state, including elections for state, county, municipal, or district offices, or for any ballot measure, referendum, or other question submitted to the people.\n(other) Proposed amendment keeps the 18-year-old, residency and registration qualifications 'as prescribed by the General Assembly' and says they must be equal and uniform across the state.\n(other) Keeps the General Assembly's power to require voting in home precincts and to secure 'the purity of the ballot box'.\n(other) Keeps the military-duty sentence for male citizens.\n(other) Final resolving clauses: refer to the 115th General Assembly and publish on the Secretary of State and General Assembly websites (Art. XI, Sec. 3).\n(other) version: 3328741-Draft (only saved version): slot e only (citizens-only voting language, constitutional amendment proposal); slots a-d not stated. No amendments saved.\n(other) note: Constitutional resolution, not a statute. Only committee and subcommittee votes are recorded here; the floor action moved to SJR0624 (see that bill). For these votes, id_text_in_voted_version=true means the voted text carries the citizens-only voting language (slot e); it has no ID rule.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2026-03-03",
+      "body": "TN House",
+      "motion": "House Elections & Campaign Finance Subcommittee, recommended for passage [version voted: Draft 3328741 as filed; no amendments saved or recorded]",
+      "kind": "roll-call",
+      "yes": 6,
+      "no": 1,
+      "absent": 0,
+      "body_size": 7,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HJR0808/id/1651800",
+      "members": [
+        {
+          "name": "Jason Powell",
+          "vote": "nay"
+        },
+        {
+          "name": "Dan Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Rudd",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerome Moon",
+          "vote": "yea"
+        },
+        {
+          "name": "Rush Bricken",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Leatherwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Wright",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-18",
+      "body": "TN House",
+      "motion": "House State & Local Government Committee, recommended for passage [version voted: Draft 3328741 as filed; no amendments saved or recorded]",
+      "kind": "roll-call",
+      "yes": 18,
+      "no": 3,
+      "absent": 0,
+      "body_size": 21,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HJR0808/id/1665612",
+      "members": [
+        {
+          "name": "Larry Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Dennis Powers",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Littleton",
+          "vote": "yea"
+        },
+        {
+          "name": "Bo Mitchell",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Powell",
+          "vote": "nay"
+        },
+        {
+          "name": "Dan Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "John Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Rudd",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerome Moon",
+          "vote": "yea"
+        },
+        {
+          "name": "Rush Bricken",
+          "vote": "yea"
+        },
+        {
+          "name": "Jesse Chism",
+          "vote": "yea"
+        },
+        {
+          "name": "Vincent Dixie",
+          "vote": "nay"
+        },
+        {
+          "name": "Iris Rudder",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Wright",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Eldridge",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Warner",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Carringer",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "Jake McCalmon",
+          "vote": "yea"
+        },
+        {
+          "name": "Gabby Salinas",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Lankford",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "body": "TN House",
+      "motion": "House Finance, Ways, and Means Subcommittee, recommended for passage [version voted: Draft 3328741 as filed; no amendments saved or recorded]",
+      "kind": "roll-call",
+      "yes": 13,
+      "no": 0,
+      "absent": 0,
+      "body_size": 13,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HJR0808/id/1674963",
+      "members": [
+        {
+          "name": "Johnny Shaw",
+          "vote": "yea"
+        },
+        {
+          "name": "Cameron Sexton",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Zachary",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Hicks",
+          "vote": "yea"
+        },
+        {
+          "name": "John Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Gant",
+          "vote": "yea"
+        },
+        {
+          "name": "Jesse Chism",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Cochran",
+          "vote": "yea"
+        },
+        {
+          "name": "John Gillespie",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Hicks",
+          "vote": "yea"
+        },
+        {
+          "name": "Kip Capley",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee Reeves",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "body": "TN House",
+      "motion": "House Finance, Ways, and Means Committee, recommended for passage [version voted: Draft 3328741 as filed; no amendments saved or recorded]",
+      "kind": "roll-call",
+      "yes": 29,
+      "no": 0,
+      "absent": 0,
+      "body_size": 29,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HJR0808/id/1678070",
+      "members": [
+        {
+          "name": "David Hawk",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnny Shaw",
+          "vote": "yea"
+        },
+        {
+          "name": "Karen Camper",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Sparks",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeremy Faison",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Antonio Parkinson",
+          "vote": "yea"
+        },
+        {
+          "name": "William Lamberth",
+          "vote": "yea"
+        },
+        {
+          "name": "Debra Moody",
+          "vote": "yea"
+        },
+        {
+          "name": "Harold Love",
+          "vote": "yea"
+        },
+        {
+          "name": "Bud Hulsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Zachary",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Hicks",
+          "vote": "yea"
+        },
+        {
+          "name": "John Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Gant",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Vaughan",
+          "vote": "yea"
+        },
+        {
+          "name": "Clark Boyd",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnny Garrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Charlie Baum",
+          "vote": "yea"
+        },
+        {
+          "name": "Jesse Chism",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Cochran",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Freeman",
+          "vote": "yea"
+        },
+        {
+          "name": "Rusty Grills",
+          "vote": "yea"
+        },
+        {
+          "name": "John Gillespie",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Hicks",
+          "vote": "yea"
+        },
+        {
+          "name": "Kip Capley",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Hale",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee Reeves",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

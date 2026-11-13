@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1303-2023",
+  "scope": "state:mo",
+  "title": "HB1303 (2023 Regular Session): Modifies the offense of unlawful possession of a firearm",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB1303&year=2023&code=R",
+    "http://reflect.legiscan.com/Proxy.php"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Maggie Nurrenbern",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6a38e290-dfac-4227-b013-2a38d747aad1"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1303-2023.introduced.pdf",
+      "sha256": "ce55fa888564aa847daaedef52f35012284d0500d367f03eb9c273855e6e16d2"
+    }
+  },
+  "operative_text": "Section 571.070 (RSMo): 1. A person commits the offense of unlawful possession of a firearm if such person knowingly has any firearm in his or her possession and: (1) Such person has been convicted of a dangerous felony under the laws of this state or of a crime under the laws of any state or of the United States that, if committed within this state, would be a dangerous felony, as defined in section 556.061;\nSection 571.070 (RSMo): (2) Such person is on probation or parole for a felony other than a dangerous felony, as defined in section 556.061, under the laws of this state or for a crime under the laws of any state or the United States that, if committed within this state, would be a felony other than a dangerous felony, as defined in section 556.061;\nSection 571.070 (RSMo): (3) In a county with a charter form of government, a county of the first classification, or a city with more than thirty thousand inhabitants, such person is under eighteen years of age, is on public property, is not accompanied by an adult twenty-one years of age or older, and is not possessing the firearm as otherwise allowed by law; or\nSection 571.070 (RSMo): (4) Such person is a fugitive from justice, is habitually in an intoxicated or drugged condition, or is currently adjudged mentally incompetent.\nSection 571.070 (RSMo): 2. Unlawful possession of a firearm is a class D felony, unless a person has been convicted of a dangerous felony as defined in section 556.061, in which case it is a class C felony."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-1877-2024",
+  "scope": "state:mo",
+  "title": "HB1877 (2024 Regular Session): Specifies that a person commits the offense of endangering the welfare of a child if he or she fails to secure a firearm",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB1877&year=2024&code=R",
+    "https://documents.house.mo.gov/billtracking/bills241/hlrbillspdf/3419H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Patty Lewis",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "954796f5-cbda-41c1-9871-8dce23376d3c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-1877-2024.introduced.pdf",
+      "sha256": "48efbf7350d501a21ff2c25df2dd1cb4fe6a7e583371b5d8456eb9a1acae1305"
+    }
+  },
+  "operative_text": "Section 568.045 (RSMo): (5) Knowingly fails to secure a readily available firearm, as defined in section 571.010, in the presence of a child under seventeen years of age or in a residence where a child under seventeen years of age resides. For the purposes of this subdivision, the term \"secure\" means storing a firearm in a locked safe, cabinet, gun vault, or storage case or using a firearm locking device. It shall not be an affirmative defense to a charge under this subdivision if the offense results in the death of a child and the death is determined to be the result of a suicide.\nSection 568.045 (RSMo): 2. The offense of endangering the welfare of a child in the first degree is a class D felony unless the offense: (1) Is committed as part of an act or series of acts performed by two or more persons as part of an established or prescribed pattern of activity, or where physical injury to the child results, or the offense is a second or subsequent offense under this section, in which case the offense is a class C felony; (2) Results in serious physical injury to the child, in which case the offense is a class B felony; or (3) Results in the death of a child, in which case the offense is a class A felony."
+}

@@ -2,7 +2,7 @@
  * topic-stage5-prefill.ts — Stage 5 step 2: findings from roll calls already in the source store (no database).
  *
  *   npm run topic:stage5-prefill --prefix backend -- --topic <key> --research <abs topic folder>
- *        --subjects <abs json> [--store <abs store root>] [--dry-run] [--from-table]
+ *        --subjects <abs json> [--store <abs store root>] [--dry-run] [--from-table] [--units state:mo,federal]
  *
  * Reads `<research>/stage0/gates.tsv` (the votes the census reviewed) and `<research>/stage5/roster.tsv`, and
  * the store's instruments. `--subjects` maps each instrument id to its subject tags in plain words
@@ -13,6 +13,9 @@
  * `--from-table` also reads the roster's federal roll calls from essentials.legislative_votes (read only), takes
  * findings from the table, and checks the hand lists against it. It always writes `prefill/table-crosscheck.json`
  * (unless `--dry-run`); on any disagreement it prints each one, writes no findings and exits 1.
+ * `--units` writes findings only for roster people in those units (`federal`, `state:xx`, `<level>:xx`). Without it
+ * every roster person with a vote on file is merged again, which rewrote other states' files in WI, AZ and GA, each
+ * reverted by hand (process-efficiency review 2026-11-12, change 7).
  */
 import 'dotenv/config';
 import { mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
@@ -72,7 +75,14 @@ async function main(): Promise<number> {
       }
     }
   }
-  const { findings, unmatched, skipped, crosscheck } = prefillFindings(instruments, gates, roster, topic, subjects, table);
+  const all = prefillFindings(instruments, gates, roster, topic, subjects, table);
+  const { unmatched, skipped, crosscheck } = all;
+  const unitsFlag = flag('--units');
+  const units = unitsFlag ? new Set(unitsFlag.split(',').map((u) => u.trim().toLowerCase()).filter(Boolean)) : null;
+  const unitOf = new Map(roster.map((r) => [r.politician_id, r.level === 'federal' ? 'federal' : `${r.level}:${(r.state ?? '').toLowerCase()}`]));
+  const inUnit = (pid: string) => !units || units.has(unitOf.get(pid) ?? '');
+  const findings = all.findings.filter((pf) => inUnit(pf.politician_id));
+  if (units) console.log(`--units ${[...units].join(',')}: writing ${findings.length} of ${all.findings.length} people with a vote on file`);
   const out = join(research, 'stage5', 'prefill');
   if (table && !dry) {
     mkdirSync(out, { recursive: true });

@@ -1,0 +1,714 @@
+{
+  "id": "MO-HB-2057-2016",
+  "scope": "state:mo",
+  "title": "HB2057 (2016 Regular Session): Specifies that except for credit card fees incurred no additional fee beyond $100 may be charged to process concealed carry permits and allows military members extra time to renew their permits",
+  "urls": [
+    "https://www.house.mo.gov/billsummary.aspx?bill=HB2057&year=2016&code=R",
+    "https://www.house.mo.gov/billtracking/bills161/billpdf/intro/HB2057I.PDF",
+    "https://www.house.mo.gov/billtracking/bills161/billpdf/commit/HB2057C.PDF",
+    "https://www.house.mo.gov/billtracking/bills161/billpdf/perf/HB2057P.PDF"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Mike Bernskoetter",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "49fa67cb-ad0d-482f-8279-5df0fc745bbd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2016-04-25",
+      "body": "MO House",
+      "motion": "Third Read and Passed (H) (House: HB 2057 HBs FOR THIRD READING)",
+      "kind": "roll-call",
+      "yes": 115,
+      "no": 34,
+      "absent": 13,
+      "note": "LegiScan roll call 537907; NV counted with absent in the tally, members keep LegiScan marks",
+      "members": [
+        {
+          "name": "Sue Allen",
+          "vote": "yea"
+        },
+        {
+          "name": "Eric Burlison",
+          "vote": "yea",
+          "politician_id": "df39a562-e7e8-481f-a2ed-fa0d2f0c3a79"
+        },
+        {
+          "name": "Mike Colona",
+          "vote": "absent"
+        },
+        {
+          "name": "Pat Conway",
+          "vote": "yea"
+        },
+        {
+          "name": "Tony Dugger",
+          "vote": "yea"
+        },
+        {
+          "name": "Linda Black",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Flanigan",
+          "vote": "yea"
+        },
+        {
+          "name": "Denny Hoskins",
+          "vote": "yea",
+          "politician_id": "b7318128-42e4-4285-989d-11a849f76e95"
+        },
+        {
+          "name": "Jacob Hummel",
+          "vote": "nay"
+        },
+        {
+          "name": "Shelley Keeney Taylor",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeanne Kirkton",
+          "vote": "nay"
+        },
+        {
+          "name": "Andrew Koenig",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Kratky",
+          "vote": "absent"
+        },
+        {
+          "name": "Mike Lair",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Leara",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom McDonald",
+          "vote": "nay"
+        },
+        {
+          "name": "Margo McNeil",
+          "vote": "nay"
+        },
+        {
+          "name": "Stacey Newman",
+          "vote": "nay"
+        },
+        {
+          "name": "Charlie Norr",
+          "vote": "nay"
+        },
+        {
+          "name": "Sharon Pace",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Parkinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Rochelle Walton Gray",
+          "vote": "nay"
+        },
+        {
+          "name": "Stephen Webber",
+          "vote": "yea",
+          "politician_id": "fade05cb-857d-4a1d-9323-7723fd9af94b"
+        },
+        {
+          "name": "Anne Zerr",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Engler",
+          "vote": "yea"
+        },
+        {
+          "name": "Kurt Bahr",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Barnes",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Bernskoetter",
+          "vote": "yea",
+          "politician_id": "49fa67cb-ad0d-482f-8279-5df0fc745bbd"
+        },
+        {
+          "name": "Rick Brattin",
+          "vote": "yea",
+          "politician_id": "e9ec322c-e997-486d-8202-48423671c800"
+        },
+        {
+          "name": "Cloria Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Cierpiot",
+          "vote": "yea",
+          "politician_id": "64e62a86-0651-45d1-b1c6-04d8f3dceaff"
+        },
+        {
+          "name": "Steve Cookson",
+          "vote": "yea"
+        },
+        {
+          "name": "Sandy Crawford",
+          "vote": "yea",
+          "politician_id": "037a3dd2-f4d8-45d7-b560-081d5dfd85a7"
+        },
+        {
+          "name": "Gary Cross",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Curtman",
+          "vote": "yea"
+        },
+        {
+          "name": "Charlie Davis",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Fitzwater",
+          "vote": "yea"
+        },
+        {
+          "name": "Diane Franklin",
+          "vote": "yea"
+        },
+        {
+          "name": "Keith Frederick",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Hinson",
+          "vote": "absent"
+        },
+        {
+          "name": "Delus Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Caleb Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Kelley",
+          "vote": "yea"
+        },
+        {
+          "name": "Nick Marshall",
+          "vote": "yea"
+        },
+        {
+          "name": "Karla May",
+          "vote": "nay",
+          "politician_id": "615fdf2b-c769-4606-a024-fc8e214051bc"
+        },
+        {
+          "name": "Genise Montecillo",
+          "vote": "nay"
+        },
+        {
+          "name": "Mary Nichols",
+          "vote": "nay"
+        },
+        {
+          "name": "Donald Phillips",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Richardson",
+          "vote": "yea"
+        },
+        {
+          "name": "John Rizzo",
+          "vote": "yea"
+        },
+        {
+          "name": "Lindell Shumake",
+          "vote": "yea"
+        },
+        {
+          "name": "Clem Smith",
+          "vote": "absent"
+        },
+        {
+          "name": "Sheila Solon",
+          "vote": "yea"
+        },
+        {
+          "name": "Kathie Conway",
+          "vote": "yea"
+        },
+        {
+          "name": "William White",
+          "vote": "yea"
+        },
+        {
+          "name": "John McCaherty",
+          "vote": "absent"
+        },
+        {
+          "name": "Penny Hubbard",
+          "vote": "nay"
+        },
+        {
+          "name": "Craig Redmon",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeanie Lauer",
+          "vote": "yea"
+        },
+        {
+          "name": "Sue Entlicher",
+          "vote": "yea"
+        },
+        {
+          "name": "Lyle Rowland",
+          "vote": "yea"
+        },
+        {
+          "name": "Donna Lichtenegger",
+          "vote": "absent"
+        },
+        {
+          "name": "Galen Higdon",
+          "vote": "yea"
+        },
+        {
+          "name": "Bart Korman",
+          "vote": "yea"
+        },
+        {
+          "name": "Lincoln Hough",
+          "vote": "yea",
+          "politician_id": "08a9eced-e2bb-44f5-8e64-3f9b4ce75195"
+        },
+        {
+          "name": "T.J. Berry",
+          "vote": "yea"
+        },
+        {
+          "name": "Jay Houghton",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Lant",
+          "vote": "yea"
+        },
+        {
+          "name": "Ira Anders",
+          "vote": "yea"
+        },
+        {
+          "name": "Ben Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Reiboldt",
+          "vote": "yea"
+        },
+        {
+          "name": "Lyndall Fraker",
+          "vote": "yea"
+        },
+        {
+          "name": "Marsha Haefner",
+          "vote": "yea"
+        },
+        {
+          "name": "Wanda Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Chrissy Sommer",
+          "vote": "yea"
+        },
+        {
+          "name": "Tracy McCreery",
+          "vote": "nay",
+          "politician_id": "dfb23acf-0d76-4084-8c2a-90a51b5ef94e"
+        },
+        {
+          "name": "Brandon Ellington",
+          "vote": "nay"
+        },
+        {
+          "name": "Judy Morgan",
+          "vote": "nay"
+        },
+        {
+          "name": "Gail McCann Beatty",
+          "vote": "nay"
+        },
+        {
+          "name": "Noel Shull",
+          "vote": "yea"
+        },
+        {
+          "name": "Rocky Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Fitzpatrick",
+          "vote": "yea",
+          "politician_id": "07c45d17-2e7c-4e9f-833e-b4da59042139"
+        },
+        {
+          "name": "Kevin Austin",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Muntzel",
+          "vote": "yea"
+        },
+        {
+          "name": "Donna Pfautsch",
+          "vote": "yea"
+        },
+        {
+          "name": "Keith English",
+          "vote": "absent"
+        },
+        {
+          "name": "Bryan Spencer",
+          "vote": "yea"
+        },
+        {
+          "name": "Nathan Walker",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Cornejo",
+          "vote": "yea"
+        },
+        {
+          "name": "Dean Dohrman",
+          "vote": "yea"
+        },
+        {
+          "name": "Elijah Haahr",
+          "vote": "absent"
+        },
+        {
+          "name": "Jim Hansen",
+          "vote": "yea"
+        },
+        {
+          "name": "Ronald Hicks",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Hurst",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeremy LaFaver",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Lynch",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Messenger",
+          "vote": "yea"
+        },
+        {
+          "name": "Bonnaye Mims",
+          "vote": "nay"
+        },
+        {
+          "name": "Tim Remole",
+          "vote": "yea"
+        },
+        {
+          "name": "Caleb Rowden",
+          "vote": "yea"
+        },
+        {
+          "name": "Kathryn Swan",
+          "vote": "yea"
+        },
+        {
+          "name": "Kenneth Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "David Wood",
+          "vote": "yea"
+        },
+        {
+          "name": "Elaine Gannon",
+          "vote": "yea"
+        },
+        {
+          "name": "Warren Love",
+          "vote": "yea"
+        },
+        {
+          "name": "Sonya Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Burns",
+          "vote": "nay"
+        },
+        {
+          "name": "Jon Carpenter",
+          "vote": "nay"
+        },
+        {
+          "name": "Courtney Curtis",
+          "vote": "nay"
+        },
+        {
+          "name": "Randy Dunn",
+          "vote": "nay"
+        },
+        {
+          "name": "Lynn Morris",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Otto",
+          "vote": "nay"
+        },
+        {
+          "name": "Shawn Rhoads",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Ross",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Butler",
+          "vote": "nay"
+        },
+        {
+          "name": "Joe McGaugh",
+          "vote": "yea"
+        },
+        {
+          "name": "Gina Mitten",
+          "vote": "nay"
+        },
+        {
+          "name": "Joe Runions",
+          "vote": "nay"
+        },
+        {
+          "name": "Tommie Pierson",
+          "vote": "nay"
+        },
+        {
+          "name": "Glen Kolkmeyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Kimberly Gardner",
+          "vote": "absent"
+        },
+        {
+          "name": "James Neely",
+          "vote": "yea"
+        },
+        {
+          "name": "Sue Meredith",
+          "vote": "nay"
+        },
+        {
+          "name": "Holly Thompson Rehder",
+          "vote": "yea"
+        },
+        {
+          "name": "Joshua Peters",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeffery Justus",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Moon",
+          "vote": "yea",
+          "politician_id": "3d0fda4e-1322-467e-bfcf-38a5c348b096"
+        },
+        {
+          "name": "Jeff Pogue",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Kidd",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Chipman",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Alferman",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane Roden",
+          "vote": "yea"
+        },
+        {
+          "name": "Kip Kendrick",
+          "vote": "absent"
+        },
+        {
+          "name": "Deb Lavender",
+          "vote": "nay"
+        },
+        {
+          "name": "Joe Adams",
+          "vote": "nay"
+        },
+        {
+          "name": "Kirk Mathews",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob Vescovo",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Hill",
+          "vote": "yea",
+          "politician_id": "dde576d5-0fdd-4221-9317-fa99788bc306"
+        },
+        {
+          "name": "Randy Pietzman",
+          "vote": "yea"
+        },
+        {
+          "name": "Nick King",
+          "vote": "yea"
+        },
+        {
+          "name": "Nathan Beard",
+          "vote": "yea"
+        },
+        {
+          "name": "Becky Ruth",
+          "vote": "yea"
+        },
+        {
+          "name": "Alan Green",
+          "vote": "nay"
+        },
+        {
+          "name": "J. Eggleston",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Corlew",
+          "vote": "yea"
+        },
+        {
+          "name": "Charles Basye",
+          "vote": "yea"
+        },
+        {
+          "name": "Tila Hubrecht",
+          "vote": "absent"
+        },
+        {
+          "name": "Dan Shaul",
+          "vote": "yea"
+        },
+        {
+          "name": "Don Rone",
+          "vote": "yea"
+        },
+        {
+          "name": "Shamed Dogan",
+          "vote": "yea"
+        },
+        {
+          "name": "John Wiemann",
+          "vote": "yea"
+        },
+        {
+          "name": "Rebecca Roeber",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrew McDaniel",
+          "vote": "absent"
+        },
+        {
+          "name": "Travis Fitzwater",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Bondon",
+          "vote": "yea"
+        },
+        {
+          "name": "Patricia Pike",
+          "vote": "yea"
+        },
+        {
+          "name": "Allen Andrews",
+          "vote": "yea"
+        },
+        {
+          "name": "Lauren Arthur",
+          "vote": "nay"
+        },
+        {
+          "name": "Jered Taylor",
+          "vote": "yea"
+        },
+        {
+          "name": "Daron McGee",
+          "vote": "nay"
+        },
+        {
+          "name": "Dean Plocher",
+          "vote": "yea"
+        },
+        {
+          "name": "Rory Rowland",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2057-2016.engrossed.pdf",
+      "sha256": "d7aab639839e62cbe45d8bd136b6228f40e3066027534512a29563ab25e89d4b"
+    }
+  },
+  "operative_text": "Section 571.104 (RSMo): 9. Notwithstanding any provision of this section to the contrary, if a concealed carry permit, or endorsement issued prior to August 28, 2013, expires while the person issued the permit or endorsement is on active duty in the armed forces, on active state duty, full-time National Guard duty under Title 32, or active duty under Title 10 with the National Guard, or is physically incapacitated due to an injury incurred while in the services of the National Guard or armed forces, the permit shall be renewed if the person completes the renewal requirements under subsection 3 of this section within two months of returning to Missouri after discharge from such duty or recovery from such incapacitation.\nSection 571.101 (RSMo): 11. For processing an application for a concealed carry permit pursuant to sections 571.101 to 571.121, the sheriff in each county shall charge a nonrefundable fee not to exceed one hundred dollars which shall be paid to the treasury of the county to the credit of the sheriff's revolving fund. This fee shall include the cost to reimburse the Missouri state highway patrol for the cost of fingerprinting and criminal background checks. An additional fee shall be added to each credit card, debit card, or other electronic transaction equal to the charge paid by the state for the use of the credit card, debit card, or other electronic payment method by the applicant.\nSection 571.111 (RSMo): 3. A certificate of firearms safety training course completion may also be issued to an applicant who presents proof to a qualified firearms safety instructor that the applicant has passed a regular or online course on firearm safety conducted by an instructor certified by the National Rifle Association that is at least one hour in length and who also passes the requirements of subdivisions (1), (2), (6), (7), (8), (9), and (10) of subsection 2 of this section in a course, not restricted by a period of hours, that is taught by a qualified firearms safety instructor.\nSection 571.030 (RSMo): 2. (10) Any municipal or county prosecuting attorney or assistant prosecuting attorney; circuit attorney or assistant circuit attorney; municipal, associate circuit, or circuit judge; or any person appointed by a court to be a special prosecutor who has completed the firearms safety training course required under subsection 2 of section 571.111;"
+}

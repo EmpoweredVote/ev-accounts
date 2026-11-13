@@ -1,0 +1,738 @@
+{
+  "id": "TN-HB-1316-2025",
+  "scope": "state:tn",
+  "title": "HB 1316 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Section 2-7-112 and Title 55, Chapter 50, relative to licenses.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB1316/2025",
+    "https://legiscan.com/TN/rollcall/HB1316/id/1504783",
+    "https://legiscan.com/TN/rollcall/HB1316/id/1519869",
+    "https://legiscan.com/TN/rollcall/HB1316/id/1538770",
+    "https://legiscan.com/TN/rollcall/HB1316/id/1543681"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id)\n(section) Sec 1, 2-7-112(c)(1) (accepted ID: physical Tennessee driver licence)\n(quote) 2-7-112(c)(1), is amended by inserting the language \"physical\" immediately preceding the language \"Tennessee driver license\".\n(section) Sec 2, 2-7-112(c)(3)\n(quote) 2-7-112(c)(3), is amended by inserting the language \"physical,\" immediately after the language \"A\".\n(section) Sec 6, 55-50-306(e) (digital licence barred for voting)\n(quote) except, that to verify the person's identification for the purpose of voting, the person shall not present or submit evidence of possession of a valid driver license in a digital format, and a digital driver license must not be accepted as such evidence.\n(section) Sec 8, new 55-50-306(k) (the bar covers the free photo ID licence too)\n(quote) For purposes of this section, \"driver license\" includes a photo identification license issued under\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule) not stated.\n(other) Sec 3: 55-50-306 'electronic' becomes 'digital' (driver licence system wording).\n(other) Sec 4: 55-50-304 exemption for a person 18 or older doing a driving demonstration with a safety employee.\n(other) Sec 5: no fee to take part in the digital driver licence system.\n(other) Sec 7: data from a digital licence kept no more than 3 calendar days; not sold except to law enforcement, entitled governments or on subpoena.\n(other) Sec 8: biometric and geolocation limits; no required or preferred use of digital licence; digital licence disabled when the physical licence is cancelled, revoked or suspended or the device is lost or stolen.\n(other) Sec 9: 55-50-102(22)(D) Class D licence definition includes autocycles.\n(other) Sec 10: effective on becoming law.\n(other) version: 3106468-Draft (2025-02-06): carries slot a (Secs 1, 2, 6, 8(k)). Sec 6 says a digital licence 'must be accepted' for other identification but not for voting. Sec 8(g)(2)-(4): detailed biometric limits with consent each time and destruction within 3 days.\n(other) version: amend-239736-HA0118 (House Transportation amendment 1, Howell, dated 2025-03-19; action log says adopted on the House floor 2025-04-07 although the adopted flag reads 0): rewrites Sec 6 ('may be accepted' in place of 'must be accepted'; adds a comma before 'and a digital driver license') and Sec 8 (biometric limit shortened to the face-photo comparison; (h) adds 'including a photograph'). Voting-ID bar unchanged. Slot a unchanged.\n(other) version: 3223007-Chaptered (2025-04-25, Public Chapter 297, House Bill 1316 substituted for Senate Bill 1297): equals the Draft with HA0118's Sec 6 and Sec 8. Slot a carried.\n(other) note: Existing 2-7-112(c)(1) and (c)(3) list the accepted IDs (not reprinted here); the bill only inserts 'physical' before each. The bill's ID effect: a phone or other digital driver licence (and a digital photo ID licence) cannot be shown to vote; a physical licence still can. HA0118's adopted flag (0) conflicts with the action log ('H. adopted am. (Amendment 1 - HA0118)', 2025-04-07); the Chaptered text confirms the HA0118 wording became law. Senate amendment SA0055 was withdrawn 2025-04-10 (text not saved).",
+  "sponsors": [
+    {
+      "name": "William Lamberth",
+      "role": "prime",
+      "version": "amend-239736-HA0118"
+    },
+    {
+      "name": "Mark Cochran",
+      "role": "co",
+      "version": "amend-239736-HA0118"
+    },
+    {
+      "name": "Jake McCalmon",
+      "role": "co",
+      "version": "amend-239736-HA0118"
+    },
+    {
+      "name": "Torrey Harris",
+      "role": "co",
+      "version": "amend-239736-HA0118"
+    },
+    {
+      "name": "Kevin Raper",
+      "role": "co",
+      "version": "amend-239736-HA0118"
+    },
+    {
+      "name": "G.A. Hardaway",
+      "role": "co",
+      "version": "amend-239736-HA0118"
+    },
+    {
+      "name": "Kelly Keisling",
+      "role": "co",
+      "version": "amend-239736-HA0118"
+    },
+    {
+      "name": "Dan Howell",
+      "role": "co",
+      "version": "amend-239736-HA0118"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "surveillance-technology"
+      ]
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-03-04",
+      "body": "TN House",
+      "motion": "Subcommittee recommended for passage if amended [version voted: Draft + any subcommittee amendment (not saved). The Draft already carries the voting-ID rule and the final law keeps it.]",
+      "kind": "roll-call",
+      "yes": 7,
+      "no": 2,
+      "absent": 0,
+      "body_size": 9,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB1316/id/1504783",
+      "members": [
+        {
+          "name": "David Hawk",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Lowell Russell",
+          "vote": "nay"
+        },
+        {
+          "name": "Dave Wright",
+          "vote": "yea"
+        },
+        {
+          "name": "Jake McCalmon",
+          "vote": "yea"
+        },
+        {
+          "name": "Ed Butler",
+          "vote": "yea"
+        },
+        {
+          "name": "Aftyn Behn",
+          "vote": "yea"
+        },
+        {
+          "name": "Fred Atchley",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Reneau",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2025-03-18",
+      "body": "TN House",
+      "motion": "Committee recommended for passage if amended [version voted: Draft + committee amendment (HA0118 is numbered 'House Transportation 1'; its date 2025-03-19 is after this vote, so which text was voted is inferred, not shown). Draft already carries the voting-ID rule.]",
+      "kind": "roll-call",
+      "yes": 16,
+      "no": 3,
+      "absent": 0,
+      "body_size": 19,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB1316/id/1519869",
+      "members": [
+        {
+          "name": "David Hawk",
+          "vote": "yea"
+        },
+        {
+          "name": "Pat Marsh",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Rudd",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Sherrell",
+          "vote": "yea"
+        },
+        {
+          "name": "Lowell Russell",
+          "vote": "nay"
+        },
+        {
+          "name": "Chris Todd",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Wright",
+          "vote": "yea"
+        },
+        {
+          "name": "Torrey Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Rebecca Alexander",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Vital",
+          "vote": "nay"
+        },
+        {
+          "name": "Jake McCalmon",
+          "vote": "yea"
+        },
+        {
+          "name": "Ed Butler",
+          "vote": "yea"
+        },
+        {
+          "name": "Ronnie Glynn",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Stevens",
+          "vote": "yea"
+        },
+        {
+          "name": "Aftyn Behn",
+          "vote": "yea"
+        },
+        {
+          "name": "Fred Atchley",
+          "vote": "yea"
+        },
+        {
+          "name": "Aron Maberry",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Reneau",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2025-04-07",
+      "body": "TN House",
+      "motion": "House floor, third consideration, passed as amended [version voted: Draft + HA0118 (adopted on the floor 2025-04-07 per action log)]",
+      "kind": "roll-call",
+      "yes": 83,
+      "no": 7,
+      "absent": 4,
+      "body_size": 94,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB1316/id/1538770",
+      "members": [
+        {
+          "name": "G Hardaway",
+          "vote": "yea"
+        },
+        {
+          "name": "Timothy Hill",
+          "vote": "nay"
+        },
+        {
+          "name": "David Hawk",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnny Shaw",
+          "vote": "yea"
+        },
+        {
+          "name": "Pat Marsh",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Lynn",
+          "vote": "yea"
+        },
+        {
+          "name": "Karen Camper",
+          "vote": "yea"
+        },
+        {
+          "name": "Joe Towns",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark White",
+          "vote": "yea"
+        },
+        {
+          "name": "Cameron Sexton",
+          "vote": "yea"
+        },
+        {
+          "name": "Kelly Keisling",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Sparks",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeremy Faison",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Dennis Powers",
+          "vote": "yea"
+        },
+        {
+          "name": "Antonio Parkinson",
+          "vote": "yea"
+        },
+        {
+          "name": "William Lamberth",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Travis",
+          "vote": "yea"
+        },
+        {
+          "name": "Gloria Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrew Farmer",
+          "vote": "yea"
+        },
+        {
+          "name": "Debra Moody",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Littleton",
+          "vote": "yea"
+        },
+        {
+          "name": "Harold Love",
+          "vote": "yea"
+        },
+        {
+          "name": "Bo Mitchell",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Powell",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Jay Reedy",
+          "vote": "yea"
+        },
+        {
+          "name": "Gregory Terry",
+          "vote": "yea"
+        },
+        {
+          "name": "John Clemmons",
+          "vote": "nay"
+        },
+        {
+          "name": "Jason Zachary",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Hicks",
+          "vote": "yea"
+        },
+        {
+          "name": "John Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Gant",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Rudd",
+          "vote": "absent"
+        },
+        {
+          "name": "Paul Sherrell",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerome Moon",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Vaughan",
+          "vote": "yea"
+        },
+        {
+          "name": "Clark Boyd",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnny Garrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Cepicky",
+          "vote": "yea"
+        },
+        {
+          "name": "Charlie Baum",
+          "vote": "yea"
+        },
+        {
+          "name": "Rush Bricken",
+          "vote": "yea"
+        },
+        {
+          "name": "Jesse Chism",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Cochran",
+          "vote": "yea"
+        },
+        {
+          "name": "Clay Doggett",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Freeman",
+          "vote": "yea"
+        },
+        {
+          "name": "Yusuf Hakeem",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirk Haston",
+          "vote": "yea"
+        },
+        {
+          "name": "Esther Helton",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Hurt",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Lafferty",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Leatherwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Iris Rudder",
+          "vote": "yea"
+        },
+        {
+          "name": "Lowell Russell",
+          "vote": "nay"
+        },
+        {
+          "name": "Chris Todd",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Wright",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Eldridge",
+          "vote": "yea"
+        },
+        {
+          "name": "Rusty Grills",
+          "vote": "yea"
+        },
+        {
+          "name": "Tandy Darby",
+          "vote": "yea"
+        },
+        {
+          "name": "John Gillespie",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Warner",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Carringer",
+          "vote": "yea"
+        },
+        {
+          "name": "Torrey Harris",
+          "vote": "nay"
+        },
+        {
+          "name": "Sam McKenzie",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Hicks",
+          "vote": "yea"
+        },
+        {
+          "name": "Rebecca Alexander",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Vital",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "Monty Fritts",
+          "vote": "nay"
+        },
+        {
+          "name": "Jake McCalmon",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Raper",
+          "vote": "yea"
+        },
+        {
+          "name": "Ed Butler",
+          "vote": "yea"
+        },
+        {
+          "name": "William Slater",
+          "vote": "yea"
+        },
+        {
+          "name": "Gino Bulso",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Hale",
+          "vote": "yea"
+        },
+        {
+          "name": "Caleb Hemmer",
+          "vote": "yea"
+        },
+        {
+          "name": "Jody Barrett",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeff Burkhart",
+          "vote": "yea"
+        },
+        {
+          "name": "Elaine Davis",
+          "vote": "yea"
+        },
+        {
+          "name": "Ronnie Glynn",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Stevens",
+          "vote": "yea"
+        },
+        {
+          "name": "Brock Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Jones",
+          "vote": "absent"
+        },
+        {
+          "name": "Justin Pearson",
+          "vote": "yea"
+        },
+        {
+          "name": "Aftyn Behn",
+          "vote": "yea"
+        },
+        {
+          "name": "Fred Atchley",
+          "vote": "yea"
+        },
+        {
+          "name": "Shaundelle Brooks",
+          "vote": "yea"
+        },
+        {
+          "name": "Renea Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Aron Maberry",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee Reeves",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Reneau",
+          "vote": "absent"
+        },
+        {
+          "name": "Gabby Salinas",
+          "vote": "absent"
+        },
+        {
+          "name": "Richard Scarbrough",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Stinnett",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2025-04-10",
+      "body": "TN Senate",
+      "motion": "Senate floor, third consideration, passed [version voted: House bill as engrossed: Draft + HA0118 (no Senate amendment adopted; SA0055 withdrawn, text not saved). Equals the Chaptered act.]",
+      "kind": "roll-call",
+      "yes": 27,
+      "no": 1,
+      "absent": 3,
+      "body_size": 31,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB1316/id/1543681",
+      "members": [
+        {
+          "name": "Joseph Hensley",
+          "vote": "nay"
+        },
+        {
+          "name": "Bo Watson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Yager",
+          "vote": "yea"
+        },
+        {
+          "name": "Randy McNally",
+          "vote": "yea"
+        },
+        {
+          "name": "Rusty Crowe",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Southerland",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ferrell Haile",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Pody",
+          "vote": "yea"
+        },
+        {
+          "name": "Becky Massey",
+          "vote": "yea"
+        },
+        {
+          "name": "John Stevens",
+          "vote": "yea"
+        },
+        {
+          "name": "Janince Bowling",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Gardenhire",
+          "vote": "yea"
+        },
+        {
+          "name": "Dawn White",
+          "vote": "yea"
+        },
+        {
+          "name": "Raumesh Akbari",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Bailey",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Briggs",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Yarbro",
+          "vote": "absent"
+        },
+        {
+          "name": "Edward Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane Reeves",
+          "vote": "yea"
+        },
+        {
+          "name": "London Lamar",
+          "vote": "absent"
+        },
+        {
+          "name": "Paul Rose",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Powers",
+          "vote": "yea"
+        },
+        {
+          "name": "Page Walley",
+          "vote": "yea"
+        },
+        {
+          "name": "Heidi Campbell",
+          "vote": "yea"
+        },
+        {
+          "name": "Brent Taylor",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Lowe",
+          "vote": "yea"
+        },
+        {
+          "name": "Charlane Oliver",
+          "vote": "absent"
+        },
+        {
+          "name": "Robert Harshbarger",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Hatcher",
+          "vote": "yea"
+        },
+        {
+          "name": "Jessie Seal",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "CA-AB-3127-2020",
+  "scope": "state:ca",
+  "title": "AB3127 (2019-2020): Firearms: reports to local law enforcement.",
+  "urls": [
+    "http://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=201920200AB3127",
+    "http://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200AB3127"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kevin McCarty",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Jim Nielsen",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Rob Bonta",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "8b183a30-3afb-4d9e-aa40-aa2ad2c674aa"
+    },
+    {
+      "name": "David Chiu",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Jesse Gabriel",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf"
+    },
+    {
+      "name": "Cottie Petrie-Norris",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "065c6e87-8778-43ee-ab44-b9982a677aa7"
+    },
+    {
+      "name": "Sharon Quirk-Silva",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "1e29ce86-9e02-4079-b50d-bb0d039613a2"
+    },
+    {
+      "name": "Henry Stern",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "f3671de4-514f-441c-8ad4-4a9ab7c65ae6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Introduced 2020-02-21, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-3127-2020.introduced-2020-02-21.html",
+      "sha256": "8ee2ab44114d907af674e42269c0417b8ffeada06b14feedc7d5c4bffd5d8970"
+    },
+    "note": "Introduced text of 2020-02-21; no floor vote recorded. Section 29880(b) also tells the county mental health department about attempts by people barred for mental illness; treated as part of the gun rule."
+  },
+  "operative_text": "Section 28260 (Penal Code (added)): 28260. (a) Commencing January 1, 2022, if the Department of Justice receives an application to purchase a firearm, the department shall, within 24 hours of receipt of that application to purchase, notify the local law enforcement agency with primary jurisdiction over the area in which the person was last known to reside of the application. (b) Commencing January 1, 2022, if the Department of Justice receives a request by a person to report their acquisition or ownership of a firearm in order to have it listed in the registry set forth in Section 11106 as owned by that person, whether the report is mandated by this part or made pursuant to Section 28000, the department shall, within 24 hours of receipt of that request, notify the local law enforcement agency with primary jurisdiction over the area in which the person was last known to reside of the request. (c) Commencing January 1, 2022, if the Department of Justice receives a request by a person to obtain a serial number pursuant to Section 29180, the department shall, within 24 hours of receipt of that request, notify the local law enforcement agency with primary jurisdiction over the area in which the person was last known to reside of the request. (d) Commencing July 1, 2025, if the Department of Justice receives a request by a person to purchase a firearm precursor part, the department shall, within 24 hours of receipt of that request, notify the local law enforcement agency with primary jurisdiction over the area in which the person was last known to reside of the request.\nSection 29880 (Penal Code (added)): 29880. (a) If the Department of Justice determines that a person prohibited from owning, purchasing, receiving, or possessing a firearm by this chapter, Chapter 3 (commencing with Section 29900), or Section 8100 or 8103 of the Welfare and Institutions Code has attempted to acquire a firearm, or has attempted to report their acquisition or ownership of a firearm in order to have it listed in the registry set forth in Section 11106 as owned by that person, whether the report is mandated by this part or made pursuant to Section 28000, the department shall notify the local law enforcement agency with primary jurisdiction over the area in which the person was last known to reside of the attempt in a manner and format prescribed by the department. (b) If a person described in subdivision (a) is prohibited from owning or possessing a firearm because of a mental illness, the department shall also notify the county department of mental health in the county in which the person was last known to reside. For purposes of this subdivision, a person is prohibited from owning or possessing a firearm because of a mental illness if the person is prohibited from owning or possessing a firearm pursuant to Section 8100 or 8103 of the Welfare and Institutions Code.\nSection 30372 (Penal Code (added)): 30372. (a) If a person attempts to purchase or otherwise acquire ammunition and the sale or other transfer is not approved by the Department of Justice pursuant to Section 30370 because the person is prohibited from possessing ammunition pursuant to Section 30305, the department shall notify the local law enforcement agency with primary jurisdiction in which the person was last known to reside of the attempt. (b) A local law enforcement agency that receives a notification pursuant to subdivision (a) may contact the person or otherwise investigate whether the person is in unlawful possession of a firearm. (c) Subdivision (a) does not apply if the sale or other transfer is not approved only because the address in the Automated Firearms System does not match the address on the person’s identification, if there is a matching file with the same name, date of birth, and identification number."
+}

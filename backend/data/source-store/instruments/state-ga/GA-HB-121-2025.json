@@ -1,0 +1,50 @@
+{
+  "id": "GA-HB-121-2025",
+  "scope": "state:ga",
+  "title": "HB121 (2025-2026 Regular Session): Second Amendment Preservation Act; enact",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/69495",
+    "https://www.legis.ga.gov/api/legislation/document/20252026/230263"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Charlice Byrd",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0f2833fc-f8b1-4d11-9721-de31972f3bb8"
+    },
+    {
+      "name": "Noelle Kahaian",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8bbbf3eb-2902-4846-b2bd-7a0ae37eadb0"
+    },
+    {
+      "name": "Reynaldo Martinez",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a5c62e89-6cc4-45be-86ed-428d23442c34"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-121-2025.introduced.pdf",
+      "sha256": "6ac7e69114bea1b92ad147a5296e88ec0aecc28d8196b2d38d4da4c09029e663"
+    }
+  },
+  "operative_text": "SECTION 1 (adding O.C.G.A. 16-11-183): (a) No public officer or employee of this state or any political subdivision thereof shall have the authority to enforce, attempt to enforce, or participate in any way in the enforcement of any federal acts, executive orders, administrative orders, rules, regulations, statutes, or ordinances regarding firearms, firearm accessories, or ammunition.\nSECTION 1 (adding O.C.G.A. 16-11-183): (b) No public office, public officer, or employee of this state or any political subdivision thereof shall accede to a request to give material aid or support to the efforts of the other in the enforcement of or implementation of any federal acts, executive orders, administrative orders, rules, regulations, statutes, or ordinances regarding firearms, firearm accessories, or ammunition.\nSECTION 1 (adding O.C.G.A. 16-11-184): (a) Any political subdivision or law enforcement agency that employs a law enforcement officer who knowingly violates Code Section 16-11-183 while acting under the color of any state or federal law, shall be liable to the injured party in an action at law, suit in equity, or other proper proceeding for redress and subject to a civil penalty of $50,000.00 per occurrence.\nSECTION 1 (adding O.C.G.A. 16-11-184): (d) Sovereign, official, or qualified immunity shall not be an affirmative defense in any action brought pursuant to this Code section and is hereby waived.\nSECTION 1 (adding O.C.G.A. 16-11-186): (a) Nothing in this part shall prohibit officials of this state from accepting aid from federal officials for the enforcement of the laws of this state."
+}

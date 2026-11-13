@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-450-2025",
+  "scope": "state:mo",
+  "title": "SB450 (2025 Regular Session): Modifies provisions relating to concealed firearms",
+  "urls": [
+    "https://www.senate.mo.gov/25info/BTS_Web/Bill.aspx?SessionType=R&BillID=285",
+    "https://www.senate.mo.gov/25info/pdf-bill/intro/SB450.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Barbara Washington",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b9226e1d-7341-4e30-9799-88b88abcb3fd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-450-2025.introduced.pdf",
+      "sha256": "189bbf11b71e5316e17ef4c0c26e5eb195460e4b900ddb1a88dd3368c167b292"
+    }
+  },
+  "operative_text": "Section 571.107 (RSMo): (18) Any public library. Possession of a firearm in a vehicle on the premises of a public library shall not be a criminal offense so long as the firearm is not removed from the vehicle or brandished while the vehicle is on the premises.\nSection 571.107 (RSMo): 2. Carrying of a concealed firearm in a location specified in subdivisions (1) to (18) of subsection 1 of this section by any individual who holds a concealed carry permit issued pursuant to sections 571.101 to 571.121, or a concealed carry endorsement issued prior to August 28, 2013, shall not be a criminal act but may subject the person to denial to the premises or removal from the premises."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-1169-2026",
+  "scope": "state:mo",
+  "title": "SB1169 (2026 Regular Session): Modifies provisions relating to the offense of unlawful use of weapons",
+  "urls": [
+    "https://www.senate.mo.gov/BillTracking/Bills/Billinformation?year=2026&billid=197",
+    "https://www.senate.mo.gov/26info/pdf-bill/intro/SB1169.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Steven Roberts",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "c391b4b8-5d0e-4c1c-98e0-bd03ffffa8d3"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-1169-2026.introduced.pdf",
+      "sha256": "66bcae6bab597a9be4e63a3aedbb4d66be75b4d34c64c4de7cedfe8cb77599fb"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): 1. A person commits the offense of unlawful use of weapons, except as otherwise provided by sections 571.101 to 571.121, if he or she knowingly: (11) Possesses a firearm while also knowingly in possession of a controlled substance that is sufficient for a felony violation of section 579.015; or (12) Within any city not within a county, carries openly or concealed upon or about his or her person a firearm.\nSection 571.030 (RSMo): 2. Subdivisions (3), (4), (6), (7), and (9), and (12) of subsection 1 of this section shall not apply to or affect any of the following persons, when such uses are reasonably associated with or are necessary to the fulfillment of such person's official duties, except as otherwise provided in this subsection:\nSection 571.030 (RSMo): 3. Subdivisions (1), (5), (8), (10), and (12) of subsection 1 of this section do not apply when the actor is transporting such weapons in a nonfunctioning state or in an unloaded state when ammunition is not readily accessible or when such weapons are not readily accessible.\nSection 571.030 (RSMo): 4. Subdivisions (1), (8), (10), and (12) of subsection 1 of this section shall not apply to any person who has a valid concealed carry permit issued pursuant to sections 571.101 to 571.121, a valid concealed carry endorsement issued before August 28, 2013, or a valid permit or endorsement to carry concealed firearms issued by another state or political subdivision of another state.\nSection 571.030 (RSMo): 8. A person who commits the offense of unlawful use of weapons under: (5) Subdivision (12) of subsection 1 of this section shall be guilty of a class A misdemeanor for the first offense and a class E felony for a second or subsequent offense."
+}

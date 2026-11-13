@@ -1,0 +1,447 @@
+{
+  "id": "CA-AB-879-2025",
+  "scope": "state:ca",
+  "title": "AB879 (2025-2026 Regular): Firearms: unsafe handguns.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB879",
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB879#98AMD"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Joe Patterson",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "038b7624-492e-496c-8b97-0926ef4a4a1e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-05-08",
+      "body": "CA Assembly",
+      "motion": "AB 879 Patterson Consent Calendar Second Day Regular Session",
+      "kind": "roll-call",
+      "yes": 69,
+      "no": 0,
+      "absent": 10,
+      "note": "LegiScan roll call 1568625; taken on the text 'Amended' of 2025-03-24",
+      "members": [
+        {
+          "name": "Al Muratsuchi",
+          "vote": "yea",
+          "politician_id": "ea803096-927f-41fe-98e1-deab56291810"
+        },
+        {
+          "name": "Sharon Quirk-Silva",
+          "vote": "yea",
+          "politician_id": "1e29ce86-9e02-4079-b50d-bb0d039613a2"
+        },
+        {
+          "name": "James Gallagher",
+          "vote": "absent",
+          "politician_id": "0a283c28-344c-40c9-ae48-bb2dcf1c7c4d"
+        },
+        {
+          "name": "Mike Gipson",
+          "vote": "yea",
+          "politician_id": "6133e73c-4c33-4cfc-9fd3-de1382729f42"
+        },
+        {
+          "name": "Jacqui Irwin",
+          "vote": "absent",
+          "politician_id": "97285c92-b664-4687-a1e4-6d88cf9c7fe4"
+        },
+        {
+          "name": "Tom Lackey",
+          "vote": "yea",
+          "politician_id": "e8bdd8a7-a1b2-43e3-afd4-df975980819e"
+        },
+        {
+          "name": "Ash Kalra",
+          "vote": "yea",
+          "politician_id": "eb1a285e-fd86-4da1-a198-a66ad6a81be4"
+        },
+        {
+          "name": "Phillip Chen",
+          "vote": "yea",
+          "politician_id": "ed32efa5-b455-4323-a12f-5fe79bc4ffd6"
+        },
+        {
+          "name": "Cecilia Aguiar-Curry",
+          "vote": "yea",
+          "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257"
+        },
+        {
+          "name": "Heath Flora",
+          "vote": "absent",
+          "politician_id": "a0c59a09-fa45-4765-b6c5-17843699991d"
+        },
+        {
+          "name": "Marc Berman",
+          "vote": "yea",
+          "politician_id": "4cfacf31-d285-40ac-8373-e350912fddda"
+        },
+        {
+          "name": "Blanca Rubio",
+          "vote": "yea",
+          "politician_id": "51d15b77-71bb-475e-b86e-c6e1b37b869d"
+        },
+        {
+          "name": "Joaquin Arambula",
+          "vote": "absent",
+          "politician_id": "9edab965-ac61-4227-a8d6-601c07821f53"
+        },
+        {
+          "name": "Jesse Gabriel",
+          "vote": "yea",
+          "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf"
+        },
+        {
+          "name": "Rebecca Bauer-Kahan",
+          "vote": "yea",
+          "politician_id": "2cca193f-574d-4ec7-b0c8-e0fcd27d5eab"
+        },
+        {
+          "name": "Tasha Boerner Horvath",
+          "vote": "absent",
+          "politician_id": "0a9171c6-0676-4704-b825-a7e16c66f1c2"
+        },
+        {
+          "name": "Cottie Petrie-Norris",
+          "vote": "yea",
+          "politician_id": "065c6e87-8778-43ee-ab44-b9982a677aa7"
+        },
+        {
+          "name": "James Ramos",
+          "vote": "yea",
+          "politician_id": "01dd07dc-ded1-4ba5-aff3-2dc2b386af12"
+        },
+        {
+          "name": "Robert Rivas",
+          "vote": "yea",
+          "politician_id": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4"
+        },
+        {
+          "name": "Buffy Wicks",
+          "vote": "yea",
+          "politician_id": "5821d0a9-672e-44c0-bac7-1a802a2e8368"
+        },
+        {
+          "name": "Steve Bennett",
+          "vote": "yea",
+          "politician_id": "8c61cd23-68fb-4f1c-8a3c-60da74c86a64"
+        },
+        {
+          "name": "Laurie Davies",
+          "vote": "yea",
+          "politician_id": "7778111f-551f-407f-87c7-e30268ea5e0a"
+        },
+        {
+          "name": "Alex Lee",
+          "vote": "yea",
+          "politician_id": "525a5d79-d7a9-498a-b972-57fa517be375"
+        },
+        {
+          "name": "Chris Ward",
+          "vote": "yea",
+          "politician_id": "1ee95c1d-6127-494b-9f68-e8b3c975adee"
+        },
+        {
+          "name": "Lisa Calderon",
+          "vote": "yea",
+          "politician_id": "0afa998d-94e9-4af4-ba00-256c38869398"
+        },
+        {
+          "name": "Isaac Bryan",
+          "vote": "yea",
+          "politician_id": "5cdd28b7-f8be-4968-bc1a-0e7928786980"
+        },
+        {
+          "name": "Mia Bonta",
+          "vote": "yea",
+          "politician_id": "0d70edc9-535c-4191-a222-fe57ebde4467"
+        },
+        {
+          "name": "Mike Fong",
+          "vote": "yea",
+          "politician_id": "cacdb3e3-f716-4914-9e32-a95cc632af42"
+        },
+        {
+          "name": "Lori Wilson",
+          "vote": "yea",
+          "politician_id": "fc8374d8-7186-4be8-9c36-f37df2e9c0d8"
+        },
+        {
+          "name": "Matt Haney",
+          "vote": "yea",
+          "politician_id": "4c7d1cea-a6ce-4185-a977-c754800f491a"
+        },
+        {
+          "name": "David Alvarez",
+          "vote": "yea",
+          "politician_id": "e0451383-4594-4247-8297-acc388a7e0c3"
+        },
+        {
+          "name": "Tina McKinnor",
+          "vote": "yea",
+          "politician_id": "522efd15-f5e2-4e1a-8708-aad87410637d"
+        },
+        {
+          "name": "Dawn Addis",
+          "vote": "yea",
+          "politician_id": "2ba6e476-1d62-4ac5-a70d-f4bcbe704f39"
+        },
+        {
+          "name": "Juan Alanis",
+          "vote": "yea",
+          "politician_id": "7520a629-a0ec-44b3-9460-c7e4574a897d"
+        },
+        {
+          "name": "Jasmeet Bains",
+          "vote": "yea",
+          "politician_id": "539874fc-489f-4643-9b1a-923aca6cc2c1"
+        },
+        {
+          "name": "Damon Connolly",
+          "vote": "yea",
+          "politician_id": "ab26d178-4f69-4ffc-9485-ac03f87643e2"
+        },
+        {
+          "name": "Diane Dixon",
+          "vote": "yea",
+          "politician_id": "9aa10096-180d-424b-8fc8-cca5796704a6"
+        },
+        {
+          "name": "Gregg Hart",
+          "vote": "yea",
+          "politician_id": "21940b7c-2424-47e9-a649-077b0f827c2c"
+        },
+        {
+          "name": "Josh Hoover",
+          "vote": "yea",
+          "politician_id": "acb2a944-dd73-484d-83e9-86362af0eb42"
+        },
+        {
+          "name": "Corey Jackson",
+          "vote": "yea",
+          "politician_id": "bbd7825a-6778-4cca-81c8-8ef3ded55965"
+        },
+        {
+          "name": "Joe Patterson",
+          "vote": "yea",
+          "politician_id": "038b7624-492e-496c-8b97-0926ef4a4a1e"
+        },
+        {
+          "name": "Juan Carrillo",
+          "vote": "absent",
+          "politician_id": "b959d608-5674-467e-a1c8-3572c76a729b"
+        },
+        {
+          "name": "Josh Lowenthal",
+          "vote": "yea",
+          "politician_id": "39d99fc2-b8ab-4846-8ff3-bcb65e16bee4"
+        },
+        {
+          "name": "Liz Ortega",
+          "vote": "yea",
+          "politician_id": "6730d01a-e87e-4177-9a2b-876b9c494774"
+        },
+        {
+          "name": "Blanca Pacheco",
+          "vote": "yea",
+          "politician_id": "c9205ba1-d0c8-4f17-a165-fb2a8fdae742"
+        },
+        {
+          "name": "Diane Papan",
+          "vote": "yea",
+          "politician_id": "fb44c938-26fd-40ca-9333-e842693a1ad4"
+        },
+        {
+          "name": "Gail Pellerin",
+          "vote": "yea",
+          "politician_id": "190c3584-0826-4a5f-a2ad-104ff70ff259"
+        },
+        {
+          "name": "Kate Sanchez",
+          "vote": "absent",
+          "politician_id": "62dfefeb-9979-445a-aee6-06cf7c03a8c0"
+        },
+        {
+          "name": "Pilar Schiavo",
+          "vote": "yea",
+          "politician_id": "d64c969e-f458-4387-98b5-1e7af8cb42f0"
+        },
+        {
+          "name": "Esmeralda Soria",
+          "vote": "yea",
+          "politician_id": "2326fe1b-923d-4e2f-9598-0c8a23528df8"
+        },
+        {
+          "name": "Stephanie Nguyen",
+          "vote": "yea",
+          "politician_id": "7c23df4c-d105-4f48-8490-cb667a5e3382"
+        },
+        {
+          "name": "Tri Ta",
+          "vote": "yea",
+          "politician_id": "c2975ee6-7770-4c5f-809c-4e1245f2ab64"
+        },
+        {
+          "name": "Avelino Valencia",
+          "vote": "yea",
+          "politician_id": "a1467b58-9cc8-4611-a03e-07defc1679bf"
+        },
+        {
+          "name": "Rick Zbur",
+          "vote": "yea",
+          "politician_id": "ff77225c-51f9-4628-acc3-020d40382d05"
+        },
+        {
+          "name": "Greg Wallis",
+          "vote": "absent",
+          "politician_id": "c6c04131-96f3-40d8-b881-e6c57f986d38"
+        },
+        {
+          "name": "Patrick Ahrens",
+          "vote": "yea",
+          "politician_id": "bd4dc076-4bdd-4e10-be2c-80d998b17c50"
+        },
+        {
+          "name": "Jessica Caloza",
+          "vote": "yea",
+          "politician_id": "685f2150-7b2a-4f94-992c-bf0cf23ffa69"
+        },
+        {
+          "name": "Leticia Castillo",
+          "vote": "yea",
+          "politician_id": "30fee995-e2e3-42d6-9993-d000fd73b919"
+        },
+        {
+          "name": "Carl DeMaio",
+          "vote": "yea",
+          "politician_id": "a6d96375-a61c-4a13-9afa-99914456e8c2"
+        },
+        {
+          "name": "Anamarie Farias",
+          "vote": "yea",
+          "politician_id": "52d3e817-03bf-4dd5-8a16-67b44acf23ac"
+        },
+        {
+          "name": "Robert Garcia",
+          "vote": "yea",
+          "politician_id": "8bfb459b-9823-4b0d-81f4-49cb97831a80"
+        },
+        {
+          "name": "Jeff Gonzalez",
+          "vote": "absent",
+          "politician_id": "5ad32852-789e-4013-995b-6f0aa6a5a5d4"
+        },
+        {
+          "name": "Mark Gonzalez",
+          "vote": "yea",
+          "politician_id": "005d7df1-227e-4110-b254-ec835d5b5e95"
+        },
+        {
+          "name": "Heather Hadwick",
+          "vote": "yea",
+          "politician_id": "1af14e38-da38-44ea-854d-3d8f1c615460"
+        },
+        {
+          "name": "John Harabedian",
+          "vote": "yea",
+          "politician_id": "0acbacdd-a873-4e5e-aad9-fa5eca6d7b1e"
+        },
+        {
+          "name": "Maggy Krell",
+          "vote": "yea",
+          "politician_id": "a7e904b1-ec37-4c43-8594-99d778e7351a"
+        },
+        {
+          "name": "Alexandra Macedo",
+          "vote": "yea",
+          "politician_id": "8566674a-3a3b-4c88-bba0-c9f42e4ff810"
+        },
+        {
+          "name": "Darshana Patel",
+          "vote": "yea",
+          "politician_id": "9a927fae-60bf-41f9-8ec0-433cc98997fa"
+        },
+        {
+          "name": "Rhodesia Ransom",
+          "vote": "yea",
+          "politician_id": "6a36e92b-d953-4309-8423-1e0ba4e68b6f"
+        },
+        {
+          "name": "Celeste Rodriguez",
+          "vote": "absent",
+          "politician_id": "f9cbe210-a840-4924-b4aa-a5de0dc143ba"
+        },
+        {
+          "name": "Michelle Rodriguez",
+          "vote": "yea",
+          "politician_id": "108dfd2c-571a-4fef-aaf2-621c3238eea6"
+        },
+        {
+          "name": "Chris Rogers",
+          "vote": "yea",
+          "politician_id": "d8c6901d-ad98-484e-b932-9ea77cfb677d"
+        },
+        {
+          "name": "Nick Schultz",
+          "vote": "yea",
+          "politician_id": "e31e6ebf-91ea-478f-b4dc-6974888bdffa"
+        },
+        {
+          "name": "LaShae Sharp-Collins",
+          "vote": "yea",
+          "politician_id": "cb2ae7a3-3b6a-462b-8fe8-47f3ce4cb7a2"
+        },
+        {
+          "name": "Jose Solache",
+          "vote": "yea",
+          "politician_id": "1caa9043-2397-4f75-b430-acc0623d64d7"
+        },
+        {
+          "name": "Catherine Stefani",
+          "vote": "yea",
+          "politician_id": "0649630c-bd6d-40fe-8f66-e026e6f6c83e"
+        },
+        {
+          "name": "David Tangipa",
+          "vote": "yea",
+          "politician_id": "4db536d2-d624-4225-b5ff-d22b44c1e9a7"
+        },
+        {
+          "name": "Sade Elhawary",
+          "vote": "yea",
+          "politician_id": "3c2bfe51-9a53-4992-801b-138a1a8ce9ed"
+        },
+        {
+          "name": "Stan Ellis",
+          "vote": "yea",
+          "politician_id": "fcdd3836-bb89-44ec-920a-75a21c9d726f"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2025-03-24, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-879-2025.amended-2025-03-24.html",
+      "sha256": "3e2f6a61c84407d1cb4f478aeeff9676c31c14137bf9585b98d78706a54c3b33"
+    },
+    "note": "Amended version of 2025-03-24 (Assembly vote on this text). Strikes county probation department from paragraph (6) list (old (J)), relettering (K)-(V) to (J)-(U); adds new paragraph (8) for county probation departments. The quote lists paragraph (8) first, then relettered items."
+  },
+  "operative_text": "Section 32000(b)(8) (Penal Code): (8) Subject to the limitations set forth in subdivision (c), the sale or purchase of a handgun for use as a service weapon, if the handgun is sold to, or purchased by a county probation department for use by, or sold to or purchased by, sworn members of the department who have satisfactorily completed the firearms portion of a training course prescribed by POST pursuant to Section 832. As a condition of carrying that handgun, a member shall complete a live-fire qualification prescribed by their employing entity at least once every three months.\nSection 32000(b)(6)(J)-(U) (Penal Code): (J) The Los Angeles World Airports, as defined in Section 830.15. (K) A K–12 public school district for use by a school police officer, as described in Section 830.32. (L) A municipal water district for use by a park ranger, as described in Section 830.34. (M) A county for use by a welfare fraud investigator or inspector, as described in Section 830.35. (N) A county for use by the coroner or the deputy coroner, as described in Section 830.35. (O) The Supreme Court and the courts of appeal for use by marshals of the Supreme Court and bailiffs of the courts of appeal, and coordinators of security for the judicial branch, as described in Section 830.36. (P) A fire department or fire protection agency of a county, city, city and county, district, or the state for use by either of the following: (i) A member of an arson-investigating unit, regularly paid and employed in that capacity pursuant to Section 830.37. (ii) A member other than a member of an arson-investigating unit, regularly paid and employed in that capacity pursuant to Section 830.37. (Q) The University of California Police Department, or the California State University Police Departments, as described in Section 830.2. (R) A California Community College police department, as described in Section 830.32. (S) A harbor or port district or other entity employing peace officers described in subdivision (b) of Section 830.33, the San Diego Unified Port District Harbor Police, and the Harbor Department of the City of Los Angeles. (T) A local agency employing park rangers described in subdivision (b) of Section 830.31. (U) The Department of Cannabis Control."
+}

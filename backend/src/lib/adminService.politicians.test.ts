@@ -1,20 +1,11 @@
 /**
- * What `is_incumbent` gets set to when an admin creates a politician.
+ * `adminCreatePolitician` must not write incumbency.
  *
- * 🔴 THIS WAS THE CA_0188 DEFECT, STILL LIVE IN A WRITE PATH. `adminCreatePolitician` defaulted
- * `is_incumbent` to TRUE, and the route's `CreatePoliticianSchema` does not carry the field at
- * all — so `data.is_incumbent` was always `undefined` and the default always fired. Every
- * politician created through POST /api/admin/compass/politicians was marked a sitting
- * officeholder whether or not they held anything.
- *
- * Worse, the schema DOES accept `is_candidate`, and that value was silently discarded: the
- * function's parameter type has no such field, so an admin who ticked "is candidate" got a row
- * asserting the exact opposite. CA_0188 created 1,817 active "incumbents" with no seat; this is
- * the same shape, one endpoint at a time.
- *
- * CLAUDE.md: set `politicians.is_incumbent` EXPLICITLY on every insert. The column now defaults
- * to false, and an unseated person is not an incumbent — so an unstated value resolves to false,
- * which the daily reconciler then corrects upward if the person really does hold a seat.
+ * History: it used to default `politicians.is_incumbent` to TRUE (the CA_0188 shape — every row
+ * created here was marked a sitting officeholder), then to `!is_candidate`. The column was
+ * dropped in CA_0378: whether someone holds a seat is read from `essentials.office_terms`
+ * (src/lib/incumbency.ts), so a stored copy cannot go stale on a handover date. An INSERT that
+ * still named it would fail in production the moment the column is gone.
  */
 import { vi, describe, it, expect, beforeEach } from 'vitest';
 
@@ -26,52 +17,47 @@ vi.mock('./db.js', () => ({ pool: { query: vi.fn() } }));
 import { pool } from './db.js';
 import { adminCreatePolitician } from './adminService.js';
 
-/** The value bound to the is_incumbent placeholder of the INSERT. */
-async function incumbentParamFor(data: Record<string, unknown>): Promise<unknown> {
+async function insertFor(data: Record<string, unknown>): Promise<[string, unknown[]]> {
   const query = vi.mocked(pool.query);
   query.mockReset();
   query.mockResolvedValue({ rows: [{ id: 'p1' }] } as never);
   await adminCreatePolitician(data as never);
-  const call = query.mock.calls[0] as unknown as [string, unknown[]];
-  const [sql, params] = call;
-  const cols = sql.slice(sql.indexOf('(') + 1, sql.indexOf(')')).split(',').map((c) => c.trim());
-  return params[cols.indexOf('is_incumbent')];
+  return query.mock.calls[0] as unknown as [string, unknown[]];
 }
 
-describe('adminCreatePolitician — is_incumbent', () => {
+describe('adminCreatePolitician — no incumbency column', () => {
   beforeEach(() => vi.mocked(pool.query).mockReset());
 
-  it('is false when the caller says nothing, not true', () => {
-    // The old default. An admin creating a record asserts nothing about occupancy, and
-    // office_terms is the only thing that can.
-    return expect(incumbentParamFor({ first_name: 'A', last_name: 'B' })).resolves.toBe(false);
+  it('does not name is_incumbent in the INSERT', async () => {
+    const [sql] = await insertFor({ first_name: 'A', last_name: 'B', is_candidate: false });
+    expect(sql).not.toMatch(/is_incumbent/);
   });
 
-  it('is false when the admin marked them a candidate', () => {
-    // 🔴 The field the route accepts and the code used to throw away.
-    return expect(
-      incumbentParamFor({ first_name: 'A', last_name: 'B', is_candidate: true }),
-    ).resolves.toBe(false);
+  it('binds exactly one value per named column (positive control on the parse)', async () => {
+    const [sql, params] = await insertFor({ first_name: 'A', last_name: 'B', is_candidate: true });
+    const cols = sql.slice(sql.indexOf('(') + 1, sql.indexOf(')')).split(',').map((c) => c.trim());
+    expect(cols).toContain('full_name');
+    expect(params).toHaveLength(cols.length);
   });
+});
 
-  it('is true when the admin marked them NOT a candidate', () => {
-    return expect(
-      incumbentParamFor({ first_name: 'A', last_name: 'B', is_candidate: false }),
-    ).resolves.toBe(true);
-  });
+import { adminUpdatePolitician } from './adminService.js';
 
-  it('an explicit is_incumbent still wins over is_candidate', () => {
-    return expect(
-      incumbentParamFor({ first_name: 'A', last_name: 'B', is_candidate: true, is_incumbent: true }),
-    ).resolves.toBe(true);
-  });
+describe('adminUpdatePolitician — only real columns reach the UPDATE', () => {
+  beforeEach(() => vi.mocked(pool.query).mockReset());
 
-  it('names is_incumbent in the INSERT column list, so check:occupancy can see it', () => {
+  it('drops office_title and is_candidate (not politicians columns: they made the UPDATE 500)', async () => {
     const query = vi.mocked(pool.query);
-    query.mockReset();
     query.mockResolvedValue({ rows: [{ id: 'p1' }] } as never);
-    return adminCreatePolitician({ first_name: 'A', last_name: 'B' } as never).then(() => {
-      expect(String(query.mock.calls[0][0])).toMatch(/is_incumbent/);
-    });
+    await adminUpdatePolitician('p1', { full_name: 'A B', office_title: 'Mayor', is_candidate: true } as never);
+    const [sql, params] = query.mock.calls[0] as unknown as [string, unknown[]];
+    expect(sql).toContain('full_name = $1');
+    expect(sql).not.toMatch(/office_title|is_candidate/);
+    expect(params).toEqual(['A B', 'p1']);
+  });
+
+  it('refuses when only unknown fields were sent', async () => {
+    await expect(adminUpdatePolitician('p1', { office_title: 'Mayor' } as never)).rejects.toThrow('No fields to update');
+    expect(vi.mocked(pool.query)).not.toHaveBeenCalled();
   });
 });

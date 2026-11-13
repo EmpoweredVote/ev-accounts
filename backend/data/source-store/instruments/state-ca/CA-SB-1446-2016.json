@@ -1,0 +1,575 @@
+{
+  "id": "CA-SB-1446-2016",
+  "scope": "state:ca",
+  "title": "SB1446 (2015-2016): Firearms: magazine capacity.",
+  "urls": [
+    "http://www.leginfo.ca.gov/cgi-bin/postquery?bill_number=sb_1446&sess=1516&house=S",
+    "http://www.leginfo.ca.gov/pub/15-16/bill/sen/sb_1401-1450/sb_1446_bill_20160630_enrolled.html",
+    "http://www.leginfo.ca.gov/pub/15-16/bill/sen/sb_1401-1450/sb_1446_bill_20160328_amended_sen_v98.html"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Loni Hancock",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Isadore Hall",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Mark Leno",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Rob Bonta",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "8b183a30-3afb-4d9e-aa40-aa2ad2c674aa"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2016-05-19",
+      "body": "CA Senate",
+      "motion": "Senate 3rd Reading SB1446 Hancock",
+      "kind": "roll-call",
+      "yes": 22,
+      "no": 15,
+      "absent": 3,
+      "note": "LegiScan roll call 546997; taken on the text 'Amended' of 2016-03-28",
+      "members": [
+        {
+          "name": "Joel Anderson",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Beall",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Berryhill",
+          "vote": "nay"
+        },
+        {
+          "name": "Marty Block",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin de Leon",
+          "vote": "yea"
+        },
+        {
+          "name": "Jean Fuller",
+          "vote": "nay"
+        },
+        {
+          "name": "Ted Gaines",
+          "vote": "nay",
+          "politician_id": "fc97cf9f-3695-4c2d-9219-9a9ff6378db4"
+        },
+        {
+          "name": "Cathleen Galgiani",
+          "vote": "abstain"
+        },
+        {
+          "name": "Isadore Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "Edward Hernandez",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Tony Mendoza",
+          "vote": "abstain"
+        },
+        {
+          "name": "William Monning",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Nielsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Robert Huff",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Leno",
+          "vote": "yea"
+        },
+        {
+          "name": "Carol Liu",
+          "vote": "yea"
+        },
+        {
+          "name": "Fran Pavley",
+          "vote": "yea"
+        },
+        {
+          "name": "Lois Wolk",
+          "vote": "yea"
+        },
+        {
+          "name": "Loni Hancock",
+          "vote": "yea"
+        },
+        {
+          "name": "Ricardo Lara",
+          "vote": "yea",
+          "politician_id": "bab3379b-d64e-423b-b62e-4efa04cee750"
+        },
+        {
+          "name": "Holly Mitchell",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Pan",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Wieckowski",
+          "vote": "yea"
+        },
+        {
+          "name": "Benjamin Hueso",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Morrell",
+          "vote": "nay"
+        },
+        {
+          "name": "Anthony Cannella",
+          "vote": "nay"
+        },
+        {
+          "name": "Hannah-Beth Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Roth",
+          "vote": "nay"
+        },
+        {
+          "name": "Andy Vidak",
+          "vote": "nay"
+        },
+        {
+          "name": "Benjamin Allen",
+          "vote": "yea",
+          "politician_id": "4486f856-118b-475c-83f0-078581a7b268"
+        },
+        {
+          "name": "Patricia Bates",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Hertzberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Connie Leyva",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike McGuire",
+          "vote": "yea",
+          "politician_id": "974bfe8b-afb8-424c-bfd2-7805f033b1a0"
+        },
+        {
+          "name": "Janet Nguyen",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeff Stone",
+          "vote": "nay"
+        },
+        {
+          "name": "John Moorlach",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Glazer",
+          "vote": "nay"
+        },
+        {
+          "name": "Sharon Runner",
+          "vote": "abstain"
+        }
+      ]
+    },
+    {
+      "date": "2016-06-30",
+      "body": "CA Assembly",
+      "motion": "SB 1446 Hancock Senate Third Reading By LOW",
+      "kind": "roll-call",
+      "yes": 44,
+      "no": 31,
+      "absent": 5,
+      "note": "LegiScan roll call 556764; taken on the text 'Enrolled' of 2016-06-30",
+      "members": [
+        {
+          "name": "Mike Gatto",
+          "vote": "yea"
+        },
+        {
+          "name": "Luis Alejo",
+          "vote": "absent"
+        },
+        {
+          "name": "Toni Atkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Bonilla",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Gordon",
+          "vote": "yea"
+        },
+        {
+          "name": "Das Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Kristin Olsen",
+          "vote": "nay"
+        },
+        {
+          "name": "K H Achadjian",
+          "vote": "nay"
+        },
+        {
+          "name": "Nora Campos",
+          "vote": "yea"
+        },
+        {
+          "name": "Shannon Grove",
+          "vote": "nay",
+          "politician_id": "03ee06fb-9b51-41cc-8942-4632f3a724e3"
+        },
+        {
+          "name": "Donald Wagner",
+          "vote": "nay",
+          "politician_id": "c09bed40-e329-45a5-a5f1-5293e038cc66"
+        },
+        {
+          "name": "Roger Hernandez",
+          "vote": "yea"
+        },
+        {
+          "name": "Beth Gaines",
+          "vote": "nay"
+        },
+        {
+          "name": "Franklin Bigelow",
+          "vote": "nay"
+        },
+        {
+          "name": "Richard Bloom",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob Bonta",
+          "vote": "yea",
+          "politician_id": "8b183a30-3afb-4d9e-aa40-aa2ad2c674aa"
+        },
+        {
+          "name": "Cheryl Brown",
+          "vote": "nay"
+        },
+        {
+          "name": "Edwin Chau",
+          "vote": "yea"
+        },
+        {
+          "name": "Rocky Chavez",
+          "vote": "nay"
+        },
+        {
+          "name": "Ken Cooley",
+          "vote": "nay"
+        },
+        {
+          "name": "Brian Dahle",
+          "vote": "nay"
+        },
+        {
+          "name": "Tom Daly",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Eggman",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Frazier",
+          "vote": "nay"
+        },
+        {
+          "name": "Cristina Garcia",
+          "vote": "yea"
+        },
+        {
+          "name": "Jimmy Gomez",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Gray",
+          "vote": "absent"
+        },
+        {
+          "name": "Chris Holden",
+          "vote": "yea"
+        },
+        {
+          "name": "Ian Calderon",
+          "vote": "yea"
+        },
+        {
+          "name": "Reginald Jones-Sawyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Marc Levine",
+          "vote": "yea"
+        },
+        {
+          "name": "Eric Linder",
+          "vote": "nay"
+        },
+        {
+          "name": "Brian Maienschein",
+          "vote": "nay"
+        },
+        {
+          "name": "Jose Medina",
+          "vote": "yea"
+        },
+        {
+          "name": "Melissa Melendez",
+          "vote": "nay"
+        },
+        {
+          "name": "Kevin Mullin",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Patterson",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Quirk",
+          "vote": "yea"
+        },
+        {
+          "name": "Anthony Rendon",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Stone",
+          "vote": "yea"
+        },
+        {
+          "name": "Philip Ting",
+          "vote": "yea"
+        },
+        {
+          "name": "Marie Waldron",
+          "vote": "nay"
+        },
+        {
+          "name": "Shirley Weber",
+          "vote": "yea",
+          "politician_id": "4ba62f32-dd20-48ce-8d84-d09bb129ad59"
+        },
+        {
+          "name": "Scott Wilk",
+          "vote": "nay"
+        },
+        {
+          "name": "Adrin Nazarian",
+          "vote": "yea"
+        },
+        {
+          "name": "Lorena Gonzalez Fletcher",
+          "vote": "yea"
+        },
+        {
+          "name": "Freddie Rodriguez",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Dababneh",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Jones",
+          "vote": "nay",
+          "politician_id": "ee130fd3-649d-49e1-bda4-13d9bbed2f6c"
+        },
+        {
+          "name": "Catharine Baker",
+          "vote": "nay"
+        },
+        {
+          "name": "William Brough",
+          "vote": "nay"
+        },
+        {
+          "name": "Autumn Burke",
+          "vote": "yea"
+        },
+        {
+          "name": "Ling Ling Chang",
+          "vote": "absent"
+        },
+        {
+          "name": "David Chiu",
+          "vote": "yea"
+        },
+        {
+          "name": "Kansen Chu",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Cooper",
+          "vote": "absent"
+        },
+        {
+          "name": "Bill Dodd",
+          "vote": "yea"
+        },
+        {
+          "name": "Eduardo Garcia",
+          "vote": "yea"
+        },
+        {
+          "name": "James Gallagher",
+          "vote": "nay",
+          "politician_id": "0a283c28-344c-40c9-ae48-bb2dcf1c7c4d"
+        },
+        {
+          "name": "Mike Gipson",
+          "vote": "yea",
+          "politician_id": "6133e73c-4c33-4cfc-9fd3-de1382729f42"
+        },
+        {
+          "name": "David Hadley",
+          "vote": "nay"
+        },
+        {
+          "name": "Matthew Harper",
+          "vote": "nay"
+        },
+        {
+          "name": "Jacqui Irwin",
+          "vote": "yea",
+          "politician_id": "97285c92-b664-4687-a1e4-6d88cf9c7fe4"
+        },
+        {
+          "name": "Young Kim",
+          "vote": "nay"
+        },
+        {
+          "name": "Tom Lackey",
+          "vote": "nay",
+          "politician_id": "e8bdd8a7-a1b2-43e3-afd4-df975980819e"
+        },
+        {
+          "name": "Evan Low",
+          "vote": "yea"
+        },
+        {
+          "name": "Devon Mathis",
+          "vote": "nay"
+        },
+        {
+          "name": "Kevin McCarty",
+          "vote": "yea"
+        },
+        {
+          "name": "Patrick O'Donnell",
+          "vote": "yea"
+        },
+        {
+          "name": "Jay Obernolte",
+          "vote": "nay"
+        },
+        {
+          "name": "Miguel Santiago",
+          "vote": "yea"
+        },
+        {
+          "name": "Marc Steinorth",
+          "vote": "nay"
+        },
+        {
+          "name": "Tony Thurmond",
+          "vote": "yea",
+          "politician_id": "f8808ac0-8a9d-4657-8bf7-2ae60d96399c"
+        },
+        {
+          "name": "Travis Allen",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Wood",
+          "vote": "yea"
+        },
+        {
+          "name": "Chad Mayes",
+          "vote": "absent"
+        },
+        {
+          "name": "Patty Lopez",
+          "vote": "yea"
+        },
+        {
+          "name": "Rudy Salas",
+          "vote": "nay"
+        },
+        {
+          "name": "Sebastian Ridley-Thomas",
+          "vote": "yea"
+        },
+        {
+          "name": "Joaquin Arambula",
+          "vote": "nay",
+          "politician_id": "9edab965-ac61-4227-a8d6-601c07821f53"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2016-03-28, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-SB-1446-2016.amended-2016-03-28.html",
+      "sha256": "dade83d714356d08978c8a1651c0df38f6102ed5bf2d5997dbf52125dba0c6ca"
+    },
+    "note": "Version read: Enrolled 2016-06-30 (Assembly vote 2016-06-30). The Senate vote 2016-05-19 was on the Amended text of 2016-03-28. The gun parts do not differ: I compared the two texts section by section (32310, 32400, 32405, 32406, 32410, 32420 repeal, 32425, 32430, 32435, 32450) and found only a spacing difference. The 2016-03-28 text had already struck the earlier bill sections amending Penal Code 16350 and 16740 (definition of large-capacity magazine), so neither version carries them. Enrolled text has no add/strike marks; the quote leaves out 32406(c)-(e), the officer and agency exceptions in 32400-32450, and the 32310(d)-(e) definitions."
+  },
+  "operative_text": "Section 32310 (Penal Code): 32310. (a) Except as provided in Article 2 (commencing with Section 32400) of this chapter and in Chapter 1 (commencing with Section 17700) of Division 2 of Title 2, any person in this state who manufactures or causes to be manufactured, imports into the state, keeps for sale, or offers or exposes for sale, or who gives, lends, buys, or receives any large-capacity magazine is punishable by imprisonment in a county jail not exceeding one year or imprisonment pursuant to subdivision (h) of Section 1170. (b) Except as provided in Article 2 (commencing with Section 32400) of this chapter and in Chapter 1 (commencing with Section 17700) of Division 2 of Title 2, commencing July 1, 2017, any person in this state who possesses any large-capacity magazine, regardless of the date the magazine was acquired, is guilty of an infraction punishable by a fine not to exceed one hundred dollars ($100) upon the first offense, by a fine not to exceed two hundred fifty dollars ($250) upon the second offense, and by a fine not to exceed five hundred dollars ($500) upon the third or subsequent offense. (c) A person who, prior to July 1, 2017, legally possesses a large-capacity magazine shall dispose of that magazine by any of the following means: (1) Remove the large-capacity magazine from the state. (2) Prior to July 1, 2017, sell the large-capacity magazine to a licensed firearms dealer. (3) Destroy the large-capacity magazine. (4) Surrender the large-capacity magazine to a law enforcement agency for destruction.\nSection 32406 (Penal Code), added: 32406. Subdivisions (b) and (c) of Section 32310 do not apply to the following: (a) An individual who honorably retired from being a sworn peace officer, as defined in Chapter 4.5 (commencing with Section 830) of Title 3 of Part 2, or an individual who honorably retired from being a sworn federal law enforcement officer, who was authorized to carry a firearm in the course and scope of that officer's duties. For purposes of this section, \"honorably retired\" has the same meaning as provided in Section 16690. (b) A federal, state, or local historical society, museum or institutional society, or museum or institutional collection, that is open to the public, provided that the large-capacity magazine is unloaded, properly housed within secured premises, and secured from unauthorized handling. (f) A person lawfully in possession of a firearm that the person obtained prior to January 1, 2000, if no magazine that holds 10 or fewer rounds of ammunition is compatible with that firearm and the person possesses the large-capacity magazine solely for use with that firearm."
+}

@@ -65,6 +65,29 @@
         "fetched_at": "2026-11-04T14:14:55.236Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "b496b06b1628b659bacd86e55f7206ca077d3188abffcbd643c034d079d34261",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/64963/race/15863/election/900",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "I am a strong second Amendment supporter and do not think restrictions on gun ownership are necessary as guns do not kill, people do. Therfore, those who are mentally ill should not be able to purchase a gun. All other gun laws are more than enough to protect the population. Every gun law passed restricts the freedom of the second amendment.",
+      "note": "His written answer on a voter-guide questionnaire for the 2024 Senate District 11 race, to the question 'What restrictions on gun ownership are needed to protect public safety?'. He says new restrictions are unnecessary, would bar people with mental illness from buying a gun, and says every gun law restricts Second Amendment freedom. On the same page he marked 'Strongly Disagree' to the statement that victims of gun violence should be able to sue firearms dealers and makers.",
+      "subjects": [
+        "restrictions on gun ownership",
+        "gun rights and the Second Amendment",
+        "who may buy a gun (mental illness)",
+        "suing gun dealers and makers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.896Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -104,6 +127,37 @@
       "found": 1,
       "at": "2026-11-04T14:14:55.236Z",
       "by": "identity-mo-2026-11-04b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "restrictions on gun ownership",
+        "gun laws and the Second Amendment",
+        "who may buy a gun",
+        "suing gun dealers and makers",
+        "carry permits and permitless carry",
+        "red flag orders",
+        "ban on assault-style guns",
+        "background checks",
+        "National Firearms Act repeal"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate member page https://www.senate.mo.gov/Nicola: confirms Joe Nicola took the oath for the 11th Senatorial District on 2025-01-08, sitting state senator; nothing on the subject",
+        "sponsor list: covered by LegiScan bulk check",
+        "Senate news/video releases (https://www.senate.mo.gov/Media/NewsDetails/1879, /2048, /2079, /1895, /2115): nothing on the subject found in page text",
+        "blocked: https://ballotpedia.org/Joe_Nicola (403 to fetch)",
+        "blocked: https://senate.mo.gov/mem11 (404)",
+        "campaign site: not found by search; not reviewed",
+        "news searches on name plus gun words: found no quoted statement by him in news stories",
+        "not reviewed: https://ryanhite.substack.com/p/560-missouri-primary-recap-senator (podcast episode with him that mentions the Second Amendment; audio, no readable transcript on page)",
+        "Senate journal 2025 day 36 (https://www.senate.mo.gov/25info/pdf-jrnl/DAY36.pdf): his nay was on an appropriations bill, not a gun bill; nothing on the subject",
+        "https://ivoterguide.com/candidate/64963/race/15863/election/900: candidate questionnaire from his 2024 race, one gun answer saved"
+      ],
+      "found": 1,
+      "at": "2026-11-12T21:23:45.896Z",
+      "by": "source-collector"
     }
   ]
 }

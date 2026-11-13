@@ -1,0 +1,74 @@
+{
+  "politician_id": "a5595064-ce36-4b12-8eca-a2d796759d53",
+  "findings": [
+    {
+      "id": "0dd49974e0b193b36f24b874385ee0e3c2077664a2efd21a8dfffc18ed2474e1",
+      "kind": "own-words",
+      "url": "https://californiainsider.com/news/huntington-beach-reaffirms-constitutional-rights-after-feud-among-election-rivals-5664290",
+      "date": "2024-06-04",
+      "date_precision": "day",
+      "passage": "It’s blowing my mind that three people who were sworn in onto this council, and they raised their hand and swore to protect and defend our Constitution walked out on this item. That’s very telling,",
+      "note": "As Huntington Beach mayor, quoted by a news outlet (California Insider) criticizing three councilors who walked out before the council's 4-0 vote on a resolution calling the city a 'First and Second Amendment friendly city'. Her remarks are about the walkout; the story does not say she sponsored the resolution or how she voted.",
+      "subjects": [
+        "Second Amendment friendly city resolution",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.452Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d89b230353bfd3c0bc004d1caa6bcbe8c7dd86d3ebad4afd0ef927417ff8828a",
+      "kind": "record",
+      "url": "https://californiainsider.com/news/huntington-beach-reaffirms-constitutional-rights-after-feud-among-election-rivals-5664290",
+      "date": "2024-06-04",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Huntington Beach City Council resolution affirming the city as a First and Second Amendment friendly city, passed 4-0 (June 4, 2024); her individual vote is not stated in the story",
+      "local_record": true,
+      "note": "News report of a city council resolution passed 4-0 while three councilors walked out. She was mayor at the time; the story does not list her vote or sponsor. Council minutes were not reviewed.",
+      "subjects": [
+        "Second Amendment friendly city resolution",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.452Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun with or without a permit",
+        "red-flag orders",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the campaign site https://graceyforassembly.com/ (home, about, endorsements, news list, site search for 'gun', 'firearm', 'second amendment': nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Gracey_Van_Der_Mark (not reviewed: page returned an empty body)",
+        "sponsor list: covered by LegiScan bulk check",
+        "news search on name plus gun subject words (one 2024 news story on a city resolution found)",
+        "status check: a news search result says she advanced from the 2026-06-02 primary to the November general election for the 72nd Assembly District; not confirmed on an official results page"
+      ],
+      "found": 2,
+      "at": "2026-11-13T01:27:26.452Z",
+      "by": "source-collector"
+    }
+  ]
+}

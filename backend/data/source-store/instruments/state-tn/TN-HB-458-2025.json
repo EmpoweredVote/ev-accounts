@@ -1,0 +1,200 @@
+{
+  "id": "TN-HB-458-2025",
+  "scope": "state:tn",
+  "title": "HB 458 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2 and Title 55, Chapter 50, relative to elections.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB0458/2025",
+    "https://legiscan.com/TN/rollcall/HB0458/id/1614571",
+    "https://legiscan.com/TN/rollcall/HB0458/id/1623026"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id)\n(section) Sec 4, new section (first election after mail/online/agency registration)\n(quote) Each person who registers by mail or online, or through an agency other than a county election commission or the department of safety, shall appear in person to vote in the first election the person votes in after such registration becomes effective. Before voting at the appropriate polling place or election commission office, the person shall present satisfactory proof of identity.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id)\n(section) Sec 4(b) (first-election in-person rule does not apply to absentee-register voters)\n(quote) The requirement to appear in person to vote in the first election does not apply to: (1) A person who is on the permanent absentee voting register; or (2) A person who is in the address confidentiality program under title 40, chapter 38, part 6.\n(d_proof_of_citizenship)\n(section) Sec 1, 2-2-141(a) (monthly check; flagged voter only gets a notice to the commission)\n(quote) The coordinator of elections shall make monthly comparisons of the statewide voter registration database with the department of safety database to ensure non-United States citizens are not registered to vote in this state.\n(section) Sec 1, 2-2-141(a) (flag step; no proof demanded in this text)\n(quote) If evidence exists that a particular registered voter is not a citizen of the United States, then the coordinator of elections shall notify the county election commission where the person is registered to vote that the registered voter may not be a citizen of the United States.\n(section) Sec 11, 2-2-120(a) (check at registration)\n(quote) the administrator of elections shall determine, from the registrant's answers to the questions on the permanent registration record or other questions and from checking state databases regarding residency and citizenship, whether the registrant is entitled to register.\n(e_other_rule)\n(section) Sec 13, new 55-50 section: licence marker for non-citizen legal residents (ties to voting: yes, wording is \"not eligible to vote\")\n(quote) A driver license or photo identification license issued to a person who is a legal resident but who is not a United States citizen must indicate that the person to whom the\n(section) Sec 13 (continued)\n(quote) license was issued is not eligible to vote by having printed prominently on the front of the license the following: NOT ELIGIBLE TO VOTE\n(section) Sec 3, 2-2-115(b)(7) (struck; Sec 4 replaces it by cross-reference in Secs 14-15)\n(quote) Tennessee Code Annotated, Section 2-2-115(b)(7), is amended by deleting the subdivision.\n(other) Draft Sec 2: new section letting a registered voter challenge another person's registration (hearing before county commission, burden on challenger, appeal to state commission).\n(other) Draft Sec 3: deletes 2-2-115(b)(7); Secs 14-15 swap the cross-reference for 'SECTION 4' (text of 2-2-115(b)(7) not saved, so the link to Sec 4 is read from the cross-references only).\n(other) Draft Sec 5: 2-6-201(5)(A) absentee eligibility for a person 65 or older.\n(other) Draft Sec 6: 2-5-207(b)(2) ballot watermark rules.\n(other) Draft Sec 7: 2-20-101(d) bars QR or bar codes as the scanned vote selection.\n(other) Draft Sec 8: 2-8-108 optical scanners save a 600 dpi image of each ballot; secretary of state posts images by the second Friday after an election.\n(other) Draft Secs 9-10: 2-2-106 address verification at least quarterly, with listed sources (returned mail, change-of-address, driver licence data, other state agencies, commercial data).\n(other) Draft Sec 12: 2-2-120(d) monthly voter-list maintenance by each county commission.\n(other) Draft Sec 16: effective July 1, 2025.\n(other) Chaptered Sec 1: new 2-13-203(e)(4): a vacancy for a judge, district attorney general or public defender after the deadline may be filled by party nominees chosen by any party method; independents file petitions. Sec 2: effective on becoming law.\n(other) version: 3085981-Draft (2025-01-28): full 16-section bill. Carries slot a (first-election proof of identity), c (exemption), d (monthly licence-database check; registration-time database check) and e (NOT ELIGIBLE TO VOTE licence marker).\n(other) version: amend-270401-HA0547 (committee amendment 1, Crawford, 2026-02-04, adopted flag 0): deletes everything after the enacting clause; substitutes only the judicial/prosecutor vacancy-nomination rule. No slot a-e text.\n(other) version: 3396155-Chaptered (2026-02-27, Public Chapter 534 = Senate Bill 367, substituted for HB 458): same text as HA0547. No slot a-e text. All the Draft's ID and citizenship text is gone.\n(other) note: The ID/citizenship text lives only in the Draft. HA0547 replaced it entirely before the full-committee vote (the 2026-02-04 'if am' vote); the 2026-01-20 subcommittee vote was on the Draft plus a subcommittee amendment whose text is not saved, so it is unknown whether the subcommittee already stripped the ID text. The House substituted SB 367 on 2026-02-09; no House floor roll call is saved under HB 458.",
+  "sponsors": [
+    {
+      "name": "Tim Rudd",
+      "role": "prime",
+      "version": "amend-270401-HA0547"
+    },
+    {
+      "name": "Jerome Moon",
+      "role": "co",
+      "version": "amend-270401-HA0547"
+    },
+    {
+      "name": "John Crawford",
+      "role": "co",
+      "version": "amend-270401-HA0547"
+    },
+    {
+      "name": "Tom Stinnett",
+      "role": "co",
+      "version": "amend-270401-HA0547"
+    },
+    {
+      "name": "Elaine Davis",
+      "role": "co",
+      "version": "amend-270401-HA0547"
+    },
+    {
+      "name": "Dave Wright",
+      "role": "co",
+      "version": "amend-270401-HA0547"
+    },
+    {
+      "name": "Greg Vital",
+      "role": "co",
+      "version": "amend-270401-HA0547"
+    },
+    {
+      "name": "Clay Doggett",
+      "role": "co",
+      "version": "amend-270401-HA0547"
+    }
+  ],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2026-01-20",
+      "body": "TN House",
+      "motion": "Subcommittee recommended for passage if amended [version voted: not saved (Draft + a subcommittee amendment that is not in the saved set)]",
+      "kind": "roll-call",
+      "yes": 6,
+      "no": 0,
+      "absent": 0,
+      "body_size": 6,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB0458/id/1614571",
+      "members": [
+        {
+          "name": "Dan Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Rudd",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerome Moon",
+          "vote": "yea"
+        },
+        {
+          "name": "Rush Bricken",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Leatherwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Wright",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-04",
+      "body": "TN House",
+      "motion": "Committee recommended for passage if amended [version voted: Draft + HA0547 (full rewrite, committee amendment 1; any earlier subcommittee amendment is replaced because HA0547 deletes all language after the enacting clause). Adoption of HA0547 is inferred from the 'if am' motion, its date (same day), and the Chaptered text matching it.]",
+      "kind": "roll-call",
+      "yes": 21,
+      "no": 0,
+      "absent": 1,
+      "body_size": 22,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB0458/id/1623026",
+      "members": [
+        {
+          "name": "Larry Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "Dennis Powers",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Littleton",
+          "vote": "yea"
+        },
+        {
+          "name": "Bo Mitchell",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Powell",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "John Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerome Moon",
+          "vote": "yea"
+        },
+        {
+          "name": "Rush Bricken",
+          "vote": "yea"
+        },
+        {
+          "name": "Jesse Chism",
+          "vote": "yea"
+        },
+        {
+          "name": "Vincent Dixie",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Leatherwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Iris Rudder",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Wright",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Eldridge",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Warner",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Carringer",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "Jake McCalmon",
+          "vote": "yea"
+        },
+        {
+          "name": "Ed Butler",
+          "vote": "yea"
+        },
+        {
+          "name": "Gabby Salinas",
+          "vote": "absent"
+        },
+        {
+          "name": "Michael Lankford",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

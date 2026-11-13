@@ -1,0 +1,32 @@
+{
+  "id": "TN-SB-732-2025",
+  "scope": "state:tn",
+  "title": "SB 732 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 2, relative to voting.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB0732/2025"
+  ],
+  "version": "other",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1, 2-7-112(a)(1)(B) (rewritten)\n(quote) At the time a voter presents an application for ballot, the voter shall present to the precinct registrar one (1) form of identification for voter identification that bears the name and photograph and residential address of the voter.\n(section) Sec. 1, (a)(1)(C)(ii) and (v)\n(quote) Include the voter's photograph, current residential address, and expiration date of the identification; ... Not be an identification card issued to a student by an institution of higher education.\n(section) Sec. 2, 2-7-112(c)\n(quote) STRUCK: Tennessee Code Annotated, Section 2-7-112(c), is amended by deleting the subsection.\n(b_no_id_remedy)\n(section) Sec. 5, 2-7-112(d) (rewritten, residential-address verification)\n(quote) \"verification of residential address\" includes, but is not limited to, a Tennessee driver license, a residential lease agreement, a utility bill, or other document bearing the applicant's residential address. The \"verification of residential address\" must not include a digital source or sources.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec. 1, (a)(1)(C)(i) and (iii)\n(quote) Have been obtained with documented proof of citizenship of the United States; ... Indicate that the individual meets eligibility requirements for voting, including citizenship of the United States;\n(e_other_rule)\n(section) Sec. 1, (a)(1)(C)(iii)\n(quote) Indicate that the individual meets eligibility requirements for voting, including citizenship of the United States;\n(other) Sec. 1, (a)(1)(A): voter writes current residence address on the ballot application.\n(other) Sec. 1, (a)(1)(B) proviso: the one-photo-ID-with-address rule applies to 2-6-109 voters; people voting under 2-6-401(a),(b) or 2-6-601 need not show a photo/address ID.\n(other) Sec. 1, (a)(1)(C)(iv): the ID must accommodate the permanently disabled with a permanent-ID process.\n(other) Sec. 1, (a)(1)(D)-(H): address-change/inactive-status procedure via 2-7-140/141; registrar initials application; illegible signature; coordinator training rules; public information on how to obtain ID.\n(other) Secs. 3-4: delete 'punchcard' references; provisional-ballot counting by rules for hand-marked or ballot-marking-device paper tabulated by optical scan.\n(other) Sec. 6: effective on becoming law.\n(other) version: 3097797-Draft (SB only, caption header has no House bill): full rewrite of the in-person ID rule: one photo ID with name, photograph and residential address, obtained with documented proof of citizenship, showing eligibility and citizenship, no student IDs; strikes the 2-7-112(c) accepted-ID list; residential-address verification excludes digital sources.\n(other) version: 3100191-Draft (adds House companion HB0934 header): same operative text; only line breaks and the order of two sub-items differ. No substantive change found.\n(other) note: Two saved Drafts with the same operative text. No votes. In the rewrite, the existing (c) list of accepted IDs is struck and replaced by the (C) conditions, so under it the licence/passport/other-ID list disappears and a student ID is barred. Slot d: this is proof of citizenship needed to OBTAIN the voting ID, not proof shown at registration.",
+  "sponsors": [
+    {
+      "name": "Mark Pody",
+      "role": "prime",
+      "version": "3100191-Draft"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

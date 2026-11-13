@@ -1,0 +1,589 @@
+{
+  "id": "TN-HB-835-2023",
+  "scope": "state:tn",
+  "title": "HB 835 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Section 2-2-106 and Section 2-2-141, relative to election integrity.",
+  "urls": [
+    "https://legiscan.com/TN/bill/HB0835/2023",
+    "https://legiscan.com/TN/rollcall/HB0835/id/1287931",
+    "https://legiscan.com/TN/rollcall/HB0835/id/1420703",
+    "https://legiscan.com/TN/rollcall/HB0835/id/1427600"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) not stated.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship)\n(section) Sec.2 in Draft / Sec.1 in Chaptered, amends TCA 2-2-141(a)\n(quote) The coordinator of elections shall compare the statewide voter registration database with the department of safety database to ensure non-United States citizens are not registered to vote in this state.\n(e_other_rule)\n(section) Draft Sec.1, amends TCA 2-2-106(c)(1)(D) (removed by HA0815; not in Chaptered)\n(quote) The coordinator of elections shall compare the statewide voter registration database with those of other relevant state agencies and county records for this purpose; and\n(other) Draft Sec.1: makes the 2-2-106(c)(1)(D) comparison of registration addresses with other state agency and county records mandatory ('shall' instead of 'may'). This is an address check, not a citizenship check.\n(other) Draft Sec.2 / Chaptered Sec.1: changes 'may' to 'shall' in the 2-2-141(a) department-of-safety comparison that checks the voter list for non-citizens.\n(other) Last section: effective on becoming law (HA0409 would have made it July 1, 2024; it was withdrawn).\n(other) version: Draft 2670928 (Richey; SB 137 companion): carries slot d (Sec.2) and slot e (Sec.1 address comparison).\n(other) version: HA0409 (House Local Government amendment 1): changes the effective date to July 1, 2024 only; no ID/citizenship text; withdrawn on 2024-04-04.\n(other) version: HA0815 (House Local Government amendment 2): full rewrite keeping only the 2-2-141(a) 'shall compare' change (slot d) and dropping the 2-2-106 section; adopted 2024-04-04 per the action line (skeleton flag adopted=0).\n(other) version: Chaptered 2996207 (Pub. Ch. 900): equals the HA0815 text (2-2-141(a) only); same text as SB 137 Chaptered.\n(other) note: Mandatory 'shall compare' is an automatic database check of the voter list against department of safety records; the text puts no duty on voters to show citizenship proof. The same Public Chapter is listed under SB 137.\n(note) Off this topic: the bill sets no ID or citizenship-proof rule.",
+  "sponsors": [],
+  "single_subject": [],
+  "votes": [
+    {
+      "date": "2023-03-29",
+      "body": "TN House",
+      "motion": "House subcommittee: recommended for passage, 4-2 [version voted: Draft 2670928 (no amendment yet)]",
+      "kind": "roll-call",
+      "yes": 4,
+      "no": 2,
+      "absent": 0,
+      "body_size": 6,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB0835/id/1287931",
+      "members": [
+        {
+          "name": "Larry Miller",
+          "vote": "yea"
+        },
+        {
+          "name": "John Crawford",
+          "vote": "nay"
+        },
+        {
+          "name": "Tim Rudd",
+          "vote": "nay"
+        },
+        {
+          "name": "Jerome Moon",
+          "vote": "yea"
+        },
+        {
+          "name": "Esther Helton",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Burkhart",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2024-04-04",
+      "body": "TN House",
+      "motion": "House floor: passed as amended on third consideration, 75-22 [version voted: Draft + HA0815 (rewrite; HA0409 withdrawn)]",
+      "kind": "roll-call",
+      "yes": 75,
+      "no": 22,
+      "absent": 0,
+      "body_size": 97,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB0835/id/1420703",
+      "members": [
+        {
+          "name": "G Hardaway",
+          "vote": "nay"
+        },
+        {
+          "name": "Timothy Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "David Hawk",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnny Shaw",
+          "vote": "nay"
+        },
+        {
+          "name": "Pat Marsh",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Lynn",
+          "vote": "yea"
+        },
+        {
+          "name": "Karen Camper",
+          "vote": "nay"
+        },
+        {
+          "name": "Curtis Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Joe Towns",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark White",
+          "vote": "yea"
+        },
+        {
+          "name": "John Ragan",
+          "vote": "yea"
+        },
+        {
+          "name": "Cameron Sexton",
+          "vote": "yea"
+        },
+        {
+          "name": "Kelly Keisling",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Sparks",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeremy Faison",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Dennis Powers",
+          "vote": "yea"
+        },
+        {
+          "name": "Antonio Parkinson",
+          "vote": "nay"
+        },
+        {
+          "name": "Dale Carr",
+          "vote": "yea"
+        },
+        {
+          "name": "William Lamberth",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Travis",
+          "vote": "yea"
+        },
+        {
+          "name": "Gloria Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Andrew Farmer",
+          "vote": "yea"
+        },
+        {
+          "name": "Debra Moody",
+          "vote": "yea"
+        },
+        {
+          "name": "Darren Jernigan",
+          "vote": "nay"
+        },
+        {
+          "name": "Mary Littleton",
+          "vote": "yea"
+        },
+        {
+          "name": "Harold Love",
+          "vote": "nay"
+        },
+        {
+          "name": "Bo Mitchell",
+          "vote": "nay"
+        },
+        {
+          "name": "Jason Powell",
+          "vote": "nay"
+        },
+        {
+          "name": "John Holsclaw",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Howell",
+          "vote": "yea"
+        },
+        {
+          "name": "Bud Hulsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Sabi Kumar",
+          "vote": "yea"
+        },
+        {
+          "name": "Jay Reedy",
+          "vote": "yea"
+        },
+        {
+          "name": "Gregory Terry",
+          "vote": "yea"
+        },
+        {
+          "name": "John Clemmons",
+          "vote": "nay"
+        },
+        {
+          "name": "Patsy Hazlewood",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Zachary",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Hicks",
+          "vote": "yea"
+        },
+        {
+          "name": "Dwayne Thompson",
+          "vote": "nay"
+        },
+        {
+          "name": "John Crawford",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Gant",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Rudd",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Sherrell",
+          "vote": "yea"
+        },
+        {
+          "name": "Sam Whitson",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerome Moon",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Vaughan",
+          "vote": "yea"
+        },
+        {
+          "name": "Clark Boyd",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnny Garrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Cepicky",
+          "vote": "yea"
+        },
+        {
+          "name": "Charlie Baum",
+          "vote": "yea"
+        },
+        {
+          "name": "Rush Bricken",
+          "vote": "yea"
+        },
+        {
+          "name": "Jesse Chism",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Cochran",
+          "vote": "yea"
+        },
+        {
+          "name": "Clay Doggett",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Freeman",
+          "vote": "nay"
+        },
+        {
+          "name": "Yusuf Hakeem",
+          "vote": "nay"
+        },
+        {
+          "name": "Kirk Haston",
+          "vote": "yea"
+        },
+        {
+          "name": "Esther Helton",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Hurt",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Lafferty",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Leatherwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Iris Rudder",
+          "vote": "yea"
+        },
+        {
+          "name": "Lowell Russell",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Todd",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Wright",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Eldridge",
+          "vote": "yea"
+        },
+        {
+          "name": "Rusty Grills",
+          "vote": "yea"
+        },
+        {
+          "name": "Tandy Darby",
+          "vote": "yea"
+        },
+        {
+          "name": "John Gillespie",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Warner",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Carringer",
+          "vote": "yea"
+        },
+        {
+          "name": "Sam McKenzie",
+          "vote": "nay"
+        },
+        {
+          "name": "Tim Hicks",
+          "vote": "yea"
+        },
+        {
+          "name": "Rebecca Alexander",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Vital",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "Kip Capley",
+          "vote": "yea"
+        },
+        {
+          "name": "Monty Fritts",
+          "vote": "yea"
+        },
+        {
+          "name": "Jake McCalmon",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Raper",
+          "vote": "yea"
+        },
+        {
+          "name": "Bryan Richey",
+          "vote": "yea"
+        },
+        {
+          "name": "Ed Butler",
+          "vote": "yea"
+        },
+        {
+          "name": "William Slater",
+          "vote": "yea"
+        },
+        {
+          "name": "Gino Bulso",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Hale",
+          "vote": "yea"
+        },
+        {
+          "name": "Caleb Hemmer",
+          "vote": "nay"
+        },
+        {
+          "name": "Jody Barrett",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Burkhart",
+          "vote": "yea"
+        },
+        {
+          "name": "Elaine Davis",
+          "vote": "yea"
+        },
+        {
+          "name": "Ronnie Glynn",
+          "vote": "nay"
+        },
+        {
+          "name": "Robert Stevens",
+          "vote": "yea"
+        },
+        {
+          "name": "Brock Martin",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Jones",
+          "vote": "nay"
+        },
+        {
+          "name": "Justin Pearson",
+          "vote": "nay"
+        },
+        {
+          "name": "Aftyn Behn",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2024-04-15",
+      "body": "TN Senate",
+      "motion": "Senate floor: passed third consideration, 26-3 [version voted: House-passed text = Draft + HA0815 (equals Chaptered)]",
+      "kind": "roll-call",
+      "yes": 26,
+      "no": 3,
+      "absent": 0,
+      "body_size": 29,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/HB0835/id/1427600",
+      "members": [
+        {
+          "name": "Jon Lundberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph Hensley",
+          "vote": "yea"
+        },
+        {
+          "name": "Frank Niceley",
+          "vote": "yea"
+        },
+        {
+          "name": "Bo Watson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Yager",
+          "vote": "yea"
+        },
+        {
+          "name": "Randy McNally",
+          "vote": "yea"
+        },
+        {
+          "name": "Rusty Crowe",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Southerland",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Ferrell Haile",
+          "vote": "yea"
+        },
+        {
+          "name": "Art Swann",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Pody",
+          "vote": "yea"
+        },
+        {
+          "name": "Kerry Roberts",
+          "vote": "yea"
+        },
+        {
+          "name": "Becky Massey",
+          "vote": "yea"
+        },
+        {
+          "name": "John Stevens",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Gardenhire",
+          "vote": "yea"
+        },
+        {
+          "name": "Dawn White",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Bailey",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Briggs",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Yarbro",
+          "vote": "nay"
+        },
+        {
+          "name": "Edward Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane Reeves",
+          "vote": "yea"
+        },
+        {
+          "name": "London Lamar",
+          "vote": "nay"
+        },
+        {
+          "name": "Paul Rose",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Powers",
+          "vote": "yea"
+        },
+        {
+          "name": "Page Walley",
+          "vote": "yea"
+        },
+        {
+          "name": "Heidi Campbell",
+          "vote": "nay"
+        },
+        {
+          "name": "Brent Taylor",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Lowe",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

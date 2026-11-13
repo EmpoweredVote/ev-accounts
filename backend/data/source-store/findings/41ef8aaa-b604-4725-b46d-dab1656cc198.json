@@ -1,6 +1,67 @@
 {
   "politician_id": "41ef8aaa-b604-4725-b46d-dab1656cc198",
-  "findings": [],
+  "findings": [
+    {
+      "id": "012ed3c34b58adec8c3038893c7b5d6a6c870cf3588484c27a378348e50668bd",
+      "kind": "own-words",
+      "url": "https://rafu.com/2023/01/aapi-organizations-leaders-react-to-monterey-park-massacre/",
+      "date": "2023-01-22",
+      "date_precision": "day",
+      "passage": "Sensible gun legislation is required to make our communities safe for all families.",
+      "note": "Statement issued in her name as State Treasurer after the January 2023 Southern California mass shootings, reprinted by the Rafu Shimpo (published 2023-01-24). She calls for gun legislation to protect communities. Her office's press release is dated 2023-01-22 but its own page is unreachable.",
+      "subjects": [
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.644Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9a75af39242186e3a77b5a1c463bc9cac502ec3293b2c289d9bfef3bccb274fa",
+      "kind": "own-words",
+      "url": "https://rafu.com/2023/01/aapi-organizations-leaders-react-to-monterey-park-massacre/",
+      "date": "2023-01-22",
+      "date_precision": "day",
+      "passage": "When will our lawmakers listen to the majority of Americans who agree that enough is enough and we need sensible gun safety laws?",
+      "note": "Same statement, as reprinted by the Rafu Shimpo. She asks lawmakers to enact gun safety laws and says the prevalence of guns threatens lives.",
+      "subjects": [
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.644Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "233e2726f1d2f287d1d9865954828cdf24516e5b6c70e0f89de01e769004ac9e",
+      "kind": "own-words",
+      "url": "https://rafu.com/2023/01/aapi-organizations-leaders-react-to-monterey-park-massacre/",
+      "date": "2023-01-22",
+      "date_precision": "day",
+      "passage": "I will not stop advocating for change until we make sure more life-saving legislation is signed into law.",
+      "note": "Same statement, as reprinted by the Rafu Shimpo. She commits to keep pushing for more life-saving legislation after the shootings.",
+      "subjects": [
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.644Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -26,6 +87,36 @@
       "found": 0,
       "at": "2026-10-28T15:58:19.228Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "laws to reduce gun violence",
+        "sensible gun safety laws",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry permits",
+        "red-flag orders",
+        "ghost guns",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "scope: on the 2026 general-election ballot for Lieutenant Governor (campaign press release dated June 2026 on advancing, and the Secretary of State certified candidate list)",
+        "campaign site search for 'gun': nothing on the subject",
+        "campaign site pages why-i-am-running and on-the-record-with-fiona-ma: nothing on the subject",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia profile page: nothing on the subject",
+        "blocked: https://www.treasurer.ca.gov/news/releases/2023/4.pdf (returns page-not-found; statement taken from the Rafu Shimpo reprint)",
+        "https://growsf.org/voter-guide/questionnaires/june-2026/fiona-ma/ (fetched; no gun content in page text)",
+        "iVoterGuide 2022 questionnaire: search snippet says gun question unanswered; not reviewed: https://ivoterguide.com/candidate/62270/race/17746/election/894",
+        "https://sdvoice.info/?p=104371 (June 2024 news story; lists her as an attendee at a gun-violence awareness event, no words of hers quoted)",
+        "news search on name plus gun words (2 searches)"
+      ],
+      "found": 3,
+      "at": "2026-11-13T01:27:26.644Z",
+      "by": "source-collector"
     }
   ]
 }

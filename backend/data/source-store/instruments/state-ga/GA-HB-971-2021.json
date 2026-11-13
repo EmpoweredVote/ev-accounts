@@ -1,0 +1,60 @@
+{
+  "id": "GA-HB-971-2021",
+  "scope": "state:ga",
+  "title": "HB971 (2021-2022 Regular Session): Crimes and offenses; failure to store firearm in a secure manner; provide for offense",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/61247",
+    "https://www.legis.ga.gov/api/legislation/document/20212022/203655"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sandra Scott",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3c4d981d-e32f-4e58-b7d5-eac9b4222f80"
+    },
+    {
+      "name": "James Beverly",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Kim Schofield",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2ad8d1f0-dc9e-41b5-82df-a1d25aaade2e"
+    },
+    {
+      "name": "Viola Davis",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "440aca35-1e90-45d5-93f5-4ce2bd101a0a"
+    },
+    {
+      "name": "Donna McLeod",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:46:27.022243Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-971-2021.introduced.pdf",
+      "sha256": "43ba1d8837123aa6290293b0dd46f97f7896c8c5962e9cfe8f93d7b5d9f9ab90"
+    }
+  },
+  "operative_text": "SECTION 1 (amending O.C.G.A. 15-5-24): \"(10) On or before July 1, 2023, and on or before each July 1 thereafter, submit a report to the General Assembly that includes the number of convictions in each judicial district for a violation of Code Sections 16-11-132.1 and 16-11-172.1 in the prior state fiscal year.\"\nSECTION 2 (adding O.C.G.A. 16-11-132.1): (b) Firearms shall be stored in a secure manner when not in use to prevent access by an unsupervised child and other unauthorized users. A firearm is stored in a secure manner when: (1) A person carries the firearm on his or her person or within such close proximity thereto that the person can readily retrieve and use the firearm as if the person carried the firearm on his or her person; (2) The firearm is kept in a locked gun safe or other secure container or in a manner that a reasonable person would believe to be secure and a child or unauthorized user does not have access to the key, combination, or other unlocking mechanism necessary to open the safe or container; (3) The person properly installs a locking device on the firearm and a child or unauthorized user does not have access to the key, combination, or other unlocking mechanism necessary to remove the locking device; or (4) The firearm is a personalized firearm and the safety characteristics of the firearm are activated. (c) Any person who fails to store a firearm in secure manner as set forth in subsection (b) of this Code section upon any premises he or she owns or controls and knows or reasonably should know that an unauthorized user or child can gain access to the firearm without the permission of the child's parent or guardian shall be guilty of the offense of failure to secure a firearm. Any person convicted of a violation of this Code section shall be guilty of a misdemeanor.\nSECTION 2 (adding O.C.G.A. 16-11-132.1), affirmative defenses: (d) It shall be an affirmative defense to prosecution under this Code section that the child's access to the firearm: (1) Was supervised by a person older than 18 years of age and was for hunting, sporting, or other lawful purposes; (2) Consisted of lawful defense by the child of people or property; (3) Was gained by entering property in violation of the law; or (4) Occurred during a time when the person accused of violating this Code section and such child were engaged in an agricultural enterprise.\nSECTION 3 (adding O.C.G.A. 16-11-172.1): (a) A dealer, as such term is defined in Code Section 16-11-171, shall provide with each firearm sold or otherwise transferred a locking device, as such term is defined in Code Section 16-11-132.1.\nSECTION 3 (adding O.C.G.A. 16-11-172.1): (c) A dealer shall post in a conspicuous position on the premises where the dealer conducts business a sign that contains the following warning in block letters not less than one inch in height: 'IT IS UNLAWFUL TO STORE, TRANSPORT, OR ABANDON AN UNSECURED FIREARM IN A PLACE WHERE CHILDREN ARE LIKELY TO BE AND CAN OBTAIN ACCESS TO THE FIREARM.' (d) A violation of this Code section shall be a misdemeanor punishable by a fine of not more than $500.00.\nSECTION 4 (adding O.C.G.A. 35-2-17): (d)(1) Subject to appropriations, the department shall develop and implement a firearms safe storage education campaign, to educate firearms owners, firearms purchasers, licensed gun dealers, shooting ranges, and safety instructors about safe storage of firearms and state requirements related to firearms safety and storage."
+}

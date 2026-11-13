@@ -1,0 +1,39 @@
+{
+  "id": "CA-AB-2358-2020",
+  "scope": "state:ca",
+  "title": "AB2358 (2019-2020): Firearms: return of custody.",
+  "urls": [
+    "http://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=201920200AB2358",
+    "http://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200AB2358"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cottie Petrie-Norris",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "065c6e87-8778-43ee-ab44-b9982a677aa7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Introduced 2020-02-18, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-2358-2020.introduced-2020-02-18.html",
+      "sha256": "5b6da094661fbb3cd0383883a42cec005f8cd4147082a603377b7619807bf811"
+    },
+    "note": "Introduced text of 2020-02-18; no floor vote recorded. Penal Code 33850, 33855, 33865 and 33870 are each marked \"operative July 1, 2020\". Struck: the signature item in 33850(a), \"not a handgun\" (replaced by \"an antique\"), and old 33855(b) on stolen-gun verification; the quote shows the text as it reads after the change."
+  },
+  "operative_text": "Section 33850(a) (Penal Code (operative July 1, 2020)): 33850. (a) Any person who claims title to any firearm, ammunition feeding device, or ammunition that is in the custody or control of a court or law enforcement agency and who wishes to have the firearm, ammunition feeding device, or ammunition returned shall make application for a determination by the Department of Justice as to whether the applicant is eligible to possess a firearm, ammunition feeding device, or ammunition. Each applicant shall establish a California Firearms Application Reporting System (CFARS) account and submit the application via CFARS. The application shall include the following:\nSection 33850(a)(3) (Penal Code): (3) If the seized property is a firearm, the firearm’s make, model, caliber, barrel length, type, country of origin, and serial number, provided, however, that if the firearm is an antique and does not have a serial number, identification number, or identification mark assigned to it, there shall be a place on the application to note that fact. The applicant shall also advise the department whether the firearm is self-manufactured, self-assembled, an antique, or if the firearm was made or assembled prior to December 16, 1968, and is not a handgun. The department may request photos from the law enforcement agency that has custody of the firearm in an effort to assist in the evaluation of the weapon’s legality.\nSection 33855(a) (Penal Code (operative July 1, 2020)): (a) The individual presents to the agency or court notification of a determination by the department pursuant to Section 33865 that the person is eligible to possess a firearm, ammunition feeding device, or ammunition. In the case of a firearm, the department shall not issue this determination unless and until the firearm has been accurately entered into the Automated Firearms System (AFS) pursuant to Sections 11108.2 and 33865 by the law enforcement agency that has custody of the weapon.\nSection 33865(e) (Penal Code): (e) If the department approves the application and the firearm is not registered or recorded in the applicant’s name at the time of the application and is not an assault weapon or prohibited firearm, the firearm shall automatically be recorded in the applicant’s name.\nSection 33865(h) (Penal Code): (h) The department shall not process any application received pursuant to this section unless and until the firearm has been accurately entered into the AFS pursuant to Section 11108.2 by the law enforcement agency that has custody of the weapon.\nSection 33870(a) (Penal Code): 33870. (a) If a law enforcement agency determines that the applicant is the legal owner of any firearm, ammunition feeding device, or ammunition deposited with the agency, that the applicant is prohibited from possessing any firearm, ammunition feeding device, or ammunition, and that the firearm, ammunition feeding device, or ammunition is otherwise legal, the applicant shall be entitled to sell or transfer the firearm, ammunition feeding device, or ammunition to a licensed firearms dealer, or licensed ammunition vendor, as applicable. If the property in the custody of the law enforcement agency is an illegal firearm, the law enforcement agency shall not, under any circumstances, cause or allow the firearm to be dismantled or altered so that the firearm is no longer an illegal firearm in order to release the firearm pursuant to this chapter. If a law enforcement agency determines that the applicant is prohibited from owning or possessing any firearm, ammunition feeding device, or ammunition and the prohibition will expire on a specific ascertainable date, whether or not that date is specified in a court order, the applicant shall be entitled to have the firearm, ammunition feeding device, or ammunition stored by a licensed firearms dealer or licensed ammunition vendor, as applicable, for the duration of the prohibition period pursuant to Section 29830."
+}

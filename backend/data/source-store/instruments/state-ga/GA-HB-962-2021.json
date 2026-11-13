@@ -1,0 +1,55 @@
+{
+  "id": "GA-HB-962-2021",
+  "scope": "state:ga",
+  "title": "HB962 (2021-2022 Regular Session): Public order and safety; provide for the reporting of a lost or stolen firearm",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/61238",
+    "https://www.legis.ga.gov/api/legislation/document/20212022/203664"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sandra Scott",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3c4d981d-e32f-4e58-b7d5-eac9b4222f80"
+    },
+    {
+      "name": "James Beverly",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Viola Davis",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "440aca35-1e90-45d5-93f5-4ce2bd101a0a"
+    },
+    {
+      "name": "Doreen Carter",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "879ddd96-d1a2-42b7-92fb-7d2e2302f799"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:46:27.022243Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-962-2021.introduced.pdf",
+      "sha256": "a7f0edc4f198eb581d8326f4e04c154af38727a979953ede015159f8d517eb13"
+    }
+  },
+  "operative_text": "SECTION 1 (adding O.C.G.A. 16-11-114): (a)(1) Any person who owns a firearm and who has reasonable cause to believe that the firearm has been lost or stolen shall report such fact to a law enforcement agency not more than five days after discovering that the firearm has been lost or stolen. A report of a lost or stolen firearm shall include, and the law enforcement agency receiving the report shall request, an accurate and detailed description of the firearm, including, to the extent known, the manufacturer, model, serial number, caliber, and any other identification number or distinguishing mark of the firearm being reported. (2) Any person other than the owner of a lost or stolen firearm who is a member of the owner's family or who resides with the owner may report the loss or theft to a law enforcement agency. Making a report pursuant to this paragraph does not constitute acknowledgment of ownership of the firearm for the purposes of any other provision of law. (b) Any person who previously reported a lost or stolen firearm pursuant to this Code section who has found or otherwise recovered the firearm, or any other person who has found or recovered the firearm, shall report to the law enforcement agency that received the report that the firearm has been recovered. (c)(1) Except as otherwise provided in subsection (d), any person who knowingly violates paragraph (1) of subsection (a) of this Code section shall be guilty of failure to report a lost or stolen firearm. (2) Failure to report a lost or stolen firearm shall be a misdemeanor punishable by a fine of $25.00 and a second or subsequent violation of this Code section shall be punished by a fine of not more than $500.00. (d) This Code section shall not apply to a dealer, as such term is defined in Code Section 16-11-171. (e) Within five days after receiving a report of a lost or stolen firearm pursuant to this Code section, the law enforcement agency that receives the report shall enter any available descriptive information related to the lost or stolen firearm into the Georgia Crime Information Center.\""
+}

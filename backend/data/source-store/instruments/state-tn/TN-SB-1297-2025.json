@@ -1,0 +1,95 @@
+{
+  "id": "TN-SB-1297-2025",
+  "scope": "state:tn",
+  "title": "SB 1297 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Section 2-7-112 and Title 55, Chapter 50, relative to licenses.",
+  "urls": [
+    "https://legiscan.com/TN/bill/SB1297/2025",
+    "https://legiscan.com/TN/rollcall/SB1297/id/1505845"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id)\n(section) Sec. 1, 2-7-112(c)(1)\n(quote) Section 2-7-112(c)(1), is amended by inserting the language \"physical\" immediately preceding the language \"Tennessee driver license\".\n(section) Sec. 2, 2-7-112(c)(3)\n(quote) Section 2-7-112(c)(3), is amended by inserting the language \"physical,\" immediately after the language \"A\".\n(section) Sec. 6, 55-50-306(e) (first sentence rewritten)\n(quote) except, that to verify the person's identification for the purpose of voting, the person shall not present or submit evidence of possession of a valid driver license in a digital format, and a digital driver license must not be accepted as such evidence.\n(b_no_id_remedy) not stated.\n(c_mail_ballot_id) not stated.\n(d_proof_of_citizenship) not stated.\n(e_other_rule)\n(section) Sec. 8, 55-50-306(k) (new)\n(quote) For purposes of this section, \"driver license\" includes a photo identification license issued under § 55-50-336.\n(other) Sec. 3: 'electronic' driver licence system renamed 'digital' throughout 55-50-306.\n(other) Sec. 4: 55-50-304: a new exemption for an adult accompanied by a safety department employee in a driving demonstration.\n(other) Sec. 5: no fee to take part in the digital driver licence system.\n(other) Sec. 6 (rest): a digital licence 'may be accepted' (Draft said 'must be accepted') for identification generally.\n(other) Sec. 7: digital-licence data kept no longer than needed and never more than 3 calendar days; not sold except to law enforcement, entitled agencies or on subpoena.\n(other) Sec. 8: biometric (face geometry) limits, geolocation ban, data is personal information, no one is required to use or preferred for using a digital licence, licence disabled on suspension or lost device.\n(other) Sec. 9: Class D licence definition covers autocycles. Sec. 10: effective on becoming law.\n(other) version: 3106048-Draft: slot a (physical licence required at 2-7-112(c)(1) and (3); digital licence barred for voting ID). Draft Sec. 6 says a digital licence 'must be accepted' elsewhere; Sec. 8 biometric rules are more detailed (department may collect face geometry only to compare with the photo on file; consent each time).\n(other) version: amend-234402-SA0055 (Senate Transportation & Safety amendment 1, 'adopted' flag 0): changes 'which must be accepted' to 'which may be accepted' in Sec. 6. The voting exception is unchanged.\n(other) version: 3222861-Chaptered (PC 297, HB1316): has 'may be accepted' (SA0055 wording); biometric section Sec. 8(g)(2)-(3) is simpler than the Draft.\n(other) note: Only one SB1297 roll call exists (Senate committee); the floor action ran on HB1316, whose roll calls are not in this bill's record. The voted version for the committee vote is inferred: the committee recommended 'with amendment/s' and SA0055 is the committee's amendment 1. Slot a text is in both the Draft and the amended text, so the voted version carries it either way. The new text limits ID to a physical licence or a physical photo ID licence (55-50-336); it does not add or remove any other accepted ID.",
+  "sponsors": [
+    {
+      "name": "Jack Johnson",
+      "role": "prime",
+      "version": "amend-234402-SA0055"
+    },
+    {
+      "name": "Shane Reeves",
+      "role": "co",
+      "version": "amend-234402-SA0055"
+    },
+    {
+      "name": "Becky Massey",
+      "role": "co",
+      "version": "amend-234402-SA0055"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "surveillance-technology"
+      ]
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-03-05",
+      "body": "TN Senate",
+      "motion": "Senate Transportation & Safety Committee, recommended with amendment [version voted: Draft 3106048 + SA0055 (inferred: committee amendment 1, 'must' to 'may' accepted)]",
+      "kind": "roll-call",
+      "yes": 9,
+      "no": 0,
+      "absent": 0,
+      "body_size": 9,
+      "note": "LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked) | https://legiscan.com/TN/rollcall/SB1297/id/1505845",
+      "members": [
+        {
+          "name": "Mark Pody",
+          "vote": "yea"
+        },
+        {
+          "name": "Becky Massey",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Bailey",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Briggs",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Powers",
+          "vote": "yea"
+        },
+        {
+          "name": "Heidi Campbell",
+          "vote": "yea"
+        },
+        {
+          "name": "Brent Taylor",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Hatcher",
+          "vote": "yea"
+        },
+        {
+          "name": "Jessie Seal",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage5 wave5 TN bill texts and roll calls (LegiScan API only: getBill, getBillText, getAmendment, getRollCall; Sonnet readers R1-R9, Opus verdict review; capitol.tn.gov closed to our agents by robots.txt; voting-rights, 2026-11-11)",
+    "fetched_at": "2026-11-11",
+    "method": "api"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "GA-HB-584-2023",
+  "scope": "state:ga",
+  "title": "HB584 (2023-2024 Regular Session): Georgia Red Flag Protective Order Act; enact",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/64814",
+    "https://www.legis.ga.gov/api/legislation/document/20232024/215884"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shea Roberts",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9f5a6746-3053-4e18-90c4-5418a240e679"
+    },
+    {
+      "name": "Billy Mitchell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5d137d02-da2e-4e8b-a65c-37d64c7402b2"
+    },
+    {
+      "name": "Michelle Au",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9cdee7d8-43d6-4596-8982-55b006f7754c"
+    },
+    {
+      "name": "Esther Panitch",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6db8c29a-78a2-4038-b80e-7bd79fb585ff"
+    },
+    {
+      "name": "Becky Evans",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:46:27.022243Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-584-2023.introduced.pdf",
+      "sha256": "3d00179c8d764ab42677db348f717baa8c6a669f6b7537f0b083c7a30918eab9"
+    }
+  },
+  "operative_text": "SECTION 1 (adding O.C.G.A. 16-11-141): (4) 'Petitioner' means a family or household member or law enforcement officer who petitions a court for a risk protection order under this part.\nSECTION 1 (adding O.C.G.A. 16-11-142): (b) A petition for a risk protection order may be filed by a family or household member or law enforcement officer. Such petition shall be filed in the superior court having jurisdiction over the geographical area of the petitioner's law enforcement agency or wherein the respondent resides. Such petition for a risk protection order does not require either party to be represented by an attorney.\nSECTION 1 (adding O.C.G.A. 16-11-143): (b) Upon notice and a hearing on the matter, if the court finds by clear and convincing evidence that the respondent poses a significant danger of causing personal injury to himself or herself or others by having in his or her custody or control, or by purchasing, possessing, or receiving, a firearm or any ammunition, the court shall issue a risk protection order for a period of time that it deems appropriate, but not exceeding 12 months.\nSECTION 1 (adding O.C.G.A. 16-11-144): (c) If the court finds there is reasonable cause to believe that the respondent poses a significant danger of causing personal injury to himself or herself or others in the near future by having in his or her custody or control, or by purchasing, possessing, or receiving, a firearm or ammunition, the court shall issue a temporary ex parte risk protection order.\nSECTION 1 (adding O.C.G.A. 16-11-147): (a) Upon issuance of a risk protection order or temporary ex parte risk protection order under this part, the court shall order the respondent to surrender to the local law enforcement agency all firearms and ammunition owned by the respondent in the respondent's custody, control, or possession, except as provided in Code Section 16-11-149, and any weapons carry license or renewal license issued under Code Section 16-11-129 held by the respondent.\nSECTION 1 (adding O.C.G.A. 16-11-147): (b) The law enforcement officer serving a risk protection order under this part, including a temporary ex parte risk protection order, shall request that the respondent immediately surrender all firearms and ammunition owned by the respondent in his or her custody, control, or possession and any weapons carry license or renewal license issued under Code Section 16-11-129 held by the respondent. The law enforcement officer shall take possession of such firearms, ammunition, and weapons carry license or renewal license so surrendered. If personal service by a law enforcement officer is not possible or is not\nSECTION 1 (adding O.C.G.A. 16-11-149.1): (b) The issuing court shall, within three business days after issuance of a risk protection order or temporary ex parte risk protection order, forward all available identifying information concerning the respondent, along with the date of issuance of the order, to the Georgia Crime Information Center. Upon receipt of the information, the Georgia Crime Information Center shall determine if the respondent has a weapons carry license or firearm. If the respondent does have a weapons carry license or firearm, the center shall immediately suspend the license.\nSECTION 1 (adding O.C.G.A. 16-11-149.2): (b) A person who has in his or her custody or control a firearm or any ammunition or who purchases, possesses, or receives a firearm or any ammunition with knowledge that he or she is prohibited from doing so by an order issued under this part commits a misdemeanor of a high and aggravated nature, punishable as provided in Code Section 17-10-4."
+}

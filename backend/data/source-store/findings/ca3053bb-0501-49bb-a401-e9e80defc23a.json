@@ -333,6 +333,69 @@
         "fetched_at": "2026-11-04T14:14:55.235Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "88e64cbcd4e07d846f2cf4e7e703a702f6ff12dd1cb17b328f80708e004d2dac",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/newsDetails?id=1819",
+      "date": "2025-04-02",
+      "date_precision": "day",
+      "passage": "I believe Missouri's current \"stand your ground\" law that passed in 2016 falls short of protecting Second Amendment rights in cases of self-defense when it comes to the presumption of innocence.",
+      "note": "In his Senate newsletter, he explains SB 363, which lets a defendant raise a self-defense claim at a pre-trial hearing, and says the 2016 stand-your-ground law does not go far enough.",
+      "subjects": [
+        "stand your ground and self-defense",
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.834Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "39bb412b0ea460a3834bd21bd16da8d046e89c771fa325a18569af11d089c6c2",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/newsDetails?id=1846",
+      "date": "2025-04-11",
+      "date_precision": "day",
+      "passage": "Missouri's \"stand your ground\" law was passed in 2016, but giving it more teeth could help protect Second Amendment rights and law-abiding gun owners from unmerited cases.",
+      "note": "In his Senate newsletter, he reports SB 363 passed the Senate transportation and public safety committee on April 7 and describes it as due process for gun owners who defend themselves.",
+      "subjects": [
+        "stand your ground and self-defense",
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.834Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d35e55b24fdbd5cede432d4e8c6a15543e42b4e9221ce86d840ac36c63fc8a71",
+      "kind": "own-words",
+      "url": "https://www.senate.mo.gov/Media/newsDetails?id=1911",
+      "date": "2025-05-14",
+      "date_precision": "day",
+      "passage": "House Bill 1175 is now in the Senate and could further solidify second amendment protections into state law. I will keep fighting to pass this bill before adjournment Friday.",
+      "note": "In his Senate newsletter, under a heading on Second Amendment rights, he backs HB 1175 and notes the 2021 Second Amendment Preservation Act, meant to guard gun owners from federal overreach, is being litigated.",
+      "subjects": [
+        "state law against federal gun rules",
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T21:23:45.834Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -386,6 +449,31 @@
       "found": 1,
       "at": "2026-11-04T14:14:55.235Z",
       "by": "identity-mo-2026-11-04b"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "stand your ground and self-defense",
+        "Second Amendment protection",
+        "state law against federal gun rules",
+        "red-flag orders",
+        "carry a gun in sensitive places",
+        "check every gun buyer"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Senate member newsroom: Capitol Reports of 2025-04-02, 2025-04-11, 2025-05-14 (fetched, gun passages saved); other reports not individually reviewed",
+        "web search: Ben Brown Missouri senator firearms; Ben Brown red flag 2026 (no source naming him on red-flag bills; one 2024 news story on a red-flag ban attributes the bill to another senator)",
+        "blocked: https://ballotpedia.org/Ben_Brown_(Missouri) (fetch returned empty page)",
+        "not reviewed: campaign site (none found)",
+        "not reviewed: debate/interview video (none found)",
+        "nothing on the subject: background checks, waiting periods, ghost guns, assault-style weapon bans in his own words (none found)"
+      ],
+      "found": 3,
+      "at": "2026-11-12T21:23:45.834Z",
+      "by": "source-collector"
     }
   ]
 }

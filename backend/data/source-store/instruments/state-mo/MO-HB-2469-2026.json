@@ -1,0 +1,50 @@
+{
+  "id": "MO-HB-2469-2026",
+  "scope": "state:mo",
+  "title": "HB2469 (2026 Regular Session): Modifies provisions relating to firearms",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB2469&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/5926H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lisa Durnell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "b7ce8e06-f568-4135-bb06-25cf6ccb717b"
+    },
+    {
+      "name": "Mazzie Christensen",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "009598bc-d603-4750-8335-94bf65f8c2ad"
+    },
+    {
+      "name": "Keith Elliott",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "12035f82-977f-4d76-9faf-804a8f2a2e70"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2469-2026.introduced.pdf",
+      "sha256": "2bc92153d6d0bed38272aace5faf2a9401a1d0c4a77c58d0ebb7d75b46286a89"
+    }
+  },
+  "operative_text": "Section 21.750 (RSMo): 3. Nothing contained in this section shall prohibit any ordinance of any political subdivision which conforms exactly with any of the provisions of sections 571.010 to 571.070, with appropriate penalty provisions, or which regulates the discharge of firearms within a jurisdiction, provided such ordinance complies with the provisions of section 252.243.\nSection 21.750 (RSMo): 7. (1) Any county, city, town, village, or municipality that enacts an ordinance that regulates firearms in violation of this section shall be liable to the injured party in an action at law, suit in equity, or other proper proceeding for redress and subject to a civil penalty of fifty thousand dollars. Any person who believes that a jurisdiction in which he or she resides has taken action that would violate the provisions of this section shall have standing to pursue an action under this subdivision.\nSection 21.750 (RSMo): (3) In any action under this subsection, the court may award the prevailing party, other than the state of Missouri or any political subdivision of the state, reasonable attorney's fees and costs.\nSection 21.750 (RSMo): (4) Sovereign immunity shall not be an affirmative defense in any action under this subsection."
+}

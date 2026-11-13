@@ -1,0 +1,119 @@
+{
+  "id": "GA-SB-214-2021",
+  "scope": "state:ga",
+  "title": "SB214 (2021-2022 Regular Session): Governor's Emergency Powers; matters pertaining to firearms and other weapons; restrict use of emergency powers",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/59909",
+    "https://www.legis.ga.gov/api/legislation/document/20212022/198255"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tyler Harper",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "3ce6826c-234b-4335-958a-f6c44232c487"
+    },
+    {
+      "name": "Bo Hatchett",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "86fdf1eb-2200-46fb-b1fd-63f15acef171"
+    },
+    {
+      "name": "John Albers",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "da16fe95-fc75-49d8-9219-5b16961d66a6"
+    },
+    {
+      "name": "Jeff Mullis",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Randy Robertson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "306db639-9373-48ef-9ba5-5b22d695b425"
+    },
+    {
+      "name": "Russ Goodman",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9bf773d5-7272-4fe0-9033-e3bd8930836c"
+    },
+    {
+      "name": "Steve Gooch",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "451da69b-17a2-465b-b138-ea27e7906694"
+    },
+    {
+      "name": "Jason Anavitarte",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0761f7c4-67ba-4f38-9ea0-cd22c17b9065"
+    },
+    {
+      "name": "Max Burns",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "f410dd08-b72f-416c-bde0-bf83b5af00ed"
+    },
+    {
+      "name": "Marty Harbin",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "d6036e6d-81ae-47da-9465-036f111d7f47"
+    },
+    {
+      "name": "John Kennedy",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Michael Dugan",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Larry Walker",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1b14b507-4e91-4c97-aefd-1eec5bb072cf"
+    },
+    {
+      "name": "Carden Summers",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6ffadf75-49b6-4223-8b32-cf17b3c0290b"
+    },
+    {
+      "name": "Blake Tillery",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "83120430-c817-4f51-8be8-dffc817ec188"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-214-2021.introduced.pdf",
+      "sha256": "27eed7737d011e0debe9be3848b4a95425a006358f1144c3b6c02e61c3e2fff8"
+    }
+  },
+  "operative_text": "SECTION 1 (amending O.C.G.A. 38-3-51(d)(8)): (8) Suspend or limit the sale, dispensing, or transportation of alcoholic beverages, explosives, or combustibles; provided, however, that for purposes of this paragraph, the terms 'explosives' and 'combustibles' shall not include firearms or ammunition or any component thereof; and\nSECTION 2 (adding O.C.G.A. 38-3-51.1(b)): (b) No agency or political subdivision shall, under any declaration of a state of emergency under this part or under any other color of law, including, but not limited to, any other statutorily authorized responses to disaster, war, acts of terrorism, or other emergencies of whatever kind or nature: (1)   Prohibit, regulate, or curtail the otherwise lawful possession, carrying, sale, transportation, transfer, defensive use, or other lawful use of any: (A) Firearm, including any component or accessory; (B) Ammunition, including any component or accessory; (C) Ammunition-reloading equipment and supplies; or (D) Personal weapons other than firearms;\nSECTION 2 (adding O.C.G.A. 38-3-51.1(b)): (2) Seize, commandeer, or confiscate in any manner, any: (A) Firearm, including any component or accessory; (B) Ammunition, including any component or accessory; (C) Ammunition-reloading equipment and supplies; or (D) Personal weapons other than firearms; (3) Suspend or revoke a weapons carry license issued pursuant to Code Section 16-11-129, except as expressly authorized in that Code section; (4) Refuse to accept an application for a weapons carry license, provided that the application has been properly completed in accordance with Code Section 16-11-129;\nSECTION 2 (adding O.C.G.A. 38-3-51.1(b)): (5) Close or limit the operating hours of any entity engaged in the lawful selling or servicing of any firearm, including, but not limited to, any component or accessory, ammunition, ammunition-reloading equipment and supplies, or personal weapons other than firearms, unless the closing or limitation of such hours applies equally to all forms of commerce within the jurisdiction; (6) Close or limit the operating hours of any indoor or outdoor shooting range; or\nSECTION 2 (adding O.C.G.A. 38-3-51.1(c)): (c)(1) Any person adversely affected by a violation of this Code section shall have a cause of action for damages, injunctive relief, or other appropriate redress in the superior court in the county in which the aggrieved person resides or in which the violation occurred.\nSECTION 3 (adding O.C.G.A. 50-21-38): The defense of sovereign immunity is waived as to any claim, counterclaim, cross-claim, or third-party claim brought in the courts of this state by an aggrieved person seeking a declaratory judgment, injunctive relief, actual damages, liquidated damages, or reasonable attorney fees against the state or any political subdivision thereof under subsection (c) of Code Section 38-3-51.1. This Code section shall not be construed to alter or amend any other waiver of sovereign immunity provided by law.\""
+}

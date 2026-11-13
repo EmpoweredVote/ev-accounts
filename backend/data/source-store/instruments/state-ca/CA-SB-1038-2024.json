@@ -1,0 +1,39 @@
+{
+  "id": "CA-SB-1038-2024",
+  "scope": "state:ca",
+  "title": "SB1038 (2023-2024): Firearms.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202320240SB1038",
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240SB1038#97AMD"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Catherine Blakespear",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "fad61dc3-a3ad-4056-b2f2-1f5d32fb886d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2024-04-11, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-SB-1038-2024.amended-2024-04-11.html",
+      "sha256": "176586f3d807545b7062d05dfc16f84d4af0adf25690395154709a54123d3ed8"
+    },
+    "note": "Version read: Amended 2024-04-11 (last version; no floor vote listed). Section 26905 appears twice: Sec. 4 (existing text, repealed January 1, 2027) and Sec. 5 (operative January 1, 2027; changes 'any' to 'either' and drops the exemptions for wholesalers/manufacturers/importers/out-of-state licensees). Sec. 26835 (dealer warning signs, operative 1/1/2024) and the 25250/11108.3 sections are reprinted mostly unchanged in this version's marks; only the 28495 'by December 31 of each year' is marked as added. Quoted 11108.3(h) and 25250(a) are reprinted existing law as the bill carries them."
+  },
+  "operative_text": "Section 11108.3 (Penal Code): (a) In addition to the requirements of Section 11108.2 that apply to a law enforcement agency’s duty to report to the Department of Justice the recovery of a firearm, a law enforcement agency described in Section 11108.2 shall, and any other law enforcement agency or agent, including but not limited to a federal or tribal law enforcement agency or agent, may, report to the department in a manner determined by the Attorney General in consultation with the Bureau of Alcohol, Tobacco, Firearms and Explosives all available information necessary to identify and trace the history of all recovered firearms that are illegally possessed, have been used in a crime, or are suspected of having been used in a crime, within seven calendar days of obtaining the information.\nSection 11108.3 (Penal Code): (h) (1) The department shall inspect the 25 firearm dealer locations that are the source or origin of the highest gross number of firearms that were illegally possessed, used in a crime, or suspected to have been used in a crime, as described in the report specified in subdivision (e) and submitted pursuant to subdivision (f) within the previous year.\nSection 25250 (Penal Code): (a) Every person shall report the loss or theft of a firearm they own or possess to a local law enforcement agency in the jurisdiction in which the theft or loss occurred within 48 hours of the time they knew or reasonably should have known that the firearm had been stolen or lost.\nSection 26905 (Penal Code), operative January 1, 2027: (a) On the date of receipt, a licensee shall report to the Department of Justice, in a format prescribed by the department, the acquisition by the licensee of the ownership of a firearm.\nSection 26905 (Penal Code), operative January 1, 2027: (b) The provisions of this section shall not apply to either of the following transactions:\nSection 28495 (Penal Code): (a) (1) A firearm dealer shall annually, by December 31 of each year, certify their inventory to the Department of Justice.\nSection 28495 (Penal Code): (2) A firearm dealer shall include the make, model, and serial number of their entire inventory in the annual certification.\nSection 28495 (Penal Code): (b) The Attorney General, a city attorney, or county counsel may impose a civil penalty on a person who violates this section in the amount of three thousand dollars ($3,000) per day for the first violation, five thousand dollars ($5,000) per day for a second violation, and ten thousand dollars ($10,000) per day for a third and subsequent violation."
+}

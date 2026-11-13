@@ -1,0 +1,142 @@
+{
+  "id": "GA-SB-344-2021",
+  "scope": "state:ga",
+  "title": "SB344 (2021-2022 Regular Session): Carrying and Possessing of Firearms; training to possess a handgun or long gun; require",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/61177",
+    "https://www.legis.ga.gov/api/legislation/document/20212022/203504"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sally Harrell",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "cd6e7cf0-87d8-4a0f-b3a9-3272eb69a77b"
+    },
+    {
+      "name": "Emanuel Jones",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7b1648c9-2426-44ff-bb8f-3f66af0db31a"
+    },
+    {
+      "name": "Nikki Merritt",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "46f32fee-0076-49db-a5cd-1526ef7316cb"
+    },
+    {
+      "name": "Sonya Halpern",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "5ae018ad-1a87-4f30-a9d2-63296f88a04c"
+    },
+    {
+      "name": "Elena Parent",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "83ffefbf-8cc7-4971-95df-9970188dd013"
+    },
+    {
+      "name": "Donzella James",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4e367596-c6c9-44a3-af63-10c3670ed2af"
+    },
+    {
+      "name": "Horacena Tate",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Kim Jackson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "4a922565-16b3-4c1a-a654-7ef16a3316b6"
+    },
+    {
+      "name": "Gail Davenport",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "8c65ec5b-05f6-42fd-a25a-a62c1f64fd67"
+    },
+    {
+      "name": "Tonya Anderson",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "0f8e373f-bfcb-43b0-b84a-4ab524bff191"
+    },
+    {
+      "name": "Michelle Au",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9cdee7d8-43d6-4596-8982-55b006f7754c"
+    },
+    {
+      "name": "Ed Harbison",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ab37d478-2f5a-4545-8c80-281efb9ca9a2"
+    },
+    {
+      "name": "David Lucas",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "6b522fd5-b059-4132-8702-ac6fd600efdf"
+    },
+    {
+      "name": "Freddie Sims",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Sheikh Rahman",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "a7ac9853-45dc-46fc-a604-9ec119a124db"
+    },
+    {
+      "name": "Michael Rhett",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "1295e8c6-a9a2-43aa-9eee-2113e3a21142"
+    },
+    {
+      "name": "Gloria Butler",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Jennifer Jordan",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Nan Orrock",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "95c803e4-4853-41aa-b9d6-b4c108e9ea52"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:05:59.946376Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-SB-344-2021.introduced.pdf",
+      "sha256": "a6e7ddd8e47f7926b04e2318740952bf0e31a2c82e69a34e28ab552c62509eea"
+    }
+  },
+  "operative_text": "SECTION 1 (adding O.C.G.A. 16-11-126.1): (a) As used in this Code section, the term 'firearm' means handgun or long gun. (b) On and after July 1, 2023, any person in possession of a firearm who is otherwise authorized under state or federal law to possess such firearm shall complete a training course as set forth in this Code section. (c) The Georgia Public Safety Training Center shall develop and maintain a training course to be completed by any person who possesses a firearm within this state. The Georgia Public Safety Training Center may qualify instructors or course providers to render the instruction required under this Code section. Pursuant to rules and regulations promulgated by the Board of Public Safety, the Georgia Public Safety Training Center may assess, and permit any qualified instructors or course providers to assess, a fee for the training course. (d) The training course shall include: (1) Not less than four and not more than six hours of instruction on: (A) The laws that relate to firearms and the use of deadly force; (B) Firearm use and safety, including, but not limited to, use of restraint holsters and methods to ensure the secure carrying of openly carried firearms; (C) Nonviolent dispute resolution; and (D) Proper storage for firearms as set forth in Code Section 16-11-132.1. (2) One to two hours of instruction in shooting proficiency at a firearm range. (e) Upon successful completion of the training course, the instructor shall issue a certificate of completion in a form meeting requirements set forth by the Board of Public Safety through rules and regulations. Any person possessing a firearm in this state shall present a certificate of completion to a law enforcement officer upon request. The Board of Public Safety shall develop a list of states with training standards similar to those set forth in this Code section. Such list shall be updated bi-annually and be made accessible on the Department of Public Safety's website. Any resident of a state included upon such list shall be exempt from the training requirements of this Code section. (f) Any person convicted of a violation of this Code section shall be guilty of a misdemeanor and, upon conviction thereof, shall be punished by imprisonment not to exceed 12 months, a fine not to exceed $1,000.00, or both.\"\nSECTION 2 (adding O.C.G.A. 16-11-132.1): (b) Firearms shall be stored in a secure manner when not in use to prevent access by an unsupervised child and other unauthorized users. A firearm is stored in a secure manner when: (1) A person carries the firearm on his or her person or within such close proximity thereto that the person can readily retrieve and use the firearm; (2) The firearm is kept in a locked gun safe or other secure container or in a manner that a reasonable person would believe to be secure and a child or unauthorized user does not have access to the key, combination, or other unlocking mechanism necessary to open the safe or container; (3) The person properly installs a locking device on the firearm and a child or unauthorized user does not have access to the key, combination, or other unlocking mechanism necessary to remove the locking device; or (4) The firearm is a personalized firearm and the safety characteristics of the firearm are activated. (c) Any person who fails to store a firearm in secure manner as set forth in subsection (b) of this Code section upon any premises he or she owns or controls and knows or reasonably should know that an unauthorized user or child can gain access to the firearm without the permission of the child's parent or guardian shall be guilty of the offense of failure to secure a firearm. Any person convicted of a violation of this Code section shall be guilty of a misdemeanor."
+}

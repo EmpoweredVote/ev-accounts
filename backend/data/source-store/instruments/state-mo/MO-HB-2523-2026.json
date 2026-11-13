@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-2523-2026",
+  "scope": "state:mo",
+  "title": "HB2523 (2026 Regular Session): Modifies provisions relating to firearms",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB2523&year=2026&code=R",
+    "https://documents.house.mo.gov/billtracking/bills261/hlrbillspdf/4791H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ray Reed",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "7107caff-6fbe-4f6d-b64b-b9197fbdb452"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2523-2026.introduced.pdf",
+      "sha256": "2ad381bf74571689bb6fda8602d7ee1a5d2230490d6956bbc0575decd0777c75"
+    }
+  },
+  "operative_text": "Section 571.010 (RSMo): (15) \"Military-style semi-automatic firearm\": (a) Any repeating firearm whose action mechanism automatically loads ammunition into the chamber and prepares it for subsequent firing but requires a shooter to manually discharge each shot; or (b) Any firearm that is not deemed a machine gun but that is capable of firing shots at a rate that is within the range of the typical firing rate of a machine gun regardless of whether the firearm was originally manufactured with such capability or was modified to have such capability by a switch, Glock switch, auto sear, bump stock, trigger crank, or any other manufactured or homemade component. The term \"military-style semi-automatic firearm\" shall not include any firearm designed primarily for hunting or sporting purposes, as determined by the department of public safety by rule;\nSection 571.060 (RSMo): 1. (4) Knowingly sells, offers for sale, leases, loans, gives away, or delivers any military-style semi-automatic firearm, provided that this does not prohibit the sale or delivery of military-style semi-automatic firearms to any peace officer or member of the Armed Forces of the United States or National Guard while performing his or her official duty.\nSection 571.070 (RSMo): 1. A person commits the offense of unlawful possession of a firearm if such person knowingly has any firearm in his or her possession and: (3) Such person is under twenty-one years of age.\nSection 571.070 (RSMo): 4. The provisions of subdivision (3) of subsection 1 of this section shall not apply to: (1) Any person lawfully in possession of both: (a) A valid concealed carry permit issued under sections 571.101 to 571.121 or sections 571.205 to 571.230 or a valid concealed carry permit or endorsement issued by another state or a political subdivision of another state; and (b) Proof of the person's current or former service in the Armed Forces of the United States; (2) Any peace officer or member of the Armed Forces of the United States or National Guard while performing his or her official duty; or (3) Any person while engaged in hunting, firearms training, or recreational sporting events as long as the person is under the direct supervision of a person who is: (a) Twenty-one years of age or older; and (b) Lawfully in possession of a valid concealed carry permit issued under sections 571.101 to 571.121 or sections 571.205 to 571.230, a valid concealed carry endorsement issued prior to August 28, 2013, or a valid concealed carry permit or endorsement issued by another state or a political subdivision of another state.\nSection 571.101 (RSMo): 2. A concealed carry permit issued pursuant to subsection 7 of this section shall be issued by the sheriff or his or her designee of the county or city in which the applicant resides, if the applicant: (1) Is twenty-one years of age or older, is a citizen or permanent resident of the United States, and either:\nSection 571.030 (RSMo): 1. (1) Carries concealed upon or about his or her person a knife, a firearm, a blackjack or any other weapon readily capable of lethal use; or"
+}

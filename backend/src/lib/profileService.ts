@@ -15,6 +15,7 @@
 import { readStoredJurisdiction } from './storedJurisdiction.js';
 import { supabaseAdmin, adminRpc } from './supabase.js';
 import { pool } from './db.js';
+import { IS_INCUMBENT_SELECT_SQL } from './incumbency.js';
 import { getSelectedTopics } from './compassService.js';
 
 // ---------------------------------------------------------------------------
@@ -292,10 +293,12 @@ async function fetchInternalProfile(
     // essentials schema is not PostgREST-exposed; must use pool.query() (Phase 35 pattern)
     if (empowered.politician_id != null) {
       const { rows: politicianRows } = await pool.query<Record<string, unknown>>(
-        `SELECT id, first_name, last_name, preferred_name, full_name, photo_origin_url,
-                is_active, is_incumbent, is_vacant, party, party_short_name, slug, bio_text
-         FROM essentials.politicians
-         WHERE id = $1`,
+        // Incumbency is derived from office_terms (incumbency.ts), never stored on the row.
+        `SELECT p.id, p.first_name, p.last_name, p.preferred_name, p.full_name, p.photo_origin_url,
+                p.is_active, ${IS_INCUMBENT_SELECT_SQL}, p.is_vacant, p.party, p.party_short_name,
+                p.slug, p.bio_text
+         FROM essentials.politicians p
+         WHERE p.id = $1`,
         [empowered.politician_id]
       ).catch((err: unknown) => {
         console.error('[profileService] error fetching politician:', err);

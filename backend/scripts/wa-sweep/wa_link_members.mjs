@@ -49,7 +49,7 @@ const { rows } = await pool.query(`
   JOIN essentials.politicians p ON p.id = ot.politician_id
   WHERE c.id IN ($1, $2)
     AND (ot.term_end IS NULL OR ot.term_end > CURRENT_DATE)
-    AND p.is_incumbent
+    AND (ot.term_start IS NULL OR ot.term_start <= CURRENT_DATE)
   ORDER BY p.id, ot.term_start DESC
 `, [SENATE, HOUSE]);
 await pool.end();

@@ -1,0 +1,92 @@
+{
+  "politician_id": "91c9fb1a-7df5-418b-9713-a2db4acd49a6",
+  "findings": [
+    {
+      "id": "ad92ee221bdade53f1ad4bb273813b351662b750a615bdacabc84af573a8a288",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB0626/id/1550047",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-626-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION, 72-22) on SB0626 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft 3093364 + SA0305 (full rewrite = chaptered text) as engrossed by the Senate; linked by LegiScan member id 23185 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.083Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfc0f401b5e1e11d23ee20ace873f4d6d7b4216789ab4da3a289d27d0ae2ae27",
+      "kind": "record",
+      "url": "https://legiscan.com/TN/rollcall/SB6002/id/1477618",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-6002-2025",
+      "act": "yea",
+      "motion": "House: REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION",
+      "note": "TN House floor roll call (REGULAR CALENDAR PREVIOUS QUESTION PASSAGE ON THIRD CONSIDERATION, 71-19) on SB6002 (114th General Assembly); LegiScan roll call (the official capitol.tn.gov vote page is closed to our agents by robots.txt, so it was not checked); voted version: Draft + SA6001 + SA6007 (adopted on the Senate floor 1/29/2025; equals the chaptered text) as engrossed by the Senate; linked by LegiScan member id 23185 to the roster (name and current seat checked; identity step 2026-11-12).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-12T15:13:42.083Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register",
+        "noncitizen voting and voter-roll checks",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "identity confirmed: House caucus press release https://tnhousegop.org/?p=3508 (English-only driver's licence bill) names him as the District 71 representative; member page https://tnhousegop.org/members/representative-kip-capley/; search results show he ran unopposed in the 2026 primary and is on the November ballot",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "House caucus site search for his name plus voter: nothing on the subject",
+        "his English-only driver's licence press release read: his quote is about road signs and driving safety, not voting; nothing saved",
+        "web searches (7): name + voter ID; + proof of citizenship / election integrity / noncitizen; + questionnaire/voter guide; + photo ID / voter identification Wayne County; + 'Rep. Kip Capley' elections/voters/citizenship; nothing in his own words on the subject",
+        "iVoterGuide pages for his races: listed in results with a questionnaire tab, answers not visible; nothing saved",
+        "blocked: https://ballotpedia.org/Kip_Capley (refused by instruction, not fetched)",
+        "blocked: bluevoterguide.org and justfacts.votesmart.org (refused by instruction, not fetched)",
+        "not reviewed (outlet refused by instruction): https://tennesseelookout.com/voter-guides/contests/house-district-71/ and https://www.wbbjtv.com/?p=2758984",
+        "not fetched by instruction: capitol.tn.gov, wapp.capitol.tn.gov, sos.tn.gov, tn.gov"
+      ],
+      "found": 0,
+      "at": "2026-11-12T01:57:42.385Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "roll calls",
+        "sponsor lists"
+      ],
+      "places": [
+        "LegiScan bill records and roll calls, in bills/tn-bills.json (capitol.tn.gov not used: robots.txt) (identity step 2026-11-12)"
+      ],
+      "found": 2,
+      "at": "2026-11-12T15:13:42.083Z",
+      "by": "source-collector"
+    }
+  ]
+}

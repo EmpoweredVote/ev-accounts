@@ -1,0 +1,50 @@
+{
+  "id": "MO-HB-907-2025",
+  "scope": "state:mo",
+  "title": "HB907 (2025 Regular Session): Requires a firearm owner to report lost or stolen firearms",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB907&year=2025&code=R",
+    "https://documents.house.mo.gov/billtracking/bills251/hlrbillspdf/0370H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Emily Weber",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "69d80484-7e4b-4452-9d6d-e4d124803abb"
+    },
+    {
+      "name": "Jeremy Dean",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "2b40ca6b-8bcf-42fb-8fc5-657bfa707c72"
+    },
+    {
+      "name": "Jeff Hales",
+      "role": "co",
+      "version": "LegiScan sponsor list",
+      "politician_id": "fc6280f0-4102-49f0-b409-93539b137c88"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-907-2025.introduced.pdf",
+      "sha256": "f5d5ddb72a2929a6eb50ff2646b3c2422fbf10e742b24cb2f67abeea1215e7d9"
+    }
+  },
+  "operative_text": "Section 571.065 (RSMo, new): 1. An owner of a firearm shall report the loss or theft of the firearm within seventy-two hours of discovering the loss or theft to the local law enforcement agency in the city, town, or village or to the sheriff's office in the county in which the loss or theft occurred. The local law enforcement agency or sheriff's office shall enter the make, model, and serial number of the firearm into the Missouri uniform law enforcement system (MULES).\nSection 571.065 (RSMo, new): 2. Any person who fails to report the loss or theft of a firearm as required under this section shall, upon a plea or finding of guilt thereof, be guilty of: (1) An infraction punishable by a fine not to exceed one hundred dollars for a first violation; (2) An infraction punishable by a fine not to exceed four hundred dollars for a second violation; or (3) A misdemeanor punishable by a fine not to exceed five hundred dollars for a third or subsequent violation."
+}

@@ -1,0 +1,67 @@
+{
+  "id": "GA-HB-135-2023",
+  "scope": "state:ga",
+  "title": "HB135 (2023-2024 Regular Session): Crimes and offenses; establish offense of failure to adequately secure a firearm",
+  "urls": [
+    "https://www.legis.ga.gov/legislation/63765",
+    "https://www.legis.ga.gov/api/legislation/document/20232024/213087"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mary Oliver",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "96b4b0dd-d110-4c17-9554-f17b05d03604"
+    },
+    {
+      "name": "Michelle Au",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "9cdee7d8-43d6-4596-8982-55b006f7754c"
+    },
+    {
+      "name": "Becky Evans",
+      "role": "prime",
+      "version": "LegiScan sponsor list"
+    },
+    {
+      "name": "Saira Draper",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "ef81fdd6-14af-4aef-b621-fee3f084402c"
+    },
+    {
+      "name": "Ruwa Romman",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "21676ab2-d5a7-4c16-86db-e69f3de496ed"
+    },
+    {
+      "name": "Karen Lupton",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "41b2aaee-62c1-48a3-8d88-7b4406ff2caf"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official legis.ga.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T01:46:27.022243Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/GA-HB-135-2023.introduced.pdf",
+      "sha256": "224d785ad79f4e8da2380928614cc4e2eb49e1e5d71270e023b7f39c48148f4b"
+    }
+  },
+  "operative_text": "SECTION 1 (adding O.C.G.A. 16-11-132.1): (a) Any owner of a firearm who possesses, stores, or leaves the firearm in a manner in which he or she knew or should have known that another individual could obtain the firearm shall be guilty of the offense of failure to adequately secure a firearm when the firearm is obtained by: (1) A minor and exhibited in a public place or while making a threat of violence; or (2) Any individual, regardless of age, and used during the commission of a crime or during an act which results in the injury or death of such individual or another when such act was not the lawful defense of people or property. (b) A violation of this Code section shall be a misdemeanor punishable by a fine of not less than $500.00.\""
+}

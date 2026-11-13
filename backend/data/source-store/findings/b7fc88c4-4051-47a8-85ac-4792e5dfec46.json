@@ -1,0 +1,28 @@
+{
+  "politician_id": "b7fc88c4-4051-47a8-85ac-4792e5dfec46",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry permits",
+        "campus carry",
+        "gun bills as House member 2010-2018",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "official site: Georgia Public Service Commission commissioner page (psc.ga.gov), nothing on the subject",
+        "2020 Public Service Commission candidate questionnaire (GwinnettForum PDF), nothing on the subject",
+        "Ballotpedia: not fetched (known empty); search shows seat term runs to 2028, no 2026 race for this seat; sitting Public Service Commission chair",
+        "three news searches on name plus gun words, nothing on the subject",
+        "not reviewed: https://www.legis.ga.gov (member page needs JavaScript; he left the House in 2018)"
+      ],
+      "found": 0,
+      "at": "2026-11-12T01:42:02.033Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "MO-SB-752-2022",
+  "scope": "state:mo",
+  "title": "SB752 (2022 Regular Session): Modifies and removes provisions relating to concealed firearms",
+  "urls": [
+    "https://www.senate.mo.gov/22info/BTS_Web/Bill.aspx?SessionType=R&BillID=71259697",
+    "https://www.senate.mo.gov/22info/pdf-bill/intro/SB752.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Eric Burlison",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "df39a562-e7e8-481f-a2ed-fa0d2f0c3a79"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-SB-752-2022.introduced.pdf",
+      "sha256": "cbe914df52d104b054923d56f2f8d88879afb82119afb193438106234ffbfb98"
+    }
+  },
+  "operative_text": "Section 571.030 (RSMo): 571.030. 1. A person commits the offense of unlawful use of weapons if he or she knowingly: (1) Carries concealed upon or about his or her person a knife, a firearm, a blackjack or any other weapon readily capable of lethal use: (a) Into any public higher education institution or public elementary or secondary school facility without the consent of the governing body of the higher education institution or a school official or the district school board, unless the person is a teacher or administrator of an elementary or secondary school who has been designated by his or her school district as a school protection officer and is carrying a firearm in a school within that district, in which case no consent is required; (b) Onto any school bus or onto the premises of any function or activity sponsored or sanctioned by school officials or the district school board, except when the weapon is possessed by an adult to facilitate a school-sanctioned firearm-related event or club event; (c) Into any police, sheriff, or highway patrol office or station without the consent of the chief law enforcement officer in charge of that office or station; (d) Into the facility of any adult or juvenile detention or correctional institution, prison, or jail; (f) Into any meeting of the general assembly or a committee of the general assembly; (g) Into any area of an airport to which access is controlled by the inspection of persons and property; (h) Into any place where the carrying of a firearm is prohibited by federal law; (i) Onto any private property whose owner has posted the premises as being off-limits to concealed firearms by means of one or more signs displayed in a conspicuous place of a minimum size of eleven inches by fourteen inches with the writing thereon in letters of not less than one inch; or (j) Into any sports arena or stadium with a seating capacity of five thousand or more that is under the management of or leased to a private entity, including a professional sports team\nSection 571.030 (RSMo): 14. Notwithstanding any provision of this section or any other law, the offense of unlawful use of weapons under subdivision (1) of subsection 1 of this section shall not include possession of a firearm in a vehicle on any premises listed under paragraphs (a) to (j) of subdivision (1) of subsection 1 of this section, except where prohibited by federal law, so long as the firearm is not removed from the vehicle or brandished while the vehicle is in or on the listed premises.\nSection 571.107 (RSMo): 3. Notwithstanding any provision of subsection 1 of this section or any other law, the provisions of this section shall not prohibit a person from carrying a concealed firearm in a vehicle on any premises listed under subdivisions (1) to (8) of subsection 1 of this section, except where prohibited by federal law, so long as the firearm is not removed from the vehicle or brandished while the vehicle is in or on the listed premises.\nSection 571.108 (RSMo): 571.108. Notwithstanding any other provision of law to the contrary, neither the state nor any county, city, town, village, municipality, or other political subdivision of this state shall impose any rule, policy, ordinance, contractual requirement, or agreement of any type that prohibits any employee of such entity who holds a concealed carry permit issued under sections 571.101 to 571.121, a valid lifetime or extended concealed carry permit issued under sections 571.205 to 571.230, a valid concealed carry endorsement issued prior to August 28, 2013, or a concealed carry endorsement or permit issued by another state or political subdivision of another state, from carrying a concealed weapon in any area that such person is authorized to carry a concealed weapon under this chapter.\nSection 571.109 (RSMo): 2. No institution of higher education shall impose any contractual requirement or condition of employment upon any employee, faculty member, or student that generally prohibits or has the effect of generally prohibiting the lawful possession or carry of firearms by such persons, nor shall such institution impose any taxes, fees, or other monetary charges as a condition for the lawful possession or carry of firearms under the provisions of this chapter."
+}

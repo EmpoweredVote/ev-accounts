@@ -1,0 +1,38 @@
+{
+  "id": "MO-HB-2713-2024",
+  "scope": "state:mo",
+  "title": "HB2713 (2024 Regular Session): Changes the law regarding the sale of firearm ammunition",
+  "urls": [
+    "https://house.mo.gov/Bill.aspx?bill=HB2713&year=2024&code=R",
+    "https://documents.house.mo.gov/billtracking/bills241/hlrbillspdf/5698H.01I.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Yolanda Young",
+      "role": "prime",
+      "version": "LegiScan sponsor list",
+      "politician_id": "bebf9c90-06bb-4d1b-8f87-03e122a9ff20"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check); operative text read by a Sonnet fill agent from the official house.mo.gov or senate.mo.gov PDF of the version named in note (via LegiScan getBillText)",
+    "fetched_at": "2026-11-12T20:46:00.851643Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MO-HB-2713-2024.introduced.pdf",
+      "sha256": "6feeb2e88ccff1ef992c1895e6c3f83309e86ef04a6e367a6e7afc76505a220c"
+    }
+  },
+  "operative_text": "Section 407.1170 (RSMo): 1. After December 31, 2024, no person or entity shall sell any firearm ammunition unless the person or entity is designated by the secretary of state as a licensed ammunition seller.\nSection 407.1170 (RSMo): 7. Any person who sells firearm ammunition in violation of this section shall be guilty of a class D misdemeanor. Each individual sale shall be deemed a separate violation.\nSection 407.1171 (RSMo): 2. No licensed ammunition seller shall sell, offer for sale, or display for sale any ammunition in a manner that allows the ammunition to be accessible to a purchaser without the assistance of the seller or the seller's employee.\nSection 407.1172 (RSMo): 1. No person or entity shall supply, deliver, sell, or give possession or control of any firearm ammunition to a person whom the person or entity knows or has cause to believe is prohibited by a court order from owning, possessing, or having custody or control of any firearm ammunition.\nSection 407.1172 (RSMo): 3. The sale, delivery, or transfer of firearm ammunition shall occur only in a face-to-face transaction with the seller, deliverer, or transferor being provided bona fide evidence of the identity of the purchaser or transferee. However, ammunition may be purchased over the internet or through other means of remote ordering if the ammunition is first delivered to a licensed ammunition seller in this state who verifies the purchaser or transferee is not prohibited by state or federal law or by court order from possessing, receiving, owning, or purchasing a firearm or ammunition.\nSection 407.1172 (RSMo): 5. A violation of this section shall be a class B misdemeanor."
+}
