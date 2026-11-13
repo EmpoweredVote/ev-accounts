@@ -876,6 +876,62 @@ def check_fill_quotes_reads_the_text_with_and_without_struck_words(t):
     assert go(ok=False).returncode == 1, 'the legislature\'s own label is removed only because its profile names it'
 
 
+FAKE_CLAUDE = """#!/usr/bin/env python3
+import json, os, sys
+C = os.environ['STUB_DIR']; a = sys.argv[1:]
+json.dump({'argv': a, 'no_write': os.environ.get('STAGE5_NO_DB_WRITE'), 'cwd': os.getcwd()}, open(C + '/call.json', 'w'))
+reply = open(C + '/reply.txt').read()
+if reply == 'CRASH': sys.exit(3)
+print(json.dumps({'session_id': 'sid-123', 'result': reply, 'num_turns': 4}))
+"""
+
+
+@check
+def leg_starts_a_slim_session_that_cannot_write_and_turns_its_last_line_into_a_stop(t):
+    """A leg is the card plus the slim rules, started slim with the no-write flag; only a listed last line counts."""
+    os.makedirs(t); P, S = topic_folder(t, control_groups=['1:7']); C, bin_ = f'{t}/stub', f'{t}/bin'; os.makedirs(C); os.makedirs(bin_)
+    open(f'{bin_}/claude', 'w').write(FAKE_CLAUDE); os.chmod(f'{bin_}/claude', 0o755)
+    env = dict(os.environ, STUB_DIR=C, PATH=bin_ + os.pathsep + os.environ['PATH']); env.pop('STAGE5_NO_DB_WRITE', None)
+    T = os.path.normpath(os.path.join(HERE, '..', '..', '..', '.claude', 'skills', 'season-topic-prep', 'templates'))
+    rules = open(f'{T}/stage5-slim-rules.md').read(); deskT = open(f'{T}/stage5-card-desk.md').read()
+    for word in ('gun', 'firearm', 'voter', 'rung 5', '1,2,3'): assert word not in rules and word not in deskT, f'a slim-session template names {word!r}'
+    assert 'never write the database' in rules and 'only on the runner\'s yes' in deskT
+    def leg(reply, *a, which='A'):
+        open(f'{C}/reply.txt', 'w').write(reply)
+        if os.path.exists(f'{C}/call.json'): os.remove(f'{C}/call.json')
+        p = subprocess.run([sys.executable, '-I', os.path.join(TOOLS, 'leg.py'), which, '--profile', P, '--state', 'zz', '--state-name', 'Zedland', *a], capture_output=True, text=True, env=env)
+        return p, (json.load(open(f'{C}/call.json')) if os.path.exists(f'{C}/call.json') else None)
+    D = f'{S}/zz/desk'
+    p, c = leg(f'Bill table done.\n\nSTOP question {D}/QUESTION-A-1.md')
+    assert p.returncode == 10 and p.stdout.strip() == f'STOP question {D}/QUESTION-A-1.md', (p.returncode, p.stdout, p.stderr[-300:])
+    a = c['argv']
+    assert c['no_write'] == '1' and c['cwd'].endswith('/backend'), 'every slim session is started with the no-write flag'
+    assert a[0] == '-p' and '--safe-mode' in a and '--disable-slash-commands' in a and a[a.index('--model') + 1] == 'opus' and '--resume' not in a
+    assert a[a.index('--tools') + 1] == a[a.index('--allowedTools') + 1] and 'Bash' in a[a.index('--tools') + 1]
+    assert '# Session A card' in a[1] and 'You are running this card as a slim session' in a[1] and f'{D}/QUESTION-A-<n>.md' in a[1] and '{{' not in a[1]
+    st = json.load(open(f'{D}/leg-A.json')); assert st['session_id'] == 'sid-123' and st['last'].startswith('STOP question') and len(st['runs']) == 1
+    p, c = leg('DONE A'); assert p.returncode != 0 and c is None and '--answer' in p.stderr, 'a started leg is resumed, never started twice'
+    open(f'{t}/ans.md', 'w').write('Rung question: "Direction only (Recommended)"')
+    p, c = leg('All steps finished.\nDONE A', '--answer', f'{t}/ans.md')
+    a = c['argv']; assert p.returncode == 0 and a[a.index('--resume') + 1] == 'sid-123' and 'Direction only (Recommended)' in a[1] and '# Session A card' not in a[1] and c['no_write'] == '1'
+    assert len(json.load(open(f'{D}/leg-A.json'))['runs']) == 2
+    p, c = leg('DONE A'); assert p.returncode != 0 and c is None and 'already DONE' in p.stderr
+    p, c = leg('x', '--answer', f'{t}/ans.md', which='B'); assert p.returncode != 0 and c is None, 'no answer for a leg that never started'
+    for reply, code in ((f'Preview ready.\nSTOP write {S}/write/zz-01/PREVIEW.md', 11), ('STOP blocked the import refused 3 files: see run/step-3.log', 12),
+                        ('DONE B\nActually one more thing is left.', 2), ('I will stop here and wait.', 2), ('', 2), ('CRASH', 2), ('STOP approve now', 11)):
+        if os.path.exists(f'{D}/leg-B.json'): os.remove(f'{D}/leg-B.json')
+        p, c = leg(reply, which='B'); assert p.returncode == code, (reply, p.returncode, p.stdout)
+    open(f'{t}/empty.md', 'w').write('  \n'); p, c = leg('DONE B', '--answer', f'{t}/empty.md', which='B'); assert p.returncode != 0 and c is None, 'an empty answer is not sent'
+    run('session_card.py', 'desk', '--profile', P, '--state', 'zz', '--state-name', 'Zedland', '--out', f'{t}/desk.md')
+    d = open(f'{t}/desk.md').read(); assert '{{' not in d and f'{D}' in d and 'write-batch.sh' in d and 'leg.py A --profile' in d and len(d) < 6000
+    # the write script itself refuses in a slim session, before it runs the writer
+    open(f'{bin_}/npx', 'w').write('#!/bin/sh\necho ran >> "$STUB_DIR/npx.txt"\n'); os.chmod(f'{bin_}/npx', 0o755); os.makedirs(f'{t}/b')
+    go = lambda mode, e: subprocess.run(['zsh', os.path.join(TOOLS, 'write-batch.sh'), S, f'{t}/b', 'made-up-topic', 'state:zz', mode], capture_output=True, text=True, env=e, cwd=t)
+    r = go('apply', dict(env, STAGE5_NO_DB_WRITE='1'))
+    assert r.returncode == 5 and 'REFUSED' in r.stderr and not os.path.exists(f'{C}/npx.txt'), (r.returncode, r.stderr[-200:])
+    go('apply', env); assert os.path.exists(f'{C}/npx.txt'), 'outside a slim session the write script still runs the writer'
+
+
 @check
 def wave_starts_agents_slim_and_only_with_named_tools(t):
     os.makedirs(t); open(f'{t}/p.md', 'w').write('x')
