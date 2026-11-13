@@ -351,6 +351,11 @@ table uses gigabytes of it; in November 2026 audit scripts and ad-hoc counts use
 - 🔴 **Never run `count(*)`, `sum()`, `count(DISTINCT …)` or any other unfiltered aggregate in production on:**
   `transparent_motivations.contributions` (~19 GB per scan), `treasury.budgets`, `treasury.budget_categories`,
   `treasury.transactions`, `essentials.legislative_votes`.
+- 🔴 **A filter only saves reads when an index LEADS with the filtered column.** Postgres 17 cannot skip into the
+  middle of a composite index, so a filter on its second or third column still walks the whole index. Measured
+  2026-11-13: a `legislative_votes` count `WHERE session_id = …` read all 1.5 GB of `idx_leg_vote`
+  `(politician_id, bill_id, session_id, …)` and timed out. `EXPLAIN` (never `ANALYZE`) before running a filtered
+  read on a big table. `legislative_votes` filters well on `politician_id` and, from CA_0386, `session_id`.
 - **Row estimate:** `pg_class.reltuples`; distinct counts: `pg_stats.n_distinct`. **Sample:** `TABLESAMPLE SYSTEM (1)`.
 - **Campaign-finance totals:** read `transparent_motivations.contribution_totals` (CA_0379, refreshed daily after
   `fec-burst`). **Whole-table work on contributions:** use the local FEC mirror
