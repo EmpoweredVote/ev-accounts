@@ -26,6 +26,10 @@ Everything about the topic comes from its **profile**, `<stage5>/topic-profile.j
 with `"control_groups": []` and `"record_script": false`: search everyone and let Opus code everyone, until that
 topic has its own measurement and the runner's ruling. Another topic's skip rule does not carry over.
 
+Where the profile names a skip rule, session B runs its record pass, search, second pass and early check with one
+command, `run_state.py`, and builds every prompt with `stage5_prompts.py` (tools README). Do not copy a state's
+old `make_briefs_xx.py`, `make_qc_xx.py` or `make_billtable_xx.py`: those are what the two tools replaced.
+
 Each session ends with `close_state.py` (tools README), as its last act.
 
 ## Hard rules

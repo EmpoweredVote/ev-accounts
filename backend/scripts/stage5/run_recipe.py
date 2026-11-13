@@ -167,7 +167,9 @@ def check(n, c, b):
         if codes: raise Stop(2, f'{codes} refused code(s) in dry-run-0.txt: fix those codes before going on')
         return f"{re.search(r'outcomes:.*', t).group(0) if 'outcomes:' in t else 'no outcomes line'}; refused passages {r}"
     if n == 1:
-        raise Stop(AGENT, 'AGENT: run templates/stage5-quote-check-prompt.md (a separate agent, about 20 findings each) on every '
+        raise Stop(AGENT, 'AGENT: quote check. `stage5_prompts.py quote-check --profile <json> --batch <batch> --dry-run <batch>/dry-run-0.txt`, '
+                          'run <batch>/qc/jobs.tsv with wave.py, then `quote-check-validate.ts <batch> <stage5>`. That is '
+                          'templates/stage5-quote-check-prompt.md (a separate agent, about 20 findings each) on every '
                           'finding a doesnt-fit code cites that is own words or a local record; validate with readQuoteChecks and '
                           'append to stage5/quote-checks.jsonl. Then resume with --from 2.')
     if n == 2:
