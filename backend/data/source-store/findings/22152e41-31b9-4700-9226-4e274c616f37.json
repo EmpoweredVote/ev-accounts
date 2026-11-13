@@ -1627,6 +1627,63 @@
       "found": 1,
       "at": "2026-10-28T15:59:21.811Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large-capacity magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general statements on gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings, 0 candidates)",
+        "sponsor list: covered by LegiScan bulk check",
+        "the Senate caucus page announcing him as incoming leader (fetched): confirms he is the sitting District 6 state senator; nothing on the subject",
+        "blocked: https://ballotpedia.org/Roger_Niello (403)",
+        "blocked: https://sd06.senate.ca.gov/ (503)",
+        "the 2026 general-election ballot was not confirmed from a fetched page; a search result lists him as a general-election candidate for District 6 on 2026-11-03",
+        "official site: not reviewed beyond the blocked home page, so no site search for subject words was possible",
+        "campaign site: not reviewed, no address found",
+        "web search: his name plus gun/firearm/Second Amendment words, two searches, no result naming him on the subject",
+        "web search: his name plus floor remarks on firearm/ammunition bills, no result naming him on the subject",
+        "not reviewed: https://calmatters.digitaldemocracy.org/legislators/roger-niello-165442",
+        "not reviewed: other URL patterns in the researcher agent file, questionnaires, interviews"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.492Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "Second Amendment general statements",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.rogerniello.com: front page shows a 2026 Senate committee disclosure, no text on the subject; a ballot-status page was not found, so general-election placement is unconfirmed here",
+        "campaign site issues page https://www.rogerniello.com/issues: crime and public safety section, nothing on guns or firearms",
+        "blocked: https://sd06.senate.ca.gov (HTTP 503)",
+        "not reviewed: https://www.senate.ca.gov/sd06 (official member page and newsletters, turned up in search but not fetched)",
+        "Ballotpedia https://ballotpedia.org/Roger_Niello: fetch returned an empty page, not read",
+        "web search: name plus Second Amendment/firearms statements: nothing on this person",
+        "web search: name plus California Senate gun votes and ammunition: nothing on this person's own words",
+        "sponsor list: covered by LegiScan bulk check"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:29:38.151Z",
+      "by": "source-collector"
     }
   ]
 }

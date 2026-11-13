@@ -387,6 +387,62 @@
       "found": 0,
       "at": "2026-10-28T15:57:19.469Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "ghost guns",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "scope not confirmed from a fetched page: a search shows her as sitting AD 63 member since 2025-09-08 and listed as a 2026 candidate, but no fetched page confirmed the 2026 general-election ballot; blocked: https://ballotpedia.org/Natasha_Johnson (empty response)",
+        "On the Record (0 appearances; extract script found no meetings)",
+        "blocked: https://ad63.asmrc.org (403)",
+        "not reviewed: campaign site (https://www.natashajohnsonca.com did not connect)",
+        "blocked: https://ballotpedia.org/California_State_Assembly_elections,_2026 (empty response)",
+        "not reviewed: https://wikwiand-revamp.pages.dev/en/2026_California_State_Assembly_election (page returned no readable text)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web search: name plus Second Amendment/gun/firearm words returned nothing about her; nothing on the subject",
+        "web search: 2026 AD 63 primary results returned only 2025 special-election pages"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.600Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment or gun safety statements"
+      ],
+      "places": [
+        "in scope: the state certified list for the 2026-11-03 general election shows Natasha Johnson (incumbent, Assembly District 63) on the ballot, https://elections.cdn.sos.ca.gov/statewide-elections/2026-general/cert-list-candidates.pdf",
+        "On the Record (0 appearances; extract script found none)",
+        "official Assembly member page https://assembly.ca.gov/assemblymembers/63 (fetched; links out to the caucus district site; nothing on the subject)",
+        "blocked: https://ad63.asmrc.org (403)",
+        "blocked: https://ballotpedia.org/Natasha_Johnson (403)",
+        "blocked: https://ballotpedia.org/California_State_Assembly_District_63 (empty page)",
+        "blocked: https://watchdog.californiafamily.org/public/scorecard/legislators/2025/ad63/NatashaJohnson (403)",
+        "blocked: https://www.pe.com/2025/05/27/63rd-assembly-district-special-election-candidates-answer-questions/ (fetch tool refused the site)",
+        "campaign site natashajohnsonforassembly.com: not reviewed, https://www.natashajohnsonforassembly.com did not connect",
+        "not reviewed: https://www.assembly.ca.gov/system/files/field-representative-asm-johnson.pdf (404)",
+        "sponsor list: covered by LegiScan bulk check",
+        "news searches on her name plus gun, firearm, Second Amendment, concealed carry words: no statement by her on the subject found (results were about other lawmakers)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:29:38.154Z",
+      "by": "source-collector"
     }
   ]
 }

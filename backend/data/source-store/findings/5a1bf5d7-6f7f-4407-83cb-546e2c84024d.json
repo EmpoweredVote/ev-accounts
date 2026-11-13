@@ -1,0 +1,54 @@
+{
+  "politician_id": "5a1bf5d7-6f7f-4407-83cb-546e2c84024d",
+  "findings": [
+    {
+      "id": "f197d9b355a0f62c486c15832b4b37142317eaec8b727f0c4f21909c049e6b9a",
+      "kind": "own-words",
+      "url": "https://votejessielopez.com/?p=141",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Jessie Lopez has been recognized as a Moms Demand Action Gun Sense Candidate for standing up for commonsense gun safety and working to prevent gun violence in our communities.",
+      "note": "Line on her campaign site's about page, issued in her campaign's name; says she was recognised by an advocacy group as a gun-sense candidate. No specific policy named.",
+      "subjects": [
+        "general statement on gun safety laws",
+        "gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.447Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety laws",
+        "gun violence prevention",
+        "ghost guns",
+        "assault-style weapons",
+        "background checks",
+        "carry permits",
+        "red-flag orders",
+        "Second Amendment"
+      ],
+      "places": [
+        "status check: a joincalifornia page and a web search show her second in the 2026-06-09 primary for Assembly District 68 and advancing to the November 2026 general election",
+        "On the Record (0 meetings)",
+        "campaign site (home page, about page, candidate statement, endorsements, accomplishments page, media page): one gun-safety line on the about page, nothing else on the subject",
+        "sponsor list: covered by LegiScan bulk check",
+        "not reviewed: https://ballotpedia.org/Jessie_Lopez (fetch returned an empty page)",
+        "one web search on her name plus gun words: no council vote, statement or news story on guns found",
+        "not reviewed: Santa Ana city council minutes for gun items"
+      ],
+      "found": 1,
+      "at": "2026-11-13T01:27:26.447Z",
+      "by": "source-collector"
+    }
+  ]
+}

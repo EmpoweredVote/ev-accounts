@@ -607,6 +607,30 @@
       "found": 0,
       "at": "2026-10-28T15:57:09.033Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "gun rights and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name matches)",
+        "official Assembly site: press release list page 1 and site search for gun and firearm; nothing on the subject",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: https://ballotpedia.org/John_Harabedian (403)",
+        "news search on name plus gun, firearm and assault weapon words: nothing in his own words; only a hearing record where he appears as a member on a floor resolution by another member",
+        "candidacy: an advocacy group's 2026 general-election endorsement slate lists him for Assembly District 41 (https://ancawr.org/elect26/)",
+        "campaign site, questionnaires, interviews: not reviewed (no search hit; allowance used on other steps)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.582Z",
+      "by": "source-collector"
     }
   ]
 }

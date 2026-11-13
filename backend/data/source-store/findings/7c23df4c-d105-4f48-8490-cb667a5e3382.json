@@ -1618,6 +1618,27 @@
           "sha256": "9ad0cec3d97186835b8ec4fb4a69135df15f39769f773f0141ef443d12885b79"
         }
       }
+    },
+    {
+      "id": "c049cc02e84188305a38a0bdd127ed37dc614d480c1e1dd2792fbfc2cd25d109",
+      "kind": "own-words",
+      "url": "https://billtexts.s3.amazonaws.com/ca/ca-analysishttps-leginfo-legislature-ca-gov-faces-billAnalysisClient-xhtml-bill-id-202520260AB1615-ca-analysis-394196.pdf",
+      "date": "2026-03-03",
+      "date_precision": "day",
+      "passage": "AB 1615 restores and adds clarity pertaining to probation’s existing inclusion in Penal Code 32000 which authorizes probation officers to use non-roster handguns, similar to other law enforcement and as currently authorized, ensuring officers have the necessary tools for officer and community safety, interoperability, task force collaboration in emergency situations, and in carrying out their duties.",
+      "note": "Author's statement for AB 1615 as quoted in the Assembly Public Safety Committee analysis (hearing 2026-03-03): the bill lets county probation officers use handguns not on the state roster, like other law enforcement.",
+      "subjects": [
+        "non-roster handguns for probation officers",
+        "exemptions from handgun roster for law enforcement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.614Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -1644,6 +1665,34 @@
       "found": 2,
       "at": "2026-10-28T16:08:31.586Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "non-roster (off-roster) handguns for probation officers",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "ghost guns",
+        "general statements on gun rights or gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "official site press-release list (https://nguyen.asmdc.org/press-releases): fetched, nothing on the subject",
+        "Ballotpedia (https://ballotpedia.org/Stephanie_Nguyen): page returned empty, not reviewed",
+        "campaign site: not reviewed (none located)",
+        "web search results show the incumbent, Assembly District 10, advancing from the June 2026 primary to the general election against one opponent; no direct ballot page fetched",
+        "committee analyses of AB 1615 (Assembly Public Safety 2026-03-03; Assembly Third Reading 2026-05-18): fetched, author statement copied",
+        "news search on name plus gun words: nothing beyond AB 1615",
+        "https://apsf.assembly.ca.gov/media/487: 2025 committee summary, nothing by Nguyen on the subject",
+        "leginfo.legislature.ca.gov: not fetched (known 403)"
+      ],
+      "found": 1,
+      "at": "2026-11-13T01:27:26.614Z",
+      "by": "source-collector"
     }
   ]
 }

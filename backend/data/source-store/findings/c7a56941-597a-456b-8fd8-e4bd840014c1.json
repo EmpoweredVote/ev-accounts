@@ -3699,6 +3699,27 @@
           "sha256": "0d343fa4dc2e7b3e24b60cdc404f93c96d63a0853b7c7917fa2f1cd5900a0fdd"
         }
       }
+    },
+    {
+      "id": "ad71bcaf13f85abd045620e6dba9383e33aa0fcf1bcd9a403c2db647644ad244",
+      "kind": "own-words",
+      "url": "https://sd21.senate.ca.gov/news/october-26-2021/limon-and-bennet-introduce-legislation-banning-gun-shows-ventura-county",
+      "date": "2021-10-26",
+      "date_precision": "day",
+      "passage": "After hearing from many constituents and local governments, we are announcing legislation for the upcoming legislative year to enhance public safety by banning gun shows at the Ventura County Fairgrounds. We believe the state should not be in the business of using state property to facilitate the sale of dangerous firearms.",
+      "note": "Joint statement by Limón and Assemblymember Bennett announcing a planned bill to end gun shows at the Ventura County Fairgrounds, on state property. The release also says both supported SB 264 (2021), a statewide gun show ban later narrowed to Orange County, and that Limón authored AB 2061 (2020) on DOJ inspection of firearm dealers.",
+      "subjects": [
+        "ban on gun shows on state property",
+        "inspection of gun dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.632Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -3730,6 +3751,31 @@
       "found": 5,
       "at": "2026-10-28T16:10:24.571Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun shows",
+        "firearm dealer inspection",
+        "gun violence prevention statements",
+        "firearms bills",
+        "political violence statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site https://sd21.senate.ca.gov/ (confirms Monique Limón as Senate President pro Tempore, District 21; site search page returned nothing usable for gun terms)",
+        "https://sd21.senate.ca.gov/news/october-26-2021/limon-and-bennet-introduce-legislation-banning-gun-shows-ventura-county",
+        "https://sd21.senate.ca.gov/node/1823 (statement on Kirk shooting: condemns political violence, nothing on gun policy)",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: https://ballotpedia.org/Monique_Lim%C3%B3n (403)",
+        "web searches: news and statements on name plus gun/firearm words (three searches); no other own-words gun statement found",
+        "not reviewed: https://calmatters.digitaldemocracy.org/hearings/258641 (March 2025 committee hearing on SB 15, video/transcript not read)",
+        "not reviewed: campaign site, votesmart, questionnaires"
+      ],
+      "found": 1,
+      "at": "2026-11-13T01:27:26.632Z",
+      "by": "source-collector"
     }
   ]
 }

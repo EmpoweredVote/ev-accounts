@@ -888,6 +888,49 @@
           "sha256": "400d5354699e1e9550839e0283fb3e28c3bafc56e9c296c3175d70f844434b9b"
         }
       }
+    },
+    {
+      "id": "113885453363044f372ab28b2662c4cd5d3ec97bd328c543017f9570a2684607",
+      "kind": "own-words",
+      "url": "https://www.lassennews.com/?p=75582",
+      "date": "2026-01-14",
+      "date_precision": "day",
+      "passage": "It also created a narrow sentencing enhancement solely to ensure that data is collected — not to expand gun control or restrict the Second Amendment.",
+      "note": "From a release issued under DeMaio's byline, published by a regional news site. Describes his AB 256 (toxicology testing and data collection for gun-related felonies) as a data measure, explicitly not an expansion of gun control or a limit on the Second Amendment.",
+      "subjects": [
+        "gun-crime data and toxicology testing",
+        "Second Amendment",
+        "gun control"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.552Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a6a802be90a608e3339c4bdb99b2041aed1987ea32a56bcca7a665665da7d977",
+      "kind": "own-words",
+      "url": "https://www.lassennews.com/?p=75582",
+      "date": "2026-01-14",
+      "date_precision": "day",
+      "passage": "They had no problem attacking the rights of law-abiding citizens but suddenly became very concerned about the privacy of violent offenders.",
+      "note": "Quoted in the same release, on opponents of AB 256 in committee; frames the state's gun laws as an attack on the rights of law-abiding gun owners.",
+      "subjects": [
+        "rights of law-abiding gun owners",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.552Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -948,6 +991,32 @@
       "found": 12,
       "at": "2026-10-28T16:28:19.874Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun-related crime data and toxicology testing",
+        "Second Amendment",
+        "gun safety laws",
+        "gifted handgun to the governor and state gun-purchase rules"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "blocked: https://ad75.asmrc.org/?p=8594 (bot check)",
+        "blocked: https://ad75.asmrc.org/?p=8576 (bot check)",
+        "sponsor list: covered by LegiScan bulk check",
+        "legislature vote pages: covered by LegiScan bulk check",
+        "a regional news site that carried DeMaio's own AB 256 release (read in full)",
+        "web search on name plus Second Amendment/gun terms (two searches); Ballotpedia and campaign site pages surfaced only as search leads, not fetched",
+        "scope: search results list DeMaio as the incumbent on the Nov 3 2026 Assembly District 75 ballot; the results page I fetched returned no readable text, so not independently confirmed",
+        "nothing quotable found: https://www.lassennews.com/?p=58672 and a reform advocacy page on the special session (no gun passage)",
+        "nothing quotable found: gifted-handgun letter coverage (commentary pages gave no DeMaio passage I could copy); the letter itself not reviewed",
+        "not reviewed: Ballotpedia, campaign site, questionnaires, debate videos, interviews (search allowance not spent on them)"
+      ],
+      "found": 2,
+      "at": "2026-11-13T01:27:26.552Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1,0 +1,54 @@
+{
+  "politician_id": "cb39159d-d293-41c7-a1ac-a379c39de3c4",
+  "findings": [
+    {
+      "id": "3ba1464638da01a6f70a1d186a781b242d1fcf2764033a284b19e9627763cf2c",
+      "kind": "own-words",
+      "url": "https://www.paulseo.com/priorities",
+      "date": "2026-11-12",
+      "date_precision": "year",
+      "passage": "In addition to more law enforcement officers, Paul will work to ensure they have the tools and resources they need to reduce crime, improve community-based policing, combat gun violence, all while keeping local neighborhoods and communities safe.",
+      "note": "Campaign priorities page, Public Safety section, written about him in the third person. Only mention of guns; names no specific policy. Page undated; date is the fetch date.",
+      "subjects": [
+        "general statement on combating gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.526Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "repeal of gun laws",
+        "general statements on gun violence and gun rights"
+      ],
+      "places": [
+        "status check: a news search and the campaign site show Paul Seo as a candidate for California Assembly District 66 in the 2026 general election",
+        "On the Record (0 appearances found)",
+        "campaign site https://www.paulseo.com (priorities, media, endorsements pages) - one general line on gun violence",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: https://ballotpedia.org/Paul_Seo",
+        "news search on name plus gun words: nothing on the subject",
+        "news search for a questionnaire or forum answer on guns: nothing on the subject; CRPA 2026 questionnaire was not seen filled in by him",
+        "https://www.ballotready.org/people/paul-seo and https://www.newpolitics.org/candidates/paul-seo: not reviewed",
+        "campaign YouTube channel https://www.youtube.com/@PaulSeo4AD66: not reviewed"
+      ],
+      "found": 1,
+      "at": "2026-11-13T01:27:26.526Z",
+      "by": "source-collector"
+    }
+  ]
+}

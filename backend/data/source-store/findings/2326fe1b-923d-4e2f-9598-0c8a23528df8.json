@@ -1391,7 +1391,55 @@
           "sha256": "55d89298994be3f15aa88f6ff56b5c1a3720412a4757410337f85160bb30745e"
         }
       }
+    },
+    {
+      "id": "41db3b2d8fc8d9e6a36ef5d7970509f260f7b7cc250967d1f9330b5197aeceb3",
+      "kind": "record",
+      "url": "https://a27.asmdc.org/press-releases/20230427-assemblywoman-sorias-ab-675-approved-assembly-public-safety-committee",
+      "date": "2023-04-27",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-675-2023",
+      "act": "author",
+      "note": "Soria introduced AB 675, which would add fentanyl to the drugs for which possessing the drug while armed with a loaded firearm is a felony. The release reports the Assembly Public Safety Committee approved it. The only quote in the release is from another person, so no own words are saved.",
+      "subjects": [
+        "penalty for having a loaded gun while in possession of fentanyl"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.564Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "loaded firearm with drugs felony",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "ghost guns",
+        "carry permits",
+        "red-flag orders",
+        "general gun-rights or gun-safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "sponsor list: covered by LegiScan bulk check",
+        "official Assembly site news list (soria.asmdc.org/news): nothing on the subject in the fetched page text",
+        "her earlier Assembly site press release on AB 675 (fetched)",
+        "web search on her name plus gun and firearm words: one relevant item (AB 675)",
+        "Ballotpedia: page fetched but returned no usable text; ballot status for the 2026 general election not confirmed by me",
+        "campaign site: not found, not reviewed",
+        "questionnaires, interviews, debates: nothing found on the subject"
+      ],
+      "found": 1,
+      "at": "2026-11-13T01:27:26.564Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -2865,6 +2865,33 @@
       "found": 1,
       "at": "2026-10-28T16:23:22.566Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "suppressors",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name matches)",
+        "campaign site https://www.phillipchen.org/meet-phillip (fetched; names him as sitting 59th District member; nothing on the subject)",
+        "blocked: https://ad59.asmrc.org (403)",
+        "blocked: https://ballotpedia.org/Phillip_Chen_(California) (403)",
+        "California Secretary of State district 59 results API (names him; general-election advancement not clearly confirmed from page text)",
+        "https://calmatters.digitaldemocracy.org/bills/ca_202520260ab1589 (AB 1589 silencers, lists him as author; author statement only seen in search summary, not copied)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web searches (3): news and gun-group trackers; no own words on firearms found",
+        "not reviewed: leginfo.legislature.ca.gov (403 per brief)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.606Z",
+      "by": "source-collector"
     }
   ]
 }

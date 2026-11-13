@@ -1494,6 +1494,31 @@
       "found": 2,
       "at": "2026-10-28T16:06:59.510Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits",
+        "Second Amendment general statements",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://hooverforassembly.com/ (campaign site: home, issues, about, news pages fetched; nothing on the subject; public safety text covers crime and policing only)",
+        "official Assembly site https://ad07.asmrc.org (blocked: HTTP 403)",
+        "blocked: https://ballotpedia.org/Josh_Hoover (HTTP 403 on fetch)",
+        "sponsor list: covered by LegiScan bulk check",
+        "web search on name plus gun/Second Amendment words (2 searches; results show him as the sitting member for Assembly District 7, Folsom, in office since 2022, and show no statement of his own on the subject; the campaign site is titled for re-election)",
+        "not reviewed: general-election ballot confirmation page (no fetched page confirmed the Nov 2026 ballot; campaign site shows an active re-election bid)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.483Z",
+      "by": "source-collector"
     }
   ]
 }

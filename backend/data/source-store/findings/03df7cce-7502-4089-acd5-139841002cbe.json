@@ -1,6 +1,48 @@
 {
   "politician_id": "03df7cce-7502-4089-acd5-139841002cbe",
-  "findings": [],
+  "findings": [
+    {
+      "id": "33711271a5b114bf7d055822ec05cf5b80444dbf36ee96d30c6dadbc8c2888b2",
+      "kind": "own-words",
+      "url": "https://ltg.ca.gov/2024/07/11/june-2024-round-up/",
+      "date": "2024-07-11",
+      "date_precision": "day",
+      "passage": "June marks National Gun Violence Awareness Month, a time to honor victims of gun violence and push for a stronger, safer community. I was honored to join Everytown, the California Chapter of Moms Demand Action, and Students Demand Action for a rally at the Capitol steps to raise awareness of the critical issue of gun violence and how California is leading the nation in gun safety.",
+      "note": "First-person newsletter from her office. She describes joining a gun-safety rally at the Capitol and says California leads on gun safety.",
+      "subjects": [
+        "general statement on gun safety laws",
+        "gun violence awareness"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.620Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "730d1d032ff220076d0fde430f05da50ca8dd1f0e85717543012886540798d95",
+      "kind": "own-words",
+      "url": "https://ltg.ca.gov/2024/07/11/june-2024-round-up/",
+      "date": "2024-07-11",
+      "date_precision": "day",
+      "passage": "Gun violence continues to plague the nation, killing an estimated 120 people every single day. But here in California, we refuse to accept this as our reality. California is ranked #1 in the nation for gun safety with some of the lowest rates of gun death in the country. Together, we can continue to champion efforts to address this epidemic and protect our communities from the devastating impacts of gun violence.",
+      "note": "Same newsletter. She cites California's gun safety ranking and calls for continuing efforts against gun violence.",
+      "subjects": [
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.620Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -25,6 +67,35 @@
       "found": 0,
       "at": "2026-10-28T16:01:49.166Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety laws general statement",
+        "gun violence awareness",
+        "federal gun control",
+        "assault-style weapons",
+        "background checks",
+        "red flag orders",
+        "concealed carry",
+        "NRA questionnaire"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site ltg.ca.gov (site search for 'gun'; one hit, the June 2024 round-up; June 2025 round-up read, only a passing mention of Gun Violence Awareness Month)",
+        "campaign site https://www.elenikounalakis.com (no gun content returned)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia https://ballotpedia.org/Eleni_Kounalakis (fetched, nothing usable on the subject extracted)",
+        "news search on name plus gun/firearm words (one search; news reports say she moved from the governor race to the treasurer race and advanced to the November 2026 general election; ballot status not confirmed from a fetched page)",
+        "https://ktla.com/news/politics/inside-california-politics/kounalakis-advances-to-general-election-in-state-treasurer-race/amp/ (fetched, no text returned)",
+        "not reviewed: https://goodmorningamerica.com/news/video/californias-lieutenant-governor-calls-federal-gun-control-96641162 (Jan 24 2023 video interview, titled as calling for federal gun control; video not readable)",
+        "ontheissues.org gun control page (lead only: cites a 2018 NRA questionnaire reply via a secondary source; original not reviewed)",
+        "not reviewed: https://penncapital-star.com/government-politics/democratic-lieutenant-governors-advocates-discuss-solutions-to-prevent-gun-violence/ (search lead, not opened)"
+      ],
+      "found": 2,
+      "at": "2026-11-13T01:27:26.620Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -2715,7 +2715,77 @@
           "sha256": "cf5ed97a9c09b1193a20140ba4449861a1eb461dddc727c8dd5da0bc2a47188e"
         }
       }
+    },
+    {
+      "id": "67ebcab63dd4cb3ee48343f647aea06b330734c6d778e5d8b7fc831f0ac7b12c",
+      "kind": "own-words",
+      "url": "https://americas1stfreedom.org/articles/2016/6/3/first-things-first/ca-assemblywoman-a-loaded-glock-beats-911-on-the-phone",
+      "date": "2016-05-30",
+      "date_precision": "day",
+      "passage": "I would rather have a loaded Glock in my hand than 911 on the phone.",
+      "note": "Quoted by an advocacy outlet from remarks at a Second Amendment rally on the Capitol steps, opposing a package of gun bills. The story dates the remarks to the Monday before its 2016-06-03 post.",
+      "subjects": [
+        "gun rights",
+        "armed self-defense",
+        "opposition to new gun bills"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.494Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "159a1a3020d67ea22e541dbdaf1153cf5401b43fab98ee3138368b6768564eb8",
+      "kind": "own-words",
+      "url": "https://americas1stfreedom.org/articles/2016/6/3/first-things-first/ca-assemblywoman-a-loaded-glock-beats-911-on-the-phone",
+      "date": "2016-05-30",
+      "date_precision": "day",
+      "passage": "Bit by bit, new law by new law, these legislators are making it harder and harder for law-abiding citizens to own a firearm,",
+      "note": "Quoted from the same rally. She says each new gun law makes it harder for law-abiding people to own a firearm and says the laws cut away at Second Amendment rights.",
+      "subjects": [
+        "gun rights",
+        "opposition to new gun laws",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.494Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "Second Amendment general statements",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "sponsor list: covered by LegiScan bulk check",
+        "the Senate office site sr12.senate.ca.gov (fetched one release page, SB 1070 places of worship, no gun content; site search returned nothing on guns)",
+        "blocked: https://ballotpedia.org/Shannon_Grove (403 on plain fetch)",
+        "web search: 2026 race status (search results only, not fetched; they point to a 2026 Board of Equalization District 1 race and a Senate District 12 seat held until Dec 2026; ballot status not confirmed from a fetched page)",
+        "web search: name plus Second Amendment/gun words (one 2016 rally story found and fetched from americas1stfreedom.org)",
+        "not reviewed: https://www.breitbart.com/local/2016/05/31/gop-assemblywoman-loaded-glock-beats-911-phone",
+        "not reviewed: campaign site, vote411, ontheissues.org, news archive pages, video"
+      ],
+      "found": 2,
+      "at": "2026-11-13T01:27:26.494Z",
+      "by": "source-collector"
+    }
+  ]
 }

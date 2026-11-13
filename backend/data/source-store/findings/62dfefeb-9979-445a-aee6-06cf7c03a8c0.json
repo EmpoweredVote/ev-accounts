@@ -1656,6 +1656,57 @@
       "found": 6,
       "at": "2026-10-28T16:08:21.944Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and Second Amendment statements",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "blocked: https://ad71.asmrc.org/ (403)",
+        "Ballotpedia: page fetch returned empty, curl failed to connect; ballot status for 2026 not confirmed",
+        "campaign site: https://www.katesanchez.com did not respond; not reviewed",
+        "CalMatters Digital Democracy legislator page: nothing on the subject; does not state 2026 candidacy",
+        "sponsor list: covered by LegiScan bulk check",
+        "two web searches on name plus firearm subject words: nothing on the subject in her own words"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.588Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidates)",
+        "blocked: https://ad71.asmrc.org/ (bot check, official member site; site search for gun terms also blocked: https://ad71.asmrc.org/?s=gun)",
+        "campaign site: none found by web search",
+        "blocked: https://ballotpedia.org/Kate_Sanchez (403); web search summary showed an incumbent AD71 member whose term ends 2026-12-07, with no gun-policy survey answers",
+        "web search: name plus Second Amendment / firearm / concealed carry words found no statement by her on the subject",
+        "https://youngkim.house.gov/2023/08/24/how-california-lawmakers-responded-to-the-cooks-corner-mass-shooting fetched: her only quote there is condolences after the Cook's Corner shooting, not on policy",
+        "sponsor list: covered by LegiScan bulk check",
+        "not reviewed: https://calmatters.digitaldemocracy.org/legislators/kate-sanchez-165419",
+        "scope: not confirmed from a fetched page that she is on the 2026 general ballot (Ballotpedia blocked, no campaign site found)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:29:38.158Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1916,6 +1916,30 @@
           "sha256": "13c9c2268ad4b5ea957aa7ec61da76d1c606d2329d12033161892515e9dc7002"
         }
       }
+    },
+    {
+      "id": "06eb359fe51663958565fa6ec6ee1f2873e01c02da77eb298e32f888a30d2b82",
+      "kind": "own-words",
+      "url": "https://a49.asmdc.org/sites/a49.asmdc.org/files/2023-04/4.17.23_federal_government_gun_reform_letter.pdf",
+      "date": "2023-04-17",
+      "date_precision": "day",
+      "passage": "We, the undersigned California state legislators, urge our federal leaders to take action to pass commonsense gun safety reforms to protect the American public from the threat of gun violence.",
+      "note": "Joint letter to the President and congressional leaders, signed by Gail Pellerin (Assemblymember, 28th District) among other legislators. It also urges passage of the Assault Weapons Ban of 2023 and the Keep Americans Safe Act (high-capacity magazine ban), and credits the President's executive order for moving toward universal background checks. A statement issued over multiple signers, hosted on another member's site.",
+      "subjects": [
+        "federal gun safety action",
+        "ban on assault-style guns",
+        "ban on large-capacity magazines",
+        "check every gun buyer",
+        "general statement on gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.569Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -1945,6 +1969,30 @@
       "found": 6,
       "at": "2026-10-28T15:59:07.104Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazine ban",
+        "federal gun safety action",
+        "universal background checks",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Assembly site https://pellerin.asmdc.org/ (front page and press-release list fetched; site search page returned no gun-related items; nothing on the subject beyond the signed letter)",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia https://ballotpedia.org/Gail_Pellerin (fetch returned no usable text; a search result shows her as an incumbent running in the 2026 primary and general for Assembly District 28; ballot status for November not independently confirmed)",
+        "web search: Pellerin plus firearms/gun safety (one hit: the 2023 multi-legislator letter)",
+        "web search: 2026 general election status (primary results show her leading; not otherwise confirmed)",
+        "not reviewed: campaign site (not located within allowance)",
+        "not reviewed: interviews, questionnaires, floor-remark videos (none located)"
+      ],
+      "found": 1,
+      "at": "2026-11-13T01:27:26.569Z",
+      "by": "source-collector"
     }
   ]
 }

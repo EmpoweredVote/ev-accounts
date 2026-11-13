@@ -653,6 +653,27 @@
           "sha256": "5b2601e40e7e05f3f93f3e120bdcf3984b806aef33c0086a935af945592e88ab"
         }
       }
+    },
+    {
+      "id": "217f26ece6352f8e7ab75bd18ca3ca8fe9be06cb110806f0c32b7ddc2340361b",
+      "kind": "own-words",
+      "url": "https://plumassun.org/2026/01/13/hadwicks-first-year-accomplishments-include-local-wins/",
+      "date": "2026-01-13",
+      "date_precision": "day",
+      "passage": "Notably, Assembly Bill 584 became the first pro-Second Amendment bill signed into California law in more than 20 years, earning Hadwick the California Pistol & Rifle Association’s Legislator of the Year Award.",
+      "note": "Text of a year-end release from her office, printed by a local paper ('Information provided by Office of Assemblywoman Heather Hadwick'); it is office wording, not a direct quote of her. It describes AB 584 as a pro-Second Amendment bill and lists it as providing flexibility for firearms dealers to meet secure facility requirements.",
+      "subjects": [
+        "gun rights and the Second Amendment, general",
+        "firearm dealer rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.575Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -682,6 +703,37 @@
       "found": 0,
       "at": "2026-10-28T15:58:06.354Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun with or without a permit",
+        "firearm dealer rules",
+        "protective orders and guns",
+        "hunters carrying a firearm for self-defense",
+        "Second Amendment and gun rights general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, no meetings)",
+        "sponsor list: covered by LegiScan bulk check",
+        "vote pages: covered by LegiScan bulk check",
+        "blocked: https://www.sierradailynews.com/?p=239422 (403)",
+        "blocked: https://www.sierradailynews.com/?p=242671 (403)",
+        "blocked: https://ad01.asmrc.org/?p=8098 (bot check page)",
+        "blocked: https://ballotpedia.org/Heather_Hadwick (empty/blocked page; search result shows the June 2026 primary was won by her and she advanced to the general election, so she is in scope; no November result found)",
+        "https://plumassun.org/2026/01/13/hadwicks-first-year-accomplishments-include-local-wins/ (a local news story carrying an office release; one gun item saved)",
+        "web search: name plus Second Amendment/firearm (leads only; gun-rights group bill lists not cited)",
+        "web search: AB 1912 statement (nothing usable)",
+        "web search: 2026 election status",
+        "not reviewed: campaign site (no address reached)",
+        "not reviewed: news archive and video interviews, no quotes found on assault-style guns, background checks, red-flag orders, ghost guns, or permitless carry"
+      ],
+      "found": 1,
+      "at": "2026-11-13T01:27:26.575Z",
+      "by": "source-collector"
     }
   ]
 }

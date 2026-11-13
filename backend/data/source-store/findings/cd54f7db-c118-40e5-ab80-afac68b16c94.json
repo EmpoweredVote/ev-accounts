@@ -1,0 +1,96 @@
+{
+  "politician_id": "cd54f7db-c118-40e5-ab80-afac68b16c94",
+  "findings": [
+    {
+      "id": "2ab06f3b497e5b68ac8681a0a8ea9f85b6a62178e8bc8ad5bc2874fb1bb878fe",
+      "kind": "own-words",
+      "url": "https://fresnoland.org/2023/09/06/fresno-right-to-safety/",
+      "date": "2023-09-06",
+      "date_precision": "day",
+      "passage": "Supervisor Nathan Magsig said he believed the aim was to “reduce Second Amendment rights.”",
+      "note": "Quoted in a Fresnoland news story about the county board voting to oppose the governor-backed 'Right to Safety' constitutional amendment effort; Magsig describes its purpose as reducing Second Amendment rights. Paraphrase of his remark by the outlet with a short direct quote.",
+      "subjects": [
+        "opposing a state gun-safety constitutional amendment",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.536Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9dfadaf9a93b3fd468b88cede2cd1c4a51dc2064443b0c200205140ce67885d9",
+      "kind": "own-words",
+      "url": "https://abc30.com/post/fresno-county-allows-select-da-employees-carry-concealed-weapons/19859361/",
+      "date": "2026-09-23",
+      "date_precision": "day",
+      "passage": "The way I look at it, fortunately that individual is recovering from their injuries but if any one of those deputy DA's were armed, it's possibly they could've prevented that attack",
+      "note": "Quoted by ABC30 on a county ordinance letting some District Attorney office staff carry concealed firearms; Magsig says an armed deputy might have stopped a recent attack.",
+      "subjects": [
+        "carrying guns in county buildings",
+        "concealed carry for county employees"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.536Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7fcb5038677c156f45b2605c132ef51301d823503241cc9d2824f96cc97786ef",
+      "kind": "own-words",
+      "url": "https://abc30.com/post/fresno-county-allows-select-da-employees-carry-concealed-weapons/19859361/",
+      "date": "2026-09-23",
+      "date_precision": "day",
+      "passage": "I think that these ordinances are absolutely necessary to protect individuals who work here downtown, not only for themselves, but also to protect other members of the public",
+      "note": "Quoted by ABC30 defending the concealed-carry ordinance for county staff as necessary for safety.",
+      "subjects": [
+        "carrying guns in county buildings",
+        "concealed carry for county employees"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.536Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment rights",
+        "carrying guns in county buildings",
+        "state gun-rights constitutional amendment",
+        "gun buyback",
+        "general statements on gun laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://nathanmagsig.com (home page: no gun content; listed priorities are oil, agriculture, public safety, wildfire; site search page and author page returned nothing)",
+        "Ballotpedia https://ballotpedia.org/Nathan_Magsig (fetch returned an empty page; not reviewed)",
+        "blocked: https://gvwire.com/2025/07/09/nathan-magsig-why-our-second-amendment-resolution-matters-to-the-people-of-the-central-valley (403)",
+        "blocked: https://clovisroundup.com/?p=44623 (firewall page; the 2025 Second Amendment resolution op-ed copy could not be read)",
+        "sponsor list: covered by LegiScan bulk check",
+        "county board of supervisors site: not reviewed: https://fresnocountyca.gov/Departments/Board-of-Supervisors/Supervisor-Nathan-Magsig",
+        "news search on name plus gun words (two searches); found three readable stories used below",
+        "scope: a June 2026 news report shows Magsig leading the District 12 state Senate primary; the November opponent was not confirmed on a page I could read, so ballot status rests on that report and a search summary",
+        "not reviewed: https://gvwire.com/2024/05/07/planned-fresno-probation-gun-buyback-program-runs-afoul-of-state-law-and-seiu"
+      ],
+      "found": 3,
+      "at": "2026-11-13T01:27:26.536Z",
+      "by": "source-collector"
+    }
+  ]
+}

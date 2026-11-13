@@ -1,0 +1,33 @@
+{
+  "politician_id": "98b2d8bf-08fa-54f4-a70a-405505259804",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum age",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment or gun safety statements"
+      ],
+      "places": [
+        "in scope: the LAist general-election voter guide (https://laist.com/news/politics/voter-guides/2026-election-california-general-state-assembly) lists Charles Frederick Hughes in the Nov. 3 race for Assembly District 34; the campaign site also shows the Nov. 3 general election for AD 34",
+        "On the Record (0 appearances, 0 meetings)",
+        "campaign site home, about, priorities and endorsements pages (https://votecharleshughes.com/): searched for gun, firearm, Second Amendment, weapon, concealed; nothing on the subject (priorities page covers public safety through the death penalty, ending early release and police support, with no firearm content); /issues returned a 404",
+        "Ballotpedia district page (via search result only, not fetched): lists him as a 2026 candidate; nothing on the subject",
+        "news search on name plus gun words: nothing on the subject",
+        "Crime Victims United endorsement page (https://www.crimevictimsunited.com/endorsements/t3j02nfo6wbn71i8sikfi11608vcik): an endorsement notice about public safety and victims' rights, nothing on guns",
+        "sponsor list: covered by LegiScan bulk check (not a sitting legislator; no bills to check)",
+        "not reviewed: social media (@charleshughesforassembly), media page videos, candidate questionnaires/forums (none found by search)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.510Z",
+      "by": "source-collector"
+    }
+  ]
+}

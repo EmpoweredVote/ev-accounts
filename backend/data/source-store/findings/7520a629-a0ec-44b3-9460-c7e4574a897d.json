@@ -1771,6 +1771,57 @@
       "found": 3,
       "at": "2026-10-28T16:09:50.354Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and concealed carry",
+        "repeal of gun laws",
+        "general gun-rights and Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 appearances linked; node extract script run with name search, nothing on the subject)",
+        "blocked: https://ad22.asmrc.org/?p=252 (official Assembly site, 403 and a bot check on the site search https://ad22.asmrc.org/?s=gun)",
+        "blocked: https://ballotpedia.org/Juan_Alanis_(California) (403)",
+        "blocked: https://gvwire.com/2023/09/21/assemblyman-slams-ccw-bill-youre-punishing-law-abiding-people-who-are-simply-exercising-their-constitutional-rights-2 (403; a search snippet only, so not citable)",
+        "https://www.turlockjournal.com/news/government/know-your-legislator-juan-alanis/ (a profile interview of the Assemblymember; fetched, nothing on the subject)",
+        "web search: ballot status. A search result says he is the only candidate for Assembly District 22 in the 2026 primary and general; not confirmed by a fetched page",
+        "web search: name plus gun and Second Amendment words; leads only, no fetched source with own words",
+        "sponsor list: covered by LegiScan bulk check",
+        "campaign site: not reviewed, no separate address found",
+        "not reviewed: other URL patterns in the researcher agent file (allowance used on blocked pages)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:27:26.584Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "concealed carry limits",
+        "check every gun buyer",
+        "general gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ad22.asmrc.org",
+        "blocked: https://ad22.asmrc.org/?p=5390",
+        "blocked: https://ad22.asmrc.org/category/in-the-news/page/14",
+        "Ballotpedia: fetch returned an empty page, so ballot status not confirmed",
+        "campaign site: not reviewed: no address found in searches",
+        "sponsor list: covered by LegiScan bulk check",
+        "two web searches run; results were only snippets (a tweet quoted in a snippet and a statement headline on the blocked district site), not fetched pages, so nothing is saved from them; the AB 495 statement is on a non-gun bill"
+      ],
+      "found": 0,
+      "at": "2026-11-13T01:29:38.161Z",
+      "by": "source-collector"
     }
   ]
 }

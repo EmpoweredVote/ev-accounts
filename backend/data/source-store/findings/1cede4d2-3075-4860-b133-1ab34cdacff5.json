@@ -2565,6 +2565,27 @@
           "sha256": "13c9c2268ad4b5ea957aa7ec61da76d1c606d2329d12033161892515e9dc7002"
         }
       }
+    },
+    {
+      "id": "0593261fcefa5c58305bf8ee3dff5bcf3c80fe36011e98638bd62291e7d0c33b",
+      "kind": "own-words",
+      "url": "https://sd33.senate.ca.gov/sites/sd33.senate.ca.gov/files/sb_1253_gonzalez_-_firearm_safety_fact_sheet.pdf",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "A requirement for all registered firearm owners to take the FSC course, as well as re-certify when it expires, will lead to a more informed firearm ownership population and help reduce unintended gun deaths and injuries in California.",
+      "note": "Fact sheet from her Senate office for her SB 1253: every person who has a gun, including people moving to California with one, would need a valid Firearm Safety Certificate, with a year to comply. The fact sheet's own text, issued by her office, not a personal quote.",
+      "subjects": [
+        "firearm safety certificate for every gun owner",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.625Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -2591,6 +2612,32 @@
       "found": 1,
       "at": "2026-10-28T16:00:15.016Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm safety certificate for every gun owner",
+        "gun safety laws",
+        "ghost guns",
+        "assault-style weapons",
+        "background checks",
+        "red-flag orders",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings; name search also 0)",
+        "official Senate site: fetched the 2024-04-02 video page for firearms safety legislation (page has no transcript or text beyond the title), and the 2026-01-30 flashbang bill release (SB 937, law-enforcement use of flashbangs, not a firearms-regulation item; not saved)",
+        "official Senate site: SB 1253 fact sheet PDF (saved)",
+        "sponsor list: covered by LegiScan bulk check",
+        "one news search on name plus gun words and one on ghost guns / SB 1253 (results were fact sheets and other authors' bills)",
+        "not reviewed: https://sd33.senate.ca.gov/node/1195 and other In The News pages (search hits only, not fetched)",
+        "blocked: https://cp.soar.com/articles/5115457/California/California-lawmaker-supports-measures-against-gun-violence-following-Monterey-Park-tragedy (host did not resolve)",
+        "not reviewed: Ballotpedia, campaign site, other URL-pattern pages (search allowance stopped short of them; fetch count was small, no cap hit)"
+      ],
+      "found": 1,
+      "at": "2026-11-13T01:27:26.625Z",
+      "by": "source-collector"
     }
   ]
 }

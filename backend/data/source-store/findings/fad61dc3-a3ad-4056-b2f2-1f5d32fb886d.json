@@ -2217,6 +2217,117 @@
           "sha256": "55d89298994be3f15aa88f6ff56b5c1a3720412a4757410337f85160bb30745e"
         }
       }
+    },
+    {
+      "id": "3f0be8a969c963c3eda08922510df7b37c8573a5a2659685a77483bacfec2ba6",
+      "kind": "own-words",
+      "url": "https://sd38.senate.ca.gov/index.php/news/legislation-help-reduce-gun-violence-passes-senate-public-safety-committee",
+      "date": "2023-04-18",
+      "date_precision": "day",
+      "passage": "Gun violence is a dangerous, deadly, pervasive threat to modern life in California and the United States, and we must do everything possible to prevent it,” Blakespear said. “Gun purchasers must be made aware of the dangers of taking a firearm home, and police need more information to solve crimes involving firearms.",
+      "note": "Quote in her office's press release on SB 417 (warning notices at gun sellers) and SB 452 (microstamping on semiautomatic pistols), both passing Senate Public Safety Committee.",
+      "subjects": [
+        "warning notices at gun sales",
+        "microstamping on semiautomatic pistols",
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.623Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "46347cec6fefd20dfdc48b264bc4eaf94fc6a93081900dd4296026cfe96c937d",
+      "kind": "own-words",
+      "url": "https://sd38.senate.ca.gov/news/legislation-require-gun-stores-post-warning-notices-passes-assembly-committee",
+      "date": "2023-06-13",
+      "date_precision": "day",
+      "passage": "By making gun owners aware of the increased risks created by having a gun in their homes, SB 417 increases the likelihood they will safely store their firearms.",
+      "note": "Quote in her office's press release on SB 417 passing the Assembly Public Safety Committee; says the warning notice is meant to promote safe storage.",
+      "subjects": [
+        "warning notices at gun sales",
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.623Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c9d1c82ccddba96b0a6de043f8fdec9356274cb10c0a72da8fd8f5f1810b3715",
+      "kind": "own-words",
+      "url": "https://sd38.senate.ca.gov/news/gun-laws-work-when-they-are-fully-implemented",
+      "date": "2024-03-14",
+      "date_precision": "day",
+      "passage": "In the meantime, I am focused on making the state safer by improving the outcomes of our existing legal structure. Let’s make sure our current laws are working as intended. That alone can save thousands of lives.",
+      "note": "Her op-ed (first in the Orange County Register) on enforcing existing law: firearm surrender for domestic violence cases, armed and prohibited persons, SB 899, SB 1002, SB 1019 (destroy bought-back guns); mentions Supreme Court uncertainty over gun laws.",
+      "subjects": [
+        "removing guns from prohibited persons",
+        "red flag and protection orders",
+        "gun buyback destruction",
+        "enforce existing gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.623Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f7958db101a077c1c57372ccdb35240a7236b6896b3003c6719ebebdc2bf9216",
+      "kind": "own-words",
+      "url": "https://sd38.senate.ca.gov/node/805",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "passage": "The result is California has one of the lowest gun death rates in the nation (7 deaths per 100,000 in population, compared with the 12.8 deaths per 100,000 national average). To illustrate, when we contrast California with Mississippi, where there is no state permit required to purchase a firearm, no waiting period, no firearm registration, no assault weapon ban and silencers are legal, there are 28 deaths per 100,000 people. The bottom line is that responsible gun ownership laws reduce gun violence.",
+      "note": "Her op-ed (San Diego Union-Tribune) citing California's gun death rate against a state without permits, waiting periods, registration, an assault weapon ban or silencer limits.",
+      "subjects": [
+        "permit to buy a gun",
+        "waiting period",
+        "gun registration",
+        "ban on assault-style guns",
+        "silencers",
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.623Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cfa66f4886319b38d818adf000c1ceb130648d7b8b286c799a8d30679e3ae92f",
+      "kind": "own-words",
+      "url": "https://sd38.senate.ca.gov/node/805",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "passage": "What more can we do to prevent gun violence in California? What more should we do?",
+      "note": "Same op-ed: asks what more to do, says it starts with education, and announces Voices of Prevention with The OpEd Project; also says \"Allowing the status quo to remain is simply unacceptable.\"",
+      "subjects": [
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.623Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -2243,6 +2354,32 @@
       "found": 1,
       "at": "2026-10-28T16:23:17.794Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "warning signs at gun sellers",
+        "microstamping on semiautomatic pistols",
+        "red flag and protection orders",
+        "removing guns from prohibited persons",
+        "gun buyback destruction",
+        "general gun safety laws",
+        "permit, waiting period, registration, assault weapon ban (as comparison)"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate site https://sd38.senate.ca.gov (press releases and op-eds fetched; site-wide search for gun words via web search only)",
+        "sponsor list: covered by LegiScan bulk check",
+        "blocked: https://ballotpedia.org/Catherine_Blakespear (403)",
+        "Wikipedia page for the person (fetched; shows current Senate term ending 2026-12-07, no 2026 ballot result found there)",
+        "ballot status for the 2026 general election: not confirmed from a page I fetched; the brief names her as a 2026 candidate; a search result listed her on the 2026 primary ballot for Senate District 38",
+        "web news search on name plus gun words (2 searches); no campaign site found or reviewed",
+        "not reviewed: debate or interview videos, questionnaires, newsletters"
+      ],
+      "found": 5,
+      "at": "2026-11-13T01:27:26.623Z",
+      "by": "source-collector"
     }
   ]
 }

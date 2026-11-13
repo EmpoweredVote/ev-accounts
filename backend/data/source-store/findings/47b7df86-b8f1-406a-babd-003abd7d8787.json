@@ -1,0 +1,160 @@
+{
+  "politician_id": "47b7df86-b8f1-406a-babd-003abd7d8787",
+  "findings": [
+    {
+      "id": "99da8c4fea4ecbd598729a3e5c65a4d3738aef3ea9cfb561f83bcb716ea9a6f0",
+      "kind": "own-words",
+      "url": "https://www.briangoldsmith.com/issues",
+      "date": "2026-11-12",
+      "date_precision": "year",
+      "passage": "We must ban not just assault weapons, but guns that can be easily converted into assault weapons and automatics.",
+      "note": "Campaign issues page, gun safety section (page undated; fetched 2026). Calls for banning assault weapons and guns easily converted to them; also says to ban sale of any weapon that can be converted into a machine gun.",
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on guns that can be converted"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.538Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8c89e598b5038cfc8a26c3893e026ae64a8982d394a348f0fd9029a6673e25bb",
+      "kind": "own-words",
+      "url": "https://www.briangoldsmith.com/issues",
+      "date": "2026-11-12",
+      "date_precision": "year",
+      "passage": "We must eliminate all sales and gun show loopholes and strengthen gun dealer inspections and protocols to ensure that all sellers are following California law.",
+      "note": "Campaign issues page. Wants gun show and sales loopholes closed and tougher dealer inspections.",
+      "subjects": [
+        "check every gun buyer",
+        "gun show loophole",
+        "dealer inspections"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.538Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8c8763b2e973529bb288d6331c2f2f13730fdba1f202ba4e205bcfbf819ed5f8",
+      "kind": "own-words",
+      "url": "https://www.briangoldsmith.com/issues",
+      "date": "2026-11-12",
+      "date_precision": "year",
+      "passage": "We must take on technology before advancements are unstoppable –regulating 3D printed weapons and the use of AI in building and converting weapons of the future;",
+      "note": "Campaign issues page. Supports regulating 3D-printed guns and AI use in building or converting guns.",
+      "subjects": [
+        "home-made and 3D-printed guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.538Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2841b3d7f8783700ef472700279dc604a98cb3c951fdd6484ec7b91f07bc49fc",
+      "kind": "own-words",
+      "url": "https://www.briangoldsmith.com/issues",
+      "date": "2026-11-12",
+      "date_precision": "year",
+      "passage": "To do this, we should expand background checks, red flag laws, programs that prevent domestic violence offenders from being able to purchase weapons; and we should incentivize safe storage programs and protocols.",
+      "note": "Campaign issues page. Supports more background checks, red flag laws, domestic-violence purchase bars, and safe storage incentives.",
+      "subjects": [
+        "check every gun buyer",
+        "red flag orders",
+        "keep guns from domestic abusers",
+        "safe storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.538Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7a880b14946128e9d25632026873a9318bbaa921d1f71f949a31c28ae434853e",
+      "kind": "own-words",
+      "url": "https://www.briangoldsmith.com/issues",
+      "date": "2026-11-12",
+      "date_precision": "year",
+      "passage": "California should be a national model for gun safety and training .",
+      "note": "Campaign issues page. Says California should strengthen licensing and training requirements so anyone buying a gun is prepared to be a responsible owner.",
+      "subjects": [
+        "licence and training to buy a gun",
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.538Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "96d3c724f89335766bdb610717acbf97bd0cac78ba044505b6befa820839a266",
+      "kind": "own-words",
+      "url": "https://www.briangoldsmith.com/issues",
+      "date": "2026-11-12",
+      "date_precision": "year",
+      "passage": "In the State Senate, Brian will lead on this issue…and build coalitions to pass the most effective, comprehensive gun safety laws in America.",
+      "note": "Campaign issues page. General pledge to lead on gun safety laws; also says he is a longtime supporter of Everytown and Giffords.",
+      "subjects": [
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.538Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and convertible guns",
+        "check every gun buyer",
+        "close sales and gun show loopholes",
+        "red flag laws",
+        "ghost guns and 3D-printed guns",
+        "licensing and training to buy a gun",
+        "safe storage",
+        "general gun safety statement"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site issues page (https://www.briangoldsmith.com/issues)",
+        "campaign site news page (https://www.briangoldsmith.com/news): nothing on the subject",
+        "scope check: a campus newspaper story dated 2026-06-13 (https://dailybruin.com/2026/06/13/erickson-goldsmith-advance-to-november-general-for-california-senate-district-24/) says he advanced to the November general for State Senate District 24",
+        "one web search on name plus 2026 candidate (results list gun-safety group endorsements; those pages not fetched)",
+        "sponsor list: covered by LegiScan bulk check",
+        "not reviewed: Ballotpedia, news search on name plus gun words, other URL patterns (not fetched this session)"
+      ],
+      "found": 6,
+      "at": "2026-11-13T01:27:26.538Z",
+      "by": "source-collector"
+    }
+  ]
+}

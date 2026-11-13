@@ -2926,6 +2926,50 @@
           "sha256": "3fcd67951d383eaab501f962c45308422b3eff8db815739212b142e7b8eec08d"
         }
       }
+    },
+    {
+      "id": "4a8bc07f5174fc3b148e51a02fcb33031fcf7d8044e64032e94f8c03f9dec771",
+      "kind": "own-words",
+      "url": "https://ramos.asmdc.org/press-releases/20260701-ramos-bill-extend-duration-concealed-weapons-licenses-signed-governor",
+      "date": "2026-07-01",
+      "date_precision": "day",
+      "passage": "The current two-year renewal cycle creates unnecessary administrative burdens for both applicants and issuing authorities,” Ramos said. “AB 1948 streamlines the process, reduces costs for residents, and allows law enforcement agencies to focus on oversight and public safety. I thank Governor Newsom for signing this into law.",
+      "note": "Quote from a release by his office on the signing of AB 1948, which lengthens newly issued concealed-carry licences from two years to three. He gives administrative burden and cost as the reasons.",
+      "subjects": [
+        "carry permits",
+        "concealed carry licence duration",
+        "permit fees and costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.577Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3dce9f89b1886231d9fe48ad03083a239f0913e45e4cfa91fa9a1d0f60d93377",
+      "kind": "record",
+      "url": "https://ramos.asmdc.org/press-releases/20260701-ramos-bill-extend-duration-concealed-weapons-licenses-signed-governor",
+      "date": "2026-07-01",
+      "date_precision": "day",
+      "instrument_id": "CA-AB-1948-2026",
+      "act": "other",
+      "note": "His office's release says the governor approved AB 1948, which he introduced, extending new concealed-carry licences from two to three years. The release says the county sheriff sponsored it.",
+      "subjects": [
+        "carry permits",
+        "concealed carry licence duration"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T01:27:26.577Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -2952,6 +2996,31 @@
       "found": 4,
       "at": "2026-10-28T15:58:02.188Z",
       "by": "source-collector-wave2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry permits (concealed weapons licence duration)",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site press releases: one gun-related release found (https://ramos.asmdc.org/press-releases/20260701-ramos-bill-extend-duration-concealed-weapons-licenses-signed-governor); site-wide search for other gun words not run",
+        "sponsor list: covered by LegiScan bulk check",
+        "Ballotpedia: fetch returned no usable text, not reviewed: https://ballotpedia.org/James_C._Ramos",
+        "campaign site: not reviewed: https://www.jamesramos.org/",
+        "news search on name plus gun words: nothing further on the subject in own words",
+        "scope: a web search listing shows him as a 2026 candidate for Assembly District 45; a page confirming he is on the November ballot was not fetched, so ballot status is unconfirmed",
+        "ontheissues.org, vote411: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-11-13T01:27:26.577Z",
+      "by": "source-collector"
     }
   ]
 }
