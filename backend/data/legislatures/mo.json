@@ -1,0 +1,47 @@
+{
+  "state": "mo",
+  "name": "Missouri",
+  "verified": "2026-11-12",
+  "source": "gun-policy Season 3 Stage 5, Missouri pilot (MISSOURI-PILOT-REPORT.md and write/mo-01/recipe.json), 2026-11-12",
+  "chambers": {
+    "lower": "House",
+    "upper": "Senate"
+  },
+  "sessions": "A session each year. Special sessions carry ids like MO-HB-16-SP1-2020.",
+  "bill_data": [
+    "LegiScan bulk datasets."
+  ],
+  "votes": {
+    "mode": "legiscan-plan",
+    "official_hosts": [
+      "house.mo.gov",
+      "senate.mo.gov"
+    ],
+    "legiscan_args": null,
+    "floor_rule": "LegiScan's Missouri roll-call text does not name the motion: match each vote to a bill-history action by date and tally.",
+    "gaps": [
+      "Most Senate roll calls are missing from LegiScan's data: Senate seats rest on House records, sponsorships or own words."
+    ]
+  },
+  "texts": {
+    "hosts": [
+      "house.mo.gov",
+      "senate.mo.gov"
+    ],
+    "marks": "Bill texts are PDFs. Bold words are new; words in bold brackets are struck.",
+    "note": "Missouri re-files the same bill every year: expect many copies in the sponsor cover (277 bills before the re-file trim, 176 after)."
+  },
+  "reader_access": {
+    "house.mo.gov": "open",
+    "senate.mo.gov": "open"
+  },
+  "search_note": "Missouri sponsorships and House floor votes on this topic come from the bulk bill data (listed above): skip the legislature's sponsor lists and vote pages, and add the place \"sponsor list: covered by bulk bill data\". Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
+  "bill_table_note": "- Missouri bill text is a PDF: bold words are new law, words in bold brackets are struck. `operative_text` quotes the law as the bill leaves it.\n- Most Senate roll calls are not on file, so a bill may show House votes only.",
+  "fill_quotes": {
+    "label_strips": []
+  },
+  "quirks": [
+    "LegiScan spells some legislators another way: check every new idmap.tsv line against the person's name and chamber (6 fixed in 2026-11).",
+    "The shared fill quote checker (check_fill_quotes.py) has not been run on Missouri's PDF texts: its 2026-11 check also removed page headers and line numbers from the PDF text. Add those as text clean-up before relying on it here."
+  ]
+}

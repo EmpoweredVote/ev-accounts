@@ -26,6 +26,18 @@ not read session A's history: open only the section a step names.
 - A stop that is not listed below is a finding: write down what caused it.
 - Report to the runner in plain English: result first, short sentences, terms defined.
 
+## This legislature
+
+{{#LEG}}
+From `{{LEG_PATH}}` (facts about the legislature, shared by every topic):
+
+{{LEG_SUMMARY}}
+{{/LEG}}
+{{^LEG}}
+No legislature profile is on file for `{{xx}}` yet, so this session learns its hosts, vote layout and text marks
+by hand. Session A writes them down at hand-over (`legislature.py new {{xx}} --name "{{STATE}}"`).
+{{/LEG}}
+
 ## Settled, do not ask again
 
 {{SETTLED}}
@@ -59,9 +71,9 @@ python3 -I scripts/stage5/run_state.py --profile {{PROFILE}} --state {{xx}}
 | 6 adopt | Checks each control apart, adopts the skipped codes, counts what the search changed. |
 | 7 check | Early check report, theme pass, report again. |
 
-Before you start, write the state's own search note, if it has one, to `{{S}}/{{xx}}/search-note.md` (for example
-"sponsorships and floor votes come from the bulk bill data: skip the legislature's own lists"). It is added to
-every search brief.
+Every search brief carries the state's search note: the legislature profile's, unless you write a different one
+for this run to `{{S}}/{{xx}}/search-note.md` (for example "sponsorships and floor votes come from the bulk bill
+data: skip the legislature's own lists").
 
 When it stops, it prints why and the `--from N` to resume with. Read `{{S}}/{{xx}}/run/step-N.log`.
 
@@ -102,6 +114,17 @@ Theme pass as one Opus agent; run the report again with `--themes`. Exit 3: fix 
 🛑 **Stop 2 only on exit 4** (doesn't fit over 1 in 5, or one theme over 1 in 10): show the split and the themes,
 ask one question, recommend one answer. Detail: STAGE5 §5.
 
+{{#LEG}}
+**B9. Write recipe.** Write `B/recipe.json` exactly as below (the votes mode and hosts come from the legislature
+profile; change one only if the hand-over's part 7 says it changed):
+
+```json
+{"stage5": "{{S}}", "topic": "{{TOPIC}}", "unit": "state:{{xx}}", "level": "state", "state": "{{XX}}",
+ "roster": "{{S}}/roster.tsv", "codes": "{{S}}/codes", "saved_root": "{{SAVED_ROOT}}",
+ "votes": "{{RECIPE_VOTES}}", "official_host": "{{RECIPE_HOSTS}}", "max_urls": 20{{RECIPE_LEGISCAN}}}
+```
+{{/LEG}}
+{{^LEG}}
 **B9. Write recipe.** Write `B/recipe.json`. Only the three `<…>` values need the hand-over's part 7
 (`legiscan_args` is optional: leave the line out when the hand-over names none):
 
@@ -111,6 +134,7 @@ ask one question, recommend one answer. Detail: STAGE5 §5.
  "votes": "<votes mode>", "official_host": "<official hosts>", "max_urls": 20,
  "legiscan_args": "<extra flags>"}
 ```
+{{/LEG}}
 
 ```bash
 python3 -I scripts/stage5/run_recipe.py {{S}}/write/{{xx}}-01

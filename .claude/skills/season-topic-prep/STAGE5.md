@@ -30,6 +30,11 @@ Where the profile names a skip rule, session B runs its record pass, search, sec
 command, `run_state.py`, and builds every prompt with `stage5_prompts.py` (tools README). Do not copy a state's
 old `make_briefs_xx.py`, `make_qc_xx.py` or `make_billtable_xx.py`: those are what the two tools replaced.
 
+What is known about a state's **legislature** (its hosts, vote layout, text marks, and which sites our reader can
+open) is in its legislature profile, `backend/data/legislatures/<xx>.json` (`legislature.py`, tools README). It is
+shared by every topic: the cards print it, and it fills the write recipe and the per-state notes. Session A writes
+or refreshes it at hand-over. 🔴 It holds facts about the legislature only: never a topic, a rung, a ruling or a person.
+
 Each session ends with `close_state.py` (tools README), as its last act.
 
 ## Hard rules
