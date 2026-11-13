@@ -1,0 +1,69 @@
+{
+  "id": "WA-HB-1004-2017",
+  "scope": "state:wa",
+  "title": "HB1004 (2017-2018 Regular): Protecting the constitutionally guaranteed right to the lawful possession of firearms during a state of emergency.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1004&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1004.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Matt Shea",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Vincent Buys",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Larry Haler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Drew MacEwen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5ab349b4-f041-4637-af64-c4e6e4f54c3e"
+    },
+    {
+      "name": "Bob McCaslin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Taylor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jesse Young",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1004.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1004-2017.introduced.html",
+      "sha256": "1ce590f60a3b8de8e4588032aec7b4923c7a33c51f8592a2264f5a6254b21c11"
+    },
+    "note": "Introduced version. Sec. 2 also strikes the governor's existing power to prohibit carrying firearms or other deadly weapons outside home or business during an emergency (old (1)(e)) and relettered the rest."
+  },
+  "operative_text": "NEW SECTION Sec. 1 (uncodified): (2) It is the intent of the legislature that, during the continuance of any proclaimed state of emergency, no person or business who is not otherwise prohibited by law from the possession, transfer, sale, transport, storage, display, or use of firearms or ammunition shall be prohibited or restricted by either the governor or any governmental entity or political subdivision of the state from the otherwise lawful possession, transfer, sale, transport, storage, display, or use of firearms or ammunition.\nSec. 2 (RCW 43.06.220): (4) During the continuance of any state of emergency, neither the governor nor any governmental entity or political subdivision of the state shall impose any restriction on the possession, transfer, sale, transport, storage, display, or use of firearms or ammunition that is otherwise authorized or guaranteed by law."
+}

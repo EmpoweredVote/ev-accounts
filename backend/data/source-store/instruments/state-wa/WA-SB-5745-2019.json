@@ -1,0 +1,82 @@
+{
+  "id": "WA-SB-5745-2019",
+  "scope": "state:wa",
+  "title": "SB5745 (2019-2020 Regular): Concerning extreme risk protection orders.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5745&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5745-S.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Marko Liias",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eba44d6a-6602-4a90-bef0-44ab12db6109"
+    },
+    {
+      "name": "Jeannie Darneille",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Manka Dhingra",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Sam Hunt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Karen Keiser",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Guy Palumbo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "Jesse Salomon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "15808557-b30b-44cf-bad2-e627fa547e1a"
+    },
+    {
+      "name": "Dean Takko",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5745-S.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5745-2019.comm-sub.html",
+      "sha256": "76f4389c3a9d43e3c0271dd328f9855534ad5ef48c86130668267930d85b7694"
+    },
+    "note": "Substitute Senate Bill (Comm Sub, Law & Justice), HTML with marks. The bill's changes are (3)(c): strikes 'dangerous mental health issues of the respondent' and adds 'behaviors that present an imminent threat of harm to self or others'; and adds (3)(n). Subsection (2) is unchanged existing law."
+  },
+  "operative_text": "Sec. 1 (RCW 7.94.040): (2) Upon hearing the matter, if the court finds by a preponderance of the evidence that the respondent poses a significant danger of causing personal injury to self or others by having in his or her custody or control, purchasing, possessing, or receiving a firearm, the court shall issue an extreme risk protection order for a period of one year.\nSec. 1 (RCW 7.94.040): (3)(c) Any behaviors that present an imminent threat of harm to self or others;\nSec. 1 (RCW 7.94.040): (3)(m) Evidence of recent acquisition of firearms by the respondent; and\nSec. 1 (RCW 7.94.040): (3)(n) Any threat of harm to a person or group of persons because of the respondent's perception of the race, color, religion, ancestry, national origin, gender, sexual orientation, or mental, physical, or sensory handicap of the person or persons."
+}

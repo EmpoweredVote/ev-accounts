@@ -1,0 +1,44 @@
+{
+  "id": "WA-HB-2196-2019",
+  "scope": "state:wa",
+  "title": "HB2196 (2019-2020 Regular): Concerning standards for issuance and enforcement of extreme risk protection orders.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=2196&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2196.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jim Walsh",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0f598558-61ab-4010-a0fd-e7c54f688a1a"
+    },
+    {
+      "name": "Jesse Young",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2196.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2196-2019.introduced.html",
+      "sha256": "17ccceb72061119d7a38f95b55b12c49650a877db0f2b42622791ab511ff6a3d"
+    },
+    "note": "Introduced version. Strikes 'a preponderance of the' (Secs. 2 and 4) and 'a significant danger of causing personal injury to self or others in the near future' (Sec. 3). Sec. 1 is legislative findings, not quoted."
+  },
+  "operative_text": "Sec. 2 (RCW 7.94.040): (2) Upon hearing the matter, if the court finds by clear and convincing evidence that the respondent poses a significant danger of causing personal injury to self or others by having in his or her custody or control, purchasing, possessing, or receiving a firearm, the court shall issue an extreme risk protection order for a period of one year.\nSec. 3 (RCW 7.94.050): (3) If a court finds there is reasonable cause to believe that the respondent poses an imminent, particularized, and substantial risk of causing death or serious physical injury to self or others by having in his or her custody or control, purchasing, possessing, or receiving a firearm, the court shall issue an ex parte extreme risk protection order.\nSec. 4 (RCW 7.94.080): (c) If the court finds by clear and convincing evidence that the requirements for issuance of an extreme risk protection order as provided in RCW 7.94.040 continue to be met, the court shall renew the order.\nNEW SECTION Sec. 5 (new RCW section, chapter 7.94): (1) No state agency, or state or local law enforcement agency, may use agency funds, facilities, property, equipment, or personnel to investigate, enforce, or assist in the investigation or enforcement of any extreme risk protection order issued under federal law against a resident of the state."
+}

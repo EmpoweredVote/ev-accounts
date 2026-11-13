@@ -1,0 +1,290 @@
+{
+  "id": "WA-SB-5491-2022",
+  "scope": "state:wa",
+  "title": "SB5491 (2021-2022 Regular): Clarifying waiver of firearm rights.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5491&year=2021",
+    "http://lawfilesext.leg.wa.gov/Biennium/2021-22/Pdf/Bills/Senate%20Bills/5491.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jamie Pedersen",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "Ann Rivers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mark Mullet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2022-02-08",
+      "body": "WA Senate",
+      "motion": "Senate 3rd Reading & Final Passage (#26)",
+      "kind": "roll-call",
+      "yes": 49,
+      "no": 0,
+      "absent": 0,
+      "note": "Open States roll call (converted) 90007047; the text version voted on is not dated in the source",
+      "members": [
+        {
+          "name": "Andy Billig",
+          "vote": "yea"
+        },
+        {
+          "name": "John Braun",
+          "vote": "yea",
+          "politician_id": "755f24a5-2330-4546-9679-d5f7fa94aaa9"
+        },
+        {
+          "name": "Sharon Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Reuven Carlyle",
+          "vote": "yea"
+        },
+        {
+          "name": "Annette Cleveland",
+          "vote": "yea",
+          "politician_id": "14332488-3986-4e86-abc2-666b7a3f2dd5"
+        },
+        {
+          "name": "Steve Conway",
+          "vote": "yea",
+          "politician_id": "054dd953-bc6b-44de-8173-00efab5a9c04"
+        },
+        {
+          "name": "Mona Das",
+          "vote": "yea"
+        },
+        {
+          "name": "Manka Dhingra",
+          "vote": "yea",
+          "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+        },
+        {
+          "name": "Perry Dozier",
+          "vote": "yea",
+          "politician_id": "4be6f4b9-2c9d-4cff-b75a-cdb0c322c2b3"
+        },
+        {
+          "name": "Phil Fortunato",
+          "vote": "yea",
+          "politician_id": "d3fad6d8-8022-4c66-b505-4e7a8fc816d7"
+        },
+        {
+          "name": "David Frockt",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Gildon",
+          "vote": "yea",
+          "politician_id": "d997402c-ee18-4544-b770-ac13a777b601"
+        },
+        {
+          "name": "Bob Hasegawa",
+          "vote": "yea",
+          "politician_id": "219f7fc7-d02b-46a0-acad-dfc09814ed11"
+        },
+        {
+          "name": "Brad Hawkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Holy",
+          "vote": "yea",
+          "politician_id": "d0350f2f-6463-452e-b97d-c18ea094e2ee"
+        },
+        {
+          "name": "Jim Honeyford",
+          "vote": "yea"
+        },
+        {
+          "name": "Sam Hunt",
+          "vote": "yea"
+        },
+        {
+          "name": "Karen Keiser",
+          "vote": "yea"
+        },
+        {
+          "name": "Curtis King",
+          "vote": "yea",
+          "politician_id": "fec68f5f-c9e1-4579-869a-7b4a78f7da90"
+        },
+        {
+          "name": "Patty Kuderer",
+          "vote": "yea",
+          "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+        },
+        {
+          "name": "Marko Liias",
+          "vote": "yea",
+          "politician_id": "eba44d6a-6602-4a90-bef0-44ab12db6109"
+        },
+        {
+          "name": "Liz Lovelett",
+          "vote": "yea",
+          "politician_id": "207ff383-f26e-462b-a554-72472b52712a"
+        },
+        {
+          "name": "John Lovick",
+          "vote": "yea",
+          "politician_id": "47ac1908-3715-4599-82f6-606aaf2d9fe6"
+        },
+        {
+          "name": "Jim McCune",
+          "vote": "yea",
+          "politician_id": "6cc4c706-fa7a-486f-ac67-6cbdede4a607"
+        },
+        {
+          "name": "Mark Mullet",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Muzzall",
+          "vote": "yea",
+          "politician_id": "f183194f-814a-43c6-858e-11fc66ad5d41"
+        },
+        {
+          "name": "Joe Nguyen",
+          "vote": "yea"
+        },
+        {
+          "name": "T'wina Nobles",
+          "vote": "yea",
+          "politician_id": "436194e1-479e-4066-8d99-f325fd6bb880"
+        },
+        {
+          "name": "Mike Padden",
+          "vote": "yea"
+        },
+        {
+          "name": "Jamie Pedersen",
+          "vote": "yea",
+          "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+        },
+        {
+          "name": "Emily Randall",
+          "vote": "yea",
+          "politician_id": "ddbbc3e9-50e5-4ad1-94a3-a81eef7cb50b"
+        },
+        {
+          "name": "Ann Rivers",
+          "vote": "yea"
+        },
+        {
+          "name": "June Robinson",
+          "vote": "yea",
+          "politician_id": "7ac92b63-d489-45d5-a85f-c0deac9d8508"
+        },
+        {
+          "name": "Christine Rolfes",
+          "vote": "yea",
+          "politician_id": "8f96526a-f369-4f45-86ba-a2a3a3ea67f8"
+        },
+        {
+          "name": "Rebecca Saldaña",
+          "vote": "yea",
+          "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+        },
+        {
+          "name": "Jesse Salomon",
+          "vote": "yea",
+          "politician_id": "15808557-b30b-44cf-bad2-e627fa547e1a"
+        },
+        {
+          "name": "Mark Schoesler",
+          "vote": "yea",
+          "politician_id": "f893ae5d-6659-40cd-a874-e9351efcdb95"
+        },
+        {
+          "name": "Simon Sefzik",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Sheldon",
+          "vote": "yea"
+        },
+        {
+          "name": "Shelly Short",
+          "vote": "yea",
+          "politician_id": "a88093ad-c483-49c1-ae1e-9f851cdb53fc"
+        },
+        {
+          "name": "Derek Stanford",
+          "vote": "yea",
+          "politician_id": "78230dff-4e33-4d33-8c46-71f00db01858"
+        },
+        {
+          "name": "Yasmin Trudeau",
+          "vote": "yea",
+          "politician_id": "c09a622c-ec49-40e9-87db-ead331f5ab9e"
+        },
+        {
+          "name": "Kevin Van De Wege",
+          "vote": "yea"
+        },
+        {
+          "name": "Keith Wagoner",
+          "vote": "yea",
+          "politician_id": "3db3f064-dd6e-4bca-9200-3d4395972253"
+        },
+        {
+          "name": "Judy Warnick",
+          "vote": "yea",
+          "politician_id": "b316dce9-ed2e-44f6-b974-bf639cacb816"
+        },
+        {
+          "name": "Lisa Wellman",
+          "vote": "yea",
+          "politician_id": "1ff1e922-601b-45f3-a43d-2ef69220f54b"
+        },
+        {
+          "name": "Claire Wilson",
+          "vote": "yea",
+          "politician_id": "f6c042e3-b785-4bf2-b385-65a34ff616e8"
+        },
+        {
+          "name": "Jeff Wilson",
+          "vote": "yea",
+          "politician_id": "aadf55f0-a4b4-4a4a-acf0-bfce06815149"
+        },
+        {
+          "name": "Lynda Wilson",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/Senate%20Bills/5491.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5491-2022.introduced.html",
+      "sha256": "3c82a3c9b928fe97441a33aed4ba51251b820eda9dff444cc02e0e52c88ec7ba"
+    },
+    "note": "Introduced version; takes effect July 1, 2022 (Sec. 7). Sec. 1 adds definitions (mental health professional, substance use disorder professional) and renumbers. The Sec. 4 line starting 'The clerk of the court must immediately give notice' is a sentence taken from the same subsection (1). Sec. 3 sentence also strikes a cross-reference to RCW 9.41.098 in (2)(b)(i). Sec. 5 text is the required form language, reprinted with 'or' struck and ', control, or possess' added."
+  },
+  "operative_text": "Sec. 2 (RCW 9.41.040): (3)(a) A person, whether an adult or a juvenile, is found to have committed the civil infraction of unlawful possession of a firearm if the person has in his or her possession or has in his or her control a firearm after the person files a voluntary waiver of firearm rights under RCW 9.41.350 and the form has been accepted by the clerk of the court.\nSec. 2 (RCW 9.41.040): (3)(b) Possession or control of a firearm after submitting a waiver of firearm rights, but prior to a lawful revocation of the waiver is a class 4 civil infraction punishable according to chapter 7.80 RCW. Each firearm unlawfully possessed under this subsection (3)(b) shall be a separate infraction.\nSec. 3 (RCW 9.41.098): This subsection (2)(d) does not apply to firearms that are voluntarily forfeited after a valid voluntary waiver of firearm rights is signed and has not been revoked under RCW 9.41.350.\nSec. 4 (RCW 9.41.350): (1) A person may file a voluntary waiver of firearm rights, either in writing or electronically, with the clerk of the court in any county in Washington state.\nSec. 4 (RCW 9.41.350): The clerk of the court must immediately give notice to the person filing the form if the filer's voluntary waiver of firearm rights has been accepted. The notice must state that the filer's possession or control of a firearm is unlawful under RCW 9.41.040(3) and that any firearm in the filer's possession or control should be surrendered immediately pursuant to RCW 9.41.040.\nSec. 5 (RCW 9.41.352): Because you have filed this voluntary waiver of firearm rights, effective immediately you may not purchase, receive, control, or possess any firearm.\nNEW SECTION Sec. 6 (new section in chapter 9.41 RCW): Mental health professionals and substance use disorder professionals as defined in RCW 9.41.010 are encouraged to discuss the voluntary waiver of firearm rights with their patients if the mental health professional or substance use disorder professional reasonably believes that a discussion will avoid or minimize an imminent danger to the health or safety of the individual or any other individual; however, there is no obligation to do so."
+}

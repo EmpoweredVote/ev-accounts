@@ -1,0 +1,85 @@
+{
+  "id": "WA-HB-1319-2019",
+  "scope": "state:wa",
+  "title": "HB1319 (2019-2020 Regular): Expanding local government authority to regulate firearms.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1319&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1319.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sharon Wylie",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5617115e-78d5-4480-9534-aa337612a285"
+    },
+    {
+      "name": "Monica Stonier",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3e2c4be-bc12-43c3-9e86-4ba229d44346"
+    },
+    {
+      "name": "Sherry Appleton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Cindy Ryu",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "86e6a2bf-5216-4022-900c-621a8480f2e7"
+    },
+    {
+      "name": "Tana Senn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Javier Valdez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    },
+    {
+      "name": "Nicole Macri",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22d959a5-ec5f-4b92-98d3-85dc219c2c61"
+    },
+    {
+      "name": "Amy Walen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "be3c2a24-1576-4636-9374-18fc77a8513f"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1319.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1319-2019.introduced.html",
+      "sha256": "0efd23715cbe24c6da089f7b840c1da89b96cd6bc55939a11f351afcd115fffe"
+    },
+    "note": "Introduced version (read first time 01/18/19). Only strike is the word \"and\" at the end of (2)(a). NEW SECTION Sec. 1 is a legislative finding/intent and is not quoted. Quote includes unchanged existing text of subsection (2) for context."
+  },
+  "operative_text": "Sec. 2 (RCW 9.41.300): (2) Cities, towns, counties, and other municipalities may enact laws and ordinances:\nSec. 2 (RCW 9.41.300): (a) Restricting the discharge of firearms in any portion of their respective jurisdictions where there is a reasonable likelihood that humans, domestic animals, or property will be jeopardized. Such laws and ordinances shall not abridge the right of the individual guaranteed by Article I, section 24 of the state Constitution to bear arms in defense of self or others;\nSec. 2 (RCW 9.41.300): (b) Restricting the possession of firearms in any stadium or convention center, operated by a city, town, county, or other municipality, except that such restrictions shall not apply to:\nSec. 2 (RCW 9.41.300): (ii) Any showing, demonstration, or lecture involving the exhibition of firearms; and\nSec. 2 (RCW 9.41.300): (c) Restricting the open carrying of firearms at any public meeting of the governing authority of the city, town, county, or other municipality."
+}

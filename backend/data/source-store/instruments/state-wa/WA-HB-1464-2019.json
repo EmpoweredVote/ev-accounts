@@ -1,0 +1,74 @@
+{
+  "id": "WA-HB-1464-2019",
+  "scope": "state:wa",
+  "title": "HB1464 (2019-2020 Regular): Clarifying background check requirements for an application for a concealed pistol license.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1464&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1464.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Roger Goodman",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "de6d7929-66dd-4166-998a-479cfa264ce5"
+    },
+    {
+      "name": "Tom Dent",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d4e6e041-dc18-4415-9201-1a9bd18dea8b"
+    },
+    {
+      "name": "Tina Orwall",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7535e225-d3d0-40ca-ba9c-3890563c40a0"
+    },
+    {
+      "name": "John Lovick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "47ac1908-3715-4599-82f6-606aaf2d9fe6"
+    },
+    {
+      "name": "Brad Klippert",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dan Griffey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d2a0229f-8825-4374-819e-29d8e4bc8e44"
+    },
+    {
+      "name": "Laurie Jinkins",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ce184542-9397-469f-ba78-8c735bce20fa"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1464.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1464-2019.introduced.html",
+      "sha256": "595bee9027bd1705bc4edbd907b47e6939b21c25afb1bbb95eb0b7745c1b4804"
+    },
+    "note": "Introduced (HTML, marks visible). Bill also strikes 'chapter(s)' wording and replaces RCW 26.26.130 with 26.26B.020 in the court-order list in (1)(d), and edits (2)(c) wording; rest of RCW 9.41.070 is reprinted existing law."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.070): (2)(c) (a) and (b) of this subsection apply whether the applicant is applying for a new concealed pistol license or to renew a concealed pistol license.\nSec. 1 (RCW 9.41.070): (2)(d) A background check for an original license must be conducted through the Washington state patrol criminal identification section and shall include a national check from the federal bureau of investigation through the submission of fingerprints. The results will be returned to the issuing authority. The applicant may request and receive a copy of the results of the background check from the issuing authority. If the applicant seeks to amend or correct their record, the applicant must contact the Washington state patrol for a Washington state record or the federal bureau of investigation for records from other jurisdictions."
+}

@@ -1,0 +1,163 @@
+{
+  "id": "WA-SB-6297-2017",
+  "scope": "state:wa",
+  "title": "SB6297 (2017-2018 Regular): Concerning provisions governing firearms possession by persons who have been found incompetent to stand trial and who have a history of one or more violent acts.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6297&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/6297-S.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Manka Dhingra",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Reuven Carlyle",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Maralyn Chase",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jeannie Darneille",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Frockt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Karen Keiser",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mark Mullet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Guy Palumbo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sam Hunt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Steve Conway",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "054dd953-bc6b-44de-8173-00efab5a9c04"
+    },
+    {
+      "name": "John McCoy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sharon Nelson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "Andy Billig",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Annette Cleveland",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "14332488-3986-4e86-abc2-666b7a3f2dd5"
+    },
+    {
+      "name": "Bob Hasegawa",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "219f7fc7-d02b-46a0-acad-dfc09814ed11"
+    },
+    {
+      "name": "Patty Kuderer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Marko Liias",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eba44d6a-6602-4a90-bef0-44ab12db6109"
+    },
+    {
+      "name": "Kevin Ranker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Christine Rolfes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8f96526a-f369-4f45-86ba-a2a3a3ea67f8"
+    },
+    {
+      "name": "Rebecca Saldaña",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+    },
+    {
+      "name": "Dean Takko",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kevin Van De Wege",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lisa Wellman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ff1e922-601b-45f3-a43d-2ef69220f54b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/6297-S.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6297-2017.comm-sub.html",
+      "sha256": "80cdb0f719e32caa2406ecd22bb30b71f4971b4cb9aeb04e11db07dc1e201b84"
+    },
+    "note": "Substitute Senate Bill 6297 (Comm Sub), 2018 session; version saved is the substitute, not necessarily the final. Sec. 3 (RCW 9.41.047) adds matching notice and restoration-petition language."
+  },
+  "operative_text": "Sec. 1 (RCW 10.77.088): (3) If at any time the court dismisses charges under subsection (1) or (2) of this section, the court shall make a finding as to whether the defendant has a history of one or more violent acts. If the court so finds, the defendant is barred from the possession of firearms until a court restores his or her right to possess a firearm under RCW  9.41.047. The court shall state to the defendant and provide written notice that the defendant is barred from the possession of firearms and that the prohibition remains in effect until a court restores his or her right to possess a firearm under RCW  9.41.047.\nSec. 2 (RCW 9.41.040): (iv) After dismissal of criminal charges based on incompetency to stand trial under RCW  10.77.088 when the court has made a finding indicating that the defendant has a history of one or more violent acts, unless his or her right to possess a firearm has been restored as provided in RCW  9.41.047;"
+}

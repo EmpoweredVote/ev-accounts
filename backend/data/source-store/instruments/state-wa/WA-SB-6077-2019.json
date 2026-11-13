@@ -1,0 +1,112 @@
+{
+  "id": "WA-SB-6077-2019",
+  "scope": "state:wa",
+  "title": "SB6077 (2019-2020 Regular): Concerning high capacity magazines.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6077&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6077-S.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Patty Kuderer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "Liz Lovelett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "207ff383-f26e-462b-a554-72472b52712a"
+    },
+    {
+      "name": "Joe Nguyen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lisa Wellman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ff1e922-601b-45f3-a43d-2ef69220f54b"
+    },
+    {
+      "name": "Jeannie Darneille",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Manka Dhingra",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "David Frockt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sam Hunt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rebecca Saldaña",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+    },
+    {
+      "name": "Jesse Salomon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "15808557-b30b-44cf-bad2-e627fa547e1a"
+    },
+    {
+      "name": "Derek Stanford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78230dff-4e33-4d33-8c46-71f00db01858"
+    },
+    {
+      "name": "Reuven Carlyle",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Claire Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f6c042e3-b785-4bf2-b385-65a34ff616e8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6077-S.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6077-2019.comm-sub.html",
+      "sha256": "6c40c8cc98aa28371cef46a8e289a8c45f6ac68c59b5f596fde81742c5e1c65f"
+    },
+    "note": "Version read: Committee Substitute (SB 6077-S). The exemptions list in subsection (2)(a)-(n) is mostly omitted for length. Violation is a gross misdemeanor."
+  },
+  "operative_text": "NEW SECTION Sec. 1 (new section, chapter 9.41 RCW): (1) No person in this state may manufacture, possess, distribute, import, transfer, sell, offer for sale, purchase, or otherwise transfer any large capacity magazine, except as authorized in this section.\nNEW SECTION Sec. 1 (new section, chapter 9.41 RCW): (2) Subsection (1) of this section does not apply to any of the following:\nNEW SECTION Sec. 1 (new section, chapter 9.41 RCW): (3) In order to continue to possess a large capacity magazine that was legally possessed on the effective date of this section, the person possessing the large capacity magazine shall:\nNEW SECTION Sec. 1 (new section, chapter 9.41 RCW): (a) Store the large capacity magazine in a secure gun storage; and\nNEW SECTION Sec. 1 (new section, chapter 9.41 RCW): (b) Possess the large capacity magazine only on property owned or immediately controlled by the person, or while engaged in the legal use of the large capacity magazine at a duly licensed firing range, or while engaged in a lawful outdoor recreational activity such as hunting, or while traveling to or from either of these locations for the purpose of engaging in the legal use of the large capacity magazine, provided that the large capacity magazine is stored unloaded and in a separate locked container during transport.\nNEW SECTION Sec. 1 (new section, chapter 9.41 RCW): (4) A person who violates this section is guilty of a gross misdemeanor punishable under chapter 9A.20 RCW.\nNEW SECTION Sec. 1 (new section, chapter 9.41 RCW): (5) For the purposes of this section, \"large capacity magazine\" means an ammunition feeding device with the capacity to accept more than ten rounds of ammunition, or any conversion kit, part, or combination of parts, from which such a device can be assembled if those parts are in the possession or under the control of the same person, but shall not be construed to include any of the following:"
+}

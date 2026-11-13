@@ -1,0 +1,106 @@
+{
+  "id": "WA-HB-1190-2017",
+  "scope": "state:wa",
+  "title": "HB1190 (2017-2018 Regular): Prohibiting a government database of law abiding owners of legal firearms.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1190&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1190.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "David Taylor",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jim Walsh",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0f598558-61ab-4010-a0fd-e7c54f688a1a"
+    },
+    {
+      "name": "John Koster",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Vicki Kraft",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dan Kristiansen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bob McCaslin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Matt Shea",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Vincent Buys",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Cary Condotta",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Liz Pike",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Shelly Short",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a88093ad-c483-49c1-ae1e-9f851cdb53fc"
+    },
+    {
+      "name": "Mike Volz",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0a9d0edb-50ff-4e71-bb8d-a1a0390cdc55"
+    },
+    {
+      "name": "J.T. Wilcox",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jesse Young",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1190.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1190-2017.introduced.html",
+      "sha256": "5578922791ab59a2f85c49c14992371cc3bd9c1c686e073e54affab30c9dd385"
+    },
+    "note": "Introduced version. Also strikes pistol purchase/transfer records from the list of records the department may keep in subsection (1)."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.129): (2) The department of licensing shall not keep copies or records of applications to purchase pistols provided for in RCW 9.41.090 or copies or records of pistol transfers provided for in RCW 9.41.110. The department of licensing shall eliminate from any of its databases any copies or records of pistol purchase applications or pistol transfers maintained by the department of licensing."
+}

@@ -1,0 +1,66 @@
+{
+  "id": "WA-HB-2808-2019",
+  "scope": "state:wa",
+  "title": "HB2808 (2019-2020 Regular): Ensuring the right of Washington residents to possess legal firearms.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=2808&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2808.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jim Walsh",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0f598558-61ab-4010-a0fd-e7c54f688a1a"
+    },
+    {
+      "name": "Matt Shea",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Robert Sutherland",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bd2e2e7a-6352-41ec-ad9d-c55002d132aa"
+    },
+    {
+      "name": "Jesse Young",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Luanne Van Werven",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Carolyn Eslick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e1538de2-4e22-44cc-a50f-02fe7e2e9f2e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2808.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2808-2019.introduced.html",
+      "sha256": "9cc251226d01d245953f00362e6d6619612db2ee83febd1c208a05ebd0299bbb"
+    },
+    "note": "Introduced. Quote is the lead-in only; it is followed by a numbered list of 62 firearm models (AK-47, AR15, SKS, Uzi carbine and others)."
+  },
+  "operative_text": "NEW SECTION Sec. 1 (new RCW chapter 9.41): All residents of the state who are legally entitled to possess firearms under state and federal law have the right to possess the following specifically identified firearms, as well as any other firearm that is permitted to be possessed under federal law:"
+}

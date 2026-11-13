@@ -1,0 +1,115 @@
+{
+  "id": "WA-HB-1283-2021",
+  "scope": "state:wa",
+  "title": "HB1283 (2021-2022 Regular): Including the open carry or display of weapons within the offense of criminal mischief.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1283&year=2021",
+    "http://lawfilesext.leg.wa.gov/Biennium/2021-22/Pdf/Bills/House%20Bills/1283-S.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Tana Senn",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Javier Valdez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    },
+    {
+      "name": "Alex Ramel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "41ef42e8-fe56-4f82-92e7-eefe85232cd2"
+    },
+    {
+      "name": "Jess Bateman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e6d175b-1af0-444c-b373-e5d0a279d240"
+    },
+    {
+      "name": "Joe Fitzgibbon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9f914ddb-ba7c-4b30-b756-fe7cd981f919"
+    },
+    {
+      "name": "Liz Berry",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "56d6dd6f-4959-4339-be78-e4b1d0083b08"
+    },
+    {
+      "name": "Strom Peterson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6341053d-0580-4fbf-85ea-71ddb6b6f838"
+    },
+    {
+      "name": "David Hackney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "447b684b-e885-42c9-9f32-7e6480cb5b98"
+    },
+    {
+      "name": "My-Linh Thai",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1963d6e9-069b-4770-9489-59e36faaa2e1"
+    },
+    {
+      "name": "Shelley Kloba",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b918fb31-108f-49e7-b977-627ce667422d"
+    },
+    {
+      "name": "Nicole Macri",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22d959a5-ec5f-4b92-98d3-85dc219c2c61"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    },
+    {
+      "name": "Monica Stonier",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3e2c4be-bc12-43c3-9e86-4ba229d44346"
+    },
+    {
+      "name": "Kirsten Harris-Talley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/House%20Bills/1283-S.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1283-2021.comm-sub.html",
+      "sha256": "f5b7fb1015e7bb012841f904a3113cec8c5e0e5745bbf6c3a52f725533b68cfc"
+    },
+    "note": "Version read: Substitute House Bill 1283 (Comm Sub, 2021 session); version_read 'other'. Bill also adds exemptions (own home or business, police, self-defense, lawful arrest, military activity) in subsection (3) and renumbers the penalty subsection; the existing 'knowingly' use-of-force offence becomes (1)(a)."
+  },
+  "operative_text": "Sec. 1 (RCW 9A.84.010): (1) A person is guilty of the crime of criminal mischief if, acting with three or more other persons, he or she: (b) Openly carries, exhibits, displays, or draws any firearm, dagger, sword, knife or other cutting or stabbing instrument, club, or any other weapon apparently capable of producing bodily harm, in a manner, under circumstances, and at a time and place that either manifests an intent to intimidate another or that warrants alarm for the safety of other persons.\nSec. 1 (RCW 9A.84.010): (2) If any person is convicted of a violation of subsection (1)(b) of this section, the person shall lose his or her concealed pistol license, if any. The court shall send notice of the revocation to the department of licensing, and the city, town, or county which issued the license."
+}

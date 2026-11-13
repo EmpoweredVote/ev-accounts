@@ -1,0 +1,51 @@
+{
+  "id": "WA-HB-2590-2019",
+  "scope": "state:wa",
+  "title": "HB2590 (2019-2020 Regular): Concerning unlawful possession of a firearm.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=2590&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2590.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Strom Peterson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6341053d-0580-4fbf-85ea-71ddb6b6f838"
+    },
+    {
+      "name": "Debra Lekanoff",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c176280e-d886-4b59-b812-e220449ffff1"
+    },
+    {
+      "name": "Beth Doglio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "45737b89-a83b-421f-9d6c-abc829c7eae0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2590.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2590-2019.introduced.html",
+      "sha256": "7215f5c2a65ea33ee8cb847037ed14c645905dd730f30d66c41b9e12d7be8214"
+    },
+    "note": "Introduced version. Secs. 2-8 (RCW 9.41.042, 13.40.0357, 13.40.160, 13.40.193, 13.40.265, 70.02.230, 70.02.240) only renumber cross-references to RCW 9.41.040(2)(a) after the new (iii). File is large; hits were checked with grep around the marked changes."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.040): (2)(a) A person, whether an adult or juvenile, is guilty of the crime of unlawful possession of a firearm in the second degree, if the person does not qualify under subsection (1) of this section for the crime of unlawful possession of a firearm in the first degree and the person owns, has in his or her possession, or has in his or her control any firearm:\nSec. 1 (RCW 9.41.040): (iii) After having previously been convicted or found not guilty by reason of insanity in this state or elsewhere on two or more occasions within five years of driving or being in physical control of a motor vehicle while under the influence of intoxicating liquor or any drug in violation of RCW 46.61.502 or 46.61.504, when the second or subsequent offense is committed on or after the effective date of this section;"
+}

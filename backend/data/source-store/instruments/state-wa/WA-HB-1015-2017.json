@@ -1,0 +1,58 @@
+{
+  "id": "WA-HB-1015-2017",
+  "scope": "state:wa",
+  "title": "HB1015 (2017-2018 Regular): Prohibiting restrictions on the carrying of a concealed pistol by persons with a valid concealed pistol license in certain facilities.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1015&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1015.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Matt Shea",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Vincent Buys",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Larry Haler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bob McCaslin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Taylor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1015.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1015-2017.introduced.html",
+      "sha256": "ff433d98d6029558175c6963f4d72f5ce8c841b10a02a931d3d518ac57a68e27"
+    },
+    "note": "Introduced version (HTML copy, marks visible). Section 2(2) (private lessees of stadium authorities) omitted from quote for length; it mirrors Sec. 1(2)."
+  },
+  "operative_text": "NEW SECTION Sec. 1 (new RCW section, chapter 36.100): (1) A public facilities district may not prohibit persons with a valid concealed pistol license from carrying a concealed pistol in any facility or on any grounds of a facility that is owned, operated, managed, administered, controlled, or maintained by the public facilities district, or leased or rented to a private or public entity by the public facilities district.\nNEW SECTION Sec. 1 (new RCW section, chapter 36.100): (2) A private entity that operates, manages, administers, controls, maintains, or leases or rents a facility from a public facilities district may not prohibit persons with a valid concealed pistol license from carrying a concealed pistol in the facility or on the grounds of the facility.\nNEW SECTION Sec. 2 (new RCW section, chapter 36.102): (1) A public stadium authority may not prohibit persons with a valid concealed pistol license from carrying a concealed pistol in any facility or on any grounds of a facility that is owned, operated, managed, administered, controlled, or maintained by the public stadium authority, or leased or rented to a private or public entity by the public stadium authority.\nNEW SECTION Sec. 3 (new RCW section, chapter 9.41): A local governmental entity may not, whether by law, ordinance, regulation, rule, policy, or contractual agreement, prohibit persons with a valid concealed pistol license from carrying a concealed pistol in any stadium, convention center, arena, or similar facility, or on the grounds of any such facility, that is owned, operated, managed, administered, controlled, or maintained by the local governmental entity, or leased or rented to a private or public entity by the local governmental entity."
+}

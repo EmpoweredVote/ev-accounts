@@ -1,0 +1,84 @@
+{
+  "id": "WA-SB-5846-2021",
+  "scope": "state:wa",
+  "title": "SB5846 (2021-2022 Regular): Prohibiting weapons at election-related offices and facilities subject to limited exemptions for law enforcement officers and security personnel.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5846&year=2021",
+    "http://lawfilesext.leg.wa.gov/Biennium/2021-22/Pdf/Bills/Senate%20Bills/5846.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Marko Liias",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eba44d6a-6602-4a90-bef0-44ab12db6109"
+    },
+    {
+      "name": "David Frockt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sam Hunt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Patty Kuderer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Liz Lovelett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "207ff383-f26e-462b-a554-72472b52712a"
+    },
+    {
+      "name": "Joe Nguyen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "T'wina Nobles",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436194e1-479e-4066-8d99-f325fd6bb880"
+    },
+    {
+      "name": "Rebecca Saldaña",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+    },
+    {
+      "name": "Claire Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f6c042e3-b785-4bf2-b385-65a34ff616e8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/Senate%20Bills/5846.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5846-2021.introduced.html",
+      "sha256": "520346ad6210be1756d4d4c9e8d2760cf8a2781871b74fa261dde3c0c35c60c2"
+    },
+    "note": "Version read: Introduced. All new law (no marks). The ban also covers non-firearm weapons (air guns, stun guns, other dangerous weapons); quoted parts focus on firearms."
+  },
+  "operative_text": "NEW SECTION Sec. 1 (new RCW section in chapter 9.41): (1) It is unlawful for a person to carry onto, or to possess in, a ballot counting center, a voting center, a student engagement hub, or the county elections and voter registration office, or areas of facilities while being used as a ballot counting center, a voting center, a student engagement hub, or the county elections and voter registration office:\nNEW SECTION Sec. 1 (new RCW section in chapter 9.41): (a) Any firearm;\nNEW SECTION Sec. 1 (new RCW section in chapter 9.41): (2) A person who violates subsection (1) of this section is guilty of a gross misdemeanor. If a person is convicted of a violation of subsection (1)(a) of this section, the person shall have his or her concealed pistol license, if any, revoked for a period of three years. Anyone convicted under subsection (1)(a) of this section is prohibited from applying for a concealed pistol license for a period of three years from the date of conviction.\nNEW SECTION Sec. 1 (new RCW section in chapter 9.41): (3) Subsection (1) of this section does not apply to: (a) Any law enforcement officer of a federal, state, or local government agency; or (b) Any security personnel hired by a county and engaged in security specifically for a counting center, a voting center, a student engagement hub, or the county elections and voter registration office or areas of facilities used for such purposes. However, a person who is not a commissioned law enforcement officer and who provides elections and voter registration security services under the direction of a county may not possess a firearm or device listed in subsection (1)(d) of this section unless he or she has successfully completed training in the use of firearms or such devices that is equivalent to the training received by commissioned law enforcement officers."
+}

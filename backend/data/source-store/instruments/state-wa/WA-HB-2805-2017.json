@@ -1,0 +1,62 @@
+{
+  "id": "WA-HB-2805-2017",
+  "scope": "state:wa",
+  "title": "HB2805 (2017-2018 Regular): Concerning the sale of lead ammunition to persons under 21.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=2805&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/2805.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gerry Pollet",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    },
+    {
+      "name": "Cindy Ryu",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "86e6a2bf-5216-4022-900c-621a8480f2e7"
+    },
+    {
+      "name": "Gael Tarleton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Javier Valdez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    },
+    {
+      "name": "Sharon Wylie",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5617115e-78d5-4480-9534-aa337612a285"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/2805.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2805-2017.introduced.html",
+      "sha256": "1b93c4930d0ebe15d62625c875b3ba75e509c16385b47fcdf2302ad251246577"
+    },
+    "note": "Introduced version. Sec. 1 findings and Sec. 3-4 (department of health and local health duties) not quoted; they only implement and enforce the Sec. 2 ammunition rule."
+  },
+  "operative_text": "NEW SECTION Sec. 2 (new RCW section, chapter 9.41): (1)(a) It is unlawful for any person to sell, transfer, give, or otherwise make available any ammunition other than nonlead ammunition to a person who is under the age of twenty-one years. For the purposes of this section, \"nonlead ammunition\" means ammunition that does not contain any lead content, excluding trace amounts of lead. (b) It is unlawful for any person who sells, or offers for sale, ammunition to knowingly or intentionally represent ammunition containing more than trace amounts of lead as nonlead ammunition. (3)(a) Subsection (1)(a) of this section does not apply to ammunition that is given or permitted to be given to a person under the age of twenty-one years by a parent or guardian of the person. (4) A person who violates this section is subject to the following penalties:\nNEW SECTION Sec. 2 (new RCW section, chapter 9.41): (2)(a) A person who sells, or offers for sale, ammunition shall require the purchaser of ammunition other than nonlead ammunition to present any of the officially issued identification designated by the department of health under section 3 of this act in any case where there may be a question of whether the person is under the age of twenty-one years."
+}

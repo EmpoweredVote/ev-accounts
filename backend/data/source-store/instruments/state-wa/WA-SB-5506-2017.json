@@ -1,0 +1,43 @@
+{
+  "id": "WA-SB-5506-2017",
+  "scope": "state:wa",
+  "title": "SB5506 (2017-2018 Regular): Concerning the transfer of firearms at nonprofit fund-raising activities.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5506&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/5506-S.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Hans Zeiger",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lynda Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/5506-S.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5506-2017.comm-sub.html",
+      "sha256": "b39b1cd088c12455340ee0d30731319c9c3c7518b6e49afda640ab18367e2bdf"
+    },
+    "note": "Last listed version is Substitute (5506-S, \"Comm Sub\"); read as it stands. The rest of RCW 9.41.113 is reprinted unchanged; old (g) becomes (h) (renumbering only)."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.113(4)(g)): (g) A transfer that does not include the delivery of a firearm owned or leased by an entity licensed or qualified to do business in the state of Washington to, or return of such a firearm by, any of that entity's employees or agents for lawful purposes in the ordinary course of business; or"
+}

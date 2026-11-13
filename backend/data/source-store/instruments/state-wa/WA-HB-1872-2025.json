@@ -1,0 +1,105 @@
+{
+  "id": "WA-HB-1872-2025",
+  "scope": "state:wa",
+  "title": "HB1872 (2025-2026 Regular): Concerning firearms.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=1872&Year=2025&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/House%20Bills/1872.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Matt Marshall",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7db875e2-7a94-4676-bfef-fd6aec93b7c7"
+    },
+    {
+      "name": "Jeremie Dufault",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "72f1981b-ff10-48dd-8c92-e6ea2c169902"
+    },
+    {
+      "name": "Peter Abbarno",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "dc5f89f6-be92-4e3d-960e-3959280765ad"
+    },
+    {
+      "name": "Hunter Abell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ba7f7d85-62ba-440d-abff-70ce9af458e5"
+    },
+    {
+      "name": "Tom Dent",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d4e6e041-dc18-4415-9201-1a9bd18dea8b"
+    },
+    {
+      "name": "Chris Corry",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4546a3b3-4544-43bf-bf0f-eb56871fa1a2"
+    },
+    {
+      "name": "Andrew Engell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "20691f72-9abe-40ad-b361-eb804b212e29"
+    },
+    {
+      "name": "Brian Burnett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b676423d-10a2-451a-88a8-ac80f5117c6a"
+    },
+    {
+      "name": "Jim Walsh",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0f598558-61ab-4010-a0fd-e7c54f688a1a"
+    },
+    {
+      "name": "Suzanne Schmidt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0401d7b9-9f0d-4b92-beed-02bcf2afc456"
+    },
+    {
+      "name": "Andrew Barkis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ea4763b-1a8a-4920-b4ef-55a5c35aa3d0"
+    },
+    {
+      "name": "John Ley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "61b7b19c-1af2-4e6c-a33d-80c4d80d2cd4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/House%20Bills/1872.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1872-2025.introduced.html",
+      "sha256": "6cebd6caaafc23b77d69b9d333a3f409ad1adc77ec5a83cb61c211252b575182"
+    },
+    "note": "Introduced version. Sec. 2 reenacts the full RCW 9.41.010 with renumbering; only the new definitions are quoted. Sec. 1 is findings and cites Wash. Const. art. I, secs. 3, 7 and 24 as legislative findings, not as a duty. In the amended subsections the bill strikes 'for law enforcement purposes' in Secs. 4 and 5 and 'and' after Sec. 3(1). Clause (4) in 'Sec. 3' text reads '(b) (a) of this subsection' as printed."
+  },
+  "operative_text": "Sec. 2 (RCW 9.41.010): (4) \"Authorized individual\" means any: (a) Person who holds a current concealed pistol license pursuant to RCW 9.41.070; (b) Current or retired law enforcement officer; (c) Current or retired federal peace officer as defined in RCW 10.93.020; (d) Retired qualified law enforcement officer, as defined in 18 U.S.C. Sec. 926B, who holds a law enforcement officers safety act (LEOSA) identification card as provided for in 18 U.S.C. Sec. 926B; (e) Current or retired United States armed services personnel; (f) Shooting sports instructor certified by any recognized organization whose primary purpose is the training and certification of shooting sports instructors based on excellence in all areas of shooting sports instruction; or (g) Rifle or pistol range instructor certified by the criminal justice training commission.\nSec. 2 (RCW 9.41.010): (25)(d) An ammunition feeding device offered or available as standard equipment for a particular firearm directly from a firearm's manufacturer.\nSec. 3 (RCW 9.41.092): (2)(a) Ten business days have elapsed from the date the licensed dealer requested the background check; and (b) (a) of this subsection does not apply to any authorized individual.\nSec. 4 (RCW 9.41.390): (2)(a) The manufacture, importation, distribution, offer for sale, or sale of an assault weapon by a licensed firearms manufacturer for the purposes of sale to any branch of the armed forces of the United States or the state of Washington, or to any law enforcement agency for use by that agency or its employees, or to any authorized individual, or to a person who does not reside in this state;\nSec. 4 (RCW 9.41.390): (2)(b) The importation, distribution, offer for sale, or sale of an assault weapon by a dealer that is properly licensed under federal and state law for the purpose of sale to any branch of the armed forces of the United States or the state of Washington, or to a law enforcement agency in this state for use by that agency or its employees, or to any authorized individual;\nSec. 5 (RCW 9.41.370): (2)(a) The manufacture, importation, distribution, offer for sale, or sale of a large capacity magazine by a licensed firearms manufacturer for the purposes of sale to any branch of the armed forces of the United States or the state of Washington, or to a law enforcement agency in this state for use by that agency or its employees, or to any authorized individual;\nSec. 5 (RCW 9.41.370): (2)(b) The importation, distribution, offer for sale, or sale of a large capacity magazine by a dealer that is properly licensed under federal and state law for the purpose of sale to any branch of the armed forces of the United States or the state of Washington, or to a law enforcement agency in this state for use by that agency or its employees, or to any authorized individual;"
+}

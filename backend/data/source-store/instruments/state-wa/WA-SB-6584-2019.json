@@ -1,0 +1,54 @@
+{
+  "id": "WA-SB-6584-2019",
+  "scope": "state:wa",
+  "title": "SB6584 (2019-2020 Regular): Concerning the unlawful purchase of a firearm.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6584&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6584.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Hans Zeiger",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "Steve O'Ban",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mike Padden",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6584.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6584-2019.introduced.html",
+      "sha256": "e5d59c0f7adf1984331cc6fa6eaacf7627e9f0f5a501b785c20bc397f335749e"
+    },
+    "note": "Introduced. Sec. 2 (RCW 9.94A.515) adds the new crime to the sentencing seriousness table (ranked at the level shown under the table heading, believed level II)."
+  },
+  "operative_text": "NEW SECTION Sec. 1 (new RCW chapter 9.41): (1) A person, eighteen years of age or older, is guilty of the crime of unlawful purchase of a firearm if the person, knowing that the person is prohibited by state law from owning or possessing the firearm or having the firearm under the person's custody or control, purchases or attempts to purchase the firearm.\nNEW SECTION Sec. 1 (new RCW chapter 9.41): (2) Unlawful purchase of a firearm is a class C felony punishable according to chapter  9A.20 RCW."
+}

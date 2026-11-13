@@ -1,0 +1,118 @@
+{
+  "id": "WA-HB-2103-2019",
+  "scope": "state:wa",
+  "title": "HB2103 (2019-2020 Regular): Simplifying firearms regulations.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=2103&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2103.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Matt Shea",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brian Blake",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bob McCaslin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jesse Young",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Matt Boehnke",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7736eecd-7c77-4de7-b2e4-ba0bf1aac7ec"
+    },
+    {
+      "name": "Robert Sutherland",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bd2e2e7a-6352-41ec-ad9d-c55002d132aa"
+    },
+    {
+      "name": "Jim Walsh",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0f598558-61ab-4010-a0fd-e7c54f688a1a"
+    },
+    {
+      "name": "Tom Dent",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d4e6e041-dc18-4415-9201-1a9bd18dea8b"
+    },
+    {
+      "name": "Jenny Graham",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a9a04d0e-04a6-46c2-b8ce-cebfdd272b19"
+    },
+    {
+      "name": "Alex Ybarra",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b0ba6ded-89b3-49f4-9aab-8aefea840384"
+    },
+    {
+      "name": "Bruce Chandler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Andrew Barkis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ea4763b-1a8a-4920-b4ef-55a5c35aa3d0"
+    },
+    {
+      "name": "Skyler Rude",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a2960d00-9348-4a98-82b9-2cf2320669b6"
+    },
+    {
+      "name": "Carolyn Eslick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e1538de2-4e22-44cc-a50f-02fe7e2e9f2e"
+    },
+    {
+      "name": "Chris Corry",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4546a3b3-4544-43bf-bf0f-eb56871fa1a2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2103.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2103-2019.introduced.html",
+      "sha256": "bdd9df442e8209370a571727f6b891019f2289bac4c8bbe52c61238b24a47bf5"
+    },
+    "note": "Introduced version. Quotes are the bill's resulting text with struck words left out; the struck text in Sec. 4 includes the loaded-pistol-in-vehicle ban and the unloaded-pistol-in-vehicle lock rule, and in Sec. 21 the under-21 purchase and possession limits (both repealed in effect). Sec. 10 also strikes the 60-day extended wait for some pistol buyers and the separate wait for semiautomatic assault rifles. Sec. 24 repeals 20 sections; only items (12)-(15) are quoted, the others (RCW 9.41.065, .080, .094, .097, .0975, .114, .129, .137, .139, .173, .175, 36.28A.400-.420, 43.43.823) are not. Sec. 6 (RCW 9.41.070), Secs. 8, 9, 11-20, 22-23 not quoted; Sec. 23 re-ranks gun offences in RCW 9.94A.515 and drops bump-fire stock and short-barreled firearm items from some crime names. Sec. 2 findings cite Wash. Const. art. I sec. 24 and the Second Amendment as legislative findings. Effective July 1, 2019 with emergency clause (Sec. 26). Large file; read via grep and targeted sections."
+  },
+  "operative_text": "Sec. 4 (RCW 9.41.050): (2) A person may carry a loaded pistol in a vehicle for the purpose of self-defense, prevention of a felony crime, or protection of the public.\nSec. 10 (RCW 9.41.092): Except as otherwise provided in this chapter, a licensed dealer must deliver any firearm to a purchaser or transferee once the earlier of the following occurs: (1) The results of all required background checks are known and the purchaser or transferee is not prohibited from owning or possessing a firearm under federal or state law; or (2) Ten business days have elapsed from the date the licensed dealer requested the background check.\nSec. 21 (RCW 9.41.240): (1) A person over seventeen years of age may purchase a firearm in accordance with federal law.\nSec. 21 (RCW 9.41.240): (2) A person over seventeen years of age may possess a firearm in any place and circumstance where it is legal according to state law.\nSec. 7 (RCW 9.41.073): (1)(a) A person licensed to carry a pistol in a state other than this state is authorized to carry a concealed pistol in this state if: (i) The licensing state does not issue concealed pistol licenses to persons under twenty-one years of age; and (ii) The licensing state requires mandatory fingerprint-based background checks of criminal history.\nNEW SECTION Sec. 24: The following acts or parts of acts are each repealed: ... (12) RCW 9.41.350 (Voluntary waiver of firearm rights—Procedure—Penalty—Exemption from public disclosure) and 2018 c 145 s 1; (13) RCW 9.41.352 (Voluntary waiver of firearm rights—Form—Availability) and 2018 c 145 s 2; (14) RCW 9.41.360 (Unsafe storage of a firearm) and 2019 c 3 s 5 (Initiative Measure No. 1639, approved November 6, 2018); (15) RCW 9.41.365 (Firearm security and storage—Requirements for dealers) and 2019 c 3 s 6 (Initiative Measure No. 1639, approved November 6, 2018);"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "WA-HB-1774-2019",
+  "scope": "state:wa",
+  "title": "HB1774 (2019-2020 Regular): Concerning extreme risk protection orders.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1774&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1774.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Laurie Jinkins",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ce184542-9397-469f-ba78-8c735bce20fa"
+    },
+    {
+      "name": "Jake Fey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "97b47446-b0ee-4a2c-b4fe-ec8a995356ea"
+    },
+    {
+      "name": "Christine Kilduff",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Timm Ormsby",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "945d0b44-3329-46b2-a39e-47f5fdddc6ed"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1774.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1774-2019.introduced.html",
+      "sha256": "3b768f983806b0f78e1ee20f5a356075b4722539b54d397bdaba04a8fad06e0c"
+    },
+    "note": "Introduced version. Sec. 3 also strikes 'dangerous mental health issues of the respondent' and replaces it with 'behaviors that present an imminent threat of harm to self or others', and renumbers factors. Sec. 1 strikes 'two' and inserts 'one' prior conviction."
+  },
+  "operative_text": "Sec. 1 (RCW 7.94.120): (2) Any person who has in his or her custody or control, purchases, possesses, receives, or attempts to purchase or receive, a firearm with knowledge that he or she is prohibited from doing so by an order issued under this chapter is guilty of a gross misdemeanor, and further is prohibited from having in his or her custody or control, purchasing, possessing, or receiving, or attempting to purchase or receive, a firearm for a period of five years from the date the existing order expires. However, such person is guilty of a class C felony if the person has one or more previous convictions for violating an order issued under this chapter.\nSec. 2 (RCW 7.94.030): (2) A petition for an extreme risk protection order may be brought against a respondent under the age of eighteen years.\nSec. 2 (RCW 7.94.030): (a) Allege that the respondent poses a significant danger of causing personal injury to self or others by having in his or her custody or control, purchasing, possessing, accessing, or receiving a firearm, and be accompanied by an affidavit made under oath stating the specific statements, actions, or facts that give rise to a reasonable fear of future dangerous acts by the respondent;\nSec. 2 (RCW 7.94.030): (13) The court shall give law enforcement priority at any extreme risk protection order calendar because of the importance of immediate temporary removal of firearms in situations of extreme risk and the goal of minimizing the time law enforcement must otherwise wait for a particular case to be called, which can hinder their other patrol and supervisory duties.\nSec. 2 (RCW 7.94.030): (14) Recognizing that an extreme risk protection order may need to be issued outside of normal business hours, courts shall allow law enforcement petitioners to petition after-hours for an ex parte extreme risk protection order using an on-call, after-hours judge, as is done for approval of after-hours search warrants.\nSec. 3 (RCW 7.94.040): (d) Any threat of harm to a person or group of persons because of the respondent's perception of the race, color, religion, ancestry, national origin, generation, sexual orientation, or mental, physical, or sensory handicap of the person or persons;\nSec. 4 (RCW 7.94.060): (7)(a) When an extreme risk protection order is issued against a minor under the age of eighteen, a copy of the order must be served on the parent or guardian of the minor at any address where the minor resides.\nSec. 4 (RCW 7.94.060): (b) The court shall advise the parent or guardian in writing of the legal obligation to safely secure any firearm on the premises and the potential for criminal prosecution if a prohibited person were to obtain access to the firearm."
+}

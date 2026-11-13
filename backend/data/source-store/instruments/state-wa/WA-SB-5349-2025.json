@@ -1,0 +1,39 @@
+{
+  "id": "WA-SB-5349-2025",
+  "scope": "state:wa",
+  "title": "SB5349 (2025-2026 Regular): Exempting a concealed pistol license holder from the prohibition against importing firearms classified as assault rifles.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=5349&Year=2025&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Senate%20Bills/5349.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Phil Fortunato",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d3fad6d8-8022-4c66-b505-4e7a8fc816d7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Senate%20Bills/5349.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5349-2025.introduced.html",
+      "sha256": "5f3afb9805aaee983bb7a2b22cfbe24e708c3eefe247ea3936b72af2ee215666"
+    },
+    "note": "Introduced. Existing (e) (receipt by operation of law upon death) is relettered (f) and the 'or' after (d) is struck; subsection (1) is reprinted unchanged existing law, quoted for context."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.390): (1) No person in this state may manufacture, import, distribute, sell, or offer for sale any assault weapon, except as authorized in this section.\nSec. 1 (RCW 9.41.390): (2)(e) The importation of an assault rifle by a person who, at the time of the transaction, maintains a valid concealed pistol license under RCW 9.41.070; or"
+}

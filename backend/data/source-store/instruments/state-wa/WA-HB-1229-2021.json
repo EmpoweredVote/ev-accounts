@@ -1,0 +1,146 @@
+{
+  "id": "WA-HB-1229-2021",
+  "scope": "state:wa",
+  "title": "HB1229 (2021-2022 Regular): Concerning assault weapons.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1229&year=2021",
+    "http://lawfilesext.leg.wa.gov/Biennium/2021-22/Pdf/Bills/House%20Bills/1229.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Strom Peterson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6341053d-0580-4fbf-85ea-71ddb6b6f838"
+    },
+    {
+      "name": "Laurie Dolan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    },
+    {
+      "name": "Cindy Ryu",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "86e6a2bf-5216-4022-900c-621a8480f2e7"
+    },
+    {
+      "name": "Liz Berry",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "56d6dd6f-4959-4339-be78-e4b1d0083b08"
+    },
+    {
+      "name": "Javier Valdez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    },
+    {
+      "name": "Jake Fey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "97b47446-b0ee-4a2c-b4fe-ec8a995356ea"
+    },
+    {
+      "name": "Alex Ramel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "41ef42e8-fe56-4f82-92e7-eefe85232cd2"
+    },
+    {
+      "name": "Lillian Ortiz-Self",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d97bcc03-4c74-4c9d-9e0f-13ae551ed54c"
+    },
+    {
+      "name": "Jess Bateman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e6d175b-1af0-444c-b373-e5d0a279d240"
+    },
+    {
+      "name": "David Hackney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "447b684b-e885-42c9-9f32-7e6480cb5b98"
+    },
+    {
+      "name": "Lauren Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0e5af9ca-165c-458c-8c65-a89aaf1a8d3e"
+    },
+    {
+      "name": "Steve Bergquist",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f4f7acdf-1761-4cac-82e6-19bf8f6ea525"
+    },
+    {
+      "name": "Shelley Kloba",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b918fb31-108f-49e7-b977-627ce667422d"
+    },
+    {
+      "name": "Sharon Wylie",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5617115e-78d5-4480-9534-aa337612a285"
+    },
+    {
+      "name": "Debra Lekanoff",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c176280e-d886-4b59-b812-e220449ffff1"
+    },
+    {
+      "name": "Nicole Macri",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22d959a5-ec5f-4b92-98d3-85dc219c2c61"
+    },
+    {
+      "name": "Monica Stonier",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3e2c4be-bc12-43c3-9e86-4ba229d44346"
+    },
+    {
+      "name": "Marcus Riccelli",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c3fccc57-8278-43c8-8e54-dc3c78e50bc9"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/House%20Bills/1229.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1229-2021.introduced.html",
+      "sha256": "2caa5e662035e8964f537d336ba69954b6622d9e64aeb4124c3b8f888afe6bfc"
+    },
+    "note": "Version read: Introduced. All sections are new law (no marks). Sec. 2 and Sec. 3 overlap: Sec. 2 grandfathers weapons lawfully possessed on its effective date, while Sec. 3 requires registration with the state patrol for weapons held before January 1, 2022. Definitions of assault weapon and copycat weapon are in Sec. 1 (partly quoted)."
+  },
+  "operative_text": "NEW SECTION Sec. 1 (new RCW chapter 9.41): (b) A semiautomatic, centerfire, or rimfire rifle that has an overall length of less than 30 inches; or\nNEW SECTION Sec. 1 (new RCW chapter 9.41): (c) A conversion kit, part, or combination of parts, from which an assault weapon can be assembled if those parts are in the possession or under the control of the same person.\nNEW SECTION Sec. 2 (new RCW chapter 9.41): (1) No person in this state may manufacture, possess, distribute, import, transfer, sell, offer for sale, purchase, or otherwise transfer any assault weapon except as authorized in this section.\nNEW SECTION Sec. 2 (new RCW chapter 9.41): (3) In order to continue to possess an assault weapon that was legally possessed on the effective date of this section, the person possessing the assault weapon shall possess the assault weapon only on property owned or immediately controlled by the person, or while engaged in the legal use of the assault weapon at a duly licensed firing range, or while engaged in a lawful outdoor recreational activity such as hunting, or while traveling to or from either of these locations for the purpose of engaging in the legal use of the assault weapon, provided that the assault weapon is stored unloaded and in a separate locked container during transport.\nNEW SECTION Sec. 2 (new RCW chapter 9.41): (4) A person who violates this section is guilty of a class C felony punishable under chapter 9A.20 RCW.\nNEW SECTION Sec. 3 (new RCW chapter 9.41): (1) Except as provided in subsection (2) of this section, a person shall not: (a) Transport an assault weapon into Washington state; or (b) Possess, sell, offer to sell, transfer, purchase, or receive an assault weapon.\nNEW SECTION Sec. 3 (new RCW chapter 9.41): (2)(a) A person who lawfully possessed, has a purchase order for, or completed an application to purchase an assault weapon before January 1, 2022, and who has registered the assault weapon with the Washington state patrol may:"
+}

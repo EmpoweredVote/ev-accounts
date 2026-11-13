@@ -1,0 +1,56 @@
+{
+  "id": "WA-HB-1439-2019",
+  "scope": "state:wa",
+  "title": "HB1439 (2019-2020 Regular): Requiring permission to bring a concealed firearm into another person's residence or dwelling place.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1439&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1439.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Beth Doglio",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "45737b89-a83b-421f-9d6c-abc829c7eae0"
+    },
+    {
+      "name": "Laurie Dolan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Nicole Macri",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22d959a5-ec5f-4b92-98d3-85dc219c2c61"
+    },
+    {
+      "name": "Timm Ormsby",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "945d0b44-3329-46b2-a39e-47f5fdddc6ed"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1439.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1439-2019.introduced.html",
+      "sha256": "db544ca3d630d917a82c9f5fc6e020d5a5d7d5fa41aff53b300552c968a1ca5a"
+    },
+    "note": "Introduced."
+  },
+  "operative_text": "NEW SECTION Sec. 1 (new RCW chapter 9.41): (1) It is unlawful for a person to carry a concealed firearm into the residence or dwelling place of another person without first obtaining the express permission of the owner or person in legal control or possession of the residence or dwelling place.\nNEW SECTION Sec. 1 (new RCW chapter 9.41): (2) A person who violates this section is guilty of a misdemeanor punishable under RCW  9A.20.010.\nNEW SECTION Sec. 1 (new RCW chapter 9.41): (3) Upon conviction for a violation of this section, the court shall order the person to surrender any concealed pistol license and prohibit the person from obtaining a concealed pistol license for a period of five years from the date of conviction. The court shall forward the date of conviction and a copy of the person's driver's license or identicard, or comparable information, to the department of licensing within three judicial days after conviction. The department of licensing shall immediately notify the license-issuing authority if the department of licensing's records indicate the convicted person has a concealed pistol license. Upon receipt of the notification, the license-issuing authority shall immediately revoke the person's concealed pistol license for a period of five years from the date of conviction in accordance with RCW  9.41.075.\nSec. 2 (RCW 9.41.075(1)(c)): (c) Conviction of the licensee of an offense under section 1 of this act;"
+}

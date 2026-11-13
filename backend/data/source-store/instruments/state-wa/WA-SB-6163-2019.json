@@ -1,0 +1,85 @@
+{
+  "id": "WA-SB-6163-2019",
+  "scope": "state:wa",
+  "title": "SB6163 (2019-2020 Regular): Concerning unlawful possession of firearms for persons free on bond or personal recognizance pending trial, appeal, or sentencing for felony charges under RCW 46.61.502(6) and 46.61.504(6).",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6163&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6163.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Manka Dhingra",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Patty Kuderer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Lisa Wellman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ff1e922-601b-45f3-a43d-2ef69220f54b"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "Jeannie Darneille",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Frockt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Christine Rolfes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8f96526a-f369-4f45-86ba-a2a3a3ea67f8"
+    },
+    {
+      "name": "Derek Stanford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78230dff-4e33-4d33-8c46-71f00db01858"
+    },
+    {
+      "name": "Claire Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f6c042e3-b785-4bf2-b385-65a34ff616e8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6163.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6163-2019.introduced.html",
+      "sha256": "e8d6a5c3348a54d3e2ae76f157b4f7626979c638452629863ab7413103800a56"
+    },
+    "note": "Introduced version. The only change is the added words in (2)(a)(vii); other text is existing law reprinted unchanged."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.040): (2)(a) A person, whether an adult or juvenile, is guilty of the crime of unlawful possession of a firearm in the second degree, if the person does not qualify under subsection (1) of this section for the crime of unlawful possession of a firearm in the first degree and the person owns, has in his or her possession, or has in his or her control any firearm:\nSec. 1 (RCW 9.41.040): (vii) If the person is free on bond or personal recognizance pending trial, appeal, or sentencing for a serious offense as defined in RCW 9.41.010 or for a felony charge under RCW 46.61.502(6) and 46.61.504(6).\nSec. 1 (RCW 9.41.040): (c) Unlawful possession of a firearm in the second degree is a class C felony punishable according to chapter 9A.20 RCW."
+}

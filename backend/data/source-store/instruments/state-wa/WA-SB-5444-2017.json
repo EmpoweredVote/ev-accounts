@@ -1,0 +1,88 @@
+{
+  "id": "WA-SB-5444-2017",
+  "scope": "state:wa",
+  "title": "SB5444 (2017-2018 Regular): Concerning enhanced background checks and licensure for assault weapons and large capacity magazines.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5444&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/5444-S.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "David Frockt",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sam Hunt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Maralyn Chase",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jeannie Darneille",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Patty Kuderer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "Marko Liias",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eba44d6a-6602-4a90-bef0-44ab12db6109"
+    },
+    {
+      "name": "Kevin Ranker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rebecca Saldaña",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+    },
+    {
+      "name": "Lisa Wellman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ff1e922-601b-45f3-a43d-2ef69220f54b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/5444-S.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5444-2017.comm-sub.html",
+      "sha256": "d63409dbfbd19db70fd5f04dc42e67a577b562221d8b828a91490b3e26c99f4d"
+    },
+    "note": "Version read: Substitute Senate Bill (Comm Sub), HTML copy with marks. Sec. 1 (RCW 9.41.010) adds definitions of 'assault weapon' and 'detachable magazine'. Despite the title, this version has no large capacity magazine rules or new licensure; it extends pistol purchase, record, dealer and under-21 rules to assault weapons. Sec. 8 quote is the sentence as amended (adds an exception for assault weapons to out-of-state rifle/shotgun purchases)."
+  },
+  "operative_text": "Sec. 2 (RCW 9.41.090): (1) In addition to the other requirements of this chapter, no dealer may deliver a pistol or assault weapon to the purchaser thereof until:\nSec. 6 (RCW 9.41.110): (1) No dealer may sell or otherwise transfer, or expose for sale or transfer, or have in his or her possession with intent to sell, or otherwise transfer, any pistol or assault weapon without being licensed as provided in this section.\nSec. 7 (RCW 9.41.113): (4) No person may sell or transfer an assault weapon to a person under twenty-one years of age.\nSec. 8 (RCW 9.41.124): Residents of a state other than Washington may purchase rifles and shotguns, except those firearms defined as assault weapons, in Washington: PROVIDED, That such residents conform to the applicable provisions of the federal Gun Control Act of 1968, Title IV, Pub. L. 90-351 as administered by the United States secretary of the treasury: AND PROVIDED FURTHER, That such residents are eligible to purchase or possess such weapons in Washington and in the state in which such persons reside: AND PROVIDED FURTHER, That such residents are subject to the procedures and background checks required by this chapter.\nSec. 10 (RCW 9.41.240): (1) A person under twenty-one years of age may not purchase a pistol pursuant to Title 18 U.S.C. Sec. 922(b)(1) or an assault weapon pursuant to RCW  9.41.113 and this section.\nSec. 10 (RCW 9.41.240): (2) Unless an exception under RCW  9.41.042,  9.41.050, or  9.41.060 applies, a person at least eighteen years of age, but less than twenty-one years of age, may possess a pistol or assault weapon only:"
+}

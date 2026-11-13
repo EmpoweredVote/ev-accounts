@@ -1,0 +1,103 @@
+{
+  "id": "WA-HB-1315-2019",
+  "scope": "state:wa",
+  "title": "HB1315 (2019-2020 Regular): Concerning concealed pistol license training requirements.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1315&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1315-S.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "John Lovick",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "47ac1908-3715-4599-82f6-606aaf2d9fe6"
+    },
+    {
+      "name": "Laurie Jinkins",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ce184542-9397-469f-ba78-8c735bce20fa"
+    },
+    {
+      "name": "Cindy Ryu",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "86e6a2bf-5216-4022-900c-621a8480f2e7"
+    },
+    {
+      "name": "Tana Senn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Roger Goodman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "de6d7929-66dd-4166-998a-479cfa264ce5"
+    },
+    {
+      "name": "Christine Kilduff",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Steve Bergquist",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f4f7acdf-1761-4cac-82e6-19bf8f6ea525"
+    },
+    {
+      "name": "Shelley Kloba",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b918fb31-108f-49e7-b977-627ce667422d"
+    },
+    {
+      "name": "Derek Stanford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78230dff-4e33-4d33-8c46-71f00db01858"
+    },
+    {
+      "name": "Lauren Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0e5af9ca-165c-458c-8c65-a89aaf1a8d3e"
+    },
+    {
+      "name": "Amy Walen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "be3c2a24-1576-4636-9374-18fc77a8513f"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1315-S.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1315-2019.comm-sub.html",
+      "sha256": "eb0335d676b288c342bb27f02a5c49035c5b5a18cdb54cbc32f6f8368f96a7a0"
+    },
+    "note": "Substitute House Bill (Comm Sub), HTML with marks. Also restructures RCW 9.41.070: moves the 30/60-day issuance deadlines into (1)(a)-(b), replaces 'applicant's constitutional right to bear arms shall not be denied' with 'An application ... shall not be denied', lists application contents in (7)-(8), and renumbers. The (3)(a)(viii) and (3)(b), (3)(c)(ii)-(iii), (3)(d) items are omitted from the quote for length."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.070): (2)(h) Has not provided proof that he or she has completed, or is statutorily exempt from completing, a recognized firearms safety training program within the last five years as provided in subsection (3) of this section.\nSec. 1 (RCW 9.41.070): (3)(a) A person applying for a concealed pistol license must provide proof that he or she has completed a recognized firearms safety training program within the last five years that, at a minimum, includes eight hours of instruction on:\nSec. 1 (RCW 9.41.070): (i) Basic firearms safety rules;\nSec. 1 (RCW 9.41.070): (ii) Firearms and children, including safe storage of firearms and talking to children about firearms safety;\nSec. 1 (RCW 9.41.070): (iii) Firearms and suicide prevention;\nSec. 1 (RCW 9.41.070): (iv) Safe storage of firearms to prevent unauthorized access and use;\nSec. 1 (RCW 9.41.070): (v) Safe handling of firearms;\nSec. 1 (RCW 9.41.070): (vi) State and federal firearms laws, including prohibited firearms transfers;\nSec. 1 (RCW 9.41.070): (vii) State laws pertaining to the use of deadly force for self-defense;\nSec. 1 (RCW 9.41.070): (ix) Live-fire shooting exercises on a firing range that include a demonstration by the applicant of the safe handling of, and shooting proficiency with, a pistol.\nSec. 1 (RCW 9.41.070): (c) The firearms safety training requirement of this subsection shall not apply to:\nSec. 1 (RCW 9.41.070): (i) An applicant who is a peace officer certified in accordance with RCW  43.101.095(1);\nNEW SECTION Sec. 2 (effective date): This act takes effect January 1, 2021."
+}

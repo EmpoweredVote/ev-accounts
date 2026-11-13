@@ -1,0 +1,74 @@
+{
+  "id": "WA-HB-1026-2021",
+  "scope": "state:wa",
+  "title": "HB1026 (2021-2022 Regular): Concerning the restoration of the right to possess a firearm.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1026&year=2021",
+    "http://lawfilesext.leg.wa.gov/Biennium/2021-22/Pdf/Bills/House%20Bills/1026.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Amy Walen",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "be3c2a24-1576-4636-9374-18fc77a8513f"
+    },
+    {
+      "name": "Javier Valdez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    },
+    {
+      "name": "Mari Leavitt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4c8b65f9-faab-4948-acc8-ab7a11769c15"
+    },
+    {
+      "name": "David Hackney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "447b684b-e885-42c9-9f32-7e6480cb5b98"
+    },
+    {
+      "name": "Steve Kirby",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sharon Tomiko Santos",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d5c6e6e4-c474-41fa-ab96-bd237c8ff4de"
+    },
+    {
+      "name": "Nicole Macri",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22d959a5-ec5f-4b92-98d3-85dc219c2c61"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/House%20Bills/1026.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1026-2021.introduced.html",
+      "sha256": "7d7a550106c8f0a98722bd4bdf043fb3205832ca5562f946217922050600465f"
+    },
+    "note": "Introduced version (as-filed). Sec. 2 strikes the existing RCW 9.41.040(4)(a)-(b) restoration petition (5 years felony / 3 years nonfelony) and replaces it with the new section; Sec. 3 (RCW 9.41.047) edits surrender and notice wording and cross-reference to new section 1(1)(b)-(g). Section 1 is new law without marks."
+  },
+  "operative_text": "Sec. 1 (new RCW section in chapter 9.41): (1) A person who is prohibited from possession of a firearm under RCW 9.41.040 and who has not been convicted or found not guilty by reason of insanity of a felony sex offense; a class A felony; a felony offense in which a firearm was used, displayed, or threatened to be used; or a felony offense with a maximum sentence of at least 20 years may petition a superior court to have his or her right to possess a firearm restored if:\nSec. 1 (new RCW section in chapter 9.41): (b) The person has spent three consecutive years, immediately preceding the petition, in the community without being convicted or found not guilty by reason of insanity of any felony, gross misdemeanor, or misdemeanor crime if the person was convicted or found not guilty by reason of insanity for a nonfelony offense;\nSec. 1 (new RCW section in chapter 9.41): (c) The person has spent five consecutive years, immediately preceding the petition, in the community without being convicted or found not guilty by reason of insanity of any felony, gross misdemeanor, or misdemeanor crime if the person was convicted or found not guilty by reason of insanity of a class C felony offense;\nSec. 1 (new RCW section in chapter 9.41): (d) The person has spent 10 consecutive years, immediately preceding the petition, in the community without being convicted or found not guilty by reason of insanity of any felony, gross misdemeanor, or misdemeanor crime if the person was convicted or found not guilty by reason of insanity of a class B felony offense;\nSec. 1 (new RCW section in chapter 9.41): (g) An extreme risk, domestic violence, stalking, or sexual assault protection order has not been issued against the person in the five years immediately preceding the petition.\nSec. 2 (RCW 9.41.040): (8) A person may petition to restore the right to possess a firearm as provided in section 1 of this act."
+}

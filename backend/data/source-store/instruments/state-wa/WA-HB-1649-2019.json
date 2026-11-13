@@ -1,0 +1,88 @@
+{
+  "id": "WA-HB-1649-2019",
+  "scope": "state:wa",
+  "title": "HB1649 (2019-2020 Regular): Establishing an exemption from background check requirements for firearms sales or transfers between concealed pistol license holders.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1649&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1649.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Robert Sutherland",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bd2e2e7a-6352-41ec-ad9d-c55002d132aa"
+    },
+    {
+      "name": "Morgan Irwin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brian Blake",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Steve Kirby",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Matt Shea",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brad Klippert",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mike Chapman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cf38d9ea-d72d-4a44-9d9c-efd9cd9c432f"
+    },
+    {
+      "name": "Skyler Rude",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a2960d00-9348-4a98-82b9-2cf2320669b6"
+    },
+    {
+      "name": "Carolyn Eslick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e1538de2-4e22-44cc-a50f-02fe7e2e9f2e"
+    },
+    {
+      "name": "Andrew Barkis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ea4763b-1a8a-4920-b4ef-55a5c35aa3d0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1649.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1649-2019.introduced.html",
+      "sha256": "52883c700456c69383aa9439bde83772c6f3759797855445407242c3ef205bdf"
+    },
+    "note": "Introduced version. Change is new subsection (4)(j); the rest of RCW 9.41.113 is reprinted unchanged, and the bill strikes only the word 'or' at the end of (4)(h) and moves it to (4)(i)."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.113): (1) All firearm sales or transfers, in whole or part in this state including without limitation a sale or transfer where either the purchaser or seller or transferee or transferor is in Washington, shall be subject to background checks unless specifically exempted by state or federal law.\nSec. 1 (RCW 9.41.113): (4) This section does not apply to:\nSec. 1 (RCW 9.41.113): (i) A sale or transfer when the purchaser or transferee is a licensed collector and the firearm being sold or transferred is a curio or relic; or\nSec. 1 (RCW 9.41.113): (j) The sale or transfer of a firearm where the seller or transferor and the purchaser or transferee both possess a valid Washington state concealed pistol license"
+}

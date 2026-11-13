@@ -1,0 +1,75 @@
+{
+  "id": "WA-SB-5140-2025",
+  "scope": "state:wa",
+  "title": "SB5140 (2025-2026 Regular): Enhancing requirements relating to the purchase, transfer, and possession of firearms.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=5140&Year=2025&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Senate%20Bills/5140.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Marko Liias",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eba44d6a-6602-4a90-bef0-44ab12db6109"
+    },
+    {
+      "name": "Javier Valdez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    },
+    {
+      "name": "Jessica Bateman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e6d175b-1af0-444c-b373-e5d0a279d240"
+    },
+    {
+      "name": "T'wina Nobles",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436194e1-479e-4066-8d99-f325fd6bb880"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "Rebecca Saldana",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+    },
+    {
+      "name": "Derek Stanford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78230dff-4e33-4d33-8c46-71f00db01858"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Senate%20Bills/5140.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5140-2025.introduced.html",
+      "sha256": "b640663a21ea4a03e59211a19d46dcb96f7e81b22c3d24b294d9b0652d79d401"
+    },
+    "note": "Introduced version (SB 5140, 2025-26; read-first-time 2025-01-06); effective date in text is November 1, 2026 (Sec. 19). Large file; quoted the permit core only. Other parts not quoted: Sec. 2(2)-(5),(8)-(12),(14)-(16) application, renewal and reports; Sec. 3 training standards (RCW 9.41.1132); Sec. 4 state patrol certification of trainers; Sec. 7, 9-11, 13-17 conforming changes, delayed-transfer rules, superior court appeal (Sec. 12), recordkeeping of all transfers (Sec. 13). Sec. 1 also strikes the old purchaser training-proof requirement and adds delay rules for outstanding warrants and open charges."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.090(1)): (1) In addition to the other requirements of this chapter, no dealer may deliver a firearm to the purchaser or transferee thereof until: (a) The purchaser or transferee produces a valid permit to purchase firearms under section 2 of this act;\nNEW SECTION Sec. 2 (new section, chapter 9.41 RCW): (1) A person may apply for a permit to purchase firearms with the Washington state patrol firearms background check program. (c) A certificate of completion of a certified firearms safety training program within the last five years, or proof that the applicant is exempt from the training requirement, as provided in RCW 9.41.1132; and (6) The Washington state patrol firearms background check program shall issue a permit to purchase firearms to an eligible applicant, or deny the completed application, within 30 days of the date the completed application was filed, or within 60 days of when the completed application was filed if the applicant does not have a valid permanent Washington driver's license or Washington state identification card or has not been a resident of the state for the previous consecutive 90 days, unless additional time is necessary in order to obtain all required information and records needed for determining the applicant's eligibility for the permit. (7)(a) A permit to purchase firearms shall be issued unless the applicant is disqualified because the applicant: (i) Is prohibited from purchasing or possessing a firearm under state or federal law; (v) Has failed to produce a certificate of completion of a certified firearms safety training program within the last five years, or proof that the applicant is exempt from the training requirement. (11)(a) A permit to purchase firearms is valid for a period of five years. A person may renew a permit to purchase firearms by applying for renewal in accordance with the requirements of this section within 90 days before or after the expiration date of the permit. A renewed permit to purchase firearms takes effect on the expiration date of the prior permit to purchase firearms and is valid for a period of five years. (13) A permit to purchase firearms issued under this section does not authorize the holder of the permit to carry a concealed pistol.\nSec. 8 (RCW 9.41.070(1)(h)): (h) He or she has failed to produce a certificate of completion from a certified concealed carry firearms safety training program, as provided under subsection (5) of this section and section 4 of this act, or proof that the applicant is exempt from the training requirement."
+}

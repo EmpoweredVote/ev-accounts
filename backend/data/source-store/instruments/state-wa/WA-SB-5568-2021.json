@@ -1,0 +1,79 @@
+{
+  "id": "WA-SB-5568-2021",
+  "scope": "state:wa",
+  "title": "SB5568 (2021-2022 Regular): Concerning preemption of municipal laws restricting the open carry of weapons.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5568&year=2021",
+    "http://lawfilesext.leg.wa.gov/Biennium/2021-22/Pdf/Bills/Senate%20Bills/5568-S.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Patty Kuderer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Manka Dhingra",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Karen Keiser",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Liz Lovelett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "207ff383-f26e-462b-a554-72472b52712a"
+    },
+    {
+      "name": "Joe Nguyen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rebecca Saldaña",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+    },
+    {
+      "name": "Derek Stanford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78230dff-4e33-4d33-8c46-71f00db01858"
+    },
+    {
+      "name": "Claire Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f6c042e3-b785-4bf2-b385-65a34ff616e8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/Senate%20Bills/5568-S.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5568-2021.comm-sub.html",
+      "sha256": "66ff9cb3585b691edb33e643f0b0bd8b68848157a29f5f2c2fddfbbc644da571"
+    },
+    "note": "Version read: Substitute (Comm Sub) SB 5568, 2021; not enrolled. Sec. 1 takes effect immediately and expires July 1, 2022; Sec. 2 carries the same added text into the version of RCW 9.41.300 that takes effect July 1, 2022. The added text is subsection (3)(c) of the reprinted RCW 9.41.300."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.300): (c) Restricting the open carry of a firearm or other weapon at public meetings held by a public agency as defined by RCW 42.30.020, at buildings or facilities owned or operated by a city, town, county, or other municipality, or at city or municipal parks within their respective jurisdictions. Any such prohibition shall be indicated by prominent signs at the public meeting, building, facility, or park providing notice that firearms and other weapons are prohibited.\nSec. 2 (RCW 9.41.300): (c) Restricting the open carry of a firearm or other weapon at public meetings held by a public agency as defined by RCW 42.30.020, at buildings or facilities owned or operated by a city, town, county, or other municipality, or at city or municipal parks within their respective jurisdictions. Any such prohibition shall be indicated by prominent signs at the public meeting, building, facility, or park providing notice that firearms and other weapons are prohibited."
+}

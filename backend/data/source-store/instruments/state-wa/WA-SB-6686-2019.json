@@ -1,0 +1,89 @@
+{
+  "id": "WA-SB-6686-2019",
+  "scope": "state:wa",
+  "title": "SB6686 (2019-2020 Regular): Prohibiting the possession of weapons on state capitol grounds.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6686&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6686.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mona Das",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lisa Wellman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ff1e922-601b-45f3-a43d-2ef69220f54b"
+    },
+    {
+      "name": "Patty Kuderer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Reuven Carlyle",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sam Hunt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Annette Cleveland",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "14332488-3986-4e86-abc2-666b7a3f2dd5"
+    },
+    {
+      "name": "David Frockt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Liz Lovelett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "207ff383-f26e-462b-a554-72472b52712a"
+    },
+    {
+      "name": "Claire Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f6c042e3-b785-4bf2-b385-65a34ff616e8"
+    },
+    {
+      "name": "Rebecca Saldaña",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6686.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6686-2019.introduced.html",
+      "sha256": "64954d8900df328780b794e7b82fc13dd8662d27df7e50a9016708ee76c59be4"
+    },
+    "note": "Version read: Introduced. Adds (1)(f) to RCW 9.41.300 and a definition of state capitol grounds; it also extends the existing correctional-personnel exemption in subsection (7) to (1)(f) (not quoted)."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.300): (1) It is unlawful for any person to enter the following places when he or she knowingly possesses or knowingly has under his or her control a weapon:\nSec. 1 (RCW 9.41.300): (f) State capitol grounds or any building located on state capitol grounds.\nSec. 1 (RCW 9.41.300): (a) \"State capitol grounds\" means buildings and land owned by the state and otherwise designated as state capitol grounds, including the west capitol campus, the east capitol campus, the north capitol campus, the Tumwater campus, the Lacey campus, Sylvester Park, Centennial Park, the Old Capitol Building, and Capitol Lake.\nSec. 1 (RCW 9.41.300): (b) \"Weapon\" as used in this section means any firearm, explosive as defined in RCW 70.74.010, or instrument or weapon listed in RCW 9.41.250."
+}

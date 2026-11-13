@@ -1,0 +1,75 @@
+{
+  "id": "WA-SB-6055-2025",
+  "scope": "state:wa",
+  "title": "SB6055 (2025-2026 Regular): Concerning firearms background check.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=6055&Year=2025&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Senate%20Bills/6055.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "T'wina Nobles",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436194e1-479e-4066-8d99-f325fd6bb880"
+    },
+    {
+      "name": "Steven Conway",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "054dd953-bc6b-44de-8173-00efab5a9c04"
+    },
+    {
+      "name": "Manka Dhingra",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Marko Liias",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eba44d6a-6602-4a90-bef0-44ab12db6109"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "Yasmin Trudeau",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c09a622c-ec49-40e9-87db-ead331f5ab9e"
+    },
+    {
+      "name": "Claire Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f6c042e3-b785-4bf2-b385-65a34ff616e8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Senate%20Bills/6055.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6055-2025.introduced.html",
+      "sha256": "0ea2f3802ab66f58a848cacf422b43a027d5996d26e7b5ed831e0e6b236de0cb"
+    },
+    "note": "Introduced version (2026 session). Strikes 'The fee must be set at an amount necessary to cover the annual costs of operating and maintaining the firearm background check system but shall not exceed eighteen dollars.' in both Sec. 1 and Sec. 2. Sec. 1 expires May 1, 2027 and Sec. 2 takes effect May 1, 2027 (two versions of the same section for a 2024 c 289 / 2025 c 370 amendment overlap). The rest of the reprinted section is existing law."
+  },
+  "operative_text": "Sec. 1 (RCW 43.43.580): (4)(a) The Washington state patrol shall require a dealer to charge each firearm purchaser or transferee a fee for performing background checks in connection with firearms transfers. The fee must be set at an amount reasonably calculated to cover the direct and indirect costs to the Washington state patrol incurred in administering the firearm background check program.\nSec. 2 (RCW 43.43.580): (4)(a) The Washington state patrol shall require a dealer to charge each firearm purchaser or transferee a fee for performing background checks in connection with firearms transfers. The fee must be set at an amount reasonably calculated to cover the direct and indirect costs to the Washington state patrol incurred in administering the firearm background check program."
+}

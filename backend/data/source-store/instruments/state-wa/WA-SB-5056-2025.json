@@ -1,0 +1,57 @@
+{
+  "id": "WA-SB-5056-2025",
+  "scope": "state:wa",
+  "title": "SB5056 (2025-2026 Regular): Concerning Washington state patrol providing firearm background checks when state record systems are unavailable.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=5056&Year=2025&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Senate%20Bills/5056.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Keith Wagoner",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3db3f064-dd6e-4bca-9200-3d4395972253"
+    },
+    {
+      "name": "Leonard Christian",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0e935fed-534e-42b0-a5ad-74f4199ff6df"
+    },
+    {
+      "name": "Phil Fortunato",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d3fad6d8-8022-4c66-b505-4e7a8fc816d7"
+    },
+    {
+      "name": "Chris Gildon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d997402c-ee18-4544-b770-ac13a777b601"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Senate%20Bills/5056.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5056-2025.introduced.html",
+      "sha256": "1dde0656c6310814ce28bf2836365f95858737f4ea41a91d15aa5b350dc44cc8"
+    },
+    "note": "Introduced version. Sec. 1 strikes old (3) (hold on delivery under RCW 9.41.090 (4) and (5)) and an intent sentence in (4)(a). Sec. 2 renumbers later subsections."
+  },
+  "operative_text": "Sec. 1 (RCW 43.43.580): (3) Notwithstanding subsection (2)(b)(i) through (iv) of this section, whenever a Washington state record system is inaccessible or unavailable in such a manner as to prevent the Washington state patrol background check program from complying with subsection (2)(b)(i) through (iv) of this section for a period of seven consecutive days, the Washington state patrol background check program may process the background check by complying with subsection (2)(c) of this section and conducting a check of:\nSec. 1 (RCW 43.43.580): (a) The national instant criminal background check system;\nSec. 1 (RCW 43.43.580): (b) Any relevant Washington state record systems that are available at the time of the background check; and\nSec. 2 (RCW 9.41.090): (3) Notwithstanding subsection (2) of this section, whenever a Washington state record system is inaccessible or unavailable in such a manner as to prevent the Washington state patrol background check program from conducting a background check for a period of seven consecutive days, the Washington state patrol background check program may process the background check by and conducting a check of: The national instant criminal background check system; any relevant Washington state record systems that are available at the time of the background check; and any other relevant agencies, databases, or resources as appropriate."
+}

@@ -1,0 +1,69 @@
+{
+  "id": "WA-HB-1346-2019",
+  "scope": "state:wa",
+  "title": "HB1346 (2019-2020 Regular): Preventing lead exposure in young people.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1346&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1346.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gerry Pollet",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    },
+    {
+      "name": "Laurie Jinkins",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ce184542-9397-469f-ba78-8c735bce20fa"
+    },
+    {
+      "name": "Cindy Ryu",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "86e6a2bf-5216-4022-900c-621a8480f2e7"
+    },
+    {
+      "name": "Lauren Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0e5af9ca-165c-458c-8c65-a89aaf1a8d3e"
+    },
+    {
+      "name": "Sharon Wylie",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5617115e-78d5-4480-9534-aa337612a285"
+    },
+    {
+      "name": "June Robinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7ac92b63-d489-45d5-a85f-c0deac9d8508"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1346.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1346-2019.introduced.html",
+      "sha256": "d137e47bef139ac10a255bc556e0464d2f3bde1d8087a46396fcb5878f6bd1d0"
+    },
+    "note": "Introduced version. Secs. 3-4 give the health department and local health departments inspection and enforcement powers; treated as part of the same ammunition rule. Parents or guardians may give ammunition to a minor (Sec. 2(3)(a))."
+  },
+  "operative_text": "NEW SECTION Sec. 2 (new RCW section, chapter 9.41): (1)(a) It is unlawful for any person to sell, transfer, give, or otherwise make available any ammunition other than nonlead ammunition to a person who is under the age of twenty-one years. For the purposes of this section, \"nonlead ammunition\" means ammunition that does not contain any lead content, excluding trace amounts of lead.\nNEW SECTION Sec. 2 (new RCW section, chapter 9.41): (1)(b) It is unlawful for any person who sells, or offers for sale, ammunition to knowingly or intentionally represent ammunition containing more than trace amounts of lead as nonlead ammunition.\nNEW SECTION Sec. 2 (new RCW section, chapter 9.41): (2)(b) A dealer, firearm range, or other entity or person who sells, or offers for sale, ammunition must post the warning sign and make available to customers the handout developed by the department of health under section 3 of this act relating to the adverse health effects and risks of lead exposure arising from the use of lead ammunition while engaged in sport shooting activities.\nNEW SECTION Sec. 2 (new RCW section, chapter 9.41): (4) A person who violates this section is subject to the following penalties: (a) A first or second violation of this section is a civil infraction subject to a penalty of two hundred fifty dollars. (b) A third or subsequent violation of this section is a civil infraction subject to a penalty of one thousand dollars."
+}

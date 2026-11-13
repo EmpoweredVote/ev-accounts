@@ -1,0 +1,97 @@
+{
+  "id": "WA-HB-1024-2019",
+  "scope": "state:wa",
+  "title": "HB1024 (2019-2020 Regular): Prohibiting a government database of law abiding owners of legal firearms.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1024&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1024.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jim Walsh",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0f598558-61ab-4010-a0fd-e7c54f688a1a"
+    },
+    {
+      "name": "Brian Blake",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Luanne Van Werven",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tom Dent",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d4e6e041-dc18-4415-9201-1a9bd18dea8b"
+    },
+    {
+      "name": "Vicki Kraft",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bob McCaslin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Matt Shea",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Morgan Irwin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ed Orcutt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "642ee2f7-b15b-47b5-b71b-d86670e85e4e"
+    },
+    {
+      "name": "Brandon Vick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Andrew Barkis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ea4763b-1a8a-4920-b4ef-55a5c35aa3d0"
+    },
+    {
+      "name": "Jesse Young",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1024.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1024-2019.introduced.html",
+      "sha256": "9cae8000ebb0c9ceaee47fb1d02b206d3dd3946092e02b72bc8bbf999453a36c"
+    },
+    "note": "Introduced version. Bill also strikes the existing allowance to keep pistol purchase applications and transfer records in subsection (1)."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.129): (2) The department of licensing shall not keep copies or records of applications to purchase pistols provided for in RCW 9.41.090 or copies or records of pistol transfers provided for in RCW 9.41.110.  The department of licensing shall eliminate from any of its databases any copies or records of pistol purchase applications or pistol transfers maintained by the department of licensing."
+}

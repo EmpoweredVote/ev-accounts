@@ -1,0 +1,65 @@
+{
+  "id": "WA-HB-2941-2019",
+  "scope": "state:wa",
+  "title": "HB2941 (2019-2020 Regular): Protecting the right to keep and bear arms.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=2941&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2941.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Matt Shea",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jim Walsh",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0f598558-61ab-4010-a0fd-e7c54f688a1a"
+    },
+    {
+      "name": "Robert Sutherland",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bd2e2e7a-6352-41ec-ad9d-c55002d132aa"
+    },
+    {
+      "name": "Bob McCaslin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jesse Young",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bill Jenkin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2941.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2941-2019.introduced.html",
+      "sha256": "5dba0375aa5a619d1f884ed13a58afebb308b6297586d141504702bea37cd2a8"
+    },
+    "note": "Introduced version. Sec. 2 repeals all of RCW 7.94.010-.150 and .900 (Initiative 1491); list abridged here. Sec. 1 (RCW 10.31.100) strikes the warrantless-arrest duty for violating an extreme risk protection order, a conforming change."
+  },
+  "operative_text": "NEW SECTION Sec. 2 (repeal, chapter 7.94 RCW): The following acts or parts of acts are each repealed:\nNEW SECTION Sec. 2 (repeal, chapter 7.94 RCW): (4) RCW 7.94.040 (Hearings on petition—Grounds for order issuance) and 2019 c 246 s 3 & 2017 c 3 s 5 (Initiative Measure No. 1491, approved November 8, 2016);\nNEW SECTION Sec. 2 (repeal, chapter 7.94 RCW): (9) RCW 7.94.090 (Firearms—Surrender) and 2017 c 3 s 10 (Initiative Measure No. 1491, approved November 8, 2016);\nNEW SECTION Sec. 2 (repeal, chapter 7.94 RCW): (10) RCW 7.94.100 (Firearms—Return—Disposal) and 2017 c 3 s 11 (Initiative Measure No. 1491, approved November 8, 2016);\nNEW SECTION Sec. 2 (repeal, chapter 7.94 RCW): (12) RCW 7.94.120 (Penalties) and 2017 c 3 s 13 (Initiative Measure No. 1491, approved November 8, 2016);"
+}

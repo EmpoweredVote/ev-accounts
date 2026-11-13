@@ -1,0 +1,109 @@
+{
+  "id": "WA-SB-6004-2023",
+  "scope": "state:wa",
+  "title": "SB6004 (2023-2024 Regular): Enhancing requirements for the purchase or transfer of firearms.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=6004&Year=2023&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2023-24/Pdf/Bills/Senate%20Bills/6004.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Marko Liias",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eba44d6a-6602-4a90-bef0-44ab12db6109"
+    },
+    {
+      "name": "Yasmin Trudeau",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c09a622c-ec49-40e9-87db-ead331f5ab9e"
+    },
+    {
+      "name": "Manka Dhingra",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Noel Frame",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4991ee01-0a35-454f-bdf6-bb2f34cf1c30"
+    },
+    {
+      "name": "Samuel Hunt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Karen Keiser",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Patty Kuderer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "T'wina Nobles",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436194e1-479e-4066-8d99-f325fd6bb880"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "Rebecca Saldana",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+    },
+    {
+      "name": "Derek Stanford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78230dff-4e33-4d33-8c46-71f00db01858"
+    },
+    {
+      "name": "Javier Valdez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    },
+    {
+      "name": "Claire Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f6c042e3-b785-4bf2-b385-65a34ff616e8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Senate%20Bills/6004.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6004-2023.introduced.html",
+      "sha256": "1700267cd73c0b70d607cb152294401ced7af5e740050ff6525db5fcdb3eeeee"
+    },
+    "note": "Introduced version. 36 sections; takes effect January 1, 2026 (Sec. 36). Sec. 3 also adds live-fire training to the course. Sec. 5-35 extend existing license, protection-order, surrender, extreme risk order and dealer provisions to cover the new permit. Permit fee is $28 (Sec. 2(11)(b)), not quoted."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.090): (a) The purchaser produces a valid permit to purchase firearms under section 2 of this act;\nNEW SECTION Sec. 2 (new RCW section in chapter 9.41): (1) A person may apply for a permit to purchase firearms with the Washington state patrol firearms background check program.\nNEW SECTION Sec. 2 (new RCW section in chapter 9.41): (2) An applicant for a permit to purchase firearms must submit to the Washington state patrol firearms background check program:\nNEW SECTION Sec. 2 (new RCW section in chapter 9.41): (b) A complete set of fingerprints taken by the local law enforcement agency in the jurisdiction in which the applicant resides;\nNEW SECTION Sec. 2 (new RCW section in chapter 9.41): (c) A certificate of completion of a certified firearms safety training program within the last five years, or proof that the applicant is exempt from the training requirement, as provided in RCW  9.41.1132; and\nNEW SECTION Sec. 2 (new RCW section in chapter 9.41): (6) The Washington state patrol firearms background check program shall issue a permit to purchase firearms to an eligible applicant, or deny the application, within 30 days of the date the application was filed, or within 60 days of when the application was filed if the applicant does not have a valid permanent Washington driver's license or Washington state identification card or has not been a resident of the state for the previous consecutive 90 days.\nNEW SECTION Sec. 2 (new RCW section in chapter 9.41): (11)(a) A permit to purchase firearms is valid for a period of five years.\nNEW SECTION Sec. 2 (new RCW section in chapter 9.41): (13) A permit to purchase firearms issued under this section does not authorize the holder of the permit to carry a concealed pistol.\nNEW SECTION Sec. 2 (new RCW section in chapter 9.41): (14) The Washington state patrol firearms background check program shall revoke a permit to purchase firearms on the occurrence of any act or condition that would prevent the issuance of a permit to purchase firearms.\nSec. 3 (RCW 9.41.1132): (1) A person applying for a permit to purchase firearms must provide a certificate of completion of a certified firearms safety training program within the last five years that, at a minimum, includes instruction on:\nNEW SECTION Sec. 4 (new RCW section in chapter 43.43): The Washington state patrol shall establish a program to provide certifications for firearms safety training programs that meet the requirements of RCW  9.41.1132, and to require certified firearms safety programs to apply for recertification every five years."
+}

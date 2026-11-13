@@ -1,0 +1,92 @@
+{
+  "id": "WA-SB-5963-2023",
+  "scope": "state:wa",
+  "title": "SB5963 (2023-2024 Regular): Concerning insurance requirements relating to the ownership of certain deadly weapons.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=5963&Year=2023&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2023-24/Pdf/Bills/Senate%20Bills/5963.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Patty Kuderer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Javier Valdez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    },
+    {
+      "name": "Samuel Hunt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Liz Lovelett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "207ff383-f26e-462b-a554-72472b52712a"
+    },
+    {
+      "name": "T'wina Nobles",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436194e1-479e-4066-8d99-f325fd6bb880"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "Derek Stanford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78230dff-4e33-4d33-8c46-71f00db01858"
+    },
+    {
+      "name": "Yasmin Trudeau",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c09a622c-ec49-40e9-87db-ead331f5ab9e"
+    },
+    {
+      "name": "Lisa Wellman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ff1e922-601b-45f3-a43d-2ef69220f54b"
+    },
+    {
+      "name": "Claire Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f6c042e3-b785-4bf2-b385-65a34ff616e8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Senate%20Bills/5963.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5963-2023.introduced.html",
+      "sha256": "7387ceb15c5461044e509d92767643b107a11ad3eea89489ea2789bb5b7f021f"
+    },
+    "note": "Introduced version (HTML copy). Sec. 2 (surplus line brokers, chapter 48.15) mirrors Sec. 3. Effective January 1, 2025."
+  },
+  "operative_text": "NEW SECTION Sec. 1 (new RCW section, chapter 9.41): (1) A person who owns a firearm shall obtain and continuously maintain in full force and effect a residential dwelling policy from an insurer that is authorized to do business in this state, covering losses or damages resulting from the accidental or unintentional discharge of the firearm including, but not limited to, death or injury to persons who are not an insured person under the policy and property damage.\nNEW SECTION Sec. 1 (new RCW section, chapter 9.41): (3) A person who owns a firearm shall keep valid and current written evidence of the coverage described in subsection (1) of this section readily available at the location where each firearm is stored.\nNEW SECTION Sec. 3 (new RCW section, chapter 48.17): (1) Every insurance producer licensed to do business in this state, prior to the sale of a new residential dwelling policy or renewing a residential dwelling policy, shall ask whether any of the prospective or named insureds on the policy contract own a firearm."
+}

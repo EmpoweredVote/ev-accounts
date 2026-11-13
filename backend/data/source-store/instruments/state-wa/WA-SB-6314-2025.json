@@ -1,0 +1,45 @@
+{
+  "id": "WA-SB-6314-2025",
+  "scope": "state:wa",
+  "title": "SB6314 (2025-2026 Regular): Concerning the regulation of firearm manufacturing.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=6314&Year=2025&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Senate%20Bills/6314.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Javier Valdez",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    },
+    {
+      "name": "T'wina Nobles",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436194e1-479e-4066-8d99-f325fd6bb880"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Senate%20Bills/6314.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6314-2025.introduced.html",
+      "sha256": "83cf1fd8da1b2d8a4aa73d600fb251e73c76ee8a22a3bfa5e14e4fb11286f52d"
+    },
+    "note": "Introduced version (header names the .htm copy; marks read). Sec. 2 and Sec. 3 are the definitions (Sec. 2 expires June 30, 2027; Sec. 3 takes effect then); definitions not quoted. Several sections add consumer-protection-act findings tying violations to chapter 19.86 RCW (not quoted); treated as enforcement of the bill's own gun rules."
+  },
+  "operative_text": "Sec. 4 (RCW 9.41.190): (a) Manufacture, including by use of a three-dimensional printer, computer numerical control (CNC) milling machine, or other means, or own, buy, sell, loan, furnish, transport, or have in possession or under control, any machine gun, bump-fire stock, undetectable firearm, short-barreled shotgun, or short-barreled rifle;\nSec. 4 (RCW 9.41.190): (d) Manufacture, including by use of a three-dimensional printer, computer numerical control (CNC) milling machine, or other means, or cause to be manufactured, assemble, or cause to be assembled, an untraceable firearm with the intent to sell the untraceable firearm.\nSec. 6 (RCW 9.41.326): (1) No person may manufacture, cause to be manufactured, assemble, or cause to be assembled an untraceable firearm, including by use of a three-dimensional printer, computer numerical control (CNC) milling machine, or other means.\nSec. 6 (RCW 9.41.326): (5) No person may sell, transfer, distribute, or offer to sell digital firearm manufacturing code for a firearm to a person who is not licensed to manufacture firearms under 18 U.S.C. Sec. 923.\nSec. 6 (RCW 9.41.326): (6) No person may possess digital firearm manufacturing code for a firearm with an intent to distribute the code to a person who is not licensed to manufacture firearms under 18 U.S.C. Sec. 923, or with an intent to manufacture a firearm using a three-dimensional printer or computer numerical control (CNC) milling machine. Possession of digital firearm manufacturing code for a firearm creates a rebuttable presumption of an intent to unlawfully distribute the code or manufacture a firearm in violation of this subsection.\nSec. 7 (RCW 9.41.327): (3) No person may sell, transfer, distribute, or offer to sell digital firearm manufacturing code for an unfinished frame or receiver to a person who is not licensed to manufacture firearms under 18 U.S.C. Sec. 923.\nSec. 7 (RCW 9.41.327): (5) No person may knowingly or recklessly manufacture a frame or receiver or an unfinished frame or receiver by use of a three-dimensional printer, computer numerical control (CNC) milling machine, or by other means, unless the party manufacturing the frame or receiver or unfinished frame or receiver is licensed as a federal firearms manufacturer.\nNEW SECTION Sec. 8 (new section, chapter 9.41 RCW): (1) No person shall sell, offer to sell, or transfer to any person in Washington a three-dimensional printer or computer numerical control (CNC) milling machine that has the primary or intended function of manufacturing or assembling firearms. A three-dimensional printer or computer numerical control (CNC) milling machine has the primary or intended function of manufacturing or assembling firearms if the printer or machine is advertised, marketed, or promoted to manufacture or assemble firearms, regardless of whether the printer or machine is otherwise described or classified as having other functions or as a general-purpose printer or machine.\nNEW SECTION Sec. 8 (new section, chapter 9.41 RCW): (3)(a) Any person violating this section is guilty of a gross misdemeanor punishable under chapter 9A.20 RCW."
+}

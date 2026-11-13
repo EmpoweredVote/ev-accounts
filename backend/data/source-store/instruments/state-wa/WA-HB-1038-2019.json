@@ -1,0 +1,50 @@
+{
+  "id": "WA-HB-1038-2019",
+  "scope": "state:wa",
+  "title": "HB1038 (2019-2020 Regular): Allowing public school districts and private schools to adopt a policy authorizing permanent employees to possess firearms on school grounds under certain conditions.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1038&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1038.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jim Walsh",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0f598558-61ab-4010-a0fd-e7c54f688a1a"
+    },
+    {
+      "name": "Matt Shea",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Carolyn Eslick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e1538de2-4e22-44cc-a50f-02fe7e2e9f2e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1038.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1038-2019.introduced.html",
+      "sha256": "72a3829f396bda86a7d7142fa7c5337d247dd7858349c9af09cc22975fc3dc6f"
+    },
+    "note": "Introduced version. Sec. 4 also swaps 'shall' for 'may' on posting gun-free-zone signs and updates an agency name. Sec. 2 includes a liability shield for the district and armed employees."
+  },
+  "operative_text": "NEW SECTION Sec. 2 (new RCW section, chapter 28A.320): (1) The board of directors of a school district may adopt a written policy authorizing one or more permanent employees of a school located within the school district to possess firearms on school grounds.\nNEW SECTION Sec. 2 (new RCW section, chapter 28A.320): (4) A permanent employee is not authorized to possess a firearm on school grounds under this section unless the permanent employee has: (a) Obtained a valid concealed pistol license issued under RCW 9.41.070; (b) Successfully completed a firearms training program that is equivalent to the firearms training received by commissioned law enforcement officers; and (c) Been approved by the board as authorized to possess a firearm on school grounds under the written policy.\nNEW SECTION Sec. 3 (new RCW section, chapter 28A.195): (1) Private schools are authorized to adopt a written policy allowing permanent employees to possess firearms on school grounds if done in accordance with the standards established in section 2 of this act.\nSec. 4 (RCW 9.41.280): (3) Subsection (1) of this section does not apply to: ... (i) Any permanent employee who is authorized to possess a firearm on school grounds under section 2 or 3 of this act."
+}

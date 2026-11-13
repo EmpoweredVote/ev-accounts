@@ -1,0 +1,62 @@
+{
+  "id": "WA-SB-5747-2023",
+  "scope": "state:wa",
+  "title": "SB5747 (2023-2024 Regular): Concerning projectile stun guns.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=5747&Year=2023&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2023-24/Pdf/Bills/Senate%20Bills/5747.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "John Lovick",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "47ac1908-3715-4599-82f6-606aaf2d9fe6"
+    },
+    {
+      "name": "Matt Boehnke",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7736eecd-7c77-4de7-b2e4-ba0bf1aac7ec"
+    },
+    {
+      "name": "Manka Dhingra",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Mike Padden",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jeff Holy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d0350f2f-6463-452e-b97d-c18ea094e2ee"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Senate%20Bills/5747.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5747-2023.introduced.html",
+      "sha256": "c42a5b61f128e9429a3c1c8afc85dfb21be23d57fe781d4f2155b0d1fc29ddbf"
+    },
+    "note": "Introduced version. Only change is the added clause in the 'firearm' definition; RCW 9.41.010 is otherwise reenacted unchanged."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.010): (16) \"Firearm\" means a weapon or device from which a projectile or projectiles may be fired by an explosive such as gunpowder. \"Firearm\" does not include a flare gun or other pyrotechnic visual distress signaling device, or a powder-actuated tool or other device designed solely to be used for construction purposes, or a projectile stun gun (as defined in RCW 9A.04.110) lawfully possessed by a sworn peace officer."
+}

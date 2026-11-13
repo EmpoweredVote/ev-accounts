@@ -1,0 +1,164 @@
+{
+  "id": "WA-HB-1195-2023",
+  "scope": "state:wa",
+  "title": "HB1195 (2023-2024 Regular): Prohibiting the open carry of certain weapons in public parks and public hospitals.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=1195&Year=2023&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2023-24/Pdf/Bills/House%20Bills/1195.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tana Senn",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Marcus Riccelli",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c3fccc57-8278-43c8-8e54-dc3c78e50bc9"
+    },
+    {
+      "name": "Joe Fitzgibbon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9f914ddb-ba7c-4b30-b756-fe7cd981f919"
+    },
+    {
+      "name": "Amy Walen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "be3c2a24-1576-4636-9374-18fc77a8513f"
+    },
+    {
+      "name": "Jake Fey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "97b47446-b0ee-4a2c-b4fe-ec8a995356ea"
+    },
+    {
+      "name": "Cindy Ryu",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "86e6a2bf-5216-4022-900c-621a8480f2e7"
+    },
+    {
+      "name": "Liz Berry",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "56d6dd6f-4959-4339-be78-e4b1d0083b08"
+    },
+    {
+      "name": "Jessica Bateman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e6d175b-1af0-444c-b373-e5d0a279d240"
+    },
+    {
+      "name": "Tarra Simmons",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "370f9462-ed1d-4a83-b244-8bb593038444"
+    },
+    {
+      "name": "Sharon Santos",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d5c6e6e4-c474-41fa-ab96-bd237c8ff4de"
+    },
+    {
+      "name": "Mia Gregerson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "edc48d7e-4f91-4e59-af50-79f34df8b011"
+    },
+    {
+      "name": "April Berg",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ec9da15f-7d79-42bc-a368-da3ab0855ddf"
+    },
+    {
+      "name": "Steve Bergquist",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f4f7acdf-1761-4cac-82e6-19bf8f6ea525"
+    },
+    {
+      "name": "Steve Tharinger",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0381ded1-ac26-4700-8188-6ff06621d1be"
+    },
+    {
+      "name": "Alex Ramel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "41ef42e8-fe56-4f82-92e7-eefe85232cd2"
+    },
+    {
+      "name": "Beth Doglio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "45737b89-a83b-421f-9d6c-abc829c7eae0"
+    },
+    {
+      "name": "Timm Ormsby",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "945d0b44-3329-46b2-a39e-47f5fdddc6ed"
+    },
+    {
+      "name": "Nicole Macri",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22d959a5-ec5f-4b92-98d3-85dc219c2c61"
+    },
+    {
+      "name": "Lisa Callan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3a93cc4-a4ee-4e4f-8a67-c9a0c5c66efb"
+    },
+    {
+      "name": "Mary Fosse",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e36107af-ea8f-4fca-a727-0e37ca2f6fd4"
+    },
+    {
+      "name": "My-Linh Thai",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1963d6e9-069b-4770-9489-59e36faaa2e1"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/House%20Bills/1195.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1195-2023.introduced.html",
+      "sha256": "162870d96dff8bd4b57759af254e428e9649500af2c3358c5c8977cd053b2be1"
+    },
+    "note": "Introduced version (HTML copy, marks visible). Quoted lines are whole sentences with the bill's added words kept and struck words/subsection letters dropped; the first sentence also keeps existing law on permitted demonstrations. Sec. 2 severability, Sec. 3 emergency clause."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.300): (2)(a) Except as provided in (d) of this subsection, it is unlawful for any person to knowingly open carry a firearm or other weapon while knowingly at any permitted demonstration or within any public park at which appropriate signage has been posted notifying the public that the open carry of weapons is not permitted within the park. This subsection (2)(a) applies whether the person carries the firearm or other weapon on his or her person or in a vehicle.\nSec. 1 (RCW 9.41.300): (b) Except as provided in (d) of this subsection, it is unlawful for any person to knowingly open carry a firearm or other weapon within any public hospital at which appropriate signage has been posted notifying the public that the open carry of weapons is not permitted within the hospital. This subsection (2)(b) applies when the person carries the firearm or other weapon on his or her person.\nSec. 1 (RCW 9.41.300): (iii) \"Public park\" means any city, town, county, or other municipality neighborhood, community, or regional park facility at which children or youth are likely to be present.\nSec. 1 (RCW 9.41.300): (g) No later than January 1, 2024, all cities, towns, counties, and other municipalities shall designate all park facilities within their boundaries where children or youth are likely to be present and post appropriate signage at reasonable intervals on the perimeter of each park facility's premises to notify the public that the open carry of firearms and other weapons is prohibited within the park facility. Park facilities where children or youth are likely to be present include, but are not limited to, park facilities that have: Playgrounds or child play areas; sports fields, sports courts, or sports facilities; swimming or wading pools, swim beaches, or water play areas; teen centers, community centers, or performing arts centers; skateboard parks; or other recreational facilities likely to be used by children or youth.\nSec. 1 (RCW 9.41.300): (h) No later than January 1, 2024, all public hospitals shall post appropriate signage at the entrances of each public hospital structure to notify the public that the open carry of firearms and other weapons is prohibited within public hospitals."
+}

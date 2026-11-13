@@ -1,0 +1,77 @@
+{
+  "id": "WA-SB-5340-2019",
+  "scope": "state:wa",
+  "title": "SB5340 (2019-2020 Regular): Banning the sale of assault weapons and large capacity magazines.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5340&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5340.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Patty Kuderer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Manka Dhingra",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Reuven Carlyle",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sam Hunt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Karen Keiser",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joe Nguyen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rebecca Saldaña",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+    },
+    {
+      "name": "Lisa Wellman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ff1e922-601b-45f3-a43d-2ef69220f54b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5340.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5340-2019.introduced.html",
+      "sha256": "9d3904263de1a8a579e9b6393a3ce0f9c35f8aafdd599e7c1c5ee8ec46e718f1"
+    },
+    "note": "Introduced version. Sec. 1 adds definitions to RCW 9.41.010 (e.g. large capacity magazine = more than ten rounds). Sec. 2(2)-(3) lists exemptions and limits where grandfathered items may be kept. Sec. 3 appears to be a second, overlapping ban (with registration with the state patrol for pre-2020 owners); quoted as written."
+  },
+  "operative_text": "NEW SECTION Sec. 2 (new RCW section in chapter 9.41): (1) No person in this state may manufacture, possess, distribute, import, transfer, sell, offer for sale, purchase, or otherwise transfer any assault weapon or large capacity magazine except as authorized in this section.\nNEW SECTION Sec. 2 (new RCW section in chapter 9.41): (4) A person who violates this section is guilty of a class C felony punishable under chapter  9A.20 RCW.\nNEW SECTION Sec. 3 (new RCW section in chapter 9.41): (1) Except as provided in subsection (2) of this section, a person shall not:\nNEW SECTION Sec. 3 (new RCW section in chapter 9.41): (a) Transport an assault weapon into Washington state; or\nNEW SECTION Sec. 3 (new RCW section in chapter 9.41): (b) Possess, sell, offer to sell, transfer, purchase, or receive an assault weapon."
+}

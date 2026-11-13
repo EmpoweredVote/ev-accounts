@@ -1,0 +1,39 @@
+{
+  "id": "WA-SB-5350-2025",
+  "scope": "state:wa",
+  "title": "SB5350 (2025-2026 Regular): Concerning background check system for firearms transfers.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=5350&Year=2025&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Senate%20Bills/5350.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Phil Fortunato",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d3fad6d8-8022-4c66-b505-4e7a8fc816d7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Senate%20Bills/5350.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5350-2025.introduced.html",
+      "sha256": "21224e38f38624b47decdb5ad28fd5d3b124134f7d7f53cf2fb72c2fb0b8c80d"
+    },
+    "note": "Introduced version. Repealer only (also repeals RCW 43.43.585, 43.43.590 and 2020 c 28 ss 5-10, 2024 c 289 ss 4, 6). Sec. 2 declares an emergency."
+  },
+  "operative_text": "NEW SECTION Sec. 1 (repealer): The following acts or parts of acts are each repealed:\nNEW SECTION Sec. 1 (repealer): (1) RCW  43.43.580 (Firearms background check program—Automated firearms background check system—Fee) and 2024 c 289 s 7, 2022 c 105 s 7, & 2020 c 28 s 1;\nNEW SECTION Sec. 1 (repealer): (4) RCW  9.41.1135 (Firearms sales or transfers—Use of Washington state patrol firearms background check system) and 2023 c 161 s 9 & 2020 c 28 s 4;"
+}

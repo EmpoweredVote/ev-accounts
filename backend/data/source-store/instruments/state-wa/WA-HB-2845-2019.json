@@ -1,0 +1,55 @@
+{
+  "id": "WA-HB-2845-2019",
+  "scope": "state:wa",
+  "title": "HB2845 (2019-2020 Regular): Concerning concealed pistol licenses.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=2845&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2845.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Robert Sutherland",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bd2e2e7a-6352-41ec-ad9d-c55002d132aa"
+    },
+    {
+      "name": "Bob McCaslin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Carolyn Eslick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e1538de2-4e22-44cc-a50f-02fe7e2e9f2e"
+    },
+    {
+      "name": "Matt Shea",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2845.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2845-2019.introduced.html",
+      "sha256": "d97267e3e9ec46ca10f8b159ab359bff2e8f1b9adab83ca9b7ec2f91e052f5bb"
+    },
+    "note": "Introduced version. Sec. 2 also adds 'Except as provided in subsection (2) of this section' to the under-21 bar in (1)(c) and renumbers."
+  },
+  "operative_text": "NEW SECTION Sec. 1 (uncodified): The legislature intends to restore the rights of young adults to be able to carry a firearm for self-defense purposes when they are in fear of danger or harm from another person.\nSec. 2 (RCW 9.41.070): (2) A female person who is at least eighteen years of age and under twenty-one years of age may apply for, and be issued, a concealed pistol license if the person meets all the requirements of this section and, in addition, provides to the issuing authority a written declaration that the person is in fear of danger or harm from another person that justifies a need to carry a pistol. The issuing authority shall not charge the application fee under subsection (7) of this section to an applicant who meets the requirements of this section.\nSec. 3 (RCW 9.41.240): (4) The provisions of this section governing possession of pistols do not apply to a female person at least eighteen years of age, but less than twenty-one years of age, who has a valid concealed pistol license issued under the requirements of RCW 9.41.070(2)."
+}

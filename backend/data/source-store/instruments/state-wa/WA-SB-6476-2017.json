@@ -1,0 +1,134 @@
+{
+  "id": "WA-SB-6476-2017",
+  "scope": "state:wa",
+  "title": "SB6476 (2017-2018 Regular): Establishing an exemption from background check requirements for firearms sales or transfers between concealed pistol license holders.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6476&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/6476.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Keith Wagoner",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3db3f064-dd6e-4bca-9200-3d4395972253"
+    },
+    {
+      "name": "Lynda Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sharon Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Braun",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "755f24a5-2330-4546-9679-d5f7fa94aaa9"
+    },
+    {
+      "name": "Phil Fortunato",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d3fad6d8-8022-4c66-b505-4e7a8fc816d7"
+    },
+    {
+      "name": "Jim Honeyford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mike Padden",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ann Rivers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jan Angel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Barbara Bailey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Randi Becker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Doug Ericksen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mark Schoesler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f893ae5d-6659-40cd-a874-e9351efcdb95"
+    },
+    {
+      "name": "Tim Sheldon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Shelly Short",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a88093ad-c483-49c1-ae1e-9f851cdb53fc"
+    },
+    {
+      "name": "Dean Takko",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kevin Van De Wege",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Judy Warnick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b316dce9-ed2e-44f6-b974-bf639cacb816"
+    },
+    {
+      "name": "Hans Zeiger",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/6476.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6476-2017.introduced.html",
+      "sha256": "f9367415be046e9386e56cfb0fc1ab0a2d80121077b0ededb1133ac3eabedd38"
+    },
+    "note": "Introduced version. Bill also strikes the word 'or' at the end of (4)(h) and adds '; or' after (4)(i). Rest of RCW 9.41.113 (universal background checks through licensed dealers) is reprinted unchanged."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.113): (4) This section does not apply to: (j) The sale or transfer of a firearm where the seller or transferor and the purchaser or transferee both possess a valid concealed pistol license."
+}
