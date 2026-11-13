@@ -22,6 +22,10 @@ fi
 cd $BACKEND
 export ADMIN_INGEST_TOKEN=placeholder
 skip=(--skip-ids ${W:A}/skip-ids.txt)
+if [[ $M == apply && ${STAGE5_NO_DB_WRITE:-} == 1 ]]; then
+  print -u2 "REFUSED: write-batch.sh apply. STAGE5_NO_DB_WRITE=1: this is a slim session, which never writes the database. Stop and hand the write to the desk session."
+  exit 5
+fi
 if [[ $M == apply ]]; then
   npx tsx --env-file=.env scripts/topic-stage5-write.ts --topic $T --research ${S:A:h} --season draft --units $U $skip --apply > $W/stage5-write-apply.txt 2>&1
 else

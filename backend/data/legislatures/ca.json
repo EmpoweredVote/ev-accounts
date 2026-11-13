@@ -1,0 +1,46 @@
+{
+  "state": "ca",
+  "name": "California",
+  "verified": "2026-11-13",
+  "source": "gun-policy Season 3 Stage 5, California hand-over (ca/HANDOVER-A.md part 7, ca/MEASURES-B.md, write/ca-01/recipe.json), 2026-11-13",
+  "chambers": {
+    "lower": "Assembly",
+    "upper": "Senate"
+  },
+  "sessions": "Two-year sessions that start in odd years. No special sessions in LegiScan.",
+  "bill_data": [
+    "LegiScan bulk datasets."
+  ],
+  "votes": {
+    "mode": "legiscan-plan",
+    "official_hosts": [
+      "leginfo.legislature.ca.gov",
+      "www.leginfo.ca.gov"
+    ],
+    "legiscan_args": "--session-start odd",
+    "floor_rule": "LegiScan's roll calls include committee votes: a floor vote is a passage motion whose total is 30 or more (Assembly 80 seats, Senate 40). Consent-calendar votes count as passage.",
+    "gaps": [
+      "Official vote pages print surnames only."
+    ]
+  },
+  "texts": {
+    "hosts": [
+      "leginfo.legislature.ca.gov"
+    ],
+    "marks": "leginfo HTML: added words are blue italic (saved as {+ +}), struck words red (saved as [- -]).",
+    "note": "Bills are often introduced as spot bills whose real text arrives later: read a sponsor-only bill at its last version."
+  },
+  "reader_access": {
+    "leginfo.legislature.ca.gov": "blocked: a plain fetch gets a Cloudflare 403 (an earlier topic used Wayback copies)",
+    "www.leginfo.ca.gov": "not checked"
+  },
+  "search_note": "California sponsorships and Assembly and Senate floor votes on this topic come from the bulk bill data (listed above): skip the legislature's sponsor lists and vote pages (leginfo.legislature.ca.gov answers a plain fetch with a 403), and add the place \"sponsor list: covered by bulk bill data\". Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
+  "bill_table_note": "- California bill text marks changes to existing law; `operative_text` quotes the law as the bill leaves it. Where the instrument's `provenance.note` says an earlier version differs, the earlier chamber vote was on that wording: say so in `why` and flag it if the rung would differ.\n- Each instrument's `votes[].note` names the text version each roll call was taken on.",
+  "fill_quotes": {
+    "label_strips": []
+  },
+  "quirks": [
+    "Name matching: LegiScan lists some members with a title (\"Dr.\") or a two-part surname. 10 older idmap.tsv lines pointed senators at the wrong chamber's record (fixed 2026-11-13): check every line against name and chamber.",
+    "Long records: a median of 57 record findings a person, up to 144. Record-only coding cost twice Missouri's per person."
+  ]
+}

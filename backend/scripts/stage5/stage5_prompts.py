@@ -14,11 +14,13 @@ Everything about the topic comes from its profile (templates/stage5-topic-profil
 search-briefs  one brief per id in --ids (a file of ids, or a TSV with a politician_id column) that has no search file
                yet, from templates/BRIEF-stage5-find.md. Each agent writes <stage5>/<xx>/find/<id>.json, so an import
                reads one state only. Briefs go to <stage5>/<xx>/briefs/, jobs to <stage5>/waves/<xx>-search/jobs.tsv
+               Without --note-file the note is the legislature profile's `search_note` (legislature.py), if any.
                (--round 2: <xx>-search-2, agents named find2-<id>, files in <xx>/find-2/ so the second import reads only them). --note-file adds the state's own note under what
                is on file (for example "sponsorships come from the bulk bill data: skip the legislature's lists").
 bill-table     splits --bills (a JSON list, a JSON object with "kept", or one id per line) into --parts prompts from
                templates/stage5-bill-table-prompt.md, each writing <stage5>/bill-table-<xx>.part<k>.json; jobs in
                <stage5>/waves/<xx>-billtable/. The rulings given are the `{all}` sections and this state's own.
+               --note-file, or else the legislature profile's `bill_table_note`, is added as the state's notes.
 quote-check    reads the dry run's "finding <id>…: no quote check" lines, writes <batch>/qc/to-check.json, one prompt
                per --per findings from templates/stage5-quote-check-prompt.md, and <batch>/qc/jobs.tsv. Validate
                the answers with quote-check-validate.ts.
@@ -30,6 +32,7 @@ import csv, datetime, glob, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir
 from _args import opt, positional
 from session_card import load_profile
+import legislature
 
 USAGE = 'stage5_prompts.py search-briefs|bill-table|quote-check|coder-jobs --profile <json> … (see the file header)'
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -104,7 +107,8 @@ def search_briefs():
     unknown = [p for p in ids if p not in roster]
     if unknown: raise SystemExit(f'{len(unknown)} id(s) are not in the roster, e.g. {unknown[0]}. Nothing written.')
     rnd = int(opt('--round', '1')); find = f'{S}/{xx}/find' + ('' if rnd == 1 else f'-{rnd}'); briefs = f'{S}/{xx}/briefs' + ('' if rnd == 1 else f'-{rnd}')
-    note = open(opt('--note-file')).read().strip() if opt('--note-file') else ''
+    leg = legislature.load(xx, wt)
+    note = open(opt('--note-file')).read().strip() if opt('--note-file') else (leg or {}).get('search_note', '')
     T = template(wt, 'BRIEF-stage5-find.md'); store = os.path.join(wt, 'backend', 'data', 'source-store', 'findings')
     os.makedirs(find, exist_ok=True); os.makedirs(briefs, exist_ok=True)
     jobs, skipped = [], 0
@@ -144,7 +148,9 @@ def bill_table():
     secs = re.split(r'(?m)^(?=## )', open(f'{S}/coder-rulings.md').read())
     keep = [s for s in secs if s.startswith('## ') and ('{all}' in s.splitlines()[0] or f'state:{xx}' in s.splitlines()[0])]
     n = max(1, int(opt('--parts', '3'))); wave = f'{S}/waves/{xx}-billtable'
-    note = ('\n\n## ' + name + ' notes\n\n' + open(opt('--note-file')).read().strip() + '\n') if opt('--note-file') else ''
+    leg = legislature.load(xx, wt)
+    note = open(opt('--note-file')).read().strip() if opt('--note-file') else (leg or {}).get('bill_table_note', '')
+    note = ('\n\n## ' + name + ' notes\n\n' + note + '\n') if note else ''
     T = template(wt, 'stage5-bill-table-prompt.md'); jobs = []; os.makedirs(wave, exist_ok=True)
     for k in range(n):
         part = ids[k::n]

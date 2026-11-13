@@ -2,15 +2,20 @@
 and the tools README (three-state review 2026-11-13, change 2: those four cost about 31,000 tokens, carried on every
 step of the session).
 
-usage: python3 -I scripts/stage5/session_card.py A|B --profile <topic-profile.json> --state xx --state-name <Name>
+usage: python3 -I scripts/stage5/session_card.py A|B|desk --profile <topic-profile.json> --state xx --state-name <Name>
                                                   [--worktree <dir>] [--out <file>] [--date YYYY-MM-DD]
 
 --profile   the topic's profile (<stage5>/topic-profile.json; templates/stage5-topic-profile.example.json). Every
             topic-specific value on the card comes from it: the topic key, the research folders, the ladder's sides,
             whether the record pass by script is approved, the skip rule's control groups, the settled rulings. No
-            topic, side or rung is written into this tool or its templates.
+            topic, side or rung is written into this tool or its templates. What is known about the state's
+            legislature (hosts, vote layout, text marks, what our reader can open) comes from its legislature
+            profile, backend/data/legislatures/<xx>.json (legislature.py), when there is one.
 --worktree  the worktree the session runs in (default: the one this tool is in). Commands are printed for its backend/.
---out       default <stage5>/<xx>/CARD-<A|B>.md.
+--out       default <stage5>/<xx>/CARD-<A|B>.md (CARD-DESK.md for `desk`).
+
+`desk` writes the card for the small desktop session that starts sessions A and B as slim sessions (leg.py), passes the
+runner's answers to them, and runs the database write and the approval on the runner's yes.
 
 The card is rendered from templates/stage5-card-<A|B>.md. A `{{#SKIP}}…{{/SKIP}}` block is kept only when the profile
 names control groups, `{{^SKIP}}…{{/SKIP}}` only when it names none; `SCRIPT` the same for the record pass by script.
@@ -19,8 +24,9 @@ Exit 1, writing nothing, when the profile is incomplete or any `{{…}}` slot st
 import datetime, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir
 from _args import opt, positional
+import legislature
 
-USAGE = 'session_card.py A|B --profile <topic-profile.json> --state xx --state-name <Name> [--worktree <dir>] [--out <file>]'
+USAGE = 'session_card.py A|B|desk --profile <topic-profile.json> --state xx --state-name <Name> [--worktree <dir>] [--out <file>]'
 HERE = os.path.dirname(os.path.abspath(__file__))
 GROUP = re.compile(r'\s*(\d+(?:\s*,\s*\d+)*)\s*:\s*(\d+)\s*')
 
@@ -69,8 +75,9 @@ def render(text, flags, values):
 
 
 def main():
-    leg = positional(1, USAGE)[0].upper()
-    if leg not in ('A', 'B'): raise SystemExit(USAGE)
+    leg = positional(1, USAGE)[0]
+    leg = 'desk' if leg.lower() == 'desk' else leg.upper()
+    if leg not in ('A', 'B', 'desk'): raise SystemExit(USAGE)
     path = os.path.abspath(opt('--profile', required=True, usage=USAGE))
     p = load_profile(path)
     xx = opt('--state', required=True, usage=USAGE).lower()
@@ -80,18 +87,22 @@ def main():
     skill = os.path.join(wt, '.claude', 'skills', 'season-topic-prep')
     S, groups = p['stage5'].rstrip('/'), p['control_groups']
     settled = [s for s in p.get('settled') or [] if isinstance(s, str) and s.strip()]
+    lg = legislature.load(xx, wt)
     values = {
         'TOPIC': p['topic_key'], 'LABEL': p['label'], 'STATE': name, 'xx': xx, 'XX': xx.upper(),
         'R': p['research'].rstrip('/'), 'SAVED_ROOT': os.path.dirname(p['research'].rstrip('/')), 'S': S, 'WT': wt, 'BACKEND': os.path.join(wt, 'backend'), 'SKILL': skill,
-        'PROFILE': path, 'CARD_B': f'{S}/{xx}/CARD-B.md', 'SINCE': str(p.get('since') or 2017),
+        'PROFILE': path, 'CARD_B': f'{S}/{xx}/CARD-B.md', 'DESK': f'{S}/{xx}/desk', 'SINCE': str(p.get('since') or 2017),
         'DATE': opt('--date') or datetime.date.today().isoformat(),
         'SIDES': str(p.get('sides') or ''), 'SKIP_RUNGS': ','.join(skip_rungs(groups)),
         'CONTROL_ARGS': ' '.join(f'--control-group {g.replace(" ", "")}' for g in groups),
         'SEARCH_RULE': search_rule(groups) if groups else '',
+        'LEG_PATH': os.path.join(legislature.folder(wt), f'{xx}.json'), 'LEG_SUMMARY': legislature.summary(lg) if lg else '',
+        'RECIPE_VOTES': lg['votes']['mode'] if lg else '', 'RECIPE_HOSTS': ','.join(lg['votes']['official_hosts']) if lg else '',
+        'RECIPE_LEGISCAN': (',\n "legiscan_args": ' + json.dumps(lg['votes']['legiscan_args'])) if lg and lg['votes'].get('legiscan_args') else '',
         'SETTLED': '\n'.join(f'- {s.strip()}' for s in settled) or '- Nothing is recorded as settled for this topic. Check `coder-rulings.md` before asking a bill question.',
     }
-    text = render(open(os.path.join(skill, 'templates', f'stage5-card-{leg}.md')).read(), {'SKIP': bool(groups), 'SCRIPT': p['record_script']}, values)
-    out = opt('--out') or f'{S}/{xx}/CARD-{leg}.md'
+    text = render(open(os.path.join(skill, 'templates', f'stage5-card-{leg}.md')).read(), {'SKIP': bool(groups), 'SCRIPT': p['record_script'], 'LEG': bool(lg)}, values)
+    out = opt('--out') or f'{S}/{xx}/CARD-{leg}.md'.replace('CARD-desk', 'CARD-DESK')
     os.makedirs(os.path.dirname(out), exist_ok=True)
     open(out, 'w').write(text)
     print(f'{out}: {len(text):,} characters (about {len(text) // 4:,} tokens)')

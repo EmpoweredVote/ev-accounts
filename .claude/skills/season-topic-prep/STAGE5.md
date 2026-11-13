@@ -30,6 +30,17 @@ Where the profile names a skip rule, session B runs its record pass, search, sec
 command, `run_state.py`, and builds every prompt with `stage5_prompts.py` (tools README). Do not copy a state's
 old `make_briefs_xx.py`, `make_qc_xx.py` or `make_billtable_xx.py`: those are what the two tools replaced.
 
+What is known about a state's **legislature** (its hosts, vote layout, text marks, and which sites our reader can
+open) is in its legislature profile, `backend/data/legislatures/<xx>.json` (`legislature.py`, tools README). It is
+shared by every topic: the cards print it, and it fills the write recipe and the per-state notes. Session A writes
+or refreshes it at hand-over. 🔴 It holds facts about the legislature only: never a topic, a rung, a ruling or a person.
+
+**Slim sessions (runner's decision, 2026-11-13).** Sessions A and B may run as slim sessions, started and resumed
+by a small desk session: `session_card.py desk` writes the desk's card, and `leg.py` starts each leg (tools README,
+"slim"). A slim session cannot ask the runner anything, so it ends with a question file and the desk passes the
+answer back, word for word. 🔴 A slim session never writes the database: the write tools refuse it, and the desk
+runs the batch write and the approval, each on the runner's own yes for that batch.
+
 Each session ends with `close_state.py` (tools README), as its last act.
 
 ## Hard rules

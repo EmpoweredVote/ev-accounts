@@ -753,7 +753,7 @@ def run_state_chains_the_steps_and_stops_only_where_a_person_is_needed(t):
     os.makedirs(t); P, S = topic_folder(t, sides='1/2,3', record_script=True, control_groups=['3:2', '1:2'])
     tools, bin_, C = f'{t}/tools', f'{t}/bin', f'{t}/stub'
     for d in (tools, bin_, C, f'{S}/record-briefs-zz', f'{S}/code-briefs', f'{S}/search-plan-zz'): os.makedirs(d)
-    for n in ('run_state.py', 'session_card.py', '_args.py'): shutil.copy(os.path.join(TOOLS, n), tools)
+    for n in ('run_state.py', 'session_card.py', 'legislature.py', '_args.py'): shutil.copy(os.path.join(TOOLS, n), tools)
     for n in ('wave.py', 'stage5_prompts.py', 'search_list.py', 'search_effect.py'): open(f'{tools}/{n}', 'w').write(STUB)
     for n in ('npx', 'npm'):  # npx tsx scripts/stage5/<tool>.ts <args> ; npm run <script> --prefix <dir> -- <args>
         open(f'{bin_}/{n}', 'w').write(f'#!/bin/sh\nif [ "$1" = tsx ]; then shift; else shift; fi\nexec {sys.executable} -I {C}/stub.py "$@"\n'); os.chmod(f'{bin_}/{n}', 0o755)
@@ -800,6 +800,136 @@ def run_state_chains_the_steps_and_stops_only_where_a_person_is_needed(t):
     json.dump({**json.load(open(P)), 'control_groups': [], 'record_script': False}, open(f'{t}/noskip.json', 'w'))
     r = subprocess.run([sys.executable, '-I', f'{tools}/run_state.py', '--profile', f'{t}/noskip.json', '--state', 'zz'], capture_output=True, text=True, env=env)
     assert r.returncode != 0 and 'no skip rule' in r.stderr, 'a topic with no skip rule is refused, not run with another topic\'s rule'
+
+
+def leg_profile(wt, xx='zz', **over):
+    """A made-up legislature profile in a made-up worktree."""
+    p = {'state': xx, 'name': 'Zedland', 'verified': '2026-01-02', 'source': 'a made-up hand-over', 'chambers': {'lower': 'House', 'upper': 'Senate'},
+         'sessions': 'Two-year sessions.', 'bill_data': ['Bulk files.'],
+         'votes': {'mode': 'legiscan-plan', 'official_hosts': ['votes.zz.example'], 'legiscan_args': '--session-start odd', 'floor_rule': 'Passage motions only.', 'gaps': []},
+         'texts': {'hosts': ['texts.zz.example'], 'marks': 'Added words underlined.', 'note': ''},
+         'reader_access': {'votes.zz.example': 'blocked: robots.txt', 'texts.zz.example': 'open'},
+         'search_note': 'Skip the Zedland vote pages.', 'bill_table_note': '- Zedland marks new law in capitals.',
+         'fill_quotes': {'label_strips': ['^\\s*NEW PART\\.?\\s*']}, 'quirks': ['Members are listed by surname only.']}
+    p.update(over); d = f'{wt}/backend/data/legislatures'; os.makedirs(d, exist_ok=True)
+    json.dump(p, open(f'{d}/{xx}.json', 'w')); return p
+
+
+@check
+def legislature_profiles_hold_legislature_facts_only_and_reach_the_cards_and_prompts(t):
+    """A profile is checked before anything reads it; the cards and prompts take the recipe and notes from it."""
+    os.makedirs(t); W = f'{t}/wt'
+    assert run('legislature.py', 'check').stdout.count(': ok') >= 3 and ': ok' in run('legislature.py', 'check', 'wa').stdout, 'the profiles on file pass'
+    leg_profile(W)
+    assert 'zz: ok' in run('legislature.py', 'check', '--worktree', W).stdout
+    show = run('legislature.py', 'show', 'zz', '--worktree', W).stdout
+    assert 'votes.zz.example`: blocked: robots.txt' in show and 'Verified 2026-01-02' in show and 'surname only' in show
+    for bad, why in (({'search_note': 'Skip the gun bill lists.'}, 'names a topic'), ({'quirks': ['Rung 3 bills are common.']}, 'names a topic'),
+                     ({'reader_access': {'texts.zz.example': 'open'}}, 'says nothing about votes.zz.example'), ({'verified': 'last week'}, 'must be a date'),
+                     ({'fill_quotes': {'label_strips': ['(']}}, 'does not compile'), ({'reader_access': {'votes.zz.example': 'fine', 'texts.zz.example': 'open'}}, 'must be "open"'),
+                     ({'state': 'yy'}, '"state" must be')):
+        leg_profile(W, **bad); r = run('legislature.py', 'check', 'zz', '--worktree', W, ok=False)
+        assert r.returncode == 1 and why in r.stdout, (bad, r.stdout)
+    T = os.path.normpath(os.path.join(HERE, '..', '..', '..', '.claude', 'skills', 'season-topic-prep', 'templates'))
+    shutil.copytree(T, f'{W}/.claude/skills/season-topic-prep/templates')
+    r = run('session_card.py', 'B', '--profile', profile(t), '--state', 'zz', '--state-name', 'Zedland', '--worktree', W, '--out', f'{t}/x.md', ok=False)
+    assert r.returncode != 0 and '"state" must be' in r.stderr and not os.path.exists(f'{t}/x.md'), 'a profile that fails its check stops the card'
+    leg_profile(W)
+    P, S = topic_folder(t, control_groups=['1:7'])
+    card = lambda leg, st: (run('session_card.py', leg, '--profile', P, '--state', st, '--state-name', 'Zedland', '--worktree', W, '--out', f'{t}/c.md'), open(f'{t}/c.md').read())[1]
+    b = card('B', 'zz')
+    assert '"votes": "legiscan-plan", "official_host": "votes.zz.example", "max_urls": 20,\n "legiscan_args": "--session-start odd"}' in b and '<votes mode>' not in b
+    assert 'blocked: robots.txt' in b and '{{' not in b and 'surname only' in card('A', 'zz')
+    b = card('B', 'qq'); assert '<votes mode>' in b and 'No legislature profile is on file for `qq`' in b, 'no profile: the recipe is filled by hand, and the card says so'
+    leg_profile(W, votes={'mode': 'legiscan-plan', 'official_hosts': ['votes.zz.example'], 'legiscan_args': None, 'floor_rule': 'x', 'gaps': []})
+    assert 'legiscan_args' not in card('B', 'zz').split('**B9.')[1].split('```')[1], 'no extra flags: no legiscan_args line'
+    leg_profile(W)
+    store = f'{W}/backend/data/source-store/instruments/state-zz'; os.makedirs(store); open(f'{store}/ZZ-HB-1-2025.json', 'w').write('{}')
+    json.dump(['ZZ-HB-1-2025'], open(f'{t}/bills.json', 'w'))
+    bt = ['bill-table', '--profile', P, '--state', 'zz', '--state-name', 'Zedland', '--worktree', W, '--bills', f'{t}/bills.json', '--parts', '1']
+    run('stage5_prompts.py', *bt); assert 'Zedland marks new law in capitals.' in open(f'{S}/waves/zz-billtable/part0.md').read()
+    open(f'{t}/note.md', 'w').write('- A note for this run only.'); run('stage5_prompts.py', *bt, '--note-file', f'{t}/note.md')
+    p0 = open(f'{S}/waves/zz-billtable/part0.md').read(); assert 'A note for this run only.' in p0 and 'capitals' not in p0, 'a note given for the run replaces the profile\'s'
+    open(f'{t}/one.txt', 'w').write('a\n')
+    run('stage5_prompts.py', 'search-briefs', '--profile', P, '--state', 'zz', '--roster', f'{S}/batches/zz-roster.tsv', '--ids', f'{t}/one.txt', '--worktree', W)
+    assert 'Skip the Zedland vote pages.' in open(f'{S}/zz/briefs/a.md').read()
+
+
+@check
+def check_fill_quotes_reads_the_text_with_and_without_struck_words(t):
+    """A quote must be in the saved text, as printed or as the law reads after the strikes; a wrong quote fails."""
+    os.makedirs(f'{t}/fill'); os.makedirs(f'{t}/texts'); W = f'{t}/wt'; leg_profile(W)
+    open(f'{t}/texts/ZZ-HB-1-2025.enrolled.txt', 'w').write('A person may not sell a [-large-] widget {+of any size+} to a buyer who has no permit at all. Other words follow here.')
+    def fill(lines, **k): json.dump({'id': 'ZZ-HB-1-2025', 'on_topic': True, 'operative_text': '\n'.join(lines), **k}, open(f'{t}/fill/ZZ-HB-1-2025.json', 'w'))
+    go = lambda *a, ok=True: run('check_fill_quotes.py', '--fills', f'{t}/fill', '--texts', f'{t}/texts', '--state', 'zz', '--worktree', W, *a, ok=ok)
+    fill(['Sec. 3 (new): A person may not sell a widget of any size to a buyer who has no permit',     # as the law reads after the strike
+          'NEW PART. Sec. 4: A person may not sell a large widget of any size to a buyer who',           # as printed; the label is the legislature's own
+          '(a) may not sell a widget ... to a buyer who has no permit at all'])
+    assert 'checked 3 quote parts; misses 0' in go().stdout
+    fill(['Sec. 3: A person may always sell a widget of any size to any buyer who asks'])
+    r = go(ok=False); assert r.returncode == 1 and 'MISS ZZ-HB-1-2025' in r.stdout, 'a planted wrong quote must fail'
+    assert go('--skip', 'ZZ-HB-1-2025').returncode == 0 and '0 bill(s)' in go('--flag', 'not_set').stdout
+    json.dump({'id': 'ZZ-SB-2-2025', 'operative_text': 'A person may not sell a widget of any size'}, open(f'{t}/fill/ZZ-SB-2-2025.json', 'w'))
+    r = go('--skip', 'ZZ-HB-1-2025', ok=False); assert r.returncode == 1 and 'NO TEXT ZZ-SB-2-2025' in r.stdout, 'a fill with no saved text is not a pass'
+    os.remove(f'{t}/fill/ZZ-SB-2-2025.json'); fill(['NEW PART. Sec. 4: A person may not sell a large widget of any size to a buyer who'])
+    leg_profile(W, fill_quotes={'label_strips': []})
+    assert go(ok=False).returncode == 1, 'the legislature\'s own label is removed only because its profile names it'
+
+
+FAKE_CLAUDE = """#!/usr/bin/env python3
+import json, os, sys
+C = os.environ['STUB_DIR']; a = sys.argv[1:]
+json.dump({'argv': a, 'no_write': os.environ.get('STAGE5_NO_DB_WRITE'), 'cwd': os.getcwd()}, open(C + '/call.json', 'w'))
+reply = open(C + '/reply.txt').read()
+if reply == 'CRASH': sys.exit(3)
+print(json.dumps({'session_id': 'sid-123', 'result': reply, 'num_turns': 4}))
+"""
+
+
+@check
+def leg_starts_a_slim_session_that_cannot_write_and_turns_its_last_line_into_a_stop(t):
+    """A leg is the card plus the slim rules, started slim with the no-write flag; only a listed last line counts."""
+    os.makedirs(t); P, S = topic_folder(t, control_groups=['1:7']); C, bin_ = f'{t}/stub', f'{t}/bin'; os.makedirs(C); os.makedirs(bin_)
+    open(f'{bin_}/claude', 'w').write(FAKE_CLAUDE); os.chmod(f'{bin_}/claude', 0o755)
+    env = dict(os.environ, STUB_DIR=C, PATH=bin_ + os.pathsep + os.environ['PATH']); env.pop('STAGE5_NO_DB_WRITE', None)
+    T = os.path.normpath(os.path.join(HERE, '..', '..', '..', '.claude', 'skills', 'season-topic-prep', 'templates'))
+    rules = open(f'{T}/stage5-slim-rules.md').read(); deskT = open(f'{T}/stage5-card-desk.md').read()
+    for word in ('gun', 'firearm', 'voter', 'rung 5', '1,2,3'): assert word not in rules and word not in deskT, f'a slim-session template names {word!r}'
+    assert 'never write the database' in rules and 'only on the runner\'s yes' in deskT
+    def leg(reply, *a, which='A'):
+        open(f'{C}/reply.txt', 'w').write(reply)
+        if os.path.exists(f'{C}/call.json'): os.remove(f'{C}/call.json')
+        p = subprocess.run([sys.executable, '-I', os.path.join(TOOLS, 'leg.py'), which, '--profile', P, '--state', 'zz', '--state-name', 'Zedland', *a], capture_output=True, text=True, env=env)
+        return p, (json.load(open(f'{C}/call.json')) if os.path.exists(f'{C}/call.json') else None)
+    D = f'{S}/zz/desk'
+    p, c = leg(f'Bill table done.\n\nSTOP question {D}/QUESTION-A-1.md')
+    assert p.returncode == 10 and p.stdout.strip() == f'STOP question {D}/QUESTION-A-1.md', (p.returncode, p.stdout, p.stderr[-300:])
+    a = c['argv']
+    assert c['no_write'] == '1' and c['cwd'].endswith('/backend'), 'every slim session is started with the no-write flag'
+    assert a[0] == '-p' and '--safe-mode' in a and '--disable-slash-commands' in a and a[a.index('--model') + 1] == 'opus' and '--resume' not in a
+    assert a[a.index('--tools') + 1] == a[a.index('--allowedTools') + 1] and 'Bash' in a[a.index('--tools') + 1]
+    assert '# Session A card' in a[1] and 'You are running this card as a slim session' in a[1] and f'{D}/QUESTION-A-<n>.md' in a[1] and '{{' not in a[1]
+    st = json.load(open(f'{D}/leg-A.json')); assert st['session_id'] == 'sid-123' and st['last'].startswith('STOP question') and len(st['runs']) == 1
+    p, c = leg('DONE A'); assert p.returncode != 0 and c is None and '--answer' in p.stderr, 'a started leg is resumed, never started twice'
+    open(f'{t}/ans.md', 'w').write('Rung question: "Direction only (Recommended)"')
+    p, c = leg('All steps finished.\nDONE A', '--answer', f'{t}/ans.md')
+    a = c['argv']; assert p.returncode == 0 and a[a.index('--resume') + 1] == 'sid-123' and 'Direction only (Recommended)' in a[1] and '# Session A card' not in a[1] and c['no_write'] == '1'
+    assert len(json.load(open(f'{D}/leg-A.json'))['runs']) == 2
+    p, c = leg('DONE A'); assert p.returncode != 0 and c is None and 'already DONE' in p.stderr
+    p, c = leg('x', '--answer', f'{t}/ans.md', which='B'); assert p.returncode != 0 and c is None, 'no answer for a leg that never started'
+    for reply, code in ((f'Preview ready.\nSTOP write {S}/write/zz-01/PREVIEW.md', 11), ('STOP blocked the import refused 3 files: see run/step-3.log', 12),
+                        ('DONE B\nActually one more thing is left.', 2), ('I will stop here and wait.', 2), ('', 2), ('CRASH', 2), ('STOP approve now', 11)):
+        if os.path.exists(f'{D}/leg-B.json'): os.remove(f'{D}/leg-B.json')
+        p, c = leg(reply, which='B'); assert p.returncode == code, (reply, p.returncode, p.stdout)
+    open(f'{t}/empty.md', 'w').write('  \n'); p, c = leg('DONE B', '--answer', f'{t}/empty.md', which='B'); assert p.returncode != 0 and c is None, 'an empty answer is not sent'
+    run('session_card.py', 'desk', '--profile', P, '--state', 'zz', '--state-name', 'Zedland', '--out', f'{t}/desk.md')
+    d = open(f'{t}/desk.md').read(); assert '{{' not in d and f'{D}' in d and 'write-batch.sh' in d and 'leg.py A --profile' in d and len(d) < 6000
+    # the write script itself refuses in a slim session, before it runs the writer
+    open(f'{bin_}/npx', 'w').write('#!/bin/sh\necho ran >> "$STUB_DIR/npx.txt"\n'); os.chmod(f'{bin_}/npx', 0o755); os.makedirs(f'{t}/b')
+    go = lambda mode, e: subprocess.run(['zsh', os.path.join(TOOLS, 'write-batch.sh'), S, f'{t}/b', 'made-up-topic', 'state:zz', mode], capture_output=True, text=True, env=e, cwd=t)
+    r = go('apply', dict(env, STAGE5_NO_DB_WRITE='1'))
+    assert r.returncode == 5 and 'REFUSED' in r.stderr and not os.path.exists(f'{C}/npx.txt'), (r.returncode, r.stderr[-200:])
+    go('apply', env); assert os.path.exists(f'{C}/npx.txt'), 'outside a slim session the write script still runs the writer'
 
 
 @check
