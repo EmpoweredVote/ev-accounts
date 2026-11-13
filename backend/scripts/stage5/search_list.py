@@ -157,7 +157,10 @@ def recode(out):
     briefs = opt('--record-briefs', required=True, usage=USAGE)
     shown = {}
     for f in glob.glob(os.path.join(briefs, '*.findings.json')):
-        for p in json.load(open(f))['people']: shown.setdefault(p['politician_id'], set()).update(x['id'] for x in p['findings'])
+        for p in json.load(open(f))['people']:
+            # the collapsed layout (coder-inputs.ts --bill-table) and record-script.ts list record ids under "record"
+            ids = [x['id'] for x in p.get('findings', [])] + [r[0] for l in p.get('record', []) for r in l['on']]
+            shown.setdefault(p['politician_id'], set()).update(ids)
     if not shown: raise SystemExit(f'no *.findings.json in {briefs}: point --record-briefs at the record-only pass\'s --out folder')
     keys = {(c.get('topic_key'), c.get('season')) for c in rec.values()}
     if len(keys) != 1: raise SystemExit(f'record-only codes are for more than one topic or season: {sorted(map(str, keys))}')

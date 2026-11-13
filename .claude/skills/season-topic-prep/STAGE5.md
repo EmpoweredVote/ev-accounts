@@ -113,6 +113,13 @@ The keyword scan is wide (Georgia: 164 such bills). One Opus agent triages the t
 `--triage <triage.json> --write <new core.json>` keeps only the "fill" bills. It refuses while any candidate is
 untriaged. Add the name matches it prints to `idmap.tsv` once checked.
 
+**Text fill only where it can matter (round three, 2026-11-13).** The triage answers `fill`, `stub` or `skip`. A
+`stub` is on the topic but its title shows no rung is possible (a dealer rule, a tax, a storage rule, a report); it is
+not filled, and `--write` lists it for the runner in `<write>.stubs.json`. 🔴 A bill a roster member voted on in a
+floor roll call is always filled: the tool turns that `stub` into `fill`, whatever the triage said. Show the runner
+the stub list with the bill questions (stop 1); any bill the runner doubts goes to a fill. Fill the prompt's
+`{{RUNG_ACTS}}` and `{{NO_RUNG_KINDS}}` from the ladder and the topic's rulings.
+
 #### 3b. Bill table
 
 After the last bill round and the bill-text fill, one Opus agent reads each core bill once and writes the rung a Yes
@@ -134,6 +141,13 @@ answers that file before coding starts** (a runner stop). The answers go into th
 > measurement: in Georgia, a record seat at rung 5 (244 people) or rung 2 (12) was never changed by the search;
 > rung 3 changed 2.3% of the time and rung 4 10%.
 
+0. **Round three (2026-11-13): the plain cases are coded by script, the rest by Opus** (`backend/scripts/stage5/README.md`
+   "Record pass by script"). `record-script.ts plan … --bill-table <table> --sides 1,2,3/4,5 --skip-rungs 5,2 --out
+   <record-briefs-xx>` writes the script's codes into a holding folder and `<name>-coder-ids.txt`: the Opus lane plus
+   the standing check (a seeded 10 of the script's people). Run step 1 on THAT ids file, with `--bill-table`. Then
+   `record-script.ts adopt --out <record-briefs-xx> --name <name> --codes <stage5>/record-codes`. 🔴 Exit 4 = a check
+   person's blind Opus code differs from the script's: nothing is released; stop and show the runner. Never tell a
+   coder which people are the check, and never show a coder the script's code.
 1. Code everyone from the record alone: `coder-inputs.ts ... --record-only --coded-dir <stage5>/record-coded`, then
    `split-codes.ts ... --codes <stage5>/record-codes`. A record-only coder never codes no-stance (nothing was searched
    yet); a person with no record is listed in `<name>-no-record.txt` and searched. The roster must carry the

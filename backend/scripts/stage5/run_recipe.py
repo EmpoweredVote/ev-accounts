@@ -1,6 +1,7 @@
 """Run write-recipe steps 0-12 for one batch, in order, and stop at the first step that needs a person or fails a check.
 
 usage: python3 -I scripts/stage5/run_recipe.py <batch dir> [--from N] [--to 12] [--print] [--check-only N]
+       python3 -I scripts/stage5/run_recipe.py <batch dir> --replay [--to 9] [--no-reapply] [--print]
 
 Run from a worktree's `backend/` whose `.env` is linked to ev-accounts/backend/.env (STAGE5.md "Running them").
 The batch folder holds `recipe.json`, written once by hand:
@@ -20,6 +21,19 @@ Order rule (review 2026-11-12, change 7): a LegiScan merge after the bill-text s
 run of step 7 marks step 8 stale in `recipe-log.json`, and step 9 refuses to start while step 8 is stale.
 Before each step that rewrites research.csv/evidence.csv, both are copied to `research-pre-<step>.csv` /
 `evidence-pre-<step>.csv` (STAGE5.md "Save a copy").
+
+--replay (round three, 2026-11-13): after a tool fix, redo steps 7 to 9 from clean files with one command. It
+1. refuses unless `research-pre-step7.csv` and `evidence-pre-step7.csv` exist and no earlier step has run since they
+   were saved (then they are out of date: use `--from 7`);
+2. keeps the current files once as `research-before-replay-<k>.csv` / `evidence-before-replay-<k>.csv`;
+3. puts the pre-step-7 copies back, and runs step 7, `drop_held.py` (when held.txt or moved.txt names anyone), step 8,
+   the saved trims (`uncite.py` when uncite.json exists, `apply_overrides.py --skip-changed` when overrides.json
+   exists; `--no-reapply` leaves both out), then step 9, and on to `--to` when given.
+The saved trims are research-text edits already decided for this batch, never a stance; a trim whose words are gone is
+skipped and listed in overrides-applied.json. Read that list. Tools that edit evidence.csv from a gate output
+(cite_named.py, quote_snippets.py) are not re-run: step 9 stops for them as usual if the gate still shows a high.
+A step-7 run never overwrites the pre-step-7 copies while they are current, so the clean files survive any number of
+re-runs. California (ca-01) needed this three times, each by hand.
 At the end it prints the PREVIEW numbers (step 13 is still written by hand, and the write needs the runner's yes).
 """
 import csv, glob, json, os, re, shutil, subprocess, sys, time
@@ -215,16 +229,69 @@ def log_path(b): return os.path.join(b, 'recipe-log.json')
 def load_log(b): return json.load(open(log_path(b))) if os.path.exists(log_path(b)) else {}
 
 
+def save_log(b, log): json.dump(log, open(log_path(b), 'w'), indent=1)
+def pre7(b): return [os.path.join(b, f'{f}-pre-step7.csv') for f in ('research', 'evidence')]
+
+
 def save_copies(b, n):
+    log = load_log(b)
+    if n == 7 and all(os.path.exists(p) for p in pre7(b)) and '7' in log and not log.get('pre7_stale'):
+        # research.csv now holds what steps 7-9 did to it: saving it again would lose the clean copies --replay needs
+        print('  (kept the first pre-step-7 copies: step 7 ran on these files before; --replay puts them back first)')
+        return
     for f in ('research', 'evidence'):
         src = os.path.join(b, f'{f}.csv')
         if os.path.exists(src): shutil.copyfile(src, os.path.join(b, f'{f}-pre-step{n}.csv'))
+    if n == 7:
+        log['pre7_stale'] = False; save_log(b, log)
+
+
+def replay_restore(b, dry=False):
+    """Put research.csv and evidence.csv back to what they were before step 7 first ran; the current ones are kept
+    as *-before-replay-<k>.csv. Returns k (0 when dry)."""
+    missing = [os.path.basename(p) for p in pre7(b) if not os.path.exists(p)]
+    if missing: raise Stop(2, f'--replay needs {" and ".join(missing)} in the batch folder: run the recipe to step 7 first')
+    log = load_log(b)
+    if log.get('pre7_stale'):
+        raise Stop(2, 'a step before 7 ran after the pre-step-7 copies were saved, so they are out of date: run --from 7 instead')
+    if dry: return 0
+    k = 1 + max([int(m.group(1)) for f in os.listdir(b) for m in [re.match(r'research-before-replay-(\d+)\.csv$', f)] if m] or [0])
+    for f, pre in zip(('research', 'evidence'), pre7(b)):
+        cur = os.path.join(b, f'{f}.csv')
+        if os.path.exists(cur): shutil.copyfile(cur, os.path.join(b, f'{f}-before-replay-{k}.csv'))
+        shutil.copyfile(pre, cur)
+    log['8_stale'] = True; log['replays'] = k; save_log(b, log)
+    return k
+
+
+def run_tool(cmd, dry):
+    print('  $', cmd)
+    if dry: return
+    p = subprocess.run(cmd, shell=True, cwd=BACKEND, text=True)
+    if p.returncode: raise Stop(2, f'replay command failed (exit {p.returncode}): {cmd[:200]}')
+
+
+def replay(c, b, dry, to, reapply):
+    k = replay_restore(b, dry)
+    print(f'== replay: pre-step-7 files put back' + (f' (current files kept as *-before-replay-{k}.csv)' if k else ' (print only: nothing changed)'))
+    run_step(7, c, b, dry)
+    if lines(b, 'held.txt') or lines(b, 'moved.txt'): run_tool(f'{PY} scripts/stage5/drop_held.py {b}', dry)
+    run_step(8, c, b, dry)
+    if reapply:
+        if os.path.exists(os.path.join(b, 'uncite.json')): run_tool(f'{PY} scripts/stage5/uncite.py {b}', dry)
+        if os.path.exists(os.path.join(b, 'overrides.json')):
+            run_tool(f'{PY} scripts/stage5/apply_overrides.py {b} --skip-changed', dry)
+            if not dry:
+                x = json.load(open(os.path.join(b, 'overrides-applied.json'))) if os.path.exists(os.path.join(b, 'overrides-applied.json')) else {}
+                sk = x.get('skipped', []) if isinstance(x, dict) else []
+                print(f'  saved trims: {len(sk)} skipped (their words are no longer there; read overrides-applied.json)')
+    for n in range(9, to + 1): run_step(n, c, b, dry)
 
 
 def run_step(n, c, b, dry):
     name, cmds, kind = steps(c, b)[n]
     log = load_log(b)
-    if n == 9 and log.get('8_stale'):
+    if n == 9 and log.get('8_stale') and not dry:
         raise Stop(2, 'step 8 (bill text) is stale: step 7 ran after it, and a LegiScan merge drops bill-text pages. Run --from 8.')
     print(f'== step {n}: {name}')
     if kind == 'save' and not dry: save_copies(b, n)
@@ -243,10 +310,13 @@ def run_step(n, c, b, dry):
         if p.returncode not in (0,) and not (n in (0, 2) and p.returncode == 3):
             raise Stop(2, f'step {n} command failed (exit {p.returncode}): {cmd[:200]}')
     if dry: return
+    log = load_log(b)
     log[str(n)] = time.strftime('%Y-%m-%dT%H:%M:%S')
     if n == 7: log['8_stale'] = True
     if n == 8: log['8_stale'] = False
-    json.dump(log, open(log_path(b), 'w'), indent=1)
+    # steps 2-6 rewrite the files step 7 starts from: the saved pre-step-7 copies no longer match them
+    if 2 <= n <= 6 and any(os.path.exists(p) for p in pre7(b)): log['pre7_stale'] = True
+    save_log(b, log)
     print('  ok:', check(n, c, b))
 
 
@@ -261,7 +331,7 @@ def preview(b):
 
 
 def main():
-    b = os.path.abspath(positional(1, 'run_recipe.py <batch dir> [--from N] [--to 12] [--print] [--check-only N]')[0])
+    b = os.path.abspath(positional(1, 'run_recipe.py <batch dir> [--from N] [--to 12] [--print] [--check-only N] | <batch dir> --replay [--to 9] [--no-reapply] [--print]')[0])
     c = json.load(open(os.path.join(b, 'recipe.json')))
     for k in ('stage5', 'topic', 'unit', 'level', 'roster', 'codes', 'saved_root'):
         if k not in c: raise SystemExit(f'recipe.json needs "{k}"')
@@ -269,6 +339,13 @@ def main():
         if opt('--check-only') is not None:
             print(check(int(opt('--check-only')), c, b)); return 0
         dry = '--print' in sys.argv
+        if '--replay' in sys.argv:
+            if opt('--from') is not None: raise SystemExit('--replay always starts at step 7: leave --from out')
+            to = int(opt('--to', '9'))
+            if to < 9: raise SystemExit('--replay runs steps 7 to 9 at least: --to must be 9 or more')
+            replay(c, b, dry, to, '--no-reapply' not in sys.argv)
+            if not dry and to >= 12: preview(b)
+            return 0
         for n in range(int(opt('--from', '0')), int(opt('--to', '12')) + 1):
             run_step(n, c, b, dry)
         if not dry: preview(b)

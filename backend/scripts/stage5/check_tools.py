@@ -327,7 +327,10 @@ def search_list_recode_only_new_findings_and_cut_short_searches(t):
               e: ([fnd('e1')], []),                                         # no search on file -> search again
               f: ([fnd('f1', 'own-words')], srch(ok_places))}               # no record-only code -> second pass
     for p, (fs, ss) in people.items(): json.dump({'politician_id': p, 'findings': fs, 'searches': ss}, open(f'{t}/store/findings/{p}.json', 'w'))
-    json.dump({'people': [{'politician_id': p, 'findings': [{'id': fs[0]['id']}]} for p, (fs, _) in people.items() if p != f]}, open(f'{t}/briefs/x-01.findings.json', 'w'))
+    # b and d were shown their record in the collapsed layout (coder-inputs.ts --bill-table, record-script.ts): ids under "record"
+    shown = lambda p, fs: ({'politician_id': p, 'record': [{'bill': 'B', 'act': 'yea', 'on': [[fs[0]['id'], '2025-01-01', 'H', '9–1', 'none']]}], 'findings': []}
+                           if p in (b, d) else {'politician_id': p, 'findings': [{'id': fs[0]['id']}]})
+    json.dump({'people': [shown(p, fs) for p, (fs, _) in people.items() if p != f]}, open(f'{t}/briefs/x-01.findings.json', 'w'))
     R = f'{t}/rec'
     for p in (a, b, c, d, e):
         os.makedirs(R, exist_ok=True)
@@ -388,6 +391,74 @@ def sponsor_cover_trims_refiled_copies(t):
     assert sorted(json.load(open(f'{t}/new.refiled.json'))) == ['2', '4']
     run('sponsor_cover.py', *base, '--keep-refiled', '--write', f'{t}/all.json')
     assert json.load(open(f'{t}/all.json')) == [1, 2, 3, 4, 5]
+
+
+@check
+def sponsor_cover_stubs_only_bills_no_roster_member_voted_on(t):
+    """A "stub" is listed for the runner and left out of the core set, unless a roster member voted on the bill on the
+    floor: then it is filled whatever the triage said. A committee roll call (a handful of members) is not a floor vote."""
+    d = f'{t}/ds/XX-1/XX/2025'
+    for sub in ('people', 'bill', 'vote'): os.makedirs(f'{d}/{sub}')
+    for pid in range(1, 11):
+        json.dump({'person': {'people_id': pid, 'first_name': f'F{pid}x', 'last_name': f'Last{"abcdefghij"[pid - 1]}', 'name': f'F{pid}x L'}}, open(f'{d}/people/{pid}.json', 'w'))
+    open(f'{t}/roster.tsv', 'w').write('politician_id\tfull_name\npa\tF1x Lasta\n')
+    floor = [{'people_id': i, 'vote_text': 'Yea'} for i in range(1, 11)]
+    json.dump({'roll_call': {'roll_call_id': 1, 'bill_id': 1, 'chamber': 'H', 'votes': floor}}, open(f'{d}/vote/1.json', 'w'))       # floor: pa voted
+    json.dump({'roll_call': {'roll_call_id': 2, 'bill_id': 2, 'chamber': 'H', 'votes': floor[:3]}}, open(f'{d}/vote/2.json', 'w'))   # committee: 3 of 10
+    json.dump({'roll_call': {'roll_call_id': 3, 'bill_id': 3, 'chamber': 'H', 'votes': [dict(v, vote_text='Absent') if v['people_id'] == 1 else v for v in floor]}}, open(f'{d}/vote/3.json', 'w'))  # floor, pa absent
+    bills = [{'bill_id': i, 'st': 'XX', 'y': 2025, 'num': f'HB{i}', 'title': tt, 'desc': 'd', 'res': False, 'sponsors': [{'pid': 1}]}
+             for i, tt in ((1, 'Dealers: signs'), (2, 'Dealers: storage'), (3, 'Gun tax'), (4, 'Carry permits'))]
+    json.dump(bills, open(f'{t}/bills.json', 'w')); json.dump([], open(f'{t}/core.json', 'w'))
+    base = [f'{t}/bills.json', '--state', 'XX', '--roster', f'{t}/roster.tsv', '--core', f'{t}/core.json', '--ds', f'{t}/ds', '--keep-refiled']
+    run('sponsor_cover.py', *base, '--candidates', f'{t}/cand.json')
+    cand = {c['bill_id']: c for c in json.load(open(f'{t}/cand.json'))}
+    assert [cand[i]['floor_voters'] for i in (1, 2, 3, 4)] == [1, 0, 0, 0], [cand[i]['floor_voters'] for i in (1, 2, 3, 4)]
+    assert cand[1]['desc'] == 'd', 'the triage reads the summary line too'
+    json.dump({'1': 'stub', '2': 'stub', '3': 'stub', '4': 'fill'}, open(f'{t}/tri.json', 'w'))
+    p = run('sponsor_cover.py', *base, '--triage', f'{t}/tri.json', '--write', f'{t}/new.json')
+    assert json.load(open(f'{t}/new.json')) == [1, 4], 'a stub a roster member voted on is filled; the other stubs stay out of core'
+    assert 'stub -> fill: 2025 HB1' in p.stdout, p.stdout
+    assert [x['bill_id'] for x in json.load(open(f'{t}/new.stubs.json'))] == [2, 3], 'stubs are listed for the runner'
+    json.dump({'1': 'maybe', '2': 'stub', '3': 'stub', '4': 'fill'}, open(f'{t}/tri.json', 'w'))
+    assert run('sponsor_cover.py', *base, '--triage', f'{t}/tri.json', '--write', f'{t}/x.json', ok=False).returncode != 0
+
+
+@check
+def run_recipe_replay_puts_back_the_first_pre_step_7_files(t):
+    """--replay restores the pre-step-7 copies (keeping the current files), refuses when they are missing or out of date,
+    and a later step-7 run never overwrites them while they are current."""
+    sys.path.insert(0, TOOLS)
+    import importlib; rr = importlib.import_module('run_recipe'); importlib.reload(rr)
+    os.makedirs(t)
+    w = lambda f, x: open(f'{t}/{f}', 'w').write(x)
+    r = lambda f: open(f'{t}/{f}').read()
+    w('research.csv', 'after-9'); w('evidence.csv', 'ev-after-9')
+    try: rr.replay_restore(t); raise AssertionError('no pre-step-7 copies: must refuse')
+    except rr.Stop as e: assert e.code == 2 and 'research-pre-step7.csv' in str(e)
+    w('research-pre-step7.csv', 'clean'); w('evidence-pre-step7.csv', 'ev-clean')
+    json.dump({'7': 'x', '8': 'x', '9': 'x', '8_stale': False}, open(f'{t}/recipe-log.json', 'w'))
+    assert rr.replay_restore(t, dry=True) == 0 and r('research.csv') == 'after-9', '--print changes nothing'
+    assert rr.replay_restore(t) == 1
+    assert (r('research.csv'), r('evidence.csv')) == ('clean', 'ev-clean')
+    assert (r('research-before-replay-1.csv'), r('evidence-before-replay-1.csv')) == ('after-9', 'ev-after-9'), 'the current files are kept'
+    assert json.load(open(f'{t}/recipe-log.json'))['8_stale'] is True, 'step 9 must wait for step 8 again'
+    w('research.csv', 'after-7-again'); rr.save_copies(t, 7)
+    assert r('research-pre-step7.csv') == 'clean', 'a step-7 re-run must not overwrite the clean copy'
+    assert rr.replay_restore(t) == 2 and r('research-before-replay-2.csv') == 'after-7-again'
+    log = json.load(open(f'{t}/recipe-log.json')); log['pre7_stale'] = True; json.dump(log, open(f'{t}/recipe-log.json', 'w'))
+    try: rr.replay_restore(t); raise AssertionError('an earlier step ran since: must refuse')
+    except rr.Stop as e: assert 'out of date' in str(e)
+    w('research.csv', 'new-evidence-run'); rr.save_copies(t, 7)
+    assert r('research-pre-step7.csv') == 'new-evidence-run' and json.load(open(f'{t}/recipe-log.json'))['pre7_stale'] is False
+    sys.path.remove(TOOLS)
+    json.dump({'stage5': t, 'topic': 'tp', 'unit': 'state:xx', 'level': 'state', 'state': 'XX', 'roster': f'{t}/r.tsv', 'codes': t,
+               'saved_root': t, 'votes': 'none'}, open(f'{t}/recipe.json', 'w'))
+    w('held.txt', 'p1\n'); w('overrides.json', '{"trims": []}'); w('uncite.json', '[]')
+    out = run('run_recipe.py', t, '--replay', '--print').stdout
+    order = [out.index(x) for x in ('== step 7', 'drop_held.py', '== step 8', 'uncite.py', 'apply_overrides.py', '== step 9')]
+    assert order == sorted(order), out
+    assert 'apply_overrides.py' not in run('run_recipe.py', t, '--replay', '--print', '--no-reapply').stdout
+    assert run('run_recipe.py', t, '--replay', '--from', '8', '--print', ok=False).returncode != 0
 
 
 @check

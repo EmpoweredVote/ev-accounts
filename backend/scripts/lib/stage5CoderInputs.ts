@@ -255,3 +255,201 @@ export function filterRulings(md: string, unit: string): FilteredRulings {
   }
   return { text: out.join('\n').replace(/\n{3,}/g, '\n\n').trim() + '\n', kept, dropped };
 }
+
+// ---------- collapsed record (round three, adjustment 2) ----------
+
+/** One row of the state's bill table (`bill_table.py`): what a Yes on the bill supports. */
+export interface BillTableRow { rung: number | null; deciding_words?: string; why?: string; flag?: string; opus?: string }
+
+/** A roll call the pre-fill wrote in its fixed sentence: `[finding id, date, body, tally, gate]`. */
+export type VoteRef = [id: string, date: string, body: string, tally: string, gate: string];
+/** A sponsorship the pre-fill wrote in its fixed sentence: `[finding id, date, role]`. */
+export type SponsorRef = [id: string, date: string, role: string];
+
+/** One line per bill and act: every roll call or sponsorship of that kind this person has on the bill. */
+export interface RecordLine { bill: string; act: string; rung?: number | null; on: (VoteRef | SponsorRef)[] }
+
+export interface CollapsedBill {
+  subjects: string[];
+  file?: string;
+  /** The bill table's reading, stated once per batch. Absent when the table does not list the bill. */
+  rung?: number | null;
+  deciding_words?: string;
+  why?: string;
+  /** The URL the bill's record findings share. */
+  url?: string;
+  /** `date|body` → the roll call's motion text. */
+  motions?: Record<string, string>;
+  /** What follows "<role> sponsor of <bill> " in a sponsorship's note. */
+  sponsor_tail?: string;
+  /** What follows "<role> sponsor" in a sponsorship's motion field, when it has one. */
+  sponsor_motion_tail?: string;
+}
+
+export interface CollapsedPerson extends Omit<CoderPerson, 'findings'> {
+  /** Record findings whose note is the pre-fill's fixed sentence, one line per bill and act. */
+  record: RecordLine[];
+  /** Everything else, word for word: own words, and any record whose note says more than the fixed sentence. */
+  findings: CoderFinding[];
+}
+
+export interface CollapsedBatch extends Omit<CompactBatch, 'bills' | 'people'> {
+  collapsed: true;
+  bills: Record<string, CollapsedBill>;
+  people: CollapsedPerson[];
+}
+
+const COLLAPSED_ABOUT = 'One file per coder batch. "record" holds each person\'s plain roll calls and sponsorships, one line '
+  + 'per bill and act: a vote is [finding id, date, chamber, tally yes–no, census gate (none = no gate)]; a sponsorship is '
+  + '[finding id, date, role]. Nothing else was said about those acts. "rung" on a line, and "rung", "deciding_words" and '
+  + '"why" in "bills", are the state bill table\'s reading of a Yes on that bill (null = no rung); "motions" gives each roll '
+  + 'call\'s motion by date and chamber. "findings" holds everything else word for word: the person\'s own words, and any '
+  + 'record whose note says more than the plain facts (read those notes: doubts are flagged there). Cite any act by its '
+  + 'finding id.';
+
+const VOTE_NOTE = /^(.+?), ([\s\S]*), (\d{4}-\d{2}-\d{2}): (\w+) \(tally ([^)]*)\); census gate: ([\w-]+)\.$/;
+const SPONSOR_NOTE = /^(\w+) sponsor of (\S+) ([\s\S]*)$/;
+const precisionOf = (date: string) => (date.length === 4 ? 'year' : date.length === 7 ? 'month' : 'day');
+
+function voteParts(f: CoderFinding): { body: string; tally: string } | undefined {
+  const m = VOTE_NOTE.exec(f.note);
+  if (!m || f.motion === undefined || f.gate === undefined || m[2] !== f.motion || m[3] !== f.date || m[4] !== f.act || m[6] !== f.gate) return undefined;
+  return { body: m[1], tally: m[5] };
+}
+function sponsorParts(f: CoderFinding): { role: string; tail: string; motionTail?: string } | undefined {
+  const m = SPONSOR_NOTE.exec(f.note);
+  if (!m || m[2] !== f.instrument_id || f.gate !== undefined) return undefined;
+  if (f.motion !== undefined && !f.motion.startsWith(`${m[1]} sponsor`)) return undefined;
+  return { role: m[1], tail: m[3], motionTail: f.motion?.slice(`${m[1]} sponsor`.length) };
+}
+
+/** One record finding, rebuilt from its line. The key order is `projectFinding`'s: the check compares JSON. */
+function rebuild(line: RecordLine, ref: VoteRef | SponsorRef, bill: CollapsedBill | undefined): CoderFinding {
+  const [id, date] = ref;
+  const o = { id, kind: 'record', url: bill?.url ?? '', date, date_precision: precisionOf(date), instrument_id: line.bill, act: line.act } as CoderFinding;
+  if (ref.length === 5) {
+    const [, , body, tally, gate] = ref;
+    o.motion = bill?.motions?.[`${date}|${body}`] ?? '';
+    o.gate = gate;
+    o.note = `${body}, ${o.motion}, ${date}: ${line.act} (tally ${tally}); census gate: ${gate}.`;
+  } else {
+    if (bill?.sponsor_motion_tail !== undefined) o.motion = `${ref[2]} sponsor${bill.sponsor_motion_tail}`;
+    o.note = `${ref[2]} sponsor of ${line.bill} ${bill?.sponsor_tail ?? ''}`;
+  }
+  o.subjects = bill?.subjects ?? [];
+  return o;
+}
+
+const mostCommonText = (xs: string[]): string | undefined => {
+  const n = new Map<string, number>();
+  for (const x of xs) n.set(x, (n.get(x) ?? 0) + 1);
+  return [...n].sort((a, b) => b[1] - a[1])[0]?.[0];
+};
+
+/**
+ * `compactBatch`, with each person's plain record collapsed to one line per bill and act, and the bill table's
+ * reading stated once per bill. A record finding is collapsed only when its line rebuilds to exactly the
+ * finding the store holds: any note that says more than the pre-fill's fixed sentence (a doubt, an unverified
+ * identity, a version remark) fails that test and stays in `findings`, word for word. California, batch 1: 20
+ * people, 1,239 record findings, 658k characters before and about a third of that after.
+ */
+export function collapseBatch(
+  people: { row: RosterRow; pf: PersonFindings | undefined }[], topicKey: string, season: number,
+  instrumentFile: (id: string) => string | undefined, table: Record<string, BillTableRow>, kinds?: ReadonlySet<Finding['kind']>,
+): CollapsedBatch {
+  const c = compactBatch(people, topicKey, season, instrumentFile, kinds);
+  const full = expandCompact(c);
+  const bills: Record<string, CollapsedBill> = {};
+  const recs = c.people.flatMap((p) => full.get(p.politician_id)!.findings.filter((f) => f.kind === 'record' && f.instrument_id));
+  for (const [id, b] of Object.entries(c.bills)) {
+    const mine = recs.filter((f) => f.instrument_id === id);
+    const row = table[id];
+    const o: CollapsedBill = { subjects: b.subjects };
+    if (b.file) o.file = b.file;
+    if (row) { o.rung = row.rung; if (row.deciding_words) o.deciding_words = row.deciding_words; if (row.why) o.why = row.why; }
+    const url = mostCommonText(mine.map((f) => f.url));
+    if (url !== undefined) o.url = url;
+    const motions = new Map<string, string[]>();
+    for (const f of mine) { const v = voteParts(f); if (v) motions.set(`${f.date}|${v.body}`, [...(motions.get(`${f.date}|${v.body}`) ?? []), f.motion!]); }
+    if (motions.size) o.motions = Object.fromEntries([...motions].sort().map(([k, v]) => [k, mostCommonText(v)!]));
+    const sp = mine.flatMap((f) => { const s = sponsorParts(f); return s ? [s] : []; });
+    if (sp.length) {
+      o.sponsor_tail = mostCommonText(sp.map((s) => s.tail))!;
+      const withMotion = sp.filter((s) => s.motionTail !== undefined);
+      if (withMotion.length * 2 > sp.length) o.sponsor_motion_tail = mostCommonText(withMotion.map((s) => s.motionTail!))!;
+    }
+    bills[id] = o;
+  }
+  const outPeople: CollapsedPerson[] = c.people.map((p) => {
+    const lines = new Map<string, RecordLine>();
+    const rest: CoderFinding[] = [];
+    const compactById = new Map(p.findings.map((f) => [f.id, f]));
+    for (const f of full.get(p.politician_id)!.findings) {
+      const bill = f.instrument_id ? bills[f.instrument_id] : undefined;
+      let ref: VoteRef | SponsorRef | undefined;
+      if (f.kind === 'record' && f.instrument_id && f.act) {
+        const v = voteParts(f); const s = v ? undefined : sponsorParts(f);
+        if (v) ref = [f.id, f.date, v.body, v.tally, f.gate!];
+        else if (s) ref = [f.id, f.date, s.role];
+      }
+      const line: RecordLine | undefined = ref && { bill: f.instrument_id!, act: f.act!, on: [] };
+      if (!ref || !line || JSON.stringify(rebuild(line, ref, bill)) !== JSON.stringify(f)) { rest.push(compactById.get(f.id)!); continue; }
+      const k = `${f.instrument_id}|${f.act}`;
+      if (!lines.has(k)) { const l: RecordLine = { bill: f.instrument_id!, act: f.act! }  as RecordLine; if (table[f.instrument_id!]) l.rung = table[f.instrument_id!].rung; l.on = []; lines.set(k, l); }
+      lines.get(k)!.on.push(ref);
+    }
+    const { findings: _f, ...head } = p;
+    return { ...head, record: [...lines.values()], findings: rest };
+  });
+  return { about: COLLAPSED_ABOUT, collapsed: true, topic_key: c.topic_key, season: c.season, search_subjects: c.search_subjects, bills, people: outPeople };
+}
+
+/** Rebuilds every person's projected findings and searches from a collapsed batch (order: lines, then the rest). */
+export function expandCollapsed(c: CollapsedBatch): Map<string, { findings: CoderFinding[]; searches: CoderSearch[] }> {
+  const asCompact: CompactBatch = {
+    about: c.about, topic_key: c.topic_key, season: c.season, search_subjects: c.search_subjects,
+    bills: Object.fromEntries(Object.entries(c.bills).map(([k, b]) => [k, { subjects: b.subjects, file: b.file }])),
+    people: c.people.map(({ record: _r, ...p }) => p),
+  };
+  const out = expandCompact(asCompact);
+  for (const p of c.people) {
+    const lines = p.record.flatMap((l) => l.on.map((ref) => rebuild(l, ref, c.bills[l.bill])));
+    out.get(p.politician_id)!.findings.unshift(...lines);
+  }
+  return out;
+}
+
+/**
+ * Differences between the store and a collapsed batch; empty means no finding id was lost and every field of
+ * every finding, each note included, rebuilds word for word. Order within a person is not compared: the lines
+ * group a person's acts by bill.
+ */
+export function collapsedRoundTripProblems(people: { row: RosterRow; pf: PersonFindings | undefined }[], c: CollapsedBatch, topicKey: string, season: number, kinds?: ReadonlySet<Finding['kind']>): string[] {
+  const out: string[] = [];
+  const back = expandCollapsed(c);
+  for (const { row, pf } of people) {
+    const want = onTopic(pf, topicKey, kinds).map((f) => projectFinding(f, topicKey));
+    const wantS = (pf?.searches ?? []).filter((s) => s.topic_key === topicKey && s.season === season).map(projectSearch);
+    const got = back.get(row.politician_id);
+    if (!got) { out.push(`${row.full_name}: missing from the collapsed file`); continue; }
+    const gotById = new Map(got.findings.map((f) => [f.id, f]));
+    if (gotById.size !== got.findings.length) out.push(`${row.full_name}: a finding id appears twice in the collapsed file`);
+    if (got.findings.length !== want.length) out.push(`${row.full_name}: ${want.length} findings in the store, ${got.findings.length} in the collapsed file`);
+    for (const f of want) {
+      const g = gotById.get(f.id);
+      if (!g) out.push(`${row.full_name}: finding ${f.id.slice(0, 12)}… lost`);
+      else if (JSON.stringify(g) !== JSON.stringify(f)) out.push(`${row.full_name}: finding ${f.id.slice(0, 12)}… differs from the store (${g.note === f.note ? 'a field' : 'its note'})`);
+    }
+    if (JSON.stringify(got.searches) !== JSON.stringify(wantS)) out.push(`${row.full_name}: a search differs from the store`);
+  }
+  return out;
+}
+
+/** Every finding id a batch file shows a coder, for either layout (`search_list.py recode` reads the same). */
+export function shownIds(c: CompactBatch | CollapsedBatch): Map<string, string[]> {
+  const out = new Map<string, string[]>();
+  for (const p of c.people as (CoderPerson & { record?: RecordLine[] })[]) {
+    out.set(p.politician_id, [...(p.record ?? []).flatMap((l) => l.on.map((r) => r[0])), ...p.findings.map((f) => f.id)]);
+  }
+  return out;
+}

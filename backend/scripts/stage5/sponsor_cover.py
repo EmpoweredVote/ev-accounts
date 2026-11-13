@@ -3,7 +3,7 @@
 usage: python3 -I sponsor_cover.py <bills.json> --state XX --roster <tsv> [--roster <tsv>] --core <core.json>
          --ds <legiscan ds root> [--idmap <idmap.tsv>] [--since 2017]
          [--candidates <out.json>] [--triage <triage.json> --write <new core.json>]
-         [--refile-tolerance 0.02 | --keep-refiled] [--refiled-out <json>]
+         [--refile-tolerance 0.02 | --keep-refiled] [--refiled-out <json>] [--stubs-out <json>]
 
 <bills.json> is the scan of the state's LegiScan datasets (scan_gun.py's output: one dict per bill with bill_id,
 st, y, num, title, res, sponsors[{pid, name}]). <core.json> is the core set so far, a list of LegiScan bill_ids.
@@ -25,6 +25,18 @@ st, y, num, title, res, sponsors[{pid, name}]). <core.json> is the core set so f
    Core bills (floor votes) are never trimmed. Every dropped copy, with the copy kept instead, goes to --refiled-out
    (default <write>.refiled.json).
 
+5. Text fill only where it can matter (round three, 2026-11-13). The triage may also answer "stub": the bill is on
+   the topic, but its title and summary show it can carry no rung (a dealer business rule, a tax, a storage rule, a
+   report or study, police carry, a gun crime's sentence). A stub is not filled and does not join the core set. It
+   is listed for the runner in --stubs-out (default <write>.stubs.json) with its roster sponsors, so the runner can
+   send any of them to a fill. Two guards, both applied here and never left to the triage:
+   - a bill a roster member voted on in a floor roll call is always filled: "stub" is turned into "fill" and printed.
+     A floor roll call is one that lists more than half of the largest roll call of its chamber in that session
+     (a committee lists a handful of members; the floor lists the chamber). Each candidate carries `floor_voters`.
+   - a stub is never trimmed, merged or guessed into a rung: no instrument, so a record on it cannot seat anyone and
+     its sponsors go to an Opus coder in the record pass (record-script.ts lane "sponsor-no-rung").
+   California replay: see README.md.
+
 Why: Wisconsin, Arizona and Georgia each needed a second bill round after the search (5, 8 and 13 bills), because
 the greedy cover stopped once a bill added fewer than two people (review 2026-11-12, change 7).
 Prints the LegiScan people it matched by name, so they can be added to idmap.tsv once.
@@ -34,7 +46,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the s
 from _args import opt, opts, positional
 from _legiscan_people import Matcher, read_idmap, read_people, read_roster
 
-USAGE = 'sponsor_cover.py <bills.json> --state XX --roster <tsv> --core <core.json> --ds <ds root> [--idmap <tsv>] [--since 2017] [--candidates <out.json>] [--triage <json> --write <out.json>] [--refile-tolerance 0.02 | --keep-refiled] [--refiled-out <json>]'
+USAGE = 'sponsor_cover.py <bills.json> --state XX --roster <tsv> --core <core.json> --ds <ds root> [--idmap <tsv>] [--since 2017] [--candidates <out.json>] [--triage <json> --write <out.json>] [--refile-tolerance 0.02 | --keep-refiled] [--refiled-out <json>] [--stubs-out <json>]'
+TRIAGE = ('fill', 'stub', 'skip')
 
 
 def text_sizes(ds, st, ids):
@@ -46,6 +59,26 @@ def text_sizes(ds, st, ids):
         t = b.get('texts') or []
         pick = next((x for x in t if x.get('type') == 'Introduced'), t[0] if t else None)
         if pick and pick.get('text_size'): out[b['bill_id']] = pick['text_size']
+    return out
+
+
+def floor_voters(ds, st, ids, matcher):
+    """bill_id -> roster members (politician ids) who cast a vote in a floor roll call on it.
+
+    A floor roll call lists more than half as many members as the largest roll call of its chamber in that session.
+    """
+    out = {}
+    for d in glob.glob(os.path.join(ds, f'{st}-*', '*', '*')):
+        calls, top = [], {}
+        for f in glob.glob(os.path.join(d, 'vote', '*.json')):
+            r = json.load(open(f)).get('roll_call', {})
+            n = len(r.get('votes') or [])
+            top[r.get('chamber')] = max(top.get(r.get('chamber'), 0), n)
+            if r.get('bill_id') in ids: calls.append((r, n))
+        for r, n in calls:
+            if n * 2 <= top.get(r.get('chamber'), 0): continue
+            who = {matcher.match(v['people_id']) for v in r['votes'] if v.get('vote_text') in ('Yea', 'Nay')}
+            out.setdefault(r['bill_id'], set()).update(x for x in who if x)
     return out
 
 
@@ -85,7 +118,9 @@ def main():
     for b in sorted(bills, key=lambda b: (-b['y'], b['num'])):
         if b.get('res') or b['y'] < since or b['bill_id'] in core: continue
         who = sorted({x for x in (m.match(s['pid']) for s in b.get('sponsors', [])) if x})
-        if who: add.append(dict(bill_id=b['bill_id'], y=b['y'], num=b['num'], title=b['title'], sponsors=[roster[x]['full_name'] for x in who]))
+        if who: add.append(dict(bill_id=b['bill_id'], y=b['y'], num=b['num'], title=b['title'], desc=b.get('desc') or '', sponsors=[roster[x]['full_name'] for x in who]))
+    voters = floor_voters(opt('--ds'), st, {a['bill_id'] for a in add}, m)
+    for a in add: a['floor_voters'] = len(voters.get(a['bill_id'], ()))
     core_sponsored = {x for b in bills if b['bill_id'] in core for x in (m.match(s['pid']) for s in b.get('sponsors', [])) if x}
     newly = {n for a in add for n in a['sponsors']} - {roster[x]['full_name'] for x in core_sponsored}
     print(f'{st}: core {len(core)}; sponsor cover adds {len(add)} bill(s) since {since}; '
@@ -102,11 +137,17 @@ def main():
     if out:
         if not tri: raise SystemExit('--write needs --triage: the candidates are titles only until a triage reads them')
         t = {str(k): v for k, v in json.load(open(tri)).items()}
-        bad = {k: v for k, v in t.items() if v not in ('fill', 'skip')}
-        if bad: raise SystemExit(f'triage values must be fill or skip: {bad}')
+        bad = {k: v for k, v in t.items() if v not in TRIAGE}
+        if bad: raise SystemExit(f'triage values must be fill, stub or skip: {bad}')
         left = [a for a in add if str(a['bill_id']) not in t]
         if left: raise SystemExit(f"{len(left)} candidate(s) not triaged, e.g. {left[0]['y']} {left[0]['num']}: triage every one")
+        # A bill a roster member voted on is always filled, whatever the triage expects of its title.
+        promoted = [a for a in add if t.get(str(a['bill_id'])) == 'stub' and a['floor_voters']]
+        for a in promoted:
+            t[str(a['bill_id'])] = 'fill'
+            print(f"  stub -> fill: {a['y']} {a['num']} ({a['floor_voters']} roster member(s) voted on it on the floor)")
         fill = [a['bill_id'] for a in add if t.get(str(a['bill_id'])) == 'fill']
+        stubs = [a for a in add if t.get(str(a['bill_id'])) == 'stub']
         dropped = {}
         if '--keep-refiled' not in sys.argv:
             tol = float(opt('--refile-tolerance', '0.02'))
@@ -117,7 +158,14 @@ def main():
             json.dump({str(k): v for k, v in sorted(dropped.items())}, open(rpath, 'w'), indent=1)
             print(f're-file trim: {len(fill) + len(dropped)} fill bills -> {len(fill)} kept, {len(dropped)} older copies dropped ({rpath})')
         json.dump(sorted(core | set(fill)), open(out, 'w'))
-        print(f'wrote {out}: core {len(core)} + {len(fill)} sponsored (skipped {len(add) - len(fill) - len(dropped)} by title, {len(dropped)} re-filed copies)')
+        spath = opt('--stubs-out') or re.sub(r'\.json$', '', out) + '.stubs.json'
+        json.dump([dict(a, stub='Not read: no roster member voted on it and the title triage expects no rung. '
+                        'A record on it cannot seat anyone; send it to a fill to change that.') for a in stubs], open(spath, 'w'), indent=1)
+        print(f'wrote {out}: core {len(core)} + {len(fill)} sponsored (skipped {len(add) - len(fill) - len(dropped) - len(stubs)} by title, '
+              f'{len(dropped)} re-filed copies, {len(stubs)} stubs)')
+        if stubs:
+            print(f'{len(stubs)} sponsor-only bill(s) not filled, for the runner to read ({spath}):')
+            for a in stubs: print(f"  {a['y']} {a['num']:8s} {a['title'][:70]}  [{', '.join(a['sponsors'][:4])}{' …' if len(a['sponsors']) > 4 else ''}]")
 
 if __name__ == '__main__':
     main()

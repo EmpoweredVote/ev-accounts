@@ -159,6 +159,8 @@ export function finalizeCode(entry: Record<string, unknown>, header: CodeHeader,
     coded_at: now.toISOString(),
   });
   delete code.evidence_basis;
+  // Only `record-script.ts adopt` sets this, after the standing check; nothing a coder or a script writes carries it in.
+  delete code.script_check;
   if (pf && (code.outcome === 'seated' || code.outcome === 'doesnt-fit')) {
     const byId = new Map(pf.findings.map((f) => [f.id, f]));
     const cited = (code.finding_ids as string[]).map((id) => byId.get(id)).filter((f): f is Finding => !!f && f.topic_keys.includes(header.topic_key));
