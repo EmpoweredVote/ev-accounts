@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-13T19:43:47.242Z",
+ "generated": "2026-11-13T21:33:25.874Z",
  "apDir": "ap-2026-11-13",
  "ourFile": "our-races-2026-11-13.json",
  "races": [
@@ -36,11 +36,9 @@
     "our_name": "Mark D. Sylvia",
     "ap_name": "Mark D. Sylvia",
     "candidateID": "165959",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -112,11 +110,9 @@
     "our_name": "Daniel F. Cahill",
     "ap_name": "Daniel Francis Cahill",
     "candidateID": "123540",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -171,11 +167,9 @@
     "our_name": "Carlos González",
     "ap_name": "Carlos Gonzalez",
     "candidateID": "123205",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -230,11 +224,9 @@
     "our_name": "John J. Lawn",
     "ap_name": "John J. Lawn",
     "candidateID": "122807",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -289,11 +281,9 @@
     "our_name": "Jeffrey N. Roy",
     "ap_name": "Jeffrey N. Roy",
     "candidateID": "122831",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -348,11 +338,9 @@
     "our_name": "Michelle M. DuBois",
     "ap_name": "Michelle Marie DuBois",
     "candidateID": "123270",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -407,11 +395,9 @@
     "our_name": "William F. MacGregor",
     "ap_name": "William F. MacGregor",
     "candidateID": "166053",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -483,11 +469,9 @@
     "our_name": "Brian W. Murray",
     "ap_name": "Brian W. Murray",
     "candidateID": "123663",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -542,11 +526,9 @@
     "our_name": "Christopher Hendricks",
     "ap_name": "Christopher M. Hendricks",
     "candidateID": "124069",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -601,11 +583,9 @@
     "our_name": "Sean Reid",
     "ap_name": "Sean Daniel Reid",
     "candidateID": "165960",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -660,11 +640,9 @@
     "our_name": "Bud L. Williams",
     "ap_name": "Bud L. Williams",
     "candidateID": "123554",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -719,11 +697,9 @@
     "our_name": "Amy M. Sangiolo",
     "ap_name": "Amy Mah Sangiolo",
     "candidateID": "165976",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -778,11 +754,9 @@
     "our_name": "Paul McMurtry",
     "ap_name": "Paul McMurtry",
     "candidateID": "122482",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -837,11 +811,9 @@
     "our_name": "Rita A. Mendes",
     "ap_name": "Rita A. Mendes",
     "candidateID": "125151",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -896,11 +868,9 @@
     "our_name": "Judith A. Garcia",
     "ap_name": "Judith Garcia",
     "candidateID": "125164",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -955,11 +925,9 @@
     "our_name": "Hannah E. Kane",
     "ap_name": "Hannah Elizabeth Kane",
     "candidateID": "123671",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -1014,11 +982,9 @@
     "our_name": "Norman J. Orrall",
     "ap_name": "Norman J. Orrall",
     "candidateID": "124255",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -1073,11 +1039,9 @@
     "our_name": "Thomas P. Walsh",
     "ap_name": "Thomas P. Walsh",
     "candidateID": "123459",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -1132,11 +1096,9 @@
     "our_name": "Angelo J. Puppolo",
     "ap_name": "Angelo J. Puppolo Jr.",
     "candidateID": "122449",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -1191,11 +1153,9 @@
     "our_name": "Greg Schwartz",
     "ap_name": "Greg Schwartz",
     "candidateID": "165979",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -1250,11 +1210,9 @@
     "our_name": "John H. Rogers",
     "ap_name": "John Healy Rogers",
     "candidateID": "54538",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -1309,11 +1267,9 @@
     "our_name": "Kathleen P. LaNatra",
     "ap_name": "Kathleen LaNatra",
     "candidateID": "124205",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -1385,11 +1341,9 @@
     "our_name": "Brandy Fluker-Reid",
     "ap_name": "Brandy Fluker Reid",
     "candidateID": "124648",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -1444,11 +1398,9 @@
     "our_name": "Meghan Kilcoyne",
     "ap_name": "Meghan Kilcoyne",
     "candidateID": "124671",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -1520,11 +1472,9 @@
     "our_name": "Antonio F. Cabral",
     "ap_name": "Antonio F. D. Cabral",
     "candidateID": "54454",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -1579,11 +1529,9 @@
     "our_name": "Sally P. Kerans",
     "ap_name": "Sally Patrice Kerans",
     "candidateID": "124559",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -1687,11 +1635,9 @@
     "our_name": "Joshua Tarsky",
     "ap_name": "Joshua Brian Tarsky",
     "candidateID": "166043",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -1746,11 +1692,9 @@
     "our_name": "Daniel J. Hunt",
     "ap_name": "Daniel J. Hunt",
     "candidateID": "123297",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -1805,11 +1749,9 @@
     "our_name": "John J. Mahoney",
     "ap_name": "John J. Mahoney",
     "candidateID": "123805",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -1864,11 +1806,9 @@
     "our_name": "Adam J. Scanlon",
     "ap_name": "Adam J. Scanlon",
     "candidateID": "124548",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -1923,11 +1863,9 @@
     "our_name": "Adrianne P. Ramos",
     "ap_name": "Adrianne Pusateri Ramos",
     "candidateID": "125054",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -1982,11 +1920,9 @@
     "our_name": "Simon Cataldo",
     "ap_name": "Simon J. Cataldo",
     "candidateID": "125104",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -2041,11 +1977,9 @@
     "our_name": "Alice H. Peisch",
     "ap_name": "Alice Hanlon Peisch",
     "candidateID": "122485",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -2100,11 +2034,9 @@
     "our_name": "Rob Consalvo",
     "ap_name": "Rob Consalvo",
     "candidateID": "123089",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -2159,11 +2091,9 @@
     "our_name": "James J. O'Day",
     "ap_name": "James J. O'Day",
     "candidateID": "122526",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -2218,11 +2148,9 @@
     "our_name": "Ryan M. Hamilton",
     "ap_name": "Ryan M. Hamilton",
     "candidateID": "125059",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -2294,11 +2222,9 @@
     "our_name": "Michelle Ciccolo",
     "ap_name": "Michelle Ciccolo",
     "candidateID": "124143",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -2353,11 +2279,9 @@
     "our_name": "Tommy Vitolo",
     "ap_name": "Tommy Vitolo",
     "candidateID": "124192",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -2412,11 +2336,9 @@
     "our_name": "Samantha Montaño",
     "ap_name": "Samantha Montaño",
     "candidateID": "125180",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -2471,11 +2393,9 @@
     "our_name": "Mary S. Keefe",
     "ap_name": "Mary S. Keefe",
     "candidateID": "122861",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -2645,11 +2565,9 @@
     "our_name": "Jessica A. Giannino",
     "ap_name": "Jessica Ann Giannino",
     "candidateID": "124654",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -2704,11 +2622,9 @@
     "our_name": "Daniel M. Donahue",
     "ap_name": "Daniel M. Donahue",
     "candidateID": "123311",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -2763,11 +2679,9 @@
     "our_name": "Frank A. Moran",
     "ap_name": "Frank A. Moran",
     "candidateID": "122795",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -2871,11 +2785,9 @@
     "our_name": "Kevin G. Honan",
     "ap_name": "Kevin G. Honan",
     "candidateID": "54570",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -2930,11 +2842,9 @@
     "our_name": "David A. LeBoeuf",
     "ap_name": "David Henry Argosky LeBoeuf",
     "candidateID": "124250",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -3055,11 +2965,9 @@
     "our_name": "Tara T. Hong",
     "ap_name": "Tara Hong",
     "candidateID": "125113",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -3114,11 +3022,9 @@
     "our_name": "Michael J. Moran",
     "ap_name": "Michael J. Moran",
     "candidateID": "122514",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -3173,11 +3079,9 @@
     "our_name": "Joseph D. McKenna",
     "ap_name": "Joseph D. McKenna",
     "candidateID": "123340",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -3249,11 +3153,9 @@
     "our_name": "David Robertson",
     "ap_name": "David Allen Robertson",
     "candidateID": "124168",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -3308,11 +3210,9 @@
     "our_name": "Jeffrey R. Turco",
     "ap_name": "Jeffrey Rosario Turco",
     "candidateID": "125187",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -3367,11 +3267,9 @@
     "our_name": "Kate Donaghue",
     "ap_name": "Kate Donaghue",
     "candidateID": "125193",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -3492,11 +3390,9 @@
     "our_name": "John Barrett",
     "ap_name": "John Barrett III",
     "candidateID": "177064",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -3551,11 +3447,9 @@
     "our_name": "Michael S. Chaisson",
     "ap_name": "Michael Chaisson",
     "candidateID": "125365",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -3610,11 +3504,9 @@
     "our_name": "Dawne Shand",
     "ap_name": "Dawne Frances Shand",
     "candidateID": "125392",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -3735,11 +3627,9 @@
     "our_name": "Todd M. Smola",
     "ap_name": "Todd M. Smola",
     "candidateID": "122551",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -3794,11 +3684,9 @@
     "our_name": "Lindsay Sabadosa",
     "ap_name": "Lindsay N. Sabadosa",
     "candidateID": "124122",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -3853,11 +3741,9 @@
     "our_name": "Margaret R. Scarsdale",
     "ap_name": "Margaret R. Scarsdale",
     "candidateID": "125078",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -3929,11 +3815,9 @@
     "our_name": "Bruce J. Ayers",
     "ap_name": "Bruce J. Ayers",
     "candidateID": "122581",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -3988,11 +3872,9 @@
     "our_name": "Michelle L. Badger",
     "ap_name": "Michelle L. Badger",
     "candidateID": "166044",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -4064,11 +3946,9 @@
     "our_name": "Adrian C. Madaro",
     "ap_name": "Adrian C. Madaro",
     "candidateID": "123635",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -4255,11 +4135,9 @@
     "our_name": "Kenneth I. Gordon",
     "ap_name": "Kenneth Ira Gordon",
     "candidateID": "123054",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -4314,11 +4192,9 @@
     "our_name": "Marc T. Lombardo",
     "ap_name": "Marc T. Lombardo",
     "candidateID": "122373",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -4390,11 +4266,9 @@
     "our_name": "Sean Garballey",
     "ap_name": "Sean Garballey",
     "candidateID": "122460",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -4449,11 +4323,9 @@
     "our_name": "David M. Rogers",
     "ap_name": "David M. Rogers",
     "candidateID": "122815",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -4508,11 +4380,9 @@
     "our_name": "Marjorie C. Decker",
     "ap_name": "Marjorie C. Decker",
     "candidateID": "122817",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -4567,11 +4437,9 @@
     "our_name": "Mike Connolly",
     "ap_name": "Mike Connolly",
     "candidateID": "123059",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -4675,11 +4543,9 @@
     "our_name": "Joseph W. McGonagle",
     "ap_name": "Joseph W. McGonagle",
     "candidateID": "123229",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -4734,11 +4600,9 @@
     "our_name": "Steven C. Owens",
     "ap_name": "Steven Charles Owens",
     "candidateID": "124616",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -4793,11 +4657,9 @@
     "our_name": "Kip A. Diggs",
     "ap_name": "Kip A. Diggs",
     "candidateID": "124804",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -4852,11 +4714,9 @@
     "our_name": "Tricia Farley-Bouvier",
     "ap_name": "Tricia Farley-Bouvier",
     "candidateID": "63073",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -4911,11 +4771,9 @@
     "our_name": "James K. Hawkins",
     "ap_name": "James Kimball Hawkins",
     "candidateID": "124063",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -4987,11 +4845,9 @@
     "our_name": "Kristin Kassner",
     "ap_name": "Kristin Elena Kassner",
     "candidateID": "125018",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -5063,11 +4919,9 @@
     "our_name": "Susannah L. Whipps",
     "ap_name": "Susannah M. Whipps",
     "candidateID": "122900",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -5122,11 +4976,9 @@
     "our_name": "Brian M. Ashe",
     "ap_name": "Brian Michael Ashe",
     "candidateID": "122446",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -5198,11 +5050,9 @@
     "our_name": "Homar Gómez",
     "ap_name": "Homar Gomez",
     "candidateID": "165969",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -5257,11 +5107,9 @@
     "our_name": "James Arciero",
     "ap_name": "James Arciero",
     "candidateID": "122451",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -5316,11 +5164,9 @@
     "our_name": "Tackey Chan",
     "ap_name": "Tackey Chan",
     "candidateID": "122188",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -5392,11 +5238,9 @@
     "our_name": "John R. Gaskey",
     "ap_name": "John Robert Gaskey",
     "candidateID": "166153",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -5468,11 +5312,9 @@
     "our_name": "Daniel J. Ryan",
     "ap_name": "Daniel J. Ryan",
     "candidateID": "123283",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -5593,11 +5435,9 @@
     "our_name": "Richard M. Haggerty",
     "ap_name": "Richard M. Haggerty",
     "candidateID": "124176",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -5652,11 +5492,9 @@
     "our_name": "Michael S. Day",
     "ap_name": "Michael Seamus Day",
     "candidateID": "123234",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -5777,11 +5615,9 @@
     "our_name": "Steven Ultrino",
     "ap_name": "Steven Ultrino",
     "candidateID": "123237",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -5885,11 +5721,9 @@
     "our_name": "Paul J. Donato",
     "ap_name": "Paul J. Donato",
     "candidateID": "122473",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -5961,11 +5795,9 @@
     "our_name": "Colleen M. Garry",
     "ap_name": "Colleen M. Garry",
     "candidateID": "122577",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -6020,11 +5852,9 @@
     "our_name": "Danillo Sena",
     "ap_name": "Danillo A. Sena",
     "candidateID": "124622",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -6079,11 +5909,9 @@
     "our_name": "David T. Vieira",
     "ap_name": "David T. Vieira",
     "candidateID": "122326",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -6155,11 +5983,9 @@
     "our_name": "Leigh S. Davis",
     "ap_name": "Leigh Susan Davis",
     "candidateID": "165953",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -6214,11 +6040,9 @@
     "our_name": "Lisa M. Field",
     "ap_name": "Lisa M. Field",
     "candidateID": "177126",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -6290,11 +6114,9 @@
     "our_name": "Andres X. Vargas",
     "ap_name": "Andres Xavier Vargas",
     "candidateID": "124327",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -6349,11 +6171,9 @@
     "our_name": "Nicholas A. Boldyga",
     "ap_name": "Nicholas A. Boldyga",
     "candidateID": "122360",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -6442,11 +6262,9 @@
     "our_name": "Mindy Domb",
     "ap_name": "Mindy Domb",
     "candidateID": "124134",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -6501,11 +6319,9 @@
     "our_name": "Kate Hogan",
     "ap_name": "Kate Hogan",
     "candidateID": "122452",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -6560,11 +6376,9 @@
     "our_name": "Ronald Mariano",
     "ap_name": "Ronald Mariano",
     "candidateID": "54530",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -6619,11 +6433,9 @@
     "our_name": "Joan Meschino",
     "ap_name": "Joan Meschino",
     "candidateID": "123811",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -6678,11 +6490,9 @@
     "our_name": "Aaron Michlewitz",
     "ap_name": "Aaron Michlewitz",
     "candidateID": "122500",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -6737,11 +6547,9 @@
     "our_name": "Michael P. Kushmerek",
     "ap_name": "Michael P. Kushmerek",
     "candidateID": "124661",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -6796,11 +6604,9 @@
     "our_name": "Hadley Luddy",
     "ap_name": "Hadley Luddy",
     "candidateID": "165951",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -6855,11 +6661,9 @@
     "our_name": "Steven S. Howitt",
     "ap_name": "Steven S. Howitt",
     "candidateID": "122333",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -6914,11 +6718,9 @@
     "our_name": "Estela A. Reyes",
     "ap_name": "Estela Reyes",
     "candidateID": "125025",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -6973,11 +6775,9 @@
     "our_name": "Kelly W. Pease",
     "ap_name": "Kelly W. Pease",
     "candidateID": "124692",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -7049,11 +6849,9 @@
     "our_name": "Danielle W. Gregoire",
     "ap_name": "Danielle W. Gregoire",
     "candidateID": "122454",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -7108,11 +6906,9 @@
     "our_name": "James M. Murphy",
     "ap_name": "James Michael Murphy",
     "candidateID": "122477",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -7167,11 +6963,9 @@
     "our_name": "Patrick J. Kearney",
     "ap_name": "Patrick Joseph Kearney",
     "candidateID": "124197",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -7226,11 +7020,9 @@
     "our_name": "David Biele",
     "ap_name": "David M. Biele",
     "candidateID": "124206",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -7302,11 +7094,9 @@
     "our_name": "Natalie Higgins",
     "ap_name": "Natalie Marie Higgins",
     "candidateID": "123653",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -7378,11 +7168,9 @@
     "our_name": "Steven G. Xiarhos",
     "ap_name": "Steven G. Xiarhos",
     "candidateID": "124672",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -7437,11 +7225,9 @@
     "our_name": "Justin Thurber",
     "ap_name": "Justin E. Thurber",
     "candidateID": "125389",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -7513,11 +7299,9 @@
     "our_name": "Andrew F. Tarr",
     "ap_name": "Andrew Francis Robert Tarr",
     "candidateID": "170420",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -7606,11 +7390,9 @@
     "our_name": "Patricia A. Duffy",
     "ap_name": "Patricia A. Duffy",
     "candidateID": "124574",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -7682,11 +7464,9 @@
     "our_name": "David P. Linsky",
     "ap_name": "David Paul Linsky",
     "candidateID": "122455",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -7758,11 +7538,9 @@
     "our_name": "Mark J. Cusack",
     "ap_name": "Mark J. Cusack",
     "candidateID": "122192",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -7834,11 +7612,9 @@
     "our_name": "David F. DeCoste",
     "ap_name": "David F. DeCoste",
     "candidateID": "123275",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -7910,11 +7686,9 @@
     "our_name": "Christopher J. Worrell",
     "ap_name": "Christopher J. Worrell",
     "candidateID": "125156",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -7969,11 +7743,9 @@
     "our_name": "Donald R. Berthiaume",
     "ap_name": "Donald Roger Berthiaume Jr.",
     "candidateID": "123323",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -8028,11 +7800,9 @@
     "our_name": "Carole A. Fiola",
     "ap_name": "Carole A. Fiola",
     "candidateID": "123153",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -8104,11 +7874,9 @@
     "our_name": "Hannah L. Bowen",
     "ap_name": "Hannah Louise Bowen",
     "candidateID": "177133",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -8163,11 +7931,9 @@
     "our_name": "Michael J. Finn",
     "ap_name": "Michael James Finn",
     "candidateID": "122175",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -8222,11 +7988,9 @@
     "our_name": "Priscila S. Sousa",
     "ap_name": "Priscila S. Sousa",
     "candidateID": "125087",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -8330,11 +8094,9 @@
     "our_name": "Kenneth P. Sweezey",
     "ap_name": "Kenneth Peter Sweezey",
     "candidateID": "125249",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -8406,11 +8168,9 @@
     "our_name": "Russell E. Holmes",
     "ap_name": "Russell Earl Holmes",
     "candidateID": "122218",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -8465,11 +8225,9 @@
     "our_name": "John J. Marsi",
     "ap_name": "John J. Marsi Jr.",
     "candidateID": "166156",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -8541,11 +8299,9 @@
     "our_name": "Alan Silvia",
     "ap_name": "Alan Silvia",
     "candidateID": "63079",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -8617,11 +8373,9 @@
     "our_name": "Manny Cruz",
     "ap_name": "Manny Cruz",
     "candidateID": "125032",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -8676,11 +8430,9 @@
     "our_name": "Aaron L. Saunders",
     "ap_name": "Aaron L. Saunders",
     "candidateID": "177144",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -8735,11 +8487,9 @@
     "our_name": "Jack P. Lewis",
     "ap_name": "Jack Patrick Lewis",
     "candidateID": "123580",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -8794,11 +8544,9 @@
     "our_name": "Richard G. Wells",
     "ap_name": "Richard Gerard Wells Jr.",
     "candidateID": "166040",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -8853,11 +8601,9 @@
     "our_name": "Alyson Sullivan-Almeida",
     "ap_name": "Alyson M. Sullivan-Almeida",
     "candidateID": "124293",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -8929,11 +8675,9 @@
     "our_name": "Chynah Tyler",
     "ap_name": "Chynah T. Tyler",
     "candidateID": "123644",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -8988,11 +8732,9 @@
     "our_name": "Paul K. Frost",
     "ap_name": "Paul K. Frost",
     "candidateID": "54579",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -9081,11 +8823,9 @@
     "our_name": "Steven J. Ouellette",
     "ap_name": "Steven J. Ouellette",
     "candidateID": "165958",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -9157,11 +8897,9 @@
     "our_name": "Jennifer Balinsky Armini",
     "ap_name": "Jennifer WB Armini",
     "candidateID": "125036",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -9216,11 +8954,9 @@
     "our_name": "Shirley A. Arriaga",
     "ap_name": "Shirley Arriaga",
     "candidateID": "125067",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -9275,11 +9011,9 @@
     "our_name": "James Arena-DeRosa",
     "ap_name": "James C. Arena-DeRosa",
     "candidateID": "125091",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -9334,11 +9068,9 @@
     "our_name": "Edward R. Philips",
     "ap_name": "Ted Philips",
     "candidateID": "124634",
-    "last_agrees": true,
-    "first_agrees": false,
-    "full_agrees": false,
     "basis": "holder-surname-plus-roster",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -9393,11 +9125,9 @@
     "our_name": "Dennis C. Gallagher",
     "ap_name": "Dennis C. Gallagher",
     "candidateID": "166047",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -9469,11 +9199,9 @@
     "our_name": "Jay Livingstone",
     "ap_name": "Jay D. Livingstone",
     "candidateID": "123287",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -9528,11 +9256,9 @@
     "our_name": "Michael J. Soter",
     "ap_name": "Michael J. Soter",
     "candidateID": "123445",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -9653,11 +9379,9 @@
     "our_name": "Donald H. Wong",
     "ap_name": "Donald H. Wong",
     "candidateID": "122344",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -9729,11 +9453,9 @@
     "our_name": "Orlando Ramos",
     "ap_name": "Orlando Ramos",
     "candidateID": "124582",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -9788,11 +9510,9 @@
     "our_name": "Thomas M. Stanley",
     "ap_name": "Thomas M. Stanley",
     "candidateID": "122570",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -9847,11 +9567,9 @@
     "our_name": "Marcus S. Vaughn",
     "ap_name": "Marcus S. Vaughn",
     "candidateID": "125245",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -9923,11 +9641,9 @@
     "our_name": "Bridget M. Plouffe",
     "ap_name": "Bridget Marie Plouffe",
     "candidateID": "166048",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -9999,11 +9715,9 @@
     "our_name": "John F. Moran",
     "ap_name": "John Francis Moran",
     "candidateID": "166052",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -10058,11 +9772,9 @@
     "our_name": "David K. Muradian",
     "ap_name": "David Kent Muradian Jr.",
     "candidateID": "123329",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -10117,11 +9829,9 @@
     "our_name": "Thomas W. Moakley",
     "ap_name": "Thomas W. Moakley",
     "candidateID": "165950",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -10176,11 +9886,9 @@
     "our_name": "Paul W. Mark",
     "ap_name": "Paul W. Mark",
     "candidateID": "63072",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -10235,11 +9943,9 @@
     "our_name": "Paul R. Feeney",
     "ap_name": "Paul Richard Feeney",
     "candidateID": "123991",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -10294,11 +10000,9 @@
     "our_name": "Julian A. Cyr",
     "ap_name": "Julian Cyr",
     "candidateID": "123483",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -10402,11 +10106,9 @@
     "our_name": "Michael J. Rodrigues",
     "ap_name": "Michael J. Rodrigues",
     "candidateID": "54449",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -10478,11 +10180,9 @@
     "our_name": "Bruce E. Tarr",
     "ap_name": "Bruce E. Tarr",
     "candidateID": "54597",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -10537,11 +10237,9 @@
     "our_name": "Pavel M. Payano",
     "ap_name": "Pavel M. Payano",
     "candidateID": "123107",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -10596,11 +10294,9 @@
     "our_name": "Vanna Howard",
     "ap_name": "Vanna Howard",
     "candidateID": "124598",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -10689,11 +10385,9 @@
     "our_name": "Patrick M. O'Connor",
     "ap_name": "Patrick M. O'Connor",
     "candidateID": "176891",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -10748,11 +10442,9 @@
     "our_name": "Nick Collins",
     "ap_name": "Nicholas P. Collins",
     "candidateID": "122208",
-    "last_agrees": true,
-    "first_agrees": false,
-    "full_agrees": false,
     "basis": "holder-surname-plus-roster",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -10807,11 +10499,9 @@
     "our_name": "Robyn K. Kennedy",
     "ap_name": "Robyn Kennedy",
     "candidateID": "124958",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -10866,11 +10556,9 @@
     "our_name": "Cynthia F. Friedman",
     "ap_name": "Cindy F. Friedman",
     "candidateID": "124011",
-    "last_agrees": true,
-    "first_agrees": false,
-    "full_agrees": false,
     "basis": "holder-surname-plus-roster",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -10925,11 +10613,9 @@
     "our_name": "John C. Velis",
     "ap_name": "John Christopher Velis",
     "candidateID": "123197",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -10984,11 +10670,9 @@
     "our_name": "Adam Gómez",
     "ap_name": "Adam Gomez",
     "candidateID": "124513",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -11043,11 +10727,9 @@
     "our_name": "Jacob R. Oliveira",
     "ap_name": "Jacob R. Oliveira",
     "candidateID": "124577",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -11102,11 +10784,9 @@
     "our_name": "Joanne M. Comerford",
     "ap_name": "Joanne M. Comerford",
     "candidateID": "124334",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -11161,11 +10841,9 @@
     "our_name": "Karen E. Spilka",
     "ap_name": "Karen E. Spilka",
     "candidateID": "122428",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -11220,11 +10898,9 @@
     "our_name": "Sal N. DiDomenico",
     "ap_name": "Sal N. DiDomenico",
     "candidateID": "63057",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -11279,11 +10955,9 @@
     "our_name": "James B. Eldridge",
     "ap_name": "James Bradley Eldridge",
     "candidateID": "122429",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -11355,11 +11029,9 @@
     "our_name": "Cynthia S. Creem",
     "ap_name": "Cynthia Stone Creem",
     "candidateID": "54609",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -11414,11 +11086,9 @@
     "our_name": "John F. Keenan",
     "ap_name": "John F. Keenan",
     "candidateID": "122137",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -11539,11 +11209,9 @@
     "our_name": "William J. Driscoll",
     "ap_name": "William J. Driscoll Jr.",
     "candidateID": "123602",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -11598,11 +11266,9 @@
     "our_name": "Rebecca L. Rausch",
     "ap_name": "Rebecca L. Rausch",
     "candidateID": "124017",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -11657,11 +11323,9 @@
     "our_name": "Dylan A. Fernandes",
     "ap_name": "Dylan A. Fernandes",
     "candidateID": "123514",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -11733,11 +11397,9 @@
     "our_name": "Mark C. Montigny",
     "ap_name": "Mark C. W. Montigny",
     "candidateID": "122425",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -11809,11 +11471,9 @@
     "our_name": "Barry R. Finegold",
     "ap_name": "Barry R. Finegold",
     "candidateID": "54472",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -11885,11 +11545,9 @@
     "our_name": "Joan B. Lovely",
     "ap_name": "Joan B. Lovely",
     "candidateID": "63045",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -11993,11 +11651,9 @@
     "our_name": "Michael D. Brady",
     "ap_name": "Michael D. Brady",
     "candidateID": "122587",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -12052,11 +11708,9 @@
     "our_name": "Liz Miranda",
     "ap_name": "Liz Miranda",
     "candidateID": "124215",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -12111,11 +11765,9 @@
     "our_name": "Michael O. Moore",
     "ap_name": "Michael O. Moore",
     "candidateID": "63064",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -12170,11 +11822,9 @@
     "our_name": "William N. Brownsberger",
     "ap_name": "William N. Brownsberger",
     "candidateID": "63063",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -12246,11 +11896,9 @@
     "our_name": "Kelly A. Dooner",
     "ap_name": "Kelly A. Dooner",
     "candidateID": "124676",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -12305,11 +11953,9 @@
     "our_name": "Brendan P. Crighton",
     "ap_name": "Brendan Peter Crighton",
     "candidateID": "123171",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -12364,11 +12010,9 @@
     "our_name": "Michael J. Barrett",
     "ap_name": "Michael J. Barrett",
     "candidateID": "63050",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -12423,11 +12067,9 @@
     "our_name": "Lydia M. Edwards",
     "ap_name": "Lydia Marie Edwards",
     "candidateID": "123904",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -12482,11 +12124,9 @@
     "our_name": "Ryan C. Fattman",
     "ap_name": "Ryan C. Fattman",
     "candidateID": "122408",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -12541,11 +12181,9 @@
     "our_name": "Peter J. Durant",
     "ap_name": "Peter J. Durant",
     "candidateID": "122397",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -12617,11 +12255,9 @@
     "our_name": "John J. Cronin",
     "ap_name": "John Cronin",
     "candidateID": "124528",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -12693,11 +12329,9 @@
     "our_name": "Nancy J. Theriault",
     "ap_name": "Nancy J. Theriault",
     "candidateID": "174196",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -12769,11 +12403,9 @@
     "our_name": "Matt Moonen",
     "ap_name": "Matthew Moonen",
     "candidateID": "120223",
-    "last_agrees": true,
-    "first_agrees": false,
-    "full_agrees": false,
     "basis": "holder-surname-plus-roster",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -12828,11 +12460,9 @@
     "our_name": "Yusuf Yusuf",
     "ap_name": "Yusuf M. Yusuf",
     "candidateID": "162239",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -13068,11 +12698,9 @@
     "our_name": "Matthew Beck",
     "ap_name": "Matthew D. Beck",
     "candidateID": "161519",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -13127,11 +12755,9 @@
     "our_name": "Michelle Boyer",
     "ap_name": "Michelle N. Boyer",
     "candidateID": "162242",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -13269,11 +12895,9 @@
     "our_name": "Kelly Murphy",
     "ap_name": "Kelly Noonan Murphy",
     "candidateID": "122084",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -13328,11 +12952,9 @@
     "our_name": "Drew Gattine",
     "ap_name": "Andrew Gattine",
     "candidateID": "121980",
-    "last_agrees": true,
-    "first_agrees": false,
-    "full_agrees": false,
     "basis": "holder-surname-plus-roster",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -13404,11 +13026,9 @@
     "our_name": "Morgan Rielly",
     "ap_name": "Morgan J. Rielly",
     "candidateID": "121984",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -13463,11 +13083,9 @@
     "our_name": "Suzanne Salisbury",
     "ap_name": "Suzanne M. Salisbury",
     "candidateID": "120344",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -13539,11 +13157,9 @@
     "our_name": "Marshall Archer",
     "ap_name": "Marshall F. Archer",
     "candidateID": "162245",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -13598,11 +13214,9 @@
     "our_name": "Lynn Copeland",
     "ap_name": "Lynn Holland Copeland",
     "candidateID": "121689",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -13740,11 +13354,9 @@
     "our_name": "Ryan Fecteau",
     "ap_name": "Ryan Fecteau",
     "candidateID": "120312",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -13799,11 +13411,9 @@
     "our_name": "Marc Malon",
     "ap_name": "Marc G. Malon II",
     "candidateID": "121992",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -13875,11 +13485,9 @@
     "our_name": "Traci Gere",
     "ap_name": "Traci Gere",
     "candidateID": "121424",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -14017,11 +13625,9 @@
     "our_name": "John Eder",
     "ap_name": "John Eder",
     "candidateID": "162249",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -14093,11 +13699,9 @@
     "our_name": "Nathan Carlow",
     "ap_name": "Nathan M. Carlow",
     "candidateID": "121434",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -14301,11 +13905,9 @@
     "our_name": "Wayne Parry",
     "ap_name": "Wayne R. Parry",
     "candidateID": "120048",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -14724,11 +14326,9 @@
     "our_name": "Walter Runte",
     "ap_name": "Walter Gerard Runte Jr.",
     "candidateID": "122023",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -14800,11 +14400,9 @@
     "our_name": "Holly Sargent",
     "ap_name": "Holly T. Sargent",
     "candidateID": "122026",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -14859,11 +14457,9 @@
     "our_name": "Thomas Lavigne",
     "ap_name": "Thomas Arthur Lavigne",
     "candidateID": "122034",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -15067,11 +14663,9 @@
     "our_name": "Kristi Mathieson",
     "ap_name": "Kristi M. Mathieson",
     "candidateID": "121412",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -15209,11 +14803,9 @@
     "our_name": "Roger Albert",
     "ap_name": "Roger C. Albert",
     "candidateID": "121768",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -15351,11 +14943,9 @@
     "our_name": "Timothy Guerrette",
     "ap_name": "Timothy Conrad Guerrette",
     "candidateID": "120664",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -15476,11 +15066,9 @@
     "our_name": "Donald Ardell",
     "ap_name": "Donald James Ardell",
     "candidateID": "121777",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -15618,11 +15206,9 @@
     "our_name": "Tracy Quint",
     "ap_name": "Tracy Lynn Quint",
     "candidateID": "121684",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -15677,11 +15263,9 @@
     "our_name": "Arthur Mingo",
     "ap_name": "Arthur K. Mingo",
     "candidateID": "162145",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -15753,11 +15337,9 @@
     "our_name": "William Tuell",
     "ap_name": "William R. Tuell",
     "candidateID": "120494",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -15829,11 +15411,9 @@
     "our_name": "Tiffany Strout",
     "ap_name": "Tiffany Strout",
     "candidateID": "121786",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -15971,11 +15551,9 @@
     "our_name": "Russell White",
     "ap_name": "Russell P. White",
     "candidateID": "162149",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -16047,11 +15625,9 @@
     "our_name": "Gary Friedmann",
     "ap_name": "Gary R. Friedmann",
     "candidateID": "163115",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -16106,11 +15682,9 @@
     "our_name": "Holly Eaton",
     "ap_name": "Holly R. Eaton",
     "candidateID": "121797",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -16182,11 +15756,9 @@
     "our_name": "Nina Milliken",
     "ap_name": "Nina Azella Milliken",
     "candidateID": "121802",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -16258,11 +15830,9 @@
     "our_name": "Steven Bishop",
     "ap_name": "Steven Matthew Bishop",
     "candidateID": "162151",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -16334,11 +15904,9 @@
     "our_name": "Mathew McIntyre",
     "ap_name": "Mathew David McIntyre",
     "candidateID": "162152",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -16410,11 +15978,9 @@
     "our_name": "Richard Campbell",
     "ap_name": "Richard H. Campbell",
     "candidateID": "22321",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -16486,11 +16052,9 @@
     "our_name": "Dani O'Halloran",
     "ap_name": "Dani O'Halloran",
     "candidateID": "162153",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -16562,11 +16126,9 @@
     "our_name": "Ambureen Rana",
     "ap_name": "Ambureen Rana",
     "candidateID": "121106",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -16638,11 +16200,9 @@
     "our_name": "Laura Supica",
     "ap_name": "Laura D. Supica",
     "candidateID": "121596",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -16763,11 +16323,9 @@
     "our_name": "Sean Faircloth",
     "ap_name": "Sean F. Faircloth",
     "candidateID": "174189",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -16839,11 +16397,9 @@
     "our_name": "Laurie Osher",
     "ap_name": "Laurie Osher",
     "candidateID": "121590",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -16915,11 +16471,9 @@
     "our_name": "James Dill",
     "ap_name": "James F. Dill",
     "candidateID": "119906",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -17057,11 +16611,9 @@
     "our_name": "Irene Gifford",
     "ap_name": "Irene A. Gifford",
     "candidateID": "122070",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -17133,11 +16685,9 @@
     "our_name": "James White",
     "ap_name": "James L. White",
     "candidateID": "121824",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -17324,11 +16874,9 @@
     "our_name": "Kenneth Fredette",
     "ap_name": "Kenneth Wade Fredette",
     "candidateID": "66373",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -17466,11 +17014,9 @@
     "our_name": "James Thorne",
     "ap_name": "James E. Thorne",
     "candidateID": "121564",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -17542,11 +17088,9 @@
     "our_name": "Kimberly Haggan",
     "ap_name": "Kimberly M. Haggan",
     "candidateID": "162162",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -17618,11 +17162,9 @@
     "our_name": "Reagan Paul",
     "ap_name": "Reagan L. Paul",
     "candidateID": "121834",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -17694,11 +17236,9 @@
     "our_name": "Benjamin Hymes",
     "ap_name": "Benjamin C. Hymes",
     "candidateID": "121840",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -17836,11 +17376,9 @@
     "our_name": "D. Michael Ray",
     "ap_name": "D. Michael Ray",
     "candidateID": "162164",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -17978,11 +17516,9 @@
     "our_name": "Valli Geiger",
     "ap_name": "Valli D. Geiger",
     "candidateID": "121557",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -18318,11 +17854,9 @@
     "our_name": "Wayne Farrin",
     "ap_name": "Wayne K. Farrin",
     "candidateID": "121547",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -18526,11 +18060,9 @@
     "our_name": "David Sinclair",
     "ap_name": "David A. Sinclair",
     "candidateID": "72920",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -18602,11 +18134,9 @@
     "our_name": "Rafael Macias",
     "ap_name": "Rafael Macias",
     "candidateID": "162173",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -18678,11 +18208,9 @@
     "our_name": "Sally Cluchey",
     "ap_name": "Sally Jeane Cluchey",
     "candidateID": "122076",
-    "last_agrees": true,
-    "first_agrees": false,
-    "full_agrees": false,
     "basis": "holder-surname-plus-roster",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -18754,11 +18282,9 @@
     "our_name": "Michael Lemelin",
     "ap_name": "Michael H. Lemelin",
     "candidateID": "121076",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -18830,11 +18356,9 @@
     "our_name": "Karen Montell",
     "ap_name": "Karen L. Montell",
     "candidateID": "121870",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -18972,11 +18496,9 @@
     "our_name": "Randall Greenwood",
     "ap_name": "Randall Adam Greenwood",
     "candidateID": "120422",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -19048,11 +18570,9 @@
     "our_name": "Tavis Hasenfus",
     "ap_name": "Tavis Rock Hasenfus",
     "candidateID": "121540",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -19124,11 +18644,9 @@
     "our_name": "Sharon Frost",
     "ap_name": "Sharon C. Frost",
     "candidateID": "167347",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -19266,11 +18784,9 @@
     "our_name": "William Bridgeo",
     "ap_name": "William R. Bridgeo",
     "candidateID": "121887",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -19342,11 +18858,9 @@
     "our_name": "Alicia Collins",
     "ap_name": "Alicia Carol Collins",
     "candidateID": "162183",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -19418,11 +18932,9 @@
     "our_name": "Katrina Smith",
     "ap_name": "Katrina J. Smith",
     "candidateID": "121559",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -19494,11 +19006,9 @@
     "our_name": "Paul Flynn",
     "ap_name": "Paul R. Flynn",
     "candidateID": "162185",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -19570,11 +19080,9 @@
     "our_name": "Flavia DeBrito",
     "ap_name": "Flavia M. DeBrito",
     "candidateID": "162187",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -19646,11 +19154,9 @@
     "our_name": "Cassie Julia",
     "ap_name": "Cassie Lynn Julia",
     "candidateID": "162189",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -19837,11 +19343,9 @@
     "our_name": "Amanda Collamore",
     "ap_name": "Amanda Noelle Collamore",
     "candidateID": "121567",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -19913,11 +19417,9 @@
     "our_name": "Dean Cray",
     "ap_name": "Dean A. Cray",
     "candidateID": "119916",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -19989,11 +19491,9 @@
     "our_name": "Jennifer Poirier",
     "ap_name": "Jennifer Lynn Poirier",
     "candidateID": "121568",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -20065,11 +19565,9 @@
     "our_name": "John Ducharme",
     "ap_name": "John E. Ducharme III",
     "candidateID": "121572",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -20190,11 +19688,9 @@
     "our_name": "Michael Soboleski",
     "ap_name": "Michael Soboleski",
     "candidateID": "121906",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -20398,11 +19894,9 @@
     "our_name": "Sheila Lyman",
     "ap_name": "Sheila Ann Lyman",
     "candidateID": "121535",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -20474,11 +19968,9 @@
     "our_name": "Tammy Schmersal-Burgess",
     "ap_name": "Tammy L. Schmersal-Burgess",
     "candidateID": "121911",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -20550,11 +20042,9 @@
     "our_name": "Rachel Henderson",
     "ap_name": "Rachel A. Henderson",
     "candidateID": "122078",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -20626,11 +20116,9 @@
     "our_name": "Michael Lance",
     "ap_name": "Michael J. Lance",
     "candidateID": "162200",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -20768,11 +20256,9 @@
     "our_name": "Peter Wood",
     "ap_name": "Peter C. Wood",
     "candidateID": "162203",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -20910,11 +20396,9 @@
     "our_name": "Marygrace Cimino",
     "ap_name": "Marygrace Caroline Cimino",
     "candidateID": "162206",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -20986,11 +20470,9 @@
     "our_name": "Mark Walker",
     "ap_name": "Mark Walker",
     "candidateID": "121376",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -21128,11 +20610,9 @@
     "our_name": "Rolf Olsen",
     "ap_name": "Rolf A. Olsen Jr.",
     "candidateID": "162209",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -21204,11 +20684,9 @@
     "our_name": "David Boyer",
     "ap_name": "David Wayne Boyer Jr.",
     "candidateID": "121925",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -21263,11 +20741,9 @@
     "our_name": "Quentin Chapman",
     "ap_name": "Quentin James Chapman",
     "candidateID": "162213",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -21339,11 +20815,9 @@
     "our_name": "Adam Lee",
     "ap_name": "Adam R. Lee",
     "candidateID": "121928",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -21530,11 +21004,9 @@
     "our_name": "Stephen Wood",
     "ap_name": "Stephen J. Wood",
     "candidateID": "119980",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -21606,11 +21078,9 @@
     "our_name": "Julia McCabe",
     "ap_name": "Julia McCabe",
     "candidateID": "162217",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -21682,11 +21152,9 @@
     "our_name": "Scott Harriman",
     "ap_name": "Scott A. Harriman",
     "candidateID": "169533",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -21939,11 +21407,9 @@
     "our_name": "Kilton Webb",
     "ap_name": "Kilton McCarthy Webb",
     "candidateID": "162223",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -22015,11 +21481,9 @@
     "our_name": "Cheryl Golek",
     "ap_name": "Cheryl A. Golek",
     "candidateID": "121940",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -22091,11 +21555,9 @@
     "our_name": "Daniel Ankeles",
     "ap_name": "Daniel Joseph Ankeles",
     "candidateID": "121941",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -22167,11 +21629,9 @@
     "our_name": "Poppy Arford",
     "ap_name": "Poppy T. Arford",
     "candidateID": "121499",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -22424,11 +21884,9 @@
     "our_name": "Anne Graham",
     "ap_name": "Anne Palmer Graham",
     "candidateID": "120024",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -22483,11 +21941,9 @@
     "our_name": "Barbara Bagshaw",
     "ap_name": "Barbara Bagshaw",
     "candidateID": "121950",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -22559,11 +22015,9 @@
     "our_name": "Mark Cooper",
     "ap_name": "Mark C. Cooper",
     "candidateID": "162228",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -22635,11 +22089,9 @@
     "our_name": "Parnell Terry",
     "ap_name": "Parnell W. Terry",
     "candidateID": "162229",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -22777,11 +22229,9 @@
     "our_name": "Christina Mitchell",
     "ap_name": "Christina R.C. Mitchell",
     "candidateID": "162233",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -22853,11 +22303,9 @@
     "our_name": "Amy Kuhn",
     "ap_name": "Amy D. Kuhn",
     "candidateID": "121960",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -22978,11 +22426,9 @@
     "our_name": "Grayson Lookner",
     "ap_name": "Grayson Benjamin Lookner",
     "candidateID": "121462",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -23135,11 +22581,9 @@
     "our_name": "Samuel Zager",
     "ap_name": "Samuel Lewis Zager",
     "candidateID": "121476",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -23194,11 +22638,9 @@
     "our_name": "Trey L. Stewart",
     "ap_name": "Harold L. Stewart III",
     "candidateID": "120767",
-    "last_agrees": true,
-    "first_agrees": false,
-    "full_agrees": false,
     "basis": "holder-surname-plus-roster",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -23534,11 +22976,9 @@
     "our_name": "Nicole C. Grohoski",
     "ap_name": "Nicole C. Grohoski",
     "candidateID": "121275",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -23610,11 +23050,9 @@
     "our_name": "Mike Tipping",
     "ap_name": "Michael Tipping",
     "candidateID": "121709",
-    "last_agrees": true,
-    "first_agrees": false,
-    "full_agrees": false,
     "basis": "holder-surname-plus-roster",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -23752,11 +23190,9 @@
     "our_name": "David Haggan",
     "ap_name": "David G. Haggan",
     "candidateID": "120667",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -23828,11 +23264,9 @@
     "our_name": "Chip Curry",
     "ap_name": "Glenn Chip Curry",
     "candidateID": "121364",
-    "last_agrees": true,
-    "first_agrees": false,
-    "full_agrees": false,
     "basis": "holder-surname-plus-roster",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -23970,11 +23404,9 @@
     "our_name": "Cameron D. Reny",
     "ap_name": "Cameron Reny",
     "candidateID": "121722",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -24046,11 +23478,9 @@
     "our_name": "Craig V. Hickman",
     "ap_name": "Craig V. Hickman",
     "candidateID": "119997",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -24188,11 +23618,9 @@
     "our_name": "Scott Cyrway",
     "ap_name": "Scott Wynn Cyrway",
     "candidateID": "120548",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -24396,11 +23824,9 @@
     "our_name": "Joseph Martin",
     "ap_name": "Joseph E. Martin",
     "candidateID": "120530",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -24489,11 +23915,9 @@
     "our_name": "Bruce Bickford",
     "ap_name": "Bruce A. Bickford",
     "candidateID": "119970",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -24697,11 +24121,9 @@
     "our_name": "Matthea E. L. Daughtry",
     "ap_name": "Matthea Elisabeth Daughtry",
     "candidateID": "120244",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": false,
     "basis": "holder-exact-first-last",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -24773,11 +24195,9 @@
     "our_name": "Denise Tepler",
     "ap_name": "Denise Tepler",
     "candidateID": "119951",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -24832,11 +24252,9 @@
     "our_name": "Teresa S. Pierce",
     "ap_name": "Teresa S. Pierce",
     "candidateID": "120362",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -24891,11 +24309,9 @@
     "our_name": "Timothy E. Nangle",
     "ap_name": "Timothy E. Nangle",
     "candidateID": "121745",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -24967,11 +24383,9 @@
     "our_name": "Jill C. Duson",
     "ap_name": "Jill C. Duson",
     "candidateID": "120632",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -25026,11 +24440,9 @@
     "our_name": "Rachel Talbot Ross",
     "ap_name": "Rachel Talbot Ross",
     "candidateID": "121474",
-    "last_agrees": false,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -25085,11 +24497,9 @@
     "our_name": "Anne M. Carney",
     "ap_name": "Anne M. Carney",
     "candidateID": "120955",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -25227,11 +24637,9 @@
     "our_name": "Donna Bailey",
     "ap_name": "Donna Bailey",
     "candidateID": "120587",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -25303,11 +24711,9 @@
     "our_name": "Henry L. Ingwersen",
     "ap_name": "Henry L. Ingwersen",
     "candidateID": "120927",
-    "last_agrees": true,
-    "first_agrees": true,
-    "full_agrees": true,
     "basis": "holder-exact-full-name",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
@@ -25379,11 +24785,9 @@
     "our_name": "Matt A. Harrington",
     "ap_name": "Matthew A. Harrington",
     "candidateID": "120531",
-    "last_agrees": true,
-    "first_agrees": false,
-    "full_agrees": false,
     "basis": "holder-surname-plus-roster",
-    "link": true
+    "link": true,
+    "ap_incumbents": 1
    },
    "lines": [
     {
