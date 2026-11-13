@@ -35,7 +35,7 @@ describe('extractDonorType — state sources', () => {
     expect(extractDonorType({ entity_type: null, is_individual: true })).toBe('individual');
     expect(extractDonorType({ entity_type: null, is_individual: false })).toBe('unknown');
     expect(extractDonorType({ entity_type: 'PAC', is_individual: true })).toBe('pac');
-    expect(IS_INDIVIDUAL_SQL).toContain("(COALESCE(c.raw_record->>'entity_type', '') = '' AND c.raw_record->>'is_individual' = 'true')");
+    expect(IS_INDIVIDUAL_SQL).toContain("(COALESCE(COALESCE(c.src_entity_type, c.raw_record->>'entity_type'), '') = '' AND COALESCE(c.src_is_individual::text, c.raw_record->>'is_individual') = 'true')");
   });
 
   it('leaves FEC, Monroe and la_socrata rows as before', () => {
@@ -48,11 +48,11 @@ describe('extractDonorType — state sources', () => {
 
 describe('individual / PAC SQL predicates', () => {
   it('read each state source key with the same values extractDonorType uses', () => {
-    expect(IS_INDIVIDUAL_SQL).toContain("c.raw_record->>'ENTITY_CD' = 'IND'");
-    expect(IS_INDIVIDUAL_SQL).toContain("c.raw_record->>'ContributorType' = 'Individual'");
-    expect(IS_INDIVIDUAL_SQL).toContain("c.raw_record->>'recordTypeDescription' = 'Individual'");
-    expect(IS_PAC_SQL).toContain("c.raw_record->>'ENTITY_CD' IN ('SCC', 'PTY')");
-    expect(IS_PAC_SQL).toContain("c.raw_record->>'ContributorType' IN ('Political Action Committee', 'Political Action')");
+    expect(IS_INDIVIDUAL_SQL).toContain("COALESCE(c.src_entity_cd, c.raw_record->>'ENTITY_CD') = 'IND'");
+    expect(IS_INDIVIDUAL_SQL).toContain("COALESCE(c.src_contributortype, c.raw_record->>'ContributorType') = 'Individual'");
+    expect(IS_INDIVIDUAL_SQL).toContain("COALESCE(c.src_recordtypedescription, c.raw_record->>'recordTypeDescription') = 'Individual'");
+    expect(IS_PAC_SQL).toContain("COALESCE(c.src_entity_cd, c.raw_record->>'ENTITY_CD') IN ('SCC', 'PTY')");
+    expect(IS_PAC_SQL).toContain("COALESCE(c.src_contributortype, c.raw_record->>'ContributorType') IN ('Political Action Committee', 'Political Action')");
   });
 
   it('never counts an ambiguous committee code as a PAC', () => {

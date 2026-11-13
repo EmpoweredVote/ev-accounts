@@ -17,6 +17,7 @@
 
 import { pool } from './db.js';
 import { normalizeDonorName } from './adapters/normalizeDonorName.js';
+import { cf, CITY_SQL, EMPLOYER_SQL, IS_INDIVIDUAL_TEXT_SQL, OCCUPATION_SQL, STATE_SQL, TYPED_RECORD_SQL } from './contributionFields.js';
 
 /**
  * The `politician_sources ps` predicate for every read of a politician's OWN fundraising:
@@ -49,7 +50,7 @@ export const OWN_FUNDRAISING_SQL =
  * not a donation, so it never appears as a negative "donor" or shrinks a sector; $0 rows stay counted (CA_0255).
  */
 export const NON_CONTRIBUTION_SQL =
-  `(COALESCE(c.data_source, '') = 'la_socrata' AND COALESCE(c.raw_record->>'schedule', '') IN ('B', 'I'))`;
+  `(COALESCE(c.data_source, '') = 'la_socrata' AND COALESCE(${cf('schedule')}, '') IN ('B', 'I'))`;
 export const DONATION_SQL = `(c.amount >= 0 AND NOT ${NON_CONTRIBUTION_SQL})`;
 export const REFUND_SQL = `(c.amount < 0 AND NOT ${NON_CONTRIBUTION_SQL})`;
 
@@ -59,9 +60,9 @@ export const REFUND_SQL = `(c.amount < 0 AND NOT ${NON_CONTRIBUTION_SQL})`;
  * Ethics Commission", one misspelled "CITY OF LOS AGELES") or described as matching funds / public financing.
  * They are public money, so the summary reports them on their own line (public_matching_funds), not as a donor.
  */
-export const PUBLIC_MATCHING_FUNDS_SQL = `(COALESCE(c.data_source, '') = 'la_socrata' AND c.raw_record->>'schedule' = 'I'
-    AND (c.raw_record->>'con_desc' ~* '(matching|public financ)'
-      OR c.raw_record->>'con_name' ~* '(city of los a|los angeles city)'))`;
+export const PUBLIC_MATCHING_FUNDS_SQL = `(COALESCE(c.data_source, '') = 'la_socrata' AND ${cf('schedule')} = 'I'
+    AND (${cf('con_desc')} ~* '(matching|public financ)'
+      OR ${cf('con_name')} ~* '(city of los a|los angeles city)'))`;
 
 // ---------------------------------------------------------------------------
 // TypeScript interfaces — ported from models.go
@@ -885,7 +886,7 @@ async function getPacContributions(
 
   const listRes = await pool.query<{ name: string; entity_type: string; total: string; n: string }>(
     `SELECT ${DONOR_NAME_SQL} AS name,
-            MAX(COALESCE(c.raw_record->>'entity_type', c.raw_record->>'ENTITY_CD')) AS entity_type,
+            MAX(COALESCE(${cf('entity_type')}, ${cf('ENTITY_CD')})) AS entity_type,
             SUM(c.amount) AS total,
             COUNT(*) AS n
      FROM transparent_motivations.contributions c
@@ -970,16 +971,16 @@ async function getPublicMatchingFunds(
 // Older FEC filings (mostly before 2004) leave entity_type blank but set is_individual. Where both are filled in
 // they agree ~98% of the time (sampled 2026-10-21), so a blank entity_type with is_individual = true counts as an
 // individual. is_individual = false cannot tell a PAC from any other committee, so it stays in neither bucket.
-export const IS_INDIVIDUAL_SQL = `(c.raw_record->>'type' IN ('direct', 'in_kind')
-    OR c.raw_record->>'entity_type' LIKE 'IND%'
-    OR (COALESCE(c.raw_record->>'entity_type', '') = '' AND c.raw_record->>'is_individual' = 'true')
-    OR c.raw_record->>'ENTITY_CD' = 'IND'
-    OR c.raw_record->>'ContributorType' = 'Individual'
-    OR c.raw_record->>'recordTypeDescription' = 'Individual')`;
-export const IS_PAC_SQL = `(c.raw_record->>'type' IN ('pac', 'corporate_direct')
-    OR c.raw_record->>'entity_type' IN ('PAC', 'PTY')
-    OR c.raw_record->>'ENTITY_CD' IN ('SCC', 'PTY')
-    OR c.raw_record->>'ContributorType' IN ('Political Action Committee', 'Political Action'))`;
+export const IS_INDIVIDUAL_SQL = `(${cf('type')} IN ('direct', 'in_kind')
+    OR ${cf('entity_type')} LIKE 'IND%'
+    OR (COALESCE(${cf('entity_type')}, '') = '' AND ${IS_INDIVIDUAL_TEXT_SQL} = 'true')
+    OR ${cf('ENTITY_CD')} = 'IND'
+    OR ${cf('ContributorType')} = 'Individual'
+    OR ${cf('recordTypeDescription')} = 'Individual')`;
+export const IS_PAC_SQL = `(${cf('type')} IN ('pac', 'corporate_direct')
+    OR ${cf('entity_type')} IN ('PAC', 'PTY')
+    OR ${cf('ENTITY_CD')} IN ('SCC', 'PTY')
+    OR ${cf('ContributorType')} IN ('Political Action Committee', 'Political Action'))`;
 const INDIVIDUAL_CASE_SQL = `CASE
   WHEN ${DONATION_SQL} AND ${IS_INDIVIDUAL_SQL}
   THEN c.amount ELSE 0 END`;
@@ -1005,7 +1006,7 @@ export function headlineTotals(
 const CONFIDENCE_RANK_SQL = `CASE c.confidence_level
   WHEN 'HIGH' THEN 1 WHEN 'MEDIUM' THEN 2 WHEN 'ESTIMATED' THEN 3 ELSE 4 END`;
 /** Donor name coalesce — identical to getSummary's live top-donor grouping key. */
-const DONOR_NAME_SQL = `COALESCE(c.raw_record->>'contributor_name', c.raw_record->>'con_name', NULLIF(trim(concat(c.raw_record->>'Tran_NamL', ' ', c.raw_record->>'Tran_NamF')), ''), c.donor_name_normalized, '')`;
+const DONOR_NAME_SQL = `COALESCE(${cf('contributor_name')}, ${cf('con_name')}, NULLIF(trim(concat(${cf('Tran_NamL')}, ' ', ${cf('Tran_NamF')})), ''), c.donor_name_normalized, '')`;
 
 /** How many donors to persist per source+cycle. > the 20 getSummary returns, so a merge
  *  across a politician's sources still yields the correct global top 20 in the common case. */
@@ -1056,7 +1057,7 @@ export async function refreshSummaryAgg(politicianSourceId: string, cycle: strin
   // Sector rollup — group by occupation (few distinct values) then classify in TS,
   // exactly as the live getSummary path does. Store ALL sectors (getSummary takes top 10).
   const occRes = await pool.query<{ occupation: string; total: string; count: string }>(
-    `SELECT COALESCE(c.raw_record->>'contributor_occupation', c.raw_record->>'con_occp', '') AS occupation,
+    `SELECT COALESCE(${OCCUPATION_SQL}, '') AS occupation,
             SUM(c.amount) AS total, COUNT(*) AS count
      FROM transparent_motivations.contributions c
      WHERE c.politician_source_id = $1 AND c.election_cycle = $2 AND ${DONATION_SQL}
@@ -1084,7 +1085,7 @@ export async function refreshSummaryAgg(politicianSourceId: string, cycle: strin
             SUM(c.amount) AS total_amount,
             COUNT(*) AS contribution_count,
             MIN(${CONFIDENCE_RANK_SQL}) AS confidence_level_n,
-            MIN(c.raw_record::text)::jsonb AS raw_record
+            MIN((${TYPED_RECORD_SQL})::text)::jsonb AS raw_record
      FROM transparent_motivations.contributions c
      WHERE c.politician_source_id = $1 AND c.election_cycle = $2 AND ${DONATION_SQL}
      GROUP BY ${DONOR_NAME_SQL}
@@ -1449,7 +1450,7 @@ export async function getSummary(
   // Query occupations for sector breakdown (TypeScript-side classification)
   const occResult = await pool.query<OccupationRow>(
     `SELECT
-       COALESCE(c.raw_record->>'contributor_occupation', c.raw_record->>'con_occp', '') AS occupation,
+       COALESCE(${OCCUPATION_SQL}, '') AS occupation,
        c.amount
      FROM transparent_motivations.contributions c
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
@@ -1479,7 +1480,7 @@ export async function getSummary(
   // Query top donors
   const donorResult = await pool.query<DonorRow>(
     `SELECT
-       COALESCE(c.raw_record->>'contributor_name', c.raw_record->>'con_name', NULLIF(trim(concat(c.raw_record->>'Tran_NamL', ' ', c.raw_record->>'Tran_NamF')), ''), c.donor_name_normalized, '') AS contributor_name,
+       ${DONOR_NAME_SQL} AS contributor_name,
        SUM(c.amount) AS total_amount,
        COUNT(*) AS contribution_count,
        MIN(CASE c.confidence_level
@@ -1487,7 +1488,7 @@ export async function getSummary(
            WHEN 'MEDIUM'    THEN 2
            WHEN 'ESTIMATED' THEN 3
            ELSE 4 END) AS confidence_level_n,
-       MIN(c.raw_record::text)::jsonb AS raw_record
+       MIN((${TYPED_RECORD_SQL})::text)::jsonb AS raw_record
      FROM transparent_motivations.contributions c
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
      WHERE ps.essentials_politician_id = $1
@@ -1495,7 +1496,7 @@ export async function getSummary(
        AND ${OWN_FUNDRAISING_SQL}
        AND ${DONATION_SQL}
        ${confidenceClause}
-     GROUP BY COALESCE(c.raw_record->>'contributor_name', c.raw_record->>'con_name', NULLIF(trim(concat(c.raw_record->>'Tran_NamL', ' ', c.raw_record->>'Tran_NamF')), ''), c.donor_name_normalized, '')
+     GROUP BY ${DONOR_NAME_SQL}
      ORDER BY total_amount DESC
      LIMIT 20`,
     baseParams
@@ -1659,7 +1660,7 @@ export async function getContributions(
        c.election_cycle,
        c.confidence_level,
        c.data_source,
-       c.raw_record,
+       ${TYPED_RECORD_SQL} AS raw_record,
        c.donor_name_normalized
      FROM transparent_motivations.contributions c
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
@@ -2552,9 +2553,9 @@ export async function searchDonors(rawQuery: string): Promise<DonorSearchRespons
         json_agg(json_build_object(
           'date', c.contribution_date,
           'amount', c.amount,
-          'employer', COALESCE(c.raw_record->>'contributor_employer', c.raw_record->>'con_empr'),
-          'city', COALESCE(c.raw_record->>'contributor_city', c.raw_record->>'con_city_nm'),
-          'state', COALESCE(c.raw_record->>'contributor_state', c.raw_record->>'con_state_nm'),
+          'employer', ${EMPLOYER_SQL},
+          'city', ${CITY_SQL},
+          'state', ${STATE_SQL},
           'confidence_level', c.confidence_level
         ) ORDER BY c.contribution_date DESC) AS contributions
       FROM transparent_motivations.contributions c

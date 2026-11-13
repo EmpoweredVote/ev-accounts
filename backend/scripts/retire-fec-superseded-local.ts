@@ -102,14 +102,14 @@ for (const s of sources) {
     ({ rows: victims } = await client.query<Victim>(
     `WITH slice AS (
        SELECT id, source_transaction_id, amount, contribution_date, donor_name_normalized,
-              raw_record->>'committee_id'        AS cmte,
-              (raw_record->>'report_year')::int  AS ry,
-              raw_record->>'report_type'         AS rt,
-              (raw_record->>'file_number')::bigint AS fn
+              COALESCE(fec_committee_id, raw_record->>'committee_id')        AS cmte,
+              COALESCE(fec_report_year, (raw_record->>'report_year')::int)  AS ry,
+              COALESCE(fec_report_type, raw_record->>'report_type')         AS rt,
+              COALESCE(fec_file_number, (raw_record->>'file_number')::bigint) AS fn
          FROM transparent_motivations.contributions
         WHERE politician_source_id = $1
           AND data_source = 'fec'
-          AND raw_record ? 'file_number'
+          AND COALESCE(fec_file_number_present, raw_record ? 'file_number')
      ), ranked AS (
        SELECT *,
               max(fn) OVER (
