@@ -1,0 +1,56 @@
+{
+  "politician_id": "9a78d751-6285-42f7-88f5-07d91afb5be5",
+  "findings": [
+    {
+      "id": "720effeea094ccb6e75fcc07abe9e54a7ed30ff5f4aebb27d7bae6e1a6d053ad",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/93206/race/34941/election/1502",
+      "date": "2026-08-04",
+      "date_precision": "year",
+      "passage": "While the right for the individual citizen to bear arms is a constitional mandate and the intent for it was to allow effective resistance against tyranny, clearly we accept many restrictions on what weapons are reasonable to bear. Automatic weapons are not allowed, nor are shoulder launched surface to air missiles, though it's pretty clear such weapons and more would probably be needed to combat the US Military. I think the current balance is about right and should remain.",
+      "note": "His written answer to a voter-guide questionnaire item on what gun ownership restrictions are needed for public safety. Says bearing arms is an individual right, notes existing limits on weapon types are accepted, and says the current balance should stay. Page date is the 2026 primary cycle; exact answer date not shown.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment",
+        "keep current gun laws as they are",
+        "limits on types of weapons (automatic weapons)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:36:11.861Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm",
+        "background checks",
+        "red-flag orders",
+        "carry permits",
+        "general statement on gun rights and the Second Amendment",
+        "gun restrictions for public safety"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "status: candidate for WA House District 6 Position 1, on the 2026 general ballot (a Spokesman-Review race page shows him in the Nov 3 count)",
+        "sponsor list: covered by bulk bill data (not a sitting legislator; no sponsor record)",
+        "https://www.spokesman.com/elections/2026/washington-primary-election-aug-4/candidates/alan-nolan/ (profile page, nothing on the subject)",
+        "https://www.spokanepublicradio.org/regional-news/2026-07-26/alan-nolan-asks-6th-district-voters-to-send-him-to-olympia (campaign profile story, nothing on the subject)",
+        "iVoterGuide profile (one gun answer, saved)",
+        "blocked: https://www.nolan4mead.com (domain did not resolve; campaign site not reached)",
+        "blocked: https://ballotpedia.org/Alan_Nolan (page returned empty)",
+        "blocked: https://results.vote.wa.gov/results/20260804/legislative-district-6-state-representative-pos-1.html (404)",
+        "web searches on name plus race: no other gun statements found"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:36:11.861Z",
+      "by": "source-collector"
+    }
+  ]
+}

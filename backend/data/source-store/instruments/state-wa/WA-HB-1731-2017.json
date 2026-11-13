@@ -1,0 +1,61 @@
+{
+  "id": "WA-HB-1731-2017",
+  "scope": "state:wa",
+  "title": "HB1731 (2017-2018 Regular): Concerning firearms sales and transfers.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1731&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1731-S.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Laurie Jinkins",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ce184542-9397-469f-ba78-8c735bce20fa"
+    },
+    {
+      "name": "Jay Rodne",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tana Senn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Drew Stokesbary",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c1035b7-3372-4129-bca3-751b788b0999"
+    },
+    {
+      "name": "Steve Tharinger",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0381ded1-ac26-4700-8188-6ff06621d1be"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1731-S.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1731-2017.comm-sub.html",
+      "sha256": "5e6349be78391115983097629d5424cd91862c7679d7a39c75944c0128db016e"
+    },
+    "note": "Version read: Substitute House Bill 1731 (Comm Sub, House Judiciary), read first time 02/17/17. Only one version saved. The last line is quoted from inside a longer sentence in RCW 9.41.113(4)(g) (renumbered from (f)), which lists several exempt temporary transfers; the ellipsis marks the omitted items (spouse, shooting range, competition, minors hunting)."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.010): (9) \"Firearm\" means a weapon or device from which a projectile or projectiles may be fired by an explosive such as gunpowder. \"Firearm\" does not include a flare gun or other pyrotechnic visual distress signaling device, or a powder-actuated tool or other device designed solely to be used for construction purposes.\nSec. 1 (RCW 9.41.010): (25) \"Transfer\" means the intended delivery of a firearm to another person without consideration of payment or promise of payment including, but not limited to, gifts and loans. \"Transfer\" does not include the delivery of a firearm owned or leased by an employer to, or return of such a firearm by, any of the employer's employees for lawful purposes in the ordinary course of business.\nSec. 2 (RCW 9.41.113): (4) This section does not apply to: (a) A transfer between immediate family members, which for this subsection shall be limited to spouses, domestic partners, parents, parents-in-law, children, siblings, siblings-in-law, grandparents, grandchildren, nieces, nephews, first cousins, aunts, and uncles, that is a bona fide gift or loan;\nSec. 2 (RCW 9.41.113): (d) A temporary transfer of possession of a firearm if: (i) The temporary transfer is intended to prevent suicide or self-inflicted great bodily harm; (ii) the temporary transfer lasts only as long as reasonably necessary to prevent death or great bodily harm; and (iii) the firearm is not utilized by the transferee for any purpose for the duration of the temporary transfer;\nSec. 2 (RCW 9.41.113): (g) The temporary transfer of a firearm ... (v) under circumstances in which the transferee and the firearm remain in the presence of the transferor;"
+}

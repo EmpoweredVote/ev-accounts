@@ -61,5 +61,30 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "general gun rights and gun safety statements"
+      ],
+      "places": [
+        "status: sitting Washington Lieutenant Governor, confirmed on https://ltgov.wa.gov (header names the office and Denny Heck)",
+        "On the Record (0 appearances; extract returned no sources)",
+        "official site https://ltgov.wa.gov and https://www.ltgov.wa.gov/aboutdenny: nothing on the subject; site search page https://www.ltgov.wa.gov/search?q=gun loads results by script, nothing readable",
+        "Ballotpedia https://ballotpedia.org/Denny_Heck: fetch returned an empty page, nothing on the subject by curl",
+        "blocked: https://justfacts.votesmart.org/candidate/public-statements/126058/denny-heck/37/guns?s=date (403)",
+        "not reviewed: Heck's former congressional site and congress.gov (not fetched); Vote Smart statement titles seen only as search leads (a 2016 Orlando statement and a 2019 CNN interview), contents unread",
+        "sponsor list: covered by bulk bill data",
+        "web searches (3): results mostly about other people or giving no Heck wording; nothing citable"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:39:31.703Z",
+      "by": "source-collector"
+    }
+  ]
 }

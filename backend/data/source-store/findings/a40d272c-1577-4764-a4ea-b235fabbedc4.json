@@ -1,0 +1,34 @@
+{
+  "politician_id": "a40d272c-1577-4764-a4ea-b235fabbedc4",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation in general",
+        "gun restrictions for public safety",
+        "Second Amendment",
+        "assault-style weapons",
+        "background checks",
+        "red-flag orders",
+        "carry permits"
+      ],
+      "places": [
+        "in scope: a Cascadia Daily News general-election story names Michael Shepard (Port of Bellingham commissioner) as the 42nd District state Senate candidate on the November 2026 ballot; he advanced from the primary after a recount",
+        "On the Record (0 meetings)",
+        "voter guide page https://ivoterguide.com/candidate/93125/race/34923/election/1502 (gun restrictions question shows no answer from him; no own words)",
+        "blocked: https://washingtonstatestandard.com/voter-guides/contests/washington-state-senate-district-42-2026-primary/",
+        "blocked: https://ballotpedia.org/Michael_Shepard",
+        "https://washingtonstatestandard.com/2025/12/08/port-of-bellingham-commissioner-michael-shepard-announces-run-for-state-senate/ (launch story, nothing on the subject)",
+        "https://www.cascadiadaily.com/2026/aug/26/michael-shepard-declared-second-place-finisher-in-42nd-ld-senate-race/ (nothing on the subject)",
+        "news searches on name plus gun/firearm/Second Amendment words (nothing on the subject)",
+        "campaign site: not found in search results, not reviewed",
+        "sponsor list: covered by bulk bill data (he is not a sitting legislator)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:44:33.278Z",
+      "by": "source-collector"
+    }
+  ]
+}

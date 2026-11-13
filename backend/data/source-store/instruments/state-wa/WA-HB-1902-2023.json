@@ -1,0 +1,271 @@
+{
+  "id": "WA-HB-1902-2023",
+  "scope": "state:wa",
+  "title": "HB1902 (2023-2024 Regular): Enhancing requirements for the purchase or transfer of firearms.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=1902&Year=2023&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2023-24/Pdf/Bills/House%20Bills/1902.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Liz Berry",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "56d6dd6f-4959-4339-be78-e4b1d0083b08"
+    },
+    {
+      "name": "Amy Walen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "be3c2a24-1576-4636-9374-18fc77a8513f"
+    },
+    {
+      "name": "Julia Reed",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "67b9aaf1-46eb-471f-8f31-dcf501a92933"
+    },
+    {
+      "name": "Greg Nance",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "463c9085-ff29-45f4-88b0-fe3be9693a36"
+    },
+    {
+      "name": "Darya Farivar",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ab474e84-9ab1-46b1-954b-f49f237498bb"
+    },
+    {
+      "name": "Beth Doglio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "45737b89-a83b-421f-9d6c-abc829c7eae0"
+    },
+    {
+      "name": "Emily Alvarado",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5a36591c-66c5-4cb1-b99d-d7fc7fa93b25"
+    },
+    {
+      "name": "Strom Peterson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6341053d-0580-4fbf-85ea-71ddb6b6f838"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    },
+    {
+      "name": "Davina Duerr",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f3daea18-1a32-486f-b8df-659d7c653c05"
+    },
+    {
+      "name": "Lauren Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0e5af9ca-165c-458c-8c65-a89aaf1a8d3e"
+    },
+    {
+      "name": "David Hackney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "447b684b-e885-42c9-9f32-7e6480cb5b98"
+    },
+    {
+      "name": "Tana Senn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Monica Stonier",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3e2c4be-bc12-43c3-9e86-4ba229d44346"
+    },
+    {
+      "name": "Joe Fitzgibbon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9f914ddb-ba7c-4b30-b756-fe7cd981f919"
+    },
+    {
+      "name": "Chipalo Street",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7a0da48f-2c29-463e-969a-52d06137cde9"
+    },
+    {
+      "name": "Lisa Callan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3a93cc4-a4ee-4e4f-8a67-c9a0c5c66efb"
+    },
+    {
+      "name": "Kristine Reeves",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cf992e89-7b96-46f3-9999-58432c690fe4"
+    },
+    {
+      "name": "Tarra Simmons",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "370f9462-ed1d-4a83-b244-8bb593038444"
+    },
+    {
+      "name": "Jamila Taylor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "da15c353-3744-4dd3-a6ed-c4b6e89752e1"
+    },
+    {
+      "name": "Sharlett Mena",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "363fe07c-171e-4044-b6f9-979662962027"
+    },
+    {
+      "name": "Roger Goodman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "de6d7929-66dd-4166-998a-479cfa264ce5"
+    },
+    {
+      "name": "My-Linh Thai",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1963d6e9-069b-4770-9489-59e36faaa2e1"
+    },
+    {
+      "name": "Cindy Ryu",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "86e6a2bf-5216-4022-900c-621a8480f2e7"
+    },
+    {
+      "name": "Steve Tharinger",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0381ded1-ac26-4700-8188-6ff06621d1be"
+    },
+    {
+      "name": "Alex Ramel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "41ef42e8-fe56-4f82-92e7-eefe85232cd2"
+    },
+    {
+      "name": "Bill Ramos",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Vandana Slatter",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2147a010-bd4e-445c-840a-8d5ad69573ca"
+    },
+    {
+      "name": "Julio Cortes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "805fd55e-2e38-43b1-8b9d-a757af05f8e4"
+    },
+    {
+      "name": "Jessica Bateman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e6d175b-1af0-444c-b373-e5d0a279d240"
+    },
+    {
+      "name": "Timm Ormsby",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "945d0b44-3329-46b2-a39e-47f5fdddc6ed"
+    },
+    {
+      "name": "Jake Fey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "97b47446-b0ee-4a2c-b4fe-ec8a995356ea"
+    },
+    {
+      "name": "Nicole Macri",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22d959a5-ec5f-4b92-98d3-85dc219c2c61"
+    },
+    {
+      "name": "Mia Gregerson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "edc48d7e-4f91-4e59-af50-79f34df8b011"
+    },
+    {
+      "name": "Tina Orwall",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7535e225-d3d0-40ca-ba9c-3890563c40a0"
+    },
+    {
+      "name": "Steve Bergquist",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f4f7acdf-1761-4cac-82e6-19bf8f6ea525"
+    },
+    {
+      "name": "April Berg",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ec9da15f-7d79-42bc-a368-da3ab0855ddf"
+    },
+    {
+      "name": "Lillian Ortiz-Self",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d97bcc03-4c74-4c9d-9e0f-13ae551ed54c"
+    },
+    {
+      "name": "Debra Lekanoff",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c176280e-d886-4b59-b812-e220449ffff1"
+    },
+    {
+      "name": "Mary Fosse",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e36107af-ea8f-4fca-a727-0e37ca2f6fd4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/House%20Bills/1902.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1902-2023.introduced.html",
+      "sha256": "322a2b735bb8835e044dd93d493d12ad1bf9c3f9189acea8fc43e6853550e192"
+    },
+    "note": "Introduced version; effective January 1, 2026 (Sec. 36). Large file read by marks. Sec. 3 strikes the 'proof of training at time of purchase' wording and moves the training requirement to the permit application. Secs. 7-35 mostly add 'permit to purchase firearms' next to 'concealed pistol license' in surrender, revocation, protection-order and liability provisions; the Sec. 1 text above is not exhaustive."
+  },
+  "operative_text": "NEW SECTION Sec. 2 (new RCW section in chapter 9.41): (1) A person may apply for a permit to purchase firearms with the Washington state patrol firearms background check program.\nNEW SECTION Sec. 2 (new RCW section in chapter 9.41): (b) A complete set of fingerprints taken by the local law enforcement agency in the jurisdiction in which the applicant resides;\nNEW SECTION Sec. 2 (new RCW section in chapter 9.41): (c) A certificate of completion of a certified firearms safety training program within the last five years, or proof that the applicant is exempt from the training requirement, as provided in RCW 9.41.1132; and\nNEW SECTION Sec. 2 (new RCW section in chapter 9.41): (6) The Washington state patrol firearms background check program shall issue a permit to purchase firearms to an eligible applicant, or deny the application, within 30 days of the date the application was filed, or within 60 days of when the application was filed if the applicant does not have a valid permanent Washington driver's license or Washington state identification card or has not been a resident of the state for the previous consecutive 90 days.\nNEW SECTION Sec. 2 (new RCW section in chapter 9.41): (11)(a) A permit to purchase firearms is valid for a period of five years.\nNEW SECTION Sec. 2 (new RCW section in chapter 9.41): (13) A permit to purchase firearms issued under this section does not authorize the holder of the permit to carry a concealed pistol.\nSec. 1 (RCW 9.41.090): (a) The purchaser produces a valid permit to purchase firearms under section 2 of this act;\nSec. 1 (RCW 9.41.090): (3)(a) In any case where the applicant has an outstanding warrant for his or her arrest from any court of competent jurisdiction for a felony or misdemeanor, the Washington state patrol firearms background check program shall advise the dealer that the delivery of the firearm is delayed.\nSec. 3 (RCW 9.41.1132): (i) Live-fire shooting exercises on a firing range that include a demonstration by the applicant of the safe handling of, and shooting proficiency with, firearms\nNEW SECTION Sec. 4 (new RCW section in chapter 43.43): The Washington state patrol shall establish a program to provide certifications for firearms safety training programs that meet the requirements of RCW 9.41.1132, and to require certified firearms safety programs to apply for recertification every five years."
+}

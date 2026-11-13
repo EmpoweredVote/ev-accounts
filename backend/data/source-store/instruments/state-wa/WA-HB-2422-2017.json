@@ -1,0 +1,148 @@
+{
+  "id": "WA-HB-2422-2017",
+  "scope": "state:wa",
+  "title": "HB2422 (2017-2018 Regular): Concerning high capacity magazines.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=2422&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/2422.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Strom Peterson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6341053d-0580-4fbf-85ea-71ddb6b6f838"
+    },
+    {
+      "name": "Mia Gregerson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "edc48d7e-4f91-4e59-af50-79f34df8b011"
+    },
+    {
+      "name": "Nicole Macri",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22d959a5-ec5f-4b92-98d3-85dc219c2c61"
+    },
+    {
+      "name": "Mike Pellicciotti",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cb4548a9-9d24-4696-8f88-8cc140ae88ac"
+    },
+    {
+      "name": "Mike Chapman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cf38d9ea-d72d-4a44-9d9c-efd9cd9c432f"
+    },
+    {
+      "name": "Judy Clibborn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Beth Doglio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "45737b89-a83b-421f-9d6c-abc829c7eae0"
+    },
+    {
+      "name": "Laurie Dolan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Noel Frame",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4991ee01-0a35-454f-bdf6-bb2f34cf1c30"
+    },
+    {
+      "name": "Ruth Kagi",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Shelley Kloba",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b918fb31-108f-49e7-b977-627ce667422d"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    },
+    {
+      "name": "Cindy Ryu",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "86e6a2bf-5216-4022-900c-621a8480f2e7"
+    },
+    {
+      "name": "Sherry Appleton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Steve Bergquist",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f4f7acdf-1761-4cac-82e6-19bf8f6ea525"
+    },
+    {
+      "name": "Kristine Reeves",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cf992e89-7b96-46f3-9999-58432c690fe4"
+    },
+    {
+      "name": "Tana Senn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Derek Stanford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78230dff-4e33-4d33-8c46-71f00db01858"
+    },
+    {
+      "name": "Steve Tharinger",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0381ded1-ac26-4700-8188-6ff06621d1be"
+    },
+    {
+      "name": "Javier Valdez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/2422.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2422-2017.introduced.html",
+      "sha256": "dc5a80edf2e29dc9ee256cb33396b36ac0780303660ce6c633f1b3bf585f8b3f"
+    },
+    "note": "Introduced version. Sec. 1 also adds a \"secure gun storage\" definition (24) and renumbers other definitions (not quoted). Exemptions in Sec. 2(2) omitted for length."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.010(12)): (12) \"Large capacity magazine\" means an ammunition feeding device with the capacity to accept more than ten rounds of ammunition, or any conversion kit, part, or combination of parts, from which such a device can be assembled if those parts are in the possession or under the control of the same person, but shall not be construed to include any of the following: (a) An ammunition feeding device that has been permanently altered so that it cannot accommodate more than ten rounds of ammunition; (b) A twenty-two caliber tube ammunition feeding device; or (c) A tubular magazine that is contained in a lever-action firearm.\nNEW SECTION Sec. 2 (new section, chapter 9.41 RCW): (1) No person in this state may manufacture, possess, distribute, import, transfer, sell, offer for sale, purchase, or otherwise transfer any large capacity magazine except as authorized in this section. (3) In order to continue to possess a large capacity magazine that was legally possessed on the effective date of this section, the person possessing the large capacity magazine shall: (a) Store the large capacity magazine in a secure gun storage; and (b) Possess the large capacity magazine only on property owned or immediately controlled by the person, or while engaged in the legal use of the large capacity magazine at a duly licensed firing range, or while engaged in a lawful outdoor recreational activity such as hunting, or while traveling to or from either of these locations for the purpose of engaging in the legal use of the large capacity magazine, provided that the large capacity magazine is stored unloaded and in a separate locked container during transport. (4) A person who violates this section is guilty of a gross misdemeanor punishable under chapter 9A.20 RCW."
+}

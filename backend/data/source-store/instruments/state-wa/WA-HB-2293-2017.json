@@ -1,0 +1,128 @@
+{
+  "id": "WA-HB-2293-2017",
+  "scope": "state:wa",
+  "title": "HB2293 (2017-2018 Regular): Restricting firearms and dangerous weapons in early learning facilities.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=2293&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/2293.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ruth Kagi",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Beth Doglio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "45737b89-a83b-421f-9d6c-abc829c7eae0"
+    },
+    {
+      "name": "Christine Kilduff",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Shelley Kloba",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b918fb31-108f-49e7-b977-627ce667422d"
+    },
+    {
+      "name": "Nicole Macri",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22d959a5-ec5f-4b92-98d3-85dc219c2c61"
+    },
+    {
+      "name": "Joan McBride",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    },
+    {
+      "name": "Kristine Reeves",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cf992e89-7b96-46f3-9999-58432c690fe4"
+    },
+    {
+      "name": "Sherry Appleton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Laurie Dolan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Laurie Jinkins",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ce184542-9397-469f-ba78-8c735bce20fa"
+    },
+    {
+      "name": "Cindy Ryu",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "86e6a2bf-5216-4022-900c-621a8480f2e7"
+    },
+    {
+      "name": "Tana Senn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Derek Stanford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78230dff-4e33-4d33-8c46-71f00db01858"
+    },
+    {
+      "name": "Gael Tarleton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Javier Valdez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    },
+    {
+      "name": "June Robinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7ac92b63-d489-45d5-a85f-c0deac9d8508"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/2293.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2293-2017.introduced.html",
+      "sha256": "769eeadd055f9aa2dcb12d9138cca9a780927471d1497dbda44cc8ee998026e0"
+    },
+    "note": "Introduced version. Sec. 1 also covers air guns, stun guns and other dangerous weapons, requires 'GUN-FREE ZONE' signs; Sec. 2(3) lets the department deny or revoke a child care license for violations; Sec. 3 requires rules."
+  },
+  "operative_text": "NEW SECTION Sec. 1 (new RCW section, chapter 9.41): (1) It is unlawful for a person to carry onto, or to possess on, licensed child care center premises, child care center-provided transportation, or areas of facilities while being used exclusively by a child care center: (a) Any firearm;\nNEW SECTION Sec. 1 (new RCW section, chapter 9.41): (2) A person who violates subsection (1) of this section is guilty of a gross misdemeanor. If a person is convicted of a violation of subsection (1)(a) of this section, the person shall have his or her concealed pistol license, if any, revoked for a period of three years.\nNEW SECTION Sec. 1 (new RCW section, chapter 9.41): (3) Subsection (1) of this section does not apply to: (a) Family day care provider homes as defined in RCW 43.216.010; (b) Any person at least eighteen years of age legally in possession of a firearm or dangerous weapon that is secured within an attended vehicle or concealed from view within a locked unattended vehicle while conducting legitimate business at the child care center; or (c) Any law enforcement officer of a federal, state, or local government agency.\nNEW SECTION Sec. 2 (new RCW section, chapter 43.216): (2)(a) A family day care provider must store any firearm, ammunition, or other dangerous weapon as described in RCW 9.41.250 in a secure area when children are present on the premises. (b) The secure area must be inaccessible to children and must consist of a locked gun safe or a locked room. If stored in a locked room, each firearm must be stored unloaded and with a trigger lock or other disabling feature."
+}

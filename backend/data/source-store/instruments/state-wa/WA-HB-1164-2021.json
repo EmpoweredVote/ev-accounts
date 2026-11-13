@@ -1,0 +1,110 @@
+{
+  "id": "WA-HB-1164-2021",
+  "scope": "state:wa",
+  "title": "HB1164 (2021-2022 Regular): Addressing firearm safety measures to increase public safety.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1164&year=2021",
+    "http://lawfilesext.leg.wa.gov/Biennium/2021-22/Pdf/Bills/House%20Bills/1164.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Javier Valdez",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    },
+    {
+      "name": "Strom Peterson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6341053d-0580-4fbf-85ea-71ddb6b6f838"
+    },
+    {
+      "name": "Timm Ormsby",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "945d0b44-3329-46b2-a39e-47f5fdddc6ed"
+    },
+    {
+      "name": "Lauren Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0e5af9ca-165c-458c-8c65-a89aaf1a8d3e"
+    },
+    {
+      "name": "David Hackney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "447b684b-e885-42c9-9f32-7e6480cb5b98"
+    },
+    {
+      "name": "Nicole Macri",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22d959a5-ec5f-4b92-98d3-85dc219c2c61"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    },
+    {
+      "name": "Mia Gregerson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "edc48d7e-4f91-4e59-af50-79f34df8b011"
+    },
+    {
+      "name": "Alex Ramel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "41ef42e8-fe56-4f82-92e7-eefe85232cd2"
+    },
+    {
+      "name": "Jess Bateman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e6d175b-1af0-444c-b373-e5d0a279d240"
+    },
+    {
+      "name": "Tarra Simmons",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "370f9462-ed1d-4a83-b244-8bb593038444"
+    },
+    {
+      "name": "Joe Fitzgibbon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9f914ddb-ba7c-4b30-b756-fe7cd981f919"
+    },
+    {
+      "name": "Kirsten Harris-Talley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/House%20Bills/1164.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1164-2021.introduced.html",
+      "sha256": "781c89c6e38ad6e0a7dc981c333142d2cd95af528fad8b514b8c83d141c589be"
+    },
+    "note": "Introduced version. Exemptions in Sec. 3(2) (law enforcement, military, licensed dealers, relinquishment) not quoted. Sec. 2 also swaps spelled-out numbers for numerals in other definitions (strikes e.g. 'sixteen', adds '16'). Sec. 1 is findings."
+  },
+  "operative_text": "Sec. 2 (RCW 9.41.010): (36) \"Large capacity magazine\" means an ammunition feeding device with the capacity to accept more than 10 rounds of ammunition, or any conversion kit, part, or combination of parts, from which such a device can be assembled if those parts are in possession of or under the control of the same person, but shall not be construed to include any of the following: (a) An ammunition feeding device that has been permanently altered so that it cannot accommodate more than 10 rounds of ammunition; (b) A 22 caliber tube ammunition feeding device; or (c) A tubular magazine that is contained in a lever-action firearm.\nNEW SECTION Sec. 3 (new section in chapter 9.41 RCW): (1) No person in this state may manufacture, possess, distribute, import, transfer, sell, offer for sale, purchase, or otherwise transfer any large capacity magazine, except as authorized in this section.\nNEW SECTION Sec. 3 (new section in chapter 9.41 RCW): (3) A person who lawfully possesses a large capacity magazine under subsection (2)(a) of this section must comply with the following: (a) The person shall not sell or transfer the magazine to any other person in this state other than to a licensed dealer, to a federally licensed gunsmith for the purpose of service or repair, or to a law enforcement agency for the purpose of permanently relinquishing the large capacity magazine; and (b) The person shall possess the large capacity magazine only on the property owned or immediately controlled by the person, while engaged in the legal use of the large capacity magazine at a duly licensed shooting range, while engaged in a lawful outdoor recreational activity such as hunting, or while traveling to or from these locations for the purpose of engaging in the legal use of the large capacity magazine, provided that the large capacity magazine is stored unloaded and in a separate locked container during transport.\nNEW SECTION Sec. 3 (new section in chapter 9.41 RCW): (4) A person who violates this section is guilty of a gross misdemeanor punishable under chapter 9A.20 RCW."
+}

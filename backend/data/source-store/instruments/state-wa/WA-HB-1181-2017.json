@@ -1,0 +1,118 @@
+{
+  "id": "WA-HB-1181-2017",
+  "scope": "state:wa",
+  "title": "HB1181 (2017-2018 Regular): Prohibiting the creation and maintenance of a database concerning pistol sales or transfers.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1181&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1181.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Brian Blake",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jim Walsh",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0f598558-61ab-4010-a0fd-e7c54f688a1a"
+    },
+    {
+      "name": "Vincent Buys",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tom Dent",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d4e6e041-dc18-4415-9201-1a9bd18dea8b"
+    },
+    {
+      "name": "Larry Haler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Steve Kirby",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Drew MacEwen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5ab349b4-f041-4637-af64-c4e6e4f54c3e"
+    },
+    {
+      "name": "Mark Harmsworth",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Vicki Kraft",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dan Griffey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d2a0229f-8825-4374-819e-29d8e4bc8e44"
+    },
+    {
+      "name": "John Koster",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joe Schmick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "62bd22ba-058e-4cf8-bd24-905ced2f727a"
+    },
+    {
+      "name": "Matt Shea",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Taylor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brandon Vick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jesse Young",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1181.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1181-2017.introduced.html",
+      "sha256": "29a3a97cd7db75f8cc6ac648ae62e2c776bbe3e938ce33a1fbd9a341154bbddb"
+    },
+    "note": "Version read: Introduced. In Secs. 2 and 3 the only changes are \"triplicate\" struck and \"duplicate\" added (and a copy to the licensing director struck in RCW 9.41.110(9)(b)); the sentences quoted for those sections are existing law with that one word changed. Sec. 1 also strikes the licensing department's authority to keep records of pistol purchase applications and transfers."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.129): (1) The department of licensing may keep copies or records of applications for concealed pistol licenses provided for in RCW 9.41.070 and copies or records of applications for alien firearm licenses provided for in RCW 9.41.173.\nSec. 1 (RCW 9.41.129): (2) The department of licensing shall not keep copies or records of applications to purchase pistols under RCW 9.41.090 or copies or records of pistol transfers or sales under RCW 9.41.110 or 9.41.113. The department of licensing shall eliminate any copies or records of pistol purchase applications or pistol sales or transfers from any databases maintained by the department of licensing.\nSec. 2 (RCW 9.41.090): At the time of applying for the purchase of a pistol, the purchaser shall sign in duplicate and deliver to the dealer an application containing his or her full name, residential address, date and place of birth, race, and gender; the date and hour of the application; the applicant's driver's license number or state identification card number; a description of the pistol including the make, model, caliber and manufacturer's number if available at the time of applying for the purchase of a pistol. If the manufacturer's number is not available, the application may be processed, but delivery of the pistol to the purchaser may not occur unless the manufacturer's number is recorded on the application by the dealer and transmitted to the chief of police of the municipality or the sheriff of the county in which the purchaser resides; and a statement that the purchaser is eligible to possess a pistol under RCW 9.41.040.\nSec. 3 (RCW 9.41.110): (9)(a) A true record in duplicate shall be made of every pistol sold, in a book kept for the purpose, the form of which may be prescribed by the director of licensing and shall be personally signed by the purchaser and by the person effecting the sale, each in the presence of the other, and shall contain the date of sale, the caliber, make, model and manufacturer's number of the weapon, the name, address, occupation, and place of birth of the purchaser and a statement signed by the purchaser that he or she is not ineligible under RCW 9.41.040 to possess a firearm."
+}

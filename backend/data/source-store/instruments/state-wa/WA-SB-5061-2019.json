@@ -1,0 +1,79 @@
+{
+  "id": "WA-SB-5061-2019",
+  "scope": "state:wa",
+  "title": "SB5061 (2019-2020 Regular): Addressing undetectable firearms.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5061&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5061-S.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Manka Dhingra",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "David Frockt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lisa Wellman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ff1e922-601b-45f3-a43d-2ef69220f54b"
+    },
+    {
+      "name": "Sam Hunt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Patty Kuderer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Rebecca Saldaña",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+    },
+    {
+      "name": "Marko Liias",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eba44d6a-6602-4a90-bef0-44ab12db6109"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5061-S.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5061-2019.comm-sub.html",
+      "sha256": "844c43b04c955b4f0231d372cff90cebcbaba4f4c6c3d9007bf0325b890bd088"
+    },
+    "note": "Last listed version is Substitute (5061-S, \"Comm Sub\"). It was read as it stands. Sec. 4 (RCW 9.41.220) adds the same two terms to the contraband list; Sec. 6 ranks the new crime in the sentencing table (RCW 9.94A.515); Sec. 7 is an emergency clause (effective July 1, 2019). Large file."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.010(35)): (35) \"Undetectable firearm\" means any firearm that does not contain sufficient metal to be reliably detectable by commonly used walk-through metal detectors or magnetometers, or any firearm that, if the firearm or any major component were subjected to inspection by the types of X-ray machines commonly used at airports, would not generate an image that accurately depicts the shape of the firearm or component. A firearm is per se undetectable if any major component is made of polymer plastic or other nonmetal material and the firearm does not contain at least 3.7 ounces of steel or steel alloy.\nSec. 1 (RCW 9.41.010(36)): (36) \"Untraceable firearm\" means any firearm manufactured after July 1, 2019, which does not have a serial number registered with a federally licensed manufacturer imprinted on its major component. Untraceable firearm does not include an antique firearm that lacks either a serial number registered with a federally licensed manufacturer imprinted on its major component, a reliable way to determine the date the antique firearm was manufactured, or both, due to the age or manufacturing process of the antique firearm.\nNEW SECTION Sec. 2: (1) No person may knowingly or recklessly allow, facilitate, aid, or abet the manufacture or assembly of an undetectable firearm or untraceable firearm by a person who: (a) Is ineligible under RCW  9.41.040 to possess a firearm; or (b) has signed a valid voluntary waiver of firearm rights that has not been revoked under RCW  9.41.350. For purposes of this provision, the failure to conduct a background check as provided in RCW  9.41.113 shall be prima facie evidence of recklessness.\nNEW SECTION Sec. 2: (2)(a) Any person violating this section is guilty of a gross misdemeanor punishable under chapter  9A.20 RCW.\nNEW SECTION Sec. 2: (b) If a person previously has been found guilty under this section, then the person is guilty of a class C felony punishable under chapter  9A.20 RCW for each subsequent knowing violation of this section.\nSec. 3 (RCW 9.41.190(1)(a)): (a) Manufacture, own, buy, sell, loan, furnish, transport, or have in possession or under control, any machine gun, bump-fire stock, undetectable firearm, untraceable firearm, short-barreled shotgun, or short-barreled rifle;\nSec. 5 (RCW 9.41.225(3)): (3) It is unlawful for a person, in the commission or furtherance of a felony other than a violation of RCW  9.41.190, to discharge a firearm or to menace or threaten another person with a firearm if that firearm is an undetectable firearm or an untraceable firearm."
+}

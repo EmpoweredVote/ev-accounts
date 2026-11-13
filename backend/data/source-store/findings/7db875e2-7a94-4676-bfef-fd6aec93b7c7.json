@@ -1,0 +1,245 @@
+{
+  "politician_id": "7db875e2-7a94-4676-bfef-fd6aec93b7c7",
+  "findings": [
+    {
+      "id": "ae1fc419ab27bf9c1c122ba94d1c12151a1670787108cfda12e5dafea388458c",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=1163&Year=2025&Initiative=false",
+      "date": "2025-04-22",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1163-2025",
+      "act": "nay",
+      "motion": "House Final Passage as Amended by the Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA House, House Final Passage as Amended by the Senate, 2025-04-22: nay (tally 57–39); census gate: none.",
+      "subjects": [
+        "permit to purchase required for every firearm purchase or transfer",
+        "certified safety training with live-fire exercise before permit or concealed pistol license",
+        "state patrol background check and delay of transfers for open charges or warrants",
+        "concealed pistol license denial if training not shown"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/1163-S2.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1163-2025.chaptered.html",
+          "sha256": "3c9350e1d7c2659a79cdad04b4cae43eadead2a484a349fddafbd09b29ceceec"
+        }
+      }
+    },
+    {
+      "id": "2c7fd91e9fde74af669f1a8ad8ed6fed302c1a84640547ea48a88173168e7f30",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=2235&Year=2025&Initiative=false",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2235-2026",
+      "act": "yea",
+      "motion": "House 3rd Reading & Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA House, House 3rd Reading & Final Passage, 2026-02-10: yea (tally 95–1); census gate: near-unanimous.",
+      "subjects": [
+        "concealed pistol license records exempt from public records requests",
+        "permit to purchase and firearm transfer records exempt from public records requests"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/House%20Bills/2235.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2235-2026.introduced.html",
+          "sha256": "8b925d3e881bf9ec7f69aad5fba9683ff51291de46dc3f6ef763df3bea892c94"
+        }
+      }
+    },
+    {
+      "id": "e98363d13233f67bf5bbd4dac13c7de5b3491e3fca4325118188e0e69c6ba738",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=2320&Year=2025&Initiative=false",
+      "date": "2026-03-11",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2320-2026",
+      "act": "nay",
+      "motion": "House Final Passage as Amended by the Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA House, House Final Passage as Amended by the Senate, 2026-03-11: nay (tally 58–38); census gate: none.",
+      "subjects": [
+        "ban on 3D-printing and CNC-milling untraceable guns and frames",
+        "ban on sharing digital gun-making files",
+        "machine gun and bump-stock manufacture by any means"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/2320-S.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2320-2026.chaptered.html",
+          "sha256": "94b984934095112c128ea57c3a6b6d0f8c03ee5eefd39970afb718b33e489762"
+        }
+      }
+    },
+    {
+      "id": "cf71e7959596200a42fb83d05fdc5baac234b3db67f478a27b48979c05d1c550",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=2521&Year=2025&Initiative=false",
+      "date": "2026-02-23",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2521-2026",
+      "act": "nay",
+      "motion": "House 3rd Reading & Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA House, House 3rd Reading & Final Passage, 2026-02-23: nay (tally 53–36); census gate: none.",
+      "subjects": [
+        "background check fee set to cover state patrol costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/2521.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2521-2026.chaptered.html",
+          "sha256": "3243a76da2b60edc66d013a33ec42ec3a90429c95317177eacd70e4d0463e69a"
+        }
+      }
+    },
+    {
+      "id": "6c347db053be98ed57bcfec85d96f6e32cb9087c3848ed8bd71bbcd0b7e12332",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=1872&Year=2025&Initiative=false",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WA-HB-1872-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of WA-HB-1872-2025 (sponsor list (prime / co-sponsor)): HB1872 (2025-2026 Regular): Concerning firearms..",
+      "subjects": [
+        "permit holders, officers and veterans exempt from 10-day firearm purchase wait",
+        "same group may buy assault weapons and large capacity magazines",
+        "magazines sold as standard factory equipment excluded from magazine definition"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/House%20Bills/1872.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1872-2025.introduced.html",
+          "sha256": "6cebd6caaafc23b77d69b9d333a3f409ad1adc77ec5a83cb61c211252b575182"
+        }
+      }
+    },
+    {
+      "id": "8d65a7bdc6f4a1ea5c64c9804fe88ccb78cd51c2aa44b6954f2f700685ab0380",
+      "kind": "own-words",
+      "url": "https://strickland.house.gov/2025/04/01/marshall-strickland-voice-bipartisan-support-for-second-amendment-at-yelm-town-hall/",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "passage": "I don’t think it comes as any surprise that I’m a strong supporter of the Second Amendment,” Marshall said. “I’m a strong supporter of the Constitution, and I think that should be the guiding light for anybody in government.",
+      "note": "Quoted in a Nisqually Valley News story (reposted on a congressmember's site) about the Yelm town hall of 2025-03-20. He states strong support for the Second Amendment.",
+      "subjects": [
+        "Second Amendment",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:44:23.968Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d1bc187c2eaeb30ce9b1e34c1fc6fb8df82c973ac3d8bb57331b4238614d154a",
+      "kind": "own-words",
+      "url": "https://strickland.house.gov/2025/04/01/marshall-strickland-voice-bipartisan-support-for-second-amendment-at-yelm-town-hall/",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "passage": "Right now, all of the things we’re seeing come out of the statehouse, a lot of the rules are only going to be abided by legal gun owners, people who are responsible and want to follow the law. By creating more burdens, all we’re doing is taking potential new gun owners, persons who in a dangerous society are wanting to provide some personal protection. We’re making it overly cumbersome to become a lawful gun owner.",
+      "note": "Quoted in a Nisqually Valley News story at the Yelm town hall. He says new state gun rules fall on lawful owners and make becoming a gun owner overly cumbersome.",
+      "subjects": [
+        "burdens on lawful gun owners",
+        "new gun laws in Washington",
+        "permits and training to buy"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:44:23.968Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0e6bd0989a6cae7b9d50879cc0f8d831651ab922edc290adb9012f7fb2524242",
+      "kind": "own-words",
+      "url": "https://strickland.house.gov/2025/04/01/marshall-strickland-voice-bipartisan-support-for-second-amendment-at-yelm-town-hall/",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "passage": "It’s all been targeted at the lawful gun owner, and it’s not moving the pendulum at all,” Marshall said. “We’ve seen an increase in gun crime despite having increased legislation. I’d like to see us actually enforce the laws on the books and hold criminals accountable so we can decrease gun crime.",
+      "note": "Quoted in a Nisqually Valley News story. He says existing Washington gun laws target lawful owners and he wants current laws enforced against criminals. The story also reports he named extra training requirements and longer wait times among recent measures.",
+      "subjects": [
+        "enforce existing gun laws",
+        "waiting periods",
+        "training requirements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:44:23.968Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "enforce existing gun laws",
+        "training requirements and waiting periods",
+        "burdens on lawful gun owners",
+        "gun education"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "https://strickland.house.gov/2025/04/01/marshall-strickland-voice-bipartisan-support-for-second-amendment-at-yelm-town-hall/ (reprint of a local news story quoting him at a March 2025 town hall)",
+        "https://en.wikipedia.org/wiki/Matt_Marshall_(politician) (confirms House District 2 member since 2025-01-13; nothing on guns)",
+        "Ballotpedia: page fetched returned no usable text on the subject; 2026 ballot status seen only in a search snippet (a ballot-listing site shows him as a 2026 candidate in District 2 Position 2), not confirmed by a fetched page",
+        "web search x2: nothing further on the subject beyond the town hall story",
+        "not reviewed: official House member page and campaign site (not fetched, search allowance spent on other steps)"
+      ],
+      "found": 3,
+      "at": "2026-11-13T20:44:23.968Z",
+      "by": "source-collector"
+    }
+  ]
+}

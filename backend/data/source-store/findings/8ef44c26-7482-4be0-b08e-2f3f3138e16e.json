@@ -1,0 +1,31 @@
+{
+  "politician_id": "8ef44c26-7482-4be0-b08e-2f3f3138e16e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry permits",
+        "red-flag orders",
+        "Second Amendment / gun safety statements",
+        "ghost guns"
+      ],
+      "places": [
+        "status: in scope - sitting Washington State Auditor, third consecutive term, per https://sao.wa.gov/about-sao/state-auditor-pat-mccarthy (elected 2024, not on a 2026 ballot as a candidate)",
+        "On the Record (0 appearances, 0 sources)",
+        "official site https://sao.wa.gov/about-sao/state-auditor-pat-mccarthy: nothing on the subject (only navigation links to deadly-force audit reports; no gun-policy statement)",
+        "web search: Pat McCarthy State Auditor firearms gun: nothing on the subject",
+        "web search: Pat McCarthy Pierce County Executive gun policy terms: nothing on the subject (results were about the later county executive)",
+        "blocked: https://ballotpedia.org/Pat_McCarthy_(Washington) (fetch returned an empty page)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: campaign site, news archive of Pierce County Executive years (2009-2017), questionnaires, other URL-pattern sources (search allowance not fully used)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:45:49.838Z",
+      "by": "source-collector"
+    }
+  ]
+}

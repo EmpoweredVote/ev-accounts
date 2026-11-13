@@ -1,0 +1,85 @@
+{
+  "id": "WA-SB-5446-2023",
+  "scope": "state:wa",
+  "title": "SB5446 (2023-2024 Regular): Concerning local government authority to regulate firearms.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=5446&Year=2023&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2023-24/Pdf/Bills/Senate%20Bills/5446.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joe Nguyen",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Noel Frame",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4991ee01-0a35-454f-bdf6-bb2f34cf1c30"
+    },
+    {
+      "name": "Karen Keiser",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Patty Kuderer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Marko Liias",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eba44d6a-6602-4a90-bef0-44ab12db6109"
+    },
+    {
+      "name": "Liz Lovelett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "207ff383-f26e-462b-a554-72472b52712a"
+    },
+    {
+      "name": "Rebecca Saldana",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+    },
+    {
+      "name": "Yasmin Trudeau",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c09a622c-ec49-40e9-87db-ead331f5ab9e"
+    },
+    {
+      "name": "Javier Valdez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Senate%20Bills/5446.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5446-2023.introduced.html",
+      "sha256": "6b21640ca0ffd7f05af2204774e3e51127ace96accaa7d42ef64afac443ac12b"
+    },
+    "note": "Introduced version; text file header names an .htm copy. Sec. 3 (RCW 9.41.300) strikes the subsections that listed what cities and counties may enact (discharge limits, stadium/convention center limits, zoning of gun sellers, same-penalty rule for local ordinances) and renumbers the rest; the open-carry-at-demonstrations subsection (2) is unmarked existing law. Sec. 1 is a legislative finding, not quoted."
+  },
+  "operative_text": "NEW SECTION Sec. 2 (new section, chapter 9.41 RCW): This chapter does not affect, modify, or limit the power of a city, municipality, or county in this state to adopt an ordinance or regulation relating to firearms that is in addition to or more restrictive than the requirements of this chapter.\nNEW SECTION Sec. 4 (repeal of RCW 9.41.290): NEW SECTION. Sec. 4. RCW 9.41.290 (State preemption) and 1994 sp.s. c 7 s 428, 1985 c 428 s 1, & 1983 c 232 s 12 are each repealed."
+}

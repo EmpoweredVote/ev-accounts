@@ -1,0 +1,77 @@
+{
+  "id": "WA-SB-6289-2019",
+  "scope": "state:wa",
+  "title": "SB6289 (2019-2020 Regular): Concerning the restoration of the right to possess a firearm.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6289&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6289-S.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Manka Dhingra",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Patty Kuderer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Liz Lovelett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "207ff383-f26e-462b-a554-72472b52712a"
+    },
+    {
+      "name": "Jeannie Darneille",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Reuven Carlyle",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Claire Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f6c042e3-b785-4bf2-b385-65a34ff616e8"
+    },
+    {
+      "name": "Mona Das",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Frockt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6289-S.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6289-2019.comm-sub.html",
+      "sha256": "00f75bcc5065dc9e4efe97be8c1321f3fc8c65dd79c557b3e9d511e5f314c9bc"
+    },
+    "note": "Version read: Substitute Senate Bill 6289 (Comm Sub, 2019-20 session; first line of text file). No enrolled version saved. Sec. 2 strikes the old restoration petition rules in RCW 9.41.040(4) (5 and 3 year terms) and points to new Sec. 1; Sec. 3 (RCW 9.41.047) also changes notice and reporting wording (not quoted)."
+  },
+  "operative_text": "NEW SECTION Sec. 1 (new RCW section in chapter 9.41): (1) A person who is prohibited from possession of a firearm under RCW 9.41.040 and who has not been convicted or found not guilty by reason of insanity of a felony sex offense; a class A felony; a felony offense in which a firearm was used, displayed, or threatened to be used; or a felony offense with a maximum sentence of at least twenty years may petition a superior court to have his or her right to possess a firearm restored if: (a) The person is not required to file a petition as provided in RCW 9.41.047; (b) The person has spent three consecutive years, immediately preceding the petition, in the community without being convicted or found not guilty by reason of insanity of any felony, gross misdemeanor, or misdemeanor crime if the person was convicted or found not guilty by reason of insanity for a nonfelony offense; (c) The person has spent five consecutive years, immediately preceding the petition, in the community without being convicted or found not guilty by reason of insanity of any felony, gross misdemeanor, or misdemeanor crime if the person was convicted or found not guilty by reason of insanity of a class C felony offense; (d) The person has spent ten consecutive years, immediately preceding the petition, in the community without being convicted or found not guilty by reason of insanity of any felony, gross misdemeanor, or misdemeanor crime if the person was convicted or found not guilty by reason of insanity of a class B felony offense; (e) The person has no pending charges for any felony, gross misdemeanor, or misdemeanor crime; (f) The person has completed any and all sentencing conditions for the underlying felony or misdemeanor conviction; and (g) An extreme risk, domestic violence, stalking, or sexual assault protection order has not been issued against the person in the five years immediately preceding the petition.\nNEW SECTION Sec. 1 (new RCW section in chapter 9.41): (2) A person who has been convicted or found not guilty by reason of insanity for a felony offense in which a firearm was used, displayed, or threatened to be used and who otherwise meets the requirements in subsection (1) of this section may petition a superior court to have his or her right to possess a firearm restored when the person has spent ten consecutive years, immediately preceding the petition, in the community without being convicted or found not guilty by reason of insanity of any felony, gross misdemeanor, or misdemeanor crime. The court may restore the person's right to possess a firearm if the petitioner shows by a preponderance of the evidence that the petitioner is sufficiently rehabilitated to warrant restoration.\nSec. 2 (RCW 9.41.040): (8) A person may petition to restore the right to possess a firearm as provided in section 1 of this act."
+}

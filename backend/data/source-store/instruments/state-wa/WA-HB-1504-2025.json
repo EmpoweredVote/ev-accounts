@@ -1,0 +1,81 @@
+{
+  "id": "WA-HB-1504-2025",
+  "scope": "state:wa",
+  "title": "HB1504 (2025-2026 Regular): Enhancing public safety by requiring financial responsibility to purchase or possess a firearm or operate a firearm range.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=1504&Year=2025&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/House%20Bills/1504.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kristine Reeves",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cf992e89-7b96-46f3-9999-58432c690fe4"
+    },
+    {
+      "name": "Beth Doglio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "45737b89-a83b-421f-9d6c-abc829c7eae0"
+    },
+    {
+      "name": "Lauren Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0e5af9ca-165c-458c-8c65-a89aaf1a8d3e"
+    },
+    {
+      "name": "Julia Reed",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "67b9aaf1-46eb-471f-8f31-dcf501a92933"
+    },
+    {
+      "name": "Timm Ormsby",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "945d0b44-3329-46b2-a39e-47f5fdddc6ed"
+    },
+    {
+      "name": "Alex Ramel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "41ef42e8-fe56-4f82-92e7-eefe85232cd2"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    },
+    {
+      "name": "My-Linh Thai",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1963d6e9-069b-4770-9489-59e36faaa2e1"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/House%20Bills/1504.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1504-2025.introduced.html",
+      "sha256": "23590c20c7bac993ebd31cbbd9fd4e78da8afe83f13ff889c6b250edcd241b44"
+    },
+    "note": "Introduced version. Sec. 2 (RCW 9.41.090) makes proof of financial responsibility a condition of delivery by a dealer. Sec. 3 creates a licensing-department program; Sec. 4-5 are account-earnings amendments. Takes effect Jan 1, 2027."
+  },
+  "operative_text": "NEW SECTION Sec. 1 (new RCW section in chapter 9.41): (1)(a) No person in this state may purchase or possess a firearm unless that person is:\nNEW SECTION Sec. 1 (new RCW section in chapter 9.41): (a) A firearm liability policy or bond under this section must: (i) Be issued by an insurance company or surety company authorized to do business in this state; (ii) provide at least $25,000 of coverage per incident arising from accidental or unintentional discharge of the covered firearm causing injury, death, or property damage; and (iii) identify the specific firearm covered by the policy or bond.\nNEW SECTION Sec. 1 (new RCW section in chapter 9.41): (b) Firearm liability policies and bonds must be obtained on a per-firearm basis, with a separate policy or bond required for each distinct firearm.\nNEW SECTION Sec. 1 (new RCW section in chapter 9.41): (d) Failure to provide proof of financial responsibility to purchase or possess a firearm at the request of a dealer while purchasing a firearm, or at the request of a law enforcement officer while possessing a firearm, is a class 1 civil infraction.\nNEW SECTION Sec. 1 (new RCW section in chapter 9.41): (a) Any person possessing more than 25 firearms may qualify as a self-insurer by obtaining a certificate of self-insurance issued by the department of licensing as provided in (b) of this subsection.\nNEW SECTION Sec. 6 (new RCW section in chapter 9.41): (1) A firearm range operator shall carry a general liability insurance policy providing at least $1,000,000 of coverage per incident.\nNEW SECTION Sec. 6 (new RCW section in chapter 9.41): (3) A violation of this section is a misdemeanor."
+}

@@ -1,0 +1,65 @@
+{
+  "id": "WA-SB-5845-2021",
+  "scope": "state:wa",
+  "title": "SB5845 (2021-2022 Regular): Updating laws concerning civil protection orders to further enhance and improve their efficacy and accessibility.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5845&year=2021",
+    "http://lawfilesext.leg.wa.gov/Biennium/2021-22/Pdf/Bills/Senate%20Bills/5845.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Manka Dhingra",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Patty Kuderer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Liz Lovelett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "207ff383-f26e-462b-a554-72472b52712a"
+    },
+    {
+      "name": "John Lovick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "47ac1908-3715-4599-82f6-606aaf2d9fe6"
+    },
+    {
+      "name": "T'wina Nobles",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436194e1-479e-4066-8d99-f325fd6bb880"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-access-to-justice: Secs. 3-24, 27-33 (RCW 7.105 and related) — court procedures for civil protection orders: e-filing and case tracking, service, hearings, transfer of cases, judicial training, minor children as protected parties"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/Senate%20Bills/5845.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5845-2021.introduced.html",
+      "sha256": "ae0463a596ce6e60c6a3cd45747246f9f5aede836308aed945657026fb394128"
+    },
+    "note": "Introduced (HTML, marks visible; 2022 session). Large protection-order clean-up bill (chapter 7.105 RCW); only the gun parts are quoted. Also: Sec. 25 (RCW 9.41.040) strikes 'domestic violence' before 'protection order' so firearm-ban triggering violations cover any protection order; Sec. 26 (RCW 9.41.801) edits surrender and service rules and strikes 'or defendant'; Sec. 9 and Sec. 18 revise service and surrender procedures (law enforcement collects firearms; personal service required in cases requiring surrender of firearms); Sec. 31 touches unemployment benefits (RCW 50.20.050). Several sections carry an emergency clause and effective date."
+  },
+  "operative_text": "Sec. 1 (RCW 7.105.010): (C) Cleaning, accessing, displaying, using, or wearing a firearm in an intimidating or threatening manner;\nSec. 5 (RCW 7.105.100): Upon filing a petition for a protection order, the petitioner may request that the court enter an ex parte temporary protection order and an order to surrender and prohibit weapons without notice until a hearing on a full protection order may be held.\nSec. 16 (RCW 7.105.310): (m) Consider the provisions of RCW 9.41.800, and order the respondent to surrender, and prohibit the respondent from accessing, having in his or her custody or control, possessing, purchasing, attempting to purchase or receive, or receiving, all firearms, dangerous weapons, and any concealed pistol license, as required in RCW 9.41.800;\nSec. 17 (RCW 7.105.320): (4) Where orders involve surrender of firearms, dangerous weapons, and concealed pistol licenses, those items must be secured and accounted for in a manner that prioritizes safety and compliance with court orders.\nSec. 21 (RCW 7.105.460): (2)(a) Except as provided in (b) of this subsection, any person who has in his or her custody or control, accesses, purchases, possesses, or receives, or attempts to purchase or receive, a firearm with knowledge that he or she is prohibited from doing so by an extreme risk protection order is guilty of a gross misdemeanor, and further is prohibited from having in his or her custody or control, accessing, purchasing, possessing, or receiving, or attempting to purchase or receive, a firearm for a period of five years from the date the existing order expires.\nSec. 21 (RCW 7.105.460): (b) A person is guilty of a class C felony for a violation under (a) of this subsection if the person has two or more previous convictions for violating an order issued under this chapter."
+}

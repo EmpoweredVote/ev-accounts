@@ -1,0 +1,45 @@
+{
+  "id": "WA-SB-6193-2025",
+  "scope": "state:wa",
+  "title": "SB6193 (2025-2026 Regular): Concerning offenses involving unlawful possession of a firearm by a juvenile.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=6193&Year=2025&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/Senate%20Bills/6193.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Phil Fortunato",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d3fad6d8-8022-4c66-b505-4e7a8fc816d7"
+    },
+    {
+      "name": "Nikki Torres",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "624622d4-ce11-4fa3-9f0b-89c47559d1c6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Senate%20Bills/6193.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6193-2025.introduced.html",
+      "sha256": "9836decaad682e1f1f37f3efe0bc5a777bb490a7588cec071560a81354079c69"
+    },
+    "note": "Introduced version. Sec. 2 adds the new offense to the juvenile offense seriousness table (category B+/C row marks as printed). Sec. 1 relettering of old (1)(b) to (c)."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.040): (b) A juvenile is guilty of the crime of unlawful possession of a firearm in the first degree if the juvenile owns, accesses, has in the juvenile's custody, control, or possession, or receives any firearm after having previously been adjudicated, convicted, or found not guilty by reason of insanity in this state of subsection (2)(a)(v) of this section or a comparable out-of-state offense.\nSec. 1 (RCW 9.41.040): (c) Unlawful possession of a firearm in the first degree is a class B felony punishable according to chapter 9A.20 RCW.\nSec. 2 (RCW 13.40.0357): Possession of Firearms by Minor (with prior) (9.41.040(1)(b))"
+}

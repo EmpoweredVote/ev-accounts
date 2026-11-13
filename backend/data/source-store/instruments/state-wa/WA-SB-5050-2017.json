@@ -1,0 +1,83 @@
+{
+  "id": "WA-SB-5050-2017",
+  "scope": "state:wa",
+  "title": "SB5050 (2017-2018 Regular): Banning the sale of assault weapons and large capacity magazines.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5050&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/5050.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "David Frockt",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Maralyn Chase",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Annette Cleveland",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "14332488-3986-4e86-abc2-666b7a3f2dd5"
+    },
+    {
+      "name": "Jeannie Darneille",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Patty Kuderer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Kevin Ranker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Marko Liias",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eba44d6a-6602-4a90-bef0-44ab12db6109"
+    },
+    {
+      "name": "Rebecca Saldaña",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+    },
+    {
+      "name": "Lisa Wellman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ff1e922-601b-45f3-a43d-2ef69220f54b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/5050.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5050-2017.introduced.html",
+      "sha256": "e06ed3e1eef854c07c1d493c30a7ad3e58d38880417895a4d692f76ac8a59fbf"
+    },
+    "note": "Introduced version (HTML copy). Sec. 1 adds definitions of 'assault weapon', 'detachable magazine', 'large capacity magazine' and 'secure gun storage' to RCW 9.41.010; the (29) quote is cut at a line that continues with exclusions. Sec. 2(2) lists many exemptions (grandfathered owners, law enforcement, military, dealers selling to them, ranges, gunsmiths, relinquishment) not quoted for length."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.010): (27)(b) A semiautomatic pistol, or a semiautomatic, centerfire, or rimfire rifle with a fixed magazine, that has the capacity to accept more than ten rounds of ammunition;\nSec. 1 (RCW 9.41.010): (29) \"Large capacity magazine\" means an ammunition feeding device with the capacity to accept more than ten rounds of ammunition, or any conversion kit, part, or combination of parts, from which such a device can be assembled\nNEW SECTION Sec. 2 (new RCW section, chapter 9.41): (1) No person in this state may manufacture, possess, distribute, import, transfer, sell, offer for sale, purchase, or otherwise transfer any assault weapon or large capacity magazine except as authorized in this section.\nNEW SECTION Sec. 2 (new RCW section, chapter 9.41): (3) In order to continue to possess an assault weapon or large capacity magazine that was legally possessed on the effective date of this section, the person possessing the assault weapon or large capacity magazine shall:\nNEW SECTION Sec. 2 (new RCW section, chapter 9.41): (a) Store the assault weapon or large capacity magazine in a secure gun storage; and\nNEW SECTION Sec. 2 (new RCW section, chapter 9.41): (4) A person who violates this section is guilty of a class C felony punishable under chapter  9A.20 RCW."
+}

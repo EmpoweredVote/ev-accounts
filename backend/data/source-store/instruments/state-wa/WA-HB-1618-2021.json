@@ -1,0 +1,235 @@
+{
+  "id": "WA-HB-1618-2021",
+  "scope": "state:wa",
+  "title": "HB1618 (2021-2022 Regular): Prohibiting weapons at election-related offices and facilities subject to limited exemptions for law enforcement officers and security personnel.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1618&year=2021",
+    "http://lawfilesext.leg.wa.gov/Biennium/2021-22/Pdf/Bills/House%20Bills/1618.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "April Berg",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ec9da15f-7d79-42bc-a368-da3ab0855ddf"
+    },
+    {
+      "name": "Tana Senn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mike Chapman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cf38d9ea-d72d-4a44-9d9c-efd9cd9c432f"
+    },
+    {
+      "name": "Cindy Ryu",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "86e6a2bf-5216-4022-900c-621a8480f2e7"
+    },
+    {
+      "name": "Liz Berry",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "56d6dd6f-4959-4339-be78-e4b1d0083b08"
+    },
+    {
+      "name": "Emily Wicks",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jess Bateman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e6d175b-1af0-444c-b373-e5d0a279d240"
+    },
+    {
+      "name": "Davina Duerr",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f3daea18-1a32-486f-b8df-659d7c653c05"
+    },
+    {
+      "name": "Alex Ramel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "41ef42e8-fe56-4f82-92e7-eefe85232cd2"
+    },
+    {
+      "name": "Larry Springer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ae61e4af-16a8-44d6-933a-c4826882e103"
+    },
+    {
+      "name": "Mike Sells",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jesse Johnson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jamila Taylor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "da15c353-3744-4dd3-a6ed-c4b6e89752e1"
+    },
+    {
+      "name": "Amy Walen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "be3c2a24-1576-4636-9374-18fc77a8513f"
+    },
+    {
+      "name": "Javier Valdez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    },
+    {
+      "name": "Lisa Callan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3a93cc4-a4ee-4e4f-8a67-c9a0c5c66efb"
+    },
+    {
+      "name": "Eileen Cody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lauren Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0e5af9ca-165c-458c-8c65-a89aaf1a8d3e"
+    },
+    {
+      "name": "Roger Goodman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "de6d7929-66dd-4166-998a-479cfa264ce5"
+    },
+    {
+      "name": "Nicole Macri",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22d959a5-ec5f-4b92-98d3-85dc219c2c61"
+    },
+    {
+      "name": "Strom Peterson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6341053d-0580-4fbf-85ea-71ddb6b6f838"
+    },
+    {
+      "name": "Bill Ramos",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sharon Tomiko Santos",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d5c6e6e4-c474-41fa-ab96-bd237c8ff4de"
+    },
+    {
+      "name": "Sharon Wylie",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5617115e-78d5-4480-9534-aa337612a285"
+    },
+    {
+      "name": "Vandana Slatter",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2147a010-bd4e-445c-840a-8d5ad69573ca"
+    },
+    {
+      "name": "Steve Bergquist",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f4f7acdf-1761-4cac-82e6-19bf8f6ea525"
+    },
+    {
+      "name": "Steve Tharinger",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0381ded1-ac26-4700-8188-6ff06621d1be"
+    },
+    {
+      "name": "Shelley Kloba",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b918fb31-108f-49e7-b977-627ce667422d"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    },
+    {
+      "name": "Laurie Dolan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Marcus Riccelli",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c3fccc57-8278-43c8-8e54-dc3c78e50bc9"
+    },
+    {
+      "name": "Timm Ormsby",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "945d0b44-3329-46b2-a39e-47f5fdddc6ed"
+    },
+    {
+      "name": "Kirsten Harris-Talley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Hackney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "447b684b-e885-42c9-9f32-7e6480cb5b98"
+    },
+    {
+      "name": "Noel Frame",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4991ee01-0a35-454f-bdf6-bb2f34cf1c30"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/House%20Bills/1618.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1618-2021.introduced.html",
+      "sha256": "ce8f6733f969100c65bb6d95f8f8c37a5b89d5edc204a2766aced1b6d036b088"
+    },
+    "note": "Introduced text (HTML copy read; 2022 session). Bill is a single new section, so no struck text."
+  },
+  "operative_text": "NEW SECTION Sec. 1 (new section, chapter 9.41 RCW): (1) It is unlawful for a person to carry onto, or to possess in, a ballot counting center, a voting center, a student engagement hub, or the county elections and voter registration office, or areas of facilities while being used as a ballot counting center, a voting center, a student engagement hub, or the county elections and voter registration office: (a) Any firearm; (b) Any other dangerous weapon as described in RCW 9.41.250; (c) Any air gun, including any air pistol or air rifle, designed to propel a BB, pellet, or other projectile by the discharge of compressed air, carbon dioxide, or other gas; or (d)(i) Any portable device manufactured to function as a weapon and which is commonly known as a stun gun, including a projectile stun gun that projects wired probes that are attached to the device that emit an electrical charge designed to administer to a person or an animal an electric shock, charge, or impulse; or (ii) Any device, object, or instrument that is used or intended to be used as a weapon with the intent to injure a person by an electric shock, charge, or impulse.\nNEW SECTION Sec. 1(2): A person who violates subsection (1) of this section is guilty of a gross misdemeanor. If a person is convicted of a violation of subsection (1)(a) of this section, the person shall have his or her concealed pistol license, if any, revoked for a period of three years. Anyone convicted under subsection (1)(a) of this section is prohibited from applying for a concealed pistol license for a period of three years from the date of conviction.\nNEW SECTION Sec. 1(3): Subsection (1) of this section does not apply to: (a) Any law enforcement officer of a federal, state, or local government agency; or (b) Any security personnel hired by a county and engaged in security specifically for a counting center, a voting center, a student engagement hub, or the county elections and voter registration office or areas of facilities used for such purposes."
+}

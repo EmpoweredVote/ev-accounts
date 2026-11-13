@@ -1,0 +1,132 @@
+{
+  "id": "WA-HB-1374-2019",
+  "scope": "state:wa",
+  "title": "HB1374 (2019-2020 Regular): Relating to local government authority to regulate firearms.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1374&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1374.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nicole Macri",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22d959a5-ec5f-4b92-98d3-85dc219c2c61"
+    },
+    {
+      "name": "Beth Doglio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "45737b89-a83b-421f-9d6c-abc829c7eae0"
+    },
+    {
+      "name": "Laurie Jinkins",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ce184542-9397-469f-ba78-8c735bce20fa"
+    },
+    {
+      "name": "Timm Ormsby",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "945d0b44-3329-46b2-a39e-47f5fdddc6ed"
+    },
+    {
+      "name": "Eileen Cody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jake Fey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "97b47446-b0ee-4a2c-b4fe-ec8a995356ea"
+    },
+    {
+      "name": "Vandana Slatter",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2147a010-bd4e-445c-840a-8d5ad69573ca"
+    },
+    {
+      "name": "Lauren Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0e5af9ca-165c-458c-8c65-a89aaf1a8d3e"
+    },
+    {
+      "name": "Noel Frame",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4991ee01-0a35-454f-bdf6-bb2f34cf1c30"
+    },
+    {
+      "name": "Derek Stanford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78230dff-4e33-4d33-8c46-71f00db01858"
+    },
+    {
+      "name": "Laurie Dolan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joe Fitzgibbon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9f914ddb-ba7c-4b30-b756-fe7cd981f919"
+    },
+    {
+      "name": "Sherry Appleton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Marcus Riccelli",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c3fccc57-8278-43c8-8e54-dc3c78e50bc9"
+    },
+    {
+      "name": "Javier Valdez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    },
+    {
+      "name": "Sharon Tomiko Santos",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d5c6e6e4-c474-41fa-ab96-bd237c8ff4de"
+    },
+    {
+      "name": "June Robinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7ac92b63-d489-45d5-a85f-c0deac9d8508"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1374.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1374-2019.introduced.html",
+      "sha256": "0e00dd7bc458be8ea42017e939c8114b234c7c566c9a0fb93f0c6fd9cf428348"
+    },
+    "note": "Introduced. Sec. 3 (RCW 9.41.300) strikes the list of local ordinances cities and counties could pass (discharge limits, stadium bans, gun-shop zoning) and renumbers; Sec. 1 is a findings section, not quoted."
+  },
+  "operative_text": "NEW SECTION Sec. 2 (new RCW chapter 9.41): This chapter does not affect, modify, or limit the power of a city, municipality, or county in this state to adopt an ordinance or regulation relating to firearms that is in addition to or more restrictive than the requirements of this chapter.\nNEW SECTION Sec. 4 (repeal of RCW 9.41.290): RCW  9.41.290 (State preemption) and 1994 sp.s. c 7 s 428, 1985 c 428 s 1, & 1983 c 232 s 12 are each repealed."
+}

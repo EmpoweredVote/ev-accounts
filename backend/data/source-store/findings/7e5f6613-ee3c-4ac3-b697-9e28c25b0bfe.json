@@ -1,0 +1,208 @@
+{
+  "politician_id": "7e5f6613-ee3c-4ac3-b697-9e28c25b0bfe",
+  "findings": [
+    {
+      "id": "fe7274d33b29bece7fbf489ddb8ca9d60cd6950c46f956f35f55a0d74af333af",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=1163&Year=2025&Initiative=false",
+      "date": "2025-04-14",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1163-2025",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate, 2025-04-14: yea (tally 29–19); census gate: none.",
+      "subjects": [
+        "permit to purchase required for every firearm purchase or transfer",
+        "certified safety training with live-fire exercise before permit or concealed pistol license",
+        "state patrol background check and delay of transfers for open charges or warrants",
+        "concealed pistol license denial if training not shown"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/1163-S2.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1163-2025.chaptered.html",
+          "sha256": "3c9350e1d7c2659a79cdad04b4cae43eadead2a484a349fddafbd09b29ceceec"
+        }
+      }
+    },
+    {
+      "id": "46386dcdba4515d16660e1dbfabbfc56225318a4dd9674dcf5c86cc1c6532558",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=2320&Year=2025&Initiative=false",
+      "date": "2026-02-28",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2320-2026",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate, 2026-02-28: yea (tally 29–18); census gate: none.",
+      "subjects": [
+        "ban on 3D-printing and CNC-milling untraceable guns and frames",
+        "ban on sharing digital gun-making files",
+        "machine gun and bump-stock manufacture by any means"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/2320-S.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2320-2026.chaptered.html",
+          "sha256": "94b984934095112c128ea57c3a6b6d0f8c03ee5eefd39970afb718b33e489762"
+        }
+      }
+    },
+    {
+      "id": "e5389fb63af4d1ba3f83ef5b486f58f5928e76163484b621ab7ef32941b61c19",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=2521&Year=2025&Initiative=false",
+      "date": "2026-03-09",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2521-2026",
+      "act": "nay",
+      "motion": "Senate 3rd Reading & Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage, 2026-03-09: nay (tally 28–21); census gate: none.",
+      "subjects": [
+        "background check fee set to cover state patrol costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/2521.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2521-2026.chaptered.html",
+          "sha256": "3243a76da2b60edc66d013a33ec42ec3a90429c95317177eacd70e4d0463e69a"
+        }
+      }
+    },
+    {
+      "id": "5e7bc6d9dc64c84d6041a9e13fd017b39a6a35f8a5a39821b0b2d208cb88a125",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=5098&Year=2025&Initiative=false",
+      "date": "2026-01-21",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5098-2026",
+      "act": "yea",
+      "motion": "Senate Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate Final Passage, 2026-01-21: yea (tally 29–20); census gate: none.",
+      "subjects": [
+        "no weapons in parks where children are present",
+        "no weapons in state and local public buildings",
+        "no weapons at county fairs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Senate%20Bills/5098-S2.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5098-2026.engrossed.html",
+          "sha256": "3635431b415b811a6144c8518a3c5518054fe1541dcb3142662a3f5d3e7859b6"
+        }
+      }
+    },
+    {
+      "id": "c0a2680d15333d115ca8b434e49f3825bad3cbe86e741d356d217b27db1b1ae5",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=5268&Year=2025&Initiative=false",
+      "date": "2026-01-28",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5268-2026",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage, 2026-01-28: yea (tally 49–0); census gate: near-unanimous.",
+      "subjects": [
+        "one year community custody after unlawful firearm possession conviction"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Senate%20Bills/5268-S.E2.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5268-2026.engrossed.html",
+          "sha256": "90ac0d45e63edd897eea9b6bd16fd90193ad26272a71ce9ee335b3a383f74c17"
+        }
+      }
+    },
+    {
+      "id": "c68a4e59ac081173a81e8f535cfebd67691ce7785bba3a24a34082695839a9e8",
+      "kind": "own-words",
+      "url": "https://senatedemocrats.wa.gov/Krishnadasan/2026/02/27/week-seven-session-coming-to-an-end/",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "passage": "Moms Demand Action – I met with Moms Demand Action for Gun Safety. These constituents are committed to safe schools, streets, and communities for our kids. I left our meeting feeling hopeful and grateful that our kids have amazing people advocating for them.",
+      "note": "From her session newsletter: she reports meeting a gun-safety advocacy group and describes the group's members and their work in positive terms. No bill or specific policy named.",
+      "subjects": [
+        "gun safety laws",
+        "meeting with a gun-safety advocacy group"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:39:20.843Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety laws",
+        "check every gun buyer",
+        "permit to purchase",
+        "ban on assault-style guns",
+        "red flag orders",
+        "carry permits",
+        "Second Amendment",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract returned no sources)",
+        "official Senate caucus site: biography page and site search for 'firearm' (no results) and 'gun' (two session newsletters, one with a gun-safety mention)",
+        "Senate newsletter 2026-03-12 (nothing on the subject)",
+        "Senate newsletter 2026-02-27 (one meeting with a gun-safety group)",
+        "blocked: https://ballotpedia.org/Deborah_Krishnadasan (HTTP 403)",
+        "news search on name plus gun words (nothing in her own words; a Washington State Standard story on HB 1163 returned no passage naming her)",
+        "news search on 2026 race: a July 2026 local news story names her as the incumbent seeking a first full term in the Nov. 3, 2026 general election; certified result not found (results.vote.wa.gov 2026 page returned 404)",
+        "no separate campaign site found in search",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:39:20.843Z",
+      "by": "source-collector"
+    }
+  ]
+}

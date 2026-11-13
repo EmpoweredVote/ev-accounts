@@ -1,0 +1,55 @@
+{
+  "politician_id": "cee94603-2a88-44e3-9c3d-4823c0f25d7f",
+  "findings": [
+    {
+      "id": "f5e845cab973ed817277675aa2db2513b1084ce351e973662c3d5253483fef5e",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/93213/race/34956/election/1502",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "There are no more restrictions on gun ownership that will protect public safety. We have a crime issue and a societal issue. Until we fully tackle that, nothing will change.",
+      "note": "Questionnaire answer to 'What restrictions on gun ownership are needed to protect public safety?' on a voter-guide profile; says no further restrictions on gun ownership would protect public safety and points to crime and societal issues.",
+      "subjects": [
+        "restrictions on gun ownership",
+        "gun safety laws",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:42:21.029Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "restrictions on gun ownership",
+        "Second Amendment",
+        "gun rights",
+        "background checks",
+        "assault-style weapons",
+        "carry permits",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "iVoterGuide candidate page, listed for the 2026-11-03 general election (State Rep., Dist. 13, Pos. 2)",
+        "blocked: https://washingtonstatestandard.com/voter-guides/contests/washington-state-house-district-13-2026-primary/",
+        "sponsor list: covered by bulk bill data",
+        "one web search on name plus race; no official primary/general result found, ballot status taken from iVoterGuide listing",
+        "not reviewed: official campaign site (not located in search results)",
+        "not reviewed: https://ballotpedia.org/Washington_House_of_Representatives_elections,_2026",
+        "nothing on the subject: news search (two searches, no gun-related coverage)"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:42:21.029Z",
+      "by": "source-collector"
+    }
+  ]
+}

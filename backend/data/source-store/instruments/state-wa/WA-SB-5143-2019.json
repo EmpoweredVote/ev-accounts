@@ -1,0 +1,77 @@
+{
+  "id": "WA-SB-5143-2019",
+  "scope": "state:wa",
+  "title": "SB5143 (2019-2020 Regular): Concerning the authorized removal, safe keeping, and return of firearms and ammunition by law enforcement during and after domestic violence incidents.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5143&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5143-S.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Manka Dhingra",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Lisa Wellman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ff1e922-601b-45f3-a43d-2ef69220f54b"
+    },
+    {
+      "name": "Mona Das",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Karen Keiser",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Guy Palumbo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jeannie Darneille",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Patty Kuderer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Rebecca Saldaña",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5143-S.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5143-2019.comm-sub.html",
+      "sha256": "8023d99d6e683c701a89de5133b072053f4a807592bd8fbc64b5dcd1039da82a"
+    },
+    "note": "Substitute Senate Bill 5143 (Comm Sub, 2019 session); version_read 'other'. Secs. 2 and 3 move existing domestic violence training, reporting and records rules into new sections of chapter 10.99 RCW (struck from RCW 10.99.030 and re-added); not gun parts and not quoted."
+  },
+  "operative_text": "Sec. 1 (RCW 10.99.030): (3)(a) A peace officer who responds to a domestic violence call and has probable cause to believe that a crime has been committed shall, to the extent feasible and otherwise allowed by law, seize all firearms and ammunition the peace officer has reasonable grounds to believe were used or threatened to be used in the commission of the offense and may seize all firearms and ammunition in plain sight or discovered pursuant to a consensual or other lawful search.\nSec. 1 (RCW 10.99.030): (3)(b) A law enforcement agency shall comply with the provisions of RCW 9.41.340 and 9.41.345 before the return of any firearm or ammunition seized under this subsection to the owner or individual from who the firearm or ammunition was obtained.\nSec. 1 (RCW 10.99.030): (6) An appointed or elected public official, public employee, or public agency as defined in RCW 4.24.470, or units of local government and its employees, as provided in RCW 36.28A.010, are immune from civil liability for damages arising out of the seizure or failure to seize a firearm, unless it is shown that the official, employee, or agency acted with gross negligence or in bad faith.\nSec. 4 (RCW 9.41.345): (1)(d) Ensure that twenty-four hours have elapsed from the time the firearm was obtained by law enforcement, unless the firearm was seized in connection with a domestic violence call pursuant to RCW 10.99.030, in which case the law enforcement agency must ensure that five business days have elapsed from the time the firearm was obtained."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "WA-SB-6673-2019",
+  "scope": "state:wa",
+  "title": "SB6673 (2019-2020 Regular): Removing restrictions on the right to bear arms and ensuring personal protection for Washington citizens.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6673&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6673.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Phil Fortunato",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d3fad6d8-8022-4c66-b505-4e7a8fc816d7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6673.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6673-2019.introduced.html",
+      "sha256": "fa263c513699fb66de266241b54f6a032c04effa38f37078685d3bf633ce2d5e"
+    },
+    "note": "Introduced version; the bill header says 2020 Regular Session (a 2019-20 biennium bill). Large bill, quotes selected from NEW SECTIONs and the Sec. 12 result; most of Secs. 2-25 strike text from RCW 9.41 and the protective-order chapters (7.90, 7.92, 10.14, 10.99, 26.09, 26.50) and the Sec. 3-10 strikes remove the 2019 c 3 (I-1639) rules on semiautomatic assault rifles, training, and the 10-day period. Sec. 2 deletes the definitions of secure gun storage and semiautomatic assault rifle and adds 'firearm accessories'. Sec. 26(10) repeals a sales tax exemption tied to the background-check rule. Sec. 1 is an uncodified statement of intent and is not quoted. Sec. 14 (bar-area carry exception, added words) quoted by the set-up session at stop 1, 2026-11-13."
+  },
+  "operative_text": "NEW SECTION Sec. 28 (new RCW section, chapter 9.41): (1) The right to personal protection and self-defense, as provided by the Second Amendment of the United States Constitution and Article I, section 24 of the state Constitution, shall not be abridged in any form. This includes, but is not limited to, any laws or regulations that: (a) Restrict the ability of a person who is over the age of eighteen to purchase, possess, or access a pistol, rifle, assault weapon, shotgun, ammunition, magazine of any capacity, or firearm accessory; (b) Mandate a state background check be completed before the lawful sale or purchase of any item described in (a) of this subsection; and (c) Limit a person's ability to protect themselves or their property while that person is located in their residence.\nNEW SECTION Sec. 28 (new RCW section, chapter 9.41): (2) This act shall not restrict the power of the state to enact reasonable laws and regulations that impose limits on the ability of convicted felons or the mentally incompetent to purchase, possess, or access firearms.\nNEW SECTION Sec. 26 (repealer): (2) RCW 9.41.092 (Licensed dealer deliveries—Background checks) and 2019 c 3 s 4 (Initiative Measure No. 1639), 2018 c 145 s 4, & 2015 c 1 s 4;\nNEW SECTION Sec. 26 (repealer): (3) RCW 9.41.113 (Firearm sales or transfers—Background checks—Requirements—Exceptions) and 2019 c 3 s 11 (Initiative Measure No. 1639), 2017 c 264 s 2, & 2015 c 1 s 3;\nNEW SECTION Sec. 26 (repealer): (7) RCW 9.41.360 (Unsafe storage of a firearm) and 2019 c 3 s 5 (Initiative Measure No. 1639);\nNEW SECTION Sec. 26 (repealer): (9) RCW 71.05.182 (Six-month suspension of right to possess firearms after seventy-two-hour detention for evaluation and treatment of person who presents likelihood of serious harm as a result of mental disorder, substance use disorder, or both—Automatic restoration of right at expiration of six-month period) and 2019 c 247 s 1;\nNEW SECTION Sec. 26 (repealer): (10) RCW 82.08.833 (Exemptions—Sales or transfers of firearms—Unlicensed persons—Background check requirements) and 2015 c 1 s 10;\nSec. 12 (RCW 9.41.240): Unless an exception under RCW 9.41.042, 9.41.050, or 9.41.060 applies, a person at least eighteen years of age, but less than twenty-one years of age, may possess a pistol only: (1) In the person's place of abode; (2) At the person's fixed place of business; or (3) On real property under his or her control.\nSec. 14 (RCW 9.41.300): (1) It is unlawful for any person to enter the following places when he or she knowingly possesses or knowingly has under his or her control a weapon: ... (d) That portion of an establishment classified by the state liquor and cannabis board as off-limits to persons under twenty-one years of age, unless the establishment has as its primary source of revenue the sale of liquor for on-premises consumption; or"
+}

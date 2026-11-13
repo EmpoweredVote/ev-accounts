@@ -1,0 +1,75 @@
+{
+  "id": "WA-HB-1038-2021",
+  "scope": "state:wa",
+  "title": "HB1038 (2021-2022 Regular): Prohibiting the possession of firearms by persons convicted of certain criminal offenses.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1038&year=2021",
+    "http://lawfilesext.leg.wa.gov/Biennium/2021-22/Pdf/Bills/House%20Bills/1038.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Amy Walen",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "be3c2a24-1576-4636-9374-18fc77a8513f"
+    },
+    {
+      "name": "Mari Leavitt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4c8b65f9-faab-4948-acc8-ab7a11769c15"
+    },
+    {
+      "name": "Lillian Ortiz-Self",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d97bcc03-4c74-4c9d-9e0f-13ae551ed54c"
+    },
+    {
+      "name": "Sharon Wylie",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5617115e-78d5-4480-9534-aa337612a285"
+    },
+    {
+      "name": "Javier Valdez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    },
+    {
+      "name": "David Hackney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "447b684b-e885-42c9-9f32-7e6480cb5b98"
+    },
+    {
+      "name": "Nicole Macri",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22d959a5-ec5f-4b92-98d3-85dc219c2c61"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/House%20Bills/1038.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1038-2021.introduced.html",
+      "sha256": "f439f1dbc4c97f77748faa6d916d30b4a15ed63b68c403d2e0ea011e74f2268b"
+    },
+    "note": "Introduced (HTML copy). Second quote shows only the change: adds \"or behavioral health treatment\" to the commitment ground. Other sections renumber cross-references (RCW 9.41.042, 13.40.0357, 13.40.160, 13.40.193, 13.40.265, 70.02.230, 70.02.240)."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.040(2)(a)(iii)): (iii) After having previously been convicted or found not guilty by reason of insanity in this state or elsewhere of the following crimes, committed on or after the effective date of this section: Unlawful aiming or discharge of a firearm or dangerous weapon (RCW  9.41.230); or animal cruelty in the second degree (RCW  16.52.207);\nSec. 1 (RCW 9.41.040(2)(a)(v)): (v) After having previously been involuntarily committed for mental health treatment or behavioral health treatment under RCW  71.05.240,  71.05.320,  71.34.740,  71.34.750, chapter  10.77 RCW, or equivalent statutes of another jurisdiction, unless his or her right to possess a firearm has been restored as provided in RCW  9.41.047;"
+}

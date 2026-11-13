@@ -1,0 +1,99 @@
+{
+  "id": "WA-SB-6620-2017",
+  "scope": "state:wa",
+  "title": "SB6620 (2017-2018 Regular): Improving security in schools and the safety of students.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6620&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/6620-S.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "David Frockt",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sam Hunt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Reuven Carlyle",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jeannie Darneille",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Manka Dhingra",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Karen Keiser",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Patty Kuderer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "Kevin Ranker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Andy Billig",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John McCoy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rebecca Saldaña",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "education-school-police: Sec. 12 (new RCW section, chapter 36.28A) — state grant program to fund school resource officers"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/6620-S.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6620-2017.comm-sub.html",
+      "sha256": "0c3652de4fd43a1d3a9fdcdf0a6177219b48711dcf3786ff5e1b35a8a13717be"
+    },
+    "note": "Version read: Substitute Senate Bill 6620 (Comm Sub); not an enrolled text. Parts I-V are non-gun school safety: emergency response systems (Sec. 2), anonymous incident reporting (Secs. 5-8), regional school safety centers (Secs. 9-11), school resource officer grants (Sec. 12), school safety summit (Sec. 13). Only the school resource officer grant clearly matches a listed topic. Gun parts are Part VI (Secs. 14-23). Some quotes are shortened with '...' or are the opening of a longer subsection. Sec. 19 raises dealer license fees from $125 to $150 for pistols/semiautomatic rifles, other firearms and ammunition."
+  },
+  "operative_text": "Sec. 14 (RCW 9.41.010): (29) \"Semiautomatic rifle\" means a rifle which utilizes a portion of the energy of a firing cartridge to extract the fired cartridge case and chamber the next round, and which requires a separate pull of the trigger to fire each cartridge.\nSec. 15 (RCW 9.41.090): (1) In addition to the other requirements of this chapter, no dealer may deliver a pistol or semiautomatic rifle to the purchaser thereof until:\nSec. 15 (RCW 9.41.090): (4) ... the local jurisdiction may hold the sale and delivery of the pistol or semiautomatic rifle up to thirty days in order to confirm existing records in this state or elsewhere.\nSec. 20 (RCW 9.41.113): (4) No person may sell or transfer a semiautomatic rifle to a person under twenty-one years of age.\nSec. 21 (RCW 9.41.124): Residents of a state other than Washington may purchase rifles and shotguns, except those firearms defined as semiautomatic rifles, in Washington:\nSec. 19 (RCW 9.41.110): (8)(c) The license fee for pistols or semiautomatic rifles shall be one hundred fifty dollars.\nSec. 22 (RCW 9.41.240): (1) A person under twenty-one years of age may not purchase a pistol pursuant to Title 18 U.S.C. Sec. 922(b)(1) or a semiautomatic rifle pursuant to RCW 9.41.113.\nSec. 22 (RCW 9.41.240): (3) Nothing in this section or RCW 9.41.113(4) prohibits a person at least eighteen years of age, but less than twenty-one years of age, from possessing a semiautomatic rifle as otherwise authorized by law.\nNEW SECTION Sec. 23 (new RCW section, chapter 36.28A): (1) Subject to the availability of amounts appropriated for this specific purpose, the Washington association of sheriffs and police chiefs shall establish a grant program to provide financial assistance to local law enforcement agencies conducting background checks for the purchase and sale of pistols and semiautomatic rifles as required by chapter 9.41 RCW."
+}

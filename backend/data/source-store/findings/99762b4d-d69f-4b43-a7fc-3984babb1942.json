@@ -1,0 +1,163 @@
+{
+  "politician_id": "99762b4d-d69f-4b43-a7fc-3984babb1942",
+  "findings": [
+    {
+      "id": "ef97f898601a02d4e743aa75ef96adf987f80fda54f648bfb5b90d30b56bd1cd",
+      "kind": "own-words",
+      "url": "https://www.atg.wa.gov/news/news-releases/ag-nick-brown-testifies-support-permit-purchase-legislation",
+      "date": "2025-03-25",
+      "date_precision": "day",
+      "passage": "“This policy gives us the tools we need to ensure gun buyers aren’t doing so illegally under existing state and federal laws,” Brown said in his testimony to the Senate Committee on Law & Justice. “Through background checks, training, and other safety steps, we can make meaningful use of the critical time between someone’s choice to purchase a firearm and when they obtain that weapon.”",
+      "note": "Testimony from the Attorney General to a Senate committee in favor of HB 1163, a permit-to-purchase bill with training, background checks and annual re-checks. Quoted in an AG office release.",
+      "subjects": [
+        "permit to buy a gun",
+        "check every gun buyer",
+        "firearm safety training"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:45:28.163Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "75b279a1fd337d6b2e26baaa6e1de700e0d2df9100fb8d228b8dd2ef133dc32b",
+      "kind": "own-words",
+      "url": "https://www.atg.wa.gov/news/news-releases/ag-brown-firearms-industry-responsibility-act-constitutional-wrongful-death-suit",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "passage": "“Under Washington law, firearm retailers can’t ignore people who are reaching out to protect family members who are at imminent risk of self-harm,” said AG Brown. “This retailer is not only trying to shirk responsibility for their alleged actions, they’re also trying to take away gun safety protections from all Washingtonians, which would open the door for future tragedies like this one.”",
+      "note": "Statement on his office's friend-of-the-court brief defending the 2023 Firearms Industry Responsibility Act in Olen v. Precise Shooter. The release also says the Second Amendment does not guarantee a right to sell guns and that the office will keep defending firearms protections.",
+      "subjects": [
+        "gun seller responsibility law",
+        "gun safety laws",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:45:28.163Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ecf9455fc50748e4b49201b1cdf26323d67181ea59edb153197c7eb14ad74018",
+      "kind": "own-words",
+      "url": "https://www.atg.wa.gov/news/news-releases/wa-joins-federal-suit-prevent-trump-administration-s-efforts-distribute",
+      "date": "2025-06-09",
+      "date_precision": "day",
+      "passage": "“Communities are less safe with these mass-shooting devices in circulation,” Brown said. “Essentially deregulating them is another example of this administration being driven by extreme ideology rather than commonsense.”",
+      "note": "Statement as he joined 15 other states' attorneys general suing the federal government and ATF over a settlement to stop enforcing the ban on forced reset triggers and redistribute seized ones.",
+      "subjects": [
+        "machine-gun conversion devices",
+        "federal agency gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:45:28.163Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "beda0c86759271489e319b8683af043c3cb840769233a02dd2bea172c24534c2",
+      "kind": "record",
+      "url": "https://www.atg.wa.gov/news/news-releases/wa-joins-federal-suit-prevent-trump-administration-s-efforts-distribute",
+      "date": "2025-06-09",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Joined 15-state lawsuit against ATF over forced reset trigger settlement",
+      "note": "As Attorney General, joined a multistate suit to block ATF from redistributing forced reset triggers.",
+      "subjects": [
+        "machine-gun conversion devices",
+        "federal agency gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:45:28.163Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "75f5f8a402f1a10683d360063cecc664b792963812eb1f932a09af257bdc83a8",
+      "kind": "record",
+      "url": "https://www.atg.wa.gov/news/news-releases/ag-brown-firearms-industry-responsibility-act-constitutional-wrongful-death-suit",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Amicus brief defending Firearms Industry Responsibility Act, Olen v. Precise Shooter (King County Superior Court)",
+      "note": "His office sought leave to file a brief arguing the 2023 state law on gun seller safeguards is constitutional.",
+      "subjects": [
+        "gun seller responsibility law",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:45:28.163Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "95d1287fdab0a4dab71107c69fa9b2b297ef53d7059b278e525acf548ea19653",
+      "kind": "own-words",
+      "url": "https://spokesman.com/stories/2024/sep/27/gun-control-abortion-take-center-stage-in-race-for",
+      "date": "2024-09-19",
+      "date_precision": "day",
+      "passage": "“As a state, we need to continue to advance gun safety measures here in Washington,” Brown said in the Sept. 19 debate. “Because that has results and saves lives.”",
+      "note": "Debate remark quoted in a Spokesman-Review news story (published 2024-09-27); general statement on gun safety laws.",
+      "subjects": [
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:45:28.163Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permit to purchase",
+        "background checks",
+        "machine-gun conversion devices / forced reset triggers",
+        "gun seller responsibility law",
+        "gun safety laws general",
+        "assault weapons ban"
+      ],
+      "places": [
+        "confirmed in scope: sitting Washington Attorney General (office news releases name him)",
+        "On the Record (0 meetings)",
+        "official site: Attorney General office firearms news releases (3 fetched)",
+        "sponsor list: covered by bulk bill data",
+        "one web search on name plus gun words",
+        "news story: Spokesman-Review 2024-09-27 debate coverage",
+        "blocked: https://www.axios.com/local/seattle/2024/09/09/washington-attorney-candidates-gun-laws",
+        "not reviewed: https://www.theurbanist.org/wp-content/uploads/2024/07/Nick-Brown-Attorney-General-2024-Questionnaire.pdf (file not found)",
+        "not reviewed: https://giffords.org/candidates/nick-brown, https://nickbrownforag.com, Ballotpedia, https://www.atg.wa.gov/news/news-releases/Firearms list",
+        "fetched, nothing usable: https://washingtonstatestandard.com/2025/03/27/washington-ag-backs-gun-permit-bill-as-it-advances-in-state-senate/"
+      ],
+      "found": 6,
+      "at": "2026-11-13T20:45:28.163Z",
+      "by": "source-collector"
+    }
+  ]
+}

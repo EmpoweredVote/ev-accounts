@@ -60,6 +60,2498 @@
           "sha256": "9ed9fdb70ffb56147b272c6b241d7e0177bad7775d5a058683ffd46c4191521c"
         }
       }
+    },
+    {
+      "id": "dd3682b7241d35e0d47b8b9b97875d0209e807d98d25cc2e8b8f2beb34d4554e",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1054&year=2021",
+      "date": "2021-04-23",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1054-2021",
+      "act": "yea",
+      "motion": "Senate Final Passage as Recommended by Conference Committee (#5)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "WA Senate, Senate Final Passage as Recommended by Conference Committee (#5), 2021-04-23: yea (tally 28–20); census gate: multi-subject.",
+      "subjects": [
+        "police may not acquire or use .50 caliber or larger firearms, ammunition or machine guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/House%20Bills/1054-S.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1054-2021.engrossed.html",
+          "sha256": "682f31ef0e57140666be3f85aff2a64727861be8c590ca831fbae19c413b0bc2"
+        }
+      }
+    },
+    {
+      "id": "3b7c696aeb91a4712eb6c40744323b4822ce61b1c6a1956216866c37f8717954",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1100&year=2017",
+      "date": "2017-04-06",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1100-2017",
+      "act": "nay",
+      "motion": "Senate 3rd Reading & Final Passage (#12)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage (#12), 2017-04-06: nay (tally 32–17); census gate: none.",
+      "subjects": [
+        "mailed renewal notices for concealed pistol licenses",
+        "license fee share funds notification account"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1100-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1100-2017.comm-sub.html",
+          "sha256": "760516af81d7eb0ec3bc5abaac385f0fa84ec0a0828f8779c356373ea2e14256"
+        }
+      }
+    },
+    {
+      "id": "fe7274d33b29bece7fbf489ddb8ca9d60cd6950c46f956f35f55a0d74af333af",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=1163&Year=2025&Initiative=false",
+      "date": "2025-04-14",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1163-2025",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate, 2025-04-14: yea (tally 29–19); census gate: none.",
+      "subjects": [
+        "permit to purchase required for every firearm purchase or transfer",
+        "certified safety training with live-fire exercise before permit or concealed pistol license",
+        "state patrol background check and delay of transfers for open charges or warrants",
+        "concealed pistol license denial if training not shown"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/1163-S2.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1163-2025.chaptered.html",
+          "sha256": "3c9350e1d7c2659a79cdad04b4cae43eadead2a484a349fddafbd09b29ceceec"
+        }
+      }
+    },
+    {
+      "id": "ccd35ac43e96e82ece6c7287b37ff868fea4eee60871b1a07c08c4e454610b8c",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1181&year=2021",
+      "date": "2022-03-03",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1181-2022",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate (#42)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate (#42), 2022-03-03: yea (tally 48–0); census gate: multi-subject.",
+      "subjects": [
+        "safe firearm storage and lock boxes for suicide prevention",
+        "dealer storage service creates no special relationship for liability",
+        "voluntary donations from gun buyers and carry-license applicants"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/House%20Bills/1181-S2.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1181-2022.engrossed.html",
+          "sha256": "be666c59a39477abf6bb3f12c15bfbe2e5158180e1bdc265a716cc837f889ae7"
+        }
+      }
+    },
+    {
+      "id": "927ad8b4264023eb6ea08dd1d22c9dd4685d610d796c0280d1cbda92303939ea",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1225&year=2019",
+      "date": "2019-04-11",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1225-2019",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate (#26)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate (#26), 2019-04-11: yea (tally 27–20); census gate: none.",
+      "subjects": [
+        "officers remove firearms at domestic violence scenes",
+        "court-ordered firearm surrender for domestic violence defendants",
+        "five-business-day hold before returning seized firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1225-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1225-2019.comm-sub.html",
+          "sha256": "799f04aa3427714ee0ca11d5f5ecab532f181090313784b3a6a02b467fed94b8"
+        }
+      }
+    },
+    {
+      "id": "1566c538a719fa0632a42ffab12e4d1402d72821ec80e5614abd87747b757f4c",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1320&year=2021",
+      "date": "2021-04-10",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1320-2021",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate (#14)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate (#14), 2021-04-10: yea (tally 27–20); census gate: multi-subject.",
+      "subjects": [
+        "extreme risk protection orders: surrender and return of firearms",
+        "court protection orders bar firearm possession and purchase",
+        "penalty for possessing a gun in violation of an extreme risk order"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/House%20Bills/1320-S2.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1320-2021.engrossed.html",
+          "sha256": "6fa11afee34dcfcf4e7b0a3892fd77828ec2306ec4f3b57ddc3a89bf2757187e"
+        }
+      }
+    },
+    {
+      "id": "7994e1a877fcaebb8dbfbab91bf6b72e7f340a09f790a921a58c23846ffb502c",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1465&year=2019",
+      "date": "2019-04-17",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1465-2019",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate (#14)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate (#14), 2019-04-17: yea (tally 27–21); census gate: none.",
+      "subjects": [
+        "pistol buyers no longer exempt from checks by showing a concealed pistol license",
+        "sunset tied to a single point of contact background check system"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1465.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1465-2019.engrossed.html",
+          "sha256": "624b7142b338717b5bf8ed58654e560c8e89488deac465b1b4a30fc73e510b31"
+        }
+      }
+    },
+    {
+      "id": "bfb7e1d5b7a147bdfde27e1b432d1f36f1f16d631bc784430bba9c1c8b6097a4",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1501&year=2017",
+      "date": "2017-04-20",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1501-2017",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate (#25)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate (#25), 2017-04-20: yea (tally 49–0); census gate: near-unanimous.",
+      "subjects": [
+        "dealers report denied gun purchases to State Patrol",
+        "denied-purchase database and investigation of false applications",
+        "notify protected persons when a restrained person fails a gun background check"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1501-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1501-2017.comm-sub.html",
+          "sha256": "590a8bbae5216d06cdb7fa15555419ce8fd408f35a48c3fc8ca8f427f3b0f0bb"
+        }
+      }
+    },
+    {
+      "id": "a4a355775717b7360abbe1e0a28846679f1c81f350dc0ce7356dbda61c379525",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=1562&Year=2023&Initiative=false",
+      "date": "2023-04-11",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1562-2023",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate, 2023-04-11: yea (tally 28–21); census gate: none.",
+      "subjects": [
+        "more crimes and orders that bar firearm possession",
+        "firearm possession ban covers frames and receivers",
+        "court process and waiting periods to restore firearm rights",
+        "victim notice on restoration petitions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Session%20Laws/House/1562-S.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1562-2023.chaptered.html",
+          "sha256": "5626afa14e2d7e1ac74544c514bbe9b590db011f3e13d0172ecc7f8b39497196"
+        }
+      }
+    },
+    {
+      "id": "4a4af54a5ade827f61383d7dbc2085956378eecdc2de0c1964eab42acc71af14",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1589&year=2019",
+      "date": "2019-04-13",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1589-2019",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage (#6)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage (#6), 2019-04-13: yea (tally 43–1); census gate: near-unanimous.",
+      "subjects": [
+        "correctional staff carry exemption without federal background-check condition"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1589.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1589-2019.introduced.html",
+          "sha256": "ec80ba32a2212ee040790610a9e150880fa3fe48294dafb4de98246cc77e122d"
+        }
+      }
+    },
+    {
+      "id": "e83d851a5ab61ffd38f585d296e8ca868bff25f1663e6a3e74241bf78d98f8f7",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=1599&Year=2023&Initiative=false",
+      "date": "2023-04-06",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1599-2023",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate, 2023-04-06: yea (tally 46–0); census gate: near-unanimous.",
+      "subjects": [
+        "State Patrol access to involuntary treatment court records for firearm background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Session%20Laws/House/1599.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1599-2023.chaptered.html",
+          "sha256": "e8420c3a80cfc94a12627ea129e43637305c9595d6e5adbe93b739decfa4e0aa"
+        }
+      }
+    },
+    {
+      "id": "c522acf443f7b1dfb1e973313add1cb376020c2eea6dadc1f67068dc3ea5f353",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=1600&Year=2023&Initiative=false",
+      "date": "2023-04-06",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1600-2023",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate, 2023-04-06: yea (tally 47–0); census gate: near-unanimous.",
+      "subjects": [
+        "firearm background checks may use sealed juvenile records",
+        "penalty for passing those records on"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Session%20Laws/House/1600-S.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1600-2023.chaptered.html",
+          "sha256": "944aadb3cf629dde242ca980064d823caa19db8e8b8c7731d5d723940705e421"
+        }
+      }
+    },
+    {
+      "id": "4eff0df81a3d99db571fc9295a29841c1b67ab71b8f48274059fc1100ffa9944",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1612&year=2017",
+      "date": "2017-04-11",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1612-2017",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate (#36)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate (#36), 2017-04-11: yea (tally 47–2); census gate: multi-subject.",
+      "subjects": [
+        "background check exemption for temporary transfer to prevent suicide",
+        "suicide-safer homes task force with firearms industry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1612-S2.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1612-2017.engrossed.html",
+          "sha256": "d5aea8fa0944c429242aa2726f4d6135da26113a4b60e82c26afd08d9c91359c"
+        }
+      }
+    },
+    {
+      "id": "29a15e7682007ecbee55166a89c7c74bbd7557078d8b3748105d608d2a0c5555",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1630&year=2021",
+      "date": "2022-03-01",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1630-2022",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate (#35)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate (#35), 2022-03-01: yea (tally 28–20); census gate: none.",
+      "subjects": [
+        "no firearms at school board meetings",
+        "no open carry at local government meetings",
+        "no firearms at ballot counting and voting sites, concealed license holders allowed at voting centers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/House%20Bills/1630-S.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1630-2022.engrossed.html",
+          "sha256": "dec888aef0b2762062a16a657f571cd2609a04c5f3f0897e08012ff2a0124f5f"
+        }
+      }
+    },
+    {
+      "id": "7c132147602e0f3a971e049a0f96008aee2431a25358047902668e491282b06f",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1705&year=2021",
+      "date": "2022-03-01",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1705-2022",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage (#37)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage (#37), 2022-03-01: yea (tally 26–23); census gate: none.",
+      "subjects": [
+        "ban on making, owning, selling or buying untraceable firearms",
+        "serial number required for unfinished frames and receivers",
+        "civil penalty then misdemeanor for repeat violations",
+        "licensed dealers may add serial numbers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/House%20Bills/1705-S.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1705-2022.engrossed.html",
+          "sha256": "eccd2b52b7b47540c1e907778c3a2f8dadf4d5ddc2765775d690ce87c5aa31d5"
+        }
+      }
+    },
+    {
+      "id": "dbaf52f9898c84a792ec96974e379c3ca86423017a04511742f54344169b2eb0",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1719&year=2021",
+      "date": "2022-02-25",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1719-2022",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage (#5)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage (#5), 2022-02-25: yea (tally 49–0); census gate: near-unanimous.",
+      "subjects": [
+        "police military-equipment ban limited to .50 caliber or larger rifles",
+        "ammunition and shotguns removed from the ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/House%20Bills/1719.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1719-2022.introduced.html",
+          "sha256": "bf869704cf0160cb34d73f3765259a9b2f5b1d482d6da7cda6fefbc4ef8d9fde"
+        }
+      }
+    },
+    {
+      "id": "ae9057981178be414bb30a7a1748882d0954fa2506cd0912e132153aa0a44515",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1739&year=2019",
+      "date": "2019-04-16",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1739-2019",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate (#24)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate (#24), 2019-04-16: yea (tally 30–18); census gate: none.",
+      "subjects": [
+        "ban on undetectable firearms",
+        "no manufacture of untraceable firearms for sale",
+        "crime to help a prohibited person make a ghost gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1739-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1739-2019.comm-sub.html",
+          "sha256": "f6ac2318d7298dae09a59951694973ab278f458d9cd04f2f17171c0ec02198e8"
+        }
+      }
+    },
+    {
+      "id": "95e8e3fdfe4892b7af366154043a99c4484a7462ba0896a343179114d429bc56",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1786&year=2019",
+      "date": "2019-04-13",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1786-2019",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate (#23)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate (#23), 2019-04-13: yea (tally 25–20); census gate: multi-subject.",
+      "subjects": [
+        "protection orders must require surrender of all firearms and concealed pistol licenses",
+        "police serve, collect and receipt surrendered guns; search warrant if not surrendered",
+        "compliance hearing within three judicial days"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1786-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1786-2019.comm-sub.html",
+          "sha256": "34a7a0eb45b1c74d65216adc77eedd7a8c74b70f64ba96f3b9762d32f417c66b"
+        }
+      }
+    },
+    {
+      "id": "328d96bff2b8d7925477a6b1f2c67f74a2525e2423e8bea8df9120e299026e5c",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1901&year=2021",
+      "date": "2022-03-03",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1901-2022",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate (#23)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate (#23), 2022-03-03: yea (tally 30–17); census gate: multi-subject.",
+      "subjects": [
+        "firearm possession ban after protection-order violation",
+        "firearm surrender and secure storage under protection orders",
+        "extreme risk protection order handling"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/House%20Bills/1901-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1901-2022.comm-sub.html",
+          "sha256": "dd9eeef78154f8d03ca5e4be6a0e39022bcb37236bf5ff87d63c646983bf4ca1"
+        }
+      }
+    },
+    {
+      "id": "45a9d7b915d30bf3e2aefd21deea4264203ac29383924da87d2a2b911eb4727b",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=1903&Year=2023&Initiative=false",
+      "date": "2024-02-28",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1903-2024",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate, 2024-02-28: yea (tally 29–20); census gate: none.",
+      "subjects": [
+        "report lost or stolen firearm within 24 hours",
+        "civil penalty up to $1,000 for failing to report",
+        "dealer signage about storage and reporting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Session%20Laws/House/1903-S.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1903-2024.chaptered.html",
+          "sha256": "b0fe474389525ae3084f33495fc6b8a277fb4b5609228de819d8d529873b1ca6"
+        }
+      }
+    },
+    {
+      "id": "36ac158ca6213661af82e6addd4be1840f9a51d5fadb9ff2392291997aaebbd4",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1934&year=2019",
+      "date": "2019-04-12",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1934-2019",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage (#22)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage (#22), 2019-04-12: yea (tally 46–1); census gate: near-unanimous.",
+      "subjects": [
+        "mail renewal of concealed pistol licenses for deployed military members"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1934.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1934-2019.introduced.html",
+          "sha256": "c945ea714ac271508b61e568feedbb5e48e08a37bc123e4b1d973ba0e63f3e65"
+        }
+      }
+    },
+    {
+      "id": "b0a2b3fbc354622cbc2ef100d6003dc4aee65f4a17f99739995bff4ec513a594",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1949&year=2019",
+      "date": "2019-04-03",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1949-2019",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage (#7)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage (#7), 2019-04-03: yea (tally 48–0); census gate: near-unanimous.",
+      "subjects": [
+        "feasibility study of state firearm background check point of contact"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1949-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1949-2019.comm-sub.html",
+          "sha256": "c0693901a7249fa56a81d99458b3da967729c57c27b452d3f4506a6afaefd3a4"
+        }
+      }
+    },
+    {
+      "id": "20782ce5174c13fdc4007e6bcd7d14dd9a804d343a286b7b2f0aa0fe15170c0c",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1965&year=2017",
+      "date": "2017-03-31",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1965-2017",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate (#18)",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate (#18), 2017-03-31: yea (tally 45–0); census gate: multi-subject.",
+      "subjects": [
+        "one set of fingerprints, not two, on concealed pistol license applications",
+        "same change for alien firearm licenses"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1965.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1965-2017.introduced.html",
+          "sha256": "59908da4a534af9f3f42388d79d7e80a1bd00f3d0d4c150f321f2c47a6504e8b"
+        }
+      }
+    },
+    {
+      "id": "329d2f7f6cc37a009563e262cf7f9ba9a5bd463a743d5ccd7d93d5988723f2e0",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=2021&Year=2023&Initiative=false",
+      "date": "2024-02-29",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2021-2024",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage, 2024-02-29: yea (tally 31–18); census gate: none.",
+      "subjects": [
+        "destroy firearms from government buy-back programs",
+        "define destruction of forfeited firearms",
+        "antique firearms may go to museums"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Session%20Laws/House/2021-S.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2021-2024.chaptered.html",
+          "sha256": "e47d425309c456bee410a7ef43b76b46c02af8621ed25834dfa53eade3d8ee7f"
+        }
+      }
+    },
+    {
+      "id": "3f4d2100f8a0789d809d9fbe0efb20dfc7c93b2b35adf9894ee3b79217e3196c",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=2118&Year=2023&Initiative=false",
+      "date": "2024-02-27",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2118-2024",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate, 2024-02-27: yea (tally 28–21); census gate: none.",
+      "subjects": [
+        "firearms dealers must install alarms, security barriers and video surveillance",
+        "dealer employees must be 21 and pass annual background checks",
+        "dealers must keep records, report thefts within 24 hours and carry $1,000,000 liability insurance"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Session%20Laws/House/2118-S.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2118-2024.chaptered.html",
+          "sha256": "b934bb1db61cbd229a381386a7880599c42ecf0f4f1a345e0d7de8c4a6b5dbb2"
+        }
+      }
+    },
+    {
+      "id": "46386dcdba4515d16660e1dbfabbfc56225318a4dd9674dcf5c86cc1c6532558",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=2320&Year=2025&Initiative=false",
+      "date": "2026-02-28",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2320-2026",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate, 2026-02-28: yea (tally 29–18); census gate: none.",
+      "subjects": [
+        "ban on 3D-printing and CNC-milling untraceable guns and frames",
+        "ban on sharing digital gun-making files",
+        "machine gun and bump-stock manufacture by any means"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/2320-S.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2320-2026.chaptered.html",
+          "sha256": "94b984934095112c128ea57c3a6b6d0f8c03ee5eefd39970afb718b33e489762"
+        }
+      }
+    },
+    {
+      "id": "1e45e96232184c46d49fe5decfcee190434db68aa82983be894ef718acf70d74",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=2467&year=2019",
+      "date": "2020-03-05",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2467-2020",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage (#48)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage (#48), 2020-03-05: yea (tally 29–20); census gate: none.",
+      "subjects": [
+        "state patrol runs all firearm dealer background checks",
+        "background check fee up to $18",
+        "denied buyers may appeal"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2467-S2.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2467-2020.engrossed.html",
+          "sha256": "5e37fcaad5fa9b7f3a66dab84c8fe6d9db6254fdc200270c896f43f9763edf4f"
+        }
+      }
+    },
+    {
+      "id": "3fd608f6ee773f57b2d330b2e41bd69e6e197b5d22eb4bb9b4af102a3bbf108a",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=2519&year=2017",
+      "date": "2018-03-08",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2519-2018",
+      "act": "yea",
+      "motion": "Senate Final Passage as Recommended by Conference Committee (#2)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate Final Passage as Recommended by Conference Committee (#2), 2018-03-08: yea (tally 37–11); census gate: none.",
+      "subjects": [
+        "concealed pistol license for 18-20 year-old service members and veterans",
+        "police must verify eligibility before returning a surrendered license",
+        "protection orders under chapters 7.90, 7.92, 7.94 bar a license"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/2519.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2519-2018.engrossed.html",
+          "sha256": "5e590c33fa6a28959795bdba0c9f41bf29bda588f55d757ff37d4e8bfb2c1a84"
+        }
+      }
+    },
+    {
+      "id": "b40c014953b249df4792013d114891a33cb687d2c7722a55d7bd2d7f398985d7",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=2521&Year=2025&Initiative=false",
+      "date": "2026-03-09",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2521-2026",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage, 2026-03-09: yea (tally 28–21); census gate: none.",
+      "subjects": [
+        "background check fee set to cover state patrol costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/2521.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2521-2026.chaptered.html",
+          "sha256": "3243a76da2b60edc66d013a33ec42ec3a90429c95317177eacd70e4d0463e69a"
+        }
+      }
+    },
+    {
+      "id": "4b350024a6fa94b3b0855b42f00ced17a90485f337939b73fc4a0f822c2f53c8",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=2555&year=2019",
+      "date": "2020-03-06",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2555-2020",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage (#51)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage (#51), 2020-03-06: yea (tally 28–20); census gate: none.",
+      "subjects": [
+        "background checks for firearm frame and receiver sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2555-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2555-2020.comm-sub.html",
+          "sha256": "a7f64261a3fabecdae1b8e7cbc34aec326f6bfb65bbc8160318be2d19638ca1a"
+        }
+      }
+    },
+    {
+      "id": "7b2e68ef21cac53ad83514e36e5710151bbd60da7d5ca86e76cb4433ace5af6f",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=2622&year=2019",
+      "date": "2020-03-06",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2622-2020",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage as Amended by the Senate (#52)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage as Amended by the Senate (#52), 2020-03-06: yea (tally 29–19); census gate: none.",
+      "subjects": [
+        "contempt and show-cause hearings when firearms are not surrendered under protection orders",
+        "compliance review for extreme risk protection order surrender"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2622-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2622-2020.comm-sub.html",
+          "sha256": "cbf571d6909752b192fd88f0e71dcae2e624d402adc93dc2ac6d603541e49fcd"
+        }
+      }
+    },
+    {
+      "id": "97542e4f612361b62114b8f833eebb225ae6be62aa78d949f347a7df87d26bb8",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=5006&Year=2023&Initiative=false",
+      "date": "2023-04-13",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5006-2023",
+      "act": "yea",
+      "motion": "Senate Final Passage as Amended by the House",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate Final Passage as Amended by the House, 2023-04-13: yea (tally 33–14); census gate: none.",
+      "subjects": [
+        "civil infraction for possessing a firearm after a voluntary waiver",
+        "electronic filing of voluntary waivers",
+        "waiver notices to family or counselors"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Session%20Laws/Senate/5006-S.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5006-2023.chaptered.html",
+          "sha256": "d76d0ea9a329dd0e1bf0c632a4a278673d9743421ce65c7750b0bb2573923bf6"
+        }
+      }
+    },
+    {
+      "id": "24a4cd0de2ee1dead8fdff40ccb9da79548315e8012f46c8077ab56489cd509f",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5027&year=2019",
+      "date": "2019-04-18",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5027-2019",
+      "act": "yea",
+      "motion": "Senate Final Passage as Amended by the House (#8)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate Final Passage as Amended by the House (#8), 2019-04-18: yea (tally 31–18); census gate: none.",
+      "subjects": [
+        "extreme risk protection orders allowed against people under 18",
+        "petitions can cite a person's access to firearms",
+        "parents of a minor under an order told to secure firearms",
+        "law enforcement priority and after-hours petitions for orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5027-S.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5027-2019.engrossed.html",
+          "sha256": "d79154359672402ae7a85e1f95dbd499204b386f0e8629dabb8ed831f2fa8dcb"
+        }
+      }
+    },
+    {
+      "id": "df1b80145bcf748e4946694f4a99aaf43e2be58101e860fd3f7eeeb51918e802",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5038&year=2021",
+      "date": "2021-04-20",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5038-2021",
+      "act": "yea",
+      "motion": "Senate Final Passage as Amended by the House (#4)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate Final Passage as Amended by the House (#4), 2021-04-20: yea (tally 28–21); census gate: none.",
+      "subjects": [
+        "no open carry at permitted demonstrations",
+        "no open carry on state capitol grounds and at legislative hearings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/Senate%20Bills/5038-S.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5038-2021.engrossed.html",
+          "sha256": "3e85c5c44d4ac76a5412f97b7b4e933667145af003253e7b1a918be3a1d10052"
+        }
+      }
+    },
+    {
+      "id": "4df7f7f0b7f5f92086f1387068c910bcb5da00ce98db3c37621f115231582003",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5078&year=2021",
+      "date": "2022-02-09",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5078-2022",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage (#35)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage (#35), 2022-02-09: yea (tally 28–20); census gate: none.",
+      "subjects": [
+        "ban on selling or making magazines over 10 rounds",
+        "consumer-protection liability for online magazine sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/Senate%20Bills/5078-S.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5078-2022.engrossed.html",
+          "sha256": "04e9f5ec63f4e328c46bfa657e362c52c3024e914eabb2200fc27ce70638e0d1"
+        }
+      }
+    },
+    {
+      "id": "064e37e8248dca01f82319eecd0a8e381a1f20f38dd618e89bda92dedcafcf22",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=5078&Year=2023&Initiative=false",
+      "date": "2023-04-14",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5078-2023",
+      "act": "yea",
+      "motion": "Senate Final Passage as Amended by the House",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate Final Passage as Amended by the House, 2023-04-14: yea (tally 26–20); census gate: none.",
+      "subjects": [
+        "firearm industry must use reasonable controls against diversion to straw purchasers and traffickers",
+        "no marketing to minors or prohibited persons",
+        "public nuisance and attorney general enforcement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Session%20Laws/Senate/5078-S.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5078-2023.chaptered.html",
+          "sha256": "11c1df1daa45eeaccbc07d78e490745a1bdc0a57067abdad83b01a136a86ed55"
+        }
+      }
+    },
+    {
+      "id": "5e7bc6d9dc64c84d6041a9e13fd017b39a6a35f8a5a39821b0b2d208cb88a125",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=5098&Year=2025&Initiative=false",
+      "date": "2026-01-21",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5098-2026",
+      "act": "yea",
+      "motion": "Senate Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate Final Passage, 2026-01-21: yea (tally 29–20); census gate: none.",
+      "subjects": [
+        "no weapons in parks where children are present",
+        "no weapons in state and local public buildings",
+        "no weapons at county fairs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Senate%20Bills/5098-S2.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5098-2026.engrossed.html",
+          "sha256": "3635431b415b811a6144c8518a3c5518054fe1541dcb3142662a3f5d3e7859b6"
+        }
+      }
+    },
+    {
+      "id": "5f40016e28e734f63925259aacbf03f123e31b73f4ebd9f94b9d80200de7af02",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5181&year=2019",
+      "date": "2019-04-19",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5181-2019",
+      "act": "yea",
+      "motion": "Senate Final Passage as Amended by the House (#10)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate Final Passage as Amended by the House (#10), 2019-04-19: yea (tally 26–21); census gate: none.",
+      "subjects": [
+        "six-month firearm ban after short-term mental-health detention",
+        "surrender of firearms and license suspension",
+        "petition to restore gun rights early"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5181-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5181-2019.comm-sub.html",
+          "sha256": "58991fb3161001597f09e51dc582795586c7b74b5075069dafc34ae95d07fb9f"
+        }
+      }
+    },
+    {
+      "id": "76842de5a23c88f3980fdc3ea1335b721ca0e7d66340c664a15e48135c8b9026",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5205&year=2019",
+      "date": "2019-04-18",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5205-2019",
+      "act": "yea",
+      "motion": "Senate Final Passage as Amended by the House (#6)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate Final Passage as Amended by the House (#6), 2019-04-18: yea (tally 32–17); census gate: none.",
+      "subjects": [
+        "firearm ban after incompetency dismissal with history of violence",
+        "court process to restore firearm rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5205.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5205-2019.introduced.html",
+          "sha256": "95940b7e58ad554ed051d0a4fdce850036ce868c8730256df6c63a4b6230b28f"
+        }
+      }
+    },
+    {
+      "id": "745c1cff6774d2fff279375dcd8f22a91f8afdb23d59d504418374492b111fa7",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5268&year=2017",
+      "date": "2017-04-20",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5268-2017",
+      "act": "yea",
+      "motion": "Senate Final Passage as Amended by the House (#10)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA Senate, Senate Final Passage as Amended by the House (#10), 2017-04-20: yea (tally 49–0); census gate: near-unanimous.",
+      "subjects": [
+        "email notice before concealed pistol license expires"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/5268.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5268-2017.introduced.html",
+          "sha256": "a8d85b480b3108e4ee25db646715e16ffa5f7594e4225c9758b28d50ea6f8ec9"
+        }
+      }
+    },
+    {
+      "id": "c0a2680d15333d115ca8b434e49f3825bad3cbe86e741d356d217b27db1b1ae5",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=5268&Year=2025&Initiative=false",
+      "date": "2026-01-28",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5268-2026",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage, 2026-01-28: yea (tally 49–0); census gate: near-unanimous.",
+      "subjects": [
+        "one year community custody after unlawful firearm possession conviction"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Senate%20Bills/5268-S.E2.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5268-2026.engrossed.html",
+          "sha256": "90ac0d45e63edd897eea9b6bd16fd90193ad26272a71ce9ee335b3a383f74c17"
+        }
+      }
+    },
+    {
+      "id": "2a30ea833e25346e8f820305aec0b1d47e8bf23fbb01c30b8ba0840c87504fd9",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5434&year=2019",
+      "date": "2020-03-09",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5434-2020",
+      "act": "yea",
+      "motion": "Senate Final Passage as Amended by the House (#9)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate Final Passage as Amended by the House (#9), 2020-03-09: yea (tally 27–21); census gate: none.",
+      "subjects": [
+        "no firearms at child care centers",
+        "locked firearm storage in family day care homes"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5434-S.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5434-2020.engrossed.html",
+          "sha256": "817c18111b8fccb2580137b67be460cdb66dabb8fafca558eae3b1cf7e1b1449"
+        }
+      }
+    },
+    {
+      "id": "02890e118d49799aaf591b656102ec64dee158f0003b2ae27bbde6842e176f55",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=5436&Year=2023&Initiative=false",
+      "date": "2023-04-18",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5436-2023",
+      "act": "yea",
+      "motion": "Senate Final Passage as Amended by the House",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA Senate, Senate Final Passage as Amended by the House, 2023-04-18: yea (tally 48–0); census gate: near-unanimous.",
+      "subjects": [
+        "museum and historical society firearm transfers exempt from background checks",
+        "dealer check required before returning a loaned firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Session%20Laws/Senate/5436-S.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5436-2023.chaptered.html",
+          "sha256": "f80b68c77a83637977c0a328aad6ef05fd7a04afb1953a3b9269676cf9369fca"
+        }
+      }
+    },
+    {
+      "id": "905b29b0c3f93c18fd42edb60920f5e92b971171d73bb62564eab0b341bda662",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=5444&Year=2023&Initiative=false",
+      "date": "2024-03-04",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5444-2024",
+      "act": "yea",
+      "motion": "Senate Final Passage as Amended by the House",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate Final Passage as Amended by the House, 2024-03-04: yea (tally 27–21); census gate: none.",
+      "subjects": [
+        "no weapons at libraries, zoos, aquariums and transit stations",
+        "concealed pistol licensees exempt from the new bans"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Session%20Laws/Senate/5444-S2.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5444-2024.chaptered.html",
+          "sha256": "7e5be975450fe5af0c389ed21bd794380033339e3889e83336e89efcea79b20c"
+        }
+      }
+    },
+    {
+      "id": "2e00d786572555822b8d151b1a068746feeeee019fb8a080ba60a5fe72c5bdec",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5491&year=2021",
+      "date": "2022-02-08",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5491-2022",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage (#26)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage (#26), 2022-02-08: yea (tally 49–0); census gate: near-unanimous.",
+      "subjects": [
+        "voluntary waiver of firearm rights",
+        "civil infraction for possessing a gun while waiver is in effect",
+        "waiver can be filed electronically, with family or clinician contact named"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/Senate%20Bills/5491.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5491-2022.introduced.html",
+          "sha256": "3c82a3c9b928fe97441a33aed4ba51251b820eda9dff444cc02e0e52c88ec7ba"
+        }
+      }
+    },
+    {
+      "id": "3d92fcf3a0fef56c3e22d24357344bb95dde98bfde42ffda8bbf63b2d316a3b0",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5508&year=2019",
+      "date": "2019-04-22",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5508-2019",
+      "act": "yea",
+      "motion": "Senate Final Passage as Amended by the House (#9)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA Senate, Senate Final Passage as Amended by the House (#9), 2019-04-22: yea (tally 47–0); census gate: near-unanimous.",
+      "subjects": [
+        "fingerprint-based background check for original concealed pistol licenses",
+        "applicant may get a copy of check results"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5508.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5508-2019.introduced.html",
+          "sha256": "362c5f4d73cd423dd947280bd7a679aa57dac7c6767a228a7b0516eb80f1059f"
+        }
+      }
+    },
+    {
+      "id": "b8eeef183a5b10a8d0f5a0833709478fc6ca8a3cebc18492f28263ab4fa31bc8",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5552&year=2017",
+      "date": "2017-04-17",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5552-2017",
+      "act": "yea",
+      "motion": "Senate Final Passage as Amended by the House (#29)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA Senate, Senate Final Passage as Amended by the House (#29), 2017-04-17: yea (tally 48–0); census gate: near-unanimous.",
+      "subjects": [
+        "background check exemptions for firearm transfers",
+        "temporary transfer to prevent suicide",
+        "flare guns and construction tools not counted as firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/5552-S.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5552-2017.engrossed.html",
+          "sha256": "d7c245a1e29cb71329545a0015fa1c6a5c588938a7d385b82789e3001a4267b7"
+        }
+      }
+    },
+    {
+      "id": "ddf49f4f292bc93bffb81e145934ea38213e3d454e42ee43f5daa185ca39b35f",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5553&year=2017",
+      "date": "2018-03-05",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5553-2018",
+      "act": "yea",
+      "motion": "Senate Final Passage as Amended by the House (#15)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate Final Passage as Amended by the House (#15), 2018-03-05: yea (tally 36–13); census gate: none.",
+      "subjects": [
+        "voluntary waiver of firearm rights",
+        "dealers barred from delivering firearms to people with a waiver"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/5553-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5553-2018.comm-sub.html",
+          "sha256": "105b54bda970f5ed09badb79982f9ab0fcdd7f7adaf2923a51f03c23d31f3684"
+        }
+      }
+    },
+    {
+      "id": "944ede4ceac64521a4c83426b09bdd8546d19288c41bc21f12a424f92c5eef07",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5561&year=2021",
+      "date": "2022-02-11",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5561-2022",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage (#28)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage (#28), 2022-02-11: yea (tally 28–21); census gate: none.",
+      "subjects": [
+        "court petition to restore gun rights after 3, 5 or 10 crime-free years"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/Senate%20Bills/5561.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5561-2022.engrossed.html",
+          "sha256": "a7ccaa6004b7f9adee7d35e155c263c8b09024fd48f589c0162ec92ecd64d285"
+        }
+      }
+    },
+    {
+      "id": "9f927527d4e0b19083d28a725df9c4409c9d03dc01107c158326024798204245",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5690&year=2021",
+      "date": "2022-02-09",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5690-2022",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage (#32)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage (#32), 2022-02-09: yea (tally 49–0); census gate: near-unanimous.",
+      "subjects": [
+        "color and honor guards may carry firearms on the capitol campus at permitted events"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/Senate%20Bills/5690-S.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5690-2022.engrossed.html",
+          "sha256": "cdf1d7129bcbec8f5dd6caee80796349c89d2f12cebca7dee2a36b69e9654f63"
+        }
+      }
+    },
+    {
+      "id": "8413ce9e9637d69a04b6c918005c1c5bc1e69de31e044c31f052fe448726b706",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5856&year=2021",
+      "date": "2022-02-09",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5856-2022",
+      "act": "yea",
+      "motion": "Senate 3rd Reading & Final Passage (#16)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA Senate, Senate 3rd Reading & Final Passage (#16), 2022-02-09: yea (tally 49–0); census gate: near-unanimous.",
+      "subjects": [
+        "background check exemption for transfers to museums and historical societies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/Senate%20Bills/5856-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5856-2022.comm-sub.html",
+          "sha256": "2f82a7c88f2471f632528fc90ea512c27c0966b3f3f6cd42ab5f1f6f15dbffcd"
+        }
+      }
+    },
+    {
+      "id": "7586acdb094859b05d83a47d43e5cf4f713e8828f07d3d71ff179bfa130289d2",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5954&year=2019",
+      "date": "2019-03-12",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5954-2019",
+      "act": "yea",
+      "motion": "Senate Final Passage as Amended by the House (#24)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA Senate, Senate Final Passage as Amended by the House (#24), 2019-03-12: yea (tally 48–0); census gate: near-unanimous.",
+      "subjects": [
+        "bump-fire stock buy-back at $150 each, up to five per resident",
+        "$150,000 appropriation for the buy-back"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5954-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5954-2019.comm-sub.html",
+          "sha256": "7b4fce7aaaac92863ba0e9853e2ed6a7e88e9462fd2b993db7e8711f397e27b5"
+        }
+      }
+    },
+    {
+      "id": "3b9e0d1c4660f4f28215516b160b64ef398e6876e7439efefd8d977371716976",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=5985&Year=2023&Initiative=false",
+      "date": "2024-03-04",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-5985-2024",
+      "act": "yea",
+      "motion": "Senate Final Passage as Amended by the House",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate Final Passage as Amended by the House, 2024-03-04: yea (tally 30–19); census gate: none.",
+      "subjects": [
+        "State Patrol firearms background check program named and made the single point of contact",
+        "annual report on background-check time",
+        "firearm frames/receivers follow the same background-check path as other sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Session%20Laws/Senate/5985-S.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5985-2024.chaptered.html",
+          "sha256": "d693047e94f8c84cca7c428c86e23cd4771154ebd754ee1e5130e50ab3791933"
+        }
+      }
+    },
+    {
+      "id": "8f5d145d61ab3d5f88b2c53682c9d70136ebc2939350020db1af5552b9260d77",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6025&year=2019",
+      "date": "2019-04-28",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-6025-2019",
+      "act": "yea",
+      "motion": "Senate Final Passage as Amended by the House (#37)",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA Senate, Senate Final Passage as Amended by the House (#37), 2019-04-28: yea (tally 44–4); census gate: near-unanimous.",
+      "subjects": [
+        "keeps bump-fire stock buy-back participants' personal information confidential"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6025.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6025-2019.introduced.html",
+          "sha256": "640766a82961caa1ce356cd3d87b0bede4f2231dc3156eec5d77db309445b9bd"
+        }
+      }
+    },
+    {
+      "id": "9266571a4a974e4efc74ea1a1b331119d5c1b39b5628b47908bc785c747ef162",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=6246&Year=2023&Initiative=false",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-6246-2024",
+      "act": "yea",
+      "motion": "Senate Final Passage as Amended by the House",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate Final Passage as Amended by the House, 2024-03-05: yea (tally 34–15); census gate: none.",
+      "subjects": [
+        "firearm surrender notice when someone is committed or charges dismissed for incompetency",
+        "court records sent to licensing, state patrol and county prosecutor",
+        "firearm ban order when charges dismissed for incompetency"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Session%20Laws/Senate/6246.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6246-2024.chaptered.html",
+          "sha256": "da656b648898af17ae7edc650443c93f8a38f7613af74f16685630a98fc0fad8"
+        }
+      }
+    },
+    {
+      "id": "5dd025f546d10deb25202339c930a9b4fae541c395cf002b70cf6bcb26ff31d9",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6288&year=2019",
+      "date": "2020-03-10",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-6288-2020",
+      "act": "yea",
+      "motion": "Senate Final Passage as Amended by the House (#18)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate Final Passage as Amended by the House (#18), 2020-03-10: yea (tally 25–24); census gate: none.",
+      "subjects": [
+        "state office of firearm safety and violence prevention",
+        "grants for firearm violence intervention programs",
+        "helpline and therapy guide for gun violence victims"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6288-S.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6288-2020.engrossed.html",
+          "sha256": "34d56a4fd96cfd2246a8637c80fe92e2c342d95cda98296fe24cd57dc72aaf56"
+        }
+      }
+    },
+    {
+      "id": "56d89a5e433cbcd68c913fa4c5c7b909ed827553862edacaffc4b39ce30fd039",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6298&year=2017",
+      "date": "2018-03-05",
+      "date_precision": "day",
+      "instrument_id": "WA-SB-6298-2018",
+      "act": "yea",
+      "motion": "Senate Final Passage as Amended by the House (#28)",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA Senate, Senate Final Passage as Amended by the House (#28), 2018-03-05: yea (tally 39–10); census gate: none.",
+      "subjects": [
+        "domestic violence harassment conviction bars firearm possession"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/6298.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6298-2018.introduced.html",
+          "sha256": "97f81ce4ebfb198c0a82344be65e8e194cd5e73142bb91539696683b4360cb42"
+        }
+      }
+    },
+    {
+      "id": "48a77b8767d149dc3cbbdd69dfc178d9f5948871351b91cb69d23cc898c98768",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5027&year=2019",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-5027-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-5027-2019 (sponsor list (prime / co-sponsor)): SB5027 (2019-2020 Regular): Concerning extreme risk protection orders..",
+      "subjects": [
+        "extreme risk protection orders allowed against people under 18",
+        "petitions can cite a person's access to firearms",
+        "parents of a minor under an order told to secure firearms",
+        "law enforcement priority and after-hours petitions for orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5027-S.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5027-2019.engrossed.html",
+          "sha256": "d79154359672402ae7a85e1f95dbd499204b386f0e8629dabb8ed831f2fa8dcb"
+        }
+      }
+    },
+    {
+      "id": "7cb4573b09a0abf69b5d1dd9efebc5d499642cccc0bd7dd2ac76de8db0222bbf",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5038&year=2021",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-5038-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-5038-2021 (sponsor list (prime / co-sponsor)): SB5038 (2021-2022 Regular): Prohibiting the open carry of certain weapons at public demonstrations and the state capitol..",
+      "subjects": [
+        "no open carry at permitted demonstrations",
+        "no open carry on state capitol grounds and at legislative hearings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/Senate%20Bills/5038-S.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5038-2021.engrossed.html",
+          "sha256": "3e85c5c44d4ac76a5412f97b7b4e933667145af003253e7b1a918be3a1d10052"
+        }
+      }
+    },
+    {
+      "id": "3034239c6d0cfe2f01e54a2a2672712a7251f455e7c42d5d155e9f372d5c2657",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5050&year=2017",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-5050-2017",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-5050-2017 (sponsor list (prime / co-sponsor)): SB5050 (2017-2018 Regular): Banning the sale of assault weapons and large capacity magazines..",
+      "subjects": [
+        "ban on assault weapons and magazines over ten rounds",
+        "existing owners may keep them under storage and transport limits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/5050.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5050-2017.introduced.html",
+          "sha256": "e06ed3e1eef854c07c1d493c30a7ad3e58d38880417895a4d692f76ac8a59fbf"
+        }
+      }
+    },
+    {
+      "id": "32b7d4355e7a56cf6a3ea7394fdc519fa12d4fb0272733f7e1dea1ef27fe3dd1",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5061&year=2019",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-5061-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-5061-2019 (sponsor list (prime / co-sponsor)): SB5061 (2019-2020 Regular): Addressing undetectable firearms..",
+      "subjects": [
+        "ban on undetectable and untraceable firearms",
+        "penalty for helping prohibited people build them"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5061-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5061-2019.comm-sub.html",
+          "sha256": "844c43b04c955b4f0231d372cff90cebcbaba4f4c6c3d9007bf0325b890bd088"
+        }
+      }
+    },
+    {
+      "id": "23f137358c3e5d4cbc9b87e63404a44f63904df2d462db4a238b28e1b8ca65e0",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=5078&Year=2023&Initiative=false",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-5078-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-5078-2023 (sponsor list (prime / co-sponsor)): SB5078 (2023-2024 Regular): Protecting public safety by establishing duties of firearm industry members..",
+      "subjects": [
+        "firearm industry must use reasonable controls against diversion to straw purchasers and traffickers",
+        "no marketing to minors or prohibited persons",
+        "public nuisance and attorney general enforcement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Session%20Laws/Senate/5078-S.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5078-2023.chaptered.html",
+          "sha256": "11c1df1daa45eeaccbc07d78e490745a1bdc0a57067abdad83b01a136a86ed55"
+        }
+      }
+    },
+    {
+      "id": "329aed7361e820485d4b713a7d8289d60ec551330f1361b81b599a62841966fd",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=5098&Year=2025&Initiative=false",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-5098-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-5098-2026 (sponsor list (prime / co-sponsor)): SB5098 (2025-2026 Regular): Restricting the possession of weapons on the premises of state or local public buildings, parks or playground facilities where children are likely to be present, and county fairs and county fair facilities..",
+      "subjects": [
+        "no weapons in parks where children are present",
+        "no weapons in state and local public buildings",
+        "no weapons at county fairs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Senate%20Bills/5098-S2.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5098-2026.engrossed.html",
+          "sha256": "3635431b415b811a6144c8518a3c5518054fe1541dcb3142662a3f5d3e7859b6"
+        }
+      }
+    },
+    {
+      "id": "c66970e3ad95a864c4295859b9e998d6e13fd7ae8ac6b57b3533999ab222b524",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5143&year=2019",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-5143-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-5143-2019 (sponsor list (prime / co-sponsor)): SB5143 (2019-2020 Regular): Concerning the authorized removal, safe keeping, and return of firearms and ammunition by law enforcement during and after domestic violence incidents..",
+      "subjects": [
+        "police seize firearms and ammunition at domestic violence calls",
+        "five business days before seized firearms are returned",
+        "civil immunity for officers over firearm seizure"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5143-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5143-2019.comm-sub.html",
+          "sha256": "8023d99d6e683c701a89de5133b072053f4a807592bd8fbc64b5dcd1039da82a"
+        }
+      }
+    },
+    {
+      "id": "fcd1bbc1535ddb302837af75995e923ab491613b8ff80e8b1021bd5546d221b0",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5181&year=2019",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-5181-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-5181-2019 (sponsor list (prime / co-sponsor)): SB5181 (2019-2020 Regular): Concerning certain procedures upon initial detention under the involuntary treatment act..",
+      "subjects": [
+        "six-month firearm ban after short-term mental-health detention",
+        "surrender of firearms and license suspension",
+        "petition to restore gun rights early"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5181-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5181-2019.comm-sub.html",
+          "sha256": "58991fb3161001597f09e51dc582795586c7b74b5075069dafc34ae95d07fb9f"
+        }
+      }
+    },
+    {
+      "id": "677a660aad28ca0d6b2b998ddba5b563b5e46c9d640cf5b514a2c66f99b8a97b",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=5193&Year=2023&Initiative=false",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-5193-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-5193-2023 (sponsor list (prime / co-sponsor)): SB5193 (2023-2024 Regular): Establishing firearms-related safety measures to increase public safety..",
+      "subjects": [
+        "ban on selling assault weapons",
+        "gross misdemeanor penalty",
+        "violations treated as consumer protection act violations"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Senate%20Bills/5193.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5193-2023.introduced.html",
+          "sha256": "d53ed7cebc110ea9d73b3ff0c6daaa013d6ae3f962e3531b0f097665d85e703e"
+        }
+      }
+    },
+    {
+      "id": "176644ed6d1f8e9ae7c32cb2b2fd62fb15593c6f1fe86ff7f7c7c642ce0a793a",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5205&year=2019",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-5205-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-5205-2019 (sponsor list (prime / co-sponsor)): SB5205 (2019-2020 Regular): Concerning provisions governing firearms possession by persons who have been found incompetent to stand trial and who have a history of one or more violent acts..",
+      "subjects": [
+        "firearm ban after incompetency dismissal with history of violence",
+        "court process to restore firearm rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5205.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5205-2019.introduced.html",
+          "sha256": "95940b7e58ad554ed051d0a4fdce850036ce868c8730256df6c63a4b6230b28f"
+        }
+      }
+    },
+    {
+      "id": "78381e824b8d8c176ff1cace0221061960f858f8aeddf361490618eca522b501",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=5265&Year=2023&Initiative=false",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-5265-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-5265-2023 (sponsor list (prime / co-sponsor)): SB5265 (2023-2024 Regular): Establishing firearms-related safety measures to increase public safety..",
+      "subjects": [
+        "ban on making and selling assault weapons",
+        "gross misdemeanor penalty",
+        "exemptions for military, law enforcement and inheritors"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Senate%20Bills/5265.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5265-2023.introduced.html",
+          "sha256": "4d24b75b01208bae37209fed6b12b58d88e9ded1db6665188471f8165f06d1a7"
+        }
+      }
+    },
+    {
+      "id": "573abbada3c9297bb2bc37e65c18a42b02542942223642c9ec722aa476d40333",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5297&year=2021",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-5297-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-5297-2021 (sponsor list (prime / co-sponsor)): SB5297 (2021-2022 Regular): Modernizing, harmonizing, and improving the efficacy and accessibility of laws concerning civil protection orders..",
+      "subjects": [
+        "extreme risk protection orders remove firearms",
+        "surrender and return of firearms under protection orders",
+        "firearm possession ban during protection orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/Senate%20Bills/5297.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5297-2021.introduced.html",
+          "sha256": "808a513f9fc635a2d6e7d4aca2f0f51ddd3857e7fc5678d315db06b4bd8dd1c0"
+        }
+      }
+    },
+    {
+      "id": "9cdd83b23df9be294b3f1ddc8fbe4e0467ed3c01dea93ef7340c711d47824f0e",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5340&year=2019",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-5340-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-5340-2019 (sponsor list (prime / co-sponsor)): SB5340 (2019-2020 Regular): Banning the sale of assault weapons and large capacity magazines..",
+      "subjects": [
+        "ban on assault weapons and magazines over ten rounds",
+        "class C felony for violations",
+        "limited grandfathering for lawful current owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5340.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5340-2019.introduced.html",
+          "sha256": "9d3904263de1a8a579e9b6393a3ce0f9c35f8aafdd599e7c1c5ee8ec46e718f1"
+        }
+      }
+    },
+    {
+      "id": "68e32134e8a087a557352f6a165b0e561e45d3d91a0922342b40a8909443b804",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5441&year=2017",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-5441-2017",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-5441-2017 (sponsor list (prime / co-sponsor)): SB5441 (2017-2018 Regular): Concerning certain procedures upon initial detention under the involuntary treatment act..",
+      "subjects": [
+        "six-month firearm ban after 72-hour involuntary detention",
+        "surrender of firearms and carry license",
+        "court petition to restore rights early"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/5441-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5441-2017.comm-sub.html",
+          "sha256": "3df946a80f7a6ca98df31facae0a0ae5677a99887ed76c641a1052e747dcfddd"
+        }
+      }
+    },
+    {
+      "id": "72fcd15204aee398a18dc0d8be4f16d7510c2b07139c4ed6327017ebc834c986",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5444&year=2017",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-5444-2017",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-5444-2017 (sponsor list (prime / co-sponsor)): SB5444 (2017-2018 Regular): Concerning enhanced background checks and licensure for assault weapons and large capacity magazines..",
+      "subjects": [
+        "assault weapons need pistol-style purchase checks",
+        "minimum age 21 to buy an assault weapon",
+        "dealers need license to sell assault weapons"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/5444-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5444-2017.comm-sub.html",
+          "sha256": "d63409dbfbd19db70fd5f04dc42e67a577b562221d8b828a91490b3e26c99f4d"
+        }
+      }
+    },
+    {
+      "id": "ca82f6b9de5159b53038a7891eaeb89433ff50d2a080cce536ac99837c59e7a0",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5561&year=2021",
+      "date": "2022",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-5561-2022",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-5561-2022 (sponsor list (prime / co-sponsor)): SB5561 (2021-2022 Regular): Concerning the restoration of the right to possess a firearm..",
+      "subjects": [
+        "court petition to restore gun rights after 3, 5 or 10 crime-free years"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Engrossed, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/Senate%20Bills/5561.E.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5561-2022.engrossed.html",
+          "sha256": "a7ccaa6004b7f9adee7d35e155c263c8b09024fd48f589c0162ec92ecd64d285"
+        }
+      }
+    },
+    {
+      "id": "f78fe7e01cc77ea35a98d14f3c3e48662cc859c6d6019a842ef0a459c5fe8929",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=5963&Year=2023&Initiative=false",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-5963-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-5963-2023 (sponsor list (prime / co-sponsor)): SB5963 (2023-2024 Regular): Concerning insurance requirements relating to the ownership of certain deadly weapons..",
+      "subjects": [
+        "firearm owners must carry accidental-discharge liability insurance",
+        "insurers must ask about gun ownership and storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Senate%20Bills/5963.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5963-2023.introduced.html",
+          "sha256": "7387ceb15c5461044e509d92767643b107a11ad3eea89489ea2789bb5b7f021f"
+        }
+      }
+    },
+    {
+      "id": "004472ebda0c906f880b7fde895bfa3832b684027e17e4f732163a2a8f0432cc",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=5985&Year=2023&Initiative=false",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-5985-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-5985-2024 (sponsor list (prime / co-sponsor)): SB5985 (2023-2024 Regular): Concerning firearms background check program..",
+      "subjects": [
+        "State Patrol firearms background check program named and made the single point of contact",
+        "annual report on background-check time",
+        "firearm frames/receivers follow the same background-check path as other sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Session%20Laws/Senate/5985-S.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5985-2024.chaptered.html",
+          "sha256": "d693047e94f8c84cca7c428c86e23cd4771154ebd754ee1e5130e50ab3791933"
+        }
+      }
+    },
+    {
+      "id": "2e29a2cd22d6e1542944b23e3fac703208a086c23fd9ecd97b11b13aa4d9d843",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6049&year=2017",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-6049-2017",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-6049-2017 (sponsor list (prime / co-sponsor)): SB6049 (2017-2018 Regular): Concerning high capacity magazines..",
+      "subjects": [
+        "ban on large capacity magazines over ten rounds",
+        "grandfathered owners must keep them in secure storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/6049.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6049-2017.introduced.html",
+          "sha256": "894debec632fcb6be28caae75f231b3292270427c55eb0fde023f3c3ff320baf"
+        }
+      }
+    },
+    {
+      "id": "cff3ee7f67d69ac96f8ce5411789262969e850a98274b14a85f0c382b8ee6b78",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6077&year=2019",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-6077-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-6077-2019 (sponsor list (prime / co-sponsor)): SB6077 (2019-2020 Regular): Concerning high capacity magazines..",
+      "subjects": [
+        "ban on magazines over ten rounds",
+        "secure storage and limited places to keep existing magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6077-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6077-2019.comm-sub.html",
+          "sha256": "6c40c8cc98aa28371cef46a8e289a8c45f6ac68c59b5f596fde81742c5e1c65f"
+        }
+      }
+    },
+    {
+      "id": "26ebc6573bd0eeaae5ba0a22c5c4c9c3e09fc95be72864016a54c76889cd9c1e",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6146&year=2017",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-6146-2017",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-6146-2017 (sponsor list (prime / co-sponsor)): SB6146 (2017-2018 Regular): Relating to local government authority to regulate firearms..",
+      "subjects": [
+        "repeal of state preemption of local firearm rules",
+        "local governments may adopt stricter firearm ordinances"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/6146.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6146-2017.introduced.html",
+          "sha256": "96c0cfa4464c2a3a537f02bb1369665a0c692294ac5956d78dd764227d7760c2"
+        }
+      }
+    },
+    {
+      "id": "77d13f999fdc24983e5553adfa41f2f20fb0153c20ed077f37023c1a64cc8ee5",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6163&year=2019",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-6163-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-6163-2019 (sponsor list (prime / co-sponsor)): SB6163 (2019-2020 Regular): Concerning unlawful possession of firearms for persons free on bond or personal recognizance pending trial, appeal, or sentencing for felony charges under RCW 46.61.502(6) and 46.61.504(6)..",
+      "subjects": [
+        "firearm possession ban for people released pending felony DUI charges"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6163.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6163-2019.introduced.html",
+          "sha256": "e8d6a5c3348a54d3e2ae76f157b4f7626979c638452629863ab7413103800a56"
+        }
+      }
+    },
+    {
+      "id": "4d80a43f2c447e1d8235733b6c279fda6b3515293ce842cc2f4c80a8c99bf452",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=6169&Year=2023&Initiative=false",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-6169-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-6169-2023 (sponsor list (prime / co-sponsor)): SB6169 (2023-2024 Regular): Increasing the potential pool of law enforcement hires by allowing active and retired law enforcement and military personnel to import certain firearms for personal use..",
+      "subjects": [
+        "exemption from assault weapon import ban for relocating officers, military and veterans"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Senate%20Bills/6169.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6169-2023.introduced.html",
+          "sha256": "05cd48513b223e8fe1f11f6d4925175a593d0f061bd18299b38744e6606a4133"
+        }
+      }
+    },
+    {
+      "id": "f2c1405ef95de4ab2ca9c526d83b4b6149558ab35bd5908e9475188b904a7544",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=6246&Year=2023&Initiative=false",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-6246-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-6246-2024 (sponsor list (prime / co-sponsor)): SB6246 (2023-2024 Regular): Concerning transmission of information relating to firearm prohibitions for persons committed for mental health treatment..",
+      "subjects": [
+        "firearm surrender notice when someone is committed or charges dismissed for incompetency",
+        "court records sent to licensing, state patrol and county prosecutor",
+        "firearm ban order when charges dismissed for incompetency"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Session%20Laws/Senate/6246.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6246-2024.chaptered.html",
+          "sha256": "da656b648898af17ae7edc650443c93f8a38f7613af74f16685630a98fc0fad8"
+        }
+      }
+    },
+    {
+      "id": "49fe6759ac32094806bd066fc1e4057ca83da78739313e8e99c39437554f9f28",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6294&year=2019",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-6294-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-6294-2019 (sponsor list (prime / co-sponsor)): SB6294 (2019-2020 Regular): Concerning concealed pistol license training requirements..",
+      "subjects": [
+        "firearms safety training required for concealed pistol license",
+        "concealed pistol license application rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6294.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6294-2019.introduced.html",
+          "sha256": "b243fd0e62fb2bbd1fca3713beceb6b3d7f1bb324acb319d6bb0d6aae26bf937"
+        }
+      }
+    },
+    {
+      "id": "1e40123e3dcb2cd5060facf3d921fad381c3a8197eaf7e90ad6f8826ccf664fe",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6297&year=2017",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-6297-2017",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-6297-2017 (sponsor list (prime / co-sponsor)): SB6297 (2017-2018 Regular): Concerning provisions governing firearms possession by persons who have been found incompetent to stand trial and who have a history of one or more violent acts..",
+      "subjects": [
+        "firearm bar after incompetency dismissal with history of violent acts",
+        "court notice and right-restoration petition"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/6297-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6297-2017.comm-sub.html",
+          "sha256": "80cdb0f719e32caa2406ecd22bb30b71f4971b4cb9aeb04e11db07dc1e201b84"
+        }
+      }
+    },
+    {
+      "id": "6926459f5bcbb7581276a26c93ed80ba2bbd6fea2a05b05b14cd1a7ec0d6eeae",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6298&year=2017",
+      "date": "2018",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-6298-2018",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-6298-2018 (sponsor list (prime / co-sponsor)): SB6298 (2017-2018 Regular): Adding domestic violence harassment to the list of offenses for which a person is prohibited from possessing a firearm..",
+      "subjects": [
+        "domestic violence harassment conviction bars firearm possession"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/6298.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6298-2018.introduced.html",
+          "sha256": "97f81ce4ebfb198c0a82344be65e8e194cd5e73142bb91539696683b4360cb42"
+        }
+      }
+    },
+    {
+      "id": "33fe3a595fcba65291080b3738e34b41e0ef8e593d57a2f6970ccf2bd50e9041",
+      "kind": "record",
+      "url": "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6686&year=2019",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "WA-SB-6686-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-SB-6686-2019 (sponsor list (prime / co-sponsor)): SB6686 (2019-2020 Regular): Prohibiting the possession of weapons on state capitol grounds..",
+      "subjects": [
+        "firearms and weapons banned on state capitol grounds and buildings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6686.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6686-2019.introduced.html",
+          "sha256": "64954d8900df328780b794e7b82fc13dd8662d27df7e50a9016708ee76c59be4"
+        }
+      }
     }
   ],
   "searches": []

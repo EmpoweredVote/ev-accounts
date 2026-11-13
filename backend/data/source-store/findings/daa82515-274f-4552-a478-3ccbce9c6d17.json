@@ -1,0 +1,74 @@
+{
+  "politician_id": "daa82515-274f-4552-a478-3ccbce9c6d17",
+  "findings": [
+    {
+      "id": "74e64f354d8c578bea8f6aad45477dd4b71c0aef03b7f9f3daa76b1f1ea99810",
+      "kind": "own-words",
+      "url": "https://www.chelseaforwa.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I will also invest in proven approaches to preventing domestic violence, gun violence, addiction, and youth crime before tragedy occurs.",
+      "note": "Campaign site public-safety text names gun violence among harms to prevent through investment; no specific gun law is named.",
+      "subjects": [
+        "gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:37:26.628Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "97e1b2a72cc583cb9931c107b976a64e4c9641062da0135979b33eda5de57ce3",
+      "kind": "own-words",
+      "url": "https://www.ballotready.org/people/chelsea-dimas",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I will tackle public health issues including addiction, substance abuse, mental illness, domestic violence and gun violence to secure a bright future for our children and families.",
+      "note": "Candidate profile statement on criminal justice and public safety lists gun violence as a public health issue she would address; no specific policy named.",
+      "subjects": [
+        "gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:37:26.628Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "gun rights and the Second Amendment",
+        "gun violence prevention"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status: BallotReady profile lists her as a candidate for WA House District 14 Position 1 in the 2026 general election (Nov 3, 2026)",
+        "campaign site https://www.chelseaforwa.com/ (issues text on public safety)",
+        "https://www.ballotready.org/people/chelsea-dimas",
+        "https://ivoterguide.com/candidate/81739/race/34957/election/1502 (questionnaire gun question shown as not answered; fetched via summary, nothing quoted)",
+        "blocked: https://ballotpedia.org/Chelsea_Dimas",
+        "blocked: https://washingtonstatestandard.com/voter-guides/contests/legislative-district-14-house-position-1/",
+        "sponsor list: covered by bulk bill data (she is not a sitting legislator)",
+        "one web search on name plus gun subject words: nothing on the subject",
+        "not reviewed: ontheissues.org, vote411 (leads only)"
+      ],
+      "found": 2,
+      "at": "2026-11-13T20:37:26.628Z",
+      "by": "source-collector"
+    }
+  ]
+}

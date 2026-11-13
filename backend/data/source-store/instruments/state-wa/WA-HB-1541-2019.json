@@ -1,0 +1,117 @@
+{
+  "id": "WA-HB-1541-2019",
+  "scope": "state:wa",
+  "title": "HB1541 (2019-2020 Regular): Prohibiting the possession and acquisition of weapons by persons convicted of certain criminal offenses or subject to certain no-contact orders, protection orders, or restraining orders.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1541&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1541.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Laurie Jinkins",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ce184542-9397-469f-ba78-8c735bce20fa"
+    },
+    {
+      "name": "Eric Pettigrew",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "My-Linh Thai",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1963d6e9-069b-4770-9489-59e36faaa2e1"
+    },
+    {
+      "name": "Nicole Macri",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22d959a5-ec5f-4b92-98d3-85dc219c2c61"
+    },
+    {
+      "name": "Beth Doglio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "45737b89-a83b-421f-9d6c-abc829c7eae0"
+    },
+    {
+      "name": "Joe Fitzgibbon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9f914ddb-ba7c-4b30-b756-fe7cd981f919"
+    },
+    {
+      "name": "Mike Sells",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Zack Hudgins",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mia Gregerson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "edc48d7e-4f91-4e59-af50-79f34df8b011"
+    },
+    {
+      "name": "Sherry Appleton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tana Senn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Gael Tarleton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jake Fey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "97b47446-b0ee-4a2c-b4fe-ec8a995356ea"
+    },
+    {
+      "name": "Javier Valdez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    },
+    {
+      "name": "June Robinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7ac92b63-d489-45d5-a85f-c0deac9d8508"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1541.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1541-2019.introduced.html",
+      "sha256": "c6d163e93ddc4bdb78b8f49db30644254e256058c9c4f29484e9905a3f16f6a9"
+    },
+    "note": "Introduced (HTML, marks visible; 2019 session). Strikes the 'intimate partner' wording and the definition of 'intimate partner' (old subsection (8)) so the order-based ban applies to any protected person. Items are renumbered ((iv) to (v), etc.). Secs. 3-9 only change cross-references (juvenile possession, juvenile sentencing standards, health-record release) to the renumbered item (vi); not quoted. The (3) clause in RCW 9.41.800 ends with 'the court shall:' continuing existing law not reprinted here."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.040): (2)(a)(iii) After having previously been convicted or found not guilty by reason of insanity in this state or elsewhere of the following crimes, committed on or after the effective date of this section: Unlawful aiming or discharge of a firearm or dangerous weapon (RCW 9.41.230); and animal cruelty in the second degree (RCW 16.52.207);\nSec. 1 (RCW 9.41.040): (2)(a)(iv) During any period of time that the person is subject to a court order issued under chapter 7.90, 7.92, 9A.46, 10.14, 10.99, 26.09, 26.10, 26.26B, or 26.50 RCW that: (B) Restrains the person from harassing, stalking, or threatening the person protected under the order or child of the protected person, or engaging in other conduct that would place the protected person in reasonable fear of bodily injury to the protected person or child; and (C)(I) Includes a finding that the person represents a credible threat to the physical safety of the protected person or child; and (II) By its terms, explicitly prohibits the use, attempted use, or threatened use of physical force against the protected person or child that would reasonably be expected to cause bodily injury;\nSec. 2 (RCW 9.41.800): (3) During any period of time that the person is subject to a court order issued under chapter 7.90, 7.92, 9A.46, 10.14, 10.99, 26.09, 26.10, 26.26B, or 26.50 RCW that: (b) Restrains the person from harassing, stalking, or threatening the person protected under the order or child of the protected person, or engaging in other conduct that would place the protected person in reasonable fear of bodily injury to the protected person or child; and (c)(i) Includes a finding that the person represents a credible threat to the physical safety of the protected person or child; and (ii) By its terms, explicitly prohibits the use, attempted use, or threatened use of physical force against the protected person or child that would reasonably be expected to cause bodily injury, the court shall:"
+}

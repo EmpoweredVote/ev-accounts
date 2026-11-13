@@ -1,0 +1,57 @@
+{
+  "id": "WA-HB-1536-2025",
+  "scope": "state:wa",
+  "title": "HB1536 (2025-2026 Regular): Concerning offenses involving unlawful possession of a firearm by a juvenile.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=1536&Year=2025&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/House%20Bills/1536.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "David Hackney",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "447b684b-e885-42c9-9f32-7e6480cb5b98"
+    },
+    {
+      "name": "Andrew Barkis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ea4763b-1a8a-4920-b4ef-55a5c35aa3d0"
+    },
+    {
+      "name": "Lauren Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0e5af9ca-165c-458c-8c65-a89aaf1a8d3e"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/House%20Bills/1536.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1536-2025.introduced.html",
+      "sha256": "69cd715ffcadf19d9608de553689e740327fcceb2e350346a36d847bdf274de0"
+    },
+    "note": "Introduced version. Sec. 1 is intent language. Sec. 3 reprints the full juvenile offense schedule; the only addition is the new row, whose categories read 'B+' and 'C+' (shown in the text as B++ and C++ with wrapper marks). The Sec. 3 line in operative_text is a description of the added row, not a verbatim sentence. Sec. 3 (RCW 13.40.0357): the offense line is added to the juvenile offense schedule in the Firearms and Weapons category, disposition category B+, attempt category C+ (moved here from operative_text by the main session)."
+  },
+  "operative_text": "Sec. 2 (RCW 9.41.040): (1)(b) A juvenile is guilty of the crime of unlawful possession of a firearm in the first degree if the juvenile owns, accesses, has in the juvenile's custody, control, or possession, or receives any firearm after having previously been adjudicated, convicted, or found not guilty by reason of insanity in this state of subsection (2)(a)(v) of this section or a comparable out-of-state offense.\nSec. 2 (RCW 9.41.040): (1)(c) Unlawful possession of a firearm in the first degree is a class B felony punishable according to chapter 9A.20 RCW.\nSec. 3 (RCW 13.40.0357): Possession of Firearms by Minor (with prior) (9.41.040(1)(b))"
+}

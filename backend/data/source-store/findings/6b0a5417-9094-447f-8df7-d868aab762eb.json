@@ -1,0 +1,34 @@
+{
+  "politician_id": "6b0a5417-9094-447f-8df7-d868aab762eb",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "gun safety laws",
+        "Second Amendment",
+        "background checks",
+        "assault-style weapons",
+        "carry permits",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.voteforsythe.com/ (home page, issues, priorities, about pages: nothing on the subject)",
+        "blocked: https://ballotpedia.org/Jessica_Forsythe (fetch returned empty page)",
+        "blocked: https://washingtonstatestandard.com/voter-guides/contests/legislative-district-48-house-position-2/ (403)",
+        "blocked: https://bluevoterguide.org/WA/candidate_Jessica_Forsythe/517045 (403)",
+        "https://ivoterguide.com/candidate/93151/race/35026/election/1502 (candidate profile; the firearms questionnaire question is marked unanswered)",
+        "web search on her name plus 2026 race: she is a candidate for WA House District 48 Position 2 in the 2026 general election (search results, King County filing list); former Redmond City Council member",
+        "web search on her name plus gun/firearm words: nothing on the subject",
+        "web search on Redmond council plus gun ordinance: nothing on the subject",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:49:02.712Z",
+      "by": "source-collector"
+    }
+  ]
+}

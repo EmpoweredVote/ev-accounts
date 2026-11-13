@@ -1,0 +1,134 @@
+{
+  "id": "WA-HB-1144-2023",
+  "scope": "state:wa",
+  "title": "HB1144 (2023-2024 Regular): Enhancing requirements for the purchase or transfer of firearms.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=1144&Year=2023&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2023-24/Pdf/Bills/House%20Bills/1144.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Liz Berry",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "56d6dd6f-4959-4339-be78-e4b1d0083b08"
+    },
+    {
+      "name": "Amy Walen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "be3c2a24-1576-4636-9374-18fc77a8513f"
+    },
+    {
+      "name": "Julia Reed",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "67b9aaf1-46eb-471f-8f31-dcf501a92933"
+    },
+    {
+      "name": "Strom Peterson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6341053d-0580-4fbf-85ea-71ddb6b6f838"
+    },
+    {
+      "name": "Chipalo Street",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7a0da48f-2c29-463e-969a-52d06137cde9"
+    },
+    {
+      "name": "Jessica Bateman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e6d175b-1af0-444c-b373-e5d0a279d240"
+    },
+    {
+      "name": "Alex Ramel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "41ef42e8-fe56-4f82-92e7-eefe85232cd2"
+    },
+    {
+      "name": "Tana Senn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lisa Callan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3a93cc4-a4ee-4e4f-8a67-c9a0c5c66efb"
+    },
+    {
+      "name": "Beth Doglio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "45737b89-a83b-421f-9d6c-abc829c7eae0"
+    },
+    {
+      "name": "Tina Orwall",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7535e225-d3d0-40ca-ba9c-3890563c40a0"
+    },
+    {
+      "name": "Nicole Macri",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22d959a5-ec5f-4b92-98d3-85dc219c2c61"
+    },
+    {
+      "name": "Debra Lekanoff",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c176280e-d886-4b59-b812-e220449ffff1"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    },
+    {
+      "name": "Sharon Santos",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d5c6e6e4-c474-41fa-ab96-bd237c8ff4de"
+    },
+    {
+      "name": "Shelley Kloba",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b918fb31-108f-49e7-b977-627ce667422d"
+    },
+    {
+      "name": "Timm Ormsby",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "945d0b44-3329-46b2-a39e-47f5fdddc6ed"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/House%20Bills/1144.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1144-2023.introduced.html",
+      "sha256": "faf67b8e62129ccc82398a5c7e4e7d76e6e8baacba0ed711e82977303cfb3307"
+    },
+    "note": "Introduced version (prefiled 01/05/23). Strikes in Sec. 2: the semiautomatic assault rifle-only waiting period, the \"earlier of\" timing, and the 60-day extension for non-residents are struck; the 10-business-day period now applies to all firearms, together with the training certificate. Secs. 5-7 repeat the changes effective January 1, 2024; Sec. 8 repeals 2019 c 244 s 1. Only selected parts quoted."
+  },
+  "operative_text": "Sec. 2 (RCW 9.41.092): (1) Except as otherwise provided in this chapter, a licensed dealer may not deliver any firearm to a purchaser or transferee until:\nSec. 2 (RCW 9.41.092): (a) The purchaser or transferee produces a certificate of completion of a certified firearm safety training program within the last five years, or proof that the purchaser or transferee is exempt from the training requirement, as provided in subsection (2) of this section;\nSec. 2 (RCW 9.41.092): (b) The results of all required background checks are known and the purchaser or transferee (i) is not prohibited from owning or possessing a firearm under federal or state law and (ii) does not have a voluntary waiver of firearm rights currently in effect; and\nSec. 2 (RCW 9.41.092): (c) Ten business days have elapsed from the date the licensed dealer requested the background check.\nSec. 2 (RCW 9.41.092): (2)(a) An applicant for the purchase or transfer of a firearm must provide a certificate of completion of a firearm safety training program within the last five years that is certified by the Washington state patrol and that, at a minimum, includes instruction on:\nSec. 2 (RCW 9.41.092): (b) The training must be sponsored by a federal, state, county, or municipal law enforcement agency, a college or university, a nationally recognized organization that customarily offers firearms training, or a firearms training school with instructors certified by a nationally recognized organization that customarily offers firearms training. The certificate of training shall be in the form and manner of documentation developed by the Washington state patrol under section 4 of this act.\nNEW SECTION Sec. 4 (new section, chapter 43.43 RCW): The Washington state patrol shall establish a program to provide certifications of firearm safety training programs that meet the requirements of RCW 9.41.092. The Washington state patrol shall develop the form and manner of documentation for applicants for the purchase or transfer of a firearm to provide proof of completion of a certified firearm safety training program, and for use as proof of qualifying for an exemption from the firearm safety training requirement."
+}

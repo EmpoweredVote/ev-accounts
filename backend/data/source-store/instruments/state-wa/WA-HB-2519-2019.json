@@ -1,0 +1,121 @@
+{
+  "id": "WA-HB-2519-2019",
+  "scope": "state:wa",
+  "title": "HB2519 (2019-2020 Regular): Concerning reasonable public safety measures to prevent dangerous individuals from acquiring ammunition.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=2519&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2519.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Amy Walen",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "be3c2a24-1576-4636-9374-18fc77a8513f"
+    },
+    {
+      "name": "Javier Valdez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    },
+    {
+      "name": "Tina Orwall",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7535e225-d3d0-40ca-ba9c-3890563c40a0"
+    },
+    {
+      "name": "Christine Kilduff",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "My-Linh Thai",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1963d6e9-069b-4770-9489-59e36faaa2e1"
+    },
+    {
+      "name": "Mike Chapman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cf38d9ea-d72d-4a44-9d9c-efd9cd9c432f"
+    },
+    {
+      "name": "Strom Peterson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6341053d-0580-4fbf-85ea-71ddb6b6f838"
+    },
+    {
+      "name": "Lauren Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0e5af9ca-165c-458c-8c65-a89aaf1a8d3e"
+    },
+    {
+      "name": "Beth Doglio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "45737b89-a83b-421f-9d6c-abc829c7eae0"
+    },
+    {
+      "name": "Alex Ramel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "41ef42e8-fe56-4f82-92e7-eefe85232cd2"
+    },
+    {
+      "name": "Steve Tharinger",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0381ded1-ac26-4700-8188-6ff06621d1be"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    },
+    {
+      "name": "Eileen Cody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Timm Ormsby",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "945d0b44-3329-46b2-a39e-47f5fdddc6ed"
+    },
+    {
+      "name": "June Robinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7ac92b63-d489-45d5-a85f-c0deac9d8508"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2519.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2519-2019.introduced.html",
+      "sha256": "c983aaaee8c293ff1df519a3efb3e9d91391596f78046a1622fb07c8fc179778"
+    },
+    "note": "Version read: Introduced. Sec. 4 starts the ammunition background-check duty only after the attorney general certifies a change in federal law. Sec. 5 defines \"ammunition\" and expands \"dealer\" to include ammunition sellers. Sec. 7 (RCW 9.41.110) adds \"or ammunition\" to display and penalty wording (not all quoted). Sec. 9 sets an effective date of January 1, 2021."
+  },
+  "operative_text": "NEW SECTION Sec. 2 (new RCW chapter 9.41): A person is guilty of the crime of unlawful possession of ammunition if the person is prohibited from possessing a firearm under RCW 9.41.040 and the person owns, has in his or her possession, or has in his or her control, any ammunition. Unlawful possession of ammunition is a gross misdemeanor punishable according to chapter 9A.20 RCW.\nNEW SECTION Sec. 4 (new RCW chapter 9.41): (2) Beginning on the date that is thirty days after the attorney general certifies that federal law has been amended to authorize use of the national instant criminal background check system for ammunition transfers, a dealer must then initiate a check of that system before completing any ammunition transfer.\nSec. 5 (RCW 9.41.010): \"Ammunition\" means one or more cartridges consisting of a primed case, propellant, and with one or more projectiles. \"Ammunition\" includes, but is not limited to, any bullet, cartridge, magazine, clip, speed loader, autoloader, or projectile capable of being fired from a firearm that can cause death or substantial bodily harm. \"Ammunition\" does not include blanks.\nSec. 6 (RCW 9.41.080): No person may deliver a firearm or ammunition to any person whom he or she has reasonable cause to believe: (1) Is ineligible under RCW 9.41.040 to possess a firearm or (2) has signed a valid voluntary waiver of firearm rights that has not been revoked under RCW 9.41.350. Any person violating this section is guilty of a class C felony, punishable under chapter 9A.20 RCW.\nNEW SECTION Sec. 8 (new RCW chapter 9.41): (1) The sale of ammunition may only occur in a face-to-face transaction with the seller unless the purchaser is: (a) A dealer; or (b) An authorized law enforcement representative of a city, county, city and county, state, or federal government, if the sale, delivery, or transfer is for exclusive use by that government agency. (2) An intentional violation of subsection (1) of this section is a misdemeanor.\nNEW SECTION Sec. 9: This act takes effect January 1, 2021."
+}

@@ -1,0 +1,70 @@
+{
+  "id": "WA-HB-1933-2017",
+  "scope": "state:wa",
+  "title": "HB1933 (2017-2018 Regular): Concerning the transfer of firearms at nonprofit fund-raising activities.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1933&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1933.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jim Walsh",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0f598558-61ab-4010-a0fd-e7c54f688a1a"
+    },
+    {
+      "name": "Mike Chapman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cf38d9ea-d72d-4a44-9d9c-efd9cd9c432f"
+    },
+    {
+      "name": "Dave Hayes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Morgan Irwin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brian Blake",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brandon Vick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "J.T. Wilcox",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1933.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1933-2017.introduced.html",
+      "sha256": "85def0e132b6ab0bb05b82c93e2282b12785700829261bcde4b68ef8c4d24810"
+    },
+    "note": "Introduced version. Change is new (4)(g); old (g) becomes (h). Strikes only the word 'or' after (f)."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.113): (1) All firearm sales or transfers, in whole or part in this state including without limitation a sale or transfer where either the purchaser or seller or transferee or transferor is in Washington, shall be subject to background checks unless specifically exempted by state or federal law.\nSec. 1 (RCW 9.41.113): (4) This section does not apply to:\nSec. 1 (RCW 9.41.113): (g) A transfer of possession of a firearm between individuals while conducting nonprofit fund-raising activities including, but not limited to, auctions, raffles, and contests; or"
+}

@@ -1,0 +1,86 @@
+{
+  "id": "WA-HB-3008-2017",
+  "scope": "state:wa",
+  "title": "HB3008 (2017-2018 Regular): Allowing public school districts and private schools to adopt a policy authorizing permanent employees to possess firearms on school grounds under certain conditions.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=3008&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/3008.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Liz Pike",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jim Walsh",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0f598558-61ab-4010-a0fd-e7c54f688a1a"
+    },
+    {
+      "name": "Mark Hargrove",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bruce Chandler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Cary Condotta",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tom Dent",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d4e6e041-dc18-4415-9201-1a9bd18dea8b"
+    },
+    {
+      "name": "Bob McCaslin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jeff Holy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d0350f2f-6463-452e-b97d-c18ea094e2ee"
+    },
+    {
+      "name": "Matt Shea",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Taylor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/3008.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-3008-2017.introduced.html",
+      "sha256": "894ebc713ee3c9f2a3dc219b60fa838be171cd6738ecc83ae9e9d50c252e11b5"
+    },
+    "note": "Introduced version. Sec. 7 and Sec. 8 are two versions of RCW 9.41.280 (Sec. 8 takes effect April 1, 2018); both add (3)(i) and change \"GUN-FREE ZONE\" signs from \"shall\" to \"may\" be posted. Sec. 6 appropriates $25,000 for training and Sec. 3(5) limits liability; these implement the same policy. Sec. 7(1) etc. is existing law reprinted."
+  },
+  "operative_text": "NEW SECTION Sec. 3 (new section, chapter 28A.320 RCW): (1) The board of directors of a school district may adopt a written policy authorizing one or more permanent employees of a school located within the school district to possess firearms on school grounds. The written policy must address: (3) A permanent employee is not authorized to possess a firearm on school grounds under this section unless the permanent employee has: (a) Obtained a valid concealed pistol license issued under RCW 9.41.070; (b) Successfully completed a firearms training program approved by the criminal justice training commission under section 5 of this act; and (c) Been approved by the board as authorized to possess a firearm on school grounds under the written policy.\nNEW SECTION Sec. 4 (new section, chapter 28A.195 RCW): Private schools are authorized to adopt a written policy allowing school employees to possess firearms on school grounds if done in accordance with the standards established in section 3 of this act.\nNEW SECTION Sec. 5 (new section, chapter 43.101 RCW): The commission shall establish a firearms training and education program for permanent employees of school districts authorized to possess firearms on school grounds under section 3 or 4 of this act. The commission shall adopt rules establishing the fees, training requirements, and procedures for obtaining the required training. The fees charged by the commission shall recover the costs incurred by the commission in developing and administering the program.\nSec. 7 (RCW 9.41.280(3)): (i) Any permanent employee who is authorized to possess a firearm on school grounds under section 3 or 4 of this act."
+}

@@ -1,0 +1,73 @@
+{
+  "id": "WA-SB-6294-2019",
+  "scope": "state:wa",
+  "title": "SB6294 (2019-2020 Regular): Concerning concealed pistol license training requirements.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6294&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6294.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jesse Salomon",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "15808557-b30b-44cf-bad2-e627fa547e1a"
+    },
+    {
+      "name": "Patty Kuderer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "Lisa Wellman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ff1e922-601b-45f3-a43d-2ef69220f54b"
+    },
+    {
+      "name": "Claire Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f6c042e3-b785-4bf2-b385-65a34ff616e8"
+    },
+    {
+      "name": "Reuven Carlyle",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joe Nguyen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6294.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6294-2019.introduced.html",
+      "sha256": "b243fd0e62fb2bbd1fca3713beceb6b3d7f1bb324acb319d6bb0d6aae26bf937"
+    },
+    "note": "Introduced version. Strikes: the old 30-day issuance clause and the \"constitutional right to bear arms\" wording in (1)-(2) are reworded, and the old application-content paragraphs are struck and rewritten as new subsections (7)-(10); quote shows the text as it reads after the change. Training topic list (3)(a)(i)-(ix) mostly omitted for length."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.070): (1) The chief of police of a municipality or the sheriff of a county shall issue a license to any person submitting an application pursuant to the requirements of this section to carry a pistol concealed on his or her person within this state for five years from date of issue, for the purposes of protection or while engaged in business, sport, or while traveling. The issuing authority shall not refuse to accept completed applications for concealed pistol licenses during regular business hours and must issue a license or denial:\nSec. 1 (RCW 9.41.070): (a) Within thirty days of the date the application was filed; or\nSec. 1 (RCW 9.41.070): (b) Within sixty days of the date the application was filed if the applicant does not have a valid permanent Washington driver's license or Washington state identification card or has not been a resident of the state for the previous consecutive ninety days.\nSec. 1 (RCW 9.41.070): (2) An application for a concealed pistol license shall not be denied, unless the person:\nSec. 1 (RCW 9.41.070): (h) Has not provided proof that he or she has completed, or is statutorily exempt from completing, a recognized firearms safety training program within the last five years as provided in subsection (3) of this section.\nSec. 1 (RCW 9.41.070): (3)(a) A person applying for a concealed pistol license must provide proof that he or she has completed a recognized firearms safety training program within the last five years that, at a minimum, includes eight hours of instruction on:\nSec. 1 (RCW 9.41.070): (b) The training must be sponsored by a federal, state, county, or municipal law enforcement agency, a college, a university, a nationally recognized organization that customarily offers firearms training, or a firearms training school with instructors certified by a nationally recognized organization that customarily offers firearms training.\nSec. 1 (RCW 9.41.070): (c) The firearms safety training requirement of this subsection shall not apply to:\nSec. 1 (RCW 9.41.070): (i) An applicant who is a peace officer certified in accordance with RCW 43.101.095(1);\nSec. 1 (RCW 9.41.070): (iii) An applicant applying to renew a concealed pistol license who, in connection with a prior application for a concealed pistol license, has previously submitted proof of his or her completion of a recognized firearms safety training program to an issuing authority and been granted a concealed pistol license.\nSec. 1 (RCW 9.41.070): (d) The Washington state patrol shall prescribe the form and manner of documentation to be provided to an applicant for use as proof of completion of a recognized firearms safety training program and for use as proof of qualifying for an exemption from the firearms safety training requirements of this subsection."
+}

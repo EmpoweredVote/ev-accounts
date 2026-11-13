@@ -1,0 +1,307 @@
+{
+  "politician_id": "30fdeba0-e9d3-414d-859f-2941140d8e80",
+  "findings": [
+    {
+      "id": "d6f2122845534eed211839ab45c63015c75349e4f3b76bf89c87c8f53e73299d",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=1163&Year=2025&Initiative=false",
+      "date": "2025-04-22",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1163-2025",
+      "act": "yea",
+      "motion": "House Final Passage as Amended by the Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA House, House Final Passage as Amended by the Senate, 2025-04-22: yea (tally 57–39); census gate: none.",
+      "subjects": [
+        "permit to purchase required for every firearm purchase or transfer",
+        "certified safety training with live-fire exercise before permit or concealed pistol license",
+        "state patrol background check and delay of transfers for open charges or warrants",
+        "concealed pistol license denial if training not shown"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/1163-S2.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1163-2025.chaptered.html",
+          "sha256": "3c9350e1d7c2659a79cdad04b4cae43eadead2a484a349fddafbd09b29ceceec"
+        }
+      }
+    },
+    {
+      "id": "2c7fd91e9fde74af669f1a8ad8ed6fed302c1a84640547ea48a88173168e7f30",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=2235&Year=2025&Initiative=false",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2235-2026",
+      "act": "yea",
+      "motion": "House 3rd Reading & Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA House, House 3rd Reading & Final Passage, 2026-02-10: yea (tally 95–1); census gate: near-unanimous.",
+      "subjects": [
+        "concealed pistol license records exempt from public records requests",
+        "permit to purchase and firearm transfer records exempt from public records requests"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/House%20Bills/2235.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2235-2026.introduced.html",
+          "sha256": "8b925d3e881bf9ec7f69aad5fba9683ff51291de46dc3f6ef763df3bea892c94"
+        }
+      }
+    },
+    {
+      "id": "31a86e143fc592205539930ce4b14aa7bb32e6f770aefe1b2a474abe161e71e2",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=2320&Year=2025&Initiative=false",
+      "date": "2026-03-11",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2320-2026",
+      "act": "yea",
+      "motion": "House Final Passage as Amended by the Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA House, House Final Passage as Amended by the Senate, 2026-03-11: yea (tally 58–38); census gate: none.",
+      "subjects": [
+        "ban on 3D-printing and CNC-milling untraceable guns and frames",
+        "ban on sharing digital gun-making files",
+        "machine gun and bump-stock manufacture by any means"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/2320-S.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2320-2026.chaptered.html",
+          "sha256": "94b984934095112c128ea57c3a6b6d0f8c03ee5eefd39970afb718b33e489762"
+        }
+      }
+    },
+    {
+      "id": "ced39ca03899a59761e37ab725f41af17b19c4de4079b5ddffbb0c361406726a",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=2521&Year=2025&Initiative=false",
+      "date": "2026-02-23",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2521-2026",
+      "act": "yea",
+      "motion": "House 3rd Reading & Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA House, House 3rd Reading & Final Passage, 2026-02-23: yea (tally 53–36); census gate: none.",
+      "subjects": [
+        "background check fee set to cover state patrol costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/2521.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2521-2026.chaptered.html",
+          "sha256": "3243a76da2b60edc66d013a33ec42ec3a90429c95317177eacd70e4d0463e69a"
+        }
+      }
+    },
+    {
+      "id": "abfffb830a4d3ec80fdc345333f53c708d7f848137af443b837e716195c3b86d",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=1132&Year=2025&Initiative=false",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WA-HB-1132-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-HB-1132-2025 (sponsor list (prime / co-sponsor)): HB1132 (2025-2026 Regular): Enhancing public safety by limiting bulk purchases and transfers of firearms and ammunition..",
+      "subjects": [
+        "one firearm per 30 days from a dealer",
+        "ammunition purchase caps per 30 days"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/House%20Bills/1132-S.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1132-2025.comm-sub.html",
+          "sha256": "0042818146d5da72d04d568d7a98eca23749e466d20b9bd15e9a2456a7311b1c"
+        }
+      }
+    },
+    {
+      "id": "7e7efe05e6a03095a11bad48a54855ac853c659b6caa4cb9599ff02c7ba8fd76",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=1163&Year=2025&Initiative=false",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "WA-HB-1163-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-HB-1163-2025 (sponsor list (prime / co-sponsor)): HB1163 (2025-2026 Regular): Enhancing requirements relating to the purchase, transfer, and possession of firearms..",
+      "subjects": [
+        "permit to purchase required for every firearm purchase or transfer",
+        "certified safety training with live-fire exercise before permit or concealed pistol license",
+        "state patrol background check and delay of transfers for open charges or warrants",
+        "concealed pistol license denial if training not shown"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/1163-S2.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1163-2025.chaptered.html",
+          "sha256": "3c9350e1d7c2659a79cdad04b4cae43eadead2a484a349fddafbd09b29ceceec"
+        }
+      }
+    },
+    {
+      "id": "cea4d6a1f71fe64a9cc077677c7b97db6553fcfce9a5f74694d2d58047be3aff",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=2320&Year=2025&Initiative=false",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WA-HB-2320-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-HB-2320-2026 (sponsor list (prime / co-sponsor)): HB2320 (2025-2026 Regular): Concerning the regulation of firearm manufacturing..",
+      "subjects": [
+        "ban on 3D-printing and CNC-milling untraceable guns and frames",
+        "ban on sharing digital gun-making files",
+        "machine gun and bump-stock manufacture by any means"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/2320-S.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2320-2026.chaptered.html",
+          "sha256": "94b984934095112c128ea57c3a6b6d0f8c03ee5eefd39970afb718b33e489762"
+        }
+      }
+    },
+    {
+      "id": "bb3161f978884b2ce312b77031bf7f01c5765ba43f7242a879b470c82c1ddba9",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=2521&Year=2025&Initiative=false",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WA-HB-2521-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-HB-2521-2026 (sponsor list (prime / co-sponsor)): HB2521 (2025-2026 Regular): Concerning firearms background check..",
+      "subjects": [
+        "background check fee set to cover state patrol costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/2521.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2521-2026.chaptered.html",
+          "sha256": "3243a76da2b60edc66d013a33ec42ec3a90429c95317177eacd70e4d0463e69a"
+        }
+      }
+    },
+    {
+      "id": "d1eceebd22deb2f75e749fbfb595fe7c1ff7cd2a9eff92481234ef307b9b2989",
+      "kind": "own-words",
+      "url": "https://docs.google.com/document/d/1xApfW2eQ7m9qvfGLh2ciU-Cx-fdrJKqB/export?format=pdf",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Yes, we should regulate firearms. I supported the bills which would require training and require secure firearms in cars/vehicles. Firearms are the second leading cause of death in children (1-17 years old), 71% of gun deaths are suicides, and over 900 people were killed in 2024 in Washington. Other states have shown that the higher the number of guns the more likely there will be mass shootings and violent deaths will be from guns. So, yes, I for gun regulation.",
+      "note": "Her written answer to question 8 of the Olympia Indivisible LD22 candidate questionnaire, asked whether more laws on sale or ownership of firearms should pass. She says yes and names support for bills on training and on secure storage of guns in vehicles. Exact date not shown on the document; 2026 inferred from the race.",
+      "subjects": [
+        "more laws on gun sales and ownership",
+        "gun training requirement",
+        "secure storage of guns in vehicles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:48.484Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f1f820e73be154ff95de426c0ce27f737ff12282d3f4a5ceb5f5bfe8556a41a",
+      "kind": "own-words",
+      "url": "https://docs.google.com/document/d/1xApfW2eQ7m9qvfGLh2ciU-Cx-fdrJKqB/export?format=pdf",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I do have guidelines that include no fossil fuel companies, no large corporations, no gun companies or pro-gun lobbyists, no tobacco or nicotine companies, no hospitals, and no banks.",
+      "note": "Her answer to question 12 of the same questionnaire on limits on campaign revenue; she says she takes no money from gun companies or pro-gun lobbyists.",
+      "subjects": [
+        "campaign money from gun companies and gun lobbyists"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:48.484Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "secure storage of guns in vehicles",
+        "gun training requirements",
+        "gun industry campaign money",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "blocked: https://housedemocrats.wa.gov/parshley/ (403)",
+        "blocked: https://ballotpedia.org/Lisa_Parshley (403)",
+        "blocked: https://bluevoterguide.org/district/WA/Washington_House_of_Representatives_District_22/56204/721 (403)",
+        "campaign site: no working address found; not reviewed",
+        "Wikipedia page: nothing on the subject",
+        "legislature sponsor list: covered by bulk bill data",
+        "two web searches (name plus gun terms; name plus 2026 race and gun-safety groups); results used only as leads",
+        "https://ivoterguide.com/candidate/81766/race/34974/election/1502 (shows 2026 general election of November 3, 2026 on her record; lists a gun-safety group among endorsements; her 2nd Amendment question marked 'Did not answer')",
+        "Olympia Indivisible candidate questionnaire (PDF) - one gun answer and one campaign-money answer"
+      ],
+      "found": 2,
+      "at": "2026-11-13T20:43:48.484Z",
+      "by": "source-collector"
+    }
+  ]
+}

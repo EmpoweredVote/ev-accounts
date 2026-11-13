@@ -1,0 +1,77 @@
+{
+  "id": "WA-SB-5062-2019",
+  "scope": "state:wa",
+  "title": "SB5062 (2019-2020 Regular): Concerning high capacity magazines.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5062&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5062-S.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Patty Kuderer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Sam Hunt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Manka Dhingra",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Karen Keiser",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "Jeannie Darneille",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rebecca Saldaña",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+    },
+    {
+      "name": "David Frockt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5062-S.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5062-2019.comm-sub.html",
+      "sha256": "824d442d641a76357b617b1a2c7cd8c6209d74e7ce6151342bb58c0d8866c3c6"
+    },
+    "note": "Substitute Senate Bill 5062 (Comm Sub, 2019 session); version_read 'other'. Sec. 1 adds the magazine definition to RCW 9.41.010 (renumbering marks omitted); Sec. 2 is new law with exemptions for existing owners, police, military, licensed dealers, ranges and sanctioned sporting events."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.010): (32) \"Large capacity magazine\" means an ammunition feeding device with the capacity to accept more than ten rounds of ammunition, or any conversion kit, part, or combination of parts, from which such a device can be assembled if those parts are in the possession or under the control of the same person, but shall not be construed to include any of the following:\nNEW SECTION Sec. 2 (new RCW section, chapter 9.41): (1) No person in this state may manufacture, possess, distribute, import, transfer, sell, offer for sale, purchase, or otherwise transfer any large capacity magazine except as authorized in this section.\nNEW SECTION Sec. 2 (3): In order to continue to possess a large capacity magazine that was legally possessed on the effective date of this section, as provided in subsection (2)(a) of this section, the person possessing the large capacity magazine shall: (a) Store the large capacity magazine in a secure gun storage; and (b) Possess the large capacity magazine only on property owned or immediately controlled by the person, or while engaged in the legal use of the large capacity magazine at a duly licensed firing range, or while engaged in a lawful outdoor recreational activity such as hunting, or while traveling to or from either of these locations for the purpose of engaging in the legal use of the large capacity magazine, provided that the large capacity magazine is stored unloaded and in a separate locked container during transport.\nNEW SECTION Sec. 2 (4): A person who violates this section is guilty of a gross misdemeanor punishable under chapter 9A.20 RCW."
+}

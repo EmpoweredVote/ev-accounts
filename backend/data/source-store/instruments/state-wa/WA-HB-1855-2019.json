@@ -1,0 +1,61 @@
+{
+  "id": "WA-HB-1855-2019",
+  "scope": "state:wa",
+  "title": "HB1855 (2019-2020 Regular): Addressing juvenile offenses involving unlawful possession of a firearm.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1855&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1855.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tina Orwall",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7535e225-d3d0-40ca-ba9c-3890563c40a0"
+    },
+    {
+      "name": "Eric Pettigrew",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Roger Goodman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "de6d7929-66dd-4166-998a-479cfa264ce5"
+    },
+    {
+      "name": "Sherry Appleton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sharon Tomiko Santos",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d5c6e6e4-c474-41fa-ab96-bd237c8ff4de"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1855.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1855-2019.introduced.html",
+      "sha256": "767b38b8ecc5da8593e3cd3827780cc3afdf284794941dc24b0226b40e9058b0"
+    },
+    "note": "Version read: Introduced. Sec. 4 (RCW 13.40.0357) only edits the offense schedule: it renumbers the cross-reference to 9.41.040(2)(a)(v) and adds a second schedule entry (category B) for juveniles with three or more prior adjudications. Sec. 5 changes the minimum disposition and adds \"The minimums under this subsection shall not apply to dispositions under RCW 13.40.127.\" (not quoted). Sec. 6 (RCW 13.40.210) adds firearm possession under 9.41.040(2)(a)(v) to the list of offenses with mandatory parole (not quoted). Sec. 3 expires July 1, 2020."
+  },
+  "operative_text": "NEW SECTION Sec. 2 (new RCW chapter 13.40): (1) Beginning July 1, 2020, the department shall grant funding for up to three local governments that have demonstrated a need for services for juveniles who are alleged to have committed or who have been adjudicated for unlawful possession of a firearm under RCW 9.41.040(2)(a)(v).\nNEW SECTION Sec. 2 (new RCW chapter 13.40): (4) The local governments receiving grants under this section shall prioritize serving youth who are alleged to have committed or who have been adjudicated for unlawful possession of a firearm under RCW 9.41.040(2)(a)(v) for the first or second time.\nNEW SECTION Sec. 3: (1) The Washington state institute for public policy shall complete a literature review of interventions targeting juveniles adjudicated for or alleged to have committed unlawful possession of a firearm and identify interventions that are evidence-based, research-based, and promising practices. Based on this literature review, the institute shall submit a report to the appropriate committees of the legislature by December 1, 2019.\nSec. 4 (RCW 13.40.0357): Possession of Firearms by Minor (<18) (9.41.040(2)(a)(v)) (at the time of the offense the juvenile has criminal history that includes three or more prior adjudications for violating any provision of RCW 9.41.040)\nSec. 5 (RCW 13.40.193): (1) If a respondent is found to have been in possession of a firearm in violation of RCW 9.41.040(2)(a)(v), the court shall impose a disposition that includes a minimum of ten days of confinement and six months of community supervision. If the offender's standard range of disposition for the offense as indicated in RCW 13.40.0357 is more than thirty days of confinement, the court shall commit the offender to the department for the standard range disposition, and the six months of community supervision shall not be ordered."
+}

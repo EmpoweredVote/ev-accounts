@@ -1,0 +1,76 @@
+{
+  "id": "WA-SB-6307-2019",
+  "scope": "state:wa",
+  "title": "SB6307 (2019-2020 Regular): Communicating mass violence threats.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6307&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6307.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Marko Liias",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eba44d6a-6602-4a90-bef0-44ab12db6109"
+    },
+    {
+      "name": "Patty Kuderer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Manka Dhingra",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Rebecca Saldaña",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "David Frockt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Claire Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f6c042e3-b785-4bf2-b385-65a34ff616e8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: Secs. 1, 2, 9, 10 — creates the crime of communicating a threat of mass violence (class C felony), venue, and a sentencing seriousness ranking; the act is a threat, not using or carrying a gun"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6307.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6307-2019.introduced.html",
+      "sha256": "4a5c1c995fc0d47536ec86b4a93cf1178a32f3a27f4a3c3c777520706b08bb01"
+    },
+    "note": "Introduced version (HTML copy, marks visible); large file read by grep. Sec. 4 gives civil immunity for seizure or non-seizure of a firearm. Sec. 9 (RCW 9A.46.060) and Sec. 10 (RCW 9.94A.515) add the new offense to the list of crimes and the seriousness table."
+  },
+  "operative_text": "NEW SECTION Sec. 3 (new RCW chapter, Title 9A): (1) A peace officer who responds to a call regarding communicating a threat of mass violence and has probable cause to believe that a crime has been committed shall exercise arrest powers with reference to the criteria in RCW  10.31.100 and shall:\nNEW SECTION Sec. 3 (new RCW chapter, Title 9A): (a) Seize all firearms and ammunition the peace officer has reasonable grounds to believe were used or threatened to be used in the commission of the offense;\nNEW SECTION Sec. 3 (new RCW chapter, Title 9A): (b) Seize all firearms in plain sight or discovered pursuant to a lawful search; and\nNEW SECTION Sec. 3 (new RCW chapter, Title 9A): (c) Request consent to take temporary custody of any other firearms and ammunition to which the arrested person has access at the time of arrest until a judicial officer has heard the matter.\nNEW SECTION Sec. 5 (new RCW chapter, Title 9A): When any defendant charged with a crime involving communicating a threat of mass violence may be released from custody before trial on bail or personal recognizance, the prosecuting attorney shall request the court to order that the defendant have no firearms access or possession as a condition of pretrial release and request the court to verify that all firearms owned, possessed, or accessible to the defendant have been turned over to a law enforcement agency prior to the defendant's release.\nNEW SECTION Sec. 6 (new RCW chapter, Title 9A): For any defendant subject to either an order to surrender weapons or licenses pursuant to RCW  9.41.800 or an extreme risk protection order under chapter  7.94 RCW at the time communicating a threat of mass violence occurred, conviction under this chapter also constitutes a violation of the order to surrender weapons or the extreme risk protection order.\nSec. 8 (RCW 9.41.040): (viii) After having previously been convicted or found not guilty by reason of insanity in this state or elsewhere of communicating a threat of mass violence."
+}

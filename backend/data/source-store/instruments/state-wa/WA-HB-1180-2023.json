@@ -1,0 +1,170 @@
+{
+  "id": "WA-HB-1180-2023",
+  "scope": "state:wa",
+  "title": "HB1180 (2023-2024 Regular): Establishing firearms-related safety measures to increase public safety.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=1180&Year=2023&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2023-24/Pdf/Bills/House%20Bills/1180.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Strom Peterson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6341053d-0580-4fbf-85ea-71ddb6b6f838"
+    },
+    {
+      "name": "Tana Senn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Emily Alvarado",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5a36591c-66c5-4cb1-b99d-d7fc7fa93b25"
+    },
+    {
+      "name": "Julia Reed",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "67b9aaf1-46eb-471f-8f31-dcf501a92933"
+    },
+    {
+      "name": "Amy Walen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "be3c2a24-1576-4636-9374-18fc77a8513f"
+    },
+    {
+      "name": "Chipalo Street",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7a0da48f-2c29-463e-969a-52d06137cde9"
+    },
+    {
+      "name": "Liz Berry",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "56d6dd6f-4959-4339-be78-e4b1d0083b08"
+    },
+    {
+      "name": "Jessica Bateman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e6d175b-1af0-444c-b373-e5d0a279d240"
+    },
+    {
+      "name": "Alex Ramel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "41ef42e8-fe56-4f82-92e7-eefe85232cd2"
+    },
+    {
+      "name": "Joe Fitzgibbon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9f914ddb-ba7c-4b30-b756-fe7cd981f919"
+    },
+    {
+      "name": "Beth Doglio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "45737b89-a83b-421f-9d6c-abc829c7eae0"
+    },
+    {
+      "name": "Nicole Macri",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22d959a5-ec5f-4b92-98d3-85dc219c2c61"
+    },
+    {
+      "name": "Lisa Callan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3a93cc4-a4ee-4e4f-8a67-c9a0c5c66efb"
+    },
+    {
+      "name": "Tarra Simmons",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "370f9462-ed1d-4a83-b244-8bb593038444"
+    },
+    {
+      "name": "Debra Lekanoff",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c176280e-d886-4b59-b812-e220449ffff1"
+    },
+    {
+      "name": "Davina Duerr",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f3daea18-1a32-486f-b8df-659d7c653c05"
+    },
+    {
+      "name": "Mia Gregerson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "edc48d7e-4f91-4e59-af50-79f34df8b011"
+    },
+    {
+      "name": "Steve Bergquist",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f4f7acdf-1761-4cac-82e6-19bf8f6ea525"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    },
+    {
+      "name": "Lauren Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0e5af9ca-165c-458c-8c65-a89aaf1a8d3e"
+    },
+    {
+      "name": "Mary Fosse",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e36107af-ea8f-4fca-a727-0e37ca2f6fd4"
+    },
+    {
+      "name": "Timm Ormsby",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "945d0b44-3329-46b2-a39e-47f5fdddc6ed"
+    },
+    {
+      "name": "Steve Tharinger",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0381ded1-ac26-4700-8188-6ff06621d1be"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/House%20Bills/1180.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1180-2023.introduced.html",
+      "sha256": "8015cf8edba3d5f5a1b5abf0f491d22317adc8d2d7e8fe277f33e7602d0836ae"
+    },
+    "note": "Introduced version. Sec. 2 amends RCW 9.41.010 mostly by adding definitions (assault weapon, detachable magazine, distribute, import, manufacture, etc.) and renumbering; the long list of named models in (2)(a)(i) is not quoted. Sec. 5 severability and Sec. 6 emergency clause omitted."
+  },
+  "operative_text": "Sec. 3 (new RCW section in chapter 9.41): (1) No person in this state may manufacture, import, distribute, sell, or offer for sale any assault weapon, except as authorized in this section.\nSec. 3 (new RCW section in chapter 9.41): (2) Subsection (1) of this section does not apply to any of the following:\nSec. 3 (new RCW section in chapter 9.41): (a) The manufacture, importation, distribution, offer for sale, or sale of an assault weapon by a licensed firearms manufacturer for the purposes of sale to any branch of the armed forces of the United States or the state of Washington, or to a state or federal law enforcement agency for use by that agency or its employees for law enforcement purposes;\nSec. 3 (new RCW section in chapter 9.41): (3) A person who violates this section is guilty of a gross misdemeanor.\nSec. 2 (RCW 9.41.010): (2)(a) \"Assault weapon\" means:\nSec. 2 (RCW 9.41.010): (ii) A semiautomatic rifle that has an overall length of less than 30 inches;\nSec. 2 (RCW 9.41.010): (v) A semiautomatic, center fire rifle that has a fixed magazine with the capacity to accept more than 10 rounds;\nSec. 2 (RCW 9.41.010): (c) \"Assault weapon\" does not include antique firearms, any firearm that has been made permanently inoperable, or any firearm that is manually operated by bolt, pump, lever, or slide action.\nSec. 4 (new RCW section in chapter 9.41): (2) A violation of section 3 of this act is an unfair or deceptive act or practice or unfair method of competition in the conduct of trade or commerce for purposes of the consumer protection act, chapter 19.86 RCW."
+}

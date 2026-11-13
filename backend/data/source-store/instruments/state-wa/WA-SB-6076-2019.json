@@ -1,0 +1,83 @@
+{
+  "id": "WA-SB-6076-2019",
+  "scope": "state:wa",
+  "title": "SB6076 (2019-2020 Regular): Concerning assault weapons and large capacity magazines.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6076&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6076.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Patty Kuderer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Jeannie Darneille",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Manka Dhingra",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Sam Hunt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joe Nguyen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rebecca Saldaña",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+    },
+    {
+      "name": "Derek Stanford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78230dff-4e33-4d33-8c46-71f00db01858"
+    },
+    {
+      "name": "Reuven Carlyle",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Claire Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f6c042e3-b785-4bf2-b385-65a34ff616e8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/6076.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6076-2019.introduced.html",
+      "sha256": "ecb8a4075ca304f9e2823b3f9ca6001cfc85b292aed7909aa28b9cea7a02e1c2"
+    },
+    "note": "Introduced (2020 session). All new sections, no strikes. Sec. 1 defines 'assault weapon' (named models, short semiautomatic rifles, copycat features), 'large capacity magazine'; Sec. 2 has a long list of exemptions (existing owners, police, military, dealers, ranges); Sec. 4 severability."
+  },
+  "operative_text": "NEW SECTION Sec. 2 (new RCW section, chapter 9.41): (1) No person in this state may manufacture, possess, distribute, import, transfer, sell, offer for sale, purchase, or otherwise transfer any assault weapon or large capacity magazine except as authorized in this section.\nNEW SECTION Sec. 2 (3): In order to continue to possess an assault weapon or large capacity magazine that was legally possessed on the effective date of this section, the person possessing the assault weapon or large capacity magazine shall possess the assault weapon or large capacity magazine only on property owned or immediately controlled by the person, or while engaged in the legal use of the assault weapon or large capacity magazine at a duly licensed firing range, or while engaged in a lawful outdoor recreational activity such as hunting, or while traveling to or from either of these locations for the purpose of engaging in the legal use of the assault weapon or large capacity magazine, provided that the assault weapon or large capacity magazine is stored unloaded and in a separate locked container during transport.\nNEW SECTION Sec. 2 (4): A person who violates this section is guilty of a class C felony punishable under chapter 9A.20 RCW.\nNEW SECTION Sec. 3 (new RCW section, chapter 9.41): (1) Except as provided in subsection (2) of this section, a person shall not: (a) Transport an assault weapon into Washington state; or (b) Possess, sell, offer to sell, transfer, purchase, or receive an assault weapon.\nNEW SECTION Sec. 3 (2)(a): A person who lawfully possessed, has a purchase order for, or completed an application to purchase an assault weapon before January 1, 2021, and who has registered the assault weapon with the Washington state patrol may: (i) Continue to possess and transport the assault weapon; or (ii) While carrying a court order requiring the surrender of the assault weapon, transport the assault weapon directly to a law enforcement unit, barracks, or station if the person has notified the law enforcement unit, barracks, or station that the person is transporting the assault weapon in accordance with a court order and the assault weapon is unloaded."
+}

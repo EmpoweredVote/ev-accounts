@@ -1,0 +1,44 @@
+{
+  "id": "WA-SB-5174-2019",
+  "scope": "state:wa",
+  "title": "SB5174 (2019-2020 Regular): Concerning concealed pistol license training requirements.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5174&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5174-S.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Guy Palumbo",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/Senate%20Bills/5174-S.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5174-2019.comm-sub.html",
+      "sha256": "c78fc6248afbb93c04497836191dcfc627b5e01ab6a9bfb9f1d94b7095035ecc"
+    },
+    "note": "Substitute Senate Bill 5174 (committee substitute), 2019 Regular Session; no date in data. The bill also reorganizes RCW 9.41.070: it moves the 30-day and 60-day issue deadlines into new (1)(a) and (1)(b), restates the denial grounds as (2), and reorders the application contents (7)-(10); those changes are mostly renumbering and are not quoted. It strikes 'The applicant's constitutional right to bear arms' as the opening of the denial paragraph. Item (7)(d) is a list item quoted from the 'must submit' list."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.070): (2)(h) Has not provided proof that he or she has completed a recognized firearms safety training program within the last five years as provided in subsection (3) of this section.\nSec. 1 (RCW 9.41.070): (3)(a) A person applying for a concealed pistol license must provide proof that he or she has completed a recognized firearms safety training program within the last five years that, at a minimum, includes eight hours of instruction on: (i) Basic firearms safety rules; (ii) Firearms and children, including safe storage of firearms and talking to children about firearms safety; (iii) Firearms and suicide prevention; (iv) Safe storage of firearms to prevent unauthorized access and use; (v) Safe handling of firearms; (vi) State and federal firearms laws, including prohibited firearms transfers; (vii) State laws pertaining to the use of deadly force for self-defense; (viii) Techniques for avoiding a criminal attack and how to manage a violent confrontation, including conflict resolution; and (ix) Live-fire shooting exercises on a firing range that include a demonstration by the applicant of safe handling of, and shooting proficiency with, each firearm that the applicant is applying to be licensed to carry.\nSec. 1 (RCW 9.41.070): (3)(b) The training must be sponsored by a federal, state, county, or municipal law enforcement agency, a college, a university, a nationally recognized organization that customarily offers firearms training, or a firearms training school with instructors certified by a nationally recognized organization that customarily offers firearms training.\nSec. 1 (RCW 9.41.070): (7)(d) Evidence of completion of a firearms safety training program as provided in this section; and"
+}

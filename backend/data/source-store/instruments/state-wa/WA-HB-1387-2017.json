@@ -1,0 +1,146 @@
+{
+  "id": "WA-HB-1387-2017",
+  "scope": "state:wa",
+  "title": "HB1387 (2017-2018 Regular): Concerning enhanced background checks and licensure for assault weapons and large capacity magazines.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1387&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1387.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Laurie Jinkins",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ce184542-9397-469f-ba78-8c735bce20fa"
+    },
+    {
+      "name": "Mike Chapman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cf38d9ea-d72d-4a44-9d9c-efd9cd9c432f"
+    },
+    {
+      "name": "Eileen Cody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Beth Doglio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "45737b89-a83b-421f-9d6c-abc829c7eae0"
+    },
+    {
+      "name": "Jessyn Farrell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joe Fitzgibbon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9f914ddb-ba7c-4b30-b756-fe7cd981f919"
+    },
+    {
+      "name": "Kristine Lytton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Strom Peterson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6341053d-0580-4fbf-85ea-71ddb6b6f838"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    },
+    {
+      "name": "Sherry Appleton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Steve Bergquist",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f4f7acdf-1761-4cac-82e6-19bf8f6ea525"
+    },
+    {
+      "name": "Noel Frame",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4991ee01-0a35-454f-bdf6-bb2f34cf1c30"
+    },
+    {
+      "name": "Mia Gregerson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "edc48d7e-4f91-4e59-af50-79f34df8b011"
+    },
+    {
+      "name": "Ruth Kagi",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Timm Ormsby",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "945d0b44-3329-46b2-a39e-47f5fdddc6ed"
+    },
+    {
+      "name": "Eric Pettigrew",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tana Senn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Derek Stanford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78230dff-4e33-4d33-8c46-71f00db01858"
+    },
+    {
+      "name": "Steve Tharinger",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0381ded1-ac26-4700-8188-6ff06621d1be"
+    },
+    {
+      "name": "June Robinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7ac92b63-d489-45d5-a85f-c0deac9d8508"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1387.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1387-2017.introduced.html",
+      "sha256": "df76e2cac223f8ba65c87596096f9d62f2984fcafbd03441b7f0c916c6599830"
+    },
+    "note": "Introduced version (HTML copy with marks). Over 30,000 chars; read the new sections (2-4) in full and grepped the amended RCW sections, which extend pistol purchase-application, dealer, record and background-check rules to assault weapons and large capacity magazines. Sec. 12 is an emergency clause. Definitions in Sec. 1 not quoted."
+  },
+  "operative_text": "NEW SECTION Sec. 2 (new RCW section, chapter 9.41): (1)(a) Except as provided in subsection (2) of this section, a person shall not possess, manufacture, transport, purchase, acquire, transfer, deliver, import, sell, or offer to sell an assault weapon or large capacity magazine without being in possession of an assault weapon license issued pursuant to section 3 of this act.\nNEW SECTION Sec. 3 (new RCW section, chapter 9.41): (1) The chief of police of a municipality or the sheriff of a county shall, within thirty days after the filing of an application of any resident of the state of Washington, issue a license to the applicant to possess, manufacture, transport, purchase, distribute, import, sell, or offer to sell an assault weapon or large capacity magazine within this state for a period of one year from the date of issue. Residency is established by possession of a valid permanent Washington driver's license, possession of a Washington state identicard, or a showing that the applicant has resided in the state for the previous consecutive ninety days. The issuing authority shall not refuse to accept completed applications for assault weapon licenses during regular business hours.\nNEW SECTION Sec. 3 (new RCW section, chapter 9.41): (2) The chief of police or sheriff shall not issue the license if: (a) The applicant is ineligible to possess a firearm under any federal or state law; (b) The applicant is under twenty-one years of age; (c) The applicant is currently subject to a court order or injunction regarding firearms pursuant to chapter  7.92 RCW or RCW  7.90.090,  9A.46.080,  10.14.080,  10.99.040,  10.99.045,  26.09.050,  26.09.060,  26.10.040,  26.10.115,  26.26.130,  26.50.060,  26.50.070, or  26.26.590; (d) The applicant is currently free on bond or personal recognizance pending trial, appeal, or sentencing for a felony offense; (e) The applicant has an outstanding warrant for his or her arrest from any court of competent jurisdiction for a felony or misdemeanor; or\nNEW SECTION Sec. 4 (new RCW section, chapter 9.41): (a) Discovery by the issuing authority that the person was ineligible under section 3 of this act for an assault weapon license when applying for the license or license renewal; (b) Conviction of the license holder, or the license holder being found not guilty by reason of insanity, of an offense, or commitment of the license holder for mental health treatment, that makes a person ineligible under RCW  9.41.040 or federal law to possess a firearm;"
+}

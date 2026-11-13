@@ -1,0 +1,109 @@
+{
+  "id": "WA-HB-1286-2019",
+  "scope": "state:wa",
+  "title": "HB1286 (2019-2020 Regular): Banning the sale of assault weapons and large capacity magazines.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1286&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1286.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Strom Peterson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6341053d-0580-4fbf-85ea-71ddb6b6f838"
+    },
+    {
+      "name": "Javier Valdez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    },
+    {
+      "name": "Sherry Appleton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Laurie Dolan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Noel Frame",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4991ee01-0a35-454f-bdf6-bb2f34cf1c30"
+    },
+    {
+      "name": "Cindy Ryu",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "86e6a2bf-5216-4022-900c-621a8480f2e7"
+    },
+    {
+      "name": "Nicole Macri",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22d959a5-ec5f-4b92-98d3-85dc219c2c61"
+    },
+    {
+      "name": "Amy Walen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "be3c2a24-1576-4636-9374-18fc77a8513f"
+    },
+    {
+      "name": "Steve Bergquist",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f4f7acdf-1761-4cac-82e6-19bf8f6ea525"
+    },
+    {
+      "name": "Shelley Kloba",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b918fb31-108f-49e7-b977-627ce667422d"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    },
+    {
+      "name": "My-Linh Thai",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1963d6e9-069b-4770-9489-59e36faaa2e1"
+    },
+    {
+      "name": "June Robinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7ac92b63-d489-45d5-a85f-c0deac9d8508"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1286.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1286-2019.introduced.html",
+      "sha256": "250f11d80f6d7f03232588b72f57632bdc097aa589e3e8eeb3107150bb9d5d67"
+    },
+    "note": "Introduced version. Sec. 1 (RCW 9.41.010) adds definitions of assault weapon, copycat weapon and large capacity magazine (long model list, not quoted). Sec. 2(3) limits where grandfathered owners may possess them. Sec. 4 severability. Sec. 3 covers assault weapons only, not magazines."
+  },
+  "operative_text": "NEW SECTION Sec. 2 (new RCW section, chapter 9.41): (1) No person in this state may manufacture, possess, distribute, import, transfer, sell, offer for sale, purchase, or otherwise transfer any assault weapon or large capacity magazine except as authorized in this section.\nNEW SECTION Sec. 2 (new RCW section, chapter 9.41): (a) The possession of an assault weapon or large capacity magazine by a person who legally possessed the assault weapon or large capacity magazine on the effective date of this section, or possession of an assault weapon or large capacity magazine by a person who, on or after the effective date of this section, acquires possession of the assault weapon or large capacity magazine by operation of law upon the death of the former owner who was in legal possession of the assault weapon or large capacity magazine, provided the person in possession of the assault weapon or large capacity magazine can establish such provenance.\nNEW SECTION Sec. 2 (new RCW section, chapter 9.41): (4) A person who violates this section is guilty of a class C felony punishable under chapter  9A.20 RCW.\nNEW SECTION Sec. 3 (new RCW section, chapter 9.41): (1) Except as provided in subsection (2) of this section, a person shall not:\nNEW SECTION Sec. 3 (new RCW section, chapter 9.41): (a) Transport an assault weapon into Washington state; or\nNEW SECTION Sec. 3 (new RCW section, chapter 9.41): (b) Possess, sell, offer to sell, transfer, purchase, or receive an assault weapon.\nNEW SECTION Sec. 3 (new RCW section, chapter 9.41): (2)(a) A person who lawfully possessed, has a purchase order for, or completed an application to purchase an assault weapon before January 1, 2020, and who has registered the assault weapon with the Washington state patrol may:"
+}

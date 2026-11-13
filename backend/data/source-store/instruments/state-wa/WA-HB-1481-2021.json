@@ -1,0 +1,57 @@
+{
+  "id": "WA-HB-1481-2021",
+  "scope": "state:wa",
+  "title": "HB1481 (2021-2022 Regular): Authorizing certain school employees to carry firearms on school grounds.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1481&year=2021",
+    "http://lawfilesext.leg.wa.gov/Biennium/2021-22/Pdf/Bills/House%20Bills/1481.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Rob Chase",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3efc8925-9612-4601-aed5-c05234a5e64d"
+    },
+    {
+      "name": "Jeremie Dufault",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "72f1981b-ff10-48dd-8c92-e6ea2c169902"
+    },
+    {
+      "name": "Robert Sutherland",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bd2e2e7a-6352-41ec-ad9d-c55002d132aa"
+    },
+    {
+      "name": "Carolyn Eslick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e1538de2-4e22-44cc-a50f-02fe7e2e9f2e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/House%20Bills/1481.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1481-2021.introduced.html",
+      "sha256": "9ad46a638cae3d93ebf541cc9cb2b846293d9e0a3c6919a7c0d530fb7ac57586"
+    },
+    "note": "Introduced version. Other changes are renumbering of subsections."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.280): (4) Subsection (1)(a) of this section does not apply to any school personnel who has a valid concealed pistol license issued under RCW  9.41.070. For the purposes of this section, \"school personnel\" means any person employed by a school district, excluding classroom teachers as defined in RCW  28A.150.203 and paraeducators as defined in RCW  28A.413.010."
+}

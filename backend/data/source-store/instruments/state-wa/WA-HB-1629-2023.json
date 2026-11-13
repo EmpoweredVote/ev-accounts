@@ -1,0 +1,50 @@
+{
+  "id": "WA-HB-1629-2023",
+  "scope": "state:wa",
+  "title": "HB1629 (2023-2024 Regular): Concerning transfers of firearms to museums and historical societies.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=1629&Year=2023&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2023-24/Pdf/Bills/House%20Bills/1629.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sharon Wylie",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5617115e-78d5-4480-9534-aa337612a285"
+    },
+    {
+      "name": "Tana Senn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ed Orcutt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "642ee2f7-b15b-47b5-b71b-d86670e85e4e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/House%20Bills/1629.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1629-2023.introduced.html",
+      "sha256": "89bcad6305756787f7924b96fb0ce69589ced9e302b8faa1ea0be568d48b0143"
+    },
+    "note": "Introduced version. Numerals 18 and 60 replace spelled-out numbers (style change only)."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.113): (j) A transfer, loan, gift, or bequest to a museum or historical society, or the return of loaned firearm(s) to its lender from a museum or historical society, and museum personnel while acting in the scope of their official duties."
+}

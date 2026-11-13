@@ -1,0 +1,56 @@
+{
+  "politician_id": "0ec9ff38-9472-46b3-a57a-6cd41957c5af",
+  "findings": [
+    {
+      "id": "8f36825ade10136b8adce8f14414e5e26a3afbaa4df96fb5f21fd34ebaaad54d",
+      "kind": "own-words",
+      "url": "https://votekristaperez.org/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Every community deserves to feel safe. To make this a reality, addressing youth gun violence must also be a top priority. Programs like gun buybacks, lockbox distribution, and community-led initiatives are essential for keeping firearms off our streets and reducing harm.",
+      "note": "Campaign issues page names youth gun violence a top priority and lists buybacks, lockbox distribution and community-led programs. No mention of bans, permits or background checks.",
+      "subjects": [
+        "gun violence prevention",
+        "gun buybacks",
+        "lockbox distribution"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:22.221Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun violence prevention",
+        "gun buybacks",
+        "lockbox distribution",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry permits",
+        "red-flag orders",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://votekristaperez.org/issues (issues page, gun passage found)",
+        "sponsor list: covered by bulk bill data",
+        "web search: she is a 2026 candidate for Washington House, 29th District, Position 1 (news stories, ballot guides); in scope",
+        "iVoterGuide https://ivoterguide.com/candidate/93076/race/34987/election/1502 (gun question marked did not answer)",
+        "blocked: https://washingtonstatestandard.com/voter-guides/contests/legislative-district-29-house-position-1/",
+        "news search on name plus gun words: nothing on the subject",
+        "not reviewed: Ballotpedia page (covers only a 2025 city council race; not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:43:22.221Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "id": "WA-SB-5211-2023",
+  "scope": "state:wa",
+  "title": "SB5211 (2023-2024 Regular): Concerning requirements for the purchase or transfer of firearms.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=5211&Year=2023&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2023-24/Pdf/Bills/Senate%20Bills/5211.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Marko Liias",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eba44d6a-6602-4a90-bef0-44ab12db6109"
+    },
+    {
+      "name": "Yasmin Trudeau",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c09a622c-ec49-40e9-87db-ead331f5ab9e"
+    },
+    {
+      "name": "Manka Dhingra",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Noel Frame",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4991ee01-0a35-454f-bdf6-bb2f34cf1c30"
+    },
+    {
+      "name": "Samuel Hunt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Karen Keiser",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Patty Kuderer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Liz Lovelett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "207ff383-f26e-462b-a554-72472b52712a"
+    },
+    {
+      "name": "John Lovick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "47ac1908-3715-4599-82f6-606aaf2d9fe6"
+    },
+    {
+      "name": "Joe Nguyen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "T'wina Nobles",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436194e1-479e-4066-8d99-f325fd6bb880"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "June Robinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7ac92b63-d489-45d5-a85f-c0deac9d8508"
+    },
+    {
+      "name": "Derek Stanford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78230dff-4e33-4d33-8c46-71f00db01858"
+    },
+    {
+      "name": "Javier Valdez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    },
+    {
+      "name": "Claire Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f6c042e3-b785-4bf2-b385-65a34ff616e8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Senate%20Bills/5211.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5211-2023.introduced.html",
+      "sha256": "8d0c1261c2282827b4e5619f76a37fa3ac051cc8b6c6c8506d4d400a5e1f8637"
+    },
+    "note": "Introduced version (HTML copy with marks). Over 30,000 chars; 40 sections. Quotes are whole sentences with the bill's added words kept (Sec. 1 merges added words into existing text; struck 'pistol' and concealed pistol license path dropped, and Sec. 1 strikes the separate semiautomatic assault rifle training rule). Other sections (Secs. 4-38) move the dealer check from local chiefs/sheriffs to the state patrol and conform protective-order, surrender and mental-health provisions; Sec. 39 repeals 2019 c 244 s 1; effective July 1, 2024 (Sec. 40). Training in Sec. 3 (1)(f)-(h) omitted from quote for length."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.090): (1) In addition to the other requirements of this chapter, no dealer may deliver a firearm to the purchaser thereof until: (a) The purchaser produces a valid permit to purchase firearms issued under section 2 of this act;\nNEW SECTION Sec. 2 (new RCW section, chapter 9.41): (1) A person may apply for a permit to purchase firearms with the Washington state patrol firearms background check program.\nNEW SECTION Sec. 2 (new RCW section, chapter 9.41): (2) An applicant for a permit to purchase firearms must submit to the Washington state patrol firearms background check program: (a) A completed permit application as provided in subsection (3) of this section; (b) A complete set of fingerprints taken by the local law enforcement agency in the jurisdiction in which the applicant resides; (c) A certificate of completion of a certified firearms safety training program within the last five years, or proof that the applicant is exempt from the training requirement, as provided in section 3 of this act; and (d) The permit application fee as provided in subsection (11) of this section.\nNEW SECTION Sec. 2 (new RCW section, chapter 9.41): (6) The Washington state patrol firearms background check program shall issue a permit to purchase firearms to an eligible applicant, or deny the application, within 30 days of the date the application was filed, or within 60 days of when the application was filed if the applicant does not have a valid permanent Washington driver's license or Washington state identification card or has not been a resident of the state for the previous consecutive 90 days.\nNEW SECTION Sec. 2 (new RCW section, chapter 9.41): (11)(a) A permit to purchase firearms is valid for a period of five years.\nNEW SECTION Sec. 3 (new RCW section, chapter 9.41): (1) An applicant for a permit to purchase firearms must provide a certificate of completion of a certified firearms safety training program within the last five years that, at a minimum, includes instruction on: (a) Basic firearms safety rules; (b) Firearms and children, including secure gun storage and talking to children about gun safety; (c) Firearms and suicide prevention; (d) Secure gun storage to prevent unauthorized access and use; (e) Safe handling of firearms;\nNEW SECTION Sec. 3 (new RCW section, chapter 9.41): (i) Live-fire shooting exercises on a firing range that include a demonstration by the applicant of the safe handling of, and shooting proficiency with, firearms."
+}

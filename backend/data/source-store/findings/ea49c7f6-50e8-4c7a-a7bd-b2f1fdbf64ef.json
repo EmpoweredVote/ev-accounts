@@ -1,0 +1,32 @@
+{
+  "politician_id": "ea49c7f6-50e8-4c7a-a7bd-b2f1fdbf64ef",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large magazines",
+        "background checks and permits to buy",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "general statements on gun rights or the Second Amendment",
+        "public safety and law enforcement"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://reedyberg.com/ (via the mirror https://fp-candidate-berg-ld15.pages.dev/): issue pages mention public safety and law enforcement funding only, nothing on guns",
+        "https://ivoterguide.com/candidate/93036/race/34960/election/1502: questionnaire item on gun ownership restrictions shows 'Did not answer'; lists a general-election race entry for 2026-11-03; shows a late-received NRA-PVF endorsement (not his words)",
+        "Ballotpedia https://ballotpedia.org/Reedy_Berg: no page content on the subject returned",
+        "web search on name plus gun words: nothing about this person",
+        "web search for 2026 general-election status: not confirmed; blocked or empty: https://results.vote.wa.gov/results/20260804/legislative-district-15-state-representative-pos-2.html (no candidate names returned)",
+        "sponsor list: covered by bulk bill data (he is a Yakima city council member, not a legislator)",
+        "not reviewed: https://www.yakimawa.gov/council/reedy-berg/",
+        "not reviewed: https://www.facebook.com/p/City-of-Yakima-Council-District-7-Reedy-Berg-100066791381435/"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:46:33.804Z",
+      "by": "source-collector"
+    }
+  ]
+}

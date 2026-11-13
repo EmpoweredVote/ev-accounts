@@ -1,0 +1,58 @@
+{
+  "id": "WA-HB-2174-2017",
+  "scope": "state:wa",
+  "title": "HB2174 (2017-2018 Regular): Making licensed dealer delivery provisions consistent with federal law.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=2174&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/2174.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jacquelin Maycumber",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Vincent Buys",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brian Blake",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Matt Shea",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Taylor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/2174.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2174-2017.introduced.html",
+      "sha256": "fd869ca51b48b61fdfb7b4c6a6ecfabc137e48daad3b50706c4e193deab733e2"
+    },
+    "note": "Version read: Introduced. The only change is striking \"Ten\" and adding \"Three\" at the start of subsection (2). The later sentence in (2) still reads \"extended from ten business days to sixty days\" for nonresident pistol purchasers; the bill leaves that wording unchanged."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.092): Except as otherwise provided in this chapter, a licensed dealer may not deliver any firearm to a purchaser or transferee until the earlier of:\nSec. 1 (RCW 9.41.092): (2) Three business days have elapsed from the date the licensed dealer requested the background check."
+}

@@ -1,0 +1,109 @@
+{
+  "id": "WA-SB-5441-2017",
+  "scope": "state:wa",
+  "title": "SB5441 (2017-2018 Regular): Concerning certain procedures upon initial detention under the involuntary treatment act.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5441&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/5441-S.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Patty Kuderer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Reuven Carlyle",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jeannie Darneille",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bob Hasegawa",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "219f7fc7-d02b-46a0-acad-dfc09814ed11"
+    },
+    {
+      "name": "John McCoy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sharon Nelson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kevin Ranker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Andy Billig",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Frockt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Karen Keiser",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Marko Liias",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eba44d6a-6602-4a90-bef0-44ab12db6109"
+    },
+    {
+      "name": "Christine Rolfes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8f96526a-f369-4f45-86ba-a2a3a3ea67f8"
+    },
+    {
+      "name": "Rebecca Saldaña",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+    },
+    {
+      "name": "Lisa Wellman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ff1e922-601b-45f3-a43d-2ef69220f54b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/5441-S.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5441-2017.comm-sub.html",
+      "sha256": "3df946a80f7a6ca98df31facae0a0ae5677a99887ed76c641a1052e747dcfddd"
+    },
+    "note": "Last listed version is Substitute (5441-S, \"Comm Sub\"); read as it stands. Sec. 3 (RCW 9.41.047(3)) adds detention under RCW 71.05.150/.153 to the restoration-petition rules."
+  },
+  "operative_text": "NEW SECTION Sec. 1 (new RCW chapter 71.05): (1) A person who under RCW  71.05.150 or  71.05.153 has been detained at a facility for seventy-two-hour evaluation and treatment on the grounds that the person presents a likelihood of serious harm, but who has not been subsequently committed for involuntary treatment under RCW  71.05.240, may not have in his or her possession or control any firearm for a period of six months after the date that the person is detained.\nNEW SECTION Sec. 1 (new RCW chapter 71.05): (a) He or she is prohibited from possessing or controlling any firearm for a period of six months;\nNEW SECTION Sec. 1 (new RCW chapter 71.05): (b) He or she must immediately surrender, for the six-month period, any concealed pistol license and any firearms that the person possesses or controls to the sheriff of the county or the chief of police of the municipality in which the person is domiciled;\nNEW SECTION Sec. 2 (new RCW chapter 9.41): (2) Upon receipt of the information provided for by subsection (1) of this section, the department of licensing shall determine if the detained person has a concealed pistol license. If the person does have a concealed pistol license, the department of licensing shall immediately notify the license-issuing authority, which, upon receipt of such notification, shall immediately suspend the license for a period of six months from the date of the person's release from the facility."
+}

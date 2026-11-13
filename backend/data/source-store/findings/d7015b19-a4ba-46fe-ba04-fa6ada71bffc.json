@@ -1,0 +1,75 @@
+{
+  "politician_id": "d7015b19-a4ba-46fe-ba04-fa6ada71bffc",
+  "findings": [
+    {
+      "id": "3c152422a565863df59d6fda15d314125152a5163bd16f2dc885232efea54a6a",
+      "kind": "own-words",
+      "url": "https://www.kelabeforwashington.com/",
+      "date": "2026-11-13",
+      "date_precision": "year",
+      "passage": "seeing young people lost to gun violence because no one invested in them first.",
+      "note": "Campaign site bio text (issued in his name, third person) names youth gun violence as a problem and ties it to lack of investment in young people. No firearm law is mentioned. Page date is the fetch date; the true date is unknown, 2026 campaign.",
+      "subjects": [
+        "gun violence and youth investment (no firearm law stated)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:34.494Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3febafd3e81dfce2ef91d05e31c43aed6e9638a7e5e28561dcf717cae6dfec7e",
+      "kind": "own-words",
+      "url": "https://www.officialhacksandwonks.com/the-fighting-37th-has-a-new-contender-kelabe-tewolde-eyes-house-seat/",
+      "date": "2026-06-27",
+      "date_precision": "day",
+      "passage": "A lot of the crime that we see in the 37th is crime from being impoverished,",
+      "note": "Podcast write-up quoting him. The write-up says he pointed to youth gun violence and favoured funding youth activities and school retention (HB 2484 / SB 5992 youth development fund). The article's wording on gun violence is the writer's paraphrase; no gun regulation is stated.",
+      "subjects": [
+        "gun violence and youth investment (no firearm law stated)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:43:34.494Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "gun rights / Second Amendment",
+        "gun violence"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site home page (https://www.kelabeforwashington.com/): one mention of gun violence in the bio, no policy stance",
+        "campaign site priorities page (https://www.kelabeforwashington.com/priorities-1): public-safety and violence-prevention text, no gun or firearm wording",
+        "state party district questionnaire PDF (https://37dems.org/wp-content/uploads/2026/05/State-House-LD-37-Representative-Pos.-1-Kelabe-Tewolde.pdf): text extracted, nothing on guns",
+        "podcast interview page (https://www.officialhacksandwonks.com/the-fighting-37th-has-a-new-contender-kelabe-tewolde-eyes-house-seat/): gun violence mentioned as youth-crime cause, no regulation stated",
+        "voter guide page (https://bluevoterguide.org/WA/candidate_Kelabe_Tewolde/762423): fetched, nothing on guns",
+        "blocked: https://washingtonstatestandard.com/2026/09/14/was-longest-serving-state-house-member-at-risk-of-ouster/ (403)",
+        "blocked: https://www.newsfromthestates.com/node/427399 (403)",
+        "scope: web search results from the Washington State Standard story and the voter guide say he is a general-election candidate for 37th District House Position 1 against the incumbent; the story page itself was blocked",
+        "sponsor list: covered by bulk bill data (he is not a sitting legislator)",
+        "web search on name plus state office (1 search); Ballotpedia not reviewed: no page found in search results; no news found on name plus gun words"
+      ],
+      "found": 2,
+      "at": "2026-11-13T20:43:34.494Z",
+      "by": "source-collector"
+    }
+  ]
+}

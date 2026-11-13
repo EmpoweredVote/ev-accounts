@@ -1,0 +1,114 @@
+{
+  "id": "WA-HB-1134-2017",
+  "scope": "state:wa",
+  "title": "HB1134 (2017-2018 Regular): Banning the sale of assault weapons and large capacity magazines.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1134&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1134.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Strom Peterson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6341053d-0580-4fbf-85ea-71ddb6b6f838"
+    },
+    {
+      "name": "Beth Doglio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "45737b89-a83b-421f-9d6c-abc829c7eae0"
+    },
+    {
+      "name": "Jake Fey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "97b47446-b0ee-4a2c-b4fe-ec8a995356ea"
+    },
+    {
+      "name": "Mia Gregerson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "edc48d7e-4f91-4e59-af50-79f34df8b011"
+    },
+    {
+      "name": "Joan McBride",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    },
+    {
+      "name": "Jessyn Farrell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Noel Frame",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4991ee01-0a35-454f-bdf6-bb2f34cf1c30"
+    },
+    {
+      "name": "Steve Bergquist",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f4f7acdf-1761-4cac-82e6-19bf8f6ea525"
+    },
+    {
+      "name": "Nicole Macri",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22d959a5-ec5f-4b92-98d3-85dc219c2c61"
+    },
+    {
+      "name": "Lillian Ortiz-Self",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d97bcc03-4c74-4c9d-9e0f-13ae551ed54c"
+    },
+    {
+      "name": "Cindy Ryu",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "86e6a2bf-5216-4022-900c-621a8480f2e7"
+    },
+    {
+      "name": "Sharon Tomiko Santos",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d5c6e6e4-c474-41fa-ab96-bd237c8ff4de"
+    },
+    {
+      "name": "Gael Tarleton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1134.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1134-2017.introduced.html",
+      "sha256": "1f0f3ff59111bb3cc673d6ffcda9b10d7c05760d45a45f63b803f35f314b144c"
+    },
+    "note": "Introduced version (read first time 01/12/17). Definitions text in Sec. 1 is quoted from added (underlined) subsections; (a) paragraph lines of the assault weapon definition partly omitted for length."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.010): (27) \"Assault weapon\" means:\nSec. 1 (RCW 9.41.010): (a) A semiautomatic rifle that has the capacity to accept a detachable magazine and has one or more of the following:\nSec. 1 (RCW 9.41.010): (29) \"Large capacity magazine\" means an ammunition feeding device with the capacity to accept more than ten rounds of ammunition, or any conversion kit, part, or combination of parts, from which such a device can be assembled if those parts are in the possession or under the control of the same person, but shall not be construed to include any of the following:\nNEW SECTION Sec. 2 (new section, chapter 9.41 RCW): (1) No person in this state may manufacture, possess, distribute, import, transfer, sell, offer for sale, purchase, or otherwise transfer any assault weapon or large capacity magazine except as authorized in this section.\nNEW SECTION Sec. 2 (new section, chapter 9.41 RCW): (3) In order to continue to possess an assault weapon or large capacity magazine that was legally possessed on the effective date of this section, the person possessing the assault weapon or large capacity magazine shall:\nNEW SECTION Sec. 2 (new section, chapter 9.41 RCW): (a) Store the assault weapon or large capacity magazine in a secure gun storage; and\nNEW SECTION Sec. 2 (new section, chapter 9.41 RCW): (b) Possess the assault weapon or large capacity magazine only on property owned or immediately controlled by the person, or while engaged in the legal use of the assault weapon or large capacity magazine at a duly licensed firing range, or while engaged in a lawful outdoor recreational activity such as hunting, or while traveling to or from either of these locations for the purpose of engaging in the legal use of the assault weapon or large capacity magazine, provided that the assault weapon or large capacity magazine is stored unloaded and in a separate locked container during transport.\nNEW SECTION Sec. 2 (new section, chapter 9.41 RCW): (4) A person who violates this section is guilty of a class C felony punishable under chapter  9A.20 RCW."
+}

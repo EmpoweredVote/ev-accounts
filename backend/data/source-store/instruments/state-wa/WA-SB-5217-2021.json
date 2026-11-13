@@ -1,0 +1,84 @@
+{
+  "id": "WA-SB-5217-2021",
+  "scope": "state:wa",
+  "title": "SB5217 (2021-2022 Regular): Concerning assault weapons.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5217&year=2021",
+    "http://lawfilesext.leg.wa.gov/Biennium/2021-22/Pdf/Bills/Senate%20Bills/5217.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Patty Kuderer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Jeannie Darneille",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Manka Dhingra",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Sam Hunt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Marko Liias",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eba44d6a-6602-4a90-bef0-44ab12db6109"
+    },
+    {
+      "name": "Joe Nguyen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "Claire Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f6c042e3-b785-4bf2-b385-65a34ff616e8"
+    },
+    {
+      "name": "Liz Lovelett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "207ff383-f26e-462b-a554-72472b52712a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/Senate%20Bills/5217.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5217-2021.introduced.html",
+      "sha256": "846e1728a14f079b44a246dc71e18fc5c58ceff13f1c77bf10189e4d779996cd"
+    },
+    "note": "Introduced version. Sec. 1 defines 'assault weapon' and 'copycat weapon' (long model list, not quoted). Sec. 2(3) limits where grandfathered owners may possess them. Sec. 2(1) and Sec. 3 overlap; Sec. 3 uses a 2022 date. Sec. 4 severability."
+  },
+  "operative_text": "NEW SECTION Sec. 2 (new RCW section, chapter 9.41): (1) No person in this state may manufacture, possess, distribute, import, transfer, sell, offer for sale, purchase, or otherwise transfer any assault weapon except as authorized in this section.\nNEW SECTION Sec. 2 (new RCW section, chapter 9.41): (a) The possession of an assault weapon by a person who legally possessed the assault weapon on the effective date of this section, or possession of an assault weapon by a person who, on or after the effective date of this section, acquires possession of the assault weapon by operation of law upon the death of the former owner who was in legal possession of the assault weapon, provided the person in possession of the assault weapon can establish such provenance.\nNEW SECTION Sec. 2 (new RCW section, chapter 9.41): (4) A person who violates this section is guilty of a class C felony punishable under chapter  9A.20 RCW.\nNEW SECTION Sec. 3 (new RCW section, chapter 9.41): (1) Except as provided in subsection (2) of this section, a person shall not:\nNEW SECTION Sec. 3 (new RCW section, chapter 9.41): (a) Transport an assault weapon into Washington state; or\nNEW SECTION Sec. 3 (new RCW section, chapter 9.41): (b) Possess, sell, offer to sell, transfer, purchase, or receive an assault weapon.\nNEW SECTION Sec. 3 (new RCW section, chapter 9.41): (2)(a) A person who lawfully possessed, has a purchase order for, or completed an application to purchase an assault weapon before January 1, 2022, and who has registered the assault weapon with the Washington state patrol may:"
+}

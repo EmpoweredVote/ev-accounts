@@ -1,0 +1,61 @@
+{
+  "id": "WA-HB-2820-2019",
+  "scope": "state:wa",
+  "title": "HB2820 (2019-2020 Regular): Concerning court orders involving weapons or domestic violence.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=2820&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2820-S.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Brad Klippert",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Christine Kilduff",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lauren Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0e5af9ca-165c-458c-8c65-a89aaf1a8d3e"
+    },
+    {
+      "name": "Roger Goodman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "de6d7929-66dd-4166-998a-479cfa264ce5"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Comm Sub, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2820-S.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2820-2019.comm-sub.html",
+      "sha256": "899bcddec34891c0d2161351e04c3ae07338ae13b12d80de56cfb823b4554f92"
+    },
+    "note": "Version read: Substitute House Bill 2820 (Comm Sub, 2019-20 session; first line of text file). No enrolled version saved. Sec. 2 changes RCW 10.99.040 only by adding \"declaration in support of probable cause, or other summary documentation of the police incident report\" to the incident-report sentence; the quoted sentences are that provision as it would read."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.800): (8) If the court enters a protection order, restraining order, or no-contact order that includes an order to surrender firearms, dangerous weapons, and any concealed pistol license under this section, the order must be served by a law enforcement officer. However, the order must be personally served upon the respondent or defendant if the order is entered in open court in the presence of the respondent or defendant. The respondent or defendant shall acknowledge receipt and service. If the respondent or defendant refuses service, an agent of the court may indicate on the record that the respondent or defendant refused service. The court shall enter the service and receipt into the record. A copy of the order and service shall be immediately transmitted to law enforcement.\nSec. 2 (RCW 10.99.040): (b) In issuing the order, the court shall consider all information documented in the incident report, declaration in support of probable cause, or other summary documentation of the police incident report concerning the person's possession of and access to firearms and whether law enforcement took temporary custody of firearms at the time of the arrest. The court may as a condition of release prohibit the defendant from possessing or accessing firearms and order the defendant to immediately surrender all firearms and any concealed pistol license to a law enforcement agency upon release."
+}

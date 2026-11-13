@@ -1,0 +1,209 @@
+{
+  "politician_id": "a961a076-f7be-436f-881f-155a0e9e687c",
+  "findings": [
+    {
+      "id": "d6f2122845534eed211839ab45c63015c75349e4f3b76bf89c87c8f53e73299d",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=1163&Year=2025&Initiative=false",
+      "date": "2025-04-22",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1163-2025",
+      "act": "yea",
+      "motion": "House Final Passage as Amended by the Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA House, House Final Passage as Amended by the Senate, 2025-04-22: yea (tally 57–39); census gate: none.",
+      "subjects": [
+        "permit to purchase required for every firearm purchase or transfer",
+        "certified safety training with live-fire exercise before permit or concealed pistol license",
+        "state patrol background check and delay of transfers for open charges or warrants",
+        "concealed pistol license denial if training not shown"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/1163-S2.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1163-2025.chaptered.html",
+          "sha256": "3c9350e1d7c2659a79cdad04b4cae43eadead2a484a349fddafbd09b29ceceec"
+        }
+      }
+    },
+    {
+      "id": "2c7fd91e9fde74af669f1a8ad8ed6fed302c1a84640547ea48a88173168e7f30",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=2235&Year=2025&Initiative=false",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2235-2026",
+      "act": "yea",
+      "motion": "House 3rd Reading & Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "WA House, House 3rd Reading & Final Passage, 2026-02-10: yea (tally 95–1); census gate: near-unanimous.",
+      "subjects": [
+        "concealed pistol license records exempt from public records requests",
+        "permit to purchase and firearm transfer records exempt from public records requests"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/House%20Bills/2235.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2235-2026.introduced.html",
+          "sha256": "8b925d3e881bf9ec7f69aad5fba9683ff51291de46dc3f6ef763df3bea892c94"
+        }
+      }
+    },
+    {
+      "id": "31a86e143fc592205539930ce4b14aa7bb32e6f770aefe1b2a474abe161e71e2",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=2320&Year=2025&Initiative=false",
+      "date": "2026-03-11",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2320-2026",
+      "act": "yea",
+      "motion": "House Final Passage as Amended by the Senate",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA House, House Final Passage as Amended by the Senate, 2026-03-11: yea (tally 58–38); census gate: none.",
+      "subjects": [
+        "ban on 3D-printing and CNC-milling untraceable guns and frames",
+        "ban on sharing digital gun-making files",
+        "machine gun and bump-stock manufacture by any means"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/2320-S.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2320-2026.chaptered.html",
+          "sha256": "94b984934095112c128ea57c3a6b6d0f8c03ee5eefd39970afb718b33e489762"
+        }
+      }
+    },
+    {
+      "id": "ced39ca03899a59761e37ab725f41af17b19c4de4079b5ddffbb0c361406726a",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=2521&Year=2025&Initiative=false",
+      "date": "2026-02-23",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2521-2026",
+      "act": "yea",
+      "motion": "House 3rd Reading & Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "WA House, House 3rd Reading & Final Passage, 2026-02-23: yea (tally 53–36); census gate: none.",
+      "subjects": [
+        "background check fee set to cover state patrol costs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/2521.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2521-2026.chaptered.html",
+          "sha256": "3243a76da2b60edc66d013a33ec42ec3a90429c95317177eacd70e4d0463e69a"
+        }
+      }
+    },
+    {
+      "id": "cea4d6a1f71fe64a9cc077677c7b97db6553fcfce9a5f74694d2d58047be3aff",
+      "kind": "record",
+      "url": "https://app.leg.wa.gov/billsummary?BillNumber=2320&Year=2025&Initiative=false",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "WA-HB-2320-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of WA-HB-2320-2026 (sponsor list (prime / co-sponsor)): HB2320 (2025-2026 Regular): Concerning the regulation of firearm manufacturing..",
+      "subjects": [
+        "ban on 3D-printing and CNC-milling untraceable guns and frames",
+        "ban on sharing digital gun-making files",
+        "machine gun and bump-stock manufacture by any means"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Chaptered, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/Session%20Laws/House/2320-S.SL.htm, downloaded directly)",
+        "fetched_at": "2026-11-13T18:45:04.141319Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2320-2026.chaptered.html",
+          "sha256": "94b984934095112c128ea57c3a6b6d0f8c03ee5eefd39970afb718b33e489762"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety laws",
+        "firearm regulation",
+        "background checks",
+        "assault-style weapons",
+        "carry permits",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://housedemocrats.wa.gov/zahn/ (403)",
+        "blocked: https://ballotpedia.org/Janice_Zahn (403 on direct request; page fetch returned empty)",
+        "not reviewed: https://www.janicezahn.com (campaign site request timed out)",
+        "web search: one news search on name plus gun words found no statements or gun bills by her beyond bulk-data votes; a voter-guide listing (lead only, not fetched) tags her a 2025 gun-sense candidate",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: general-election ballot status for 2026 not confirmed on a fetched page; a search summary says she is the District 41 incumbent in the 2026 race"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:42:25.110Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation general",
+        "assault-style weapons and magazines",
+        "background checks and permits to purchase",
+        "red flag orders",
+        "ghost guns",
+        "carry permits and places guns are allowed",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 meetings)",
+        "blocked: https://housedemocrats.wa.gov/zahn/ (403)",
+        "blocked: https://ballotpedia.org/Janice_Zahn (403)",
+        "campaign site https://janicezahn.org did not load (no response); https://www.janiceforwa.com and https://www.zahnforwa.com also no response",
+        "sponsor list: covered by bulk bill data",
+        "roll-call pages: covered by bulk bill data",
+        "web searches (3): news and statement searches on name plus gun words returned nothing quoting her on the subject; a search snippet (not fetched as a source) places her as the 41st District incumbent in the 2026 primary, so general-election ballot status was not independently confirmed from a fetched page",
+        "https://ivoterguide.com/candidate/87889/race/23129/election/1301 fetched: a voter-guide page with third-party description and endorsement list, no words by her on the subject, so not saved",
+        "https://results.vote.wa.gov/results/20261103/legislativedistrict41.html: 404, not available",
+        "not reviewed: her House caucus newsletters and floor remarks (site blocked)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:52:48.780Z",
+      "by": "source-collector"
+    }
+  ]
+}

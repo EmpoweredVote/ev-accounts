@@ -1,0 +1,133 @@
+{
+  "id": "WA-HB-1073-2019",
+  "scope": "state:wa",
+  "title": "HB1073 (2019-2020 Regular): Addressing undetectable and untraceable firearms.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1073&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1073.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Javier Valdez",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    },
+    {
+      "name": "Tina Orwall",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7535e225-d3d0-40ca-ba9c-3890563c40a0"
+    },
+    {
+      "name": "Vandana Slatter",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2147a010-bd4e-445c-840a-8d5ad69573ca"
+    },
+    {
+      "name": "Shelley Kloba",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b918fb31-108f-49e7-b977-627ce667422d"
+    },
+    {
+      "name": "Strom Peterson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6341053d-0580-4fbf-85ea-71ddb6b6f838"
+    },
+    {
+      "name": "Christine Kilduff",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Cindy Ryu",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "86e6a2bf-5216-4022-900c-621a8480f2e7"
+    },
+    {
+      "name": "Joe Fitzgibbon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9f914ddb-ba7c-4b30-b756-fe7cd981f919"
+    },
+    {
+      "name": "Laurie Jinkins",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ce184542-9397-469f-ba78-8c735bce20fa"
+    },
+    {
+      "name": "Eileen Cody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Beth Doglio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "45737b89-a83b-421f-9d6c-abc829c7eae0"
+    },
+    {
+      "name": "Gerry Pollet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8170e-a747-41de-ad39-769d8e0dd901"
+    },
+    {
+      "name": "Derek Stanford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78230dff-4e33-4d33-8c46-71f00db01858"
+    },
+    {
+      "name": "Noel Frame",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4991ee01-0a35-454f-bdf6-bb2f34cf1c30"
+    },
+    {
+      "name": "Amy Walen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "be3c2a24-1576-4636-9374-18fc77a8513f"
+    },
+    {
+      "name": "Steve Bergquist",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f4f7acdf-1761-4cac-82e6-19bf8f6ea525"
+    },
+    {
+      "name": "Mari Leavitt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4c8b65f9-faab-4948-acc8-ab7a11769c15"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/1073.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1073-2019.introduced.html",
+      "sha256": "f122f5aab92986d8978f8b724f4c0a50891214de0ca78a39e58d5f092d7b5872"
+    },
+    "note": "Introduced version. Sec. 1 adds definitions (assemble, major component, manufacture, undetectable, untraceable); Sec. 4 adds the new terms to the contraband list in RCW 9.41.220. Sections 3-5 take effect July 1, 2019."
+  },
+  "operative_text": "NEW SECTION Sec. 2 (new RCW section): (1) No person may knowingly or recklessly allow, facilitate, aid, or abet the manufacture or assembly of an undetectable firearm or untraceable firearm: (a) Is ineligible under RCW 9.41.040 to possess a firearm; or (b) has signed a valid voluntary waiver of firearm rights that has not been revoked under RCW 9.41.350. For purposes of this provision, the failure to conduct a background check as provided in RCW 9.41.113 shall be prima facie evidence of recklessness.\nNEW SECTION Sec. 2 (new RCW section): (2) Any person violating this section is guilty of a gross misdemeanor punishable under chapter 9A.20 RCW.\nSec. 3 (RCW 9.41.190): (1) Except as otherwise provided in this section, it is unlawful for any person to: (a) Manufacture, own, buy, sell, loan, furnish, transport, or have in possession or under control, any machine gun, bump-fire stock, undetectable firearm, untraceable firearm, short-barreled shotgun, or short-barreled rifle;\nSec. 5 (RCW 9.41.225): (3) It is unlawful for a person, in the commission or furtherance of a felony other than a violation of RCW 9.41.190, to discharge a firearm or to menace or threaten another person with a firearm if that firearm is an undetectable firearm or an untraceable firearm.\nSec. 1 (RCW 9.41.010): (34) \"Untraceable firearm\" means any firearm manufactured after July 1, 2019, for which the sale or distribution chain from a federally licensed dealer to the point of its first retail sale cannot be traced by law enforcement by means of a serial number registered with a federally licensed manufacturer imprinted on its major component."
+}

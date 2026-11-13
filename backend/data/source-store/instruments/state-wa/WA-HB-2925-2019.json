@@ -1,0 +1,44 @@
+{
+  "id": "WA-HB-2925-2019",
+  "scope": "state:wa",
+  "title": "HB2925 (2019-2020 Regular): Prohibiting the possession of weapons on state capitol grounds.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=2925&year=2019",
+    "http://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2925.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tana Senn",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mike Chapman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cf38d9ea-d72d-4a44-9d9c-efd9cd9c432f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2019-20/Htm/Bills/House%20Bills/2925.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-2925-2019.introduced.html",
+      "sha256": "74db6ae80fe05c676ce139eece9b6a7ced8f5e9f5c6f9d56c3003c315d3e0ef5"
+    },
+    "note": "Introduced version (HTML copy, marks visible). Adds (1)(f) to the list of places where knowingly possessing a weapon is unlawful (violation is a gross misdemeanor under unchanged subsection (12)); (1)(f) is read with the lead-in 'It is unlawful for any person to enter the following places when he or she knowingly possesses ... a weapon'. Also extends the correctional-officer exemption in (7) to (1)(f). Quote (13)(b) is existing definition relettered."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.300): (1)(f) State capitol grounds or any building located on state capitol grounds.\nSec. 1 (RCW 9.41.300): (13)(a) \"State capitol grounds\" means buildings and land owned by the state and otherwise designated as state capitol grounds, including the west capitol campus, the east capitol campus, the north capitol campus, the Tumwater campus, the Lacey campus, Sylvester Park, Centennial Park, the Old Capitol Building, and Capitol Lake.\nSec. 1 (RCW 9.41.300): (13)(b) \"Weapon\" as used in this section means any firearm, explosive as defined in RCW  70.74.010, or instrument or weapon listed in RCW  9.41.250."
+}

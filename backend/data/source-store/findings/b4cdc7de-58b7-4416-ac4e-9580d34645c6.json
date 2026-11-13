@@ -1,0 +1,32 @@
+{
+  "politician_id": "b4cdc7de-58b7-4416-ac4e-9580d34645c6",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry permits",
+        "Second Amendment / gun safety laws in general"
+      ],
+      "places": [
+        "status not confirmed: a search shows him as a 2026 candidate for state House, District 18 Position 2 (ballotready, voter guides), but no page fetched showed who advanced from the 2026-08-04 primary",
+        "On the Record (0 meetings)",
+        "campaign site https://electdeken.com and https://electdeken.com/priorities2026: nothing on the subject (priorities are childcare, infrastructure, education, economy, workers' rights, health care)",
+        "https://ivoterguide.com/candidate/81816/race/28808/election/1435: he left the gun-restrictions question unanswered; nothing on the subject",
+        "https://thereflector.com/stories/18th-district-candidate-aims-to-improve-lives-of-working-families,360988: nothing on the subject",
+        "blocked: https://washingtonstatestandard.com/voter-guides/contests/legislative-district-18-house-position-2/",
+        "blocked: https://bluevoterguide.org/district/WA/Washington_House_of_Representatives_District_18/55615/721",
+        "Ballotpedia https://ballotpedia.org/Deken_Letinich and https://ballotpedia.org/Washington_elections,_2026: fetch returned an empty page, not reviewed",
+        "news search on name plus gun words: nothing on the subject",
+        "sponsor list: covered by bulk bill data (not a legislator; no record)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:39:06.607Z",
+      "by": "source-collector"
+    }
+  ]
+}

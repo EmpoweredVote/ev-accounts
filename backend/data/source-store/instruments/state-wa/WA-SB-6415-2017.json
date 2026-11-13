@@ -1,0 +1,66 @@
+{
+  "id": "WA-SB-6415-2017",
+  "scope": "state:wa",
+  "title": "SB6415 (2017-2018 Regular): Requiring permission to bring a concealed firearm into another person's residence or dwelling place.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=6415&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/6415.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sam Hunt",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Maralyn Chase",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Manka Dhingra",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Karen Keiser",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rebecca Saldaña",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4218b4c2-d642-431e-a279-5aff5100379f"
+    },
+    {
+      "name": "Patty Kuderer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/Senate%20Bills/6415.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-6415-2017.introduced.html",
+      "sha256": "9ae14e88f8ad70ce36a455dba9747e33f03f9b09d0dcc89bf2a45162412eae81"
+    },
+    "note": "Version read: Introduced."
+  },
+  "operative_text": "NEW SECTION Sec. 1 (new RCW section in chapter 9.41): (1) It is unlawful for a person to carry a concealed firearm into the residence or dwelling place of another person without first obtaining the express permission of the owner or person in legal control or possession of the residence or dwelling place.\nNEW SECTION Sec. 1 (new RCW section in chapter 9.41): (2) A person who violates this section is guilty of a misdemeanor punishable under RCW 9A.20.010.\nNEW SECTION Sec. 1 (new RCW section in chapter 9.41): (3) Upon conviction for a violation of this section, the court shall order the person to surrender any concealed pistol license and prohibit the person from obtaining a concealed pistol license for a period of five years from the date of conviction.\nSec. 2 (RCW 9.41.075): (c) Conviction of the licensee of an offense under section 1 of this act;"
+}

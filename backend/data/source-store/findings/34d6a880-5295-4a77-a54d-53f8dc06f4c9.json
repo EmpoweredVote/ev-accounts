@@ -1,0 +1,57 @@
+{
+  "politician_id": "34d6a880-5295-4a77-a54d-53f8dc06f4c9",
+  "findings": [
+    {
+      "id": "eb93862536bbc793d481500f1926a628d4bdcf83dbc33dd97fa18a7e8047d6db",
+      "kind": "own-words",
+      "url": "https://kentreporter.com/news/king-county-council-votes-to-fund-measures-to-prevent-gun-violence",
+      "date": "2017-11",
+      "date_precision": "month",
+      "passage": "How many more bullet casings and bodies must fall before legislators in our nation’s capital muster the courage to stop people from dying from weapons in our streets? It is beyond time to act,",
+      "note": "Joint statement from six King County Council members including him, after a mass shooting in Texas, reported by a local news outlet (wire story). Calls on Congress to act on gun deaths. Date approximate (shortly after the Texas shooting).",
+      "subjects": [
+        "federal action on gun violence",
+        "general gun safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:38:31.887Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety laws",
+        "firearm relinquishment in protection orders",
+        "federal action on gun violence",
+        "safe storage",
+        "assault-style weapons",
+        "background checks",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia: blocked/empty page https://ballotpedia.org/Dave_Upthegrove",
+        "web search: name plus gun safety (nothing on the subject)",
+        "web search: King County Council gun legislation (leads to council-era items)",
+        "https://kentreporter.com/news/king-county-council-votes-to-fund-measures-to-prevent-gun-violence",
+        "not reviewed: https://www.issaquahreporter.com/2018/07/26/king-county-council-members-push-safe-storage-gun-regulation/ (no mention of him found in fetched text)",
+        "https://www.kingcounty.gov/en/legacy/council/news/2018/november/11-15-bohgunsigns (no mention of him in fetched text)",
+        "not reviewed: https://aqua.kingcounty.gov/Council/Clerk/OldOrdsMotions/Motion%2015092.pdf (text could not be read)",
+        "official office site https://www.dnr.wa.gov/ (reachable, not searched for subject words)",
+        "campaign site: not reviewed",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 1,
+      "at": "2026-11-13T20:38:31.887Z",
+      "by": "source-collector"
+    }
+  ]
+}

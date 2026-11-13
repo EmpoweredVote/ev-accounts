@@ -1,0 +1,74 @@
+{
+  "id": "WA-SB-5232-2023",
+  "scope": "state:wa",
+  "title": "SB5232 (2023-2024 Regular): Enhancing requirements for the purchase or transfer of firearms.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=5232&Year=2023&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2023-24/Pdf/Bills/Senate%20Bills/5232.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jesse Salomon",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "15808557-b30b-44cf-bad2-e627fa547e1a"
+    },
+    {
+      "name": "Marko Liias",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eba44d6a-6602-4a90-bef0-44ab12db6109"
+    },
+    {
+      "name": "Manka Dhingra",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Samuel Hunt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "Derek Stanford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78230dff-4e33-4d33-8c46-71f00db01858"
+    },
+    {
+      "name": "Javier Valdez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e47ce6-4390-47e0-937e-3c710e81abbb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2023-24/Htm/Bills/Senate%20Bills/5232.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5232-2023.introduced.html",
+      "sha256": "3a3286b46301d4a048ddd6d974ef455ee1515549f6bff1c801d6b4f4e1e2b3e0"
+    },
+    "note": "Introduced (HTML, marks visible; 2023 session). Struck: the concealed-license shortcut and separate semiautomatic assault rifle training rule (old 9.41.090(1)(a), (2)); the 'earlier of' background-check-or-ten-days rule (now requires both); the 60-day wait for non-residents. Secs. 5-7 (effective Jan 1, 2024) repeat the dealer rules with 'firearm' replacing 'pistol or semiautomatic assault rifle' and route dealer applications through the state patrol; Secs. 1 and 3 expire Jan 1, 2024; Sec. 8 repeals 2019 c 244 s 1."
+  },
+  "operative_text": "Sec. 2 (RCW 9.41.092): (1) Except as otherwise provided in this chapter, a licensed dealer may not deliver any firearm to a purchaser or transferee until: (a) The purchaser or transferee produces a certificate of completion of a certified firearm safety training program within the last five years, or proof that the purchaser or transferee is exempt from the training requirement, as provided in subsection (2) of this section; (b) The results of all required background checks are known and the purchaser or transferee (i) is not prohibited from owning or possessing a firearm under federal or state law and (ii) does not have a voluntary waiver of firearm rights currently in effect; and (c) Ten business days have elapsed from the date the licensed dealer requested the background check.\nSec. 2 (RCW 9.41.092): (2)(a) An applicant for the purchase or transfer of a firearm must provide a certificate of completion of a firearm safety training program within the last five years that is certified by the Washington state patrol and that, at a minimum, includes instruction on: (i) Basic firearms safety rules; (ii) Firearms and children, including secure gun storage and talking to children about gun safety; (iii) Firearms and suicide prevention; (iv) Secure gun storage to prevent unauthorized access and use; (v) Safe handling of firearms; (vi) State and federal firearms laws, including prohibited firearms transfers and locations where firearms are prohibited; (vii) State laws pertaining to the use of deadly force for self-defense; (viii) Techniques for avoiding a criminal attack and how to manage a violent confrontation, including conflict resolution; and (ix) Live-fire shooting exercises on a firing range that include a demonstration by the applicant of the safe handling of, and shooting proficiency with firearms.\nSec. 2 (RCW 9.41.092): (2)(d) The firearm safety training requirement of this subsection does not apply to: (i) A person who is a peace officer certified in accordance with RCW 43.101.095(1); or (ii) A person who is an active duty member of the armed forces of the United States, an active member of the national guard, or an active member of the armed forces reserves who, as part of the applicant's service, has completed, within the last five years, a course of training in firearms proficiency or familiarization that included training on the safe handling and shooting proficiency with firearms.\nNEW SECTION Sec. 4 (new RCW section, chapter 43.43): The Washington state patrol shall establish a program to provide certifications of firearm safety training programs that meet the requirements of RCW 9.41.092."
+}

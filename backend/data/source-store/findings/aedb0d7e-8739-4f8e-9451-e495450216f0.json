@@ -1,0 +1,33 @@
+{
+  "politician_id": "aedb0d7e-8739-4f8e-9451-e495450216f0",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "assault-style guns and magazines",
+        "background checks",
+        "red-flag orders",
+        "carry permits",
+        "Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "confirmed in the 2026 general-election race for WA House District 17 Position 1 (search summary and voter guide listings; not a legislator, so no sponsor list: covered by bulk bill data)",
+        "campaign site https://www.benchristly.com (landing, /issues, /priorities load but show nothing on the subject in fetched text)",
+        "https://ivoterguide.com/candidate/93038/race/34963/election/1502 (2nd Amendment questionnaire question shown as 'Did not answer'; nothing on the subject in his words)",
+        "https://www.ballotready.org/people/ben-christly (nothing on the subject)",
+        "blocked: https://washingtonstatestandard.com/voter-guides/contests/legislative-district-17-house-position-1/",
+        "blocked: https://bluevoterguide.org/WA/candidate_Ben_Christly/762389",
+        "blocked: https://ballotpedia.org/Ben_Christly",
+        "news search on name plus gun words (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:36:39.909Z",
+      "by": "source-collector"
+    }
+  ]
+}

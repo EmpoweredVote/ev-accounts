@@ -1,0 +1,57 @@
+{
+  "id": "WA-HB-1118-2025",
+  "scope": "state:wa",
+  "title": "HB1118 (2025-2026 Regular): Concerning restoration of the right to possess a firearm.",
+  "urls": [
+    "https://app.leg.wa.gov/billsummary?BillNumber=1118&Year=2025&Initiative=false",
+    "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bills/House%20Bills/1118.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tarra Simmons",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "370f9462-ed1d-4a83-b244-8bb593038444"
+    },
+    {
+      "name": "Joel McEntire",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5f02b7a6-a6a3-408f-8e9b-ea678c75b92d"
+    },
+    {
+      "name": "Mari Leavitt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4c8b65f9-faab-4948-acc8-ab7a11769c15"
+    },
+    {
+      "name": "Jim Walsh",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0f598558-61ab-4010-a0fd-e7c54f688a1a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/biennium/2025-26/Htm/Bills/House%20Bills/1118.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1118-2025.introduced.html",
+      "sha256": "3c93a281d3dc9d286759a5cd82c37605ef11b67a1f9eb17c3d3e21439df76e08"
+    },
+    "note": "Introduced version. Sec. 1 strikes 'a' and 'any' in subsection (3)(a) and replaces them with the three-county list. The rest of RCW 9.41.041 is reprinted unchanged."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.041): (1) A person who is prohibited from possession of a firearm under RCW 9.41.040 may not petition a court to have the person's right to possess a firearm restored if the person has been convicted or found not guilty by reason of insanity of: A felony sex offense; a class A felony; or a felony offense with a maximum sentence of at least 20 years, other than sentences under RCW 69.50.408 or 69.50.435.\nSec. 1 (RCW 9.41.041): (3)(a) The person must file a petition in a superior court in:\nSec. 1 (RCW 9.41.041): (i) Any county that entered a prohibition;\nSec. 1 (RCW 9.41.041): (ii) If the prohibiting conviction did not occur in Washington state, the county of the person's residence; or\nSec. 1 (RCW 9.41.041): (iii) If the person is not a resident of Washington state, Thurston county."
+}

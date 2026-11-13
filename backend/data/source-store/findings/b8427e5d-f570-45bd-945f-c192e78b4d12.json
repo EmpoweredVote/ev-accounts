@@ -1,0 +1,98 @@
+{
+  "politician_id": "b8427e5d-f570-45bd-945f-c192e78b4d12",
+  "findings": [
+    {
+      "id": "8c3d0445e4b61ebe708b793670ac1e3471a3231d753ed4b3054b97928b63e153",
+      "kind": "own-words",
+      "url": "https://www.opb.org/article/2025/05/21/washington-gun-law-permit-safety-course-house-bill-1163-firearms",
+      "date": "2025-05-20",
+      "date_precision": "day",
+      "passage": "Gun violence in Washington state breaks apart too many families and kills too many children. We must put commonsense reforms into place that save lives.",
+      "note": "Statement quoted by a news outlet (OPB, reprinting Washington State Standard) at the signing of the permit-to-purchase bill.",
+      "subjects": [
+        "permit to buy a gun",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:36:44.043Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45415006c9032294d42d1eb97d50a0caa2694f9bb447ac6ff8ee790468dd7353",
+      "kind": "record",
+      "url": "https://www.opb.org/article/2025/05/21/washington-gun-law-permit-safety-course-house-bill-1163-firearms",
+      "date": "2025-05-20",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-1163-2025",
+      "act": "signed",
+      "note": "Governor signed HB 1163, requiring a five-year State Patrol permit, with a fee and a firearms safety course, to buy a gun, starting May 1, 2027. Source is a news story; the bill page was not fetched.",
+      "subjects": [
+        "permit to buy a gun",
+        "firearm safety training"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:36:44.043Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1355ddc99e7235dadbe2cefd87b4eb1f6d422326f20d1eeff31fafd060501a9b",
+      "kind": "record",
+      "url": "https://www.everytown.org/press/washington-governor-signs-landmark-bill-to-address-threat-of-3d-printed-ghost-guns/",
+      "date": "2026-03-24",
+      "date_precision": "day",
+      "instrument_id": "WA-HB-2320-2026",
+      "act": "signed",
+      "note": "Governor signed HB 2320, which regulates digital gun blueprints and bars using 3D printers and CNC mills to make guns or machine-gun conversion devices. Source is an advocacy group's release, not an official page.",
+      "subjects": [
+        "home-made and 3D-printed guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-13T20:36:44.043Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permit to buy a gun",
+        "waiting period",
+        "background checks",
+        "ghost guns / 3D-printed guns",
+        "assault-style weapons",
+        "carry permits",
+        "red-flag orders",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "governor's office site: search page for 'firearm' returned no readable results (page is script-rendered); news list not reviewed further: https://governor.wa.gov/search?keys=firearm",
+        "campaign site: https://www.bobferguson.com loaded but had no gun text in the page source",
+        "blocked: https://ballotpedia.org/Bob_Ferguson (403)",
+        "news search on name plus gun-law words (two searches): found coverage of the 2025 permit-to-purchase signing and the 2026 ghost-gun bill signing",
+        "nothing found on assault-style weapons, carry permits, or red-flag orders as governor",
+        "confirmed in scope: sitting governor, signed bills as governor in 2025 and 2026"
+      ],
+      "found": 3,
+      "at": "2026-11-13T20:36:44.043Z",
+      "by": "source-collector"
+    }
+  ]
+}

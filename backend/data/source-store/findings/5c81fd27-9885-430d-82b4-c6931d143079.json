@@ -1,0 +1,35 @@
+{
+  "politician_id": "5c81fd27-9885-430d-82b4-c6931d143079",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm bans",
+        "background checks",
+        "red-flag orders",
+        "carry permits",
+        "ghost guns",
+        "Second Amendment / gun safety general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, none found)",
+        "identity: a voter-guide page (https://ivoterguide.com/candidate/93075/race/34982/election/1502) lists her as a candidate for WA State Rep., District 26 Position 2, with a general-election entry for 2026-11-03; official primary result page not found (results.vote.wa.gov 2026 URLs returned 404), so ballot status rests on that listing only",
+        "https://ivoterguide.com/candidate/93075/race/34982/election/1502: Second Amendment question shown as 'Did not answer'; nothing on the subject in her own words",
+        "web search: name plus gun safety / firearms: nothing on the subject about her",
+        "https://kitsapdailynews.com/?p=123340 candidate profile story: fetched, nothing on the subject found",
+        "blocked: https://ballotpedia.org/Renee_Hernandez_Greenfield (returned an empty page)",
+        "blocked: https://bluevoterguide.org/WA/candidate_Renee_Hernandez_Greenfield/599182 (403)",
+        "blocked: https://washingtonstatestandard.com/voter-guides/contests/washington-state-house-district-26-2-2026-primary/ (403)",
+        "not reviewed: https://arcwa.org/wp-content/uploads/2026/07/Renee_Hernandez_Greenfield.pdf",
+        "not reviewed: https://www.gigharbornow.org/?p=48961, https://www.gigharbornow.org/?p=55089 (candidate/community stories, leads only)",
+        "not reviewed: campaign site (address not found)",
+        "legislature bill pages: not applicable, she has not held legislative office; sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-13T20:47:21.975Z",
+      "by": "source-collector"
+    }
+  ]
+}

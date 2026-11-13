@@ -1,0 +1,74 @@
+{
+  "id": "WA-HB-1380-2017",
+  "scope": "state:wa",
+  "title": "HB1380 (2017-2018 Regular): Repealing background check provisions for gun sales and transfers relating to Initiative Measure No. 594.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1380&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1380.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Matt Shea",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jim Walsh",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0f598558-61ab-4010-a0fd-e7c54f688a1a"
+    },
+    {
+      "name": "Cary Condotta",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Larry Haler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dave Hayes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brian Blake",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Koster",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Taylor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1380.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1380-2017.introduced.html",
+      "sha256": "e881d6138ba9f10420c9011857423c475175155a7c2eddbd91ef53035f4660df"
+    },
+    "note": "Introduced version. Bill is a pure repealer; also repeals 2015 c 1 ss 2, 5, 6, 7, 11 and the uncodified s 1. (4) repeals RCW 9.41.137."
+  },
+  "operative_text": "NEW SECTION Sec. 1 (repealer): The following acts or parts of acts are each repealed:\nNEW SECTION Sec. 1 (repealer): (1) RCW 9.41.092 (Licensed dealer deliveries—Background checks) and 2015 c 1 s 4;\nNEW SECTION Sec. 1 (repealer): (2) RCW 9.41.113 (Firearm sales or transfers—Background checks—Requirements—Exceptions) and 2015 c 1 s 3;\nNEW SECTION Sec. 1 (repealer): (3) RCW 9.41.115 (Penalties—Violations of RCW 9.41.113) and 2015 c 1 s 9;\nNEW SECTION Sec. 1 (repealer): (5) RCW 82.08.833 (Exemptions—Sales or transfers of firearms—Unlicensed persons—Background check requirements) and 2015 c 1 s 10;"
+}

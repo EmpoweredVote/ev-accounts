@@ -1,0 +1,70 @@
+{
+  "id": "WA-SB-5297-2021",
+  "scope": "state:wa",
+  "title": "SB5297 (2021-2022 Regular): Modernizing, harmonizing, and improving the efficacy and accessibility of laws concerning civil protection orders.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=5297&year=2021",
+    "http://lawfilesext.leg.wa.gov/Biennium/2021-22/Pdf/Bills/Senate%20Bills/5297.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Manka Dhingra",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0097aee3-e409-44bc-ba20-121108c11ec7"
+    },
+    {
+      "name": "Jeannie Darneille",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mona Das",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Patty Kuderer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c3beb27-18df-4c31-86ac-3921d0c776ab"
+    },
+    {
+      "name": "Jamie Pedersen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ac881c7-2d11-42c1-9bc0-23f54770a64b"
+    },
+    {
+      "name": "Lisa Wellman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ff1e922-601b-45f3-a43d-2ef69220f54b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-access-to-justice: Secs. 1-71 (new chapter 7.---) — one unified court procedure for domestic violence, sexual assault, stalking, antiharassment and vulnerable adult protection orders (filing, service, hearings, interpreters, fees)",
+        "judicial-criminal-justice: Secs. 101-124 (RCW 9.94A.030, 9.94A.515, 9.94A.660, 9A.40.104, 9A.46.110, 10.31.100, 10.99.040 and others) — sentencing, offence and arrest provisions for violating protection orders, not limited to guns"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2021-22/Htm/Bills/Senate%20Bills/5297.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-SB-5297-2021.introduced.html",
+      "sha256": "808a513f9fc635a2d6e7d4aca2f0f51ddd3857e7fc5678d315db06b4bd8dd1c0"
+    },
+    "note": "Introduced version of a very large bill (about 790,000 characters, 183 sections). Quoted only the extreme risk protection order, firearm surrender and RCW 9.41.040 parts; many other sections amend firearm laws (RCW 9.41.010, 9.41.070, 9.41.075, 9.41.173, 9.41.300, 9.41.800, 9.41.801, 13.40.0357 and others) and were not quoted. Quoted headings run into the first sentence in this copy."
+  },
+  "operative_text": "NEW SECTION Sec. 43 (new chapter 7.---, extreme risk protection orders): (2) If a court finds there is reasonable cause to believe that the respondent poses a significant danger of causing personal injury to self or others in the near future by having in the respondent's custody or control, purchasing, possessing, accessing, receiving, or attempting to purchase or receive, a firearm, the court shall issue a temporary extreme risk protection order.\nNEW SECTION Sec. 45 (new chapter 7.---, surrender of firearms): SURRENDER OF FIREARMS—EXTREME RISK PROTECTION ORDERS.(1) Upon the issuance of any extreme risk protection order under this chapter, including a temporary extreme risk protection order, the court shall: (a) Order the respondent to surrender to the local law enforcement agency all firearms in the respondent's custody, control, or possession, and any concealed pistol license issued under RCW 9.41.070; and (b) Other than for ex parte temporary protection orders, direct law enforcement to revoke any concealed pistol license issued to the respondent. (3) At the time of surrender, a law enforcement officer taking possession of a firearm or concealed pistol license shall issue a receipt identifying all firearms that have been surrendered and provide a copy of the receipt to the respondent. Within 72 hours after service of the order, the officer serving the order shall file the original receipt with the court and shall ensure that his or her law enforcement agency retains a copy of the receipt.\nNEW SECTION Sec. 46 (new chapter 7.---, firearms return): FIREARMS RETURN AND DISPOSAL—EXTREME RISK PROTECTION ORDERS.(1) If an extreme risk protection order is terminated or expires without renewal, a law enforcement agency holding any firearm that has been surrendered pursuant to this chapter shall return any surrendered firearm requested by a respondent only after confirming, through a background check, that the respondent is currently eligible to own or possess firearms under federal and state law, and after confirming with the court that the extreme risk protection order has terminated or has expired without renewal.\nSec. 75 (RCW 9.41.040(2)(a)): (iii) During any period of time that the person is subject to an extreme risk protection order issued under chapter 7.--- RCW (the new chapter created in section 81 of this act) that was issued after a hearing for which the person received actual notice, and at which the person had an opportunity to participate, whether the court then issues a full order or reissues a temporary order. If the court enters an agreed order by the parties without a hearing, such an order meets the requirements of this subsection;"
+}

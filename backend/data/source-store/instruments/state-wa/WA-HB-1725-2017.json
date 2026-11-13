@@ -1,0 +1,75 @@
+{
+  "id": "WA-HB-1725-2017",
+  "scope": "state:wa",
+  "title": "HB1725 (2017-2018 Regular): Establishing an exemption from background check requirements for firearms sales or transfers between concealed pistol license holders.",
+  "urls": [
+    "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1725&year=2017",
+    "http://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1725.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "John Koster",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mike Chapman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cf38d9ea-d72d-4a44-9d9c-efd9cd9c432f"
+    },
+    {
+      "name": "Morgan Irwin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Vincent Buys",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brian Blake",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Matt Shea",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Taylor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mike Volz",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0a9d0edb-50ff-4e71-bb8d-a1a0390cdc55"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States public data converted to LegiScan layout (gun-policy Stage 5, Washington); operative text read by a Sonnet fill agent from the official Washington Legislature text (Introduced, https://lawfilesext.leg.wa.gov/Biennium/2017-18/Htm/Bills/House%20Bills/1725.htm, downloaded directly)",
+    "fetched_at": "2026-11-13T18:45:04.141319Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/WA-HB-1725-2017.introduced.html",
+      "sha256": "66bf2547a31139c4482567e7e8010276f86817a32b707378ac56eb14414b27c1"
+    },
+    "note": "Introduced. The only strike is the word 'or' at the end of (4)(f)/(g) as relettered; the rest of the section is existing law reprinted unchanged (subsection (1) requires background checks on all sales/transfers)."
+  },
+  "operative_text": "Sec. 1 (RCW 9.41.113): (4) This section does not apply to: (h) The sale or transfer of a firearm where the seller or transferor and the purchaser or transferee both possess a valid concealed pistol license."
+}
