@@ -667,6 +667,141 @@ def close_state_measures_whole_sessions_waits_and_refuses_to_replace_hand_work(t
     assert run('close_state.py', *args, '--session', f'{t}/proj/main/none.jsonl', ok=False).returncode != 0
 
 
+def topic_folder(t, **over):
+    """A made-up topic's stage5 folder with a config, rulings, a roster of four and one stored bill. Returns (profile path, stage5)."""
+    P = profile(t, topic_name='made-up topic', search={'subjects': ['widget limits;', 'widget permits.'], 'words': ['widget', 'gadget'],
+                                                     'subject_examples': ['limit widgets', 'permit gadgets']}, **over)
+    S = f'{t}/research/stage5'; os.makedirs(f'{S}/batches', exist_ok=True)
+    json.dump({'topic_key': 'made-up-topic', 'codebook': '9.9', 'ladder_text': '   Question: "How many widgets?"\n   1. None.\n   2. Some.\n   3. All.'}, open(f'{S}/coder-config.json', 'w'))
+    open(f'{S}/coder-rulings.md', 'w').write('# r\n\n## General {all}\n\n- g\n\n## Zedland notes {state:zz}\n\n- z\n\n## Other notes {state:yy}\n\n- y\n')
+    rows = ''.join(f'{p}\tPerson {p.upper()}\tstate\tZZ\t{sc}\n' for p, sc in (('a', 'sitting'), ('b', 'both'), ('c', 'candidate'), ('d', 'sitting')))
+    for f in (f'{S}/roster.tsv', f'{S}/batches/zz-roster.tsv'): open(f, 'w').write('politician_id\tfull_name\tlevel\tstate\tscope\n' + rows)
+    open(f'{S}/batches/zz-ids.txt', 'w').write('a\nb\nc\nd\n')
+    return P, S
+
+
+@check
+def stage5_prompts_fill_every_slot_from_the_profile_for_any_topic(t):
+    """Search briefs, bill-table prompts, quote-check prompts and coder jobs: no topic word of the tool's own, no unfilled slot."""
+    os.makedirs(t); P, S = topic_folder(t)
+    T = os.path.normpath(os.path.join(HERE, '..', '..', '..', '.claude', 'skills', 'season-topic-prep', 'templates'))
+    brief = open(f'{T}/BRIEF-stage5-find.md').read()
+    for word in ('voter', 'SAVE Act', 'gun', 'firearm', 'citizenship'): assert word not in brief, f'the search brief template names {word!r}'
+    src = open(os.path.join(TOOLS, 'stage5_prompts.py')).read() + open(os.path.join(TOOLS, 'run_state.py')).read()
+    for word in ('gun', 'firearm', 'voter'): assert word not in src, f'a shared tool names {word!r}'
+    os.makedirs(f'{S}/zz/find'); open(f'{S}/zz/find/d.json', 'w').write('{}')  # d is already searched
+    open(f'{t}/note.md', 'w').write('Skip the Zedland sponsor lists.')
+    sb = ['search-briefs', '--profile', P, '--state', 'zz', '--roster', f'{S}/batches/zz-roster.tsv']
+    run('stage5_prompts.py', *sb, '--ids', f'{S}/batches/zz-ids.txt', '--note-file', f'{t}/note.md')
+    b = open(f'{S}/zz/briefs/b.md').read()
+    assert '{{' not in b and 'How many widgets?' in b and '"widget", "gadget"' in b and 'widget permits.' in b and '"limit widgets", "permit gadgets"' in b
+    assert 'Skip the Zedland sponsor lists.' in b and f'{S}/zz/find/b.json' in b and 'and a candidate' in b and 'Before you finish' in b
+    jobs = open(f'{S}/waves/zz-search/jobs.tsv').read().splitlines()
+    assert [j.split('\t')[0] for j in jobs[1:]] == ['find-a', 'find-b', 'find-c'] and all(j.split('\t')[2] == 'sonnet' for j in jobs[1:]), 'the searched person is left out'
+    open(f'{t}/again.txt', 'w').write('a\n')
+    run('stage5_prompts.py', *sb, '--ids', f'{t}/again.txt', '--round', '2')
+    assert f'{S}/zz/find-2/a.json' in open(f'{S}/zz/briefs-2/a.md').read() and open(f'{S}/waves/zz-search-2/jobs.tsv').read().splitlines()[1].startswith('find2-a\t')
+    open(f'{t}/bad.txt', 'w').write('nobody\n')
+    assert run('stage5_prompts.py', *sb, '--ids', f'{t}/bad.txt', ok=False).returncode != 0, 'an id that is not in the roster'
+    json.dump({k: v for k, v in json.load(open(P)).items() if k != 'search'}, open(f'{t}/nosearch.json', 'w'))
+    assert run('stage5_prompts.py', 'search-briefs', '--profile', f'{t}/nosearch.json', '--state', 'zz', '--roster', f'{S}/batches/zz-roster.tsv', '--ids', f'{t}/again.txt', ok=False).returncode != 0
+    # bill table: the bills must be in the store of the worktree given; the rulings are {all} and this state's
+    W = f'{t}/wt'; shutil.copytree(T, f'{W}/.claude/skills/season-topic-prep/templates'); store = f'{W}/backend/data/source-store/instruments/state-zz'; os.makedirs(store)
+    for i in ('ZZ-HB-1-2025', 'ZZ-HB-2-2025', 'ZZ-SB-3-2025'): open(f'{store}/{i}.json', 'w').write('{}')
+    json.dump({'kept': ['ZZ-HB-1-2025', 'ZZ-HB-2-2025', 'ZZ-SB-3-2025']}, open(f'{t}/bills.json', 'w'))
+    bt = ['bill-table', '--profile', P, '--state', 'zz', '--state-name', 'Zedland', '--worktree', W]
+    run('stage5_prompts.py', *bt, '--bills', f'{t}/bills.json', '--parts', '2')
+    p0 = open(f'{S}/waves/zz-billtable/part0.md').read()
+    assert '{{' not in p0 and '## General {all}' in p0 and '## Zedland notes' in p0 and '## Other notes' not in p0 and '1 to 3' in p0, 'three rungs, two rulings sections'
+    assert 'ZZ-HB-1-2025' in p0 and 'ZZ-HB-2-2025' not in p0 and f'{S}/bill-table-zz.part0.json' in p0 and len(open(f'{S}/waves/zz-billtable/jobs.tsv').read().splitlines()) == 3
+    json.dump(['ZZ-HB-9-2025'], open(f'{t}/gone.json', 'w'))
+    assert run('stage5_prompts.py', *bt, '--bills', f'{t}/gone.json', ok=False).returncode != 0, 'a bill that is not in the store'
+    with open(f'{W}/.claude/skills/season-topic-prep/templates/stage5-bill-table-prompt.md', 'a') as fh: fh.write('\n{{NOT_A_SLOT}}\n')
+    shutil.rmtree(f'{S}/waves/zz-billtable')
+    r = run('stage5_prompts.py', *bt, '--bills', f'{t}/bills.json', ok=False)
+    assert r.returncode != 0 and 'NOT_A_SLOT' in r.stderr and not os.path.exists(f'{S}/waves/zz-billtable/part0.md'), 'an unfilled slot writes no prompt'
+    # quote check: one line per finding the dry run names, once
+    B = f'{S}/write/zz-01'; os.makedirs(B); os.makedirs(f'{S}/codes')
+    f1, f2 = 'a' * 64, 'b' * 12 + 'c' * 52
+    uid = '0e935fed-534e-42b0-a5ad-74f4199ff6df'
+    json.dump({'finding_ids': [f1, f2]}, open(f'{S}/codes/{uid}.json', 'w'))
+    open(f'{B}/dry.txt', 'w').write(f'refused (3):\n  {uid}  finding {f1[:12]}…: no quote check\n  {uid}  finding {f2[:12]}…: no quote check\n  {uid}  finding {f1[:12]}…: again\n')
+    run('stage5_prompts.py', 'quote-check', '--profile', P, '--batch', B, '--dry-run', f'{B}/dry.txt', '--per', '1')
+    assert json.load(open(f'{B}/qc/to-check.json')) == [[f1, uid], [f2, uid]], 'a finding listed twice is checked once'
+    q = open(f'{B}/qc/qc-prompt-2.md').read()
+    assert '{{' not in q and f2 in q and f1 not in q and 'made-up topic' in q and 'version 9.9' in q and f'{B}/qc/qc-2.jsonl' in q and 'Write all 1 lines' in q
+    assert len(open(f'{B}/qc/jobs.tsv').read().splitlines()) == 3
+    os.makedirs(f'{t}/cb'); [open(f'{t}/cb/{n}', 'w').write('x') for n in ('zz-01.md', 'zz-02.md', 'zz-01-r1.md', 'zz-rec-01.md')]
+    run('stage5_prompts.py', 'coder-jobs', '--briefs', f'{t}/cb', '--name', 'zz', '--wave', f'{t}/cw')
+    j = open(f'{t}/cw/jobs.tsv').read().splitlines()
+    assert [x.split('\t')[0] for x in j[1:]] == ['zz-01', 'zz-02'] and all(x.endswith('\topus\tRead,Write') for x in j[1:]), 'coders are Opus, with Read and Write only'
+
+
+STUB = """import os, sys
+a = sys.argv[1:]; key = os.path.basename(sys.argv[0]) + (' ' + a[0] if a and not a[0].startswith(('-', '/')) else '')
+C = os.environ['STUB_DIR']; open(C + '/calls.txt', 'a').write(key + ' :: ' + ' '.join(a) + chr(10))
+f = C + '/exit ' + key
+if os.path.exists(f + ' once'): code = int(open(f + ' once').read()); os.remove(f + ' once'); sys.exit(code)
+if os.path.exists(C + '/say ' + key): print(open(C + '/say ' + key).read())
+sys.exit(int(open(f).read()) if os.path.exists(f) else 0)
+"""
+
+
+@check
+def run_state_chains_the_steps_and_stops_only_where_a_person_is_needed(t):
+    """Record pass to early check in order; each stop that needs a ruling or a coder ends the run before the next step."""
+    os.makedirs(t); P, S = topic_folder(t, sides='1/2,3', record_script=True, control_groups=['3:2', '1:2'])
+    tools, bin_, C = f'{t}/tools', f'{t}/bin', f'{t}/stub'
+    for d in (tools, bin_, C, f'{S}/record-briefs-zz', f'{S}/code-briefs', f'{S}/search-plan-zz'): os.makedirs(d)
+    for n in ('run_state.py', 'session_card.py', '_args.py'): shutil.copy(os.path.join(TOOLS, n), tools)
+    for n in ('wave.py', 'stage5_prompts.py', 'search_list.py', 'search_effect.py'): open(f'{tools}/{n}', 'w').write(STUB)
+    for n in ('npx', 'npm'):  # npx tsx scripts/stage5/<tool>.ts <args> ; npm run <script> --prefix <dir> -- <args>
+        open(f'{bin_}/{n}', 'w').write(f'#!/bin/sh\nif [ "$1" = tsx ]; then shift; else shift; fi\nexec {sys.executable} -I {C}/stub.py "$@"\n'); os.chmod(f'{bin_}/{n}', 0o755)
+    open(f'{C}/stub.py', 'w').write(STUB.replace("os.path.basename(sys.argv[0]) + (' ' + a[0] if a and not a[0].startswith(('-', '/')) else '')",
+                                                 "os.path.basename(a[0]) + ((' ' + a[1]) if len(a) > 1 and a[1] in ('plan', 'adopt') else '')"))
+    for n in ('zz-rec-01', 'zz-rec-02'): open(f'{S}/record-briefs-zz/{n}.ids.txt', 'w').write('a\n')
+    open(f'{S}/code-briefs/zz-01.ids.txt', 'w').write('a\n'); open(f'{S}/search-plan-zz/recode-ids.txt', 'w').write('a\n')
+    open(f'{S}/search-plan-zz/research-again-ids.txt', 'w').write('b\n')
+    env = dict(os.environ, STUB_DIR=C, PATH=bin_ + os.pathsep + os.environ['PATH'])
+    def go(*a):
+        if os.path.exists(f'{C}/calls.txt'): os.remove(f'{C}/calls.txt')
+        p = subprocess.run([sys.executable, '-I', f'{tools}/run_state.py', '--profile', P, '--state', 'zz', '--worktree', f'{t}/wt', '--tools', tools, *a], capture_output=True, text=True, env=env)
+        calls = [l.split(' :: ')[0] for l in open(f'{C}/calls.txt')] if os.path.exists(f'{C}/calls.txt') else []
+        return p, calls
+    os.makedirs(f'{t}/wt/backend')
+    def stub(key, code, once=False): open(f'{C}/exit {key}' + (' once' if once else ''), 'w').write(str(code))
+    def clear():
+        for f in os.listdir(C):
+            if f.startswith(('exit ', 'say ')): os.remove(f'{C}/{f}')
+    p, calls = go()
+    want = ['record-script.ts plan', 'coder-inputs.ts', 'stage5_prompts.py coder-jobs', 'wave.py', 'split-codes.ts', 'split-codes.ts', 'record-script.ts adopt',
+            'search_list.py plan', 'stage5_prompts.py search-briefs', 'wave.py', 'topic:stage5-find', 'search_list.py recode',
+            'stage5_prompts.py search-briefs', 'wave.py', 'topic:stage5-find', 'search_list.py recode',
+            'coder-inputs.ts', 'stage5_prompts.py coder-jobs', 'wave.py', 'split-codes.ts', 'search_list.py adopt', 'search_effect.py',
+            'topic:stage5-report', 'topic:stage5-theme-prompt', 'wave.py', 'topic:stage5-report']
+    assert p.returncode == 0 and calls == want, (p.returncode, p.stdout[-400:], calls)
+    full = open(f'{C}/calls.txt').read()
+    assert '--control-group 3:2 --control-group 1:2' in full and '--sides 1/2,3 --skip-rungs 3,1' in full and f'--dir {S}/zz/find-2 ' in full and '--round 2' in full
+    assert f'--ids {S}/batches/zz-ids.txt --record-codes' in full and '--topic made-up-topic' in full and sorted(json.load(open(f'{S}/zz/run/log.json'))) == list('1234567')
+    stub('record-script.ts adopt', 4); p, calls = go()
+    assert p.returncode == 4 and calls[-1] == 'record-script.ts adopt' and 'standing check' in p.stdout, 'a failed standing check ends the run before the search plan'
+    clear(); stub('split-codes.ts', 1); p, calls = go()
+    assert p.returncode == 10 and 'search_list.py plan' not in calls and 'never by hand' in p.stdout, 'a sent-back code goes to a coder'
+    clear(); open(f'{C}/say topic:stage5-find', 'w').write('refused 0e935fed-534e-42b0-a5ad-74f4199ff6df.json: a party name in places')
+    p, calls = go('--from', '3'); assert p.returncode == 10 and calls[-1] == 'topic:stage5-find' and 'refused 1 search file' in p.stdout, p.stdout
+    clear(); stub('search_list.py adopt', 4); p, calls = go('--from', '6')
+    assert p.returncode == 4 and calls == ['search_list.py adopt', 'search_effect.py'] and 'reopened.tsv' in p.stdout, 'the effect is still measured; the early check waits'
+    clear(); stub('topic:stage5-report', 4); p, calls = go('--from', '7')
+    assert p.returncode == 4 and 'runner stop 2' in p.stdout and len(calls) == 4, 'the themes are made before the runner is asked'
+    clear(); stub('topic:stage5-report', 3); p, calls = go('--from', '7'); assert p.returncode == 10 and len(calls) == 1
+    clear(); stub('wave.py', 1); p, calls = go('--from', '5'); assert p.returncode == 2 and calls[-1] == 'wave.py', 'a failed command ends the run'
+    clear(); p, calls = go('--from', '6', '--to', '6'); assert p.returncode == 0 and calls == ['search_list.py adopt', 'search_effect.py']
+    p, calls = go('--print'); assert p.returncode == 0 and not calls and '# step 7: check' in p.stdout, '--print runs nothing'
+    json.dump({**json.load(open(P)), 'control_groups': [], 'record_script': False}, open(f'{t}/noskip.json', 'w'))
+    r = subprocess.run([sys.executable, '-I', f'{tools}/run_state.py', '--profile', f'{t}/noskip.json', '--state', 'zz'], capture_output=True, text=True, env=env)
+    assert r.returncode != 0 and 'no skip rule' in r.stderr, 'a topic with no skip rule is refused, not run with another topic\'s rule'
+
+
 @check
 def wave_starts_agents_slim_and_only_with_named_tools(t):
     os.makedirs(t); open(f'{t}/p.md', 'w').write('x')

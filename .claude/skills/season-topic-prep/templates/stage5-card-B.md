@@ -43,76 +43,41 @@ not read session A's history: open only the section a step names.
 **B0. Start.** Note the UTC start time. Read the hand-over. Re-take the lease if it lapsed.
 
 {{#SKIP}}
-**B1. Record pass.**
-
-{{#SCRIPT}}
-```bash
-npx tsx scripts/stage5/record-script.ts plan --config {{S}}/coder-config.json --rulings {{S}}/coder-rulings.md \
-  --roster {{S}}/roster.tsv --ids {{S}}/batches/{{xx}}-ids.txt --unit state:{{xx}} --bill-table {{S}}/bill-table-{{xx}}.json \
-  --sides {{SIDES}} --skip-rungs {{SKIP_RUNGS}} --name {{xx}}-rec --out {{S}}/record-briefs-{{xx}}
-npx tsx scripts/stage5/coder-inputs.ts --config {{S}}/coder-config.json --rulings {{S}}/coder-rulings.md \
-  --roster {{S}}/roster.tsv --ids {{S}}/record-briefs-{{xx}}/{{xx}}-rec-coder-ids.txt --unit state:{{xx}} --name {{xx}}-rec \
-  --out {{S}}/record-briefs-{{xx}} --coded-dir {{S}}/record-coded --record-only --bill-table {{S}}/bill-table-{{xx}}.json
-# wave (Opus), then split-codes.ts for each coded file into {{S}}/record-codes, then:
-npx tsx scripts/stage5/record-script.ts adopt --out {{S}}/record-briefs-{{xx}} --name {{xx}}-rec --codes {{S}}/record-codes
-```
-
-The script codes the plain cases; Opus codes the rest and, blind, a standing check of the script's people.
-🛑 `adopt` exit 4 = the check failed: no script code is released. Show the runner both codes (an unlisted stop) and
-code every script person with Opus until the runner rules. Detail: README "Record pass by script".
-{{/SCRIPT}}
-{{^SCRIPT}}
-The record pass by script is not approved for this topic. Opus codes everyone with a record:
+**B1 to B8 in one command.** Run it in the background; it wakes you only at a stop.
 
 ```bash
-npx tsx scripts/stage5/coder-inputs.ts --config {{S}}/coder-config.json --rulings {{S}}/coder-rulings.md \
-  --roster {{S}}/roster.tsv --ids {{S}}/batches/{{xx}}-ids.txt --unit state:{{xx}} --name {{xx}}-rec \
-  --out {{S}}/record-briefs-{{xx}} --coded-dir {{S}}/record-coded --record-only --bill-table {{S}}/bill-table-{{xx}}.json
-# wave (Opus), then split-codes.ts for each coded file into {{S}}/record-codes
-```
-{{/SCRIPT}}
-
-Keep `{{S}}/record-briefs-{{xx}}`: step B4 reads it.
-
-**B2. Search list.**
-
-```bash
-python3 -I scripts/stage5/search_list.py plan --record-codes {{S}}/record-codes --roster {{S}}/batches/{{xx}}-roster.tsv \
-  {{CONTROL_ARGS}} --out {{S}}/search-plan-{{xx}}
+python3 -I scripts/stage5/run_state.py --profile {{PROFILE}} --state {{xx}}
 ```
 
-{{SEARCH_RULE}} `search.tsv` is the search target; write its count down.
+| Step | Does |
+|---|---|
+| 1 record | {{#SCRIPT}}The script codes the plain cases (`--sides {{SIDES}} --skip-rungs {{SKIP_RUNGS}}`); Opus codes the rest and, blind, a standing check of the script's people.{{/SCRIPT}}{{^SCRIPT}}Opus codes everyone with a record (the record pass by script is not approved for this topic).{{/SCRIPT}} |
+| 2 plan | `search_list.py plan {{CONTROL_ARGS}}`. {{SEARCH_RULE}} |
+| 3 search | One Sonnet searcher per person in `search.tsv`, each writing `{{S}}/{{xx}}/find/<id>.json`; then the import, from that folder only. |
+| 4 recode | Only people with a new finding are coded again. A search that read none of the person's own pages is run once more. |
+| 5 code | Second coding pass (Opus), blind. |
+| 6 adopt | Checks each control apart, adopts the skipped codes, counts what the search changed. |
+| 7 check | Early check report, theme pass, report again. |
 
-**B3. Search and import.** One `source-collector` (Sonnet) per person in `search.tsv`, brief
-`templates/BRIEF-stage5-find.md`, each writing `{{S}}/{{xx}}/find/<politician_id>.json`, in waves of at most 8.
+Before you start, write the state's own search note, if it has one, to `{{S}}/{{xx}}/search-note.md` (for example
+"sponsorships and floor votes come from the bulk bill data: skip the legislature's own lists"). It is added to
+every search brief.
 
-```bash
-npm run topic:stage5-find --prefix backend -- import --topic {{TOPIC}} --season draft --dir {{S}}/{{xx}}/find --roster {{S}}/roster.tsv
-```
+When it stops, it prints why and the `--from N` to resume with. Read `{{S}}/{{xx}}/run/step-N.log`.
 
-A refused file names the person and the problem: fix the file or brief that person again.
+- **Exit 4 at step 1:** the standing check failed. No script code was released. 🛑 Show the runner both codes
+  (an unlisted stop). Until the runner rules, Opus codes every script person.
+- **Exit 10, codes sent back:** re-code those people with a coder in a send-back round, split them, resume. Never
+  fix a code by hand.
+- **Exit 10, search files refused:** fix each file or brief that person again, import the folder again, resume.
+- **Exit 4 at step 6:** a control person changed. `reopened.tsv` lists the group to search and code after all.
+  Report it.
+- **Exit 4 at step 7:** 🛑 **stop 2.** Doesn't fit is over 1 in 5, or one theme is over 1 in 10. Show the split and
+  the themes, ask one question, recommend one answer. Detail: STAGE5 §5.
+- **Exit 2:** a command failed. Fix the cause; do not work around the step by hand.
 
-**B4. Re-code list.**
-
-```bash
-python3 -I scripts/stage5/search_list.py recode --record-codes {{S}}/record-codes --record-briefs {{S}}/record-briefs-{{xx}} \
-  --out {{S}}/search-plan-{{xx}} --wave-dir {{S}}/waves/{{xx}}-search --codes {{S}}/codes --apply
-```
-
-`research-again-ids.txt`: search these once more (B3), import, run `recode` again. `recode-ids.txt`: only these are
-coded again. Everyone else keeps the record-only code.
-
-**B5. Second coding pass.** `coder-inputs.ts` as in B1 without `--record-only`, with
-`--ids {{S}}/search-plan-{{xx}}/recode-ids.txt --name {{xx}}`, wave (Opus), then `split-codes.ts` into `{{S}}/codes`.
-
-**B6. Adopt, and count what the search changed.**
-
-```bash
-python3 -I scripts/stage5/search_list.py adopt --record-codes {{S}}/record-codes --codes {{S}}/codes --out {{S}}/search-plan-{{xx}}
-```
-
-Exit 4 = a control person changed. `adopt` still adopts the groups that held and lists the failed group in
-`reopened.tsv`: search and code those people (B3 to B5), run `adopt` again, and report it.
+Each step's own commands, if you must run one alone: `run_state.py … --print`. Write down the search target (the
+count of `search.tsv`) and each stop that is not on the list above.
 {{/SKIP}}
 {{^SKIP}}
 **B1 to B6. Search everyone, then code once.** No skip rule is approved for this topic, so every person in
@@ -151,8 +116,15 @@ ask one question, recommend one answer. Detail: STAGE5 §5.
 python3 -I scripts/stage5/run_recipe.py {{S}}/write/{{xx}}-01
 ```
 
-It stops for the quote check (one Opus wave, `templates/stage5-quote-check-prompt.md`), for a gate above 0 high,
-and for held people. After a tool fix, replay steps 7 to 9 with `--replay`, never by hand. Roll-call cross-checks
+It stops for the quote check, for a gate above 0 high, and for held people. The quote check is three commands:
+
+```bash
+python3 -I scripts/stage5/stage5_prompts.py quote-check --profile {{PROFILE}} --batch {{S}}/write/{{xx}}-01 --dry-run {{S}}/write/{{xx}}-01/dry-run-0.txt
+python3 -I scripts/stage5/wave.py {{S}}/write/{{xx}}-01/qc/jobs.tsv --out {{S}}/waves/{{xx}}-qc --add-dir {{R}} --add-dir {{WT}}
+npx tsx scripts/stage5/quote-check-validate.ts {{S}}/write/{{xx}}-01 {{S}}
+```
+
+Then resume the recipe with `--from 2`. After a tool fix, replay steps 7 to 9 with `--replay`, never by hand. Roll-call cross-checks
 must show 0 disagree; a vote that cannot be placed holds its person, it is never guessed. Count each gate run and
 each hand fix. Detail: STAGE5 §7 "The recipe, in order".
 

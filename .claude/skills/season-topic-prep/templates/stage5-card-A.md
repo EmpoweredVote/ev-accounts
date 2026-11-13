@@ -85,7 +85,15 @@ for the hand-over how this legislature marks new and struck words, how its roll 
 npm run topic:stage5-prefill --prefix backend -- --topic {{TOPIC}} --research {{R}} --subjects {{S}}/subjects.json --units state:{{xx}}
 ```
 
-**A5. Bill table.** Opus agents with `templates/stage5-bill-table-prompt.md`, then:
+**A5. Bill table.** Build the prompts (the bills are the ids the fill merge kept, as a JSON list or one per line; a
+state's own note on how its texts mark changes goes in `--note-file`), run them as an Opus wave, then join the parts:
+
+```bash
+python3 -I scripts/stage5/stage5_prompts.py bill-table --profile {{PROFILE}} --state {{xx}} --state-name "{{STATE}}" --bills <ids file> --parts 3
+python3 -I scripts/stage5/wave.py {{S}}/waves/{{xx}}-billtable/jobs.tsv --out {{S}}/waves/{{xx}}-billtable/out --add-dir {{R}} --add-dir {{WT}}
+```
+
+Then:
 
 ```bash
 python3 -I scripts/stage5/bill_table.py check {{S}}/bill-table-{{xx}}.json --ids {{S}}/batches/{{xx}}-ids.txt

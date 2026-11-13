@@ -2,6 +2,7 @@
   "_about": "One per topic, saved as <stage5>/topic-profile.json. session_card.py and close_state.py read it, so no Stage 5 tool or card names a topic, a ladder side or a rung itself. Copy this file, fill it, and keep it with the topic's research folder (local, never pushed).",
   "topic_key": "example-topic",
   "label": "example-topic S3 Stage 5",
+  "topic_name": "example topic",
   "research": "/abs/path/.planning/research/s3-prep-example-topic",
   "stage5": "/abs/path/.planning/research/s3-prep-example-topic/stage5",
   "since": 2017,
@@ -11,7 +12,24 @@
   "settled": [
     "Write here each ruling a session must not ask again, one line each, with who ruled and when."
   ],
+  "search": {
+    "subjects": [
+      "One line per subject a searcher should look for, in plain words;",
+      "another subject line."
+    ],
+    "words": [
+      "word to search a site for",
+      "another word"
+    ],
+    "subject_examples": [
+      "a subject tag in plain words",
+      "another tag",
+      "a third tag"
+    ]
+  },
   "_sides": "The ladder's two sides for record-script.ts --sides, e.g. \"1,2,3/4,5\". null until the runner has ruled the sides for this topic.",
   "_record_script": "true only after the record pass by script has been approved for this topic (it needs sides and a bill table).",
-  "_control_groups": "search_list.py --control-group values, e.g. [\"5,2:10\", \"3:10\"]: record seats at these rungs are not searched, except a control of n per group. [] = search everyone. Each group needs its own measurement and the runner's ruling FOR THIS TOPIC; another topic's numbers do not carry over."
+  "_control_groups": "search_list.py --control-group values, e.g. [\"5,2:10\", \"3:10\"]: record seats at these rungs are not searched, except a control of n per group. [] = search everyone. Each group needs its own measurement and the runner's ruling FOR THIS TOPIC; another topic's numbers do not carry over.",
+  "_topic_name": "The topic in plain words, as the quote checker reads it (\"the person's own words on \u2026\").",
+  "_search": "What a search brief needs (stage5_prompts.py search-briefs): the subject list, the words to search a site for, and two or three example subject tags. The question itself comes from coder-config.json."
 }
