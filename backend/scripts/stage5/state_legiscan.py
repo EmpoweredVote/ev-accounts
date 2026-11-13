@@ -80,7 +80,9 @@ else:
         n, act, ins = r['full_name'], (f.get('act') or '').lower(), f.get('instrument_id') or ''
         if act in VOTE:
             k = key(f)
-            if (re.search(r'\bCommittee\b', f.get('motion') or '') and not re.search(r'Conference Committee Report|Committee Substitute|Committee Amendment', f.get('motion') or '', re.I)) or not k: unmapped.append([n, u, ins, f'{act}: no chamber/tally/date or committee']); continue
+            # A floor vote on a conference committee's report or recommendation is a floor vote (wa-01: "House Final
+            # Passage as recommended by the Conference Committee (#22)" held five people).
+            if (re.search(r'\bCommittee\b', f.get('motion') or '') and not re.search(r'Conference Committee|Committee Substitute|Committee Amendment', f.get('motion') or '', re.I)) or not k: unmapped.append([n, u, ins, f'{act}: no chamber/tally/date or committee']); continue
             hs = [h for h in hits.get(kid(k), {}).get('hits', []) if h['date'] == k['date']]
             # A special session reuses the regular session's bill numbers: keep only the hits from the matching
             # session (LegiScan's special-session bill URL ends /X<n>; a regular one ends with the year).
