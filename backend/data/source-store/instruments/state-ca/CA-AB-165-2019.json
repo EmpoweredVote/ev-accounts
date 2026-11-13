@@ -1,0 +1,430 @@
+{
+  "id": "CA-AB-165-2019",
+  "scope": "state:ca",
+  "title": "AB165 (2019-2020): Peace officer training: gun violence restraining orders.",
+  "urls": [
+    "http://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=201920200AB165",
+    "http://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200AB165"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Jesse Gabriel",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf"
+    },
+    {
+      "name": "Marc Berman",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "4cfacf31-d285-40ac-8373-e350912fddda"
+    },
+    {
+      "name": "David Chiu",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Laura Friedman",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Todd Gloria",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Anthony Portantino",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Philip Ting",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2019-05-23",
+      "body": "CA Assembly",
+      "motion": "AB 165 Gabriel Assembly Third Reading",
+      "kind": "roll-call",
+      "yes": 72,
+      "no": 0,
+      "absent": 8,
+      "note": "LegiScan roll call 871510; taken on the text 'Amended' of 2019-05-16",
+      "members": [
+        {
+          "name": "Franklin Bigelow",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Bloom",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob Bonta",
+          "vote": "yea",
+          "politician_id": "8b183a30-3afb-4d9e-aa40-aa2ad2c674aa"
+        },
+        {
+          "name": "Edwin Chau",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Cooley",
+          "vote": "abstain"
+        },
+        {
+          "name": "Brian Dahle",
+          "vote": "abstain"
+        },
+        {
+          "name": "Tom Daly",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Eggman",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Frazier",
+          "vote": "yea"
+        },
+        {
+          "name": "Cristina Garcia",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Gray",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Holden",
+          "vote": "yea"
+        },
+        {
+          "name": "Ian Calderon",
+          "vote": "yea"
+        },
+        {
+          "name": "Reginald Jones-Sawyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Marc Levine",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Maienschein",
+          "vote": "yea"
+        },
+        {
+          "name": "Jose Medina",
+          "vote": "yea"
+        },
+        {
+          "name": "Melissa Melendez",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Mullin",
+          "vote": "yea"
+        },
+        {
+          "name": "Al Muratsuchi",
+          "vote": "yea",
+          "politician_id": "ea803096-927f-41fe-98e1-deab56291810"
+        },
+        {
+          "name": "Jim Patterson",
+          "vote": "abstain"
+        },
+        {
+          "name": "Sharon Quirk-Silva",
+          "vote": "yea",
+          "politician_id": "1e29ce86-9e02-4079-b50d-bb0d039613a2"
+        },
+        {
+          "name": "Bill Quirk",
+          "vote": "yea"
+        },
+        {
+          "name": "Anthony Rendon",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Stone",
+          "vote": "yea"
+        },
+        {
+          "name": "Philip Ting",
+          "vote": "yea"
+        },
+        {
+          "name": "Marie Waldron",
+          "vote": "yea"
+        },
+        {
+          "name": "Shirley Weber",
+          "vote": "yea",
+          "politician_id": "4ba62f32-dd20-48ce-8d84-d09bb129ad59"
+        },
+        {
+          "name": "Adrin Nazarian",
+          "vote": "yea"
+        },
+        {
+          "name": "Lorena Gonzalez Fletcher",
+          "vote": "yea"
+        },
+        {
+          "name": "Freddie Rodriguez",
+          "vote": "yea"
+        },
+        {
+          "name": "William Brough",
+          "vote": "yea"
+        },
+        {
+          "name": "Autumn Burke",
+          "vote": "yea"
+        },
+        {
+          "name": "David Chiu",
+          "vote": "yea"
+        },
+        {
+          "name": "Kansen Chu",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Cooper",
+          "vote": "abstain"
+        },
+        {
+          "name": "Eduardo Garcia",
+          "vote": "abstain"
+        },
+        {
+          "name": "James Gallagher",
+          "vote": "yea",
+          "politician_id": "0a283c28-344c-40c9-ae48-bb2dcf1c7c4d"
+        },
+        {
+          "name": "Mike Gipson",
+          "vote": "yea",
+          "politician_id": "6133e73c-4c33-4cfc-9fd3-de1382729f42"
+        },
+        {
+          "name": "Jacqui Irwin",
+          "vote": "yea",
+          "politician_id": "97285c92-b664-4687-a1e4-6d88cf9c7fe4"
+        },
+        {
+          "name": "Tom Lackey",
+          "vote": "yea",
+          "politician_id": "e8bdd8a7-a1b2-43e3-afd4-df975980819e"
+        },
+        {
+          "name": "Evan Low",
+          "vote": "yea"
+        },
+        {
+          "name": "Devon Mathis",
+          "vote": "abstain"
+        },
+        {
+          "name": "Kevin McCarty",
+          "vote": "yea"
+        },
+        {
+          "name": "Patrick O'Donnell",
+          "vote": "yea"
+        },
+        {
+          "name": "Jay Obernolte",
+          "vote": "yea"
+        },
+        {
+          "name": "Miguel Santiago",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Wood",
+          "vote": "yea"
+        },
+        {
+          "name": "Chad Mayes",
+          "vote": "yea"
+        },
+        {
+          "name": "Rudy Salas",
+          "vote": "yea"
+        },
+        {
+          "name": "Steven Choi",
+          "vote": "yea",
+          "politician_id": "8dfb3b1f-622d-434d-9106-9eeb75bc9a66"
+        },
+        {
+          "name": "Eloise Reyes",
+          "vote": "yea",
+          "politician_id": "1571da4a-b832-4792-917c-184c155b1700"
+        },
+        {
+          "name": "Ash Kalra",
+          "vote": "yea",
+          "politician_id": "eb1a285e-fd86-4da1-a198-a66ad6a81be4"
+        },
+        {
+          "name": "Phillip Chen",
+          "vote": "yea",
+          "politician_id": "ed32efa5-b455-4323-a12f-5fe79bc4ffd6"
+        },
+        {
+          "name": "Cecilia Aguiar-Curry",
+          "vote": "yea",
+          "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257"
+        },
+        {
+          "name": "Heath Flora",
+          "vote": "yea",
+          "politician_id": "a0c59a09-fa45-4765-b6c5-17843699991d"
+        },
+        {
+          "name": "Kevin Kiley",
+          "vote": "abstain"
+        },
+        {
+          "name": "Tim Grayson",
+          "vote": "yea",
+          "politician_id": "29389f8b-de23-4312-af73-264289dc7774"
+        },
+        {
+          "name": "Marc Berman",
+          "vote": "yea",
+          "politician_id": "4cfacf31-d285-40ac-8373-e350912fddda"
+        },
+        {
+          "name": "Jordan Cunningham",
+          "vote": "yea"
+        },
+        {
+          "name": "Monique Limon",
+          "vote": "yea",
+          "politician_id": "c7a56941-597a-456b-8fd8-e4bd840014c1"
+        },
+        {
+          "name": "Laura Friedman",
+          "vote": "yea"
+        },
+        {
+          "name": "Blanca Rubio",
+          "vote": "yea",
+          "politician_id": "51d15b77-71bb-475e-b86e-c6e1b37b869d"
+        },
+        {
+          "name": "Sabrina Cervantes",
+          "vote": "yea",
+          "politician_id": "7e588ebb-d17c-43c6-9eef-558871b55330"
+        },
+        {
+          "name": "Randy Voepel",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Gloria",
+          "vote": "yea"
+        },
+        {
+          "name": "Vince Fong",
+          "vote": "abstain"
+        },
+        {
+          "name": "Joaquin Arambula",
+          "vote": "yea",
+          "politician_id": "9edab965-ac61-4227-a8d6-601c07821f53"
+        },
+        {
+          "name": "Wendy Carrillo",
+          "vote": "yea"
+        },
+        {
+          "name": "Sydney Kamlager-Dove",
+          "vote": "yea"
+        },
+        {
+          "name": "Jesse Gabriel",
+          "vote": "yea",
+          "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf"
+        },
+        {
+          "name": "Luz Rivas",
+          "vote": "yea"
+        },
+        {
+          "name": "Rebecca Bauer-Kahan",
+          "vote": "yea",
+          "politician_id": "2cca193f-574d-4ec7-b0c8-e0fcd27d5eab"
+        },
+        {
+          "name": "Tasha Horvath",
+          "vote": "yea",
+          "politician_id": "0a9171c6-0676-4704-b825-a7e16c66f1c2"
+        },
+        {
+          "name": "Tyler Diep",
+          "vote": "yea"
+        },
+        {
+          "name": "Cottie Petrie-Norris",
+          "vote": "yea",
+          "politician_id": "065c6e87-8778-43ee-ab44-b9982a677aa7"
+        },
+        {
+          "name": "James Ramos",
+          "vote": "yea",
+          "politician_id": "01dd07dc-ded1-4ba5-aff3-2dc2b386af12"
+        },
+        {
+          "name": "Robert Rivas",
+          "vote": "yea",
+          "politician_id": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4"
+        },
+        {
+          "name": "Christy Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Buffy Wicks",
+          "vote": "yea",
+          "politician_id": "5821d0a9-672e-44c0-bac7-1a802a2e8368"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2019-05-16, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-165-2019.amended-2019-05-16.html",
+      "sha256": "801cf8584beb4a655bbf415f92e506183f1f41669fc3d90c623a67ce975168db"
+    },
+    "note": "Amended version of 2019-05-16 (Assembly third reading vote 72-0 was on this text). Amendment struck the mandatory supplementary-training deadline (Dec. 31, 2023) and the state-mandate reimbursement section; supplementary training became optional ('may') and counts as continuing professional training."
+  },
+  "operative_text": "Section 13519.10 (Penal Code): (a) The commission shall develop and implement, on or before January 1, 2021, a course of training regarding gun violence restraining orders. In developing the training, the commission shall consult with members of law enforcement and the community who have expertise in the area of gun violence and gun violence restraining orders.\nSection 13519.10 (Penal Code): (b) The course of training for officers described in subdivision (a) shall be incorporated into the course or courses of basic training for law enforcement officers, on or before January 1, 2021, and shall include, but not be limited to, the following:\n(1) The process of filing a petition for gun violence restraining orders.\n(2) Situational training to assist officers in identifying when a gun violence restraining order is appropriate.\n(3) How law enforcement can respond effectively to situations that might necessitate the filing for a gun violence restraining order.\nSection 13519.10 (Penal Code): (c) Law enforcement officers, administrators, and executives may participate in supplementary training that includes all of the topics described in this section. The supplementary training shall fulfill the Commission on Peace Officer Standards and Training requirements for continuing professional training. Additional training courses to update this instruction shall be established as deemed necessary by the commission."
+}

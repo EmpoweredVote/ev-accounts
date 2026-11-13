@@ -1,0 +1,39 @@
+{
+  "id": "CA-AB-79-2022",
+  "scope": "state:ca",
+  "title": "AB79 (2023-2024): Weapons: robotic devices and unmanned aircrafts.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202320240AB79",
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB79#96AMD"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Akilah Weber",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "e5470008-3c0d-4970-a485-053621d8f0a6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2023-04-19, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-79-2022.amended-2023-04-19.html",
+      "sha256": "09e23d4e2e47704d20ae599c7326d55a68f7b951fd971798afa1db1b03cf29a8"
+    },
+    "note": "Version read: Amended 2023-04-19 (last version; no floor vote recorded). The earlier text of Section 18722 (misdemeanor for building unmanned vehicles capable of deadly force) is struck and replaced. 'Weapon' covers stun guns, firearms and explosive devices, so the gun link is partial; exemptions for defense contractors, permit holders and police (e) not quoted."
+  },
+  "operative_text": "Section 18722 (Penal Code): (a)(1) “Robotic device” means a mechanical device capable of locomotion, navigation, or movement on the ground that operates at a distance from its operator or supervisor based on commands or in response to sensor data, or a combination thereof.\nSection 18722 (Penal Code): (a)(3) “Weapon” means a device designed to cause or capable of causing death, incapacitation, or physical injury to a person, including, but not limited to, stun guns, firearms, and explosive devices.\nSection 18722 (Penal Code): (b) It is unlawful for a person to knowingly manufacture, modify, sell, transfer, or operate a robotic device or unmanned aircraft that is equipped or mounted with a weapon.\nSection 18722 (Penal Code): (c) A violation of this section is punishable by a fine of at least one thousand dollars ($1,000) but not more than five thousand dollars ($5,000). This fine shall be imposed in addition to any other penalty imposed pursuant to law."
+}

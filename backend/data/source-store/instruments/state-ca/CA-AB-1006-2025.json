@@ -1,0 +1,39 @@
+{
+  "id": "CA-AB-1006-2025",
+  "scope": "state:ca",
+  "title": "AB1006 (2025-2026 Regular): Firearms: concealed carry.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260AB1006",
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB1006#97AMD"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "James Ramos",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "01dd07dc-ded1-4ba5-aff3-2dc2b386af12"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2025-04-10, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-1006-2025.amended-2025-04-10.html",
+      "sha256": "fec438ac8e62107748bedcd22bd68307365e390cc94068d28e5a4ecd89013e3f"
+    },
+    "note": "Amended 2025-04-10 (no floor vote; last version). In this amendment the bill strikes 'charged with' (now 'convicted of') in (a)(12), strikes 'a crime of moral turpitude' and related misdemeanor-adjudication wording in (a)(14), adds the 'knew or should have known' wording in (a)(11), and strikes the Section 26220 amendment (license term). Other 26150/26155/26162/26200/26202 text is reprinted from earlier amendments and not marked."
+  },
+  "operative_text": "Section 26150 (Penal Code): (a) If a person applies for a new license or license renewal to carry a pistol, revolver, or other firearm capable of being concealed upon the person, the sheriff of a county shall issue or renew a license to that person upon proof of all of the following:\nSection 26150 (Penal Code): (a)(5) The applicant is the recorded owner, with the Department of Justice, of the pistol, revolver, or other firearm for which the license will be issued, or the spouse of the recorded owner.\nSection 26202 (Penal Code): (a) Unless a court makes a contrary determination pursuant to Section 26206, an applicant shall be deemed to be a disqualified person and cannot receive or renew a license pursuant to Section 26150, 26155, or 26170 if the applicant:\nSection 26202 (Penal Code): (a)(5) Has engaged in an unlawful or reckless use, display, or brandishing of a firearm.\nSection 26202 (Penal Code): (a)(11) Provided any information that the applicant knew or should have known was inaccurate or incomplete information in connection with an application for a new license or a license renewal.\nSection 26202 (Penal Code): (a)(12) In the 10 years prior to the licensing authority receiving the completed application for a new license or a license renewal, has been convicted of an offense listed in Section 71, 76, 422, or 626.8.\nSection 26202 (Penal Code): (a)(14) In the 10 years prior to the licensing authority receiving the completed application for a new license or a license renewal, has been convicted of an offense that does not preclude the person’s lawful possession of a firearm but is an offense involving violence against a person."
+}

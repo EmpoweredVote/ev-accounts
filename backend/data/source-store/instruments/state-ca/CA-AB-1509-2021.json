@@ -1,0 +1,61 @@
+{
+  "id": "CA-AB-1509-2021",
+  "scope": "state:ca",
+  "title": "AB1509 (2021-2022): Enhancements: firearms.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202120220AB1509",
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202120220AB1509#98AMD"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Alex Lee",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "525a5d79-d7a9-498a-b972-57fa517be375"
+    },
+    {
+      "name": "Wendy Carrillo",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Ash Kalra",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "eb1a285e-fd86-4da1-a198-a66ad6a81be4"
+    },
+    {
+      "name": "Mark Stone",
+      "role": "co",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    },
+    {
+      "name": "Scott Wiener",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2021-04-21, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-1509-2021.amended-2021-04-21.html",
+      "sha256": "1a5fc9f2537b95a451b85df834d446b45e7b9115ecfb60987410194094dd45dd"
+    },
+    "note": "Version read: Amended 2021-04-21 (last version; no floor vote recorded). Text is long; many other Penal Code sections (190, 667.5, 667.61, 1203.06, 1269b, 2962, 3003, 3057, etc.) and Gov. Code 7282.5 are amended only to drop or change cross-references to the repealed enhancements, so treated as conforming. Sec. 12022.53 existing 10/20/25-to-life terms are struck and replaced by 1/2/3 years (shown in the quoted wording). 12022.53(a) list of felonies, (e)-(l) not quoted. The bill's earlier repeal of Section 12022.7 (great bodily injury) is struck in this version, so that enhancement stays."
+  },
+  "operative_text": "Section 12021.5 (Penal Code): Section 12021.5 of the Penal Code, as amended by Section 12 of Chapter 887 of the Statutes of 2016, is repealed.\nSection 12022 (Penal Code): Section 12022 of the Penal Code is repealed.\nSection 12022.4 (Penal Code): Section 12022.4 of the Penal Code, as amended by Section 16 of Chapter 887 of the Statutes of 2016, is repealed.\nSection 12022.5 (Penal Code): Section 12022.5 of the Penal Code is repealed.\nSection 12022.53 (Penal Code): (b) Notwithstanding any other provision of law, any person who, in the commission of a felony specified in subdivision (a), personally uses a firearm, shall be punished by an additional and consecutive term of imprisonment in the state prison for one year. The firearm need not be operable or loaded for this enhancement to apply.\nSection 12022.53 (Penal Code): (c) Notwithstanding any other provision of law, any person who, in the commission of a felony specified in subdivision (a), personally and intentionally discharges a firearm, shall be punished by an additional and consecutive term of imprisonment in the state prison for two years.\nSection 12022.53 (Penal Code): (d) Notwithstanding any other provision of law, any person who, in the commission of a felony specified in subdivision (a), Section 246, or subdivision (c) or (d) of Section 26100, personally and intentionally discharges a firearm and proximately causes great bodily injury, as defined in Section 12022.7, or death, to any person other than an accomplice, shall be punished by an additional and consecutive term of imprisonment in the state prison for three years.\nSection 12022.55 (Penal Code): Notwithstanding Section 12022.5, any person who, with the intent to inflict great bodily injury or death, inflicts great bodily injury, as defined in Section 12022.7, or causes the death of a person, other than an occupant of a motor vehicle, as a result of discharging a firearm from a motor vehicle in the commission of a felony or attempted felony, shall be punished by an additional and consecutive term of imprisonment in the state prison for one, two, or three years.\nSection 1170.23 (Penal Code): (a) A person who, on or before January 1, 2022, was serving a sentence for a conviction, whether by trial or plea, of an enhancement under Section 12021.5, 12022, 12022.4, 12022.5, 12022.53, 12022.55, or subdivision (a) of Section 12022.2, as those sections read on or before December 31, 2021, or under Section 667.5 due to a violation of Section 12022.5, as charged and proved pursuant to paragraph (8) of subdivision (c) of Section 667.5, as that section read on or before December 31, 2021, may petition for a recall of sentence before the trial court that entered the judgment of conviction in their case to request resentencing."
+}

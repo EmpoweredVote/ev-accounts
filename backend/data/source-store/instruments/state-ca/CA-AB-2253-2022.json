@@ -1,0 +1,45 @@
+{
+  "id": "CA-AB-2253-2022",
+  "scope": "state:ca",
+  "title": "AB2253 (2021-2022): Gun violence: public health crisis.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202120220AB2253",
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202120220AB2253#97AMD"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Mia Bonta",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "0d70edc9-535c-4191-a222-fe57ebde4467"
+    },
+    {
+      "name": "Mike Gipson",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "6133e73c-4c33-4cfc-9fd3-de1382729f42"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2022-04-28, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-AB-2253-2022.amended-2022-04-28.html",
+      "sha256": "9ea0e7e74e6947a99e5c696a8af4610dda2d7759c44f6e436a5f1517b2600faa"
+    },
+    "note": "Version read: Amended 2022-04-28 (last version; no floor vote recorded). Bill replaces the earlier 'State Crime and Violence Prevention Center' with the 'Office of Gun Violence Prevention' in 14246 and makes UC Davis and Public Health advisers (struck: 'in collaboration with'). Findings in Sec. 1 not quoted."
+  },
+  "operative_text": "Section 14245 (Penal Code): (a) It is hereby declared to be the established policy of the state that gun violence shall be recognized and addressed as a public health crisis utilizing a public health data-based approach taking into consideration all of the following:\n(1) The specifics of gun violence and gun homicides in each community, including, but not limited to, identification of those most affected, identification of contributing factors, and identification of factors creating greater safety for those most affected by gun violence in each community.\n(3) A commitment for gun violence prevention efforts to focus on addressing and healing individual, interpersonal, and community trauma inflicted as a result of gun violence.\nSection 14245 (Penal Code): (b) All relevant state agencies, including the Department of Justice, shall consider this state policy when revising, adopting, or establishing regulations, grant criteria, or making any expenditures related to the prevention of gun violence and increasing community safety.\nSection 14246 (Penal Code): (a) There is hereby established within the Department of Justice the Office of Gun Violence Prevention with dedicated positions to address gun violence as a public health crisis.\nSection 14246 (Penal Code): (c) The office shall submit a written plan of action to the Legislature, no later than July 1, 2023, detailing how the Department of Justice and the Board of State and Community Corrections, as advised by the California Firearm Violence Research Center at UC Davis to the extent the Regents of the University of California chose to participate, and the State Department of Public Health, to the extent the department chooses to participate, will incorporate a public health approach to their gun violence prevention-related programs and services in accordance with state policy."
+}

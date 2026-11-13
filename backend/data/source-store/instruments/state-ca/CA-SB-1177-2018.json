@@ -1,0 +1,746 @@
+{
+  "id": "CA-SB-1177-2018",
+  "scope": "state:ca",
+  "title": "SB1177 (2017-2018): Firearms: transfers.",
+  "urls": [
+    "http://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=201720180SB1177",
+    "http://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201720180SB1177"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Anthony Portantino",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2018-05-30",
+      "body": "CA Senate",
+      "motion": "Senate 3rd Reading SB1177 Portantino",
+      "kind": "roll-call",
+      "yes": 25,
+      "no": 10,
+      "absent": 4,
+      "note": "LegiScan roll call 757600; taken on the text 'Amended' of 2018-05-25",
+      "members": [
+        {
+          "name": "Joel Anderson",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Beall",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Berryhill",
+          "vote": "nay"
+        },
+        {
+          "name": "Steven Bradford",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin de Leon",
+          "vote": "abstain"
+        },
+        {
+          "name": "Jean Fuller",
+          "vote": "abstain"
+        },
+        {
+          "name": "Ted Gaines",
+          "vote": "nay",
+          "politician_id": "fc97cf9f-3695-4c2d-9219-9a9ff6378db4"
+        },
+        {
+          "name": "Cathleen Galgiani",
+          "vote": "yea"
+        },
+        {
+          "name": "Edward Hernandez",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "William Monning",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Nielsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Anthony Portantino",
+          "vote": "yea"
+        },
+        {
+          "name": "Nancy Skinner",
+          "vote": "yea"
+        },
+        {
+          "name": "Toni Atkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Ricardo Lara",
+          "vote": "yea",
+          "politician_id": "bab3379b-d64e-423b-b62e-4efa04cee750"
+        },
+        {
+          "name": "Holly Mitchell",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Pan",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Wieckowski",
+          "vote": "yea"
+        },
+        {
+          "name": "Benjamin Hueso",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Morrell",
+          "vote": "nay"
+        },
+        {
+          "name": "Anthony Cannella",
+          "vote": "abstain"
+        },
+        {
+          "name": "Scott Wilk",
+          "vote": "nay"
+        },
+        {
+          "name": "Hannah-Beth Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Roth",
+          "vote": "yea"
+        },
+        {
+          "name": "Andy Vidak",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Dodd",
+          "vote": "yea"
+        },
+        {
+          "name": "Benjamin Allen",
+          "vote": "yea",
+          "politician_id": "4486f856-118b-475c-83f0-078581a7b268"
+        },
+        {
+          "name": "Patricia Bates",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Hertzberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Connie Leyva",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike McGuire",
+          "vote": "yea",
+          "politician_id": "974bfe8b-afb8-424c-bfd2-7805f033b1a0"
+        },
+        {
+          "name": "Janet Nguyen",
+          "vote": "abstain"
+        },
+        {
+          "name": "Jeff Stone",
+          "vote": "nay"
+        },
+        {
+          "name": "John Moorlach",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Glazer",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Wiener",
+          "vote": "yea",
+          "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f"
+        },
+        {
+          "name": "Henry Stern",
+          "vote": "yea",
+          "politician_id": "f3671de4-514f-441c-8ad4-4a9ab7c65ae6"
+        },
+        {
+          "name": "Josh Newman",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2018-08-27",
+      "body": "CA Assembly",
+      "motion": "SB 1177 Portantino Senate Third Reading By SANTIAGO",
+      "kind": "roll-call",
+      "yes": 47,
+      "no": 30,
+      "absent": 3,
+      "note": "LegiScan roll call 772797; taken on the text 'Amended' of 2018-06-14",
+      "members": [
+        {
+          "name": "Anna Caballero",
+          "vote": "nay",
+          "politician_id": "8b15f324-ed8b-4cc9-92b4-fdaf07896b20"
+        },
+        {
+          "name": "Franklin Bigelow",
+          "vote": "nay"
+        },
+        {
+          "name": "Richard Bloom",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob Bonta",
+          "vote": "yea",
+          "politician_id": "8b183a30-3afb-4d9e-aa40-aa2ad2c674aa"
+        },
+        {
+          "name": "Edwin Chau",
+          "vote": "yea"
+        },
+        {
+          "name": "Rocky Chavez",
+          "vote": "nay"
+        },
+        {
+          "name": "Ken Cooley",
+          "vote": "nay"
+        },
+        {
+          "name": "Brian Dahle",
+          "vote": "nay"
+        },
+        {
+          "name": "Tom Daly",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Eggman",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Frazier",
+          "vote": "nay"
+        },
+        {
+          "name": "Cristina Garcia",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Gray",
+          "vote": "nay"
+        },
+        {
+          "name": "Chris Holden",
+          "vote": "yea"
+        },
+        {
+          "name": "Ian Calderon",
+          "vote": "yea"
+        },
+        {
+          "name": "Reginald Jones-Sawyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Marc Levine",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Maienschein",
+          "vote": "yea"
+        },
+        {
+          "name": "Jose Medina",
+          "vote": "yea"
+        },
+        {
+          "name": "Melissa Melendez",
+          "vote": "nay"
+        },
+        {
+          "name": "Kevin Mullin",
+          "vote": "yea"
+        },
+        {
+          "name": "Al Muratsuchi",
+          "vote": "yea",
+          "politician_id": "ea803096-927f-41fe-98e1-deab56291810"
+        },
+        {
+          "name": "Jim Patterson",
+          "vote": "nay"
+        },
+        {
+          "name": "Sharon Quirk-Silva",
+          "vote": "yea",
+          "politician_id": "1e29ce86-9e02-4079-b50d-bb0d039613a2"
+        },
+        {
+          "name": "Bill Quirk",
+          "vote": "yea"
+        },
+        {
+          "name": "Anthony Rendon",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Stone",
+          "vote": "yea"
+        },
+        {
+          "name": "Philip Ting",
+          "vote": "yea"
+        },
+        {
+          "name": "Marie Waldron",
+          "vote": "nay"
+        },
+        {
+          "name": "Shirley Weber",
+          "vote": "yea",
+          "politician_id": "4ba62f32-dd20-48ce-8d84-d09bb129ad59"
+        },
+        {
+          "name": "Adrin Nazarian",
+          "vote": "yea"
+        },
+        {
+          "name": "Lorena Gonzalez Fletcher",
+          "vote": "yea"
+        },
+        {
+          "name": "Freddie Rodriguez",
+          "vote": "abstain"
+        },
+        {
+          "name": "Catharine Baker",
+          "vote": "yea"
+        },
+        {
+          "name": "William Brough",
+          "vote": "nay"
+        },
+        {
+          "name": "Autumn Burke",
+          "vote": "yea"
+        },
+        {
+          "name": "David Chiu",
+          "vote": "yea"
+        },
+        {
+          "name": "Kansen Chu",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Cooper",
+          "vote": "abstain"
+        },
+        {
+          "name": "Eduardo Garcia",
+          "vote": "yea"
+        },
+        {
+          "name": "James Gallagher",
+          "vote": "nay",
+          "politician_id": "0a283c28-344c-40c9-ae48-bb2dcf1c7c4d"
+        },
+        {
+          "name": "Mike Gipson",
+          "vote": "yea",
+          "politician_id": "6133e73c-4c33-4cfc-9fd3-de1382729f42"
+        },
+        {
+          "name": "Matthew Harper",
+          "vote": "nay"
+        },
+        {
+          "name": "Jacqui Irwin",
+          "vote": "nay",
+          "politician_id": "97285c92-b664-4687-a1e4-6d88cf9c7fe4"
+        },
+        {
+          "name": "Tom Lackey",
+          "vote": "nay",
+          "politician_id": "e8bdd8a7-a1b2-43e3-afd4-df975980819e"
+        },
+        {
+          "name": "Evan Low",
+          "vote": "yea"
+        },
+        {
+          "name": "Devon Mathis",
+          "vote": "nay"
+        },
+        {
+          "name": "Kevin McCarty",
+          "vote": "yea"
+        },
+        {
+          "name": "Patrick O'Donnell",
+          "vote": "yea"
+        },
+        {
+          "name": "Jay Obernolte",
+          "vote": "nay"
+        },
+        {
+          "name": "Miguel Santiago",
+          "vote": "yea"
+        },
+        {
+          "name": "Marc Steinorth",
+          "vote": "nay"
+        },
+        {
+          "name": "Tony Thurmond",
+          "vote": "yea",
+          "politician_id": "f8808ac0-8a9d-4657-8bf7-2ae60d96399c"
+        },
+        {
+          "name": "Travis Allen",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Wood",
+          "vote": "yea"
+        },
+        {
+          "name": "Chad Mayes",
+          "vote": "nay"
+        },
+        {
+          "name": "Rudy Salas",
+          "vote": "nay"
+        },
+        {
+          "name": "Steven Choi",
+          "vote": "nay",
+          "politician_id": "8dfb3b1f-622d-434d-9106-9eeb75bc9a66"
+        },
+        {
+          "name": "Eloise Reyes",
+          "vote": "yea",
+          "politician_id": "1571da4a-b832-4792-917c-184c155b1700"
+        },
+        {
+          "name": "Ash Kalra",
+          "vote": "yea",
+          "politician_id": "eb1a285e-fd86-4da1-a198-a66ad6a81be4"
+        },
+        {
+          "name": "Phillip Chen",
+          "vote": "nay",
+          "politician_id": "ed32efa5-b455-4323-a12f-5fe79bc4ffd6"
+        },
+        {
+          "name": "Cecilia Aguiar-Curry",
+          "vote": "yea",
+          "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257"
+        },
+        {
+          "name": "Heath Flora",
+          "vote": "nay",
+          "politician_id": "a0c59a09-fa45-4765-b6c5-17843699991d"
+        },
+        {
+          "name": "Kevin Kiley",
+          "vote": "nay"
+        },
+        {
+          "name": "Tim Grayson",
+          "vote": "yea",
+          "politician_id": "29389f8b-de23-4312-af73-264289dc7774"
+        },
+        {
+          "name": "Marc Berman",
+          "vote": "yea",
+          "politician_id": "4cfacf31-d285-40ac-8373-e350912fddda"
+        },
+        {
+          "name": "Jordan Cunningham",
+          "vote": "nay"
+        },
+        {
+          "name": "Monique Limon",
+          "vote": "yea",
+          "politician_id": "c7a56941-597a-456b-8fd8-e4bd840014c1"
+        },
+        {
+          "name": "Dante Acosta",
+          "vote": "nay"
+        },
+        {
+          "name": "Laura Friedman",
+          "vote": "yea"
+        },
+        {
+          "name": "Blanca Rubio",
+          "vote": "yea",
+          "politician_id": "51d15b77-71bb-475e-b86e-c6e1b37b869d"
+        },
+        {
+          "name": "Sabrina Cervantes",
+          "vote": "nay",
+          "politician_id": "7e588ebb-d17c-43c6-9eef-558871b55330"
+        },
+        {
+          "name": "Randy Voepel",
+          "vote": "nay"
+        },
+        {
+          "name": "Todd Gloria",
+          "vote": "yea"
+        },
+        {
+          "name": "Vince Fong",
+          "vote": "nay"
+        },
+        {
+          "name": "Joaquin Arambula",
+          "vote": "abstain",
+          "politician_id": "9edab965-ac61-4227-a8d6-601c07821f53"
+        },
+        {
+          "name": "Wendy Carrillo",
+          "vote": "yea"
+        },
+        {
+          "name": "Sydney Kamlager-Dove",
+          "vote": "yea"
+        },
+        {
+          "name": "Jesse Gabriel",
+          "vote": "yea",
+          "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf"
+        },
+        {
+          "name": "Luz Rivas",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2018-08-30",
+      "body": "CA Senate",
+      "motion": "Unfinished Business SB1177 Portantino Concurrence",
+      "kind": "roll-call",
+      "yes": 25,
+      "no": 12,
+      "absent": 3,
+      "note": "LegiScan roll call 773851; taken on the text 'Amended' of 2018-06-14",
+      "members": [
+        {
+          "name": "Joel Anderson",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Beall",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Berryhill",
+          "vote": "abstain"
+        },
+        {
+          "name": "Steven Bradford",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin de Leon",
+          "vote": "yea"
+        },
+        {
+          "name": "Jean Fuller",
+          "vote": "nay"
+        },
+        {
+          "name": "Ted Gaines",
+          "vote": "nay",
+          "politician_id": "fc97cf9f-3695-4c2d-9219-9a9ff6378db4"
+        },
+        {
+          "name": "Cathleen Galgiani",
+          "vote": "yea"
+        },
+        {
+          "name": "Edward Hernandez",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "William Monning",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Nielsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Anthony Portantino",
+          "vote": "yea"
+        },
+        {
+          "name": "Nancy Skinner",
+          "vote": "yea"
+        },
+        {
+          "name": "Toni Atkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Ricardo Lara",
+          "vote": "yea",
+          "politician_id": "bab3379b-d64e-423b-b62e-4efa04cee750"
+        },
+        {
+          "name": "Holly Mitchell",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Pan",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Wieckowski",
+          "vote": "yea"
+        },
+        {
+          "name": "Benjamin Hueso",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Morrell",
+          "vote": "nay"
+        },
+        {
+          "name": "Anthony Cannella",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott Wilk",
+          "vote": "nay"
+        },
+        {
+          "name": "Hannah-Beth Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Roth",
+          "vote": "abstain"
+        },
+        {
+          "name": "Andy Vidak",
+          "vote": "nay"
+        },
+        {
+          "name": "Ling Ling Chang",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Dodd",
+          "vote": "yea"
+        },
+        {
+          "name": "Benjamin Allen",
+          "vote": "yea",
+          "politician_id": "4486f856-118b-475c-83f0-078581a7b268"
+        },
+        {
+          "name": "Patricia Bates",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Hertzberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Connie Leyva",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike McGuire",
+          "vote": "yea",
+          "politician_id": "974bfe8b-afb8-424c-bfd2-7805f033b1a0"
+        },
+        {
+          "name": "Janet Nguyen",
+          "vote": "abstain"
+        },
+        {
+          "name": "Jeff Stone",
+          "vote": "nay"
+        },
+        {
+          "name": "John Moorlach",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Glazer",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Wiener",
+          "vote": "yea",
+          "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f"
+        },
+        {
+          "name": "Henry Stern",
+          "vote": "yea",
+          "politician_id": "f3671de4-514f-441c-8ad4-4a9ab7c65ae6"
+        },
+        {
+          "name": "Vanessa Delgado",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2018-06-14, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-SB-1177-2018.amended-2018-06-14.html",
+      "sha256": "da25bc02825e96ccf19b65c772d9378e6497111b9e0b9a3cb975a298fc7c5a09"
+    },
+    "note": "Read Amended 2018-06-14 (text of both later floor votes; the first vote on 2018-05-25 was on an earlier amended text not read). The bill strikes 'handgun' / 'pistol, revolver, or other firearm capable of being concealed upon the person' and inserts 'firearm' in sections 26835, 27535, 27540 and 27590. Section 26835 version amended is the one added by Ch. 825, Stats. 2017, operative Jan 1, 2019. The saved text also includes struck, unrelated Education Code spot-bill text from an earlier version."
+  },
+  "operative_text": "Section 27535 (Penal Code): (a) A person shall not make an application to purchase more than one firearm within any 30-day period.\nSection 27535 (Penal Code): (14) The purchase of a firearm, other than a handgun, by a person who possesses a valid, unexpired hunting license issued by the Department of Fish and Wildlife. (15) The acquisition of a firearm, other than a handgun, at an auction or similar event conducted by a nonprofit public benefit or mutual benefit corporation to fund the activities of that corporation or local chapters of that corporation.\nSection 27535 (Penal Code): (c) For the purposes of paragraphs (14) and (15) of subdivision (b), the frame or receiver of a firearm is a handgun unless the frame or receiver listed in the application to purchase and delivered to the recipient is equipped with, is attached to, or is concurrently accompanied by, a barrel of 16 inches or greater in length.\nSection 27540 (Penal Code): (f) A firearm shall not be delivered whenever the dealer is notified by the Department of Justice that within the preceding 30-day period the purchaser has made another application to purchase a firearm and that the previous application to purchase did not involve any of the entities or circumstances specified in subdivision (b) of Section 27535.\nSection 27590 (Penal Code): (e) (4) For purposes of this subdivision, each application to purchase a firearm in violation of Section 27535 is a separate offense.\nSection 26835 (Penal Code): (h) “NO PERSON SHALL MAKE AN APPLICATION TO PURCHASE MORE THAN ONE FIREARM WITHIN ANY 30-DAY PERIOD AND NO DELIVERY SHALL BE MADE TO ANY PERSON WHO HAS MADE AN APPLICATION TO PURCHASE MORE THAN ONE FIREARM WITHIN ANY 30-DAY PERIOD.”"
+}

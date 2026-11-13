@@ -1,0 +1,39 @@
+{
+  "id": "CA-SB-93-2025",
+  "scope": "state:ca",
+  "title": "SB93 (2025-2026 Regular): Weapons: robotic devices.",
+  "urls": [
+    "https://leginfo.legislature.ca.gov/faces/billStatusClient.xhtml?bill_id=202520260SB93",
+    "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260SB93#97AMD"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Akilah Weber Pierson",
+      "role": "prime",
+      "version": "LegiScan sponsor list (author / coauthor)",
+      "politician_id": "e5470008-3c0d-4970-a485-053621d8f0a6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk dataset (gun-policy Stage 5 LegiScan check, California); operative text read by a Sonnet fill agent from the official leginfo.legislature.ca.gov text (Amended 2025-04-03, via LegiScan getBillText)",
+    "fetched_at": "2026-11-13T00:19:36.330153Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/CA-SB-93-2025.amended-2025-04-03.html",
+      "sha256": "cf8df16c1e57d957dfdaa642b71b8efdd6f369037b830e4088bf6d2cf75fabab"
+    },
+    "note": "Amended 2025-04-03 (last version; no floor vote). The amendment widens 'weapon' to cover firearms and other deadly weapons and narrows the device list. Exemptions in (d) (government-use developers, robot competitions, blank-firing props, academic research, government agents) not quoted except (d)(2)(B)."
+  },
+  "operative_text": "Section 18722 (Penal Code): (3) “Weapon” means a firearm or other deadly weapon, or a device specifically designed to cause incapacitation, including, but not limited to, a stun gun, a chemical agent, or a kinetic energy projectile.\nSection 18722 (Penal Code): (b) It shall be unlawful for a person to operate a robotic device equipped or mounted with a weapon.\nSection 18722 (Penal Code): (c) A violation of this section is an infraction punishable by a fine of at least one hundred dollars ($100) but not more than two thousand dollars ($2,000).\nSection 18722 (Penal Code): (B) This paragraph does not allow the equipping or mounting of any firearm to a robotic device."
+}
