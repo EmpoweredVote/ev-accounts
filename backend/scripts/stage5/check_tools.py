@@ -310,6 +310,47 @@ def search_list_skips_only_record_seats_at_skip_rungs_and_controls(t):
 
 
 @check
+def search_list_control_groups_draw_and_judge_each_group_apart(t):
+    """--control-group: one control per group of rungs; a change in one group re-opens only that group (ruling 2026-11-13)."""
+    pids = [f'p{i:02d}' for i in range(40)]
+    os.makedirs(t)
+    open(f'{t}/roster.tsv', 'w').write('politician_id\tfull_name\n' + ''.join(f'{p}\t{p.upper()}\n' for p in pids))
+    R = f'{t}/rec'
+    for p in pids[:15]: code(R, p, 'seated', 5)
+    for p in pids[15:20]: code(R, p, 'seated', 2)
+    for p in pids[20:32]: code(R, p, 'seated', 3)
+    for p in pids[32:36]: code(R, p, 'seated', 4)  # p36-39: no record-only code
+    O = f'{t}/plan'
+    args = ['--record-codes', R, '--roster', f'{t}/roster.tsv', '--control-group', '5,2:4', '--control-group', '3:3', '--out', O]
+    run('search_list.py', 'plan', *args)
+    ctrl = list(csv.DictReader(open(f'{O}/control.tsv'), delimiter='\t'))
+    by = {g: [r['politician_id'] for r in ctrl if r['group'] == g] for g in ('5,2', '3')}
+    assert (len(by['5,2']), len(by['3'])) == (4, 3), by
+    assert set(by['5,2']) <= set(pids[:20]) and set(by['3']) <= set(pids[20:32]), 'each control is drawn from its own group'
+    search = {r['politician_id'] for r in csv.DictReader(open(f'{O}/search.tsv'), delimiter='\t')}
+    assert len(search) == 8 + 7 and set(pids[32:]) <= search, 'rung 4 and no code are searched, plus both controls'
+    skipped = list(csv.DictReader(open(f'{O}/skipped.tsv'), delimiter='\t'))
+    assert sum(r['group'] == '3' for r in skipped) == 9 and sum(r['group'] == '5,2' for r in skipped) == 16, skipped
+    bad = run('search_list.py', 'plan', *args, '--skip-rungs', '5,2', ok=False)
+    assert bad.returncode != 0 and 'control-group' in bad.stderr + bad.stdout, 'the two ways of naming skip rungs must not mix'
+    C = f'{t}/codes'
+    adopt = ['adopt', '--record-codes', R, '--codes', C, '--out', O]
+    assert run('search_list.py', *adopt, ok=False).returncode == 3, 'no full codes yet'
+    for g, v in (('5,2', None), ('3', 3)):
+        for p in by[g]: code(C, p, 'seated', v or json.load(open(f'{R}/{p}.json'))['value'], 'joint')
+    code(C, by['3'][0], 'seated', 2, 'joint')  # one rung 3 control person changed
+    r = run('search_list.py', *adopt, ok=False)
+    assert r.returncode == 4, 'any change in a group of the control fails that group'
+    re_open = [x['politician_id'] for x in csv.DictReader(open(f'{O}/reopened.tsv'), delimiter='\t')]
+    assert len(re_open) == 9 and set(re_open) <= set(pids[20:32]), 'only the rung 3 seats are re-opened'
+    assert len(os.listdir(C)) == 7 + 16, 'the group that held is adopted; the re-opened group is not'
+    assert not any(os.path.exists(f'{C}/{p}.json') for p in re_open)
+    code(C, by['3'][0], 'seated', 3, 'joint')
+    run('search_list.py', *adopt)
+    assert len(os.listdir(C)) == 7 + 16 + 9 and not os.path.exists(f'{O}/reopened.tsv'), 'both groups hold: everyone skipped is adopted'
+
+
+@check
 def search_list_recode_only_new_findings_and_cut_short_searches(t):
     """Second pass only for a NEW on-topic finding (or no record-only code); a search that read none of the person's
     own pages is searched again once, not taken as 'found nothing'; everyone else keeps the record-only code."""
@@ -526,6 +567,13 @@ def search_effect_counts_changes_by_record_rung_and_codings(t):
     b = o['by_record_result']
     assert (b['seated 3']['changed'], b['seated 3']['rung_only']) == (1, 1) and (b['doesnt-fit']['outcome_changed']) == 1 and b['seated 5']['changed'] == 0, b
     assert o['codings'] == {'record_only': 4, 'second_pass': 4, 'total': 8, 'per_person': 1.33}, o['codings']
+    # With a grouped control and an id list: the controls are reported apart, and only listed people are counted.
+    open(f'{t}/plan/control.tsv', 'w').write('politician_id\tfull_name\trecord_only\tgroup\na\ta\tseated 5\t5,2\nb\tb\tseated 3\t3\n')
+    open(f'{t}/ids.txt', 'w').write('a\nb\nc\nd\n')
+    run('search_effect.py', '--roster', f'{t}/roster.tsv', '--unit', 'state:xx', '--ids', f'{t}/ids.txt', '--record-codes', R, '--codes', F, '--plan', f'{t}/plan', '--json', f'{t}/o2.json')
+    o = json.load(open(f'{t}/o2.json'))
+    assert o['roster'] == 4 and o['controls'] == {'5,2': {'searched': 1, 'changed': 0}, '3': {'searched': 1, 'changed': 1}}, o
+    assert o['codings'] == {'record_only': 3, 'second_pass': 4, 'total': 7, 'per_person': 1.75}, 'e is not on the id list, so it is not counted'
 
 
 @check

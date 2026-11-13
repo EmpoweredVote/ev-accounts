@@ -1,8 +1,9 @@
 """Record first, then search only where the record leaves the seat open; re-code only where the search found something
 (STAGE5.md "Pilot rule"; pilot states only, approved for the state after Missouri on 2026-11-12).
 
-usage: python3 -I search_list.py plan    --record-codes <dir> --roster <tsv> [--roster <tsv>] --skip-rungs 5,2
-                                         [--control 20] [--seed <text>] --out <dir>
+usage: python3 -I search_list.py plan    --record-codes <dir> --roster <tsv> [--roster <tsv>] [--seed <text>] --out <dir>
+                                         --control-group 5,2:10 [--control-group 3:10]...
+                                           (or, the first pilot rule: --skip-rungs 5,2 [--control 20])
        python3 -I search_list.py control --record-codes <dir> --codes <dir> --out <dir>
        python3 -I search_list.py adopt   --record-codes <dir> --codes <dir> --out <dir>
        python3 -I search_list.py recode  --record-codes <dir> --record-briefs <dir> --out <dir> [--store <dir>]
@@ -15,11 +16,18 @@ plan     A person whose record-only code is a record seat at one of --skip-rungs
          --control of those (default 20) is searched anyway. Writes <out>/search.tsv (everyone to search: no
          record seat at a skip rung, plus the control), skipped.tsv, control.tsv and search-plan.md. The seed
          defaults to the roster file names, so a re-run gives the same control.
+         --control-group <rungs>:<n>, repeated, names each group of skipped rungs with its own control of n (ruling
+         2026-11-13, gun-policy: `5,2:10` and `3:10`). control.tsv and skipped.tsv then carry a `group` column. A
+         group with n seats or fewer is all control, so nothing in it is skipped. Not with --skip-rungs / --control.
 control  After the full search and code: compares each control person's full code in <codes> with their record-only
          code. A change of outcome or rung counts. Exit 4 when more than 1 in 20 changed: the rule is not safe here,
          so search the skipped people too. Exit 3 while a control person has no full code yet.
+         With control groups each group is judged apart, and ANY change in a group fails that group (a control of 10
+         cannot use the 1-in-20 bar). Exit 4 when a group failed; the groups that held are unaffected.
 adopt    Runs `control` first and stops on its exit. Then copies each skipped person's record-only code into <codes>,
          never over an existing file, and lists what it copied.
+         With control groups it adopts the groups that held, writes the failed groups' skipped people to
+         <out>/reopened.tsv (search and code them like anyone in search.tsv), and exits 4 so the run reports it.
 recode   After the search import, before the second coding pass. For each person in <out>/search.tsv it decides:
          - SECOND PASS (recode.tsv, recode-ids.txt): at least one on-topic finding in the store that their record-only
            coder was not shown (<record-briefs>/*.findings.json, written by coder-inputs.ts --record-only); or no
@@ -43,13 +51,18 @@ pass without one.
 Why plan: Georgia searched 100% of people, and for record seats at rung 5 (244 people) and rung 2 (12) the search
 changed no seat (review 2026-11-12, section 6). Rungs 3 and 4 did change (2.3% and 10%), so they are always
 searched. The rungs are a flag, not a default, because the measurement is for gun-policy only.
+
+Why control groups: three pilot states (Missouri, California, Washington) searched 65 record seats at rung 3 and 60
+control seats at rungs 5 and 2; own words changed none of the 125. The runner ruled on 2026-11-13: rung 3 record seats
+are not searched, with a control of 10 per state, and the rung 5 and 2 control is 10. A change in the rung 3 control
+re-opens rung 3 only.
 """
 import csv, glob, hashlib, json, os, random, re, shutil, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir
 from _args import opt, opts, positional
 from _legiscan_people import read_roster
 
-USAGE = 'search_list.py plan|control|adopt|recode --record-codes <dir> [--roster <tsv> --skip-rungs 5,2] [--codes <dir>] [--record-briefs <dir>] --out <dir>'
+USAGE = 'search_list.py plan|control|adopt|recode --record-codes <dir> [--roster <tsv> --control-group 5,2:10 [--control-group 3:10] | --skip-rungs 5,2 [--control 20]] [--codes <dir>] [--record-briefs <dir>] --out <dir>'
 STORE = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'data', 'source-store'))
 UUID = re.compile(r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}')
 # A place that names one of the person's own pages, and the words a searcher writes when it could not read a page.
@@ -71,10 +84,26 @@ def is_skip(c, rungs):
     return c.get('outcome') == 'seated' and c.get('value') in rungs and c.get('evidence_basis') == 'record'
 
 
-def write_tsv(path, roster, pids, extra=None):
+def write_tsv(path, roster, pids, extra=None, group=None):
     with open(path, 'w', newline='') as fh:
-        w = csv.writer(fh, delimiter='\t'); w.writerow(['politician_id', 'full_name'] + (['record_only'] if extra else []))
-        for p in pids: w.writerow([p, roster.get(p, {}).get('full_name', '')] + ([extra[p]] if extra else []))
+        w = csv.writer(fh, delimiter='\t')
+        w.writerow(['politician_id', 'full_name'] + (['record_only'] if extra else []) + (['group'] if group else []))
+        for p in pids: w.writerow([p, roster.get(p, {}).get('full_name', '')] + ([extra[p]] if extra else []) + ([group[p]] if group else []))
+
+
+def control_groups():
+    """[(label, rungs, n)] from --control-group <rungs>:<n>, in the order given; no rung in two groups."""
+    out, seen = [], set()
+    for g in opts('--control-group'):
+        m = re.fullmatch(r'\s*(\d+(?:\s*,\s*\d+)*)\s*:\s*(\d+)\s*', g)
+        if not m: raise SystemExit(f'--control-group {g!r}: write it as <rungs>:<n>, e.g. 5,2:10')
+        rungs = [int(x) for x in m.group(1).split(',')]
+        if seen & set(rungs): raise SystemExit(f'--control-group {g!r}: a rung is in two groups')
+        seen |= set(rungs); out.append((','.join(map(str, rungs)), set(rungs), int(m.group(2))))
+    return out
+
+
+def rng(seed): return random.Random(int(hashlib.sha256(seed.encode()).hexdigest(), 16))
 
 
 def label(c): return f"{c.get('outcome')}{'' if c.get('value') is None else ' ' + str(c.get('value'))}"
@@ -83,18 +112,42 @@ def label(c): return f"{c.get('outcome')}{'' if c.get('value') is None else ' ' 
 def plan(out):
     roster = read_roster(opts('--roster'))
     if not roster: raise SystemExit('--roster is required')
-    rungs = {int(x) for x in opt('--skip-rungs', required=True, usage=USAGE).split(',') if x.strip()}
+    groups = control_groups()
+    if groups and (opt('--skip-rungs') or opt('--control')):
+        raise SystemExit('--control-group names the skip rungs and each control itself: do not also pass --skip-rungs or --control')
     rec = load_codes(opt('--record-codes', required=True, usage=USAGE))
-    n = int(opt('--control', '20'))
     seed = opt('--seed') or '|'.join(sorted(os.path.basename(p) for p in opts('--roster')))
-    skip = sorted(p for p in roster if p in rec and is_skip(rec[p], rungs))
-    ctrl = sorted(random.Random(int(hashlib.sha256(seed.encode()).hexdigest(), 16)).sample(skip, min(n, len(skip))))
-    search = sorted(p for p in roster if p not in set(skip)) + ctrl
     os.makedirs(out, exist_ok=True)
+    nocode = [p for p in roster if p not in rec]
+    if groups:
+        rungs, group, ctrl, lines = set(), {}, [], []
+        for name, rs, n in groups:
+            rungs |= rs
+            seats = sorted(p for p in roster if p in rec and is_skip(rec[p], rs))
+            mine = sorted(rng(f'{seed}|{name}').sample(seats, min(n, len(seats))))
+            group.update({p: name for p in seats}); ctrl += mine
+            lines.append(f'- rung {name}: {len(seats)} record seat(s), control {len(mine)}, not searched {len(seats) - len(mine)}'
+                         + (' (the whole group is control: nothing skipped)' if seats and len(mine) == len(seats) else ''))
+        skip = sorted(group)
+        search = sorted(p for p in roster if p not in group) + ctrl
+        write_tsv(f'{out}/search.tsv', roster, search)
+        write_tsv(f'{out}/skipped.tsv', roster, [p for p in skip if p not in set(ctrl)], {p: label(rec[p]) for p in skip}, group)
+        write_tsv(f'{out}/control.tsv', roster, ctrl, {p: label(rec[p]) for p in ctrl}, group)
+        open(f'{out}/search-plan.md', 'w').write(
+            f'# Search plan (skip record seats at rung {", ".join(map(str, sorted(rungs)))}; one control per group, seed `{seed}`)\n\n'
+            f'- roster: {len(roster)}\n' + '\n'.join(lines) + '\n'
+            f'- to search: {len(search)} (includes {len(nocode)} with no record-only code and {len(ctrl)} control)\n- not searched: {len(skip) - len(ctrl)}\n')
+        for l in lines: print(l[2:])
+        print(f'roster {len(roster)}: search {len(search)} (control {len(ctrl)}), skip {len(skip) - len(ctrl)} -> {out}')
+        return
+    rungs = {int(x) for x in opt('--skip-rungs', required=True, usage=USAGE).split(',') if x.strip()}
+    n = int(opt('--control', '20'))
+    skip = sorted(p for p in roster if p in rec and is_skip(rec[p], rungs))
+    ctrl = sorted(rng(seed).sample(skip, min(n, len(skip))))
+    search = sorted(p for p in roster if p not in set(skip)) + ctrl
     write_tsv(f'{out}/search.tsv', roster, search)
     write_tsv(f'{out}/skipped.tsv', roster, [p for p in skip if p not in set(ctrl)], {p: label(rec[p]) for p in skip})
     write_tsv(f'{out}/control.tsv', roster, ctrl, {p: label(rec[p]) for p in ctrl})
-    nocode = [p for p in roster if p not in rec]
     open(f'{out}/search-plan.md', 'w').write(
         f'# Search plan (pilot rule: skip record seats at rung {", ".join(map(str, sorted(rungs)))})\n\n'
         f'- roster: {len(roster)}\n- record seat at a skip rung: {len(skip)}\n- of those, control (searched anyway, seed `{seed}`): {len(ctrl)}\n'
@@ -102,32 +155,51 @@ def plan(out):
     print(f'roster {len(roster)}: search {len(search)} (control {len(ctrl)}), skip {len(skip) - len(ctrl)} -> {out}')
 
 
-def control(out):
+def control(out, failed=None):
+    """Exit code; with control groups, the names of the groups that failed are added to `failed`."""
     rec = load_codes(opt('--record-codes', required=True, usage=USAGE))
     full = load_codes(opt('--codes', required=True, usage=USAGE))
-    ctrl = [r['politician_id'] for r in csv.DictReader(open(f'{out}/control.tsv'), delimiter='\t')]
+    rows = list(csv.DictReader(open(f'{out}/control.tsv'), delimiter='\t'))
+    ctrl = [r['politician_id'] for r in rows]
     missing = [p for p in ctrl if p not in full]
     if missing:
         print(f'{len(missing)} control person(s) have no full code yet, e.g. {missing[0]}'); return 3
     changed = [(p, label(rec[p]), label(full[p])) for p in ctrl if (rec[p].get('outcome'), rec[p].get('value')) != (full[p].get('outcome'), full[p].get('value'))]
     for p, a, b in changed: print(f'  changed {p}: record-only {a} -> full {b}')
+    if rows and 'group' in rows[0]:
+        moved, bad = {p for p, _, _ in changed}, []
+        for name in dict.fromkeys(r['group'] for r in rows):
+            mine = [r['politician_id'] for r in rows if r['group'] == name]; n = len(moved & set(mine))
+            if n: bad.append(name)
+            print(f'control, rung {name}: {n} of {len(mine)} changed; ' + ('search this group\'s skipped people too' if n else 'the rule holds'))
+        if failed is not None: failed.extend(bad)
+        return 4 if bad else 0
     ok = len(changed) * 20 <= len(ctrl)
     print(f'control: {len(changed)} of {len(ctrl)} changed; ' + ('within 1 in 20, the rule holds' if ok else 'more than 1 in 20: search the skipped people too'))
     return 0 if ok else 4
 
 
 def adopt(out):
-    rc = control(out)
-    if rc: return rc
+    failed = []
+    rc = control(out, failed)
+    if rc and not failed: return rc
     src, dst = opt('--record-codes'), opt('--codes')
-    skipped = [r['politician_id'] for r in csv.DictReader(open(f'{out}/skipped.tsv'), delimiter='\t')]
+    rows = list(csv.DictReader(open(f'{out}/skipped.tsv'), delimiter='\t'))
+    reopened = [r for r in rows if r.get('group') in failed]
+    skipped = [r['politician_id'] for r in rows if r.get('group') not in failed]
+    path = f'{out}/reopened.tsv'
+    if reopened:
+        with open(path, 'w', newline='') as fh:
+            w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()), delimiter='\t'); w.writeheader(); w.writerows(reopened)
+        print(f'{len(reopened)} skipped person(s) at rung {", ".join(failed)} are NOT adopted: search and code them ({path})')
+    elif os.path.exists(path): os.remove(path)
     done = kept = 0
     for p in skipped:
         t = os.path.join(dst, f'{p}.json')
         if os.path.exists(t): kept += 1; continue
         shutil.copyfile(os.path.join(src, f'{p}.json'), t); done += 1
     print(f'adopted {done} record-only code(s) into {dst}; {kept} already had a code and were left alone')
-    return 0
+    return rc
 
 
 def tsv_ids(path): return [r['politician_id'] for r in csv.DictReader(open(path), delimiter='\t')] if os.path.exists(path) else []
