@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { findDrift, driftExitCode } from './reconcile-incumbency.mjs';
+import { findDrift, driftExitCode, blockingDrift } from './reconcile-incumbency.mjs';
 
 const holder = (id: string) => ({ politician_id: id });
 
@@ -183,5 +183,45 @@ describe('driftExitCode — what a scheduled --check run does', () => {
   it('never fails a plain read-only run, however much drift it reports', () => {
     // Running it by hand to LOOK must not be a failure; only the scheduled gate is a gate.
     expect(driftExitCode({ check: false, driftCount: 429 })).toBe(0);
+  });
+});
+
+describe('blockingDrift — a handover date must not turn CI red', () => {
+  // Reno, 2026-11-13: three seeded handovers took effect on their own date, the cached
+  // politicians.is_incumbent flag did not follow, and master CI failed on an unrelated push.
+  // Reads no longer use that column (src/lib/incumbency.ts), so its drift is reported, not failed.
+  const personRow = { politicianId: 'p1', column: 'politicians.is_incumbent', current: true, expected: false };
+  const raceRow = { raceCandidateId: 'rc1', politicianId: 'p2', column: 'race_candidates.is_incumbent', current: false, expected: true };
+
+  it('does not fail --check on politicians.is_incumbent drift alone', () => {
+    expect(driftExitCode({ check: true, driftCount: blockingDrift([personRow]).length })).toBe(0);
+  });
+
+  it('still fails --check on race_candidates.is_incumbent drift', () => {
+    expect(blockingDrift([personRow, raceRow])).toEqual([raceRow]);
+    expect(driftExitCode({ check: true, driftCount: blockingDrift([personRow, raceRow]).length })).toBe(1);
+  });
+});
+
+describe('no request path reads the cached politicians.is_incumbent column', () => {
+  // A TEXT GUARD. The column still exists and is still written, so a new query can pick it up
+  // again by accident and bring back the handover-day failure. Reads must use incumbency.ts.
+  const files = [
+    '../src/lib/districtQueries.ts',
+    '../src/lib/essentialsService.ts',
+    '../src/lib/essentialsBrowseService.ts',
+    './check-address-reachability.mjs',
+  ];
+  for (const f of files) {
+    it(`${f} does not read p.is_incumbent`, () => {
+      const src = readFileSync(new URL(f, import.meta.url), 'utf8');
+      // Strip line comments so the explanatory notes do not count as reads.
+      const code = src.split('\n').filter((l) => !/^\s*(\/\/|\*|--)/.test(l)).join('\n');
+      expect(code).not.toMatch(/\bp\.is_incumbent\b/);
+    });
+  }
+
+  it('the guard can see a read (positive control)', () => {
+    expect('AND p.is_incumbent = true').toMatch(/\bp\.is_incumbent\b/);
   });
 });

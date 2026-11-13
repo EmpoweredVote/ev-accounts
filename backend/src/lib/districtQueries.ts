@@ -20,6 +20,7 @@
 
 import { FALLBACK_EXCLUDED_MTFCC_SQL_LIST } from './geoIdGuard.js';
 import { PHOTO_RESTRICTION_SELECT_SQL } from './photoRestriction.js';
+import { IS_INCUMBENT_SELECT_SQL } from './incumbency.js';
 
 /**
  * Next primary/general date per office, as a lateral so a politician with no
@@ -82,7 +83,7 @@ export const DISTRICT_SELECT_FIELDS = `
     p.preferred_name, p.name_suffix, p.party,
     COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
     ${PHOTO_RESTRICTION_SELECT_SQL},
-    p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+    p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, ${IS_INCUMBENT_SELECT_SQL},
     p.finance_summary,
     -- 🔴 THE TERM DATES COME FROM THE TENURE, NOT FROM THE PERSON. Until CC_0391 these three read
     -- p.valid_from / p.valid_to / p.term_date_precision — the DEPRECATED per-person snapshot that
@@ -255,7 +256,7 @@ export const GEOFENCE_DISTRICT_JOIN = `
 
 /** Excludes challenger/placeholder rows unless a caller opts in. */
 export const INCUMBENTS_ONLY_CLAUSE =
-  "AND COALESCE(p.is_incumbent, true) = true AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'";
+  "AND COALESCE(o.title, '') NOT ILIKE 'Candidate for%'";
 
 /**
  * buildDistrictQuery — the ONE geofence->districts->officials query, parameterized
