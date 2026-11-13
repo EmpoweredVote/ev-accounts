@@ -371,7 +371,7 @@ export async function getPoliticiansFlatList(
   // Paxton AG), so holding a seat alone cannot exclude them.
   //
   // 🔴 `och.office_id IS NOT NULL` — an incumbent HOLDS A SEAT NOW, and only office_terms can say so.
-  // The cached `politicians.is_incumbent` flag is no longer read here (see incumbency.ts): it
+  // The cached `politicians.is_incumbent` flag (dropped, CA_0378; see incumbency.ts)
   // defaulted to true until CA_0188 (1,817 seatless "incumbents", 2026-09-23), and it did not
   // follow the calendar, so a seeded handover hid the arriving holder on its own date.
   const incumbentFilter = includeCandidates

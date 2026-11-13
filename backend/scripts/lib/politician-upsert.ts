@@ -43,14 +43,13 @@ export async function upsertPolitician(
   await client.query(`SAVEPOINT ${sp}`);
   try {
     const ins = await client.query<{ id: string }>(
-      // is_incumbent is explicit: every caller loads a CURRENT roster and seats the row (upsertOffice
-      // writes its office_terms row). The column default is false since CA_0188, and leaving it out
-      // would hide the officeholder from address search. check:occupancy requires the column here.
+      // No incumbency flag: whether the row holds a seat is read from the office_terms row that
+      // upsertOffice writes (src/lib/incumbency.ts). politicians.is_incumbent was dropped (CA_0378).
       `INSERT INTO essentials.politicians
          (external_id, full_name, first_name, last_name, middle_initial, name_suffix,
-          is_active, is_vacant, is_incumbent,
+          is_active, is_vacant,
           data_source, photo_origin_url, last_synced)
-       VALUES ($1, $2, $3, $4, $7, $8, true, false, true, $5, $6, now())
+       VALUES ($1, $2, $3, $4, $7, $8, true, false, $5, $6, now())
        ON CONFLICT (external_id) DO UPDATE SET
          full_name        = EXCLUDED.full_name,
          first_name       = EXCLUDED.first_name,

@@ -683,11 +683,10 @@ export async function adminCreatePolitician(data: {
   party_short_name?: string;
   slug?: string;
   bio_text?: string;
-  is_incumbent?: boolean;
   /**
-   * What the admin UI actually sends (CreatePoliticianSchema in routes/admin.ts accepts it).
-   * It was missing from this type, so it arrived, passed validation and was SILENTLY DISCARDED
-   * — an admin ticking "is candidate" produced a row asserting the opposite.
+   * Accepted from the admin UI (CreatePoliticianSchema) and deliberately not stored: whether
+   * someone is a candidate or a sitting official is a fact about their race rows and
+   * office_terms, not about this row. `politicians.is_incumbent` was dropped (CA_0378).
    */
   is_candidate?: boolean;
 }): Promise<Record<string, unknown>> {
@@ -697,8 +696,8 @@ export async function adminCreatePolitician(data: {
   const { rows } = await pool.query<Record<string, unknown>>(
     `INSERT INTO essentials.politicians
        (first_name, last_name, preferred_name, full_name, photo_origin_url,
-        party, party_short_name, slug, bio_text, is_incumbent)
-     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+        party, party_short_name, slug, bio_text)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
      RETURNING *`,
     [
       data.first_name,
@@ -710,14 +709,6 @@ export async function adminCreatePolitician(data: {
       data.party_short_name ?? null,
       data.slug ?? null,
       data.bio_text ?? null,
-      // 🔴 WAS `?? true`, AND THE ROUTE NEVER SENDS is_incumbent — so the default fired on
-      // EVERY call and every politician created here was marked a sitting officeholder. That is
-      // the CA_0188 shape, which cleared 1,817 active "incumbents" holding no seat, still live
-      // in a write path. An admin creating a record asserts nothing about occupancy, and only
-      // essentials.office_terms can; the column's own default is false, and the daily
-      // reconciler corrects it upward if the person really does hold a seat.
-      // `is_candidate` is honoured now rather than dropped. An explicit is_incumbent still wins.
-      data.is_incumbent ?? (data.is_candidate === undefined ? false : !data.is_candidate),
     ]
   );
   if (rows.length === 0) throw new Error('Insert failed');
@@ -743,7 +734,6 @@ export async function adminUpdatePolitician(
     slug: string;
     bio_text: string;
     is_active: boolean;
-    is_incumbent: boolean;
     is_vacant: boolean;
   }>
 ): Promise<Record<string, unknown>> {

@@ -98,20 +98,27 @@ describe('check-office-occupancy — reported line matches the source after bloc
     expect(reportedLine(r.out, rel)).toBe(2);
   });
 
-  it('branch gate: politicians INSERT without is_incumbent, below the header', () => {
+  it('branch gate: politicians INSERT that names the dropped is_incumbent, below the header', () => {
     const rel = 'backend/scripts/insert.ts';
     const src = [
       HEADER,
       'export const sql = `',
-      '  INSERT INTO essentials.politicians (id, full_name)',
-      '  VALUES ($1, $2)',
+      '  INSERT INTO essentials.politicians (id, full_name, is_incumbent)',
+      '  VALUES ($1, $2, true)',
       '`;',
       '',
     ].join('\n');
     const r = run({ [rel]: src });
     expect(r.code).toBe(1);
-    expect(r.out).toContain('without an explicit is_incumbent');
+    expect(r.out).toContain('names is_incumbent — that column was dropped');
     expect(reportedLine(r.out, rel)).toBe(realLine(src, 'INSERT INTO essentials.politicians'));
+  });
+
+  it('branch gate: a politicians INSERT without is_incumbent passes', () => {
+    const rel = 'backend/scripts/insert-ok.ts';
+    const src = [HEADER, 'export const sql = `', '  INSERT INTO essentials.politicians (id, full_name)', '  VALUES ($1, $2)', '`;', ''].join('\n');
+    const r = run({ [rel]: src });
+    expect(r.code).toBe(0);
   });
 
   it('--all inventory: same file, same real line', () => {
@@ -229,8 +236,8 @@ describe('check-office-occupancy — term dates must come from the tenure, not t
     const rel = 'backend/src/lib/stagingish.ts';
     const src = [
       "const sql = `",
-      '  INSERT INTO essentials.politicians (full_name, valid_from, valid_to, is_incumbent)',
-      '  VALUES ($1, $2, $3, false)',
+      '  INSERT INTO essentials.politicians (full_name, valid_from, valid_to)',
+      '  VALUES ($1, $2, $3)',
       '  ON CONFLICT (external_id) DO UPDATE SET',
       '    valid_from = EXCLUDED.valid_from,',
       '    valid_to = EXCLUDED.valid_to',

@@ -326,8 +326,8 @@ async function upsertPolitician(parsed: ParsedCandidate): Promise<{ id: string; 
   // Insert new
   const res = await pool.query<{ id: string }>(
     `INSERT INTO essentials.politicians
-       (full_name, first_name, last_name, source, is_active, is_vacant, is_incumbent, is_appointed, is_off_cycle)
-     VALUES ($1, $2, $3, 'netfile_laco_2024', true, false, false, false, false)
+       (full_name, first_name, last_name, source, is_active, is_vacant, is_appointed, is_off_cycle)
+     VALUES ($1, $2, $3, 'netfile_laco_2024', true, false, false, false)
      ON CONFLICT DO NOTHING
      RETURNING id`,
     [parsed.fullName, parsed.firstName || null, parsed.lastName || null]

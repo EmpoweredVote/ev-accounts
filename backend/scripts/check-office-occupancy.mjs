@@ -15,15 +15,11 @@
  *              valid code, so it cannot be caught by pattern-matching with any confidence.
  *              Watch `essentials.offices_missing_terms` for that one (see migration 1464).
  *
- * A THIRD rule, same family (added 2026-09-23, CA_0188): an INSERT into `essentials.politicians`
- * whose column list does not name `is_incumbent`. That flag is a CACHED occupancy fact — the
- * incumbents-only reads filter on it — and it defaulted to TRUE, so every insert that left it out
- * created an "incumbent" holding no seat: 1,817 active rows by 2026-09-23 (cleared by
- * CA_0181-CA_0187). CA_0188 flips the default to false, which moves the failure to the other side:
- * a seated person inserted without the flag is now HIDDEN from address search (the reachability
- * check's REPS_FILTER_HIDDEN catches that one, but only after the write reaches prod). Neither
- * default is safe to rely on, so the rule is: say it. `true` when you seat someone, `false` for a
- * candidate. The ~55 historical generators that omit it are not flagged unless someone edits one.
+ * A THIRD rule, same family: an INSERT into `essentials.politicians` whose column list NAMES
+ * `is_incumbent`. That column was a cached copy of office_terms and was DROPPED (CA_0378) after
+ * every read moved to src/lib/incumbency.ts. Until 2026-11-13 this rule required the column on
+ * every insert (CA_0188: neither default was safe); now naming it is a runtime 42703. Historical
+ * generators that name it are not flagged unless someone edits one.
  *
  * Deliberately scoped to files ADDED OR MODIFIED on this branch. History is full of one-off
  * seeders that legitimately wrote the column when it existed; rewriting them would be dishonest
@@ -244,7 +240,7 @@ for (const rel of files) {
     POLITICIAN_INSERT.lastIndex = 0;
     let m;
     while ((m = POLITICIAN_INSERT.exec(code)) !== null) {
-      if (/\bis_incumbent\b/i.test(m[1])) continue;
+      if (!/\bis_incumbent\b/i.test(m[1])) continue;
       const line = code.slice(0, m.index).split("\n").length;
       incumbentViolations.push({ rel, line, snippet: m[0].replace(/\s+/g, " ").slice(0, 120) });
       break; // one finding per file is enough to act on
@@ -289,16 +285,15 @@ if (SCAN_ALL) {
 }
 
 if (incumbentViolations.length > 0) {
-  console.error("INSERT into essentials.politicians without an explicit is_incumbent.\n");
+  console.error("INSERT into essentials.politicians names is_incumbent — that column was dropped.\n");
   for (const v of incumbentViolations) {
     console.error(`  ${v.rel}:${v.line}`);
     console.error(`      ${v.snippet}`);
   }
-  console.error("\nis_incumbent is what the incumbents-only reads filter on. Its default was TRUE until");
-  console.error("CA_0188 (1,817 seatless 'incumbents' followed) and is FALSE now (a seated person left");
-  console.error("without it is hidden from address search). Name the column and give the value you mean:");
-  console.error("  true  — this row is being SEATED (and write its office_terms row: seat_officeholder)");
-  console.error("  false — a candidate, a former officeholder, a committee-named discovery row\n");
+  console.error("\npoliticians.is_incumbent was dropped (CA_0378); naming it fails with 42703 at run time.");
+  console.error("Incumbency is derived from essentials.office_terms: read it with isIncumbentSql() /");
+  console.error("IS_INCUMBENT_SELECT_SQL (backend/src/lib/incumbency.ts), and SEAT someone with");
+  console.error("essentials.seat_officeholder(...). race_candidates.is_incumbent is a different column.\n");
   if (violations.length === 0) process.exit(1);
 }
 
@@ -328,6 +323,6 @@ if (violations.length > 0) {
 
 console.log(
   `Office occupancy OK — ${files.length} changed file(s) scanned, no writes to offices.politician_id, ` +
-    `every politicians INSERT names is_incumbent.` +
+    `no politicians INSERT names the dropped is_incumbent.` +
     (base ? "" : " (no git base; scanned working tree only)"),
 );
