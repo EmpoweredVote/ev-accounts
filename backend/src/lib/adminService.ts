@@ -721,6 +721,11 @@ export async function adminCreatePolitician(data: {
  * to non-public schemas reliably.
  * Only essentials-native columns are accepted (inform-specific columns removed).
  */
+const UPDATABLE_POLITICIAN_COLUMNS = new Set([
+  'first_name', 'last_name', 'preferred_name', 'full_name', 'photo_origin_url',
+  'party', 'party_short_name', 'slug', 'bio_text', 'is_active', 'is_vacant',
+]);
+
 export async function adminUpdatePolitician(
   politicianId: string,
   data: Partial<{
@@ -742,6 +747,9 @@ export async function adminUpdatePolitician(
   let paramIndex = 1;
 
   for (const [key, val] of Object.entries(data)) {
+    // Only real essentials.politicians columns. The key is interpolated into the SQL, so an
+    // unknown key is either a 500 (no such column) or worse; drop it here, not in the database.
+    if (!UPDATABLE_POLITICIAN_COLUMNS.has(key)) continue;
     if (val !== undefined) {
       setClauses.push(`${key} = $${paramIndex}`);
       values.push(val);
