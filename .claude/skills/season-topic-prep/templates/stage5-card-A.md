@@ -87,6 +87,18 @@ command with `--triage {{S}}/sponsor-triage-{{xx}}.json --write {{S}}/legiscan/c
 
 Check every `idmap.tsv` line you add against the person's name **and chamber**. Refuse a match from another state.
 
+🔴 Then the link check, before any skeleton or vote is built. A legislator with no `idmap.tsv` line has **no votes on
+file**, and nothing else says so (Kentucky: six members, two written as blanks that their record would have seated):
+
+```bash
+python3 -I scripts/stage5/link_check.py --state {{XX}} --roster {{S}}/batches/{{xx}}-roster.tsv --ds {{S}}/legiscan/ds --idmap {{S}}/legiscan/idmap.tsv --add
+```
+
+Exit 1 names each unlinked member beside the LegiScan people who may be the same person (a former surname, a
+nickname). Add the line by hand, run it again, and go on only at exit 0. A member seated after the newest dataset
+goes in `--no-record {{S}}/{{xx}}/no-legiscan-record.tsv` (`<politician_id>\t<reason>`); list those people on the
+stop 1 sheet. After A4, every person the pre-fill reports with no vote must be a non-legislator or in that file.
+
 **A3. Bill texts.** Fetch texts, then fill them with Sonnet agents as a `wave.py` wave (the newest
 `FILL-BRIEF*.md` under `{{S}}/legiscan/` is the model). Check the fills' quotes, and watch a planted wrong quote fail once:
 
