@@ -1,0 +1,23 @@
+City of South Portland, Maine -- "City Council"
+Retrieved 2026-11-14 from https://www.southportland.gov/411/City-Council
+(the city answers on southportland.gov; southportland.org redirects there).
+Fetched with plain curl and a full browser header set; HTTP 200.
+Control: 9,748 characters of page text extracted; 7 member lines captured.
+
+=== THE COUNCIL, IN THE CITY'S OWN WORDS ===
+
+  "The City Council consists of seven members who are elected to serve staggered three-year terms. In addition to two At Large Councilors, there are five Councilors representing each of the five City districts."
+
+=== THE SEVEN MEMBERS, IN THE ORDER THE PAGE LISTS THEM ===
+
+  Carter Scott City Council Member, District One
+  Rachael Coleman City Council Member, District Two
+  Misha C. Pride City Council Member, District Three
+  Jessica L. Walker City Council Member, District Four
+  Elyse Tipton Mayor, District Five
+  Richard T. Matthews City Council Member, At - Large
+  Natalie West City Council Member, At - Large
+
+🔴 The page labels Elyse Tipton "Mayor, District Five" -- ONE row carrying BOTH, which is the
+rotating role written as a parenthetical on the seat (ROSTERS.md R8b). SEVEN people are listed,
+not eight, and every other member is styled "City Council Member".
