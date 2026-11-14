@@ -1052,6 +1052,37 @@ def wave_starts_agents_slim_and_only_with_named_tools(t):
     assert '--safe-mode' not in run('wave.py', f'{t}/jobs.tsv', '--out', f'{t}/o', '--print', '--full').stdout
 
 
+@check
+def link_check_stops_on_a_legislator_with_no_vote_link(t):
+    """Kentucky 2026-11-14: six sitting members had no idmap line, so their votes were never read, and nothing said so."""
+    os.makedirs(f'{t}/ds/XX-1/2025/s/bill'); os.makedirs(f'{t}/ds/XX-1/2025/s/people')
+    json.dump({'bill': {'session': {'year_end': 2026}}}, open(f'{t}/ds/XX-1/2025/s/bill/1.json', 'w'))
+    for i, first, last, name in ((7, 'Ann', 'Able', 'Ann Able'), (8, 'Deanna', 'Frazier', 'Deanna Frazier'), (9, 'Amy', 'Mays Bell', 'Amy Mays Bell')):
+        json.dump({'person': {'people_id': i, 'first_name': first, 'last_name': last, 'name': name, 'role': 'Rep', 'district': f'HD-{i}'}}, open(f'{t}/ds/XX-1/2025/s/people/{i}.json', 'w'))
+    rows = [('pa', 'Ann Able', 'sitting', 'Representative'), ('pg', 'Deanna Gordon', 'both', 'Senator'), ('pb', 'Amy Mays Bell', 'sitting', 'Representative'),
+            ('pc', 'Cal Runner', 'candidate', 'Representative'), ('pv', 'Gia Gov', 'sitting', 'Governor')]
+    def roster(rs): open(f'{t}/roster.tsv', 'w').write('politician_id\tfull_name\tscope\toffice\n' + ''.join('\t'.join(r) + '\n' for r in rs))
+    def idmap(lines): open(f'{t}/idmap.tsv', 'w').write(''.join(f'{a}\t{b}\n' for a, b in lines))
+    def go(*extra): return run('link_check.py', '--state', 'xx', '--roster', f'{t}/roster.tsv', '--ds', f'{t}/ds', '--idmap', f'{t}/idmap.tsv', *extra, ok=False)
+    roster(rows); idmap([(7, 'pa'), (8, 'pg'), (9, 'pb')])
+    p = go(); assert p.returncode == 0 and '3 legislator(s)' in p.stdout and '0 NOT linked' in p.stdout, p.stdout + p.stderr   # the candidate and the governor are not asked for
+    idmap([(7, 'pa'), (9, 'pb')])
+    p = go(); assert p.returncode == 1 and '- Deanna Gordon (Senator)' in p.stdout and 'Deanna Frazier' in p.stdout, 'a changed surname is named beside the unlinked LegiScan person'
+    idmap([(7, 'pa'), (9, 'pb'), (8, 'someone-else')])
+    assert go().returncode == 1, 'a line that points at another id links nobody here'
+    idmap([(7, 'pa'), (9, 'pb'), (77, 'pg')])
+    assert go().returncode == 1, 'a line whose LegiScan person is not in the datasets links nobody'
+    open(f'{t}/none.tsv', 'w').write('pg\tseated 2026-10-01, after the newest dataset\n')
+    p = go('--no-record', f'{t}/none.tsv'); assert p.returncode == 0 and 'excused: Deanna Gordon' in p.stdout
+    open(f'{t}/none.tsv', 'w').write('pg\n'); assert go('--no-record', f'{t}/none.tsv').returncode == 2, 'an excuse needs a reason'
+    idmap([(8, 'pg')])
+    p = go(); assert p.returncode == 1 and p.stdout.count('name match, not yet in idmap') == 2, 'a name match alone is not a link'
+    p = go('--add'); assert p.returncode == 0 and 'added 2 line(s)' in p.stdout, p.stdout
+    assert open(f'{t}/idmap.tsv').read().count('link_check name match') == 2 and go().returncode == 0   # 9: LegiScan's last_name is "Mays Bell"
+    roster([r[:3] + ('',) for r in rows]); assert go().returncode == 2, 'no office column filled: no verdict, never a pass'
+    roster(rows); os.rename(f'{t}/ds/XX-1', f'{t}/ds/YY-1'); assert go().returncode == 2, 'no LegiScan people read: no verdict'
+
+
 fails = 0
 with tempfile.TemporaryDirectory() as root:
     for i, f in enumerate(CHECKS):

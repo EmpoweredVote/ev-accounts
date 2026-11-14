@@ -149,7 +149,11 @@ python3 -I scripts/stage5/sponsor_cover.py <bills.json> --state XX --roster <ros
 The keyword scan is wide (Georgia: 164 such bills). One Opus agent triages the titles with
 [templates/stage5-sponsor-triage-prompt.md](templates/stage5-sponsor-triage-prompt.md); then the same command with
 `--triage <triage.json> --write <new core.json>` keeps only the "fill" bills. It refuses while any candidate is
-untriaged. Add the name matches it prints to `idmap.tsv` once checked.
+untriaged. Add the name matches it prints to `idmap.tsv` once checked. 🔴 Then run `link_check.py --state XX --roster <scoped roster> --ds <ds root>
+--idmap <idmap.tsv> --add` and go on only at exit 0: sponsor cover links only the people who sponsored a candidate
+bill, and a legislator with no `idmap.tsv` line has no votes on file while nothing errors (Kentucky 2026-11-14: six
+sitting members, among them a former surname and a "Casey" for "Cassie"; two were written as blanks that their own
+record would have seated).
 
 **Text fill only where it can matter (round three, 2026-11-13).** The triage answers `fill`, `stub` or `skip`. A
 `stub` is on the topic but its title shows no rung is possible (a dealer rule, a tax, a storage rule, a report); it is
