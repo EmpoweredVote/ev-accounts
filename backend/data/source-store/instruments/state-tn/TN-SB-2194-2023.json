@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2194-2023",
+  "scope": "state:tn",
+  "title": "SB2194 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearm transactions.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2194&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB2194.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Heidi Campbell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bca9c890-1fd4-4ab8-9ffe-a6fac4eb2d32"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-30; official copy via the Internet Archive snapshot 20260514141631 of https://www.capitol.tn.gov/Bills/113/Bill/SB2194.pdf (LegiScan doc 2906997))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2194-2023.draft.pdf",
+      "sha256": "7690fe011c6757a370ffa2b1be890422a9ec0ea5dd7408f8aed5e446ab6a157e"
+    },
+    "note": "Draft as filed 2024-01-30; HB 2192 and SB 2194 share this document. Takes effect July 1, 2024. No amendments in the text read."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1316(c)): (5) The gun dealer shall ensure that fourteen (14) days have passed since the transaction was initiated by the purchaser before transferring the firearm to the purchaser."
+}

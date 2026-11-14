@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1037-2023",
+  "scope": "state:tn",
+  "title": "SB1037 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1037&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB1037.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "John Stevens",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-01-31; crossfiled twin's official copy via the Internet Archive snapshot 20260514135817 of https://www.capitol.tn.gov/Bills/113/Bill/HB0746.pdf (it names SENATE BILL 1037; own link https://www.capitol.tn.gov/Bills/113/Bill/SB1037.pdf not archived))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1037-2023.draft.twin.pdf",
+      "sha256": "2c2f245a49f7aab9b820d3cccc30ab5fbb2a938c557c51332785d3212f97a3d2"
+    },
+    "note": "Draft as filed (2023-01-31); read from the House twin HB 746 document that names SB 1037. The new subsection (a) limits owners to allowing only permit holders to carry concealed handguns (text printed 'carried in in'); deletions in Sections 2-7 remove the 'prohibition' wording and the offense per the state summary. The effect is partly taken from that summary."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1359(a)): (a) Except as provided in § 39-17-1313, an individual, corporation, business entity, or local, state, or federal government entity or agent thereof is authorized to restrict the possession of weapons by a person who is at a meeting conducted by, or on property owned, operated, or managed or under the control of the individual, corporation, business entity, or government entity by allowing a handgun to be carried in in a concealed manner only by persons authorized to carry a handgun pursuant to § 39-17-1351 or § 39-17-1366.\nSECTION 4 (TCA 39-17-1359): Tennessee Code Annotated, Section 39-17-1359, is amended by deleting subdivisions (b)(3)(B) and (b)(4).\nSECTION 6 (TCA 39-17-1359): Tennessee Code Annotated, Section 39-17-1359, is amended by deleting subsection (c)."
+}

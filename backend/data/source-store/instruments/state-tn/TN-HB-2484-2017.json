@@ -1,0 +1,62 @@
+{
+  "id": "TN-HB-2484-2017",
+  "scope": "state:tn",
+  "title": "HB2484 (110th General Assembly): As introduced, removes criminal liability for possession on posted premises for a permit holder who immediately leaves posted premises upon being asked to do so. - Amends TCA Section 39-17-1359.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2484&ga=110",
+    "https://www.capitol.tn.gov/Bills/110/Bill/HB2484.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Andy Holt",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Clark Boyd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fe941f15-bf81-4bb8-8834-f5cc312537b9"
+    },
+    {
+      "name": "Jay Reedy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4e0eefb1-6a4f-4004-be8d-432a7131b475"
+    },
+    {
+      "name": "Jason Zachary",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "28d41dcf-2d8c-4008-a5e5-4e9cc50a59e9"
+    },
+    {
+      "name": "Sabi Kumar",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f9cf1fb9-ad68-4549-8b81-f45b6c4e1952"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2018-02-01; official copy via LegiScan getBillText doc 1714285)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2484-2017.draft.pdf",
+      "sha256": "0d5dde206e8355220e5f8919647a75c7c6eec7d361ee8182cd3eb1b31a605538"
+    },
+    "note": "Draft dated 2018-02-01 (twin SB 2336). Replaces TCA 39-17-1359(c)(1). Summary says 'As introduced'; no enactment shown; adopted amendments, if any, are not in the text read. Effective July 1, 2018."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1359(c)(1)): (1) It is an offense to possess a weapon in a building or on property that is properly posted in accordance with this section; provided, that it is not an offense under this section if the person possessing a weapon is a permit holder pursuant to § 39-17- 1351 who immediately leaves the premises upon being asked to do so."
+}

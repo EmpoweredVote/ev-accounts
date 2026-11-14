@@ -64,6 +64,913 @@
         "fetched_at": "2026-11-12T15:13:42.077Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "a7cd495c78481bce8829055e25a6939d74c550d00b7711a9db34cf204594e652",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1015&ga=113",
+      "date": "2024-04-09",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1015-2024",
+      "act": "yea",
+      "motion": "FLOOR VOTE: as Amended Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "TN Senate, FLOOR VOTE: as Amended Third Consideration, 2024-04-09: yea (tally 31–0); census gate: near-unanimous.",
+      "subjects": [
+        "towing businesses may remove and securely store firearms left in vehicles",
+        "owner notice and retrieval of stored firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2024-05-07; official copy via LegiScan getBillText doc 2996331)",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1015-2024.chaptered.pdf",
+          "sha256": "f25b888e8ecc945ce659880544f9e080339786f93e2f275d850b4304db80f8ea"
+        }
+      }
+    },
+    {
+      "id": "890cbbd7d97f1b3098a8e0c67e89016d4fa9e73edfa03594d3c5e991be38b67e",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1189&ga=113",
+      "date": "2023-04-18",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1189-2023",
+      "act": "nay",
+      "motion": "FLOOR VOTE: as Amended Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TN Senate, FLOOR VOTE: as Amended Third Consideration, 2023-04-18: nay (tally 19–9); census gate: none.",
+      "subjects": [
+        "limits on lawsuits against gun and ammunition makers and sellers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2023-05-15; official copy via LegiScan getBillText doc 2817059)",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1189-2023.chaptered.pdf",
+          "sha256": "7db70a370a1d19e399e1e36af4382bf07b928a387b413c3e435d1c39d3546e06"
+        }
+      }
+    },
+    {
+      "id": "660d215a8a29cf3416600e537604fd428ef3e947d95583e457cc5dcedd0ea49a",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=HB1332&ga=114",
+      "date": "2025-04-15",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1332-2025",
+      "act": "nay",
+      "motion": "FLOOR VOTE: Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TN Senate, FLOOR VOTE: Third Consideration, 2025-04-15: nay (tally 26–6); census gate: none.",
+      "subjects": [
+        "handgun carry permit age lowered to 18",
+        "DUI conviction bar for carry permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2025-05-07; official copy via LegiScan getBillText doc 3233608)",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1332-2025.chaptered.pdf",
+          "sha256": "54e320ac3859ead1e5d1bd290f884e5d270f6510184f1babf03dd91296258664"
+        }
+      }
+    },
+    {
+      "id": "7d601298ca245d7362c83b1f16ddbe6a23d5c4c95ef3f3783e93eecde4b0202e",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1600&ga=113",
+      "date": "2024-04-25",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1600-2024",
+      "act": "yea",
+      "motion": "FLOOR VOTE: Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TN Senate, FLOOR VOTE: Third Consideration, 2024-04-25: yea (tally 23–8); census gate: none.",
+      "subjects": [
+        "firearm purchase and possession ban to age 25 after listed juvenile adjudications",
+        "sale ban and handgun carry permit bar for those people",
+        "court petition to restore firearm rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2024-05-23; official copy via LegiScan getBillText doc 3003621)",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1600-2024.chaptered.pdf",
+          "sha256": "ee8ce6b64dc2abf559cf5a99a116aac9cda85e780b3612e987bb2ecc5a982233"
+        }
+      }
+    },
+    {
+      "id": "3a4f8e214d18850792d8adddaaf5b09cd93e22d1c385b05bd51f0ffc2572207e",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1631&ga=113",
+      "date": "2024-03-28",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-1631-2024",
+      "act": "nay",
+      "motion": "FLOOR VOTE: Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TN Senate, FLOOR VOTE: Third Consideration, 2024-03-28: nay (tally 26–5); census gate: none.",
+      "subjects": [
+        "private schools serving pre-K through 12 may adopt a handgun carry policy"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2024-04-26; official copy via LegiScan getBillText doc 2990360)",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1631-2024.chaptered.pdf",
+          "sha256": "8720f6c09f301df39dfea49b3a62d02fe81f204a6e4c2cab6c49d47d7af9cc40"
+        }
+      }
+    },
+    {
+      "id": "9e91d5dc0b4e2bfd0dfc9e2c5c2f5d3dfafe324d8b61d6ca25439319bc91aa33",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2126&ga=113",
+      "date": "2024-03-18",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-2126-2024",
+      "act": "nay",
+      "motion": "FLOOR VOTE: Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "TN Senate, FLOOR VOTE: Third Consideration, 2024-03-18: nay (tally 26–6); census gate: multi-subject.",
+      "subjects": [
+        "adult trial for juveniles 15 or older charged with firearm theft"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2024-04-05; official copy via LegiScan getBillText doc 2976056)",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2126-2024.chaptered.pdf",
+          "sha256": "81603feccf147513131ff977b2f96608228a898cd16fe469d3f972dda954a6fe"
+        }
+      }
+    },
+    {
+      "id": "e73e7443bbccbeb643664eec5c897a38f113527744ed7f6befd810cc93b1bfe4",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2882&ga=113",
+      "date": "2024-04-04",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-2882-2024",
+      "act": "nay",
+      "motion": "FLOOR VOTE: Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TN Senate, FLOOR VOTE: Third Consideration, 2024-04-04: nay (tally 24–3); census gate: none.",
+      "subjects": [
+        "annual firearm safety instruction in schools",
+        "no live firearms or ammunition in instruction"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2024-04-26; official copy via LegiScan getBillText doc 2990604)",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2882-2024.chaptered.pdf",
+          "sha256": "fca849a09880b420747b7952fcdfeb492836ebc7b93f0c9bc8e5faf1e6987bf4"
+        }
+      }
+    },
+    {
+      "id": "9303e67f35935537a5678e1a196849d86946bdb34261228b6c15a411fee178e0",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=HB0578&ga=114",
+      "date": "2025-04-22",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-578-2025",
+      "act": "yea",
+      "motion": "FLOOR VOTE: Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "TN Senate, FLOOR VOTE: Third Consideration, 2025-04-22: yea (tally 33–0); census gate: near-unanimous.",
+      "subjects": [
+        "more felonies count toward the firearm-during-a-dangerous-felony offense",
+        "lesser included dangerous felonies implied in indictment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2025-05-22; official copy via the Internet Archive snapshot 20260513074136 of https://publications.tnsosfiles.com/acts/114/pub/pc0492.pdf (LegiScan doc 3246002))",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-578-2025.chaptered.pdf",
+          "sha256": "c452a422f1e39f866ebfddd51ec432433d9d564b2d0f141d998dbbadc7783636"
+        }
+      }
+    },
+    {
+      "id": "e50e0d3df153173511c07e92a1b1616d852821b318eacbfea6f1ae8a4c9c65bf",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1325&ga=113",
+      "date": "2024-04-09",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-1325-2024",
+      "act": "nay",
+      "motion": "FLOOR VOTE: as Amended Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TN Senate, FLOOR VOTE: as Amended Third Consideration, 2024-04-09: nay (tally 26–5); census gate: none.",
+      "subjects": [
+        "armed school staff with permit, joint school and police authorization, background check and training",
+        "confidentiality of armed staff identities",
+        "liability immunity for school systems and agencies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2024-05-06; official copy via the Internet Archive snapshot 20261031111047 of https://publications.tnsosfiles.com/acts/113/pub/pc0801.pdf (LegiScan doc 2994694))",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1325-2024.chaptered.pdf",
+          "sha256": "7addebb878addc4d872dde13e7f138174959ccfa68e636ed8d200116ed842680"
+        }
+      }
+    },
+    {
+      "id": "b8c9506bc37e6a0a5d6424d457d286b7b9551ebe63b35d60090fd779ce83c27e",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB1360&ga=114",
+      "date": "2025-04-15",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-1360-2025",
+      "act": "nay",
+      "motion": "FLOOR VOTE: as Amended Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TN Senate, FLOOR VOTE: as Amended Third Consideration, 2025-04-15: nay (tally 26–6); census gate: none.",
+      "subjects": [
+        "limits lawsuits against firearm and ammunition sellers and makers",
+        "extends the protected products to magazines and silencers",
+        "narrows and clarifies local government firearm preemption"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2025-05-07; crossfiled twin's official copy via the Internet Archive snapshot 20260513075020 of https://publications.tnsosfiles.com/acts/114/pub/pc0329.pdf (it names SENATE BILL 1360; own link https://publications.tnsosfiles.com/acts/114/pub/pc0329.pdf not archived))",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1360-2025.chaptered.twin.pdf",
+          "sha256": "885840be2c4396353be69d775683adec8a94382eb02c1506888c69ed4060ef0c"
+        }
+      }
+    },
+    {
+      "id": "e22409833c8e611c9ac140e517425927ab66f9183381dcba9c3ece8471bf4bf2",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB1589&ga=114",
+      "date": "2026-02-23",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-1589-2026",
+      "act": "yea",
+      "motion": "FLOOR VOTE: Motion to Adopt",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "TN Senate, FLOOR VOTE: Motion to Adopt, 2026-02-23: yea (tally 32–0); census gate: near-unanimous.",
+      "subjects": [
+        "corrections institute staff may carry handgun on duty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2026-03-27; same official document as TN-HB-1502-2026.chaptered.txt (https://publications.tnsosfiles.com/acts/114/pub/pc0609.pdf); 2026-03-27)",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1502-2026.chaptered.pdf",
+          "sha256": "a0caf1a4740ee04167751f9038753e63ff2899b59ce45cfd5875854fec7e8975"
+        }
+      }
+    },
+    {
+      "id": "2282fd29a696ea70fc0156282a6dd83abbc460fd835b445aab96a1b3a3891285",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB1628&ga=114",
+      "date": "2026-03-30",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-1628-2026",
+      "act": "yea",
+      "motion": "FLOOR VOTE: Motion to Adopt",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "TN Senate, FLOOR VOTE: Motion to Adopt, 2026-03-30: yea (tally 33–0); census gate: near-unanimous.",
+      "subjects": [
+        "lifetime carry-permit fee waiver for officers retired by line-of-duty injury"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2026-01-13; crossfiled twin's official copy via the Internet Archive snapshot 20260513181437 of https://www.capitol.tn.gov/Bills/114/Bill/HB1508.pdf (it names SENATE BILL 1628; own link https://www.capitol.tn.gov/Bills/114/Bill/SB1628.pdf not archived))",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1628-2026.draft.twin.pdf",
+          "sha256": "51673544d1772867bcd5ee05a028a767e84931a6703013a1286ec6c33fe615af"
+        }
+      }
+    },
+    {
+      "id": "c70257b2a58aad5e42ba5c7e9e00b597b3bbd81caae75ea1631733de14d958f7",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB1747&ga=114",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-1747-2026",
+      "act": "yea",
+      "motion": "FLOOR VOTE: as Amended Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "TN Senate, FLOOR VOTE: as Amended Third Consideration, 2026-04-09: yea (tally 29–0); census gate: near-unanimous.",
+      "subjects": [
+        "crime to recklessly discharge a firearm at a public gathering"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2026-01-20; own version, official copy via the Internet Archive snapshot 20260513074141 of https://www.capitol.tn.gov/Bills/114/Bill/SB1747.pdf; the last listed version was not archived)",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1747-2026.draft.pdf",
+          "sha256": "4fa7298fcc377c1e4f7c1864fc16480d0cc1710aeb0ebea512cdffb74c5ef061"
+        }
+      }
+    },
+    {
+      "id": "0469b8636fd1229c703f6a9b1ce11affb57c56339bb3bd23e0b27f946f0e58f7",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB2028&ga=114",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-2028-2026",
+      "act": "nay",
+      "motion": "FLOOR VOTE: Motion to Concur House Amendment # 3",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TN Senate, FLOOR VOTE: Motion to Concur House Amendment # 3, 2026-03-23: nay (tally 26–5); census gate: none.",
+      "subjects": [
+        "local preemption of firearm discharge while hunting",
+        "500-foot school-property exception"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2026-04-10; official copy via the Internet Archive snapshot 20260513075848 of https://publications.tnsosfiles.com/acts/114/pub/pc0673.pdf (LegiScan doc 3416899))",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2028-2026.chaptered.pdf",
+          "sha256": "1e76d0596cc534b3acac88a87ba0059818ca50c79f5a64a07949721c24ef6538"
+        }
+      }
+    },
+    {
+      "id": "8b8ce13ceb78b7a6ba65eeb5330556ff39c4b2b4a71a0b15d6df9da2bc119645",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB0218&ga=114",
+      "date": "2026-03-12",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-218-2026",
+      "act": "nay",
+      "motion": "FLOOR VOTE: Motion to Concur House Amendment # 3",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "TN Senate, FLOOR VOTE: Motion to Concur House Amendment # 3, 2026-03-12: nay (tally 26–6); census gate: multi-subject.",
+      "subjects": [
+        "no release on own recognizance for felonies involving a firearm",
+        "written findings when the presumption is rebutted"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2026-03-27; crossfiled twin's official copy via the Internet Archive snapshot 20260513074544 of https://publications.tnsosfiles.com/acts/114/pub/pc0604.pdf (it names SENATE BILL 218; own link https://publications.tnsosfiles.com/acts/114/pub/pc0604.pdf not archived))",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-218-2026.chaptered.twin.pdf",
+          "sha256": "e5df22ae097e1d2f5f118fbc1bc8ea0509e7ffd6f18d3f7dd2126ceaa719209a"
+        }
+      }
+    },
+    {
+      "id": "918d21a6c9496c4f3497c1930633ee89a7c3543b9412bebd9b64071ca29ad470",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB2459&ga=114",
+      "date": "2026-03-19",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-2459-2026",
+      "act": "nay",
+      "motion": "FLOOR VOTE: as Amended Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TN Senate, FLOOR VOTE: as Amended Third Consideration, 2026-03-19: nay (tally 27–5); census gate: none.",
+      "subjects": [
+        "state may not ask foster parents what guns they own",
+        "may still ask about safe storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2026-05-01; same official document as TN-HB-2206-2025.chaptered.txt (https://publications.tnsosfiles.com/acts/114/pub/pc0869.pdf); 2026-05-01)",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2206-2025.chaptered.pdf",
+          "sha256": "6a1be045e8e2c330b7ec81a2965c7e6e6809466c45f5ca8d3199c5d38faea3a4"
+        }
+      }
+    },
+    {
+      "id": "d5319fa67b619010505b23b70192852c2233fd9db5b464cecb3a15f563ae29f3",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB2469&ga=114",
+      "date": "2026-04-13",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-2469-2026",
+      "act": "nay",
+      "motion": "FLOOR VOTE: as Amended Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "TN Senate, FLOOR VOTE: as Amended Third Consideration, 2026-04-13: nay (tally 29–2); census gate: near-unanimous.",
+      "subjects": [
+        "judges with handgun permits may carry in courts and where police may carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2026-02-02; own version, official copy via the Internet Archive snapshot 20260513162225 of https://www.capitol.tn.gov/Bills/114/Bill/SB2469.pdf; the last listed version was not archived)",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2469-2026.draft.pdf",
+          "sha256": "a2cfc003884e087793cdd2b6e91f92f2cadbef421a726aab1fb377dabb3ffbf0"
+        }
+      }
+    },
+    {
+      "id": "26f809f8582628419e4916a7ee635e7bbf070c2f1963dfb7b836a48d5f54bd28",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2763&ga=113",
+      "date": "2024-04-11",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-2763-2024",
+      "act": "nay",
+      "motion": "FLOOR VOTE: as Amended Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TN Senate, FLOOR VOTE: as Amended Third Consideration, 2024-04-11: nay (tally 22–6); census gate: none.",
+      "subjects": [
+        "state preemption of local extreme risk protection orders",
+        "local ban on grants to enforce such orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2024-05-29; official copy via the Internet Archive snapshot 20260514144209 of https://publications.tnsosfiles.com/acts/113/pub/pc1062.pdf (LegiScan doc 3006335))",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2763-2024.chaptered.pdf",
+          "sha256": "398a66da3a08786d7ed001bb1d7ac99db3f3a2145bfbb56c11b7a1091e69c983"
+        }
+      }
+    },
+    {
+      "id": "6aa3c8931f86b008ffa2c01c60f159bb950aeced9e818e81aeb4da19a4750003",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2797&ga=113",
+      "date": "2024-04-18",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-2797-2024",
+      "act": "nay",
+      "motion": "FLOOR VOTE: Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TN Senate, FLOOR VOTE: Third Consideration, 2024-04-18: nay (tally 27–4); census gate: none.",
+      "subjects": [
+        "retired law enforcement officers count as officers for carry rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2024-05-29; official copy via the Internet Archive snapshot 20260514144245 of https://publications.tnsosfiles.com/acts/113/pub/pc1065.pdf (LegiScan doc 3006506))",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2797-2024.chaptered.pdf",
+          "sha256": "e650a7a0c0ca9e639a8d856e57c92d0811c89120547111565a0086a2411ae91a"
+        }
+      }
+    },
+    {
+      "id": "168c21f89f9bb818b33e760e7685eba746b4902eff36442962f75e7eb332d3a7",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB0034&ga=114",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-34-2026",
+      "act": "yea",
+      "motion": "FLOOR VOTE: as Amended Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TN Senate, FLOOR VOTE: as Amended Third Consideration, 2026-04-09: yea (tally 11–21); census gate: none.",
+      "subjects": [
+        "crime to transfer a gun to a prohibited person"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2025-01-30; official copy via the Internet Archive snapshot 20260831140541 of https://www.capitol.tn.gov/Bills/114/Bill/SB0034.pdf (LegiScan doc 3092563))",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-34-2026.draft.pdf",
+          "sha256": "cc676a40c5f0041125462e118fc55f250e2fbb0e9926d70ad39ba40b16144738"
+        }
+      }
+    },
+    {
+      "id": "28e15eb4b33192b791891ba6108045cd9e0332609e168a817c7b5589af5a9c22",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB0350&ga=114",
+      "date": "2026-03-12",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-350-2026",
+      "act": "yea",
+      "motion": "FLOOR VOTE: Motion to Concur House Amendment # 1",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "TN Senate, FLOOR VOTE: Motion to Concur House Amendment # 1, 2026-03-12: yea (tally 32–0); census gate: near-unanimous.",
+      "subjects": [
+        "landlords may not ban tenant firearms at home or in parking areas",
+        "tenants may sue landlords who do"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2026-03-27; same official document as TN-HB-469-2025.chaptered.txt (https://publications.tnsosfiles.com/acts/114/pub/pc0606.pdf); 2026-03-27)",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-469-2025.chaptered.pdf",
+          "sha256": "9c75391da06e4439c77352f5ea0b742648dd81dbd7f8e39551810ae659f7594a"
+        }
+      }
+    },
+    {
+      "id": "bdf3b4e2b191c38a80e448df2b83d5986d2011276f89a71e1ee7b69384151461",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0360&ga=113",
+      "date": "2023-04-18",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-360-2023",
+      "act": "yea",
+      "motion": "FLOOR VOTE: Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "TN Senate, FLOOR VOTE: Third Consideration, 2023-04-18: yea (tally 32–0); census gate: near-unanimous.",
+      "subjects": [
+        "state-paid $30 handgun safety course for first-time takers",
+        "dealer signage on safety training"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2023-05-22; official copy via the Internet Archive snapshot 20260514140338 of https://publications.tnsosfiles.com/acts/113/pub/pc0445.pdf (LegiScan doc 2817518))",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-360-2023.chaptered.pdf",
+          "sha256": "6950302e239d4bb636250062efdeb8f1013ca8a67b6aba641728c35ec7809ea0"
+        }
+      }
+    },
+    {
+      "id": "fdb6925c825fee430fbee28caeffd566feae3004e42d81375fd09d1eaa9224e7",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0494&ga=113",
+      "date": "2023-03-23",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-494-2023",
+      "act": "nay",
+      "motion": "FLOOR VOTE: as Amended Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TN Senate, FLOOR VOTE: as Amended Third Consideration, 2023-03-23: nay (tally 23–5); census gate: none.",
+      "subjects": [
+        "handgun carry while hunting without a carry permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2023-05-01; same official document as TN-HB-395-2023.chaptered.txt (https://publications.tnsosfiles.com/acts/113/pub/pc0218.pdf); 2023-05-01)",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-395-2023.chaptered.pdf",
+          "sha256": "a6c0d98bde28cb38c661e17953b35b608456152acbf223c701427648d87d3681"
+        }
+      }
+    },
+    {
+      "id": "d4c79a705750f5b00bd797781cd0ccf13d4967a3c468dc093310cd54b597d4f9",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0515&ga=113",
+      "date": "2023-03-16",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-515-2023",
+      "act": "nay",
+      "motion": "FLOOR VOTE: Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "TN Senate, FLOOR VOTE: Third Consideration, 2023-03-16: nay (tally 27–6); census gate: none.",
+      "subjects": [
+        "retired officers working part-time at public colleges may carry handguns on campus"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2023-04-14; same official document as TN-HB-723-2023.chaptered.txt (https://publications.tnsosfiles.com/acts/113/pub/pc0149.pdf); 2023-04-14)",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-723-2023.chaptered.pdf",
+          "sha256": "b376c3b49a8bed8add9a07adef61ba3cc0582c63bc5c31469a93bd930fde1e34"
+        }
+      }
+    },
+    {
+      "id": "a63ef09b8cd0e6d9e549d788366296b4e5fbb5c731885c692162410675dedfbf",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB0657&ga=114",
+      "date": "2025-04-14",
+      "date_precision": "day",
+      "instrument_id": "TN-SB-657-2025",
+      "act": "nay",
+      "motion": "FLOOR VOTE: Third Consideration",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "TN Senate, FLOOR VOTE: Third Consideration, 2025-04-14: nay (tally 26–6); census gate: multi-subject.",
+      "subjects": [
+        "firearm-during-a-dangerous-felony offense counts as racketeering"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2025-05-07; official copy via the Internet Archive snapshot 20260513074009 of https://publications.tnsosfiles.com/acts/114/pub/pc0374.pdf (LegiScan doc 3235642))",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-657-2025.chaptered.pdf",
+          "sha256": "48a67f03e9450426eb00ce5ba7bb15dba8388dd1527646d20cd38ec9ed96a0b1"
+        }
+      }
+    },
+    {
+      "id": "14bbe7eb6c9353e25c6bcd1adc6a3966f5e85e9915fca87cfe327397c8f1cc00",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1566&ga=113",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-1566-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of TN-SB-1566-2023 (sponsor list (prime / co-sponsor)): SB1566 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4, Chapter 54; Section 38-3-119 and Title 39, Chapter 17, Part 13, relative to firearms..",
+      "subjects": [
+        "felony to own or sell bump stocks and rapid-fire accessories",
+        "rifles with such parts become prohibited weapons"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-04-13; crossfiled twin https://www.capitol.tn.gov/Bills/113/Bill/HB1577.pdf is the same printed document (it names SENATE BILL 1566); copied from TN-HB-1577-2023.draft.txt)",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1577-2023.draft.pdf",
+          "sha256": "4621a669738297f5fb4ce1a6efe29e114cf9c00ccf3e333c6250afb7c697bbcd"
+        }
+      }
+    },
+    {
+      "id": "7c21abeb0942d8ed980437099a106c2ecb3558eb52b9148f0da7a8195023620b",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1570&ga=113",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-1570-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of TN-SB-1570-2023 (sponsor list (prime / co-sponsor)): SB1570 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4; Title 8; Title 10; Title 13; Title 16; Title 29; Title 33; Title 36; Title 37; Title 38; Title 39; Title 40; Title 47; Title 49; Title 50; Title 55; Title 58; Title 65; Title 68 and Title 70, relative to firearms..",
+      "subjects": [
+        "locked storage required for all firearms",
+        "ban on magazines over 10 rounds",
+        "all gun sales through licensed dealers",
+        "extreme risk protection orders and gun surrender",
+        "repeal of a handgun carry provision"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-04-13; crossfiled twin https://www.capitol.tn.gov/Bills/113/Bill/HB1580.pdf is the same printed document (it names SENATE BILL 1570); copied from TN-HB-1580-2023.draft.txt)",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1580-2023.draft.pdf",
+          "sha256": "e0673d68787de846832ddb9c736969b5d5073997142a646a7c29ca893ff14855"
+        }
+      }
+    },
+    {
+      "id": "0ac4d646f5b9e2b31de9c087b7a25e620d1dcb29e493a991d332804cc5c8040d",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2206&ga=113",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-2206-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of TN-SB-2206-2023 (sponsor list (prime / co-sponsor)): SB2206 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms..",
+      "subjects": [
+        "repeal permitless handgun carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-31; crossfiled twin https://www.capitol.tn.gov/Bills/113/Bill/HB2680.pdf is the same printed document (it names SENATE BILL 2206); copied from TN-HB-2680-2023.draft.txt)",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2680-2023.draft.pdf",
+          "sha256": "ae2e9e3fd50b85f81b6c2ed2463a4a83999b95561672b15cccf5e28fa4201613"
+        }
+      }
+    },
+    {
+      "id": "230fef6fafc2092746abc844b1a69a1c5cdfe155d4fd477b19b29db69c4bcb1b",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB7009&ga=113",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-7009-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of TN-SB-7009-2023 (sponsor list (prime / co-sponsor)): SB7009 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39; Title 49 and Chapter 367 of the Public Acts of 2023, relative to school safety plans..",
+      "subjects": [
+        "students barred from firearms and ammunition on school property",
+        "no vehicle gun storage in violation of school safety plan"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-08-18; official copy via the Internet Archive snapshot 20260515001156 of https://www.capitol.tn.gov/Bills/113/Bill/SB7009.pdf (LegiScan doc 2837980))",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-7009-2023.draft.pdf",
+          "sha256": "b63f68d7e77b82ed4c4e87ec5b710d2c9f9045ea4b7accc8a177564e20cd852e"
+        }
+      }
+    },
+    {
+      "id": "80a3784fff1a805a6effe43438ded0a2ed9181bfbb3d62cf8aa33c740013abc2",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB7042&ga=113",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-7042-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of TN-SB-7042-2023 (sponsor list (prime / co-sponsor)): SB7042 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 33; Title 36; Title 38 and Title 39, relative to temporary mental health orders of protection..",
+      "subjects": [
+        "extreme-risk style order removing firearms and ammunition",
+        "surrender of firearms, ammunition and handgun carry permit",
+        "background check before return",
+        "felony to possess firearms or ammunition while order is in effect"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-08-21; official copy via the Internet Archive snapshot 20260514172342 of https://www.capitol.tn.gov/Bills/113/Bill/SB7042.pdf (LegiScan doc 2838109))",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-7042-2023.draft.pdf",
+          "sha256": "76c8b51cfb0a483178f489c7ef6fb311d32102613266c121c85e6ed4614a2d56"
+        }
+      }
+    },
+    {
+      "id": "65729b59272caa9dbb511c8ea58fc5439ec1dc665ece2e2b59f91bd5612f1214",
+      "kind": "record",
+      "url": "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB7043&ga=113",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "TN-SB-7043-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of TN-SB-7043-2023 (sponsor list (prime / co-sponsor)): SB7043 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to the safe storage of firearms..",
+      "subjects": [
+        "safe storage affidavit for buyers and permit applicants",
+        "locked storage of firearms, out of sight in vehicles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-08-21; official copy via the Internet Archive snapshot 20260515001154 of https://www.capitol.tn.gov/Bills/113/Bill/SB7043.pdf (LegiScan doc 2838121))",
+        "fetched_at": "2026-11-13T23:47:53.436157Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-7043-2023.draft.pdf",
+          "sha256": "c4ac2a970a67480e81d7e902770f36895efca99893d8ff82831b94c5773d53dd"
+        }
+      }
     }
   ],
   "searches": [

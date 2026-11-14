@@ -1,0 +1,40 @@
+{
+  "id": "TN-SB-819-2025",
+  "scope": "state:tn",
+  "title": "SB0819 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4, Chapter 54, relative to the Tennessee Firearms Freedom Act.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB0819&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/SB0819.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kerry Roberts",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ccd45ab8-3a99-434b-8cb9-a0b05291d16a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2025-02-04; official copy via the Internet Archive snapshot 20260513162010 of https://www.capitol.tn.gov/Bills/114/Bill/SB0819.pdf (LegiScan doc 3099293))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-819-2025.draft.pdf",
+      "sha256": "9fdf7bad1c8bcd236131030d89ff10c5bc7af617b8255bd5749d82f1d9fdacc7"
+    },
+    "note": "Draft dated 2025-02-04; HB 554 and SB 819 share one document. Text speaks of rights under Tenn. Const. art. I, sec. 26 and the Second Amendment, not a specific gun rule. Adopted amendments, if any, not in text."
+  },
+  "operative_text": "SECTION 1 (new TCA Title 4, ch. 54): (a) It is a violation of an individual's civil rights for a government entity, official, employee, or agent to infringe upon or deny an individual the full exercise and enjoyment of any right recognized and protected by Article I, Section 26, of the Tennessee Constitution or any right recognized and protected by the Second Amendment to the United States Constitution. It is not a violation of this section for a government entity, official, employee, or agent to enforce laws or regulations within the scope of the entity's, official's, employee's, or agent's authority unless the law or regulation has been determined by a court to violate either the Tennessee or United States Constitutions.\nSECTION 1 (new TCA Title 4, ch. 54): (d) A government entity, official, employee, or agent who violates this section is liable for: (1) The actual damages caused by the violation or statutory damages of two hundred fifty dollars ($250) per each day of the violation, whichever is greater;\nSECTION 1 (new TCA Title 4, ch. 54): (2) Notwithstanding § 29-39-104, punitive damages to be determined by the trier of fact; and (3) Reasonable attorney's fees and court costs.\nSECTION 1 (new TCA Title 4, ch. 54): (g) A knowing or willful violation of this section by a government official constitutes grounds for ouster under title 8, chapter 47.",
+  "higher_law_duty": "Rights recognized by Article I, Section 26 of the Tennessee Constitution and the Second Amendment to the United States Constitution."
+}

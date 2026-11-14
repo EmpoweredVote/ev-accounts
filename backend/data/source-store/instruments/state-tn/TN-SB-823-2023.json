@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-823-2023",
+  "scope": "state:tn",
+  "title": "SB0823 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, relative to weapons.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0823&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB0823.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-01-30; crossfiled twin https://www.capitol.tn.gov/Bills/113/Bill/HB0795.pdf is the same printed document (it names SENATE BILL 823); copied from TN-HB-795-2023.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-795-2023.draft.pdf",
+      "sha256": "f5251e073e8ee4513af32e3b42c93f804312d3c6afcaf2f231b9701e904ae719"
+    },
+    "note": "Draft of 2023-01-30 (as introduced); amendments not in text. Text is only a word swap; the summary says the offense is carrying a weapon where judicial proceedings are in progress. Weapon includes firearms but is not gun-only. Twin: TN-HB-795-2023."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1306(a)): is amended by deleting the language \"any building\" and substituting instead the language \"a room\"."
+}

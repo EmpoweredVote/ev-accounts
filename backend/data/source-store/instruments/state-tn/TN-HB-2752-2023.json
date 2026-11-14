@@ -1,0 +1,80 @@
+{
+  "id": "TN-HB-2752-2023",
+  "scope": "state:tn",
+  "title": "HB2752 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 8; Title 10; Title 33; Title 36; Title 38; Title 39; Title 40; Title 49; Title 50 and Title 70, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2752&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB2752.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bryan Richey",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Todd Warner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0a90ac77-c426-4f4e-add8-f5454c42229f"
+    },
+    {
+      "name": "Jody Barrett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a6b0df31-75ac-4a90-88e6-78db5c74a71e"
+    },
+    {
+      "name": "Monty Fritts",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9cff8f78-ffde-4821-91e7-6d14fb093ecc"
+    },
+    {
+      "name": "Kip Capley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "91c9fb1a-7df5-418b-9713-a2db4acd49a6"
+    },
+    {
+      "name": "Timothy Hill",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3c3bc83b-0622-4b2d-a194-884ef837f3c9"
+    },
+    {
+      "name": "Kelly Keisling",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8954855c-2669-4120-8449-c107465750a5"
+    },
+    {
+      "name": "Ed Butler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e17e2579-9bf3-4ea4-8881-eba0c225b5b4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-31; official copy via LegiScan getBillText doc 2910028)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2752-2023.draft.pdf",
+      "sha256": "54423c8cdef90610fbfc4e76366328441dcbf28b294d5a5f53ccd50b2f3238b9"
+    },
+    "note": "Draft as filed, 2024-01-31 (HB only, no twin printed). Heavy on deletions: Sections 3-5 delete 39-17-1307(a), (e), (f)(1)(A), (f)(1)(C); Section 10 deletes 39-17-1319(a)(1); Sections 16-17 delete 39-17-1350(c)(1), (e); Section 21 deletes 39-17-1351(b)(2); Section 23 deletes (c)(16); Sections 19, 26-50 are handgun→firearm word swaps. Section 14 rewrites 39-17-1320 to make it a Class D felony for a parent or guardian to provide a firearm to a juvenile (or permit carry) knowing of a substantial risk of felony use; its subsection (a) crosses a page break and is not quoted. Section 2 also sets a $50,000 civil penalty per occurrence on offices that knowingly violate it. Summary says 'As introduced'; no passage vote. Quoted parts are a selection under the length cap. Stop 1 prep (2026-11-13): the 39-17-1307 instruction sentence was added to operative_text from the saved text."
+  },
+  "operative_text": "SECTION 3 (TCA 39-17-1307(a)): Tennessee Code Annotated, Section 39-17-1307, is amended by deleting subsection (a).\nSECTION 1 (short title): This act is known and may be cited as \"The Second Amendment Protection Act of 2024.\"\nSECTION 2 (TCA 38-3-115(a)(2)): (2) On or after July 1, 2024, a public office, public officer, or employee of this state or a political subdivision of this state shall not enforce, attempt to enforce, or participate in any way in the enforcement of a federal law, executive order, administrative order, rule, statute, ordinance, or regulation regarding firearms, ammunition, or firearm accessories.\nSECTION 7 (TCA 39-17-1307): Tennessee Code Annotated, Section 39-17-1307, is amended by deleting subsection (g).\nSECTION 8 (TCA 39-17-1319(b)): (b) Except as provided in this section, it is an offense for a juvenile to carry a firearm with the intent to go armed.\nSECTION 14 (TCA 39-17-1320(b)): (b) A violation of subsection (a) is a Class D felony.\nSECTION 18 (TCA 39-17-1350): ( ) Notwithstanding another law to the contrary, a person with a valid firearm permit issued pursuant to § 39-17-1351 may carry a handgun in all places within this state in which an off-duty law enforcement officer is permitted to carry a firearm.\nSECTION 20 (TCA 39-17-1351(b)(1), (x)(1)): Tennessee Code Annotated, Section 39-17-1351, is amended by deleting \"twenty-one (21)\" and substituting \"eighteen (18)\" in subdivisions (b)(1) and (x)(1).\nSECTION 24 (TCA 39-17-1351(r)(1)): (1) A facially valid handgun permit, firearms permit, weapons permit, or license issued by another state is valid in this state according to its terms and must be treated as if it is a firearm carry permit issued by this state."
+}

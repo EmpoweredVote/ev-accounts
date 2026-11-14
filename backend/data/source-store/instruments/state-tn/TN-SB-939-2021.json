@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-939-2021",
+  "scope": "state:tn",
+  "title": "SB0939 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 36 and Title 39, relative to emergency protection orders.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0939&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/SB0939.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sara Kyle",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1b745bdf-e7cb-487d-9ca5-7bd043d602ac"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2021-02-10; crossfiled twin's official copy via the Internet Archive snapshot 20260514163034 of https://www.capitol.tn.gov/Bills/112/Bill/HB1292.pdf (it names SENATE BILL 939; own link https://www.capitol.tn.gov/Bills/112/Bill/SB0939.pdf not archived))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-939-2021.draft.twin.pdf",
+      "sha256": "b43c80dfd54e2af2f3b4c8c6241fff29bf0726ca7e8529b3839c3b8ff7cba761"
+    },
+    "note": "Draft as filed 2021-02-10, read from the House twin HB 1292 (same printed document). Summary says 'As introduced'; no votes on record. Section 2 gives the forms duty an earlier start and everything else July 1, 2021."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-1901): (a) Any family member, household member, intimate partner, or law enforcement officer who has a reasonable belief that a person poses an imminent risk of harm to the person or others if allowed to purchase or possess a firearm may seek relief under this section by filing a sworn petition for an emergency protection order against the respondent.\nSECTION 1 (new TCA 39-17-1902): An ex parte emergency protection order prohibits the respondent from purchasing or possessing any firearm during the period that the order is in effect.\nSECTION 1 (new TCA 39-17-1902(b)): If no ex parte emergency protection order has been issued as of the time of the hearing, and the petitioner has proven the allegation of an imminent risk of harm by a preponderance of the evidence, the court may, at that time, issue an emergency protection order prohibiting the respondent from purchasing or possessing any firearm for a definite period of time, not to exceed one (1) year.\nSECTION 1 (new TCA 39-17-1905(b)(1)): To terminate the respondent's physical possession of the firearms in the respondent's possession by any lawful means, such as transferring possession to a third party who is not prohibited from possessing firearms, within forty-eight (48) hours; and\nSECTION 1 (new TCA 39-17-1905(f)(2)): A violation of subdivision (f)(1) is a Class A misdemeanor and each violation constitutes a separate offense."
+}

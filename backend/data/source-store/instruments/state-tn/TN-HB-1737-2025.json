@@ -1,0 +1,45 @@
+{
+  "id": "TN-HB-1737-2025",
+  "scope": "state:tn",
+  "title": "HB1737 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 16; Title 36; Title 37; Title 38; Title 39; Title 40; Title 49 and Title 65, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=HB1737&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/HB1737.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Monty Fritts",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9cff8f78-ffde-4821-91e7-6d14fb093ecc"
+    },
+    {
+      "name": "Michele Reneau",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6ca7d63a-d27f-4e33-816e-ad0053461e1e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2026-01-21; official copy via LegiScan getBillText doc 3325861)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1737-2025.draft.pdf",
+      "sha256": "550e90e02009dd6362f08ea6838764e5b6ba70aac5bdadea78a6632eeafbd40c"
+    },
+    "note": "Draft dated 2026-01-21 (as filed; text via LegiScan). Sections 1 and 3 repeal old text in 39-17-1307 and 39-17-1311 and substitute new 39-17-1307; per the summary, deleting 39-17-1311 removes the public park/recreation-area weapons offence. Many sections only change cross-references or delete 'carrying or'. Amendments, if any, are not in the text read."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307): (a) (1) A person commits an offense who possesses a firearm and: (A) Has been convicted of a felony crime of violence or an attempt to commit a felony crime of violence; (B) Has been convicted of a felony drug offense; (C) Has been convicted of a felony offense other than an offense under subdivision (a)(1)(A) or (a)(1)(B);\nSECTION 1 (TCA 39-17-1307): (e) A person does not possess a firearm if the firearm is in a safe or similar container that is securely locked and to which the person does not have the combination, key, or other means of normal access.\nSECTION 3 (TCA 39-17-1311): Tennessee Code Annotated, Section 39-17-1311, is amended by deleting the section.\nSECTION 36 (TCA 37-1-190): Tennessee Code Annotated, Section 37-1-190, is amended by deleting the section.\nSECTION 28 (TCA 39-17-1316): Tennessee Code Annotated, Section 39-17-1316, is amended by deleting subdivisions (a)(1)(A)(i) and (a)(1)(A)(v).\nSECTION 33 (TCA 39-17-1359(f)): Tennessee Code Annotated, Section 39-17-1359(f), is amended by deleting the last sentence."
+}

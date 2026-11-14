@@ -1,0 +1,57 @@
+{
+  "id": "TN-SB-1318-2025",
+  "scope": "state:tn",
+  "title": "SB1318 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39 and Title 40, relative to criminal justice.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB1318&ga=114",
+    "https://publications.tnsosfiles.com/acts/114/pub/pc0356.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Jack Johnson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f608a36d-a1c7-495d-8bc8-f0e011682e67"
+    },
+    {
+      "name": "Paul Bailey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "310955ff-3e44-4032-879f-b3b46026aadb"
+    },
+    {
+      "name": "Janince Bowling",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e50369f1-10eb-467e-8604-b94675565631"
+    },
+    {
+      "name": "John Stevens",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2025-05-07; official copy via the Internet Archive snapshot 20260513074509 of https://publications.tnsosfiles.com/acts/114/pub/pc0356.pdf (LegiScan doc 3234238))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1318-2025.chaptered.pdf",
+      "sha256": "54e320ac3859ead1e5d1bd290f884e5d270f6510184f1babf03dd91296258664"
+    },
+    "note": "Public Chapter 356 (2025-05-07), HB 1332 substituted for SB 1318. Section 3 amends the enhanced carry permit age (21 to 18) per the state summary. Text uses odd spacing in '( 18)' and '(11 )(A)' as printed. Effective on becoming law."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1351(c)(11)): (11) (A) That the applicant has not been convicted of the offense of driving under the influence of an intoxicant in this or any other state two (2) or more times within ten ( 10) years from the date of the application or renewal; and (B) None of the convictions described in subdivision (11 )(A) occurred within five (5) years from the date of application or renewal;\nSECTION 2 (TCA 39-17-1351(b)): (b) Except as provided in subsection (r), any resident of Tennessee who is a United States citizen or permanent lawful resident, as defined by § 55-50-102, who has reached eighteen (18) years of age, may apply to the department of safety for a handgun carry permit. If the applicant is not prohibited from purchasing or possessing a firearm in this state pursuant to§ 39-17-1316 or§ 39-17-1307(b), 18 U.S.C. § 922(g), or any other state or federal law, and the applicant otherwise meets all of the requirements of this section, the department shall issue a permit to the applicant.\nSECTION 3 (TCA 39-17-1351(x)(1)): is amended by deleting the language \"twenty-one (21) years of age\" and substituting \"eighteen ( 18) years of age\"."
+}

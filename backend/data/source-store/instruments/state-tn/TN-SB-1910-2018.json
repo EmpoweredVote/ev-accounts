@@ -1,0 +1,212 @@
+{
+  "id": "TN-SB-1910-2018",
+  "scope": "state:tn",
+  "title": "SB1910 (110th General Assembly): As enacted, prevents a municipality from charging a person with a violation of any ordinance prohibiting discharging a firearm within the municipal limits if the person acted in justifiable self-defense or to prevent the commission of a criminal offense when discharging the firearm. - Amends TCA Section 39-17-1322.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1910&ga=110",
+    "https://publications.tnsosfiles.com/acts/110/pub/pc0599.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Frank Niceley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jon Lundberg",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Janince Bowling",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e50369f1-10eb-467e-8604-b94675565631"
+    },
+    {
+      "name": "Dolores Gresham",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Stevens",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2018-03-12",
+      "body": "TN Senate",
+      "motion": "FLOOR VOTE: Motion to Adopt",
+      "kind": "roll-call",
+      "yes": 30,
+      "no": 0,
+      "absent": 0,
+      "note": "LegiScan roll call 723898",
+      "members": [
+        {
+          "name": "Brian Kelsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Jon Lundberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Bell",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph Hensley",
+          "vote": "yea",
+          "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+        },
+        {
+          "name": "Frank Niceley",
+          "vote": "yea"
+        },
+        {
+          "name": "Bo Watson",
+          "vote": "yea",
+          "politician_id": "7c987183-ffd4-4fc2-9670-3903496159ff"
+        },
+        {
+          "name": "Ken Yager",
+          "vote": "yea",
+          "politician_id": "7c282d2f-5bff-40fd-ae69-12ecc650bfa7"
+        },
+        {
+          "name": "Randy McNally",
+          "vote": "yea",
+          "politician_id": "f1c1e147-193c-49cc-9b89-16956adb964c"
+        },
+        {
+          "name": "Bill Ketron",
+          "vote": "yea"
+        },
+        {
+          "name": "Dolores Gresham",
+          "vote": "yea"
+        },
+        {
+          "name": "Rusty Crowe",
+          "vote": "yea",
+          "politician_id": "9c57cefb-1e93-48cc-abe4-9946ef0ebe43"
+        },
+        {
+          "name": "Thelma Harper",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Southerland",
+          "vote": "yea",
+          "politician_id": "bd8f353d-19f9-4608-812d-987de934afeb"
+        },
+        {
+          "name": "Mark Norris",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Johnson",
+          "vote": "yea",
+          "politician_id": "f608a36d-a1c7-495d-8bc8-f0e011682e67"
+        },
+        {
+          "name": "Ferrell Haile",
+          "vote": "yea",
+          "politician_id": "2e2b20db-b64d-4c20-b0c5-2a369241f6b1"
+        },
+        {
+          "name": "Art Swann",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Pody",
+          "vote": "yea",
+          "politician_id": "b333d211-ed1a-46fb-b947-427d2942acd0"
+        },
+        {
+          "name": "Kerry Roberts",
+          "vote": "yea",
+          "politician_id": "ccd45ab8-3a99-434b-8cb9-a0b05291d16a"
+        },
+        {
+          "name": "Becky Massey",
+          "vote": "yea",
+          "politician_id": "a91cf2ed-26bf-43c7-aae1-964fb6c46840"
+        },
+        {
+          "name": "John Stevens",
+          "vote": "yea",
+          "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+        },
+        {
+          "name": "Janince Bowling",
+          "vote": "yea",
+          "politician_id": "e50369f1-10eb-467e-8604-b94675565631"
+        },
+        {
+          "name": "Todd Gardenhire",
+          "vote": "yea",
+          "politician_id": "19829b74-5605-467e-8a6f-0c61b6384d2a"
+        },
+        {
+          "name": "Steven Dickerson",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Bailey",
+          "vote": "yea",
+          "politician_id": "310955ff-3e44-4032-879f-b3b46026aadb"
+        },
+        {
+          "name": "Lee Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Briggs",
+          "vote": "yea",
+          "politician_id": "191efc70-78dc-4ada-99e5-4edceb919cf0"
+        },
+        {
+          "name": "Jeff Yarbro",
+          "vote": "yea",
+          "politician_id": "142de671-f7ef-4923-9c3e-3499086da41a"
+        },
+        {
+          "name": "Edward Jackson",
+          "vote": "yea",
+          "politician_id": "0d5fb0c4-9234-4cb8-8911-7e8de2467729"
+        },
+        {
+          "name": "Sara Kyle",
+          "vote": "yea",
+          "politician_id": "1b745bdf-e7cb-487d-9ca5-7bd043d602ac"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2018-04-02; official copy via the Internet Archive snapshot 20260514061605 of https://publications.tnsosfiles.com/acts/110/pub/pc0599.pdf (LegiScan doc 1803755))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1910-2018.chaptered.pdf",
+      "sha256": "5811d70cf842d415c11812b34e10fba939e6d6be7626d3ebe532a5eea2ac4e9d"
+    },
+    "note": "Chaptered, Public Chapter 599, 2018-04-02, effective on becoming law. Printed as House Bill 1851 (substituted for SB 1910). Existing language becomes subsection (a). The summary mentions only self-defense or crime prevention; the text also lists defense of property and of another."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1322(b)): (b) A person who discharges a firearm within the geographical limits of a municipality shall not be deemed to have violated any ordinance in effect or be subject to any citation or fine the municipality may impose for discharging a firearm within the limits of the municipality if it is determined that when the firearm was discharged the person was acting in justifiable self-defense, defense of property, defense of another, or to prevent a criminal offense from occurring."
+}

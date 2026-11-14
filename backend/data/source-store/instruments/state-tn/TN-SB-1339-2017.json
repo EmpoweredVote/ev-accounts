@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1339-2017",
+  "scope": "state:tn",
+  "title": "SB1339 (110th General Assembly): As enacted, expands the exception to unlawful carrying or possession of a firearm or firearm ammunition to include carrying or possession in a boat; clarifies that the exception includes a loaded firearm, as well as a firearm or ammunition. - Amends TCA Section 39-17-1307.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1339&ga=110",
+    "https://publications.tnsosfiles.com/acts/110/pub/pc0202.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Paul Bailey",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "310955ff-3e44-4032-879f-b3b46026aadb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2017-04-28; crossfiled twin's official copy via the Internet Archive snapshot 20260514063646 of https://publications.tnsosfiles.com/acts/110/pub/pc0202.pdf (it names SENATE BILL 1339; own link https://publications.tnsosfiles.com/acts/110/pub/pc0202.pdf not archived))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1339-2017.chaptered.twin.pdf",
+      "sha256": "988977af6730a93b8539554e1dd11b6ef4312c47b352122da40b77c84e0f435f"
+    },
+    "note": "Chaptered, Public Chapter 202, 2017-04-28, effective July 1, 2017. Printed as House Bill 688 (substituted for SB 1339); this is the twin's copy. The bill replaces all of subsection (e); second quote is part (2)(B). Text has OCR errors in citations."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(e)): (1) lt is an exception to the application of subsection (a) that a person is carrying or possessing a firearm, loaded firearm, or firearm ammunition in a motor vehicle or boat if the person: (A) ls not prohibited from possessing or receiving a firearm by 18 U.S.C $ 922(9) or purchasing a firearm by S 39-17-1316; and (B) ls in lawful possession of the motor vehicle or boat\nSECTION 1 (TCA 39-17-1307(e)): (B) This subsection (e) shall not apply to a motor vehicle or boat that is: (i) Owned or leased by a governmental or private entity that has adopted a written policy prohibiting firearms, loaded firearms, or firearm ammunition not required for employment within the motor vehicle or boat; and (ii) Provided by such entity to an employee for use during the course of employment."
+}

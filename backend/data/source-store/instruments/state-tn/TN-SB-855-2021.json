@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-855-2021",
+  "scope": "state:tn",
+  "title": "SB0855 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Section 10-7-504; Section 33-6-413; Section 38-8-116; Title 39; Title 40; Title 49; Title 50; Section 58-1-112 and Title 70, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0855&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/SB0855.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Janince Bowling",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e50369f1-10eb-467e-8604-b94675565631"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2021-02-10; own version, official copy via the Internet Archive snapshot 20260514165815 of https://www.capitol.tn.gov/Bills/112/Bill/SB0855.pdf; the last listed version was not archived)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-855-2021.draft.pdf",
+      "sha256": "58bb6af97f22e8bae7d202b37a597c7397998a3690f08e3769e9de7e5fd516ce"
+    },
+    "note": "Draft as filed 2021-02-10. The state summary says the bill broadens who may carry handguns in a public park; the text read only edits 39-17-1309(e)(8). The last listed version was not archived, and a later version could differ."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1309(e)(8)(A)): Tennessee Code Annotated, Section 39-17-1309(e)(8)(A), is amended by deleting the language \"§ 39-17-1351\" and substituting instead the language \"§ 39-17-1351 or § 39-17-1366\".\nSECTION 2 (TCA 39-17-1309(e)(8)(B)): Tennessee Code Annotated, Section 39-17-1309(e)(8)(B), is amended by deleting the language \"enhanced\"."
+}

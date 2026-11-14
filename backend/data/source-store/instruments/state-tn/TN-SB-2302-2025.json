@@ -1,0 +1,41 @@
+{
+  "id": "TN-SB-2302-2025",
+  "scope": "state:tn",
+  "title": "SB2302 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 16; Title 36; Title 37; Title 38; Title 39; Title 40; Title 49; Title 55 and Title 65, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB2302&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/SB2302.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: SECTION 9 (new TCA 39-11-617) — pretrial immunity from prosecution, justified-use-of-force hearing, prosecutor and grand-jury duties and attorney-fee award for self-defense claims (procedure for all uses of force)"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2026-02-02; official copy via the Internet Archive snapshot 20260513074323 of https://www.capitol.tn.gov/Bills/114/Bill/SB2302.pdf (LegiScan doc 3345524))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2302-2025.draft.pdf",
+      "sha256": "2083798cec7999a2754206a0f733979aa41d5db34be14be4589be3b8c98b0ee7"
+    },
+    "note": "Draft (as filed) dated 2026-02-02; summary says \"As introduced\", no passage vote listed, so no adopted amendments are missing.  Twin document none named (caption says 'firearms'; same body text as HB2514/SB2478 apart from page layout). 40 sections; quoted parts are the gun-carry changes. Other parts: SECTION 4 (firearm definition), SECTIONS 5-11 (deadly force, defense of property, immunity hearing, citizen's arrest), SECTIONS 32-37 and 39 delete school statutes (TCA 49-6-815, 49-6-816, 49-7-161, 49-50-803, 49-6-820(b)(7)) whose text is not in the bill, SECTION 38 (retired-officer recertification, TCA 38-8-116). Instruction-only changes (Sec. 16, 19) are quoted as the change; Sec. 16 deletes TCA 39-17-1307(a), (e), (g)."
+  },
+  "operative_text": "SECTION 15 (TCA 39-17-1306(a)(1)): (1) A court may prohibit the carrying of firearms in a court building or courtroom by posting signage as required by subsection (b).\nSECTION 15 (TCA 39-17-1306(a)(2)): (2) If a court building or courtroom has been posted in accordance with subsection (b), then it is an offense to carry a firearm in the court building or courtroom.\nSECTION 15 (TCA 39-17-1306(c)): (c) A violation of subdivision (a)(2) is a Class A misdemeanor.\nSECTION 16 (TCA 39-17-1307): deleting subsections (a), (e), and (g).\nSECTION 18 (TCA 39-17-1309(c)(1)(A)): (A) If a public or private school bus or public or private school building is properly posted according to subsection (d), then it is an offense for a person to possess or carry, whether openly or concealed, any firearm, not used solely for instructional or school-sanctioned purposes, on a public or private school bus or inside of a public or private school building that offers any of the grades kindergarten through twelve (K-12).\nSECTION 18 (TCA 39-17-1309(c)(1)(B)): (B) It is not an offense under this subsection (c) for an adult to possess a firearm, if the firearm is contained within a private vehicle operated by the adult and is not handled by the adult, or by any other person acting with the expressed or implied consent of the adult, while the vehicle is on school property.\nSECTION 18 (TCA 39-17-1309(c)(2)): (2) A violation of subdivision (c)(1)(A) is a Class B misdemeanor.\nSECTION 18 (TCA 39-17-1309(g)): (g) Subsections (b) and (c) do not apply to universities, college campuses, and other public or private non-kindergarten through grade twelve (non-K-12) educational institutions or property.\nSECTION 19 (TCA 39-17-1310): deleting the section.\nSECTION 20 (TCA 39-17-1311): It is not an offense for a person authorized to carry a firearm pursuant to § 39-17-1351 or § 39-17-1366, or for any person who is not prohibited from possessing or carrying a firearm, to possess or carry a firearm in any state or local park, on a greenway or other recreational property, or, to the extent permitted by federal law, within or on property designated by the federal government as a national park, forest, preserve, historic park, military park, trail, or recreation area.\nSECTION 22 (TCA 39-17-1319(b)): (b) Except as provided in this section, it is an offense for a juvenile to carry, with the intent to go armed, a firearm.\nSECTION 27 (TCA 39-17-1321(a)): (a) It is an offense for a person to possess a handgun in a public place while under the influence of alcohol or any controlled substance or controlled substance analogue.\nSECTION 31 (TCA 39-17-1359(a)): (a) Except as provided in subsection (b), an entity of local government or a permittee thereof is not authorized to enact or enforce a prohibition or restriction on the possession of a handgun by an enhanced handgun carry permit holder or concealed handgun carry permit holder on property owned or administered by the entity unless:"
+}

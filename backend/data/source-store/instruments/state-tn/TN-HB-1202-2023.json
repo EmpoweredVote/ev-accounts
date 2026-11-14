@@ -1,0 +1,111 @@
+{
+  "id": "TN-HB-1202-2023",
+  "scope": "state:tn",
+  "title": "HB1202 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13 and Title 49, Chapter 6, Part 8, relative to schools.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1202&ga=113",
+    "https://publications.tnsosfiles.com/acts/113/pub/pc0801.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Ryan Williams",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "296df1be-a8bb-45ee-bb86-e1de328ed845"
+    },
+    {
+      "name": "Kip Capley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "91c9fb1a-7df5-418b-9713-a2db4acd49a6"
+    },
+    {
+      "name": "Dave Wright",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d5414dcc-6d0b-4a73-96a1-41b477cfd097"
+    },
+    {
+      "name": "Jay Reedy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4e0eefb1-6a4f-4004-be8d-432a7131b475"
+    },
+    {
+      "name": "Ed Butler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e17e2579-9bf3-4ea4-8881-eba0c225b5b4"
+    },
+    {
+      "name": "Chris Todd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+    },
+    {
+      "name": "Scott Cepicky",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e6b4535-ba42-4329-8df1-747bfaa4909e"
+    },
+    {
+      "name": "Gino Bulso",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b8caf1c6-7b5d-4a32-ae14-54d40b1000a9"
+    },
+    {
+      "name": "Tim Hicks",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7ea75c1f-f04c-42ac-8b06-7a17bcfb8d9a"
+    },
+    {
+      "name": "Rick Eldridge",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "58be867d-b7c3-4105-9757-55d4abe59756"
+    },
+    {
+      "name": "Kelly Keisling",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8954855c-2669-4120-8449-c107465750a5"
+    },
+    {
+      "name": "Mark Cochran",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b254c419-7168-458e-8a74-8d7e0dfa650d"
+    },
+    {
+      "name": "Dennis Powers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fa7182a1-54a2-473a-979f-3ee5574b2f52"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2024-05-06; official copy via LegiScan getBillText doc 2994588)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1202-2023.chaptered.pdf",
+      "sha256": "7addebb878addc4d872dde13e7f138174959ccfa68e636ed8d200116ed842680"
+    },
+    "note": "Chaptered, Public Chapter 801 (approved 2024-05-06), printed as Senate Bill 1325 substituted for House Bill 1202; the law as enacted. Text of 49-6-815(b)(1)(E) requires 40 hours of basic school policing training with hands-on instruction. Subsections (c)-(d), (i)-(k) (notice, confidentiality of records, definitions, exclusions) are not quoted. The summary mentions TCA Title 39, ch. 17, pt. 13, which is reached only through the 'Notwithstanding § 39-17-1309' language."
+  },
+  "operative_text": "SECTION 1 (TCA 49-6-815(a)(1)): A person employed by an LEA as a faculty or staff member at a school within the LEA is permitted to possess and carry a concealed handgun on the grounds of the school at which the person is assigned; and\nSECTION 1 (TCA 49-6-815(a)(2)): A person assigned to a school in accordance with a memorandum of understanding between the chief of the appropriate law enforcement agency and the LEA is permitted to possess and carry a firearm on the grounds of the school at which the person is assigned.\nSECTION 1 (TCA 49-6-815(b)(1)(A)): Possess and maintain a valid handgun carry permit issued by this state pursuant to § 39-17-1351;\nSECTION 1 (TCA 49-6-815(b)(1)(B)): Have the joint written authorization of the LEA's director of schools in conjunction with the principal of the school at which the person is assigned and the written authorization of the chief of the appropriate law enforcement agency to carry or possess a concealed handgun on school grounds;\nSECTION 1 (TCA 49-6-815(b)(1)(C)): Not be prohibited from purchasing, possessing, or carrying a handgun under the laws of this state or federal law, as determined by a background check.\nSECTION 1 (TCA 49-6-815(b)(1)(D)): Have been certified by a Tennessee licensed healthcare provider, who is qualified in the psychiatric or psychological field and who contracts with the authorizing law enforcement agency, as being free from any impairment, as set forth in the current edition of the Diagnostic and\nSECTION 1 (TCA 49-6-815(b)(1)(D), continued after page break): Statistical Manual of Mental Disorders (DSM) of the American Psychiatric Association at the time of the examination, that would, in the professional judgment of the examiner, affect the faculty or staff member's ability to safely possess and carry a concealed handgun on the grounds of a school; and\nSECTION 1 (TCA 49-6-815(b)(2)(C)(i)): Be a law enforcement officer, or have prior service as a law enforcement officer, as defined in § 39-11-106;\nSECTION 2 (TCA 49-6-815(g)): A faculty or staff member who carries a concealed handgun pursuant to subdivision (a)(1) on property owned, operated, or controlled by the school at which the faculty or staff member is assigned shall not:\nSECTION 2 (TCA 49-6-815(g)(1)): Carry the handgun openly, or in any other manner in which the handgun is visible to ordinary observation; or\nSECTION 2 (TCA 49-6-815(f)(1)): The name and any other information that might identify a faculty or staff member as a person who has elected to carry a concealed handgun pursuant to subdivision (a)(1) is confidential, not open for public inspection, and shall not be disclosed by any law enforcement agency;"
+}

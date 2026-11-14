@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2788-2023",
+  "scope": "state:tn",
+  "title": "SB2788 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 38; Title 39, Chapter 17, Part 13 and Title 49, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2788&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB2788.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mark Pody",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b333d211-ed1a-46fb-b947-427d2942acd0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-02-01; official copy via the Internet Archive snapshot 20260514144230 of https://www.capitol.tn.gov/Bills/113/Bill/SB2788.pdf (LegiScan doc 2911510))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2788-2023.draft.pdf",
+      "sha256": "ef450cbc990dcb158a8b941189541d3426a398c1e4875184176eb8288dde55c7"
+    },
+    "note": "Draft (2024-02-01), as introduced; no amendments in the text read. Effective July 1, 2024. SECTION 5 (TCA 39-17-1350(c)(1)) and SECTION 8 are related notice and cross-reference changes, not quoted."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1309(e)(1)(B)): (B) Active duty and retired members of the armed forces of the United States possessing or carrying a handgun in any public pre-kindergarten through grade twelve (pre-K-12) school building or bus, on any public pre-kindergarten through grade twelve (pre-K-12) school campus, grounds, recreation area, athletic field, or any other property owned, operated, or while in use by any public board of education or pre-kindergarten through grade twelve (pre-K-12) school, unless the person is otherwise prohibited from possessing or carrying a handgun by state or federal law;\nSECTION 2 (TCA 39-17-1309(e)(4)(B)): (B) Officers of the state, or of any county, city, or town, charged with the enforcement of the laws of this state, whether on-duty or off-duty, possessing or carrying a handgun, or retired law enforcement officers possessing or carrying a handgun who are authorized to carry the handgun pursuant to §§ 38-8-116 and 39-17-1315, while in any public pre-kindergarten through grade twelve (pre-K-12) school building or bus, on any public pre-kindergarten through grade twelve (pre-K-12) school campus, grounds,\nSECTION 2 (TCA 39-17-1309(e)(4)(B), continued after page break): recreation area, athletic field, or any other property owned, operated, or while in use by any public board of education or pre-kindergarten through grade twelve (pre-K-12) school;\nSECTION 3 (TCA 39-17-1309(e)(8)(B)(i)): Persons possessing or carrying a handgun, who are authorized to carry the handgun pursuant to § 39-17-1351, while in any public pre-kindergarten through grade twelve (pre-K-12) school building or bus, on any public pre-kindergarten through grade twelve (pre-K-12) school campus, grounds, recreation area, athletic field, or any other property owned, operated, or while in use by any public board of education or pre-kindergarten through grade twelve (pre-K-12) school.\nSECTION 4 (TCA 39-17-1309(e)(10)): Tennessee Code Annotated, Section 39-17-1309, is amended by deleting subdivision (e)(10).\nSECTION 6 (TCA 49-6-815): Tennessee Code Annotated, Section 49-6-815, is amended by deleting the section.\nSECTION 7 (TCA 49-6-816): Tennessee Code Annotated, Section 49-6-816, is amended by deleting the section."
+}

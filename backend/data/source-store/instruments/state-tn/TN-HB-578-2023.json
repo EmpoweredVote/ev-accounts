@@ -1,0 +1,99 @@
+{
+  "id": "TN-HB-578-2023",
+  "scope": "state:tn",
+  "title": "HB0578 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to enhanced handgun carry permits.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0578&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB0578.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Rush Bricken",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e02758-1839-4d89-8a1b-26b9aeda22d5"
+    },
+    {
+      "name": "Monty Fritts",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9cff8f78-ffde-4821-91e7-6d14fb093ecc"
+    },
+    {
+      "name": "Chris Todd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+    },
+    {
+      "name": "Rusty Grills",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "70aa67e5-8df0-4dee-a034-1ea4f3470c57"
+    },
+    {
+      "name": "Mary Littleton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eaf18ec7-04b7-4780-8996-69c6dd0c1223"
+    },
+    {
+      "name": "Jake McCalmon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "13dde449-93ec-4b04-8ba9-2ec0960ca052"
+    },
+    {
+      "name": "Rick Eldridge",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "58be867d-b7c3-4105-9757-55d4abe59756"
+    },
+    {
+      "name": "Kip Capley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "91c9fb1a-7df5-418b-9713-a2db4acd49a6"
+    },
+    {
+      "name": "Gino Bulso",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b8caf1c6-7b5d-4a32-ae14-54d40b1000a9"
+    },
+    {
+      "name": "John Gillespie",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3eba41c-2ccf-4566-85c9-888ca97dbb14"
+    },
+    {
+      "name": "Sabi Kumar",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f9cf1fb9-ad68-4549-8b81-f45b6c4e1952"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-01-31; official copy via the Internet Archive snapshot 20260514144429 of https://www.capitol.tn.gov/Bills/113/Bill/HB0578.pdf (LegiScan doc 2674079))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-578-2023.draft.pdf",
+      "sha256": "448c0445f9aef0a603d69150f7f0a8c3e9a1f375125448f76892b3e7c422b8ce"
+    },
+    "note": "Draft as filed, 2023-01-31; shared document with SB 1121. Deleted subsections (p), (x)(2), (x)(5) are not shown in the text read; per the summary they are the fee provisions. Section 2 replaces (q)(1) with renewal wording. Effective July 1, 2023."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1351): Tennessee Code Annotated, Section 39-17-1351, is amended by deleting subsection (p) in its entirety.\nSECTION 2 (TCA 39-17-1351(q)(1)): (1) Prior to the expiration of a permit, a permit holder may apply to the department for the renewal of the permit by submitting, under oath, a renewal application.\nSECTION 3 (TCA 39-17-1351(x)(2)): Tennessee Code Annotated, Section 39-17-1351, is amended by deleting subdivision (x)(2) in its entirety.\nSECTION 4 (TCA 39-17-1351(x)(5)): Tennessee Code Annotated, Section 39-17-1351, is amended by deleting subdivision (x)(5) in its entirety."
+}

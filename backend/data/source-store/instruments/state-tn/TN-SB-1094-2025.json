@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1094-2025",
+  "scope": "state:tn",
+  "title": "SB1094 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to suicide prevention.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB1094&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/SB1094.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2025-02-06; crossfiled twin https://www.capitol.tn.gov/Bills/114/Bill/HB1207.pdf is the same printed document (it names SENATE BILL 1094); copied from TN-HB-1207-2025.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1207-2025.draft.pdf",
+      "sha256": "3a4d747cc252c7940d2326b97805cec322a42b64c09309b2e9ef12b03fa08c55"
+    },
+    "note": "Draft (as filed) dated 2025-02-06; summary says \"As introduced\", no passage vote listed, so no adopted amendments are missing. \"Suicide Prevention Act of 2025\". Twin document HB1207/SB1094 (HB1207); SB1094 text was copied from the HB1207 file. Section 3 adds a new item to the list of persons dealers must refuse."
+  },
+  "operative_text": "SECTION 2 (new TCA 39-17-1367(a)(1)): In an effort to prevent violence, including suicide, homicide, or mass shooting by persons with mental illness using firearms, the Tennessee bureau of investigation (TBI) shall establish a program for revocable voluntary waiver of firearms rights so as to avoid purchase, possession, and transportation of firearms by and sale of firearms to:\nSECTION 2 (new TCA 39-17-1367(a)(5)(B)): Upon receipt of the form, the department of safety must revoke the person's handgun carry permit under § 39-17-1351 and § 39-17-1366.\nSECTION 2 (new TCA 39-17-1367(f)): It is an offense for a person who is enrolled in the revocable voluntary waiver of firearms rights program to purchase, possess, or transport a firearm.\nSECTION 2 (new TCA 39-17-1367(f)): A violation of this subsection (f) is a Class C misdemeanor.\nSECTION 3 (TCA 39-17-1316(a)(1)(A)): (vi) Are enrolled in the revocable voluntary waiver of firearms rights program pursuant to § 39-17-1367."
+}

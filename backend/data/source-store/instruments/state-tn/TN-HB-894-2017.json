@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-894-2017",
+  "scope": "state:tn",
+  "title": "HB0894 (110th General Assembly): As introduced, requires the department of safety to promulgate rules regarding requirements for handgun safety course instruction, including qualifications of handgun safety schools and instructors, required for handgun carry permits; authorizes a permit holder to convert an eight-year permit into a lifetime permit at any time. - Amends TCA Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0894&ga=110",
+    "https://www.capitol.tn.gov/Bills/110/Bill/HB0894.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ryan Williams",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "296df1be-a8bb-45ee-bb86-e1de328ed845"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2018-01-17; own version, official copy via the Internet Archive snapshot 20260514062859 of https://www.capitol.tn.gov/Bills/110/Bill/HB0894.pdf; the last listed version was not archived)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-894-2017.draft.pdf",
+      "sha256": "420a161d1cc1024590e3e59f1a70b7b4cd7738b40d379e008bdbb1b8c9251168"
+    },
+    "note": "Draft dated 2018-01-17 (Senate twin SB 269); summary says 'As introduced'. Part (b) lists items the department may not require (written test, etc.). Effective on becoming law."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-1349(a)): (a) In addition to the requirements of § 39-17-1351(e) regarding handgun safety course instruction, the department of safety shall promulgate rules that:\nSECTION 1 (new TCA 39-17-1349(a)(7)): (7) Define the minimum handgun training course curriculum, which must include safe use of a firearm, civilian use of deadly force, and current state law on when and where a civilian can carry a firearm;\nSECTION 1 (new TCA 39-17-1349(a)(9)): (9) Define a course of fire not to exceed fifty (50) rounds with at least twenty-five (25) being fired from a distance of three (3) yards or less and no rounds being fired from a distance of more than eight (8) yards; and\nSECTION 2 (TCA 39-17-1351(x)(2)): A permit holder is eligible to convert an eight-year permit into a lifetime permit at any time the person is a valid permit holder by making application pursuant to this subsection (x)."
+}

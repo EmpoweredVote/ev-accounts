@@ -1,0 +1,57 @@
+{
+  "id": "TN-HB-7086-2023",
+  "scope": "state:tn",
+  "title": "HB7086 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Section 49-6-815, relative to school safety.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB7086&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB7086.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ryan Williams",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "296df1be-a8bb-45ee-bb86-e1de328ed845"
+    },
+    {
+      "name": "Chris Todd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+    },
+    {
+      "name": "Timothy Hill",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3c3bc83b-0622-4b2d-a194-884ef837f3c9"
+    },
+    {
+      "name": "Ed Butler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e17e2579-9bf3-4ea4-8881-eba0c225b5b4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-08-21; official copy via the Internet Archive snapshot 20260515005007 of https://www.capitol.tn.gov/Bills/113/Bill/HB7086.pdf (LegiScan doc 2838189))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-7086-2023.draft.pdf",
+      "sha256": "ea39eaa57df8dd5601106703649fd5c67134e28b025f0e45a821d16f6482e05c"
+    },
+    "note": "Draft (2023-08-21), as introduced; the summary line says 'As introduced'. No amendments in the text read. Printed with its twin (SB 7019 / HB 7086). Effective on becoming law. Subsections (c)-(d), (i)-(k) of 49-6-815 (notice to law enforcement, confidential records, definitions, exclusions) are not quoted. The introduced version requires only the chief of the law enforcement agency's written authorization for staff (no joint director/principal authorization), unlike the enacted Public Chapter 801."
+  },
+  "operative_text": "SECTION 1 (TCA 49-6-815(a)(1)): A person employed by an LEA as a faculty or staff member at a school within the LEA is permitted to possess and carry a concealed handgun on the grounds of the school at which the person is assigned; and\nSECTION 1 (TCA 49-6-815(a)(2)): A person assigned to a school in accordance with a memorandum of understanding between the chief of the appropriate law enforcement agency and the LEA is permitted to possess and carry a firearm on the grounds of the school at which the person is assigned.\nSECTION 1 (TCA 49-6-815(b)(1)(A)): Possess and maintain a valid handgun carry permit issued by this state pursuant to § 39-17-1351;\nSECTION 1 (TCA 49-6-815(b)(1)(C)): Not be prohibited from purchasing, possessing, or carrying a handgun under the laws of this state or federal law, as determined by a background check.\nSECTION 1 (TCA 49-6-815(b)(1)(D)): Have been certified by a Tennessee licensed healthcare provider, who is qualified in the psychiatric or psychological field and who contracts with the authorizing law enforcement agency, as being free from any impairment, as set forth in the current edition of the Diagnostic and\nSECTION 1 (TCA 49-6-815(b)(1)(D), continued after page break): Statistical Manual of Mental Disorders (DSM) of the American Psychiatric Association at the time of the examination, that would, in the professional judgment of the examiner, affect the faculty or staff member's ability to safely possess and carry a concealed handgun on the grounds of a school; and\nSECTION 1 (TCA 49-6-815(b)(2)(C)(i)): Be a law enforcement officer, or have prior service as a law enforcement officer, as defined in § 39-11-106;\nSECTION 2 (TCA 49-6-815(g)): A faculty or staff member who carries a concealed handgun pursuant to subdivision (a)(1) on property owned, operated, or controlled by the school at which the faculty or staff member is assigned shall not:\nSECTION 2 (TCA 49-6-815(g)(1)): Carry the handgun openly, or in any other manner in which the handgun is visible to ordinary observation; or\nSECTION 2 (TCA 49-6-815(f)(1)): The name and any other information that might identify a faculty or staff member as a person who has elected to carry a concealed handgun pursuant to subdivision (a)(1) is confidential, not open for public inspection, and shall not be disclosed by any law enforcement agency;\nSECTION 2 (TCA 49-6-815(h)): Notwithstanding any other law to the contrary, the LEA and law enforcement agency are immune from claims for monetary damages that arise solely from, or that are related to, a faculty or staff member's use of, or failure to use, a handgun; provided, that the faculty or staff member is authorized to carry the handgun pursuant to this section."
+}

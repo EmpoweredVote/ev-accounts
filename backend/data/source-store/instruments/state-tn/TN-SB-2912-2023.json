@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2912-2023",
+  "scope": "state:tn",
+  "title": "SB2912 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2912&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB2912.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul Bailey",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "310955ff-3e44-4032-879f-b3b46026aadb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-02-01; crossfiled twin https://www.capitol.tn.gov/Bills/113/Bill/HB2032.pdf is the same printed document (it names SENATE BILL 2912); copied from TN-HB-2032-2023.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2032-2023.draft.pdf",
+      "sha256": "2dff855b1fe95966d4f3f0d1bac8b28c368b8bb30fe00b6b7afcdd4d71372937"
+    },
+    "note": "Draft as filed (2024-02-01); same printed document as HB 2032. Mostly deletions and cross-reference swaps; the deleted subsections are not reproduced, so effect relies partly on the state summary."
+  },
+  "operative_text": "SECTION 3 (TCA 39-17-1359(a)(2)): Tennessee Code Annotated, Section 39-17-1359(a)(2), is amended by deleting \"§ 39-17-1351\" and substituting \"§ 39-17-1307(g)\".\nSECTION 4 (TCA 39-17-1359(b)): Tennessee Code Annotated, Section 39-17-1359(b), is amended by deleting subdivision (4).\nSECTION 5 (TCA 39-17-1359(c)): Tennessee Code Annotated, Section 39-17-1359(c), is amended by deleting the subsection.\nSECTION 1 (TCA 39-17-1352(a)(6)): Tennessee Code Annotated, Section 39-17-1352(a)(6), is amended by deleting \"§ 39-17-1360\" and substituting \"§ 39-17-1353\"."
+}

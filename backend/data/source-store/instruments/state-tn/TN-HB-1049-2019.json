@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-1049-2019",
+  "scope": "state:tn",
+  "title": "HB1049 (111th General Assembly): As introduced, authorizes the issuance of an extreme risk protection order that a law enforcement officer may seek to prevent a restrained person from being able to lawfully possess a firearm when the officer believes that the person is a danger to the person or another. - Amends TCA Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1049&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/HB1049.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gloria Johnson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "20f60621-6745-44f2-ab3f-6ee35018051c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2019-02-06; official copy via LegiScan getBillText doc 1893811)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1049-2019.draft.pdf",
+      "sha256": "2394c93860cc4613a0e95200df7be91e26cd37fbc0c35a57be675f3928b9e19e"
+    },
+    "note": "Draft dated 2019-02-06, shared with twin SB 943; short title 'Families Know First Act' (SECTION 1). Quoted parts are a selection; the bill also sets petition forms, TBI/NCIC notices, ex parte orders (39-17-1369), renewal and termination hearings, and a Class A misdemeanor for false petitions (39-17-1371(a)). Effective July 1, 2019. Summary says 'As introduced'."
+  },
+  "operative_text": "SECTION 2 (new TCA 39-17-1366(3)): \"Extreme Risk Protection Orders\" means an order, in writing, signed by the court, prohibiting and enjoining a named person from having in the person's custody or control, owning, purchasing, possessing, or receiving, any firearm or ammunition;\nSECTION 2 (new TCA 39-17-1367(f)(1)): A person subject to an extreme risk protection order shall not have in the person's custody or control, own, purchase, possess, or receive any firearms or ammunition while that order is in effect.\nSECTION 2 (new TCA 39-17-1367(f)(2)): Upon issuance of an extreme risk protection order, the court shall order the restrained person to either surrender all firearms and ammunition in the restrained person's custody or control, or which the restrained person possesses or owns, to the law enforcement agency that served the extreme risk protection order in a safe manner, or sell all such firearms and ammunition to a licensed gun dealer.\nSECTION 2 (new TCA 39-17-1368(a)(2)): A temporary emergency extreme risk protection order issued pursuant to this section shall prohibit the subject of the petition from having in the subject's custody or control, owning, purchasing, possessing, or receiving, or attempting to purchase or receive, a firearm or ammunition, and shall expire twenty-one (21) days from the date the order is issued.\nSECTION 2 (new TCA 39-17-1370(a)): A law enforcement officer may request that a court, after notice and a hearing, issue an extreme risk protection order enjoining the person from having in the person's custody or control, owning, purchasing, possessing, or receiving a firearm or ammunition for a period of one (1) year.\nSECTION 2 (new TCA 39-17-1370(b)(3)(A)): If the court finds that there is clear and convincing evidence to issue an extreme risk protection order, the court shall issue an extreme risk protection order that prohibits the subject of the petition from having in the subject's custody or control, owning, purchasing, possessing, or receiving, or attempting to purchase or receive, a firearm or ammunition.\nSECTION 2 (new TCA 39-17-1371(b)(1)): It is an offense for a person to own or possess a firearm or ammunition with knowledge that the person is prohibited from doing so by a temporary emergency extreme risk protection order issued pursuant to § 39-17- 1368, an ex parte extreme risk protection order issued pursuant to § 39-17-1369, or an extreme risk protection order issued after notice and a hearing pursuant to § 39-17-1370.\nSECTION 2 (new TCA 39-17-1371(b)(2)): A violation of subdivision (b)(1) is a Class A misdemeanor, punishable by fine, imprisonment, and a five-year prohibition on having in the person's custody or control, owning, purchasing, possessing, receiving, or attempting to purchase or receive, a firearm or ammunition."
+}

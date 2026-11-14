@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-43-2025",
+  "scope": "state:tn",
+  "title": "SB0043 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to the carrying of firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB0043&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/SB0043.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "London Lamar",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c83e282-cb78-4e39-aa1e-13875a86e872"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2025-02-04; official copy via the Internet Archive snapshot 20260513163855 of https://www.capitol.tn.gov/Bills/114/Bill/SB0043.pdf (LegiScan doc 3098198))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-43-2025.draft.pdf",
+      "sha256": "eeaa69fcd98af4795ceda99bbdb91e9ca3b1d82b3502ad4d4ffaa8591ca08fec"
+    },
+    "note": "Draft dated 2025-02-04; HB 814 and SB 43 share one printed document. Section 1 replaces TCA 39-17-1307(g) (carry exception: age 21, or 18 for veterans/service members, lawful possession, lawful presence) and adds (g)(2). No passage vote or enactment noted; adopted amendments, if any, not in text."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(g)(2)): A county legislative body may elect not to permit persons within the county to lawfully carry a handgun pursuant to the exception set out in subdivision (g)(1) by passage of a resolution. Upon passage, the resolution has the effect of eliminating the exception set out in subdivision (g)(1) to the criminal offense of unlawful carrying, as prohibited by subsection (a), within the boundaries of the county. If the county legislative body passes such a resolution, then the county must provide notice to persons present within the county by posting notice of the resolution in conspicuous public locations throughout the county.\nSECTION 2 (TCA 39-17-1314(b)): (5) The unlawful carrying of a firearm, as provided in § 39-17-1307(g)(2)."
+}

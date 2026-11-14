@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-816-2023",
+  "scope": "state:tn",
+  "title": "SB0816 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to weapons.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0816&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB0816.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-01-31; official copy via the Internet Archive snapshot 20260514150749 of https://www.capitol.tn.gov/Bills/113/Bill/SB0816.pdf (LegiScan doc 2673107))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-816-2023.draft.pdf",
+      "sha256": "7d3fa6e6eac42c50844e5cdffa1ab3859d3eb52657cd41900508488b1cec0a75"
+    },
+    "note": "Draft as filed, 2023-01-31; shared document with HB 1385. Covers 'weapon' generally, not firearm-only. Effective on becoming law."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1301): ( ) \"Intent to go armed\" means carrying or wearing a weapon with premeditation and forethought to commit an infamous crime and does not include inadvertent or unintentional intrusion into an area where such weapon is not permitted;"
+}

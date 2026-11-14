@@ -1,0 +1,50 @@
+{
+  "id": "TN-SB-145-2017",
+  "scope": "state:tn",
+  "title": "SB0145 (110th General Assembly): As enacted, treats a licensed firearms dealer the same as a private citizen by allowing the dealer to occasionally sell, exchange, or transfer firearms from the dealer's personal collection without conducting a background check on the buyer; clarifies that the criminal history records check requirements do not apply to an occasional sale of a used or second-hand firearm by a person who is not engaged in the business of importing, manufacturing, or dealing in firearms. - Amends TCA Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0145&ga=110",
+    "https://publications.tnsosfiles.com/acts/110/pub/pc0185.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Mae Beavers",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Paul Bailey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "310955ff-3e44-4032-879f-b3b46026aadb"
+    },
+    {
+      "name": "Janince Bowling",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e50369f1-10eb-467e-8604-b94675565631"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2017-04-28; same official document as TN-HB-61-2017.chaptered.txt (https://publications.tnsosfiles.com/acts/110/pub/pc0185.pdf); 2017-04-28)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-61-2017.chaptered.pdf",
+      "sha256": "878d7d7a907708f82a04091ac81e9602bb53d74096ef28d1097f5e5e4c6606ed"
+    },
+    "note": "Chaptered, Public Chapter 185 (2017-04-28), the law as enacted; text is the House bill HB 61's chapter, shared with SB 145. OCR text ('deale/s' for 'dealer's'). Section 1 rewrites subsection (l) listing transactions exempt from the background check; only the new (C) exemption is quoted. Effective on becoming law."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1316(l)(1)(C)): (C) Transactions by a gun dealer, as defined in subdivision (b)(2), making occasional sales, exchanges, or transfers of firearms that comprise all or part of the gun deale/s personal collection of firearms.\nSECTION 2 (TCA 39-17-1316, new subsection): The criminal history records check required by this section shall not apply to an occasional sale of a used or second-hand firearm by a person who is not engaged in the business of importing, manufacturing, or dealing in firearms, pursuant to 18 U.S.C. SS 921 and 923."
+}

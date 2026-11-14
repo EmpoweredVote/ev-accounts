@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1984-2019",
+  "scope": "state:tn",
+  "title": "SB1984 (111th General Assembly): As introduced, makes various changes to the application and renewal process for concealed handgun carry permits. - Amends TCA Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1984&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/SB1984.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "John Stevens",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2020-01-29; official copy via the Internet Archive snapshot 20260513202052 of https://www.capitol.tn.gov/Bills/111/Bill/SB1984.pdf (LegiScan doc 2114187))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1984-2019.draft.pdf",
+      "sha256": "d62a32f4518acede699089349ad81f986c5dfbe5e777c169b707f568825806ad"
+    },
+    "note": "Draft (as filed), 2020-01-29. Adopted amendments, if any, are not in the text read. Quote in section 4 is the first sentence of the new subsection (l), which replaces the old one; section 5 replaces subsection (n) and adds new (o) and (p). Section 2 and 4 quotes begin after the '(l)' label for section 4 only."
+  },
+  "operative_text": "SECTION 3 (TCA 39-17-1366(j)(2)): (2) A person may renew that person's concealed handgun carry permit beginning six (6) months prior to the expiration date on the face of the permit by completing an application, to be developed by the department, and submitting a renewal fee of fifty dollars ($50.00).\nSECTION 1 (TCA 39-17-1366(b)(4)(A)(i)): Tennessee Code Annotated, Section 39-17-1366(b)(4)(A)(i), is amended by deleting the language \"or a similar agency of another state\".\nSECTION 2 (TCA 39-17-1366(b)(4)(A)(vii)(b)): (b) Has been certified by the commissioner of safety to demonstrate competence with a handgun, pursuant to subsection (l);\nSECTION 4 (TCA 39-17-1366(l)): The commissioner has discretion to determine whether completion of a firearms training or safety course or class demonstrates actual competence with a handgun.\nSECTION 5 (TCA 39-17-1366(p)): (p) The application fee required by subdivision (b)(5) and the renewal fee required by subdivision (j)(2) shall be waived if the applicant:"
+}

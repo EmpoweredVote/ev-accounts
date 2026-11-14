@@ -1,0 +1,60 @@
+{
+  "id": "TN-HB-1553-2019",
+  "scope": "state:tn",
+  "title": "HB1553 (111th General Assembly): As introduced, creates exceptions to the offense of open or concealed carrying of a firearm with the intent to go armed for any person legally in possession and not prohibited from possessing a firearm; converts existing defenses to be exceptions. - Amends TCA Title 10; Title 33; Title 38; Title 39; Title 40; Title 50 and Title 70.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1553&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/HB1553.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bruce Griffey",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Timothy Hill",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3c3bc83b-0622-4b2d-a194-884ef837f3c9"
+    },
+    {
+      "name": "Terri Lynn Weaver",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "James Van Huss",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kelly Keisling",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8954855c-2669-4120-8449-c107465750a5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2019-10-10; official copy via LegiScan getBillText doc 2059778)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1553-2019.draft.pdf",
+      "sha256": "ed16a513ffa886ce3ebfeaa2d04b6ad47155f4f96dbd7e79bf194bde1be7a35a"
+    },
+    "note": "Draft as filed (2019-10-10). Introduced text only; no passage vote information was read. Section 3 and 4 swap 'defense' for 'exception' in 39-17-1308(a)(10) and (b). Twin bills HB 1553 / SB 1566 share the text."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(g)): (1) It is an exception to the application of subdivision (a) if a person: (A) Is legally in possession of the firearm; and (B) Is not prohibited from purchasing a firearm in the person's state of residence. (2) A person who meets the elements of subsection (g)(1) is entitled to the same defenses and exceptions as a person who has been issued a handgun carry permit pursuant to § 39-17-1351, for purposes of any offenses in this part; title 50, chapter 3; or title 70.\nSECTION 2 (TCA 39-17-1308(a)): Tennessee Code Annotated, Section 39-17-1308, is amended by deleting the language \"It is a defense to the application\" in subsection (a) and substituting the language \"It is an exception to the application\".\nSECTION 5: This act shall take effect July 1, 2020, the public welfare requiring it."
+}

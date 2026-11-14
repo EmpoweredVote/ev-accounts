@@ -1,0 +1,134 @@
+{
+  "id": "TN-HB-42-2019",
+  "scope": "state:tn",
+  "title": "HB0042 (111th General Assembly): As introduced, reduces the punishment for a person committing the offense of illegal possession of a handgun. - Amends TCA Title 39 and Title 40.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0042&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/HB0042.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "James Van Huss",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jerome Moon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9ee15ead-f2bc-47dd-b5f0-1f913f8a80f3"
+    },
+    {
+      "name": "Rick Eldridge",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "58be867d-b7c3-4105-9757-55d4abe59756"
+    },
+    {
+      "name": "Bruce Griffey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Paul Sherrell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9dfac502-4cc4-4105-91de-cc25272e452e"
+    },
+    {
+      "name": "Kent Calfee",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Crawford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "00851f7f-d940-4c22-82f9-377f6ea092fa"
+    },
+    {
+      "name": "Mike Carter",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Chris Todd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+    },
+    {
+      "name": "Timothy Hill",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3c3bc83b-0622-4b2d-a194-884ef837f3c9"
+    },
+    {
+      "name": "Jay Reedy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4e0eefb1-6a4f-4004-be8d-432a7131b475"
+    },
+    {
+      "name": "Mark Hall",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tim Rudd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "03d66202-6a28-4bd6-a689-475cdd0b9520"
+    },
+    {
+      "name": "John Ragan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bud Hulsey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b8ec6fca-3fe7-4f7f-b8ef-7b09db3aa664"
+    },
+    {
+      "name": "Ryan Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "296df1be-a8bb-45ee-bb86-e1de328ed845"
+    },
+    {
+      "name": "Debra Moody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5fbea991-5a0d-4695-9b78-06700eb9ff3f"
+    },
+    {
+      "name": "Jerry Sexton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2019-01-11; official copy via LegiScan getBillText doc 1845566)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-42-2019.draft.pdf",
+      "sha256": "e9b30e0c0ae7d34457e6ae90547c92d294c90277a1567297c007d4b0377b37b2"
+    },
+    "note": "Draft (as filed), 2019-01-11. Adopted amendments, if any, are not in the text read. The bill replaces subsection 39-17-1307(a); the item (B) quote is a fragment of the sentence 'A person commits an offense who carries with the intent to go armed:'."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(a)(1)): (B) A handgun without authorization under § 39-17-1315 or § 39-17-1351.\nSECTION 1 (TCA 39-17-1307(a)(3)(A)): (A) A first violation of subdivision (a)(1)(B) is a Class C misdemeanor, punishable only by a fine of two hundred fifty dollars ($250).\nSECTION 1 (TCA 39-17-1307(a)(3)(C)): Upon a first violation of subdivision (a)(1)(B), the person shall be issued a citation in lieu of arrest in accordance with § 40-7-118(b)(3), unless the issuance of a citation is prohibited by § 40-7-118(c)(1) or (c)(3)-(9), and a law enforcement officer shall not confiscate the person's handgun solely for a violation of subdivision (a)(1)(B).\nSECTION 2 (TCA 40-7-118(b)(3)): The offense of carrying a handgun without authorization, in violation of § 39-17-1307(a)(1)(B);"
+}

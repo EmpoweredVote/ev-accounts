@@ -1,0 +1,50 @@
+{
+  "id": "TN-HB-2368-2019",
+  "scope": "state:tn",
+  "title": "HB2368 (111th General Assembly): As introduced, repeals the law that allows handgun carry permit holders to transport or store a firearm or firearm ammunition in the permit holder's motor vehicle while on or utilizing a public or private parking area if the firearm or firearm ammunition is kept from ordinary observation. - Amends TCA Title 39; Title 49 and Title 50.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2368&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/HB2368.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "G Hardaway",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Clemmons",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd4cbb33-0634-4c31-a466-7b282febefab"
+    },
+    {
+      "name": "Bo Mitchell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "094afd56-f074-4fdc-a053-1482ea501fc8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2020-02-04; official copy via LegiScan getBillText doc 2120981)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2368-2019.draft.pdf",
+      "sha256": "98f628e600329f4ed5e6843683bfc705fed87d972ce2e917d332bedaa2fea549"
+    },
+    "note": "Draft (as filed), 2020-02-04. Adopted amendments, if any, are not in the text read. Same bill text as twin SB 1722. Sections 2 and 3 only remove cross-references. The summary names the repealed law; the text itself only cites section numbers."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1313): Tennessee Code Annotated, Section 39-17-1313, is amended by deleting the section in its entirety.\nSECTION 4 (TCA 39-17-1366(h)): Tennessee Code Annotated, Section 39-17-1366(h), is amended by deleting the subsection.\nSECTION 5 (TCA 49-7-163): Tennessee Code Annotated, Section 49-7-163, is amended by deleting the section in its entirety.\nSECTION 6 (TCA 50-1-312): Tennessee Code Annotated, Section 50-1-312, is amended by deleting the section in its entirety."
+}

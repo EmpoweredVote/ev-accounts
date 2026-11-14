@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-506-2017",
+  "scope": "state:tn",
+  "title": "HB0506 (110th General Assembly): As introduced, makes a person relocating to Tennessee eligible to be issued a handgun carry permit without completing the classroom and firing range requirements if, within 5 years from the application, the person had a valid handgun carry permit in another state with substantially similar classroom and firing range requirements. - Amends TCA Section 39-17-1351.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0506&ga=110",
+    "https://www.capitol.tn.gov/Bills/110/Bill/HB0506.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "David Hawk",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9836d436-bc6d-43fb-b3be-ba3cd96ddeb4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2017-02-06; official copy via LegiScan getBillText doc 1498164)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-506-2017.draft.pdf",
+      "sha256": "dc04ae5f24521002b93bb07bca5136a881769fcbe89b96a88a77e7fedc578e35"
+    },
+    "note": "Draft as filed (HB 506 filed 2017-02-06; SB 531 copy 2017-02-07, same document). Introduced version; no votes recorded. Amendments, if any, are not in this text."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1351(e)): ( ) Prior to relocating to Tennessee, had a valid handgun carry permit in another state that has substantially similar firing range and classroom hours requirements as Tennessee."
+}

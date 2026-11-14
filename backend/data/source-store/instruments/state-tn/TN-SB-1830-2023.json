@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1830-2023",
+  "scope": "state:tn",
+  "title": "SB1830 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1830&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB1830.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "London Lamar",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c83e282-cb78-4e39-aa1e-13875a86e872"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-23; official copy via the Internet Archive snapshot 20260514150858 of https://www.capitol.tn.gov/Bills/113/Bill/SB1830.pdf (LegiScan doc 2899013))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1830-2023.draft.pdf",
+      "sha256": "0b7b31fc459b69c3493ae765099b851c132565188cd82ea38bf84c431c92df9b"
+    },
+    "note": "Draft as filed 2024-01-23; HB 1821 and SB 1830 share this document. Section 1 replaces TCA 39-17-1307(g)(1); the quote is cut at a page break and omits the age-18 veteran and service-member exceptions in (B)(ii). Section 2 also waives the application and processing fees for both permits and requires a gun-violence data report by Jan 1, 2028. Section 1 takes effect Jan 1, 2025; act ends Jan 1, 2028. No amendments in the text read."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(g)(1)): (1) (A) The person has a handgun carry permit issued pursuant to § 39-17- 1351 or § 39-17-1366 and is in a county having a population over nine hundred thousand (900,000), according to the 2020 federal census or any subsequent federal census; or (B) The person is not in a county having a population over nine hundred thousand (900,000), according to the 2020 federal census or any subsequent federal census, and: (i) Is at least twenty-one (21) years of age; or\nSECTION 2 (new section, TCA Title 39, Ch. 17, Pt. 13): (a) The department of safety shall establish a three-year pilot program that is in effect from January 1, 2025, to January 1, 2028, in a county having a population over nine hundred thousand (900,000), according to the 2020 federal census or any subsequent federal census, for the purpose of encouraging residents of those counties who want to lawfully carry a handgun to obtain an enhanced handgun carry permit or a concealed handgun carry permit."
+}

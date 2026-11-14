@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-681-2019",
+  "scope": "state:tn",
+  "title": "SB0681 (111th General Assembly): As introduced, increases the penalty for theft of property that includes a firearm valued at less than $2,500 from a Class A misdemeanor or Class E felony, as applicable based on the value, to a Class D felony. - Amends TCA Title 37; Title 39 and Title 40, Chapter 35.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0681&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/SB0681.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Todd Gardenhire",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "19829b74-5605-467e-8a6f-0c61b6384d2a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2019-02-05; official copy via the Internet Archive snapshot 20260513194411 of https://www.capitol.tn.gov/Bills/111/Bill/SB0681.pdf (LegiScan doc 1891304))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-681-2019.draft.pdf",
+      "sha256": "e31f12436e1fc54ea6e4a5f377753fc62caf24647d818001e409903dd31722c9"
+    },
+    "note": "Draft as filed, 2019-02-05. Summary says $2,500; the text read uses $10,000. Caption says criminal law and lists Titles 37 and 40, but only 39-14-105(a)(3) is amended in the text read."
+  },
+  "operative_text": "SECTION 1 (TCA 39-14-105(a)(3)(B)): (B) Notwithstanding subdivision (a)(1) or (2), a Class D felony if the value of the property obtained is less than ten thousand dollars ($10,000) and the property includes a pistol, handgun, rifle, shotgun, or any other type of firearm. The theft of firearms valued over ten thousand dollars ($10,000) shall be graded as provided in the following subsections;"
+}

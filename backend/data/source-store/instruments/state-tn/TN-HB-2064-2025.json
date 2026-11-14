@@ -1,0 +1,201 @@
+{
+  "id": "TN-HB-2064-2025",
+  "scope": "state:tn",
+  "title": "HB2064 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 16; Title 36; Title 37; Title 39; Title 40; Title 49 and Title 65, relative to weapons.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=HB2064&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/HB2064.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chris Todd",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+    },
+    {
+      "name": "William Lamberth",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e389c14c-b83f-4933-a5e6-25b3429fbb62"
+    },
+    {
+      "name": "Jake McCalmon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "13dde449-93ec-4b04-8ba9-2ec0960ca052"
+    },
+    {
+      "name": "Dan Howell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d9d6e188-5019-4349-bf88-e475f341707c"
+    },
+    {
+      "name": "Gino Bulso",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b8caf1c6-7b5d-4a32-ae14-54d40b1000a9"
+    },
+    {
+      "name": "William Slater",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "dcfe03c4-287c-4b82-a2c3-8ea4204dd008"
+    },
+    {
+      "name": "Clay Doggett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9a9c3029-794a-4cb5-aa7e-342e9b480603"
+    },
+    {
+      "name": "Rusty Grills",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "70aa67e5-8df0-4dee-a034-1ea4f3470c57"
+    },
+    {
+      "name": "Paul Sherrell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9dfac502-4cc4-4105-91de-cc25272e452e"
+    },
+    {
+      "name": "Brock Martin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d7260364-35f1-4633-b329-3d87cb8ae4c9"
+    },
+    {
+      "name": "Lowell Russell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9a396215-d948-45e3-b40c-8e7a9e20d868"
+    },
+    {
+      "name": "Johnny Garrett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "34266501-a4d8-4d2c-83c6-ee49335cf0b9"
+    },
+    {
+      "name": "Mike Sparks",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bbb3d2b1-0c0c-4f08-a76e-b742da13e612"
+    },
+    {
+      "name": "Clark Boyd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fe941f15-bf81-4bb8-8834-f5cc312537b9"
+    },
+    {
+      "name": "Kirk Haston",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e9d96a57-9348-4828-b95c-d819eecf1915"
+    },
+    {
+      "name": "Michele Reneau",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6ca7d63a-d27f-4e33-816e-ad0053461e1e"
+    },
+    {
+      "name": "Jerome Moon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9ee15ead-f2bc-47dd-b5f0-1f913f8a80f3"
+    },
+    {
+      "name": "Scott Cepicky",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e6b4535-ba42-4329-8df1-747bfaa4909e"
+    },
+    {
+      "name": "Monty Fritts",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9cff8f78-ffde-4821-91e7-6d14fb093ecc"
+    },
+    {
+      "name": "Jody Barrett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a6b0df31-75ac-4a90-88e6-78db5c74a71e"
+    },
+    {
+      "name": "Kip Capley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "91c9fb1a-7df5-418b-9713-a2db4acd49a6"
+    },
+    {
+      "name": "Timothy Hill",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3c3bc83b-0622-4b2d-a194-884ef837f3c9"
+    },
+    {
+      "name": "Fred Atchley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e51fc966-7475-4c24-9435-74d8fd2814c2"
+    },
+    {
+      "name": "Rush Bricken",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e02758-1839-4d89-8a1b-26b9aeda22d5"
+    },
+    {
+      "name": "Lee Reeves",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bb55f6b7-4052-4b32-93eb-97e840dd1abe"
+    },
+    {
+      "name": "Chris Hurt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bb56ab02-6229-47cd-830a-2a9fe74b0aa7"
+    },
+    {
+      "name": "Dennis Powers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fa7182a1-54a2-473a-979f-3ee5574b2f52"
+    },
+    {
+      "name": "Tom Leatherwood",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8ead6e45-7665-4f39-b50f-155146990b94"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2026-02-02; official copy via LegiScan getBillText doc 3343668)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2064-2025.draft.pdf",
+      "sha256": "63a42f57becee04635c283f1564e1e2faf94b24c5ecf10662d0e2bbfa8c68e3b"
+    },
+    "note": "Draft as introduced; adopted amendments are not in the text read and could change it. Sections 7-22 conform other laws (sections 13-14 change \"handgun\" to \"firearm\" in the juvenile possession law). Copy dated 2026-02-02; SB 2467 and HB 2064 print the same document."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307): Tennessee Code Annotated, Section 39-17-1307, is amended by deleting subsections (a), (e), and (g) and subdivision (h)(1)(B).\nSECTION 2 (TCA 39-17-1307(f)(1)(A)): (A) Has been convicted of a misdemeanor crime of domestic violence, as defined in 18 U.S.C. § 921, within the prior five (5) years, and has not had the person's firearm rights restored pursuant to § 39-17-1367, or is still subject to the disabilities of such a conviction;\nSECTION 4 (TCA 39-17-1307(h)(1)(A)): (A) Has been convicted of stalking, as prohibited by § 39-17-315, within the prior five (5) years;\nSECTION 6 (TCA 39-17-1311): It is not an offense for a person authorized to carry a firearm pursuant to § 39-17- 1351 or § 39-17-1366 or a person who is not prohibited from carrying a firearm to do so in any state or local park, on a greenway or other recreational property, or, to the extent\nSECTION 14 (TCA 39-17-1319(d)(1)(D)): (D) Hunting, trapping, fishing, camping, sport shooting, or other lawful sporting activity;\nSECTION 17 (TCA 39-17-1321): (a) Notwithstanding whether a person has a permit issued pursuant to § 39-17- 1315 or § 39-17-1351 or § 39-17-1366, it is an offense to carry a firearm while under the influence of alcohol as defined in § 55-10-401(2) or any controlled substance or substance analogue.\nSECTION 23 (new TCA 39-17-1367): (a) A person who has been convicted of a misdemeanor crime of domestic violence, as defined in 18 U.S.C. § 921, within the prior five (5) years may petition the court in which the person was convicted of the offense to have the person's firearm rights restored; provided, that the person may not petition the court until three (3) years from the date of conviction.\nSECTION 23 (new TCA 39-17-1367(d)): (d) The court shall grant the petition for relief if it finds by a preponderance of the evidence and enters into the record the following: (1) The petitioner is no longer likely to act in a manner that is dangerous to public safety; and (2) Granting the relief would not be contrary to the public interest."
+}

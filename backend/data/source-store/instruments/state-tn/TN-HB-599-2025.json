@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-599-2025",
+  "scope": "state:tn",
+  "title": "HB0599 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=HB0599&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/HB0599.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bob Freeman",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e275bc99-103c-4a1f-8a57-c7a05e918cb0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2025-01-30; official copy via the Internet Archive snapshot 20260513074212 of https://www.capitol.tn.gov/Bills/114/Bill/HB0599.pdf (LegiScan doc 3092388))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-599-2025.draft.pdf",
+      "sha256": "d87d7821da7d157a3046fe12bdffc4580930de82165baa39d8a3971230a580a2"
+    },
+    "note": "Draft dated 2025-01-30; HB 599 and SB 34 share one document. No enactment indicated; adopted amendments, if any, not in text. Applies to transfers on or after July 1, 2025."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1316(s)): (1) It is an offense to knowingly give, sell, lend, deliver, or otherwise transfer a firearm to a person when the transferor knows or reasonably should know that the person receiving the firearm is prohibited from purchasing or possessing a firearm under state or federal law.\nSECTION 1 (TCA 39-17-1316(s)): (2) A violation of this subsection (s) is a Class A misdemeanor."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1564-2023",
+  "scope": "state:tn",
+  "title": "SB1564 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 36; Title 38 and Title 39, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1564&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB1564.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Heidi Campbell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bca9c890-1fd4-4ab8-9ffe-a6fac4eb2d32"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-04-05; crossfiled twin https://www.capitol.tn.gov/Bills/113/Bill/HB1574.pdf is the same printed document (it names SENATE BILL 1564); copied from TN-HB-1574-2023.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1574-2023.draft.pdf",
+      "sha256": "954f7a837da12ebd12ed14627fe8097790a6dbd515b8433bd9adf97d24a1cf65"
+    },
+    "note": "Draft as filed (2023-04-05); House and Senate numbers share one document. No amendments are reflected. Final orders last up to 12 months; the caption also names Titles 36 and 38 but the text read amends only TCA Title 39, Chapter 17, Part 13."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-1367(d)): (d) Upon notice and a hearing on the matter, if the court finds by clear and convincing evidence that the respondent poses a significant danger of causing personal injury to the respondent or others by having in the respondent's custody or control, or by purchasing, possessing, or receiving, a firearm or any ammunition, then the court shall issue a risk protection order for an appropriate period of up to twelve (12) months.\nSECTION 1 (new TCA 39-17-1367(k)(3)): (3) If a court finds there is reasonable cause to believe that the respondent poses a significant danger of causing personal injury to the respondent's self or others in the near future by having in the respondent's custody or control, or by purchasing, possessing, or receiving, a firearm or ammunition, then the court shall issue a temporary ex parte risk protection order.\nSECTION 1 (new TCA 39-17-1368(a)): (a) Upon issuance of a risk protection order pursuant to § 39-17-1367, including a temporary ex parte risk protection order, the court shall order the respondent to surrender to the local law enforcement agency all firearms and ammunition owned by the respondent or in the respondent's custody, control, or possession, except as provided in § 39-17-1370, and any handgun carry permit issued under § 39-17-1351 or § 39-17-1366, held by the respondent.\nSECTION 1 (new TCA 39-17-1369(a)): (a) If a risk protection order issued pursuant to § 39-17-1367 is vacated or ends without extension, then a law enforcement agency holding a firearm or any ammunition owned by the respondent or any handgun carry permit issued under § 39-17-1351 or § 39-17-1366, held by the respondent, that has been surrendered or seized pursuant to a risk protection order must return the surrendered firearm, ammunition, or permit, as requested by a respondent only after confirming through a background check that the respondent is currently eligible to own or possess firearms and ammunition under federal and state law and after confirming with the court that the risk protection order has been vacated or has ended without extension.\nSECTION 1 (new TCA 39-17-1372(b)): (b) A person who has in the person's custody or control a firearm or any ammunition or who purchases, possesses, or receives a firearm or any ammunition with knowledge that the person is prohibited from doing so by an order issued pursuant to § 39-17-1367 commits a Class E felony."
+}

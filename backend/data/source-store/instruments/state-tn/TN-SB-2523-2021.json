@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2523-2021",
+  "scope": "state:tn",
+  "title": "SB2523 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2523&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/SB2523.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2022-02-02; own version, official copy via the Internet Archive snapshot 20260514165224 of https://www.capitol.tn.gov/Bills/112/Bill/SB2523.pdf; the last listed version was not archived)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2523-2021.draft.pdf",
+      "sha256": "67d876981c640d8c236e3b794d1389bb60166bf88111ff35548506cac3e1e81d"
+    },
+    "note": "Draft as filed, 2022-02-02; House and Senate twins share the text. Summary says \"As introduced\"; no amendments are in the text read, and the bill has no passage vote in the file."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1350(d)): (5) For purposes of this section, \"law enforcement officer\" also means a person who has been issued an enhanced handgun carry permit pursuant to § 39-17-1351; provided, that the enhanced handgun carry permit is not suspended, revoked, or expired."
+}

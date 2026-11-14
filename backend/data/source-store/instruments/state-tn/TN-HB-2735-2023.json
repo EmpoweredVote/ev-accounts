@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-2735-2023",
+  "scope": "state:tn",
+  "title": "HB2735 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, relative to firearms transactions.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2735&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB2735.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Caleb Hemmer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b4c5da13-3088-4510-bf9b-f14d467d3038"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-31; official copy via LegiScan getBillText doc 2909479)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2735-2023.draft.pdf",
+      "sha256": "cc9f4d088baa01dc63cbd0f25f732401620b6223a49972fbfc11167d70e6773c"
+    },
+    "note": "Draft dated 2024-01-31 (as filed). No votes recorded. The subsection letter is left blank in the printed bill."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1316, new subsection): (1) A person commits an offense who provides to a gun dealer or private seller of firearms what the person knows to be materially false information with intent to deceive the dealer or seller about the legality of a transfer of a firearm. (2) A person commits an offense who knowingly obtains a firearm for the purpose of transferring the firearm to another who is prohibited from receiving or possessing a firearm by state or federal law. (3) A violation of this subsection ( ) is a Class E felony."
+}

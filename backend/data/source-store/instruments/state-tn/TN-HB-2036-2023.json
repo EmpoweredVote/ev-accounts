@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-2036-2023",
+  "scope": "state:tn",
+  "title": "HB2036 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to possession of firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2036&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB2036.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tom Leatherwood",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8ead6e45-7665-4f39-b50f-155146990b94"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-23; official copy via LegiScan getBillText doc 2899815)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2036-2023.draft.pdf",
+      "sha256": "0b40383c94bdc05cb4a5c63183d53b33aedd2a2caa12d183073789cdfe0e2b44"
+    },
+    "note": "Draft dated 2024-01-23 (as filed). No votes recorded."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307, new subsection (k)): (1) A person commits an offense who knowingly possesses a firearm or firearm ammunition, and is under indictment for a crime punishable by imprisonment for a term of one (1) year or more. (2) An offense under subdivision (k)(1) is a Class D felony."
+}

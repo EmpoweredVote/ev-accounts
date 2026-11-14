@@ -1,0 +1,44 @@
+{
+  "id": "TN-HB-493-2019",
+  "scope": "state:tn",
+  "title": "HB0493 (111th General Assembly): As introduced, allows firefighters and emergency medical technicians to carry handguns while engaged in the performance of official duties; requires annual completion of a firearm training program. - Amends TCA Title 39, Chapter 17.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0493&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/HB0493.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Clay Doggett",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9a9c3029-794a-4cb5-aa7e-342e9b480603"
+    },
+    {
+      "name": "Bruce Griffey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2019-02-01; official copy via LegiScan getBillText doc 1886347)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-493-2019.draft.pdf",
+      "sha256": "8dd2c467ebfbbb6d151e3830b371a5a042dafaf97fbe234b84f2193f7c42fa1b"
+    },
+    "note": "Draft text dated 2019-02-01, shared with twin SB 422; inserts a new (a)(1)(B) and redesignates the existing language as (a)(1)(C). Summary says 'As introduced'; no passage text read."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1315(a)(1)(B)): Any person employed as a firefighter or emergency medical technician may carry a handgun while engaged in the performance of the person's official duties pursuant to a written directive by the executive supervisor of the organization to which the person is attached or employed; provided, that the person has successfully completed and continues to successfully complete on an annual basis a firearm training program of at least eight (8) hours duration."
+}

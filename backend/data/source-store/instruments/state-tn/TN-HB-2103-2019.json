@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-2103-2019",
+  "scope": "state:tn",
+  "title": "HB2103 (111th General Assembly): As introduced, extends the validity of a concealed handgun carry permit from eight years from the date of issuance to the lifetime of the permit holder; increases the application fee for a concealed handgun carry permit from $65 to $75. - Amends TCA Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2103&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/HB2103.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Rush Bricken",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e02758-1839-4d89-8a1b-26b9aeda22d5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2020-01-30; official copy via LegiScan getBillText doc 2116107)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2103-2019.draft.pdf",
+      "sha256": "80e12da6c807f27bf8da88b59c9208b37918ebbbf909f14d1096c8991e4644bf"
+    },
+    "note": "Draft as filed (2020-01-30). Amends TCA 39-17-1366 as created by Public Chapter 479 (2019). Effective January 1, 2021 per Section 4. Section 3(j)(2) also lets the department suspend a driver license when a revoked permit is not returned (part of the permit scheme)."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1366(b)(5)): (5) Pay an application and processing fee of seventy-five dollars ($75.00) to the department. Any funds from the fees paid pursuant to this subdivision (b)(5) that are not used for processing applications and issuing permits shall be retained by the department to monitor the eligibility of concealed handgun carry permit holders as required by subsection (j); and\nSECTION 2 (TCA 39-17-1366(d)): Tennessee Code Annotated, Section 39-17-1366(d), is amended by deleting the language \"The concealed handgun permit is valid for eight (8) years from the date of issuance.\".\nSECTION 3 (TCA 39-17-1366(j)(1)): (1) A concealed handgun carry permit shall not expire and shall continue to be valid for the life of the permit holder unless the permit holder no longer meets the requirements of this section.\nSECTION 3 (TCA 39-17-1366(j)(1)): Upon discovery that a concealed handgun carry permit holder no longer satisfies the requirements of this section, the department shall suspend or revoke the permit pursuant to § 39-17-1352."
+}

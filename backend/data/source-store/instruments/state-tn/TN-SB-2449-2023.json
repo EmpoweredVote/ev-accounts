@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2449-2023",
+  "scope": "state:tn",
+  "title": "SB2449 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2449&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB2449.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Raumesh Akbari",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2a79d564-dde0-4201-a072-789554bbf6d6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-30; official copy via the Internet Archive snapshot 20260514154402 of https://www.capitol.tn.gov/Bills/113/Bill/SB2449.pdf (LegiScan doc 2908114))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2449-2023.draft.pdf",
+      "sha256": "0ef9434f3bbe5af8ce7019fdef83e310d8aabd29c108510d9611c00019f1a1d9"
+    },
+    "note": "Draft as filed, 2024-01-30/31; shared document with HB 2329. Deletes 39-17-1307(g) (the lawful-handgun-carry exception) and a cross-reference in 39-17-1313(a); no new words are added. Effective July 1, 2024."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307): Tennessee Code Annotated, Section 39-17-1307, is amended by deleting subsection (g).\nSECTION 2 (TCA 39-17-1313(a)): Tennessee Code Annotated, Section 39-17-1313(a), is amended by deleting \"or who lawfully carries a handgun pursuant to § 39-17-1307(g)\"."
+}

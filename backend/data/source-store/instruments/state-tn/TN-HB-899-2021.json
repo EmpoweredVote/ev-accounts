@@ -1,0 +1,44 @@
+{
+  "id": "TN-HB-899-2021",
+  "scope": "state:tn",
+  "title": "HB0899 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4, Chapter 54 and Title 8, Chapter 47, relative to the Tennessee Firearms Freedom Act.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0899&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/HB0899.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Clay Doggett",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9a9c3029-794a-4cb5-aa7e-342e9b480603"
+    },
+    {
+      "name": "Bruce Griffey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2021-02-10; crossfiled twin https://www.capitol.tn.gov/Bills/112/Bill/SB1333.pdf is the same printed document (it names HOUSE BILL 899); copied from TN-SB-1333-2021.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1333-2021.draft.pdf",
+      "sha256": "231bf5a576f695bb963599dde46eae5f9651adae8799ad0466f9c0ccdb687715"
+    },
+    "note": "Draft as filed 2021-02-10, read from the Senate twin SB 1333 (same printed document, names HOUSE BILL 899). No votes on record."
+  },
+  "operative_text": "SECTION 1 (new section in TCA Title 4, ch. 54): (a) It is a violation of an individual's civil rights for a government entity, official, employee, or agent to infringe upon or deny an individual the full exercise and enjoyment of any right recognized and protected by Article I, Section 26, of the Tennessee Constitution or any right recognized and protected by the second amendment to the United States Constitution.\nSECTION 1 (new section in TCA Title 4, ch. 54): (c) A violation of this section by a government official, employee, or agent may also be punished as official oppression pursuant to § 39-16-403.\nSECTION 1 (new section in TCA Title 4, ch. 54): (g) A knowing or willful violation of this section by a government official constitutes grounds for ouster under title 8, chapter 47."
+}

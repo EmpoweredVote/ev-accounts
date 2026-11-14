@@ -1,0 +1,119 @@
+{
+  "id": "TN-HB-40-2017",
+  "scope": "state:tn",
+  "title": "HB0040 (110th General Assembly): As introduced, enacts the \"Open Carry Firearms Freedom Act.\" - Amends TCA Title 10, Chapter 7; Title 33; Title 38; Title 39; Title 40 and Title 70.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0040&ga=110",
+    "https://www.capitol.tn.gov/Bills/110/Bill/HB0040.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "James Van Huss",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sheila Butt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Matthew Hill",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kelly Keisling",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8954855c-2669-4120-8449-c107465750a5"
+    },
+    {
+      "name": "Jimmy Matlock",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Crawford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "00851f7f-d940-4c22-82f9-377f6ea092fa"
+    },
+    {
+      "name": "Timothy Hill",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3c3bc83b-0622-4b2d-a194-884ef837f3c9"
+    },
+    {
+      "name": "Jimmy Eldridge",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Roger Kane",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mark Lovell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tim Rudd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "03d66202-6a28-4bd6-a689-475cdd0b9520"
+    },
+    {
+      "name": "David Byrd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dan Howell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d9d6e188-5019-4349-bf88-e475f341707c"
+    },
+    {
+      "name": "Andy Holt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Terri Lynn Weaver",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sabi Kumar",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f9cf1fb9-ad68-4549-8b81-f45b6c4e1952"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2017-01-12; official copy via LegiScan getBillText doc 1456702)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-40-2017.draft.pdf",
+      "sha256": "6e6a5d970c0868a8f9a0c83aa9cb2f52d64f113071b90d241b92c75ecd6bd63b"
+    },
+    "note": "Draft (as filed) dated 2017-01-12. Title is \"Open Carry Firearms Freedom Act.\" SECTION 2 replaces 39-17-1307(a): the club-carry offense stays; only fully concealed handguns without a permit stay an offense; penalties are fine-only. SECTIONS 3, 5, 6 quotes are instruction sentences. The SECTION 2 (a)(2) quote stops at a page break; the sentence goes on to \"directive issued pursuant to § 39-17-1315 or handgun carry permit issued or recognized in this state pursuant to § 39-17-1351.\" SECTION 7 bars the department of safety from changing permit wording. Draft text: adopted amendments are not in the text read and could change it."
+  },
+  "operative_text": "SECTION 2 (TCA 39-17-1307(a)(2)): A person commits an offense who carries on or about the person a handgun that is fully concealed from ordinary observation unless the person has a written\nSECTION 3 (TCA 39-17-1308): is amended by deleting subdivisions (a)(1) and (a)(5) in their entireties.\nSECTION 4 (TCA 39-17-1309(e)): A person entering the property who does not remove any firearm from a vehicle; provided, however, that the person may remove a firearm from a vehicle for the limited purpose of storing it in or on another portion of the vehicle or another vehicle.\nSECTION 5 (TCA 39-17-1310): is amended by deleting subdivision (4) in its entirety.\nSECTION 6 (TCA 39-17-1351(n)(1)): is amended by adding the language \", either openly or concealed\" at the end of the first sentence."
+}

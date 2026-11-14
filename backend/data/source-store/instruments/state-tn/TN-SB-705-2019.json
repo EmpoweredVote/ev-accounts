@@ -1,0 +1,49 @@
+{
+  "id": "TN-SB-705-2019",
+  "scope": "state:tn",
+  "title": "SB0705 (111th General Assembly): As enacted, creates a concealed handgun carry permit, which allows a person to carry a concealed handgun; redesignates the existing handgun carry permit as an enhanced handgun carry permit. - Amends TCA Title 10; Title 33; Title 38 and Title 39.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0705&ga=111",
+    "https://publications.tnsosfiles.com/acts/111/pub/pc0479.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "John Stevens",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+    },
+    {
+      "name": "Mike Bell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jon Lundberg",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2019-05-24; official copy via the Internet Archive snapshot 20260807040237 of https://publications.tnsosfiles.com/acts/111/pub/pc0479.pdf (LegiScan doc 2029743))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-705-2019.chaptered.pdf",
+      "sha256": "ebfb29a6b2e3395fcf2c215cc5928b5a0e3b9b809201734f4e52306a03b2ea7e"
+    },
+    "note": "Chaptered (Public Chapter 479), 2019-05-24, the law as enacted. Sections 1-2 and 6-21 only add the new permit to cross-references in other laws. Text has OCR typos (e.g. 'lf', 'S' for the section sign, 'gg' for sections); quotes are as printed. The permit requires handgun-competence proof, fingerprints and a $65 fee."
+  },
+  "operative_text": "SECTION 3 (TCA 39-17-1351): Tennessee Code Annotated, Section 39-17-1351, is amended by deleting the language \"handgun carry permits\" wherever it appears and substituting instead \"enhanced handgun carry permits\".\nSECTION 5 (new TCA 39-17-1366(a)): Any resident of this state who is a United States citizen or lawful permanent resident, as defined by $ 55-50-102, may apply to the department for a concealed handgun carry permit.\nSECTION 5 (new TCA 39-17-1366(b)(5)): Pay an application and processing fee of sixty-five dollars ($65.00) to the department\nSECTION 5 (new TCA 39-17-1366(d)): lf an applicant meets all the requirements of this section, the department shall issue the applicant a concealed handgun carry permit that entitles the permit holder to carry any handgun that the permit holder legally owns or possesses in a concealed manner. The concealed handgun permit is valid for eight (8) years from the date of issuance.\nSECTION 5 (new TCA 39-17-1366(e)): A person issued a concealed handgun carry permit under this section shall carry the permit at all times when carrying a handgun pursuant to this section and shall display the permit on demand of a law enforcement officer.\nSECTION 5 (new TCA 39-17-1366(h)): A concealed handgun carry permit issued under this section shall authorize the permit holder to carry or possess a handgun as authorized by S 39-17-1313.\nSECTION 5 (new TCA 39-17-1366(i)): A concealed handgun carry permit issued under this section is subject to the same restrictions and requirements found in gg 39-17-1352 - 39-17-1359.\nSECTION 22: This act shall take effect January 1 , 2020, the public welfare requiring it."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2356-2017",
+  "scope": "state:tn",
+  "title": "SB2356 (110th General Assembly): As introduced, creates Class A misdemeanor of person purchasing a used or second-hand firearm if that person is disqualified from purchasing a firearm from a licensed dealer; makes second or subsequent violation a Class E felony. - Amends TCA Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2356&ga=110",
+    "https://www.capitol.tn.gov/Bills/110/Bill/SB2356.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeff Yarbro",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "142de671-f7ef-4923-9c3e-3499086da41a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2018-02-01; official copy via the Internet Archive snapshot 20260514024850 of https://www.capitol.tn.gov/Bills/110/Bill/SB2356.pdf (LegiScan doc 1714180))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2356-2017.draft.pdf",
+      "sha256": "6921f636b73a2a13b763ab07baef66ee27eedab7de4477dd1531bc16a3ab06e1"
+    },
+    "note": "Draft (as filed) dated 2018-02-01; twin House Bill 2302. Replaces existing 39-17-1316(q) entirely. No passage vote; the draft is the only version read. (q)(2)(A) lists four conditions (i)-(iv): disqualified by the bureau, knowledge of a disqualifying conviction or order, unlawful drug user, or buying to avoid disqualification. Draft text: adopted amendments are not in the text read and could change it."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1316(q)(1)): It is an offense for a person to purchase or attempt to purchase a firearm knowing that the person is prohibited by state or federal law from owning, possessing, or purchasing a firearm.\nSECTION 1 (TCA 39-17-1316(q)(1)): It is an offense to sell or offer to sell a firearm to a person knowing that the person is prohibited by state or federal law from owning, possessing, or purchasing a firearm.\nSECTION 1 (TCA 39-17-1316(q)(2)): It is an offense for a person to purchase or attempt to purchase a used or second-hand firearm if the person:\nSECTION 1 (TCA 39-17-1316(q)(2)(B)): A first violation of this subdivision (q)(2) is a Class A misdemeanor.\nSECTION 1 (TCA 39-17-1316(q)(2)(C)): A second or subsequent violation of this subdivision (q)(2) is a Class E felony."
+}

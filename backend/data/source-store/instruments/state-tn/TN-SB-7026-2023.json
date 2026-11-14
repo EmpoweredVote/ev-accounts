@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-7026-2023",
+  "scope": "state:tn",
+  "title": "SB7026 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 33 and Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB7026&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB7026.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-08-21; official copy via the Internet Archive snapshot 20260515001244 of https://www.capitol.tn.gov/Bills/113/Bill/SB7026.pdf (LegiScan doc 2838143))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-7026-2023.draft.pdf",
+      "sha256": "b1499fd33f6103f317656fabba11819c0bba6122347a7b9618dd5f086c0336ef"
+    },
+    "note": "Draft as introduced (2023-08-21); no amendments in the text read. Twin HB 7098 is on the same document."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-1367(a)(1)): In an effort to prevent violence, including suicide, due to firearms the department of safety shall establish the Tennessee voluntary do not sell firearms list to prohibit the possession, transportation, and sale of firearms to any person who is voluntarily admitted to a public or private hospital or treatment resource for diagnosis, observation, and treatment of a mental illness or serious emotional disturbance in accordance with title 33, chapter 6, part 2 and voluntarily registers to be enrolled to the list.\nSECTION 1 (new TCA 39-17-1367(h)): It is an offense for a person who is enrolled onto the voluntary do not sell firearms list to purchase, possess, or transport a firearm. A violation of this subsection (h) is a Class A misdemeanor.\nSECTION 2 (TCA 39-17-1316(a)(1)): Any person appropriately licensed by the federal government may stock and sell firearms to persons desiring firearms; however, sales to persons who have been convicted of the offense of stalking, as prohibited by § 39-17-315; who are addicted to alcohol; who are ineligible to receive firearms under 18 U.S.C. § 922; who have been judicially committed to a mental institution pursuant to title 33 or adjudicated as a mental defective; or who are enrolled onto the voluntary do not sell firearms list pursuant to § 39-17-1367 are prohibited."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1041-2021",
+  "scope": "state:tn",
+  "title": "SB1041 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13 and Title 67, Chapter 6, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1041&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/SB1041.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Heidi Campbell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bca9c890-1fd4-4ab8-9ffe-a6fac4eb2d32"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2021-02-10; crossfiled twin's official copy via the Internet Archive snapshot 20260514164409 of https://www.capitol.tn.gov/Bills/112/Bill/HB1161.pdf (it names SENATE BILL 1041; own link https://www.capitol.tn.gov/Bills/112/Bill/SB1041.pdf not archived))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1041-2021.draft.twin.pdf",
+      "sha256": "ce80c8635a338e554d791238aac8c73b1e53da81586545421e20948b68ca4369"
+    },
+    "note": "Draft as filed (2021-02-10), read from the House twin's document (HB 1161), which names SENATE BILL 1041. No amendments are reflected. The new section has no code number in the text; exemptions are in subsection (e)."
+  },
+  "operative_text": "SECTION 1 (new section in TCA Title 39, Chapter 17, Part 13, subsection (b)): (b) All firearm sales or transfers, in whole or part in this state, including, without limitation, a sale or transfer where either the purchaser, seller, transferee, or transferor is located in this state, are subject to a criminal history record check unless specifically exempted by state or federal law. The criminal history record check requirement applies to all sales or transfers made by a licensed gun dealer using the procedure established in § 39-17-1316, as well as sales and transfers at a gun show, online, or between persons who are not licensed gun dealers.\nSECTION 1 (new section in TCA Title 39, Chapter 17, Part 13, subsection (c)): (c) A person shall not sell or transfer a firearm unless: (1) The person is a licensed gun dealer; (2) The purchaser or transferee is a licensed dealer; or (3) The requirements of subsection (d) are met.\nSECTION 1 (new section in TCA Title 39, Chapter 17, Part 13, subsection (d)(1)): (d) Where neither party to a prospective firearms transaction is a licensed gun dealer, the parties to the transaction shall complete the sale or transfer through a licensed gun dealer as follows: (1) The seller or transferor shall deliver the firearm to a licensed gun dealer to process the sale or transfer as if the dealer is selling or transferring the firearm from the dealer's inventory to the purchaser or transferee, except that the unlicensed seller or transferor may remove the firearm from the business premises of the licensed gun dealer while the criminal history record check is being conducted. If the seller or transferor removes the firearm from the business premises of the licensed gun dealer while the criminal history record check is being conducted, the purchaser or transferee and the seller or transferor shall return to the business premises of the licensed gun dealer, and the seller or transferor shall again deliver the firearm to the licensed gun dealer prior to completing the sale or transfer;\nSECTION 1 (new section in TCA Title 39, Chapter 17, Part 13, subsection (g)): (g) To encourage compliance with criminal history record check requirements, the sales tax imposed by title 67, chapter 6 is not applicable to a sale or transfer if: (1) Neither party to a prospective firearms transaction is a licensed gun dealer, and the parties to the sale or transfer complete the transaction through a licensed gun dealer as provided in this section; or (2) The sale or transfer of any firearms is between two (2) unlicensed persons, if the unlicensed persons have complied with all criminal history record check requirements."
+}

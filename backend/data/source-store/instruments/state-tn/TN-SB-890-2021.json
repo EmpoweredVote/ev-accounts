@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-890-2021",
+  "scope": "state:tn",
+  "title": "SB0890 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to concealed handgun carry permits.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0890&ga=112",
+    "https://publications.tnsosfiles.com/acts/112/pub/pc1000.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Becky Massey",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a91cf2ed-26bf-43c7-aae1-964fb6c46840"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2022-05-06; same official document as TN-HB-1018-2022.chaptered.txt (https://publications.tnsosfiles.com/acts/112/pub/pc1000.pdf); 2022-05-06)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1018-2022.chaptered.pdf",
+      "sha256": "93398ceb897846381d6601a6d1472b3a945214de96110ff4ecf8b19e0b265524"
+    },
+    "note": "Public Chapter 1000 (2022-05-06), House Bill 1018 substituted for Senate Bill 890; the Senate number shares this text. Effective July 1, 2022. The text prints the subsection letter and a subsection cross-reference unclearly (OCR), so the quote keeps the printed wording."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1366, new subsection): (1) After the initial issuance of a concealed handgun carry permit, the department shall conduct a name-based criminal history record check every four (4) years or upon receipt of an application. (2) If the applicant is prohibited from purchasing or possessing a firearm in this state pursuant to§ 39-17-1307(b), 18 U.S.C. § 922(g), or any other state or federal law, the department shall revoke the applicant's permit pursuant to § 39-17-1352.\nSECTION 2 (TCA 39-17-1366, new subdivision (3)): (3) The department shall charge a renewal fee of fifty dollars ($50.00)."
+}

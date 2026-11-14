@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-1390-2025",
+  "scope": "state:tn",
+  "title": "HB1390 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 33; Title 38 and Title 39, Chapter 17, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=HB1390&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/HB1390.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Justin Pearson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5d56470c-fb82-42f7-82e3-d28bf74ace47"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2025-02-06; official copy via LegiScan getBillText doc 3106529)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1390-2025.draft.pdf",
+      "sha256": "197f93e70a9225ac1b7494e6a2f0eb764cf75c9d2c6e54e94f1ef4f90d28891e"
+    },
+    "note": "Draft as introduced (2025-02-06); no amendments in text read. Twin SB 1350 is on the same document. Petitioners are law enforcement or relatives by blood, marriage or adoption; hearing within 14 days; temporary ex parte orders allowed. The storage section's number is not printed."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-1367(d)): Upon notice and a hearing on the matter, if the court finds by clear and convincing evidence that the respondent poses a significant danger of causing personal injury to the respondent or others by having in the respondent's custody or control, or by purchasing, possessing, or receiving, a firearm or ammunition, then the court shall issue an extreme risk protection order for an appropriate period of up to twelve (12) months.\nSECTION 1 (new TCA 39-17-1368(a)): Upon issuance of an extreme risk protection order pursuant to § 39-17-1367, including a temporary ex parte extreme risk protection order, the court shall order the respondent to surrender to the local law enforcement agency all firearms and ammunition owned by the respondent or in the respondent's custody, control, or possession, except as provided in § 39-17-1370, and any handgun carry permit issued under § 39-17-1351 or § 39-17-1366, held by the respondent.\nSECTION 1 (new TCA 39-17-1372(b)): A person who has in the person's custody or control a firearm or ammunition or who purchases, possesses, or receives a firearm or ammunition with knowledge that the person is prohibited from doing so by an order issued pursuant to § 39-17-1367 commits a Class E felony.\nSECTION 2 (new TCA Title 39, Chapter 17, Part 13 section): (a) It is an offense to store or keep a firearm in any place unless the firearm is secured in a locked container, unloaded, and separate from ammunition so as to render the firearm inoperable by a person other than the owner or another lawfully authorized user. (b) A violation of subsection (a) is a Class A misdemeanor. (c) This section does not apply to a firearm that is carried by or under the control of the owner or another lawfully authorized user.\nSECTION 3 (TCA 39-17-1316(c)(2)): Except with respect to transactions between persons licensed as dealers under 18 U.S.C. § 923, a gun dealer shall not deliver a firearm to a purchaser until fifteen (15) business days after compliance with subdivision (c)(1)."
+}

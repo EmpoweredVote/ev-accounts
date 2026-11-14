@@ -1,0 +1,45 @@
+{
+  "id": "TN-HB-596-2025",
+  "scope": "state:tn",
+  "title": "HB0596 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4, Chapter 3; Section 10-7-504 and Title 39, Chapter 17, Part 13, relative to the \"Tennessee Voluntary Do Not Sell Firearms Act.\"",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=HB0596&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/HB0596.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bob Freeman",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e275bc99-103c-4a1f-8a57-c7a05e918cb0"
+    },
+    {
+      "name": "Aftyn Behn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "973224eb-d62d-4ff8-8e3b-06e45bcbf00f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2025-01-31; official copy via the Internet Archive snapshot 20260513080107 of https://www.capitol.tn.gov/Bills/114/Bill/HB0596.pdf (LegiScan doc 3094309))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-596-2025.draft.pdf",
+      "sha256": "064fe4838cf51b404e8f1d4957af5fe634d353e0168d74072484a34d48dee5f3"
+    },
+    "note": "Draft (as filed) dated 2025-01-31; summary says \"As introduced\", no passage vote listed, so no adopted amendments are missing. \"Tennessee Voluntary Do Not Sell Firearms Act\". Twin document HB0596/SB0642 (SB0642). Section 5 (TCA 10-7-504) makes waiver records confidential."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-1330(b)): A person may file a voluntary waiver of firearm rights form, either in person or electronically, with the clerk of the circuit court in the county of the person's residence, which has the effect of prohibiting the person executing the form from possessing or receiving a firearm while the waiver is in effect.\nSECTION 1 (new TCA 39-17-1330(b)): If the person has a handgun carry permit issued pursuant to § 39-17-1351 or § 39-17-1366, then the department of safety shall suspend the person's permit.\nSECTION 3 (TCA 39-17-1316(q)(5)): (5) It is an offense to sell or transfer a firearm to a person knowing that the person has executed a voluntary waiver of firearm rights form pursuant to § 39-17-1330, and the waiver has not been revoked.\nSECTION 4 (TCA 39-17-1316(s)): (s) If a person has executed a voluntary waiver of firearm rights form pursuant to § 39-17-1330 and the waiver has not been revoked, then the person shall not knowingly receive or possess a firearm.\nSECTION 4 (TCA 39-17-1316(s)): A person who violates this subsection (s) is subject to a civil fine not exceeding one hundred dollars ($100)."
+}

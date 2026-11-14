@@ -1,0 +1,69 @@
+{
+  "id": "TN-HB-395-2023",
+  "scope": "state:tn",
+  "title": "HB0395 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 44, Chapter 17 and Title 70, Chapter 4, Part 1, relative to the possession of firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0395&ga=113",
+    "https://publications.tnsosfiles.com/acts/113/pub/pc0218.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Kip Capley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "91c9fb1a-7df5-418b-9713-a2db4acd49a6"
+    },
+    {
+      "name": "Chris Todd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+    },
+    {
+      "name": "Clay Doggett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9a9c3029-794a-4cb5-aa7e-342e9b480603"
+    },
+    {
+      "name": "Jake McCalmon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "13dde449-93ec-4b04-8ba9-2ec0960ca052"
+    },
+    {
+      "name": "Jody Barrett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a6b0df31-75ac-4a90-88e6-78db5c74a71e"
+    },
+    {
+      "name": "Debra Moody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5fbea991-5a0d-4695-9b78-06700eb9ff3f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2023-05-01; official copy via LegiScan getBillText doc 2798214)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-395-2023.chaptered.pdf",
+      "sha256": "a6c0d98bde28cb38c661e17953b35b608456152acbf223c701427648d87d3681"
+    },
+    "note": "Chaptered, Public Chapter 218 (approved 2023-05-01), printed as Senate Bill 494 substituted for House Bill 395; the law as enacted. SECTIONS 1 and 2 add the quoted clause to 70-4-103(b) and 70-4-112(a)(1) (a clause added 'immediately before the period'); SECTION 3 (70-4-112(a)(2)(A)) restates the raccoon-dog training rule with the same handgun exception. SECTIONS 7-8 only change 'coon' to 'raccoon'."
+  },
+  "operative_text": "SECTION 1 (TCA 70-4-103(b)): ; except that, a person who is not otherwise prohibited by law from possessing a handgun may carry a handgun as defined in § 39-11-106, so long as the handgun is not used for the taking of game\nSECTION 4 (TCA 70-4-117(d)): Tennessee Code Annotated, Section 70-4-117(d), is amended by deleting \"with a handgun carry permit pursuant to § 39-17-1351 may possess a handgun\" and substituting \"not otherwise prohibited by law from possessing a handgun may carry a handgun as defined in § 39-11-106\".\nSECTION 5 (TCA 70-4-117(e)): Tennessee Code Annotated, Section 70-4-117(e), is amended by deleting \"with a hand gun carry permit\" and substituting \"not otherwise prohibited by law from possessing a handgun\".\nSECTION 6 (TCA 70-4-123(a)): It is unlawful for a person hunting big game with a bow and arrow to be in possession of a firearm or be accompanied in hunting by a person possessing a firearm during the archery-only deer season; except that, a person who is not otherwise prohibited by law from possessing a handgun may carry a handgun as defined in § 39-11-106, so long as the handgun is not used for the taking of game."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2369-2017",
+  "scope": "state:tn",
+  "title": "SB2369 (110th General Assembly): As enacted, authorizes an individual, business entity, or government entity to allow the concealed carry of handguns by handgun carry permit holders on the individual's or entity's property while prohibiting other weapons or the open carry of firearms; establishes posting requirements for \"concealed firearms by permit only\" signage. - Amends TCA Section 39-17-1359.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2369&ga=110",
+    "https://publications.tnsosfiles.com/acts/110/pub/pc0823.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Rusty Crowe",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c57cefb-1e93-48cc-abe4-9946ef0ebe43"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2018-04-30; official copy via the Internet Archive snapshot 20260514061331 of https://publications.tnsosfiles.com/acts/110/pub/pc0823.pdf (LegiScan doc 1801712))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2369-2017.chaptered.pdf",
+      "sha256": "16eaf0ae198db9776f93a7ee28779eeef8288621ab453148ce5a5b20964bdc23"
+    },
+    "note": "Public Chapter 823 (2018-04-30), the law as enacted, printed as House Bill 2370 substituted for Senate Bill 2369 (twin text). Section 2 swaps 'prohibition' for 'prohibition or restriction' in 39-17-1359(b). Quotes keep OCR errors as printed."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1359(a)(1)): Except as provided in $ 39-17-1313, an individual, corporation, business entity, or local, state, or federal government entity or agent thereof is authorized to: (A) Prohibit the possession of weapons by any person who is at a meeting conducted by, or on property owned, operated, or managed or under the control of the individual, corporation, business entity, or government entity; or\nSECTION 1 (TCA 39-17-1359(a)(1)): (B) Restrict the possession of weapons by any person who is at a meeting conducted by, or on property owned, operated, or managed or under the control of the individual, corporation, business entity, or government entity by allowing a handgun to be carried in a concealed manner only Oy perions authorized to carry a handgun pursuant to g 39-17-13S1.\nSECTION 3 (TCA 39-17-1359(b)(3)): (A) A sign shall be used as the method of posting.\nSECTION 4 (TCA 39-17-1359(b)(4)): An individual, corporation, business entity, or government entity that, as of January 1, 2018, used signs to provide notice of the prohibition permitted by subsection (a) shall have until January 1, 2019, to replace existing signs with signs that meet the requirements of subdivision (b)(3)."
+}

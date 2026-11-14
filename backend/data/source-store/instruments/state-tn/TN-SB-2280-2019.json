@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2280-2019",
+  "scope": "state:tn",
+  "title": "SB2280 (111th General Assembly): As introduced, requires an applicant for a concealed handgun carry permit renewal to pay a $50 renewal fee. - Amends TCA Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2280&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/SB2280.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "John Stevens",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2020-02-04; crossfiled twin's official copy via the Internet Archive snapshot 20260513203254 of https://www.capitol.tn.gov/Bills/111/Bill/HB2632.pdf (it names SENATE BILL 2280; own link https://www.capitol.tn.gov/Bills/111/Bill/SB2280.pdf not archived))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2280-2019.draft.twin.pdf",
+      "sha256": "ebb3c75275d097d7074563bb90982ea611443b35f1f3584b3414343dcbe3f098"
+    },
+    "note": "Draft (as filed), 2020-02-04, from crossfiled twin HB 2632 (names SB 2280 and HB 2632). Adopted amendments, if any, are not in the text read. It replaces existing subdivision (j)(2)."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1366(j)(2)): (2) A person may renew that person's concealed handgun carry permit beginning six (6) months prior to the expiration date on the face of the permit by completing an application, to be developed by the department, and submitting a renewal fee of fifty dollars ($50.00)."
+}

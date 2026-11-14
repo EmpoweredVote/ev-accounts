@@ -1,0 +1,50 @@
+{
+  "id": "TN-HB-995-2017",
+  "scope": "state:tn",
+  "title": "HB0995 (110th General Assembly): As enacted, clarifies, for purposes of whether possession of a weapon is allowed or prohibited, when certain property is considered to be \"in use\" for school purposes. - Amends TCA Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0995&ga=110",
+    "https://publications.tnsosfiles.com/acts/110/pub/pc0341.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Dawn White",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a676c8d7-1208-44f1-9d72-e13a6fc91f04"
+    },
+    {
+      "name": "Debra Moody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5fbea991-5a0d-4695-9b78-06700eb9ff3f"
+    },
+    {
+      "name": "John Ragan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2017-05-18; crossfiled twin's official copy via the Internet Archive snapshot 20260514064457 of https://publications.tnsosfiles.com/acts/110/pub/pc0341.pdf (it names HOUSE BILL 995; own link https://publications.tnsosfiles.com/acts/110/pub/pc0341.pdf not archived))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-995-2017.chaptered.twin.pdf",
+      "sha256": "653b8326576663e79548f2e60fe6f64caacdd6b887333364257c8255ab9f53ac"
+    },
+    "note": "Public Chapter 341 (2017-05-18), the law as enacted, printed as Senate Bill 1077 substituted for House Bill 995 (twin text). OCR errors kept as printed."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1311(b)(1)(H)(iii)): For purposes of subdivision (b)(1)(H)(ii)(a) and (c), property described in subdivision (bxlXHX|) is \"in use\" onlywhen one (1) or more students are physically present on the property for an activity a reasonable person knows or should know is an athletic event, or other school event or school-related activity.\nSECTION 1 (TCA 39-17-1311(b)(1)(H)(iii)): Property listed in subdivision (bxlXHXi) is not in use solely because equipment, materials, supplies, or other property owned or used by a school is stored, maintained, or permitted to remain on the property."
+}

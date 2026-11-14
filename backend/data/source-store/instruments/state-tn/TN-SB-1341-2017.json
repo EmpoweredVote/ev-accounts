@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1341-2017",
+  "scope": "state:tn",
+  "title": "SB1341 (110th General Assembly): As introduced, permits a valid handgun carry permit holder to carry a firearm at any time and in all places in Tennessee unless the permit holder has been drinking alcohol, is in a judicial proceeding, or is on school grounds and does not tell the principal. - Amends TCA Section 39-17-1351(b).",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1341&ga=110",
+    "https://www.capitol.tn.gov/Bills/110/Bill/SB1341.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul Bailey",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "310955ff-3e44-4032-879f-b3b46026aadb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2017-02-09; official copy via the Internet Archive snapshot 20260514070441 of https://www.capitol.tn.gov/Bills/110/Bill/SB1341.pdf (LegiScan doc 1509374))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1341-2017.draft.pdf",
+      "sha256": "b29a61f8c92782c51e5f7ade02a02258eaff210484826e0a7c4f1a4a6e053a30"
+    },
+    "note": "Draft as filed (HB 884 / SB 1341, 2017-02-09, one document). Introduced version; no votes recorded. Amendments, if any, are not in this text."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1351(b)(2)): (2) Notwithstanding any law to the contrary, the holder of a valid handgun carry permit issued pursuant to this section may carry firearms at all times and in all places within Tennessee, except as provided by subdivision (b)(3), federal law, or the lawful order of a court of competent jurisdiction.\nSECTION 1 (TCA 39-17-1351(b)(3)): (3) The authority conferred by this section shall not extend to a permit holder who: (A) Is consuming beer or an alcoholic beverage or who is under the influence of beer, an alcoholic beverage, or a controlled substance or controlled substance analogue; (B) Is attending a judicial proceeding; or (C) Carries a firearm onto school grounds or inside a school building during regular school hours unless the holder immediately informs the principal that the holder will be present on school grounds or inside the school building and in possession of a firearm. If the principal is unavailable, the notice may be given to an appropriate administrative staff person in the principal's office."
+}

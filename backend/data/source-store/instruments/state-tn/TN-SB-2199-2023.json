@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2199-2023",
+  "scope": "state:tn",
+  "title": "SB2199 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2199&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB2199.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "London Lamar",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c83e282-cb78-4e39-aa1e-13875a86e872"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-30; crossfiled twin https://www.capitol.tn.gov/Bills/113/Bill/HB2456.pdf is the same printed document (it names SENATE BILL 2199); copied from TN-HB-2456-2023.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2456-2023.draft.pdf",
+      "sha256": "64ee12a4232d5e5daecdc27c90c979ae6721085d0156985ac353f07ea825a2d0"
+    },
+    "note": "Draft as filed, 2024-01-30/31; shared document with HB 2456. Deletes 39-17-1307(g) (the lawful-handgun-carry exception) and a cross-reference in 39-17-1313(a); no new words are added. Effective October 1, 2023 (printed \"October 1. 2023\")."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307): Tennessee Code Annotated, Section 39-17-1307, is amended by deleting subsection (g).\nSECTION 2 (TCA 39-17-1313(a)): Tennessee Code Annotated, Section 39-17-1313(a), is amended by deleting \"or who lawfully carries a handgun pursuant to § 39-17-1307(g)\"."
+}

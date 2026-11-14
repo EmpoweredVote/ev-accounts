@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-1439-2023",
+  "scope": "state:tn",
+  "title": "HB1439 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1439&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB1439.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bo Mitchell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "094afd56-f074-4fdc-a053-1482ea501fc8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-01-31; official copy via LegiScan getBillText doc 2673015)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1439-2023.draft.pdf",
+      "sha256": "2a5628f9ac6e213c89e97d165902462a41a4a4697d548e6f331828d7a927c4b5"
+    },
+    "note": "Draft as filed (2023-01-31); effective July 1, 2023. House/Senate twin document."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1316(s)): (1) It is an offense to knowingly give, sell, lend, deliver, or otherwise transfer a firearm to a person when the transferor knows or reasonably should know that the person receiving the firearm is prohibited from purchasing or possessing a firearm under state or federal law.\nSECTION 1 (TCA 39-17-1316(s)): (2) A violation of this subsection is a Class A misdemeanor."
+}
