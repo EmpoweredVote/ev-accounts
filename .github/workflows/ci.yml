@@ -586,6 +586,27 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
+      # Rides this job for the same reasons as the step below it: same live DB, same non-PR
+      # trigger, same `npm ci` already paid for (see the minutes budget at the top of this file).
+      # `if: ${{ !cancelled() }}` so a reachability failure above does not hide a body that is the
+      # wrong size.
+      #
+      # Reachability asks "can a resident surface SOMEONE for this district". This asks the two
+      # questions one level out that nothing was asking when three Maine defects shipped in three
+      # days: does this body hold the number of seats it says it has (Bangor, South Portland,
+      # Lewiston — CC_0427/0428/0429), and does this district hold any office at all (Maine's 16
+      # counties, ROSTERS.md R9k). A district with no office is invisible to every existing gate:
+      # DEAD_GEOGRAPHY requires offices > 0, offices_missing_terms starts FROM offices, and the
+      # drift baseline therefore cannot move.
+      #
+      # Baselined per bucket, so an unseeded tier sits still and only growth or a NEW bucket fires.
+      # Skips itself (exit 0) when DATABASE_URL is absent, as forks get no secrets.
+      - name: Check bodies hold the seats they claim, and districts hold offices
+        if: ${{ !cancelled() }}
+        run: npm run check:body-completeness
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
       # Rides this job rather than taking a tenth one of its own: same live DB, same non-PR trigger,
       # same `npm ci` already paid for (see the minutes budget at the top of this file).
       # Carries `if: ${{ !cancelled() }}` so a reachability failure above does not hide a stale map.
