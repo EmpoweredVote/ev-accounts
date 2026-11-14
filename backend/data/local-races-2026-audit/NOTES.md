@@ -312,11 +312,85 @@ Both contests are **forced** (unopposed, write-in line below the named candidate
 **Position 1** — because "Seat N" names seats the city does not have and no voter saw those numbers.
 The old values are in `CC_0425`'s header; there is no history table for `races.position_name`.
 
-⚠ **LEFT OPEN ON PURPOSE: two of the five office TITLES are wrong.** We call one office `Mayor` and
-one `Council President`, and under this charter **neither is a separately elected seat** — all five
-are councilors, and both labels are roles a sitting councilor holds. That is a labelling defect on
-offices no race touches; widening `CC_0425` to cover it would have mixed an occupancy edit into a
-ballot seed. ▶ **Its own pass.** It changes no race and no occupancy.
+✅ **The two wrong office TITLES are now fixed — `CC_0426`, below.** `CC_0425` left them alone on
+purpose: widening a ballot seed to carry an occupancy-labelling edit would have mixed two unrelated
+acts.
+
+### ✅ Wood Village's council labels (`CC_0426`, 2026-11-13)
+
+We called one office `Mayor` and one `Council President`. Under Charter §10 the council elects the
+mayor **from its own members**, so neither is a seat voters fill — both are roles a sitting
+councilor holds. The repo had already ruled on exactly this shape: `seed-me-municipal-2026/
+ROSTERS.md` R5/R9, applied by `CC_0292` across six Maine cities, where the fix was `Mayor` →
+`At-Large N`. Both offices are now `City Councilor`, like the other three.
+
+🟢 **WOOD VILLAGE IS THE EASY HALF OF THAT SHAPE, WHICH IS EXACTLY WHY IT SURVIVED.** In all six
+Maine cities the phantom office **ate** a seat, so the council came out one short and the shortfall
+looked like an ordinary vacancy — an arithmetic defect something could count. Here the phantom
+office **is** the fifth seat: five offices, five councilors, nothing missing. ▶ **A labelling defect
+with no arithmetic consequence is invisible to every gate in this repo.** Only reading the body's
+own charter against its own roster finds one.
+
+🔴 **The `Mayor` row was three claims, not one, and renaming it alone would have left two standing.**
+
+1. the **title** said the city elects a mayor;
+2. **`is_appointed_position = true`**, and the API publishes `is_elected` as the negation of it
+   (`essentialsService.ts`, plus seven mappers in `essentialsBrowseService.ts`) — so this council
+   seat was being served to voters as **not elected**, against Charter §9. Measured on the live
+   endpoint before the fix and after: `is_elected` went `false` → `true`;
+3. it sat alone on a **second district**, `Wood Village (Citywide)`, typed **`LOCAL_EXEC`**, while
+   the other four sat on `Wood Village (At-Large)`, `LOCAL`. That type is not decoration — it is how
+   this repo says "this row is the municipality's executive" (`audit-district-urls.mjs` says so
+   outright), and 228 of the 309 offices on the 266 `LOCAL_EXEC` districts are mayor-titled. The
+   office was moved to the council's district and the executive district **deleted**.
+
+⚠ **Address search never changed, and that was not a reason to skip any of it.** `districtQueries.ts`
+admits `LOCAL` and `LOCAL_EXEC` through the same geofence arm and both rows carried the same
+`geo_id`, so a Wood Village address returned all five seats throughout. The defect was in what the
+five rows **said**.
+
+🔴 **The emptied district could not simply be left behind.** `check-address-reachability.mjs` is
+**master-only**, so it fails on the next PR and names an innocent author; Oregon has **no bucket of
+any kind** in `address-reachability-baseline.json` and the gate fires on any new one. And
+`DEAD_GEOGRAPHY` requires `offices > 0`, so an emptied district would have slipped past that check
+specifically — leaving a polygon-backed row that resolves nobody for a later session to seat
+something into by mistake. `CC_0426` carries the Oregon-wide check into its own post-verify.
+
+🟢 **The delete lost nothing, and that is measured rather than asserted.** The two district rows were
+identical in **every** column but `id`, `label` and `district_type` — same `geo_id`, `ocd_id`,
+population, census unit, web URL. A gate checks that while both rows still exist, so the claim is
+tested against prod instead of recorded on trust. The office was repointed **first**: `districts`
+has no inbound foreign key, so deleting one that still carries an office orphans it in silence, and
+the delete refuses unless the row is already empty.
+
+**The two roles are deliberately not in the schema.** There is no column for a rotating chair and a
+one-city migration is the wrong place to invent one — `CC_0292` did the same, keeping Caribou's
+Deputy Mayor and Bath's Chairperson in that wave's notes. Recorded here instead, as of 2026-11-13:
+**Jairo Rios-Campos is Mayor** and **Dara Tan is Council President**, both roles the council confers.
+
+**The five seats are deliberately not numbered.** The city numbers its own and `CC_0425` established
+Position 1 as Gothard's and Position 4 as Miner's **from the ballot**. The 2024 ballot is what maps
+the other three, so guessing which of Rios-Campos, Tan or Smith holds 2, 3 or 5 would assert a fact
+about a named person that no source states.
+
+The chamber now states its size (`official_count = 5`, Charter §8), so a sixth office or a missing
+fifth becomes countable — which is the thing that would have caught this had it ever had an
+arithmetic consequence.
+
+## 🔴 One follow-up this found in someone else's wave
+
+**Two Maine offices carry `CC_0426`'s exact residue and are not fixed here.** `CC_0292` retitled six
+phantom mayors into council seats and **cleared no flags**, so — measured in prod on 2026-11-13 —
+Presque Isle `Council Member (At-Large 7)` (Debra Plummer) and Rockland `Council Member
+(At-Large 5)` (Adam Lachman) still read `is_appointed_position = true` and are still published to
+voters as **not elected**. Both cities elect their whole council at large; the flag was true because
+the row used to be the mayoralty, which the council confers.
+
+▶ **A one-line fix, left to Maine's own pass on purpose.** Maine is a closed wave with its own notes
+(`seed-me-municipal-2026/ROSTERS.md`), and reaching into two Maine cities from an Oregon migration
+would put the change where nobody maintaining Maine would look for it. ⚠ **The general lesson is
+`CC_0426`'s, not Maine's: a retitle is rarely only a title.** An office row states several things at
+once, and the one that reaches voters here was not the name.
 
 ## ▶ Three follow-ups that wait on other people, not on us
 
@@ -350,12 +424,12 @@ read 238 before and after every one. The winners take office later:
 
 ## ⚠ Session state a fresh session should know
 
-- 🟢 Leases `state:or`, `state:az` and `state:wi` are **released** — this work is finished.
-- The worktree `C:/ev-accounts-locals` exists; the branches for `CC_0421`–`CC_0423` are merged, and
-  `feat/locals-last-four` carries `CC_0424`–`CC_0425`.
-- Both migrations are **applied to production**. 🔴 Applied is not merged — `CC_0424` and `CC_0425`
-  exist only as files on that branch until its PR lands, and there is no `schema_migrations` table
-  to say otherwise.
+- 🟢 Leases `state:az` and `state:wi` are **released**. `state:or` was re-taken for `CC_0426` and is
+  released again once that PR lands.
+- The worktree `C:/ev-accounts-locals` exists; `CC_0421`–`CC_0425` are **merged** (PRs #1459, #1460),
+  and `fix/wood-village-council-titles` carries `CC_0426`.
+- `CC_0426` is **applied to production**. 🔴 Applied is not merged — it exists only as a file on that
+  branch until its PR lands, and there is no `schema_migrations` table to say otherwise.
 - 🔴 **`C:EV-Accounts` itself has been parked on a dead branch**, `perf/cities-summary-index-only`,
   squash-merged as PR #1345 on 2026-11-08 with its remote copy deleted. It has 0 modified tracked
   files and was **105 commits behind master** on 2026-11-14, which is why a session reading
