@@ -131,12 +131,21 @@ for (const c of CONTESTS) {
   //   first version of this file called all seven "advanced", which would have told a reader that
   //   Zeke Cook, Diana Moreno-Sears and Christopher Dodson were on a November ballot they were never
   //   on. Advancing is read from the general ballot itself, not inferred from losing.
+  // ⚠ THERE ARE THREE WAYS TO NOT WIN A PRIMARY HERE, AND THEY ARE DIFFERENT CLAIMS. If the contest
+  //   was settled outright in July, a non-winner simply LOST. If seats were left open, (H) sends
+  //   twice that many forward: those are ADVANCED, and the rest are NOT_NOMINATED. A first pass
+  //   called all seven South Tucson non-winners "advanced", putting three people on a ballot they
+  //   were never on; a second pass over-corrected and called the eight losers of the five settled
+  //   contests "not_nominated", which asserts a runoff that never existed.
   const advancedNames = new Set((g?.onBallot || []).map((x) => x.name));
   const rows = [];
   for (const x of pRanked) {
     const won = seatedAtPrimary.includes(x);
-    rows.push({ name: x.name, votes: x.votes, election: 'primary 2026-07-21',
-      result: won ? 'won' : (advancedNames.has(x.name) ? 'advanced' : 'not_nominated') });
+    let result;
+    if (won) result = 'won';
+    else if (remaining === 0) result = 'lost';                 // nothing went forward: the contest ended here
+    else result = advancedNames.has(x.name) ? 'advanced' : 'not_nominated';
+    rows.push({ name: x.name, votes: x.votes, election: 'primary 2026-07-21', result });
   }
 
   if (remaining === 0) {
