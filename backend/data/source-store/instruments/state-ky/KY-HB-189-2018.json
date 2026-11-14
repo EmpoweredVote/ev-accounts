@@ -1,0 +1,49 @@
+{
+  "id": "KY-HB-189-2018",
+  "scope": "state:ky",
+  "title": "HB189 (2018 Regular): AN ACT relating to the regulation of firearms and ammunition.",
+  "urls": [
+    "http://www.lrc.ky.gov/record/18RS/HB189.htm",
+    "http://www.lrc.ky.gov/recorddocuments/bill/18RS/HB189/bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Reginald Meeks",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mary Marzian",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5f519979-310c-4c22-8d55-097b92915fbc"
+    },
+    {
+      "name": "Attica Scott",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Draft, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/18RS/HB189/bill.pdf (LegiScan doc 1685608))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-189-2018.draft.pdf",
+      "sha256": "e0a58ba371a85944f2cbd2a517bf67e4995ff37b820e1ff6797c2b2236ae50f1"
+    },
+    "note": "Draft print (18 RS BR 911); no passage vote. Subsections (6) and (7) are new; the only marked change is the renumbering (8)[(7)]. Subsection (1) preemption is unchanged but now \"Except as provided in subsection (6)\"."
+  },
+  "operative_text": "Section 1 (KRS 65.870): (6) A city of the first class or home rule class, county, urban-county government, charter county, consolidated local government, or unified local government may enact legislation or policies that: (a) Require the sale of firearms or ammunitions within their territory or jurisdiction be transacted using responsible business practices; (b) Require firearm owners who work or reside within the territory or jurisdiction to report any lost or stolen firearm to local law enforcement within a prescribed amount of time following discovery of the loss or theft of the firearm; or (c) Provide funding for firearm violence intervention programs within the territory or jurisdiction.\nSection 1 (KRS 65.870): (7) A violation of this section by a public servant shall be a violation of either KRS 522.020 or 522.030, depending on the circumstances of the violation."
+}

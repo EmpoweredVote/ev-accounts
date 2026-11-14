@@ -1,0 +1,39 @@
+{
+  "id": "KY-SB-373-2022",
+  "scope": "state:ky",
+  "title": "SB373 (2022 Regular): AN ACT relating to carrying concealed weapons.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/22RS/sb373.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/22RS/sb373/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karen Berg",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e9e43630-0799-4769-8c3a-06a946fbc9c8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/22RS/sb373/orig_bill.pdf (LegiScan doc 2536956))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-373-2022.introduced.pdf",
+      "sha256": "36c14baa89287951cc4b88494fa74979207da7dd02456001b71058a9d3b97731"
+    },
+    "note": "Introduced text (22 RS); no votes. Quote 1(4) drops struck words ('carrying concealed weapons in accordance with KRS 237.109 or', 'concealed', '237.109 or'). Section 2 (KRS 237.115) only deletes cross-references to 237.109."
+  },
+  "operative_text": "Section 3: The following KRS section is repealed: 237.109 Authorization to carry concealed deadly weapons without a license.\nSection 1 (KRS 527.020): (4) Persons other than those specified in subsection (5) of this section, who are licensed to carry a concealed deadly weapon pursuant to KRS 237.110 may carry a firearm or other concealed deadly weapon on or about their persons at all times within the Commonwealth of Kentucky, if the firearm or concealed deadly weapon is carried in conformity with the requirements of KRS 237.110."
+}

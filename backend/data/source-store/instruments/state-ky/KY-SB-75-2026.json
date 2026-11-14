@@ -1,0 +1,129 @@
+{
+  "id": "KY-SB-75-2026",
+  "scope": "state:ky",
+  "title": "SB75 (2026 Regular): AN ACT relating to concealed deadly weapons.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/26RS/sb75.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/26RS/sb75/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Aaron Reed",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0f7609c6-1285-4b00-aeca-17343045ebfe"
+    },
+    {
+      "name": "George Wise",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7fe409b9-8c3b-4318-9e74-18284d203736"
+    },
+    {
+      "name": "Matthew Deneen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3429ecef-5857-496b-9de6-85412b5caaaa"
+    },
+    {
+      "name": "Greg Elkins",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "45f0223f-8b1b-4586-8610-5e717f250b46"
+    },
+    {
+      "name": "Jimmy Higdon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "12d07bd4-98e4-4cfb-aec9-1b6f50ae5ca8"
+    },
+    {
+      "name": "Scott Madon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bcd854eb-0eb8-4f21-8737-cc2435c615cc"
+    },
+    {
+      "name": "Stephen Meredith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c362a1f6-01b9-4355-a4bd-bbd1bb7fb1fb"
+    },
+    {
+      "name": "Matt Nunn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c236893a-126e-45ae-83db-ae62be4f0554"
+    },
+    {
+      "name": "Steve Rawlings",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "73fd5b49-9255-4051-a43a-de04156e4c3f"
+    },
+    {
+      "name": "Brandon Storm",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "95fceb14-a0c3-43e5-a0a0-338b5d3b3e7b"
+    },
+    {
+      "name": "Lindsey Tichenor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c8e6e36c-5308-4d71-8901-38de70b8fb7b"
+    },
+    {
+      "name": "Robin Webb",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "62a3692f-806e-4fa4-bb98-33a30e8c7c04"
+    },
+    {
+      "name": "Steve West",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e1b781c8-8cb2-4254-9f34-51fb567a4852"
+    },
+    {
+      "name": "Phillip Wheeler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eb11bd91-1800-49b1-81ef-8afca0ab4b87"
+    },
+    {
+      "name": "Gex Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78eb69f5-9449-4fdd-879b-c771364549d2"
+    },
+    {
+      "name": "Mike Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ef0a5595-1825-4f06-9833-91c4f3cfdde2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/26RS/sb75/orig_bill.pdf (LegiScan doc 3319895))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-75-2026.introduced.pdf",
+      "sha256": "7495640a9dd9e7f85495755bace59ee26ec18ea50492006f4549bf0798bc6dee"
+    },
+    "note": "As-filed text (26 RS); no passage vote and later amendments are not in the text read. Age 21 struck, 18 added in KRS 237.109(1) and KRS 237.110 paragraph (c) (the paragraph sits in the list of license requirements). In KRS 237.109(2) 'Nothing in' is struck. Many other bracketed edits in KRS 237.110 are wording and punctuation clean-up (e.g. 'day-care' to 'child-care', 'forthwith' to 'immediately')."
+  },
+  "operative_text": "Section 1 (KRS 237.109): (1) Persons age eighteen (18) or older, and otherwise able to lawfully possess a firearm, may carry concealed firearms or other concealed deadly weapons without a license in the same locations as persons with valid licenses issued under KRS 237.110.\nSection 1 (KRS 237.109): (2) This section shall not be construed to allow the carrying or possession of any deadly weapon where it is prohibited by federal law.\nSection 2 (KRS 237.110): (c) Is eighteen (18) years of age or older;"
+}

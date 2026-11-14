@@ -1,0 +1,39 @@
+{
+  "id": "KY-SB-187-2024",
+  "scope": "state:ky",
+  "title": "SB187 (2024 Regular): AN ACT relating to modified weapons.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/24RS/sb187.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/24RS/sb187/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Danny Carroll",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "869d742b-d988-4fdc-9e94-41da1a00c2ae"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/24RS/sb187/orig_bill.pdf (LegiScan doc 2921068))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-187-2024.introduced.pdf",
+      "sha256": "5ce4846f6374dc517037052ac999a2420db6c219400e043f6399510ed8ff8583"
+    },
+    "note": "As-filed (BR 1586, 2/8/2024); no passage vote in the record. Section 1 (1) defines 'modified weapon' in detail (semiautomatic rifles, shotguns and pistols with listed features); not quoted for length."
+  },
+  "operative_text": "Section 1 (new section of KRS Chapter 237): (2) A licensed dealer as defined in KRS 527.090 may not deliver a modified weapon to a purchaser until seven (7) days have elapsed from the date of the purchase application.\nSection 2 (new section of KRS Chapter 527): (1) A person is guilty of possession of a modified weapon when, being under the age of twenty-one (21) years, he or she possesses, manufactures, or transports a modified weapon as defined in Section 1 of this Act, except when the person is: (a) A member of the Armed Forces of the United States or the Kentucky National Guard; or (b) A law enforcement officer as defined in KRS 15.310.\nSection 2 (new section of KRS Chapter 527): (2) Possession of a modified weapon by a person under twenty-one (21) years of age is a Class A misdemeanor for the first offense and a Class D felony for a second or subsequent offense.\nSection 3 (new section of KRS Chapter 527): (1) No person shall knowingly sell or transfer a modified weapon as defined in Section 1 of this Act to any person under twenty-one (21) years of age.\nSection 3 (new section of KRS Chapter 527): (2) Any person who violates the provisions of subsection (1) of this section is guilty of a Class D felony for the first offense and a Class C felony for a second or subsequent offense."
+}

@@ -1,0 +1,50 @@
+{
+  "id": "KY-SB-98-2023",
+  "scope": "state:ky",
+  "title": "SB98 (2023 Regular): AN ACT relating to prohibiting the enforcement of a federal ban or regulation of firearms and declaring an emergency.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/23RS/sb98.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/23RS/sb98/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lindsey Tichenor",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c8e6e36c-5308-4d71-8901-38de70b8fb7b"
+    },
+    {
+      "name": "Adrienne Southworth",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brandon Storm",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "95fceb14-a0c3-43e5-a0a0-338b5d3b3e7b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/23RS/sb98/orig_bill.pdf (LegiScan doc 2689169))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-98-2023.introduced.pdf",
+      "sha256": "004c0d5312691f84c09982cb68de74196ccbe529f1958de016f7f79ed5ece8b7"
+    },
+    "note": "Introduced text (23 RS BR 1161, dated 2/2/2023); later amendments are not in the text read. Section 1 is legislative findings (not quoted). Section 3(7)-(8) lets officials give material aid to federal prosecutions with a criminal nexus. Emergency clause (Section 5); may be cited as the Kentucky Second Amendment Preservation Act."
+  },
+  "operative_text": "Section 2 (new section of KRS Chapter 237): (2) A law enforcement agency, law enforcement officer, employee of a law enforcement agency, public agency, public official, employee of a public agency, or employee of a local government shall not enforce, assist in the enforcement of, or otherwise cooperate in the enforcement of a federal ban on firearms, ammunition, or firearm accessories, and shall not participate in any federal enforcement action implementing a federal ban on firearms, ammunition, or firearm accessories.\nSection 2 (new section of KRS Chapter 237): (3) A law enforcement agency, local government, or public agency shall not adopt a rule, order, ordinance, or policy under which the entity enforces, assists in the enforcement of, or otherwise cooperates in a federal ban on firearms, ammunition, or firearm accessories.\nSection 3 (new section of KRS Chapter 237): (2) All federal acts, laws, executive orders, administrative orders, rules, and regulations, regardless of whether they were enacted before or after the effective date of this section and Section 2 of this Act, that infringe on the people's right to keep and bear arms as guaranteed by the Second Amendment to the Constitution of the United States and Section 1 of the Constitution of Kentucky shall be invalid in the Commonwealth of Kentucky, shall not be recognized by the Commonwealth of Kentucky, shall be specifically rejected by the Commonwealth of Kentucky, and shall not be enforced by the Commonwealth of Kentucky or any of its agencies or political subdivisions.\nSection 3 (new section of KRS Chapter 237): (b) Subject to a civil penalty of fifty thousand dollars ($50,000) per occurrence."
+}

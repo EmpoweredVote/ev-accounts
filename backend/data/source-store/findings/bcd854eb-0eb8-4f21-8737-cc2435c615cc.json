@@ -66,6 +66,244 @@
         "fetched_at": "2026-11-11T21:12:46.609Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "4ea27f96a998293ca0d20df8254643b8be5ad4ee84a3029a09eb22078b64428e",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/25RS/hb234.html",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-234-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading RSN# 3436",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "KY Senate, Senate: Third Reading RSN# 3436, 2025-03-05: yea (tally 36–0); census gate: near-unanimous.",
+      "subjects": [
+        "confiscated firearms sold at auction to licensed dealers",
+        "firearm-sale proceeds fund police grants, now including airport police"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Chaptered, 0000-00-00; official copy, https://apps.legislature.ky.gov/law/acts/25RS/documents/0003.pdf (LegiScan doc 3227746))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-234-2025.chaptered.pdf",
+          "sha256": "62fca6548f2c850784c1c4576ca45c08e53b5125497920d46f877037ffcbc4f0"
+        }
+      }
+    },
+    {
+      "id": "640ee8e46159839f9f4a9d364dfcdedd9f93279fdc5fe19b5e19a486d370de28",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb312.html",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-312-2026",
+      "act": "yea",
+      "motion": "Senate: Veto Override RSN# 4167",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY Senate, Senate: Veto Override RSN# 4167, 2026-04-14: yea (tally 28–9); census gate: none.",
+      "subjects": [
+        "concealed-carry license for ages 18 to 20",
+        "provisional license valid until age 21",
+        "switch to standard license"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Chaptered, 0000-00-00; official copy, https://apps.legislature.ky.gov/law/acts/26RS/documents/0173.pdf (LegiScan doc 3442881))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-312-2026.chaptered.pdf",
+          "sha256": "63c37beef2557d8aa85b424bd92efeb42ef4cd70465d63cb2117ec40b0402fee"
+        }
+      }
+    },
+    {
+      "id": "97b7359f9e27bab6fe857467581638e18063da18e9d9a243b5a142513d85000e",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb78.html",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-78-2026",
+      "act": "yea",
+      "motion": "Senate: Veto Override RSN# 4163",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY Senate, Senate: Veto Override RSN# 4163, 2026-04-14: yea (tally 31–6); census gate: none.",
+      "subjects": [
+        "no civil suits against gun and ammunition makers or sellers for criminal misuse",
+        "local liability rules preempted",
+        "makers and sellers may sue over barred claims"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Chaptered, 0000-00-00; official copy, https://apps.legislature.ky.gov/law/acts/26RS/documents/0177.pdf (LegiScan doc 3443083))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-78-2026.chaptered.pdf",
+          "sha256": "fd5594be2aacdb70f2dae01bee4fb82fbeaef7443ea9f18e54c02f150620282f"
+        }
+      }
+    },
+    {
+      "id": "83a9fbe255982fa7788793b812c04353cb3da6f3d1dd71a7d77106deec93ed3b",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/25RS/sb144.html",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-144-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading W/sfa1 RSN# 3431",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "KY Senate, Senate: Third Reading W/sfa1 RSN# 3431, 2025-03-05: yea (tally 38–0); census gate: near-unanimous.",
+      "subjects": [
+        "destroy firearms used in criminal homicides",
+        "State Police may destroy defaced, hazardous or unsafe confiscated guns",
+        "agencies may not damage guns before handing them to State Police"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Engrossed, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/25RS/sb144/bill.pdf (LegiScan doc 3155397))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-144-2025.engrossed.pdf",
+          "sha256": "a4af03c18fa6510393a108d2a3b7700c94140fd8c99e94849098bc86c0d3a746"
+        }
+      }
+    },
+    {
+      "id": "0280c5da3f883ab192a6d57bfaa7c5ff98d74b9123d39c9416cbed21561f6132",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb333.html",
+      "date": "2026-03-13",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-333-2026",
+      "act": "yea",
+      "motion": "Senate: Third Reading RSN# 3925",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "KY Senate, Senate: Third Reading RSN# 3925, 2026-03-13: yea (tally 38–0); census gate: near-unanimous.",
+      "subjects": [
+        "proceeds of confiscated-firearm sales go to body-armor grants",
+        "grants no longer buy firearms or ammunition",
+        "homicide firearms bought at auction must be destroyed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Engrossed, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/26RS/sb333/bill.pdf (LegiScan doc 3394390))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-333-2026.engrossed.pdf",
+          "sha256": "80ce498f835fe2eefeb9b8201fa06e419eeea7e4326077599e63eb4de4fccb60"
+        }
+      }
+    },
+    {
+      "id": "52d9a91b243b30408d21f2fc16f401e2e4de2158f79f17a3a233015907141316",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/25RS/sb75.html",
+      "date": "2025-03-11",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-75-2025",
+      "act": "yea",
+      "motion": "Senate: Third Reading RSN# 3461",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY Senate, Senate: Third Reading RSN# 3461, 2025-03-11: yea (tally 26–11); census gate: none.",
+      "subjects": [
+        "permitless concealed carry from age 18",
+        "concealed carry license age lowered to 18"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Engrossed, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/25RS/sb75/bill.pdf (LegiScan doc 3166030))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-75-2025.engrossed.pdf",
+          "sha256": "3ef2d05214fc2164abced541f1d7fc7ef0cf9aab93c159fe0259fc9fdf102ece"
+        }
+      }
+    },
+    {
+      "id": "d7ecebead53165e3359a41401511e1cff93ee3c781970ab08e8c38cf3ccc1f5a",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/25RS/sb75.html",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "KY-SB-75-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of KY-SB-75-2025 (sponsor list (prime / co-sponsor)): SB75 (2025 Regular): AN ACT relating to concealed deadly weapons..",
+      "subjects": [
+        "permitless concealed carry from age 18",
+        "concealed carry license age lowered to 18"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Engrossed, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/25RS/sb75/bill.pdf (LegiScan doc 3166030))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-75-2025.engrossed.pdf",
+          "sha256": "3ef2d05214fc2164abced541f1d7fc7ef0cf9aab93c159fe0259fc9fdf102ece"
+        }
+      }
+    },
+    {
+      "id": "9431c2fea6f21d0abe5edec759e89a9581a02fb134da654fda49a9c6ab33d53d",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb75.html",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "KY-SB-75-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of KY-SB-75-2026 (sponsor list (prime / co-sponsor)): SB75 (2026 Regular): AN ACT relating to concealed deadly weapons..",
+      "subjects": [
+        "minimum age 18 for concealed carry without a license",
+        "minimum age 18 for a concealed-carry license"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/26RS/sb75/orig_bill.pdf (LegiScan doc 3319895))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-75-2026.introduced.pdf",
+          "sha256": "7495640a9dd9e7f85495755bace59ee26ec18ea50492006f4549bf0798bc6dee"
+        }
+      }
     }
   ],
   "searches": [

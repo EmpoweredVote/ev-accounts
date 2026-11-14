@@ -1,0 +1,54 @@
+{
+  "id": "KY-HB-585-2021",
+  "scope": "state:ky",
+  "title": "HB585 (2021 Regular): AN ACT relating to firearms and declaring an emergency.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/21RS/hb585.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/21RS/hb585/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Scott Sharp",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d8575922-472e-46a2-b1a1-fad1c0add062"
+    },
+    {
+      "name": "Deanna Frazier",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Danny Bentley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jennifer Henson Decker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/21RS/hb585/orig_bill.pdf (LegiScan doc 2307730))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-585-2021.introduced.pdf",
+      "sha256": "5459ceac406627d19a63ef65b9a08bd1058a2259c9499732d2e3da120e983064"
+    },
+    "note": "Introduced text (21 RS BR 455); later amendments, if any, are not in the text read. Emergency clause in Section 3."
+  },
+  "operative_text": "Section 1 (new section of KRS Chapter 237): (2) (a) A covered entity shall not adopt a rule, order, ordinance, or policy under which the entity enforces, or provides assistance or support in the enforcement of, a federal statute, order, rule, or regulation enacted on or after January 1, 2021 that purports to regulate a firearm, firearm accessory, or ammunition, if the statute, order, rule, or regulation imposes a prohibition, restriction, or other regulation, such as a capacity or size limitation, a registration requirement, or a background check, that does not exist under the laws of this state. (b) A covered entity and a person employed by or otherwise under the direction or control of the entity shall not enforce or attempt to enforce any federal statute, order, rule, or regulation described in subsection (2)(a) of this section.\nSection 1 (new section of KRS Chapter 237): (3) (a) A person is guilty of unlawful enforcement when he or she, acting in his or her official capacity as a person employed by or otherwise under the direction or control of a covered entity, or under color of law, enforces or attempts to enforce any federal statute, order, rule, or regulation in violation of subsection (2) of this section. (b) Unlawful enforcement is a Class A misdemeanor.\nSection 1 (new section of KRS Chapter 237): (c) A judge shall assess a five thousand dollar ($5,000) fine per violation, per day that a violation is ongoing, against a defendant found guilty of violating subsection (2) of this section."
+}

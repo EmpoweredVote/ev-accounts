@@ -1,0 +1,63 @@
+{
+  "id": "KY-HB-288-2024",
+  "scope": "state:ky",
+  "title": "HB288 (2024 Regular): AN ACT relating to concealed deadly weapons.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/24RS/hb288.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/24RS/hb288/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Savannah Maddox",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e17f04a4-35d6-4e64-8006-30381e9ff6bd"
+    },
+    {
+      "name": "Felicia Rabourn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a39b09c3-23b4-4bfb-a001-8a9a2adfb6cd"
+    },
+    {
+      "name": "Josh Calloway",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436293ef-ed3f-46b3-9bb6-809b6828eaf8"
+    },
+    {
+      "name": "Steven Doan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9afa6c68-2cf9-4946-8ea0-7171d4153a4e"
+    },
+    {
+      "name": "Candy Massaroni",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "02f41f03-79b5-4592-a81a-e51dac5a3e2c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/24RS/hb288/orig_bill.pdf (LegiScan doc 2887057))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-288-2024.introduced.pdf",
+      "sha256": "6198c1bcb8c9663c22732cbc1f667810ca353caa58fbbe36e05503af2c6050c9"
+    },
+    "note": "As-filed text (24 RS BR 1566); no passage vote and later amendments are not in the text read. In KRS 237.110(16)(f) the words 'elementary or secondary school facility without the consent of school authorities as provided in KRS 527.070' are struck. Sections 1 and 3 only delete cross-references to KRS 237.115 (conforming). Section 4 also keeps the Class D felony for school-property weapon possession by others. Paragraph (j) is new; the quote of Section 2(16) leaves out unchanged items (a) to (e)."
+  },
+  "operative_text": "Section 2 (KRS 237.110): (16) Except as provided in KRS 527.020, no license issued pursuant to this section shall authorize any person to carry a concealed firearm into: (f) Any child-caring facility as defined in KRS 199.011, any child-care center as defined in KRS 199.894, or any certified family child-care home as defined in KRS 199.8982, except however, any owner of a certified child-care home may carry a concealed firearm into the owner's residence used as a certified child-care home; (g) An area of an airport to which access is controlled by the inspection of persons and property by the Transportation Security Administration; or (h) Any place where the carrying of firearms is prohibited by federal law.\nSection 4 (KRS 527.070): (3) The provisions of this section prohibiting the unlawful possession of a weapon on school property shall not apply to: (j) A person with a valid license to carry concealed deadly weapons issued pursuant to Section 2 of this Act, except pupils attending schools subject to any policy adopted under KRS 158.150(2) or other law required under 20 U.S.C. sec. 7961.\nSection 5 (repeal): The following KRS section is repealed: 237.115 Construction of KRS 237.110 -- Prohibition by local government units of carrying concealed deadly weapons in governmental buildings -- Restriction on criminal penalties."
+}

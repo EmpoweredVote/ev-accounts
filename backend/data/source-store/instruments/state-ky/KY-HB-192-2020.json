@@ -1,0 +1,44 @@
+{
+  "id": "KY-HB-192-2020",
+  "scope": "state:ky",
+  "title": "HB192 (2020 Regular): AN ACT relating to firearms and making an appropriation therefor.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/20RS/hb192.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/20RS/hb192/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeffery Donohue",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "George Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "35de0809-a7a8-458e-bf71-7e10743d00a1"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/20RS/hb192/orig_bill.pdf (LegiScan doc 2085510))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-192-2020.introduced.pdf",
+      "sha256": "d47e4cbf30b04eda34f1c0c1382c3eee3e7af6938150e02537ebb95eca3acf23"
+    },
+    "note": "Introduced text (20 RS BR 1117). Quotes are partial: Section 2 (2) (Class A misdemeanor) and the Section 2-4 exemptions for military and police are left out, as are Section 3 (1)(c) (render device permanently inoperable), Section 5 subsections (2), (4)-(6) and the Section 1 definitions. Section 5 also creates a trust-and-agency account (Assault Weapon Registration fund) with appropriation and sets storage rules; Section 6 (KRS 16.220) and Section 7 (KRS 237.104) conform other laws. Later amendments are not in the text read."
+  },
+  "operative_text": "Section 2 (new section of KRS Chapter 527): (1) Except as provided in subsection (3) of this section, a person is guilty of possession or transfer of a large-capacity ammunition-feeding device when he or she knowingly either: (a) Possesses a large-capacity ammunition-feeding device; (b) Transfers a large-capacity ammunition-feeding device to another person.\nSection 3 (new section of KRS Chapter 527): (1) Within one (1) year after the effective date of this Act, a person who lawfully owns any large-capacity ammunition-feeding device on the effective date of this Act shall: (a) Register with the Department of Kentucky State Police as the certified owner of each large-capacity ammunition-feeding device that the person elects to continue to possess; (b) Transfer the large-capacity ammunition-feeding device to any person outside of Kentucky lawfully entitled to own or possess the device; or\nSection 4 (new section of KRS Chapter 527): (1) Except as provided in subsection (3) of this section, a person is guilty of possession or transfer of an assault weapon when he or she knowingly either: (a) Possesses an assault weapon; or (b) Transfers an assault weapon to another person through any means. (2) Possession or transfer of an assault weapon is a Class A misdemeanor.\nSection 5 (new section of KRS Chapter 237): (b) Within one (1) year after the effective date of this Act, a person who lawfully owns any assault weapon as defined in Section 1 of this Act on the effective date of this Act shall:\nSection 5 (new section of KRS Chapter 237): (3) The Department of Kentucky State Police shall administer a buyback program through which an assault weapon is voluntarily transferred to the Department of Kentucky State Police by the owner of the weapon in exchange for the estimated cash value of the weapon. The buyback program shall be funded by the fees collected from the registration of assault weapons under this section."
+}

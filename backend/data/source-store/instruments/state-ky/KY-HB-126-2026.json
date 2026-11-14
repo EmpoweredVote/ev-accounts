@@ -1,0 +1,45 @@
+{
+  "id": "KY-HB-126-2026",
+  "scope": "state:ky",
+  "title": "HB126 (2026 Regular): AN ACT relating to background checks on the sale or transfer of firearms.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/26RS/hb126.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/26RS/hb126/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "George Brown",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "35de0809-a7a8-458e-bf71-7e10743d00a1"
+    },
+    {
+      "name": "Beverly Chester-Burton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1a0c1ea9-9bde-43b9-8ebd-5c798c12cf6c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/26RS/hb126/orig_bill.pdf (LegiScan doc 3302083))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-126-2026.introduced.pdf",
+      "sha256": "154c6570b52a4bdfb34280b9511fae3dcd9da5ae3e886fb0a87bbc7286d63042"
+    },
+    "note": "Introduced text (26 RS BR 217); no votes recorded in file."
+  },
+  "operative_text": "Section 1 (new section of KRS Chapter 237): (1) In addition to any other requirement of state or federal law, all sales, exchanges, or transfers of firearms shall be conducted in accordance with this section unless the sale, exchange, or transfer is: (a) Conducted by a licensed importer, licensed manufacturer, or licensed dealer, as those terms are defined in 18 U.S.C. secs. 921 and 922, when the sale, exchange, or transfer is conducted pursuant to that person's federal firearms license; or (b) Between spouses, parents, children, and stepchildren in the same immediate family.\nSection 1 (new section of KRS Chapter 237): (2) Before any sale, exchange, or transfer pursuant to this section, a national instant background check shall be completed by a dealer who consents to conduct the check, and upon completion of the background check, the dealer shall complete a form developed by the Department of Kentucky State Police, and available for download through the department's website, that identifies and confirms that the check was performed.\nSection 1 (new section of KRS Chapter 237): (4) A dealer may require that any background check conducted pursuant to this section be subject to a fee not to exceed ten dollars ($10) per transaction.\nSection 2 (KRS 237.990): (3) Any person who knowingly violates Section 1 of this Act shall be guilty of a Class A misdemeanor."
+}

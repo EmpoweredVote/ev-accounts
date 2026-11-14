@@ -1,0 +1,79 @@
+{
+  "id": "KY-HB-331-2024",
+  "scope": "state:ky",
+  "title": "HB331 (2024 Regular): AN ACT relating to firearms.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/24RS/hb331.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/24RS/hb331/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lisa Willner",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "54f62e63-96ba-4bbb-a668-0435824216f8"
+    },
+    {
+      "name": "Keturah Herron",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78c9e7c6-4796-49b7-8e1a-1220b48e2adb"
+    },
+    {
+      "name": "Chad Aull",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5953426e-7231-46b7-a26c-781f620fbf0f"
+    },
+    {
+      "name": "Beverly Chester-Burton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1a0c1ea9-9bde-43b9-8ebd-5c798c12cf6c"
+    },
+    {
+      "name": "Daniel Grossberg",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b1fa718a-2649-4220-ac3d-4cb60f2baf1c"
+    },
+    {
+      "name": "Nima Kulkarni",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "968bf1ff-367f-4e84-983c-030fcdc2d796"
+    },
+    {
+      "name": "Josie Raymond",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rachel Roberts",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/24RS/hb331/orig_bill.pdf (LegiScan doc 2898310))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-331-2024.introduced.pdf",
+      "sha256": "fc0be5caacc87df26fffbeb6bf6115beed00a95fe8d0860031423bbb4985b980"
+    },
+    "note": "Introduced text (24 RS BR 414); no passage vote on record. Operative text covers about 12 of 21 sections; Sections 2, 4, 6-8, 10-11, 13-15 set filing, hearing, service, renewal and out-of-state-order procedures for the same orders. Section 18 (KRS 16.220) sends auction proceeds of surrendered guns to the owner; Section 20 (KRS 431.015) adds warrantless arrest for violating an extreme risk order; Section 21 (KRS 431.076) allows expungement of dismissed petitions. These tie to the same gun-removal scheme, so single subject."
+  },
+  "operative_text": "Section 3 (new section of KRS Chapter 237): If the court finds there is probable cause that the respondent poses an immediate and present danger of causing serious physical injury to self or others by purchasing, possessing, receiving, or having in his or her custody or control a firearm, the court shall, without prior notice to the respondent, issue a temporary extreme risk protection order, set a date for an evidentiary hearing within fourteen (14) days, and issue a summons to the parties.\nSection 5 (new section of KRS Chapter 237): Following a hearing ordered under Section 3 of this Act, if a court finds by clear and convincing evidence that the respondent poses an immediate and present danger of serious physical injury to self or others by purchasing, possessing, receiving, or having in his or her custody or control a firearm, the court shall issue an extreme risk protection order that: (a) Prohibits the respondent from purchasing, possessing, receiving, or having in his or her custody or control a firearm, or attempting to purchase or receive a firearm from the date the order is issued until the order expires, not to exceed one (1) year from the date of issue; and (b) Orders the surrender of firearms under Section 9 of this Act until the order expires.\nSection 9 (new section of KRS Chapter 237): Order the respondent to surrender to a local law enforcement agency all firearms in the respondent's custody or control, or which the respondent possesses; and\nSection 12 (new section of KRS Chapter 237): A person who knowingly purchases, possesses, receives, or has in his or her custody or control a firearm with knowledge that he or she is prohibited from doing so by any extreme risk protection order: (a) Is guilty of a Class A misdemeanor; and (b) Shall be prohibited from purchasing, possessing, receiving, having in his or her custody or control, or attempting to purchase or receive, a firearm for a period of five (5) years from the date of conviction.\nSection 16 (new section of KRS Chapter 16): The department shall establish and maintain the Kentucky Voluntary Do Not Sell Firearms List in the Commonwealth of Kentucky to prohibit the possession, transportation, and sale of firearms to any person who voluntarily registers himself or herself to be enrolled into the list.\nSection 17 (new section of KRS Chapter 16): A person enrolled into the Kentucky Voluntary Do Not Sell Firearms List who knowingly purchases, possesses, or transfers a firearm is guilty of a Class B misdemeanor.\nSection 19 (KRS 237.110): Is not prohibited from possessing a firearm under Sections 1 to 15 of this Act; and (l) Is not enrolled into the Kentucky Voluntary Do Not Sell Firearms List established pursuant to Section 16 of this Act."
+}

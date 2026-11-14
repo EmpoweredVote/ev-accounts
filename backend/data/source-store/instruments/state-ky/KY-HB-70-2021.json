@@ -1,0 +1,54 @@
+{
+  "id": "KY-HB-70-2021",
+  "scope": "state:ky",
+  "title": "HB70 (2021 Regular): AN ACT relating to firearms.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/21RS/hb70.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/21RS/hb70/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Thomas Burch",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mary Marzian",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5f519979-310c-4c22-8d55-097b92915fbc"
+    },
+    {
+      "name": "Reginald Meeks",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Josie Raymond",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/21RS/hb70/orig_bill.pdf (LegiScan doc 2228689))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-70-2021.introduced.pdf",
+      "sha256": "e75093993d2faf03436dba7031a4484a0328ecf292f1c5ad0230b7a925f69e7e"
+    },
+    "note": "As-filed text (21 RS BR 202); no passage vote and later amendments are not in the text read. Quotes join separate sub-parts with one space and skip some items in Section 2(1)(a) (2. to 4.) for length. Section 12(2) (not quoted in full) bars renting, selling, transferring or offering a firearm to a person known to be found dangerous. Section 13 (KRS 16.220) amends firearm disposal; the Administrative Office of the Courts statistics duty is in Section 11."
+  },
+  "operative_text": "Section 2 (new section of KRS Chapter 237): (1) A District Court may issue a warrant to search for and seize a firearm in the possession of a respondent who is dangerous if: (a) A law enforcement officer provides the court a sworn affidavit that: 1. States why the law enforcement officer believes the respondent is dangerous and in possession of a firearm; (b) The District Court determines that probable cause exists to believe that the respondent is: 1. Dangerous; and 2. In possession of a firearm.\nSection 3 (new section of KRS Chapter 237): (1) If a law enforcement officer seizes a firearm from a respondent whom the law enforcement officer believes to be dangerous without obtaining a warrant, the law enforcement officer shall submit to a District Court having jurisdiction over the respondent an affidavit describing the basis for the law enforcement officer's belief that the respondent is dangerous.\nSection 4 (new section of KRS Chapter 237): (2) The Commonwealth has the burden of proving all material facts by clear and convincing evidence.\nSection 4 (new section of KRS Chapter 237): (6) If the court determines that the Commonwealth has proved by clear and convincing evidence that the respondent is dangerous, the court shall issue a written order: (a) Finding the respondent is dangerous; (b) Ordering the law enforcement agency having custody of the seized firearm to retain the firearm; (c) Ordering the respondent's license to carry a concealed firearm, if applicable, suspended; and (d) Enjoining the respondent from: 1. Renting; 2. Receiving transfer of; 3. Owning; or 4. Possessing; a firearm.\nSection 6 (new section of KRS Chapter 237): (1) At least one hundred eighty (180) days after the date on which a District Court ordered a law enforcement agency to retain a respondent's firearm under Section 4 of this Act, the respondent may petition the District Court for a finding that he or she is no longer dangerous.\nSection 12 (new section of KRS Chapter 237): (1) No person who has been found to be dangerous by a District Court having jurisdiction over the person following a hearing under Section 4 of this Act shall knowingly or intentionally: (a) Rent; (b) Purchase; (c) Receive transfer of; (d) Own; or (e) Possess; a firearm.\nSection 12 (new section of KRS Chapter 237): (3) Any person who violates subsection (1) of this section is guilty of a Class A misdemeanor.\nSection 12 (new section of KRS Chapter 237): (4) Any person who violates subsection (2) of this section is guilty of a Class D felony."
+}

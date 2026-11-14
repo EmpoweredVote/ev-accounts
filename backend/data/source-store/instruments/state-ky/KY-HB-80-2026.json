@@ -1,0 +1,51 @@
+{
+  "id": "KY-HB-80-2026",
+  "scope": "state:ky",
+  "title": "HB80 (2026 Regular): AN ACT relating to federal firearm restrictions.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/26RS/hb80.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/26RS/hb80/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "T.J. Roberts",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "307fc639-dd7a-42af-8e22-abf26543c04b"
+    },
+    {
+      "name": "Josh Calloway",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436293ef-ed3f-46b3-9bb6-809b6828eaf8"
+    },
+    {
+      "name": "Savannah Maddox",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e17f04a4-35d6-4e64-8006-30381e9ff6bd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/26RS/hb80/orig_bill.pdf (LegiScan doc 3302319))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-80-2026.introduced.pdf",
+      "sha256": "9ccbf60a5c3fd32076a10b1a3401129f291b690c9392ab2cb15fa5c72ca68772"
+    },
+    "note": "Introduced text (26 RS BR 1246, dated 12/18/2025); later amendments, if any, are not in the text read. Also creates a civil action, immunity waiver and a fine up to $250 for officials who enforce (subsections 5(c)-(d), 6)."
+  },
+  "operative_text": "Section 1 (new section of KRS Chapter 237): (4) A federal firearm restriction that is repealed or declared unconstitutional shall have no force or effect in the Commonwealth. The Commonwealth and its departments, commissions, agencies, and political subdivisions shall not enact or enforce any law, rule, or regulation that mirrors, replaces, or imposes a restriction similar to that federal firearm restriction.\nSection 1 (new section of KRS Chapter 237): (5) (a) A person shall not be prosecuted, fined, or otherwise subject to other penalties or enforcement action for any activity that was regulated or prohibited by a federal firearm restriction that is repealed or declared unconstitutional. (b) A law enforcement agency, law enforcement officer, employee of a law enforcement agency, public agency, public official, employee of a public agency, or employee of a local government shall not enforce, assist in the enforcement of, or otherwise cooperate in the enforcement of a federal firearm restriction that is repealed or declared unconstitutional.\nSection 1 (new section of KRS Chapter 237): (7) A manufacturer of firearms or federally licensed firearms dealer has the right to manufacture, sell, or possess firearms and accessories that are no longer restricted under federal law."
+}

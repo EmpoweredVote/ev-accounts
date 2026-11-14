@@ -1,0 +1,57 @@
+{
+  "id": "KY-HB-82-2025",
+  "scope": "state:ky",
+  "title": "HB82 (2025 Regular): AN ACT relating to prohibiting the enforcement of a federal ban or regulation of firearms.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/25RS/hb82.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/25RS/hb82/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "T.J. Roberts",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "307fc639-dd7a-42af-8e22-abf26543c04b"
+    },
+    {
+      "name": "Josh Bray",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "16cfd1f1-50cc-402e-8d7b-382c43289630"
+    },
+    {
+      "name": "Josh Calloway",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436293ef-ed3f-46b3-9bb6-809b6828eaf8"
+    },
+    {
+      "name": "Felicia Rabourn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a39b09c3-23b4-4bfb-a001-8a9a2adfb6cd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/25RS/hb82/orig_bill.pdf (LegiScan doc 3041134))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-82-2025.introduced.pdf",
+      "sha256": "96b1acae3060158028030c22510bd44f25b22a8445e5678da8cc4f2854cad262"
+    },
+    "note": "Introduced text (25 RS BR 1038); no votes. Deleted: 'January 1, 2021, or a new and more restrictive interpretation of a law that existed on January 21, 2021' (replaced by December 15, 1791)."
+  },
+  "operative_text": "Section 1 (KRS 237.105): (1) (b) \"Federal ban\" means a federal law, executive order, rule, or regulation that is enacted, adopted, or becomes effective on or after December 15, 1791, that infringes upon, calls into question, prohibits, restricts, or requires individual licensure for or registration of the purchase, ownership, possession, transfer, or use of any firearm, ammunition, or firearm accessory;\nSection 1 (KRS 237.105): (2) No law enforcement agency, law enforcement officer, employee of a law enforcement agency, public agency, public official, employee of a public agency, or employee of a local government shall enforce, assist in the enforcement of, or otherwise cooperate in the enforcement of a federal ban on firearms, ammunition, or firearm accessories, and shall not participate in any federal enforcement action implementing a federal ban on firearms, ammunition, or firearm accessories.\nSection 1 (KRS 237.105): (5) A person commits an offense under this section when, while acting in his or her official capacity under color of law, he or she knowingly violates this section. An offense under this section is a Class B misdemeanor for the first offense and a Class A misdemeanor for each subsequent offense.\nSection 1 (KRS 237.105): (8) This section shall be retroactive to January 1, 2021."
+}

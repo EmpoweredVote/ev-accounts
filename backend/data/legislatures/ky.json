@@ -1,0 +1,46 @@
+{
+  "state": "ky",
+  "name": "Kentucky",
+  "verified": "2026-11-14",
+  "source": "gun-policy Season 3 Stage 5, Kentucky session A hand-over (ky/HANDOVER-A.md part 7), 2026-11-14",
+  "chambers": {
+    "lower": "House",
+    "upper": "Senate"
+  },
+  "sessions": "Annual regular sessions; bills are numbered afresh each session (e.g. 25RS SB 75 = 2025 regular session). House 100 seats, Senate 38.",
+  "bill_data": [
+    "LegiScan bulk datasets are on disk; never re-pull a dataset. LegiScan per-bill calls only.",
+    "Bill texts fetch direct from apps.legislature.ky.gov (no LegiScan call needed); old www.lrc.ky.gov links do not answer, but the same path on apps.legislature.ky.gov works."
+  ],
+  "votes": {
+    "mode": "legiscan",
+    "official_hosts": [
+      "apps.legislature.ky.gov"
+    ],
+    "legiscan_args": null,
+    "floor_rule": "Floor votes are 'House: Third Reading RCS# n' and 'Senate: Third Reading RSN# n', often followed by the version voted on (e.g. 'W/scs1', 'W/FINAL fccr'). Keep Third Reading, Veto Override and a resolution's own Adopt; drop floor-amendment votes (Adopt HFA/SFA), Suspend the Rules, Co-Sponsor, For Consent, Consider Motion and Table.",
+    "gaps": [
+      "LegiScan labels 602 House roll calls 'Veto Override'; many are plain passage votes. Check the bill's history before reading one as an override."
+    ]
+  },
+  "texts": {
+    "hosts": [
+      "apps.legislature.ky.gov"
+    ],
+    "marks": "PDFs read as pdftotext -layout. Every line starts with a line number that is not part of the law. Struck (deleted) words come out inside square brackets; rewrite them to [-struck-] before a quote check. Added words are underlined in the PDF and the underline is lost in the text, so added words read as plain words beside the struck ones. A whole new section is headed 'SECTION n. A NEW SECTION OF KRS CHAPTER nnn IS CREATED TO READ AS FOLLOWS:' (every word new); an amended section is headed 'Section n. KRS nnn.nnn is amended to read as follows:'.",
+    "note": "Bill PDFs: https://apps.legislature.ky.gov/recorddocuments/bill/<yy>RS/<bill>/bill.pdf. Bill page: https://apps.legislature.ky.gov/record/<yy>rs/<bill>.html. Because underlines are lost, a reprinted section cannot show which unbracketed words are new; quotes that cross a page break (footer, line numbers restart) or join a lead-in to its lettered item will not match verbatim. apps.legislature.ky.gov has no robots.txt (404); bill pages, bill PDFs and roll-call PDFs (record/<yy>rs/<bill>/vote_history.pdf) return 200 (2026-11-14)."
+  },
+  "reader_access": {
+    "apps.legislature.ky.gov": "open",
+    "www.lrc.ky.gov": "blocked: host does not answer (2026-11-14); use the same path on apps.legislature.ky.gov"
+  },
+  "search_note": "Roll-call PDFs (vote_history.pdf) list each chamber's RCS#/RSN#, the tally and member names by surname.",
+  "bill_table_note": "Texts mark deleted words as [-struck-] (after the bracket rewrite); added words are not marked. Never read [- -] text as something the bill does, except as what it removes. In a reprinted section, do not assume an unbracketed word is new.",
+  "fill_quotes": {
+    "label_strips": []
+  },
+  "quirks": [
+    "Struck words are bracketed and added words lose their underline in extracted text.",
+    "Many House roll calls are labelled 'Veto Override' in LegiScan though they are passage votes."
+  ]
+}

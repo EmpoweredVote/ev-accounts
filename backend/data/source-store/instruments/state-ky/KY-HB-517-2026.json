@@ -1,0 +1,57 @@
+{
+  "id": "KY-HB-517-2026",
+  "scope": "state:ky",
+  "title": "HB517 (2026 Regular): AN ACT relating to concealed deadly weapons.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/26RS/hb517.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/26RS/hb517/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Felicia Rabourn",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a39b09c3-23b4-4bfb-a001-8a9a2adfb6cd"
+    },
+    {
+      "name": "Savannah Maddox",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e17f04a4-35d6-4e64-8006-30381e9ff6bd"
+    },
+    {
+      "name": "Josh Calloway",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436293ef-ed3f-46b3-9bb6-809b6828eaf8"
+    },
+    {
+      "name": "T.J. Roberts",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "307fc639-dd7a-42af-8e22-abf26543c04b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/26RS/hb517/orig_bill.pdf (LegiScan doc 3341717))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-517-2026.introduced.pdf",
+      "sha256": "d16cacbf1ebd4d773b5f6bda8fcd282635c9613a7edcba38837ba9dac5ed4018"
+    },
+    "note": "As-filed (BR 1766, 1/13/2026); no passage vote in the record. Struck: the school-facility clause in KRS 237.110(16)(f), 'or 237.115' in KRS 150.172(1), and KRS 237.115 repealed outright. Section 3 (KRS 527.020) and Section 1 (KRS 150.172) conform to these changes. The bill also makes many small wording corrections in KRS 237.110 (not quoted)."
+  },
+  "operative_text": "Section 2 (KRS 237.110): (16) (f) Any child-caring facility as defined in KRS 199.011, any child-care center as defined in KRS 199.894, or any certified family child-care home as defined in KRS 199.8982, except however, any owner of a certified child-care home may carry a concealed firearm into the owner's residence used as a certified child-care home;\nSection 2 (KRS 237.110): (16) (g) An area of an airport to which access is controlled by the inspection of persons and property by the Transportation Security Administration; or\nSection 4 (KRS 527.070): (3) (j) A person with a valid license to carry concealed deadly weapons issued pursuant to Section 2 of this Act, except pupils attending schools subject to any policy adopted under KRS 158.150(2) or other law required under 20 U.S.C. sec. 7961.\nSection 4 (KRS 527.070): (4) Unlawful possession of a weapon on school property is a Class D felony.\nSection 5: The following KRS section is repealed: 237.115 Construction of KRS 237.110 -- Prohibition by local government units of carrying concealed deadly weapons in governmental buildings -- Restriction on criminal penalties."
+}

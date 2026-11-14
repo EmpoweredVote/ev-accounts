@@ -1,0 +1,54 @@
+{
+  "id": "KY-HB-428-2022",
+  "scope": "state:ky",
+  "title": "HB428 (2022 Regular): AN ACT relating to local firearms control and declaring an emergency.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/22RS/hb428.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/22RS/hb428/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Josie Raymond",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tina Bojanowski",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bddc46b3-f049-4d3a-852d-0a7ee6022bc0"
+    },
+    {
+      "name": "Joni Jenkins",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Attica Scott",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/22RS/hb428/orig_bill.pdf (LegiScan doc 2501492))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-428-2022.introduced.pdf",
+      "sha256": "adcfe5f8ea1a2b175c3a6363d702c04c3a155b68c44ca7d4fbff420c51421458"
+    },
+    "note": "Introduced print (no date on the print); no passage vote in the data, so it is the bill as filed. Subsections (2)-(7) of KRS 65.870 (nullity, suits, penalty for public servants) are struck. Section 2 only deletes a cross-reference to KRS 65.870."
+  },
+  "operative_text": "Section 1 (KRS 65.870): A city, county, urban-county government, charter county, consolidated local government, or unified local government may enact ordinances regulating the manufacture, sale, purchase, taxation, transfer, ownership, possession, carrying, storage, or transportation of firearms, ammunition, components of firearms, components of ammunition, firearms accessories, or combination thereof, but any such ordinance shall not impose a requirement that is less restrictive than state law."
+}

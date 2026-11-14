@@ -1,0 +1,51 @@
+{
+  "id": "KY-HB-460-2024",
+  "scope": "state:ky",
+  "title": "HB460 (2024 Regular): AN ACT relating to the prevention of physical harm.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/24RS/hb460.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/24RS/hb460/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ken Fleming",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6d3906c4-7664-4e7b-8be8-e498f0c8efe0"
+    },
+    {
+      "name": "Chad Aull",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5953426e-7231-46b7-a26c-781f620fbf0f"
+    },
+    {
+      "name": "Lisa Willner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "54f62e63-96ba-4bbb-a668-0435824216f8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/24RS/hb460/orig_bill.pdf (LegiScan doc 2913519))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-460-2024.introduced.pdf",
+      "sha256": "2f4113bdd7b8923c5abdd7b0af549dbdead194bfce0ab044029714a1cd3ac2ad"
+    },
+    "note": "As-filed text (24 RS BR 58); no passage vote and later amendments are not in the text read. Section 4(2)(c) is quoted alone from the list of agency duties in subsection (2). Inclusion on the list is meant to act as a NICS state prohibitor. Section 9 is a grant-funded education campaign about the same program."
+  },
+  "operative_text": "Section 2 (new section of KRS Chapter 237): (1) Any person may voluntarily request to be placed on the list established under this section and be restricted from purchasing or possessing firearms.\nSection 2 (new section of KRS Chapter 237): (11) (a) Any person whose name is on the list and who purchases, attempts to purchase, or possesses a firearm in violation of this section shall be subject to a civil penalty of two hundred fifty dollars ($250).\nSection 2 (new section of KRS Chapter 237): (12) (a) It shall be unlawful for any person or entity required to perform a background check prior to transferring a firearm to transfer a firearm, either knowingly or due to a failure to perform the required background check, to any person on the list. (b) Any person who violates this subsection is guilty of a Class A misdemeanor.\nSection 4 (new section of KRS Chapter 237): (1) An owner-possessor may voluntarily commit a firearm to a law enforcement agency or request that a law enforcement officer receive a firearm for safekeeping if the owner-possessor believes he or she is an immediate threat to himself or herself, or to another person.\nSection 4 (new section of KRS Chapter 237): (2) A law enforcement agency that receives a legal firearm under this section shall: (c) Hold the firearm for at least sixty (60) days after the firearm is voluntarily committed; and\nSection 6 (new section of KRS Chapter 237): (1) Nothing in Sections 1 to 8 of this Act shall prohibit the permanent, voluntary surrender of any firearm by an owner-possessor to a participating law enforcement agency."
+}

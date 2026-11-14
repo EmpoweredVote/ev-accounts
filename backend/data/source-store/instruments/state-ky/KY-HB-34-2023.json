@@ -1,0 +1,60 @@
+{
+  "id": "KY-HB-34-2023",
+  "scope": "state:ky",
+  "title": "HB34 (2023 Regular): AN ACT relating to local regulatory actions.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/23RS/hb34.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/23RS/hb34/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Josie Raymond",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "George Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "35de0809-a7a8-458e-bf71-7e10743d00a1"
+    },
+    {
+      "name": "Beverly Chester-Burton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1a0c1ea9-9bde-43b9-8ebd-5c798c12cf6c"
+    },
+    {
+      "name": "Daniel Grossberg",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b1fa718a-2649-4220-ac3d-4cb60f2baf1c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "minimum-wage: Sections 2-3 (KRS Chapter 337 new section, KRS 65.016) — cities may set prevailing wages, a higher minimum wage and required employee leave",
+        "economic-development: Section 1 (new section of KRS Chapter 82) — cities may require union project labor agreements for public construction",
+        "housing: Sections 6-7 (KRS 383.210, 383.215) — local governments may lengthen the time between an eviction warrant and hearing"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/23RS/hb34/orig_bill.pdf (LegiScan doc 2622430))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-34-2023.introduced.pdf",
+      "sha256": "b9352d9beae80fe20a13c94df91e3283f8f3da659a0596bbe55edf9030b0f148"
+    },
+    "note": "Introduced text (23 RS BR 480, dated 12/6/2022); later amendments are not in the text read. In Section 4 the existing subsections (1) preemption wording and subsections (2)-(7) (void ordinances, suits, public-servant penalty) are struck; the quote shows the law as it would read. Section 5 (KRS 237.115) only strikes a cross-reference to KRS 65.870 and to 237.109."
+  },
+  "operative_text": "Section 4 (KRS 65.870): A city, county, urban-county government, charter county, consolidated local government, or unified local government may enact ordinances regulating the manufacture, sale, purchase, taxation, transfer, ownership, possession, carrying, storage, or transportation of firearms, ammunition, components of firearms, components of ammunition, firearms accessories, or combination thereof, but any such ordinance shall not impose a requirement that is less restrictive than state law."
+}

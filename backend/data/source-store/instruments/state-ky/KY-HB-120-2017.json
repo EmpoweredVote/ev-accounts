@@ -1,0 +1,143 @@
+{
+  "id": "KY-HB-120-2017",
+  "scope": "state:ky",
+  "title": "HB120 (2017 Regular): AN ACT relating to preserving the right of Kentuckians to own and use firearms.",
+  "urls": [
+    "http://www.lrc.ky.gov/record/17RS/HB120.htm",
+    "http://www.lrc.ky.gov/recorddocuments/bill/17RS/HB120/bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Diane St Onge",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brian Linder",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Regina Huff",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Carney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tim Couch",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joseph Fischer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Hale",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "18aafe90-9834-4152-836e-bced02687b83"
+    },
+    {
+      "name": "Mark Hart",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2284cea5-d630-4abf-84db-9fcd5d53aa62"
+    },
+    {
+      "name": "Kenny Imes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kim King",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "682c3162-f77a-43be-9ac1-bb0fd50b69c2"
+    },
+    {
+      "name": "Stan Lee",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Donna Mayfield",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael Meredith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "18152ace-e3fb-44a3-a419-18bb952c41dc"
+    },
+    {
+      "name": "Suzanne Miles",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436d1d7e-37af-4ac1-9ac8-f04be5bfbd75"
+    },
+    {
+      "name": "Wesley Morgan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Phillip Pratt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "William Reed",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bart Rowland",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sal Santoro",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Sims",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Addia Wuchner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Draft, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/17RS/HB120/bill.pdf (LegiScan doc 1443889))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-120-2017.draft.pdf",
+      "sha256": "659a75a42f7095c52a2967ce101611552471324440d9182c648a0e9c70745efb"
+    },
+    "note": "Text is the pre-filing draft (BR 421, no date) from lrc.ky.gov; findings and declarations only, no penalties. No votes recorded."
+  },
+  "operative_text": "Section 1 (new section of KRS Chapter 237): (2) The General Assembly of the Commonwealth of Kentucky declares that: (b) All federal acts, laws, orders, rules, and regulations, enacted after the effective date of this Act, which attempt to commandeer local or state law enforcement officers to enforce federal restrictions on firearms violate the Constitution of the United States and are: 1. Invalid in this Commonwealth; 2. Not recognized by this Commonwealth; 3. Considered null and void by this Commonwealth; and 4. Of no effect in this Commonwealth;\nSection 1 (new section of KRS Chapter 237): (d) It shall be the duty of the Kentucky General Assembly to adopt and enact any and all measures as may be necessary to prevent the enforcement of any federal act, law, order, rule, or regulation enacted after the effective date of this Act which attempts to commandeer local or state law enforcement officers to enforce federal restrictions on firearms in violation of the Constitution of the United States."
+}

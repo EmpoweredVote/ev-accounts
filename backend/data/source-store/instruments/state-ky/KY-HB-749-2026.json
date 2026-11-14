@@ -1,0 +1,75 @@
+{
+  "id": "KY-HB-749-2026",
+  "scope": "state:ky",
+  "title": "HB749 (2026 Regular): AN ACT relating to the establishment of the Office of Public Defense.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/26RS/hb749.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/26RS/hb749/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "T.J. Roberts",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "307fc639-dd7a-42af-8e22-abf26543c04b"
+    },
+    {
+      "name": "Steven Doan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9afa6c68-2cf9-4946-8ea0-7171d4153a4e"
+    },
+    {
+      "name": "Josh Calloway",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436293ef-ed3f-46b3-9bb6-809b6828eaf8"
+    },
+    {
+      "name": "Ryan Dotson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2721f71e-5bba-4769-8e0e-86fbfc414e2b"
+    },
+    {
+      "name": "John Hodgson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5342e031-b6ed-40c9-bff1-6d14a5bf5323"
+    },
+    {
+      "name": "Thomas Huff",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b159e90d-9ebe-4cc5-9c85-ec189f1d0322"
+    },
+    {
+      "name": "Billy Wesley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fab8aec8-9f3a-4d95-bfa0-545eb2ce3cf3"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/26RS/hb749/orig_bill.pdf (LegiScan doc 3376322))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-749-2026.introduced.pdf",
+      "sha256": "4ba2f557039834016ce63c263bc4e05786a5dc1593b899fbba2979332c3a088b"
+    },
+    "note": "Introduced text (26 RS BR 2302, dated 2/25/2026); later amendments are not in the text read. Large file; quotes are partial. Also in the bill: Section 3 certificate and confidentiality, Section 5 $275 transfer fee, Section 6 public defense fund, Section 9 immunity of the state and office, Sections 11-12 (KRS 12.020, 15A.020) attach the office to State Police. The \"Office of Public Defense\" name is unrelated to criminal defense counsel. The Act declares federal law (18 U.S.C. 922(o)(2)(A)) as its basis in WHEREAS clauses; no higher law requires the step."
+  },
+  "operative_text": "Section 2 (new section of KRS Chapter 16): (1) The Office of Public Defense is hereby established within the Department of Kentucky State Police.\nSection 2 (new section of KRS Chapter 16): (a) Acquire and transfer to qualified persons machine guns for the defense of the Commonwealth and its people;\nSection 2 (new section of KRS Chapter 16): (d) Verify the eligibility of qualified persons to purchase machine guns through the use of a background check conducted in the same manner as provided in KRS 237.110(3);\nSection 2 (new section of KRS Chapter 16): (6) Machine guns shall be made available for sale and transfer at each Department of Kentucky State Police post.\nSection 4 (new section of KRS Chapter 16): (1) If a qualified person to whom a machine gun has been transferred under Sections 1 to 10 of this Act becomes prohibited from possessing a firearm under Kentucky or federal law, the person shall return the machine gun to the office within seven (7) days of learning of his or her prohibited status.\nSection 5 (new section of KRS Chapter 16): (1) A qualified person may transfer a machine gun acquired under Sections 1 to 10 of this Act to another qualified person by presenting the machine gun to the office.\nSection 8 (new section of KRS Chapter 16): The General Assembly hereby declares for purposes of 18 U.S.C. sec. 922(o)(2)(A) that: (1) All transfers of machine guns to qualified persons under Sections 1 to 10 of this Act shall be deemed to have been made by and under the authority of the Commonwealth of Kentucky; and (2) A transferee of a machine gun under Sections 1 to 10 of this Act shall be deemed to possess a machine gun that was transferred by and under the authority of the Commonwealth of Kentucky.\nSection 10 (new section of KRS Chapter 16): (1) The director shall add a surcharge of two hundred fifty dollars ($250) to the total price of a machine gun sold and transferred under Sections 1 to 10 of this Act which shall be paid into the public defense fund."
+}

@@ -66,6 +66,217 @@
         "fetched_at": "2026-11-11T21:12:46.607Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1a472fae115e03aa71b4f792534657305bacd220e09ea3c9b2113fabe755f4f6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/25RS/hb234.html",
+      "date": "2025-02-20",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-234-2025",
+      "act": "yea",
+      "motion": "House: Third Reading RCS# 50",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "KY House, House: Third Reading RCS# 50, 2025-02-20: yea (tally 92–0); census gate: near-unanimous.",
+      "subjects": [
+        "confiscated firearms sold at auction to licensed dealers",
+        "firearm-sale proceeds fund police grants, now including airport police"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Chaptered, 0000-00-00; official copy, https://apps.legislature.ky.gov/law/acts/25RS/documents/0003.pdf (LegiScan doc 3227746))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-234-2025.chaptered.pdf",
+          "sha256": "62fca6548f2c850784c1c4576ca45c08e53b5125497920d46f877037ffcbc4f0"
+        }
+      }
+    },
+    {
+      "id": "1c518bcb28e0fc22f673793f86b7cb3cee4233e18200d39bb9b412bbd71c3948",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb312.html",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-312-2026",
+      "act": "nay",
+      "motion": "House: Veto Override RCS# 461",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY House, House: Veto Override RCS# 461, 2026-04-14: nay (tally 81–18); census gate: none.",
+      "subjects": [
+        "concealed-carry license for ages 18 to 20",
+        "provisional license valid until age 21",
+        "switch to standard license"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Chaptered, 0000-00-00; official copy, https://apps.legislature.ky.gov/law/acts/26RS/documents/0173.pdf (LegiScan doc 3442881))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-312-2026.chaptered.pdf",
+          "sha256": "63c37beef2557d8aa85b424bd92efeb42ef4cd70465d63cb2117ec40b0402fee"
+        }
+      }
+    },
+    {
+      "id": "67e3c37aeafa9f58528cfc29b81e36a088e827ad6ebdda495c1dc1032b545075",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/hb357.html",
+      "date": "2024-02-27",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-357-2024",
+      "act": "nay",
+      "motion": "House: Third Reading RCS# 160",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY House, House: Third Reading RCS# 160, 2024-02-27: nay (tally 78–18); census gate: none.",
+      "subjects": [
+        "no firearms-retailer payment category code",
+        "ban on firearm ownership registries",
+        "Attorney General enforcement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Chaptered, 0000-00-00; official copy, https://apps.legislature.ky.gov/law/acts/24RS/documents/0014.pdf (LegiScan doc 3014001))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-357-2024.chaptered.pdf",
+          "sha256": "34e90d943d49f0f6fc3afe37cb20bb5f577aaa9bb486c912fbdf5ebf8fce9553"
+        }
+      }
+    },
+    {
+      "id": "fb440c8bfdee501ac17267f7cfa5815c9abcc29a07b7359a0babbb0bdcf12635",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/hb5.html",
+      "date": "2024-04-12",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-5-2024",
+      "act": "nay",
+      "motion": "House: Veto Override RCS# 454",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "KY House, House: Veto Override RCS# 454, 2024-04-12: nay (tally 73–22); census gate: multi-subject.",
+      "subjects": [
+        "no parole or release when a stolen firearm is used or the person is a felon",
+        "confiscated homicide guns destroyed rather than resold",
+        "higher felony class for firing a gun in wanton endangerment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Chaptered, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/24RS/hb5/bill.pdf (LegiScan doc 2980560))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-5-2024.chaptered.pdf",
+          "sha256": "3887df09ff18c27e4fbc73e5ad1761759ef913b5c756480883a1543dcea708e6"
+        }
+      }
+    },
+    {
+      "id": "f248ef3a6dbc790e585fe7db7ac14dc0383205bdd79a21a4b6a15993b57831bf",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb78.html",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-78-2026",
+      "act": "nay",
+      "motion": "House: Veto Override RCS# 457",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY House, House: Veto Override RCS# 457, 2026-04-14: nay (tally 80–19); census gate: none.",
+      "subjects": [
+        "no civil suits against gun and ammunition makers or sellers for criminal misuse",
+        "local liability rules preempted",
+        "makers and sellers may sue over barred claims"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Chaptered, 0000-00-00; official copy, https://apps.legislature.ky.gov/law/acts/26RS/documents/0177.pdf (LegiScan doc 3443083))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-78-2026.chaptered.pdf",
+          "sha256": "fd5594be2aacdb70f2dae01bee4fb82fbeaef7443ea9f18e54c02f150620282f"
+        }
+      }
+    },
+    {
+      "id": "d9934c5a7551369ffa8c671f1669867d400920e23a6d11347c4e2703a493ed21",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/sb20.html",
+      "date": "2024-03-26",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-20-2024",
+      "act": "nay",
+      "motion": "House: Third Reading RCS# 365",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY House, House: Third Reading RCS# 365, 2024-03-26: nay (tally 68–19); census gate: none.",
+      "subjects": [
+        "juveniles 15+ with gun-involved Class A-C felonies tried as adults",
+        "no probation after Circuit Court conviction"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Chaptered, 0000-00-00; official copy, https://apps.legislature.ky.gov/law/acts/24RS/documents/0160.pdf (LegiScan doc 3014059))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-20-2024.chaptered.pdf",
+          "sha256": "c5fe55913f9868e0ca85cc625fc0960d17dbb33f4724fd22cce4a65589ec4252"
+        }
+      }
+    },
+    {
+      "id": "c60b51d9aa6b5bb488534e80b7ac2cee80d6631b362a7eb816810be89e29bf82",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/hb735.html",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-735-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of KY-HB-735-2024 (sponsor list (prime / co-sponsor)): HB735 (2024 Regular): AN ACT relating to background checks on the sale or transfer of firearms..",
+      "subjects": [
+        "background checks on private gun sales",
+        "dealer record-keeping and $10 fee cap"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/24RS/hb735/orig_bill.pdf (LegiScan doc 2941523))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-735-2024.introduced.pdf",
+          "sha256": "cbae810ba372aff50a32dcb0279ae88f2f44d6705bf9d78dc09418fa5c2cd845"
+        }
+      }
     }
   ],
   "searches": [

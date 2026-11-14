@@ -1,0 +1,60 @@
+{
+  "id": "KY-HB-31-2020",
+  "scope": "state:ky",
+  "title": "HB31 (2020 Regular): AN ACT relating to carrying concealed weapons.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/20RS/hb31.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/20RS/hb31/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Charles Booker",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "George Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "35de0809-a7a8-458e-bf71-7e10743d00a1"
+    },
+    {
+      "name": "Nima Kulkarni",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "968bf1ff-367f-4e84-983c-030fcdc2d796"
+    },
+    {
+      "name": "Reginald Meeks",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Attica Scott",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/20RS/hb31/orig_bill.pdf (LegiScan doc 2085748))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-31-2020.introduced.pdf",
+      "sha256": "3a173c2a88b08c122942f83c766654ea4564c99eebdb826f5f389da175655c7e"
+    },
+    "note": "Introduced text (20 RS BR 187). In Section 1 (KRS 527.020) the words \" in violation of this section\" in subsection (1), and the references to KRS 237.109, are struck; quotes show the law without them. Section 2 (KRS 237.115) only removes references to 237.109. Later amendments are not in the text read."
+  },
+  "operative_text": "Section 3 (repeal): The following KRS section is repealed: 237.109 Authorization to carry concealed deadly weapons without a license.\nSection 1 (KRS 527.020): (1) A person is guilty of carrying a concealed weapon when he or she carries concealed a firearm or other deadly weapon on or about his or her person.\nSection 1 (KRS 527.020): (4) Persons, except those specified in subsection (5) of this section, licensed to carry a concealed deadly weapon pursuant to KRS 237.110 may carry a concealed firearm or other concealed deadly weapon on or about their persons at all times within the Commonwealth of Kentucky, if the firearm or concealed deadly weapon is carried in conformity with the requirements of KRS 237.110.\nSection 1 (KRS 527.020): (10) Carrying a concealed weapon is a Class A misdemeanor, unless the defendant has been previously convicted of a felony in which a deadly weapon was possessed, used, or displayed, in which case it is a Class D felony."
+}
