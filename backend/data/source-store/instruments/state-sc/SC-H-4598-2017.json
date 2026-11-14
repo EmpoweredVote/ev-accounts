@@ -1,0 +1,70 @@
+{
+  "id": "SC-H-4598-2017",
+  "scope": "state:sc",
+  "title": "H4598 (122nd General Assembly): Concealed weapons permit",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4598&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/4598_20180110.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Anne Thayer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joshua Putnam",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Craig Gagnon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "381f33f9-cfe6-469e-a7cb-c87f076dfce6"
+    },
+    {
+      "name": "Kit Spires",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John West",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Mccravy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7e726b81-f400-44bb-98e1-7a63a9248b3b"
+    },
+    {
+      "name": "Michael Pitts",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2018-01-10; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/4598_20180110.htm (LegiScan doc 1679814))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4598-2017.introduced.htm",
+      "sha256": "fa35ca2de54f0d4719d0bb0aae0cd92a959083a3fb76b3a28705ae7197238acb"
+    },
+    "note": "Introduced version (Jan. 10, 2018); no later version or vote on file."
+  },
+  "operative_text": "Section 1 (new Section 23-31-232): Notwithstanding another provision of law, upon express permission given by the appropriate church official or governing body, a person who holds a permit issued pursuant to this article may carry a concealable weapon on school premises when a church leases the school premises for church services or official church activities.\nSection 1 (new Section 23-31-232): The provisions contained in this section only apply during those times that the church has the use and enjoyment of the property pursuant to its lease with the school."
+}

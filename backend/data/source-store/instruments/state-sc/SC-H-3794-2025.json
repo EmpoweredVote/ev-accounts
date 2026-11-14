@@ -1,0 +1,45 @@
+{
+  "id": "SC-H-3794-2025",
+  "scope": "state:sc",
+  "title": "H3794 (126th General Assembly): Concealable weapons",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3794&session=126&summary=B",
+    "https://www.scstatehouse.gov/sess126_2025-2026/prever/3794_20250128.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cody Mitchell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "20d9dc55-6065-43ec-9291-1aee110e1e7a"
+    },
+    {
+      "name": "Thomas Pope",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c4552314-d8dd-4de1-bfc1-a1e601799115"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2025-01-28; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3794_20250128.htm (LegiScan doc 3085597))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3794-2025.introduced.htm",
+      "sha256": "5b7c11426529eb2b36f4d1568b8a4a5969519e9b0eae973fbb4f1f75e12d600d"
+    },
+    "note": "Introduced version (2025-01-28); no passage vote on record. Only the word \"and\" after item (14) is struck."
+  },
+  "operative_text": "Section 1 (Section 23-31-240): Notwithstanding any other provision contained in this article, the following persons who possess a valid permit pursuant to this article may carry a concealable weapon anywhere within this State: ... (15) active public defenders and assistant public defenders; and (16) employed full-time active public defender investigators and assistant public defender investigators.\nSection 1 (Section 23-31-240): Notwithstanding the provisions of subsection (A), public defenders and assistant public defenders, and public defender investigators and assistant public defender investigators may not carry a concealable weapon into a local or state correctional facility."
+}

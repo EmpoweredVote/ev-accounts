@@ -1,0 +1,68 @@
+{
+  "id": "SC-H-3354-2023",
+  "scope": "state:sc",
+  "title": "H3354 (125th General Assembly): Concealed weapons",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3354&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/3354_20221208.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dennis Moss",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "db324b15-8d33-4f13-9e4e-9a7d6a4a4613"
+    },
+    {
+      "name": "John Mccravy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7e726b81-f400-44bb-98e1-7a63a9248b3b"
+    },
+    {
+      "name": "Brian Lawson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2a49749e-cace-490c-91d7-6733354da3fc"
+    },
+    {
+      "name": "Josiah Magnuson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e00d1f1-7d7d-4e9e-9482-15caeec92ff8"
+    },
+    {
+      "name": "Thomas Pope",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c4552314-d8dd-4de1-bfc1-a1e601799115"
+    },
+    {
+      "name": "Max Hyde",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2022-12-08; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/3354_20221208.htm (LegiScan doc 2617289))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3354-2023.introduced.htm",
+      "sha256": "6368b47141577c0aee340e7576061507f9af305e9c69d88e99aa43b45e4207a0"
+    },
+    "note": "Introduced text of 2022-12-08; no passage vote. Struck: 'and' after item (12)."
+  },
+  "operative_text": "Section 1 (Section 23-31-240): Notwithstanding any other provision contained in this article, the following persons who possess a valid permit pursuant to this article may carry a concealable weapon anywhere within this State: ... (13) the Attorney General and assistant attorneys general; and (14) active clerks of court."
+}

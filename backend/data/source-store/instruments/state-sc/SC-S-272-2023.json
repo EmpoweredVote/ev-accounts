@@ -1,0 +1,42 @@
+{
+  "id": "SC-S-272-2023",
+  "scope": "state:sc",
+  "title": "S0272 (125th General Assembly): SC Citizens' Defense Act of 2023",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0272&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/272_20230209.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Danny Verdin",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ec52251-b87c-4264-b1f7-e4d348e2756a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "taxes: SECTION 2 (Section 12-36-2120(76)) — adds home security systems, lighting, doors and locks to the sales-tax-free weekend",
+        "judicial-criminal-justice: SECTION 3 (new Section 16-1-135) — general felony penalty for any offence against a law enforcement officer, not gun-specific"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Draft, 2023-02-09; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/272_20230209.htm (LegiScan doc 2692140))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-272-2023.draft.htm",
+      "sha256": "7a6f6633569bb2584f79523057e6a93c2c0c85db8d236bcd3114f5003be62932"
+    },
+    "note": "Prefiled draft dated 2023-02-09 (introduced text); no passage vote on record. Struck text: in 23-31-215 the renewal procedure (P)-(Q), (U) and the reciprocal-state requirements, Georgia/North Carolina clause and handgun-only limit in (N) are struck. Section 23-31-217 (B) moves fee collection (no renewal fees). Section 11 (new 56-3-116) lets the DMV note a possible autism/Tourette diagnosis on a registration; it is not a gun part and fits no listed topic. Section 3 (16-1-135) and Section 11 are not quoted. Section 5 (D) quote omits the second sentence (attorney fees)."
+  },
+  "operative_text": "SECTION 2 (Section 12-36-2120(76)): (76) sales of home security and surveillance systems, residential security lighting, residential security doors, door jamb reinforcement systems, residential locksmith-grade door locks, residential window security hardware, residential glass security laminate, handguns as defined pursuant to Section 16-23-10(1), rifles, and shotguns during the forty-eight hours of the Second Amendment and Home Protection Weekend.\nSECTION 4 (Section 23-31-510): No governing body of any county, municipality, or other political subdivision in the State may enact or promulgate any regulation or ordinance that regulates or attempts to regulate: (1) the transfer, ownership, possession, carrying, transportation, manufacture, assembly, storage, warehousing, distribution, or sale of firearms, ammunition, components of firearms, homemade firearms created or assembled without a serial number, or any combination of these things; or\nSECTION 5 (Section 23-31-220): (D) Notwithstanding the provisions contained in subsections (A) and (B), a premises owner or a person in legal possession of a premises who posts a sign in compliance with this chapter that prohibits the carrying of a concealable weapon on the premises is strictly liable for any injury sustained by a concealed weapon permit holder from the perpetrator of a crime while on the posted premises.\nSECTION 6 (Section 16-23-20): (17) a person who carries a concealable weapon on or about his person but does not possess a concealed weapon permit pursuant to Article 4, Chapter 31, Title 23, if in the act of evacuating during a mandatory evacuation order issued during a state of emergency declared by the Governor pursuant to Section 25-1-440.\nSECTION 7 (Section 23-31-215): (P) A permit issued pursuant to this article is valid for five years.\nSECTION 8 (Section 23-31-216): (A) At the expiration of a permit issued pursuant to Section 23-31-215, a permittee who would otherwise be eligible for an initial permit attains the status of confirmed carry. A person with this status may carry a concealable weapon under the same restrictions contained in Section 23-31-215 or as otherwise provided by law.\nSECTION 9 (Section 23-31-215): (N) Valid out-of-state permits to carry concealable weapons held by a resident of another state must be honored by this State. A resident of another state with a valid out-of-state permit to carry a concealable weapon is subject to and must abide by the laws of South Carolina regarding concealable weapons while in South Carolina.\nSECTION 10 (new Section 23-31-218): (A) In addition to concealed weapon permits issued pursuant to Section 23-31-215, the State Law Enforcement Division shall issue an institutional concealed weapon permit. ... (C) Notwithstanding Section 23-31-215(M), a person holding an institutional concealed weapon permit shall be allowed to carry a concealable weapon into a: (1) school or college athletic event not related to firearms; (2) daycare facility or preschool facility; (3) church or other established religious sanctuary; or (4) hospital, medical clinic, doctor's office, or any other facility where medical services or procedures are performed."
+}

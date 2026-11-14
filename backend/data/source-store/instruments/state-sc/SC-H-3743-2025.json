@@ -1,0 +1,39 @@
+{
+  "id": "SC-H-3743-2025",
+  "scope": "state:sc",
+  "title": "H3743 (126th General Assembly): Extreme Risk Protective Orders",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3743&session=126&summary=B",
+    "https://www.scstatehouse.gov/sess126_2025-2026/prever/3743_20250130.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Thomas Beach",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "85584b63-dcb8-469a-ace1-2198fa415c66"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Draft, 2025-01-30; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3743_20250130.htm (LegiScan doc 3092700))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3743-2025.draft.htm",
+      "sha256": "a7ecfe8135113c2b7379d0286bea25320bcc5541829112b056899ce7147df466"
+    },
+    "note": "Text read is a 'Draft' dated 2025-01-30 (listed as Draft by the state; treated as other). New bill, no marked text. No passage vote."
+  },
+  "operative_text": "Section 1 (new Section 23-31-710(B)): An entity described by subsection (A) may not adopt or enforce a rule, ordinance, order, policy, or other similar measure relating to an extreme risk protective order.\nSection 1 (new Section 23-31-720): No state, county, or municipal funds or resources may be used to enforce or assist in the enforcement of any federal statute, order, program, rule, or regulation to enact, implement, or enforce an extreme risk protective order against a person in this State.\nSection 1 (new Section 23-31-730): An entity described by Section 23-31-710(A) may not accept federal grant funds for the preparation, implementation, service, or enforcement of a program, statute, order, rule, or regulation to enact, implement, or enforce an extreme risk protective order against a person in this State.\nSection 1 (new Section 23-31-740): A person who serves, enforces, or attempts to serve or enforce an extreme risk protective order against another person in this State is guilty of a felony and, upon conviction, must be imprisoned not more than five years."
+}

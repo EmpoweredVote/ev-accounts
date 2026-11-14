@@ -1,0 +1,50 @@
+{
+  "id": "SC-H-3412-2023",
+  "scope": "state:sc",
+  "title": "H3412 (125th General Assembly): Firearms",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3412&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/3412_20221208.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Travis Moore",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "acfa8a3e-3c42-49d4-a0cb-e4fbb332ae69"
+    },
+    {
+      "name": "Thomas Pope",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c4552314-d8dd-4de1-bfc1-a1e601799115"
+    },
+    {
+      "name": "Jerry Carter",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2022-12-08; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/3412_20221208.htm (LegiScan doc 2617319))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3412-2023.introduced.htm",
+      "sha256": "4de6934bbffa33262b813dabbaf4feab92a35d6641a10c2d1053c03f72172f1a"
+    },
+    "note": "Introduced text of 2022-12-08; no passage vote. In Section 4, 'ship, transport, or receive' is added to 16-23-500(A), the old fine/5-year penalty is struck for graduated terms, and subsection (D) is reworded (court with jurisdiction over offence punishable by more than one year); (D) and (E) not quoted."
+  },
+  "operative_text": "Section 1 (Section 16-23-50(A)(2)): For a second offense, the offender is guilty of a misdemeanor and, upon conviction, must be fined not more than two thousand dollars or imprisoned not more than three years, or both. For a third or subsequent offense, the offender is guilty of a felony and, upon conviction, must be fined not less than one thousand dollars and not more than two thousand dollars and imprisoned not more than five years.\nSection 2 (new Section 16-23-540): Notwithstanding another provision of law, a person who steals a firearm is guilty of theft of a firearm and, upon conviction, is guilty of a felony and must be imprisoned not more than ten years.\nSection 3 (new Section 16-23-545): (A) It is unlawful for a person convicted of a felony to possess a firearm in this State.\nSection 4 (Section 16-23-500(B)): A person who violates the provisions of this section is guilty of a felony and, upon conviction: (1) for a first offense, must be imprisoned not more than ten years; (2) for a second offense, must be imprisoned for a mandatory minimum of five years, but not more than thirty years; and (3) for a third or subsequent offense, must be imprisoned for a mandatory minimum of fifteen years, but not more than thirty years.\nSection 5 (new Section 16-23-550): (A) It is unlawful for a person to possess a stolen firearm during the commission of a violent crime as defined by Section 16-1-60. (B) A person who violates this section is guilty of a felony and, upon conviction, must be imprisoned for a mandatory minimum of ten years."
+}

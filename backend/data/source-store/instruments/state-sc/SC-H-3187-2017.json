@@ -1,0 +1,78 @@
+{
+  "id": "SC-H-3187-2017",
+  "scope": "state:sc",
+  "title": "H3187 (122nd General Assembly): Unlawful carrying of handguns",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3187&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/3187_20161215.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "James Burns",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9e65a60c-4016-44f5-a830-c8562f08a7ac"
+    },
+    {
+      "name": "William Chumley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b79701a8-542e-4090-b752-d2e79fb92cd4"
+    },
+    {
+      "name": "Steven Long",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "55ef311d-6efd-40c9-8a32-d261624bf5a3"
+    },
+    {
+      "name": "Murrell Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "98739c83-a9de-4e97-a402-91f9b145723f"
+    },
+    {
+      "name": "Garry Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Roy Magnuson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e00d1f1-7d7d-4e9e-9482-15caeec92ff8"
+    },
+    {
+      "name": "John West",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael Pitts",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2016-12-15; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/3187_20161215.htm (LegiScan doc 1439444))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3187-2017.introduced.htm",
+      "sha256": "3cb1f96b33f7a91162dcb54a1c94459f2df876ff422cf9a00e3ee03153324c6e"
+    },
+    "note": "Introduced text, 2016-12-15. Only new item (17) is changed; items (1)-(16) are existing law (item 15 and 16 punctuation only)."
+  },
+  "operative_text": "Section 1 (Section 16-23-20): It is unlawful for anyone to carry about the person any handgun, whether concealed or not, except as follows, unless otherwise specifically prohibited by law:\nSection 1 (Section 16-23-20): (17) emergency medical services providers, firefighters, or other first responders who are engaged in examining, treating, or directing persons during an emergency and who are authorized to carry a concealed weapon pursuant to Article 4, Chapter 31, Title 23, or who have completed the same training as law enforcement officers in this State."
+}

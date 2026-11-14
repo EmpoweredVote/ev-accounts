@@ -1,0 +1,41 @@
+{
+  "id": "SC-S-341-2019",
+  "scope": "state:sc",
+  "title": "S0341 (123rd General Assembly): Magistrates; require magistrates to report to SLED within 10 days the disposition of criminal cases",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0341&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/341_20190108.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "George Campsen",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4b92412d-e472-4a41-a4d9-085ff1a6b22e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: SECTIONS 1-3, 5 (Sections 14-17-325, 22-1-200, 14-25-250, new Chapter 32 Title 14) — ten-day court case-disposition reporting and a Judicial Criminal Information Technology Committee"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2019-01-08; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/341_20190108.htm (LegiScan doc 1839908))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-341-2019.introduced.htm",
+      "sha256": "0c7dbd11c2dd61faf67830188378aeb83084209b0bdededb6a117c62c322fc26"
+    },
+    "note": "Introduced Jan. 8, 2019. Gun parts are a small part of a court/police criminal-records reporting bill. The 'ten days' replaces 'thirty' days in 14-17-325 (not gun-specific)."
+  },
+  "operative_text": "SECTION 1 (Section 14-17-325): The clerk of court shall report to the State Law Enforcement Division, within forty-eight hours, the issuance of any: ... orders preventing a person from possessing a firearm;\nSECTION 2 (new Section 22-1-200): Magistrates shall report to the State Law Enforcement Division, within forty-eight hours, the issuance of any: ... orders preventing a person from possessing a firearm;\nSECTION 3 (new Section 14-25-250): A municipal judge shall report to the State Law Enforcement Division, within forty-eight hours, the issuance of any: ... orders preventing a person from possessing a firearm;\nSECTION 4 (new Section 23-1-250): Each law enforcement agency must report to the State Law Enforcement Division within twenty-four hours: any incident in which a person may be prohibited from obtaining or possessing a firearm by state or federal law."
+}

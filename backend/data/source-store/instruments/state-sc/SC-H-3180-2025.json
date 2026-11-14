@@ -1,0 +1,45 @@
+{
+  "id": "SC-H-3180-2025",
+  "scope": "state:sc",
+  "title": "H3180 (126th General Assembly): Firearms",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3180&session=126&summary=B",
+    "https://www.scstatehouse.gov/sess126_2025-2026/prever/3180_20241205.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Wendell Gilliard",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75dffc0a-f084-4dfb-a2a7-6c81094bb0c2"
+    },
+    {
+      "name": "Gilda Cobb-Hunter",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "896bfe46-0d7e-48ba-86c1-60f39bc9234d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2024-12-05; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3180_20241205.htm (LegiScan doc 3031720))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3180-2025.introduced.htm",
+      "sha256": "907915537540da4c9f1b29f18e3b64974058be9ed1bc056477186d41c1dd9b38"
+    },
+    "note": "Introduced text of 2024-12-05; no passage vote. Section 1's 'assault weapon' definition (new item (h)) is not quoted. Struck: the word 'or' before 'sawed-off rifle' in each list; the print has no space after 'sawed-off shotgun,' where the struck word was, and the quotes add one."
+  },
+  "operative_text": "Section 1 (Section 16-23-210): \"High capacity magazine\" means a firearm magazine capable of holding more than fifteen rounds of ammunition.\nSection 2 (Section 16-23-220): It is unlawful for a person to transport from one place to another in this State or for any railroad company, express company, or other common carrier or any officer, agent, or employee of any of them or other person acting in their behalf knowingly to ship or to transport from one place to another in this State a machine gun or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, assault weapon, or high-capacity magazines, except as provided in Sections 16-23-250 and 23-31-330.\nSection 3 (Section 16-23-230): It is unlawful for a person to store, keep, possess, or have in possession or permit another to store, keep, possess, or have in possession a machine gun or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, assault weapon, or high-capacity magazines, except as provided in Sections 16-23-250 and 23-31-330.\nSection 4 (Section 16-23-240): It is unlawful for a person to sell, rent, give away, or participate in any manner, directly or indirectly, in the sale, renting, giving away, or otherwise disposing of a machine gun, or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, assault weapon, or high-capacity magazines, except as provided in Sections 16-23-250 and 23-31-330.\nSection 4 (Section 16-23-240): A person who violates the provisions of this section, upon conviction, must be punished pursuant to Section 16-23-260."
+}

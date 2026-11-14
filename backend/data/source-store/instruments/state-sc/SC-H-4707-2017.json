@@ -1,0 +1,54 @@
+{
+  "id": "SC-H-4707-2017",
+  "scope": "state:sc",
+  "title": "H4707 (122nd General Assembly): Firearms",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4707&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/4707_20180124.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jonathon Hill",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Craig Gagnon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "381f33f9-cfe6-469e-a7cb-c87f076dfce6"
+    },
+    {
+      "name": "Anne Thayer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joshua Putnam",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2018-01-24; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/4707_20180124.htm (LegiScan doc 1698805))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4707-2017.introduced.htm",
+      "sha256": "d387236aa3b4841dc404eefa15dcc2152d15d906c6cee1147f1da43cceb6e3ab"
+    },
+    "note": "Introduced text (Jan. 24, 2018). 'any' struck and 'a' added in places; only 'firearm accessories' is substantively new. Item (2) (landowner discharge) is existing law, not quoted."
+  },
+  "operative_text": "Section 1 (Section 23-31-510): \"No governing body of a county, municipality, or other political subdivision in the State may enact or promulgate a regulation or ordinance that regulates or attempts to regulate: (1) the transfer, ownership, possession, carrying, or transportation of firearms, firearm accessories, ammunition, components of firearms, or a combination of these things;\""
+}

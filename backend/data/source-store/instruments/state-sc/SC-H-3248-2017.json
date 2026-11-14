@@ -1,0 +1,54 @@
+{
+  "id": "SC-H-3248-2017",
+  "scope": "state:sc",
+  "title": "H3248 (122nd General Assembly): Firearms",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3248&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/3248_20161215.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Russell Fry",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Heather Crawford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e39ed0b0-9e95-4e0a-99c3-8545b15207aa"
+    },
+    {
+      "name": "Anne Thayer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joshua Putnam",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2016-12-15; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/3248_20161215.htm (LegiScan doc 1440092))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3248-2017.introduced.htm",
+      "sha256": "3eeb2bbd356c88969389821fd3e1a311b858d5d940d1fda4a35ed320cb3185ca"
+    },
+    "note": "Introduced text, 2016-12-15. Struck: college, university, technical college and post-secondary institution from the sentence exempting permit holders whose weapon stays locked in a vehicle; replaced by a broader exemption for post-secondary property."
+  },
+  "operative_text": "Section 1 (Section 16-23-420(A)): (A) It is unlawful for a person to possess a firearm of any kind on any premises or property owned, operated, or controlled by a private or public school, college, university, technical college, other post-secondary institution, or in any publicly owned building, without the express permission of the authorities in charge of the premises or property.\nSection 1 (Section 16-23-420(A)): Except as provided in Section 23-31-215(M), the provisions of this subsection related to any premises or property owned, operated, or controlled by a college, university, technical college, or other post-secondary institution do not apply to a person who is authorized to carry a concealed weapon pursuant to Article 4, Chapter 31, Title 23.\nSection 1 (Section 16-23-420(A)): The governing body of a college, university, technical college, or other post-secondary institution shall develop policies to implement the provisions contained in this subsection."
+}

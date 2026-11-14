@@ -1,0 +1,72 @@
+{
+  "id": "SC-H-3205-2017",
+  "scope": "state:sc",
+  "title": "H3205 (122nd General Assembly): Concealable weapons",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3205&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/3205_20161215.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Thomas Pope",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c4552314-d8dd-4de1-bfc1-a1e601799115"
+    },
+    {
+      "name": "Garry Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jason Elliott",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "24cb1132-a76c-4c90-904e-9e4565df8104"
+    },
+    {
+      "name": "Steven Long",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "55ef311d-6efd-40c9-8a32-d261624bf5a3"
+    },
+    {
+      "name": "Brandon Newton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cc45c293-1987-44dc-b660-47abade8a5b4"
+    },
+    {
+      "name": "Anne Thayer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joshua Putnam",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2016-12-15; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/3205_20161215.htm (LegiScan doc 1439466))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3205-2017.introduced.htm",
+      "sha256": "5d8ea3fb5a76db089128296a25aae4d0e75824bc3158d768d975827e67810b9c"
+    },
+    "note": "Introduced text, 2016-12-15. Struck: 'when carrying out the duties of their office' and the word 'active' before each office; added: 'active or retired' and item (13) clerks of court."
+  },
+  "operative_text": "Section 1 (Section 23-31-240): Notwithstanding any other provision contained in this article, the following persons who possess a valid permit pursuant to this article may carry a concealable weapon anywhere within this State, active or retired: (1) Supreme Court justices; (2) judges of the court of appeals; (3) circuit court judges; (4) family court judges; (5) masters-in-equity; (6) probate court judges; (7) magistrates; (8) municipal court judges; (9) federal judges; (10) administrative law judges; (11) solicitors and assistant solicitors; (12) workers' compensation commissioners; and (13) clerks of court."
+}

@@ -1,0 +1,62 @@
+{
+  "id": "SC-S-449-2017",
+  "scope": "state:sc",
+  "title": "S0449 (122nd General Assembly): SC Constitutional Carry Act of 2017",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0449&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/449_20170221.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shane Martin",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0cd44d98-8ccd-4f4f-93d6-e993ff6ba720"
+    },
+    {
+      "name": "Thomas Corbin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6d10b3d2-940f-45ef-af02-07252a3ce185"
+    },
+    {
+      "name": "Rex Rice",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d587a64f-3b40-421c-9963-9c934f961443"
+    },
+    {
+      "name": "Katrina Shealy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Danny Verdin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ec52251-b87c-4264-b1f7-e4d348e2756a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2017-02-21; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/449_20170221.htm (LegiScan doc 1526158))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-449-2017.introduced.htm",
+      "sha256": "75456561057e1a4104219d3216342c9e15aa7b099c6dc0639d034fa657cb63de"
+    },
+    "note": "Introduced Feb. 21, 2017. No passage vote. Struck: the old exception list in 16-23-20 (items 1-16), the concealed-carry offence in 16-23-460 (replaced by 'Reserved'), 'concealable' throughout 16-23-465, 23-31-220 and 23-31-235, and the permit-ID duty in 23-31-215(K). Quote is selective."
+  },
+  "operative_text": "SECTION 2 (Section 16-23-20(A)): It is lawful for anyone to carry about the person any handgun, whether concealed or not, except as provided for in subsection (B) or if the person is otherwise prohibited from owning, carrying, or purchasing a firearm as provided for by state or federal law.\nSECTION 2 (Section 16-23-20(B)): It is unlawful for a person to carry a handgun about the person, whether concealed or not, into a: (1) law enforcement, correctional, or detention facility; (2) courthouse or courtroom; (3) polling place on election days; (4) office of or the business meeting of the governing body of a county, public school district, municipality, or special purpose district; (5) school or college athletic event not related to firearms; (6) daycare facility or preschool facility; (7) place where the carrying of firearms is prohibited by federal law; (8) church or other established religious sanctuary unless express permission is given by the appropriate church official or governing body; (9) hospital, medical clinic, doctor's office, or any other facility where medical services or procedures are performed unless expressly authorized by the employer; (10) residence or dwelling place of another person without the express permission of the owner or person in legal control or possession, as appropriate; or (11) place clearly marked with a sign prohibiting the carrying of a weapon on the premises pursuant to Section 23-31-235.\nSECTION 2 (Section 16-23-20(C)): (4) anyone given permission to possess a firearm by the owner or manager of the property with the authority to give such permission.\nSECTION 3 (Section 16-23-50(A)(2)): A person violating the provisions of Section 16-23-20 except for Subsection (B)(11) is guilty of a misdemeanor and, upon conviction, must be fined not more than one thousand dollars or imprisoned not more than one year, or both.\nSECTION 4 (Section 16-23-420(A)): The provisions of this subsection related to any premises or property owned, operated, or controlled by a private or public school, college, university, technical college, or other post-secondary institution, do not apply when the firearm remains inside an attended or locked motor vehicle and is secured in a closed glove compartment, closed console, closed trunk, or in a closed container secured by an integral fastener and transported in the luggage compartment of the vehicle.\nSECTION 11 (Section 23-31-225): deleted. SECTION 12 (Section 23-31-230): deleted.\nSECTION 13 (Section 23-31-235): Notwithstanding any other provision of this article, any requirement of or allowance for the posting of signs prohibiting the carrying of a weapon upon any premises shall only be satisfied by a sign expressing the prohibition in both written language interdict and universal sign language."
+}

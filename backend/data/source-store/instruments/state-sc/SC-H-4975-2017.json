@@ -1,0 +1,95 @@
+{
+  "id": "SC-H-4975-2017",
+  "scope": "state:sc",
+  "title": "H4975 (122nd General Assembly): Firearms",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4975&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/4975_20180221.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Wendy Brawley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Gilda Cobb-Hunter",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "896bfe46-0d7e-48ba-86c1-60f39bc9234d"
+    },
+    {
+      "name": "John King",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ea8dd677-e991-4d35-9fc9-f309b77c9159"
+    },
+    {
+      "name": "Wendell Gilliard",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75dffc0a-f084-4dfb-a2a7-6c81094bb0c2"
+    },
+    {
+      "name": "Jerry Govan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4ece3bc1-8352-49a3-9a91-0199d0b57289"
+    },
+    {
+      "name": "Rosalyn Henderson-Myers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "772fbe5f-6b2c-4919-9b57-75c66beecf7c"
+    },
+    {
+      "name": "Chandra Dillard",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "110c964b-854d-467c-9b2b-f80218906afd"
+    },
+    {
+      "name": "Joseph McEachern",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Patricia Henegan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ivory Thigpen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Carl Anderson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ddc35ab7-2f30-4a26-8fdd-92778435636f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2018-02-21; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/4975_20180221.htm (LegiScan doc 1737851))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4975-2017.introduced.htm",
+      "sha256": "188034337915762a5890a22f5d3c1d76161eca6c9f493eacfa6a00ce7f61aa19"
+    },
+    "note": "Introduced text (Feb. 21, 2018). 'or' before 'sawed-off rifle' struck in Sections 2-4. Section 4 (sale/rental ban, same additions), Section 6 (surrender within 90 days) and the 'assault weapon' definition in Section 1 are not quoted for length."
+  },
+  "operative_text": "Section 2 (Section 16-23-220): It is unlawful for a person to transport from one place to another in this State or for any railroad company, express company, or other common carrier or any officer, agent, or employee of any of them or other person acting in their behalf knowingly to ship or to transport from one place to another in this State a machine gun or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, assault weapon, or high-capacity magazines, except as provided in Sections 16-23-250 and 23-31-330.\nSection 3 (Section 16-23-230): It is unlawful for a person to store, keep, possess, or have in possession or permit another to store, keep, possess, or have in possession a machine gun or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, assault weapon, or high-capacity magazines, except as provided in Sections 16-23-250 and 23-31-330.\nSection 5 (new Section 16-23-540): (A) It is unlawful for a person to possess, distribute, or manufacture a part, component, attachment, device, or accessory designed to accelerate the rate of fire of a semiautomatic weapon including, but not limited to, a device commonly known as a bump stock or trigger crank. (B) A person who violates the provisions of this section is guilty of a felony and, upon conviction, must be imprisoned not more than five years.\nSection 1 (Section 16-23-210): 'High-capacity magazine' means a firearm magazine capable of holding more than fifteen rounds of ammunition."
+}

@@ -1,0 +1,55 @@
+{
+  "id": "SC-S-527-2017",
+  "scope": "state:sc",
+  "title": "S0527 (122nd General Assembly): Handguns",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0527&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/527_20170309.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Greg Hembree",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "308cba89-7a88-43a3-b0cf-3e57edec254a"
+    },
+    {
+      "name": "Marlon Kimpson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Chauncey Gregory",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "George Campsen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4b92412d-e472-4a41-a4d9-085ff1a6b22e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2017-03-09; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/527_20170309.htm (LegiScan doc 1554193))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-527-2017.introduced.htm",
+      "sha256": "36e1689db2b1310016d49a24654a61ea6c9df1285c66d99361439cb684b3e1ac"
+    },
+    "note": "Introduced text of 2017-03-09; no later version read. Section 3 strikes the old handgun-only list (including the under-18 item, moved to new 16-23-25) and the 'crime of violence' definition ('Reserved'); the felony penalty in 16-23-50(A)(1) ('of a felony', $2,000/5 years) is struck and replaced by the misdemeanor first-offense penalty quoted. Section 5 repeals Sections 16-23-500 and 23-31-1040 (text not in bill)."
+  },
+  "operative_text": "Section 2 (new Section 16-23-25): (A) It is unlawful for a person to sell, offer to sell, deliver, lease, rent, barter, exchange, or transport for sale in this State any handgun to a person who is under the age of eighteen, but this shall not apply to the issue of handguns to members of the Armed Forces of the United States, active or reserve; National Guard; State Militia; or R. O. T. C., when on duty or training, or the temporary loan of handguns for instruction under the immediate supervision of a parent or adult instructor. (B) It is unlawful for a person enumerated in subsection (A) to possess or attempt to possess handguns within this State.\nSection 3 (Section 16-23-30): (A) It is unlawful for a person to sell, offer to sell, deliver, lease, rent, barter, exchange, transport for sale into this State, or otherwise dispose of any firearm or ammunition to a person knowing or having reasonable cause to believe that the person: (1) has been convicted or adjudicated delinquent in any state court of a crime classified as a felony in that state, or any federal court of a crime classified as a felony under the United States Code; (2) is a fugitive from justice; (3) is an unlawful user of or addicted to any controlled substance as defined in Section 44-53-110; (4) has been adjudicated as mentally defective or who has been committed to a mental institution; (5) who, having been a citizen of the United States, has renounced his citizenship; (6) is a member of a subversive organization (7) is subject to a court order that restrains the person from harassing, stalking, or threatening a household member as defined in Section 16-25-10, or the child of a household member, except that this paragraph shall only apply to a court order that: (a) was issued after a hearing of which the person received actual notice, and at which the person had the opportunity to participate; and (b) includes a finding that the person represents a credible threat to the physical safety of the household member or child; or (8) is subject to an order of a circuit judge or summary court judge of this State and has been found unfit to carry or possess a firearm, such adjudication to be made upon application by any police officer, or by any prosecuting officer of this State, except that this paragraph shall only apply to a court order that: (a) was issued after a hearing in which the person was provided reasonable notice and had the opportunity to be heard; and (b) includes a finding that the person represents a credible threat to the physical safety of another. (B) It is unlawful for a person enumerated in subsection (A) to possess or attempt to possess firearms or ammunition within this State. (C) A person shall not knowingly buy, sell, transport, pawn, receive, or possess any stolen firearm or one from which the original serial number has been removed or obliterated.\nSection 4 (Section 16-23-50): (A)(1) A person, including a dealer, who violates the provisions of this article, except Section 16-23-20, is guilty of a misdemeanor and, upon conviction, for a first offense, must be fined not more than two thousand five hundred dollars or imprisoned not more than three years, or both."
+}

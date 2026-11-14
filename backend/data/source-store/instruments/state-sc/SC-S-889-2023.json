@@ -1,0 +1,39 @@
+{
+  "id": "SC-S-889-2023",
+  "scope": "state:sc",
+  "title": "S0889 (125th General Assembly): Firearms",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0889&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/889_20231130.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Deon Tedder",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "60aaaf10-d41e-4c05-8cf0-3aab818d8929"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2023-11-30; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/889_20231130.htm (LegiScan doc 2852233))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-889-2023.introduced.htm",
+      "sha256": "bca096447e70629c65bf367a2bc2e194e904ad0846e5e494c8c110c509ace047"
+    },
+    "note": "Introduced text of 2023-11-30. Section 16-23-110(B) exceptions (family loans and gifts, estates, emergencies, range/hunting use) not quoted for length."
+  },
+  "operative_text": "Section 1 (new Section 16-23-110): (A)(1) It is unlawful for a transferor to transfer a firearm to an unlicensed transferee, unless a licensed dealer has first taken possession of the firearm for the purpose of complying with Section 16-23-120.\nSection 1 (new Section 16-23-120): (A) For any sale or transfer of a firearm, it is unlawful for a licensed dealer to deliver a firearm to any transferee unless the licensed dealer contacts the National Instant Criminal Background Check System (NICS) to conduct a background check on the transferee and complies with all applicable provisions of 18 U.S.C Section 922(t). (B) It is unlawful for a licensed dealer to transfer the possession of, or title to, a firearm to a transferee who is not so licensed unless the licensed dealer has provided the transferee with a notice of the prohibition under Section 16-23-110 and the transferee has certified that he has been provided with this notice on a form prescribed by the South Carolina Law Enforcement Division. The licensed dealer must retain a copy of the notice certified by the transferee for at least five years.\nSection 1 (new Section 16-23-130): A person who violates the provisions of this article is guilty of a Class A misdemeanor and, upon conviction, must be imprisoned not more than three years, fined not more than two thousand dollars, or both."
+}

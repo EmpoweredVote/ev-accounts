@@ -1,0 +1,39 @@
+{
+  "id": "SC-S-875-2019",
+  "scope": "state:sc",
+  "title": "S0875 (123rd General Assembly): Firearms; local regulation",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0875&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/875_20191211.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Danny Verdin",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ec52251-b87c-4264-b1f7-e4d348e2756a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2019-12-11; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/875_20191211.htm (LegiScan doc 2073649))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-875-2019.introduced.htm",
+      "sha256": "bdaf280acb3437ca5cac749e3edbc938eb8abab3a2136c6ba895ccc4ac1820b4"
+    },
+    "note": "Introduced text of 2019-12-11. Section 1 strikes 'or' and adds 'manufacture, assembly, storage, warehousing, distribution, or sale' and 'homemade firearms created or assembled without a serial number'."
+  },
+  "operative_text": "Section 1 (Section 23-31-510): No governing body of any county, municipality, or other political subdivision in the State may enact or promulgate any regulation or ordinance that regulates or attempts to regulate: (1) the transfer, ownership, possession, carrying, transportation, manufacture, assembly, storage, warehousing, distribution, or sale of firearms, ammunition, components of firearms, homemade firearms created or assembled without a serial number, or any combination of these things; or (2) a landowner discharging a firearm on the landowner's property to protect the landowner's family, employees, the general public, or the landowner's property from animals that the landowner reasonably believes pose a direct threat or danger to the landowner's property, people on the landowner's property, or the general public. For purposes of this item, the landowner's property must be a parcel of land comprised of at least twenty-five contiguous acres. Any ordinance regulating the discharge of firearms that does not specifically provide for an exclusion pursuant to this item is unenforceable as it pertains to an incident described in this item; otherwise, the ordinance is enforceable."
+}

@@ -1,0 +1,44 @@
+{
+  "id": "SC-H-4463-2017",
+  "scope": "state:sc",
+  "title": "H4463 (122nd General Assembly): Firearm",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4463&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/4463_20171213.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kit Spires",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rosalyn Henderson-Myers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "772fbe5f-6b2c-4919-9b57-75c66beecf7c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2017-12-13; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/4463_20171213.htm (LegiScan doc 1663185))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4463-2017.introduced.htm",
+      "sha256": "6c8a55e544e80c7ecf37f44a391215e9bf1ae1f43be489eb94663e7c64f38913"
+    },
+    "note": "Introduced version (Dec. 13, 2017); no later version or vote on file."
+  },
+  "operative_text": "Section 1 (new Section 16-23-540): (B) It is unlawful for a person who owns property or who is the lawful occupant of property located in unincorporated areas of the State to engage in the discharging of a firearm on his property, or who permits such activity involving the discharging of a firearm by others on his property, without appropriate safety measures in place.\nSection 1 (new Section 16-23-540): A person who violates the provisions of this section is guilty of a misdemeanor and, upon conviction, must be fined not more than five hundred dollars or imprisoned not more than thirty days."
+}

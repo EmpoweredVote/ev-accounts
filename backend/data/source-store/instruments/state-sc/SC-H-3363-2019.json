@@ -1,0 +1,110 @@
+{
+  "id": "SC-H-3363-2019",
+  "scope": "state:sc",
+  "title": "H3363 (123rd General Assembly): Concealed weapons permits",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3363&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/3363_20181218.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michael Pitts",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brian White",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lonnie Hosey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "11483511-6da8-4980-825d-9ecfa3da0074"
+    },
+    {
+      "name": "Roy Magnuson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e00d1f1-7d7d-4e9e-9482-15caeec92ff8"
+    },
+    {
+      "name": "Adam Morgan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bill Taylor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "faa9a73c-e06c-45ef-8961-3c407f6025e1"
+    },
+    {
+      "name": "William Hixon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ce66d36d-d959-40cc-8b2b-565bb57f63bf"
+    },
+    {
+      "name": "Thomas Pope",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c4552314-d8dd-4de1-bfc1-a1e601799115"
+    },
+    {
+      "name": "Jason Elliott",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "24cb1132-a76c-4c90-904e-9e4565df8104"
+    },
+    {
+      "name": "Bobby Cox",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tommy Stringer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Garry Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dwight Loftis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sylleste Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ca9f32d0-baf9-4930-9b25-25522aa2a735"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2018-12-18; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/3363_20181218.htm (LegiScan doc 1831254))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3363-2019.introduced.htm",
+      "sha256": "5c2e981b790bce27330a7292329a8b1d7b50286b0972667cc392d17e0d6cea0a"
+    },
+    "note": "Introduced 2018-12-18. 'must' struck, 'may' added; 'or openly on one's person' added."
+  },
+  "operative_text": "SECTION 1 (Section 23-31-210(5)): 'Concealable weapon' means a firearm having a length of less than twelve inches measured along its greatest dimension that may be carried in a manner that is hidden from public view in normal wear of clothing except when needed for self-defense, defense of others, and the protection of real or personal property or openly on one's person."
+}

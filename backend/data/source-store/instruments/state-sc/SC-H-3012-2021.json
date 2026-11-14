@@ -1,0 +1,310 @@
+{
+  "id": "SC-H-3012-2021",
+  "scope": "state:sc",
+  "title": "H3012 (124th General Assembly): Second Amendment Protection Act",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3012&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/3012_20201209.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Brian White",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "James Burns",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9e65a60c-4016-44f5-a830-c8562f08a7ac"
+    },
+    {
+      "name": "William Chumley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b79701a8-542e-4090-b752-d2e79fb92cd4"
+    },
+    {
+      "name": "Roy Magnuson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e00d1f1-7d7d-4e9e-9482-15caeec92ff8"
+    },
+    {
+      "name": "Bill Taylor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "faa9a73c-e06c-45ef-8961-3c407f6025e1"
+    },
+    {
+      "name": "Bobby Cox",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Patrick Haddon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "807d4af9-8270-4139-9d4f-715aa2906036"
+    },
+    {
+      "name": "Steven Long",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "55ef311d-6efd-40c9-8a32-d261624bf5a3"
+    },
+    {
+      "name": "Cally Forrest",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1646f5cd-b151-494a-8a3b-dc862a31eb08"
+    },
+    {
+      "name": "Anne Thayer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Robert May",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Victor Dabney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kevin Hardee",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bbc6dd3c-a033-4b69-b791-ab596aad06fe"
+    },
+    {
+      "name": "Donald McCabe",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1262cf37-df1d-49d4-b2c6-a6a1dde6b459"
+    },
+    {
+      "name": "Stewart Jones",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "William Herbkersman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "98b47d1a-9510-4dbc-a653-f411248b172f"
+    },
+    {
+      "name": "West Cox",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Chip Huggins",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Heather Crawford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e39ed0b0-9e95-4e0a-99c3-8545b15207aa"
+    },
+    {
+      "name": "Weston Newton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f933e7a7-00b1-40eb-af8f-549d0f84166b"
+    },
+    {
+      "name": "Murrell Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "98739c83-a9de-4e97-a402-91f9b145723f"
+    },
+    {
+      "name": "Jeffrey Bradley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "94306fd5-ad6d-40b6-bfbb-9d71efc9845c"
+    },
+    {
+      "name": "Ashley Trantham",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dennis Moss",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "db324b15-8d33-4f13-9e4e-9a7d6a4a4613"
+    },
+    {
+      "name": "Bruce Bryant",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Garry Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Richard Martin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sylleste Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ca9f32d0-baf9-4930-9b25-25522aa2a735"
+    },
+    {
+      "name": "John Mccravy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7e726b81-f400-44bb-98e1-7a63a9248b3b"
+    },
+    {
+      "name": "Mandy Kimmons",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "William Hixon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ce66d36d-d959-40cc-8b2b-565bb57f63bf"
+    },
+    {
+      "name": "Craig Gagnon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "381f33f9-cfe6-469e-a7cb-c87f076dfce6"
+    },
+    {
+      "name": "John West",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Frank Atkinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3449327-3875-4654-8670-b1db689916d2"
+    },
+    {
+      "name": "William Sandifer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "William Whitmire",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "77a40e10-de4c-4511-a01a-d322efd296a9"
+    },
+    {
+      "name": "Richard Yow",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f6f96623-dba1-482c-9d1f-4c623b09f33a"
+    },
+    {
+      "name": "Phillip Lowe",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9fb23100-4058-4452-b55c-c01fc08d4cc1"
+    },
+    {
+      "name": "Wallace Jordan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "935148fa-5a89-4b41-a99d-1b150c6b4c1c"
+    },
+    {
+      "name": "Russell Fry",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Timothy McGinnis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bab16ec4-346a-45ed-a7fb-63be00b6d772"
+    },
+    {
+      "name": "Shannon Erickson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b88e514c-9200-4a73-a81b-074cf5e8cec7"
+    },
+    {
+      "name": "Gary Simrill",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Christopher Wooten",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "805dd108-b51b-43ce-9ecf-b766b5348c5d"
+    },
+    {
+      "name": "Nathan Ballentine",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "033391af-de42-42bd-9961-7414218f605e"
+    },
+    {
+      "name": "Micajah Caskey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8f3a9f16-8c37-4b1b-aedb-f6dc094b5834"
+    },
+    {
+      "name": "Mark Willis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "188bfed7-3646-4ab1-be79-48810f11c28b"
+    },
+    {
+      "name": "Thomas Pope",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c4552314-d8dd-4de1-bfc1-a1e601799115"
+    },
+    {
+      "name": "Marvin Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7e803da0-9570-4d7d-bb5b-21de6ebbe8df"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2020-12-09; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/3012_20201209.htm (LegiScan doc 2220465))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3012-2021.introduced.htm",
+      "sha256": "cb32966dda722c675c9e1fae3464cd99ad863a60f0dbf16cf940c7a01ed39f2f"
+    },
+    "note": "Introduced 2020-12-09. Enrolled text not read. The page legend lines are not law. The bill rests its authority on the Second, Ninth and Tenth Amendments and the state constitution (Section 23-31-910), but these are the bill's own claims, not a requirement. Passage vote: none listed; introduced text only."
+  },
+  "operative_text": "Section 1 (new Section 23-31-930): (A) A personal firearm, a firearm accessory, or ammunition that is manufactured commercially or privately and owned in South Carolina and remains within the borders of South Carolina is not subject to any federal law, treaty, federal regulation, or federal executive action, including any federal firearm or ammunition registration program, under the authority of Congress to regulate interstate commerce.\nSection 1 (new Section 23-31-940): A firearm manufactured in South Carolina within the meaning of this article must have the words 'Made in South Carolina' clearly stamped on a central metallic part, such as the receiver or frame.\nSection 1 (new Section 23-31-950): (A) Any act, law, treaty, order, rule, or regulation of the government of the United States which violates the Second Amendment to the Constitution of the United States is null, void, and unenforceable in the State of South Carolina.\nSection 1 (new Section 23-31-950): (B) No official, agent or employee of the State of South Carolina, or any political subdivision of it, shall enforce or attempt to enforce any act, law, treaty, order, rule, or regulation of the government of the United States regarding any personal firearm, firearm accessory, or ammunition that is manufactured commercially or privately and owned in the State of South Carolina and remains within the borders of South Carolina.\nSection 1 (new Section 23-31-1000): A person who violates this section is guilty of a Class A felony.\nSection 1 (new Section 23-31-1010): The Attorney General may seek injunctive relief in any court of competent jurisdiction to enjoin any official, agent, or employee of the government of the United States or employee of a corporation providing services to the government of the United States from enforcing any act, law, treaty, order, rule, or regulation of the government of the United States regarding a firearm, a firearm accessory, or ammunition that is manufactured commercially or privately and owned in the State of South Carolina and remains within the borders of South Carolina."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "SC-H-4616-2021",
+  "scope": "state:sc",
+  "title": "H4616 (124th General Assembly): Electronic identification chips installed in guns",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4616&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/4616_20211117.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Wendell Gilliard",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75dffc0a-f084-4dfb-a2a7-6c81094bb0c2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2021-11-17; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/4616_20211117.htm (LegiScan doc 2450470))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4616-2021.introduced.htm",
+      "sha256": "64726ccb8743fb38f41d7f445503edffa62cce9e761be4c2665bcf4de70b3a93"
+    },
+    "note": "Introduced version (Nov. 17, 2021); no later version or vote on file."
+  },
+  "operative_text": "Section 1 (new Section 23-31-910): Notwithstanding another provision of law, all guns manufactured in this State must be equipped with an electronic chip that identifies its owner."
+}

@@ -1,0 +1,51 @@
+{
+  "id": "SC-S-769-2017",
+  "scope": "state:sc",
+  "title": "S0769 (122nd General Assembly): Concealed weapons permits",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0769&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/769_20171206.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Richard Cash",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f1dfe9df-aa28-4533-b964-be09be0bc581"
+    },
+    {
+      "name": "Rex Rice",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d587a64f-3b40-421c-9963-9c934f961443"
+    },
+    {
+      "name": "Thomas Corbin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6d10b3d2-940f-45ef-af02-07252a3ce185"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2017-12-06; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/769_20171206.htm (LegiScan doc 1661109))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-769-2017.introduced.htm",
+      "sha256": "97b30ed8e55d65b2deda891691141fa43ee9e9276a9b3b35c542df49d7dceee2"
+    },
+    "note": "Introduced text of 2017-12-06."
+  },
+  "operative_text": "Section 1 (new Section 23-31-232): Notwithstanding any provision of law, upon express permission given by the appropriate church official or governing body, a person who holds a permit issued pursuant to this article may carry a concealable weapon on school premises if a church leases the school premises for church services or official church activities. The provisions contained in this section apply only during those times that the church has the use and enjoyment of the property pursuant to its lease with the school."
+}

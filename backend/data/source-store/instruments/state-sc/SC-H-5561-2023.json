@@ -1,0 +1,131 @@
+{
+  "id": "SC-H-5561-2023",
+  "scope": "state:sc",
+  "title": "H5561 (125th General Assembly): Constitutional Carry/Second Amendment Preservation Act Repeal",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=5561&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/5561_20240508.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ivory Thigpen",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Gilda Cobb-Hunter",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "896bfe46-0d7e-48ba-86c1-60f39bc9234d"
+    },
+    {
+      "name": "John King",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ea8dd677-e991-4d35-9fc9-f309b77c9159"
+    },
+    {
+      "name": "Wendell Gilliard",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75dffc0a-f084-4dfb-a2a7-6c81094bb0c2"
+    },
+    {
+      "name": "Tiffany Spann-Wilder",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b9e2feb4-a97d-4f91-b446-cc89f74d32cc"
+    },
+    {
+      "name": "Kambrell Garvin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "342d26f8-84a1-4744-ac62-f54faf7a6d52"
+    },
+    {
+      "name": "Joseph Jefferson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Marvin Pendarvis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Carl Anderson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ddc35ab7-2f30-4a26-8fdd-92778435636f"
+    },
+    {
+      "name": "William Wheeler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael Rivers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a63d516b-228a-441f-bf4a-7f8bf468f168"
+    },
+    {
+      "name": "JA Moore",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8fb20bf7-3e8c-4d94-8a64-94222f34420f"
+    },
+    {
+      "name": "Jermaine Johnson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5a642c1c-8754-49c5-ac1c-eff925a6cc43"
+    },
+    {
+      "name": "Rosalyn Henderson-Myers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "772fbe5f-6b2c-4919-9b57-75c66beecf7c"
+    },
+    {
+      "name": "Lonnie Hosey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "11483511-6da8-4980-825d-9ecfa3da0074"
+    },
+    {
+      "name": "David Weeks",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2b08cfac-febe-4b5b-891f-61f4aa33e75c"
+    },
+    {
+      "name": "Robert Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5b8a0353-929b-4fcd-8228-0b4eaf42d149"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2024-05-08; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/5561_20240508.htm (LegiScan doc 2994796))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-5561-2023.introduced.htm",
+      "sha256": "2e6cb10db8950be3bf6b666e4ca99f159a0e3ac0553584f58556f6d58aa1b1dd"
+    },
+    "note": "Introduced text, as filed; no passage vote recorded in the data. The bill does not set out the reverted text; the gun content comes from the title and the Act it repeals."
+  },
+  "operative_text": "SECTION 1: Act 111 of 2024 is repealed.\nSECTION 2: The statutes contained in Act 111 of 2024 revert to the language contained in them prior to March 7, 2024."
+}

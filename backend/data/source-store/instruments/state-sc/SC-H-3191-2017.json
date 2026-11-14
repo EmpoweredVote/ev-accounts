@@ -1,0 +1,39 @@
+{
+  "id": "SC-H-3191-2017",
+  "scope": "state:sc",
+  "title": "H3191 (122nd General Assembly): Penalties for offense involving unlawful carrying of handguns",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3191&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/3191_20161215.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Wendell Gilliard",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75dffc0a-f084-4dfb-a2a7-6c81094bb0c2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2016-12-15; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/3191_20161215.htm (LegiScan doc 1439442))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3191-2017.introduced.htm",
+      "sha256": "38fc97308ca520f993739c82e1150d58a74601e8a244d06f5ab04e7c722556df"
+    },
+    "note": "Introduced text, 2016-12-15. Handgun confiscation subsection (B) is unchanged except 'under' struck and 'pursuant to' added."
+  },
+  "operative_text": "Section 1 (Section 16-23-50): (A)(1) A person, including a dealer, who violates the provisions of this article, except Section 16-23-20, is guilty of a felony and, upon conviction, for a: (a) first offense, must be fined not more than two thousand dollars or imprisoned not more than five years, or both; (b) second offense, must be fined not more than five thousand dollars or imprisoned not less than one year nor more than five years, or both; and (c) third or subsequent offense, must be fined not more than ten thousand dollars or imprisoned not less than two years nor more than ten years, or both.\nSection 1 (Section 16-23-50): (2) A person who violates the provisions of Section 16-23-20 for a: (a) first offense, is guilty of a misdemeanor and, upon conviction, must be fined not more than one thousand dollars or imprisoned not more than one year, or both; (b) second offense, is guilty of a misdemeanor and, upon conviction, must be fined not more than two thousand dollars or imprisoned not more than two years, or both; (c) third or subsequent offense, is guilty of a felony and, upon conviction, must be fined not more than three thousand dollars or imprisoned not less than one year nor more than five years, or both."
+}

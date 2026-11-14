@@ -1,0 +1,39 @@
+{
+  "id": "SC-H-5330-2023",
+  "scope": "state:sc",
+  "title": "H5330 (125th General Assembly): Graduated Penalties for Illegal Possession of a Firearm",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=5330&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/5330_20240326.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Heather Bauer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0d92d6df-be01-4963-ac36-781b2c90c4a0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2024-03-26; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/5330_20240326.htm (LegiScan doc 2968428))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-5330-2023.introduced.htm",
+      "sha256": "994834fd0751285f205d2c31f68f054738512e58cece45efe8230499e9fa3167"
+    },
+    "note": "Introduced text of 2024-03-26; no passage vote. Bill amends text as last amended by Act 111 of 2024. Section 4 struck 'openly' and the last sentence ('A person merely carrying a weapon ... is not sufficient to justify a search, detention, or arrest.'). Section 5 struck the 'or other publicly owned building ... where court is held' wording from item (2) and moved it, rewritten, into new item (12); item (12) is quoted as an item without the lead-in 'It is unlawful ... for anyone to carry about the person any handgun ... into a:'. Section 2 also adds 'firearm' to the vehicle-storage exception sentence."
+  },
+  "operative_text": "SECTION 1 (Section 16-23-500(B)): A person who violates the provisions of this section is guilty of a felony and, upon conviction: (1) for a first offense, must be imprisoned not more than five years; (2) for a second offense within twenty years of the first offense, must be imprisoned for a mandatory minimum of five years, but not more than twenty years; and (3) for a third or subsequent offense within twenty years of the first offense, must be imprisoned for a mandatory minimum of ten years, but not more than thirty years.\nSECTION 2 (Section 16-23-420(A)): Authorities in charge of the premises or property of a public school are prohibited from providing express permission to possess a firearm on the public school's premises or property to a student enrolled at that school.\nSECTION 3 (Section 16-23-430(B)): The provisions of subsection (A) apply to a student enrolled in a public school even if the weapon remains inside an attended or locked motor vehicle and is secured in a closed glove compartment, closed console, closed trunk, or in a closed container secured by an integral fastener and transported in the luggage compartment of the vehicle.\nSECTION 4 (Section 23-31-245): A person carrying a weapon in accordance with this article does not give a law enforcement officer reasonable suspicion or probable cause to search, detain, or arrest the person. This article does not prevent a law enforcement officer from searching, detaining, or arresting a person when he has a particularized and objective basis for suspecting the particular person stopped of criminal activity.\nSECTION 5 (Section 16-23-20(A)(12)): publicly owned building, other than a courthouse, whether owned by the State, a county, a municipality, or another political subdivision, where court is held and during the time that court is in session."
+}

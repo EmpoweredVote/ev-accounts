@@ -1,0 +1,39 @@
+{
+  "id": "SC-S-848-2023",
+  "scope": "state:sc",
+  "title": "S0848 (125th General Assembly): South Carolina Omnibus Firearm Safety Act of 2024",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0848&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/848_20231130.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bradley Hutto",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c00f954-b79c-4324-9ef4-3a50b2aae213"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2023-11-30; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/848_20231130.htm (LegiScan doc 2852240))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-848-2023.introduced.htm",
+      "sha256": "34af86e7d2a42dc1f4154f173ae1563b8015c97a5fa87a54d2b412cb7e6c88df"
+    },
+    "note": "As-filed text (2023-11-30); no vote recorded. Also: Section 16-23-430(C) school weapon penalty fine raised from one to two thousand dollars and prison from five to ten years (struck/added); new 16-24-60 sale warnings; 16-23-130 and 16-24-20(B) penalties; 23-31-9010(B) 30-day misdemeanor. Quote is partial for length."
+  },
+  "operative_text": "Section 2 (new Section 16-23-110): (A)(1) It is unlawful for a transferor to transfer a firearm to an unlicensed transferee unless a licensed dealer has first taken possession of the firearm for the purpose of complying with Section 16-23-120.\nSection 2 (new Section 16-23-120): (A) For any sale or transfer of a firearm, it is unlawful for a licensed dealer to deliver a firearm to any transferee unless the licensed dealer contacts the National Instant Criminal Background Check System (NICS) to conduct a background check on the transferee and complies with all applicable provisions of 18 U.S.C. Section 922(t).\nSection 2 (new Section 16-23-130): A person who violates the provisions of this article is guilty of a Class A misdemeanor and, upon conviction, must be imprisoned not more than three years, fined not more than two thousand dollars, or both.\nSection 3 (new Section 23-31-1210): A solicitor, assistant solicitor, or two law enforcement officers may file a verified complaint with any probate court, for issuance of a warrant to seize any firearms and ammunition of a person if the solicitor, assistant solicitor, or law enforcement officers have probable cause to believe that: ... (1) the person poses a risk of imminent personal injury to himself or to other individuals;\nSection 3 (new Section 23-31-1250): (A) Not later than seven days after execution of the warrant pursuant to this article, the probate court for the county where the person named in the warrant resides shall hold a hearing to determine whether any seized firearms and ammunition should be returned to the person named in the warrant or should continue to be held by the State. ... (B) If, after the hearing, the court finds by clear and convincing evidence that the person poses a risk of imminent personal injury to himself or to other individuals, the court may order that the firearms and ammunition seized pursuant to the warrant to continue to be held by the State for a period not to exceed one year.\nSection 4 (new Section 16-24-20): (A) Except as provided in Section 16-24-40, a person who keeps a loaded firearm on premises which are under his custody or control where he knows or reasonably should know that a child is likely to gain access to the firearm without the supervision of the person who has custody or control of the premises must store the loaded firearm in a secure location.\nSection 5 (Section 16-23-420(C)): (C) A person who violates the provisions of this section is guilty of a felony and, upon conviction, must be fined not more than ten thousand dollars or imprisoned not more than ten years, or both.\nSection 6 (new Section 23-31-9010): (A) A resident of this State who owns or possesses a firearm shall obtain and continuously maintain in full force and effect a homeowner's, renter's, or gun liability insurance policy that covers losses or damages resulting from any negligent or accidental use of the firearm including, but not limited to, death, injury, and property damage."
+}

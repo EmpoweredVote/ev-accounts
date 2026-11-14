@@ -1,0 +1,44 @@
+{
+  "id": "SC-S-1136-2019",
+  "scope": "state:sc",
+  "title": "S1136 (123rd General Assembly): Second Amendment Protection Act",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=1136&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/1136_20200227.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Scott Talley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ross Turner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e8cb4c-78be-425b-b11d-b9dab6e8225d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2020-02-27; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/1136_20200227.htm (LegiScan doc 2154292))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-1136-2019.introduced.htm",
+      "sha256": "6f49ffaca6926435a3fd18fdfd70d8703d5e6eba96256c3bdf5ca049c8c83ff9"
+    },
+    "note": "Introduced print dated 2020-02-27; no passage vote on file."
+  },
+  "operative_text": "Section 2 (new Section 23-31-920(A)): A personal firearm, a firearms accessory, or ammunition that is manufactured commercially or privately and owned in South Carolina and remains within the borders of South Carolina is not subject to any federal law, treaty, federal regulation, or federal executive action, including any federal firearm or ammunition registration program, under the authority of Congress to regulate interstate commerce.\nSection 2 (new Section 23-31-930): A firearm manufactured in South Carolina within the meaning of this article must have the words 'Made in South Carolina' clearly stamped on a central metallic part, such as the receiver or frame.\nSection 2 (new Section 23-31-940(B)): No official, agent, or employee of the State of South Carolina, or any political subdivision of it, shall enforce or attempt to enforce any act, law, treaty, order, rule, or regulation of the government of the United States regarding any personal firearm, firearms accessory, or ammunition that is manufactured commercially or privately and owned in the State of South Carolina and remains within the borders of South Carolina.\nSection 2 (new Section 23-31-950): A person who violates this section is guilty of a Class A felony.\nSection 2 (new Section 23-31-960): The Attorney General may seek injunctive relief in any court of competent jurisdiction to enjoin any official, agent, or employee of the government of the United States or employee of a corporation providing services to the government of the United States from enforcing any act, law, treaty, order, rule, or regulation of the government of the United States regarding a firearm, a firearms accessory, or ammunition that is manufactured commercially or privately and owned in the State of South Carolina and remains within the borders of South Carolina."
+}

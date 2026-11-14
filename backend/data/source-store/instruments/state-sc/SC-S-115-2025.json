@@ -1,0 +1,69 @@
+{
+  "id": "SC-S-115-2025",
+  "scope": "state:sc",
+  "title": "S0115 (126th General Assembly): School Safety",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0115&session=126&summary=B",
+    "https://www.scstatehouse.gov/sess126_2025-2026/prever/115_20241211.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Brian Adams",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d33b8da6-60b3-480a-964f-1d3315fac434"
+    },
+    {
+      "name": "Lawrence Grooms",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a5c02924-84fc-40b5-88db-d6f2a13e9aac"
+    },
+    {
+      "name": "Rex Rice",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d587a64f-3b40-421c-9963-9c934f961443"
+    },
+    {
+      "name": "Tom Fernandez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "735c3fda-cf6f-4487-8bf2-c8cf91c58160"
+    },
+    {
+      "name": "Matthew Leber",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1b78e67d-6d5c-4347-9f11-01c3d78d79d8"
+    },
+    {
+      "name": "Thomas Corbin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6d10b3d2-940f-45ef-af02-07252a3ce185"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2024-12-11; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/115_20241211.htm (LegiScan doc 3032541))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-115-2025.introduced.htm",
+      "sha256": "9440be1f8be579fb3acb30ff73f7efb3ca69a12f38f64afb89509e8e6bd57993"
+    },
+    "note": "Introduced text of 2024-12-11; no passage vote. The title says the 2024-2025 school year but the section text says 2025-2026; the text is quoted. Section 4 adds items (1) and (2) to 16-23-420(F) (marks show new matter). K-12 public schools only."
+  },
+  "operative_text": "SECTION 2 (new Section 59-66-320(A)): Beginning with the 2025-2026 School Year, a school board may designate public school employees as school guardians to provide armed protection and other specific public safety and first responder functions to attendees and employees of each public school during an active assailant situation, with specialized training from the Criminal Justice Academy as required by the Law Enforcement Training Council.\nSECTION 2 (new Section 59-66-320(B)): The school board shall also designate a list of acceptable firearms and ammunition for use by each school guardian.\nSECTION 2 (new Section 59-66-330(A)): A person designated as a school guardian may possess a firearm on the school premises if he: (1) holds a valid concealed weapons permit pursuant to Article 4, Chapter 31, Title 23; (2) successfully completes school guardian training pursuant to Section 23-23-112; (3) keeps the weapon locked in the school firearm safe until confronted by an active assailant situation; and (4) has no history of violence or unmanaged anger, mental health or substance abuse issues documented by his employer.\nSECTION 2 (new Section 59-66-350(A)): A school guardian who fails to keep his firearm secure in the school firearm safe while that the firearm is on school property in violation of Section 59-66-330(A)(3) must be immediately removed from the classroom, have his designation as a school guardian revoked, and be subject to employment termination proceedings by the board.\nSECTION 2 (new Section 59-66-390): A school guardian is immune from any liability that may arise, from his failure to act or fully respond to an active assailant situation.\nSECTION 4 (Section 16-23-420(F)): (F) This section does not apply to a person who is: (1) authorized to carry concealed weapons pursuant to Article 4, Chapter 31, Title 23 when upon any premises, property, or building that is part of an interstate highway rest area facility; or (2) designated as a school guardian pursuant to Article 3, Chapter 66, Title 59."
+}

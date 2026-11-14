@@ -1,0 +1,55 @@
+{
+  "id": "SC-H-3708-2021",
+  "scope": "state:sc",
+  "title": "H3708 (124th General Assembly): Firearm and ammunition, unlawful possession by violent crime offender",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3708&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/3708_20210126.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Seth Rose",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6fb5d7ac-0902-49af-9f1e-504e56d8e606"
+    },
+    {
+      "name": "Thomas Pope",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c4552314-d8dd-4de1-bfc1-a1e601799115"
+    },
+    {
+      "name": "Bruce Bryant",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sandy McGarry",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2021-01-26; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/3708_20210126.htm (LegiScan doc 2258876))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3708-2021.introduced.htm",
+      "sha256": "44f24a971e53b7c7efe861598b346b422892e0ddaaf46d97038e6db3ac4a14a1"
+    },
+    "note": "Introduced 2021-01-26. Struck: 'violent crime, as defined by Section 16-1-60, that is classified as a felony offense' and the flat felony penalty (fine up to $2,000 / 5 years); added: crime punishable by more than one year, 'ship, transport, or receive', and the graduated penalties. Confiscation text in (C) unchanged and not quoted. No passage vote."
+  },
+  "operative_text": "Section 1 (Section 16-23-500(A)): It is unlawful for a person who has been convicted of a crime punishable by a maximum term of imprisonment of more than one year to possess, ship, transport, or receive a firearm or ammunition within this State.\nSection 1 (Section 16-23-500(B)): A person who violates the provisions of this section, upon conviction, is guilty of a: (1) misdemeanor for a first offense and must be imprisoned not more than three years; (2) felony for a second offense and must be imprisoned not more than ten years; and (3) felony for a third or subsequent offense and must be imprisoned not more than fifteen years.\nSection 1 (Section 16-23-500(E)): A prior offense for purposes of this section means any conviction related to the possession, shipping, transporting, or receiving of a firearm or ammunition in this State, another state, or in violation of federal law."
+}

@@ -1,0 +1,69 @@
+{
+  "id": "SC-H-3522-2023",
+  "scope": "state:sc",
+  "title": "H3522 (125th General Assembly): Concealed weapons permits",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3522&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/3522_20221215.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Steven Long",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "55ef311d-6efd-40c9-8a32-d261624bf5a3"
+    },
+    {
+      "name": "James Burns",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9e65a60c-4016-44f5-a830-c8562f08a7ac"
+    },
+    {
+      "name": "William Chumley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b79701a8-542e-4090-b752-d2e79fb92cd4"
+    },
+    {
+      "name": "Jordan Pace",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c212f227-131a-42cb-a002-0cf6a217c6a8"
+    },
+    {
+      "name": "Thomas Beach",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "85584b63-dcb8-469a-ace1-2198fa415c66"
+    },
+    {
+      "name": "Richard Yow",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f6f96623-dba1-482c-9d1f-4c623b09f33a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2022-12-15; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/3522_20221215.htm (LegiScan doc 2618804))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3522-2023.introduced.htm",
+      "sha256": "4e1416671a710b3ba400ee700adb5335e738b7def46c2ec95224d201a59b5aee"
+    },
+    "note": "Introduced text of 2022-12-15; no passage vote. Struck: 'or college' from item (5), so college athletic events leave the list of places a permit does not cover; the words 'of any kind' after 'firearm' and the old college/university wording in the school-property carve-out are struck."
+  },
+  "operative_text": "Section 1 (Section 16-23-420(A)): The provisions contained in this subsection related to any premises or property owned, operated, or controlled by a college, university, technical college, or other post-secondary institution do not apply to a person who is authorized to carry a concealed weapon pursuant to Article 4, Chapter 31, Title 23.\nSection 2 (Section 23-31-215(M)): A permit issued pursuant to this section does not authorize a permit holder to carry a concealable weapon into a: ... (5) school athletic event not related to firearms;"
+}

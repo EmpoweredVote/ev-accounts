@@ -1,0 +1,73 @@
+{
+  "id": "SC-H-3503-2021",
+  "scope": "state:sc",
+  "title": "H3503 (124th General Assembly): Concealed weapons permits",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3503&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/3503_20201216.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Steven Long",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "55ef311d-6efd-40c9-8a32-d261624bf5a3"
+    },
+    {
+      "name": "Sandy McGarry",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "James Burns",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9e65a60c-4016-44f5-a830-c8562f08a7ac"
+    },
+    {
+      "name": "Robert May",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Patrick Haddon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "807d4af9-8270-4139-9d4f-715aa2906036"
+    },
+    {
+      "name": "John Mccravy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7e726b81-f400-44bb-98e1-7a63a9248b3b"
+    },
+    {
+      "name": "Cally Forrest",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1646f5cd-b151-494a-8a3b-dc862a31eb08"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2020-12-16; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/3503_20201216.htm (LegiScan doc 2221798))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3503-2021.introduced.htm",
+      "sha256": "c12cd63c1feab43f45d206bb251155b838ec287881ae48a0096f7c2bf51fb890"
+    },
+    "note": "Introduced Dec. 16, 2020; no passage vote. Struck: 'of any kind', 'or college' in item (5), and the college, university and technical college wording in the school sentence (moved to the new second sentence); 'choosing' replaced by 'choice' and '50-9-830' struck in the cross-reference list."
+  },
+  "operative_text": "Section 1 (Section 16-23-420(A)): The provisions contained in this subsection related to any premises or property owned, operated, or controlled by a private or public school, do not apply to a person who is authorized to carry a concealed weapon pursuant to Article 4, Chapter 31, Title 23 when the weapon remains inside an attended or locked motor vehicle and is secured in a closed glove compartment, closed console, closed trunk, or in a closed container secured by an integral fastener and transported in the luggage compartment of the vehicle. The provisions contained in this subsection related to any premises or property owned, operated, or controlled by a college, university, technical college, or other post-secondary institution do not apply to a person who is authorized to carry a concealed weapon pursuant to Article 4, Chapter 31, Title 23.\nSection 2 (Section 23-31-215(M)): (M) A permit issued pursuant to this section does not authorize a permit holder to carry a concealable weapon into a: (5) school athletic event not related to firearms;"
+}

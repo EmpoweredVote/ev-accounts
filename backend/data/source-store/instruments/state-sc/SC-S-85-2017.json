@@ -1,0 +1,44 @@
+{
+  "id": "SC-S-85-2017",
+  "scope": "state:sc",
+  "title": "S0085 (122nd General Assembly): Jacob Hall's Law",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0085&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/85_20161213.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kevin Bryant",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael Gambrell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d44571e6-4925-432c-8e95-92cf11ad1de8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2016-12-13; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/85_20161213.htm (LegiScan doc 1438335))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-85-2017.introduced.htm",
+      "sha256": "29b78493001f705326a437cbbd29308626ffa1331f840d28b4ea1015e94020e5"
+    },
+    "note": "Introduced text dated 2016-12-13 (S.85 of the 2017-2018 session). Section 2 strikes 'or' and adds 'and' and 'or school personnel'."
+  },
+  "operative_text": "Section 2 (Section 16-23-430): (A) It shall be unlawful for any person, except state, county, or municipal law enforcement officers and personnel or school personnel authorized by school officials, to carry on his person, while on any elementary or secondary school property, a knife, with a blade over two inches long, a blackjack, a metal pipe or pole, firearms, or any other type of weapon, device, or object which may be used to inflict bodily injury or death. School officials may require school personnel to receive weapons training before authorizing school personnel to carry a weapon on school property."
+}

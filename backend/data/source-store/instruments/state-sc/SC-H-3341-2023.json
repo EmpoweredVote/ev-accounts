@@ -1,0 +1,39 @@
+{
+  "id": "SC-H-3341-2023",
+  "scope": "state:sc",
+  "title": "H3341 (125th General Assembly): Firearms",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3341&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/3341_20230131.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Wendell Gilliard",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75dffc0a-f084-4dfb-a2a7-6c81094bb0c2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Draft, 2023-01-31; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/3341_20230131.htm (LegiScan doc 2672168))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3341-2023.draft.htm",
+      "sha256": "886e1d4cee8e0f27158e63b17f9a3e6f5ab3d493f3093973360c592c2592327d"
+    },
+    "note": "Prefiled draft dated 2023-01-31 (introduced text); no passage vote on record. Only the word 'or' before 'sawed-off rifle' lists is struck in Sections 2-4 (and re-added as part of the new list)."
+  },
+  "operative_text": "SECTION 1 (Section 16-23-210): (h) \"Assault weapon\" means a firearm with any of the following characteristics: (i) all semiautomatic action, centerfire rifles with a detachable magazine with a capacity of twenty-one or more rounds; (ii) all semiautomatic shotguns with a folding stock or a magazine capacity of more than six rounds, or both; (iii) a firearm which has been modified to be operable as an assault weapon as defined in this item; and (iv) any part or combination of parts designed or intended to convert a firearm into an assault weapon, including a detachable magazine with a capacity of twenty-one or more rounds, or any combination of parts from which an assault weapon may be readily assembled if those parts are in the possession or under the control of the same person.\nSECTION 1 (Section 16-23-210): (i) \"High-capacity magazine\" means a firearm magazine capable of holding more than fifteen rounds of ammunition.\nSECTION 2 (Section 16-23-220): (A) It is unlawful for a person to transport from one place to another in this State or for any railroad company, express company, or other common carrier or any officer, agent, or employee of any of them or other person acting in their behalf knowingly to ship or to transport from one place to another in this State a machine gun or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, assault weapon, or high-capacity magazines, except as provided in Sections 16-23-250 and 23-31-330.\nSECTION 3 (Section 16-23-230): (A) It is unlawful for a person to store, keep, possess, or have in possession or permit another to store, keep, possess, or have in possession a machine gun or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, assault weapon, or high-capacity magazines, except as provided in Sections 16-23-250 and 23-31-330.\nSECTION 4 (Section 16-23-240): (A) It is unlawful for a person to sell, rent, give away, or participate in any manner, directly or indirectly, in the sale, renting, giving away, or otherwise disposing of a machine gun, or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, assault weapon, or high-capacity magazines, except as provided in Sections 16-23-250 and 23-31-330."
+}

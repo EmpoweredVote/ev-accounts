@@ -1,0 +1,56 @@
+{
+  "id": "SC-H-3174-2017",
+  "scope": "state:sc",
+  "title": "H3174 (122nd General Assembly): Concealable weapons",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3174&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/3174_20161215.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Merita Allison",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jason Elliott",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "24cb1132-a76c-4c90-904e-9e4565df8104"
+    },
+    {
+      "name": "Roy Magnuson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e00d1f1-7d7d-4e9e-9482-15caeec92ff8"
+    },
+    {
+      "name": "Brandon Newton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cc45c293-1987-44dc-b660-47abade8a5b4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2016-12-15; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/3174_20161215.htm (LegiScan doc 1439370))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3174-2017.introduced.htm",
+      "sha256": "f8b7a71d79f3892f59f273148dcfbe3f4aabcbc4197afe8ab4ba4d7870a21e90"
+    },
+    "note": "Introduced text, Dec. 15, 2016. No votes. Struck 'and' in item (11); added '; and' in item (12)."
+  },
+  "operative_text": "Section 1 (Section 23-31-240): Notwithstanding any other provision contained in this article, the following persons who possess a valid permit pursuant to this article may carry a concealable weapon anywhere within this State, when carrying out the duties of their office:\nSection 1 (Section 23-31-240): (13) victim advocates employed by a law enforcement agency."
+}

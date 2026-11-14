@@ -1,0 +1,57 @@
+{
+  "id": "SC-H-3283-2025",
+  "scope": "state:sc",
+  "title": "H3283 (126th General Assembly): CWP on college campuses",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3283&session=126&summary=B",
+    "https://www.scstatehouse.gov/sess126_2025-2026/prever/3283_20241205.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Steven Long",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "55ef311d-6efd-40c9-8a32-d261624bf5a3"
+    },
+    {
+      "name": "John Mccravy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7e726b81-f400-44bb-98e1-7a63a9248b3b"
+    },
+    {
+      "name": "William Chumley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b79701a8-542e-4090-b752-d2e79fb92cd4"
+    },
+    {
+      "name": "Sarita Edgerton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "46458a0f-0491-4a4f-a693-c9504d253072"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2024-12-05; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3283_20241205.htm (LegiScan doc 3031394))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3283-2025.introduced.htm",
+      "sha256": "1859ceb0beb2cc382cd7e4567981a21e05b762d3d6c85e64c804c4ea2e243aa4"
+    },
+    "note": "Introduced text of 2024-12-05; no passage vote. In Section 2 the words 'or college' after 'school' are struck from item (5), so college athletic events leave the list of places where handguns are barred."
+  },
+  "operative_text": "Section 1 (Section 16-23-420(A)): The provisions contained in this subsection related to any premises or property owned, operated, or controlled by a college, university, technical college, or other postsecondary institution do not apply to a person who is authorized to carry a concealed weapon pursuant to Article 4, Chapter 31, Title 23.\nSection 2 (Section 16-23-20(A)): It is unlawful, whether or not the person has a concealed weapon permit, for anyone to carry about the person any handgun, whether concealed or not, unless otherwise specifically authorized by law into a: ... (5) school athletic event not related to firearms;"
+}

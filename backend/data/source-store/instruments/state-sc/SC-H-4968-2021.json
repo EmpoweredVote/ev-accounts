@@ -1,0 +1,80 @@
+{
+  "id": "SC-H-4968-2021",
+  "scope": "state:sc",
+  "title": "H4968 (124th General Assembly): Concealed weapons",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4968&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/4968_20220215.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dennis Moss",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "db324b15-8d33-4f13-9e4e-9a7d6a4a4613"
+    },
+    {
+      "name": "Paula Rawl Calhoon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d0e8c1b7-c4a9-4765-9d86-2363a1ac8b64"
+    },
+    {
+      "name": "Donald McCabe",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1262cf37-df1d-49d4-b2c6-a6a1dde6b459"
+    },
+    {
+      "name": "Thomas Brittain",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8e9e041c-331f-40cd-ac7f-5afe80ca5066"
+    },
+    {
+      "name": "Jeffrey Johnson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d39a02da-6059-4a5d-add1-412c6bb9c35b"
+    },
+    {
+      "name": "Max Hyde",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Travis Moore",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "acfa8a3e-3c42-49d4-a0cb-e4fbb332ae69"
+    },
+    {
+      "name": "Murrell Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "98739c83-a9de-4e97-a402-91f9b145723f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2022-02-15; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/4968_20220215.htm (LegiScan doc 2517265))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4968-2021.introduced.htm",
+      "sha256": "45f644da0739f2bb8eec70bf22c61ca221337fd70366f5ed85ac57b7ff925cdb"
+    },
+    "note": "Introduced text (Feb. 15, 2022). 'and' after item (12) struck; item (14) added. Items (1)-(12) elided with '...' (judges, magistrates, solicitors, commissioners)."
+  },
+  "operative_text": "Section 1 (Section 23-31-240): \"Notwithstanding any other provision contained in this article, the following persons who possess a valid permit pursuant to this article may carry a concealable weapon anywhere within this State: ... (13) the Attorney General and assistant attorneys general; and (14) active clerks of court.\""
+}

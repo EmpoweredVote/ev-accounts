@@ -1,0 +1,39 @@
+{
+  "id": "SC-H-4708-2023",
+  "scope": "state:sc",
+  "title": "H4708 (125th General Assembly): School Protection Officer Act",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4708&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/4708_20231214.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jordan Pace",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c212f227-131a-42cb-a002-0cf6a217c6a8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2023-12-14; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/4708_20231214.htm (LegiScan doc 2863546))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4708-2023.introduced.htm",
+      "sha256": "6845f159d44b40902d1c4480a4ff4e0f8ce22e8fa2b3bcd45ba6e0ed4944a649"
+    },
+    "note": "Introduced text of 2023-12-14; no passage vote and later amendments not in the text read. Section 4 adds new item (1)/(2) numbering to 16-23-420(F); only the comma/'of' wording and item (2) are new marks. Applies to K-12 and public higher-education campuses."
+  },
+  "operative_text": "SECTION 2 (new Section 59-66-320): Beginning with the 2025-2026 School Year, a school board may designate employees as school protection officers to provide armed protection and other related public safety functions to attendees and employees of each government school, with specialized training from the Center for School Safety as required by the Law Enforcement Training Council.\nSECTION 2 (new Section 59-66-330(A)): A person designated as a school protection officer may possess a firearm or a self-defense spray device on the school premises if he: (1) holds a valid concealed weapons permit pursuant to Article 4, Chapter 31, Title 23; (2) successfully completes school protection officer training pursuant to Section 23-23-112; ... (3) keeps the weapon on his person at all times while on the premises except when locked in the school firearm safe; (4) keeps the weapon concealed when not in use or locked in the school firearm safe; (5) uses only frangible bullets in an effort to avoid ricochets; and (6) has no history of violence or unmanaged anger documented by his employer.\nSECTION 2 (new Section 59-66-350(A)): A school protection officer who fails to keep his firearm secure on his person or in the school firearm safe while that the firearm is on school property in violation of Section 59-66-330(A)(3) or (4) immediately must be removed from the classroom, have his designation as a school protection officer revoked, and be subject to employment termination proceedings by the board.\nSECTION 3 (new Section 23-23-112(A)): The Law Enforcement Training Council shall develop guidelines for a one-week training program that the Center for School Safety shall offer and which a person must satisfactorily complete to be certified as a school protection officer.\nSECTION 4 (Section 16-23-420(F)): (F) This section does not apply to a person who is: (1) authorized to carry concealed weapons pursuant to Article 4, Chapter 31, Title 23 when upon any premises, property, or building that is part of an interstate highway rest area facility; or (2) designated as a school protection officer pursuant to Article 3, Chapter 66, Title 59."
+}

@@ -1,0 +1,47 @@
+{
+  "id": "SC-S-237-2023",
+  "scope": "state:sc",
+  "title": "S0237 (125th General Assembly): School Safety",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0237&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/237_20230208.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Brian Adams",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d33b8da6-60b3-480a-964f-1d3315fac434"
+    },
+    {
+      "name": "Danny Verdin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ec52251-b87c-4264-b1f7-e4d348e2756a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "education-school-police: SECTION 2 (new Article 3, Chapter 66, Title 59) — school boards designate armed staff guardians as campus security, with immunity and SLED registry"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Draft, 2023-02-08; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/237_20230208.htm (LegiScan doc 2689391))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-237-2023.draft.htm",
+      "sha256": "19f36faf2c1b412e0cf8fd1df1f98dff9358076e388e40089505e588ffacab78"
+    },
+    "note": "Prefiled draft dated 2023-02-08 (introduced text); no passage vote on record. The title promises a new Section 23-23-112 (Criminal Justice Academy guardian training), but the text read contains no such SECTION; Section 59-66-330 refers to it. In Section 16-23-420(F) the words 'of' is struck and a comma added; the guardian item (2) is new. Multi verdict is a judgment call: the guardian program is school security staffing built on gun carrying."
+  },
+  "operative_text": "SECTION 2 (new Section 59-66-320): (A) Beginning with the 2024-2025 School Year, a school board may designate public school employees as school guardians to provide armed protection and other specific public safety and first responder functions to attendees and employees of each public school during an active assailant situation, with specialized training from the Criminal Justice Academy as required by the Law Enforcement Training Council. ... (B) The school board shall also designate a list of acceptable firearms and ammunition for use by each school guardian.\nSECTION 2 (new Section 59-66-330): (A) A person designated as a school guardian may possess a firearm on the school premises if he: (1) holds a valid concealed weapons permit pursuant to Article 4, Chapter 31, Title 23; (2) successfully completes school guardian training pursuant to Section 23-23-112; (3) keeps the weapon locked in the school firearm safe until confronted by an active assailant situation; (4) and has no history of violence or unmanaged anger, mental health or substance abuse issues documented by his employer.\nSECTION 2 (new Section 59-66-350): (A) A school guardian who fails to keep his firearm secure in the school firearm safe while that the firearm is on school property in violation of Section 59-66-330(A)(3) immediately must be removed from the classroom, have his designation as a school guardian revoked, and be subject to employment termination proceedings by the board.\nSECTION 2 (new Section 59-66-360): A school guardian must complete continuing education training as considered appropriate by the Law Enforcement Training Council, which must include annual firearm qualification.\nSECTION 2 (new Section 59-66-390): A school guardian is immune from any liability that may arise, from his failure to act or fully respond to an active assailant situation.\nSECTION 3 (Section 16-23-420): (F) This section does not apply to a person who is: (1) authorized to carry concealed weapons pursuant to Article 4, Chapter 31, Title 23 when upon any premises, property, or building that is part of an interstate highway rest area facility; or (2) designated as a school guardian pursuant to Article 3, Chapter 66, Title 59."
+}

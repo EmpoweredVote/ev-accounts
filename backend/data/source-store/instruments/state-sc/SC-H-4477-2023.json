@@ -1,0 +1,115 @@
+{
+  "id": "SC-H-4477-2023",
+  "scope": "state:sc",
+  "title": "H4477 (125th General Assembly): Right to keep and bear arms",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4477&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/4477_20230510.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gil Gatch",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "86f2e748-cfef-4824-8246-0a920c4ac953"
+    },
+    {
+      "name": "Gary Brewer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4d44310a-fe6d-4ded-94fc-e1cd603bb406"
+    },
+    {
+      "name": "Cody Mitchell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "20d9dc55-6065-43ec-9291-1aee110e1e7a"
+    },
+    {
+      "name": "Wallace Jordan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "935148fa-5a89-4b41-a99d-1b150c6b4c1c"
+    },
+    {
+      "name": "Val Guest",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "448fb670-6f2d-42fc-9b9e-bb1ad2c97e87"
+    },
+    {
+      "name": "Brandon Newton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cc45c293-1987-44dc-b660-47abade8a5b4"
+    },
+    {
+      "name": "William Hewitt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d5be69fc-1b26-4a39-bd4d-bf2e96de37f6"
+    },
+    {
+      "name": "John West",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Heath Sessions",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6d82fc53-6d3f-44c7-9cd2-6d7688e2256b"
+    },
+    {
+      "name": "Don Chapman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1b4c7515-6071-4765-b10a-7501dc64aa2c"
+    },
+    {
+      "name": "Micajah Caskey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8f3a9f16-8c37-4b1b-aedb-f6dc094b5834"
+    },
+    {
+      "name": "Travis Moore",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "acfa8a3e-3c42-49d4-a0cb-e4fbb332ae69"
+    },
+    {
+      "name": "Bobby Cox",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kambrell Garvin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "342d26f8-84a1-4744-ac62-f54faf7a6d52"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2023-05-10; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/4477_20230510.htm (LegiScan doc 2805324))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4477-2023.introduced.htm",
+      "sha256": "21efcd8b826608f80313dd31b2d38f1e23c76e90c2674d7fed90e3548a1fafa2"
+    },
+    "note": "Introduced version (2023-05-10); no passage vote on record. The word \"concealable\" is struck and \"and weapon accessories\" added."
+  },
+  "operative_text": "Section 1 (Section 23-31-250(B)): Any federal law, treaty, executive order, rule, or regulation related to limiting or proscribing the carry of weapons and weapon accessories must be evaluated by the Attorney General.\nSection 1 (Section 23-31-250(B)): The Attorney General shall issue a written opinion of whether the law, treaty, executive order, rule, or regulation purports to compel legislative or executive action prohibited pursuant to subsection (A)."
+}

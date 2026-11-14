@@ -1,0 +1,39 @@
+{
+  "id": "SC-S-37-2023",
+  "scope": "state:sc",
+  "title": "S0037 (125th General Assembly): Public defenders allowed to carry concealable weapons within the State",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0037&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/37_20221130.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bradley Hutto",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c00f954-b79c-4324-9ef4-3a50b2aae213"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2022-11-30; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/37_20221130.htm (LegiScan doc 2616602))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-37-2023.introduced.htm",
+      "sha256": "7a358941ac516cb2f8ad5466224d78cff6cd4861929bf691845fd9734160cc3f"
+    },
+    "note": "As-filed text (2022-11-30). Existing items 12 and 13 renumbered to 13 and 14 (old numbers struck)."
+  },
+  "operative_text": "Section 1 (Section 23-31-240): Notwithstanding any other provision contained in this article, the following persons who possess a valid permit pursuant to this article may carry a concealable weapon anywhere within this State: ... (12) active circuit public defenders and public defenders,"
+}

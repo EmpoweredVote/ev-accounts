@@ -1,0 +1,45 @@
+{
+  "id": "SC-H-4023-2019",
+  "scope": "state:sc",
+  "title": "H4023 (123rd General Assembly): Weapons on school property",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4023&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/4023_20190219.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Steven Long",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "55ef311d-6efd-40c9-8a32-d261624bf5a3"
+    },
+    {
+      "name": "Roy Magnuson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e00d1f1-7d7d-4e9e-9482-15caeec92ff8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2019-02-19; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/4023_20190219.htm (LegiScan doc 1917853))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4023-2019.introduced.htm",
+      "sha256": "da177157c844361dbcfb331307fd7894896e854a8d178110dba8ba7a5c70effe"
+    },
+    "note": "Introduced 2019-02-19. Struck in 16-23-420(A): 'of any kind' and the college/university/technical college wording from the vehicle-storage exception (moved into the new last sentence); struck in 23-31-215(M)(5): 'or college', and '50-9-830' from the cross-reference list. No passage vote."
+  },
+  "operative_text": "Section 1 (Section 16-23-420(A)): The provisions contained in this subsection related to any premises or property owned, operated, or controlled by a college, university, technical college, or other post-secondary institution do not apply to a person who is authorized to carry a concealed weapon pursuant to Article 4, Chapter 31, Title 23.\nSection 2 (Section 23-31-215(M)(5)): school athletic event not related to firearms;"
+}

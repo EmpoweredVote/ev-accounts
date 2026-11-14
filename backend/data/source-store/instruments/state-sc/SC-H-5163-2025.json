@@ -1,0 +1,93 @@
+{
+  "id": "SC-H-5163-2025",
+  "scope": "state:sc",
+  "title": "H5163 (126th General Assembly): Firearms, college campuses",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=5163&session=126&summary=B",
+    "https://www.scstatehouse.gov/sess126_2025-2026/prever/5163_20260211.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lee Gilreath",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "34ddcd29-275f-40e4-b248-6c61845ca24a"
+    },
+    {
+      "name": "Stephen Frank",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1eb77657-f241-417f-9106-01757c8e9514"
+    },
+    {
+      "name": "April Cromer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c2cb23a8-554b-4f36-8773-65c41e90fbb0"
+    },
+    {
+      "name": "Chris Huff",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f406d8b4-8acb-4578-a3a5-a667abc21e05"
+    },
+    {
+      "name": "Joe White",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9018e39f-758d-4123-97a8-d777d613bf58"
+    },
+    {
+      "name": "Sarita Edgerton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "46458a0f-0491-4a4f-a693-c9504d253072"
+    },
+    {
+      "name": "Jordan Pace",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c212f227-131a-42cb-a002-0cf6a217c6a8"
+    },
+    {
+      "name": "Josiah Magnuson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e00d1f1-7d7d-4e9e-9482-15caeec92ff8"
+    },
+    {
+      "name": "Rob Harris",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c570b0e9-5c8b-4c44-aa97-afa5fd4126b5"
+    },
+    {
+      "name": "Jay Kilmartin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4942d29e-e39a-45f9-ae0b-53c9b7144fcd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2026-02-11; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/5163_20260211.htm (LegiScan doc 3358499))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-5163-2025.introduced.htm",
+      "sha256": "b023de0a3b6de6260d1ce8081ba019c39f597d346d007f2329bb44fe0a3a0d16"
+    },
+    "note": "Introduced text of 2026-02-11; no passage vote. In Section 1 the words 'or college' are struck and 'elementary or secondary' added in item (5) of the list of places where handgun carry is unlawful; the rest of subsection (A) is unchanged and not quoted. The quote of item (5) is the item as it would read, without the lead-in."
+  },
+  "operative_text": "SECTION 1 (Section 16-23-20(A)): (5) elementary or secondary school athletic event not related to firearms;\nSECTION 2 (Section 16-23-420): Section 16-23-420 of the S.C. Code is repealed."
+}
