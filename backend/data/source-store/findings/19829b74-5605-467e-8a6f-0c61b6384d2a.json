@@ -2112,6 +2112,47 @@
           "sha256": "3c20164041bf91f5daa3d3a7d7ef3f0355ca03f17d6a1066a812ae1c09c630d7"
         }
       }
+    },
+    {
+      "id": "5df242121ee08c9dc2c909b8ab56d99c0d8ec6f17685df1afb0d3a0e771d10f9",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/camedwards/2026/03/30/gop-lawmaker-says-he-doesnt-pay-any-attention-to-concerns-of-states-leading-2a-organization-n1232047",
+      "date": "2026-03-30",
+      "date_precision": "day",
+      "passage": "“I don’t pay any attention to what they say. They have a vested interest in getting their supporters riled up to send them money. Follow the money.”",
+      "note": "Quoted by a gun-rights news site, which took it from the Tennessee Lookout. He is replying to the Tennessee Firearms Association's criticism after he held a bill in the Senate Judiciary Committee. Date is the Bearing Arms story date; the Lookout original is from about 2026-03-27 and was blocked.",
+      "subjects": [
+        "gun rights advocacy groups",
+        "gun bills held in Senate Judiciary Committee"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:37:33.344Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "240b5732839d0b4e3d7a86e81fad361d8c4026141e9dc869002a9651b6b143a8",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/camedwards/2026/03/30/gop-lawmaker-says-he-doesnt-pay-any-attention-to-concerns-of-states-leading-2a-organization-n1232047",
+      "date": "2026-03-30",
+      "date_precision": "day",
+      "passage": "“They’re not reasonable. They’re raising money for their own pocket and paying themselves,”",
+      "note": "Quoted by a gun-rights news site, from the Tennessee Lookout. He describes the Tennessee Firearms Association's criticism of him as fundraising. It is not about a specific gun law.",
+      "subjects": [
+        "gun rights advocacy groups"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:37:33.344Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -2155,6 +2196,29 @@
       ],
       "found": 4,
       "at": "2026-11-12T15:13:42.076Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun in public parks and government buildings",
+        "gun bills held in Senate Judiciary Committee",
+        "gun rights advocacy groups",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://www.capitol.tn.gov (member page skipped per brief; legislature pages are covered by bulk bill data)",
+        "blocked: https://ballotpedia.org/Todd_Gardenhire (403)",
+        "blocked: https://tennesseelookout.com/2026/03/27/stockard-on-the-stump-gop-senator-scoffs-at-tennessee-guns-group/ (bot check)",
+        "no campaign site or personal issue page found in search; none read",
+        "one news search on name plus gun words (7 of 10 searches not used); Bearing Arms story read in full text and the 2023 Fox 17 story read, which quotes him only in fragments",
+        "not reviewed: ontheissues.org, vote411, Vote Smart (leads only, not searched)"
+      ],
+      "found": 2,
+      "at": "2026-11-14T02:37:33.344Z",
       "by": "source-collector"
     }
   ]

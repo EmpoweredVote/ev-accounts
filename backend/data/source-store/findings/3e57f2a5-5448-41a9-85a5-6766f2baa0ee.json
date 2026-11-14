@@ -2413,6 +2413,29 @@
       "found": 4,
       "at": "2026-11-12T15:13:42.075Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "carry a gun without a permit",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.haroldlovejr.com (home page read: names him as House District 58 representative; lists education, health care, criminal justice reform; nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Harold_Love_Jr.",
+        "legislature member page for District 58 (loaded; contact and committee info only, nothing on the subject)",
+        "web search: name plus gun words (two searches; only bill-tracker pages and a 2017 gun-group bill summary, no quotes from him; nothing on the subject in his own words)",
+        "not reviewed: ballot status for 2026 general election (not confirmed; treated as sitting official)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:41:06.120Z",
+      "by": "source-collector"
     }
   ]
 }

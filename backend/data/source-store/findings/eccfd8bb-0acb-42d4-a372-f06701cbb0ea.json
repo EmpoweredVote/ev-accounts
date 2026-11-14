@@ -1152,6 +1152,49 @@
           "sha256": "885840be2c4396353be69d775683adec8a94382eb02c1506888c69ed4060ef0c"
         }
       }
+    },
+    {
+      "id": "3c6f6276e5c91acbe0df995abc4e23bf23075d627e62036df71bea2fcdab7b2a",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/66838/race/15654/election/1242",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "None. Violent felons currently serving in prison or on parole should not be allowed to own firearms while serving their sentence.",
+      "note": "Her written answer on a voter-guide questionnaire (2024 general election page) to what restrictions on gun ownership are needed for public safety. She names no needed restrictions except for violent felons serving a sentence.",
+      "subjects": [
+        "limits on who may have a gun",
+        "restrictions on gun ownership",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:44:30.589Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2da9e71849bc5206f3d8f0ea7744af8248bd75386cd8210f734405e8ff728c21",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/66838/race/15654/election/1242",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Tennessee has school districts that have inadequate or nonexistent security personnel and are vulnerable to a mass shooting event. In Tennessee I voted for a process that if a teacher wants to carry a gun at school requires a high level of training for teachers, a psychological evaluation, and other safety measures. This is a reasonable common sense approach to protect children in our schools.",
+      "note": "Her written voter-guide answer (marked Yes) to whether teachers should be allowed to carry guns at school; she describes her vote for a training-and-evaluation process for teachers who carry.",
+      "subjects": [
+        "teachers carrying guns at school",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:44:30.589Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -1167,6 +1210,59 @@
       ],
       "found": 6,
       "at": "2026-11-12T15:13:42.077Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permits and carry without a permit",
+        "red-flag orders",
+        "ghost guns",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "the House caucus page for Elaine Davis (https://tnhousegop.org/?p=5747) and her caucus category page, read: no gun or firearm text; a caucus site search for 'Elaine Davis gun' returned no gun item",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Elaine_Davis (403)",
+        "blocked: https://wapp.capitol.tn.gov/apps/legislatorinfo/member.aspx?district=h6 (skipped as a legislature page, covered by bulk bill data)",
+        "one news search on her name plus gun words: nothing in her own words on the subject",
+        "https://votesmart.org/public-statement/745670/issue-position-second-amendment-rights fetched: not about this person",
+        "campaign site: not found in search",
+        "not reviewed: legilist.com and legiplex bill-tracker listings (third-party trackers; HB 2153 attribution unconfirmed)",
+        "scope: not confirmed beyond her 2026 floor votes already on file and a caucus page naming her; ballot status for 2026 not checked on a page"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:40:32.871Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "restrictions on who may own a gun",
+        "teachers carrying guns at school",
+        "carry a gun without a permit",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "https://tnfirefly.com/elections/general-assembly/house/18 (confirms she is the sitting District 18 member; shows she ran in the 3 Nov 2026 general election and finished behind her challenger)",
+        "https://ivoterguide.com/candidate/66838/race/15654/election/1242 (voter guide questionnaire page with her own answers)",
+        "blocked: https://ballotpedia.org/Elaine_Davis_(Tennessee) (403)",
+        "blocked: https://tnhousegop.org/members/representative-elaine-davis/ (404 page not found)",
+        "the House caucus news archive https://tnhousegop.org/category/davis-elaine (nothing on the subject)",
+        "web search: name plus gun, firearm, Second Amendment and permitless carry words (no own statements found beyond the voter guide)",
+        "not reviewed: Ballotpedia page (blocked, fetch returned empty)"
+      ],
+      "found": 2,
+      "at": "2026-11-14T02:44:30.589Z",
       "by": "source-collector"
     }
   ]

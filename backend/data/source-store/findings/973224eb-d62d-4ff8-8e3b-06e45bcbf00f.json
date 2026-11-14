@@ -739,6 +739,67 @@
           "sha256": "264846f6ba8d466085a045eda03e94c412cc97ea4004d6ab9d40137de792a12e"
         }
       }
+    },
+    {
+      "id": "f6dba760ed950f00f0f2ca7bb93a4245854bdeecf7f496fa85fd73173af33f86",
+      "kind": "own-words",
+      "url": "https://nashvillebanner.com/2024/07/20/aftyn-behn-candidate-district-51/",
+      "date": "2024-07-20",
+      "date_precision": "day",
+      "passage": "I support red flag laws. These laws help prevent tragedies by allowing law enforcement or family members to intervene and temporarily restrict access to firearms when there is credible evidence that someone poses an immediate threat to themselves or others.",
+      "note": "Answer in a news outlet's 2024 candidate questionnaire, on extreme risk protection orders.",
+      "subjects": [
+        "red flag orders",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:42:41.735Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7df112b91af4334c60d4a58d1ab7f9722dc87101d28bce81081834bced2d750d",
+      "kind": "own-words",
+      "url": "https://nashvillebanner.com/2024/07/20/aftyn-behn-candidate-district-51/",
+      "date": "2024-07-20",
+      "date_precision": "day",
+      "passage": "I support mandatory background checks for all firearm purchases. It’s a common-sense measure that will help keep guns out of the hands of dangerous individuals and prevent gun violence.",
+      "note": "Answer in the same 2024 candidate questionnaire, on background checks for firearm purchases.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:42:41.735Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "50aaaf5b930e77da91b5eacb787a32824336b221bbd49992c02436d6213b2fd7",
+      "kind": "own-words",
+      "url": "https://nashvillebanner.com/2024/07/20/aftyn-behn-candidate-district-51/",
+      "date": "2024-07-20",
+      "date_precision": "day",
+      "passage": "I support a law requiring secure storage of firearms in vehicles. Too many guns are stolen from cars in Tennessee, and securing firearms properly can prevent them from falling into the wrong hands, reducing gun-related crimes and accidents.",
+      "note": "Answer in the same 2024 candidate questionnaire, on locking up guns left in cars.",
+      "subjects": [
+        "secure storage of guns in vehicles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:42:41.735Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -780,6 +841,31 @@
       ],
       "found": 3,
       "at": "2026-11-12T15:13:42.082Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "red flag orders",
+        "secure storage of guns in vehicles",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "the campaign site https://www.aftynbehn.com (read; its home page has a re-election donation link and no text on guns; issue pages are campaigns on potholes, child care and the grocery tax)",
+        "Nashville Banner 2024 candidate questionnaire https://nashvillebanner.com/2024/07/20/aftyn-behn-candidate-district-51/ (read; source of the findings)",
+        "blocked: https://ballotpedia.org/Aftyn_Behn (fetch returned an empty page)",
+        "not reviewed: https://wapp.capitol.tn.gov/apps/legislatorinfo/member.aspx?district=h51 (redirect, skipped as bulk bill data covers it)",
+        "sponsor list: covered by bulk bill data",
+        "web searches: three searches on name plus gun words; found the questionnaire and news about the 2025 congressional special election, no other own words on guns",
+        "scope: the campaign site carries a re-election donation link; no page naming the 2026 ballot was read separately"
+      ],
+      "found": 3,
+      "at": "2026-11-14T02:42:41.735Z",
       "by": "source-collector"
     }
   ]

@@ -1620,6 +1620,34 @@
       "found": 4,
       "at": "2026-11-12T15:13:42.077Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "Second Amendment general statements",
+        "extreme-risk orders",
+        "machine gun conversion devices"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "https://en.wikipedia.org/wiki/Tim_Hicks_(politician) (confirms State House District 6 member since January 2021; nothing on guns in his own words)",
+        "https://tnhousegop.org/tag/tim-hicks/ (House caucus page of his weekly Capitol Reports; read 12 of the 2025 reports, which only summarise other members' firearm bills in caucus-written text, no statement by him, so not saved)",
+        "https://tnhousegop.org/press-releases/2026/05/washington-county-lawmakers-secure-3-5-million-in-state-funding-for-etsu-local-organizations/ (nothing on the subject)",
+        "https://tnhousegop.org/press-releases/2026/07/washington-county-lawmakers-encourage-residents-to-take-advantage-of-sales-tax-holiday/ (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Tim_Hicks_(Tennessee) (403)",
+        "not reviewed: https://www.capitol.tn.gov/house/members/h6.html (legislature pages skipped per brief)",
+        "web search: one news search on name plus gun words; nothing by him on the subject",
+        "no personal campaign site or questionnaire located"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:41:15.212Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -578,6 +578,34 @@
       "found": 3,
       "at": "2026-11-12T15:13:42.082Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or magazine",
+        "check every gun buyer",
+        "red-flag orders and who may have a gun",
+        "ghost guns and federal agency gun rules",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person, including a name search)",
+        "the campaign site https://rickscarbrough.com/ and its public-safety coalition release https://rickscarbrough.com/?p=3041: read, nothing on the subject (the release has only a generic line about defending the constitution)",
+        "https://rickscarbrough.com/supporters/publicsafety: fetched, nothing on the subject in the text returned",
+        "the House caucus site search https://tnhousegop.org/?s=Scarbrough+gun: no results on the subject",
+        "https://mycouriernews.com/articles/2026/07/11308/scarbrough-seeks-second-term: read; confirms he is seeking re-election to House District 33 and won in 2024; nothing on the subject",
+        "blocked: https://ballotpedia.org/Rick_Scarbrough (fetch returned an empty page)",
+        "not reviewed: https://www.yahoo.com/news/giving-guns-certain-mental-health-100040861.html (page returned no text; a search snippet only mentions a March 2025 subcommittee vote on a mental-health gun-transfer bill, not usable as a source)",
+        "sponsor list: covered by bulk bill data (legislature sponsor and roll-call pages skipped)",
+        "two news searches on his name plus gun words: no own-words statement found",
+        "ontheissues.org and Wikipedia: not used (lead-only sources)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:39:15.808Z",
+      "by": "source-collector"
     }
   ]
 }

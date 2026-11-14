@@ -618,6 +618,48 @@
           "sha256": "48a67f03e9450426eb00ce5ba7bb15dba8388dd1527646d20cd38ec9ed96a0b1"
         }
       }
+    },
+    {
+      "id": "8b74958eb79b4e67ec2e8115d8df772f08e99af92f83cded5be174ee66f88d9f",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/79676/race/20597/election/1242",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "What restrictions on gun ownership are needed to protect public safety? No restrictions on law abiding citizens",
+      "note": "Candidate questionnaire answer on a voter-guide site: asked what limits on gun ownership are needed, the answer given was no restrictions on law-abiding citizens. Exact date not shown on page; election year assumed 2024.",
+      "subjects": [
+        "limits on who may own a gun",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:40:56.027Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a0c3bcdd4324e82021fbb775d6cb9c8867d8a337337f0261fd767eefd448ca0d",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/79676/race/20597/election/1242",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Should teachers be allowed to carry guns at school? Yes",
+      "note": "Same questionnaire: answered yes to teachers carrying guns at school, and marked support for the legislation passed on this issue by the legislature that year. Exact date not shown on page.",
+      "subjects": [
+        "carry guns in schools",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:40:56.027Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -655,6 +697,31 @@
       ],
       "found": 2,
       "at": "2026-11-12T15:13:42.083Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "limits on gun ownership",
+        "Second Amendment rights",
+        "guns in schools",
+        "carry permits",
+        "background checks",
+        "assault-style weapons"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://senatortomhatcherdistrict2.com (lists 'Second Amendment Rights' as an issue tile; no full statement text on the page)",
+        "https://ivoterguide.com/candidate/79676/race/20597/election/1242 (candidate questionnaire answers)",
+        "blocked: https://ballotpedia.org/Tom_Hatcher (403)",
+        "not reviewed: https://wapp.capitol.tn.gov/apps/legislatorinfo/member.aspx?district=s2 (legislature member page; sponsor list: covered by bulk bill data)",
+        "web search: name plus Second Amendment/firearms words, found no news quotes on the subject",
+        "https://tennesseelookout.com/2026/03/27/stockard-on-the-stump-gop-senator-scoffs-at-tennessee-guns-group/ (seen in search results only; not fetched, not reviewed)",
+        "sitting state senator for District 2 confirmed by search results (term to 2028)"
+      ],
+      "found": 2,
+      "at": "2026-11-14T02:40:56.027Z",
       "by": "source-collector"
     }
   ]

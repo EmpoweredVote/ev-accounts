@@ -1128,6 +1128,35 @@
       "found": 4,
       "at": "2026-11-12T15:13:42.081Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits and permit fees",
+        "places where carry is allowed",
+        "repeal of gun laws",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "scope confirmed: state House member for District 26 (Hamilton County), on the 2026 general-election ballot, per the House caucus member page https://tnhousegop.org/members/representative-greg-martin/ and https://www.capitol.tn.gov/house/members/h26.html",
+        "On the Record (0 meetings)",
+        "House caucus member page and its 2026 weekly Capitol Report newsletters (13 read): they carry only summaries of other members' gun bills and those members' quotes, none are Martin's own words on guns; nothing on the subject",
+        "House caucus site search for 'gun': nothing by Martin",
+        "no separate campaign site found",
+        "blocked: https://ballotpedia.org/Greg_Martin_(Tennessee) (403)",
+        "news search on name plus gun words (2 searches): nothing by Martin on the subject",
+        "sponsor list: covered by bulk bill data",
+        "roll-call pages: covered by bulk bill data",
+        "note for reviewer: bulk data on file lists Senate bill floor votes (TN-SB-...) under this House member, which may be a mismatch to check"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:40:58.071Z",
+      "by": "source-collector"
     }
   ]
 }

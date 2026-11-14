@@ -1271,6 +1271,32 @@
       "found": 4,
       "at": "2026-11-12T15:13:42.079Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits and places to carry",
+        "gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "the House caucus site, member pages and site search for gun/firearm (https://tnhousegop.org/?s=gun+vital): only weekly newsletters issued under his name; they summarise other members' firearm bills and none carries his own statement on the subject, so none saved",
+        "https://tnhousegop.org/greg-vital-takes-oath-of-office: confirms sworn in as State Rep. Greg Vital; nothing on the subject",
+        "legislature member page https://www.capitol.tn.gov/house/members/h29.html: loaded, nothing on the subject",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Greg_Vital (403)",
+        "blocked: https://justfacts.votesmart.org/public-statement/705677/issue-position-guns-and-the-2nd-amendment (bot check; a search lead said it holds a guns statement, so it is a gap, not nothing)",
+        "web search for name plus gun words: no own-words source reachable; no campaign site found",
+        "note: news says he was sworn in October 2025 after a special election, while the file has votes dated 2022-2024; the bulk-data match may be worth checking"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:39:41.375Z",
+      "by": "source-collector"
     }
   ]
 }

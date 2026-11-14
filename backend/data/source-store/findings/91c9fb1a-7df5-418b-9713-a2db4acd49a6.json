@@ -1575,6 +1575,26 @@
           "sha256": "a3b6106b6f7e0633a322591ab0fee3c6093581def5468e0b7f5ed0dda29fac9b"
         }
       }
+    },
+    {
+      "id": "aea79fdd7840a8f081524aae335dda544aba92b7c6950b8799a24a915a9ba83f",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/66011/race/15598/election/979",
+      "date": "2022-11-08",
+      "date_precision": "year",
+      "passage": "I am pro-life, pro-second amendment, pro-law enforcement, EMS, and all other emergency services.",
+      "note": "Self-description in his 2022 candidate voter-guide profile for State House District 71. A general statement of support for the Second Amendment, with no specific policy named. The same profile lists membership in the Tennessee Firearms Association and Friends of the NRA, and founding membership of the NRA chapter at MTSU.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:41:20.219Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -1617,6 +1637,33 @@
       ],
       "found": 2,
       "at": "2026-11-12T15:13:42.083Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "general statement on gun rights and the Second Amendment",
+        "restrictions on gun ownership for public safety",
+        "teachers carrying guns at school",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders"
+      ],
+      "places": [
+        "sponsor list: covered by bulk bill data",
+        "On the Record (0 meetings)",
+        "https://www.capitol.tn.gov/house/members/h71.html (member page confirms Representative Kip Capley, District 71; nothing on the subject)",
+        "https://ivoterguide.com/candidate/66011/race/15598/election/979 (2022 candidate questionnaire: one own-words statement saved)",
+        "https://ivoterguide.com/candidate/66011/race/15598/election/1242 (2024 questionnaire: gun questions left unanswered; affiliations list saved as a note only; nothing quotable)",
+        "one web search on name plus gun and Second Amendment words: only the voter-guide pages above were about him",
+        "blocked: https://ballotpedia.org/Kip_Capley (403)",
+        "not reviewed: https://www.kipcapley.com (no response, campaign site not reachable)",
+        "nothing on the subject: official member page; no separate official press-release or issue page found"
+      ],
+      "found": 1,
+      "at": "2026-11-14T02:41:20.219Z",
       "by": "source-collector"
     }
   ]

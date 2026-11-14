@@ -2268,6 +2268,28 @@
           "sha256": "3c20164041bf91f5daa3d3a7d7ef3f0355ca03f17d6a1066a812ae1c09c630d7"
         }
       }
+    },
+    {
+      "id": "35f78d7529ee8172225cc407c1699fa858cff07d4fd71802dc1e1b6a9e1278a9",
+      "kind": "own-words",
+      "url": "https://www.timesfreepress.com/news/2023/may/17/sen-bo-watson-guns-tfp/",
+      "date": "2023-05-17",
+      "date_precision": "day",
+      "passage": "The legislature has rejected that over and over and over again,",
+      "note": "Quoted by the Chattanooga Times Free Press after a Friends of Hixson meeting, speaking about the governor's red-flag proposal that lawmakers rejected earlier that year; he added that any new gun measure for the August special session has to be something outside that space. The outlet's summary says he would keep an open mind on other gun laws.",
+      "subjects": [
+        "red-flag orders",
+        "limits on who may have a gun",
+        "special session on public safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:39:03.932Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -2312,6 +2334,32 @@
       ],
       "found": 7,
       "at": "2026-11-12T15:13:42.074Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red-flag orders",
+        "gun rights and the Second Amendment",
+        "permitless carry",
+        "carry permits",
+        "assault-style gun bans",
+        "background checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "scope: a Times Free Press story from 2023 names him as a sitting state senator for Hixson; 2026 ballot status not confirmed from a page I could read",
+        "Ballotpedia: https://ballotpedia.org/Bo_Watson returned no readable text, nothing on the subject",
+        "official Senate member page: https://www.capitol.tn.gov/senate/members/s10.html returned no text naming him, not reviewed",
+        "blocked: https://justfacts.votesmart.org/public-statement/1485034/issue-position-2nd-amendment (bot check; also unclear it is this person)",
+        "not reviewed: https://www.timesfreepress.com/news/local/story/2016/jun/14/chattanooga-update-sen-bo-watson-talks-gun-laws-riverbend-and-orlando-massacre/371009/ (page text did not load)",
+        "not reviewed: official site and campaign site (no subject page found in search)",
+        "news search: Times Free Press 2023 story on a special session on gun laws"
+      ],
+      "found": 1,
+      "at": "2026-11-14T02:39:03.932Z",
       "by": "source-collector"
     }
   ]

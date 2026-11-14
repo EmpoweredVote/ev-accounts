@@ -559,6 +559,48 @@
           "sha256": "885840be2c4396353be69d775683adec8a94382eb02c1506888c69ed4060ef0c"
         }
       }
+    },
+    {
+      "id": "dba564355fb16c97b92fdf0e8e096164c226ea48e434745b4d7b60eee27cc102",
+      "kind": "own-words",
+      "url": "https://elizabethton.com/?p=603516",
+      "date": "2024-04-09",
+      "date_precision": "day",
+      "passage": "I believe in limited government, the sanctity of life, and the fundamental right to bear arms.",
+      "note": "Quoted by a regional newspaper in a story on her first run for the House seat; she lists the right to bear arms among her core values.",
+      "subjects": [
+        "general statement on gun rights",
+        "right to bear arms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:39:07.473Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b3bf0669f483cfd6ed926d1eabd0e24553f0722406dfd7fdbdcfa72278172383",
+      "kind": "own-words",
+      "url": "https://elizabethton.com/?p=603516",
+      "date": "2024-04-09",
+      "date_precision": "day",
+      "passage": "She noted that she is 100 percent pro-life, is a second amendment supporter, and vowed to uphold “our constitutional, God-given rights.”",
+      "note": "The reporter's paraphrase of her statements; only the phrase inside quote marks is hers verbatim. Describes herself as a Second Amendment supporter.",
+      "subjects": [
+        "Second Amendment",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:39:07.473Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -599,6 +641,34 @@
       ],
       "found": 4,
       "at": "2026-11-12T15:13:42.079Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "right to bear arms",
+        "Second Amendment",
+        "permitless carry",
+        "background checks",
+        "assault-style weapons",
+        "red-flag orders",
+        "gun bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "floor votes: covered by bulk bill data",
+        "a regional newspaper story from April 2024 on her first run for the seat (read; has her words on gun rights)",
+        "https://electric949.com/?p=85610 (a radio station story on her second-term announcement; read, nothing on the subject; confirms she is running for a second term in House District 4)",
+        "https://tnhousegop.org/member-newsroom/2025/03/rep-renea-jones-passes-first-bill-in-house-of-representatives/ (House caucus release on her first bill; read, nothing on the subject)",
+        "https://tnhousegop.org/?s=renea+jones+gun (caucus site search; nothing on the subject in the visible results)",
+        "blocked: https://ballotpedia.org/Renea_Jones (page came back empty)",
+        "web search: name plus gun words; no results naming her; nothing on the subject",
+        "not reviewed: her personal campaign site (no address found in searches)"
+      ],
+      "found": 2,
+      "at": "2026-11-14T02:39:07.473Z",
       "by": "source-collector"
     }
   ]

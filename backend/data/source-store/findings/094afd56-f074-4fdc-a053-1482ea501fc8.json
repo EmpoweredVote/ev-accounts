@@ -2681,6 +2681,94 @@
           "sha256": "3370de61a03ae487d88bba07bd29bd2aa2d55b418bd1289cfa91ac2485ca7cf2"
         }
       }
+    },
+    {
+      "id": "1a115f23213aafcca60e03e5ecbbc472be8eb003ec3ca19e91c0d0721522d1e8",
+      "kind": "own-words",
+      "url": "https://www.wkrn.com/news/tennessee-politics/thoughts-and-prayers-tax-bill-filed-in-tennessee-legislature/amp/",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "passage": "If we're going to do those things to help solve the problem in this state, we don't need my taxation bill,",
+      "note": "Quoted in a WKRN news story. He says his gun-sale tax bill would be unneeded if safe storage and red flag bills passed.",
+      "subjects": [
+        "safe storage of guns",
+        "red-flag orders",
+        "tax on gun sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T03:22:16.075Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "29942f15c51a8a8ea22da4408fb1112824ce5b51486cb0eba9dc264de417cad8",
+      "kind": "own-words",
+      "url": "https://www.wkrn.com/news/tennessee-politics/thoughts-and-prayers-tax-bill-filed-in-tennessee-legislature/amp/",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "passage": "I'll sponsor that bill if we can get those three things passed,",
+      "note": "Quoted in a WKRN news story. The story says the three things are safe storage laws, a red flag law and an assault weapons ban, and that he would then sponsor removal of all gun sales taxes.",
+      "subjects": [
+        "ban on assault-style guns",
+        "red-flag orders",
+        "safe storage of guns",
+        "tax on gun sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T03:22:16.075Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f34d24e2fc4782a9d272fe98ddddbc7d90c1b55e4c7eccc1395c47cea74402b7",
+      "kind": "own-words",
+      "url": "https://www.wkrn.com/news/tennessee-politics/thoughts-and-prayers-tax-bill-filed-in-tennessee-legislature/amp/",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "passage": "It's either we act and do something, or we're going to have to start taxing to pay for the other problem it's causing.",
+      "note": "Quoted in a WKRN news story. Says that if guns are left unsecured at home, the state must act or pay for the harm.",
+      "subjects": [
+        "safe storage of guns",
+        "tax on gun sales",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T03:22:16.075Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dc13a95ba927dd92741420978ddef0cb29afdb992bd5048fa0a1c72e4f1cd193",
+      "kind": "record",
+      "url": "https://www.wkrn.com/news/tennessee-politics/thoughts-and-prayers-tax-bill-filed-in-tennessee-legislature/amp/",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "instrument_id": "TN-HB-2193-2023",
+      "act": "sponsor",
+      "note": "News story reports he filed HB 2193, a 15% tax on retail firearm sales with the money going to school counselors.",
+      "subjects": [
+        "tax on gun sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T03:22:16.075Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -2724,6 +2812,56 @@
       ],
       "found": 4,
       "at": "2026-11-12T15:13:42.075Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "tax on gun sales",
+        "safe storage of guns",
+        "red-flag orders",
+        "ban on assault-style guns",
+        "background checks",
+        "general gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House member page, https://www.capitol.tn.gov/house/members/h50.html (confirms Representative Bo Mitchell, District 50, Davidson County; nothing on the subject)",
+        "campaign site: not reviewed, none found",
+        "blocked: https://ballotpedia.org/Bo_Mitchell (empty response)",
+        "blocked: https://jacksonpost.news/stories/tensions-rise-during-bus-stop-regarding-gun-legislation,15764 (empty response; a 2023 bus-tour quote could not be verified, so not saved)",
+        "news search on name plus gun words; read the WKRN story and the Fox News story on bill HB 2193",
+        "sponsor list: covered by bulk bill data",
+        "2026 ballot status: not confirmed from a page"
+      ],
+      "found": 4,
+      "at": "2026-11-14T02:37:45.711Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "tax on gun sales",
+        "safe storage of guns",
+        "red-flag orders",
+        "ban on assault-style guns",
+        "background checks",
+        "general gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House member page, https://www.capitol.tn.gov/house/members/h50.html (confirms Representative Bo Mitchell, District 50, Davidson County; nothing on the subject)",
+        "campaign site: not reviewed, none found",
+        "blocked: https://ballotpedia.org/Bo_Mitchell (empty response)",
+        "blocked: https://jacksonpost.news/stories/tensions-rise-during-bus-stop-regarding-gun-legislation,15764 (empty response; a 2023 bus-tour quote could not be verified, so not saved)",
+        "news search on name plus gun words; read the WKRN story and the Fox News story on bill HB 2193",
+        "sponsor list: covered by bulk bill data",
+        "2026 ballot status: not confirmed from a page"
+      ],
+      "found": 4,
+      "at": "2026-11-14T03:22:16.075Z",
       "by": "source-collector"
     }
   ]

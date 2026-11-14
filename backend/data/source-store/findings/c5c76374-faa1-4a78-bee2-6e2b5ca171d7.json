@@ -2129,6 +2129,28 @@
           "sha256": "3c20164041bf91f5daa3d3a7d7ef3f0355ca03f17d6a1066a812ae1c09c630d7"
         }
       }
+    },
+    {
+      "id": "7e49203c55a04b9ea12a081a21a0d5739547cedc0163012698c531890e53fa92",
+      "kind": "record",
+      "url": "https://www.newschannel5.com/news/tennessee-senate-defeats-a-bill-allowing-an-open-carry-permit-for-all-shotguns-and-rifles",
+      "date": "2025-04-08",
+      "date_precision": "day",
+      "act": "nay",
+      "motion": "Senate Judiciary Committee vote on bill (Lowe/Grills) letting handgun permit holders openly carry loaded long guns; failed 4-4",
+      "note": "A news story reports he voted no in committee on the bill to let handgun permit holders carry loaded shotguns and rifles in public, with the bill failing on a 4-4 tie. The story is from NewsChannel 5 and names him as Sen. Paul Rose of Covington.",
+      "subjects": [
+        "carry a long gun in public with a handgun permit",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:43:26.338Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -2169,6 +2191,33 @@
       ],
       "found": 4,
       "at": "2026-11-12T15:13:42.082Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a long gun in public with a handgun permit",
+        "carry permits",
+        "who may have a gun (mental health)",
+        "gun rights and the Second Amendment",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate member page (https://www.capitol.tn.gov/senate/members/s32.html): page loaded but gave only a menu shell, nothing on the subject",
+        "sponsor list: covered by bulk bill data",
+        "Ballotpedia: blocked: https://ballotpedia.org/Paul_Rose_(Tennessee) (403)",
+        "campaign site: none found in search",
+        "news search on name plus gun words: one news story with a committee vote saved; a story on a mental-health gun bill where he asked about definitions was not reviewed: https://www.yahoo.com/news/bill-bar-giving-guns-certain-205800808.html (429, blocked)",
+        "gun-rights group endorsement release (https://www.nrapvf.org/articles/20200703/nra-endorses-sen-paul-rose-for-tennessee-state-senate): read, words are the group's not his, nothing saved",
+        "no own-words statement on the subject found"
+      ],
+      "found": 1,
+      "at": "2026-11-14T02:43:26.338Z",
       "by": "source-collector"
     }
   ]

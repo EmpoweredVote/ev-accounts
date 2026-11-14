@@ -2402,6 +2402,27 @@
           "sha256": "9fdf7bad1c8bcd236131030d89ff10c5bc7af617b8255bd5749d82f1d9fdacc7"
         }
       }
+    },
+    {
+      "id": "df45617e4e03e86cac0cd3f1b169261870a1b2efa8829bb1ac54cc23288b1ed0",
+      "kind": "own-words",
+      "url": "https://www.kerryroberts.com/senator_roberts_proposed_bipartisan_gun_safety_legislation",
+      "date": "2018-02-05",
+      "date_precision": "day",
+      "passage": "“This is common-sense legislation that will make gun safes more affordable and accessible for gun owners,” said Senator Roberts.  “Further it will create a safer environment for children and hopefully prevent the heartbreaking tragedies that occur from time to time.  Finally we believe this legislation will prevent thefts.”",
+      "note": "Press release from his site announcing SB 2476, a bill to exempt gun safe purchases from sales tax, co-announced with the Senate minority leader.",
+      "subjects": [
+        "safe storage of guns",
+        "gun safe sales tax exemption"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:39:46.086Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -2446,6 +2467,30 @@
       ],
       "found": 3,
       "at": "2026-11-12T15:13:42.074Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safes and safe storage",
+        "Second Amendment",
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "his official site, one press release read: https://www.kerryroberts.com/senator_roberts_proposed_bipartisan_gun_safety_legislation (site-wide keyword search not done)",
+        "sponsor list: covered by bulk bill data",
+        "one web search on his name plus gun words; leads only, none fetched",
+        "not reviewed: https://carrollobserver.com/?p=4853 (report of a pass vote in 2026)",
+        "blocked: https://votesmart.org/public-statement/745670/issue-position-second-amendment-rights (404)",
+        "not reviewed: Ballotpedia, campaign site, news stories, other URL patterns (not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-11-14T02:39:46.086Z",
       "by": "source-collector"
     }
   ]

@@ -8,6 +8,7 @@
  * Only the API key and public bill queries leave our systems. No user data.
  */
 import { pool } from '../db.js';
+import { datasetQuery } from './datasetQuery.js';
 
 const LEGISCAN_BASE = 'https://api.legiscan.com/';
 export const MONTHLY_QUERY_CAP = 10_000;
@@ -65,6 +66,9 @@ export async function legiscanQuery(
   op: string,
   params: Record<string, string> = {},
 ): Promise<any> {
+  // Bulk datasets on disk instead of the API: no query spent, the counter untouched (datasetQuery.ts).
+  const datasets = process.env.LEGISCAN_DATASETS;
+  if (datasets) return datasetQuery(datasets, op, params);
   await reserveQuery();
 
   const url = queryUrl(apiKey, op, params);

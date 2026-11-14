@@ -447,6 +447,27 @@
           "sha256": "885840be2c4396353be69d775683adec8a94382eb02c1506888c69ed4060ef0c"
         }
       }
+    },
+    {
+      "id": "41fc82b69fbd7fee98648f36a179d894e79e99b284b84748ba08c01943eda255",
+      "kind": "own-words",
+      "url": "https://tomstinnett4blount.com",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Defend the Constitution and Gun Rights",
+      "note": "One item in the priorities list on his state House campaign site (undated page, appears to be from his 2024 race). A general statement of support for gun rights, with no specific policy named.",
+      "subjects": [
+        "general statement on gun rights",
+        "defend the Constitution"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:40:10.759Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -489,6 +510,33 @@
       ],
       "found": 3,
       "at": "2026-11-12T15:13:42.079Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights",
+        "Second Amendment",
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://tomstinnett4blount.com (read; one gun-rights line in a priorities list)",
+        "the House caucus member page https://tnhousegop.org/?p=139 (read; names him as District 20 member; nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "roll-call pages: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Tom_Stinnett (empty response)",
+        "blocked: https://tennesseelookout.com/voter-guides/contests/house-district-20/ (403)",
+        "blocked: https://www.wbir.com/video/news/politics/blount-co-passes-second-amendment-sanctuary-resolution/51-2952adaf-2f6c-4bc2-be65-2e198f418f86 (403; county resolution, not shown to involve him)",
+        "https://tnfirefly.com/elections/general-assembly/house/20 (election results page: he was on the 2026 general ballot for District 20; nothing on the subject)",
+        "web searches on his name plus gun, firearm, Second Amendment and carry words: no statement by him found"
+      ],
+      "found": 1,
+      "at": "2026-11-14T02:40:10.759Z",
       "by": "source-collector"
     }
   ]

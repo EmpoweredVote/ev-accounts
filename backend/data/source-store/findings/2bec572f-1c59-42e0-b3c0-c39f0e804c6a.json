@@ -3435,6 +3435,48 @@
           "sha256": "3c20164041bf91f5daa3d3a7d7ef3f0355ca03f17d6a1066a812ae1c09c630d7"
         }
       }
+    },
+    {
+      "id": "1bf1befe8f63f4b8e10abead7783c797ff0f2cdae086bab6fdb8a4c94e35d968",
+      "kind": "own-words",
+      "url": "https://wlos.com/news/nation-world/state-lawmakers-consider-bill-to-allow-tennesseans-to-carry-guns-without-permit",
+      "date": "2021-01-26",
+      "date_precision": "day",
+      "passage": "This just allows law abiding citizens to defend themselves,",
+      "note": "Quoted by WLOS on the bill he co-sponsored to allow open or concealed carry without a permit.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:41:05.853Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4f0291b1a24f68351033d0304cb259416030321f566d8edd659caca5a7f27e81",
+      "kind": "own-words",
+      "url": "https://lewisherald.com/story/2024/04/10/news/senator-joey-hensley-md-capital-hill-week-in-review/7838.html",
+      "date": "2024-04-10",
+      "date_precision": "day",
+      "passage": "The TN Senate is proceeding with two proposals to amend the Tennessee Constitution to strengthen Tennesseans’ Second Amendment rights.",
+      "note": "Weekly legislative column issued under his name in the Lewis County Herald. It describes SJR 904, which would change the state constitution to say citizens have a right to keep, bear and wear arms, and a Senate-passed bill (SB 2923) on firearm safety education in public schools. The column's wording is the Senate's report of the week, not clearly his personally.",
+      "subjects": [
+        "constitutional right to bear arms",
+        "gun safety education in schools",
+        "Second Amendment general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:41:05.853Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -3477,6 +3519,31 @@
       ],
       "found": 9,
       "at": "2026-11-12T15:13:42.073Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "guns on college campuses",
+        "constitutional right to bear arms",
+        "gun safety education in schools",
+        "gun maker lawsuit protection",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances found)",
+        "sponsor list: covered by bulk bill data",
+        "Senate member page https://www.capitol.tn.gov/senate/members/s28.html (loads; no statements on the subject read there)",
+        "Senator's weekly column in the Lewis County Herald (read one 2024 issue)",
+        "news search on name plus gun words (4 outlets read)",
+        "not reviewed: https://ballotpedia.org/Joey_Hensley",
+        "nothing on the subject: no campaign site found",
+        "not reviewed: other weekly column issues, and the 2023 gunmaker-liability and 2019 EMT carry stories"
+      ],
+      "found": 2,
+      "at": "2026-11-14T02:41:05.853Z",
       "by": "source-collector"
     }
   ]

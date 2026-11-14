@@ -2052,6 +2052,49 @@
           "sha256": "3e3df3e72884248048890e8d8a7c0ac83b40c024b617d19df451b7b99e5dd60b"
         }
       }
+    },
+    {
+      "id": "1860d84a940085e6f99fa0eb888492cd1dcf4fea7432d7f352221109fb636870",
+      "kind": "own-words",
+      "url": "https://tnhousegop.org/member-newsroom/2026/02/state-rep-chris-hurts-capitol-report-feb-6-2026/",
+      "date": "2026-02-06",
+      "date_precision": "day",
+      "passage": "The Civil Justice Subcommittee this week advanced a proposal to extend the fee waiver for lifetime enhanced handgun carry permits to include retired law enforcement officers who served less than 10 years.",
+      "note": "From his weekly Capitol Report newsletter issued in his name; reports a subcommittee advancing a fee-waiver extension for lifetime enhanced carry permits. Reports the action; does not state his own view.",
+      "subjects": [
+        "carry permit fees",
+        "enhanced handgun carry permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:41:54.876Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b1e37565377bbc8754c2676690f2fe942f9ab7331e25baac5685aea5f8757f6b",
+      "kind": "own-words",
+      "url": "https://tnhousegop.org/member-newsroom/2026/02/state-rep-chris-hurts-capitol-report-feb-6-2026/",
+      "date": "2026-02-06",
+      "date_precision": "day",
+      "passage": "Proposal clarifies state law, safeguards Second Amendment",
+      "note": "Headline in his Capitol Report newsletter for a section on HB 2064 (sponsored by another member) which removes the 'going armed' offense and protects carry in parks. The section quotes the bill sponsor, not him; it shows what he chose to feature.",
+      "subjects": [
+        "Second Amendment",
+        "carry a gun in public places",
+        "going armed offense"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:41:54.876Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -2093,6 +2136,32 @@
       ],
       "found": 2,
       "at": "2026-11-12T15:13:42.080Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "enhanced handgun carry permit fees",
+        "Second Amendment general statements",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "the House caucus member newsroom tag page for Chris Hurt and his three weekly reports (Feb 2025, Jan 2026, Feb 2026)",
+        "the campaign site https://chrishurtfortn.com/ (home page only; nothing on the subject; /issues returned 404)",
+        "the legislature member page https://www.capitol.tn.gov/house/members/h82.html (read; bio only, nothing on the subject)",
+        "Wikipedia page for Chris Hurt (confirms sitting District 82 member; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Chris_Hurt (403)",
+        "not reviewed: https://tnhousegop.org/category/82/page/4 (404; the constitutional-carry update seen in a search result could not be fetched)",
+        "two web searches on name plus gun words; results were leads only"
+      ],
+      "found": 2,
+      "at": "2026-11-14T02:41:54.876Z",
       "by": "source-collector"
     }
   ]

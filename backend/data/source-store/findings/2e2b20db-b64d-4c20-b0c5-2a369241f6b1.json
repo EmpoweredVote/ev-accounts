@@ -2425,6 +2425,69 @@
           "sha256": "4b8ae39809f336c0d40af428dc8fd6b21923a3be0d49c8e9535a80f48ae53f48"
         }
       }
+    },
+    {
+      "id": "35887db6d760898181cac1eb7412ccc919fbc20c45a8083a96e9008b2edd8792",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/camedwards/2023/07/12/tn-governors-push-for-red-flag-law-faltering-as-gop-lawmaker-says-hes-working-with-nra-on-an-alternative-n72495",
+      "date": "2023-07-11",
+      "date_precision": "day",
+      "passage": "Haile declined to provide specifics but said, “I think we have threaded the needle.”",
+      "note": "Quoted in a gun-news site's copy of a wire story; he says he is working on a mental-health bill after the Covenant School shooting and thinks it balances the concerns.",
+      "subjects": [
+        "mental health approach after school shooting",
+        "red-flag / extreme-risk orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:38:24.137Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f2f9ef0af4ea193821c35d9e3ce0c30204c98011c8f82247d52fee8dcd7a970a",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/camedwards/2023/07/12/tn-governors-push-for-red-flag-law-faltering-as-gop-lawmaker-says-hes-working-with-nra-on-an-alternative-n72495",
+      "date": "2023-07-11",
+      "date_precision": "day",
+      "passage": "take care of the individual, take them out of the equation, not take everybody else’s gun out of the equation that’s not involved in this, and that’s protecting the Second Amendment.",
+      "note": "Quoted fragment, in the reporter's words framing it as what the NRA is calling for, as he described it; he favors acting on the person of concern rather than removing others' guns.",
+      "subjects": [
+        "red-flag / extreme-risk orders",
+        "Second Amendment and due process"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:38:24.137Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c93ed427f7d2f2874e83f9a8ac158f01f8d68c88851fe6411af8bd9c3a0dbaa1",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/camedwards/2023/07/12/tn-governors-push-for-red-flag-law-faltering-as-gop-lawmaker-says-hes-working-with-nra-on-an-alternative-n72495",
+      "date": "2023-07-11",
+      "date_precision": "day",
+      "passage": "doing nothing is not an option",
+      "note": "Short quoted phrase (the site's own copy shows it inside its writer's comment), about acting after the Covenant School shooting. The reporter, not Haile, says he cannot support the governor's red-flag bill because it lacks enough due process.",
+      "subjects": [
+        "red-flag / extreme-risk orders",
+        "mental health approach after school shooting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:38:24.137Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -2464,6 +2527,34 @@
       ],
       "found": 4,
       "at": "2026-11-12T15:13:42.075Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red-flag / extreme-risk orders",
+        "mental health approach after school shooting",
+        "Second Amendment and due process",
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity: sitting state senator, District 18; a voter-guide page (https://ivoterguide.com/candidate/6661/race/20613/election/1242) names him for that seat; a sitting official, not a 2026 candidate check",
+        "sponsor list: covered by bulk bill data",
+        "legislature member and roll-call pages: skipped, covered by bulk bill data",
+        "blocked: https://tennesseelookout.com/2023/07/12/republican-senator-looks-at-nra-backed-option-with-governors-bill-facing-trouble/ (bot check, 403)",
+        "not reviewed: https://tennesseelookout.com/2023/08/22/senator-prefers-controls-on-military-type-weapons-but-gun-bills-not-allowed/ (bot check, 403; the senator in that headline is not confirmed to be him)",
+        "blocked: https://ballotpedia.org/Ferrell_Haile (403)",
+        "official site and campaign site: no campaign site found (https://www.ferrellhaile.com did not load); official page is the legislature's, skipped as covered by bulk data",
+        "voter guide page: Second Amendment questions marked did not answer",
+        "news search on name plus gun words: two searches; 2023 red-flag coverage found, quotes copied from a news-site copy and a gun-news site copy of the same wire story",
+        "nothing on the subject: 2026 Tennessee Lookout piece on a gun group (names him only on a food tax bill), not fetched"
+      ],
+      "found": 3,
+      "at": "2026-11-14T02:38:24.137Z",
       "by": "source-collector"
     }
   ]

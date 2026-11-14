@@ -19,7 +19,7 @@
       "wapp.capitol.tn.gov",
       "www.capitol.tn.gov"
     ],
-    "legiscan_args": "--session-start odd",
+    "legiscan_args": "--session-start odd --bill-pad 4",
     "floor_rule": "Floor votes only: motions that start \"FLOOR VOTE:\" and name the bill's own passage (\"(AS AMENDED) PASSAGE ON THIRD CONSIDERATION\" in the House, \"Third Consideration\" in the Senate), concurrence in the other chamber's amendments, a conference committee report, or a resolution's \"Motion to Adopt\". Amendment, table, previous-question, consider, defer, recall and suspend-the-rules votes are dropped. House 99, Senate 33. LegiScan NV (present not voting) and Absent both count as absent.",
     "gaps": [
       "Some roll calls are labelled only \"FLOOR VOTE:\" or \"FLOOR VOTE: MOTION\" with no motion named; they are dropped.",

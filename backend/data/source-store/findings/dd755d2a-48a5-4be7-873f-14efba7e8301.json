@@ -1359,6 +1359,27 @@
           "sha256": "6950302e239d4bb636250062efdeb8f1013ca8a67b6aba641728c35ec7809ea0"
         }
       }
+    },
+    {
+      "id": "12e6912b3c34e2f6efd359afe5e69ed917ccab2e0384303c6dde59f3336ef8c0",
+      "kind": "own-words",
+      "url": "https://hatchiepress.com/protecting-public-safety-and-tax-reform-highlight-legislative-week/",
+      "date": "2024-03-26",
+      "date_precision": "day",
+      "passage": "Legislation, which I co-sponsored, passed the Senate floor last week to protect financial transaction data associated with firearm and ammunition purchases from being used to conduct mass surveillance of law-abiding Tennesseans.",
+      "note": "Weekly legislative column by Walley, published in a local news site. Says he co-sponsored the Second Amendment Financial Privacy Act, which bars banks and card companies from requiring a merchant category code for gun-store purchases and protects those records.",
+      "subjects": [
+        "Second Amendment rights",
+        "privacy of gun and ammunition purchase records"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:40:16.782Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -1400,6 +1421,31 @@
       ],
       "found": 3,
       "at": "2026-11-12T15:13:42.082Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "firearm purchase data and financial privacy",
+        "background-check database entries",
+        "carry permits and permitless carry",
+        "bans on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://hatchiepress.com/protecting-public-safety-and-tax-reform-highlight-legislative-week/ (weekly column signed Senator Page Walley, confirms Senate office)",
+        "sponsor list: covered by bulk bill data",
+        "the legislature's member page: not reviewed (legislature sites skipped per brief)",
+        "https://ballotpedia.org/Page_Walley: fetched, nothing usable on the subject; 2026 ballot status not confirmed there",
+        "one web search on name plus gun words: only the column above was his own words",
+        "official/campaign site issue pages: not reviewed, no separate site found in search",
+        "nothing on the subject: no questionnaire, debate, or interview found"
+      ],
+      "found": 1,
+      "at": "2026-11-14T02:40:16.782Z",
       "by": "source-collector"
     }
   ]

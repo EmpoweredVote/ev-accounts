@@ -294,5 +294,62 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment general statements",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://tnfirefly.com/results/august-2026-primary/state-house-75-republican (shows him unopposed in the primary, advancing to the general election)",
+        "House caucus member newsroom: first-bill release (https://tnhousegop.org/press-releases/2026/04/rep-michael-lankford-passes-first-bill/) read, nothing on the subject",
+        "House caucus Capitol Report April 24, 2026 (https://tnhousegop.org/?p=2926): nothing on the subject",
+        "House caucus site search for gun terms: nothing on the subject",
+        "blocked: https://ballotpedia.org/Michael_Lankford (403)",
+        "web search: name plus gun, firearm, Second Amendment, permitless carry terms: nothing on the subject",
+        "sponsor list: covered by bulk bill data",
+        "campaign site: not found in search; not reviewed",
+        "not reviewed: https://clarksvillenow.com/?p=574598 (interview podcast on his appointment, audio)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:37:41.562Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment general statements",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 appearances, no meetings found)",
+        "https://tnhousegop.org/press-releases/2026/04/rep-michael-lankford-passes-first-bill/ (his caucus release; confirms the office, a Pearl Harbor bill; nothing on the subject)",
+        "caucus site search for 'lankford firearm': nothing on the subject",
+        "https://en.wikipedia.org/wiki/Michael_Lankford (confirms appointment to House District 75 in January 2026; nothing on the subject)",
+        "https://ivoterguide.com/candidate/91929/race/34633/election/1499 (voter guide; the Second Amendment question is marked 'Did not answer'; no own words)",
+        "https://clarksvillenow.com/?p=574598 (news story; nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Michael_Lankford (403)",
+        "blocked: https://tennesseelookout.com/voter-guides/contests/house-district-75/ (403)",
+        "web search on name plus gun words: nothing on the subject from him",
+        "no separate campaign or personal site found; not reviewed",
+        "not reviewed: other URL-pattern pages (votesmart, ontheissues)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:44:14.951Z",
+      "by": "source-collector"
+    }
+  ]
 }

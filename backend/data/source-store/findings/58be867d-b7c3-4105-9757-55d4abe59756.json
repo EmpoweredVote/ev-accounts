@@ -2532,6 +2532,31 @@
       "found": 3,
       "at": "2026-11-12T15:13:42.078Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and Second Amendment",
+        "carry permits and permitless carry",
+        "bans on a type of firearm",
+        "background checks on gun sales",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://en.wikipedia.org/wiki/Rick_Eldridge: confirms Rick Eldridge as sitting member for House District 10 (Hamblen and Grainger counties); nothing on the subject",
+        "https://www.rickeldridge.com/: campaign site is a parked 'coming soon' page; nothing on the subject",
+        "https://www.capitol.tn.gov/house/members/h10.html: member page loaded without content on the subject",
+        "blocked: https://ballotpedia.org/Rick_Eldridge (403)",
+        "blocked: https://tnhousegop.org/members/rick-eldridge/ (404)",
+        "blocked: https://votesmart.org/public-statement/745670/issue-position-second-amendment-rights (404; the lead was not confirmed as about this person)",
+        "two web searches on his name plus gun words: no statements by him found; results were about other people named Eldridge",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:41:09.317Z",
+      "by": "source-collector"
     }
   ]
 }

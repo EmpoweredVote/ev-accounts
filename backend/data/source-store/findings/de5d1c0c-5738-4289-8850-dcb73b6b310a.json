@@ -515,6 +515,36 @@
       "found": 4,
       "at": "2026-11-12T15:13:42.078Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum ages",
+        "red-flag orders",
+        "ghost guns and federal agency gun rules",
+        "carry permits and permitless carry",
+        "repeal of gun laws and suppressor/short-barrelled rifle rules",
+        "general statements on gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name matches)",
+        "campaign site https://votemaberry.com/ (home page, site search for 'gun' and 'second amendment' returned no results, announcement page and state-representative posts read: nothing on the subject in his own words)",
+        "https://votemaberry.com/?p=1720 (read: an endorsement written by a county official, not his words; not saved)",
+        "House caucus site https://tnhousegop.org/ (site search for 'maberry gun': nothing on the subject)",
+        "blocked: https://ballotpedia.org/Aron_Maberry (403)",
+        "news searches on his name plus gun, firearm, Second Amendment (3 web searches): no direct quote from him on the subject",
+        "scope check: sitting District 68 state representative; search results show him unopposed in the August 2026 primary and on the November 3 general-election ballot; general-election result not confirmed",
+        "sponsor list: covered by bulk bill data",
+        "floor votes: covered by bulk bill data",
+        "not reviewed: https://www.facebook.com/aronmaberry, https://twitter.com/aronmaberry, https://www.instagram.com/aronmaberry/ (social posts not fetched)",
+        "not reviewed: https://votemaberry.com/aron-maberry-in-the-news/ (video link, not readable)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:40:32.040Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -2716,6 +2716,48 @@
           "sha256": "71ce68c93932a410e5caf2c18d1636444b87ef6b0424c3dce216ece3320c8549"
         }
       }
+    },
+    {
+      "id": "9828a522802919c421a75d70fe5e33416ff82664178e5abf4013aac8b3030ead",
+      "kind": "own-words",
+      "url": "https://www.chalkbeat.org/tennessee/2023/4/5/23671904/tennessee-arming-teachers-guns-school-shooting-nashville-covenant-legislature/",
+      "date": "2023-04-05",
+      "date_precision": "day",
+      "passage": "If your district and your local law enforcement agency does not want to participate, they simply do not have to do that,” he said. “But if you’re from a small rural district where resources are limited and you don’t have the ability to provide [school resource officers] for your community or an SRO at all, this would give you an opportunity to find a different pathway.",
+      "note": "Quoted by Chalkbeat telling a House committee his bill letting trained school staff carry concealed handguns is optional for districts and could help small rural districts without school police.",
+      "subjects": [
+        "let school staff carry a concealed handgun",
+        "carry permits and training"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:38:53.487Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7bbdad2d1c9de93602bb3cd3ac54bb1478c8424e530113a934d004814a421289",
+      "kind": "own-words",
+      "url": "https://www.k12dive.com/news/tennessee-lawmakers-vote-to-arm-teachers-covenant-shooting/714220/",
+      "date": "2024-04",
+      "date_precision": "month",
+      "passage": "This bill seeks to make the bar so high, but to allow locals to have the ability to do that, it would create a deterrent across our state,",
+      "note": "K-12 Dive quotes him at a hearing before the vote on his bill (HB 1202/SB 1325) letting trained school staff carry concealed handguns; he says the high training bar plus local choice would deter attacks.",
+      "subjects": [
+        "let school staff carry a concealed handgun",
+        "carry permits and training"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:38:53.487Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -2786,6 +2828,36 @@
       ],
       "found": 6,
       "at": "2026-11-12T15:13:42.073Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "let school staff carry a concealed handgun",
+        "carry permits and training",
+        "general statements on gun rights",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "sponsor list: covered by bulk bill data",
+        "On the Record (0 meetings)",
+        "his member page on the legislature site: not reviewed (the legislature's pages are skipped per the brief)",
+        "no separate campaign site or personal issue page found in the searches",
+        "blocked: https://ballotpedia.org/Ryan_Williams_(Tennessee) (403 / empty page)",
+        "blocked: https://newstalk941.com/?p=1652066",
+        "blocked: https://newstalk941.com/tag/42nd-district-state-representative-ryan-williams/",
+        "blocked: https://theucnow.com/?p=1966374",
+        "blocked: https://theucnow.com/?p=1966382",
+        "not found (404): https://1025wowcountry.com/?p=32280",
+        "news search on name plus gun words (two searches): found Chalkbeat and K-12 Dive stories quoting him on his school-staff carry bill",
+        "nothing on the subject: assault-style gun bans, background checks, red-flag orders, permitless carry, in his own words"
+      ],
+      "found": 2,
+      "at": "2026-11-14T02:38:53.487Z",
       "by": "source-collector"
     }
   ]

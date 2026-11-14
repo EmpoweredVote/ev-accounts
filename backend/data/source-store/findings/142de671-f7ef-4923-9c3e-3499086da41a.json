@@ -2164,6 +2164,108 @@
           "sha256": "4b8ae39809f336c0d40af428dc8fd6b21923a3be0d49c8e9535a80f48ae53f48"
         }
       }
+    },
+    {
+      "id": "3c988ab4118e533ce604e374ef4eaa83fedb0fa3cb738b2e2ce6682a0b81fd01",
+      "kind": "own-words",
+      "url": "https://news.yahoo.com/sen-yarbro-attempts-force-vote-182605083.html",
+      "date": "2023-04-20",
+      "date_precision": "day",
+      "passage": "There have been three mass shootings in Nashville in the last six years. In each and every one of them, the perpetrator was known to their family, law enforcement… to both pose a risk to themselves or others before the shooting took place,",
+      "note": "Quoted in the Tennessean (via a Yahoo copy) while moving to force a Senate vote on his SB 1029 amendment for risk protection orders; says such a law would have given a chance to act.",
+      "subjects": [
+        "red-flag / extreme-risk orders",
+        "keep guns from people who pose a threat"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:42:29.182Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "241c7afc7709b2d500909464c44e5b69577c0050fe3e76c56cce8ea1012e024e",
+      "kind": "own-words",
+      "url": "https://news.yahoo.com/sen-yarbro-attempts-force-vote-182605083.html",
+      "date": "2023-04-20",
+      "date_precision": "day",
+      "passage": "We are the only people in the state who can take action right now — shouldn't we?",
+      "note": "Quoted in the Tennessean asking senators to vote against tabling his motion to recall the risk-protection-order bill; the motion failed 24 to 7.",
+      "subjects": [
+        "red-flag / extreme-risk orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:42:29.182Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ca68bc530074c686b74e4c5d2fb4cccbbf5e21029f3156de60989598949de8cd",
+      "kind": "own-words",
+      "url": "https://newschannel5.com/news/democrats-call-for-safe-gun-storage-laws-in-tennessee-speaker-sexton-calls-it-an-ultra-progressive-agenda",
+      "date": "2024-08-28",
+      "date_precision": "day",
+      "passage": "Why do you want to punish the law abiding gun owners? And my answer is, I don’t. I want the gun owners to abide by the law,",
+      "note": "Quoted by a Nashville TV station at a news conference with Rep. Hemmer previewing a safe-storage bill (court-ordered safety class for unsecured or unreported-stolen guns in cars); he says it is not meant to punish law-abiding owners.",
+      "subjects": [
+        "safe storage of guns in cars",
+        "gun safety class for unsecured guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:42:29.182Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "da4b4900023487d6692ec2f1f322916812b4717edcdeafa5b58ed44eaa7baf7e",
+      "kind": "own-words",
+      "url": "https://newschannel5.com/news/democrats-call-for-safe-gun-storage-laws-in-tennessee-speaker-sexton-calls-it-an-ultra-progressive-agenda",
+      "date": "2024-08-28",
+      "date_precision": "day",
+      "passage": "Ensuring that the firearms are actually kept a secure place, I think, would make a significant difference,",
+      "note": "Quoted by a TV station on the value of secure storage requirements for guns.",
+      "subjects": [
+        "safe storage of guns in cars"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:42:29.182Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "009a462ec42045668459ffabcb8f28df1d54fcd9e824980306e7291c1ce0016f",
+      "kind": "own-words",
+      "url": "https://www.nashvillescene.com/news/pithinthewind/yarbro-hemmer-safe-gun-storage-bill/article_6b0028d2-6647-11ef-9813-93d3106b1a78.html",
+      "date": "2024-08-29",
+      "date_precision": "day",
+      "passage": "We're not trying to punish people who are not breaking the law, except for this storage provision,",
+      "note": "Quoted in a Nashville weekly describing the planned safe-storage bill he and Rep. Hemmer will file; earlier bill HB 1667/SB 1695 let large cities regulate storage of guns in unattended cars and did not reach a floor vote.",
+      "subjects": [
+        "safe storage of guns in cars"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:42:29.182Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -2207,6 +2309,35 @@
       ],
       "found": 5,
       "at": "2026-11-12T15:13:42.076Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or magazines",
+        "check every gun buyer",
+        "red-flag / extreme-risk orders",
+        "safe storage",
+        "carry permits / permitless carry",
+        "gun industry liability",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances; no files)",
+        "the Senate member page https://wapp.capitol.tn.gov/ confirms Jeff Yarbro as a sitting Nashville senator (read for identity only)",
+        "sponsor list: covered by bulk bill data",
+        "Ballotpedia: https://ballotpedia.org/Jeff_Yarbro returned an empty page; treated as blocked",
+        "blocked: https://tennesseelookout.com/2023/08/22/senator-prefers-controls-on-military-type-weapons-but-gun-bills-not-allowed/",
+        "blocked: https://www.newsfromthestates.com/node/169049",
+        "blocked: https://www.newsfromthestates.com/node/418534",
+        "official Senate page and campaign site: no gun-subject text found; campaign site https://www.jeffyarbro.com not reachable (empty response)",
+        "news search on name plus gun words: 2023 and 2024 stories read (Tennessean via Yahoo, a Nashville TV station, a Nashville weekly, an opinion-news site); no 2025 or 2026 statements found",
+        "a Daily Memphian story and a wire story on the gun-maker lawsuit bill were read: no usable dated quote kept",
+        "2026 ballot status: a TV station candidate guide in search results lists him as an incumbent on the 2026 Senate ballot; not independently opened"
+      ],
+      "found": 5,
+      "at": "2026-11-14T02:42:29.182Z",
       "by": "source-collector"
     }
   ]

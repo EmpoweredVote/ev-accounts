@@ -1025,6 +1025,32 @@
       "found": 4,
       "at": "2026-11-12T15:13:42.081Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "Second Amendment and gun rights statements",
+        "right to keep and bear arms constitutional amendment"
+      ],
+      "places": [
+        "status check: in scope; a news search and a candidate-list page show him as the sitting House District 13 member (Smyrna, Rutherford County) and a 2026 general-election candidate; the Ballotpedia page itself returned an empty body",
+        "On the Record (0 meetings)",
+        "Ballotpedia: blocked: https://ballotpedia.org/Robert_Stevens_(Tennessee) (empty page on fetch, empty on curl)",
+        "Tennessee Lookout voter guide: blocked: https://tennesseelookout.com/voter-guides/contests/house-district-13/ (empty page)",
+        "official legislature member page: not reviewed: https://wapp.capitol.tn.gov/apps/legislatorinfo/member.aspx?district=h76 (skipped per brief; also wrong district guess)",
+        "campaign site: none found in search results",
+        "sponsor list: covered by bulk bill data",
+        "news candidate profile (https://www.yahoo.com/news/meet-lawmaker-candidates-tn-house-020422085.html): read; nothing on the subject",
+        "two news searches on name plus gun words: nothing in his own words; results were mostly about other legislators"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:37:46.354Z",
+      "by": "source-collector"
     }
   ]
 }

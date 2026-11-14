@@ -1376,6 +1376,28 @@
           "sha256": "3c20164041bf91f5daa3d3a7d7ef3f0355ca03f17d6a1066a812ae1c09c630d7"
         }
       }
+    },
+    {
+      "id": "40283b156b811bbda6f26f133dcdbb49cf0d1170193410fd3d883863228b1fb6",
+      "kind": "own-words",
+      "url": "https://www.chattanoogan.com/2023/8/3/472716/Senator-Lowe-Says-He-Has-Been-Readying.aspx",
+      "date": "2023-08-03",
+      "date_precision": "day",
+      "passage": "My district was predominately concerned about any ‘red flag’ proposal and very clear that they wanted to preserve their rights to due process and presumption of innocence.",
+      "note": "Quoted in a local news column ahead of the 2023 special session, on what his district said about red-flag (extreme risk) orders. The same piece reports his policy review looked at extreme risk orders, safe storage laws, weapons bans and mental health, and recommends mental health crisis units, safe-storage education, removing taxes on gun safes and more school counselors. He said he did not know if he would propose anything in the session.",
+      "subjects": [
+        "red-flag / extreme risk orders",
+        "safe storage",
+        "mental health approach to gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:37:30.378Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -1420,6 +1442,31 @@
       ],
       "found": 4,
       "at": "2026-11-12T15:13:42.083Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red-flag / extreme risk orders",
+        "safe storage",
+        "permit-holder long-gun carry",
+        "gun rights general",
+        "mental health approach to gun violence"
+      ],
+      "places": [
+        "On the Record (0 appearances, no meetings)",
+        "sponsor list: covered by bulk bill data",
+        "roll-call pages: covered by bulk bill data",
+        "member page on the legislature site (https://www.capitol.tn.gov/senate/members/s26.html): loaded only a generic shell, nothing on the subject; I did not confirm it is Lowe's page",
+        "his own official and campaign site: not found in search, not reviewed",
+        "blocked: https://ballotpedia.org/Adam_Lowe (fetch returned an empty page)",
+        "one news search on name plus gun words (results used: Chattanoogan 2023 column by Lowe, NewsChannel 5 story on the 2025 committee vote)",
+        "2026 ballot status not confirmed; he is a sitting state senator per the news pages",
+        "the other URL-pattern sites, debate/interview video, questionnaires: not reviewed"
+      ],
+      "found": 1,
+      "at": "2026-11-14T02:37:30.378Z",
       "by": "source-collector"
     }
   ]

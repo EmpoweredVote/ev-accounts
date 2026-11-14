@@ -2724,6 +2724,33 @@
       "found": 7,
       "at": "2026-11-12T15:13:42.073Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment in general",
+        "stand-your-ground law review"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "sponsor list: covered by bulk bill data",
+        "the legislature's member page and roll-call pages: skipped per brief (bulk bill data)",
+        "https://www.ballotready.org/tn/tennessee-tennessee-house-of-representatives-district-88/larry-j-miller-50c8e37e-6b51-4b08-acd3-274c4abf1c49 (confirms sitting District 88 member and 2026 general-election candidate; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Larry_J._Miller (403)",
+        "not reviewed: https://ballotpedia.org/Larry_Miller_(Tennessee_representative) (page came back empty)",
+        "no personal campaign or official site found by search",
+        "https://dailymemphian.com/article/46275/tennessee-legislature-memphis-delegation-state-gun-laws (vote graphics only, no words from him)",
+        "https://www.change.org/decision-makers/larry-miller-tennessee-house-of-representatives-district-88 (one petition reply about reviewing the stand-your-ground law and neighborhood watch rules; undated and about self-defense law rather than gun regulation, so not saved)",
+        "two web searches on his name plus gun words: no quotes from him on firearms"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:42:38.326Z",
+      "by": "source-collector"
     }
   ]
 }

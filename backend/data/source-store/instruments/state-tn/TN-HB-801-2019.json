@@ -1,0 +1,44 @@
+{
+  "id": "TN-HB-801-2019",
+  "scope": "state:tn",
+  "title": "HB0801 (111th General Assembly): As introduced, creates a Class A misdemeanor of leaving a firearm or firearm ammunition unattended or with a person under 18 years of age in a motor vehicle or boat, if the firearm is not locked within a trunk, glove box, or interior of the person's motor vehicle or boat; punishable only by fine of at least $500. - Amends TCA Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0801&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/HB0801.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mark White",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3b87c463-9e89-418d-bc39-043ad82616de"
+    },
+    {
+      "name": "G Hardaway",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2019-02-05; own version, official copy via the Internet Archive snapshot 20260513191645 of https://www.capitol.tn.gov/Bills/111/Bill/HB0801.pdf; the last listed version was not archived)",
+    "fetched_at": "2026-11-14T03:18:23.390374Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-801-2019.draft.pdf",
+      "sha256": "aa1c99d64e4883ea9948ae22e7fcfa681c2d1b659663f9372de9e8fa1fff1b38"
+    },
+    "note": "Draft (as filed) dated 2019-02-05; the last listed version was not archived. No passage vote is recorded; any later amendments are not in the text read. Effective July 1, 2019 as filed."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(g)(1)): (1) It is an offense for a person to leave a firearm, loaded firearm, or firearm ammunition in a motor vehicle or boat that is unattended or with a person under eighteen (18) years of age if the firearm is not locked within the trunk, glove box, or interior of the person's motor vehicle or boat, or in a container securely affixed to such motor vehicle or boat.\nSECTION 1 (TCA 39-17-1307(g)(2)): (2) A violation of subdivision (g)(1) is a Class A misdemeanor. Notwithstanding the authorized punishment for a Class A misdemeanor established in § 40-35-111(e)(1), a violation of subdivision (g)(1) is punishable only by a fine of not less than five hundred dollars ($500)."
+}

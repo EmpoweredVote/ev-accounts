@@ -1738,6 +1738,89 @@
           "sha256": "264846f6ba8d466085a045eda03e94c412cc97ea4004d6ab9d40137de792a12e"
         }
       }
+    },
+    {
+      "id": "797a512fd2ed92f74e7cd999f7a2fde178d94d68712964269538d8e0e8ad5724",
+      "kind": "own-words",
+      "url": "https://www.breitbart.com/politics/2021/03/05/tennessee-state-rep-everyone-needs-to-have-a-gun",
+      "date": "2021-03-05",
+      "date_precision": "day",
+      "passage": "If the bill does pass I encourage my constituents to go get your gun — that’s what I encourage you to do — everyone needs to have a gun.",
+      "note": "Quoted by a news outlet (Breitbart) on the 2021 permitless-carry bill; the story says he first voiced concerns about the bill. The outlet's own headline wording differs slightly from the quote.",
+      "subjects": [
+        "carry a gun without a permit",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:42:51.896Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cb395e4395475ac573b4fa86b0bc62fb0885967ff6657c77e46c285306de83b8",
+      "kind": "own-words",
+      "url": "https://wset.com/news/nation-world/tn-lawmakers-debate-if-special-called-session-should-come-after-release-of-shooting-manifesto-convenant-school-massacre-governor-bill-lee-vanderbilt-statewide-poll",
+      "date": "2023-05-04",
+      "date_precision": "day",
+      "passage": "Yes, I mean it's needed like yesterday,\" said Dixie. \"We had an opportunity to address this when it happened. Literally as it was happening, but as usual we drug our feet, not listening to the people.",
+      "note": "Quoted by WZTV (carried on WSET) on whether a special session on gun laws is needed after the Covenant school shooting. The story adds that he sees gun control as the next step.",
+      "subjects": [
+        "special session on gun laws",
+        "gun safety laws after a mass shooting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:42:51.896Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2017075c6c4cdc2e4147a35f77ded92e978394bde1ecb491c5bfde75e11a208a",
+      "kind": "own-words",
+      "url": "https://wset.com/news/nation-world/tn-lawmakers-debate-if-special-called-session-should-come-after-release-of-shooting-manifesto-convenant-school-massacre-governor-bill-lee-vanderbilt-statewide-poll",
+      "date": "2023-05-04",
+      "date_precision": "day",
+      "passage": "This is not the first mass shooting that we had,\" Dixie says. \"Who cares why she did it ... It happened.",
+      "note": "Quoted by WZTV (carried on WSET) after the Covenant school shooting, saying the shooter's reasons matter less than acting.",
+      "subjects": [
+        "gun safety laws after a mass shooting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:42:51.896Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ef1e28c67905c5549e95efaf63446759c43c58bc760454f7db4d2a529b294ca5",
+      "kind": "own-words",
+      "url": "https://dixie4tn.com/",
+      "date": "2026-06-02",
+      "date_precision": "day",
+      "passage": "On average, 125 Americans are shot and killed every day — and twice that many are wounded. Gun violence affects every community: 58 percent of American adults report they, or someone they care for, have experienced gun violence in their lifetime. That’s why we must address gun violence in all its forms.",
+      "note": "Gun violence prevention section of his campaign site (the congressional-race page); a general statement with no named policy.",
+      "subjects": [
+        "gun violence prevention",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:42:51.896Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -1781,6 +1864,38 @@
       ],
       "found": 3,
       "at": "2026-11-12T15:13:42.076Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun registration",
+        "permitless carry",
+        "special session on gun laws",
+        "gun violence prevention",
+        "who may have a gun",
+        "safe storage",
+        "extreme-risk orders",
+        "assault-style weapons",
+        "background checks"
+      ],
+      "places": [
+        "scope: unopposed in the 6 Aug 2026 primary for House District 54 per https://tnfirefly.com/results/august-2026-primary/state-house-54-democratic (no official certification found; still in scope)",
+        "On the Record (0 appearances, 0 name candidates)",
+        "campaign site https://dixie4tn.com/ (the old congressional campaign site; one short gun-violence statement, no policy detail)",
+        "sponsor list: covered by bulk bill data (legislature sponsor and roll-call pages skipped by instruction)",
+        "blocked: https://ballotpedia.org/Vincent_Dixie (403)",
+        "blocked: https://tennesseelookout.com/2022/06/03/stockard-on-the-stump-democratic-chairman-to-push-for-state-handgun-registry/ (bot check; a search summary says he spoke of a handgun registry like the one for cars, but I could not read the page so no passage is saved)",
+        "https://en.wikipedia.org/wiki/Vincent_B._Dixie (lead only; nothing quotable)",
+        "news: Breitbart 2021 story and WSET 2023 story (both quote him)",
+        "https://www.newschannel5.com/news/democrats-call-for-safe-gun-storage-laws-in-tennessee-speaker-sexton-calls-it-an-ultra-progressive-agenda: fetched, he is not quoted in the text",
+        "official House member page: only the member directory loaded; nothing on the subject",
+        "web search (3 searches) on his name with gun terms",
+        "ontheissues.org, vote411: not reviewed: https://ontheissues.org/States/TN_Gun_Control.htm"
+      ],
+      "found": 4,
+      "at": "2026-11-14T02:42:51.896Z",
       "by": "source-collector"
     }
   ]

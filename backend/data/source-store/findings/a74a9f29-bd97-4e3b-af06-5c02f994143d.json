@@ -1660,6 +1660,32 @@
       "found": 3,
       "at": "2026-11-12T15:13:42.082Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 meetings)",
+        "the legislature's member page for Senate district 22 (confirms the office; nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Bill_Powers_(Tennessee)",
+        "blocked: https://ballotpedia.org/Bill_Powers_(Tennessee_politician)",
+        "https://www.billpowers.org (fetched; a site with no gun or Second Amendment text, not confirmed as his campaign site)",
+        "a 2023 legislator profile story (nothing on the subject)",
+        "two web searches on name plus gun words: only a 2020 gun-group endorsement notice, which is about him and not his words",
+        "not reviewed: ontheissues.org and vote411 (leads only)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:39:47.806Z",
+      "by": "source-collector"
     }
   ]
 }

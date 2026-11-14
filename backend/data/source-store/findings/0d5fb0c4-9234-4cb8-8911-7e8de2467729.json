@@ -2652,6 +2652,32 @@
       "found": 2,
       "at": "2026-11-12T15:13:42.082Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "carry a gun without a permit",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "gun law repeal"
+      ],
+      "places": [
+        "scope confirmed: https://tnfirefly.com/results/august-2026-primary/state-senate-25-republican shows Ed Jackson as incumbent who ran unopposed in the August 2026 primary for Senate District 25 and advances to the general election",
+        "On the Record (0 meetings)",
+        "the Senate member page https://www.capitol.tn.gov/senate/members/s25.html (fetched; page is a menu shell with no statements on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Ed_Jackson (403 on direct fetch; the fetch tool returned an empty page)",
+        "web search on name plus firearms and Second Amendment words: only bill-tracking databases and a different state senator's NRA-era bills, no quotes by Ed Jackson",
+        "web search on primary result: confirmed scope only",
+        "no personal campaign site or newsletter found in search results; not reviewed",
+        "nothing on the subject in news coverage found"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:37:41.529Z",
+      "by": "source-collector"
     }
   ]
 }

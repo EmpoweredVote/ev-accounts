@@ -1431,6 +1431,34 @@
       "found": 3,
       "at": "2026-11-12T15:13:42.081Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits and other states' permits",
+        "places where guns may be carried",
+        "suppressors and machine-gun conversion devices",
+        "Second Amendment and gun rights in general"
+      ],
+      "places": [
+        "status: confirmed sitting Tennessee House District 16 member; unopposed in the August 2026 primary and on the November 3, 2026 general ballot (per tnfirefly.com search result; not fetched)",
+        "On the Record (0 meetings)",
+        "the House caucus member site: member page tnhousegop.org/tag/michele-carringer and site search for gun and firearm; read six of her weekly newsletters (2025-03, 2025-04, 2026-02-06, 2026-02-27, 2026-03-20, 2026-03-27): they only describe other members' gun bills in caucus wording, nothing in her own voice, so nothing saved",
+        "the legislature's member page capitol.tn.gov/house/members/h16.html: fetched, nothing on the subject",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Michele_Carringer (403)",
+        "a campaign site: none found",
+        "web searches for her name plus gun, firearm, permitless carry and Second Amendment: no statement of hers found; news stories in results were about other legislators",
+        "not reviewed: https://thecandidate.com/states/tn/legislature/house/16/michele-carringer (profile page only, no statements)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:41:48.125Z",
+      "by": "source-collector"
     }
   ]
 }

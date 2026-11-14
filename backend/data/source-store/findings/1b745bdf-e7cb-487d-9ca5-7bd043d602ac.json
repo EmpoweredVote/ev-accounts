@@ -2252,6 +2252,28 @@
           "sha256": "2394c93860cc4613a0e95200df7be91e26cd37fbc0c35a57be675f3928b9e19e"
         }
       }
+    },
+    {
+      "id": "e2fd929d0fd82bf419fcb98a9183e3d44758ce4f34406e8ed5e61b66e524b00c",
+      "kind": "own-words",
+      "url": "https://fox17.com/news/local/tennessee-lawmakers-kill-gun-bills-this-session",
+      "date": "2023-04-04",
+      "date_precision": "day",
+      "passage": "It went kind of fast for me,",
+      "note": "Quoted by a TV news story at a Senate Judiciary hearing, after the chair moved to push three gun bills (school staff carry, carry permit designation, vehicle gun storage) to next year. When asked if she was objecting she said \"Yes\", and she voted no on the motion (7-2).",
+      "subjects": [
+        "gun bills delayed in committee",
+        "guns in schools",
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:40:58.202Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -2294,6 +2316,33 @@
       ],
       "found": 9,
       "at": "2026-11-12T15:13:42.076Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bills in committee",
+        "bans on types of guns and magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "guns in schools",
+        "safe storage of guns",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "the Senate member page (https://www.capitol.tn.gov/senate/members/s30.html): loaded as a page shell with no member text; the roll-call and sponsor pages were skipped as covered by bulk data",
+        "Ballotpedia: blocked: https://ballotpedia.org/Sara_Kyle (403)",
+        "web search on name plus gun words: one news story with a direct quote (https://fox17.com/news/local/tennessee-lawmakers-kill-gun-bills-this-session)",
+        "web search on the 2026 race: a search summary says her seat's term runs to Nov 2028 after a 2024 win; no 2026 race found, treated as a sitting senator in scope",
+        "campaign site: not found in search; not reviewed",
+        "official press releases / newsletters: not reviewed beyond the member page shell"
+      ],
+      "found": 1,
+      "at": "2026-11-14T02:40:58.202Z",
       "by": "source-collector"
     }
   ]

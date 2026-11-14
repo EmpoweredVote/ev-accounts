@@ -3032,6 +3032,112 @@
           "sha256": "264846f6ba8d466085a045eda03e94c412cc97ea4004d6ab9d40137de792a12e"
         }
       }
+    },
+    {
+      "id": "4df7b0cb263f1e6272712b3ad8c21cd015d3ee6b1d1ae08548cc10d434e5242a",
+      "kind": "own-words",
+      "url": "https://politicalemails.org/messages/116890/html_body",
+      "date": "2020-02-27",
+      "date_precision": "day",
+      "passage": "While those of us serving in the legislature may interpret the Second Amendment differently, we all support the rights guaranteed by our forefathers.  This was true when our state leaders designed and enacted the current permit system, which has worked well for decades, and it remains true today.  For this reason, I vow to continue to work with my colleagues on both sides of the aisle to protect that system with the best interests and safety of my children and all Tennessee families in mind.",
+      "note": "Press statement in his name responding to the governor's permitless-carry proposal; says he will work to keep the current carry permit system.",
+      "subjects": [
+        "carry a gun without a permit",
+        "keep the carry permit system",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:40:23.521Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2afd59e6be62a0931be8a74ea30179c03458fee1009db89c0f08e927153555d2",
+      "kind": "own-words",
+      "url": "https://politicalemails.org/messages/116890/html_body",
+      "date": "2020-02-27",
+      "date_precision": "day",
+      "passage": "If Bill Lee actually wanted to reduce gun theft from motor vehicles, he would support the repeal of the “guns in trunks” laws that Bill Haslam signed.",
+      "note": "Same press statement; calls for repealing the guns-in-trunks laws, citing rises in gun thefts from cars.",
+      "subjects": [
+        "guns in trunks law",
+        "repeal gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:40:23.521Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b680af287300e6dfed33f30509ab73946363088dc00f494ef498d2b5a9cce0c7",
+      "kind": "own-words",
+      "url": "https://johnrayfortennessee.com/lets-take-legislative-action-now-rep-clemmons-asks-gov-lee-for-special-session-to-address-gun-violence",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "passage": "“Let’s pass mental health care laws. Let’s repeal bad laws that have facilitated this. Let’s use the indicators we see in domestic violence to limit people’s access to firearms. Let’s repeal the open carry law and guns in trunk law,” he said.",
+      "note": "Quoted by NewsChannel5 (reposted on his campaign site) after the Uvalde shooting; he asks for a special session and for repeal of open carry and guns-in-trunks laws, and limits on gun access based on domestic violence indicators.",
+      "subjects": [
+        "open carry",
+        "guns in trunks law",
+        "limit gun access using domestic violence indicators",
+        "repeal gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:40:23.521Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0d4f94fdd210848d1a8ad4808cd9dafbe355186ac8edfe3a76627d776a65ce6",
+      "kind": "own-words",
+      "url": "https://johnrayfortennessee.com/lets-take-legislative-action-now-rep-clemmons-asks-gov-lee-for-special-session-to-address-gun-violence",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "passage": "“This is a uniquely American problem. You do not see this happening elsewhere in the world at this frequency.",
+      "note": "Quoted by NewsChannel5 on gun violence after the Uvalde shooting.",
+      "subjects": [
+        "gun violence as public safety and health crisis"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:40:23.521Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59938f45bce6ea5c9e78db77fc55cccdba2bff67219e2c0ad95ea86b5ed745a6",
+      "kind": "own-words",
+      "url": "https://johnrayfortennessee.com/rep-clemmons-and-safe-tennessee-project-host-gun-violence-roundtable",
+      "date": "2019-09-28",
+      "date_precision": "day",
+      "passage": "“We are facing nothing short of a public safety and public health crisis with regards to gun violence,” said Rep. Clemmons.",
+      "note": "Quoted in a news item (PRIDE Newsdesk, reposted on his campaign site) about a gun violence roundtable he hosted at the State Capitol with Safe Tennessee Project.",
+      "subjects": [
+        "gun violence as public safety and health crisis"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:40:23.521Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -3080,6 +3186,32 @@
       ],
       "found": 7,
       "at": "2026-11-12T15:13:42.076Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "keep the carry permit system",
+        "guns in trunks law",
+        "open carry",
+        "gun violence as public safety and health crisis",
+        "limit gun access using domestic violence indicators",
+        "Second Amendment"
+      ],
+      "places": [
+        "sponsor list: covered by bulk bill data",
+        "On the Record (0 meetings)",
+        "campaign site (https://johnrayfortennessee.com): read two news-and-updates pages on the subject; the bio page had nothing on guns",
+        "constituent email archive of his Feb 2020 press release (https://politicalemails.org/messages/116890/html_body)",
+        "blocked: https://ballotpedia.org/John_Ray_Clemmons",
+        "blocked: https://tennesseelookout.com/2022/05/26/representative-seeks-renewed-gun-laws-governor-requests-prayer-in-wake-of-texas-school-massacre/",
+        "two web searches on his name plus gun, firearm and permitless-carry words; no 2026 ballot status page found, so 2026 ballot status not confirmed (sitting House member per his campaign site)",
+        "other URL patterns (vote411, ontheissues, debate videos): not reviewed"
+      ],
+      "found": 5,
+      "at": "2026-11-14T02:40:23.521Z",
       "by": "source-collector"
     }
   ]

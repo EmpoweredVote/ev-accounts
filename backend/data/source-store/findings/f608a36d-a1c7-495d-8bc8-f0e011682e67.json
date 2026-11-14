@@ -2637,6 +2637,58 @@
       "found": 9,
       "at": "2026-11-12T15:13:42.074Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permitless carry",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://wapp.capitol.tn.gov/apps/legislatorinfo/member.aspx?district=s23 (legislature roll-call and member pages skipped per brief)",
+        "not reviewed: https://tnsenaterepublicans.com/senator/jack-johnson/ (no response, HTTP 000)",
+        "not reviewed: https://www.jackjohnsonforsenate.com/ (no response, HTTP 000)",
+        "Ballotpedia https://ballotpedia.org/Jack_Johnson_(Tennessee): fetch returned no page text, not reviewed",
+        "one web search on name plus gun words: only third-party pages (an advocacy group's call-to-action naming him as Senate Majority Leader, news stories); no own words found",
+        "https://www.nraila.org/articles/20210316/tennessee-thank-your-lawmaker-for-supporting-tennessee-s-constitutional-carry-legislation-sd-23 fetched: advocacy group's words about him, not his own; nothing saved",
+        "https://tennesseelookout.com/2026/03/27/stockard-on-the-stump-gop-senator-scoffs-at-tennessee-guns-group/ fetched: no passage by him found",
+        "2026 ballot status not confirmed: no page fetched that states it"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:40:47.214Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permitless carry",
+        "assault-style gun limits",
+        "liability protection for gun makers",
+        "gun rights and the Second Amendment",
+        "carry permits",
+        "gun-related limits after the 2023 school shooting"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "the Senate member page (capitol.tn.gov address redirects to the legislature's roll-call and member site, which the brief says to skip): sponsor list: covered by bulk bill data",
+        "not reviewed: https://ballotpedia.org/Jack_Johnson_(Tennessee) (fetch returned no usable page text)",
+        "no personal campaign site found (jackjohnsontn.com did not respond)",
+        "news search on name plus Second Amendment and gun bills: found stories that mention his role as Senate majority leader and carrier of the 2021 permitless carry bill, but no verbatim quote of his",
+        "fetched https://kutv.com/news/nation-world/tennessee-senate-passes-bill-to-allow-permitless-carry-of-handguns (describes the bill he carried; no quote of his)",
+        "fetched https://www.timesfreepress.com/news/2023/apr/18/crow-grant-asking-tn-lawmakers-gun-control-tfp/ and https://newschannel9.com/news/local/tennessee-gop-pushes-gun-bill-over-law-enforcement-concerns (page text did not contain his name or words)",
+        "blocked: https://tennesseelookout.com/2023/08/22/senator-prefers-controls-on-military-type-weapons-but-gun-bills-not-allowed/ (403)",
+        "blocked: https://www.newsfromthestates.com/node/169049 (403)",
+        "not reviewed: https://www.nraila.org/articles/20210316/tennessee-thank-your-lawmaker-for-supporting-tennessee-s-constitutional-carry-legislation-sd-23 (no readable text retrieved)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:44:26.404Z",
+      "by": "source-collector"
     }
   ]
 }

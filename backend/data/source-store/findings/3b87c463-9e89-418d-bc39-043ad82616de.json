@@ -2851,6 +2851,70 @@
           "sha256": "8e61bbe1dc4a44affcc078a7bf51dbd34795274ef760edfb095061bc8a93d346"
         }
       }
+    },
+    {
+      "id": "6efe1bb67f4f899f79a00599d884d3c30d7b53114068232f82b5d4b7fc4b0f06",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/tom-k/2019/10/01/tennessee-rep-pushes-mandatory-storage-vehicles",
+      "date": "2019-10-01",
+      "date_precision": "day",
+      "passage": "“I voted for that and I think it’s a good bill,” White said. “But that doesn’t release me from the responsibility as a responsible citizen that when I get out of my car at night, either take (the weapon) in the house or secure it in some type of a lock box where it cannot be stolen out of my car. That’s just common sense.”",
+      "note": "Quoted in a gun-news blog repeating a Daily Memphian story. He says he voted for a bill letting people keep guns in a vehicle trunk without a permit, and also backs his own bill to require securing guns left in cars.",
+      "subjects": [
+        "secure guns left in vehicles",
+        "gun storage in cars"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:43:26.338Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8ccba2c6cf60c64c01c9f86aa2e2eef7a78322279eacaceed0472b1d7e3e8eb",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/tom-k/2019/10/01/tennessee-rep-pushes-mandatory-storage-vehicles",
+      "date": "2019-10-01",
+      "date_precision": "day",
+      "passage": "“It wouldn’t be a criminal offense, but it would be a monetary fine if you don’t secure your gun,” White said.",
+      "note": "Quoted on how he might change his HB 801 gun-storage bill: a fine instead of a crime for not securing a gun in a vehicle.",
+      "subjects": [
+        "secure guns left in vehicles",
+        "gun storage in cars"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:43:26.338Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "41a6c60a886a96a363128b565eca26a50a16f2381bd9a570ab94873454fae910",
+      "kind": "record",
+      "url": "https://bearingarms.com/tom-k/2019/10/01/tennessee-rep-pushes-mandatory-storage-vehicles",
+      "date": "2019-04-01",
+      "date_precision": "month",
+      "instrument_id": "TN-HB-801-2019",
+      "act": "sponsor",
+      "note": "Per a news story, he put his bill HB 801 on hold in April 2019. It would make leaving an unsecured gun or ammunition in a car or boat a Class A misdemeanor with a $500 fine. He said he planned to bring it back in 2020. Prime sponsorship per the news story; legislature page not checked.",
+      "subjects": [
+        "secure guns left in vehicles",
+        "gun storage in cars"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:43:26.338Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -2892,6 +2956,29 @@
       ],
       "found": 8,
       "at": "2026-11-12T15:13:42.073Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "secure guns left in vehicles",
+        "carry a gun without a permit",
+        "guns in schools",
+        "gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page https://www.capitol.tn.gov/house/members/h83.html (fetched, confirms District 83, no gun statements)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Mark_White_(Tennessee) (403)",
+        "blocked: https://www.markwhitetn.com (no response)",
+        "news search on name plus gun words (two stories read, one news-site story and one Daily Memphian article page showing only a lead)",
+        "not reviewed: https://dailymemphian.com/article/11059/constitutional-carry-gun-legislation-tennessee-memphis-nra (paywalled past the first paragraph)",
+        "no campaign site, questionnaire or interview with his own words on the subject found beyond the 2019 quote"
+      ],
+      "found": 3,
+      "at": "2026-11-14T02:43:26.338Z",
       "by": "source-collector"
     }
   ]

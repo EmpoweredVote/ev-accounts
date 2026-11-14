@@ -1576,6 +1576,35 @@
       "found": 4,
       "at": "2026-11-12T15:13:42.081Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "safe storage of guns",
+        "carry a gun without a permit",
+        "carry permits",
+        "general statements on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidate meetings)",
+        "sponsor list: covered by bulk bill data",
+        "House member page https://wapp.capitol.tn.gov/apps/legislatorinfo/member.aspx?district=h91 (fetched; page body is script-rendered, gave no text on the subject)",
+        "Ballotpedia https://ballotpedia.org/Torrey_Harris (fetch returned an empty page; treated as blocked)",
+        "blocked: https://legiscan.com/TN/sponsors/HB7090/2023 (bot check)",
+        "news search on name plus gun words (3 searches): no direct quote from Torrey C. Harris on the subject; results were about other people or other topics",
+        "https://fox17.com/news/local/safety-concerns-voiced-over-bill-that-would-allow-tennesseans-to-carry-without-permit (fetched; names a different Harris, John J. Harris, not this person)",
+        "https://www.pressreader.com/usa/chattanooga-times-free-press/20220527/281732683108686 (fetched; nothing naming this person)",
+        "https://wpln.org/post/tensions-and-emotions-run-high-at-tennessee-statehouse-over-gun-measures/ (fetched; nothing naming this person)",
+        "not reviewed: campaign site (none found in search)",
+        "not reviewed: ontheissues.org and vote411 (no leads surfaced)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:38:34.289Z",
+      "by": "source-collector"
     }
   ]
 }

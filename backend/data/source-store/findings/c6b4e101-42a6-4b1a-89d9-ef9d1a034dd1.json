@@ -453,6 +453,48 @@
           "sha256": "c8dec161c72526baad6c707864a57262d3e591003a21c6c89fd1448e33121877"
         }
       }
+    },
+    {
+      "id": "7740d4de7d495c8f710d297c2c96104e5d04169f7ede472643407b35c241cccb",
+      "kind": "own-words",
+      "url": "https://wpln.org/post/i-have-to-be-the-change-that-i-need-to-see-meet-three-first-time-candidates-running-for-the-tennessee-house-in-2024/",
+      "date": "2024-02-09",
+      "date_precision": "day",
+      "passage": "For five, six years I’ve been going up to the Capitol, begging and pleading and trying to, bring change, And, it hasn’t happened. So I just decided that I have to be the change that I need to see.",
+      "note": "Quoted by WPLN when she launched her House run: after years of lobbying at the Capitol after her son's death in a 2018 shooting, she decided to run herself. The story tags the topic as gun violence; she does not name a specific policy here.",
+      "subjects": [
+        "gun violence in general",
+        "gun law change"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:42:52.870Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "60d035acb67675e2015bf77d358757470f2ed83d2a77c782c13557cd1e79839b",
+      "kind": "own-words",
+      "url": "https://bradypac.org/?p=8630",
+      "date": "2024-02-21",
+      "date_precision": "day",
+      "passage": "In the wake of losing my son Akilah to senseless gun violence, I found my calling not in the shadows of grief, but in the light of advocacy and change. My campaign is more than a political pursuit; it is a personal crusade fueled by a mother's love and the urgent need for transformative justice in our communities.",
+      "note": "Statement in her name in a gun-safety group's endorsement release; she ties her House campaign to advocacy after her son was killed by gun violence. No specific policy named.",
+      "subjects": [
+        "gun violence in general",
+        "gun safety advocacy"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:42:52.870Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -497,6 +539,40 @@
       ],
       "found": 2,
       "at": "2026-11-12T15:13:42.082Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun violence and reform in general",
+        "mental-health limits on who may be given a gun",
+        "red flag orders",
+        "background checks",
+        "waiting periods",
+        "ban on assault-style guns",
+        "Second Amendment",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "floor votes: covered by bulk bill data",
+        "her own member page and campaign site: not found by search; the legislature's member pages skipped per brief (not reviewed)",
+        "blocked: https://ballotpedia.org/Shaundelle_Brooks (403)",
+        "blocked: https://tennesseelookout.com/2024/10/03/gun-law-reform-activist-faces-former-house-speaker-aide-in-district-60/ (bot check)",
+        "blocked: https://tennesseelookout.com/2025/03/31/giving-guns-to-certain-mental-health-patients-could-become-a-crime-in-tennessee/ (empty page)",
+        "blocked: https://tennesseelookout.com/2025/04/11/bill-to-bar-giving-guns-to-certain-mental-health-patients-stalls-until-2026/ (empty page)",
+        "blocked: https://www.yahoo.com/news/giving-guns-certain-mental-health-100040861.html (429)",
+        "https://www.wsmv.com/2025/03/19/akilahs-law-introduced-by-mother-waffle-house-shooting-victim/ (a news story; no direct quotes from her)",
+        "https://giffords.org/candidates/shaundelle-brooks/ (an advocacy group's endorsement page; written in the group's voice, no quote from her)",
+        "https://wpln.org/post/i-have-to-be-the-change-that-i-need-to-see-meet-three-first-time-candidates-running-for-the-tennessee-house-in-2024/ (a news story with her quotes)",
+        "https://bradypac.org/?p=8630 (an advocacy group's endorsement release with a statement in her name)",
+        "one news search on her name plus gun words; one search for her campaign site",
+        "not reviewed: https://news.yahoo.com/mother-waffle-house-shooting-victim-004237335.html (no readable text), https://abc17news.com/?p=1252648 (fetch failed)"
+      ],
+      "found": 2,
+      "at": "2026-11-14T02:42:52.870Z",
       "by": "source-collector"
     }
   ]

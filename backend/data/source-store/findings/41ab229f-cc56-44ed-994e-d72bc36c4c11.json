@@ -1897,6 +1897,30 @@
       "found": 3,
       "at": "2026-11-12T15:13:42.080Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "scope: a search result says the 2026 District 85 race had one candidate on the November ballot, and a primary results page exists; not confirmed from an official page, so treated as in scope",
+        "On the Record (0 meetings)",
+        "campaign site https://www.jessechism.com/ (fetched; page is script-rendered and its text could not be read for the subject words; nothing on the subject seen)",
+        "blocked: https://ballotpedia.org/Jesse_Chism",
+        "web searches (2): no statement by this person on the subject found; result snippets only, none fetched",
+        "sponsor list: covered by bulk bill data",
+        "official legislature pages: skipped per brief (covered by bulk bill data)",
+        "not reviewed: the member's official House page, news search beyond two web searches, questionnaires, interviews"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:41:48.437Z",
+      "by": "source-collector"
     }
   ]
 }

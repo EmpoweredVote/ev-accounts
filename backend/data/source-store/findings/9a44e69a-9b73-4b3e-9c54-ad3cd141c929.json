@@ -1786,6 +1786,26 @@
           "sha256": "e650a7a0c0ca9e639a8d856e57c92d0811c89120547111565a0086a2411ae91a"
         }
       }
+    },
+    {
+      "id": "d7e74812a6fcb24773cfda2b9152676ea3a132270cc07eca7e01ec98f56f08cc",
+      "kind": "own-words",
+      "url": "https://wgnsce.bondwaresite.com/article/67109/update-carrying-a-handgun-in-tennessee-could-soon-be-easier",
+      "date": "2021-03",
+      "date_precision": "month",
+      "passage": "Senate Bill 765 will allow law-abiding citizens in Tennessee who are at least 21 years old or are honorably discharged or active in the U.S. Armed Forces, National Guard or Reserves to carry a firearm without a permit in a place where they are lawfully present.",
+      "note": "Quoted by a local radio station from an email by Reeves describing SB 765 (permitless carry). The story also says he wrote that the bill targets people who steal guns or possess them illegally. The page text shows no date; month is inferred from the bill's 2021 session.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:39:21.048Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -1826,6 +1846,32 @@
       ],
       "found": 5,
       "at": "2026-11-12T15:13:42.082Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders",
+        "Second Amendment general statements",
+        "guns in rental homes"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "sponsor list: covered by bulk bill data",
+        "the legislature's member page: skipped as bulk bill data covers sponsorships and votes; no own-words page of theirs was read",
+        "blocked: https://ballotpedia.org/Shane_Reeves (403)",
+        "blocked: https://tennesseelookout.com/2026/03/27/stockard-on-the-stump-gop-senator-scoffs-at-tennessee-guns-group/ (403)",
+        "not reviewed: official Senate member site and campaign site (no address found in search results)",
+        "web search 1: name plus gun words, found one radio story quoting an emailed statement",
+        "web search 2: name plus 'Reeves said' gun bill, found nothing newer in his own words",
+        "status: sitting state senator confirmed only by news text naming him as State Senator of Murfreesboro; 2026 ballot status not checked"
+      ],
+      "found": 1,
+      "at": "2026-11-14T02:39:21.048Z",
       "by": "source-collector"
     }
   ]

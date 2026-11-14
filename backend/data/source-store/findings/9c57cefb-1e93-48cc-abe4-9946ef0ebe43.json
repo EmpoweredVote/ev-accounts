@@ -2669,6 +2669,31 @@
       "found": 6,
       "at": "2026-11-12T15:13:42.074Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on types of guns or magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry in parks and public places",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed in scope: https://tnfirefly.com/elections/general-assembly/senate/3 shows the sitting senator for District 3 unopposed on the 2026 general ballot",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Rusty_Crowe (empty page returned)",
+        "not reviewed: https://www.yahoo.com/news/articles/gop-lawmakers-discuss-legislation-future-033821422.html (news story on a Jonesborough panel where a search summary says he backed a court ruling striking down two carry laws; page text could not be retrieved, so no passage copied)",
+        "official legislature member page: skipped per brief (wapp.capitol.tn.gov / capitol.tn.gov)",
+        "no campaign site or personal official site found in search",
+        "news searches on name plus gun words: nothing quotable found"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:39:27.534Z",
+      "by": "source-collector"
     }
   ]
 }

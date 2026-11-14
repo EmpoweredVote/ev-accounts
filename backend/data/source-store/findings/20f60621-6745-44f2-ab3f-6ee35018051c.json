@@ -1898,6 +1898,47 @@
           "sha256": "264846f6ba8d466085a045eda03e94c412cc97ea4004d6ab9d40137de792a12e"
         }
       }
+    },
+    {
+      "id": "27508f0c5f4e0eb8cd7a358703630aa72ff58473dcf6fdd9de78df8ccd65dcb7",
+      "kind": "own-words",
+      "url": "https://www.fox6now.com/news/tennessee-three-member-rep-gloria-johnson-vows-to-keep-gun-reform-fight-going",
+      "date": "2023-04-13",
+      "date_precision": "day",
+      "passage": "He's asked the legislature to pass a Red Flag Law,\" Johnson explained. \"So my concern there, of course, is that the legislature doesn't have the will to do it. And I hope they do. I'm willing to work across the aisle to do anything to pass something that's gonna make our community safer. But I'm just not sure that the body has the will.",
+      "note": "Quoted in a TV station interview (Fox 5 'The Final 5', carried on the Fox6 site). She speaks about the governor's request for a red flag law, doubts the legislature will pass it, and says she will work across the aisle on gun safety measures. The same story reports, in the reporter's words, that she favors red flag laws.",
+      "subjects": [
+        "red flag orders",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:37:51.356Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "acf0624d0597840c3678f94fbd767d96cdac69d946d0fc9e02966b894baa9969",
+      "kind": "own-words",
+      "url": "https://www.fox6now.com/news/tennessee-three-member-rep-gloria-johnson-vows-to-keep-gun-reform-fight-going",
+      "date": "2023-04-13",
+      "date_precision": "day",
+      "passage": "every time that we go in the media, when we go talk to groups, we're talking about ending gun violence. We are lifting this issue.",
+      "note": "Quoted in the same TV interview, replying to whether the gun-law fight has overshadowed the Covenant School victims. She says she and her colleagues keep raising gun violence in the media and with groups.",
+      "subjects": [
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:37:51.356Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -1942,6 +1983,33 @@
       ],
       "found": 4,
       "at": "2026-11-12T15:13:42.075Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red flag orders",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "safe storage",
+        "general gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "roll-call pages: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Gloria_Johnson (403)",
+        "blocked: https://www.wbir.com/article/news/local/having-survived-expulsion-effort-gloria-johnson-vows-to-keep-pushing-for-tougher-gun-laws/51-3a579bb9-7204-462a-b4e7-66e64b312498 (403)",
+        "blocked: https://hollywoodlife.com/2023/05/18/gloria-johnson-gun-safety-interview/ (403)",
+        "campaign site: https://www.gloriajohnson.org is a parked page that redirects to a lander, nothing on the subject; https://gloriaforTN.com did not load",
+        "not reviewed: ontheissues.org gun control page (lead only)",
+        "news search on name plus gun words (two searches): one 2023 TV interview found and fetched; no 2026 statements found",
+        "official legislature member page: skipped per brief (covered by bulk bill data)"
+      ],
+      "found": 2,
+      "at": "2026-11-14T02:37:51.356Z",
       "by": "source-collector"
     }
   ]

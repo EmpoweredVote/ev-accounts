@@ -1364,6 +1364,32 @@
       "found": 4,
       "at": "2026-11-12T15:13:42.076Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general statements on gun rights and gun safety"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 meetings found)",
+        "sponsor list: covered by bulk bill data (legislature sponsor and roll-call pages skipped)",
+        "blocked: https://ballotpedia.org/Sam_McKenzie (403 on direct fetch; a search result shows he is the sitting District 15 member and was unopposed in the 2026 primary)",
+        "blocked: https://www.capitol.tn.gov/house/members/h15.html (redirects to the legislature's roll-call and member site, skipped by instruction)",
+        "https://tnfirefly.com/results/august-2026-primary (read: lists Sam McKenzie unopposed for House District 15 in the August 2026 primary, no other candidate qualified; in scope)",
+        "https://ivoterguide.com/candidate/59299/race/34573/election/1499 (read: candidate page, nothing on the subject)",
+        "https://www.knoxtntoday.com/major-issues-when-legislature-reconvenes/ (read: January 2026 TV panel recap that includes him; nothing on guns attributed to him)",
+        "https://wpln.org/post/a-bill-to-change-how-dangerous-people-are-disarmed-in-tn-is-pushed-to-2026-after-nra-opposition/ (read: does not mention him)",
+        "official member page and campaign site: no own page reached (the member page is on the skipped legislature site; no campaign site found in search); not reviewed",
+        "two web searches on his name plus gun, firearm and Second Amendment words: no statement by him on the subject found; ontheissues.org and vote411 not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:42:29.980Z",
+      "by": "source-collector"
     }
   ]
 }

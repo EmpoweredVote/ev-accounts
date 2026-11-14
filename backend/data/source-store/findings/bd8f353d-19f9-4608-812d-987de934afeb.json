@@ -2451,6 +2451,60 @@
       "found": 6,
       "at": "2026-11-12T15:13:42.074Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits and fees",
+        "gun rights and the Second Amendment in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "in scope: a Substack news post dated 2026-08-07 (https://criticalreport.substack.com/p/2026-tn-senate-primaries) says the incumbent won the August 2026 primary, so he stays in scope",
+        "blocked: https://ballotpedia.org/Steve_Southerland_(Tennessee) (empty response, HTTP 202)",
+        "blocked: https://ballotpedia.org/Tennessee_State_Senate_elections,_2026 (empty response, HTTP 202)",
+        "not reviewed: https://wapp.capitol.tn.gov/apps/legislatorinfo/member.aspx?district=s1 (member page redirects to the legislature's roll-call/lookup site, skipped per brief)",
+        "not reviewed: official Senate caucus site (address did not resolve)",
+        "sponsor list: covered by bulk bill data",
+        "web search, 3 queries: results were old NRA-ILA lists, bill trackers and a different person (a Florida congressman of the same name, not used); no own-words passage on the subject found",
+        "own campaign site: not found in search; not reviewed",
+        "ontheissues.org: lead only, result was about the Florida congressman, not used"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:39:55.730Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "handgun carry permits",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: the Tennessee Firefly District 9 page (https://tnfirefly.com/elections/general-assembly/senate/9) shows him unopposed and winning the Senate District 9 seat on the November 3, 2026 ballot",
+        "the legislature's member page https://www.capitol.tn.gov/senate/members/s1.html: loaded only a generic directory shell, nothing on the subject",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Steve_Southerland_(Tennessee) (403)",
+        "Wikipedia page for the Tennessee senator: no gun content",
+        "web search for name plus gun words: only third-party summaries and a different person of the same name (Florida congressman, excluded); no own words found",
+        "https://www.knoxviews.com/exempt-hcp-holders-background-check-gun-purchases: a commentary on SB0306 naming him as sponsor, no year or his own words, not saved",
+        "https://tennesseelookout.com/2026/03/27/stockard-on-the-stump-gop-senator-scoffs-at-tennessee-guns-group/: fetched, no mention of him",
+        "no personal official or campaign site found; not reviewed: ontheissues.org (lead only, covers the other person)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:44:19.942Z",
+      "by": "source-collector"
     }
   ]
 }

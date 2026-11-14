@@ -937,6 +937,29 @@
       "found": 3,
       "at": "2026-11-12T15:13:42.081Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "armed teachers in schools",
+        "gun rights and the Second Amendment",
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name matches)",
+        "member page on the legislature site (https://wapp.capitol.tn.gov/apps/LegislatorInfo/Member?district=h40): read; names Representative Michael Hale for House district 40; no subject text",
+        "sponsor list: covered by bulk bill data",
+        "one web search on name plus gun words: found a 2024-05-05 local radio story on his support for the armed-teacher law, but https://wjle.com/?p=72358 returns 404 on fetch, so nothing was copied; a site search on that radio station's page found nothing",
+        "Ballotpedia https://ballotpedia.org/Michael_Hale: fetched, empty page, nothing readable",
+        "no separate campaign site or newsletter located; not reviewed: ontheissues.org and Vote Smart leads (not his own words, original not found)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:38:18.022Z",
+      "by": "source-collector"
     }
   ]
 }

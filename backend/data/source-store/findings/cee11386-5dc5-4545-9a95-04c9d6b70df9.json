@@ -3329,6 +3329,71 @@
           "sha256": "a3b6106b6f7e0633a322591ab0fee3c6093581def5468e0b7f5ed0dda29fac9b"
         }
       }
+    },
+    {
+      "id": "d1e018e715f57e7149e1efc0fac1f4a4355d87ee36b895d1ba0097c467602cc9",
+      "kind": "own-words",
+      "url": "https://tnhousegop.org/press-releases/2026/02/rep-chris-todd-files-bill-safeguarding-tennesseans-right-to-bear-arms/",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "passage": "The God-given right to keep and bear arms has been foundational to the continued success of our state and nation,” Todd said. “This critical legislation provides needed clarity by reforming the structure of our gun laws to ensure law-abiding Tennesseans can legally carry firearms across the state. These essential changes preserve individual liberty and safeguard the ability of citizens to protect themselves, their families and their communities.",
+      "note": "Statement in a caucus release on his HB 2064, which removes the offence of carrying a firearm with intent to go armed; he describes it as protecting the right to carry for eligible residents.",
+      "subjects": [
+        "Second Amendment rights",
+        "carry a gun without a permit",
+        "going-armed law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:40:25.684Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "51496eaa0d82f66b6fbfa515e5acc77bdbbf24fbfa3699e826a1cf99666daff0",
+      "kind": "own-words",
+      "url": "https://tnhousegop.org/press-releases/2026/02/rep-chris-todd-files-bill-safeguarding-tennesseans-right-to-bear-arms/",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "passage": "This proposal will correct the complicated and convoluted set of laws that have confused Tennesseans for decades,” Todd added.",
+      "note": "Same release; he says the bill clears up confusing carry laws.",
+      "subjects": [
+        "carry a gun without a permit",
+        "going-armed law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:40:25.684Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "81765b7dfdb3241918b7ae6a35ee00bc8ec46f1d9769b842ae51137369d665ec",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/camedwards/2025/08/28/why-does-a-pro-2a-lawmaker-want-tennessee-to-appeal-ruling-striking-down-gun-control-laws-n1229755",
+      "date": "2025-08-28",
+      "date_precision": "day",
+      "passage": "one of the most thorough, well-reasoned, and well-written opinions I’ve seen.",
+      "note": "Quoted by the Bearing Arms news site: his praise for the August 2025 Gibson County Chancery Court ruling that struck down the going-armed statute and the park carry ban. The same story says he asked the governor and attorney general to appeal so the ruling would bind statewide; this is the outlet's account, with only the praise quoted directly.",
+      "subjects": [
+        "state court ruling on gun laws",
+        "going-armed law",
+        "carry in parks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:40:25.684Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -3371,6 +3436,33 @@
       ],
       "found": 5,
       "at": "2026-11-12T15:13:42.078Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "going-armed law",
+        "Second Amendment rights",
+        "gun carry age 18",
+        "state court ruling on gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "sponsor list: covered by bulk bill data",
+        "the House member page at https://www.capitol.tn.gov/house/members/h73.html (confirms Chris Todd, District 73, part of Madison County)",
+        "the House caucus site press release (read, one finding)",
+        "news story on bearingarms.com (read, one finding)",
+        "Ballotpedia: nothing returned by fetch, treated as blocked: https://ballotpedia.org/Chris_Todd",
+        "https://tnfirefly.com/elections/general-assembly/house/73 (page loaded, 2026 District 73 race; I could not read a final result from it)",
+        "ballot status: a web search result lists him as the incumbent, the only name on the Nov 3 2026 ballot; not confirmed from a fetched page",
+        "campaign site: not reviewed, none found",
+        "ontheissues.org, vote411: not reviewed (lead-only sources)",
+        "web searches: 2 of 10 used"
+      ],
+      "found": 3,
+      "at": "2026-11-14T02:40:25.684Z",
       "by": "source-collector"
     }
   ]

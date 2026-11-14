@@ -2713,6 +2713,31 @@
       "found": 6,
       "at": "2026-11-12T15:13:42.078Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red-flag or extreme-risk orders",
+        "Second Amendment and gun rights statements",
+        "carry permits and permitless carry",
+        "bans on a type of firearm",
+        "check every gun buyer"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "https://www.capitol.tn.gov/house/members/h22.html: member page confirms Representative Dan Howell, District 22 (read; no statements on the subject); sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Dan_Howell (empty page returned, not retried); 2026 ballot status not confirmed from any page, he is shown as a sitting member",
+        "https://en.wikipedia.org/wiki/Dan_Howell_(politician): says he is an NRA member and supports Second Amendment rights, but that line is unsourced there and is not his own words; nothing saved",
+        "https://votesmart.org/public-statement/745670/issue-position-second-amendment-rights: page not found (404)",
+        "https://www.newschannel5.com/news/newschannel-5-investigates/revealed/revealed-hes-fighting-new-gun-laws-in-tennessee-and-he-says-kids-protesting-gun-violence-are-props: fetched; did not establish it is about this person; nothing saved",
+        "https://www.mymix1041.com/?p=35843 and ?p=36498 (local radio news pages): a search summary said a 2023 Cleveland Daily Banner story quotes him on a county party resolution about red-flag laws, but the quote was not found in the fetched page text, so it is not saved; a lead for a later pass at the original Banner story",
+        "web search (2 searches) on his name plus Second Amendment and red-flag terms: no first-hand statement found",
+        "his official legislature page has no issue statements; no campaign site found; not reviewed: house caucus site, newsletters, floor video"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:41:43.724Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -635,6 +635,34 @@
       "found": 3,
       "at": "2026-11-12T15:13:42.083Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights",
+        "Second Amendment",
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "teachers carrying guns"
+      ],
+      "places": [
+        "scope: sitting state senator for District 8, term through 2028, so not on the 2026 ballot and still in scope; confirmed by search results and a local news story",
+        "On the Record (0 appearances, 0 name-matched candidates)",
+        "official legislature member page: fetched, returned only site navigation, nothing on the subject",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Jessie_Seal (403)",
+        "blocked: https://vote.norml.org/politicians/216372 (no response)",
+        "https://ivoterguide.com/candidate/80820/race/20603/election/1242: candidate questionnaire page; the gun ownership and teachers-carrying questions are marked as not answered",
+        "https://www.claiborneprogress.net/?p=24424: local news story on the 2024 campaign launch; the Second Amendment line is the reporter's paraphrase, not his own words, so not saved",
+        "campaign site: web search found none; not reviewed",
+        "web searches (3): nothing on the subject in his own words"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:37:40.261Z",
+      "by": "source-collector"
     }
   ]
 }

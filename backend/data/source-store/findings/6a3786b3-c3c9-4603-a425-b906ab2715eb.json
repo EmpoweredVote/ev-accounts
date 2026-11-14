@@ -382,6 +382,34 @@
       "found": 2,
       "at": "2026-11-12T15:13:42.083Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag or dangerous-person disarmament",
+        "giving guns to people committed for mental health evaluation",
+        "carry a gun without a permit",
+        "general statements on gun rights and gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "sponsor list: covered by bulk bill data",
+        "legislature roll-call and member pages: skipped per brief, covered by bulk bill data",
+        "blocked: https://www.gabbysalinas.com (no response)",
+        "blocked: https://www.gabbyforTN.com (no response)",
+        "blocked: https://ballotpedia.org/Gabby_Salinas (403)",
+        "blocked: https://tennesseelookout.com/2025/03/31/giving-guns-to-certain-mental-health-patients-could-become-a-crime-in-tennessee/ (403; search snippet only, no quote of her seen)",
+        "https://en.wikipedia.org/wiki/Gabby_Salinas (confirms she is a sitting member of the Tennessee House for District 96; nothing on the subject)",
+        "https://dailymemphian.com/article/49374 (profile; nothing on the subject)",
+        "web search on her name plus gun words: only bill-tracker pages and news about bills she backed, no direct quote from her found",
+        "not reviewed: official legislature member page (skipped per brief)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:41:58.488Z",
+      "by": "source-collector"
     }
   ]
 }

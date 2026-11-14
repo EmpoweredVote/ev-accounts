@@ -923,6 +923,29 @@
           "sha256": "3370de61a03ae487d88bba07bd29bd2aa2d55b418bd1289cfa91ac2485ca7cf2"
         }
       }
+    },
+    {
+      "id": "4f6033d63a3172a5341f2101be8058b9036d06a4588504230f5c0a3f1162448b",
+      "kind": "own-words",
+      "url": "https://www.commondreams.org/news/jones-protect-kids-not-guns",
+      "date": "2023-04-13",
+      "date_precision": "day",
+      "passage": "This comprehensive legislation will enact commonsense gun policies already working in other states to reduce gun deaths and make it harder for everyday people to possess military-grade assault weapons",
+      "note": "A news story quotes his post on Twitter when he filed the Protect Kids Not Guns Act with a state senator. The story says the bill would ban possession of magazines holding more than 10 rounds, add limits on who may sell guns, and require people under an extreme-risk order to surrender guns, ammunition and carry permits. Story date taken from the page's date field (04/14/2023 publication; post was the day before or same day).",
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines",
+        "take guns from people under a risk order",
+        "limits on who may sell guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:38:23.565Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -970,6 +993,30 @@
       ],
       "found": 3,
       "at": "2026-11-12T15:13:42.077Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines",
+        "take guns from people under a risk order",
+        "limits on who may sell guns",
+        "guns in schools / teachers carrying",
+        "general gun-safety law"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "the legislature's member page for the district: page loaded as a script shell with no readable text on the subject; not confirmed as his page",
+        "not reviewed: official state House site gun-word search, campaign site and Ballotpedia (not fetched within this run)",
+        "one web search on his name plus gun words; one news story fetched (Common Dreams, April 2023) that names him as the Nashville state representative",
+        "not reviewed: https://newrepublic.com/post/171806/justin-jones-promises-use-new-member-privilege-file-15-gun-control-bills (fetched, page text did not show the quote cleanly)",
+        "scope: not independently confirmed beyond news stories naming him as a sitting state representative"
+      ],
+      "found": 1,
+      "at": "2026-11-14T02:38:23.565Z",
       "by": "source-collector"
     }
   ]

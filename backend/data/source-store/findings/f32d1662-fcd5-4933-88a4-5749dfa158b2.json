@@ -1444,6 +1444,27 @@
           "sha256": "f4312034382d3bf458a39c08b41620c3ccba14453087a871389bd30e953672ba"
         }
       }
+    },
+    {
+      "id": "037a033938be6c19032e614395b8aa3c040ed55d1b9f2231c1a5fadcfc40a7a7",
+      "kind": "own-words",
+      "url": "https://www.wkms.org/government-politics/2023-07-25/dozens-gather-for-2nd-amendment-rally-in-henry-county-tn",
+      "date": "2023-07-25",
+      "date_precision": "day",
+      "passage": "it “looks like a red flag law.”",
+      "note": "WKMS radio report on a Henry County Second Amendment rally quotes Darby saying he disagrees with the governor's proposal to remove firearms from people deemed mentally unfit, and that it looks like a red flag law. Date is the article date.",
+      "subjects": [
+        "red-flag orders",
+        "remove guns from people deemed unfit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:44:56.604Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -1483,6 +1504,62 @@
       ],
       "found": 3,
       "at": "2026-11-12T15:13:42.081Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of gun or magazine",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "identity and ballot: a vote-results page (https://tnfirefly.com/elections/general-assembly/house/76) shows him as the only name on the 3 Nov 2026 ballot for House District 76, so in scope",
+        "the encyclopedia page https://en.wikipedia.org/wiki/Tandy_Darby: nothing on the subject",
+        "https://www.dresdenenterprise.com/stories/state-rep-darby-seeking-re-election,13026: cut off by paywall, nothing on the subject",
+        "blocked: https://www.dresdenenterprise.com/2020/04/08/darby-announces-candidacy-for-state-representative/ (403)",
+        "blocked: https://ballotpedia.org/Tandy_Darby (empty page)",
+        "blocked: https://tnhousegop.org/category/darby-tandy (404)",
+        "blocked: https://tnhousegop.org/state-rep-tandy-darby-named-vice-chairman-of-calendar-and-rules-committee (404)",
+        "not reviewed: official member page (legislature site, skipped per brief; redirects to the roll-call/sponsor host)",
+        "no personal official or campaign site found; not reviewed",
+        "web search on name plus gun words: no results naming him; web search for office and race: confirmed office only"
+      ],
+      "found": 0,
+      "at": "2026-11-14T02:41:53.858Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red-flag orders",
+        "governor's proposal to remove guns from people deemed unfit",
+        "Second Amendment",
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status check: sitting House District 76 member; a tracking site reports unopposed in the August 2026 primary and on the November 3, 2026 ballot (https://tnfirefly.com/elections/general-assembly/house/76)",
+        "Wikipedia page confirming office (https://en.wikipedia.org/wiki/Tandy_Darby): nothing on the subject",
+        "blocked: https://ballotpedia.org/Tandy_Darby (403)",
+        "a state House caucus site search for Darby and firearms (https://tnhousegop.org/?s=Darby+firearm): nothing on the subject",
+        "the legislature's member page (https://www.capitol.tn.gov/house/members/h76.html): returned only a generic page shell, no statements on the subject",
+        "sponsor list: covered by bulk bill data",
+        "https://www.change.org/decision-makers/tandy-darby-tennessee-house-of-representatives-district-76: nothing on the subject",
+        "web searches on name plus gun/Second Amendment words: one news report with a direct quote (WKMS, July 2023)",
+        "Vote Smart statement on the Second Amendment (https://votesmart.org/public-statement/745670/issue-position-second-amendment-rights): page text did not show the speaker's name, so not saved",
+        "no official campaign site found; ontheissues.org not used"
+      ],
+      "found": 1,
+      "at": "2026-11-14T02:44:56.604Z",
       "by": "source-collector"
     }
   ]

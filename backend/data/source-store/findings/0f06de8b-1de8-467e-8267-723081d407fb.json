@@ -894,6 +894,29 @@
           "sha256": "264846f6ba8d466085a045eda03e94c412cc97ea4004d6ab9d40137de792a12e"
         }
       }
+    },
+    {
+      "id": "3eb42d0232bf90a388df8cc1bb297ff6bd9f387a4a06d45972b5f4f4e8c9e491",
+      "kind": "own-words",
+      "url": "https://www.ronnieglynnforstaterep.com/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "As a retired Master Sergeant, Ronnie received extensive training in the safe and responsible use of firearms and knows that weapons of war have no place in civilian hands. To protect our communities, he supports closing the gun-show loophole, expanding background checks, and passing common-sense gun legislation to keep firearms out of the hands of individuals who pose a danger to themselves or others.",
+      "note": "Issues page of his campaign site (third-person text issued by the campaign; page date not shown, retrieved Nov 2026). Says weapons of war do not belong in civilian hands and that he backs closing the gun-show sales gap, wider background checks, and laws to keep guns from people who are a danger to themselves or others.",
+      "subjects": [
+        "ban on military-style weapons",
+        "check every gun buyer",
+        "gun-show sales",
+        "keep guns from people who pose a danger"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:42:00.414Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -938,6 +961,30 @@
       ],
       "found": 3,
       "at": "2026-11-12T15:13:42.081Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on military-style weapons",
+        "check every gun buyer",
+        "gun-show sales",
+        "keep guns from people who pose a danger",
+        "carry permits",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.ronnieglynnforstaterep.com (home and issues pages read; the issues page has a public-safety section on guns)",
+        "campaign site press releases, events and 2026 priorities pages: not reviewed: https://www.ronnieglynnforstaterep.com",
+        "blocked: https://ballotpedia.org/Ronnie_Glynn (403)",
+        "legislature member and bill pages: not fetched, sponsor list: covered by bulk bill data",
+        "web search: name plus gun words (3 searches); a news story on a 2022 school football game incident was found but it does not mention guns, so nothing saved; no news quote from him on guns found",
+        "ballotready profile: lead only, no gun position"
+      ],
+      "found": 1,
+      "at": "2026-11-14T02:42:00.414Z",
       "by": "source-collector"
     }
   ]

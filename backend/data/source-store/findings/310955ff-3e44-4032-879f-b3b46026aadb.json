@@ -2912,6 +2912,70 @@
           "sha256": "3c20164041bf91f5daa3d3a7d7ef3f0355ca03f17d6a1066a812ae1c09c630d7"
         }
       }
+    },
+    {
+      "id": "1e8d51e7e76f2dc039f22385dbcfc9f7b8d7de1875ae403a67d0d4b146e9f7c9",
+      "kind": "own-words",
+      "url": "https://paulbaileyfortn.com/capitol-hill-update-3-21-2026/",
+      "date": "2026-03-21",
+      "date_precision": "day",
+      "passage": "The Senate passed legislation I sponsored to ensure foster parents are not forced to give up their constitutional rights when they open their homes to a child.",
+      "note": "Newsletter from his campaign site describing a bill he sponsored on firearm rights of foster families.",
+      "subjects": [
+        "gun rights for foster families",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:38:19.220Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0bbf7abd6bdfe2033b964ff7013d6c15d5f3f0be25758df77785c7ca045e6db9",
+      "kind": "own-words",
+      "url": "https://paulbaileyfortn.com/capitol-hill-update-3-21-2026/",
+      "date": "2026-03-21",
+      "date_precision": "day",
+      "passage": "This bill makes it clear: law-abiding foster families should not face unnecessary government intrusion over legally owned firearms. While safety requirements remain in place, the state cannot create an inventory of firearms or require access to locked storage during routine inspections.",
+      "note": "He describes what the foster-family bill does: bars the state from keeping a list of firearms or requiring access to locked storage at inspections.",
+      "subjects": [
+        "gun rights for foster families",
+        "no state list of gun owners",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:38:19.220Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ca5f261c9dbf4d7e67815e3f86a3f432517b7eed9ffc962d2f5e3d7cde264625",
+      "kind": "own-words",
+      "url": "https://paulbaileyfortn.com/capitol-hill-update-4-17-2026/",
+      "date": "2026-04-17",
+      "date_precision": "day",
+      "passage": "Senate Bill 2469 clarifies that judges who are legally permitted to carry a handgun may do so openly, helping ensure they are able to protect themselves both in and out of the courtroom.",
+      "note": "Newsletter describing SB 2469 (2026), which he carried, on judges carrying a handgun openly.",
+      "subjects": [
+        "carrying guns openly",
+        "judges carrying handguns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T02:38:19.220Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -2951,6 +3015,31 @@
       ],
       "found": 3,
       "at": "2026-11-12T15:13:42.082Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights of foster families",
+        "judges carrying a handgun openly",
+        "Second Amendment general statements",
+        "carry permits",
+        "background checks",
+        "assault-style weapons",
+        "red flag orders"
+      ],
+      "places": [
+        "scope: his campaign site (https://paulbaileyfortn.com) shows him as the sitting state senator running as 'Paul Bailey for Senate'; Ballotpedia page returned empty, so ballot status is not independently confirmed",
+        "On the Record (0 meetings)",
+        "campaign site: site search for 'gun' returned no results; read the home page and the Capitol Hill updates of 3/21, 3/28, 4/3, 4/10, 4/17/2026",
+        "campaign site about page: nothing on the subject",
+        "blocked: https://ballotpedia.org/Paul_Bailey_(Tennessee) (empty page)",
+        "web news search on name plus firearm words: only bill trackers and news items, no direct quotes retrieved; not reviewed: https://tennesseelookout.com/2023/06/09/stockard-on-the-stump-push-to-arm-teachers-will-rise-again/ and https://fox17.com/news/local/tenn-bill-untangling-gun-and-voting-rights-restoration-advances-but-faces-uncertain-odds",
+        "sponsor list: covered by bulk bill data; floor votes: covered by bulk bill data"
+      ],
+      "found": 3,
+      "at": "2026-11-14T02:38:19.220Z",
       "by": "source-collector"
     }
   ]
