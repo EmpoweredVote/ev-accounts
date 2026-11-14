@@ -288,6 +288,31 @@ each was first learned.
     (`LA CA&#xD1;ADA`, `ERIK PE&#xD1;A`) and the parser did not decode them. ▶ **Before
     reporting a mismatch between two readings, ask what your own pipeline does to the field —
     and give the comparison a positive control that names a row it must be able to see.**
+- 🔴🔴 **PDF TEXT HAS NO ROWS. PAIR IT BY COORDINATES, NEVER BY THE ORDER THE CONTENT STREAM
+  EMITS IT.** A PDF stores positioned glyph runs, so "the next string" is not "the value in this
+  row" — report generators routinely write a label and its figure at different baselines, and a
+  reader that walks the stream pairs each label with the NEXT row's or the next CONTEST's number.
+  🔴 **It fails by producing real values from the real document in the wrong places**, which is
+  why it reads as a finding rather than as a bug: `CC_0423` reported Racine County's `Sheriff`
+  contest as **"Amy Vanderhoef 54,674"** — she is the Clerk of Circuit Court — and paired the
+  clerk's contest with `Yes 43,284 / No 36,344`, a referendum two pages later. It concluded the
+  document was "OFFSET BY ONE BLOCK" and that "not one number in that extraction may be read".
+  ⚠ **The document was fine and every number was readable.** Clustering the runs by `y` and
+  reading each row left-to-right by `x` recovered the whole table at once
+  (`backend/data/local-races-2026-audit/read-racine-pdf.mjs`).
+  - ▶ **This is the fix for the whole family**, not one county's workaround: the same misreading
+    is on file against the Massachusetts city PDFs and the Oregon 2024 abstract. `pdftotext
+    -layout` only *mitigates* it — it still emitted the drift above.
+  - 🔴 **Check the figures against a SECOND document and close the arithmetic.** A per-ward
+    statement of votes cast is a different document from a summary report; summing its wards is
+    an independent read, and it caught a wrong page range here (a **partial sum**, which looks
+    exactly like two sources disagreeing, and is the failure mode a ward tally has — so a tally
+    must print how many rows it summed). ⚠ **A "Total Votes" column may or may not include the
+    write-in line, and both are on file**: Racine County excludes it (`CC_0410`, re-derived by
+    arithmetic in `CC_0424`), Cambridge MA includes it (`CC_0411`). Neither can be assumed;
+    make the contest's arithmetic close.
+  - ▶ **Rendering a page to an image and reading it as a picture is a genuinely independent
+    mechanism**, and the cheapest control available on a document nobody else publishes.
 - 🔴🔴 **BOUND A PARSE BY THE DOCUMENT'S OWN STRUCTURE, NEVER BY A BLACKLIST OF WHAT ELSE MIGHT
   BE IN IT.** A section reader that stops at a list of headings you thought of cannot see the
   heading you did not, and everything after it is read as part of the section before — with a
@@ -321,9 +346,17 @@ each was first learned.
   expected, never on the status code alone.
 - 🔴 **A WAF REJECTION CAN BE HTTP 200 OR 202, so never judge a fetch by `r.ok`.** F5 WAFs on
   government hosts reject Node's `fetch` on its TLS fingerprint and answer 200 with a challenge
-  body; `curl` and Python `requests` get through. A 403 that persists even with a browser
-  `User-Agent` means **fetch it in Playwright**. Wikimedia 429s a generic UA. ⚠ The inverse
+  body; `curl` and Python `requests` get through. Wikimedia 429s a generic UA. ⚠ The inverse
   happens too, and a challenge may cover **pages** while leaving **files** open.
+  - 🔴 **A `User-Agent` ALONE IS NOT "A BROWSER", AND THIS LINE USED TO SAY A 403 THAT SURVIVES
+    ONE MEANS FETCH IT IN PLAYWRIGHT.** That sent `CC_0423` to Playwright for Racine County's
+    election PDFs, and the next session reproduced the 403 and then got **HTTP 200 and the file
+    out of plain `curl`** by sending the rest of what a browser sends: `Accept`,
+    `Accept-Language`, `sec-ch-ua`, `sec-ch-ua-mobile`, `sec-ch-ua-platform`, the four
+    `Sec-Fetch-*` headers and `Upgrade-Insecure-Requests`. A WAF scoring request *shape* sees one
+    spoofed header against a dozen missing ones. ▶ **Send the whole header set before escalating**
+    — Playwright is the answer to a TLS-fingerprint or JS challenge, not to a thin request.
+    The worked set is in `CC_0424`'s header.
 - ⚠ **READ THE BODY OF A 503 BEFORE CALLING A HOST DEAD.** Government sites commonly answer 503
   with "site is being rebuilt" or a maintenance notice — a temporary state with a successor URL in
   it, not an outage to retry forever.
