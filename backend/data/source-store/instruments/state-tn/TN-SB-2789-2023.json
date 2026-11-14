@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2789-2023",
+  "scope": "state:tn",
+  "title": "SB2789 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4, Chapter 54 and Title 39, Chapter 17, Part 13, relative to firearms accessories.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2789&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB2789.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mark Pody",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b333d211-ed1a-46fb-b947-427d2942acd0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-02-01; official copy via the Internet Archive snapshot 20260514144141 of https://www.capitol.tn.gov/Bills/113/Bill/SB2789.pdf (LegiScan doc 2911570))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2789-2023.draft.pdf",
+      "sha256": "d626401b0bb652f87c56a80220657edabe06dbbcd6912a5bef675fa117d367fc"
+    },
+    "note": "Draft as filed (2024-02-01); the House and Senate numbers share one document. The change is a word insertion, so the instruction sentence is quoted. No amendments are reflected."
+  },
+  "operative_text": "SECTION 1. Tennessee Code Annotated, Section 4-54-103(1), is amended by adding the language \"bipods,\" immediately after the language \"grips,\"."
+}

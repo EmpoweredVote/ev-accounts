@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1500-2017",
+  "scope": "state:tn",
+  "title": "SB1500 (110th General Assembly): As enacted, allows county commissioner in the actual discharge of the commissioner's duties who has a valid handgun carry permit to carry in buildings in which county commission meetings are held, but not in room in which judicial proceeding in progress; not applicable to member of legislative body of metropolitan government. - Amends TCA Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1500&ga=110",
+    "https://publications.tnsosfiles.com/acts/110/pub/pc0880.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "John Stevens",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2018-05-03; crossfiled twin's official copy via the Internet Archive snapshot 20260514064206 of https://publications.tnsosfiles.com/acts/110/pub/pc0880.pdf (it names SENATE BILL 1500; own link https://publications.tnsosfiles.com/acts/110/pub/pc0880.pdf not archived))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1500-2017.chaptered.twin.pdf",
+      "sha256": "8ec3d83c5704c8b0b65c5aac798842380b3d033a8877f319dfa8d305a85058f5"
+    },
+    "note": "Public Chapter 880 (2018-05-03), the law as enacted, printed as House Bill 1939 substituted for Senate Bill 1500 (twin text). OCR errors kept in quotes (e.g. 'ls')."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1306(c)(4)): (A) ls in the actual discharge of official duties as a county commissioner and (i) ls authorized to carry a handgun pursuant to $ 39-17-1351 ; and (ii) ls in a building in which county commission meetings are held, but is not in the room in which judicial proceedings are in progress.\nSECTION 1 (TCA 39-17-1306(c)(4)): (B) As used in this subdivision (c)(4), \"county commissioner\" means a member of a local legislative body known as a board of county commissioners and does not include a member of the legislative body of a metropolitan government."
+}

@@ -1,0 +1,655 @@
+{
+  "id": "TN-SB-2737-2020",
+  "scope": "state:tn",
+  "title": "SB2737 (111th General Assembly): As enacted, waives the lifetime handgun carry permit fees for retired law enforcement officers who served for at least 10 years, rather than former law enforcement officers who served for at least 10 years. - Amends TCA Section 39-17-1351.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2737&ga=111",
+    "https://publications.tnsosfiles.com/acts/111/pub/pc0804.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Mike Bell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dawn White",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a676c8d7-1208-44f1-9d72-e13a6fc91f04"
+    },
+    {
+      "name": "Rusty Crowe",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c57cefb-1e93-48cc-abe4-9946ef0ebe43"
+    },
+    {
+      "name": "Mark Pody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b333d211-ed1a-46fb-b947-427d2942acd0"
+    },
+    {
+      "name": "Paul Rose",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c5c76374-faa1-4a78-bee2-6e2b5ca171d7"
+    },
+    {
+      "name": "John Stevens",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2020-03-05",
+      "body": "TN Senate",
+      "motion": "FLOOR VOTE: Motion to Adopt",
+      "kind": "roll-call",
+      "yes": 31,
+      "no": 0,
+      "absent": 0,
+      "note": "LegiScan roll call 946590",
+      "members": [
+        {
+          "name": "Brian Kelsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Brenda Gilmore",
+          "vote": "yea"
+        },
+        {
+          "name": "Jon Lundberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Bell",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph Hensley",
+          "vote": "yea",
+          "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+        },
+        {
+          "name": "Frank Niceley",
+          "vote": "yea"
+        },
+        {
+          "name": "Bo Watson",
+          "vote": "yea",
+          "politician_id": "7c987183-ffd4-4fc2-9670-3903496159ff"
+        },
+        {
+          "name": "Ken Yager",
+          "vote": "yea",
+          "politician_id": "7c282d2f-5bff-40fd-ae69-12ecc650bfa7"
+        },
+        {
+          "name": "Randy McNally",
+          "vote": "yea",
+          "politician_id": "f1c1e147-193c-49cc-9b89-16956adb964c"
+        },
+        {
+          "name": "Dolores Gresham",
+          "vote": "yea"
+        },
+        {
+          "name": "Rusty Crowe",
+          "vote": "yea",
+          "politician_id": "9c57cefb-1e93-48cc-abe4-9946ef0ebe43"
+        },
+        {
+          "name": "Steve Southerland",
+          "vote": "yea",
+          "politician_id": "bd8f353d-19f9-4608-812d-987de934afeb"
+        },
+        {
+          "name": "Jack Johnson",
+          "vote": "yea",
+          "politician_id": "f608a36d-a1c7-495d-8bc8-f0e011682e67"
+        },
+        {
+          "name": "Ferrell Haile",
+          "vote": "yea",
+          "politician_id": "2e2b20db-b64d-4c20-b0c5-2a369241f6b1"
+        },
+        {
+          "name": "Art Swann",
+          "vote": "yea"
+        },
+        {
+          "name": "Kerry Roberts",
+          "vote": "yea",
+          "politician_id": "ccd45ab8-3a99-434b-8cb9-a0b05291d16a"
+        },
+        {
+          "name": "Becky Massey",
+          "vote": "yea",
+          "politician_id": "a91cf2ed-26bf-43c7-aae1-964fb6c46840"
+        },
+        {
+          "name": "John Stevens",
+          "vote": "yea",
+          "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+        },
+        {
+          "name": "Janince Bowling",
+          "vote": "yea",
+          "politician_id": "e50369f1-10eb-467e-8604-b94675565631"
+        },
+        {
+          "name": "Todd Gardenhire",
+          "vote": "yea",
+          "politician_id": "19829b74-5605-467e-8a6f-0c61b6384d2a"
+        },
+        {
+          "name": "Dawn White",
+          "vote": "yea",
+          "politician_id": "a676c8d7-1208-44f1-9d72-e13a6fc91f04"
+        },
+        {
+          "name": "Steven Dickerson",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Bailey",
+          "vote": "yea",
+          "politician_id": "310955ff-3e44-4032-879f-b3b46026aadb"
+        },
+        {
+          "name": "Richard Briggs",
+          "vote": "yea",
+          "politician_id": "191efc70-78dc-4ada-99e5-4edceb919cf0"
+        },
+        {
+          "name": "Jeff Yarbro",
+          "vote": "yea",
+          "politician_id": "142de671-f7ef-4923-9c3e-3499086da41a"
+        },
+        {
+          "name": "Edward Jackson",
+          "vote": "yea",
+          "politician_id": "0d5fb0c4-9234-4cb8-8911-7e8de2467729"
+        },
+        {
+          "name": "Sara Kyle",
+          "vote": "yea",
+          "politician_id": "1b745bdf-e7cb-487d-9ca5-7bd043d602ac"
+        },
+        {
+          "name": "Shane Reeves",
+          "vote": "yea",
+          "politician_id": "9a44e69a-9b73-4b3e-9c54-ad3cd141c929"
+        },
+        {
+          "name": "Katrina Robinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Rose",
+          "vote": "yea",
+          "politician_id": "c5c76374-faa1-4a78-bee2-6e2b5ca171d7"
+        },
+        {
+          "name": "Bill Powers",
+          "vote": "yea",
+          "politician_id": "a74a9f29-bd97-4e3b-af06-5c02f994143d"
+        }
+      ]
+    },
+    {
+      "date": "2020-06-17",
+      "body": "TN House",
+      "motion": "FLOOR VOTE: REGULAR CALENDAR PASSAGE ON THIRD CONSIDERATION",
+      "kind": "roll-call",
+      "yes": 89,
+      "no": 1,
+      "absent": 0,
+      "note": "LegiScan roll call 967285",
+      "members": [
+        {
+          "name": "G Hardaway",
+          "vote": "yea"
+        },
+        {
+          "name": "Terri Lynn Weaver",
+          "vote": "yea"
+        },
+        {
+          "name": "David Hawk",
+          "vote": "yea",
+          "politician_id": "9836d436-bc6d-43fb-b3be-ba3cd96ddeb4"
+        },
+        {
+          "name": "Johnny Shaw",
+          "vote": "yea",
+          "politician_id": "0589cb0e-688a-417e-8201-59f1298a99e3"
+        },
+        {
+          "name": "Glen Casada",
+          "vote": "yea"
+        },
+        {
+          "name": "Pat Marsh",
+          "vote": "yea",
+          "politician_id": "2a25d3a6-fef9-4208-92e1-6f16c403e509"
+        },
+        {
+          "name": "Bill Dunn",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Lynn",
+          "vote": "yea",
+          "politician_id": "6dbe4dd8-b749-4ef0-9ca4-f2c752e50ef1"
+        },
+        {
+          "name": "John Windle",
+          "vote": "nay"
+        },
+        {
+          "name": "Curtis Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Curtis Halford",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Ramsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Miller",
+          "vote": "yea",
+          "politician_id": "c6214919-2804-40cf-8fda-efd070e2dc80"
+        },
+        {
+          "name": "Mark White",
+          "vote": "yea",
+          "politician_id": "3b87c463-9e89-418d-bc39-043ad82616de"
+        },
+        {
+          "name": "Mike Stewart",
+          "vote": "yea"
+        },
+        {
+          "name": "John Ragan",
+          "vote": "yea"
+        },
+        {
+          "name": "Cameron Sexton",
+          "vote": "yea",
+          "politician_id": "07e92498-f5e8-4dcf-8609-39a86632e15e"
+        },
+        {
+          "name": "Kelly Keisling",
+          "vote": "yea",
+          "politician_id": "8954855c-2669-4120-8449-c107465750a5"
+        },
+        {
+          "name": "Mike Sparks",
+          "vote": "yea",
+          "politician_id": "bbb3d2b1-0c0c-4f08-a76e-b742da13e612"
+        },
+        {
+          "name": "Jeremy Faison",
+          "vote": "yea",
+          "politician_id": "7f7ec834-b9d7-4ccd-aedb-56dfaab6ea28"
+        },
+        {
+          "name": "Ryan Williams",
+          "vote": "yea",
+          "politician_id": "296df1be-a8bb-45ee-bb86-e1de328ed845"
+        },
+        {
+          "name": "Andy Holt",
+          "vote": "yea"
+        },
+        {
+          "name": "Dennis Powers",
+          "vote": "yea",
+          "politician_id": "fa7182a1-54a2-473a-979f-3ee5574b2f52"
+        },
+        {
+          "name": "Antonio Parkinson",
+          "vote": "yea",
+          "politician_id": "005a9962-c8a2-482a-95c4-68b49acb9cc6"
+        },
+        {
+          "name": "Kent Calfee",
+          "vote": "yea"
+        },
+        {
+          "name": "Dale Carr",
+          "vote": "yea"
+        },
+        {
+          "name": "William Lamberth",
+          "vote": "yea",
+          "politician_id": "e389c14c-b83f-4933-a5e6-25b3429fbb62"
+        },
+        {
+          "name": "Gloria Johnson",
+          "vote": "yea",
+          "politician_id": "20f60621-6745-44f2-ab3f-6ee35018051c"
+        },
+        {
+          "name": "Andrew Farmer",
+          "vote": "yea",
+          "politician_id": "5ce2e5e4-b932-48a6-9e4b-9111321ca49b"
+        },
+        {
+          "name": "Debra Moody",
+          "vote": "yea",
+          "politician_id": "5fbea991-5a0d-4695-9b78-06700eb9ff3f"
+        },
+        {
+          "name": "Mike Carter",
+          "vote": "yea"
+        },
+        {
+          "name": "Matthew Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Darren Jernigan",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Littleton",
+          "vote": "yea",
+          "politician_id": "eaf18ec7-04b7-4780-8996-69c6dd0c1223"
+        },
+        {
+          "name": "Harold Love",
+          "vote": "yea",
+          "politician_id": "3e57f2a5-5448-41a9-85a5-6766f2baa0ee"
+        },
+        {
+          "name": "Bo Mitchell",
+          "vote": "yea",
+          "politician_id": "094afd56-f074-4fdc-a053-1482ea501fc8"
+        },
+        {
+          "name": "Jason Powell",
+          "vote": "yea",
+          "politician_id": "bb90f187-a2d1-410a-8172-5f66acad7a99"
+        },
+        {
+          "name": "James Van Huss",
+          "vote": "yea"
+        },
+        {
+          "name": "David Byrd",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Beck",
+          "vote": "yea"
+        },
+        {
+          "name": "John Holsclaw",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Howell",
+          "vote": "yea",
+          "politician_id": "d9d6e188-5019-4349-bf88-e475f341707c"
+        },
+        {
+          "name": "Bud Hulsey",
+          "vote": "yea",
+          "politician_id": "b8ec6fca-3fe7-4f7f-b8ef-7b09db3aa664"
+        },
+        {
+          "name": "Sabi Kumar",
+          "vote": "yea",
+          "politician_id": "f9cf1fb9-ad68-4549-8b81-f45b6c4e1952"
+        },
+        {
+          "name": "Jay Reedy",
+          "vote": "yea",
+          "politician_id": "4e0eefb1-6a4f-4004-be8d-432a7131b475"
+        },
+        {
+          "name": "Jerry Sexton",
+          "vote": "yea"
+        },
+        {
+          "name": "John Clemmons",
+          "vote": "yea",
+          "politician_id": "cd4cbb33-0634-4c31-a466-7b282febefab"
+        },
+        {
+          "name": "Martin Daniel",
+          "vote": "yea"
+        },
+        {
+          "name": "Patsy Hazlewood",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Zachary",
+          "vote": "yea",
+          "politician_id": "28d41dcf-2d8c-4008-a5e5-4e9cc50a59e9"
+        },
+        {
+          "name": "Gary Hicks",
+          "vote": "yea",
+          "politician_id": "144245f2-3e8f-48dd-8bb9-a87c683c5242"
+        },
+        {
+          "name": "Dwayne Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "John Crawford",
+          "vote": "yea",
+          "politician_id": "00851f7f-d940-4c22-82f9-377f6ea092fa"
+        },
+        {
+          "name": "Michael Curcio",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Gant",
+          "vote": "yea",
+          "politician_id": "8f1d454c-399f-48d6-9850-dcc7b8b2cd0d"
+        },
+        {
+          "name": "Tim Rudd",
+          "vote": "yea",
+          "politician_id": "03d66202-6a28-4bd6-a689-475cdd0b9520"
+        },
+        {
+          "name": "Paul Sherrell",
+          "vote": "yea",
+          "politician_id": "9dfac502-4cc4-4105-91de-cc25272e452e"
+        },
+        {
+          "name": "Rick Staples",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas Tillis",
+          "vote": "yea"
+        },
+        {
+          "name": "Sam Whitson",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerome Moon",
+          "vote": "yea",
+          "politician_id": "9ee15ead-f2bc-47dd-b5f0-1f913f8a80f3"
+        },
+        {
+          "name": "Kevin Vaughan",
+          "vote": "yea",
+          "politician_id": "dc455df5-e62c-4480-bd13-7e24b7426611"
+        },
+        {
+          "name": "Clark Boyd",
+          "vote": "yea",
+          "politician_id": "fe941f15-bf81-4bb8-8834-f5cc312537b9"
+        },
+        {
+          "name": "Jason Potts",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnny Garrett",
+          "vote": "yea",
+          "politician_id": "34266501-a4d8-4d2c-83c6-ee49335cf0b9"
+        },
+        {
+          "name": "Scott Cepicky",
+          "vote": "yea",
+          "politician_id": "2e6b4535-ba42-4329-8df1-747bfaa4909e"
+        },
+        {
+          "name": "London Lamar",
+          "vote": "yea",
+          "politician_id": "9c83e282-cb78-4e39-aa1e-13875a86e872"
+        },
+        {
+          "name": "Charlie Baum",
+          "vote": "yea",
+          "politician_id": "792d4a91-f740-4778-a1ba-c9a899b9e490"
+        },
+        {
+          "name": "Rush Bricken",
+          "vote": "yea",
+          "politician_id": "d1e02758-1839-4d89-8a1b-26b9aeda22d5"
+        },
+        {
+          "name": "Jesse Chism",
+          "vote": "yea",
+          "politician_id": "41ab229f-cc56-44ed-994e-d72bc36c4c11"
+        },
+        {
+          "name": "Mark Cochran",
+          "vote": "yea",
+          "politician_id": "b254c419-7168-458e-8a74-8d7e0dfa650d"
+        },
+        {
+          "name": "Vincent Dixie",
+          "vote": "yea",
+          "politician_id": "830d155a-394e-463c-999d-bcf154460225"
+        },
+        {
+          "name": "Clay Doggett",
+          "vote": "yea",
+          "politician_id": "9a9c3029-794a-4cb5-aa7e-342e9b480603"
+        },
+        {
+          "name": "Bob Freeman",
+          "vote": "yea",
+          "politician_id": "e275bc99-103c-4a1f-8a57-c7a05e918cb0"
+        },
+        {
+          "name": "Bruce Griffey",
+          "vote": "yea"
+        },
+        {
+          "name": "Yusuf Hakeem",
+          "vote": "yea",
+          "politician_id": "dff0d1ad-869c-4397-87b0-bad415b6dee0"
+        },
+        {
+          "name": "Mark Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirk Haston",
+          "vote": "yea",
+          "politician_id": "e9d96a57-9348-4828-b95c-d819eecf1915"
+        },
+        {
+          "name": "Esther Helton",
+          "vote": "yea",
+          "politician_id": "4c7a137d-fb1c-4ef0-bde7-c6a197c506bc"
+        },
+        {
+          "name": "Jason Hodges",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Hurt",
+          "vote": "yea",
+          "politician_id": "bb56ab02-6229-47cd-830a-2a9fe74b0aa7"
+        },
+        {
+          "name": "Justin Lafferty",
+          "vote": "yea",
+          "politician_id": "0fb90ee9-55bf-49e4-844c-3f3df6b4e607"
+        },
+        {
+          "name": "Tom Leatherwood",
+          "vote": "yea",
+          "politician_id": "8ead6e45-7665-4f39-b50f-155146990b94"
+        },
+        {
+          "name": "Brandon Ogles",
+          "vote": "yea"
+        },
+        {
+          "name": "Iris Rudder",
+          "vote": "yea",
+          "politician_id": "573bab49-5954-4838-b6b0-2e04e0540d02"
+        },
+        {
+          "name": "Lowell Russell",
+          "vote": "yea",
+          "politician_id": "9a396215-d948-45e3-b40c-8e7a9e20d868"
+        },
+        {
+          "name": "Chris Todd",
+          "vote": "yea",
+          "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+        },
+        {
+          "name": "Dave Wright",
+          "vote": "yea",
+          "politician_id": "d5414dcc-6d0b-4a73-96a1-41b477cfd097"
+        },
+        {
+          "name": "Rick Eldridge",
+          "vote": "yea",
+          "politician_id": "58be867d-b7c3-4105-9757-55d4abe59756"
+        },
+        {
+          "name": "Robin Smith",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2020-07-16; crossfiled twin's official copy via the Internet Archive snapshot 20260513200105 of https://publications.tnsosfiles.com/acts/111/pub/pc0804.pdf (it names SENATE BILL 2737; own link https://publications.tnsosfiles.com/acts/111/pub/pc0804.pdf not archived))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2737-2020.chaptered.twin.pdf",
+      "sha256": "407fb26163cee3ade8fdd66331f0bed099f3c25707f0bda25881410d76cc3325"
+    },
+    "note": "Chaptered, Public Chapter 804 (2020-07-16), read from the twin's copy. Replaces (x)(5)(A) and (B), which said 'former' officer and 'leaving' the agency."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1351(x)(5)(A)): Is a retired federal, state, or local law enforcement officer, as defined in § 39-11-106;\nSECTION 1 (TCA 39-17-1351(x)(5)(B)): Served for at least ten (10) years prior to retirement and was POST-certified, or had equivalent training, on the date the officer retired;"
+}

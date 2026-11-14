@@ -1,0 +1,103 @@
+{
+  "id": "TN-HB-2027-2019",
+  "scope": "state:tn",
+  "title": "HB2027 (111th General Assembly): As introduced, extends the validity of newly issued or renewed enhanced handgun carry permits for the lifetime of the permit holder, unless the permit holder no longer meets the requirements for an enhanced handgun carry permit. - Amends TCA Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2027&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/HB2027.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "William Lamberth",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e389c14c-b83f-4933-a5e6-25b3429fbb62"
+    },
+    {
+      "name": "Rusty Grills",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "70aa67e5-8df0-4dee-a034-1ea4f3470c57"
+    },
+    {
+      "name": "Ron Gant",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8f1d454c-399f-48d6-9850-dcc7b8b2cd0d"
+    },
+    {
+      "name": "Cameron Sexton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "07e92498-f5e8-4dcf-8609-39a86632e15e"
+    },
+    {
+      "name": "Michael Curcio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Clay Doggett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9a9c3029-794a-4cb5-aa7e-342e9b480603"
+    },
+    {
+      "name": "Brandon Ogles",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Chris Todd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+    },
+    {
+      "name": "Jason Zachary",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "28d41dcf-2d8c-4008-a5e5-4e9cc50a59e9"
+    },
+    {
+      "name": "Ryan Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "296df1be-a8bb-45ee-bb86-e1de328ed845"
+    },
+    {
+      "name": "Johnny Garrett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "34266501-a4d8-4d2c-83c6-ee49335cf0b9"
+    },
+    {
+      "name": "Rush Bricken",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e02758-1839-4d89-8a1b-26b9aeda22d5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2020-01-29; official copy via LegiScan getBillText doc 2114769)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2027-2019.draft.pdf",
+      "sha256": "197dfa98a8da830a172540525970c681ed30634b222ed04b67bf161e1c025783"
+    },
+    "note": "Draft as filed, 2020-01-29; HB 2027 / SB 1985 share the text. Subdivision (n)(1) keeps the eight-year term for older permits. Section 7 deletes subsection (x), whose content is not shown in this text."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1351(n)(2)): (2) An enhanced handgun carry permit issued on or after January 1, 2021, shall not expire and shall continue to be valid for the life of the permit holder unless the permit holder no longer meets the requirements of this section. An enhanced handgun carry permit issued on or after January 1, 2021, shall not be subject to renewal. Every five (5) years after issuance of the enhanced handgun carry permit, the department shall conduct a name-based criminal history record check to determine whether the permit holder satisfies the requirements of this section. Upon discovery that an enhanced handgun carry permit holder no longer satisfies the requirements of this section, the department shall suspend or revoke the permit pursuant to § 39-17-1352.\nSECTION 6 (TCA 39-17-1351(q)(4)): (4) Any permit renewed on or after January 1, 2021, shall not expire and shall continue to be valid for the life of the permit holder in the same manner provided in subdivision (n)(2).\nSECTION 7 (TCA 39-17-1351(x)): Tennessee Code Annotated, Section 39-17-1351(x), is amended by deleting the subsection."
+}

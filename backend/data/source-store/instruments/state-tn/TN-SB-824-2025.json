@@ -1,0 +1,45 @@
+{
+  "id": "TN-SB-824-2025",
+  "scope": "state:tn",
+  "title": "SB0824 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB0824&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/SB0824.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    },
+    {
+      "name": "John Stevens",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2026-02-23; crossfiled twin's official copy via the Internet Archive snapshot 20260513074321 of https://www.capitol.tn.gov/Bills/114/Bill/HB0985.pdf (it names SENATE BILL 824; own link https://www.capitol.tn.gov/Bills/114/Bill/SB0824.pdf not archived))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-824-2025.draft.twin.pdf",
+      "sha256": "84c140a46f2c45d46edd803d516d18e3845be57736251c9b933308c592193824"
+    },
+    "note": "Draft as introduced; adopted amendments are not in the text read and could change it. The summary says the bill removes the offense of possessing a weapon in a posted building and the permit suspension for it; the text read (SB 824's printed document, naming HB 985) does so by replacing TCA 39-17-1359 with a new section and swapping cross-references (sections 1-2) from 39-17-1360 to 39-17-1353. Copy dated 2026-02-23."
+  },
+  "operative_text": "SECTION 3 (TCA 39-17-1359(a)): Except as provided in § 39-17-1313, this section does not preclude an individual, corporation, business entity, or local, state, or federal government entity or agent thereof from posting signage in prominent locations advising patrons that anyone possessing a firearm on the premises may be denied admission onto the premises or required to leave the premises by the owner or manager.\nSECTION 3 (TCA 39-17-1359(b)(1)): Except as provided in subdivision (b)(2), this section does not authorize an entity of local government or a permittee thereof to enact or enforce a prohibition or restriction on the possession of a handgun by an enhanced handgun carry permit holder or concealed handgun carry permit holder on property owned or administered by the entity unless:\nSECTION 1 (TCA 39-17-1352(a)(6)): Tennessee Code Annotated, Section 39-17-1352(a)(6), is amended by deleting \"§ 39-17-1360\" and substituting \"§ 39-17-1353\"."
+}

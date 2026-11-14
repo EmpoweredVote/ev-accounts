@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2193-2023",
+  "scope": "state:tn",
+  "title": "SB2193 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, relative to firearm sales.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2193&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB2193.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Heidi Campbell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bca9c890-1fd4-4ab8-9ffe-a6fac4eb2d32"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-30; official copy via the Internet Archive snapshot 20260514141716 of https://www.capitol.tn.gov/Bills/113/Bill/SB2193.pdf (LegiScan doc 2906916))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2193-2023.draft.pdf",
+      "sha256": "59f4e76f2043976812078c9810ba57931f5766edb5a507f116088e91a442560c"
+    },
+    "note": "Draft as filed (2024-01-30), same document as HB 2277 twin. No amendments in text."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1316(a)(1)): deleting the language \"persons who have been convicted of the offense of stalking\" and substituting \"persons who are under twenty-one (21) years of age, persons who have been convicted of the offense of stalking\"\nSECTION 2 (TCA 39-17-1316(q)(4)): (4) It is an offense to sell or offer to sell a firearm to a person knowing that the person is under twenty-one (21) years of age."
+}

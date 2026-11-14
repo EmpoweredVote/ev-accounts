@@ -1,0 +1,56 @@
+{
+  "id": "TN-HB-2908-2023",
+  "scope": "state:tn",
+  "title": "HB2908 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 33 and Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2908&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB2908.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sabi Kumar",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f9cf1fb9-ad68-4549-8b81-f45b6c4e1952"
+    },
+    {
+      "name": "Jeremy Faison",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7f7ec834-b9d7-4ccd-aedb-56dfaab6ea28"
+    },
+    {
+      "name": "Bo Mitchell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "094afd56-f074-4fdc-a053-1482ea501fc8"
+    },
+    {
+      "name": "Sam Whitson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-31; official copy via LegiScan getBillText doc 2910354)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2908-2023.draft.pdf",
+      "sha256": "0cccba5d0dd4ac75e8a8cb8043b23dd7889de66c5a0b82223640c019f63bf1c8"
+    },
+    "note": "Draft as filed 2024-01-31; HB 2908 and SB 2178 share this document ('Suicide Prevention Act of 2024'). Also covers a guardian-contact option, a 14-day wait before revocation, confidentiality of records, and perjury for false identity statements. Implementation takes effect on becoming law; other purposes Jan 1, 2025. No amendments in the text read."
+  },
+  "operative_text": "SECTION 2 (new TCA 39-17-1367(a)(1)): In an effort to prevent violence, including suicide, homicide, or mass shooting, by persons with mental illness using firearms, the Tennessee bureau of investigation (TBI) shall establish a program for \"revocable voluntary waiver\" of the right to purchase firearms so as to avoid purchase, possession, and transportation of firearms by and sale of firearms to:\nSECTION 2 (new TCA 39-17-1367(b)): The TBI shall maintain and update the revocable voluntary waiver of the right to purchase firearms request data to be used, in accordance with § 39-17-1316, to advise a gun dealer if the TBI's records indicate a firearm buyer is prohibited from purchasing, possessing, or transporting a firearm.\nSECTION 2 (new TCA 39-17-1367(c)(1)): No sooner than fourteen (14) calendar days after filing a revocable voluntary waiver of the right to purchase firearms request form, an enrollee may file a revocation of the revocable voluntary waiver of the right to purchase firearms with the TBI.\nSECTION 2 (new TCA 39-17-1367(h)): It is an offense for a person who is enrolled in the revocable voluntary waiver of the right to purchase firearms to purchase, possess, or transport a firearm. A violation of this subsection (h) is a Class A misdemeanor.\nSECTION 3 (TCA 39-17-1316(a)(1)): A person appropriately licensed by the federal government may stock and sell firearms to persons desiring firearms; however, sales to persons who have been convicted of the offense of stalking, as prohibited by § 39-17-315; who are addicted to alcohol; who are ineligible to receive firearms under 18 U.S.C. § 922; who have been judicially committed to a mental institution pursuant to title 33 or adjudicated as a mental defective; or who are enrolled in the revocable voluntary waiver pursuant to § 39-17-1367 are prohibited."
+}

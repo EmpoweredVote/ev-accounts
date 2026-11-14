@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-561-2017",
+  "scope": "state:tn",
+  "title": "HB0561 (110th General Assembly): As introduced, enacts the \"Tennessee Firearms Industry Nondiscrimination Act.\" - Amends TCA Title 47.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0561&ga=110",
+    "https://www.capitol.tn.gov/Bills/110/Bill/HB0561.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Travis",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3042e374-ca51-4650-aa9b-c3dec53d5876"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2017-02-07; official copy via the Internet Archive snapshot 20260514063256 of https://www.capitol.tn.gov/Bills/110/Bill/HB0561.pdf (LegiScan doc 1499163))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-561-2017.draft.pdf",
+      "sha256": "bf9f1f4d0b30cf82eb00dc71ed56553fa01d10baa5f28d58752a22f10604b0fb"
+    },
+    "note": "Draft (as filed) dated 2017-02-07; no Senate twin named in this copy. Borderline for gun_policy: it regulates banking treatment of firearm sellers, not guns themselves; counted as gun policy because it protects firearms commerce. \"Qualified product\" is defined by reference to 15 U.S.C. 7903(4) (firearms, ammunition, components). Enforced by the attorney general. Draft text: adopted amendments are not in the text read and could change it."
+  },
+  "operative_text": "SECTION 1 (new TCA 47-18-5603(a)): A financial institution shall not discriminate against a person solely on the basis that the person is lawfully engaged in commerce with respect to qualified products or against a trade association solely on the basis of its status as a trade association.\nSECTION 1 (new TCA 47-18-5603(b)(1)): The refusal of a financial institution to provide financial services to a person or trade association;\nSECTION 1 (new TCA 47-18-5604(a)(3)): Recover a civil penalty not to exceed ten thousand dollars ($10,000) for each violation of § 47-18-5603."
+}

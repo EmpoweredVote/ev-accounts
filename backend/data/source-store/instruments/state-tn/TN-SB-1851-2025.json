@@ -1,0 +1,45 @@
+{
+  "id": "TN-SB-1851-2025",
+  "scope": "state:tn",
+  "title": "SB1851 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 16; Title 36; Title 37; Title 38; Title 39; Title 40; Title 49 and Title 65, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB1851&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/SB1851.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    },
+    {
+      "name": "Janince Bowling",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e50369f1-10eb-467e-8604-b94675565631"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2026-01-21; official copy via the Internet Archive snapshot 20260513074119 of https://www.capitol.tn.gov/Bills/114/Bill/SB1851.pdf (LegiScan doc 3325788))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1851-2025.draft.pdf",
+      "sha256": "f78467f4c860d77c52afae6d54b10d10bc499e40ce145707b6a6ca35a5b2696a"
+    },
+    "note": "Draft as introduced; adopted amendments are not in the text read and could change it. Section 1 replaces 39-17-1307 (the carrying-with-intent and under-25 juvenile-adjudication possession offenses are not in the new text); section 3 deletes 39-17-1311 (weapons in parks and recreation areas). Sections 4-27, 32-35, 37-45 are cross-reference and conforming changes, omitted. Text names HB 1737 as twin; LegiScan lists SB 1851, copy dated 2026-01-21. Stop 1 prep (2026-11-13): the 39-17-1307 instruction sentence was added to operative_text from the saved text."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307): Tennessee Code Annotated, Section 39-17-1307, is amended by deleting the section and substituting:\nSECTION 1 (TCA 39-17-1307): A person commits an offense who possesses a firearm and: (A) Has been convicted of a felony crime of violence or an attempt to commit a felony crime of violence; (B) Has been convicted of a felony drug offense; (C) Has been convicted of a felony offense other than an offense under subdivision (a)(1)(A) or (a)(1)(B); (D) Has been convicted of a misdemeanor crime of domestic violence as defined in 18 U.S.C. § 921, and is still subject to the disabilities of such a conviction; (E) Is prohibited from possessing a firearm under 18 U.S.C. § 922(g); or (F) Has been adjudicated as a mental defective, has been judicially committed to a mental institution pursuant to title 33, or had a court appoint a conservator for the person by reason of a mental defect.\nSECTION 1 (TCA 39-17-1307): (5) An offense under subdivisions (a)(1)(D)-(F) is a Class A misdemeanor.\nSECTION 1 (TCA 39-17-1307): (e) A person does not possess a firearm if the firearm is in a safe or similar container that is securely locked and to which the person does not have the combination, key, or other means of normal access.\nSECTION 3 (TCA 39-17-1311): Tennessee Code Annotated, Section 39-17-1311, is amended by deleting the section.\nSECTION 28 (TCA 39-17-1316): Tennessee Code Annotated, Section 39-17-1316, is amended by deleting subdivisions (a)(1)(A)(i) and (a)(1)(A)(v).\nSECTION 29 (TCA 39-17-1351): Tennessee Code Annotated, Section 39-17-1351, is amended by deleting subdivisions (c)(11), (c)(18), and (c)(19).\nSECTION 30 (TCA 39-17-1352): Tennessee Code Annotated, Section 39-17-1352, is amended by deleting subdivisions (a)(9) and (a)(11).\nSECTION 31 (TCA 39-17-1313(a)): Tennessee Code Annotated, Section 39-17-1313(a), is amended by deleting the phrase \"a person who has a valid enhanced handgun carry permit or concealed handgun carry permit or who lawfully carries a handgun pursuant to § 39-17-1307(g) may,\" and substituting \"a person who lawfully possesses a firearm may,\".\nSECTION 36 (TCA 37-1-190): Tennessee Code Annotated, Section 37-1-190, is amended by deleting the section."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-1579-2023",
+  "scope": "state:tn",
+  "title": "HB1579 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4, Chapter 54; Section 36-3-625; Section 38-3-119; Title 39 and Section 40-14-109, relative to restricting certain types of firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1579&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB1579.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bo Mitchell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "094afd56-f074-4fdc-a053-1482ea501fc8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-04-12; official copy via LegiScan getBillText doc 2777210)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1579-2023.draft.pdf",
+      "sha256": "2234500e81acdd7ffed7f8620bab2d2b5b17beaacb77c1c84e5d4162d3cebef8"
+    },
+    "note": "Draft as filed (2023-04-12). The caption lists other code sections (4-54, 36-3-625, 38-3-119, 40-14-109) but the text read has only the new Title 39 section and effective date."
+  },
+  "operative_text": "SECTION 1 (new section, TCA Title 39, Ch. 17, Pt. 13): (A) \"Assault weapon\" means any of the following:\nSECTION 1 (new section, TCA Title 39, Ch. 17, Pt. 13(b)): (1) Notwithstanding a law to the contrary, it is an offense for a person to: (A) Purchase or attempt to purchase an assault weapon; or (B) Sell or offer to sell an assault weapon to a person.\nSECTION 1 (new section, TCA Title 39, Ch. 17, Pt. 13(b)): (2) A violation of this subsection (b) is a Class A misdemeanor."
+}

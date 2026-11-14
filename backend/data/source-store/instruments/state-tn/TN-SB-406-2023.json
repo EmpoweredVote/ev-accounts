@@ -1,0 +1,45 @@
+{
+  "id": "TN-SB-406-2023",
+  "scope": "state:tn",
+  "title": "SB0406 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0406&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB0406.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    },
+    {
+      "name": "Janince Bowling",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e50369f1-10eb-467e-8604-b94675565631"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-01-24; crossfiled twin https://www.capitol.tn.gov/Bills/113/Bill/HB0120.pdf is the same printed document (it names SENATE BILL 406); copied from TN-HB-120-2023.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-120-2023.draft.pdf",
+      "sha256": "a8acc87710850d71c4e318e42f18028cf6dc4ffac4f63a72ebb268ca196725d8"
+    },
+    "note": "Draft of 2023-01-24 (as introduced); amendments not in text. Both sections are word swaps (handgun -> firearm). Twin: TN-HB-120-2023 shares this document."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(g)): is amended by deleting the language \"handgun\" wherever it appears and substituting the language \"firearm\".\nSECTION 2 (TCA 39-17-1313(a)): is amended by deleting the language \"lawfully carries a handgun pursuant to\" and substituting the language \"lawfully carries a firearm pursuant to\"."
+}

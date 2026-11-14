@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1040-2021",
+  "scope": "state:tn",
+  "title": "SB1040 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 37 and Title 39, Chapter 17, Part 13, relative to the transfer of firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1040&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/SB1040.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Heidi Campbell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bca9c890-1fd4-4ab8-9ffe-a6fac4eb2d32"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2021-02-10; crossfiled twin's official copy via the Internet Archive snapshot 20260514133755 of https://www.capitol.tn.gov/Bills/112/Bill/HB1160.pdf (it names SENATE BILL 1040; own link https://www.capitol.tn.gov/Bills/112/Bill/SB1040.pdf not archived))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1040-2021.draft.twin.pdf",
+      "sha256": "3e3f8e173c45f7e894ee9f89de639d86659ee7eaba7edad2b775cde892ff40d5"
+    },
+    "note": "Draft as filed 2021-02-10, read from the House twin's document (HB 1160 / SB 1040). Subsection (b) excepts supervised age-restricted use for instruction, hunting or sport shooting. Effective July 1, 2021."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-1305): (a) The offense of illegal transfer of a firearm to a prohibited possessor is committed when a person intentionally gives, sells, donates, lends, delivers, or otherwise transfers a firearm to another person and the transferor knows or reasonably should know that the person receiving the firearm is prohibited from purchasing or possessing a firearm under state or federal law.\nSECTION 1 (new TCA 39-17-1305): (c) A violation of this section is a Class A misdemeanor."
+}

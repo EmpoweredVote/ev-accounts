@@ -1,0 +1,53 @@
+{
+  "state": "tn",
+  "name": "Tennessee",
+  "verified": "2026-11-14",
+  "source": "gun-policy Season 3 Stage 5, Tennessee session A hand-over (tn/HANDOVER-A.md part 7, tn/STOP1-QUESTIONS.md S3), 2026-11-14",
+  "chambers": {
+    "lower": "House",
+    "upper": "Senate"
+  },
+  "sessions": "Two-year General Assemblies that start in odd years (e.g. the 114th, 2025-2026); special sessions carry 7000-series bill numbers.",
+  "bill_data": [
+    "LegiScan bulk datasets for 2009-10 to 2025-26 are on disk (TN-55 to TN-2161); never re-pull a dataset.",
+    "LegiScan per-bill calls are allowed (runner, 2026-11-14). The key reached its November 2026 cap (10,015 queries) on 2026-11-13; it resets on the 1st of the month.",
+    "Bill texts: when the API is capped, the Internet Archive usually holds the official PDFs (raw bytes via the id_ form of the snapshot URL)."
+  ],
+  "votes": {
+    "mode": "legiscan-plan",
+    "official_hosts": [
+      "wapp.capitol.tn.gov",
+      "www.capitol.tn.gov"
+    ],
+    "legiscan_args": "--session-start odd --bill-pad 4",
+    "floor_rule": "Floor votes only: motions that start \"FLOOR VOTE:\" and name the bill's own passage (\"(AS AMENDED) PASSAGE ON THIRD CONSIDERATION\" in the House, \"Third Consideration\" in the Senate), concurrence in the other chamber's amendments, a conference committee report, or a resolution's \"Motion to Adopt\". Amendment, table, previous-question, consider, defer, recall and suspend-the-rules votes are dropped. House 99, Senate 33. LegiScan NV (present not voting) and Absent both count as absent.",
+    "gaps": [
+      "Some roll calls are labelled only \"FLOOR VOTE:\" or \"FLOOR VOTE: MOTION\" with no motion named; they are dropped.",
+      "The chamber that passes a bill's crossfiled twin \"substitutes\" it, so a chamber's floor vote sits on only one of the two bills."
+    ]
+  },
+  "texts": {
+    "hosts": [
+      "www.capitol.tn.gov",
+      "publications.tnsosfiles.com"
+    ],
+    "marks": "No underline or strike marks. Every change to existing law is written out in words: \"is amended by deleting ... and substituting instead ...\", \"by adding the following as a new section\". Quote the new words; describe what is deleted.",
+    "note": "Drafts (as filed) are PDFs at www.capitol.tn.gov/Bills/<GA>/Bill/<number>.pdf; enacted bills are public chapters at publications.tnsosfiles.com/acts/<GA>/pub/pcNNNN.pdf; amendments are separate PDFs at /Bills/<GA>/Amend/. A draft does not include adopted amendments. A House bill and its crossfiled Senate twin (LegiScan sasts type Crossfiled) are printed on one document that names both numbers, and both share one public chapter. Text versions carry dates. Some chapter PDFs have OCR errors (\"(aX5)\" for \"(a)(5)\", \"lf\" for \"If\")."
+  },
+  "reader_access": {
+    "www.capitol.tn.gov": "blocked: robots.txt Disallow: / for all but named search bots",
+    "wapp.capitol.tn.gov": "blocked: robots.txt Disallow: / for all but named search bots; Internet Archive copies of bill pages are a geolocation block page",
+    "publications.tnsosfiles.com": "blocked: 403 to a plain fetch (Internet Archive copies open)",
+    "legiscan.com": "blocked: bot check page"
+  },
+  "search_note": "Tennessee sponsorships and House and Senate floor votes come from the bulk bill data: skip the legislature's sponsor lists and roll-call pages (wapp.capitol.tn.gov, capitol.tn.gov), and add the place \"sponsor list: covered by bulk bill data\". Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
+  "bill_table_note": "- Tennessee bill text carries no underline or strike marks. Every change to existing law is spelled out in words (\"is amended by deleting ... and substituting instead ...\", \"by adding the following as a new section\"). `operative_text` quotes the new words; the provenance note says what was deleted.\n- One text was read per bill: the public chapter (\"Chaptered\", version enrolled) when the bill became law, else the filed draft (\"Draft\", version as-filed). A draft does NOT include adopted amendments. For a bill with a floor vote whose text read is a draft, `provenance.note` and the summary line say what the final bill did: say so in `why`, and flag the bill if the amended bill could read differently.\n- Most bills are filed twice, a House bill and its crossfiled Senate twin, printed on one document. Twins share a text and normally get the same row; the floor votes sit on whichever twin each chamber passed. Rule each twin on its own file, and check twins agree.\n- Floor votes kept: passage on third consideration, concurrence, conference reports and resolution adoption.\n- Most bills here have no floor vote: a roster member sponsored them. Their row still matters, for sponsors.",
+  "fill_quotes": {
+    "label_strips": []
+  },
+  "quirks": [
+    "LegiScan people files use initials for some members; a different person can later hold the same seat under a similar name. Match on the full name and confirm with the runner.",
+    "The election data on file (2026-11-14) has no State House or State Senate races, so the roster cannot mark legislators as leaving or show members-elect.",
+    "The sponsor cover must match names inside this state's roster only (pass the scoped roster)."
+  ]
+}

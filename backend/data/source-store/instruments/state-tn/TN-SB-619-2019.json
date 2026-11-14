@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-619-2019",
+  "scope": "state:tn",
+  "title": "SB0619 (111th General Assembly): As introduced, allows persons employed in emergency management or as firefighters or emergency medical technicians to carry handguns while engaged in the performance of official duties; requires annual completion of a firearm training program. - Amends TCA Title 39, Chapter 17.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0619&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/SB0619.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2019-02-05; crossfiled twin https://www.capitol.tn.gov/Bills/111/Bill/HB0800.pdf is the same printed document (it names SENATE BILL 619); copied from TN-HB-800-2019.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-800-2019.draft.pdf",
+      "sha256": "0e07e3a5f8404915eab9ae9e4d1968e47501e137cb33fa31430bf8893de0a482"
+    },
+    "note": "Draft text dated 2019-02-05, shared with twin HB 800; inserts a new (a)(1)(B) and redesignates existing language as (a)(1)(C). Summary says 'As introduced'."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1315(a)(1)(B)): Any person employed in emergency management or as a firefighter or emergency medical technician may carry a handgun while engaged in the performance of the person's official duties pursuant to a written directive by the executive supervisor of the organization to which the person is attached or employed; provided, that the person has successfully completed and continues to successfully complete on an annual basis a firearm training program of at least eight (8) hours duration."
+}

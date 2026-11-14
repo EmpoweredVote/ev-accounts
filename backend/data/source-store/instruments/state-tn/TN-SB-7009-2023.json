@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-7009-2023",
+  "scope": "state:tn",
+  "title": "SB7009 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39; Title 49 and Chapter 367 of the Public Acts of 2023, relative to school safety plans.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB7009&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB7009.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Charlane Oliver",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e92944ae-e865-4fd6-91c9-8ff1e045dc3d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-08-18; official copy via the Internet Archive snapshot 20260515001156 of https://www.capitol.tn.gov/Bills/113/Bill/SB7009.pdf (LegiScan doc 2837980))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-7009-2023.draft.pdf",
+      "sha256": "b63f68d7e77b82ed4c4e87ec5b710d2c9f9045ea4b7accc8a177564e20cd852e"
+    },
+    "note": "Draft as filed 2023-08-18; Senate bill only in this text. The summary also references Chapter 367 of the Public Acts of 2023, but the text read has no section amending it. Takes effect Oct 1, 2023. No amendments in the text read."
+  },
+  "operative_text": "SECTION 1 (TCA 49-6-804, new subsection): ( ) Each district-wide school safety plan and building-level school safety plan must prohibit possession, carrying, or storage of firearms or firearm ammunition on school property by students.\nSECTION 2 (TCA 39-17-1313(a)): Tennessee Code Annotated, Section 39-17-1313(a), is amended by deleting the language \"unless expressly prohibited by federal law\" and substituting \"unless expressly prohibited by federal law or subsection (e)\".\nSECTION 3 (TCA 39-17-1313, new subsection (e)): (e) This section does not permit a person to transport or store a firearm or firearm ammunition in violation of a school safety plan adopted by a local education agency pursuant to § 49-6-804."
+}

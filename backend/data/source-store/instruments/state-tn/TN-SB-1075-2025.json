@@ -1,0 +1,45 @@
+{
+  "id": "TN-SB-1075-2025",
+  "scope": "state:tn",
+  "title": "SB1075 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39 and Title 40, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB1075&ga=114",
+    "https://publications.tnsosfiles.com/acts/114/pub/pc0513.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Jack Johnson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f608a36d-a1c7-495d-8bc8-f0e011682e67"
+    },
+    {
+      "name": "Paul Rose",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c5c76374-faa1-4a78-bee2-6e2b5ca171d7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2025-05-22; same official document as TN-HB-1093-2025.chaptered.txt (https://publications.tnsosfiles.com/acts/114/pub/pc0513.pdf); 2025-05-22)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1093-2025.chaptered.pdf",
+      "sha256": "48b9598a6d56e52e53c653f56273b276812007f6540d5ebac5128bfa6711d37f"
+    },
+    "note": "Public Chapter 513, approved 2025-05-22, effective July 1, 2025. Both twins share this chapter; the text file is the twin's copy (same chapter).  Sections 2-5 are cross-reference edits to 39-17-1302 and are not quoted; the class change from E to C is made there. Quote spacing '(1 )' is as printed in the OCR."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1301(10)): (10) \"Machine gun\" means any firearm that is capable of shooting more than two (2) shots automatically, without manual reloading, by a single function of the trigger and includes any part, or combination of parts, designed and intended solely for use in converting a firearm into a machine gun;\nSECTION 6 (TCA 39-17-1307(b)(1)): Tennessee Code Annotated, Section 39-17-1307(b)(1 ), is amended by deleting \", and\" and substituting \", or firearm ammunition and\".\nSECTION 7 (TCA 39-17-1307(c)(1)): Tennessee Code Annotated, Section 39-17-1307(c)(1), is amended by deleting \"handgun and\" and substituting \"handgun or handgun ammunition and\".\nSECTION 8 (TCA 40-35-303(a)): (A) Section 39-13-102(a)(1 )(A)(iii), if the offense involved the use of a firearm from within a motor vehicle, as defined by§ 55-1-103;\nSECTION 10 (new TCA 40-35-501(gg)): (gg) Notwithstanding this section to the contrary, there is no release eligibility for a person committing the offense of aggravated assault, as defined in § 39-13- 102(a)(1 )(A)(iii), if the offense involved the use of a firearm from within a motor vehicle, as defined by § 55-1-103, on or after July 1, 2025."
+}

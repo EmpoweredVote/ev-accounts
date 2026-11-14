@@ -1,0 +1,55 @@
+{
+  "id": "TN-SB-1338-2017",
+  "scope": "state:tn",
+  "title": "SB1338 (110th General Assembly): As enacted, creates an exemption to the firing range component of the training that is required in order to obtain a handgun carry permit for applicants who submit proof to the department of safety that they have successfully passed small arms qualification training or combat pistol training in any branch of the United States armed forces. - Amends TCA Section 39-17-1351.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1338&ga=110",
+    "https://publications.tnsosfiles.com/acts/110/pub/pc0247.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Paul Bailey",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "310955ff-3e44-4032-879f-b3b46026aadb"
+    },
+    {
+      "name": "Mike Bell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Richard Briggs",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "191efc70-78dc-4ada-99e5-4edceb919cf0"
+    },
+    {
+      "name": "Dolores Gresham",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2017-05-08; same official document as TN-HB-689-2017.chaptered.txt (https://publications.tnsosfiles.com/acts/110/pub/pc0247.pdf); 2017-05-08)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-689-2017.chaptered.pdf",
+      "sha256": "33d501a47a4455cce5c1897130275e398b76121652c93c7c818f8ccff10f7d7d"
+    },
+    "note": "Chaptered, Public Chapter 247, 2017-05-08 (House Bill 689 substituted for Senate Bill 1338; one document). Replaces the fourth sentence of 39-17-1351(e). Effective January 1, 2018."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1351(e)): The course shall include both classroom hours and firing range hours; provided, that an applicant shall not be required to comply with the firing range requirements if the applicant submits proof to the department that the applicant has successfully passed small arms qualification training or combat pistol training in any branch of the United States armed forces."
+}

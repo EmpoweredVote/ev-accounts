@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1966-2023",
+  "scope": "state:tn",
+  "title": "SB1966 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1966&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB1966.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeff Yarbro",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "142de671-f7ef-4923-9c3e-3499086da41a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-26; official copy via the Internet Archive snapshot 20260514145803 of https://www.capitol.tn.gov/Bills/113/Bill/SB1966.pdf (LegiScan doc 2904912))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1966-2023.draft.pdf",
+      "sha256": "3be5ac508ca636c518f0e0aab8b12fe31fa81fa92922aa19d9dc39dbb7020b98"
+    },
+    "note": "Draft as filed (2024-01-26); effective Jan 1, 2025 (platform design on enactment). Includes confidentiality and a cause of action against inquiries about list status for jobs, housing, etc., which are tied to the gun list. House/Senate twin document."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-13 section): (a) The Tennessee bureau of investigation, by January 1, 2025, shall develop and launch a secure internet-based platform to allow any person in the United States to register to add the person's own name to the \"Tennessee Do Not Sell List.\"\nSECTION 1 (new TCA 39-17-13 section): (c)(1) Registering for the \"Tennessee Do Not Sell List\" or registering in any other state that adopts an analogous \"Do Not Sell List\" renders the registrant ineligible to receive a firearm.\nSECTION 1 (new TCA 39-17-13 section): (2)(A) It is an offense to knowingly transfer a firearm to a person who is validly registered on the \"Tennessee Do Not Sell List\" or a similar list in another state.\nSECTION 1 (new TCA 39-17-13 section): (B) A violation of this subdivision (c)(2) is a Class A misdemeanor, punishable only by a fine not to exceed one thousand dollars ($1,000)."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-2654-2017",
+  "scope": "state:tn",
+  "title": "HB2654 (110th General Assembly): As introduced, adds a Class E felony offense for possession of a firearm if a person has previously been convicted of an offense for which the sentence was enhanced based upon certain factors. - Amends TCA Section 39-17-1307 and Title 40, Chapter 35, Part 1.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2654&ga=110",
+    "https://www.capitol.tn.gov/Bills/110/Bill/HB2654.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karen Camper",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b3c3254b-83eb-489c-8871-b1ebdce6a140"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2018-02-01; official copy via LegiScan getBillText doc 1714903)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2654-2017.draft.pdf",
+      "sha256": "d04e98da37e4f15bd3928e3f7dd9160179d1e26a9bacab045f043ff724593131"
+    },
+    "note": "Draft dated 2018-02-01, as introduced. Adds a new subsection to 39-17-1307. Text printed with a hyphen break '§ 39- 11-106' (wrapped line). Senate twin SB 2219."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307): (1) A person commits an offense who possesses a firearm, as defined in § 39- 11-106, and has been convicted of an offense and received an enhanced sentence pursuant to § 40-35-114(17).\nSECTION 1 (TCA 39-17-1307): (2) An offense under subdivision (1) is a Class E felony."
+}

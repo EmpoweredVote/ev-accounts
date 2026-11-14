@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-1222-2025",
+  "scope": "state:tn",
+  "title": "HB1222 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 36 and Title 39, relative to emergency protection orders.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=HB1222&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/HB1222.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gloria Johnson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "20f60621-6745-44f2-ab3f-6ee35018051c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2025-02-06; official copy via LegiScan getBillText doc 3105174)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1222-2025.draft.pdf",
+      "sha256": "f8ea3accf9f5d15755eb81eb495c4905778af552d972496d88b173340c460d32"
+    },
+    "note": "Draft as introduced (2025-02-06); no amendments in text read. Twin SB 1131 is on the same document. Standard of proof for the final order is preponderance of the evidence; orders last up to one year, renewable. Quote of 39-17-1904(a) and 39-17-1905(f) joins numbered subdivisions in order."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-1901(a)): A family member, household member, intimate partner, or law enforcement officer who has a reasonable belief that a person poses an imminent risk of harm to the person or others if allowed to purchase or possess a firearm may seek relief under this part by filing a sworn petition for an emergency protection order against the respondent.\nSECTION 1 (new TCA 39-17-1902(a)): An ex parte emergency protection order must prohibit the respondent from purchasing or possessing any firearm during the period that the order is in effect.\nSECTION 1 (new TCA 39-17-1904(a)): (1) It is an offense to knowingly violate an emergency protection order. (2) A violation of subdivision (a)(1) is a Class A misdemeanor.\nSECTION 1 (new TCA 39-17-1905(b)(1)): To terminate the respondent's physical possession of the firearms in the respondent's possession by any lawful means, such as transferring possession to a third party who is not prohibited from possessing firearms, within forty-eight (48) hours; and\nSECTION 1 (new TCA 39-17-1905(f)): (1) It is an offense for a person subject to an emergency protection order to knowingly fail to surrender or transfer all firearms the respondent possesses as required by this section. (2) A violation of subdivision (f)(1) is a Class A misdemeanor, and each violation constitutes a separate offense."
+}

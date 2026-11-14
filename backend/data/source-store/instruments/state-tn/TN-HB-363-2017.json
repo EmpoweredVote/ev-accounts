@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-363-2017",
+  "scope": "state:tn",
+  "title": "HB0363 (110th General Assembly): As introduced, authorizes handgun carry permit holders to carry a concealed handgun into a posted building or prohibited place operated by a state or local governmental entity unless there are metal detectors and armed security guards stationed at all public entrances. - Amends TCA Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0363&ga=110",
+    "https://www.capitol.tn.gov/Bills/110/Bill/HB0363.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jason Zachary",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "28d41dcf-2d8c-4008-a5e5-4e9cc50a59e9"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2017-02-01; official copy via LegiScan getBillText doc 1491215)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-363-2017.draft.pdf",
+      "sha256": "0ec36ae2f7494076055a79762b967ec5310dac8ae95cc56e0665c9f82436cc76"
+    },
+    "note": "Draft dated 2017-02-01, as introduced. No passage vote on record."
+  },
+  "operative_text": "SECTION 1 (new section in TCA Title 39, Chapter 17, Part 13): Notwithstanding § 39-17-1309, § 39-17-1311, § 39-17-1359, or any other law that authorizes the posting of property, or otherwise prohibits the possession of a handgun by a handgun carry permit holder while within the prohibited area, it is lawful for a handgun carry permit holder to possess a handgun in a building or upon property operated by a state or local governmental entity, or agent or agency thereof, if: (1) The building or property does not have walk-through metal detectors and armed security guards located at all public entrances to the building or property; and (2) The handgun is being carried in a manner that causes the handgun to be concealed from ordinary observation."
+}

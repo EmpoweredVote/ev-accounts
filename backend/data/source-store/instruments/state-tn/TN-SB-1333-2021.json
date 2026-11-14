@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1333-2021",
+  "scope": "state:tn",
+  "title": "SB1333 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4, Chapter 54 and Title 8, Chapter 47, relative to the Tennessee Firearms Freedom Act.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1333&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/SB1333.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2021-02-11; official copy via the Internet Archive snapshot 20260514164856 of https://www.capitol.tn.gov/Bills/112/Bill/SB1333.pdf (LegiScan doc 2288607))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1333-2021.draft.pdf",
+      "sha256": "231bf5a576f695bb963599dde46eae5f9651adae8799ad0466f9c0ccdb687715"
+    },
+    "note": "Draft as filed 2021-02-11 (HB 899 / SB 1333); no amendments or passage shown. Section 1 also sets damages (greater of actual or $250/day, punitive, fees) and injunction suits (subsections (d)-(f)). Not in operative_text: subsection (a) second sentence says enforcing laws is not a violation unless a court has found the law unconstitutional."
+  },
+  "operative_text": "SECTION 1 (new TCA Title 4, ch. 54 section): (a) It is a violation of an individual's civil rights for a government entity, official, employee, or agent to infringe upon or deny an individual the full exercise and enjoyment of any right recognized and protected by Article I, Section 26, of the Tennessee Constitution or any right recognized and protected by the second amendment to the United States Constitution.\nSECTION 1 (new TCA Title 4, ch. 54 section): (b) A violation of this section may be enforced by means of a civil action, which may be brought in the county in which the action arose.\nSECTION 1 (new TCA Title 4, ch. 54 section): (c) A violation of this section by a government official, employee, or agent may also be punished as official oppression pursuant to § 39-16-403.\nSECTION 1 (new TCA Title 4, ch. 54 section): (g) A knowing or willful violation of this section by a government official constitutes grounds for ouster under title 8, chapter 47."
+}

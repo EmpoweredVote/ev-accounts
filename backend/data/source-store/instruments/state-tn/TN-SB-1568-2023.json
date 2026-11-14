@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1568-2023",
+  "scope": "state:tn",
+  "title": "SB1568 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Section 10-7-504; Section 33-6-413; Section 38-8-116; Section 39-16-702; Title 39, Chapter 17, Part 13 and Section 70-2-104, relative to handguns.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1568&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB1568.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "London Lamar",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c83e282-cb78-4e39-aa1e-13875a86e872"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-04-05; crossfiled twin https://www.capitol.tn.gov/Bills/113/Bill/HB1575.pdf is the same printed document (it names SENATE BILL 1568); copied from TN-HB-1575-2023.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1575-2023.draft.pdf",
+      "sha256": "213e84ff17e323df47eca2d27445faf7416675d2b1e98cc3b6436ef68bd5a6a2"
+    },
+    "note": "Draft as filed (2023-04-05), same document as HB 1575 twin. Sections 3-18 only delete cross-references; omitted."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1366): Tennessee Code Annotated, Section 39-17-1366, is amended by deleting the section.\nSECTION 2 (TCA 39-17-1351(z)): (1) A person who holds a concealed handgun carry permit pursuant to § 39-17-1366 that is active on June 30, 2023, may apply to the department to convert the person's concealed handgun carry permit to an enhanced handgun carry permit.\nSECTION 2 (TCA 39-17-1351(z)): (2) In order to be eligible to convert a concealed handgun carry permit to an enhanced handgun carry permit, a person must provide proof of completion of the training requirements in subsection (e).\nSECTION 2 (TCA 39-17-1351(z)): (3) An enhanced handgun carry permit issued pursuant to this subsection (z) is active until the expiration date issued on the person's concealed handgun carry permit held on June 30, 2023."
+}

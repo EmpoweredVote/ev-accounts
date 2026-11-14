@@ -1,0 +1,44 @@
+{
+  "id": "TN-HB-1428-2019",
+  "scope": "state:tn",
+  "title": "HB1428 (111th General Assembly): As introduced, creates the Class A misdemeanor offense of illegal transfer of a firearm to a prohibited possessor; prohibits the intentional transfer to a person who is known or should be known to be prohibited from purchasing or possessing a firearm. - Amends TCA Title 37 and Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1428&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/HB1428.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mike Stewart",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Clemmons",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd4cbb33-0634-4c31-a466-7b282febefab"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2019-02-06; official copy via LegiScan getBillText doc 1895632)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1428-2019.draft.pdf",
+      "sha256": "d58cdd3897098266bc1a4d485eda1e903903994e2a8b5ec8281c22744870be98"
+    },
+    "note": "Draft as filed, 2019-02-06; twin of SB 1011."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-1305(a)): The offense of illegal transfer of a firearm to a prohibited possessor is committed when a person intentionally gives, sells, donates, lends, delivers, or otherwise transfers a firearm to another person and the transferor knew or reasonably should have known that the person receiving the firearm is prohibited from purchasing or possessing a firearm under state or federal law.\nSECTION 1 (new TCA 39-17-1305(b)): If the person receiving the firearm is prohibited from purchasing or possessing a firearm under state or federal law only as a result of the person's age, a firearm is not deemed transferred if the transfer is only for the actual period of time in which the firearm is used or possessed under the transferor's supervision and for purposes of firearms instruction, hunting, or sport shooting.\nSECTION 1 (new TCA 39-17-1305(c)): A violation of this section is a Class A misdemeanor."
+}

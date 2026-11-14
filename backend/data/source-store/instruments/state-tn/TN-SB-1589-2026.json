@@ -1,0 +1,218 @@
+{
+  "id": "TN-SB-1589-2026",
+  "scope": "state:tn",
+  "title": "SB1589 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4; Title 38; Title 39 and Title 41, relative to the Tennessee corrections institute.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB1589&ga=114",
+    "https://publications.tnsosfiles.com/acts/114/pub/pc0609.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Ferrell Haile",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e2b20db-b64d-4c20-b0c5-2a369241f6b1"
+    },
+    {
+      "name": "Kerry Roberts",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ccd45ab8-3a99-434b-8cb9-a0b05291d16a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2026-02-23",
+      "body": "TN Senate",
+      "motion": "FLOOR VOTE: Motion to Adopt",
+      "kind": "roll-call",
+      "yes": 32,
+      "no": 0,
+      "absent": 0,
+      "note": "LegiScan roll call 1642166",
+      "members": [
+        {
+          "name": "Joseph Hensley",
+          "vote": "yea",
+          "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+        },
+        {
+          "name": "Bo Watson",
+          "vote": "yea",
+          "politician_id": "7c987183-ffd4-4fc2-9670-3903496159ff"
+        },
+        {
+          "name": "Ken Yager",
+          "vote": "yea",
+          "politician_id": "7c282d2f-5bff-40fd-ae69-12ecc650bfa7"
+        },
+        {
+          "name": "Randy McNally",
+          "vote": "yea",
+          "politician_id": "f1c1e147-193c-49cc-9b89-16956adb964c"
+        },
+        {
+          "name": "Rusty Crowe",
+          "vote": "yea",
+          "politician_id": "9c57cefb-1e93-48cc-abe4-9946ef0ebe43"
+        },
+        {
+          "name": "Steve Southerland",
+          "vote": "yea",
+          "politician_id": "bd8f353d-19f9-4608-812d-987de934afeb"
+        },
+        {
+          "name": "Jack Johnson",
+          "vote": "yea",
+          "politician_id": "f608a36d-a1c7-495d-8bc8-f0e011682e67"
+        },
+        {
+          "name": "Ferrell Haile",
+          "vote": "yea",
+          "politician_id": "2e2b20db-b64d-4c20-b0c5-2a369241f6b1"
+        },
+        {
+          "name": "Mark Pody",
+          "vote": "yea",
+          "politician_id": "b333d211-ed1a-46fb-b947-427d2942acd0"
+        },
+        {
+          "name": "Kerry Roberts",
+          "vote": "yea",
+          "politician_id": "ccd45ab8-3a99-434b-8cb9-a0b05291d16a"
+        },
+        {
+          "name": "Becky Massey",
+          "vote": "yea",
+          "politician_id": "a91cf2ed-26bf-43c7-aae1-964fb6c46840"
+        },
+        {
+          "name": "John Stevens",
+          "vote": "yea",
+          "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+        },
+        {
+          "name": "Janince Bowling",
+          "vote": "yea",
+          "politician_id": "e50369f1-10eb-467e-8604-b94675565631"
+        },
+        {
+          "name": "Todd Gardenhire",
+          "vote": "yea",
+          "politician_id": "19829b74-5605-467e-8a6f-0c61b6384d2a"
+        },
+        {
+          "name": "Dawn White",
+          "vote": "yea",
+          "politician_id": "a676c8d7-1208-44f1-9d72-e13a6fc91f04"
+        },
+        {
+          "name": "Paul Bailey",
+          "vote": "yea",
+          "politician_id": "310955ff-3e44-4032-879f-b3b46026aadb"
+        },
+        {
+          "name": "Richard Briggs",
+          "vote": "yea",
+          "politician_id": "191efc70-78dc-4ada-99e5-4edceb919cf0"
+        },
+        {
+          "name": "Jeff Yarbro",
+          "vote": "yea",
+          "politician_id": "142de671-f7ef-4923-9c3e-3499086da41a"
+        },
+        {
+          "name": "Edward Jackson",
+          "vote": "yea",
+          "politician_id": "0d5fb0c4-9234-4cb8-8911-7e8de2467729"
+        },
+        {
+          "name": "Sara Kyle",
+          "vote": "yea",
+          "politician_id": "1b745bdf-e7cb-487d-9ca5-7bd043d602ac"
+        },
+        {
+          "name": "Shane Reeves",
+          "vote": "yea",
+          "politician_id": "9a44e69a-9b73-4b3e-9c54-ad3cd141c929"
+        },
+        {
+          "name": "London Lamar",
+          "vote": "yea",
+          "politician_id": "9c83e282-cb78-4e39-aa1e-13875a86e872"
+        },
+        {
+          "name": "Paul Rose",
+          "vote": "yea",
+          "politician_id": "c5c76374-faa1-4a78-bee2-6e2b5ca171d7"
+        },
+        {
+          "name": "Bill Powers",
+          "vote": "yea",
+          "politician_id": "a74a9f29-bd97-4e3b-af06-5c02f994143d"
+        },
+        {
+          "name": "Page Walley",
+          "vote": "yea",
+          "politician_id": "dd755d2a-48a5-4be7-873f-14efba7e8301"
+        },
+        {
+          "name": "Heidi Campbell",
+          "vote": "yea",
+          "politician_id": "bca9c890-1fd4-4ab8-9ffe-a6fac4eb2d32"
+        },
+        {
+          "name": "Brent Taylor",
+          "vote": "yea",
+          "politician_id": "00b1ee2d-c4e1-47f8-aae8-83974a625ef3"
+        },
+        {
+          "name": "Adam Lowe",
+          "vote": "yea",
+          "politician_id": "0ac16142-df41-42b7-87c5-5018bfbe4fca"
+        },
+        {
+          "name": "Charlane Oliver",
+          "vote": "yea",
+          "politician_id": "e92944ae-e865-4fd6-91c9-8ff1e045dc3d"
+        },
+        {
+          "name": "Robert Harshbarger",
+          "vote": "yea",
+          "politician_id": "e990467c-7bad-4af9-9ba8-2554018dd65e"
+        },
+        {
+          "name": "Tom Hatcher",
+          "vote": "yea",
+          "politician_id": "ed2e43d5-7bfa-4d8f-b626-9f275306e070"
+        },
+        {
+          "name": "Jessie Seal",
+          "vote": "yea",
+          "politician_id": "1e348097-36df-4322-b120-44ad9256b748"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2026-03-27; same official document as TN-HB-1502-2026.chaptered.txt (https://publications.tnsosfiles.com/acts/114/pub/pc0609.pdf); 2026-03-27)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1502-2026.chaptered.pdf",
+      "sha256": "a0caf1a4740ee04167751f9038753e63ff2899b59ce45cfd5875854fec7e8975"
+    },
+    "note": "Public Chapter 609 (2026-03-27), SB 1589 substituted for HB 1502; both bills share this text. Sections 1-3 (corrections officer certification, plans of action) are not gun parts and fit no listed topic. Effective July 1, 2026."
+  },
+  "operative_text": "SECTION 4 (TCA 39-17-1315(a)(1)(A)): (iv) Any director or full-time employee of the Tennessee corrections institute in the performance of the director or employee's duty; or"
+}

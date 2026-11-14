@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-1588-2021",
+  "scope": "state:tn",
+  "title": "HB1588 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, relative to extreme risk protection orders.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1588&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/HB1588.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karen Camper",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b3c3254b-83eb-489c-8871-b1ebdce6a140"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2021-02-24; official copy via LegiScan getBillText doc 2309239)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1588-2021.draft.pdf",
+      "sha256": "ba42ddefa9cc5411056a7d7c9fa01c88f85e94e779d6602183cb0d0f8d998d17"
+    },
+    "note": "Draft as filed 2021-02-24 (names SB 412 and HB 1588); no votes on record. Orders last up to one year on clear and convincing evidence."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-1901(b)): A law enforcement officer or a family or household member who reasonably believes that a person poses an imminent and significant risk of harm to the person or others if allowed to purchase or possess a firearm may seek relief under this part by filing a sworn petition for an extreme risk protection order against the person in any court having jurisdiction over domestic relations matters.\nSECTION 1 (new TCA 39-17-1902(d)): If a court finds reasonable cause to believe that the respondent poses an imminent and significant risk of causing harm to respondent's self or others by having possession, custody, or control of or by purchasing or receiving a firearm or ammunition, the court shall issue an ex parte extreme risk protection order.\nSECTION 1 (new TCA 39-17-1902(e)(5)): A requirement that the respondent immediately relinquish to local law enforcement all firearms and ammunition owned by or in the respondent's custody, control, or possession; and\nSECTION 1 (new TCA 39-17-1902(p)): Upon the issuance of an extreme risk protection order, the court shall require the respondent to appear before the court no later than three (3) business days after the issuance of the order and present proof that the respondent has relinquished all firearms and ammunition in the respondent's custody, control, or possession to the appropriate law enforcement agency."
+}

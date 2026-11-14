@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-962-2017",
+  "scope": "state:tn",
+  "title": "HB0962 (110th General Assembly): As introduced, creates within the TBI a voluntary \"Do Not Sell\" registry on which a person may place or remove their name; creates criminal offense of transferring a firearm to anyone on the registry; makes registry confidential and creates civil cause of action for inquiring or taking action against a person based on the registry. - Amends TCA Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0962&ga=110",
+    "https://www.capitol.tn.gov/Bills/110/Bill/HB0962.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Harold Love",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3e57f2a5-5448-41a9-85a5-6766f2baa0ee"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2017-02-09; official copy via the Internet Archive snapshot 20260514065137 of https://www.capitol.tn.gov/Bills/110/Bill/HB0962.pdf (LegiScan doc 1504936))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-962-2017.draft.pdf",
+      "sha256": "4e7f95308a08273e8a3c58247a55f03cac7d4aceba8814a38a78d587ecf092c2"
+    },
+    "note": "Draft (as filed) dated 2017-02-09; twin Senate Bill 671. No section number is assigned in the draft (new section in Title 39, Chapter 17, Part 13). Registry entry is also sent to the federal NICS Denied Persons File. Confidentiality for employment, education, housing, insurance, benefits and contracting is part of the registry, tied to the gun registry. Draft text: adopted amendments are not in the text read and could change it."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17 Part 13 section): The Tennessee bureau of investigation, by July 1, 2018, shall develop and launch a secure internet-based platform to allow any person in the United States to register to add the person's own name to the \"Tennessee Do Not Sell List.\"\nSECTION 1 (new TCA 39-17 Part 13 section): Registering for the \"Tennessee Do Not Sell List\" or registering in any other state that adopts an analogous \"Do Not Sell List\" renders receipt of a firearm by the registrant illegal.\nSECTION 1 (new TCA 39-17 Part 13 section): It is an offense to knowingly transfer a firearm to a person who is validly registered on the \"Tennessee Do Not Sell List\" or a similar list in another state.\nSECTION 1 (new TCA 39-17 Part 13 section): A violation of this subdivision is punishable as a fine-only Class A misdemeanor with a fine not to exceed one thousand dollars ($1,000).\nSECTION 1 (new TCA 39-17 Part 13 section (e)(3)): The person whose confidentiality was violated by an inquiry or action may bring a private civil action for appropriate relief, including reasonable attorney fees, for each violation that occurs."
+}

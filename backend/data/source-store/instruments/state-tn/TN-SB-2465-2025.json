@@ -1,0 +1,41 @@
+{
+  "id": "TN-SB-2465-2025",
+  "scope": "state:tn",
+  "title": "SB2465 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 37 and Title 39, relative to criminal justice.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB2465&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/SB2465.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul Bailey",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "310955ff-3e44-4032-879f-b3b46026aadb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: SECTIONS 7-10 (TCA 39-17-1003, 39-17-1004, 39-17-1005) — higher penalties for sexual exploitation of a minor offences"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2026-02-02; crossfiled twin https://www.capitol.tn.gov/Bills/114/Bill/HB2253.pdf is the same printed document (it names SENATE BILL 2465); copied from TN-HB-2253-2025.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2253-2025.draft.pdf",
+      "sha256": "5de4401ff88357b6fe681fc58cecc970a429b5f9988fdbc335932be37ae8af81"
+    },
+    "note": "Draft dated 2026-02-02 (as filed; summary says 'As introduced'). Sections 3-5 repeat the same mass-violence substitution in 39-17-1316, 39-17-1351 and 39-17-1352 and are not quoted. Section 1 text is from the House number's file; SB 2465 prints the same document. Amendments, if any, are not in the text read."
+  },
+  "operative_text": "SECTION 1 (TCA 37-1-190(a)(2)(G)): (G) A threat of mass violence, as defined in § 39-16-517 or § 39-13-813; or\nSECTION 2 (TCA 39-17-1307(j)(1)(G)): (G) A threat of mass violence, as defined in § 39-16-517 or § 39-13-813; or\nSECTION 6 (TCA 39-17-1316(a)(1)(A), new (vi)): (vi) Are ineligible to possess a firearm pursuant to any court order or under any law of this state."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1350-2025",
+  "scope": "state:tn",
+  "title": "SB1350 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 33; Title 38 and Title 39, Chapter 17, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB1350&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/SB1350.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Raumesh Akbari",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2a79d564-dde0-4201-a072-789554bbf6d6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2025-02-06; crossfiled twin https://www.capitol.tn.gov/Bills/114/Bill/HB1390.pdf is the same printed document (it names SENATE BILL 1350); copied from TN-HB-1390-2025.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1390-2025.draft.pdf",
+      "sha256": "197f93e70a9225ac1b7494e6a2f0eb764cf75c9d2c6e54e94f1ef4f90d28891e"
+    },
+    "note": "Draft dated 2025-02-06; text is the crossfiled HB 1390 document (also names SB 1350). Adopted amendments, if any, not in text. The storage-offense quote stops at 'render' because a page footer follows; the sentence continues 'the firearm inoperable by a person other than the owner or another lawfully authorized user.' Section numbers for 39-17-1368 to 1371 sit between the quoted parts; the ERPO surrender and return procedures are not quoted for length. Title also lists TCA Title 33 and Title 38 (not read in detail)."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-1367): (d) Upon notice and a hearing on the matter, if the court finds by clear and convincing evidence that the respondent poses a significant danger of causing personal injury to the respondent or others by having in the respondent's custody or control, or by purchasing, possessing, or receiving, a firearm or ammunition, then the court shall issue an extreme risk protection order for an appropriate period of up to twelve (12) months.\nSECTION 1 (new TCA 39-17-1372): (b) A person who has in the person's custody or control a firearm or ammunition or who purchases, possesses, or receives a firearm or ammunition with knowledge that the person is prohibited from doing so by an order issued pursuant to § 39-17-1367 commits a Class E felony.\nSECTION 2 (new TCA 39-17-1373): (a) It is an offense to store or keep a firearm in any place unless the firearm is secured in a locked container, unloaded, and separate from ammunition so as to render\nSECTION 2 (new TCA 39-17-1373): (b) A violation of subsection (a) is a Class A misdemeanor.\nSECTION 3 (TCA 39-17-1316(c)): (2) Except with respect to transactions between persons licensed as dealers under 18 U.S.C. § 923, a gun dealer shall not deliver a firearm to a purchaser until fifteen (15) business days after compliance with subdivision (c)(1)."
+}

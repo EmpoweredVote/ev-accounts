@@ -1,0 +1,44 @@
+{
+  "id": "TN-SB-2259-2023",
+  "scope": "state:tn",
+  "title": "SB2259 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4, Chapter 3; Section 10-7-504 and Title 39, Chapter 17, Part 13, relative to the creation of the \"Tennessee Voluntary Do Not Sell Firearms Act.\"",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2259&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB2259.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Heidi Campbell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bca9c890-1fd4-4ab8-9ffe-a6fac4eb2d32"
+    },
+    {
+      "name": "Art Swann",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-30; crossfiled twin https://www.capitol.tn.gov/Bills/113/Bill/HB2197.pdf is the same printed document (it names SENATE BILL 2259); copied from TN-HB-2197-2023.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2197-2023.draft.pdf",
+      "sha256": "fbab1d8a74943e71bc52c445cb3a4f519c68426ce9aca942327862c0e83c6601"
+    },
+    "note": "Draft dated 2024-01-30 (as introduced); no passage vote is noted in the summary line. SB 2259 text is the shared House/Senate document. Section 5: forms and rules effective on becoming law, all else January 1, 2025."
+  },
+  "operative_text": "SECTION 1 (new section, TCA Title 39, ch. 17, part 13): (c) A person may file a voluntary waiver of firearm rights form with the clerk of the circuit court in the county of the person's residence, which has the effect of prohibiting the person executing the form from receiving a firearm while the waiver is in effect. (e) The Tennessee bureau of investigation shall enter the voluntary waiver of firearm rights into the national instant criminal background check system and other federal or state computer-based systems used by law enforcement agencies to identify prohibited purchasers of firearms within twenty-four (24) hours of receipt of the form.\nSECTION 1 (same new section, subsection (f)): (f) No sooner than seven (7) calendar days after filing a voluntary waiver of firearm rights, the person may file a revocation of the voluntary waiver of firearm rights with the clerk of any circuit court, which has the effect of permitting the person executing the form to receive a firearm after the Tennessee bureau of investigation has completed processing the revocation form and twenty-one (21) calendar days have passed since the bureau's receipt of the revocation form, unless the person is otherwise ineligible to purchase or possess a firearm under federal or state law.\nSECTION 2 (TCA 39-17-1316(d)(1)): (1) Determine, from criminal records and other information available to it, whether the purchaser: (A) Is disqualified under subdivision (a)(1) from completing the purchase; or (B) Has executed a voluntary waiver of firearm rights form pursuant to Section 1; and\nSECTION 3 (TCA 39-17-1316(q)(4)): (4) It is an offense to sell or transfer a firearm to a person knowing that the person has executed a voluntary waiver of firearm rights form pursuant to Section 1 that has not been revoked."
+}

@@ -1,0 +1,99 @@
+{
+  "id": "TN-HB-723-2023",
+  "scope": "state:tn",
+  "title": "HB0723 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0723&ga=113",
+    "https://publications.tnsosfiles.com/acts/113/pub/pc0149.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Bud Hulsey",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b8ec6fca-3fe7-4f7f-b8ef-7b09db3aa664"
+    },
+    {
+      "name": "Lowell Russell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9a396215-d948-45e3-b40c-8e7a9e20d868"
+    },
+    {
+      "name": "Susan Lynn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6dbe4dd8-b749-4ef0-9ca4-f2c752e50ef1"
+    },
+    {
+      "name": "Debra Moody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5fbea991-5a0d-4695-9b78-06700eb9ff3f"
+    },
+    {
+      "name": "Iris Rudder",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "573bab49-5954-4838-b6b0-2e04e0540d02"
+    },
+    {
+      "name": "Ryan Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "296df1be-a8bb-45ee-bb86-e1de328ed845"
+    },
+    {
+      "name": "Dan Howell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d9d6e188-5019-4349-bf88-e475f341707c"
+    },
+    {
+      "name": "Clay Doggett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9a9c3029-794a-4cb5-aa7e-342e9b480603"
+    },
+    {
+      "name": "Mary Littleton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eaf18ec7-04b7-4780-8996-69c6dd0c1223"
+    },
+    {
+      "name": "Tim Hicks",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7ea75c1f-f04c-42ac-8b06-7a17bcfb8d9a"
+    },
+    {
+      "name": "David Hawk",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9836d436-bc6d-43fb-b3be-ba3cd96ddeb4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2023-04-14; official copy via the Internet Archive snapshot 20260514135939 of https://publications.tnsosfiles.com/acts/113/pub/pc0149.pdf (LegiScan doc 2783921))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-723-2023.chaptered.pdf",
+      "sha256": "b376c3b49a8bed8add9a07adef61ba3cc0582c63bc5c31469a93bd930fde1e34"
+    },
+    "note": "Chaptered, Public Chapter 149 (approved April 2023); Senate Bill 515 substituted for House Bill 723. Replaces the text of the \"employee\" definition; the printed clause ends \"; and\" as in the source."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1309(e)(11)(E)(i)): (i) \"Employee\" includes: (a) All faculty, staff, and other persons who are employed on a full-time basis by a public institution of higher education; and (b) All faculty, staff, and other persons who: (1) Are retired federal, state, or local law enforcement officers; (2) Served as a federal, state, or local law enforcement officer for at least twenty (20) years prior to retirement; (3) Retired in good standing as certified by the chief law enforcement officer of the organization from which the officer retired; and (4) Are employed on a part-time basis by a public institution of higher education; and"
+}

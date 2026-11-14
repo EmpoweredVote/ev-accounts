@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-1119-2019",
+  "scope": "state:tn",
+  "title": "HB1119 (111th General Assembly): As introduced, creates a Class A misdemeanor of possessing a firearm if a person has a prior conviction of stalking. - Amends TCA Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1119&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/HB1119.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bob Freeman",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e275bc99-103c-4a1f-8a57-c7a05e918cb0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2019-02-06; official copy via LegiScan getBillText doc 1894499)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1119-2019.draft.pdf",
+      "sha256": "c67bea26ac0a1ec336e0b96b0049b23faafe550e4f86298c70272b34a2ea5d6f"
+    },
+    "note": "Draft dated 2019-02-06, shared with twin SB 1415. Adds a new subdivision to 39-17-1307(f)(1); applies to violations on or after July 1, 2019."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(f)(1)): ( ) Has been convicted of the offense of stalking under § 39-17-315, or of an offense committed in another state, territory, or under federal law, that would constitute the offense of stalking under § 39-17-315, if committed in this state."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-367-2017",
+  "scope": "state:tn",
+  "title": "HB0367 (110th General Assembly): As introduced, permits the use of certain defenses to unlawful possession or carrying of a weapon by a person with a prior conviction for a felony involving the use of force, violence, deadly weapon, or drugs if convictions have been expunged or the person's rights of citizenship have been restored. - Amends TCA Section 39-17-1308 and Title 40, Chapter 29, Part 1.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0367&ga=110",
+    "https://www.capitol.tn.gov/Bills/110/Bill/HB0367.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jay Reedy",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4e0eefb1-6a4f-4004-be8d-432a7131b475"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2017-02-01; official copy via LegiScan getBillText doc 1491120)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-367-2017.draft.pdf",
+      "sha256": "f4a4c0ea154b7051abee31a65ffb03aed1bdd87d555ef5ab96de7497f11e9826"
+    },
+    "note": "Draft as filed, 2017-02-01. Introduced version; no votes recorded. Amendments, if any, are not in this text. The caption names Title 40, Chapter 29, Part 1 but the text read only amends 39-17-1308(b); it replaces the existing subsection (b)."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1308(b)): (b) Unless the convictions have been expunged or the person has had full rights of citizenship restored under the laws of this state, another state, or federal law, the defenses described in this section are not available to persons described in § 39-17-1307(b)(1)."
+}

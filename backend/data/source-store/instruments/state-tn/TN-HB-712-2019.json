@@ -1,0 +1,57 @@
+{
+  "id": "TN-HB-712-2019",
+  "scope": "state:tn",
+  "title": "HB0712 (111th General Assembly): As enacted, updates the definitions of \"firearm\" and \"antique firearm\" to mirror definitions under federal law; makes various changes related to updated definitions. - Amends TCA Section 39-11-106; Section 39-13-103 and Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0712&ga=111",
+    "https://publications.tnsosfiles.com/acts/111/pub/pc0279.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Jeremy Faison",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7f7ec834-b9d7-4ccd-aedb-56dfaab6ea28"
+    },
+    {
+      "name": "William Lamberth",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e389c14c-b83f-4933-a5e6-25b3429fbb62"
+    },
+    {
+      "name": "Sabi Kumar",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f9cf1fb9-ad68-4549-8b81-f45b6c4e1952"
+    },
+    {
+      "name": "Gregory Terry",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "155630a5-d1d1-4b1b-81da-748b81b41d32"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2019-05-08; official copy via the Internet Archive snapshot 20260807040237 of https://publications.tnsosfiles.com/acts/111/pub/pc0279.pdf (LegiScan doc 2013228))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-712-2019.chaptered.pdf",
+      "sha256": "acf0caeba18516d8f3afc11824df3203df9231dced355babada6b0ab8b96e441"
+    },
+    "note": "Chaptered, Public Chapter 279 (2019-05-08); one document names SB 594 and HB 712. Section 2 adds definitions of 'antique firearm' and 'destructive device'; section 3 adds 'or antique firearm' to TCA 39-13-103(b)(3). The pdftotext copy garbles some cross-references, so those lines are not quoted."
+  },
+  "operative_text": "SECTION 1 (TCA 39-11-106(a)(11)): Any weapon that will or is designed to or may readily be converted to expel a projectile by the action of an explosive;\nSECTION 1 (TCA 39-11-106(a)(11)): Any firearm muffler or firearm silencer; or\nSECTION 1 (TCA 39-11-106(a)(11)): Does not include an antique firearm;\nSECTION 4 (TCA 39-17-1324): Tennessee Code Annotated, Section 39-17-1324, is amended by adding the language \"or antique firearm\" immediately after the language \"firearm\" wherever it appears."
+}

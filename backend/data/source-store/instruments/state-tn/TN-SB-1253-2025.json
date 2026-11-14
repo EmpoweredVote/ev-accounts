@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1253-2025",
+  "scope": "state:tn",
+  "title": "SB1253 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13 and Title 55, Chapter 50, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB1253&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/SB1253.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "London Lamar",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c83e282-cb78-4e39-aa1e-13875a86e872"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2025-02-06; official copy via the Internet Archive snapshot 20260513074214 of https://www.capitol.tn.gov/Bills/114/Bill/SB1253.pdf (LegiScan doc 3104683))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1253-2025.draft.pdf",
+      "sha256": "57b331380d54dfaca35ad596f16081141bbca8bbbbeaf123d32993703af64995"
+    },
+    "note": "Draft (as filed) dated 2025-02-06; summary says \"As introduced\", no passage vote listed, so no adopted amendments are missing. House twin HB1098 shares this document. Adds a new subsection; deletes nothing."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(k)(1)): A person commits an offense who knowingly carries or possesses a firearm, including a firearm that was privately assembled and does not contain a serial number or other mark in a manner that conforms with the requirements imposed on licensed importers and licensed manufacturers of firearms pursuant to 18 U.S.C. § 923(i), and, at the time of possessing or carrying, is not a citizen of the United States or a lawful permanent resident, as defined by § 55-50-102.\nSECTION 1 (TCA 39-17-1307(k)(2)): An offense under subdivision (k)(1) is a Class A misdemeanor."
+}

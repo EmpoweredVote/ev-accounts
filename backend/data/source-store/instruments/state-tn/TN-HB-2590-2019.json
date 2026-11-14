@@ -1,0 +1,49 @@
+{
+  "id": "TN-HB-2590-2019",
+  "scope": "state:tn",
+  "title": "HB2590 (111th General Assembly): As enacted, allows an elected official of any county or municipality in the actual discharge of official duties who has a valid handgun carry permit to carry inside a building in which judicial proceedings are in progress, but not in the room in which judicial proceedings are in progress; allows the county attorney in the actual discharge of official duties who has a valid handgun carry permit to carry inside a building in which judicial proceedings are in progress, but not in the room in which judicial proceedings are in progress. - Amends TCA Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2590&ga=111",
+    "https://publications.tnsosfiles.com/acts/111/pub/pc0681.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Mary Littleton",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eaf18ec7-04b7-4780-8996-69c6dd0c1223"
+    },
+    {
+      "name": "Michael Curcio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Robin Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2020-06-23; official copy via LegiScan getBillText doc 2198837)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2590-2019.chaptered.pdf",
+      "sha256": "1477ef018ee0e298d81ac748e65eef78a530150079d96ff433506fd3a8dfd95e"
+    },
+    "note": "Chaptered, Public Chapter 681 (2020-06-23), the law as enacted; the document is SB 2066 (Lundberg), which was substituted for HB 2590. Quotes join the lettered items onto one line. Effective July 1, 2020."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1306(c)(4)): (4) Is in the actual discharge of official duties as an elected official of any county or municipality, and: (A) Is authorized to carry a handgun pursuant to§ 39-17-1351; and (B) Is not in the room in which judicial proceedings are in progress.\nSECTION 2 (TCA 39-17-1306(c), new subdivision): ( ) Is in the actual discharge of official duties as the county attorney of any county in this state, and: (A) Is authorized to carry a handgun pursuant to§ 39-17-1351; and (B) Is not in the room in which judicial proceedings are in progress;"
+}

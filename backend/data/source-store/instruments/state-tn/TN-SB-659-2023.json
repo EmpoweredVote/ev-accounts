@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-659-2023",
+  "scope": "state:tn",
+  "title": "SB0659 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4, Chapter 54 and Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0659&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB0659.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Adam Lowe",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0ac16142-df41-42b7-87c5-5018bfbe4fca"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-01-26; official copy via the Internet Archive snapshot 20260514154618 of https://www.capitol.tn.gov/Bills/113/Bill/SB0659.pdf (LegiScan doc 2665679))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-659-2023.draft.pdf",
+      "sha256": "df77861b7b8d7b6c9a4a714e5c66704afc36f790d9637e2fe32c3a4571f779c5"
+    },
+    "note": "Draft as filed 2023-01-26 (House twin HB 37). The text read repeals TCA 4-54-105 in its entirety (the summary says it removes exclusions from the Act); section 3 sets Class A misdemeanor, Class B misdemeanor and Class E felony penalties. No amendments in the text read."
+  },
+  "operative_text": "SECTION 1 (TCA 4-54-105): Tennessee Code Annotated, Section 4-54-105, is amended by deleting the section in its entirety.\nSECTION 2 (new section, TCA Title 4, Ch. 54): An employee or elected or appointed official of a state or local government entity shall not enforce, or assist in the enforcement, of a federal law in violation of this chapter.\nSECTION 3 (new section, TCA Title 39, Ch. 17, Pt. 13): (a) It is an offense for a person to disenfranchise another of the person's constitutional rights in violation of Title 4, Chapter 54. (b) It is an offense for a person to knowingly assist another in violation of subsection (a). (c) It is an offense for a person to order another to violate subsection (a) or (b)."
+}

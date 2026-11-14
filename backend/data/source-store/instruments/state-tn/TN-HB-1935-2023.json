@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-1935-2023",
+  "scope": "state:tn",
+  "title": "HB1935 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4, Chapter 54; Section 36-3-625; Section 38-3-119; Title 39 and Section 40-14-109, relative to restricting access to certain firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1935&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB1935.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Yusuf Hakeem",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "dff0d1ad-869c-4397-87b0-bad415b6dee0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-30; official copy via LegiScan getBillText doc 2907757)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1935-2023.draft.pdf",
+      "sha256": "77ced8335bc7fd30f068a34bfe9652d6c5cb4ea914908a19f81b9738211dba76"
+    },
+    "note": "Draft as filed (version dated 2024-01-30); summary says 'As introduced' and no passage vote is recorded, so no amendments are missing. Caption lists Title 4, Ch. 54, 36-3-625, 38-3-119 and 40-14-109, but the text read contains only SECTION 1 (new section, Title 39) and the effective date."
+  },
+  "operative_text": "SECTION 1 (new section in TCA Title 39, Chapter 17, Part 13): (1) Notwithstanding a law to the contrary, it is an offense for a person to: (A) Purchase or attempt to purchase a weapon of war; or (B) Sell or offer to sell a weapon of war. (2) A violation of this subsection (b) is a Class A misdemeanor."
+}

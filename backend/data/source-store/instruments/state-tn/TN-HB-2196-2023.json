@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-2196-2023",
+  "scope": "state:tn",
+  "title": "HB2196 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to large-capacity magazines.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2196&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB2196.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bo Mitchell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "094afd56-f074-4fdc-a053-1482ea501fc8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-30; official copy via LegiScan getBillText doc 2907844)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2196-2023.draft.pdf",
+      "sha256": "8a862e198b27b4bd5679e1109200eab3d88d0149e0e8aca2eaee934ba01ca08f"
+    },
+    "note": "Draft as filed (2024-01-30); effective July 1, 2024. Bill is a House/Senate twin on one document."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-13 section): (b)(1) Except as provided in subdivision (b)(2), it is an offense for a person to possess a large-capacity magazine, regardless of the date on which the magazine was acquired.\nSECTION 1 (new TCA 39-17-13 section): (b)(3) An offense under this subsection (b) is a Class B misdemeanor.\nSECTION 1 (new TCA 39-17-13 section): (c)(1) Except as provided in subdivision (c)(2), it is an offense for a person to manufacture or cause to be manufactured, import, keep for sale, or offer or expose for sale, or to give, lend, buy, or receive a large-capacity magazine.\nSECTION 1 (new TCA 39-17-13 section): (c)(3) An offense under this subsection (c) is a Class A misdemeanor.\nSECTION 1 (new TCA 39-17-13 section): (a)(1) \"Large-capacity magazine\" means an ammunition feeding device with capacity to accept more than ten (10) rounds; and\nSECTION 1 (new TCA 39-17-13 section): (d) A person who is not lawfully authorized to possess a large-capacity magazine pursuant to subsections (b) and (c) shall: (1) Remove the large-capacity magazine from this state; (2) Sell the large-capacity magazine to a licensed firearms dealer; or (3) Surrender the large-capacity magazine to a law enforcement agency for destruction."
+}

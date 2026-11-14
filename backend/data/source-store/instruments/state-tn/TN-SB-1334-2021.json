@@ -1,0 +1,81 @@
+{
+  "id": "TN-SB-1334-2021",
+  "scope": "state:tn",
+  "title": "SB1334 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 10; Title 33; Title 38; Title 39; Title 40; Title 50 and Title 70, relative to weapons.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1334&ga=112",
+    "https://publications.tnsosfiles.com/acts/112/pub/pc0554.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    },
+    {
+      "name": "Mark Pody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b333d211-ed1a-46fb-b947-427d2942acd0"
+    },
+    {
+      "name": "John Stevens",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+    },
+    {
+      "name": "Dawn White",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a676c8d7-1208-44f1-9d72-e13a6fc91f04"
+    },
+    {
+      "name": "Janince Bowling",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e50369f1-10eb-467e-8604-b94675565631"
+    },
+    {
+      "name": "Richard Briggs",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "191efc70-78dc-4ada-99e5-4edceb919cf0"
+    },
+    {
+      "name": "Edward Jackson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0d5fb0c4-9234-4cb8-8911-7e8de2467729"
+    },
+    {
+      "name": "Paul Rose",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c5c76374-faa1-4a78-bee2-6e2b5ca171d7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2021-05-28; official copy via the Internet Archive snapshot 20260514164847 of https://publications.tnsosfiles.com/acts/112/pub/pc0554.pdf (LegiScan doc 2410146))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1334-2021.chaptered.pdf",
+      "sha256": "12650a75423d004f915b6c6a5a1c294558f34e894a97d428a822092724ab0b93"
+    },
+    "note": "Chaptered, Public Chapter 554 (approved 2021-05-28), the \"Second Amendment Privacy and Protection Act of 2021.\" Sections 4-6 conform TCA 39-17-1314(h)-(i) to cover registry suits. Effective July 1, 2021."
+  },
+  "operative_text": "SECTION 2 (new TCA 39-17-1367): (b) A state or local government entity, official, employee, or agent shall not knowingly create or maintain any firearm registry with the intent to record the possession or ownership of a firearm or firearm accessory by individuals or non-governmental entities.\nSECTION 2 (new TCA 39-17-1367): (c) A violation of subsection (b) is a Class E felony.\nSECTION 2 (new TCA 39-17-1367): (e) A violation of subsection (b) may result in a civil action under § 39-17-1314(9)-(i).\nSECTION 2 (new TCA 39-17-1367): (f) A violation of subsection (b) by a state or local entity shall result in loss of funding from the state for the following fiscal year and any subsequent fiscal year during which the violation occurs.\nSECTION 3 (TCA 39-17-1314(g)): (ii) The creation or maintenance of a record, database, registry, or collection of records, in violation of § 39-17-1367, by a state or local government entity, official, employee, or agent."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2418-2017",
+  "scope": "state:tn",
+  "title": "SB2418 (110th General Assembly): As enacted, exempts from the firing range and classroom hours requirements to obtain a handgun carry permit anyone who in the five years preceding the date of application has successfully completed a department of correction firearms qualification. - Amends TCA Section 39-17-1351.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2418&ga=110",
+    "https://publications.tnsosfiles.com/acts/110/pub/pc0865.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Ken Yager",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7c282d2f-5bff-40fd-ae69-12ecc650bfa7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2018-05-03; official copy via the Internet Archive snapshot 20260514062427 of https://publications.tnsosfiles.com/acts/110/pub/pc0865.pdf (LegiScan doc 1802977))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2418-2017.chaptered.pdf",
+      "sha256": "acb9c12d89ccdde6e9d0ba9359c8e5774d9f70661c4668ed85f85669b7be06fb"
+    },
+    "note": "Chaptered, Public Chapter 865, 2018-05-03, effective January 1, 2019. Printed as House Bill 1038 (substituted for SB 2418); adds new subdivision (5) to subsection (e) of 39-17-1351. The summary describes the five-year window and the range and classroom waiver; the quoted words are all the text adds."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1351(e)): (5) Successfully completed Tennessee department of correction firearms qualification."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-752-2019",
+  "scope": "state:tn",
+  "title": "SB0752 (111th General Assembly): As introduced, deletes requirement that Wayne County and Pickett County be defined as distressed rural counties for purposes of being considered an eligible county authorized to select employees who may carry a concealed handgun on school property. - Amends TCA Section 49-6-816.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0752&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/SB0752.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2019-02-05; official copy via the Internet Archive snapshot 20260513205029 of https://www.capitol.tn.gov/Bills/111/Bill/SB0752.pdf (LegiScan doc 1891934))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-752-2019.draft.pdf",
+      "sha256": "a3c0eb2007fe9130fda998dcc2e6e517f9d34446c98b27db695f7c0a2c0b0ccc"
+    },
+    "note": "Draft as filed, 2019-02-05. Replaces the 'distressed rural county' test with a population-range definition (Wayne and Pickett per summary); Section 3 deletes subsection (k)."
+  },
+  "operative_text": "SECTION 1 (TCA 49-6-816(a)(1)): \"Eligible county\" means any county that has a population of not less than seventeen thousand (17,000) nor more than seventeen thousand one hundred (17,100), or a population of not less than five thousand (5,000) nor more than five thousand one hundred (5,100), according to the 2010 federal census or any subsequent federal census; and\nSECTION 2 (TCA 49-6-816(b)(1)): Tennessee Code Annotated, Section 49-6-816(b)(1), is amended by deleting the language \"distressed rural county\" and substituting instead the language \"eligible county\".\nSECTION 3 (TCA 49-6-816(k)): Tennessee Code Annotated, Section 49-6-816(k), is amended by deleting the subsection."
+}

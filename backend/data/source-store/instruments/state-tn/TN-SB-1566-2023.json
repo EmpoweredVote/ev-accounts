@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1566-2023",
+  "scope": "state:tn",
+  "title": "SB1566 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4, Chapter 54; Section 38-3-119 and Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1566&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB1566.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Charlane Oliver",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e92944ae-e865-4fd6-91c9-8ff1e045dc3d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-04-13; crossfiled twin https://www.capitol.tn.gov/Bills/113/Bill/HB1577.pdf is the same printed document (it names SENATE BILL 1566); copied from TN-HB-1577-2023.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1577-2023.draft.pdf",
+      "sha256": "4621a669738297f5fb4ce1a6efe29e114cf9c00ccf3e333c6250afb7c697bbcd"
+    },
+    "note": "Draft as filed (2023-04-13); effective July 1, 2023. Caption also lists TCA Title 4, Ch. 54 and 38-3-119 but the text read has no such sections. House/Senate twin document. Text read is the crossfiled twin's document."
+  },
+  "operative_text": "SECTION 4 (new TCA 39-17-1328): (a) Notwithstanding a law to the contrary, it is an offense to knowingly purchase, use, possess, or attempt to purchase, use, or possess a trigger crank, bump stock, bump-fire device, or any other part, combination of parts, component, device, attachment, or accessory that is designed or functions to accelerate the rate of fire of a semi-automatic rifle but which does not convert the semi-automatic rifle into a machine gun.\nSECTION 4 (new TCA 39-17-1328): (b) It is an offense to knowingly manufacture, sell, offer for sale, or display for sale in this state any part, combination of parts, component, device, attachment, or accessory, the possession or use of which is prohibited by subsection (a).\nSECTION 4 (new TCA 39-17-1328): (c) A violation of subsection (a) or (b) is a Class E felony.\nSECTION 2 (TCA 39-17-1302(a)(8)): (8) A semi-automatic rifle that is equipped, altered, or modified to include any part, combination of parts, component, device, attachment, or accessory, the possession or use of which is prohibited by § 39-17-1328(a);"
+}

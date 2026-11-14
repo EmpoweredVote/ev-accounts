@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-1176-2017",
+  "scope": "state:tn",
+  "title": "HB1176 (110th General Assembly): As introduced, reduces the penalty for the offense of carrying a handgun without a permit and with the intent to go armed to a Class C misdemeanor with a $25 fine for a first offense or $50 for a second or subsequent offense and requires a citation to be issued in lieu of arrest. - Amends TCA Title 39, Chapter 17, Part 13 and Title 40.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1176&ga=110",
+    "https://www.capitol.tn.gov/Bills/110/Bill/HB1176.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeremy Faison",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7f7ec834-b9d7-4ccd-aedb-56dfaab6ea28"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2017-02-09; official copy via LegiScan getBillText doc 1505558)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1176-2017.draft.pdf",
+      "sha256": "38615eee2834e3bcd582ac694e93f0f10b7264e0305f5a512298eaccc442780b"
+    },
+    "note": "Draft as filed, 2017-02-09 (HB 1176 / SB 339, one document). Introduced version; no votes recorded. Amendments, if any, are not in this text. Section 1 replaces all of 39-17-1307(a); (a)(2) sets penalties for non-handgun firearms carry."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(a)): (1) A person commits an offense who carries with the intent to go armed: (A) A firearm other than a handgun or a club; or (B) A handgun without authorization under § 39-17-1315 or § 39-17-1351.\nSECTION 1 (TCA 39-17-1307(a)): (A) A first violation of subdivision (a)(1)(B) is a Class C misdemeanor punishable only by a fine of twenty-five dollars ($25.00).\nSECTION 1 (TCA 39-17-1307(a)): (B) A second or subsequent violation of subdivision (a)(1)(B) is a Class C misdemeanor punishable only by a fine of fifty dollars ($50.00). (C) A person who violates subdivision (a)(1)(B) shall be issued a citation in lieu of arrest in accordance with § 40-7-118, and a law enforcement officer shall not confiscate the person's handgun solely for a violation of subdivision (a)(1)(B).\nSECTION 2 (TCA 40-7-118(b)(3)): The offense of carrying a handgun without authorization, in violation of § 39-17-1307(a)(1)(B);"
+}

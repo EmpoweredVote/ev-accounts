@@ -1,0 +1,266 @@
+{
+  "id": "TN-HB-469-2025",
+  "scope": "state:tn",
+  "title": "HB0469 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 66, relative to leases.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=HB0469&ga=114",
+    "https://publications.tnsosfiles.com/acts/114/pub/pc0606.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Lee Reeves",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bb55f6b7-4052-4b32-93eb-97e840dd1abe"
+    },
+    {
+      "name": "Dennis Powers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fa7182a1-54a2-473a-979f-3ee5574b2f52"
+    },
+    {
+      "name": "Renea Jones",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "73efd4ad-68af-4b3c-81ce-8c07bea7b560"
+    },
+    {
+      "name": "Fred Atchley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e51fc966-7475-4c24-9435-74d8fd2814c2"
+    },
+    {
+      "name": "Kip Capley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "91c9fb1a-7df5-418b-9713-a2db4acd49a6"
+    },
+    {
+      "name": "Jake McCalmon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "13dde449-93ec-4b04-8ba9-2ec0960ca052"
+    },
+    {
+      "name": "Chris Todd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+    },
+    {
+      "name": "Jason Zachary",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "28d41dcf-2d8c-4008-a5e5-4e9cc50a59e9"
+    },
+    {
+      "name": "Kelly Keisling",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8954855c-2669-4120-8449-c107465750a5"
+    },
+    {
+      "name": "Ed Butler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e17e2579-9bf3-4ea4-8881-eba0c225b5b4"
+    },
+    {
+      "name": "Chris Hurt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bb56ab02-6229-47cd-830a-2a9fe74b0aa7"
+    },
+    {
+      "name": "Michele Reneau",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6ca7d63a-d27f-4e33-816e-ad0053461e1e"
+    },
+    {
+      "name": "Clark Boyd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fe941f15-bf81-4bb8-8834-f5cc312537b9"
+    },
+    {
+      "name": "Brock Martin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d7260364-35f1-4633-b329-3d87cb8ae4c9"
+    },
+    {
+      "name": "Rusty Grills",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "70aa67e5-8df0-4dee-a034-1ea4f3470c57"
+    },
+    {
+      "name": "Jeff Burkhart",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rush Bricken",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e02758-1839-4d89-8a1b-26b9aeda22d5"
+    },
+    {
+      "name": "Greg Vital",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a56b05a7-d74b-43e6-8436-d0af5d7c708f"
+    },
+    {
+      "name": "Scott Cepicky",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e6b4535-ba42-4329-8df1-747bfaa4909e"
+    },
+    {
+      "name": "Michael Lankford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "030bcf80-e59a-485c-b80e-bf2fb8f45416"
+    },
+    {
+      "name": "Jerome Moon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9ee15ead-f2bc-47dd-b5f0-1f913f8a80f3"
+    },
+    {
+      "name": "Jody Barrett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a6b0df31-75ac-4a90-88e6-78db5c74a71e"
+    },
+    {
+      "name": "Lowell Russell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9a396215-d948-45e3-b40c-8e7a9e20d868"
+    },
+    {
+      "name": "Bud Hulsey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b8ec6fca-3fe7-4f7f-b8ef-7b09db3aa664"
+    },
+    {
+      "name": "Rick Eldridge",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "58be867d-b7c3-4105-9757-55d4abe59756"
+    },
+    {
+      "name": "Susan Lynn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6dbe4dd8-b749-4ef0-9ca4-f2c752e50ef1"
+    },
+    {
+      "name": "Timothy Hill",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3c3bc83b-0622-4b2d-a194-884ef837f3c9"
+    },
+    {
+      "name": "John Crawford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "00851f7f-d940-4c22-82f9-377f6ea092fa"
+    },
+    {
+      "name": "Tom Stinnett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c7ae72df-0505-4752-9dbf-31239cff512d"
+    },
+    {
+      "name": "Gino Bulso",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b8caf1c6-7b5d-4a32-ae14-54d40b1000a9"
+    },
+    {
+      "name": "Richard Scarbrough",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7f21e657-f063-48a8-9af8-e87089995b8c"
+    },
+    {
+      "name": "Kevin Raper",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6dadcf28-e01d-4f84-b977-2fd5612eb35d"
+    },
+    {
+      "name": "Sabi Kumar",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f9cf1fb9-ad68-4549-8b81-f45b6c4e1952"
+    },
+    {
+      "name": "Elaine Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eccfd8bb-0acb-42d4-a372-f06701cbb0ea"
+    },
+    {
+      "name": "Bryan Terry",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "155630a5-d1d1-4b1b-81da-748b81b41d32"
+    },
+    {
+      "name": "Mike Sparks",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bbb3d2b1-0c0c-4f08-a76e-b742da13e612"
+    },
+    {
+      "name": "Dan Howell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d9d6e188-5019-4349-bf88-e475f341707c"
+    },
+    {
+      "name": "David Hawk",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9836d436-bc6d-43fb-b3be-ba3cd96ddeb4"
+    },
+    {
+      "name": "Clay Doggett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9a9c3029-794a-4cb5-aa7e-342e9b480603"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2026-03-27; official copy via LegiScan getBillText doc 3412013)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-469-2025.chaptered.pdf",
+      "sha256": "9c75391da06e4439c77352f5ea0b742648dd81dbd7f8e39551810ae659f7594a"
+    },
+    "note": "Public Chapter 606, approved 2026-03-27, effective July 1, 2026 (leases entered, amended, extended or renewed on or after Jan 1, 2027 per summary). Chaptered copy names SB 350 (substituted for HB 469). Landlords may require concealed, holstered or contained carry in common areas (subsection (b)); exemptions in (c) not quoted. Quote spacing 'subdivision(a)(1)' is as printed."
+  },
+  "operative_text": "SECTION 1 (new TCA 66-7-113(a)): (a) A landlord shall not prohibit lawful possession, carrying, transportation, or storage of a firearm, any part of a firearm, or firearm ammunition by a residential tenant: (1) Within the residential tenant's leased residential premises; (2) In a vehicle located in the parking area provided for residential tenants by the landlord of the leased residential premises; or (3) Except as provided in subsection (b), in other locations controlled by the landlord, but only to the extent necessary to directly enter or exit the locations described in subdivision(a)(1) or (a)(2).\nSECTION 1 (new TCA 66-7-113(d)): (d) A tenant who is adversely affected by a violation of subsection (a) may bring a suit against the landlord for declaratory and injunctive relief, actual damages, punitive damages, and recovery of attorney fees.\nSECTION 2 (new TCA 66-28-206(a)): (a) A landlord shall not prohibit lawful possession, carrying, transportation, or storage of a firearm, any part of a firearm, or firearm ammunition by a tenant: (1) Within the tenant's dwelling unit; (2) In a vehicle located in the parking area provided for tenants by the landlord of the dwelling unit; or (3) Except as provided in subsection (b), in other locations controlled by the landlord, but only to the extent necessary to directly enter or exit the locations described in subdivision (a)(1) and (a)(2)."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2288-2019",
+  "scope": "state:tn",
+  "title": "SB2288 (111th General Assembly): As introduced, authorizes a registered student at a public institution of higher education to carry a handgun in a concealed manner on property owned, operated, or controlled by that institution if the student is a handgun carry permit holder and otherwise in compliance with state law. - Amends TCA Title 39, Chapter 17, Part 13 and Title 49.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2288&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/SB2288.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Janince Bowling",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e50369f1-10eb-467e-8604-b94675565631"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2020-02-04; official copy via the Internet Archive snapshot 20260513193304 of https://www.capitol.tn.gov/Bills/111/Bill/SB2288.pdf (LegiScan doc 2120932))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2288-2019.draft.pdf",
+      "sha256": "d0a4f6563f3cd3cc38f46e8267dadcb15c075e354c75afaccef4c27915933b0e"
+    },
+    "note": "Draft dated 2020-02-04, shared with twin HB 2102. Adds subdivision (e)(14) to the list of exceptions in 39-17-1309; the caption also cites Title 49 but no Title 49 section appears in the text."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-1309(e)(14)): (14) Registered students of a public institution of higher education who are: (A) Authorized to carry a handgun pursuant to § 39-17-1351 or § 39-17- 1366; (B) On property owned, operated, or controlled by the public institution of higher education at which the student is registered; (C) Carrying the handgun in a concealed manner; and (D) Otherwise in compliance with state law."
+}

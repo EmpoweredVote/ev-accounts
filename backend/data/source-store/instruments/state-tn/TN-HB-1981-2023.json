@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-1981-2023",
+  "scope": "state:tn",
+  "title": "HB1981 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1981&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB1981.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Justin Jones",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "40bad041-2a76-48fa-a65b-2bb1763dfaeb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-23; official copy via LegiScan getBillText doc 2899356)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1981-2023.draft.pdf",
+      "sha256": "f4bf8303104baba02847a917b07ba2e8c64c2b2268399e96b0c2041743078282"
+    },
+    "note": "Draft as filed, 2024-01-23; shared document with SB 1880. Section 2 deletes subdivision (h)(1)(A) of 39-17-1307 (not shown in the text read). Summary says 'As introduced', so no adopted amendments are in play. Effective July 1, 2024."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(f)(1)): ( ) Has been convicted of stalking as prohibited by § 39-17-315;\nSECTION 2 (TCA 39-17-1307): Tennessee Code Annotated, Section 39-17-1307, is amended by deleting subdivision (h)(1)(A)."
+}

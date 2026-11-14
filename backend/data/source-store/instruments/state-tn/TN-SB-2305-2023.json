@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2305-2023",
+  "scope": "state:tn",
+  "title": "SB2305 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4, Chapter 54; Title 39 and Title 40, relative to identifying characteristics of firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2305&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB2305.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul Rose",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c5c76374-faa1-4a78-bee2-6e2b5ca171d7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-31; official copy via the Internet Archive snapshot 20260514142116 of https://www.capitol.tn.gov/Bills/113/Bill/SB2305.pdf (LegiScan doc 2910658))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2305-2023.draft.pdf",
+      "sha256": "4e31108f068bddcbc01dd8abc8087a25d3556ceb93645083766521436b67ef96"
+    },
+    "note": "Draft as introduced (2024-01-31); no amendments in text read. Twin HB 2881 is on the same document. SECTION 1 only adds a cross-reference to TCA 39-14-134(b). New section number not printed."
+  },
+  "operative_text": "SECTION 2 (new section, TCA Title 39, Chapter 17, Part 13): (a) Except as provided in subsection (b), it is an offense to knowingly receive, possess, conceal, store, barter, sell, transfer, or dispose of a firearm that has had the importer's or manufacturer's serial number removed, obliterated, or altered.\nSECTION 2 (new section, subsection (b)(1)): A law enforcement officer or law enforcement agency, acting pursuant to § 39-17-1317, to confiscate and dispose of a firearm that has had the importer's or manufacturer's serial number removed, obliterated, or altered; or\nSECTION 2 (new section, subsection (c)): A violation of subsection (a) is a Class E felony."
+}

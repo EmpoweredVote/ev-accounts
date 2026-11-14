@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1629-2025",
+  "scope": "state:tn",
+  "title": "SB1629 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 36; Title 37; Title 39; Title 49; Title 50 and Title 55, relative to weapons.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB1629&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/SB1629.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2026-01-13; official copy via the Internet Archive snapshot 20260513164621 of https://www.capitol.tn.gov/Bills/114/Bill/SB1629.pdf (LegiScan doc 3307962))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1629-2025.draft.pdf",
+      "sha256": "23508771dc36f2f285fdc07776df31d653f675cbd5f1aa1cae37b2e183e7048d"
+    },
+    "note": "Draft (as filed) dated 2026-01-13; summary says \"As introduced\", no passage vote listed, so no adopted amendments are missing. The bill deletes TCA 39-17-1301(2), 39-17-1307(a), (e), (g) and 39-17-1308(a)(8)-(9); those instruction sentences are quoted as the change. Sections 1-2, 17-20 conform school/juvenile cross-references (Sec. 19 deletes 49-6-3051(b)(2)(H)). Section 8 rewrites 39-17-1309(e)(8) for knives/handguns in parks."
+  },
+  "operative_text": "SECTION 3 (TCA 39-17-1301): deleting subdivision (2).\nSECTION 4 (TCA 39-17-1307): deleting subsection (a).\nSECTION 5 (TCA 39-17-1307): deleting subsection (e).\nSECTION 6 (TCA 39-17-1307): deleting subsection (g).\nSECTION 7 (TCA 39-17-1308(a)): deleting subdivisions (a)(8) and (9).\nSECTION 9 (new TCA 39-17-1311): It is not an offense for a person authorized to carry a handgun pursuant to § 39-17-1351 or § 39-17-1366 or a person who is not prohibited from carrying a firearm, to do so in any state or local park, on a public greenway or other recreational property, or, to the extent permitted by federal law, within or on property designated by the federal government as a national park, forest, preserve, historic park, military park, trail, or recreation area.\nSECTION 11 (TCA 39-17-1319(b)): (b) Except as provided in this section, it is an offense for a juvenile to:\nSECTION 11 (TCA 39-17-1319(b)(1)): (1) Knowingly possess a handgun; or\nSECTION 11 (TCA 39-17-1319(b)(2)): (2) Carry, with the intent to go armed, a firearm.\nSECTION 15 (TCA 39-17-1319(d)(1)): (I) Engaging in the lawful protection of livestock from predatory animals; or"
+}

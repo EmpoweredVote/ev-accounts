@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-2333-2023",
+  "scope": "state:tn",
+  "title": "HB2333 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2333&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB2333.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Justin Pearson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5d56470c-fb82-42f7-82e3-d28bf74ace47"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-30; official copy via LegiScan getBillText doc 2908505)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2333-2023.draft.pdf",
+      "sha256": "95143387b774d475a91c139faf6c40e7aaac090ba5be543d6855e8f0c1f70b65"
+    },
+    "note": "Draft as filed (version dated 2024-01-30); summary says 'As introduced' and no passage vote is recorded, so no amendments are missing. "
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1302(a)): (8) A switch or auto sear device designed, made, or intended for use in converting a weapon to shoot automatically more than one (1) shot, without manual reloading, by a single function of the trigger; or (9) A firearm built from a weapon parts kit, including a frame or receiver parts kit, and not marked with a serial number.\nSECTION 2 (TCA 39-17-1302(d)): Tennessee Code Annotated, Section 39-17-1302(d), is amended by deleting \"(a)(3) or (a)(4)\" and substituting \"(a)(3), (a)(4), (a)(8), or (a)(9)\".\nSECTION 3 (TCA 39-17-1302(f)): (5) An offense under subdivision (a)(8) or (a)(9) is a Class E felony, and in addition to any authorized period of incarceration, shall be punished by a mandatory fine of ten thousand dollars ($10,000)."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2335-2021",
+  "scope": "state:tn",
+  "title": "SB2335 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39 and Chapter 108 of the Public Acts of 2021, relative to carrying firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2335&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/SB2335.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sara Kyle",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1b745bdf-e7cb-487d-9ca5-7bd043d602ac"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2022-02-01; official copy via the Internet Archive snapshot 20260514162540 of https://www.capitol.tn.gov/Bills/112/Bill/SB2335.pdf (LegiScan doc 2500675))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2335-2021.draft.pdf",
+      "sha256": "87ba70341de70765f05da2d17f4f07f475f63fee14463d4c5b1514e4e5c85fe5"
+    },
+    "note": "Draft as filed 2022-02-01 (HB 1660 / SB 2335). Undoes the 2021 permitless-carry exception (Public Chapter 108). Effective July 1, 2022."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307): deleting subsection (g).\nSECTION 2 (TCA 39-17-1313(a)): deleting the language \"or who lawfully carries a handgun pursuant to § 39-17-1307(g)\".\nSECTION 3 (TCA 39-17-1351(n)(1)): The permit holder shall have the permit in the holder's immediate possession at all times when carrying a handgun and shall display the permit on demand of a law enforcement officer.\nSECTION 4 (TCA 39-17-1366(e)): (e) The permit holder shall have the permit in the holder's immediate possession at all times when carrying a handgun and shall display the permit on demand of a law enforcement officer."
+}
