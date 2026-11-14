@@ -9,7 +9,7 @@ shapes**, and none of them is the senate's.
 | --- | --- | --- | --- |
 | **Oregon** | 42 | **on the 2026-11-03 ballot** | seed the ballot |
 | **Arizona — South Tucson** | 1 | **on the 2026-11-03 ballot** | seed the ballot |
-| **Arizona — Marana, Oro Valley, Sahuarita** | 5 | **decided at the 2026-08-04 primary**, absent from the general | the race is on the wrong election |
+| **Arizona — Marana, Oro Valley, Sahuarita** | 5 | **decided at the 2026-07-21 primary**, absent from the general | the race is on the wrong election |
 | **Wisconsin — Racine** | 2 | **on the 2026-11-03 ballot** | seed the ballot |
 
 🔴 **NOT ONE OF THE 50 IS A PHANTOM.** The senate's answer — *this election did not happen* — is not
@@ -79,7 +79,7 @@ Jessica Vega Pederson.
 🟢 **Positive on one side, absent on the other, which is what makes it a finding.** Pima County's
 own summary files:
 
-| contest | Aug 2026 **primary** | Nov 2026 **general** |
+| contest | Jul 2026 **primary** | Nov 2026 **general** |
 | --- | --- | --- |
 | Mayor — Town of Marana | **present** (Johnsen, Post) | absent |
 | Council Member — Town of Marana | **present** (6 candidates) | absent |
