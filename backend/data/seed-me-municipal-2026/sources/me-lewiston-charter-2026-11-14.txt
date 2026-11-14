@@ -1,0 +1,18 @@
+City of Lewiston, Maine -- CITY CHARTER
+Retrieved 2026-11-14 from https://www.lewistonmaine.gov/DocumentCenter/View/237/City-Charter
+(linked as "City Charter" from https://www.lewistonmaine.gov/105/Mayor-City-Council).
+Fetched with plain curl and a full browser header set; HTTP 200; 30-page PDF, read with
+pdftotext -raw. Control: 82,335 characters extracted, 77 occurrences of "Mayor".
+
+Read for ONE question -- who elects the mayor (ROSTERS.md R9) -- because Lewiston is one of the
+three Maine cities the R9 audit never covered. The answer is unambiguous:
+
+  "The mayor shall be nominated and elected by the qualified voters of the entire city."
+
+  "The mayor and the ward councilors shall be elected to serve two- year staggered terms."
+
+So Lewiston's Mayor is a REAL, directly elected office and our schema is correct to hold one.
+
+Lewiston ALSO has a rotating chair, and we correctly hold no office for it:
+
+  "President of the council. The council shall elect for a one-year term, from among its members, a president who shall act as mayor during the temporary absence or temporary disability of the mayor, but the president shall have appointive powers only when the temporary absence or temporary disability of the mayor exceeds 45 consecutive calendar days."
