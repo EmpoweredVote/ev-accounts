@@ -441,6 +441,29 @@
           "sha256": "71ea36e576dc7d7ae6b7a043780bae5dab62eb6830d19137b306c7f0841115c8"
         }
       }
+    },
+    {
+      "id": "01ce4a412177348e50297d051fb46e569f1d4b068afa5097209b87ddb7d57fa8",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/HB312.html",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-312-2026",
+      "act": "other",
+      "motion": "House Floor Amendment 1 (C. Aull), annual report on gun incidents from concealed carry",
+      "note": "He is listed as sponsor of House Floor Amendment 1 to HB 312, a concealed firearms bill. The amendment would require the Justice and Public Safety Cabinet to send the Legislative Research Commission an annual report on fatal and nonfatal gun incidents resulting from concealed carry of firearms and deadly weapons.",
+      "subjects": [
+        "carry a gun without a permit",
+        "report on gun incidents from concealed carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:45.754Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -485,6 +508,31 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.606Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "carry a gun without a permit",
+        "concealed carry reporting",
+        "check every gun buyer",
+        "red-flag orders",
+        "Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidate meetings)",
+        "the legislature's House District 79 member page (https://apps.legislature.ky.gov/Legislators/subs/House-079.html): loaded, no gun content",
+        "the campaign site https://www.chadaull.com: loaded, nothing on the subject",
+        "Ballotpedia https://ballotpedia.org/Chad_Aull: fetched, no gun content found in page text",
+        "the legislature's HB 312 (2026) bill page: sponsor C. Aull listed on House Floor Amendment 1",
+        "https://branch.vote/races/2026-kentucky-general-election-ky-state-state-representative-ky-state-house-79/candidates/chad-aull: a voter-guide summary in third person, not his own words, so not saved; shows him on the 2026 general-election ballot for House 79",
+        "two news searches on name plus gun words: nothing quoting him on the subject",
+        "not reviewed: debate or interview videos"
+      ],
+      "found": 1,
+      "at": "2026-11-14T14:12:45.754Z",
+      "by": "source-collector"
     }
   ]
 }

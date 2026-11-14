@@ -1,6 +1,29 @@
 {
   "politician_id": "7c0a855e-1b95-4f9f-976a-24fbe41a7352",
-  "findings": [],
+  "findings": [
+    {
+      "id": "3aa97ccfdf15b9ed53e04e20c5aeea4b6b120191ec369227436a6188b86b7dd3",
+      "kind": "record",
+      "url": "https://www.everytown.org/press/joined-by-lieutenant-governor-jacqueline-coleman-and-gun-sense-lawmakers-volunteers-with-kentucky-chapters-of-moms-demand-action-and-students-demand-action-rally-for-gun-safety-in-frankfort/",
+      "date": "2024-02-15",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Attended gun-safety advocacy day at the Kentucky statehouse",
+      "note": "A gun-safety group's press release names her among officials who joined its advocacy day in Frankfort, where volunteers met lawmakers to press for gun-safety bills. It quotes a volunteer, not her, and gives no words of hers or any bill she backed.",
+      "subjects": [
+        "general gun safety laws",
+        "gun violence prevention events"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:07:51.353Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -28,6 +51,34 @@
       ],
       "found": 0,
       "at": "2026-11-11T18:38:49.248Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general gun safety laws",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "in scope: sitting Kentucky lieutenant governor, announced April 2026 a run for governor in 2027 (https://www.wkyufm.org/2026-04-20/kentucky-lt-gov-jacqueline-coleman-announces-run-for-governor); not on the 2026 ballot",
+        "blocked: https://governor.ky.gov/ (HTTP 403, official site not readable)",
+        "blocked: https://ballotpedia.org/Jacqueline_Coleman (page returned no readable text)",
+        "campaign site: none found for her 2027 run",
+        "legislature bill pages: not applicable, the lieutenant governor does not sponsor bills",
+        "web search x2 on name plus gun words: only one relevant item, the Everytown rally release",
+        "nothing on the subject: https://www.wkyufm.org/2026-04-20/kentucky-lt-gov-jacqueline-coleman-announces-run-for-governor",
+        "nothing on the subject: https://hoptownchronicle.org/?p=80261 (2023 lieutenant governor debate story)",
+        "nothing on the subject for her: https://spectrumnews1.com/ky/louisville/news/2023/10/27/kentucky-governors-race-gun-policy-debate",
+        "not reviewed: https://spectrumnews1.com/ky/louisville/in-focus-shows/2025/09/30/jacqueline-coleman-on-poltical-violence (video, and about political violence rather than gun law)"
+      ],
+      "found": 1,
+      "at": "2026-11-14T14:07:51.353Z",
       "by": "source-collector"
     }
   ]

@@ -256,6 +256,34 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.607Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "machine gun conversion devices",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "gun rights and Second Amendment statements",
+        "federal firearms rules"
+      ],
+      "places": [
+        "On the Record (0 meetings, none for this person)",
+        "https://apps.legislature.ky.gov/Legislators/subs/House-062.html (member page loads empty without scripts; confirmed only as the District 62 page)",
+        "https://apps.legislature.ky.gov/record/26RS/hb448.html (his bill on criminal history checks for federal and contractor workers; not about guns, nothing on the subject)",
+        "https://apps.legislature.ky.gov/record/25RS/hb340.html (his 2025 bill on background checks; page text did not load; its title matches the 2026 employment-check bill, no firearms link found)",
+        "https://apps.legislature.ky.gov/record/26RS/HB299.html (co-sponsor listing already on file; no statement by him)",
+        "legislator profile listing on legilist.com (lead only; confirms District 62 seat, no firearms content)",
+        "blocked: https://ballotpedia.org/Tony_Hampton (empty response); a search shows him as the incumbent on the 2026 general ballot for District 62, primary cancelled",
+        "no official or campaign issues page with gun statements found",
+        "web search for his name plus firearms, machine gun conversion device, HB 299: news stories quote the bill's prime sponsor and opponents, none quote him",
+        "not reviewed: https://www.wdrb.com/news/politics/bill-banning-machine-gun-conversion-devices-advances-in-kentucky-legislature/article_a8a8aa37-e020-42b2-be6e-3af9b43c2102.html (floor or committee video/articles not opened)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:09:43.975Z",
+      "by": "source-collector"
     }
   ]
 }

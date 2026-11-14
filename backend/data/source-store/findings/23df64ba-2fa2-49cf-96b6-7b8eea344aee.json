@@ -214,6 +214,90 @@
           "sha256": "b5bb9f9a63219fbc6e9dc562d20cd2ec6e872b30f5d10077e613f530f9d3ff97"
         }
       }
+    },
+    {
+      "id": "daa9129a84292463f43d29af1bf65e2c3388fc02e4049cf0627498479eb22f0e",
+      "kind": "own-words",
+      "url": "https://hoptownchronicle.org/kentucky-house-advances-bill-protecting-gun-industry-from-lawsuits",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "“We’re effectively telling our cities and our counties that when it comes to this one singular industry that local control ends at the courtroom door,” Moore said.",
+      "note": "Quoted in a news story (Hoptown Chronicle) about the House vote on HB 78, which limits lawsuits against gun makers and sellers and bars local governments from acting against the industry; he objects to the local-government limit.",
+      "subjects": [
+        "lawsuits against gun makers",
+        "local governments' power over the gun industry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:21.866Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b131a7146ffdfc1d23497dad0fbacb3028749cab6404c61b13364d081bc134fa",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/gun-violence-survivors-tell-stories-231434428.html",
+      "date": "2025-02-12",
+      "date_precision": "day",
+      "passage": "\"I had my first real experience with gun violence in the fall of 2003. My grandfather shot himself,\" Moore said.",
+      "note": "Quoted in a news story on a Capitol rally for gun-violence solutions; he describes a family suicide by gun.",
+      "subjects": [
+        "gun violence prevention",
+        "gun suicide"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:21.866Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "df0cbeb94e716d7d9dcc4e19bea7fc79fe769d679d5dc1098f511a73d7f9506c",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/gun-violence-survivors-tell-stories-231434428.html",
+      "date": "2025-02-12",
+      "date_precision": "day",
+      "passage": "Many years later, Moore said, \"my next big gun violence incident was when my son was in preschool and a 3-year-old pulled a trigger on a handgun on the playground because someone had thrown a weapon onto that preschool playground.\"",
+      "note": "Same rally story; he recounts a preschool shooting by a 3-year-old as part of his case for gun-violence action. The sentence's opening is the reporter's, the quoted part is his.",
+      "subjects": [
+        "gun violence prevention",
+        "keep guns out of children's reach"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:21.866Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ec92950b1bc0e9bb67c255653e6417a2ba2009db3c8c861d2dceeaf596b894f5",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/25RS/hb214.html",
+      "date": "2025-01-01",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-214-2025",
+      "act": "sponsor",
+      "note": "HB 214 creates a refundable state income-tax credit, for tax years 2026 through 2029, for people who enroll in a firearm safety course.",
+      "subjects": [
+        "firearm safety course tax credit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:21.866Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -256,6 +340,32 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.608Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun industry lawsuit shield",
+        "firearm safety course",
+        "safe storage and parent liability",
+        "gun violence prevention"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "https://apps.legislature.ky.gov/record/25RS/hb214.html (legislature bill page, read; names A. Moore as sponsor)",
+        "https://hoptownchronicle.org/kentucky-house-advances-bill-protecting-gun-industry-from-lawsuits (news story, read)",
+        "https://www.yahoo.com/news/gun-violence-survivors-tell-stories-231434428.html (news story on the Capitol rally, read)",
+        "https://nkytribune.com/2025/02/gun-violence-survivors-tell-their-stories-rally-at-kentucky-capitol-for-solutions/ (same story; raw fetch returned no text)",
+        "one web search on name plus firearms words",
+        "not reviewed: official member page on legislature site",
+        "not reviewed: campaign site",
+        "not reviewed: Ballotpedia",
+        "not reviewed: URL patterns list in the researcher agent file",
+        "not reviewed: carry-permit, background-check, red-flag, assault-weapon specific searches"
+      ],
+      "found": 4,
+      "at": "2026-11-14T14:04:21.866Z",
+      "by": "source-collector"
     }
   ]
 }

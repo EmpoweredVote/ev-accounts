@@ -359,6 +359,27 @@
           "sha256": "3887df09ff18c27e4fbc73e5ad1761759ef913b5c756480883a1543dcea708e6"
         }
       }
+    },
+    {
+      "id": "a6ce2ce09a81ef8423d23354138d166c019ccd01e6fe4233b2f10f5c23fda3aa",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26rs/hb483.html",
+      "date": "2026-01-23",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-483-2026",
+      "act": "sponsor",
+      "note": "Sole sponsor of HB 483, which amends KRS 45A.600 to set how a state-issued firearm's value is depreciated when a state employee buys it on retirement. Introduced in the House and sent to the Committee on Committees; no further action shown. It concerns the purchase price of a retired service firearm, not a limit on who may own or carry one.",
+      "subjects": [
+        "state employees buying their issued firearm at retirement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:03:06.838Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -401,6 +422,30 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.606Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "state-issued firearm purchase on retirement",
+        "gun bans and magazines",
+        "background checks",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, also searched by name)",
+        "the legislature's member page for House District 25 (confirms Rep. Steve Bratcher, Hardin part): https://apps.legislature.ky.gov/Legislators/subs/House-025.html",
+        "the legislature's bill page for 2026 HB 483 (sponsor record)",
+        "Ballotpedia (fetched; nothing on the subject)",
+        "one news search on name plus gun words: only a bill listing found, no quotes from him",
+        "not reviewed: no personal or campaign site found in search results",
+        "nothing on the subject: no own-words statements located"
+      ],
+      "found": 1,
+      "at": "2026-11-14T14:03:06.838Z",
+      "by": "source-collector"
     }
   ]
 }

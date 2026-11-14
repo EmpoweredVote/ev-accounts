@@ -511,6 +511,32 @@
       "found": 4,
       "at": "2026-11-11T21:12:46.604Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "blocked: https://ballotpedia.org/Shelley_Funke_Frommeyer (empty response to curl; a search result confirms she is the sitting District 24 senator seeking re-election, nothing on guns)",
+        "the Kentucky Secretary of State candidate filing page (https://web.sos.ky.gov/CandidateFilings/Default.aspx?cand=11043): lists her under the 2026 General Election, so she is in scope",
+        "the state Senate caucus site (https://kysenaterepublicans.com/incumbents): names her, nothing on the subject",
+        "https://linknky.com/politics/frankfort/2024/03/05/profile-sen-shelley-funke-frommeyer/ (news profile): nothing on the subject",
+        "https://linknky.com/opinion/2026/03/09/opinion-sen-frommeyers-legislative-update-week-nine-of-the-2026-legislative-session/ (her weekly update): nothing on the subject",
+        "https://www.nraila.org/articles/20260422/kentucky-legislature-adjourns-2026-session: does not name her",
+        "not reviewed: https://apps.legislature.ky.gov/record/26RS/hb312.html (returned no usable text)",
+        "news search on her name plus gun words: no statements of her own on the subject; votes and sponsorships already on file"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:08:58.895Z",
+      "by": "source-collector"
     }
   ]
 }

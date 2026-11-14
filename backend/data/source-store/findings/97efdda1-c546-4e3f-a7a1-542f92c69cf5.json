@@ -787,6 +787,31 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.598Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "federal gun rules",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://apps.legislature.ky.gov/Legislators/subs/House-064.html (member page, names her as District 64 representative; no subject content)",
+        "campaign site: none found in search",
+        "https://ivoterguide.com/candidate/29639/race/24415/election/1358 (voter guide; Second Amendment question marked as not answered)",
+        "blocked: https://ballotpedia.org/Kimberly_Poore_Moser (returned HTTP 202, no page text)",
+        "news search on her name plus gun words (results were about other lawmakers or a bare name list on HB 153; nothing quoting her)",
+        "https://linknky.com/politics/frankfort/2023/02/14/kentucky-lawmakers-ponder-firearm-legislation-in-2023-session/ (no mention of her)",
+        "legislature bill pages: sponsorships already on file; no additional ones found"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:08:11.773Z",
+      "by": "source-collector"
     }
   ]
 }

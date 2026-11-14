@@ -868,6 +868,31 @@
       "found": 8,
       "at": "2026-11-11T21:12:46.601Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights",
+        "Second Amendment",
+        "carry without a permit",
+        "red flag orders",
+        "check every gun buyer",
+        "ban on assault-style guns"
+      ],
+      "places": [
+        "On the Record (0 appearances, no name match)",
+        "https://www.senatormikewilson.com (campaign site: home, blog, service, bio pages read; nothing on the subject; lists a 2026 campaign contact)",
+        "https://apps.legislature.ky.gov/Legislators/subs/Sen-32.html (member page, contact only; confirms Senate District 32)",
+        "Ballotpedia (page did not load usable text)",
+        "blocked: https://justfacts.votesmart.org/public-statement/1378366/issue-position-2nd-amendment-right (a search snippet suggested a Vote Smart issue statement by him on protecting gun ownership, but the page returned nothing and could not be read or cited)",
+        "blocked: https://justfacts.votesmart.org/public-statement/1482069/issue-position-pro-2nd-amendment (bot challenge)",
+        "two web news searches on his name plus gun words: no article quoting him on the subject",
+        "not reviewed: legislature bill pages for the sponsored bills already on file"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:12:16.330Z",
+      "by": "source-collector"
     }
   ]
 }

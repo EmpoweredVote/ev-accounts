@@ -498,6 +498,49 @@
           "sha256": "7495640a9dd9e7f85495755bace59ee26ec18ea50492006f4549bf0798bc6dee"
         }
       }
+    },
+    {
+      "id": "6d35fb17d62c52bc7cad8451053d9bba0d07aaa57b17a65ba1d0f893b4a1270b",
+      "kind": "own-words",
+      "url": "https://kysenaterepublicans.com/press-releases/2024/2/9/statement-release-deneen-reacts-following-senate-bill-20nbsppassing-out-of-committeenbsp",
+      "date": "2024-02-09",
+      "date_precision": "day",
+      "passage": "It’s an unfortunate time here in the commonwealth as we must address a pressing issue, and that is gun violence being committed by juveniles. In far too many instances, juveniles are taking the lives of other juveniles, which in turn is threatening the peace and security of our communities.",
+      "note": "Statement issued in his name after SB 20 cleared committee; frames the bill as a response to gun violence by juveniles and says it has law enforcement backing.",
+      "subjects": [
+        "juvenile gun crime",
+        "gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:05:07.394Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "48064a1b17aaae5af6a7d9c4bc845ab7de12a99c299f19a5ab5bf79d52f02714",
+      "kind": "own-words",
+      "url": "https://kysenaterepublicans.com/press-releases/2024/2/15/senate-bill-20-passes-senate-with-widespread-support",
+      "date": "2024-02-15",
+      "date_precision": "day",
+      "passage": "As a father and career educator, it pains me that legislation is needed to address the rampant gun violence being committed by youthful offenders. In far too many instances, juveniles are taking the lives of other juveniles, which in turn is threatening the peace and security of our communities. This isn't just an urban issue, but a problem that is affecting our rural communities as well.",
+      "note": "Quoted in a caucus release on the Senate passage of SB 20 (25-9); he describes the bill as aimed at juvenile offenders who commit gun violence. The release says the bill sends 15-and-older juveniles charged with a firearm felony to a transfer hearing for circuit court and sets a 50 percent sentence-served rule for certain Class C violent felonies.",
+      "subjects": [
+        "juvenile gun crime",
+        "felony with a firearm",
+        "gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:05:07.394Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -573,6 +616,31 @@
       "found": 4,
       "at": "2026-11-11T21:12:46.603Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "juvenile gun crime",
+        "felony with a firearm",
+        "gun violence",
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "the Senate majority caucus site: two press releases read in full (Feb 9 and Feb 15, 2024, on SB 20)",
+        "blocked: https://ballotpedia.org/Matt_Deneen (page returned no usable text)",
+        "one web search on name plus office; a May 2026 radio news story on his 2026 session read, nothing on the subject",
+        "the legislature's own bill pages, personal campaign site, and other URL patterns not separately fetched; the votes already on file cover the bill record",
+        "identity confirmed by the caucus release naming him as Sen. Matt Deneen, 10th District (Hardin County and part of Jefferson County); 2026 ballot status not confirmed by a fetched page"
+      ],
+      "found": 2,
+      "at": "2026-11-14T14:05:07.394Z",
+      "by": "source-collector"
     }
   ]
 }

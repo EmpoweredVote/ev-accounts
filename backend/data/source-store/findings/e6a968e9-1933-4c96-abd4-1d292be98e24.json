@@ -213,6 +213,26 @@
           "sha256": "ecc51e9dba7b832af4422c4fcd4b80093fa2a76ebbfdddcd5be021fc7e7aa1c6"
         }
       }
+    },
+    {
+      "id": "535e8f904e9b8a90f5dc1e83ea8833fc68dd00bbfa09a5905ae5a97dbe014189",
+      "kind": "own-words",
+      "url": "https://barrforsenate.com/endorsements/ky-rep-chris-lewis-endorses-andy-barr-for-u-s-senate/",
+      "date": "2025-08-22",
+      "date_precision": "day",
+      "passage": "It’s clear to me that Andy Barr is the right pick to be our next Senator. Andy is a strong conservative who has always been pro-life, pro-Second Amendment, and pro-Kentucky,",
+      "note": "Quote from Lewis in a U.S. Senate candidate's endorsement release; he praises the candidate as pro-Second Amendment. A general statement, not about a specific gun law.",
+      "subjects": [
+        "general statement on gun rights or the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:10:48.348Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -229,6 +249,32 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.608Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "general statement on gun rights or the Second Amendment",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: Kentucky House District 29 incumbent, unopposed in the 2026 primary and on the 2026 general-election ballot (Ballotpedia via search, https://branch.vote/races/2026-kentucky-primary-election-ky-state-state-representative-ky-state-house-29-r/candidates/chris-lewis)",
+        "blocked: https://ballotpedia.org/Chris_Lewis_(Kentucky) (empty response to fetch and curl)",
+        "campaign site https://www.lewisforky.com (no usable page text returned; a voter-guide page says the site had nothing on some issues as of March 2026)",
+        "legislature sponsor page https://apps.legislature.ky.gov/record/IndividualSponsorPages/536.html (read; 2025 and 2026 sponsored bills checked by title; none on firearms besides HB 299 already on file)",
+        "bill pages for HB 422, HB 599 and 2025 HB 291 (crimes and punishments) checked; no firearm text found",
+        "voter-guide pages (branch.vote, ivoterguide.com): third-party summaries, not saved; the 2024 gun-restriction questionnaire question was left unanswered",
+        "news search on name plus gun words: nothing in his own words beyond the endorsement release",
+        "not reviewed: https://www.pbs.org/video/rep-chris-lewis-wraps-up-his-first-session-fwxkpz (video)"
+      ],
+      "found": 1,
+      "at": "2026-11-14T14:10:48.348Z",
+      "by": "source-collector"
     }
   ]
 }

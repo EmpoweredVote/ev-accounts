@@ -534,6 +534,33 @@
       "found": 5,
       "at": "2026-11-11T21:12:46.603Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "federal gun ban enforcement",
+        "carry permits",
+        "red flag orders",
+        "guns and juvenile offenders",
+        "Second Amendment general statements",
+        "school safety officers"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature bill pages for SB 20 (2024) and HB 153 (2023): read; they confirm the Owensboro senator as sponsor of SB 20 (already on file), no new records",
+        "blocked: https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=8&DistrictType=S (returned a different member's page)",
+        "blocked: https://ballotpedia.org/Gary_Boswell (empty response)",
+        "blocked: https://inkl.com/news/bill-to-make-ky-second-amendment-sanctuary-advances-despite-similar-law-being-struck-down (403); a search snippet says he explained support for HB 153 but gave no wording",
+        "not reviewed: https://news.yahoo.com/ky-bill-draw-line-sand-184259385.html (page text unreadable)",
+        "not reviewed: https://wfpl.org/bill-to-give-felons-harsher-punishments-for-gun-related-crimes-passes-ky-senate/ (no usable text)",
+        "https://chamber.owensboro.com/?p=16698 read: a Q&A where he backs school resource officers, which is school staffing, not firearm regulation, so not saved",
+        "web search for name plus gun words: nothing in his own words on firearm regulation found",
+        "official Senate caucus site and campaign site: no gun-related page located"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:11:11.624Z",
+      "by": "source-collector"
     }
   ]
 }

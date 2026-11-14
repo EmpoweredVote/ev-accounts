@@ -693,6 +693,135 @@
           "sha256": "a4af03c18fa6510393a108d2a3b7700c94140fd8c99e94849098bc86c0d3a746"
         }
       }
+    },
+    {
+      "id": "9ba00e177967fe32c5797dccacb76596b658d73cf50d6ccafce5c29dfbd0889c",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb304.html",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-304-2026",
+      "act": "sponsor",
+      "note": "Sole sponsor of SB 304: requires gun owners to keep a firearm in a safe storage depository or fitted with a gun lock, and requires reporting of a lost or stolen firearm or ammunition; sent to Committee on Committees.",
+      "subjects": [
+        "require safe storage of guns",
+        "report lost or stolen guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:59.295Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9d2506e54cdb5e52114821b20b3a65c83de79634c235042b0c46a9fe205be45c",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/25RS/sb105.html",
+      "date": "2025-02-05",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-105-2025",
+      "act": "sponsor",
+      "note": "Lead-listed sponsor of SB 105: same safe-storage and loss/theft reporting requirements; sent to the Veterans, Military Affairs & Public Protection committee.",
+      "subjects": [
+        "require safe storage of guns",
+        "report lost or stolen guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:59.295Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e60b2b75e6697d575efe7efba7368b61c80e4f7cc4fc697baa209fb83a05bc28",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/SB262.html",
+      "date": "2024-02-23",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-262-2024",
+      "act": "sponsor",
+      "note": "Sole sponsor of SB 262, the Baby Dre Gun Safety Act: makes it a crime to recklessly let a minor reach an unsecured firearm (misdemeanor, felony if injury or death results).",
+      "subjects": [
+        "lock up guns away from children"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:59.295Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bbade3f20f7fe520fddd7b3b51bbdd1ac1b79717650ff1cbc7e6395871ea8a12",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/SB56.html",
+      "date": "2024-01-02",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-56-2024",
+      "act": "sponsor",
+      "note": "Sole sponsor of SB 56: safe storage of firearms and reporting of lost or stolen firearms or ammunition.",
+      "subjects": [
+        "require safe storage of guns",
+        "report lost or stolen guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:59.295Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ca4b261b641af2f0b9d5ebb01d77d0cf983f394ef69fd99b607256f43583d648",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/19RS/SB47.html",
+      "date": "2019-01-09",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-47-2019",
+      "act": "sponsor",
+      "note": "Sole sponsor of SB 47: makes unlawful storage of a firearm a crime; sent to committee.",
+      "subjects": [
+        "lock up guns away from children"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:59.295Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "04e0b7d34bb60864d31e8fa9523b951520296c1dfb951fe1f3cf05c6175a4545",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/17RS/SB28.html",
+      "date": "2017-01-03",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-28-2017",
+      "act": "sponsor",
+      "note": "Sole sponsor of SB 28: makes unlawful storage of a firearm a crime.",
+      "subjects": [
+        "lock up guns away from children"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:59.295Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -752,6 +881,31 @@
       "found": 1,
       "at": "2026-11-11T21:40:50.055Z",
       "by": "attrib-split-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on gun types",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry without a permit",
+        "safe storage of guns",
+        "report lost or stolen guns",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the legislature's bill pages for six firearm bills sponsored (read)",
+        "Ballotpedia: fetch returned no usable content",
+        "the legislature's member profile page: fetched a different member, not usable",
+        "one news/web search on name plus gun words: only bill records, no quotes by him",
+        "not reviewed: https://www.ontheissues.org (lead only)",
+        "no official or campaign site page on the subject was reached; own-words search found nothing"
+      ],
+      "found": 6,
+      "at": "2026-11-14T14:04:59.295Z",
+      "by": "source-collector"
     }
   ]
 }

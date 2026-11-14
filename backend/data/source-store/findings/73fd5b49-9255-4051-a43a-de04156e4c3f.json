@@ -648,6 +648,33 @@
       "found": 4,
       "at": "2026-11-11T21:12:46.603Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "lowering the concealed carry age",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, no meetings found)",
+        "blocked: https://ballotpedia.org/Steve_Rawlings (403)",
+        "blocked: https://www.rawlingsforky.com (domain does not resolve; no campaign site found)",
+        "not reviewed: legislature member page for Senate District 11 (URL tried returned nothing on the subject)",
+        "https://apps.legislature.ky.gov/record/25rs/sb75.html (bill page: lists S. Rawlings as sponsor of concealed deadly weapons bill; already on file)",
+        "https://apps.legislature.ky.gov/record/26rs/sb75.html (bill page: same sponsor listing; already on file)",
+        "web search: name plus office (confirms sitting state senator for District 11, term to 2029)",
+        "web search: name plus gun/firearm/Second Amendment words (nothing new, no own words found)",
+        "web search: name plus concealed carry bill (only bill pages and vote records already on file)",
+        "https://linknky.com 2023 firearm legislation story (no mention of him on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:07:12.539Z",
+      "by": "source-collector"
     }
   ]
 }

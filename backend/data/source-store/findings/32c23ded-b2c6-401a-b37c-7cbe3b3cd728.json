@@ -597,6 +597,113 @@
           "sha256": "3ef2d05214fc2164abced541f1d7fc7ef0cf9aab93c159fe0259fc9fdf102ece"
         }
       }
+    },
+    {
+      "id": "81d6a613dcc0397eb528185f7cbc92a85107b1da3a80400ee17d792d85d5d2e5",
+      "kind": "own-words",
+      "url": "https://www.weku.org/state-capitol/2013-02-22/gun-bill-goes-on-to-senate-floor",
+      "date": "2013-02-22",
+      "date_precision": "day",
+      "passage": "It does nothing to change any rules or laws that are in effect as of 2013.  If any laws go into effect after January one 2013, then this bill says we will not follow those laws,",
+      "note": "Quoted by a public radio story describing his bill to block new federal gun control in Kentucky.",
+      "subjects": [
+        "federal gun laws not enforced in Kentucky",
+        "ban on semi-automatic guns and magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:11:52.152Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bf9d0e3b065f1801be47aa334ce8458f482ffb64af9f3241a3f54ca88987d4a0",
+      "kind": "own-words",
+      "url": "https://www.weku.org/state-capitol/2013-02-22/gun-bill-goes-on-to-senate-floor",
+      "date": "2013-02-22",
+      "date_precision": "day",
+      "passage": "The tragedies that happen so often with automatic weapons are purchased illegally and our folks and law abiding citizens are being punished by their actions and you know even though tragedies happen and it’s terrible when they do happen, lots of times no matter how many laws we have in place, we couldn’t stop those tragedies,",
+      "note": "Quoted by a public radio story; he says more gun laws would not stop mass shootings and lawful owners would be punished for others' acts.",
+      "subjects": [
+        "gun laws and mass shootings",
+        "ban on semi-automatic guns and magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:11:52.152Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "53716b11ae1156686eab4e32c2ad48083c5cac0417a174507d1ed3313a2fb610",
+      "kind": "own-words",
+      "url": "https://www.wkyufm.org/post/kentucky-wouldnt-enforce-new-federal-gun-laws-under-bill-passed-state-senate",
+      "date": "2013-02-26",
+      "date_precision": "day",
+      "passage": "If I thought the bill would be symbolic, I would've written a resolution,",
+      "note": "Quoted by the Associated Press via a public radio story; he says his bill was meant to have legal force, and that the Supremacy Clause applies only when Congress acts within its listed powers.",
+      "subjects": [
+        "federal gun laws not enforced in Kentucky"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:11:52.152Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e948756f7ea37f81326fdb68d78dc19b84e843c170a82003de70ea709996903f",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/13rs/sb129.html",
+      "date": "2013-02-25",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-129-2013",
+      "act": "sponsor",
+      "note": "Prime sponsor of 2013 SB 129: makes any new federal law, rule or order on ownership or registration of certain firearms, magazines or accessories unenforceable in Kentucky. Passed the Senate 34-3 per a news story.",
+      "subjects": [
+        "federal gun laws not enforced in Kentucky",
+        "ban on semi-automatic guns and magazines",
+        "gun registration"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:11:52.152Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c7d1656b9311c25671949206c77393f72b753e52854cdaae09a7d99c1f105d01",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/14rs/sb106.html",
+      "date": "2014-02-06",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-106-2014",
+      "act": "sponsor",
+      "note": "Sponsor of 2014 SB 106: lets a person protected by an emergency protective or domestic violence order carry a concealed deadly weapon for up to 90 days if the court allows, after a sheriff's background check and fingerprints.",
+      "subjects": [
+        "concealed carry permit for protective-order holders",
+        "background check before carry licence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:11:52.152Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -641,6 +748,31 @@
       "found": 4,
       "at": "2026-11-11T21:12:46.602Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "federal gun laws not enforced in Kentucky",
+        "ban on semi-automatic guns and magazines",
+        "gun registration",
+        "concealed carry permit for protective-order holders",
+        "background check before carry licence",
+        "red-flag orders",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://apps.legislature.ky.gov/Legislators/subs/Sen-34.html (member page, names him for Senate District 34, no issue text)",
+        "the legislature's bill pages for 2013 SB 129 and 2014 SB 106",
+        "Ballotpedia (page fetched; nothing on the subject extracted)",
+        "one web search on name plus gun words; news stories from 2013 read",
+        "not reviewed: https://www.wuky.org/local-regional-news/2023-12-15/kentucky-republican-senator-works-to-thread-the-needle-on-gun-reform-in-skeptical-legislature (page gave no text mentioning him)",
+        "no campaign site found; nothing on the 2026 ballot status checked beyond the member page"
+      ],
+      "found": 5,
+      "at": "2026-11-14T14:11:52.152Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -584,6 +584,27 @@
           "sha256": "cebc7436de838bc4e570407ff8c646a5ddab69c39ebb7f59f39b5913061d76e3"
         }
       }
+    },
+    {
+      "id": "c2f3cff73f18769b5a3f1ab86653d321f92881f9606c8c0fa42e1888dad5472d",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24rs/sb178.html",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "KY-SB-178-2024",
+      "act": "sponsor",
+      "note": "Co-sponsor (listed with K. Berg) of SB 178, an act relating to firearms: lets the state police destroy confiscated firearms and requires destruction when the gun was used in a violent offense.",
+      "subjects": [
+        "destroying confiscated guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:03:00.503Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -600,6 +621,32 @@
       "found": 5,
       "at": "2026-11-11T21:12:46.601Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "who may have a gun",
+        "carry a gun without a permit",
+        "destroying confiscated guns",
+        "gun rights general statement"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://apps.legislature.ky.gov/Legislators/subs/Sen-36.html (member page, read; confirms Senate District 36)",
+        "https://apps.legislature.ky.gov/record/24rs/sb178.html (bill page, read)",
+        "the Senate majority caucus site: one search page read, nothing on the subject in her own words",
+        "https://momsdemandaction.org/kentucky-moms-demand-action-everytown-applaud-introduction-of-legislation-to-keep-guns-out-of-the-hands-of-domestic-abusers/ (advocacy group release about SB 177, not her words; bill already on file)",
+        "web search: one news/bill search on her name plus firearm words; nothing in her own words",
+        "blocked: https://www.legiscan.com/KY/sponsors/SB190/2024",
+        "not reviewed: Ballotpedia, campaign site, other URL-pattern pages (not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-11-14T14:03:00.503Z",
+      "by": "source-collector"
     }
   ]
 }

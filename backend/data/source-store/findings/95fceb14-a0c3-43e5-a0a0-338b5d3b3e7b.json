@@ -580,6 +580,27 @@
           "sha256": "004c0d5312691f84c09982cb68de74196ccbe529f1958de016f7f79ed5ece8b7"
         }
       }
+    },
+    {
+      "id": "a51c26ef76565c56f6658e53c74145c18544a3cc9926d6a3da3b94cd76d7a83c",
+      "kind": "own-words",
+      "url": "https://kysenaterepublicans.com/press-releases/2026/4/8/senate-approves-sen-brandon-storm-bill-to-support-body-armor-grants-for-law-enforcement",
+      "date": "2026-03-13",
+      "date_precision": "day",
+      "passage": "“Law enforcement officers put their lives on the line every day to protect our communities,” Storm said. “This legislation helps ensure the resources generated through firearms forfeitures are reinvested into protecting the men and women who protect us.”",
+      "note": "Quote in a Senate caucus release on SB 333, which sends proceeds from State Police sales of confiscated firearms to grants for police equipment. The release says the bill keeps safeguards for returning firearms to lawful owners and requires State Police to check whether confiscated guns were stolen before sale. Not about restricting gun ownership.",
+      "subjects": [
+        "sale of confiscated firearms",
+        "returning seized guns to lawful owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:15:03.434Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -621,6 +642,33 @@
       "found": 5,
       "at": "2026-11-11T21:12:46.602Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "ghost guns",
+        "gun rights and the Second Amendment",
+        "confiscated firearms sales"
+      ],
+      "places": [
+        "On the Record (0 meetings, none linked)",
+        "the Senate caucus press release on SB 333 (read; names Sen. Brandon Storm (London) as sponsor)",
+        "https://apps.legislature.ky.gov/record/26rs/sb333.html (bill page, read)",
+        "https://apps.legislature.ky.gov/record/23rs/sb225.html (bill page, read; concerns persistent felony offenders, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Brandon_Storm (HTTP 403)",
+        "one web search on name plus Second Amendment and firearms: no own statement on gun rights found",
+        "official legislature member page: no subject content found",
+        "campaign site: not found",
+        "not reviewed: votesmart and other issue-position pages (no page tied to this person found)"
+      ],
+      "found": 1,
+      "at": "2026-11-14T14:15:03.434Z",
+      "by": "source-collector"
     }
   ]
 }

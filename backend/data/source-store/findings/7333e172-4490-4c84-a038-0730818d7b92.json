@@ -728,6 +728,31 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.599Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "gun-industry lawsuit shield",
+        "machine-gun conversion devices"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page, House District 72: confirms Matthew Koch, sitting House member since 2019 (https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=72)",
+        "legislature sponsored-bills page (https://apps.legislature.ky.gov/record/IndividualSponsorPages/422.html): lists bill numbers 2019-2026, mostly without titles; no title in the listing mentions firearms; nothing on the subject",
+        "blocked: https://ballotpedia.org/Matthew_Koch (403)",
+        "news search on name plus gun words: nothing on the subject by him; gun bills found belong to other sponsors",
+        "web search for Second Amendment / concealed carry words with his name: nothing on the subject",
+        "campaign site: not found in search; not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:11:55.580Z",
+      "by": "source-collector"
     }
   ]
 }

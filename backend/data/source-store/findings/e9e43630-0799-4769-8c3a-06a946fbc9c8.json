@@ -498,6 +498,90 @@
           "sha256": "36c14baa89287951cc4b88494fa74979207da7dd02456001b71058a9d3b97731"
         }
       }
+    },
+    {
+      "id": "43944d281ecc82e7eca266d12257577c341785b2bcb3c7bb6f77f6a321e52844",
+      "kind": "own-words",
+      "url": "https://spectrumnews1.com/ky/lexington/news/2023/04/13/bill-to-destroy-guns-used-in-crimes-failed-to-advance-in-state-legislature",
+      "date": "2023-04-13",
+      "date_precision": "day",
+      "passage": "“They have been used to kill people and we’re literally cleaning them off and reselling them so they can be used to do the same thing again,”",
+      "note": "Quoted by Spectrum News 1 on why she wants guns used in crimes destroyed rather than resold.",
+      "subjects": [
+        "destroy guns seized in crimes"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:13:19.582Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b33374f99eae656047603a456e24d8477fc203bce352009787a76547a710bbe0",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24rs/sb178.html",
+      "date": "2024-02-06",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-178-2024",
+      "act": "sponsor",
+      "note": "Sole listed sponsor of SB 178, which lets confiscated firearms be destroyed and requires destruction if used in a violent offense. Sent to committee 2024-02-08.",
+      "subjects": [
+        "destroy guns seized in crimes"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:13:19.582Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0c0973c1ebc59145ea9c5a19ee846cf00e5a4d94d2f94203203c4e0aab53db5",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/25RS/sb95.html",
+      "date": "2025-02-06",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-95-2025",
+      "act": "sponsor",
+      "note": "Listed sponsor of SB 95, requiring law enforcement to send information on firearms collected in criminal investigations to national databases. Sent to committee 2025-02-06.",
+      "subjects": [
+        "track guns recovered in crimes"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:13:19.582Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "00182129f6894c8db37126cb79f327fd68df62d1abb31bf0d6cde922486c84e8",
+      "kind": "record",
+      "url": "https://lpm.org/news/2023-12-15/advocates-pitch-kentucky-legislators-for-law-to-remove-guns-from-people-in-crisis",
+      "date": "2023-12-15",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Spoke in support at committee hearing on a bill to remove guns from people in crisis (red-flag order)",
+      "note": "Public radio story reports she spoke for the bill at the hearing, saying her son died by suicide a year earlier and that she attends a survivors-of-suicide group with parents of children who used a gun.",
+      "subjects": [
+        "red-flag orders",
+        "gun suicide prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:13:19.582Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -540,6 +624,29 @@
       "found": 5,
       "at": "2026-11-11T21:12:46.602Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "destroy seized guns",
+        "red-flag orders / remove guns from people in crisis",
+        "state help with federal gun rules",
+        "gun data reporting"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature bill pages: SB 178 (2024) and SB 95 (2025) read; she is the listed sponsor of both",
+        "a Louisville news story (Spectrum News) and a public radio story (LPM) read; both name her as a Louisville state senator",
+        "not reviewed: https://www.newsfromthestates.com/node/165497 (fetched, no passage by her found)",
+        "blocked: https://ballotpedia.org/Karen_Berg (empty page)",
+        "blocked: https://legislature.ky.gov/Legislators/senate (404)",
+        "official member page and campaign site not reached; no own-words page of hers read",
+        "web search: one search run on her name plus gun words"
+      ],
+      "found": 4,
+      "at": "2026-11-14T14:13:19.582Z",
+      "by": "source-collector"
     }
   ]
 }

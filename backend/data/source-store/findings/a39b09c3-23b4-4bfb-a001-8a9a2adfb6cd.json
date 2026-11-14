@@ -775,6 +775,68 @@
           "sha256": "5d07342f8e8e5ba7bc51e9017cbfb71daec8523a0f6e209a6927a5b704ab23ab"
         }
       }
+    },
+    {
+      "id": "25091e9d864ecc632e9a8ac2c3f075985ae3ec7a3df2541f4ba75c755b033ae2",
+      "kind": "own-words",
+      "url": "https://www.rabournforkentucky.com/",
+      "date": "2026-05-01",
+      "date_precision": "month",
+      "passage": "I am a strong supporter of the Second Amendment and firmly believe law abiding citizens have the constitutional right to keep and bear arms. I will always stand against efforts to infringe on those rights and remain committed to protecting the freedoms guaranteed by both the United States and Kentucky Constitutions.",
+      "note": "Campaign site issue section on the Second Amendment; page date approximated from the site's 2026 uploads.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "stand against infringement of gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:08:38.811Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7aba0b2dd3af67c9a2b1ccf284bd5187fa5b0c60939c61f370de64fa07710d79",
+      "kind": "own-words",
+      "url": "https://www.rabournforkentucky.com/",
+      "date": "2026-05-01",
+      "date_precision": "month",
+      "passage": "During my time in office, I have consistently supported and co sponsored pro Second Amendment legislation, including campus carry legislation that protects the rights of responsible firearm owners. I believe Kentuckians should never have to choose between their safety and their constitutional freedoms.",
+      "note": "Campaign site says she has backed and co-sponsored gun-rights bills, naming campus carry.",
+      "subjects": [
+        "carry guns on campus",
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:08:38.811Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2080af05417958fa27902510029da807c381d768bc06a4c1e86c10cd62f0ec3c",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/52612/race/24398/election/1358",
+      "date": "2026-11-03",
+      "date_precision": "year",
+      "passage": "Absolutely no restrictions.",
+      "note": "Her answer on a voter-guide questionnaire (2026 general entry) to: 'What restrictions on gun ownership are needed to protect public safety?'. Date is the election the entry belongs to, not the answer date.",
+      "subjects": [
+        "limits on who may own a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:08:38.811Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -818,6 +880,34 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.605Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "restrictions on gun ownership",
+        "campus carry",
+        "red-flag orders",
+        "federal gun laws",
+        "assault-style weapon bans",
+        "background checks",
+        "permitless carry"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://www.rabournforkentucky.com/ (read; Second Amendment section)",
+        "https://www.rabournforkentucky.com/blank-page (404, nothing)",
+        "https://www.branch.vote/races/2026-kentucky-general-election-ky-state-state-representative-ky-state-house-47/candidates/felicia-rabourn (confirms unopposed for the 2026 District 47 seat)",
+        "https://ivoterguide.com/candidate/52612/race/24398/election/1358 (voter-guide answer, 2026 general)",
+        "blocked: https://blog.tenthamendmentcenter.com/?p=44384 (HTTP 403)",
+        "blocked: https://ballotpedia.org/Felicia_Rabourn (empty response)",
+        "one web search on name plus gun words; bill pages already on file, not re-collected",
+        "not reviewed: Kentucky legislature member page and news archives (search allowance used on other steps)"
+      ],
+      "found": 3,
+      "at": "2026-11-14T14:08:38.811Z",
+      "by": "source-collector"
     }
   ]
 }

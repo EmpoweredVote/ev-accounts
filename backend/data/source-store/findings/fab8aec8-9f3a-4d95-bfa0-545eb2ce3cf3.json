@@ -560,6 +560,50 @@
           "sha256": "4ba2f557039834016ce63c263bc4e05786a5dc1593b899fbba2979332c3a088b"
         }
       }
+    },
+    {
+      "id": "2beb3ac6769a243a75818341c8616e14c369972a2d18550a53cae48567d80164",
+      "kind": "own-words",
+      "url": "https://www.wvxu.org/politics/2026-02-24/kentucky-gop-bill-to-ban-machine-gun-conversion-devices-moves-forward",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "passage": "I always stand with the law enforcement, but I gave my people a word, and my word that I would always stand for our Second Amendment,",
+      "note": "Quoted in a news story (WVXU/KPR) explaining why he could not vote for HB 299, the bill making it a felony to own a device that converts a gun to automatic fire, in committee. The story says he told the committee he promised to protect gun rights.",
+      "subjects": [
+        "ban on machine-gun conversion devices",
+        "Second Amendment",
+        "gun rights general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:11:13.631Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eae1cb2f2a049c9e0fb13783eaee04d174f43625858ac6edc2eacf8787557434",
+      "kind": "own-words",
+      "url": "https://lpm.org/news/2023-02-22/ky-bill-blocking-local-law-enforcement-from-assisting-in-federal-firearm-bans-passes-house",
+      "date": "2023-02-22",
+      "date_precision": "day",
+      "passage": "We have numerous reports of beatings, stabbings and rapes that has nothing to do with guns. It was the people that had the weapons. On behalf of the people of eastern Kentucky, I will say we’re not giving up any of our weapons,",
+      "note": "Quoted in a news story (LPM) on House floor debate of HB 153, which bars local police and public money from helping enforce federal firearm and ammunition bans. He voted yes and argued violence is not caused by guns alone.",
+      "subjects": [
+        "local police not enforcing federal gun bans",
+        "Second Amendment",
+        "gun rights general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:11:13.631Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -576,6 +620,29 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.605Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "ban on machine-gun conversion devices",
+        "local police not enforcing federal gun bans",
+        "gun rights general statement"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person, including a name search)",
+        "blocked: https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=91 (403)",
+        "legislature bill page https://apps.legislature.ky.gov/record/26RS/hb299.html (page text did not load; nothing usable)",
+        "Wikipedia page for Bill Wesley exists, not reviewed for the subject",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Bill_Wesley",
+        "campaign site: not reviewed, none found in search",
+        "news search on name plus firearm words (two news stories fetched and read)",
+        "Sitting member confirmed by 2026 veto-override votes already on file and by a 2026-02-24 news story naming him as a Ravenna representative"
+      ],
+      "found": 2,
+      "at": "2026-11-14T14:11:13.631Z",
+      "by": "source-collector"
     }
   ]
 }

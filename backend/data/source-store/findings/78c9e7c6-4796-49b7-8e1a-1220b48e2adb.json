@@ -536,6 +536,92 @@
           "sha256": "a4af03c18fa6510393a108d2a3b7700c94140fd8c99e94849098bc86c0d3a746"
         }
       }
+    },
+    {
+      "id": "583bf54dca16359ad19ec1af5d231de5ac88d29d3c885766d4fa625857e35022",
+      "kind": "own-words",
+      "url": "https://spectrumnews1.com/ky/louisville/news/2022/06/03/kentucky-lawmaker-proposes-gun-violence-prevention-office-.html",
+      "date": "2022-06-03",
+      "date_precision": "day",
+      "passage": "The biggest thing that I want that office to do is to first off, look at gun violence through a public health lens, to not just look at gun violence from a mass shooting or big casualty situation, but also look at it from the day-to-day situations that we see in our communities,",
+      "note": "Quoted in a Spectrum News story: describes the aim of her proposed state Office of Gun Violence Prevention, which she said she would re-file.",
+      "subjects": [
+        "state office for gun violence prevention",
+        "gun violence as a public health matter"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:13:06.898Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "763481d859073109b1d312eb1eb84e2044d8b605fbb0c017decff3d60957ab1a",
+      "kind": "own-words",
+      "url": "https://jlusa.org/2023/10/12/rep-keturah-herron-on-gun-violence-and-the-need-for-accurate-information/",
+      "date": "2023-10-12",
+      "date_precision": "day",
+      "passage": "An [Office of Gun Violence Prevention within the Department of Public Health] dedicated to data, prevention and serving as a channel for federal funding in these areas should not be seen as partisan, or as a prelude to any particular legislative action. It should be recognized simply for what it is, a source that will give us better information and more expertise to address something we all should want: an end to senseless gun violence.",
+      "note": "Her written column, reposted by a nonprofit site: argues for a state gun-violence data office and says Kentucky lacks state-specific data on what works; also says building more jails is not the answer.",
+      "subjects": [
+        "state office for gun violence prevention",
+        "gun violence data"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:13:06.898Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c8eb9a9092f1e9be30040adf748bcdafd6e007092ff5021170fd628e47e1443a",
+      "kind": "own-words",
+      "url": "https://lpm.org/news/2024-09-10/after-mass-shooting-democratic-lawmaker-advocates-for-holistic-approach-to-gun-violence",
+      "date": "2024-09-10",
+      "date_precision": "day",
+      "passage": "What I want our lawmakers to know and the public to know is, let's talk about all of the violence that we're seeing, and let's come up with solutions,",
+      "note": "Direct quote in an LPM radio story after a highway shooting. The same story, in the reporter's words (not hers), says she backs a state gun-violence office, stronger permit laws and red-flag laws.",
+      "subjects": [
+        "general gun-safety statement",
+        "state office for gun violence prevention",
+        "red-flag orders",
+        "permit laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:13:06.898Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d049be215b3721235d30bc88ffb66069f8ff8f2963ab7465b1f79c9a73ee062f",
+      "kind": "own-words",
+      "url": "https://jlusa.org/2024/12/16/keturah-herron-vows-to-reintroduce-legislation-in-kentucky-to-establish-office-of-gun-violence-prevention/",
+      "date": "2024-12-16",
+      "date_precision": "day",
+      "passage": "When we talk about gun violence, it's a very complex issue. It can be a very divisive issue, but one of the things that I know that is true is that no matter where you are in the commonwealth, you will and can be impacted by gun violence.",
+      "note": "Quoted in a news story reposted by a nonprofit site; she said she would again file a bill for a state gun-violence prevention office that collects data including on domestic violence and suicide.",
+      "subjects": [
+        "state office for gun violence prevention",
+        "general gun-safety statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:13:06.898Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -578,6 +664,35 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.609Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "state office for gun violence prevention",
+        "gun violence as a public health matter",
+        "gun violence data",
+        "permit laws",
+        "red-flag orders",
+        "general gun-safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "https://apps.legislature.ky.gov/record/IndividualSponsorPages/485.html (legislature sponsor page, read; covers 2022-2024 sessions, no gun bill ids confirmed beyond those on file)",
+        "blocked: https://apps.legislature.ky.gov/legislator/Senate/Herron (404)",
+        "blocked: https://ballotpedia.org/Keturah_Herron (fetch returned empty page)",
+        "not reviewed: official member site and campaign site (no address found in search results)",
+        "one web search on name plus gun words: found news and nonprofit-site stories; read four by curl",
+        "https://lpm.org/news/2024-09-10/after-mass-shooting-democratic-lawmaker-advocates-for-holistic-approach-to-gun-violence (read)",
+        "https://spectrumnews1.com/ky/louisville/news/2022/06/03/kentucky-lawmaker-proposes-gun-violence-prevention-office-.html (read)",
+        "https://jlusa.org/2023/10/12/rep-keturah-herron-on-gun-violence-and-the-need-for-accurate-information/ (read)",
+        "https://jlusa.org/2024/12/16/keturah-herron-vows-to-reintroduce-legislation-in-kentucky-to-establish-office-of-gun-violence-prevention/ (read)",
+        "not reviewed: ontheissues.org and vote411 (lead-only, no original found)",
+        "Identity: a search summary lists them as holding Senate District 35 and their 2025-2026 Senate votes are on file; 2026 ballot status not confirmed by a page"
+      ],
+      "found": 4,
+      "at": "2026-11-14T14:13:06.898Z",
+      "by": "source-collector"
     }
   ]
 }

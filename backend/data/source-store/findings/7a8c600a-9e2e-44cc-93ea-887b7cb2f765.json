@@ -187,6 +187,49 @@
         "fetched_at": "2026-11-11T21:12:46.604Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1bfb3c84dc8a9d568f9b9f823af5d92ff80d512ff1eea12e3dba87d7a0fce725",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/23rs/HB153.html",
+      "date": "2023-03-28",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-153-2023",
+      "act": "sponsor",
+      "note": "Named among the sponsors of HB 153, an act prohibiting enforcement of a federal ban or regulation of firearms. The bill became law without the Governor's signature on this date (Acts Ch. 117). The page lists her as one of several sponsors, not the lead.",
+      "subjects": [
+        "state refusal to enforce federal gun bans or rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:07:32.147Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "84d4fde9f80685c73db54e75acefc9233eb77173400b1776fa3a29b952d75d04",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26rs/HB312.html",
+      "date": "2026-01-12",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-312-2026",
+      "act": "sponsor",
+      "note": "Named among the sponsors of HB 312, an act relating to concealed firearms and deadly weapons (a news story describes it as lowering the age for carrying concealed from 21 to 18). The page lists her as one of many sponsors, not the lead; the date is the first action date on the bill's history. The bill was delivered to the Secretary of State on 2026-04-14 (Acts Ch. 173).",
+      "subjects": [
+        "carry a concealed gun at a younger age",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:07:32.147Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -237,6 +280,30 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.604Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "state refusal to enforce federal gun bans or rules",
+        "carry a concealed gun at a younger age",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://apps.legislature.ky.gov/record/23rs/HB153.html",
+        "https://apps.legislature.ky.gov/record/26rs/HB312.html",
+        "one web search on name plus firearms bill (results were bill-tracking sites and news stories, used only as leads)",
+        "not reviewed: official legislature member profile page (could not be retrieved as text)",
+        "not reviewed: campaign site, Ballotpedia, news stories and interviews (not fetched); no own words on the subject found"
+      ],
+      "found": 2,
+      "at": "2026-11-14T14:07:32.147Z",
+      "by": "source-collector"
     }
   ]
 }

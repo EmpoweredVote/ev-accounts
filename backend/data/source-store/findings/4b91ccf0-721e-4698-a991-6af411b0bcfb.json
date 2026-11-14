@@ -66,6 +66,118 @@
         "fetched_at": "2026-11-11T21:12:46.607Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "bd423f423bb429631dab9a6091a5dd59c4bebec91e6c63a49086df4f28347e8f",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26rs/hb312/vote_history.pdf",
+      "date": "2026-01-23",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-312-2026",
+      "act": "yea",
+      "motion": "House passage, RCS# 22 (73-17)",
+      "note": "Voted yea in the House on HB 312, an act relating to concealed firearms and deadly weapons (provisional carry for ages 18-20). Name appears in the YEAS list of the roll call.",
+      "subjects": [
+        "carry a gun without a permit",
+        "minimum age to carry a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:06:12.401Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f7e148ff9c08e91a77aae0703bdfd7a4e7d70ccdf932070d1d71981bc3388ca0",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26rs/hb312/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-312-2026",
+      "act": "yea",
+      "motion": "Veto override, RCS# 461 (81-18)",
+      "note": "Voted yea to override the governor's veto of HB 312, concealed firearms and deadly weapons. Name appears in the YEAS list.",
+      "subjects": [
+        "carry a gun without a permit",
+        "minimum age to carry a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:06:12.401Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eeefc5bbc053fd452b3471c5939c0d7bd7e64083e426aad1ef39f81c2917aefe",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26rs/hb78/vote_history.pdf",
+      "date": "2026-03-17",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-78-2026",
+      "act": "yea",
+      "motion": "House passage, RCS# 273 (75-17)",
+      "note": "Voted yea in the House on HB 78, firearms liability protections for gun and ammunition makers and sellers. Name appears in the YEAS list.",
+      "subjects": [
+        "liability protection for gun makers and sellers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:06:12.401Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f6b71a043d3370b87b8d8c047dd114e743f69f4ac33921af5e2a405ec9844562",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26rs/hb78/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-78-2026",
+      "act": "yea",
+      "motion": "House vote on final passage, RCS# 362 (76-16)",
+      "note": "Voted yea on final passage of HB 78, firearms liability protections. Name appears in the YEAS list.",
+      "subjects": [
+        "liability protection for gun makers and sellers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:06:12.401Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ee1d546cdce76ec07d2c054caf9f1f7792f8a5e09bfa248bbd9d28a0d387c265",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26rs/hb78/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-78-2026",
+      "act": "yea",
+      "motion": "Veto override, RCS# 457 (80-19)",
+      "note": "Voted yea to override the governor's veto of HB 78, firearms liability protections. Name appears in the YEAS list.",
+      "subjects": [
+        "liability protection for gun makers and sellers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:06:12.401Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -82,6 +194,31 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.607Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "concealed carry age 18-20",
+        "liability protection for gun makers and sellers",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member profile page for House District 31 (confirms Rep. Susan Witten; lists no firearm content)",
+        "Kentucky legislature bill pages and roll-call PDFs for HB 312 and HB 78 (2026 session): https://apps.legislature.ky.gov/record/26rs/hb312.html , https://apps.legislature.ky.gov/record/26rs/hb78.html",
+        "Ballotpedia: page fetched, nothing on the subject found in its text; a web search shows her filed for re-election in 2026 for House District 31",
+        "news search on name plus gun words: nothing in her own words",
+        "not reviewed: official and campaign site (no dedicated page found in search; not fetched)",
+        "not reviewed: sponsored-bills page on the legislature site (member profile links to it but it was not fetched)"
+      ],
+      "found": 5,
+      "at": "2026-11-14T14:06:12.401Z",
+      "by": "source-collector"
     }
   ]
 }

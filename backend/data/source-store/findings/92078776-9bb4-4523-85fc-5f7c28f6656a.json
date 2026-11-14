@@ -276,6 +276,26 @@
           "sha256": "63c37beef2557d8aa85b424bd92efeb42ef4cd70465d63cb2117ec40b0402fee"
         }
       }
+    },
+    {
+      "id": "ea78aa04130a164aff541530fc26d895203886416261696d26f4d2e1465fc87c",
+      "kind": "own-words",
+      "url": "https://www.peytongriffee.com/about",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Committed to preserving life as a pro-life advocate, defending Second Amendment rights, and unwavering support for law enforcement, he is a rock-solid conservative leader we can count on in Frankfort.",
+      "note": "Campaign site biography describing him as defending Second Amendment rights; a general statement with no specific policy.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:15:03.434Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -317,6 +337,32 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.607Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "home-made guns",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "the legislature's member page for House District 26 (https://apps.legislature.ky.gov/Legislators/subs/House-026.html), read: confirms the seat, no gun content",
+        "the campaign site About page (https://www.peytongriffee.com/about), read: one general line on Second Amendment rights",
+        "blocked: https://ballotpedia.org/Peyton_Griffee (empty page returned)",
+        "news search on name plus gun words: nothing on the subject by or quoting this person; gun bills in results belonged to other sponsors",
+        "bill sponsorship lists on third-party trackers: no further gun sponsorships beyond those already on file (not reviewed in full: https://www.billsponsor.com/politicians/11025/peyton-griffee)",
+        "not reviewed: https://wtfvote.us/state-legislator/peyton-griffee-eddce954",
+        "status check: 2026 primary cancelled, he advanced unopposed to the general election"
+      ],
+      "found": 1,
+      "at": "2026-11-14T14:15:03.434Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -187,6 +187,26 @@
           "sha256": "fd5594be2aacdb70f2dae01bee4fb82fbeaef7443ea9f18e54c02f150620282f"
         }
       }
+    },
+    {
+      "id": "27c7f5ae14b2bfcef61e4e0a1654b16156496023b8075ef0498d333091d78b6c",
+      "kind": "own-words",
+      "url": "https://hoptownchronicle.org/kentucky-house-advances-bill-protecting-gun-industry-from-lawsuits",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "Accountability in our system does not stop with the individual who commits the crime. Courts exist so then when tragedy happens, the facts can be examined and responsibility can be determined wherever it belongs",
+      "note": "Quoted in a news story (Hoptown Chronicle) during House debate on HB 78, the bill shielding gun makers and sellers from lawsuits. She said she is a survivor of gun violence and understood points about individual responsibility, but argued accountability extends beyond the person who commits the crime. Date is the story's publication date; the floor remarks were made shortly before.",
+      "subjects": [
+        "lawsuits against gun makers and sellers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:11:15.120Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -233,6 +253,27 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.607Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "lawsuits against gun makers and sellers",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general gun rights and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://apps.legislature.ky.gov/Legislators/subs/House-057.html (member page confirms Rep. Erika Hancock, House District 57; page has no issue content)",
+        "one web search on name plus firearm words (one local news story with a direct quote found and fetched)",
+        "not reviewed: Ballotpedia, campaign site and official issue pages, legislature bill-sponsorship pages (not fetched; search results showed no firearm sponsorships)"
+      ],
+      "found": 1,
+      "at": "2026-11-14T14:11:15.120Z",
+      "by": "source-collector"
     }
   ]
 }

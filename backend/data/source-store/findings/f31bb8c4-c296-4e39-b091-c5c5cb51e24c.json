@@ -715,6 +715,27 @@
           "sha256": "fd5594be2aacdb70f2dae01bee4fb82fbeaef7443ea9f18e54c02f150620282f"
         }
       }
+    },
+    {
+      "id": "dddc99d19ba13b90fcc0c1c6de94a4eb3f930337f73fbf4731438162796655d4",
+      "kind": "own-words",
+      "url": "https://www.amnews.com/?p=62540",
+      "date": "2020-02-11",
+      "date_precision": "day",
+      "passage": "We will definitely look at what the recommendations are and they will eventually put those policies in place,",
+      "note": "Quoted by a local newspaper at a Boyle County legislative coffee (event Monday 2020-02-10, story dated 2020-02-11). Responding to a resident's complaint about guns at the state capitol, he said a state police-led group was reviewing capitol policies on carrying guns and that its recommendations would be put in place. The story paraphrases him as saying he and a fellow legislator are both strong supporters of Second Amendment rights and that a resident wanting different laws would need to elect other legislators; that paraphrase is not a direct quote. The resident had also asked for universal background checks and red-flag measures; the story quotes only the other legislator answering those, not him.",
+      "subjects": [
+        "carrying guns at the state capitol",
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:21.552Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -755,6 +776,31 @@
       "found": 2,
       "at": "2026-11-11T21:12:46.598Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "carrying guns at the state capitol",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "ban on assault-style guns"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "not reviewed: https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=54 (fetch returned no readable text)",
+        "https://legilist.com/states/kentucky/legislator/daniel-elliott--ky-houseofrepresentatives-54-elliott-d/ (confirms Daniel Elliott as state representative, House District 54, Danville mailing address; a mirror of the legislature profile, not his own page)",
+        "blocked: https://ballotpedia.org/Daniel_Elliott_%28Kentucky%29 (no readable text returned)",
+        "one web search on name plus Second Amendment: found one local news story with his quoted words (Boyle County town hall, 2020)",
+        "official and campaign site subject search: not reviewed, no site reached",
+        "bill pages on apps.legislature.ky.gov: not reviewed beyond the votes and sponsorships already on file",
+        "ballot status for 2026 not confirmed from a page; he is recorded as sitting in votes through April 2026"
+      ],
+      "found": 1,
+      "at": "2026-11-14T14:12:21.552Z",
+      "by": "source-collector"
     }
   ]
 }

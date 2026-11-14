@@ -492,6 +492,30 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.605Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "state refusal to enforce federal gun rules",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the legislature's House District 39 member page (confirms Rep. Matt Lockett, District 39)",
+        "the legislature's bill page for HB 29 (2022): he is the first-named sponsor; already on file, not re-saved",
+        "campaign site https://lockett4ky.com/about_matt: fetched, page is script-rendered and no gun or Second Amendment text could be read from it; not reviewed beyond that",
+        "Ballotpedia https://ballotpedia.org/Matt_Lockett: blocked (empty/202 response to fetch)",
+        "https://www.branch.vote/races/2026-kentucky-general-election-ky-state-state-representative-ky-state-house-39/candidates/matt-lockett: a candidate directory listing him in the 2026 general election for House District 39; nothing quotable on the subject",
+        "web search on name plus firearm words (two searches): only bills already on file turned up; nothing new in his own words",
+        "news search: no story quoting him on guns found"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:10:46.723Z",
+      "by": "source-collector"
     }
   ]
 }

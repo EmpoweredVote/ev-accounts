@@ -725,6 +725,33 @@
       "found": 4,
       "at": "2026-11-11T21:12:46.598Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "federal gun rules and state enforcement",
+        "Second Amendment and gun rights statements",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "status: sitting House District 52 member through the end of his term; announced Oct 2025 he is not seeking re-election, and his successor is unopposed in the 2026 general election (https://kaco.org/articles/2026-primary-election-results-general-assembly-races/)",
+        "On the Record (0 meetings)",
+        "the legislature's member page https://apps.legislature.ky.gov/Legislators/subs/House-052.html (read; no gun content, no bills listed)",
+        "the legislature's HB 667 (2025) bill page https://apps.legislature.ky.gov/record/25rs/hb667.html (he is not a sponsor)",
+        "web search on his name plus gun/firearm/Second Amendment words: no sponsorship or own words found",
+        "blocked: https://ballotpedia.org/Ken_Upchurch (fetch returned empty)",
+        "blocked: https://ballotpedia.org/Kentucky_House_of_Representatives_District_52 (fetch returned empty)",
+        "not reviewed: https://www.wtvq.com/?p=2186737 (redirected page did not mention him)",
+        "no campaign site found; no questionnaire, debate or interview on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:12:02.693Z",
+      "by": "source-collector"
     }
   ]
 }

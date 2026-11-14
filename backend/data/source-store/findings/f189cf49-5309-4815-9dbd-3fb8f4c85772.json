@@ -108,6 +108,135 @@
         "fetched_at": "2026-11-11T21:12:46.599Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "51f59062597e51e60a2a99cce353f326ab343d596448d3d79f88da6355914a05",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/HB312.html",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-312-2026",
+      "act": "sponsor",
+      "note": "Primary sponsor of HB 312, which has the State Police issue provisional licences to carry concealed firearms and other deadly weapons to people aged 18 to 20, with a path to a standard licence. Governor vetoed it; the veto was overridden.",
+      "subjects": [
+        "carry licence for ages 18 to 20",
+        "carry a concealed gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:11:14.487Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "189b69adb7880c48fd701fc2d1a24d36da7982d1c4c1ee85e40582eb6ece8491",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb312/vote_history.pdf",
+      "date": "2026-01-23",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-312-2026",
+      "act": "yea",
+      "note": "Listed among the yeas on House passage of HB 312 (RCS# 22), 73-17.",
+      "subjects": [
+        "carry licence for ages 18 to 20",
+        "carry a concealed gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:11:14.487Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f80c7c05f95bf539be07f08ea28a415a80794642ad46cf54fcb9ec2e53150d4c",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb312/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-312-2026",
+      "act": "yea",
+      "note": "Listed among the yeas on the House vote to override the governor's veto of HB 312 (RCS# 461), 81-18.",
+      "subjects": [
+        "carry licence for ages 18 to 20",
+        "carry a concealed gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:11:14.487Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "61fa354f10f7cabc37aa2b1903aab863b5e2d0aa6cbd7463041d8f2e05db2bb6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb78/vote_history.pdf",
+      "date": "2026-03-17",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-78-2026",
+      "act": "yea",
+      "note": "Listed among the yeas on House passage of HB 78 (RCS# 273), 75-17, which shields gun and ammunition makers and sellers from lawsuits over criminal use of their products.",
+      "subjects": [
+        "gun maker and seller lawsuit protection"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:11:14.487Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9aa01eb10ede3c3181123cd5be830893135c355d98cd87b391933409f6b719dc",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb78/vote_history.pdf",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-78-2026",
+      "act": "yea",
+      "note": "Listed among the yeas on House final passage of HB 78 (RCS# 362), 76-16, after Senate changes.",
+      "subjects": [
+        "gun maker and seller lawsuit protection"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:11:14.487Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "85cb1c17fb33d82708c3e67ec6d84269506b1fdbbc04d93624a3e397c94255b5",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb78/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-78-2026",
+      "act": "yea",
+      "note": "Listed among the yeas on the House vote to override the governor's veto of HB 78 (RCS# 457), 80-19.",
+      "subjects": [
+        "gun maker and seller lawsuit protection"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:11:14.487Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -151,6 +280,33 @@
       "found": 4,
       "at": "2026-11-11T21:12:46.599Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "carry licence for ages 18 to 20",
+        "gun maker and seller lawsuit protection",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings, 0 appearances)",
+        "https://apps.legislature.ky.gov/Legislators/subs/House-081.html (member contact page, no subject content)",
+        "https://apps.legislature.ky.gov/record/26RS/HB312.html (read; she is the listed sponsor)",
+        "https://apps.legislature.ky.gov/record/26RS/HB78.html (read)",
+        "https://apps.legislature.ky.gov/record/26RS/hb312/vote_history.pdf and hb78/vote_history.pdf (read)",
+        "Ballotpedia: page returned no text to fetch; search snippets only; 2026 primary result not confirmed (a results page was rate-limited: blocked: https://votes.decisiondeskhq.com/races/2026-05-19/kentucky-state-house-81-republican-primary); a candidate-listing site shows her as a 2026 general-election candidate for House District 81",
+        "web search on her name plus gun and Second Amendment words: no own-words statements found",
+        "official/campaign site: not reviewed (no address found within allowance)",
+        "nothing on the subject: ballot-style questionnaires, interviews, news quotes"
+      ],
+      "found": 6,
+      "at": "2026-11-14T14:11:14.487Z",
+      "by": "source-collector"
     }
   ]
 }

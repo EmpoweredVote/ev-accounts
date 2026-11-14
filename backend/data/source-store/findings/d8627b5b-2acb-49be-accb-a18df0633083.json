@@ -377,6 +377,28 @@
           "sha256": "f60afa1c35d549a65e6daa40c8946a080004115818824727038c82280503a003"
         }
       }
+    },
+    {
+      "id": "3a8ba4d4980f95faf2a2ebd2fa99d31ffda6ed90d62e84fbbf430ff14b8bdaa3",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/25rs/hb581.html",
+      "date": "2025-02",
+      "date_precision": "month",
+      "instrument_id": "KY-HB-581-2025",
+      "act": "sponsor",
+      "note": "Listed among the sponsors of HB 581 (2025), a bill that would require a gun owner to keep the gun in a safe storage depository or fitted with a locking device, and require reporting of a lost or stolen gun or ammunition to police. The bill was sent to the House Judiciary committee on 2025-02-25.",
+      "subjects": [
+        "safe storage of guns",
+        "report lost or stolen gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:10:39.252Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -423,6 +445,32 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.607Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "safe storage of guns",
+        "report lost or stolen gun",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders",
+        "carry a gun without a permit",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.sarahforky.com/meet and https://sarahforky.com/ (read; nothing on the subject)",
+        "Kentucky SOS filing https://web.sos.ky.gov/CandidateFilings/Default.aspx?cand=11487 (listed as 2026 general election candidate for State Representative, District 34)",
+        "Ballotpedia https://ballotpedia.org/Sarah_Stalker (fetch returned no usable text; confirmed via search result only)",
+        "legislature bill page https://apps.legislature.ky.gov/record/25rs/hb581.html (sponsor list)",
+        "blocked: https://apps.legislature.ky.gov/legislators/ (403)",
+        "two news searches on her name plus gun words: no quote of her on the subject found",
+        "not reviewed: https://app.legiplex.com/profile/sarah-stalker-10971/ky/legislatures/2025/2025-r/legislation/page/2 (lead only)"
+      ],
+      "found": 1,
+      "at": "2026-11-14T14:10:39.252Z",
+      "by": "source-collector"
     }
   ]
 }

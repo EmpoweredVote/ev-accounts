@@ -347,6 +347,71 @@
           "sha256": "7495640a9dd9e7f85495755bace59ee26ec18ea50492006f4549bf0798bc6dee"
         }
       }
+    },
+    {
+      "id": "f4ba247689a9fdf8f1ef6724f407a1d9fb1025d8a0404352cbaafdff99450af5",
+      "kind": "own-words",
+      "url": "https://kysenaterepublicans.com/press-releases/2025/3/11/reeds-senate-bill-75-passes-committee-may-be-taken-up-by-the-full-senate",
+      "date": "2025-03-11",
+      "date_precision": "day",
+      "passage": "“Nothing in this bill weakens or changes our existing gun purchasing laws,” Reed clarified. “It simply ensures that those who are already legally allowed to own a firearm are given the same right to carry it responsibly at 18, just as they would at 21.”",
+      "note": "Statement in a Senate caucus release: SB 75 lowers the concealed-carry age to 18 and leaves purchase rules, including federal background checks, unchanged.",
+      "subjects": [
+        "minimum age to carry a concealed gun",
+        "carry a gun without a permit",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:03:38.859Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1e1b762d1c934298fd2f25f6ad5cd57e12828286fcf635b28a40862a2c44ffe0",
+      "kind": "own-words",
+      "url": "https://kysenaterepublicans.com/press-releases/2025/3/11/reeds-senate-bill-75-passes-committee-may-be-taken-up-by-the-full-senate",
+      "date": "2025-03-11",
+      "date_precision": "day",
+      "passage": "“At 18 years old, a Kentuckian is legally an adult. They can vote, sign contracts, marry, be tried as an adult in court, and most importantly, serve in the United States military,” said Reed. “We trust them to carry a rifle on the battlefield to defend our freedoms, yet we deny them the right to carry a concealed weapon for self-defense at home. This is an unjust double standard that must be corrected.”",
+      "note": "Reed's case for letting 18-to-20-year-olds carry concealed, in a caucus release on SB 75.",
+      "subjects": [
+        "minimum age to carry a concealed gun",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:03:38.859Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0735d36e771d7e7d96d5b402f49b2306701bb7444b98588c21b104aa14525c4",
+      "kind": "own-words",
+      "url": "https://lpm.org/news/2025-03-06/18-year-old-kentuckians-could-conceal-carry-under-bill-passing-senate-committee",
+      "date": "2025-03-06",
+      "date_precision": "day",
+      "passage": "“If we acknowledge that they have the right to own a firearm, then why are we denying them the ability to carry one for their own protection?” Reed said. “For me, this issue is somewhat personal. I have an 18-year-old daughter, and as her father, I want her to have every legal tool available to defend herself.”",
+      "note": "Reed quoted by Louisville Public Media at the Senate Judiciary Committee hearing on SB 75, where he presented the bill with an NRA representative.",
+      "subjects": [
+        "minimum age to carry a concealed gun",
+        "carry a gun without a permit",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:03:38.859Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -390,6 +455,32 @@
       "found": 4,
       "at": "2026-11-11T21:12:46.609Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "minimum age to carry",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name candidates)",
+        "Kentucky Senate caucus press release on SB 75 (https://kysenaterepublicans.com/press-releases/2025/3/11/reeds-senate-bill-75-passes-committee-may-be-taken-up-by-the-full-senate) - confirms Reed is a sitting state senator; read in full",
+        "Legislature bill page for SB 75 2025 (https://apps.legislature.ky.gov/record/25RS/SB75.html) - fetched, page body showed only navigation text",
+        "Legislature senate district page (https://www.legislature.ky.gov/Legislators/senate-district-20) - returned nothing usable",
+        "blocked: https://ballotpedia.org/Aaron_Reed_(Kentucky) (fetch returned empty)",
+        "one news search on name plus firearm words; leads to Louisville Public Media story (read) and other outlets (not reviewed: https://owensborotimes.com/?p=217837, https://lexingtonky.news/?p=178599)",
+        "not reviewed: gun-maker liability bill testimony story (https://feeds.lexingtonky.news/article/kentucky-bill-shielding-gun-makers-from-lawsuits-advances-in-senate)",
+        "personal or campaign site: none found",
+        "nothing found on background checks, assault-style gun bans, red-flag orders, ghost guns"
+      ],
+      "found": 3,
+      "at": "2026-11-14T14:03:38.859Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -319,6 +319,32 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.605Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "repeal gun laws",
+        "Second Amendment general statement"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://apps.legislature.ky.gov/Legislators/subs/House-020.html (member page: confirms Rep. Kevin Jackson, District 20, Warren County part; nothing on the subject)",
+        "https://en.wikipedia.org/wiki/Kevin_Jackson_(politician) (lead only: sitting member, 20th district; nothing on the subject)",
+        "https://www.branch.vote/races/2026-kentucky-general-election-ky-state-state-representative-ky-state-house-20/candidates/kevin-jackson (candidate page: running in the 2026 general election for District 20; nothing on the subject)",
+        "web search: district and office confirmation; web search: name plus gun, firearm and Second Amendment words (no statement by him found)",
+        "blocked: https://ballotpedia.org/Kevin_Jackson_(Kentucky)",
+        "blocked: https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=20&DistrictType=H",
+        "no campaign site found: https://www.kevinjacksonky.com did not resolve; branch.vote says no website information on this issue",
+        "not reviewed: https://app.legiplex.com/profile/kevin-jackson-11665/ky/legislatures/2025/2025-r/legislation/page/2 (bill list; sponsorships on the subject beyond those already on file not checked)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:09:13.633Z",
+      "by": "source-collector"
     }
   ]
 }

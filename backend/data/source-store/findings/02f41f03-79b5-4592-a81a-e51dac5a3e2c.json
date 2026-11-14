@@ -416,6 +416,48 @@
           "sha256": "ec31bbc4d01d0355a000d0ef7ce815f608cb0daf7aaeed2fb5c82a1903bd71fc"
         }
       }
+    },
+    {
+      "id": "247ca4a1b54d3c2909b7f56e165241d5d8db5f86676fac9fbbf2e773399a08b9",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/60829/race/11175/election/1085",
+      "date": "2024-05-21",
+      "date_precision": "year",
+      "passage": "What restrictions on gun ownership are needed to protect public safety? None",
+      "note": "Her answer in a voter-guide candidate questionnaire (profile for the 2024 primary race, as shown on the page) to the question on what restrictions on gun ownership are needed: 'None'. Answer date is not shown; the race date is used.",
+      "subjects": [
+        "restrictions on who may own a gun",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:03:21.016Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "24d71db39026a4eb0f02ed91eba5e004d0706e5ef42fd4d2d2243d1b8b61d49a",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/60829/race/11175/election/955",
+      "date": "2022-11-08",
+      "date_precision": "year",
+      "passage": "Victims of gun violence should be able to sue firearms dealers and manufacturers. Strongly Disagree",
+      "note": "Her questionnaire answer (profile for the 2022 general-election race, as shown on the page) to a statement that gun-violence victims should be able to sue dealers and makers: 'Strongly Disagree'. Answer date is not shown; the race date is used.",
+      "subjects": [
+        "lawsuits against gun makers and dealers",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:03:21.016Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -491,6 +533,35 @@
       "found": 5,
       "at": "2026-11-11T21:12:46.602Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun restrictions for public safety",
+        "suing gun makers and dealers",
+        "carry permits and permitless carry",
+        "background checks",
+        "assault-style weapons bans",
+        "red-flag orders",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings; no linked appearances)",
+        "https://apps.legislature.ky.gov/Legislators/subs/House-050.html (legislature member page: loaded, contact details only, nothing on the subject)",
+        "blocked: https://www.candymassaroni.com (no connection)",
+        "blocked: https://ballotpedia.org/Candy_Massaroni (403)",
+        "Ballotpedia district page for KY House District 50: fetched, no text on her or the subject",
+        "https://en.wikipedia.org/wiki/Candy_Massaroni (office history; nothing on the subject)",
+        "https://ivoterguide.com/candidate/60829/race/11175/election/955 and /1085 (candidate questionnaire pages; Second Amendment answers saved)",
+        "https://ivoterguide.com/candidate/60829/race/11175/election/1085 lists her in the 2026 general-election race (Nov 3, 2026); her 2026 votes on file show her in office",
+        "two web searches on her name plus gun words: news results gave nothing in her own words",
+        "not reviewed: https://web.sos.ky.gov/CandidateFilings/Default.aspx?cand=11214 (could not be fetched)",
+        "not reviewed: the legislature's per-bill pages for sponsorships beyond those already on file"
+      ],
+      "found": 2,
+      "at": "2026-11-14T14:03:21.016Z",
+      "by": "source-collector"
     }
   ]
 }

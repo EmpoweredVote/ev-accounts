@@ -846,6 +846,69 @@
           "sha256": "71ea36e576dc7d7ae6b7a043780bae5dab62eb6830d19137b306c7f0841115c8"
         }
       }
+    },
+    {
+      "id": "f0d48ebd1f3de95cc8cf4b39d4a8f334352c359d1c9bd64221c6f94b6c514274",
+      "kind": "own-words",
+      "url": "https://spectrumnews1.com/ky/louisville/news/2022/10/04/ky--lawmaker-announces-bill-focused-on-suicide-prevention",
+      "date": "2022-10-04",
+      "date_precision": "day",
+      "passage": "This is not taking away anyone’s rights. It’s not interfering with the Second Amendment in any way,",
+      "note": "Quoted by Spectrum News 1 on her planned bill for a voluntary Do Not Sell Firearms List; she says the list is a choice individuals make and does not touch Second Amendment rights.",
+      "subjects": [
+        "voluntary do-not-sell gun list",
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:43.846Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5a5951f432477be9f9eb9628337b999d03cc32500b516f251a3adbf7d9b64020",
+      "kind": "own-words",
+      "url": "https://spectrumnews1.com/ky/louisville/news/2022/10/04/ky--lawmaker-announces-bill-focused-on-suicide-prevention",
+      "date": "2022-10-04",
+      "date_precision": "day",
+      "passage": "People in the community are very concerned about gun violence, about gun fatalities, and I think what a lot of folks do not realize is that well over half of gun deaths in Kentucky and gun deaths across the country are suicides rather than homicides,",
+      "note": "Quoted by Spectrum News 1; she explains her do-not-sell list bill by pointing to suicide as most gun deaths in Kentucky.",
+      "subjects": [
+        "voluntary do-not-sell gun list",
+        "gun deaths and suicide"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:43.846Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfdcfb02ec2a119d8188dc03d11dae4398e2459ff4185123a2b5ec576d1df4a9",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26rs/hb113.html",
+      "date": "2026-01-07",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-113-2026",
+      "act": "sponsor",
+      "note": "Sole listed sponsor of the Baby Dre Gun Safety Act: makes it a Class B misdemeanor (Class A if a child is hurt or killed) to recklessly let a minor reach an unsecured firearm; affirmative defense if the minor broke in. Sent to the House Judiciary committee 2026-01-14.",
+      "subjects": [
+        "safe storage of guns around children"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:43.846Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -888,6 +951,33 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.599Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "voluntary do-not-sell gun list",
+        "safe storage of guns around children",
+        "gun rights and the Second Amendment",
+        "gun deaths and suicide",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "On the Record (0 appearances, also tried by name with city Louisville)",
+        "Kentucky legislature bill page for HB 79 (2023): read",
+        "Kentucky legislature bill page for HB 113 (2026): read",
+        "news story from Spectrum News 1 (2022): read",
+        "Ballotpedia: page returned no readable text, not reviewed: https://ballotpedia.org/Lisa_Willner",
+        "web search: confirms she is the sitting District 35 member and was the unopposed nominee on the 2026 general-election ballot; no result page for the race was read",
+        "official legislator page: not reviewed (url pattern did not resolve)",
+        "campaign site: not found",
+        "web search for news on her name and gun words: other results were leads only and not fetched"
+      ],
+      "found": 3,
+      "at": "2026-11-14T14:12:43.846Z",
+      "by": "source-collector"
     }
   ]
 }

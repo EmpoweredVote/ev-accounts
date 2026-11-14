@@ -363,6 +363,26 @@
           "sha256": "cbae810ba372aff50a32dcb0279ae88f2f44d6705bf9d78dc09418fa5c2cd845"
         }
       }
+    },
+    {
+      "id": "5d89459e297cfe4a2957a7dc9d920ebac873d278dac39d21e21c6e5e3b34eb6b",
+      "kind": "own-words",
+      "url": "https://rachelroarx.com/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Crime and gun-related deaths are in the rise in Louisville. Rachel is fighting for our police officers to receive living wages and the supports they need to protect and service with the community's confidence.",
+      "note": "Campaign issues page, undated (date is approximate). Names gun-related deaths as a concern and ties the response to police pay and support; names no specific gun law.",
+      "subjects": [
+        "gun deaths and public safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:34.123Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -409,6 +429,30 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.606Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun deaths and public safety",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "gun industry lawsuits",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances, no name matches)",
+        "campaign site https://rachelroarx.com (home and issues pages read)",
+        "https://ballotpedia.org/Rachel_Roarx (blocked: 403); a search summary shows her as the sitting District 38 House member on the 2026 ballot",
+        "web search: name plus firearm words, results showed no gun bill sponsored by her beyond those already on file",
+        "not reviewed: https://apps.legislature.ky.gov/record/25RS/hb581.html (page returned no text; a bill tracker listed a 2025 firearms bill, HB 581, under her co-sponsor list, unverified)",
+        "legislature's own bill pages: nothing further on the subject beyond the votes already on file"
+      ],
+      "found": 1,
+      "at": "2026-11-14T14:12:34.123Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -310,6 +310,136 @@
           "sha256": "c5fe55913f9868e0ca85cc625fc0960d17dbb33f4724fd22cce4a65589ec4252"
         }
       }
+    },
+    {
+      "id": "0f312449faa882c9828c02a7ecdf65e1cc5e947f615e877e4b05439f53ee4d58",
+      "kind": "own-words",
+      "url": "https://www.wuky.org/local-regional-news/2024-02-15/red-flag-bill-and-safe-storage-bill-highlighted-at-rally-advocating-for-commonsense-gun-legislation",
+      "date": "2024-02-15",
+      "date_precision": "day",
+      "passage": "If we can limit what you can say and how you can say it - and clearly the other legislators here want to limit what our teachers say, they want to limit what our teachers and students hear so, clearly, they believe in limits on constitutional freedoms - then why can’t we have reasonable restrictions on the second?",
+      "note": "Quoted by WUKY at a rally; she argues that if other constitutional freedoms can be limited, the Second Amendment can have reasonable limits too.",
+      "subjects": [
+        "limits on gun rights",
+        "Second Amendment",
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:06:25.852Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d5443151d7ab9f48bc02a3a98f433fbe02a46c6e502e9490de894d4487239a2",
+      "kind": "own-words",
+      "url": "https://www.wuky.org/wuky-news/2026-01-21/concealed-carry-for-18-year-olds-a-kentucky-lawmaker-says-its-a-matter-of-fairness-under-the-law",
+      "date": "2026-01-21",
+      "date_precision": "day",
+      "passage": "I'm concerned that what training does, in the short amount of time that it happens, doesn't mature an 18-year-old brain into a 21-year-old brain. I worry that young people are at risk of self-harm, not even thinking about accidents.",
+      "note": "Quoted by WUKY explaining her committee vote against HB 321, which would allow a provisional concealed carry licence for ages 18-20.",
+      "subjects": [
+        "minimum age to carry",
+        "carry permits",
+        "concealed carry for 18-20 year olds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:06:25.852Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e92b869049590e241dde9f31b3272e892859aec53c3c43d05e7c461224690e56",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24RS/hb240.html",
+      "date": "2024-01-11",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-240-2024",
+      "act": "sponsor",
+      "note": "Bill 'relating to firearms'; press coverage describes it as requiring gun owners to lock up guns when not in use. Sent to Committee on Committees.",
+      "subjects": [
+        "safe storage of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:06:25.852Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a46b91596ffa2c64362f6612d5cd7cf1764bc7bc541690bdab9434b61ddf28dc",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/25RS/hb581.html",
+      "date": "2025-02-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-581-2025",
+      "act": "sponsor",
+      "note": "Primary sponsor of a bill titled 'relating to firearms'; sent to House Judiciary. The page shows no summary of its provisions.",
+      "subjects": [
+        "firearms bill, content not stated"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:06:25.852Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "34bb95b0e09972c99fefc0a47f91464c3f2a1bdbd397508310ba5b316367c5f1",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb18.html",
+      "date": "2026-01-06",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-18-2026",
+      "act": "sponsor",
+      "note": "Primary sponsor of a bill 'relating to the safe ownership of firearms'; sent to House Judiciary.",
+      "subjects": [
+        "safe gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:06:25.852Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a28750c5560aa8677141930d828b7f8822d987d1e11ef6fd6de57cce539b68c1",
+      "kind": "record",
+      "url": "https://www.wuky.org/wuky-news/2026-01-21/concealed-carry-for-18-year-olds-a-kentucky-lawmaker-says-its-a-matter-of-fairness-under-the-law",
+      "date": "2026-01-21",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-321-2026",
+      "act": "nay",
+      "motion": "committee vote on HB 321, provisional concealed carry licence for ages 18-20",
+      "note": "News story reports she was one of three 'no' votes in committee.",
+      "subjects": [
+        "minimum age to carry",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:06:25.852Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -381,6 +511,31 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.606Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "safe storage of guns",
+        "young adults carrying concealed",
+        "limits on gun rights",
+        "extreme-risk orders",
+        "background checks",
+        "assault-style weapons",
+        "permitless carry"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the Kentucky legislature's bill pages for HB 240 (2024), HB 581 (2025), HB 18 (2026): she is the listed sponsor of each",
+        "a public-radio news story (WUKY) on a House committee hearing, Jan 2026, quoting her",
+        "a public-radio news story (WUKY) on a Feb 2024 rally, quoting her",
+        "not reviewed: official member page (the legislature's profile URL guess returned an error; no campaign site found)",
+        "blocked: https://ballotpedia.org/Lindsey_Burke (403)",
+        "one web search on her name plus firearm words"
+      ],
+      "found": 6,
+      "at": "2026-11-14T14:06:25.852Z",
+      "by": "source-collector"
     }
   ]
 }

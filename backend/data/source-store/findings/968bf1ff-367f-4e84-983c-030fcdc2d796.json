@@ -1021,6 +1021,70 @@
           "sha256": "de32f90837570328bff6961cd48e7e48723ac5cf4e9a5212248e37c5fe143cd1"
         }
       }
+    },
+    {
+      "id": "e7a497b929d2346f6045a381a615af8f95d1e44e1b910027025db40bc1e90703",
+      "kind": "own-words",
+      "url": "https://www.wkms.org/2023-05-09/some-kentucky-lawmakers-want-to-tackle-gun-violence-through-a-public-health-lens",
+      "date": "2023-05-09",
+      "date_precision": "day",
+      "passage": "There’s an argument there for that being a catalyst to come up with something that can be agreed upon and act on it,” said Kulkarni. “But there’s also this danger of doing things not as deliberately and methodically and with all of the angles … considered. That is also a danger if there is a rush to a special session.",
+      "note": "Quoted in a radio news story on a special legislative session to address gun violence after the Louisville mass shooting: she sees a benefit but warns against rushing the legislation.",
+      "subjects": [
+        "special session on gun violence",
+        "gun violence as a public health issue"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:15:03.434Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "85b04860c1e391bfcc6c7da3f6516ed6bbad69a84027b831b75c10d31ee68bc9",
+      "kind": "own-words",
+      "url": "https://www.wkms.org/2023-05-09/some-kentucky-lawmakers-want-to-tackle-gun-violence-through-a-public-health-lens",
+      "date": "2023-05-09",
+      "date_precision": "day",
+      "passage": "it is incumbent on us as state lawmakers to keep focus and attention on the issue.",
+      "note": "Quoted in the same news story: she says lawmakers should keep attention on gun violence until the next regular session. The story also says she called six proposals from other lawmakers (including safe storage at home and extreme-risk orders) \"common sense\"; that wording is the reporter's, with only the two words quoted.",
+      "subjects": [
+        "gun violence as a public health issue",
+        "safe storage of guns at home",
+        "red-flag orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:15:03.434Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b8fd620ef28ed1c03c291e782c04bbf6fc62ded25f2fbed330f6c614cec59024",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/25rs/hb329.html",
+      "date": "2025-02-05",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-329-2025",
+      "act": "sponsor",
+      "note": "Bill amends KRS 65.870, 65.1591 and 237.115 to let local governments enact ordinances regulating firearms. She is the first-named sponsor; sent to the Local Government committee on 2025-02-07 and went no further.",
+      "subjects": [
+        "local rules on guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:15:03.434Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -1074,6 +1138,34 @@
       "found": 1,
       "at": "2026-11-11T21:40:50.074Z",
       "by": "attrib-split-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "local rules on guns",
+        "safe storage of guns at home",
+        "red-flag orders",
+        "gun violence as a public health issue",
+        "special session on gun violence"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: one standard search on her name plus gun words (done; the 10-search allowance was not used up)",
+        "Ballotpedia https://ballotpedia.org/Nima_Kulkarni (fetch returned a blank page; not reviewed)",
+        "blocked: https://apps.legislature.ky.gov/legislator/Nima_Kulkarni (404)",
+        "blocked: https://www.lrc.ky.gov/Legislator/Nima_Kulkarni (request blocked)",
+        "blocked: https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=40 (request blocked)",
+        "legislature bill page https://apps.legislature.ky.gov/record/25rs/hb329.html (read; shows her as first-named sponsor of the local firearms control bill)",
+        "https://branch.vote/races/2026-kentucky-primary-election-ky-state-state-representative-ky-state-house-40-d/candidates/nima-kulkarni (listing page only, no election result readable)",
+        "news story https://www.wkms.org/2023-05-09/some-kentucky-lawmakers-want-to-tackle-gun-violence-through-a-public-health-lens (read; she is quoted)",
+        "not reviewed: her own official or campaign site, no address found or reached",
+        "not reviewed: ontheissues.org, vote411, further news searches (not run)",
+        "scope: the legislature bill page and the news story name her as a sitting state representative for Louisville; the 2026 result was not confirmed"
+      ],
+      "found": 3,
+      "at": "2026-11-14T14:15:03.434Z",
+      "by": "source-collector"
     }
   ]
 }

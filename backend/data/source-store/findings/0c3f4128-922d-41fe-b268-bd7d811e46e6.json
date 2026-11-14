@@ -512,6 +512,33 @@
       "found": 4,
       "at": "2026-11-11T21:12:46.603Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a concealed gun, minimum age 18",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "general gun rights / Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "https://apps.legislature.ky.gov/record/25RS/sb75.html (bill page lists J. Howell among 22 sponsors; bill lowers concealed-carry age from 21 to 18; already on file)",
+        "https://apps.legislature.ky.gov/record/26RS/hb312.html (page loaded empty without scripts; vote already on file)",
+        "blocked: https://ballotpedia.org/Jason_Howell (empty response)",
+        "blocked: https://ballotpedia.org/Jason_Howell_(Kentucky) (nothing on the subject came back)",
+        "not reviewed: https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=1&DistrictType=S (page needs scripts; no member text retrieved)",
+        "blocked: https://app.legiplex.com/profile/jason-howell-11424/ky/legislatures/2025/2025-r/legislation (403)",
+        "the Senate caucus press-release site: search page returned nothing on the subject; press-release pages found by search were not about guns",
+        "web search on his name plus gun words: no own-words statement on guns found; a voter-guide page was only a lead",
+        "not reviewed: https://ivoterguide.com/candidate/52519/race/21040/election/1085 (lead only, not fetched)",
+        "no campaign site or interview found"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:03:22.825Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -236,6 +236,33 @@
       "found": 2,
       "at": "2026-11-11T21:12:46.608Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "minimum age to carry",
+        "legal shield for gun makers and sellers",
+        "Second Amendment general statement"
+      ],
+      "places": [
+        "https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=88 (member page read: House District 88, Fayette and Scott parts, serving since 2025; nothing on the subject)",
+        "On the Record (0 meetings)",
+        "https://apps.legislature.ky.gov/Legislators/subs/House-088.html (contact page only; nothing on the subject)",
+        "https://apps.legislature.ky.gov/RECORD/26rs/HB78.html (bill page seen in search result only; co-sponsor listing already on file; not re-fetched)",
+        "blocked: https://ballotpedia.org/Vanessa_Grossl (returned an empty page)",
+        "campaign site: not found beyond the social handle @Grossl4Ky88; not reviewed",
+        "news searches: one web search on her name plus guns and one on HB 78; no quote from her on the subject found",
+        "not reviewed: https://news.yahoo.com/gop-kentucky-lawmaker-backing-bill-142228507.html (fetched; text did not name her, so not attributable)",
+        "not reviewed: https://open.pluralpolicy.com/person/vanessa-grossl-5j8ku8oVaHGuAGWHscenMn (no usable text returned)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:08:07.751Z",
+      "by": "source-collector"
     }
   ]
 }

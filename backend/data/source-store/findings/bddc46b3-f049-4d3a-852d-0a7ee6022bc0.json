@@ -798,6 +798,48 @@
           "sha256": "1ce7869bf7e2ba6cdb1becc6a460e02cb49b38881d0376b114a39af92aa1c0ae"
         }
       }
+    },
+    {
+      "id": "c3171af9eda4338b3147a6a567b44121fdba12e3010714cc9040ea1e2d0297b3",
+      "kind": "own-words",
+      "url": "https://www.lex18.com/news/im-emotionally-exhausted-state-representative-teacher-discuss-texas-mass-shooting",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "passage": "\"There are two issues that get votes for Republicans: abortion and gun rights,\" she explained. \"These are such powerful issues for getting Republicans into office.\"",
+      "note": "Quoted by LEX 18 after the Uvalde school shooting. She says gun rights is a strong vote-winning issue for the other side's candidates, which she ties to why gun laws do not move in Kentucky.",
+      "subjects": [
+        "gun rights as a campaign issue",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:13:31.628Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ca4544d27e05c11d48837b245af19c71b75a9ed50f91361153b5a7e499897338",
+      "kind": "own-words",
+      "url": "https://www.lex18.com/news/im-emotionally-exhausted-state-representative-teacher-discuss-texas-mass-shooting",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "passage": "\"It was mostly defensive,\" she said of the state's suggestions to have armed security officers and training for teachers on how to respond to a gunman.",
+      "note": "LEX 18 quotes her describing Kentucky's response to the 2018 Marshall County school shooting (armed security officers, teacher training) as mostly defensive. The story also reports, in the reporter's words, that she wants meaningful gun reform legislation.",
+      "subjects": [
+        "gun safety laws",
+        "guns in schools"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:13:31.628Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -842,6 +884,32 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.600Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun reform laws",
+        "school shootings and gun legislation",
+        "gun rights as a campaign issue",
+        "parental liability for a minor's misuse of a gun",
+        "machine gun conversion devices"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the legislature's House District 32 member page (https://apps.legislature.ky.gov/Legislators/subs/House-032.html): confirms Rep. Tina Bojanowski, no gun statements on it",
+        "web search: she is listed on the 2026 general-election ballot for House District 32, per candidate listings; no loss or withdrawal found",
+        "blocked: https://ballotpedia.org/Tina_Bojanowski (empty response)",
+        "blocked: https://hoptownchronicle.org/?p=87994 and https://nkytribune.com/?p=435875 (news stories on the parental-liability bill; fetch returned no usable text, so her role as co-sponsor is not saved)",
+        "https://lpm.org/news/2024-11-24/kentucky-lawmaker-to-propose-bill-holding-parents-liable-for-gun-violence-committed-by-minors: fetched, text does not name her",
+        "https://lpm.org/news/2024-09-10/after-mass-shooting-democratic-lawmaker-advocates-for-holistic-approach-to-gun-violence: fetched, about another member, nothing on her",
+        "news story from LEX 18 (2022): fetched, her own quoted words saved",
+        "not reviewed: her X/Twitter thread of May 2022 (not reachable)",
+        "no campaign site found; one news search done, the rest of the search allowance not needed"
+      ],
+      "found": 2,
+      "at": "2026-11-14T14:13:31.628Z",
+      "by": "source-collector"
     }
   ]
 }

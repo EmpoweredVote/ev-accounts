@@ -580,6 +580,67 @@
           "sha256": "3887df09ff18c27e4fbc73e5ad1761759ef913b5c756480883a1543dcea708e6"
         }
       }
+    },
+    {
+      "id": "70506cee6d8073be07d92e064c5c95a3bc4daeb34da9f94215bd55f6ac54f145",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/29625/race/11615/election/789",
+      "date": "2020",
+      "date_precision": "year",
+      "passage": "I don’t believe new restrictions on gun ownership will improve public safety in any way. In fact, I believe restrictions on the law abiding citizen’s ability to own guns will actually have the opposite effect and will increase crime and criminal activity in our communities.",
+      "note": "Answer to a voter-guide questionnaire in his 2020 race, on what limits on gun ownership are needed. He says new limits would not help and would raise crime.",
+      "subjects": [
+        "limits on gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:07:05.575Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c74199e069ed271b5943f0ebb8ec565665a3c9b220360fe2ab7e0eb39dc81d5d",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/29625/race/11615/election/955",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "As a life long supporter of the 2nd Amendment I believe any restrictions on gun ownership must be adjudicated on a case by case basis.",
+      "note": "Answer to a voter-guide questionnaire in his 2022 general-election race on what limits on gun ownership are needed. He describes himself as a long-time supporter of the Second Amendment and says limits should be decided case by case.",
+      "subjects": [
+        "limits on gun ownership",
+        "general Second Amendment statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:07:05.575Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9aa8591880c32b35e2023a18b72bd9b8b994a83b60795730487543101674ba88",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/29625/race/11615/election/1211",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "I think we are over restricted now.",
+      "note": "Answer to a voter-guide questionnaire in his 2024 race on what limits on gun ownership are needed. He says there are already too many limits.",
+      "subjects": [
+        "limits on gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:07:05.575Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -622,6 +683,30 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.604Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "limits on gun ownership",
+        "teachers or faculty carrying guns at school",
+        "suing gun makers and dealers",
+        "general Second Amendment statements",
+        "machine-gun conversion devices"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "iVoterGuide candidate questionnaires for the 2020, 2022 (primary and general) and 2024 races, read in full",
+        "News search on name plus gun words: one story on a state ban of machine-gun conversion devices read; it names a different lawmaker and none of Fister's words, so nothing on the subject",
+        "blocked: https://ballotpedia.org/Daniel_Fister (empty page returned)",
+        "blocked: https://apps.legislature.ky.gov/legislator/Pages/default.aspx?search=Fister (404)",
+        "the Kentucky legislature member page: no gun content found on the page fetched",
+        "not reviewed: the official and campaign sites (no address found; a search page for the member profile gave nothing on the subject)",
+        "Confirmed in scope: iVoterGuide lists him as State Rep., Dist. 56, with a Kentucky general election entry dated 2026-11-03"
+      ],
+      "found": 3,
+      "at": "2026-11-14T14:07:05.575Z",
+      "by": "source-collector"
     }
   ]
 }

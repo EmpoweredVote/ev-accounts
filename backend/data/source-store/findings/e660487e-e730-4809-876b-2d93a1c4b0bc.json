@@ -330,6 +330,27 @@
           "sha256": "3887df09ff18c27e4fbc73e5ad1761759ef913b5c756480883a1543dcea708e6"
         }
       }
+    },
+    {
+      "id": "058892d7fa39749488338fb2626a520a90a3b50f5485c27237c6c8eb4f60f24c",
+      "kind": "own-words",
+      "url": "https://935wain.com/representative-neighbors-legislative-update-public-safety-transportation-health-care-bills-filed-for-consideration/",
+      "date": "2024-01-16",
+      "date_precision": "day",
+      "passage": "HB 5 includes over 20 policy provisions such as a new “Three Strikes Law” targeting experienced and persistent violent felony offenders, “Madelynn’s Law” regulating bail funding organizations, creating a Kentucky statute for carjacking, removing early release for criminals using guns in crimes, enhancing the penalty for the murder of a first responder, hardening sentences for adults using juveniles as criminal accomplices, cracking down on those involved in drive by shootings, improving protocol for involuntary confinement of the mentally ill, increasing penalties for attempted murder, and “Jake’s Law ” toughening sentencing for those who flee the police.",
+      "note": "Her weekly legislative update (carried by a local radio station) describes HB 5, including ending early release for people who use guns in crimes and tougher handling of drive-by shootings. It is about penalties for gun crimes, not rules on buying or carrying guns.",
+      "subjects": [
+        "longer sentences for gun crimes",
+        "limits on who may have a gun: involuntary confinement of the mentally ill"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:10:30.057Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -371,6 +392,33 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.607Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry without a permit",
+        "ghost guns",
+        "gun crimes sentencing",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed in scope: sitting House District 21 member, 2026 primary was canceled and she is on the general-election ballot (search summary of a ballot-info page, not fetched)",
+        "blocked: https://ballotpedia.org/Amy_Neighbors (fetch returned empty)",
+        "blocked: https://apps.legislature.ky.gov/legislator/AmyNeighbors (404)",
+        "not reviewed: https://legislature.ky.gov member profile and bill pages (no fetchable profile URL found)",
+        "her weekly legislative updates carried by a local radio station (https://935wain.com), five updates read; only the January 2024 one mentions guns",
+        "one news search on her name plus gun words: no firearm bill sponsored by her turned up",
+        "no personal campaign site found",
+        "nothing on the subject beyond the one finding"
+      ],
+      "found": 1,
+      "at": "2026-11-14T14:10:30.057Z",
+      "by": "source-collector"
     }
   ]
 }

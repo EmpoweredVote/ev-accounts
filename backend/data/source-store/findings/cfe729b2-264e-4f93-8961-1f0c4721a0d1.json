@@ -533,6 +533,31 @@
       "found": 7,
       "at": "2026-11-11T21:12:46.602Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "https://web.sos.ky.gov/CandidateFilings/Default.aspx?cand=11426 (state filing page: Donald R. Douglas, State Senator, District 22, filed 1/9/2026; primary outcome not confirmed by me)",
+        "https://en.wikipedia.org/wiki/Donald_Douglas_(politician) (lead only: confirms Senate District 22 incumbent since Nov 2021; nothing on guns)",
+        "https://apps.legislature.ky.gov/Legislators/subs/Sen-22.html (legislature member page for Senate District 22, read; no gun statements)",
+        "blocked: https://ballotpedia.org/Donald_Douglas (returned no text to curl or fetch)",
+        "not reviewed: https://apps.legislature.ky.gov/RECORD sponsor pages for bill sponsorships (only the already-filed SB 20 sponsor record is known)",
+        "no official or campaign issue page found; not reviewed",
+        "two web searches on name plus gun words: nothing on the subject in his own words; results were advocacy pages and other legislators"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:10:09.156Z",
+      "by": "source-collector"
     }
   ]
 }

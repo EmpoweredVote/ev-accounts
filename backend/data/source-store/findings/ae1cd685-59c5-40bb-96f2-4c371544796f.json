@@ -378,6 +378,56 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.606Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment rights",
+        "federal gun rules"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature profile page for House District 68 (https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=68): confirms Mike Clines, House member since 2023; no firearms content; sponsored-bills list page not reviewed",
+        "blocked: https://ballotpedia.org/Mike_Clines (fetch returned empty; curl returned nothing)",
+        "web search on name plus Second Amendment/firearms: nothing on the subject tied to him",
+        "web search on 2026 election: ballot and news listings show him as incumbent on the Nov 3 2026 general ballot, primary uncontested",
+        "not reviewed: campaign site (none found)",
+        "not reviewed: https://web.sos.ky.gov/candidatefilings/Default.aspx?cand=11540"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:09:05.711Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on a type of firearm",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits and minimum age",
+        "repeal of gun laws",
+        "general statement on gun rights"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "web search: Clines plus firearm bill words (results showed only votes already on file)",
+        "legislature bill pages for HB 312 and HB 315 (2026): Clines not in the sponsor list; HB 312 page lists other sponsors",
+        "a legislator-tracking site profile page for Clines (no gun bills or statements; links only to the legislature's profile)",
+        "blocked: https://ballotpedia.org/Mike_Clines (timed out)",
+        "blocked: https://www.lrc.ky.gov/Legislators (no response)",
+        "not reviewed: campaign site (none found)",
+        "no official or campaign page of their own was read; nothing on the subject in own words found"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:17:04.299Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -187,6 +187,26 @@
           "sha256": "fd5594be2aacdb70f2dae01bee4fb82fbeaef7443ea9f18e54c02f150620282f"
         }
       }
+    },
+    {
+      "id": "ed39770ab816a566b0e75c733f9e18cb0a70198c1877b73037c3218c53142b5a",
+      "kind": "own-words",
+      "url": "https://aaronthompsonkyhouse.com/issues",
+      "date": "2026-11-14",
+      "date_precision": "year",
+      "passage": "He is pro-life, will be protective of the Second Amendment, and is dedicated to the values and principles of the Republican Party including fiscal discipline, limited government, and as little taxation as possible.",
+      "note": "Campaign issues page, written in the third person in his campaign's name. A general statement that he will protect the Second Amendment; no specific gun policy named. Page is undated; date is when I read it.",
+      "subjects": [
+        "general statement on the Second Amendment and gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:08:50.079Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -228,6 +248,36 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.608Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "ghost guns",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "status: sitting member of the Kentucky House, District 98 (Greenup and part of Boyd County); the 2026 primary was cancelled and the November general election is unopposed per a web search (confirmed on the campaign site news page, which names him as the 98th District candidate)",
+        "On the Record (0 appearances; run with --names, no meetings found)",
+        "campaign site https://aaronthompsonkyhouse.com/issues (read; one statement on the Second Amendment)",
+        "campaign site https://aaronthompsonkyhouse.com (home page read; nothing else on the subject)",
+        "campaign site https://aaronthompsonkyhouse.com/news (read; nothing on the subject)",
+        "campaign site https://aaronthompsonkyhouse.com/meet_aaron (fetch errored in my shell; not reviewed)",
+        "blocked: https://ballotpedia.org/Aaron_Thompson_(Kentucky) (empty page returned)",
+        "blocked: https://app.legiplex.com/profile/aaron-thompson-20290/legislation (HTTP 403)",
+        "https://www.billsponsor.com/politicians/11561/aaron-thompson (sponsored-bill list via summary: HB 490, HB 36, HB 281, HB 422 'crimes and punishments', HR 123; none shown as gun bills; nothing on the subject)",
+        "https://apps.legislature.ky.gov/record/26RS/hb422.html (title only; no firearm text seen)",
+        "news search on name plus firearm words: nothing tying him to a gun bill sponsorship",
+        "not reviewed: legislature member page and bill-by-bill sponsor page (the sponsor page URL I found belonged to a different member)"
+      ],
+      "found": 1,
+      "at": "2026-11-14T14:08:50.079Z",
+      "by": "source-collector"
     }
   ]
 }

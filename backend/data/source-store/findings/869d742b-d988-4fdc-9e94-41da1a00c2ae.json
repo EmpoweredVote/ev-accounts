@@ -728,6 +728,46 @@
           "sha256": "bb43427042a2ee45ce3d54fc371a502a1521822d41e7532604adb3b2259bedfa"
         }
       }
+    },
+    {
+      "id": "af407c2169865702c961885e90f74a25faaa062da3d1b6813f8c64ff8e1db833",
+      "kind": "own-words",
+      "url": "https://spectrumnews1.com/ky/louisville/news/2025/02/27/bill-would-require-destruction-of-confiscated-murder-weapons",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "passage": "Families often wonder what happens to the weapon, and I think it is a good move out of respect to them just to make sure they're destroyed, and hopefully, at the end of all that, just give them some closure,",
+      "note": "Quoted by Spectrum News 1 on why he wants guns used in homicides destroyed rather than resold.",
+      "subjects": [
+        "destroying guns used in homicides"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:13:13.720Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a64a02b0298a25cf451ba07b5ed7776f48645ac1dcb8a5ed0d8371148348e1b8",
+      "kind": "own-words",
+      "url": "https://www.marshallcountydaily.com/?p=141737",
+      "date": "2025-03-08",
+      "date_precision": "day",
+      "passage": "The Senate approved my SB 144 this week. It requires firearms used in criminal homicides to be destroyed rather than resold at public auction.",
+      "note": "His weekly legislative update, describing SB 144 as passed by the Senate.",
+      "subjects": [
+        "destroying guns used in homicides"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:13:13.720Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -771,6 +811,33 @@
       "found": 8,
       "at": "2026-11-11T21:12:46.601Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "destroying guns used in homicides",
+        "carry a gun without a permit",
+        "carry age 18-20",
+        "state help with federal gun bans",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "one news search on name plus gun words",
+        "his legislative update column at https://www.marshallcountydaily.com/?p=141737 (read)",
+        "a Spectrum news story on SB 144 (read)",
+        "https://legislature.ky.gov member page (no usable text returned)",
+        "blocked: https://www.newsfromthestates.com/node/166535",
+        "not reviewed: Ballotpedia",
+        "not reviewed: campaign site",
+        "not reviewed: legislature bill pages beyond those on file",
+        "Owensboro Times committee story read; carries only a paraphrase of him, not saved",
+        "Hoptown Chronicle story only seen through a summary, so no passage copied"
+      ],
+      "found": 2,
+      "at": "2026-11-14T14:13:13.720Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -354,6 +354,58 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.606Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rules in general",
+        "Second Amendment",
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns"
+      ],
+      "places": [
+        "status: lost the 2026-11-03 general election for House District 65 (still holds the seat until the term ends); page: https://www.wcpo.com/news/northern-kentucky/gallrein-and-barr-hold-the-line-for-republicans-currin-surprises-on-election-night-in-northern-kentucky",
+        "On the Record (0 meetings)",
+        "blocked: https://stephaniedietz.com/ (site returns a domain-not-connected error page, so no own page could be read)",
+        "https://en.wikipedia.org/wiki/Stephanie_Dietz (office and 2026 loss; nothing on guns)",
+        "blocked: https://ballotpedia.org/Stephanie_Dietz (fetch returned empty)",
+        "https://ivoterguide.com/candidate/62223/race/31229/election/1461 (2nd Amendment question left unanswered; not a finding)",
+        "https://linknky.com/?p=299216 and https://linknky.com/opinion/2023/12/12/opinion-continuing-the-work-we-started-together/ (nothing on the subject)",
+        "one web search on name plus firearm words (nothing on the subject beyond the votes already on file)",
+        "not reviewed: Kentucky legislature member page and bill pages (not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:10:01.813Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on types of guns or magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "ghost guns",
+        "gun rights and the Second Amendment",
+        "gun-industry lawsuit shield",
+        "machine-gun conversion devices"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.stephaniedietz.com (campaign site domain returns a hosting 404 error; https://stephaniedietz.com returned no readable text)",
+        "a January 2026 re-election press release in a local news outlet (https://linknky.com/press-releases/2026/01/20/press-release-dietz-points-to-record-of-results-for-northern-kentucky-as-re-election-bid-begins/): mentions law enforcement and school safety, nothing on firearms",
+        "https://en.wikipedia.org/wiki/Stephanie_Dietz: says she lost the 2026 general election; she is still in office until the term ends. Nothing on guns",
+        "blocked: https://ballotpedia.org/Stephanie_Dietz (no readable text returned)",
+        "https://apps.legislature.ky.gov/record/24RS/3820.html: legislature page, no member-specific gun content found",
+        "one web search on her name plus gun words: no own-words statements or extra sponsorships found beyond the votes already on file",
+        "not reviewed: https://fastdemocracy.com/bill-search/ky/legislators/KYL000299"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:15:38.712Z",
+      "by": "source-collector"
     }
   ]
 }

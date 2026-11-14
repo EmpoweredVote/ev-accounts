@@ -187,6 +187,28 @@
           "sha256": "fd5594be2aacdb70f2dae01bee4fb82fbeaef7443ea9f18e54c02f150620282f"
         }
       }
+    },
+    {
+      "id": "0a76315504e82a2eea9ffb56ea2d20bd211454135c4db6165c7ef70908916386",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/25rs/hb581.html",
+      "date": "2025-02-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-581-2025",
+      "act": "sponsor",
+      "note": "Listed among the sponsors of HB 581, which would require gun owners to keep a firearm in a safe storage depository or fitted with a gun lock, require reporting of lost or stolen firearms or ammunition to police, and set penalties. Last action: sent to the House Judiciary committee on 2025-02-25.",
+      "subjects": [
+        "safe storage of guns",
+        "reporting lost or stolen guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:08:35.003Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -229,6 +251,30 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.608Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "safe storage of guns",
+        "reporting lost or stolen guns",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member page for House District 67 (https://apps.legislature.ky.gov/Legislators/subs/House-067.html): confirms Rep. Matthew Lehman, Campbell (Part); 2026 ballot status not confirmed",
+        "legislature bill page for 2025 HB 581 (sponsor list)",
+        "web search on name plus firearm words: only secondary profile pages (voter-guide sites), no own words found; not saved",
+        "blocked: https://ballotpedia.org/Matthew_Lehman_(Kentucky) (fetch returned no text)",
+        "no official or campaign issue page with gun content was reached; not reviewed: campaign site",
+        "nothing on the subject: no own-words statements found"
+      ],
+      "found": 1,
+      "at": "2026-11-14T14:08:35.003Z",
+      "by": "source-collector"
     }
   ]
 }

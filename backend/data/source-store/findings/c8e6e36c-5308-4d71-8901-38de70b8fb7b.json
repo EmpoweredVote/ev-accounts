@@ -548,6 +548,50 @@
           "sha256": "004c0d5312691f84c09982cb68de74196ccbe529f1958de016f7f79ed5ece8b7"
         }
       }
+    },
+    {
+      "id": "5d505e43e033ad865a23d5a3d3d3791e8d045cde93d55f262fb08b456e4eac9a",
+      "kind": "own-words",
+      "url": "https://www.newsfromthestates.com/node/166535",
+      "date": "2023-03-15",
+      "date_precision": "day",
+      "passage": "Right now we have a president in the oval office who is executive-order-happy, and he just recently issued another executive order to enforce more strict gun laws,",
+      "note": "Quoted by a news story (Kentucky Lantern via News From The States) in Senate debate on HB 153, the bill barring state and local enforcement of new federal gun limits. The story says she described it as bolstering Second Amendment rights.",
+      "subjects": [
+        "state bar on enforcing federal gun rules",
+        "Second Amendment rights",
+        "federal executive orders on guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:09:32.535Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c55f2c73f64ba827d72d2df0b442a9afbafe18690124166fbcb1de9c13490f25",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/23rs/sb98.html",
+      "date": "2023-01-01",
+      "date_precision": "year",
+      "instrument_id": "KY-SB-98-2023",
+      "act": "sponsor",
+      "note": "Her bill, the Kentucky Second Amendment Preservation Act: bars state and local bodies from enforcing or funding federal firearm bans, declares infringing federal laws invalid in Kentucky, and sets civil penalties. Already on file as a sponsorship; the bill-page summary is added here.",
+      "subjects": [
+        "state bar on enforcing federal gun rules",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:09:32.535Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -564,6 +608,29 @@
       "found": 6,
       "at": "2026-11-11T21:12:46.603Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "state bar on enforcing federal gun rules",
+        "Second Amendment rights",
+        "background checks on gun buyers",
+        "pistol brace and bump stock rules"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: Tichenor firearms bill (one search)",
+        "https://www.newsfromthestates.com/node/166535 (news story on HB 153 final passage)",
+        "https://www.weku.org/2023-03-15/second-amendment-sanctuary-bill-heads-to-gov-beshears-desk (fetched; no quote of her found on page text)",
+        "https://kysenaterepublicans.com/senator-lindsey-tichenor (member page fetched; nothing on the subject found)",
+        "https://apps.legislature.ky.gov/record/23rs/sb98.html (legislature bill page for SB 98)",
+        "https://ballotpedia.org/Lindsey_Tichenor (fetched; nothing on the subject found)",
+        "not reviewed: campaign site, floor video of HB 153 / SB 98 debate, 2026 ballot status page"
+      ],
+      "found": 2,
+      "at": "2026-11-14T14:09:32.535Z",
+      "by": "source-collector"
     }
   ]
 }

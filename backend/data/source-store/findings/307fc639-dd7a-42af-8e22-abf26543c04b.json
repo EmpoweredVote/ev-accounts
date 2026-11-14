@@ -563,6 +563,151 @@
           "sha256": "5d07342f8e8e5ba7bc51e9017cbfb71daec8523a0f6e209a6927a5b704ab23ab"
         }
       }
+    },
+    {
+      "id": "111d44243fc841528e8581a4ceacb4fc6ce2a24e4853e851511ad43ec5eff7d4",
+      "kind": "own-words",
+      "url": "https://www.wkyufm.org/2026-02-24/kentucky-gop-bill-to-ban-machine-gun-conversion-devices-moves-forward",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "passage": "“It's always a moving target,” Roberts said. “The technology always seems to outpace the law, so I'm not sure if there would be any benefit to it.”",
+      "note": "Quoted by a public radio story, explaining his no vote in committee on the bill banning machine-gun conversion devices; he said specific-device bans lag behind technology and he thought the bill might infringe on the Second Amendment.",
+      "subjects": [
+        "ban on machine-gun conversion devices",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:05:21.361Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b83306658c57e94a3503e6f034615cc20e955edce53729dfb3765fa130496e5e",
+      "kind": "own-words",
+      "url": "https://www.wuky.org/wuky-news/2026-03-13/gun-makers-sellers-would-be-shielded-from-some-forms-of-liability-under-kentucky-bill",
+      "date": "2026-03-11",
+      "date_precision": "day",
+      "passage": "Roberts said Congress agreed that \"if you are a manufacturer or a seller, you're following these laws, generally speaking, individuals should not be held liable due to unforeseeable instances in which people use these items in an improper manner.\"",
+      "note": "Public radio story quoting his House committee testimony for HB 78 on shielding gun makers and sellers from lawsuits; he said it would not cover true negligence such as sales to a convicted felon.",
+      "subjects": [
+        "liability of gun makers and sellers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:05:21.361Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f005c66cb7c743afebce0a75682ab96ea810a15010acb0cc36fc433cfac9e06",
+      "kind": "own-words",
+      "url": "https://spectrumnews1.com/ky/louisville/news/2026/03/17/house-bill-78-ky-gun-laws-.html",
+      "date": "2026-03-17",
+      "date_precision": "day",
+      "passage": "“This is a litigation strategy to price law abiding Americans out of a market for a Second Amendment right. This protects gun owners to make sure that there is still a supply. So that way they can exercise that basic right,” said Roberts.",
+      "note": "Quoted in a TV news story on House floor debate of HB 78, describing lawsuits against the gun industry as a way to restrict access to a Second Amendment right.",
+      "subjects": [
+        "liability of gun makers and sellers",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:05:21.361Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "677df67b8d043b589846186b5cc714eaa73409d73653b7f66193e2987978ff79",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/tomknighton/2026/02/27/kentucky-following-west-virginias-lead-on-potential-machine-gun-sales-n1231715",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "passage": "“Federal law explicitly allows states to sell machine guns to their citizens,” Roberts declared upon filing the measure.",
+      "note": "Gun-news blog quoting him on filing HB 749, which would have state police sell machine guns to qualified persons.",
+      "subjects": [
+        "state sale of machine guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:05:21.361Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d3554641b3d256fdc94131b60eecb7bf4d2b7fe23323f64fd3ff90b9d8af0789",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26rs/hb749.html",
+      "date": "2026-02-25",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-749-2026",
+      "act": "sponsor",
+      "note": "Creates an Office of Public Defense in State Police to acquire and transfer machine guns to qualified persons, with transfer certificates and return if the holder becomes prohibited.",
+      "subjects": [
+        "state sale of machine guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:05:21.361Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "480305b89538babdcd531f71684ce9f34c7890a7fe46251f822c10595dcf1626",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26rs/hb80.html",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-80-2026",
+      "act": "sponsor",
+      "note": "If a federal firearm restriction is repealed or struck down, bars the state from enacting or enforcing a similar one, bars penalties for the formerly regulated activity, and creates a civil action against violators.",
+      "subjects": [
+        "federal firearm restrictions repealed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:05:21.361Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1cfc024ba39bedfeded25216b0dd83c7f71e815fbab5210906bafbd88b6e3aa3",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26rs/hb78.html",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-78-2026",
+      "act": "sponsor",
+      "note": "Firearms liability protections bill with an emergency clause; shields gun makers and sellers from certain liability suits.",
+      "subjects": [
+        "liability of gun makers and sellers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:05:21.361Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -607,6 +752,29 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.608Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on machine-gun conversion devices",
+        "state sale of machine guns",
+        "liability of gun makers and sellers",
+        "Second Amendment rights",
+        "federal firearm restrictions repealed"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Kentucky legislature bill pages for HB 78, HB 80, HB 749 (fetched; sponsor T. Roberts)",
+        "one news search on name plus firearm words",
+        "news stories: WKYU (Feb 2026), WUKY (Mar 2026), Spectrum News (Mar 2026), a gun-news blog (Feb 2026)",
+        "blocked: https://ballotpedia.org/T.J._Roberts (empty page)",
+        "blocked: https://ballotpedia.org/TJ_Roberts (empty page)",
+        "not reviewed: official legislature member page and campaign site (no readable page found); 2026 ballot status not confirmed by a page, person is a sitting state House member per the news stories"
+      ],
+      "found": 7,
+      "at": "2026-11-14T14:05:21.361Z",
+      "by": "source-collector"
     }
   ]
 }

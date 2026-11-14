@@ -906,6 +906,111 @@
           "sha256": "3887df09ff18c27e4fbc73e5ad1761759ef913b5c756480883a1543dcea708e6"
         }
       }
+    },
+    {
+      "id": "3f52b75af72078213649d8ac8a72d79b6e8f5fabc5d1cb0f6ef14530d8ac6fee",
+      "kind": "own-words",
+      "url": "https://www.wkyufm.org/2026-02-24/kentucky-gop-bill-to-ban-machine-gun-conversion-devices-moves-forward",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "passage": "Good Second Amendment supporters like us always say, ‘We don't need new gun laws. We need to enforce the ones we have.’ That's this bill",
+      "note": "Quoted by a public-radio story (KPR/WKYU) at the House committee hearing on HB 299; he describes the machine gun conversion device ban as a way to let local officers enforce what is already unlawful.",
+      "subjects": [
+        "ban on machine gun conversion devices",
+        "enforce existing gun laws",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:38.866Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4e0c87083e57c53310880fd02def333b164c893d13824e10accd4574084da1f5",
+      "kind": "own-words",
+      "url": "https://www.wkyufm.org/2026-02-24/kentucky-gop-bill-to-ban-machine-gun-conversion-devices-moves-forward",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "passage": "When people find new technologies, you go after those new technologies, it doesn't mean you don't go after the things that are already dangerous,",
+      "note": "Quoted by a public-radio story; answers the argument that a device ban would be outdated by new technology like forced reset triggers.",
+      "subjects": [
+        "ban on machine gun conversion devices"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:38.866Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5839ad98f86921a6d90d5d2f78a0b425ad4c68f63d03bfd9d78d7a070d63d91",
+      "kind": "own-words",
+      "url": "https://www.wkms.org/government-politics/2025-09-19/kentucky-republican-lawmaker-proposes-state-ban-on-machine-gun-conversion-devices",
+      "date": "2025-09-18",
+      "date_precision": "day",
+      "passage": "It does not make anything unlawful that is currently lawful. I cannot possess an auto sear today. It violates federal law and that does not change. It will violate state law as well [under the proposal], but it’s already unlawful. It does not take away anybody’s right that they currently have,",
+      "note": "Quoted by a public-radio story (WKMS) at the interim judiciary committee hearing; he says the proposed state ban only mirrors the existing federal ban. Story dated 2025-09-19 reports testimony 'Thursday'.",
+      "subjects": [
+        "ban on machine gun conversion devices",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:38.866Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa64c4b70a92a1502e6ed351f59532364cfb07776202a4a44acce482c4ac6d1f",
+      "kind": "own-words",
+      "url": "https://www.wkms.org/government-politics/2025-09-19/kentucky-republican-lawmaker-proposes-state-ban-on-machine-gun-conversion-devices",
+      "date": "2025-09-18",
+      "date_precision": "day",
+      "passage": "It mirrors federal law, which already says that these devices are unlawful, and it makes it unlawful in Kentucky as well,",
+      "note": "Quoted by a public-radio story; announces he plans a 2026 session bill and says local police cannot now enforce the federal rule, so a state law is needed.",
+      "subjects": [
+        "ban on machine gun conversion devices",
+        "enforce existing gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:38.866Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "42f35c8b89ac810e895a6180113a39fc7c50bd6b8c386d0998930211ed8d9994",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26rs/hb299.html",
+      "date": "2026-01-01",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-299-2026",
+      "act": "sponsor",
+      "note": "HB 299 (machine gun conversion devices): creates the offense of possessing a machine gun conversion device as a Class C felony; a committee version adds a knowing mental state and bars converting a handgun into a machine gun. Sponsor and vote already on file; this is the bill's content.",
+      "subjects": [
+        "ban on machine gun conversion devices"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:38.866Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -922,6 +1027,28 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.599Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on machine gun conversion devices",
+        "enforce existing gun laws",
+        "Second Amendment",
+        "gun ownership"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://apps.legislature.ky.gov/record/26rs/hb299.html (bill page for HB 299, names J. Nemes as sponsor; read)",
+        "blocked: https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=48 (returned no text)",
+        "blocked: https://ballotpedia.org/Jason_Nemes (returned no text); 2026 ballot status not confirmed, identified as sitting House member from Middletown in the news stories below",
+        "news search on name plus firearm words (two public-radio stories read in full)",
+        "official site, campaign site and ontheissues/vote411 not reviewed: search allowance used on news and bill pages",
+        "nothing found on background checks, red-flag orders, carry permits, or ghost guns beyond votes already on file"
+      ],
+      "found": 5,
+      "at": "2026-11-14T14:12:38.866Z",
+      "by": "source-collector"
     }
   ]
 }

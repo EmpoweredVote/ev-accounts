@@ -892,6 +892,31 @@
       "found": 6,
       "at": "2026-11-11T21:12:46.597Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or magazine",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "concealed carry licences and age limits",
+        "repeal of gun laws",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "web search: sitting House member for District 53 (Anderson and Spencer counties), unopposed on the 2026 ballot per the Secretary of State filing listing; page not opened by me, so identity rests on the legislature's HB 5 sponsor list (J. Tipton, District 53): https://apps.legislature.ky.gov/record/26RS/hb5.html",
+        "legislature bill page HB 312 (2026): sponsor list read, member not a sponsor: https://apps.legislature.ky.gov/record/26RS/HB312.html",
+        "blocked: https://ballotpedia.org/James_Tipton (empty response to curl and to the fetch tool)",
+        "not reviewed: the legislature's member profile page and personal/official or campaign site (not reached within this run; no own-words found)",
+        "news search on name plus gun words: nothing naming him on the subject",
+        "nothing on the subject: no own-words statements found"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:12:42.521Z",
+      "by": "source-collector"
     }
   ]
 }

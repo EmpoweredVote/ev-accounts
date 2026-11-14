@@ -529,6 +529,46 @@
           "sha256": "3887df09ff18c27e4fbc73e5ad1761759ef913b5c756480883a1543dcea708e6"
         }
       }
+    },
+    {
+      "id": "377d2767bdda773a8c19f0e6b6e2d7d2e0179df83cc1c3162a2de9898ca008a7",
+      "kind": "own-words",
+      "url": "https://whiteforstaterep.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "The Second Amendment represents one of our most fundamental Constitutional rights, and I will strongly defend the right to bear arms from gun-grabbing liberals.",
+      "note": "Campaign site issue section headed Pro-Second Amendment; page is undated, year is approximate (site as of 2026).",
+      "subjects": [
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:09:41.594Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4c3fb53207abb65bc49a20ada2b41af7b4b94e909ea09ea2f0d98afd5ed073c",
+      "kind": "own-words",
+      "url": "https://whiteforstaterep.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I’m a pro-life Christian, who stands up for our most important constitutional rights, the Second Amendment as well as the freedom of speech and religion.",
+      "note": "Campaign site home page statement in his voice; undated, year approximate.",
+      "subjects": [
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:09:41.594Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -570,6 +610,30 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.600Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "restrictions on gun ownership",
+        "carry without a permit",
+        "ban on assault-style guns",
+        "check every gun buyer"
+      ],
+      "places": [
+        "In scope: sitting House District 99 member (Elliott, Morgan, Rowan counties) per https://apps.legislature.ky.gov/Legislators/subs/House-099.html; his 2026 primary was unopposed per web search results",
+        "On the Record (0 appearances)",
+        "campaign site https://whiteforstaterep.com/ and https://whiteforstaterep.com/meet-richard (read)",
+        "legislature member page https://apps.legislature.ky.gov/Legislators/subs/House-099.html (read; lists no bills)",
+        "blocked: https://ballotpedia.org/Richard_White_(Kentucky) (empty page returned)",
+        "https://ivoterguide.com/candidate/52728/race/11613/election/955 (read; questionnaire layout unclear about which answer he chose, so nothing saved)",
+        "two web searches on his name plus gun words; no news story with his own gun quotes found",
+        "not reviewed: bill-by-bill sponsor search on legislature.ky.gov beyond the records already on file"
+      ],
+      "found": 2,
+      "at": "2026-11-14T14:09:41.594Z",
+      "by": "source-collector"
     }
   ]
 }

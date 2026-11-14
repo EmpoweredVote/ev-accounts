@@ -1000,6 +1000,31 @@
       "found": 7,
       "at": "2026-11-11T21:12:46.602Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders",
+        "carry a gun without a permit",
+        "general gun rights and gun safety statements"
+      ],
+      "places": [
+        "in scope: sitting state senator for District 4, filed for re-election 2025, May 2026 primary canceled, on the November 2026 ballot (per search results on Secretary of State filing, a news candidate profile and a ballot site); not independently fetched",
+        "On the Record (0 meetings)",
+        "https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=4 (fetched, page text had nothing readable; no gun content seen)",
+        "https://ballotpedia.org/Robby_Mills (fetched, empty/blocked body; nothing on the subject read)",
+        "https://www.robbymills.com (fetched, nothing on the subject)",
+        "https://kysenaterepublicans.com (caucus site search, nothing on the subject)",
+        "https://the-hendersonian.com/candidate-intro-robby-mills-seeking-re-election-to-state-senate-seat (nothing on the subject)",
+        "news search on name plus gun words: one local news story (https://the-hendersonian.com/mills-dixon-say-talks-on-gun-violence-coming, 2023-05-11) only paraphrases Mills with no direct quote, so not saved as own words",
+        "bill sponsorships on the subject: already on file; no further bill pages reviewed"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:11:32.422Z",
+      "by": "source-collector"
     }
   ]
 }

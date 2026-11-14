@@ -319,6 +319,71 @@
           "sha256": "c5fe55913f9868e0ca85cc625fc0960d17dbb33f4724fd22cce4a65589ec4252"
         }
       }
+    },
+    {
+      "id": "0f3a9d7cee464e46349610a56570f5ed3250925b1e4e9c4e8fe03a87cebd4a4f",
+      "kind": "own-words",
+      "url": "https://www.wuky.org/wuky-news/2026-03-13/gun-makers-sellers-would-be-shielded-from-some-forms-of-liability-under-kentucky-bill",
+      "date": "2026-03-11",
+      "date_precision": "day",
+      "passage": "Most of what these manufacturers are being sued for are foreseeable and they chose not to correct the deficiency",
+      "note": "Quoted by WUKY in committee on a bill limiting lawsuits against gun makers and sellers; she cast the lone no vote, saying makers and sellers should bear more responsibility.",
+      "subjects": [
+        "lawsuit protection for gun makers and sellers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:07:40.791Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "06213f459c2ab7cec2ccfb505b11dce62a74685b41a394bc90dc93291c557d68",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/RECORD/25rs/HB581.html",
+      "date": "2025-02-01",
+      "date_precision": "month",
+      "instrument_id": "KY-HB-581-2025",
+      "act": "sponsor",
+      "note": "Primary sponsor. Requires gun owners to keep firearms in a safe storage depository or with a gun lock, requires reporting of lost or stolen firearms or ammunition, and sets penalties.",
+      "subjects": [
+        "safe storage of guns",
+        "report lost or stolen guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:07:40.791Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eafbaf60d755fbccb7a8402c0eb4704fd9f7f21181621115df4f8b5c9330f3de",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/recorddocuments/bill/25RS/SB75/HFA1.pdf",
+      "date": "2025-02-01",
+      "date_precision": "month",
+      "instrument_id": "KY-SB-75-2025",
+      "act": "other",
+      "motion": "House amendment HFA1 by Rep. Stevenson",
+      "note": "Filed an amendment to SB 75 to require an annual state report on fatal and nonfatal gun incidents resulting from concealed carry.",
+      "subjects": [
+        "concealed carry",
+        "carry incident reporting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:07:40.791Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -335,6 +400,27 @@
       "found": 2,
       "at": "2026-11-11T21:12:46.608Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun maker liability shield",
+        "safe storage of firearms",
+        "report lost or stolen guns",
+        "concealed carry incident reporting",
+        "general gun policy"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature bill page HB 581 (2025) and House amendment form for SB 75 (2025)",
+        "news story (WUKY, 2026-03-13)",
+        "one news search on name plus gun words",
+        "not reviewed: official member page, campaign site, Ballotpedia (not fetched; budget of searches/fetches not the reason, run ended after the above)"
+      ],
+      "found": 3,
+      "at": "2026-11-14T14:07:40.791Z",
+      "by": "source-collector"
     }
   ]
 }

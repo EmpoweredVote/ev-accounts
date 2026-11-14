@@ -440,6 +440,30 @@
       "found": 2,
       "at": "2026-11-11T21:12:46.608Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "limits on federal gun rules",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official legislature member page, read: https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=70 (confirms House District 70 member since 2021; page has bio, committees and a sponsored-bills link, nothing on guns)",
+        "blocked: https://ballotpedia.org/William_Lawrence_(Kentucky) (empty response)",
+        "blocked: https://ballotpedia.org/Kentucky_House_of_Representatives_District_70 (empty response); 2026 general-election ballot status not confirmed by me, a search snippet says he was unopposed in 2024",
+        "legislature bill page https://apps.legislature.ky.gov/record/25rs/HB667.html (2025 Second Amendment Restoration Act): sponsor is another member, not him; nothing on the subject for him",
+        "news search on name plus gun words: nothing on the subject tied to him",
+        "campaign site: none found; not reviewed",
+        "his sponsored-bills list on the legislature site: not opened (link is script-driven); the two 2026 sponsorships already on file were not re-collected"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:03:18.860Z",
+      "by": "source-collector"
     }
   ]
 }

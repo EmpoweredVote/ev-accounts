@@ -13,7 +13,7 @@
     "Bill texts fetch direct from apps.legislature.ky.gov (no LegiScan call needed); old www.lrc.ky.gov links do not answer, but the same path on apps.legislature.ky.gov works."
   ],
   "votes": {
-    "mode": "legiscan",
+    "mode": "legiscan-plan",
     "official_hosts": [
       "apps.legislature.ky.gov"
     ],

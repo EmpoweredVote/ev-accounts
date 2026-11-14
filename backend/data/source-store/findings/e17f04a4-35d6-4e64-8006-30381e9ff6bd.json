@@ -1181,6 +1181,111 @@
           "sha256": "9ccbf60a5c3fd32076a10b1a3401129f291b690c9392ab2cb15fa5c72ca68772"
         }
       }
+    },
+    {
+      "id": "ef8210c1cb20438ee8592b3ee919c30f1db1c1123a7155b6ed260383a94f85cc",
+      "kind": "own-words",
+      "url": "https://linknky.com/kentucky/frankfort/2022/02/03/bill-proposes-banishing-gun-free-zones-kentucky/",
+      "date": "2022-02-03",
+      "date_precision": "day",
+      "passage": "I don’t see where it is appropriate to allow these types of infringements on our second amendment rights,",
+      "note": "Quoted by LINK nky. She objects to restrictions on carrying at colleges and other places, calling them infringements on Second Amendment rights.",
+      "subjects": [
+        "places where carry is allowed",
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:03.526Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7e48609f3d68a2e903fe996e25e2ae504e9621c7628f8781701ef1586d729bee",
+      "kind": "own-words",
+      "url": "https://linknky.com/kentucky/frankfort/2022/02/03/bill-proposes-banishing-gun-free-zones-kentucky/",
+      "date": "2022-02-03",
+      "date_precision": "day",
+      "passage": "The purpose of this bill, in addition to postsecondary institutions, would be to allow people who are authorized in the Commonwealth of Kentucky to carry a firearm to do so in some of these places that were previously restricted,",
+      "note": "Quoted by LINK nky on HB 124: its aim is to let people already allowed to carry do so in places that were restricted.",
+      "subjects": [
+        "places where carry is allowed",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:03.526Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1815a6ed582c86d1f5b86e60fb4c6a8a02b7468d5f6b3d27fe746d1b2f0d8ed6",
+      "kind": "own-words",
+      "url": "https://linknky.com/politics/frankfort/2023/02/14/kentucky-lawmakers-ponder-firearm-legislation-in-2023-session/",
+      "date": "2023-02-14",
+      "date_precision": "day",
+      "passage": "I think abolishing the so-called gun-free zone should be at the very top of the priorities of a Republican super majority,",
+      "note": "Quoted by LINK nky. She says ending gun-free zones should be a top legislative priority.",
+      "subjects": [
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:03.526Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1293b39b36f51df42e079811f293f70399f3f43ba86c9c72d61c4bfa3651996f",
+      "kind": "own-words",
+      "url": "https://linknky.com/politics/frankfort/2023/02/14/kentucky-lawmakers-ponder-firearm-legislation-in-2023-session/",
+      "date": "2023-02-14",
+      "date_precision": "day",
+      "passage": "I had a 2nd amendment bill — the firearm industry non-discrimination act — that passed out of the House pretty easily and died in the Senate,",
+      "note": "Quoted by LINK nky. She describes an earlier gun bill that passed the House and died in the Senate.",
+      "subjects": [
+        "general Second Amendment statement",
+        "firearm industry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:03.526Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "60bf368c7753900cd5bd7c63f79dc9520d14017a8e359464f64a6d386babedc4",
+      "kind": "own-words",
+      "url": "https://news.yahoo.com/rep-maddox-ky-house-bill-231702469.html",
+      "date": "2023-03-14",
+      "date_precision": "day",
+      "passage": "the ability of law-abiding citizens to exercise their Second Amendment rights,",
+      "note": "Fragment quoted by the Lexington newspaper, republished on Yahoo, in a story on her campus-carry bill. Same story says she offered changes such as a carry permit for campus carry and safe storage in university housing. Weak as a standalone passage: the full sentence is the reporter's.",
+      "subjects": [
+        "campus carry",
+        "places where carry is allowed",
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:03.526Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -1225,6 +1330,31 @@
       "found": 4,
       "at": "2026-11-11T21:12:46.600Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "carry permit age",
+        "places where carry is allowed (gun-free zones)",
+        "campus carry",
+        "state resistance to federal gun rules",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "the Kentucky legislature member page for House District 61 (read; confirms Savannah Maddox, Dry Ridge, sitting House member; nothing on the subject on the page)",
+        "blocked: https://www.savannahmaddox.com/ (no response)",
+        "blocked: https://ballotpedia.org/Savannah_Maddox (empty response, HTTP 202)",
+        "one news search on name plus Second Amendment words; leads followed to two local news stories and a Lexington newspaper story (via Yahoo)",
+        "a gun-rights group's release on an award (not her words; used as a lead only, nothing saved)",
+        "not reviewed: ontheissues.org, vote411 (leads only)",
+        "bill pages for her sponsorships already on file; not re-collected"
+      ],
+      "found": 5,
+      "at": "2026-11-14T14:12:03.526Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -576,6 +576,27 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.604Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "concealed carry",
+        "gun rights"
+      ],
+      "places": [
+        "status: lost the 2026-05-19 primary (ran for the 6th Congressional District nomination; Ralph Alvarado won with 56.5%, Dotson had 26.4%); his House District 73 seat is open and his term ends 2027-01-01",
+        "https://www.weku.org/2026-05-19/alvarado-dembo-win-central-kentuckys-u-s-house-primaries (news story on the primary results; fetched, page text did not name him in the passage found, results confirmed via search results only)",
+        "On the Record (0 meetings)",
+        "Kentucky legislature bill pages for 26RS HB312, 26RS HB749, 24RS HB5, 22RS HB122 (confirm him as sponsor; already on file)",
+        "blocked: https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=73 (HTTP 403)",
+        "blocked: https://ballotpedia.org/Ryan_Dotson (fetch returned empty)",
+        "not reviewed: official and campaign site gun-term search, because the primary loss ended the search"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:04:35.444Z",
+      "by": "source-collector"
     }
   ]
 }

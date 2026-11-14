@@ -326,6 +326,26 @@
           "sha256": "7495640a9dd9e7f85495755bace59ee26ec18ea50492006f4549bf0798bc6dee"
         }
       }
+    },
+    {
+      "id": "f8b46f164e9a7bae615e6f812143029ea001fc5e2709be252898a58740bd32da",
+      "kind": "own-words",
+      "url": "https://nunnforky.com/issues",
+      "date": "2024-01-01",
+      "date_precision": "year",
+      "passage": "PROTECT: LIFE, FREE SPEECH AND THE SECOND AMENDMENT",
+      "note": "Campaign issues page lists protecting the Second Amendment as one of his priorities; the page gives no detail on specific gun laws. Page is undated; year is the 2024 campaign.",
+      "subjects": [
+        "general statement on Second Amendment gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:09:40.550Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -369,6 +389,30 @@
       "found": 4,
       "at": "2026-11-11T21:12:46.609Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "general gun rights and the Second Amendment",
+        "carry a concealed gun",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site issues page https://nunnforky.com/issues (read; one gun-related heading)",
+        "campaign site about page https://nunnforky.com/about (read; nothing on the subject)",
+        "Senate caucus press release https://kysenaterepublicans.com/press-releases/2025/3/26/senator-matt-nunns-first-bill-signed-into-law (read; nothing on the subject)",
+        "legislature bill page https://apps.legislature.ky.gov/record/25RS/sb75.html (SB 75 is about concealed deadly weapons; already on file)",
+        "Wikipedia page on Matt Nunn (politician): Senate District 17 since Jan 2025, elected 2024, so sitting and in scope",
+        "Ballotpedia: no usable page text retrieved, not reviewed: https://ballotpedia.org/Matt_Nunn",
+        "one news search on name plus firearm words: nothing quoting him on the subject"
+      ],
+      "found": 1,
+      "at": "2026-11-14T14:09:40.550Z",
+      "by": "source-collector"
     }
   ]
 }

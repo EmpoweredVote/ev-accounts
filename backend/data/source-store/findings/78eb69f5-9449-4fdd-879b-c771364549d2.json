@@ -540,6 +540,49 @@
           "sha256": "7495640a9dd9e7f85495755bace59ee26ec18ea50492006f4549bf0798bc6dee"
         }
       }
+    },
+    {
+      "id": "06320e9b26f95d3d663c19722f39241409825c4ac1353a6980b1acba875c9caf",
+      "kind": "own-words",
+      "url": "https://bcrpky.net/?p=6535",
+      "date": "2026-04-10",
+      "date_precision": "day",
+      "passage": "The intent of this bill is to create consistency within existing Kentucky law, while more importantly recognizing the right to keep and bear arms. It allows Kentuckians aged 18 to carry a concealed firearm. The governor vetoed HB 312 on the grounds of age comparisons and other unrelated restrictions. However, under current law, 18-year-olds can already openly carry a firearm. This bill simply allows them to obtain a concealed carry license through a legal process that includes training and accountability, which I argue the governor should appreciate.",
+      "note": "Williams, in a legislative-update column under his name on a county party site, explains HB 312 (concealed carry licence for 18-year-olds) after the governor's veto and says it recognises the right to keep and bear arms.",
+      "subjects": [
+        "carry a concealed gun at age 18",
+        "right to keep and bear arms",
+        "carry permit with training"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:07:57.602Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1add1559f065477c4e4154b8e4808d2390800a061afc97bf86071b2926c6ab45",
+      "kind": "own-words",
+      "url": "https://bcrpky.net/?p=6535",
+      "date": "2026-04-10",
+      "date_precision": "day",
+      "passage": "This bill addresses liability standards for manufacturers and sellers. The governor framed it as limiting legal recourse, but the legislation aligns with long-standing principles that producers are not responsible for the criminal misuse of lawful products. These standards that the governor would apply to gun manufacturers do not apply to manufacturers of other products, nor are such products outlined as an inalienable right in the Bill of Rights.",
+      "note": "In the same column, Williams describes HB 78 (liability standards for gun makers and sellers) after the governor's veto, saying makers should not be held responsible for criminal misuse of lawful products.",
+      "subjects": [
+        "gun maker and seller liability",
+        "right to keep and bear arms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:07:57.602Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -583,6 +626,34 @@
       "found": 4,
       "at": "2026-11-11T21:12:46.603Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a concealed gun at age 18",
+        "gun maker and seller liability",
+        "right to keep and bear arms",
+        "check every gun buyer",
+        "red-flag orders",
+        "ban on assault-style guns",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "county party site, a legislative-update column written by Williams dated 2026-04-10 (https://bcrpky.net/?p=6535), read in full",
+        "https://kysenaterepublicans.com/senators/gex-williams (blocked: page not found, 404)",
+        "Senate caucus site search for gun (returned only the site search shell, nothing attributed to Williams)",
+        "https://legislature.ky.gov/Legislators/Pages/Legislator-Profile.aspx?DistrictNumber=20 (not reviewed: page loads only a script shell, no readable text)",
+        "https://ballotpedia.org/Gex_Williams (blocked: returned HTTP 202 with no content)",
+        "web searches: his name with Senate district; his name with gun/firearm/Second Amendment; SB 75 coverage. Confirmed as sitting Senator for District 20 since 2023. Nothing in the results quoted him on guns beyond the column",
+        "legislature bill pages for SB 75 / SB 20 / HB 312 / HB 78: sponsorships and votes already on file, not re-collected",
+        "Campaign site: none found",
+        "nothing on the subject: red flag, background checks, assault-style weapons, ghost guns, permit fees"
+      ],
+      "found": 2,
+      "at": "2026-11-14T14:07:57.602Z",
+      "by": "source-collector"
     }
   ]
 }
