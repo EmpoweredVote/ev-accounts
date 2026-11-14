@@ -458,7 +458,11 @@ Treasurer, and none of the three appears on any ballot.
 
 🔴 **A sweep written as a predicate over the column — "clear it wherever it looks wrong in Maine" —
 would have made three true rows false.** Every row was read on its own instead, and `CC_0427`
-gates that all three *keep* the flag. That gate was watched failing against a planted tamper which
+gates that all three *keep* the flag.
+
+🟢🟢 **THE SWEEP IS CLOSED (2026-11-14, `CC_0429`). Maine's eight appointed-flagged offices are
+now three, and all three are these.** Measured in prod: Attorney General, Secretary of State,
+Treasurer, and nothing else in the state. That gate was watched failing against a planted tamper which
 swept them in, and it fired before the count gate did, which is why the order matters.
 
 #### 🔴🔴 R9i. SOUTH PORTLAND — THE SAME DEFECT AS BANGOR, THE OPPOSITE FIX
@@ -505,17 +509,61 @@ voters of the entire city"* — the districts are residency qualifications, not 
 electorates. So an address returning all seven is **correct** here. That does not generalise:
 R7 remains open for the cities that elect by ward.
 
-#### ⚪ R9j. ONE ROW STILL LEFT, AND IT IS A DIFFERENT QUESTION
+#### 🟢🟢 R9j. LEWISTON WARD 5 — THE ANSWER WAS IN OUR OWN SCHEMA, NOT IN THE BODY'S ROSTER
 
-* **Lewiston Public Schools `School Committee Member (Ward 5)` (Lynnea Hawkins)** is
-  **unresolved**, and the reason is a finding rather than a search failure: ⚠ **the committee
-  publishes its membership as an IMAGE.** The page carries no `Ward` string at all and the only
-  machine-readable trace of her is `lhawkins@lewistonpublicschools.org`. That "nothing found" was
-  checked with a positive control — the same extractor pulled 57 lines of real text off the same
-  page, and the raw HTML does contain "Hawkins" — so it is the body's practice, not a broken
-  reader. A ward school-committee seat is elective, so the flag is either **wrong about the
-  office** or **recording how one PERSON arrived in it**, and those want opposite fixes. ▶ Its own
-  look, against the Lewiston city clerk's election returns.
+`CC_0429`, 2026-11-14, closes the sweep. This section previously said Ward 5 needed the Lewiston
+city clerk's election returns, because **the committee publishes its membership as an IMAGE** —
+the page carries no `Ward` string at all and the only machine-readable trace of Hawkins is
+`lhawkins@lewistonpublicschools.org`. (That "nothing found" was checked with a positive control:
+the same extractor pulled 57 lines of real text off the same page and the raw HTML does contain
+"Hawkins", so it is the body's practice, not a broken reader.)
+
+**It needed neither the returns nor the roster.** `essentials.office_terms` already carries
+`how_started`, and both of this committee's appointees were marked with it:
+
+| seat | holder | `office_terms.how_started` | `offices.is_appointed_position` |
+| --- | --- | --- | --- |
+| Ward 5 | Lynnea Hawkins | `appointed` | **`true`** ← the defect |
+| Ward 7 | Emily Levasseur | `appointed` | `false` ← correct, migration 1467 |
+
+🟢 **THE CONTROL WAS ONE SEAT OVER ON THE SAME COMMITTEE.** Migration 1467 seated Levasseur after
+Mayor Sheline appointed her on 2026-07-23 to finish a term: it set `how_started` and left the
+office elective. Two identical situations on one body, two opposite office flags — and the
+charter says which is right: *"The qualified voters of each of the seven (7) wards of the city
+shall nominate and elect a school committee member."*
+
+🔴🔴 **A PERSON-FACT HAD BEEN WRITTEN ONTO AN OFFICE.** `how_started` is a property of a TENURE;
+`is_appointed_position` is a property of a SEAT. Filling a vacancy by appointment does not change
+what the seat is. ▶ **BEFORE GOING OUT FOR A SOURCE, ASK WHETHER THE SCHEMA ALREADY DISTINGUISHES
+THE TWO THINGS YOU ARE TRYING TO TELL APART.** A gate asserts both appointments survive, watched
+failing against a tamper that erased one while clearing the flag.
+
+#### 🔴 R9l. AND THE SAME CLAUSE FOUND A MISSING SEAT: LEWISTON'S COMMITTEE IS NINE, WE HOLD EIGHT
+
+> *"There shall be a school committee of **nine (9) members**, composed of one (1) qualified voter
+> to be elected from each ward, one (1) at-large member to be elected from any ward, … **and one
+> (1) city council member to be nominated by the mayor and appointed by the city council** from
+> any ward, who shall serve a one (1) year term"*
+
+7 wards + 1 at-large = our 8. The ninth is a sitting city councillor appointed by the council, and
+it is **the only genuinely appointed seat on this body** — the opposite of the row we had flagged.
+
+⚠ **NOT CREATED, DELIBERATELY.** Creating an office is an occupancy act: it must seat its holder
+or the 238 drift baseline rises. Naming that councillor needs the committee's roster, and this
+committee publishes its membership as an image. 🔴 **A NAME IS NOT GUESSABLE AND NAMESAKES REACH
+PRODUCTION.**
+
+🟢 **`official_count` IS NOW 9 AGAINST OUR 8 ROWS, AND THAT IS THE POINT** — it records the body's
+real size so the shortfall is countable instead of invisible, which is exactly what made Bangor
+findable (R9f) and what South Portland's self-confirming 8 could not do (R9i).
+⚠ **Measured before setting it: `official_count` is read by NOTHING in `backend/src`** — zero
+occurrences, it is written only by seeding generators. It is metadata for sessions and gates, not
+a voter-facing field, so a size larger than our row count cannot render a phantom vacancy to
+anybody. ▶ **A later pass can gate on `official_count` vs `count(offices)` per chamber.** Nothing
+does today.
+
+▶ **FOLLOW-UP, dated 2026-11-14:** identify and seat Lewiston's council-appointed ninth member.
+The committee's agendas or minutes are the likeliest readable source.
 
 ### ⚠ R9b. WARDS EXIST IN THESE CITIES — AS VOTING WARDS, NOT COUNCIL DISTRICTS
 
