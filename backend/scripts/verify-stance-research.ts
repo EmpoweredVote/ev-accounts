@@ -108,6 +108,7 @@ import {
 import { decidePublish, type Decision } from './lib/stancePublishPolicy.js';
 import { GATE_CHECK_IDS, checkBlankExaminedFallback, type GateFinding } from './lib/stanceGate.js';
 import { buildLedgerFile, politicianIdsInBatch, type LedgerRow } from './lib/writtenLedger.js';
+import { refuseWriteInSlimSession } from './lib/noWriteGuard.js';
 
 // ---------------------------------------------------------------- args
 function flag(name: string): boolean {
@@ -148,6 +149,7 @@ let SEASON_SPEC: string;
 try { SEASON_SPEC = seasonSpecFromArgv(process.argv); } catch (e) { console.error(`ERROR: ${(e as Error).message}`); process.exit(2); }
 const BATCH_ID = opt('--batch-id', basename(DIR.replace(/\/+$/, '')))!;
 const APPLY = flag('--apply');
+if (APPLY) refuseWriteInSlimSession('verify-stance-research --apply');
 // Review-all unless the operator opts in, per run (ruling 2026-09-22). Deliberately argv-only:
 // an env var would let a scheduled run inherit unattended publishing nobody chose for it.
 const AUTO_PUSH = flag('--auto-push');

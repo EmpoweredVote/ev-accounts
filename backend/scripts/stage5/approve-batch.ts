@@ -23,6 +23,9 @@
 import { pool } from '../../src/lib/db.js';
 import { resolveResearchReview } from '../../src/lib/researchEvidenceService.js';
 import { handCheckedUrl, unverifiableNote } from './lib.js';
+import { refuseWriteInSlimSession } from '../lib/noWriteGuard.js';
+
+refuseWriteInSlimSession('approve-batch');
 
 const [editor, batches] = process.argv.slice(2);
 if (!editor || !batches || editor.startsWith('--')) {

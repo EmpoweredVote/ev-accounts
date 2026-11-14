@@ -25,6 +25,18 @@ reads is carried on every later step of the session.
 - A stop that is not listed below is a finding: write down what caused it.
 - Report to the runner in plain English: result first, short sentences, terms defined.
 
+## This legislature
+
+{{#LEG}}
+From `{{LEG_PATH}}` (facts about the legislature, shared by every topic):
+
+{{LEG_SUMMARY}}
+{{/LEG}}
+{{^LEG}}
+No legislature profile is on file for `{{xx}}` yet, so this session learns its hosts, vote layout and text marks
+by hand. Session A writes them down at hand-over (`legislature.py new {{xx}} --name "{{STATE}}"`).
+{{/LEG}}
+
 ## Settled, do not ask again
 
 {{SETTLED}}
@@ -76,7 +88,12 @@ command with `--triage {{S}}/sponsor-triage-{{xx}}.json --write {{S}}/legiscan/c
 Check every `idmap.tsv` line you add against the person's name **and chamber**. Refuse a match from another state.
 
 **A3. Bill texts.** Fetch texts, then fill them with Sonnet agents as a `wave.py` wave (the newest
-`FILL-BRIEF*.md` under `{{S}}/legiscan/` is the model). Check the fills' quotes, with a planted control. Write down
+`FILL-BRIEF*.md` under `{{S}}/legiscan/` is the model). Check the fills' quotes, and watch a planted wrong quote fail once:
+
+```bash
+python3 -I scripts/stage5/check_fill_quotes.py --fills {{S}}/legiscan/fill --texts {{S}}/legiscan/texts --state {{xx}} --flag <the fill brief's on-topic key>
+```
+ Write down
 for the hand-over how this legislature marks new and struck words, how its roll calls name motions, and its hosts.
 
 **A4. Store and pre-fill.** Merge into the store; `npm run source-store --prefix backend -- validate`; then
@@ -107,14 +124,17 @@ python3 -I scripts/stage5/bill_table.py questions {{S}}/bill-table-{{xx}}.json -
 **A5b. Before asking: probe the write.** Two checks that otherwise surface in session B:
 
 1. Can our reader open this legislature's roll-call pages? Read each host's `robots.txt` and fetch one roll-call
-   page. If not, put "where do we read roll calls" on the stop 1 sheet.
+   page. If not, put "where do we read roll calls" on the stop 1 sheet. (A host the profile above already marks
+   "blocked" needs no probe; one marked "not checked", or a profile verified long ago, does.)
 2. Does every core-bill vote of an in-scope person carry a chamber, a date and a tally? List any that does not.
 
 **A6. Hand-over, then stop 1.** Write `{{S}}/{{xx}}/HANDOVER-A.md` (ten parts, below). 🛑 **Stop 1:** show the
 questions and the stub list. On the answers: write each one word for word under `## {{STATE}} notes {state:{{xx}}}`
 in `{{S}}/coder-rulings.md`, naming every person a ruling is about; add a `per_vote` entry to a bill-table row when
-a ruling reads one vote differently from the row; run `check` again; add the answers to the hand-over. Commit the
-store files by pathspec. Then close out:
+a ruling reads one vote differently from the row; run `check` again; add the answers to the hand-over. Then write down what this session learned about the legislature, for
+every later topic: edit `{{LEG_PATH}}` (or start it with `python3 -I scripts/stage5/legislature.py new {{xx}} --name "{{STATE}}"`),
+set `verified` to today, and run `python3 -I scripts/stage5/legislature.py check {{xx}}`. Facts about the legislature
+only: no topic, no rung, no person. Commit it with the store files, by pathspec. Then close out:
 
 ```bash
 python3 -I scripts/stage5/close_state.py --profile {{PROFILE}} --state {{xx}} --session <this session's .jsonl> --leg A
@@ -131,8 +151,8 @@ python3 -I scripts/stage5/close_state.py --profile {{PROFILE}} --state {{xx}} --
 5. Name fixes: each `idmap.tsv` line added, and each match refused.
 6. Bill table: path, `check` result, flagged, settled by earlier rulings, the runner's answers word for word with
    the date, every `per_vote` entry, the stub list and the answer to it.
-7. Legislature quirks for the write: hosts, votes mode, session numbering, how texts mark changes, known gaps, and
-   the result of the two probes in A5b.
+7. Legislature quirks: "see `{{LEG_PATH}}`", plus only what is new or changed since it was verified, and the result
+   of the two probes in A5b.
 8. Open items.
 9. Checks passed.
 10. Session B's card: `{{CARD_B}}`.
