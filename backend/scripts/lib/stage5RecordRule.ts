@@ -249,6 +249,29 @@ export function namedInRulings(fullName: string, rulingsSection: string): boolea
   return rulingsSection.includes(fullName) || new RegExp(`(?<![\\w-])${esc(last)}(?![\\w-])`).test(rulingsSection);
 }
 
+const BILL_ID = /(?<![\w-])[A-Z]{2}(?:-[A-Z0-9]+)+-\d{4}(?![\w-])/g;
+
+/**
+ * The part of the unit's rulings that `namedInRulings` should read. A ruling about what a BILL is ends with
+ * "People: …", the list of everyone who holds an act on it. Once the bill table carries that ruling, the list
+ * says nothing about the person: the script reads the same row a coder would. Tennessee's eleven such lists named
+ * all 129 people with a record, so the script coded nobody (2026-11-14); without them it codes 94, each the same
+ * as the Opus code. A list is dropped only when the text before it names at least one bill and EVERY bill it
+ * names has an answered row in the table. Only the unit's own bills count (`billPrefix`): a ruling often cites
+ * another state's bill as its precedent, and that bill is never in this table. Any other name stays: a ruling about a person, a list with no bill
+ * before it, and a list beside a bill the table lacks or still flags.
+ */
+export function rulingsNameText(rulingsSection: string, table: Record<string, RuleBillRow>, billPrefix: string): string {
+  return rulingsSection.split('\n').map((line) => {
+    const at = line.indexOf(' People: ');
+    if (at < 0) return line;
+    const body = line.slice(0, at);
+    const bills = (body.match(BILL_ID) ?? []).filter((b) => b.startsWith(billPrefix));
+    const settled = bills.length > 0 && bills.every((b) => table[b] && !(table[b].flag ?? '').trim());
+    return settled ? body : line;
+  }).join('\n');
+}
+
 /** The `## … {state:xx}` or `{federal}` sections of the rulings digest: the unit's own notes. */
 export function unitSections(md: string, unit: string): string {
   const tag = unit === 'federal' ? 'federal' : unit.replace(/^state:/, '');

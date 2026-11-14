@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { NEEDS_STANDING_CHECK, SCRIPT_CODER, checkCode, type Stage5Code } from './stage5Code.js';
 import type { CoderFinding } from './stage5CoderInputs.js';
-import { billName, decideRecord, namedInRulings, seededSample, sponsorGate, standingCheckDifferences, unitSections, wordsFor, type RuleBill, type RuleBillRow, type RuleInput } from './stage5RecordRule.js';
+import { billName, decideRecord, namedInRulings, rulingsNameText, seededSample, sponsorGate, standingCheckDifferences, unitSections, wordsFor, type RuleBill, type RuleBillRow, type RuleInput } from './stage5RecordRule.js';
 import type { PersonFindings } from './sourceStore.js';
 
 let n = 0;
@@ -180,5 +180,26 @@ describe('rulings helpers', () => {
     expect(namedInRulings('Avelino Valencia', ca)).toBe(true);
     expect(namedInRulings('Ana Ram', ca)).toBe(false);
     expect(namedInRulings('Bob Both', ca)).toBe(false);
+  });
+  it('drops a bill ruling\'s People list once the bill table carries the ruling, and nothing else', () => {
+    const t: Record<string, RuleBillRow> = { 'XX-HB-2-2025': { rung: 2 }, 'XX-HB-3-2025': { rung: 3 }, 'XX-HB-9-2025': { rung: 4, flag: 'ask the runner' } };
+    const text = (line: string) => rulingsNameText(line, t, 'XX-');
+    // every bill named is in the table and answered: the list goes
+    const settled = '- Q1: XX-HB-2-2025 and XX-HB-3-2025 are rung 3. People: Ann Able, Bob Both.';
+    expect(namedInRulings('Ann Able', text(settled))).toBe(false);
+    expect(text(settled)).toContain('XX-HB-2-2025');
+    // a person named in the ruling itself stays named
+    const about = '- Two-sided: Ann Able (XX-HB-2-2025) keeps a rung 2 sponsorship. People: Bob Both.';
+    expect(namedInRulings('Ann Able', text(about))).toBe(true);
+    expect(namedInRulings('Bob Both', text(about))).toBe(false);
+    // a bill the table lacks, a bill still flagged, and a list with no bill before it: the list stays
+    expect(namedInRulings('Ann Able', text('- Q2: XX-HB-2-2025 and XX-HB-77-2025 are rung 3. People: Ann Able.'))).toBe(true);
+    expect(namedInRulings('Ann Able', text('- Q3: XX-HB-9-2025 is rung 4. People: Ann Able.'))).toBe(true);
+    expect(namedInRulings('Ann Able', text('- Q4: read these records with care. People: Ann Able.'))).toBe(true);
+    // another state's bill, cited as the precedent, is not this table's to hold
+    expect(namedInRulings('Ann Able', text('- Q5: XX-HB-3-2025 is rung 3, as YY-HB-8-2024. People: Ann Able.'))).toBe(false);
+    expect(namedInRulings('Ann Able', text('- Q6: as YY-HB-8-2024, such bills are rung 3. People: Ann Able.'))).toBe(true);
+    // each line is judged on its own
+    expect(namedInRulings('Ann Able', text(`${settled}\n- Q4: read these records with care. People: Ann Able.`))).toBe(true);
   });
 });

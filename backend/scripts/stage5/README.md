@@ -91,6 +91,12 @@ person's record and decides **only the plain cases**; an Opus coder decides the 
 | Any other blank | only gated votes, No votes on both sides, or only no-rung bills |
 | The script's own text failed a coding check | never fixed by hand: the person goes to Opus |
 
+A ruling about a bill ends with "People: …", everyone who holds an act on it. That list does not count as naming a
+person once every one of the state's bills the ruling names has an answered row in the bill table
+(`rulingsNameText`). Tennessee's eleven lists named all 129 people with a record and the script coded nobody; without
+them it codes 94, each the same as the Opus code (Washington: 9 more people, 9 the same). A name in the ruling's own
+words, a list with no bill before it, and a list beside a bill the table lacks or flags still send the person to Opus.
+
 **Guards.** A script code is marked `coded_by: stage5-record-script`. It passes the same `checkAtIngest` as a coder's
 code, plus the party sweep. It sits in `<out>/script-codes/` until `adopt` passes, and `checkCode` refuses it without
 its `script_check` stamp at ingest, in the report and at write time, so it cannot reach the database unchecked.
