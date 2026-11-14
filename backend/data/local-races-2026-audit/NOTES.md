@@ -206,3 +206,78 @@ the general ballot, never inferred from losing.
 Five contests belong wholly to the primary and can simply move there. **South Tucson belongs to
 both**: one seat filled in July, two in November. Our single race row carries `seats = 3` on the
 general, which is the right number for the *office* and the wrong number for that *ballot*.
+
+---
+
+# State of play, 2026-11-14 — 46 of the 50 are done, 4 are left
+
+| | | |
+| --- | --- | --- |
+| `CC_0421` | Arizona, 6 rows | 5 races moved to the 2026-07-21 primary that held them; South Tucson split across both elections; 32 candidacies |
+| `CC_0422` | Oregon, 21 → 7 rows | the multi-seat council contests collapsed to one race each, `seats = 3` |
+| `CC_0423` | Oregon, 26 races | 102 candidacies — 18 won, 26 lost, **58 with no result** |
+
+**Empty 2026-11-03 races nationwide: 50 → 4.** Occupancy baseline unmoved at 238 throughout; nothing
+in any of the three seats anybody.
+
+## ▶ The 4 that are left, and what is already known about each
+
+### Racine County, Wisconsin — Sheriff and Clerk of Circuit Court
+
+**Both were on the 2026-11-03 ballot; that part is settled.** Wis. Stat. 59.20(2)(b) puts the sheriff
+on the gubernatorial cycle (2006 + 4n → 2026) and (2)(a) puts the register of deeds on the
+presidential one, and Racine's own summary carries a `Sheriff` and a `Clerk of Circuit Court`
+contest and **no Register of Deeds** — the statute predicts which offices appear and the ballot
+matches.
+
+What is NOT settled is the numbers, and there are two obstacles:
+
+- 🔴 **`curl` gets 403 on `racinecounty.gov` document URLs** even with a browser User-Agent and a
+  Referer, and on the alternate `racinecounty.com` host too. The file comes down inside the browser,
+  where it is same-origin.
+- 🔴 **The text extracted from that PDF is OFFSET BY ONE BLOCK.** It pairs `Sheriff (Vote for 1)`
+  with `Amy Vanderhoef 54,674` — Vanderhoef is the **Clerk of Circuit Court** — and pairs
+  `Clerk of Circuit Court (Vote for 1)` with `Yes 43,284 / No 36,344`, which is a **referendum**.
+  The contest titles are usable; **not one number in that extraction may be read.**
+
+▶ Try the **Statement of Votes Cast** rather than the Election Summary Report, or the Wisconsin
+Elections Commission, or screenshot the summary pages and read them. ⚠ Press reporting has **Don
+Vandervest** winning the sheriff's race over Cary Madrigal, with our roster still seating
+**Christopher Schmaling** after 16 years — treat that as a lead until a county figure is read.
+
+### Wood Village, Oregon — City Council Seat 1 and Seat 2
+
+🔴 **Do not map these without evidence.** Three separate problems:
+
+1. The ballot has `Councilor, Position 1` (**Charlene Gothard**, unopposed, 802) and
+   `Councilor, Position 4` (**Christine Bierman**, unopposed, 810). We hold `Seat 1` and `Seat 2`.
+2. Our **Seat 2's** holder is **Charlene Gothard**, who is on the ballot for the city's **Position
+   1** — so our numbering is not the city's numbering.
+3. Our **Seat 1's** holder is **John Miner**, who was made **Mayor by the council in January 2023**.
+   That is the rotating-chair shape CLAUDE.md warns about, which *eats a council seat*. He may no
+   longer hold a council seat at all.
+
+⚠ We hold **2 offices for a council that numbers at least 4 positions**, so this is partly a
+missing-office problem, not only a mapping one. ▶ Read the city's own roster and charter
+(`woodvillageor.gov`; `woodvillage.municipal.codes/Charter`) before touching either row.
+
+## ▶ Two follow-ups that wait on other people, not on us
+
+- **13 uncalled Oregon contests** carry their ballot and no outcome, because Oregon publishes no
+  winner flag and no outstanding-ballot count. The counties certify within 20 days of the election
+  and the Secretary of State's page still reads `UNOFFICIAL`. ▶ A results pass after that; the
+  analysis JSON already holds every vote total and margin.
+- **South Tucson's general** has no winner recorded: Pima publishes a canvass for the July primary
+  and none for 2026-11-03, and the second seat rests on **8 votes**. ▶ Revisit after Pima canvasses.
+
+## ⚠ Session state a fresh session should know
+
+- Leases `state:or`, `state:az`, `state:wi` were claimed for this work and should be released when
+  it is finished.
+- The worktree `C:/ev-accounts-locals` exists; the branches for `CC_0421`-`CC_0423` are merged.
+- 🔴 **`C:\EV-Accounts` itself has been parked on a dead branch**, `perf/cities-summary-index-only`,
+  squash-merged as PR #1345 on 2026-11-08 with its remote copy deleted. It has 0 modified tracked
+  files and was **105 commits behind master** on 2026-11-14, which is why a session reading
+  `CLAUDE.md` from it gets a copy 651 lines out of date. The rule against moving HEAD in a worktree
+  you did not create has no exit condition for a branch that no longer exists anywhere.
+  ▶ `git switch master && git pull` there, once somebody confirms no session is live in it.
