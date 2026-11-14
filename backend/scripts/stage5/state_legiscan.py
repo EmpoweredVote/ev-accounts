@@ -51,6 +51,8 @@ def key(f):
                               else 'A' if re.search(r'\bAssembly\b', txt) and not re.search(r'\bSenate\b', txt)
                               else 'S' if re.search(r'\bSenate\b', txt) else None)
     t = re.search(r'tally (\d+)\s*[–-]\s*(\d+)', txt) or re.search(r', (\d+)-(\d+)\) on ', txt)  # notes that print '(<motion>, 76-17) on HB139' carry no 'tally' word (ky-01)
+    # a motion that ends '(RSN# 3461), 26-11' names its tally after the roll-call number (ky-02: Bledsoe's four votes)
+    t = t or re.search(r'\((?:RSN|RCS)\s*#\s*\d+\),\s*(\d+)\s*[–-]\s*(\d+)', txt)
     if not ch or not t or not f.get('date'): return None
     return {'bill': m.group(1) + m.group(2).zfill(PAD), 'year': int(m.group(4)) + YS, 'sp': m.group(3), 'chamber': ch, 'yea': int(t.group(1)), 'nay': int(t.group(2)), 'date': f['date'], 'instrument': f['instrument_id']}
 

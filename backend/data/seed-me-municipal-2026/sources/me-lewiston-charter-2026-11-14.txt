@@ -1,0 +1,39 @@
+City of Lewiston, Maine -- CITY CHARTER
+Retrieved 2026-11-14 from https://www.lewistonmaine.gov/DocumentCenter/View/237/City-Charter
+(linked as "City Charter" from https://www.lewistonmaine.gov/105/Mayor-City-Council).
+Fetched with plain curl and a full browser header set; HTTP 200; 30-page PDF, read with
+pdftotext -raw. Control: 82,335 characters extracted, 77 occurrences of "Mayor".
+
+Read for ONE question -- who elects the mayor (ROSTERS.md R9) -- because Lewiston is one of the
+three Maine cities the R9 audit never covered. The answer is unambiguous:
+
+  "The mayor shall be nominated and elected by the qualified voters of the entire city."
+
+  "The mayor and the ward councilors shall be elected to serve two- year staggered terms."
+
+So Lewiston's Mayor is a REAL, directly elected office and our schema is correct to hold one.
+
+Lewiston ALSO has a rotating chair, and we correctly hold no office for it:
+
+  "President of the council. The council shall elect for a one-year term, from among its members, a president who shall act as mayor during the temporary absence or temporary disability of the mayor, but the president shall have appointive powers only when the temporary absence or temporary disability of the mayor exceeds 45 consecutive calendar days."
+
+
+=== SCHOOL COMMITTEE (read 2026-11-14 for CC_0429) ===
+
+The same charter, same retrieval. Control: 41 occurrences of "school committee" in the extracted
+text.
+
+  "There shall be a school committee of nine (9) members, composed of one (1) qualified voter to be elected from each ward, one (1) at-large member to be elected from any ward, all of whom shall serve for two (2) year staggered terms, and one (1) city council member to be nominated by the mayor and appointed by the city council from any ward, who shall serve a one (1) year term, as set forth herein, and until their successors are elected and/or appointed and qualified."
+
+  "The qualified voters of each of the seven (7) wards of the city shall nominate and elect a school committee member who shall be qualified to vote in the ward from which elected and the qualified voters of the entire city shall nominate and elect one (1) at-large school committee member who shall be qualified to vote in any ward."
+
+Two things follow, and they are separate:
+
+1. EVERY WARD SEAT AND THE AT-LARGE SEAT ARE ELECTIVE. A person APPOINTED to fill a vacancy in
+   one of them does not make the OFFICE appointed.
+
+2. THE COMMITTEE IS NINE AND WE HOLD EIGHT. The ninth is the one city council member "nominated
+   by the mayor and appointed by the city council" for a one-year term -- a genuinely appointed
+   seat, and the only one on this body. We do not model it. Not created here: the committee
+   publishes its membership as an IMAGE and no page found names the sitting councillor who holds
+   it, and creating an office is an occupancy act that must seat its holder.
