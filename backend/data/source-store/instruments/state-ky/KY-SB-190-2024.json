@@ -1,0 +1,45 @@
+{
+  "id": "KY-SB-190-2024",
+  "scope": "state:ky",
+  "title": "SB190 (2024 Regular): AN ACT relating to firearms.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/24RS/sb190.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/24RS/sb190/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Danny Carroll",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "869d742b-d988-4fdc-9e94-41da1a00c2ae"
+    },
+    {
+      "name": "Julie Raque Adams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "04d835c3-c1a6-4d62-8d68-f806e842128c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/24RS/sb190/orig_bill.pdf (LegiScan doc 2921896))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-190-2024.introduced.pdf",
+      "sha256": "cebc7436de838bc4e570407ff8c646a5ddab69c39ebb7f59f39b5913061d76e3"
+    },
+    "note": "Introduced version (24 RS BR 62); later amendments not in text read. No votes recorded. Sections 3-8 (health care provider submission, voluntary storage in Section 4, permanent surrender in Section 5, confidentiality, awareness campaigns, rulemaking) are not quoted for length."
+  },
+  "operative_text": "Section 2 (new section of KRS Chapter 237): (1) Any person may voluntarily request to be placed on the list established under this section and be restricted from purchasing or possessing firearms.\nSection 2 (new section of KRS Chapter 237): (5)(a) Upon receipt of a request from a person seeking inclusion on the list under this section, or from the person's health care provider under Section 3 of this Act, the Department of Kentucky State Police shall add the person to the list and transmit the information to NICS within two (2) business days.\nSection 2 (new section of KRS Chapter 237): (6) The Department of Kentucky State Police shall automatically remove a person from the list one hundred eighty (180) days after the person was added to the list, unless the person requests to: (a) Be removed from the list after ninety (90) days; (b) Remain on the list for an additional one hundred eighty (180) days; or (c) Remain on the list indefinitely.\nSection 2 (new section of KRS Chapter 237): (9) If a person restricted from purchasing or possessing a firearm under this section has a license to carry a concealed deadly weapon under KRS 237.110, the person's license shall be: (a) Suspended upon inclusion to the list; and (b) Reinstated upon removal from the list, unless: 1. The license has been revoked or suspended for another reason not described in this section; 2. The license has expired; or 3. The person has otherwise been restricted from possessing a firearm under state or federal law.\nSection 2 (new section of KRS Chapter 237): (10) (a) It shall be unlawful for any person on the list to purchase, attempt to purchase, or possess a firearm. (b) Any person who violates this subsection is guilty of a Class B misdemeanor.\nSection 2 (new section of KRS Chapter 237): (11) (a) It shall be unlawful for any person or entity required to perform a background check prior to transferring a firearm to transfer a firearm, either knowingly or due to a failure to perform the required background check, to any person on the list. (b) Any person who violates this subsection is guilty of a Class A misdemeanor for the first offense, and a Class D felony for a second or subsequent offense."
+}

@@ -219,6 +219,30 @@
       "found": 9,
       "at": "2026-11-11T18:21:13.540Z",
       "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "ceremonial signing of House Bill 78 and House Bill 312 (2026)",
+        "red-flag orders",
+        "concealed carry",
+        "Second Amendment sanctuary"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "blocked: https://sos.ky.gov/sos-office/Pages/Biography.aspx (HTTP 403)",
+        "blocked: https://ballotpedia.org/Michael_Adams (HTTP 403)",
+        "blocked: https://lexingtonky.news/?p=200137 (host not reachable; a news story on a May 2026 ceremonial signing of two gun bills, could not read it to copy any passage)",
+        "not reviewed: https://lexingtonky.news/?p=199735",
+        "not reviewed: https://justfacts.votesmart.org/public-statement/1482069/issue-position-pro-2nd-amendment",
+        "web search (2 standard searches): only leads, no readable own-words or record page for Adams; office is Secretary of State, term to January 2028, no legislative votes or sponsorships",
+        "not reviewed: legislature bill pages (Secretary of State is not a legislator)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:10:23.342Z",
+      "by": "source-collector"
     }
   ]
 }

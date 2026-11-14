@@ -1,0 +1,50 @@
+{
+  "id": "KY-SB-103-2018",
+  "scope": "state:ky",
+  "title": "SB103 (2018 Regular): AN ACT relating to school safety.",
+  "urls": [
+    "http://www.lrc.ky.gov/record/18RS/SB103.htm",
+    "http://www.lrc.ky.gov/recorddocuments/bill/18RS/SB103/bill.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Steve West",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e1b781c8-8cb2-4254-9f34-51fb567a4852"
+    },
+    {
+      "name": "Ralph Alvarado",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Stephen Meredith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c362a1f6-01b9-4355-a4bd-bbd1bb7fb1fb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Draft, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/18RS/SB103/bill.pdf (LegiScan doc 1696971))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-103-2018.draft.pdf",
+      "sha256": "11b9c741fa91ebdb792f8b7a3a1bedd93438c6992566461e64ebb04ec8bb4735"
+    },
+    "note": "Draft print (18 RS BR 1282), not an enrolled text; no passage vote on record. LegiScan desc says KRS 520.070, but the text amends KRS 527.070. Section 1 reprints the school-property weapon offence; the quote is item (3)(f) after the bill (struck: \"Any other persons, including, but not limited to,\")."
+  },
+  "operative_text": "Section 1 (KRS 527.070): Persons appointed as school marshals under Section 2 of this Act, exhibitors of historical displays, or any other persons who have been authorized to carry a firearm by the board of education or board of trustees of the public or private institution;\nSection 2 (new section of KRS Chapter 527): The board of a local public school district or governing body of a private or parochial school may appoint any person who meets the requirements of subsection (3) of this section to possess, transport, deposit, or carry a firearm in any public or private school building on any public or private school campus owned, used, or operated by the board or governing body.\nSection 2 (new section of KRS Chapter 527): No person shall be authorized to act as a school marshal unless he or she: (a) Is an employee in good standing of a local public school district or private or parochial school; (b) Is eligible for and a holder of a license to carry a concealed deadly weapon pursuant to KRS 237.110; and (c) Meets any additional eligibility requirements required under federal, state, or local law, or by administrative regulations promulgated by a board of a local public school district or private or parochial school.\nSection 2 (new section of KRS Chapter 527): Unless exempt under subsection (2) of this section or Section 1 of this Act, a school marshal shall not carry a firearm on his or her person but shall keep the firearm in a locked and secured area readily accessible to the marshal when he or she is on school property;\nSection 2 (new section of KRS Chapter 527): Any firearm carried by or within access of a school marshal shall be loaded only with frangible ammunition designed to disintegrate on impact for maximum safety and minimal danger to others.\nSection 2 (new section of KRS Chapter 527): A school marshal shall be responsible for the purchase of the firearm, ammunition, any expenditures related to the placement of a locked and secured area for the firearm while on the school site, and any other associated costs."
+}

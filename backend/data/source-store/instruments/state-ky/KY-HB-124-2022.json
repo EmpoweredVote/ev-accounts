@@ -1,0 +1,56 @@
+{
+  "id": "KY-HB-124-2022",
+  "scope": "state:ky",
+  "title": "HB124 (2022 Regular): AN ACT relating to concealed deadly weapons.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/22RS/hb124.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/22RS/hb124/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Savannah Maddox",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e17f04a4-35d6-4e64-8006-30381e9ff6bd"
+    },
+    {
+      "name": "Josh Calloway",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436293ef-ed3f-46b3-9bb6-809b6828eaf8"
+    },
+    {
+      "name": "Felicia Rabourn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a39b09c3-23b4-4bfb-a001-8a9a2adfb6cd"
+    },
+    {
+      "name": "William Reed",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/22RS/hb124/orig_bill.pdf (LegiScan doc 2464482))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-124-2022.introduced.pdf",
+      "sha256": "b988df35b796ef026a02a8ff5cce8cc71c6c8c776bb687f17907774b8b503d78"
+    },
+    "note": "Introduced text (22 RS BR 969); no passage vote on record. Section 2 (KRS 150.172), Section 3 (KRS 237.110) and the rest of Section 4 only drop cross-references to KRS 237.115 (struck text in brackets); the repealed statute's own text is not printed, only its title."
+  },
+  "operative_text": "Section 1 (repeals KRS 237.115): The following KRS section is repealed: 237.115 Construction of KRS 237.110 -- Prohibition by local government units of carrying concealed deadly weapons in governmental buildings -- Restriction on criminal penalties.\nSection 4 (KRS 527.020): Unless otherwise specifically provided by the Kentucky Revised Statutes or applicable federal law, no criminal penalty shall attach to carrying a concealed firearm or other deadly weapon at any location at which an unconcealed firearm or other deadly weapon may be constitutionally carried. No person or organization, public or private, shall prohibit a person from possessing a firearm, ammunition, or both, or other deadly weapon in his or her vehicle in compliance with the provisions of KRS 237.109 and 237.110."
+}

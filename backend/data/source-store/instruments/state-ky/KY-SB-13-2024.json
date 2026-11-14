@@ -1,0 +1,59 @@
+{
+  "id": "KY-SB-13-2024",
+  "scope": "state:ky",
+  "title": "SB13 (2024 Regular): AN ACT relating to crisis aversion and rights retention orders.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/24RS/sb13.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/24RS/sb13/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Whitney Westerfield",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Yates",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Casey Chambers Armstrong",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Denise Harper Angel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Reginald Thomas",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f77c1ca3-d540-49f0-b7ca-e1efce3b4db3"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/24RS/sb13/orig_bill.pdf (LegiScan doc 2903318))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-13-2024.introduced.pdf",
+      "sha256": "0ef291cfd74085bb52894cd80becc9b5ac928f1dbf345370ce65a371b0abdf97"
+    },
+    "note": "Introduced print (24 RS BR 247); no passage vote. Only law enforcement officers may petition. Sections 1-3, 6, 8-12, 15-17 (interpretation, definitions, procedure, renewal, transfer to responsible party, other-state orders) and Section 18 (KRS 431.076 expungement conforming) not quoted."
+  },
+  "operative_text": "Section 4 (new section of KRS Chapter 202D): (2) If the court finds there is probable cause to believe that the respondent presents an immediate and present danger of causing serious physical injury to self or others by purchasing, possessing, receiving, or having in his or her custody or control a firearm, the court shall, without prior notice to the respondent, issue a temporary crisis aversion and rights retention order.\nSection 4 (new section of KRS Chapter 202D): (a) Order the surrender of the respondent's firearms until the hearing required in subsection (4) of this section is held to determine whether to issue a crisis aversion and rights retention order; (b) Order that the respondent shall not purchase, possess, receive, or have in his or her custody or control a firearm, or attempt to purchase or receive a firearm while the temporary order is in effect;\nSection 5 (new section of KRS Chapter 202D): 1. Upon service of the summons and order upon the respondent, the law enforcement officer shall take custody of all firearms in the possession, custody, or control of the respondent.\nSection 7 (new section of KRS Chapter 202D): (2) Following a hearing held as ordered under Section 4 of this Act, if a court finds, based upon clear and convincing evidence, that the petitioner has overcome the rebuttal presumption afforded the respondent under subsection (1)(b) of this section, and that the respondent presents an immediate and present danger of causing serious physical injury to self or others if permitted to purchase, possess, receive, or have in his or her custody or control a firearm, the court shall issue a crisis aversion and rights retention order that: (a) Prohibits the respondent from purchasing, possessing, receiving, or having in his or her custody or control a firearm, or attempting to purchase or receive a firearm from the date the order is issued until the order expires; and (b) Orders all firearms in the possession, custody, or control of the respondent be held by a law enforcement agency until the order expires. (3) A crisis aversion and rights retention order shall be effective for a period of time fixed by the court, not to exceed ninety (90) days, and may be renewed upon expiration pursuant to Section 10 of this Act for subsequent periods of up to ninety (90) days each.\nSection 13 (new section of KRS Chapter 202D): A law enforcement agency shall return any surrendered firearm requested by a respondent only after confirming, through a background check, that the respondent is currently eligible to possess firearms.\nSection 14 (new section of KRS Chapter 202D): (2) A person who knowingly purchases, receives, or has in his or her custody or control a firearm with knowledge that he or she is prohibited from doing so by any crisis aversion and rights retention order is guilty of a Class D felony."
+}

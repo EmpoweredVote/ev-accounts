@@ -1,0 +1,39 @@
+{
+  "id": "KY-SB-177-2019",
+  "scope": "state:ky",
+  "title": "SB177 (2019 Regular): AN ACT relating to firearms possession by domestic abusers.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/19RS/sb177.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/19RS/sb177/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Julie Raque Adams",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "04d835c3-c1a6-4d62-8d68-f806e842128c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/19RS/sb177/orig_bill.pdf (LegiScan doc 1904995))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-177-2019.introduced.pdf",
+      "sha256": "9be047124c0646beb1b4e19264707f064e8833239f276013f47a1badf9cd99f7"
+    },
+    "note": "Introduced print (no date on the print); no passage vote in the data, so it is the bill as filed. Sections 4 and 5 add notice duties in the protective-order statutes."
+  },
+  "operative_text": "Section 2 (new section of KRS Chapter 527): (1) A person is guilty of possession of a firearm by a convicted domestic abuser when the person wantonly possesses, purchases, manufactures, or transports a firearm and the person has been convicted of a domestic abuse offense in any state or federal court. (2) A person is guilty of possession of a firearm by the subject of a domestic violence protective order when: (a) The person wantonly possesses, purchases, manufactures, or transports a firearm; and (b) The person is currently subject to a domestic violence protective order, as defined in Section 1 of this Act. (3) Possession of a firearm by a convicted domestic abuser or subject of a domestic violence protective order is a Class C felony.\nSection 3 (new section of KRS Chapter 527): (2) Within twenty-four (24) hours after being informed of the firearm prohibition, a person convicted of a domestic abuse offense or made subject to a domestic violence protective order shall transfer all firearms he or she owns or possesses to the chief of police of the municipality where the person resides, the chief law enforcement officer of the county, or to the sheriff of the county where the person resides.\nSection 3 (new section of KRS Chapter 527): (8) A person convicted of a domestic abuse offense or subject to a domestic violence restraining order who does not comply with the terms of this section is guilty of a Class A misdemeanor.\nSection 4 (KRS 403.740): (4) When a domestic violence order serves to prohibit the adverse party from possessing a firearm under Section 2 of this Act, the court shall inform the adverse party of the firearm possession prohibition and the firearm transfer requirements under Section 3 of this Act."
+}

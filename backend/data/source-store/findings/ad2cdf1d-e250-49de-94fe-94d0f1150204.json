@@ -66,6 +66,99 @@
         "fetched_at": "2026-11-11T21:12:46.609Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "f7db7b79be1334d51e057ca79f5f8e9ef2865f923e4049d9c087d0a248b1db47",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb312.html",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-312-2026",
+      "act": "nay",
+      "motion": "Senate: Veto Override RSN# 4167",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY Senate, Senate: Veto Override RSN# 4167, 2026-04-14: nay (tally 28–9); census gate: none.",
+      "subjects": [
+        "concealed-carry license for ages 18 to 20",
+        "provisional license valid until age 21",
+        "switch to standard license"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Chaptered, 0000-00-00; official copy, https://apps.legislature.ky.gov/law/acts/26RS/documents/0173.pdf (LegiScan doc 3442881))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-312-2026.chaptered.pdf",
+          "sha256": "63c37beef2557d8aa85b424bd92efeb42ef4cd70465d63cb2117ec40b0402fee"
+        }
+      }
+    },
+    {
+      "id": "b1b0c54b9b2ca5b88a9609d52b8d0d0d0297b8c473a2f0da69e954f6d2a1d4b8",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb78.html",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-78-2026",
+      "act": "nay",
+      "motion": "Senate: Veto Override RSN# 4163",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY Senate, Senate: Veto Override RSN# 4163, 2026-04-14: nay (tally 31–6); census gate: none.",
+      "subjects": [
+        "no civil suits against gun and ammunition makers or sellers for criminal misuse",
+        "local liability rules preempted",
+        "makers and sellers may sue over barred claims"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Chaptered, 0000-00-00; official copy, https://apps.legislature.ky.gov/law/acts/26RS/documents/0177.pdf (LegiScan doc 3443083))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-78-2026.chaptered.pdf",
+          "sha256": "fd5594be2aacdb70f2dae01bee4fb82fbeaef7443ea9f18e54c02f150620282f"
+        }
+      }
+    },
+    {
+      "id": "0280c5da3f883ab192a6d57bfaa7c5ff98d74b9123d39c9416cbed21561f6132",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/sb333.html",
+      "date": "2026-03-13",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-333-2026",
+      "act": "yea",
+      "motion": "Senate: Third Reading RSN# 3925",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "KY Senate, Senate: Third Reading RSN# 3925, 2026-03-13: yea (tally 38–0); census gate: near-unanimous.",
+      "subjects": [
+        "proceeds of confiscated-firearm sales go to body-armor grants",
+        "grants no longer buy firearms or ammunition",
+        "homicide firearms bought at auction must be destroyed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Engrossed, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/26RS/sb333/bill.pdf (LegiScan doc 3394390))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-333-2026.engrossed.pdf",
+          "sha256": "80ce498f835fe2eefeb9b8201fa06e419eeea7e4326077599e63eb4de4fccb60"
+        }
+      }
     }
   ],
   "searches": [
@@ -105,6 +198,32 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.609Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "guns in schools"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "legislature member page for Senate District 37 (https://apps.legislature.ky.gov/Legislators/subs/Sen-37.html): confirms Sen. Gary Clemons in office; nothing on the subject",
+        "web search: confirmed sitting state senator for District 37, took office January 2026 after a December 2025 special election",
+        "https://ballotpedia.org/Gary_Clemons: fetched, no gun-related text found",
+        "https://ivoterguide.com/candidate/89396/race/24685/election/1374: questionnaire answers on gun questions are marked 'did not answer'; nothing on the subject",
+        "https://www.dlcc.org/candidates/gary-clemons/: nothing on the subject",
+        "campaign/official site: no separate site found; not reviewed",
+        "web search on name plus gun/Second Amendment words: nothing on the subject",
+        "not reviewed: bill sponsorship pages on the legislature site (no sponsorships on the subject surfaced in search)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T14:08:58.640Z",
+      "by": "source-collector"
     }
   ]
 }

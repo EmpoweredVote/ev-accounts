@@ -1,0 +1,45 @@
+{
+  "id": "KY-HB-475-2023",
+  "scope": "state:ky",
+  "title": "HB475 (2023 Regular): AN ACT relating to firearms and declaring an emergency.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/23RS/hb475.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/23RS/hb475/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "George Brown",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "35de0809-a7a8-458e-bf71-7e10743d00a1"
+    },
+    {
+      "name": "Beverly Chester-Burton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1a0c1ea9-9bde-43b9-8ebd-5c798c12cf6c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/23RS/hb475/orig_bill.pdf (LegiScan doc 2712143))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-475-2023.introduced.pdf",
+      "sha256": "38b10167497cfc9cb88f8c3c5d2714a0f699a6e11d4264a651a49d7312c8b754"
+    },
+    "note": "Introduced text (23 RS BR 1310, dated 2/17/2023); later amendments are not in the text read. Quotes are partial because the file is 68,000 characters. Other gun parts not quoted: Section 1 definitions; Section 5 (KRS 395.250, estate inventory lists each firearm); Section 6 (KRS 403.735, protective-order judges consider firearm prohibition); Section 7 (KRS 504.030) and Section 14 (KRS 532.030, surrender of firearms after not-guilty-by-reason-of-insanity or guilty-but-mentally-ill); Section 9 (KRS 506.080, facilitation); Section 10 (KRS 508.020, wanton injury to a minor by discharging a firearm is assault 2nd degree); Section 11 (1) criminal purchase or transfer of a weapon; Section 13 (KRS 527.070, postsecondary facilities added to the school weapons ban; added words cannot be told from the print); Section 15 (1)(b)-(5) fees, 5-year licenses, Class A/D felony and misdemeanor penalties for breaking the licensing and registration regulations, sales log; Section 15 takes effect 1/1/2024. Sections 8, 16, 17, 18 conform other laws (Section 18 KRS 65.1591 is peer-support text). Emergency clause."
+  },
+  "operative_text": "Section 2 (new section of KRS Chapter 237): (1) In addition to any other requirement of state or federal law, all sales, exchanges, or transfers of firearms shall be conducted in accordance with this section unless the sale, exchange, or transfer is: (a) Conducted by a licensed importer, licensed manufacturer, or licensed dealer, as those terms are defined in 18 U.S.C. secs. 921 and 922, when the sale, exchange, or transfer is conducted pursuant to that person’s federal firearms license; or (b) Between spouses, children, and stepchildren in the same immediate family.\nSection 2 (new section of KRS Chapter 237): (6) Any person who knowingly violates this section shall be guilty of a Class A misdemeanor.\nSection 3 (new section of KRS Chapter 237): (1) Any owner or other person lawfully in possession of a firearm who suffers the loss or theft of the firearm or any person who sells ammunition who suffers a loss or theft of ammunition shall, within twenty-four (24) hours of the discovery of the loss or theft, report the facts and circumstances of the loss or theft to a local police department or sheriff’s office.\nSection 4 (new section of KRS Chapter 237): (1) A person who owns or is custodian of a firearm shall not store or otherwise leave the firearm out of his or her immediate possession or control without having first securely locked the firearm in an appropriate safe storage depository or rendered it incapable of being fired by use of a gun-locking device appropriate to that weapon, including through the use of a safe or other secure container which, when locked, is incapable of being opened without the key, combination, or other unlocking mechanism and is capable of preventing an unauthorized person from obtaining access to and possession of its contents. (2) A violation of this section shall be a Class A misdemeanor.\nSection 11 (new section of KRS Chapter 527): (2) Criminal purchase or transfer of a weapon is a Class D felony.\nSection 12 (KRS 527.040): (c) Sentences for violation of this section shall be served subsequent to the service of any other felony sentence imposed on the offender.\nSection 15 (new section of KRS Chapter 237): (1) (a) The Department of Kentucky State Police shall promulgate an administrative regulation for the licensure of persons to possess a handgun in the Commonwealth of Kentucky.\nSection 15 (new section of KRS Chapter 237): (2) (a) The Department of Kentucky State Police shall promulgate an administrative regulation for the registration of handguns in Kentucky.\nSection 15 (new section of KRS Chapter 237): (3) (a) The Department of Kentucky State Police shall promulgate an administrative regulation for the licensure of persons to possess an assault weapon or a large-capacity ammunition-feeding device in the Commonwealth of Kentucky.\nSection 19 (repeal): The following KRS section is repealed: 65.870 Local firearms control ordinances prohibited -- Exemption from immunity -- Declaratory and injunctive relief."
+}

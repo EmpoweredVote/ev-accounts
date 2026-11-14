@@ -1,0 +1,75 @@
+{
+  "id": "KY-HB-139-2025",
+  "scope": "state:ky",
+  "title": "HB139 (2025 Regular): AN ACT relating to concealed deadly weapons.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/25RS/hb139.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/25RS/hb139/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Savannah Maddox",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e17f04a4-35d6-4e64-8006-30381e9ff6bd"
+    },
+    {
+      "name": "Steven Rudy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "35ba8996-3165-4787-b160-6bcf4e206289"
+    },
+    {
+      "name": "Josh Calloway",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436293ef-ed3f-46b3-9bb6-809b6828eaf8"
+    },
+    {
+      "name": "Steven Doan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9afa6c68-2cf9-4946-8ea0-7171d4153a4e"
+    },
+    {
+      "name": "Felicia Rabourn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a39b09c3-23b4-4bfb-a001-8a9a2adfb6cd"
+    },
+    {
+      "name": "T.J. Roberts",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "307fc639-dd7a-42af-8e22-abf26543c04b"
+    },
+    {
+      "name": "Mitch Whitaker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fdbf79b2-a20e-420f-a602-13c074e17ebb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/25RS/hb139/orig_bill.pdf (LegiScan doc 3043909))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-139-2025.introduced.pdf",
+      "sha256": "534b9cd1b5a1ed3c8abbeab525a352a8c314eb66bbe7e33fbb5c7ba7a3d38282"
+    },
+    "note": "Introduced print (no date on the print); no passage vote in the data, so it is the bill as filed. Age 21 is struck and 18 added in KRS 237.109(1) and KRS 237.110(1)(c). Other changes in Section 2 are punctuation only."
+  },
+  "operative_text": "Section 1 (KRS 237.109): (1) Persons age eighteen (18) or older, and otherwise able to lawfully possess a firearm, may carry concealed firearms or other concealed deadly weapons without a license in the same locations as persons with valid licenses issued under KRS 237.110.\nSection 2 (KRS 237.110): (c) Is eighteen (18) years of age or older;"
+}

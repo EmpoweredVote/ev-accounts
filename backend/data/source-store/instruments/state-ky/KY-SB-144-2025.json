@@ -1,0 +1,262 @@
+{
+  "id": "KY-SB-144-2025",
+  "scope": "state:ky",
+  "title": "SB144 (2025 Regular): AN ACT relating to confiscated firearms.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/25RS/sb144.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/25RS/sb144/bill.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Danny Carroll",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "869d742b-d988-4fdc-9e94-41da1a00c2ae"
+    },
+    {
+      "name": "Karen Berg",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e9e43630-0799-4769-8c3a-06a946fbc9c8"
+    },
+    {
+      "name": "Keturah Herron",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78c9e7c6-4796-49b7-8e1a-1220b48e2adb"
+    },
+    {
+      "name": "Gerald Neal",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3009b2ae-1c46-474e-b917-fd8730f60992"
+    },
+    {
+      "name": "David Yates",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-03-05",
+      "body": "KY Senate",
+      "motion": "Senate: Third Reading W/sfa1 RSN# 3431",
+      "kind": "roll-call",
+      "yes": 38,
+      "no": 0,
+      "absent": 0,
+      "note": "LegiScan roll call 1506463",
+      "members": [
+        {
+          "name": "David Givens",
+          "vote": "yea",
+          "politician_id": "ef8e611e-e0d7-46ba-99e4-c99d57a305a1"
+        },
+        {
+          "name": "Jimmy Higdon",
+          "vote": "yea",
+          "politician_id": "12d07bd4-98e4-4cfb-aec9-1b6f50ae5ca8"
+        },
+        {
+          "name": "Gerald Neal",
+          "vote": "yea",
+          "politician_id": "3009b2ae-1c46-474e-b917-fd8730f60992"
+        },
+        {
+          "name": "Brandon Smith",
+          "vote": "yea",
+          "politician_id": "2ed0f349-f4fc-4d82-ab9e-c7c3f51f4731"
+        },
+        {
+          "name": "Robert Stivers",
+          "vote": "yea",
+          "politician_id": "d68a846f-498d-4e14-a9f3-130e85849681"
+        },
+        {
+          "name": "Robin Webb",
+          "vote": "yea",
+          "politician_id": "62a3692f-806e-4fa4-bb98-33a30e8c7c04"
+        },
+        {
+          "name": "Julie Raque Adams",
+          "vote": "yea",
+          "politician_id": "04d835c3-c1a6-4d62-8d68-f806e842128c"
+        },
+        {
+          "name": "Mike Nemes",
+          "vote": "yea",
+          "politician_id": "75c40115-8134-412b-9160-5515c53d2689"
+        },
+        {
+          "name": "Jared Carpenter",
+          "vote": "yea",
+          "politician_id": "32c23ded-b2c6-401a-b37c-7cbe3b3cd728"
+        },
+        {
+          "name": "Mike Wilson",
+          "vote": "yea",
+          "politician_id": "ef0a5595-1825-4f06-9833-91c4f3cfdde2"
+        },
+        {
+          "name": "Christian McDaniel",
+          "vote": "yea",
+          "politician_id": "3fc12c7a-9762-4219-b5b7-e5f4979760e2"
+        },
+        {
+          "name": "Reginald Thomas",
+          "vote": "yea",
+          "politician_id": "f77c1ca3-d540-49f0-b7ca-e1efce3b4db3"
+        },
+        {
+          "name": "George Wise",
+          "vote": "yea",
+          "politician_id": "7fe409b9-8c3b-4318-9e74-18284d203736"
+        },
+        {
+          "name": "Danny Carroll",
+          "vote": "yea",
+          "politician_id": "869d742b-d988-4fdc-9e94-41da1a00c2ae"
+        },
+        {
+          "name": "Steve West",
+          "vote": "yea",
+          "politician_id": "e1b781c8-8cb2-4254-9f34-51fb567a4852"
+        },
+        {
+          "name": "Rick Girdler",
+          "vote": "yea",
+          "politician_id": "4dacfa0f-1e78-4c40-99aa-999385f73bd9"
+        },
+        {
+          "name": "Stephen Meredith",
+          "vote": "yea",
+          "politician_id": "c362a1f6-01b9-4355-a4bd-bbd1bb7fb1fb"
+        },
+        {
+          "name": "Robert Mills",
+          "vote": "yea",
+          "politician_id": "0e7af788-d735-46ec-9cd2-cd3818e002fd"
+        },
+        {
+          "name": "Phillip Wheeler",
+          "vote": "yea",
+          "politician_id": "eb11bd91-1800-49b1-81ef-8afca0ab4b87"
+        },
+        {
+          "name": "Brandon Storm",
+          "vote": "yea",
+          "politician_id": "95fceb14-a0c3-43e5-a0a0-338b5d3b3e7b"
+        },
+        {
+          "name": "Jason Howell",
+          "vote": "yea",
+          "politician_id": "0c3f4128-922d-41fe-b268-bd7d811e46e6"
+        },
+        {
+          "name": "Karen Berg",
+          "vote": "yea",
+          "politician_id": "e9e43630-0799-4769-8c3a-06a946fbc9c8"
+        },
+        {
+          "name": "David Yates",
+          "vote": "yea"
+        },
+        {
+          "name": "Donald Douglas",
+          "vote": "yea",
+          "politician_id": "cfe729b2-264e-4f93-8961-1f0c4721a0d1"
+        },
+        {
+          "name": "Keturah Herron",
+          "vote": "yea",
+          "politician_id": "78c9e7c6-4796-49b7-8e1a-1220b48e2adb"
+        },
+        {
+          "name": "Gary Boswell",
+          "vote": "yea",
+          "politician_id": "f313c2e0-0852-4238-a48d-6bde751bb6f9"
+        },
+        {
+          "name": "Steve Rawlings",
+          "vote": "yea",
+          "politician_id": "73fd5b49-9255-4051-a43a-de04156e4c3f"
+        },
+        {
+          "name": "Lindsey Tichenor",
+          "vote": "yea",
+          "politician_id": "c8e6e36c-5308-4d71-8901-38de70b8fb7b"
+        },
+        {
+          "name": "Gex Williams",
+          "vote": "yea",
+          "politician_id": "78eb69f5-9449-4fdd-879b-c771364549d2"
+        },
+        {
+          "name": "Amanda Mays Bledsoe",
+          "vote": "yea"
+        },
+        {
+          "name": "Matthew Deneen",
+          "vote": "yea",
+          "politician_id": "3429ecef-5857-496b-9de6-85412b5caaaa"
+        },
+        {
+          "name": "Shelley Frommeyer",
+          "vote": "yea",
+          "politician_id": "ac6a69c3-4321-41d9-8402-903cb7aca569"
+        },
+        {
+          "name": "Casey Chambers Armstrong",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Elkins",
+          "vote": "yea",
+          "politician_id": "45f0223f-8b1b-4586-8610-5e717f250b46"
+        },
+        {
+          "name": "Scott Madon",
+          "vote": "yea",
+          "politician_id": "bcd854eb-0eb8-4f21-8737-cc2435c615cc"
+        },
+        {
+          "name": "Matt Nunn",
+          "vote": "yea",
+          "politician_id": "c236893a-126e-45ae-83db-ae62be4f0554"
+        },
+        {
+          "name": "Aaron Reed",
+          "vote": "yea",
+          "politician_id": "0f7609c6-1285-4b00-aeca-17343045ebfe"
+        },
+        {
+          "name": "Craig Richardson",
+          "vote": "yea",
+          "politician_id": "6ddd5288-b0db-4d1e-8cf4-56d8669e7b0d"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Engrossed, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/25RS/sb144/bill.pdf (LegiScan doc 3155397))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-144-2025.engrossed.pdf",
+      "sha256": "a4af03c18fa6510393a108d2a3b7700c94140fd8c99e94849098bc86c0d3a746"
+    },
+    "note": "Engrossed (\"GA\" print, 25 RS SB 144/GA, dated 3/5/2025): version \"other\"; later amendments are not in the text read. Large file; quotes partial. Section 2 (KRS 500.090(1)(c)2.b.) also bars an agency from intentionally damaging, modifying or disabling a firearm before transfer to State Police except as necessary for forensic testing; not quoted because the sentence crosses a page break. Subsection (7)(a) (defaced serial number) is not quoted because it crosses a page break. Struck: the auction-to-any-bidder option for homicide guns in KRS 16.220(1)(b) and (2)(d). Section 3 is a police-standards requirement tied to the homicide-gun rule."
+  },
+  "operative_text": "Section 1 (KRS 16.220): (1) Subject to the duty to return confiscated firearms to innocent owners pursuant to KRS 500.090, and subsection (7) of this section, all firearms confiscated by the Department of Kentucky State Police and not retained for official use pursuant to KRS 500.090 shall be: (a) Sold at public auction to federally licensed firearms dealers holding a license appropriate for the type of firearm sold; or (b) For a firearm which was used in a criminal homicide, destroyed.\nSection 1 (KRS 16.220): (7) The commissioner or the commissioner's designee may order the destruction of any firearm confiscated by the Department of Kentucky State Police and not retained for official use, or any firearm coming into the custody of another law enforcement agency and transferred to the Department of Kentucky State Police for disposition as required by Section 2 of this Act, if it is determined that the firearm:\nSection 1 (KRS 16.220): (b) Is contaminated with a hazardous substance or biological materials, to an extent that would make the firearm hazardous to health; (c) Is unsafe to discharge in the manner for which it was designed, due to damage or alteration; or (d) Is subject to return to an innocent owner who has requested, in writing, that the Department of Kentucky State Police destroy the firearm.\nSection 2 (KRS 500.090): (d) 1. Subject to the duty to return confiscated firearms to innocent owners pursuant to this section, all firearms used in a criminal homicide shall, upon order of the trial court, be destroyed by the agency having custody of the firearm. 2. The agency having custody of the firearm shall not retain the firearm for official use or transfer it to the Department of Kentucky State Police for disposition. The agency shall destroy the firearm not more than ninety (90) days after the court orders the destruction.\nSection 3 (KRS 15.440): (j) Possesses by January 1, 2026, a written policy and procedures manual related to destruction of firearms used in criminal homicides, which includes a requirement that all firearms used in a criminal homicide are destroyed in a manner which deems the firearm inoperable and disposed of in a manner so that no parts of the firearm are functional; and"
+}

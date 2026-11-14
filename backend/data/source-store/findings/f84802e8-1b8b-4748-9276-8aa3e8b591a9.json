@@ -85,6 +85,156 @@
         "fetched_at": "2026-11-11T18:21:40.247Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "9e4f0982b230a0ad9449e11d4ba2701fc0ceeb1f57584f552d034eeeb912c1fc",
+      "kind": "own-words",
+      "url": "https://953wiki.com/news/local-news/kentucky-attorney-general-sues-to-stop-biden-administrations-harassment-of-law-abiding-gun-owners",
+      "date": "2024-05-10",
+      "date_precision": "day",
+      "passage": "The Biden Administration is trying everything it can to come after law-abiding Kentuckians and one of our most cherished constitutional rights,",
+      "note": "Statement in the AG's office release on joining a 21-state suit against the federal ATF rule that requires people who sell guns for profit to hold a dealer licence. Republished by a local radio site. Same release: \"As a lifetime member of the NRA, I will always defend our freedoms against this big-government harassment.\" The coalition's filing argues the rule is vague, violates the Second Amendment and goes around Congress, and says sales between friends and family would become felonies without a licence and background check.",
+      "subjects": [
+        "rules on private gun sales and dealer licensing",
+        "federal agency gun rules",
+        "general statement on Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:17.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d2548d81467223ed94cd0d768b0a4c8ef383338afcc0c2c8dda3a17daf4aef2",
+      "kind": "own-words",
+      "url": "https://953wiki.com/news/local-news/kentucky-attorney-general-gun-control-advocates-are-firing-blanks",
+      "date": "2024-01-31",
+      "date_precision": "day",
+      "passage": "Opponents of the Second Amendment will stop at nothing to keep Americans from exercising our right to keep and bear arms.",
+      "note": "Statement in the AG's office release about a letter he and 26 other attorneys general sent the President, opposing a federal inquiry into an ammunition plant. Same release quotes him on prosecuting criminals rather than law-abiding gun owners: \"As Attorney General and a lifetime member of the NRA, I am proud to fight for Kentuckians' constitutional rights.\" Republished by a local radio site.",
+      "subjects": [
+        "general statement on Second Amendment rights",
+        "ammunition sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:17.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c09779c9f7fc9764da40a2454331d47212cb5164a3cb90b814153c5520fcd0e",
+      "kind": "own-words",
+      "url": "https://westkentuckystar.com/News/State/24-attorneys-general,-including-Coleman,-ask-Congr",
+      "date": "2025-06-13",
+      "date_precision": "day",
+      "passage": "Congress has the opportunity to bring clarity and consistency to a system that unfairly penalizes responsible gun owners simply for crossing state lines. As AG, husband & father, and lifetime member of the NRA, I am proud to stand up for law-abiding Kentuckians who want to protect their families while traveling.",
+      "note": "Quoted by Kentucky Today (carried by West Kentucky Star) on a letter he signed with 23 other attorneys general urging passage of H.R. 38, the Constitutional Concealed Carry Reciprocity Act. He also said \"This one is just common sense.\" The bill would give nationwide recognition to carry permits and to residents of states with no permit requirement.",
+      "subjects": [
+        "carry a gun without a permit",
+        "honor other states' carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:17.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "953273dc30565fb0a12b59e857c59e86dba578ee5b56eb981ea2679b058998f7",
+      "kind": "record",
+      "url": "https://westkentuckystar.com/News/State/24-attorneys-general,-including-Coleman,-ask-Congr",
+      "date": "2025-06-13",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Multistate attorneys general letter to U.S. House leadership urging passage of H.R. 38, Constitutional Concealed Carry Reciprocity Act",
+      "note": "Coleman is one of 24 attorneys general who signed the letter, as reported by Kentucky Today. The bill excludes people barred from gun ownership under federal law.",
+      "subjects": [
+        "honor other states' carry permits",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:17.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6a4b4d49e7ea6a6d5c1dc959bce4f810ac0ef5dcbc189c757ddea604c6ec5956",
+      "kind": "record",
+      "url": "https://953wiki.com/news/local-news/kentucky-attorney-general-sues-to-stop-biden-administrations-harassment-of-law-abiding-gun-owners",
+      "date": "2024-05-10",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Joined 21-state lawsuit challenging ATF rule on who must hold a federal firearms dealer licence",
+      "note": "Kentucky, through Coleman, joined a suit led by Kansas, Iowa and Montana against the ATF rule that treats people who sell guns for profit as dealers.",
+      "subjects": [
+        "rules on private gun sales and dealer licensing",
+        "federal agency gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:17.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c65892ff61045f79dc82093246aa2aeb26fac66ae60102a1d7a49cbd77cc7b0",
+      "kind": "record",
+      "url": "https://media.ark.org/ag/Letter-Regarding-National-Firearms-Act.pdf",
+      "date": "2026-09-04",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Signed 21-attorney-general letter urging Congress to repeal National Firearms Act provisions (silencers, short-barreled rifles and shotguns, 'any other weapons')",
+      "note": "The letter, signed by Coleman as Kentucky Attorney General, says the NFA has placed heavy burdens on law-abiding gun owners and urges Congress to repeal the provisions at issue in Silencer Shop Foundation v. ATF so they cannot be enforced against anyone.",
+      "subjects": [
+        "repeal National Firearms Act rules on suppressors and short-barreled rifles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:17.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9604702ba4417e3c25dae020239a55c6c7349b1cc2ecd6a4806b8d118f41fc7b",
+      "kind": "record",
+      "url": "https://ag.ky.gov/Press%20Release%20Attachments/2024-07-15%20Appellant%20Brief.pdf",
+      "date": "2024-07-15",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Brief for the Commonwealth, Commonwealth v. Frazier, No. 2024-CA-0366, defending Kentucky's felon-in-possession law (KRS 527.040)",
+      "note": "Filed over Coleman's name as Attorney General. Asks the Court of Appeals to reverse a circuit ruling and hold the ban on felons having guns facially constitutional under the Second Amendment, leaving any as-applied questions for another day.",
+      "subjects": [
+        "who may own a gun (people with felony convictions)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:12:17.608Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -116,6 +266,42 @@
       ],
       "found": 4,
       "at": "2026-11-11T18:21:40.247Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "rules on private gun sales and dealer licensing",
+        "carry a concealed gun, honoring other states' permits",
+        "repeal of National Firearms Act rules on suppressors and short-barrelled guns",
+        "who may own a gun (people with felony convictions)",
+        "ammunition makers and gun-rights generally",
+        "red flag orders",
+        "ghost guns and frame-and-receiver rule",
+        "pistol brace rule",
+        "assault-style weapon and magazine bans",
+        "waiting periods, permits, minimum ages"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://953wiki.com (Jan 2024 and May 2024 AG office releases, read in full)",
+        "https://westkentuckystar.com (Kentucky Today story, June 2025, read)",
+        "https://media.ark.org/ag/Letter-Regarding-National-Firearms-Act.pdf (letter signed by Coleman, read)",
+        "https://ag.ky.gov appellant brief PDF, Commonwealth v. Frazier (cover and introduction read)",
+        "official AG site search page (https://www.ag.ky.gov/Pages/Search.aspx?k=firearm): results load dynamically, nothing readable",
+        "blocked: https://ballotpedia.org/Russell_Coleman (no content returned)",
+        "blocked: https://clayconews.com (felon appeal release, challenge page)",
+        "blocked: https://m.washingtontimes.com/news/2025/aug/12/gop-state-attorneys-general-join-gun-rights-groups-lawsuit-repeal/",
+        "blocked: https://www.guns.com/news/2025/08/14/15-states-join-lawsuit-challenging-nfa",
+        "not reviewed: https://www.wdrb.com/in-depth/ky-attorney-general-ruling-allowing-convicted-felons-right-to-own-guns-defies-common-sense/article_7f5c3606-e878-11ee-b9c7-47e0df28da9c.html (page returned no article text)",
+        "not reviewed: https://legalnewsline.com felon-appeal story (page text did not contain the release)",
+        "legislature bill pages: not applicable, Coleman is the statewide attorney general, not a legislator",
+        "two web searches on name plus subject words; nothing found on red flag, ghost guns, pistol brace, assault-style bans, waiting periods or minimum ages",
+        "scope: sitting Kentucky Attorney General; name appears on the AG's own filed brief and signed letters; not a candidate in the 2026 ballot"
+      ],
+      "found": 7,
+      "at": "2026-11-14T14:12:17.608Z",
       "by": "source-collector"
     }
   ]

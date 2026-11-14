@@ -276,6 +276,332 @@
         "fetched_at": "2026-11-11T21:12:46.598Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "0b57f201abbf82b2547cc867994d117fec430b177641761cb2230adaaa3c50a3",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/19rs/sb150.html",
+      "date": "2019-03-01",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-150-2019",
+      "act": "nay",
+      "motion": "House: Third Reading RCS# 196",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY House, House: Third Reading RCS# 196, 2019-03-01: nay (tally 60–37); census gate: none.",
+      "subjects": [
+        "permitless concealed carry at age 21 and older",
+        "same carry locations as license holders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/KY_acts_2019_ch010.pdf",
+          "sha256": "93266e8d17c0b31728a6c78573a4afda6517fbacbe2200b4273a5f2e422960c1"
+        }
+      }
+    },
+    {
+      "id": "1c2fbba4a46737ef7196a1ec92dd6d60d87d212cae6b6ca29a10ea476558a77d",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/21RS/hb175.html",
+      "date": "2021-03-03",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-175-2021",
+      "act": "nay",
+      "motion": "House: Third Reading RCS# 194",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY House, House: Third Reading RCS# 194, 2021-03-03: nay (tally 73–24); census gate: none.",
+      "subjects": [
+        "no refusing business with gun and ammunition industry",
+        "attorney general civil suits and fines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Engrossed, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/21RS/hb175/bill.pdf (LegiScan doc 2322005))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-175-2021.engrossed.pdf",
+          "sha256": "2010ad30173221452f33693e28c0f6b3b68745764402a9957c1248b238922e8f"
+        }
+      }
+    },
+    {
+      "id": "1a472fae115e03aa71b4f792534657305bacd220e09ea3c9b2113fabe755f4f6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/25RS/hb234.html",
+      "date": "2025-02-20",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-234-2025",
+      "act": "yea",
+      "motion": "House: Third Reading RCS# 50",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "KY House, House: Third Reading RCS# 50, 2025-02-20: yea (tally 92–0); census gate: near-unanimous.",
+      "subjects": [
+        "confiscated firearms sold at auction to licensed dealers",
+        "firearm-sale proceeds fund police grants, now including airport police"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Chaptered, 0000-00-00; official copy, https://apps.legislature.ky.gov/law/acts/25RS/documents/0003.pdf (LegiScan doc 3227746))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-234-2025.chaptered.pdf",
+          "sha256": "62fca6548f2c850784c1c4576ca45c08e53b5125497920d46f877037ffcbc4f0"
+        }
+      }
+    },
+    {
+      "id": "c604ab40d0e6d05a08b4d24e11f76fb622b956e555ef173fceabafc6c734b33b",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb299.html",
+      "date": "2026-03-02",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-299-2026",
+      "act": "yea",
+      "motion": "House: Veto Override RCS# 173",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY House, House: Veto Override RCS# 173, 2026-03-02: yea (tally 65–25); census gate: none.",
+      "subjects": [
+        "felony to possess a machine gun conversion device"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Engrossed, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/26RS/hb299/bill.pdf (LegiScan doc 3381986))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-299-2026.engrossed.pdf",
+          "sha256": "ecc51e9dba7b832af4422c4fcd4b80093fa2a76ebbfdddcd5be021fc7e7aa1c6"
+        }
+      }
+    },
+    {
+      "id": "1c518bcb28e0fc22f673793f86b7cb3cee4233e18200d39bb9b412bbd71c3948",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb312.html",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-312-2026",
+      "act": "nay",
+      "motion": "House: Veto Override RCS# 461",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY House, House: Veto Override RCS# 461, 2026-04-14: nay (tally 81–18); census gate: none.",
+      "subjects": [
+        "concealed-carry license for ages 18 to 20",
+        "provisional license valid until age 21",
+        "switch to standard license"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Chaptered, 0000-00-00; official copy, https://apps.legislature.ky.gov/law/acts/26RS/documents/0173.pdf (LegiScan doc 3442881))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-312-2026.chaptered.pdf",
+          "sha256": "63c37beef2557d8aa85b424bd92efeb42ef4cd70465d63cb2117ec40b0402fee"
+        }
+      }
+    },
+    {
+      "id": "f248ef3a6dbc790e585fe7db7ac14dc0383205bdd79a21a4b6a15993b57831bf",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb78.html",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-78-2026",
+      "act": "nay",
+      "motion": "House: Veto Override RCS# 457",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY House, House: Veto Override RCS# 457, 2026-04-14: nay (tally 80–19); census gate: none.",
+      "subjects": [
+        "no civil suits against gun and ammunition makers or sellers for criminal misuse",
+        "local liability rules preempted",
+        "makers and sellers may sue over barred claims"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Chaptered, 0000-00-00; official copy, https://apps.legislature.ky.gov/law/acts/26RS/documents/0177.pdf (LegiScan doc 3443083))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-78-2026.chaptered.pdf",
+          "sha256": "fd5594be2aacdb70f2dae01bee4fb82fbeaef7443ea9f18e54c02f150620282f"
+        }
+      }
+    },
+    {
+      "id": "d38303f4e1f33656c2dbe44a87c03223201c0855facbfcbc89b70256defe2b17",
+      "kind": "record",
+      "url": "http://www.lrc.ky.gov/record/18RS/HB189.htm",
+      "date": "2018",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-189-2018",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of KY-HB-189-2018 (sponsor list (prime / co-sponsor)): HB189 (2018 Regular): AN ACT relating to the regulation of firearms and ammunition..",
+      "subjects": [
+        "local governments may require responsible gun-sale practices",
+        "local lost or stolen gun reporting",
+        "local gun-violence intervention funding"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Draft, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/18RS/HB189/bill.pdf (LegiScan doc 1685608))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-189-2018.draft.pdf",
+          "sha256": "e0a58ba371a85944f2cbd2a517bf67e4995ff37b820e1ff6797c2b2236ae50f1"
+        }
+      }
+    },
+    {
+      "id": "2b4d6f030f188504737071e80f0061e7fdc94dfa98b1180ddb8afb875d1d42d4",
+      "kind": "record",
+      "url": "http://www.lrc.ky.gov/record/18RS/HB544.htm",
+      "date": "2018",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-544-2018",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of KY-HB-544-2018 (sponsor list (prime / co-sponsor)): HB544 (2018 Regular): AN ACT relating to extreme risk protective orders..",
+      "subjects": [
+        "extreme risk protective orders removing firearms and ammunition for one year",
+        "ex parte temporary orders pending a hearing within 14 days",
+        "surrender, storage and return of firearms",
+        "orders reported to the national background check system"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Draft, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/18RS/HB544/bill.pdf (LegiScan doc 1744375))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-544-2018.draft.pdf",
+          "sha256": "e25b954e85597b265e85ef28488dc9828d929c6402513d315f732f3e1495dae0"
+        }
+      }
+    },
+    {
+      "id": "da6c4649c29226c4d25ee49a9620cb70e3f1182a7f794ec6ee0088d1864b65c2",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/21RS/hb70.html",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-70-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of KY-HB-70-2021 (sponsor list (prime / co-sponsor)): HB70 (2021 Regular): AN ACT relating to firearms..",
+      "subjects": [
+        "police seizure of firearms from people found dangerous, with or without a warrant",
+        "court hearing and order barring gun possession and suspending concealed-carry license",
+        "petition to restore rights after 180 days",
+        "offences for possessing or transferring guns to a person found dangerous"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/21RS/hb70/orig_bill.pdf (LegiScan doc 2228689))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-70-2021.introduced.pdf",
+          "sha256": "e75093993d2faf03436dba7031a4484a0328ecf292f1c5ad0230b7a925f69e7e"
+        }
+      }
+    },
+    {
+      "id": "afb1514404bed4b158d72058a220f3134021a061f5cb197ab3568de60f011358",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/19RS/hb76.html",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-76-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of KY-HB-76-2019 (sponsor list (prime / co-sponsor)): HB76 (2019 Regular): AN ACT relating to firearms and declaring an emergency..",
+      "subjects": [
+        "background checks on private gun sales",
+        "report lost or stolen guns and ammunition within 24 hours",
+        "safe storage of guns",
+        "state licence and registration for handguns and assault weapons",
+        "repeal of local gun-rule preemption"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/19RS/hb76/orig_bill.pdf (LegiScan doc 1839428))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-76-2019.introduced.pdf",
+          "sha256": "1ce7869bf7e2ba6cdb1becc6a460e02cb49b38881d0376b114a39af92aa1c0ae"
+        }
+      }
+    },
+    {
+      "id": "1f35f3988a5cfd7892ef4fec215fbf2ad952b426f3b2b7badffa767a9674d1f4",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/20RS/hb76.html",
+      "date": "2020",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-76-2020",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of KY-HB-76-2020 (sponsor list (prime / co-sponsor)): HB76 (2020 Regular): AN ACT relating to firearms possession..",
+      "subjects": [
+        "gun ban for convicted domestic abusers",
+        "gun ban while under a domestic violence protective order",
+        "surrender of guns within 24 hours",
+        "court may order search for unsurrendered guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/20RS/hb76/orig_bill.pdf (LegiScan doc 2085762))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-76-2020.introduced.pdf",
+          "sha256": "de32f90837570328bff6961cd48e7e48723ac5cf4e9a5212248e37c5fe143cd1"
+        }
+      }
     }
   ],
   "searches": [

@@ -1,0 +1,55 @@
+{
+  "id": "KY-HB-463-2021",
+  "scope": "state:ky",
+  "title": "HB463 (2021 Regular): AN ACT relating to firearms.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/21RS/hb463.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/21RS/hb463/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lisa Willner",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "54f62e63-96ba-4bbb-a668-0435824216f8"
+    },
+    {
+      "name": "Nima Kulkarni",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "968bf1ff-367f-4e84-983c-030fcdc2d796"
+    },
+    {
+      "name": "Josie Raymond",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Attica Scott",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/21RS/hb463/orig_bill.pdf (LegiScan doc 2286952))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-463-2021.introduced.pdf",
+      "sha256": "6f58f9ec0facae39e44b192767d4b402facd65588e652670c2b33808cb29813d"
+    },
+    "note": "Introduced print (21 RS BR 219; no passage vote). Sections 6-8, 10-11, 13-15 (procedure, search warrant, storage and return, other-state orders), Section 18 (KRS 16.220 auction proceeds), Section 19 (KRS 237.110 reprinted, very long; concealed-carry license changes not located and not quoted), Section 20 (KRS 431.015 warrantless arrest) and Section 21 (KRS 431.076 expungement) not quoted. Petitioners include family and police."
+  },
+  "operative_text": "Section 3 (new section of KRS Chapter 237): (a) The court shall review a petition for an extreme risk protection order immediately upon its filing. 1. If the court finds there is probable cause that the respondent poses an immediate and present danger of causing serious physical injury to self or others by purchasing, possessing, receiving, or having in his or her custody or control a firearm, the court shall, without prior notice to the respondent, issue a temporary extreme risk protection order, set a date for an evidentiary hearing within fourteen (14) days, and issue a summons to the parties.\nSection 5 (new section of KRS Chapter 237): (2) Following a hearing ordered under Section 3 of this Act, if a court finds by clear and convincing evidence that the respondent poses an immediate and present danger of serious physical injury to self or others by purchasing, possessing, receiving, or having in his or her custody or control a firearm, the court shall issue an extreme risk protection order that: (a) Prohibits the respondent from purchasing, possessing, receiving, or having in his or her custody or control a firearm, or attempting to purchase or receive a firearm from the date the order is issued until the order expires, not to exceed one (1) year from the date of issue; and (b) Orders the surrender of firearms under Section 9 of this Act until the order expires. (3) An extreme risk protection order shall be effective for a period of time fixed by the court, not to exceed one (1) year, and may be reissued upon expiration pursuant to Section 8 of this Act for subsequent periods of up to one (1) year each.\nSection 9 (new section of KRS Chapter 237): (a) Order the respondent to surrender to a local law enforcement agency all firearms in the respondent's custody or control, or which the respondent possesses; and\nSection 12 (new section of KRS Chapter 237): (2) A person who knowingly purchases, possesses, receives, or has in his or her custody or control a firearm with knowledge that he or she is prohibited from doing so by any extreme risk protection order: (a) Is guilty of a Class A misdemeanor; and (b) Shall be prohibited from purchasing, possessing, receiving, having in his or her custody or control, or attempting to purchase or receive, a firearm for a period of five (5) years from the date of conviction.\nSection 16 (new section of KRS Chapter 16): (1) The department shall establish and maintain the Kentucky Voluntary Do Not Sell Firearms List in the Commonwealth of Kentucky to prohibit the possession, transportation, and sale of firearms to any person who voluntarily registers himself or herself to be enrolled into the list. The department shall promulgate administrative regulations and develop any policies necessary for the implementation of this section. (2) Any person eighteen (18) years of age or older may apply in writing to the department to request voluntary enrollment into the Kentucky Voluntary Do Not Sell Firearms List and, after being enrolled into the list, may apply in writing to the department to request removal from the list.\nSection 17 (new section of KRS Chapter 16): (3) A person enrolled into the Kentucky Voluntary No Sell Firearms List who knowingly purchases, possesses, or transfers a firearm is guilty of a Class B misdemeanor."
+}

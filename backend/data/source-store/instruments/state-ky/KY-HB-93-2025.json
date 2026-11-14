@@ -1,0 +1,51 @@
+{
+  "id": "KY-HB-93-2025",
+  "scope": "state:ky",
+  "title": "HB93 (2025 Regular): AN ACT relating to target shooting.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/25RS/hb93.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/25RS/hb93/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Wade Williams",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "42d330b8-ad14-4bda-acbb-1eb2e50e27ec"
+    },
+    {
+      "name": "Daniel Grossberg",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b1fa718a-2649-4220-ac3d-4cb60f2baf1c"
+    },
+    {
+      "name": "Adam Moore",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "23df64ba-2fa2-49cf-96b6-7b8eea344aee"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/25RS/hb93/orig_bill.pdf (LegiScan doc 3041322))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-93-2025.introduced.pdf",
+      "sha256": "b5bb9f9a63219fbc6e9dc562d20cd2ec6e872b30f5d10077e613f530f9d3ff97"
+    },
+    "note": "Introduced version (25 RS BR 189); later amendments not in text read. No votes recorded."
+  },
+  "operative_text": "Section 1 (new section of KRS Chapter 237): (2) A person shall not target shoot carelessly, recklessly, or without regard for the safety of any person, or in a manner that endangers or is likely to endanger any person, pet, livestock, wildlife, or property. (3) It shall not be a violation of subsection (2) of this section if a person participates in target shooting: (a) At a recreation facility designed for target shooting; or (b) In an area with an unobstructed, earthen backstop capable of stopping all projectiles and debris in a safe manner. (4) Any person who violates this section shall be guilty of a Class A misdemeanor."
+}

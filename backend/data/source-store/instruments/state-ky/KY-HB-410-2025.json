@@ -1,0 +1,39 @@
+{
+  "id": "KY-HB-410-2025",
+  "scope": "state:ky",
+  "title": "HB410 (2025 Regular): AN ACT relating to prohibiting the possession and transfer of assault weapons and large capacity ammunition feeding devices.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/25RS/hb410.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/25RS/hb410/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Daniel Grossberg",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b1fa718a-2649-4220-ac3d-4cb60f2baf1c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/25RS/hb410/orig_bill.pdf (LegiScan doc 3108481))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-410-2025.introduced.pdf",
+      "sha256": "342d6bfad5a6aab5623e31920651498e7753dae9e2baf44bc5b3766717dcac5c"
+    },
+    "note": "Introduced print (25 RS BR 1050); no passage vote. The \"assault weapon\" definition (Section 1(1), long feature list) and Section 4 (KRS 237.104 conforming) not quoted for length."
+  },
+  "operative_text": "Section 1 (KRS 527.010): (7) (a) \"Large capacity ammunition feeding device\" means a magazine, belt, drum, feed strip, or similar device that has a capacity of or that can be readily restored or converted to accept more than ten (10) rounds of ammunition.\nSection 2 (new section of KRS Chapter 527): (1) Except as provided in subsection (3) of this section, a person is guilty of possession or transfer of a large capacity ammunition feeding device when he or she knowingly: (a) Possesses a large capacity ammunition feeding device; or (b) Transfers a large capacity ammunition feeding device to another person through any means. (2) Possession or transfer of a large capacity ammunition feeding device is a Class A misdemeanor. (3) This section shall not apply to: (a) A person who is a: 1. Member of the Armed Forces of the United States, a reserve component of the Armed Forces of the United States, or the National Guard; or 2. Law enforcement officer as defined in KRS 15.310; or (b) Any large capacity ammunition feeding device lawfully possessed prior to the effective date of this Act.\nSection 3 (new section of KRS Chapter 527): (1) Except as provided in subsection (3) of this section, a person is guilty of possession or transfer of an assault weapon when he or she knowingly: (a) Possesses an assault weapon; or (b) Transfers an assault weapon to another person through any means. (2) Possession or transfer of an assault weapon is a Class A misdemeanor. (3) This section shall not apply to: (a) A person who is a: 1. Member of the Armed Forces of the United States, a reserve component of the Armed Forces of the United States, or the National Guard; or 2. Law enforcement officer as defined in KRS 15.310; or (b) Any assault weapon lawfully possessed prior to the effective date of this Act."
+}

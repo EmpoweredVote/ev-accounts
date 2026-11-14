@@ -1,0 +1,49 @@
+{
+  "id": "KY-HB-554-2018",
+  "scope": "state:ky",
+  "title": "HB554 (2018 Regular): AN ACT relating to school safety and declaring an emergency.",
+  "urls": [
+    "http://www.lrc.ky.gov/record/18RS/HB554.htm",
+    "http://www.lrc.ky.gov/recorddocuments/bill/18RS/HB554/bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jim Gooch",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ca789fb3-1814-4624-b70c-d1d590f42278"
+    },
+    {
+      "name": "Jerry Miller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Diane St Onge",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Draft, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/18RS/HB554/bill.pdf (LegiScan doc 1744387))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-554-2018.draft.pdf",
+      "sha256": "e23a9a449eb7315419d24134b01bad1777da6549ce69dfb543f1aa106588be26"
+    },
+    "note": "Draft print (18 RS BR 1853); no passage vote. Section 3 text shown after the bill: \"Any other persons, including, but not limited to\" is struck and the team member wording is added. Rest of Section 2 (course hours, screening, fees) and the liability protections not quoted."
+  },
+  "operative_text": "Section 1 (new section of KRS Chapter 158): (2) Beginning July 1, 2018, for each school that does not have a dedicated full-time school resource officer or a school security officer, a local board of education shall approve an emergency response team. Members of the emergency response team shall be authorized to carry a firearm under Section 3 of this Act.\nSection 1 (new section of KRS Chapter 158): (4) Each member of a school's emergency response team shall: (a) Be selected as a member by the school district; (b) Be a full-time employee of the school district; (c) Hold a valid license to carry a concealed deadly weapon under KRS 237.110; and (d) Hold a school safety certification received under Section 2 of this Act.\nSection 1 (new section of KRS Chapter 158): (7) A member of the emergency response team shall be responsible for the purchase of the firearm, ammunition, and any other associated costs. A member shall not be compensated for the purchases made pursuant to his or her appointment or during service as a member, except that a local board of education may provide payment to a member of any reasonable and necessary expenses incurred relating to obtaining school safety certification.\nSection 2 (new section of KRS Chapter 16): (1) The Department of Kentucky State Police shall establish a process to enable qualified firearms instructors certified under KRS 237.122 to obtain an additional certification in school safety training.\nSection 3 (KRS 527.070): (f) Members of a public school's emergency response team under Section 1 of this Act, exhibitors of historical displays, or any other persons who have been authorized to carry a firearm pursuant to the written policies or written authorization of the board of education or board of trustees of the public or private institution;"
+}

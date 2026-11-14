@@ -1,0 +1,59 @@
+{
+  "id": "KY-HB-108-2017",
+  "scope": "state:ky",
+  "title": "HB108 (2017 Regular): AN ACT relating to firearms, including ammunition and accessories for firearms.",
+  "urls": [
+    "http://www.lrc.ky.gov/record/17RS/HB108.htm",
+    "http://www.lrc.ky.gov/recorddocuments/bill/17RS/HB108/bill.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Stan Lee",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Regina Huff",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kim King",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "682c3162-f77a-43be-9ac1-bb0fd50b69c2"
+    },
+    {
+      "name": "Donna Mayfield",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Wesley Morgan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Draft, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/17RS/HB108/bill.pdf (LegiScan doc 1443909))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-108-2017.draft.pdf",
+      "sha256": "73799796b383ebe9cdb50d0ba6fdb2550bdad43d948465149a3437d5c8246e99"
+    },
+    "note": "Text read is a 17 RS BR 816 draft print (LegiScan 'Draft', undated); no vote data. Not the enrolled text."
+  },
+  "operative_text": "Section 3 (new section of KRS Chapter 237): A personal firearm, a firearm accessory, or ammunition that is manufactured commercially or privately in Kentucky and that remains within the borders of Kentucky is not subject to federal law or federal regulation, including registration, under the authority of the Congress of the United States to regulate interstate commerce.\nSection 3 (new section of KRS Chapter 237): This section does not apply to: (a) A firearm that cannot be carried and used by one (1) person; (b) A firearm that has a bore diameter greater than one and one-half (1-1/2) inches and that uses smokeless powder, not black powder, as a propellant; (c) Ammunition with a projectile that explodes using an explosion of chemical energy after the projectile leaves the firearm; or (d) A firearm that discharges two (2) or more shots with one (1) activation of the trigger or other firing device.\nSection 4 (new section of KRS Chapter 237): A firearm manufactured and sold in Kentucky under Sections 1 to 5 of this Act shall have the words \"Made in Kentucky\" clearly stamped on a central metallic part, such as the receiver or frame.\nSection 6: Sections 1 to 5 of this Act shall be known and may be cited as the Kentucky Firearms Freedom Act."
+}

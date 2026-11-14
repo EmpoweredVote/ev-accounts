@@ -1,0 +1,39 @@
+{
+  "id": "KY-SB-46-2017",
+  "scope": "state:ky",
+  "title": "SB46 (2017 Regular): AN ACT relating to the regulation of firearms and ammunition by local governments.",
+  "urls": [
+    "http://www.lrc.ky.gov/record/17RS/SB46.htm",
+    "http://www.lrc.ky.gov/recorddocuments/bill/17RS/SB46/bill.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Reginald Thomas",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f77c1ca3-d540-49f0-b7ca-e1efce3b4db3"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Draft, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/17RS/SB46/bill.pdf (LegiScan doc 1443942))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-46-2017.draft.pdf",
+      "sha256": "ca05e7d6df15be2f1a4333522e50e1c29a4a966676a62f63c0164aa9bba356fd"
+    },
+    "note": "Text read is a pre-filing draft (BR 172, \"Draft\" print), not a filed or enrolled print. No votes. Section 2 amends KRS 65.870 so its ban applies except to urban-county and consolidated local governments; the quoted Section 2 text is as amended."
+  },
+  "operative_text": "Section 1 (new section of KRS Chapter 65): (2) Urban-county governments and consolidated local governments may regulate the manufacture, sale, purchase, taxation, transfer, ownership, possession, carrying, storage, and transportation of firearms, firearms components, ammunition, and ammunition components, to an extent not in conflict with the Constitution or laws of this Commonwealth or of the United States.\nSection 1 (new section of KRS Chapter 65): (4) An ordinance regulating firearms or ammunition that is issued by the council of a consolidated local government shall apply within the jurisdictional boundaries of all cities within that consolidated local government, and no city within the consolidated local government's boundaries shall preempt the controls.\nSection 2 (KRS 65.870): (1) Except for urban-county governments and consolidated local governments, no existing or future city, county, charter county, unified local government, special district, local or regional public or quasi-public agency, board, commission, department, public corporation, or any person acting under the authority of any of these organizations may occupy any part of the field of regulation of the manufacture, sale, purchase, taxation, transfer, ownership, possession, carrying, storage, or transportation of firearms, ammunition, components of firearms, components of ammunition, firearms accessories, or combination thereof."
+}

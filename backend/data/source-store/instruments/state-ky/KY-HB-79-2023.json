@@ -1,0 +1,56 @@
+{
+  "id": "KY-HB-79-2023",
+  "scope": "state:ky",
+  "title": "HB79 (2023 Regular): AN ACT relating to firearms.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/23RS/hb79.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/23RS/hb79/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lisa Willner",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "54f62e63-96ba-4bbb-a668-0435824216f8"
+    },
+    {
+      "name": "Chad Aull",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5953426e-7231-46b7-a26c-781f620fbf0f"
+    },
+    {
+      "name": "George Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "35de0809-a7a8-458e-bf71-7e10743d00a1"
+    },
+    {
+      "name": "Josie Raymond",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/23RS/hb79/orig_bill.pdf (LegiScan doc 2623564))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-79-2023.introduced.pdf",
+      "sha256": "71ea36e576dc7d7ae6b7a043780bae5dab62eb6830d19137b306c7f0841115c8"
+    },
+    "note": "Introduced text (HB 79, 2023 Regular); no passage vote on record. Section 3 reprints KRS 237.110 and adds the list as a licence disqualifier; the last quote is item (k) of that list."
+  },
+  "operative_text": "Section 1 (new section of KRS Chapter 16): The department shall establish and maintain the Kentucky Voluntary Do Not Sell Firearms List in the Commonwealth of Kentucky to prohibit the possession, transportation, and sale of firearms to any person who voluntarily registers himself or herself to be enrolled into the list.\nSection 1 (new section of KRS Chapter 16): Any person eighteen (18) years of age or older may apply in writing to the department to request voluntary enrollment into the Kentucky Voluntary Do Not Sell Firearms List and, after being enrolled into the list, may apply in writing to the department to request removal from the list.\nSection 1 (new section of KRS Chapter 16): Upon enrolling a person into the Kentucky Voluntary Do Not Sell Firearms List, the department shall forward a person's eligibility status to purchase, possess, or transport a firearm to the National Instant Criminal Background Check System.\nSection 1 (new section of KRS Chapter 16): Upon enrolling a person into the Kentucky Voluntary Do Not Sell Firearms List, the department shall revoke any existing license to carry concealed firearms held by the person.\nSection 1 (new section of KRS Chapter 16): The department shall not remove any person from the Kentucky Voluntary Do Not Sell Firearms List until twenty-one (21) days after receipt of the person's removal request.\nSection 2 (new section of KRS Chapter 16): A person who intentionally discriminates against another person with respect to his or her health care services, employment, education, housing, insurance, governmental benefits, or contracting because of that person's present or past status on the Kentucky Voluntary Do Not Sell Firearms List is guilty of a Class A misdemeanor.\nSection 3 (KRS 237.110): Is not enrolled into the Kentucky Voluntary Do Not Sell Firearms List established pursuant to Section 1 of this Act."
+}

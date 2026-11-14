@@ -1,0 +1,45 @@
+{
+  "id": "KY-HB-686-2025",
+  "scope": "state:ky",
+  "title": "HB686 (2025 Regular): AN ACT relating to the restoration of Second Amendment rights.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/25RS/hb686.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/25RS/hb686/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "T.J. Roberts",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "307fc639-dd7a-42af-8e22-abf26543c04b"
+    },
+    {
+      "name": "Josh Bray",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "16cfd1f1-50cc-402e-8d7b-382c43289630"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/25RS/hb686/orig_bill.pdf (LegiScan doc 3129106))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-686-2025.introduced.pdf",
+      "sha256": "4e21c1ac44ca5c786ff1977e65be260efb344c7040cf63ab101fe9280009335c"
+    },
+    "note": "As-filed (BR 1782, 2/13/2025); no passage vote in the record. Section 8 gives the short title 'Second Amendment Restoration Act'."
+  },
+  "operative_text": "Section 2 (new section of KRS Chapter 237): (2) A firearm suppressor that is manufactured in this Commonwealth and remains in this Commonwealth shall not be subject to federal law or federal regulation, including registration, under the authority of the United States Congress to regulate interstate commerce.\nSection 3 (new section of KRS Chapter 237): A firearm suppressor manufactured and sold in this Commonwealth shall be clearly stamped with the words \"Made in Kentucky.\"\nSection 4 (new section of KRS Chapter 237): (3) Upon receipt of a written notification under this section, the Attorney General shall seek a declaratory judgment from a United States District Court in this Commonwealth that Section 2 of this Act is consistent with the United States Constitution.\nSection 5 (new section of KRS Chapter 237): (2) An entity described in subsection (1) of this section shall not adopt a rule, order, ordinance, administrative regulation, or policy under which the entity enforces, or by consistent action allows the enforcement of, a federal statute, order, rule, or regulation that purports to regulate a firearm suppressor if the statute, order, rule, or regulation imposes a prohibition, restriction, or other regulation that does not exist under the laws of this Commonwealth.\nSection 5 (new section of KRS Chapter 237): (3) An entity that violates this section shall not receive state grant funds."
+}

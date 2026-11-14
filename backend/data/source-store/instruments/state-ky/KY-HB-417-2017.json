@@ -1,0 +1,85 @@
+{
+  "id": "KY-HB-417-2017",
+  "scope": "state:ky",
+  "title": "HB417 (2017 Regular): AN ACT relating to interference with an authorized individual's right to concealed carry.",
+  "urls": [
+    "http://www.lrc.ky.gov/record/17RS/HB417.htm",
+    "http://www.lrc.ky.gov/recorddocuments/bill/17RS/HB417/bill.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Robert Benvenuti",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jeff Greer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kim King",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "682c3162-f77a-43be-9ac1-bb0fd50b69c2"
+    },
+    {
+      "name": "Stan Lee",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael Meredith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "18152ace-e3fb-44a3-a419-18bb952c41dc"
+    },
+    {
+      "name": "Wesley Morgan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "William Reed",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Steven Riggs",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sal Santoro",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Addia Wuchner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Draft, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/17RS/HB417/bill.pdf (LegiScan doc 1581203))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-417-2017.draft.pdf",
+      "sha256": "f9f9d3a5ad742ece15a96e2fce8bb907fffcc175ae968f27131af0185ac0d2f2"
+    },
+    "note": "Text read is the Engrossed print ('17 RS HB 417/EN', LegiScan 'Draft', undated), 28 pages; later amendments are not in this text and no vote data. Sections 2-5 reprint KRS 237.110, 237.122, 237.128, 237.132 with few visible deletions (e.g. 'and cleaning' struck in training text); additions are underlined in the PDF and cannot be separated here, so only Section 1 is quoted."
+  },
+  "operative_text": "Section 1 (KRS 237.137): (2) (a) Any person who prevents or attempts to prevent an individual authorized under subsection (1) of this section from carrying a concealed firearm shall be guilty of a violation subject to a fine of: 1. Five hundred dollars ($500) for a first offense; 2. One thousand dollars ($1,000) for a second offense; and 3. Two thousand five hundred dollars ($2,500) for a third or any subsequent offense.\nSection 1 (KRS 237.137): (b) A citation for the violation may be issued to an individual or an establishment where the violation occurs."
+}

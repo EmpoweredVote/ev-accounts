@@ -1,0 +1,44 @@
+{
+  "id": "KY-SB-254-2021",
+  "scope": "state:ky",
+  "title": "SB254 (2021 Regular): AN ACT relating to preserving the right of Kentuckians to own and use firearms and declaring an emergency.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/21RS/sb254.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/21RS/sb254/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Adrienne Southworth",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brandon Storm",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "95fceb14-a0c3-43e5-a0a0-338b5d3b3e7b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/21RS/sb254/orig_bill.pdf (LegiScan doc 2290520))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-254-2021.introduced.pdf",
+      "sha256": "a48d721d5acf970db3017376a96ec31cc372bdedc46651649fe6d432513ca501"
+    },
+    "note": "Introduced print (21 RS BR 1510); no passage vote. Section 2 is an emergency clause. Preamble findings (WHEREAS clauses) not quoted."
+  },
+  "operative_text": "Section 1 (new section of KRS Chapter 237): (1) All federal acts, laws, orders, rules, and regulations, including rules and regulations issued by the Bureau of Alcohol, Tobacco, Firearms and Explosives, enacted on or after January 1, 2018, which attempt to commandeer local or state law enforcement officers to enforce federal restrictions on firearms violate the Constitution of the United States and are: (a) Invalid in this Commonwealth; (b) Not recognized by this Commonwealth; (c) Considered null and void by this Commonwealth; and (d) Of no effect in this Commonwealth. (2) Proposed executive actions by the President of the United States relating to the acquisition, possession, and use of firearms and accessories violate the President's powers under the Constitution of the United States and the rights of the citizens under the Constitution of the United States and amendments thereto. (3) It shall be the duty of the Kentucky General Assembly to adopt and enact any and all measures as may be necessary to prevent the enforcement of any federal act, law, order, rule, or regulation enacted on or after January 1, 2018, which attempts to commandeer local or state law enforcement officers to enforce federal restrictions on firearms in violation of the Constitution of the United States. (4) This section shall be retroactive to January 1, 2018."
+}

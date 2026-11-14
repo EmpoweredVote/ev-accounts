@@ -194,6 +194,92 @@
         "fetched_at": "2026-11-11T21:12:46.604Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "4f3f9d3addbd167ed9aef3a46e39326fed6093e2a04643b87438e9e2c91cb106",
+      "kind": "own-words",
+      "url": "https://lpm.org/news/2023-03-15/second-amendment-sanctuary-bill-heads-to-gov-beshears-desk",
+      "date": "2023-03-15",
+      "date_precision": "day",
+      "passage": "“I have never seen a law that makes it a crime for our law enforcement officers to cooperate with duly enacted laws,” she said. “To say that it is a crime for us to enforce or otherwise cooperate with laws that we don’t agree with — that is not democracy, that is a slippery slope.”",
+      "note": "Quoted by Louisville Public Media during Senate debate on HB 153, which bars state and local officers from enforcing federal gun bans or rules; she objected to making cooperation with federal gun laws a crime.",
+      "subjects": [
+        "state officers barred from enforcing federal gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:29.636Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c84c76e3cd69bd445f7cb65c7695b913c09efa67fb4a9ac65d6d73176e49f78b",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/23RS/hb153/vote_history.pdf",
+      "date": "2023-03-15",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-153-2023",
+      "act": "nay",
+      "motion": "Final passage, HB 153 (RSN# 2634), Senate vote 27-9",
+      "note": "She is listed among the nine no votes on a bill barring enforcement of federal gun bans or regulations in Kentucky.",
+      "subjects": [
+        "state officers barred from enforcing federal gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:29.636Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4ff6578f20a17a954eb2a83bdb90fea5b041974423c9f7d04280606228e5326",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb78/vote_history.pdf",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-78-2026",
+      "act": "nay",
+      "motion": "Senate passage with committee substitute, HB 78 (RSN# 4024), 32-6",
+      "note": "She is listed among the six no votes on a bill giving firearm makers and sellers liability protections.",
+      "subjects": [
+        "limits on lawsuits against gun makers and sellers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:29.636Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4dc545e1b9dd293727767c2e8cf2295338b800a941111bf6260dc2ae5cc26f56",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb78/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-78-2026",
+      "act": "nay",
+      "motion": "Override of veto, final passage, HB 78 (RSN# 4163), 31-6",
+      "note": "She is listed among the six no votes to override the governor's veto of the firearm liability protections bill.",
+      "subjects": [
+        "limits on lawsuits against gun makers and sellers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:29.636Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -238,6 +324,33 @@
       "found": 4,
       "at": "2026-11-11T21:12:46.604Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on federal gun rules being enforced by state police",
+        "limits on gun-maker and seller lawsuits",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.cassiechambersarmstrong.com (fetched; page is script-built, no gun text found)",
+        "Ballotpedia https://ballotpedia.org/Cassie_Chambers_Armstrong (blocked: empty response; confirmed office via other pages instead)",
+        "Kentucky legislature bill pages and roll-call PDFs for HB 153 (2023) and HB 78 (2026)",
+        "news search on name plus gun words (one outlet story with her quoted words found)",
+        "not reviewed: https://apps.legislature.ky.gov/legislator/senate/s19.html (404)",
+        "blocked: https://momsdemandaction.org/despite-opposition-from-volunteers-with-moms-demand-action-kentucky-senate-passes-bill-to-put-more-guns-in-schools/ (404)",
+        "nothing on the subject: sponsorship list shows no firearm bills sponsored by her",
+        "Status: sitting state senator, District 19, current term runs to 2029; not on the 2026 ballot"
+      ],
+      "found": 4,
+      "at": "2026-11-14T14:04:29.636Z",
+      "by": "source-collector"
     }
   ]
 }

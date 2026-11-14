@@ -1,0 +1,60 @@
+{
+  "id": "KY-HB-544-2018",
+  "scope": "state:ky",
+  "title": "HB544 (2018 Regular): AN ACT relating to extreme risk protective orders.",
+  "urls": [
+    "http://www.lrc.ky.gov/record/18RS/HB544.htm",
+    "http://www.lrc.ky.gov/recorddocuments/bill/18RS/HB544/bill.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Joni Jenkins",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mary Marzian",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5f519979-310c-4c22-8d55-097b92915fbc"
+    },
+    {
+      "name": "George Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "35de0809-a7a8-458e-bf71-7e10743d00a1"
+    },
+    {
+      "name": "Jeffery Donohue",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kelly Flood",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Draft, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/18RS/HB544/bill.pdf (LegiScan doc 1744375))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-544-2018.draft.pdf",
+      "sha256": "e25b954e85597b265e85ef28488dc9828d929c6402513d315f732f3e1495dae0"
+    },
+    "note": "Text read is the pre-filing LRC draft (BR 1665, 18 RS), not a filed or enrolled print; no passage vote is in the text. Subsection (4) of Section 3 sets the evidence the judge weighs; Section 9(1) makes a knowingly false or harassing petition a Class A misdemeanor."
+  },
+  "operative_text": "Section 4 (new section of KRS Chapter 237): (4) If the court finds by a preponderance of the evidence at the hearing that the respondent poses a significant danger of personal injury to self or others by owning, purchasing, possessing, receiving, or having in his or her custody or control a firearm or ammunition, the court shall issue a one (1) year extreme risk protective order.\nSection 3 (new section of KRS Chapter 237): (6) If a court finds reasonable cause to believe that the respondent poses an immediate and present danger of causing personal injury to self or others by owning, purchasing, possessing, receiving, or having in his or her custody or control a firearm or ammunition, the court shall issue an ex parte extreme risk protective order.\nSection 6 (new section of KRS Chapter 237): (1) Upon issuance of an ex parte or one (1) year extreme risk protective order, the court shall order the respondent to surrender to the local law enforcement agency all firearms and ammunition in the respondent's custody or control, or which the respondent possesses or owns.\nSection 7 (new section of KRS Chapter 237): (2) If an extreme risk protective order is terminated or expires and is not renewed, a law enforcement agency holding any firearm or ammunition that has been surrendered pursuant to Section 6 of this Act shall notify the respondent that he or she may request the return of the firearm or ammunition.\nSection 8 (new section of KRS Chapter 237): (5) The Department of Kentucky State Police shall immediately make information about an ex parte or one (1) year extreme risk protective order issued, renewed, or terminated pursuant to this chapter available to the National Instant Criminal Background Check System for the purposes of firearm purchaser background checks.\nSection 9 (new section of KRS Chapter 237): (2) A person who owns, purchases, possesses, receives, or has in his or her custody or control a firearm or ammunition with knowledge that he or she is prohibited from doing so by an extreme risk protective order is guilty of a Class A misdemeanor and shall be prohibited from owning, purchasing, possessing, receiving, having in his or her custody or control, or attempting to purchase or receive, a firearm or ammunition for a period of five (5) years from the date of conviction."
+}

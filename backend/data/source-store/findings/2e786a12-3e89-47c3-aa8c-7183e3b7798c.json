@@ -66,6 +66,117 @@
         "fetched_at": "2026-11-11T21:12:46.609Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "01809c648720f2a5499e2128df02c190e6ae68035ab6d7cf78219982a0a62d3b",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/24rs/sb132.html",
+      "date": "2024-01-01",
+      "date_precision": "year",
+      "instrument_id": "KY-SB-132-2024",
+      "act": "sponsor",
+      "note": "Primary sponsor (with Sen. Deneen) of a bill adding an enhanced penalty for discharging a firearm during first-degree wanton endangerment and making that offense a violent-offender crime with 85 percent sentence service.",
+      "subjects": [
+        "longer sentence for firing a gun during a crime"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:05:18.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ddc0d9d50f86d1ae921956ebab342d0229d9feea774cfe081f0049cc78c9e25d",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/RECORD/24rs/hb357/vote_history.pdf",
+      "date": "2024-03-13",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-357-2024",
+      "act": "yea",
+      "motion": "Senate passage of HB 357 (RSN# 2997), 32-6",
+      "note": "Voted yes on the Second Amendment Privacy Act, which bars a firearms-retailer merchant code and bars keeping any list or registry of private gun ownership.",
+      "subjects": [
+        "no gun registry",
+        "gun-purchase privacy"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:05:18.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "95b4875eb52875733292209cf90acc783d8a01c09139ad9b23d4cc6119f2a425",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/RECORD/25rs/sb75/vote_history.pdf",
+      "date": "2025-03-11",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-75-2025",
+      "act": "yea",
+      "motion": "Senate passage of SB 75 (RSN# 3461), 26-11",
+      "note": "Voted yes on a bill lowering the minimum age for a concealed deadly weapon licence from 21 to 18.",
+      "subjects": [
+        "minimum age to carry a gun",
+        "carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:05:18.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7a1317c247708aedd98058892587b5bd3e51eb1183eec502d2962cdf182dde3e",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb78/vote_history.pdf",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-78-2026",
+      "act": "yea",
+      "motion": "Senate passage of HB 78 w/ SCS 1 (RSN# 4024), 32-6",
+      "note": "Voted yes on a bill shielding gun and ammunition makers, sellers and trade groups from civil suits over criminal use of their products, and overriding local rules on that liability.",
+      "subjects": [
+        "gun maker and seller lawsuit protection"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:05:18.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0b5d88abea1fdec559e592b1ede93c43843205102e6835645e9afe1a28f1cff9",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb78/vote_history.pdf",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-78-2026",
+      "act": "yea",
+      "motion": "Senate veto override of HB 78 (RSN# 4163), 31-6",
+      "note": "Voted yes to override the governor's veto of the gun-industry liability protection bill.",
+      "subjects": [
+        "gun maker and seller lawsuit protection"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:05:18.715Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -111,6 +222,34 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.609Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "minimum age to carry",
+        "gun registry",
+        "gun maker liability",
+        "Second Amendment general statements",
+        "penalty for firing a gun"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://apps.legislature.ky.gov/Legislators/subs/Sen-12.html (member page, confirms Senate District 12; no issue text)",
+        "https://web.sos.ky.gov/candidatefilings/Default.aspx?cand=11418 (state filing page lists her as a 2026 general election candidate for state senator)",
+        "blocked: https://ballotpedia.org/Amanda_Mays_Bledsoe (page came back empty)",
+        "the Senate caucus site press releases (one release read, on an unrelated criminal-justice bill; no gun statements found)",
+        "Kentucky legislature bill pages and roll-call PDFs for HB 357 (2024), SB 132 (2024), SB 75 (2025), HB 78 (2026)",
+        "one news/web search on name plus gun words: nothing in her own words on guns",
+        "no campaign site or interview/debate video located: not reviewed"
+      ],
+      "found": 5,
+      "at": "2026-11-14T14:05:18.715Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1,0 +1,45 @@
+{
+  "id": "KY-HB-529-2020",
+  "scope": "state:ky",
+  "title": "HB529 (2020 Regular): AN ACT relating to concealed deadly weapons.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/20RS/hb529.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/20RS/hb529/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Savannah Maddox",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e17f04a4-35d6-4e64-8006-30381e9ff6bd"
+    },
+    {
+      "name": "Mark Hart",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2284cea5-d630-4abf-84db-9fcd5d53aa62"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/20RS/hb529/orig_bill.pdf (LegiScan doc 2156829))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-529-2020.introduced.pdf",
+      "sha256": "dcb38124d82a31405f2ce57a5ca279af8c4739fa08a92692673b2482ff508374"
+    },
+    "note": "Introduced version (20 RS); later amendments not in text read. No votes recorded. Only the repeal heading is printed; the repealed text is not in the bill. Sections 2-4 (KRS 150.172, 237.110, 527.020) only strike references to KRS 237.115 (cross-reference changes)."
+  },
+  "operative_text": "Section 1 (repeal of KRS 237.115): The following KRS section is repealed: 237.115 Construction of KRS 237.110 -- Prohibition by local government units of carrying concealed deadly weapons in governmental buildings -- Restriction on criminal penalties."
+}

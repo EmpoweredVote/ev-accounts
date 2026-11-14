@@ -1,0 +1,51 @@
+{
+  "id": "KY-HB-716-2024",
+  "scope": "state:ky",
+  "title": "HB716 (2024 Regular): AN ACT relating to local firearms control ordinances.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/24RS/hb716.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/24RS/hb716/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nima Kulkarni",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "968bf1ff-367f-4e84-983c-030fcdc2d796"
+    },
+    {
+      "name": "Keturah Herron",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78c9e7c6-4796-49b7-8e1a-1220b48e2adb"
+    },
+    {
+      "name": "Beverly Chester-Burton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1a0c1ea9-9bde-43b9-8ebd-5c798c12cf6c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/24RS/hb716/orig_bill.pdf (LegiScan doc 2941408))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-716-2024.introduced.pdf",
+      "sha256": "b00c400374dca365321ffd74748e55a43a807a4d07c9c1f838d85f8cde86e6c2"
+    },
+    "note": "Introduced text (24 RS BR 1235); no passage vote on record. Struck in KRS 65.870: the \"occupy the field\" bar, the voiding of local rules, the lawsuit and attorney-fee remedies, and the public-servant penalty (subsections 2 to 7). Section 2 (KRS 65.1591) and Section 3 (KRS 237.115) only conform; Section 3 deletes a sentence tying KRS 237.115 to KRS 65.870."
+  },
+  "operative_text": "Section 1 (KRS 65.870): A city, county, urban-county government, charter county, consolidated local government, or unified local government may enact ordinances regulating the manufacture, sale, purchase, taxation, transfer, ownership, possession, carrying, storage, or transportation of firearms, ammunition, components of firearms, components of ammunition, firearms accessories, or combination thereof."
+}
