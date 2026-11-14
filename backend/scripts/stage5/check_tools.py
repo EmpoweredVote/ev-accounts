@@ -97,26 +97,29 @@ def apply_overrides_skip_changed(t):
 @check
 def state_legiscan_pairs_only_one_roll_call(t):
     """Date + tally pick one roll call; a same-day tie is broken on the motion; a committee vote and a vote with no
-    single match go to unmapped.json, never a guess."""
-    B = batch(f'{t}/b', [('Ann Able', 'a')], [{'full_name': 'Ann Able', 'topic_key': 'tp', 'evidence_type': 'record', 'urls': ['https://off.gov/hb1', 'https://off.gov/hb2', 'https://off.gov/hb3']}], ncols=3)
+    single match go to unmapped.json, never a guess. A floor vote on a conference committee's recommendation is a floor
+    vote (wa-01: "House Final Passage as recommended by the Conference Committee")."""
+    B = batch(f'{t}/b', [('Ann Able', 'a')], [{'full_name': 'Ann Able', 'topic_key': 'tp', 'evidence_type': 'record', 'urls': ['https://off.gov/hb1', 'https://off.gov/hb2', 'https://off.gov/hb3', 'https://off.gov/hb4']}], ncols=4)
     os.makedirs(f'{t}/f')
     v = lambda u, ins, d, tal, mo: {'kind': 'record', 'url': u, 'act': 'yea', 'instrument_id': ins, 'chamber': 'H', 'date': d, 'note': f'tally {tal}', 'motion': mo}
     json.dump({'findings': [v('https://off.gov/hb1', 'XX-HB-1-2025', '2025-03-01', '60-40', 'Third reading'),
                             v('https://off.gov/hb2', 'XX-HB-2-2025', '2025-03-02', '70-30', 'Second reading'),
                             v('https://off.gov/hb3', 'XX-HB-3-2025', '2025-03-03', '50-50', 'Committee vote'),
-                            v('https://off.gov/hb1', 'XX-HB-1-2025', '2025-03-09', '51-49', 'Final passage')]}, open(f'{t}/f/a.json', 'w'))
+                            v('https://off.gov/hb1', 'XX-HB-1-2025', '2025-03-09', '51-49', 'Final passage'),
+                            v('https://off.gov/hb4', 'XX-HB-4-2025', '2025-03-10', '69-28', 'House Final Passage as recommended by the Conference Committee (#22)')]}, open(f'{t}/f/a.json', 'w'))
     run('state_legiscan.py', 'plan', B, f'{t}/f', '--state', 'XX', '--host', 'off.gov')
     pages = {p['url'] for p in json.load(open(f'{B}/legiscan/vote-pages.json'))}
-    assert len(pages) == 4, pages
+    assert len(pages) == 5, pages
     h = lambda rc, d, desc, bill: {'roll_call_id': rc, 'date': d, 'desc': desc, 'bill_url': f'https://legiscan.com/XX/bill/{bill}/2025'}
     json.dump([{'url': 'XX-HB-1-2025|H|2025-03-01|60-40', 'hits': [h(11, '2025-03-01', 'Third reading passed', 'HB1')]},
                {'url': 'XX-HB-2-2025|H|2025-03-02|70-30', 'hits': [h(21, '2025-03-02', 'Amendment 3 adopted', 'HB2'), h(22, '2025-03-02', 'Second reading passed', 'HB2')]},
                {'url': 'XX-HB-3-2025|H|2025-03-03|50-50', 'hits': [h(41, '2025-03-03', 'Committee vote', 'HB3')]},  # one match, still a committee vote
-               {'url': 'XX-HB-1-2025|H|2025-03-09|51-49', 'hits': [h(31, '2025-03-09', 'Motion to table', 'HB1'), h(32, '2025-03-09', 'Motion to reconsider', 'HB1')]}],
+               {'url': 'XX-HB-1-2025|H|2025-03-09|51-49', 'hits': [h(31, '2025-03-09', 'Motion to table', 'HB1'), h(32, '2025-03-09', 'Motion to reconsider', 'HB1')]},
+               {'url': 'XX-HB-4-2025|H|2025-03-10|69-28', 'hits': [h(51, '2025-03-10', 'House Final Passage as recommended by the Conference Committee (#22)', 'HB4')]}],
               open(f'{B}/legiscan/rollcall-hits.json', 'w'))
     run('state_legiscan.py', 'pairs', B, f'{t}/f', '--state', 'XX', '--host', 'off.gov', '--topic', 'tp')
     got = sorted(r['source_url'] for r in read_csv(f'{B}/legiscan/pairs.csv'))
-    assert got == ['https://legiscan.com/XX/rollcall/HB1/id/11', 'https://legiscan.com/XX/rollcall/HB2/id/22'], got
+    assert got == ['https://legiscan.com/XX/rollcall/HB1/id/11', 'https://legiscan.com/XX/rollcall/HB2/id/22', 'https://legiscan.com/XX/rollcall/HB4/id/51'], got
     un = json.load(open(f'{B}/legiscan/unmapped.json'))
     assert sorted(u[2] for u in un) == ['XX-HB-1-2025', 'XX-HB-3-2025'], un
 
