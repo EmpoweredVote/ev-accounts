@@ -203,6 +203,48 @@
           "sha256": "ded69ccadea06fee676851fafb1b7ca26d2b1ec5cb02114093b28332fcd1542d"
         }
       }
+    },
+    {
+      "id": "9aa4c859f6bf89121cc133ee3ad5c5a871cf371bb5261dd8570a11f7cd251b5e",
+      "kind": "own-words",
+      "url": "https://www.foxcarolina.com/2024/09/09/mom-4-year-old-killed-gun-accident-still-pushing-accountability-law/",
+      "date": "2024-09-09",
+      "date_precision": "day",
+      "passage": "“This is not an infrequent occurrence,” Jones said. “This is happening quite a bit across this nation so this is a public safety issue.”",
+      "note": "Quoted in a Fox Carolina news story about the Kingston Act, a bill on children's access to guns; he said he would re-file it in November 2024.",
+      "subjects": [
+        "safe storage / child access to guns",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:53:25.989Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5be448ba9e6dcb18f6af39a946aec79cc809433a2062476eaddacf75ae0cdf2a",
+      "kind": "own-words",
+      "url": "https://www.foxcarolina.com/2024/09/09/mom-4-year-old-killed-gun-accident-still-pushing-accountability-law/",
+      "date": "2024-09-09",
+      "date_precision": "day",
+      "passage": "“Sadly we’ll be attending more funerals. Funerals that could have been prevented,” Jones said.",
+      "note": "Quoted by Fox Carolina on what happens if the child-access gun bill does not pass.",
+      "subjects": [
+        "safe storage / child access to guns",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:53:25.989Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -280,6 +322,31 @@
       "found": 0,
       "at": "2026-11-10T21:55:09.747Z",
       "by": "sc-research-re"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "safe storage / child access to guns",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "gun rights general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://scstatehouse.gov/member.php?code=0953408977 (member page: House District 25, Greenville County; read)",
+        "https://www.scstatehouse.gov/sess126_2025-2026/bills/3596.htm (bill page for H.3596, Kingston Act; already on file as sponsorship)",
+        "Greenville County June 2026 primary results page: he led the District 25 primary, so still in scope",
+        "Ballotpedia (page fetched empty / no gun content found)",
+        "no personal campaign or official site found in search results; not reviewed",
+        "news search on name plus gun words: one story with his own quotes",
+        "nothing on the subject beyond the above for bans, background checks, red flag, permitless carry"
+      ],
+      "found": 2,
+      "at": "2026-11-14T17:53:25.989Z",
+      "by": "source-collector"
     }
   ]
 }

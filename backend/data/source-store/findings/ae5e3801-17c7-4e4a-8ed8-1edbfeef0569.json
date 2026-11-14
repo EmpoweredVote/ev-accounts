@@ -87,6 +87,32 @@
       "found": 0,
       "at": "2026-11-10T21:30:05.995Z",
       "by": "sc-search-r3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits",
+        "Second Amendment and gun rights",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings; the extract returned no appearances)",
+        "https://www.scstatehouse.gov/member.php?code=1344175976 (member page: House District 21, Greenville County; elected Dec. 23, 2025 to finish a resigned member's term; read, nothing on the subject)",
+        "https://greenvillecounty.org/sharedfolders/vr/results/statewideprimaryel45.html (June 9, 2026 primary results: she won the District 21 primary, 3,886 to 1,403, so she is in scope for the general election)",
+        "https://ivoterguide.com/candidate/88859/race/27704/election/1421 (voter guide page; the Second Amendment question is marked 'Did not answer')",
+        "https://www.scstatehouse.gov/votehistory.php?billnumbers=3650&session=126&chamber=H (vote history page read; no new gun-bill roll calls found beyond those on file)",
+        "web search (two queries): nothing on the subject tied to her",
+        "not reviewed: https://ballotpedia.org/Dianne_Mitchell (returned HTTP 202 with no page text to read)",
+        "no personal campaign or official issue site found in search results; legislature bill-sponsor pages not separately reviewed beyond the member page (the member page links only to the general legislation search)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T17:54:23.674Z",
+      "by": "source-collector"
     }
   ]
 }

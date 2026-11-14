@@ -390,6 +390,50 @@
           "sha256": "7c6ef0bd0bc94f3b71f0b51e8ca05ee94401bd3fa30ffbbe848d28603fc16ebb"
         }
       }
+    },
+    {
+      "id": "44c30bb99994e31b6234affb552bb558657ae806f25aff51fca41cd7b3ac0af3",
+      "kind": "record",
+      "url": "https://scstatehouse.gov/sess125_2023-2024/bills/3130.htm",
+      "date": "2023-01-10",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3130-2023",
+      "act": "sponsor",
+      "note": "Sole sponsor of H.3130, which would require every shooting range set up or expanded after July 1, 2023 to keep a written safety plan open to public inspection, with a $500 civil fine for not having one. Bill stayed in committee.",
+      "subjects": [
+        "safety rules for shooting ranges"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:53:05.974Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "932f4f9c9e6857bde27ce41ad78913daca4f414bcf3a803bee1c212fa55919d8",
+      "kind": "record",
+      "url": "https://southcarolinafreedomcaucus.substack.com/p/huge-win-for-2a-rights-and-petty",
+      "date": "2024-02-13",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3594-2024",
+      "act": "other",
+      "motion": "Amendment on the concealed weapons permit process to the carry-without-permit bill",
+      "note": "A House caucus newsletter post (dated 2024-02-13, an outside account, not the official record) says Ott had the first amendment on the desk, dealing with the concealed weapons permit process, and that it was replaced by another amendment which he did not vote for. Text of the amendment not seen.",
+      "subjects": [
+        "carry a gun without a permit",
+        "concealed weapons permit process"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:53:05.974Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -431,6 +475,33 @@
       "found": 3,
       "at": "2026-11-10T23:17:03.822Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "concealed weapons permit process",
+        "gun safety rules for shooting ranges",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "limits on who may have a gun",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: Ott plus firearms bill (one search)",
+        "web search: office and 2026 status (confirms sitting state senator for District 26, seat taken January 2025)",
+        "legislature bill page for H.3130 (read)",
+        "legislature bill page for S.136 (read; sponsors are other senators)",
+        "a House caucus newsletter post (read) on the 2024 carry bill debate",
+        "blocked: https://www.scstatehouse.gov/member.php?code=1547169524 (member page returned not located)",
+        "not reviewed: https://ballotpedia.org/Ballotpedia page returned empty to the fetch tool",
+        "official Senate page, campaign site and own issue pages: no own-words passage on firearms located; nothing on the subject found"
+      ],
+      "found": 2,
+      "at": "2026-11-14T17:53:05.974Z",
+      "by": "source-collector"
     }
   ]
 }

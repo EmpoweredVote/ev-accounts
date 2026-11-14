@@ -91,5 +91,27 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "carry a gun without a permit",
+        "records of gun owners"
+      ],
+      "places": [
+        "status: lost the 2026-06-09 primary (House District 14, Laurens County); winner Rick Shealy, about 60 percent: https://whosonthemove.com/?p=493700 and https://palmettopromise.org/complete-statewielection-results/",
+        "https://www.scstatehouse.gov/member.php?code=1510227092 (member page: Rep. Luke S. Rankin, House District 14; not the state senator Luke A. Rankin)",
+        "On the Record (0 appearances)",
+        "https://www.scstatehouse.gov/billsearch.php?billnumbers=3930&session=126 (already on file)",
+        "Ballotpedia: nothing usable",
+        "one news search: results mostly about the state senator of the same name, not used",
+        "not searched further: out of scope after the lost primary"
+      ],
+      "found": 0,
+      "at": "2026-11-14T17:58:55.979Z",
+      "by": "source-collector"
+    }
+  ]
 }

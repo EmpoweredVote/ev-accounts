@@ -390,6 +390,30 @@
           "sha256": "ba912cdb4118acb2bf98d9ad37a7cbca031d1fb49648762ba68b15a4fafc6d5a"
         }
       }
+    },
+    {
+      "id": "9bd70e6a818cb6aa9614610b9ceb0184cfb5355df32b8430db1dca5ef8ea23c7",
+      "kind": "record",
+      "url": "https://scstatehouse.gov/amendments.php?KEY=30192",
+      "date": "2021-05",
+      "date_precision": "month",
+      "instrument_id": "SC-H-3094-2021",
+      "act": "other",
+      "motion": "Senator Hembree proposed amendment 3094R051.KM.GH to H.3094 (Open Carry with Training Act), replacing SECTION 8 on Section 23-31-520",
+      "note": "Hembree proposed a Senate amendment to the open carry bill. It lets a county or city temporarily limit lawful open carry on public property only where it has issued a permit for a protest, rally, fair, parade or similar event, limited to that event's area and time, with notice when feasible. Without a prior permit the body may not use that power. Event hosts may bar open carry and must post signs. Local bodies keep power over careless discharge and brandishing and cannot take guns except on arrest.",
+      "subjects": [
+        "open carry rules",
+        "local limits on carrying guns",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:52:19.677Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -431,6 +455,34 @@
       "found": 2,
       "at": "2026-11-10T23:17:03.823Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "open carry rules",
+        "local limits on carrying guns",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "https://www.scstatehouse.gov/member.php?code=0819318084 (own Senate member page: confirms Senator, District 28; no gun statements on it)",
+        "no separate campaign site found",
+        "Ballotpedia: blocked: https://ballotpedia.org/Greg_Hembree",
+        "legislature bill page for H.3094 of 2021 (Open Carry with Training Act) and the Senate amendment page: used",
+        "legislature vote history page for H.3094: checked, nothing beyond votes already on file",
+        "news search on name plus gun words: one search; a 2024 news story on permitless carry paraphrases him but does not quote him, so not saved as own words",
+        "blocked: https://scsenategop.com/?p=2505 (403)",
+        "not reviewed: https://dillonheraldonline.com/2014/03/12/bill-would-have-given-convicted-felons-the-right-to-carry-a-gun (page returned 404; a 2014 letter to the editor, author unconfirmed)",
+        "nothing on the subject: a 2021 news story on the state militia bill (no mention of this person in the page text)"
+      ],
+      "found": 1,
+      "at": "2026-11-14T17:52:19.677Z",
+      "by": "source-collector"
     }
   ]
 }

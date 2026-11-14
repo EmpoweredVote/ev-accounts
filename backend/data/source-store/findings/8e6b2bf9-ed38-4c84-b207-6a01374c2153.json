@@ -175,6 +175,50 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "265fb3ae90456e28c6a7f1a0ef63bf258f62c25849644ea6df5202edd3f47d21",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=22118",
+      "date": "2023-02-22",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3594-2023",
+      "act": "yea",
+      "motion": "House: Passage Of Bill (Roll Call 136)",
+      "note": "Voted yes on H.3594, Constitutional Carry, which lets people carry a handgun without a permit; the bill passed 90-30.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:57:19.780Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ca50fc70bbaec1b3e0c0c5b147f7e4a277b25300d93dafa85804fae245ccae87",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=22121",
+      "date": "2023-02-23",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3594-2023",
+      "act": "yea",
+      "motion": "House: Passage Of Bill (Roll Call 139)",
+      "note": "Voted yes on a second passage vote on H.3594, Constitutional Carry; the bill passed 87-26.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:57:19.780Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -204,6 +248,29 @@
       "found": 0,
       "at": "2026-11-10T21:31:43.421Z",
       "by": "sc-search-r3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.scstatehouse.gov/member.php?code=1374999835 (member page read: House District 18, Greenville County; nothing on the subject)",
+        "no campaign site found; Ballotpedia page fetched but the fetch returned no text, so not reviewed: https://ballotpedia.org/Alan_Morgan",
+        "legislature bill page for H.3930 (sponsor list does not include this member) and roll-call pages for H.3594 (two 2023 votes saved)",
+        "two web searches on name plus gun words: no own-words statements found; news and advocacy-group items only list names in vote lists",
+        "blocked: https://scdailygazette.com/2026/06/10/2-sc-legislators-ousted-in-primaries-include-gop-sponsor-of-redistricting-bill/ (bot challenge); 2026 ballot status not confirmed from a page, member page still lists them as a sitting House member"
+      ],
+      "found": 2,
+      "at": "2026-11-14T17:57:19.780Z",
+      "by": "source-collector"
     }
   ]
 }

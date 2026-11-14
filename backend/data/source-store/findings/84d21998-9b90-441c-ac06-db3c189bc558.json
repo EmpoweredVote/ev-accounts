@@ -121,6 +121,33 @@
       "found": 0,
       "at": "2026-11-10T21:30:30.763Z",
       "by": "sc-search-r3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits",
+        "gun rights and the Second Amendment",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidates)",
+        "the legislature's member page for Rep. Montgomery, District 32, Spartanburg County (https://www.scstatehouse.gov/member.php?code=1351704384): confirms the office, nothing on the subject",
+        "legislature bill page H.3930 (https://www.scstatehouse.gov/sess126_2025-2026/bills/3930.htm): he is on the sponsor list (already on file)",
+        "legislature roll call page https://www.scstatehouse.gov/votehistory.php?KEY=26302: fetched, no usable rows extracted",
+        "blocked: https://ballotpedia.org/Scott_Montgomery (403)",
+        "web searches (2): no statement, interview or other bill by him on guns found; news stories on SC carry bills name other members",
+        "https://thecandidate.com/states/sc/legislature/house/32/scott-montgomery: profile page, no gun positions",
+        "no personal or campaign site found; 2026 ballot status not confirmed from a page (sitting member, District 32)",
+        "not reviewed: other URL-pattern sites (ontheissues.org, vote411) are leads only; no original found"
+      ],
+      "found": 0,
+      "at": "2026-11-14T17:54:11.525Z",
+      "by": "source-collector"
     }
   ]
 }

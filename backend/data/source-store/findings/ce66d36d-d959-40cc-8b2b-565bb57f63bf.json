@@ -841,6 +841,49 @@
           "sha256": "1b8e0b3bfb1ed017dd5c396ba3cc33a356545aa540a030ea89c37f0bfff7f521"
         }
       }
+    },
+    {
+      "id": "458aba2ddd343d4b149a1ac70b43416e783562e12882d406d9833cca3200ba83",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3551&session=124&summary=B",
+      "date": "2021-04-15",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3551-2021",
+      "act": "sponsor",
+      "note": "Added as co-sponsor on 2021-04-15 of H.3551, which would make the state's rules on owning, transferring and possessing firearms and ammunition, and on their public use and confiscation, also cover knives. It stayed in House Judiciary.",
+      "subjects": [
+        "limits on local gun rules",
+        "state-wide gun law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:57:16.123Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d8e83ac231da8ce7399e7ca73af1d48dfce930dfd09e7e8c24d3ab8ae503299",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=4959&session=120&summary=B",
+      "date": "2014-04-10",
+      "date_precision": "day",
+      "instrument_id": "SC-H-4959-2014",
+      "act": "sponsor",
+      "note": "Added as co-sponsor on 2014-04-10 of H.4959, which extends the ban on local governments regulating firearms and ammunition to knives and bars them from enforcing such rules. It stayed in House Judiciary.",
+      "subjects": [
+        "limits on local gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:57:16.123Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -882,6 +925,34 @@
       "found": 7,
       "at": "2026-11-10T23:17:03.818Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "local limits on gun rules",
+        "carry a gun without a permit",
+        "honoring other states' carry permits",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the member's official legislature page (https://www.scstatehouse.gov/member.php?code=849715808), confirms Representative, District 83",
+        "the legislature's bill pages for H.3551 (2021) and H.4959 (2014): sponsor lists read",
+        "the campaign/personal site https://billhixon.com/ (home page loaded, nothing on the subject)",
+        "blocked: https://billhixon.com/?p=3532 (404)",
+        "blocked: https://www.billhixon.com/?p=3353 (404)",
+        "blocked: https://www.yahoo.com/news/three-aiken-county-c-house-005300502.html (no readable text for Hixon)",
+        "not reviewed: https://www.scstatehouse.gov/billsearch.php?billnumbers=3799&session=124 (sponsor list not shown to me in the text)",
+        "Ballotpedia not fetched, one web search on name plus firearms run",
+        "no own-words passage on the subject found"
+      ],
+      "found": 2,
+      "at": "2026-11-14T17:57:16.123Z",
+      "by": "source-collector"
     }
   ]
 }

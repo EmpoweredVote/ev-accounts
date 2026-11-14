@@ -434,6 +434,48 @@
           "sha256": "75456561057e1a4104219d3216342c9e15aa7b099c6dc0639d034fa657cb63de"
         }
       }
+    },
+    {
+      "id": "70cdf234b3b73079e82f9ef90afaeb61c07fca90fa53e1217c840aa9c0c61992",
+      "kind": "own-words",
+      "url": "https://www.southcarolinapublicradio.org/sc-news/2024-01-29/sc-senate-constitutional-carry",
+      "date": "2024-01-24",
+      "date_precision": "day",
+      "passage": "If you want to carry a weapon and exercise your constitutional right to do so, you don't have to have permission from government.",
+      "note": "Quoted by a public radio story from his Senate floor speech on H. 3594 (permitless carry); the story is dated 2024-01-29, the debate was the week before.",
+      "subjects": [
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:56:10.725Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "655aa6253b510d6e435b6afbf95d58d70c01f2b2ff6cfb037b1e3ea4dd7c6073",
+      "kind": "own-words",
+      "url": "https://gunrights.org/south-carolina-senator-shane-martin-receives-national-association-for-gun-rights-award/",
+      "date": "2022-04-25",
+      "date_precision": "day",
+      "passage": "by being faithful to the cause of Constitutional Carry, forcing roll call votes, forcing bills out of committee, and forcing votes on amendments on the floor for Constitutional Carry, we've moved the ball forward.",
+      "note": "Quoted in a gun-rights group's press release about his acceptance speech for its award; he says he has pushed roll calls, committee discharge and floor amendments for permitless carry.",
+      "subjects": [
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:56:10.725Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -473,6 +515,30 @@
       "found": 3,
       "at": "2026-11-10T23:17:03.818Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "concealed weapons permit"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "one web search on name plus gun and Second Amendment words",
+        "https://www.southcarolinapublicradio.org/sc-news/2024-01-29/sc-senate-constitutional-carry (read)",
+        "https://gunrights.org/south-carolina-senator-shane-martin-receives-national-association-for-gun-rights-award/ (read)",
+        "nothing on the subject: https://scsenategop.com/?p=2505 (fetched, no matching text found)",
+        "nothing on the subject: https://www.washingtontimes.com/news/2024/jan/24/conservative-south-carolina-senate-debates-gun-bil/ (fetched, no matching text found)",
+        "not reviewed: the member's own official and campaign pages",
+        "not reviewed: Ballotpedia",
+        "not reviewed: legislature bill pages beyond the votes already on file",
+        "scope: named as a state senator in a 2024 news story; 2026 ballot status not confirmed by me"
+      ],
+      "found": 2,
+      "at": "2026-11-14T17:56:10.725Z",
+      "by": "source-collector"
     }
   ]
 }

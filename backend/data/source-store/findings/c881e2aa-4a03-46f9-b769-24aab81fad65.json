@@ -395,6 +395,28 @@
           "sha256": "7797af759f3ef95559270164245d6515d71b777391dbeb5aceeab1b079461b1e"
         }
       }
+    },
+    {
+      "id": "234081ffdaf34ceeb2594f8f3a5c1179a81818c730e4d53d39d0e63894edb448",
+      "kind": "record",
+      "url": "https://www.nraila.org/articles/20210505/south-carolina-constitutional-carry-amendment-fails",
+      "date": "2021-05-05",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3094-2021",
+      "act": "yea",
+      "motion": "Amendment to add permitless (constitutional) carry to H.3094",
+      "note": "A gun-rights advocacy group's article lists Tom Davis among the senators who supported the amendment to let adults carry a handgun without a permit; the amendment failed. The list is from a third-party source, not the Senate journal.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:55:05.345Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -436,6 +458,30 @@
       "found": 3,
       "at": "2026-11-10T23:17:03.817Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "concealed weapon permit",
+        "gun rights and the Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "official Senate member page: https://scstatehouse.gov/member.php?code=0456818127 (confirms District 46, Beaufort and Jasper counties, sitting)",
+        "campaign/official site https://www.senatortomdavis.com/ (home page read; nothing on the subject; site search not available)",
+        "legislature bill pages: S.44 (2021) sponsor list read; S.136 (2025-2026) page read, his name is not among its sponsors",
+        "web search 1: permitless carry and Davis (found an advocacy group's list of senators backing a 2021 carry amendment)",
+        "web search 2: Davis and guns in news (nothing on the subject)",
+        "not reviewed: Ballotpedia, news archives for direct quotes, https://my.lwv.org/south-carolina/hilton-head-island-bluffton-area/article/march-31-community-meeting-tom-davis-mike-covert-video-minutes (video)"
+      ],
+      "found": 1,
+      "at": "2026-11-14T17:55:05.345Z",
+      "by": "source-collector"
     }
   ]
 }

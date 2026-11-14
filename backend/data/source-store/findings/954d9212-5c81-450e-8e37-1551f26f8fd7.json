@@ -216,6 +216,47 @@
           "sha256": "02e3e04ee30cbbfadda5e82fe2ba5980564b9d2baa9b488a954f80f4a1e4df74"
         }
       }
+    },
+    {
+      "id": "bc0497d4a1fdcfab8e72cf53ca752590ba5220b826e7e63ea847352964501400",
+      "kind": "own-words",
+      "url": "https://archive.yourislandnews.com/?p=76259",
+      "date": "2024-02-04",
+      "date_precision": "day",
+      "passage": "“I rest easy. I rest comfortably, and I rest at night knowing I’m standing not with the persuaders, not with the pushers, but I’m standing with the police officers of this state,”",
+      "note": "News story quoting the Senate Judiciary chairman during debate on the permitless carry bill, saying he stands with police chiefs who testified against removing the training requirement. Page date is the story's published date, taken from the page.",
+      "subjects": [
+        "carry a gun without a permit",
+        "training requirement for carrying"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:54:14.755Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d03c7d0b5b756f86e63b9ce53e6ec13bb9d4dcd28183d8a9f427990bf17396b1",
+      "kind": "own-words",
+      "url": "https://gazette.com/?p=163714",
+      "date": "2024-03-06",
+      "date_precision": "day",
+      "passage": "“We have caved to the boogeyman from Texas,”",
+      "note": "News story (wire report) quoting him on the House-Senate compromise on the permitless carry bill.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:54:14.755Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -257,6 +298,32 @@
       "found": 3,
       "at": "2026-11-10T23:17:03.819Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "training requirement for carrying",
+        "Second Amendment rights",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.scstatehouse.gov/member.php?code=1511363455 (member page; confirms Senator, District 33, Horry County; sitting)",
+        "campaign site: not found",
+        "bill pages for sponsorships: not reviewed: https://www.scstatehouse.gov",
+        "Ballotpedia: not reviewed",
+        "news search on name plus permitless carry (two news stories read)",
+        "blocked: https://scdailygazette.com/2024/02/02/sc-senate-approves-permit-less-carry-with-a-training-incentive-twist/",
+        "blocked: https://news.yahoo.com/sc-senate-oks-constitutional-carry-213058753.html",
+        "nothing on the subject: background checks, assault-style weapons, red-flag orders"
+      ],
+      "found": 2,
+      "at": "2026-11-14T17:54:14.755Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -227,6 +227,29 @@
           "sha256": "02e3e04ee30cbbfadda5e82fe2ba5980564b9d2baa9b488a954f80f4a1e4df74"
         }
       }
+    },
+    {
+      "id": "db14a4652f9aa2e631877ce1d97636d7cd1285ed8c175c170046c3a33c69336e",
+      "kind": "record",
+      "url": "https://scstatehouse.gov/amendments.php?KEY=32485",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "SC-H-3594-2024",
+      "act": "other",
+      "motion": "Senate amendment 37 (SMIN-3594.AA0171S) proposed by Senator Matthews",
+      "note": "She proposed an amendment to the Constitutional Carry bill saying that once the act takes effect, all pending unlawful-carry charges are dismissed for people who would have been carrying legally under the new law. The page does not show whether it was adopted.",
+      "subjects": [
+        "carry a gun without a permit",
+        "dismiss unlawful-carry charges"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:55:36.270Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -267,6 +290,31 @@
       "found": 1,
       "at": "2026-11-10T23:17:03.824Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "dismiss unlawful-carry charges",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://scstatehouse.gov/amendments.php?KEY=32485 (Senate amendment page, read)",
+        "https://www.scstatehouse.gov/sess125_2023-2024/bills/3594.htm (bill page, read; she is not a listed sponsor)",
+        "blocked: https://ballotpedia.org/Margie_Bright_Matthews (403)",
+        "https://en.wikipedia.org/wiki/Margie_Bright_Matthews (confirms sitting 45th District senator since 2015; Senate seat not on the 2026 ballot)",
+        "not reviewed: official member page https://www.scstatehouse.gov/member.php?chamber=S&code=1890289395 (returned no member)",
+        "two web searches on her name plus gun words: no own-words statement found",
+        "campaign site: not found"
+      ],
+      "found": 1,
+      "at": "2026-11-14T17:55:36.270Z",
+      "by": "source-collector"
     }
   ]
 }

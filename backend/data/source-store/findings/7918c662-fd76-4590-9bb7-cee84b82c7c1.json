@@ -417,6 +417,51 @@
           "sha256": "40e53d7ae3a5f8da35cb38ebd5e3cc683e93f493dbb1a441ec504dc03c4c69f7"
         }
       }
+    },
+    {
+      "id": "a65fe946c9c235cbac21834f6c5e7295bd8f06a5c8a11d7f053b04b915d9bf5f",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess124_2021-2022/bills/3096.htm",
+      "date": "2021-03-18",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3096-2021",
+      "act": "other",
+      "motion": "Request for debate on H.3096, SC Constitutional Carry Act of 2021",
+      "note": "The bill history lists Kirby among the House members who requested debate on the permitless-carry bill. He is not a sponsor of it.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:53:59.870Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "18315ee5e5a7078508f2bf260d07b7e40bb482d22c09a1d239f23266e0c7f542",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess124_2021-2022/bills/3094.htm",
+      "date": "2021-03-09",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3094-2021",
+      "act": "other",
+      "motion": "Request for debate on H.3094, Open Carry with Training Act",
+      "note": "The bill history lists Kirby among the House members who requested debate on the open-carry-with-training bill. He is not a sponsor of it.",
+      "subjects": [
+        "open carry with training",
+        "concealed weapon permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:53:59.870Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -456,6 +501,34 @@
       "found": 4,
       "at": "2026-11-10T23:17:03.820Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "open carry with training",
+        "concealed weapon permits",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page (confirms sitting representative, District 101)",
+        "campaign site https://rogerthatsc.com/kirby101 (read; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Roger_Kirby (403)",
+        "legislature bill pages for H.3096 and H.3094 (2021-2022): he is not a listed sponsor; he is on the request-for-debate lists",
+        "web search for name plus gun/firearm/constitutional carry (no own words found)",
+        "https://thecandidate.com/states/sc/legislature/house/101/roger-kirby (lead only; confirms District 101 seat)",
+        "not reviewed: ontheissues.org and vote411 (lead-only sites, no original found)",
+        "no news interview or floor-speech transcript with his words on guns found"
+      ],
+      "found": 2,
+      "at": "2026-11-14T17:53:59.870Z",
+      "by": "source-collector"
     }
   ]
 }

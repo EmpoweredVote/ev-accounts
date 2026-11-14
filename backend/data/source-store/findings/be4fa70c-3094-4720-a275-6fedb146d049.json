@@ -127,6 +127,48 @@
           "sha256": "0e42b5bae5c0cd7e1886aca0ee3a4d66a9db5e0282a4f3e8a3d380abd3504217"
         }
       }
+    },
+    {
+      "id": "16df739548cc200ec2c1f4886be5e339007cfb002116e1495fc32bf7d9286f10",
+      "kind": "own-words",
+      "url": "https://www.wspa.com/news/politics/elections/lee-bright-wins-district-12/",
+      "date": "2025-12-23",
+      "date_precision": "day",
+      "passage": "I’m a fierce defender of the Second Amendment. I’m glad that you don’t have to have a license to carry a firearm here in South Carolina. I’m glad that that’s been accomplished. But I do want to protect the unborn, and that’s something I’ll continue to fight for,",
+      "note": "Quoted by the WSPA news story after his special election win. He calls himself a strong defender of the Second Amendment and says he is glad no licence is needed to carry a firearm in the state.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:55:47.616Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9c942cf11d220d3dcc13a47e8b31a9c817e25f4720ac9dd30f1e27046a7d71fd",
+      "kind": "record",
+      "url": "https://abcnews4.com/archive/gallery/bill-guns-made-in-sc-exempt-from-federal-regulations?photo=1",
+      "date": "2012-12-13",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "Prefiled South Carolina Firearms Freedom Act (earlier term)",
+      "note": "A news story reports he prefiled a Senate bill, the South Carolina Firearms Freedom Act, to exempt any firearm, accessory or ammunition made and kept in the state from federal regulation. The story dates the filing Dec. 13 (2012) and says a same-named bill was filed in 2009 with him as a cosigner.",
+      "subjects": [
+        "state-made guns exempt from federal rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:55:47.616Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -168,6 +210,34 @@
       "found": 2,
       "at": "2026-11-10T23:17:03.817Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "state-made guns exempt from federal rules",
+        "gun rights and the Second Amendment",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "suppressors and short-barrelled rifles"
+      ],
+      "places": [
+        "status: sitting State Senate District 12 senator, sworn in January 2026 after the 2025-12-23 special election (Senate journal https://www.scstatehouse.gov/sess126_2025-2026/sj26/20260113.htm); not on the 2026 ballot, so in scope",
+        "On the Record (0 appearances linked; extract returned nothing)",
+        "the Senate member page https://www.scstatehouse.gov/member.php?code=0193181795 (read; lists no bill detail)",
+        "Senate journals and bill pages for the 2025-2026 session: S. 1030 (right to bear arms amendment, sponsor is another senator), S. 877 (profits from crime, co-sponsor, off subject); no gun bill sponsored by him found",
+        "NAGR PAC endorsement release https://gunrights.org/?p=6603 (read; quotes of others only, nothing in his own words)",
+        "WSPA news story on the special election win (read, direct quote saved)",
+        "ontheissues.org (lead only; original campaign site not reachable, so not cited)",
+        "Ballotpedia https://ballotpedia.org/Lee_Bright (fetched, nothing on the subject found in the page text)",
+        "no personal official or campaign site found for his current term; not reviewed",
+        "news search on his name and gun words (ran two searches)"
+      ],
+      "found": 2,
+      "at": "2026-11-14T17:55:47.616Z",
+      "by": "source-collector"
     }
   ]
 }

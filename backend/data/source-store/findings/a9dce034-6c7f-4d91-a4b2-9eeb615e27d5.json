@@ -92,6 +92,27 @@
           "sha256": "40e53d7ae3a5f8da35cb38ebd5e3cc683e93f493dbb1a441ec504dc03c4c69f7"
         }
       }
+    },
+    {
+      "id": "d82e81a1d72d8bab3a956347a73fb80c70606bf330319916ac2d3af785f36f61",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/bill-aims-keep-gun-owners-190519786.html",
+      "date": "2025-03-29",
+      "date_precision": "day",
+      "passage": "does that language give you any concern in terms of vagueness or mandatory investigation?",
+      "note": "A TV news story (WSPA, via a web portal) quotes him asking a bank-association witness, at a House hearing on a bill barring banks from tracking gun and ammunition purchases, about the bill's line that the Attorney General shall investigate reasonable allegations. It is a question, not a statement of support or opposition. The story date is the publication date; the hearing date is not given.",
+      "subjects": [
+        "gun owner financial privacy",
+        "bank tracking of gun purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:54:45.194Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -123,6 +144,32 @@
       "found": 0,
       "at": "2026-11-10T21:37:18.613Z",
       "by": "sc-search-r4"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of gun or magazine",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun owner financial privacy",
+        "general statement on gun rights or the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "in scope: sitting House District 54 member (https://www.scstatehouse.gov/member.php?code=1126420320); won the June 9 2026 primary over Betty Jo Quick per the state election commission audit totals (https://scvotes.gov/wp-content/uploads/2026/06/3.Contest-Results-Comparison-with-Jurisdiction-Details.pdf); a TV station story says no challenger in November (https://www.wbtv.com/2026/06/08/tracking-2026-primary-results-south-carolina-house-representatives-district-54/)",
+        "official legislature member page https://www.scstatehouse.gov/member.php?code=1126420320 (read; no gun material; sponsored-bill list not reviewed)",
+        "campaign site https://luckforsc.com/ (read; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Jason_Luck (empty response)",
+        "local newspaper filing story https://heraldadvocate.com/news/17062/luck-files-for-re-election-to-sc-house-district-54/ (nothing on the subject)",
+        "one news search on name plus gun words (found one quoted committee exchange); one search for primary results",
+        "bill page https://www.scstatehouse.gov/sess126_2025-2026/bills/3930.htm (sponsor list read; he is not listed in the excerpt seen)",
+        "not reviewed: debate, interview or forum video; no questionnaire found"
+      ],
+      "found": 1,
+      "at": "2026-11-14T17:54:45.194Z",
+      "by": "source-collector"
     }
   ]
 }

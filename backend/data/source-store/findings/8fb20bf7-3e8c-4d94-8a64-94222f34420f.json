@@ -361,6 +361,28 @@
           "sha256": "2e6cb10db8950be3bf6b666e4ca99f159a0e3ac0553584f58556f6d58aa1b1dd"
         }
       }
+    },
+    {
+      "id": "1553fd14446ff88d8a511126ecaceac839c2224060647ac5ad73b9cb58341871",
+      "kind": "own-words",
+      "url": "https://jamooreforsc.com/",
+      "date": "2024-09-11",
+      "date_precision": "day",
+      "passage": "Reduce gun violence because over 800 South Carolinians are killed by a gun every year. This fight is personal for me because I’ve lost family to gun violence that was racially-motivated. We must extend the waiting period on background checks to make sure everyone that owns a gun in our state has been cleared by the FBI.",
+      "note": "Campaign site issue text: names gun violence reduction as a goal and calls for a longer waiting period on background checks so every gun owner is cleared by the FBI. Date is the page's last-modified date, not the date written.",
+      "subjects": [
+        "check every gun buyer",
+        "waiting period before a gun sale",
+        "gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:57:35.982Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -403,6 +425,32 @@
       "found": 2,
       "at": "2026-11-10T23:17:03.822Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "waiting period on background checks",
+        "gun violence",
+        "permitless carry",
+        "ban on assault-style guns",
+        "red flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the campaign site https://jamooreforsc.com/ (read; one gun passage)",
+        "the House member page https://scstatehouse.gov/member.php?code=1356818019 (confirms District 15, Berkeley and Charleston counties; sitting member)",
+        "blocked: https://ballotpedia.org/JA_Moore (no usable text returned)",
+        "blocked: https://elections.bradyunited.org/press-releases/brady-campaign-endorses-state-representative-ja-moore-for-re-election (bot challenge page)",
+        "one web search on name plus gun words (leads only)",
+        "bill pages and vote history: already on file, not re-collected",
+        "not reviewed: https://www.live5news.com/video/2024/05/29/video-meet-candidates-sc-house-district-15-ja-moore/",
+        "2026 ballot status not separately confirmed; the member page shows a sitting member"
+      ],
+      "found": 1,
+      "at": "2026-11-14T17:57:35.982Z",
+      "by": "source-collector"
     }
   ]
 }

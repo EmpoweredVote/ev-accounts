@@ -291,7 +291,96 @@
           "sha256": "2e6cb10db8950be3bf6b666e4ca99f159a0e3ac0553584f58556f6d58aa1b1dd"
         }
       }
+    },
+    {
+      "id": "761b31e836204dec3d5b1e049af85db2ca7653b7bbb953e6ab10b3ba059a6485",
+      "kind": "own-words",
+      "url": "https://momsdemandaction.org/today-nearly-200-south-carolina-lawmakers-moms-demand-action-volunteers-and-gun-violence-survivors-gathered-at-the-south-carolina-state-house-for-advocacy-day-to-demand-the-passage-of-common-sense/",
+      "date": "2024-01-10",
+      "date_precision": "day",
+      "passage": "When I talk about guns and gun violence it’s personal to me,” said South Carolina Representative Jermaine Johnson. “My brother was a child, and he was taken from me. It’s time out for this, it’s time out for losing our future generations. Not only do moms demand action. WE demand action.",
+      "note": "Quoted in a gun-safety group's release on its 2024 statehouse advocacy day, where speakers urged lawmakers to reject permitless carry; he speaks of losing his brother to gun violence and calls for action.",
+      "subjects": [
+        "gun violence prevention",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:57:52.588Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c6a0fae673e17a43917d83e0f188a896d2d7ba75ee5f74eed7a4ab3262a54cbd",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/camedwards/2024/01/11/lawmaker-misfires-permitless-carry-n79287",
+      "date": "2024-01-10",
+      "date_precision": "day",
+      "passage": "If there is a bad guy who’s going to go do some harm to other people law enforcement will now not have the ability to stop and ask someone, what are you doing with those guns? where are you headed with this? they will no longer be able to do that,",
+      "note": "Direct quote of him in a gun-rights blog's story on the same rally; he argues that permitless carry would stop police from asking people carrying guns what they are doing. The outlet is critical of his view.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:57:52.588Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1a31493efc5be721304fd6222590ca8d3af0b7befe04950d49726472fb354308",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/camedwards/2024/01/11/lawmaker-misfires-permitless-carry-n79287",
+      "date": "2024-01-10",
+      "date_precision": "day",
+      "passage": "We need to put some identifiers in place to protect these good guys because in the heat of battle in the heat of the moment you can’t tell who the good guy is or who the bad guy is so we need to make sure we can protect all innocent bystanders,",
+      "note": "Direct quote of him in the same blog story; he says some form of identification is needed for lawful gun carriers so bystanders can be protected.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:57:52.588Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "gun violence prevention",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders",
+        "general gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "https://www.scstatehouse.gov/sess126_2025-2026/bills/5630.htm (House resolution of 2026-04-30 confirms he is a sitting House member leaving at the end of his term; also shows he ran for governor)",
+        "web search: his 2026 governor primary result (won his nomination in June 2026; still a sitting House member, so in scope)",
+        "the campaign site and his House member page: no gun-related page found by search, nothing on the subject",
+        "Ballotpedia: https://ballotpedia.org/Jermaine_Johnson fetched, nothing on the subject extracted",
+        "news search on his name plus gun words (permitless carry, background checks, parent accountability): one news quote and one advocacy-group release found",
+        "not reviewed: https://video.scetv.org/video/palmetto-perspectives-gun-reform-vbztvo/ (2022 panel video, no transcript; could not confirm he appears)",
+        "blocked: https://schousedems.org/?p=2739 (not retrievable by curl)",
+        "not found: https://abcnews4.com/news/local/state-leaders-demanding-accountability-from-parents-with-gun-pattern-in-schools (page missing; his parent-accountability bill remark could not be verified)",
+        "ontheissues.org and vote411 not used (lead-only)"
+      ],
+      "found": 3,
+      "at": "2026-11-14T17:57:52.588Z",
+      "by": "source-collector"
+    }
+  ]
 }

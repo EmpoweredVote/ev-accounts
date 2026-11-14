@@ -459,6 +459,113 @@
           "sha256": "bca096447e70629c65bf367a2bc2e194e904ad0846e5e494c8c110c509ace047"
         }
       }
+    },
+    {
+      "id": "f794bc460333f27137790d5f4579cb8b8d5420af342b2908ccca3152758ca562",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/camedwards/2024/04/25/south-carolina-democrat-constitutional-carry-n1224656",
+      "date": "2024-04-25",
+      "date_precision": "day",
+      "passage": "“The intent of this is not to find some loophole to just throw away cases,” Tedder said. “This is legitimately to protect those who now, I mean, constitutionally, are allowed to carry anywhere, to not have to plead guilty.”",
+      "note": "Quoted by Bearing Arms, a gun-news outlet. He explains why his bill dismisses pending unlawful-carry charges for conduct the 2024 permitless carry law made legal.",
+      "subjects": [
+        "carry a gun without a permit",
+        "dismiss pending unlawful-carry charges"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:57:40.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1ef1746acd241a5f2a866f89380d4837196a20ee53358831cab4ed60c04ef46c",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/camedwards/2024/04/25/south-carolina-democrat-constitutional-carry-n1224656",
+      "date": "2024-04-25",
+      "date_precision": "day",
+      "passage": "“So person A pled guilty to unlawful carry two days before Gov. McMaster signed the bill. They can get that expunged,” Tedder said.",
+      "note": "Quoted by Bearing Arms. He describes how people convicted before the permitless carry law can have the conviction expunged, which his bill extends to pending cases.",
+      "subjects": [
+        "carry a gun without a permit",
+        "dismiss pending unlawful-carry charges"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:57:40.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f8bcfa7676d61f4e4b38de41ee720dbc4d5c57cb6f0024975175c44e68474f0e",
+      "kind": "record",
+      "url": "https://scstatehouse.gov/sess126_2025-2026/bills/138.htm",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "SC-S-138-2025",
+      "act": "sponsor",
+      "note": "S. 138 amends Code Section 17-1-65 under the 2024 Constitutional Carry Act so the State must dismiss select pending unlawful handgun possession charges.",
+      "subjects": [
+        "carry a gun without a permit",
+        "dismiss pending unlawful-carry charges"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:57:40.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "06cae85754da30bc072810236cc9db8e2be18d47159c3bb38846bad4d9026e0e",
+      "kind": "record",
+      "url": "https://scstatehouse.gov/sess126_2025-2026/bills/300.htm",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "SC-S-300-2025",
+      "act": "sponsor",
+      "note": "S. 300 would require national instant criminal background checks before any sale, exchange or transfer of firearms, including at gun shows, with a penalty.",
+      "subjects": [
+        "check every gun buyer",
+        "gun shows background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:57:40.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8a6b97f25a4977ea651ecb3f525c1e527de32b57dac9b4a27904decc24551ebc",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess125_2023-2024/bills/889.htm",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "SC-S-889-2023",
+      "act": "sponsor",
+      "note": "S. 889 would require any firearm transfer to be preceded by a background check run by a licensed dealer through the national system, with exceptions, notice and criminal penalties.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:57:40.022Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -497,6 +604,29 @@
       "found": 4,
       "at": "2026-11-10T23:17:03.820Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "dismiss pending unlawful-carry charges",
+        "gun shows background checks"
+      ],
+      "places": [
+        "On the Record (0 appearances, no unlinked name matches)",
+        "campaign site https://deontedder.com (fetched; homepage is a 2022 Senate campaign page with no gun content; no issue page searched)",
+        "legislature member page: not reviewed: https://www.scstatehouse.gov/member.php?code=1816444738 (no usable text returned)",
+        "legislature bill pages for S. 138, S. 300, S. 889 (read)",
+        "news search on name plus gun words (one web search); Bearing Arms story read",
+        "blocked: https://scdailygazette.com/2024/05/14/bill-pending-signature-erases-sc-gun-charge-thats-no-longer-a-crime/ (403)",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Deon_Tedder",
+        "not reviewed: debate/interview video; amendment pages https://www.scstatehouse.gov/amendments.php?KEY=32488 and KEY=32820"
+      ],
+      "found": 5,
+      "at": "2026-11-14T17:57:40.022Z",
+      "by": "source-collector"
     }
   ]
 }

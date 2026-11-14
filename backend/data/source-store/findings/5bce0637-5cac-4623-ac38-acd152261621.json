@@ -365,6 +365,28 @@
       "found": 3,
       "at": "2026-11-10T23:17:03.818Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.scstatehouse.gov/member.php?code=1938636131 (Senate member page: confirms Senator Kent M. Williams, District 30; bio only, nothing on the subject)",
+        "web search on name plus gun words (found only a quote by a different senator, Kimpson, at https://grabien.com/story.php?id=30569, not used)",
+        "not reviewed: https://ballotpedia.org/Kent_Williams_(South_Carolina_Senator) (blocked: 403)",
+        "not reviewed: bill sponsorship search pages on scstatehouse.gov and personal campaign site (none found)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T17:52:55.721Z",
+      "by": "source-collector"
     }
   ]
 }

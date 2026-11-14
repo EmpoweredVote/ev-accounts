@@ -300,6 +300,258 @@
         "fetched_at": "2026-11-10T21:20:18.977Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "7e73839b436dee7504b60e2896964cef33909b51415078adbddfddd491f1207b",
+      "kind": "own-words",
+      "url": "https://www.scag.gov/archives/33832",
+      "date": "2017-11-21",
+      "date_precision": "day",
+      "passage": "States should not be able to deny citizens of other states the basic constitutional right to self-defense,",
+      "note": "Statement issued with a letter urging Congress to require every state to honor concealed weapon permits from all other states.",
+      "subjects": [
+        "honor other states' carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:52:18.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "79f5a3af1c15a62ca960e985231fb8dc45c53a4fa0fb4fca0c8272563f0022c1",
+      "kind": "own-words",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-defends-second-amendment-urges-supreme-court-to-hear-key-gun-rights-case/",
+      "date": "2025-05-06",
+      "date_precision": "day",
+      "passage": "The Constitution guarantees that law-abiding Americans have the right to protect themselves,",
+      "note": "Release on his joining a 26-state brief asking the Supreme Court to take Wolford v. Lopez, against Hawaii limits on carrying in public places and on private property open to the public.",
+      "subjects": [
+        "carry guns in public places",
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:52:18.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9d85133a06f253a17d06c7311e21760e92275cf7d1e75b2769cfc1c5df8564fc",
+      "kind": "own-words",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-joins-28-state-brief-supporting-2nd-amendment-rights/",
+      "date": "2025-06-05",
+      "date_precision": "day",
+      "passage": "I will always fight to protect the Second Amendment, the Constitution, and the rule of law.",
+      "note": "Release on a 28-state brief against Maine's 72-hour waiting period for buying a gun; he says Maine's law should be thrown out.",
+      "subjects": [
+        "waiting period to buy a gun",
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:52:18.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "419d3a1430c75f32243be9d6646439333e4d9e9cdcc50e89a85ef6ba2e43b229",
+      "kind": "own-words",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-leads-fight-to-protect-2nd-amendment-in-lawsuit-over-federal-gun-registry/",
+      "date": "2025-08-11",
+      "date_precision": "day",
+      "passage": "I’ve always fought to protect our 2nd Amendment rights and have repeatedly stood up against government overreach. This case is about both,",
+      "note": "Release on his joining a 14-state Texas lawsuit against National Firearms Act registration of short-barrelled rifles, short-barrelled shotguns and silencers.",
+      "subjects": [
+        "repeal registration of suppressors and short-barrelled rifles",
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:52:18.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "54bd216946dcb0a632bde1be9c72d89a95ca13f574e16ec5765f6b53c40c33b2",
+      "kind": "own-words",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-fights-to-protect-2nd-amendment-in-two-cases/",
+      "date": "2025-11-25",
+      "date_precision": "day",
+      "passage": "The Second Amendment says the right to keep and bear arms shall not be infringed, which includes not allowing a state to infringe on that right,",
+      "note": "Release on briefs against two Hawaii laws: a permit-to-buy process with a 14-day wait, and a ban on carrying on private property open to the public.",
+      "subjects": [
+        "permit to buy a gun",
+        "waiting period to buy a gun",
+        "carry guns in public places"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:52:18.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b53b90596ae67f09b918690f1390d7fe601fa9733b10acb502527afd1250a22a",
+      "kind": "own-words",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-fights-against-burdensome-gun-restrictions/",
+      "date": "2026-01-09",
+      "date_precision": "day",
+      "passage": "Our Founding Fathers did not restrict the right to bear arms to ‘non-sensitive’ places,",
+      "note": "Release on briefs against California's background check on ammunition purchases and New Jersey's ban on carrying in listed sensitive places; he says both infringe on Second Amendment rights.",
+      "subjects": [
+        "background check on ammunition sales",
+        "carry guns in public places"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:52:18.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "913aeb25f9263c0f5fa276919fe258b6a35db584ccd7cf9dbeda869b32472174",
+      "kind": "own-words",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-defends-the-second-amendment-from-legal-attacks/",
+      "date": "2026-04-13",
+      "date_precision": "day",
+      "passage": "The Second Amendment is a right not limited by the actions of others,",
+      "note": "Release on a 22-state brief backing the federal law that shields gun makers from suits over crimes committed with their guns; he says buying guns should not be burdened.",
+      "subjects": [
+        "gun-maker lawsuit immunity",
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:52:18.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f29ea6a239fced8944c85d7d891e8eae105dc45012f98104e216b3368e0990c8",
+      "kind": "own-words",
+      "url": "https://wilsonforsc.com/priorities/",
+      "date": "2026-06-01",
+      "date_precision": "year",
+      "passage": "Wilson is a fierce defender of the Second Amendment, private property rights, and religious liberty.",
+      "note": "Campaign priorities page for governor; a general statement on the Second Amendment with no specific gun law named. Date is approximate: the page is undated.",
+      "subjects": [
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:52:18.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "72228b9904261aacbdd71d3d76e567c356a11b7b5fd8b65bb57faf05227ce448",
+      "kind": "record",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-joins-26-state-coalition-backing-federal-second-amendment-task-force/",
+      "date": "2025-04-22",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Signed 26-state attorneys general letter backing the federal Second Amendment Enforcement Task Force",
+      "note": "He joined a letter to the U.S. Attorney General supporting a federal task force to enforce gun rights, and offered his office's help in court and on policy.",
+      "subjects": [
+        "general Second Amendment statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:52:18.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "256d07e4f4fe3caeb3f0cc317f4e80075186ace92ea16ad3854d636c407156e1",
+      "kind": "record",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-joins-28-state-brief-supporting-2nd-amendment-rights/",
+      "date": "2025-06-05",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Joined amicus brief in the First Circuit against Maine's 72-hour gun-purchase waiting period",
+      "note": "Brief argues Maine failed to show its waiting period fits the historical tradition of gun regulation.",
+      "subjects": [
+        "waiting period to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:52:18.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a9ac5604c120ba24089e196690050eb8740c91d4d87716470da19b54bbbac90d",
+      "kind": "record",
+      "url": "https://www.scag.gov/about-the-office/news/attorney-general-alan-wilson-leads-fight-to-protect-2nd-amendment-in-lawsuit-over-federal-gun-registry/",
+      "date": "2025-08-11",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Joined Texas-led 14-state lawsuit challenging National Firearms Act registration",
+      "note": "The suit asks a court to find NFA registration rules for short-barrelled rifles, short-barrelled shotguns and silencers unconstitutional now that the tax is removed.",
+      "subjects": [
+        "repeal registration of suppressors and short-barrelled rifles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:52:18.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0353924960ef547dde117cf45805130a2652215af3dae330f652a40ea987e95",
+      "kind": "record",
+      "url": "https://www.fitsnews.com/2018/01/12/sc-attorney-general-opinion-municipal-gun-restrictions-invalid/",
+      "date": "2017-12-29",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Attorney general opinion: Greenville ordinance on carrying rifles and shotguns is preempted by state law (S.C. Code 23-31-510)",
+      "note": "Opinion from his office, written by an assistant attorney general, found a city carry ordinance invalid because state law bars local gun rules. Reported by a news site; the opinion is issued by his office, not a direct quote of him.",
+      "subjects": [
+        "local limits on guns",
+        "carry guns in public places"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:52:18.892Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -333,6 +585,36 @@
       "found": 14,
       "at": "2026-11-10T21:20:18.977Z",
       "by": "search-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry permits honored across states",
+        "carry in public places",
+        "waiting period to buy a gun",
+        "background check on ammunition sales",
+        "federal registry of suppressors and short-barrelled rifles",
+        "local limits on guns",
+        "general Second Amendment statements",
+        "gun-maker lawsuit immunity",
+        "permitless carry",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.scag.gov attorney general news releases (Second Amendment items, 2017 to 2026)",
+        "the campaign site priorities page https://wilsonforsc.com/priorities/",
+        "web news search on name plus gun words: confirmed he won the June 23, 2026 runoff for governor and is on the November ballot",
+        "Ballotpedia: not reviewed (not fetched)",
+        "Wikipedia: blocked: https://en.wikipedia.org/wiki/Alan_Wilson_(American_politician) (404)",
+        "legislature bill pages: nothing on the subject (he is statewide office, not a legislator)",
+        "nothing found on permitless carry, red-flag orders, assault-style gun bans or background checks in his own words"
+      ],
+      "found": 12,
+      "at": "2026-11-14T17:52:18.892Z",
+      "by": "source-collector"
     }
   ]
 }

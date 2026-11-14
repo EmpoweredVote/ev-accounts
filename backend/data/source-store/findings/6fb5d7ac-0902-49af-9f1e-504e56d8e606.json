@@ -328,6 +328,48 @@
           "sha256": "55f215c001fbd77cd188a36a1866d1805a0b4f553dadb583df7756e5a6e6a5bf"
         }
       }
+    },
+    {
+      "id": "d0419ad36689551b794bf4ea1b7cd238a5b8d01907ba80d8b2271889ff0def82",
+      "kind": "own-words",
+      "url": "https://gazette.com/?p=163714",
+      "date": "2024-03-06",
+      "date_precision": "day",
+      "passage": "This bill allows 18-year-olds to walk around with a gun on their hip as if they are a cowboy,",
+      "note": "Quoted by an AP story (carried by the Gazette) during House debate on the open-carry bill; he objects that the bill lets 18-year-olds carry openly.",
+      "subjects": [
+        "carry a gun without a permit",
+        "minimum age to carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:53:36.788Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a80649dbca8f6adf41b7e0e4392011da3c38a430b0282ebc881de592e4c28899",
+      "kind": "own-words",
+      "url": "https://www.sethrose.com/seth-gets-results-1",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Voted against permitless gun carry laws and successfully inserted provision to allow local governments to ban guns from local events and public gatherings",
+      "note": "Campaign site results page lists his vote against permitless carry and an amendment he added letting local governments bar guns at local events and public gatherings. Page undated; year is approximate.",
+      "subjects": [
+        "carry a gun without a permit",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:53:36.788Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -370,6 +412,29 @@
       "found": 2,
       "at": "2026-11-10T23:17:03.822Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "minimum age to carry",
+        "local limits on guns at public events",
+        "general gun violence statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.scstatehouse.gov/member.php?code=1584090719 (House member page: Representative Seth Rose, District 72, Richland County; confirms sitting office)",
+        "campaign site https://www.sethrose.com/ and its results page (one line on a gun vote)",
+        "web search 1 (name plus gun words): news stories on the 2024 carry bill",
+        "news story from the Gazette (AP) fetched",
+        "not reviewed: https://www.aol.com/sc-bill-end-gun-permit-154217376.html (no readable text returned)",
+        "not reviewed: his public X account (not fetched)",
+        "not reviewed: Ballotpedia, vote411, ontheissues, bill pages beyond those already on file (allowance not used further)"
+      ],
+      "found": 2,
+      "at": "2026-11-14T17:53:36.788Z",
+      "by": "source-collector"
     }
   ]
 }

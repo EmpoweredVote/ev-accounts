@@ -152,6 +152,32 @@
       "found": 0,
       "at": "2026-11-10T21:30:27.416Z",
       "by": "sc-search-r3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "guns on college campuses",
+        "repeal of gun laws",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity and ballot: https://en.wikipedia.org/wiki/Chris_Huff names him as the House District 28 member since 2024; https://ivoterguide.com/candidate/80596/race/31916/election/1469 lists him on the 2026-11-03 general ballot for District 28. One summary page hinted at a different District 28 primary winner but I could not confirm it on any page I fetched",
+        "the legislature's bill page for H 5163 (https://www.scstatehouse.gov/sess126_2025-2026/bills/5163.htm): he is a co-sponsor of the campus handgun bill, already on file",
+        "web search on his name plus gun words: nothing by him on the subject",
+        "not reviewed: https://www.scstatehouse.gov/member.php (his member page did not return usable text)",
+        "blocked: https://ballotpedia.org/Chris_Huff (fetch returned no text; nothing on the subject)",
+        "no personal or campaign site found; official site and campaign site not read",
+        "nothing on the subject: https://www.scstatehouse.gov/sess126_2025-2026/bills/5070.htm (sponsored by others)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T17:56:14.561Z",
+      "by": "source-collector"
     }
   ]
 }

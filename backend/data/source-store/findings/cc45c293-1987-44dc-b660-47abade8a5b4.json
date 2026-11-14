@@ -993,6 +993,32 @@
       "found": 5,
       "at": "2026-11-10T23:17:03.821Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "carry a gun without a permit",
+        "gun rights and Second Amendment statements",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract-otr returned no appearances)",
+        "https://www.scstatehouse.gov/member.php?code=1584174562 (fetched; page did not show his name or subject content, so not a confirmed member page)",
+        "https://www.scstatehouse.gov/sess126_2025-2026/bills/3650.htm (bill page fetched; sponsor list includes B. Newton; already on file)",
+        "https://www.nraila.org/articles/20210409/south-carolina-house-passes-constitutional-carry (fetched; lists Brandon Newton among House members thanked for the H3096 vote, already on file as a yea; an advocacy group's words, not his)",
+        "blocked: https://ballotpedia.org/Brandon_Newton (HTTP 403)",
+        "no personal campaign or official site found in search; not reviewed: https://americansforprosperity.actcentr.com/Signup/re-elect-brandon-newton-in-house-district-45",
+        "https://www.wsoctv.com/news/local/political-beat-candidate-guide-state-house-representatives-district-45/35KTTLQKMVAMXMSCVNZBYDOCGI/ (candidate guide Q&A; his answers cover taxes, jobs, a solar plant, abortion; nothing on the subject)",
+        "https://www.wrhi.com/2026/06/lancaster-county-house-incumbents-win-primaries-and-face-democrats-in-november-213374 (confirms he won the June 2026 primary for District 45 and is on the November ballot)",
+        "two web searches (name plus permitless carry / gun words; name plus District 45 2026); nothing in his own words on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-14T17:57:02.782Z",
+      "by": "source-collector"
     }
   ]
 }

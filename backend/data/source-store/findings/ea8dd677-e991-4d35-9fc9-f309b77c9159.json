@@ -628,6 +628,28 @@
           "sha256": "2e6cb10db8950be3bf6b666e4ca99f159a0e3ac0553584f58556f6d58aa1b1dd"
         }
       }
+    },
+    {
+      "id": "c494c57a2e4316750440cd79ecb84b7f679845473c78dda7ce2c7d71bbaf2eeb",
+      "kind": "record",
+      "url": "https://www.nraila.org/articles/20210316/south-carolina-constitutional-carry-advances-from-house-judiciary-committee",
+      "date": "2021-03-16",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3096-2021",
+      "act": "other",
+      "motion": "House Judiciary Committee favorable report on H. 3096, Constitutional Carry Act of 2021",
+      "note": "A gun-rights advocacy group's news item lists Rep. John King (49) among the House Judiciary Committee members it credits with supporting the favorable report on H. 3096, which lets an adult carry a handgun without a permit and keeps the existing carry permit. It is an outside group's list, not the committee's own roll call; the official committee vote was not located.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:55:50.180Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -674,6 +696,33 @@
       "found": 6,
       "at": "2026-11-10T23:17:03.814Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "federal gun rules",
+        "Second Amendment / gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "https://www.scstatehouse.gov/member.php?code=1002272607 (member page read: sitting House member, District 49, York County, in office 2009 to present; confirms scope)",
+        "Wikipedia page read: sitting House member, District 49; nothing on the subject",
+        "Official or campaign issues site: none found; nothing on the subject",
+        "Ballotpedia: https://ballotpedia.org/John_King_(South_Carolina) fetched, nothing on the subject returned",
+        "blocked: https://votesmart.org/bill/21321/55872/57918/prohibits-enforcement-of-federal-restrictions-on-firearms (page returned no readable vote text; a search snippet only, not saved)",
+        "https://ivoterguide.com/candidate/24835/race/16333/election/958 read: he did not answer the questionnaire; nothing saved",
+        "News search on name plus permitless carry: no quote from him found",
+        "Legislature bill and vote pages: votes and sponsorships already on file, not collected again",
+        "not reviewed: debate or floor-speech video (none located)"
+      ],
+      "found": 1,
+      "at": "2026-11-14T17:55:50.180Z",
+      "by": "source-collector"
     }
   ]
 }

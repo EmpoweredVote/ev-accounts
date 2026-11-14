@@ -174,5 +174,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "gun privacy"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://www.scstatehouse.gov/member.php?code=1453408917 (House member page: District 64, Clarendon and Sumter; nothing on the subject)",
+        "https://www.scstatehouse.gov/sess126_2025-2026/bills/3930.htm (confirms her name on the H 3930 co-sponsor list; already on file)",
+        "https://www.scstatehouse.gov/sess126_2025-2026/bills/136.htm (she is not a sponsor)",
+        "https://en.wikipedia.org/wiki/Fawn_Pedalino (says she lost the 2026 general election to a challenger; no gun content)",
+        "blocked: https://ballotpedia.org/Fawn_Pedalino (403)",
+        "not reviewed: https://www.scstatehouse.gov/votehistory.php?KEY=26085 (returned a PDF I did not read; how she voted on S 136 in 2025 not confirmed)",
+        "no personal campaign site or official issue page found",
+        "two web searches on her name plus gun words: no statement by her found"
+      ],
+      "found": 0,
+      "at": "2026-11-14T17:56:27.231Z",
+      "by": "source-collector"
+    }
+  ]
 }

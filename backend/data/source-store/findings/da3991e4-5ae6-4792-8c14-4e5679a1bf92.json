@@ -410,6 +410,32 @@
       "found": 5,
       "at": "2026-11-10T23:17:03.816Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "children's access to firearms"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://en.wikipedia.org/wiki/Tom_Young_Jr. (confirms sitting state senator, District 24, Aiken County, in office since 2013; seat not up in 2026)",
+        "blocked: https://ballotpedia.org/Tom_Young_Jr. (page returned empty)",
+        "https://www.scstatehouse.gov/member.php?chamber=S&code=1349336592 (member page loaded, but no readable text naming him or any gun content)",
+        "https://www.scstatehouse.gov/sess126_2025-2026/bills/18.htm and https://www.scstatehouse.gov/sess125_2023-2024/bills/848.htm (gun bills S.18 and S.848 list another senator as sole sponsor; no tie to him)",
+        "https://scsenategop.com/?p=2505 (Senate caucus release on H.3594; no passage naming him on the subject)",
+        "https://www.nraila.org/articles/20210505/south-carolina-constitutional-carry-amendment-fails (lists senators by name only; no statement from him)",
+        "web search (2 searches): no own-words statement on guns found",
+        "not reviewed: official Senate site, campaign site, news archive (budget of fetches not used on them; no own pages found beyond the member page)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T17:57:18.678Z",
+      "by": "source-collector"
     }
   ]
 }

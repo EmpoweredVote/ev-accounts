@@ -233,7 +233,55 @@
           "sha256": "5510ba9584bf5b6b59e5ac7234e186cd93316e9eb3f1edd482966cb35a79681f"
         }
       }
+    },
+    {
+      "id": "6c52f77499e6530f396158407498c000f8288aa1ef8c2363e14f89b3a923ecee",
+      "kind": "own-words",
+      "url": "https://charlestoncitypaper.com/2025/11/07/shr-24-45-latest-on-youth-violence-maces-woes-election-results",
+      "date": "2025-11-06",
+      "date_precision": "day",
+      "passage": "“We need to have that conversation,” she said. “There has to be accountability for both kids and adults. And one thing we know is what we’re doing isn’t working, so that’s one area I imagine we’ll try to address as quickly as possible.”",
+      "note": "Quoted by Charleston City Paper's Statehouse Report by phone, as a member of the House committee on youth gun violence. She agreed with a police chief's concern about adults leaving guns in unlocked cars, where teens take them, and said adults need accountability as well as kids. She also named gun crime sentencing as something the committee might look at.",
+      "subjects": [
+        "youth gun violence",
+        "adult accountability for guns stolen from cars",
+        "gun crime sentencing"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:51:09.982Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "youth gun violence and gun crime sentencing",
+        "safe storage of guns",
+        "general Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "status: still sitting; House Resolution 5626 (adopted 2026-04-30) marks her retirement at the end of her current term, so she holds the seat now: https://www.scstatehouse.gov/sess126_2025-2026/bills/5626.htm",
+        "On the Record (0 meetings, 0 candidate matches)",
+        "her own site https://spencerwetmore.com/ (home page fetched; nothing on the subject)",
+        "SC legislature bill pages and vote history (fetched resolution 5626; the on-file votes were not re-collected)",
+        "blocked: https://ballotpedia.org/Spencer_Wetmore (fetch returned empty)",
+        "news search on name plus gun words (two searches); one local news story with her own quote saved",
+        "ontheissues.org and vote411 not used (lead-only sources)"
+      ],
+      "found": 1,
+      "at": "2026-11-14T17:51:09.982Z",
+      "by": "source-collector"
+    }
+  ]
 }

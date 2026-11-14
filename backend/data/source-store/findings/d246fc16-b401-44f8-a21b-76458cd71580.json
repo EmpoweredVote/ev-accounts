@@ -245,6 +245,27 @@
           "sha256": "02e3e04ee30cbbfadda5e82fe2ba5980564b9d2baa9b488a954f80f4a1e4df74"
         }
       }
+    },
+    {
+      "id": "496eaa1f10f67f80b87dda36c4d20c1df6c896553a8431deb5d58f53e259ce32",
+      "kind": "own-words",
+      "url": "https://momsdemandaction.org/today-nearly-200-south-carolina-lawmakers-moms-demand-action-volunteers-and-gun-violence-survivors-gathered-at-the-south-carolina-state-house-for-advocacy-day-to-demand-the-passage-of-common-sense/",
+      "date": "2024-01-10",
+      "date_precision": "day",
+      "passage": "I think anybody listening would embrace the idea of a brother losing a brother, sadly that story is not unique. It is far too common in South Carolina and America.",
+      "note": "Quoted in an advocacy group's release on a State House press event where he and others called on lawmakers to do more against gun violence and to reject permitless carry legislation. The two sentences sit on separate lines in the release; the release itself says the group called on lawmakers to reject permitless carry.",
+      "subjects": [
+        "gun violence",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:55:29.077Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -286,6 +307,32 @@
       "found": 2,
       "at": "2026-11-10T23:17:03.819Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permitless carry",
+        "gun violence",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.scstatehouse.gov/member.php?chamber=S&search=Sabb (member page confirms Senator Ronnie A. Sabb, sitting in the Senate; nothing on the subject)",
+        "no separate campaign site found",
+        "https://ballotpedia.org/Ronnie_Sabb (nothing on the subject)",
+        "news search on name plus gun words (two stories read)",
+        "https://www.fitsnews.com/?p=504060 (news story on the Senate carry debate; it describes his concerns in the reporter's words, with no direct quote, so not saved)",
+        "https://momsdemandaction.org/today-nearly-200-south-carolina-lawmakers-moms-demand-action-volunteers-and-gun-violence-survivors-gathered-at-the-south-carolina-state-house-for-advocacy-day-to-demand-the-passage-of-common-sense/ (advocacy group release quoting him)",
+        "not reviewed: https://www.yahoo.com/news/state-senator-law-enforcement-address-135220503.html (no usable text returned)",
+        "bill sponsorship pages on the legislature site: not searched in depth, only the votes already on file"
+      ],
+      "found": 1,
+      "at": "2026-11-14T17:55:29.077Z",
+      "by": "source-collector"
     }
   ]
 }

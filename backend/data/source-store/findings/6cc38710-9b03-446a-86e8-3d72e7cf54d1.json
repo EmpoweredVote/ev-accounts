@@ -120,7 +120,80 @@
           "sha256": "e7e922f0cc1ebaf0e93bea6750f66cecaa76f094f0b78278a52e76a549a000ae"
         }
       }
+    },
+    {
+      "id": "4726832958b093ad6e8059c5667db9e09f5d1898db573a50253b50539af9abd6",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=26085",
+      "date": "2025-05-01",
+      "date_precision": "day",
+      "instrument_id": "SC-S-136-2025",
+      "act": "yea",
+      "motion": "Passage of Bill",
+      "note": "House Roll Call 562, passed 107-5. S.136 provides for dismissal of pending gun possession charges.",
+      "subjects": [
+        "repeal or ease gun possession laws",
+        "dismissal of gun possession charges"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:53:42.698Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e9aada9ab99dd3387485d72b80a2f59d4941be288bf9cb69ba991dc0352593b",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/votehistory.php?KEY=26302",
+      "date": "2025-05-08",
+      "date_precision": "day",
+      "instrument_id": "SC-S-136-2025",
+      "act": "yea",
+      "motion": "Concur in Senate Amendments",
+      "note": "House Roll Call 672, passed 109-0. House agreed to Senate amendments to S.136, dismissal of pending gun possession charges.",
+      "subjects": [
+        "repeal or ease gun possession laws",
+        "dismissal of gun possession charges"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:53:42.698Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "dismissal of gun possession charges",
+        "Second Amendment and gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, no meetings)",
+        "official House member page https://www.scstatehouse.gov/member.php?code=0867045351 (read: District 102, Berkeley and Dorchester; confirms sitting member; no issue statements)",
+        "blocked: https://ballotpedia.org/Harriet_Holman (returned an empty page; not read)",
+        "one web search on her name plus gun words: found only roll-call pages, nothing in her own words",
+        "House roll-call pages on scstatehouse.gov for S.136 and H.3930 (read)",
+        "bill page https://www.scstatehouse.gov/sess126_2025-2026/bills/136.htm (read; sponsors are senators, she is not listed)",
+        "campaign site: not found in search; no own-words statement on the subject found",
+        "2026 ballot status not confirmed from an official page; a candidate-listing site shows her in the 2026 District 102 race; her term runs through November 2026"
+      ],
+      "found": 2,
+      "at": "2026-11-14T17:53:42.698Z",
+      "by": "source-collector"
+    }
+  ]
 }

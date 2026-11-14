@@ -91,6 +91,31 @@
       "found": 0,
       "at": "2026-11-10T21:37:23.043Z",
       "by": "sc-search-r4"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "Second Amendment and gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings, 0 candidates)",
+        "https://www.scstatehouse.gov/member.php?code=1645738439 (member page read: confirms Representative Keishan M. Scott, District 50, elected in a special election June 3, 2025; no gun content)",
+        "https://www.ballotready.org/people/keishan-m-scott (search lead only: lists him as a 2026 general-election candidate for District 50; not fetched, so 2026 ballot status is unconfirmed by me)",
+        "https://ballotpedia.org/Keishan_Scott (fetched, page returned no usable text; nothing on the subject)",
+        "https://fastdemocracy.com/bill-search/sc/legislators/SCL000344 (fetched, no gun-related sponsorship text returned)",
+        "https://www.scstatehouse.gov/votehistory.php (roll-call page for H.3650 returned no usable text)",
+        "two news searches on his name plus gun words: nothing on the subject",
+        "no personal or campaign site found; not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-11-14T17:51:08.628Z",
+      "by": "source-collector"
     }
   ]
 }

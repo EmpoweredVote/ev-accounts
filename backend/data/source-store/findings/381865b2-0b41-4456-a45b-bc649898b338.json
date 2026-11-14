@@ -183,6 +183,32 @@
       "found": 0,
       "at": "2026-11-10T21:55:09.746Z",
       "by": "sc-research-re"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "Second Amendment general statements",
+        "gun registration limits",
+        "limits on who may have a gun"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "https://www.scstatehouse.gov/member.php?chamber=H&search=Wickensimer (legislature member page, confirms House District 22 seat)",
+        "https://www.scstatehouse.gov/sess126_2025-2026/bills/3930.htm (already on file: co-sponsor of H.3930; nothing new)",
+        "https://www.scstatehouse.gov/sess126_2025-2026/bills/5070.htm (2026 Second Amendment resolution; sponsor is another member, he is not listed; nothing on the subject for him)",
+        "https://ivoterguide.com/candidate/80574/race/27705/election/1421 (voter guide: listed for District 22 on the 2026 ballot; the gun question is marked did not answer)",
+        "not reviewed: https://www.scstatehouse.gov/votehistory.php (page returned an empty body to curl; votes already on file)",
+        "blocked: https://ballotpedia.org/Paul_Wickensimer (empty response to curl)",
+        "official or campaign site: no personal site found; not reviewed",
+        "two web searches (name plus gun words; name plus 2026 ballot): no statements of his own on the subject found; primary and general results not confirmed from a page I fetched"
+      ],
+      "found": 0,
+      "at": "2026-11-14T17:52:09.730Z",
+      "by": "source-collector"
     }
   ]
 }
