@@ -16,6 +16,9 @@ history. Read only what this card names.
 python3 -I scripts/stage5/leg.py A --profile {{PROFILE}} --state {{xx}} --state-name "{{STATE}}"
 ```
 
+   A leg may run as several slim sessions in a row: one that grows large hands over to a fresh one by itself.
+   You still get one last line.
+
 2. **Read its last line** (the command prints it, and its exit code says the same):
 
 | Exit | Last line | You do |

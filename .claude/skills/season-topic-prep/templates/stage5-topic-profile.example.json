@@ -28,6 +28,7 @@
     ]
   },
   "_sides": "The ladder's two sides for record-script.ts --sides, e.g. \"1,2,3/4,5\". null until the runner has ruled the sides for this topic.",
+  "_slim_cap": "Optional key \"slim_cap\": tokens a slim session leg may reach before it hands over to a fresh session (leg.py; default 100000, 0 = no cap).",
   "_record_script": "true only after the record pass by script has been approved for this topic (it needs sides and a bill table).",
   "_control_groups": "search_list.py --control-group values, e.g. [\"5,2:10\", \"3:10\"]: record seats at these rungs are not searched, except a control of n per group. [] = search everyone. Each group needs its own measurement and the runner's ruling FOR THIS TOPIC; another topic's numbers do not carry over.",
   "_topic_name": "The topic in plain words, as the quote checker reads it (\"the person's own words on \u2026\").",
