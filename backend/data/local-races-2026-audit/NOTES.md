@@ -133,13 +133,17 @@ read**. Same hazard as the Massachusetts city PDFs and the Oregon 2024 abstract;
 
 ## ▶ What this leaves to do
 
-- **Seed 45 races** — 42 Oregon, South Tucson, 2 Racine — after answering the two structural
-  questions above.
-- **Re-point 5 Arizona races** off 2026-11-03 onto the election that actually filled those seats.
-- Read Racine's vote figures from a source whose columns are not drifting.
-- ⚠ Out of scope and worth noting: Multnomah County **Sheriff** and **Auditor** were both on this
-  ballot and we hold **no race row for either**, so neither shows up as a gap anywhere. An office
-  with no race is invisible, not incomplete.
+✅ **All three are done** — see "State of play" below for which migration did which. Kept as written
+because the shape of the list is the finding: the 50 needed *three different acts*, not one.
+
+- ~~**Seed 45 races** — 42 Oregon, South Tucson, 2 Racine~~ — `CC_0423`, `CC_0421`, `CC_0424`.
+- ~~**Re-point 5 Arizona races** off 2026-11-03~~ — `CC_0421`.
+- ~~Read Racine's vote figures from a source whose columns are not drifting~~ — `CC_0424`, and the
+  answer was that **no source was drifting**; the reader was pairing in stream order.
+- ⚠ **STILL OPEN. Out of scope then and now:** Multnomah County **Sheriff** and **Auditor** were both
+  on this ballot and we hold **no race row for either**, so neither shows up as a gap anywhere. An
+  office with no race is invisible, not incomplete — **the empty-race sweep cannot ever find these**,
+  which is why finishing the 50 does not close this.
 
 ---
 
@@ -209,75 +213,155 @@ general, which is the right number for the *office* and the wrong number for tha
 
 ---
 
-# State of play, 2026-11-14 — 46 of the 50 are done, 4 are left
+# State of play, 2026-11-14 — ALL 50 ARE DONE
 
 | | | |
 | --- | --- | --- |
 | `CC_0421` | Arizona, 6 rows | 5 races moved to the 2026-07-21 primary that held them; South Tucson split across both elections; 32 candidacies |
 | `CC_0422` | Oregon, 21 → 7 rows | the multi-seat council contests collapsed to one race each, `seats = 3` |
 | `CC_0423` | Oregon, 26 races | 102 candidacies — 18 won, 26 lost, **58 with no result** |
+| `CC_0424` | Wisconsin, 2 races | Racine sheriff and clerk of circuit court, 3 candidacies — the clerk's result recorded, the sheriff's left to the canvass |
+| `CC_0425` | Oregon, 2 races | Wood Village mapped onto the city's own numbering and renamed; 2 candidacies, both won |
 
-**Empty 2026-11-03 races nationwide: 50 → 4.** Occupancy baseline unmoved at 238 throughout; nothing
-in any of the three seats anybody.
+🟢 **Empty 2026-11-03 races nationwide: 50 → 0**, measured against all 2,309 races for that date.
+Occupancy baseline unmoved at 238 throughout; not one of the five migrations seats anybody.
 
-## ▶ The 4 that are left, and what is already known about each
+## ✅ The last 4, worked through (2026-11-14) — `CC_0424` and `CC_0425`
 
-### Racine County, Wisconsin — Sheriff and Clerk of Circuit Court
+### Racine County, Wisconsin — Sheriff and Clerk of Circuit Court (`CC_0424`)
 
-**Both were on the 2026-11-03 ballot; that part is settled.** Wis. Stat. 59.20(2)(b) puts the sheriff
-on the gubernatorial cycle (2006 + 4n → 2026) and (2)(a) puts the register of deeds on the
-presidential one, and Racine's own summary carries a `Sheriff` and a `Clerk of Circuit Court`
-contest and **no Register of Deeds** — the statute predicts which offices appear and the ballot
-matches.
+The ballot was already settled from Wis. Stat. 59.20. The figures are now read, and both of the
+obstacles this file recorded turned out to be **half right in a way that mattered**.
 
-What is NOT settled is the numbers, and there are two obstacles:
+🟢 **`curl` IS NOT BLOCKED BY `racinecounty.gov`. A `User-Agent` ALONE IS NOT "A BROWSER."** The
+note above said the 403 persisted with a browser User-Agent and a Referer, and it did. The WAF
+wants the whole header set: `Accept`, `Accept-Language`, `sec-ch-ua`, `sec-ch-ua-mobile`,
+`sec-ch-ua-platform`, the four `Sec-Fetch-*` headers and `Upgrade-Insecure-Requests`. With those it
+answers 200 and the PDF. ▶ **Before escalating to Playwright, send the headers a browser actually
+sends** — the fetcher in `CC_0424`'s header lists them.
 
-- 🔴 **`curl` gets 403 on `racinecounty.gov` document URLs** even with a browser User-Agent and a
-  Referer, and on the alternate `racinecounty.com` host too. The file comes down inside the browser,
-  where it is same-origin.
-- 🔴 **The text extracted from that PDF is OFFSET BY ONE BLOCK.** It pairs `Sheriff (Vote for 1)`
-  with `Amy Vanderhoef 54,674` — Vanderhoef is the **Clerk of Circuit Court** — and pairs
-  `Clerk of Circuit Court (Vote for 1)` with `Yes 43,284 / No 36,344`, which is a **referendum**.
-  The contest titles are usable; **not one number in that extraction may be read.**
+🔴🔴 **THE "OFFSET BY ONE BLOCK" WAS NOT A PROPERTY OF THE PDF, IT WAS THE READER PAIRING IN
+CONTENT-STREAM ORDER.** The names and figures are all there and all correct; what is wrong is any
+reader that walks the stream, because the generator emits a label and its value at different
+baselines. ▶ The fix is to pair **geometrically**: `read-racine-pdf.mjs` clusters glyph runs by
+their `y` and reads each row left-to-right by `x`, so a row is a row of the printed table whatever
+order the stream emitted it in. **Every number became readable at once.** ⚠ The same hazard is
+recorded against the Massachusetts city PDFs and the Oregon 2024 abstract; this is the fix for all
+three shapes, not a Racine workaround.
 
-▶ Try the **Statement of Votes Cast** rather than the Election Summary Report, or the Wisconsin
-Elections Commission, or screenshot the summary pages and read them. ⚠ Press reporting has **Don
-Vandervest** winning the sheriff's race over Cary Madrigal, with our roster still seating
-**Christopher Schmaling** after 16 years — treat that as a lead until a county figure is read.
+**Sheriff** (88 of 88 precincts): Cary A. Madrigal (REP) **39,609**, Donald E. Vandervest (DEM)
+**42,048**, write-in 166, Total Votes 81,657.
+**Clerk of Circuit Court** (88 of 88): Amy Vanderhoef (REP) **54,674**, write-in 3,011, Total Votes
+54,674.
 
-### Wood Village, Oregon — City Council Seat 1 and Seat 2
+🟢 **READ THREE INDEPENDENT WAYS** (`verify-racine.mjs`): positional extraction; the page rendered
+to an image at 150dpi and read as a picture; and the 104-page **Statement of Votes Cast**, both its
+own printed total rows and the **sum of its 89 per-ward rows**. The ward sums close exactly.
+⚠ **Racine's "Total Votes" EXCLUDES write-ins** — 39,609 + 42,048 = 81,657 with the 166 outside it.
+That is this clerk's convention, not a convention; close the arithmetic.
+⚠ **The control was watched failing first, unprompted**: given the wrong page range it reported
+Vanderhoef **44,255** against 54,674. A **partial sum** is the failure mode a ward tally has, and it
+reads like two sources disagreeing rather than like a short read. ▶ A tally must state how many rows
+it summed.
 
-🔴 **Do not map these without evidence.** Three separate problems:
+🔴 **"FINAL UNOFFICIAL" IS THIS PUBLISHER'S TERMINAL DOCUMENT, NOT A STAGE.** Every election on
+Racine's results page back to 2018 carries the word — one is even headed "UNOFFICIAL Certification
+Report". The county publishes no canvassed document at all. **Waiting for "official" from this
+source waits for ever**, so the word carries no information and must not be read as one.
 
-1. The ballot has `Councilor, Position 1` (**Charlene Gothard**, unopposed, 802) and
-   `Councilor, Position 4` (**Christine Bierman**, unopposed, 810). We hold `Seat 1` and `Seat 2`.
-2. Our **Seat 2's** holder is **Charlene Gothard**, who is on the ballot for the city's **Position
-   1** — so our numbering is not the city's numbering.
-3. Our **Seat 1's** holder is **John Miner**, who was made **Mayor by the council in January 2023**.
-   That is the rotating-chair shape CLAUDE.md warns about, which *eats a council seat*. He may no
-   longer hold a council seat at all.
+**The clerk's result is recorded; the sheriff's is not.** Unopposed, Vanderhoef's contest is
+**forced** — the whole write-in line read as one person loses by 51,663. The sheriff's margin is
+2,439 and **nobody calls it**: AP's Wisconsin file holds **131 races across Governor, Attorney
+General, Secretary of State, Treasurer, U.S. House, State Senate, State Assembly and Question, and
+not one county office** — measured, not assumed. A margin is not a bound.
+⚠ Wisconsin is an **in-hand** state (an absentee ballot must reach the clerk by 8 p.m. on election
+day), so there is no late-arriving pool and 100% of precincts have reported. That makes the margin
+very likely safe — and *very likely* is still not a bound, because provisionals are cured afterwards
+and are not published here. ▶ **Record the sheriff from the canvass** (below).
 
-⚠ We hold **2 offices for a council that numbers at least 4 positions**, so this is partly a
-missing-office problem, not only a mapping one. ▶ Read the city's own roster and charter
-(`woodvillageor.gov`; `woodvillage.municipal.codes/Charter`) before touching either row.
+### Wood Village, Oregon — our Seat 1 and Seat 2 (`CC_0425`)
 
-## ▶ Two follow-ups that wait on other people, not on us
+**The charter and the city's own roster dissolve all three problems, and two of them were not
+problems.** Sources are committed under `sources/or-wood-village-{charter,council-roster}-2026-11-14.txt`.
 
-- **13 uncalled Oregon contests** carry their ballot and no outcome, because Oregon publishes no
-  winner flag and no outstanding-ballot count. The counties certify within 20 days of the election
-  and the Secretary of State's page still reads `UNOFFICIAL`. ▶ A results pass after that; the
-  analysis JSON already holds every vote total and margin.
+1. ⚠ **"We hold 2 offices for a council that numbers at least 4 positions" — we do not.** We hold
+   **five** offices in that chamber and Charter §8 prescribes **five councilors**; our roster and the
+   city's are the same five people. The gap was an artefact of looking only at the two offices that
+   carried an empty race. ▶ **Count the whole body before calling it incomplete.**
+2. 🔴 **A ROTATING CHAIR DOES NOT ALWAYS EAT A SEAT, AND WHICH IT DOES IS A COUNTING QUESTION.**
+   John Miner *was* made mayor by the council in January 2023 — Charter §10 has the council elect a
+   mayor **from its members** at the first meeting of each odd-numbered year, so that is exactly
+   when one is chosen, and it is a chair, not a seat. With five offices holding five councillors it
+   costs nothing. In the Maine cities the same shape **did** eat a seat, because the body's size was
+   already accounted for. ▶ The two facts ("he was made mayor" / "Rios-Campos is mayor") never
+   conflicted: that mayoralty ran to early 2025.
+3. 🟢 **THE NUMBERING MISMATCH IDENTIFIES THE MAPPING RATHER THAN BLOCKING IT.** §9 staggers the five
+   seats **three-and-two**; the roster shows exactly **two** terms ending 12/31/2026, Miner's and
+   Gothard's; the ballot carries exactly **two** contests, Positions 1 and 4; and **Gothard stands in
+   Position 1**, so the seat she holds *is* Position 1. By elimination Miner's is Position 4, where
+   Christine Bierman stands unopposed and Miner does not stand at all.
+   🟢 **The charter also predicts a NEGATIVE that the ballot confirms**: a council-chosen mayor means
+   there can be no mayoral contest, and there is none. A rule that says which contests must be
+   **absent** is worth more than one that only says what may appear — the same shape as Wis. Stat.
+   59.20 predicting Racine's missing Register of Deeds.
+
+Both contests are **forced** (unopposed, write-in line below the named candidate): Gothard 802
+(write-in 32) and Bierman 810 (write-in 28), both recorded won/called.
+
+**Both races were renamed** to the city's own numbering — `Seat 1` → **Position 4**, `Seat 2` →
+**Position 1** — because "Seat N" names seats the city does not have and no voter saw those numbers.
+The old values are in `CC_0425`'s header; there is no history table for `races.position_name`.
+
+⚠ **LEFT OPEN ON PURPOSE: two of the five office TITLES are wrong.** We call one office `Mayor` and
+one `Council President`, and under this charter **neither is a separately elected seat** — all five
+are councilors, and both labels are roles a sitting councilor holds. That is a labelling defect on
+offices no race touches; widening `CC_0425` to cover it would have mixed an occupancy edit into a
+ballot seed. ▶ **Its own pass.** It changes no race and no occupancy.
+
+## ▶ Three follow-ups that wait on other people, not on us
+
+Each carries its ballot and no outcome. **That is the finished state for a contest nobody has
+called** — not an unfinished race.
+
+- **13 uncalled Oregon contests**, because Oregon publishes no winner flag and no outstanding-ballot
+  count. The counties certify within 20 days of the election and the Secretary of State's page still
+  reads `UNOFFICIAL`. ▶ A results pass after that; `or-analysis-2026-11-14.json` already holds every
+  vote total and margin.
 - **South Tucson's general** has no winner recorded: Pima publishes a canvass for the July primary
   and none for 2026-11-03, and the second seat rests on **8 votes**. ▶ Revisit after Pima canvasses.
+- **Racine County Sheriff** has its two candidates and no result: contested by 2,439, and no
+  publisher calls a Wisconsin county office. The **county board of canvassers** determines county
+  offices, and county canvass statements were due to the Wisconsin Elections Commission by
+  **2026-11-17**. ▶ Record it from the canvass. 🔴 **Do not wait for Racine to publish a document
+  saying "official"** — it never has (see above). Ask the board of canvassers' statement, the
+  commission, or the clerk.
+
+## ▶ Seating, which none of these five migrations did
+
+Nothing in `CC_0421`–`CC_0425` seats anybody, creates a politician, or links one; the drift baseline
+read 238 before and after every one. The winners take office later:
+
+- **Wood Village**: Charter §25 — "the term of office of a person elected at a regular city election
+  shall commence the first of the year immediately following the election", so **2027-01-01**.
+  Charlene Gothard is already seated on that office; **Christine Bierman is a new person** and will
+  need creating as well as seating.
+- **Racine**: the county terms begin in **January 2027**. Our roster still seats Christopher
+  Schmaling as sheriff — he was on no line of this ballot — and Amy Vanderhoef as clerk.
 
 ## ⚠ Session state a fresh session should know
 
-- Leases `state:or`, `state:az`, `state:wi` were claimed for this work and should be released when
-  it is finished.
-- The worktree `C:/ev-accounts-locals` exists; the branches for `CC_0421`-`CC_0423` are merged.
-- 🔴 **`C:\EV-Accounts` itself has been parked on a dead branch**, `perf/cities-summary-index-only`,
+- 🟢 Leases `state:or`, `state:az` and `state:wi` are **released** — this work is finished.
+- The worktree `C:/ev-accounts-locals` exists; the branches for `CC_0421`–`CC_0423` are merged, and
+  `feat/locals-last-four` carries `CC_0424`–`CC_0425`.
+- Both migrations are **applied to production**. 🔴 Applied is not merged — `CC_0424` and `CC_0425`
+  exist only as files on that branch until its PR lands, and there is no `schema_migrations` table
+  to say otherwise.
+- 🔴 **`C:EV-Accounts` itself has been parked on a dead branch**, `perf/cities-summary-index-only`,
   squash-merged as PR #1345 on 2026-11-08 with its remote copy deleted. It has 0 modified tracked
   files and was **105 commits behind master** on 2026-11-14, which is why a session reading
-  `CLAUDE.md` from it gets a copy 651 lines out of date. The rule against moving HEAD in a worktree
-  you did not create has no exit condition for a branch that no longer exists anywhere.
+  `CLAUDE.md` from it gets a copy 651 lines out of date — and since 2026-11-12 the occupancy and
+  migration rules live in `backend/migrations/CLAUDE.md`, which such a copy does not even mention.
+  ⚠ A stale root `CLAUDE.md` still names `politicians.is_incumbent`, **dropped by `CA_0378`**.
+  The rule against moving HEAD in a worktree you did not create has no exit condition for a branch
+  that no longer exists anywhere.
   ▶ `git switch master && git pull` there, once somebody confirms no session is live in it.
