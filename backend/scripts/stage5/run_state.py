@@ -4,6 +4,7 @@ the write: in three states these were about 60 single commands, each one a full-
 
 usage: python3 -I scripts/stage5/run_state.py --profile <topic-profile.json> --state xx [--from N] [--to N] [--print]
                                               [--worktree <dir>] [--tools <dir>]
+       python3 -I scripts/stage5/run_state.py --profile <topic-profile.json> --state xx --round <name> [--ids <file>] [--why <file>]
 
 Run it in the background from a worktree's `backend/` whose `.env` is linked. It wakes the session once per stop.
 Everything about the topic comes from the profile: the topic key, the ladder's sides, whether the record pass by script
@@ -26,13 +27,39 @@ It stops with the file to read and the `--from` to resume with:
 Each step's full output is in <stage5>/<xx>/run/step-<n>.log; <stage5>/<xx>/run/log.json records when each step ended.
 A step is never skipped because its files exist: `--from` is the only way to resume. Waves skip agents already done.
 The state's own search note, if any, is <stage5>/<xx>/search-note.md (added to every search brief).
+
+`--round <name>` codes some people AGAIN, as one command (2026-11-14): a send-back round (no --ids: everyone named in
+an unanswered `<batch>.sendback.md` of this state, each with the code check's reasons) or a re-code after a ruling
+(--ids <file>, with --why <file> for one or two sentences the coders should know). It builds a brief that holds ONLY
+those people (coder-inputs.ts), runs the Opus wave, and splits with --replace. A person with a second-pass code
+(search-plan-<xx>/recode-ids.txt) is coded from all their findings into codes/; anyone else from their record into
+record-codes/, and into codes/ too when their record code was already adopted there. Each code replaced is kept in
+<stage5>/<xx>/codes-before-<name>/. The round's files are in <stage5>/<xx>/rounds/<name>/, away from the steps' own
+batches. Why: in Tennessee a send-back coder was pointed at the whole batch's brief and findings to code one person
+(three such coders cost 0.89M units), and each round was about six hand-built commands in the main session.
+Exit 10 when the round itself sends a code back: run another round, under a new name.
 """
-import csv, datetime, glob, json, os, re, subprocess, sys
+import csv, datetime, glob, json, os, re, shutil, subprocess, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir
 from _args import opt
 from session_card import load_profile, skip_rungs
 
-USAGE = 'run_state.py --profile <topic-profile.json> --state xx [--from N] [--to N] [--print] [--worktree <dir>] [--tools <dir>]'
+USAGE = ('run_state.py --profile <topic-profile.json> --state xx [--from N] [--to N] [--print] [--worktree <dir>] [--tools <dir>]\n'
+         '       run_state.py --profile <topic-profile.json> --state xx --round <name> [--ids <file>] [--why <file>] [--print]')
+PID = r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'
+
+
+def sent_back(path):
+    """{politician id: [the code check's reasons]} from one <batch>.sendback.md (split-codes.ts)."""
+    out, head = {}, None
+    for line in open(path).read().splitlines():
+        if line.startswith('### '): head = line[4:].strip(); continue
+        if not line.startswith('- ') or head is None: continue
+        if re.fullmatch(PID, head): out.setdefault(head, []).append(line[2:].strip())
+        elif head == 'missing from the file':
+            m = re.match(PID, line[2:])
+            if m: out.setdefault(m.group(0), []).append('no code was given for this person')
+    return out
 HERE = os.path.dirname(os.path.abspath(__file__))
 NAMES = {1: 'record', 2: 'plan', 3: 'search', 4: 'recode', 5: 'code', 6: 'adopt', 7: 'check'}
 
@@ -76,7 +103,7 @@ class Run:
         self.sh(f'{self.py}/wave.py {jobs or w + "/jobs.tsv"} --out {w}/out {self.add}')
         return w
 
-    def split(self, coded, briefs, name, codes):
+    def split(self, coded, briefs, name, codes, then=''):
         """split-codes.ts for every coded batch file; a sent-back code stops the run for the session."""
         files = sorted(glob.glob(f'{briefs}/{name}-*.ids.txt')) if not self.dry else [f'{briefs}/{name}-NN.ids.txt']
         if not files: raise Stop(2, f'no {name}-NN.ids.txt in {briefs}: coder-inputs.ts wrote no batch')
@@ -86,8 +113,9 @@ class Run:
             rc, out = self.sh(f'npx tsx scripts/stage5/split-codes.ts {coded}/{b}.json --config {self.S}/coder-config.json --codes {codes} --ids {ids}', ok=(0, 1, 3))
             if rc: back.append(b)
         if back:
-            raise Stop(10, f'split-codes sent codes back in {", ".join(back)}: read {self.dir}/step-{self.step}.log, re-code those people in a '
-                           f'send-back round (a coder, never by hand), split them, then resume with --from {self.step + 1}')
+            raise Stop(10, f'split-codes sent codes back in {", ".join(back)}: read {self.dir}/step-{self.step}.log, then code those people again with '
+                           f'`run_state.py --profile {self.path} --state {self.xx} --round sb1` (a coder, never by hand; a new name for each round)'
+                           + then + f', then resume with --from {self.step + 1}')
 
     def ids(self, path): return open(path).read().split() if os.path.exists(path) else []
 
@@ -100,9 +128,12 @@ class Run:
             who = f'{B}/{name}-coder-ids.txt'
         self.sh(f'npx tsx scripts/stage5/coder-inputs.ts {self.common} --ids {who} --name {name} --out {B} --coded-dir {S}/record-coded --record-only {self.table}')
         self.sh(f'{self.py}/stage5_prompts.py coder-jobs --briefs {B} --name {name} --wave {S}/waves/{xx}-rec')
-        self.wave('rec'); self.split(f'{S}/record-coded', B, name, f'{S}/record-codes')
+        adopt = f'npx tsx scripts/stage5/record-script.ts adopt --out {B} --name {name} --codes {S}/record-codes'
+        # a send-back stops the step before the standing check: the resume must not skip it (found in Tennessee, 2026-11-14)
+        self.wave('rec'); self.split(f'{S}/record-coded', B, name, f'{S}/record-codes',
+                                     then=f'; then run the standing check yourself, from backend/ (`{adopt}`; exit 4 = it failed, a runner stop)' if self.prof['record_script'] else '')
         if self.prof['record_script']:
-            rc, out = self.sh(f'npx tsx scripts/stage5/record-script.ts adopt --out {B} --name {name} --codes {S}/record-codes', ok=(0, 4))
+            rc, out = self.sh(adopt, ok=(0, 4))
             if rc == 4:
                 raise Stop(4, 'the standing check failed: a blind Opus code differs from the script\'s, and no script code was released. Show the '
                               f'runner both codes ({self.dir}/step-1.log). Until the runner rules, code every script person with Opus.')
@@ -174,8 +205,67 @@ class Run:
         return 'early check passed: ' + f'{S}/early-check-{xx}1.md'
 
 
+    # --- a round: some people coded again ----------------------------------------------------------------------
+    def round(self, name, ids_file, why_file):
+        S, xx = self.S, self.xx; self.step = f'round-{name}'; R = f'{S}/{xx}/rounds/{name}'; keep = f'{S}/{xx}/codes-before-{name}'
+        if not re.fullmatch(r'[a-z0-9]+', name): raise Stop(2, '--round is a short name of letters and digits, e.g. sb1 or r2')
+        if os.path.isdir(R) and not self.dry: raise Stop(2, f'round "{name}" was already run for {xx} ({R}): give the next round a new name')
+        second = set(self.ids(f'{S}/search-plan-{xx}/recode-ids.txt')); why = {}; files = []; groups = {True: [], False: []}  # True = record-only
+        if ids_file:
+            for p in dict.fromkeys(self.ids(ids_file)): groups[p not in second].append(p)
+        else:
+            for rec, pat in ((True, f'{S}/record-coded/{xx}-rec-*.sendback.md'), (False, f'{S}/coded/{xx}-*.sendback.md'),
+                             (True, f'{S}/{xx}/rounds/*/coded-rec/*.sendback.md'), (False, f'{S}/{xx}/rounds/*/coded/*.sendback.md')):
+                for f in sorted(glob.glob(pat)):
+                    files.append(f)
+                    for p, reasons in sent_back(f).items():
+                        if p not in groups[rec]: groups[rec].append(p)
+                        why.setdefault(p, []).extend(reasons)
+        if not groups[True] and not groups[False]:
+            raise Stop(2, f'nobody to code again: {ids_file} is empty' if ids_file else f'nobody to code again: no unanswered .sendback.md for {xx} (pass --ids for a re-code after a ruling)')
+        note = open(why_file).read().strip() if why_file else ''
+        t0, back, done = time.time(), [], []
+        for rec in (True, False):
+            who = groups[rec]
+            if not who: continue
+            kind = 'rec' if rec else 'code'; n = f'{xx}-{kind}-{name}'; briefs = f'{R}/briefs-{kind}'; coded = f'{R}/coded' + ('-rec' if rec else '')
+            codes = f'{S}/record-codes' if rec else f'{S}/codes'; ids = f'{R}/{kind}-ids.txt'
+            if not self.dry:
+                os.makedirs(briefs, exist_ok=True); open(ids, 'w').write('\n'.join(who) + '\n')
+                for d in {codes, f'{S}/codes'}:   # every code this round may replace is kept first
+                    for p in who:
+                        if os.path.exists(f'{d}/{p}.json'):
+                            os.makedirs(f'{keep}/{os.path.basename(d)}', exist_ok=True); shutil.copyfile(f'{d}/{p}.json', f'{keep}/{os.path.basename(d)}/{p}.json')
+            self.sh(f'npx tsx scripts/stage5/coder-inputs.ts {self.common} --ids {ids} --name {n} --out {briefs} --coded-dir {coded}'
+                    + (' --record-only' if rec else '') + f' {self.table}')
+            for b in sorted(glob.glob(f'{briefs}/{n}-*.ids.txt')):
+                mine = self.ids(b); lines = [f'- `{p}`: ' + '; '.join(dict.fromkeys(why[p])) for p in mine if why.get(p)]
+                with open(b[:-len('.ids.txt')] + '.md', 'a') as fh:
+                    fh.write(f'\n\n## This is a second coding round ({name})\n\nCode these people afresh from their findings, by every rule above. '
+                             'Do not open any earlier code for them.\n' + (f'\n{note}\n' if note else '')
+                             + ('\nThe code check refused an earlier code for these people. Make sure yours does not do the same:\n\n' + '\n'.join(lines) + '\n' if lines else ''))
+            self.sh(f'{self.py}/stage5_prompts.py coder-jobs --briefs {briefs} --name {n} --wave {S}/waves/{xx}-{kind}-{name}')
+            self.wave(f'{kind}-{name}')
+            for b in sorted(glob.glob(f'{briefs}/{n}-*.ids.txt')) if not self.dry else [f'{briefs}/{n}-NN.ids.txt']:
+                base = os.path.basename(b)[:-len('.ids.txt')]
+                rc, _ = self.sh(f'npx tsx scripts/stage5/split-codes.ts {coded}/{base}.json --config {S}/coder-config.json --codes {codes} --ids {b} --replace', ok=(0, 1, 3))
+                if rc: back.append(f'{coded}/{base}.sendback.md')
+            for p in who if not self.dry else []:
+                new = os.path.exists(f'{codes}/{p}.json') and os.path.getmtime(f'{codes}/{p}.json') >= t0 - 1
+                if new: done.append(p)
+                if new and rec and os.path.exists(f'{S}/codes/{p}.json'): shutil.copyfile(f'{codes}/{p}.json', f'{S}/codes/{p}.json')   # an adopted record code follows its source
+        for f in files if not self.dry else []: os.replace(f, f[:-len('.md')] + '.answered.md')
+        said = f'round {name}: {len(groups[True])} record-only, {len(groups[False])} second-pass; {len(done)} coded again'
+        if back: raise Stop(10, f'{said}; the round sent codes back ({", ".join(back)}): run another round under a new name')
+        return f'{said}, 0 sent back. Codes replaced are kept in {keep}'
+
+
 def main():
     r = Run(); first, last = int(opt('--from', '1')), int(opt('--to', '7'))
+    if opt('--round'):
+        if not r.dry: os.makedirs(r.dir, exist_ok=True)
+        try: print(r.round(opt('--round'), opt('--ids'), opt('--why'))); return 0
+        except Stop as e: print(f'STOP in round {opt("--round")}, exit {e.code}:\n{e.msg}'); return e.code
     if not (1 <= first <= last <= 7): raise SystemExit(USAGE)
     if not r.dry: os.makedirs(r.dir, exist_ok=True); os.makedirs(f'{r.S}/waves/{r.xx}-theme', exist_ok=True)
     log_path = f'{r.dir}/log.json'; log = json.load(open(log_path)) if os.path.exists(log_path) else {}

@@ -40,6 +40,9 @@ by a small desk session: `session_card.py desk` writes the desk's card, and `leg
 "slim"). A slim session cannot ask the runner anything, so it ends with a question file and the desk passes the
 answer back, word for word. 🔴 A slim session never writes the database: the write tools refuse it, and the desk
 runs the batch write and the approval, each on the runner's own yes for that batch.
+A leg is a chain of slim sessions (2026-11-14): each adds its log lines with `leg.py log`, which reports the
+session's size, and past the cap (100,000 tokens, or the profile's `slim_cap`) it writes a hand-over note and a
+fresh session carries on. Tennessee's two legs reached 322,000 and 233,000 tokens with no cap.
 
 Each session ends with `close_state.py` (tools README), as its last act.
 

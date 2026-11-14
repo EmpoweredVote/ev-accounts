@@ -2,7 +2,7 @@
 a tool is run as a subprocess, the way a batch runs it.
 python3 -I scripts/stage5/check_tools.py [--tools <dir>]   (default: this folder; point it at a tampered copy to watch
 a check fail). Exit 1 when any check fails. Needs no database, network or node_modules."""
-import csv, json, os, shutil, subprocess, sys, tempfile, traceback
+import csv, glob, json, os, shutil, subprocess, sys, tempfile, traceback
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 TOOLS = sys.argv[sys.argv.index('--tools') + 1] if '--tools' in sys.argv else HERE
@@ -743,6 +743,7 @@ C = os.environ['STUB_DIR']; open(C + '/calls.txt', 'a').write(key + ' :: ' + ' '
 f = C + '/exit ' + key
 if os.path.exists(f + ' once'): code = int(open(f + ' once').read()); os.remove(f + ' once'); sys.exit(code)
 if os.path.exists(C + '/say ' + key): print(open(C + '/say ' + key).read())
+if os.path.exists(C + '/do ' + key): exec(open(C + '/do ' + key).read())
 sys.exit(int(open(f).read()) if os.path.exists(f) else 0)
 """
 
@@ -787,6 +788,7 @@ def run_state_chains_the_steps_and_stops_only_where_a_person_is_needed(t):
     assert p.returncode == 4 and calls[-1] == 'record-script.ts adopt' and 'standing check' in p.stdout, 'a failed standing check ends the run before the search plan'
     clear(); stub('split-codes.ts', 1); p, calls = go()
     assert p.returncode == 10 and 'search_list.py plan' not in calls and 'never by hand' in p.stdout, 'a sent-back code goes to a coder'
+    assert '--round sb1' in p.stdout and 'record-script.ts adopt --out' in p.stdout and '--from 2' in p.stdout, 'the resume after a step-1 send-back names the standing check it would skip'
     clear(); open(f'{C}/say topic:stage5-find', 'w').write('refused 0e935fed-534e-42b0-a5ad-74f4199ff6df.json: a party name in places')
     p, calls = go('--from', '3'); assert p.returncode == 10 and calls[-1] == 'topic:stage5-find' and 'refused 1 search file' in p.stdout, p.stdout
     clear(); stub('search_list.py adopt', 4); p, calls = go('--from', '6')
@@ -797,6 +799,45 @@ def run_state_chains_the_steps_and_stops_only_where_a_person_is_needed(t):
     clear(); stub('wave.py', 1); p, calls = go('--from', '5'); assert p.returncode == 2 and calls[-1] == 'wave.py', 'a failed command ends the run'
     clear(); p, calls = go('--from', '6', '--to', '6'); assert p.returncode == 0 and calls == ['search_list.py adopt', 'search_effect.py']
     p, calls = go('--print'); assert p.returncode == 0 and not calls and '# step 7: check' in p.stdout, '--print runs nothing'
+    # --- a round: some people coded again, from a brief that holds only them
+    clear(); ids = [f'{n}0000000-0000-4000-8000-000000000000' for n in '12345']; P1, P2, P3, P4, P5 = ids
+    val = lambda flag: "a[a.index('" + flag + "') + 1]"
+    open(f'{C}/do coder-inputs.ts', 'w').write(f"os.makedirs({val('--out')}, exist_ok=True); b = {val('--out')} + '/' + {val('--name')} + '-01'\n"
+                                               f"open(b + '.ids.txt', 'w').write(open({val('--ids')}).read()); open(b + '.md', 'w').write('BRIEF ' + ' '.join(a))\n")
+    open(f'{C}/do split-codes.ts', 'w').write(f"os.makedirs({val('--codes')}, exist_ok=True)\nfor p in open({val('--ids')}).read().split(): open({val('--codes')} + '/' + p + '.json', 'w').write('new ' + a[1])\n")
+    for d in ('record-coded', 'coded', 'record-codes', 'codes'): os.makedirs(f'{S}/{d}', exist_ok=True)
+    put = lambda f, text: open(f'{S}/{f}', 'w').write(text)
+    put('record-coded/zz-rec-01.sendback.md', f'# Sent back: zz-rec-01\n\nFix each code below.\n\n### {P1}\n- names a bill not in the findings: XX-HB-9-2025\n\n### {P4}\n- no rung given\n')
+    put('coded/zz-01.sendback.md', f'# Sent back: zz-01\n\n### {P2}\n- quotes a finding it does not cite\n- quotes a finding it does not cite\n\n### missing from the file\n- {P3}: no code given; code this person\n\n### not in this batch\n- {P5}: not in the batch list\n')
+    put('record-codes/' + P1 + '.json', 'old record'); put('codes/' + P1 + '.json', 'old adopted'); put('codes/' + P2 + '.json', 'old second')
+    put('search-plan-zz/recode-ids.txt', f'{P2}\n{P3}\n')
+    p, calls = go('--round', 'sb1'); R = f'{S}/zz/rounds/sb1'; full = open(f'{C}/calls.txt').read().splitlines()
+    assert p.returncode == 0 and calls == ['coder-inputs.ts', 'stage5_prompts.py coder-jobs', 'wave.py', 'split-codes.ts'] * 2, (p.returncode, p.stdout[-500:], calls)
+    assert '2 record-only, 2 second-pass; 4 coded again, 0 sent back' in p.stdout, p.stdout
+    assert '--record-only' in full[0] and f'--out {R}/briefs-rec' in full[0] and f'--coded-dir {R}/coded-rec ' in full[0] and '--name zz-rec-sb1' in full[0] and '--bill-table' in full[0]
+    assert '--record-only' not in full[4] and '--name zz-code-sb1' in full[4] and f'--coded-dir {R}/coded ' in full[4]
+    assert f'--codes {S}/record-codes ' in full[3] and full[3].endswith('--replace') and f'--codes {S}/codes ' in full[7] and full[7].endswith('--replace')
+    assert open(f'{R}/rec-ids.txt').read().split() == [P1, P4] and open(f'{R}/code-ids.txt').read().split() == [P2, P3], 'each person is coded where their code lives, and nobody else is in the brief'
+    rb, cb = open(f'{R}/briefs-rec/zz-rec-sb1-01.md').read(), open(f'{R}/briefs-code/zz-code-sb1-01.md').read()
+    assert rb.startswith('BRIEF ') and 'second coding round (sb1)' in rb and f'`{P1}`: names a bill not in the findings: XX-HB-9-2025' in rb and f'`{P4}`: no rung given' in rb and P2 not in rb.split('second coding round')[1]
+    assert cb.count('quotes a finding it does not cite') == 1 and f'`{P3}`: no code was given for this person' in cb and P5 not in cb.split('second coding round')[1], 'reasons are given once; a person outside the batch is not coded'
+    got = lambda f: open(f'{S}/{f}').read()
+    assert got(f'record-codes/{P1}.json').startswith('new ') and got(f'codes/{P1}.json') == got(f'record-codes/{P1}.json'), 'an adopted record code follows its new record code'
+    assert not os.path.exists(f'{S}/codes/{P4}.json'), 'a record code that was never adopted is not put in codes/ by the round'
+    assert got(f'zz/codes-before-sb1/record-codes/{P1}.json') == 'old record' and got(f'zz/codes-before-sb1/codes/{P1}.json') == 'old adopted' and got(f'zz/codes-before-sb1/codes/{P2}.json') == 'old second'
+    assert not glob.glob(f'{S}/*coded/*.sendback.md') and len(glob.glob(f'{S}/*coded/*.sendback.answered.md')) == 2, 'an answered send-back is not answered twice'
+    p, calls = go('--round', 'sb1'); assert p.returncode == 2 and not calls and 'new name' in p.stdout
+    p, calls = go('--round', 'sb2'); assert p.returncode == 2 and not calls and 'nobody to code again' in p.stdout and not os.path.isdir(f'{S}/zz/rounds/sb2')
+    open(f'{t}/again.txt', 'w').write(f'{P2}\n{P5}\n{P2}\n'); open(f'{t}/why.md', 'w').write('A ruling was added for this state since the first coding. It is in the rulings above.')
+    stub('split-codes.ts', 3); p, calls = go('--round', 'r2', '--ids', f'{t}/again.txt', '--why', f'{t}/why.md'); R = f'{S}/zz/rounds/r2'
+    assert p.returncode == 10 and len(calls) == 8 and 'another round under a new name' in p.stdout and f'{R}/coded/zz-code-r2-01.sendback.md' in p.stdout, (p.returncode, p.stdout)
+    assert open(f'{R}/rec-ids.txt').read().split() == [P5] and open(f'{R}/code-ids.txt').read().split() == [P2], 'with --ids, a person with a second-pass code is coded from everything, anyone else from the record'
+    for f in (f'{R}/briefs-rec/zz-rec-r2-01.md', f'{R}/briefs-code/zz-code-r2-01.md'):
+        assert 'A ruling was added for this state' in open(f).read() and 'refused an earlier code' not in open(f).read()
+    clear(); put('rounds-probe.sendback.md', 'x'); os.makedirs(f'{S}/zz/rounds/r2/coded'); put('zz/rounds/r2/coded/zz-code-r2-01.sendback.md', f'### {P2}\n- cites a bill with no file\n'); p, calls = go('--round', 'sb3')
+    assert p.returncode == 0 and open(f'{S}/zz/rounds/sb3/code-ids.txt').read().split() == [P2] and not os.path.exists(f'{S}/zz/rounds/sb3/rec-ids.txt'), 'a round\'s own send-back is picked up by the next round'
+    p, calls = go('--round', 'Bad Name'); assert p.returncode == 2 and not calls
+    p, calls = go('--round', 'sb9', '--print'); assert not calls and not os.path.isdir(f'{S}/zz/rounds/sb9'), '--print runs nothing'
     json.dump({**json.load(open(P)), 'control_groups': [], 'record_script': False}, open(f'{t}/noskip.json', 'w'))
     r = subprocess.run([sys.executable, '-I', f'{tools}/run_state.py', '--profile', f'{t}/noskip.json', '--state', 'zz'], capture_output=True, text=True, env=env)
     assert r.returncode != 0 and 'no skip rule' in r.stderr, 'a topic with no skip rule is refused, not run with another topic\'s rule'
@@ -879,10 +920,14 @@ def check_fill_quotes_reads_the_text_with_and_without_struck_words(t):
 FAKE_CLAUDE = """#!/usr/bin/env python3
 import json, os, sys
 C = os.environ['STUB_DIR']; a = sys.argv[1:]
-json.dump({'argv': a, 'no_write': os.environ.get('STAGE5_NO_DB_WRITE'), 'cwd': os.getcwd()}, open(C + '/call.json', 'w'))
-reply = open(C + '/reply.txt').read()
+call = {'argv': a, 'no_write': os.environ.get('STAGE5_NO_DB_WRITE'), 'cwd': os.getcwd(), 'leg_env': {k: v for k, v in os.environ.items() if k.startswith('STAGE5_LEG_')}}
+json.dump(call, open(C + '/call.json', 'w')); open(C + '/calls.jsonl', 'a').write(json.dumps(call) + '\\n')
+n = int(open(C + '/n.txt').read()) if os.path.exists(C + '/n.txt') else 0; open(C + '/n.txt', 'w').write(str(n + 1))
+replies = open(C + '/reply.txt').read().split('\\n===NEXT===\\n'); reply = replies[min(n, len(replies) - 1)]
 if reply == 'CRASH': sys.exit(3)
-print(json.dumps({'session_id': 'sid-123', 'result': reply, 'num_turns': 4}))
+sid = a[a.index('--session-id') + 1] if '--session-id' in a else a[a.index('--resume') + 1]
+turns = int(open(C + '/turns.txt').read()) if os.path.exists(C + '/turns.txt') else 20
+print(json.dumps({'session_id': sid, 'result': reply, 'num_turns': turns}))
 """
 
 
@@ -898,7 +943,8 @@ def leg_starts_a_slim_session_that_cannot_write_and_turns_its_last_line_into_a_s
     assert 'never write the database' in rules and 'only on the runner\'s yes' in deskT
     def leg(reply, *a, which='A'):
         open(f'{C}/reply.txt', 'w').write(reply)
-        if os.path.exists(f'{C}/call.json'): os.remove(f'{C}/call.json')
+        for f in ('call.json', 'calls.jsonl', 'n.txt'):
+            if os.path.exists(f'{C}/{f}'): os.remove(f'{C}/{f}')
         p = subprocess.run([sys.executable, '-I', os.path.join(TOOLS, 'leg.py'), which, '--profile', P, '--state', 'zz', '--state-name', 'Zedland', *a], capture_output=True, text=True, env=env)
         return p, (json.load(open(f'{C}/call.json')) if os.path.exists(f'{C}/call.json') else None)
     D = f'{S}/zz/desk'
@@ -909,11 +955,12 @@ def leg_starts_a_slim_session_that_cannot_write_and_turns_its_last_line_into_a_s
     assert a[0] == '-p' and '--safe-mode' in a and '--disable-slash-commands' in a and a[a.index('--model') + 1] == 'opus' and '--resume' not in a
     assert a[a.index('--tools') + 1] == a[a.index('--allowedTools') + 1] and 'Bash' in a[a.index('--tools') + 1]
     assert '# Session A card' in a[1] and 'You are running this card as a slim session' in a[1] and f'{D}/QUESTION-A-<n>.md' in a[1] and '{{' not in a[1]
-    st = json.load(open(f'{D}/leg-A.json')); assert st['session_id'] == 'sid-123' and st['last'].startswith('STOP question') and len(st['runs']) == 1
+    sidA = a[a.index('--session-id') + 1]; assert c['leg_env'] == {'STAGE5_LEG_SESSION': sidA, 'STAGE5_LEG_CAP': '100000', 'STAGE5_LEG_LOG': f'{D}/LOG-A.md'}, c['leg_env']
+    st = json.load(open(f'{D}/leg-A.json')); assert st['session_id'] == sidA and st['sessions'] == [sidA] and st['last'].startswith('STOP question') and len(st['runs']) == 1
     p, c = leg('DONE A'); assert p.returncode != 0 and c is None and '--answer' in p.stderr, 'a started leg is resumed, never started twice'
     open(f'{t}/ans.md', 'w').write('Rung question: "Direction only (Recommended)"')
     p, c = leg('All steps finished.\nDONE A', '--answer', f'{t}/ans.md')
-    a = c['argv']; assert p.returncode == 0 and a[a.index('--resume') + 1] == 'sid-123' and 'Direction only (Recommended)' in a[1] and '# Session A card' not in a[1] and c['no_write'] == '1'
+    a = c['argv']; assert p.returncode == 0 and a[a.index('--resume') + 1] == sidA and c['leg_env']['STAGE5_LEG_SESSION'] == sidA and 'Direction only (Recommended)' in a[1] and '# Session A card' not in a[1] and c['no_write'] == '1'
     assert len(json.load(open(f'{D}/leg-A.json'))['runs']) == 2
     p, c = leg('DONE A'); assert p.returncode != 0 and c is None and 'already DONE' in p.stderr
     p, c = leg('x', '--answer', f'{t}/ans.md', which='B'); assert p.returncode != 0 and c is None, 'no answer for a leg that never started'
@@ -930,6 +977,70 @@ def leg_starts_a_slim_session_that_cannot_write_and_turns_its_last_line_into_a_s
     r = go('apply', dict(env, STAGE5_NO_DB_WRITE='1'))
     assert r.returncode == 5 and 'REFUSED' in r.stderr and not os.path.exists(f'{C}/npx.txt'), (r.returncode, r.stderr[-200:])
     go('apply', env); assert os.path.exists(f'{C}/npx.txt'), 'outside a slim session the write script still runs the writer'
+
+
+@check
+def leg_hands_over_to_a_fresh_session_past_the_size_cap(t):
+    """A leg is a chain of sessions: `leg.py log` reports the session's size from its transcript, and a hand-over starts a fresh session."""
+    os.makedirs(t); P, S = topic_folder(t, control_groups=['1:7']); C, bin_, home = f'{t}/stub', f'{t}/bin', f'{t}/home'; os.makedirs(C); os.makedirs(bin_)
+    open(f'{bin_}/claude', 'w').write(FAKE_CLAUDE); os.chmod(f'{bin_}/claude', 0o755); os.makedirs(f'{home}/.claude/projects/p')
+    env = dict(os.environ, STUB_DIR=C, HOME=home, PATH=bin_ + os.pathsep + os.environ['PATH'])
+    for k in [k for k in env if k.startswith('STAGE5_')]: env.pop(k)
+    D = f'{S}/zz/desk'; LEG = os.path.join(TOOLS, 'leg.py')
+    def transcript(sid, *sizes):   # one assistant step per size: new input, cache read and cache write all count
+        with open(f'{home}/.claude/projects/p/{sid}.jsonl', 'w') as fh:
+            fh.write(json.dumps({'type': 'user', 'message': {'content': 'go'}}) + '\n')
+            for i, n in enumerate(sizes):
+                fh.write(json.dumps({'type': 'assistant', 'message': {'id': f'm{i}', 'usage': {'input_tokens': 10, 'cache_read_input_tokens': n - 110, 'cache_creation_input_tokens': 100, 'output_tokens': 999999}}}) + '\n')
+    def leg(reply, *a, which='A', turns=20):
+        open(f'{C}/reply.txt', 'w').write(reply); open(f'{C}/turns.txt', 'w').write(str(turns))
+        for f in ('call.json', 'calls.jsonl', 'n.txt'):
+            if os.path.exists(f'{C}/{f}'): os.remove(f'{C}/{f}')
+        p = subprocess.run([sys.executable, '-I', LEG, which, '--profile', P, '--state', 'zz', '--state-name', 'Zedland', *a], capture_output=True, text=True, env=env)
+        return p, ([json.loads(l) for l in open(f'{C}/calls.jsonl')] if os.path.exists(f'{C}/calls.jsonl') else [])
+    # --- the size line: the latest step's whole input, against the cap; output tokens are not size
+    log = lambda line, sid, cap='100000', **kw: subprocess.run([sys.executable, '-I', LEG, 'log', *([line] if line else [])], capture_output=True, text=True,
+                                                              env=dict(env, STAGE5_LEG_LOG=f'{t}/LOG.md', STAGE5_LEG_SESSION=sid, STAGE5_LEG_CAP=cap), **kw)
+    transcript('s-small', 150000, 99999); transcript('s-big', 5000, 100000)
+    r = log('A1 bill list: 40 bills', 's-small'); assert r.returncode == 0 and '99,999 of 100,000' in r.stdout and 'carry on' in r.stdout and 'HAND OVER' not in r.stdout, r.stdout + r.stderr
+    r = log('- A2 texts: 38 of 40', 's-big'); assert 'HAND OVER NOW' in r.stdout and '100,000 of 100,000' in r.stdout, r.stdout
+    r = log('', 's-big', cap='0', input='A3 "quoted" line\n'); assert 'carry on' in r.stdout and 'HAND OVER' not in r.stdout, 'a cap of 0 turns the cap off'
+    r = log('A4', 's-none'); assert r.returncode == 0 and 'unknown' in r.stdout and 'carry on' in r.stdout, 'a session with no transcript is never told to hand over'
+    assert open(f'{t}/LOG.md').read() == '- A1 bill list: 40 bills\n- A2 texts: 38 of 40\n- A3 "quoted" line\n- A4\n', open(f'{t}/LOG.md').read()
+    r = subprocess.run([sys.executable, '-I', LEG, 'log', 'x'], capture_output=True, text=True, env=env); assert r.returncode != 0 and 'not inside a slim leg' in r.stderr
+    # --- a hand-over starts a fresh session with the card, the rules and the note; the desk only sees the end
+    os.makedirs(D); note = f'{D}/CONTINUE-A-1.md'; open(note, 'w').write('On step A3. Next: bill_table.py check.\n')
+    p, calls = leg(f'Texts done.\nSTOP handover {note}\n===NEXT===\nDONE A')
+    assert p.returncode == 0 and p.stdout.strip() == 'DONE A' and len(calls) == 2, (p.returncode, p.stdout, p.stderr[-300:], len(calls))
+    a0, a1 = calls[0]['argv'], calls[1]['argv']; s0, s1 = a0[a0.index('--session-id') + 1], a1[a1.index('--session-id') + 1]
+    assert s0 != s1 and '--resume' not in a1 and calls[1]['no_write'] == '1' and calls[1]['leg_env']['STAGE5_LEG_SESSION'] == s1
+    assert '# Session A card' in a1[1] and 'When the session is large' in a1[1] and 'You are continuing this leg' in a1[1] and note in a1[1] and 'You are continuing' not in a0[1]
+    assert f'{D}/CONTINUE-A-<n>.md' in a0[1] and 'The cap for this\nleg is 100,000 tokens' in a0[1] and '{{' not in a0[1]
+    st = json.load(open(f'{D}/leg-A.json')); assert st['sessions'] == [s0, s1] and st['session_id'] == s1 and [r['session'] for r in st['runs']] == [s0, s1] and st['last'] == 'DONE A'
+    transcript(s0, 5000); transcript(s1, 5000)
+    r = subprocess.run([sys.executable, '-I', LEG, 'sessions', '--profile', P, '--state', 'zz'], capture_output=True, text=True, env=env)
+    assert r.stdout.split() == ['--session', f'{home}/.claude/projects/p/{s0}.jsonl', '--session', f'{home}/.claude/projects/p/{s1}.jsonl'], r.stdout + r.stderr
+    # --- a hand-over naming no file is not followed; one inside MIN_TURNS steps stops the leg as blocked (a cap too low would loop)
+    os.remove(f'{D}/leg-A.json'); p, calls = leg(f'STOP handover {D}/CONTINUE-A-9.md\n===NEXT===\nDONE A')
+    assert p.returncode == 2 and len(calls) == 1 and 'missing or empty' in p.stdout, (p.returncode, p.stdout)
+    os.remove(f'{D}/leg-A.json'); p, calls = leg(f'STOP handover {note}', turns=3)
+    assert p.returncode == 12 and len(calls) == 1 and p.stdout.startswith('STOP blocked the leg handed over again after 3 steps'), (p.returncode, p.stdout)
+    os.remove(f'{D}/leg-A.json'); p, calls = leg(f'STOP handover {note}')
+    assert p.returncode == 12 and len(calls) == 13 and '13 hand-overs' in p.stdout, (p.returncode, len(calls), p.stdout)
+    # --- an answer goes to a fresh session only when the stopped one is past the cap AND left a note in its last run
+    def answered(size, with_note, *a):
+        for f in glob.glob(f'{D}/*'): os.remove(f)
+        p, calls = leg(f'STOP question {D}/QUESTION-B-1.md', which='B'); sid = json.load(open(f'{D}/leg-B.json'))['session_id']; transcript(sid, size)
+        if with_note: open(f'{D}/CONTINUE-B-1.md', 'w').write('On step B8. The question is open.\n')
+        open(f'{t}/ans.md', 'w').write('Option A, as recommended')
+        p, calls = leg('DONE B', '--answer', f'{t}/ans.md', *a, which='B'); assert p.returncode == 0 and len(calls) == 1, (p.returncode, p.stdout, p.stderr[-300:])
+        return sid, calls[0]['argv'], json.load(open(f'{D}/leg-B.json'))
+    sid, a, st = answered(140000, True)
+    assert '--resume' not in a and a[a.index('--session-id') + 1] != sid and st['sessions'] == [sid, st['session_id']]
+    assert '# Session B card' in a[1] and f'{D}/CONTINUE-B-1.md' in a[1] and 'Option A, as recommended' in a[1] and a[1].index('You are continuing') < a[1].index('Option A, as recommended')
+    sid, a, st = answered(60000, True); assert a[a.index('--resume') + 1] == sid and st['sessions'] == [sid] and '# Session B card' not in a[1], 'a small session is resumed: it keeps what it knows'
+    sid, a, st = answered(140000, False); assert a[a.index('--resume') + 1] == sid, 'a large session that left no note is resumed: a fresh one would know nothing'
+    sid, a, st = answered(140000, True, '--cap', '0'); assert a[a.index('--resume') + 1] == sid, 'with the cap off nothing is handed over'
 
 
 @check

@@ -79,8 +79,16 @@ When it stops, it prints why and the `--from N` to resume with. Read `{{S}}/{{xx
 
 - **Exit 4 at step 1:** the standing check failed. No script code was released. 🛑 Show the runner both codes
   (an unlisted stop). Until the runner rules, Opus codes every script person.
-- **Exit 10, codes sent back:** re-code those people with a coder in a send-back round, split them, resume. Never
-  fix a code by hand.
+- **Exit 10, codes sent back:** code those people again with one command, then resume. Never fix a code by hand,
+  and never write a send-back prompt by hand: the round builds a brief that holds only those people.
+
+```bash
+python3 -I scripts/stage5/run_state.py --profile {{PROFILE}} --state {{xx}} --round sb1
+```
+
+  A new name for each round (`sb2`, …). After a ruling, code the people it touches the same way:
+  `--round r2 --ids <file of ids> --why <file: one or two sentences>`. Old codes are kept in
+  `{{S}}/{{xx}}/codes-before-<name>/`.
 - **Exit 10, search files refused:** fix each file or brief that person again, import the folder again, resume.
 - **Exit 4 at step 6:** a control person changed. `reopened.tsv` lists the group to search and code after all.
   Report it.
@@ -100,7 +108,7 @@ its own measurement and the runner's ruling for this topic (STAGE5 "Pilot rule")
 {{/SKIP}}
 
 **B7. Bills the searchers named.** List bill ids in the new findings that have no stored bill. Fill those on the
-question; re-code only the people they touch.
+question; re-code only the people they touch (`run_state.py … --round <name> --ids <file>`).
 
 **B8. Early check.**
 

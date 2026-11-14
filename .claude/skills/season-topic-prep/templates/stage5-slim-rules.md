@@ -30,6 +30,7 @@ STOP question {{DESK}}/QUESTION-{{LEG}}-<n>.md
 STOP write {{S}}/write/{{xx}}-01/PREVIEW.md
 STOP approve {{S}}/write/{{xx}}-01/PREVIEW.md
 STOP blocked <one line: what failed and the file to read>
+STOP handover {{DESK}}/CONTINUE-{{LEG}}-<n>.md
 DONE {{LEG}}
 ```
 
@@ -43,8 +44,27 @@ says rulings go, then carry on from where you stopped. Do not repeat finished st
 ## While you work
 
 - Keep `{{DESK}}/LOG-{{LEG}}.md`: one line per step finished, with its count or result. The desk reads it instead
-  of your history. Write down every stop that is not on the card's list, and what caused it.
+  of your history. Write down every stop that is not on the card's list, and what caused it. Add each line with
+  `python3 -I scripts/stage5/leg.py log "<the line>"` (or pipe the line in, when it holds quote marks). Its reply
+  says how large this session is.
 - Long commands (waves, `run_state.py`, `run_recipe.py`, fetches) run in the foreground: you have nothing else to
   do while they run, and a background job outlives nothing here.
 - Close-out: run `close_state.py` only if the card tells this leg to. The desk adds its own transcript.
 - Commit by explicit pathspec in this worktree when the card says to commit. Never push, never open a pull request.
+
+## When the session is large
+
+Every step you take re-reads everything before it, so a long session costs more with each step. The cap for this
+leg is {{CAP}} tokens. When a `leg.py log` reply says **HAND OVER NOW**, or before any `STOP` line when the last
+reply said so:
+
+1. Finish the command in hand. Start nothing new.
+2. Write `{{DESK}}/CONTINUE-{{LEG}}-<n>.md` (n = 1, 2, …) for a session that knows only the card and the log: the
+   card step you are on; what is done in it and what is not; the next command, in full; every fact you hold that
+   is in no file (an answer of the runner's not yet recorded, a path, a count, a fix you made and why, a fault you
+   are working round); and any stop that is still open.
+3. If nothing waits on the runner, end with `STOP handover <that file>`. A fresh session carries on from it at
+   once. If a question or the write is due, end with that `STOP` line as usual: the file is used when the answer
+   comes.
+
+Do not hand over before a reply tells you to, and do not try to make the session smaller any other way.
