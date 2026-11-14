@@ -1,0 +1,352 @@
+{
+  "generated": "2026-11-14T03:14:33.775Z",
+  "statute": "A.R.S. 9-821.01",
+  "contests": [
+    {
+      "contest": "Marana Mayor",
+      "seats": 1,
+      "threshold": {
+        "sum": 13970,
+        "perSeat": 13970,
+        "majority": 6985
+      },
+      "seatsFilledAtPrimary": [
+        "POST, JON"
+      ],
+      "seatsLeftForGeneral": 0,
+      "advancingCount": 0,
+      "advancingExpected": 0,
+      "electedAtGeneral": [],
+      "marginLastInToFirstOut": null,
+      "rows": [
+        {
+          "name": "POST, JON",
+          "votes": 7620,
+          "election": "primary 2026-07-21",
+          "result": "won"
+        },
+        {
+          "name": "JOHNSEN, GREG",
+          "votes": 6350,
+          "election": "primary 2026-07-21",
+          "result": "lost"
+        }
+      ],
+      "writeIn": {
+        "primary": 27,
+        "general": null
+      },
+      "note": "1 of 2 candidates cleared the (F) majority of 6985; (G) seats the top 1, and no general contest was held."
+    },
+    {
+      "contest": "Marana Town Council",
+      "seats": 4,
+      "threshold": {
+        "sum": 43520,
+        "perSeat": 10880,
+        "majority": 5440
+      },
+      "seatsFilledAtPrimary": [
+        "KAI, HERB",
+        "MURPHY, TERI",
+        "OFFICER, JOHN",
+        "MCGUIRE, JACKIE"
+      ],
+      "seatsLeftForGeneral": 0,
+      "advancingCount": 0,
+      "advancingExpected": 0,
+      "electedAtGeneral": [],
+      "marginLastInToFirstOut": null,
+      "rows": [
+        {
+          "name": "KAI, HERB",
+          "votes": 7726,
+          "election": "primary 2026-07-21",
+          "result": "won"
+        },
+        {
+          "name": "MURPHY, TERI",
+          "votes": 7490,
+          "election": "primary 2026-07-21",
+          "result": "won"
+        },
+        {
+          "name": "OFFICER, JOHN",
+          "votes": 7472,
+          "election": "primary 2026-07-21",
+          "result": "won"
+        },
+        {
+          "name": "MCGUIRE, JACKIE",
+          "votes": 7302,
+          "election": "primary 2026-07-21",
+          "result": "won"
+        },
+        {
+          "name": "RITZ, SUE",
+          "votes": 6767,
+          "election": "primary 2026-07-21",
+          "result": "lost"
+        },
+        {
+          "name": "PRINCE, JULIE",
+          "votes": 6763,
+          "election": "primary 2026-07-21",
+          "result": "lost"
+        }
+      ],
+      "writeIn": {
+        "primary": 4680,
+        "general": null
+      },
+      "note": "6 of 6 candidates cleared the (F) majority of 5440; (G) seats the top 4, and no general contest was held."
+    },
+    {
+      "contest": "Oro Valley Mayor",
+      "seats": 1,
+      "threshold": {
+        "sum": 14830,
+        "perSeat": 14830,
+        "majority": 7415
+      },
+      "seatsFilledAtPrimary": [
+        "BARRETT, MELANIE"
+      ],
+      "seatsLeftForGeneral": 0,
+      "advancingCount": 0,
+      "advancingExpected": 0,
+      "electedAtGeneral": [],
+      "marginLastInToFirstOut": null,
+      "rows": [
+        {
+          "name": "BARRETT, MELANIE",
+          "votes": 8471,
+          "election": "primary 2026-07-21",
+          "result": "won"
+        },
+        {
+          "name": "NAPIER, MARK D.",
+          "votes": 6359,
+          "election": "primary 2026-07-21",
+          "result": "lost"
+        }
+      ],
+      "writeIn": {
+        "primary": 17,
+        "general": null
+      },
+      "note": "1 of 2 candidates cleared the (F) majority of 7415; (G) seats the top 1, and no general contest was held."
+    },
+    {
+      "contest": "Oro Valley Town Council",
+      "seats": 3,
+      "threshold": {
+        "sum": 37595,
+        "perSeat": 12531.666666666666,
+        "majority": 6266
+      },
+      "seatsFilledAtPrimary": [
+        "DAILEY, ROSA",
+        "PINA, RHONDA",
+        "WOOD, MATT"
+      ],
+      "seatsLeftForGeneral": 0,
+      "advancingCount": 0,
+      "advancingExpected": 0,
+      "electedAtGeneral": [],
+      "marginLastInToFirstOut": null,
+      "rows": [
+        {
+          "name": "DAILEY, ROSA",
+          "votes": 8661,
+          "election": "primary 2026-07-21",
+          "result": "won"
+        },
+        {
+          "name": "PINA, RHONDA",
+          "votes": 7866,
+          "election": "primary 2026-07-21",
+          "result": "won"
+        },
+        {
+          "name": "WOOD, MATT",
+          "votes": 7436,
+          "election": "primary 2026-07-21",
+          "result": "won"
+        },
+        {
+          "name": "DESIMONE, CHRIS",
+          "votes": 6878,
+          "election": "primary 2026-07-21",
+          "result": "lost"
+        },
+        {
+          "name": "HERRINGTON, JACOB \"JAKE\"",
+          "votes": 6754,
+          "election": "primary 2026-07-21",
+          "result": "lost"
+        }
+      ],
+      "writeIn": {
+        "primary": 85,
+        "general": null
+      },
+      "note": "5 of 5 candidates cleared the (F) majority of 6266; (G) seats the top 3, and no general contest was held."
+    },
+    {
+      "contest": "Sahuarita Town Council",
+      "seats": 3,
+      "threshold": {
+        "sum": 16672,
+        "perSeat": 5557.333333333333,
+        "majority": 2779
+      },
+      "seatsFilledAtPrimary": [
+        "MORALES, DEBORAH",
+        "MURPHY, TOM",
+        "HUNDAL, CHELSEA"
+      ],
+      "seatsLeftForGeneral": 0,
+      "advancingCount": 0,
+      "advancingExpected": 0,
+      "electedAtGeneral": [],
+      "marginLastInToFirstOut": null,
+      "rows": [
+        {
+          "name": "MORALES, DEBORAH",
+          "votes": 3885,
+          "election": "primary 2026-07-21",
+          "result": "won"
+        },
+        {
+          "name": "MURPHY, TOM",
+          "votes": 3837,
+          "election": "primary 2026-07-21",
+          "result": "won"
+        },
+        {
+          "name": "HUNDAL, CHELSEA",
+          "votes": 3397,
+          "election": "primary 2026-07-21",
+          "result": "won"
+        },
+        {
+          "name": "CUBILLO, JD",
+          "votes": 2970,
+          "election": "primary 2026-07-21",
+          "result": "lost"
+        },
+        {
+          "name": "EARL, ROBIN",
+          "votes": 2583,
+          "election": "primary 2026-07-21",
+          "result": "lost"
+        }
+      ],
+      "writeIn": {
+        "primary": 50,
+        "general": null
+      },
+      "note": "4 of 5 candidates cleared the (F) majority of 2779; (G) seats the top 3, and no general contest was held."
+    },
+    {
+      "contest": "South Tucson City Council",
+      "seats": 3,
+      "threshold": {
+        "sum": 1052,
+        "perSeat": 350.6666666666667,
+        "majority": 176
+      },
+      "seatsFilledAtPrimary": [
+        "VALENZUELA, ROXANNA"
+      ],
+      "seatsLeftForGeneral": 2,
+      "advancingCount": 4,
+      "advancingExpected": 4,
+      "electedAtGeneral": [
+        "AGUIRRE, CESAR",
+        "BACA, EDUARDO"
+      ],
+      "marginLastInToFirstOut": 8,
+      "rows": [
+        {
+          "name": "VALENZUELA, ROXANNA",
+          "votes": 201,
+          "election": "primary 2026-07-21",
+          "result": "won"
+        },
+        {
+          "name": "AGUIRRE, CESAR",
+          "votes": 166,
+          "election": "primary 2026-07-21",
+          "result": "advanced"
+        },
+        {
+          "name": "FEDERICO, DEBBIE",
+          "votes": 154,
+          "election": "primary 2026-07-21",
+          "result": "advanced"
+        },
+        {
+          "name": "FLAGG, BRIAN",
+          "votes": 154,
+          "election": "primary 2026-07-21",
+          "result": "advanced"
+        },
+        {
+          "name": "BACA, EDUARDO",
+          "votes": 119,
+          "election": "primary 2026-07-21",
+          "result": "advanced"
+        },
+        {
+          "name": "COOK, ZEKE",
+          "votes": 117,
+          "election": "primary 2026-07-21",
+          "result": "not_nominated"
+        },
+        {
+          "name": "MORENO-SEARS, DIANA",
+          "votes": 104,
+          "election": "primary 2026-07-21",
+          "result": "not_nominated"
+        },
+        {
+          "name": "DODSON, CHRISTOPHER",
+          "votes": 37,
+          "election": "primary 2026-07-21",
+          "result": "not_nominated"
+        },
+        {
+          "name": "AGUIRRE, CESAR",
+          "votes": 388,
+          "election": "general 2026-11-03",
+          "result": "won"
+        },
+        {
+          "name": "BACA, EDUARDO",
+          "votes": 353,
+          "election": "general 2026-11-03",
+          "result": "won"
+        },
+        {
+          "name": "FEDERICO, DEBBIE",
+          "votes": 345,
+          "election": "general 2026-11-03",
+          "result": "lost"
+        },
+        {
+          "name": "FLAGG, BRIAN",
+          "votes": 289,
+          "election": "general 2026-11-03",
+          "result": "lost"
+        }
+      ],
+      "writeIn": {
+        "primary": 8,
+        "general": 7
+      },
+      "note": "1 of 8 cleared the (F) majority of 176 at the primary and 1 seat(s) were taken there; 2 went to the general, where (H) put 4 candidates on the ballot."
+    }
+  ]
+}
