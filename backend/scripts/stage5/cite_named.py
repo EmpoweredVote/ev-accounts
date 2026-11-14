@@ -12,6 +12,9 @@ B, G, F = positional(3, USAGE); ST = opt('--state', required=True, usage=USAGE)
 pol = json.load(open(f'{B}/politicians.json')); pol = pol if isinstance(pol, list) else pol['politicians']
 pid = {p['full_name']: p['politician_id'] for p in pol}
 canon = lambda iid: (lambda m: (m.group(1) + m.group(2)).lower() if m else None)(re.match(re.escape(ST) + r'-([A-Z]+)-(\d+)-', iid or ''))
+# A one-letter store type (`SC-H-3594-2024`) gives `h3594`; the gate reads a coder's "HB 3594" as `hb3594`. Same bill,
+# so the House/Senate "B" is dropped on both sides before comparing (as strangeBills in stage5Ingest.ts does).
+loose = lambda t: re.sub(r'^([hs])b(?=\d)', r'\1', t) if t else t
 rows = list(csv.DictReader(open(f'{B}/research.csv'))); cols = list(rows[0].keys()); by = {r['full_name']: r for r in rows}
 added, none = 0, []
 for l in open(G):
@@ -20,7 +23,7 @@ for l in open(G):
     n, can = m.groups(); r = by[n]
     d = json.load(open(f'{F}/{pid[n]}.json')); fs = d if isinstance(d, list) else d['findings']
     # Same topic only: a gun row naming "SJR 2" must not cite the person's voting-rights SJR 2 roll call (wi-01).
-    fs = [f for f in fs if f.get('kind') == 'record' and canon(f.get('instrument_id')) == can and f.get('url')
+    fs = [f for f in fs if f.get('kind') == 'record' and loose(canon(f.get('instrument_id'))) == loose(can) and f.get('url')
           and (not f.get('topic_keys') or r['topic_key'] in f['topic_keys'])]
     if not fs: none.append((n, can)); continue
     uc = [c for c in cols if c.startswith('source_url_')]; urls = [r[c] for c in uc if r.get(c)]
