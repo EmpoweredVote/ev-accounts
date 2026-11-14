@@ -1,0 +1,50 @@
+{
+  "id": "SC-S-324-2017",
+  "scope": "state:sc",
+  "title": "S0324 (122nd General Assembly): Concealed weapons",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0324&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/324_20170509.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Harvey Peeler",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a4a6857a-c952-48f7-91bc-85c108dead56"
+    },
+    {
+      "name": "Bradley Hutto",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c00f954-b79c-4324-9ef4-3a50b2aae213"
+    },
+    {
+      "name": "Thomas McElveen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Comm Sub, 2017-05-09; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/324_20170509.htm (LegiScan doc 1612092))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-324-2017.comm-sub.htm",
+      "sha256": "a18be8337cfcfc53dad2edd34ac64b612e9c467b947f2c3f8470035093b01480"
+    },
+    "note": "Text read is the committee substitute print of 2017-05-09 (committee amendment adopted 2017-05-08); not enrolled, no passage vote in the data, so later amendments are not in the text read. In (A), 'and' after item (11) struck and items (12)-(14) added (old item (12) renumbered (13)); (B) and (C) are new."
+  },
+  "operative_text": "SECTION 1 (Section 23-31-240(A)): (A) Notwithstanding any other provision contained in this article, the following persons who possess a valid permit pursuant to this article may carry a concealable weapon anywhere within this State, when carrying out the duties of their office: (1) active Supreme Court justices; (2) active judges of the court of appeals; (3) active circuit court judges; (4) active family court judges; (5) active masters-in-equity; (6) active probate court judges; (7) active magistrates; (8) active municipal court judges; (9) active federal judges; (10) active administrative law judges; (11) active solicitors and assistant solicitors; (12) active circuit public defenders and assistant public defenders; (13) active workers' compensation commissioners; and (14) elected clerks of court.\nSECTION 1 (Section 23-31-240(B)): (B) Notwithstanding any other provision contained in this article, the following persons who possess a valid permit pursuant to this article may carry a concealable weapon anywhere within this State: (1) retired Supreme Court justices; (2) retired judges of the court of appeals; (3) retired circuit court judges; (4) retired family court judges; (5) retired probate court judges; (6) retired federal judges; (7) retired solicitors and retired assistant solicitors with the consent of the solicitor; (8) retired circuit public defenders and retired assistant public defenders with the consent of the circuit public defender; and (9) retired elected clerks of court.\nSECTION 1 (Section 23-31-240(C)): (C) For any person who obtains a concealed weapon permit pursuant to this section, SLED shall design and issue a concealed weapons permit identification card that clearly identifies the holder's current or former position for which the card was issued."
+}

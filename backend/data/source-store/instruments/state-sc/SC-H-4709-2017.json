@@ -1,0 +1,54 @@
+{
+  "id": "SC-H-4709-2017",
+  "scope": "state:sc",
+  "title": "H4709 (122nd General Assembly): Concealed weapons permits",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4709&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/4709_20180124.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jonathon Hill",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Craig Gagnon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "381f33f9-cfe6-469e-a7cb-c87f076dfce6"
+    },
+    {
+      "name": "Anne Thayer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joshua Putnam",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2018-01-24; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/4709_20180124.htm (LegiScan doc 1698307))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4709-2017.introduced.htm",
+      "sha256": "bfd13f8dc00f12b7b7603f9b3a2c7dbdf6e56dd8811b2d74061eceb3e9970a91"
+    },
+    "note": "Introduced text (Jan. 24, 2018). Struck: items (1)-(6), (8), (9): law enforcement/correctional facilities, courthouses, polling places, government meetings, school/college athletic events, daycare, churches, medical facilities. Only the federal-law and posted-sign items remain. Quote joins the surviving items; penalty paragraph for wilful violation of the other items not quoted."
+  },
+  "operative_text": "Section 1 (Section 23-31-215(M)): \"(M) A permit issued pursuant to this section does not authorize a permit holder to carry a concealable weapon into a: (1) place where the carrying of firearms is prohibited by federal law; or (2) place clearly marked with a sign prohibiting the carrying of a concealable weapon on the premises pursuant to Sections 23-31-220 and 23-31-235. Except that a property owner or an agent acting on his behalf, by express written consent, may allow individuals of his choosing to enter onto property regardless of a posted sign to the contrary. A person who violates a provision of this item, whether the violation is wilful or not, only may be charged with a violation of Section 16-11-620 and must not be charged with or penalized for a violation of this subsection.\""
+}

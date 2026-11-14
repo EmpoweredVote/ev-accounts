@@ -1,0 +1,49 @@
+{
+  "id": "SC-H-4314-2019",
+  "scope": "state:sc",
+  "title": "H4314 (123rd General Assembly): National Concealed Weapons Permit Reciprocity Act",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4314&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/4314_20190326.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nancy Mace",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Alan Clemmons",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sylleste Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ca9f32d0-baf9-4930-9b25-25522aa2a735"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2019-03-26; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/4314_20190326.htm (LegiScan doc 1972751))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4314-2019.introduced.htm",
+      "sha256": "71ff539d7e23593f34eb9c2f76aafd2f1029eb6ccda84c75ab918f5e2bd9bd93"
+    },
+    "note": "Introduced version (Mar. 26, 2019); no later version or vote on file. Struck: reciprocity condition requiring background check and training course in the other state; SLED reciprocity list; automatic recognition of Georgia and North Carolina permits."
+  },
+  "operative_text": "Section 2 (Section 23-31-215(N)): (N)(1) Valid out-of-state permits to carry concealable weapons held by a resident of a reciprocal state, or a state that recognizes and honors a valid South Carolina permit, who is twenty-one years old or older must be honored by this State. A resident of a reciprocal state with a valid out-of-state permit to carry a concealable weapon is subject to and must abide by the laws of South Carolina regarding concealable weapons while in South Carolina. The age twenty-one requirement does not apply to a member of the active or reserve military, or a member of the National Guard.\nSection 3 (Section 23-31-215(A)): (A) Notwithstanding any other provision of law, except subject to subsection (B), SLED must issue a permit, which is no larger than three and one-half inches by three inches in size, to carry a concealable weapon to a resident or qualified nonresident who is at least twenty-one years of age, unless the person is a member of the active or reserve military, or a member of the National Guard, and who is not prohibited by state law from possessing the weapon upon submission of:"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "SC-H-3612-2023",
+  "scope": "state:sc",
+  "title": "H3612 (125th General Assembly): S.C. Constitutional Carry Act of 2023",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3612&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/3612_20230111.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Thomas Beach",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "85584b63-dcb8-469a-ace1-2198fa415c66"
+    },
+    {
+      "name": "Daniel Gibson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "55fa23b3-d0fd-4fd7-b9da-6272b6cb62a3"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2023-01-11; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/3612_20230111.htm (LegiScan doc 2634219))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3612-2023.introduced.htm",
+      "sha256": "8ddad890362aacc61c6fcba1e1c62c5106fbbc3120aa5347ba99157e09a84728"
+    },
+    "note": "Introduced version (2023-01-11); no passage vote on record. Struck: the long list of carry exceptions in 16-23-20, the permit-holder ID and disclosure duties in 23-31-215(K), and \"concealable\" throughout the sign rules. Sections 5-7 and 9-11 (school premises, alcohol premises, signs) also change gun rules and are not quoted."
+  },
+  "operative_text": "Section 3 (Section 16-23-20): It is lawful for anyone to carry about the person any handgun, whether concealed or not, except as provided for in subsection (B) or if the person is otherwise prohibited from owning, carrying, or purchasing a firearm as provided for by state or federal law in existence on December 1, 2022.\nSection 3 (Section 16-23-20): It is unlawful for a person to carry a handgun about his person, whether concealed or not, into a: (1) law enforcement, correctional, or detention facility; (2) courthouse or courtroom; (3) polling place on election days;\nSection 4 (Section 16-23-50(A)(2)): A person violating the provisions of Section 16-23-20 except for subsection (B)(11) is guilty of a misdemeanor and, upon conviction, must be fined not more than one thousand dollars or imprisoned not more than one year, or both.\nSection 2 (Section 10-11-320(B)): This section does not apply to a person who possesses a firearm and is authorized to park on the capitol grounds or in the parking garage below the capitol grounds.\nSection 8 (Section 23-31-215(K)): A permit holder immediately must report the loss or theft of a permit identification card to SLED headquarters.\nSection 12: Sections 16-23-460, 23-31-225, and 23-31-230 of the S.C. Code are repealed."
+}

@@ -1,0 +1,45 @@
+{
+  "id": "SC-S-138-2025",
+  "scope": "state:sc",
+  "title": "S0138 (126th General Assembly): Dismissal of pending Handgun possession charges",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0138&session=126&summary=B",
+    "https://www.scstatehouse.gov/sess126_2025-2026/prever/138_20250117.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Deon Tedder",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "60aaaf10-d41e-4c05-8cf0-3aab818d8929"
+    },
+    {
+      "name": "Matthew Leber",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1b78e67d-6d5c-4347-9f11-01c3d78d79d8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Draft, 2025-01-17; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/138_20250117.htm (LegiScan doc 3065382))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-138-2025.draft.htm",
+      "sha256": "ff78f35a1f0c5282c0944abcccd35885a64e4a1d10a93e56f5a355965144b593"
+    },
+    "note": "Text read is the 'Draft' print of 2025-01-17 (prefiled); no vote recorded. The printed text cites 'Section 13-23-20' (sic) in one place and 16-23-20 elsewhere; quoted as printed. Subsection (A) is existing law, only relabeled."
+  },
+  "operative_text": "Section 1 (Section 17-1-65): (B) The State of South Carolina must dismiss all charges pending against a person for unlawful possession of a handgun pursuant of Section 13-23-20 that were nullified by the enactment of the S.C. Constitutional Carry/Second Amendment Preservation Act of 2024, notwithstanding the savings clause contained in SECTION 25 of that act. If such unlawful possession of a handgun charge was used as probable cause for another offense arising from the same incident, this section does not mandate that those associated charges be dismissed. Dismissal of the Section 16-23-20 charge may not serve as a basis or support for any civil action due to the arrest of the Section 16-23-20 charge by law enforcement officers or prosecutors."
+}

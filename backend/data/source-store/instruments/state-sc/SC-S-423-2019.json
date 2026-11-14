@@ -1,0 +1,39 @@
+{
+  "id": "SC-S-423-2019",
+  "scope": "state:sc",
+  "title": "S0423 (123rd General Assembly): Weapons on school property",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0423&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/423_20190124.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bradley Hutto",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c00f954-b79c-4324-9ef4-3a50b2aae213"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2019-01-24; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/423_20190124.htm (LegiScan doc 1869866))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-423-2019.introduced.htm",
+      "sha256": "1d7fb91369dfc5ea081d40ea4d76589d9fe3a5ad489f628e1108c1db4ee1d2df"
+    },
+    "note": "Introduced Jan. 24, 2019. No passage vote. The bill title says possess 'on or within 1,000 feet'; the printed text adds 'or discharge a firearm within one thousand feet of'."
+  },
+  "operative_text": "SECTION 1 (Section 16-23-420(A)): It is unlawful for a person to possess a firearm of any kind on or discharge a firearm within one thousand feet of any premises or property owned, operated, or controlled by a private or public school, college, university, technical college, other post-secondary institution, or in any publicly owned building, without the express permission of the authorities in charge of the premises or property."
+}

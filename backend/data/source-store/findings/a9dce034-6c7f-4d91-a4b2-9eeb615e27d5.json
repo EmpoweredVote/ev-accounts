@@ -1,6 +1,120 @@
 {
   "politician_id": "a9dce034-6c7f-4d91-a4b2-9eeb615e27d5",
-  "findings": [],
+  "findings": [
+    {
+      "id": "e6e46c41289736f9fe1314043fb98783745943908cdb8d446e8389678e58535b",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3650&session=126&summary=B",
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3650-2026",
+      "act": "yea",
+      "motion": "House: Concur In Senate Amendments",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC House, House: Concur In Senate Amendments, 2026-04-23: yea (tally 106–0); census gate: near-unanimous.",
+      "subjects": [
+        "tiered fines and prison for shooting into occupied buildings or vehicles",
+        "intent wording for discharge offence",
+        "hunting-accident carve-out"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2026-04-22; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3650_20260422.htm (LegiScan doc 3423948))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3650-2026.amended.htm",
+          "sha256": "0e42b5bae5c0cd7e1886aca0ee3a4d66a9db5e0282a4f3e8a3d380abd3504217"
+        }
+      }
+    },
+    {
+      "id": "e9bd158600f8e6f8697442e3c8fc0db75df45bf7d41ec82e14606c5d58891b48",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3930&session=126&summary=B",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3930-2025",
+      "act": "yea",
+      "motion": "House: Passage Of Bill",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SC House, House: Passage Of Bill, 2025-04-09: yea (tally 85–10); census gate: none.",
+      "subjects": [
+        "no government registry of gun owners",
+        "no firearm-retailer payment category codes",
+        "Attorney General enforces by injunction and civil fine"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Comm Sub, 2025-04-30; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3930_20250430.htm (LegiScan doc 3225339))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3930-2025.comm-sub.htm",
+          "sha256": "e7e922f0cc1ebaf0e93bea6750f66cecaa76f094f0b78278a52e76a549a000ae"
+        }
+      }
+    },
+    {
+      "id": "04eee904b623c243134690dbaade0edb13c0e95e25486c69f625a15f7b3329a4",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0136&session=126&summary=B",
+      "date": "2026-01-14",
+      "date_precision": "day",
+      "instrument_id": "SC-S-136-2026",
+      "act": "yea",
+      "motion": "House: Override Veto By The Governor",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC House, House: Override Veto By The Governor, 2026-01-14: yea (tally 112–0); census gate: near-unanimous.",
+      "subjects": [
+        "dismiss pending handgun-possession charges from before permitless carry",
+        "no civil suit over the arrest after dismissal"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2025-05-07; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/136_20250507.htm (LegiScan doc 3231297))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-136-2026.amended.htm",
+          "sha256": "40e53d7ae3a5f8da35cb38ebd5e3cc683e93f493dbb1a441ec504dc03c4c69f7"
+        }
+      }
+    },
+    {
+      "id": "d82e81a1d72d8bab3a956347a73fb80c70606bf330319916ac2d3af785f36f61",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/bill-aims-keep-gun-owners-190519786.html",
+      "date": "2025-03-29",
+      "date_precision": "day",
+      "passage": "does that language give you any concern in terms of vagueness or mandatory investigation?",
+      "note": "A TV news story (WSPA, via a web portal) quotes him asking a bank-association witness, at a House hearing on a bill barring banks from tracking gun and ammunition purchases, about the bill's line that the Attorney General shall investigate reasonable allegations. It is a question, not a statement of support or opposition. The story date is the publication date; the hearing date is not given.",
+      "subjects": [
+        "gun owner financial privacy",
+        "bank tracking of gun purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:54:45.194Z",
+        "method": "webfetch"
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -30,6 +144,32 @@
       "found": 0,
       "at": "2026-11-10T21:37:18.613Z",
       "by": "sc-search-r4"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of gun or magazine",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun owner financial privacy",
+        "general statement on gun rights or the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "in scope: sitting House District 54 member (https://www.scstatehouse.gov/member.php?code=1126420320); won the June 9 2026 primary over Betty Jo Quick per the state election commission audit totals (https://scvotes.gov/wp-content/uploads/2026/06/3.Contest-Results-Comparison-with-Jurisdiction-Details.pdf); a TV station story says no challenger in November (https://www.wbtv.com/2026/06/08/tracking-2026-primary-results-south-carolina-house-representatives-district-54/)",
+        "official legislature member page https://www.scstatehouse.gov/member.php?code=1126420320 (read; no gun material; sponsored-bill list not reviewed)",
+        "campaign site https://luckforsc.com/ (read; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Jason_Luck (empty response)",
+        "local newspaper filing story https://heraldadvocate.com/news/17062/luck-files-for-re-election-to-sc-house-district-54/ (nothing on the subject)",
+        "one news search on name plus gun words (found one quoted committee exchange); one search for primary results",
+        "bill page https://www.scstatehouse.gov/sess126_2025-2026/bills/3930.htm (sponsor list read; he is not listed in the excerpt seen)",
+        "not reviewed: debate, interview or forum video; no questionnaire found"
+      ],
+      "found": 1,
+      "at": "2026-11-14T17:54:45.194Z",
+      "by": "source-collector"
     }
   ]
 }

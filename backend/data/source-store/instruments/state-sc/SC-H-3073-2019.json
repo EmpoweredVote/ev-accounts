@@ -1,0 +1,51 @@
+{
+  "id": "SC-H-3073-2019",
+  "scope": "state:sc",
+  "title": "H3073 (123rd General Assembly): Concealed weapons; allow clerk of court to carry while on duty",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3073&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/3073_20181218.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Brandon Newton",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cc45c293-1987-44dc-b660-47abade8a5b4"
+    },
+    {
+      "name": "Lonnie Hosey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "11483511-6da8-4980-825d-9ecfa3da0074"
+    },
+    {
+      "name": "Randy Ligon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a95bca6c-c444-4a7c-8cf8-9bb55af52e14"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2018-12-18; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/3073_20181218.htm (LegiScan doc 1831277))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3073-2019.introduced.htm",
+      "sha256": "075ee672c72e7b18299ad27f6161669d84fbf2d311e7ba556040a94fbe45e592"
+    },
+    "note": "Introduced text, Dec. 18, 2018. No votes. Struck 'and' in item (11); added '; and' in item (12)."
+  },
+  "operative_text": "Section 1 (Section 23-31-240): Notwithstanding any other provision contained in this article, the following persons who possess a valid permit pursuant to this article may carry a concealable weapon anywhere within this State, when carrying out the duties of their office:\nSection 1 (Section 23-31-240): (13) clerks of court."
+}

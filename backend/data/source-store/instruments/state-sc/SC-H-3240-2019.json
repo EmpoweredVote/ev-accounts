@@ -1,0 +1,44 @@
+{
+  "id": "SC-H-3240-2019",
+  "scope": "state:sc",
+  "title": "H3240 (123rd General Assembly): Firearms",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3240&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/3240_20181218.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Leonidas Stavrinakis",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0d8165ca-3f62-481a-8ba0-ded42e235481"
+    },
+    {
+      "name": "William Cogswell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2018-12-18; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/3240_20181218.htm (LegiScan doc 1831207))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3240-2019.introduced.htm",
+      "sha256": "406b8115533d26613084e89f8114c7c567db2a47e578dbd6bc05216614a4a098"
+    },
+    "note": "Introduced text, 2018-12-18."
+  },
+  "operative_text": "Section 1 (new Section 16-23-540): (A) It is unlawful for a person to possess, distribute, or manufacture a part, component, attachment, device, or accessory designed to accelerate the rate of fire of a semiautomatic weapon including, but not limited to, a bump stock or trigger crank.\nSection 1 (new Section 16-23-540): (B) A person who violates the provisions of this section is guilty of a felony and, upon conviction, must be imprisoned not more than five years.\nSection 2 (uncodified): Within ninety days of the effective date of this act, persons possessing, distributing, or manufacturing a part, component, attachment, device, or accessory designed to accelerate the rate of fire of a semiautomatic weapon must cease all operations concerning the distribution or manufacture of these items and surrender such items to their local sheriff's department, the South Carolina Law Enforcement Division, or a field office of the Bureau of Alcohol, Tobacco, Firearms, and Explosives."
+}

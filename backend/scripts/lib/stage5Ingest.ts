@@ -95,6 +95,10 @@ export function labelsIn(text: string): string[] {
 /** Bills named in `text` that are not among this person's bills. Labels are reported apart, never here. */
 export function strangeBills(text: string, bills: { ids: Set<string>; tokens: Set<string> }): string[] {
   const out: string[] = [];
+  // A store id with a one-letter type (`SC-H-3594-2024`, `MA-H-4135-2023`) gives `h3594`; a coder's "HB 3594"
+  // gives `hb3594`. Both name the same bill, so the House/Senate "B" is dropped before comparing.
+  const loose = (t: string) => t.replace(/^([hs])b(?=\d)/, '$1');
+  const known = new Set([...bills.tokens].map(loose));
   for (const s of new Set(text.match(STORE_ID_RE) ?? [])) if (!bills.ids.has(s)) out.push(s);
   const rest = text.replace(STORE_ID_RE, ' ').replace(LABEL_RE, ' ');
   const seen = new Set<string>();
@@ -102,7 +106,7 @@ export function strangeBills(text: string, bills: { ids: Set<string>; tokens: Se
     const tok = canonicalizeInstrumentId(raw);
     if (seen.has(tok)) continue;
     seen.add(tok);
-    if (!bills.tokens.has(tok)) out.push(raw.trim());
+    if (!known.has(loose(tok))) out.push(raw.trim());
   }
   return out;
 }

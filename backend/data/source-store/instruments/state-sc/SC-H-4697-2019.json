@@ -1,0 +1,44 @@
+{
+  "id": "SC-H-4697-2019",
+  "scope": "state:sc",
+  "title": "H4697 (123rd General Assembly): Firearms",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4697&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/4697_20191120.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Robert Brown",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lonnie Hosey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "11483511-6da8-4980-825d-9ecfa3da0074"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2019-11-20; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/4697_20191120.htm (LegiScan doc 2070350))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4697-2019.introduced.htm",
+      "sha256": "16d29175557bbd1f6073bd680444434e912f3c23d7af46c700b05b16fc9daefa"
+    },
+    "note": "Introduced text (Nov. 20, 2019)."
+  },
+  "operative_text": "Section 1 (new Section 16-23-540): \"(A) Notwithstanding another provision of law, it is unlawful for a person to knowingly sell, or offer to sell, an assault rifle to a person less than twenty years of age. A person violating this provision is guilty of a misdemeanor and, upon conviction, must be fined not more than five hundred dollars or imprisoned not more than thirty days, or both. (B) As contained in this section, 'assault rifle' means a rapid-fire, magazine-fed semiautomatic rifle designed for military use.\""
+}

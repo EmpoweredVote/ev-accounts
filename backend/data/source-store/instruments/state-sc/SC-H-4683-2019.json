@@ -1,0 +1,44 @@
+{
+  "id": "SC-H-4683-2019",
+  "scope": "state:sc",
+  "title": "H4683 (123rd General Assembly): Handgun offenses",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4683&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/4683_20191120.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Wendell Gilliard",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75dffc0a-f084-4dfb-a2a7-6c81094bb0c2"
+    },
+    {
+      "name": "Leola Robinson-Simpson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2019-11-20; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/4683_20191120.htm (LegiScan doc 2070297))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4683-2019.introduced.htm",
+      "sha256": "9b13a123ac7a58fbf4913517c39d04289ccef439420fad72d5f6d61d27da0520"
+    },
+    "note": "Introduced text (Nov. 20, 2019). Struck: 'violating', 'is guilty of a'; added tiered (a)/(b) wording."
+  },
+  "operative_text": "Section 1 (Section 16-23-50(A)(2)): \"(2) A person who violates the provisions of Section 16-23-20: (a) for a first offense, is guilty of a misdemeanor and, upon conviction, must be fined not more than one thousand dollars or imprisoned not more than one year, or both; and (b) for a second or subsequent offense, is guilty of a felony and, upon conviction, must be fined not more than two thousand dollars or imprisoned not more than five years, or both.\""
+}

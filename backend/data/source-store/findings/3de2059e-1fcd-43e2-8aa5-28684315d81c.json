@@ -1,6 +1,99 @@
 {
   "politician_id": "3de2059e-1fcd-43e2-8aa5-28684315d81c",
-  "findings": [],
+  "findings": [
+    {
+      "id": "e6e46c41289736f9fe1314043fb98783745943908cdb8d446e8389678e58535b",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3650&session=126&summary=B",
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3650-2026",
+      "act": "yea",
+      "motion": "House: Concur In Senate Amendments",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC House, House: Concur In Senate Amendments, 2026-04-23: yea (tally 106–0); census gate: near-unanimous.",
+      "subjects": [
+        "tiered fines and prison for shooting into occupied buildings or vehicles",
+        "intent wording for discharge offence",
+        "hunting-accident carve-out"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2026-04-22; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3650_20260422.htm (LegiScan doc 3423948))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3650-2026.amended.htm",
+          "sha256": "0e42b5bae5c0cd7e1886aca0ee3a4d66a9db5e0282a4f3e8a3d380abd3504217"
+        }
+      }
+    },
+    {
+      "id": "e9bd158600f8e6f8697442e3c8fc0db75df45bf7d41ec82e14606c5d58891b48",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3930&session=126&summary=B",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3930-2025",
+      "act": "yea",
+      "motion": "House: Passage Of Bill",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SC House, House: Passage Of Bill, 2025-04-09: yea (tally 85–10); census gate: none.",
+      "subjects": [
+        "no government registry of gun owners",
+        "no firearm-retailer payment category codes",
+        "Attorney General enforces by injunction and civil fine"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Comm Sub, 2025-04-30; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3930_20250430.htm (LegiScan doc 3225339))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3930-2025.comm-sub.htm",
+          "sha256": "e7e922f0cc1ebaf0e93bea6750f66cecaa76f094f0b78278a52e76a549a000ae"
+        }
+      }
+    },
+    {
+      "id": "04eee904b623c243134690dbaade0edb13c0e95e25486c69f625a15f7b3329a4",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0136&session=126&summary=B",
+      "date": "2026-01-14",
+      "date_precision": "day",
+      "instrument_id": "SC-S-136-2026",
+      "act": "yea",
+      "motion": "House: Override Veto By The Governor",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC House, House: Override Veto By The Governor, 2026-01-14: yea (tally 112–0); census gate: near-unanimous.",
+      "subjects": [
+        "dismiss pending handgun-possession charges from before permitless carry",
+        "no civil suit over the arrest after dismissal"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2025-05-07; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/136_20250507.htm (LegiScan doc 3231297))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-136-2026.amended.htm",
+          "sha256": "40e53d7ae3a5f8da35cb38ebd5e3cc683e93f493dbb1a441ec504dc03c4c69f7"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -33,6 +126,35 @@
       "found": 0,
       "at": "2026-11-10T21:30:27.415Z",
       "by": "sc-search-r3"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "Second Amendment and gun rights",
+        "gun financial privacy"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person, name search also 0)",
+        "https://www.scstatehouse.gov/member.php?code=1157954407 (member page read: House District 26, York County, in office; no gun content)",
+        "https://www.martinforhouse.com/about-us (campaign site read; nothing on the subject)",
+        "https://www.martinforhouse.com/priorities (campaign site priorities read; nothing on the subject)",
+        "https://www.scstatehouse.gov/billsearch.php?billnumbers=3363&session=126&summary=B (listed as a co-sponsor of H 3363, a police retirement bill; off subject)",
+        "https://www.scstatehouse.gov/billsearch.php?billnumbers=3930&session=126&summary=B (not among the listed sponsors; his vote is already on file)",
+        "https://www.scstatehouse.gov/billsearch.php?billnumbers=3872&session=126&summary=B (not among the sponsors)",
+        "blocked: https://ballotpedia.org/David_Martin_(South_Carolina) (fetch returned no page text)",
+        "blocked: https://www.aol.com/sc-bill-end-gun-permit-154217376.html (404)",
+        "two web searches on his name plus gun, permitless carry, concealed and Second Amendment words: no page naming him on the subject",
+        "not reviewed: https://www.martinforhouse.com/media (media page not opened)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T17:53:00.819Z",
+      "by": "source-collector"
     }
   ]
 }

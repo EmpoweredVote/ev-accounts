@@ -1,0 +1,50 @@
+{
+  "id": "SC-S-589-2021",
+  "scope": "state:sc",
+  "title": "S0589 (124th General Assembly): Open Carry with Training Act",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0589&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/589_20210223.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Thomas Corbin",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6d10b3d2-940f-45ef-af02-07252a3ce185"
+    },
+    {
+      "name": "Dwight Loftis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rex Rice",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d587a64f-3b40-421c-9963-9c934f961443"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2021-02-23; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/589_20210223.htm (LegiScan doc 2306705))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-589-2021.introduced.htm",
+      "sha256": "c5dcc55d44dcc116f8dc31b3e8b1d907bc86fe77813c68d2b14b72a75b4377f2"
+    },
+    "note": "Introduced text of 2021-02-23. Section 2 strikes 'must' and adds 'may' and 'openly on one's person or'; Section 3 adds only '(b) carried openly or'."
+  },
+  "operative_text": "Section 2 (Section 23-31-210(5)): 'Concealable weapon' means a firearm having a length of less than twelve inches measured along its greatest dimension that may be carried openly on one's person or in a manner that is hidden from public view in normal wear of clothing except when needed for self-defense, defense of others, and the protection of real or personal property.\nSection 3 (Section 16-23-20(9)): (9) a person in a vehicle if the handgun is: (a) secured in a closed glove compartment, closed console, closed trunk, or in a closed container secured by an integral fastener and transported in the luggage compartment of the vehicle; however, this item is not violated if the glove compartment, console, or trunk is opened in the presence of a law enforcement officer for the sole purpose of retrieving a driver's license, registration, or proof of insurance. If the person has been issued a concealed weapon permit pursuant to Article 4, Chapter 31, Title 23, then the person also may secure his weapon under a seat in a vehicle, or in any open or closed storage compartment within the vehicle's passenger compartment; or (b) carried openly or concealed on or about his person, and he has a valid concealed weapons permit pursuant to the provisions of Article 4, Chapter 31, Title 23;"
+}

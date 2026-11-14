@@ -21,6 +21,67 @@
         "fetched_at": "2026-11-10T21:43:05.826Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "e6e46c41289736f9fe1314043fb98783745943908cdb8d446e8389678e58535b",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3650&session=126&summary=B",
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3650-2026",
+      "act": "yea",
+      "motion": "House: Concur In Senate Amendments",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC House, House: Concur In Senate Amendments, 2026-04-23: yea (tally 106–0); census gate: near-unanimous.",
+      "subjects": [
+        "tiered fines and prison for shooting into occupied buildings or vehicles",
+        "intent wording for discharge offence",
+        "hunting-accident carve-out"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2026-04-22; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3650_20260422.htm (LegiScan doc 3423948))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3650-2026.amended.htm",
+          "sha256": "0e42b5bae5c0cd7e1886aca0ee3a4d66a9db5e0282a4f3e8a3d380abd3504217"
+        }
+      }
+    },
+    {
+      "id": "04eee904b623c243134690dbaade0edb13c0e95e25486c69f625a15f7b3329a4",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0136&session=126&summary=B",
+      "date": "2026-01-14",
+      "date_precision": "day",
+      "instrument_id": "SC-S-136-2026",
+      "act": "yea",
+      "motion": "House: Override Veto By The Governor",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC House, House: Override Veto By The Governor, 2026-01-14: yea (tally 112–0); census gate: near-unanimous.",
+      "subjects": [
+        "dismiss pending handgun-possession charges from before permitless carry",
+        "no civil suit over the arrest after dismissal"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2025-05-07; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/136_20250507.htm (LegiScan doc 3231297))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-136-2026.amended.htm",
+          "sha256": "40e53d7ae3a5f8da35cb38ebd5e3cc683e93f493dbb1a441ec504dc03c4c69f7"
+        }
+      }
     }
   ],
   "searches": [
@@ -49,6 +110,31 @@
       "found": 1,
       "at": "2026-11-10T21:43:05.826Z",
       "by": "sc-search-r5"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings, nothing on the subject)",
+        "https://www.scstatehouse.gov/member.php?code=1066761236 (member page: confirms Representative, District 88, Lexington County, elected Dec. 23, 2025; no gun material)",
+        "https://ivoterguide.com/candidate/88905/race/27771/election/1421 (2026 primary voter guide: the Second Amendment question is marked 'Did not answer')",
+        "https://www.scstatehouse.gov/sess126_2025-2026/bills/5070.htm (House resolution on the Second Amendment, sponsored by another member; he is not listed; nothing on the subject for him)",
+        "blocked: https://ballotpedia.org/John_Lastinger (403 error)",
+        "campaign site: not found in search results; not reviewed",
+        "news search on his name plus gun words: nothing on the subject",
+        "2026 primary result not confirmed from a page I read; a county results PDF excerpt in search suggests he was ahead, but it was mislabeled and I did not open it: not reviewed: https://www.lex-co.sc.gov/sites/lexco/files/Documents/Lexington%20County/Departments/Registration%20and%20Elections/Official%20Election%20Results%206.9.2026.pdf",
+        "web search budget used: 5 of 10; page fetches used: 7 of 30; stopped because nothing further turned up, not for a cap"
+      ],
+      "found": 0,
+      "at": "2026-11-14T17:54:31.303Z",
+      "by": "source-collector"
     }
   ]
 }

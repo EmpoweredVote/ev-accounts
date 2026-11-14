@@ -1,0 +1,65 @@
+{
+  "id": "SC-H-3013-2023",
+  "scope": "state:sc",
+  "title": "H3013 (125th General Assembly): Prohibition on Assault Weapons",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3013&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/3013_20230131.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Wendell Gilliard",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75dffc0a-f084-4dfb-a2a7-6c81094bb0c2"
+    },
+    {
+      "name": "Joseph Jefferson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Patricia Henegan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Carl Anderson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ddc35ab7-2f30-4a26-8fdd-92778435636f"
+    },
+    {
+      "name": "Ivory Thigpen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Marvin Pendarvis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Draft, 2023-01-31; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/3013_20230131.htm (LegiScan doc 2672099))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3013-2023.draft.htm",
+      "sha256": "978edad13ce614c00beee9164576d0ad8de3ba0d7b189870447c29144b5383df"
+    },
+    "note": "Prefiled draft dated 2023-01-31 (introduced text); no passage vote on record. Section 16-23-50 penalties: first-offence fine raised from two to fifty thousand dollars and prison from five to ten years (struck/added); violating Section 16-23-20 changed from misdemeanor to felony with higher fine/prison (struck/added); mandatory minimums added for repeat offences. Section 16-23-210 old definitions are struck and re-listed in new numbering; the quoted definition is new."
+  },
+  "operative_text": "SECTION 1 (Section 16-23-50): (A) A person, including a dealer, who violates the provisions of this article, except Section 16-23-20, is guilty of a felony and, upon conviction: (1) for a first offense, must be fined not more than fifty thousand dollars or imprisoned not more than ten years, or both; and (2) for a second or subsequent offense, must be fined not more than fifty thousand dollars or imprisoned for a mandatory minimum term of imprisonment of ten years, no part of which may be suspended nor probation granted, and not more than twenty years, or both.\nSECTION 1 (Section 16-23-50): In addition to the penalty provided in this section, the handgun or assault weapon involved in the violation of this article must be confiscated.\nSECTION 2 (Section 16-23-210): (2) \"Assault weapon\" means a firearm with any of the following characteristics: (a) all semiautomatic action, centerfire rifles with a detachable magazine with a capacity of twenty-one or more rounds; (b) all semiautomatic shotguns with a folding stock or a magazine capacity of more than six rounds, or both; (c) a firearm which has been modified to be operable as an assault weapon as defined in this item; and (d) any part or combination of parts designed or intended to convert a firearm into an assault weapon, including a detachable magazine with a capacity of twenty-one or more rounds, or any combination of parts from which an assault weapon may be readily assembled if those parts are in the possession or under the control of the same person.\nSECTION 3 (Section 16-23-220): (A) It is unlawful for a person to transport from one place to another in this State or for any railroad company, express company, or other common carrier or any officer, agent, or employee of any of them or other person acting in their behalf knowingly to ship or to transport from one place to another in this State a machine gun or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, or assault weapon, except as provided in Sections 16-23-250 and 23-31-330.\nSECTION 4 (Section 16-23-230): (A) It is unlawful for a person to store, keep, possess, or have in possession or permit another to store, keep, possess, or have in possession a machine gun or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, or assault weapon, except as provided in Sections 16-23-250 and 23-31-330.\nSECTION 5 (Section 16-23-240): (A) It is unlawful for a person to sell, rent, give away, or participate in any manner, directly or indirectly, in the sale, renting, giving away, or otherwise disposing of a machine gun, or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, or assault weapon, except as provided in Sections 16-23-250 and 23-31-330.\nSECTION 6 (new Section 23-31-910): (A) It is unlawful to sell or give a firearm to a person whose name appears on the consolidated terrorist watch list maintained by the Terrorist Screening Center administered by the Federal Bureau of Investigation. (B) A person who knowingly sells or gives a firearm to a person in violation of subsection (A) is guilty of a felony and, upon conviction, must be fined not more than fifty thousand dollars or must be imprisoned for a mandatory minimum term of imprisonment of ten years, no part of which may be suspended nor probation granted, and not more than twenty years, or both."
+}

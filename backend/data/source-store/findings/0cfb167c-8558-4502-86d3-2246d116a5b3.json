@@ -25,7 +25,263 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "b9e4c3d6a985cf9c25cdc3f4e12633ef43c06d5ef440f0c3d7a5f70206daddd2",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess125_2023-2024/bills/3594.htm",
+      "date": "2024-03-05",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3594-2024",
+      "act": "nay",
+      "motion": "House: Adopt Conference Report",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SC House, House: Adopt Conference Report, 2024-03-05: nay (tally 86–33); census gate: none.",
+      "subjects": [
+        "permitless carry of handguns",
+        "carry banned in listed public places",
+        "tiered penalties for repeat unlawful carry and felon-in-possession",
+        "concealed weapon permit age lowered to 18"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "B (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d896e19ada278895c4f2bc858849a6925a491e0b7fa97109a2de80b2d74945fa",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3094&session=124&summary=B",
+      "date": "2021-05-12",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3094-2021",
+      "act": "nay",
+      "motion": "House: Concur In Senate Amendments",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SC House, House: Concur In Senate Amendments, 2021-05-12: nay (tally 83–34); census gate: none.",
+      "subjects": [
+        "open carry by permit holders",
+        "local governments may limit open carry at permitted events",
+        "concealed-weapon permit fees eliminated",
+        "court reports of firearm-prohibiting orders to SLED"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2021-05-07; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/3094_20210507.htm (LegiScan doc 2391932))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3094-2021.amended.htm",
+          "sha256": "3081bb63064c66444ed4faea763ff09d8b4268b187af3481a123f21d601c3d2e"
+        }
+      }
+    },
+    {
+      "id": "bf8ca293880cbc5269c4c380d7039f5382092289d2e9afd841eb547570eeb46b",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3096&session=124&summary=B",
+      "date": "2021-04-07",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3096-2021",
+      "act": "nay",
+      "motion": "House: Passage Of Bill",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SC House, House: Passage Of Bill, 2021-04-07: nay (tally 69–47); census gate: none.",
+      "subjects": [
+        "permitless (constitutional) carry of handguns",
+        "carry banned in listed places such as courthouses and polling places",
+        "no state funds to enforce new federal gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2021-04-08; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/3096_20210408.htm (LegiScan doc 2360426))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3096-2021.amended.htm",
+          "sha256": "55a86486ea29bfc57a6d19142620f4a625cff4ebcef2a3a268738c71d669ae73"
+        }
+      }
+    },
+    {
+      "id": "e6e46c41289736f9fe1314043fb98783745943908cdb8d446e8389678e58535b",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3650&session=126&summary=B",
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3650-2026",
+      "act": "yea",
+      "motion": "House: Concur In Senate Amendments",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC House, House: Concur In Senate Amendments, 2026-04-23: yea (tally 106–0); census gate: near-unanimous.",
+      "subjects": [
+        "tiered fines and prison for shooting into occupied buildings or vehicles",
+        "intent wording for discharge offence",
+        "hunting-accident carve-out"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2026-04-22; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3650_20260422.htm (LegiScan doc 3423948))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3650-2026.amended.htm",
+          "sha256": "0e42b5bae5c0cd7e1886aca0ee3a4d66a9db5e0282a4f3e8a3d380abd3504217"
+        }
+      }
+    },
+    {
+      "id": "085e45c2571685c14b3e1a0e5eb9ce895b40fb7576bf7b8c3a5239ae27189496",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=1166&session=125&summary=B",
+      "date": "2024-05-07",
+      "date_precision": "day",
+      "instrument_id": "SC-S-1166-2024",
+      "act": "yea",
+      "motion": "House: Passage Of Bill",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC House, House: Passage Of Bill, 2024-05-07: yea (tally 112–2); census gate: near-unanimous.",
+      "subjects": [
+        "dismissal of pending handgun-possession charges",
+        "expungement of one past handgun-carry conviction"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2024-05-07; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/1166_20240507.htm (LegiScan doc 2994264))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-1166-2024.amended.htm",
+          "sha256": "c03055cc7ee4fc85a9fc0e1abb49eb6724f5eb06730b31d2c37ac910228116f2"
+        }
+      }
+    },
+    {
+      "id": "04eee904b623c243134690dbaade0edb13c0e95e25486c69f625a15f7b3329a4",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0136&session=126&summary=B",
+      "date": "2026-01-14",
+      "date_precision": "day",
+      "instrument_id": "SC-S-136-2026",
+      "act": "yea",
+      "motion": "House: Override Veto By The Governor",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC House, House: Override Veto By The Governor, 2026-01-14: yea (tally 112–0); census gate: near-unanimous.",
+      "subjects": [
+        "dismiss pending handgun-possession charges from before permitless carry",
+        "no civil suit over the arrest after dismissal"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2025-05-07; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/136_20250507.htm (LegiScan doc 3231297))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-136-2026.amended.htm",
+          "sha256": "40e53d7ae3a5f8da35cb38ebd5e3cc683e93f493dbb1a441ec504dc03c4c69f7"
+        }
+      }
+    },
+    {
+      "id": "183c48c71b36fd1a46be3d4b89b9e88e59f5d69bf1e13e369b74bcd610c8a084",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3959&session=124&summary=B",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "SC-H-3959-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of SC-H-3959-2021 (sponsor list (prime / co-sponsor)): H3959 (124th General Assembly): Concealable Weapons.",
+      "subjects": [
+        "Attorney General and assistant attorneys general may carry concealable weapons statewide on duty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2021-02-23; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/3959_20210223.htm (LegiScan doc 2306613))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3959-2021.introduced.htm",
+          "sha256": "5510ba9584bf5b6b59e5ac7234e186cd93316e9eb3f1edd482966cb35a79681f"
+        }
+      }
+    },
+    {
+      "id": "6c52f77499e6530f396158407498c000f8288aa1ef8c2363e14f89b3a923ecee",
+      "kind": "own-words",
+      "url": "https://charlestoncitypaper.com/2025/11/07/shr-24-45-latest-on-youth-violence-maces-woes-election-results",
+      "date": "2025-11-06",
+      "date_precision": "day",
+      "passage": "“We need to have that conversation,” she said. “There has to be accountability for both kids and adults. And one thing we know is what we’re doing isn’t working, so that’s one area I imagine we’ll try to address as quickly as possible.”",
+      "note": "Quoted by Charleston City Paper's Statehouse Report by phone, as a member of the House committee on youth gun violence. She agreed with a police chief's concern about adults leaving guns in unlocked cars, where teens take them, and said adults need accountability as well as kids. She also named gun crime sentencing as something the committee might look at.",
+      "subjects": [
+        "youth gun violence",
+        "adult accountability for guns stolen from cars",
+        "gun crime sentencing"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:51:09.982Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "youth gun violence and gun crime sentencing",
+        "safe storage of guns",
+        "general Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "status: still sitting; House Resolution 5626 (adopted 2026-04-30) marks her retirement at the end of her current term, so she holds the seat now: https://www.scstatehouse.gov/sess126_2025-2026/bills/5626.htm",
+        "On the Record (0 meetings, 0 candidate matches)",
+        "her own site https://spencerwetmore.com/ (home page fetched; nothing on the subject)",
+        "SC legislature bill pages and vote history (fetched resolution 5626; the on-file votes were not re-collected)",
+        "blocked: https://ballotpedia.org/Spencer_Wetmore (fetch returned empty)",
+        "news search on name plus gun words (two searches); one local news story with her own quote saved",
+        "ontheissues.org and vote411 not used (lead-only sources)"
+      ],
+      "found": 1,
+      "at": "2026-11-14T17:51:09.982Z",
+      "by": "source-collector"
+    }
+  ]
 }

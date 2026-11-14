@@ -22,6 +22,137 @@
         "fetched_at": "2026-11-10T23:17:03.824Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "a2c5bb31a7281065d9a443b077245eda32e0aa9d9dc43298d5ef5914d1fc0f50",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3650&session=126&summary=B",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3650-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC Senate, Senate: 2nd Reading, 2026-04-15: yea (tally 45–0); census gate: near-unanimous.",
+      "subjects": [
+        "tiered fines and prison for shooting into occupied buildings or vehicles",
+        "intent wording for discharge offence",
+        "hunting-accident carve-out"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2026-04-22; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3650_20260422.htm (LegiScan doc 3423948))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3650-2026.amended.htm",
+          "sha256": "0e42b5bae5c0cd7e1886aca0ee3a4d66a9db5e0282a4f3e8a3d380abd3504217"
+        }
+      }
+    },
+    {
+      "id": "62950c7537794e18ba904b5572b4d0541c42734c4a06c0ca43900a6ef6c04059",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0136&session=126&summary=B",
+      "date": "2025-05-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-136-2026",
+      "act": "yea",
+      "motion": "Senate: To Override The Veto",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC Senate, Senate: To Override The Veto, 2025-05-28: yea (tally 40–2); census gate: near-unanimous.",
+      "subjects": [
+        "dismiss pending handgun-possession charges from before permitless carry",
+        "no civil suit over the arrest after dismissal"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2025-05-07; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/136_20250507.htm (LegiScan doc 3231297))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-136-2026.amended.htm",
+          "sha256": "40e53d7ae3a5f8da35cb38ebd5e3cc683e93f493dbb1a441ec504dc03c4c69f7"
+        }
+      }
+    },
+    {
+      "id": "0049153aa7e50a9dc473bfcc01f7f98a0031d1a80328c51c0d16693f6fe286de",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0115&session=126&summary=B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "SC-S-115-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of SC-S-115-2025 (sponsor list (prime / co-sponsor)): S0115 (126th General Assembly): School Safety.",
+      "subjects": [
+        "armed school employees designated as guardians",
+        "firearm kept in school safe until an active assailant",
+        "exemption from school firearm ban for guardians"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2024-12-11; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/115_20241211.htm (LegiScan doc 3032541))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-115-2025.introduced.htm",
+          "sha256": "9440be1f8be579fb3acb30ff73f7efb3ca69a12f38f64afb89509e8e6bd57993"
+        }
+      }
+    },
+    {
+      "id": "ddd634b39429a83d623768724ed74f944e3e8ba98a9bc788eeeaa09ca58e20ee",
+      "kind": "own-words",
+      "url": "https://tomfernandezforsenate.com/issues/guns-the-second-amendment/",
+      "date": "2023-03-28",
+      "date_precision": "day",
+      "passage": "Moreover, we have many licenses for many privileges. However, the god given right to defend ourselves – protected by the Second Amendment – does not start at a license. And our protections do not stop at a Gun Free Zone. As your Senator, I will join the fight to restore South Carolina to Constitutional Carry by eliminating the requirement for a permit to carry a firearm and remove South Carolina from adhering to the unconstitutional federal Gun Free Zone Act.",
+      "note": "Campaign issue page (page first published 2023-03-28, while he was a candidate). He says he will work to end the permit requirement to carry a firearm and to drop the federal gun-free-zone law.",
+      "subjects": [
+        "carry a gun without a permit",
+        "federal gun-free zone law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:54:00.696Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "939320a44e157783502d9995b146360ada84b707ebc2088337a0fa642621e4a4",
+      "kind": "own-words",
+      "url": "https://tomfernandezforsenate.com/issues/guns-the-second-amendment/",
+      "date": "2023-03-28",
+      "date_precision": "day",
+      "passage": "Any attempt to infringe upon our Second Amendment protections through excessive regulation is a direct violation of what the founders intended. I firmly oppose any efforts to restrict the Second Amendment protections of law-abiding citizens, and I fight tirelessly for this essential freedom.",
+      "note": "Campaign issue page statement opposing efforts to restrict Second Amendment protections for law-abiding people through regulation.",
+      "subjects": [
+        "general statement on gun rights",
+        "limits on gun regulation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:54:00.696Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -64,6 +195,34 @@
       "found": 1,
       "at": "2026-11-10T23:17:03.824Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "federal gun-free zone law",
+        "Second Amendment general statement",
+        "limits on gun regulation",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name-matched meetings)",
+        "the campaign site issues page on guns and the Second Amendment (read): https://tomfernandezforsenate.com/issues/guns-the-second-amendment/",
+        "the campaign site about page (read): https://tomfernandezforsenate.com/about/",
+        "the campaign site issues list (read; guns page is one of five issues): https://tomfernandezforsenate.com/issues/",
+        "the legislature's member page: https://www.scstatehouse.gov/member.php?code=0574999931 (listed by search; confirms Senate District 39 seat, not read for bills)",
+        "the legislature's bill page for S. 115 (read; school guardians bill, already on file): https://www.scstatehouse.gov/sess126_2025-2026/bills/115.htm",
+        "Ballotpedia: https://ballotpedia.org/Tom_Fernandez (fetched; nothing on the subject; shows term runs to Nov 2028, so not on the 2026 ballot but still sitting)",
+        "two web searches on name plus gun words: nothing new on the subject beyond the bills on file",
+        "nothing on the subject: no own-words press release or news quote found beyond the campaign page",
+        "not reviewed: https://www.scstatehouse.gov/votehistory.php (roll-call lists; votes on file already)"
+      ],
+      "found": 2,
+      "at": "2026-11-14T17:54:00.696Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1,0 +1,44 @@
+{
+  "id": "SC-H-3266-2017",
+  "scope": "state:sc",
+  "title": "H3266 (122nd General Assembly): Unlawful Sale or Gift of a Firearm to Persons on the Terrorist Watch List",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3266&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/3266_20161215.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cezar McKnight",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Gilda Cobb-Hunter",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "896bfe46-0d7e-48ba-86c1-60f39bc9234d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2016-12-15; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/3266_20161215.htm (LegiScan doc 1440162))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3266-2017.introduced.htm",
+      "sha256": "2af655f6e03a2031524b0d59b32a08cd14457bab72b45f2a84d14b3c0a6bad71"
+    },
+    "note": "Introduced 2016-12-15. No votes recorded."
+  },
+  "operative_text": "SECTION 1 (new Section 23-31-910): (A) It is unlawful to sell or give a firearm to a person whose name appears on the consolidated terrorist watch list maintained by the Terrorist Screening Center administered by the Federal Bureau of Investigation. (B) A person who knowingly sells or gives a firearm to a person in violation of subsection (A) is guilty of a felony and, upon conviction, must be imprisoned not more than five years."
+}

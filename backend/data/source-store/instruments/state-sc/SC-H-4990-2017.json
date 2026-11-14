@@ -1,0 +1,115 @@
+{
+  "id": "SC-H-4990-2017",
+  "scope": "state:sc",
+  "title": "H4990 (122nd General Assembly): Firearms",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4990&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/4990_20180223.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Todd Rutherford",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bd747eab-2e4d-4249-94d7-b63d7026a6b0"
+    },
+    {
+      "name": "Joseph Jefferson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Terry Alexander",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7c84ff1e-030c-46bb-966e-70210c32fc50"
+    },
+    {
+      "name": "William Clyburn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4888bb90-0094-4286-84dd-d62575dea648"
+    },
+    {
+      "name": "Cezar McKnight",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Wendell Gilliard",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75dffc0a-f084-4dfb-a2a7-6c81094bb0c2"
+    },
+    {
+      "name": "Marvin Pendarvis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Mack",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ronald Young",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Leola Robinson-Simpson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rosalyn Henderson-Myers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "772fbe5f-6b2c-4919-9b57-75c66beecf7c"
+    },
+    {
+      "name": "Chandra Dillard",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "110c964b-854d-467c-9b2b-f80218906afd"
+    },
+    {
+      "name": "Robert Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Anne Parks",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Carl Anderson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ddc35ab7-2f30-4a26-8fdd-92778435636f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2018-02-23; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/4990_20180223.htm (LegiScan doc 1740784))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4990-2017.amended.htm",
+      "sha256": "6b9f3111a5211b4508e6864b3bfa198cc86dbf53e428dec2093bdd0a25e70e26"
+    },
+    "note": "Text read is the 'Amended' version (Feb. 23, 2018), so version_read is 'other'. No passage vote recorded. Wording matches H.4697 of 2019."
+  },
+  "operative_text": "Section 1 (new Section 16-23-540): \"(A) Notwithstanding another provision of law, it is unlawful for a person to knowingly sell, or offer to sell, an assault rifle to a person less than twenty years of age. A person violating this provision is guilty of a misdemeanor and, upon conviction, must be fined not more than five hundred dollars or imprisoned not more than thirty days, or both. (B) As contained in this section, 'assault rifle' means a rapid-fire, magazine-fed semiautomatic rifle designed for military use.\""
+}

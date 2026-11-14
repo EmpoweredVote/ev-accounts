@@ -1,0 +1,51 @@
+{
+  "id": "SC-S-247-2023",
+  "scope": "state:sc",
+  "title": "S0247 (125th General Assembly): Teachers and Administrators Defense",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0247&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/247_20221130.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joshua Kimbrell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5ebdf748-e14d-47c1-9b88-f22fa0ecd6c4"
+    },
+    {
+      "name": "Brian Adams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d33b8da6-60b3-480a-964f-1d3315fac434"
+    },
+    {
+      "name": "Danny Verdin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ec52251-b87c-4264-b1f7-e4d348e2756a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2022-11-30; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/247_20221130.htm (LegiScan doc 2616631))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-247-2023.introduced.htm",
+      "sha256": "85bcb0ee77271e27aaed80a124bf07fe451915c890b92c03dbbdf7b1f73487e8"
+    },
+    "note": "As-filed text (2022-11-30). Struck: the words 'or' before 'member of the armed forces' and 'student of military science' and 'or' before 'personnel' (grammar). Section 3 also changes a cross-reference to 50-9-830 -> 50-9-720 (not quoted)."
+  },
+  "operative_text": "Section 1 (Section 16-23-420(D)): (D) This section does not apply to a guard, law enforcement officer, member of the armed forces, student of military science, or teacher or school administrator with a concealed weapons permit.\nSection 2 (Section 16-23-430(A)): (A) It shall be unlawful for any person, except state, county, or municipal law enforcement officers, personnel authorized by school officials, or teachers or school administrators with a concealed weapons permit, to carry on his person, while on any elementary or secondary school property, a knife, with a blade over two inches long, a blackjack, a metal pipe or pole, firearms, or any other type of weapon, device, or object which may be used to inflict bodily injury or death.\nSection 3 (Section 23-31-215(M)(5)): (5) school or college athletic event not related to firearms, unless otherwise provided for in Sections 16-23-420 and 16-23-430;"
+}

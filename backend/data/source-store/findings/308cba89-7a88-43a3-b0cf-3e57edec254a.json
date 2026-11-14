@@ -69,6 +69,351 @@
         "fetched_at": "2026-11-10T23:17:03.823Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1178d0db765da5cb2151905244825a7c1ba3b41355dbd6adfb2ef3659273f826",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess125_2023-2024/bills/3594.htm",
+      "date": "2024-03-06",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3594-2024",
+      "act": "yea",
+      "motion": "Senate: To Adopt The Conference Report",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SC Senate, Senate: To Adopt The Conference Report, 2024-03-06: yea (tally 28–18); census gate: none.",
+      "subjects": [
+        "permitless carry of handguns",
+        "carry banned in listed public places",
+        "tiered penalties for repeat unlawful carry and felon-in-possession",
+        "concealed weapon permit age lowered to 18"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "B (source-collector subagents, gun-policy Stage 0, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:15:37.091Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "673f04c149f5d81f0b56947d5190df34a8959f15fd39ce0bb12e62f2615a624c",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3094&session=124&summary=B",
+      "date": "2021-05-06",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3094-2021",
+      "act": "yea",
+      "motion": "Senate: 3rd Reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SC Senate, Senate: 3rd Reading, 2021-05-06: yea (tally 28–16); census gate: none.",
+      "subjects": [
+        "open carry by permit holders",
+        "local governments may limit open carry at permitted events",
+        "concealed-weapon permit fees eliminated",
+        "court reports of firearm-prohibiting orders to SLED"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2021-05-07; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/3094_20210507.htm (LegiScan doc 2391932))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3094-2021.amended.htm",
+          "sha256": "3081bb63064c66444ed4faea763ff09d8b4268b187af3481a123f21d601c3d2e"
+        }
+      }
+    },
+    {
+      "id": "a2c5bb31a7281065d9a443b077245eda32e0aa9d9dc43298d5ef5914d1fc0f50",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3650&session=126&summary=B",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3650-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC Senate, Senate: 2nd Reading, 2026-04-15: yea (tally 45–0); census gate: near-unanimous.",
+      "subjects": [
+        "tiered fines and prison for shooting into occupied buildings or vehicles",
+        "intent wording for discharge offence",
+        "hunting-accident carve-out"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2026-04-22; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3650_20260422.htm (LegiScan doc 3423948))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3650-2026.amended.htm",
+          "sha256": "0e42b5bae5c0cd7e1886aca0ee3a4d66a9db5e0282a4f3e8a3d380abd3504217"
+        }
+      }
+    },
+    {
+      "id": "1e0cfb7ae6e051e52bb89550077f98d8f2ee5f9945ccb2e0d8b3c854a73d018a",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=1166&session=125&summary=B",
+      "date": "2024-06-26",
+      "date_precision": "day",
+      "instrument_id": "SC-S-1166-2024",
+      "act": "yea",
+      "motion": "Senate: To Override The Veto",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC Senate, Senate: To Override The Veto, 2024-06-26: yea (tally 38–0); census gate: near-unanimous.",
+      "subjects": [
+        "dismissal of pending handgun-possession charges",
+        "expungement of one past handgun-carry conviction"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2024-05-07; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/1166_20240507.htm (LegiScan doc 2994264))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-1166-2024.amended.htm",
+          "sha256": "c03055cc7ee4fc85a9fc0e1abb49eb6724f5eb06730b31d2c37ac910228116f2"
+        }
+      }
+    },
+    {
+      "id": "62950c7537794e18ba904b5572b4d0541c42734c4a06c0ca43900a6ef6c04059",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0136&session=126&summary=B",
+      "date": "2025-05-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-136-2026",
+      "act": "yea",
+      "motion": "Senate: To Override The Veto",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC Senate, Senate: To Override The Veto, 2025-05-28: yea (tally 40–2); census gate: near-unanimous.",
+      "subjects": [
+        "dismiss pending handgun-possession charges from before permitless carry",
+        "no civil suit over the arrest after dismissal"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2025-05-07; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/136_20250507.htm (LegiScan doc 3231297))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-136-2026.amended.htm",
+          "sha256": "40e53d7ae3a5f8da35cb38ebd5e3cc683e93f493dbb1a441ec504dc03c4c69f7"
+        }
+      }
+    },
+    {
+      "id": "792c57962b788c1c867edcedeca754f69949c12fa687950827b669bb66e7f799",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0293&session=123&summary=B",
+      "date": "2019-04-10",
+      "date_precision": "day",
+      "instrument_id": "SC-S-293-2019",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC Senate, Senate: 2nd Reading, 2019-04-10: yea (tally 41–0); census gate: near-unanimous.",
+      "subjects": [
+        "permit holders may carry at church services held in leased school buildings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2020-09-22; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/293_20200922.htm (LegiScan doc 2209425))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-293-2019.amended.htm",
+          "sha256": "02e3e04ee30cbbfadda5e82fe2ba5980564b9d2baa9b488a954f80f4a1e4df74"
+        }
+      }
+    },
+    {
+      "id": "87fec5daf13c3cbf66aff02c444d7536d12e88c217f2f3402133d052f901fb93",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0127&session=125&summary=B",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "SC-S-127-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of SC-S-127-2023 (sponsor list (prime / co-sponsor)): S0127 (125th General Assembly): Handguns.",
+      "subjects": [
+        "no handgun sales to or possession by under-18s",
+        "firearm sales barred to prohibited buyers",
+        "72-hour lost or stolen firearm report",
+        "felony for stealing a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2022-12-01; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/127_20221201.htm (LegiScan doc 2616552))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-127-2023.introduced.htm",
+          "sha256": "140b2d96b00704eddbb628857a5b66bfbdb581c1beca7b0c7b34795d36c07200"
+        }
+      }
+    },
+    {
+      "id": "cafbca41771b3617ecbbc99ffa11e94419fd4fc77a8cfb52be393f7c5a3c18ae",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0190&session=124&summary=B",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "SC-S-190-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of SC-S-190-2021 (sponsor list (prime / co-sponsor)): S0190 (124th General Assembly): Handguns.",
+      "subjects": [
+        "no handgun sales to or possession by under-18s",
+        "firearm transfer ban to felons, drug users, committed or court-restrained persons",
+        "lower first-offense penalty, tiered repeat penalties",
+        "innocent-owner release of seized firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2020-12-09; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/190_20201209.htm (LegiScan doc 2220219))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-190-2021.introduced.htm",
+          "sha256": "26137e60f0e23ea3886c721047935a3624c2d2e3ab2936db52979e479bbcd488"
+        }
+      }
+    },
+    {
+      "id": "381482ddf055783b52434d0d176e7a1bb8be7a10d699fbd0c67dfe632cdf5a2d",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0191&session=124&summary=B",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "SC-S-191-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of SC-S-191-2021 (sponsor list (prime / co-sponsor)): S0191 (124th General Assembly): Clerks and magistrates report to SLED case dispositions.",
+      "subjects": [
+        "courts report firearm-possession bans and protective orders to state police within 48 hours",
+        "police report incidents that bar gun possession within 24 hours"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2020-12-09; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/191_20201209.htm (LegiScan doc 2220424))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-191-2021.introduced.htm",
+          "sha256": "2cef1633f4593d6dbbbbdefa3219f3fca2d41714bcdb2a8d9551035f2a26c8ae"
+        }
+      }
+    },
+    {
+      "id": "90d4a78259443ff1d6fada18731ab34e40dd99e988353253347ab18abaa58273",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0527&session=122&summary=B",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "SC-S-527-2017",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of SC-S-527-2017 (sponsor list (prime / co-sponsor)): S0527 (122nd General Assembly): Handguns.",
+      "subjects": [
+        "no handgun sales to anyone under 18",
+        "no firearm or ammunition transfers to prohibited persons",
+        "tiered penalties and confiscation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2017-03-09; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/527_20170309.htm (LegiScan doc 1554193))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-527-2017.introduced.htm",
+          "sha256": "36e1689db2b1310016d49a24654a61ea6c9df1285c66d99361439cb684b3e1ac"
+        }
+      }
+    },
+    {
+      "id": "1f26755361e18dfa5f41b36af7271f3c8a5e9c0fe81eb1554831f364611af909",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0841&session=123&summary=B",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "SC-S-841-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of SC-S-841-2019 (sponsor list (prime / co-sponsor)): S0841 (123rd General Assembly): Handguns.",
+      "subjects": [
+        "no handgun sales to or possession by anyone under 18",
+        "no firearm transfers to prohibited persons",
+        "lower first-offense penalty, harsher repeat penalties"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2019-05-09; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/841_20190509.htm (LegiScan doc 2013026))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-841-2019.introduced.htm",
+          "sha256": "ba912cdb4118acb2bf98d9ad37a7cbca031d1fb49648762ba68b15a4fafc6d5a"
+        }
+      }
+    },
+    {
+      "id": "9bd70e6a818cb6aa9614610b9ceb0184cfb5355df32b8430db1dca5ef8ea23c7",
+      "kind": "record",
+      "url": "https://scstatehouse.gov/amendments.php?KEY=30192",
+      "date": "2021-05",
+      "date_precision": "month",
+      "instrument_id": "SC-H-3094-2021",
+      "act": "other",
+      "motion": "Senator Hembree proposed amendment 3094R051.KM.GH to H.3094 (Open Carry with Training Act), replacing SECTION 8 on Section 23-31-520",
+      "note": "Hembree proposed a Senate amendment to the open carry bill. It lets a county or city temporarily limit lawful open carry on public property only where it has issued a permit for a protest, rally, fair, parade or similar event, limited to that event's area and time, with notice when feasible. Without a prior permit the body may not use that power. Event hosts may bar open carry and must post signs. Local bodies keep power over careless discharge and brandishing and cannot take guns except on arrest.",
+      "subjects": [
+        "open carry rules",
+        "local limits on carrying guns",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:52:19.677Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -110,6 +455,34 @@
       "found": 2,
       "at": "2026-11-10T23:17:03.823Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "open carry rules",
+        "local limits on carrying guns",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "https://www.scstatehouse.gov/member.php?code=0819318084 (own Senate member page: confirms Senator, District 28; no gun statements on it)",
+        "no separate campaign site found",
+        "Ballotpedia: blocked: https://ballotpedia.org/Greg_Hembree",
+        "legislature bill page for H.3094 of 2021 (Open Carry with Training Act) and the Senate amendment page: used",
+        "legislature vote history page for H.3094: checked, nothing beyond votes already on file",
+        "news search on name plus gun words: one search; a 2024 news story on permitless carry paraphrases him but does not quote him, so not saved as own words",
+        "blocked: https://scsenategop.com/?p=2505 (403)",
+        "not reviewed: https://dillonheraldonline.com/2014/03/12/bill-would-have-given-convicted-felons-the-right-to-carry-a-gun (page returned 404; a 2014 letter to the editor, author unconfirmed)",
+        "nothing on the subject: a 2021 news story on the state militia bill (no mention of this person in the page text)"
+      ],
+      "found": 1,
+      "at": "2026-11-14T17:52:19.677Z",
+      "by": "source-collector"
     }
   ]
 }

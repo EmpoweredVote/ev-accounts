@@ -1,0 +1,45 @@
+{
+  "id": "SC-H-3748-2025",
+  "scope": "state:sc",
+  "title": "H3748 (126th General Assembly): Pointing a firearm",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3748&session=126&summary=B",
+    "https://www.scstatehouse.gov/sess126_2025-2026/prever/3748_20250115.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Todd Rutherford",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bd747eab-2e4d-4249-94d7-b63d7026a6b0"
+    },
+    {
+      "name": "Robby Robbins",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "20d88dba-40b9-4512-bdd1-92e2c9bf529a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2025-01-15; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3748_20250115.htm (LegiScan doc 3058364))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3748-2025.introduced.htm",
+      "sha256": "ed0d8bd3d6ecbc9d3322b9f8ec710493841a993395bb6a96570b117e480d6c49"
+    },
+    "note": "Introduced version (2025-01-15); no passage vote on record. The words \"present or\" are struck from the offence, so merely presenting a firearm is no longer covered."
+  },
+  "operative_text": "Section 1 (Section 16-23-410): It is unlawful for a person to point at another person a loaded or unloaded firearm.\nSection 1 (Section 16-23-410): A person who violates the provisions of this section is guilty of a felony and, upon conviction, must be fined in the discretion of the court or imprisoned not more than five years.\nSection 1 (Section 16-23-410): This section must not be construed to abridge the right of self-defense or to apply to theatricals or like performances."
+}

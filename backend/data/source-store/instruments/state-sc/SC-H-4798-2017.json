@@ -1,0 +1,154 @@
+{
+  "id": "SC-H-4798-2017",
+  "scope": "state:sc",
+  "title": "H4798 (122nd General Assembly): Concealable weapon on property",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4798&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/4798_20180131.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Steven Long",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "55ef311d-6efd-40c9-8a32-d261624bf5a3"
+    },
+    {
+      "name": "Daniel Hamilton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "William Chumley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b79701a8-542e-4090-b752-d2e79fb92cd4"
+    },
+    {
+      "name": "James Burns",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9e65a60c-4016-44f5-a830-c8562f08a7ac"
+    },
+    {
+      "name": "Richard Martin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Mccravy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7e726b81-f400-44bb-98e1-7a63a9248b3b"
+    },
+    {
+      "name": "William Hixon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ce66d36d-d959-40cc-8b2b-565bb57f63bf"
+    },
+    {
+      "name": "Bill Taylor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "faa9a73c-e06c-45ef-8961-3c407f6025e1"
+    },
+    {
+      "name": "Cally Forrest",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1646f5cd-b151-494a-8a3b-dc862a31eb08"
+    },
+    {
+      "name": "Ronald Young",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ashley Trantham",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Garry Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Roy Magnuson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e00d1f1-7d7d-4e9e-9482-15caeec92ff8"
+    },
+    {
+      "name": "William Sandifer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dwight Loftis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Linda Bennett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lonnie Hosey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "11483511-6da8-4980-825d-9ecfa3da0074"
+    },
+    {
+      "name": "Carl Anderson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ddc35ab7-2f30-4a26-8fdd-92778435636f"
+    },
+    {
+      "name": "Weston Newton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f933e7a7-00b1-40eb-af8f-549d0f84166b"
+    },
+    {
+      "name": "McLain Toole",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Todd Atwater",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kit Spires",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2018-01-31; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/4798_20180131.htm (LegiScan doc 1712018))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4798-2017.introduced.htm",
+      "sha256": "1b8e0b3bfb1ed017dd5c396ba3cc33a356545aa540a030ea89c37f0bfff7f521"
+    },
+    "note": "Introduced text (Jan. 31, 2018). Only the 'However...' sentence is new; the rest is existing law."
+  },
+  "operative_text": "Section 1 (Section 23-31-220): \"(2) the right of a private property owner or person in legal possession or control to allow or prohibit the carrying of a concealable weapon upon his premises. However, this provision does not preclude a licensed real estate agent, a prospective property purchaser, or both, who hold a concealed weapon permit from carrying a concealable weapon onto a property listed for sale and being shown to a prospective property purchaser by the real estate agent.\""
+}

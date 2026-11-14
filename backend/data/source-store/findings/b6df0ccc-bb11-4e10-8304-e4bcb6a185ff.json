@@ -1,6 +1,69 @@
 {
   "politician_id": "b6df0ccc-bb11-4e10-8304-e4bcb6a185ff",
-  "findings": [],
+  "findings": [
+    {
+      "id": "e6e46c41289736f9fe1314043fb98783745943908cdb8d446e8389678e58535b",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3650&session=126&summary=B",
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3650-2026",
+      "act": "yea",
+      "motion": "House: Concur In Senate Amendments",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC House, House: Concur In Senate Amendments, 2026-04-23: yea (tally 106–0); census gate: near-unanimous.",
+      "subjects": [
+        "tiered fines and prison for shooting into occupied buildings or vehicles",
+        "intent wording for discharge offence",
+        "hunting-accident carve-out"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2026-04-22; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3650_20260422.htm (LegiScan doc 3423948))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3650-2026.amended.htm",
+          "sha256": "0e42b5bae5c0cd7e1886aca0ee3a4d66a9db5e0282a4f3e8a3d380abd3504217"
+        }
+      }
+    },
+    {
+      "id": "e9bd158600f8e6f8697442e3c8fc0db75df45bf7d41ec82e14606c5d58891b48",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3930&session=126&summary=B",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3930-2025",
+      "act": "yea",
+      "motion": "House: Passage Of Bill",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SC House, House: Passage Of Bill, 2025-04-09: yea (tally 85–10); census gate: none.",
+      "subjects": [
+        "no government registry of gun owners",
+        "no firearm-retailer payment category codes",
+        "Attorney General enforces by injunction and civil fine"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Comm Sub, 2025-04-30; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3930_20250430.htm (LegiScan doc 3225339))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3930-2025.comm-sub.htm",
+          "sha256": "e7e922f0cc1ebaf0e93bea6750f66cecaa76f094f0b78278a52e76a549a000ae"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -27,6 +90,34 @@
       "found": 0,
       "at": "2026-11-10T21:25:08.690Z",
       "by": "sc-search-r2"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits",
+        "Second Amendment general statements",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidates)",
+        "https://www.scstatehouse.gov/member.php?code=502272667 (member page read: House District 2, Oconee and Pickens; sponsored-bill list loads dynamically and was not readable, so no sponsorships confirmed)",
+        "https://www.scstatehouse.gov/sess126_2025-2026/bills/5070.htm (Second Amendment carry resolution: sponsor is another member, not Duncan; nothing on the subject for him)",
+        "https://www.scstatehouse.gov/sess126_2025-2026/bills/3930.htm (H.3930 sponsor list does not include Duncan; vote already on file)",
+        "https://www.scstatehouse.gov/sess126_2025-2026/bills/3650.htm (H.3650 sponsor list does not include Duncan; vote already on file)",
+        "scope check: web search results say he drew no primary opponent for 2026 and is the nominee for District 2; no official election-commission page confirmed",
+        "campaign site: none found in search results",
+        "https://wgog.com/duncan-supports-term-limits (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Adam_Duncan (403)",
+        "web searches: name plus firearms/gun bill/Second Amendment; no own-words statements on guns found; other Duncans in results (a former U.S. Representative) excluded"
+      ],
+      "found": 0,
+      "at": "2026-11-14T17:54:54.362Z",
+      "by": "source-collector"
     }
   ]
 }

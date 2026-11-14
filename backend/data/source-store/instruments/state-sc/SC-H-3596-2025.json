@@ -1,0 +1,51 @@
+{
+  "id": "SC-H-3596-2025",
+  "scope": "state:sc",
+  "title": "H3596 (126th General Assembly): Access to firearms by children",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3596&session=126&summary=B",
+    "https://www.scstatehouse.gov/sess126_2025-2026/prever/3596_20241212.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Wendell Jones",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "66db47fb-d7bd-4fdf-88d7-f6c97da3f5af"
+    },
+    {
+      "name": "Tiffany Spann-Wilder",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b9e2feb4-a97d-4f91-b446-cc89f74d32cc"
+    },
+    {
+      "name": "Hamilton Grant",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ae8ce442-9649-4914-afe9-4355533a72fe"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2024-12-12; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3596_20241212.htm (LegiScan doc 3032999))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3596-2025.introduced.htm",
+      "sha256": "ded69ccadea06fee676851fafb1b7ca26d2b1ec5cb02114093b28332fcd1542d"
+    },
+    "note": "Introduced Dec. 12, 2024; no passage vote. Not quoted: the section 16-23-610 findings and intent, other definitions, and the (B)-(D) penalties for Section 16-23-640 (misdemeanor up to one year; felony up to 20 and 30 years)."
+  },
+  "operative_text": "Section 2 (new Section 16-23-620): (6) \"Unsecured firearm\" means a firearm that is not secured by a locked: (a) device that, when installed on a firearm, is designed to prevent the firearm from being operated without first deactivating the device; or (b) safe, gun safe, lock box, or other device that is designed to be or can be used to store a firearm and that is designed to be unlocked only be means of a key, a combination, or other similar means. Zip ties, rope, string, bands, cords, and wire do not meet this definition. (8) \"Child\" means a person seventeen years of age or less.\nSection 2 (new Section 16-23-630): (A) It is unlawful for a person to leave an unsecured firearm in a place where a child could access the firearm. The fact that a child is able to access an unsecured firearm constitutes prima facie evidence that the unsecured firearm was left in a place where a child could access it. (B)(1) A person commits the offense of unsecured firearm in the third degree if the person leaves an unsecured firearm in a place where a child could access the firearm, and a child displays or discharges the firearm placing the child or another in reasonable fear of bodily injury or death. (2) A person who violates the provisions of this subsection is guilty of a misdemeanor and, upon conviction, must be imprisoned not more than one year. (C)(1) A person commits the offense of unsecured firearm in the second degree if the person leaves an unsecured firearm in a place where a child could access the firearm, and a child discharges the firearm causing bodily injury to the child or another person. (2) A person who violates the provisions of this subsection is guilty of a felony and, upon conviction, must be imprisoned not more than twenty years. (D)(1) A person commits the offense of unsecured firearm in the first degree if the person leaves an unsecured firearm in a place where a child could access the firearm, and a child discharges the firearm causing death to the child or another person. (2) A person who violates the provisions of this subsection is guilty of a felony and, upon conviction, must be imprisoned not more than thirty years.\nSection 2 (new Section 16-23-640): (A) It is unlawful for a person to authorize a child to use a firearm except when the child is under the direct supervision of a responsible adult.\nSection 2 (new Section 16-23-650): Nothing in this article may be construed to limit a responsible adult's ability to gift a child a rifle or shotgun as long as the responsible adult ensures that the firearm is locked and is not unsecured and ensures that a child, including the child to whom the firearm was gifted, cannot access the firearm without the direct supervision of a responsible adult."
+}

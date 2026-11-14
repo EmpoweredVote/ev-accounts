@@ -1,0 +1,39 @@
+{
+  "id": "SC-H-4211-2021",
+  "scope": "state:sc",
+  "title": "H4211 (124th General Assembly): Firearm seizure by law enforcement",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4211&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/4211_20210414.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jerry Govan",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4ece3bc1-8352-49a3-9a91-0199d0b57289"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2021-04-14; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/4211_20210414.htm (LegiScan doc 2370160))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4211-2021.introduced.htm",
+      "sha256": "137ed110ce760503e7e96f70cf4e39f2c774b4e6718ee3dc31fa37dfff3b83ec"
+    },
+    "note": "Introduced version (Apr. 14, 2021); no later version or vote on file."
+  },
+  "operative_text": "Section 1 (new Section 23-31-1210): A solicitor, assistant solicitor, or two law enforcement officers may file a verified complaint with any probate court, for issuance of a warrant to seize any firearms and ammunition of a person if the solicitor, assistant solicitor, or law enforcement officers have probable cause to believe that: (1) the person poses a risk of imminent personal injury to himself or to other individuals; (2) the person possesses one or more firearms; and (3) the firearms are within or upon any person or property.\nSection 1 (new Section 23-31-1250): (A) Not later than seven days after execution of the warrant pursuant to this article, the probate court for the county where the person named in the warrant resides shall hold a hearing to determine whether any seized firearms and ammunition should be returned to the person named in the warrant or should continue to be held by the State.\nSection 1 (new Section 23-31-1250): (B) If, after the hearing, the court finds by clear and convincing evidence that the person poses a risk of imminent personal injury to himself or to other individuals, the court may order that the firearms and ammunition seized pursuant to the warrant to continue to be held by the State for a period not to exceed one year.\nSection 1 (new Section 23-31-1250): (C) If the court does not find clear and convincing evidence that the person poses a risk of imminent injury to himself or other individuals, the court shall order the seized firearms and ammunition to be returned to the person named in the warrant."
+}

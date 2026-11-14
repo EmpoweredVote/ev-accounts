@@ -1,0 +1,50 @@
+{
+  "id": "SC-H-3959-2021",
+  "scope": "state:sc",
+  "title": "H3959 (124th General Assembly): Concealable Weapons",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3959&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/3959_20210223.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Christopher Murphy",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Elizabeth Wetmore",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0cfb167c-8558-4502-86d3-2246d116a5b3"
+    },
+    {
+      "name": "Gil Gatch",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "86f2e748-cfef-4824-8246-0a920c4ac953"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2021-02-23; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/3959_20210223.htm (LegiScan doc 2306613))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3959-2021.introduced.htm",
+      "sha256": "5510ba9584bf5b6b59e5ac7234e186cd93316e9eb3f1edd482966cb35a79681f"
+    },
+    "note": "Introduced 2021-02-23. Condensed quote of the list (judges, items 1-10, unchanged and omitted). Only added words: 'the Attorney General and assistant attorneys general'. No passage vote."
+  },
+  "operative_text": "Section 1 (Section 23-31-240): Notwithstanding any other provision contained in this article, the following persons who possess a valid permit pursuant to this article may carry a concealable weapon anywhere within this State, when carrying out the duties of their office: (11) active solicitors and assistant solicitors, the Attorney General and assistant attorneys general; and (12) active workers' compensation commissioners."
+}

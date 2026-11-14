@@ -1,0 +1,66 @@
+{
+  "id": "SC-H-3058-2019",
+  "scope": "state:sc",
+  "title": "H3058 (123rd General Assembly): Firearms Criminal Background Checks",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3058&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/3058_20181218.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gilda Cobb-Hunter",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "896bfe46-0d7e-48ba-86c1-60f39bc9234d"
+    },
+    {
+      "name": "William Clyburn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4888bb90-0094-4286-84dd-d62575dea648"
+    },
+    {
+      "name": "Lonnie Hosey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "11483511-6da8-4980-825d-9ecfa3da0074"
+    },
+    {
+      "name": "Shedron Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Wendy Brawley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Patricia Henegan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2018-12-18; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/3058_20181218.htm (LegiScan doc 1831580))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3058-2019.introduced.htm",
+      "sha256": "475e09eb3acbd33ba8a273a254296f64acbc758b7648993e7f65039d29f3c35b"
+    },
+    "note": "Introduced text, Dec. 18, 2018. No votes. Subsection (B) has a further sentence (no delivery until results known and dealer notified), omitted for length of the quote. Stop 1 (2026-11-14): the second sentence of new Section 23-31-70(B) was added to operative_text from the saved text, as the runner's answer asked."
+  },
+  "operative_text": "Section 1 (new Section 23-31-70): (A) In addition to any other requirements pursuant to local, state, and federal law, all sales, exchanges, or transfers of firearms by licensed dealers must be conducted in accordance with the provisions of this article and the provisions of 18 U.S.C. Section 922.\nSection 1 (new Section 23-31-70): (B) Before any sale, exchange, or transfer pursuant to the provisions of this article may take place in this State, a national instant criminal background check pursuant to 18 U.S.C. Section 922 must be completed by a licensed dealer. Notwithstanding another provision of law, a licensed dealer may not deliver a firearm to a purchaser or transferee until the results of all required background checks are known and the purchaser or transferee is not prohibited from owning or possessing a firearm pursuant to the provisions of 18 U.S.C. Section 922 or any other local, state, or federal law and the licensed dealer has been notified."
+}

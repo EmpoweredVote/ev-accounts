@@ -1,0 +1,67 @@
+{
+  "id": "SC-H-4991-2019",
+  "scope": "state:sc",
+  "title": "H4991 (123rd General Assembly): Firearm seizure by law enforcement",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4991&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/4991_20200121.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jerry Govan",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4ece3bc1-8352-49a3-9a91-0199d0b57289"
+    },
+    {
+      "name": "Lonnie Hosey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "11483511-6da8-4980-825d-9ecfa3da0074"
+    },
+    {
+      "name": "Cezar McKnight",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael Rivers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a63d516b-228a-441f-bf4a-7f8bf468f168"
+    },
+    {
+      "name": "Joseph Jefferson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Carl Anderson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ddc35ab7-2f30-4a26-8fdd-92778435636f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2020-01-21; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/4991_20200121.htm (LegiScan doc 2105480))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4991-2019.introduced.htm",
+      "sha256": "46872974a5c4a554962197bb81d1abdb7df929770cfc8e3f225b692f759c4412"
+    },
+    "note": "Introduced text, as filed; no passage vote recorded in the data."
+  },
+  "operative_text": "SECTION 1 (new Section 23-31-1210): A solicitor, assistant solicitor, or two law enforcement officers may file a verified complaint with any probate court, for issuance of a warrant to seize any firearms and ammunition of a person if the solicitor, assistant solicitor, or law enforcement officers have probable cause to believe that: (1) the person poses a risk of imminent personal injury to himself or to other individuals; (2) the person possesses one or more firearms; and (3) the firearms are within or upon any person or property.\nSECTION 1 (new Section 23-31-1250): (A) Not later than seven days after execution of the warrant pursuant to this article, the probate court for the county where the person named in the warrant resides shall hold a hearing to determine whether any seized firearms and ammunition should be returned to the person named in the warrant or should continue to be held by the State. At the hearing, the State has the burden of proving all material facts by clear and convincing evidence.\nSECTION 1 (new Section 23-31-1250): (B) If, after the hearing, the court finds by clear and convincing evidence that the person poses a risk of imminent personal injury to himself or to other individuals, the court may order that the firearms and ammunition seized pursuant to the warrant to continue to be held by the State for a period not to exceed one year.\nSECTION 1 (new Section 23-31-1250): (C) If the court does not find clear and convincing evidence that the person poses a risk of imminent injury to himself or other individuals, the court shall order the seized firearms and ammunition to be returned to the person named in the warrant."
+}

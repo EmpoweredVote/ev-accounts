@@ -1,0 +1,69 @@
+{
+  "id": "SC-H-3868-2025",
+  "scope": "state:sc",
+  "title": "H3868 (126th General Assembly): Firearms Criminal Background Checks",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3868&session=126&summary=B",
+    "https://www.scstatehouse.gov/sess126_2025-2026/prever/3868_20250130.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "JA Moore",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8fb20bf7-3e8c-4d94-8a64-94222f34420f"
+    },
+    {
+      "name": "Hamilton Grant",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ae8ce442-9649-4914-afe9-4355533a72fe"
+    },
+    {
+      "name": "Kambrell Garvin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "342d26f8-84a1-4744-ac62-f54faf7a6d52"
+    },
+    {
+      "name": "Tiffany Spann-Wilder",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b9e2feb4-a97d-4f91-b446-cc89f74d32cc"
+    },
+    {
+      "name": "Michael Rivers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a63d516b-228a-441f-bf4a-7f8bf468f168"
+    },
+    {
+      "name": "Heather Bauer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0d92d6df-be01-4963-ac36-781b2c90c4a0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2025-01-30; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3868_20250130.htm (LegiScan doc 3091667))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3868-2025.introduced.htm",
+      "sha256": "d2c6600af4b6a3733f10514e6c50d396a361363830dc57441d11b39c537af3d1"
+    },
+    "note": "Introduced 2025-01-30. New article, no marked text. Records are exempted from the Freedom of Information Act (Section 23-31-100(B)), treated as part of the check scheme. No passage vote."
+  },
+  "operative_text": "Section 1 (new Section 23-31-80(A)): In addition to any other requirements pursuant to state and federal law, all sales, exchanges, or transfers of firearms must be conducted in accordance with the provisions of this article unless the sale, exchange, or transfer is conducted by a licensed importer, licensed manufacturer, or licensed dealer, as those terms are defined in 18 U.S.C. Section 922, when the sale, exchange, or transfer is conducted pursuant to that person's federal firearms license or the sale, exchange, or transfer is between members of an immediate family.\nSection 1 (new Section 23-31-80(B)): Before any sale, exchange, or transfer pursuant to the provisions of this article, a national instant criminal background check pursuant to 18 U.S.C. Section 922 must be completed by a licensed dealer who consents to conduct the check, and upon completion of the background check, shall complete a document, the form of which shall be approved by the Chief of the State Law Enforcement Division (SLED), that identifies and confirms that the check was performed.\nSection 1 (new Section 23-31-80(C)): A licensed gun dealer may not deliver a firearm to any transferee unless the NICS provides the licensed dealer with a unique identification number or thirty days have elapsed from the date the licensed dealer contacted the NICS and the NICS has not notified the licensed dealer that a sale or transfer to such person would violate state or federal law.\nSection 1 (new Section 23-31-90(A)): A national instant criminal background check must be conducted and a person may not sell, exchange, or transfer a firearm at a gun show in this State except in accordance with the provisions of 18 U.S.C. 922 and the provisions of this section.\nSection 1 (new Section 23-31-100(A)): A dealer may require that any sale, exchange, or transfer conducted pursuant to this article be subject to a fee of not more than twenty-five dollars per transaction.\nSection 1 (new Section 23-31-100(C)): A person who knowingly violates the provisions of this article is guilty of a misdemeanor and, upon conviction, must be fined not more than one thousand dollars or imprisoned for not more than one year."
+}

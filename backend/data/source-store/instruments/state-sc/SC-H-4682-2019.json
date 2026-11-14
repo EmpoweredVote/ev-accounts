@@ -1,0 +1,50 @@
+{
+  "id": "SC-H-4682-2019",
+  "scope": "state:sc",
+  "title": "H4682 (123rd General Assembly): Selling or giving of firearms",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4682&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/4682_20191120.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Wendell Gilliard",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75dffc0a-f084-4dfb-a2a7-6c81094bb0c2"
+    },
+    {
+      "name": "Leola Robinson-Simpson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lonnie Hosey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "11483511-6da8-4980-825d-9ecfa3da0074"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2019-11-20; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/4682_20191120.htm (LegiScan doc 2070287))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4682-2019.introduced.htm",
+      "sha256": "4b7a3e679c3c72b22baddf2f4e972f34767bffd9e45d717097cf3c5b3d9c562e"
+    },
+    "note": "Introduced version (Nov. 20, 2019); no later version or vote on file. Struck: old penalty tiers (up to $2,000 / 5 years; misdemeanor up to $1,000 / 1 year for Section 16-23-20) and the old stand-alone definitions in 16-23-210 (re-added as new text)."
+  },
+  "operative_text": "Section 6 (new Section 23-31-910): (A) It is unlawful to sell or give a firearm to a person whose name appears on the consolidated terrorist watch list maintained by the Terrorist Screening Center administered by the Federal Bureau of Investigation.\nSection 6 (new Section 23-31-910): (B) A person who knowingly sells or gives a firearm to a person in violation of subsection (A) is guilty of a felony and, upon conviction, must be fined not more than fifty thousand dollars or must be imprisoned for a mandatory minimum term of imprisonment of ten years, no part of which may be suspended nor probation granted, and not more than twenty years, or both.\nSection 4 (Section 16-23-230): It is unlawful for a person to store, keep, possess, or have in possession or permit another to store, keep, possess, or have in possession a machine gun or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, or assault weapon, except as provided in Sections 16-23-250 and 23-31-330.\nSection 5 (Section 16-23-240): It is unlawful for a person to sell, rent, give away, or participate in any manner, directly or indirectly, in the sale, renting, giving away, or otherwise disposing of a machine gun, or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, or assault weapon, except as provided in Sections 16-23-250 and 23-31-330.\nSection 1 (Section 16-23-50): (A) A person, including a dealer, who violates the provisions of this article, except Section 16-23-20, is guilty of a felony and, upon conviction: (1) for a first offense, must be fined not more than fifty thousand dollars or imprisoned not more than ten years, or both; and (2) for a second or subsequent offense, must be fined not more than fifty thousand dollars or imprisoned for a mandatory minimum term of imprisonment of ten years, no part of which may be suspended nor probation granted, and not more than twenty years, or both."
+}

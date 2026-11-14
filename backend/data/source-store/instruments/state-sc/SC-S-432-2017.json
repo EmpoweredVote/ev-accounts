@@ -1,0 +1,39 @@
+{
+  "id": "SC-S-432-2017",
+  "scope": "state:sc",
+  "title": "S0432 (122nd General Assembly): Institutional Concealed Weapons Permit",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0432&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/432_20170216.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Danny Verdin",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ec52251-b87c-4264-b1f7-e4d348e2756a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2017-02-16; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/432_20170216.htm (LegiScan doc 1519049))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-432-2017.introduced.htm",
+      "sha256": "08fa2d9e6d5c6cfb31535b17f5e4c1d3a25825394f0ca27491107304bcb9fcd0"
+    },
+    "note": "Introduced Feb. 16, 2017. No passage vote. Section 1 names the bill the South Carolina Citizens' Self-Defense Act of 2017."
+  },
+  "operative_text": "SECTION 2 (Section 23-31-220(B)): Notwithstanding the provisions contained in subsection (A), a premises owner or a person in legal possession of a premises who posts a sign, in compliance with this chapter, that prohibits the carrying of a concealable weapon on the premises, is strictly liable for any injury sustained by a concealed weapon permit holder from the perpetrator of a crime while on a posted premises. A premises owner who is subject to this provision is civilly liable to compensate the permit holder for damages from injuries that are sustained and all attorney fees and costs incurred in any action the permit holder files against the owner or person in possession of the posted premises.\nSECTION 3 (Section 16-23-20, new item (17)): a person who carries a concealed weapon on or about his or her person but does not possess a concealed weapons permit pursuant to Article 4, Chapter 31, Title 23, if in the act of evacuating during a mandatory evacuation order issued during a state of emergency declared by the Governor pursuant to Section 25-1-440. As used in this item, the term 'in the act of evacuating' means the immediate and urgent movement of a person away from the evacuation zone within forty-eight hours after a mandatory evacuation is ordered. The forty-eight hours may be extended by an order issued by the Governor.\nSECTION 4 (new Section 23-31-218): (A) In addition to permits issued for concealed weapons pursuant to Section 23-31-215, SLED shall issue an institutional concealed weapons permit. (B) In order to obtain an institutional concealed weapons permit, an individual must meet all the requirements for a concealed weapons permit contained in this article and, on an annual basis, participate in a training course held at the South Carolina Criminal Justice Academy. The State Law Enforcement Division shall promulgate regulations detailing the curriculum and requirements for the institutional concealed weapons course. (C) Notwithstanding Section 23-31-215(M), a person holding an institutional concealed weapons permit shall be allowed to carry a concealable weapon into a: (1) school or college athletic event not related to firearms; (2) daycare facility or preschool facility; (3) church or other established religious sanctuary; or (4) hospital, medical clinic, doctor's office, or any other facility where medical services or procedures are performed."
+}

@@ -1,0 +1,42 @@
+{
+  "id": "SC-H-3928-2021",
+  "scope": "state:sc",
+  "title": "H3928 (124th General Assembly): Reporting of Information to SLED, Firearms Background Checks",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3928&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/3928_20210218.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Leonidas Stavrinakis",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0d8165ca-3f62-481a-8ba0-ded42e235481"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-transparency: Sections 1-3 (Sections 14-17-325, 22-1-200, 14-25-250) — clerks, magistrates and municipal judges report the disposition of every criminal case to SLED within ten days",
+        "judicial-bail-pretrial: Sections 1-3 — courts report bond orders with limitations to SLED within forty-eight hours"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2021-02-18; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/3928_20210218.htm (LegiScan doc 2298117))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3928-2021.introduced.htm",
+      "sha256": "3084729a6c3c269c6ba312d084541dd82a55e547a1bf8310846320f86794d5e2"
+    },
+    "note": "Introduced 2021-02-18. Section 1 shown as amended (struck words dropped; 'thirty' days to 'ten' not quoted). Sections 2-3 mirror Section 1 for magistrates and municipal judges. Five-day rule sunsets on full reporting, per the title. No passage vote."
+  },
+  "operative_text": "Section 1 (Section 14-17-325(B)): The clerk of court shall report to SLED, within forty-eight hours, the issuance of any: (1) restraining orders; (2) orders of protection; (3) orders preventing a person from possessing a firearm; (4) convictions related to or orders issued to prevent acts of domestic violence against another person; (5) orders issued related to the stalking, intimidation, or harassment of another person; or (6) orders for bond with any limitations listed in this section.\nSection 4 (new Section 23-1-250(A)): Each law enforcement agency must report to the South Carolina Law Enforcement Division (SLED) within twenty-four hours: (1) the filing of an incident report for each criminal case; (2) the filing of an order of protection, restraining order, or any order or report relating to an incident of domestic violence; (3) any incident in which a person may be prohibited from obtaining or possessing a firearm by state or federal law;\nSection 5 (new Section 16-23-920): For any sale or transfer of a firearm for which a licensed dealer contacts the National Instant Criminal Background Check System (NICS) to conduct a background check, a licensed gun dealer may not deliver a firearm to any transferee unless the NICS provides the licensed dealer with a unique identification number or five days have elapsed from the date the licensed dealer contacted the NICS and the NICS has not notified the licensed dealer that a sale or transfer to such person would violate state or federal law.\nSection 5 (new Section 16-23-930): A person who violates the provisions of this article is guilty of a misdemeanor and, upon conviction, must be imprisoned not more than three years or fined not more than one thousand dollars, or both."
+}

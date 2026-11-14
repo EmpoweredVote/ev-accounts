@@ -1,0 +1,39 @@
+{
+  "id": "SC-S-7-2025",
+  "scope": "state:sc",
+  "title": "S0007 (126th General Assembly): Red Flags",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0007&session=126&summary=B",
+    "https://www.scstatehouse.gov/sess126_2025-2026/prever/7_20241211.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Darrell Jackson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9f2780f0-597d-4eda-ab82-0b49f4e96829"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2024-12-11; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/7_20241211.htm (LegiScan doc 3032488))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-7-2025.introduced.htm",
+      "sha256": "745b47640ca966676751f59d2ee4c4177c413db7ca03dd53336d2e147d5b530b"
+    },
+    "note": "Introduced text dated 2024-12-11 (bill 7, 2025-2026 session). The text numbers sections 23-21-1210 to 1260 (Chapter 21) but cross-refers to 23-31-1220 and 23-31-1250, and the title says Chapter 31; a drafting mismatch in the printed bill."
+  },
+  "operative_text": "Section 2 (new Section 23-21-1210): A solicitor, assistant solicitor, or two law enforcement officers may file a verified complaint with any probate court, for issuance of a warrant to seize any firearms and ammunition of a person if the solicitor, assistant solicitor, or law enforcement officers have probable cause to believe that: (1) the person poses a risk of imminent personal injury to himself or to other individuals; (2) the person possesses one or more firearms; and (3) the firearms are within or upon any person or property.\nSection 2 (new Section 23-21-1250): (A) Not later than seven days after execution of the warrant pursuant to this article, the probate court for the county where the person named in the warrant resides shall hold a hearing to determine whether any seized firearms and ammunition should be returned to the person named in the warrant or should continue to be held by the State. At the hearing, the State has the burden of proving all material facts by clear and convincing evidence. (B) If, after the hearing, the court finds by clear and convincing evidence that the person poses a risk of imminent personal injury to himself or to other individuals, then the court may order that the firearms and ammunition seized pursuant to the warrant to continue to be held by the State for a period not to exceed one year. (C) If the court does not find clear and convincing evidence that the person poses a risk of imminent injury to himself or other individuals, then the court shall order the seized firearms and ammunition to be returned to the person named in the warrant.\nSection 2 (new Section 23-21-1260): Any person whose firearms and ammunition has been ordered seized pursuant to this article, or the person's legal representative, may transfer any seized firearms and ammunition in accordance with applicable state or federal law, to any person eligible to possess the seized firearms and ammunition."
+}

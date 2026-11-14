@@ -1,0 +1,73 @@
+{
+  "id": "SC-S-369-2021",
+  "scope": "state:sc",
+  "title": "S0369 (124th General Assembly): Second Amendment Protection Act",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0369&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/369_20201209.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Scott Talley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rex Rice",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d587a64f-3b40-421c-9963-9c934f961443"
+    },
+    {
+      "name": "Dwight Loftis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lawrence Grooms",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a5c02924-84fc-40b5-88db-d6f2a13e9aac"
+    },
+    {
+      "name": "Shane Massey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "59e8ad1f-d1f1-4287-8132-379233189488"
+    },
+    {
+      "name": "Shane Martin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0cd44d98-8ccd-4f4f-93d6-e993ff6ba720"
+    },
+    {
+      "name": "Danny Verdin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ec52251-b87c-4264-b1f7-e4d348e2756a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2020-12-09; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/369_20201209.htm (LegiScan doc 2220609))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-369-2021.introduced.htm",
+      "sha256": "263502982e1d899bd83935bbf65004cf92dc36f8fd2c544848d19e1273000847"
+    },
+    "note": "Introduced Dec. 9, 2020 (prefiled). No passage vote. Quotes omit definitions (23-31-910), exclusions (23-31-970) and the Oct. 1, 2021 applicability date (23-31-980)."
+  },
+  "operative_text": "SECTION 2 (new Section 23-31-920): (A) A personal firearm, a firearms accessory, or ammunition that is manufactured commercially or privately and owned in South Carolina and remains within the borders of South Carolina is not subject to any federal law, treaty, federal regulation, or federal executive action, including any federal firearm or ammunition registration program, under the authority of Congress to regulate interstate commerce.\nSECTION 2 (new Section 23-31-930): A firearm manufactured in South Carolina within the meaning of this article must have the words 'Made in South Carolina' clearly stamped on a central metallic part, such as its receiver or frame.\nSECTION 2 (new Section 23-31-940): (A) Any act, law, treaty, order, rule, or regulation of the government of the United States that violates the Second Amendment to the Constitution of the United States is null, void, and unenforceable in the State of South Carolina. (B) No official, agent, or employee of the State of South Carolina, or any political subdivision of it, shall enforce or attempt to enforce any act, law, treaty, order, rule, or regulation of the government of the United States regarding any personal firearm, firearms accessory, or ammunition that is manufactured commercially or privately and owned in the State of South Carolina and remains within the borders of South Carolina.\nSECTION 2 (new Section 23-31-950): It is unlawful for any official, agent, or employee of the government of the United States, or any employee of a corporation providing services to the government of the United States, to enforce or attempt to enforce any act, law, treaty, order, rule, or regulation of the government of the United States regarding a firearm, a firearms accessory, or ammunition that is manufactured commercially or privately and owned in the State of South Carolina and remains within the borders of South Carolina. A person who violates this section is guilty of a Class A felony.\nSECTION 2 (new Section 23-31-960): The Attorney General may seek injunctive relief in any court of competent jurisdiction to enjoin any official, agent, or employee of the government of the United States or employee of a corporation providing services to the government of the United States from enforcing any act, law, treaty, order, rule, or regulation of the government of the United States regarding a firearm, a firearms accessory, or ammunition that is manufactured commercially or privately and owned in the State of South Carolina and remains within the borders of South Carolina."
+}

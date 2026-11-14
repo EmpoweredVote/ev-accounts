@@ -1,0 +1,74 @@
+{
+  "id": "SC-H-4472-2023",
+  "scope": "state:sc",
+  "title": "H4472 (125th General Assembly): Assault weapons",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4472&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/4472_20230510.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Robert Williams",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5b8a0353-929b-4fcd-8228-0b4eaf42d149"
+    },
+    {
+      "name": "Patricia Henegan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Wendell Gilliard",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75dffc0a-f084-4dfb-a2a7-6c81094bb0c2"
+    },
+    {
+      "name": "Michael Rivers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a63d516b-228a-441f-bf4a-7f8bf468f168"
+    },
+    {
+      "name": "Annie McDaniel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "dc3172d7-10cd-44d7-8853-3af6ae272675"
+    },
+    {
+      "name": "Leon Howard",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e088e45a-3d09-4a5d-a679-22377414fef5"
+    },
+    {
+      "name": "Gilda Cobb-Hunter",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "896bfe46-0d7e-48ba-86c1-60f39bc9234d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2023-05-10; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/4472_20230510.htm (LegiScan doc 2805020))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4472-2023.introduced.htm",
+      "sha256": "80a5de1d9ba9ae15310038ac750428947171f8a9200df5ecfdcd1bc61a0319ec"
+    },
+    "note": "Introduced version (2023-05-10); no passage vote on record. Section 2 (B) lists exceptions (armed forces and law enforcement sales, sales to non-residents, inheritance), not quoted. The sale ban does not bar possession."
+  },
+  "operative_text": "Section 1 (Section 16-23-210(h)): \"Assault weapon\" means a firearm with any of the following characteristics: (i) all semiautomatic action, centerfire rifles with a detachable magazine with a capacity of twenty-one or more rounds; (ii) all semiautomatic shotguns with a folding stock or a magazine capacity of more than six rounds, or both;\nSection 2 (new Section 16-23-290): No person in this State may manufacture, import, distribute, sell, or offer for sale any assault weapon, except as authorized in this section.\nSection 2 (new Section 16-23-290): A person who violates this section is guilty of a misdemeanor and, upon conviction, must be imprisoned not more than three years."
+}

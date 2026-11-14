@@ -1,0 +1,62 @@
+{
+  "id": "SC-H-5147-2023",
+  "scope": "state:sc",
+  "title": "H5147 (125th General Assembly): Firearm and ammunition possession",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=5147&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/5147_20240227.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Doug Gilliam",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "38320b01-ac0e-4c0a-aceb-bbceae965294"
+    },
+    {
+      "name": "Thomas Pope",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c4552314-d8dd-4de1-bfc1-a1e601799115"
+    },
+    {
+      "name": "John Mccravy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7e726b81-f400-44bb-98e1-7a63a9248b3b"
+    },
+    {
+      "name": "Daniel Gibson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "55fa23b3-d0fd-4fd7-b9da-6272b6cb62a3"
+    },
+    {
+      "name": "Stewart Jones",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2024-02-27; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/5147_20240227.htm (LegiScan doc 2942154))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-5147-2023.introduced.htm",
+      "sha256": "fcde47273f1722414357ebf6c2cf889d0a1f7aee8a7e487ac9e0aada8308fbf0"
+    },
+    "note": "Introduced text of 2024-02-27; no passage vote. Struck: 'violent crime, as defined by Section 16-1-60, that is classified as a felony offense' (replaced by the more-than-one-year test) and the old fine/five-year penalty (replaced by the graded terms). Items in (B) and (F) were printed as numbered (1)-(3); numbers dropped in the quote."
+  },
+  "operative_text": "SECTION 1 (Section 16-23-500(A)): Except as provided in subsection (F), it is unlawful for a person who has been convicted of a crime punishable by a maximum term of imprisonment of more than one year to possess a firearm or ammunition within this State.\nSECTION 1 (Section 16-23-500(B)): A person who violates the provisions of this section is guilty of a felony and, upon conviction: (1) for a first offense, must be imprisoned not more than five years; (2) for a second offense, must be imprisoned for a mandatory minimum of five years, but not more than twenty years; and (3) for a third or subsequent offense, must be imprisoned for a mandatory minimum of ten years, but not more than thirty years.\nSECTION 1 (Section 16-23-500(F)): For the purpose of this section, \"crime punishable by a maximum term of imprisonment of more than one year\" does not include: (1) any offense in this State or another jurisdiction pertaining to antitrust violations, unfair trade practices, restraints of trade, or other similar offenses relating to the regulation of business practices; (2) any offense classified by the laws of this State or another jurisdiction as a misdemeanor and punishable by a term of imprisonment of five years or less; or (3) any crime for which the conviction has been expunged or set aside or for which a person has been pardoned or has had civil rights restored, unless such pardon, expungement, or restoration of civil rights expressly provides that the person may not ship, transport, possess, or receive firearms."
+}

@@ -1,6 +1,150 @@
 {
   "politician_id": "b9e2feb4-a97d-4f91-b446-cc89f74d32cc",
-  "findings": [],
+  "findings": [
+    {
+      "id": "085e45c2571685c14b3e1a0e5eb9ce895b40fb7576bf7b8c3a5239ae27189496",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=1166&session=125&summary=B",
+      "date": "2024-05-07",
+      "date_precision": "day",
+      "instrument_id": "SC-S-1166-2024",
+      "act": "yea",
+      "motion": "House: Passage Of Bill",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC House, House: Passage Of Bill, 2024-05-07: yea (tally 112–2); census gate: near-unanimous.",
+      "subjects": [
+        "dismissal of pending handgun-possession charges",
+        "expungement of one past handgun-carry conviction"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2024-05-07; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/1166_20240507.htm (LegiScan doc 2994264))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-1166-2024.amended.htm",
+          "sha256": "c03055cc7ee4fc85a9fc0e1abb49eb6724f5eb06730b31d2c37ac910228116f2"
+        }
+      }
+    },
+    {
+      "id": "04eee904b623c243134690dbaade0edb13c0e95e25486c69f625a15f7b3329a4",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0136&session=126&summary=B",
+      "date": "2026-01-14",
+      "date_precision": "day",
+      "instrument_id": "SC-S-136-2026",
+      "act": "yea",
+      "motion": "House: Override Veto By The Governor",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC House, House: Override Veto By The Governor, 2026-01-14: yea (tally 112–0); census gate: near-unanimous.",
+      "subjects": [
+        "dismiss pending handgun-possession charges from before permitless carry",
+        "no civil suit over the arrest after dismissal"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2025-05-07; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/136_20250507.htm (LegiScan doc 3231297))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-136-2026.amended.htm",
+          "sha256": "40e53d7ae3a5f8da35cb38ebd5e3cc683e93f493dbb1a441ec504dc03c4c69f7"
+        }
+      }
+    },
+    {
+      "id": "0bc1dc329aedbe5e3ffd1666c5fef6fe7f0aca5c24071a4d21e019f9b526a94b",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3596&session=126&summary=B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "SC-H-3596-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of SC-H-3596-2025 (sponsor list (prime / co-sponsor)): H3596 (126th General Assembly): Access to firearms by children.",
+      "subjects": [
+        "safe storage: lock firearms away from children",
+        "crimes when a child displays or fires an unsecured gun",
+        "children may use a firearm only under direct adult supervision"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2024-12-12; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3596_20241212.htm (LegiScan doc 3032999))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3596-2025.introduced.htm",
+          "sha256": "ded69ccadea06fee676851fafb1b7ca26d2b1ec5cb02114093b28332fcd1542d"
+        }
+      }
+    },
+    {
+      "id": "7230231b9713f2d7cac4119bb019020dd80b6e2193820f02a2ef632c7011d5f4",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3868&session=126&summary=B",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "SC-H-3868-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of SC-H-3868-2025 (sponsor list (prime / co-sponsor)): H3868 (126th General Assembly): Firearms Criminal Background Checks.",
+      "subjects": [
+        "background check on private firearm sales and transfers",
+        "background checks at gun shows",
+        "dealer fee up to $25 and 30-day default-proceed rule"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2025-01-30; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3868_20250130.htm (LegiScan doc 3091667))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3868-2025.introduced.htm",
+          "sha256": "d2c6600af4b6a3733f10514e6c50d396a361363830dc57441d11b39c537af3d1"
+        }
+      }
+    },
+    {
+      "id": "df26f35ab765aef8acc5357fd71ff7d8c3303e9e6d3fe326ee4cb56a4de9371f",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=5561&session=125&summary=B",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "SC-H-5561-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of SC-H-5561-2023 (sponsor list (prime / co-sponsor)): H5561 (125th General Assembly): Constitutional Carry/Second Amendment Preservation Act Repeal.",
+      "subjects": [
+        "repeal of the 2024 constitutional-carry law",
+        "gun statutes revert to pre-March 2024 wording"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2024-05-08; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/5561_20240508.htm (LegiScan doc 2994796))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-5561-2023.introduced.htm",
+          "sha256": "2e6cb10db8950be3bf6b666e4ca99f159a0e3ac0553584f58556f6d58aa1b1dd"
+        }
+      }
+    }
+  ],
   "searches": [
     {
       "topic_key": "voting-rights",
@@ -27,6 +171,33 @@
       "found": 0,
       "at": "2026-11-10T21:42:52.716Z",
       "by": "sc-search-r5"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "secure storage of guns around children",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general statements on gun rights and gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.scstatehouse.gov/member.php?code=1742897519 (member page confirms sitting District 109 representative; nothing on the subject)",
+        "https://spannwilder4sc109.com/about.html (campaign site bio; nothing on the subject)",
+        "https://spannwilder4sc109.com/ (campaign site home; nothing on the subject)",
+        "https://spannwilder4sc109.com/issues.html (campaign issues page; no gun or firearm wording)",
+        "legislature bill pages for H.3596, H.3868 and H.5561 (sponsorships already on file; not re-collected)",
+        "blocked: https://ballotpedia.org/Tiffany_Spann-Wilder (403)",
+        "one news search on name plus gun words (nothing on the subject beyond bills already on file)",
+        "one news search on 2026 primary result for District 109 (no result found; 2026 ballot status not confirmed, sitting status confirmed)",
+        "not reviewed: https://www.wbtv.com/2026/06/08/2026-primary-tracking-election-results-south-carolina-house-representatives-all-districts/ (page text had no District 109 entry)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T17:58:18.436Z",
+      "by": "source-collector"
     }
   ]
 }

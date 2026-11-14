@@ -1,0 +1,44 @@
+{
+  "id": "SC-H-3055-2023",
+  "scope": "state:sc",
+  "title": "H3055 (125th General Assembly): Reporting of Information to SLED, Firearms Background Checks",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3055&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/3055_20221208.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Leonidas Stavrinakis",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0d8165ca-3f62-481a-8ba0-ded42e235481"
+    },
+    {
+      "name": "Patricia Henegan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2022-12-08; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/3055_20221208.htm (LegiScan doc 2617104))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3055-2023.introduced.htm",
+      "sha256": "b1c445d62e147e2d9ae9bcd4664a3d83f903b55b60cbfc29cbc1cc624ca295c2"
+    },
+    "note": "Introduced text of 2022-12-08; no passage vote. Magistrate and municipal-judge reporting (Sections 2-3, new 22-1-200 and 14-25-250) not quoted; same content as Section 1. The title mentions a sunset of the five-day provision; no sunset section appears in the printed text."
+  },
+  "operative_text": "Section 1 (Section 14-17-325(B)): The clerk of court shall report to SLED, within forty-eight hours, the issuance of any: ... (3) orders preventing a person from possessing a firearm;\nSection 4 (new Section 23-1-250(A)): Each law enforcement agency must report to the South Carolina Law Enforcement Division (SLED) within twenty-four hours: ... (3) any incident in which a person may be prohibited from obtaining or possessing a firearm by state or federal law;\nSection 5 (new Section 16-23-920): For any sale or transfer of a firearm for which a licensed dealer contacts the National Instant Criminal Background Check System (NICS) to conduct a background check, a licensed gun dealer may not deliver a firearm to any transferee unless the NICS provides the licensed dealer with a unique identification number or five days have elapsed from the date the licensed dealer contacted the NICS and the NICS has not notified the licensed dealer that a sale or transfer to such person would violate state or federal law.\nSection 5 (new Section 16-23-930): A person who violates the provisions of this article is guilty of a misdemeanor and, upon conviction, must be imprisoned not more than three years or fined not more than one thousand dollars, or both."
+}

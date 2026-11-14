@@ -1,0 +1,44 @@
+{
+  "id": "SC-S-22-2023",
+  "scope": "state:sc",
+  "title": "S0022 (125th General Assembly): Firearms and Weapons on School Property",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0022&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/22_20221201.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Darrell Jackson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9f2780f0-597d-4eda-ab82-0b49f4e96829"
+    },
+    {
+      "name": "Kevin Johnson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2022-12-01; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/22_20221201.htm (LegiScan doc 2617527))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-22-2023.introduced.htm",
+      "sha256": "446c99491fa1d4dbfd66b4705adaea8488de6d8941a423d74733d6e96c2d8e64"
+    },
+    "note": "As-filed text (2022-12-01). Struck/replaced: fine five to ten thousand dollars and five to ten years (16-23-420(C)); fine one to two thousand dollars and five to ten years (16-23-430(C)). Section 16-23-430 also covers knives and other weapons."
+  },
+  "operative_text": "Section 1 (Section 16-23-420(C)): (C) A person who violates the provisions of this section is guilty of a felony and, upon conviction, must be fined not more than ten thousand dollars or imprisoned not more than ten years, or both.\nSection 1 (Section 16-23-430(A)): (A) It is unlawful for any person, except state, county, or municipal law enforcement officers or personnel authorized by school officials, to carry on his person, while on any elementary or secondary school property, a knife, with a blade over two inches long, a blackjack, a metal pipe or pole, firearms, or any other type of weapon, device, or object which may be used to inflict bodily injury or death.\nSection 1 (Section 16-23-430(C)): (C) A person who violates the provisions of this section is guilty of a felony and, upon conviction, must be fined not more than two thousand dollars or imprisoned not more than ten years, or both. Any weapon or object used in violation of this section may be confiscated by the law enforcement division making the arrest."
+}
