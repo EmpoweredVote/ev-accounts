@@ -140,3 +140,69 @@ read**. Same hazard as the Massachusetts city PDFs and the Oregon 2024 abstract;
 - ⚠ Out of scope and worth noting: Multnomah County **Sheriff** and **Auditor** were both on this
   ballot and we hold **no race row for either**, so neither shows up as a gap anywhere. An office
   with no race is invisible, not incomplete.
+
+---
+
+# Step 1 — Arizona, worked through (2026-11-14)
+
+`az-apply-9-821-01.mjs` applies **A.R.S. § 9-821.01** to Pima County's published county totals. The
+statute is quoted in that file rather than summarised, because every number below comes out of it.
+
+- **(F)** the majority threshold = (votes for candidates **lawfully on the ballot** ÷ seats) ÷ 2,
+  rounded up. 🔴 Write-ins are outside that denominator — Marana's aggregate write-in line alone is
+  **4,680 votes**, and folding it in would move the bar for everyone in the contest. Marana even had
+  an *official* write-in candidate, Jackie Craig, whose name is still not on the ballot.
+- **(G)** if more clear the bar than there are seats, the highest vote-getters take the seats.
+- **(H)** otherwise, **twice the number of open seats** advances to the general.
+- **(D)** a winner at the primary is declared elected *"effective as of the date of the general
+  election"*. ⚠ That is a fact about the **term**, not about which ballot carried the contest.
+
+🟢 **The Town of Marana states the mechanism itself**, answering "Will there be a General Election?":
+*"Maybe. A General Election will only be held if one or more Town races are not decided at the
+Primary Election."*
+
+| contest | seats | threshold | outcome |
+| --- | --- | --- | --- |
+| Marana Mayor | 1 | 6,985 | **Jon Post** (7,620) over Greg Johnsen (6,350) |
+| Marana Town Council | 4 | 5,440 | **Kai, Murphy, Officer, McGuire**; Ritz and Prince out — all six cleared the bar, so (G) decides |
+| Oro Valley Mayor | 1 | 7,415 | **Melanie Barrett** (8,471) over Mark Napier (6,359) |
+| Oro Valley Town Council | 3 | 6,266 | **Dailey, Pina, Wood**; DeSimone and Herrington out |
+| Sahuarita Town Council | 3 | 2,779 | **Morales, Murphy, Hundal**; Cubillo and Earl out |
+
+## 🔴🔴 South Tucson is split across two elections, and the file said so before I did
+
+The first version of this analysis assumed a contest is decided all at once. It put all three South
+Tucson seats at the general and declared Aguirre, Baca and **Federico** elected. That is wrong.
+
+**Roxanna Valenzuela cleared the (F) majority of 176 at the primary** (201 votes) and took one seat
+there, leaving **two**. So the general elected only the top two — **Aguirre (388) and Baca (353)** —
+and **Federico (345) came third by 8 votes.**
+
+🟢 **The proof is a count, not a judgement.** (H) advances twice the open seats. South Tucson's
+general ballot lists **four** candidates. Four is twice two, not twice three. The number of names on
+the general ballot states how many seats were still open, independently of any threshold arithmetic.
+The script now asserts it, so this cannot be got wrong quietly again.
+
+⚠ A second bug fell out of the same fix: "did not win" is not "advanced". Only four of the seven who
+missed the majority went forward; **Cook, Moreno-Sears and Dodson did not**, and calling them
+"advanced" would have put them on a November ballot they were never on. Advancing is now read off
+the general ballot, never inferred from losing.
+
+## What may be recorded, and what may not
+
+- 🟢 **The primary is canvassed.** Pima publishes a **2026 Primary Election — Canvass** and its live
+  portal reports the July results as `OFFICIAL ELECTION RESULTS`, 265 of 265 precincts.
+- 🔴 **The general is not.** There is **no canvass document for November 3** on the same page — only
+  summary results and ballots-processed reports. With the second South Tucson seat resting on **8
+  votes**, and the ballots-processed PDFs suffering the same column drift as every other PDF in this
+  programme, **no winner is recorded for the South Tucson general in this wave.** A call needs the
+  bound, and the bound is not legible.
+- 🟢 **Control on the reader**: for `DEM U.S. Representative in Congress District 6` the CSV reader
+  returns **65,097 / write-in 343**, which is exactly what Pima's live portal shows. The totals being
+  read are the county's own.
+
+## ⚠ The modelling wrinkle step 1 runs into
+
+Five contests belong wholly to the primary and can simply move there. **South Tucson belongs to
+both**: one seat filled in July, two in November. Our single race row carries `seats = 3` on the
+general, which is the right number for the *office* and the wrong number for that *ballot*.
