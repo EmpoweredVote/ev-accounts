@@ -69,6 +69,9 @@ def bill_of(letters, num, year, sp=None):
     """(LegiScan bill number, the year its bill page is named by). From the datasets when exactly one regular session
     covering the year holds the bill; else from the flags."""
     hit = [] if sp else [e for e in DS.get((letters, int(num)), []) if e[0] <= year <= e[1]]
+    # An older store id form can carry 'HB'/'SB' where the datasets use one letter (fl-01: FL-HB-543-2023 is H0543).
+    if not hit and not sp and len(letters) == 2 and letters[1] == 'B':
+        hit = [e for e in DS.get((letters[0], int(num)), []) if e[0] <= year <= e[1]]
     if len(hit) == 1: return hit[0][2], hit[0][0]
     return letters + num.zfill(PAD), (year - 1 if ODD and year % 2 == 0 else year)
 
