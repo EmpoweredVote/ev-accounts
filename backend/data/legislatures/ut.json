@@ -1,0 +1,52 @@
+{
+  "state": "ut",
+  "name": "Utah",
+  "verified": "2026-11-15",
+  "source": "Open States pilot (Stage 5 tools), 2026-11-15: the November 2026 Open States dump converted with scripts/stage5/openstates/, and le.utah.gov roll-call pages read with the verifier's own fetch. Texts were not read in the pilot.",
+  "chambers": {
+    "lower": "House",
+    "upper": "Senate"
+  },
+  "sessions": "One General Session a year, January to March (\"2025 General Session\", written 2025GS in a roll-call address), plus short special sessions (2025S1, 2025S2). Bill numbers start again every year. House 75 members, Senate 29.",
+  "bill_data": [
+    "No LegiScan dataset is on disk for Utah. Bills, sponsors and roll calls come from Open States data, converted to the same folder layout (UT-900018 to UT-900046, sessions 2017 to 2026; scripts/stage5/openstates/README.md). Each folder carries a .openstates.json; its ids are ours and no legiscan.com page exists for them.",
+    "Open States holds NO roll call for the 2025 General Session or the 2025 First Special Session (the bills and sponsors are there). Votes of those two sessions must be read from le.utah.gov itself before anyone is coded on them.",
+    "Open States holds nothing for Utah before 2017.",
+    "In the 2017 to 2020 rows no voter is linked to a person; the converter links a printed label (\"Snider, C.\") to the person who carries the same label in the same chamber in later sessions, and lists each such link in .openstates.json."
+  ],
+  "votes": {
+    "mode": "legiscan-plan",
+    "official_hosts": [
+      "le.utah.gov"
+    ],
+    "legiscan_args": null,
+    "floor_rule": "A floor roll call is a page at le.utah.gov/DynaBill/svotes.jsp (the address names the session, the vote number and the chamber, house=H or house=S). It lists every member under Yeas, Nays, or Absent or not voting, as a surname and initials. A committee vote is a page at le.utah.gov/mtgvotes.jsp and its description says Committee; committee votes are not mapped. The vote line is read from the roll-call page itself (src/lib/stateRollCallEvidence.ts), not from LegiScan.",
+    "gaps": [
+      "A voice vote has a roll-call page that lists no member; it gives no line.",
+      "Absent and present-not-voting are one list on the page (\"Absent or not voting\").",
+      "No 2025 General Session roll calls in the bulk data (see bill_data)."
+    ]
+  },
+  "texts": {
+    "hosts": [
+      "le.utah.gov"
+    ],
+    "marks": "Not read in the pilot. Session A reads one amending bill and replaces this line with how Utah prints new and deleted words.",
+    "note": "A bill's text versions are listed in the bulk data (texts[].state_link). The introduced text prints \"Chief Sponsor:\" and \"Senate Sponsor:\" (or \"House Sponsor:\") with full names. The bill's own page (le.utah.gov/~<year>/bills/static/<bill>.html) prints \"Bill Sponsor:\" and \"Floor Sponsor:\" through 2024; from 2025 that page is filled in by a script and our reader sees no sponsor on it."
+  },
+  "reader_access": {
+    "le.utah.gov": "open"
+  },
+  "search_note": "Utah sponsorships and House and Senate floor votes for 2017 to 2024 and 2026 come from the bulk bill data: skip the legislature's sponsor lists and roll-call pages for those years, and add the place \"sponsor list: covered by bulk bill data\". The bulk data has no 2025 General Session votes. Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
+  "bill_table_note": "- Utah text marks were not read in the pilot; see the legislature profile's texts.marks once session A has filled it.\n- A bill has one chief sponsor and one floor sponsor in the other chamber. Most bills here have no co-sponsor list.\n- Floor votes kept: second and third reading passage, concurrence and final passage. A substitute bill keeps the bill's number.",
+  "fill_quotes": {
+    "label_strips": []
+  },
+  "quirks": [
+    "le.utah.gov asks every crawler to wait 10 seconds between requests (robots.txt Crawl-delay), and answers 429 Too Many Requests when asked faster. The roll-call reader waits by itself. Two hundred roll-call pages take about 35 minutes, in the line step and again in the verifier.",
+    "Open States files a Utah vote under the bill's chamber, not the chamber that voted. The converter takes the chamber from the roll-call address. Do not trust the chamber on an Open States row.",
+    "The roll-call page prints a member as \"Surname, I.\"; two members of one surname get more (\"Miller, G.\", \"Miller, T.\"; \"Maloy, A. Cory\"). A label that fits two people of the roster gives no line.",
+    "The link check needs hand links for members whose data name is a nickname (Jim, Mike, Tom).",
+    "The sponsor cover must match names inside this state's roster only (pass the scoped roster)."
+  ]
+}

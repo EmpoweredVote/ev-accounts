@@ -16,6 +16,10 @@ not hold exactly once.
   python3 -I scripts/stage5/state_legiscan.py pairs <batch dir> <store findings dir> --state XX --host <host>[,<host>]
       --topic <key> [--bill-pad N] [--year-shift N]   -> legiscan/pairs.csv, needs.json, unmapped.json, rollcall-map.json
 Then legiscan-evidence-lines.ts and legiscan_merge.py as for legiscan_pairs.py.
+A state run from Open States data (scripts/stage5/openstates/; its dataset folders carry .openstates.json) has no
+legiscan.com pages. Its vote pairs name the legislature's own roll-call page, taken from the roll call on disk, and
+legiscan-evidence-lines.ts reads the line from that page. Its sponsorships keep the official page they are cited on
+(listed in legiscan/sponsor-own-page.json). `pairs` prints the unmapped votes grouped by cause.
 --bill-pad: zero-pad bill numbers to N digits (LegiScan prints IN SB0010: 4). --year-shift: add N to the instrument
 year when the store's year is not LegiScan's session year. --session-start odd: the state's regular sessions start in odd
 years (Ohio): a sponsorship's LegiScan bill page is named by the session's start year, so an even instrument year
@@ -63,6 +67,32 @@ def dataset_bills():
 
 
 DS = dataset_bills()
+
+
+def openstates_bills():
+    """(letters, number) -> [(session first year, last year, special 0|1, bill file)] for the datasets on disk that
+    were converted from Open States data (scripts/stage5/openstates/; each carries a .openstates.json). Such a bill
+    has no legiscan.com page: its roll calls and sponsors are cited on the legislature's own pages."""
+    idx, root = {}, os.environ.get('LEGISCAN_DATASETS')
+    for top in glob.glob(os.path.join(root, f'{ST}-*')) if root else []:
+        if not os.path.exists(os.path.join(top, '.openstates.json')): continue
+        for d in glob.glob(os.path.join(top, '*', '*', 'bill')):
+            names = sorted(os.listdir(d))
+            if not names: continue
+            ss = json.load(open(os.path.join(d, names[0])))['bill']['session']
+            for n in names:
+                m = re.match(r'([A-Z]+)0*(\d+)\.json$', n)
+                if m: idx.setdefault((m.group(1), int(m.group(2))), []).append((int(ss['year_start']), int(ss.get('year_end') or ss['year_start']), 1 if int(ss.get('special') or 0) else 0, os.path.join(d, n)))
+    return idx
+
+
+OSB = openstates_bills()
+
+
+def openstates_bill(letters, num, year, sp):
+    """The bill file when the datasets hold this bill once, converted from Open States; else None."""
+    hit = [e for e in OSB.get((letters, int(num)), []) if e[0] <= year <= e[1] and bool(e[2]) == bool(sp)]
+    return hit[0][3] if len(hit) == 1 else None
 
 
 def bill_of(letters, num, year, sp=None):
@@ -118,7 +148,7 @@ if mode == 'plan':
     json.dump(list(pages.values()), open(f'{B}/legiscan/vote-pages.json', 'w'), indent=1); print('vote pages', len(pages))
 else:
     hits = {h['url']: h for h in json.load(open(f'{B}/legiscan/rollcall-hits.json'))}
-    rmap, needs, unmapped, pairs = {}, {}, [], []
+    rmap, needs, unmapped, pairs, own_page = {}, {}, [], [], []
     for r, f, u in acts():
         n, act, ins = r['full_name'], (f.get('act') or '').lower(), f.get('instrument_id') or ''
         if act in VOTE:
@@ -128,7 +158,8 @@ else:
             hs = [h for h in hits.get(kid(k), {}).get('hits', []) if h['date'] == k['date']]
             # A special session reuses the regular session's bill numbers: keep only the hits from the matching
             # session (LegiScan's special-session bill URL ends /X<n>; a regular one ends with the year).
-            hs = [h for h in hs if (re.search(r'/X(\d+)/?$', h['bill_url']) or [None, None])[1] == k['sp']]
+            # An Open States hit has no LegiScan URL; it says itself whether its session is a special one.
+            hs = [h for h in hs if (bool(h.get('special')) == bool(k['sp']) if h.get('openstates') else (re.search(r'/X(\d+)/?$', h['bill_url']) or [None, None])[1] == k['sp'])]
             if len(hs) > 1:  # same day, same tally: break the tie on the motion text, then on identical duplicates
                 mo = re.sub(r'[^a-z0-9 ]', '', (f.get('motion') or '').lower()).strip()
                 by = [h for h in hs if mo and re.sub(r'[^a-z0-9 ]', '', (h.get('desc') or '').lower()).startswith(mo)]
@@ -142,10 +173,21 @@ else:
                 last_day = newest_roll_call(os.environ['LEGISCAN_DATASETS'], ST)[0] if not hs and os.environ.get('LEGISCAN_DATASETS') else None
                 if last_day and k['date'] > last_day: why += f' (the vote is NEWER than the datasets on disk, whose last roll call is {last_day}: it needs a newer download or the live API, on the runner\'s yes)'
                 unmapped.append([n, u, ins, why]); continue
-            bill = re.search(r'/bill/([^/]+)/', hs[0]['bill_url']).group(1)  # .../bill/HB16/2020 or .../bill/HB16/2020/X1
-            ls = f"https://legiscan.com/{ST}/rollcall/{bill}/id/{hs[0]['roll_call_id']}"; rmap[kid(k)] = {**hs[0], 'legiscan': ls}
+            if hs[0].get('openstates'):
+                # No legiscan.com page exists for a roll call converted from Open States data: cite the
+                # legislature's own roll-call page, which the verifier reads (src/lib/stateRollCallEvidence.ts).
+                ls = hs[0].get('state_link') or ''
+                if not ls: unmapped.append([n, u, ins, f'{act}: the roll call is from Open States data and names no page of the legislature']); continue
+            else:
+                bill = re.search(r'/bill/([^/]+)/', hs[0]['bill_url']).group(1)  # .../bill/HB16/2020 or .../bill/HB16/2020/X1
+                ls = f"https://legiscan.com/{ST}/rollcall/{bill}/id/{hs[0]['roll_call_id']}"
+            rmap[kid(k)] = {**hs[0], 'legiscan': ls}
         elif act in AUTH:
             m = re.match(ST + r'-([A-Z]+)-(\d+)-(?:SP(\d)-)?(\d{4})$', ins)
+            if m and openstates_bill(m.group(1), m.group(2), int(m.group(4)) + YS, m.group(3)):
+                # A sponsorship on a bill converted from Open States data has no LegiScan page to line. It keeps the
+                # official page it is cited on, and the verifier reads that page's own words as for any source.
+                own_page.append([n, u, ins, act]); continue
             # LegiScan's bill page names the session's start year (oh-01, 2026-11-06) and its own spelling of the number
             bn, yr = bill_of(m.group(1), m.group(2), int(m.group(4)) + YS, m.group(3)) if m else (None, 0)
             ls = f"https://legiscan.com/{ST}/bill/{bn}/{yr}" + (f"/X{m.group(3)}" if m.group(3) else '') if m else None
@@ -157,5 +199,10 @@ else:
     pairs = list(dict.fromkeys(pairs))
     json.dump(needs, open(f'{B}/legiscan/needs.json', 'w'), indent=1); json.dump(unmapped, open(f'{B}/legiscan/unmapped.json', 'w'), indent=1)
     json.dump(rmap, open(f'{B}/legiscan/rollcall-map.json', 'w'), indent=1)
+    json.dump(own_page, open(f'{B}/legiscan/sponsor-own-page.json', 'w'), indent=1)
     w = csv.writer(open(f'{B}/legiscan/pairs.csv', 'w', newline='')); w.writerow(['full_name', 'last_name', 'topic_key', 'source_url']); w.writerows(pairs)
-    print('people', len(needs), 'pairs', len(pairs), 'unmapped', len(unmapped), 'roll calls', len(rmap))
+    print('people', len(needs), 'pairs', len(pairs), 'unmapped', len(unmapped), 'roll calls', len(rmap),
+          *(['· sponsorships left on the official page (Open States bills, no LegiScan page)', len(own_page)] if own_page else []))
+    by_why = {}
+    for x in unmapped: by_why[re.sub(r'\d+', 'N', x[3].split(' (')[0])[:90]] = by_why.get(re.sub(r'\d+', 'N', x[3].split(' (')[0])[:90], 0) + 1
+    for why, c in sorted(by_why.items(), key=lambda kv: -kv[1]): print(f'  unmapped {c}: {why}')

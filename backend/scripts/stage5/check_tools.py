@@ -1260,6 +1260,139 @@ def link_check_stops_on_a_legislator_with_no_vote_link(t):
     roster(rows); os.rename(f'{t}/ds/XX-1', f'{t}/ds/YY-1'); assert go().returncode == 2, 'no LegiScan people read: no verdict'
 
 
+@check
+def state_legiscan_cites_the_legislatures_own_page_for_an_open_states_roll_call(t):
+    """A roll call converted from Open States data has no legiscan.com page: its pair names the legislature's own
+    roll-call page, taken from the hit. One with no page is unmapped, with that reason. A sponsorship on such a bill
+    makes no pair and is listed apart. A LegiScan bill beside it still gets its LegiScan addresses. A special-session
+    hit is not taken for a regular-session vote."""
+    B = batch(f'{t}/b', [('Ann Able', 'a')], [{'full_name': 'Ann Able', 'topic_key': 'tp', 'evidence_type': 'record',
+              'urls': ['https://leg.gov/hb1', 'https://leg.gov/hb2', 'https://leg.gov/hb3', 'https://leg.gov/hb4']}], ncols=4)
+    os.makedirs(f'{t}/f')
+    v = lambda n, d, tal: {'kind': 'record', 'url': f'https://leg.gov/hb{n}', 'act': 'yea', 'instrument_id': f'XX-HB-{n}-2025', 'chamber': 'H', 'date': d, 'note': f'tally {tal}', 'motion': 'Third reading'}
+    json.dump({'findings': [v(1, '2025-03-01', '60-40'), v(2, '2025-03-02', '70-30'), v(3, '2025-03-03', '55-45'), v(4, '2025-03-04', '50-49'),
+                            {'kind': 'record', 'url': 'https://leg.gov/hb1', 'act': 'sponsor', 'instrument_id': 'XX-HB-1-2025'},
+                            {'kind': 'record', 'url': 'https://leg.gov/hb3', 'act': 'cosponsor', 'instrument_id': 'XX-HB-3-2025'}]}, open(f'{t}/f/a.json', 'w'))
+    ds = f'{t}/ds'
+    def session(folder, special, bills, openstates):
+        d = f'{ds}/XX-{folder}/XX/s{folder}/bill'; os.makedirs(d)
+        if openstates: json.dump({'source': 'Open States'}, open(f'{ds}/XX-{folder}/.openstates.json', 'w'))
+        for n in bills: json.dump({'bill': {'bill_number': n, 'state_link': f'https://leg.gov/{n.lower()}', 'session': {'year_start': 2025, 'year_end': 2025, 'special': special}}}, open(f'{d}/{n}.json', 'w'))
+    session(900001, 0, ['HB1', 'HB2', 'HB4'], True); session(900002, 1, ['HB4'], True); session(77, 0, ['HB3'], False)
+    env = {'LEGISCAN_DATASETS': ds}
+    run('state_legiscan.py', 'plan', B, f'{t}/f', '--state', 'XX', '--host', 'leg.gov', env=env)
+    os_hit = lambda rc, d, link, special=0: {'roll_call_id': rc, 'date': d, 'desc': 'House Third reading', 'bill_url': 'https://open.pluralpolicy.com/xx/bills/2025/HB1/', 'openstates': True, 'special': special, 'state_link': link}
+    json.dump([{'url': 'XX-HB-1-2025|H|2025-03-01|60-40', 'hits': [os_hit(90000001, '2025-03-01', 'https://leg.gov/votes?id=7')]},
+               {'url': 'XX-HB-2-2025|H|2025-03-02|70-30', 'hits': [os_hit(90000002, '2025-03-02', '')]},
+               {'url': 'XX-HB-3-2025|H|2025-03-03|55-45', 'hits': [{'roll_call_id': 31, 'date': '2025-03-03', 'desc': 'House: Third reading', 'bill_url': 'https://legiscan.com/XX/bill/HB3/2025'}]},
+               {'url': 'XX-HB-4-2025|H|2025-03-04|50-49', 'hits': [os_hit(90000004, '2025-03-04', 'https://leg.gov/votes?id=9', special=1)]}],
+              open(f'{B}/legiscan/rollcall-hits.json', 'w'))
+    out = run('state_legiscan.py', 'pairs', B, f'{t}/f', '--state', 'XX', '--host', 'leg.gov', '--topic', 'tp', env=env).stdout
+    got = sorted(r['source_url'] for r in read_csv(f'{B}/legiscan/pairs.csv'))
+    assert got == ['https://leg.gov/votes?id=7', 'https://legiscan.com/XX/bill/HB3/2025', 'https://legiscan.com/XX/rollcall/HB3/id/31'], got
+    un = {u[2]: u[3] for u in json.load(open(f'{B}/legiscan/unmapped.json'))}
+    assert sorted(un) == ['XX-HB-2-2025', 'XX-HB-4-2025'] and 'names no page of the legislature' in un['XX-HB-2-2025'] and '0 LegiScan roll calls' in un['XX-HB-4-2025'], un
+    assert json.load(open(f'{B}/legiscan/sponsor-own-page.json')) == [['Ann Able', 'https://leg.gov/hb1', 'XX-HB-1-2025', 'sponsor']], open(f'{B}/legiscan/sponsor-own-page.json').read()
+    assert 'unmapped 1: yea: the roll call is from Open States data' in out and 'sponsorships left on the official page' in out, out
+    needs = json.load(open(f'{B}/legiscan/needs.json'))['Ann Able']
+    assert {'url': 'https://leg.gov/votes?id=7', 'official': 'https://leg.gov/hb1', 'act': 'yea', 'instrument': 'XX-HB-1-2025'} in needs, needs
+
+
+@check
+def legiscan_merge_cross_checks_a_vote_cited_on_a_legislature_page(t):
+    """A vote line on a legislature's own roll-call page is cross-checked against the finding like a LegiScan one: a
+    Yea finding with a Nay line stops the merge (exit 1). "was absent or not voting" agrees with an abstain finding."""
+    def go(said, act='yea'):
+        B = batch(f'{t}/{said[-4:]}{act}', [('Ann Able', 'a')], [{'full_name': 'Ann Able', 'topic_key': 't', 'evidence_type': 'record', 'urls': ['https://leg.gov/hb1']}])
+        os.makedirs(f'{B}/legiscan')
+        json.dump({'Ann Able': [{'url': 'https://leg.gov/votes?id=7', 'official': 'https://leg.gov/hb1', 'act': act, 'instrument': 'XX-HB-1-2025'}]}, open(f'{B}/legiscan/needs.json', 'w'))
+        write_csv(f'{B}/legiscan/legiscan-evidence.csv', [{'full_name': 'Ann Able', 'topic_key': 't', 'source_url': 'https://leg.gov/votes?id=7',
+                  'snippet': f'Xx House roll call 7 (2025GS), HB 1 - Third reading (2025-03-01): Able, A. {said}.', 'snippet_index': '1'}])
+        p = run('legiscan_merge.py', B, '--host', 'leg.gov', ok=False)
+        return p.returncode, json.load(open(f'{B}/legiscan/crosscheck.json')), urls(read_csv(f'{B}/research.csv')[0])
+    code, cross, cited = go('voted Yea')
+    assert code == 0 and [c['agree'] for c in cross] == [True] and cited == ['https://leg.gov/votes?id=7'], (code, cross, cited)
+    code, cross, _ = go('voted Nay')
+    assert code == 1 and [c['agree'] for c in cross] == [False], (code, cross)
+    code, cross, _ = go('was absent or not voting', act='abstain')
+    assert code == 0 and [c['agree'] for c in cross] == [True], (code, cross)
+    code, cross, _ = go('was absent or not voting')
+    assert code == 1 and [c['agree'] for c in cross] == [False], (code, cross)
+
+
+def openstates_extract(t, st='ut'):
+    """A two-session Open States extract for one state, as extract.py writes it: one House member, one senator."""
+    X = f'{t}/work/extracts/2026-11/{st}'; os.makedirs(X)
+    def tsv(name, cols, rows):
+        open(f'{X}/{name}.tsv', 'w').write('\t'.join(cols) + '\n' + ''.join('\t'.join(r.get(c, '\\N') for c in cols) + '\n' for r in rows))
+    json.dump({'dump': '2026-11-public.pgdump', 'month': '2026-11', 'state': st, 'extracted_at': 'x'}, open(f'{X}/extract.json', 'w'))
+    tsv('legislativesession', ['id', 'identifier', 'name', 'classification', 'start_date', 'end_date'],
+        [{'id': 's20', 'identifier': '2020', 'name': '2020 General Session', 'classification': 'primary', 'start_date': '2020-01-27', 'end_date': '2020-03-12'},
+         {'id': 's21', 'identifier': '2021', 'name': '2021 General Session', 'classification': 'primary', 'start_date': '2021-01-19', 'end_date': '2021-03-05'}])
+    tsv('organization', ['id', 'name', 'classification', 'parent_id'], [{'id': 'leg', 'name': 'Legislature', 'classification': 'legislature'},
+        {'id': 'up', 'name': 'Senate', 'classification': 'upper', 'parent_id': 'leg'}, {'id': 'lo', 'name': 'House', 'classification': 'lower', 'parent_id': 'leg'}])
+    tsv('post', ['id', 'label'], [])
+    tsv('person', ['id', 'name', 'given_name', 'family_name', 'image', 'primary_party', 'email'],
+        [{'id': 'p-rep', 'name': 'Rae Able', 'given_name': 'Rae', 'family_name': 'Able', 'primary_party': 'Republican'},
+         {'id': 'p-sen', 'name': 'Sam Baker', 'given_name': 'Sam', 'family_name': 'Baker', 'primary_party': 'Democratic'}])
+    tsv('membership', ['person_id', 'organization_id', 'post_id', 'start_date', 'end_date'], [])
+    tsv('bill', ['id', 'legislative_session_id', 'identifier', 'title', 'classification', 'subject', 'from_organization_id'],
+        [{'id': 'b20', 'legislative_session_id': 's20', 'identifier': 'S.B. 5', 'title': 'A bill', 'classification': '{bill}', 'subject': '{}', 'from_organization_id': 'up'},
+         {'id': 'b21', 'legislative_session_id': 's21', 'identifier': 'SB 6', 'title': 'A bill', 'classification': '{bill}', 'subject': '{}', 'from_organization_id': 'up'}])
+    tsv('billsource', ['bill_id', 'url'], [{'bill_id': 'b20', 'url': 'http://le.utah.gov/~2020/bills/static/SB0005.html'}])
+    tsv('billsponsorship', ['bill_id', 'name', 'entity_type', 'primary', 'person_id'], [])
+    ev = lambda i, b, s, org: {'id': i, 'bill_id': b, 'legislative_session_id': s, 'organization_id': org, 'motion_text': 'passed 3rd reading', 'start_date': s.replace('s', '20') + '-02-01', 'result': 'pass', 'order': '0'}
+    # Both sessions: a House floor vote and a Senate floor vote on a SENATE bill, each filed under the bill's chamber
+    # ("up"), as Utah's rows are; and a committee vote, told apart only by its link.
+    tsv('voteevent', ['id', 'bill_id', 'legislative_session_id', 'organization_id', 'motion_text', 'start_date', 'result', 'order'],
+        [ev('h20', 'b20', 's20', 'up'), ev('s20v', 'b20', 's20', 'up'), ev('c20', 'b20', 's20', 'up'), ev('h21', 'b21', 's21', 'up'), ev('s21v', 'b21', 's21', 'up')])
+    link = lambda sess, vid, house: f'http://le.utah.gov/DynaBill/svotes.jsp?sessionid={sess}GS&voteid={vid}&house={house}'
+    tsv('votesource', ['vote_event_id', 'url'], [{'vote_event_id': 'h20', 'url': link(2020, 1, 'H')}, {'vote_event_id': 's20v', 'url': link(2020, 2, 'S')},
+        {'vote_event_id': 'c20', 'url': 'http://le.utah.gov/mtgvotes.jsp?voteid=9'}, {'vote_event_id': 'h21', 'url': link(2021, 1, 'H')}, {'vote_event_id': 's21v', 'url': link(2021, 2, 'S')}])
+    tsv('votecount', ['vote_event_id', 'option', 'value'], [{'vote_event_id': e, 'option': 'yes', 'value': '1'} for e in ('h20', 's20v', 'c20', 'h21', 's21v')])
+    pv = lambda e, name, pid=None: {'vote_event_id': e, 'voter_name': name, 'option': 'yes', **({'voter_id': pid} if pid else {})}
+    # 2021 links its voters; 2020 links none (Utah 2017-2020), under the same printed labels.
+    tsv('personvote', ['vote_event_id', 'voter_id', 'voter_name', 'option'],
+        [pv('h21', 'Able, R.', 'p-rep'), pv('s21v', 'Baker, S.', 'p-sen'), pv('h20', 'Able, R.'), pv('s20v', 'Baker, S.'), pv('c20', 'Able, R.'), pv('h20', 'Stranger, Q.')])
+    return X
+
+
+@check
+def openstates_convert_takes_the_voting_chamber_and_committee_from_the_roll_call_link(t):
+    """Open States files a Utah vote under the bill's chamber. The converted roll call must carry the chamber its
+    own link names, a committee vote must say Committee, a label linked in another session must reach the same
+    person, an old "S.B. 5" must be SB5, links must be https, and no party may be written. Without a registry the
+    converter refuses, because a new one renumbers everything."""
+    X = openstates_extract(t)
+    p = run('openstates/convert.py', X, '--out', f'{t}/out', '--legiscan-root', f'{t}/none', ok=False)
+    assert p.returncode != 0 and 'id_registry.json' in (p.stderr + p.stdout), 'no registry: refuse'
+    run('openstates/convert.py', X, '--out', f'{t}/out', '--legiscan-root', f'{t}/none', env={'OPENSTATES_NEW_REGISTRY': '1'})
+    reg = json.load(open(f'{t}/work/id_registry.json'))
+    rcs = {}
+    for f in glob.glob(f'{t}/out/UT-*/UT/*/vote/*.json'):
+        r = json.load(open(f))['roll_call']; rcs[r['_openstates']['vote_event_id']] = r
+    assert len(rcs) == 5, sorted(rcs)
+    assert [rcs[e]['chamber'] for e in ('h20', 's20v', 'h21', 's21v')] == ['H', 'S', 'H', 'S'], {e: r['chamber'] for e, r in rcs.items()}
+    assert rcs['h20']['desc'].startswith('House ') and 'Committee' not in rcs['h20']['desc'], rcs['h20']['desc']
+    assert 'Committee' in rcs['c20']['desc'] and rcs['c20']['_openstates']['committee'] is True, rcs['c20']['desc']
+    assert all(r['state_link'].startswith('https://le.utah.gov/') for r in rcs.values()), [r['state_link'] for r in rcs.values()]
+    rep = reg['people']['person:p-rep']; sen = reg['people']['person:p-sen']
+    assert [v['people_id'] for v in rcs['h21']['votes']] == [rep] and [v['people_id'] for v in rcs['s21v']['votes']] == [sen]
+    assert rep in [v['people_id'] for v in rcs['h20']['votes']], 'the 2020 House label is the 2021 House member'
+    assert [v['people_id'] for v in rcs['s20v']['votes']] == [sen], 'the 2020 Senate label is the 2021 senator'
+    assert len({v['people_id'] for v in rcs['h20']['votes']}) == 2, 'a label never linked anywhere stays its own name-only person'
+    assert sorted(os.path.basename(f) for f in glob.glob(f'{t}/out/UT-*/UT/*/bill/*.json')) == ['SB5.json', 'SB6.json']
+    b = json.load(open(glob.glob(f'{t}/out/UT-*/UT/*/bill/SB5.json')[0]))['bill']
+    assert b['bill_number'] == 'SB5' and b['state_link'] == 'https://le.utah.gov/~2020/bills/static/SB0005.html', (b['bill_number'], b['state_link'])
+    people = [json.load(open(f))['person'] for f in glob.glob(f'{t}/out/UT-*/UT/*/people/*.json')]
+    assert people and all(q['party'] == '' and q['party_id'] == '0' for q in people), [(q['name'], q['party']) for q in people]
+    assert {q['role'] for q in people if q['people_id'] == rep} == {'Rep'} and {q['role'] for q in people if q['people_id'] == sen} == {'Sen'}
+    assert all(os.path.exists(os.path.join(d, '.openstates.json')) for d in glob.glob(f'{t}/out/UT-*'))
+    before = json.dumps(reg, sort_keys=True)
+    run('openstates/convert.py', X, '--out', f'{t}/out', '--legiscan-root', f'{t}/none')
+    assert json.dumps(json.load(open(f'{t}/work/id_registry.json')), sort_keys=True) == before, 'a second run hands out the same numbers'
+
+
 fails = 0
 with tempfile.TemporaryDirectory() as root:
     for i, f in enumerate(CHECKS):
