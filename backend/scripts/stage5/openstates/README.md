@@ -49,6 +49,37 @@ How step 7 tells them apart: `legiscan-rollcalls.ts` marks a hit `openstates: tr
 `legiscan-evidence-lines.ts` reads the line from that page with the verifier's own fetch; `legiscan_merge.py`
 cross-checks the line's vote against the finding, as for a LegiScan line.
 
+## A session whose roll calls the dump does not hold
+
+A dump can hold a session's bills and none of its roll calls. Utah's 2025 General Session is one: 959 bills and 0
+roll calls in the 2026-11 dump, with the sessions either side full. Count roll calls per session before a run; a
+year that has a special session can hide a missing regular one.
+
+`fetch-legislature-rollcalls.ts` reads the missing roll calls from the legislature's own site, **for the bills you
+name** (the ones the run's bill scan found; the tool knows no topic):
+
+```bash
+npx tsx scripts/stage5/openstates/fetch-legislature-rollcalls.ts ut 2025 $W --bills "HB 133,SB 14"   # or --bills-file
+python3 -I scripts/stage5/openstates/convert.py $W/extracts/<YYYY-MM>/ut      # the whole state again, never --sessions
+```
+
+It writes `$W/supplements/<ST>/<session>.json`, and `convert.py` merges that file on every run from then on. A merged
+roll call is a roll call like any other: step 7 and the verifier read it unchanged, and its voters are linked by the
+same label rules. It carries `_openstates.from_legislature`, and the session's `.openstates.json` lists the count and
+the bills under `rollcalls_from_legislature`.
+
+- Two documents must agree for each roll call, or it is **refused and listed** (exit 1): the bill's own vote list
+  (which votes, each tally) and the roll call's own page (the bill, the members). Nothing is guessed.
+- 🔴 **Only the bills named are looked up.** Every other bill of that session still has no roll call on disk. A bill
+  the scan finds later needs the fetch run again, then the convert.
+- 🔴 **Run `convert.py` for the whole state**, not `--sessions`: a session with no linked voter of its own gets its
+  links from the sessions either side.
+- Committee and voice votes are counted in the supplement's `checked` block and not read.
+- Every request waits the site's crawl delay (Utah: 10 seconds), and bodies are kept in `supplements/<ST>/raw/`.
+- A later dump that does hold the session is safe: a roll call whose page the dump already has is not added twice.
+- A new state is one entry in `INDEX` in that file (where a bill's vote list is, and how to read it) on top of the
+  page reader below.
+
 ## A new state needs two things
 
 1. **A reader for its roll-call page**: one entry in `FORMATS` in `src/lib/stateRollCallEvidence.ts` (the address
