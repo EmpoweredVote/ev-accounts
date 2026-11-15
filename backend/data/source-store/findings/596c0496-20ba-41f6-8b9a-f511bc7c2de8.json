@@ -516,5 +516,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "status: in scope, District 54 Utah House member, general-election opponent confirmed by a Salt Lake Tribune story (2026-10-12) seen in search results",
+        "On the Record (0 appearances, no meetings)",
+        "official House member page https://house.utleg.gov/rep/chevrier (fetched; script-rendered shell, nothing on the subject)",
+        "https://lehifreepress.com/2026/01/02/east-lehi-rep-kristen-chevrier-files-for-reelection/ (re-election filing story, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Kristen_Chevrier (403 to curl, empty to fetch tool)",
+        "blocked: https://www.kristenchevrier.com (no response; campaign site not reached)",
+        "news search on name plus gun, firearm, Second Amendment, concealed carry: nothing on the subject by her",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://fastdemocracy.com/bill-search/ut/2025/bills/UTB00012728 (search lead only, unclear what the page shows)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:16:04.989Z",
+      "by": "source-collector"
+    }
+  ]
 }

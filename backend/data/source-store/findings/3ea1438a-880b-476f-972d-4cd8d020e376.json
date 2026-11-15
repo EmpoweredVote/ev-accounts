@@ -568,7 +568,57 @@
           "sha256": "f983957dbb351f0726bc3ff2437529a7c9128aaf708f66683547759dc3a4bfbb"
         }
       }
+    },
+    {
+      "id": "6e1c548707da5531b584babb18e2a386bf23a977233cec949f8bb22ed90683a4",
+      "kind": "own-words",
+      "url": "https://www.kuer.org/politics-government/2026-01-28/after-a-violent-2025-one-utah-dem-wants-a-practical-conversation-about-guns",
+      "date": "2026-01-28",
+      "date_precision": "day",
+      "passage": "“The Second Amendment is the Second Amendment,” Fitisemanu said. “This is not something that we're trying to ban the lawful use of.”",
+      "note": "Quoted by a public radio story in a piece on his bill limiting minors' possession of imitation firearms in public. He says lawful use of firearms is not what is being targeted.",
+      "subjects": [
+        "Second Amendment and lawful gun use",
+        "imitation firearms",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:11:20.991Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "imitation firearms",
+        "Second Amendment and lawful gun use",
+        "gun safety laws",
+        "voluntary firearm surrender",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the House caucus member page https://www.utahhousedemocrats.utleg.gov/jake-fitisemanu (fetched; script-rendered page, no gun statement found in it)",
+        "Ballotpedia https://ballotpedia.org/Jake_Fitisemanu (fetched; nothing on the subject)",
+        "one news search on name plus gun words (confirmed sitting state House member, West Valley City)",
+        "https://www.kuer.org/politics-government/2026-01-28/after-a-violent-2025-one-utah-dem-wants-a-practical-conversation-about-guns (public radio story, fetched)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://www.ksl.com/article/51253786/utah-house-committee-shoots-down-bill-penalizing-unsafe-storage-of-firearms",
+        "not reviewed: committee hearing audio for HB 83 (2026)",
+        "not reviewed: campaign site (none found)"
+      ],
+      "found": 1,
+      "at": "2026-11-15T21:11:20.991Z",
+      "by": "source-collector"
+    }
+  ]
 }

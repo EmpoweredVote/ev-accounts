@@ -1802,5 +1802,29 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or magazine",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://utahsenatedemocrats.org/senator-karen-kwan (read: caucus profile page names her as a District 12 senator; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Karen_Kwan (403)",
+        "not reviewed: https://senate.utah.gov/senators/karen-kwan/ (404)",
+        "no personal campaign site found (https://kkwan.com did not respond)",
+        "two web searches on her name plus gun words: no statement of her own found; one result listing a 2023 vote on HB 300 could not be confirmed on the page I fetched (https://progressreport.betterutah.org/bills/2023/hb-300/), so not saved",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:14:09.028Z",
+      "by": "source-collector"
+    }
+  ]
 }

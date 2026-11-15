@@ -1570,7 +1570,139 @@
           "sha256": "bfa22c6da1b64f4da5e61fbe84d7eaa5df9caa24c39f98535162f56a6285db91"
         }
       }
+    },
+    {
+      "id": "2e7455648b006919e35f6b0173b11c2f65b8655d28828d889b2e0301d18c8cb7",
+      "kind": "own-words",
+      "url": "https://www.ksl.com/article/50341354/utah-bill-clears-senate-declaring-state--not-cities-or-counties--has-final-say-on-gun-regulation",
+      "date": "2022-02-01",
+      "date_precision": "day",
+      "passage": "This bill makes it clear that local governments do not have authority to regulate firearms.",
+      "note": "Quoted by a news outlet (KSL, from Deseret News) from his Senate floor remarks on SB 115; he says cities and counties cannot regulate guns and the bill would let them be sued if they try.",
+      "subjects": [
+        "local governments cannot regulate guns (state preemption)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:16:35.139Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a3386f047aaa996a1d26c776d2be8ceb12462195afaf90e39faac76faaed8635",
+      "kind": "own-words",
+      "url": "https://www.ksl.com/article/50341354/utah-bill-clears-senate-declaring-state--not-cities-or-counties--has-final-say-on-gun-regulation",
+      "date": "2022-02-01",
+      "date_precision": "day",
+      "passage": "In recent years, local governments have attempted to exploit loopholes in state law to regulate firearms at conventions, not acting in the best interests of all Utahns",
+      "note": "Quoted by KSL from his Senate floor remarks; he explains SB 115 is aimed at local rules at gun shows, which included a county background-check requirement for vendors.",
+      "subjects": [
+        "local governments cannot regulate guns (state preemption)",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:16:35.139Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dab3ea4a8eea85ac65e89c3147963bcb1d480ae8311a82877d25bc4a5dc10590",
+      "kind": "own-words",
+      "url": "https://kvnutalk.com/chris-wilson-bill-reasserts-states-sole-authority-to-regulate-firearms-cache-valley-daily",
+      "date": "2022-02",
+      "date_precision": "month",
+      "passage": "Our most important duty is to preserve freedoms, including the freedom to bears arms without unnecessary government interference.",
+      "note": "Quoted by a local news outlet (Cache Valley Daily) on SB 115; general statement about gun rights.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "local governments cannot regulate guns (state preemption)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:16:35.139Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f041451befdd0ea9562c12e988bfb85f107124a61772656ebc1cf6abc118f366",
+      "kind": "own-words",
+      "url": "https://www.kuer.org/politics-government/2026-01-28/after-a-violent-2025-one-utah-dem-wants-a-practical-conversation-about-guns",
+      "date": "2026-01-28",
+      "date_precision": "day",
+      "passage": "They can take the firearm to a local public safety, police station or a sheriff's office or some public safety institution",
+      "note": "Quoted by KUER on his 2026 bill (SB 86) for data on a program where people voluntarily hand in guns during a mental-health crisis; he called the program \"wonderful\".",
+      "subjects": [
+        "voluntary surrender of guns during a mental-health crisis"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:16:35.139Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "02dd61f45f1aeb8de7c184e05f4092fd960fe79e6804f727f1ca06788605230f",
+      "kind": "record",
+      "url": "https://le.utah.gov/Session/2022/bills/static/SB0115.html",
+      "date": "2022-02-03",
+      "date_precision": "day",
+      "instrument_id": "UT-SB-115-2022",
+      "act": "sponsor",
+      "note": "He sponsored SB 115, Firearm Preemption Amendments: the state alone regulates firearms and local governments and schools can be sued for violating that; it passed the Senate 20-5. Sponsorship and votes are on file already; this adds the Senate vote context.",
+      "subjects": [
+        "local governments cannot regulate guns (state preemption)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:16:35.139Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "local governments cannot regulate guns (state preemption)",
+        "gun rights and the Second Amendment",
+        "voluntary surrender of guns during a mental-health crisis",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://senate.utah.gov/ (front page confirms Chris Wilson as sitting senator, chosen Majority Leader for the next term)",
+        "campaign site https://www.chriswilsonutah.com (read; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Chris_Wilson_(Utah_politician) (403)",
+        "not found: https://le.utah.gov/legislator/WILSOCH (404)",
+        "not found: https://senate.utah.gov/senators/wilson/ (404)",
+        "sponsor list: covered by bulk bill data",
+        "news search on name plus gun words: one search, two news stories read",
+        "https://www.kuer.org story on 2026 gun bills (read)",
+        "https://libertasutah.org/legislator/WILSOCH/ (leads only, nothing usable)"
+      ],
+      "found": 5,
+      "at": "2026-11-15T21:16:35.139Z",
+      "by": "source-collector"
+    }
+  ]
 }

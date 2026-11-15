@@ -1655,5 +1655,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "carry without a permit",
+        "minimum age to carry",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://house.utleg.gov/rep/welton/ (member page loaded; page text holds no statements on the subject)",
+        "https://en.wikipedia.org/wiki/Doug_Welton (confirms sitting member of the Utah House, District 65; no gun statements)",
+        "blocked: https://ballotpedia.org/Doug_Welton (empty page)",
+        "blocked: https://le.utah.gov/house2/detail.jsp?i=WELTON (404)",
+        "web search x2 on name plus gun words: only general Utah gun-bill news and bill-tracking profiles, nothing quoting him",
+        "campaign site: not found",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:14:35.925Z",
+      "by": "source-collector"
+    }
+  ]
 }

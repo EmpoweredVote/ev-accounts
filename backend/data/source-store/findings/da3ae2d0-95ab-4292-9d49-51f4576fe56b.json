@@ -2108,7 +2108,76 @@
           "sha256": "fba6dca7294443a9d292e6570cd53aa9e56f1be74479278c0491f4af1b776456"
         }
       }
+    },
+    {
+      "id": "9418aa34c2d0f45773204fa2c145b0a799964fc33c63b2473d5811891051d1bf",
+      "kind": "own-words",
+      "url": "https://www.ksl.com/article/51244957",
+      "date": "2025-02-05",
+      "date_precision": "day",
+      "passage": "A vote against this bill is not a vote to prevent 18- to 21-year-olds from carrying in Utah. They have been able to carry in their vehicles for over a decade, and they can carry in their domiciles under current code.",
+      "note": "Quoted by a news outlet (KSL) in House floor debate on HB 133 (2025), which she sponsored and which lets 18- to 21-year-olds openly carry loaded guns; she answers a colleague's concern about the age change.",
+      "subjects": [
+        "minimum age to carry",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:15:29.398Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4ef0a8425059b63177809af63615ac3e34de02b38d289dad159018f90af8dcbd",
+      "kind": "own-words",
+      "url": "https://www.ksl.com/article/51244957",
+      "date": "2025-02-05",
+      "date_precision": "day",
+      "passage": "Guns don't commit violence, people commit violence,",
+      "note": "Quoted by a news outlet (KSL) in the same HB 133 floor debate, a general remark on guns and violence.",
+      "subjects": [
+        "gun rights in general",
+        "minimum age to carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:15:29.398Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "minimum age to carry",
+        "recodifying the firearms code",
+        "gun rights in general"
+      ],
+      "places": [
+        "status: sitting House member (Syracuse, Judiciary chair); said in Nov 2025 she will not run in 2026 (https://www.deseret.com/utah/2025/11/06/former-utah-house-leader-decides-not-to-run-for-reelection)",
+        "On the Record (0 meetings)",
+        "the House member page https://house.utleg.gov/imo/karianne-lisonbee/ : blocked (404, no page)",
+        "the legislature member page https://le.utah.gov/house2/detail.jsp?i=LISONBEE : returned no readable text",
+        "https://house.utleg.gov/issues/second-amendment : fetched, does not name her",
+        "blocked: https://ballotpedia.org/Karianne_Lisonbee (403)",
+        "campaign site: none found",
+        "two web searches on her name plus gun words: found 2025 news coverage of HB 133 only",
+        "sponsor list: covered by bulk bill data",
+        "roll calls: covered by bulk bill data",
+        "not reviewed: ontheissues.org, vote411, social media posts"
+      ],
+      "found": 2,
+      "at": "2026-11-15T21:15:29.398Z",
+      "by": "source-collector"
+    }
+  ]
 }

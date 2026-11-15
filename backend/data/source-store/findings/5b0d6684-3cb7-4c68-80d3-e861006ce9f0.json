@@ -1,0 +1,33 @@
+{
+  "politician_id": "5b0d6684-3cb7-4c68-80d3-e861006ce9f0",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general gun rights and Second Amendment statements"
+      ],
+      "places": [
+        "scope: a news story (https://www.ksl.com/article/51645075/who-is-david-chappell-democrat-flips-utah-house-seat-in-provo) names him as winner of the 2026 general election for Utah House District 62 (Provo and Springville); in scope",
+        "On the Record (0 appearances)",
+        "news story https://www.ksl.com/article/51645075/who-is-david-chappell-democrat-flips-utah-house-seat-in-provo: nothing on the subject (lists his priorities: school meals, money in politics, renters and workers rights, housing, Great Salt Lake, sales tax)",
+        "news story https://www.sltrib.com/news/politics/2026/10/12/norm-thurston-faces-david-chappell/: nothing on the subject",
+        "https://ivoterguide.com/candidate/95060/race/33794/election/1486: voter-guide questionnaire page; the Second Amendment question is marked as not answered by him",
+        "blocked: https://ballotpedia.org/David_Chappell (fetch returned an empty page / server error)",
+        "https://victoryfund.org/candidate/david-chappell/ and https://directory.runforsomething.net/candidate/86a7c08d4bb7fedf1fdb4bc14ae86845/chappell-david/ and https://www.ballotready.org/people/david-chappell: endorsement-group and directory profiles, nothing on the subject",
+        "one web search each on his name plus gun, firearm and Second Amendment words: no statement or record by him found",
+        "his own campaign site: not reviewed, address not found in search results; none of his own pages was read",
+        "legislature bill pages: sponsor list: covered by bulk bill data; he was not a sitting legislator before 2027, so no earlier votes expected",
+        "not reviewed: debate or forum videos, Ballotpedia Candidate Connection answers (page blocked)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:12:11.500Z",
+      "by": "source-collector"
+    }
+  ]
+}

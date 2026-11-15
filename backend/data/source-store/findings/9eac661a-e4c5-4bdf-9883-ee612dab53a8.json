@@ -1,0 +1,77 @@
+{
+  "politician_id": "9eac661a-e4c5-4bdf-9883-ee612dab53a8",
+  "findings": [
+    {
+      "id": "3a0e3adbccc6d624fcf542417fee2ef98c7e909499e79df0a7d9de356125b239",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/52484/race/20343/election/1107",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Restricted ownership after a felony conviction",
+      "note": "Answer in her 2024 state auditor candidate voter-guide questionnaire to 'What restrictions on gun ownership are needed to protect public safety?'. Names only a bar on gun ownership after a felony conviction.",
+      "subjects": [
+        "limits on who may own a gun",
+        "felony conviction bars gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:13:04.871Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "07ce72f8a78f6b19ecc31b2ca1b573fb3476d6049a0d5d5d71c824cd10b5ce4f",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/52484/race/20343/election/1107",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Yes. With proper training and concealed.",
+      "note": "Answer in the same questionnaire to 'Should teachers be allowed to carry guns at school?': yes, with proper training and concealed.",
+      "subjects": [
+        "teachers carrying guns at school",
+        "concealed carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:13:04.871Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "who may own a gun",
+        "teachers carrying guns at school",
+        "concealed carry",
+        "Second Amendment",
+        "assault-style gun ban",
+        "background checks",
+        "red flag orders"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site https://auditor.utah.gov (state auditor office; read, nothing on the subject)",
+        "https://ballotpedia.org/Tina_Cannon_(Utah) (fetched, nothing on the subject)",
+        "https://en.wikipedia.org/wiki/Tina_Cannon (nothing on the subject)",
+        "https://www.ksl.com/article/46617042/morgan-countys-tina-cannon-running-for-rob-bishops-congressional-seat (nothing on the subject)",
+        "https://www.standard.net/news/government/2022/jun/05/us-house-hopeful-tina-cannon-puts-focus-on-small-business-operators/ (nothing on the subject)",
+        "web search on name plus Second Amendment/gun words (nothing found)",
+        "sponsor list: covered by bulk bill data (holds statewide office, not a legislator)",
+        "campaign site: not reviewed, none found",
+        "https://ivoterguide.com/candidate/52484/race/20343/election/1107 (candidate questionnaire; has gun answers)"
+      ],
+      "found": 2,
+      "at": "2026-11-15T21:13:04.871Z",
+      "by": "source-collector"
+    }
+  ]
+}

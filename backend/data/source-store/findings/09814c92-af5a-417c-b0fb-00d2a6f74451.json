@@ -542,7 +542,56 @@
           "sha256": "bfa22c6da1b64f4da5e61fbe84d7eaa5df9caa24c39f98535162f56a6285db91"
         }
       }
+    },
+    {
+      "id": "088acb22ecdd847f6403b468f45c3096dca6826b5d707c153cef8627c213bcf0",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/80678/race/33798/election/1486",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Foreign countries do not dare invade the US because they don't know where all the guns are. So, there is that. Guns are not necessarily the issue as much as it is society. If someone is a clear danger to society, they should be restricted. The question is who determines a clear danger. Political parties occasionally refer to the opposite party as a danger. Clearly the 2nd amendment is very clear on what the rights of the citizens are, and those rights deserve our highest priority.",
+      "note": "Questionnaire answer to 'What restrictions on gun ownership are needed to protect public safety?' Says guns are not the main issue, someone who is a clear danger should be restricted but who decides is the open question, and Second Amendment rights deserve highest priority. Page is the 2026 general-election profile; exact answer date not shown.",
+      "subjects": [
+        "restrictions on gun ownership",
+        "limits on who may have a gun for being a danger",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:15:47.571Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "restrictions on gun ownership",
+        "Second Amendment rights",
+        "who may have a gun",
+        "carry permits",
+        "assault-style weapons",
+        "background checks"
+      ],
+      "places": [
+        "In scope: sitting House District 66 member, on the 2026 general-election ballot (confirmed by a voter-guide page and a Salt Lake Tribune candidate story, 2026-10-12)",
+        "On the Record (0 meetings)",
+        "voter guide questionnaire page: https://ivoterguide.com/candidate/80678/race/33798/election/1486 (read; one answer on gun restrictions)",
+        "news story https://www.sltrib.com/news/politics/2026/10/12/troy-shelley-faces-breanne-mashek/ (read; he did not answer its questionnaire; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Troy_Shelley (empty page)",
+        "blocked: https://vote.norml.org/politicians/214353 (connection refused)",
+        "web search on name plus gun words: nothing further on the subject",
+        "his official legislature member page and campaign site: not reviewed: no URL surfaced in search; I did not fetch them",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 1,
+      "at": "2026-11-15T21:15:47.571Z",
+      "by": "source-collector"
+    }
+  ]
 }

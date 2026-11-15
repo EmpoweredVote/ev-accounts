@@ -1593,7 +1593,53 @@
           "sha256": "10e67fa240541e3a2129ea42e896085448ef7d9db61d1c43c183e1fc8d27968d"
         }
       }
+    },
+    {
+      "id": "ae70ebfc1965c050639e7a93467e6ffafd6a50ff68d19a233315053b5846db49",
+      "kind": "own-words",
+      "url": "https://www.nelsonabbott.com",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I will be an active voice for our Second Amendment and the Right to life.",
+      "note": "Message from the campaign site home page, in his name. Page is undated; year is the year fetched (2026) and the wording is not tied to a specific date. States he will speak up for the Second Amendment; no specific gun policy named.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:15:29.306Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment (general)",
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site home page and issues page (fetched; home page has one line on the Second Amendment; issues page nothing on the subject)",
+        "blocked: https://ballotpedia.org/Nelson_Abbott (403)",
+        "not reviewed: house.utleg.gov member page (guessed address returned 404; site search gave no member page)",
+        "one web search on name plus Second Amendment: confirmed the office (Utah House District 57); no gun statement or sponsorship found",
+        "2021 House resolution HR0902 (Second Amendment sanctuary) read: chief sponsor is another member, Abbott not named; nothing saved",
+        "sponsor list: covered by bulk bill data",
+        "floor votes: covered by bulk bill data"
+      ],
+      "found": 1,
+      "at": "2026-11-15T21:15:29.306Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -1,0 +1,76 @@
+{
+  "politician_id": "b86213f8-abd8-46e7-80b6-3ae7bd2bf1a6",
+  "findings": [
+    {
+      "id": "412477d2536f2929d4c676a2d2f05927b2b60fcec6c94ba22c8e8a7b961545ff",
+      "kind": "own-words",
+      "url": "https://www.fox13now.com/news/local-news/cox-signs-bill-allowing-utahns-to-carry-concealed-weapons-without-permits",
+      "date": "2021-02-12",
+      "date_precision": "day",
+      "passage": "With the passage of this bill, Utah joins 17 other states with some form of permitless concealed carry,\" Cox said Friday. \"This bill protects Second Amendment rights, reduces permitless open carry (which is already legal), and includes significant funding for suicide prevention.",
+      "note": "News story (Fox 13) quoting the governor on signing HB 60, which ends the permit requirement for concealed carry; he describes it as protecting Second Amendment rights and funding suicide prevention.",
+      "subjects": [
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "gun suicide prevention funding"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:13:36.814Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1fa64a98eec2628879360db2dc866f3a42f4a4b17e127862711aa5e7cb4be5ca",
+      "kind": "own-words",
+      "url": "https://www.kuer.org/politics-government/2021-02-12/gov-spencer-cox-signs-bill-that-eliminates-conceal-carry-permit-requirement",
+      "date": "2021-02-12",
+      "date_precision": "day",
+      "passage": "This bill protects Second Amendment rights, reduces permitless open carry (which is already legal), and includes significant funding for suicide prevention,\" Cox said in a statement.",
+      "note": "Radio news story (KUER) quoting the governor's written statement on signing the permitless concealed-carry bill.",
+      "subjects": [
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "gun suicide prevention funding"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:13:36.814Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "red-flag / extreme-risk orders",
+        "gun suicide prevention funding",
+        "check every gun buyer",
+        "ban on assault-style guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://governor.utah.gov/?s=firearm (403)",
+        "blocked: https://ballotpedia.org/Spencer_Cox (empty page)",
+        "sponsor list: covered by bulk bill data",
+        "news search on name plus gun words: two news stories quoting a signing statement (Feb 2021); a June 2022 radio item paraphrases him on extreme-risk orders with no direct quote, so not saved",
+        "governor's own pages not readable (blocked), so no page of his own was read; own words come from news stories quoting him",
+        "nothing found on assault-style gun bans, background checks, waiting periods, ghost guns or federal agency rules in the pages reviewed",
+        "campaign site and other URL patterns: not reviewed (not on the 2026 ballot; term runs to 2028)"
+      ],
+      "found": 2,
+      "at": "2026-11-15T21:13:36.814Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1981,7 +1981,48 @@
           "sha256": "33e47c5e551199ec2aff9b389f4da2d10e79d3511a5bc858a0c6332b60097637"
         }
       }
+    },
+    {
+      "id": "54c8b8c1b613780bcb06b1595cc0dfff92cb6bf87bf57280b350f0b0b8a466e4",
+      "kind": "own-words",
+      "url": "https://kutv.com/news/politics/utah-house-of-representatives-school-safety-ryan-wilcox-karianne-lisonbee-legislature-shootings-gun-violence-students-education",
+      "date": "2023-02-02",
+      "date_precision": "day",
+      "passage": "In order to prevent more school shootings, we really have to address gun violence. That's something we really haven't been able to do as effectively here in the state of Utah.",
+      "note": "Quoted by KUTV (news story, 2023-02-02) while House minority leader: says school shootings cannot be prevented without addressing gun violence, which Utah has not done effectively.",
+      "subjects": [
+        "address gun violence",
+        "school safety and guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:10:47.693Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "address gun violence",
+        "school safety and guns",
+        "gun bills sponsored"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official House member page https://house.utleg.gov/rep/romero/ (fetched; only navigation and contact text, nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "web search: one news search on name plus gun words (one 2023 KUTV story with a direct quote)",
+        "not reviewed: Ballotpedia, campaign site, other news, questionnaires (search budget not used further)"
+      ],
+      "found": 1,
+      "at": "2026-11-15T21:10:47.693Z",
+      "by": "source-collector"
+    }
+  ]
 }

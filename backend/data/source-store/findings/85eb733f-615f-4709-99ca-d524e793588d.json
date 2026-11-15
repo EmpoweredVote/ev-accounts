@@ -575,5 +575,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on firearm types or magazines",
+        "background checks and permits",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general gun rights or gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the House member page https://house.utleg.gov/rep/dominguez/ (read; nothing on the subject)",
+        "the House caucus member page https://www.utahhousedemocrats.utleg.gov/rosalba-dominguez (read; biography only, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Rosalba_Dominguez (403)",
+        "one news search on her name plus firearm words (no gun statement or sponsorship by her found)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: campaign site (none found in search)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:12:29.952Z",
+      "by": "source-collector"
+    }
+  ]
 }

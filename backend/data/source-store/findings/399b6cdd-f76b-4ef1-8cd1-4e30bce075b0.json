@@ -544,5 +544,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun safety laws",
+        "Second Amendment",
+        "secure storage"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the House minority caucus member page https://www.utahhousedemocrats.utleg.gov/hoang-nguyen (read; lists her as a representative, nothing on the subject)",
+        "https://house.utleg.gov/ (fetched; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Hoang_Nguyen (empty page, HTTP 202)",
+        "web searches on her name plus gun, firearm and Second Amendment words: results about District 23 representative and nothing on the subject in her own words",
+        "news search with 'Rep. Hoang Nguyen' plus guns: no story quoting her on the subject",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://www.kuer.org/politics-government/2026-01-28/after-a-violent-2025-one-utah-dem-wants-a-practical-conversation-about-guns (page text did not mention her)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:16:14.112Z",
+      "by": "source-collector"
+    }
+  ]
 }

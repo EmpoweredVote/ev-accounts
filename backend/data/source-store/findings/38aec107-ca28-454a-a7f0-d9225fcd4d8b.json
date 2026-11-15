@@ -2070,7 +2070,77 @@
           "sha256": "0279159b7fa7c6ef4311abe64187f91b912327c11ec2fcc3b11407b7c0a6ed7f"
         }
       }
+    },
+    {
+      "id": "d39617630bb488c3fbe8ce4396967ad77aa10721e42bff998be01d1f818bc206",
+      "kind": "own-words",
+      "url": "https://www.ksl.com/article/51244957/utah-house-passes-bill-allowing-18-year-olds-to-openly-carry-loaded-firearms",
+      "date": "2025-02-04",
+      "date_precision": "day",
+      "passage": "I think that we could still support the Second Amendment by leaving that provision in our law intact and allowing that open carry by 21-year-olds,",
+      "note": "Quoted by a KSL news story during House debate on HB133 (2025), which would let 18-20 year olds openly carry loaded guns. He says current law, open carry from age 21, already respects the Second Amendment.",
+      "subjects": [
+        "minimum age to carry a gun",
+        "carry a loaded gun in public",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:11:22.088Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5c533e5a529cbbbdd4f4b2885b0ad76b7502ddf0284867ee427def9c16968c5a",
+      "kind": "own-words",
+      "url": "https://www.ksl.com/article/51244957/utah-house-passes-bill-allowing-18-year-olds-to-openly-carry-loaded-firearms",
+      "date": "2025-02-04",
+      "date_precision": "day",
+      "passage": "I think that life would be a little calmer ... we otherwise could bypass incidents of violence.",
+      "note": "Quoted by the same KSL story in the HB133 debate; he argues keeping the age at 21 for open carry could avoid some violence. The story also says he voiced support for Second Amendment protections and cited higher gun-homicide rates among 18-20 year olds.",
+      "subjects": [
+        "minimum age to carry a gun",
+        "carry a loaded gun in public",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:11:22.088Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "minimum age to carry a gun",
+        "carry a loaded gun in public",
+        "Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://utahhousedemocrats.utleg.gov/doug-owens (member page, read: nothing on the subject)",
+        "https://ballotpedia.org/Doug_Owens (returned empty page to the fetch tool; not reviewed)",
+        "one news search on name plus gun words (found KSL story of 2025-02-04, read in full)",
+        "sponsor list: covered by bulk bill data",
+        "floor votes: covered by bulk bill data",
+        "campaign site: not found in search; not reviewed",
+        "ontheissues.org, vote411: not reviewed (leads only)"
+      ],
+      "found": 2,
+      "at": "2026-11-15T21:11:22.088Z",
+      "by": "source-collector"
+    }
+  ]
 }

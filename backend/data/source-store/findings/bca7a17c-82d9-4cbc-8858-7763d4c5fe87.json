@@ -1470,5 +1470,30 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and Second Amendment statements",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "the House member page https://house.utleg.gov/rep/whyte/ (loaded; page content is filled in by script, so no issue text or gun statements were readable)",
+        "blocked: https://ballotpedia.org/Stephen_Whyte (403)",
+        "web search on name plus gun words: no result names this person on the subject",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: campaign site (none found in search)",
+        "not reviewed: newsletters, floor-debate audio, interviews (no leads found within allowance)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:16:24.838Z",
+      "by": "source-collector"
+    }
+  ]
 }

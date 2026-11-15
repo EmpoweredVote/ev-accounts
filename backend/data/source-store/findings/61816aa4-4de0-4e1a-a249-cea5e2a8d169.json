@@ -1839,5 +1839,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and Second Amendment statements",
+        "firearm safety teaching"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the House member page https://house.utleg.gov/rep/peterson/ (fetched; returned only the site template, no name, district or statements, so identity was not confirmed from it)",
+        "blocked: https://ballotpedia.org/Val_Peterson (403)",
+        "web search 1: name plus Second Amendment words; showed a House issue page and news on other lawmakers' gun bills, nothing by this person",
+        "web search 2: name plus firearm bill; nothing quoted from this person; a bill-tracker page lists a 'Peterson, V.' on a 2025 firearm bill but not as sponsor or in what role, not saved because not fetched",
+        "sponsor list: covered by bulk bill data",
+        "floor votes: covered by bulk bill data",
+        "not reviewed: campaign site, newsletters, interviews, questionnaires (no page found in the searches)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:14:44.401Z",
+      "by": "source-collector"
+    }
+  ]
 }

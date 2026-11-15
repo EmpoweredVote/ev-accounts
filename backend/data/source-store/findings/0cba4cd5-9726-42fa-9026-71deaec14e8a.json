@@ -1,0 +1,31 @@
+{
+  "politician_id": "0cba4cd5-9726-42fa-9026-71deaec14e8a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general Second Amendment or gun-safety statements"
+      ],
+      "places": [
+        "scope check: Wikipedia page for the 2026 Utah State Board of Education election lists her as the District 14 nominee after the primary, and a news search reports she won the June 23 primary (69%), so she is in scope for the general election: https://en.wikipedia.org/wiki/2026_Utah_State_Board_of_Education_election",
+        "On the Record (0 appearances, extract script run by id and by name)",
+        "the candidate's own voter-guide questionnaire page: the Second Amendment question is shown as 'Did not answer' - nothing on the subject: https://ivoterguide.com/candidate/80649/race/25429/election/1383",
+        "official site / campaign site: none found in search results; not reviewed",
+        "Ballotpedia profile: fetch returned an empty page, blocked: https://ballotpedia.org/Linda_Hanks",
+        "https://www.ballotready.org/people/linda-hanks: fetched, nothing on the subject",
+        "news search on her name plus gun/firearm/Second Amendment words: nothing on the subject",
+        "sponsor list: covered by bulk bill data (she is a state board candidate, not a sitting legislator; a 2024 House District 66 convention run lost)",
+        "not reviewed: KSL state school board races story https://www.ksl.com/article/51643382/election-day-heres-a-look-at-the-8-state-school-board-races-for-2026 (fetch produced no readable text)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:11:04.137Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1774,7 +1774,78 @@
           "sha256": "2e8c265367a5c26566bd71800b2f22a75a70ed862ab39e801229c7f8e9e92c62"
         }
       }
+    },
+    {
+      "id": "3ea1ee8e14e0750b447ca289828d67201634b6e00d484090a9c7fee6693e12fe",
+      "kind": "own-words",
+      "url": "https://www.kuer.org/politics-government/2022-02-02/utah-senate-may-close-a-loophole-that-allowed-salt-lake-county-to-regulate-some-gun-purchases",
+      "date": "2022-02-02",
+      "date_precision": "day",
+      "passage": "There's a number of websites where you can go and buy guns and an 18-year-old can buy a gun legally in a private transaction,” said Sen. Todd Weiler, R-Woods Cross. “So I don't understand how this loophole bill has anything to do with increasing violence ... I think that it's an apples and oranges argument.",
+      "note": "Quoted by KUER in debate on SB 115 (state sole authority over gun rules; closes the Salt Lake County gun-show background-check rule). He says private sales to 18-year-olds are already legal and disputes the bill's link to violence.",
+      "subjects": [
+        "local governments regulating guns",
+        "background checks at gun shows",
+        "minimum age to buy a gun",
+        "private gun sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:12:02.872Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "60aae26a7d3a551308afd961976cc38c67ab4235aa9b03b9993eb6bf72e79c40",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2024/bills/static/SB0083.html",
+      "date": "2024-01-01",
+      "date_precision": "year",
+      "instrument_id": "UT-SB-83-2024",
+      "act": "sponsor",
+      "note": "Bill page for S.B. 83 Firearm Storage Requirements (2024) lists Sen. Weiler, Todd D. as bill sponsor. Bill contents not read.",
+      "subjects": [
+        "gun storage requirements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:12:02.872Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "local governments regulating guns (state preemption)",
+        "check gun buyers / background checks",
+        "minimum age to buy a gun",
+        "gun storage requirements",
+        "gun safety education",
+        "carry without a permit"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the Senate member page https://senate.utah.gov/senators/todd-weiler/ (fetched; no gun statements found)",
+        "the legislature's bill page https://le.utah.gov/~2024/bills/static/SB0083.html (sponsor line only)",
+        "sponsor list: covered by bulk bill data",
+        "one news search on name plus gun words (leads: 2016 gun-safety class story, 2022 preemption stories)",
+        "news story https://www.kuer.org/politics-government/2022-02-02/utah-senate-may-close-a-loophole-that-allowed-salt-lake-county-to-regulate-some-gun-purchases (quote saved)",
+        "news story https://www.ksl.com/article/51263939 (18-year-old open carry bill; no Weiler words found)",
+        "not reviewed: https://www.washingtontimes.com/news/2016/jan/5/utah-weighs-gun-safety-class-middle-school-student/ (no Weiler text found on fetch)",
+        "not reviewed: Ballotpedia, campaign site, other URL-pattern pages (not fetched)"
+      ],
+      "found": 2,
+      "at": "2026-11-15T21:12:02.872Z",
+      "by": "source-collector"
+    }
+  ]
 }

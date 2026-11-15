@@ -1,0 +1,31 @@
+{
+  "politician_id": "843b57b4-f65c-4350-8ad7-784faa04ab95",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment and gun safety laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.sltrib.com/news/politics/2026/10/12/clint-okerlund-faces-iva-williams/ (news voter guide naming her in the House District 42 race; nothing on the subject)",
+        "https://ivoterguide.com/candidate/95040/race/33774/election/1486 (voter guide; the gun-restriction question is marked did not answer)",
+        "https://bluevoterguide.org/fr/UT/candidate_Iva_Williams/721847 (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Iva_Williams",
+        "web search on her name plus gun and Second Amendment words (nothing about her)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: her own campaign site (none found in search results)",
+        "not reviewed: GoodParty listing for a Sandy City Council candidate of the same name (not confirmed as the same person)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:12:31.201Z",
+      "by": "source-collector"
+    }
+  ]
+}

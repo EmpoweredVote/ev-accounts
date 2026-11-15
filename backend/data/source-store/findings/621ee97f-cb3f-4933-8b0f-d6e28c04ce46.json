@@ -1,0 +1,33 @@
+{
+  "politician_id": "621ee97f-cb3f-4933-8b0f-d6e28c04ce46",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "scope: a news search and a Salt Lake Tribune piece (https://www.sltrib.com/news/politics/2026/10/12/anthony-loubet-faces-liz-oates/) name her as a challenger in Utah House District 27 in the November 2026 general election; her candidacy is not contradicted by anything found",
+        "On the Record (0 appearances, 0 meetings)",
+        "campaign site https://www.lizforutah.com/ (read; only the visible part of the page, nothing on the subject; page was cut off before its end)",
+        "https://www.sltrib.com/news/politics/2026/10/12/anthony-loubet-faces-liz-oates/ (candidate interview; nothing on the subject)",
+        "https://www.ballotready.org/people/liz-oates (issue stances cover civil rights, environment, healthcare, housing; nothing on the subject)",
+        "blocked: https://bluevoterguide.org/fr/UT/candidate_Liz_Oates/722645 (403)",
+        "not reviewed: https://ballotpedia.org/Liz_Oates (fetch returned an empty page)",
+        "news search on her name plus gun words: nothing on her",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: other URL-pattern sites (vote411, ontheissues, social media), no fetches made"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:12:01.753Z",
+      "by": "source-collector"
+    }
+  ]
+}

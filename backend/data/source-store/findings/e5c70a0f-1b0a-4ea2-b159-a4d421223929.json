@@ -1,0 +1,32 @@
+{
+  "politician_id": "e5c70a0f-1b0a-4ea2-b159-a4d421223929",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns and federal gun rules",
+        "carry a gun without a permit, carry permits",
+        "repeal of gun laws, suppressors",
+        "general Second Amendment or gun safety statements"
+      ],
+      "places": [
+        "In scope: appointed to Utah House District 60 and sworn in May 2026 (https://en.wikipedia.org/wiki/Grant_Pace, https://www.ballotready.org/people/grant-pace); listed as a candidate for the same seat on the 2026 general-election ballot",
+        "On the Record (0 meetings found for this person)",
+        "the campaign site https://grantpaceforutah.com (home page read; news item on swearing-in has a general statement but nothing on guns; no issue page on guns)",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Grant_Pace (fetch returned no page text; host did not resolve by curl)",
+        "official House member page: blocked: https://house.utleg.gov/pace/ (404); other guessed member-page addresses returned nothing usable",
+        "web searches by name plus gun, firearm, Second Amendment, concealed carry: nothing on the subject tied to this person",
+        "BallotReady profile: nothing on the subject (issues listed are education, housing, transportation, budget)",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:14:42.079Z",
+      "by": "source-collector"
+    }
+  ]
+}

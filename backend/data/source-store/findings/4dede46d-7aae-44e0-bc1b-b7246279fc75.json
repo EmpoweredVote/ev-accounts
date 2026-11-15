@@ -272,5 +272,30 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "firearm bills",
+        "Second Amendment",
+        "background checks",
+        "concealed carry"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the House member page https://house.utleg.gov/rep/arthur/ (read; nothing on the subject)",
+        "campaign site: not found (https://www.johnarthurutah.com/ did not load)",
+        "blocked: https://ballotpedia.org/John_Arthur_(Utah)",
+        "not reviewed: https://le.utah.gov/house2/detail.jsp?i=ARTHUR (404)",
+        "news search on name plus gun words: nothing on the subject by this person",
+        "Wikipedia page: nothing on the subject",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:11:25.620Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -602,5 +602,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "carry a gun without a permit",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "limits on who may have a gun"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status check: Utah House District 46 member (Cal Roberts), seeking re-election in 2026 against a challenger, per a news search result summary; the Salt Lake Tribune page was fetched but had no gun text",
+        "the campaign site https://www.votecalroberts.com/cal-roberts-for-utah-state-house-46/ read: the only gun item is a menu/issue heading '2ND AMENDMENT RIGHTS' with no sentence under it (not saved: no full-sentence passage)",
+        "https://www.sltrib.com/news/politics/2026/10/12/cal-roberts-faces-braxten/ read: nothing on the subject",
+        "the House member page https://house.utleg.gov/rep/roberts/ fetched: page is a script shell, nothing on the subject",
+        "blocked: https://ballotpedia.org/Calvin_Roberts (403); the search lead was https://ballotpedia.org/Cal_Roberts, not fetched",
+        "news search on name plus gun words: nothing naming him on the subject",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://www.billtrack50.com/legislatordetail/29499, https://thecandidate.com/states/ut/legislature/house/46/cal-roberts, https://www.ballotready.org/people/cal-roberts-4feff7f0-637c-4fb1-8b77-9c63001433db (not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:16:30.234Z",
+      "by": "source-collector"
+    }
+  ]
 }

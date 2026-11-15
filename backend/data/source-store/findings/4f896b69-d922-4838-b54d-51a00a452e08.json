@@ -1807,5 +1807,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "minimum age to buy or carry",
+        "general statement on gun rights or gun safety"
+      ],
+      "places": [
+        "sponsor list: covered by bulk bill data",
+        "On the Record (0 appearances; name search also found none)",
+        "official Senate member page https://senate.utah.gov/sen/stephanie-pitcher/ (loaded; page script only, no gun content; district 14 senator)",
+        "campaign site https://www.stephaniepitcher.com (loaded; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Stephanie_Pitcher (empty page)",
+        "nothing on the subject: https://www.kuer.org/statestreet/2026-02-02/will-kirk-and-no-kings-reshape-utahs-right-to-bear-arms (does not name her)",
+        "two web searches on her name plus gun words: no statement by her found; results were about other legislators",
+        "not reviewed: 2026 ballot status not confirmed from a page (elected to the district 14 seat in 2022; no page found saying she lost a primary or withdrew)",
+        "not reviewed: https://pitcherforutah.com (no connection)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:11:44.751Z",
+      "by": "source-collector"
+    }
+  ]
 }

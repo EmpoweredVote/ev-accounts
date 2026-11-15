@@ -1553,5 +1553,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "background checks",
+        "weapon purchase rules",
+        "carry a gun",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "general gun-rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature bill page for S.B. 50 (2023) names her as bill sponsor; confirms she is a Utah senator: https://le.utah.gov/Session/2023/bills/static/SB0050.html",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: 2026 ballot status not confirmed (no page fetched stating her current term)",
+        "blocked: https://senate.utah.gov/senator/kathleen-riebe/ (404)",
+        "blocked: https://senate.utah.gov/senators/ (404)",
+        "Ballotpedia: page returned empty, nothing read",
+        "one web search on name plus gun words: only bill pages and trackers, no statements of her own",
+        "no campaign site or newsletter reviewed; no own words on guns found"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:15:20.748Z",
+      "by": "source-collector"
+    }
+  ]
 }

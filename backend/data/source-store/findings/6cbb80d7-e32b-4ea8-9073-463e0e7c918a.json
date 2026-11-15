@@ -2013,7 +2013,52 @@
           "sha256": "bfa22c6da1b64f4da5e61fbe84d7eaa5df9caa24c39f98535162f56a6285db91"
         }
       }
+    },
+    {
+      "id": "3d3f6b2a9fa8d3a194e097e50d9ec251e88991feb77e15f24684f5e6e46540bb",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/57767/race/33802/election/1486",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "We have sufficent now",
+      "note": "Voter guide questionnaire answer to 'What restrictions on gun ownership are needed to protect public safety?' (page headed 2nd Amendment); the page also shows him as Strongly Agree on a 2nd Amendment statement. Exact date of the answer not shown; page is the 2026 general election profile.",
+      "subjects": [
+        "limits on gun ownership",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:14:42.187Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "limits on gun ownership",
+        "Second Amendment",
+        "gun bans",
+        "background checks",
+        "carry permits",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "House member page https://house.utleg.gov/rep/ALBRECHT/ (read; confirms seat, nothing on the subject in its text)",
+        "voter guide profile https://ivoterguide.com/candidate/57767/race/33802/election/1486 (names him as District 70 candidate on the 2026-11-03 general ballot; holds his questionnaire answer)",
+        "one web search on name plus gun/Second Amendment words",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: Ballotpedia, campaign site, news search beyond one query, le.utah.gov bill pages (search allowance used sparingly)"
+      ],
+      "found": 1,
+      "at": "2026-11-15T21:14:42.187Z",
+      "by": "source-collector"
+    }
+  ]
 }

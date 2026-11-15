@@ -1,0 +1,30 @@
+{
+  "politician_id": "a226ad14-7579-4da1-bf2a-dd689f7b01c6",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment general statements",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "scope: Tooele County election archive (https://electionarchive.tooeleco.gov/candidates/view/1277) shows him as the winner of the June 23, 2026 primary for House District 29 and on the 2026 general ballot; he is still in scope",
+        "On the Record (0 appearances)",
+        "voter guide profile https://ivoterguide.com/candidate/91690/race/33761/election/1486: has a Second Amendment question on which restrictions are needed; he did not answer it",
+        "Ballotpedia candidate page https://ballotpedia.org/Sheldon_Birch: fetch returned an empty page, blocked/empty",
+        "web search: name plus Second Amendment/guns, nothing on the subject by him",
+        "campaign site: not found in search, not reviewed",
+        "sponsor list: covered by bulk bill data (he is not a sitting legislator)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:13:01.541Z",
+      "by": "source-collector"
+    }
+  ]
+}

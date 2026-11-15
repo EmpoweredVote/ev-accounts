@@ -2163,7 +2163,135 @@
           "sha256": "6c5892ab22250518842dc89c345fec311137191a42877579889f29ab4009ab63"
         }
       }
+    },
+    {
+      "id": "ef84fecb0d509280ffb418ee7552dedf41696261ccc89d6963b6922801f612ca",
+      "kind": "own-words",
+      "url": "https://www.ksl.com/article/46452730",
+      "date": "2018-12-20",
+      "date_precision": "day",
+      "passage": "We're obviously not going to put you on the hook for something you had no control over,\" the Midvale Democrat said Thursday on KSL Newsradio's \"Dave and Dujanovic Show.\" \"This is for cases where people are very obviously loaning their gun out to people and doing it intentionally, and then someone uses that gun to commit a violent offense.",
+      "note": "Quoted by a news story (KSL) on radio, describing his planned 'Lauren's Law' to allow civil suits against people who deliberately lend a gun later used in a violent crime; stolen guns and self-defense excluded.",
+      "subjects": [
+        "liability for lending a gun",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:15:37.271Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bef88176c65277bd140c1ce6d8b829e27c3942c739b7ca21ada42782cd3630c5",
+      "kind": "own-words",
+      "url": "https://www.ksl.com/article/51253786",
+      "date": "2025-02-14",
+      "date_precision": "day",
+      "passage": "If we're not willing to support this low level of firearm responsibility, we just have to say, 'OK, we're fine with these kids committing these crimes with the firearms,'",
+      "note": "Quoted by KSL in committee for HB132, a class C misdemeanor for not securing a firearm when a minor uses it to commit a crime.",
+      "subjects": [
+        "safe storage of guns around minors"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:15:37.271Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2dff611d0702e8735fae763d543a7f43a9cae30cb8de80c6fe1a21a69f050a5a",
+      "kind": "own-words",
+      "url": "https://www.kpcw.org/state-regional/2025-02-18/for-third-year-in-a-row-utah-lawmakers-shoot-down-secure-firearm-storage-law",
+      "date": "2025-02-14",
+      "date_precision": "day",
+      "passage": "This isn't something novel. This isn't making Utah a trailblazer. There are other states that have taken up this issue, it's not just blue states,",
+      "note": "Quoted by KPCW from the committee hearing on HB132; says other states have safe storage laws.",
+      "subjects": [
+        "safe storage of guns around minors"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:15:37.271Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05b13ae6b2a4c42bc1fb09d01ad90ade38d89d8c97014c95712004a4ed5a4855",
+      "kind": "own-words",
+      "url": "https://www.kpcw.org/state-regional/2025-02-18/for-third-year-in-a-row-utah-lawmakers-shoot-down-secure-firearm-storage-law",
+      "date": "2025-02-18",
+      "date_precision": "day",
+      "passage": "I can’t say that this is going to prevent these situations had the law been in place … but I think it sends a message that we care enough to do something,",
+      "note": "Quoted by KPCW on the purpose of the storage bill after child-involved shootings; he adds it is not aimed at suicides but could help.",
+      "subjects": [
+        "safe storage of guns around minors"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:15:37.271Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9d7f306a98b5252923231a3560a64258d321d65328fbd054c59b8c59d0f0d6e2",
+      "kind": "record",
+      "url": "https://www.ksl.com/article/51253786",
+      "date": "2025-02-14",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-132-2025",
+      "act": "sponsor",
+      "note": "Sponsored HB132, safe storage: class C misdemeanor for adults whose unsecured firearm is used by a minor to commit a crime. Failed in committee on a 4-4 vote. News story is the source; sponsor list is in bulk bill data.",
+      "subjects": [
+        "safe storage of guns around minors"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:15:37.271Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "lending a gun to someone who then commits a crime",
+        "safe storage of guns around minors",
+        "limits on who may have a gun",
+        "gun safety laws and responsible gun ownership"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the House caucus member page https://www.utahhousedemocrats.utleg.gov/andrew-stoddard (fetched; page body is script-rendered, no gun passages readable)",
+        "blocked: https://ballotpedia.org/Andrew_Stoddard (403)",
+        "blocked: https://house.utleg.gov/stoddard/ (404)",
+        "sponsor list: covered by bulk bill data",
+        "KSL news story 2018-12-20 (quotes him on borrowed-gun liability)",
+        "KSL news story 2025-02-14 and KPCW news story 2025-02-18 (committee remarks on HB132)",
+        "KUER news story 2026-01-28 on 2026 gun bills (fetched; quotes on page could not be tied to him with certainty, so none saved)",
+        "not reviewed: https://pf.utleg.gov/public-web/sessions/2026GS/comreport/HB0080H02.pdf (2026 HB80 safe-storage bill, listed in search only)",
+        "not reviewed: campaign site, no 2026 ballot confirmation found; ballot status not confirmed"
+      ],
+      "found": 5,
+      "at": "2026-11-15T21:15:37.271Z",
+      "by": "source-collector"
+    }
+  ]
 }

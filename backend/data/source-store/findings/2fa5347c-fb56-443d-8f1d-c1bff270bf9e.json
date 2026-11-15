@@ -2016,5 +2016,30 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "background checks",
+        "red flag orders",
+        "carry permits and permitless carry",
+        "age limits for carrying",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the House member page https://house.utleg.gov/rep/christofferson/ (fetched; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Kay_Christofferson (403)",
+        "one web search on name plus gun words: no own words found; a news story on the 18-to-20 open-carry bill does not mention this person",
+        "not reviewed: https://le.utah.gov/publicweb/MCKELMK/PublicWeb/43713/43713.html (page text empty when fetched; a 2014 email titled 'Gun Control Analogy', unconfirmed to be this person)",
+        "https://ivoterguide.com/candidate/57796/race/15809/election/967 not reviewed (search snippet only)",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:15:52.234Z",
+      "by": "source-collector"
+    }
+  ]
 }

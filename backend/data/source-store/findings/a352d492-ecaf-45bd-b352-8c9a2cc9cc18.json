@@ -630,5 +630,35 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits and places",
+        "minimum age to buy or carry",
+        "gun rights and Second Amendment statements",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidate matches)",
+        "https://billtracker.betterutahinstitute.org/legislators/BALDEH (fetched; confirms Senate District 22 seat, 11 sponsored bills all on education, courts, health or budgets, none on guns)",
+        "https://senate.utah.gov/wp-content/uploads/BALDEH_bio.pdf (fetched; biography only, no gun content found)",
+        "senate.utah.gov site search for balderree firearm (fetched; no results)",
+        "blocked: https://ballotpedia.org/Heidi_Balderree (403)",
+        "not found: https://senate.utah.gov/senators/balderree/ (404)",
+        "not found: https://le.utah.gov/Documents/legislator/BALDEH.htm (404)",
+        "web search: name plus gun and firearm words (two searches; no statement by this person on the subject)",
+        "campaign site: none found",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:16:23.686Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -1746,5 +1746,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "the House member site, Second Amendment page (https://house.utleg.gov/second-amendment/): nothing naming her on the subject",
+        "https://le.utah.gov/~2021/bills/static/HB0060.html: bill page read, lists her as a co-sponsor of HB 60 (2021); covered by bulk bill data so not saved",
+        "web search (one news search on name plus gun words): no statement of her own found",
+        "blocked: https://ballotpedia.org/Christine_Watkins (403)",
+        "not found: https://etvnews.com/?p=197950 and https://etvnews.com/?p=431532 (404)",
+        "campaign site: not reviewed, none located",
+        "not confirmed from a page that she is on the 2026 ballot or still in office"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:15:02.008Z",
+      "by": "source-collector"
+    }
+  ]
 }

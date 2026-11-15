@@ -1313,7 +1313,56 @@
           "sha256": "bfa22c6da1b64f4da5e61fbe84d7eaa5df9caa24c39f98535162f56a6285db91"
         }
       }
+    },
+    {
+      "id": "a7a92d20e274c1cabf058ca3d494a5f63e63c2c8b8872b7bceeacef5a7e43912",
+      "kind": "record",
+      "url": "https://le.utah.gov/Session/2023/bills/static/HB0199.html",
+      "date": "2023-01-10",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-199-2023",
+      "act": "sponsor",
+      "note": "Rep. Cutler is the bill sponsor of H.B. 199, Voluntary Firearm Safekeeping Amendments. It passed the House 64-5 on 2023-02-16, the Senate 27-0 on 2023-02-24, and the governor signed it on 2023-03-14.",
+      "subjects": [
+        "voluntary gun safekeeping",
+        "gun safety law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:15:45.296Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "voluntary gun safekeeping",
+        "gun rights and the Second Amendment",
+        "carry a gun",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 appearances, no meetings)",
+        "https://le.utah.gov/Session/2023/bills/static/HB0199.html (bill page names Rep. Cutler as sponsor)",
+        "sponsor list: covered by bulk bill data",
+        "https://house.utleg.gov/second-amendment/ (House chamber policy page, not in this person's name; nothing of their own)",
+        "web search on name plus firearms words: no statement in their own words found",
+        "Ballotpedia: fetch returned an empty page, blocked: https://ballotpedia.org/Paul_Cutler",
+        "personal campaign site: not found in search, not reviewed",
+        "news search: no quoted remarks by this person on guns found; a KSL open-carry story for ages 18-20 was not confirmed as theirs, not reviewed: https://www.ksl.com/article/51133923/utah-representative-proposes-bill-to-allow-18--to-20-year-olds-to-openly-carry-firearms",
+        "House floor audio for HB199 (2023-02-15 and 2023-02-16), audio not reviewed: https://le.utah.gov/Session/2023/bills/static/HB0199.html"
+      ],
+      "found": 1,
+      "at": "2026-11-15T21:15:45.296Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -153,5 +153,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "background checks",
+        "assault-style weapons",
+        "red flag orders",
+        "permitless carry"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official page: https://ltgovernor.utah.gov/about-lt-governor-deidre-m-henderson (read; nothing on the subject)",
+        "official site search for firearm: https://ltgovernor.utah.gov/?s=firearm (no results)",
+        "2025 inauguration speech on the official site (read; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Deidre_Henderson (403)",
+        "Wikipedia page (nothing on the subject)",
+        "Vote Smart test page https://www.votesmart.org/candidate/political-courage-test/137400 (nothing on the subject)",
+        "news searches on name plus gun words (two; nothing from her on the subject)",
+        "townlift 2023 story (nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "not in 2026 ballot scope question: she is the sitting lieutenant governor, elected 2024"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:14:26.546Z",
+      "by": "source-collector"
+    }
+  ]
 }

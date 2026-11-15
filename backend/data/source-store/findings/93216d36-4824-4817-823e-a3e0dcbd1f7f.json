@@ -898,7 +898,56 @@
           "sha256": "bfa22c6da1b64f4da5e61fbe84d7eaa5df9caa24c39f98535162f56a6285db91"
         }
       }
+    },
+    {
+      "id": "4040f9c5001c84d5d2c5f99452ec59256fb5e20b7d047d274ea94ea71f5ed873",
+      "kind": "own-words",
+      "url": "https://www.arieldefay.com",
+      "date": "2026-11-15",
+      "date_precision": "year",
+      "passage": "Individual Rights : Believing in the power and rights of every individual, I will defend our constitutional freedoms, ensuring that government never oversteps its bounds. Supporting the Second Amendment is a core value of my campaign.",
+      "note": "Campaign site issue statement; says support for the Second Amendment is a core value of the campaign. Page is undated; date is the fetch date, so only the year is reliable.",
+      "subjects": [
+        "Second Amendment",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:16:32.820Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun rights",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidates)",
+        "campaign site https://www.arieldefay.com (home page read; about and legislation pages had nothing on the subject)",
+        "member page https://house.utleg.gov/ (loaded, no member text on the subject)",
+        "blocked: https://ballotpedia.org/Ariel_Defay (403)",
+        "Wikipedia https://en.wikipedia.org/wiki/Ariel_Defay (stub, nothing on the subject)",
+        "not reviewed: https://www.votesmart.org/candidate/214281 (404)",
+        "web search: name plus gun/firearm/Second Amendment words returned nothing about this person; name plus district search returned only profile pages",
+        "scope: listed as sitting District 15 member; the 2026 primary result could not be confirmed from pages fetched, so scope rests on the brief",
+        "sponsor list: covered by bulk bill data",
+        "not searched further: news archives, floor audio, questionnaires (no allowance used on them beyond the searches above)"
+      ],
+      "found": 1,
+      "at": "2026-11-15T21:16:32.820Z",
+      "by": "source-collector"
+    }
+  ]
 }

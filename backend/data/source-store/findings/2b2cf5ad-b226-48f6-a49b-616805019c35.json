@@ -2105,5 +2105,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "limits on who may have a gun",
+        "federal gun rules"
+      ],
+      "places": [
+        "status: not seeking reelection in 2026; his son Sam Barlow ran for the House District 17 seat (https://www.standard.net/news/2026/jun/08/sam-barlow-running-on-housing-education-preserving-way-of-life-in-house-district-17-race/). Still the sitting District 17 member through the end of his term (https://en.wikipedia.org/wiki/Stewart_Barlow)",
+        "On the Record (0 appearances found)",
+        "official House member page https://house.utleg.gov/rep/BARLOW/ (fetched; page content loads by script, no text on the subject readable)",
+        "blocked: https://ballotpedia.org/Stewart_Barlow (403)",
+        "campaign site votedrbarlow.com (not reachable: no response)",
+        "web search on name plus gun words (nothing about him on the subject; results were general House pages)",
+        "web search on name plus 2026 election (used to confirm he is not on the ballot)",
+        "sponsor list and floor votes: covered by bulk bill data",
+        "not reviewed: https://www.sltrib.com/news/politics/2026/10/12/lili-bitner-faces-eric-last-2026/"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:14:50.871Z",
+      "by": "source-collector"
+    }
+  ]
 }

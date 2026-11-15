@@ -1536,7 +1536,57 @@
           "sha256": "2e8c265367a5c26566bd71800b2f22a75a70ed862ab39e801229c7f8e9e92c62"
         }
       }
+    },
+    {
+      "id": "57d345a7dabcd16293cfe74e2942e3487b02e1ea771f851e432e060c3336f256",
+      "kind": "own-words",
+      "url": "https://www.kuer.org/politics-government/2025-06-18/after-a-weekend-of-violence-utah-house-leaders-want-to-bring-down-the-temperature",
+      "date": "2025-06-18",
+      "date_precision": "day",
+      "passage": "“Utah is a very proud Second Amendment state, and you know, finding that balance is what we want to try to do,” Schultz said. “As we enter into the legislative session, and we have more details around what happened, I'm sure some of those conversations will happen.”",
+      "note": "Quoted by a public radio story at a press availability after a weekend of violence in Utah; asked about possible legislative action, he describes Utah as a strong Second Amendment state and speaks of finding a balance, saying conversations may follow in the session.",
+      "subjects": [
+        "general statement on Second Amendment",
+        "balance in gun laws after violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:12:49.076Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "general statement on gun rights / Second Amendment",
+        "balance on gun laws after violence",
+        "carry permits and permitless carry",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "ghost guns",
+        "federal gun rules"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Utah House site: Speaker search page, meet-the-speaker page, 2025 and 2026 opening-day speeches (confirm Mike Schultz is House Speaker; nothing on the subject in those pages)",
+        "web search: name plus Second Amendment (no Schultz-specific results)",
+        "web search: Speaker Mike Schultz plus gun words (one usable own-words quote from a public radio story)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Mike_Schultz (403)",
+        "blocked: https://www.yahoo.com/news/articles/concealed-carry-athletic-events-utah-035747112.html (429)",
+        "not reviewed: campaign site (none found)",
+        "not reviewed: ontheissues.org, vote411 (no original source found)"
+      ],
+      "found": 1,
+      "at": "2026-11-15T21:12:49.076Z",
+      "by": "source-collector"
+    }
+  ]
 }

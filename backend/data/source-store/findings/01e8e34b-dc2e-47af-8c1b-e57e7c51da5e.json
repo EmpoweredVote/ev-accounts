@@ -1431,7 +1431,75 @@
           "sha256": "a425c0e1f6bee2d47be9fcb78d99b21e9b7173d2d7c34e3e963261a4ec1d08a8"
         }
       }
+    },
+    {
+      "id": "8693cca965b9ebae261d07202ccc17ba8a4f0ef808e616cb83da3c8cdaf9f9d6",
+      "kind": "own-words",
+      "url": "https://utahhousedemocrats.utleg.gov/sahara-hayes",
+      "date": "2026-11-15",
+      "date_precision": "day",
+      "passage": "During her time in office Sahara has focused on fighting for LGBTQ+ rights, student mental health, firearm safety, public education, and the environment. She has passed bills aimed at youth suicide prevention and streamlining the process for updating names and gender markers, and has worked to collect robust firearm data and protect student athletes.",
+      "note": "Member page biography issued under her name (third-person); lists firearm safety and collecting firearm data as work she has focused on. Date is the date fetched; page is undated.",
+      "subjects": [
+        "gun safety laws general",
+        "firearm data collection"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:10:49.699Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a0bbaa7432da983bd2d1f88fadac33af6f376ad359685ca134e4b8113f015318",
+      "kind": "record",
+      "url": "https://www.ksl.com/article/51248312",
+      "date": "2025-02",
+      "date_precision": "month",
+      "instrument_id": "UT-HB-104-2025",
+      "act": "nay",
+      "motion": "House committee favorable recommendation (committee vote)",
+      "note": "A news story reports she and one other member cast the only votes against sending HB104 (required firearm safety instruction in K-12 public schools, with parent opt-out) out of a House committee with a favorable recommendation.",
+      "subjects": [
+        "firearm safety instruction in schools"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:10:49.699Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm safety",
+        "school firearm safety instruction",
+        "firearm data collection",
+        "gun safety laws general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "House caucus member page https://utahhousedemocrats.utleg.gov/sahara-hayes (read)",
+        "campaign site: not reviewed, none found in search",
+        "legislature bill page https://le.utah.gov/~2024/bills/static/HB0307.html (fetched, page text empty of bill content; sponsorship already on file)",
+        "sponsor list: covered by bulk bill data",
+        "Ballotpedia: not reviewed",
+        "news search on name plus firearm words (one search); KSL committee story read https://www.ksl.com/article/51248312",
+        "KSL profile story https://www.ksl.com/article/50556547 read; the firearm line is the reporter's words, not saved",
+        "nothing found for background checks, red-flag orders, assault-style weapons, permitless carry, ghost guns"
+      ],
+      "found": 2,
+      "at": "2026-11-15T21:10:49.699Z",
+      "by": "source-collector"
+    }
+  ]
 }

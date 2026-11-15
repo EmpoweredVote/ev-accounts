@@ -1430,5 +1430,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "18-year-olds open carry",
+        "loaded gun in vehicles",
+        "general Second Amendment statements",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "sponsor list: covered by bulk bill data",
+        "https://senate.utah.gov/senators/sandall/ fetched; page text held no profile or subject content, so nothing on the subject",
+        "not reviewed: https://www.aol.com/changes-utah-gun-laws-gain-130459523.html (fetched, but the Sandall quote seen in a search summary was not found in the page text, so not saved)",
+        "https://www.ksl.com/article/51263939 fetched; no passage naming him found in the page text",
+        "web search (one standard search on name plus gun words): leads only, no citable own-words passage verified",
+        "not reviewed: campaign site, Ballotpedia, other URL patterns (not fetched in this run)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:15:12.211Z",
+      "by": "source-collector"
+    }
+  ]
 }

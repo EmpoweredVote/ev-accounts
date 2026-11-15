@@ -1019,5 +1019,30 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general gun rights and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name matches)",
+        "campaign site https://www.jenplumb.com (home page read: bio and news clips on naloxone, addiction treatment and health insurance; nothing on the subject; /priorities returned 404)",
+        "official Senate member page https://senate.utah.gov/senators/plumb-jen/ (404, not found)",
+        "blocked: https://ballotpedia.org/Jennifer_Plumb",
+        "one web search on her name plus gun words: results confirm she is the District 9 state senator; no statement or sponsorship of hers on the subject found",
+        "https://kutv.com/news/local/utah-senate-background-checks-gun-sales-texas-shooting-steve-kerr-comments (read; about U.S. Senate candidates, does not mention her)",
+        "sponsor list: covered by bulk bill data",
+        "scope: she is a sitting state senator (elected 2022 per her campaign site); 2026 ballot status not confirmed from a page"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:10:49.700Z",
+      "by": "source-collector"
+    }
+  ]
 }

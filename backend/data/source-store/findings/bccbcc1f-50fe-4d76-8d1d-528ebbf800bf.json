@@ -1500,5 +1500,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and big magazines",
+        "check every gun buyer",
+        "waiting periods and minimum age",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "official Senate bio PDF https://senate.utah.gov/wp-content/uploads/ESCAML_bio.pdf (fetched; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Luz_Escamilla (403 / empty page)",
+        "official Senate member page: not found (404 at the addresses tried, https://senate.utah.gov/senator/luz-escamilla/ and https://senate.utah.gov/senators/escamilla/); no campaign site located",
+        "https://www.kuer.org/politics-government/2026-01-28/after-a-violent-2025-one-utah-dem-wants-a-practical-conversation-about-guns (fetched; she is not quoted)",
+        "two web searches on her name plus gun words: no statement or sponsorship of hers on the subject found; other senators' bills only",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: debate/interview videos, questionnaires (none located)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:13:42.246Z",
+      "by": "source-collector"
+    }
+  ]
 }

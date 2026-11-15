@@ -1,0 +1,30 @@
+{
+  "politician_id": "21931d93-28de-407f-adc9-ac3844a9e865",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "Second Amendment",
+        "firearm bills",
+        "concealed and permitless carry"
+      ],
+      "places": [
+        "status: not confirmed as a legislator; the legislature's own roster (https://le.utah.gov/data/legislators.json, 103 members) has no Jennie Earl, and a search lead points to a seat on the state school board instead (unverified, the Ballotpedia page was blocked)",
+        "On the Record (0 meetings)",
+        "https://house.utleg.gov/rep/earl/ (member page template loads with no name, district or content; nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Jennie_Earl (403)",
+        "web search on name plus gun and firearm words: no page about this person on the subject",
+        "https://schools.utah.gov/board (loaded, no member named Earl found in text; not read in full)",
+        "not reviewed: campaign site (none found)",
+        "not reviewed: news, questionnaires and interviews (no leads naming this person)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:11:29.943Z",
+      "by": "source-collector"
+    }
+  ]
+}
