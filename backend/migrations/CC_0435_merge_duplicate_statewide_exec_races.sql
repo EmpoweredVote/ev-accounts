@@ -182,13 +182,18 @@ UPDATE essentials.discovered_sources s
 -- 🔴 `candidate_staging` has TWO references and both must move. `race_id` has no ON DELETE rule,
 -- so the delete below would error on it; `matched_candidate_id` points at a candidacy that is
 -- about to be cascaded away, and is repointed to the SAME PERSON on the canonical race.
+-- ⚠ THE ALIAS HERE IS `dupc`, NOT `oc`, AND THAT IS NOT A STYLE CHOICE. `check:occupancy` reads
+--   any `o<...>.politician_id` as the DROPPED `essentials.offices.politician_id`, because that is
+--   the repo's offices-alias convention. `oc` was an alias for `race_candidates` — valid SQL that
+--   ran correctly — and it still turned the "static guards" job red, exactly as the incumbency
+--   guard template warns. Renamed; nothing about what this statement does has changed.
 UPDATE essentials.candidate_staging s
    SET matched_candidate_id = cc.id
   FROM cc0435_dupes d
-  JOIN essentials.race_candidates oc ON oc.race_id = d.duplicate_race
-  JOIN essentials.race_candidates cc ON cc.race_id = d.canonical_race
-                                    AND cc.politician_id = oc.politician_id
- WHERE s.matched_candidate_id = oc.id;
+  JOIN essentials.race_candidates dupc ON dupc.race_id = d.duplicate_race
+  JOIN essentials.race_candidates cc   ON cc.race_id = d.canonical_race
+                                      AND cc.politician_id = dupc.politician_id
+ WHERE s.matched_candidate_id = dupc.id;
 
 UPDATE essentials.candidate_staging s
    SET race_id = d.canonical_race
