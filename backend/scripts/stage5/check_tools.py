@@ -190,13 +190,17 @@ def legiscan_is_read_from_the_datasets_on_disk_by_default(t):
     assert of.onfile_env(S, 'xx', env={'LEGISCAN_DATASETS': '/else'}) == {}, 'the caller already chose'
     assert of.onfile_env(S, 'yy', env={}) == {}, 'no datasets for that state'
     assert of.newest_roll_call(ds, 'xx') == ('2024-05-01', 1)
+    # a session just opened, with bills and no roll call yet, gives way to the newest session that holds one (fl-01)
+    n = f'{ds}/XX-2/XX/s2'; os.makedirs(f'{n}/bill'); os.makedirs(f'{n}/vote')
+    json.dump({'bill': {'bill_number': 'H0002', 'session': {'year_start': 2025, 'year_end': 2025, 'special': 0}}}, open(f'{n}/bill/H0002.json', 'w'))
+    assert of.newest_roll_call(ds, 'xx') == ('2024-05-01', 2)
     # the recipe: step 7's check
     B = f'{t}/b'; os.makedirs(f'{B}/legiscan')
     rec = {'stage5': S, 'topic': 'tp', 'unit': 'state:xx', 'level': 'state', 'state': 'XX', 'roster': f'{t}/r.tsv', 'codes': f'{S}/codes', 'saved_root': t, 'votes': 'legiscan-plan'}
     put = lambda f, x: json.dump(x, open(f'{B}/{f}', 'w'))
     put('recipe.json', rec); put('legiscan/crosscheck.json', []); put('legiscan/unmapped.json', []); put('legiscan/no-line.json', [])
     out = run('run_recipe.py', B, '--check-only', '7').stdout
-    assert 'datasets on disk, 0 API calls' in out and 'newest roll call 2024-05-01' in out, out
+    assert 'datasets on disk, 0 API calls' in out and '2 session(s), newest roll call 2024-05-01' in out, out
     assert 'LIVE API' in run('run_recipe.py', B, '--check-only', '7', env={'LEGISCAN_LIVE': '1'}).stdout
     put('recipe.json', {**rec, 'legiscan_live': True}); assert 'LIVE API' in run('run_recipe.py', B, '--check-only', '7').stdout
     put('recipe.json', rec); put('legiscan/no-line.json', [['Ann Able', 'https://legiscan.com/XX/bill/H1/2024', 'sponsor', 'XX-H-1-2024']])
