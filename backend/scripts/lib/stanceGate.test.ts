@@ -82,6 +82,15 @@ describe('checkStanceRow — every planted defect is caught (positive controls)'
     expect(ids(row, { evidence: [{ ...ev[0], source_url: url, snippet: line }] })).toEqual([]);
     expect(ids(good, { evidence: [{ ...ev[0], snippet: line }] })).toContain('snippet-too-short');
   });
+  it('a canonical action-agenda line on a clerk action agenda is not held to the snippet length', () => {
+    const url = 'https://broward.legistar1.com/broward/meetings/2022/10/1115_M_County_Commission_22-10-25_Action_Agenda.pdf';
+    const line = 'Action agenda 2022-10-25, Ordinance No. 2022-41: Jane Doe was recorded Present and the vote was 7-0.';
+    const row = { ...good, reasoning: 'Enacted Ordinance No. 2022-41 (2022).', source_urls: [url] };
+    expect(ids(row, { evidence: [{ ...ev[0], source_url: url, snippet: line }] })).toEqual([]);
+    // The same short line on any other page is still too short.
+    expect(ids(good, { evidence: [{ ...ev[0], snippet: line }] })).toContain('snippet-too-short');
+  });
+
   it('topic-not-in-season', () => {
     expect(ids({ ...good, topic_key: 'no-such-topic' }, { topic: undefined })).toEqual(['topic-not-in-season']);
   });
