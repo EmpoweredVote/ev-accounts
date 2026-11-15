@@ -1,0 +1,127 @@
+{
+  "id": "FL-H-1409-2021",
+  "scope": "state:fl",
+  "title": "H1409 (2021 Regular): Preemption of Firearms and Ammunition Regulation",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2021/1409",
+    "https://www.flsenate.gov/Session/Bill/2021/1409/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cord Byrd",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mike Beltran",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brad Drake",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Juan Fernandez-Barquin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jason Fischer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mike Giallombardo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "66e7afcc-2b17-4c59-a4d0-532bad1b32a0"
+    },
+    {
+      "name": "Joe Harding",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tom Leek",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "13b58346-046a-457f-b3af-05727a94ee2f"
+    },
+    {
+      "name": "Randy Maggard",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "277e6919-bcdf-43c6-9d28-79e6551e68a6"
+    },
+    {
+      "name": "Ralph Massullo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5945cf3f-73e7-4e6d-b8bc-4d41467d4a96"
+    },
+    {
+      "name": "Stan McClain",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b9ead145-1e46-4862-ad41-42adb8008403"
+    },
+    {
+      "name": "Lauren Melo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c831c480-8a74-491b-9a30-0342c84f1d8e"
+    },
+    {
+      "name": "Anthony Sabatini",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michelle Salzman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6c5c3bc0-3ece-454b-8362-3b8dc88b0d0c"
+    },
+    {
+      "name": "Kaylee Tuck",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "06678114-3be6-41eb-aa38-cc570082ead8"
+    },
+    {
+      "name": "Jayer Williamson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Clay Yarborough",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6061a8a6-edaf-44cb-85c3-7415c76bb4de"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-02-26; official copy, https://www.flsenate.gov/Session/Bill/2021/1409/BillText/Filed/PDF (LegiScan doc 2315088))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-1409-2021.introduced.pdf",
+      "sha256": "795ae20712640994af26db55f6a50a001dd1f464218ef050ae73603fb736c681"
+    },
+    "note": "As-filed text (2021-02-26); no votes recorded. \"attorney's\" fees changed to \"attorney\" fees."
+  },
+  "operative_text": "Section 1 (s. 790.33(3)(f), F.S.): A person or an organization whose membership is adversely affected by any ordinance, regulation, measure, directive, rule, enactment, order, or policy, whether written or unwritten, promulgated or caused to be enforced in violation of this section may file suit against any county, agency, municipality, district, or other entity in any court of this state having jurisdiction over any defendant to the suit for declaratory and injunctive relief and for actual damages, as limited herein, caused by the violation.\nSection 1 (s. 790.33(3)(f)2., F.S.): If after the filing of a complaint a defendant voluntarily changes the ordinance, regulation, measure, directive, rule, enactment, order, or policy, written or unwritten, promulgated or caused to be enforced in violation of this section, with or without court action, the plaintiff is considered a prevailing plaintiff for purposes of this section."
+}

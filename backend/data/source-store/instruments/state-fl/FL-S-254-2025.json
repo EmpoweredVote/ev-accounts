@@ -1,0 +1,39 @@
+{
+  "id": "FL-S-254-2025",
+  "scope": "state:fl",
+  "title": "S0254 (2025 Regular): Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2025/254",
+    "https://www.flsenate.gov/Session/Bill/2025/254/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tina Polsky",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "69578e2e-7ec6-4321-ad0c-c16ba1d29641"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-01-14; official copy, https://www.flsenate.gov/Session/Bill/2025/254/BillText/Filed/HTML (LegiScan doc 3055503))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-254-2025.introduced.html",
+      "sha256": "4f345e2db7bcf64213b9ac1ae358f8dc0af220c4c14036f5278ed81de5309b2b"
+    },
+    "note": "Introduced version (2025-01-14); no vote recorded. Struck: 'which' and 'function'; 'pull' added. The Section 2 quote is the added chart row (level 5 per the bill's title; the level heading is not in the quoted line). Remaining sections only reenact cross-references. Section 2 quote is a row of the offense severity ranking chart (s. 790.222, third-degree felony); the print runs the cells together."
+  },
+  "operative_text": "Section 1 (s. 790.001(13), F.S.): “Machine gun” means any firearm that: (a) Shoots, or is designed to shoot, automatically more than one shot, without manually reloading, by a single pull of the trigger; or (b) Is modified by a conversion kit, a tool, an accessory, or a device that is used to alter the rate of fire of the firearm to mimic automatic weapon fire or that is used to increase the rate of fire to a faster rate than is possible for a person to fire such firearm unassisted by a conversion kit, a tool, an accessory, or a device by a single pull of the trigger.\nSection 2 (s. 921.0022, F.S., offense severity ranking chart, level 3, s. 790.222): Prohibited acts related to bump-fire stocks."
+}

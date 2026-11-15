@@ -1,0 +1,50 @@
+{
+  "id": "FL-H-753-2019",
+  "scope": "state:fl",
+  "title": "H0753 (2019 Regular): Licenses to Carry Concealed Weapons or Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2019/753",
+    "https://www.flsenate.gov/Session/Bill/2019/753/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Javier Fernandez",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dotie Joseph",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "aa573206-cf30-4782-8243-a930919c851d"
+    },
+    {
+      "name": "Carlos Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c310dbb0-d4f3-4aa1-9080-90440e46fb01"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-02-11; official copy, https://www.flsenate.gov/Session/Bill/2019/753/BillText/Filed/PDF (LegiScan doc 1903023))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-753-2019.introduced.pdf",
+      "sha256": "ca9a141f4daa06f8b69598a2c996b64faa7dd6d09cc1ed045d0989cf40c92c2a"
+    },
+    "note": "Introduced version (filed 2019-02-11); later amendments are not in the text read. Struck: 7 years replaced by 4; the old list of equivalent-experience options is restructured."
+  },
+  "operative_text": "Section 1 (s. 790.06, F.S.): Such licenses shall be valid throughout the state for a period of 4 years after the date of issuance.\nSection 1 (s. 790.06, F.S.): The course of fire proficiency demonstration must be completed using live ammunition."
+}

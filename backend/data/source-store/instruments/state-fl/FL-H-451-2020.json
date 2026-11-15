@@ -1,0 +1,66 @@
+{
+  "id": "FL-H-451-2020",
+  "scope": "state:fl",
+  "title": "H0451 (2020 Regular): Weapons and Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2020/451",
+    "https://www.flsenate.gov/Session/Bill/2020/451/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Margaret Good",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Cortes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Shevrin Jones",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd892637-c28b-472a-878e-f2fdf1b98935"
+    },
+    {
+      "name": "Cindy Polo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Carlos Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c310dbb0-d4f3-4aa1-9080-90440e46fb01"
+    },
+    {
+      "name": "Susan Valdes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5d552dfc-c52d-45ec-8988-73152ebaf403"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-10-24; official copy, https://www.flsenate.gov/Session/Bill/2020/451/BillText/Filed/PDF (LegiScan doc 2058224))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-451-2020.introduced.pdf",
+      "sha256": "468c4fe4857e6781f7ff6e2a15092886a89acef4a07fb1499e6862f73d2cb9b6"
+    },
+    "note": "Introduced version (filed 2019-10-24); later amendments are not in the text read. Exceptions (family, law enforcement, antique firearms, temporary transfers) not quoted."
+  },
+  "operative_text": "Section 1 (new s. 790.0653, F.S.): (2) All persons involved in firearm sales or other transfers, in whole or in part, shall be subject to background checks unless specifically exempted by state or federal law. A person may not sell or otherwise transfer a firearm unless: (a) The person is a licensed dealer; (b) The purchaser or other transferee is a licensed dealer; or (c) The requirements of subsection (3) are met. (3) If neither party to a prospective firearm sale or other transfer is a licensed dealer, the parties to the transaction shall complete the sale or other transfer through a licensed dealer as follows: (a) The seller or other transferor and the purchaser or other transferee shall appear jointly with the firearm at a licensed dealer and request that the licensed dealer conduct a background check on the purchaser or other transferee.\nSection 1 (new s. 790.0653, F.S.): (5) A person who violates this section commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084. (6) In addition to any other penalty or remedy, the investigating law enforcement agency shall report any violation of this section committed by a licensed dealer to the Attorney General."
+}

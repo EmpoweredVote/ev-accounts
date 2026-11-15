@@ -1,0 +1,51 @@
+{
+  "id": "FL-H-527-2022",
+  "scope": "state:fl",
+  "title": "H0527 (2022 Regular): Unfinished Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2022/527",
+    "https://www.flsenate.gov/Session/Bill/2022/527/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Christine Hunschofsky",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0903baf0-62dd-44f7-a4e5-2ffff94cd527"
+    },
+    {
+      "name": "Anna Eskamani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "24293096-f120-4914-ab83-d6670ad3efcd"
+    },
+    {
+      "name": "Dotie Joseph",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "aa573206-cf30-4782-8243-a930919c851d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-11-08; official copy, https://www.flsenate.gov/Session/Bill/2022/527/BillText/Filed/PDF (LegiScan doc 2448346))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-527-2022.introduced.pdf",
+      "sha256": "d402f61438fd45535395ff286a9ec4f5100052a8a8203d611db1b01ac013f1dc"
+    },
+    "note": "Introduced version (2021-11-08); no passage vote. Quotes keep the printed typo 'is r imprinted'. Penalty subsections (b) omitted for length."
+  },
+  "operative_text": "Section 1 (new s. 790.223, F.S.): (2)(a) After January 1, 2023, a person may not possess, purchase, transport, or receive an unfinished frame or receiver unless: 1. The person is a firearms importer or manufacturer; or 2. The unfinished frame or receiver is imprinted with a serial number issued by a firearms importer or manufacturer and the unfinished frame or receiver has been imprinted with the serial number pursuant to federal law.\nSection 1 (new s. 790.223, F.S.): (3)(a) A person may not sell, offer to sell, or transfer an unfinished frame or receiver unless: 1. The person is a firearms importer or manufacturer and the recipient of the unfinished frame or receiver is a firearms importer or manufacturer; or 2. The unfinished frame or receiver is r imprinted with a serial number issued by an importer or manufacturer and the unfinished frame or receiver has been imprinted with the serial number pursuant to federal law.\nSection 1 (new s. 790.223, F.S.): (4)(a) A person may not manufacture or cause to be manufactured or assemble or cause to be assembled a firearm that is not imprinted with a serial number issued by a firearms importer or manufacturer in accordance with federal law and any regulations adopted thereunder unless the firearm: 1. Has been rendered permanently inoperable; 2. Is an antique firearm; or 3. Has been determined to be a collector's item pursuant to 26 U.S.C. chapter 53 or a curio or relic pursuant to 18 U.S.C. chapter 44.\nSection 1 (new s. 790.223, F.S.): (5)(a) After January 1, 2023, a person may not possess, sell, offer to sell, transfer, purchase, transport or receive a firearm that is not imprinted with a serial number issued by a firearms importer or manufacturer in accordance with federal law and any regulations adopted thereunder unless: 1. The person is: a. A law enforcement agency; or b. A firearms importer or manufacturer, and in the case of an offer to sell, sale, or transfer, the purchaser or transferee is a firearms importer or manufacturer; or 2. The firearm: a. Has been rendered permanently inoperable; b. Was manufactured before 1969; c. Is an antique firearm; or d. Has been determined to be a collector's item pursuant to 26 U.S.C. chapter 53 or a curio or relic pursuant to 18 U.S.C. chapter 44."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "FL-S-318-2023",
+  "scope": "state:fl",
+  "title": "S0318 (2023 Regular): Conditions of Pretrial Release",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2023/318",
+    "https://www.flsenate.gov/Session/Bill/2023/318/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tina Polsky",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "69578e2e-7ec6-4321-ad0c-c16ba1d29641"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2023-01-23; official copy, https://www.flsenate.gov/Session/Bill/2023/318/BillText/Filed/HTML (LegiScan doc 2657799))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-318-2023.introduced.html",
+      "sha256": "38895a645c2ee20cfcab95df2c4fc29a9b3fe279d5b168e7b711bebcb3a5f8f2"
+    },
+    "note": "As-filed text (2023-01-23); no votes recorded. The gun-specific condition is the whole bill, so it is not counted as a separate bail subject."
+  },
+  "operative_text": "Section 1 (s. 903.047(3), F.S.): If a court orders a defendant to surrender his or her firearms or ammunition or prohibits a defendant’s possession of firearms or ammunition as a condition of pretrial release, it is a violation of this section for the defendant to have in his or her care, custody, possession, or control a firearm or any ammunition."
+}

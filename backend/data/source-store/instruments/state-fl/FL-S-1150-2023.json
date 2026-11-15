@@ -1,0 +1,46 @@
+{
+  "id": "FL-S-1150-2023",
+  "scope": "state:fl",
+  "title": "S1150 (2023 Regular): Department of Agriculture and Consumer Services",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2023/1150",
+    "https://www.flsenate.gov/Session/Bill/2023/1150/BillText/c1/HTML"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Blaise Ingoglia",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8c7b61e3-709d-42f5-acf1-0c6a7e328f0a"
+    },
+    {
+      "name": "Travis Hutson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: Section 9 (new s. 812.0151, F.S.) — creates criminal penalties for retail fuel theft"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Comm Sub, 2023-04-14; official copy, https://www.flsenate.gov/Session/Bill/2023/1150/BillText/c1/HTML (LegiScan doc 2780581))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-1150-2023.comm-sub.html",
+      "sha256": "7591222814024d1779c1bf2b8ddd6997a4468c7dd5f63a637ba3a846a7a2c2be"
+    },
+    "note": "Committee Substitute (2023-04-14), not the enrolled text; later amendments are not in the text read. Mostly a Department of Agriculture and Consumer Services omnibus; only the Class G/K firearms parts are gun-related. The bill also changes charity registration fees and LP gas definitions."
+  },
+  "operative_text": "Section 1 (s. 493.6105, F.S.): A valid DD Form 214 issued not more than 3 years before the submission of the applicant’s Class “K” application, indicating that the applicant has been honorably discharged and served no less than 3 years in the military as a firearms instructor.\nSection 2 (s. 493.6113, F.S.): The applicant provides proof that he or she has completed annual firearms training in accordance with the requirements of the federal Law Enforcement Officers Safety Act under 18 U.S.C. ss. 926B-926C.\nSection 2 (s. 493.6113, F.S.): Proof of having taught at least six 28-hour firearms instruction courses to Class “G” applicants during the previous 3-year license period."
+}

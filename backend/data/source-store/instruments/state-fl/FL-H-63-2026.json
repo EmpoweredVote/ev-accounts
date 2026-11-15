@@ -1,0 +1,39 @@
+{
+  "id": "FL-H-63-2026",
+  "scope": "state:fl",
+  "title": "H0063 (2026 Regular): Carrying a Handgun, Weapon, or Firearm",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2026/63",
+    "https://www.flsenate.gov/Session/Bill/2026/63/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Christine Hunschofsky",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0903baf0-62dd-44f7-a4e5-2ffff94cd527"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-09-30; official copy, https://www.flsenate.gov/Session/Bill/2026/63/BillText/Filed/PDF (LegiScan doc 3271143))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-63-2026.introduced.pdf",
+      "sha256": "ccb566599dd978a74c5d5198c0b2fd0bec04acb842de6a782635a189cad21bd4"
+    },
+    "note": "Introduced version (filed 2025-09-30); no passage vote. Struck: \"A license issued under\", \"openly\", \"or carry a concealed\", \"concealed\". Quote stops at item 11; items 12-15 (alcohol-serving areas, college facilities, airport terminals, federal-law places) follow in the text."
+  },
+  "operative_text": "Section 1 (s. 790.06, F.S.): (12)(a) This section does not authorize any person to carry a handgun, weapon, or firearm into: 1. Any place of nuisance as defined in s. 823.05; 2. Any police, sheriff, or highway patrol station; 3. Any detention facility, prison, or jail; 4. Any courthouse; 5. Any courtroom, except that nothing in this section precludes a judge from carrying a concealed weapon or concealed firearm or determining who will carry a concealed weapon or concealed firearm in his or her courtroom; 6. Any polling place; 7. Any meeting of the governing body of a county, public school district, municipality, or special district; 8. Any meeting of the Legislature or a committee thereof; 9. Any school, college, or professional athletic event not related to firearms; 10. Any elementary or secondary school facility or administration building; 11. Any career center;"
+}

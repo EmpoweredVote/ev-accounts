@@ -1,0 +1,88 @@
+{
+  "id": "FL-S-498-2021",
+  "scope": "state:fl",
+  "title": "S0498 (2021 Regular): Safety of Religious Institutions",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2021/498",
+    "https://www.flsenate.gov/Session/Bill/2021/498/BillText/c1/HTML"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Joe Gruters",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8fdbeb73-19d0-470e-b7ed-5b4b3bef1995"
+    },
+    {
+      "name": "Jeffrey Brandes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Travis Hutson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dennis Baxley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ana Rodriguez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3393ed39-cb14-4861-8277-3a61c4923bed"
+    },
+    {
+      "name": "Ray Rodrigues",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Douglas Broxson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ben Albritton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ed486139-a261-42b2-bdb7-f23de601161e"
+    },
+    {
+      "name": "Jennifer Bradley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c006c5d3-c095-4a43-b6b5-43a3bcb4f1f4"
+    },
+    {
+      "name": "Wilton Simpson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ceec3073-5be9-44dc-8eb7-4e88f706a259"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Comm Sub, 2021-03-10; official copy, https://www.flsenate.gov/Session/Bill/2021/498/BillText/c1/HTML (LegiScan doc 2329604))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-498-2021.comm-sub.html",
+      "sha256": "e244bf460fbf570894a394120ce5c31a0530e5955e31b27541ff8d5f66a291b1"
+    },
+    "note": "Committee Substitute 1 (Criminal Justice), 2021-03-10; no vote recorded, later amendments not in the text read. Struck: 'shall' (now 'may') in (b), and 'any provision of' in the penalty sentence."
+  },
+  "operative_text": "Section 1 (s. 790.06(12)(c), F.S.): Notwithstanding any other law, for the purposes of safety, security, personal protection, or any other lawful purpose, a person licensed under this section to carry a concealed weapon or firearm may carry a firearm on property owned, rented, leased, borrowed, or lawfully used by a church, a synagogue, or any other religious institution unless the church, synagogue, or other religious institution has a policy specifically prohibiting persons who are lawfully licensed under this section from carrying a firearm on such property.\nSection 1 (s. 790.06(12)(b), F.S.): A person licensed under this section may not be prohibited from carrying or storing a firearm in a vehicle for lawful purposes."
+}

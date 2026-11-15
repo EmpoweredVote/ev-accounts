@@ -1,0 +1,112 @@
+{
+  "id": "FL-H-1437-2020",
+  "scope": "state:fl",
+  "title": "H1437 (2020 Regular): Safety of Religious Institutions",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2020/1437",
+    "https://www.flsenate.gov/Session/Bill/2020/1437/BillText/c1/PDF"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Jayer Williamson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jay Trumbull",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "53be24b6-030b-426a-af2b-9297f1b50261"
+    },
+    {
+      "name": "Thad Altman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Alex Andrade",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4695be3f-52c2-4483-9ca7-8b150e444802"
+    },
+    {
+      "name": "Cord Byrd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Byron Donalds",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "13972902-fa8a-4ebc-91f6-b451db77c7d1"
+    },
+    {
+      "name": "Brad Drake",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dane Eagle",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Randy Fine",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Walter Hill",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Delores Hogan Johnson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Spencer Roach",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Anthony Sabatini",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Charlie Stone",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Clay Yarborough",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6061a8a6-edaf-44cb-85c3-7415c76bb4de"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Comm Sub, 2020-01-29; official copy, https://www.flsenate.gov/Session/Bill/2020/1437/BillText/c1/PDF (LegiScan doc 2115528))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-1437-2020.comm-sub.pdf",
+      "sha256": "228b6f0f8e8e59df4becf29c8d43a3f833bed5f9193e0d1438df5c1b52e42bd0"
+    },
+    "note": "Version read is the committee substitute (CS/HB 1437, 2020-01-29); not the enrolled text, no passage vote listed. In (b), \"shall\" struck and \"may\" added before \"not be prohibited\"."
+  },
+  "operative_text": "Section 1 (s. 790.06, F.S.): (12)(b) A person licensed under this section may not be prohibited from carrying or storing a firearm in a vehicle for lawful purposes.\nSection 1 (s. 790.06, F.S.): (c)1. Notwithstanding ss. 790.06(12)(a)10. and 790.115, for the purposes of safety, security, personal protection, or other lawful purposes, a church, synagogue, or any other religious institution may authorize a person licensed under this section to carry a firearm on property owned, rented, leased, or lawfully used by the church, synagogue, or other religious institution.\nSection 1 (s. 790.06, F.S.): 2. A property owner who rents, leases, or otherwise allows a church, synagogue, or other religious institution to use his or her property may, as a condition of use, prohibit the church, synagogue, or other religious institution from authorizing a person licensed under this section to carry a firearm on the property."
+}

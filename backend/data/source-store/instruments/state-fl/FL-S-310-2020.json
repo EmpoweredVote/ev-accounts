@@ -1,0 +1,50 @@
+{
+  "id": "FL-S-310-2020",
+  "scope": "state:fl",
+  "title": "S0310 (2020 Regular): Three-dimensional Printed Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2020/310",
+    "https://www.flsenate.gov/Session/Bill/2020/310/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Linda Stewart",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jose Rodriguez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3174b894-b4a9-41fb-8c77-b1790f9a7ec1"
+    },
+    {
+      "name": "Lori Berman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "daafe458-8c11-40b0-9382-22b22747b7e2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-09-17; official copy, https://www.flsenate.gov/Session/Bill/2020/310/BillText/Filed/HTML (LegiScan doc 2053704))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-310-2020.introduced.html",
+      "sha256": "a807a81a1aa2ce80e806ef67b8fa4ed8b6c4b52204728ba6461a9b9d26fe1a25"
+    },
+    "note": "Introduced version (filed 2019-09-17); no passage vote on file. Para. (2)(a) lists the banned plastics (PET, polycarbonate, PLA, ABS); (4) requires relinquishing or destroying such firearms, expiring December 31, 2020."
+  },
+  "operative_text": "Section 1 (new s. 790.224(1), F.S.): As used in this section, the term “3D-printed firearm” means a firearm that is created using a three-dimensional printer or an additive manufacturing process, or a similar device or process, and that is capable of firing one or more projectiles.\nSection 1 (new s. 790.224(2), F.S.): On or after January 1, 2021, a person may not print, transfer, import into this state, distribute, sell, possess, or give to another person a 3D-printed firearm that:\nSection 1 (new s. 790.224(2)(b), F.S.): Does not contain at least 4 ounces of a metal detectable by metal detectors used for security checks.\nSection 1 (new s. 790.224(3), F.S.): A person who violates subsection (2) commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084."
+}

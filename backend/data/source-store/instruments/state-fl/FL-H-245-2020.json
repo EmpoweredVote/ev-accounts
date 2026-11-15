@@ -1,0 +1,65 @@
+{
+  "id": "FL-H-245-2020",
+  "scope": "state:fl",
+  "title": "H0245 (2020 Regular): Concealed Weapons and Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2020/245",
+    "https://www.flsenate.gov/Session/Bill/2020/245/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cindy Polo",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Cortes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Javier Fernandez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Margaret Good",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tina Polsky",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "69578e2e-7ec6-4321-ad0c-c16ba1d29641"
+    },
+    {
+      "name": "Carlos Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c310dbb0-d4f3-4aa1-9080-90440e46fb01"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-09-30; official copy, https://www.flsenate.gov/Session/Bill/2020/245/BillText/Filed/PDF (LegiScan doc 2055275))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-245-2020.introduced.pdf",
+      "sha256": "c2e35dc1a965295b55b365288bc14b5df9e717f2a72dd4f7c5fd69ce9cb43bc0"
+    },
+    "note": "As filed (introduced 2019-09-30). Subparagraph 10 is added and later items renumbered."
+  },
+  "operative_text": "Section 1 (s. 790.06, F.S.): (12)(a) A license issued under this section does not authorize any person to openly carry a handgun or carry a concealed weapon or firearm into:\nSection 1 (s. 790.06, F.S.): 10. Any child care facility as defined in s. 402.302;"
+}

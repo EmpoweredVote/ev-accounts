@@ -1,0 +1,57 @@
+{
+  "id": "FL-S-920-2025",
+  "scope": "state:fl",
+  "title": "S0920 (2025 Regular): Firearm Purchase or Transfer",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2025/920",
+    "https://www.flsenate.gov/Session/Bill/2025/920/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jay Collins",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ee966041-d44a-4c05-b7ae-d8d22bfb93a7"
+    },
+    {
+      "name": "Blaise Ingoglia",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8c7b61e3-709d-42f5-acf1-0c6a7e328f0a"
+    },
+    {
+      "name": "Joe Gruters",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8fdbeb73-19d0-470e-b7ed-5b4b3bef1995"
+    },
+    {
+      "name": "Clay Yarborough",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6061a8a6-edaf-44cb-85c3-7415c76bb4de"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-02-19; official copy, https://www.flsenate.gov/Session/Bill/2025/920/BillText/Filed/HTML (LegiScan doc 3131389))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-920-2025.introduced.html",
+      "sha256": "73b0bcf129244b2c4f11fb71aebe3457c503f63ed5951a5490b5f9f26ff64c42"
+    },
+    "note": "Introduced text (filed 2025-02-19); no passage vote. Age 21 struck, 18 added; officer/servicemember exception struck; hunter-safety-course waiting-period exception struck and replaced with completed background check. Quote in Section 2 is the printed text; the closing period is outside the struck words."
+  },
+  "operative_text": "Section 1 (s. 790.065, F.S.): A person younger than 18 years of age may not purchase a firearm. The sale or transfer of a firearm to a person younger than 18 years of age may not be made or facilitated by a licensed importer, licensed manufacturer, or licensed dealer. A person who violates this subsection commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084.\nSection 2 (s. 790.0655, F.S.): (c) To the purchase of a rifle or shotgun, upon a person’s successful completion of a background check under s. 790.065"
+}

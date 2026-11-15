@@ -1,0 +1,50 @@
+{
+  "id": "FL-S-428-2020",
+  "scope": "state:fl",
+  "title": "S0428 (2020 Regular): Prohibited Places for Weapons and Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2020/428",
+    "https://www.flsenate.gov/Session/Bill/2020/428/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Oscar Braynon",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jose Rodriguez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3174b894-b4a9-41fb-8c77-b1790f9a7ec1"
+    },
+    {
+      "name": "Lori Berman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "daafe458-8c11-40b0-9382-22b22747b7e2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-10-02; official copy, https://www.flsenate.gov/Session/Bill/2020/428/BillText/Filed/HTML (LegiScan doc 2055555))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-428-2020.introduced.html",
+      "sha256": "f3447b0349daf8e0225d06c2f6c1c4bdbf212f3abcb4f21c1a1bc93bbc3fd4a5"
+    },
+    "note": "As filed (introduced 2019-10-02). Old item 15 renumbered 16."
+  },
+  "operative_text": "Section 1 (s. 790.06, F.S.): (12)(a) A license issued under this section does not authorize any person to openly carry a handgun or carry a concealed weapon or firearm into:\nSection 1 (s. 790.06, F.S.): 15. Any performing arts center or legitimate theater; or 16. Any place where the carrying of firearms is prohibited by federal law."
+}

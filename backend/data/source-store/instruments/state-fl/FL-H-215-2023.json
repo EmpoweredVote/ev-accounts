@@ -1,0 +1,51 @@
+{
+  "id": "FL-H-215-2023",
+  "scope": "state:fl",
+  "title": "H0215 (2023 Regular): Possession or Use of a Firearm in a Sensitive Location",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2023/215",
+    "https://www.flsenate.gov/Session/Bill/2023/215/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michele Rayner-Goolsby",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d89e41dc-7008-407a-a89c-398550a1691a"
+    },
+    {
+      "name": "Dan Daley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "601ae676-fd42-478d-a253-bac744e5c968"
+    },
+    {
+      "name": "Jervonte Edmonds",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0c2ab5cc-33ee-4251-ba6b-0130fe93dc67"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2023-01-17; official copy, https://www.flsenate.gov/Session/Bill/2023/215/BillText/Filed/PDF (LegiScan doc 2644186))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-215-2023.introduced.pdf",
+      "sha256": "d3f8ef13954621591e05e18ace186aa362161ece01cfb0957521a571b6e15d8a"
+    },
+    "note": "Introduced version (filed 2023-01-17); no passage vote."
+  },
+  "operative_text": "Section 1 (new s. 790.075, F.S.): (1) As used in this section, the term \"sensitive location\" means any of the following: (a) Any part of a healthcare facility licensed by the state, including a hospital, nursing home or other similar residential facility, or provider of services for the care, support, or treatment of individuals. (b) Any part of a building owned, leased, or operated by a governmental entity, including a polling place, courthouse, or law enforcement facility. (c) Any park, recreational facility or area, or playground owned or controlled by a state, county, municipality, or other governmental entity. (d) Any place of worship or religious observation. (2) Any other law notwithstanding, a person may not possess a firearm in a sensitive location. (a) Except as provided in paragraph (b), a person who violates this subsection commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084. (b) A person who discharges a firearm while violating this subsection commits a felony of the second degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084."
+}

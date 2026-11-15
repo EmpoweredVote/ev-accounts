@@ -1,0 +1,49 @@
+{
+  "id": "FL-H-213-2021",
+  "scope": "state:fl",
+  "title": "H0213 (2021 Regular): Regulation of Concealed Weapons and Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2021/213",
+    "https://www.flsenate.gov/Session/Bill/2021/213/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Alex Andrade",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4695be3f-52c2-4483-9ca7-8b150e444802"
+    },
+    {
+      "name": "Tommy Gregory",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Anthony Sabatini",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-01-11; official copy, https://www.flsenate.gov/Session/Bill/2021/213/BillText/Filed/PDF (LegiScan doc 2233887))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-213-2021.introduced.pdf",
+      "sha256": "c9e697931b4c574eea28adb360ecb8ff66e59c8a2b5d70f0223f96468b5ecf07"
+    },
+    "note": "Introduced version (2021-01-11). Struck in s. 790.06(15): 'prohibited.' replaced by the added words; struck in s. 790.33(3)(b): 'local government' replaced by 'person or entity'."
+  },
+  "operative_text": "Section 1 (s. 790.06, F.S.): Subjective or arbitrary actions or rules which encumber the issuing process by placing burdens on the applicant beyond those sworn statements and specified documents detailed in this section or which create restrictions beyond those specified in this section are prohibited and in conflict with the intent of this section and such actions are subject to injunctions and penalties as provided in s. 790.33\nSection 2 (s. 790.33, F.S.): Except as expressly provided by the State Constitution or general law, the Legislature hereby declares that it is occupying the whole field of regulation of firearms and ammunition, including the purchase, sale, transfer, taxation, manufacture, ownership, possession, storage, and transportation thereof, to the exclusion of all existing and future county, city, town, or municipal ordinances, or any administrative regulations or rules adopted by local or state government, including Cabinet members, relating thereto.\nSection 2 (s. 790.33, F.S.): It is the intent of this section to provide uniform firearms laws in the state; to declare all ordinances and regulations null and void which have been enacted by any jurisdictions other than state and federal, which regulate firearms, ammunition, or components thereof; to prohibit the enactment of any future agency rules, ordinances, or regulations relating to firearms, ammunition, or components thereof unless specifically authorized by this section or general law; and to require the Department of Agriculture and Consumer Services and local jurisdictions to enforce state firearms laws.\nSection 2 (s. 790.33, F.S.): If any member of the Cabinet, county, city, town, or other local government violates this section, the court shall declare the improper ordinance, regulation, or rule invalid and issue a permanent injunction against the person or entity prohibiting it from enforcing such ordinance, regulation, or rule."
+}

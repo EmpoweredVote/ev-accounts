@@ -1,0 +1,51 @@
+{
+  "id": "FL-H-6029-2026",
+  "scope": "state:fl",
+  "title": "H6029 (2026 Regular): Risk Protection Orders",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2026/6029",
+    "https://www.flsenate.gov/Session/Bill/2026/6029/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tyler Sirois",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "937bc5a2-b2d7-4a16-ba4b-543cf9fb0054"
+    },
+    {
+      "name": "Ryan Chamberlin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4a2f37f7-e0e5-4a53-863d-309f9e81bdaa"
+    },
+    {
+      "name": "Taylor Yarkosky",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "24354c2d-00b0-4511-b34b-6b7a8d4c1703"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2026-01-06; official copy, https://www.flsenate.gov/Session/Bill/2026/6029/BillText/Filed/PDF (LegiScan doc 3300541))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-6029-2026.introduced.pdf",
+      "sha256": "812312917954d20643789180d7d0972e5a3c963df285e20e8f6e08d3b2704d97"
+    },
+    "note": "Read as filed (Introduced, 2026-01-06); no vote. Struck in Sections 3 and 7: the petition for a risk protection order, the hold-longer clause, and 'a risk protection order'. Sections 2, 4, 5, 6 strike 'or initiating a risk protection order' from threat-reporting rules (conforming only)."
+  },
+  "operative_text": "Section 1 (s. 790.401, F.S.): Section 790.401, Florida Statutes, is repealed. Section 3 (s. 394.463, F.S.): A law enforcement officer taking custody of a person under this subsection may seize and hold a firearm or any ammunition the person possesses at the time of taking him or her into custody if the person poses a potential danger to himself or herself or others and has made a credible threat of violence against another person. If the law enforcement officer takes custody of the person at the person's residence and the criteria in subparagraph 1. have been met, the law enforcement officer may seek the voluntary surrender of firearms or ammunition kept in the residence which have not already been seized under subparagraph 1. Section 7 (s. 790.08, F.S.): If requesting the return of a firearm, a completed criminal history background check confirms that the person is not prohibited from possessing a firearm under state or federal law, including not having any prohibition arising from an injunction, or any other court order prohibiting the person from possessing a firearm."
+}

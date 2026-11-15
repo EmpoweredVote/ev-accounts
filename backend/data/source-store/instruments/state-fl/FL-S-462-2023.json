@@ -1,0 +1,45 @@
+{
+  "id": "FL-S-462-2023",
+  "scope": "state:fl",
+  "title": "S0462 (2023 Regular): Assault Weapons and Large-capacity Magazines",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2023/462",
+    "https://www.flsenate.gov/Session/Bill/2023/462/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lori Berman",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "daafe458-8c11-40b0-9382-22b22747b7e2"
+    },
+    {
+      "name": "Tina Polsky",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "69578e2e-7ec6-4321-ad0c-c16ba1d29641"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2023-02-01; official copy, https://www.flsenate.gov/Session/Bill/2023/462/BillText/Filed/HTML (LegiScan doc 2674589))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-462-2023.introduced.html",
+      "sha256": "edd664868a401bed884b54428d09a823bfc28b2ddb37cd255a59d09cf9c1135f"
+    },
+    "note": "Introduced version (filed 2023-02-01); no vote recorded. Section 1 creates the whole section underlined; quotes are from the long definitions-then-operative text (definitions of 'assault weapon' not quoted; in the (3)(a) quote 'large capacity' has no hyphen because the text file lost it at a line break). Also requires Department of Law Enforcement rules and certificates of transfer, relinquishment and transport rules (not quoted)."
+  },
+  "operative_text": "Section 1 (new s. 790.301(2)(a), F.S.): A person who, within this state, distributes, transports, or imports into this state, who sells, keeps for sale, or offers or exposes for sale, or who gives an assault weapon or a large-capacity magazine in violation of this section, except as provided in paragraph (c), commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084, with a mandatory minimum term of imprisonment of 2 years.\nSection 1 (new s. 790.301(2)(b), F.S.): A person who transfers, sells, or gives an assault weapon or a large-capacity magazine to a person under 18 years of age in violation of this section commits a felony of the second degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084, with a mandatory minimum term of imprisonment of 6 years.\nSection 1 (new s. 790.301(3)(a), F.S.): Except as provided in subsection (5), a person who, within this state, possesses any assault weapon or large capacity magazine, except as provided in this section or as otherwise authorized by law, commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084, with a mandatory minimum term of imprisonment of 1 year.\nSection 1 (new s. 790.301(4)(e), F.S.): Such an applicant who fails to make such an arrangement within the time specified in this paragraph is thereafter in violation of this section.\nSection 2 (s. 775.087(3)(a)2., F.S.): Any person who is convicted of a felony or an attempt to commit a felony listed in subparagraph (a)1., regardless of whether the use of a weapon is an element of the felony, and during the course of the commission of the felony such person discharged a semiautomatic firearm and its high-capacity box magazine, an assault weapon or a large-capacity magazine as those terms are defined in s. 790.301, or a “machine gun” as defined in s. 790.001, shall be sentenced to a minimum term of imprisonment of 20 years."
+}

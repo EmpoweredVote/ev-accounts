@@ -1,0 +1,129 @@
+{
+  "id": "FL-H-1019-2025",
+  "scope": "state:fl",
+  "title": "H1019 (2025 Regular): Weapons and Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2025/1019",
+    "https://www.flsenate.gov/Session/Bill/2025/1019/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Christine Hunschofsky",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0903baf0-62dd-44f7-a4e5-2ffff94cd527"
+    },
+    {
+      "name": "Robin Bartleman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bcbf9dd3-377d-4a72-8417-ab06d6d23ddb"
+    },
+    {
+      "name": "LaVon Bracy Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1118fe8a-83c9-4363-80a8-e29cdf5a9204"
+    },
+    {
+      "name": "Fentrice Driskell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c1e25722-c32b-4e01-a158-d3ac78533deb"
+    },
+    {
+      "name": "Anna Eskamani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "24293096-f120-4914-ab83-d6670ad3efcd"
+    },
+    {
+      "name": "Michael Gottlieb",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "130eca48-e5c4-4839-a154-ed07103d7988"
+    },
+    {
+      "name": "Jennifer Harris",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e78ebeb-6d16-476d-9429-5b712c0b9942"
+    },
+    {
+      "name": "Yvonne Hayes Hinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "56f2cd8a-a3e5-40de-89df-24872eea9ba6"
+    },
+    {
+      "name": "Dotie Joseph",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "aa573206-cf30-4782-8243-a930919c851d"
+    },
+    {
+      "name": "Johanna Lopez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "03e7ab40-a2d6-42c0-a888-a8df7f8e9b1e"
+    },
+    {
+      "name": "Michele Rayner-Goolsby",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d89e41dc-7008-407a-a89c-398550a1691a"
+    },
+    {
+      "name": "Felicia Simone Robinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22de2bc3-4b82-474e-ad53-358374d4df78"
+    },
+    {
+      "name": "Mitch Rosenwald",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "74709d8a-5a5e-4f22-a7a2-bee64fa6bda9"
+    },
+    {
+      "name": "Kelly Skidmore",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1c56065c-29ef-4b35-a5d2-4d3ebabb7fd6"
+    },
+    {
+      "name": "Leonard Spencer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "744d100a-c138-4bc8-a1de-9992f78d3016"
+    },
+    {
+      "name": "Susan Valdes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5d552dfc-c52d-45ec-8988-73152ebaf403"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-02-25; official copy, https://www.flsenate.gov/Session/Bill/2025/1019/BillText/Filed/PDF (LegiScan doc 3140048))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-1019-2025.introduced.pdf",
+      "sha256": "484eacf31e4a273dd44aceb98f761e2927ffdbacc4b5741c4c333ed31978e33a"
+    },
+    "note": "Introduced version (filed 2025-02-25); no passage vote. Quote is a selection (parts of s. 790.0653, 790.174, 790.175, 790.223 and the task force); exceptions, definitions and penalty details for dealers are omitted. In s. 790.174 and s. 790.175 the print strikes some words; struck words are dropped from the quote."
+  },
+  "operative_text": "Section 2 (new s. 790.0653, F.S.): (2) All persons involved in firearm sales or other transfers, in whole or in part, are subject to background checks unless specifically exempted by state or federal law. If the person involved in the firearm sale or other transfer, in whole or in part, is a corporation or any entity other than an individual person, the principal individual or individuals involved in such sale or other transfer on behalf of the corporation or other entity is subject to background checks unless specifically exempted by federal law. A person may not sell or otherwise transfer a firearm unless: (a) The person is a licensed dealer; (b) The purchaser or other transferee is a licensed dealer; or (c) The requirements of subsection (3) are met.\nSection 2 (new s. 790.0653, F.S.): (3) If neither party to a prospective firearm sale or other transfer is a licensed dealer, the parties to the transaction shall complete the sale or other transfer through a licensed dealer as follows: (a) The seller or other transferor and the purchaser or other transferee shall appear jointly with the firearm at a licensed dealer and request that the licensed dealer conduct a background check on the purchaser or other transferee.\nSection 2 (new s. 790.0653, F.S.): (5) A person who violates this section commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084.\nSection 3 (s. 790.174, F.S.): (b) A person who stores or leaves, on a premise under his or her control, a firearm, as defined in s. 790.001, and who knows or reasonably should know that a prohibited user is likely to gain access to the firearm, shall keep the firearm in a securely locked box or container or shall secure it with a trigger lock, except when the person is carrying the firearm on his or her body or within such close proximity thereto that he or she can retrieve and use the firearm as easily and quickly as if he or she carried it on his or her body.\nSection 4 (s. 790.175, F.S.): (1) Except as provided in subsection (2), a licensed dealer may not sell a firearm in this state unless the sale includes one of the following: (a) A commercially available trigger lock or other device designed to disable the firearm and prevent the discharge of the firearm. (b) A commercially available gun case or storage container that can be secured to prevent unauthorized access to the firearm.\nSection 5 (new s. 790.223, F.S.): (2) It is unlawful to knowingly manufacture or assemble, cause to be manufactured or assembled, import, purchase, sell, offer for sale, or transfer ownership of any firearm that is not imprinted with a valid serial number.\nSection 5 (new s. 790.223, F.S.): (4) Beginning January 1, 2026, it is unlawful to knowingly possess a firearm or any completed or unfinished frame or receiver that is not imprinted with a valid serial number. (5) A person may not knowingly manufacture or assemble or cause to be manufactured or assembled, import, sell, offer for sale, transfer, or possess any undetectable firearm.\nSection 5 (new s. 790.223, F.S.): (6) It is unlawful to use a three-dimensional printer or CNC milling machine to manufacture or assemble any firearm or completed or unfinished frame or receiver within the state without a valid license to manufacture firearms.\nSection 7 (task force): (3) The task force shall investigate the causes of suicide by veterans, focusing on suicides involving firearms. In addition, the task force shall report on strategies and initiatives to reduce the rate of suicide among veterans with a focus on firearm suicides."
+}

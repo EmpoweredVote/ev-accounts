@@ -1,0 +1,130 @@
+{
+  "id": "FL-H-231-2018",
+  "scope": "state:fl",
+  "title": "H0231 (2018 Regular): Risk Protection Orders",
+  "urls": [
+    "http://www.flsenate.gov/Session/Bill/2018/231",
+    "http://www.flsenate.gov/Session/Bill/2018/231/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lori Berman",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "daafe458-8c11-40b0-9382-22b22747b7e2"
+    },
+    {
+      "name": "Richard Stark",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joseph Abruzzo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Robert Asencio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kamia Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Cortes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Nicholas Duran",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Katie Edwards",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joseph Geller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Evan Jenne",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Chris Latvala",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Larry Lee",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Amy Mercado",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Wengay Newton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Richardson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Emily Slosberg-King",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Carlos Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c310dbb0-d4f3-4aa1-9080-90440e46fb01"
+    },
+    {
+      "name": "Barbara Watson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Clovis Watson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2017-10-04; official copy, http://www.flsenate.gov/Session/Bill/2018/231/BillText/Filed/PDF (LegiScan doc 1651587))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-231-2018.introduced.pdf",
+      "sha256": "6537e227777089c2ca9d2cbd3098e78c01bfc9ee2ca448900678e8fdecca1103"
+    },
+    "note": "As filed (introduced 2017-10-04); a whole new section, underlined. No vote recorded."
+  },
+  "operative_text": "Section 3 (new s. 790.401, F.S.): 1. Allege that the respondent poses a significant danger of causing personal injury to self or others by having a firearm in his or her custody or control or by potentially purchasing, possessing, or receiving a firearm, and be accompanied by an affidavit made under oath stating the specific statements, actions, or facts that give rise to a reasonable fear of future dangerous acts by the respondent.\nSection 3 (new s. 790.401, F.S.): Upon hearing the matter, if the court finds by a preponderance of the evidence that the respondent poses a significant danger of causing personal injury to self or others by having in his or her custody or control, purchasing, possessing, or receiving a firearm, the court shall issue a risk protection order for a period of 1 year.\nSection 3 (new s. 790.401, F.S.): If a court finds there is reasonable cause to believe that the respondent poses a significant danger of causing personal injury to self or others in the near future by having in his or her custody or control, purchasing, possessing, or receiving a firearm, the court shall issue an ex parte risk protection order.\nSection 3 (new s. 790.401, F.S.): Upon issuance of any risk protection order under this section, including an ex parte risk protection order, the court shall order the respondent to surrender to the local law enforcement agency all firearms in the respondent's custody, control, or possession and any license to carry a concealed weapon or firearm issued under s. 790.06.\nSection 3 (new s. 790.401, F.S.): Except as provided in sub-subparagraph b., a person who has in his or her custody or control a firearm or purchases, possesses, or receives a firearm with knowledge that he or she is prohibited from doing so by an order issued under this section commits a misdemeanor of the first degree, punishable as provided in s. 775.082 or s. 775.083.\nSection 3 (new s. 790.401, F.S.): A person who is convicted of an offense under this paragraph is prohibited from having a firearm in his or her custody or control or purchasing, possessing, or receiving, or attempting to purchase or receive a firearm for a period of 5 years after the date the existing order under this section expires."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "FL-S-954-2026",
+  "scope": "state:fl",
+  "title": "S0954 (2026 Regular): Preemption of Firearms and Ammunition",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2026/954",
+    "https://www.flsenate.gov/Session/Bill/2026/954/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tina Polsky",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "69578e2e-7ec6-4321-ad0c-c16ba1d29641"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-12-17; official copy, https://www.flsenate.gov/Session/Bill/2026/954/BillText/Filed/HTML (LegiScan doc 3291544))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-954-2026.introduced.html",
+      "sha256": "1daee020536593e831911708ab1263503ce642650d45b8329c5e40d1dd346a0e"
+    },
+    "note": "Introduced version (2025-12-17); no vote recorded. Section 2 strikes ', including those already prohibited from regulating firearms under s. 790.33'."
+  },
+  "operative_text": "Section 1 (s. 790.33, F.S.): Section 790.33, Florida Statutes, is repealed.\nSection 2 (s. 790.251(4), F.S.): This subsection applies to all public sector employers."
+}

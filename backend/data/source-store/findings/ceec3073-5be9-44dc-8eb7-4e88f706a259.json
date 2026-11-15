@@ -1,0 +1,217 @@
+{
+  "politician_id": "ceec3073-5be9-44dc-8eb7-4e88f706a259",
+  "findings": [
+    {
+      "id": "3c0d5c04dbc7a79939b202bed285c807af1601e1f5185c2c1341d833c60090fa",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2021/259",
+      "date": "2021-04-27",
+      "date_precision": "day",
+      "instrument_id": "FL-H-259-2021",
+      "act": "yea",
+      "motion": "Senate: Third Reading RCS#6",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "FL Senate, Senate: Third Reading RCS#6, 2021-04-27: yea (tally 24–16); census gate: none.",
+      "subjects": [
+        "concealed carry allowed on religious-institution property for licensees",
+        "religious institution keeps control over its own property"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Enrolled, 2021-04-27; official copy, https://www.flsenate.gov/Session/Bill/2021/259/BillText/er/PDF (LegiScan doc 2383043))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-259-2021.enrolled.pdf",
+          "sha256": "628c4648fc29e8aaf0c6a1121c6bc7a6dd58bc9feea36baca0568de19277713a"
+        }
+      }
+    },
+    {
+      "id": "b1741a85dc4170869e19faaf6cc1b9a2731204b7fb10b4f904f6a27f6632c37f",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2019/487",
+      "date": "2019-04-30",
+      "date_precision": "day",
+      "instrument_id": "FL-H-487-2019",
+      "act": "yea",
+      "motion": "Senate: Third Reading RCS#9",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "FL Senate, Senate: Third Reading RCS#9, 2019-04-30: yea (tally 39–1); census gate: near-unanimous.",
+      "subjects": [
+        "tactical medical professionals may carry firearms on police tactical operations",
+        "agency issues the firearm and ammunition"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Enrolled, 2019-05-02; official copy, https://www.flsenate.gov/Session/Bill/2019/487/BillText/er/PDF (LegiScan doc 2008317))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-487-2019.enrolled.pdf",
+          "sha256": "fb8a2cc794c7b2dd2206712d7d8f7ff897f723bf89b66cfc248d28ff3f83a6de"
+        }
+      }
+    },
+    {
+      "id": "4cb8d479eb9aa140dc15675f78bdc46bf7c935b5fecf083d0f24f626cc935935",
+      "kind": "record",
+      "url": "http://www.flsenate.gov/Session/Bill/2018/55",
+      "date": "2018-03-09",
+      "date_precision": "day",
+      "instrument_id": "FL-H-55-2018",
+      "act": "yea",
+      "motion": "Senate: Third Reading RCS#56",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "FL Senate, Senate: Third Reading RCS#56, 2018-03-09: yea (tally 36–0); census gate: near-unanimous.",
+      "subjects": [
+        "electronic payment and requests for firearm-buyer background checks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Enrolled, 2018-03-09; official copy, http://www.flsenate.gov/Session/Bill/2018/55/BillText/er/PDF (LegiScan doc 1757122))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-55-2018.enrolled.pdf",
+          "sha256": "e435fd3f6ee491d4720919bd6017fdd71a0146f93849e0a4697ea3bd5a47de6d"
+        }
+      }
+    },
+    {
+      "id": "e5ddb2354ca6e8a22fabbda8e6e7c388314d799eb62ffd03c1e2e284f958de53",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2019/7125",
+      "date": "2019-05-02",
+      "date_precision": "day",
+      "instrument_id": "FL-H-7125-2019",
+      "act": "yea",
+      "motion": "Senate: Third Reading RCS#23",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "FL Senate, Senate: Third Reading RCS#23, 2019-05-02: yea (tally 39–1); census gate: multi-subject.",
+      "subjects": [
+        "off-duty officers may carry concealed firearms",
+        "officers deemed qualified under federal carry law",
+        "license penalties for minors with firearms made optional"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Enrolled, 2019-05-13; official copy, https://www.flsenate.gov/Session/Bill/2019/7125/BillText/er/PDF (LegiScan doc 2016569))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-7125-2019.enrolled.pdf",
+          "sha256": "80eadc7535e98ffcac3007ff61f54ef6fd7d4e310065657686e3a3b49ede5fbf"
+        }
+      }
+    },
+    {
+      "id": "a05db5082f3011890a3b316f8b28ac121724be027c5b1151c04c32b5612a454a",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2021/1884",
+      "date": "2021-04-26",
+      "date_precision": "day",
+      "instrument_id": "FL-S-1884-2021",
+      "act": "yea",
+      "motion": "Senate: Third Reading RCS#18",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "FL Senate, Senate: Third Reading RCS#18, 2021-04-26: yea (tally 24–16); census gate: none.",
+      "subjects": [
+        "preemption of local gun rules",
+        "suits over written or unwritten local gun policies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Enrolled, 2021-04-28; official copy, https://www.flsenate.gov/Session/Bill/2021/1884/BillText/er/HTML (LegiScan doc 2384416))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-1884-2021.enrolled.html",
+          "sha256": "f8fd21248b5d969847206b40d5f773e6a3d96d923415c48287008f121bce29b8"
+        }
+      }
+    },
+    {
+      "id": "f5dbdf0b0f086a9828f9599f3bb5a6a2374fdbb257c9d81b64342b13b8c05613",
+      "kind": "record",
+      "url": "http://www.flsenate.gov/Session/Bill/2018/7026",
+      "date": "2018-03-05",
+      "date_precision": "day",
+      "instrument_id": "FL-S-7026-2018",
+      "act": "yea",
+      "motion": "Senate: Third Reading RCS#18",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "FL Senate, Senate: Third Reading RCS#18, 2018-03-05: yea (tally 20–18); census gate: multi-subject.",
+      "subjects": [
+        "minimum age 21 to buy any firearm",
+        "ban on bump-fire stocks",
+        "court orders to remove guns from people who pose a significant danger",
+        "no firearms for people adjudicated mentally defective or committed",
+        "3-day waiting period for all firearm purchases",
+        "armed school guardian program"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Enrolled, 2018-03-07; official copy, http://www.flsenate.gov/Session/Bill/2018/7026/BillText/er/HTML (LegiScan doc 1754208))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-7026-2018.enrolled.html",
+          "sha256": "f7f5db1a191f09611228049ed0fd0237c4ed1a7917d0a9dcc51d8f57e48a6e00"
+        }
+      }
+    },
+    {
+      "id": "04a8914a1b730db91537a04e67fa205348bc9c1db2eb726a2a467fdb484ae7e2",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2021/498",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "FL-S-498-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of FL-S-498-2021 (sponsor list (prime / co-sponsor)): S0498 (2021 Regular): Safety of Religious Institutions.",
+      "subjects": [
+        "licensed carry allowed on religious-institution property unless banned by its policy",
+        "licensees may keep firearms in vehicles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Comm Sub, 2021-03-10; official copy, https://www.flsenate.gov/Session/Bill/2021/498/BillText/c1/HTML (LegiScan doc 2329604))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-498-2021.comm-sub.html",
+          "sha256": "e244bf460fbf570894a394120ce5c31a0530e5955e31b27541ff8d5f66a291b1"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

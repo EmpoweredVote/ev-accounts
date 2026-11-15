@@ -1,0 +1,51 @@
+{
+  "id": "FL-H-41-2026",
+  "scope": "state:fl",
+  "title": "H0041 (2026 Regular): Sales of Ammunition",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2026/41",
+    "https://www.flsenate.gov/Session/Bill/2026/41/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dan Daley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "601ae676-fd42-478d-a253-bac744e5c968"
+    },
+    {
+      "name": "Daryl Campbell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ba34dbe-0eac-40dc-b24e-1e206e6e5736"
+    },
+    {
+      "name": "Jennifer Harris",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e78ebeb-6d16-476d-9429-5b712c0b9942"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-09-25; official copy, https://www.flsenate.gov/Session/Bill/2026/41/BillText/Filed/PDF (LegiScan doc 3270733))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-41-2026.introduced.pdf",
+      "sha256": "5854e0fd5b9b57a304b754d15e127e73c89e394972e91923dea9ed11f9167311"
+    },
+    "note": "As filed (introduced 2025-09-25). Section 2 also adds \"or ammunition\" to the felony offences for knowingly providing false information or buying for a prohibited person; those lines are not quoted."
+  },
+  "operative_text": "Section 1: This act may be cited as \"Jaime's Law.\"\nSection 2 (s. 790.065, F.S.): (1)(a) A licensed importer, licensed manufacturer, or licensed dealer may not sell or deliver from her or his inventory at her or his licensed premises any firearm or ammunition to another person, other than a licensed importer, licensed manufacturer, licensed dealer, or licensed collector, until she or he has:\nSection 2 (s. 790.065, F.S.): (b) However, if the person purchasing, or receiving delivery of, the firearm or ammunition is a holder of a valid concealed weapons or firearms license pursuant to s. 790.06 or holds an active certification from the Criminal Justice Standards and Training Commission as a \"law enforcement officer,\" a \"correctional officer,\" or a \"correctional probation officer\" as defined in s. 943.10(1), (2), (3), (6), (7), (8), or (9), this subsection does not apply.\nSection 2 (s. 790.065, F.S.): (c) This subsection does not apply to the purchase, trade, or transfer of a rifle or shotgun or rifle or shotgun ammunition by a resident of this state when the resident makes such purchase, trade, or transfer from a licensed importer, licensed manufacturer, or licensed dealer in another state.\nSection 2 (s. 790.065, F.S.): (d) This subsection does not apply to a transfer of ammunition if the transferor has no reason to believe that the transferee will use or intends to use the ammunition in a crime or that the transferee is prohibited from possessing ammunition under state or federal law, and the transfer takes place and the transferee's possession of the ammunition is exclusively: 1. At a shooting range or in a shooting gallery or other area designated for the purpose of target shooting; or"
+}

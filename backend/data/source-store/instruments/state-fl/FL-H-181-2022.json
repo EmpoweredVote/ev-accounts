@@ -1,0 +1,63 @@
+{
+  "id": "FL-H-181-2022",
+  "scope": "state:fl",
+  "title": "H0181 (2022 Regular): Sales of Ammunition",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2022/181",
+    "https://www.flsenate.gov/Session/Bill/2022/181/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dan Daley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "601ae676-fd42-478d-a253-bac744e5c968"
+    },
+    {
+      "name": "Kristen Arrington",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c58dc5e8-768c-47b8-ba0f-5a0434cbc060"
+    },
+    {
+      "name": "Kevin Chambliss",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bab5c75a-ea6d-43b4-8e43-2d1c9afc27b8"
+    },
+    {
+      "name": "Anna Eskamani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "24293096-f120-4914-ab83-d6670ad3efcd"
+    },
+    {
+      "name": "Dotie Joseph",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "aa573206-cf30-4782-8243-a930919c851d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-09-23; official copy, https://www.flsenate.gov/Session/Bill/2022/181/BillText/Filed/PDF (LegiScan doc 2433988))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-181-2022.introduced.pdf",
+      "sha256": "c3731c8a920551d71045773b51b9b4f4771b3012d19a763d1ce474a60c0f4216"
+    },
+    "note": "Introduced version (filed 2021-09-23), short title \"Jaime's Law\"; no passage vote on file. The bill also republishes much unchanged background-check text."
+  },
+  "operative_text": "Section 2 (s. 790.065(1)(a), F.S.): A licensed importer, licensed manufacturer, or licensed dealer may not sell or deliver from her or his inventory at her or his licensed premises any firearm or ammunition to another person, other than a licensed importer, licensed manufacturer, licensed dealer, or licensed collector, until she or he has:\nSection 2 (s. 790.065(1)(b), F.S.): However, if the person purchasing, or receiving delivery of, the firearm or ammunition is a holder of a valid concealed weapons or firearms license pursuant to s. 790.06 or holds an active certification from the Criminal Justice Standards and Training Commission as a \"law enforcement officer,\" a \"correctional officer,\" or a \"correctional probation officer\" as defined in s. 943.10(1), (2), (3), (6), (7), (8), or (9), this subsection does not apply.\nSection 2 (s. 790.065(1)(d), F.S.): This subsection does not apply to a transfer of ammunition if the transferor has no reason to believe that the transferee will use or intends to use the ammunition in a crime or that the transferee is prohibited from possessing ammunition under state or federal law, and the transfer takes place and the transferee's possession of the ammunition is exclusively:\nSection 2 (s. 790.065(12)(d), F.S.): Any person who knowingly acquires a firearm or ammunition through purchase or transfer intended for the use of a person who is prohibited by state or federal law from possessing or receiving a firearm or ammunition commits a felony of the third degree, punishable as provided in s. 775.082 or s. 775.083."
+}

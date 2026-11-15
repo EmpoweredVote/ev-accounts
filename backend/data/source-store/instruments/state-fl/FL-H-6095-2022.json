@@ -1,0 +1,49 @@
+{
+  "id": "FL-H-6095-2022",
+  "scope": "state:fl",
+  "title": "H6095 (2022 Regular): Restrictions on Firearms and Ammunition During Emergencies",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2022/6095",
+    "https://www.flsenate.gov/Session/Bill/2022/6095/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tommy Gregory",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Cord Byrd",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Toby Overdorf",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6de37c78-a6f2-49be-b46f-66e12cac451a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-12-09; official copy, https://www.flsenate.gov/Session/Bill/2022/6095/BillText/Filed/PDF (LegiScan doc 2454513))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-6095-2022.introduced.pdf",
+      "sha256": "5e9c76076f6cdffc75d9c7b556f85890d36e98e6a297155bbe8196a31d1f819c"
+    },
+    "note": "Introduced version (2021-12-09); no passage vote. Text is only the repeal; s. 870.044 is the emergency firearm/ammunition restriction per the bill title."
+  },
+  "operative_text": "Section 1 (s. 870.044, F.S.): Section 870.044, Florida Statutes, is repealed."
+}

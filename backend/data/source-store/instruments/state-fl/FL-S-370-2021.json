@@ -1,0 +1,119 @@
+{
+  "id": "FL-S-370-2021",
+  "scope": "state:fl",
+  "title": "S0370 (2021 Regular): Assault Weapons and Large-capacity Magazines",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2021/370",
+    "https://www.flsenate.gov/Session/Bill/2021/370/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gary Farmer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lori Berman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "daafe458-8c11-40b0-9382-22b22747b7e2"
+    },
+    {
+      "name": "Annette Taddeo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5667ab1f-2f32-4850-9d5f-e006edeb3dcf"
+    },
+    {
+      "name": "Shevrin Jones",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd892637-c28b-472a-878e-f2fdf1b98935"
+    },
+    {
+      "name": "Tina Polsky",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "69578e2e-7ec6-4321-ad0c-c16ba1d29641"
+    },
+    {
+      "name": "Darryl Rouson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4865aa8c-9633-4076-bf9f-0fc46a10a3a4"
+    },
+    {
+      "name": "Lauren Book",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Victor Torres",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bobby Powell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Janet Cruz",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jason Pizzo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "20c6fffd-e45a-463d-b36b-531a58de253c"
+    },
+    {
+      "name": "Randolph Bracy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Perry Thurston",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Linda Stewart",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Loranne Ausley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Audrey Gibson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2020-12-22; official copy, https://www.flsenate.gov/Session/Bill/2021/370/BillText/Filed/HTML (LegiScan doc 2222993))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-370-2021.introduced.html",
+      "sha256": "f6f6a17a9e4b816f7620bd8634d8a7d884460df93e68749fe98c27f7e7788864"
+    },
+    "note": "Introduced version (filed 2020-12-22); no passage vote. Section 2 (s. 775.087, F.S.) adds longer minimum sentences for listed felonies committed with an assault weapon or large-capacity magazine (not quoted). Section 3 is a severability clause."
+  },
+  "operative_text": "Section 1 (new s. 790.301, F.S.): (2)(a) A person who, within this state, distributes, transports, or imports into the state, sells, keeps for sale, or offers or exposes for sale, or who gives an assault weapon or large-capacity magazine, in violation of this section, except as provided in paragraph (c), commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084, with a mandatory minimum term of imprisonment of 2 years.\nSection 1 (new s. 790.301, F.S.): (b) A person who transfers, sells, or gives an assault weapon or large-capacity magazine to a person under 18 years of age in violation of this section commits a felony of the second degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084, with a mandatory minimum term of imprisonment of 6 years.\nSection 1 (new s. 790.301, F.S.): (3)(a) Except as provided in subsection (5), a person who, within this state, possesses any assault weapon or large-capacity magazine, except as provided in this section or as otherwise authorized by law, commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084, with a mandatory minimum term of imprisonment of 1 year.\nSection 1 (new s. 790.301, F.S.): (4)(a) A person who lawfully possesses an assault weapon or a large-capacity magazine before October 1, 2021, shall apply by October 1, 2022, or, if such person is a member of the military or naval forces of this state or of the United States and is unable to apply by October 1, 2022, because he or she is or was on official duty outside of this state, shall apply within 90 days of returning to the state to the Department of Law Enforcement, for a certificate of possession with respect to such assault weapon or large-capacity magazine.\nSection 1 (new s. 790.301, F.S.): (1)(d) “Large-capacity magazine” means an ammunition feeding device with the capacity to accept more than 10 rounds, or any conversion kit, part, or combination of parts from which such a device can be assembled if those parts are in the possession or under the control of the same person, but does not include any of the following:"
+}

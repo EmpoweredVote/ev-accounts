@@ -1,0 +1,91 @@
+{
+  "id": "FL-S-196-2018",
+  "scope": "state:fl",
+  "title": "S0196 (2018 Regular): Gun Safety",
+  "urls": [
+    "http://www.flsenate.gov/Session/Bill/2018/196",
+    "http://www.flsenate.gov/Session/Bill/2018/196/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Linda Stewart",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Annette Taddeo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5667ab1f-2f32-4850-9d5f-e006edeb3dcf"
+    },
+    {
+      "name": "Victor Torres",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Gary Farmer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jose Rodriguez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3174b894-b4a9-41fb-8c77-b1790f9a7ec1"
+    },
+    {
+      "name": "Daphne Campbell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Darryl Rouson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4865aa8c-9633-4076-bf9f-0fc46a10a3a4"
+    },
+    {
+      "name": "Randolph Bracy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kevin Rader",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Perry Thurston",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bobby Powell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2017-08-22; official copy, http://www.flsenate.gov/Session/Bill/2018/196/BillText/Filed/HTML (LegiScan doc 1645924))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-196-2018.introduced.html",
+      "sha256": "70960e37c70f2dda44563857aa5859b7c1aa086143940cb33ab65c912cff3cb2"
+    },
+    "note": "Introduced text (filed 2017-08-22); no passage vote. Whole s. 790.30 is new. Section 2 (s. 775.087(3)(a)) adds assault weapons and large-capacity magazines to the 15-year minimum for listed felonies; Sections 3-5 reenact other statutes to incorporate that change. Definitions and the other subsections (transfer certificates, relinquishment, transport) are omitted from the quote."
+  },
+  "operative_text": "Section 1 (new s. 790.30, F.S.), paragraph (2)(a): A person may not import into the state or, within this state, distribute, transport, sell, keep for sale, offer or expose for sale, or give an assault weapon or large-capacity magazine. Except as provided in paragraph (b), any person who violates this paragraph commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084, with a mandatory minimum term of imprisonment of 2 years.\nSection 1 (new s. 790.30, F.S.), paragraph (2)(b): A person may not transfer, sell, or give an assault weapon or large-capacity magazine to a person under 18 years of age. Any person who violates this paragraph commits a felony of the second degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084, with a mandatory minimum term of imprisonment of 6 years.\nSection 1 (new s. 790.30, F.S.), paragraph (3)(a): Except as provided in subsection (5) or otherwise provided in this section or authorized by any other law, a person may not, within this state, possess an assault weapon or large-capacity magazine. Any person who violates this paragraph commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084, with a mandatory minimum term of imprisonment of 1 year.\nSection 1 (new s. 790.30, F.S.), paragraph (4)(a): Any person who lawfully possesses an assault weapon or large-capacity magazine before October 1, 2018, shall apply by October 1, 2019, or, if such person is a member of the military or naval forces of this state or of the United States and cannot apply by October 1, 2019, because he or she is or was on official duty outside this state, shall apply within 90 days after returning to the state, to the Department of Law Enforcement for a certificate of possession with respect to such assault weapon or large-capacity magazine."
+}

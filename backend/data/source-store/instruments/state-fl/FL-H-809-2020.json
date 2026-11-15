@@ -1,0 +1,49 @@
+{
+  "id": "FL-H-809-2020",
+  "scope": "state:fl",
+  "title": "H0809 (2020 Regular): Licenses to Carry Concealed Weapons or Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2020/809",
+    "https://www.flsenate.gov/Session/Bill/2020/809/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Javier Fernandez",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Cindy Polo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Carlos Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c310dbb0-d4f3-4aa1-9080-90440e46fb01"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-11-26; official copy, https://www.flsenate.gov/Session/Bill/2020/809/BillText/Filed/PDF (LegiScan doc 2070948))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-809-2020.introduced.pdf",
+      "sha256": "dd2b341ca32f86ea929e41b7b6d23e648bef35af35fed5528cbf99363bbe5503"
+    },
+    "note": "Read as filed (Introduced, 2019-11-26); no vote. Struck: '7' years, $55 and $45 fees. Quote of (11)(b) is the first sentence only; the course content list follows in the bill."
+  },
+  "operative_text": "Section 1 (s. 790.06, F.S.): Such licenses shall be valid throughout the state for a period of 5 years from the date of issuance.\nSection 1 (s. 790.06(5)(b), F.S.): A nonrefundable license fee of up to $40 if he or she has not previously been issued a statewide license or of up to $35 for renewal of a statewide license.\nSection 1 (s. 790.06(5)(c), F.S.): Fingerprints shall be retained in the statewide automated biometric identification system under s. 943.05(2)(b) and when available, the national retained print arrest notification program under s. 943.05(4).\nSection 1 (s. 790.06(11)(b), F.S.): Upon each renewal, a licensee must provide proof of completion of a firearms training or safety course or class at least 8 hours in length taught by a state, county, or municipal law enforcement agency or a nationally recognized organization that promotes gun safety."
+}

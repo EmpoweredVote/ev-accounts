@@ -1,0 +1,50 @@
+{
+  "id": "FL-S-270-2020",
+  "scope": "state:fl",
+  "title": "S0270 (2020 Regular): Sale and Delivery of Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2020/270",
+    "https://www.flsenate.gov/Session/Bill/2020/270/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gary Farmer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jose Rodriguez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3174b894-b4a9-41fb-8c77-b1790f9a7ec1"
+    },
+    {
+      "name": "Lori Berman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "daafe458-8c11-40b0-9382-22b22747b7e2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-09-12; official copy, https://www.flsenate.gov/Session/Bill/2020/270/BillText/Filed/HTML (LegiScan doc 2052787))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-270-2020.introduced.html",
+      "sha256": "721acb8ef0d2a964ff6c37e3eef90551434e000662110870cbce522632594472"
+    },
+    "note": "Read as filed (Introduced, 2019-09-12); no vote. Struck: subsection (3) (computer-downtime completion of sales) and subsection (10) (dealer exemption for phone or department failures). Section 2 only changes a cross-reference in s. 790.335."
+  },
+  "operative_text": "Section 1 (s. 790.065, F.S.): If neither party to a prospective firearms sale, lease, or transfer is a licensed dealer, the parties to the transaction must complete the sale, lease, or other transfer through a licensed dealer as follows: a. The seller, lessor, or transferor must deliver the firearm to a licensed dealer who shall process the sale, lease, or transfer as if she or he were the seller, lessor, or transferor, except that the seller, lessor, or transferor who is not a licensed dealer may remove the firearm from the business premises of the licensed dealer while the background check is being conducted and while the waiting period requirement set forth in s. 790.0655 is being met. d. The licensed dealer may require the buyer or other transferee to pay a fee covering the administrative costs incurred by the licensed dealer for facilitating the transfer of the firearm, plus applicable fees pursuant to federal and state law."
+}
