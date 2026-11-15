@@ -714,7 +714,57 @@
           "sha256": "b3d9ca643134125ed96f1b3770d1b9270f3ce70cdc5669d183b66fab178f9ed4"
         }
       }
+    },
+    {
+      "id": "6edcbecc7b8548f60c957c10b16d65502c3ff4b4008ddde54e8ebc51de4f53d8",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/articles/florida-house-votes-restore-18-145219392.html",
+      "date": "2026-01",
+      "date_precision": "month",
+      "passage": "Would it be safe for 18-year-olds, where studies show that their brains are not necessarily completely developed, to be buying long guns that we know tend to be the guns that are used in our school shootings?",
+      "note": "Quoted by a WFTV story carried on Yahoo News during the House debate on HB 133 (lower the age to buy long guns from 21 to 18). She asks whether 18-year-olds should be allowed to buy long guns, citing brain development and school shootings.",
+      "subjects": [
+        "minimum age to buy a gun",
+        "long guns and school shootings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:20:02.609Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "minimum age to buy a gun",
+        "long guns and school shootings",
+        "ban on assault-style guns",
+        "permitless carry",
+        "check every gun buyer",
+        "red-flag orders",
+        "general gun safety statements"
+      ],
+      "places": [
+        "status: still in scope; sitting House member for District 104, listed by her state party's post as a winner of the 18 Aug 2026 primary (https://floridadems.org/2026/08/florida-democratic-party-congratulates-newly-elected-state-lawmakers-and-legislative-nominees/)",
+        "On the Record (0 appearances, no meeting files)",
+        "blocked: https://ballotpedia.org/Felicia_Simone_Robinson (empty page returned)",
+        "blocked: https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4786&LegislativeTermId=93 (request rejected; her own member page not read)",
+        "blocked: https://floridapolitics.com/archives/631737-felicia-robinson-faces-primary-challenge-in-her-bid-for-a-3rd-term (HTTP 402)",
+        "not reviewed: https://www.billsponsor.com/politicians/1717/felicia-simone-robinson (no gun content seen)",
+        "not reviewed: personal campaign site (none found)",
+        "not reviewed: flsenate.gov and House bill pages beyond the votes already on file",
+        "news search on name plus gun words: one story with a direct quote (https://www.yahoo.com/news/articles/florida-house-votes-restore-18-145219392.html)",
+        "web searches run: 4"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:20:02.609Z",
+      "by": "source-collector"
+    }
+  ]
 }

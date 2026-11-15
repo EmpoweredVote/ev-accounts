@@ -595,7 +595,75 @@
           "sha256": "a984f32f36059a4ff461204161184f9169a97b86730c8d7e538c131175f9e517"
         }
       }
+    },
+    {
+      "id": "564522a130a7f8563b6179e712d4195dc8df8fe07b154b119b1343dc0b8c38e4",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/708695-ben-albritton-shoots-down-open-carry-proposal-gov-desantis-may-support",
+      "date": "2024-11-19",
+      "date_precision": "day",
+      "passage": "I’ve supported law enforcement my entire life. It’s the way I was raised. And I’ve been super consistent as a legislator to support law enforcement in Florida, and I encourage you to check that record,",
+      "note": "Quoted by a news outlet (Florida Politics) after his installation as Senate President, explaining why he will not support open carry legislation, citing his support for law enforcement and the sheriffs' opposition. The story also reports he would have the Senate take a close look at a bill lowering the long-gun purchase age from 21 to 18 if a senator filed one.",
+      "subjects": [
+        "carry a gun openly",
+        "minimum age to buy a long gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:18:35.851Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4de2c48960e03a1cbd5289400e8832a360fbfda25f3881256954ac3982564acb",
+      "kind": "own-words",
+      "url": "https://www.wptv.com/news/state/repeal-of-floridas-red-flag-laws-seem-unlikely-in-state-senate",
+      "date": "2024-12-17",
+      "date_precision": "day",
+      "passage": "The risk protection orders were a very vital tool for law enforcement to help keep us safe,",
+      "note": "Quoted by a TV news story (WPTV) on repealing Florida's risk protection (red-flag) orders; he calls them a vital tool for law enforcement and the story reports he opposes repeal. Story date is its publication date; the remark was made the Tuesday before.",
+      "subjects": [
+        "red-flag orders",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:18:35.851Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "open carry",
+        "red-flag / risk protection orders",
+        "minimum age to buy long guns",
+        "permitless carry",
+        "Second Amendment",
+        "gun rights general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the Florida Senate member page https://www.flsenate.gov/Senators/s27 (confirms Senator Ben Albritton, District 27; page has no gun statements)",
+        "campaign site: not reviewed, none found",
+        "not reviewed: https://ballotpedia.org/Ben_Albritton (returned HTTP 202, no content)",
+        "blocked: https://floridaphoenix.com/2025/03/19/senate-president-albritton-gets-emotional-discussing-the-weight-of-changing-a-state-gun-law/ (bot challenge page)",
+        "blocked: https://floridaphoenix.com/2025/12/19/gun-safety-groups-call-on-ben-albritton-to-block-lowering-age-to-buy-long-guns-to-18/ (bot challenge page)",
+        "one web search on name plus gun subject words; two news stories fetched and read",
+        "bill pages: sponsorships already on file; no further search done"
+      ],
+      "found": 2,
+      "at": "2026-11-15T02:18:35.851Z",
+      "by": "source-collector"
+    }
+  ]
 }

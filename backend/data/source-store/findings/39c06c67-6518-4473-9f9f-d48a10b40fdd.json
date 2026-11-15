@@ -712,7 +712,80 @@
           "sha256": "9e4e6cf5ddae51929a7bb16f03307d67db19ea2da45a9883f876375c76f89f14"
         }
       }
+    },
+    {
+      "id": "2a6893806aa408430d7ebdd80cc05056b85600eb1b568b024a0c57d01d409f84",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/279315-responding-to-pittsburgh-shooting-lindsay-cross-blasts-jeff-brandes-on-gun-record",
+      "date": "2018-10-29",
+      "date_precision": "day",
+      "passage": "It is past time that we have leaders who will stand up and fight for the safety of our communities,",
+      "note": "Direct quote in a news story (Florida Politics) from a social-media video made while she ran for state Senate in 2018, after the Pittsburgh synagogue shooting; she called for common-sense gun legislation. The story's own summary says her plan includes banning military-style assault weapons, closing the gun show loophole so buyers need a background check, and keeping guns from felons and mentally ill people; that summary is the reporter's wording.",
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "gun show loophole",
+        "keep guns from felons and people with mental illness",
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:21:36.011Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f0e19d7fff9e8b608633e7c8b237ffadf9979c5f97b16ef2274ef81cd70938ea",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/279315-responding-to-pittsburgh-shooting-lindsay-cross-blasts-jeff-brandes-on-gun-record",
+      "date": "2018-10-29",
+      "date_precision": "day",
+      "passage": "Our schools and places of worship should be refuges for learning and hope not the site of the next bloodbath,",
+      "note": "Direct quote in the same Florida Politics story, on mass shootings at schools and places of worship.",
+      "subjects": [
+        "gun safety laws in general",
+        "guns at schools"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:21:36.011Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "gun show loophole",
+        "keep guns from felons and people with mental illness",
+        "carry a gun at schools",
+        "red-flag orders",
+        "gun safety laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "campaign site https://lindsaycrossfl.com (read; a thank-you page only, nothing on the subject)",
+        "blocked: https://www.myfloridahouse.gov (member search request rejected)",
+        "blocked: https://ballotpedia.org/Lindsay_Cross (fetch returned no text)",
+        "https://giffords.org/candidates/florida-legislature/ (advocacy group candidate profile, describes her as running for HD-60; the profile text is the group's words, not saved as her own)",
+        "one news search on name plus gun words: found a 2018 Senate-race news story with her quoted on guns",
+        "not reviewed: flsenate.gov bill pages beyond the votes already on file",
+        "not reviewed: https://open.pluralpolicy.com/person/lindsay-cross-4FnffqtLHEQYkZIq7karDr",
+        "2026 ballot status not confirmed by a fetched page; search results list her as the sitting House District 60 member"
+      ],
+      "found": 2,
+      "at": "2026-11-15T02:21:36.011Z",
+      "by": "source-collector"
+    }
+  ]
 }

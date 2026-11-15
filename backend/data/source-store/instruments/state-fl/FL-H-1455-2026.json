@@ -1,0 +1,41 @@
+{
+  "id": "FL-H-1455-2026",
+  "scope": "state:fl",
+  "title": "H1455 (2026 Regular): Representation by Counsel in Hearings on Petitions for Risk Protection Orders",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2026/1455",
+    "https://www.flsenate.gov/Session/Bill/2026/1455/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Juan Porras",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "59bfd2f8-7c66-4ed8-90be-b5cb4132ea11"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-access-to-justice: Sections 1-4 (ss. 790.401, 27.51, 27.511, 27.5304, F.S.) — appointed counsel for indigent respondents, public defender duties and counsel compensation cap"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2026-01-09; official copy, https://www.flsenate.gov/Session/Bill/2026/1455/BillText/Filed/PDF (LegiScan doc 3304812))",
+    "fetched_at": "2026-11-15T02:43:36.063765Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-1455-2026.introduced.pdf",
+      "sha256": "af60c43b0e57702f58e8c8624c85955b4e7394fb22469bd72023a2a07b5a733e"
+    },
+    "note": "Introduced version (2026-01-09); no passage vote recorded. Struck text in Sections 3-5 is only subsection renumbering/cross-references. Whether appointed-counsel funding counts as a second subject is a judgment call."
+  },
+  "operative_text": "Section 1 (s. 790.401, F.S.): The respondent has the right to be represented by an attorney. If the respondent is indigent and desires representation, the court shall appoint counsel as provided in s. 27.40. However, such petition for a risk protection order does not require either party to be represented by an attorney.\nSection 1 (s. 790.401, F.S.): Such notice of hearing must inform the respondent of his or her right to be represented by an attorney and inform the respondent that if he or she is indigent and desires representation, counsel will be appointed as provided in s. 27.40.\nSection 2 (s. 27.51, F.S.): Named as the respondent in a petition filed before a circuit court for a risk protection order under s. 790.401;\nSection 4 (s. 27.5304, F.S.): The compensation for representation in a risk protection order proceeding under s. 790.401 may not exceed $1,000."
+}

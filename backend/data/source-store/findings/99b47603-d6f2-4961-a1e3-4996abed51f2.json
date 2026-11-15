@@ -299,5 +299,36 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "Second Amendment and gun rights general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status unconfirmed: sitting District 18 representative (St. Johns County) per https://jaxtoday.org/2026/07/28/district-18-primary-race/; she faced one primary challenger on 2026-08-18, and I found no page stating the result (precinct returns seen only in search results, not fetched)",
+        "the House member site: https://www.flhouse.gov/ redirect only, no member page with her content reached",
+        "campaign site https://votekimkendall.com: fetched, returned no readable text on the subject",
+        "Ballotpedia https://ballotpedia.org/Kim_Kendall: fetched, empty page, nothing on the subject",
+        "https://www.flsenate.gov/Session/Bill/2025/759: HB 759 (minimum age for firearm purchase) lists her among co-sponsors; already on file",
+        "https://www.news4jax.com/voters-guide/2026/07/31/2026-voters-guide-florida-house-district-18/: her answers cover infrastructure, workforce and quality of life; nothing on the subject",
+        "https://jaxtoday.org/2026/07/28/district-18-primary-race/ and https://jaxtoday.org/2026/08/12/diana-jordan-baldwin-attack/: nothing on the subject",
+        "https://ivoterguide.com/race/28558/election/1431: no gun content in the summary I could see",
+        "blocked: https://vote.norml.org/politicians/138136 (connection refused)",
+        "news search on her name plus gun words: nothing on the subject",
+        "not reviewed: other sponsorship lists beyond HB 759 (search allowance used)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:14:33.396Z",
+      "by": "source-collector"
+    }
+  ]
 }

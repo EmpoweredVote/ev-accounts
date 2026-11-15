@@ -923,5 +923,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of gun or magazine",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "carrying on church property",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "blocked: https://www.myfloridahouse.gov/members/lawrence-mcclure (redirected to the House home page, no member page content)",
+        "https://www.flsenate.gov/Session/Bill/2023/1307 (bill page names him as prime sponsor; vote and sponsorship already on file; no own words)",
+        "https://www.flsenate.gov/Session/Bill/2018/1419 (bill page names him as prime sponsor of a church-property carry bill; already on file; no own words)",
+        "blocked: https://ballotpedia.org/Lawrence_McClure (no usable text returned)",
+        "https://floridapolitics.com/archives/719777-a-gun-a-lawmakers-wife-and-floridas-immigration-bill (news story about an intruder at his home, said on the House floor during an immigration bill; not a statement on gun regulation)",
+        "https://www.wusf.org/2018-01-24/gun-bill-struggling-in-florida-senate-passes-first-house-committee (news story on 2018 committee vote; no quote from him in the page text)",
+        "https://www.wusf.org/politics-issues/2025-03-27/florida-house-approves-measure-lower-gun-ownership-age and the Observer local news story on the age repeal: no mention of him",
+        "not reviewed: campaign site (none found)",
+        "news search on name plus gun words: no direct quote of him on gun regulation found"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:06:17.376Z",
+      "by": "source-collector"
+    }
+  ]
 }

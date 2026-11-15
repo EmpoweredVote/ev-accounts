@@ -270,7 +270,55 @@
           "sha256": "a10e6db71dacfb3f4dbdf59fd42ed87889f894710e84c53f260ebebd0b52e342"
         }
       }
+    },
+    {
+      "id": "e53b8b4874cbccaafe0f84e8ea58183bf499e41f0ce8cd1238fd62841737e6ce",
+      "kind": "own-words",
+      "url": "https://www.flaglernewsweekly.com/sheriff-staly-and-sheriff-hardwick-endorse-sam-greco-for-hd-19/",
+      "date": "2024-10-24",
+      "date_precision": "day",
+      "passage": "Sam is pro-life, pro Second Amendment, and pro freedom.",
+      "note": "Campaign-style biography line in a local news story about two sheriffs endorsing him for the House seat. It is written in the third person and the story does not say who wrote it, so it may be campaign text issued for him rather than his own phrasing. A general statement of support for Second Amendment rights.",
+      "subjects": [
+        "general statement on Second Amendment and gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:14:14.719Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings, searched by id and by name)",
+        "news story from the Observer local paper, 2026-07-10, on his chamber legislative update: confirms he is the District 19 representative in his second year; nothing on the subject",
+        "https://www.flaglernewsweekly.com/sheriff-staly-and-sheriff-hardwick-endorse-sam-greco-for-hd-19/ (2024 endorsement story; one line on the subject)",
+        "blocked: https://ballotpedia.org/Sam_Greco (page came back empty)",
+        "blocked: https://www.myfloridahouse.gov member page (no usable text returned)",
+        "not reviewed: https://fastdemocracy.com/legislator/fl/legislators/FLL000507 (bill table loads by script; sponsored-bill list not readable)",
+        "two news searches on his name plus gun words: no gun bill sponsored by him and no gun statement found",
+        "no own campaign site or issue page found",
+        "the nine recorded House floor votes were already on file and not collected again"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:14:14.719Z",
+      "by": "source-collector"
+    }
+  ]
 }

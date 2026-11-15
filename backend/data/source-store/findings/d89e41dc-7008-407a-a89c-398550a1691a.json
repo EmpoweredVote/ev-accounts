@@ -908,7 +908,75 @@
           "sha256": "d93c145d44b84a4920f64c1e69d29589a7d3f07b9175b79661ffeeba0cbf3c18"
         }
       }
+    },
+    {
+      "id": "831ab5c8d380a1291b0565689b4fbb4d32d66e8caed0b242c64bb02205217cc4",
+      "kind": "own-words",
+      "url": "https://www.wgcu.org/government-politics/2024-01-31/lower-gun-buying-age-okd-in-house-no-companion-in-senate",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "passage": "It feels like this is a messaging bill, because I don't know if it is moving on the other side (in the Senate) and if it's going to get to the governor. And if that is truly what this is, I would say this is not the message we want to send to Floridians and the state of Florida.",
+      "note": "Quoted in a WGCU news story on the House subcommittee hearing of HB 1223, which would lower the minimum age to buy rifles and shotguns from 21 to 18. She calls the bill a messaging bill and says it sends the wrong message to Floridians.",
+      "subjects": [
+        "minimum age to buy a rifle or shotgun",
+        "repeal of post-Parkland school safety gun law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:24:51.980Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "lower the age to buy long guns",
+        "gun violence and gun safety",
+        "Second Amendment",
+        "firearm bills"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Senate District 16; public-radio results story of 2026-08-18, https://www.wusf.org/politics-issues/2026-08-18/pinellas-primary-results-2026-leela-gray-wins-democratic-nomination-13th-congressional-district)",
+        "On the Record (0 appearances)",
+        "Ballotpedia: blocked/empty: https://ballotpedia.org/Michele_Rayner",
+        "House member page: blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4806 (redirects to https://www.flhouse.gov/, which has no member content)",
+        "news search on name plus gun words: found 2023 and 2024 news quotes on the long-gun age bills (not saved, as the person is out of scope)",
+        "blocked: https://floridaphoenix.com/2026/08/11/its-fentrice-driskell-vs-michele-rayner-in-one-of-the-legislatures-most-competitive-primaries/ (403)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:23:24.806Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "minimum age to buy a rifle or shotgun",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "carry a gun without a permit",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4741 (request rejected / redirected to https://www.flhouse.gov/)",
+        "blocked: https://ballotpedia.org/Michele_Rayner (empty response)",
+        "https://www.flsenate.gov/Senators/Current read: she is not listed among senators; 2026 ballot status not confirmed by a page I read",
+        "official and campaign site: not reviewed, no page of theirs could be read",
+        "one news search on name plus gun words: found a news story quoting them on HB 1223 (2024)",
+        "bill pages on www.flsenate.gov: not reviewed beyond the list already on file",
+        "news search on assault weapons, background checks, red flag: nothing on the subject"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:24:51.980Z",
+      "by": "source-collector"
+    }
+  ]
 }

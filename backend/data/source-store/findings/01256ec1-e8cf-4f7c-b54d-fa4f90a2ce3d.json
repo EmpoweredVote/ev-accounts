@@ -576,5 +576,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "waiting periods and minimum age",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "ghost guns",
+        "repeal of gun laws",
+        "general statement on gun rights or gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings, 0 appearances for this person)",
+        "blocked: https://ballotpedia.org/Gallop_Franklin (page returned empty to the fetch tool and to curl)",
+        "not reviewed: https://www.myfloridahouse.gov/members/gallop-franklin (redirects to https://www.flhouse.gov/; member page not reached)",
+        "https://www.flsenate.gov bill search 2026 (first page only, no bill by this person on firearms; sponsor search not completed)",
+        "https://ivoterguide.com/candidate/74821/race/5278/election/1254 (candidate guide listing a 2026 race for State Representative District 8; gun questions listed as unanswered; a lead, not their own page)",
+        "web search on name plus gun words (two searches): no statement or gun bill by this person found",
+        "campaign site: not found, not reviewed",
+        "scope: the candidate guide lists a Nov 3, 2026 race; no official page confirming the 2026 ballot was fetched"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:05:19.714Z",
+      "by": "source-collector"
+    }
+  ]
 }

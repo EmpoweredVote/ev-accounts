@@ -209,7 +209,57 @@
           "sha256": "484eacf31e4a273dd44aceb98f761e2927ffdbacc4b5741c4c333ed31978e33a"
         }
       }
+    },
+    {
+      "id": "751129043d8bd087d0fa7773c939bcf34d5fdf61033c933043fd5d254f3d696d",
+      "kind": "own-words",
+      "url": "https://www.wintergardenvox.com/candidates/leonard-spencer",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "We need common sense gun legislation, right? Most people agree that there should be some background checks related to having access to a gun. It makes no sense for us not to do common sense gun reform as it relates to background checks.",
+      "note": "Direct quote of him in a Winter Garden Vox candidate profile from his 2024 campaign (page undated; date inferred from the 2024 race). He says he backs background checks on gun access.",
+      "subjects": [
+        "check every gun buyer",
+        "background checks on gun sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:21:58.775Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "background checks on gun sales",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "Second Amendment"
+      ],
+      "places": [
+        "scope: sitting District 45 House member; named as a candidate in the Central Florida 2026 voters guide for District 45 (https://www.clickorlando.com/voters-guide/2026/10/16/2026-voters-guide-florida-house-district-45/)",
+        "On the Record (0 appearances for this person)",
+        "the campaign site leonardspencerfl.com (fetched; no gun text found in the page)",
+        "local news candidate profile at https://www.wintergardenvox.com/candidates/leonard-spencer (one gun statement saved)",
+        "local news voters guide questionnaire (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Leonard_Spencer (empty response)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=5008 (empty response)",
+        "blocked: https://floridaphoenix.com/voter-guides/contests/2026-general-florida-house-of-representatives-hd-45/ (403 / empty)",
+        "web news search on name plus gun words: nothing on the subject for this person",
+        "Wikipedia page (fetched; nothing on the subject)"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:21:58.775Z",
+      "by": "source-collector"
+    }
+  ]
 }

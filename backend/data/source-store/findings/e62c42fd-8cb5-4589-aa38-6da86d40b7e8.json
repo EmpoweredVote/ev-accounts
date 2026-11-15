@@ -787,7 +787,76 @@
           "sha256": "04b07b6628284dcce79cd866cc0299b5776982df188982231135952b1bb0a49f"
         }
       }
+    },
+    {
+      "id": "400e4852bad5d0526ac3ac8b57ca946c32c21f568b48e68335087522e06057d1",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/41571/race/4525/election/922",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "None. We've had too many infringements on our Second Amendment rights.",
+      "note": "His answer on a voter-guide questionnaire (2022 House race) to the question of what restrictions on gun ownership are needed to protect public safety.",
+      "subjects": [
+        "restrictions on gun ownership",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:18:18.605Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a50f7e68698923307b03b7eee3c6accfb9e24de2e30b662be6e74b7edd3df3c6",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2024/1181",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "FL-HB-1181-2024",
+      "act": "sponsor",
+      "note": "Prime sponsor of CS/CS/HB 1181, Juvenile Justice: revises penalties for minors committing firearms violations, requires secure detention for a child on probation for a felony firearm offense who is taken into custody, and requires a DJJ class for firearms offenders.",
+      "subjects": [
+        "minors with guns",
+        "penalties for gun offenses"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:18:18.605Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "limits on who may buy or own a gun",
+        "Second Amendment rights",
+        "minors with guns",
+        "rifle purchase age",
+        "carry without a permit",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site news page https://bernyforflorida.com/news/ (read; no gun items)",
+        "Ballotpedia https://ballotpedia.org/Berny_Jacques (read; nothing on the subject)",
+        "flsenate.gov bill page for HB 1181 (2024), read",
+        "nonpartisan voter guide https://ivoterguide.com/candidate/41571/race/4525/election/922 (2022 candidate answers; also lists him on the 2026 general ballot for House District 59)",
+        "news story https://www.yahoo.com/news/fl-lawmakers-increase-sanctions-minors-230540391.html (reported his reasons for HB 1181; no verbatim quote copied)",
+        "not reviewed: https://www.myfloridahouse.gov member page (not fetched)",
+        "web search: no own words found on rifle age, permitless carry or red-flag orders"
+      ],
+      "found": 2,
+      "at": "2026-11-15T02:18:18.605Z",
+      "by": "source-collector"
+    }
+  ]
 }

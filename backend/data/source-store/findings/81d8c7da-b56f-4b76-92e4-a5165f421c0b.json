@@ -412,7 +412,76 @@
           "sha256": "5467c976d81822adae43a7392f5dd131f707b34c3f5c5c7f6d5592c341b72966"
         }
       }
+    },
+    {
+      "id": "90ea80cdaf6f5e3fbd293addbf7a0e190a8b68c96e717b7829a583c4b204137b",
+      "kind": "own-words",
+      "url": "https://files.constantcontact.com/5ba070b1901/4f2e3690-ab43-408e-906d-97c1ccf118b1.pdf",
+      "date": "2023-04-03",
+      "date_precision": "day",
+      "passage": "There is an evident need for gun law reform and this bill is the exact opposite of the progress needed to save lives instead of take them. As I have stated before, for every responsible gun user there is three times as many irresponsible gun users.",
+      "note": "Senate press release issued in her name after the governor signed SB 150 (permitless carry); she says the law adds guns with fewer restrictions and calls for gun law reform. Also reprinted at capitalsoup.com.",
+      "subjects": [
+        "carry a gun without a permit",
+        "gun law reform"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:12:30.086Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "693ffbc0e69caba07c06df58d9fb71e2db21774917caf88c7d087535292513da",
+      "kind": "own-words",
+      "url": "https://capitalsoup.com/2023/02/22/representative-campbell-and-senator-osgood-file-bill-to-close-loophole-allowing-altered-firearms-with-automatic-firing-rates",
+      "date": "2023-02-22",
+      "date_precision": "day",
+      "passage": "With the dramatic rise in gun violence and mass shootings, this bill is a step in the right direction.",
+      "note": "Quoted in a news-site reprint of a filing announcement for HB 883 / SB 368, which treat firearms modified to fire like machine guns as machine guns; she says she filed it after Glock switches were raised at a Broward delegation hearing.",
+      "subjects": [
+        "guns modified to fire like machine guns",
+        "Glock switches"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:12:30.086Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permitless carry",
+        "guns modified to fire like machine guns",
+        "gun law reform",
+        "assault-style guns",
+        "background checks",
+        "minimum age",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate member page https://www.flsenate.gov/Senators/s29 (read; no gun content on the page)",
+        "Senate press release PDF https://files.constantcontact.com/5ba070b1901/4f2e3690-ab43-408e-906d-97c1ccf118b1.pdf",
+        "Florida Senate bill pages: sponsorships already on file (SB 368 in 2023, SB 406 in 2026)",
+        "Wikipedia page (confirms Florida state senator; nothing on the subject)",
+        "two web searches on name plus gun words; found two statements, nothing on assault-style guns, age limits or background checks",
+        "not reviewed: https://www.pressreader.com/usa/sun-sentinel-broward-edition/20211213/281715502918995 (2021 op-ed on gun safety bills, only seen as a search lead)",
+        "not reviewed: Ballotpedia, campaign site, other URL-pattern pages (not fetched)"
+      ],
+      "found": 2,
+      "at": "2026-11-15T02:12:30.086Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -516,5 +516,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "waiting periods and minimum age",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "open carry",
+        "Second Amendment and gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "Florida Senate member page https://www.flsenate.gov/Senators/S31 (read: confirms Senator Gayle Harrell, District 31, Stuart; elected to the Senate in 2018; page lists no gun statements; bill list tab is loaded by script and was not readable)",
+        "news search: Gayle Harrell with firearm, Second Amendment, open carry, permitless carry words (no result quoting her on the subject)",
+        "news search: Florida Senate 2018 school safety bill coverage (no quote from her found)",
+        "term status: a news search result says she is term-limited in 2028, so her seat is not on the 2026 ballot; she remains a sitting senator",
+        "blocked: https://ballotpedia.org/Gayle_Harrell (returned a challenge page, no content)",
+        "nothing on the subject: official Senate page text",
+        "not reviewed: Senate sponsorship search for gun bills (page needs script to load)",
+        "not reviewed: https://ontheissues.org/Archive/Legis_FL_Gun_Control.htm (lead only, not fetched)",
+        "not reviewed: a campaign site (none located)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:15:21.030Z",
+      "by": "source-collector"
+    }
+  ]
 }

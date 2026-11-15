@@ -830,7 +830,122 @@
           "sha256": "fb8a2cc794c7b2dd2206712d7d8f7ff897f723bf89b66cfc248d28ff3f83a6de"
         }
       }
+    },
+    {
+      "id": "0b4cba07eb8a38c66039cc99b66ddf7887167fa8ee673ff53fc93f3db6380c33",
+      "kind": "own-words",
+      "url": "https://electsmith28.com/2019-florida-state-legislative-session/",
+      "date": "2019",
+      "date_precision": "year",
+      "passage": "Carrying of Firearms by Tactical Medical Personnel. Signed into law by Governor DeSantis. Authorizes properly designated and trained medical personnel assigned to law enforcement SWAT teams to carry a weapon for self-defense.",
+      "note": "His campaign site describes his own HB 487 (2019), which lets trained medical staff on police SWAT teams carry a weapon for self-defense.",
+      "subjects": [
+        "carrying guns",
+        "who may carry a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:05:30.175Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a4b18a402e2cfecd2580d741c3418fb4dcb3d643cfe87688b2a3494d3ac38d69",
+      "kind": "own-words",
+      "url": "https://electsmith28.com/2019-florida-state-legislative-session/",
+      "date": "2019",
+      "date_precision": "year",
+      "passage": "Implementation of the Marjory Stoneman Douglas High School Public Safety Commission Recommendations. Authorizes the expansion of the “Guardian Program” to train and allow public school employees to carry a firearm on school property.",
+      "note": "His campaign site lists HB 7030 (2019) among his session accomplishments; it expands the program letting trained school employees carry a firearm at school.",
+      "subjects": [
+        "guns carried by trained school staff",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:05:30.175Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6e20522fd848967fa82aabcb3ffec7075720b8aa4ddd68c6bb55babeeafebf0b",
+      "kind": "own-words",
+      "url": "https://electsmith28.com/2021-florida-state-legislative-session/",
+      "date": "2021",
+      "date_precision": "year",
+      "passage": "Protects religious institutions and their congregations by reinforcing private property rights – ultimately giving the property owner the right to choose whether to allow or prohibit firearms on their property.",
+      "note": "His campaign site describes HB 259 (2021, Safety of Religious Institutions) as letting a property owner decide whether firearms are allowed on the property.",
+      "subjects": [
+        "places where carry is allowed",
+        "guns on private or religious property"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:05:30.175Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8771524fcf649c031cbd06bd2fbb3eff567f365c661bd9378e0bad637b78dc9f",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2021/1301",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "FL-HM-1301-2021",
+      "act": "sponsor",
+      "note": "Listed among the sponsors of House Memorial 1301, which states the Legislature's view that federal proposals to restrict gun rights of law-abiding citizens are unconstitutional and that the state would use its lawful power to resist federal gun-control measures. It died in Senate Rules on 2021-04-30.",
+      "subjects": [
+        "Second Amendment",
+        "state resistance to federal gun-control measures"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:05:30.175Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "guns on private or religious property",
+        "guns carried by trained school staff and medical personnel",
+        "state resistance to federal gun-control measures",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "minimum age to buy a gun",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the campaign site https://electsmith28.com (read the About page, site search for gun, firearm and second amendment, and the 2019, 2021, 2023, 2025 and 2026 session pages)",
+        "https://www.flsenate.gov/Session/Bill/2021/1301 (HM 1301 sponsor list)",
+        "https://www.flsenate.gov/Session/Bill/2023/543 (bill summary)",
+        "web search: name plus gun and Second Amendment words (found no interviews, floor speeches or statements by him on the subject)",
+        "he is term-limited, with his term ending in 2026, so no 2026 ballot race to check; sitting House member for District 38",
+        "blocked: https://ballotpedia.org/David_Smith_(Florida) (empty response)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4693 (page returned no member content)",
+        "not reviewed: ontheissues.org, vote411 (lead-only sites)"
+      ],
+      "found": 4,
+      "at": "2026-11-15T02:05:30.175Z",
+      "by": "source-collector"
+    }
+  ]
 }

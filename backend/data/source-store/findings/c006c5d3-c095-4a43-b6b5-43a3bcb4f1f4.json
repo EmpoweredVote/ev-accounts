@@ -448,5 +448,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "minimum age to buy a gun",
+        "Second Amendment and gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate member page https://www.flsenate.gov/Senators/s6 (confirms Senator, District 6, 2026-2028 term; lists only bill S 16, relief of a claimant; no media, nothing on the subject)",
+        "no campaign site found; none reviewed",
+        "blocked: https://ballotpedia.org/Jennifer_Bradley (fetch returned empty page)",
+        "news search on name plus gun, firearm, Second Amendment, concealed carry: nothing on the subject in her own words; results were about other legislators",
+        "Senate sponsored-bill list: only S 16 shown on member page; nothing on the subject beyond the votes and SB 498 (2021) sponsorship already on file",
+        "ontheissues.org not reviewed (lead-only source)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:15:53.950Z",
+      "by": "source-collector"
+    }
+  ]
 }

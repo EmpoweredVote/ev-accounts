@@ -626,7 +626,127 @@
           "sha256": "1f565c25910f93d1ee26080b0a6f9d8946f95b71f8450bdb7701b5e7166896e1"
         }
       }
+    },
+    {
+      "id": "5c816e2e15628ce08bead43c8648ce2850472e38088bb7e777122acd08ae88ab",
+      "kind": "own-words",
+      "url": "https://ccfj.net/LEG26/LEGSESS26JCPorrasBills.html",
+      "date": "2026-01-16",
+      "date_precision": "day",
+      "passage": "Essentially, instead of Judges having full discretion to remove somebody’s right to have a firearm, it would allow the defendant to defend against somebody proponing that they are either violent or crazy,",
+      "note": "Quoted in a Florida Politics story (reposted on ccfj.net) describing his planned bill to limit court removal of guns under red-flag law: the person would get a chance to defend the case in court.",
+      "subjects": [
+        "red-flag orders",
+        "court removal of guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:09:41.117Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bfef6019b21ea428245d9c17c52bd91f1e301465ef04491d78140cedad4bd041",
+      "kind": "own-words",
+      "url": "https://ccfj.net/LEG26/LEGSESS26JCPorrasBills.html",
+      "date": "2026-01-16",
+      "date_precision": "day",
+      "passage": "Despite all the great victories we have had with the Second Amendment, there are still some very bad laws on the books. And if we can make a bad law less bad, it’s our job to do that.",
+      "note": "Quoted in a Florida Politics story (reposted on ccfj.net) on scaling back red-flag laws passed after Parkland.",
+      "subjects": [
+        "red-flag orders",
+        "Second Amendment general statement",
+        "repeal or loosen gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:09:41.117Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5fdba841309db1f9df917561f7ad547db7fec7d4d022df244e91e97f53a57a1",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2026/1455",
+      "date": "2026-03-13",
+      "date_precision": "day",
+      "instrument_id": "FL-H-1455-2026",
+      "act": "sponsor",
+      "note": "HB 1455, Representation by Counsel in Hearings on Petitions for Risk Protection Orders: gives the respondent a right to an attorney, with appointed counsel if indigent. The bill's page lists Porras as sponsor; it died in the Justice Budget Subcommittee (date shown is the death date from a search summary, not read on the page).",
+      "subjects": [
+        "red-flag orders",
+        "right to a lawyer in risk protection order hearings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:09:41.117Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e8e1cc1b5d13752b27bdd874cd3897ce2e23e3a73eecab2212dfd2d46eeea806",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2026/1455",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "FL-H-1455-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of FL-H-1455-2026 (sponsor list (prime / co-sponsor)): H1455 (2026 Regular): Representation by Counsel in Hearings on Petitions for Risk Protection Orders.",
+      "subjects": [
+        "right to appointed counsel for people facing a risk protection order",
+        "public defender may represent risk protection order respondents",
+        "$1,000 cap on appointed private counsel fees in these cases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2026-01-09; official copy, https://www.flsenate.gov/Session/Bill/2026/1455/BillText/Filed/PDF (LegiScan doc 3304812))",
+        "fetched_at": "2026-11-15T02:43:36.063765Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-1455-2026.introduced.pdf",
+          "sha256": "af60c43b0e57702f58e8c8624c85955b4e7394fb22469bd72023a2a07b5a733e"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red-flag orders and court removal of guns",
+        "right to a lawyer in risk protection order hearings",
+        "minimum age to buy a long gun",
+        "Second Amendment general statements",
+        "carry permits and permitless carry",
+        "bans on assault-style guns and magazines",
+        "background checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "a state-news preview story reposted on ccfj.net, dated 2026-01-16 (read in full)",
+        "flsenate.gov bill page for HB 1455 (2026)",
+        "Ballotpedia: fetched, no usable text on the subject returned",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4778 (request rejected)",
+        "not reviewed: official and campaign site (no address found in searches)",
+        "web news search on name plus gun words: found a gun-age story and a red-flag story, neither with a direct Porras quote",
+        "status not confirmed: no page checked showing the 2026 general-election result for House District 119"
+      ],
+      "found": 3,
+      "at": "2026-11-15T02:09:41.117Z",
+      "by": "source-collector"
+    }
+  ]
 }

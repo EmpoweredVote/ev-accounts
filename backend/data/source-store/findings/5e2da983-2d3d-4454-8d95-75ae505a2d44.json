@@ -63,5 +63,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "waiting periods and minimum age",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "ghost guns",
+        "repeal of gun laws",
+        "general Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "In scope: sitting state representative for House District 90, won the Dec 2025 special election and running for re-election (https://roblongforflorida.com/ and https://www.wptv.com/news/region-s-palm-beach-county/delray-beach/former-delray-beach-vice-mayor-rob-long-wins-special-election-for-florida-house-district-90)",
+        "On the Record (0 meetings)",
+        "campaign site https://roblongforflorida.com/ (read; home page lists priorities, no gun or firearm text)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=5013 (request rejected)",
+        "blocked: https://www.flsenate.gov/Session/Bill/2026/133 (no usable page text for sponsorship check)",
+        "Ballotpedia: no page found at guessed person URLs; not reviewed: https://ballotpedia.org/Florida House of Representatives District 90",
+        "news searches (2): no story tying him to firearms; pages read for the subject words found nothing: floridapolitics.com launch story, floridapolitics.com special election story, WLRN win story, outsfl.com profile",
+        "nothing on the subject in own words; two votes already on file were not collected again"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:10:32.153Z",
+      "by": "source-collector"
+    }
+  ]
 }

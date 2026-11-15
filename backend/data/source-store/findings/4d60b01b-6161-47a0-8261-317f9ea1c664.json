@@ -270,7 +270,56 @@
           "sha256": "a10e6db71dacfb3f4dbdf59fd42ed87889f894710e84c53f260ebebd0b52e342"
         }
       }
+    },
+    {
+      "id": "91309871b15e117a54d355e30e1b5e2eb394872836530992c51686a8558f082b",
+      "kind": "own-words",
+      "url": "https://ocalagazette.com/?p=85489",
+      "date": "2024-07-02",
+      "date_precision": "day",
+      "passage": "“I have a concealed carry permit; I had to go through training and learn the rules,’’ he said. “I think that training has served me well.”",
+      "note": "Direct quote in an Ocala Gazette campaign profile. He says he holds a concealed carry permit and values the training. The same story reports, in the writer's words, that he supports the right to carry a gun but thinks there should be limits on where, such as schools, and sees logic in barring people guilty of crimes from owning a firearm.",
+      "subjects": [
+        "carry a gun with a permit",
+        "places where guns may be carried",
+        "keeping guns from people convicted of crimes",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:09:05.380Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun with a permit",
+        "places where guns may be carried",
+        "keeping guns from people convicted of crimes",
+        "Second Amendment",
+        "bills on firearms"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 meetings)",
+        "still in scope: a News 6 voter guide dated 2026-10-16 names him as the sitting District 27 representative on the 2026 general-election ballot",
+        "campaign site https://voterichardgentry.com/ (fetched; no gun text found on the page)",
+        "blocked: https://ballotpedia.org/Richard_Gentry (page returned empty)",
+        "not reviewed: https://www.myfloridahouse.gov member page (the member id I tried returned a different member; official page not read)",
+        "legislature bill pages: web search found no firearm bill sponsored by him; nothing on the subject beyond the nine votes on file; full sponsor list on flsenate.gov not read",
+        "https://floridapolitics.com/archives/690120-richard-gentry-stephen-shives-beckie-sirolli-fight-for-different-conservative-visions-in-hd-27 (says his campaign site backs gun rights; no quote)",
+        "https://www.clickorlando.com/voters-guide/2026/10/16/2026-voters-guide-florida-house-district-27/ (he did not answer the survey; nothing on guns)",
+        "one news search on name plus firearm words: found only the 2024 news story saved here"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:09:05.380Z",
+      "by": "source-collector"
+    }
+  ]
 }

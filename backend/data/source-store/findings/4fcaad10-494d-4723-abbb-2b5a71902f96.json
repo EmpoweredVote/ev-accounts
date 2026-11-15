@@ -621,5 +621,57 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "minimum age to buy a gun",
+        "general statement on gun rights"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 unlinked name matches)",
+        "blocked: https://ballotpedia.org/Kimberly_Daniels_(Florida) (fetch returned an empty page)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4776 (redirects to the House home page; member page not reached)",
+        "not reviewed: https://www.flhouse.gov/representatives (no member text returned)",
+        "https://www.flsenate.gov/Session/Bill/2019/403 (bill page fetched; lists her among the sponsors, nothing new beyond the votes already on file)",
+        "web search on her name plus gun, firearm, Second Amendment and concealed carry words: no result quotes or mentions her on the subject; a search summary says Ballotpedia lists her in the Nov 3 2026 general election for House District 14, not confirmed from a page I read",
+        "her campaign site: not found in search results",
+        "nothing on the subject: news search results"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:09:24.314Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun-buying age",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://en.wikipedia.org/wiki/Kimberly_Daniels (confirms sitting member of House District 14, reelected 2024; nothing on guns in her own words)",
+        "blocked: https://www.myfloridahouse.gov/members/Kimberly-Daniels",
+        "blocked: https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4655",
+        "blocked: https://ballotpedia.org/Kimberly_Daniels",
+        "https://www.flsenate.gov/Session/Bill/2019/403 (bill page lists her among names; votes already on file)",
+        "news search on her name plus gun words (two searches): no story quoting her on the subject",
+        "campaign site: not reviewed, none found",
+        "not reviewed: ontheissues.org, vote411"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:24:02.718Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -1337,7 +1337,102 @@
           "sha256": "614f944365a18bcf384cf1d3b82d449280bc23ac43aebbaa116bf6e0a3bb9b01"
         }
       }
+    },
+    {
+      "id": "489b52cde7091f5d4ca1e2c363796a4acd8ceecd87f6736f4ba49811f625032a",
+      "kind": "own-words",
+      "url": "https://annaforflorida.com/?p=15950",
+      "date": "2025-03-14",
+      "date_precision": "day",
+      "passage": "Today’s ruling is a victory for common-sense gun safety and for the families of Parkland who fought tirelessly to pass these reforms. The court affirmed what we have long known—limiting access to firearms for those under 21 is both constitutional and necessary to protect our communities.",
+      "note": "Her statement on a federal appeals court upholding Florida's under-21 gun purchase limit; she also says lawmakers should not roll back the law (HB 759 would repeal it).",
+      "subjects": [
+        "minimum age to buy a gun",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:25:03.181Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "338b74999bba525772632eb1050a1bf5d162722afb0ad6033e6e62167a6f70b7",
+      "kind": "own-words",
+      "url": "https://annaforflorida.com/?p=13178",
+      "date": "2023-03-26",
+      "date_precision": "day",
+      "passage": "I proposed amendments that would have allowed people struggling with suicidal ideation to temporarily waive their firearm rights and to create a statewide community task force to study the true root causes of gun violence and other crime.",
+      "note": "Her newsletter on HB 543, which she calls permitless carry; she describes it as letting anyone carry a gun without training or a license, and lists her failed amendments, including one to bar guns in legislative meetings.",
+      "subjects": [
+        "carry a gun without a permit",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:25:03.181Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "permitless carry",
+        "minimum age to buy a gun",
+        "check every gun buyer",
+        "red-flag orders",
+        "general statements on gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "blocked: https://annaforflorida.com/ (campaign site, HTTP 406 to the fetch)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4655 (member page returned an empty body)",
+        "blocked: https://floridianpress.com/2023/10/eskamani-doubles-down-on-gun-restrictions-files-bill-to-ban-ar-15s/ (HTTP 403; a search lead says it covers her October 2023 bill to ban assault-style guns, not read)",
+        "blocked: https://www.newsfromthestates.com/node/168001 (HTTP 403; a lead on her floor debate against permitless carry, not read)",
+        "not reviewed: https://www.wptv.com/news/state/florida-house-panel-revives-push-to-lower-gun-buying-age-from-21-to-18 (fetched, her quote not present in the page text)",
+        "not reviewed: https://www.clickorlando.com/news/2025/11/20/florida-house-aims-again-to-lower-gun-buying-age/ (fetched, her quote not present in the page text)",
+        "https://www.wusf.org/politics-issues/2025-03-27/florida-house-approves-measure-lower-gun-ownership-age (fetched, does not name her)",
+        "https://en.wikipedia.org/wiki/Anna_Eskamani (confirms the office; general background only, not saved)",
+        "Ballotpedia: not reviewed",
+        "web search (2 runs): leads only, no passage verified from a page's own text"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:21:14.318Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "under-21 gun purchase limit",
+        "carry a gun without a permit",
+        "suicide-risk temporary gun waiver",
+        "ban on assault-style guns",
+        "guns in legislative meetings"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://annaforflorida.com (two posts read)",
+        "blocked: https://www.flhouse.gov/ (member page redirected to the home page)",
+        "blocked: https://floridianpress.com/2023/10/eskamani-doubles-down-on-gun-restrictions-files-bill-to-ban-ar-15s/ (403)",
+        "not reviewed: https://www.voteanna.com (parked domain, not hers)",
+        "news search on name plus gun words (leads only; AR-15 bill story could not be fetched)",
+        "Everytown advocacy-day release 2023-03-09 (fetched; quotes not clearly hers, nothing saved)",
+        "Ballotpedia not reviewed; bill pages on flsenate.gov not re-checked (votes already on file)"
+      ],
+      "found": 2,
+      "at": "2026-11-15T02:25:03.181Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -241,5 +241,35 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "minimum age to buy a gun",
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "ghost guns",
+        "repeal of gun laws",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "official House member page https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4924&LegislativeTermId=92 (read; confirms District 89, Palm Beach County; nothing on the subject)",
+        "House member list https://www.flhouse.gov/Sections/Representatives/representatives.aspx (confirms sitting member, District 89)",
+        "campaign site: not found by search",
+        "Ballotpedia https://ballotpedia.org/Debra_Tendrich (page returned no readable text; not reviewed)",
+        "https://www.flsenate.gov/Session/Bills/2026 bill search by sponsor (filter did not return her bills; sponsorships on the subject not confirmed; not reviewed in full)",
+        "news search on her name plus gun and firearm words (two searches): coverage of the long-gun age bill HB 133 and related bills did not quote her; nothing on the subject",
+        "https://gunsensevoter.org/candidates/f0b0ff0c20b09f2776c8d0e3a6fca2edf2a643016831c804fbe65f37553f675b (an advocacy group's candidate listing for 2024; no statement or passage from her; nothing saved)",
+        "BallotReady and a news search confirm she is the sitting District 89 member seeking re-election in the 2026 general election; not fetched directly"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:06:58.679Z",
+      "by": "source-collector"
+    }
+  ]
 }

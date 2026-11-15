@@ -566,5 +566,63 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum age to buy",
+        "red-flag orders",
+        "ghost guns and federal gun rules",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidates by name)",
+        "Ballotpedia https://ballotpedia.org/Paula_Stark (fetch returned empty page; search summary only, not cited)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4863 (no usable page returned)",
+        "blocked: https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4863 (no usable page returned)",
+        "https://www.paulastark.com is an artist's site, a different person with the same name; not used",
+        "news searches on name plus gun, firearm, Second Amendment, concealed carry: nothing quoting her on the subject",
+        "news stories on her ballot status (clickorlando, cfpublic) read for scope only",
+        "not reviewed: https://www.flsenate.gov bill-sponsor pages (sponsor search returned no firearm bills; no sponsorship confirmed)",
+        "not reviewed: campaign site (none found for this person)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:22:39.638Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum age to buy",
+        "red-flag orders",
+        "ghost guns and federal gun rules",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "status: sitting House member for District 47 until the term ends; not on the 2026 general-election ballot (missed the June 12 2026 qualifying deadline; court rejected her suit to be added on 2026-07-08)",
+        "On the Record (0 appearances, 0 candidates by name)",
+        "Ballotpedia https://ballotpedia.org/Paula_Stark (fetch returned empty page; search summary only, not cited)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4863 (no usable page returned)",
+        "blocked: https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4863 (no usable page returned)",
+        "https://www.paulastark.com is an artist's site, a different person with the same name; not used",
+        "news searches on name plus gun, firearm, Second Amendment, concealed carry: nothing quoting her on the subject",
+        "news stories on her ballot status (clickorlando, cfpublic) read for scope only",
+        "not reviewed: https://www.flsenate.gov bill-sponsor pages (sponsor search returned no firearm bills; no sponsorship confirmed)",
+        "not reviewed: campaign site (none found for this person)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:23:24.805Z",
+      "by": "source-collector"
+    }
+  ]
 }

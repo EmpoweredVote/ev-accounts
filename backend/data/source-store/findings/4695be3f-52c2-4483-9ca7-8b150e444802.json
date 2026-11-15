@@ -958,7 +958,77 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "c1d4e01d0e9d0b63ba1680fce3a80e6c805053b824fe7e616971912b8c23597e",
+      "kind": "own-words",
+      "url": "https://ricksblog.biz/?p=98560",
+      "date": "2025-09-26",
+      "date_precision": "day",
+      "passage": "I’m happy about this ruling. I think this ruling is common sense. It goes in line with my understanding of the Second Amendment.",
+      "note": "Quoted in a local blog's podcast write-up (published 2025-09-26) on an appeals court decision lifting Florida's ban on open carry. He says he welcomes the ruling.",
+      "subjects": [
+        "carry a gun openly",
+        "Second Amendment general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:08:43.715Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6d51eec636424324831bdec6d0bf002f8c9dc2ca37de6cade2614ccad117c706",
+      "kind": "own-words",
+      "url": "https://ricksblog.biz/?p=98560",
+      "date": "2025-09-26",
+      "date_precision": "day",
+      "passage": "I’d be hesitant to do anything that would remotely expand restrictions on the caring and use of firearms.",
+      "note": "Quoted in the same local blog podcast write-up, on whether lawmakers should change the law after the open-carry ruling. He says he would be reluctant to add restrictions on carrying and using firearms.",
+      "subjects": [
+        "carry a gun openly",
+        "fewer limits on carrying"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:08:43.715Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun openly",
+        "carry permits and concealed carry",
+        "Second Amendment general statement",
+        "red-flag orders",
+        "gun buyer age",
+        "assault-style gun ban",
+        "background checks"
+      ],
+      "places": [
+        "status: sitting state House member for District 2 (Escambia and Santa Rosa); an encyclopedia page lists his term as ending November 3, 2026, with a successor named, so he is not on the 2026 ballot for this seat",
+        "On the Record (0 meetings)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4695 (redirects to the House site, whose member page returned a not-found error)",
+        "not reviewed: https://ballotpedia.org/Alex_Andrade (page came back empty)",
+        "https://www.flsenate.gov 2025 House bill list page 1 (no firearm bill filed by him on that page)",
+        "news search on his name plus gun words (one local podcast write-up with his quotes; a lower-gun-buying-age news search showed only other members as sponsor)",
+        "a local news blog story from February 2025 (nothing on the subject)",
+        "not reviewed: official campaign site and a Florida Politics story on his 2020 goals (not fetched)",
+        "nothing on the subject: no standalone issue page found"
+      ],
+      "found": 2,
+      "at": "2026-11-15T02:08:43.715Z",
+      "by": "source-collector"
+    }
+  ]
 }

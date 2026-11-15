@@ -699,7 +699,121 @@
           "sha256": "daf90f26bb0ef3d49445aecdef1349adb3454799a40afb1fa1e7684413b4e3a4"
         }
       }
+    },
+    {
+      "id": "92f1d019a1ce4572d0b9c940828cd7265f710f5f666e4605135c58ab51efdb90",
+      "kind": "own-words",
+      "url": "https://www.wlrn.org/news/2020-01-23/florida-gop-chairman-shuns-bill-to-expand-gun-background-checks-amid-conservative-backlash",
+      "date": "2020-01-23",
+      "date_precision": "day",
+      "passage": "“I am a solid no,” Gruters said. “We’ll see what happens, but in its present form, I would expect it will have a very hard time moving through the process.”",
+      "note": "Quoted in a WLRN news story about a Senate bill to expand gun background checks, which the Senate president supported. He says he opposes it in its current form and expects it to struggle.",
+      "subjects": [
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:14:08.428Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c4e15aba08b2142581662af004257f8cc5662bde3157c1a42666e93baf047492",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/410607-joe-gruters-carries-guns-in-churches-bill-through-second-senate-committee-stop",
+      "date": "2021-03-09",
+      "date_precision": "day",
+      "passage": "“The property owner will be able to make any type of decision on policies and time frames as they so choose,” he said.",
+      "note": "Quoted in a Florida Politics story on his SB 498 clearing a second Senate committee. He says church property owners would still decide their own gun policies.",
+      "subjects": [
+        "guns at churches and schools",
+        "carry a gun at a place of worship"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:14:08.428Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "55b2d03c845184050b1365d9a9beed53d17a43f41f9b454c78628f94e5be3169",
+      "kind": "own-words",
+      "url": "https://www.mysuncoast.com/2021/04/27/lawmakers-give-boost-guns-church/",
+      "date": "2021-04-27",
+      "date_precision": "day",
+      "passage": "“This is about safety,” Gruters said. “We saw what happened in Texas when a church, unfortunately, was the target. Six seconds it took them to secure that location. This gives schools the needed safety they need. It gives churches the additional security that they need. This gives the property owners the ultimate responsibility to make the decision that’s best for them.”",
+      "note": "Quoted in a local TV news story on Senate floor debate of his bill on carrying guns at churches that share grounds with schools. He gives safety and owner choice as his reasons.",
+      "subjects": [
+        "guns at churches and schools",
+        "carry a gun at a place of worship"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:14:08.428Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a19166ceaabb46f4f862b0dc7e008d5a9c907b534b1097af0d7fe812ee39a574",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2021/1630",
+      "date": "2021-02-24",
+      "date_precision": "day",
+      "instrument_id": "FL-SM-1630-2021",
+      "act": "sponsor",
+      "note": "Co-introducer of a memorial saying federal proposals to restrict the right to keep and bear arms violate the U.S. Constitution, and urging the Legislature to protect Second Amendment rights. It cleared the Judiciary Committee 7-4 and died in Rules.",
+      "subjects": [
+        "federal limits on gun rights",
+        "Second Amendment general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:14:08.428Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "guns at churches and schools",
+        "federal limits on gun rights",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "status: still in scope; sitting state senator for District 22 (the Senate page for that seat now lists his successor for the 2026-2028 term, and a news story says he is term-limited and not seeking re-election)",
+        "On the Record (0 meetings)",
+        "blocked: https://joegruters.com/ (site security block)",
+        "blocked: https://ballotpedia.org/Joe_Gruters (empty response)",
+        "blocked: https://floridianpress.com/2021/10/gop-officials-embrace-constitutional-carry-in-florida/ (403)",
+        "blocked: https://floridianpress.com/2025/02/sen-joe-gruters-files-bill-allowing-judges-to-conceal-carry (403)",
+        "blocked: https://floridianpress.com/2021/04/senate-passes-gruters-2nd-amendment-loophole-bill/ (403)",
+        "Florida Senate bill page for SM 1630 (2021), read",
+        "Florida Senate member page for his seat (shows a different senator now; his own page returned an error)",
+        "news searches on his name plus gun, Second Amendment, concealed carry and permitless carry; news stories read: Florida Politics (2021-03-09), WLRN (2020-01-23), WINK/MySuncoast (2021-04-27)",
+        "nothing on the subject found for assault-style gun bans, red-flag orders, ghost guns or the pistol-brace rule"
+      ],
+      "found": 4,
+      "at": "2026-11-15T02:14:08.428Z",
+      "by": "source-collector"
+    }
+  ]
 }

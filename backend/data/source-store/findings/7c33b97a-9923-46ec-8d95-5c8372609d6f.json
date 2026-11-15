@@ -715,5 +715,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment",
+        "gun rights",
+        "lowering the gun-buying age",
+        "AI detection of concealed guns",
+        "carry permits",
+        "red-flag orders",
+        "assault-style weapons",
+        "background checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.flsenate.gov/Session/Bill/2025/491 (fetched; lists Borrero as a sponsor of CS/HB 491, already on file)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4812 (request rejected)",
+        "blocked: https://ballotpedia.org/David_Borrero (empty response)",
+        "not reviewed: official site and campaign site (no address found in search results; no member page could be read)",
+        "https://en.wikipedia.org/wiki/David_Borrero (fetched; confirms a sitting Florida House member, nothing on the subject; ballot status for 2026 not confirmed on a page)",
+        "web search: name plus Second Amendment/gun; web search: name plus CS/HB 491 (results name him only as a bill co-introducer, no quotes from him)",
+        "news search: no story quoting Borrero on guns"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:20:14.358Z",
+      "by": "source-collector"
+    }
+  ]
 }

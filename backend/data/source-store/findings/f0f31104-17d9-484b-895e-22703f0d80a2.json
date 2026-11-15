@@ -517,7 +517,57 @@
           "sha256": "f7f5db1a191f09611228049ed0fd0237c4ed1a7917d0a9dcc51d8f57e48a6e00"
         }
       }
+    },
+    {
+      "id": "f7f2b2420b2c303d9096aa6c8df5772235818a80832a3d3a2239783b9a8e2dba",
+      "kind": "own-words",
+      "url": "https://www.shootingnewsweekly.com/open-carry/senator-kathleen-passidomo-is-the-gop-face-of-gun-control-in-florida",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "passage": "The sheriffs who I deeply respect, who are in the business, who understand the issues, do not support open carry in the state of Florida, they support permitless carry,",
+      "note": "Direct quote of her, given in a gun-news outlet's opinion piece dated 2024-01-30 (which says she said it 'last year', so the words are likely from 2023). She explains why she did not move open-carry legislation: she says the sheriffs back permitless carry but not open carry.",
+      "subjects": [
+        "open carry",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:20:14.952Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "open carry",
+        "gun rights and the Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "status: term-limited, not on the 2026 ballot; her Senate District 28 seat went to a successor in the November 2026 election (reported by news search; the Senate's 2026-2028 roster page for the seat lists the successor). Still searched her record as the brief calls her a sitting official",
+        "On the Record (0 appearances)",
+        "https://www.flsenate.gov/Senators/S28 (read; now shows the successor, not her own page)",
+        "https://www.flsenate.gov/Senators/S23 and S27 (read; not her pages)",
+        "https://en.wikipedia.org/wiki/Kathleen_Passidomo (read; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Kathleen_Passidomo (empty response)",
+        "not reviewed: her own Senate member page (no working address found) and campaign site",
+        "not reviewed: https://thecapitolist.com/senate-president-says-no-to-open-carry-policy/ (page returned no readable text)",
+        "not reviewed: https://www.thetruthaboutguns.com/florida-senate-president-makes-it-clear-she-doesnt-intend-to-add-open-carry-to-the-senate-permitless-carry-bill/ (page returned no readable text)",
+        "news search on her name plus gun words (2 searches); one article read in full",
+        "bill sponsorship pages on www.flsenate.gov: not reviewed beyond the votes already on file"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:20:14.952Z",
+      "by": "source-collector"
+    }
+  ]
 }

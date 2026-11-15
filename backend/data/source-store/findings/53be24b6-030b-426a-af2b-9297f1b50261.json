@@ -597,7 +597,55 @@
           "sha256": "228b6f0f8e8e59df4becf29c8d43a3f833bed5f9193e0d1438df5c1b52e42bd0"
         }
       }
+    },
+    {
+      "id": "dc3f25143f633f9e682e16f912f869e2c315511f4dbef662a1288e47df1c0a55",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2026/1748",
+      "date": "2026-01-09",
+      "date_precision": "day",
+      "instrument_id": "FL-S-1748-2026",
+      "act": "sponsor",
+      "note": "Filed SB 1748 (Evidence in Civil Actions Relating to Firearms; also titled Products Liability for Firearms). It would bar product-defect suits against gun makers based only on the absence of optional features such as a safety, where federal law does not require them. Cleared Senate Judiciary; died in Rules 2026-03-13.",
+      "subjects": [
+        "gun maker liability for missing optional features"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:09:20.594Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun maker liability",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "in scope: Senate member page (https://www.flsenate.gov/Senators/s2) names him for District 2 in the 2026-2028 term, reelected",
+        "On the Record (0 meetings)",
+        "official Senate member page read; no subject statements on it",
+        "campaign site: not found",
+        "blocked: https://ballotpedia.org/Jay_Trumbull (empty response)",
+        "blocked: https://floridaphoenix.com/2026/02/11/senate-committee-hears-arguments-on-legal-protections-for-sig-sauer/ (no text returned to curl; not quoted)",
+        "legislature bill page for SB 1748 (2026) read: sponsor, died in Rules 2026-03-13",
+        "news search on name plus firearm words: one blog item read (https://www.joemygod.com/2026/02/florida-bill-shields-gunmakers-from-liability-lawsuits/), names him as author of SB 1748; no direct quote of him",
+        "not reviewed: other 2018-2025 sponsorships beyond those already on file"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:09:20.594Z",
+      "by": "source-collector"
+    }
+  ]
 }

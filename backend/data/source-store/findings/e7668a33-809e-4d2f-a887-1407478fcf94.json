@@ -243,5 +243,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, no meetings)",
+        "https://en.wikipedia.org/wiki/Michael_Owen_(Florida_politician) (read: names him as sitting House District 70 member since Nov 2024; nothing on the subject)",
+        "campaign site https://owenforflorida.com (read home page; only a sheriff's-office public-safety item, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Michael_Owen_(Florida) (empty response)",
+        "blocked: https://www.myfloridahouse.gov member page (guessed member id returned nothing usable; flhouse.gov page was a 404)",
+        "blocked: https://floridapolitics.com/?p=698728 (403)",
+        "https://www.flsenate.gov/Session/Bill/2025/1470 (page loads; sponsorship search not completed, no sponsorships on the subject found)",
+        "two web searches on his name plus gun/firearm/Second Amendment words: nothing about him on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:18:14.010Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -736,7 +736,76 @@
           "sha256": "07766869185124497bae492e8015ff37c1f867f57e1606c86bb7953885db12d2"
         }
       }
+    },
+    {
+      "id": "61f85e9f72fa850f593e5ed857b17563670adb66932d598134a9da762b63d47d",
+      "kind": "own-words",
+      "url": "https://annaforflorida.com/2023/01/31/orange-county-house-members-respond-to-permitless-carry/",
+      "date": "2023-01-31",
+      "date_precision": "day",
+      "passage": "HB543 is an alarming permitless carry bill that would only exacerbate crime and violence. If passed, this legislation would allow anyone to openly carry guns in our communities, without any sort of background check. You can surely count me as a strong no.",
+      "note": "Statement issued in her name, posted on a House colleague's site, opposing HB 543 (carry a concealed gun without a permit) and saying it would allow carrying without a background check.",
+      "subjects": [
+        "carry a gun without a permit",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:21:02.132Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "50ea3a6b8e59e52e802b77417c2e977c23c41138c7b1a83a7a7ddeb005a0d41c",
+      "kind": "own-words",
+      "url": "https://www.wptv.com/news/state/florida-house-panel-revives-push-to-lower-gun-buying-age-from-21-to-18",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "passage": "Lowering the minimum age to purchase a firearm from 21 to 18 is dangerous. We do not have to imagine the consequences. Florida has already lived them… Remember Parkland in 2018 a 19-year-old armed with a legally purchased weapon took 17 innocent lives, 17 families shattered. That tragedy is exactly why Florida raised the age to 21 in a bipartisan effort… second look at the FSU shooting in Tallahassee just this year. The shooter was 20-years-old, once again, demonstrating that individuals under 21 can and do pose lethal risk when firearms are too easily accessible.",
+      "note": "Quoted by WPTV from her debate remarks in the House Criminal Justice Subcommittee on HB 133 (lower the long-gun purchase age from 21 to 18). She also asked the sponsor 'What problem is this bill solving?'",
+      "subjects": [
+        "minimum age to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:21:02.132Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "general statement on gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidates)",
+        "one web search on her name plus gun words; a search result listed Ballotpedia pages that say she is seeking re-election in the 2026 general election (lead only; the pages came back blank when fetched)",
+        "blocked: https://ballotpedia.org/Johanna_Lopez (fetched blank)",
+        "blocked: https://ballotpedia.org/Johanna_L%C3%B3pez (fetched blank, curl returned nothing)",
+        "blocked: https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4824 (404; her own member page not read)",
+        "not reviewed: https://nhcsl.org/members/biography/rep_johanna_lopez/",
+        "not reviewed: her campaign site (not located)",
+        "not reviewed: www.flsenate.gov bill pages (votes and sponsorships already on file)",
+        "https://www.local10.com/news/politics/2026/01/15/florida-house-votes-to-roll-back-gun-purchase-age-to-18-despite-plea-from-parkland-lawmaker (fetch summary did not show her words)",
+        "https://mynews13.com/fl/orlando/news/2026/01/15/florida-house-gun-age (does not mention her)",
+        "a 2023 campaign-blog statement from a House colleague's office quoting her on HB 543 (read via curl)",
+        "WPTV news story on the 2025-11-19 subcommittee hearing on HB 133 (read via curl)"
+      ],
+      "found": 2,
+      "at": "2026-11-15T02:21:02.132Z",
+      "by": "source-collector"
+    }
+  ]
 }

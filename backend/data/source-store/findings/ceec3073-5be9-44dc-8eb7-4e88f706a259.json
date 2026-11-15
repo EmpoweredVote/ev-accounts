@@ -211,7 +211,137 @@
           "sha256": "e244bf460fbf570894a394120ce5c31a0530e5955e31b27541ff8d5f66a291b1"
         }
       }
+    },
+    {
+      "id": "cb181cdc4ed53100063cd02d6b2e430aa333c112734955a3eef31629bc50f63c",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/488221-wilton-simpson-says-hed-vote-for-constitutional-carry-bill",
+      "date": "2022-01-19",
+      "date_precision": "day",
+      "passage": "If a constitutional carry bill gets to the Senate floor, and it’s heard on the Senate floor, I would vote yes. I would support that on the floor,",
+      "note": "News story quoting him, as Senate President, saying he would vote for a bill ending the permit requirement to carry if it reached the floor.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:18:57.654Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "68b2958396faa5a2e1001dc1c7290751ba8cd0f7e064eb3ebfa9c72dd2ab4338",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/510795-nra-endorses-wilton-simpson-for-agriculture-commissioner",
+      "date": "2022-03-23",
+      "date_precision": "day",
+      "passage": "Our right to bear arms is foundational to who we are as a nation and as a free people. This year, 14 gun control bills were filed in the Florida Senate and I made sure each of them never saw the light of day. It’s easy for some folks to talk about defending the Second Amendment, but I’ve actually done the work.",
+      "note": "News story quoting his campaign statement: he says he kept 14 gun control bills from getting a hearing in the Senate.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "gun control bills blocked in the Senate"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:18:57.654Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "073abeb8f40fdda5de8d76d475a96c424af7ba56dae6152a23d0e6cd9a3b3ebe",
+      "kind": "own-words",
+      "url": "https://www.aroundosceola.com/news-statewide-news/ag-commish-simpson-those-who-want-carry-gun-must-wait-3-days",
+      "date": "2023-08-18",
+      "date_precision": "day",
+      "passage": "But that’s a short-term phenomenon, if you do not get the concealed carry permit, you have to wait three days to buy a gun,",
+      "note": "Quoted from a News Service of Florida podcast: he expects only some carriers to skip the permit because those without one wait three days to buy a gun; also says carry without a photo ID or in some buildings is still unlawful.",
+      "subjects": [
+        "carry a gun without a permit",
+        "concealed carry permits and wait to buy a handgun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:18:57.654Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e5e8db42272633ece8336d6fca002c0c05e201d051eaef142f923443c07d4dea",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/camedwards/2026/05/23/floridas-pro-2a-ag-commissioner-says-carry-license-backlog-is-cleared-n1232619",
+      "date": "2026-05-21",
+      "date_precision": "day",
+      "passage": "If you apply today for a concealed carry, if you don't have it in less than a week, you should be calling us because we get them out very quickly.",
+      "note": "Remarks at a Lee County club meeting, quoted by a gun-news site: he says the carry-licence backlog he inherited is cleared and new applications are processed within a week.",
+      "subjects": [
+        "concealed carry permits and wait to buy a handgun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:18:57.654Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ba24019c3cab1fb90d2b34c0c96805a62dc2ff36ddb7d913a16b6731f7fcde0b",
+      "kind": "own-words",
+      "url": "https://bearingarms.com/camedwards/2026/05/23/floridas-pro-2a-ag-commissioner-says-carry-license-backlog-is-cleared-n1232619",
+      "date": "2026-05-21",
+      "date_precision": "day",
+      "passage": "One of the biggest benefits to us, and I've always had a concealed carry, is that you don't have to wait three days to buy a handgun. That's a big deal.",
+      "note": "Same remarks: he names skipping the three-day handgun wait and reciprocity with other states as reasons to still hold a carry licence.",
+      "subjects": [
+        "concealed carry permits and wait to buy a handgun",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:18:57.654Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "concealed carry permits and wait to buy a handgun",
+        "gun rights and the Second Amendment",
+        "gun control bills blocked in the Senate",
+        "red-flag orders",
+        "tracking of gun purchases"
+      ],
+      "places": [
+        "status: in scope; won re-election as Agriculture Commissioner on 2026-11-03 (https://www.wlrn.org/light/government-politics/2026-11-03/wilton-simpson-florida-agriculture-commissioner)",
+        "On the Record (0 appearances for this person)",
+        "official agency licensing page (https://www.fdacs.gov/Divisions-Offices/Licensing): read; notes the carry-permit minimum age now 18, an agency notice, not saved as his words",
+        "news stories and a podcast write-up (floridapolitics.com, aroundosceola.com, bearingarms.com): read, passages saved",
+        "blocked: https://thecapitolist.com/wilton-simpson-rolls-out-legislation-to-protect-floridians-firearm-ammunition-purchasing-data/ (403 on direct fetch; Florida Arms and Ammo Act release not quoted)",
+        "blocked: https://www.ballotpedia.org/Wilton_Simpson (fetch returned empty)",
+        "not reviewed: https://thetruthaboutguns.com/florida-senate-president-wilton-simpson-illustrates-the-problem-with-the-slow-progress-of-gun-rights-in-the-sunshine-state (no usable text)",
+        "not reviewed: legislature bill pages for his sponsorships beyond the votes already on file (SB 7026 authorship seen only in advocacy sources, not confirmed on an official page)",
+        "no personal campaign site or video reviewed"
+      ],
+      "found": 5,
+      "at": "2026-11-15T02:18:57.654Z",
+      "by": "source-collector"
+    }
+  ]
 }

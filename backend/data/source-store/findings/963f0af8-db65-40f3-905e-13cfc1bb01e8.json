@@ -741,5 +741,35 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "lower the gun-buying age",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings, 0 candidates by name)",
+        "blocked: https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4903 (member page returned no text)",
+        "blocked: https://ballotpedia.org/Hillary_Cassel (fetch returned empty; search snippets show she is the sitting District 101 member whose term ends 2026-11-03; August 2026 primary outcome not confirmed by a page I could read)",
+        "campaign site: https://www.hillarycassel.com returned nothing",
+        "blocked: https://floridaphoenix.com/tag/hillary-cassel/ (bot challenge)",
+        "blocked: https://floridaphoenix.com/voter-guides/contests/2026-general-florida-house-of-representatives-hd-101/ (403)",
+        "not reviewed: https://www.local10.com/this-week-in-south-florida/2026/08/16/this-week-in-south-florida-hillary-cassel-and-todd-delmay/ (video interview, no transcript, so gun content unknown)",
+        "news story, WUSF 2025-03-27: names her among six House members voting against the HB 759 gun-age repeal; no words from her",
+        "news story, Yahoo 2025-04-07: her quotes concern only a change of caucus; nothing on guns; she did not respond to the reporter",
+        "web search on her name plus gun words (2 searches): only vote reports, no quoted words of hers on guns",
+        "https://www.firearmsnews.com/editorial/florida-supermajority-failing-gun-owners/526960 : not fetched successfully; an opinion piece about her, not her words",
+        "legislature bill pages: sponsorships and floor votes already on file, not re-collected; committee votes seen only in search snippets, not saved"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:22:18.704Z",
+      "by": "source-collector"
+    }
+  ]
 }

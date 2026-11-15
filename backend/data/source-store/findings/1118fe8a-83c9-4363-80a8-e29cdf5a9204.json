@@ -682,7 +682,77 @@
           "sha256": "9e4e6cf5ddae51929a7bb16f03307d67db19ea2da45a9883f876375c76f89f14"
         }
       }
+    },
+    {
+      "id": "b8f24ea79ed012a4de8d63a2ba509ee745af11b519ddca5c4c058b31e2e92439",
+      "kind": "own-words",
+      "url": "https://www.wgcu.org/government-politics/2024-01-31/lower-gun-buying-age-okd-in-house-no-companion-in-senate",
+      "date": "2024-01-30",
+      "date_precision": "day",
+      "passage": "Rep. LaVon Bracy Davis, D-Ocoee, asked, “what has changed since 2018?”",
+      "note": "A news story quotes her question in a House subcommittee hearing on HB 1223, which would lower the minimum age to buy rifles and shotguns from 21 to 18. The 2018 reference is the school-safety law that set the age at 21. The story's date line is 2024-01-31; the hearing was the day before.",
+      "subjects": [
+        "minimum age to buy a gun",
+        "lower the age to buy rifles and shotguns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:21:09.412Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "20ce3289d49e8129b7629a533c9a028d21ed1316385384d4a2d0c1d423dfc970",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2026/702",
+      "date": "2026-03-13",
+      "date_precision": "day",
+      "instrument_id": "FL-S-702-2026",
+      "act": "sponsor",
+      "note": "SB 702, Mental Health Programs for Gun Violence Prevention: would have Gainesville's IMPACT GNV run a gun-violence prevention pilot program with alternatives to incarceration for certain youth, with a $500,000 appropriation. Died in the Senate Criminal Justice committee on 2026-03-13. The date is the last action, not the filing date.",
+      "subjects": [
+        "gun violence prevention programs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:21:09.412Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "minimum age to buy a gun",
+        "gun violence prevention programs",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general gun-safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings, also searched by name)",
+        "https://www.flsenate.gov/Senators/s15 (her Senate member page: confirms she is the sitting District 15 senator, elected 2025-09-02, previously in the House 2022 to 2025)",
+        "https://www.flsenate.gov/Session/Bill/2026/702 (bill page read; sponsor is Bracy Davis)",
+        "https://www.flsenate.gov/Session/Bill/2026/1336 (firearm hold agreements bill; sponsor listed only as Davis, no first name, so not attributed to her; not saved)",
+        "https://www.wgcu.org/government-politics/2024-01-31/lower-gun-buying-age-okd-in-house-no-companion-in-senate (news story, read in full)",
+        "blocked: https://ballotpedia.org/LaVon_Bracy_Davis (fetch returned an empty page)",
+        "not reviewed: campaign site and ontheissues/vote411 leads (not reached)",
+        "web search (two queries on her name plus gun words): only the news story and bill page above were hers; the rest were other people",
+        "nothing on the subject beyond the findings saved"
+      ],
+      "found": 2,
+      "at": "2026-11-15T02:21:09.412Z",
+      "by": "source-collector"
+    }
+  ]
 }

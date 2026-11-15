@@ -601,5 +601,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "minimum age to buy a gun",
+        "gun limits during emergencies",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.flsenate.gov/Senators/2026-2028/S19 (her Senate member page: sitting District 19 senator, elected June 10, 2025, term through 2028; nothing on the subject)",
+        "https://www.flsenate.gov/Senators/Current (confirms listing)",
+        "https://www.flsenate.gov/Session/Bill/2025/6025 (lists other sponsors and co-introducers; her name is not on the page; a third-party advocacy page credits her as a sponsor, not saved)",
+        "https://www.flsenate.gov/Session/Bills/2026 sponsor search for Mayfield (no gun bills found)",
+        "blocked: https://ballotpedia.org/Debbie_Mayfield (empty response)",
+        "campaign site: not found",
+        "news searches (3): no direct quotes of her on the subject found",
+        "https://www.nraila.org/articles/20180421/florida-alert-it-s-time-to-name-the-betrayers-who-voted-for-gun-control (advocacy group grade list, not her words; not saved)",
+        "ontheissues.org: lead only, not cited"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:19:44.799Z",
+      "by": "source-collector"
+    }
+  ]
 }

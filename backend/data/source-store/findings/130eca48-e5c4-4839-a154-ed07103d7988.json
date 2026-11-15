@@ -887,7 +887,73 @@
           "sha256": "1c1e8c1600d8fb2d3d8682269c8f2abdc26fff570ee330f6b36da64174bd8495"
         }
       }
+    },
+    {
+      "id": "3e498d6581bdca27b26253ffbac0b0306fba2ace5e0882102386e3a2ffe25597",
+      "kind": "own-words",
+      "url": "https://www.orlandoweekly.com/news/florida-house-passes-bill-to-restore-citizens-gun-rights-during-local-state-of-emergency-39325545/",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "passage": "What we’re saying is that if there’s a riot or public disturbance we’re just going to let everybody sort of willy-nilly, without the controls that we have in place, get their firearms, and that’s adding fuel to that riot,",
+      "note": "Quoted by Orlando Weekly (story by the Florida Phoenix) in House floor debate on HB 6025, which would repeal the ban on gun and ammunition sales and on carrying in public during a local emergency. He said he had voted for it in committee but opposed it after reading the statute (s. 870.044). He also said the bill carried \"wide-ranging implications that could endanger us in society.\" Story dated 2025-04-18; floor debate was the Wednesday before.",
+      "subjects": [
+        "limits on gun sales during an emergency",
+        "carrying a gun in public during an emergency"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:21:36.389Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a76eec663f25fe6225635dcaef9475be0e19d2a242ab3ac4e2d30e0c3cac720a",
+      "kind": "own-words",
+      "url": "https://www.wuwf.org/text/florida-news/2025-12-02/gun-age-bill-teed-up-in-house",
+      "date": "2025-12-02",
+      "date_precision": "day",
+      "passage": "There is no right that is absolute in the Constitution,\" Rep. Mike Gottlieb, D-Davie, said. \"We, as lawmakers, make laws that benefit the health, safety, and welfare of the public. That is why we have this rule in effect after Parkland.",
+      "note": "Quoted in a news story on the House Judiciary Committee vote to lower the rifle and long-gun purchase age from 21 to 18. He defended the current age-21 rule, which was passed after the 2018 Parkland shooting, as a public health and safety law.",
+      "subjects": [
+        "minimum age to buy a gun",
+        "general statement on gun rights and the Constitution"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:21:36.389Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "state-of-emergency limits on gun and ammunition sales",
+        "carrying a gun in public during an emergency",
+        "minimum age to buy a rifle or long gun",
+        "general statement on gun rights and the Constitution"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidates)",
+        "status: sitting member of the Florida House for District 102 (took office Nov 2022); term-limited, so not on the 2026 ballot; seat is contested by others (https://floridapolitics.com/archives/748663-jayden-donofrio-launches-bid-to-succeed-mike-gottlieb-in-hd-102-promises-real-solutions-to-floridas-problems)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4821 (redirected to https://www.flhouse.gov/, member page returned no usable text); official member page not read",
+        "not reviewed: https://ballotpedia.org/Michael_Gottlieb (fetch returned empty); https://ballotpedia.org/Mike_Gottlieb blocked with 403",
+        "no campaign site found or reviewed",
+        "news searches (3): found the Orlando Weekly story on HB 6025 and the WUWF story on the rifle-purchase-age bill; other results were stories without his own words",
+        "legislature bill pages (flsenate.gov) not re-checked: sponsorships and votes already on file",
+        "ontheissues.org and vote411 not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-11-15T02:21:36.389Z",
+      "by": "source-collector"
+    }
+  ]
 }

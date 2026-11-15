@@ -121,7 +121,76 @@
           "sha256": "a10e6db71dacfb3f4dbdf59fd42ed87889f894710e84c53f260ebebd0b52e342"
         }
       }
+    },
+    {
+      "id": "e3108069660217638f2beb5aace84d63820ce750d7559df9b5fc9a8ed38eabe5",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2026/32",
+      "date": "2026-03-13",
+      "date_precision": "day",
+      "instrument_id": "FL-S-32-2026",
+      "act": "sponsor",
+      "note": "Sponsor of CS/SB 32, Injunctions for Protection: creates an injunction for serious violence by a known person and updates statutes to align, including the risk protection order provisions. The page shows the House version died 3/13/2026. A narrow link to the subject.",
+      "subjects": [
+        "red-flag or risk protection orders",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:06:28.956Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa0c22a4756d8a22c401ed41d5aca55bce8731dc375b7fc76257ed888b0037ea",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/755744-before-tragedy-strikes-barbara-sharief-refiles-bill-to-strengthen-protections-against-violence",
+      "date": "2025-09-11",
+      "date_precision": "day",
+      "passage": "“Every Floridian deserves to feel safe,” Sharief, a Broward County Democrat, said in a statement. “SB 32 would ensure victims have access to protection before tragedy strikes.”",
+      "note": "Statement from the senator, quoted in a news story from Florida Politics, on refiling SB 32; the bill's press note says it covers risk protection orders. Does not mention guns directly. The date is the story's publication date.",
+      "subjects": [
+        "red-flag or risk protection orders",
+        "protection orders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:06:28.956Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red-flag or risk protection orders",
+        "limits on who may have a gun",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "guns at schools",
+        "general statements on gun rights or gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate member page https://www.flsenate.gov/Senators/s35 (confirms sitting District 35 senator; bills tab loads dynamically, showed no bills for the 2027 session)",
+        "Florida Senate bill pages for 2025 and 2026 (sponsor filter did not work; checked SB 32 and HB 757 pages directly)",
+        "Ballotpedia https://ballotpedia.org/Barbara_Sharief (no gun or Second Amendment passages)",
+        "news search on name plus gun words (one local politics story on SB 32)",
+        "campaign site: not reviewed, none located",
+        "nothing on the subject: no own-words statement on assault weapons, background checks, permitless carry, or the Second Amendment found"
+      ],
+      "found": 2,
+      "at": "2026-11-15T02:06:28.956Z",
+      "by": "source-collector"
+    }
+  ]
 }

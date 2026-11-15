@@ -299,5 +299,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "guns on campus",
+        "general statement on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://en.wikipedia.org/wiki/Danny_Nix_Jr. (read: confirms Danny Nix Jr., House District 75 member since 2024; nothing on the subject)",
+        "https://www.flsenate.gov/Session/Bill/2026/133 (read: bill on sale and delivery of firearms; Nix on the co-sponsor list, already on file)",
+        "blocked: https://ballotpedia.org/Danny_Nix (empty response); 2026 general-election ballot status not confirmed from a fetched page",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4863 (request rejected, then redirect to the House home page)",
+        "not reviewed: https://www.flhouse.gov/ (member page not reached)",
+        "not reviewed: https://www.dannynix.com (campaign site did not load past a redirect script)",
+        "news searches on his name plus gun, firearm, Second Amendment, campus carry, open carry: nothing by or quoting him on the subject",
+        "https://www.billtrack50.com/legislatordetail/29805 (search result only; not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:10:35.115Z",
+      "by": "source-collector"
+    }
+  ]
 }

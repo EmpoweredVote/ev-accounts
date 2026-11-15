@@ -389,7 +389,98 @@
           "sha256": "f8fd21248b5d969847206b40d5f773e6a3d96d923415c48287008f121bce29b8"
         }
       }
+    },
+    {
+      "id": "8879bcc32073630a4e948b5aaa58807527dc6aa897b0b09755264a97f38afdc1",
+      "kind": "own-words",
+      "url": "https://flaglerlive.com/florida-gop-lawmaker-to-randy-fine-proud-to-have-voted-against-your-moronic-campus-carry-bill",
+      "date": "2025-04-18",
+      "date_precision": "day",
+      "passage": "Proud to have voted against your moronic campus carry bill, that didn't have a house companion",
+      "note": "Her statement, quoted in a FlaglerLive story, addressed to the sponsor of the campus carry bill after her committee vote against it.",
+      "subjects": [
+        "carry a gun on college campuses"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:16:39.177Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5e6453f2be6506ed17d8082d511a00987787b8d1925a1429d3a5c40b028b9476",
+      "kind": "own-words",
+      "url": "https://flaglerlive.com/florida-gop-lawmaker-to-randy-fine-proud-to-have-voted-against-your-moronic-campus-carry-bill",
+      "date": "2025-04-18",
+      "date_precision": "day",
+      "passage": "This decision wasn't about partisan politics; it was rooted in common sense. The incident at FSU was tragic, but the real issue lies not with the firearm itself, but with the factors that led to it. The individual involved was the child of a deputy sheriff and had knowledge of weapon handling, yet chose to act recklessly.",
+      "note": "Her explanation of the campus carry vote, quoted in a FlaglerLive story: she describes it as common sense and says the cause of the FSU shooting was not the firearm itself.",
+      "subjects": [
+        "carry a gun on college campuses",
+        "gun safety after a shooting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:16:39.177Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2ef810e34b8fb7ce818f6b61bf5d08f8f337dcebae70574b140a7f2c1d504605",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2025/814",
+      "date": "2025-03",
+      "date_precision": "month",
+      "instrument_id": "FL-S-814-2025",
+      "act": "nay",
+      "motion": "Senate Criminal Justice Committee vote on SB 814 (guns on college campuses)",
+      "note": "SB 814 would let people carry firearms on college and university property. News stories (FlaglerLive, citing the committee's 3-4 vote) report she voted no; the vote date is from news, not read on the committee page.",
+      "subjects": [
+        "carry a gun on college campuses"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:16:39.177Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun on college campuses",
+        "guns and school property",
+        "gun rights general statement",
+        "carry without a permit",
+        "assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "https://www.flsenate.gov/Senators/S36 (her member page, read; District 36, no gun statements)",
+        "https://www.flsenate.gov/Session/Bill/2025/814 (bill page for the campus carry bill, read)",
+        "one news search on her name plus gun words",
+        "blocked: https://floridaphoenix.com/2025/04/18/ileana-garcia-has-zero-regret-on-voting-down-campus-carry-bill/",
+        "not reviewed: https://ballotpedia.org/Ileana_Garcia",
+        "not reviewed: her campaign site",
+        "not reviewed: https://www.ontheissues.org/Ileana_Garcia.htm",
+        "not reviewed: sponsorship lists on flsenate.gov for her own gun bills"
+      ],
+      "found": 3,
+      "at": "2026-11-15T02:16:39.177Z",
+      "by": "source-collector"
+    }
+  ]
 }

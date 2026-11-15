@@ -535,5 +535,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general gun rights and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings, 0 candidates)",
+        "https://en.wikipedia.org/wiki/Lisa_Dunkley (confirms she is a sitting member of the Florida House, District 97; nothing on guns)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4789",
+        "blocked: https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4789",
+        "blocked: https://ballotpedia.org/Lisa_Dunkley (fetch returned empty)",
+        "https://www.wusf.org/politics-issues/2025-03-24/they-are-clearly-political-stunts-florida-rep-fentrice-driskell-blasts-the-gop-led-legislature (a news story; she appeared at a House minority press call but no gun remarks are attributed to her)",
+        "not reviewed: Florida Senate bill-list sponsor search (page loaded without results; no sponsorships confirmed)",
+        "two news searches on name plus gun words: nothing quoting her on the subject",
+        "no campaign site found"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:07:56.700Z",
+      "by": "source-collector"
+    }
+  ]
 }

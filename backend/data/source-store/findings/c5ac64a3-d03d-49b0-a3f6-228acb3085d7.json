@@ -594,7 +594,55 @@
           "sha256": "1f565c25910f93d1ee26080b0a6f9d8946f95b71f8450bdb7701b5e7166896e1"
         }
       }
+    },
+    {
+      "id": "b110ea6212dcffc5907776d52ece5a1aaf16ce8931ae6e21f7737e7f479177c5",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/685940-fabian-basabe-welcomes-nra-endorsement-promises-balanced-approach-to-gun-safety",
+      "date": "2024-07-24",
+      "date_precision": "day",
+      "passage": "The Second Amendment of our Constitution states that every citizen has Right to Bear Arms and I believe in and respect our Constitution — the one document that unites us all as Americans.",
+      "note": "Statement given to a state political news outlet after a gun-rights group endorsed him. He cites the Second Amendment and says the question is how to respect it while limiting harm. He lists existing background checks, waiting periods and mental health spending, and school hardening funding. The outlet reports he links the endorsement to his vote for the 2023 bill ending the concealed-carry licence requirement.",
+      "subjects": [
+        "Second Amendment and gun rights",
+        "carry a gun without a permit",
+        "background checks and waiting periods",
+        "school hardening funding"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:17:03.387Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "Second Amendment and gun rights",
+        "background checks and waiting periods",
+        "gun violence and school safety funding"
+      ],
+      "places": [
+        "status: lost the 2026 general election on 2026-11-03 per https://www.wlrn.org/government-politics/2026-11-03/lucia-baez-geller-unseats-fabian-basabe-in-miami-dade-house-race (still the sitting District 106 member until the term ends)",
+        "On the Record (0 meetings; extract script found no appearances)",
+        "web search: one news search on name plus gun words, one on 2026 result",
+        "a state news story from 2024-07-24 (read, saved)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4800&LegislativeTermId=93 (request rejected)",
+        "blocked: https://ballotpedia.org/Fabi%C3%A1n_Basabe (empty response)",
+        "not reviewed: campaign site",
+        "not reviewed: bill sponsorship pages on www.flsenate.gov",
+        "not reviewed: https://ivoterguide.com/candidate/67552/race/31508/election/1464 (lead only; search summary says the gun questions were left unanswered)"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:17:03.387Z",
+      "by": "source-collector"
+    }
+  ]
 }

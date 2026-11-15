@@ -597,5 +597,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "open carry",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Traci_Koster (curl returned empty; fetch tool returned no page text)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4779 (redirects to https://www.flhouse.gov/, member page text not returned)",
+        "https://en.wikipedia.org/wiki/Traci_Koster read: confirms sitting state representative for District 66, running for re-election in 2026; nothing on the subject",
+        "blocked: https://www.flsenate.gov/Session/Bill/2026/133 (no member names returned by curl; no sponsorship or co-sponsorship found)",
+        "no campaign site found or reviewed",
+        "web search: name plus gun, firearm, Second Amendment, concealed, sponsor; no own words or sponsorship by her found, only news about bills she voted on (already on file)",
+        "not reviewed: ontheissues.org, vote411"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:16:23.203Z",
+      "by": "source-collector"
+    }
+  ]
 }

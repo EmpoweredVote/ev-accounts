@@ -708,5 +708,59 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "minimum age to buy a gun",
+        "Second Amendment rights for adults",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "gun law repeal"
+      ],
+      "places": [
+        "in scope: a Florida Trib election story of 2026-11-02 shows him as the incumbent on the District 5 general-election ballot: https://floridatrib.org/2026/11/02/incumbent-republican-shane-abbott-faces-democratic-challenger-alex-finney-in-district-5-florida-house-of-representatives-race/",
+        "On the Record (0 meetings for this person)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4811 (redirects to the House home page)",
+        "House member page at https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4811 returned no readable text",
+        "campaign site https://www.shaneabbott.com: parked page with no content",
+        "blocked: https://ballotpedia.org/Shane_Abbott (403)",
+        "Florida Senate bill pages for HB 133 (2026): only sponsorship and vote already on file; no new record",
+        "news search on name plus firearm words: only a reporter's paraphrase of his floor argument for lowering the gun-buying age (https://floridapolitics.com/archives/725935-rollback-of-parkland-inspired-age-limits-on-gun-purchases-clears-house-committee), not a direct quote, so not saved; the direct quote on that page is another member's",
+        "https://www.wtxl.com/news/capitol-news/florida-house-passes-bill-again-to-lower-long-gun-purchase-age-to-18: does not quote him",
+        "https://www.fox35orlando.com/news/florida-house-moves-lower-gun-purchase-age-reviving-post-parkland-debate: does not mention him",
+        "https://www.clickorlando.com/news/2026/01/16/florida-house-backs-lower-gun-buying-age/: nothing on the subject from him in the page text"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:17:30.485Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "lower the age to buy a gun",
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "general gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Shane_Abbott (empty response, so 2026 ballot status not confirmed there)",
+        "not reviewed: https://www.myfloridahouse.gov member page (page returned no readable text)",
+        "https://www.flsenate.gov bill page for HB 133 (2026): lists him among co-sponsors, already on file",
+        "one news search on name plus firearm words: only a Florida Politics story of the 2025-03-12 House subcommittee hearing on HB 759 names him, and it paraphrases him without a direct quote, so not saved as own words",
+        "Orlando Weekly tag page for him: nothing readable on the subject",
+        "no campaign site or personal issue page found"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:24:42.319Z",
+      "by": "source-collector"
+    }
+  ]
 }

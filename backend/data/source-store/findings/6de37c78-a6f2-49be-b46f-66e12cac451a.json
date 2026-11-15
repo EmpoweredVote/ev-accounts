@@ -985,7 +985,152 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "474fb6c1b70a63d5ffde475c198afdd6be0fe9044e3e7b69b2bf1e5fd590e93c",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/719135-toby-overdorf-moves-to-un-ban-bump-stocks",
+      "date": "2025-02-04",
+      "date_precision": "day",
+      "passage": "The state law does not currently comply with federal law. I would like for state law to comply with federal law.",
+      "note": "Quoted by Florida Politics on why he filed HB 6013 to repeal Florida's bump-fire stock ban, after the federal ban was struck down.",
+      "subjects": [
+        "repeal ban on bump-fire stocks",
+        "match state gun law to federal law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:11:46.470Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "680c0f385b79f25a1cba68195ceec68ad8a4215bd3be0f5b04677704a602b069",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2025/6013",
+      "date": "2025-02-03",
+      "date_precision": "month",
+      "instrument_id": "FL-H-6013-2025",
+      "act": "sponsor",
+      "note": "He filed HB 6013, Bump-fire Stocks, which repeals the state prohibition on bump-fire stocks. It died in the Criminal Justice Subcommittee.",
+      "subjects": [
+        "repeal ban on bump-fire stocks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:11:46.470Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5d394ad290c3bac7d8ebfbcd6d4aae8d9d42f556914c2cface4f488e6dad11b",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2026/6021",
+      "date": "2026-01-05",
+      "date_precision": "day",
+      "instrument_id": "FL-H-6021-2026",
+      "act": "sponsor",
+      "note": "He filed HB 6021, Bump-fire Stocks, again repealing the state prohibition on bump-fire stocks. It died in the Criminal Justice Subcommittee.",
+      "subjects": [
+        "repeal ban on bump-fire stocks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:11:46.470Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "353e074dfcd0990f7f61ea16162bcf40947f9aa52f4c3162b5f9296e7031fd6e",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2025/6013",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "FL-H-6013-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of FL-H-6013-2025 (sponsor list (prime / co-sponsor)): H6013 (2025 Regular): Bump-fire Stocks.",
+      "subjects": [
+        "repeals the ban on bump-fire stocks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-01-30; official copy, https://www.flsenate.gov/Session/Bill/2025/6013/BillText/Filed/PDF (LegiScan doc 3091504))",
+        "fetched_at": "2026-11-15T02:43:36.063765Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-6013-2025.introduced.pdf",
+          "sha256": "bb384bea0f9cf6fdebe041d4785f7f25dbdb47c4cc36a6bd520e3499c7f7f099"
+        }
+      }
+    },
+    {
+      "id": "5052f9f10c7d3afd1044087460a7c74b2bd26cafa710113b3c0900ef3a2734cb",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2026/6021",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "FL-H-6021-2026",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of FL-H-6021-2026 (sponsor list (prime / co-sponsor)): H6021 (2026 Regular): Bump-fire Stocks.",
+      "subjects": [
+        "repeals the ban on bump-fire stocks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2026-01-05; official copy, https://www.flsenate.gov/Session/Bill/2026/6021/BillText/Filed/PDF (LegiScan doc 3299520))",
+        "fetched_at": "2026-11-15T02:43:36.063765Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-6021-2026.introduced.pdf",
+          "sha256": "13219122662899ebef21ea42c32627a36c1d22ecdde6a40dd51dfd7fe543d7dd"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "repeal ban on bump-fire stocks",
+        "match state gun law to federal law",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "minimum age to buy a gun",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "status: sitting Florida House member (Palm City, Martin County area), term-limited after 2026, not on the 2026 ballot for the House; a news story says he is launching a 2028 bid for Senate District 31 (https://thecapitolist.com/overdorf-launches-2028-bid-for-state-senate-seat-held-by-term-limited-gayle-harrell/)",
+        "On the Record (0 meetings found for this politician id)",
+        "https://www.flsenate.gov/Session/Bill/2025/6013 (read; sponsor page)",
+        "https://www.flsenate.gov/Session/Bill/2026/6021 (read; sponsor page)",
+        "https://floridapolitics.com/archives/719135-toby-overdorf-moves-to-un-ban-bump-stocks (read)",
+        "https://www.cbsnews.com/miami/news/florida-gop-lawmaker-moves-to-repeal-bump-stock-ban-enacted-after-parkland-shooting (read)",
+        "blocked: https://ballotpedia.org/Toby_Overdorf (empty response)",
+        "blocked: https://floridianpress.com/2025/07/republican-toby-overdorf-announces-sd-31-election-bid/ (403)",
+        "not reviewed: his own House member page and campaign site (member page lookup by id returned a different member; no own-site page was read)",
+        "web news search on name plus Second Amendment / firearm words: only the bump-stock bill coverage on the subject"
+      ],
+      "found": 3,
+      "at": "2026-11-15T02:11:46.470Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -731,7 +731,55 @@
           "sha256": "c91abe999e21b6dd893bbacfab47724a4fd204e65636297ea6b7c57273fa0657"
         }
       }
+    },
+    {
+      "id": "aa969c2ab53aa742bfb669330a3e572e06dff9e4b89d6afde35d05db4a3b5b29",
+      "kind": "own-words",
+      "url": "https://www.cfpublic.org/politics/2025-03-12/florida-gun-rights-groups-push-to-repeal-the-ban-on-selling-firearms-and-ammo-in-a-local-emergency",
+      "date": "2025-03-12",
+      "date_precision": "day",
+      "passage": "They enacted an ordinance in the morning, I believe, stating that, hey, just letting everybody know during this emergency, ammunition, gun sales, marketing is not allowed. And then a lot of Second Amendment supporters started reaching out and saying, ‘You cannot do this.’ And then it was repealed, I think, later that day. The ordinance was repealed.",
+      "note": "Quoted by a public-radio story, speaking in committee on his SB 952 to repeal the ban on firearm and ammunition sales during a locally declared emergency; he cites the city of Okeechobee's ordinance during Hurricane Helene as his example.",
+      "subjects": [
+        "ban on gun sales during a local emergency",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:13:41.952Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on gun sales during a local emergency",
+        "Second Amendment rights",
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status check: still in scope as the sitting Florida chief financial officer; a results page shows him winning the 2026 August primary (https://floridaelectionwatch.gov/StateOffices/ChiefFinancialOfficer), and a news story confirms he holds the office (https://www.mysuncoast.com/2026/08/12/florida-cfo-race-draws-republican-democratic-challengers-ahead-tuesdays-primary/)",
+        "official office site https://www.myfloridacfo.com/ (read; nothing on the subject)",
+        "Senate member page https://www.flsenate.gov/Senators/s11 (read; nothing on the subject)",
+        "Senate bill page https://www.flsenate.gov/Session/Bill/2025/952 (read; sponsorship already on file)",
+        "not reviewed: Ballotpedia https://ballotpedia.org/Blaise_Ingoglia (fetch returned no usable text)",
+        "campaign site: not found by search",
+        "news searches on his name plus gun words (2); one own-words quote found in a public-radio story",
+        "an advocacy group's release on his appointment (https://www.nraila.org/articles/20250717/florida-congratulations-to-blaise-ingoglia-on-his-appointment-as-cfo): words of the group, not his; nothing saved"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:13:41.952Z",
+      "by": "source-collector"
+    }
+  ]
 }

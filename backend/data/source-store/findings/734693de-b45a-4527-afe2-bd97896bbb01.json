@@ -404,7 +404,55 @@
           "sha256": "02d9105d2e2c7d686f17ed88701084c80f8196b291240043b7423da39dbafa76"
         }
       }
+    },
+    {
+      "id": "6622c1614678f2b4fce509408b0bb9f4514bb845d242e908ff76db9811b809ee",
+      "kind": "own-words",
+      "url": "https://www.wuft.org/politics/2025-03-27/florida-house-voted-to-repeal-law-that-raised-gun-buying-age-to-21",
+      "date": "2025-03-27",
+      "date_precision": "day",
+      "passage": "To me, this is simply a matter of consistency,",
+      "note": "Quoted by WUFT in its story on the House vote to repeal the under-21 rule on buying rifles and other long guns (HB 759, 2025). He was explaining support for letting 18-year-olds buy guns, in line with other adult rights. Date is the story date.",
+      "subjects": [
+        "minimum age to buy a rifle"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:11:59.437Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "minimum age to buy a rifle",
+        "carry a gun without a permit",
+        "gun maker liability",
+        "background checks",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: sitting House member for District 20; a Nov 4 2026 news story reports he won re-election to a second term (https://flvoicenews.com/republican-rep-judson-sapp-wins-re-election-to-florida-house-district-20-in-landslide-victory/)",
+        "flsenate.gov bill page for 2026 HB 133 (read: lists him among co-introducers)",
+        "flsenate.gov bill page for 2025 HB 1021 (read; sponsor already on file)",
+        "blocked: https://ballotpedia.org/Judson_Sapp (returned an empty challenge page)",
+        "not reviewed: https://www.myfloridahouse.gov member page (no working member-page URL found)",
+        "not reviewed: campaign site (none located in searches)",
+        "news search on name plus gun words: one quoted statement found (WUFT)",
+        "https://www.news4jax.com/voters-guide/2026/07/31/2026-voters-guide-florida-house-district-20/ (fetched; nothing on the subject)"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:11:59.437Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -836,7 +836,104 @@
           "sha256": "02d9105d2e2c7d686f17ed88701084c80f8196b291240043b7423da39dbafa76"
         }
       }
+    },
+    {
+      "id": "c1400373f59923078b662c74d410db69c383377600798ff6523a634921c5110e",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/725935-rollback-of-parkland-inspired-age-limits-on-gun-purchases-clears-house-committee",
+      "date": "2025-03-12",
+      "date_precision": "day",
+      "passage": "“She’s extremely proficient, and she’s going to college next year at FAU down in Boca, and she’s like, ‘Dad, you’re telling me, I can’t have my rifle? I can’t bring this?’” Yarkosky said. “And I said, ‘No, you can’t under the current law.’ And she is more well trained at this than a lot of people.”",
+      "note": "Quoted by Florida Politics at a House Criminal Justice Subcommittee hearing on HB 759 (lower the age to buy long guns from 21 to 18). He describes his adult daughter as trained and says current law bars her from having her rifle. The story also reports he said many 18-year-olds are better trained than many older residents.",
+      "subjects": [
+        "lower the age to buy a rifle or long gun",
+        "minimum age to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:07:08.797Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "81700b70f0157ecddec8cd476585b04f448a2bad9d10b6007e1051c14bc05f77",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/florida-restores-rights-18-olds-202404438.html",
+      "date": "2025-03-12",
+      "date_precision": "day",
+      "passage": "\"We are messing with the bill of rights, and that's why we're having these problems,\" added Lake County Republican Taylor Yarkosky.",
+      "note": "A news story quotes him in the same March 2025 committee debate on the bill to lower the long-gun purchase age to 18, tying gun age limits to the Bill of Rights.",
+      "subjects": [
+        "lower the age to buy a rifle or long gun",
+        "gun rights and the Bill of Rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:07:08.797Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e2ec72aefefc3523d52c712a8da64c0d0a1093d18e7c3510193c0ee4c0d5b9f7",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2025/6013",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "FL-H-6013-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of FL-H-6013-2025 (sponsor list (prime / co-sponsor)): H6013 (2025 Regular): Bump-fire Stocks.",
+      "subjects": [
+        "repeals the ban on bump-fire stocks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-01-30; official copy, https://www.flsenate.gov/Session/Bill/2025/6013/BillText/Filed/PDF (LegiScan doc 3091504))",
+        "fetched_at": "2026-11-15T02:43:36.063765Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-6013-2025.introduced.pdf",
+          "sha256": "bb384bea0f9cf6fdebe041d4785f7f25dbdb47c4cc36a6bd520e3499c7f7f099"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "lower the age to buy a rifle or long gun",
+        "gun rights and the Bill of Rights",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "ghost guns",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 appearances, no meetings on file)",
+        "the campaign site https://www.tayloryarkosky.com/issues (page is script-rendered; no gun text could be read from it)",
+        "the 2026 voters guide for House District 25 https://www.clickorlando.com/voters-guide/2026/10/16/2026-voters-guide-florida-house-district-25/ (confirms he is the nominee on the general-election ballot; nothing on guns, and he did not answer its questionnaire)",
+        "Ballotpedia https://ballotpedia.org/Taylor_Yarkosky (returned no readable text)",
+        "the House member page https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4806 (loaded, nothing readable on the subject)",
+        "https://www.flsenate.gov/Session/Bill/2025/759 (loaded; votes and sponsorships already on file)",
+        "news search on name plus firearm terms: two quoted statements saved",
+        "not reviewed: https://www.wptv.com/news/state/florida-house-panel-revives-push-to-lower-gun-buying-age (no mention of him found in the text)",
+        "nothing on the subject: wusf.org, clickorlando 2026-01-16, wlrn.org, news4jax.com, orlandoweekly.com stories (no quote of him found)"
+      ],
+      "found": 2,
+      "at": "2026-11-15T02:07:08.797Z",
+      "by": "source-collector"
+    }
+  ]
 }

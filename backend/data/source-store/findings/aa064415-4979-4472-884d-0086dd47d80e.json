@@ -688,7 +688,73 @@
           "sha256": "80eadc7535e98ffcac3007ff61f54ef6fd7d4e310065657686e3a3b49ede5fbf"
         }
       }
+    },
+    {
+      "id": "b1fcc083b59d4fb5b0017f4a0f8799209e52f681f64fc35dbe5cf85bc228f8d9",
+      "kind": "own-words",
+      "url": "https://www.wusf.org/politics-issues/2023-02-21/lawmakers-advance-permitless-carry-full-florida-house-vote",
+      "date": "2023-02-21",
+      "date_precision": "day",
+      "passage": "You should know how to carry that gun. You should know it's dangerous,\" Hart said. \"And I'm beginning to wonder if our children really understand how quite dangerous it is. And here we are saying, 'It's OK. Nobody needs to have a permit. Just buy yourself a gun.'",
+      "note": "Quoted in a News Service of Florida story carried by WUSF, during House committee debate on the permitless carry bill; she says carrying requires knowledge of the danger and objects to dropping the permit requirement.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:20:33.773Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6cf9ec6687bcccb09f45453a9cf84a037c45756b66cf94154f5333cae1e7f4e4",
+      "kind": "own-words",
+      "url": "https://www.observerlocalnews.com/news/2025/mar/13/florida-house-bill-would-repeal-gun-age-law/",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "passage": "We must think harder and longer,\" Rep. Dianne Hart, D-Tampa. \"Eighteen-year-olds don't need guns. We don't let them drink alcohol for a reason. They are not ready yet.",
+      "note": "Quoted in a news story (Observer) about the bill to lower the long-gun purchase age from 21 to 18; she argues 18-year-olds are not ready for guns. Date is the story date.",
+      "subjects": [
+        "minimum age to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:20:33.773Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "minimum age to buy a long gun",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.myfloridahouse.gov/members/Dianne-Hart (request rejected)",
+        "blocked: https://ballotpedia.org/Dianne_Hart (empty response)",
+        "news search on name plus gun words (2 searches); four news stories read",
+        "https://floridaphoenix.com/2025/03/12/is-this-the-year-florida-restores-the-rights-of-18-year-olds-to-purchase-long-guns/ (no remarks by her on the page)",
+        "https://www.wlrn.org/government-politics/2025-04-21/following-fsus-shooting-house-democrats-are-calling-for-stricter-gun-legislation-in-florida (no remarks by her on the page)",
+        "official bill and roll-call pages: not reviewed separately; votes already on file",
+        "personal or campaign site: not found"
+      ],
+      "found": 2,
+      "at": "2026-11-15T02:20:33.773Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -236,7 +236,58 @@
           "sha256": "c359629e58ded8bc4d5ed8e16422d3c6d22eff621521e1669b3e6fc019e2179f"
         }
       }
+    },
+    {
+      "id": "3d0c4d88ef281b074852184745452908d5739986c4a4b35047e91eb9643da5d0",
+      "kind": "own-words",
+      "url": "https://www.yvetteforflorida.com/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Yvette won’t let the radicals take our guns. She is 100% pro-Second Amendment.",
+      "note": "Statement on her campaign issues page, under a heading about defending the Second Amendment. The page carries no date; the year is the 2026 campaign cycle, so the date is approximate.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "keep gun laws from being added"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:13:01.328Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "red flag orders",
+        "carry a gun without a permit",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "in scope: sitting House District 81 member, on the 2026 general-election ballot per https://www.sparkers-soapbox.com/florida-house-district-81-general-election-2026/",
+        "On the Record (0 meetings)",
+        "campaign site https://www.yvetteforflorida.com/issues (read; one statement on the Second Amendment)",
+        "campaign site home page https://www.yvetteforflorida.com/ (read; nothing beyond the issues page)",
+        "2024 candidate questionnaire https://www.sparkers-soapbox.com/wp-content/uploads/2024/09/HD81-Benarroch-State-Rep-Candidate-Questionnaire.pdf (read; nothing on the subject)",
+        "https://www.flsenate.gov/Session/Bill/2026/133 (bill page read; sponsor list already on file)",
+        "Wikipedia page (read; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Yvette_Benarroch (empty response to curl; fetch tool returned nothing usable)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=5081 (redirected to the House home page; member page not reached)",
+        "news search on her name plus gun words: nothing on the subject",
+        "not reviewed: Fort Myers News-Press and Naples Daily News Q&A of 2026-10-20 (listed on the voter guide page, not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:13:01.328Z",
+      "by": "source-collector"
+    }
+  ]
 }

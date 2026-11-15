@@ -741,5 +741,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or magazines",
+        "check every gun buyer",
+        "waiting periods and minimum age",
+        "red-flag orders",
+        "ghost guns and federal gun rules",
+        "carry a gun without a permit, carry permits",
+        "repeal of gun laws",
+        "general statement on gun rights"
+      ],
+      "places": [
+        "in scope: a sitting member of the Florida House for district 4 (confirmed on a public encyclopedia page); no election-status issue",
+        "On the Record (0 meetings, also tried with city Tallahassee)",
+        "blocked: https://www.myfloridahouse.gov/members/Patt-Maney (request rejected, tried twice with two address forms)",
+        "blocked: https://ballotpedia.org/Patt_Maney (empty response)",
+        "https://www.flsenate.gov/Session/Bill/2024/373 (read: his pretrial-release bill, already on file as a sponsorship; its summary bars requiring a carry-licence surrender for a first misdemeanor except in set cases; no own words)",
+        "one news search on his name plus Second Amendment and firearms: nothing naming him; one search on his 2024 bill: nothing new",
+        "campaign site and official press-release pages: not reviewed, no address found in search results",
+        "nothing on the subject in his own words found in any place reached"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:18:07.098Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -1021,7 +1021,108 @@
           "sha256": "3d4573ec4e2c3b00c480b9bbf865b9f2fd8e8df50b0dee27ccf23f2d67dae4ef"
         }
       }
+    },
+    {
+      "id": "a16327e6d2ca6e69a46a4534f8144d11e8f6c5439a99f597a6ac1282cde35bd2",
+      "kind": "own-words",
+      "url": "https://carlosguillermosmith.com/issues/gun-reform/",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Carlos has been the lead sponsor in the Florida House of Representatives on legislation banning assault weapons and large capacity magazine every single year since 2016.",
+      "note": "Campaign issue page says he has led a yearly bill to ban assault weapons and large-capacity magazines since 2016; page is undated.",
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:16:39.798Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "de3af4b429959b7bcf7eee4fafe80a98c3b5662ba89e3ab0095f535568870ada",
+      "kind": "own-words",
+      "url": "https://carlosguillermosmith.com/issues/gun-reform/",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Carlos understands that banning assault weapons and large capacity magazines is not the ‘end-all’ solution to the epidemic of gun violence. To make a real impact on reducing gun violence in our communities, a comprehensive approach is necessary. That’s why he’s co-sponsored and championed legislation to:",
+      "note": "Campaign page lists other gun measures he backs: universal background checks on all gun purchases, wider red-flag laws including family-member petitions and a bar on gun possession by domestic abusers, background checks on ammunition sales (Jaime's Law), stronger storage laws, no concealed weapons in child care facilities, repeal of the state law that stops cities and counties from making local gun rules, gun violence intervention programs, an Urban Core Gun Violence Task Force, and repeal of Stand Your Ground.",
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders",
+        "ammunition background checks",
+        "gun storage",
+        "guns in child care facilities",
+        "local gun rules",
+        "stand your ground",
+        "gun violence prevention programs"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:16:39.798Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dad837570502cb46bfdb3214dcf2d16fb27e992a05e280d812f3411a4277883b",
+      "kind": "own-words",
+      "url": "https://carlosguillermosmith.com/issues/gun-reform/",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "That’s why the very first bill Carlos introduced after his election to the Florida House in 2016 was legislation to ban the sale of military-style assault weapons and large capacity magazines.",
+      "note": "Campaign page says his first bill after the 2016 election would ban sale of military-style assault weapons and large-capacity magazines.",
+      "subjects": [
+        "ban on assault-style guns",
+        "ban on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:16:39.798Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large-capacity magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ammunition background checks",
+        "gun storage",
+        "guns in child care facilities",
+        "local gun rules preemption",
+        "stand your ground",
+        "gun violence programs"
+      ],
+      "places": [
+        "status: sitting state senator, District 17, elected without opposition in 2024 to a four-year term (confirmed on https://carlosguillermosmith.com/ and https://flsenate.gov/Senators/2024-2026/S17); not on the 2026 ballot",
+        "On the Record (0 meetings)",
+        "campaign site: home page, issues list and Gun Reform page read",
+        "https://flsenate.gov/Senators/2024-2026/S17 (member page, read; no gun statements)",
+        "bill sponsorships: already on file; no new bill pages collected",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Carlos_Guillermo_Smith",
+        "news search on name plus gun words: two searches run; a 2025 news story only paraphrases his bill, no quoted words of his",
+        "blocked: https://floridianpress.com/2019/11/carlos-guillermo-smith-pushes-gun-bill-that-bans-semi-auto-handguns/ (403)",
+        "blocked: https://floridianpress.com/2023/12/former-progressive-lawmaker-questions-move-to-loosen-restrictions-on-weapons-of-war-in-florida/ (403)",
+        "not reviewed: https://baynews9.com/fl/tampa/in-focus-shows/2018/07/05/rep--carlos-guillermo-smith-on-gun-legislation (video)",
+        "not reviewed: https://advocate.com/politics/2017/10/17/floridas-out-latino-lawmaker-not-giving-gun-control"
+      ],
+      "found": 3,
+      "at": "2026-11-15T02:16:39.798Z",
+      "by": "source-collector"
+    }
+  ]
 }

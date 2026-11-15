@@ -722,5 +722,35 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "gun limits during emergencies",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "https://en.wikipedia.org/wiki/Brad_Yeager: read; confirms he holds the District 56 House seat since Nov 2022 (lead only, nothing on guns)",
+        "web search: confirms District 56 House member (New Port Richey); no 2026 qualifying page found, and the search results suggest his current term runs to 2028, so he is a sitting member, not shown as a 2026 candidate",
+        "blocked: https://ballotpedia.org/Brad_Yeager (empty response)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4882&LegislativeTermId=90 (redirects to the House home page; member page text not readable)",
+        "blocked: https://www.myfloridahouse.gov/members/brad-yeager (stub response, no content)",
+        "campaign site: not found",
+        "https://mynews13.com/fl/orlando/news/2026/01/15/florida-house-gun-age: read; does not mention him",
+        "news searches on name plus gun, firearm and Second Amendment words: no quote from him found; results only restate bills already on file (HB 6025, HB 759, HB 133)",
+        "flsenate.gov bill pages: sponsorships and votes already on file; no additional gun bills found"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:08:56.116Z",
+      "by": "source-collector"
+    }
+  ]
 }

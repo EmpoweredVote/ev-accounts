@@ -642,7 +642,55 @@
           "sha256": "8a1feec8e24a78ea8d217c8cccbf96e3528e508022eb2397e48e6ae6e1dda148"
         }
       }
+    },
+    {
+      "id": "4a06f3fed521d67ce10056ef51f515cca2a1f40f7e3a13d100ab8a1a53baf879",
+      "kind": "own-words",
+      "url": "https://capitalsoup.com/2023/02/22/representative-campbell-and-senator-osgood-file-bill-to-close-loophole-allowing-altered-firearms-with-automatic-firing-rates",
+      "date": "2023-02-22",
+      "date_precision": "day",
+      "passage": "As we continue to see acts of violence on our school campuses, churches, and supermarkets, we must ensure that prevention is part of the solution. By closing this loophole, those who seek to circumvent the law will be held accountable,",
+      "note": "News story quoting him on filing HB 883 / SB 368, which would treat firearms modified to fire at machine-gun rates as machine guns; he frames it as prevention of violence.",
+      "subjects": [
+        "guns modified to fire like machine guns",
+        "gun violence prevention"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:19:37.673Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "guns modified to fire like machine guns",
+        "gun violence prevention",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4811 (redirects to https://www.flhouse.gov/, member page text not returned)",
+        "not reviewed: https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4811 (empty response)",
+        "blocked: https://ballotpedia.org/Daryl_Campbell (page body empty when fetched; a search result lists him as the sitting District 99 member seeking re-election on the 2026 general ballot)",
+        "https://www.flsenate.gov/Session/Bill/2023/883 (HB 883 Machine Guns, sponsor Daryl Campbell, died in subcommittee 2023-05-05)",
+        "news search on name plus gun words (one 2023 news story with his quote)",
+        "campaign site: not found",
+        "nothing else on the subject in the pages reviewed"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:19:37.673Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -836,7 +836,78 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "30a735a4e1225aec12e7c4e00c655ce7d4946b12fdac11ea9d0a4c0bbe2f2b49",
+      "kind": "own-words",
+      "url": "https://www.wlrn.org/government-politics/2026-01-15/florida-house-passes-bill-to-lower-the-age-to-purchase-a-long-gun-to-18-years",
+      "date": "2026-01-15",
+      "date_precision": "day",
+      "passage": "We could talk about things that really might get us somewhere, but we have this distraction, and history over centuries teaches us that that’s not the answer, because it didn’t happen back then, yet it happens today,",
+      "note": "News story quoting him in the House debate on HB 133 (lowering the long-gun purchase age from 21 to 18). The story says he argued the gun-violence debate was not about guns and pointed instead to family breakdown and loss of faith. Quote as printed by WLRN, a public radio outlet.",
+      "subjects": [
+        "minimum age to buy a long gun",
+        "gun violence causes"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:10:23.260Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5577b4fedac3baf9d71a66ad7fea7b651ec3c5cc38f37cb01b3f05ee23ffb770",
+      "kind": "own-words",
+      "url": "https://www.helpflvets.org/dean-black",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "Northeast Florida needs strong, proven and dependable conservative leaders fighting for our values in Tallahassee. I will be a Representative that stands on a strong America and Florida First agenda: Supporting the Constitution, limited government, the right to bear arms, personal liberty, the sanctity of life, low taxes, school choice and defending our brave men and women in law enforcement.",
+      "note": "Statement in his name on a veterans group's page, listing the right to bear arms among his stated priorities. The page gives no date; year is an estimate from his first run for the seat.",
+      "subjects": [
+        "right to bear arms",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:10:23.260Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "minimum age to buy a long gun",
+        "right to bear arms",
+        "gun violence causes",
+        "carry without a permit",
+        "red-flag orders",
+        "emergency limits on guns and ammunition",
+        "check every gun buyer",
+        "ban on assault-style guns"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "https://www.helpflvets.org/dean-black (a veterans group's page for him; read, one statement in his name)",
+        "https://www.wlrn.org/government-politics/2026-01-15/florida-house-passes-bill-to-lower-the-age-to-purchase-a-long-gun-to-18-years (news story naming him as Rep. Dean Black, Jacksonville; read)",
+        "blocked: https://ballotpedia.org/Dean_Black (fetch returned no usable text; 2026 ballot status not confirmed from the page)",
+        "not reviewed: https://www.myfloridahouse.gov member page (no usable page returned)",
+        "flsenate.gov sponsor search returned nothing readable; sponsorships taken from the list already on file",
+        "blocked: https://floridaphoenix.com/2026/01/15/florida-house-passes-bill-to-lower-the-age-to-purchase-a-long-gun-to-18-years/ (no text returned)",
+        "no personal campaign site found",
+        "news search on name plus gun words (2 searches): found the HB 133 floor coverage; nothing on carry permits, red-flag orders, background checks or assault-style gun bans"
+      ],
+      "found": 2,
+      "at": "2026-11-15T02:10:23.260Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -597,5 +597,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "ghost guns",
+        "repeal of gun laws",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "https://en.wikipedia.org/wiki/Karen_Gonzalez_Pittman (confirms sitting Florida House member, district 65, elected 2022; says nothing on guns; 2026 ballot status not confirmed)",
+        "blocked: https://ballotpedia.org/Karen_Gonzalez_Pittman (empty response)",
+        "blocked: https://www.myfloridahouse.gov member page (roster page returned no usable text; her own member page not reached)",
+        "not reviewed: her campaign site (none found)",
+        "https://www.flsenate.gov bill search by sponsor 2025 and 2026 (filter did not apply; no firearm bill filed by her seen, sponsor list not fully reviewed)",
+        "news searches (3) on her name plus gun, firearm, Second Amendment and rifle-age terms: nothing quoting her on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:11:27.715Z",
+      "by": "source-collector"
+    }
+  ]
 }

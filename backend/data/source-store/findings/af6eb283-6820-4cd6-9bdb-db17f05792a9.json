@@ -511,7 +511,53 @@
           "sha256": "f7f5db1a191f09611228049ed0fd0237c4ed1a7917d0a9dcc51d8f57e48a6e00"
         }
       }
+    },
+    {
+      "id": "efebd332889452828fe5ecf1989e6f7ad735cea4ecc491581fe7b9268e94b884",
+      "kind": "own-words",
+      "url": "https://www.wgcu.org/government-politics/2023-03-30/senate-approves-gun-law-change-measure-heading-to-desantis",
+      "date": "2023-03-30",
+      "date_precision": "day",
+      "passage": "The Second Amendment of the Constitution gives its people the right to keep and bear arms. It doesn’t say, ‘if you have a permit,’ it doesn’t say ‘if you’ve gone through training,’ it doesn’t say ‘if you’ve done a background check,’",
+      "note": "Quoted by a news outlet (WGCU) from Senate floor debate on HB 543, the bill ending the carry-permit requirement.",
+      "subjects": [
+        "carry a gun without a permit",
+        "Second Amendment",
+        "training and background check requirements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:15:32.169Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "minimum age to buy",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidates)",
+        "Florida Senate member page https://www.flsenate.gov/Senators/s20 (confirms Senator Boyd, 2026-2028 term; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Jim_Boyd (fetched; nothing on the subject found)",
+        "one news search on name plus firearm words (found the 2023 Senate floor debate story)",
+        "not reviewed: bill sponsorship pages on www.flsenate.gov (no sponsorship found in news search)",
+        "not reviewed: campaign site"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:15:32.169Z",
+      "by": "source-collector"
+    }
+  ]
 }

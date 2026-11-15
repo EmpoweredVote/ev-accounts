@@ -654,7 +654,63 @@
           "sha256": "b3d9ca643134125ed96f1b3770d1b9270f3ce70cdc5669d183b66fab178f9ed4"
         }
       }
+    },
+    {
+      "id": "dcb2fa48019715e4d71e60cc07b3dd32b99d3357fcb30f0f91c6c56f7463d2c8",
+      "kind": "own-words",
+      "url": "https://giffords.org/press-release/2026/10/giffords-pac-endorses-state-representative-angie-nixon-for-u-s-senate/",
+      "date": "2026-10-02",
+      "date_precision": "day",
+      "passage": "While corrupt politicians in Florida have spent years making our streets more dangerous with permitless carry and rolling back basic safety standards for their corrupt, greedy, corporate donors and the gun lobby, most of us simply want safer, stronger communities and common-sense measures like strong red flag laws, background checks, and training programs,",
+      "note": "Quoted in an endorsement release from a gun-violence-prevention group. She criticizes Florida's permitless carry and the rollback of safety standards, and names strong red flag laws, background checks and training programs as measures she wants.",
+      "subjects": [
+        "carry a gun without a permit",
+        "red flag orders",
+        "check every gun buyer",
+        "gun safety training"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:20:08.827Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "open carry",
+        "red flag orders",
+        "safe storage",
+        "local control of gun rules",
+        "gun safety training"
+      ],
+      "places": [
+        "status: on the 2026 general-election ballot for U.S. Senate in Florida (named as the nominee in a Giffords release and campaign site); still a sitting state House member",
+        "On the Record (0 appearances; name search also empty)",
+        "campaign site https://angienixon.com (home page read; only mention is losing a cousin to gun violence, no policy text; issues page had nothing on the subject)",
+        "member page on www.myfloridahouse.gov: not reviewed: fetch failed",
+        "bill votes and sponsorships already on file; not re-collected",
+        "Ballotpedia: nothing on the subject",
+        "news search on name plus gun words: one release found (Giffords endorsement, saved)",
+        "https://www.wlrn.org/light/government-politics/2026-08-23/democratic-us-senate-nominee-angie-nixon-shrugs-off-the-florida-gop-attacks-that-are-just-beginning: nothing on the subject",
+        "https://floridapolitics.com/archives/755633-nobodys-asking-for-this-democratic-parkland-leaders-bash-court-decision-ending-floridas-open-carry-ban: nothing from her on the page",
+        "https://www.alternet.org/fl-lawmaker-slams-desantis-shooting: her TV remarks were about the governor's rhetoric after a shooting, no gun-policy statement",
+        "https://www.wfit.org/politics-government/2022-05-25/brevard-lawmaker-sparks-uproar-with-2nd-amendment-tweet-against-biden: her tweet was about a colleague, not gun policy",
+        "ontheissues.org: lead only; open-carry quote from Sept 2025 not found in an original page I could fetch, so not saved",
+        "not reviewed: First Coast News original of the Sept 2025 open-carry reaction"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:20:08.827Z",
+      "by": "source-collector"
+    }
+  ]
 }

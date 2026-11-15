@@ -683,5 +683,30 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or magazine",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "guns near schools",
+        "general statement on gun rights or the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.flsenate.gov/Senators/s11 (his Senate member page: sitting senator for District 11, elected December 2025, served in the House 2016-2024; nothing on the subject; only listed bill is a claim bill)",
+        "https://www.flsenate.gov/Session/Bill/2026/757 (bill page for 2026 school safety bill; he is not a sponsor; the vote is already on file)",
+        "blocked: https://ballotpedia.org/Ralph_Massullo (page came back blank)",
+        "not reviewed: https://www.flhouse.gov/ (member page redirected to the House home page; no member page reached)",
+        "web search on name plus firearm and Second Amendment words (two searches, nothing naming him on the subject)",
+        "no campaign site found; nothing on the subject in own words"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:09:30.634Z",
+      "by": "source-collector"
+    }
+  ]
 }

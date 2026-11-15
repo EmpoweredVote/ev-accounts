@@ -937,5 +937,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "minimum age to buy a gun",
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidates)",
+        "https://www.flsenate.gov/Session/Bill/2026/133 (HB 133 page lists W. Robinson among co-introducers; already on file)",
+        "web search: his name plus firearms terms; results gave only vote and sponsorship records already on file, no statement by him",
+        "blocked: https://ballotpedia.org/Will_Robinson (empty page on fetch)",
+        "House member page https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4698: nothing on the subject",
+        "nothing on the subject: https://yourobserver.com/article/florida-house-district-71-will-robinson",
+        "nothing on the subject: https://thebradentontimes.com/stories/candidate-profile-will-robinson,28573",
+        "nothing on the subject: https://floridaphoenix.com/2025/10/13/florida-lawmaker-proposes-once-again-to-reduce-age-to-buy-firearms-in-florida/ (does not name him)",
+        "nothing on the subject: https://www.wusf.org/politics-issues/2024-12-09/a-state-representative-has-filed-an-open-carry-bill-for-the-2025-legislative-session (does not name him)",
+        "status: sitting House member for District 71, term-limited and not on the 2026 ballot; still in office, so searched"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:14:11.842Z",
+      "by": "source-collector"
+    }
+  ]
 }

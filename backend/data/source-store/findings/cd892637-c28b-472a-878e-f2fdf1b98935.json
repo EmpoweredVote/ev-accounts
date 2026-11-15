@@ -704,7 +704,56 @@
           "sha256": "f6f6a17a9e4b816f7620bd8634d8a7d884460df93e68749fe98c27f7e7788864"
         }
       }
+    },
+    {
+      "id": "d49b21ca9c1773cf3fb277290511d75726c06343f8ccac86cfbcc1f3921d059e",
+      "kind": "own-words",
+      "url": "https://capitalsoup.com/2023/04/03/florida-senator-shevrin-jones-on-passage-of-reckless-permitless-carry-legislation",
+      "date": "2023-04-03",
+      "date_precision": "day",
+      "passage": "Permitless carry increases the risk of both intentional violence and unintentional shootings, with the facts clearly showing an increase of fatalities and gun crimes in the dozens of states that have passed similar laws. There is no denying we face a gun violence epidemic in this state and our country. People are yearning for solutions because every Floridian ought to feel safe at school, the grocery store, the movies, entertainment venues, where they worship. The last thing this moment calls for is MORE untrained, unvetted, potentially dangerous individuals with guns in public places.",
+      "note": "Statement issued in his name on the Senate's passage of the bill ending the permit requirement for carrying a concealed firearm. He says it raises the risk of shootings and cites other states' experience. Posted on a news-release site.",
+      "subjects": [
+        "carry a gun without a permit",
+        "gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:17:27.296Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "guns on college campuses",
+        "gun violence",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "Second Amendment"
+      ],
+      "places": [
+        "status: sitting state senator for District 34 (flsenate.gov page confirms District 34, in office); announced 2026-05-27 he will not seek re-election to that seat, and news reports say he is a likely candidate for a U.S. House seat; not confirmed on a ballot",
+        "https://www.wlrn.org/government-politics/2026-05-28/democratic-state-sen-shevin-jones-wont-run-for-re-election-in-district-34 (read; confirms not seeking re-election)",
+        "On the Record (0 meetings)",
+        "https://www.flsenate.gov/Senators/s34 (read; official member page, no gun content found)",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Shevrin_Jones (fetch returned no usable text)",
+        "blocked: https://floridianpress.com/2024/09/tone-deaf-rep-shevrin-jones-criticizes-lawmakers-proposal-allowing-students-to-carry-guns-on-college-campuses/ (403; a campus-carry reaction quote is seen only in a search snippet, not saved)",
+        "news search on name plus gun words (two searches; one own-words statement found at capitalsoup.com)",
+        "campaign site: not reviewed, none located",
+        "legislature bill pages for sponsorships: not reviewed beyond the votes and sponsorships already on file"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:17:27.296Z",
+      "by": "source-collector"
+    }
+  ]
 }

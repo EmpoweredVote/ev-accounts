@@ -454,5 +454,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "minimum age to buy a gun",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.myfloridahouse.gov/members/Mike-Redondo (redirects to https://www.flhouse.gov/, which rejected the request)",
+        "blocked: https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4842 (request rejected)",
+        "blocked: https://ballotpedia.org/Mike_Redondo (empty response to curl; fetch tool returned no page text)",
+        "not reviewed: campaign site (no address found)",
+        "https://www.flsenate.gov bill list fetched; the page loaded only as an empty search shell, no sponsor results read",
+        "two web searches on his name plus gun words: nothing tying him to a gun bill sponsorship or any own-words statement on the subject; a search result snippet puts him on the 2026 general-election ballot for House District 118, not confirmed from a fetched page",
+        "nothing on the subject in news search"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:15:10.920Z",
+      "by": "source-collector"
+    }
+  ]
 }

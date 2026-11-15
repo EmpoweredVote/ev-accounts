@@ -270,7 +270,117 @@
           "sha256": "a10e6db71dacfb3f4dbdf59fd42ed87889f894710e84c53f260ebebd0b52e342"
         }
       }
+    },
+    {
+      "id": "17232fdf825020f568c8428c09c33f3ea7edda2361ebacb01af92cf030eae314",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/78016/race/4488/election/1170",
+      "date": "2024-08-20",
+      "date_precision": "year",
+      "passage": "Very few. Convicted felons lose their civil rights until they are restored, and gun ownership is one of those rights they lose. Other than that, we need to safeguard the liberty afforded by the Second Amendment to every law-abiding citizen.",
+      "note": "Answer on a voter-guide questionnaire to what restrictions on gun ownership are needed. Date is the 2024 primary; exact answer date not shown.",
+      "subjects": [
+        "restrictions on who may own a gun",
+        "Second Amendment",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:15:12.885Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f10593a67c3d93cfc5c55f70142b15194f8fbe6284c58ba44f8668cd2e85c8a",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/78016/race/4488/election/1170",
+      "date": "2024-08-20",
+      "date_precision": "year",
+      "passage": "Yes",
+      "note": "One-word answer on the same questionnaire to 'Should teachers be allowed to carry guns at school?'",
+      "subjects": [
+        "teachers carrying guns at school"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:15:12.885Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b9f13b64f6a9ce3c87eb0da1999ebc4ae9651d306f322ba38c9d7d14e9778d2c",
+      "kind": "own-words",
+      "url": "https://johnsonforflorida.com/baxley-endorses-johnson.html",
+      "date": "2024-01-01",
+      "date_precision": "year",
+      "passage": "“I am honored to have support from such a celebrated Florida leader like Senator Dennis Baxley,” said Chad Johnson. “He served Florida faithfully for many years and fought hard to protect gun rights, empower parents, and keep taxes low. His leadership helped make our state the beacon of freedom it is today, and I can only hope to follow in his great footsteps in the Florida Legislature.”",
+      "note": "Campaign release quoting him praising an endorser for fighting to protect gun rights. Release date shown only as 2024.",
+      "subjects": [
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:15:12.885Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "22f1109c18c642e8dc48bc72ed648d6404b790d9406082e5777a734d9125e89a",
+      "kind": "own-words",
+      "url": "https://johnsonforflorida.com/meet-chad.html",
+      "date": "2024-01-01",
+      "date_precision": "year",
+      "passage": "Pro-Second Amendment Rights",
+      "note": "Campaign site heading in the list of his priorities; a phrase, not a full sentence. Page date not shown.",
+      "subjects": [
+        "Second Amendment",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:15:12.885Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "restrictions on who may own a gun",
+        "Second Amendment",
+        "teachers carrying guns at school",
+        "gun rights",
+        "carry a gun without a permit",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://johnsonforflorida.com (home, meet-chad page, endorsement release read)",
+        "Ballotpedia: page returned empty to fetch; search result shows him as incumbent on the 2026 general-election ballot for House District 22",
+        "https://ivoterguide.com/candidate/78016/race/4488/election/1170 (2024 primary questionnaire)",
+        "news search on name plus gun words: nothing by him on the subject beyond the above; open-carry and red-flag repeal bills in the results were another lawmaker's",
+        "legislature bill pages (flsenate.gov / myfloridahouse.gov): not reviewed beyond the votes already on file; no sponsorship found in search",
+        "nothing on the subject: official House member page not separately fetched"
+      ],
+      "found": 4,
+      "at": "2026-11-15T02:15:12.885Z",
+      "by": "source-collector"
+    }
+  ]
 }

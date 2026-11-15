@@ -507,7 +507,57 @@
           "sha256": "1f565c25910f93d1ee26080b0a6f9d8946f95b71f8450bdb7701b5e7166896e1"
         }
       }
+    },
+    {
+      "id": "35e101d8c1a7adf6bc599642253cac52857e5f3f5df7c259db1365f1a51c51a6",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/64689/race/4482/election/991",
+      "date": "2022-11-08",
+      "date_precision": "year",
+      "passage": "we just need to keep the age limits requirements, however, I don't think the solution to public safety is to remove the rights of law abiding citizens to bear and keep their arms.",
+      "note": "Her written answer on a voter-guide questionnaire (2022 general-election race) to what gun-ownership limits are needed for public safety. The same profile records her answer 'Disagree' to letting victims of gun violence sue firearms dealers and manufacturers. Date is the election date of that race; the answer itself is undated.",
+      "subjects": [
+        "minimum age to buy a gun",
+        "gun rights and the Second Amendment",
+        "suing gun dealers and makers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:19:24.913Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "limits on who may buy or own a gun",
+        "minimum age to buy a gun",
+        "suing gun dealers and makers",
+        "gun rights and the Second Amendment",
+        "carry permits",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "iVoterGuide candidate profile (2022 general-election race, State Rep. District 16): own questionnaire answers read",
+        "Wikipedia page: confirms she is a sitting Florida House member for District 16 since 2022; nothing on the subject",
+        "blocked: https://ballotpedia.org/Kiyan_Michael (fetch returned empty text; 2026 ballot status not confirmed by me)",
+        "blocked: https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4814 (page not found); official member page and campaign site not read",
+        "not reviewed: https://www.myfloridahouse.gov member page (could not locate the correct address); sponsorship list on flsenate.gov not reviewed",
+        "news search on name plus gun words (two searches): no story quoting her on the subject; a news story on the 2026 age-18 rifle bill did not mention her",
+        "not reviewed: https://www.news4jax.com/video/news/2025/10/13/florida-lawmaker-sponsors-bill-that-aims-to-lower-minimum-age-to-own-guns-from-21-to-18 (video; sponsor not tied to her)"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:19:24.913Z",
+      "by": "source-collector"
+    }
+  ]
 }

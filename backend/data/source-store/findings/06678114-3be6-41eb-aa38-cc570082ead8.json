@@ -876,5 +876,36 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "minimum age to buy a gun",
+        "carry without a permit",
+        "federal gun rules",
+        "background checks",
+        "red-flag orders",
+        "assault-style weapons"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidate meetings)",
+        "https://en.wikipedia.org/wiki/Kaylee_Tuck (confirms sitting member for the 83rd district since 2022; page edited July 2026; nothing on guns)",
+        "https://www.flsenate.gov/Session/Bill/2021/1205 (HB 1205 Second Amendment Preservation Act, Tuck prime sponsor, died in subcommittee; already on file)",
+        "https://www.wptv.com/news/state/florida-house-panel-revives-push-to-lower-gun-buying-age-from-21-to-18 (read; quotes on HB 133 are from other speakers, none from Tuck)",
+        "https://www.clickorlando.com/news/2026/01/16/florida-house-backs-lower-gun-buying-age/ (read; no Tuck quote)",
+        "blocked: https://ballotpedia.org/Kaylee_Tuck (empty response)",
+        "blocked: https://blog.tenthamendmentcenter.com/?p=36551 (403)",
+        "not reviewed: https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4710 (member page returned a near-empty body)",
+        "one news search on name plus gun words: no own-words quote from her found",
+        "campaign site and issue pages: not located, not reviewed",
+        "2026 general-election ballot status: not confirmed from a fetched page"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:05:17.843Z",
+      "by": "source-collector"
+    }
+  ]
 }

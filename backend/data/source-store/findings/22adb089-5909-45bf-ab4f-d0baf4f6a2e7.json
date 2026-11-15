@@ -418,5 +418,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "lower the minimum age to buy a rifle",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "open carry",
+        "general statement on gun rights"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "House member page, read: https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4780&LegislativeTermId=92 (confirms Fiona McFarland, District 73, Sarasota; no gun content on the page)",
+        "campaign site: https://www.fionamcfarland.com did not resolve (blocked: https://www.fionamcfarland.com)",
+        "blocked: https://ballotpedia.org/Fiona_McFarland (returned an empty page to the fetch tool and to curl)",
+        "flsenate.gov 2025 bill search by sponsor: first page only, one bill (HB 49, specialty license plates, not on the subject); no gun sponsorships seen; remaining pages not reviewed: https://www.flsenate.gov/Session/Bills/2025",
+        "flsenate.gov HB 133 (2026) bill page and bill text: sponsor and co-introducers listed, she is not among them; roll-call PDF not reviewed: https://www.flsenate.gov/Session/Bill/2026/133/?Tab=VoteHistory",
+        "two news searches on her name plus gun words: no article quotes her on guns; coverage names other members",
+        "2026 general-election ballot status not confirmed from any page fetched",
+        "ontheissues.org, vote411 and the remaining tier-2 and tier-3 sites not reviewed (search allowance used on the steps above)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:07:08.322Z",
+      "by": "source-collector"
+    }
+  ]
 }

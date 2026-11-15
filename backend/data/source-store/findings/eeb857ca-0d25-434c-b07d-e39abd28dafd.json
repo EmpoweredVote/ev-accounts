@@ -603,5 +603,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Research extract-otr script: On the Record (0 meetings)",
+        "https://www.flsenate.gov/Senators/s12 (her own Senate page: confirms Senator Colleen Burton, District 12, in office since 2022 after House service 2014-2022; no gun content on page; 2026 ballot status not confirmed by me)",
+        "blocked: https://ballotpedia.org/Colleen_Burton_(Florida) (403)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4540 (nothing returned)",
+        "Senate bill search by sponsor for firearm/gun terms (no results returned; not a full sponsorship review)",
+        "three web searches on her name plus gun words: nothing on the subject tied to her; ontheissues.org results were about other people",
+        "campaign site: not reviewed, not found",
+        "not reviewed: ontheissues.org, vote411 (leads only)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:19:02.955Z",
+      "by": "source-collector"
+    }
+  ]
 }

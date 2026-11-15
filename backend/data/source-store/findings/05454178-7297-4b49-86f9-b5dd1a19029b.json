@@ -359,7 +359,58 @@
           "sha256": "1f565c25910f93d1ee26080b0a6f9d8946f95b71f8450bdb7701b5e7166896e1"
         }
       }
+    },
+    {
+      "id": "a0f3839952ba73d95d1a09b5ec0301ad3aca1651048ddc41d4796b82c540b780",
+      "kind": "own-words",
+      "url": "https://www.wgcu.org/government-politics/2023-03-30/senate-approves-gun-law-change-measure-heading-to-desantis",
+      "date": "2023-03-30",
+      "date_precision": "day",
+      "passage": "This could not be a more timely policy, for practices that have been successful in some under-resourced districts in our communities to have access to trained, and better-trained individuals, with your policy doubling the amount of active-shooter training,",
+      "note": "Floor remarks quoted by a News Service of Florida story (carried by WGCU; the same quote is in a Jacksonville Today story) during Senate debate on HB 543, the bill ending the concealed-carry permit requirement. She spoke about the bill's provision doubling active-shooter training for school guardians, not about the permitless-carry change itself.",
+      "subjects": [
+        "school guardian training",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:05:19.490Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "school guardian training",
+        "gun rights and the Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "minimum age to buy a gun",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "https://www.flsenate.gov/Senators/s38 (her official Senate page, read: lists contact, newsletters and a sheriffs community event, nothing on guns)",
+        "Ballotpedia: fetch returned only a stub page (919 bytes), nothing readable; not usable",
+        "one web search on her name and office confirming she is the sitting District 38 senator and a 2026 candidate for re-election (race described as too close to call in an Oct 2026 news story; outcome not confirmed)",
+        "one web search on her name plus gun words: only the 2023 permitless-carry floor debate surfaced",
+        "https://jaxtoday.org/2023/03/30/heres-how-northeast-florida-lawmakers-voted-on-gun-law-changes/ (news story quoting her floor remarks, read)",
+        "https://www.wgcu.org/government-politics/2023-03-30/senate-approves-gun-law-change-measure-heading-to-desantis (same wire story, read)",
+        "not reviewed: campaign site",
+        "not reviewed: flsenate.gov bill search for her sponsorships and co-sponsorships on firearms",
+        "not reviewed: Senate floor debate video/audio for other gun bills on file",
+        "not reviewed: ontheissues.org and vote411"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:05:19.490Z",
+      "by": "source-collector"
+    }
+  ]
 }

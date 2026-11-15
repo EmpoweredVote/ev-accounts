@@ -889,7 +889,146 @@
           "sha256": "b3d9ca643134125ed96f1b3770d1b9270f3ce70cdc5669d183b66fab178f9ed4"
         }
       }
+    },
+    {
+      "id": "902ca6460162583d9f54301d826ccabe72beb11969d7e9950373e86ce01e3642",
+      "kind": "own-words",
+      "url": "https://www.cltampa.com/news/in-wake-of-texas-shooting-florida-democrats-want-republicans-to-tackle-gun-measures-during-special-session-13492377/",
+      "date": "2022-05-25",
+      "date_precision": "month",
+      "passage": "We could do all of these things, and not touch a single legally owned firearm by a responsible gun owner. It is time to have that conversation in Florida and for America,",
+      "note": "Quoted in a Creative Loafing Tampa news story after the Uvalde school shooting, at a press event where members of her caucus urged universal background checks, safe storage, ammunition ID checks, limits on large magazines and assault weapons, and red-flag programs. The quote is hers; the list of measures is the story's account of the group.",
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns and large magazines",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:21:16.525Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d05fdb350468399339dd8b44892310bf7410fd9e5b2f21c458b66851bee038f",
+      "kind": "own-words",
+      "url": "https://capitalsoup.com/2022/06/23/representative-fentrice-driskell-reaction-to-scotus-gun-ruling",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "passage": "We can only hope that rational voices can cut through the dangerous rhetoric and find balanced solutions to help address this crisis facing our country, such as the bipartisan gun safety bill moving through Congress right now.",
+      "note": "Statement posted in her name reacting to the Supreme Court's carry-permit ruling; she calls the ruling a tone-deaf interpretation and backs the federal gun safety bill then moving in Congress.",
+      "subjects": [
+        "concealed carry permit rules",
+        "general gun safety laws",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:21:16.525Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "174e64ea1b54685d067cc916c3370c2dfbbfbe58e8060da1d1326654b317e721",
+      "kind": "own-words",
+      "url": "https://www.cfpublic.org/politics/2025-03-24/they-are-clearly-political-stunts-florida-rep-fentrice-driskell-blasts-the-gop-led-legislature",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "passage": "Lowering the age back to 18, opens the door to more impulsive acts of violence and possible suicide. Especially when firearms are easier to access,",
+      "note": "Quoted by a public radio outlet at a press conference opposing the bill to lower the minimum age to buy a gun from 21 to 18.",
+      "subjects": [
+        "minimum age to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:21:16.525Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8999c30ed759e99341c068827bb85ccd125bb9122ba24199f4bc002faa43f9bc",
+      "kind": "own-words",
+      "url": "https://www.cfpublic.org/politics/2025-03-24/they-are-clearly-political-stunts-florida-rep-fentrice-driskell-blasts-the-gop-led-legislature",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "passage": "Stripping this law is reckless and a betrayal of this Legislature's bipartisan commitment to the families who demanded action,",
+      "note": "Quoted by the same public radio outlet, on repealing the 2018 under-21 gun purchase limit.",
+      "subjects": [
+        "minimum age to buy a gun",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:21:16.525Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c85899eba14bca1c85b7702ef4df40d38485ec9704fa63684b7568f323568c1e",
+      "kind": "own-words",
+      "url": "https://www.wusf.org/politics-issues/2025-04-21/following-fsus-shooting-house-democrats-are-calling-for-stricter-gun-legislation-in-florida",
+      "date": "2025-04-21",
+      "date_precision": "day",
+      "passage": "Democrats in our caucus file good common sense gun laws—reforms that will help to make our communities safer. Unfortunately, the Republican majority refuses to even give them a hearing.",
+      "note": "Quoted by a public radio outlet at a press event after the FSU shooting, saying her caucus's gun bills, including one for background checks on all firearm sales, get no hearing.",
+      "subjects": [
+        "check every gun buyer",
+        "general gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:21:16.525Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns and large magazines",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "concealed carry permit rules",
+        "general gun safety and Second Amendment statements",
+        "safe storage",
+        "ammunition ID checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Fentrice_Driskell (fetch returned empty page); a news search listed her as the winner of the Aug 18 2026 Senate District 16 primary with no opponent on the general ballot, so still in scope (status leads only, not cited)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4673 (redirected to the House home page; the member page on flhouse.gov returned 404), so no official member page was read",
+        "campaign site: not reviewed: https://fentrice-driskell-for-state-senate.solidarity.tech/",
+        "official bill pages on www.flsenate.gov: not reviewed; votes and sponsorships already on file",
+        "web search: four news searches on her name and gun words",
+        "news story (WUSF, 2025-04-21): press conference on gun bills",
+        "news story (Central Florida Public Media, 2025-03-24): press conference on lowering the buying age",
+        "news story (Creative Loafing Tampa, 2022-05): reaction to Texas school shooting",
+        "caucus release as posted on capitalsoup.com (2022-06-23): reaction to Supreme Court carry ruling",
+        "blocked: https://floridaphoenix.com/2023/04/10/fl-dem-warns-of-state-of-vigilantism-when-were-so-gun-crazed-and-gun-obsessed/ (page body not readable)",
+        "not reviewed: https://thefloridachannel.org/videos/4-22-25-house-minority-leaders-press-conference-on-gun-violence/ (video)"
+      ],
+      "found": 5,
+      "at": "2026-11-15T02:21:16.525Z",
+      "by": "source-collector"
+    }
+  ]
 }

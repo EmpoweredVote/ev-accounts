@@ -669,5 +669,37 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on a type of firearm",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment general statements",
+        "firearm penalties for minors"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "https://en.wikipedia.org/wiki/Ryan_Chamberlin (confirms sitting member for House District 24 since May 2023; nothing on guns; 2026 ballot status not stated)",
+        "https://www.flsenate.gov/Session/Bill/2024/1181 (bill page lists him among sponsors; already on file)",
+        "https://www.flsenate.gov/Session/Bill/2025/383 (bill page lists him among sponsors; already on file)",
+        "https://www.flsenate.gov/Session/Bill/2026/6029 (checked; sponsorship already on file)",
+        "https://www.ocalagazette.com/?p=85204 (2024 news story on his unopposed primary; nothing on guns)",
+        "https://floridapolitics.com/archives/612633-ryan-chamberlin-ready-to-govern-after-hd-24-win (2023 news story; no gun passage found)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4797 (page returned no readable member text)",
+        "blocked: https://ballotpedia.org/Ryan_Chamberlin (no readable text returned)",
+        "blocked: https://thecapitolist.com/ryan-chamberlin-enters-hd-24-fray-following-joe-hardings-exit (no readable text returned)",
+        "blocked: https://www.ryanforflorida.com and https://ryanchamberlin.com (no readable campaign page found)",
+        "web search on name plus Second Amendment, firearms, gun bill, concealed carry: nothing quoting him on the subject",
+        "not reviewed: other URL patterns from the researcher agent file (not run)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:09:13.364Z",
+      "by": "source-collector"
+    }
+  ]
 }

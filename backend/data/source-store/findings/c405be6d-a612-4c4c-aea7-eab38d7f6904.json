@@ -1,0 +1,34 @@
+{
+  "politician_id": "c405be6d-a612-4c4c-aea7-eab38d7f6904",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "minimum age to buy a gun",
+        "general gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "blocked: https://www.myfloridahouse.gov/members/hilary-holley (request rejected; member page unreadable)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=5042 (request rejected)",
+        "campaign site: https://www.holleyforflorida.com returned nothing readable; not confirmed to exist",
+        "https://ivoterguide.com/candidate/89472/race/31453/election/1464 (candidate profile read; the gun question is marked unanswered)",
+        "https://www.lkldnow.com/hilary-holley-wins-hd51-in-special-election/ (news story on the 2026-03-24 special election win; nothing on the subject)",
+        "https://fastdemocracy.com/bill-search/fl/legislators/FLL000525/ (no gun content readable)",
+        "https://www.billtrack50.com/legislatordetail/30840 (nothing readable on the subject)",
+        "https://ballotpedia.org/Hilary_Holley (no readable content)",
+        "https://www.flsenate.gov/Session/Bills/2026 (bill index fetched; no per-member sponsorship or roll-call found for her on gun bills)",
+        "web search: name plus gun/firearm/Second Amendment terms; nothing tying her to a gun bill or statement. The main 2026 House gun bill passed the House on 2026-03-06, before her 2026-03-24 election win"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:16:28.685Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -298,5 +298,64 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "emergency limits on guns"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "blocked: https://ballotpedia.org/Omar_Blanco (empty response)",
+        "blocked: https://ballotpedia.org/Florida_House_of_Representatives_District_115 (empty response)",
+        "https://en.wikipedia.org/wiki/Omar_Blanco (lead only; confirms he is a sitting state House member; nothing on the subject)",
+        "https://communitynewspapers.com/?p=358042 (his 2024 candidacy announcement; nothing on the subject)",
+        "https://floridapolitics.com/archives/705716-gop-firefighter-omar-blanco-torches-democratic-opponent-to-win-open-seat-in-hd-115 (2024 win story; nothing on the subject)",
+        "https://floridaphoenix.com/2026/01/30/gun-safety-advocates-push-to-preserve-floridas-red-flag-law/ (does not name him)",
+        "https://mynews13.com/fl/orlando/news/2026/01/15/florida-house-gun-age (does not name him)",
+        "blocked: https://www.myfloridahouse.gov member page (no page text returned for him)",
+        "not reviewed: https://www.flsenate.gov bill and roll-call pages (votes already on file; no sponsorship beyond FL-H-6025-2025 found)",
+        "web search: two news searches on his name plus gun words; no own-words statement on guns found",
+        "2026 ballot status not confirmed: no source found for the August 18, 2026 primary result; he was listed as running for re-election in the primary, and no page says he lost or withdrew"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:14:16.615Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "gun rights and the Second Amendment",
+        "gun limits during emergencies"
+      ],
+      "places": [
+        "On the Record (0 meetings, none by name either)",
+        "the House member page at https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4801 (fetched; page had no text naming him in my check, so no statements found)",
+        "https://www.flsenate.gov/Session/Bill/2025/6025 (bill page; lists him as co-introducer, already on file)",
+        "Ballotpedia https://ballotpedia.org/Omar_Blanco and the district 115 page (blocked: could not read page text; 2026 primary result not confirmed)",
+        "https://en.wikipedia.org/wiki/Omar_Blanco (confirms House District 115 member since Nov 2024; nothing on guns)",
+        "https://communitynewspapers.com/?p=358042 (his 2024 candidacy announcement; nothing on the subject)",
+        "news searches on his name plus gun, firearm, Second Amendment, concealed carry words (nothing on the subject by him)",
+        "not reviewed: https://www.clickorlando.com/election-2026/2026/08/18/election-results-for-state-house-senate-races-in-the-florida-primary-on-aug-18-2026/ (2026 primary result not read)",
+        "campaign site: not found"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:24:25.893Z",
+      "by": "source-collector"
+    }
+  ]
 }

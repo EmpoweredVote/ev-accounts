@@ -717,5 +717,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "carry a gun without a permit",
+        "open carry",
+        "red-flag orders",
+        "gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.wlrn.org/government-politics/2025-10-10/sam-garrison-officially-tapped-as-next-florida-house-speaker (confirms Sam Garrison, Fleming Island, Florida House speaker-designate; nothing on the subject)",
+        "https://www.flsenate.gov/Session/Bill/2025/759 (minimum-age bill: he is not a sponsor or co-introducer)",
+        "https://www.flsenate.gov/Session/Bill/2023/1465 (firearm offenses bill: sponsor already on file; no own words)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4875 (redirected to flhouse.gov; the member id I guessed gave a different member, so his own House page was not read)",
+        "blocked: https://ballotpedia.org/Sam_Garrison (no content returned)",
+        "not reviewed: his campaign site (no address found)",
+        "not reviewed: ontheissues.org and vote411 (lead-only, not fetched)",
+        "two news searches on his name plus gun words: no statement of his on the subject found; no news story fetched and quoted",
+        "2026 general-election ballot status not confirmed by a page I fetched"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:16:01.381Z",
+      "by": "source-collector"
+    }
+  ]
 }

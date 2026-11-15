@@ -511,5 +511,48 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "carry a gun",
+        "Second Amendment"
+      ],
+      "places": [
+        "status: resigned effective 2026-11-03 (news story at https://www.wusf.org/politics-issues/2026-05-13/florida-senate-budget-chief-ed-hooper-to-retire-november, fetched; he announced the resignation in a letter to senators)",
+        "On the Record (0 meetings)",
+        "https://www.flsenate.gov/Senators/s21 (fetched; the 2026-2028 District 21 seat now lists a different senator)",
+        "https://www.flsenate.gov/Senators/Hooper (fetched; shows only the 2026-2028 senator list, no page for him)",
+        "https://en.wikipedia.org/wiki/Ed_Hooper_(politician) (fetched; confirms term ended 2026-11-03)",
+        "https://floridapolitics.com/archives/287514-ed-hooper-files-paramedic-gun-bill (fetched, not read for passages; stopped because out of scope)",
+        "not reviewed: campaign site, Ballotpedia, subject searches (stopped after scope check: no longer in office)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:22:39.638Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "carry a gun",
+        "Second Amendment"
+      ],
+      "places": [
+        "status: resigned from the Senate effective 2026-11-03; no longer sitting, successor elected",
+        "On the Record (0 meetings)",
+        "https://www.flsenate.gov/Senators/s21 (fetched; the 2026-2028 District 21 seat now lists a different senator)",
+        "https://www.flsenate.gov/Senators/Hooper (fetched; shows only the 2026-2028 senator list, no page for him)",
+        "https://en.wikipedia.org/wiki/Ed_Hooper_(politician) (fetched; confirms term ended 2026-11-03)",
+        "https://floridapolitics.com/archives/287514-ed-hooper-files-paramedic-gun-bill (fetched, not read for passages; stopped because out of scope)",
+        "not reviewed: campaign site, Ballotpedia, subject searches (stopped after scope check: no longer in office)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:23:24.805Z",
+      "by": "source-collector"
+    }
+  ]
 }

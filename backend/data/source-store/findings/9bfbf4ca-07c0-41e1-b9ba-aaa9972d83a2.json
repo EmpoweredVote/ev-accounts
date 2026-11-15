@@ -656,5 +656,37 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "ghost guns",
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "repeal of gun laws",
+        "Second Amendment and gun rights"
+      ],
+      "places": [
+        "In scope: sitting state House member for District 69 (Hillsborough County), seeking re-election in the 2026 general election; confirmed as the office-holder by the WUSF interview page https://www.wusf.org/politics-issues/2026-03-29/hillsborough-representative-danny-alvarez-on-protecting-farmers-national-security-and-more; ballot status taken from a web search summary, not a fetched page",
+        "On the Record (0 meetings)",
+        "https://www.wusf.org/politics-issues/2026-03-29/hillsborough-representative-danny-alvarez-on-protecting-farmers-national-security-and-more (read in full: nothing on the subject; the only mentions of guns are in passing about foreign threats)",
+        "blocked: https://ballotpedia.org/Danny_Alvarez (empty page returned)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4811 (request rejected)",
+        "not reviewed: https://www.dannyalvarezfl.com (campaign site; no page returned)",
+        "not reviewed: https://floridianpress.com/2026/09/rick-scott-endorses-alvarez-for-state-house/ (no readable text)",
+        "https://www.flsenate.gov/Session/Bill/2024/1071 (bill page; sponsorship already on file; bill is an agriculture department package with a weapons and firearms section on tax collectors taking concealed-carry licence applications)",
+        "news search on name plus gun words: nothing on the subject found for this person; results were about a different House member with the same surname",
+        "not reviewed: https://votesmart.org/public-statement/1446338/issue-position-second-amendment (a search snippet showed a Second Amendment statement for a 'Danny', but the page gave no text and nothing ties it to this person)",
+        "https://www.billsponsor.com/politicians/10463/daniel-antonio-danny-alvarez (listed bills show nothing on guns beyond what is on file)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:15:06.068Z",
+      "by": "source-collector"
+    }
+  ]
 }

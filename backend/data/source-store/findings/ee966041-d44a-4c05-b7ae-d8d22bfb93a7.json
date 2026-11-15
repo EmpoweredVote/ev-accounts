@@ -521,5 +521,43 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "carry a gun without a permit",
+        "gun purchase age"
+      ],
+      "places": [
+        "lost the 2026-08-18 primary for governor; the news story at https://www.wlrn.org/government-politics/2026-08-18/byron-donalds-republican-primary-governor says he was defeated and that he congratulated the winner in a statement",
+        "On the Record (0 meetings)",
+        "one web search on name plus Second Amendment (leads only, not fetched); one web search on primary results",
+        "not searched further: out of scope after the primary loss, so no own-words or bill pages were reviewed"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:22:39.639Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "carry a gun without a permit",
+        "gun purchase age"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary",
+        "lost the 2026-08-18 primary for governor; the news story at https://www.wlrn.org/government-politics/2026-08-18/byron-donalds-republican-primary-governor says he was defeated and that he congratulated the winner in a statement",
+        "On the Record (0 meetings)",
+        "one web search on name plus Second Amendment (leads only, not fetched); one web search on primary results",
+        "not searched further: out of scope after the primary loss, so no own-words or bill pages were reviewed"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:23:24.806Z",
+      "by": "source-collector"
+    }
+  ]
 }

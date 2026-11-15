@@ -622,7 +622,76 @@
           "sha256": "c73224696d8e972522ec07fc06d4afd39e8c4c15b26c993b071db0f26863b535"
         }
       }
+    },
+    {
+      "id": "f8b349608eba7ba0bc29b438c2646613a9e37de637732d85f5904a45f4513c09",
+      "kind": "own-words",
+      "url": "https://www.jennifercanady.com/platform",
+      "date": "2026-11-14",
+      "date_precision": "day",
+      "passage": "Protecting our Constitutional rights and the Right to Bear Arms",
+      "note": "A campaign-site platform page lists this among the things she will fight for in the Florida House. The page itself is undated; the date given is when it was read.",
+      "subjects": [
+        "right to bear arms",
+        "gun rights general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:12:19.552Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "124c1bfd101ee9a3e4064354013efad897c905512894af91fe442d6bc15ab064",
+      "kind": "own-words",
+      "url": "https://www.jennifercanady.com/platform",
+      "date": "2026-11-14",
+      "date_precision": "day",
+      "passage": "Hardening our schools and classrooms and working with the Sheriffs Office to have well-trained Guardians.",
+      "note": "Campaign-site education plank on school security through hardened schools and sheriff-trained Guardians. The page is undated; the date given is when it was read.",
+      "subjects": [
+        "school guardians",
+        "armed security in schools"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:12:19.552Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "right to bear arms",
+        "gun rights general statement",
+        "assault-style gun ban",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "school guardians"
+      ],
+      "places": [
+        "On the Record (0 meetings found, including a name search)",
+        "campaign site https://www.jennifercanady.com/ (home, about and platform pages read; one general gun-rights line on the platform page)",
+        "Ballotpedia https://ballotpedia.org/Jennifer_Canady (blocked: page returned empty to curl and to the fetch tool; a search result summary says she is the sitting District 50 member and filed for the Aug 18, 2026 primary; not fetched by me, so her ballot status is unconfirmed)",
+        "blocked: https://www.myfloridahouse.gov/members/jennifer-canady (redirects to the House home page; member page not reached)",
+        "House member list pages https://www.flhouse.gov/ and https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4755&LegislativeTermId=93 (loaded, nothing on the subject found in text)",
+        "blocked: https://www.flsenate.gov/Session/Bills/2024/1071 (404); sponsorship of FL-H-1071-2024 is already on file",
+        "news search on name plus gun words (two searches): nothing about her; results were other people",
+        "not reviewed: ontheissues.org, vote411, Vote Smart (lead-only sources, not needed)"
+      ],
+      "found": 2,
+      "at": "2026-11-15T02:12:19.552Z",
+      "by": "source-collector"
+    }
+  ]
 }

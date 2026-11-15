@@ -684,7 +684,53 @@
           "sha256": "9e4e6cf5ddae51929a7bb16f03307d67db19ea2da45a9883f876375c76f89f14"
         }
       }
+    },
+    {
+      "id": "546cf7d5e193da04bbff558e928b91ae64bcbcf9a5db0dc8b50f3b18eb24b7d9",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/598200-house-passes-gun-bill-allowing-concealed-carry-without-a-permit",
+      "date": "2023-03-24",
+      "date_precision": "day",
+      "passage": "I don't think permitless carry should be allowed but I will take advantage of the intent of this bill and what it will allow my community",
+      "note": "Floor remarks on HB 543 (carry a concealed gun without a permit), as quoted by Florida Politics. The same story says she is a criminal defense lawyer who has seen clients charged despite holding permits. Apostrophe in 'don't' normalised from an HTML entity.",
+      "subjects": [
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:21:58.696Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permitless carry",
+        "check every gun buyer",
+        "red-flag orders",
+        "ban on assault-style guns",
+        "minimum age to buy a gun",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://ballotpedia.org/Ashley_Gantt (fetch returned no usable text)",
+        "blocked: https://www.myfloridahouse.gov member page (no usable text returned)",
+        "https://giffords.org/candidates/florida-legislature/ (advocacy group profile, not her own words)",
+        "news story on the 2023 House debate of HB 543 (floridapolitics.com), quotes her on the floor",
+        "news story on a 2026 House floor debate on HB 125 (foxnews.com), nothing on gun regulation",
+        "web search on name plus gun words; bill sponsorships already on file",
+        "not reviewed: campaign site and social posts (not found)"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:21:58.696Z",
+      "by": "source-collector"
+    }
+  ]
 }

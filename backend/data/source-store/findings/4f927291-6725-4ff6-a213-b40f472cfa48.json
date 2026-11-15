@@ -662,7 +662,55 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "f8a21b29d3e7f8076c86d542305a42cb362c07947c79936c43dc3f5c7720592d",
+      "kind": "own-words",
+      "url": "https://www.chasetramont.com/platform",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "D.C. v. Heller clearly settled the second amendment debate on the individual rights to bear arms.  I support the constitutional carry initiative.  The narrative from the left suggesting that will open us up to higher crime rates and increased violence is based simply on an outplayed narrative, not the facts.  It is past time for Florida to join the 21 other states by passing this constitutional legislation.",
+      "note": "Campaign platform page on the Second Amendment. Says the right to bear arms is an individual right and that he supports permitless (constitutional) carry in Florida. A voter guide says the site's issue list has been unchanged since 2024, so the date is approximate.",
+      "subjects": [
+        "Second Amendment and gun rights",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:09:13.255Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "Second Amendment and gun rights",
+        "minimum age to buy a gun",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site platform page https://www.chasetramont.com/platform (read; one passage on the subject)",
+        "campaign site home page https://www.chasetramont.com/ (read; nothing on the subject)",
+        "a local voter guide https://www.clickorlando.com/voters-guide/2026/10/16/2026-voters-guide-florida-house-district-30/ (confirms he is on the 2026 general-election ballot; he did not answer its questionnaire)",
+        "Ballotpedia https://ballotpedia.org/Chase_Tramont (fetch returned empty; only seen in search results)",
+        "one news search on name plus firearm words: nothing by or quoting this person",
+        "not reviewed: https://www.myfloridahouse.gov member page (no usable page found)",
+        "not reviewed: https://www.flsenate.gov bill pages (votes and sponsorships already on file)",
+        "not reviewed: interviews, debate or forum videos"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:09:13.255Z",
+      "by": "source-collector"
+    }
+  ]
 }

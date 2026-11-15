@@ -712,5 +712,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "lower gun-buying age",
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "general statement on gun rights"
+      ],
+      "places": [
+        "status: sitting House member for District 100, term-limited and not on the 2026 ballot; term runs to the November 2026 election (per news search results)",
+        "On the Record (0 appearances, 0 candidates)",
+        "campaign site https://www.chiplamarca.com (read home page; site search for gun and firearm returned only reposted news items, nothing in his own words)",
+        "https://www.chiplamarca.com/accomplishments/ nothing on the subject",
+        "blocked: https://ballotpedia.org/Chip_LaMarca (returned empty page)",
+        "not reviewed: https://www.myfloridahouse.gov member page (no usable content returned)",
+        "news search on name plus gun words: news stories confirm the 2026 HB 133 no vote already on file (https://www.clickorlando.com/news/2026/01/16/florida-house-backs-lower-gun-buying-age/); no direct quote of him on the subject found",
+        "legislature bill pages: votes already on file; no further sponsorships found"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:18:19.751Z",
+      "by": "source-collector"
+    }
+  ]
 }

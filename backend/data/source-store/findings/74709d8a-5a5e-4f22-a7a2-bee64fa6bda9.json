@@ -268,5 +268,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name matches)",
+        "https://www.flsenate.gov/Session/Bill/2025/65 (fetched; lists Rosenwald among the sponsors, already on file)",
+        "web search: name plus firearms/gun/Second Amendment terms; nothing in his own words on the subject",
+        "web search: 2026 primary result for House District 98; no page found that reports the outcome, so his current status is unconfirmed (earlier pages show him as the incumbent on the Aug 18 2026 primary ballot)",
+        "blocked: https://ballotpedia.org/Mitch_Rosenwald (empty response)",
+        "blocked: https://floridapolitics.com/archives/659994-oakland-park-mayor-enters-crowded-democratic-primary-fray-for-hd-98 (payment required)",
+        "not reviewed: https://www.myfloridahouse.gov/ member page (redirects to flhouse.gov; no member page reached)",
+        "not reviewed: https://bluevoterguide.org/endorser-org/Gun_Sense_Voter/FL/4895 (a search result lists him as endorsed by a gun-safety group; the page text did not load, so nothing saved)",
+        "nothing on the subject: no campaign site found"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:22:16.109Z",
+      "by": "source-collector"
+    }
+  ]
 }

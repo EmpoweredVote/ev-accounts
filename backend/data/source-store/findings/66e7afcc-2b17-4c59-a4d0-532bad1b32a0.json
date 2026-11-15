@@ -790,7 +790,57 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "2d217ed043b3e5d6bad0414120466de5b5ca5611f477cf6e09c6927862bb7e76",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2021/1301",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "FL-HM-1301-2021",
+      "act": "sponsor",
+      "motion": "co-sponsor, sponsor list (prime / co-sponsor)",
+      "note": "Named on the sponsor list of HM 1301, a memorial saying the Legislature believes the President's proposals to restrict gun ownership by law-abiding citizens violate the Constitution, and that it will use its lawful power to resist or overturn any federal gun-control measure that does. Died in Senate Rules on 2021-04-30.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "resist federal gun-control measures"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:10:58.652Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "federal gun-control measures",
+        "state preemption of local gun rules",
+        "waiting period for gun buyers",
+        "minimum age to buy a gun",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4707 (request rejected)",
+        "blocked: https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4707 (request rejected)",
+        "not reviewed: https://www.mikegiallombardo.com (campaign domain not connected, no page served)",
+        "https://www.flsenate.gov/Session/Bill/2021/1301 (sponsor list read)",
+        "https://en.wikipedia.org/wiki/Mike_Giallombardo (read; his bill list names a Second Amendment memorial and a firearms preemption bill, nothing in his own words)",
+        "blocked: https://ballotpedia.org/Mike_Giallombardo (page returned no text to a direct fetch; search results say he filed to run for re-election in District 79, primary 2026-08-18; the primary outcome and the 2026 general-election ballot were not confirmed on a page I could read)",
+        "web search on his name plus gun and Second Amendment words: only co-sponsorships turned up, no statement in his own words",
+        "nothing on the subject in his own words"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:10:58.652Z",
+      "by": "source-collector"
+    }
+  ]
 }

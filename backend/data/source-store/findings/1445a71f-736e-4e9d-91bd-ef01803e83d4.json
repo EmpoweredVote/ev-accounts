@@ -767,5 +767,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "waiting period on gun sales",
+        "minimum age to buy a long gun",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "general gun-rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "web search: Tom Fabricio plus gun words (a news story and a gun-news column mention him once, with a one-word quote only)",
+        "https://www.flsenate.gov/Session/Bill/2025/317 (read: he is listed on a bill about complaints against law enforcement, not a gun bill)",
+        "https://www.flsenate.gov/Session/Bill/2025/383 (read: bill page for the law-enforcement waiting-period bill, already on file)",
+        "blocked: https://floridianpress.com/?p=70090 (403 to automated fetch)",
+        "blocked: https://ballotpedia.org/Tom_Fabricio (page returned no text)",
+        "blocked: https://www.myfloridahouse.gov (member page returned no name text)",
+        "not reviewed: https://bearingarms.com/camedwards/2025/03/10/instead-of-another-carveout-its-time-for-florida-lawmakers-to-simply-repeal-this-gun-law-n1227919 (the only line on him is a reporter's paraphrase plus the single word great, no full sentence of his own)",
+        "campaign site: none found",
+        "nothing on the subject in his own words"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:06:08.912Z",
+      "by": "source-collector"
+    }
+  ]
 }

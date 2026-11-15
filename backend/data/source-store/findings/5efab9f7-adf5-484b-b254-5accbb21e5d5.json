@@ -90,7 +90,128 @@
           "sha256": "31769f9a633fdb6185c40b828b864c34ff6bbfe8c6fdaea85764348f54ce30f6"
         }
       }
+    },
+    {
+      "id": "6160a5f9c8196f983f68c2f598498765b707498ab3457ce8b4013833c8613545",
+      "kind": "own-words",
+      "url": "https://www.news4jax.com/news/local/2026/01/15/for-4th-straight-legislative-session-florida-house-passes-bill-supporting-lower-age-for-buying-guns/",
+      "date": "2026-01-15",
+      "date_precision": "day",
+      "passage": "“What has changed is our willingness to look away,” Young said of supporters of lowering the minimum age.",
+      "note": "Quoted in a news story on the House floor debate over HB 133; he says the reasons behind the 2018 age-21 law have not changed.",
+      "subjects": [
+        "minimum age to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:24:15.254Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc0411f2f9cdd205d568072b67d74f9183ef692e1a1d45c76ee1e05b8a327985",
+      "kind": "own-words",
+      "url": "https://solwd.net/?p=363510",
+      "date": "2026-01-15",
+      "date_precision": "day",
+      "passage": "“To now erase those guardrails is not progress — it’s amnesia,” Young said. “And amnesia, in the face of loss, is dangerous. Waiting periods work.”",
+      "note": "Quoted in a newspaper column on the HB 133 floor debate; he argues for keeping the age limit and for waiting periods.",
+      "subjects": [
+        "minimum age to buy a gun",
+        "waiting period before taking a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:24:15.254Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "717782ec53f7934b97f0807092866081ad8176eae64b32ea96dcc276b2164879",
+      "kind": "record",
+      "url": "https://flsenate.gov/Session/Bill/2026/133/Amendment/666985/PDF",
+      "date": "2026-01-13",
+      "date_precision": "day",
+      "instrument_id": "FL-H-133-2026",
+      "act": "other",
+      "motion": "Floor amendment 666985 offered by Rep. Young (failed)",
+      "note": "He filed an amendment to HB 133 keeping the buying age at 21 and adding a 7-day wait before dealers hand over a long gun to a 18-to-20-year-old, even if a background check has cleared. The bill page lists it as failed.",
+      "subjects": [
+        "minimum age to buy a gun",
+        "waiting period before taking a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:24:15.254Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "minimum age to buy a gun",
+        "waiting period before a gun purchase",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general gun rights and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings, 0 appearances)",
+        "not reviewed: https://www.flhouse.gov/ (home page fetched; no member page for him or gun content found on it)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/representatives.aspx (redirects to the House home page; no member page reached)",
+        "blocked: https://ballotpedia.org/RaShon_Young (fetch returned empty)",
+        "blocked: https://en.wikipedia.org/wiki/RaShon_Young (fetch failed)",
+        "campaign site: not found by search",
+        "news search on his name plus gun words: one search result summary said he proposed a seven-day cooling-off amendment to the HB 133 long-gun age bill and argued for waiting periods, but none of the 6 news pages I fetched (wptv, fox35, mynews13, yahoo, wtxl, wusf) carried his name or that remark, so it is not saved",
+        "nothing on the subject: other news pages fetched",
+        "scope: a search summary places him as the House District 40 member whose term ends 2026-11-03; I could not fetch a page confirming whether he is on the 2026 general ballot or was re-elected",
+        "bill pages on www.flsenate.gov for sponsorships: not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:10:23.661Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "minimum age to buy a gun",
+        "waiting period before taking a gun",
+        "background checks",
+        "assault-style weapons",
+        "red flag orders",
+        "carry without a permit",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "the Florida Senate bill page for HB 133 (2026), which lists his floor amendment: https://www.flsenate.gov/Session/Bill/2026/133",
+        "his floor amendment text: https://flsenate.gov/Session/Bill/2026/133/Amendment/666985/PDF",
+        "a news story on the House vote: https://www.news4jax.com/news/local/2026/01/15/for-4th-straight-legislative-session-florida-house-passes-bill-supporting-lower-age-for-buying-guns/",
+        "a newspaper column on the floor debate: https://solwd.net/?p=363510",
+        "https://ballotpedia.org/RaShon_Young (nothing on the subject)",
+        "one news search on his name plus gun words, one search on the waiting-period amendment",
+        "not reviewed: https://www.myfloridahouse.gov member page (fetch returned no usable text)",
+        "not reviewed: campaign site (not located)",
+        "not reviewed: bill-sponsorship search for other gun bills"
+      ],
+      "found": 3,
+      "at": "2026-11-15T02:24:15.254Z",
+      "by": "source-collector"
+    }
+  ]
 }

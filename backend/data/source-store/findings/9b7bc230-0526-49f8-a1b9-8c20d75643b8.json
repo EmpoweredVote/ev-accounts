@@ -797,7 +797,54 @@
           "sha256": "6ecc3884e974a0556c4ed0a2d89f516b5f1aa043e1b45566146d1a1974ff09b2"
         }
       }
+    },
+    {
+      "id": "ce030c9f5d134b4de46dba224f9b7608606982e7ecce81a53b5699e4356952ce",
+      "kind": "own-words",
+      "url": "https://allisontant.com/florida-politics-allison-tant-clears-130k-for-state-house-bid/",
+      "date": "2019-04-13",
+      "date_precision": "day",
+      "passage": "“I am ready, and eager to work on important issues for our area like investing in our schools, passing meaningful gun safety measures and ensuring Floridians have access to the healthcare they need.",
+      "note": "Quote from her, reposted on her campaign site from a Florida Politics story during her first House run; she lists passing gun safety measures among her priorities.",
+      "subjects": [
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:20:48.499Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety measures",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "carry a gun without a permit",
+        "red-flag orders"
+      ],
+      "places": [
+        "status: sitting House member for District 9; a news search shows her on the 2026 general-election ballot unopposed in her primary; final 2026 result not found",
+        "On the Record (0 appearances; extract script found no meetings)",
+        "campaign site https://allisontant.com/ (site search for gun, recap page, two 2019 news-repost pages read)",
+        "https://allisontant.com/issues/ (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Allison_Tant (empty response)",
+        "not reviewed: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4799 (redirected to the House home page)",
+        "not reviewed: https://pluralpolicy.com/app/person/c26599eb-5ef8-44c3-93a6-77cf23a9567e/ (redirect, not followed)",
+        "https://www.flsenate.gov/Session/Bill/2021/25 (sponsor list names her; already on file)",
+        "two web searches on her name plus gun words: news results cover the House gun-age bills but quote nothing from her"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:20:48.499Z",
+      "by": "source-collector"
+    }
+  ]
 }

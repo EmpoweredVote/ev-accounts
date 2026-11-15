@@ -272,5 +272,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits",
+        "ghost guns",
+        "Second Amendment general statements",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings found, including a name search)",
+        "https://baynews9.com/fl/tampa/know-your-electeds/2026/06/15/know-your-electeds-florida-state-representative-jon-albert- (a local TV profile; confirms sitting House member for District 48; nothing on the subject)",
+        "https://ivoterguide.com/candidate/82803/race/28588/election/1431 (voter guide shows the gun-ownership question as not answered by him; nothing on the subject; lists him in the 2026 general)",
+        "https://www.flsenate.gov/Session/Bills/2025 (bill list searched by sponsor name; the gun bills shown belong to other members; no gun sponsorship by him found)",
+        "blocked: https://ballotpedia.org/Jon_Albert (empty response to fetch; search results show him as the incumbent in the Nov 3, 2026 general for District 48)",
+        "blocked: https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=5030 (page not found); official House member page not reached",
+        "campaign site: not found (https://www.jonalbertfl.com did not respond)",
+        "news search on name plus gun words: nothing on the subject by him; gun bills in results were by other members"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:08:03.520Z",
+      "by": "source-collector"
+    }
+  ]
 }

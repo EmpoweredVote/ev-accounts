@@ -595,7 +595,60 @@
           "sha256": "f6f6a17a9e4b816f7620bd8634d8a7d884460df93e68749fe98c27f7e7788864"
         }
       }
+    },
+    {
+      "id": "be01df959f812e4c9e9b8dcc0aaf499ba1d4543cae3f616f193c55eecb8cd2d5",
+      "kind": "record",
+      "url": "https://flsenate.gov/Session/Bill/2026/256",
+      "date": "2025-10-21",
+      "date_precision": "day",
+      "instrument_id": "FL-S-256-2026",
+      "act": "sponsor",
+      "note": "Filed by Rouson. SB 256 sets storage requirements for handguns kept in private vehicles and vessels, requires law enforcement agencies to run a promotional campaign, adds the storage rules to firearms safety course content, and revises the warnings required on firearm sales and transfers. Referred to committees 2025-11-03; died in House Criminal Justice Subcommittee 2026-03-13.",
+      "subjects": [
+        "lock up handguns in cars and boats",
+        "firearm sale and transfer warnings",
+        "gun safety course content"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:08:38.654Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "store handguns locked in cars and boats",
+        "firearm sale and transfer warnings",
+        "gun safety course content",
+        "bans on a type of firearm",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "local rules on guns",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://flsenate.gov/Senators/2022-2024/S16/5203 (Senate member page, read; lists a firearms-storage bill)",
+        "https://flsenate.gov/Senators/s016 (current member page fetched; shows a different member's biography, not used)",
+        "https://flsenate.gov/Session/Bill/2026/256 (bill page, read)",
+        "https://www.wlrn.org/government-politics/2025-11-12/florida-democrats-gun-control (news story, read; names the bill, no direct quote)",
+        "Ballotpedia: page returned no usable text; not reviewed: https://ballotpedia.org/Darryl_Rouson",
+        "news search on name plus gun words: no own-words quote found",
+        "campaign site: none found; nothing on the subject",
+        "status: sitting senator, District 16; term-limited and not on the 2026 ballot (per search results, not independently fetched)"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:08:38.654Z",
+      "by": "source-collector"
+    }
+  ]
 }

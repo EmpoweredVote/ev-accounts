@@ -145,5 +145,39 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "minimum age to buy a gun",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "gun limits during emergencies",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4737 (redirects to the House home page; member page text not reachable)",
+        "blocked: https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4737 (returned an empty page)",
+        "no campaign site found or reviewed",
+        "blocked: https://ballotpedia.org/Brian_Hodgers (empty response)",
+        "blocked: https://ballotpedia.org/Florida_House_of_Representatives_District_32 (empty response)",
+        "blocked: https://floridapolitics.com/archives/710533-brian-hodgers-will-run-to-succeed-debbie-mayfield-in-hd-32 (HTTP 402)",
+        "blocked: https://www.flsenate.gov/Session/Bill/2026/133 (request rejected)",
+        "https://www.flsenate.gov/Session/Bill/2025/6025 (HB 6025 page, lists him as a co-introducer; already on file)",
+        "https://www.flsenate.gov/Session/Bill/2025/759 (HB 759 page, already on file)",
+        "https://www.flsenate.gov/Session/Bill/2026/1551 and /757 (bill titles only; votes already on file)",
+        "https://en.wikipedia.org/wiki/Brian_Hodgers (lead only; shows a sitting District 32 member since June 2025)",
+        "two web searches on name plus gun words: no result naming him with his own words on guns",
+        "scope not confirmed: a search summary says he was a 2026 general-election candidate in District 32, but no fetched page confirmed the November 2026 ballot or result",
+        "not reviewed: ontheissues.org, vote411, vote.norml.org/politicians/172907"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:08:57.776Z",
+      "by": "source-collector"
+    }
+  ]
 }

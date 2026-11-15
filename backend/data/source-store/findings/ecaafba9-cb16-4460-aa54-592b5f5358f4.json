@@ -415,7 +415,79 @@
           "sha256": "96b5b57f73ae337a4a0857e0259eb46b08464a0b2cb1426d898cc5a11fc26a9e"
         }
       }
+    },
+    {
+      "id": "fb1e659953ecc64a219e9a4d13e38d8604fe28ececf538188848ec2a6cc01bbc",
+      "kind": "own-words",
+      "url": "https://www.cfpublic.org/politics/2025-03-12/florida-gun-rights-groups-push-to-repeal-the-ban-on-selling-firearms-and-ammo-in-a-local-emergency",
+      "date": "2025-03-12",
+      "date_precision": "day",
+      "passage": "I’m always bringing my firearms with me, because my first responsibility as a father and husband is to protect my family. I think this is part of something we should talk about on the state level as far as actually encouraging people to be trained and ready and prepared to transport and travel with firearms during states of emergency. And of course, making sure that we’re not under the thumb of overbearing local government declaring an emergency to take away our rights.",
+      "note": "Quoted by a public-radio news story about a bill to repeal the ban on selling guns and ammunition during a locally declared emergency. He backs carrying and transporting guns in emergencies and objects to local governments limiting gun sales then.",
+      "subjects": [
+        "gun sales during a local emergency",
+        "carrying guns",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:18:38.409Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0630125c314c893f05ddca734dc935b6cd7d61920a964fb09d6fe53484e53e01",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2024/1124",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "FL-S-1124-2024",
+      "act": "sponsor",
+      "note": "SB 1124 (2024), his bill: limits the 3-day waiting period to handgun purchases only and removes the provision that ended the wait once a records check finished. Already on file as a sponsorship; saved here with the bill page's own summary.",
+      "subjects": [
+        "waiting period to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:18:38.409Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "waiting period to buy a gun",
+        "sale of guns and ammunition during a local emergency",
+        "carrying guns",
+        "gun rights and the Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.flsenate.gov/Senators/s33 (Senate member page, read; confirms Senate District 33, Lee County, service 2026-2028)",
+        "https://flsenate.gov/Senators/S33?Tab=Media (media and publications list; nothing on the subject)",
+        "his bill list on the Senate site (2027 session bills are claims bills only; nothing on the subject)",
+        "https://www.flsenate.gov/Session/Bill/2024/1124 (bill page for his waiting-period bill, read)",
+        "Ballotpedia: no usable page text returned; not reviewed: https://ballotpedia.org/Jonathan_Martin_(Florida)",
+        "blocked: https://flvoicenews.com/?p=72799 (bot check page)",
+        "news search on his name plus gun words (found one public-radio story quoting him)",
+        "campaign site: none found in search; not reviewed",
+        "2026 ballot status: no qualifying list found; brief lists him as a sitting senator, status not independently confirmed"
+      ],
+      "found": 2,
+      "at": "2026-11-15T02:18:38.409Z",
+      "by": "source-collector"
+    }
+  ]
 }

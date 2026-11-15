@@ -592,7 +592,80 @@
           "sha256": "d3f8ef13954621591e05e18ace186aa362161ece01cfb0957521a571b6e15d8a"
         }
       }
+    },
+    {
+      "id": "8aa9fffc5ce3c3990af82f00d720e070d2d81e1d165b4c40ff6744ef7f78f376",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2026/171",
+      "date": "2025-10-14",
+      "date_precision": "day",
+      "instrument_id": "FL-H-171-2026",
+      "act": "sponsor",
+      "note": "Prime sponsor of HB 171, Responsible Firearm Safety Awareness Month: names June as a month to promote safe firearm use and ownership while honoring the Second Amendment and the state constitution's gun-rights clause, and encourages voluntary training and safety events. Died in the Government Operations Subcommittee (session ended 2026-03-13).",
+      "subjects": [
+        "gun safety awareness month",
+        "voluntary firearm safety training",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:22:15.392Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "325636376a3e83b074be78e3d43410b580b8bc909796d2ae7f80ed06ce13bf4a",
+      "kind": "own-words",
+      "url": "https://www.flsenate.gov/Session/Bill/2026/171/BillText/Filed/PDF",
+      "date": "2025-10-14",
+      "date_precision": "day",
+      "passage": "The Legislature designates the month of June as \"Responsible Firearm Safety Awareness Month\" to recognize the importance of safe and responsible firearm use and ownership, while honoring the guarantees of the Second Amendment to the United States Constitution and of s. 8, Art. I of the State Constitution.",
+      "note": "Text of the bill he filed (statement issued in his name as sponsor, not a floor speech): recognizes safe firearm ownership and cites Second Amendment and state gun-rights guarantees.",
+      "subjects": [
+        "gun safety awareness month",
+        "Second Amendment",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:22:15.392Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety awareness",
+        "Second Amendment",
+        "firearm safety training",
+        "assault-style weapons",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "carry a gun without a permit",
+        "red flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.flsenate.gov/Session/Bill/2026/171 (bill page, history and filed text read)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4864 (request rejected)",
+        "https://ballotpedia.org/Jervonte_Edmonds (fetched, page text empty; ballot status taken from search result and the state party release below)",
+        "https://floridadems.org/2026/08/florida-democratic-party-congratulates-newly-elected-state-lawmakers-and-legislative-nominees/ (lists him as a House District 88 nominee after the August 18, 2026 primary; in scope)",
+        "one news search on name plus gun words: coverage found was about the wider age-21 rifle debate and did not quote him",
+        "campaign site: not reviewed, none located",
+        "own-words statements, interviews, debate answers on guns: nothing on the subject found"
+      ],
+      "found": 2,
+      "at": "2026-11-15T02:22:15.392Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -272,5 +272,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun-buying age",
+        "Second Amendment general statements",
+        "ghost guns",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person, also searched by name)",
+        "campaign site https://www.votenancobb.com/ (read; priorities list says only 'Defend every single one of our God-given Constitutional Rights.', which does not name guns, so not saved; nancobb.com is an unrelated hijacked site, not used)",
+        "https://www.clickorlando.com/voters-guide/2026/10/16/2026-voters-guide-florida-house-district-26/ (confirms she is the District 26 candidate on the 3 Nov 2026 ballot; no gun answers, she did not respond to the questionnaire)",
+        "https://ivoterguide.com/candidate/78948/race/4492/election/1254 (2024 questionnaire, every answer 'Did not answer', no gun statements)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4912 (request rejected); member list page had no match",
+        "blocked: https://ballotpedia.org/Nan_Cobb (empty page returned, mentions of the subject unverified)",
+        "blocked: https://www.flsenate.gov bill pages (sponsor search returned no usable list; bills not individually reviewed beyond those already on file)",
+        "news search on name plus gun words: nothing quoting her on the subject",
+        "nothing on the subject in own words"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:16:13.469Z",
+      "by": "source-collector"
+    }
+  ]
 }

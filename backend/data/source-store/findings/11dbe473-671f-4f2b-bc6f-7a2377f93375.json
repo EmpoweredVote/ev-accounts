@@ -149,7 +149,78 @@
           "sha256": "f5f73a822f8ab56e90d0e4dc69daad9aaa53fe19ea56a39e9bd390426a064212"
         }
       }
+    },
+    {
+      "id": "fa8b54e3ba4bc8c70687f7a6e8cd689c5d79153053b0dd5e70caf87afd2e61fa",
+      "kind": "own-words",
+      "url": "https://www.nraila.org/articles/20160223/alert-fl-senator-brags-about-killing-2a-bills-in-bloomberg-venue",
+      "date": "2016-02-18",
+      "date_precision": "day",
+      "passage": "Senator Miguel Diaz de la Portilla has exercised his authority as Chairman of the Judiciary Committee to kill SB 300, which would have allowed Florida citizens to exercise their Second Amendment rights to openly keep and bear arms.",
+      "note": "Statement issued in his name, reposted by a gun-rights group, objecting to a committee chair not hearing SB 300, an open-carry bill; he describes the bill as constitutionally faithful and says he and others who support the right to keep and bear arms will return.",
+      "subjects": [
+        "open carry",
+        "Second Amendment",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:05:39.963Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4d3d5bb8fe867142246cfbcc068cf448356a07305f964d4346738ad187e97831",
+      "kind": "own-words",
+      "url": "https://www.fox13news.com/news/florida-lawmaker-introduces-campus-safety-bill-allow-open-carry-expand-guardian-program",
+      "date": "2025-12-18",
+      "date_precision": "day",
+      "passage": "If schools want to opt in to the Guardian program, if they think it's a good way to add to their campus security, we want to provide a way for them to voluntarily do that,",
+      "note": "Quoted in a TV station news story about SB 896: he says the bill lets public colleges and universities voluntarily join the school guardian program, in which trained staff may carry guns; in the same story he says it is not a bill he ever wanted to carry but that a need now exists.",
+      "subjects": [
+        "guns on college campuses",
+        "school guardian program"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:05:39.963Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "open carry",
+        "guns on college campuses",
+        "school guardian program",
+        "Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official Senate member page https://www.flsenate.gov/Senators/s1 (read; names Senator Gaetz)",
+        "official bill page for SB 896 (2026) https://www.flsenate.gov/Session/Bill/2026/896 (read; prime sponsor, school safety and guardian bill)",
+        "one news search on name plus gun words (two stories read, one 2025 news story and one 2016 statement reposted on a gun-rights group site)",
+        "blocked: https://floridaphoenix.com/2025/12/16/sadly-timed-new-bill-would-allow-professors-tas-to-open-carry-on-campus/",
+        "not reviewed: https://ballotpedia.org/Don_Gaetz (fetch returned nothing usable)",
+        "nothing on the subject found on background checks, assault-style gun bans, red-flag orders, ghost guns or permit fees; search allowance not exhausted but not run further",
+        "ballot status for 2026 not confirmed on a page; person treated as sitting senator per the brief"
+      ],
+      "found": 2,
+      "at": "2026-11-15T02:05:39.963Z",
+      "by": "source-collector"
+    }
+  ]
 }

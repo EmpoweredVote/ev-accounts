@@ -592,5 +592,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script found no appearances)",
+        "https://public.lobbytools.com/legislators/833 (read: confirms sitting Florida House member, District 77, Fort Myers, term runs to 2030; nothing on the subject)",
+        "https://www.flsenate.gov/Session/Bill/2023/1543 (read: HB 1543 minimum age for firearm purchase; she is on the co-sponsor list; already on file)",
+        "https://www.flsenate.gov/Session/Bill/2024/433 (read: her 2024 sponsored bill is on employment regulations; nothing on the subject)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4833 (request rejected)",
+        "blocked: https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4833 (page not found)",
+        "blocked: https://ballotpedia.org/Tiffany_Esposito (no content returned)",
+        "blocked: https://open.pluralpolicy.com/person/tiffany-esposito-1e8wRQfU61oeRXiwBOBLlE (no content returned)",
+        "not reviewed: her campaign site (none located)",
+        "news search on her name plus firearm words: no statement of her own found"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:19:22.877Z",
+      "by": "source-collector"
+    }
+  ]
 }

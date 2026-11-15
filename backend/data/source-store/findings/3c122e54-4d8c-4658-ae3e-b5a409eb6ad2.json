@@ -351,7 +351,92 @@
           "sha256": "02d9105d2e2c7d686f17ed88701084c80f8196b291240043b7423da39dbafa76"
         }
       }
+    },
+    {
+      "id": "17bd182b7f6b22a100bb24a89cb8d1a4767219517ffd90fd0b5f60f72a69bd95",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/720272-monique-miller-to-file-open-carry-legislation-in-house",
+      "date": "2025-02-10",
+      "date_precision": "day",
+      "passage": "“It is my sincere hope Florida can join the other 45 states that have some form of open carry in the country,” she said.",
+      "note": "Quoted in a Florida Politics news story announcing she would file an open carry bill in the House; she says she wants Florida to allow open carry.",
+      "subjects": [
+        "carry a gun openly"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:08:32.875Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "439a5b907188355d5cd10fd6d04d25ccc0ca58df356e9e92f8e9e20dae497468",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/720272-monique-miller-to-file-open-carry-legislation-in-house",
+      "date": "2025-02-10",
+      "date_precision": "day",
+      "passage": "“Sometimes women have to choose between protecting themselves and what they want to wear that day,” Miller said. “Women have to worry that if they have a gun showing they could face 60 days in jail.”",
+      "note": "Quoted in the same Florida Politics story giving her reason for open carry: people who carry a gun for self-defense can face jail if it shows.",
+      "subjects": [
+        "carry a gun openly"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:08:32.875Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "690f4d58578633a97ed1a7d26aa27da79ea0301ea350c218eea6af2c1fec93ea",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/724422-gun-rights-groups-pillory-monique-miller-after-she-fails-to-file-open-carry-bill",
+      "date": "2025-03-04",
+      "date_precision": "day",
+      "passage": "“I am a staunch advocate of open carry,” Miller said. “I recognize it will take a concerted effort over time to get it done, and I’m in it for the long haul.”",
+      "note": "Quoted in a Florida Politics news story after the 2025 filing deadline passed without her open carry bill being filed; she says she still backs open carry and sees no viable path that session.",
+      "subjects": [
+        "carry a gun openly"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:08:32.875Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun openly",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Monique_Miller (returned an empty holding response, HTTP 202)",
+        "not reviewed: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4849 (member page fetch returned no text naming her; no own page read)",
+        "status unverified: searched twice for the 2026 August 18 primary result for House District 33 and found no result page for her race; a search summary of Ballotpedia says she was running in that primary",
+        "https://floridapolitics.com/archives/720272-monique-miller-to-file-open-carry-legislation-in-house (news story, read)",
+        "https://floridapolitics.com/archives/724422-gun-rights-groups-pillory-monique-miller-after-she-fails-to-file-open-carry-bill (news story, read)",
+        "https://www.breitbart.com/2nd-amendment/2025/02/11/florida-state-rep-filing-bill-to-allow-open-carry-of-handguns-for-self-defense/ (news story, read)",
+        "web search on her name plus open carry (found the stories above)",
+        "not reviewed: her official site and campaign site (not fetched; no search of them for gun words)",
+        "not reviewed: ontheissues.org and vote411 (leads only)"
+      ],
+      "found": 3,
+      "at": "2026-11-15T02:08:32.875Z",
+      "by": "source-collector"
+    }
+  ]
 }

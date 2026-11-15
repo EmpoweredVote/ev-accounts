@@ -513,5 +513,35 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Senate District 10 pages: https://www.flsenate.gov/Senators/s10 now shows the 2026-2028 senator, a different person; no Brodeur page read",
+        "https://www.flsenate.gov/Session/Bills/2025?sponsor=Brodeur: loaded only a filter list, no gun sponsorships found",
+        "blocked: https://www.jasonbrodeur.com (HTTP 503, twice)",
+        "blocked: https://ballotpedia.org/Jason_Brodeur (HTTP 403 by curl, empty by fetch)",
+        "blocked: https://flvoicenews.com/?p=146771 and https://flvoicenews.com/?p=147327 (HTTP 403); a search snippet says a Nov 4 2026 story reports he lost the Nov 3 general election, not confirmed by a second source",
+        "blocked: https://floridaphoenix.com/voter-guides/contests/2026-general-florida-senate-sd-10/ (HTTP 403)",
+        "blocked: https://www.ammoland.com/2023/03/republican-senator-models-floridas-gun-freedom-of-speech-laws-on-cuba (HTTP 403)",
+        "https://www.nraila.org/articles/20180421/florida-alert-it-s-time-to-name-the-betrayers-who-voted-for-gun-control: an advocacy-group page about 2018 votes; no words of his, nothing saved",
+        "web search x4 on his name plus gun, firearm, age 21, permitless carry, red flag: results were third-party commentary and other senators' bills, no statement or gun sponsorship by him",
+        "none of his own pages (official, member or campaign) could be read"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:18:37.376Z",
+      "by": "source-collector"
+    }
+  ]
 }

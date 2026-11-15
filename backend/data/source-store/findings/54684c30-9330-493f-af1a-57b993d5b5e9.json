@@ -957,5 +957,37 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits and where guns may be carried",
+        "repeal of gun laws",
+        "general statements on gun rights or the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "https://www.flsenate.gov/Session/Bill/2025/759 (read: he is listed as a co-introducer; already on file; no statement by him on the page)",
+        "https://www.flsenate.gov/Session/Bill/2026/133 (read: he is in the sponsor list; already on file)",
+        "blocked: https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4720 (member page redirects to the House home page or returns not found)",
+        "blocked: https://ballotpedia.org/James_Buchanan_(Florida) (returned a bot-check response with no page text)",
+        "blocked: https://floridianpress.com/2025/12/james-buchanan-highlights-grit-toughness-in-football-themed-senate-bid-ad/ (403)",
+        "campaign site: no address found in searches; not reviewed",
+        "news search on his name with gun, firearm and Second Amendment words (several result pages, mostly about U.S. Rep. Vern Buchanan, a different person; nothing quoting James Buchanan on guns)",
+        "https://floridapolitics.com/archives/753256-fiona-mcfarland-to-seek-re-election-in-house-endorses-james-buchanan-for-sd-22-seat (read: confirms he is a House member running for Senate District 22; nothing on guns)",
+        "https://floridianpress.com/2025/09/senate-republican-leaders-endorse-james-buchanan-in-sd-22-race/ (read: nothing on guns)",
+        "https://en.wikipedia.org/wiki/James_Buchanan_(Florida_politician) (lead only; nothing on guns)",
+        "scope: sitting House member (District 74, term-limited) seeking Senate District 22 in 2026; I did not find a page giving the primary or general result, so I did not confirm ballot status or an exit"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:10:04.638Z",
+      "by": "source-collector"
+    }
+  ]
 }

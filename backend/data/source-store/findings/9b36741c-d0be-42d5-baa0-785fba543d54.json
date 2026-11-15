@@ -681,7 +681,100 @@
           "sha256": "628c4648fc29e8aaf0c6a1121c6bc7a6dd58bc9feea36baca0568de19277713a"
         }
       }
+    },
+    {
+      "id": "bccefa1265a5e592295043b4d6e3650422d1dbbe78d89e112452e7f038846eb7",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/594233-john-snyder-bill-blocking-tracking-of-major-gun-purchases-advances-in-house",
+      "date": "2023-03-09",
+      "date_precision": "day",
+      "passage": "“In Florida, any type of registry of gun owners is not allowed,” the Stuart Republican said.",
+      "note": "Quoted in a news story (Florida Politics) at a House committee hearing on his HB 221, arguing that tracking gun purchases amounts to a registry, which state law does not allow.",
+      "subjects": [
+        "no gun-owner registry",
+        "banks tracking gun and ammunition purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:15:11.319Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "61eb713be5aa29eac54748cb544d44e07365939a09b960c7ba77bc6f1d433763",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/609032-house-passes-ban-on-financial-classification-codes-for-guns-ammo",
+      "date": "2023-05-02",
+      "date_precision": "day",
+      "passage": "“This protects our God-given right to bear arms and protect ourselves and our families.”",
+      "note": "Quoted in a news story (Florida Politics) on House passage of SB 214, the companion to his bill, which bars card-payment codes for gun and ammunition sellers. He describes the bill as protecting the right to bear arms.",
+      "subjects": [
+        "Second Amendment right to bear arms",
+        "banks tracking gun and ammunition purchases"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:15:11.319Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3ba617ff160e302fb2765aa433e9ca5d7cff2d0a15b0f76cd1286c3dd0bd8554",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2023/221",
+      "date": "2023-05-01",
+      "date_precision": "day",
+      "instrument_id": "FL-HB-221-2023",
+      "act": "sponsor",
+      "note": "Snyder filed CS/CS/HB 221, Sales of Firearms and Ammunition. It bars payment-card businesses from giving gun and ammunition sellers their own merchant category codes. The House bill was laid on the table on 5/1/2023 because the companion SB 214 passed (Ch. 2023-79).",
+      "subjects": [
+        "banks tracking gun and ammunition purchases",
+        "no gun-owner registry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:15:11.319Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "no gun-owner registry",
+        "banks tracking gun and ammunition purchases",
+        "Second Amendment right to bear arms",
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders",
+        "minimum age to buy a gun"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4787 (page returned no readable text)",
+        "blocked: https://ballotpedia.org/John_Snyder (page returned no readable text; a search result only suggests he was in the August 2026 primary for House District 86, so 2026 general-election ballot status is not confirmed by a page I fetched)",
+        "not reviewed: campaign site (none found in search)",
+        "https://www.flsenate.gov/Session/Bill/2023/221 (bill page: Snyder is the filer of HB 221, firearm and ammunition sales codes)",
+        "https://www.flsenate.gov/Session/Bill/2023/214 (companion bill page, became law as Ch. 2023-79)",
+        "https://www.flsenate.gov/Session/Bill/2023/543 (permitless carry bill page; vote already on file)",
+        "two news stories from a state politics outlet on the card-code bill",
+        "one web search on name plus gun words, one on name plus 2026 race; nothing from his own pages on assault-style guns, background checks, red flag or age limits"
+      ],
+      "found": 3,
+      "at": "2026-11-15T02:15:11.319Z",
+      "by": "source-collector"
+    }
+  ]
 }

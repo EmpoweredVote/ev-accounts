@@ -272,5 +272,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "minimum age to buy a rifle",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4840 (request rejected)",
+        "blocked: https://www.flhouse.gov/ (request rejected)",
+        "not reviewed: https://www.flsenate.gov/Session/Bill/2025/759 (no sponsorship or statement found in the fetched text)",
+        "https://ballotpedia.org/Anne_Gerwig (fetch returned no readable text; search listing shows her as the sitting District 93 member seeking re-election in 2026)",
+        "https://www.wusf.org/politics-issues/2025-03-27/florida-house-approves-measure-lower-gun-ownership-age (news story; only names her among the no votes on HB 759, already on file; no quote from her)",
+        "news search on her name plus gun words: nothing in her own words on the subject",
+        "no campaign site or issue page found or reviewed"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:10:00.417Z",
+      "by": "source-collector"
+    }
+  ]
 }

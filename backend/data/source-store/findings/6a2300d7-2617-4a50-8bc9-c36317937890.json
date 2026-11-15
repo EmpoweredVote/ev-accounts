@@ -272,5 +272,36 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "open carry",
+        "repeal of gun laws",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "confirmed in scope: sitting House member for District 46 (Kissimmee); won his 2026 primary and is on the 2026 general-election ballot per https://www.clickorlando.com/voters-guide/2026/10/16/2026-voters-guide-florida-house-district-46/",
+        "On the Record (0 meetings)",
+        "campaign site https://electjosealvarez.com (home, issues, legislative-actions pages read; public safety heading only, nothing on the subject; platform page returned 404)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4916 (returned almost no page text)",
+        "blocked: https://ballotpedia.org/Jose_A._Alvarez (empty response)",
+        "blocked: https://vote.norml.org/politicians/217901 (no connection)",
+        "news search on name plus gun words: only the already-filed age-21 rifle bill vote (HB 133) turned up, no statement of his own on guns",
+        "news story on his committee vote on another bill (https://floridapolitics.com/archives/725517-jose-alvarez-claims-hes-no-longer-welcome-in-democratic-office-for-supporting-gop-bill): not about guns",
+        "Wikipedia page for background only; nothing on the subject",
+        "no sponsorships or co-sponsorships on the subject found; flsenate.gov bill pages not separately searched beyond the votes already on file"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:11:52.124Z",
+      "by": "source-collector"
+    }
+  ]
 }

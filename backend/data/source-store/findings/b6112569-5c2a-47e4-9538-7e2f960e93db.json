@@ -901,7 +901,97 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "402a3a044e80ee5597000541c4fc5f61729d22a80036b8edbeb2960a3076ec47",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/598200-house-passes-gun-bill-allowing-concealed-carry-without-a-permit",
+      "date": "2023-03-24",
+      "date_precision": "day",
+      "passage": "This bill today recognizes that while the government always has a duty to protect its citizens, its citizens have a right to protect themselves,",
+      "note": "Quoted by Florida Politics on the House floor, introducing his permitless concealed carry bill HB 543 before the House vote.",
+      "subjects": [
+        "carry a gun without a permit",
+        "gun rights and self-protection"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:16:10.885Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "955ffd52f586d52c682bc76256df922079a1c932449a477b240cfbeb5c4b6db3",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/594732-if-gun-rights-activists-hate-permitless-carry-bill-chuck-brannan-says-lawmakers-could-just-kill-it",
+      "date": "2023-03-12",
+      "date_precision": "day",
+      "passage": "Take a win and go to the House and say there's always another year.",
+      "note": "Florida Politics quotes him, in activist-recorded video outside his home, urging open-carry advocates to accept HB 543 as written and not demand open carry; he also said \"Maybe we just pull the whole thing\" if they kept pushing. Shows he opposed adding open carry to the bill.",
+      "subjects": [
+        "carry a gun without a permit",
+        "open carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:16:10.885Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a40884f6ac0983531173c52ba90fec667190cda08c6a83a93fb4a55957d1c503",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/594732-if-gun-rights-activists-hate-permitless-carry-bill-chuck-brannan-says-lawmakers-could-just-kill-it",
+      "date": "2023-03-12",
+      "date_precision": "day",
+      "passage": "Maybe we just pull the whole thing,",
+      "note": "Florida Politics quotes him telling an activist he might withdraw HB 543 rather than add open carry; the story says he later told the outlet the bill was negotiated over months and he was confident it could pass both chambers.",
+      "subjects": [
+        "carry a gun without a permit",
+        "open carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:16:10.885Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "open carry",
+        "Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders"
+      ],
+      "places": [
+        "status check: sitting House member for District 10 through 2026-11-03 (term-limited, not on the 2026 ballot; his son is a candidate for the seat); confirmed on https://en.wikipedia.org/wiki/Chuck_Brannan",
+        "On the Record (0 meetings)",
+        "House member page: not reviewed: https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4720 (page loaded but showed no member text; the older myfloridahouse.gov address redirects to flhouse.gov)",
+        "campaign site: not reviewed: https://www.chamberorganizer.com/bakercountychamber/mp_chuckbrannanfor (only seen as a search lead)",
+        "Ballotpedia: blocked: https://ballotpedia.org/Chuck_Brannan (fetch returned empty)",
+        "news search on name plus gun words: 3 Florida Politics stories read; one WLRN story read, no direct Brannan quote found in it",
+        "bill and roll-call pages: the votes and sponsorships on file already cover the record; no additional ones searched",
+        "nothing on the subject beyond permitless carry (HB 543) found for magazines, background checks, red flag, ghost guns or federal rules"
+      ],
+      "found": 3,
+      "at": "2026-11-15T02:16:10.885Z",
+      "by": "source-collector"
+    }
+  ]
 }

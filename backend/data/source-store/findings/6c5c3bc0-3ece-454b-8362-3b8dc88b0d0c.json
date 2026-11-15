@@ -946,7 +946,80 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "58f6d4c21012fc5fea04d2759128dd6d7fedebcb6c02dd9ec8ff452dd1a5c904",
+      "kind": "own-words",
+      "url": "https://www.northescambia.com/2025/02/salzman-files-bill-to-lower-firearm-purchasing-age-to-18",
+      "date": "2025-02",
+      "date_precision": "month",
+      "passage": "The ability to purchase and utilize a firearm is your constitutional right, and reinstating those rights is the right thing to do for Floridians. We must stop infringing on the constitutional rights of law-abiding adults who are old enough to serve in our military and make other significant life decisions.",
+      "note": "Quoted by a local news outlet when she filed HB 759, which would lower the minimum age to buy rifles and long guns from 21 to 18. The story also says she said the bill leaves background check rules unchanged.",
+      "subjects": [
+        "lower the age to buy rifles and long guns",
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:11:14.344Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e2ec72aefefc3523d52c712a8da64c0d0a1093d18e7c3510193c0ee4c0d5b9f7",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2025/6013",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "FL-H-6013-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of FL-H-6013-2025 (sponsor list (prime / co-sponsor)): H6013 (2025 Regular): Bump-fire Stocks.",
+      "subjects": [
+        "repeals the ban on bump-fire stocks"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-01-30; official copy, https://www.flsenate.gov/Session/Bill/2025/6013/BillText/Filed/PDF (LegiScan doc 3091504))",
+        "fetched_at": "2026-11-15T02:43:36.063765Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-6013-2025.introduced.pdf",
+          "sha256": "bb384bea0f9cf6fdebe041d4785f7f25dbdb47c4cc36a6bd520e3499c7f7f099"
+        }
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "lower the age to buy rifles and long guns",
+        "gun rights and the Second Amendment",
+        "carry a gun without a permit",
+        "guns on college campuses"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "news stories naming her as Rep. Michelle Salzman, Escambia County, confirm she is a sitting Florida House member (https://www.wlrn.org/government-politics/2025-03-12/florida-lower-the-gun-buying-age)",
+        "not reviewed: her House member page (https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4713), page returned no text and the member id was a guess; official site and campaign site not separately searched",
+        "blocked: https://ballotpedia.org/Michelle_Salzman (403)",
+        "local news story on her HB 759 filing (https://www.northescambia.com/2025/02/salzman-files-bill-to-lower-firearm-purchasing-age-to-18)",
+        "AP story carried by a public radio site on HB 759 first committee stop (https://www.wlrn.org/government-politics/2025-03-12/florida-lower-the-gun-buying-age), only a quote fragment, not saved",
+        "public radio story on 2026 campus-carry bill, her role as sponsor not stated in the text I could read (https://news.wfsu.org/state-news/2026-01-27/bill-allowing-some-university-faculty-and-staff-to-carry-guns-on-campus-passes-florida-house-committee)",
+        "advocacy blog post on a 2022 recorded meeting about permitless carry (https://thetruthaboutguns.com/florida-rep-michelle-salzman-threatens-gop-hispanic-group-after-constitutional-carry-video-is-made-public), only fragments and the author's account, not saved",
+        "blocked: https://www.gunowners.org/?p=767352 (could not fetch)",
+        "bill pages on www.flsenate.gov and the sponsor lists already on file were not re-fetched; no new bills searched"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:11:14.344Z",
+      "by": "source-collector"
+    }
+  ]
 }

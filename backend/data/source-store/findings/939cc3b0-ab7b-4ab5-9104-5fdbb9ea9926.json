@@ -675,7 +675,54 @@
           "sha256": "02d9105d2e2c7d686f17ed88701084c80f8196b291240043b7423da39dbafa76"
         }
       }
+    },
+    {
+      "id": "f102644227651d05a7a226233c3c078dc218c43de6f155b7ecfcb3b02d412208",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/articles/florida-house-panel-backs-repeal-100908452.html",
+      "date": "2025-11-19",
+      "date_precision": "day",
+      "passage": "So we're saying you can defend yourself, but only if you have parents who can afford to give you a long gun. Eighteen to 20 year-olds are legally adults. They work full time, they pay taxes, they serve in the military. If it's legal for them to own the gun, they should be able to legally buy the gun,",
+      "note": "Quoted in a USA Today Network news story on a House committee vote to repeal the minimum age for buying a rifle. She argues adults aged 18 to 20 should be allowed to buy a rifle they may already legally own.",
+      "subjects": [
+        "minimum age to buy a rifle",
+        "repeal the rifle purchase age limit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:13:19.188Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "minimum age to buy a rifle",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "open carry",
+        "red-flag orders",
+        "general gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4833 (redirects to the House home page, no member page read)",
+        "not reviewed: Ballotpedia https://ballotpedia.org/Jessica_Baker (fetch returned empty)",
+        "campaign site: not found, not reviewed",
+        "https://www.flsenate.gov/Session/Bill/2025/175 (bill page read; she is not its sponsor and it is not on firearms, so nothing saved)",
+        "one news search on name plus gun words; read the Tallahassee-sourced story on Yahoo",
+        "not reviewed: other news stories on the rifle-age bill (search snippets only)"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:13:19.188Z",
+      "by": "source-collector"
+    }
+  ]
 }

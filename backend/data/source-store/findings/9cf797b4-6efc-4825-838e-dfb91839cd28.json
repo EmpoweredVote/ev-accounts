@@ -810,5 +810,58 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "minimum age to buy a gun",
+        "guns during a state of emergency",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "status: lost the Nov 3 2026 general election for House District 36 (to Darryl Block), per https://en.wikipedia.org/wiki/Rachel_Plakon; still in office until the term ends; not a primary loss or withdrawal",
+        "On the Record (0 appearances, 0 candidates)",
+        "the House member page: blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4713 (redirects to https://www.flhouse.gov/, which showed no member page text); no own page read",
+        "campaign site: not reviewed: none located",
+        "Ballotpedia: blocked: https://ballotpedia.org/Rachel_Plakon (no text returned)",
+        "news search on name plus gun words: leads only; https://floridianpress.com/2025/04/house-passes-firearm-ammo-repeal-ban-in-state-of-emergencies/ returned no readable text, so no quote could be copied from it (not reviewed)",
+        "Wikipedia page read; nothing on the subject",
+        "flsenate.gov bill pages: not reviewed (votes and sponsorships already on file)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:14:47.747Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun-buying age",
+        "general statements on gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings, 0 candidates)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4664 (redirects to the House home page; member page not reachable)",
+        "not reviewed: https://www.flhouse.gov/ (home page only, no member content with the subject)",
+        "not reviewed: https://ballotpedia.org/Rachel_Plakon (fetch returned empty page)",
+        "https://en.wikipedia.org/wiki/Rachel_Plakon (confirms House District 36 seat, 2022 and 2024 wins, lists a 2026 election; nothing on the subject)",
+        "https://www.clickorlando.com/voters-guide/2026/10/16/2026-voters-guide-florida-house-district-36/ (shows she is on the Nov 3, 2026 general ballot for District 36; no gun passages found)",
+        "two web searches on her name plus gun words: nothing on the subject in her own words",
+        "campaign site: not found, not reviewed",
+        "bill pages on www.flsenate.gov: not reviewed, votes and sponsorships already on file"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:24:18.486Z",
+      "by": "source-collector"
+    }
+  ]
 }

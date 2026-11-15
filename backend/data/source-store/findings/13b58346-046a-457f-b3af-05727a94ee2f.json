@@ -985,7 +985,51 @@
         "fetched_at": "2026-10-29T23:15:37.091Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "e87fd14d91e8c70b70bc2cdbe55f820ab10d43ea241e8d591fe9c62d0b2d253f",
+      "kind": "own-words",
+      "url": "https://floridapolitics.com/archives/685769-bullseye-tom-leek-secures-endorsement-of-nra-political-arm",
+      "date": "2024-07-23",
+      "date_precision": "day",
+      "passage": "I will always defend the Second Amendment, and I’m honored to have the recognition and endorsement of the NRA-PVF in our Republican Primary for the State Senate,",
+      "note": "Quoted by Florida Politics (news story, July 23, 2024) on receiving a national gun-rights group's endorsement and an A grade, in his Senate primary.",
+      "subjects": [
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:05:46.691Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "gun-group endorsement"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Florida Senate member page https://www.flsenate.gov/Senators/S7 (confirms Senator Thomas J. \"Tom\" Leek in the 2026-2028 Senate; no gun content on the page)",
+        "campaign site https://www.tomleek.com: nothing on the subject",
+        "Ballotpedia: page returned no readable text, not reviewed: https://ballotpedia.org/Tom_Leek",
+        "news search on name plus Second Amendment: one story found with a direct quote",
+        "legislature bill pages: sponsorships and votes already on file, no further sponsorships checked beyond those"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:05:46.691Z",
+      "by": "source-collector"
+    }
+  ]
 }
