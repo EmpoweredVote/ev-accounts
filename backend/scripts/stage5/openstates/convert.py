@@ -31,7 +31,7 @@ What is different from a real LegiScan dataset (also written to .openstates.json
   - Voters Open States left as a bare surname are matched to the session roster by chamber +
     surname + initial; any still unmatched get a "name only" person (listed in .openstates.json).
 """
-import argparse, collections, csv, datetime, json, os, re, shutil, sys, unicodedata
+import argparse, collections, csv, datetime, glob, json, os, re, shutil, sys, unicodedata
 
 csv.field_size_limit(10**9)
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -127,6 +127,50 @@ RULES = SRC_RULES.get(ST, {})
 if RULES.get("https"):
     for eid in vsrc:
         vsrc[eid] = [re.sub(r"^http://", "https://", u) for u in vsrc[eid]]
+
+# ---------------- roll calls the dump does not hold ----------------
+# A dump can hold a session's bills and none of its roll calls (Utah's 2025 General Session, 2026-11 dump: 959
+# bills, 0 roll calls). fetch-legislature-rollcalls.ts reads those roll calls from the legislature's own site into
+# <work>/supplements/<ST>/<session>.json; they join here as roll calls like any other, so the same name rules link
+# their voters. A roll call whose page the dump already holds is NOT added a second time.
+SUPP_OPT = {"Yea": "yes", "Nay": "no"}  # anything else is "other", as Open States marks an absent member
+SUPP = collections.Counter()
+SUPP_SESSIONS = collections.defaultdict(lambda: {"added": 0, "bills": set(), "source": ""})
+have_url = {u for us in vsrc.values() for u in us}
+sess_by_ident = {s["identifier"]: sid for sid, s in sessions.items()}
+bill_by_key = {(b["legislative_session_id"], re.sub(r"[\s.]+", "", b["identifier"]).upper()): bid for bid, b in bills.items()}
+for f in sorted(glob.glob(os.path.join(WORK, "supplements", ST, "*.json"))):
+    sp = json.load(open(f))
+    if sp.get("state", "").upper() != ST or sp.get("session") not in sess_by_ident:
+        sys.exit(f"{f}: not a {ST} supplement for a session of this extract (state {sp.get('state')!r}, session {sp.get('session')!r})")
+    sid = sess_by_ident[sp["session"]]
+    if want and sp["session"] not in want:
+        continue
+    for ident, rcs in sorted(sp.get("bills", {}).items()):
+        bid = bill_by_key.get((sid, re.sub(r"[\s.]+", "", ident).upper()))
+        if not bid:
+            sys.exit(f"{f}: bill {ident!r} is not in session {sp['session']} of this extract")
+        for n, rc in enumerate(rcs):
+            if rc["url"] in have_url:
+                SUPP["already_in_dump"] += 1
+                continue
+            groups = rc["groups"]
+            tally = [len(groups.get(k, [])) for k in ("Yea", "Nay", "Absent or not voting")]
+            if tally != [rc["yea"], rc["nay"], rc["absent"]] or set(groups) - {"Yea", "Nay", "Absent or not voting"}:
+                sys.exit(f"{f}: {ident} {rc['url']}: the members listed ({tally}) are not the tally ({rc['yea']}-{rc['nay']}-{rc['absent']})")
+            eid = "supplement:" + rc["url"]
+            have_url.add(rc["url"])
+            events[eid] = {"id": eid, "bill_id": bid, "legislative_session_id": sid, "organization_id": None,
+                           "motion_text": rc["motion"], "start_date": rc["date"], "order": str(n),
+                           "result": "pass" if rc["passed"] else "fail", "_chamber": rc["chamber"], "_supplement": sp.get("source", "")}
+            counts[eid] = {"yes": rc["yea"], "no": rc["nay"], "other": rc["absent"]}
+            vsrc[eid] = [rc["url"]]
+            pvotes[eid] = [{"voter_id": None, "voter_name": name, "option": SUPP_OPT.get(k, "other")}
+                           for k in ("Yea", "Nay", "Absent or not voting") for name in groups.get(k, [])]
+            SUPP["added"] += 1
+            SUPP_SESSIONS[sid]["added"] += 1
+            SUPP_SESSIONS[sid]["bills"].add(ident)
+            SUPP_SESSIONS[sid]["source"] = sp.get("source", "")
 memberships = collections.defaultdict(list)
 for r in rows("membership"):
     memberships[r["person_id"]].append(r)
@@ -151,7 +195,7 @@ CH_NAME = {"H": "House", "A": "Assembly", "S": "Senate", "L": "Legislature"}
 def event_chamber(eid):
     """The chamber that took the vote: from the roll call's own link where the state has a rule, else the row's."""
     m = RULES["chamber"].search((vsrc.get(eid) or [""])[0]) if RULES.get("chamber") else None
-    return m.group(1) if m else chamber_of(events[eid]["organization_id"])
+    return m.group(1) if m else (events[eid].get("_chamber") or chamber_of(events[eid]["organization_id"]))
 
 
 def event_committee_link(eid):
@@ -293,7 +337,6 @@ def resolve(sid, ch, name):
 # ---------------- LegiScan people bridge (read-only) ----------------
 PHOTO = re.compile(r"(?:memberphoto/|[?&]m=)(\d+)")
 ls_photo, ls_name = {}, collections.defaultdict(set)
-import glob
 for f in glob.glob(os.path.join(a.legiscan_root, f"{ST}-*", "*", "*", "people", "*.json")):
     try:
         p = json.load(open(f))["person"]
@@ -554,6 +597,10 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
                   "passed": 1 if e["result"] == "pass" else 0, "chamber": ch or "", "chamber_id": 0,
                   "url": (vsrc[eid] or [""])[0], "state_link": (vsrc[eid] or [""])[0], "votes": mv,
                   "_openstates": {"vote_event_id": eid, "counts": c, "committee": committee}}
+            if e.get("_supplement") is not None:
+                # not from the dump: read from the legislature's own site (see the supplement block above)
+                rc["_openstates"]["from_legislature"] = e["_supplement"] or True
+                stats["rollcalls_from_legislature"] += 1
             if mv and (c.get("yes") is not None) and (c.get("yes") != yea or c.get("no") != nay):
                 stats["rollcalls_count_mismatch"] += 1
             json.dump({"roll_call": rc}, open(os.path.join(base, "vote", f"{rc_id}.json"), "w"), ensure_ascii=False)
@@ -591,6 +638,11 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
     marker = {"source": "Open States monthly dump (public domain)", "dump": meta["dump"], "extracted_at": meta["extracted_at"],
               "converted_at": now, "state": ST, "openstates_session": ident, "session_id": lsid, "synthetic_ids": True,
               "counts": dict(stats), "name_only_voters_unmatched": dict(name_only),
+              "rollcalls_from_legislature": ({"count": SUPP_SESSIONS[sid]["added"], "bills": sorted(SUPP_SESSIONS[sid]["bills"]),
+                                              "source": SUPP_SESSIONS[sid]["source"],
+                                              "note": "The dump holds no roll call for these; each was read from the legislature's own page. "
+                                                      "Only the bills listed were looked up: every other bill of this session still has no roll call here."}
+                                             if sid in SUPP_SESSIONS else None),
               "labels_bridged_from_other_sessions": {f"{CH_NAME.get(c, c)}: {n}": persons[p]["name"] for (s_, c, n), p in sorted(BRIDGED.items()) if s_ == ident},
               "warnings": ["Not a LegiScan dataset. doc_id values cannot be used with LegiScan getBillText; fetch texts[].state_link.",
                            "people_id below 9000001 are real LegiScan ids (bridged); others are ours.",
@@ -601,3 +653,5 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
           + (f"; unmatched name-only voters {sum(name_only.values())}" if name_only else ""), flush=True)
 
 json.dump(REG, open(REG_PATH, "w"), indent=0, sort_keys=True)
+if SUPP:
+    print("roll calls read from the legislature's own site: " + ", ".join(f"{k} {v}" for k, v in sorted(SUPP.items())), flush=True)

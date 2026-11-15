@@ -4,7 +4,7 @@ bill, chamber, DATE and TALLY through legiscan-rollcalls.ts. Only a single LegiS
 with its tally is used; same-day ties are broken on the motion text, then on a "Roll Call #N" (Kentucky: "RSN# N" / "RCS# N") in the motion, then
 (identical descriptions) on the lowest roll-call id. Anything else goes to legiscan/unmapped.json: hold the person; do
 not guess. Committee votes are never mapped (a conference report, however the motion words it: "Conference Committee
-Report", "Committee of Conference report"; and in Kentucky a "Committee Substitute" or "Committee Amendment" adopted on
+Report", "Conference Committee - Final Passage", "Committee of Conference report"; and in Kentucky a "Committee Substitute" or "Committee Amendment" adopted on
 the floor, is a floor vote and is).
 With LEGISCAN_DATASETS set (the datasets on disk), a bill's LegiScan number and its session's first year are read from
 the datasets, so a state that pads bill numbers (SC prints S0109) or names a bill page by the session's first year
@@ -47,7 +47,9 @@ pol = json.load(open(f'{B}/politicians.json')); pol = pol if isinstance(pol, lis
 pid = {p['full_name']: p['politician_id'] for p in pol}
 # A vote on a conference report is a floor vote, however the motion words it. South Carolina, 2026-11-14: "Adopt
 # Committee of Conference report" was read as a committee vote, and 23 senators were held for it.
-FLOOR = re.compile(r'Conference Committee Report|Committee of Conference|Conference Report|Committee Substitute|Committee Amendment', re.I)
+# Utah, 2026-11-15: "House Conference Committee - Final Passage" is the chamber's vote on the report (63-8-4), and 90
+# votes on a bill that became law were left out as committee votes.
+FLOOR = re.compile(r'Conference Committee|Committee of Conference|Conference Report|Committee Substitute|Committee Amendment', re.I)
 committee = lambda mo: bool(re.search(r'\bCommittee\b', mo or '') and not FLOOR.search(mo or ''))
 
 
