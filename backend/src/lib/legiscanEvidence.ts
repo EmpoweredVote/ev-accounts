@@ -251,6 +251,14 @@ const TITLE = /^\s*(?:dr|rev|hon|sen|rep)\.?\s+/i;
  * else of that surname in the same record fits (`fitsAmong`). South Carolina, 2026-11-14: "Josiah Magnuson" is
  * LegiScan's Roy Josiah Magnuson, "Lee Hewitt" its William Lee Hewitt, "T. Case Brittain, Jr." its Thomas Case
  * Brittain, and "Wm. Weston J. Newton" its Weston Newton; each lost every vote line, and each was held.
+ *
+ * Florida, 2026-11-15 (fl-01), two more kinds, each checked against the state's own roll-call sheets:
+ * - A nickname our name carries in quotes is a given name the person goes by: 'Randall Scott "Randy" Maggard' is
+ *   LegiScan's Randy Maggard, 'Tobin Rogers "Toby" Overdorf' its Toby Overdorf. A fit of 2, as the first name.
+ * - A surname that is the first word(s) of the other side's ("Busatta" / LegiScan's "Busatta Cabrera"; "Rayner" /
+ *   "Rayner-Goolsby"; "Hart-Lowman" / "Hart" in older sessions) fits only when the record prints that surname whole,
+ *   only on a first-name fit, and only as a fit of 1,
+ *   so it counts only when no one else of that surname in the record fits.
  */
 function personFit(p: Json, fullName: string, lastName: string): 0 | 1 | 2 {
   const last = fold(lastName);
@@ -259,11 +267,19 @@ function personFit(p: Json, fullName: string, lastName: string): 0 | 1 | 2 {
   // A two-word last_name the record prints as one ("Capps Balkcom", printed "Jennifer Balkcom") fits
   // the printed surname, and only when that word is one of the two.
   const printedLast = fold(p.name ?? '').split(' ').pop() ?? '';
-  if (recLast !== last && !(recLast.split(' ').includes(last) && printedLast === last)) return 0;
+  const exactLast = recLast === last || (recLast.split(' ').includes(last) && printedLast === last);
+  // One surname the first word(s) of the other: a part fit, never above 1 (Florida, 2026-11-15).
+  const leads = (a: string, b: string) => { const [x, y] = [a.split(' '), b.split(' ')]; return x.length < y.length && x.every((w, i) => w === y[i]); };
+  // The record must print its whole surname: "Capps Balkcom" printed "Jennifer Balkcom" goes by Balkcom, not Capps.
+  const printsWhole = ` ${fold(p.name ?? '')}`.endsWith(` ${recLast}`);
+  const partLast = !exactLast && !!last && !!recLast && printsWhole && (leads(last, recLast) || leads(recLast, last));
+  if (!exactLast && !partLast) return 0;
+  // A nickname in quotes ('Randall Scott "Randy" Maggard') is a name the person goes by; it is not a given name below.
+  const quoted = [...fullName.matchAll(/["“]([^"”]+)["”]/g)].map((m) => fold(m[1])).filter(Boolean);
   // A leading initial ("A. Reece Pyrtle") gives way to the given name the person goes by.
-  const words = fold(joinInitials(fullName.replace(TITLE, ''))).split(' ');
-  const wants = [words[0] ?? ''];
-  if (wants[0].length === 1 && words[1] && words[1] !== last) wants.push(words[1]);
+  const words = fold(joinInitials(fullName.replace(/["“][^"”]*["”]/g, ' ').replace(TITLE, ''))).split(' ');
+  const wants = [words[0] ?? '', ...quoted];
+  if (words[0]?.length === 1 && words[1] && words[1] !== last) wants.push(words[1]);
   const first = fold(joinInitials(p.first_name ?? '')).split(' ')[0];
   // A first name printed as dotted initials ("J.J.", "J. M.") fits our name written the same way ("JJ") or the
   // initials of every given name before the surname ("Jose Manuel" → "jm"), never a single letter.
@@ -272,7 +288,8 @@ function personFit(p: Json, fullName: string, lastName: string): 0 | 1 | 2 {
     if (given.length > 1 && given.every((w) => w.length > 1)) wants.push(given.map((w) => w[0]).join(''));
   }
   const have = [first, fold(joinInitials(p.nickname ?? ''))].filter(Boolean);
-  if (have.some((h) => wants.some((want) => h === want || getNameVariants(h).includes(want) || getNameVariants(want).includes(h)))) return 2;
+  if (have.some((h) => wants.some((want) => h === want || getNameVariants(h).includes(want) || getNameVariants(want).includes(h)))) return partLast ? 1 : 2;
+  if (partLast) return 0;
   // A second given name, spelled out in full on both sides and letter for letter the same: ours against the
   // record's first name or nickname ("Wm. Weston J. Newton" / Weston), or our first against the record's middle
   // name ("Lee Hewitt" / William Lee; "T. Case Brittain" / Thomas Case, the initial fitting the first name).

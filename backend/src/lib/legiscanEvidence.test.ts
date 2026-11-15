@@ -286,6 +286,32 @@ describe('verifyLegiscanLine', () => {
     const twoMiddles = bill(sp(2, 'William', 'Hewitt', { middle_name: 'Lee' }), sp(8, 'Robert', 'Hewitt', { middle_name: 'Lee' }));
     expect(legiscanLinesFor(BILL_URL, twoMiddles, { fullName: 'Lee Hewitt', lastName: 'Hewitt' })).toEqual([]);
   });
+  it('fits a quoted nickname and a surname that is the first part of the other side (FL 2026-11-15)', () => {
+    const sess = '89th Legislature Regular Session';
+    const sp = (id: number, first: string, last: string, extra: Record<string, unknown> = {}) =>
+      ({ ...person(id, first, last, extra), sponsor_type_id: 2, sponsor_order: id });
+    const bill = (...sponsors: unknown[]) => JSON.stringify({ kind: 'bill', state: 'TX', bill_number: 'HB5337', bills: [{ session_name: sess, sponsors, signed: [] }] });
+    const line = (name: string) => `LegiScan TX ${sess} HB5337: ${name} is listed as a cosponsor.`;
+    const fits = (rec: string, printed: string, fullName: string, lastName: string) => verifyLegiscanLine(line(printed), BILL_URL, rec, { fullName, lastName }).verdict;
+    const rec = bill(sp(1, 'Randy', 'Maggard'), sp(2, 'Toby', 'Overdorf'), sp(3, 'Demi', 'Busatta Cabrera'),
+      sp(4, 'Michele', 'Rayner-Goolsby'), sp(5, 'Dianne', 'Hart', { nickname: 'Ms Dee' }), sp(6, 'Tommy', 'Wright', { middle_name: 'A.' }));
+    expect(fits(rec, 'Randy Maggard', 'Randall Scott "Randy" Maggard', 'Maggard')).toBe('verified');
+    expect(fits(rec, 'Toby Overdorf', 'Tobin Rogers "Toby" Overdorf', 'Overdorf')).toBe('verified');
+    expect(fits(rec, 'Demi Busatta Cabrera', 'Demi Busatta', 'Busatta')).toBe('verified');
+    expect(fits(rec, 'Michele Rayner-Goolsby', 'Michele K. Rayner', 'Rayner')).toBe('verified');
+    expect(fits(rec, 'Dianne Hart', 'Dianne "Ms Dee" Hart-Lowman', 'Hart-Lowman')).toBe('verified');
+    expect(fits(rec, 'Tommy Wright', 'Tom A. Wright', 'Wright')).toBe('verified');
+    // A part surname still needs the first name; a quoted word that is not the record's name fits nothing.
+    expect(fits(rec, 'Demi Busatta Cabrera', 'Maria Busatta', 'Busatta')).toBe('name_not_present');
+    expect(fits(rec, 'Randy Maggard', 'Randall "Butch" Maggard', 'Maggard')).toBe('name_not_present');
+    // A surname that only ends the other side's, or shares no leading word, is someone else.
+    expect(fits(rec, 'Demi Busatta Cabrera', 'Demi Cabrera', 'Cabrera')).toBe('verified'); // the existing printed-surname rule
+    expect(fits(bill(sp(7, 'Demi', 'Lopez Busatta')), 'Demi Lopez Busatta', 'Demi Busatta Cabrera', 'Busatta Cabrera')).toBe('name_not_present');
+    // A part fit counts only when it is the one fit of that surname in the record.
+    const two = bill(sp(3, 'Demi', 'Busatta Cabrera'), sp(8, 'Demi', 'Busatta'));
+    expect(fits(two, 'Demi Busatta Cabrera', 'Demi Busatta', 'Busatta')).toBe('name_not_present');
+    expect(fits(two, 'Demi Busatta', 'Demi Busatta', 'Busatta')).toBe('verified');
+  });
   it('verifies a vote line field by field', async () => {
     const rec = await record(RC_URL);
     const sarah = { fullName: 'Sarah Eckhardt', lastName: 'Eckhardt' };
