@@ -31,7 +31,7 @@ export function jurisdictionFor(stateCode: string): string {
 const NICKNAME_GROUPS: Array<[string, string]> = [
   ['bill', 'william'], ['bob', 'robert'], ['bobby', 'robert'], ['rob', 'robert'],
   ['jim', 'james'], ['jimmy', 'james'], ['joe', 'joseph'], ['mike', 'michael'],
-  ['tom', 'thomas'], ['dick', 'richard'], ['rick', 'richard'], ['rich', 'richard'],
+  ['tom', 'thomas'], ['tommy', 'thomas'], ['tom', 'tommy'], ['dick', 'richard'], ['rick', 'richard'], ['rich', 'richard'],
   ['ron', 'ronald'], ['ron', 'ronnie'], ['ronnie', 'ronald'], ['dan', 'daniel'], ['danny', 'daniel'], ['ed', 'edward'],
   ['ted', 'theodore'], ['ted', 'edward'], ['pat', 'patricia'], ['pat', 'patrick'],
   ['chris', 'christopher'], ['chris', 'christine'], ['beth', 'elizabeth'],
