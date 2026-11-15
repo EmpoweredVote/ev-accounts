@@ -124,13 +124,52 @@ describe('dataSourceInfoFor — the budget’s own citation wins', () => {
 
   it('⛔ serves NO chip rather than an invented one', () => {
     expect(dataSourceInfoFor(row({}))).toBeNull();
-    // ⚠ A source_url with no source_date is not enough on THIS branch, and
-    // that is deliberate — an undated citation renders "as of" a blank.
-    // Unchanged by this fix; pinned so it cannot drift silently.
+    // ⚠ BOTH a name and a URL are needed. A URL with no publisher name would
+    // render a nameless pill; a name with no URL, a chip linking nowhere.
+    expect(dataSourceInfoFor(row({ source_url: 'https://example.gov/x.pdf' }))).toBeNull();
+    expect(dataSourceInfoFor(row({ data_source: 'X' }))).toBeNull();
+  });
+
+  it('⚠⚠⚠ SERVES AN UNDATED CITATION — the reversal, and why', () => {
+    // This assertion used to be `.toBeNull()`, pinned deliberately on the
+    // ground that "an undated citation renders 'as of' a blank".
+    //
+    // ⛔ THE PREMISE WAS WRONG ABOUT THE CLIENT. Treasury Tracker's SourceChip
+    // renders `{!compact && date && <span>· as of {date}</span>}` over
+    // `const date = fetchDate ? fetchDate.slice(0, 10) : null`, so a null
+    // `fetchedAt` renders NO span at all — the pill is `<sourceName> ↗`, and
+    // the aria-label is guarded identically. There was never a blank to avoid.
+    //
+    // ⛔⛔ AND IT COST 24,573 BUDGETS THEIR CHIP (measured against production
+    // 2026-11-14, 746 families): every MA DLS row — 16,813, the whole state,
+    // every one of them freshly cited — plus all 7,682 CA publicpay rows. The
+    // citation arc's own repairs set `source_url` without `source_date`, so
+    // the work landed in the database and reached no reader.
+    //
+    // ⭐ An undated citation is not an unattributed one. The date is
+    // decoration; the href is the substance.
     expect(dataSourceInfoFor(row({
-      data_source: 'X',
-      source_url: 'https://example.gov/x.pdf',
-    }))).toBeNull();
+      data_source: 'Abington — MA General Fund Revenues',
+      source_url: 'https://dls-gw.dor.state.ma.us/reports/rdPage.aspx'
+        + '?rdReport=ScheduleA.GeneralFund&iclMuni=001&islYear=2024&islAmountType=Revenues',
+    }))).toEqual({
+      displayName: 'Abington — MA General Fund Revenues',
+      url: 'https://dls-gw.dor.state.ma.us/reports/rdPage.aspx'
+        + '?rdReport=ScheduleA.GeneralFund&iclMuni=001&islYear=2024&islAmountType=Revenues',
+      datasetUrl: 'https://dls-gw.dor.state.ma.us/reports/rdPage.aspx'
+        + '?rdReport=ScheduleA.GeneralFund&iclMuni=001&islYear=2024&islAmountType=Revenues',
+      fetchedAt: null,
+    });
+  });
+
+  it('⚠ still prefers the as-of date when the row HAS one', () => {
+    // The reversal relaxes a requirement; it must not drop the date when one
+    // exists, or 21,682 Georgia and 116,456 Michigan chips lose their "as of".
+    expect(dataSourceInfoFor(row({
+      data_source: 'Georgia DCA Report of Local Government Finances',
+      source_url: 'https://example.ga.gov/rlgf.xlsx',
+      source_date: '2026-06-16T00:00:00.000Z',
+    }))?.fetchedAt).toBe('2026-06-16T00:00:00.000Z');
   });
 
   it('⚠ a registry entry with a name but no URL is not a registry entry', () => {
