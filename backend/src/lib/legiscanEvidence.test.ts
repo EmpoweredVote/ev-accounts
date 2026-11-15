@@ -258,6 +258,34 @@ describe('verifyLegiscanLine', () => {
     expect(verifyLegiscanLine(tasha, BILL_URL, rec, { fullName: 'Tasha Boerner', lastName: 'Boerner' }).verdict).toBe('verified');
     expect(verifyLegiscanLine(tasha, BILL_URL, rec, { fullName: 'Mary Boerner', lastName: 'Boerner' }).verdict).toBe('name_not_present');
   });
+  it('fits a person who goes by a middle name, only when no one else of that surname in the record fits (SC 2026-11-14)', () => {
+    const sess = '89th Legislature Regular Session';
+    const sp = (id: number, first: string, last: string, extra: Record<string, unknown> = {}) =>
+      ({ ...person(id, first, last, extra), sponsor_type_id: 2, sponsor_order: id });
+    const bill = (...sponsors: unknown[]) => JSON.stringify({ kind: 'bill', state: 'TX', bill_number: 'HB5337', bills: [{ session_name: sess, sponsors, signed: [] }] });
+    const line = (name: string) => `LegiScan TX ${sess} HB5337: ${name} is listed as a cosponsor.`;
+    const fits = (rec: string, printed: string, fullName: string, lastName: string) => verifyLegiscanLine(line(printed), BILL_URL, rec, { fullName, lastName }).verdict;
+    const rec = bill(sp(1, 'Roy', 'Magnuson', { middle_name: 'Josiah' }), sp(2, 'William', 'Hewitt', { middle_name: 'Lee' }),
+      sp(3, 'Thomas', 'Brittain', { middle_name: 'Case', nickname: 'Tom', suffix: 'Jr.' }), sp(4, 'Weston', 'Newton'), sp(5, 'Brandon', 'Newton'),
+      sp(6, 'Ronnie', 'Alting', { middle_name: 'J.' }));
+    expect(fits(rec, 'Roy Magnuson', 'Josiah Magnuson', 'Magnuson')).toBe('verified');
+    expect(fits(rec, 'William Hewitt', 'Lee Hewitt', 'Hewitt')).toBe('verified');
+    expect(fits(rec, 'Thomas Brittain', 'T. Case Brittain, Jr.', 'Brittain')).toBe('verified');
+    expect(fits(rec, 'Weston Newton', 'Wm. Weston J. Newton', 'Newton')).toBe('verified');
+    expect(legiscanLinesFor(BILL_URL, rec, { fullName: 'Lee Hewitt', lastName: 'Hewitt' })).toEqual([line('William Hewitt')]);
+    // The other Newton is still someone else; a middle initial is never a name; the initial must fit the first name.
+    expect(fits(rec, 'Brandon Newton', 'Wm. Weston J. Newton', 'Newton')).toBe('name_not_present');
+    expect(fits(rec, 'Ronnie Alting', 'J. Alting', 'Alting')).toBe('name_not_present');
+    expect(fits(rec, 'Thomas Brittain', 'R. Case Brittain', 'Brittain')).toBe('name_not_present');
+    expect(fits(rec, 'Thomas Brittain', 'Casey Brittain', 'Brittain')).toBe('name_not_present');
+    // Two people of the surname fit: the middle-name fit is refused, the first-name fit stands.
+    const two = bill(sp(2, 'William', 'Hewitt', { middle_name: 'Lee' }), sp(7, 'Lee', 'Hewitt'));
+    expect(fits(two, 'William Hewitt', 'Lee Hewitt', 'Hewitt')).toBe('name_not_present');
+    expect(fits(two, 'Lee Hewitt', 'Lee Hewitt', 'Hewitt')).toBe('verified');
+    expect(legiscanLinesFor(BILL_URL, two, { fullName: 'Lee Hewitt', lastName: 'Hewitt' })).toEqual([line('Lee Hewitt')]);
+    const twoMiddles = bill(sp(2, 'William', 'Hewitt', { middle_name: 'Lee' }), sp(8, 'Robert', 'Hewitt', { middle_name: 'Lee' }));
+    expect(legiscanLinesFor(BILL_URL, twoMiddles, { fullName: 'Lee Hewitt', lastName: 'Hewitt' })).toEqual([]);
+  });
   it('verifies a vote line field by field', async () => {
     const rec = await record(RC_URL);
     const sarah = { fullName: 'Sarah Eckhardt', lastName: 'Eckhardt' };

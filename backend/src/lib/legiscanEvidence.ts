@@ -245,15 +245,21 @@ const LEGISCAN_SURNAME_MISSPELLINGS: Readonly<Record<string, readonly string[]>>
 /** A title before the name ("Dr. Darshana R. Patel", CA 2026-11-13) is not a given name. */
 const TITLE = /^\s*(?:dr|rev|hon|sen|rep)\.?\s+/i;
 
-/** Does LegiScan's person fit the politician's own name? */
-function personFits(p: Json, fullName: string, lastName: string): boolean {
+/**
+ * How well LegiScan's person fits the politician's own name: 2 on the first name (the usual rule), 1 on a second
+ * given name only, 0 not at all. A fit of 1 is a person who goes by a middle name, and it counts only when no one
+ * else of that surname in the same record fits (`fitsAmong`). South Carolina, 2026-11-14: "Josiah Magnuson" is
+ * LegiScan's Roy Josiah Magnuson, "Lee Hewitt" its William Lee Hewitt, "T. Case Brittain, Jr." its Thomas Case
+ * Brittain, and "Wm. Weston J. Newton" its Weston Newton; each lost every vote line, and each was held.
+ */
+function personFit(p: Json, fullName: string, lastName: string): 0 | 1 | 2 {
   const last = fold(lastName);
   let recLast = fold(p.last_name ?? '');
   if (LEGISCAN_SURNAME_MISSPELLINGS[last]?.includes(recLast)) recLast = last;
   // A two-word last_name the record prints as one ("Capps Balkcom", printed "Jennifer Balkcom") fits
   // the printed surname, and only when that word is one of the two.
   const printedLast = fold(p.name ?? '').split(' ').pop() ?? '';
-  if (recLast !== last && !(recLast.split(' ').includes(last) && printedLast === last)) return false;
+  if (recLast !== last && !(recLast.split(' ').includes(last) && printedLast === last)) return 0;
   // A leading initial ("A. Reece Pyrtle") gives way to the given name the person goes by.
   const words = fold(joinInitials(fullName.replace(TITLE, ''))).split(' ');
   const wants = [words[0] ?? ''];
@@ -266,7 +272,28 @@ function personFits(p: Json, fullName: string, lastName: string): boolean {
     if (given.length > 1 && given.every((w) => w.length > 1)) wants.push(given.map((w) => w[0]).join(''));
   }
   const have = [first, fold(joinInitials(p.nickname ?? ''))].filter(Boolean);
-  return have.some((h) => wants.some((want) => h === want || getNameVariants(h).includes(want) || getNameVariants(want).includes(h)));
+  if (have.some((h) => wants.some((want) => h === want || getNameVariants(h).includes(want) || getNameVariants(want).includes(h)))) return 2;
+  // A second given name, spelled out in full on both sides and letter for letter the same: ours against the
+  // record's first name or nickname ("Wm. Weston J. Newton" / Weston), or our first against the record's middle
+  // name ("Lee Hewitt" / William Lee; "T. Case Brittain" / Thomas Case, the initial fitting the first name).
+  const whole = (w: string) => w.length >= 3;
+  const given = words.slice(0, Math.max(1, words.lastIndexOf(last.split(' ')[0])));
+  if (given.slice(1).some((g) => whole(g) && have.includes(g))) return 1;
+  const middle = fold(joinInitials(p.middle_name ?? '')).split(' ')[0] ?? '';
+  if (!whole(middle)) return 0;
+  if (given[0] === middle) return 1;
+  if (given[0].length === 1 && given[1] === middle && first.startsWith(given[0])) return 1;
+  return 0;
+}
+
+/**
+ * Does this person of the record fit the politician? `all` is every person the record lists beside them (a bill's
+ * sponsors, a roll call's voters): a middle-name fit counts only when it is the one fit of that surname there.
+ */
+function fitsAmong(p: Json, all: Json[], fullName: string, lastName: string): boolean {
+  const fit = personFit(p, fullName, lastName);
+  if (fit !== 1) return fit === 2;
+  return all.filter((o) => personFit(o, fullName, lastName) > 0).length === 1;
 }
 
 /**
@@ -292,18 +319,21 @@ export function verifyLegiscanLine(
   const sameName = (p: Json) => fold(p.name ?? '') === fold(l.name);
 
   let who: Json | undefined;
+  let among: Json[] = [];
   if (l.kind === 'sponsor') {
     if (rec.kind !== 'bill') return { verdict: 'snippet_not_found' };
     const bill = (rec.bills ?? []).find((b: Json) => b.session_name === l.session);
-    who = bill?.sponsors.find((sp: Json) => sameName(sp) && ROLES[sp.sponsor_type_id as keyof typeof ROLES] === l.role);
+    among = bill?.sponsors ?? [];
+    who = among.find((sp: Json) => sameName(sp) && ROLES[sp.sponsor_type_id as keyof typeof ROLES] === l.role);
   } else {
     if (rec.kind !== 'rollcall' || rec.session_name !== l.session || rec.roll_call_id !== l.rollCallId
       || (CHAMBERS[rec.chamber] ?? rec.chamber) !== l.chamber || rec.date !== l.date
       || normalizeText(rec.desc ?? '') !== normalizeText(l.motion)) return { verdict: 'snippet_not_found' };
+    among = (rec.votes ?? []).map((v: Json) => v.person);
     who = (rec.votes ?? []).find((v: Json) => sameName(v.person) && v.vote_text === l.vote)?.person;
   }
   if (!who) return { verdict: 'snippet_not_found' };
-  if (!personFits(who, names.fullName, names.lastName)) return { verdict: 'name_not_present' };
+  if (!fitsAmong(who, among, names.fullName, names.lastName)) return { verdict: 'name_not_present' };
   return { verdict: 'verified', matchOffset: 0 };
 }
 
@@ -319,7 +349,7 @@ export function legiscanLinesFor(url: string, recordText: string, names: Legisca
     for (const b of rec.bills ?? []) {
       for (const sp of b.sponsors ?? []) {
         const role = ROLES[sp.sponsor_type_id as keyof typeof ROLES];
-        if (role && personFits(sp, names.fullName, names.lastName)) {
+        if (role && fitsAmong(sp, b.sponsors, names.fullName, names.lastName)) {
           out.push({ kind: 'sponsor', state: rec.state, session: b.session_name, bill: rec.bill_number, name: sp.name, role });
         }
       }
@@ -330,8 +360,9 @@ export function legiscanLinesFor(url: string, recordText: string, names: Legisca
       }
     }
   } else if (rec.kind === 'rollcall') {
+    const voters: Json[] = (rec.votes ?? []).map((v: Json) => v.person);
     for (const v of rec.votes ?? []) {
-      if (!personFits(v.person, names.fullName, names.lastName)) continue;
+      if (!fitsAmong(v.person, voters, names.fullName, names.lastName)) continue;
       out.push({ kind: 'vote', state: rec.state, session: rec.session_name, bill: rec.bill_number, rollCallId: rec.roll_call_id,
         chamber: CHAMBERS[rec.chamber] ?? rec.chamber, date: rec.date, motion: rec.desc, name: v.person.name, vote: v.vote_text });
     }

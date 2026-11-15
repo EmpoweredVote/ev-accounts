@@ -331,6 +331,13 @@ The `voting-rights` state batches (2026-10-29/30: TX, WI, NC, CA, VA, AZ, MI, IN
 newest worked example is `.planning/research/s3-prep-voting-rights/stage5/write/in-01/PREVIEW.md`. Each step names
 the file it leaves in the batch folder, `stage5/write/<unit>-NN/` (for example `in-01`).
 
+🔴 **LegiScan is read from the datasets on disk, never from the live API by default** (2026-11-14: Tennessee, Kentucky
+and South Carolina each hit the monthly cap at step 7 with the datasets on disk). `run_recipe.py` and
+`write-batch.sh` set `LEGISCAN_DATASETS` themselves when `stage5/legiscan/ds` holds the state; step 7 prints which
+was read and the newest roll call on disk. The live API needs the runner's yes (`"legiscan_live": true` in
+`recipe.json`), and is for a vote later than the datasets or a bill they do not hold. Step 7 also stops on any vote or
+sponsorship that got no LegiScan line (`legiscan/no-line.json`): find the cause before holding the person.
+
 | # | Step | Leaves |
 |---|---|---|
 | 0 | Dry run 0 | `dry-run-0.txt`, `research-stage5-0.csv` |

@@ -17,10 +17,11 @@
     "official_hosts": [
       "www.scstatehouse.gov"
     ],
-    "legiscan_args": null,
+    "legiscan_args": "--bill-pad 4 --session-start odd",
     "floor_rule": "LegiScan motions read 'House: Passage Of Bill' / 'Passage Of Joint Resolution', 'Senate: 2nd Reading' / '3rd Reading', concurrence ('Concur In Senate Amendments'), 'Adopt Conference Report' and 'Override Veto'. Keep those; drop amendment, tabling and procedural motions. The official vote history numbers roll calls '[H]-1066' style.",
     "gaps": [
-      "The Senate often has two kept floor votes on one bill (2nd and 3rd Reading)."
+      "The Senate often has two kept floor votes on one bill (2nd and 3rd Reading).",
+      "LegiScan pads every bill number to four digits (S0109, H3594) and names a bill page by the session's first year (H3594 of 2024 is /H3594/2023). With the datasets on disk the vote tools read both from the datasets; the flags cover a live LegiScan call."
     ]
   },
   "texts": {

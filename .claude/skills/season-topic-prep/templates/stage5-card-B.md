@@ -160,7 +160,14 @@ Then resume the recipe with `--from 2`. After a tool fix, replay steps 7 to 9 wi
 must show 0 disagree; a vote that cannot be placed holds its person, it is never guessed. Count each gate run and
 each hand fix. Detail: STAGE5 §7 "The recipe, in order".
 
-**B10. Preview.** Write `B/PREVIEW.md` (STAGE5 §7 step 13). 🛑 **Stop 3.**
+🔴 **LegiScan is read from the datasets on disk, not the live API.** `run_recipe.py` and `write-batch.sh` set this
+themselves whenever `{{S}}/legiscan/ds` holds this state, and step 7 prints which was read and the newest roll call on
+disk. Never ask the runner about the monthly cap while datasets exist. The live API is the exception: a vote later
+than the datasets, or a bill they do not hold. Stop and ask the runner then; on yes, add `"legiscan_live": true` to
+`recipe.json`. A step-7 stop on "NO LegiScan line" means find the cause first (`legiscan/no-line.json`), not hold.
+
+**B10. Preview.** Write `B/PREVIEW.md` (STAGE5 §7 step 13). `run_recipe.py` ends by printing "On yes, the desk
+runs": copy those lines in as they are, never retype them. 🛑 **Stop 3.**
 
 **B11. Write, read back, approve.** On yes: `write-batch.sh {{S}} {{S}}/write/{{xx}}-01 {{TOPIC}} state:{{xx}} apply`,
 the verifier with `--apply`, `readback.ts`. Counts must match the preview. 🛑 **Stop 4**, then `approve-batch.ts`

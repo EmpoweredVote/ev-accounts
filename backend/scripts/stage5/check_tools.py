@@ -9,8 +9,9 @@ TOOLS = sys.argv[sys.argv.index('--tools') + 1] if '--tools' in sys.argv else HE
 RU = 'source_url_'
 
 
-def run(tool, *args, ok=True):
-    p = subprocess.run([sys.executable, '-I', os.path.join(TOOLS, tool), *args], capture_output=True, text=True)
+def run(tool, *args, ok=True, env=None):
+    p = subprocess.run([sys.executable, '-I', os.path.join(TOOLS, tool), *args], capture_output=True, text=True,
+                       env={**{k: v for k, v in os.environ.items() if not k.startswith('LEGISCAN_')}, **(env or {})})
     if ok and p.returncode != 0: raise AssertionError(f'{tool} exit {p.returncode}: {p.stderr[-600:]}')
     return p
 
@@ -61,6 +62,21 @@ def legiscan_merge_grows_columns_for_any_row(t):
     rows = {r['full_name']: r for r in read_csv(f'{B}/research.csv')}
     assert len(urls(rows['Ann A'])) == 4, urls(rows['Ann A'])
     assert urls(rows['Bob B']) == ['https://legiscan.com/XX/rollcall/HB1/id/1'], urls(rows['Bob B'])
+
+
+@check
+def legiscan_merge_lists_every_act_that_got_no_line(t):
+    """A vote with no LegiScan line keeps its official page, and is listed in legiscan/no-line.json with its act."""
+    B = batch(t, [('Ann A', 'a')], [{'full_name': 'Ann A', 'topic_key': 't', 'evidence_type': 'record', 'urls': ['https://off/1', 'https://off/2']}])
+    os.makedirs(f'{B}/legiscan')
+    rc = lambda i: f'https://legiscan.com/XX/rollcall/HB1/id/{i}'
+    json.dump({'Ann A': [{'url': rc(1), 'official': 'https://off/1', 'act': 'yea', 'instrument': 'XX-HB-1-2025'},
+                         {'url': rc(2), 'official': 'https://off/2', 'act': 'nay', 'instrument': 'XX-HB-1-2025'}]}, open(f'{B}/legiscan/needs.json', 'w'))
+    write_csv(f'{B}/legiscan/legiscan-evidence.csv', [{'full_name': 'Ann A', 'topic_key': 't', 'source_url': rc(1), 'snippet': 'roll call: A voted Yea.', 'snippet_index': '1'}])
+    out = run('legiscan_merge.py', B, '--host', 'off').stdout
+    assert json.load(open(f'{B}/legiscan/no-line.json')) == [['Ann A', rc(2), 'nay', 'XX-HB-1-2025']], open(f'{B}/legiscan/no-line.json').read()
+    assert 'no LegiScan line 1' in out, out
+    assert urls(read_csv(f'{B}/research.csv')[0]) == ['https://off/2', rc(1)], read_csv(f'{B}/research.csv')
 
 
 @check
@@ -119,6 +135,99 @@ def state_legiscan_pairs_only_one_roll_call(t):
     assert got == ['https://legiscan.com/XX/rollcall/HB1/id/11', 'https://legiscan.com/XX/rollcall/HB2/id/22'], got
     un = json.load(open(f'{B}/legiscan/unmapped.json'))
     assert sorted(u[2] for u in un) == ['XX-HB-1-2025', 'XX-HB-3-2025'], un
+
+
+@check
+def state_legiscan_places_a_conference_report_and_names_bills_as_the_datasets_do(t):
+    """A vote on a conference report is a floor vote however the motion words it; a real committee vote is still left
+    out, and says so. With the datasets on disk, a sponsorship's LegiScan page takes LegiScan's own bill number and
+    the session's first year (South Carolina: S 109 of 2024 is /S0109/2023); without them, the flags decide."""
+    B = batch(f'{t}/b', [('Ann Able', 'a')], [{'full_name': 'Ann Able', 'topic_key': 'tp', 'evidence_type': 'record',
+              'urls': ['https://off.gov/h1', 'https://off.gov/h2', 'https://off.gov/s109', 'https://off.gov/s7']}], ncols=4)
+    os.makedirs(f'{t}/f')
+    v = lambda u, ins, d, tal, mo: {'kind': 'record', 'url': u, 'act': 'yea', 'instrument_id': ins, 'chamber': 'S', 'date': d, 'note': f'tally {tal}', 'motion': mo}
+    json.dump({'findings': [v('https://off.gov/h1', 'XX-H-1-2024', '2024-03-06', '28-18', 'Adopt Committee of Conference report'),
+                            v('https://off.gov/h2', 'XX-H-2-2024', '2024-03-07', '9-3', 'Judiciary Committee: favorable'),
+                            {'kind': 'record', 'url': 'https://off.gov/s109', 'act': 'cosponsor', 'instrument_id': 'XX-S-109-2024'},
+                            {'kind': 'record', 'url': 'https://off.gov/s7', 'act': 'sponsor', 'instrument_id': 'XX-S-7-2024'}]}, open(f'{t}/f/a.json', 'w'))
+    ds = f'{t}/ds'
+    def session(folder, y0, y1, special, bills):
+        d = f'{ds}/XX-{folder}/XX/s{folder}/bill'; os.makedirs(d)
+        for n in bills: json.dump({'bill': {'bill_number': n, 'session': {'year_start': y0, 'year_end': y1, 'special': special}}}, open(f'{d}/{n}.json', 'w'))
+    session(1, 2021, 2022, 0, ['S0109', 'H0001']); session(2, 2023, 2024, 0, ['S0109', 'H0001', 'S0007']); session(3, 2024, 2024, 1, ['S0109'])
+    session(4, 2024, 2024, 0, ['S0007'])  # S 7 sits in two regular sessions that cover 2024: the datasets do not decide, the flags do
+    env = {'LEGISCAN_DATASETS': ds}
+    run('state_legiscan.py', 'plan', B, f'{t}/f', '--state', 'XX', '--host', 'off.gov', env=env)
+    pages = json.load(open(f'{B}/legiscan/vote-pages.json'))
+    assert [(p['bill'], p['year']) for p in pages] == [('H0001', 2024), ('H2', 2024)], pages  # H 1 as the datasets print it
+    json.dump([{'url': 'XX-H-1-2024|S|2024-03-06|28-18', 'hits': [{'roll_call_id': 5, 'date': '2024-03-06', 'desc': 'Senate: To Adopt The Conference Report', 'bill_url': 'https://legiscan.com/XX/bill/H0001/2023'}]}],
+              open(f'{B}/legiscan/rollcall-hits.json', 'w'))
+    run('state_legiscan.py', 'pairs', B, f'{t}/f', '--state', 'XX', '--host', 'off.gov', '--topic', 'tp', env=env)
+    got = sorted(r['source_url'] for r in read_csv(f'{B}/legiscan/pairs.csv'))
+    assert got == ['https://legiscan.com/XX/bill/S0109/2023', 'https://legiscan.com/XX/bill/S7/2024', 'https://legiscan.com/XX/rollcall/H0001/id/5'], got
+    un = json.load(open(f'{B}/legiscan/unmapped.json'))
+    assert [(u[2], 'a committee vote' in u[3]) for u in un] == [('XX-H-2-2024', True)], un
+    run('state_legiscan.py', 'pairs', B, f'{t}/f', '--state', 'XX', '--host', 'off.gov', '--topic', 'tp', '--bill-pad', '4', '--session-start', 'odd')  # no datasets
+    got = sorted(r['source_url'] for r in read_csv(f'{B}/legiscan/pairs.csv') if '/bill/' in r['source_url'])
+    assert got == ['https://legiscan.com/XX/bill/S0007/2023', 'https://legiscan.com/XX/bill/S0109/2023'], got
+
+
+@check
+def legiscan_is_read_from_the_datasets_on_disk_by_default(t):
+    """The recipe and the write script set LEGISCAN_DATASETS themselves when the state has datasets on disk; the live
+    API only on LEGISCAN_LIVE=1 / "legiscan_live". Step 7 says which was read and the newest roll call on disk, stops
+    on an act with no LegiScan line, and a vote later than the datasets says so. The desk's commands are printed whole."""
+    S = f'{t}/stage5'; ds = f'{S}/legiscan/ds'; d = f'{ds}/XX-1/XX/s1'
+    os.makedirs(f'{d}/bill'); os.makedirs(f'{d}/vote'); os.makedirs(f'{S}/codes')
+    json.dump({'bill': {'bill_number': 'H0001', 'session': {'year_start': 2023, 'year_end': 2024, 'special': 0}}}, open(f'{d}/bill/H0001.json', 'w'))
+    for i, day in ((1, '2024-03-06'), (2, '2024-05-01')): json.dump({'roll_call': {'roll_call_id': i, 'date': day}}, open(f'{d}/vote/{i}.json', 'w'))
+    sys.path.insert(0, TOOLS)
+    import importlib; of = importlib.import_module('_onfile'); importlib.reload(of); rr = importlib.import_module('run_recipe'); importlib.reload(rr)
+    sys.path.remove(TOOLS)
+    want = {'LEGISCAN_DATASETS': ds, 'LEGISCAN_DATASET_STATES': 'XX'}
+    assert of.onfile_env(S, 'xx', env={}) == want
+    assert of.onfile_env(S, 'xx', env={'LEGISCAN_LIVE': '1'}) == {}, 'the runner allowed the live API'
+    assert of.onfile_env(S, 'xx', env={'LEGISCAN_DATASETS': '/else'}) == {}, 'the caller already chose'
+    assert of.onfile_env(S, 'yy', env={}) == {}, 'no datasets for that state'
+    assert of.newest_roll_call(ds, 'xx') == ('2024-05-01', 1)
+    # the recipe: step 7's check
+    B = f'{t}/b'; os.makedirs(f'{B}/legiscan')
+    rec = {'stage5': S, 'topic': 'tp', 'unit': 'state:xx', 'level': 'state', 'state': 'XX', 'roster': f'{t}/r.tsv', 'codes': f'{S}/codes', 'saved_root': t, 'votes': 'legiscan-plan'}
+    put = lambda f, x: json.dump(x, open(f'{B}/{f}', 'w'))
+    put('recipe.json', rec); put('legiscan/crosscheck.json', []); put('legiscan/unmapped.json', []); put('legiscan/no-line.json', [])
+    out = run('run_recipe.py', B, '--check-only', '7').stdout
+    assert 'datasets on disk, 0 API calls' in out and 'newest roll call 2024-05-01' in out, out
+    assert 'LIVE API' in run('run_recipe.py', B, '--check-only', '7', env={'LEGISCAN_LIVE': '1'}).stdout
+    put('recipe.json', {**rec, 'legiscan_live': True}); assert 'LIVE API' in run('run_recipe.py', B, '--check-only', '7').stdout
+    put('recipe.json', rec); put('legiscan/no-line.json', [['Ann Able', 'https://legiscan.com/XX/bill/H1/2024', 'sponsor', 'XX-H-1-2024']])
+    p = run('run_recipe.py', B, '--check-only', '7', ok=False)
+    assert p.returncode == 10 and 'NO LegiScan line' in p.stdout, (p.returncode, p.stdout)
+    old = {k: os.environ.pop(k, None) for k in want}
+    try:
+        os.environ.update(want); cmds = rr.desk_commands(rec, B)
+    finally:
+        for k, v in old.items(): os.environ.pop(k, None) if v is None else os.environ.__setitem__(k, v)
+    assert all(f'LEGISCAN_DATASETS={ds} LEGISCAN_DATASET_STATES=XX ' in c for c in cmds[:2]), cmds
+    assert 'write-batch.sh' in cmds[0] and cmds[0].endswith(' apply') and '--apply --editor-id <editor id>' in cmds[1], cmds
+    assert '--env-file=.env' in cmds[2] and f'{B}/pids-write.txt --batch-id b' in cmds[2] and 'approve-batch.ts <editor id> b' in cmds[3], cmds
+    # a vote later than the datasets says so; an earlier one that finds no roll call does not
+    batch(B, [('Ann Able', 'a')], [{'full_name': 'Ann Able', 'topic_key': 'tp', 'evidence_type': 'record', 'urls': ['https://off.gov/1', 'https://off.gov/2']}])
+    os.makedirs(f'{t}/f')
+    v = lambda u, day: {'kind': 'record', 'url': u, 'act': 'yea', 'instrument_id': 'XX-H-1-2024', 'chamber': 'H', 'date': day, 'note': 'tally 60-40', 'motion': 'Passage'}
+    json.dump({'findings': [v('https://off.gov/1', '2024-06-01'), v('https://off.gov/2', '2024-04-01')]}, open(f'{t}/f/a.json', 'w'))
+    put('legiscan/rollcall-hits.json', [])
+    run('state_legiscan.py', 'pairs', B, f'{t}/f', '--state', 'XX', '--host', 'off.gov', '--topic', 'tp', env=want)
+    un = {u[1]: u[3] for u in json.load(open(f'{B}/legiscan/unmapped.json'))}
+    assert 'NEWER' in un['https://off.gov/1'] and '2024-05-01' in un['https://off.gov/1'] and 'NEWER' not in un['https://off.gov/2'], un
+    # the write script
+    if not shutil.which('zsh'): print('     (write-batch.sh part skipped: no zsh)'); return
+    os.makedirs(f'{t}/bin'); open(f'{B}/pids.txt', 'w').write('a\n')
+    open(f'{t}/bin/npx', 'w').write(f'#!/bin/sh\necho "$LEGISCAN_DATASETS|$LEGISCAN_DATASET_STATES" > {t}/env.txt\n'); os.chmod(f'{t}/bin/npx', 0o755)
+    base = {k: x for k, x in os.environ.items() if not k.startswith('LEGISCAN_')}; base['PATH'] = f'{t}/bin:' + base['PATH']
+    wb = lambda unit, **e: subprocess.run(['zsh', os.path.join(TOOLS, 'write-batch.sh'), S, B, 'tp', unit, '0'], capture_output=True, text=True, env={**base, **e})
+    assert wb('state:xx').returncode == 0 and open(f'{t}/env.txt').read().strip() == f'{os.path.realpath(ds)}|XX', open(f'{t}/env.txt').read()
+    wb('state:xx', LEGISCAN_LIVE='1'); assert open(f'{t}/env.txt').read().strip() == '|', 'the live API on the runner\'s yes'
+    wb('state:yy'); assert open(f'{t}/env.txt').read().strip() == '|', 'no datasets for that state'
 
 
 @check

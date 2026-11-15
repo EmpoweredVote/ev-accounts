@@ -21,6 +21,15 @@ if [[ -f $W/pids.txt ]]; then
 fi
 cd $BACKEND
 export ADMIN_INGEST_TOKEN=placeholder
+# LegiScan from the datasets on disk when the unit's state has them (as run_recipe.py does; _onfile.py). The live API
+# only with the runner's yes: LEGISCAN_LIVE=1.
+if [[ -z ${LEGISCAN_DATASETS:-} && ${LEGISCAN_LIVE:-} != 1 && $U == state:* ]]; then
+  ST=${(U)U#state:}
+  if [[ -n $(print -l ${S:A}/legiscan/ds/${ST}-*(N)) ]]; then
+    export LEGISCAN_DATASETS=${S:A}/legiscan/ds LEGISCAN_DATASET_STATES=$ST
+    print "LegiScan: reading the datasets on disk ($LEGISCAN_DATASETS, $ST); no API call"
+  fi
+fi
 skip=(--skip-ids ${W:A}/skip-ids.txt)
 if [[ $M == apply && ${STAGE5_NO_DB_WRITE:-} == 1 ]]; then
   print -u2 "REFUSED: write-batch.sh apply. STAGE5_NO_DB_WRITE=1: this is a slim session, which never writes the database. Stop and hand the write to the desk session."
