@@ -490,6 +490,41 @@ def search_list_control_groups_draw_and_judge_each_group_apart(t):
 
 
 @check
+def search_list_side_group_reports_a_move_within_the_side_and_fails_on_a_change_of_side(t):
+    """`<rungs>:<n>:side` (ruling 2026-11-14, rung 4): 4 -> 5 is reported; 4 -> 3, or a lost seat, re-opens the group."""
+    pids = [f'p{i:02d}' for i in range(20)]
+    os.makedirs(t)
+    open(f'{t}/roster.tsv', 'w').write('politician_id\tfull_name\n' + ''.join(f'{p}\t{p.upper()}\n' for p in pids))
+    R, C, O = f'{t}/rec', f'{t}/codes', f'{t}/plan'
+    for p in pids[:12]: code(R, p, 'seated', 4)
+    for p in pids[12:20]: code(R, p, 'seated', 3)
+    args = ['--record-codes', R, '--roster', f'{t}/roster.tsv', '--control-group', '4:3:side', '--control-group', '3:3', '--out', O]
+    bad = run('search_list.py', 'plan', *args, ok=False)
+    assert bad.returncode != 0 and '--sides' in bad.stderr + bad.stdout, 'a :side group needs --sides'
+    assert run('search_list.py', 'plan', *args, '--sides', '1,2,3/5', ok=False).returncode != 0, 'the sides must place the skipped rung'
+    p = run('search_list.py', 'plan', *args, '--sides', '1,2,3/4,5')
+    assert 'a move within the same side is reported' in p.stdout, p.stdout
+    ctrl = list(csv.DictReader(open(f'{O}/control.tsv'), delimiter='\t'))
+    by = {g: [r['politician_id'] for r in ctrl if r['group'] == g] for g in ('4', '3')}
+    adopt = ['adopt', '--record-codes', R, '--codes', C, '--out', O]
+    def full(moves):
+        shutil.rmtree(C, ignore_errors=True)
+        for g in by:
+            for q in by[g]: code(C, q, 'seated', int(g), 'joint')
+        for q, (o, v) in moves.items(): code(C, q, o, v, 'joint')
+        return run('search_list.py', *adopt, ok=False)
+    r = full({by['4'][0]: ('seated', 5)})
+    assert r.returncode == 0 and '1 moved within the same side' in r.stdout and 'REPORT' in r.stdout, r.stdout
+    assert len(os.listdir(C)) == 20 and not os.path.exists(f'{O}/reopened.tsv'), 'a move within the side adopts the group'
+    for move in (('seated', 3), ('doesnt-fit', None), ('doesnt-fit', 5)):
+        r = full({by['4'][0]: move})
+        assert r.returncode == 4, (move, r.stdout)
+        assert len(list(csv.DictReader(open(f'{O}/reopened.tsv'), delimiter='\t'))) == 9, 'the rung 4 group is re-opened'
+    r = full({by['3'][0]: ('seated', 2)})
+    assert r.returncode == 4 and 'rung 3: 1 of 3 changed; search' in r.stdout, 'a plain group still fails on any change, same side or not'
+
+
+@check
 def search_list_recode_only_new_findings_and_cut_short_searches(t):
     """Second pass only for a NEW on-topic finding (or no record-only code); a search that read none of the person's
     own pages is searched again once, not taken as 'found nothing'; everyone else keeps the record-only code."""
@@ -743,6 +778,9 @@ def session_card_takes_every_topic_value_from_the_profile(t):
     card('B', '--profile', P); b = open(f'{t}/card-B.md').read()
     assert '--control-group 1:7 --control-group 3,2:4' in b and '--sides 1,2/3 --skip-rungs 1,3,2' in b and '{{' not in b, b[:300]
     assert 'rung 1 (control of 7); rungs 3 and 2 (control of 4)' in b
+    P = profile(t, sides='1,2/3', record_script=True, control_groups=['1:7', '3:4:side'])
+    card('B', '--profile', P); b = open(f'{t}/card-B.md').read()
+    assert 'plan --control-group 1:7 --control-group 3:4:side --sides 1,2/3' in b and 'fails only on a change of side or outcome' in b and '--skip-rungs 1,3`' in b, b[:300]
     P = profile(t, control_groups=['1:7'])  # skip rule without the script
     card('B', '--profile', P); b = open(f'{t}/card-B.md').read()
     assert 'search_list.py plan --' in b and 'record-script.ts' not in b and 'not approved for this topic' in b

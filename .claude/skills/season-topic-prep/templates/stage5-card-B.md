@@ -91,7 +91,7 @@ python3 -I scripts/stage5/run_state.py --profile {{PROFILE}} --state {{xx}} --ro
   `{{S}}/{{xx}}/codes-before-<name>/`.
 - **Exit 10, search files refused:** fix each file or brief that person again, import the folder again, resume.
 - **Exit 4 at step 6:** a control person changed. `reopened.tsv` lists the group to search and code after all.
-  Report it.
+  Report it. A line "moved within the same side" is not a stop: report each such person (from, to, the source).
 - **Exit 4 at step 7:** 🛑 **stop 2.** Doesn't fit is over 1 in 5, or one theme is over 1 in 10. Show the split and
   the themes, ask one question, recommend one answer. Detail: STAGE5 §5.
 - **Exit 2:** a command failed. Fix the cause; do not work around the step by hand.
