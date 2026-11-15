@@ -7,7 +7,8 @@ Companion to `RULES.md`, which establishes the DATE. This records what was done 
 | | offices | state |
 | --- | --- | --- |
 | cancelled, single-seat | **85** | ✅ seated at 2026-12-11 by `CC_0434` |
-| cancelled, at-large boards | **29** (10 boards) | 🔴 blocked on a decision — see below |
+| cancelled, at-large — ALL-INCUMBENT | **17** (6 boards) | ✅ seated at 2026-12-11 by `CC_0437` |
+| cancelled, at-large — with a NEWCOMER | **12** (4 boards) | 🔴 still blocked on a decision — see below |
 | cancelled, no person row | **1** | ⏳ Norwalk-La Mirada TA5 — needs a `politicians` row |
 | contested, awaiting certification | **52** | ⏳ LA County certifies by 2026-12-03 |
 | winner already recorded | **49** | ⏳ still need a 2026-12-11 term written |
@@ -78,14 +79,24 @@ Luciano Aguilar and Yaquelin Amador against sitting member Cristina Chiappe; Her
 sitting filer of three. Choosing which of five identical seats a newcomer takes is a claim about
 **who replaced whom**, and nothing in the record supports one choice over another.
 
-▶ **Two options, and this is the operator's call:**
-1. **Seat only the all-incumbent boards** (determinate) and leave the rest until each board's own
-   organisational minutes name who succeeded whom. Minutes appear shortly after 12-11.
-2. **Adopt a rule** — e.g. assign newcomers to the expiring seats in ballot order — and record it
-   as a convention rather than a fact. Cheap, and wrong in a way nobody can later detect.
+🟢 **RESOLVED 2026-11-15 FOR SIX OF THE TEN — `CC_0437`, applied.** Where EVERY filer already
+sits on the board, the question disappears: each returns to the seat they already hold, so no
+seat is chosen and no claim is made about who replaced whom. **El Monte City, El Rancho,
+El Segundo, Rosemead, Walnut Valley and West Covina** — 17 seatings.
 
-⚠ Option 2 is how a seat ends up asserting a succession that never happened. Option 1 is
-recommended; the cost is that those boards show a stale member for a few weeks.
+🔴🔴 **AND THE RULE THAT LOOKS RIGHT IS WRONG: "seat the members with the oldest `term_start`".**
+Five of the six split cleanly, filers on 2022-12-01 and non-filers on 2024-12-01. **El Monte City
+does not** — Cesar Peralta carries 2024-12-01, the same date as Jennifer Cobian and David
+Siegrist who are NOT up, because his is an unexpired term (RR/CC 4324, *"Unexpired term ending
+December 11, 2026"*). ▶ **The date does not discriminate; the SOURCE does.** `CC_0437` reads
+neither — it maps each person to the seat they already hold, which is why it is safe.
+
+🔴 **STILL BLOCKED, 4 boards / 12 candidacies: Hawthorne (2 of 3 filers sit), Hermosa Beach City
+(1 of 3), Manhattan Beach (2 of 3), San Marino (2 of 3).** Placing a NEWCOMER into one of five
+indistinguishable seats asserts which member they succeeded, and nothing in the record supports
+one choice over another. ▶ Wait for each board's own organisational minutes, which appear
+shortly after 2026-12-11. ⚠ Do NOT adopt a tie-break rule such as ballot order: it is cheap and
+wrong in a way nobody can later detect.
 
 ---
 
