@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { batchLine, collapseBatch, collapsedRoundTripProblems, compactBatch, expandCollapsed, filterRulings, roundTripProblems, shownIds, type RosterRow } from './stage5CoderInputs.js';
+import { batchLine, collapseBatch, isPlainRecord, collapsedRoundTripProblems, compactBatch, expandCollapsed, filterRulings, roundTripProblems, shownIds, type RosterRow } from './stage5CoderInputs.js';
 import type { PersonFindings } from './sourceStore.js';
 
 const prov = { fetched_by: 'PROVENANCE-MARKER', fetched_at: '2026-11-01T00:00:00Z', method: 'api' as const };
@@ -145,6 +145,27 @@ describe('collapseBatch', () => {
     expect(c.people[0].findings.map((f) => f.id)).toEqual(['7'.repeat(64), '8'.repeat(64)]);
     expect(c.people[0].findings[0].note).toBe(doubt.note);
     expect(JSON.stringify(c.people[0].record)).not.toContain('7'.repeat(64));
+  });
+  it('isPlainRecord: one roll call stored under two motion wordings is plain twice, though only one collapses (SC 2026-11-14)', () => {
+    const a = pre('a', 'XX-HB-1-2025', 'yea', '2025-05-01', 'XX House', '70–20', 'none');
+    const b = { ...a, id: 'b'.repeat(64), motion: 'House: Third Reading', note: 'XX House, House: Third Reading, 2025-05-01: yea (tally 70–20); census gate: none.', subjects: ['another reading'] };
+    const two = [{ row: row(P, 'Pat'), pf: { politician_id: P, searches: [], findings: [a, b, spon('c', 'XX-HB-1-2025', 'prime'), doubt, own] } as PersonFindings }];
+    const cc = collapseBatch(two, 'gun-policy', 3, (id) => `state-xx/${id}.json`, table);
+    expect(cc.people[0].record.flatMap((l) => l.on.map((r) => r[0])).filter((id) => id === 'a'.repeat(64) || id === 'b'.repeat(64))).toHaveLength(1);
+    const fs = expandCollapsed(cc).get(P)!.findings;
+    expect(fs.filter(isPlainRecord).map((f) => f.id[0]).sort()).toEqual(['a', 'b', 'c']);
+    // A doubt after the fixed sentence, own words, a note that disagrees with its own fields, a passage and a
+    // local-record mark are never plain.
+    const one = fs.find((f) => f.id === 'a'.repeat(64))!;
+    expect(isPlainRecord(fs.find((f) => f.id === '7'.repeat(64))!)).toBe(false);
+    expect(isPlainRecord(fs.find((f) => f.id === '8'.repeat(64))!)).toBe(false);
+    expect(isPlainRecord({ ...one, act: 'nay' })).toBe(false);
+    expect(isPlainRecord({ ...one, kind: 'own-words' })).toBe(false);
+    expect(isPlainRecord({ ...one, motion: 'Another motion' })).toBe(false);
+    expect(isPlainRecord({ ...one, gate: 'near-unanimous' })).toBe(false);
+    expect(isPlainRecord({ ...one, passage: 'Quoted words.' })).toBe(false);
+    expect(isPlainRecord({ ...one, local_record: true })).toBe(false);
+    expect(isPlainRecord({ ...one, note: 'He voted for the bill after a long debate.' })).toBe(false);
   });
   it('rebuilds every finding exactly, and lists every id it shows', () => {
     expect(collapsedRoundTripProblems(ppl, c, 'gun-policy', 3)).toEqual([]);
