@@ -34,6 +34,7 @@ import { parseHTML } from 'linkedom';
 import { fetchCongressPageText } from './adapters/congressAdapter.js';
 import { fetchIgaPageText } from './adapters/igaAdapter.js';
 import { fetchMaRollCallText } from './adapters/maLegislatureAdapter.js';
+import { fetchStateRollCallText } from './adapters/stateRollCallAdapter.js';
 
 /**
  * Honest user-agent. Names Empowered Vote, links a public policy page, and
@@ -755,6 +756,8 @@ export interface VerificationFetchDeps {
    * fetch of a public site, so it runs AFTER the robots gate, before the generic tiers.
    */
   maRollCallAdapter?: (url: string) => Promise<string | null>;
+  /** A legislature's own roll-call page, read into its party-free render (stateRollCallEvidence.ts). */
+  stateRollCallAdapter?: (url: string) => Promise<string | null>;
 }
 
 /**
@@ -773,6 +776,8 @@ export function createVerificationFetchSession(
   const congressAdapter = deps.congressAdapter ?? fetchCongressPageText;
   const igaAdapter = deps.igaAdapter ?? fetchIgaPageText;
   const maRollCallAdapter = deps.maRollCallAdapter ?? ((url: string) => fetchMaRollCallText(url, { userAgent: EMPOWERED_VOTE_UA }));
+  const stateRollCallAdapter = deps.stateRollCallAdapter
+    ?? ((url: string) => fetchStateRollCallText(url, { userAgent: EMPOWERED_VOTE_UA, decode: decodeHtmlBytes, toText: htmlToText }));
 
   return {
     async fetch(url: string): Promise<string> {
@@ -816,6 +821,16 @@ export function createVerificationFetchSession(
       // its vote lines verify against (maRollCallEvidence.ts). Null falls through to the plain tier.
       try {
         const t = await maRollCallAdapter(url);
+        if (t && t.trim()) return t;
+      } catch {
+        /* fall through to the generic ladder */
+      }
+
+      // Source-specific tier — a legislature's own roll-call page (Utah's svotes.jsp so far), read from its
+      // markup into the party-free render its vote lines verify against (stateRollCallEvidence.ts). Null
+      // falls through to the plain tier.
+      try {
+        const t = await stateRollCallAdapter(url);
         if (t && t.trim()) return t;
       } catch {
         /* fall through to the generic ladder */

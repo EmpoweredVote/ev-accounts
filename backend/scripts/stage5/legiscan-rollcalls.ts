@@ -4,6 +4,7 @@
  *   npx tsx --env-file=.env scripts/stage5/legiscan-rollcalls.ts <ST> <vote-pages.json> <out.json>
  *
  * vote-pages.json: [{ url, bill: "SB0010", year: 2025, chamber: "H"|"S", yea, nay }] (yea < 0 matches any count).
+ * A hit on a bill converted from Open States data also carries `openstates: true` and the roll call's own page.
  * Prints one line per page with every candidate LegiScan roll call; pick by date and motion, and check the
  * person-level votes later with the cross-check (STAGE5 step 7.7). Every LegiScan call counts against the cap.
  */
@@ -37,7 +38,10 @@ for (const pg of pages) {
       const bill = (await q('getBill', { id: String(b.bill_id) })).bill;
       for (const v of bill.votes ?? []) {
         if (v.chamber === pg.chamber && (pg.yea < 0 || (Number(v.yea) === pg.yea && Number(v.nay) === pg.nay))) {
-          hits.push({ session: s.session_name, roll_call_id: v.roll_call_id, date: v.date, desc: v.desc, yea: v.yea, nay: v.nay, bill_url: bill.url });
+          // A bill converted from Open States data (scripts/stage5/openstates/) has no legiscan.com page: its roll call
+          // is cited on the legislature's own page, `state_link` (state_legiscan.py pairs).
+          hits.push({ session: s.session_name, roll_call_id: v.roll_call_id, date: v.date, desc: v.desc, yea: v.yea, nay: v.nay, bill_url: bill.url,
+            ...(bill._openstates ? { openstates: true, bill_number: bill.bill_number, special: Number(bill.session?.special ?? 0), state_link: v.state_link ?? '' } : {}) });
         }
       }
     }

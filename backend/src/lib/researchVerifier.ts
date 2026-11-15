@@ -13,6 +13,7 @@ import { isRollCallXmlUrl, parseRollCallLine, verifyRollCallLine } from './rollC
 import { isIgaRollCallUrl, parseIgaRollCallLine, verifyIgaRollCallLine } from './igaRollCallEvidence.js';
 import { isMaRollCallUrl, parseMaRollCallLine, verifyMaRollCallLine } from './maRollCallEvidence.js';
 import { isLegiscanUrl, parseLegiscanLine, verifyLegiscanLine, type GovernorTerm } from './legiscanEvidence.js';
+import { isStateRollCallUrl, parseStateRollCallLine, verifyStateRollCallLine } from './stateRollCallEvidence.js';
 import { isActionAgendaUrl, parseActionAgendaLine, verifyActionAgendaLine } from './actionAgendaEvidence.js';
 
 /**
@@ -563,6 +564,14 @@ export async function verifyEvidence(args: {
           // malegislature.gov roll-call PDF, against the party-free render the MA adapter made of it.
           if (isMaRollCallUrl(url) && parseMaRollCallLine(ev.snippet)) {
             const v = verifyMaRollCallLine(ev.snippet, url, fetched.text, names.lastName, names.fullName);
+            judged.push({ snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: v,
+              ...(v.verdict === 'verified' ? { matchedSpan: ev.snippet.trim() } : {}) });
+            continue;
+          }
+          // State roll-call lane (stateRollCallEvidence.ts): the same check on a legislature's own roll-call
+          // page, against the party-free render the adapter made of its markup.
+          if (isStateRollCallUrl(url) && parseStateRollCallLine(ev.snippet)) {
+            const v = verifyStateRollCallLine(ev.snippet, url, fetched.text, names.lastName, names.fullName);
             judged.push({ snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: v,
               ...(v.verdict === 'verified' ? { matchedSpan: ev.snippet.trim() } : {}) });
             continue;
