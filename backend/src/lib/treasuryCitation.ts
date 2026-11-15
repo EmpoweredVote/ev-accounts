@@ -87,18 +87,53 @@ export function dataSourceInfoFor(row: BudgetAttribution): DataSourceInfo | null
   }
 
   // Municipal attribution, straight off the row.
-  if (row.data_source && row.source_url && row.source_date) {
+  //
+  // ⚠⚠⚠ `source_date` IS NOT REQUIRED HERE, AND THAT IS A REVERSAL. This
+  // branch used to demand it, on a stated and deliberate ground: "an undated
+  // citation renders 'as of' a blank." **That premise was wrong about the
+  // client, and it was costing 24,573 budgets their chip.**
+  //
+  // Treasury Tracker's SourceChip renders the date as
+  //     {!compact && date && <span>· as of {date}</span>}
+  // with `const date = fetchDate ? fetchDate.slice(0, 10) : null`. A null
+  // `fetchedAt` therefore renders NO span and NO "as of" — the pill is just
+  // `<sourceName> ↗`. There is no blank to avoid. The aria-label is guarded the
+  // same way. (Verified 2026-11-14 in src/components/federal/SourceChip.tsx.)
+  //
+  // ⭐ AND BRANCH ONE ABOVE ALREADY AGREES: it serves a chip with
+  // `fetchedAt: … ?? null`. A registry-attributed row with no date gets its
+  // link; a municipal row with no date got nothing. One rule, two answers.
+  //
+  // ⛔⛔ WHAT IT COST, MEASURED AGAINST PRODUCTION 2026-11-14: **24,573 budgets
+  // across 746 families held a `source_url` and no `source_date`, and served no
+  // chip at all.** Every MA DLS row (16,813 — the entire state, every figure
+  // cited by treasury-tracker #392/#397/#398/#400/#402/#403) and all 7,682 CA
+  // publicpay rows were invisible. Those are precisely the families the
+  // citation arc had just finished repairing: the migrations set `source_url`
+  // and no `source_date`, so the work landed in the database and reached no
+  // reader. Probed live before the fix — Boston and Abington, FY2020 and
+  // FY2024, both dataset types — `data_source_info: null` every time.
+  //
+  // ⭐⭐ THE RULE THIS SETTLES: **an undated citation is not an unattributed
+  // one.** A row holding a publisher name and a document URL can be checked by
+  // a reader; withholding the link because we cannot say WHEN we fetched it
+  // confuses "undated" with "unsourced" and serves the reader strictly less.
+  // The date is decoration on the chip; the href is the substance.
+  if (row.data_source && row.source_url) {
     return {
       displayName: row.data_source,
       url: row.source_url,
       datasetUrl: row.source_url,
-      fetchedAt: row.source_date,
+      fetchedAt: row.source_date ?? null,
     };
   }
 
   // ⚠ Not an oversight. A row with no attributable source must serve NO chip
-  // rather than an invented one — Treasury Tracker counts these (24,938
-  // budgets against a declared baseline that may not grow) precisely so they
-  // stay visible as missing instead of being papered over here.
+  // rather than an invented one — Treasury Tracker counts these (298 budgets
+  // as of 2026-11-14, against a declared baseline that may not grow) precisely
+  // so they stay visible as missing instead of being papered over here.
+  // ⚠ A row needs BOTH a name and a URL to be attributable: a URL with no
+  // publisher name would render a nameless pill, and a name with no URL a chip
+  // that links nowhere.
   return null;
 }
