@@ -133,6 +133,14 @@ python3 -I scripts/stage5/bill_table.py questions {{S}}/bill-table-{{xx}}.json -
 `{{S}}/coder-rulings.md` where you can. Write the rest as grouped questions, each with the people it affects, in
 `{{S}}/{{xx}}/STOP1-QUESTIONS.md`. Detail: STAGE5 §3b.
 
+🔴 **A flag is an open question: any text in it keeps that bill's people out of the record script.** Close each
+one with `settle` (now for flags the rulings settle, after stop 1 for the rest); never write an answer into `flag`.
+Then `check` must print `0 flagged`:
+
+```bash
+python3 -I scripts/stage5/bill_table.py settle {{S}}/bill-table-{{xx}}.json <bill id>...|--all --answer "<the ruling, or the runner's words>"
+```
+
 **A5b. Before asking: probe the write.** Two checks that otherwise surface in session B:
 
 1. Can our reader open this legislature's roll-call pages? Read each host's `robots.txt` and fetch one roll-call
