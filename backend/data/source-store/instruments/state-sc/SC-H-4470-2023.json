@@ -1,0 +1,51 @@
+{
+  "id": "SC-H-4470-2023",
+  "scope": "state:sc",
+  "title": "H4470 (125th General Assembly): Omnibus More Justice Act",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4470&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/4470_20230510.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "JA Moore",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8fb20bf7-3e8c-4d94-8a64-94222f34420f"
+    },
+    {
+      "name": "John King",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ea8dd677-e991-4d35-9fc9-f309b77c9159"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-bail-pretrial: SECTION 5.A (Section 17-15-55) and Sections 17-15-30, 22-5-510, new 17-15-270 — bond rules for repeat offenders, surety limits, mental health evaluation before bond hearing",
+        "judicial-police-accountability: Section 6 (new Section 23-1-255) excessive-force felony; Section 8 (new Section 23-1-270) taser and stun gun policy and reporting",
+        "judicial-criminal-justice: Section 3 (new Chapter 32, Title 17) asset forfeiture and private property protection",
+        "public-safety-approach: Section 7 (new Section 23-1-260) ban on agencies acquiring military items such as armored vehicles and weaponized drones",
+        "judicial-transparency: Section 1 (new Chapter 32, Title 14) Judicial Criminal Information Technology Committee"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2023-05-10; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/4470_20230510.htm (LegiScan doc 2805037))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4470-2023.introduced.htm",
+      "sha256": "76a84a5e937ac5ec8138bd0df4746a947216c8bd84f7384a9a25b9e8e883a2d2"
+    },
+    "note": "Introduced version (2023-05-10); no passage vote on record. Not quoted but gun-related: Section 3 (new Section 17-32-30 etc.) lets the State forfeit firearms and ammunition used in a crime and requires firearms to be sold to licensed dealers; SECTION 5.A (Section 17-15-55) adds \"felony offense involving a firearm\" to repeat-offender bond rules and requires full cash deposit for bonds set after two prior firearm or violent bonds."
+  },
+  "operative_text": "Section 2 (new Section 16-23-920, Article 9): For any sale or transfer of a firearm for which a licensed dealer contacts the National Instant Criminal Background Check System (NICS) to conduct a background check, a licensed gun dealer may not deliver a firearm to any transferee unless the NICS provides the licensed dealer with a unique identification number or five days have elapsed from the date the licensed dealer contacted the NICS and the NICS has not notified the licensed dealer that a sale or transfer to such person would violate state or federal law.\nSection 2 (new Section 16-23-930): A person who violates the provisions of this article is guilty of a misdemeanor and, upon conviction, must be imprisoned not more than three years or fined not more than one thousand dollars, or both.\nSection 7 (new Section 23-1-260): A state or local law enforcement agency may not acquire or purchase the following items: ... (6) firearms of .50 caliber or higher; (7) ammunition of .50 caliber or higher;"
+}

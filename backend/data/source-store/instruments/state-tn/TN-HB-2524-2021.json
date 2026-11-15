@@ -1,0 +1,140 @@
+{
+  "id": "TN-HB-2524-2021",
+  "scope": "state:tn",
+  "title": "HB2524 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, relative to weapons.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2524&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/HB2524.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jerry Sexton",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Terri Lynn Weaver",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jay Reedy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4e0eefb1-6a4f-4004-be8d-432a7131b475"
+    },
+    {
+      "name": "Todd Warner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0a90ac77-c426-4f4e-add8-f5454c42229f"
+    },
+    {
+      "name": "Rusty Grills",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "70aa67e5-8df0-4dee-a034-1ea4f3470c57"
+    },
+    {
+      "name": "Susan Lynn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6dbe4dd8-b749-4ef0-9ca4-f2c752e50ef1"
+    },
+    {
+      "name": "David Byrd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bruce Griffey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Clay Doggett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9a9c3029-794a-4cb5-aa7e-342e9b480603"
+    },
+    {
+      "name": "Chris Todd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+    },
+    {
+      "name": "Mark Hall",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rick Eldridge",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "58be867d-b7c3-4105-9757-55d4abe59756"
+    },
+    {
+      "name": "Debra Moody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5fbea991-5a0d-4695-9b78-06700eb9ff3f"
+    },
+    {
+      "name": "Scotty Campbell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Ragan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ron Gant",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8f1d454c-399f-48d6-9850-dcc7b8b2cd0d"
+    },
+    {
+      "name": "Tim Hicks",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7ea75c1f-f04c-42ac-8b06-7a17bcfb8d9a"
+    },
+    {
+      "name": "Paul Sherrell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9dfac502-4cc4-4105-91de-cc25272e452e"
+    },
+    {
+      "name": "Jerome Moon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9ee15ead-f2bc-47dd-b5f0-1f913f8a80f3"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2022-02-02; official copy via LegiScan getBillText doc 2502286)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2524-2021.draft.pdf",
+      "sha256": "71208661a5b61ed97b474c89134a0266fd32b5f11f3dd47e40fc8c24f59e1cf0"
+    },
+    "note": "Draft as filed 2022-02-02 (HB 2524 / SB 2866), the \"Second Amendment Simplification Act of 2022.\" Replaces 39-17-1307 with a single prohibited-possessor offense and deletes 39-17-1308 (carry with intent to go armed, defenses) and 39-17-1311 (weapon in park or recreation building). Sections 2(b)-(c) list relief and federal-dealer exceptions. Effective July 1, 2022."
+  },
+  "operative_text": "SECTION 2 (TCA 39-17-1307(a)): (1) A person commits an offense who possesses a firearm and:\nSECTION 2 (TCA 39-17-1307(a)): (C) Has been convicted of any other felony;\nSECTION 2 (TCA 39-17-1307(a)): (D) Has been convicted of a misdemeanor crime of domestic violence as defined in 18 U.S.C. § 921, and is still subject to the disabilities of such a conviction; or\nSECTION 2 (TCA 39-17-1307(a)): (E) Is, at the time of the possession, subject to an order of protection that fully complies with 18 U.S.C. § 922(g)(8).\nSECTION 2 (TCA 39-17-1307(d)): (d) A person does not possess a firearm, including, but not limited to, a firearm registered under the National Firearms Act (26 U.S.C. § 5801 et seq.), if the firearm is in a safe or similar container that is securely locked and to which the person does not have the combination, keys, or other means of normal access.\nSECTION 3 (TCA 39-17-1308): Tennessee Code Annotated, Section 39-17-1308, is amended by deleting the section in its entirety.\nSECTION 4 (TCA 39-17-1311): Tennessee Code Annotated, Section 39-17-1311, is amended by deleting the section in its entirety.\nSECTION 5 (TCA 39-17-1313(a)): deleting the language \"or who lawfully carries a handgun pursuant to § 39-17-1307(g)\"."
+}

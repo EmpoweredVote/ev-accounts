@@ -1,0 +1,1438 @@
+{
+  "generated": "2026-11-14T03:35:46.496Z",
+  "basisCounts": {
+    "forced": 8,
+    "uncalled": 13,
+    "rcv-called": 5
+  },
+  "contests": [
+    {
+      "raceId": "e7f7ee0d-6806-4919-b5fa-a7ead87ca40f",
+      "ours": "Fairview City Council Position 4",
+      "contest": "City of Fairview, Councilor, Position 4",
+      "seats": 1,
+      "basis": "forced",
+      "sittingMembers": [
+        "Jenni Weber"
+      ],
+      "incumbentsOnBallot": [
+        "Jenni Weber (exact-full-name)"
+      ],
+      "exportVoteFor": 1,
+      "margin": null,
+      "quote": null,
+      "writeInLine": 49,
+      "candidates": [
+        {
+          "id": "100086287",
+          "who": "Jenni Weber",
+          "votes": 2389,
+          "counties": 1,
+          "result": "won",
+          "incumbent": true,
+          "basis": "exact-full-name"
+        }
+      ]
+    },
+    {
+      "raceId": "cba78b59-0450-46e3-8e76-90f7c82d5878",
+      "ours": "Fairview City Council Position 5",
+      "contest": "City of Fairview, Councilor, Position 5",
+      "seats": 1,
+      "basis": "forced",
+      "sittingMembers": [
+        "Steve Owen"
+      ],
+      "incumbentsOnBallot": [],
+      "exportVoteFor": 1,
+      "margin": null,
+      "quote": null,
+      "writeInLine": 59,
+      "candidates": [
+        {
+          "id": "300060649",
+          "who": "Ted Tosterud",
+          "votes": 2370,
+          "counties": 1,
+          "result": "won",
+          "incumbent": false,
+          "basis": null
+        }
+      ]
+    },
+    {
+      "raceId": "439d4367-b45e-42bd-b289-270c942d34ea",
+      "ours": "Fairview City Council Position 6",
+      "contest": "City of Fairview, Councilor, Position 6",
+      "seats": 1,
+      "basis": "uncalled",
+      "sittingMembers": [
+        "Paul Copeland"
+      ],
+      "incumbentsOnBallot": [],
+      "exportVoteFor": 1,
+      "margin": 1714,
+      "quote": null,
+      "writeInLine": 42,
+      "candidates": [
+        {
+          "id": "300060329",
+          "who": "Adam Bird",
+          "votes": 2260,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300060652",
+          "who": "Steven Haschke",
+          "votes": 546,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        }
+      ]
+    },
+    {
+      "raceId": "ebcee8b9-4ff2-48c7-afcd-f035e1c9031c",
+      "ours": "Fairview Mayor",
+      "contest": "City of Fairview, Mayor",
+      "seats": 1,
+      "basis": "forced",
+      "sittingMembers": [
+        "Keith Kudrna"
+      ],
+      "incumbentsOnBallot": [
+        "Keith A Kudrna (first-and-last-only)"
+      ],
+      "exportVoteFor": 1,
+      "margin": null,
+      "quote": null,
+      "writeInLine": 78,
+      "candidates": [
+        {
+          "id": "300046920",
+          "who": "Keith A Kudrna",
+          "votes": 2466,
+          "counties": 1,
+          "result": "won",
+          "incumbent": true,
+          "basis": "first-and-last-only"
+        }
+      ]
+    },
+    {
+      "raceId": "ad814d48-ec19-471a-801f-6e36c40641f6",
+      "ours": "Gresham City Council Position 2",
+      "contest": "City of Gresham, Councilor, Position 2",
+      "seats": 1,
+      "basis": "uncalled",
+      "sittingMembers": [
+        "Eddy Morales"
+      ],
+      "incumbentsOnBallot": [],
+      "exportVoteFor": 1,
+      "margin": 8110,
+      "quote": null,
+      "writeInLine": 191,
+      "candidates": [
+        {
+          "id": "300060331",
+          "who": "Heather Coleman-Cox",
+          "votes": 20199,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300060332",
+          "who": "Will DelPlato",
+          "votes": 12089,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        }
+      ]
+    },
+    {
+      "raceId": "6776e801-e2fa-48f6-820a-7e018dd46857",
+      "ours": "Gresham City Council Position 4",
+      "contest": "City of Gresham, Councilor, Position 4",
+      "seats": 1,
+      "basis": "uncalled",
+      "sittingMembers": [
+        "Jerry Hinton"
+      ],
+      "incumbentsOnBallot": [],
+      "exportVoteFor": 1,
+      "margin": 6694,
+      "quote": null,
+      "writeInLine": 164,
+      "candidates": [
+        {
+          "id": "300060335",
+          "who": "Teo Ramirez",
+          "votes": 13999,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300060333",
+          "who": "Joshua Al-jaouni",
+          "votes": 7305,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300060336",
+          "who": "Gregory Schroeder",
+          "votes": 6109,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300060334",
+          "who": "Krestina Aziz",
+          "votes": 5374,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        }
+      ]
+    },
+    {
+      "raceId": "9675ce05-4ccb-48aa-9482-d5fdffeba962",
+      "ours": "Gresham City Council Position 6",
+      "contest": "City of Gresham, Councilor, Position 6",
+      "seats": 1,
+      "basis": "uncalled",
+      "sittingMembers": [
+        "Janine Gladfelter"
+      ],
+      "incumbentsOnBallot": [
+        "Janine Gladfelter (exact-full-name)"
+      ],
+      "exportVoteFor": 1,
+      "margin": 15765,
+      "quote": null,
+      "writeInLine": 296,
+      "candidates": [
+        {
+          "id": "100086301",
+          "who": "Janine Gladfelter",
+          "votes": 22850,
+          "counties": 1,
+          "result": null,
+          "incumbent": true,
+          "basis": "exact-full-name"
+        },
+        {
+          "id": "300060337",
+          "who": "Dan Miller",
+          "votes": 7085,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        }
+      ]
+    },
+    {
+      "raceId": "2fa94afa-14c7-4eca-a6ab-42c4fa979f0f",
+      "ours": "Gresham Mayor",
+      "contest": "City of Gresham, Mayor",
+      "seats": 1,
+      "basis": "uncalled",
+      "sittingMembers": [
+        "Travis Stovall"
+      ],
+      "incumbentsOnBallot": [
+        "Travis Stovall (exact-full-name)"
+      ],
+      "exportVoteFor": 1,
+      "margin": 9992,
+      "quote": null,
+      "writeInLine": 151,
+      "candidates": [
+        {
+          "id": "100086294",
+          "who": "Travis Stovall",
+          "votes": 22525,
+          "counties": 1,
+          "result": null,
+          "incumbent": true,
+          "basis": "exact-full-name"
+        },
+        {
+          "id": "300060338",
+          "who": "Sue Piazza",
+          "votes": 12533,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        }
+      ]
+    },
+    {
+      "raceId": "8d577858-74d8-405c-a47b-e667fdd95c18",
+      "ours": "Hillsboro City Council Ward 1 Position A",
+      "contest": "City of Hillsboro, Council Member, Ward 1, Position A",
+      "seats": 1,
+      "basis": "uncalled",
+      "sittingMembers": [
+        "Cristian Salgado"
+      ],
+      "incumbentsOnBallot": [
+        "Cristian Salgado (exact-full-name)"
+      ],
+      "exportVoteFor": 1,
+      "margin": 7208,
+      "quote": null,
+      "writeInLine": 230,
+      "candidates": [
+        {
+          "id": "300061463",
+          "who": "Diana Jackson",
+          "votes": 16021,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300061461",
+          "who": "Luis Garcia",
+          "votes": 8813,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300059898",
+          "who": "Cristian Salgado",
+          "votes": 5738,
+          "counties": 1,
+          "result": null,
+          "incumbent": true,
+          "basis": "exact-full-name"
+        },
+        {
+          "id": "300061464",
+          "who": "Sarah Marugg",
+          "votes": 4915,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        }
+      ]
+    },
+    {
+      "raceId": "59f7ba66-a8e0-4954-a0aa-0a5fabb12846",
+      "ours": "Hillsboro City Council Ward 2 Position A",
+      "contest": "City of Hillsboro, Council Member, Ward 2, Position A",
+      "seats": 1,
+      "basis": "uncalled",
+      "sittingMembers": [
+        "Kipperlyn Sinclair"
+      ],
+      "incumbentsOnBallot": [],
+      "exportVoteFor": 1,
+      "margin": 3294,
+      "quote": null,
+      "writeInLine": 496,
+      "candidates": [
+        {
+          "id": "300061466",
+          "who": "Karim Delgado",
+          "votes": 18811,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300061465",
+          "who": "Ivette Pantoja",
+          "votes": 15517,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        }
+      ]
+    },
+    {
+      "raceId": "3079029f-bbe1-457e-ba27-27616478638f",
+      "ours": "Hillsboro City Council Ward 3 Position A",
+      "contest": "City of Hillsboro, Council Member, Ward 3, Position A",
+      "seats": 1,
+      "basis": "uncalled",
+      "sittingMembers": [
+        "Olivia Alcaire"
+      ],
+      "incumbentsOnBallot": [],
+      "exportVoteFor": 1,
+      "margin": 5937,
+      "quote": null,
+      "writeInLine": 387,
+      "candidates": [
+        {
+          "id": "300061468",
+          "who": "Dorian Russell",
+          "votes": 17708,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300061467",
+          "who": "Titonian Wallace Sr",
+          "votes": 11771,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300061469",
+          "who": "Kimberly Culbertson",
+          "votes": 4645,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        }
+      ]
+    },
+    {
+      "raceId": "ca38e3d3-7fa1-4a09-a702-1a0fefd03173",
+      "ours": "Tualatin City Council Position 1",
+      "contest": "City of Tualatin, Council Member, Position 1",
+      "seats": 1,
+      "basis": "forced",
+      "sittingMembers": [
+        "María Reyes"
+      ],
+      "incumbentsOnBallot": [
+        "Maria Antonieta Reyes (first-and-last-only)"
+      ],
+      "exportVoteFor": 1,
+      "margin": null,
+      "quote": null,
+      "writeInLine": 149,
+      "candidates": [
+        {
+          "id": "300035161",
+          "who": "Maria Antonieta Reyes",
+          "votes": 6556,
+          "counties": 1,
+          "result": "won",
+          "incumbent": true,
+          "basis": "first-and-last-only"
+        }
+      ]
+    },
+    {
+      "raceId": "676f746b-b01a-41b1-9224-78aea0b2df20",
+      "ours": "Tualatin City Council Position 3",
+      "contest": "City of Tualatin, Council Member, Position 3",
+      "seats": 1,
+      "basis": "forced",
+      "sittingMembers": [
+        "Bridget Brooks"
+      ],
+      "incumbentsOnBallot": [
+        "Bridget Brooks (exact-full-name)"
+      ],
+      "exportVoteFor": 1,
+      "margin": null,
+      "quote": null,
+      "writeInLine": 186,
+      "candidates": [
+        {
+          "id": "300035162",
+          "who": "Bridget Brooks",
+          "votes": 6287,
+          "counties": 1,
+          "result": "won",
+          "incumbent": true,
+          "basis": "exact-full-name"
+        }
+      ]
+    },
+    {
+      "raceId": "bde1e616-a61e-46e2-94ce-3b87b1ab34f1",
+      "ours": "Forest Grove Mayor",
+      "contest": "City of Forest Grove, Mayor",
+      "seats": 1,
+      "basis": "forced",
+      "sittingMembers": [
+        "Malynda Wenzl"
+      ],
+      "incumbentsOnBallot": [
+        "Malynda Wenzl (exact-full-name)"
+      ],
+      "exportVoteFor": 1,
+      "margin": null,
+      "quote": null,
+      "writeInLine": 496,
+      "candidates": [
+        {
+          "id": "100085734",
+          "who": "Malynda Wenzl",
+          "votes": 6839,
+          "counties": 1,
+          "result": "won",
+          "incumbent": true,
+          "basis": "exact-full-name"
+        }
+      ]
+    },
+    {
+      "raceId": "65128ac1-4908-4e18-8c43-7ccc92b44f43",
+      "ours": "Sherwood Mayor",
+      "contest": "City of Sherwood, Mayor",
+      "seats": 1,
+      "basis": "forced",
+      "sittingMembers": [
+        "Tim Rosener"
+      ],
+      "incumbentsOnBallot": [
+        "Tim Rosener (exact-full-name)"
+      ],
+      "exportVoteFor": 1,
+      "margin": null,
+      "quote": null,
+      "writeInLine": 265,
+      "candidates": [
+        {
+          "id": "100086249",
+          "who": "Tim Rosener",
+          "votes": 6809,
+          "counties": 1,
+          "result": "won",
+          "incumbent": true,
+          "basis": "exact-full-name"
+        }
+      ]
+    },
+    {
+      "raceId": "83472b5e-a161-4833-a7c0-c3ff82fe1893",
+      "ours": "Tigard Mayor",
+      "contest": "City of Tigard, Mayor",
+      "seats": 1,
+      "basis": "uncalled",
+      "sittingMembers": [
+        "Yi-Kang Hu"
+      ],
+      "incumbentsOnBallot": [
+        "Yi-Kang Hu (exact-full-name)"
+      ],
+      "exportVoteFor": 1,
+      "margin": 6193,
+      "quote": null,
+      "writeInLine": 78,
+      "candidates": [
+        {
+          "id": "300061302",
+          "who": "Yi-Kang Hu",
+          "votes": 15213,
+          "counties": 1,
+          "result": null,
+          "incumbent": true,
+          "basis": "exact-full-name"
+        },
+        {
+          "id": "300061304",
+          "who": "Bill Monahan",
+          "votes": 9020,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        }
+      ]
+    },
+    {
+      "raceId": "17d6cce5-ddac-4127-8d8d-03ddcd2ed9ef",
+      "ours": "Forest Grove City Council",
+      "contest": "City of Forest Grove, Council Members (Vote For 3)",
+      "seats": 3,
+      "basis": "uncalled",
+      "sittingMembers": [
+        "Angel Falconer",
+        "Brian Schimmel",
+        "Donna Gustafson",
+        "Karen Martinez",
+        "Mariana Valenzuela",
+        "Michael Marshall"
+      ],
+      "incumbentsOnBallot": [
+        "Mariana E Valenzuela (first-and-last-only)",
+        "Karen Martinez (exact-full-name)"
+      ],
+      "exportVoteFor": 3,
+      "margin": 83,
+      "quote": null,
+      "writeInLine": 250,
+      "candidates": [
+        {
+          "id": "300061368",
+          "who": "Mallory Hiefield",
+          "votes": 5308,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "100085736",
+          "who": "Mariana E Valenzuela",
+          "votes": 4657,
+          "counties": 1,
+          "result": null,
+          "incumbent": true,
+          "basis": "first-and-last-only"
+        },
+        {
+          "id": "100085741",
+          "who": "Karen Martinez",
+          "votes": 4183,
+          "counties": 1,
+          "result": null,
+          "incumbent": true,
+          "basis": "exact-full-name"
+        },
+        {
+          "id": "300061369",
+          "who": "Matthew S Knight",
+          "votes": 4100,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300061444",
+          "who": "Sandra Pereyda",
+          "votes": 3381,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300061370",
+          "who": "John LePari",
+          "votes": 1541,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300061371",
+          "who": "Chris Mejia",
+          "votes": 1434,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        }
+      ]
+    },
+    {
+      "raceId": "2b0e2732-ac82-4815-9ced-ea62980280f7",
+      "ours": "Sherwood City Council",
+      "contest": "City of Sherwood, Council Members (Vote For 3)",
+      "seats": 3,
+      "basis": "forced",
+      "sittingMembers": [
+        "Dan Standke",
+        "Doug Scott",
+        "Keith Mays",
+        "Kim Young",
+        "Renee Brouse",
+        "Taylor Giles"
+      ],
+      "incumbentsOnBallot": [
+        "Taylor Giles (exact-full-name)",
+        "Keith Mays (exact-full-name)",
+        "Doug Scott (exact-full-name)"
+      ],
+      "exportVoteFor": 3,
+      "margin": null,
+      "quote": null,
+      "writeInLine": 455,
+      "candidates": [
+        {
+          "id": "100086252",
+          "who": "Taylor Giles",
+          "votes": 6088,
+          "counties": 1,
+          "result": "won",
+          "incumbent": true,
+          "basis": "exact-full-name"
+        },
+        {
+          "id": "100086251",
+          "who": "Keith Mays",
+          "votes": 5791,
+          "counties": 1,
+          "result": "won",
+          "incumbent": true,
+          "basis": "exact-full-name"
+        },
+        {
+          "id": "100085409",
+          "who": "Doug Scott",
+          "votes": 5492,
+          "counties": 1,
+          "result": "won",
+          "incumbent": true,
+          "basis": "exact-full-name"
+        }
+      ]
+    },
+    {
+      "raceId": "115c8ccb-aa65-4b7d-b323-3d86e8efbd93",
+      "ours": "Tigard City Council",
+      "contest": "City of Tigard, Council Members (Vote For 3)",
+      "seats": 3,
+      "basis": "uncalled",
+      "sittingMembers": [
+        "Faraz Ghoddusi",
+        "Heather Robbins",
+        "Jake Schlack",
+        "Jeanette Shaw",
+        "Maureen Wolf",
+        "Tom Anderson"
+      ],
+      "incumbentsOnBallot": [
+        "Tom Anderson (exact-full-name)"
+      ],
+      "exportVoteFor": 3,
+      "margin": 1340,
+      "quote": null,
+      "writeInLine": 209,
+      "candidates": [
+        {
+          "id": "300061324",
+          "who": "Kate Ristau",
+          "votes": 11012,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300061326",
+          "who": "Sue Garino",
+          "votes": 10748,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300061306",
+          "who": "Gabriel Elijio Velásquez",
+          "votes": 10355,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300061321",
+          "who": "Yousef K Allouzi",
+          "votes": 9015,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300061327",
+          "who": "Tom Anderson",
+          "votes": 8155,
+          "counties": 1,
+          "result": null,
+          "incumbent": true,
+          "basis": "exact-full-name"
+        },
+        {
+          "id": "300061328",
+          "who": "John Goodhouse",
+          "votes": 7619,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300061325",
+          "who": "Jeff Darland",
+          "votes": 5199,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300061329",
+          "who": "Shawne Martinez",
+          "votes": 2095,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        }
+      ]
+    },
+    {
+      "raceId": "96757017-1342-445c-bd96-61001665be56",
+      "ours": "Maywood Park City Council",
+      "contest": "City of Maywood Park, Councilor (Vote For 3)",
+      "seats": 3,
+      "basis": "uncalled",
+      "sittingMembers": [
+        "Jeff Baltzell",
+        "Miriam Berman",
+        "Thomas Welander"
+      ],
+      "incumbentsOnBallot": [],
+      "exportVoteFor": 3,
+      "margin": 132,
+      "quote": null,
+      "writeInLine": 12,
+      "candidates": [
+        {
+          "id": "300061050",
+          "who": "Kevin Bussema",
+          "votes": 370,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300061056",
+          "who": "Kelly Ripley Feller",
+          "votes": 309,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300061054",
+          "who": "Katy Collins",
+          "votes": 288,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "100086305",
+          "who": "Jim Akers",
+          "votes": 156,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300061055",
+          "who": "Winn Holly",
+          "votes": 131,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        }
+      ]
+    },
+    {
+      "raceId": "0da8e1fd-cb33-4987-a5b1-519f5dbd76db",
+      "ours": "Troutdale City Council",
+      "contest": "City of Troutdale, Councilor (Vote For 3)",
+      "seats": 3,
+      "basis": "uncalled",
+      "sittingMembers": [
+        "Carol Allen",
+        "Geoffrey Wunn",
+        "Glenn White",
+        "Jesse Davidson",
+        "John Leamy",
+        "Zach Andrews"
+      ],
+      "incumbentsOnBallot": [
+        "Zach Andrews (exact-full-name)",
+        "Geoffrey Wunn (exact-full-name)"
+      ],
+      "exportVoteFor": 3,
+      "margin": 46,
+      "quote": null,
+      "writeInLine": 123,
+      "candidates": [
+        {
+          "id": "300060582",
+          "who": "Sheri Winters",
+          "votes": 3580,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "300060053",
+          "who": "Zach Andrews",
+          "votes": 3247,
+          "counties": 1,
+          "result": null,
+          "incumbent": true,
+          "basis": "exact-full-name"
+        },
+        {
+          "id": "300060345",
+          "who": "Randy Lauer",
+          "votes": 2754,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "100086336",
+          "who": "Geoffrey Wunn",
+          "votes": 2708,
+          "counties": 1,
+          "result": null,
+          "incumbent": true,
+          "basis": "exact-full-name"
+        },
+        {
+          "id": "300060656",
+          "who": "Sandy Glantz",
+          "votes": 2544,
+          "counties": 1,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        }
+      ]
+    },
+    {
+      "raceId": "26cf6ba1-0e5a-44bf-8f1e-96c804b206ab",
+      "ours": "Portland City Auditor",
+      "contest": "City of Portland, Auditor",
+      "seats": 1,
+      "basis": "rcv-called",
+      "sittingMembers": [
+        "Simone Rede"
+      ],
+      "incumbentsOnBallot": [
+        "Simone Rede (exact-full-name)"
+      ],
+      "exportVoteFor": 1,
+      "margin": null,
+      "quote": "\"Simone Rede reached the threshold of 97,264 votes and is leading\"",
+      "writeInLine": 0,
+      "candidates": [
+        {
+          "id": "900059922",
+          "who": "Simone Rede",
+          "votes": null,
+          "counties": 2,
+          "result": "won",
+          "incumbent": true,
+          "basis": "exact-full-name"
+        }
+      ]
+    },
+    {
+      "raceId": "ff402093-3aad-4d15-8440-11daf360a7e9",
+      "ours": "Portland City Council District 3",
+      "contest": "City of Portland, Councilor, District 3",
+      "seats": 3,
+      "basis": "rcv-called",
+      "sittingMembers": [
+        "Angelita Morillo",
+        "Steve Novick",
+        "Tiffany Koyama Lane"
+      ],
+      "incumbentsOnBallot": [
+        "Tiffany Koyama Lane (exact-full-name)",
+        "Angelita Morillo (exact-full-name)",
+        "Steve Novick (exact-full-name)"
+      ],
+      "exportVoteFor": 1,
+      "margin": null,
+      "quote": "\"3 Seats Up for Election ... Steve Novick, Angelita Morillo and Tiffany Koyama Lane reached the threshold of 21,045 votes and are leading\"",
+      "writeInLine": 0,
+      "candidates": [
+        {
+          "id": "900059940",
+          "who": "John Sweeney",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059941",
+          "who": "Tom Sollitt",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059942",
+          "who": "Larry Kelly",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059943",
+          "who": "Tiffany Koyama Lane",
+          "votes": null,
+          "counties": 1,
+          "result": "won",
+          "incumbent": true,
+          "basis": "exact-full-name"
+        },
+        {
+          "id": "900059944",
+          "who": "Ali Beaudoin",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059945",
+          "who": "Heart Free Pham",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059946",
+          "who": "Terry Parker",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059947",
+          "who": "Martin Ward",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059948",
+          "who": "Joel Corcoran",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059949",
+          "who": "Darren McCormick",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059950",
+          "who": "Angelita Morillo",
+          "votes": null,
+          "counties": 1,
+          "result": "won",
+          "incumbent": true,
+          "basis": "exact-full-name"
+        },
+        {
+          "id": "900059951",
+          "who": "Steve Novick",
+          "votes": null,
+          "counties": 1,
+          "result": "won",
+          "incumbent": true,
+          "basis": "exact-full-name"
+        },
+        {
+          "id": "900059952",
+          "who": "Patrick Hilton",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059953",
+          "who": "Matthias Hallett",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059954",
+          "who": "Kellie Torres",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059955",
+          "who": "Kimberly Tucker",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059956",
+          "who": "Cristal Otero",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059957",
+          "who": "Guy Frankenstein",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059958",
+          "who": "Keir Legree",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059959",
+          "who": "Esther León",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059960",
+          "who": "Kenneth R Landgraver III",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        }
+      ]
+    },
+    {
+      "raceId": "df1d7c03-3ee0-46c2-9e03-1a5b04629fe0",
+      "ours": "Portland City Council District 4",
+      "contest": "City of Portland, Councilor, District 4",
+      "seats": 3,
+      "basis": "rcv-called",
+      "sittingMembers": [
+        "Eric Zimmerman",
+        "Mitch Green",
+        "Olivia Clark"
+      ],
+      "incumbentsOnBallot": [
+        "Olivia Clark (exact-full-name)",
+        "Mitch Green (exact-full-name)",
+        "Eric Zimmerman (exact-full-name)"
+      ],
+      "exportVoteFor": 1,
+      "margin": null,
+      "quote": "\"3 Seats Up for Election ... Mitch Green and Olivia Clark reached the threshold of 18,686 votes and are leading\" -- only two of the three named",
+      "writeInLine": 0,
+      "candidates": [
+        {
+          "id": "900059926",
+          "who": "Olivia Clark",
+          "votes": null,
+          "counties": 2,
+          "result": "won",
+          "incumbent": true,
+          "basis": "exact-full-name"
+        },
+        {
+          "id": "900059927",
+          "who": "Mitch Green",
+          "votes": null,
+          "counties": 2,
+          "result": "won",
+          "incumbent": true,
+          "basis": "exact-full-name"
+        },
+        {
+          "id": "900059928",
+          "who": "Eric Zimmerman",
+          "votes": null,
+          "counties": 2,
+          "result": null,
+          "incumbent": true,
+          "basis": "exact-full-name"
+        },
+        {
+          "id": "900059961",
+          "who": "Matt Schulte",
+          "votes": null,
+          "counties": 2,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059962",
+          "who": "Jeremy Beausoleil Smith",
+          "votes": null,
+          "counties": 2,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059963",
+          "who": "John J Goldsmith",
+          "votes": null,
+          "counties": 2,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059964",
+          "who": "Jayne Cronlund",
+          "votes": null,
+          "counties": 2,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059965",
+          "who": "John McDonald",
+          "votes": null,
+          "counties": 2,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059966",
+          "who": "Jamey Evenstar",
+          "votes": null,
+          "counties": 2,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059967",
+          "who": "Timothy Anderson",
+          "votes": null,
+          "counties": 2,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059968",
+          "who": "Eli Arnold",
+          "votes": null,
+          "counties": 2,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059969",
+          "who": "Josh Leake",
+          "votes": null,
+          "counties": 2,
+          "result": null,
+          "incumbent": false,
+          "basis": null
+        }
+      ]
+    },
+    {
+      "raceId": "826ee33d-51d8-4c6a-af55-50d8417934e5",
+      "ours": "Multnomah County Chair",
+      "contest": "Multnomah County Commission, Chair",
+      "seats": 1,
+      "basis": "rcv-called",
+      "sittingMembers": [
+        "Jessica Vega Pederson"
+      ],
+      "incumbentsOnBallot": [],
+      "exportVoteFor": 1,
+      "margin": null,
+      "quote": "\"Shannon Singleton reached the threshold of 155,641 votes and is leading\"",
+      "writeInLine": 0,
+      "candidates": [
+        {
+          "id": "900059929",
+          "who": "Shannon Singleton",
+          "votes": null,
+          "counties": 1,
+          "result": "won",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059930",
+          "who": "Julia Brim-Edwards",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059931",
+          "who": "Sharon Meieran",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        }
+      ]
+    },
+    {
+      "raceId": "e1e20a92-e125-46a5-a0ad-69756c81b3d7",
+      "ours": "Multnomah County Commissioner District 2",
+      "contest": "Multnomah County Commissioner, District 2",
+      "seats": 1,
+      "basis": "rcv-called",
+      "sittingMembers": [
+        "Shannon Singleton"
+      ],
+      "incumbentsOnBallot": [],
+      "exportVoteFor": 1,
+      "margin": null,
+      "quote": "\"Bri Williams reached the threshold of 43,295 votes and is leading\"",
+      "writeInLine": 0,
+      "candidates": [
+        {
+          "id": "900059933",
+          "who": "Bruce Broussard",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059934",
+          "who": "Herman Greene",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059935",
+          "who": "Bri Williams",
+          "votes": null,
+          "counties": 1,
+          "result": "won",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059936",
+          "who": "Serena Cruz",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059937",
+          "who": "Nathan Ong Norris",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059938",
+          "who": "Nabil Zaghloul",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        },
+        {
+          "id": "900059939",
+          "who": "Tony Robertson",
+          "votes": null,
+          "counties": 1,
+          "result": "lost",
+          "incumbent": false,
+          "basis": null
+        }
+      ]
+    }
+  ]
+}

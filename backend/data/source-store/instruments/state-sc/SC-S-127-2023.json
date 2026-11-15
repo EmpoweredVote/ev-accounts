@@ -1,0 +1,39 @@
+{
+  "id": "SC-S-127-2023",
+  "scope": "state:sc",
+  "title": "S0127 (125th General Assembly): Handguns",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0127&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/127_20221201.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Greg Hembree",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "308cba89-7a88-43a3-b0cf-3e57edec254a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2022-12-01; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/127_20221201.htm (LegiScan doc 2616552))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-127-2023.introduced.htm",
+      "sha256": "140b2d96b00704eddbb628857a5b66bfbdb581c1beca7b0c7b34795d36c07200"
+    },
+    "note": "Introduced text of 2022-12-01; no passage vote. The state's own summary names fewer parts than the text; the text also has Section 5 (lost/stolen report, new 16-23-52) and Section 6 (firearm theft, new 16-23-540). Section 3 strikes 'handgun' wording for 'firearm' and strikes the under-18 and 'adjudged unfit' paragraphs; item list in 16-23-30(A) partly quoted. Section 4 resets 16-23-50 penalties (first offense: misdemeanor, fine up to $2,500 or up to 3 years; later offenses felony) and adds innocent-owner release. Section 7 repeals felon-possession (16-23-500) and mental-defective possession (23-31-1040) bans."
+  },
+  "operative_text": "SECTION 2 (new Section 16-23-25(A)): It is unlawful for a person to sell, offer to sell, deliver, lease, rent, barter, exchange, or transport for sale in this State any handgun to a person who is under the age of eighteen, but this shall not apply to the issue of handguns to members of the Armed Forces of the United States, active or reserve; National Guard; State Militia; or R.O.T.C., when on duty or training, or the temporary loan of handguns for instruction under the immediate supervision of a parent or adult instructor.\nSECTION 2 (new Section 16-23-25(B)): It is unlawful for a person who is under the age of eighteen to possess or attempt to possess a handgun within this State unless the person is under the immediate supervision of a parent or an adult instructor or unless the person is on duty or training as a member of the Armed Forces of the United States, active or reserve, National Guard, State Militia, or R.O.T.C.\nSECTION 3 (Section 16-23-30(A)): It is unlawful for a person to sell, offer to sell, deliver, lease, rent, barter, exchange, transport for sale into this State, or otherwise dispose of a firearm to a person knowing or having reasonable cause to believe that the person: ... (6) is a member of a subversive organization;\nSECTION 3 (Section 16-23-30(B)): It is unlawful for a person enumerated in subsection (A) to possess or attempt to possess firearms within this State.\nSECTION 5 (new Section 16-23-52(B)): If a firearm is lost or stolen, the owner of the firearm shall report the loss or theft to the local law enforcement agency within 72 hours after the owner first discovers the loss or theft.\nSECTION 6 (new Section 16-23-540): Notwithstanding another provision of law, a person who steals a firearm, as defined in Section 16-23-10, is guilty of the felony offense of theft of a firearm and, upon conviction, must be fined not more than five thousand dollars or imprisoned not more than five years or both. No part of the sentence may be suspended.\nSECTION 7 (repeal): Sections 16-23-500 and 23-31-1040 of the 1976 Code are repealed."
+}

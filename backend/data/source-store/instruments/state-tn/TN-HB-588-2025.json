@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-588-2025",
+  "scope": "state:tn",
+  "title": "HB0588 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 14, Part 1; Title 39, Chapter 17, Part 13 and Title 40, relative to criminal offenses.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=HB0588&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/HB0588.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ed Butler",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e17e2579-9bf3-4ea4-8881-eba0c225b5b4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2025-02-11; official copy via the Internet Archive snapshot 20260513073941 of https://www.capitol.tn.gov/Bills/114/Bill/HB0588.pdf (LegiScan doc 3114278))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-588-2025.draft.pdf",
+      "sha256": "c15ccc578b628bdb1581e767d7cab0e6a4fd48b4c4a154d7539fe6f018ea6f24"
+    },
+    "note": "Draft dated 2025-02-11; HB 588 and SB 243 share one document. Title also lists TCA Title 40 and Title 39 ch. 17 pt 13 but text read has only Section 1 (39-14-134). Adopted amendments, if any, not in text."
+  },
+  "operative_text": "SECTION 1 (TCA 39-14-134(b)): (1) It is an offense for a person to knowingly and with the intent to conceal or misrepresent the identity of a firearm or antique firearm to: (A) Alter, cover, deface, destroy, or remove the permanent serial number, manufacturer's identification plate, or another permanent distinguishing number from a firearm or antique firearm; or (B) Sell, purchase, or possess such a firearm or antique firearm.\nSECTION 1 (TCA 39-14-134(b)): (2) A violation of this subsection (b) is a Class E felony, punishable by a mandatory minimum sentence of one hundred eighty (180) days incarceration. The defendant is not eligible for release from confinement until the defendant has served the entire one-hundred-eighty-day mandatory minimum sentence."
+}

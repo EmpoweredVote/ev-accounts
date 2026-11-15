@@ -1,0 +1,43 @@
+{
+  "id": "KY-HB-930-2026",
+  "scope": "state:ky",
+  "title": "HB930 (2026 Regular): AN ACT relating to crimes and punishments.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/26RS/hb930.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/26RS/hb930/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jared Bauman",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2ac124e9-630a-4d41-a5a2-3aafa238e808"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: Sections 22-23 (KRS 635.040, 635.060) — longer juvenile probation, detention and a 12-month minimum commitment for felonies",
+        "judicial-criminal-justice: Section 1 (new section of KRS Chapter 635) — caregivers must reimburse the juvenile justice department for commitment costs",
+        "judicial-criminal-justice: Section 21 (KRS 635.020) — transfer to adult court for violent-offender and repeat youthful-offender cases with no firearm"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/26RS/hb930/orig_bill.pdf (LegiScan doc 3384637))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-930-2026.introduced.pdf",
+      "sha256": "3e47c2b0506f8afa222a7db2c3cd98f109c3422496dabdf8c4187fd80776ff16"
+    },
+    "note": "As-filed text (26 RS BR 270); no passage vote and later amendments are not in the text read. Gun parts are Sections 8 and 21 only. In Section 21 'child' is struck and 'defendant' added throughout; quotes use 'defendant'. In 635.020(4)(b)1 the as-filed bill adds 'capital offense' to the felony classes (not quoted). Subparagraph (4)(b)3.a (Commonwealth's attorney may transfer back) is struck. File is long; only gun parts were read closely, the rest by title and the state's summary."
+  },
+  "operative_text": "Section 8 (KRS 530.064): (1) A person eighteen (18) years of age or older, or a minor transferred to Circuit Court to be proceeded against as a youthful offender pursuant to KRS 640.010, is guilty of unlawful transaction with a minor in the first degree when he or she knowingly induces, assists, or causes a minor to engage in: (c) The commission of a felony offense where any person uses or is in possession of a firearm, whether functional or not, in furtherance of the crime;\nSection 8 (KRS 530.064): (2) Unlawful transaction with a minor in the first degree is a: (b) Class B felony if: 2. In the commission of a felony offense, any person utilizes a firearm, whether functional or not, in furtherance of the crime;\nSection 21 (KRS 635.020): (4) (a) If a defendant charged with a felony had attained the age of fourteen (14) years at the time of the commission of the alleged offense in which a firearm, whether functional or not, was used by the defendant in the commission of the offense, the court shall, upon motion of the county attorney made prior to adjudication, and after the county attorney has consulted with the Commonwealth's attorney, that the defendant be proceeded against as a youthful offender, proceed in accordance with KRS 640.010.\nSection 21 (KRS 635.020): (4) (b) 2. The defendant shall be transferred to the Circuit Court for trial as an adult if, following a preliminary hearing, the District Court finds probable cause to believe that: a. The defendant committed a capital offense, Class A, B, or C felony; b. A firearm was used by the defendant in the commission of that felony; and c. The defendant was fifteen (15) years of age or older at the time of the commission of the alleged felony."
+}

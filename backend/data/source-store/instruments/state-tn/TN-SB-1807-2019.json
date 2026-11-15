@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1807-2019",
+  "scope": "state:tn",
+  "title": "SB1807 (111th General Assembly): As introduced, allows a court to issue an emergency protection order upon a finding that a person poses an imminent risk of harm to the person or others if allowed to purchase or possess a firearm; authorizes a family member, household member, intimate partner, or law enforcement officer to petition for such an order. - Amends TCA Title 36 and Title 39.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1807&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/SB1807.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sara Kyle",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1b745bdf-e7cb-487d-9ca5-7bd043d602ac"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2020-01-22; official copy via the Internet Archive snapshot 20260513203536 of https://www.capitol.tn.gov/Bills/111/Bill/SB1807.pdf (LegiScan doc 2107134))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1807-2019.draft.pdf",
+      "sha256": "53f99e7a61b88057e8bf6700aaec82f0c2ccc353ebb2c319ea94d3bf87feb1a1"
+    },
+    "note": "Draft dated 2020-01-22/23 (HB 1873 / SB 1807, identical text); summary says 'As introduced'; adopted amendments, if any, are not in the text read. Burden of proof is a preponderance. Effective July 1, 2020 (forms on becoming law). Quote in 1904(a) and 1905(f) joins numbered subdivisions in one line."
+  },
+  "operative_text": "SECTION 1 (new part, TCA 39-17-1901(a)): (a) Any family member, household member, intimate partner, or law enforcement officer who has a reasonable belief that a person poses an imminent risk of harm to the person or others if allowed to purchase or possess a firearm may seek relief under this section by filing a sworn petition for an emergency protection order against the respondent.\nSECTION 1 (new TCA 39-17-1902(a)): An ex parte emergency protection order shall prohibit the respondent from purchasing or possessing any firearm during the period that the order is in effect.\nSECTION 1 (new TCA 39-17-1902(b)): Within thirty (30) days of service of an ex parte emergency protection order on the respondent, a hearing shall be held, at which time the court shall either dissolve the order that has been issued, or shall, if the petitioner has proved the allegation of an imminent risk of harm by a preponderance of the evidence, extend the emergency protection order for a definite period of time, not to exceed one (1) year, unless a further hearing on the continuation of such order is requested by the respondent or the petitioner; in which case, on proper showing of cause, such order may be continued for a further definite period of one (1) year, after which time a further hearing must be held for any subsequent one-year period.\nSECTION 1 (new TCA 39-17-1904(a)): (1) It is an offense to knowingly violate an emergency protection order. (2) A violation of subdivision (a)(1) is a Class A misdemeanor.\nSECTION 1 (new TCA 39-17-1905(b)(1)): (1) To terminate the respondent's physical possession of the firearms in the respondent's possession by any lawful means, such as transferring possession to a third party who is not prohibited from possessing firearms, within forty-eight (48) hours; and\nSECTION 1 (new TCA 39-17-1905(f)): (1) It is an offense for a person subject to an emergency protection order to knowingly fail to surrender or transfer all firearms the respondent possesses as required by this section. (2) A violation of subdivision (f)(1) is a Class A misdemeanor and each violation shall constitute a separate offense."
+}

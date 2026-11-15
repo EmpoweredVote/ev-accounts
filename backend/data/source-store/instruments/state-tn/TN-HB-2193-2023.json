@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-2193-2023",
+  "scope": "state:tn",
+  "title": "HB2193 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13; Title 49, Chapter 5; Title 49, Chapter 6 and Title 67, relative to sales of firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2193&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB2193.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bo Mitchell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "094afd56-f074-4fdc-a053-1482ea501fc8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-30; own version, official copy via the Internet Archive snapshot 20260514140019 of https://www.capitol.tn.gov/Bills/113/Bill/HB2193.pdf; the last listed version was not archived)",
+    "fetched_at": "2026-11-14T03:18:23.390374Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2193-2023.draft.pdf",
+      "sha256": "df496f56fd30af863dc3311fd9961bfd42b61587073f0deda75b179b8cf1a5f5"
+    },
+    "note": "Draft (as filed) dated 2024-01-30, a Senate Bill 2191 / House Bill 2193 twin document. No passage vote; later amendments are not in the text read. The revenue earmark for school counselors is the use of the gun tax, so treated as part of one gun-tax subject; no listed topic fits school counselor funding cleanly. Effective July 1, 2024 as filed."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1316(s)(1)): (1) A firearms privilege tax is imposed on the retail sale of firearms in this state. The rate of the tax is fifteen percent (15%) of the sales price of the firearm. The tax imposed by this subsection (s) must be administered, collected, and enforced in the same manner as the sales and use tax under title 67, chapter 6 is administered, collected, and enforced. The firearms privilege tax imposed by this subsection (s) is in addition to any other tax imposed by law.\nSECTION 1 (TCA 39-17-1316(s)(2)): (2) All revenue from the firearms privilege tax imposed by this subsection (s) must be deposited in a special account in the state treasury to be known as the K-12 mental health counselor fund. The fund shall be administered by the department of education and used exclusively to provide school counselors in elementary and secondary public schools and public charter schools in this state and for mental health assessments and services for students pursuant to a school counselor's referral under § 49-6-303(d)."
+}

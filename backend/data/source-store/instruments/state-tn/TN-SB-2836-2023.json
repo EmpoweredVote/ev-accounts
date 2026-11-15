@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2836-2023",
+  "scope": "state:tn",
+  "title": "SB2836 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2836&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB2836.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul Rose",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c5c76374-faa1-4a78-bee2-6e2b5ca171d7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-02-01; crossfiled twin https://www.capitol.tn.gov/Bills/113/Bill/HB2951.pdf is the same printed document (it names SENATE BILL 2836); copied from TN-HB-2951-2023.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2951-2023.draft.pdf",
+      "sha256": "969d01c060d48cd8f51e2d44a07b5c28cf3ae4a6f9e4a4c57fab168a950f102d"
+    },
+    "note": "Draft of 2024-02-01 (as introduced); amendments not in text. Summary says treatment bar extends beyond inpatient, but printed (q)(3)(B) still reads 'inpatient treatment'; reviewer should check. Quote of (q)(4) stops at a page break; it continues 'acquire or attempt to acquire the firearm or ammunition from the licensed importer, manufacturer, dealer, or collector.' Twin: TN-HB-2951-2023."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1316(q)(1)): It is an offense for a person to purchase or attempt to purchase a firearm or ammunition knowing that the person is prohibited by state or federal law from owning, possessing, or purchasing a firearm or ammunition.\nSECTION 1 (TCA 39-17-1316(q)(2)): It is an offense to sell, loan, give, provide, or transfer a firearm or ammunition to a person, or offer to do so, knowing that the person is prohibited by state or federal law from owning, possessing, or purchasing a firearm or ammunition.\nSECTION 1 (TCA 39-17-1316(q)(3)): It is an offense to sell, loan, give, provide, or transfer a firearm or ammunition to a person, or offer to do so, knowing that the person: (A) Has been judicially committed to a mental institution or adjudicated as a mental defective unless the person's right to possess firearms has been restored pursuant to title 16; or (B) Is receiving inpatient treatment, pursuant to title 33, at a treatment resource, as defined in § 33-1-101, other than a hospital.\nSECTION 1 (TCA 39-17-1316(q)(4)): It is an offense for a person to knowingly make a false, fictitious, or fraudulent statement or representation that is intended or likely to deceive a licensed importer, manufacturer, dealer, or collector with respect to a fact that is material to the lawfulness of a sale or other disposition of a firearm or ammunition under this chapter in order to\nSECTION 1 (TCA 39-17-1316(q)(5)): A violation of this subsection (q) is a Class C felony."
+}

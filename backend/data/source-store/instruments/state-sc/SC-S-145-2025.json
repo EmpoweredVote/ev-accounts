@@ -1,0 +1,39 @@
+{
+  "id": "SC-S-145-2025",
+  "scope": "state:sc",
+  "title": "S0145 (126th General Assembly): Constitutional Carry/Second Amendment Preservation Act Repeal",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0145&session=126&summary=B",
+    "https://www.scstatehouse.gov/sess126_2025-2026/prever/145_20241211.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tameika Devine",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d2b10a07-4f58-47b2-b8bb-4f31c94a99ed"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2024-12-11; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/145_20241211.htm (LegiScan doc 3032487))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-145-2025.introduced.htm",
+      "sha256": "52173e676ed6ba3209c41356a51b120f2ddfd660e4b0ce7e9f6ebba33365b2c2"
+    },
+    "note": "Introduced print dated 2024-12-11; no passage vote. Text never uses a gun word; Act 111 is the S.C. Constitutional Carry/Second Amendment Preservation Act of 2024 (per title)."
+  },
+  "operative_text": "Section 1: Act 111 of 2024 is repealed.\nSection 2: The statutes contained in Act 111 of 2024 revert to language contained in them prior to March 7, 2024."
+}

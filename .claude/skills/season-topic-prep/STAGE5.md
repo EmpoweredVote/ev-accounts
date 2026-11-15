@@ -8,6 +8,44 @@ The rulings it rests on: [RULINGS.md](RULINGS.md) "Stage 5 rulings".
 
 Output folder: `<research folder>/stage5/`. Every command takes absolute paths (SKILL.md "Running the CLIs").
 
+## Session cards (read this first when running a state)
+
+A state run is two fresh sessions, set-up (A) and run (B). Each reads **one short card**, not this file:
+
+```bash
+python3 -I scripts/stage5/session_card.py A --profile <stage5>/topic-profile.json --state xx --state-name <Name>
+python3 -I scripts/stage5/session_card.py B --profile <stage5>/topic-profile.json --state xx --state-name <Name>
+```
+
+The card holds the commands in order with real paths, the runner stops, the hard rules and the settled rulings, and
+it names the section of this file to open for each step. Why: a session that reads this file, the skill file, the
+runbook and the tools README carries about 31,000 tokens on every later step (three-state review, 2026-11-13).
+
+Everything about the topic comes from its **profile**, `<stage5>/topic-profile.json`
+([templates/stage5-topic-profile.example.json](templates/stage5-topic-profile.example.json)). 🔴 A new topic starts
+with `"control_groups": []` and `"record_script": false`: search everyone and let Opus code everyone, until that
+topic has its own measurement and the runner's ruling. Another topic's skip rule does not carry over.
+
+Where the profile names a skip rule, session B runs its record pass, search, second pass and early check with one
+command, `run_state.py`, and builds every prompt with `stage5_prompts.py` (tools README). Do not copy a state's
+old `make_briefs_xx.py`, `make_qc_xx.py` or `make_billtable_xx.py`: those are what the two tools replaced.
+
+What is known about a state's **legislature** (its hosts, vote layout, text marks, and which sites our reader can
+open) is in its legislature profile, `backend/data/legislatures/<xx>.json` (`legislature.py`, tools README). It is
+shared by every topic: the cards print it, and it fills the write recipe and the per-state notes. Session A writes
+or refreshes it at hand-over. 🔴 It holds facts about the legislature only: never a topic, a rung, a ruling or a person.
+
+**Slim sessions (runner's decision, 2026-11-13).** Sessions A and B may run as slim sessions, started and resumed
+by a small desk session: `session_card.py desk` writes the desk's card, and `leg.py` starts each leg (tools README,
+"slim"). A slim session cannot ask the runner anything, so it ends with a question file and the desk passes the
+answer back, word for word. 🔴 A slim session never writes the database: the write tools refuse it, and the desk
+runs the batch write and the approval, each on the runner's own yes for that batch.
+A leg is a chain of slim sessions (2026-11-14): each adds its log lines with `leg.py log`, which reports the
+session's size, and past the cap (100,000 tokens, or the profile's `slim_cap`) it writes a hand-over note and a
+fresh session carries on. Tennessee's two legs reached 322,000 and 233,000 tokens with no cap.
+
+Each session ends with `close_state.py` (tools README), as its last act.
+
 ## Hard rules
 
 - 🔴 **No database write before the early check passes.** Findings and codes stay in the research folder and the
@@ -111,7 +149,11 @@ python3 -I scripts/stage5/sponsor_cover.py <bills.json> --state XX --roster <ros
 The keyword scan is wide (Georgia: 164 such bills). One Opus agent triages the titles with
 [templates/stage5-sponsor-triage-prompt.md](templates/stage5-sponsor-triage-prompt.md); then the same command with
 `--triage <triage.json> --write <new core.json>` keeps only the "fill" bills. It refuses while any candidate is
-untriaged. Add the name matches it prints to `idmap.tsv` once checked.
+untriaged. Add the name matches it prints to `idmap.tsv` once checked. 🔴 Then run `link_check.py --state XX --roster <scoped roster> --ds <ds root>
+--idmap <idmap.tsv> --add` and go on only at exit 0: sponsor cover links only the people who sponsored a candidate
+bill, and a legislator with no `idmap.tsv` line has no votes on file while nothing errors (Kentucky 2026-11-14: six
+sitting members, among them a former surname and a "Casey" for "Cassie"; two were written as blanks that their own
+record would have seated).
 
 **Text fill only where it can matter (round three, 2026-11-13).** The triage answers `fill`, `stub` or `skip`. A
 `stub` is on the topic but its title shows no rung is possible (a dealer rule, a tax, a storage rule, a report); it is
@@ -140,9 +182,14 @@ answers that file before coding starts** (a runner stop). The answers go into th
 > runner approved it for the next state on 2026-11-12. Do not use it for another topic yet. It rests on one
 > measurement: in Georgia, a record seat at rung 5 (244 people) or rung 2 (12) was never changed by the search;
 > rung 3 changed 2.3% of the time and rung 4 10%.
+>
+> **Ruling 2026-11-13 (runner, gun-policy):** record seats at **rung 3** are not searched either, with their own
+> control of 10 per state; the control for rungs 5 and 2 is 10, not 20. Three pilot states (Missouri, California,
+> Washington) searched 65 rung 3 record seats and 60 control seats, and own words changed none of the 125. Rung 4
+> record seats, record blanks and people with no record are still always searched, with no cap.
 
 0. **Round three (2026-11-13): the plain cases are coded by script, the rest by Opus** (`backend/scripts/stage5/README.md`
-   "Record pass by script"). `record-script.ts plan … --bill-table <table> --sides 1,2,3/4,5 --skip-rungs 5,2 --out
+   "Record pass by script"). `record-script.ts plan … --bill-table <table> --sides 1,2,3/4,5 --skip-rungs 5,2,3 --out
    <record-briefs-xx>` writes the script's codes into a holding folder and `<name>-coder-ids.txt`: the Opus lane plus
    the standing check (a seeded 10 of the script's people). Run step 1 on THAT ids file, with `--bill-table`. Then
    `record-script.ts adopt --out <record-briefs-xx> --name <name> --codes <stage5>/record-codes`. 🔴 Exit 4 = a check
@@ -153,8 +200,9 @@ answers that file before coding starts** (a runner stop). The answers go into th
    yet); a person with no record is listed in `<name>-no-record.txt` and searched. The roster must carry the
    `office` column (`topic:stage5-roster` writes it): a record-only code may be final (step 3), so its coder must
    know the seat.
-2. `python3 -I scripts/stage5/search_list.py plan --record-codes <stage5>/record-codes --roster <roster.tsv> --skip-rungs 5,2 --out <stage5>/search-plan-xx`
-   skips record seats at rungs 5 and 2, except a seeded random 20 of them (the control), which are searched.
+2. `python3 -I scripts/stage5/search_list.py plan --record-codes <stage5>/record-codes --roster <roster.tsv> --control-group 5,2:10 --control-group 3:10 --out <stage5>/search-plan-xx`
+   skips record seats at rungs 5, 2 and 3, except two seeded random controls of 10 (one from rungs 5 and 2, one
+   from rung 3), which are searched. A group with 10 seats or fewer is all control, so nothing in it is skipped.
 3. Search everyone in `search.tsv` and import. Then, before coding again:
    `python3 -I scripts/stage5/search_list.py recode --record-codes <stage5>/record-codes --record-briefs <record-only --out folder> --out <stage5>/search-plan-xx --wave-dir <search wave folder> --codes <stage5>/codes --apply`.
    Only people with a **new** on-topic finding (or no record-only code) go to the second pass (`recode-ids.txt`, as
@@ -162,9 +210,11 @@ answers that file before coding starts** (a runner stop). The answers go into th
    agent did not finish, is not "found nothing": search those people once more (`research-again-ids.txt`), import,
    and run `recode` again. Everyone else keeps the record-only code (`--apply` copies it into `codes/`). 🔴 Never
    show a coder its first code: the second pass is built blind, as usual.
-4. `search_list.py adopt ...` first checks the control (exit 4 when more than 1 in 20 changed outcome or rung: then
-   search the skipped people too, and report it), then copies the skipped people's record-only codes into `codes/`.
-5. `search_effect.py --roster <roster.tsv> --unit state:xx --record-codes ... --codes ... --plan ...` counts, by the
+4. `search_list.py adopt ...` first checks each control apart. **Any** change of outcome or rung in a control fails
+   its group: `adopt` exits 4, lists that group's skipped people in `reopened.tsv` (search and code them like anyone
+   in `search.tsv`, and report it), and still copies the other group's record-only codes into `codes/`. So a change
+   in the rung 3 control re-opens rung 3 only.
+5. `search_effect.py --roster <roster.tsv> --unit state:xx --ids <state ids file> --record-codes ... --codes ... --plan ...` counts, by the
    record's rung, how many searched people the search changed, and codings per person. Report it with the run.
 
 ### 4. Code
@@ -280,6 +330,13 @@ quote check). 🛑 It needs two yeses from the runner: one for a `BEGIN … ROLL
 The `voting-rights` state batches (2026-10-29/30: TX, WI, NC, CA, VA, AZ, MI, IN) worked out the order below. The
 newest worked example is `.planning/research/s3-prep-voting-rights/stage5/write/in-01/PREVIEW.md`. Each step names
 the file it leaves in the batch folder, `stage5/write/<unit>-NN/` (for example `in-01`).
+
+🔴 **LegiScan is read from the datasets on disk, never from the live API by default** (2026-11-14: Tennessee, Kentucky
+and South Carolina each hit the monthly cap at step 7 with the datasets on disk). `run_recipe.py` and
+`write-batch.sh` set `LEGISCAN_DATASETS` themselves when `stage5/legiscan/ds` holds the state; step 7 prints which
+was read and the newest roll call on disk. The live API needs the runner's yes (`"legiscan_live": true` in
+`recipe.json`), and is for a vote later than the datasets or a bill they do not hold. Step 7 also stops on any vote or
+sponsorship that got no LegiScan line (`legiscan/no-line.json`): find the cause before holding the person.
 
 | # | Step | Leaves |
 |---|---|---|

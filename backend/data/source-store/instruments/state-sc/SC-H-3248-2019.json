@@ -1,0 +1,91 @@
+{
+  "id": "SC-H-3248-2019",
+  "scope": "state:sc",
+  "title": "H3248 (123rd General Assembly): Background check for gun transfers",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3248&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/3248_20181218.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "JA Moore",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8fb20bf7-3e8c-4d94-8a64-94222f34420f"
+    },
+    {
+      "name": "Beth Bernstein",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f9382b7f-1725-4271-a613-c999299b27d4"
+    },
+    {
+      "name": "Seth Rose",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6fb5d7ac-0902-49af-9f1e-504e56d8e606"
+    },
+    {
+      "name": "Shedron Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rosalyn Henderson-Myers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "772fbe5f-6b2c-4919-9b57-75c66beecf7c"
+    },
+    {
+      "name": "Peter McCoy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Marvin Pendarvis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "William Cogswell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Leonidas Stavrinakis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0d8165ca-3f62-481a-8ba0-ded42e235481"
+    },
+    {
+      "name": "Michael Sottile",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-transparency: Section 5 (new Chapter 32, Title 14) — creates the Judicial Criminal Information Technology Committee to study and recommend a centralized court reporting system",
+        "judicial-transparency: Sections 1-3 (Sections 14-17-325, 22-1-200, 14-25-250) — clerks, magistrates and municipal judges report every criminal case disposition to SLED within ten days"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2018-12-18; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/3248_20181218.htm (LegiScan doc 1831356))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3248-2019.introduced.htm",
+      "sha256": "4020774c09460dd4caba01678e48c78d04adacbfa4ecc999f72e55b6ce5735b8"
+    },
+    "note": "Introduced text, 2018-12-18. Section 1 struck 'thirty' days (ten days added) and several agency names. Sections 2-3 repeat the clerk reporting duty for magistrates and municipal judges. The 'Section 14-17-325' quote is item (3) of subsection (B), which begins 'The clerk of court shall report to SLED, within forty-eight hours, the issuance of any:'."
+  },
+  "operative_text": "Section 6 (new Section 16-23-920): For any sale or transfer of a firearm for which a licensed dealer contacts the National Instant Criminal Background Check System (NICS) to conduct a background check, a licensed gun dealer may not deliver a firearm to any transferee unless the NICS provides the licensed dealer with a unique identification number or five days have elapsed from the date the licensed dealer contacted the NICS and the NICS has not notified the licensed dealer that a sale or transfer to such person would violate state or federal law.\nSection 6 (new Section 16-23-930): A person who violates the provisions of this article is guilty of a misdemeanor and, upon conviction, must be imprisoned not more than three years or fined not more than one thousand dollars, or both.\nSection 1 (Section 14-17-325): (3) orders preventing a person from possessing a firearm;\nSection 4 (new Section 23-1-250): (3) any incident in which a person may be prohibited from obtaining or possessing a firearm by state or federal law;\nSection 8 (uncodified): The provisions of SECTION 6 are repealed upon the submission of a report by the Judicial Criminal Information Technology Committee to the General Assembly detailing recommendations for the implementation of a centralized court reporting system for all courts of the State and funds for its implementation are appropriated by the General Assembly in the annual appropriations act; however, notwithstanding when the report is submitted, SECTION 6 is repealed two years from the effective date of this act."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2888-2019",
+  "scope": "state:tn",
+  "title": "SB2888 (111th General Assembly): As introduced, permits a person to carry a handgun in a concealed manner; permits a person carrying a handgun in a concealed manner to carry in parks, higher education campuses, and areas posted by local governments in the same manner permitted by handgun carry permit holders. - Amends TCA Section 10-7-504; Section 33-6-413; Section 38-8-116; Title 39; Section 50-1-312; Title 70, Chapter 4, Part 1 and Section 70-5-101.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2888&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/SB2888.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul Bailey",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "310955ff-3e44-4032-879f-b3b46026aadb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2020-02-06; official copy via the Internet Archive snapshot 20260513212433 of https://www.capitol.tn.gov/Bills/111/Bill/SB2888.pdf (LegiScan doc 2126690))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2888-2019.draft.pdf",
+      "sha256": "b60628522440b4e42c01d123b1e7eda9a28c4772094d91817c6a006aa8c2861b"
+    },
+    "note": "Draft (as filed), 2020-02-06. Adopted amendments, if any, are not in the text read. Same document text as the crossfiled twin HB 2661. Section 13 repeals the enhanced/concealed handgun carry permit section (39-17-1366); sections 14-28 mostly change cross-references and 'permit holder' wording. Section 2 quote is a fragment because the subdivision is introduced by a conditional clause: 'If a person is cited solely for a first violation of subdivision (a)(1)(A) and the person carries the handgun in a concealed manner following issuance of the citation:'."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(a)(1)): (A) A person commits an offense who carries, with the intent to go armed, a firearm in an open manner or a club.\nSECTION 1 (TCA 39-17-1307(a)(1)): (B) A person does not violate subdivision (a)(1)(A) by carrying a handgun that the person lawfully possesses in a concealed manner.\nSECTION 2 (TCA 39-17-1307(a)(3)): (A) A law enforcement officer shall not confiscate the person's handgun;\nSECTION 13 (TCA 39-17-1366): Tennessee Code Annotated, Section 39-17-1366, is amended by deleting the section in its entirety.\nSECTION 11 (TCA 39-17-1313(d)): (d) A person transporting, storing, or both transporting and storing a firearm or firearm ammunition in accordance with this section does not violate this section if the firearm or firearm ammunition is observed by another or a security device during the ordinary course of the person securing the firearm or firearm ammunition from observation in or on a motor vehicle."
+}

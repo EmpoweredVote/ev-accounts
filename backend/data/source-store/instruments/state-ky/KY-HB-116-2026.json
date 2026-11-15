@@ -1,0 +1,45 @@
+{
+  "id": "KY-HB-116-2026",
+  "scope": "state:ky",
+  "title": "HB116 (2026 Regular): AN ACT relating to firearms and declaring an emergency.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/26RS/hb116.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/26RS/hb116/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "George Brown",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "35de0809-a7a8-458e-bf71-7e10743d00a1"
+    },
+    {
+      "name": "Beverly Chester-Burton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1a0c1ea9-9bde-43b9-8ebd-5c798c12cf6c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/26RS/hb116/orig_bill.pdf (LegiScan doc 3302113))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-116-2026.introduced.pdf",
+      "sha256": "3a719f69343f6ee7b53ef7a79df35ff54dfbba4c5f8a8fbf5064dcf89bac7c39"
+    },
+    "note": "Introduced print (no date on the print); no passage vote in the data, so it is the bill as filed. 2026 Regular Session. Section 5 takes effect Jan. 1, 2027; other sections on passage (emergency clause). Section 5 also licenses and registers assault weapons and large capacity ammunition feeding devices and requires a dealer sales log (not quoted for length). Penalties for these rules are in Section 7 (KRS 237.990). Also adds: estate inventory lists each firearm (KRS 395.250), judge must demand surrender of guns after a not-guilty-by-reason-of-insanity or guilty-but-mentally-ill finding (KRS 504.030, 532.030), facilitation covers supplying a firearm (KRS 506.080), felon-in-possession sentence runs consecutively (KRS 527.040), postsecondary schools added to the school weapons ban (KRS 527.070); conforming changes to KRS 237.104, 237.115, 532.025. Not quoted for length."
+  },
+  "operative_text": "Section 2 (new section of KRS Chapter 237): (1) In addition to any other requirement of state or federal law, all sales, exchanges, or transfers of firearms shall be conducted in accordance with this section unless the sale, exchange, or transfer is: (a) Conducted by a licensed importer, licensed manufacturer, or licensed dealer, as those terms are defined in 18 U.S.C. secs. 921 and 922, when the sale, exchange, or transfer is conducted pursuant to that person’s federal firearms license; or (b) Between spouses, parents, children, and stepchildren in the same immediate family. (2) Before any sale, exchange, or transfer pursuant to this section, a national instant criminal background check shall be completed by a dealer who consents to conduct a check, and upon completion of the background check, the dealer shall complete a form developed by the Department of Kentucky State Police, and available for download through the department's website, that identifies and confirms that the check was performed.\nSection 3 (new section of KRS Chapter 237): (1) (a) Any owner or other person lawfully in possession of a firearm who suffers the loss or theft of the firearm or any seller of ammunition who suffers a loss or theft of ammunition shall report the facts and circumstances of the loss or theft to an appropriate law enforcement agency within twenty-four (24) hours of the discovery of the loss or theft.\nSection 4 (new section of KRS Chapter 237): (2) A person who owns or is a custodian of a firearm shall not store or otherwise leave the firearm out of his or her immediate possession or control without having first securely locked the firearm in an appropriate safe storage depository or rendered it incapable of being fired by use of a gun-locking device appropriate to that weapon.\nSection 5 (new section of KRS Chapter 237): (1) (a) The Department of Kentucky State Police shall promulgate an administrative regulation in accordance with KRS Chapter 13A for the licensure of persons to possess a handgun in the Commonwealth of Kentucky. The administrative regulation shall prohibit the possession of a handgun by a person in the Commonwealth unless the person holds a license or falls within an exemption that the Department of Kentucky State Police may create in the administrative regulation. The license shall be available to persons who are at least twenty-one (21) years old or have been honorably discharged from the Armed Forces of the United States, meet the eligibility criteria established by the department, and are not otherwise prohibited by state or federal law from possessing a handgun.\nSection 6 (new section of KRS Chapter 527): (1) A person is guilty of criminal purchase or transfer of a weapon when knowing that: (a) He or she is prohibited by law from possessing a firearm because of a prior criminal conviction or is otherwise ineligible to lawfully possess a firearm under state or federal law, the person purchases a firearm from another person; (b) It is unlawful for another person to possess a firearm, he or she purchases a firearm for, on behalf of, or for the use of that other person; or (c) Another person is prohibited by law from possessing a firearm because of a prior criminal conviction or is otherwise ineligible to lawfully possess a firearm under state or federal law, he or she transfers a firearm to that other person. (2) Criminal purchase or transfer of a weapon is a Class D felony.\nSection 15 (KRS 527.040): (c) Sentences for violation of this section shall be served consecutively to any other felony sentence imposed on the offender.\nSection 21 (repeal of KRS 65.870): The following KRS section is repealed: 65.870 Local firearms control ordinances prohibited -- Exemption from immunity -- Declaratory and injunctive relief."
+}

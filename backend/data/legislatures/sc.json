@@ -1,0 +1,46 @@
+{
+  "state": "sc",
+  "name": "South Carolina",
+  "verified": "2026-11-14",
+  "source": "gun-policy Season 3 Stage 5, South Carolina session A hand-over (sc/HANDOVER-A.md part 7), 2026-11-14",
+  "chambers": {
+    "lower": "House",
+    "upper": "Senate"
+  },
+  "sessions": "Two-year General Assemblies (e.g. the 125th, 2023-2024; session number nnn in scstatehouse.gov paths, e.g. sess123_2019-2020). A bill keeps its number across both years. House bills are numbered from 3000 up, Senate bills from 1 up. House 124 seats, Senate 46.",
+  "bill_data": [
+    "LegiScan bulk datasets are on disk; never re-pull a dataset. LegiScan per-bill calls only.",
+    "Bill texts fetch direct from www.scstatehouse.gov as .htm pages (no LegiScan call needed), e.g. /sess123_2019-2020/prever/3058_20181218.htm."
+  ],
+  "votes": {
+    "mode": "legiscan-plan",
+    "official_hosts": [
+      "www.scstatehouse.gov"
+    ],
+    "legiscan_args": "--bill-pad 4 --session-start odd",
+    "floor_rule": "LegiScan motions read 'House: Passage Of Bill' / 'Passage Of Joint Resolution', 'Senate: 2nd Reading' / '3rd Reading', concurrence ('Concur In Senate Amendments'), 'Adopt Conference Report' and 'Override Veto'. Keep those; drop amendment, tabling and procedural motions. The official vote history numbers roll calls '[H]-1066' style.",
+    "gaps": [
+      "The Senate often has two kept floor votes on one bill (2nd and 3rd Reading).",
+      "LegiScan pads every bill number to four digits (S0109, H3594) and names a bill page by the session's first year (H3594 of 2024 is /H3594/2023). With the datasets on disk the vote tools read both from the datasets; the flags cover a live LegiScan call."
+    ]
+  },
+  "texts": {
+    "hosts": [
+      "www.scstatehouse.gov"
+    ],
+    "marks": "HTML pages mark changes three ways: <strike>/<u> tags, inline style=\"text-decoration: line-through|underline\", and (most often) <span class=\"sc_strike\"> / <span class=\"sc_insert\"> (also scstrike / scinsert) styled by grouped CSS selectors in the page head. Legend: 'Indicates Matter Stricken' (struck) and 'Indicates New Matter' (new). Convert to [-struck-] and [+new+]; a converter that reads only the tags misses most marks. Pages declare charset=\"utf-8\". An amended section is headed 'SECTION n. Section nn-nn-nnn of the S.C. Code is amended to read:'; a new one 'by adding Section ...'.",
+    "note": "A change mark can split one word (e.g. S[+LED+], subsection[+s+]), so a quote of that word does not match verbatim. robots.txt allows all but images, dashboard and sys (2026-11-14)."
+  },
+  "reader_access": {
+    "www.scstatehouse.gov": "open"
+  },
+  "search_note": "Vote history: https://www.scstatehouse.gov/votehistory.php?...&billnumbers=<n>&session=<nnn>&chamber=H|S (301 to /votehistory, 200), one row per roll call with the motion, date and yeas/nays (2026-11-14).",
+  "bill_table_note": "Texts mark struck words [-struck-] and new words [+new+]. Never read [- -] text as something the bill does, except as what it removes; only [+ +] words in an amended section are new.",
+  "fill_quotes": {
+    "label_strips": []
+  },
+  "quirks": [
+    "Most change marks are CSS classes (sc_strike / sc_insert), not tags.",
+    "A mark can split a single word."
+  ]
+}

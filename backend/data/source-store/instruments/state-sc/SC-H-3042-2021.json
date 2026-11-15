@@ -1,0 +1,192 @@
+{
+  "id": "SC-H-3042-2021",
+  "scope": "state:sc",
+  "title": "H3042 (124th General Assembly): Second Amendment Preservation Act",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3042&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/3042_20201209.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Stewart Jones",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "James Burns",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9e65a60c-4016-44f5-a830-c8562f08a7ac"
+    },
+    {
+      "name": "William Chumley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b79701a8-542e-4090-b752-d2e79fb92cd4"
+    },
+    {
+      "name": "Roy Magnuson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e00d1f1-7d7d-4e9e-9482-15caeec92ff8"
+    },
+    {
+      "name": "Bill Taylor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "faa9a73c-e06c-45ef-8961-3c407f6025e1"
+    },
+    {
+      "name": "Steve Moss",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bobby Cox",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Patrick Haddon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "807d4af9-8270-4139-9d4f-715aa2906036"
+    },
+    {
+      "name": "Donald McCabe",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1262cf37-df1d-49d4-b2c6-a6a1dde6b459"
+    },
+    {
+      "name": "Robert May",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Victor Dabney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jonathon Hill",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Heather Crawford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e39ed0b0-9e95-4e0a-99c3-8545b15207aa"
+    },
+    {
+      "name": "Chip Huggins",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Linda Bennett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mark Willis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "188bfed7-3646-4ab1-be79-48810f11c28b"
+    },
+    {
+      "name": "Ashley Trantham",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Garry Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Russell Fry",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jason Elliott",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "24cb1132-a76c-4c90-904e-9e4565df8104"
+    },
+    {
+      "name": "Roger Nutt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Adam Morgan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Richard Martin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Nathan Ballentine",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "033391af-de42-42bd-9961-7414218f605e"
+    },
+    {
+      "name": "Bruce Bannister",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "995c78dc-a4e3-42d9-9121-7b3e8fa77fe8"
+    },
+    {
+      "name": "Travis Moore",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "acfa8a3e-3c42-49d4-a0cb-e4fbb332ae69"
+    },
+    {
+      "name": "Joseph Bustos",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "538f388c-dd4a-4764-bfc0-1af171cbdb55"
+    },
+    {
+      "name": "Mandy Kimmons",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Marvin Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7e803da0-9570-4d7d-bb5b-21de6ebbe8df"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2020-12-09; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/3042_20201209.htm (LegiScan doc 2220340))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3042-2021.introduced.htm",
+      "sha256": "b3f8cf6ceff3a3a724acee8ca5e4f3a4063e422ae33e3c5e89dd1112171030e3"
+    },
+    "note": "Introduced 2020-12-09. Bill's own findings cite the Second Amendment (Section 23-31-920) but no duty is imposed by a higher law. Passage vote: none listed; introduced text only."
+  },
+  "operative_text": "Section 1 (new Section 23-31-930): (A) Notwithstanding another provision of law: (1) no public funds of this State, or any political subdivision of this State, shall be allocated for the implementation, regulation, or enforcement of any executive order, or directive issued by the President of the United States or an act of the United States Congress that becomes effective after January 1, 2021, that regulates the ownership, use, or possession of firearms, ammunition, or firearm accessories; and (2) no personnel or property of this State, or any political subdivision of this State, shall be allocated to the implementation, regulation, or enforcement of any executive order, or directive issued by the President of the United States after January 1, 2021, that regulates the ownership, use, or possession of firearms, ammunitions, or firearm accessories."
+}

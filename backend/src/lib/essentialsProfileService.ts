@@ -8,6 +8,7 @@
 
 import { pool } from './db.js';
 import { OWN_FUNDRAISING_SQL } from './campaignFinanceService.js';
+import { cf, OCCUPATION_SQL } from './contributionFields.js';
 
 // ---------------------------------------------------------------------------
 // Endorsements
@@ -278,21 +279,21 @@ export async function getLegalDonorFirms(
   const queryText = `
     SELECT
       COALESCE(
-        NULLIF(TRIM(c.raw_record->>'contributor_employer'), ''),
+        NULLIF(TRIM(COALESCE(c.donor_employer, c.raw_record->>'contributor_employer')), ''),
         NULLIF(TRIM(c.raw_record->>'con_empr'), ''),
         'Unknown Firm'
       ) AS firm_name,
       SUM(c.amount)::float8 AS total_donated,
-      COUNT(DISTINCT COALESCE(c.raw_record->>'contributor_name', c.raw_record->>'con_name', c.donor_name_normalized)) AS donor_count,
-      array_agg(DISTINCT UPPER(TRIM(COALESCE(c.raw_record->>'contributor_occupation', c.raw_record->>'con_occp', '')))
-        ORDER BY UPPER(TRIM(COALESCE(c.raw_record->>'contributor_occupation', c.raw_record->>'con_occp', '')))
-      ) FILTER (WHERE TRIM(COALESCE(c.raw_record->>'contributor_occupation', c.raw_record->>'con_occp', '')) <> '') AS occupations_seen
+      COUNT(DISTINCT COALESCE(${cf('contributor_name')}, ${cf('con_name')}, c.donor_name_normalized)) AS donor_count,
+      array_agg(DISTINCT UPPER(TRIM(COALESCE(${OCCUPATION_SQL}, '')))
+        ORDER BY UPPER(TRIM(COALESCE(${OCCUPATION_SQL}, '')))
+      ) FILTER (WHERE TRIM(COALESCE(${OCCUPATION_SQL}, '')) <> '') AS occupations_seen
     FROM transparent_motivations.contributions c
     JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
     WHERE ps.essentials_politician_id = $1
       AND ${OWN_FUNDRAISING_SQL}
       AND (
-        lower(COALESCE(c.raw_record->>'contributor_occupation', c.raw_record->>'con_occp', '')) LIKE ANY(ARRAY[
+        lower(COALESCE(${OCCUPATION_SQL}, '')) LIKE ANY(ARRAY[
           '%attorney%', '%lawyer%', '%counsel%', '%partner%',
           '%esquire%', '%esq%', '%solicitor%', '%litigator%',
           '%paralegal%', '%public defender%', '%district attorney%', '%prosecutor%'

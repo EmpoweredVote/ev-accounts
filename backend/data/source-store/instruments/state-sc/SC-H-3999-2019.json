@@ -1,0 +1,243 @@
+{
+  "id": "SC-H-3999-2019",
+  "scope": "state:sc",
+  "title": "H3999 (123rd General Assembly): SC Constitutional Carry Act of 2019",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3999&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/3999_20190219.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bobby Cox",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mark Willis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "188bfed7-3646-4ab1-be79-48810f11c28b"
+    },
+    {
+      "name": "Cally Forrest",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1646f5cd-b151-494a-8a3b-dc862a31eb08"
+    },
+    {
+      "name": "Steven Long",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "55ef311d-6efd-40c9-8a32-d261624bf5a3"
+    },
+    {
+      "name": "Jason Elliott",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "24cb1132-a76c-4c90-904e-9e4565df8104"
+    },
+    {
+      "name": "Richard Yow",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f6f96623-dba1-482c-9d1f-4c623b09f33a"
+    },
+    {
+      "name": "Adam Morgan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brandon Newton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cc45c293-1987-44dc-b660-47abade8a5b4"
+    },
+    {
+      "name": "Dwight Loftis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Chip Huggins",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "William Bailey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b8380b5b-602c-45b0-91aa-7084aa9db31d"
+    },
+    {
+      "name": "James Burns",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9e65a60c-4016-44f5-a830-c8562f08a7ac"
+    },
+    {
+      "name": "William Chumley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b79701a8-542e-4090-b752-d2e79fb92cd4"
+    },
+    {
+      "name": "William Hixon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ce66d36d-d959-40cc-8b2b-565bb57f63bf"
+    },
+    {
+      "name": "Garry Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tommy Stringer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ashley Trantham",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bill Taylor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "faa9a73c-e06c-45ef-8961-3c407f6025e1"
+    },
+    {
+      "name": "Christopher Murphy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Mccravy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7e726b81-f400-44bb-98e1-7a63a9248b3b"
+    },
+    {
+      "name": "Anne Thayer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John West",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jonathon Hill",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sylleste Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ca9f32d0-baf9-4930-9b25-25522aa2a735"
+    },
+    {
+      "name": "Craig Gagnon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "381f33f9-cfe6-469e-a7cb-c87f076dfce6"
+    },
+    {
+      "name": "Mandy Kimmons",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Russell Fry",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Heather Crawford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e39ed0b0-9e95-4e0a-99c3-8545b15207aa"
+    },
+    {
+      "name": "Davey Hiott",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "632234ec-2b47-47f4-9070-c0d7d00e139a"
+    },
+    {
+      "name": "Kevin Hardee",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bbc6dd3c-a033-4b69-b791-ab596aad06fe"
+    },
+    {
+      "name": "Richard Martin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Nancy Mace",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Linda Bennett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Stewart Jones",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brian White",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Christopher Wooten",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "805dd108-b51b-43ce-9ecf-b766b5348c5d"
+    },
+    {
+      "name": "Patrick Haddon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "807d4af9-8270-4139-9d4f-715aa2906036"
+    },
+    {
+      "name": "Melissa Oremus",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ea004ebc-1fe1-43bd-a1ae-2950a37bdbbd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2019-02-19; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/3999_20190219.htm (LegiScan doc 1917702))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3999-2019.introduced.htm",
+      "sha256": "ccee2758097923fcd410315506f14ad8b79d4fcfd3d783a9307bde8c3332dcff"
+    },
+    "note": "Introduced 2019-02-19. Struck: the old exceptions list in 16-23-20 (replaced by (B) exemptions), permit-holder wording in 16-23-420/430, the permit-in-possession duty in 23-31-215(K), the old place list in (M) and subsection (U); Section 11 repeals 16-23-460, 23-31-225 and 23-31-230. Quote of 16-23-20(A) joins the list after the intro; 16-23-465(A) abridged with '...'. No passage vote."
+  },
+  "operative_text": "Section 1: This act may be cited as the \"South Carolina Constitutional Carry Act of 2019\".\nSection 3 (Section 16-23-20(A)): It is unlawful, whether or not the person has a concealed weapon permit, for anyone to carry about the person any handgun, whether concealed or not, unless otherwise specifically authorized by law into a: (1) law enforcement, correctional, or detention facility; (2) courthouse or courtroom; (3) polling place on election day; (4) business meeting or office of the governing body of a county, public school district, municipality, or special purpose district; (5) school or college athletic event not related to firearms; (6) daycare facility or preschool facility; (7) place where the carrying of firearms is prohibited by federal law; (8) church or other established religious sanctuary; (9) medical clinic, doctor's office, or any other facility where medical services or procedures are performed unless expressly authorized by the employer; (10) residence or dwelling place of another person; or (11) place clearly marked with a sign prohibiting the carrying of a concealable weapon on the premises in compliance with Section 23-31-235.\nSection 3 (Section 16-23-20(B)(6)): a person given permission to carry a firearm by the property owner or person in control of the premises or an agent of the owner or person in control of the premises with the authority to give such permission, whether or not the property is posted pursuant to Section 23-31-235.\nSection 5 (Section 16-23-420(A)): The provisions of this subsection related to any premises or property owned, operated, or controlled by a private or public school, college, university, technical college, or other post-secondary institution, do not apply when the firearm remains inside an attended or locked motor vehicle and is secured in a closed glove compartment, closed console, closed trunk, or in a closed container secured by an integral fastener and transported in the luggage compartment of the vehicle.\nSection 7 (Section 16-23-465(A)): ... a person convicted of knowingly carrying a firearm into a business which sells alcoholic liquor, beer, or wine for consumption on the premises is guilty of a misdemeanor, and, upon conviction, must be fined not more than two thousand dollars or imprisoned not more than two years, or both.\nSection 8 (Section 23-31-215(O)(2)): The availability of a permit to carry a concealable weapon under this section must not be construed to prohibit the permitless transport or carrying of a firearm in a vehicle or on or about one's person, whether openly or concealed, loaded or unloaded, in a manner not prohibited by law."
+}

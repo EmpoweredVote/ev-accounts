@@ -1,0 +1,54 @@
+{
+  "id": "KY-HB-209-2018",
+  "scope": "state:ky",
+  "title": "HB209 (2018 Regular): AN ACT relating to the possession of firearms by persons found to have committed hate crimes.",
+  "urls": [
+    "http://www.lrc.ky.gov/record/18RS/HB209.htm",
+    "http://www.lrc.ky.gov/recorddocuments/bill/18RS/HB209/bill.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Attica Scott",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jason Nemes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4dcf5a57-4948-4863-a4db-20ca3bf83b93"
+    },
+    {
+      "name": "Darryl Owens",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ruth Palumbo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Draft, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/18RS/HB209/bill.pdf (LegiScan doc 1690466))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-209-2018.draft.pdf",
+      "sha256": "b2a961064e1f669b4b009c608bec3fdce6b089078d5c1c1575cd47b062797362"
+    },
+    "note": "Text read is a pre-filing draft (BR 1142, \"Draft\" print, \"Jacketed\"), not a filed or enrolled print. No votes."
+  },
+  "operative_text": "Section 1 (new section of KRS Chapter 527): (1) A person is guilty of possession of a firearm by a person found to have committed a hate crime when the person possesses, manufactures, or transports a firearm after the person has been found by a sentencing judge to have committed an offense as a result of a hate crime under KRS 532.031 and has not: (a) Been granted a full pardon by the Governor or by the President of the United States; or (b) Been granted relief by the United States Secretary of the Treasury pursuant to the federal Gun Control Act of 1968, as amended. (2) Possession of a firearm by a person found to have committed a hate crime is a Class D felony."
+}

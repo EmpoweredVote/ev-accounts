@@ -1,0 +1,44 @@
+{
+  "id": "TN-SB-1178-2019",
+  "scope": "state:tn",
+  "title": "SB1178 (111th General Assembly): As introduced, allows a law enforcement officer or person who has a relationship with the respondent to petition a court for the issuance of an extreme risk protection order based on clear and convincing evidence that the respondent poses a significant risk of causing personal injury to the respondent or others by possessing a firearm. - Amends TCA Title 33; Title 38; Title 39 and Title 40.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1178&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/SB1178.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Steven Dickerson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sara Kyle",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1b745bdf-e7cb-487d-9ca5-7bd043d602ac"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2019-02-06; official copy via the Internet Archive snapshot 20260513210638 of https://www.capitol.tn.gov/Bills/111/Bill/SB1178.pdf (LegiScan doc 1895798))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1178-2019.draft.pdf",
+      "sha256": "14741070dbf8b3d5c173fafbd6a65df1e56c4c46be2e5f6c603cb2ca1f19ffd2"
+    },
+    "note": "Draft dated 2019-02-06 (HB 1446 / SB 1178, same text); summary says 'As introduced'; adopted amendments, if any, are not in the text read. Caption names Titles 33, 38, 39 and 40 but only new TCA 39-17-1366 appears in the text. The cross-reference to 'subsection (c)' in (b) is as printed. Effective July 1, 2019."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-1366(b)(1)): (1) Allegations that the respondent poses a significant risk of causing personal injury to the respondent or others by possessing a firearm;\nSECTION 1 (new TCA 39-17-1366(f)): The temporary ex parte extreme risk protection order shall prohibit the respondent from purchasing, possessing, receiving, or having in the respondent's custody or control a firearm, firearm ammunition, or firearm accessories until the hearing.\nSECTION 1 (new TCA 39-17-1366(g)): At the hearing on the petition, the court shall issue an extreme risk protection order if the court finds by clear and convincing evidence that the respondent poses a significant risk of causing personal injury to the respondent or others by possessing a firearm. The extreme risk protection order shall prohibit the respondent from purchasing, possessing, receiving, or having in the respondent's custody or control a firearm, firearm ammunition, or firearm accessories for a period of one (1) year.\nSECTION 1 (new TCA 39-17-1366(h)): Upon issuance of an extreme risk protection order, the clerk of court shall forward a copy of the order to the Tennessee bureau of investigation for submission into the federal bureau of investigation's national instant criminal background check index.\nSECTION 1 (new TCA 39-17-1366(k)): (1) A person commits an offense who purchases or possesses a firearm, firearm ammunition, or firearm accessory while subject to an extreme risk protection order. (2) A violation of this subsection (k) is a Class A misdemeanor."
+}

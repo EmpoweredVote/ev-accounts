@@ -1,0 +1,85 @@
+{
+  "id": "SC-H-3024-2023",
+  "scope": "state:sc",
+  "title": "H3024 (125th General Assembly): Concealed weapons by certain persons on duty",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3024&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/3024_20221208.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Brandon Newton",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cc45c293-1987-44dc-b660-47abade8a5b4"
+    },
+    {
+      "name": "John Mccravy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7e726b81-f400-44bb-98e1-7a63a9248b3b"
+    },
+    {
+      "name": "Matthew Leber",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1b78e67d-6d5c-4347-9f11-01c3d78d79d8"
+    },
+    {
+      "name": "John West",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brian Lawson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2a49749e-cace-490c-91d7-6733354da3fc"
+    },
+    {
+      "name": "Thomas Pope",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c4552314-d8dd-4de1-bfc1-a1e601799115"
+    },
+    {
+      "name": "Brandon Guffey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "10ddc799-0b1c-4654-ae11-a33a3e5ea381"
+    },
+    {
+      "name": "Doug Gilliam",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "38320b01-ac0e-4c0a-aceb-bbceae965294"
+    },
+    {
+      "name": "Max Hyde",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2022-12-08; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/3024_20221208.htm (LegiScan doc 2617307))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3024-2023.introduced.htm",
+      "sha256": "77a45b032302aa21a825acf4bae56bc62a64492f72683b3688ec3a8becb13382"
+    },
+    "note": "Introduced text of 2022-12-08; no passage vote. Struck: 'and' after item (12); the period after item (13) became '; and'."
+  },
+  "operative_text": "Section 1 (Section 23-31-240): Notwithstanding any other provision contained in this article, the following persons who possess a valid permit pursuant to this article may carry a concealable weapon anywhere within this State: ... (13) the Attorney General and assistant attorneys general; and (14) clerks of court."
+}

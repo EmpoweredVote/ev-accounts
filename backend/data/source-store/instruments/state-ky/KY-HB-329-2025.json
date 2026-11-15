@@ -1,0 +1,51 @@
+{
+  "id": "KY-HB-329-2025",
+  "scope": "state:ky",
+  "title": "HB329 (2025 Regular): AN ACT relating to local firearms control ordinances.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/25RS/hb329.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/25RS/hb329/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nima Kulkarni",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "968bf1ff-367f-4e84-983c-030fcdc2d796"
+    },
+    {
+      "name": "George Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "35de0809-a7a8-458e-bf71-7e10743d00a1"
+    },
+    {
+      "name": "Beverly Chester-Burton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1a0c1ea9-9bde-43b9-8ebd-5c798c12cf6c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/25RS/hb329/orig_bill.pdf (LegiScan doc 3103444))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-329-2025.introduced.pdf",
+      "sha256": "e6420b4605a7bc242e8930fcb91d243dd7960abc4c562defdeab9b89f2c01910"
+    },
+    "note": "As-filed text (25 RS BR 925); no passage vote and later amendments are not in the text read. Section 1 strikes the old preemption: no local field occupation, voiding of conflicting ordinances, suits and public-servant penalties (subsections (1) to (7) bracketed as deleted). Section 2 (KRS 65.1591, peer support confidentiality) is a conforming cross-reference only. Section 3 also strikes the sentence saying KRS 237.115 compliance is not a KRS 65.870 violation; the quoted subsection (3) is unchanged text."
+  },
+  "operative_text": "Section 1 (KRS 65.870): A city, county, urban-county government, charter county, consolidated local government, or unified local government may enact ordinances regulating the manufacture, sale, purchase, taxation, transfer, ownership, possession, carrying, storage, or transportation of firearms, ammunition, components of firearms, components of ammunition, firearms accessories, or combination thereof.\nSection 3 (KRS 237.115): (3) Unless otherwise specifically provided by the Kentucky Revised Statutes or applicable federal law, no criminal penalty shall attach to carrying a concealed firearm or other deadly weapon at any location at which an unconcealed firearm or other deadly weapon may be constitutionally carried."
+}

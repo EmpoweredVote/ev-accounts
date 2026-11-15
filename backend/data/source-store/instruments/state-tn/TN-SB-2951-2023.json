@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2951-2023",
+  "scope": "state:tn",
+  "title": "SB2951 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 33; Title 37; Title 38 and Title 39, relative to protection orders.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2951&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB2951.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Raumesh Akbari",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2a79d564-dde0-4201-a072-789554bbf6d6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-02-14; crossfiled twin https://www.capitol.tn.gov/Bills/113/Bill/HB1586.pdf is the same printed document (it names SENATE BILL 2951); copied from TN-HB-1586-2023.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1586-2023.draft.pdf",
+      "sha256": "447aed347cc91f2107ddd12db08a85629ee3d3928b6111eded1055b5a121c137"
+    },
+    "note": "Draft (2024-02-14) of a bill as introduced; the summary line says 'As introduced'. Text is long (about 38,000 characters); quoted parts are the core order, surrender, permit and penalty provisions, plus a training/awareness add-on. Also adds SECTION 2 (new TCA title 38, ch. 8, pt. 1 section) putting extreme-risk-order filing into basic officer training. No amendments in the text read; no passage shown as enacted. Crossfiled twin of HB 1586; same printed document."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-1367(b)(2)): A petition for an extreme risk protection order may be filed by a petitioner.\nSECTION 1 (new TCA 39-17-1367(d)): Upon notice and a hearing on the matter, if the court finds by clear and convincing evidence that the respondent poses a significant danger of causing personal injury to the respondent or others by having in the respondent's custody or control, or by purchasing, possessing, or receiving, a firearm or ammunition, then the court shall issue an extreme risk protection order for an appropriate period of up to twelve (12) months.\nSECTION 1 (new TCA 39-17-1367(k)(3)): If a court finds there is reasonable cause to believe that the respondent poses a significant danger of causing personal injury to the respondent's self or others in the near future by having in the respondent's custody or control, or by purchasing, possessing, or receiving, a firearm or ammunition, then the court shall issue a temporary ex parte extreme risk protection order.\nSECTION 1 (new TCA 39-17-1368(a)): Upon issuance of an extreme risk protection order pursuant to § 39-17-1367, including a temporary ex parte extreme risk protection order, the court shall order the respondent to surrender to the local law enforcement agency all firearms and ammunition owned by the respondent or in the respondent's custody, control, or possession, except as provided in § 39-17-1370, and any handgun carry permit issued under § 39-17-1351 or § 39-17-1366, held by the respondent.\nSECTION 1 (new TCA 39-17-1371(c)): If the respondent does have a handgun carry permit, then the department must immediately suspend the permit.\nSECTION 1 (new TCA 39-17-1369(a)): If an extreme risk protection order issued pursuant to § 39-17-1367 is vacated or ends without extension, then a law enforcement agency holding a firearm or ammunition owned by the respondent or a handgun carry permit issued under § 39-17-1351 or § 39-17-1366, held by the respondent, that has been surrendered or seized pursuant to an extreme risk protection order must return the surrendered firearm, ammunition, or permit, as requested by a respondent only after confirming through a background check that the respondent is currently eligible to own or possess firearms and ammunition under federal and state law and after confirming with the court that the extreme risk protection order has been vacated or has ended without extension.\nSECTION 1 (new TCA 39-17-1372(b)): A person who has in the person's custody or control a firearm or ammunition or who purchases, possesses, or receives a firearm or ammunition with knowledge that the person is prohibited from doing so by an order issued pursuant to § 39-17-1367 commits a Class E felony.\nSECTION 3 (new TCA 38-1-801(a)): The department of safety shall create a public awareness campaign designed to educate the public about extreme risk protection orders."
+}

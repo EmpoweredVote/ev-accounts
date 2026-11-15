@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-2330-2021",
+  "scope": "state:tn",
+  "title": "HB2330 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, relative to handgun carry permits.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2330&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/HB2330.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Rush Bricken",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e02758-1839-4d89-8a1b-26b9aeda22d5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2022-02-01; official copy via LegiScan getBillText doc 2500209)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2330-2021.draft.pdf",
+      "sha256": "5d2d9a24b16e69118f4058f70a168813d05b344691f91ab6d814bf24588b116c"
+    },
+    "note": "Draft as filed, 2022-02-01 (summary \"As introduced\"); no amendments are in the text read, and the bill has no passage vote in the file. Section 1 deletes \"or renew\" in 39-17-1351(m) and its last sentence; Section 5 deletes subsections (q) and (x); Section 3 amends permit contents; Section 2(n)(3) adds permit surrender and driver license suspension steps. Effective July 1, 2022."
+  },
+  "operative_text": "SECTION 2 (TCA 39-17-1351(n)): (1) A permit issued pursuant to this section shall entitle the permit holder to carry any handgun or handguns that the permit holder legally owns or possesses. An enhanced handgun carry permit shall not expire and shall continue to be valid for the life of the permit holder unless the permit holder no longer meets the requirements of this section.\nSECTION 2 (TCA 39-17-1351(n)): (2) After the initial issuance of an enhanced handgun carry permit, the department shall conduct a name-based criminal history record check every four (4) years.\nSECTION 4 (TCA 39-17-1351(o)(2)): (2) A permit holder whose enhanced handgun carry permit was issued prior to July 1, 2022, may submit the permit to the department of safety, who shall provide the permit holder with a replacement permit that does not include an expiration date."
+}

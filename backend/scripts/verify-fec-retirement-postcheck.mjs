@@ -39,15 +39,15 @@ for (const [src, rows] of bySource) {
     await c.query(`SET statement_timeout = '300s'`);
     // Every surviving line in this source, keyed the same way the retirement keyed it.
     const { rows: alive } = await c.query(
-      `SELECT raw_record->>'committee_id' AS cmte,
-              (raw_record->>'report_year')::text AS ry,
-              raw_record->>'report_type' AS rt,
+      `SELECT COALESCE(fec_committee_id, raw_record->>'committee_id') AS cmte,
+              COALESCE(fec_report_year::text, raw_record->>'report_year') AS ry,
+              COALESCE(fec_report_type, raw_record->>'report_type') AS rt,
               coalesce(donor_name_normalized,'') AS donor,
               amount::text AS amount,
               coalesce(contribution_date::text,'') AS date,
-              (raw_record->>'file_number')::text AS fn
+              COALESCE(fec_file_number::text, raw_record->>'file_number') AS fn
          FROM transparent_motivations.contributions
-        WHERE politician_source_id = $1 AND data_source = 'fec' AND raw_record ? 'file_number'`,
+        WHERE politician_source_id = $1 AND data_source = 'fec' AND COALESCE(fec_file_number_present, raw_record ? 'file_number')`,
       [src]
     );
     const live = new Set(alive.map((a) => key(a) + '|' + a.fn));

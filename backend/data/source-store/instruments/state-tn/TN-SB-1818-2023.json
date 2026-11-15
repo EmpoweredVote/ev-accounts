@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1818-2023",
+  "scope": "state:tn",
+  "title": "SB1818 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to possession of firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1818&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB1818.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul Rose",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c5c76374-faa1-4a78-bee2-6e2b5ca171d7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-23; official copy via the Internet Archive snapshot 20260514150834 of https://www.capitol.tn.gov/Bills/113/Bill/SB1818.pdf (LegiScan doc 2899974))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1818-2023.draft.pdf",
+      "sha256": "8f97a78006ab9102c5282502c92b5518e38a79ed6be726e10ed156e9060ff05c"
+    },
+    "note": "Draft dated 2024-01-23 (as filed). No votes recorded."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307, new subsection (k)): (1) A person commits an offense who knowingly possesses a firearm or firearm ammunition, and is under indictment for a crime punishable by imprisonment for a term of one (1) year or more. (2) An offense under subdivision (k)(1) is a Class D felony."
+}

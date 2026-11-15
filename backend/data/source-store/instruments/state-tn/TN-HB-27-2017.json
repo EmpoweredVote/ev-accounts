@@ -1,0 +1,106 @@
+{
+  "id": "TN-HB-27-2017",
+  "scope": "state:tn",
+  "title": "HB0027 (110th General Assembly): As enacted, exempts active-duty military service members and veterans who have specialties as military police, special operations, or special forces from handgun carry permit firing range requirements. - Amends TCA Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0027&ga=110",
+    "https://publications.tnsosfiles.com/acts/110/pub/pc0159.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Timothy Hill",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3c3bc83b-0622-4b2d-a194-884ef837f3c9"
+    },
+    {
+      "name": "James Van Huss",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Ragan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Gregory Terry",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "155630a5-d1d1-4b1b-81da-748b81b41d32"
+    },
+    {
+      "name": "Jay Reedy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4e0eefb1-6a4f-4004-be8d-432a7131b475"
+    },
+    {
+      "name": "Michael Curcio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Debra Moody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5fbea991-5a0d-4695-9b78-06700eb9ff3f"
+    },
+    {
+      "name": "Jimmy Eldridge",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jeremy Faison",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7f7ec834-b9d7-4ccd-aedb-56dfaab6ea28"
+    },
+    {
+      "name": "John Crawford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "00851f7f-d940-4c22-82f9-377f6ea092fa"
+    },
+    {
+      "name": "John Windle",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jason Zachary",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "28d41dcf-2d8c-4008-a5e5-4e9cc50a59e9"
+    },
+    {
+      "name": "Gary Hicks",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "144245f2-3e8f-48dd-8bb9-a87c683c5242"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2017-04-28; official copy via LegiScan getBillText doc 1802377)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-27-2017.chaptered.pdf",
+      "sha256": "a33889ca3a1f25bd497c3816aa1c0c0fcbeff699c9564d59597d87b7a2165549"
+    },
+    "note": "Chaptered, Public Chapter 159, 2017-04-28 (printed as Senate Bill 24, substituted for House Bill 27; twins share the text). Text file shows OCR errors ('ls', 'specialforces'); quote follows the file. Effective on becoming law."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1351(y)): (y) An applicant shall not be required to comply with the firing range requirements of this section if the applicant: (1) ls an active duty service member or honorably discharged or retired veteran of the United States armed forces; (2) Has a military occupational specialty, special qualification identifier, skill identifier, specialty code, or rating that identifies a service qualification in military police, special operations, or specialforces; and (3) Presents to the department a certified copy of the applicant's certificate of release or discharge from active duty, department of defense form 214 (DD 214), or other official documentation that provides proof of the service criteria required under this subsection (y)."
+}

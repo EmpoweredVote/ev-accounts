@@ -1,0 +1,47 @@
+{
+  "id": "SC-S-78-2021",
+  "scope": "state:sc",
+  "title": "S0078 (124th General Assembly): Report to SLED",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0078&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/78_20201209.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gerald Malloy",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "George Campsen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4b92412d-e472-4a41-a4d9-085ff1a6b22e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: Section 1 (Section 14-17-325), Sections 2-3 — every criminal case disposition must be reported to SLED within ten days",
+        "judicial-transparency: Section 6 (new Chapter 32, Title 14) — new Judicial Criminal Information Technology Committee to study court and police reporting systems"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2020-12-09; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/78_20201209.htm (LegiScan doc 2220776))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-78-2021.introduced.htm",
+      "sha256": "8437c9814e84567d80c115998ffca090330be9c8de45a3c334c800d8e07e95ff"
+    },
+    "note": "Introduced text dated 2020-12-09. Gun link is reporting of orders that bar firearm purchase or possession; the bill also covers all case dispositions and a court IT committee. Section 1 strikes thirty days (ten days added) and the old format sentence."
+  },
+  "operative_text": "Section 1 (Section 14-17-325): (B) The clerk of court shall also report to the State Law Enforcement Division, within forty-eight hours, the receipt of: (1) any permanent restraining orders; (2) any orders of state firearms prohibition pursuant to Section 16-25-30; or (3) any orders if directed to be transmitted to the State Law Enforcement Division by a judge, to include any other restraining orders, orders of protection, or other orders that prohibit a person from legally purchasing or possessing a firearm.\nSection 2 (new Section 22-1-200): (B) Magistrates shall also report to the State Law Enforcement Division, within forty-eight hours, the issuance of: (1) any restraining orders and emergency restraining orders; (2) any magistrate court orders of protection from domestic abuse act orders; (3) any orders of state firearms prohibition pursuant to Section 16-25-30; or (4) any orders that the magistrate directs to be transmitted to the State Law Enforcement Division, to include any other restraining orders, orders of protection, or other orders that prohibit a person from legally purchasing or possessing a firearm.\nSection 3 (new Section 14-25-250): (B) A municipal judge shall also report to the State Law Enforcement Division, within forty-eight hours, the issuance of: (1) any restraining orders and emergency restraining orders; (2) any municipal court orders of protection from domestic abuse act orders; (3) any orders of state firearms prohibition pursuant to Section 16-25-30; or (4) any orders that the municipal judge directs to be transmitted to the State Law Enforcement Division, to include any other restraining orders, orders of protection, or other orders that prohibit a person from legally purchasing or possessing a firearm.\nSection 4 (new Section 63-3-545): (A) A clerk of the family court shall report to the State Law Enforcement Division, within forty-eight hours, the receipt of: (1) any permanent restraining orders; (2) any family court orders of protection from domestic abuse act orders; or (3) any orders if directed to be transmitted to the State Law Enforcement Division by a judge, to include any other restraining orders, orders of protection, or other orders that prohibit a person from legally purchasing or possessing a firearm, including any and all orders referenced in Section 16-25-30.\nSection 5 (new Section 23-1-250): (A) Each law enforcement agency must report to the State Law Enforcement Division within twenty-four hours: (1) the filing of an incident report for each criminal case; (2) the filing of an order of protection, a restraining order, or any order or report relating to an incident of domestic violence; or (3) any incident in which a person may be prohibited from obtaining or possessing a firearm by state or federal law."
+}

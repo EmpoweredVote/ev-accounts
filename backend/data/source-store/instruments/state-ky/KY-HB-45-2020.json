@@ -1,0 +1,65 @@
+{
+  "id": "KY-HB-45-2020",
+  "scope": "state:ky",
+  "title": "HB45 (2020 Regular): AN ACT relating to firearms and declaring an emergency.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/20RS/hb45.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/20RS/hb45/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "George Brown",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "35de0809-a7a8-458e-bf71-7e10743d00a1"
+    },
+    {
+      "name": "Charles Booker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kelly Flood",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Nima Kulkarni",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "968bf1ff-367f-4e84-983c-030fcdc2d796"
+    },
+    {
+      "name": "Reginald Meeks",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Attica Scott",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/20RS/hb45/orig_bill.pdf (LegiScan doc 2085569))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-45-2020.introduced.pdf",
+      "sha256": "c5805b64e68e8bfb224f44d6e672923682b594964da5482aaa81e0e3bdbee1c7"
+    },
+    "note": "Introduced version (20 RS); later amendments not in text read. No votes recorded. Quotes are selected from a long bill; also in the bill: Section 5 (KRS 395.250) estate firearm inventory, Section 7 (KRS 504.030) surrender after insanity finding, Section 8 (KRS 237.104), Section 9 (KRS 506.080) facilitation, Section 10 (KRS 508.020) assault by firearm discharge on a minor, Section 12 (KRS 527.040) felon-in-possession sentence served consecutively, Section 14 (KRS 532.030) surrender after felony conviction, repeal of KRS 65.870. Section 13 deletes the sentence exempting postsecondary institutions. All gun-specific, so ruled single."
+  },
+  "operative_text": "Section 2 (new section of KRS Chapter 237): (2) Before any sale, exchange, or transfer pursuant to this section, a national instant criminal background check shall be completed by a dealer who consents to conduct such a check, and upon completion of such a background check, shall complete a document, the form of which shall be developed and distributed by the Department of Kentucky State Police, that identifies and confirms that such a check was performed. (6) Any person who knowingly violates this section shall be guilty of a Class A misdemeanor.\nSection 3 (new section of KRS Chapter 237): (1) Any owner or other person lawfully in possession of a firearm who suffers the loss or theft of the firearm or any person who sells ammunition who suffers a loss or theft of ammunition shall within twenty-four (24) hours of the discovery of the loss or theft report the facts and circumstances of the loss or theft to a local police department or sheriff's office. (3) A person who fails to make a report of a loss or theft as required by subsection (1) of this section shall be guilty of a Class A misdemeanor.\nSection 4 (new section of KRS Chapter 237): (1) No person who owns or is custodian of a firearm shall store or otherwise leave the firearm out of his or her immediate possession or control without having first securely locked the firearm in an appropriate safe storage depository or rendered it incapable of being fired by use of a gun-locking device appropriate to that weapon, including through the use of a safe or other secure container which, when locked, is incapable of being opened without the key, combination, or other unlocking mechanism and is capable of preventing an unauthorized person from obtaining access to and possession of its contents. (2) A violation of this section shall be a Class A misdemeanor.\nSection 6 (KRS 403.735): (2)(c) If the court finds that such a substantial risk exists, the court shall order that the respondent be prohibited from possessing a firearm and shall order him or her to surrender any firearms owned or possessed by the respondent to the sheriff of the county where the firearm is located, who shall impound the weapon until the prohibition is lifted, the order expires, or the respondent directs the transfer of the weapon to a person lawfully allowed to possess the firearm.\nSection 11 (new section of KRS Chapter 527): (2) Criminal purchase or disposal of a weapon is a Class D felony.\nSection 13 (KRS 527.070): (1) A person is guilty of unlawful possession of a weapon on school property when he knowingly deposits, possesses, or carries, whether openly or concealed, for purposes other than instructional or school-sanctioned ceremonial purposes, or the purposes permitted in subsection (3) of this section, any firearm or other deadly weapon, destructive device, or booby trap device in any postsecondary education facility, public or private school building or bus, on any public or private school campus, grounds, recreation area, athletic field, or any other property owned, used, or operated by any institute of postsecondary education, board of education, school, board of trustees, regents, or directors for the administration of any public or private educational institution.\nSection 15 (new section of KRS Chapter 237): (1)(a) The Department of Kentucky State Police shall promulgate an administrative regulation for the licensure of persons to possess a handgun in the Commonwealth of Kentucky. (2)(a) The Department of Kentucky State Police shall promulgate an administrative regulation for the registration of handguns in Kentucky. (3)(a) The Department of Kentucky State Police shall promulgate an administrative regulation for the licensure of persons to possess an assault weapon or a large-capacity ammunition-feeding device in the Commonwealth of Kentucky."
+}

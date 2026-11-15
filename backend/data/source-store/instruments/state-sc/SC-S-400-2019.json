@@ -1,0 +1,39 @@
+{
+  "id": "SC-S-400-2019",
+  "scope": "state:sc",
+  "title": "S0400 (123rd General Assembly): SC Constitutional Carry Act of 2019",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0400&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/400_20190122.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lawrence Grooms",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a5c02924-84fc-40b5-88db-d6f2a13e9aac"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2019-01-22; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/400_20190122.htm (LegiScan doc 1864386))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-400-2019.introduced.htm",
+      "sha256": "f1dc1e9c60eb8f47050b69932deab08d44a7a3b8403135eb879791770910a344"
+    },
+    "note": "Introduced Jan. 22, 2019. Struck text includes permit references throughout (e.g. 16-23-20(9) 'has been issued a concealed weapon permit' struck, 'is not prohibited by state law from possessing the weapon' added; in 23-31-215(N) 'a reciprocal state' struck, 'another state' added, 'Georgia and North Carolina' struck, 'any other state' added; permit-revocation penalties struck in 23-31-215(M), 23-31-225). Quote is selective."
+  },
+  "operative_text": "SECTION 3 (Section 16-23-20): It is unlawful for anyone to carry about the person any handgun, whether concealed or not, except as follows, unless otherwise specifically prohibited by law: (17) a person who is not prohibited from possessing firearms under state law, whether or not the person is a resident of the State.\nSECTION 3 (Section 16-23-20): Unless a person first obtains authorization to possess a handgun from a person with the apparent authority to grant it, nothing in subsection (A)(17) authorizes the carrying of a handgun into any location prohibited under Section 23-31-215(M).\nSECTION 3 (Section 16-23-20(A)(9)(b)): concealed on or about his person, provided that he is not prohibited by state law from possessing the weapon;\nSECTION 4 (Section 16-23-420): The provisions of this subsection related to any premises or property owned, operated, or controlled by a private or public school, college, university, technical college, or other post-secondary institution, do not apply when the firearm remains inside an attended or locked motor vehicle and is secured in a closed glove compartment, closed console, closed trunk, or in a closed container secured by an integral fastener and transported in the luggage compartment of the vehicle.\nSECTION 6 (Section 16-23-460): (1) a person carrying a concealed weapon upon his own premises or otherwise lawfully carrying a concealable weapon; or (C) The provisions of this section also do not apply to handguns, rifles, shotguns, dirks, slingshots, metal knuckles, knives, or razors unless they are used with the intent to commit a crime or in furtherance of a crime.\nSECTION 10 (Section 23-31-215(N)): Valid out-of-state permits to carry concealable weapons held by a resident of another state must be honored by this State. Notwithstanding the reciprocity requirements of item (1), South Carolina shall automatically recognize concealed weapon permits issued by any other state.\nSECTION 10 (Section 23-31-215(O)): A permit issued pursuant to this article is not required for a person: ... (3) carrying a concealable weapon in a manner not prohibited by law.\nSECTION 13 (Section 23-31-240): Notwithstanding any other provision contained in this article, the following persons may carry a concealable weapon anywhere within this State, when carrying out the duties of their office:"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "TN-HB-7043-2023",
+  "scope": "state:tn",
+  "title": "HB7043 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13 and Title 49, relative to school safety.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB7043&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB7043.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jody Barrett",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a6b0df31-75ac-4a90-88e6-78db5c74a71e"
+    },
+    {
+      "name": "Monty Fritts",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9cff8f78-ffde-4821-91e7-6d14fb093ecc"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-08-21; crossfiled twin https://www.capitol.tn.gov/Bills/113/Bill/SB7023.pdf is the same printed document (it names HOUSE BILL 7043); copied from TN-SB-7023-2023.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-7023-2023.draft.pdf",
+      "sha256": "ef8824e6b5e548ac1912fae4db711a0660bfa60ec2033da6d90d1c560eea9498"
+    },
+    "note": "Draft dated 2023-08-21 (as filed, special-session number). No votes recorded. Sections 4, 7 and 8 (county-population limit on officer authority; same no-prohibition rule for public and private colleges) are omitted from operative_text for length. All parts concern who may carry on school property."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1309(e), new subdivision (14)): (14) (A) Persons authorized to carry a handgun pursuant to § 39-17-1351, unless the board of education, school, college, or university board of trustees, regents, or directors provides armed security on the school property and the person authorized to carry a handgun pursuant to § 39-17-1351 knows that the respective school provides armed security on the school property; provided, that the person carrying a handgun pursuant to this subdivision (e)(14) keeps the handgun concealed on their person and secure from unauthorized access at all times;\nSECTION 2 (TCA 39-17-1309(e)(4)): is amended by deleting \"when in the discharge of their official duties\".\nSECTION 3 (TCA 39-17-1350(c)(1)): is amended by deleting subdivision (c)(1).\nSECTION 5 (TCA 39-17-1350, new subsection): Notwithstanding another law to the contrary, a community corrections officer who holds a valid Tennessee enhanced handgun carry permit, issued pursuant to § 39-17-1351, may carry a handgun at all times on school grounds and inside school buildings in Tennessee while in the course of employment and engaged in the actual discharge of official duties, except as provided by federal law or lawful orders of court.\nSECTION 6 (new section in TCA Title 49, Chapter 2, Part 1): Notwithstanding § 49-6-815, an LEA that does not provide armed security, as defined in § 39-17-1309(e)(14), shall not prohibit the LEA's employees or contractors from possessing and carrying a handgun on school grounds in accordance with § 39-17-1309(e)(14).\nSECTION 9 (TCA 49-50-803, new subsection): Notwithstanding this section to the contrary, a board or governing entity of each private K-12 school, or a chief administrative officer if the school does not have a board or governing entity, that does not provide armed security as defined in § 39-17-1309(e)(14) shall not prohibit the school's employees or contractors from possessing and carrying a handgun on the school's property in accordance with § 39-17-1309(e)(14)."
+}

@@ -1,0 +1,74 @@
+{
+  "id": "SC-S-155-2021",
+  "scope": "state:sc",
+  "title": "S0155 (124th General Assembly): SC Constitutional Carry Act of 2021",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0155&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/155_20201209.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shane Martin",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0cd44d98-8ccd-4f4f-93d6-e993ff6ba720"
+    },
+    {
+      "name": "Joshua Kimbrell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5ebdf748-e14d-47c1-9b88-f22fa0ecd6c4"
+    },
+    {
+      "name": "Danny Verdin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ec52251-b87c-4264-b1f7-e4d348e2756a"
+    },
+    {
+      "name": "Thomas Corbin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6d10b3d2-940f-45ef-af02-07252a3ce185"
+    },
+    {
+      "name": "Katrina Shealy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brian Adams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d33b8da6-60b3-480a-964f-1d3315fac434"
+    },
+    {
+      "name": "Rex Rice",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d587a64f-3b40-421c-9963-9c934f961443"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2020-12-09; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/155_20201209.htm (LegiScan doc 2220450))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-155-2021.introduced.htm",
+      "sha256": "37ac93eb18bc64a168cc0cd11ab17814d04b55e75c1b2ba089248d3eaa3b46b4"
+    },
+    "note": "Introduced print dated 2020-12-09; no passage vote on file. Struck words (old exceptions list in 16-23-20, concealed-permit clauses in 16-23-420/430/465, 'concealable' in 23-31-220/235, permit-card duty in 23-31-215(K)) are not quoted as law. Also repeals Sections 16-23-460, 23-31-225 and 23-31-230."
+  },
+  "operative_text": "Section 3 (Section 16-23-20(A)): It is lawful for anyone to carry about the person any handgun, whether concealed or not, except as provided for in subsection (B) or if the person is otherwise prohibited from owning, carrying, or purchasing a firearm as provided for by state or federal law.\nSection 3 (Section 16-23-20(B)): It is unlawful for a person to carry a handgun about his person, whether concealed or not, into a: (1) law enforcement, correctional, or detention facility; (2) courthouse or courtroom; (3) polling place on election days; (4) office of or business meeting of the governing body of a county, public school district, municipality, or special purpose district; (5) school or college athletic event not related to firearms; (6) daycare facility or preschool facility; (7) place where the carrying of firearms is prohibited by federal law; (8) church or other established religious sanctuary unless express permission is given by the appropriate church official or governing body; (9) hospital, medical clinic, doctor's office, or any other facility where medical services or procedures are performed unless expressly authorized by the appropriate entity; (10) residence or dwelling place of another person without the express permission of the owner, or person in legal control or possession of the residence or dwelling place, as appropriate; or (11) place clearly marked with a sign prohibiting the carrying of a weapon on the premises pursuant to Section 23-31-235.\nSection 3 (Section 16-23-20(B)(11)): A person who violates a provision of this item, whether the violation is willful or not, may only be charged with a violation of Section 16-11-620 and must not be charged with or penalized for a violation of this subsection.\nSection 5 (Section 16-23-420(A)): The provisions of this subsection related to any premises or property owned, operated, or controlled by a private or public school, college, university, technical college, or other post-secondary institution, do not apply when the firearm remains inside an attended or locked motor vehicle and is secured in a closed glove compartment, closed console, closed trunk, or in a closed container secured by an integral fastener and transported in the luggage compartment of the vehicle.\nSection 2 (Section 10-11-320(B)): This section does not apply to a person who possesses a firearm and is authorized to park on the capitol grounds or in the parking garage below the capitol grounds."
+}

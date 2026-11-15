@@ -1,0 +1,39 @@
+{
+  "id": "SC-H-5239-2025",
+  "scope": "state:sc",
+  "title": "H5239 (126th General Assembly): Firearms on campus",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=5239&session=126&summary=B",
+    "https://www.scstatehouse.gov/sess126_2025-2026/prever/5239_20260224.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joseph Bustos",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "538f388c-dd4a-4764-bfc0-1af171cbdb55"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2026-02-24; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/5239_20260224.htm (LegiScan doc 3373893))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-5239-2025.introduced.htm",
+      "sha256": "629b48ab04a5766d6017b53237722c32ed59a91771beda089a6303cc3eede997"
+    },
+    "note": "Introduced text of 2026-02-24; no passage vote. Struck: 'or' and 'armed forces'; added 'a duly authorized', 'Armed Forces of the United States while acting within the scope of his official duties' and 'a' before 'student'."
+  },
+  "operative_text": "SECTION 1 (Section 16-23-420(D)): This section does not apply to a guard, law enforcement officer, a duly authorized member of the Armed Forces of the United States while acting within the scope of his official duties, or a student of military science. A married student residing in an apartment provided by the private or public school whose presence with a firearm in or around a particular building is authorized by persons legally responsible for the security of the buildings is also exempted from the provisions of this section."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "SC-H-3190-2017",
+  "scope": "state:sc",
+  "title": "H3190 (122nd General Assembly): Penalties for offenses involving handguns",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3190&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/3190_20161215.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Wendell Gilliard",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75dffc0a-f084-4dfb-a2a7-6c81094bb0c2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2016-12-15; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/3190_20161215.htm (LegiScan doc 1439528))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3190-2017.introduced.htm",
+      "sha256": "a72a6cd7ed5692c61c016002109e7823b087174b855cd4b67c51051be43beaa5"
+    },
+    "note": "Introduced text, 2016-12-15. Struck 'violating' and 'is guilty of a' (replaced by tiered wording)."
+  },
+  "operative_text": "Section 1 (Section 16-23-50(A)(2)): (2) A person who violates the provisions of Section 16-23-20: (a) for a first offense, is guilty of a misdemeanor and, upon conviction, must be fined not more than one thousand dollars or imprisoned not more than one year, or both; and (b) for a second or subsequent offense, is guilty of a felony and, upon conviction, must be fined not more than two thousand dollars or imprisoned not more than five years, or both."
+}

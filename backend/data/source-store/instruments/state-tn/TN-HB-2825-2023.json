@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-2825-2023",
+  "scope": "state:tn",
+  "title": "HB2825 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to the carrying of firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2825&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB2825.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karen Camper",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b3c3254b-83eb-489c-8871-b1ebdce6a140"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-31; official copy via LegiScan getBillText doc 2909516)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2825-2023.draft.pdf",
+      "sha256": "168781b85fe60c57e7e479ca8d2fecc46cb08003422d2c6a1aa1916b6b077183"
+    },
+    "note": "Draft (2024-01-31), as introduced; no amendments in the text read. Printed with Senate twin SB 1686. Effective July 1, 2024. The (g)(1) text keeps the age 21 (or 18 for veterans and service members) conditions."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(g)(1)): Except as provided in subdivision (g)(2), it is an exception to the application of subsection (a) that a person is carrying, whether openly or concealed, a handgun and:\nSECTION 1 (TCA 39-17-1307(g)(2)): A county legislative body may elect not to permit persons within the county to lawfully carry a handgun pursuant to the exception set out in subdivision (g)(1) by passage of a resolution.\nSECTION 1 (TCA 39-17-1307(g)(2)): Upon passage, the resolution has the effect of eliminating the exception set out in subdivision (g)(1) to the criminal offense of unlawful carrying, as prohibited by subsection (a), within the boundaries of the county.\nSECTION 1 (TCA 39-17-1307(g)(2)): If the county legislative body passes such a resolution, then the county must provide notice to persons present within the county by posting notice of the resolution in conspicuous public locations throughout the county.\nSECTION 2 (TCA 39-17-1314(b)): (5) The unlawful carrying of a firearm, as provided in § 39-17-1307(g)(2)."
+}

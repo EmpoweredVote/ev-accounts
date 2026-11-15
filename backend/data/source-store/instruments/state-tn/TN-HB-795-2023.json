@@ -1,0 +1,57 @@
+{
+  "id": "TN-HB-795-2023",
+  "scope": "state:tn",
+  "title": "HB0795 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, relative to weapons.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0795&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB0795.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kip Capley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "91c9fb1a-7df5-418b-9713-a2db4acd49a6"
+    },
+    {
+      "name": "Jody Barrett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a6b0df31-75ac-4a90-88e6-78db5c74a71e"
+    },
+    {
+      "name": "Clay Doggett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9a9c3029-794a-4cb5-aa7e-342e9b480603"
+    },
+    {
+      "name": "Chris Todd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-01-30; official copy via the Internet Archive snapshot 20260514135834 of https://www.capitol.tn.gov/Bills/113/Bill/HB0795.pdf (LegiScan doc 2670467))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-795-2023.draft.pdf",
+      "sha256": "f5251e073e8ee4513af32e3b42c93f804312d3c6afcaf2f231b9701e904ae719"
+    },
+    "note": "Draft of 2023-01-30 (as introduced); amendments not in text. Text is only a word swap; the summary says the offense is carrying a weapon where judicial proceedings are in progress. Weapon includes firearms but is not gun-only. Twin: TN-SB-823-2023."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1306(a)): is amended by deleting the language \"any building\" and substituting instead the language \"a room\"."
+}

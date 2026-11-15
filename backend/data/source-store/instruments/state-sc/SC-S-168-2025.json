@@ -1,0 +1,39 @@
+{
+  "id": "SC-S-168-2025",
+  "scope": "state:sc",
+  "title": "S0168 (126th General Assembly): Concealed Weapon Permit Program",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0168&session=126&summary=B",
+    "https://www.scstatehouse.gov/sess126_2025-2026/prever/168_20250114.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "George Campsen",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4b92412d-e472-4a41-a4d9-085ff1a6b22e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2025-01-14; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/168_20250114.htm (LegiScan doc 3057157))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-168-2025.introduced.htm",
+      "sha256": "4eea770e4087fa858f1bda4e15c0f5f4686c68f48415ce37618857c4c6c132d4"
+    },
+    "note": "As-filed text (2025-01-14). Struck: reciprocity conditions (background check and training requirement in the other state, Georgia/North Carolina clause, handgun-only limit), the $50 renewal fee and its waivers. Added: automatic no-cost renewal. Section 3 (23-31-215(S)) only adjusts the expiry notice and is not quoted."
+  },
+  "operative_text": "Section 1 (Section 23-31-215(N)): (N) Valid out-of-state permits to carry concealable weapons must be honored by this State. SLED shall maintain and publish a list of states with which South Carolina has reciprocity.\nSection 2 (Section 23-31-215(P)): (P) A permit issued pursuant to this article is valid for five years. SLED shall automatically issue a renewed permit to a permit holder at no cost as soon as is practicable prior to a permit's expiration date if it determines the permit holder has a valid South Carolina driver's license and a state and federal background check on the permit holder is favorable. ... Subject to subsection (Q), a permit that is not automatically renewed shall be renewed at no cost upon: ... (1) completion of the renewal application; and (2) picture identification or facsimile copy thereof."
+}

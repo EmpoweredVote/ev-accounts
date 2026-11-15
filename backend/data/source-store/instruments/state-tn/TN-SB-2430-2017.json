@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2430-2017",
+  "scope": "state:tn",
+  "title": "SB2430 (110th General Assembly): As introduced, authorizes civil action against person selling or transferring firearm if firearm sold or transferred without a background check and firearm used in crime resulting in injury to person or property or wrongful death. - Amends TCA Title 29 and Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2430&ga=110",
+    "https://www.capitol.tn.gov/Bills/110/Bill/SB2430.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sara Kyle",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1b745bdf-e7cb-487d-9ca5-7bd043d602ac"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2018-02-01; official copy via the Internet Archive snapshot 20260514062731 of https://www.capitol.tn.gov/Bills/110/Bill/SB2430.pdf (LegiScan doc 1714064))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2430-2017.draft.pdf",
+      "sha256": "34e69c1529ab8e8e2bbf24be9fc6bca772b9ce91f95b381b519516cd95c621a9"
+    },
+    "note": "Draft dated 2018-02-01, as introduced. No passage vote on record. Applies to firearms sold or transferred on or after July 1, 2018."
+  },
+  "operative_text": "SECTION 1 (new section in TCA Title 29, Chapter 34, Part 2): A person is liable for injury to the person or property of another or for wrongful death resulting from the use of a firearm in the commission of a crime if it can be shown by clear and convincing evidence that the defendant sold or transferred the firearm to the person who committed the crime resulting in the injury or wrongful death without obtaining verification from a licensed dealer in firearms that information on the prospective purchaser or transferee has been submitted for a criminal history record check as set out in § 39-17-1316 and that a determination has been received from the Tennessee bureau of investigation that the prospective purchaser or transferee is not prohibited under state or federal law from possessing a firearm."
+}

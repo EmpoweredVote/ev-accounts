@@ -1,0 +1,45 @@
+{
+  "id": "SC-S-338-2025",
+  "scope": "state:sc",
+  "title": "S0338 (126th General Assembly): Second Amendment Privacy Act",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0338&session=126&summary=B",
+    "https://www.scstatehouse.gov/sess126_2025-2026/prever/338_20250218.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Wes Climer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4c07dfea-0219-410e-a1f8-baf079c012d4"
+    },
+    {
+      "name": "Joshua Kimbrell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5ebdf748-e14d-47c1-9b88-f22fa0ecd6c4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Draft, 2025-02-18; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/338_20250218.htm (LegiScan doc 3128837))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-338-2025.draft.htm",
+      "sha256": "bbfae55f45da073a1eda6ffbe5b66d82bb04b222692cb31be7611f6ee2fdbceb"
+    },
+    "note": "Text read is the 'Draft' previous version dated 2025-02-18 (not enrolled; no passage vote in the data). Enforcement is by the Attorney General: notice, 30 business days to cure, then injunction and civil fine up to $1,000 per violation (not quoted)."
+  },
+  "operative_text": "SECTION 2 (new Section 23-31-1120): (A) Except for those records kept during the regular course of a criminal investigation and prosecution, or as otherwise required by law, no government entity or official and no agent or employee of a government entity shall knowingly keep or cause to be kept any list, record, or registry of privately owned firearms or the owners of those firearms. (B) A payment card network shall not require or incentivize the use of a merchant category code in a manner that distinguishes a firearm retailer from other retailers. (C) A covered entity shall not assign a firearm retailer a merchant category code that distinguishes the firearm retailer from other retailers.\nSECTION 2 (new Section 23-31-1130): (A) The Attorney General shall investigate reasonable allegations that a person or entity, including a government entity, has violated the provisions of this article and, upon finding a violation, provide written notice to the person or entity believed to have committed the violation. (C) The Attorney General has exclusive authority to enforce the provisions of this article."
+}

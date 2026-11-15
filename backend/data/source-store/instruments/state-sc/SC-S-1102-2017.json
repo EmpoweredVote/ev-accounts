@@ -1,0 +1,39 @@
+{
+  "id": "SC-S-1102-2017",
+  "scope": "state:sc",
+  "title": "S1102 (122nd General Assembly): Firearm at school",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=1102&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/1102_20180307.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Stephen Goldfinch",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2368c66a-d4d7-40b0-9857-5ec7223fbb88"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2018-03-07; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/1102_20180307.htm (LegiScan doc 1753819))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-1102-2017.introduced.htm",
+      "sha256": "454e38d37a5c26adb11e99a6b643e5334193f299b076769978bcbd7dc3879832"
+    },
+    "note": "Introduced text, as filed; no passage vote recorded in the data."
+  },
+  "operative_text": "SECTION 1 (new Section 59-5-200(F)): An instructor of military science certified under this section may carry a firearm into a school in which he is employed, during the course of his employment, if he also obtains permission from the local school board of trustees for which he is employed under the requirements of Section 59-19-370 and he possesses the firearm subject to the requirements and limitations established by the local school board.\nSECTION 2 (new Section 59-19-370(A)): A local school district board of trustees of this State may authorize an instructor of military science who is certified by the State Board of Education under the requirements of Section 59-5-200 to carry a firearm on the grounds of a school in which he is employed in the course of his employment.\nSECTION 2 (new Section 59-19-370(C)): (1) The instructor of military science must wear his military uniform anytime while in possession of a firearm. (2) Any school with an employee authorized to carry a firearm under this Section must post a clearly conspicuous sign at every entrance with the words 'Armed Security is Present'.\nSECTION 3 (new Section 23-23-150(A)): The Law Enforcement Training Council shall develop a certification program for the training of instructors of military science employed by a public school of this State authorization to carry a firearm while on school grounds pursuant to Section 59-5-200."
+}

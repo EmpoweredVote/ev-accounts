@@ -1,0 +1,54 @@
+{
+  "id": "TN-HB-1602-2017",
+  "scope": "state:tn",
+  "title": "HB1602 (110th General Assembly): As introduced, enacts the \"Second Amendment Civil Rights Act of 2018\"; confers private right of action upon a person to challenge a government entity that refuses to make property available to third parties for Second Amendment activities when the property is made available for other activities; prohibits government entity from banning the possession of a handgun by a handgun permit holder on property owned or administered by the entity unless security officers inspect all persons entering the premises. - Amends TCA Title 39, Chapter 17.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1602&ga=110",
+    "https://www.capitol.tn.gov/Bills/110/Bill/HB1602.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Judd Matheny",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jimmy Matlock",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Terri Lynn Weaver",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jay Reedy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4e0eefb1-6a4f-4004-be8d-432a7131b475"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2018-01-17; official copy via LegiScan getBillText doc 1690596)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1602-2017.draft.pdf",
+      "sha256": "8dea62ab07e37da203983e9dd3f13b9e87767d3f4340ed003c80067d2509b061"
+    },
+    "note": "Draft (as filed) dated 2018-01-17; no Senate twin named in this copy. Short title \"Second Amendment Civil Rights Act of 2018.\" Part of 39-17-1314(j) declares gun commerce and ownership fundamental rights protected by both constitutions; not a stated duty. Suits under (j)-(l) use the subsection (g)/(i) cause of action and damages (existing 39-17-1314, enacted separately). SECTION 3 quote is the instruction sentence; SECTION 4 deletes \"Except as provided in subsection (g), this\" from 39-17-1359(f) and substitutes \"This\". Draft text: adopted amendments are not in the text read and could change it."
+  },
+  "operative_text": "SECTION 2 (new TCA 39-17-1314(j)(3)): A government entity that owns or operates any property that is made available to third parties or entities for use as a venue, rental facility, or for other public or private purposes, shall not refuse to make the property available to or otherwise discriminate against any person or entity because the proposed use of\nSECTION 2 (new TCA 39-17-1314(j)(3), continued): the property involves a gun show, an outdoor show, a hunting or fishing show, a Second Amendment show or event, or any other show or event that may involve the lawful commerce, ownership, use, transfer, possession, advocacy, exhibition, or display of firearms, arms, ammunition, or firearms accessories.\nSECTION 2 (new TCA 39-17-1314(k)): A government entity shall not enact, have, or enforce ordinances, rules, regulations, or policies that prohibit the ownership, construction, or operation of privately owned or operated gun or sport shooting ranges.\nSECTION 2 (new TCA 39-17-1314(l)): A government entity shall not enact, have, or enforce ordinances, rules, or regulations that have the effect of prohibiting, restricting, or infringing a party's rights under the Tennessee Constitution, the United States Constitution, or under any state law relative to firearms, ammunition, arms, or accessories thereof.\nSECTION 5 (TCA 39-17-1359(g)): Nothing in this section shall authorize an entity of local government or a permittee thereof to enact or enforce a prohibition or restriction on the possession of a\nSECTION 5 (TCA 39-17-1359(g), continued): handgun by a handgun carry permit holder on property owned or administered by the entity unless the following conditions are met:\nSECTION 5 (TCA 39-17-1359(g)(1)): Metal detection devices are provided at each public entrance to the property;\nSECTION 5 (TCA 39-17-1359(g)(4)): Secure storage facilities are provided at each public entrance where individuals can separately and temporarily store any banned items at no additional cost to the individual prior to entering the property; and\nSECTION 3 (TCA 39-17-1311(b)(1)(J)(iii)): is amended by deleting the phrase \"when the program has been approved by the administrator of the recreational building or property\"."
+}

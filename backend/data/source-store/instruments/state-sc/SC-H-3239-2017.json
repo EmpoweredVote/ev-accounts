@@ -1,0 +1,62 @@
+{
+  "id": "SC-H-3239-2017",
+  "scope": "state:sc",
+  "title": "H3239 (122nd General Assembly): Concealed weapons",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3239&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/3239_20161215.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "William Chumley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b79701a8-542e-4090-b752-d2e79fb92cd4"
+    },
+    {
+      "name": "James Burns",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9e65a60c-4016-44f5-a830-c8562f08a7ac"
+    },
+    {
+      "name": "Steven Long",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "55ef311d-6efd-40c9-8a32-d261624bf5a3"
+    },
+    {
+      "name": "Garry Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Roy Magnuson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e00d1f1-7d7d-4e9e-9482-15caeec92ff8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2016-12-15; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/3239_20161215.htm (LegiScan doc 1440119))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3239-2017.introduced.htm",
+      "sha256": "128995e80e24b66a83b677f30e3e372493cf12999cd9d2eef35320610a2df923"
+    },
+    "note": "Introduced text, 2016-12-15. Only new subsection (B) is changed; (A) is existing law relettered."
+  },
+  "operative_text": "Section 1 (Section 23-31-220): (B) Notwithstanding the provisions contained in Subsection (A), a premises owner or a person in legal possession of a premises, who posts a sign, in compliance with this chapter, that prohibits the carrying of a concealable weapon on the premises, is strictly liable for any injury sustained by a concealed weapon permit holder from the perpetrator of a crime while on a posted premises. A premises owner, who is subject to this provision, is civilly liable to compensate the permit holder treble damages for injuries that are sustained and all attorney fees and costs incurred in any action the permit holder files against the owner or person in possession of the posted premises."
+}

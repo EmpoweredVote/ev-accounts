@@ -1,0 +1,45 @@
+{
+  "id": "KY-HB-375-2025",
+  "scope": "state:ky",
+  "title": "HB375 (2025 Regular): AN ACT relating to risk protection orders.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/25RS/hb375.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/25RS/hb375/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Beverly Chester-Burton",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1a0c1ea9-9bde-43b9-8ebd-5c798c12cf6c"
+    },
+    {
+      "name": "George Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "35de0809-a7a8-458e-bf71-7e10743d00a1"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/25RS/hb375/orig_bill.pdf (LegiScan doc 3106906))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-375-2025.introduced.pdf",
+      "sha256": "db281e3310ab8f98d341f58f3193445e9db5cd1775bc80bee52852f53cda7444"
+    },
+    "note": "As-filed (BR 1492, 2/6/2025); no passage vote in the record. Section 3 gives the short title 'Diego's Law'."
+  },
+  "operative_text": "Section 1 (new section of KRS Chapter 237): (4) The petition shall be filed by a qualified mental health professional, peace officer, county attorney, Commonwealth's attorney, spouse, relative, friend, or guardian of the individual concerning whom the petition is filed, or any other interested person.\nSection 1 (new section of KRS Chapter 237): (7) If after the hearing the court finds by clear and convincing evidence that the risk to public health, safety, or welfare as described in subsection (5)(c) of this section exists, the court shall enter an order prohibiting the respondent from purchasing, possessing, receiving, or having in his or her custody or control a firearm.\nSection 1 (new section of KRS Chapter 237): (9) The Department of Kentucky State Police shall immediately make information about the order available to the National Instant Criminal Background Check System for the purpose of firearm purchaser background checks.\nSection 1 (new section of KRS Chapter 237): (10) (a) Any person found in violation of an order entered under this section shall be guilty of a Class A misdemeanor. (b) Any firearm possessed in violation of this section shall be subject to forfeiture and shall be disposed of as provided in KRS 500.090.\nSection 2 (KRS 237.104): (3) The provisions of this section shall not apply to the taking of an item specified in subsection (1) or (2) of this section from a person who is: (a) Forbidden to possess a firearm pursuant to KRS 527.040 or Section 1 of this Act;"
+}

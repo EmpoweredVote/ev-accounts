@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-279-2019",
+  "scope": "state:tn",
+  "title": "HB0279 (111th General Assembly): As introduced, reduces from 15 to 10 the number of days in which a chief law enforcement officer must certify the transfer or making of a firearm after receiving a request, if the applicant making the request is not prohibited by law from receiving or possessing the firearm. - Amends TCA Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0279&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/HB0279.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Scott Cepicky",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e6b4535-ba42-4329-8df1-747bfaa4909e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2019-01-29; official copy via LegiScan getBillText doc 1879470)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-279-2019.draft.pdf",
+      "sha256": "c13e61eea857d3ba8f5184c40291662bf52293445bb94173d87ef496ebf04cad"
+    },
+    "note": "Draft (as filed), 2019-01-29. Adopted amendments, if any, are not in the text read. Same printed document as twin SB 285. The bill deletes 'fifteen (15) days'."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1361(b)): Tennessee Code Annotated, Section 39-17-1361(b), is amended by deleting the language \"fifteen (15) days\" and substituting instead the language \"ten (10) days\"."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-1599-2023",
+  "scope": "state:tn",
+  "title": "HB1599 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 18; Title 37 and Title 39, relative to juvenile offenders.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1599&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB1599.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ryan Williams",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "296df1be-a8bb-45ee-bb86-e1de328ed845"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-09-07; official copy via LegiScan getBillText doc 2839982)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1599-2023.draft.pdf",
+      "sha256": "90c4757ff47d199ccb9ec8c9a1c54825776fcb1c2fdcda4efab7e1ba8b27576c"
+    },
+    "note": "Draft as filed (2023-09-07), effective Oct 1, 2023. Later versions were not read. A similarly captioned act became Public Chapter 973 (HB 1600/SB 2911) with changes: age 25 cap for all under 25, reinstatement petition, July 1, 2024 start."
+  },
+  "operative_text": "SECTION 1 (new section, TCA Title 37, Ch. 1, Pt. 1): (1) Beginning October 1, 2023, in addition to any disposition authorized by § 37-1-131, if a juvenile is adjudicated delinquent for conduct that, if committed by an adult, would constitute an offense set out in subdivision (a)(2), then the court shall prohibit the juvenile from purchasing or possessing a firearm until the juvenile reaches twenty-five (25) years of age.\nSECTION 2 (TCA 39-17-1307(i)): (1) A person eighteen (18) years of age or older but less than twenty-five (25) years of age who possesses a firearm commits an offense if the person was adjudicated delinquent on or after October 1, 2023, for an act which, if committed by an adult, would have constituted one (1) or more of the following offenses:\nSECTION 2 (TCA 39-17-1307(i)): (2) An offense under subdivision (i)(1) is a Class A misdemeanor.\nSECTION 3 (TCA 39-17-1316(a)(1)): (A) A person appropriately licensed by the federal government may stock and sell firearms to persons desiring firearms; however, sales are prohibited to persons who:\nSECTION 3 (TCA 39-17-1316(a)(1)(A)(v)): (v) Are eighteen (18) years of age or older but less than twenty-five (25) years of age and have been adjudicated delinquent on or after October 1, 2023, for an act which, if committed by an adult, would have constituted one (1) or more of the following offenses:"
+}

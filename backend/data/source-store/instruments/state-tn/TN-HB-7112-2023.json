@@ -1,0 +1,45 @@
+{
+  "id": "TN-HB-7112-2023",
+  "scope": "state:tn",
+  "title": "HB7112 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 33; Title 37; Title 38 and Title 39, relative to mental health orders of protection.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB7112&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB7112.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Justin Pearson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5d56470c-fb82-42f7-82e3-d28bf74ace47"
+    },
+    {
+      "name": "John Clemmons",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd4cbb33-0634-4c31-a466-7b282febefab"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-08-21; official copy via the Internet Archive snapshot 20260515005020 of https://www.capitol.tn.gov/Bills/113/Bill/HB7112.pdf (LegiScan doc 2838328))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-7112-2023.draft.pdf",
+      "sha256": "202acfddb8db55e2820600c5e827c0a2732b97a589545b463aabc79bdf040d20"
+    },
+    "note": "Draft (2023-08-21) as introduced; the summary line says 'As introduced'. Text is long (about 36,000 characters); quoted parts are the core order, surrender and penalty provisions. Also includes court-ordered mental health assessment, appointed counsel for the respondent, and SECTION 2 (new TCA 38-8 section) adding order filing to basic officer training. No amendments in the text read."
+  },
+  "operative_text": "SECTION 1 (new TCA 33-12-102(a)(2)): A petition for a mental health order of protection may be filed by a law enforcement officer or law enforcement agency.\nSECTION 1 (new TCA 33-12-102(b)(1)(B)): The respondent to undergo an assessment for suicidal or homicidal ideation by an evaluator who has been certified by the commissioner of mental health and substance abuse services, which must occur prior to the hearing.\nSECTION 1 (new TCA 33-12-102(c)): Upon notice and a hearing on the matter, if the court finds by clear and convincing evidence that the respondent poses a substantial likelihood of serious harm to the respondent's self or others by having in the respondent's custody or control, or by purchasing, possessing, or receiving, a firearm or any ammunition, then the court shall\nSECTION 1 (new TCA 33-12-102(c), continued after page break): issue a mental health order of protection for an appropriate period of up to one hundred eighty (180) days.\nSECTION 1 (new TCA 33-12-106(a)): Upon issuance of a mental health order of protection under this chapter, the court shall order the respondent to surrender to the local law enforcement agency all firearms and ammunition owned by the respondent or in the respondent's custody, control, or possession and any handgun carry permit issued under § 39-17-1351 or § 39-17-1366, held by the respondent.\nSECTION 1 (new TCA 33-12-110(b)): A person who has in the person's custody or control a firearm or any ammunition or who purchases, possesses, or receives a firearm or any ammunition with knowledge that the person is prohibited from doing so by an order issued under this chapter commits a Class E felony.\nSECTION 1 (new TCA 33-12-110(c)): A person who gives, sells, lends, or otherwise transfers a firearm to another, when the person knows that the person receiving the firearm is subject to a mental health order of protection commits a Class E felony.\nSECTION 3 (new TCA 38-1-801(a)): The department of safety shall create a public awareness campaign designed to educate the public about mental health orders of protection."
+}

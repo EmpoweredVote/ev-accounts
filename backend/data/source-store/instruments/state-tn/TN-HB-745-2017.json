@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-745-2017",
+  "scope": "state:tn",
+  "title": "HB0745 (110th General Assembly): As introduced, allows security guards who are employed on a part-time basis by a public institution of higher education and who are handgun carry permit holders to carry a handgun on campus in certain circumstances. - Amends TCA Title 39 and Title 49.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0745&ga=110",
+    "https://www.capitol.tn.gov/Bills/110/Bill/HB0745.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dennis Powers",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fa7182a1-54a2-473a-979f-3ee5574b2f52"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2017-02-08; official copy via the Internet Archive snapshot 20260514071854 of https://www.capitol.tn.gov/Bills/110/Bill/HB0745.pdf (LegiScan doc 1502361))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-745-2017.draft.pdf",
+      "sha256": "c339a12e88e2d668e0375b0fc3ea188d6c3961403a4f6c9b8fec21336cafb833"
+    },
+    "note": "Draft dated 2017-02-08, as introduced; replaces the definition of 'employee' in 39-17-1309(e)(11)(E)(i). No passage vote on record."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1309(e)(11)(E)(i)): (i) \"Employee\" includes: (a) All faculty, staff, and other persons who are employed on a full-time basis by a public institution of higher education; and (b) Security guards who are employed on a part-time basis by a public institution of higher education;"
+}

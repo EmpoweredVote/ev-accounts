@@ -33,7 +33,7 @@ import { join } from 'node:path';
 import { collapseBatch, collapsedRoundTripProblems, expandCollapsed, onTopic, type RosterRow } from '../lib/stage5CoderInputs.js';
 import { NEEDS_STANDING_CHECK, SCRIPT_CODER, type Stage5Code } from '../lib/stage5Code.js';
 import { checkAtIngest, finalizeCode, rungTextsFromLadder } from '../lib/stage5Ingest.js';
-import { LANE_WORDS, decideRecord, namedInRulings, seededSample, standingCheckDifferences, unitSections, wordsFor, type Lane, type RuleBill, type RuleBillRow } from '../lib/stage5RecordRule.js';
+import { LANE_WORDS, decideRecord, namedInRulings, rulingsNameText, seededSample, standingCheckDifferences, unitSections, wordsFor, type Lane, type RuleBill, type RuleBillRow } from '../lib/stage5RecordRule.js';
 import type { PersonFindings } from '../lib/sourceStore.js';
 import { STORE, instrumentIndex, instrumentTexts, parseArgs, readConfig, readPersonFindings, readRosters } from './coder-io.js';
 import { sweepHit } from './lib.js';
@@ -65,8 +65,8 @@ function plan(flags: Map<string, string[]>): number {
   const off = listed.filter((p) => !rosters.has(p));
   if (off.length) throw new Error(`not on any roster: ${off.join(', ')}`);
   const table = (JSON.parse(readFileSync(one('bill-table'), 'utf8')) as { bills: Record<string, RuleBillRow> }).bills;
-  const section = unitSections(readFileSync(one('rulings'), 'utf8'), unit);
   const prefix = unit === 'federal' ? 'US-' : `${unit.replace(/^state:/, '').toUpperCase()}-`;
+  const section = rulingsNameText(unitSections(readFileSync(one('rulings'), 'utf8'), unit), table, prefix);
   const seed = one('seed', `${name}|${config.topic_key}|${config.season}`);
   const index = instrumentIndex(store);
   const billCache = new Map<string, RuleBill | undefined>();

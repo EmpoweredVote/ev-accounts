@@ -1,0 +1,45 @@
+{
+  "id": "KY-HB-125-2026",
+  "scope": "state:ky",
+  "title": "HB125 (2026 Regular): AN ACT relating to firearms possession by domestic abusers.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/26RS/hb125.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/26RS/hb125/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "George Brown",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "35de0809-a7a8-458e-bf71-7e10743d00a1"
+    },
+    {
+      "name": "Beverly Chester-Burton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1a0c1ea9-9bde-43b9-8ebd-5c798c12cf6c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/26RS/hb125/orig_bill.pdf (LegiScan doc 3302200))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-125-2026.introduced.pdf",
+      "sha256": "77d316f25565aef0de0b9820999c18af4a07d0290fb6cccd3646643a2dbe8028"
+    },
+    "note": "Introduced text (26 RS BR 216, dated 11/18/2025); later amendments, if any, are not in the text read. Section 1 (KRS 527.010) adds definitions of domestic abuse offense, domestic violence protective order and physical force; deleted/renumbered words there are not quoted."
+  },
+  "operative_text": "Section 2 (new section of KRS Chapter 527): (1) A person is guilty of possession of a firearm by a convicted domestic abuser when the person: (a) Wantonly possesses, purchases, manufactures, or transports a firearm; and (b) Has been convicted of a domestic abuse offense in any state or federal court. (2) A person is guilty of possession of a firearm by the subject of a domestic violence protective order when the person: (a) Wantonly possesses, purchases, manufactures, or transports a firearm; and (b) Is currently subject to a domestic violence protective order. (3) Possession of a firearm by a convicted domestic abuser or the subject of a domestic violence protective order is a Class C felony.\nSection 3 (new section of KRS Chapter 527): (1) Upon every conviction for a domestic abuse offense and upon the issuance of every domestic violence protective order, the trial court or issuing court, as applicable, shall inform the offender or adverse party of the firearm prohibition in Section 2 of this Act and of the transfer requirements in this section. (2) Within twenty-four (24) hours after being informed of the firearm prohibition, a person convicted of a domestic abuse offense or restrained by a domestic violence protective order shall transfer all firearms he or she owns or possesses to: (a) The chief law enforcement officer of the city, county, urban-county government, charter county government, consolidated local government, or unified local government in which the person resides; or (b) The sheriff of the county in which the person resides.\nSection 3 (new section of KRS Chapter 527): (5) If upon motion of the attorney for the Commonwealth, the court finds probable cause to believe that a person convicted of a domestic abuse offense or restrained by a domestic violence protective order has failed to transfer any firearms in accordance with this section, the court may order a search for and the removal of all firearms at any location where the judge has probable cause to believe these firearms are located.\nSection 3 (new section of KRS Chapter 527): (8) A person convicted of a domestic abuse offense or restrained by a domestic violence protective order who does not comply with the terms of this section is guilty of a Class A misdemeanor.\nSection 4 (KRS 403.740): (4) When a domestic violence order serves to prohibit the adverse party from possessing a firearm under Section 2 of this Act, the court shall inform the adverse party of the firearm possession prohibition and the firearm transfer requirements under Section 3 of this Act.\nSection 5 (KRS 456.060): (3) When an interpersonal protective order serves to prohibit the adverse party from possessing a firearm under Section 2 of this Act, the court shall inform the adverse party of the firearm possession prohibition and the firearm transfer requirements under Section 3 of this Act."
+}

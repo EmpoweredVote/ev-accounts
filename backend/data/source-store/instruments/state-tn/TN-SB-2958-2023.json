@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2958-2023",
+  "scope": "state:tn",
+  "title": "SB2958 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 16; Title 18, Chapter 4; Title 33, Chapter 3; Title 38, Chapter 6; Title 39, Chapter 17, Part 13 and Title 68, Chapter 11, relative to the transfer of firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2958&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB2958.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Raumesh Akbari",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2a79d564-dde0-4201-a072-789554bbf6d6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-02-14; official copy via the Internet Archive snapshot 20260514151406 of https://www.capitol.tn.gov/Bills/113/Bill/SB2958.pdf (LegiScan doc 2927757))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2958-2023.draft.pdf",
+      "sha256": "4534577f0a87dc32412084e23b6753718b4086e5ed6da20c8145d75926c14692"
+    },
+    "note": "Draft as introduced (2024-02-14); no amendments in text read. Twin HB 1593 is on the same document. Short title in SECTION 1: \"Keeping our Streets Safe: Expand Background Checks Act.\" The new section's number is not printed. Sections 3-10 (TCA 16-10-213, 16-11-206, 16-15-303, 16-16-120, 18-4-103, 18-4-203, 33-3-117, 68-11-210) shorten clerk reporting deadlines to 72 hours; treated as part of the background-check subject, not a separate topic. Only a sample of those instruction sentences is quoted."
+  },
+  "operative_text": "SECTION 2 (new section, TCA Title 39, Chapter 17, Part 13): (b) A person shall not sell or transfer ownership of a firearm, or purchase or obtain ownership of a firearm, unless one (1) of the following applies:\nSECTION 2 (new section, subsection (b)(1)): The seller or transferor is a gun dealer;\nSECTION 2 (new section, subsection (b)(2)): The seller or transferor makes the sale or transfer to or through a gun dealer and obtains a receipt;\nSECTION 2 (new section, subsection (c)): Any person who intentionally violates subsection (b) commits a Class B misdemeanor and shall be fined not less than five hundred dollars ($500) nor more than ten thousand dollars ($10,000) and may be imprisoned for a period not to exceed nine (9) months. A person convicted under this section is prohibited from possessing a firearm for a period of two (2) years.\nSECTION 3 (TCA 16-10-213(b)): deleting \"as soon as practicable, but no later than the third business day\" and substituting \"within seventy-two (72) hours\".\nSECTION 7 (TCA 18-4-103(9)): deleting \"as soon as practicable but no later than thirty (30) days\" and substituting \"within seventy-two (72) hours\".\nSECTION 9 (TCA 33-3-117(a)): deleting \"the third business day\" wherever it appears and substituting \"seventy-two (72) hours\"."
+}

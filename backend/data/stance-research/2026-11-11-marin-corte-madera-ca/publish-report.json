@@ -1,0 +1,36 @@
+[
+  {
+    "full_name": "Eli Beckman",
+    "topic_key": "climate-change",
+    "value": 1,
+    "action": "review",
+    "reasons": [
+      "review-all-mode"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.cortemadera.gov/ArchiveCenter/ViewFile/Item/5962",
+      "https://www.cortemadera.gov/ArchiveCenter/ViewFile/Item/5939",
+      "https://www.cortemadera.gov/ArchiveCenter/ViewFile/Item/5938"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Fred Casissa",
+    "topic_key": "climate-change",
+    "value": 1,
+    "action": "review",
+    "reasons": [
+      "review-all-mode"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.cortemadera.gov/ArchiveCenter/ViewFile/Item/5962",
+      "https://www.cortemadera.gov/ArchiveCenter/ViewFile/Item/5939",
+      "https://www.cortemadera.gov/ArchiveCenter/ViewFile/Item/5938"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  }
+]

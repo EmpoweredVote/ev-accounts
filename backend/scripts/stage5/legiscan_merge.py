@@ -3,7 +3,11 @@ official page (--host) only when every vote or authorship of theirs on it now ha
 Cross-check each vote line against the finding's act -> legiscan/crosscheck.json: it must show 0 disagree.
 python3 -I scripts/stage5/legiscan_merge.py <batch dir> --host <official host>
 Reads legiscan/needs.json (legiscan_pairs.py) and legiscan/legiscan-evidence.csv (legiscan-evidence-lines.ts).
-Log -> legiscan-merge-log.json. Exit 1 when any vote disagrees."""
+Log -> legiscan-merge-log.json. Exit 1 when any vote disagrees.
+A vote or authorship with no LegiScan line keeps its official page and is listed in legiscan/no-line.json
+([name, LegiScan URL, act, instrument]): the verifier cannot read that page, so the person is usually held later.
+South Carolina, 2026-11-14: 101 pairs had no line (a bill page named with the wrong year or number, and four people who
+go by a middle name) and only a warning in the log said so."""
 import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir; _args.py sits beside this file
 from _args import opt, opts, positional
 import csv, json, re
@@ -41,9 +45,11 @@ for e in ev:
 w = csv.DictWriter(open(f'{B}/research.csv', 'w', newline=''), fieldnames=cols); w.writeheader(); w.writerows(rows)
 w = csv.DictWriter(open(f'{B}/evidence.csv', 'w', newline=''), fieldnames=['full_name', 'topic_key', 'source_url', 'snippet', 'snippet_index']); w.writeheader(); w.writerows(ev)
 json.dump(log, open(f'{B}/legiscan-merge-log.json', 'w'), indent=1); json.dump(cross, open(f'{B}/legiscan/crosscheck.json', 'w'), indent=1)
+noline = sorted({(n, v['url'], v['act'], v.get('instrument', '')) for n, vs in needs.items() for v in vs if (n, v['url']) not in have})
+json.dump(noline, open(f'{B}/legiscan/no-line.json', 'w'), indent=1)
 left = sorted({(r['full_name'], r[c]) for r in rows for c in uc if HOST in r[c]})
 dis = [c for c in cross if not c['agree']]
 print('evidence rows', len(ev), 'lines cited', sum(1 for l in lines if (l['full_name'], l['source_url']) in cited), 'official uncited', sum('uncite' in x[1] for x in log),
-      'cross-checked', len(cross), 'disagree', len(dis), 'official still cited', len(left))
+      'cross-checked', len(cross), 'disagree', len(dis), 'official still cited', len(left), 'no LegiScan line', len(noline))
 [print(c) for c in dis]; [print('official left:', *x) for x in left]
 sys.exit(1 if dis else 0)

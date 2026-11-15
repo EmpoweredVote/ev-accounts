@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1953-2017",
+  "scope": "state:tn",
+  "title": "SB1953 (110th General Assembly): As introduced, enacts the \"2018 Second Amendment Protections Act.\" - Amends TCA Title 39, Chapter 11; Title 39, Chapter 17, Part 13 and Title 70.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1953&ga=110",
+    "https://www.capitol.tn.gov/Bills/110/Bill/SB1953.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mark Pody",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b333d211-ed1a-46fb-b947-427d2942acd0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2018-01-29; official copy via the Internet Archive snapshot 20260514024939 of https://www.capitol.tn.gov/Bills/110/Bill/SB1953.pdf (LegiScan doc 1708583))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1953-2017.draft.pdf",
+      "sha256": "2288f9cd0ea992db70e2b81b116182695b0614a3f057cd1b227197ce789f0b97"
+    },
+    "note": "Draft (as filed) dated 2018-01-29; twin House Bill 1833. SECTIONS 3-5 swap \"defense(s)\" for \"exception(s)\" in 39-17-1308; SECTION 3 quote is the instruction sentence. The long title also lists Title 70 (wildlife), but no Title 70 text is amended in the bill. Draft text: adopted amendments are not in the text read and could change it."
+  },
+  "operative_text": "SECTION 2 (new TCA 39-17-1307(g)(1)): It is an exception to the application of subsection (a) that the person:\nSECTION 2 (new TCA 39-17-1307(g)(1)(A)): Is legally in possession of the firearm; and\nSECTION 2 (new TCA 39-17-1307(g)(1)(B)): Is not prohibited from purchasing a firearm in the person's state of residence.\nSECTION 2 (new TCA 39-17-1307(g)(2)): For purposes of this part, title 50, chapter 3, and title 70, a person who meets the elements of subdivision (g)(1) is entitled to the same defenses and exceptions as a person who has been issued a handgun carry permit pursuant to § 39-17-1351.\nSECTION 3 (TCA 39-17-1308(a)): is amended by deleting the language \"a defense\" and substituting instead the language \"an exception\".\nSECTION 6 (TCA 39-11-106(a)(11)): is amended by deleting the language \"readily convertible to that use\" and substituting instead the language \"readily convertible to that use, but does not include an antique firearm as defined in 18 U.S.C. § 921(a)(16)\"."
+}

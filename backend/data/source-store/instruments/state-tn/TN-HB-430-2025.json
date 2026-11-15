@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-430-2025",
+  "scope": "state:tn",
+  "title": "HB0430 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4; Title 8; Title 10; Title 13; Title 16; Title 29; Title 33; Title 36; Title 37; Title 38; Title 39; Title 40; Title 47; Title 49; Title 50; Title 55; Title 58; Title 65; Title 68 and Title 70, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=HB0430&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/HB0430.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Justin Jones",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "40bad041-2a76-48fa-a65b-2bb1763dfaeb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2025-01-29; official copy via LegiScan getBillText doc 3089032)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-430-2025.draft.pdf",
+      "sha256": "79e527e51a560642ff96d3506aaa8944b5f50ab57260c0833afffef61bc438e8"
+    },
+    "note": "Draft (as filed) dated 2025-01-29; summary says \"As introduced\", no passage vote listed, so no adopted amendments are missing. \"Protect Kids Not Guns Act\". Twin document HB0430/SB0500 (SB0500). The caption lists 20 titles but the text amends only TCA Title 39, Chapter 17, Part 13. Section 4 deletes 39-17-1307(g) (lawful-handgun carry exception, per companion bills). Quotes shortened to the main operative sentences; the order's petition, hearing, and ex parte procedures (39-17-1367(b)-(n)), return of firearms (-1369), transfer (-1370), database entry (-1371) and forms (-1375) are not all quoted."
+  },
+  "operative_text": "SECTION 2 (new TCA 39-17 Part 13): (a) It is an offense to store or keep a firearm in any place unless the firearm is secured in a locked container or equipped with a tamper-resistant mechanical lock or other safety device that is properly engaged so as to render the firearm inoperable by any person other than the owner or another lawfully authorized user.\nSECTION 2 (new TCA 39-17 Part 13): (b) A violation of subsection (a) is a Class A misdemeanor.\nSECTION 3 (new TCA 39-17 Part 13): (1) Except as provided in subdivision (b)(2), it is an offense for a person to possess a large-capacity magazine, regardless of the date on which the magazine was acquired.\nSECTION 3 (new TCA 39-17 Part 13): (1) Except as provided in subdivision (c)(2), it is an offense for a person to manufacture or cause to be manufactured, import, keep for sale, or offer or expose for sale, or to give, lend, buy, or receive a large-capacity magazine.\nSECTION 4 (TCA 39-17-1307): deleting subsection (g).\nSECTION 6 (new TCA 39-17 Part 13): (b) A person shall not sell or transfer ownership of a firearm, or purchase or obtain ownership of a firearm, unless one (1) of the following applies:\nSECTION 6 (new TCA 39-17 Part 13): (2) The seller or transferor makes the sale or transfer to or through a gun dealer and obtains a receipt;\nSECTION 7 (new TCA 39-17-1367(d)): Upon notice and a hearing on the matter, if the court finds by a preponderance of the evidence that the respondent poses a risk of causing bodily injury to the respondent's self or others by having in the respondent's custody or control, or by purchasing, possessing, or receiving, a firearm or any ammunition, then the court shall issue an extreme risk protection order for an appropriate period of up to twelve (12) months.\nSECTION 7 (new TCA 39-17-1368(a)): Upon issuance of an extreme risk protection order pursuant to § 39-17-1367, including a temporary ex parte extreme risk protection order, the court shall order the respondent to surrender to the local law enforcement agency all firearms and ammunition owned by the respondent or in the respondent's custody, control, or possession, except as provided in § 39-17-1370, and any handgun carry permit issued under § 39-17-1351 or § 39-17-1366, held by the respondent.\nSECTION 7 (new TCA 39-17-1372(b)): A person who has in the person's custody or control a firearm or any ammunition or who purchases, possesses, or receives a firearm or any ammunition with knowledge that the person is prohibited from doing so by an order issued pursuant to § 39-17-1367 commits a Class E felony."
+}

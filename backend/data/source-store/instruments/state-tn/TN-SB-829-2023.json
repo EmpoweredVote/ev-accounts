@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-829-2023",
+  "scope": "state:tn",
+  "title": "SB0829 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Section 10-7-504 and Title 39, Chapter 17, Part 13, relative to a voluntary waiver of firearm rights.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0829&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB0829.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-01-31; crossfiled twin https://www.capitol.tn.gov/Bills/113/Bill/HB1308.pdf is the same printed document (it names SENATE BILL 829); copied from TN-HB-1308-2023.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1308-2023.draft.pdf",
+      "sha256": "6ccaf575a3e9f2f8fb2484a1abdbeeaf404b7663c0e0fc2a9afebc8c819a5af1"
+    },
+    "note": "Draft as filed (2023-01-31); text covers House and Senate twins. Summary says 'As introduced'; no passage-vote amendments in text. Also amends 39-17-1316(d)(1) so the background check looks for a waiver, and makes waiver records confidential. The caption cites TCA 10-7-504, but the text read has no separate amendment of it. Text read is the crossfiled twin's document."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-13 section): (a) A person may file a voluntary waiver of firearm rights form with the clerk of the circuit court in the county of the person's residence. The filing of a voluntary waiver of firearm rights form prohibits the person executing the form from purchasing or possessing a firearm while the waiver is in effect.\nSECTION 1 (new TCA 39-17-13 section): (b) No sooner than seven (7) calendar days after filing a voluntary waiver of firearm rights, the person may file a revocation of the voluntary waiver of firearm rights with the clerk of the circuit court in which the voluntary waiver of firearm rights form was filed.\nSECTION 3 (TCA 39-17-1316(q)): (4) It is an offense to sell or transfer a firearm to a person knowing that the person has executed a voluntary waiver of firearm rights pursuant to Section 1 that has not been revoked."
+}

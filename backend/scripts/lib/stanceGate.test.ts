@@ -276,10 +276,18 @@ describe('instrument-not-cited (C68) — spacing/case variants match', () => {
     ['H.B. 1001', 'HB1001'],
     ['HB1001', 'H.B. 1001'],
     ['HB 1001', 'HB1001'],
+    // South Carolina: a coder's "HB 3594" against the LegiScan line's "H3594" (one-letter store type).
+    ['HB 3594', 'H3594'],
+    ['H 3594', 'HB 3594'],
   ])('reasoning "%s" matches a snippet spelled "%s"', (reasoningForm, snippetForm) => {
     const row = { ...good, reasoning: `Voted YES on ${reasoningForm} (2025), which expands the public option.` };
     const customEv = [{ ...ev[0], snippet: snippetWith(snippetForm) }];
     expect(ids(row, { evidence: customEv })).not.toContain('instrument-not-cited');
+  });
+  it('a different number still fires after the House "B" is dropped', () => {
+    const row = { ...good, reasoning: 'Voted YES on HB 3594 (2024), which expands the public option.' };
+    const customEv = [{ ...ev[0], snippet: snippetWith('H3595') }];
+    expect(ids(row, { evidence: customEv })).toContain('instrument-not-cited');
   });
   // Philadelphia prints the SAME bill as "Bill #250568" and "Bill No. 250568". Matching the whole
   // phrase would canonicalize those to "bill250568" and "billno250568" and raise the finding on a row

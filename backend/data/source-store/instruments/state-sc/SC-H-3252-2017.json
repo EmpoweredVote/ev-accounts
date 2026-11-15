@@ -1,0 +1,39 @@
+{
+  "id": "SC-H-3252-2017",
+  "scope": "state:sc",
+  "title": "H3252 (122nd General Assembly): Green tip ammunition",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3252&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/3252_20161215.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Wendell Gilliard",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75dffc0a-f084-4dfb-a2a7-6c81094bb0c2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2016-12-15; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/3252_20161215.htm (LegiScan doc 1440103))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3252-2017.introduced.htm",
+      "sha256": "2d34e0912538051d8d0a8b19cb1b37d0d040bdaac2367a01ed7621eb01d98d94"
+    },
+    "note": "Introduced text, 2016-12-15."
+  },
+  "operative_text": "Section 1 (new Section 16-23-525): (A) It is unlawful for a person to use, transport, manufacture, possess, distribute, sell, or buy green tip ammunition.\nSection 1 (new Section 16-23-525): (B) A person who violates the provisions of this section is guilty of a felony and, upon conviction, must be imprisoned not more than five years or fined not more than five thousand dollars, or both."
+}

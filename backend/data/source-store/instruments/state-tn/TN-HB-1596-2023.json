@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-1596-2023",
+  "scope": "state:tn",
+  "title": "HB1596 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 38, Chapter 6 and Section 39-17-1316, relative to the transfer of firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1596&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB1596.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Justin Pearson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5d56470c-fb82-42f7-82e3-d28bf74ace47"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-02-14; official copy via LegiScan getBillText doc 2927903)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1596-2023.draft.pdf",
+      "sha256": "ef0159b92c0bb73a004a47b921cfac03e025473211c4b0933ef466455ebaded7"
+    },
+    "note": "Draft of 2024-02-14 (as introduced); amendments not in text. Caption also mentions Title 38, Chapter 6, but no section in the text amends it. Senate twin is SB 2961."
+  },
+  "operative_text": "SECTION 2 (TCA 39-17-1316(c)): (2) Except with respect to transactions between persons licensed as dealers under 18 U.S.C. § 923, a gun dealer shall not deliver a firearm to a purchaser until fifteen (15) business days after compliance with subdivision (c)(1).\nSECTION 1 (short title): This act is known and may be cited as the \"Gun Purchase Waiting Period Act.\""
+}

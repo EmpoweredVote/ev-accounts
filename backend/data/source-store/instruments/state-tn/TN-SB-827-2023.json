@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-827-2023",
+  "scope": "state:tn",
+  "title": "SB0827 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13; Title 49, Chapter 6 and Title 55, Chapter 10, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0827&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB0827.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-01-30; crossfiled twin's official copy via the Internet Archive snapshot 20260514143701 of https://www.capitol.tn.gov/Bills/113/Bill/HB0977.pdf (it names SENATE BILL 827; own link https://www.capitol.tn.gov/Bills/113/Bill/SB0827.pdf not archived))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-827-2023.draft.twin.pdf",
+      "sha256": "abcb24a8f8e12cf012dd06a3a35f03d4ca5057a5a8a70aeeb76c9529cd78f129"
+    },
+    "note": "Draft (2023-01-30), as introduced; no amendments in the text read. Text is the crossfiled twin's printed document that names both numbers. Summary says it also lets officers carry while under the influence of alcohol or controlled substances; that comes from repealing TCA 39-17-1311 and 39-17-1350(c) (SECTIONS 4-5), not a separate quoted sentence. SECTION 7 deletes the second sentence of 39-17-1359(f) and SECTION 8 deletes 49-6-3051(b)(2)(H); not quoted."
+  },
+  "operative_text": "SECTION 2 (TCA 39-17-1309(c)(1)(A)): It is an offense for any person to possess or carry, whether openly or concealed, any firearm, not used solely for instructional or school-sanctioned ceremonial purposes, in a school that offers any of the grades kindergarten through twelve (K-12).\nSECTION 2 (TCA 39-17-1309(c)(2)): If the school property was properly posted according to subsection (d), then a violation of this subsection (c) is a Class B misdemeanor.\nSECTION 2 (TCA 39-17-1309(e)(12)): Any person who is authorized to carry a weapon under federal law.\nSECTION 2 (TCA 39-17-1309(g)): Subsections (b) and (c) do not apply to universities, college campuses, and other public or private non-K-12 educational institutions or property.\nSECTION 2 (TCA 39-17-1309(g)): The possession or carrying of a firearm by an adult who is not prohibited from carrying a firearm is not prohibited by this section on the property of any university, college campus, or other public or private non-K-12 educational institution.\nSECTION 2 (TCA 39-17-1309(e)(8)): Persons possessing a handgun, who are authorized to carry the handgun pursuant to § 39-17-1351 or § 39-17-1366, while within or on a public park, natural area, historic park, nature trail, campground, forest, greenway, waterway, or other similar public place;\nSECTION 3 (TCA 39-17-1310): Tennessee Code Annotated, Section 39-17-1310, is amended by deleting the section in its entirety.\nSECTION 4 (TCA 39-17-1311): Tennessee Code Annotated, Section 39-17-1311, is amended by deleting the section in its entirety.\nSECTION 5 (TCA 39-17-1350): Tennessee Code Annotated Section 39-17-1350, is amended by deleting subsection (c) in its entirety, and is further amended in subsections (a) and (g), by deleting \"subsection (c), federal law,\" and substituting instead \"federal law\"."
+}

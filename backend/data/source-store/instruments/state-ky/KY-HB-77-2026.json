@@ -1,0 +1,63 @@
+{
+  "id": "KY-HB-77-2026",
+  "scope": "state:ky",
+  "title": "HB77 (2026 Regular): AN ACT relating to ex parte orders.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/26RS/hb77.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/26RS/hb77/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "T.J. Roberts",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "307fc639-dd7a-42af-8e22-abf26543c04b"
+    },
+    {
+      "name": "Josh Calloway",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436293ef-ed3f-46b3-9bb6-809b6828eaf8"
+    },
+    {
+      "name": "Candy Massaroni",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "02f41f03-79b5-4592-a81a-e51dac5a3e2c"
+    },
+    {
+      "name": "Felicia Rabourn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a39b09c3-23b4-4bfb-a001-8a9a2adfb6cd"
+    },
+    {
+      "name": "Nancy Tate",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6254ac29-9ee7-4cd9-ba98-114bc3c1a92b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/26RS/hb77/orig_bill.pdf (LegiScan doc 3302104))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-77-2026.introduced.pdf",
+      "sha256": "ec31bbc4d01d0355a000d0ef7ce815f608cb0daf7aaeed2fb5c82a1903bd71fc"
+    },
+    "note": "Introduced version (26 RS BR 246); later amendments not in text read. No votes recorded. Act is titled the Red Flag Repeal Act of 2026 (Section 4). Other bracketed edits in Sections 2 and 3 are unrelated wording changes."
+  },
+  "operative_text": "Section 1 (new section of KRS 237.060 to 237.090): Notwithstanding any other provision of law, ex parte orders issued in the Commonwealth shall not prohibit a person from possessing, purchasing, selling, or otherwise transferring firearms, ammunition, firearm accessories, holsters, or firearm storage devices, nor compel a person to surrender his or her firearms, ammunition, firearm accessories, holsters, or firearm storage devices.\nSection 2 (KRS 403.730): (2)(b) An order issued under this subsection shall not prohibit a person from possessing, purchasing, selling, or otherwise transferring firearms, ammunition, firearm accessories, holsters, or firearm storage devices, nor compel a person to surrender his or her firearms, ammunition, firearm accessories, holsters, or firearm storage devices.\nSection 3 (KRS 456.040): (2)(b) An order issued under this subsection shall not prohibit a person from possessing, purchasing, selling, or otherwise transferring firearms, ammunition, firearm accessories, holsters, or firearm storage devices, nor compel a person to surrender his or her firearms, ammunition, firearm accessories, holsters, or firearm storage devices."
+}

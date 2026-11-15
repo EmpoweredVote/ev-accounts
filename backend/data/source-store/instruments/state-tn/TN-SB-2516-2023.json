@@ -1,0 +1,51 @@
+{
+  "id": "TN-SB-2516-2023",
+  "scope": "state:tn",
+  "title": "SB2516 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4, Chapter 54, relative to the Tennessee Firearms Freedom Act.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2516&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB2516.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kerry Roberts",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ccd45ab8-3a99-434b-8cb9-a0b05291d16a"
+    },
+    {
+      "name": "Paul Bailey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "310955ff-3e44-4032-879f-b3b46026aadb"
+    },
+    {
+      "name": "Janince Bowling",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e50369f1-10eb-467e-8604-b94675565631"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-03-26; crossfiled twin https://www.capitol.tn.gov/Bills/113/Bill/HB2689.pdf is the same printed document (it names SENATE BILL 2516); copied from TN-HB-2689-2023.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2689-2023.draft.pdf",
+      "sha256": "81f5d0050ef536f2b93f6d9c6b6a6135a152b14de4142fb7b5adf6ad0671a89d"
+    },
+    "note": "Draft dated 2024-03-26 (as filed). No votes recorded. Subsections (b), (c), (e), (f) and (h) (civil action venue, official oppression, injunctions, standing, other remedies) are not quoted. Rights protected are those under Tenn. Const. art. I, sec. 26 and the Second Amendment; the text does not say a higher law requires the step."
+  },
+  "operative_text": "SECTION 1 (new section in TCA Title 4, Chapter 54): (a) It is a violation of an individual's civil rights for a government entity, official, employee, or agent to infringe upon or deny an individual the full exercise and enjoyment of any right recognized and protected by Article I, Section 26, of the Tennessee Constitution or any right recognized and protected by the Second Amendment to the United States Constitution.\nSECTION 1 (new section in TCA Title 4, Chapter 54): (d) A government entity, official, employee, or agent who violates this section is liable for: (1) The actual damages caused by the violation or statutory damages of two hundred fifty dollars ($250) per each day of the violation, whichever is greater; (2) Notwithstanding § 29-39-104, punitive damages to be determined by the trier of fact; and (3) Reasonable attorney's fees and court costs.\nSECTION 1 (new section in TCA Title 4, Chapter 54): (g) A knowing or willful violation of this section by a government official constitutes grounds for ouster under title 8, chapter 47."
+}

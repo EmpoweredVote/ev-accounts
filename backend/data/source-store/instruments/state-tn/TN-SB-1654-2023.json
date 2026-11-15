@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1654-2023",
+  "scope": "state:tn",
+  "title": "SB1654 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1654&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB1654.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Heidi Campbell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bca9c890-1fd4-4ab8-9ffe-a6fac4eb2d32"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-09; official copy via the Internet Archive snapshot 20260514144656 of https://www.capitol.tn.gov/Bills/113/Bill/SB1654.pdf (LegiScan doc 2872930))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1654-2023.draft.pdf",
+      "sha256": "26125296605524be7b44a95147f2f60e160898abbaa515944de6e38da829d335"
+    },
+    "note": "Draft as filed (2024-01-09), Internet Archive copy of the official PDF; names House bill 1713 as twin. Effective July 1, 2024. Wording differs slightly from the 2023 HB 1439 draft."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1316(s)): (1) It is an offense to knowingly give, sell, lend, deliver, or otherwise transfer a firearm to a person when the transferor knows or reasonably should know that the person receiving the firearm is prohibited from purchasing or possessing a firearm under state or federal law.\nSECTION 1 (TCA 39-17-1316(s)): (2) A violation of this subsection (s) is a Class A misdemeanor."
+}

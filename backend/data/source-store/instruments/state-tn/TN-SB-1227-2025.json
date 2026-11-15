@@ -1,0 +1,45 @@
+{
+  "id": "TN-SB-1227-2025",
+  "scope": "state:tn",
+  "title": "SB1227 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4, Chapter 7; Title 8; Title 10; Title 33; Title 36; Title 37; Title 38; Title 39; Title 40; Title 49; Title 50; Title 57; Title 67; Title 68 and Title 70, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB1227&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/SB1227.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Adam Lowe",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0ac16142-df41-42b7-87c5-5018bfbe4fca"
+    },
+    {
+      "name": "John Stevens",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2025-02-06; official copy via the Internet Archive snapshot 20260513163618 of https://www.capitol.tn.gov/Bills/114/Bill/SB1227.pdf (LegiScan doc 3106399))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1227-2025.draft.pdf",
+      "sha256": "80609564c5bb17b1c004d86e3ab7e24b288ea8c8f8e1f15182770c8653375ea5"
+    },
+    "note": "Draft as introduced; adopted amendments are not in the text read and could change it. Sections 3, 5-36 swap \"handgun carry permit\" for \"firearm carry permit\" across other titles (omitted). Copy dated 2025-02-06."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1351): Tennessee Code Annotated, Section 39-17-1351, is amended by deleting \"handgun\" wherever it appears and substituting \"firearm\" and by deleting \"handguns\" wherever it appears and substituting \"firearms\".\nSECTION 2 (TCA 39-17-1351(r)(1)): (1) A facially valid handgun permit, firearms permit, weapons permit, or license issued by another state shall be valid in this state according to its terms and shall be treated as if it is a firearm carry permit issued by this state.\nSECTION 4 (TCA 39-17-1366): Tennessee Code Annotated, Section 39-17-1366, is amended by deleting \"handgun\" wherever it appears and substituting \"firearm\" and by deleting \"handguns\" wherever it appears and substituting \"firearms\".\nSECTION 37 (TCA 39-17-1351(z)): (z) Beginning July 1, 2025, at 12:01 a.m., all valid permits issued prior to that date pursuant to this section are deemed to be enhanced firearm carry permits and the department is not required to reissue permits.\nSECTION 38 (TCA 39-17-1366(p)): (p) Beginning July 1, 2025, at 12:01 a.m., all valid permits issued prior to that date pursuant to this section are deemed to be concealed firearm carry permits and the department is not required to reissue permits."
+}

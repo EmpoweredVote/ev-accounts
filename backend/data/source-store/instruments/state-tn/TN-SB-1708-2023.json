@@ -1,0 +1,63 @@
+{
+  "id": "TN-SB-1708-2023",
+  "scope": "state:tn",
+  "title": "SB1708 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13; Title 49, Chapter 1 and Title 49, Chapter 50, relative to private schools.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1708&ga=113",
+    "https://publications.tnsosfiles.com/acts/113/pub/pc0738.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    },
+    {
+      "name": "Edward Jackson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0d5fb0c4-9234-4cb8-8911-7e8de2467729"
+    },
+    {
+      "name": "Adam Lowe",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0ac16142-df41-42b7-87c5-5018bfbe4fca"
+    },
+    {
+      "name": "Paul Rose",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c5c76374-faa1-4a78-bee2-6e2b5ca171d7"
+    },
+    {
+      "name": "John Stevens",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2024-04-26; official copy via the Internet Archive snapshot 20260514152713 of https://publications.tnsosfiles.com/acts/113/pub/pc0738.pdf (LegiScan doc 2990767))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1708-2023.chaptered.pdf",
+      "sha256": "8720f6c09f301df39dfea49b3a62d02fe81f204a6e4c2cab6c49d47d7af9cc40"
+    },
+    "note": "Public Chapter 738, signed 2024-04-26 (the House bill's print; the Senate bill was substituted). Widens the private-school handgun carry policy in 49-50-803 and the 39-17-1309(e)(9) exemption from K-12 to pre-K-12 schools. The text does not print the handgun carry policy itself; the quoted sections change its wording only. Quote spaces \"§ 49-6-3001(c)\" cleanly; the OCR text prints \"§ 49-6-3001 (c)\". Text is the House bill print (Senate bill was substituted)."
+  },
+  "operative_text": "SECTION 1 (TCA 49-50-803): is amended by deleting \"K-12\" wherever it appears in the section.\nSECTION 2 (TCA 49-50-803, new subsection (f)): (f) As used in this section, \"private school\" means a private school as defined in § 49-6-3001(c) that serves students in any of the grades pre-kindergarten through twelve (pre-K-12).\nSECTION 3 (TCA 39-17-1309(e)(9)): is amended by deleting \"K-12\"."
+}

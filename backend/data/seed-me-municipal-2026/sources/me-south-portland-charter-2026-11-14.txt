@@ -1,0 +1,30 @@
+City of South Portland, Maine -- CITY CHARTER
+Retrieved 2026-11-14 from https://www.southportland.gov/DocumentCenter/View/1449/Charter
+(linked as "Charter" from https://www.southportland.gov/408/Charter-Code-of-Ordinances).
+Fetched with plain curl and a full browser header set; HTTP 200; PDF read with pdftotext -raw.
+Control: 146,601 characters extracted, 9 occurrences of "mayor".
+
+NOTE: library.municode.com serves this charter from a JavaScript shell and returns ~7.5 KB of
+nothing to curl. The city's own DocumentCenter copy is a plain PDF and needs no browser.
+
+=== HOW MANY COUNCILLORS ===
+
+  "shall be and are vested in one body of 7 members which shall constitute and be called the city council, and shall exercise its powers in the manner herein provided."
+
+  "The city council shall be composed of 7 members, each of whom shall be elected by the registered voters of the entire city."
+
+Seven. Our schema held EIGHT offices for this council.
+
+⚠ Note the second half of that sentence: every one of the seven -- including the five that carry
+a district -- is elected by the voters of the ENTIRE CITY. The districts are residency
+qualifications, not separate electorates. So an address returning all seven is correct here, which
+is ROSTERS.md R7 answered for this one city.
+
+=== WHO ELECTS THE MAYOR (ROSTERS.md R9's test) ===
+
+  "Immediately after being sworn into office, at the meeting of the city council, as prescribed in section 210, the council shall elect, by majority vote of the entire council, one of its members for the ensuing year as a chairman of the council, and the city council may fill, for the unexpired term, any vacancy in the office of chairman that may occur."
+
+  "The chairman of the council shall also be designated as mayor but shall have no powers or duties in such capacity other than those expressly recited in this section, and shall receive no compensation other than as set forth in section 209."
+
+The mayor is the council's own chairman, chosen by the council from among its members for one
+year, with no powers beyond presiding and ceremony. It is a rotating role, not a seat on a ballot.

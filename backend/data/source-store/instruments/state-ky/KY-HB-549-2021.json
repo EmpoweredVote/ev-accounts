@@ -1,0 +1,61 @@
+{
+  "id": "KY-HB-549-2021",
+  "scope": "state:ky",
+  "title": "HB549 (2021 Regular): AN ACT relating to firearms.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/21RS/hb549.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/21RS/hb549/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Savannah Maddox",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e17f04a4-35d6-4e64-8006-30381e9ff6bd"
+    },
+    {
+      "name": "Lynn Bechler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jennifer Henson Decker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7a8c600a-9e2e-44cc-93ea-887b7cb2f765"
+    },
+    {
+      "name": "Derek Lewis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b2ce051f-aa22-4506-9d6c-16ee48ae6ab1"
+    },
+    {
+      "name": "Ed Massey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/21RS/hb549/orig_bill.pdf (LegiScan doc 2305336))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-549-2021.introduced.pdf",
+      "sha256": "dad7d9933d1f5990947b5b6fbde74ec5664b207c6bd80d7681227f7ac845f2c0"
+    },
+    "note": "Introduced text (21 RS BR 1796); no passage vote on record. Existing KRS 237.104 text on revoking or seizing guns in an emergency is reprinted and regrouped as items (a) and (b); not quoted."
+  },
+  "operative_text": "Section 1 (KRS 237.104): No person, unit of government, or governmental organization shall, during a period of disaster or emergency as specified in KRS Chapter 39A or at any other time:\nSection 1 (KRS 237.104): (c) Require registration of a firearm, firearm part, firearm accessory, ammunition, ammunition component, ammunition-reloading equipment and supplies, or any deadly weapon or dangerous instrument; (d) Suspend or revoke a license to carry a concealed firearm or other deadly weapon issued pursuant to KRS 237.110, except as expressly authorized under KRS 237.110; (e) Refuse to accept an application for a license to carry a concealed firearm or other deadly weapon, provided the application has been properly completed in accordance with KRS 237.110; (f) Close or limit the operating hours of any entity engaged in the lawful sale or servicing of any firearm, firearm part, firearm accessory, ammunition, ammunition component, ammunition-reloading equipment and supplies, or any deadly weapon or dangerous instrument, unless the closure or limitation of hours applies equally to all forms of commerce within the authority of the person, unit of government, or governmental organization ordering the closure or limitation of hours to regulate; (g) Close or limit the operating hours of any indoor or outdoor shooting range; or (h) Place quantity limitations or restrictions on any entity regarding the lawful sale or servicing of any firearm, firearm part, firearm accessory, ammunition, ammunition component, ammunition-reloading equipment and supplies, or any deadly weapon or dangerous instrument.\nSection 1 (KRS 237.104): An individual injured by any act in violation of this section shall have a civil cause of action in Circuit Court to enjoin further violations, and to recover the actual damages sustained, together with the costs of the lawsuit, including reasonable attorney's fees."
+}

@@ -1,0 +1,367 @@
+{
+  "id": "KY-SB-75-2025",
+  "scope": "state:ky",
+  "title": "SB75 (2025 Regular): AN ACT relating to concealed deadly weapons.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/25RS/sb75.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/25RS/sb75/bill.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Aaron Reed",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0f7609c6-1285-4b00-aeca-17343045ebfe"
+    },
+    {
+      "name": "Gary Boswell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f313c2e0-0852-4238-a48d-6bde751bb6f9"
+    },
+    {
+      "name": "Jared Carpenter",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "32c23ded-b2c6-401a-b37c-7cbe3b3cd728"
+    },
+    {
+      "name": "Shelley Frommeyer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ac6a69c3-4321-41d9-8402-903cb7aca569"
+    },
+    {
+      "name": "Jason Howell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0c3f4128-922d-41fe-b268-bd7d811e46e6"
+    },
+    {
+      "name": "Scott Madon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bcd854eb-0eb8-4f21-8737-cc2435c615cc"
+    },
+    {
+      "name": "Stephen Meredith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c362a1f6-01b9-4355-a4bd-bbd1bb7fb1fb"
+    },
+    {
+      "name": "Robert Mills",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0e7af788-d735-46ec-9cd2-cd3818e002fd"
+    },
+    {
+      "name": "Mike Nemes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75c40115-8134-412b-9160-5515c53d2689"
+    },
+    {
+      "name": "Matt Nunn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c236893a-126e-45ae-83db-ae62be4f0554"
+    },
+    {
+      "name": "Steve Rawlings",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "73fd5b49-9255-4051-a43a-de04156e4c3f"
+    },
+    {
+      "name": "Craig Richardson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6ddd5288-b0db-4d1e-8cf4-56d8669e7b0d"
+    },
+    {
+      "name": "Brandon Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2ed0f349-f4fc-4d82-ab9e-c7c3f51f4731"
+    },
+    {
+      "name": "Robert Stivers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d68a846f-498d-4e14-a9f3-130e85849681"
+    },
+    {
+      "name": "Brandon Storm",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "95fceb14-a0c3-43e5-a0a0-338b5d3b3e7b"
+    },
+    {
+      "name": "Lindsey Tichenor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c8e6e36c-5308-4d71-8901-38de70b8fb7b"
+    },
+    {
+      "name": "Robin Webb",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "62a3692f-806e-4fa4-bb98-33a30e8c7c04"
+    },
+    {
+      "name": "Steve West",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e1b781c8-8cb2-4254-9f34-51fb567a4852"
+    },
+    {
+      "name": "Phillip Wheeler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "eb11bd91-1800-49b1-81ef-8afca0ab4b87"
+    },
+    {
+      "name": "Gex Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78eb69f5-9449-4fdd-879b-c771364549d2"
+    },
+    {
+      "name": "Mike Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ef0a5595-1825-4f06-9833-91c4f3cfdde2"
+    },
+    {
+      "name": "George Wise",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7fe409b9-8c3b-4318-9e74-18284d203736"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-03-11",
+      "body": "KY Senate",
+      "motion": "Senate: Third Reading RSN# 3461",
+      "kind": "roll-call",
+      "yes": 26,
+      "no": 11,
+      "absent": 1,
+      "note": "LegiScan roll call 1515192",
+      "members": [
+        {
+          "name": "David Givens",
+          "vote": "nay",
+          "politician_id": "ef8e611e-e0d7-46ba-99e4-c99d57a305a1"
+        },
+        {
+          "name": "Jimmy Higdon",
+          "vote": "yea",
+          "politician_id": "12d07bd4-98e4-4cfb-aec9-1b6f50ae5ca8"
+        },
+        {
+          "name": "Gerald Neal",
+          "vote": "nay",
+          "politician_id": "3009b2ae-1c46-474e-b917-fd8730f60992"
+        },
+        {
+          "name": "Brandon Smith",
+          "vote": "absent",
+          "politician_id": "2ed0f349-f4fc-4d82-ab9e-c7c3f51f4731"
+        },
+        {
+          "name": "Robert Stivers",
+          "vote": "yea",
+          "politician_id": "d68a846f-498d-4e14-a9f3-130e85849681"
+        },
+        {
+          "name": "Robin Webb",
+          "vote": "yea",
+          "politician_id": "62a3692f-806e-4fa4-bb98-33a30e8c7c04"
+        },
+        {
+          "name": "Julie Raque Adams",
+          "vote": "nay",
+          "politician_id": "04d835c3-c1a6-4d62-8d68-f806e842128c"
+        },
+        {
+          "name": "Mike Nemes",
+          "vote": "yea",
+          "politician_id": "75c40115-8134-412b-9160-5515c53d2689"
+        },
+        {
+          "name": "Jared Carpenter",
+          "vote": "yea",
+          "politician_id": "32c23ded-b2c6-401a-b37c-7cbe3b3cd728"
+        },
+        {
+          "name": "Mike Wilson",
+          "vote": "yea",
+          "politician_id": "ef0a5595-1825-4f06-9833-91c4f3cfdde2"
+        },
+        {
+          "name": "Christian McDaniel",
+          "vote": "yea",
+          "politician_id": "3fc12c7a-9762-4219-b5b7-e5f4979760e2"
+        },
+        {
+          "name": "Reginald Thomas",
+          "vote": "nay",
+          "politician_id": "f77c1ca3-d540-49f0-b7ca-e1efce3b4db3"
+        },
+        {
+          "name": "George Wise",
+          "vote": "yea",
+          "politician_id": "7fe409b9-8c3b-4318-9e74-18284d203736"
+        },
+        {
+          "name": "Danny Carroll",
+          "vote": "nay",
+          "politician_id": "869d742b-d988-4fdc-9e94-41da1a00c2ae"
+        },
+        {
+          "name": "Steve West",
+          "vote": "yea",
+          "politician_id": "e1b781c8-8cb2-4254-9f34-51fb567a4852"
+        },
+        {
+          "name": "Rick Girdler",
+          "vote": "yea",
+          "politician_id": "4dacfa0f-1e78-4c40-99aa-999385f73bd9"
+        },
+        {
+          "name": "Stephen Meredith",
+          "vote": "yea",
+          "politician_id": "c362a1f6-01b9-4355-a4bd-bbd1bb7fb1fb"
+        },
+        {
+          "name": "Robert Mills",
+          "vote": "yea",
+          "politician_id": "0e7af788-d735-46ec-9cd2-cd3818e002fd"
+        },
+        {
+          "name": "Phillip Wheeler",
+          "vote": "yea",
+          "politician_id": "eb11bd91-1800-49b1-81ef-8afca0ab4b87"
+        },
+        {
+          "name": "Brandon Storm",
+          "vote": "yea",
+          "politician_id": "95fceb14-a0c3-43e5-a0a0-338b5d3b3e7b"
+        },
+        {
+          "name": "Jason Howell",
+          "vote": "yea",
+          "politician_id": "0c3f4128-922d-41fe-b268-bd7d811e46e6"
+        },
+        {
+          "name": "Karen Berg",
+          "vote": "nay",
+          "politician_id": "e9e43630-0799-4769-8c3a-06a946fbc9c8"
+        },
+        {
+          "name": "David Yates",
+          "vote": "nay"
+        },
+        {
+          "name": "Donald Douglas",
+          "vote": "nay",
+          "politician_id": "cfe729b2-264e-4f93-8961-1f0c4721a0d1"
+        },
+        {
+          "name": "Keturah Herron",
+          "vote": "nay",
+          "politician_id": "78c9e7c6-4796-49b7-8e1a-1220b48e2adb"
+        },
+        {
+          "name": "Gary Boswell",
+          "vote": "nay",
+          "politician_id": "f313c2e0-0852-4238-a48d-6bde751bb6f9"
+        },
+        {
+          "name": "Steve Rawlings",
+          "vote": "yea",
+          "politician_id": "73fd5b49-9255-4051-a43a-de04156e4c3f"
+        },
+        {
+          "name": "Lindsey Tichenor",
+          "vote": "yea",
+          "politician_id": "c8e6e36c-5308-4d71-8901-38de70b8fb7b"
+        },
+        {
+          "name": "Gex Williams",
+          "vote": "yea",
+          "politician_id": "78eb69f5-9449-4fdd-879b-c771364549d2"
+        },
+        {
+          "name": "Amanda Mays Bledsoe",
+          "vote": "yea",
+          "politician_id": "2e786a12-3e89-47c3-aa8c-7183e3b7798c"
+        },
+        {
+          "name": "Matthew Deneen",
+          "vote": "yea",
+          "politician_id": "3429ecef-5857-496b-9de6-85412b5caaaa"
+        },
+        {
+          "name": "Shelley Frommeyer",
+          "vote": "yea",
+          "politician_id": "ac6a69c3-4321-41d9-8402-903cb7aca569"
+        },
+        {
+          "name": "Casey Chambers Armstrong",
+          "vote": "nay",
+          "politician_id": "220beec0-b596-4685-895b-2d19ebb03246"
+        },
+        {
+          "name": "Greg Elkins",
+          "vote": "yea",
+          "politician_id": "45f0223f-8b1b-4586-8610-5e717f250b46"
+        },
+        {
+          "name": "Scott Madon",
+          "vote": "yea",
+          "politician_id": "bcd854eb-0eb8-4f21-8737-cc2435c615cc"
+        },
+        {
+          "name": "Matt Nunn",
+          "vote": "yea",
+          "politician_id": "c236893a-126e-45ae-83db-ae62be4f0554"
+        },
+        {
+          "name": "Aaron Reed",
+          "vote": "yea",
+          "politician_id": "0f7609c6-1285-4b00-aeca-17343045ebfe"
+        },
+        {
+          "name": "Craig Richardson",
+          "vote": "yea",
+          "politician_id": "6ddd5288-b0db-4d1e-8cf4-56d8669e7b0d"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Engrossed, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/25RS/sb75/bill.pdf (LegiScan doc 3166030))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-75-2025.engrossed.pdf",
+      "sha256": "3ef2d05214fc2164abced541f1d7fc7ef0cf9aab93c159fe0259fc9fdf102ece"
+    },
+    "note": "Engrossed print (25 RS SB 75/GA), not the enrolled text; later amendments are not in the text read. Senate passed it 26-11 on 2025-03-11 (third reading). In both quotes, age 21 is struck and 18 added. Section 2 is the reprinted KRS 237.110; the license-age item sits under subsection (4)'s eligibility list."
+  },
+  "operative_text": "Section 1 (KRS 237.109): (1) Persons age eighteen (18) or older, and otherwise able to lawfully possess a firearm, may carry concealed firearms or other concealed deadly weapons without a license in the same locations as persons with valid licenses issued under KRS 237.110.\nSection 2 (KRS 237.110): (4) (c) Is eighteen (18) years of age or older;"
+}

@@ -30,7 +30,7 @@ beforeEach(() => {
 describe('LA non-contribution schedules', () => {
   it('only la_socrata Schedule B and I are non-contributions, and a missing schedule is not one', () => {
     expect(NON_CONTRIBUTION_SQL).toContain("COALESCE(c.data_source, '') = 'la_socrata'");
-    expect(NON_CONTRIBUTION_SQL).toContain("COALESCE(c.raw_record->>'schedule', '') IN ('B', 'I')");
+    expect(NON_CONTRIBUTION_SQL).toContain("COALESCE(COALESCE(c.src_schedule, c.raw_record->>'schedule'), '') IN ('B', 'I')");
   });
 
   it('donations and refunds both leave them out', () => {
@@ -39,7 +39,7 @@ describe('LA non-contribution schedules', () => {
   });
 
   it('matching funds are la_socrata Schedule I paid by a City body or described as matching / public financing', () => {
-    expect(PUBLIC_MATCHING_FUNDS_SQL).toContain("c.raw_record->>'schedule' = 'I'");
+    expect(PUBLIC_MATCHING_FUNDS_SQL).toContain("COALESCE(c.src_schedule, c.raw_record->>'schedule') = 'I'");
     expect(PUBLIC_MATCHING_FUNDS_SQL).toContain("'(matching|public financ)'");
     expect(PUBLIC_MATCHING_FUNDS_SQL).toContain("'(city of los a|los angeles city)'");
   });

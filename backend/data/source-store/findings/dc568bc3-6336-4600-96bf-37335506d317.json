@@ -1,0 +1,117 @@
+{
+  "politician_id": "dc568bc3-6336-4600-96bf-37335506d317",
+  "findings": [
+    {
+      "id": "e6e46c41289736f9fe1314043fb98783745943908cdb8d446e8389678e58535b",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3650&session=126&summary=B",
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3650-2026",
+      "act": "yea",
+      "motion": "House: Concur In Senate Amendments",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC House, House: Concur In Senate Amendments, 2026-04-23: yea (tally 106–0); census gate: near-unanimous.",
+      "subjects": [
+        "tiered fines and prison for shooting into occupied buildings or vehicles",
+        "intent wording for discharge offence",
+        "hunting-accident carve-out"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2026-04-22; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3650_20260422.htm (LegiScan doc 3423948))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3650-2026.amended.htm",
+          "sha256": "0e42b5bae5c0cd7e1886aca0ee3a4d66a9db5e0282a4f3e8a3d380abd3504217"
+        }
+      }
+    },
+    {
+      "id": "04eee904b623c243134690dbaade0edb13c0e95e25486c69f625a15f7b3329a4",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0136&session=126&summary=B",
+      "date": "2026-01-14",
+      "date_precision": "day",
+      "instrument_id": "SC-S-136-2026",
+      "act": "yea",
+      "motion": "House: Override Veto By The Governor",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC House, House: Override Veto By The Governor, 2026-01-14: yea (tally 112–0); census gate: near-unanimous.",
+      "subjects": [
+        "dismiss pending handgun-possession charges from before permitless carry",
+        "no civil suit over the arrest after dismissal"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2025-05-07; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/136_20250507.htm (LegiScan doc 3231297))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-136-2026.amended.htm",
+          "sha256": "40e53d7ae3a5f8da35cb38ebd5e3cc683e93f493dbb1a441ec504dc03c4c69f7"
+        }
+      }
+    },
+    {
+      "id": "5581d6592514c574a31f45da809373f8884f96caf35ceb4c69b810e91947c419",
+      "kind": "own-words",
+      "url": "https://votegregford.com/priorities",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Greg believes South Carolina doesn't have a firearms problem — it has a criminal-accountability problem rooted in a judicial system that fails to hold offenders responsible.",
+      "note": "Campaign site priorities page, 2nd Amendment section (headed 'Non-Negotiable'), which also quotes the Second Amendment text. Says the state's issue is holding offenders accountable, not firearms. Exact publication date not shown; the page refers to the 3 Nov 2026 election.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "crime blamed on offenders not on guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:56:04.137Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "status check: member page https://www.scstatehouse.gov/member.php?code=0605681746 names him as District 98 representative, elected in the 6 Jan 2026 special election; the campaign site says he is on the 3 Nov 2026 ballot",
+        "On the Record (0 appearances, 0 candidate meetings)",
+        "campaign site https://votegregford.com and https://votegregford.com/priorities (read)",
+        "legislature member page https://www.scstatehouse.gov/member.php?code=0605681746 (read; sponsored-bill list needs a form search, not reviewed)",
+        "blocked: https://ballotpedia.org/Greg_Ford_(South_Carolina) (403)",
+        "https://ivoterguide.com/candidate/66000/race/24686/election/1375 (voter guide: both gun questions unanswered; lead only)",
+        "https://thecandidate.com/states/sc/legislature/house/98/greg-ford (nothing on the subject)",
+        "two news searches on name plus gun words (nothing on the subject)",
+        "not reviewed: https://abcnews4.com/news/local/gallery/special-election-meet-house-district-98-candidate-greg-ford-south-carolina-statehouse-2026?photo=1",
+        "not reviewed: We The Palmetto interview, Dec 2025"
+      ],
+      "found": 1,
+      "at": "2026-11-14T17:56:04.137Z",
+      "by": "source-collector"
+    }
+  ]
+}

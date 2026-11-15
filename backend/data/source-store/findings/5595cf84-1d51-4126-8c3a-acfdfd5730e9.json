@@ -44,6 +44,67 @@
         "fetched_at": "2026-11-10T23:17:03.825Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "a2c5bb31a7281065d9a443b077245eda32e0aa9d9dc43298d5ef5914d1fc0f50",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3650&session=126&summary=B",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3650-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC Senate, Senate: 2nd Reading, 2026-04-15: yea (tally 45–0); census gate: near-unanimous.",
+      "subjects": [
+        "tiered fines and prison for shooting into occupied buildings or vehicles",
+        "intent wording for discharge offence",
+        "hunting-accident carve-out"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2026-04-22; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3650_20260422.htm (LegiScan doc 3423948))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3650-2026.amended.htm",
+          "sha256": "0e42b5bae5c0cd7e1886aca0ee3a4d66a9db5e0282a4f3e8a3d380abd3504217"
+        }
+      }
+    },
+    {
+      "id": "62950c7537794e18ba904b5572b4d0541c42734c4a06c0ca43900a6ef6c04059",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0136&session=126&summary=B",
+      "date": "2025-05-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-136-2026",
+      "act": "yea",
+      "motion": "Senate: To Override The Veto",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC Senate, Senate: To Override The Veto, 2025-05-28: yea (tally 40–2); census gate: near-unanimous.",
+      "subjects": [
+        "dismiss pending handgun-possession charges from before permitless carry",
+        "no civil suit over the arrest after dismissal"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2025-05-07; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/136_20250507.htm (LegiScan doc 3231297))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-136-2026.amended.htm",
+          "sha256": "40e53d7ae3a5f8da35cb38ebd5e3cc683e93f493dbb1a441ec504dc03c4c69f7"
+        }
+      }
     }
   ],
   "searches": [
@@ -87,6 +148,33 @@
       "found": 2,
       "at": "2026-11-10T23:17:03.825Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment general statements",
+        "dismissal of gun possession charges",
+        "shooting into homes"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://www.scstatehouse.gov/member.php?code=1999431789 (Senate member page: Senator Jeff Zell, District 36, Calhoun, Clarendon, Orangeburg and Sumter; sitting senator; nothing on the subject)",
+        "campaign site: https://www.jeffzell.com redirects to a landing page with no readable content; nothing on the subject",
+        "https://ballotpedia.org/Jeff_Zell and https://ballotpedia.org/Jeffrey_Zell: no gun content found in fetched text",
+        "https://fastdemocracy.com/bill-search/sc/legislators/SCL000326: profile and committees only (Judiciary, Medical Affairs, Fish Game and Forestry, Family and Veterans' Services); nothing on the subject",
+        "https://www.scstatehouse.gov/sess126_2025-2026/bills/440.htm and bills/136.htm: Zell not named as a sponsor",
+        "https://www.scstatehouse.gov/votehistory.php Senate roll calls for S136 and H3650: confirmed the two votes already on file",
+        "web news search on name plus gun words (two searches): no quotes or sponsorships by Zell found",
+        "not reviewed: bill-by-bill sponsor search on scstatehouse.gov (search page returned nothing usable)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T17:52:52.309Z",
+      "by": "source-collector"
     }
   ]
 }

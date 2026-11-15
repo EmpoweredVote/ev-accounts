@@ -1,0 +1,51 @@
+{
+  "id": "TN-HB-7064-2023",
+  "scope": "state:tn",
+  "title": "HB7064 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 38; Title 39, Chapter 17, Part 13; Title 49; Chapter 142 of the Public Acts of 2023 and Chapter 149 of the Public Acts of 2023, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB7064&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB7064.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chris Todd",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+    },
+    {
+      "name": "Rusty Grills",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "70aa67e5-8df0-4dee-a034-1ea4f3470c57"
+    },
+    {
+      "name": "Kip Capley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "91c9fb1a-7df5-418b-9713-a2db4acd49a6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-08-21; official copy via the Internet Archive snapshot 20260514172320 of https://www.capitol.tn.gov/Bills/113/Bill/HB7064.pdf (LegiScan doc 2838177))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-7064-2023.draft.pdf",
+      "sha256": "2fc4312e0ad61fec4993e36b4dc41b19eb33b96900d3d46649834f1e81dd0911"
+    },
+    "note": "Draft (2023-08-21), as introduced; no amendments in the text read. Effective Oct. 1, 2023. SECTIONS 5-7 and 11 (deleting 39-17-1309(e)(12)(B) and (e)(13)(B), rewriting 39-17-1350(c)(1), cross-reference change) are not quoted."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1309(e)(1)(B)): (B) Active duty and retired members of the armed forces of the United States possessing or carrying a handgun in any public school building or bus, on any public school campus, grounds, recreation area, athletic field, or any other property owned, operated, or while in use by any public board of education, school, college or university board of trustees, regents or directors for the administration of any public educational institution, unless the person is otherwise prohibited from possessing or carrying a handgun by state or federal law;\nSECTION 2 (TCA 39-17-1309(e)(4)(B)): (B) Officers of the state, or of any county, city, or town, charged with the enforcement of the laws of this state, whether on-duty or off-duty, possessing or carrying a handgun, or retired law enforcement officers possessing or carrying a handgun who are authorized to carry the handgun pursuant to §§ 38-8-116 and 39-17-1315, while in any public school building or bus, on any public school campus, grounds, recreation\nSECTION 2 (TCA 39-17-1309(e)(4)(B), continued after page break): area, athletic field, or any other property owned, operated, or while in use by any public board of education, school, college or university board of trustees, regents, or directors for the administration of any public educational institution;\nSECTION 3 (TCA 39-17-1309(e)(8)(A)): Persons possessing or carrying a handgun, who are authorized to carry the handgun pursuant to § 39-17-1351, while in any public school building or bus, on any public school campus, grounds, recreation area, athletic field, or any other property owned, operated, or while in use by any public board of education, school, college or university board of trustees, regents, or directors for the administration of any public educational institution.\nSECTION 4 (TCA 39-17-1309(e)(10), (e)(11)): Tennessee Code Annotated, Section 39-17-1309, is amended by deleting subdivisions (e)(10) and (e)(11).\nSECTION 8 (TCA 49-6-815): Tennessee Code Annotated, Section 49-6-815, is amended by deleting the section.\nSECTION 9 (TCA 49-6-816): Tennessee Code Annotated, Section 49-6-816, is amended by deleting the section.\nSECTION 10 (Chapter 149 of the Public Acts of 2023, Section 1): Section 1 of Chapter 149 of the Public Acts of 2023, is amended by deleting the section in its entirety."
+}

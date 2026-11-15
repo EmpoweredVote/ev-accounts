@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-2336-2023",
+  "scope": "state:tn",
+  "title": "HB2336 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4; Title 38 and Title 39, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2336&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB2336.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Justin Pearson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5d56470c-fb82-42f7-82e3-d28bf74ace47"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-30; official copy via LegiScan getBillText doc 2908565)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2336-2023.draft.pdf",
+      "sha256": "c23f06db7a9301dad512b2a07ace1150496ba16db1434653dfef0d5b50003f4c"
+    },
+    "note": "Draft as filed (version dated 2024-01-30); summary says 'As introduced' and no passage vote is recorded, so no amendments are missing. Caption lists Title 4 and Title 38, but the text read contains only the Title 39 section."
+  },
+  "operative_text": "SECTION 1 (new TCA section in Title 39, Chapter 17, Part 13): (1) An eighty percent (80%) frame or eighty percent (80%) receiver shall not be manufactured, distributed, sold, or transferred on or after July 1, 2024, unless a manufacturer's serial number is prominently stamped on the item or on a piece of metal securely affixed to the item. (2) It is the responsibility of the manufacturer to ensure that such an item is properly supplied with a serial number. (c) Notwithstanding another law to the contrary, a person who manufactures, distributes, sells, or transfers an eighty percent (80%) frame or eighty percent (80%) receiver without a serial number prominently stamped on the item or on a piece of metal securely affixed thereto commits a Class A misdemeanor, punishable only by a fine of five thousand dollars ($5,000)."
+}

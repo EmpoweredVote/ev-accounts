@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1579-2023",
+  "scope": "state:tn",
+  "title": "SB1579 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39 and Title 40, relative to theft of firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1579&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB1579.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Adam Lowe",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0ac16142-df41-42b7-87c5-5018bfbe4fca"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-11-30; own version, official copy via the Internet Archive snapshot 20260514143345 of https://www.capitol.tn.gov/Bills/113/Bill/SB1579.pdf; the last listed version was not archived)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1579-2023.draft.pdf",
+      "sha256": "65701ed972f604016fd4dae81dcd4c5e6a1f80caaf9ddc2573e76491b08ef30a"
+    },
+    "note": "Draft of 2023-11-30 (as introduced); amendments not in text. Section 2 deletes existing (a)(2) and substitutes (A) and (B); quote is (B)."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1316(a)(1)): is amended by deleting the language \"as prohibited by § 39-17-315,\" and substituting \"as prohibited by § 39-17- 315, who have been convicted of felony theft of a firearm on or after the effective date of this act,\".\nSECTION 2 (TCA 39-17-1316(a)(2)(B)): A person convicted of felony theft of a firearm on or after the effective date of this act is permanently prohibited from purchasing a firearm in this state, unless: (i) The person was pardoned for the offense; or (ii) The conviction has been set aside.\nSECTION 3 (TCA 39-17-1307(c)(1)): (B) The felony conviction has been expunged prior to the effective date of this act; or (C) Prior to the effective date of this act, the person's civil rights have been restored pursuant to title 40, chapter 29, and the restoration order does not specifically prohibit the person from possessing firearms."
+}

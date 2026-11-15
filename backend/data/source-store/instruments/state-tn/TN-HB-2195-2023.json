@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-2195-2023",
+  "scope": "state:tn",
+  "title": "HB2195 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2195&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB2195.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bo Mitchell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "094afd56-f074-4fdc-a053-1482ea501fc8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-30; official copy via LegiScan getBillText doc 2907746)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2195-2023.draft.pdf",
+      "sha256": "879447d027aa214ece9e1c731339389dc6a3fcb7bd08f164c6ca780ec4bf34f5"
+    },
+    "note": "Draft as filed (version dated 2024-01-30); summary says 'As introduced' and no passage vote is recorded, so no amendments are missing. Section 5 deletes the (a)(4) reference from subsection (d). The definition is shortened here: the named-model lists in (A)-(D) are in the text. The Class E felony in the state's summary comes from the existing 39-17-1302 penalty; the bill adds no penalty text."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1301, new definition): \"Assault weapon\" means: (A) (i) A selective-fire firearm capable of fully automatic, semiautomatic, or burst fire at the option of the user or any of the following specified semiautomatic firearms:\nSECTION 1 (TCA 39-17-1301, new definition, (E)): (E) Any semiautomatic firearm regardless of whether such firearm is listed in subdivisions ( )(A) - (D) if the firearm is: (ii) A semiautomatic, centerfire rifle that has a fixed magazine with the ability to accept more than ten (10) rounds; (iii) A semiautomatic, centerfire rifle that has an overall length of less than thirty inches (30\"); (vii) A semiautomatic shotgun that has the ability to accept a detachable magazine; or (viii) A shotgun with a revolving cylinder;\nSECTION 2 (TCA 39-17-1302(a)): (4) An assault weapon;\nSECTION 3 (TCA 39-17-1302(c)): ( ) If the weapon is an assault weapon as described in subdivision (a)(4), then the person possessed the weapon prior to July 1, 2024;\nSECTION 4 (TCA 39-17-1302, new subsection): (1) A person in possession of an assault weapon prior to July 1, 2024, must apply for a certificate of possession by July 1, 2025. (4) A person who obtains ownership by bequest or intestate succession of an assault weapon for which a certificate of possession has been issued under this section shall, within ninety (90) days: (A) Render the assault weapon permanently inoperable; (B) Sell the assault weapon to a licensed gun dealer; or (C) Remove the assault weapon from this state.\nSECTION 5 (TCA 39-17-1302(d)): Tennessee Code Annotated, Section 39-17-1302(d), is amended by deleting the language \"subdivisions (a)(3) or (a)(4)\" and substituting instead the language \"subdivision (a)(3)\"."
+}

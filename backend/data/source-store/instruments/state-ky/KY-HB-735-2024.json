@@ -1,0 +1,69 @@
+{
+  "id": "KY-HB-735-2024",
+  "scope": "state:ky",
+  "title": "HB735 (2024 Regular): AN ACT relating to background checks on the sale or transfer of firearms.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/24RS/hb735.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/24RS/hb735/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Keturah Herron",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "78c9e7c6-4796-49b7-8e1a-1220b48e2adb"
+    },
+    {
+      "name": "Adrielle Camuel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "70eb3ed5-99dd-49cf-a7e2-aa518bc0b9cd"
+    },
+    {
+      "name": "Beverly Chester-Burton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1a0c1ea9-9bde-43b9-8ebd-5c798c12cf6c"
+    },
+    {
+      "name": "Daniel Grossberg",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b1fa718a-2649-4220-ac3d-4cb60f2baf1c"
+    },
+    {
+      "name": "Nima Kulkarni",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "968bf1ff-367f-4e84-983c-030fcdc2d796"
+    },
+    {
+      "name": "Rachel Roarx",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2eca95dc-cc11-4275-bd57-52025489bf63"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/24RS/hb735/orig_bill.pdf (LegiScan doc 2941523))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-735-2024.introduced.pdf",
+      "sha256": "cbae810ba372aff50a32dcb0279ae88f2f44d6705bf9d78dc09418fa5c2cd845"
+    },
+    "note": "Introduced print (24 RS BR 1236); no passage vote."
+  },
+  "operative_text": "Section 1 (new section of KRS Chapter 237): (1) In addition to any other requirement of state or federal law, all sales, exchanges, or transfers of firearms shall be conducted in accordance with this section unless the sale, exchange, or transfer is: (a) Conducted by a licensed importer, licensed manufacturer, or licensed dealer, as those terms are defined in 18 U.S.C. secs. 921 and 922, when the sale, exchange, or transfer is conducted pursuant to that person's federal firearms license; or (b) Between spouses, parents, children, and stepchildren in the same immediate family. (2) Before any sale, exchange, or transfer pursuant to this section, a national instant background check shall be completed by a dealer who consents to conduct the check, and upon completion of the background check, the dealer shall complete a form developed by the Department of Kentucky State Police, and available for download through the department's website, that identifies and confirms that the check was performed. (3) All dealers shall maintain a record of transactions and background checks conducted pursuant to this section, and the records shall be maintained on the premises identified and described in the dealer's license, and shall be available at all reasonable hours for inspection by any peace officer acting within the scope of his or her duties. (4) A dealer may require that any background check conducted pursuant to this section be subject to a fee not to exceed ten dollars ($10) per transaction. (5) Any record produced pursuant to this section and any transmission thereof to any government agency shall not be considered a public record for purposes of the Kentucky Open Records Act, KRS 61.870 to 61.884. (6) Any person who knowingly violates this section shall be guilty of a Class A misdemeanor."
+}

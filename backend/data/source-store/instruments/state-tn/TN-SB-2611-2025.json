@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2611-2025",
+  "scope": "state:tn",
+  "title": "SB2611 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 38 and Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB2611&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/SB2611.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul Bailey",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "310955ff-3e44-4032-879f-b3b46026aadb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2026-02-02; own version, official copy via the Internet Archive snapshot 20260513162326 of https://www.capitol.tn.gov/Bills/114/Bill/SB2611.pdf; the last listed version was not archived)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2611-2025.draft.pdf",
+      "sha256": "59d4fde7f19ff4f96c19af3f6b31154121575fbecad765f4fd260df8cd67896f"
+    },
+    "note": "Draft dated 2026-02-02 (as filed). The 39-17-1351 quote of subsection (a) is split at a page footer. The last listed version was not archived; later amendments are not in the text read. Subsection (b) requires 40 hours initial and 8 hours annual POST-certified training."
+  },
+  "operative_text": "SECTION 1 (new section in TCA Title 39, Chapter 17, Part 13): (a) A current or former chancery, circuit, or appellate court judge, who is an enhanced handgun carry permit holder, pursuant to § 39-17-1351, and has completed\nSECTION 1 (continuing, new section in TCA Title 39, Chapter 17, Part 13): the training required in subsection (b) is authorized to carry a firearm in the same manner and locations that a law enforcement officer may carry a firearm under § 39-17- 1350.\nSECTION 1 (new section in TCA Title 39, Chapter 17, Part 13): (c) The administrative office of the courts shall develop a uniform identification system clearly identifying that a judge is qualified under this section to carry a firearm. A judge authorized to carry a firearm under this section shall carry the identification at all times the judge is carrying a firearm."
+}

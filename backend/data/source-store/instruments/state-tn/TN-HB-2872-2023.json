@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-2872-2023",
+  "scope": "state:tn",
+  "title": "HB2872 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 16; Title 39 and Title 40, relative to mental health findings.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2872&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB2872.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Caleb Hemmer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b4c5da13-3088-4510-bf9b-f14d467d3038"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-31; official copy via LegiScan getBillText doc 2909717)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2872-2023.draft.pdf",
+      "sha256": "c11e69fa25253e6d8c54d6a6969c5c1ab07ad849671b1f0a823dca5e5c02cee4"
+    },
+    "note": "Draft as filed 2024-01-31; HB 2872 and SB 1869 share this document. Sections 2-4 repeat section 1's wording for TCA 16-11-206, 16-15-303 and 16-16-120; section 5 does so for the definition in TCA 39-17-1301(1)(B). Section 8 amends TCA 39-17-1316(q). Takes effect July 1, 2024. No amendments in the text read."
+  },
+  "operative_text": "SECTION 1 (TCA 16-10-213(a)(1)(B)): (B) A finding of insanity or that a person is incompetent to stand trial by a court in a criminal proceeding; or\nSECTION 6 (TCA 39-17-1307(h)(1)(C)): Tennessee Code Annotated, Section 39-17-1307(h)(1)(C), is amended by deleting the subdivision in its entirety.\nSECTION 7 (TCA 39-17-1307, new subsection (i)): (1) A person commits an offense who possesses a firearm and has been adjudicated as a mental defective, judicially committed to or hospitalized in a mental institution pursuant to title 33, or had a court appoint a conservator for the person by reason of a mental defect. (2) An offense under subdivision (i)(1) is a Class A misdemeanor.\nSECTION 8 (TCA 39-17-1316(q)(4)): (4) It is an offense for a person to knowingly purchase or attempt to purchase a firearm if the person has been judicially committed to a mental institution or adjudicated as a mental defective."
+}

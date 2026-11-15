@@ -1,0 +1,41 @@
+{
+  "id": "SC-S-1136-2017",
+  "scope": "state:sc",
+  "title": "S1136 (122nd General Assembly): Principals; provide after consultation with qualified person",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=1136&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/1136_20180322.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karl Allen",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7211e547-bf02-4c10-b1e4-e6d9382d2419"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "healthcare: SECTION 1 (new Section 59-63-1510) and SECTION 2 (Section 44-24-90(B)) — principals petition for a child's mental-health examination and involuntary admission, with school staff consultation and immunity"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2018-03-22; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/1136_20180322.htm (LegiScan doc 1767206))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-1136-2017.introduced.htm",
+      "sha256": "47ba588b786ca7ad387106f68b34fcdd7a0b9a98482d2ebd44d1692165f1c306"
+    },
+    "note": "Introduced text, as filed; no passage vote recorded in the data. The bill title in the data refers to principals' consultation with a qualified person."
+  },
+  "operative_text": "SECTION 3 (Section 44-24-140(B)): Within ten days of the court determining that a child is in need of judicial admission pursuant to this section, the court shall report the name and other identifying information of the child to SLED, which must upon receipt transmit the information to the National Instant Criminal Background Check System in accordance with Article 10, Chapter 31, Title 23. A child who is determined to be in need of judicial admission pursuant to this section is considered to have been adjudicated as a mental defective for purposes of Article 10, Chapter 31, Title 23, and is entitled to all rights and privileges provided in that article, including the right to petition the court pursuant to Section 23-31-1030 to remove any prohibitions relating to access, possession, or transport of firearms or ammunition ordered by the court pursuant to Section 23-31-1040."
+}

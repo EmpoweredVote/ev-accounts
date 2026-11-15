@@ -1,0 +1,41 @@
+{
+  "id": "SC-S-191-2021",
+  "scope": "state:sc",
+  "title": "S0191 (124th General Assembly): Clerks and magistrates report to SLED case dispositions",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0191&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/191_20201209.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Greg Hembree",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "308cba89-7a88-43a3-b0cf-3e57edec254a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-transparency: SECTION 1 (Section 14-17-325), SECTION 2 (new Section 22-1-200), SECTION 3 (new Section 14-25-250) — clerks, magistrates and municipal judges must report the disposition of every criminal case to SLED within ten days, not only gun cases"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2020-12-09; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/191_20201209.htm (LegiScan doc 2220424))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-191-2021.introduced.htm",
+      "sha256": "2cef1633f4593d6dbbbbdefa3219f3fca2d41714bcdb2a8d9551035f2a26c8ae"
+    },
+    "note": "Introduced 2020-12-09; no passage vote in the data. Section 1 changed the case-disposition deadline from thirty days (struck) to ten days, weekends and holidays excluded (the 10-day disposition reporting is not quoted). Judgment call on multi: the all-cases disposition reporting is general criminal-records reporting."
+  },
+  "operative_text": "SECTION 1 (Section 14-17-325): (B) The clerk of court shall report to the State Law Enforcement Division, within forty-eight hours, the issuance of any: (1) restraining orders; (2) orders of protection; (3) orders preventing a person from possessing a firearm; (4) convictions related to or orders issued to prevent acts of domestic violence against another person; (5) orders issued related to the stalking, intimidation, or harassment of another person; or (6) orders for bond with any limitations listed in this section.\nSECTION 2 (new Section 22-1-200): (B) Magistrates shall report to the State Law Enforcement Division, within forty-eight hours, the issuance of any: (1) restraining orders; (2) orders of protection; (3) orders preventing a person from possessing a firearm; (4) convictions related to or orders issued to prevent acts of domestic violence against another person; (5) orders issued or convictions related to, or to prevent, the stalking, intimidation, or harassment of another person; or (6) orders for bond with any limitations listed in this section.\nSECTION 3 (new Section 14-25-250): (B) A municipal judge shall report to the State Law Enforcement Division, within forty-eight hours, the issuance of any: (1) restraining orders; (2) orders of protection; (3) orders preventing a person from possessing a firearm; (4) convictions related to or orders issued to prevent acts of domestic violence against another person; (5) convictions related to or orders issued to prevent, the stalking, intimidation, or harassment of another person; or (6) orders for bond with any limitations listed in this section.\nSECTION 4 (new Section 23-1-250): (A) Each law enforcement agency must report to the State Law Enforcement Division within twenty-four hours: (1) the filing of an order of protection, restraining order, or any order or report relating to an incident of domestic violence; (2) any incident in which a person may be prohibited from obtaining or possessing a firearm by state or federal law."
+}

@@ -1,0 +1,125 @@
+{
+  "id": "TN-HB-446-2021",
+  "scope": "state:tn",
+  "title": "HB0446 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 38 and Title 39, relative to firearm laws.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0446&ga=112",
+    "https://publications.tnsosfiles.com/acts/112/pub/pc0444.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Todd Warner",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0a90ac77-c426-4f4e-add8-f5454c42229f"
+    },
+    {
+      "name": "Bruce Griffey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rusty Grills",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "70aa67e5-8df0-4dee-a034-1ea4f3470c57"
+    },
+    {
+      "name": "Bryan Terry",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "155630a5-d1d1-4b1b-81da-748b81b41d32"
+    },
+    {
+      "name": "Robin Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kent Calfee",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Debra Moody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5fbea991-5a0d-4695-9b78-06700eb9ff3f"
+    },
+    {
+      "name": "Clay Doggett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9a9c3029-794a-4cb5-aa7e-342e9b480603"
+    },
+    {
+      "name": "Kirk Haston",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e9d96a57-9348-4828-b95c-d819eecf1915"
+    },
+    {
+      "name": "Rush Bricken",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e02758-1839-4d89-8a1b-26b9aeda22d5"
+    },
+    {
+      "name": "Chris Todd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+    },
+    {
+      "name": "Terri Lynn Weaver",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jay Reedy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4e0eefb1-6a4f-4004-be8d-432a7131b475"
+    },
+    {
+      "name": "Rick Eldridge",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "58be867d-b7c3-4105-9757-55d4abe59756"
+    },
+    {
+      "name": "Mark Cochran",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b254c419-7168-458e-8a74-8d7e0dfa650d"
+    },
+    {
+      "name": "Tim Hicks",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7ea75c1f-f04c-42ac-8b06-7a17bcfb8d9a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2021-05-17; official copy via LegiScan getBillText doc 2398051)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-446-2021.chaptered.pdf",
+      "sha256": "b6e82e3cf04106be947d65ecbaffa336ebbf82a944b6cd9a6e9a70277562377e"
+    },
+    "note": "Public Chapter 444 (2021-05-17), the law as enacted; House and Senate twins share this text (SB 557 substituted for HB 446). Section 2 also has parallel (a)(2) and (b)(1)-(2) on personnel, property and international law or treaties; Section 4 adds a cross-reference to 39-17-1314(b)(4)."
+  },
+  "operative_text": "SECTION 2 (TCA 38-3-115(a)-(b)): (a)(1) On or after July 1, 2021, public funds of this state, or any political subdivision of this state, shall not be allocated to the implementation, regulation, or enforcement of any federal law, executive order, rule, or regulation regulating the ownership, use, sale, or possession of firearms, ammunition, or firearm accessories, if the expenditure of public funds would result in the violation of another Tennessee statute, Tennessee common law, or the Constitution of Tennessee.\nSECTION 3 (TCA 38-3-115, new subsection): A violation of this section by a state or local government entity may be reviewed by the office of the attorney general and reporter and the general assembly and may result in the entity's loss of funding from the state for the fiscal year following the violation."
+}

@@ -1,0 +1,254 @@
+{
+  "id": "KY-SB-333-2026",
+  "scope": "state:ky",
+  "title": "SB333 (2026 Regular): AN ACT relating to grants for body armor.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/26RS/sb333.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/26RS/sb333/bill.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Brandon Storm",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "95fceb14-a0c3-43e5-a0a0-338b5d3b3e7b"
+    },
+    {
+      "name": "Danny Carroll",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "869d742b-d988-4fdc-9e94-41da1a00c2ae"
+    },
+    {
+      "name": "Matthew Deneen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3429ecef-5857-496b-9de6-85412b5caaaa"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2026-03-13",
+      "body": "KY Senate",
+      "motion": "Senate: Third Reading RSN# 3925",
+      "kind": "roll-call",
+      "yes": 38,
+      "no": 0,
+      "absent": 0,
+      "note": "LegiScan roll call 1662481",
+      "members": [
+        {
+          "name": "David Givens",
+          "vote": "yea",
+          "politician_id": "ef8e611e-e0d7-46ba-99e4-c99d57a305a1"
+        },
+        {
+          "name": "Jimmy Higdon",
+          "vote": "yea",
+          "politician_id": "12d07bd4-98e4-4cfb-aec9-1b6f50ae5ca8"
+        },
+        {
+          "name": "Gerald Neal",
+          "vote": "yea",
+          "politician_id": "3009b2ae-1c46-474e-b917-fd8730f60992"
+        },
+        {
+          "name": "Brandon Smith",
+          "vote": "yea",
+          "politician_id": "2ed0f349-f4fc-4d82-ab9e-c7c3f51f4731"
+        },
+        {
+          "name": "Robert Stivers",
+          "vote": "yea",
+          "politician_id": "d68a846f-498d-4e14-a9f3-130e85849681"
+        },
+        {
+          "name": "Robin Webb",
+          "vote": "yea",
+          "politician_id": "62a3692f-806e-4fa4-bb98-33a30e8c7c04"
+        },
+        {
+          "name": "Julie Raque Adams",
+          "vote": "yea",
+          "politician_id": "04d835c3-c1a6-4d62-8d68-f806e842128c"
+        },
+        {
+          "name": "Mike Nemes",
+          "vote": "yea",
+          "politician_id": "75c40115-8134-412b-9160-5515c53d2689"
+        },
+        {
+          "name": "Jared Carpenter",
+          "vote": "yea",
+          "politician_id": "32c23ded-b2c6-401a-b37c-7cbe3b3cd728"
+        },
+        {
+          "name": "Mike Wilson",
+          "vote": "yea",
+          "politician_id": "ef0a5595-1825-4f06-9833-91c4f3cfdde2"
+        },
+        {
+          "name": "Christian McDaniel",
+          "vote": "yea",
+          "politician_id": "3fc12c7a-9762-4219-b5b7-e5f4979760e2"
+        },
+        {
+          "name": "Reginald Thomas",
+          "vote": "yea",
+          "politician_id": "f77c1ca3-d540-49f0-b7ca-e1efce3b4db3"
+        },
+        {
+          "name": "George Wise",
+          "vote": "yea",
+          "politician_id": "7fe409b9-8c3b-4318-9e74-18284d203736"
+        },
+        {
+          "name": "Danny Carroll",
+          "vote": "yea",
+          "politician_id": "869d742b-d988-4fdc-9e94-41da1a00c2ae"
+        },
+        {
+          "name": "Steve West",
+          "vote": "yea",
+          "politician_id": "e1b781c8-8cb2-4254-9f34-51fb567a4852"
+        },
+        {
+          "name": "Rick Girdler",
+          "vote": "yea",
+          "politician_id": "4dacfa0f-1e78-4c40-99aa-999385f73bd9"
+        },
+        {
+          "name": "Stephen Meredith",
+          "vote": "yea",
+          "politician_id": "c362a1f6-01b9-4355-a4bd-bbd1bb7fb1fb"
+        },
+        {
+          "name": "Robert Mills",
+          "vote": "yea",
+          "politician_id": "0e7af788-d735-46ec-9cd2-cd3818e002fd"
+        },
+        {
+          "name": "Phillip Wheeler",
+          "vote": "yea",
+          "politician_id": "eb11bd91-1800-49b1-81ef-8afca0ab4b87"
+        },
+        {
+          "name": "Brandon Storm",
+          "vote": "yea",
+          "politician_id": "95fceb14-a0c3-43e5-a0a0-338b5d3b3e7b"
+        },
+        {
+          "name": "Jason Howell",
+          "vote": "yea",
+          "politician_id": "0c3f4128-922d-41fe-b268-bd7d811e46e6"
+        },
+        {
+          "name": "Karen Berg",
+          "vote": "yea",
+          "politician_id": "e9e43630-0799-4769-8c3a-06a946fbc9c8"
+        },
+        {
+          "name": "Donald Douglas",
+          "vote": "yea",
+          "politician_id": "cfe729b2-264e-4f93-8961-1f0c4721a0d1"
+        },
+        {
+          "name": "Keturah Herron",
+          "vote": "yea",
+          "politician_id": "78c9e7c6-4796-49b7-8e1a-1220b48e2adb"
+        },
+        {
+          "name": "Gary Boswell",
+          "vote": "yea",
+          "politician_id": "f313c2e0-0852-4238-a48d-6bde751bb6f9"
+        },
+        {
+          "name": "Steve Rawlings",
+          "vote": "yea",
+          "politician_id": "73fd5b49-9255-4051-a43a-de04156e4c3f"
+        },
+        {
+          "name": "Lindsey Tichenor",
+          "vote": "yea",
+          "politician_id": "c8e6e36c-5308-4d71-8901-38de70b8fb7b"
+        },
+        {
+          "name": "Gex Williams",
+          "vote": "yea",
+          "politician_id": "78eb69f5-9449-4fdd-879b-c771364549d2"
+        },
+        {
+          "name": "Amanda Mays Bledsoe",
+          "vote": "yea",
+          "politician_id": "2e786a12-3e89-47c3-aa8c-7183e3b7798c"
+        },
+        {
+          "name": "Matthew Deneen",
+          "vote": "yea",
+          "politician_id": "3429ecef-5857-496b-9de6-85412b5caaaa"
+        },
+        {
+          "name": "Shelley Frommeyer",
+          "vote": "yea",
+          "politician_id": "ac6a69c3-4321-41d9-8402-903cb7aca569"
+        },
+        {
+          "name": "Casey Chambers Armstrong",
+          "vote": "yea",
+          "politician_id": "220beec0-b596-4685-895b-2d19ebb03246"
+        },
+        {
+          "name": "Greg Elkins",
+          "vote": "yea",
+          "politician_id": "45f0223f-8b1b-4586-8610-5e717f250b46"
+        },
+        {
+          "name": "Scott Madon",
+          "vote": "yea",
+          "politician_id": "bcd854eb-0eb8-4f21-8737-cc2435c615cc"
+        },
+        {
+          "name": "Matt Nunn",
+          "vote": "yea",
+          "politician_id": "c236893a-126e-45ae-83db-ae62be4f0554"
+        },
+        {
+          "name": "Aaron Reed",
+          "vote": "yea",
+          "politician_id": "0f7609c6-1285-4b00-aeca-17343045ebfe"
+        },
+        {
+          "name": "Craig Richardson",
+          "vote": "yea",
+          "politician_id": "6ddd5288-b0db-4d1e-8cf4-56d8669e7b0d"
+        },
+        {
+          "name": "Gary Clemons",
+          "vote": "yea",
+          "politician_id": "ad2cdf1d-e250-49de-94fe-94d0f1150204"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Engrossed, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/26RS/sb333/bill.pdf (LegiScan doc 3394390))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-333-2026.engrossed.pdf",
+      "sha256": "80ce498f835fe2eefeb9b8201fa06e419eeea7e4326077599e63eb4de4fccb60"
+    },
+    "note": "Engrossed (\"GA\" print, 26 RS SB 333/GA, 3/13/2026): version \"other\". Later amendments are not in the text read. Borderline for gun policy: the bill changes who gets sale proceeds (Homeland Security struck, Attorney General added) and strikes grant purchases of firearms, ammunition, stun devices and body cameras; the rules on auction and destruction of homicide firearms in subsections (1)-(2) are reprinted, not new. Section 2 (KRS 147A.002) only drops the body armor program cross-reference."
+  },
+  "operative_text": "Section 1 (KRS 16.220): (1) Subject to the duty to return confiscated firearms to innocent owners pursuant to KRS 500.090, all firearms confiscated by the Department of Kentucky State Police and not retained for official use pursuant to KRS 500.090 shall be sold at public auction to: (a) Federally licensed firearms dealers holding a license appropriate for the type of firearm sold; or (b) For a firearm which was used in a homicide, any person who certifies on a form provided by the Department of Kentucky State Police prior to placing a bid that he or she will, upon completion of the auction, leave the firearm with the Department of Kentucky State Police for destruction. A state or local government or agency thereof shall not purchase a firearm under this paragraph.\nSection 1 (KRS 16.220): (c) Transfer remaining proceeds of the sale to the account of the Kentucky Office of the Attorney General for use as provided in subsection (5) of this section; and (d) For any sale pursuant to subsection (1)(b) of this section, destroy the firearm.\nSection 1 (KRS 16.220): (a) The proceeds of firearms sales shall be utilized by the Office of the Attorney General to provide grants to: 1. City, county, charter county, unified local government, urban-county government, and consolidated local government police departments; 2. University safety and security departments organized pursuant to KRS 164.950; 3. School districts that employ special law enforcement officers as defined in KRS 61.900; 4. Airport safety and security departments established under KRS 183.880; and 5. Sheriff's departments; for the purchase of body armor for sworn peace officers of those departments and service animals, as defined in KRS 525.010, of those departments."
+}

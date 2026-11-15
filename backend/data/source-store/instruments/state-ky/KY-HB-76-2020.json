@@ -1,0 +1,56 @@
+{
+  "id": "KY-HB-76-2020",
+  "scope": "state:ky",
+  "title": "HB76 (2020 Regular): AN ACT relating to firearms possession.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/20RS/hb76.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/20RS/hb76/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nima Kulkarni",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "968bf1ff-367f-4e84-983c-030fcdc2d796"
+    },
+    {
+      "name": "George Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "35de0809-a7a8-458e-bf71-7e10743d00a1"
+    },
+    {
+      "name": "Mary Marzian",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5f519979-310c-4c22-8d55-097b92915fbc"
+    },
+    {
+      "name": "Attica Scott",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/20RS/hb76/orig_bill.pdf (LegiScan doc 2085762))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-76-2020.introduced.pdf",
+      "sha256": "de32f90837570328bff6961cd48e7e48723ac5cf4e9a5212248e37c5fe143cd1"
+    },
+    "note": "As-filed (BR 835); no passage vote in the record. Sections 4 and 5 (KRS 403.740 and 456.060) make courts tell the subject of a protective order about the firearm ban. Section 1 adds definitions in KRS 527.010 (not quoted)."
+  },
+  "operative_text": "Section 2 (new section of KRS Chapter 527): (1) A person is guilty of possession of a firearm by a convicted domestic abuser when the person wantonly possesses, purchases, manufactures, or transports a firearm and the person has been convicted of a domestic abuse offense in any state or federal court.\nSection 2 (new section of KRS Chapter 527): (2) A person is guilty of possession of a firearm by the subject of a domestic violence protective order when: (a) The person wantonly possesses, purchases, manufactures, or transports a firearm; and (b) The person is currently subject to a domestic violence protective order, as defined in Section 1 of this Act.\nSection 2 (new section of KRS Chapter 527): (3) Possession of a firearm by a convicted domestic abuser or subject of a domestic violence protective order is a Class C felony.\nSection 3 (new section of KRS Chapter 527): (2) Within twenty-four (24) hours after being informed of the firearm prohibition, a person convicted of a domestic abuse offense or made subject to a domestic violence protective order shall transfer all firearms he or she owns or possesses to the chief of police of the municipality where the person resides, the chief law enforcement officer of the county, or to the sheriff of the county where the person resides.\nSection 3 (new section of KRS Chapter 527): (5) If, upon motion of the prosecutor or a peace officer, the court that entered the conviction or entered the order, as applicable, finds probable cause to believe that a person convicted of a domestic abuse offense or made subject to a domestic violence protective order has failed to transfer any firearms in accordance with this section, the court may order a search for and the removal of all firearms at any location where the judge has probable cause to believe these firearms are located.\nSection 3 (new section of KRS Chapter 527): (8) A person convicted of a domestic abuse offense or subject to a domestic violence restraining order who does not comply with the terms of this section is guilty of a Class A misdemeanor."
+}

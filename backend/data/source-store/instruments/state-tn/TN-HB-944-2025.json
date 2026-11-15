@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-944-2025",
+  "scope": "state:tn",
+  "title": "HB0944 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4, Chapter 54; Section 38-3-119 and Title 39, Chapter 17, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=HB0944&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/HB0944.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bo Mitchell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "094afd56-f074-4fdc-a053-1482ea501fc8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2025-02-04; official copy via the Internet Archive snapshot 20260513074320 of https://www.capitol.tn.gov/Bills/114/Bill/HB0944.pdf (LegiScan doc 3099729))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-944-2025.draft.pdf",
+      "sha256": "b2c3b7cbd9cf65460d4a88140796d0b3a587465de9e0b1449985b0dba2613686"
+    },
+    "note": "Draft dated 2025-02-04 (as filed). The 39-17-1330(a) quote stops before a page footer; the sentence goes on to 'attachment, or accessory that is designed or functions to accelerate the rate of fire of a semiautomatic rifle but does not convert the semiautomatic rifle into a machine gun'.  Section 1 defines 'assault weapon' by a long model list and feature test (not quoted); Section 4 exempts weapons possessed before July 1, 2025. Section 5 also has department of safety certificate and transfer rules. Amendments, if any, are not in the text read."
+  },
+  "operative_text": "SECTION 2 (TCA 39-17-1302(a)(4)): (4) An assault weapon;\nSECTION 3 (TCA 39-17-1302(a)(8)): (8) A semiautomatic rifle that is equipped, altered, or modified to include any part, combination of parts, component, device, attachment, or accessory, the possession or use of which is prohibited by § 39-17-1330(a);\nSECTION 5 (new subsection in TCA 39-17-1302): (1) A person in possession of an assault weapon prior to July 1, 2025, must apply for a certificate of possession by July 1, 2026.\nSECTION 5 (new subsection in TCA 39-17-1302): (4) A person who obtains ownership by bequest or intestate succession of an assault weapon for which a certificate of possession has been issued under this section shall, within ninety (90) days: (A) Render the assault weapon permanently inoperable; (B) Sell the assault weapon to a licensed gun dealer; or (C) Remove the assault weapon from this state.\nSECTION 7 (new TCA 39-17-1330(a)): (a) Notwithstanding another law to the contrary, it is an offense to knowingly purchase, use, possess, or attempt to purchase, use, or possess a trigger crank, bump stock, bump-fire device, or any other part, combination of parts, component, device,\nSECTION 7 (new TCA 39-17-1330(c)): (c) A violation of subsection (a) or (b) is a Class E felony."
+}

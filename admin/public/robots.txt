@@ -1,0 +1,10 @@
+# robots.txt for login.empowered.vote and accounts.empowered.vote
+# This host serves only sign-in, account and admin screens. None of it belongs in search.
+# Every page also carries <meta name="robots" content="noindex"> (admin/index.html).
+
+User-agent: *
+Disallow: /signup
+Disallow: /login
+Disallow: /forgot-password
+Disallow: /profile
+Disallow: /admin

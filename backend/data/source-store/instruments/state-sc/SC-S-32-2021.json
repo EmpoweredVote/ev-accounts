@@ -1,0 +1,63 @@
+{
+  "id": "SC-S-32-2021",
+  "scope": "state:sc",
+  "title": "S0032 (124th General Assembly): SC Constitutional Carry Act of 2021",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0032&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/32_20201209.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lawrence Grooms",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a5c02924-84fc-40b5-88db-d6f2a13e9aac"
+    },
+    {
+      "name": "Brian Adams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d33b8da6-60b3-480a-964f-1d3315fac434"
+    },
+    {
+      "name": "Rex Rice",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d587a64f-3b40-421c-9963-9c934f961443"
+    },
+    {
+      "name": "Thomas Corbin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6d10b3d2-940f-45ef-af02-07252a3ce185"
+    },
+    {
+      "name": "Danny Verdin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ec52251-b87c-4264-b1f7-e4d348e2756a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2020-12-09; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/32_20201209.htm (LegiScan doc 2220363))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-32-2021.introduced.htm",
+      "sha256": "4db35ab9dfdb0b250686f365927382af99484051a6ce79306a1a57271de81e3d"
+    },
+    "note": "Introduced 2020-12-09; no passage vote in the data. Quoted text is the law after the bill, with struck permit references dropped (e.g. 'concealable weapons' permit' struck and 'firearm' added in 10-11-320(B); 'Georgia and North Carolina' struck and 'any other state' added in 23-31-215(N)(2)). Also struck: the duty to carry the permit card and tell officers (23-31-215(K)), the permit-revocation penalties, the 'hidden from public view' clause in the 23-31-210(5) definition, and the permit condition in 23-31-240 (court officials). Section 9 and Section 13 are not quoted for length."
+  },
+  "operative_text": "SECTION 2 (Section 10-11-320(B)): (B) This section does not apply to a person who possesses a firearm and is authorized to park on the capitol grounds or in the parking garage below the capitol grounds. The firearm must remain locked in the person's vehicle while on or below the capitol grounds and must be stored in a place in the vehicle that is not readily accessible to any person upon entry to or below the capitol grounds.\nSECTION 3 (Section 16-23-20): (A) It is unlawful for anyone to carry about the person any handgun, whether concealed or not, except as follows, unless otherwise specifically prohibited by law: (9) a person in a vehicle if the handgun is: (b) concealed on or about his person, provided that he is not prohibited by state law from possessing the handgun; (17) a person who is not prohibited from possessing firearms under state law, whether or not the person is a resident of the State. (B) Unless a person first obtains authorization to possess a handgun from a person with the apparent authority to grant it, nothing in subsection (A)(17) authorizes the carrying of a handgun into any location prohibited under Section 23-31-215(M).\nSECTION 4 (Section 16-23-420(F)): (F) This section does not apply to a person when he is upon any premises, property, or building that is part of an interstate highway rest area facility.\nSECTION 5 (Section 16-23-430(B)): (B) This section does not apply when the weapon remains inside an attended or locked motor vehicle and is secured in a closed glove compartment, closed console, closed trunk, or in a closed container secured by an integral fastener and transported in the luggage compartment of the vehicle.\nSECTION 6 (Section 16-23-460(C)): (C) The provisions of this section also do not apply to handguns, rifles, shotguns, dirks, slingshots, metal knuckles, knives, or razors unless they are used with the intent to commit a crime or in furtherance of a crime.\nSECTION 7 (Section 16-23-465(B)(1)): (1) This section does not apply to a person otherwise lawfully carrying a concealable weapon who does not consume alcoholic liquor, beer, or wine while carrying the concealable weapon on the business' premises. A person who violates this item may be charged with a violation of subsection (A).\nSECTION 10 (Section 23-31-215(N)): (N)(1) Valid out-of-state permits to carry concealable weapons held by a resident of another state must be honored by this State. (2) Notwithstanding the reciprocity requirements of item (1), South Carolina shall automatically recognize concealed weapon permits issued by any other state.\nSECTION 10 (Section 23-31-215(O)): (O) A permit issued pursuant to this article is not required for a person: ... (3) carrying a concealable weapon in a manner not prohibited by law.\nSECTION 12 (Section 23-31-225): No person may carry a concealable weapon into the residence or dwelling place of another person without the express permission of the owner or person in legal control or possession, as appropriate."
+}

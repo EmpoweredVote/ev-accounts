@@ -1,0 +1,45 @@
+{
+  "id": "KY-HB-796-2024",
+  "scope": "state:ky",
+  "title": "HB796 (2024 Regular): AN ACT relating to firearms and making an appropriation therefor.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/24RS/hb796.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/24RS/hb796/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Beverly Chester-Burton",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1a0c1ea9-9bde-43b9-8ebd-5c798c12cf6c"
+    },
+    {
+      "name": "George Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "35de0809-a7a8-458e-bf71-7e10743d00a1"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/24RS/hb796/orig_bill.pdf (LegiScan doc 2941432))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-796-2024.introduced.pdf",
+      "sha256": "ed5d394e7611f6e1b487624f59f58e4e94e6f72f815364021d3f244387f3de5a"
+    },
+    "note": "Introduced print (24 RS BR 1242); no passage vote. Assault weapon definition, Section 3(3)-(4) (fee and registration fund appropriation) and Section 6 (KRS 237.104 conforming) not quoted."
+  },
+  "operative_text": "Section 1 (KRS 527.010): (7) \"Large capacity ammunition feeding device\" means a magazine, belt, drum, feed strip, or similar device that has a capacity of, or that can be readily restored or converted to accept, more than ten (10) rounds of ammunition, but does not include an attached tubular device designed to accept, and capable of operating only with, .22 caliber rimfire ammunition or a feeding device that is a curio or relic. To qualify as a curio or relic feeding device under this subsection, it must be a feeding device that: (a) Was manufactured at least fifty (50) years prior to the current date, not including replicas thereof; (b) Is only capable of being used exclusively in a firearm, rifle, or shotgun that was manufactured at least fifty (50) years prior to the current date, not including replicas thereof; and (c) Is possessed by an individual who is not prohibited by state or federal law from possessing a firearm.\nSection 2 (new section of KRS Chapter 527): (1) Except as provided in subsection (3) of this section, a person is guilty of possession or transfer of a large capacity ammunition feeding device when he or she knowingly: (a) Possesses a large capacity ammunition feeding device; or (b) Transfers a large capacity ammunition feeding device to another person. (2) Possession or transfer of a large capacity ammunition feeding device is a Class A misdemeanor.\nSection 3 (new section of KRS Chapter 527): (1) Within one (1) year after the effective date of this Act, a person who lawfully owns any large capacity ammunition feeding device on the effective date of this Act shall: (a) Register with the Department of Kentucky State Police as the certified owner of each large capacity ammunition feeding device that the person elects to continue to possess; (b) Transfer the large capacity ammunition feeding device to any person outside of Kentucky lawfully entitled to own or possess the device; or (c) Render the large capacity ammunition feeding device permanently inoperable. (2) The Department of Kentucky State Police shall administer a program through which the owners of large capacity ammunition feeding devices who elect to continue to possess those devices more than one (1) year after the effective date of this Act shall register as the owners of individual large capacity ammunition feeding devices.\nSection 4 (new section of KRS Chapter 527): (1) Except as provided in subsection (3) of this section, a person is guilty of possession or transfer of an assault weapon when he or she knowingly: (a) Possesses an assault weapon; or (b) Transfers an assault weapon to another person through any means. (2) Possession or transfer of an assault weapon is a Class A misdemeanor.\nSection 5 (new section of KRS Chapter 527): (1) Within one (1) year after the effective date of this Act, a person who lawfully owns any assault weapon on the effective date of this Act shall: (a) Transfer the assault weapon to any person outside of Kentucky lawfully entitled to own or possess the assault weapon; or (b) Render the assault weapon permanently inoperable."
+}

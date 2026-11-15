@@ -1,0 +1,54 @@
+{
+  "state": "wa",
+  "name": "Washington",
+  "verified": "2026-11-13",
+  "source": "gun-policy Season 3 Stage 5, Washington hand-overs (wa/HANDOVER-A.md part 7, wa/HANDOVER-B.md item 4, write/wa-01/recipe.json), 2026-11-13",
+  "chambers": {
+    "lower": "House",
+    "upper": "Senate"
+  },
+  "sessions": "Two-year sessions that start in odd years.",
+  "bill_data": [
+    "Open States bulk files for 2017 to 2022 (read unchanged as LegiScan-layout folders).",
+    "LegiScan for 2023 onward: per-bill calls only; never re-pull a dataset (runner, 2026-11-13).",
+    "2015-16 is not on file."
+  ],
+  "votes": {
+    "mode": "legiscan-plan",
+    "official_hosts": [
+      "app.leg.wa.gov",
+      "apps.leg.wa.gov"
+    ],
+    "legiscan_args": "--session-start odd",
+    "floor_rule": "Floor votes only: \"Final Passage\" motions with a total of 40 or more. Open States \"other\" (excused or absent) counts as absent.",
+    "gaps": [
+      "Committee votes before 2023 are mostly missing in Open States.",
+      "Conference-committee floor votes needed a tool fix (2026-11-13)."
+    ]
+  },
+  "texts": {
+    "hosts": [
+      "lawfilesext.leg.wa.gov"
+    ],
+    "marks": "HTML texts: added words are underlined (saved as {+ +}), struck words struck through (saved as [- -]). A \"NEW SECTION\" is all new law.",
+    "note": "Text versions carry no dates in this data: each bill is read at one text (the last enrolled, else the last listed), so a vote cannot be tied to its exact text. A PDF-only link has an HTML copy at the same path under /Htm/."
+  },
+  "reader_access": {
+    "app.leg.wa.gov": "blocked: robots.txt Disallow: /",
+    "wslwebservices.leg.wa.gov": "blocked: robots.txt Disallow: /",
+    "apps.leg.wa.gov": "blocked: old bill pages return 404",
+    "lawfilesext.leg.wa.gov": "open"
+  },
+  "search_note": "Washington sponsorships and House and Senate floor votes on this topic come from the bulk bill data (listed above): skip the legislature's sponsor lists and roll-call pages (app.leg.wa.gov), and add the place \"sponsor list: covered by bulk bill data\". Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
+  "bill_table_note": "- Washington bill text marks changes to existing law (added words underlined, struck words struck through); `operative_text` quotes the law as the bill leaves it. A \"NEW SECTION\" is all new law.\n- One text was read per bill: the last enrolled version, else the last version listed. Text versions carry no dates in this data, so a roll call cannot be tied to the text it was taken on. Where `provenance.note` or the instrument says the version read is not the one passed, say so in `why`, and flag the bill if an earlier text could carry a different rung.\n- Most bills here have no floor vote: a roster member sponsored them. Their rung still matters, for sponsors.",
+  "fill_quotes": {
+    "label_strips": [
+      "^\\s*NEW\\s+SECTION\\.?\\s*"
+    ]
+  },
+  "quirks": [
+    "Official roll-call pages print a party label beside each name: never copy from them.",
+    "Open States people files use current names, which can differ from the name a member served under.",
+    "sponsor cover must match names inside this state's roster only: two matches to namesakes in other states were refused (2026-11-13)."
+  ]
+}

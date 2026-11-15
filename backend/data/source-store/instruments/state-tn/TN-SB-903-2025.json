@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-903-2025",
+  "scope": "state:tn",
+  "title": "SB0903 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4, Chapter 54; Title 38, Chapter 3, Part 1 and Title 39, Chapter 17, Part 13, relative to the transfer of firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB0903&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/SB0903.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "London Lamar",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c83e282-cb78-4e39-aa1e-13875a86e872"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2025-02-05; official copy via the Internet Archive snapshot 20260513074233 of https://www.capitol.tn.gov/Bills/114/Bill/SB0903.pdf (LegiScan doc 3101294))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-903-2025.draft.pdf",
+      "sha256": "c8dec161c72526baad6c707864a57262d3e591003a21c6c89fd1448e33121877"
+    },
+    "note": "Draft as introduced; adopted amendments are not in the text read and could change it. Copy dated 2025-02-05; the bill's caption also names TCA Title 4, ch. 54 and Title 38, ch. 3, but the text read amends only Title 39, ch. 17, Part 13."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-1330(b)): A person shall not sell or transfer ownership of a firearm, or purchase or obtain ownership of a firearm, unless one (1) of the following applies: (1) The seller or transferor is a gun dealer; (2) The seller or transferor makes the sale or transfer to or through a gun dealer and obtains a receipt;\nSECTION 1 (new TCA 39-17-1330(b)(4)): (4) The transferor is transferring ownership of the firearm to a family member by gift, bequest, or inheritance; the transferee is not prohibited from possessing a firearm under this part; and the transferee is at least eighteen (18) years of age; or\nSECTION 1 (new TCA 39-17-1330(c)): (c) A person who intentionally violates subsection (b) commits a Class B misdemeanor and shall be fined not less than five hundred dollars ($500) nor more than ten thousand dollars ($10,000) and may be imprisoned for a period not to exceed nine (9) months."
+}

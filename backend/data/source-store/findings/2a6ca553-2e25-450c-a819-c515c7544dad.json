@@ -149,6 +149,48 @@
         "fetched_at": "2026-11-11T18:21:16.118Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "73133f0926a64589c39acff6e55ade44468847e9c3daa512b8a6d5140248667d",
+      "kind": "own-words",
+      "url": "https://abc17news.com/ap-national/2023/10/27/in-the-kentucky-governors-race-the-gun-policy-debate-is-both-personal-and-political/",
+      "date": "2023-10-27",
+      "date_precision": "day",
+      "passage": "All that does is trust our law enforcement to step in when they know someone is about to commit an atrocity, is about to murder a bunch of people, and go to the court and get some help. We trust our courts with custody of our kids. Surely we can trust them to balance our Second Amendment and prevent murders.",
+      "note": "Quoted by a wire news story (carried by ABC17) from the governor's answer in the fall 2023 gubernatorial debate in Louisville, urging a red flag law for Kentucky.",
+      "subjects": [
+        "red flag law",
+        "court order to remove guns from people at risk"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:54.557Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d3b4b4c1b1ac431693cf64cf59f8c2d3b4f46423c5808e502a2ded10abff2d23",
+      "kind": "own-words",
+      "url": "https://abc17news.com/ap-national/2023/10/27/in-the-kentucky-governors-race-the-gun-policy-debate-is-both-personal-and-political/",
+      "date": "2023-10-27",
+      "date_precision": "day",
+      "passage": "Everyone should be able to defend themselves and their family,",
+      "note": "Quoted by a wire news story from the same 2023 debate; the full sentence continues that he has felt the loss of someone he loved to gun violence. Speaks to the right to self-defense.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "red flag law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:54.557Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -179,6 +221,29 @@
       ],
       "found": 7,
       "at": "2026-11-11T18:21:16.118Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "red flag law",
+        "gun rights and the Second Amendment",
+        "guns taken in crime sold at auction"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://governor.ky.gov/search?q=red+flag (404, no site search reachable)",
+        "not reviewed: https://www.ballotpedia.org/Andy_Beshear (empty response)",
+        "web search: one news search on name plus gun words (leads only)",
+        "https://abc17news.com/ap-national/2023/10/27/in-the-kentucky-governors-race-the-gun-policy-debate-is-both-personal-and-political/ (read; a news story quoting the October 2023 debate)",
+        "not reviewed: https://www.wdrb.com/news/kentuckys-governor-calls-on-state-lawmakers-to-pass-red-flag-law-in-wake-of-louisville/article_af23bdf0-da0a-11ed-b8cf-1b3632f0b1ed.html (page text did not contain the story)",
+        "https://www.news4jax.com/news/politics/2023/04/11/as-shootings-hit-close-to-home-govs-wrestle-with-next-steps/ (read; nothing quotable on the subject)",
+        "not reviewed: legislature bill pages, campaign site, vote411 (not reached within this pass)",
+        "Scope: sitting governor of Kentucky, named as such in the news story above; not a 2026 ballot candidate"
+      ],
+      "found": 2,
+      "at": "2026-11-14T14:04:54.557Z",
       "by": "source-collector"
     }
   ]

@@ -101,6 +101,11 @@ describe('helpers', () => {
     expect(strangeBills('HB 1324, H.B. 1324, HB1324 and GA-HB-1324-2025', b)).toEqual([]);
     expect(strangeBills('HB 13240', b)).toEqual(['HB 13240']);
   });
+  it('matches "HB 3594" to a one-letter store id (SC-H-3594-2024)', () => {
+    const sc = { ids: new Set(['SC-H-3594-2024', 'SC-S-109-2023']), tokens: new Set(['h3594', 's109']) };
+    expect(strangeBills('HB 3594, H. 3594, H 3594, SB 109 and S. 109', sc)).toEqual([]);
+    expect(strangeBills('HB 3096 and SB 110', sc)).toEqual(['HB 3096', 'SB 110']);
+  });
   it('ignores quotes under four words and quotes of the ladder', () => {
     expect(unsourcedQuotes('a "ghost gun" and "honoring carry permits from other states"', [], rungTextsFromLadder(ladder))).toEqual([]);
   });

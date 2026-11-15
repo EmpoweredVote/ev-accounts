@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2521-2021",
+  "scope": "state:tn",
+  "title": "SB2521 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, relative to weapons.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2521&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/SB2521.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2022-02-02; official copy via the Internet Archive snapshot 20260514133803 of https://www.capitol.tn.gov/Bills/112/Bill/SB2521.pdf (LegiScan doc 2502626))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2521-2021.draft.pdf",
+      "sha256": "16e83c0a948e068e9a143f48923051ea9ed8ea4d6767e7e6f5717c8448ac1733"
+    },
+    "note": "Draft as filed (2022-02-02), House and Senate twins share the text. No amendments are reflected. The summary also says the bill removes the enhanced-permit limit on the concealed carry restriction and ends local-government bans in places such as libraries; the text read replaces the whole section 39-17-1359 and the quotes are the parts that set who may restrict carry."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1359(a)): (a) Except as provided in § 39-17-1313, or as otherwise limited by another state law, an individual, corporation, business entity, or local or state government entity or agent thereof is authorized to prohibit or limit the possession or open carry of a firearm on property owned, operated, or managed under the control of the individual, corporation, business entity, or government entity.\nSECTION 1 (TCA 39-17-1359(c)(2)): (2) If the individual refuses to comply after receiving the notices required by subdivision (c)(1), the owner, manager, or other authorized party of the property may press charges against the individual for criminal trespass, under § 39-14-405, punishable only by a fine of fifty dollars ($50.00). Section 39-17-1317 is not applicable to a person violating this section.\nSECTION 1 (TCA 39-17-1359(e)): (e) An individual, corporation, business entity, or local or state government entity or agent thereof that elects to post a prohibition of firearms pursuant to this section must provide reasonable and adequate security for the prohibited property, including any applicable parking areas.\nSECTION 1 (TCA 39-17-1359(f)): (f) This section does not apply to the grounds of any public park, greenway, natural area, historic park, nature trail, campground, forest, waterway, lake, or other similar public place that is owned or operated by the state, a county, a municipality or an instrumentality thereof.\nSECTION 1 (TCA 39-17-1359(g)(1)): (1) This section does not authorize an entity of state or local government or a permittee thereof to enact or enforce a prohibition or restriction on the possession of a firearm on property owned or administered by the entity unless the following conditions are met:\nSECTION 1 (TCA 39-17-1359(g)(1)(A)): (A) Metal detection devices are provided at each public entrance to the property;\nSECTION 1 (TCA 39-17-1359(g)(5)): (5) A local government entity that prohibits individuals from possessing firearms in or on a public building or structure pursuant to this section shall provide at least one (1) on-duty commissioned officer, exclusive of those required under subdivision (g)(1)(B), per every five hundred (500) individuals estimated to be in the building or structure at any time when the prohibition is in effect and the building or structure is open to the public, for the purpose of patrolling the interior of the building."
+}

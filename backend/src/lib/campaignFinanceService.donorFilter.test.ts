@@ -47,7 +47,7 @@ describe('getContributions donor filter', () => {
 
     for (const call of [pageCall(), countCall()]) {
       expect(call.sql).toMatch(/c\.donor_name_normalized IN \(\$3, ''\)/);
-      expect(call.sql).toMatch(/COALESCE\(c\.raw_record->>'contributor_name'[\s\S]*\) = \$4/);
+      expect(call.sql).toMatch(/COALESCE\(COALESCE\(c\.src_contributor_name, c\.raw_record->>'contributor_name'\)[\s\S]*\) = \$4/);
       expect(call.params.slice(0, 4)).toEqual([POLITICIAN, '2026', 'deborah simon', 'SIMON, DEBORAH']);
     }
   });

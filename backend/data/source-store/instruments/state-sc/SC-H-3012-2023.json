@@ -1,0 +1,72 @@
+{
+  "id": "SC-H-3012-2023",
+  "scope": "state:sc",
+  "title": "H3012 (125th General Assembly): Firearm and ammunition, unlawful possession by certain persons",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3012&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/3012_20221208.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Doug Gilliam",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "38320b01-ac0e-4c0a-aceb-bbceae965294"
+    },
+    {
+      "name": "Thomas Pope",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c4552314-d8dd-4de1-bfc1-a1e601799115"
+    },
+    {
+      "name": "Christopher Wooten",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "805dd108-b51b-43ce-9ecf-b766b5348c5d"
+    },
+    {
+      "name": "John West",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Roger Nutt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Patrick Haddon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "807d4af9-8270-4139-9d4f-715aa2906036"
+    },
+    {
+      "name": "Jerry Carter",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2022-12-08; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/3012_20221208.htm (LegiScan doc 2617249))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3012-2023.introduced.htm",
+      "sha256": "ef0e3b1179c4d43a649be02c127512b308d6e0615585483f6d69845897c842e7"
+    },
+    "note": "Introduced text of 2022-12-08; no passage vote. Struck: the 'violent crime ... felony offense' trigger, the old fine/5-year penalty, and subsection (D) wording about violent offenses (replaced). Text quoted as it reads after the bill."
+  },
+  "operative_text": "Section 1 (Section 16-23-500(A)): It is unlawful for a person who has been convicted of a crime punishable by a maximum term of imprisonment of five years or more to possess, ship, transport, or receive a firearm or ammunition within this State.\nSection 1 (Section 16-23-500(B)): A person who violates the provisions of this section is guilty of a felony and, upon conviction: (1) for a first offense, must be imprisoned not more than ten years; (2) for a second offense, must be imprisoned for a mandatory minimum of five years, but not more than thirty years, no part of which may be suspended nor probation granted; and (3) for a third offense or subsequent offense, must be imprisoned for a mandatory minimum of fifteen years, but not more than thirty years, no part of which may be suspended nor probation granted.\nSection 1 (Section 16-23-500(E)): A prior offense for purposes of this section means any conviction related to the possession, shipping, transporting, or receiving of a firearm or ammunition in this State, another state, or in violation of federal law."
+}

@@ -1,0 +1,61 @@
+{
+  "id": "SC-H-3262-2017",
+  "scope": "state:sc",
+  "title": "H3262 (122nd General Assembly): Concealed weapons",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3262&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/3262_20161215.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Steven Long",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "55ef311d-6efd-40c9-8a32-d261624bf5a3"
+    },
+    {
+      "name": "James Burns",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9e65a60c-4016-44f5-a830-c8562f08a7ac"
+    },
+    {
+      "name": "William Chumley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b79701a8-542e-4090-b752-d2e79fb92cd4"
+    },
+    {
+      "name": "Anne Thayer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joshua Putnam",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2016-12-15; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/3262_20161215.htm (LegiScan doc 1440097))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3262-2017.introduced.htm",
+      "sha256": "48c40c1a72883a8dc5508f2ca3c9720568377af6f10d4968e17997049706a2a3"
+    },
+    "note": "Introduced 2016-12-15. In Section 1 'of any kind' and the college list in the school sentence are struck; the college exemption sentence is new. In Section 2 'or college' struck from item (5). Quoted text omits the struck words and the school-vehicle-storage sentence (school-only exemption)."
+  },
+  "operative_text": "Section 1 (Section 16-23-420(A)): It is unlawful for a person to possess a firearm on any premises or property owned, operated, or controlled by a private or public school, college, university, technical college, other post-secondary institution, or in any publicly owned building, without the express permission of the authorities in charge of the premises or property. The provisions contained in this subsection related to any premises or property owned, operated, or controlled by a college, university, technical college, or other post-secondary institution do not apply to a person who is authorized to carry a concealed weapon pursuant to Article 4, Chapter 31, Title 23.\nSection 2 (Section 23-31-215(M)): A permit issued pursuant to this section does not authorize a permit holder to carry a concealable weapon into a: (5) school athletic event not related to firearms;"
+}

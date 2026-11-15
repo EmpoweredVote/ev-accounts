@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1722-2019",
+  "scope": "state:tn",
+  "title": "SB1722 (111th General Assembly): As introduced, repeals the law that allows handgun carry permit holders to transport or store a firearm or firearm ammunition in the permit holder's motor vehicle while on or utilizing a public or private parking area if the firearm or firearm ammunition is kept from ordinary observation. - Amends TCA Title 39; Title 49 and Title 50.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1722&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/SB1722.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sara Kyle",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1b745bdf-e7cb-487d-9ca5-7bd043d602ac"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2020-01-17; official copy via the Internet Archive snapshot 20260513205258 of https://www.capitol.tn.gov/Bills/111/Bill/SB1722.pdf (LegiScan doc 2103001))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1722-2019.draft.pdf",
+      "sha256": "f4fba67138c07dacd9faba4152ebd88f1da01d823fc02f4855f5ecdc2e2c3ace"
+    },
+    "note": "Draft (as filed), 2020-01-17. Adopted amendments, if any, are not in the text read. Same bill text as twin HB 2368. Sections 2 and 3 only remove cross-references. The summary names the repealed law; the text itself only cites section numbers."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1313): Tennessee Code Annotated, Section 39-17-1313, is amended by deleting the section in its entirety.\nSECTION 4 (TCA 39-17-1366(h)): Tennessee Code Annotated, Section 39-17-1366(h), is amended by deleting the subsection.\nSECTION 5 (TCA 49-7-163): Tennessee Code Annotated, Section 49-7-163, is amended by deleting the section in its entirety.\nSECTION 6 (TCA 50-1-312): Tennessee Code Annotated, Section 50-1-312, is amended by deleting the section in its entirety."
+}

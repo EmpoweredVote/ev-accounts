@@ -22,6 +22,87 @@
         "fetched_at": "2026-11-10T23:17:03.825Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "a2c5bb31a7281065d9a443b077245eda32e0aa9d9dc43298d5ef5914d1fc0f50",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=3650&session=126&summary=B",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3650-2026",
+      "act": "yea",
+      "motion": "Senate: 2nd Reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC Senate, Senate: 2nd Reading, 2026-04-15: yea (tally 45–0); census gate: near-unanimous.",
+      "subjects": [
+        "tiered fines and prison for shooting into occupied buildings or vehicles",
+        "intent wording for discharge offence",
+        "hunting-accident carve-out"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2026-04-22; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3650_20260422.htm (LegiScan doc 3423948))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3650-2026.amended.htm",
+          "sha256": "0e42b5bae5c0cd7e1886aca0ee3a4d66a9db5e0282a4f3e8a3d380abd3504217"
+        }
+      }
+    },
+    {
+      "id": "62950c7537794e18ba904b5572b4d0541c42734c4a06c0ca43900a6ef6c04059",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/billsearch.php?billnumbers=0136&session=126&summary=B",
+      "date": "2025-05-28",
+      "date_precision": "day",
+      "instrument_id": "SC-S-136-2026",
+      "act": "yea",
+      "motion": "Senate: To Override The Veto",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SC Senate, Senate: To Override The Veto, 2025-05-28: yea (tally 40–2); census gate: near-unanimous.",
+      "subjects": [
+        "dismiss pending handgun-possession charges from before permitless carry",
+        "no civil suit over the arrest after dismissal"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2025-05-07; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/136_20250507.htm (LegiScan doc 3231297))",
+        "fetched_at": "2026-11-14T16:56:32.141991Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-136-2026.amended.htm",
+          "sha256": "40e53d7ae3a5f8da35cb38ebd5e3cc683e93f493dbb1a441ec504dc03c4c69f7"
+        }
+      }
+    },
+    {
+      "id": "8ead4f3a8ae9b59bf3cbcb68285bedb6e824eb4fbbcdc0cf4a62d9759978a807",
+      "kind": "own-words",
+      "url": "https://www.wrhi.com/2023/09/everett-stubbs-announces-for-sc-senate-district-17-183096",
+      "date": "2023-09",
+      "date_precision": "month",
+      "passage": "Everett Stubbs lives in the district with his wife Caroline, and their two children where they enjoy traditional southern outdoor activities, which makes him a staunch ally of the 2nd amendment & real conservation.",
+      "note": "Line from his campaign launch press release for Senate District 17, as printed in full by a local radio station's site. A general statement of support for the Second Amendment, with no specific gun policy named.",
+      "subjects": [
+        "gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T17:52:05.370Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -64,6 +145,35 @@
       "found": 1,
       "at": "2026-11-10T23:17:03.825Z",
       "by": "identity-sc-2026-11-10"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name matches)",
+        "https://www.scstatehouse.gov/member.php?code=1780681605 (member page confirms the office; page text did not load through curl, so bill list not read)",
+        "campaign site https://votestubbs.com (home page has only a '1st & 2nd Amendments' heading with no sentence; nothing else on the subject)",
+        "https://www.everettstubbs.com (no response)",
+        "https://www.wrhi.com/2023/09/everett-stubbs-announces-for-sc-senate-district-17-183096 (campaign launch release, one line on the Second Amendment)",
+        "blocked: https://ballotpedia.org/Everett_Stubbs (page came back empty)",
+        "https://thevoicenewspaper.com/?p=61960 (constituent letter; nothing on the subject)",
+        "https://www.billtrack50.com/legislatordetail/29836 (nothing on the subject)",
+        "https://www.scstatehouse.gov/votehistory.php (vote pages did not load rows through curl; the two votes on file were not rechecked)",
+        "web news search on his name plus gun, firearm, carry and red-flag words (nothing on him found)",
+        "not reviewed: bill-by-bill sponsorship list on the legislature site (no readable list reached)"
+      ],
+      "found": 1,
+      "at": "2026-11-14T17:52:05.370Z",
+      "by": "source-collector"
     }
   ]
 }

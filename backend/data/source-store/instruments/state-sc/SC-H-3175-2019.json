@@ -1,0 +1,44 @@
+{
+  "id": "SC-H-3175-2019",
+  "scope": "state:sc",
+  "title": "H3175 (123rd General Assembly): Concealed weapon onto residence",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3175&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/3175_20181218.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dwight Loftis",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "James Burns",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9e65a60c-4016-44f5-a830-c8562f08a7ac"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2018-12-18; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/3175_20181218.htm (LegiScan doc 1831150))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3175-2019.introduced.htm",
+      "sha256": "e56fe444c959e99f435f2d5913f989e2fb3a830de72ee79558a0904134dd8906"
+    },
+    "note": "Introduced text, Dec. 18, 2018. No votes. The existing rule and penalty (permit holders may not carry into another's residence without permission; misdemeanor, permit revoked five years) are unchanged."
+  },
+  "operative_text": "Section 1 (Section 23-31-225): This section shall not apply to a real estate broker, real estate sales person, or real estate property manager as defined in Section 40-57-30 when visiting a residence or dwelling, whether occupied or vacant, for the purpose of inspection, appraisal, sale, or lease of a residence or dwelling place."
+}

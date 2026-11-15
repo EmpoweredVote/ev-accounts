@@ -1,0 +1,49 @@
+{
+  "id": "SC-H-3499-2021",
+  "scope": "state:sc",
+  "title": "H3499 (124th General Assembly): Firearms",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3499&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/3499_20201216.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Wendy Brawley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kimberly Johnson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John King",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ea8dd677-e991-4d35-9fc9-f309b77c9159"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2020-12-16; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/3499_20201216.htm (LegiScan doc 2221786))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3499-2021.introduced.htm",
+      "sha256": "c16435607a568264321360402cfa39cd04980839027735262443c649208db826"
+    },
+    "note": "Introduced Dec. 16, 2020; no passage vote. 'or' before 'sawed-off rifle' struck in Sections 2-4; assault weapon and high-capacity magazines added. Section 4 prints 'high- capacity' with a space."
+  },
+  "operative_text": "Section 1 (Section 16-23-210): 'Assault weapon' means a firearm with any of the following characteristics: (a) all semiautomatic action, centerfire rifles with a detachable magazine with a capacity of twenty-one or more rounds; (b) all semiautomatic shotguns with a folding stock or a magazine capacity of more than six rounds, or both; 'High-capacity magazine' means a firearm magazine capable of holding more than fifteen rounds of ammunition.\nSection 2 (Section 16-23-220): (A) It is unlawful for a person to transport from one place to another in this State or for any railroad company, express company, or other common carrier or any officer, agent, or employee of any of them or other person acting in their behalf knowingly to ship or to transport from one place to another in this State a machine gun or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, assault weapon, or high-capacity magazines, except as provided in Sections 16-23-250 and 23-31-330.\nSection 3 (Section 16-23-230): (A) It is unlawful for a person to store, keep, possess, or have in possession or permit another to store, keep, possess, or have in possession a machine gun or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, assault weapon, or high-capacity magazines, except as provided in Sections 16-23-250 and 23-31-330.\nSection 4 (Section 16-23-240): (A) It is unlawful for a person to sell, rent, give away, or participate in any manner, directly or indirectly, in the sale, renting, giving away, or otherwise disposing of a machine gun, or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, assault weapon, or high- capacity magazines, except as provided in Sections 16-23-250 and 23-31-330."
+}

@@ -1,0 +1,44 @@
+{
+  "id": "TN-HB-1427-2019",
+  "scope": "state:tn",
+  "title": "HB1427 (111th General Assembly): As introduced, requires, when neither the seller nor purchaser of a firearm is a licensed gun dealer that the transaction be completed through a licensed gun dealer, and that the dealer perform the same background check required for purchases from licensed gun dealers. - Amends TCA Title 39, Chapter 17, Part 13 and Title 67, Chapter 6.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1427&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/HB1427.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mike Stewart",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Clemmons",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd4cbb33-0634-4c31-a466-7b282febefab"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2019-02-06; official copy via LegiScan getBillText doc 1895783)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1427-2019.draft.pdf",
+      "sha256": "fe6c41d4bb28e28132f5c05f18ce8c324f472c9dee707d8fd4226c8120971ac0"
+    },
+    "note": "Draft as filed 2019-02-06; no passage vote on record. Subsection (c) lists exceptions (1)-(3) and subsection (d) sets the dealer process; the tax exemption in (g) is tied to the gun sale rules, so it is not treated as a separate topic."
+  },
+  "operative_text": "SECTION 1 (new TCA section in Title 39, ch. 17, pt. 13): (b) All firearm sales or transfers, in whole or part in this state including, without limitation, a sale or transfer where either the purchaser, seller, transferee, or transferor is located in this state, shall be subject to a criminal history record check unless specifically exempted by state or federal law.\nSECTION 1 (new TCA section in Title 39, ch. 17, pt. 13): (c) A person shall not sell or transfer a firearm unless:\nSECTION 1 (new TCA section in Title 39, ch. 17, pt. 13): (g) To encourage compliance with criminal history record check requirements, the sales tax imposed by title 67, chapter 6, shall not be applicable to a transaction if:"
+}

@@ -1,0 +1,57 @@
+{
+  "id": "TN-HB-1576-2023",
+  "scope": "state:tn",
+  "title": "HB1576 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4, Chapter 54; Section 38-3-119 and Title 39, Chapter 17, Part 13, relative to the transfer of firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1576&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB1576.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bob Freeman",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e275bc99-103c-4a1f-8a57-c7a05e918cb0"
+    },
+    {
+      "name": "John Clemmons",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd4cbb33-0634-4c31-a466-7b282febefab"
+    },
+    {
+      "name": "Torrey Harris",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5505f1bd-e4cf-403f-b61d-9b3cf847718a"
+    },
+    {
+      "name": "Yusuf Hakeem",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "dff0d1ad-869c-4397-87b0-bad415b6dee0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-04-05; official copy via LegiScan getBillText doc 2771480)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1576-2023.draft.pdf",
+      "sha256": "0bd71b6667cd80458e49bcc55dc3350ec3cb492d6ca08927a04c1543f5df130e"
+    },
+    "note": "Draft as introduced (2023-04-05); no amendments in text read. Twin SB 1567 is on the same document. Caption cites Title 4, Chapter 54 and 38-3-119 but the text read contains only the new section 39-17-1328."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-1328(b)): No person shall sell or transfer ownership of a firearm, or purchase or obtain ownership of a firearm, unless one (1) of the following applies:\nSECTION 1 (new TCA 39-17-1328(b)(1)): The seller or transferor is a gun dealer;\nSECTION 1 (new TCA 39-17-1328(b)(2)): The seller or transferor makes the sale or transfer to or through a gun dealer and obtains a receipt;\nSECTION 1 (new TCA 39-17-1328(b)(4)): The transferor is transferring ownership of the firearm to a family member by gift, bequest, or inheritance; the transferee is not prohibited from possessing a firearm under this part; and the transferee is at least eighteen (18) years of age; or\nSECTION 1 (new TCA 39-17-1328(c)): Any person who intentionally violates subsection (b) commits a Class B misdemeanor and shall be fined not less than five hundred dollars ($500) nor more than ten thousand dollars ($10,000) and may be imprisoned for a period not to exceed nine (9) months. A person convicted under this section is prohibited from possessing a firearm for a period of two (2) years."
+}

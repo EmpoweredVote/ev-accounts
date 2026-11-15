@@ -1,6 +1,24 @@
 # generate_or_legislative_races.ps1
 # Generates 239_or_legislative_races.sql
 # 30 Senate districts x 1 election + 60 House districts x 1 election = 90 rows
+#
+# 🔴🔴 DO NOT RE-RUN THIS WITHOUT FIXING THE SENATE LOOP. THE LINE ABOVE IS THE BUG.
+#
+# Oregon elects HALF its Senate at a time. Or Const art IV s4: senators serve four years and
+# "one-half, as nearly as possible, of the number of Senators shall be elected biennially". So a
+# given general election has 15 senate contests, not 30 -- in 2026 districts 3, 4, 6, 7, 8, 10, 11,
+# 13, 15, 16, 17, 19, 20, 24 and 26; in 2024 the other fifteen.
+#
+# This generator fans out one race per SEAT IN THE CHAMBER and has no notion of which seats are up.
+# The House loop is right, because all 60 Oregon House seats are elected every two years. The Senate
+# loop is wrong by exactly half, and the 15 races it invented sat in production from 2026-05-30
+# asserting an election that never happened. CC_0419 deleted them on 2026-11-13; re-running this
+# file as it stands would put them straight back, because ON CONFLICT DO NOTHING only protects the
+# rows that already exist.
+#
+# ▶ A SEAT IS NOT A CONTEST. Before scaffolding races for any chamber, ask which seats are on that
+#   ballot and take the list from the state, not from the size of the body. Staggered upper
+#   chambers are the common case, not the exception.
 
 if (-not $PSScriptRoot) {
     Write-Error "PSScriptRoot is empty — run this script with 'powershell -File generate_or_legislative_races.ps1', not dot-sourced."

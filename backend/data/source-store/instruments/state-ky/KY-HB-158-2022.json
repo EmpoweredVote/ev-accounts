@@ -1,0 +1,68 @@
+{
+  "id": "KY-HB-158-2022",
+  "scope": "state:ky",
+  "title": "HB158 (2022 Regular): AN ACT relating to firearms and declaring an emergency.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/22RS/hb158.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/22RS/hb158/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Savannah Maddox",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e17f04a4-35d6-4e64-8006-30381e9ff6bd"
+    },
+    {
+      "name": "Shane Baker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "816317ea-8393-4525-8da1-8939d125d52f"
+    },
+    {
+      "name": "Kevin Bratcher",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Josh Calloway",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436293ef-ed3f-46b3-9bb6-809b6828eaf8"
+    },
+    {
+      "name": "Thomas Huff",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b159e90d-9ebe-4cc5-9c85-ec189f1d0322"
+    },
+    {
+      "name": "Felicia Rabourn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a39b09c3-23b4-4bfb-a001-8a9a2adfb6cd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/22RS/hb158/orig_bill.pdf (LegiScan doc 2464492))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-158-2022.introduced.pdf",
+      "sha256": "f88716a2e69a8ffb3c278bff74adb0ad651e87093cc20b26822511224d3ba55f"
+    },
+    "note": "Introduced version (22 RS BR 259); later amendments not in text read. No votes recorded. Subsection (3) quote is the last sentence only; the first sentence defines the official-capacity offense."
+  },
+  "operative_text": "Section 1 (new section of KRS Chapter 527): (2) Notwithstanding any other law, an agency of this state, a political subdivision of this state, or a person employed by an agency of this state or a political subdivision of this state may not contract with or in any other manner provide assistance to a federal agency or official with respect to the enforcement of a federal statute, order, rule, or regulation that: (a) Imposes a prohibition, restriction, or other regulation that does not exist under the laws of this state; and (b) Relates to: 1. A registry requirement for a firearm, a firearm accessory, or ammunition; 2. A requirement that an owner of a firearm, a firearm accessory, or ammunition possess a license as a condition of owning, possessing, or carrying the firearm, firearm accessory, or ammunition; 3. A requirement that a background check be conducted for the private sale or transfer of a firearm, a firearm accessory, or ammunition; 4. A program for confiscating a firearm, a firearm accessory, or ammunition from a person who is not otherwise prohibited by the laws of this state from possessing the firearm, firearm accessory, or ammunition; or 5. A program that requires an owner of a firearm, a firearm accessory or ammunition to sell the firearm, firearm accessory, or ammunition.\nSection 1 (new section of KRS Chapter 527): (3) An offense under this subsection is a Class B misdemeanor for the first offense and a Class A misdemeanor for each subsequent offense.\nSection 1 (new section of KRS Chapter 527): (11) A federal officer or agent, or a person otherwise under the direction or control of a federal agency, who arrests, or attempts to arrest, any state or local government official for compliance with this section, or who attempts to enforce any federal statute, order, rule, or regulation described by subsection (2) of this section, shall be subject to arrest by state or local law enforcement."
+}

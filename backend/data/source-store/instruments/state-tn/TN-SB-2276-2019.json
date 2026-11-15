@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2276-2019",
+  "scope": "state:tn",
+  "title": "SB2276 (111th General Assembly): As introduced, clarifies that the term \"crime of violence\" in regard to weapons offenses includes aggravated rape of a child rather than especially aggravated rape of a child. - Amends TCA Title 4; Title 16; Title 33; Title 36; Title 37; Title 38; Title 39; Title 40; Title 49 and Title 70.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2276&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/SB2276.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "John Stevens",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2020-02-04; crossfiled twin's official copy via the Internet Archive snapshot 20260513203240 of https://www.capitol.tn.gov/Bills/111/Bill/HB2621.pdf (it names SENATE BILL 2276; own link https://www.capitol.tn.gov/Bills/111/Bill/SB2276.pdf not archived))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2276-2019.draft.twin.pdf",
+      "sha256": "82d0bfa5efeb0e9522bc256550d1f8144ce1ce50c0bdd743038ff7ae85c956b0"
+    },
+    "note": "Draft dated 2020-02-04, read from the twin HB 2621 (names SB 2276; sponsor Stevens / Curcio). Word swap; the whole instruction sentence is quoted. Caption lists many titles but only 39-17-1301(3) is amended."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1301(3)): Tennessee Code Annotated, Section 39-17-1301(3), is amended by deleting the language \"especially aggravated rape of a child\" and substituting instead \"aggravated rape of a child\"."
+}

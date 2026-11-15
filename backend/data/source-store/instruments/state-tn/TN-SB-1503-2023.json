@@ -1,0 +1,45 @@
+{
+  "id": "TN-SB-1503-2023",
+  "scope": "state:tn",
+  "title": "SB1503 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 8; Title 10; Title 33; Title 36; Title 38; Title 39; Title 40; Title 49; Title 50 and Title 70, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1503&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB1503.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "John Stevens",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+    },
+    {
+      "name": "Randy McNally",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f1c1e147-193c-49cc-9b89-16956adb964c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-02-02; official copy via the Internet Archive snapshot 20260514143226 of https://www.capitol.tn.gov/Bills/113/Bill/SB1503.pdf (LegiScan doc 2678346))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1503-2023.draft.pdf",
+      "sha256": "38d5af74cd7747746a2b105b3dd294ccf8648e390a59f8b1707c85e39ddf65ab"
+    },
+    "note": "Draft as filed 2023-02-02; HB 1005 and SB 1503 share this document. Sections 5-29 make the same handgun-to-firearm word swap in other titles (public records, mental health, family, education, wildlife, labor); only sections 1-4, 9 and 14 are quoted. Section 8 (TCA 36-3-626) as printed swaps 'firearm' for 'firearm'. No amendments in the text read."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1351): Tennessee Code Annotated, Section 39-17-1351, is amended by deleting the language \"handgun\" wherever it appears and substituting instead the language \"firearm\" and by deleting the language \"handguns\" wherever it appears and substituting instead the language \"firearms\".\nSECTION 2 (TCA 39-17-1351(r)(1)): A facially valid handgun permit, firearms permit, weapons permit, or license issued by another state shall be valid in this state according to its terms and shall be treated as if it is a firearm carry permit issued by this state.\nSECTION 3 (TCA 39-17-1365): Tennessee Code Annotated, Section 39-17-1365, is amended by deleting the language \"handgun\" wherever it appears and substituting instead the language \"firearm\".\nSECTION 4 (TCA 39-17-1366): Tennessee Code Annotated, Section 39-17-1366, is amended by deleting the language \"handgun\" wherever it appears and substituting instead the language \"firearm\" and by deleting the language \"handguns\" wherever it appears and substituting instead the language \"firearms\".\nSECTION 9 (TCA 38-3-122(c)): Tennessee Code Annotated, Section 38-3-122(c), is amended by deleting the language \"handgun carry permit\" wherever it appears and substituting instead the language \"firearm carry permit\".\nSECTION 14 (TCA 39-17-1313(a)): Tennessee Code Annotated, Section 39-17-1313(a), is amended by deleting the language \"handgun carry permit\" wherever it appears and substituting instead the language \"firearm carry permit\"."
+}

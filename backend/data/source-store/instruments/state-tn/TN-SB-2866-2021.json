@@ -1,0 +1,45 @@
+{
+  "id": "TN-SB-2866-2021",
+  "scope": "state:tn",
+  "title": "SB2866 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, relative to weapons.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2866&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/SB2866.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul Bailey",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "310955ff-3e44-4032-879f-b3b46026aadb"
+    },
+    {
+      "name": "Edward Jackson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0d5fb0c4-9234-4cb8-8911-7e8de2467729"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2022-02-03; official copy via the Internet Archive snapshot 20260514133950 of https://www.capitol.tn.gov/Bills/112/Bill/SB2866.pdf (LegiScan doc 2504560))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2866-2021.draft.pdf",
+      "sha256": "52c6c330107e50c18ecb92443b4c1bc640faeee24c74b3b454cf11a8defd6959"
+    },
+    "note": "Draft as filed 2022-02-02 (HB 2524 / SB 2866), the \"Second Amendment Simplification Act of 2022.\" Replaces 39-17-1307 with a single prohibited-possessor offense and deletes 39-17-1308 (carry with intent to go armed, defenses) and 39-17-1311 (weapon in park or recreation building). Sections 2(b)-(c) list relief and federal-dealer exceptions. Effective July 1, 2022."
+  },
+  "operative_text": "SECTION 2 (TCA 39-17-1307(a)): (1) A person commits an offense who possesses a firearm and:\nSECTION 2 (TCA 39-17-1307(a)): (C) Has been convicted of any other felony;\nSECTION 2 (TCA 39-17-1307(a)): (D) Has been convicted of a misdemeanor crime of domestic violence as defined in 18 U.S.C. § 921, and is still subject to the disabilities of such a conviction; or\nSECTION 2 (TCA 39-17-1307(a)): (E) Is, at the time of the possession, subject to an order of protection that fully complies with 18 U.S.C. § 922(g)(8).\nSECTION 2 (TCA 39-17-1307(d)): (d) A person does not possess a firearm, including, but not limited to, a firearm registered under the National Firearms Act (26 U.S.C. § 5801 et seq.), if the firearm is in a safe or similar container that is securely locked and to which the person does not have the combination, keys, or other means of normal access.\nSECTION 3 (TCA 39-17-1308): Tennessee Code Annotated, Section 39-17-1308, is amended by deleting the section in its entirety.\nSECTION 4 (TCA 39-17-1311): Tennessee Code Annotated, Section 39-17-1311, is amended by deleting the section in its entirety.\nSECTION 5 (TCA 39-17-1313(a)): deleting the language \"or who lawfully carries a handgun pursuant to § 39-17-1307(g)\"."
+}

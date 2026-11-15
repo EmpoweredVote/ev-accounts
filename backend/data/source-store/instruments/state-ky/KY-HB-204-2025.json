@@ -1,0 +1,57 @@
+{
+  "id": "KY-HB-204-2025",
+  "scope": "state:ky",
+  "title": "HB204 (2025 Regular): AN ACT relating to concealed deadly weapons.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/25RS/hb204.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/25RS/hb204/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Savannah Maddox",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e17f04a4-35d6-4e64-8006-30381e9ff6bd"
+    },
+    {
+      "name": "T.J. Roberts",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "307fc639-dd7a-42af-8e22-abf26543c04b"
+    },
+    {
+      "name": "Josh Calloway",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436293ef-ed3f-46b3-9bb6-809b6828eaf8"
+    },
+    {
+      "name": "Steven Doan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9afa6c68-2cf9-4946-8ea0-7171d4153a4e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/25RS/hb204/orig_bill.pdf (LegiScan doc 3048235))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-204-2025.introduced.pdf",
+      "sha256": "587c32fbc3b528788edefb11d361f9d82baafb5d4ac5d6f2057e808053a7b17d"
+    },
+    "note": "Introduced text (25 RS BR 1083), 34 pages; no votes recorded. In Section 2, struck text removed: the elementary/secondary-school-facility exclusion from KRS 237.110(16)(f). Quotes are partial lists from the reprinted section; other changes in Sections 1-3 are conforming or technical."
+  },
+  "operative_text": "Section 2 (KRS 237.110): Any child-caring facility as defined in KRS 199.011, any child-care center as defined in KRS 199.894, or any certified family child-care home as defined in KRS 199.8982, except however, any owner of a certified child-care home may carry a concealed firearm into the owner's residence used as a certified child-care home;\nSection 2 (KRS 237.110): An area of an airport to which access is controlled by the inspection of persons and property by the Transportation Security Administration; or\nSection 4 (KRS 527.070): A person with a valid license to carry concealed deadly weapons issued pursuant to Section 2 of this Act, except pupils attending schools subject to any policy adopted under KRS 158.150(2) or other law required under 20 U.S.C. sec. 7961.\nSection 5: The following KRS section is repealed: 237.115 Construction of KRS 237.110 -- Prohibition by local government units of carrying concealed deadly weapons in governmental buildings -- Restriction on criminal penalties."
+}

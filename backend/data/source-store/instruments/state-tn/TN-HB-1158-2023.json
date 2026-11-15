@@ -1,0 +1,57 @@
+{
+  "id": "TN-HB-1158-2023",
+  "scope": "state:tn",
+  "title": "HB1158 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1158&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB1158.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chris Todd",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+    },
+    {
+      "name": "Cameron Sexton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "07e92498-f5e8-4dcf-8609-39a86632e15e"
+    },
+    {
+      "name": "Johnny Garrett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "34266501-a4d8-4d2c-83c6-ee49335cf0b9"
+    },
+    {
+      "name": "Paul Sherrell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9dfac502-4cc4-4105-91de-cc25272e452e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-02-02; official copy via LegiScan getBillText doc 2678615)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1158-2023.draft.pdf",
+      "sha256": "23852f3b8c57b28517b4369037912a3e05d25bae5b1f47590505eed5dce8608a"
+    },
+    "note": "Draft of 2023-02-02 (as introduced); amendments not in text. Section 4 quote stops at a page break; the rest covers school-property parking areas, with an exception for persons at least 18 who meet military-service qualifications. Twin: TN-SB-1498-2023."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(g)(1)): (1) The person is at least eighteen (18) years of age;\nSECTION 2 (TCA 39-17-1351(b)): If the applicant is at least eighteen (18) years of age and is not prohibited from possessing a firearm in this state pursuant to § 39-17-1307(b), 18 U.S.C. § 922(g), or any other state or federal law, and the applicant otherwise meets all of the requirements of this section, the department shall issue a permit to the applicant.\nSECTION 3 (TCA 39-17-1351(x)(1)): is amended by deleting the language \"twenty-one (21) years of age\" and substituting instead the language \"eighteen (18) years of age\".\nSECTION 4 (new TCA 39-17-1313(e)): (e) Notwithstanding subsection (a), this section does not apply to a person who is under twenty-one (21) years of age and transports or stores a firearm or firearm ammunition in the person's motor vehicle while on or utilizing a public or private parking"
+}

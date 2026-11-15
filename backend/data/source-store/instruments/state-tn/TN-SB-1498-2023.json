@@ -1,0 +1,44 @@
+{
+  "id": "TN-SB-1498-2023",
+  "scope": "state:tn",
+  "title": "SB1498 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1498&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB1498.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Frank Niceley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Janince Bowling",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e50369f1-10eb-467e-8604-b94675565631"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-02-02; official copy via the Internet Archive snapshot 20260514155143 of https://www.capitol.tn.gov/Bills/113/Bill/SB1498.pdf (LegiScan doc 2677265))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1498-2023.draft.pdf",
+      "sha256": "a8428511c1fa2d2c5c316b2990c3093677e1c892b1e6b07e36ccff5f88092a63"
+    },
+    "note": "Draft of 2023-02-02 (as introduced); amendments not in text. Section 4 quote stops at a page break; the rest covers school-property parking areas, with an exception for persons at least 18 who meet military-service qualifications. Twin: TN-HB-1158-2023."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(g)(1)): (1) The person is at least eighteen (18) years of age;\nSECTION 2 (TCA 39-17-1351(b)): If the applicant is at least eighteen (18) years of age and is not prohibited from possessing a firearm in this state pursuant to § 39-17-1307(b), 18 U.S.C. § 922(g), or any other state or federal law, and the applicant otherwise meets all of the requirements of this section, the department shall issue a permit to the applicant.\nSECTION 3 (TCA 39-17-1351(x)(1)): is amended by deleting the language \"twenty-one (21) years of age\" and substituting instead the language \"eighteen (18) years of age\".\nSECTION 4 (new TCA 39-17-1313(e)): (e) Notwithstanding subsection (a), this section does not apply to a person who is under twenty-one (21) years of age and transports or stores a firearm or firearm ammunition in the person's motor vehicle while on or utilizing a public or private parking"
+}

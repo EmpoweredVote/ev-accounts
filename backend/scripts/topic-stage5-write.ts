@@ -38,6 +38,7 @@ import { parseUnit } from './lib/stage5Find.js';
 import { readQuoteChecks } from './lib/stage5QuoteCheck.js';
 import { parseRosterTsv } from './lib/stage5Roster.js';
 import { applyBatch, applyBlocker, assertDraftSeason, planBatch, refusePassagesNotOnPage } from './lib/stage5Write.js';
+import { refuseWriteInSlimSession } from './lib/noWriteGuard.js';
 
 const backendDir = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 loadBackendEnv(backendDir);
@@ -65,6 +66,7 @@ async function main(): Promise<number> {
   if (!topic) throw new Error('usage: topic-stage5-write --topic <key> --research <abs dir> --season draft --csv-out <abs file> [--apply] (see the file header)');
   const research = abs('--research', flag('--research'));
   const apply = hasFlag(process.argv, '--apply');
+  if (apply) refuseWriteInSlimSession('topic:stage5-write --apply');
   // The dry run writes research.csv; --apply writes the database only, so the same command plus --apply works.
   const csvOut = apply ? undefined : abs('--csv-out', flag('--csv-out'));
   const store = flag('--store') ? abs('--store', flag('--store')) : join(backendDir, 'data', 'source-store');

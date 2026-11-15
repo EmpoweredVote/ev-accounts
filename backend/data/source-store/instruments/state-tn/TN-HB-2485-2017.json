@@ -1,0 +1,44 @@
+{
+  "id": "TN-HB-2485-2017",
+  "scope": "state:tn",
+  "title": "HB2485 (110th General Assembly): As introduced, permits the carry of a handgun by certain persons in areas of airports that are accessible to the public and outside of a secured area; creates misdemeanor offenses for violations of permitted carry at airports; permits carry of a handgun by certain persons on public transportation; preempts local regulations and postings that conflict. - Amends TCA Title 39, Chapter 17, Part 13; Title 40; Title 42 and Title 64.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2485&ga=110",
+    "https://www.capitol.tn.gov/Bills/110/Bill/HB2485.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Andy Holt",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jay Reedy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4e0eefb1-6a4f-4004-be8d-432a7131b475"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2018-02-01; official copy via LegiScan getBillText doc 1714215)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2485-2017.draft.pdf",
+      "sha256": "6130e4cbc98678cc852ba285f808b62b1ca38a11c7d0c06978e6500d20b4df85"
+    },
+    "note": "Draft as filed, 2018-02-01 (HB 2485 / SB 2335, one document). Introduced version; no votes recorded. Amendments, if any, are not in this text. The title lists Titles 40, 42 and 64 but the text read contains only SECTION 1 and the effective date; quotes omit part of (b) and (d) lead-ins."
+  },
+  "operative_text": "SECTION 1 (new section, TCA Title 39, Chapter 17, Part 13): (a) No unauthorized person shall enter the restricted access area of a commercial service airport, in or beyond the airport security screening checkpoint, knowingly possessing a handgun or knowingly having a handgun under the person's control.\nSECTION 1 (new section, TCA Title 39, Chapter 17, Part 13): (b) A person not authorized to carry a handgun pursuant to the laws of this state or federal law who violates subsection (a) commits a Class B misdemeanor. A person authorized to carry a handgun pursuant to the laws of this state or federal law who violates subsection (a) commits a Class C misdemeanor;\nSECTION 1 (new section, TCA Title 39, Chapter 17, Part 13): (c) It is not an offense for any person authorized to carry a handgun pursuant to the laws of this state or federal law to possess or carry a handgun while on the premises of, or as a passenger on any train, streetcar, bus, or other vehicle owned or operated by a public transportation authority of this state or a political subdivision of this state, or operated by any private entity that provides public transportation pursuant to an agreement with this state or a political subdivision of this state.\nSECTION 1 (new section, TCA Title 39, Chapter 17, Part 13): (1) Any ordinance, resolution, regulation, or policy of any county, municipality, or other political subdivision of this state that conflicts with this section shall be void and of no force and effect. (2) Notwithstanding § 39-17-1359 to the contrary, any sign, posting, or other notification that conflicts with this section shall be void and of no force and effect."
+}

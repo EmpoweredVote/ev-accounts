@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-192-2023",
+  "scope": "state:tn",
+  "title": "HB0192 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Section 39-17-1359, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0192&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB0192.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jody Barrett",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a6b0df31-75ac-4a90-88e6-78db5c74a71e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-01-25; official copy via LegiScan getBillText doc 2664142)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-192-2023.draft.pdf",
+      "sha256": "83aee40a392052a99e98672676e00259b7d130770d6e76a4c249d2172c6ccbb7"
+    },
+    "note": "Draft dated 2023-01-25 (as introduced). Text has no marks: SECTION 1 replaces (a)(2) and, as printed, says the posted-property prohibition applies to persons authorized under 39-17-1307(g) or 39-17-1366 (this appears to remove the enhanced-permit exemption described in the state summary; the old (a)(2) text is not shown, so the reviewer should compare against current law). The summary says the bill exempts enhanced permit holders and removes the Class B misdemeanor penalty; SECTION 2 deletes subsection (c)."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1359(a)(2)): (2) The prohibition in subdivision (a)(1)(A) shall apply to any person who is authorized to carry a firearm by authority of § 39-17-1307(g) or § 39-17-1366.\nSECTION 2 (TCA 39-17-1359(c)): Tennessee Code Annotated, Section 39-17-1359, is amended by deleting subsection (c) in its entirety."
+}

@@ -1,0 +1,49 @@
+{
+  "id": "SC-H-3052-2017",
+  "scope": "state:sc",
+  "title": "H3052 (122nd General Assembly): Jacob Hall School Protection Act",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3052&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/3052_20161215.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joshua Putnam",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Steven Long",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "55ef311d-6efd-40c9-8a32-d261624bf5a3"
+    },
+    {
+      "name": "Michael Pitts",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2016-12-15; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/3052_20161215.htm (LegiScan doc 1439455))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3052-2017.introduced.htm",
+      "sha256": "789986b1f162c8d90ee4a3ff484f50d84d1641b21433097539e29316a3547350"
+    },
+    "note": "Introduced 2016-12-15 ('Jacob Hall School Protection Act'). Private schools are exempt but may opt in (Section 59-63-690). Passage vote: none listed; introduced text only."
+  },
+  "operative_text": "Section 1 (new Section 59-63-620): A public school concealed weapons permit (PSCWP) is a specialized permit authorized by this article which enables a person to possess a concealed weapon on public school property, notwithstanding another provision of law, for the purpose of confronting a live shooter or an imminent threat of a live shooter in his vicinity on school property.\nSection 1 (new Section 59-63-630): (A) The South Carolina Law Enforcement Division shall provide a PSCWP for the limited purposes provided in this article.\nSection 1 (new Section 59-63-630): (B) A determination of whether the policy of a particular school is to allow its employees to obtain a PSCWP is within the exclusive jurisdiction of the principal of the school.\nSection 1 (new Section 59-63-630): (D) A PSCWP is valid for five years and may be renewed through a process developed by SLED.\nSection 1 (new Section 59-63-630): (F)(2) A PSCWP holder shall carry his concealed weapon properly holstered on his person at all times on school grounds, if he brings the weapon onto the school grounds.\nSection 1 (new Section 59-63-640): SLED shall approve at least three concealed carry holsters and their vendors and provide a list of these approved holsters and vendors to a PSCWP holder.\nSection 1 (new Section 59-63-670): (A) A PSCWP holder may carry his weapon any place that any other concealed weapons permit holder may carry.\nSection 1 (new Section 59-63-680): The identities of PSCWP holders may not be made available to the public and are exempt from disclosure under the Freedom of Information Act, notwithstanding another provision of law."
+}

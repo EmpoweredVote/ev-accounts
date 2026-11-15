@@ -1,0 +1,86 @@
+{
+  "id": "SC-S-584-2021",
+  "scope": "state:sc",
+  "title": "S0584 (124th General Assembly): Second Amendment Sanctuary Act",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0584&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/584_20210218.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shane Massey",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "59e8ad1f-d1f1-4287-8132-379233189488"
+    },
+    {
+      "name": "Rex Rice",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d587a64f-3b40-421c-9963-9c934f961443"
+    },
+    {
+      "name": "Joshua Kimbrell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5ebdf748-e14d-47c1-9b88-f22fa0ecd6c4"
+    },
+    {
+      "name": "Thomas Corbin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6d10b3d2-940f-45ef-af02-07252a3ce185"
+    },
+    {
+      "name": "Dwight Loftis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Thomas Young",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "da3991e4-5ae6-4792-8c14-4e5679a1bf92"
+    },
+    {
+      "name": "Brian Adams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d33b8da6-60b3-480a-964f-1d3315fac434"
+    },
+    {
+      "name": "Lawrence Grooms",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a5c02924-84fc-40b5-88db-d6f2a13e9aac"
+    },
+    {
+      "name": "Ronnie Cromer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "56bd35c2-e142-4bbf-b376-70a0222acba5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2021-02-18; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/584_20210218.htm (LegiScan doc 2298149))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-584-2021.introduced.htm",
+      "sha256": "5ba166b5202aebee765f83f0c0d996a98b796cdfc1c28b2f3e2a110b6c0464ec"
+    },
+    "note": "Introduced text of 2021-02-18. No firearm is regulated directly; the part is a Second Amendment 'sanctuary' (non-cooperation) rule. Section 1 findings cite the Second, Ninth and Tenth Amendments and S.C. Const. art. I, sec. 20 as authority, not as a duty."
+  },
+  "operative_text": "Section 3 (new Section 23-31-900): Any federal law, treaty, executive order, rule, or regulation related to the Second Amendment must be evaluated by the Attorney General. The Attorney General shall issue a written opinion of its constitutionality.\nSection 3 (new Section 23-31-910): Notwithstanding any other provision of law to the contrary, upon the issuance of an Attorney General's opinion finding that a federal law, treaty, executive order, rule, or regulation related to the Second Amendment is unconstitutional: (1) no public funds of this State, or any political subdivision of this State, shall be allocated for the implementation, regulation, or enforcement of that federal law, treaty, executive order, rule, or regulation; (2) no personnel or property of this State, or any political subdivision of this State, shall be allocated to the implementation, regulation, or enforcement of that federal law, treaty, executive order, rule, or regulation; and (3) no official, agent, or employee of the State of South Carolina, or any political subdivision of it, shall enforce or attempt to enforce that federal law, treaty, executive order, rule, or regulation.\nSection 3 (new Section 23-31-920): (A) The Attorney General shall defend any legal action brought against the State or political subdivision for an action taken pursuant to Section 23-31-910. (B) The Attorney General may seek injunctive relief in any court of competent jurisdiction to enjoin any official, agent, or employee of the government of the United States or employee of a corporation providing services to the government of the United States from enforcing a federal law, treaty, executive order, rule, or regulation."
+}

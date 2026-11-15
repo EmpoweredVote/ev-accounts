@@ -86,7 +86,7 @@ for (const g of groups) {
     if (losers.length === 0) { done.add(k); continue; }
     const { rows: victims } = await pool.query(
       `SELECT id, source_transaction_id, amount, contribution_date, donor_name_normalized,
-              raw_record->>'committee_id' AS cmte
+              COALESCE(fec_committee_id, raw_record->>'committee_id') AS cmte
          FROM transparent_motivations.contributions
         WHERE data_source='fec' AND politician_source_id=$1 AND source_transaction_id = ANY($2::text[])`,
       [g.ps, losers]);

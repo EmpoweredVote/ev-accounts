@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-7004-2023",
+  "scope": "state:tn",
+  "title": "SB7004 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 49, Chapter 1 and Title 49, Chapter 50, relative to private schools.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB7004&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB7004.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-08-17; official copy via the Internet Archive snapshot 20260515001244 of https://www.capitol.tn.gov/Bills/113/Bill/SB7004.pdf (LegiScan doc 2837631))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-7004-2023.draft.pdf",
+      "sha256": "cd7df6ee96d21e313a1806c07ee221dc12973928a8f8fc12bd72bf5e353f844e"
+    },
+    "note": "Draft dated 2023-08-17 (as filed, special-session number). Section 49-50-803 is the private-school handgun carry policy section (per the state summary); the bill text itself does not mention handguns. The state's summary calls it 'as introduced'; no votes are recorded for this Senate number. The same change was enacted in 2024 as Public Chapter 738 (HB 1631 / SB 1708)."
+  },
+  "operative_text": "SECTION 1 (TCA 49-50-803): is amended by deleting the language \"K-12\" wherever it appears in the section.\nSECTION 2 (TCA 49-50-803, new subsection (f)): (f) As used in this section, \"private school\" means a private school as defined in § 49-6-3001(c) that serves students in any of the grades pre-kindergarten through twelve (pre-K-12)."
+}

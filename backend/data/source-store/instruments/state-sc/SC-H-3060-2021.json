@@ -1,0 +1,101 @@
+{
+  "id": "SC-H-3060-2021",
+  "scope": "state:sc",
+  "title": "H3060 (124th General Assembly): Concealed weapons permit",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3060&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/3060_20201209.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Brian White",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bobby Cox",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "William Hixon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ce66d36d-d959-40cc-8b2b-565bb57f63bf"
+    },
+    {
+      "name": "Davey Hiott",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "632234ec-2b47-47f4-9070-c0d7d00e139a"
+    },
+    {
+      "name": "James Burns",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9e65a60c-4016-44f5-a830-c8562f08a7ac"
+    },
+    {
+      "name": "William Chumley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b79701a8-542e-4090-b752-d2e79fb92cd4"
+    },
+    {
+      "name": "Russell Fry",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bill Taylor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "faa9a73c-e06c-45ef-8961-3c407f6025e1"
+    },
+    {
+      "name": "Cally Forrest",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1646f5cd-b151-494a-8a3b-dc862a31eb08"
+    },
+    {
+      "name": "Donald McCabe",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1262cf37-df1d-49d4-b2c6-a6a1dde6b459"
+    },
+    {
+      "name": "Anne Thayer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Micajah Caskey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8f3a9f16-8c37-4b1b-aedb-f6dc094b5834"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2020-12-09; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/3060_20201209.htm (LegiScan doc 2220184))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3060-2021.introduced.htm",
+      "sha256": "5e8e995ab5c34426153079b9b05b7b41f497c058972d7198720b9b4d50078832"
+    },
+    "note": "Introduced text, Dec. 9, 2020. No votes. Struck: the old requirement that the other state run a background check and training course, the SLED reciprocity list, and 'the reciprocity requirements of' in item (2). New item (3) on permitless-carry state residents (needs photo ID) is not quoted for length; it is in the text."
+  },
+  "operative_text": "Section 1 (Section 23-31-215(N)): (1) A valid permit or license to carry a concealable weapon, firearm, or handgun held by a resident of another state shall be honored by this State, provided that the person is a resident of the issuing state.\nSection 1 (Section 23-31-215(N)): (2) Notwithstanding item (1), South Carolina shall automatically recognize concealed weapon permits issued by Georgia and North Carolina.\nSection 1 (Section 23-31-215(N)): (4) The reciprocity provisions of this section shall not be construed to authorize a person to carry, in this State, any firearm or weapon other than a handgun. A person carrying a gun in this State pursuant to this section is subject to and must abide by the laws of South Carolina regarding concealable weapons.\nSection 1 (Section 23-31-215(N)): (5) The Attorney General shall enter into a written agreement with another state if that state requires a written agreement in order to recognize permits to carry concealable weapons issued by this State."
+}

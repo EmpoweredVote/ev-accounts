@@ -1,0 +1,45 @@
+{
+  "id": "SC-S-359-2023",
+  "scope": "state:sc",
+  "title": "S0359 (125th General Assembly): Second Amendment Sanctuary Act",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0359&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/359_20230110.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shane Massey",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "59e8ad1f-d1f1-4287-8132-379233189488"
+    },
+    {
+      "name": "Danny Verdin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ec52251-b87c-4264-b1f7-e4d348e2756a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2023-01-10; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/359_20230110.htm (LegiScan doc 2630968))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-359-2023.introduced.htm",
+      "sha256": "0df09e2bb67d34e40d71d39f353a58448f37d38cb1a6e4d03034ec7fcf06e40f"
+    },
+    "note": "Introduced Jan. 10, 2023. No passage vote."
+  },
+  "operative_text": "SECTION 3 (new Section 23-31-900): Any federal law, treaty, executive order, rule, or regulation related to the Second Amendment must be evaluated by the Attorney General. The Attorney General shall issue a written opinion of its constitutionality.\nSECTION 3 (new Section 23-31-910): Notwithstanding any other provision of law to the contrary, upon the issuance of an Attorney General's opinion finding that a federal law, treaty, executive order, rule, or regulation related to the Second Amendment is unconstitutional: (1) no public funds of this State, or any political subdivision of this State, shall be allocated for the implementation, regulation, or enforcement of that federal law, treaty, executive order, rule, or regulation; (2) no personnel or property of this State, or any political subdivision of this State, shall be allocated to the implementation, regulation, or enforcement of that federal law, treaty, executive order, rule, or regulation; and (3) no official, agent, or employee of the State of South Carolina, or any political subdivision of it, shall enforce or attempt to enforce that federal law, treaty, executive order, rule, or regulation.\nSECTION 3 (new Section 23-31-920): (A) The Attorney General shall defend any legal action brought against the State or political subdivision for an action taken pursuant to Section 23-31-910. (B) The Attorney General may seek injunctive relief in any court of competent jurisdiction to enjoin any official, agent, or employee of the government of the United States or employee of a corporation providing services to the government of the United States from enforcing a federal law, treaty, executive order, rule, or regulation."
+}

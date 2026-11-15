@@ -1,0 +1,39 @@
+{
+  "id": "SC-S-23-2021",
+  "scope": "state:sc",
+  "title": "S0023 (124th General Assembly): Weapons on school property",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0023&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/23_20201209.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bradley Hutto",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c00f954-b79c-4324-9ef4-3a50b2aae213"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2020-12-09; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/23_20201209.htm (LegiScan doc 2220326))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-23-2021.introduced.htm",
+      "sha256": "2063a45ca65275e7d4f783e48df483e8bc0d40c0351f307c1629f97b04922860"
+    },
+    "note": "Introduced 2020-12-09; no passage vote in the data. 'or discharge' and 'or within one thousand feet of' are the added words."
+  },
+  "operative_text": "SECTION 1 (Section 16-23-420(A)): (A) It is unlawful for a person to possess or discharge a firearm of any kind on or within one thousand feet of any premises or property owned, operated, or controlled by a private or public school, college, university, technical college, other post-secondary institution, or in any publicly owned building, without the express permission of the authorities in charge of the premises or property. The provisions of this subsection related to any premises or property owned, operated, or controlled by a private or public school, college, university, technical college, or other post-secondary institution, do not apply to a person who is authorized to carry a concealed weapon pursuant to Article 4, Chapter 31, Title 23 when the weapon remains inside an attended or locked motor vehicle and is secured in a closed glove compartment, closed console, closed trunk, or in a closed container secured by an integral fastener and transported in the luggage compartment of the vehicle."
+}

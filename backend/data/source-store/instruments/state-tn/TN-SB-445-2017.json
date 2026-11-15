@@ -1,0 +1,51 @@
+{
+  "id": "TN-SB-445-2017",
+  "scope": "state:tn",
+  "title": "SB0445 (110th General Assembly): As enacted, creates a private cause of action for a party that is adversely affected by a local ordinance, resolution, policy, rule, or other enactment on firearms that is preempted by state law; restricts certain actions by local government in regard to handgun carry permittees. - Amends TCA Title 29, Chapter 20 and Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0445&ga=110",
+    "https://publications.tnsosfiles.com/acts/110/pub/pc0467.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "John Stevens",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+    },
+    {
+      "name": "Paul Bailey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "310955ff-3e44-4032-879f-b3b46026aadb"
+    },
+    {
+      "name": "Janince Bowling",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e50369f1-10eb-467e-8604-b94675565631"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2017-05-31; same official document as TN-HB-508-2017.chaptered.txt (https://publications.tnsosfiles.com/acts/110/pub/pc0467.pdf); 2017-05-31)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-508-2017.chaptered.pdf",
+      "sha256": "49f6df9e923d7105a063c58768a5d53fb747bb03d0a77300e5fd0151d5d27a64"
+    },
+    "note": "Chaptered, Public Chapter 467, 2017-05-31 (House Bill 508 substituted for Senate Bill 445; one document). OCR is imperfect in the text file. SECTION 2 (new TCA 29-20 section) removes governmental immunity for suits under 39-17-1314(g)-(i). SECTION 4 quote is the replacement language; the bill deletes \"This section shall not apply to\". SECTION 5 swaps the word \"room\" for \"building\" in 39-17-1306(a); the quote is the instruction sentence."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1314(g)(1)): Notwithstanding title 29, chapter 20, a party who is adversely affected by an ordinance, resolution, policy, rule, or other enactment that is adopted or enforced by a county, city, town, municipality, or metropolitan government or any local agency, department, or official that violates this section may file an action in a court of competent jurisdiction against the county, city, town, municipality, or metropolitan government for:\nSECTION 1 (TCA 39-17-1314(i)): A prevailing plaintiff in an action under subsection (g) is entitled to recover from the county, city, town, municipality, or metropolitan government the following:\nSECTION 3 (TCA 39-17-1359(g)(1)): Except as provided in subdivision (g)(2), nothing in this section shall authorize an entity of local government or a permittee thereof to enact or enforce a prohibition or restriction on the possession of a handgun by a handgun carry permit holder on property owned or administered by the entity unless the following are provided at each public entrance to the property:\nSECTION 3 (TCA 39-17-1359(g)(1)(A)): Metal detection devices,\nSECTION 4 (TCA 39-17-1359(f)): Except as provided in subsection (g), this section shall not apply to\nSECTION 5 (TCA 39-17-1306(a)): is amended by deleting the word \"room\" and substituting instead the word \"building\"."
+}

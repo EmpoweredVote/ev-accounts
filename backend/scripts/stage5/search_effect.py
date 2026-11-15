@@ -2,9 +2,12 @@
 round two, change 6). Companion to stage5_usage.py; reads files only.
 
 usage: python3 -I scripts/stage5/search_effect.py --roster <tsv> --unit state:xx --record-codes <dir> --codes <dir>
-                                                  --plan <search plan dir> [--json <out>]
+                                                  --plan <search plan dir> [--ids <file>] [--json <out>]
 
---plan  the folder `search_list.py plan` wrote (search.tsv, control.tsv, skipped.tsv).
+--plan  the folder `search_list.py plan` wrote (search.tsv, control.tsv, skipped.tsv). When control.tsv carries a
+        `group` column (`plan --control-group`), each control is also reported apart, under "controls".
+--ids   the state's id list (batches/xx-ids.txt): count only these people. Pass it whenever roster.tsv still holds
+        people dropped from scope; without it Washington counted 274 people for 160 and gave 0.74 codings per person.
 
 For every SEARCHED person in the unit it compares the record-only code (<record-codes>) with the final code (<codes>):
 - "changed" = the outcome or the rung differs (seated 4 -> seated 3 counts; doesn't fit -> seated counts);
@@ -20,7 +23,7 @@ import collections as C, csv, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir
 from _args import opt
 
-USAGE = 'search_effect.py --roster <tsv> --unit state:xx --record-codes <dir> --codes <dir> --plan <dir> [--json <out>]'
+USAGE = 'search_effect.py --roster <tsv> --unit state:xx --record-codes <dir> --codes <dir> --plan <dir> [--ids <file>] [--json <out>]'
 ORDER = ['seated 5', 'seated 4', 'seated 3', 'seated 2', 'seated 1', 'doesnt-fit', 'no-stance', 'no record']
 
 
@@ -43,10 +46,15 @@ def main():
     roster = [r for r in csv.DictReader(open(opt('--roster', required=True, usage=USAGE)), delimiter='\t')
               if r['level'] == level and (not st or r['state'].lower() == st)]
     people = {r['politician_id'] for r in roster}
+    if opt('--ids'):
+        only = set(open(opt('--ids')).read().split())
+        if not only & people: raise SystemExit(f"--ids {opt('--ids')}: none of its ids is in the unit's roster")
+        people &= only
     rec, fin = codes(opt('--record-codes', required=True, usage=USAGE)), codes(opt('--codes', required=True, usage=USAGE))
     plan = opt('--plan', required=True, usage=USAGE)
     searched = [p for p in ids(f'{plan}/search.tsv') if p in people]
     ctrl = set(ids(f'{plan}/control.tsv'))
+    ctrl_group = {r['politician_id']: r['group'] for r in csv.DictReader(open(f'{plan}/control.tsv'), delimiter='\t') if r.get('group')} if os.path.exists(f'{plan}/control.tsv') else {}
     missing = [p for p in searched if p not in fin]
     by = C.defaultdict(lambda: {'searched': 0, 'changed': 0, 'outcome_changed': 0, 'rung_only': 0, 'people': []})
     for p in searched:
@@ -64,9 +72,13 @@ def main():
            'control': len([p for p in searched if p in ctrl]),
            'control_changed': sum(1 for r in by.values() for x in r['people'] if x['control']),
            'by_record_result': {k: dict(by[k]) for k in ORDER if k in by},
+           'controls': {g: {'searched': sum(1 for p in searched if p in fin and ctrl_group.get(p) == g),
+                            'changed': sum(1 for r in by.values() for x in r['people'] if ctrl_group.get(x['politician_id']) == g)}
+                        for g in dict.fromkeys(ctrl_group.values())},
            'codings': {'record_only': rec_n, 'second_pass': second, 'total': rec_n + second,
                        'per_person': round((rec_n + second) / len(people), 2) if people else None}}
     print(f"{unit}: roster {len(people)}, searched {len(searched)} (control {out['control']}, changed {out['control_changed']})")
+    for g, c in out['controls'].items(): print(f"  control, rung {g}: {c['changed']} of {c['searched']} changed")
     print(f"{'record-only result':20s} {'searched':>8s} {'changed':>8s} {'outcome':>8s} {'rung':>6s}")
     for k, r in out['by_record_result'].items():
         if k == 'no record':

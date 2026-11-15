@@ -23,6 +23,11 @@ roster grows), `LEGISCAN_SESSIONS=current`.
   short of the cap. A quiet week costs about 1 query per state.
 - A session whose `dataset_hash` matches `essentials.legiscan_dataset_state` is skipped.
   Datasets update Sundays about 5am Eastern; the cron runs Sundays 14:00 UTC.
+- Every dataset ZIP a job downloads is kept in the private Storage bucket `legiscan-datasets`
+  as `<ST>/<session_id>/<dataset_hash>.zip` (`src/lib/legiscan/archive.ts`, migration CA_0382).
+  Research reads that copy instead of downloading the dataset again: on 2026-11-13 LegiScan
+  paused our key for repeat downloads of unchanged datasets, because research and this job share
+  one key. A failed save is logged and never fails the import.
 - Data is CC BY 4.0. Pages showing it must credit LegiScan (`essentials`
   `LegiScanAttribution.jsx`). Never read or store a legislator's party.
 - Legislators are matched by name inside their own state only. A name with 2 or more

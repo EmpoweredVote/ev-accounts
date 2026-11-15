@@ -1,0 +1,60 @@
+{
+  "id": "TN-HB-2770-2021",
+  "scope": "state:tn",
+  "title": "HB2770 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2770&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/HB2770.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chris Todd",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+    },
+    {
+      "name": "Jay Reedy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4e0eefb1-6a4f-4004-be8d-432a7131b475"
+    },
+    {
+      "name": "Terri Lynn Weaver",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Byrd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bruce Griffey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2022-02-02; official copy via LegiScan getBillText doc 2502558)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2770-2021.draft.pdf",
+      "sha256": "05f47f017b41f0559a0a476cdf050ecec5ce5a76c09348c060de099df31c597e"
+    },
+    "note": "Draft as filed, 2022-02-02 (summary \"As introduced\"); no amendments in the text read. Section 1 replaces all of 39-17-1325; (a)(4) creates a two-year civil action with attorney fees. Effective July 1, 2022."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1325(a)(2)): A person or entity that is authorized to prohibit the possession of firearms on the person's or entity's property pursuant to § 39-17-1359 and who elects, pursuant to that authority, to prohibit the possession of firearms by a person authorized to carry a firearm, including, but not limited to, a handgun, pursuant to this part, thereby assumes absolute custodial responsibility for the safety and defense of the person while on the posted property and while on any property the person is required to traverse in order to travel to and from the location where the person's firearm is stored.\nSECTION 1 (TCA 39-17-1325(a)(5)): Any notice or signage that property is posted pursuant to § 39-17-1359 must also contain language citing this section and stating that any person on the posted property who is otherwise authorized to carry a firearm is under the custodial responsibility of the posting person or entity.\nSECTION 1 (TCA 39-17-1325(b)): A person, business, or other entity that owns, controls, or manages property and has the authority to prohibit weapons on that property by posting, pursuant to § 39-17-1359, is immune from civil liability with respect to a claim based on the person's, business's, or other entity's failure to adopt a policy that prohibits weapons on the property by posting pursuant to § 39-17-1359."
+}

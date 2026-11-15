@@ -1,0 +1,50 @@
+{
+  "id": "SC-H-3183-2017",
+  "scope": "state:sc",
+  "title": "H3183 (122nd General Assembly): Offenses involving weapons",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3183&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/3183_20161215.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Wendell Gilliard",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75dffc0a-f084-4dfb-a2a7-6c81094bb0c2"
+    },
+    {
+      "name": "Gilda Cobb-Hunter",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "896bfe46-0d7e-48ba-86c1-60f39bc9234d"
+    },
+    {
+      "name": "Ivory Thigpen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2016-12-15; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/3183_20161215.htm (LegiScan doc 1439621))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3183-2017.introduced.htm",
+      "sha256": "6559e24c53f9e2d5492c2317c9848f7ddb377ba4a7d4a7a27df939756f09dc21"
+    },
+    "note": "Introduced text, 2016-12-15. Section 1 also raises the Section 16-23-20 penalty from misdemeanor to felony (struck: misdemeanor, one thousand dollars, one year; added: felony, five thousand dollars, five years, with mandatory minimums for repeat offences). Section 2 rewrites the definitions, adding 'assault weapon' (semiautomatic centerfire rifles with a detachable magazine of 21+ rounds, shotguns with folding stock or magazine over six rounds)."
+  },
+  "operative_text": "Section 6 (new Section 23-31-910): (A) It is unlawful to sell or give a firearm to a person whose name appears on the consolidated terrorist watch list maintained by the Terrorist Screening Center administered by the Federal Bureau of Investigation.\nSection 6 (new Section 23-31-910): (B) A person who knowingly sells or gives a firearm to a person in violation of subsection (A) is guilty of a felony and, upon conviction, must be fined not more than fifty thousand dollars or must be imprisoned for a mandatory minimum term of imprisonment of ten years, no part of which may be suspended nor probation granted, and not more than twenty years, or both.\nSection 3 (Section 16-23-220): (A) It is unlawful for a person to transport from one place to another in this State or for any railroad company, express company, or other common carrier or any officer, agent, or employee of any of them or other person acting in their behalf knowingly to ship or to transport from one place to another in this State a machine gun or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, or assault weapon, except as provided in Sections 16-23-250 and 23-31-330.\nSection 4 (Section 16-23-230): (A) It is unlawful for a person to store, keep, possess, or have in possession or permit another to store, keep, possess, or have in possession a machine gun or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, or assault weapon, except as provided in Sections 16-23-250 and 23-31-330.\nSection 5 (Section 16-23-240): (A) It is unlawful for a person to sell, rent, give away, or participate in any manner, directly or indirectly, in the sale, renting, giving away, or otherwise disposing of a machine gun, or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, or assault weapon, except as provided in Sections 16-23-250 and 23-31-330.\nSection 1 (Section 16-23-50): (A) A person, including a dealer, who violates the provisions of this article, except Section 16-23-20, is guilty of a felony and, upon conviction: (1) for a first offense, must be fined not more than fifty thousand dollars or imprisoned not more than ten years, or both; and (2) for a second or subsequent offense, must be fined not more than fifty thousand dollars or imprisoned for a mandatory minimum term of imprisonment of ten years, no part of which may be suspended nor probation granted, and not more than twenty years, or both."
+}

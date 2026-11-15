@@ -1,0 +1,147 @@
+{
+  "id": "SC-H-3700-2017",
+  "scope": "state:sc",
+  "title": "H3700 (122nd General Assembly): SC Constitutional Carry Act",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3700&session=122&summary=B",
+    "https://www.scstatehouse.gov/sess122_2017-2018/prever/3700_20170208.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jonathon Hill",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joshua Putnam",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Roy Magnuson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1e00d1f1-7d7d-4e9e-9482-15caeec92ff8"
+    },
+    {
+      "name": "Eric Bedingfield",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Steven Long",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "55ef311d-6efd-40c9-8a32-d261624bf5a3"
+    },
+    {
+      "name": "James Burns",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9e65a60c-4016-44f5-a830-c8562f08a7ac"
+    },
+    {
+      "name": "William Chumley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b79701a8-542e-4090-b752-d2e79fb92cd4"
+    },
+    {
+      "name": "Anne Thayer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Cally Forrest",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1646f5cd-b151-494a-8a3b-dc862a31eb08"
+    },
+    {
+      "name": "Craig Gagnon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "381f33f9-cfe6-469e-a7cb-c87f076dfce6"
+    },
+    {
+      "name": "Rick Quinn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "McLain Toole",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Richard Martin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Chip Huggins",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Todd Atwater",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Richard Yow",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f6f96623-dba1-482c-9d1f-4c623b09f33a"
+    },
+    {
+      "name": "Garry Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Alan Clemmons",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Mccravy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7e726b81-f400-44bb-98e1-7a63a9248b3b"
+    },
+    {
+      "name": "Mark Willis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "188bfed7-3646-4ab1-be79-48810f11c28b"
+    },
+    {
+      "name": "William Sandifer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2017-02-08; official copy, https://www.scstatehouse.gov/sess122_2017-2018/prever/3700_20170208.htm (LegiScan doc 1502191))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3700-2017.introduced.htm",
+      "sha256": "8386f576f3a96fc44514cfb9c3c12c873febb9082d1d80239691384f8fd0cdfc"
+    },
+    "note": "Introduced 2017-02-08. Struck: concealed-weapons-permit conditions in 16-23-20 items (9)(a)-(b) and (13), 16-23-420, 16-23-430, 16-23-460, 16-23-465, 23-31-215(K)/(N)(1), 23-31-220, 23-31-225 and 23-31-240 (permit holder requirement, permit revocation, fine for not carrying the card); reciprocity limited to Georgia and North Carolina struck, 'any other state' added. Introduced text; no passage vote."
+  },
+  "operative_text": "Section 3 (Section 16-23-20): (A) It is unlawful for anyone to carry about the person any handgun, whether concealed or not, except as follows, unless otherwise specifically prohibited by law: (b) concealed on or about his person, provided he is not prohibited by state law from possessing the weapon; (17) a person who is not prohibited from possessing firearms under state law, whether or not the person is a resident of the State. (B) Unless a person first obtains authorization to possess a handgun from a person with the apparent authority to grant it, nothing in subsection (A)(17) authorizes carrying of a handgun into any location prohibited under Section 23-31-215(M).\nSection 4 (Section 16-23-420): The provisions of this subsection related to any premises or property owned, operated, or controlled by a private or public school, college, university, technical college, or other post-secondary institution, do not apply when the firearm remains inside an attended or locked motor vehicle and is secured in a closed glove compartment, closed console, closed trunk, or in a closed container secured by an integral fastener and transported in the luggage compartment of the vehicle.\nSection 10 (Section 23-31-215(N)): (2) Notwithstanding the reciprocity requirements of item (1), South Carolina shall automatically recognize concealed weapon permits issued by any other state.\nSection 12 (Section 23-31-225): No person may carry a concealable weapon into the residence or dwelling place of another person without the express permission of the owner or person in legal control or possession, as appropriate. A person who violates this provision is guilty of a misdemeanor and, upon conviction, must be fined not less than one thousand dollars or imprisoned for not more than one year, or both, at the discretion of the court."
+}

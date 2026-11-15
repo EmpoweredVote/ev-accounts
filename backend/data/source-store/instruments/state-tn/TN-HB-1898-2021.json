@@ -1,0 +1,88 @@
+{
+  "id": "TN-HB-1898-2021",
+  "scope": "state:tn",
+  "title": "HB1898 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 10; Title 33; Title 36; Title 38; Title 39; Title 40; Title 49; Title 50 and Title 70, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1898&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/HB1898.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Rusty Grills",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "70aa67e5-8df0-4dee-a034-1ea4f3470c57"
+    },
+    {
+      "name": "Jay Reedy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4e0eefb1-6a4f-4004-be8d-432a7131b475"
+    },
+    {
+      "name": "Terri Lynn Weaver",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Byrd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mark Hall",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Chris Hurt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bb56ab02-6229-47cd-830a-2a9fe74b0aa7"
+    },
+    {
+      "name": "Jerry Sexton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Clay Doggett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9a9c3029-794a-4cb5-aa7e-342e9b480603"
+    },
+    {
+      "name": "Chris Todd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+    },
+    {
+      "name": "Bruce Griffey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2022-01-20; official copy via LegiScan getBillText doc 2485101)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1898-2021.draft.pdf",
+      "sha256": "d1017af0dfc1240f2cb929f68fa78a8e675b438315b17a62f092102f2da5d640"
+    },
+    "note": "Draft as filed (HB 1898 2022-01-20; SB 2803 2022-02-03; identical text apart from bill numbers); no amendments in the text read. Quotes are word-swap instruction sentences. Sections 6-16 and 18-29 swap \"handgun carry permit\" for \"firearm carry permit\" in cross-references (Titles 10, 33, 36, 38, 39, 40, 49, 50, 70); Section 2 swaps \"firearms permit\" for \"handgun permit\" in 39-17-1351(r)(1). Effective July 1, 2022."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1351): Tennessee Code Annotated, Section 39-17-1351, is amended by deleting the language \"handgun\" wherever it appears and substituting instead the language \"firearm\" and by deleting the language \"handguns\" wherever it appears and substituting instead the language \"firearms\".\nSECTION 3 (TCA 39-17-1351(r)(1)): deleting the language \"; provided, however, this subsection (r) shall not be construed to authorize the holder of any out-of-state permit or license to carry, in this state, any firearm or weapon other than a handgun\".\nSECTION 4 (TCA 39-17-1365): Tennessee Code Annotated, Section 39-17-1365, is amended by deleting the language \"handgun\" wherever it appears and substituting instead the language \"firearm\".\nSECTION 5 (TCA 39-17-1366): Tennessee Code Annotated, Section 39-17-1366, is amended by deleting the language \"handgun\" wherever it appears and substituting instead the language \"firearm\" and by deleting the language \"handguns\" wherever it appears and substituting instead the language \"firearms\".\nSECTION 17 (TCA 39-17-1350(g)): Tennessee Code Annotated, Section 39-17-1350(g), is amended by deleting the language \"handgun\" wherever it appears and substituting instead the language \"firearm\"."
+}

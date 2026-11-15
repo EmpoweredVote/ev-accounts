@@ -1,0 +1,45 @@
+{
+  "id": "TN-HB-2554-2021",
+  "scope": "state:tn",
+  "title": "HB2554 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2554&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/HB2554.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chris Hurt",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bb56ab02-6229-47cd-830a-2a9fe74b0aa7"
+    },
+    {
+      "name": "Jay Reedy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4e0eefb1-6a4f-4004-be8d-432a7131b475"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2022-02-02; official copy via LegiScan getBillText doc 2502091)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2554-2021.draft.pdf",
+      "sha256": "aeac3a963d1b947e21fb656c797f0b4316afcac65fe60f735e89aa43bc23fcac"
+    },
+    "note": "Draft as filed, 2022-02-02; House and Senate twins share the text. Summary says \"As introduced\"; no amendments are in the text read, and the bill has no passage vote in the file."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1350(d)): (5) For purposes of this section, \"law enforcement officer\" also means a person who has been issued an enhanced handgun carry permit pursuant to § 39-17-1351; provided, that the enhanced handgun carry permit is not suspended, revoked, or expired."
+}

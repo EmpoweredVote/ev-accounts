@@ -1,0 +1,57 @@
+{
+  "id": "KY-HB-118-2023",
+  "scope": "state:ky",
+  "title": "HB118 (2023 Regular): AN ACT relating to firearms.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/23RS/hb118.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/23RS/hb118/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Savannah Maddox",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e17f04a4-35d6-4e64-8006-30381e9ff6bd"
+    },
+    {
+      "name": "Felicia Rabourn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a39b09c3-23b4-4bfb-a001-8a9a2adfb6cd"
+    },
+    {
+      "name": "Josh Calloway",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436293ef-ed3f-46b3-9bb6-809b6828eaf8"
+    },
+    {
+      "name": "Marianne Proctor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4dc7e0db-e5ec-4f7e-8f30-cb1a17e6069f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/23RS/hb118/orig_bill.pdf (LegiScan doc 2624470))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-118-2023.introduced.pdf",
+      "sha256": "de6b83aed79c98d9c466a791ee3c48031e2ffbb5da6cff5eaf38d6c23bc485cd"
+    },
+    "note": "As-filed; no passage vote in the record. Age 21 struck, 18 added in KRS 237.109(1) and in KRS 237.110. Section 2 reprints all of KRS 237.110; the quoted (3)(c) is the licence-eligibility age line (numbered as in the text, within the eligibility list). Other bracketed changes there are punctuation only."
+  },
+  "operative_text": "Section 1 (KRS 237.109): (1) Persons age eighteen (18) or older, and otherwise able to lawfully possess a firearm, may carry concealed firearms or other concealed deadly weapons without a license in the same locations as persons with valid licenses issued under KRS 237.110.\nSection 1 (KRS 237.109): (2) Nothing in this section shall be construed to allow the carrying or possession of any deadly weapon where it is prohibited by federal law.\nSection 2 (KRS 237.110): (3) (c) Is eighteen (18) years of age or older;"
+}

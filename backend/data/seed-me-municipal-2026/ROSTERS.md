@@ -361,11 +361,209 @@ sentence that names who elects:
 cities** — 6 of 9 against 0 of 5. That pattern was only visible once all fourteen had been read,
 and it is a description of what was found, **not a licence to skip the check next time.**
 
+🔴 **AND FOURTEEN WAS NOT MAINE.** Three city councils were already in the database when this
+programme began and were never in either set — **Bangor, Lewiston and South Portland**. Bangor's
+mayoralty turned out to be a phantom, found in 2026-11-13 and fixed by `CC_0427`. **See R9f**,
+which is where the three now live.
+
 Three more rotating roles appeared here and none became an office: Waterville's **Council Chair**
 (Brandon Gilley, Ward 1 — the Chair acts as Mayor only during a mayoral vacancy, Art II §4),
 Saco's **Deputy Mayor** (§2.05(c), *"nominate and elect from its membership"*), and Belfast's
 Mayor being *"ex officio president of the Council"*, which is a duty OF the elected mayoralty
 rather than a second seat.
+
+### 🔴🔴 R9f. THE AUDIT COVERED THE WAVE, NOT THE STATE — AND BANGOR WAS OUTSIDE IT
+
+`CC_0427`, 2026-11-13, reached here from Oregon: `CC_0426` fixed the same phantom-mayor shape in
+Wood Village OR and its notes named two Maine rows as a follow-up. Taking that follow-up meant
+sweeping Maine rather than fixing the two rows that had been spotted — and **the sweep is what
+found Bangor.**
+
+R9 and R9a read **fourteen** cities: `CC_0292`'s nine and `CC_0293`'s five. Maine holds **three
+more city councils that this programme never seeded**, because they were already in the database
+when it started. 🔴 **Until this section, Bangor and Lewiston were not mentioned anywhere in this
+file** — 0 occurrences each, measured. They were never asked R9's question.
+
+| city | who chooses the presiding officer | verdict |
+| --- | --- | --- |
+| **Bangor** | *"Immediately following election in November, the Council selects one of its members to serve as Council Chair for the year."* · *"The Council Chair serves as Mayor…"* | 🔴 **PHANTOM — fixed, `Mayor` → `Council Member (At-Large 9)`** |
+| **Lewiston** | charter: *"The mayor shall be nominated and elected by the qualified voters of the entire city."* | ✅ real; our schema is right |
+| **South Portland** | charter: *"the council shall elect, by majority vote of the entire council, **one of its members** … as a chairman of the council"*, and *"The chairman of the council shall also be designated as mayor but shall have **no powers or duties**…"* | 🔴 **PHANTOM — fixed, the office was DELETED, `CC_0428`** |
+
+Sources committed under `sources/me-bangor-city-council-2026-11-14.txt` and
+`sources/me-lewiston-charter-2026-11-14.txt`. Lewiston also has a council president elected
+*"from among its members"* and we correctly hold no office for it — R5 holding on a city nobody
+had checked.
+
+▶ **AN AUDIT INHERITS THE SCOPE OF THE WAVE THAT RAN IT, AND NOTHING RECORDS WHAT IT DID NOT
+LOOK AT.** R9a already warned that its 6-of-9 / 0-of-5 pattern was "a description of what was
+found, not a licence to skip the check next time". The quieter gap is this one: the pass was
+scoped to the cities being seeded, so the cities *already* seeded were exactly the ones nobody
+re-read. **When a wave audits a property, ask which rows in the state were never in the wave.**
+
+#### 🔴🔴 R9k. MAINE HAS NO COUNTY GOVERNMENT AT ALL, AND NOTHING CAN SEE THAT
+
+Found by `CC_0428`'s own gate failing. Its reachability check was first written **unscoped** — by
+analogy with `CC_0426`'s Oregon one rather than by measuring Maine — and the dry run refused the
+migration, reporting **"16 districts holding no office"**. All 16 are Maine's **COUNTY** rows:
+Androscoggin, Aroostook, Cumberland, Franklin, Hancock, Kennebec, Knox, Lincoln, Oxford,
+Penobscot, Piscataquis, Sagadahoc, Somerset, Waldo, Washington and York — every county in the
+state, each a district with a polygon and **zero offices**. Measured across all Maine districts:
+every other type is clean (LOCAL 23, SCHOOL 8, STATE_LOWER 151, STATE_UPPER 35, STATE_EXEC 4,
+NATIONAL 3 — 0 office-less, 0 dead-shaped between them).
+
+⚠ **NO GATE IN THIS REPO CAN FIND THIS.** `DEAD_GEOGRAPHY` requires `offices > 0`, so a district
+with none is not a finding; `offices_missing_terms` starts FROM offices, so no office means no
+row; and the drift baseline therefore cannot move. ▶ **An office with no race is invisible rather
+than incomplete (CLAUDE.md) — a DISTRICT WITH NO OFFICE is invisible the same way, one level up.**
+
+🟢 **The gate being WRONG is how this was found.** A check scoped by analogy instead of by
+measurement failed loudly against real data before anything was applied. ▶ **Measure the
+population a gate will assert over, in the state you are asserting over.** Sixteen counties is a
+wave, not a correction; not done here.
+
+🔴 **BANGOR'S ARITHMETIC ALREADY CLOSED, WHICH IS WHY NOTHING COULD HAVE CAUGHT IT.** In all six
+`CC_0292` cities the phantom label left the council one seat SHORT of its charter size, and that
+shortfall is the signal the wave counted. Bangor holds 8 `At-Large` + `Mayor` = **9 = its own
+`official_count`**, all nine seated by **nine different people**. ▶ **THE COUNT BEING RIGHT IS NOT
+THE BODY BEING RIGHT** — which is R8c from the opposite side, where Hallowell's titles were the
+right *kind* and the wrong *number*. Only the charter settles either.
+
+⚠ **AND THE BALLOT COULD NOT CORROBORATE IT, UNLIKE WOOD VILLAGE.** `CC_0426` leaned on a charter
+that predicted a missing mayoral contest and an export that confirmed the absence. Bangor carries
+zero races — but so do all nine of its offices, and so does every Maine municipal office, because
+this repo seeds no Maine municipal races. **An absence is evidence only where the thing would have
+been present.**
+
+#### 🔴 R9g. A RETITLE IS RARELY ONLY A TITLE — `CC_0292` LEFT A FLAG BEHIND IN TWO CITIES
+
+`is_appointed_position` is not decoration. The API publishes `is_elected` as its negation
+(`essentialsService.ts`, plus seven mappers in `essentialsBrowseService.ts`), so a council seat
+carrying it is **served to residents as a seat they do not elect**.
+
+`CC_0292` retitled six phantom mayors into council seats and **cleared no flags**. In two of the
+six the office had carried the flag — correctly, while it was a mayoralty the council confers —
+and the flag is a property of the OFFICE, which had just become a council seat. So **Presque Isle
+`Council Member (At-Large 7)` (Debra Plummer) and Rockland `Council Member (At-Large 5)` (Adam
+Lachman) published as not elected for nineteen days.** `CC_0427` cleared both.
+
+▶ **An office row states several things at once, and the one that reaches a voter may not be the
+name.** When you retitle a seat, list every column that was true of the OLD thing.
+
+#### 🟢 R9h. THE FLAG IS NOT UNIFORMLY WRONG IN MAINE — THREE ROWS MUST KEEP IT
+
+Maine carried **eight** appointed-flagged offices. Three of them are **correct**: Maine is the
+state whose **legislature** chooses the Attorney General, the Secretary of State and the
+Treasurer, and none of the three appears on any ballot.
+
+🔴 **A sweep written as a predicate over the column — "clear it wherever it looks wrong in Maine" —
+would have made three true rows false.** Every row was read on its own instead, and `CC_0427`
+gates that all three *keep* the flag.
+
+🟢🟢 **THE SWEEP IS CLOSED (2026-11-14, `CC_0429`). Maine's eight appointed-flagged offices are
+now three, and all three are these.** Measured in prod: Attorney General, Secretary of State,
+Treasurer, and nothing else in the state. That gate was watched failing against a planted tamper which
+swept them in, and it fired before the count gate did, which is why the order matters.
+
+#### 🔴🔴 R9i. SOUTH PORTLAND — THE SAME DEFECT AS BANGOR, THE OPPOSITE FIX
+
+`CC_0428`, 2026-11-14. `CC_0427` left this open because Municode serves the charter from a
+JavaScript shell and answers `curl` with ~7.5 KB of nothing. 🟢 **The city's own DocumentCenter
+carries the same charter as a plain PDF and plain `curl` gets it.** ▶ **Before reaching for a
+browser, look for the publisher's own copy** — the aggregator is often the only thing that needs
+one.
+
+Both halves are in `sources/me-south-portland-charter-2026-11-14.txt`:
+
+> *"…vested in one body of **7 members** which shall constitute and be called the city council"*
+> *"The city council shall be composed of **7 members**, each of whom shall be elected by the
+> registered voters of the entire city."*
+> *"the council shall elect, by majority vote of the entire council, **one of its members** for the
+> ensuing year as a chairman of the council"* · *"The chairman of the council shall also be
+> designated as **mayor** but shall have **no powers or duties** in such capacity…"*
+
+Seven. We held **eight**. And the city's own council page prints the role exactly as R5 says to
+model it — **"Elyse Tipton — Mayor, District Five"**, one row carrying both, with the other six
+styled "City Council Member". R8b had to recover that from Bath's contact addresses; South
+Portland states it.
+
+🔴🔴 **AND THE FIX IS THE OPPOSITE OF BANGOR'S, ONE DAY APART, ON THE SAME DEFECT.**
+
+| | offices | holder rows | **distinct people** | fix |
+| --- | --- | --- | --- | --- |
+| **Bangor** (`CC_0427`) | 9 | 9 | **9** — the Mayor row was a councillor's ONLY seat | **retitle**; deleting would have unseated a sitting member |
+| **South Portland** (`CC_0428`) | 8 | 8 | **7** — Tipton holds the Mayor row AND District 5 | **delete**; retitling would have invented an 8th seat and seated her twice |
+
+▶ **ASK HOW MANY DISTINCT PEOPLE HOLD THE BODY'S OFFICES, NOT HOW MANY OFFICES ARE FILLED.** Both
+councils read "every seat occupied", and both chamber rows agreed with their own office count. The
+number that separates them is `count(DISTINCT politician_id)` against the charter's figure, and
+**nothing in this repo computes it.**
+
+⚠ **SOUTH PORTLAND'S `official_count` WAS 8 AND IT CONFIRMED THE DEFECT INSTEAD OF CATCHING IT.**
+It equalled our own row count, not anything a source said. 🔴 **A SIZE COPIED FROM THE ROWS IT IS
+MEANT TO CHECK IS NOT A CHECK.** Bangor's 9 was right and independently matched its charter; this
+8 agreed with nothing but itself. Now 7.
+
+⚠ **The charter also answers R7 for this one city.** All seven are *"elected by the registered
+voters of the entire city"* — the districts are residency qualifications, not separate
+electorates. So an address returning all seven is **correct** here. That does not generalise:
+R7 remains open for the cities that elect by ward.
+
+#### 🟢🟢 R9j. LEWISTON WARD 5 — THE ANSWER WAS IN OUR OWN SCHEMA, NOT IN THE BODY'S ROSTER
+
+`CC_0429`, 2026-11-14, closes the sweep. This section previously said Ward 5 needed the Lewiston
+city clerk's election returns, because **the committee publishes its membership as an IMAGE** —
+the page carries no `Ward` string at all and the only machine-readable trace of Hawkins is
+`lhawkins@lewistonpublicschools.org`. (That "nothing found" was checked with a positive control:
+the same extractor pulled 57 lines of real text off the same page and the raw HTML does contain
+"Hawkins", so it is the body's practice, not a broken reader.)
+
+**It needed neither the returns nor the roster.** `essentials.office_terms` already carries
+`how_started`, and both of this committee's appointees were marked with it:
+
+| seat | holder | `office_terms.how_started` | `offices.is_appointed_position` |
+| --- | --- | --- | --- |
+| Ward 5 | Lynnea Hawkins | `appointed` | **`true`** ← the defect |
+| Ward 7 | Emily Levasseur | `appointed` | `false` ← correct, migration 1467 |
+
+🟢 **THE CONTROL WAS ONE SEAT OVER ON THE SAME COMMITTEE.** Migration 1467 seated Levasseur after
+Mayor Sheline appointed her on 2026-07-23 to finish a term: it set `how_started` and left the
+office elective. Two identical situations on one body, two opposite office flags — and the
+charter says which is right: *"The qualified voters of each of the seven (7) wards of the city
+shall nominate and elect a school committee member."*
+
+🔴🔴 **A PERSON-FACT HAD BEEN WRITTEN ONTO AN OFFICE.** `how_started` is a property of a TENURE;
+`is_appointed_position` is a property of a SEAT. Filling a vacancy by appointment does not change
+what the seat is. ▶ **BEFORE GOING OUT FOR A SOURCE, ASK WHETHER THE SCHEMA ALREADY DISTINGUISHES
+THE TWO THINGS YOU ARE TRYING TO TELL APART.** A gate asserts both appointments survive, watched
+failing against a tamper that erased one while clearing the flag.
+
+#### 🔴 R9l. AND THE SAME CLAUSE FOUND A MISSING SEAT: LEWISTON'S COMMITTEE IS NINE, WE HOLD EIGHT
+
+> *"There shall be a school committee of **nine (9) members**, composed of one (1) qualified voter
+> to be elected from each ward, one (1) at-large member to be elected from any ward, … **and one
+> (1) city council member to be nominated by the mayor and appointed by the city council** from
+> any ward, who shall serve a one (1) year term"*
+
+7 wards + 1 at-large = our 8. The ninth is a sitting city councillor appointed by the council, and
+it is **the only genuinely appointed seat on this body** — the opposite of the row we had flagged.
+
+⚠ **NOT CREATED, DELIBERATELY.** Creating an office is an occupancy act: it must seat its holder
+or the 238 drift baseline rises. Naming that councillor needs the committee's roster, and this
+committee publishes its membership as an image. 🔴 **A NAME IS NOT GUESSABLE AND NAMESAKES REACH
+PRODUCTION.**
+
+🟢 **`official_count` IS NOW 9 AGAINST OUR 8 ROWS, AND THAT IS THE POINT** — it records the body's
+real size so the shortfall is countable instead of invisible, which is exactly what made Bangor
+findable (R9f) and what South Portland's self-confirming 8 could not do (R9i).
+⚠ **Measured before setting it: `official_count` is read by NOTHING in `backend/src`** — zero
+occurrences, it is written only by seeding generators. It is metadata for sessions and gates, not
+a voter-facing field, so a size larger than our row count cannot render a phantom vacancy to
+anybody. ▶ **A later pass can gate on `official_count` vs `count(offices)` per chamber.** Nothing
+does today.
+
+▶ **FOLLOW-UP, dated 2026-11-14:** identify and seat Lewiston's council-appointed ninth member.
+The committee's agendas or minutes are the likeliest readable source.
 
 ### ⚠ R9b. WARDS EXIST IN THESE CITIES — AS VOTING WARDS, NOT COUNCIL DISTRICTS
 
@@ -518,10 +716,37 @@ Found while probing `CC_0293`. A Waterville address returns Flavia DeBrito as
 the polygon, the district, the office, the term and the holder all resolve correctly in the
 database.
 
+> 🟢🟢 **FIXED, AND THIS SECTION WAS STALE FOR NINETEEN DAYS. RE-MEASURED 2026-11-14 AGAINST THE
+> LIVE ENDPOINT** while `CC_0428` was being written. The de-duplication key moved from the PERSON
+> to the OFFICE — `OFFICE_DEDUP_KEY = 'o.id'`, CLAUDE.md — **on 2026-10-26, the same day this
+> section was written.** The two rows below that this programme created now return BOTH seats:
+>
+> | control | returns today |
+> | --- | --- |
+> | Dani O'Halloran, Brewer ME | **2 rows** — `Representative` + `Council Member (At-Large 4)` |
+> | Flavia DeBrito, Waterville ME | **2 rows** — `Representative` + `Council Member (Ward 2)` |
+>
+> 🔴 **A NOTE THAT RECORDS A BUG OUTLIVES THE BUG FIX. RE-MEASURE A HAZARD BEFORE RELYING ON IT** —
+> this one was quoted as live in two later migrations. The *inverse* rule in CLAUDE.md (a
+> politician-rooted read still needs `DISTINCT ON (p.id)`) is unaffected and still true; only the
+> address-search half was fixed.
+>
+> ⚠ **ONE ROW BELOW STILL RETURNS ONCE, FOR A COMPLETELY DIFFERENT REASON, AND READING IT AS THIS
+> HAZARD WOULD HAVE HIDDEN A BIGGER ONE.** Breanna Lungo-Koehn shows 1 row — but **Medford's
+> entire school committee returns ZERO rows for that address**, measured: 54 rows back, 0 of them
+> school-committee, though the district carries 7 offices and a geofence row whose `mtfcc` (G5420)
+> satisfies the guard. That is a whole body unreachable, not a second seat de-duplicated.
+> Massachusetts already carries `ma|SCHOOL` buckets in `address-reachability-baseline.json`
+> (4 `BAD_GEOMETRY`, 1 `UNREACHABLE`), so it sits in that known backlog. ▶ Out of Maine's scope
+> and owed a look.
+>
+> ~~Elyse Tipton, South Portland ME~~ — **no longer a dual-seat holder at all.** Her second "seat"
+> was the phantom Mayor office, retired by `CC_0428`; she holds District 5 and nothing else.
+
 **It is PRE-EXISTING, and that was measured, not assumed.** Two dual-seat holders who predate
 every Maine wave behave identically:
 
-| control | holds | address search returns |
+| control | holds | address search returned, 2026-10-26 |
 | --- | --- | --- |
 | Breanna Lungo-Koehn, Medford MA | City Mayor **+** School Committee Mayor (ex officio) | 1 row |
 | Elyse Tipton, South Portland ME | Council Member (District 5) **+** Mayor | 1 row |

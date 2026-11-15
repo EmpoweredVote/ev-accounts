@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2525-2019",
+  "scope": "state:tn",
+  "title": "SB2525 (111th General Assembly): As introduced, creates the Class A misdemeanor of possession of a firearm while in possession of a Schedule I, II, III, or IV controlled substance or drug paraphernalia used to manufacture such a substance. - Amends TCA Title 39.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2525&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/SB2525.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Richard Briggs",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "191efc70-78dc-4ada-99e5-4edceb919cf0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2020-02-05; official copy via the Internet Archive snapshot 20260513211028 of https://www.capitol.tn.gov/Bills/111/Bill/SB2525.pdf (LegiScan doc 2123434))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2525-2019.draft.pdf",
+      "sha256": "6a4d5cde67e4d8ff9b048446da371c876bff6b37e8b10dec8b3c326e1df900fa"
+    },
+    "note": "Draft as filed, 2020-02-05; crossfiled with HB 2188. Adds new subdivision (D) to 39-17-1307(f)(1); the offense's class (Class A misdemeanor per summary) comes from existing law, not this text."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(f)(1)(D)): (D) Is, at the time, in possession of any Schedule I, II, III, or IV controlled substance, as defined in part 4, or drug paraphernalia used in the manufacturing of any Schedule I, II, III, or IV controlled substance."
+}

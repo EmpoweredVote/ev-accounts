@@ -1,0 +1,41 @@
+{
+  "id": "KY-HB-390-2021",
+  "scope": "state:ky",
+  "title": "HB390 (2021 Regular): AN ACT relating to pretrial diversion.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/21RS/hb390.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/21RS/hb390/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Patrick Flannery",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75c04039-745d-486f-8c8a-6ae22768ab72"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: Section 1 (KRS 533.250) — pretrial diversion plea acceptance suspended until a violation or completion"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/21RS/hb390/orig_bill.pdf (LegiScan doc 2276224))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-390-2021.introduced.pdf",
+      "sha256": "ea9f594546290fae087b86ecf0a0d4f6ec40324c0bcae1769790e68687361349"
+    },
+    "note": "Introduced version (21 RS BR 1281); later amendments not in text read. No votes recorded."
+  },
+  "operative_text": "Section 2 (new section of KRS 533.250 to 533.262): Any person who has accepted a pretrial diversion agreement shall retain his or her right to possess and have access to a firearm unless the court makes: (1) A finding of fact that the crime for which the person was charged involved the use of a firearm; and (2) A specific finding of fact that it is in the interest of the defendant and public to restrict access to firearms."
+}

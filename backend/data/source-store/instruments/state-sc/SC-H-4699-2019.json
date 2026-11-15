@@ -1,0 +1,39 @@
+{
+  "id": "SC-H-4699-2019",
+  "scope": "state:sc",
+  "title": "H4699 (123rd General Assembly): Firearms",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4699&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/4699_20191120.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Wendell Gilliard",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75dffc0a-f084-4dfb-a2a7-6c81094bb0c2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2019-11-20; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/4699_20191120.htm (LegiScan doc 2070335))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4699-2019.introduced.htm",
+      "sha256": "1205cc6e96eaaabcb6a1d917d8685bc27fbe3230aa0549c68eb959fd584e7b48"
+    },
+    "note": "Introduced text (Nov. 20, 2019)."
+  },
+  "operative_text": "Section 1 (new Section 23-31-910): \"Notwithstanding another provision of law, all guns manufactured in this State must be equipped with an electronic chip that identifies its owner.\""
+}

@@ -1,0 +1,45 @@
+{
+  "id": "SC-H-3157-2021",
+  "scope": "state:sc",
+  "title": "H3157 (124th General Assembly): Pardons",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3157&session=124&summary=B",
+    "https://www.scstatehouse.gov/sess124_2021-2022/prever/3157_20201209.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Todd Rutherford",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bd747eab-2e4d-4249-94d7-b63d7026a6b0"
+    },
+    {
+      "name": "Russell Ott",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5ce564de-e0db-4c59-ba47-44641b081044"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2020-12-09; official copy, https://www.scstatehouse.gov/sess124_2021-2022/prever/3157_20201209.htm (LegiScan doc 2220175))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3157-2021.introduced.htm",
+      "sha256": "7c6ef0bd0bc94f3b71f0b51e8ca05ee94401bd3fa30ffbbe848d28603fc16ebb"
+    },
+    "note": "Introduced text, Dec. 9, 2020. No votes. Subsection (B) goes on to split the fee between Probation, Parole and Pardon Services and SLED."
+  },
+  "operative_text": "Section 1 (new Section 24-21-925): (A) Notwithstanding another provision of law, a person who has been convicted of a felony offense, not described in Section 16-23-10(3) and who has completed his sentence, may make application to the board for a limited pardon that would allow him to possess a firearm for the purpose of hunting only.\nSection 1 (new Section 24-21-925): (B) The application fee is two hundred dollars."
+}

@@ -66,6 +66,238 @@
         "fetched_at": "2026-11-11T21:12:46.608Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "1a472fae115e03aa71b4f792534657305bacd220e09ea3c9b2113fabe755f4f6",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/25RS/hb234.html",
+      "date": "2025-02-20",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-234-2025",
+      "act": "yea",
+      "motion": "House: Third Reading RCS# 50",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "KY House, House: Third Reading RCS# 50, 2025-02-20: yea (tally 92–0); census gate: near-unanimous.",
+      "subjects": [
+        "confiscated firearms sold at auction to licensed dealers",
+        "firearm-sale proceeds fund police grants, now including airport police"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Chaptered, 0000-00-00; official copy, https://apps.legislature.ky.gov/law/acts/25RS/documents/0003.pdf (LegiScan doc 3227746))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-234-2025.chaptered.pdf",
+          "sha256": "62fca6548f2c850784c1c4576ca45c08e53b5125497920d46f877037ffcbc4f0"
+        }
+      }
+    },
+    {
+      "id": "c604ab40d0e6d05a08b4d24e11f76fb622b956e555ef173fceabafc6c734b33b",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb299.html",
+      "date": "2026-03-02",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-299-2026",
+      "act": "yea",
+      "motion": "House: Veto Override RCS# 173",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY House, House: Veto Override RCS# 173, 2026-03-02: yea (tally 65–25); census gate: none.",
+      "subjects": [
+        "felony to possess a machine gun conversion device"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Engrossed, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/26RS/hb299/bill.pdf (LegiScan doc 3381986))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-299-2026.engrossed.pdf",
+          "sha256": "ecc51e9dba7b832af4422c4fcd4b80093fa2a76ebbfdddcd5be021fc7e7aa1c6"
+        }
+      }
+    },
+    {
+      "id": "1c518bcb28e0fc22f673793f86b7cb3cee4233e18200d39bb9b412bbd71c3948",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb312.html",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-312-2026",
+      "act": "nay",
+      "motion": "House: Veto Override RCS# 461",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY House, House: Veto Override RCS# 461, 2026-04-14: nay (tally 81–18); census gate: none.",
+      "subjects": [
+        "concealed-carry license for ages 18 to 20",
+        "provisional license valid until age 21",
+        "switch to standard license"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Chaptered, 0000-00-00; official copy, https://apps.legislature.ky.gov/law/acts/26RS/documents/0173.pdf (LegiScan doc 3442881))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-312-2026.chaptered.pdf",
+          "sha256": "63c37beef2557d8aa85b424bd92efeb42ef4cd70465d63cb2117ec40b0402fee"
+        }
+      }
+    },
+    {
+      "id": "f248ef3a6dbc790e585fe7db7ac14dc0383205bdd79a21a4b6a15993b57831bf",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/26RS/hb78.html",
+      "date": "2026-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-78-2026",
+      "act": "nay",
+      "motion": "House: Veto Override RCS# 457",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KY House, House: Veto Override RCS# 457, 2026-04-14: nay (tally 80–19); census gate: none.",
+      "subjects": [
+        "no civil suits against gun and ammunition makers or sellers for criminal misuse",
+        "local liability rules preempted",
+        "makers and sellers may sue over barred claims"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Chaptered, 0000-00-00; official copy, https://apps.legislature.ky.gov/law/acts/26RS/documents/0177.pdf (LegiScan doc 3443083))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-78-2026.chaptered.pdf",
+          "sha256": "fd5594be2aacdb70f2dae01bee4fb82fbeaef7443ea9f18e54c02f150620282f"
+        }
+      }
+    },
+    {
+      "id": "85127b06a7073852077d6cc993c439044f35916b977ce5e6ad23f400f1bf0fa7",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/25RS/hb93.html",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-93-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of KY-HB-93-2025 (sponsor list (prime / co-sponsor)): HB93 (2025 Regular): AN ACT relating to target shooting..",
+      "subjects": [
+        "crime of unsafe target shooting",
+        "exceptions for ranges and earthen backstops"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/25RS/hb93/orig_bill.pdf (LegiScan doc 3041322))",
+        "fetched_at": "2026-11-14T10:05:45.787467Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-93-2025.introduced.pdf",
+          "sha256": "b5bb9f9a63219fbc6e9dc562d20cd2ec6e872b30f5d10077e613f530f9d3ff97"
+        }
+      }
+    },
+    {
+      "id": "daa9129a84292463f43d29af1bf65e2c3388fc02e4049cf0627498479eb22f0e",
+      "kind": "own-words",
+      "url": "https://hoptownchronicle.org/kentucky-house-advances-bill-protecting-gun-industry-from-lawsuits",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "“We’re effectively telling our cities and our counties that when it comes to this one singular industry that local control ends at the courtroom door,” Moore said.",
+      "note": "Quoted in a news story (Hoptown Chronicle) about the House vote on HB 78, which limits lawsuits against gun makers and sellers and bars local governments from acting against the industry; he objects to the local-government limit.",
+      "subjects": [
+        "lawsuits against gun makers",
+        "local governments' power over the gun industry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:21.866Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b131a7146ffdfc1d23497dad0fbacb3028749cab6404c61b13364d081bc134fa",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/gun-violence-survivors-tell-stories-231434428.html",
+      "date": "2025-02-12",
+      "date_precision": "day",
+      "passage": "\"I had my first real experience with gun violence in the fall of 2003. My grandfather shot himself,\" Moore said.",
+      "note": "Quoted in a news story on a Capitol rally for gun-violence solutions; he describes a family suicide by gun.",
+      "subjects": [
+        "gun violence prevention",
+        "gun suicide"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:21.866Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "df0cbeb94e716d7d9dcc4e19bea7fc79fe769d679d5dc1098f511a73d7f9506c",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/gun-violence-survivors-tell-stories-231434428.html",
+      "date": "2025-02-12",
+      "date_precision": "day",
+      "passage": "Many years later, Moore said, \"my next big gun violence incident was when my son was in preschool and a 3-year-old pulled a trigger on a handgun on the playground because someone had thrown a weapon onto that preschool playground.\"",
+      "note": "Same rally story; he recounts a preschool shooting by a 3-year-old as part of his case for gun-violence action. The sentence's opening is the reporter's, the quoted part is his.",
+      "subjects": [
+        "gun violence prevention",
+        "keep guns out of children's reach"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:21.866Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ec92950b1bc0e9bb67c255653e6417a2ba2009db3c8c861d2dceeaf596b894f5",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/25RS/hb214.html",
+      "date": "2025-01-01",
+      "date_precision": "year",
+      "instrument_id": "KY-HB-214-2025",
+      "act": "sponsor",
+      "note": "HB 214 creates a refundable state income-tax credit, for tax years 2026 through 2029, for people who enroll in a firearm safety course.",
+      "subjects": [
+        "firearm safety course tax credit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-14T14:04:21.866Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -108,6 +340,32 @@
       "found": 3,
       "at": "2026-11-11T21:12:46.608Z",
       "by": "identity-ky-2026-11-11"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun industry lawsuit shield",
+        "firearm safety course",
+        "safe storage and parent liability",
+        "gun violence prevention"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "https://apps.legislature.ky.gov/record/25RS/hb214.html (legislature bill page, read; names A. Moore as sponsor)",
+        "https://hoptownchronicle.org/kentucky-house-advances-bill-protecting-gun-industry-from-lawsuits (news story, read)",
+        "https://www.yahoo.com/news/gun-violence-survivors-tell-stories-231434428.html (news story on the Capitol rally, read)",
+        "https://nkytribune.com/2025/02/gun-violence-survivors-tell-their-stories-rally-at-kentucky-capitol-for-solutions/ (same story; raw fetch returned no text)",
+        "one web search on name plus firearms words",
+        "not reviewed: official member page on legislature site",
+        "not reviewed: campaign site",
+        "not reviewed: Ballotpedia",
+        "not reviewed: URL patterns list in the researcher agent file",
+        "not reviewed: carry-permit, background-check, red-flag, assault-weapon specific searches"
+      ],
+      "found": 4,
+      "at": "2026-11-14T14:04:21.866Z",
+      "by": "source-collector"
     }
   ]
 }

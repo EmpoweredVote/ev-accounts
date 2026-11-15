@@ -1,0 +1,103 @@
+{
+  "id": "KY-SB-7-2017",
+  "scope": "state:ky",
+  "title": "SB7 (2017 Regular): AN ACT relating to firearms.",
+  "urls": [
+    "http://www.lrc.ky.gov/record/17RS/SB7.htm",
+    "http://www.lrc.ky.gov/recorddocuments/bill/17RS/SB7/bill.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Albert Robinson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ralph Alvarado",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "C.B. Embry",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rick Girdler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4dacfa0f-1e78-4c40-99aa-999385f73bd9"
+    },
+    {
+      "name": "Paul Hornback",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ray Jones",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Stephen Meredith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c362a1f6-01b9-4355-a4bd-bbd1bb7fb1fb"
+    },
+    {
+      "name": "John Schickel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dan Seum",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Damon Thayer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Robin Webb",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "62a3692f-806e-4fa4-bb98-33a30e8c7c04"
+    },
+    {
+      "name": "Steve West",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e1b781c8-8cb2-4254-9f34-51fb567a4852"
+    },
+    {
+      "name": "Mike Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ef0a5595-1825-4f06-9833-91c4f3cfdde2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Draft, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/17RS/SB7/bill.pdf (LegiScan doc 1443949))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-7-2017.draft.pdf",
+      "sha256": "0b0efbe9358ecc479556a903f97b2ebcdd45c3a10208200e5836b7b0e061dda5"
+    },
+    "note": "LegiScan 'Draft' (17 RS BR 25 bill-request print, not an introduced or enrolled print), so version_read is other. No passage vote in the record. Struck text is only renumbering and the removal of 'by licensees' / 'with a permit' in KRS 237.115. Subsection numbers in the quotes are the new numbers."
+  },
+  "operative_text": "Section 1 (KRS 527.020): (2) The criminal provisions of this section shall not apply to a person who carries a concealed deadly weapon on or about his or her person without a license issued pursuant to KRS 237.110 if the person is not prohibited from carrying the weapon by other law applicable to the person, the weapon, or the location in which the weapon is carried.\nSection 1 (KRS 527.020): (3) Except as otherwise specifically provided in this section, nothing in this section authorizes any person to carry a concealed firearm into: (a) Any police station or sheriff's office; (b) Any detention facility, prison, or jail; (c) Any courthouse, solely occupied by the Court of Justice courtroom, or court proceeding;\nSection 1 (KRS 527.020): (12) (a) Except for facilities renting or leasing housing, the owner, business or commercial lessee, or manager of: 1. A private business enterprise; 2. A child-care center as defined in KRS 199.894 or a certified family child-care home as defined in KRS 199.894; or 3. A health facility as defined in KRS 216B.015; may prohibit persons from carrying concealed deadly weapons on the premises and may prohibit employees from carrying concealed deadly weapons on the property of the employer.\nSection 1 (KRS 527.020): (12) (b) If the building or the premises are open to the public, the employer or business enterprise shall post signs on or about the premises if carrying concealed weapons is prohibited.\nSection 1 (KRS 527.020): (12) (d) Carrying of a concealed weapon, ammunition, or both in a location specified in this subsection shall not be a criminal act, but may subject the person to denial from the premises or removal from the premises, and, if an employee of an employer, disciplinary measures by the employer.\nSection 2 (KRS 237.115): (3) Unless otherwise specifically provided by the Kentucky Revised Statutes or applicable federal law, no criminal penalty shall attach to carrying a concealed firearm or other deadly weapon at any location at which an unconcealed firearm or other deadly weapon may be constitutionally carried.\nSection 3: The following KRS section is repealed: 403.754 Petitioner for protective order may apply for temporary permit to carry concealed deadly weapon -- Criteria -- Denial of application final -- Conversion to concealed carry license -- Automated listing of temporary permit holders."
+}

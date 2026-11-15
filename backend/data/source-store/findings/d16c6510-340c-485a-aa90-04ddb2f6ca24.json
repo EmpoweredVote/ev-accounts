@@ -1,0 +1,24 @@
+{
+  "politician_id": "d16c6510-340c-485a-aa90-04ddb2f6ca24",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "firearm regulation"
+      ],
+      "places": [
+        "lost the 2026-06-23 primary runoff (news story: https://abcnews4.com/news/local/story/its-in-gods-hands-evette-awaits-results-in-contested-gubernatorial-primary-runoff-south-carolina-politics-local-news-pamela-evette-alan-wilson-gop); stopped per scope rule",
+        "On the Record (0 meetings)",
+        "campaign site https://pamelaevette.com/ (home page read; no gun-policy content seen)",
+        "one web search on name plus Second Amendment: nothing beyond a campaign-launch pledge, not fetched at source",
+        "not reviewed: Ballotpedia, legislature bill pages, other URL patterns (stopped after scope check)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T17:58:56.000Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "TN-SB-318-2021",
+  "scope": "state:tn",
+  "title": "SB0318 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 10; Title 33; Title 38; Title 39; Title 40; Title 50 and Title 70, relative to the carrying of firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0318&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/SB0318.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joseph Hensley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+    },
+    {
+      "name": "Janince Bowling",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e50369f1-10eb-467e-8604-b94675565631"
+    },
+    {
+      "name": "Mark Pody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b333d211-ed1a-46fb-b947-427d2942acd0"
+    },
+    {
+      "name": "Steve Southerland",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bd8f353d-19f9-4608-812d-987de934afeb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2021-01-22; official copy via the Internet Archive snapshot 20260514134135 of https://www.capitol.tn.gov/Bills/112/Bill/SB0318.pdf (LegiScan doc 2254784))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-318-2021.draft.pdf",
+      "sha256": "5ba3e496ad06036416cb97cfe61686d0048f4c07f02b4169431d1f4863be5953"
+    },
+    "note": "Draft as filed 2021-01-22 (SB 318, twin of HB 18). Summary line says 'As introduced'. Sections 3-4 change 'defense' to 'exception' in 39-17-1308(a)(10) and (b). Effective July 1, 2021."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(g)): (1) It is an exception to the application of subdivision (a) if a person:\nSECTION 1 (TCA 39-17-1307(g)): (A) Is legally in possession of the firearm; and\nSECTION 1 (TCA 39-17-1307(g)): (B) Is not prohibited from purchasing a firearm in the person's state of residence.\nSECTION 1 (TCA 39-17-1307(g)): (2) A person who meets the elements of subdivision (g)(1) is entitled to the same defenses and exceptions as a person who has been issued a handgun carry permit pursuant to § 39-17-1351, for purposes of any offenses in this part; title 50, chapter 3; or title 70.\nSECTION 2 (TCA 39-17-1308(a)): deleting the language \"It is a defense to the application\" and substituting the language \"It is an exception to the application\"."
+}

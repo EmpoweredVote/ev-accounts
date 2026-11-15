@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-2885-2023",
+  "scope": "state:tn",
+  "title": "HB2885 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4, Chapter 54 and Title 39, Chapter 17, Part 13, relative to firearms accessories.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2885&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB2885.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chris Todd",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-02-01; official copy via LegiScan getBillText doc 2912226)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2885-2023.draft.pdf",
+      "sha256": "4828436f697d0be144aa87c0f253d0176684791283d60dec43446ca1940934f9"
+    },
+    "note": "Draft as filed (2024-02-01); the House and Senate numbers share one document. The change is a word insertion, so the instruction sentence is quoted. No amendments are reflected."
+  },
+  "operative_text": "SECTION 1. Tennessee Code Annotated, Section 4-54-103(1), is amended by adding the language \"bipods,\" immediately after the language \"grips,\"."
+}

@@ -1,0 +1,30 @@
+{
+  "politician_id": "1885c28c-35e2-4fc9-bf4c-202af6887dbd",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment and gun rights statements",
+        "guns in schools"
+      ],
+      "places": [
+        "status: in scope; won the 2026 general election for State Superintendent of Education on 2026-11-03 (https://www.wtoc.com/2026/11/04/ellen-weaver-secures-second-term-sc-superintendent/), news story does not mention guns",
+        "On the Record (0 appearances for this person)",
+        "official Department of Education site: press kit page read (https://ed.sc.gov/newsroom/press-kit/); site searches for firearm, gun, second amendment returned nothing on the subject",
+        "blocked: https://ballotpedia.org/Ellen_Weaver (page returned empty)",
+        "news searches (two) on her name plus gun, Second Amendment, school safety, concealed carry: nothing on the subject",
+        "legislature vote and bill pages: not applicable, she is a statewide officeholder not a legislator, no sponsorships found; not reviewed: https://www.scstatehouse.gov/votehistory.php",
+        "campaign site: not reviewed (not located in search)"
+      ],
+      "found": 0,
+      "at": "2026-11-14T17:51:49.279Z",
+      "by": "source-collector"
+    }
+  ]
+}

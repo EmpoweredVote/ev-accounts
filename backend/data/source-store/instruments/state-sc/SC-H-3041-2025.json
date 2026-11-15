@@ -1,0 +1,45 @@
+{
+  "id": "SC-H-3041-2025",
+  "scope": "state:sc",
+  "title": "H3041 (126th General Assembly): Prohibition on Assault Weapons",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3041&session=126&summary=B",
+    "https://www.scstatehouse.gov/sess126_2025-2026/prever/3041_20250204.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Wendell Gilliard",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75dffc0a-f084-4dfb-a2a7-6c81094bb0c2"
+    },
+    {
+      "name": "Gilda Cobb-Hunter",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "896bfe46-0d7e-48ba-86c1-60f39bc9234d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Draft, 2025-02-04; official copy, https://www.scstatehouse.gov/sess126_2025-2026/prever/3041_20250204.htm (LegiScan doc 3101324))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3041-2025.draft.htm",
+      "sha256": "b62cd386a3e7417458b0cf7b8330f89bc3bea2798fe20c8bc7c8b2437a85f154"
+    },
+    "note": "Version read is a 'Draft' dated 2025-02-04 (official site prever copy), not an introduced or enrolled print; no passage vote. Section 2 rewrites the definitions section (old definitions struck and re-added renumbered); quoted only the assault-weapon definition, truncated before item (d) and the exclusions list. Section 1 struck the old misdemeanor tiers for carrying a handgun (16-23-20) in favor of felony tiers: first offense up to $5,000/5 years, repeat offense mandatory minimum 5 years up to 10 years (not quoted in full)."
+  },
+  "operative_text": "Section 1 (Section 16-23-50(A)): A person, including a dealer, who violates the provisions of this article, except Section 16-23-20, is guilty of a felony and, upon conviction: (1) for a first offense, must be fined not more than fifty thousand dollars or imprisoned not more than ten years, or both; and (2) for a second or subsequent offense, must be fined not more than fifty thousand dollars or imprisoned for a mandatory minimum term of imprisonment of ten years, no part of which may be suspended nor probation granted, and not more than twenty years, or both.\nSection 1 (Section 16-23-50(C)): In addition to the penalty provided in this section, the handgun or assault weapon involved in the violation of this article must be confiscated.\nSection 2 (Section 16-23-210(2)): \"Assault weapon\" means a firearm with any of the following characteristics: (a) all semiautomatic action, centerfire rifles with a detachable magazine with a capacity of twenty-one or more rounds; (b) all semiautomatic shotguns with a folding stock or a magazine capacity of more than six rounds, or both; (c) a firearm which has been modified to be operable as an assault weapon as defined in this item; and\nSection 3 (Section 16-23-220): It is unlawful for a person to transport from one place to another in this State or for any railroad company, express company, or other common carrier or any officer, agent, or employee of any of them or other person acting in their behalf knowingly to ship or to transport from one place to another in this State a machine gun or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, or assault weapon, except as provided in Sections 16-23-250 and 23-31-330.\nSection 4 (Section 16-23-230): It is unlawful for a person to store, keep, possess, or have in possession or permit another to store, keep, possess, or have in possession a machine gun or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, or assault weapon, except as provided in Sections 16-23-250 and 23-31-330.\nSection 5 (Section 16-23-240): It is unlawful for a person to sell, rent, give away, or participate in any manner, directly or indirectly, in the sale, renting, giving away, or otherwise disposing of a machine gun, or firearm commonly known as a machine gun, military firearm, sawed-off shotgun, sawed-off rifle, or assault weapon, except as provided in Sections 16-23-250 and 23-31-330.\nSection 6 (new Section 23-31-910): (A) It is unlawful to sell or give a firearm to a person whose name appears on the consolidated terrorist watch list maintained by the Terrorist Screening Center administered by the Federal Bureau of Investigation."
+}

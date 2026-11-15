@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-1718-2017",
+  "scope": "state:tn",
+  "title": "HB1718 (110th General Assembly): As introduced, eliminates separate offense of felon in possession of handgun and instead applies offense of felon in possession of firearm to felons possessing handguns; establishes that person convicted of nonviolent felony, including felony drug offense, does not commit offense of felon in possession of firearm if person has had conviction expunged or has had rights of citizenship fully restored. - Amends TCA Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1718&ga=110",
+    "https://www.capitol.tn.gov/Bills/110/Bill/HB1718.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jay Reedy",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4e0eefb1-6a4f-4004-be8d-432a7131b475"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2018-01-22; official copy via LegiScan getBillText doc 1694730)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1718-2017.draft.pdf",
+      "sha256": "498d7a5932a21de2e81e813bd12fc7eaceb24a98c7dac0d0df9f0ac65f549aa3"
+    },
+    "note": "Draft (as filed) dated 2018-01-22; twin Senate Bill 1667. SECTION 2 deletes 39-17-1307(c) (the separate handgun offense for felons); quote is the instruction sentence.  Draft text: adopted amendments are not in the text read and could change it."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(b)(1)): A person commits an offense who possesses a firearm, as defined in § 39-11-106, and:\nSECTION 1 (TCA 39-17-1307(b)(1)(A)): Has been convicted of a felony involving the use or attempted use of force, violence, or a deadly weapon; or\nSECTION 1 (TCA 39-17-1307(b)(1)(B)): Has been convicted of a felony not covered by subdivision (b)(1)(A); unless the conviction has been expunged, or the person has had the person's rights of citizenship fully restored in this state in accordance with title 40, chapter 29, part 1, in another state, or under federal law.\nSECTION 2 (TCA 39-17-1307(c)): is amended by deleting the subsection in its entirety.\nSECTION 3 (TCA 39-17-1308(b)): The defenses described in this section are not available to persons described in:"
+}

@@ -1,0 +1,271 @@
+{
+  "id": "SC-S-293-2019",
+  "scope": "state:sc",
+  "title": "S0293 (123rd General Assembly): Concealed weapons permit",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0293&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/293_20200922.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Richard Cash",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f1dfe9df-aa28-4533-b964-be09be0bc581"
+    },
+    {
+      "name": "Thomas Corbin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6d10b3d2-940f-45ef-af02-07252a3ce185"
+    },
+    {
+      "name": "Rex Rice",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d587a64f-3b40-421c-9963-9c934f961443"
+    },
+    {
+      "name": "Danny Verdin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ec52251-b87c-4264-b1f7-e4d348e2756a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2019-04-10",
+      "body": "SC Senate",
+      "motion": "Senate: 2nd Reading",
+      "kind": "roll-call",
+      "yes": 41,
+      "no": 0,
+      "absent": 3,
+      "note": "LegiScan roll call 841355",
+      "members": [
+        {
+          "name": "Karl Allen",
+          "vote": "yea",
+          "politician_id": "7211e547-bf02-4c10-b1e4-e6d9382d2419"
+        },
+        {
+          "name": "Michael Gambrell",
+          "vote": "yea",
+          "politician_id": "d44571e6-4925-432c-8e95-92cf11ad1de8"
+        },
+        {
+          "name": "Dwight Loftis",
+          "vote": "yea"
+        },
+        {
+          "name": "Rex Rice",
+          "vote": "yea",
+          "politician_id": "d587a64f-3b40-421c-9963-9c934f961443"
+        },
+        {
+          "name": "Thomas Young",
+          "vote": "yea",
+          "politician_id": "da3991e4-5ae6-4792-8c14-4e5679a1bf92"
+        },
+        {
+          "name": "Thomas Alexander",
+          "vote": "yea",
+          "politician_id": "6da277b4-ff35-4147-8f46-cadbc595ea45"
+        },
+        {
+          "name": "Paul Campbell",
+          "vote": "absent"
+        },
+        {
+          "name": "George Campsen",
+          "vote": "yea",
+          "politician_id": "4b92412d-e472-4a41-a4d9-085ff1a6b22e"
+        },
+        {
+          "name": "Ronnie Cromer",
+          "vote": "yea",
+          "politician_id": "56bd35c2-e142-4bbf-b376-70a0222acba5"
+        },
+        {
+          "name": "Thomas Davis",
+          "vote": "yea",
+          "politician_id": "c881e2aa-4a03-46f9-b769-24aab81fad65"
+        },
+        {
+          "name": "Lawrence Grooms",
+          "vote": "yea",
+          "politician_id": "a5c02924-84fc-40b5-88db-d6f2a13e9aac"
+        },
+        {
+          "name": "Bradley Hutto",
+          "vote": "yea",
+          "politician_id": "9c00f954-b79c-4324-9ef4-3a50b2aae213"
+        },
+        {
+          "name": "Darrell Jackson",
+          "vote": "yea",
+          "politician_id": "9f2780f0-597d-4eda-ab82-0b49f4e96829"
+        },
+        {
+          "name": "Gerald Malloy",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane Martin",
+          "vote": "yea",
+          "politician_id": "0cd44d98-8ccd-4f4f-93d6-e993ff6ba720"
+        },
+        {
+          "name": "Shane Massey",
+          "vote": "yea",
+          "politician_id": "59e8ad1f-d1f1-4287-8132-379233189488"
+        },
+        {
+          "name": "John Matthews",
+          "vote": "yea"
+        },
+        {
+          "name": "Floyd Nicholson",
+          "vote": "yea"
+        },
+        {
+          "name": "Harvey Peeler",
+          "vote": "yea",
+          "politician_id": "a4a6857a-c952-48f7-91bc-85c108dead56"
+        },
+        {
+          "name": "Luke Rankin",
+          "vote": "yea",
+          "politician_id": "954d9212-5c81-450e-8e37-1551f26f8fd7"
+        },
+        {
+          "name": "Glenn Reese",
+          "vote": "yea"
+        },
+        {
+          "name": "John Scott",
+          "vote": "yea"
+        },
+        {
+          "name": "Nikki Setzler",
+          "vote": "yea"
+        },
+        {
+          "name": "Danny Verdin",
+          "vote": "yea",
+          "politician_id": "3ec52251-b87c-4264-b1f7-e4d348e2756a"
+        },
+        {
+          "name": "Kent Williams",
+          "vote": "yea",
+          "politician_id": "5bce0637-5cac-4623-ac38-acd152261621"
+        },
+        {
+          "name": "Thomas Corbin",
+          "vote": "yea",
+          "politician_id": "6d10b3d2-940f-45ef-af02-07252a3ce185"
+        },
+        {
+          "name": "Ronnie Sabb",
+          "vote": "yea",
+          "politician_id": "d246fc16-b401-44f8-a21b-76458cd71580"
+        },
+        {
+          "name": "Kevin Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Chauncey Gregory",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas McElveen",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen Goldfinch",
+          "vote": "absent",
+          "politician_id": "2368c66a-d4d7-40b0-9857-5ec7223fbb88"
+        },
+        {
+          "name": "Katrina Shealy",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Hembree",
+          "vote": "yea",
+          "politician_id": "308cba89-7a88-43a3-b0cf-3e57edec254a"
+        },
+        {
+          "name": "Sean Bennett",
+          "vote": "yea",
+          "politician_id": "1b4513ef-bf9a-4d0d-974e-fe227be4c6c0"
+        },
+        {
+          "name": "Ross Turner",
+          "vote": "yea",
+          "politician_id": "d1e8cb4c-78be-425b-b11d-b9dab6e8225d"
+        },
+        {
+          "name": "Marlon Kimpson",
+          "vote": "absent"
+        },
+        {
+          "name": "Margie Matthews",
+          "vote": "yea",
+          "politician_id": "d29a15a3-d8b1-4aae-9485-38eef5b4e0a1"
+        },
+        {
+          "name": "David Climer",
+          "vote": "yea"
+        },
+        {
+          "name": "Sandra Senn",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Talley",
+          "vote": "yea"
+        },
+        {
+          "name": "Maymia McLeod",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Fanning",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Cash",
+          "vote": "yea",
+          "politician_id": "f1dfe9df-aa28-4533-b964-be09be0bc581"
+        },
+        {
+          "name": "Richard Harpootlian",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2020-09-22; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/293_20200922.htm (LegiScan doc 2209425))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-293-2019.amended.htm",
+      "sha256": "02e3e04ee30cbbfadda5e82fe2ba5980564b9d2baa9b488a954f80f4a1e4df74"
+    },
+    "note": "Text read is the 'Amended' print of 2020-09-22 (marked RECALLED); the bill passed Senate second reading 41-0 on 2019-04-10, but this is not the enrolled text and later amendments are not in the text read. Subsection (B) treats the leased space as not a school for the federal Gun-Free School Zone Act; it is not a higher-law requirement."
+  },
+  "operative_text": "SECTION 1 (new Section 23-31-232): (A) Notwithstanding any other provision of law, upon express permission given by the appropriate church official or governing body, a person who holds a valid permit issued pursuant to this article may carry a concealable weapon on the leased premises of an elementary or secondary school if a church leases the school premises or areas within a school for church services or official church activities. (1) The provisions contained in this section apply: (a) only during those times that the church has the use and enjoyment of the property pursuant to its lease with the school, (b) only to the areas of the school within the lease agreement, any related parking areas, or any reasonable ingress or egress between these areas. (2) The provisions of this section do not apply during any time students are present as a result of a curricular or extracurricular school sponsored activity that is taking place on the school property. (B) For the purposes of the Federal Gun-Free School Zone Act (18 U.S.C. Section 921(a)), the buildings and grounds of a school that are leased to a church are not considered a school during the hours that the church has use and enjoyment of the property pursuant to this section."
+}

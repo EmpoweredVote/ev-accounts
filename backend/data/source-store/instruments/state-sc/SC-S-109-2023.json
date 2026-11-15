@@ -1,0 +1,92 @@
+{
+  "id": "SC-S-109-2023",
+  "scope": "state:sc",
+  "title": "S0109 (125th General Assembly): S.C. Constitutional Carry Act of 2023",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0109&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/109_20230510.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Shane Martin",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0cd44d98-8ccd-4f4f-93d6-e993ff6ba720"
+    },
+    {
+      "name": "Rex Rice",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d587a64f-3b40-421c-9963-9c934f961443"
+    },
+    {
+      "name": "Joshua Kimbrell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5ebdf748-e14d-47c1-9b88-f22fa0ecd6c4"
+    },
+    {
+      "name": "Thomas Corbin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6d10b3d2-940f-45ef-af02-07252a3ce185"
+    },
+    {
+      "name": "Wes Climer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4c07dfea-0219-410e-a1f8-baf079c012d4"
+    },
+    {
+      "name": "Dwight Loftis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Danny Verdin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ec52251-b87c-4264-b1f7-e4d348e2756a"
+    },
+    {
+      "name": "Billy Garrett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8d7080bb-c405-4285-b04d-e7a94a63440a"
+    },
+    {
+      "name": "Mike Reichenbach",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "df189eb9-02e7-4230-ae9a-8e2c17b2c26d"
+    },
+    {
+      "name": "Lawrence Grooms",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a5c02924-84fc-40b5-88db-d6f2a13e9aac"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Comm Sub, 2023-05-10; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/109_20230510.htm (LegiScan doc 2805940))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-109-2023.comm-sub.htm",
+      "sha256": "b81f855bc618594b2ff5a7a292039a85d8059ba2db22ad546ba3775d5396162b"
+    },
+    "note": "Text read is the Senate Judiciary committee substitute of 2023-05-10 (version_read other), a very large file (Sections 1-22) that also holds the earlier printed bill; the committee amendment strikes the whole bill and inserts new text, so the committee text was quoted. No passage vote on record; later amendments are not in the text read. The committee text is titled 'Constitutional Carry/Second Amendment Preservation Act of 2023'. Item numbers in (A) are as printed; items (9) omitted from quote. Struck: the old permit-based exceptions in 16-23-20, the concealed-weapon-permit exemptions in 16-23-420(A),(F) and 16-23-430(B), 'violent' felony wording in 16-23-500(A). Also amends 23-31-215 permit duties, 23-31-220/235 signs, and repeals 16-23-460, 23-31-225, 23-31-230. Section 6 also keeps the school firearm ban but removes the permit-holder exception for vehicle storage."
+  },
+  "operative_text": "SECTION 3 (Section 16-23-20(A)): It is unlawful, whether or not the person has a concealed weapon permit, for anyone to carry about the person any handgun, whether concealed or not, unless otherwise specifically authorized by law into a: (1) law enforcement, correctional, or detention facility; (2) courthouse or courtroom; (3) polling place on election day; (4) business meeting or office of the governing body of a county, public school district, municipality, or special purpose district; (5) school or college athletic event not related to firearms; (6) daycare facility or preschool facility; (7) place where the carrying of firearms is prohibited by federal law; (8) church or other established religious sanctuary; ... (10) residence or dwelling place of another person; or (11) place clearly marked with a sign prohibiting the carrying of a concealable weapon on the premises in compliance with Section 23-31-235.\nSECTION 3 (Section 16-23-20(D)): Notwithstanding any provision in this section, a person who is not otherwise prohibited by law from carrying a firearm may lawfully store a firearm anywhere in a vehicle whether occupied or unoccupied.\nSECTION 6 (Section 16-23-420(A)): It is unlawful for a person to possess a firearm of any kind on any premises or property owned, operated, or controlled by a private or public school, college, university, technical college, other post-secondary institution, or in any publicly owned building, without the express permission of the authorities in charge of the premises or property.\nSECTION 8 (Section 16-23-465(B)(1)): This section does not apply to a person otherwise lawfully carrying a firearm who does not consume alcoholic liquor, beer, or wine while carrying the concealable weapon on the business' premises.\nSECTION 17 (new Section 23-31-245): A person openly carrying a weapon in accordance with this article does not give a law enforcement officer reasonable suspicion or probable cause to search, detain, or arrest the person.\nSECTION 19 (new Section 16-23-540(A)): An owner or other person who is lawfully in possession of a firearm, rifle, or shotgun in this State who suffers the loss or theft of such weapon shall report, within thirty days of discovery, the loss or theft of each weapon to the appropriate local law enforcement agency, whether local police department or county sheriff's office, which would have appropriate jurisdiction where the weapon is located.\nSECTION 20 (Section 16-23-500(A)): It is unlawful for a person who has been convicted of a crime punishable by a maximum term of imprisonment of more than one year to possess a firearm or ammunition within this State."
+}

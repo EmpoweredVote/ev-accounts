@@ -1,0 +1,92 @@
+{
+  "id": "TN-HB-746-2023",
+  "scope": "state:tn",
+  "title": "HB0746 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0746&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB0746.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jody Barrett",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a6b0df31-75ac-4a90-88e6-78db5c74a71e"
+    },
+    {
+      "name": "Todd Warner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0a90ac77-c426-4f4e-add8-f5454c42229f"
+    },
+    {
+      "name": "Kip Capley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "91c9fb1a-7df5-418b-9713-a2db4acd49a6"
+    },
+    {
+      "name": "Clay Doggett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9a9c3029-794a-4cb5-aa7e-342e9b480603"
+    },
+    {
+      "name": "Chris Todd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+    },
+    {
+      "name": "Monty Fritts",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9cff8f78-ffde-4821-91e7-6d14fb093ecc"
+    },
+    {
+      "name": "Bryan Richey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jay Reedy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4e0eefb1-6a4f-4004-be8d-432a7131b475"
+    },
+    {
+      "name": "Susan Lynn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6dbe4dd8-b749-4ef0-9ca4-f2c752e50ef1"
+    },
+    {
+      "name": "Rush Bricken",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e02758-1839-4d89-8a1b-26b9aeda22d5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-01-31; crossfiled twin's official copy via the Internet Archive snapshot 20260514154504 of https://www.capitol.tn.gov/Bills/113/Bill/SB1037.pdf (it names HOUSE BILL 746; own link https://www.capitol.tn.gov/Bills/113/Bill/HB0746.pdf not archived))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-746-2023.draft.twin.pdf",
+      "sha256": "afb7ba3ec4827997ab4d02da7bee01f26ad62d773d528082cf4c75ad514de52b"
+    },
+    "note": "Draft as filed (2023-01-31). The new subsection (a) limits owners to allowing only permit holders to carry concealed handguns (text printed 'carried in in'); deletions in Sections 2-7 remove the 'prohibition' wording and the offense per the state summary. The effect is partly taken from that summary."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1359(a)): (a) Except as provided in § 39-17-1313, an individual, corporation, business entity, or local, state, or federal government entity or agent thereof is authorized to restrict the possession of weapons by a person who is at a meeting conducted by, or on property owned, operated, or managed or under the control of the individual, corporation, business entity, or government entity by allowing a handgun to be carried in in a concealed manner only by persons authorized to carry a handgun pursuant to § 39-17-1351 or § 39-17-1366.\nSECTION 4 (TCA 39-17-1359): Tennessee Code Annotated, Section 39-17-1359, is amended by deleting subdivisions (b)(3)(B) and (b)(4).\nSECTION 6 (TCA 39-17-1359): Tennessee Code Annotated, Section 39-17-1359, is amended by deleting subsection (c)."
+}

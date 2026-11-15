@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-1058-2025",
+  "scope": "state:tn",
+  "title": "HB1058 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearm transactions.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=HB1058&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/HB1058.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bo Mitchell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "094afd56-f074-4fdc-a053-1482ea501fc8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2025-02-05; official copy via LegiScan getBillText doc 3103372)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1058-2025.draft.pdf",
+      "sha256": "a43ccd6e647eb409056d8adb4c07fe8c259a2fe0b3dba76c2f33bef6e3bb3c66"
+    },
+    "note": "Draft as introduced; adopted amendments are not in the text read and could change it. Applies to transactions on or after July 1, 2025. Copy dated 2025-02-05."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1316(c)(5)): (5) The gun dealer shall ensure that three (3) days have passed since the transaction was initiated by the purchaser before transferring the firearm to the purchaser if the purchaser is older than seventeen (17) years of age but younger than twenty-one (21) years of age."
+}

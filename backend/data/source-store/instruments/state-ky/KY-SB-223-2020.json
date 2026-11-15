@@ -1,0 +1,44 @@
+{
+  "id": "KY-SB-223-2020",
+  "scope": "state:ky",
+  "title": "SB223 (2020 Regular): AN ACT relating to the use of state property.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/20RS/sb223.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/20RS/sb223/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Morgan McGarvey",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Reginald Thomas",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f77c1ca3-d540-49f0-b7ca-e1efce3b4db3"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/20RS/sb223/orig_bill.pdf (LegiScan doc 2154585))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-SB-223-2020.introduced.pdf",
+      "sha256": "461b903054ae82628c14c5a406dae2207658770d5c24c4c7252fab92d6a6918b"
+    },
+    "note": "Introduced text (20 RS BR 1573); no passage vote on record. The rest of KRS 56.463 is existing property-control text. Section 2 keeps other state-property laws in effect unless in direct conflict."
+  },
+  "operative_text": "Section 1 (KRS 56.463): To prohibit any person, while visiting or using state buildings owned or managed by the Finance and Administration Cabinet, from concealing his or her identity by wearing a mask, a hood, or any other item that hides, conceals, or covers any portion of his or her face while the person possesses or carries any firearm, deadly weapon, or other dangerous instrument, unless the person has obtained written permission to do so by the secretary of the Finance and Administration Cabinet. The provisions of this subsection shall not apply to any state building located on real property designated by the Department of Fish and Wildlife Resources for hunting or any other activities related to the use of firearms, deadly weapons, or other dangerous instruments;"
+}

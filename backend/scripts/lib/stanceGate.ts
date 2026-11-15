@@ -367,11 +367,14 @@ export function checkStanceRow(
     // patterns, canonicalize each one, and compare those tokens for EQUALITY — never substring — so a
     // longer number sharing a prefix cannot satisfy a shorter one.
     const identifiers = [...new Set(extractInstrumentIdentifiers(row.reasoning).map(canonicalizeInstrumentId))];
+    // South Carolina (2026-11-14): a coder's "HB 3594" is "hb3594" but the LegiScan line prints "H3594" ("h3594").
+    // Same bill, so the House/Senate "B" is dropped on both sides before comparing (as strangeBills does).
+    const loose = (t: string) => t.replace(/^([hs])b(?=\d)/, '$1');
     const snippetIdentifierSet = new Set(
-      citedEvidence.flatMap((e) => extractInstrumentIdentifiers(e.snippet).map(canonicalizeInstrumentId)),
+      citedEvidence.flatMap((e) => extractInstrumentIdentifiers(e.snippet).map((x) => loose(canonicalizeInstrumentId(x)))),
     );
     for (const id of identifiers) {
-      if (!snippetIdentifierSet.has(id)) {
+      if (!snippetIdentifierSet.has(loose(id))) {
         add('instrument-not-cited', 'high', `reasoning names an instrument (canonical "${id}") that does not appear in any cited snippet`);
       }
     }

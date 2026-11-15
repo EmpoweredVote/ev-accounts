@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-41-2023",
+  "scope": "state:tn",
+  "title": "HB0041 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13 and Title 49, Chapter 6, relative to weapons on school property.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0041&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB0041.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jay Reedy",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4e0eefb1-6a4f-4004-be8d-432a7131b475"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-02-01; official copy via LegiScan getBillText doc 2675963)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-41-2023.draft.pdf",
+      "sha256": "cb74be2db5137e4316235e5cd47543b01564099d014397552e0e8a000381b29c"
+    },
+    "note": "Draft of 2023-02-01 (as introduced); amendments not in text. The text does not show what subsection (k) says. Section 1 quote is the new subsection (a) text. Twin: TN-SB-1429-2023."
+  },
+  "operative_text": "SECTION 1 (TCA 49-6-816(a)): As used in this section, \"employee\" means a person employed full time to work in a public kindergarten through grade twelve (K-12) school, including as a teacher, principal, vice principal, or other staff member.\nSECTION 2 (TCA 49-6-816(b)(1)): is amended by deleting \"the local board of education in a distressed rural county\" and substituting \"a local board of education\".\nSECTION 3 (TCA 49-6-816): is amended by deleting subsection (k)."
+}

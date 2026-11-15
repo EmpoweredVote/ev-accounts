@@ -1,0 +1,50 @@
+{
+  "id": "TN-HB-1388-2021",
+  "scope": "state:tn",
+  "title": "HB1388 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, relative to the carrying of weapons.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1388&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/HB1388.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Chris Todd",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+    },
+    {
+      "name": "Rusty Grills",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "70aa67e5-8df0-4dee-a034-1ea4f3470c57"
+    },
+    {
+      "name": "Terri Lynn Weaver",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2021-02-22; official copy via LegiScan getBillText doc 2304274)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1388-2021.draft.pdf",
+      "sha256": "44a96a0c52b046e050e134ce3b265fa4d4e4df0087819f15b096a154599998f7"
+    },
+    "note": "Draft as filed 2021-02-22 (HB 1388 / SB 1391). Rewrites 39-17-1307 and deletes 39-17-1308, which removes the offense of carrying a firearm or club with intent to go armed and its defenses; keeps the offenses for felons, domestic-violence and protection-order subjects and others barred. Effective July 1, 2021. Section 3 is a severability clause."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(a)): (1) A person commits an offense who possesses a firearm; and:\nSECTION 1 (TCA 39-17-1307(a)): (A) Has been convicted of a felony crime of violence, an attempt to commit a felony crime of violence, or a felony involving use of a deadly weapon; or\nSECTION 1 (TCA 39-17-1307(a)): (B) Has been convicted of a felony drug offense.\nSECTION 1 (TCA 39-17-1307(b)): (1) A person commits an offense who possesses a handgun and has been convicted of a felony unless:\nSECTION 1 (TCA 39-17-1307(d)): (1) A person commits an offense who possesses a firearm and:\nSECTION 1 (TCA 39-17-1307(d)): (4) For purposes of this section, a person does not possess a firearm, including, but not limited to, firearms registered under the National Firearms Act (26 U.S.C. § 5801 et seq.), if the firearm is in a safe or similar container that is securely locked and to which the person does not have the combination, keys, or other means of normal access.\nSECTION 2 (TCA 39-17-1308): Tennessee Code Annotated, Section 39-17-1308, is amended by deleting the section."
+}

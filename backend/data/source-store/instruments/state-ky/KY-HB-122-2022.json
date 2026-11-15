@@ -1,0 +1,57 @@
+{
+  "id": "KY-HB-122-2022",
+  "scope": "state:ky",
+  "title": "HB122 (2022 Regular): AN ACT relating to firearms.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/22RS/hb122.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/22RS/hb122/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Savannah Maddox",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e17f04a4-35d6-4e64-8006-30381e9ff6bd"
+    },
+    {
+      "name": "Josh Calloway",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436293ef-ed3f-46b3-9bb6-809b6828eaf8"
+    },
+    {
+      "name": "Ryan Dotson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2721f71e-5bba-4769-8e0e-86fbfc414e2b"
+    },
+    {
+      "name": "Felicia Rabourn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a39b09c3-23b4-4bfb-a001-8a9a2adfb6cd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/22RS/hb122/orig_bill.pdf (LegiScan doc 2464509))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-122-2022.introduced.pdf",
+      "sha256": "87eadac187d0c63ff78b052b0d330628de1977bb3e0493f476d9eba1e8119b1f"
+    },
+    "note": "As-filed text (22 RS); no passage vote and later amendments are not in the text read. Age 21 struck, 18 added in both KRS 237.109(1) and KRS 237.110 licence-eligibility paragraph (c). Other bracketed edits in Section 2 are comma removals in the military-posting clause."
+  },
+  "operative_text": "Section 1 (KRS 237.109): (1) Persons age eighteen (18) or older, and otherwise able to lawfully possess a firearm, may carry concealed firearms or other concealed deadly weapons without a license in the same locations as persons with valid licenses issued under KRS 237.110.\nSection 2 (KRS 237.110): (c) Is eighteen (18) years of age or older;"
+}

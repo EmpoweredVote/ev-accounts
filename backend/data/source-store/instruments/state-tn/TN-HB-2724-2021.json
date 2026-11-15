@@ -1,0 +1,44 @@
+{
+  "id": "TN-HB-2724-2021",
+  "scope": "state:tn",
+  "title": "HB2724 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39; Title 49 and Title 50, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2724&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/HB2724.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Larry Miller",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c6214919-2804-40cf-8fda-efd070e2dc80"
+    },
+    {
+      "name": "G Hardaway",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2022-02-02; official copy via LegiScan getBillText doc 2502763)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2724-2021.draft.pdf",
+      "sha256": "f241d0d7cc65a2610a5354b6e638e357d1c4c5c09045d5f235cea2945100a753"
+    },
+    "note": "Draft as filed, 2022-02-02 (summary \"As introduced\"); no amendments in the text read. Quotes are repeal instructions; the deleted text is not printed. Sections 2 and 3 remove cross-references to 39-17-1313 in 39-17-1314(b)(1) and 39-17-1359(a)(1). Effective July 1, 2022. Text names SB 1970 as the Senate twin."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1313): Tennessee Code Annotated, Section 39-17-1313, is amended by deleting the section in its entirety.\nSECTION 4 (TCA 39-17-1366(h)): Tennessee Code Annotated, Section 39-17-1366(h), is amended by deleting the subsection.\nSECTION 5 (TCA 49-7-163): Tennessee Code Annotated, Section 49-7-163, is amended by deleting the section in its entirety.\nSECTION 6 (TCA 50-1-312): Tennessee Code Annotated, Section 50-1-312, is amended by deleting the section in its entirety."
+}

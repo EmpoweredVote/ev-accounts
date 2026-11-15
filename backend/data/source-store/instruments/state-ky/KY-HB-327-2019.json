@@ -1,0 +1,67 @@
+{
+  "id": "KY-HB-327-2019",
+  "scope": "state:ky",
+  "title": "HB327 (2019 Regular): AN ACT relating to carrying concealed weapons.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/19RS/hb327.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/19RS/hb327/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Savannah Maddox",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e17f04a4-35d6-4e64-8006-30381e9ff6bd"
+    },
+    {
+      "name": "Mark Hart",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2284cea5-d630-4abf-84db-9fcd5d53aa62"
+    },
+    {
+      "name": "Thomas Huff",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b159e90d-9ebe-4cc5-9c85-ec189f1d0322"
+    },
+    {
+      "name": "Derek Lewis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b2ce051f-aa22-4506-9d6c-16ee48ae6ab1"
+    },
+    {
+      "name": "Phillip Pratt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "William Reed",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/19RS/hb327/orig_bill.pdf (LegiScan doc 1905064))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-327-2019.introduced.pdf",
+      "sha256": "973745fea10cf9872732392fbc40c471e2a7b649e855b7a9011be2a7e773422d"
+    },
+    "note": "Introduced version (19 RS BR 1431); later amendments not in text read. No votes recorded. Quotes drop struck words: in Section 2, 'except those specified in subsection (5)', 'that section' and 'with a permit' are struck; in Section 3 'with a permit' is struck."
+  },
+  "operative_text": "Section 1 (new section of KRS Chapter 237): (1) Persons age twenty-one (21) or older, and otherwise able to lawfully possess a firearm, may carry concealed firearms or other concealed deadly weapons without a license in the same locations as persons with valid licenses issued under KRS 237.110. (2) Nothing in this section shall be construed to allow the carrying or possession of any deadly weapon where it is prohibited by federal law.\nSection 2 (KRS 527.020): (4) Persons carrying concealed weapons in accordance with Section 1 of this Act or licensed to carry a concealed deadly weapon pursuant to KRS 237.110 may carry a concealed firearm or other concealed deadly weapon on or about their persons at all times within the Commonwealth of Kentucky, if the firearm or concealed deadly weapon is carried in conformity with the requirements of Section 1 of this Act or KRS 237.110. Unless otherwise specifically provided by the Kentucky Revised Statutes or applicable federal law, no criminal penalty shall attach to carrying a concealed firearm or other deadly weapon at any location at which an unconcealed firearm or other deadly weapon may be constitutionally carried.\nSection 3 (KRS 237.115): (3) Unless otherwise specifically provided by the Kentucky Revised Statutes or applicable federal law, no criminal penalty shall attach to carrying a concealed firearm or other deadly weapon at any location at which an unconcealed firearm or other deadly weapon may be constitutionally carried."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "KY-HB-445-2021",
+  "scope": "state:ky",
+  "title": "HB445 (2021 Regular): AN ACT relating to preserving the right of Kentuckians to own and use firearms and declaring an emergency.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/21RS/hb445.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/21RS/hb445/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Patrick Flannery",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75c04039-745d-486f-8c8a-6ae22768ab72"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/21RS/hb445/orig_bill.pdf (LegiScan doc 2283583))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-445-2021.introduced.pdf",
+      "sha256": "c768d89811eb82ec5b67ca38cf7dcd0cd675db60c4ec4773a59909fa9b06204e"
+    },
+    "note": "As-filed (BR 1761); no passage vote in the record. Findings and declarations only, with no penalty. Higher-law duty is not stated as a required step, so left out."
+  },
+  "operative_text": "Section 1 (new section of KRS Chapter 237): (2) (b) All federal acts, laws, orders, rules, and regulations, including rules and regulations issued by the Bureau of Alcohol, Tobacco, Firearms and Explosives, enacted on or after January 1, 2018, which attempt to commandeer local or state law enforcement officers to enforce federal restrictions on firearms violate the Constitution of the United States and are: 1. Invalid in this Commonwealth; 2. Not recognized by this Commonwealth; 3. Considered null and void by this Commonwealth; and 4. Of no effect in this Commonwealth;\nSection 1 (new section of KRS Chapter 237): (2) (c) Proposed executive actions by the President of the United States relating to the acquisition, possession, and use of firearms and accessories violate the President's powers under the Constitution of the United States and the rights of the citizens under the Constitution of the United States and amendments thereto; and\nSection 1 (new section of KRS Chapter 237): (3) This section shall be retroactive to January 1, 2018."
+}

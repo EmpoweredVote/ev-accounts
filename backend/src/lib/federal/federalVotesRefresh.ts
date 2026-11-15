@@ -28,6 +28,7 @@ import { VoteBuffer, isUnchanged, markImported } from '../legiscan/importer.js';
 import { currentCongress, ordinal } from './billStatus.js';
 import { ensureSession, loadBioguideMap } from './federalBillsRefresh.js';
 import { LightZip } from './lightZip.js';
+import { archiveDataset } from '../legiscan/archive.js';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const log = (msg: string) => console.info(`[federal-votes] ${msg}`);
@@ -110,7 +111,10 @@ export async function refreshFederalVotes(apiKey: string, opts: FederalVotesOpti
 
   // Streamed download (the JSON is never held, only the zip), read with LightZip: adm-zip's per-file
   // objects cost ~200 MiB for this archive's 21k files and crashed a 512 MiB job.
-  const zip = new LightZip(await legiscanDatasetZip(apiKey, ds.session_id, ds.access_key));
+  const zipBytes = await legiscanDatasetZip(apiKey, ds.session_id, ds.access_key);
+  // Keep a copy so research reads ours instead of downloading it again (legiscan/archive.ts says why).
+  await archiveDataset('US', ds, zipBytes, { dryRun });
+  const zip = new LightZip(zipBytes);
   const billFiles = zip.names.filter((n) => /\/bill\/[^/]+\.json$/.test(n));
   const voteFiles = zip.names.filter((n) => /\/vote\/[^/]+\.json$/.test(n));
   log(`dataset read: ${zip.size} files, ${billFiles.length} bills, ${voteFiles.length} roll calls`);

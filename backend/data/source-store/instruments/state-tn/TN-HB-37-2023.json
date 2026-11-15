@@ -1,0 +1,68 @@
+{
+  "id": "TN-HB-37-2023",
+  "scope": "state:tn",
+  "title": "HB0037 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 4, Chapter 54 and Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0037&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB0037.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Todd Warner",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0a90ac77-c426-4f4e-add8-f5454c42229f"
+    },
+    {
+      "name": "Monty Fritts",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9cff8f78-ffde-4821-91e7-6d14fb093ecc"
+    },
+    {
+      "name": "Bryan Richey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jay Reedy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4e0eefb1-6a4f-4004-be8d-432a7131b475"
+    },
+    {
+      "name": "Susan Lynn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6dbe4dd8-b749-4ef0-9ca4-f2c752e50ef1"
+    },
+    {
+      "name": "Clay Doggett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9a9c3029-794a-4cb5-aa7e-342e9b480603"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-01-26; official copy via LegiScan getBillText doc 2667001)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-37-2023.draft.pdf",
+      "sha256": "8a983da55fc23fc324a7442524f9bc82c89e83a0a3d5769bd4ffc2bc0e4c2ac1"
+    },
+    "note": "Draft as filed (2023-01-26), read from the House bill document that also names SB 659. Repealed 4-54-105 (the exclusions) is not shown; the state summary says it covers non-single-person firearms, multi-projectile firearms, large-bore firearms and exploding ammunition."
+  },
+  "operative_text": "SECTION 1 (TCA 4-54-105): Tennessee Code Annotated, Section 4-54-105, is amended by deleting the section in its entirety.\nSECTION 2 (new section, TCA Title 4, Ch. 54): An employee or elected or appointed official of a state or local government entity shall not enforce, or assist in the enforcement, of a federal law in violation of this chapter.\nSECTION 3 (new section, TCA Title 39, Ch. 17, Pt. 13(a)): (a) It is an offense for a person to disenfranchise another of the person's constitutional rights in violation of Title 4, Chapter 54.\nSECTION 3 (new section, TCA Title 39, Ch. 17, Pt. 13(d)): (1) A violation of subsection (a) is a Class A misdemeanor."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2240-2019",
+  "scope": "state:tn",
+  "title": "SB2240 (111th General Assembly): As introduced, clarifies that it is an offense for a person to purchase or possess a firearm in this state if the person has been prohibited from purchasing or possessing under the laws of another state and not just Tennessee law or federal law. - Amends TCA Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2240&ga=111",
+    "https://www.capitol.tn.gov/Bills/111/Bill/SB2240.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sara Kyle",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1b745bdf-e7cb-487d-9ca5-7bd043d602ac"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2020-02-04; crossfiled twin https://www.capitol.tn.gov/Bills/111/Bill/HB2347.pdf is the same printed document (it names SENATE BILL 2240); copied from TN-HB-2347-2019.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2347-2019.draft.pdf",
+      "sha256": "72ac4c81aef935de7481390d6b15c2bbaef37d5ac2d2d2c179ddedc6c9152114"
+    },
+    "note": "Draft dated 2020-02-04, shared with twin HB 2347. Sections 1-2 quote the full instruction sentence (word swap); section 3 replaces subdivision (f)(1)(C)."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1316(q)(1)): Tennessee Code Annotated, Section 39-17-1316(q)(1), is amended by deleting the language \"is prohibited by state or federal law\" and substituting instead the language \"is prohibited by state or federal law, or the law of another state,\".\nSECTION 2 (TCA 39-17-1316(q)(2)): Tennessee Code Annotated, Section 39-17-1316(q)(2), is amended by deleting the language \"is prohibited by state or federal law\" and substituting instead the language \"is prohibited by state or federal law, or the law of another state,\".\nSECTION 3 (TCA 39-17-1307(f)(1)(C)): Is prohibited from possessing a firearm under any other state or federal law, or the law of another state."
+}

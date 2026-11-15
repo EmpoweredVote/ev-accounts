@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-957-2025",
+  "scope": "state:tn",
+  "title": "SB0957 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB0957&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/SB0957.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "London Lamar",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c83e282-cb78-4e39-aa1e-13875a86e872"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2025-02-05; crossfiled twin https://www.capitol.tn.gov/Bills/114/Bill/HB1082.pdf is the same printed document (it names SENATE BILL 957); copied from TN-HB-1082-2025.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1082-2025.draft.pdf",
+      "sha256": "7f84c1a06d0606abcb226ba7824598140e68d4b07e75fa30f398ee30718a37bd"
+    },
+    "note": "Draft dated 2025-02-05 (as filed; summary says 'As introduced'). Section 2 is a cross-reference edit to 39-17-1302(d). Amendments, if any, are not in the text read."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1302(a)(8)): (8) A switch or auto sear device designed, made, or intended for use in converting a weapon to shoot automatically more than one (1) shot, without manual reloading, by a single function or pull of the trigger.\nSECTION 3 (TCA 39-17-1302(f)(5)): (5) An offense under subdivision (a)(8) is a Class E felony."
+}

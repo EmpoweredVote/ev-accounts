@@ -1,0 +1,54 @@
+{
+  "id": "SC-H-4087-2019",
+  "scope": "state:sc",
+  "title": "H4087 (123rd General Assembly): Firearm and ammunition",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=4087&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/4087_20190226.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Seth Rose",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6fb5d7ac-0902-49af-9f1e-504e56d8e606"
+    },
+    {
+      "name": "Kirkman Finlay",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ivory Thigpen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Robert Ridgeway",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2019-02-26; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/4087_20190226.htm (LegiScan doc 1930256))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-4087-2019.introduced.htm",
+      "sha256": "55f215c001fbd77cd188a36a1866d1805a0b4f553dadb583df7756e5a6e6a5bf"
+    },
+    "note": "Introduced version (Feb. 26, 2019); no later version or vote on file. Struck: \"violent crime ... classified as a felony\" (now any crime punishable by more than one year) and the old flat felony penalty (up to $2,000 / 5 years). Item (B) is quoted as the three penalty tiers only because the lead-in is spliced into struck text."
+  },
+  "operative_text": "Section 1 (Section 16-23-500): (A) It is unlawful for a person who has been convicted of a crime punishable by a maximum term of imprisonment of more than one year to possess, ship, transport, or receive a firearm or ammunition within this State.\nSection 1 (Section 16-23-500): (1) misdemeanor for a first offense and must be imprisoned not more than three years; (2) felony for a second offense and must be imprisoned not more than ten years; and (3) felony for a third or subsequent offense and must be imprisoned not more than fifteen years.\nSection 1 (Section 16-23-500): (E) A prior offense for purposes of this section means any conviction related to the possession, shipping, transporting, or receiving of a firearm or ammunition in this State, another state, or in violation of federal law."
+}

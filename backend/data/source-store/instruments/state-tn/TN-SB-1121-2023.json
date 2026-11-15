@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1121-2023",
+  "scope": "state:tn",
+  "title": "SB1121 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to enhanced handgun carry permits.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1121&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB1121.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Janince Bowling",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e50369f1-10eb-467e-8604-b94675565631"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-01-31; crossfiled twin https://www.capitol.tn.gov/Bills/113/Bill/HB0578.pdf is the same printed document (it names SENATE BILL 1121); copied from TN-HB-578-2023.draft.txt)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-578-2023.draft.pdf",
+      "sha256": "448c0445f9aef0a603d69150f7f0a8c3e9a1f375125448f76892b3e7c422b8ce"
+    },
+    "note": "Draft dated 2023-01-31 (text copied from House twin HB 578, same printed document). Text carries no marks; the deleted subsection (p) and subdivisions (x)(2), (x)(5) are not shown, so what they contain is not visible here. The state summary says the bill eliminates the application and processing fee for an enhanced handgun carry permit. No amendments are in the text read; the summary says \"As introduced\"."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1351(p)): Tennessee Code Annotated, Section 39-17-1351, is amended by deleting subsection (p) in its entirety.\nSECTION 2 (TCA 39-17-1351(q)(1)): (1) Prior to the expiration of a permit, a permit holder may apply to the department for the renewal of the permit by submitting, under oath, a renewal application. The renewal application must be on a standard form developed by the department of safety and must require the applicant to disclose, under oath, the information concerning the applicant as set forth in subsection (c), and shall require the applicant to certify that the applicant still satisfies all the eligibility requirements of this section for the issuance of a permit.\nSECTION 3 (TCA 39-17-1351(x)(2)): Tennessee Code Annotated, Section 39-17-1351, is amended by deleting subdivision (x)(2) in its entirety.\nSECTION 4 (TCA 39-17-1351(x)(5)): Tennessee Code Annotated, Section 39-17-1351, is amended by deleting subdivision (x)(5) in its entirety."
+}

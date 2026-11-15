@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-1868-2023",
+  "scope": "state:tn",
+  "title": "HB1868 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1868&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB1868.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Justin Jones",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "40bad041-2a76-48fa-a65b-2bb1763dfaeb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-30; official copy via LegiScan getBillText doc 2907925)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1868-2023.draft.pdf",
+      "sha256": "766f128573d6da7ab1a10a71e8ea9dce4759de7e35cb591dab9be2c3d44b22f0"
+    },
+    "note": "Draft as filed (version dated 2024-01-30); summary says 'As introduced' and no passage vote is recorded, so no amendments are missing. "
+  },
+  "operative_text": "SECTION 1 (new subsection in TCA 39-17-1316): ( ) A gun dealer shall not deliver to a purchaser a trigger crank, bump stock, bump-fire device, or any other part, combination of parts, component, device, attachment, or accessory that is designed or functions to accelerate the rate of fire of a firearm until seventy-two (72) hours have passed from the initial time at which the sale of the firearm accessory was sought by the purchaser;"
+}

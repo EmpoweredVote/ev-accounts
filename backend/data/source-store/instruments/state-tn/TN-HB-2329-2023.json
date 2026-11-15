@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-2329-2023",
+  "scope": "state:tn",
+  "title": "HB2329 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2329&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB2329.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Justin Pearson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5d56470c-fb82-42f7-82e3-d28bf74ace47"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-30; official copy via LegiScan getBillText doc 2908489)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2329-2023.draft.pdf",
+      "sha256": "df169da6d78ecb01d6866f727a4a32fddbc9e0ec5cc5c2bc4fc29b2380b087a5"
+    },
+    "note": "Draft as filed, 2024-01-30/31; shared document with SB 2449. Deletes 39-17-1307(g) (the lawful-handgun-carry exception) and a cross-reference in 39-17-1313(a); no new words are added. Effective July 1, 2024."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307): Tennessee Code Annotated, Section 39-17-1307, is amended by deleting subsection (g).\nSECTION 2 (TCA 39-17-1313(a)): Tennessee Code Annotated, Section 39-17-1313(a), is amended by deleting \"or who lawfully carries a handgun pursuant to § 39-17-1307(g)\"."
+}

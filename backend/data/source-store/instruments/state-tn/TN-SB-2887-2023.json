@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2887-2023",
+  "scope": "state:tn",
+  "title": "SB2887 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2887&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB2887.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sara Kyle",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1b745bdf-e7cb-487d-9ca5-7bd043d602ac"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-02-01; official copy via the Internet Archive snapshot 20260514140725 of https://www.capitol.tn.gov/Bills/113/Bill/SB2887.pdf (LegiScan doc 2911848))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2887-2023.draft.pdf",
+      "sha256": "24098161ea7d3406ab10f3bfdc23d42ecbf79bd6ef61ce3226b0d094e1ffaac7"
+    },
+    "note": "Draft as filed (version dated 2024-02-01); summary says 'As introduced' and no passage vote is recorded, so no amendments are missing. House twin is HB 2963 (same document)."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1302(a)): (8) A switch or auto sear device designed, made, or intended for use in converting a weapon to shoot automatically more than one (1) shot, without manual reloading, by a single function of the trigger.\nSECTION 2 (TCA 39-17-1302(d)): Tennessee Code Annotated, Section 39-17-1302(d), is amended by deleting \"(a)(3) or (a)(4)\" and substituting \"(a)(3), (a)(4), or (a)(8)\".\nSECTION 3 (TCA 39-17-1302(f)): (5) An offense under subdivision (a)(8) is a Class E felony."
+}

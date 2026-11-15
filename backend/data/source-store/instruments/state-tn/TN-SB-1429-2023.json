@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1429-2023",
+  "scope": "state:tn",
+  "title": "SB1429 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13 and Title 49, Chapter 6, relative to weapons on school property.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1429&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB1429.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kerry Roberts",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ccd45ab8-3a99-434b-8cb9-a0b05291d16a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-02-01; official copy via the Internet Archive snapshot 20260514155240 of https://www.capitol.tn.gov/Bills/113/Bill/SB1429.pdf (LegiScan doc 2676047))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1429-2023.draft.pdf",
+      "sha256": "635d3adc85789975440efc49b67a72019fcf3934247e7a9ec9a10c3cd3ef62da"
+    },
+    "note": "Draft of 2023-02-01 (as introduced); amendments not in text. The text does not show what subsection (k) says. Section 1 quote is the new subsection (a) text. Twin: TN-HB-41-2023."
+  },
+  "operative_text": "SECTION 1 (TCA 49-6-816(a)): As used in this section, \"employee\" means a person employed full time to work in a public kindergarten through grade twelve (K-12) school, including as a teacher, principal, vice principal, or other staff member.\nSECTION 2 (TCA 49-6-816(b)(1)): is amended by deleting \"the local board of education in a distressed rural county\" and substituting \"a local board of education\".\nSECTION 3 (TCA 49-6-816): is amended by deleting subsection (k)."
+}

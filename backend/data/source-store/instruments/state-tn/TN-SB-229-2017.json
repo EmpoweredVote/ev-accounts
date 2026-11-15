@@ -1,0 +1,213 @@
+{
+  "id": "TN-SB-229-2017",
+  "scope": "state:tn",
+  "title": "SB0229 (110th General Assembly): As enacted, requires the court to give a defendant intending to plead guilty to a domestic violence offense notice of the firearm dispossession consequences of a domestic violence conviction and sets out a procedure for a person convicted of domestic violence to terminate possession of all firearms. - Amends TCA Section 39-13-111 and Section 40-14-109.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0229&ga=110",
+    "https://publications.tnsosfiles.com/acts/110/pub/pc0127.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Becky Massey",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a91cf2ed-26bf-43c7-aae1-964fb6c46840"
+    },
+    {
+      "name": "Janince Bowling",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e50369f1-10eb-467e-8604-b94675565631"
+    },
+    {
+      "name": "Lee Harris",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jon Lundberg",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Doug Overbey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jeff Yarbro",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "142de671-f7ef-4923-9c3e-3499086da41a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2017-03-27",
+      "body": "TN Senate",
+      "motion": "FLOOR VOTE: MOTION TO ADOPT",
+      "kind": "roll-call",
+      "yes": 29,
+      "no": 0,
+      "absent": 0,
+      "note": "LegiScan roll call 613002",
+      "members": [
+        {
+          "name": "Brian Kelsey",
+          "vote": "yea"
+        },
+        {
+          "name": "Jon Lundberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Bell",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph Hensley",
+          "vote": "yea",
+          "politician_id": "2bec572f-1c59-42e0-b3c0-c39f0e804c6a"
+        },
+        {
+          "name": "Frank Niceley",
+          "vote": "yea"
+        },
+        {
+          "name": "Bo Watson",
+          "vote": "yea",
+          "politician_id": "7c987183-ffd4-4fc2-9670-3903496159ff"
+        },
+        {
+          "name": "Ken Yager",
+          "vote": "yea",
+          "politician_id": "7c282d2f-5bff-40fd-ae69-12ecc650bfa7"
+        },
+        {
+          "name": "Randy McNally",
+          "vote": "yea",
+          "politician_id": "f1c1e147-193c-49cc-9b89-16956adb964c"
+        },
+        {
+          "name": "Reginald Tate",
+          "vote": "yea"
+        },
+        {
+          "name": "Dolores Gresham",
+          "vote": "yea"
+        },
+        {
+          "name": "Rusty Crowe",
+          "vote": "yea",
+          "politician_id": "9c57cefb-1e93-48cc-abe4-9946ef0ebe43"
+        },
+        {
+          "name": "Thelma Harper",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Tracy",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Southerland",
+          "vote": "yea",
+          "politician_id": "bd8f353d-19f9-4608-812d-987de934afeb"
+        },
+        {
+          "name": "Mark Norris",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Johnson",
+          "vote": "yea",
+          "politician_id": "f608a36d-a1c7-495d-8bc8-f0e011682e67"
+        },
+        {
+          "name": "Doug Overbey",
+          "vote": "yea"
+        },
+        {
+          "name": "Ferrell Haile",
+          "vote": "yea",
+          "politician_id": "2e2b20db-b64d-4c20-b0c5-2a369241f6b1"
+        },
+        {
+          "name": "Kerry Roberts",
+          "vote": "yea",
+          "politician_id": "ccd45ab8-3a99-434b-8cb9-a0b05291d16a"
+        },
+        {
+          "name": "Becky Massey",
+          "vote": "yea",
+          "politician_id": "a91cf2ed-26bf-43c7-aae1-964fb6c46840"
+        },
+        {
+          "name": "John Stevens",
+          "vote": "yea",
+          "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+        },
+        {
+          "name": "Janince Bowling",
+          "vote": "yea",
+          "politician_id": "e50369f1-10eb-467e-8604-b94675565631"
+        },
+        {
+          "name": "Todd Gardenhire",
+          "vote": "yea",
+          "politician_id": "19829b74-5605-467e-8a6f-0c61b6384d2a"
+        },
+        {
+          "name": "Paul Bailey",
+          "vote": "yea",
+          "politician_id": "310955ff-3e44-4032-879f-b3b46026aadb"
+        },
+        {
+          "name": "Lee Harris",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard Briggs",
+          "vote": "yea",
+          "politician_id": "191efc70-78dc-4ada-99e5-4edceb919cf0"
+        },
+        {
+          "name": "Jeff Yarbro",
+          "vote": "yea",
+          "politician_id": "142de671-f7ef-4923-9c3e-3499086da41a"
+        },
+        {
+          "name": "Edward Jackson",
+          "vote": "yea",
+          "politician_id": "0d5fb0c4-9234-4cb8-8911-7e8de2467729"
+        },
+        {
+          "name": "Sara Kyle",
+          "vote": "yea",
+          "politician_id": "1b745bdf-e7cb-487d-9ca5-7bd043d602ac"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2017-04-19; official copy via the Internet Archive snapshot 20260514024343 of https://publications.tnsosfiles.com/acts/110/pub/pc0127.pdf (LegiScan doc 1801071))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-229-2017.chaptered.pdf",
+      "sha256": "188d05a70de8d0e86870328d3893c268a411fa2da59ccf31e20aade8b03c1bbd"
+    },
+    "note": "Chaptered, Public Chapter 127 (2017-04-19), the law as enacted; Senate twin of HB 1112, same public chapter. Text is an OCR of the PDF, so some quotes carry scan errors (e.g. 'lf' for 'If', '$' for '§'). Section 3 has the court administrative office/domestic violence council prepare the dispossession affidavit form. Effective July 1, 2017 (form provision on becoming law)."
+  },
+  "operative_text": "SECTION 2 (TCA 39-13-111(c)(6)): (6) lf a defendant pleads guilty or is found guilty of a domestic violence offense, as defined in $ 40-14-109, the judge shall immediately order that the defendant:\nSECTION 2 (TCA 39-13-111(c)(6)(A)): (A) Terminate physical possession of all firearms in the defendant's possession within forty-eight (48) hours of the conviction by any lawful means, such as transferring possession to a third party who is not prohibited from possessing firearms; and\nSECTION 1 (TCA 40-14-109(b)(2)): (2) A defendant convicted of a domestic violence offense also must lawfully dispose of all firearms in the defendant's possession at the time of the conviction;\nSECTION 1 (TCA 40-14-109(b)(4)): (4) A firearm subject to dispossession as the result of a domestic violence conviction will not be forfeited as provided in S 39-17-1317, unless the possession of the firearm prior to committing the domestic violence offense constituted an independent offense for which the defendant has been convicted, or the firearms are abandoned by the defendant.\nSECTION 1 (TCA 40-14-109(c)): (c) After informing the defendant of the firearm consequences of a conviction for a domestic violence offense pursuant to subsection (b), the court may accept the plea of guilty if the defendant clearly states on the record that the defendant is aware of the consequences of a conviction for a domestic violence offense and still wishes to enter a plea of guilty."
+}

@@ -1,0 +1,51 @@
+{
+  "id": "KY-HB-83-2025",
+  "scope": "state:ky",
+  "title": "HB83 (2025 Regular): AN ACT relating to firearms.",
+  "urls": [
+    "https://apps.legislature.ky.gov/record/25RS/hb83.html",
+    "https://apps.legislature.ky.gov/recorddocuments/bill/25RS/hb83/orig_bill.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "T.J. Roberts",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "307fc639-dd7a-42af-8e22-abf26543c04b"
+    },
+    {
+      "name": "Josh Calloway",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "436293ef-ed3f-46b3-9bb6-809b6828eaf8"
+    },
+    {
+      "name": "Felicia Rabourn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a39b09c3-23b4-4bfb-a001-8a9a2adfb6cd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Introduced, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/25RS/hb83/orig_bill.pdf (LegiScan doc 3040998))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-83-2025.introduced.pdf",
+      "sha256": "5d07342f8e8e5ba7bc51e9017cbfb71daec8523a0f6e209a6927a5b704ab23ab"
+    },
+    "note": "As-filed (BR 1037, 1/3/2025); no passage vote in the record."
+  },
+  "operative_text": "Section 1 (new section of KRS Chapter 237): (2) A police department, law enforcement agency, or officer of the Commonwealth shall not enforce an order under a red flag law when the person against whom the order is directed has the lawful right under the laws of this Commonwealth to possess firearms.\nSection 1 (new section of KRS Chapter 237): (3) A court shall not issue an order under any red flag law to deprive a citizen of this Commonwealth of his or her right to possess firearms, firearms accessories, or ammunition."
+}

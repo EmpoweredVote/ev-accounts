@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1812-2023",
+  "scope": "state:tn",
+  "title": "SB1812 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39; Title 49 and Title 50, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1812&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB1812.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sara Kyle",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1b745bdf-e7cb-487d-9ca5-7bd043d602ac"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-23; official copy via the Internet Archive snapshot 20260514150916 of https://www.capitol.tn.gov/Bills/113/Bill/SB1812.pdf (LegiScan doc 2898974))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1812-2023.draft.pdf",
+      "sha256": "2f9e16a282402087b3c0e51744d488ba0e819108c87bf05f39504f8a6b4fd0bc"
+    },
+    "note": "Draft as filed (2024-01-23). All changes are deletions; the repealed text (39-17-1313, 49-7-163, 50-1-312) is not shown in the bill, so the effect is taken from the state summary. Sections 3 and 6-7 cross-reference edits omitted."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1313): Tennessee Code Annotated, Section 39-17-1313, is amended by deleting the section in its entirety.\nSECTION 2 (TCA 39-17-1314(b)(1)): Tennessee Code Annotated, Section 39-17-1314(b)(1), is amended by deleting the language \", except as otherwise provided in § 39-17-1313\".\nSECTION 4 (TCA 39-17-1366(h)): Tennessee Code Annotated, Section 39-17-1366(h), is amended by deleting the subsection in its entirety.\nSECTION 5 (TCA 49-7-163): Tennessee Code Annotated, Section 49-7-163, is amended by deleting the section in its entirety.\nSECTION 6 (TCA 50-1-312): Tennessee Code Annotated, Section 50-1-312, is amended by deleting the section in its entirety."
+}

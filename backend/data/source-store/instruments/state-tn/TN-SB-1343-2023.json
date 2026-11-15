@@ -1,0 +1,45 @@
+{
+  "id": "TN-SB-1343-2023",
+  "scope": "state:tn",
+  "title": "SB1343 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1343&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB1343.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "London Lamar",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c83e282-cb78-4e39-aa1e-13875a86e872"
+    },
+    {
+      "name": "Heidi Campbell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bca9c890-1fd4-4ab8-9ffe-a6fac4eb2d32"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-01-31; crossfiled twin's official copy via the Internet Archive snapshot 20260514153429 of https://www.capitol.tn.gov/Bills/113/Bill/HB1466.pdf (it names SENATE BILL 1343; own link https://www.capitol.tn.gov/Bills/113/Bill/SB1343.pdf not archived))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1343-2023.draft.twin.pdf",
+      "sha256": "660ff5fe8f889bfd2770cd155ceb5fe8b82a82e5dfc2d115baefcfaf225dd334"
+    },
+    "note": "Draft as filed (2023-01-31), read from the House twin HB 1466 document that names SB 1343. Section 1 replaces the whole subsection (c); the veteran/service-member clause lowers 'minor' to under 18 for them. The state summary also mentions a sale/loan/gift offense, which is not in the text read beyond the redefinition."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1303(c)): For purposes of this section: (1) \"Intoxicated\" means substantial impairment of mental or physical capacity resulting from introduction of any substance into the body; and (2) \"Minor\" means a person less than twenty-one (21) years of age;\nSECTION 2 (TCA 39-17-1303(d)): A minor is prohibited from purchasing or owning a firearm and commits an offense if the minor purchases or owns a firearm."
+}

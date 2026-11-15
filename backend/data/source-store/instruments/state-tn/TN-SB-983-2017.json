@@ -1,0 +1,56 @@
+{
+  "id": "TN-SB-983-2017",
+  "scope": "state:tn",
+  "title": "SB0983 (110th General Assembly): As enacted, adds and revises provisions regarding the issuance of orders of protection and the carrying of a handgun. - Amends TCA Title 36, Chapter 3, Part 6 and Title 39, Chapter 17, Part 13.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB0983&ga=110",
+    "https://publications.tnsosfiles.com/acts/110/pub/pc0468.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Dolores Gresham",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Stevens",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7bcb69a0-002d-459d-9c7a-45ebd4ab783e"
+    },
+    {
+      "name": "Janince Bowling",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e50369f1-10eb-467e-8604-b94675565631"
+    },
+    {
+      "name": "Becky Massey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a91cf2ed-26bf-43c7-aae1-964fb6c46840"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2017-05-31; own version, official copy via the Internet Archive snapshot 20260514071051 of https://publications.tnsosfiles.com/acts/110/pub/pc0468.pdf; the last listed version was not archived)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-983-2017.chaptered.pdf",
+      "sha256": "df9b4c38a5dc122dd072a483000f7fb9909eb9a7c9a23b504e015ce729bd9ae9"
+    },
+    "note": "Public Chapter 468 (2017-05-31), the law as enacted, printed as House Bill 752 substituted for Senate Bill 983 (twin text). Quotes copied as printed in the scanned text, including OCR errors (e.g. 'othenrise', '$' read as 'S'). Section 4 sets staged effective dates tied to the department of safety driver license system."
+  },
+  "operative_text": "SECTION 1 (new TCA 36-3-626): (a) A person who petitions the court and is granted an order of protection, ex parte or othenrise, pursuant to this part is authorized to, for twenty-one (21) calendar days after that order of protection is granted, carry any handgun, as defined in $ 39-17-1319, that the person legally owns or possesses so long as the person has in the person's possession at all times while carrying the handgun a copy of the order of protection.\nSECTION 1 (new TCA 36-3-626): (b) A person who does not apply for a temporary handgun carry permit under S 39-17-1365 within the time period set forth in $ 39-17-1365(a) shall not be authorized to carry a handgun under subsection (a) once that time period has expired.\nSECTION 2 (TCA 39-17-1308(a)): ( ) By a person authorized to carry a handgun pursuant to $ 36-3-626 or $ 39-17- 1 365;\nSECTION 3 (new TCA 39-17-1365): (a) A person who petitions the court and is granted an order of protection, ex parte or othenruise, pursuant to title 36, chapter 3, part 6, may apply for a temporary handgun carry permit from the department of safety within twenty-one (21) calendar days after that order of protection is granted.\nSECTION 3 (new TCA 39-17-1365): (d) lf an applicant meets all the requirements of this section, the department of safety shall issue a temporary handgun carry permit to the applicant that shall be valid for sixty (60) calendar days from the date of issuance.\nSECTION 3 (new TCA 39-17-1365): (e) A person issued a temporary handgun carry permit under this section shall carry that permit and a copy of the protective order at all times when carrying a handgun pursuant to this section."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-607-2025",
+  "scope": "state:tn",
+  "title": "SB0607 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=SB0607&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/SB0607.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paul Bailey",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "310955ff-3e44-4032-879f-b3b46026aadb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2025-01-31; own version, official copy via the Internet Archive snapshot 20260513074245 of https://www.capitol.tn.gov/Bills/114/Bill/SB0607.pdf; the last listed version was not archived)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-607-2025.draft.pdf",
+      "sha256": "a2abf168c18041e03856b31d92110b6787dd160933e4299c61ddd5046831c88a"
+    },
+    "note": "Draft (as filed) dated 2025-01-31; summary says \"As introduced\", no passage vote listed, so no adopted amendments are missing. The LegiScan listing says the last listed version was not archived; this is the filed version. Section 2 deletes \"unlawfully\" from 39-17-1307(b)(1); Sections 5-6, 8-9 conform cross-references and delete 39-17-1308(b)."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307): deleting subsection (a).\nSECTION 3 (TCA 39-17-1307): deleting subsection (e).\nSECTION 4 (TCA 39-17-1307): deleting subsection (g).\nSECTION 7 (new TCA 39-17-1307 subsection): (1) It is an offense for a juvenile to carry, with the intent to go armed, a firearm.\nSECTION 10 (TCA 39-17-1351(b)): (b) Except as provided in subsection (r), a resident of this state who is a United States citizen or lawful permanent resident, as defined by § 55-50-102, may apply to the department of safety for an enhanced handgun carry permit.\nSECTION 10 (TCA 39-17-1351(b)): If the applicant is at least eighteen (18) years of age and is not prohibited from possessing a firearm in this state pursuant to § 39-17-1307(b), 18 U.S.C. § 922(g), or any other state or federal law, and the applicant otherwise meets all of the requirements of this section, then the department shall issue a permit to the applicant.\nSECTION 11 (TCA 39-17-1351(x)(1)): deleting the language \"twenty-one (21) years of age\" and substituting instead the language \"eighteen (18) years of age\"."
+}

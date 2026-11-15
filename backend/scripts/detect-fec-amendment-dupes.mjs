@@ -53,11 +53,11 @@ for (const s of sources) {
     await pool.query(`SET statement_timeout = '180s'`);
     ({ rows } = await pool.query(
     `WITH slice AS (
-       SELECT raw_record->>'committee_id' AS cmte,
+       SELECT COALESCE(fec_committee_id, raw_record->>'committee_id') AS cmte,
               donor_name_normalized AS donor,
               amount, contribution_date,
-              substring(raw_record->>'sub_id' from 2 for 8) AS sub_date,
-              (raw_record ? 'file_number') AS has_file_number
+              substring(COALESCE(raw_record->>'sub_id', source_transaction_id) from 2 for 8) AS sub_date,
+              (COALESCE(fec_file_number_present, raw_record ? 'file_number')) AS has_file_number
          FROM transparent_motivations.contributions
         WHERE data_source = 'fec' AND politician_source_id = $1
      ), grp AS (

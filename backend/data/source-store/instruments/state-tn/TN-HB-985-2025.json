@@ -1,0 +1,93 @@
+{
+  "id": "TN-HB-985-2025",
+  "scope": "state:tn",
+  "title": "HB0985 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=HB0985&ga=114",
+    "https://www.capitol.tn.gov/Bills/114/Bill/HB0985.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michele Reneau",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6ca7d63a-d27f-4e33-816e-ad0053461e1e"
+    },
+    {
+      "name": "Brock Martin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d7260364-35f1-4633-b329-3d87cb8ae4c9"
+    },
+    {
+      "name": "Rusty Grills",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "70aa67e5-8df0-4dee-a034-1ea4f3470c57"
+    },
+    {
+      "name": "Kip Capley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "91c9fb1a-7df5-418b-9713-a2db4acd49a6"
+    },
+    {
+      "name": "Chris Todd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cee11386-5dc5-4545-9a95-04c9d6b70df9"
+    },
+    {
+      "name": "Rush Bricken",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d1e02758-1839-4d89-8a1b-26b9aeda22d5"
+    },
+    {
+      "name": "Dennis Powers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fa7182a1-54a2-473a-979f-3ee5574b2f52"
+    },
+    {
+      "name": "Jody Barrett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a6b0df31-75ac-4a90-88e6-78db5c74a71e"
+    },
+    {
+      "name": "Timothy Hill",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3c3bc83b-0622-4b2d-a194-884ef837f3c9"
+    },
+    {
+      "name": "Debra Moody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5fbea991-5a0d-4695-9b78-06700eb9ff3f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2026-02-23; crossfiled twin's official copy via the Internet Archive snapshot 20260513074424 of https://www.capitol.tn.gov/Bills/114/Bill/SB0824.pdf (it names HOUSE BILL 985; own link https://www.capitol.tn.gov/Bills/114/Bill/HB0985.pdf not archived))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-985-2025.draft.twin.pdf",
+      "sha256": "a3b6106b6f7e0633a322591ab0fee3c6093581def5468e0b7f5ed0dda29fac9b"
+    },
+    "note": "Draft as introduced; adopted amendments are not in the text read and could change it. The summary says the bill removes the offense of possessing a weapon in a posted building and the permit suspension for it; the text read (SB 824's printed document, naming HB 985) does so by replacing TCA 39-17-1359 with a new section and swapping cross-references (sections 1-2) from 39-17-1360 to 39-17-1353. Copy dated 2026-02-23."
+  },
+  "operative_text": "SECTION 3 (TCA 39-17-1359(a)): Except as provided in § 39-17-1313, this section does not preclude an individual, corporation, business entity, or local, state, or federal government entity or agent thereof from posting signage in prominent locations advising patrons that anyone possessing a firearm on the premises may be denied admission onto the premises or required to leave the premises by the owner or manager.\nSECTION 3 (TCA 39-17-1359(b)(1)): Except as provided in subdivision (b)(2), this section does not authorize an entity of local government or a permittee thereof to enact or enforce a prohibition or restriction on the possession of a handgun by an enhanced handgun carry permit holder or concealed handgun carry permit holder on property owned or administered by the entity unless:\nSECTION 1 (TCA 39-17-1352(a)(6)): Tennessee Code Annotated, Section 39-17-1352(a)(6), is amended by deleting \"§ 39-17-1360\" and substituting \"§ 39-17-1353\"."
+}

@@ -11,6 +11,11 @@ The batch folder holds `recipe.json`, written once by hand:
    "votes": "legiscan" | "legiscan-plan" | "iga" | "ma" | "federal" | "none", "official_host": "house.mo.gov",
    "max_urls": 20, "legiscan_args": "--session-start odd"}     (legiscan_args optional: extra state_legiscan.py flags)
 
+LegiScan is read from the datasets on disk (`<stage5>/legiscan/ds/<ST>-*`) whenever they exist for the state: the run
+sets LEGISCAN_DATASETS itself and spends no API call. The live API is used only when there are none, or when the
+runner said yes and recipe.json holds `"legiscan_live": true`. Step 7 prints which was read and the newest roll call
+on disk; a vote after that date is not in the datasets.
+
 Each step's commands are the ones STAGE5.md names. After each step a check reads what it left; the run stops on:
 - a command that fails, or a check that fails (exit 2), with the file to read;
 - an AGENT step (1 quote check, 5 reading the old sources) or a HAND step (2 hand rows, 6 party cuts, 9 trims),
@@ -39,6 +44,7 @@ At the end it prints the PREVIEW numbers (step 13 is still written by hand, and 
 import csv, glob, json, os, re, shutil, subprocess, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir
 from _args import opt, positional
+from _onfile import newest_roll_call, onfile_env
 
 BACKEND = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 FINDINGS = os.path.join(BACKEND, 'data', 'source-store', 'findings')
@@ -167,7 +173,9 @@ def check(n, c, b):
         if codes: raise Stop(2, f'{codes} refused code(s) in dry-run-0.txt: fix those codes before going on')
         return f"{re.search(r'outcomes:.*', t).group(0) if 'outcomes:' in t else 'no outcomes line'}; refused passages {r}"
     if n == 1:
-        raise Stop(AGENT, 'AGENT: run templates/stage5-quote-check-prompt.md (a separate agent, about 20 findings each) on every '
+        raise Stop(AGENT, 'AGENT: quote check. `stage5_prompts.py quote-check --profile <json> --batch <batch> --dry-run <batch>/dry-run-0.txt`, '
+                          'run <batch>/qc/jobs.tsv with wave.py, then `quote-check-validate.ts <batch> <stage5>`. That is '
+                          'templates/stage5-quote-check-prompt.md (a separate agent, about 20 findings each) on every '
                           'finding a doesnt-fit code cites that is own words or a local record; validate with readQuoteChecks and '
                           'append to stage5/quote-checks.jsonl. Then resume with --from 2.')
     if n == 2:
@@ -197,7 +205,11 @@ def check(n, c, b):
         if d: raise Stop(2, f'{d} DISAGREE line(s) in the roll-call cross-check: hold those people; it must be 0')
         un = json_len(b, f'{vd}/unmapped.json') + (json_len(b, 'legiscan/unmapped.json') if vd == 'federal' else 0)
         if un: raise Stop(HAND, f'HAND: {un} unmapped vote(s) ({vd}/unmapped.json): hold those people (held.txt, drop_held.py); do not guess. Then --from 8.')
-        return f'cross-check 0 disagree, 0 unmapped'
+        nl = json_len(b, 'legiscan/no-line.json') if vd == 'legiscan' else 0
+        if nl: raise Stop(HAND, f'HAND: {nl} vote(s) or sponsorship(s) got NO LegiScan line (legiscan/no-line.json): each keeps a page the verifier cannot read. '
+                                f'Find the cause first (a bill page named wrong, a name LegiScan prints differently, a bill the datasets on disk do not hold); '
+                                f'hold a person only when there is none. Then --from 8.')
+        return f'cross-check 0 disagree, 0 unmapped' + source_note()
     if n == 8:
         p = os.path.join(b, 'bill-text.json')
         x = json.load(open(p)) if os.path.exists(p) else {}
@@ -320,7 +332,26 @@ def run_step(n, c, b, dry):
     print('  ok:', check(n, c, b))
 
 
-def preview(b):
+def source_note():
+    """Where step 7 read LegiScan from, and how old the datasets are."""
+    root, st = os.environ.get('LEGISCAN_DATASETS'), os.environ.get('LEGISCAN_DATASET_STATES', '')
+    if not root: return '; LegiScan read from the LIVE API (every call counts against the monthly cap)'
+    day, n = newest_roll_call(root, st.split(',')[0]) if st else (None, 0)
+    return f'; LegiScan read from the datasets on disk, 0 API calls ({st}: {n} session(s), newest roll call {day or "none"}: a later vote is not in them)'
+
+
+def desk_commands(c, b):
+    """The exact commands for the write, the verifier, the read-back and the approval: copy them into PREVIEW.md.
+    Kentucky and South Carolina (2026-11-14): hand-written lines lacked --env-file, --editor-id and the dataset variables."""
+    env = ''.join(f'{k}={os.environ[k]} ' for k in ('LEGISCAN_DATASETS', 'LEGISCAN_DATASET_STATES') if os.environ.get(k))
+    batch = os.path.basename(b)
+    return [f"{env}zsh scripts/stage5/write-batch.sh {c['stage5']} {b} {c['topic']} {c['unit']} apply",
+            f"{env}{TSX} scripts/verify-stance-research.ts --dir {b} --season draft --threshold 1 --apply --editor-id <editor id>",
+            f"{TSX} scripts/stage5/readback.ts --topic {c['topic']} {b}/pids-write.txt --batch-id {batch}",
+            f"{TSX} scripts/stage5/approve-batch.ts <editor id> {batch}   # only after the runner's SECOND yes; then the read-back again"]
+
+
+def preview(b, c=None):
     t2, g, v = read(b, 'dry-run-1.txt'), read(b, 'gate-output-final.txt'), read(b, 'verify-dry-run.txt')
     pick = lambda pat, t: (re.search(pat, t).group(0) if re.search(pat, t) else '—')
     print('\n== PREVIEW numbers')
@@ -328,6 +359,9 @@ def preview(b):
     print('  ', pick(r'stance-gate:.*', g)); print('  ', pick(r'AUTO-PUSH.*', v))
     print(f"   held {len(lines(b, 'held.txt'))}, moved {len(lines(b, 'moved.txt'))}, pids {len(lines(b, 'pids.txt'))}")
     print('   Write PREVIEW.md (step 13). Nothing is written to the database until the runner says yes for this batch.')
+    if c:
+        print('\n== On yes, the desk runs (from backend/; copy these lines into PREVIEW.md as they are)')
+        for l in desk_commands(c, b): print('  ', l)
 
 
 def main():
@@ -335,6 +369,9 @@ def main():
     c = json.load(open(os.path.join(b, 'recipe.json')))
     for k in ('stage5', 'topic', 'unit', 'level', 'roster', 'codes', 'saved_root'):
         if k not in c: raise SystemExit(f'recipe.json needs "{k}"')
+    on = onfile_env(c['stage5'], c.get('state', '')) if not c.get('legiscan_live') else {}
+    os.environ.update(on)
+    if on: print(f"LegiScan: reading the datasets on disk ({on['LEGISCAN_DATASETS']}, {on['LEGISCAN_DATASET_STATES']}); no API call. The live API needs the runner's yes: \"legiscan_live\": true in recipe.json.")
     try:
         if opt('--check-only') is not None:
             print(check(int(opt('--check-only')), c, b)); return 0
@@ -344,11 +381,11 @@ def main():
             to = int(opt('--to', '9'))
             if to < 9: raise SystemExit('--replay runs steps 7 to 9 at least: --to must be 9 or more')
             replay(c, b, dry, to, '--no-reapply' not in sys.argv)
-            if not dry and to >= 12: preview(b)
+            if not dry and to >= 12: preview(b, c)
             return 0
         for n in range(int(opt('--from', '0')), int(opt('--to', '12')) + 1):
             run_step(n, c, b, dry)
-        if not dry: preview(b)
+        if not dry: preview(b, c)
         return 0
     except Stop as s:
         print(('STOP: ' if s.code == AGENT else 'FAILED: ') + str(s))

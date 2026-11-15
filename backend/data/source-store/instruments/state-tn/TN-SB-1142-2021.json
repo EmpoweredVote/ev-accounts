@@ -1,0 +1,57 @@
+{
+  "id": "TN-SB-1142-2021",
+  "scope": "state:tn",
+  "title": "SB1142 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 29; Title 38; Title 39 and Title 40, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1142&ga=112",
+    "https://publications.tnsosfiles.com/acts/112/pub/pc0540.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Dawn White",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a676c8d7-1208-44f1-9d72-e13a6fc91f04"
+    },
+    {
+      "name": "Paul Rose",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c5c76374-faa1-4a78-bee2-6e2b5ca171d7"
+    },
+    {
+      "name": "Richard Briggs",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "191efc70-78dc-4ada-99e5-4edceb919cf0"
+    },
+    {
+      "name": "Mark Pody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b333d211-ed1a-46fb-b947-427d2942acd0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2021-05-28; official copy via the Internet Archive snapshot 20260514163933 of https://publications.tnsosfiles.com/acts/112/pub/pc0540.pdf (LegiScan doc 2409363))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1142-2021.chaptered.pdf",
+      "sha256": "b194e2da39c9894d67b35179c949f26a56a1842d14ba1493313fb7b8a7a22182"
+    },
+    "note": "Chaptered, Public Chapter 540 (dated 2021-05-28), the \"Firearms Information Privacy Protection Act.\" Section 1(c) allows at least $75,000 statutory damages. Effective July 1, 2021."
+  },
+  "operative_text": "SECTION 1 (new TCA Title 39, ch. 17, pt. 13 section): (b) If a person intentionally discloses information that the person knows or reasonably should know was unlawfully obtained and that identifies another person as the purchaser or owner of a firearm, firearm ammunition, or firearm accessory for purposes of compiling or facilitating the compilation of a federal firearms registry or database or the confiscation of firearms, then the person disclosing the information is subject to a private right of action by the person whose information was disclosed.\nSECTION 2 (new TCA Title 39, ch. 17, pt. 13 section): (a) It is an offense for any personnel, including elected and appointed officials, of this state, a local governmental entity, or a political subdivision of this state, when acting in the person's official capacity or disclosing information obtained in the person's official capacity, to intentionally disclose information that identifies another person as the purchaser or owner of a firearm, firearm ammunition, or firearm accessory for the purpose of:\nSECTION 2 (new TCA Title 39, ch. 17, pt. 13 section): (1) Compiling or facilitating the compilation of a federal firearms registry or database; or\nSECTION 2 (new TCA Title 39, ch. 17, pt. 13 section): (2) The confiscation of firearms.\nSECTION 2 (new TCA Title 39, ch. 17, pt. 13 section): (c) A violation of this section is a Class E felony."
+}

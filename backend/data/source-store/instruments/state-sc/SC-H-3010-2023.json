@@ -1,0 +1,44 @@
+{
+  "id": "SC-H-3010-2023",
+  "scope": "state:sc",
+  "title": "H3010 (125th General Assembly): Firearms criminal background checks",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=3010&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/3010_20221208.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gilda Cobb-Hunter",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "896bfe46-0d7e-48ba-86c1-60f39bc9234d"
+    },
+    {
+      "name": "Patricia Henegan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2022-12-08; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/3010_20221208.htm (LegiScan doc 2617271))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-H-3010-2023.introduced.htm",
+      "sha256": "7ceceeeb9e0fdd2862d939184b302dc0341acf647f7c2af8f6f0bf0e018e2cb2"
+    },
+    "note": "Introduced 2022-12-08. Exempts sales by licensed dealers acting under their federal license and transfers between immediate family. Records are exempt from the Freedom of Information Act (Section 23-31-100(B)), which is part of the gun rule. Passage vote: none listed; introduced text only."
+  },
+  "operative_text": "Section 1 (new Section 23-31-80): (B) Before any sale, exchange, or transfer pursuant to the provisions of this article, a national instant criminal background check pursuant to 18 U.S.C. Section 922 must be completed by a licensed dealer who consents to conduct the check, and upon completion of the background check, shall complete a document, the form of which shall be approved by the Chief of the State Law Enforcement Division (SLED), that identifies and confirms that the check was performed.\nSection 1 (new Section 23-31-90): (A) A national instant criminal background check must be conducted and a person may not sell, exchange, or transfer a firearm at a gun show in this State except in accordance with the provisions of 18 U.S.C. 922 and the provisions of this section.\nSection 1 (new Section 23-31-90): (3) If any part of a firearm transaction takes place at a gun show, no firearm may be sold, exchanged, or transferred unless a national instant background check has been obtained by a licensed gun dealer.\nSection 1 (new Section 23-31-100): (A) A dealer may require that any sale, exchange, or transfer conducted pursuant to this article be subject to a fee of not more than twenty-five dollars per transaction.\nSection 1 (new Section 23-31-100): (C) A person who knowingly violates the provisions of this article is guilty of a misdemeanor and, upon conviction, must be fined not more than one thousand dollars or imprisoned for not more than one year."
+}

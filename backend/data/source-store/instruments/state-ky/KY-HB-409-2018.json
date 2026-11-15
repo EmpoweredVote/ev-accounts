@@ -1,0 +1,69 @@
+{
+  "id": "KY-HB-409-2018",
+  "scope": "state:ky",
+  "title": "HB409 (2018 Regular): AN ACT relating to firearms and firearms accessories and declaring an emergency.",
+  "urls": [
+    "http://www.lrc.ky.gov/record/18RS/HB409.htm",
+    "http://www.lrc.ky.gov/recorddocuments/bill/18RS/HB409/bill.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Reginald Meeks",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Attica Scott",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Will Coursey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Chris Harris",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jerry Miller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jason Nemes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4dcf5a57-4948-4863-a4db-20ca3bf83b93"
+    },
+    {
+      "name": "Susan Westrom",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Kentucky); operative text read by a Sonnet fill agent from the official Kentucky text (Draft, 0000-00-00; official copy, https://apps.legislature.ky.gov/recorddocuments/bill/18RS/HB409/bill.pdf (LegiScan doc 1737498))",
+    "fetched_at": "2026-11-14T10:05:45.787467Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KY-HB-409-2018.draft.pdf",
+      "sha256": "20547273dfbb5cc33267d68266825f401217bc4088a10f5058c580ad90ee62c4"
+    },
+    "note": "Text read is the pre-filing LRC draft (BR 1102, 18 RS), not a filed or enrolled print; no passage vote is in the text. Quoted (2)(a) leaves out its paragraph label line numbers only."
+  },
+  "operative_text": "Section 1 (new section of KRS Chapter 237): (1) After the effective date of this Act, it shall be unlawful to knowingly sell, transfer, buy, or receive a bump stock device, a trigger crank, or any part, combination of parts, component, device, attachment or accessory that is designed or functions to accelerate the rate of fire of a firearm but does not convert the firearm into an fully automatic firearm.\nSection 1 (new section of KRS Chapter 237): (2) (a) Individuals who lawfully possess the items prohibited under this section for personal use on the effective date of this Act may continue to possess the devices, but shall be prohibited from selling or transferring the device to another person.\nSection 1 (new section of KRS Chapter 237): (3) A violation of subsection (1) of this section shall be a Class D felony for the first offense and a Class C felony for each subsequent offense."
+}

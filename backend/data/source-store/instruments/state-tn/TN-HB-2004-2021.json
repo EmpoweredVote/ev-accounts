@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-2004-2021",
+  "scope": "state:tn",
+  "title": "HB2004 (112th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB2004&ga=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/HB2004.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "John Clemmons",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd4cbb33-0634-4c31-a466-7b282febefab"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2022-01-26; official copy via LegiScan getBillText doc 2491990)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2004-2021.draft.pdf",
+      "sha256": "cdcbf8700c613cc77fcf63817d85ed4f93d195a878824e069792d3f1c49bea3e"
+    },
+    "note": "Draft as filed 2022-01-26; no votes on record."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1316(s)(1)): It is an offense for a person to knowingly give, loan, or transfer a firearm to another that the person knows or reasonably should know is prohibited by state or federal law from possessing a firearm.\nSECTION 1 (TCA 39-17-1316(s)(2)): A violation of subdivision (s)(1) is a Class A misdemeanor."
+}

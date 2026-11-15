@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-1488-2023",
+  "scope": "state:tn",
+  "title": "SB1488 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 29 and Title 39, Chapter 17, relative to civil liability.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB1488&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB1488.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kerry Roberts",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ccd45ab8-3a99-434b-8cb9-a0b05291d16a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-02-02; official copy via the Internet Archive snapshot 20260514155226 of https://www.capitol.tn.gov/Bills/113/Bill/SB1488.pdf (LegiScan doc 2677224))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-1488-2023.draft.pdf",
+      "sha256": "04c536745f3b8037f1352e9fde664592e8c6a7338a04b183172d5a6d88f34231"
+    },
+    "note": "Draft as filed, 2023-02-02; shared document with HB 1161. Adds new subsection (c) to 39-17-1325 (new text quoted). Effective July 1, 2023."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1325(c)): (c) A person or entity who is authorized to prohibit the possession of firearms on the person's or entity's property pursuant to § 39-17-1359 and who elects, pursuant to that authority, to prohibit the possession of firearms by a person authorized to carry a handgun pursuant to this part is not immune from civil liability with respect to a claim based on the person's or entity's adoption of a policy that prohibits weapons on the property by posting pursuant to § 39-17-1359."
+}

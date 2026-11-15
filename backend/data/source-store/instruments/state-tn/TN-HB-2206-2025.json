@@ -1,0 +1,50 @@
+{
+  "id": "TN-HB-2206-2025",
+  "scope": "state:tn",
+  "title": "HB2206 (114th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 37, relative to the department of children's services.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/Default?BillNumber=HB2206&ga=114",
+    "https://publications.tnsosfiles.com/acts/114/pub/pc0869.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Paul Sherrell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9dfac502-4cc4-4105-91de-cc25272e452e"
+    },
+    {
+      "name": "Joe Towns",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ed Butler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e17e2579-9bf3-4ea4-8881-eba0c225b5b4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Chaptered, 2026-05-01; official copy via LegiScan getBillText doc 3430669)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-2206-2025.chaptered.pdf",
+      "sha256": "6a1be045e8e2c330b7ec81a2965c7e6e6809466c45f5ca8d3199c5d38faea3a4"
+    },
+    "note": "Public Chapter 869, approved April 2026 per printed date, effective on becoming law. Chaptered copy names SB 2459 (substituted for HB 2206). Subsection (b) lets the department ask whether firearms are present and securely stored."
+  },
+  "operative_text": "SECTION 1 (new section, TCA Title 37, Chapter 2, Part 4): (a) The department of children's services shall not: (1) Request information regarding the number or type of firearms or ammunition or identifying information about such firearms or ammunition that a foster parent or prospective foster parent owns or possesses; or (2) Request a foster parent or prospective foster parent to display or provide access to a firearm or ammunition owned or possessed by the parent.\nSECTION 1 (new section, TCA Title 37, Chapter 2, Part 4): (c) This section does not apply to an investigation into an allegation of abuse or neglect within a foster home."
+}

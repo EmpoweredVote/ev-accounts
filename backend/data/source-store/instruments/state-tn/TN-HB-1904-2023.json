@@ -1,0 +1,80 @@
+{
+  "id": "TN-HB-1904-2023",
+  "scope": "state:tn",
+  "title": "HB1904 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to the possession of weapons.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB1904&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB1904.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Monty Fritts",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9cff8f78-ffde-4821-91e7-6d14fb093ecc"
+    },
+    {
+      "name": "Jody Barrett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a6b0df31-75ac-4a90-88e6-78db5c74a71e"
+    },
+    {
+      "name": "Rusty Grills",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "70aa67e5-8df0-4dee-a034-1ea4f3470c57"
+    },
+    {
+      "name": "Bryan Richey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kip Capley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "91c9fb1a-7df5-418b-9713-a2db4acd49a6"
+    },
+    {
+      "name": "Ed Butler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e17e2579-9bf3-4ea4-8881-eba0c225b5b4"
+    },
+    {
+      "name": "Jay Reedy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4e0eefb1-6a4f-4004-be8d-432a7131b475"
+    },
+    {
+      "name": "Clark Boyd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fe941f15-bf81-4bb8-8834-f5cc312537b9"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-30; official copy via LegiScan getBillText doc 2907901)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-1904-2023.draft.pdf",
+      "sha256": "b4e297abbc37c423b25c099b56bd767cbf3710fa7fe56bf20e49f4e6e5f225ee"
+    },
+    "note": "Draft dated 2024-01-30 (as introduced). Effective July 1, 2024 per SECTION 3."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1359(a)(2)): (2) The prohibition in subdivision (a)(1)(A) does not apply to a person who is authorized to carry a firearm pursuant to § 39-17-1351 or § 39-17-1366 if the person is carrying the firearm in a concealed manner. A person who is authorized to carry a firearm pursuant to § 39-17-1351 or § 39-17-1366 and who carries a concealed firearm at a meeting conducted by, or on property owned, operated, or managed or under the control of the individual, corporation, business entity, or government entity that is properly posted pursuant to subdivision (a)(1)(A) shall remove the firearm from the premises upon the request of the individual, corporation, business entity, or government entity. A permit holder who refuses to remove the firearm from the premises upon request of the individual, corporation, business entity, or government entity does not commit a violation of this section but may be charged with the offense of criminal trespass pursuant to § 39-14-405.\nSECTION 2 (TCA 39-17-1359(c)(1)): Tennessee Code Annotated, Section 39-17-1359(c)(1), is amended by deleting \"It is an offense\" and substituting \"Except as provided in subdivision (a)(2), it is an offense\"."
+}

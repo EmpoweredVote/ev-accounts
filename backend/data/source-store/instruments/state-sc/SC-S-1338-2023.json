@@ -1,0 +1,56 @@
+{
+  "id": "SC-S-1338-2023",
+  "scope": "state:sc",
+  "title": "S1338 (125th General Assembly): Constitutional Carry/Second Amendment Preservation Act Repeal",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=1338&session=125&summary=B",
+    "https://www.scstatehouse.gov/sess125_2023-2024/prever/1338_20240508.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tameika Devine",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d2b10a07-4f58-47b2-b8bb-4f31c94a99ed"
+    },
+    {
+      "name": "Deon Tedder",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "60aaaf10-d41e-4c05-8cf0-3aab818d8929"
+    },
+    {
+      "name": "Darrell Jackson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9f2780f0-597d-4eda-ab82-0b49f4e96829"
+    },
+    {
+      "name": "Sandra Senn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Introduced, 2024-05-08; official copy, https://www.scstatehouse.gov/sess125_2023-2024/prever/1338_20240508.htm (LegiScan doc 2994665))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-1338-2023.introduced.htm",
+      "sha256": "db85fd354f3e7f220deadcc6688bba73d04d8dddede041bd5047874695e7ab66"
+    },
+    "note": "Introduced print dated 2024-05-08; no passage vote. Text never uses a gun word; Act 111 is the S.C. Constitutional Carry/Second Amendment Preservation Act of 2024 (per title)."
+  },
+  "operative_text": "Section 1: Act 111 of 2024 is repealed.\nSection 2: The statutes contained in Act 111 of 2024 revert to the language contained in them prior to March 7, 2024."
+}

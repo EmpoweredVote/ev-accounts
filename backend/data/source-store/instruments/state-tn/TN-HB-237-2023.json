@@ -1,0 +1,39 @@
+{
+  "id": "TN-HB-237-2023",
+  "scope": "state:tn",
+  "title": "HB0237 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 39, Chapter 17, Part 13, relative to firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=HB0237&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/HB0237.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Larry Miller",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c6214919-2804-40cf-8fda-efd070e2dc80"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2023-01-17; official copy via LegiScan getBillText doc 2643315)",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-HB-237-2023.draft.pdf",
+      "sha256": "0429aad924f47f5305a647ff4765c8164ae71fb1c9fdf63f59b6e0d658302194"
+    },
+    "note": "Draft as filed 2023-01-17; HB 237 and SB 10 share this document. The quote is the permit-required branch only; branch (B) lets people elsewhere carry if 21, or 18 with veteran or service status. Takes effect July 1, 2023. No amendments in the text read."
+  },
+  "operative_text": "SECTION 1 (TCA 39-17-1307(g)(1)): (1) (A) The person has a handgun carry permit issued pursuant to § 39-17- 1351 or § 39-17-1366 and: (i) Is in a county having a metropolitan form of government with a population of more than five hundred thousand (500,000), according to the 2020 federal census or any subsequent federal census; or (ii) Is in a county having a population over nine hundred thousand (900,000); or"
+}

@@ -3,8 +3,13 @@ For a state whose findings print NO roll-call number (so legiscan_pairs.py canno
 bill, chamber, DATE and TALLY through legiscan-rollcalls.ts. Only a single LegiScan roll call on the finding's date
 with its tally is used; same-day ties are broken on the motion text, then on a "Roll Call #N" (Kentucky: "RSN# N" / "RCS# N") in the motion, then
 (identical descriptions) on the lowest roll-call id. Anything else goes to legiscan/unmapped.json: hold the person; do
-not guess. Committee votes are never mapped (a "Conference Committee Report", and in Kentucky a "Committee Substitute"
-or "Committee Amendment" adopted on the floor, is a floor vote and is).
+not guess. Committee votes are never mapped (a conference report, however the motion words it: "Conference Committee
+Report", "Committee of Conference report"; and in Kentucky a "Committee Substitute" or "Committee Amendment" adopted on
+the floor, is a floor vote and is).
+With LEGISCAN_DATASETS set (the datasets on disk), a bill's LegiScan number and its session's first year are read from
+the datasets, so a state that pads bill numbers (SC prints S0109) or names a bill page by the session's first year
+(SC H3594 of 2024 is /H3594/2023) needs no flag. --bill-pad and --session-start apply only to a bill the datasets do
+not hold exactly once.
   python3 -I scripts/stage5/state_legiscan.py plan <batch dir> <store findings dir> --state XX --host <host>[,<host>]
       [--bill-pad N] [--year-shift N]                                                    -> legiscan/vote-pages.json
   npx tsx --env-file=.env scripts/stage5/legiscan-rollcalls.ts XX <batch>/legiscan/vote-pages.json <batch>/legiscan/rollcall-hits.json
@@ -18,7 +23,8 @@ maps to the year before (HB472/2026 → https://legiscan.com/OH/bill/HB472/2025)
 legiscan-rollcalls.ts matches a vote to every session whose span covers its year."""
 import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir; _args.py sits beside this file
 from _args import opt, positional
-import csv, json, re
+from _onfile import newest_roll_call
+import csv, glob, json, re
 USAGE = 'state_legiscan.py plan|pairs <batch dir> <findings dir> --state XX --host <host>[,<host>] [--topic <key>] [--bill-pad N] [--year-shift N] [--session-start odd]'
 mode, B, F = positional(3, USAGE)
 if mode not in ('plan', 'pairs'): raise SystemExit('usage: ' + USAGE)
@@ -35,6 +41,39 @@ def _strip_degrees(n):
 last = lambda n: [x for x in _strip_degrees(n).replace(',', ' ').split() if x not in SUF][-1]
 pol = json.load(open(f'{B}/politicians.json')); pol = pol if isinstance(pol, list) else pol['politicians']
 pid = {p['full_name']: p['politician_id'] for p in pol}
+# A vote on a conference report is a floor vote, however the motion words it. South Carolina, 2026-11-14: "Adopt
+# Committee of Conference report" was read as a committee vote, and 23 senators were held for it. Washington,
+# wa-01: "House Final Passage as recommended by the Conference Committee (#22)" held five people the same way.
+FLOOR = re.compile(r'Conference Committee|Committee of Conference|Conference Report|Committee Substitute|Committee Amendment', re.I)
+committee = lambda mo: bool(re.search(r'\bCommittee\b', mo or '') and not FLOOR.search(mo or ''))
+
+
+def dataset_bills():
+    """(letters, number) -> [(session first year, session last year, LegiScan's bill number)] for the regular sessions
+    in the datasets on disk; {} when LEGISCAN_DATASETS is not set."""
+    idx, root = {}, os.environ.get('LEGISCAN_DATASETS')
+    for d in glob.glob(os.path.join(root, f'{ST}-*', '*', '*', 'bill')) if root else []:
+        names = sorted(os.listdir(d))
+        if not names: continue
+        s = json.load(open(os.path.join(d, names[0])))['bill']['session']
+        if int(s.get('special') or 0): continue
+        for n in names:
+            m = re.match(r'([A-Z]+)0*(\d+)\.json$', n)
+            if m: idx.setdefault((m.group(1), int(m.group(2))), []).append((int(s['year_start']), int(s.get('year_end') or s['year_start']), n[:-5]))
+    return idx
+
+
+DS = dataset_bills()
+
+
+def bill_of(letters, num, year, sp=None):
+    """(LegiScan bill number, the year its bill page is named by). From the datasets when exactly one regular session
+    covering the year holds the bill; else from the flags."""
+    hit = [] if sp else [e for e in DS.get((letters, int(num)), []) if e[0] <= year <= e[1]]
+    if len(hit) == 1: return hit[0][2], hit[0][0]
+    return letters + num.zfill(PAD), (year - 1 if ODD and year % 2 == 0 else year)
+
+
 VOTE = ('yea', 'nay', 'abstain'); AUTH = ('author', 'coauthor', 'sponsor', 'cosponsor', 'co-sponsor', 'chief patron', 'patron', 'copatron')
 
 
@@ -51,8 +90,10 @@ def key(f):
                               else 'A' if re.search(r'\bAssembly\b', txt) and not re.search(r'\bSenate\b', txt)
                               else 'S' if re.search(r'\bSenate\b', txt) else None)
     t = re.search(r'tally (\d+)\s*[–-]\s*(\d+)', txt) or re.search(r', (\d+)-(\d+)\) on ', txt)  # notes that print '(<motion>, 76-17) on HB139' carry no 'tally' word (ky-01)
+    # a motion that ends '(RSN# 3461), 26-11' names its tally after the roll-call number (ky-02: Bledsoe's four votes)
+    t = t or re.search(r'\((?:RSN|RCS)\s*#\s*\d+\),\s*(\d+)\s*[–-]\s*(\d+)', txt)
     if not ch or not t or not f.get('date'): return None
-    return {'bill': m.group(1) + m.group(2).zfill(PAD), 'year': int(m.group(4)) + YS, 'sp': m.group(3), 'chamber': ch, 'yea': int(t.group(1)), 'nay': int(t.group(2)), 'date': f['date'], 'instrument': f['instrument_id']}
+    return {'bill': bill_of(m.group(1), m.group(2), int(m.group(4)) + YS, m.group(3))[0], 'year': int(m.group(4)) + YS, 'sp': m.group(3), 'chamber': ch, 'yea': int(t.group(1)), 'nay': int(t.group(2)), 'date': f['date'], 'instrument': f['instrument_id']}
 
 
 def acts():
@@ -80,9 +121,8 @@ else:
         n, act, ins = r['full_name'], (f.get('act') or '').lower(), f.get('instrument_id') or ''
         if act in VOTE:
             k = key(f)
-            # A floor vote on a conference committee's report or recommendation is a floor vote (wa-01: "House Final
-            # Passage as recommended by the Conference Committee (#22)" held five people).
-            if (re.search(r'\bCommittee\b', f.get('motion') or '') and not re.search(r'Conference Committee|Committee Substitute|Committee Amendment', f.get('motion') or '', re.I)) or not k: unmapped.append([n, u, ins, f'{act}: no chamber/tally/date or committee']); continue
+            if committee(f.get('motion')): unmapped.append([n, u, ins, f"{act}: a committee vote ({(f.get('motion') or '')[:60]})"]); continue
+            if not k: unmapped.append([n, u, ins, f'{act}: the finding lacks a bill id, chamber, tally or date']); continue
             hs = [h for h in hits.get(kid(k), {}).get('hits', []) if h['date'] == k['date']]
             # A special session reuses the regular session's bill numbers: keep only the hits from the matching
             # session (LegiScan's special-session bill URL ends /X<n>; a regular one ends with the year).
@@ -94,14 +134,19 @@ else:
                 rc = re.search(r'(?:Roll Call|RSN|RCS) ?#?\s*(\d+)', f.get('motion') or '', re.I)  # KY numbers roll calls RSN#/RCS# (ky-01)
                 if len(hs) > 1 and rc: hs = [h for h in hs if re.search(r'#\s*' + rc.group(1) + r'\b', h.get('desc') or '')] or hs
                 if len({(h.get('desc') or '').lower() for h in hs}) == 1: hs = sorted(hs, key=lambda h: int(h['roll_call_id']))[:1]
-            if len(hs) != 1: unmapped.append([n, u, ins, f'{act}: {len(hs)} LegiScan roll calls on {k["date"]} with {k["yea"]}-{k["nay"]}']); continue
+            if len(hs) != 1:
+                why = f'{act}: {len(hs)} LegiScan roll calls on {k["date"]} with {k["yea"]}-{k["nay"]}'
+                # a dataset is a snapshot: say so when the vote is later than its last roll call
+                last_day = newest_roll_call(os.environ['LEGISCAN_DATASETS'], ST)[0] if not hs and os.environ.get('LEGISCAN_DATASETS') else None
+                if last_day and k['date'] > last_day: why += f' (the vote is NEWER than the datasets on disk, whose last roll call is {last_day}: it needs a newer download or the live API, on the runner\'s yes)'
+                unmapped.append([n, u, ins, why]); continue
             bill = re.search(r'/bill/([^/]+)/', hs[0]['bill_url']).group(1)  # .../bill/HB16/2020 or .../bill/HB16/2020/X1
             ls = f"https://legiscan.com/{ST}/rollcall/{bill}/id/{hs[0]['roll_call_id']}"; rmap[kid(k)] = {**hs[0], 'legiscan': ls}
         elif act in AUTH:
             m = re.match(ST + r'-([A-Z]+)-(\d+)-(?:SP(\d)-)?(\d{4})$', ins)
-            yr = int(m.group(4)) + YS if m else 0
-            if ODD and yr % 2 == 0: yr -= 1  # LegiScan's bill page names the session's start year (oh-01, 2026-11-06)
-            ls = f"https://legiscan.com/{ST}/bill/{m.group(1)}{m.group(2).zfill(PAD)}/{yr}" + (f"/X{m.group(3)}" if m.group(3) else '') if m else None
+            # LegiScan's bill page names the session's start year (oh-01, 2026-11-06) and its own spelling of the number
+            bn, yr = bill_of(m.group(1), m.group(2), int(m.group(4)) + YS, m.group(3)) if m else (None, 0)
+            ls = f"https://legiscan.com/{ST}/bill/{bn}/{yr}" + (f"/X{m.group(3)}" if m.group(3) else '') if m else None
             if not ls: unmapped.append([n, u, ins, f'{act}: no bill id']); continue
         else: unmapped.append([n, u, ins, f'act {act} (not a vote or authorship)']); continue
         e = {'url': ls, 'official': u, 'act': act, 'instrument': ins}

@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2961-2023",
+  "scope": "state:tn",
+  "title": "SB2961 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 38, Chapter 6 and Section 39-17-1316, relative to the transfer of firearms.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2961&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB2961.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Raumesh Akbari",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2a79d564-dde0-4201-a072-789554bbf6d6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-02-14; official copy via the Internet Archive snapshot 20260514151508 of https://www.capitol.tn.gov/Bills/113/Bill/SB2961.pdf (LegiScan doc 2927771))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2961-2023.draft.pdf",
+      "sha256": "4fa3b63dd8a5ee918785cd817e336ce13ee517f7e272febea0b0ca051bcd0179"
+    },
+    "note": "Draft as filed (version dated 2024-02-14); summary says 'As introduced' and no passage vote is recorded, so no amendments are missing. Existing (c) is redesignated (c)(1); the House twin is HB 1596 (same document). Effective date in text is July 1, 2023."
+  },
+  "operative_text": "SECTION 2 (TCA 39-17-1316(c)): (2) Except with respect to transactions between persons licensed as dealers under 18 U.S.C. § 923, a gun dealer shall not deliver a firearm to a purchaser until fifteen (15) business days after compliance with subdivision (c)(1)."
+}

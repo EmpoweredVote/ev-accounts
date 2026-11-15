@@ -1,0 +1,51 @@
+{
+  "id": "SC-S-139-2019",
+  "scope": "state:sc",
+  "title": "S0139 (123rd General Assembly): SC Constitutional Carry Act of 2019",
+  "urls": [
+    "https://www.scstatehouse.gov/billsearch.php?billnumbers=0139&session=123&summary=B",
+    "https://www.scstatehouse.gov/sess123_2019-2020/prever/139_20190509.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Shane Martin",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0cd44d98-8ccd-4f4f-93d6-e993ff6ba720"
+    },
+    {
+      "name": "Rex Rice",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d587a64f-3b40-421c-9963-9c934f961443"
+    },
+    {
+      "name": "Danny Verdin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ec52251-b87c-4264-b1f7-e4d348e2756a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, South Carolina); operative text read by a Sonnet fill agent from the official South Carolina text (Amended, 2019-05-09; official copy, https://www.scstatehouse.gov/sess123_2019-2020/prever/139_20190509.htm (LegiScan doc 2013066))",
+    "fetched_at": "2026-11-14T16:56:32.141991Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SC-S-139-2019.amended.htm",
+      "sha256": "2679c82f1b5ac9f6c75c44607aae1e5760b0ca5172379af57b4966108a0e77ac"
+    },
+    "note": "Version read is 'Amended', printed 2019-05-09; no passage vote on file. Struck words (the old list of exceptions in 16-23-20, the concealed-permit clauses in 16-23-420/430/465, 23-31-215(K) permit-card duty, Section 16-23-460 body) are not quoted as law; 'unlawful' struck and 'lawful' added in 16-23-20(A). Section 16-23-420(A) 'to a person authorized to carry a concealed weapon' struck; 'weapon' struck, 'firearm' added. Sections 16-23-465, 23-31-220, 23-31-235 (sign wording, 'concealable' struck) and 10-11-320 (capitol parking: permit struck, 'firearm' added) also amended."
+  },
+  "operative_text": "Section 2 (Section 16-23-20(A)): It is lawful for anyone to carry about the person any handgun, whether concealed or not, except as provided for in subsection (B) or if the person is otherwise prohibited from owning, carrying, or purchasing a firearm as provided for by state or federal law.\nSection 2 (Section 16-23-20(B)): It is unlawful for a person to carry a handgun about the person, whether concealed or not, into a: (1) law enforcement, correctional, or detention facility; (2) courthouse or courtroom; (3) polling place on election days; (4) office of or the business meeting of the governing body of a county, public school district, municipality, or special purpose district; (5) school or college athletic event not related to firearms; (6) daycare facility or preschool facility; (7) place where the carrying of firearms is prohibited by federal law; (8) church or other established religious sanctuary unless express permission is given by the appropriate church official or governing body; (9) hospital, medical clinic, doctor's office, or any other facility where medical services or procedures are performed unless expressly authorized by the employer; (10) residence or dwelling place of another person without the express permission of the owner or person in legal control or possession, as appropriate; or (11) place clearly marked with a sign prohibiting the carrying of a weapon on the premises pursuant to Section 23-31-235.\nSection 2 (Section 16-23-20(B)(11)): A person who violates a provision of this item, whether the violation is wilful or not, only may be charged with a violation of Section 16-11-620 and must not be charged with or penalized for a violation of this subsection.\nSection 4 (Section 16-23-420(A)): The provisions of this subsection related to any premises or property owned, operated, or controlled by a private or public school, college, university, technical college, or other post-secondary institution, do not apply when the firearm remains inside an attended or locked motor vehicle and is secured in a closed glove compartment, closed console, closed trunk, or in a closed container secured by an integral fastener and transported in the luggage compartment of the vehicle.\nSection 6 (Section 16-23-460): Reserved.\nSection 8 (Section 23-31-215(K)): A permit holder immediately must report the loss or theft of a permit identification card to SLED headquarters.\nSection 11 (Section 23-31-225): deleted. Section 12 (Section 23-31-230): deleted."
+}

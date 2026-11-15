@@ -1,0 +1,39 @@
+{
+  "id": "TN-SB-2555-2023",
+  "scope": "state:tn",
+  "title": "SB2555 (113th General Assembly): AN ACT to amend Tennessee Code Annotated, Title 36 and Title 39, relative to emergency protection orders.",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/Billinfo/default.aspx?BillNumber=SB2555&ga=113",
+    "https://www.capitol.tn.gov/Bills/113/Bill/SB2555.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "London Lamar",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9c83e282-cb78-4e39-aa1e-13875a86e872"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Tennessee); operative text read by a Sonnet fill agent from the official Tennessee text (Draft, 2024-01-31; crossfiled twin's official copy via the Internet Archive snapshot 20260514154239 of https://www.capitol.tn.gov/Bills/113/Bill/HB2606.pdf (it names SENATE BILL 2555; own link https://www.capitol.tn.gov/Bills/113/Bill/SB2555.pdf not archived))",
+    "fetched_at": "2026-11-13T23:47:53.436157Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/TN-SB-2555-2023.draft.twin.pdf",
+      "sha256": "d2de8df779637fbec685072a1cdc6346bc730d5c150ef75d42f20d660d0b0782"
+    },
+    "note": "Draft as filed (2024-01-31); the Senate bill is printed with House Bill 2606. No amendments are reflected. Orders last up to one year; proof is by a preponderance of evidence. The court-forms and cost parts are not quoted."
+  },
+  "operative_text": "SECTION 1 (new TCA 39-17-1901(a)): (a) Any family member, household member, intimate partner, or law enforcement officer who has a reasonable belief that a person poses an imminent risk of harm to the person or others if allowed to purchase or possess a firearm may seek relief under this section by filing a sworn petition for an emergency protection order against the respondent.\nSECTION 1 (new TCA 39-17-1902(a)): (a) Upon the filing of a petition for an emergency protection order, the court may immediately, for good cause shown, issue an ex parte emergency protection order. An immediate and present risk of harm to the respondent or others if the respondent is allowed to purchase or possess a firearm shall constitute good cause for purposes of this section. An ex parte emergency protection order shall prohibit the respondent from purchasing or possessing any firearm during the period that the order is in effect.\nSECTION 1 (new TCA 39-17-1902(b)): If no ex parte emergency protection order has been issued as of the time of the hearing, and the petitioner has proven the allegation of an imminent risk of harm by a preponderance of the evidence, then the court may, at that time, issue an emergency protection order prohibiting the respondent from purchasing or possessing any firearm for a definite period of time, not to exceed one (1) year.\nSECTION 1 (new TCA 39-17-1904(a)): (a) (1) It is an offense to knowingly violate an emergency protection order. (2) A violation of subdivision (a)(1) is a Class A misdemeanor.\nSECTION 1 (new TCA 39-17-1905(b)(1)): (1) To terminate the respondent's physical possession of the firearms in the respondent's possession by any lawful means, such as transferring possession to a third party who is not prohibited from possessing firearms, within forty-eight (48) hours; and\nSECTION 1 (new TCA 39-17-1905(f)): (f) (1) It is an offense for a person subject to an emergency protection order to knowingly fail to surrender or transfer all firearms the respondent possesses as required by this section. (2) A violation of subdivision (f)(1) is a Class A misdemeanor and each violation shall constitute a separate offense."
+}
