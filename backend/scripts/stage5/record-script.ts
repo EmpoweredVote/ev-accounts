@@ -172,6 +172,8 @@ function adopt(flags: Map<string, string[]>): number {
   const holding = join(out, 'script-codes');
   const read = (f: string) => JSON.parse(readFileSync(f, 'utf8')) as Stage5Code;
   const scriptIds = readdirSync(holding).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5));
+  // the script coded nobody (every person went to Opus): there is nothing to check and nothing to adopt (found in Florida, 2026-11-15)
+  if (!summary.script && !scriptIds.length) { console.log('the script coded nobody: every person has an Opus code, nothing to adopt'); return 0; }
   if (!summary.check_ids.length) { console.error('the plan drew no standing check: nothing can be adopted'); return 1; }
   const waiting = summary.check_ids.filter((p) => !existsSync(join(codes, `${p}.json`)));
   if (waiting.length) { console.log(`${waiting.length} check person(s) have no Opus code in ${codes} yet, e.g. ${waiting[0]}: code them first`); return 3; }
