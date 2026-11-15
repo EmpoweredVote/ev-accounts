@@ -465,6 +465,15 @@ now three, and all three are these.** Measured in prod: Attorney General, Secret
 Treasurer, and nothing else in the state. That gate was watched failing against a planted tamper which
 swept them in, and it fired before the count gate did, which is why the order matters.
 
+⚠ **UPDATED SAME DAY — IT IS NOW FOUR, AND THE FOURTH IS CORRECT.** `CC_0430` created Lewiston's
+`School Committee Member (City Council Representative)` with `is_appointed_position = true`: the
+charter makes that seat appointive and residents never vote on it (R9l, R9m). So the sentence above
+describes the state of the **sweep**, not a standing invariant — three *survivors* of the eight,
+plus one deliberately created after. 🔴 **DO NOT WRITE A GATE ASSERTING MAINE HOLDS EXACTLY THREE.**
+`CC_0429`'s was a one-time post-verify and `audit-is-appointed.ts` is read-only and unwired, which
+is the only reason this addition broke nothing. A count that was true of a cleanup is not an
+invariant of the state.
+
 #### 🔴🔴 R9i. SOUTH PORTLAND — THE SAME DEFECT AS BANGOR, THE OPPOSITE FIX
 
 `CC_0428`, 2026-11-14. `CC_0427` left this open because Municode serves the charter from a
@@ -559,11 +568,51 @@ findable (R9f) and what South Portland's self-confirming 8 could not do (R9i).
 ⚠ **Measured before setting it: `official_count` is read by NOTHING in `backend/src`** — zero
 occurrences, it is written only by seeding generators. It is metadata for sessions and gates, not
 a voter-facing field, so a size larger than our row count cannot render a phantom vacancy to
-anybody. ▶ **A later pass can gate on `official_count` vs `count(offices)` per chamber.** Nothing
-does today.
+anybody. ▶ **A later pass can gate on `official_count` vs `count(offices)` per chamber.** ~~Nothing
+does today.~~ 🟢 **BUILT, 2026-11-14 — `npm run check:body-completeness`** (PR #1472). It gates
+`official_count` vs `count(offices)` per chamber AND districts holding no office, which is R9k.
+It found **19** chamber mismatches repo-wide, this one among them.
 
-▶ **FOLLOW-UP, dated 2026-11-14:** identify and seat Lewiston's council-appointed ninth member.
-The committee's agendas or minutes are the likeliest readable source.
+#### ✅ R9m. THE NINTH SEAT IS SEATED — `CC_0430`, 2026-11-14
+
+Scott A. Harriman, **Ward 3 Councillor**, on a `City Council Representative` office with
+`is_appointed_position = true` — the only genuinely appointive seat on this body (R9l), and the
+fourth in Maine, which is why R9h's count above moved from three to four.
+
+🟢 **THE ROSTER IS AN IMAGE AND IT ANSWERED ANYWAY.** R9j said the page carries no readable
+membership, and that is true of its TEXT — but each member card is an `<img>` whose `aria-label`
+holds the name. The page carries exactly nine: the eight we held (Hawkins still only as
+`lhawkins@lewistonpublicschools.org`, exactly as R9j measured) plus "Scott Harriman".
+▶ **"PUBLISHED AS AN IMAGE" IS A STATEMENT ABOUT THE RENDERING, NOT ABOUT THE MARKUP.** Read the
+accessibility attributes before concluding a roster is unreadable.
+
+The identification does not rest on that alone. The city's own appointment listing
+(`lewistonmaine.gov` DocumentCenter/View/376, generated 2026-10-21) prints the seat outright —
+`School Committee Representative · City Councilor · Ward 3 · 01/05/2026 Scott Harriman` — and the
+council minutes for 2026-01-05 record the act.
+
+🔴 **`term_start` IS 2026-01-05 AND THE EIGHT SIBLING ROWS ARE NOT THE PRECEDENT THEY LOOK LIKE.**
+All eight carry `term_start` NULL / `'unknown'`, which reads like a house style for this committee.
+Every one of them is a `migration 1459` ADR-0002 phase-2 backfill row: undated because the backfill
+had no date, not because anyone judged the date unknowable. ⚠ Whether Harriman served before 2026
+is still unknown — the minutes say "elect", never "re-elect" — so any earlier terms are a GAP, not
+a contradiction, and should be added as a closed predecessor rather than by editing this row.
+`seat_officeholder` refuses a NULL start, which is the same judgement from the other side.
+
+⚠ **`term_end` IS NULL THOUGH THE COUNCIL PUBLISHED 2027-01-04**, per R4: the view resolves by date
+containment, so a dated expiry would unseat this seat on 2027-01-05 with no human act.
+▶ **JANUARY 2027:** the council re-elects this seat annually. If it picks a different member, the
+`official_count` gate does **not** move — nine against nine either way. **The holder changes and
+nothing watches it.** Re-read the appointment listing after the January 2027 organisational meeting.
+
+🔴 **FOUND HERE, NOT FIXED: WE HOLD SCOTT HARRIMAN TWICE.** `c7088ceb` "Scott A. Harriman"
+(Lewiston Ward 3 Councillor) and `9664affa` "Scott Harriman" (Maine House District 94, whose own
+roster reads *"Harriman, Scott … (D - Lewiston)"*). Very probably one man who won a February 2026
+special election while keeping his council seat. `CC_0430` seats the COUNCIL row, because the
+charter seats him here *as the City Councilor*, and its premise gate **refuses to run** against the
+State House row — watched failing against exactly that tamper. ▶ A person merge carries FK,
+stance-research and season-floor obligations (`reference_person_merge_policy`) and is its own
+decision. **Not done.**
 
 ### ⚠ R9b. WARDS EXIST IN THESE CITIES — AS VOTING WARDS, NOT COUNCIL DISTRICTS
 
