@@ -1,0 +1,49 @@
+{
+  "id": "FL-H-1205-2021",
+  "scope": "state:fl",
+  "title": "H1205 (2021 Regular): Protection of Constitutional Firearms Rights",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2021/1205",
+    "https://www.flsenate.gov/Session/Bill/2021/1205/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kaylee Tuck",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "06678114-3be6-41eb-aa38-cc570082ead8"
+    },
+    {
+      "name": "Tommy Gregory",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Anthony Sabatini",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-02-22; official copy, https://www.flsenate.gov/Session/Bill/2021/1205/BillText/Filed/PDF (LegiScan doc 2304562))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-1205-2021.introduced.pdf",
+      "sha256": "9648c03ec54d9f5c6baae6dac1665a4047634e31d84de328fa8caa944d3ee5ff"
+    },
+    "note": "Introduced version (2021-02-22). Whole new section underlined. Short title 'Second Amendment Preservation Act' is in Section 1."
+  },
+  "operative_text": "Section 2 (new s. 790.501, F.S.): All federal acts, laws, executive orders, administrative orders, court orders, rules, and regulations, regardless if enacted before or after this section, which infringe on the people's right to keep and bear arms as guaranteed by the Second Amendment to the United States Constitution and s. 8, Art I of the State Constitution shall be invalid in the state, shall not be recognized by the state, shall be specifically rejected by the state, and shall be considered void and of no effect in the state.\nSection 2 (new s. 790.501, F.S.): It shall be the duty of the courts and law enforcement agencies of the state to protect the rights of law-abiding citizens to keep and bear arms in the state and to protect these rights from the infringements described under paragraph (a).\nSection 2 (new s. 790.501, F.S.): No person, including any public servant, as defined in 838.014, shall have the authority to enforce or attempt to enforce any federal act, law, executive order, administrative order, court order, rule, regulation, statute, or ordinance infringing on the right to keep and bear arms ensured by the Second Amendment to the United States Constitution and s. 8, Art I of the State Constitution.\nSection 2 (new s. 790.501, F.S.): A person while acting as an official, agent, employee, or deputy of the Federal Government, or while otherwise acting under the color of federal law in the state shall be permanently ineligible for employment as a law enforcement officer or to supervise law enforcement officers for the state or any political subdivision of the state, if the person knowingly: 1. Enforces or attempts to enforce any of the infringements described in paragraph (3)(a); or 2. Gives material aid and support to the efforts of others who enforce or attempt to enforce any of the infringements described in paragraph (3)(a)."
+}

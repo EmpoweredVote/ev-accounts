@@ -1,0 +1,45 @@
+{
+  "id": "FL-S-252-2025",
+  "scope": "state:fl",
+  "title": "S0252 (2025 Regular): Weapons and Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2025/252",
+    "https://www.flsenate.gov/Session/Bill/2025/252/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tina Polsky",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "69578e2e-7ec6-4321-ad0c-c16ba1d29641"
+    },
+    {
+      "name": "Carlos Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c310dbb0-d4f3-4aa1-9080-90440e46fb01"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-01-14; official copy, https://www.flsenate.gov/Session/Bill/2025/252/BillText/Filed/HTML (LegiScan doc 3055553))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-252-2025.introduced.html",
+      "sha256": "61b00262fbdc1453ce40dce300db919caa21651c2aa473622342cc46a4ce1bf7"
+    },
+    "note": "Introduced version (filed 2025-01-14); later amendments are not in the text read. Also amends s. 790.175 (trigger lock or case with each sale), not quoted for length."
+  },
+  "operative_text": "Section 2 (new s. 790.0653, F.S.): (2) All persons involved in a firearm sale or other transfer, in whole or in part, shall be subject to a background check unless specifically exempted by state or federal law. A person may not sell or otherwise transfer a firearm unless: (a) The person is a licensed dealer; (b) The purchaser or other transferee is a licensed dealer; or (c) The requirements of subsection (3) are met. (5) A person who violates this section commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084.\nSection 3 (s. 790.174, F.S.): (b) A person who stores or leaves, on a premise under his or her control, a firearm, as defined in s. 790.001, and who knows or reasonably should know that a prohibited user is likely to gain access to the firearm, shall keep the firearm in a securely locked box or container or shall secure it with a trigger lock, except when the person is carrying the firearm on his or her body or within such close proximity thereto that he or she can retrieve and use the firearm as easily and quickly as if he or she carried it on his or her body.\nSection 5 (new s. 790.223, F.S.): (2) It is unlawful to knowingly manufacture or assemble, cause to be manufactured or assembled, import, purchase, sell, offer for sale, or transfer ownership of any firearm that is not imprinted with a valid serial number. (4) Beginning January 1, 2026, it is unlawful to knowingly possess a firearm or any completed or unfinished frame or receiver that is not imprinted with a valid serial number. (5) A person may not knowingly manufacture or assemble or cause to be manufactured or assembled, import, sell, offer for sale, transfer, or possess an undetectable firearm. (6) It is unlawful to use a three-dimensional printer or computer numerical control (CNC) milling machine to manufacture or assemble a firearm or completed or unfinished frame or receiver within this state without a valid license to manufacture firearms."
+}

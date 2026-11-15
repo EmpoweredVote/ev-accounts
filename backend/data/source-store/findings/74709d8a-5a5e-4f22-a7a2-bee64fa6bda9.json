@@ -1,0 +1,299 @@
+{
+  "politician_id": "74709d8a-5a5e-4f22-a7a2-bee64fa6bda9",
+  "findings": [
+    {
+      "id": "99eca73c86abcc41c264506a1a67b886a5b372122f04760b4744a2decb8189b4",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2025/1021",
+      "date": "2025-04-23",
+      "date_precision": "day",
+      "instrument_id": "FL-H-1021-2025",
+      "act": "yea",
+      "motion": "House: Third Reading RCS#185",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "FL House, House: Third Reading RCS#185, 2025-04-23: yea (tally 111–2); census gate: near-unanimous.",
+      "subjects": [
+        "off-duty officers may carry concealed at athletic events"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Comm Sub, 2025-03-20; official copy, https://www.flsenate.gov/Session/Bill/2025/1021/BillText/c2/PDF (LegiScan doc 3183501))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-1021-2025.comm-sub.pdf",
+          "sha256": "9cf73abc53757dc987e8ca94218959bea6af2fda556b1163f7ef10a7af6a7737"
+        }
+      }
+    },
+    {
+      "id": "a36ef498bd2cb509cd05d5ed1f2d189fa55d3f06181a0b0573d755b00770336d",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2026/133",
+      "date": "2026-01-15",
+      "date_precision": "day",
+      "instrument_id": "FL-H-133-2026",
+      "act": "nay",
+      "motion": "House: Third Reading RCS#451",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "FL House, House: Third Reading RCS#451, 2026-01-15: nay (tally 74–37); census gate: none.",
+      "subjects": [
+        "minimum age to buy a firearm lowered from 21 to 18",
+        "repeals officer and servicemember rifle/shotgun exception"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-10-08; official copy, https://www.flsenate.gov/Session/Bill/2026/133/BillText/Filed/PDF (LegiScan doc 3272375))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-133-2026.introduced.pdf",
+          "sha256": "c359629e58ded8bc4d5ed8e16422d3c6d22eff621521e1669b3e6fc019e2179f"
+        }
+      }
+    },
+    {
+      "id": "90863168125546d2dac7d77ed23857e3d5e797c07116816acd464c772c875836",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2026/1551",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "FL-H-1551-2026",
+      "act": "nay",
+      "motion": "House: Third Reading RCS#718",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "FL House, House: Third Reading RCS#718, 2026-03-05: nay (tally 75–29); census gate: none.",
+      "subjects": [
+        "firearm makers shielded from design-feature liability suits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Comm Sub, 2026-02-17; official copy, https://www.flsenate.gov/Session/Bill/2026/1551/BillText/c1/PDF (LegiScan doc 3364900))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-1551-2026.comm-sub.pdf",
+          "sha256": "f13d0ee308f2b9156240f19bb67d1a106f3f24b54a5fb439e79efece81df425e"
+        }
+      }
+    },
+    {
+      "id": "228b09b409e51802305d17fc7f2f4a95651958014b12400b5ba0d86de264348c",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2025/383",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "FL-H-383-2025",
+      "act": "yea",
+      "motion": "House: Third Reading RCS#78",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "FL House, House: Third Reading RCS#78, 2025-04-09: yea (tally 111–0); census gate: near-unanimous.",
+      "subjects": [
+        "off-duty concealed carry for correctional probation officers",
+        "exemptions from the firearm waiting period"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Enrolled, 2025-04-28; official copy, https://www.flsenate.gov/Session/Bill/2025/383/BillText/er/PDF (LegiScan doc 3223554))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-383-2025.enrolled.pdf",
+          "sha256": "fa55ea842451369671c248c5fc71753b34215e44d844c8fcf2bf54512db9ce33"
+        }
+      }
+    },
+    {
+      "id": "35ef42925763b990400f0995262c11eba9b0e91c5521584862c530de67993c05",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2025/491",
+      "date": "2025-04-24",
+      "date_precision": "day",
+      "instrument_id": "FL-H-491-2025",
+      "act": "yea",
+      "motion": "House: Third Reading RCS#239",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "FL House, House: Third Reading RCS#239, 2025-04-24: yea (tally 114–1); census gate: multi-subject.",
+      "subjects": [
+        "no AI camera detection of concealed firearms in public places",
+        "exceptions for schools and carry-restricted locations",
+        "injunction against violating agency"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Comm Sub, 2025-03-26; official copy, https://www.flsenate.gov/Session/Bill/2025/491/BillText/c1/PDF (LegiScan doc 3190507))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-491-2025.comm-sub.pdf",
+          "sha256": "07766869185124497bae492e8015ff37c1f867f57e1606c86bb7953885db12d2"
+        }
+      }
+    },
+    {
+      "id": "dc0b257888a75bc1cf493d025b45be9a1d100505d4f36303c8763a53d29f3b80",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2025/6025",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "FL-H-6025-2025",
+      "act": "yea",
+      "motion": "House: Third Reading RCS#119",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "FL House, House: Third Reading RCS#119, 2025-04-16: yea (tally 86–28); census gate: none.",
+      "subjects": [
+        "repeal of automatic gun and ammunition restrictions during emergencies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Enrolled, 2025-04-23; official copy, https://www.flsenate.gov/Session/Bill/2025/6025/BillText/er/PDF (LegiScan doc 3220035))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-6025-2025.enrolled.pdf",
+          "sha256": "04b07b6628284dcce79cd866cc0299b5776982df188982231135952b1bb0a49f"
+        }
+      }
+    },
+    {
+      "id": "ffdd9abce1b3bc0b5f334bac97b130c548700d4fa9bfb5ba346e00bacc723566",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2026/757",
+      "date": "2026-03-12",
+      "date_precision": "day",
+      "instrument_id": "FL-H-757-2026",
+      "act": "nay",
+      "motion": "House: Third Reading RCS#834",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "FL House, House: Third Reading RCS#834, 2026-03-12: nay (tally 88–20); census gate: multi-subject.",
+      "subjects": [
+        "felony to fire a gun within 1,000 feet of a school",
+        "held for a bail hearing after arrest",
+        "armed guardian program opened to public colleges and universities"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Enrolled, 2026-03-13; official copy, https://www.flsenate.gov/Session/Bill/2026/757/BillText/er/PDF (LegiScan doc 3394072))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-757-2026.enrolled.pdf",
+          "sha256": "31769f9a633fdb6185c40b828b864c34ff6bbfe8c6fdaea85764348f54ce30f6"
+        }
+      }
+    },
+    {
+      "id": "112eb275062fb27da5b52e6e68c8a3b7975d0aa6baf3810233b972a4b7578559",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2025/1019",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "FL-H-1019-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of FL-H-1019-2025 (sponsor list (prime / co-sponsor)): H1019 (2025 Regular): Weapons and Firearms.",
+      "subjects": [
+        "background check on every firearm sale or transfer",
+        "safe storage of firearms",
+        "serial numbers and 3D-printed guns",
+        "veteran firearm suicide task force"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-02-25; official copy, https://www.flsenate.gov/Session/Bill/2025/1019/BillText/Filed/PDF (LegiScan doc 3140048))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-1019-2025.introduced.pdf",
+          "sha256": "484eacf31e4a273dd44aceb98f761e2927ffdbacc4b5741c4c333ed31978e33a"
+        }
+      }
+    },
+    {
+      "id": "5b7a7c6e1b3e2998ea519feb07f3bff3e526fa1164ccfce2ddc6de64655c711d",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2025/65",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "FL-H-65-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of FL-H-65-2025 (sponsor list (prime / co-sponsor)): H0065 (2025 Regular): Sale, Transfer, and Storage of Firearms.",
+      "subjects": [
+        "background check on every firearm sale or transfer",
+        "safe storage of firearms",
+        "serial numbers and 3D-printed guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2024-12-18; official copy, https://www.flsenate.gov/Session/Bill/2025/65/BillText/Filed/PDF (LegiScan doc 3034239))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-65-2025.introduced.pdf",
+          "sha256": "5137ccb8d16a5684b3fe1cb4ba74e162e76a1f7b6793a95bc01ca964a2f98a44"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "minimum age to buy a gun",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name matches)",
+        "https://www.flsenate.gov/Session/Bill/2025/65 (fetched; lists Rosenwald among the sponsors, already on file)",
+        "web search: name plus firearms/gun/Second Amendment terms; nothing in his own words on the subject",
+        "web search: 2026 primary result for House District 98; no page found that reports the outcome, so his current status is unconfirmed (earlier pages show him as the incumbent on the Aug 18 2026 primary ballot)",
+        "blocked: https://ballotpedia.org/Mitch_Rosenwald (empty response)",
+        "blocked: https://floridapolitics.com/archives/659994-oakland-park-mayor-enters-crowded-democratic-primary-fray-for-hd-98 (payment required)",
+        "not reviewed: https://www.myfloridahouse.gov/ member page (redirects to flhouse.gov; no member page reached)",
+        "not reviewed: https://bluevoterguide.org/endorser-org/Gun_Sense_Voter/FL/4895 (a search result lists him as endorsed by a gun-safety group; the page text did not load, so nothing saved)",
+        "nothing on the subject: no campaign site found"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:22:16.109Z",
+      "by": "source-collector"
+    }
+  ]
+}

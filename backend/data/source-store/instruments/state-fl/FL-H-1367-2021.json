@@ -1,0 +1,39 @@
+{
+  "id": "FL-H-1367-2021",
+  "scope": "state:fl",
+  "title": "H1367 (2021 Regular): Concealed Weapons or Firearms Licensing",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2021/1367",
+    "https://www.flsenate.gov/Session/Bill/2021/1367/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michele Rayner",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d89e41dc-7008-407a-a89c-398550a1691a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-02-26; official copy, https://www.flsenate.gov/Session/Bill/2021/1367/BillText/Filed/PDF (LegiScan doc 2314026))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-1367-2021.introduced.pdf",
+      "sha256": "852f45fc896239adf4dea6ad9e48f7ed6908f950a9e0d0bd7f417a1903d0a35c"
+    },
+    "note": "Introduced version (filed 2021-02-26); no passage vote on file. Struck: 7 years (5 added); $55 and $45 (replaced by $39 and $32)."
+  },
+  "operative_text": "Section 1 (s. 790.06(1), F.S.): Such licenses shall be valid throughout the state for a period of 5 years from the date of issuance.\nSection 1 (s. 790.06(2)(h)5., F.S.): Presents evidence of equivalent experience with a firearm through participation in organized shooting competition or military service in the Armed Forces of the United States;\nSection 1 (s. 790.06(5)(b), F.S.): A nonrefundable license fee of up to $39 if he or she has not previously been issued a statewide license or of up to $32 for renewal of a statewide license.\nSection 1 (s. 790.06(11)(b)1., F.S.): Upon each license renewal, a licensee must provide the department with proof of completion of a firearms training or safety course or class of at least 8 hours in length taught by a state, county, or municipal law enforcement agency or a nationally recognized organization that promotes gun safety."
+}

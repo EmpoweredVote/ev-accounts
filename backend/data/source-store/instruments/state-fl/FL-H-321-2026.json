@@ -1,0 +1,39 @@
+{
+  "id": "FL-H-321-2026",
+  "scope": "state:fl",
+  "title": "H0321 (2026 Regular): Carrying Weapons and Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2026/321",
+    "https://www.flsenate.gov/Session/Bill/2026/321/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Christine Hunschofsky",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0903baf0-62dd-44f7-a4e5-2ffff94cd527"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-11-04; official copy, https://www.flsenate.gov/Session/Bill/2026/321/BillText/Filed/PDF (LegiScan doc 3283032))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-321-2026.introduced.pdf",
+      "sha256": "ad9e3ba2ff2737a34bb8a768126ecc735e5a783bd19903aa37bd34b513a51832"
+    },
+    "note": "Introduced version (filed 2025-11-04); no passage vote. Quote shortens the list: items (l)-(o) (alcohol-serving areas, college facilities, airport terminals, federal-law places) are in the text but omitted here. Sections 2-3 strike the licensee-only list in s. 790.06(12) and s. 790.013(2)."
+  },
+  "operative_text": "Section 1 (new s. 790.0135, F.S.): (1) Unless otherwise authorized by law, a person may not carry a weapon or firearm into: (a) A place of nuisance as defined in s. 823.05; (b) A police, sheriff, or highway patrol station; (c) A detention facility, prison, or jail; (d) A courthouse; (e) A courtroom, except that this section does not preclude a judge from carrying a weapon or firearm or determining who will carry a weapon or firearm in his or her courtroom; (f) A polling place; (g) A meeting of the governing body of a county, public school district, municipality, or special district; (h) A meeting of the Legislature or a committee thereof; (i) A school, college, or professional athletic event not related to firearms; (j) An elementary or secondary school facility or administration building; (k) A career center;\nSection 1 (new s. 790.0135, F.S.): (2) This section does not: (a) Prohibit a person from carrying or storing a firearm in a vehicle for lawful purposes. (b) Modify the terms or conditions of s. 790.251(7).\nSection 1 (new s. 790.0135, F.S.): (3) A person who knowingly and willfully violates this section commits a misdemeanor of the second degree, punishable as provided in s. 775.082 or s. 775.083."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "FL-S-1716-2025",
+  "scope": "state:fl",
+  "title": "S1716 (2025 Regular): Sale and Delivery of Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2025/1716",
+    "https://www.flsenate.gov/Session/Bill/2025/1716/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Blaise Ingoglia",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8c7b61e3-709d-42f5-acf1-0c6a7e328f0a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-02-28; official copy, https://www.flsenate.gov/Session/Bill/2025/1716/BillText/Filed/HTML (LegiScan doc 3147730))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-1716-2025.introduced.html",
+      "sha256": "9a4d9975b019664d714a1ed36e9de811835481284a6fd1a5221f357bdd768a82"
+    },
+    "note": "Introduced version (2025-02-28). All text of subsection (13) is struck, nothing is added, so no law text remains to quote; the quote is the amending clause. Struck: age 21 purchase ban, dealer sale/transfer ban, third-degree felony penalty, and the exemption for law enforcement/correctional officers and servicemembers."
+  },
+  "operative_text": "Section 1 (s. 790.065, F.S.): Subsection (13) of section 790.065, Florida Statutes, is amended to read:"
+}

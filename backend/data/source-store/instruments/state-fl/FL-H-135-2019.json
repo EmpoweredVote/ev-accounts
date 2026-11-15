@@ -1,0 +1,108 @@
+{
+  "id": "FL-H-135-2019",
+  "scope": "state:fl",
+  "title": "H0135 (2019 Regular): Transfers of Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2019/135",
+    "https://www.flsenate.gov/Session/Bill/2019/135/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Margaret Good",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dotie Joseph",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "aa573206-cf30-4782-8243-a930919c851d"
+    },
+    {
+      "name": "John Cortes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Nicholas Duran",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Anna Eskamani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "24293096-f120-4914-ab83-d6670ad3efcd"
+    },
+    {
+      "name": "Javier Fernandez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joseph Geller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joy Goff-Marcil",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Evan Jenne",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Shevrin Jones",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd892637-c28b-472a-878e-f2fdf1b98935"
+    },
+    {
+      "name": "Cindy Polo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Carlos Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c310dbb0-d4f3-4aa1-9080-90440e46fb01"
+    },
+    {
+      "name": "Susan Valdes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5d552dfc-c52d-45ec-8988-73152ebaf403"
+    },
+    {
+      "name": "Barbara Watson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2018-12-21; official copy, https://www.flsenate.gov/Session/Bill/2019/135/BillText/Filed/PDF (LegiScan doc 1832976))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-135-2019.introduced.pdf",
+      "sha256": "54ff1bf867340d5def0da05a467c841271cf2f5254781d2df6574f7a241363f7"
+    },
+    "note": "Read as filed (Introduced, 2018-12-21); no vote. Section 1 adds a definition of 'adult family member' (s. 790.001) used in the exceptions."
+  },
+  "operative_text": "Section 2 (new s. 790.0653, F.S.): A person may not sell or otherwise transfer a firearm, including selling or transferring a firearm via the Internet, unless: (a) The person is a licensed dealer; (b) The purchaser or other transferee is a licensed dealer; or (c) The requirements of subsection (2) are met. If neither party to a prospective firearms transaction is a licensed dealer, the parties to the transaction shall complete the sale or other transfer through a licensed dealer as follows: (a) The seller or other transferor shall deliver the firearm to the licensed dealer, who shall retain possession of the firearm until all legal requirements for the sale or other transfer have been met, including compliance with any state or local waiting periods. (d) The licensed dealer shall comply with s. 790.065 and, if the transaction is not prohibited and after all other legal requirements are met, deliver the firearm to the purchaser or other transferee. A person who violates this section commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084."
+}

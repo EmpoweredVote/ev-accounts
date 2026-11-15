@@ -1,0 +1,49 @@
+{
+  "id": "FL-S-764-2019",
+  "scope": "state:fl",
+  "title": "S0764 (2019 Regular): Home Safety",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2019/764",
+    "https://www.flsenate.gov/Session/Bill/2019/764/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lori Berman",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "daafe458-8c11-40b0-9382-22b22747b7e2"
+    },
+    {
+      "name": "Janet Cruz",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Victor Torres",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-02-06; official copy, https://www.flsenate.gov/Session/Bill/2019/764/BillText/Filed/HTML (LegiScan doc 1893754))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-764-2019.introduced.html",
+      "sha256": "7d51a0281d2db096109cafdf64c42f8e7663481839d561794c800f09cd604f5e"
+    },
+    "note": "Introduced version (filed 2019-02-06); no passage vote. Exceptions in (2): locked container, safe or trunk; firearm safety device; locking device; or kept readily accessible to the owner. Section 2 also adds yearly clerk-of-court reporting on risk protection orders to the State Courts Administrator (not quoted)."
+  },
+  "operative_text": "Section 1 (new s. 790.1741, F.S.): (1) PROHIBITION.—Unless an exception under subsection (2) applies, a person who is 18 years of age or older, who is a legal occupant of a residence, and who owns a firearm may not keep in that residence a firearm if he or she knows or has reason to know that another person also residing therein is prohibited by state or federal law from owning, possessing, purchasing, or receiving a firearm.\nSection 1 (new s. 790.1741, F.S.): (3) PENALTY.—A person who violates this section commits a misdemeanor of the second degree, punishable as provided in s. 775.082 or s. 775.083.\nSection 2 (s. 790.401, F.S.): (2)(a) A petition for a risk protection order may be filed by a law enforcement officer, a law enforcement agency, or a family or household member."
+}

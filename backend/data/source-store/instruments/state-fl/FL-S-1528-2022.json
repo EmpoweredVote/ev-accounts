@@ -1,0 +1,39 @@
+{
+  "id": "FL-S-1528-2022",
+  "scope": "state:fl",
+  "title": "S1528 (2022 Regular): Restrictions on Firearms and Ammunition During Emergencies",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2022/1528",
+    "https://www.flsenate.gov/Session/Bill/2022/1528/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joe Gruters",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8fdbeb73-19d0-470e-b7ed-5b4b3bef1995"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2022-01-05; official copy, https://www.flsenate.gov/Session/Bill/2022/1528/BillText/Filed/HTML (LegiScan doc 2465170))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-1528-2022.introduced.html",
+      "sha256": "9260e58f2c5798523396ae8e1e9354124a6a491576aa618eb10256e21ed54231"
+    },
+    "note": "As-filed text (2022-01-05); no votes recorded. The text does not set out the repealed section."
+  },
+  "operative_text": "Section 1 (s. 870.044, F.S.): Section 870.044, Florida Statutes, is repealed."
+}

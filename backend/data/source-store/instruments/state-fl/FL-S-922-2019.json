@@ -1,0 +1,39 @@
+{
+  "id": "FL-S-922-2019",
+  "scope": "state:fl",
+  "title": "S0922 (2019 Regular): Discharging Firearms in Public or on Residential Property",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2019/922",
+    "https://www.flsenate.gov/Session/Bill/2019/922/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lori Berman",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "daafe458-8c11-40b0-9382-22b22747b7e2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-02-11; official copy, https://www.flsenate.gov/Session/Bill/2019/922/BillText/Filed/HTML (LegiScan doc 1901981))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-922-2019.introduced.html",
+      "sha256": "81212dffe6162f4a6fe8e917792f91cfe8944486a996a65d62f6f6311f552bfa"
+    },
+    "note": "As filed (introduced 2019-02-11). Struck: the residential-density test (one or more dwelling units per acre). New exemption for lots of 5 acres or larger with a dirt berm and backstop."
+  },
+  "operative_text": "Section 2 (s. 790.15, F.S.): (4) Any person who recreationally discharges a firearm outdoors, including target shooting, in an area that the person knows or reasonably should know is primarily residential in nature commits a misdemeanor of the first degree, punishable as provided in s. 775.082 or s. 775.083. This subsection does not apply: (a) To a person lawfully defending life or property or performing official duties requiring the discharge of a firearm; (b) If, under the circumstances, the discharge does not pose a reasonably foreseeable risk to life, safety, or property; (c) To a person who accidentally discharges a firearm; or (d)To a person engaging in recreational shooting in an area that the person knows or reasonably should know is primarily residential in nature on a lot that is 5 acres or larger. A person engaging in target shooting on such a lot may only do so if the targets are in front of a dirt berm and backstop sufficient to stop projectiles from crossing into a neighboring property.\nSection 3 (s. 810.09, F.S.): (h) Any person who in taking or attempting to take any animal described in s. 379.101(19) or (20); in killing, attempting to kill, or endangering any animal described in s. 585.01(13); or in target shooting knowingly propels or causes to be propelled any potentially lethal projectile over or across private land without authorization commits trespass, a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084. For purposes of this paragraph, the term “potentially lethal projectile” includes any projectile launched from any firearm, bow, crossbow, or similar tensile device."
+}

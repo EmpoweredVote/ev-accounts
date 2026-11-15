@@ -1,0 +1,52 @@
+{
+  "politician_id": "87a39657-b256-4bc8-b6e6-30ad2e299d76",
+  "findings": [
+    {
+      "id": "e3907184d5f37b1e0bcb115bc7962187e2556806380a878421cf53452018ace3",
+      "kind": "own-words",
+      "url": "https://www.sun-sentinel.com/2025/12/24/questionnaire-emily-gregory-democratic-candidate-for-house-district-87/",
+      "date": "2025-12-24",
+      "date_precision": "day",
+      "passage": "I would vote against HB 133. After Parkland, Florida raised the purchase age from 18 to 21 because it saved lives. Weakening that law puts communities at risk. Responsible gun ownership requires safeguards that reflect the reality of gun violence in our state. We should be strengthening red flag laws, improving background checks, and investing in mental health, not rolling back proven safety measures.",
+      "note": "Answer in a newspaper candidate questionnaire. She says she would vote against HB 133 (lowering the rifle and shotgun purchase age from 21 to 18), and that red flag laws and background checks should be strengthened.",
+      "subjects": [
+        "minimum age to buy a gun",
+        "red flag orders",
+        "check every gun buyer",
+        "general gun safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:13:14.442Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "minimum age to buy a gun",
+        "red flag orders",
+        "check every gun buyer",
+        "general gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://emilygregoryforflorida.com (fetched, home and issues pages; no gun text in the served HTML)",
+        "blocked: https://ballotpedia.org/Emily_Gregory",
+        "blocked: https://www.myfloridahouse.gov/api/MemberSearch?name=Gregory",
+        "news searches: confirmed she holds House District 87 after the March 2026 special election and is on the November 2026 ballot; no sponsorships or floor votes on guns found (she was sworn in April 2026, after the January 2026 House vote on HB 133)",
+        "bill search: the only firearm-bill hit with a Gregory sponsor (2024 HB 1615) is a different legislator, so not saved",
+        "newspaper candidate questionnaire dated 2025-12-24 (https://www.sun-sentinel.com/2025/12/24/questionnaire-emily-gregory-democratic-candidate-for-house-district-87/)"
+      ],
+      "found": 1,
+      "at": "2026-11-15T02:13:14.442Z",
+      "by": "source-collector"
+    }
+  ]
+}

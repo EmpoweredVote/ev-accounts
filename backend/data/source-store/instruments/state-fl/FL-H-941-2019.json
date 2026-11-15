@@ -1,0 +1,60 @@
+{
+  "id": "FL-H-941-2019",
+  "scope": "state:fl",
+  "title": "H0941 (2019 Regular): Domestic Violence",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2019/941",
+    "https://www.flsenate.gov/Session/Bill/2019/941/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Anna Eskamani",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "24293096-f120-4914-ab83-d6670ad3efcd"
+    },
+    {
+      "name": "Joseph Geller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Amy Mercado",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Cindy Polo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Carlos Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c310dbb0-d4f3-4aa1-9080-90440e46fb01"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-02-20; official copy, https://www.flsenate.gov/Session/Bill/2019/941/BillText/Filed/PDF (LegiScan doc 1919233))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-941-2019.introduced.pdf",
+      "sha256": "614f944365a18bcf384cf1d3b82d449280bc23ac43aebbaa116bf6e0a3bb9b01"
+    },
+    "note": "Introduced version (2019-02-20). Subsection numbers in s. 790.233 are renumbered (old numbers struck); the quoted sentences are as they read after the bill. Section 1 revises the background-check reference to s. 790.233."
+  },
+  "operative_text": "Section 2 (s. 790.233, F.S.): A person may not have in his or her care, custody, possession, or control a firearm or any ammunition if the person:\nSection 2 (s. 790.233, F.S.): A person convicted of a misdemeanor offense of domestic violence shall, upon conviction, be required to surrender all firearms and ammunition in his or her possession as provided in subsection (5).\nSection 2 (s. 790.233, F.S.): Upon being convicted of a misdemeanor offense of domestic violence under this section, the court shall order the defendant to surrender to the local law enforcement agency all firearms and ammunition owned by the defendant in the defendant's custody, control, or possession except as provided in subsection (6), and to surrender any license to carry a concealed weapon or firearm issued under s. 790.06.\nSection 2 (s. 790.233, F.S.): A defendant may elect to transfer all firearms and ammunition he or she owns which have been surrendered to or seized by a local law enforcement agency pursuant to subsection (5) to another person who is willing to receive the defendant's firearms and ammunition.\nSection 3 (new s. 790.234, F.S.): When at the scene of an alleged act of domestic violence, a law enforcement officer must remove a firearm from the scene if:"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "FL-H-1621-2025",
+  "scope": "state:fl",
+  "title": "H1621 (2025 Regular): Offenses Involving Firearms with Bump Stocks",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2025/1621",
+    "https://www.flsenate.gov/Session/Bill/2025/1621/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kevin Chambliss",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bab5c75a-ea6d-43b4-8e43-2d1c9afc27b8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-02-28; official copy, https://www.flsenate.gov/Session/Bill/2025/1621/BillText/Filed/PDF (LegiScan doc 3148545))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-1621-2025.introduced.pdf",
+      "sha256": "3fbede061f543550f0993c49eed12c60d4b60d80fc85b695d581e514ddd6e971"
+    },
+    "note": "Introduced text (filed 2025-02-28). In s. 790.001(13) 'which' and 'function' are struck and 'that:' and 'pull' added. Section 2 adds one row to the offence severity chart, referring to s. 790.222, which is not created by this bill. No vote recorded."
+  },
+  "operative_text": "Section 1 (s. 790.001, F.S.): \"Machine gun\" means any firearm that: (a) Shoots, or is designed to shoot, automatically more than one shot, without manually reloading, by a single pull of the trigger; or (b) Is modified by a conversion kit, a tool, an accessory, or a device that is used to alter the rate of fire of the firearm to mimic automatic weapon fire or that is used to increase the rate of fire to a faster rate than is possible for a person to fire such firearm unassisted by a conversion kit, a tool, an accessory, or a device by a single pull of the trigger.\nSection 2 (s. 921.0022, F.S.): 790.222 3rd Prohibited acts related to bump-fire stocks."
+}

@@ -1,0 +1,78 @@
+{
+  "id": "FL-H-465-2022",
+  "scope": "state:fl",
+  "title": "H0465 (2022 Regular): United States Armed Forces",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2022/465",
+    "https://www.flsenate.gov/Session/Bill/2022/465/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tyler Sirois",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "937bc5a2-b2d7-4a16-ba4b-543cf9fb0054"
+    },
+    {
+      "name": "Tommy Gregory",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Christopher Benjamin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Cord Byrd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Wyman Duggan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2f00dc22-d140-4121-b2d6-10b20e13bcb4"
+    },
+    {
+      "name": "Jason Fischer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sam Killebrew",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jim Mooney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ac0e1e4-568a-4f9b-bbaf-57e4a3fc59b2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "taxes: Section 15 — exempts Space Force post exchanges from the cigarette tax"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-11-02; official copy, https://www.flsenate.gov/Session/Bill/2022/465/BillText/Filed/PDF (LegiScan doc 2440329))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-465-2022.introduced.pdf",
+      "sha256": "26a5df19dd2b84b960b47db45e399cbcdffaa1459acf101ede89ff59351b9806"
+    },
+    "note": "Introduced version (filed 2021-11-02); amendments are not in the text read. Space Force is added (underlined) to the existing list in s. 790.25(3)(a). Most of the bill is Space Force definitions, oaths, leave, flags and uniforms."
+  },
+  "operative_text": "Section 20 (s. 790.25, F.S.): The provisions of ss. 790.053 and 790.06 do not apply in the following instances, and, despite such sections, it is lawful for the following persons to own, possess, and lawfully use firearms and other weapons, ammunition, and supplies for lawful purposes: (a) Members of the Militia, National Guard, Florida State Defense Force, Army, Navy, Air Force, Marine Corps, Space Force, Coast Guard, organized reserves, and other armed forces of the state and of the United States, when on duty, when training or preparing themselves for military duty, or while subject to recall or mobilization;"
+}

@@ -1,0 +1,128 @@
+{
+  "id": "FL-H-1419-2018",
+  "scope": "state:fl",
+  "title": "H1419 (2018 Regular): Firearms",
+  "urls": [
+    "http://www.flsenate.gov/Session/Bill/2018/1419",
+    "http://www.flsenate.gov/Session/Bill/2018/1419/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lawrence McClure",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1842c30e-2c39-4b96-af26-fb58c83b53f6"
+    },
+    {
+      "name": "Ross Spano",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Larry Ahern",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Cord Byrd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Byron Donalds",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "13972902-fa8a-4ebc-91f6-b451db77c7d1"
+    },
+    {
+      "name": "Julian Fant",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Heather Fitzenhagen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Julio Gonzalez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Erin Grall",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0d0fd8d2-a5d5-485d-8f27-a0e35f538964"
+    },
+    {
+      "name": "James Grant",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tom Leek",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "13b58346-046a-457f-b3af-05727a94ee2f"
+    },
+    {
+      "name": "Amber Mariano",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Daniel Perez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Scott Plakon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rene Plasencia",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Charlie Stone",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jayer Williamson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Clay Yarborough",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6061a8a6-edaf-44cb-85c3-7415c76bb4de"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2018-01-09; official copy, http://www.flsenate.gov/Session/Bill/2018/1419/BillText/Filed/PDF (LegiScan doc 1676884))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-1419-2018.introduced.pdf",
+      "sha256": "1ee20a70b8bd6d1ace636127b1ac2eb4f9405bb855c9bbdcfad4605daf3bc946"
+    },
+    "note": "Introduced version (2018-01-09); no passage vote. In (12)(b) 'shall' struck, 'may' added."
+  },
+  "operative_text": "Section 1 (s. 790.06(12)(b), F.S.): A person licensed under this section may not be prohibited from carrying or storing a firearm in a vehicle for lawful purposes.\nSection 1 (s. 790.06(12)(c), F.S.): Notwithstanding any other law, for the purposes of safety, security, personal protection, or other lawful purposes, a church, a synagogue, or any other religious institution may authorize a person licensed under this section to carry a firearm on property owned, rented, leased, borrowed, or lawfully used by the church, synagogue, or religious institution."
+}

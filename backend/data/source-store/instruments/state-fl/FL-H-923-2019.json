@@ -1,0 +1,54 @@
+{
+  "id": "FL-H-923-2019",
+  "scope": "state:fl",
+  "title": "H0923 (2019 Regular): Home Safety",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2019/923",
+    "https://www.flsenate.gov/Session/Bill/2019/923/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Richard Stark",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Amy Mercado",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Cindy Polo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Carlos Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c310dbb0-d4f3-4aa1-9080-90440e46fb01"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-02-19; official copy, https://www.flsenate.gov/Session/Bill/2019/923/BillText/Filed/PDF (LegiScan doc 1917932))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-923-2019.introduced.pdf",
+      "sha256": "d2ec58fb2c34ed6b40af78a0bd9af9625315d97085925726e786d77403690fe0"
+    },
+    "note": "Introduced version (filed 2019-02-19); no passage vote. Section 2 text omits struck words ('or', petitioner wording). Clerk reporting on risk protection orders (subsection 15) left out of the quote for length."
+  },
+  "operative_text": "Section 1 (new s. 790.1741, F.S.): 790.1741 Access to firearms in residence.— (1) PROHIBITION.—Unless an exception under subsection (2) applies, a person who is 18 years of age or older, who is a legal occupant of a residence, and who owns a firearm may not keep in that residence a firearm if he or she knows or has reason to know that another person also residing therein is prohibited by state or federal law from owning, possessing, purchasing, or receiving a firearm. (2) EXCEPTIONS.—Subsection (1) does not apply if that person does any of the following: (a) Stores the firearm in a locked container, a locked gun safe, or a locked trunk. (b) Disables the firearm by means of a firearm safety device. (c) Secures the firearm with a locking device that renders the firearm inoperable. (d) Keeps the firearm readily accessible to himself or herself for immediate use. (3) PENALTY.—A person who violates this section commits a misdemeanor of the second degree, punishable as provided in s. 775.082 or s. 775.083. Section 2 (s. 790.401, F.S.): (a) \"Family or household member\" has the same meaning as in s. 741.28. The term also includes a person who: 1. Has a biological or legal parent-child relationship with the respondent, including a stepparent, stepchild, grandparent, and grandchild; and 2. Is acting or has acted as the respondent's legal guardian. (b)(a) \"Petitioner\" means a law enforcement officer, a law enforcement agency, or a family or household member that petitions a court for a risk protection order under this section. (a) A petition for a risk protection order may be filed by a law enforcement officer, a law enforcement agency, or a family or household member."
+}

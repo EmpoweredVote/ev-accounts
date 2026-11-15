@@ -1,0 +1,47 @@
+{
+  "id": "FL-H-955-2021",
+  "scope": "state:fl",
+  "title": "H0955 (2021 Regular): Mental Health Treatment and Examinations",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2021/955",
+    "https://www.flsenate.gov/Session/Bill/2021/955/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michael Gottlieb",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "130eca48-e5c4-4839-a154-ed07103d7988"
+    },
+    {
+      "name": "Susan Valdes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5d552dfc-c52d-45ec-8988-73152ebaf403"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "healthcare: Sections 1-8 — mental health consent, examination criteria, patient rights, treatment standards"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-02-12; official copy, https://www.flsenate.gov/Session/Bill/2021/955/BillText/Filed/PDF (LegiScan doc 2291310))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-955-2021.introduced.pdf",
+      "sha256": "1c1e8c1600d8fb2d3d8682269c8f2abdc26fff570ee330f6b36da64174bd8495"
+    },
+    "note": "Introduced version (filed 2021-02-12); no passage vote on file. Gun part is one subparagraph of a broad mental-health bill; the rest of the bill is not quoted."
+  },
+  "operative_text": "Section 4 (s. 394.463(2)(d)3., F.S.): The process for the actual return of firearms or ammunition seized or voluntarily surrendered under this paragraph may not take longer than 7 days, unless a behavioral health professional who has conducted a current mental health assessment of the person certifies that there is substantial likelihood that in the near future, the person will inflict serious bodily harm on self or others, as evidenced by recent behavior causing, attempting, or threatening such harm."
+}

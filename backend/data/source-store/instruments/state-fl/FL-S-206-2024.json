@@ -1,0 +1,39 @@
+{
+  "id": "FL-S-206-2024",
+  "scope": "state:fl",
+  "title": "S0206 (2024 Regular): Unlawful Possession of Firearms, Ammunition, or Electric Weapons or Devices",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2024/206",
+    "https://www.flsenate.gov/Session/Bill/2024/206/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Daniel Burgess",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6f4464b5-5567-499d-9de8-354e39ba73a7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2023-10-16; official copy, https://www.flsenate.gov/Session/Bill/2024/206/BillText/Filed/HTML (LegiScan doc 2845737))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-206-2024.introduced.html",
+      "sha256": "b0aaec0c4228bad8e0d4323ae13b6367758a7e77ed235c09d0f0333be7923db2"
+    },
+    "note": "Introduced version (filed 2023-10-16); later amendments are not in the text read. Changes are mostly wording: \"Found ... to have committed a delinquent act\" becomes \"Adjudicated delinquent\"; \"shall\" becomes \"does\"."
+  },
+  "operative_text": "Section 1 (s. 790.23, F.S.): (1) It is unlawful for any person to own or to have in his or her care, custody, possession, or control any firearm, ammunition, or electric weapon or device, or to carry a concealed weapon, including a tear gas gun or chemical weapon or device, if that person has been: (a) Convicted of a felony in the courts of this state; (b) Adjudicated delinquent in the courts of this state, if the delinquent act would be a felony if committed by an adult and such person is under 24 years of age;\nSection 1 (s. 790.23, F.S.): (d) Adjudicated delinquent in another state, territory, or country for committing an act that would be a felony if committed by an adult and which was punishable by imprisonment for a term exceeding 1 year and such person is under 24 years of age; or (e) Found guilty of an offense that is a felony in another state, territory, or country and which was punishable by imprisonment for a term exceeding 1 year."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "FL-S-402-2022",
+  "scope": "state:fl",
+  "title": "S0402 (2022 Regular): Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2022/402",
+    "https://www.flsenate.gov/Session/Bill/2022/402/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tina Polsky",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "69578e2e-7ec6-4321-ad0c-c16ba1d29641"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-10-05; official copy, https://www.flsenate.gov/Session/Bill/2022/402/BillText/Filed/HTML (LegiScan doc 2435592))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-402-2022.introduced.html",
+      "sha256": "33defb84471446eddd21dfce100ca9efb0f3b21469bbdbfeee0280933e7363e2"
+    },
+    "note": "Introduced version (filed 2021-10-05); no passage vote."
+  },
+  "operative_text": "Section 1 (s. 790.065, F.S.): The department must enter the record into the Florida Crime Information Center (FCIC) database of persons prohibited from purchasing a firearm. If a judge or magistrate orders the submittal of the record to the department, the record must be submitted to the department and entered into the FCIC within 24 hours. Upon receipt of proper notice of relief from firearm disabilities granted under sub-subparagraph d., the department shall delete any mental health record of the person granted relief from the automated database of persons who are prohibited from purchasing a firearm based on court records of adjudications of mental defectiveness or commitments to mental institutions, and shall delete the person’s record from the FCIC.\nSection 2 (s. 790.401, F.S.): 2. A person who attempts to commit a violation of subparagraph 1. commits a misdemeanor of the first degree, punishable as provided in s. 775.082 or s. 775.083."
+}

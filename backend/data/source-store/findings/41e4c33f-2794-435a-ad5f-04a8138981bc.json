@@ -1,0 +1,34 @@
+{
+  "politician_id": "41e4c33f-2794-435a-ad5f-04a8138981bc",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "gun rights and the Second Amendment",
+        "repeal of gun laws",
+        "minimum age to buy a gun"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://en.wikipedia.org/wiki/Samantha_Scott_(politician) (confirms House District 52 member since March 2026, elected without opposition; nothing on guns)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=5075 (redirected to the House home page; member page not reached)",
+        "https://www.flhouse.gov/ (home page only, no member page reached)",
+        "not reviewed: https://ballotpedia.org/Samantha_Scott (fetch returned no usable text)",
+        "https://www.flsenate.gov/Session/Bills/2026 (first results page only; no bill sponsored by her seen; she took office near the end of the 2026 session)",
+        "web search on her name plus gun words: nothing on the subject",
+        "no campaign site found; she was elected unopposed",
+        "ontheissues.org and vote411 not reviewed: no entries for her"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:07:52.902Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "FL-S-1562-2019",
+  "scope": "state:fl",
+  "title": "S1562 (2019 Regular): Exceptions to Requirements for the Purchase and Sale of Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2019/1562",
+    "https://www.flsenate.gov/Session/Bill/2019/1562/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joe Gruters",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8fdbeb73-19d0-470e-b7ed-5b4b3bef1995"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-02-28; official copy, https://www.flsenate.gov/Session/Bill/2019/1562/BillText/Filed/HTML (LegiScan doc 1940210))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-1562-2019.introduced.html",
+      "sha256": "c25dc717e3488335e4737ab302f099f6dff1abb5dfce417e59f4498d9948c71c"
+    },
+    "note": "Introduced version (filed 2019-02-28); no passage vote. Sections 1, 4-8 also change the \"law enforcement officer\" definition and update cross-references in ss. 790.06, 790.115, 790.145, 810.095 and 921.0024 (conforming)."
+  },
+  "operative_text": "Section 1 (s. 790.001, F.S.): (7) “Holder of a concealed weapons permit” means a holder of a license issued under s. 790.06 or a full-time, part-time, or auxiliary law enforcement officer, as defined in s. 943.10, who is certified under chapter 943.\nSection 2 (s. 790.0655, F.S.): (a) When a firearm is being purchased by a holder of a concealed weapons permit.\nSection 3 (new s. 790.0656, F.S.): 790.0656 Sale of firearms; county requirements; exceptions.—Waiting period requirements adopted by a county pursuant to s. 5(b), Art. VIII of the State Constitution in connection with the sale of a firearm occurring within the county do not apply if the firearm is being purchased by a holder of a concealed weapons permit.",
+  "higher_law_duty": "Preamble (WHEREAS clauses) cites s. 8(b), Art. I and s. 5(b), Art. VIII of the State Constitution, which exempt holders of a concealed weapons permit from handgun/firearm waiting periods."
+}

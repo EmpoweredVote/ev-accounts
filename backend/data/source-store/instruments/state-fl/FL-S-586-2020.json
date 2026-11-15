@@ -1,0 +1,45 @@
+{
+  "id": "FL-S-586-2020",
+  "scope": "state:fl",
+  "title": "S0586 (2020 Regular): Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2020/586",
+    "https://www.flsenate.gov/Session/Bill/2020/586/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jose Rodriguez",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3174b894-b4a9-41fb-8c77-b1790f9a7ec1"
+    },
+    {
+      "name": "Lori Berman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "daafe458-8c11-40b0-9382-22b22747b7e2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-10-18; official copy, https://www.flsenate.gov/Session/Bill/2020/586/BillText/Filed/HTML (LegiScan doc 2057485))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-586-2020.introduced.html",
+      "sha256": "388226615d1d6b09e8a942bb7f9dd6ebba1c99c7b5b7518fe0a444b10f16ba7d"
+    },
+    "note": "As-filed text (2019-10-18); no votes recorded. Also strikes the rifle/shotgun out-of-state purchase exemption and the exemption for license holders. The printed text runs \"conducted\" and \"only\" together in the sentence quoted from paragraph (b); a space was supplied."
+  },
+  "operative_text": "Section 1 (s. 790.065(1)(b), F.S.): If neither party to a firearm sale or transfer is a licensed importer, licensed manufacturer, or licensed dealer and the sale or transaction is not conducted pursuant to paragraph (a), all other firearm sales or transfers may be conducted only between two persons who have valid concealed weapons or firearms licenses as follows:\nSection 1 (s. 790.065(1)(b)1., F.S.): A seller or transferor must hold a valid concealed weapons or firearms license and may sell or transfer a firearm only to another person who holds a valid concealed weapons or firearms license at the time of the transaction.\nSection 1 (s. 790.065(1)(b)2., F.S.): The seller or transferor must retain a copy of the buyer’s or transferee’s concealed weapons or firearms license and the serial number of the firearm that she or he sold to the buyer or transferee. There is created a civil cause of action for an aggrieved person in this state to seek compensatory damages against a seller or transferor who violates this paragraph by selling or transferring a firearm to a person who does not hold a valid concealed weapons or firearms license.\nSection 1 (s. 790.065(12)(b), F.S.): Any person, including a licensed importer, licensed manufacturer, or licensed dealer, who violates subsection (1) commits a felony of the third degree, punishable as provided in s. 775.082 or s. 775.083."
+}

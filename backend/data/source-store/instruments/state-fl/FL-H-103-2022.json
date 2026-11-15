@@ -1,0 +1,54 @@
+{
+  "id": "FL-H-103-2022",
+  "scope": "state:fl",
+  "title": "H0103 (2022 Regular): Carrying of Firearms Without Licenses",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2022/103",
+    "https://www.flsenate.gov/Session/Bill/2022/103/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Anthony Sabatini",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Borrero",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7c33b97a-9923-46ec-8d95-5c8372609d6f"
+    },
+    {
+      "name": "Jason Fischer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Spencer Roach",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-09-15; official copy, https://www.flsenate.gov/Session/Bill/2022/103/BillText/Filed/PDF (LegiScan doc 2432992))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-103-2022.introduced.pdf",
+      "sha256": "975aa16da6c6a43e5ec950e3713cf9d2c735576713a00c4965587cc0d196924a"
+    },
+    "note": "Introduced version (2021-2022 session); no passage vote. Quote follows the law as it reads after the bill; the s. 790.01(2) sentence is quoted as printed, including 'or,' and its trailing comma, after the struck 'or s. 775.084'. Struck: license requirement in s. 790.01(2); the s. 790.015 conditions for nonresidents; 'firearm or' in s. 790.053(1); license requirement for school guardians (s. 30.15(1)(k)) and for the employee definition in s. 790.251(2)(c). Sections 6, 8 and 9 (guardian program, employee definition, sentencing chart) are conforming changes and omitted from the quote."
+  },
+  "operative_text": "Section 1 (s. 790.01, F.S.): (2) Except as provided in subsection (3), a person who carries a concealed firearm on or about his or her person into any place described in s. 790.06(12)(a) commits a misdemeanor of the second degree, punishable as provided in s. 775.082 or, s. 775.083,\nSection 2 (s. 790.015, F.S.): (1) Notwithstanding s. 790.01(1) a nonresident of Florida may carry a concealed weapon or firearm while in this state (2) A nonresident is subject to the same laws and restrictions with respect to carrying a concealed weapon or firearm as a resident of Florida (3) All valid licenses to carry concealed weapons and firearms issued by other states are hereby given full faith and credit in this state.\nSection 3 (s. 790.06, F.S.): (1) The Department of Agriculture and Consumer Services is authorized to issue reciprocity licenses to carry concealed weapons or firearms to persons qualified as provided in this section.\nSection 5 (s. 790.25, F.S.): (3)(r) A person not otherwise prohibited by law from possessing a firearm or other weapon. (5) Notwithstanding subsection (2), it is lawful and is not a violation of s. 790.01 for a person 18 years of age or older to possess a concealed firearm or other weapon for self-defense or other lawful purpose within the interior of a private conveyance, without a license, if the firearm or other weapon is securely encased or is otherwise not readily accessible for immediate use. Nothing herein contained prohibits the carrying of a legal firearm anywhere in a private conveyance when such firearm is being carried for a lawful use.\nSection 7 (s. 790.053, F.S.): (1) Except as otherwise provided by law and in subsection (2), it is unlawful for any person to openly carry on or about his or her person any electric weapon or device."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "FL-S-1410-2024",
+  "scope": "state:fl",
+  "title": "S1410 (2024 Regular): Risk Protection Orders",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2024/1410",
+    "https://www.flsenate.gov/Session/Bill/2024/1410/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tracie Davis",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "efbbfe32-705f-454c-b5ad-2c893a94e1d8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2024-01-05; official copy, https://www.flsenate.gov/Session/Bill/2024/1410/BillText/Filed/HTML (LegiScan doc 2870090))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-1410-2024.introduced.html",
+      "sha256": "61e794b2dd90ca9e72a09328bb69ab12be49c1bed9b7068f10cfe8bc6e4ba0de"
+    },
+    "note": "Read as filed (Introduced, 2024-01-05); no vote. Struck: 'may' (twice) and 'may seek'; added 'must', 'must request'."
+  },
+  "operative_text": "Section 1 (s. 394.463, F.S.): A law enforcement officer taking custody of a person under this subsection must seize and hold a firearm or any ammunition the person possesses at the time of taking him or her into custody if the person poses a potential danger to himself or herself or others and has made a credible threat of violence against another person. If the law enforcement officer takes custody of the person at the person's residence and the criteria in subparagraph 1. have been met, the law enforcement officer must request the voluntary surrender of firearms or ammunition kept in the residence which have not already been seized under subparagraph 1. If such firearms or ammunition are not voluntarily surrendered, or if the person has other firearms or ammunition that were not seized or voluntarily surrendered when he or she was taken into custody, a law enforcement officer must petition the appropriate court under s. 790.401 for a risk protection order against the person if criteria for such an order are met."
+}

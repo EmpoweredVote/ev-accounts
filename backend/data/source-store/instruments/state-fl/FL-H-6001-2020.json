@@ -1,0 +1,59 @@
+{
+  "id": "FL-H-6001-2020",
+  "scope": "state:fl",
+  "title": "H6001 (2020 Regular): Licenses to Carry Concealed Weapons or Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2020/6001",
+    "https://www.flsenate.gov/Session/Bill/2020/6001/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Anthony Sabatini",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dane Eagle",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Walter Hill",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Stan McClain",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b9ead145-1e46-4862-ad41-42adb8008403"
+    },
+    {
+      "name": "Jayer Williamson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-08-08; official copy, https://www.flsenate.gov/Session/Bill/2020/6001/BillText/Filed/PDF (LegiScan doc 2051834))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-6001-2020.introduced.pdf",
+      "sha256": "bd002df85fbf37b04eecc46b0ce6cd0301cccf3a56b235801ed546b9726d699f"
+    },
+    "note": "Introduced version (2019-08-08). Struck: item 13, 'Any college or university facility unless the licensee is a registered student, employee, or faculty member ...'; later items renumbered 13 and 14. The quote is the unchanged list lead-in; the removal is the operative change."
+  },
+  "operative_text": "Section 1 (s. 790.06, F.S.): A license issued under this section does not authorize any person to openly carry a handgun or carry a concealed weapon or firearm into:"
+}

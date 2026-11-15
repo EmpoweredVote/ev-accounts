@@ -1,0 +1,183 @@
+{
+  "politician_id": "4bc2076d-ad31-47ed-b2d1-499ee38b3d6b",
+  "findings": [
+    {
+      "id": "3ae1af4a267c35b04a4c1c986769a15e4042b3ceade5eb12046bb7bca378e975",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2026/133",
+      "date": "2026-01-15",
+      "date_precision": "day",
+      "instrument_id": "FL-H-133-2026",
+      "act": "yea",
+      "motion": "House: Third Reading RCS#451",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "FL House, House: Third Reading RCS#451, 2026-01-15: yea (tally 74–37); census gate: none.",
+      "subjects": [
+        "minimum age to buy a firearm lowered from 21 to 18",
+        "repeals officer and servicemember rifle/shotgun exception"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-10-08; official copy, https://www.flsenate.gov/Session/Bill/2026/133/BillText/Filed/PDF (LegiScan doc 3272375))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-133-2026.introduced.pdf",
+          "sha256": "c359629e58ded8bc4d5ed8e16422d3c6d22eff621521e1669b3e6fc019e2179f"
+        }
+      }
+    },
+    {
+      "id": "093b6050dac988507166331b438a34d53ccc120028cace989e3e2380a960d048",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2026/1551",
+      "date": "2026-03-05",
+      "date_precision": "day",
+      "instrument_id": "FL-H-1551-2026",
+      "act": "yea",
+      "motion": "House: Third Reading RCS#718",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "FL House, House: Third Reading RCS#718, 2026-03-05: yea (tally 75–29); census gate: none.",
+      "subjects": [
+        "firearm makers shielded from design-feature liability suits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Comm Sub, 2026-02-17; official copy, https://www.flsenate.gov/Session/Bill/2026/1551/BillText/c1/PDF (LegiScan doc 3364900))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-1551-2026.comm-sub.pdf",
+          "sha256": "f13d0ee308f2b9156240f19bb67d1a106f3f24b54a5fb439e79efece81df425e"
+        }
+      }
+    },
+    {
+      "id": "b756f32bc08765560a6ddc2340c7c75308950ef78de475df683fec7a3be74ffa",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2026/757",
+      "date": "2026-03-12",
+      "date_precision": "day",
+      "instrument_id": "FL-H-757-2026",
+      "act": "yea",
+      "motion": "House: Third Reading RCS#834",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "FL House, House: Third Reading RCS#834, 2026-03-12: yea (tally 88–20); census gate: multi-subject.",
+      "subjects": [
+        "felony to fire a gun within 1,000 feet of a school",
+        "held for a bail hearing after arrest",
+        "armed guardian program opened to public colleges and universities"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Enrolled, 2026-03-13; official copy, https://www.flsenate.gov/Session/Bill/2026/757/BillText/er/PDF (LegiScan doc 3394072))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-757-2026.enrolled.pdf",
+          "sha256": "31769f9a633fdb6185c40b828b864c34ff6bbfe8c6fdaea85764348f54ce30f6"
+        }
+      }
+    },
+    {
+      "id": "be96f151caaafc449ddb2c16acd516f36b6a9af68c8741c8fda9f875b76d2506",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2025/6025",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "FL-H-6025-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of FL-H-6025-2025 (sponsor list (prime / co-sponsor)): H6025 (2025 Regular): Restrictions on Firearms and Ammunition During Emergencies.",
+      "subjects": [
+        "repeal of automatic gun and ammunition restrictions during emergencies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Enrolled, 2025-04-23; official copy, https://www.flsenate.gov/Session/Bill/2025/6025/BillText/er/PDF (LegiScan doc 3220035))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-6025-2025.enrolled.pdf",
+          "sha256": "04b07b6628284dcce79cd866cc0299b5776982df188982231135952b1bb0a49f"
+        }
+      }
+    },
+    {
+      "id": "4b7d59b3fef502d8c27faa60a9d6ca7b46deee1b6207ab0f0d30336b54bd803e",
+      "kind": "record",
+      "url": "https://www.flsenate.gov/Session/Bill/2025/759",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "FL-H-759-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of FL-H-759-2025 (sponsor list (prime / co-sponsor)): H0759 (2025 Regular): Minimum Age for Firearm Purchase or Transfer.",
+      "subjects": [
+        "minimum age to buy a firearm lowered from 21 to 18",
+        "repeals officer and servicemember rifle/shotgun exception"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-02-19; official copy, https://www.flsenate.gov/Session/Bill/2025/759/BillText/Filed/PDF (LegiScan doc 3130086))",
+        "fetched_at": "2026-11-15T01:04:01.759077Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-759-2025.introduced.pdf",
+          "sha256": "02d9105d2e2c7d686f17ed88701084c80f8196b291240043b7423da39dbafa76"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "minimum age to buy a gun",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "gun limits during emergencies",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "blocked: https://www.myfloridahouse.gov/Sections/Representatives/details.aspx?MemberId=4737 (redirects to the House home page; member page text not reachable)",
+        "blocked: https://www.flhouse.gov/Sections/Representatives/details.aspx?MemberId=4737 (returned an empty page)",
+        "no campaign site found or reviewed",
+        "blocked: https://ballotpedia.org/Brian_Hodgers (empty response)",
+        "blocked: https://ballotpedia.org/Florida_House_of_Representatives_District_32 (empty response)",
+        "blocked: https://floridapolitics.com/archives/710533-brian-hodgers-will-run-to-succeed-debbie-mayfield-in-hd-32 (HTTP 402)",
+        "blocked: https://www.flsenate.gov/Session/Bill/2026/133 (request rejected)",
+        "https://www.flsenate.gov/Session/Bill/2025/6025 (HB 6025 page, lists him as a co-introducer; already on file)",
+        "https://www.flsenate.gov/Session/Bill/2025/759 (HB 759 page, already on file)",
+        "https://www.flsenate.gov/Session/Bill/2026/1551 and /757 (bill titles only; votes already on file)",
+        "https://en.wikipedia.org/wiki/Brian_Hodgers (lead only; shows a sitting District 32 member since June 2025)",
+        "two web searches on name plus gun words: no result naming him with his own words on guns",
+        "scope not confirmed: a search summary says he was a 2026 general-election candidate in District 32, but no fetched page confirmed the November 2026 ballot or result",
+        "not reviewed: ontheissues.org, vote411, vote.norml.org/politicians/172907"
+      ],
+      "found": 0,
+      "at": "2026-11-15T02:08:57.776Z",
+      "by": "source-collector"
+    }
+  ]
+}

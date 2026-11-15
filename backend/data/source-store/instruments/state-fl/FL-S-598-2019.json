@@ -1,0 +1,39 @@
+{
+  "id": "FL-S-598-2019",
+  "scope": "state:fl",
+  "title": "S0598 (2019 Regular): Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2019/598",
+    "https://www.flsenate.gov/Session/Bill/2019/598/BillText/c1/HTML"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Ben Albritton",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ed486139-a261-42b2-bdb7-f23de601161e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Comm Sub, 2019-02-20; official copy, https://www.flsenate.gov/Session/Bill/2019/598/BillText/c1/HTML (LegiScan doc 1920323))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-598-2019.comm-sub.html",
+      "sha256": "a984f32f36059a4ff461204161184f9169a97b86730c8d7e538c131175f9e517"
+    },
+    "note": "Committee Substitute 1 (2019-02-20), version 'other'; no passage vote. 'shall' struck/'may' added and 'any' struck/'a' added in the lead sentence. Section 2 only reenacts s. 775.30(2) for a cross-reference."
+  },
+  "operative_text": "Section 1 (s. 790.115(2)(a), F.S.): A person may not possess a firearm, electric weapon or device, destructive device, or other weapon as defined in s. 790.001(13), including a razor blade or box cutter, except as authorized in support of school-sanctioned activities, at a school-sponsored event, or on the property of any school, school bus, or school bus stop; however, a person may carry a firearm: 4. In a concealed manner, if the person is authorized to carry a concealed firearm under s. 790.06, upon the property of a religious institution, as defined in s. 496.404, when the property also contains a school. However, a person may not carry a concealed firearm: a. During school hours or when curricular or extracurricular school-sponsored events are taking place on the property. b. In any place or in any manner prohibited by federal law."
+}

@@ -1,0 +1,202 @@
+{
+  "politician_id": "2e0915c5-45d7-48de-ae59-04bcd6bda1f7",
+  "findings": [
+    {
+      "id": "4361ff32e675d44543a0bcca3aae820c834d6c4ff6f5cc62d320842665a49bb4",
+      "kind": "own-words",
+      "url": "https://www.news4jax.com/news/local/2026/03/31/florida-attorney-general-says-non-dangerous-felons-should-keep-gun-rights",
+      "date": "2026-03",
+      "date_precision": "month",
+      "passage": "Firearm ownership is an American tradition and a God given right to self-defense in enshrined on our constitution by the Second Amendment",
+      "note": "Statement quoted by a TV news story (News4Jax) on gun ownership as a fundamental right; says government may restrict it only when a person poses a credible threat to others' physical safety.",
+      "subjects": [
+        "general statement on gun rights",
+        "who may own a gun (felons)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:07:15.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "34be6cb70c9d85a6b538830c3e72ea12344aae322f28244555172b99e5330eb0",
+      "kind": "own-words",
+      "url": "https://www.news4jax.com/news/local/2026/03/31/florida-attorney-general-says-non-dangerous-felons-should-keep-gun-rights",
+      "date": "2026-03",
+      "date_precision": "month",
+      "passage": "For instance, a man who is convicted of carrying a firearm without a permission slip from the government in another state who poses no danger to the community should not be disarmed or dragged to prison as a felon for exerting his right to self-defense",
+      "note": "Quoted by News4Jax; argues a person convicted only of carrying without a licence elsewhere should not be barred from owning a gun.",
+      "subjects": [
+        "carry a gun without a permit",
+        "who may own a gun (felons)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:07:15.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8b30e5dab6f91dc45f2144ab29bd4ad23a34644cf5277e8479a6bffaabfb761a",
+      "kind": "own-words",
+      "url": "https://www.news4jax.com/news/local/2026/03/31/florida-attorney-general-says-non-dangerous-felons-should-keep-gun-rights",
+      "date": "2026-03",
+      "date_precision": "month",
+      "passage": "While Florida law barring dangerous felons from possessing firearms is constitutional, it may only be required to those who are a danger to the public. Not someone who should have never been a felon in the first place",
+      "note": "Quoted by News4Jax; says the felon-possession ban is valid only for dangerous people.",
+      "subjects": [
+        "who may own a gun (felons)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:07:15.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12b3fca932e0ab49b8ba2aaafd1d4d5ed61edf6a112e13f1d6ed0d14e43e158c",
+      "kind": "record",
+      "url": "https://www.wlrn.org/government-politics/2026-03-20/uthmeier-elaborates-on-why-a-nondangerous-felon-shouldnt-be-banned-from-owning-a-firearm",
+      "date": "2026-03",
+      "date_precision": "month",
+      "act": "other",
+      "motion": "Supplemental brief in State v. Morgan (First District Court of Appeal), asking to reverse a felon-in-possession conviction",
+      "note": "The attorney general's office reversed its earlier defence of a felon-possession conviction (Sept. 2025 brief) and filed a 37-page brief saying disarming a nondangerous felon, here one convicted only of carrying without a licence in another state, does not fit historical tradition.",
+      "subjects": [
+        "who may own a gun (felons)",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:07:15.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "143fb1ecef5ff497c408b7efcc84856f93d3424da6cf03e43437bcd0a4c02703",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/articles/florida-attorney-general-uthmeier-urges-171147199.html",
+      "date": "2025-08",
+      "date_precision": "month",
+      "passage": "The upshot of Florida's law is that a 20-year-old single mom is powerless to purchase a firearm to defend herself and her child against a menacing ex-boyfriend,",
+      "note": "From the attorney general's office brief to the U.S. Supreme Court, as quoted in a news story, urging review and reversal of Florida's under-21 ban on buying long guns.",
+      "subjects": [
+        "minimum age to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:07:15.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "43efd3030b8bebf6486800867a55d57183a2f40008b956ac84ad575dca563499",
+      "kind": "record",
+      "url": "https://www.yahoo.com/news/articles/florida-attorney-general-uthmeier-urges-171147199.html",
+      "date": "2025-08",
+      "date_precision": "month",
+      "act": "other",
+      "motion": "17-page brief urging U.S. Supreme Court to take NRA's appeal and strike down Florida's under-21 rifle/long-gun purchase ban (2018 law)",
+      "note": "The attorney general declined to defend the 2018 law (said so in March 2025) and filed a brief asking the Supreme Court to hear the case and find the ban unconstitutional.",
+      "subjects": [
+        "minimum age to buy a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:07:15.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "31e48a20b0b8528ebcc511007f5d22fefb526ac60b7e8ec33eff5aa48c2cfa88",
+      "kind": "own-words",
+      "url": "https://www.wusf.org/courts-law/2026-09-22/uthmeier-embraces-doj-opinion-finding-federal-handgun-sales-ban-unconstitutional",
+      "date": "2026-09-18",
+      "date_precision": "day",
+      "passage": "Glad DOJ has followed suit in the fight for Second Amendment rights of Americans who are old enough to sign up to defend our nation!",
+      "note": "Post quoted by a public radio story, welcoming a federal Justice Department opinion that the federal ban on dealer handgun sales to 18-20-year-olds is unconstitutional.",
+      "subjects": [
+        "minimum age to buy a gun",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:07:15.816Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2a2ea7306b5f9dcea786882883219f2fe6c63a3f02567cf2c6c68db59da12221",
+      "kind": "record",
+      "url": "https://www.fox13news.com/news/floridas-attorney-general-says-open-carry-law-state",
+      "date": "2025-09-15",
+      "date_precision": "day",
+      "act": "other",
+      "motion": "Guidance to prosecutors and police to stop enforcing Florida's open-carry ban after McDaniels v. State",
+      "note": "News story: the attorney general told prosecutors and law enforcement not to arrest or try law-abiding citizens carrying a firearm visibly, said the First District ruling binds all trial courts, and said bans on guns in places like courthouses, polling places and schools remain.",
+      "subjects": [
+        "carry a gun without a permit",
+        "open carry",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T02:07:15.816Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "open carry",
+        "minimum age to buy a gun",
+        "who may own a gun (felons)",
+        "general Second Amendment statements",
+        "ban on assault-style guns",
+        "red flag orders",
+        "suppressors"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.myfloridalegal.com (403 on the attorney general's own site; their own pages not readable, so own words come from news stories that quote them)",
+        "blocked: https://ballotpedia.org/James_Uthmeier (empty response)",
+        "Florida attorney general is a statewide office, not a legislator: no bill sponsorships to check on www.flsenate.gov",
+        "news search on name plus gun words: found open carry, under-21 long-gun, felon-possession and federal handgun-age stories (fetched four news stories)",
+        "nothing on the subject: assault-style weapons, magazines, background checks, red flag orders, suppressors in the news search",
+        "not reviewed: the attorney general's open carry guidance post and court briefs themselves (site blocked); candidacy status for the 2026 ballot not confirmed beyond news stories naming them as sitting attorney general"
+      ],
+      "found": 8,
+      "at": "2026-11-15T02:07:15.816Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "FL-S-548-2025",
+  "scope": "state:fl",
+  "title": "S0548 (2025 Regular): Carrying Concealed Weapons and Firearms in Courthouses",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2025/548",
+    "https://www.flsenate.gov/Session/Bill/2025/548/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joe Gruters",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8fdbeb73-19d0-470e-b7ed-5b4b3bef1995"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-02-07; official copy, https://www.flsenate.gov/Session/Bill/2025/548/BillText/Filed/HTML (LegiScan doc 3108659))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-548-2025.introduced.html",
+      "sha256": "8e37f4fa0d90bb6504abfc5384158ff78e8d26efe06b8d6b2e8fd4af56f836a4"
+    },
+    "note": "Introduced version (filed 2025-02-07); no passage vote on file. Courtroom wording is reworded (nothing in / precludes struck, does not preclude added) with no change in meaning."
+  },
+  "operative_text": "Section 1 (s. 790.06(12)(a), F.S.): A license issued under this section does not authorize any person to openly carry a handgun or carry a concealed weapon or concealed firearm into:\nSection 1 (s. 790.06(12)(a)4., F.S.): Any courthouse, except that this section does not preclude a judge or magistrate from carrying a concealed weapon or concealed firearm into any courthouse in the circuit in which he or she serves in such capacity;\nSection 1 (s. 790.06(12)(a)5., F.S.): Any courtroom, except that this section does not preclude a judge from carrying a concealed weapon or concealed firearm or determining who will carry a concealed weapon or concealed firearm in his or her courtroom;"
+}

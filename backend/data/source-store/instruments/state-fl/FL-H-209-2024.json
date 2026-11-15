@@ -1,0 +1,39 @@
+{
+  "id": "FL-H-209-2024",
+  "scope": "state:fl",
+  "title": "H0209 (2024 Regular): Possession or Use of a Firearm in a Sensitive Location",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2024/209",
+    "https://www.flsenate.gov/Session/Bill/2024/209/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michele Rayner-Goolsby",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d89e41dc-7008-407a-a89c-398550a1691a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2023-10-17; official copy, https://www.flsenate.gov/Session/Bill/2024/209/BillText/Filed/PDF (LegiScan doc 2846035))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-209-2024.introduced.pdf",
+      "sha256": "847ccbd4dc0b532eee77c3435323e75918eb130ba6368c3f377905b4fed0129d"
+    },
+    "note": "Introduced version (filed 2023-10-17); no passage vote. Quote shortens the location list and exceptions (bracketed); the whole section is new text."
+  },
+  "operative_text": "Section 1 (new s. 790.075, F.S.): 790.075 Possession or use of firearm in sensitive location.— (1) As used in this section, the term \"sensitive location\" means any of the following: (a) Any part of a health care facility licensed by the state, including, but not limited to, a hospital, a nursing home or other similar residential facility, or a provider of services for the care, support, or treatment of individuals. (b) Any part of a building owned, leased, or operated by a governmental entity, including, but not limited to, a polling place, a courthouse, or a law enforcement facility. [locations (c)-(r) continue: parks, worship, libraries, schools, transit, bars, venues] (2) Notwithstanding any other law, a person may not possess a firearm in a sensitive location. (a) Except as provided in paragraph (b), a person who violates this subsection commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084. (b) A person who discharges a firearm while violating this subsection commits a felony of the second degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084. (3) This section does not apply to: [exceptions (a)-(f): federal and state law enforcement and retired officers, licensed security guards, active duty military, certain government employees, program operators]"
+}

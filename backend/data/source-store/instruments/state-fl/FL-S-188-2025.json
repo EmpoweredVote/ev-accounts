@@ -1,0 +1,39 @@
+{
+  "id": "FL-S-188-2025",
+  "scope": "state:fl",
+  "title": "S0188 (2025 Regular): Possession or Use of a Firearm in a Sensitive Location",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2025/188",
+    "https://www.flsenate.gov/Session/Bill/2025/188/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lori Berman",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "daafe458-8c11-40b0-9382-22b22747b7e2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-01-10; official copy, https://www.flsenate.gov/Session/Bill/2025/188/BillText/Filed/HTML (LegiScan doc 3048023))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-188-2025.introduced.html",
+      "sha256": "5a2ebbbeac077884b95a89237b14714ad01f759b78ec7f80a4a8160545d6eed0"
+    },
+    "note": "Introduced text (filed 2025). Whole section is new. The quote omits the exceptions in subsection (3) (certain officers, security employees, active-duty military, licensed program operators)."
+  },
+  "operative_text": "Section 1 (new s. 790.075, F.S.), subsection (1): As used in this section, the term “sensitive location” means any of the following: (a) Any part of a health care facility licensed by this state, including, but not limited to, a hospital, a nursing home or other similar residential facility, or a provider of services for the care, support, or treatment of individuals. (b) Any part of a building owned, leased, or operated by a governmental entity, including, but not limited to, a polling place, a courthouse, or a law enforcement facility. (c) Any park, recreational facility or area, or playground owned or controlled by this state, a county, or a municipality or other governmental entity. (d) Any place of worship or religious observation. (e) Any public library, public playground, public park, or public zoo. (f) The location of any program licensed, regulated, certified, operated, or funded by a governmental entity which provides services to children, youth, or young adults; any legally exempt child care provider; or any child care program for which a permit to operate such program has been issued. (g) Any place owned or controlled by a federal, state, or local governmental entity for the purpose of government administration, including, but not limited to, any courthouse. (h) Any place that provides health, behavioral health, or chemical dependence care or services. (i) Any nursery school, preschool, or summer camp. (j) The location of any program licensed, regulated, certified, operated, or funded by a governmental entity which provides developmental disability services. (k) The location of any program licensed, regulated, certified, operated, or funded by a governmental entity which provides mental health services. (l) The location of any program licensed, regulated, certified, operated, or funded by a governmental entity which provides disability services. (m) Any homeless shelter, runaway youth shelter, family shelter, adult shelter, domestic violence shelter, or emergency shelter, or the location of any residential program for victims of domestic violence in or upon any building or grounds owned or leased by any governmental entity. (n) Any educational institution, college or university, licensed private career school, school district, public school, private school, or charter school. (o) Any place, conveyance, or vehicle used for public transportation or public transit, including, but not limited to, train cars, buses, ferries, railroads, or marine or aviation transportation, or any facility used for or in connection with service in the transportation of passengers, including, but not limited to, airports, train stations, subway and rail stations, or bus terminals. (p) Any bar, restaurant where alcohol is served, or other site or facility where alcohol is sold for consumption on the premises. (q) Any site or facility where cannabis is sold for consumption on the premises. (r) Any place used for performances, artistic displays, entertainment, gaming, or sporting events, including, but not limited to, theaters, stadiums, racetracks, museums, amusement parks, performance venues, concerts, exhibits, conference centers, banquet halls, or gaming facilities.\nSection 1 (new s. 790.075, F.S.), subsection (2): Notwithstanding any other law, a person may not possess a firearm in a sensitive location. (a) Except as provided in paragraph (b), a person who violates this subsection commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084."
+}

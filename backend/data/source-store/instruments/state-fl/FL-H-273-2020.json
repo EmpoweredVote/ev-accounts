@@ -1,0 +1,66 @@
+{
+  "id": "FL-H-273-2020",
+  "scope": "state:fl",
+  "title": "H0273 (2020 Regular): Carrying of Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2020/273",
+    "https://www.flsenate.gov/Session/Bill/2020/273/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Anthony Sabatini",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Byron Donalds",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "13972902-fa8a-4ebc-91f6-b451db77c7d1"
+    },
+    {
+      "name": "Dane Eagle",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Walter Hill",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Stan McClain",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b9ead145-1e46-4862-ad41-42adb8008403"
+    },
+    {
+      "name": "Tyler Sirois",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "937bc5a2-b2d7-4a16-ba4b-543cf9fb0054"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-10-01; official copy, https://www.flsenate.gov/Session/Bill/2020/273/BillText/Filed/PDF (LegiScan doc 2055422))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-273-2020.introduced.pdf",
+      "sha256": "7b0bbfce6339b1d5685c47877610bb03fcaa4c0dd78c8ab57153c75af0807867"
+    },
+    "note": "Read as filed (Introduced, 2019-10-01); no vote. Struck: the license requirement in s. 790.01(2), felony of the third degree (now second-degree misdemeanor), the nonresident conditions in s. 790.015, the open-carry firearm ban in s. 790.053, 'other than a handgun' in s. 790.25(5). Sections 4, 6, 8, 9 are conforming (pharmacy possession, school guardian license requirement struck, employee definition, ranking chart entry for carrying a concealed firearm struck); treated as part of the carry change."
+  },
+  "operative_text": "Section 1 (s. 790.01, F.S.): Except as provided in subsection (3), a person who carries a concealed firearm on or about his or her person into any place described in s. 790.06(12)(a) commits a misdemeanor of the second degree, punishable as provided in s. 775.082 or, s. 775.083, Section 2 (s. 790.015, F.S.): All valid licenses to carry concealed weapons and firearms issued by other states are hereby given full faith and credit in this state. Section 5 (s. 790.25, F.S.): A person not otherwise prohibited by law from possessing a firearm. Nothing herein contained prohibits the carrying of a legal firearm anywhere in a private conveyance when such firearm is being carried for a lawful use."
+}

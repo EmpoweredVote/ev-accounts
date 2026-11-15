@@ -1,0 +1,38 @@
+{
+  "id": "FL-S-814-2025",
+  "scope": "state:fl",
+  "title": "S0814 (2025 Regular): Weapons or Firearms at School-sponsored Events or on School Property",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2025/814",
+    "https://www.flsenate.gov/Session/Bill/2025/814/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Randy Fine",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-02-18; official copy, https://www.flsenate.gov/Session/Bill/2025/814/BillText/Filed/HTML (LegiScan doc 3128339))",
+    "fetched_at": "2026-11-15T02:43:36.063765Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-814-2025.introduced.html",
+      "sha256": "a96d4dea9a0748af7bf3b0f6864a8f94da2766a1860b054b32bdd6853f5bf164"
+    },
+    "note": "Introduced version (2025-02-18); no passage vote recorded. Struck: 'possess'; no period follows 'do so' in the print (a struck colon is there) replaced by 'store'; the school-property exceptions (firearms programs, career-center ranges, vehicle carry under s. 790.25(4)) and the old definition of 'school' (including postsecondary) were struck; the old license-holder exception for stun guns at colleges was struck. The 'school' definition in the quote says 'public preschool' as printed. Sections 3-12 only reenact statutes for cross-references."
+  },
+  "operative_text": "Section 1 (s. 790.115, F.S.): A person may not store any firearm, electric weapon or device, destructive device, or other weapon as defined in s. 790.001, including a razor blade or box cutter, except as authorized in support of school-sanctioned activities, at a school-sponsored event or on the property of any school, school bus, or school bus stop; however, a person may carry a firearm on the property of any college or university, including, but not limited to, any dormitory or residence hall owned or operated by a college or university, and in any other location he or she is legally authorized to do so\nSection 1 (s. 790.115, F.S.): As used in this section, the term “school” means a public preschool or any elementary school, middle school, junior high school, secondary school, or career center, regardless of whether public or private.\nSection 1 (s. 790.115, F.S.): The Department of Law Enforcement may authorize a college or university, while hosting or sponsoring a sporting or athletic event, to designate a campus facility or area as a sensitive location in which the possession of a concealed weapon or a concealed firearm is prohibited. To receive such authorization, the college or university must submit a security plan to the Department of Law Enforcement for approval.\nSection 2 (s. 790.06, F.S.): Any college or university facility or area the Department of Law Enforcement has authorized the college or university to designate as a sensitive location while the college or university hosts or sponsors a sporting or athletic event"
+}

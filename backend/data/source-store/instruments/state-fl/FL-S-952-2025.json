@@ -1,0 +1,51 @@
+{
+  "id": "FL-S-952-2025",
+  "scope": "state:fl",
+  "title": "S0952 (2025 Regular): Restrictions on Firearms and Ammunition During Emergencies",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2025/952",
+    "https://www.flsenate.gov/Session/Bill/2025/952/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Blaise Ingoglia",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8c7b61e3-709d-42f5-acf1-0c6a7e328f0a"
+    },
+    {
+      "name": "Clay Yarborough",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6061a8a6-edaf-44cb-85c3-7415c76bb4de"
+    },
+    {
+      "name": "Jay Collins",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ee966041-d44a-4c05-b7ae-d8d22bfb93a7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-02-20; official copy, https://www.flsenate.gov/Session/Bill/2025/952/BillText/Filed/HTML (LegiScan doc 3133064))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-952-2025.introduced.html",
+      "sha256": "c91abe999e21b6dd893bbacfab47724a4fd204e65636297ea6b7c57273fa0657"
+    },
+    "note": "Introduced text (filed 2025-02-20). The repealed section's wording is not in the bill. No vote recorded."
+  },
+  "operative_text": "Section 1 (s. 870.044, F.S.): Section 870.044, Florida Statutes, is repealed."
+}

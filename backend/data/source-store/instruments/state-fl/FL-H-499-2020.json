@@ -1,0 +1,79 @@
+{
+  "id": "FL-H-499-2020",
+  "scope": "state:fl",
+  "title": "H0499 (2020 Regular): Domestic Violence",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2020/499",
+    "https://www.flsenate.gov/Session/Bill/2020/499/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Anna Eskamani",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "24293096-f120-4914-ab83-d6670ad3efcd"
+    },
+    {
+      "name": "Joseph Casello",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Cortes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dan Daley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "601ae676-fd42-478d-a253-bac744e5c968"
+    },
+    {
+      "name": "Delores Hogan Johnson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dotie Joseph",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "aa573206-cf30-4782-8243-a930919c851d"
+    },
+    {
+      "name": "Cindy Polo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Carlos Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c310dbb0-d4f3-4aa1-9080-90440e46fb01"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: Section 1 (new s. 784.04875, F.S.) — creates a general first-degree misdemeanor for any act of domestic or dating violence, not a gun crime"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-10-31; official copy, https://www.flsenate.gov/Session/Bill/2020/499/BillText/Filed/PDF (LegiScan doc 2059539))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-499-2020.introduced.pdf",
+      "sha256": "8b43cded84e4ae5f1d86417898a907478bc4e1a25f60ce6cdcb8c55112f52e0e"
+    },
+    "note": "As-filed text (filed 2019-10-31); no votes recorded. Section 2 adds a cross-reference to 18 U.S.C. s. 922(d)(9) in s. 790.065."
+  },
+  "operative_text": "Section 3 (s. 790.233, F.S.): A person may not have in his or her care, custody, possession, or control a firearm or any ammunition if the person: … Has been convicted of a misdemeanor offense of domestic violence.\nSection 3 (s. 790.233(4), F.S.): A person convicted of a misdemeanor offense of domestic violence must, upon conviction, be required to surrender all firearms and ammunition in his or her possession as provided for in subsection (5).\nSection 3 (s. 790.233(5)(a), F.S.): Upon convicting a defendant of a misdemeanor offense of domestic violence under this section, the court shall order the defendant to surrender to the local law enforcement agency all firearms and ammunition owned by the defendant which are in the defendant's custody, control, or possession, except as provided in subsection (6), and to surrender any license to carry a concealed weapon or firearm issued under s. 790.06.\nSection 3 (s. 790.233(6), F.S.): A defendant may elect to transfer all firearms and ammunition he or she owns which have been surrendered to or seized by a local law enforcement agency pursuant to subsection (5) to another person who is willing to receive the defendant's firearms and ammunition.\nSection 4 (new s. 790.234, F.S.): (2) When at the scene of an alleged act of domestic violence, a law enforcement officer must remove a firearm from the scene if: (a) The law enforcement officer has probable cause to believe that an act of domestic violence has occurred; and (b) The firearm is in plain view or is discovered during a consensual or other lawful search.\nSection 4 (new s. 790.234(4), F.S.): Within 14 days after the conclusion of a proceeding on the alleged act of domestic violence or dating violence, the owner of the firearm may retake possession of the firearm unless ordered to surrender the firearm pursuant to s. 790.233."
+}

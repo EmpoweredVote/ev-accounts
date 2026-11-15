@@ -1,0 +1,49 @@
+{
+  "id": "FL-H-117-2020",
+  "scope": "state:fl",
+  "title": "H0117 (2020 Regular): Concealed Weapons or Concealed Firearms Licensing",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2020/117",
+    "https://www.flsenate.gov/Session/Bill/2020/117/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Al Jacquet",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dotie Joseph",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "aa573206-cf30-4782-8243-a930919c851d"
+    },
+    {
+      "name": "Cindy Polo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-09-05; official copy, https://www.flsenate.gov/Session/Bill/2020/117/BillText/Filed/PDF (LegiScan doc 2051871))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-117-2020.introduced.pdf",
+      "sha256": "c1238a6ddb94c4e427afd7071792401e6bc976c66aed3f2df0d97faa6fc62711"
+    },
+    "note": "Introduced version (filed 2019-09-05); no passage vote. The word 'and' at the end of paragraph (m) is struck and re-added at the end of new paragraph (n)."
+  },
+  "operative_text": "Section 1 (s. 790.06, F.S.): 790.06 License to carry concealed weapon or firearm.— (2) The Department of Agriculture and Consumer Services shall issue a license if the applicant: (m) Has not been issued an injunction that is currently in force and effect and that restrains the applicant from committing acts of domestic violence or acts of repeat violence; (n) Has undergone a mental health evaluation conducted by a clinical psychologist or a psychiatrist, as those terms are defined in s. 394.455, and has been determined to be competent and of sound mind or provides a letter from a medical professional licensed under chapter 458 or chapter 459 stating that the professional has examined the individual and the individual is not suffering from any serious mental illness; and"
+}

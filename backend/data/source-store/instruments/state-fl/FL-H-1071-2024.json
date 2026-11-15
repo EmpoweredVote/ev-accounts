@@ -1,0 +1,82 @@
+{
+  "id": "FL-H-1071-2024",
+  "scope": "state:fl",
+  "title": "H1071 (2024 Regular): Department of Agriculture and Consumer Services",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2024/1071",
+    "https://www.flsenate.gov/Session/Bill/2024/1071/BillText/c2/PDF"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Daniel Alvarez",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9bfbf4ca-07c0-41e1-b9ba-aaa9972d83a2"
+    },
+    {
+      "name": "Webster Barnaby",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d34e4b5e-639e-44ce-bb51-46282b704641"
+    },
+    {
+      "name": "Jennifer Canady",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "75af5c00-2087-4c10-9653-fdd9f3a81390"
+    },
+    {
+      "name": "Randy Maggard",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "277e6919-bcdf-43c6-9d28-79e6551e68a6"
+    },
+    {
+      "name": "Rick Roth",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Chase Tramont",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4f927291-6725-4ff6-a213-b40f472cfa48"
+    },
+    {
+      "name": "Kaylee Tuck",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "06678114-3be6-41eb-aa38-cc570082ead8"
+    },
+    {
+      "name": "Brad Yeager",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "48d0f08c-d6ec-4108-8579-20095e400b20"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: Sections 38, 40, 41 (ss. 810.09, 812.014 and related) — trespass and theft offences and penalties not tied to guns"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Comm Sub, 2024-02-26; official copy, https://www.flsenate.gov/Session/Bill/2024/1071/BillText/c2/PDF (LegiScan doc 2940664))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-1071-2024.comm-sub.pdf",
+      "sha256": "c73224696d8e972522ec07fc06d4afd39e8c4c15b26c993b071db0f26863b535"
+    },
+    "note": "Committee Substitute (CS/CS/HB 1071, 2024-02-26), not the enrolled text; later amendments are not in the text read. Large omnibus (agriculture, pest control, charities, cultivated meat, etc.); other sections were skimmed for gun content. Section 12 also struck 'shall be' for 'is' (automatic suspension). Section 38 (s. 810.09) renumbers an existing armed-trespass penalty and is not quoted."
+  },
+  "operative_text": "Section 12 (s. 493.6113, F.S.): At the discretion of a Class \"K\" instructor, a Class \"G\" licensee may qualify for up to two calibers of firearms in one 4-hour firearm requalification class if the licensee successfully completes training for each firearm, including a separate course of fire for each caliber of firearm.\nSection 36 (s. 790.0625, F.S.): A tax collector appointed under this section may collect and retain a convenience fee of $22 for each new application, $12 for each renewal application, $12 for each replacement license, $9 for fingerprinting services associated with the completion of an application submitted online or by mail, and $9 for photographing services associated with the completion of an application submitted online or by mail, and shall remit weekly to the department the license fees pursuant to s. 790.06 for deposit in the Division of Licensing Trust Fund.\nSection 36 (s. 790.0625, F.S.): Upon receipt of a statement under oath to the department and payment of required fees, a tax collector authorized to accept an application for a concealed weapon or firearm license under this section may, upon approval and confirmation from the department that a license is in good standing, print and deliver a concealed weapon or firearm license to a licensee whose license has been lost or destroyed.\nSection 36 (s. 790.0625, F.S.): Tax collectors authorized to accept an application for a concealed weapon or firearm license under this section may provide fingerprinting and photographing services to aid concealed weapon and firearm applicants and licensees with initial and renewal applications submitted online or by mail."
+}

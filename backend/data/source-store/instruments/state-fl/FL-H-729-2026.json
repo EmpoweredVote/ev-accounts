@@ -1,0 +1,51 @@
+{
+  "id": "FL-H-729-2026",
+  "scope": "state:fl",
+  "title": "H0729 (2026 Regular): Protective Injunctions and Protection Orders",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2026/729",
+    "https://www.flsenate.gov/Session/Bill/2026/729/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Robin Bartleman",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bcbf9dd3-377d-4a72-8417-ab06d6d23ddb"
+    },
+    {
+      "name": "Daryl Campbell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ba34dbe-0eac-40dc-b24e-1e206e6e5736"
+    },
+    {
+      "name": "Anna Eskamani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "24293096-f120-4914-ab83-d6670ad3efcd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-12-10; official copy, https://www.flsenate.gov/Session/Bill/2026/729/BillText/Filed/PDF (LegiScan doc 3289717))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-729-2026.introduced.pdf",
+      "sha256": "3350baf8fc98bc7d4109b222409376176c994625993cb06c474d52553ef460e4"
+    },
+    "note": "As filed (introduced 2025-12-10). Section 2 changes the penalty for repeat violation of a domestic violence injunction (struck \"two or more prior convictions\", added \"a prior conviction\"); a gun-related protective order, so not counted as a second subject."
+  },
+  "operative_text": "Section 1 (s. 741.30(6)(g), F.S.): Upon issuance of a final judgment on injunction for protection against domestic violence, the court shall order the respondent to surrender to the local law enforcement agency all firearms and ammunition owned by the respondent in the respondent's custody, control, or possession except as provided in paragraph (9)(g), and any license to carry a concealed weapon or firearm issued under s. 790.06, held by the respondent.\nSection 1 (s. 741.30(9), F.S.): (9)(a) Upon issuance of a final judgment on injunction for protection against domestic violence, the law enforcement officer serving the injunction for protection shall request that the respondent immediately surrender all firearms and ammunition owned by the respondent in his or her custody, control, or possession and any license to carry a concealed weapon or firearm issued under s. 790.06, held by the respondent.\nSection 1 (s. 741.30(9), F.S.): (e) All law enforcement agencies must develop policies and procedures regarding the acceptance, storage, and return of firearms, ammunition, or licenses required to be surrendered under this section.\nSection 1 (s. 741.30(9), F.S.): (g) A respondent may elect to transfer all firearms and ammunition owned by the respondent that have been surrendered to or seized by a local law enforcement agency pursuant to paragraph (a) to another person who is willing to receive the respondent's firearms and ammunition. The law enforcement agency must allow such a transfer only if it is determined that the chosen recipient: 1. Currently is eligible to own or possess a firearm and ammunition under federal and state law after confirmation through a background check. 2. Attests to storing the firearms and ammunition in a manner such that the respondent does not have access to or control of the firearms and ammunition until the injunction against the respondent is vacated, terminated, or otherwise rendered no longer effective by ruling of the court.\nSection 2 (s. 741.31(4)(c), F.S.): (c) A person who has a prior conviction for violation of an injunction or a foreign protection order, and who commits a second or subsequent violation of any injunction or foreign protection order against the same victim, commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083 or s. 775.084."
+}

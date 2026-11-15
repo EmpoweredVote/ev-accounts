@@ -1,0 +1,46 @@
+{
+  "state": "fl",
+  "name": "Florida",
+  "verified": "2026-11-14",
+  "source": "gun-policy Season 3 Stage 5, Florida session A hand-over (fl/HANDOVER-A.md part 7), 2026-11-14",
+  "chambers": {
+    "lower": "House of Representatives (120 seats)",
+    "upper": "Senate (40 seats)"
+  },
+  "sessions": "Annual regular sessions plus numbered special sessions; bill numbers restart each year (LegiScan H0023-2023 regular and the 2023 third special session H0023 share an id form). House 120, Senate 40.",
+  "bill_data": [
+    "LegiScan bulk datasets are on disk; never re-pull a dataset. LegiScan per-bill calls only.",
+    "Bill texts fetch direct from www.flsenate.gov, e.g. /Session/Bill/<year>/<n>/BillText/Filed/PDF."
+  ],
+  "votes": {
+    "mode": "legiscan-plan",
+    "official_hosts": [
+      "www.flsenate.gov"
+    ],
+    "legiscan_args": null,
+    "floor_rule": "Every LegiScan floor roll call reads 'House: Third Reading RCS#n' or 'Senate: Third Reading RCS#n', amendment votes included. Keep the roll call whose date, chamber and tally match a bill-history passage, concurrence or failed line (Senate 'YEAS 20 NAYS 18'; House 'YEAS 76, NAYS 35', with a comma). Committee roll calls also appear; drop them.",
+    "gaps": [
+      "The store already held two Florida bills under an older id form with 'HB' (FL-HB-543-2023, FL-HB-1365-2024); new files use one letter (FL-H-<n>-<year>). Look for both forms before adding a file.",
+      "Official roll-call PDFs (/Session/Bill/<year>/<n>/Vote/HouseVote_h0nnnn__<seq>.PDF) list members as 'Surname-district'."
+    ]
+  },
+  "texts": {
+    "hosts": [
+      "www.flsenate.gov"
+    ],
+    "marks": "House texts are PDF only (swapping /PDF for /HTML gives a page with no text); underline (new words) and strike-through (struck words) are drawn rectangles that pdftotext drops: recover them with pdftotext -bbox plus pdftocairo -svg (legiscan/scripts/fl_pdf_marks.py) as [+new+] / [-struck-]. Senate texts are HTML with <u class=Insert> and <s class=Remove>; join touching Insert runs, which lose spaces.",
+    "note": "Remove House PDF page headers ('CS/HB n yyyy') before quoting."
+  },
+  "reader_access": {
+    "www.flsenate.gov": "open"
+  },
+  "search_note": "Official bill and roll-call pages are on www.flsenate.gov for both chambers; House member pages are on www.myfloridahouse.gov.",
+  "bill_table_note": "See the texts marks: struck words are not in the operative text.",
+  "fill_quotes": {
+    "label_strips": []
+  },
+  "quirks": [
+    "Some members appear under a former or longer surname in LegiScan (e.g. Demi Busatta = 'Demi Busatta Cabrera'); districts shifted with redistricting (a HD-20 member now sits for HD-21).",
+    "www.flsenate.gov robots.txt: 'Allow: /Session/', 'Crawl-delay: 10' (sleep 10 s between requests); roll-call PDF read 2026-11-14."
+  ]
+}

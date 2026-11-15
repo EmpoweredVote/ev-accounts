@@ -1,0 +1,152 @@
+{
+  "id": "FL-H-1513-2023",
+  "scope": "state:fl",
+  "title": "H1513 (2023 Regular): Weapons And Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2023/1513",
+    "https://www.flsenate.gov/Session/Bill/2023/1513/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Christine Hunschofsky",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0903baf0-62dd-44f7-a4e5-2ffff94cd527"
+    },
+    {
+      "name": "Dan Daley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "601ae676-fd42-478d-a253-bac744e5c968"
+    },
+    {
+      "name": "Kristen Arrington",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c58dc5e8-768c-47b8-ba0f-5a0434cbc060"
+    },
+    {
+      "name": "LaVon Bracy Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1118fe8a-83c9-4363-80a8-e29cdf5a9204"
+    },
+    {
+      "name": "Hillary Cassel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "963f0af8-db65-40f3-905e-13cfc1bb01e8"
+    },
+    {
+      "name": "Lindsay Cross",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "39c06c67-6518-4473-9f9f-d48a10b40fdd"
+    },
+    {
+      "name": "Fentrice Driskell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c1e25722-c32b-4e01-a158-d3ac78533deb"
+    },
+    {
+      "name": "Anna Eskamani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "24293096-f120-4914-ab83-d6670ad3efcd"
+    },
+    {
+      "name": "Ashley Gantt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8da5c265-03bd-491d-8587-14b831425747"
+    },
+    {
+      "name": "Michael Gottlieb",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "130eca48-e5c4-4839-a154-ed07103d7988"
+    },
+    {
+      "name": "Jennifer Harris",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e78ebeb-6d16-476d-9429-5b712c0b9942"
+    },
+    {
+      "name": "Yvonne Hayes Hinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "56f2cd8a-a3e5-40de-89df-24872eea9ba6"
+    },
+    {
+      "name": "Dotie Joseph",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "aa573206-cf30-4782-8243-a930919c851d"
+    },
+    {
+      "name": "Angela Nixon",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "27e67fa0-83e9-441c-8bfa-cef994b74eeb"
+    },
+    {
+      "name": "Michele Rayner-Goolsby",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d89e41dc-7008-407a-a89c-398550a1691a"
+    },
+    {
+      "name": "Felicia Simone Robinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "22de2bc3-4b82-474e-ad53-358374d4df78"
+    },
+    {
+      "name": "Kelly Skidmore",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1c56065c-29ef-4b35-a5d2-4d3ebabb7fd6"
+    },
+    {
+      "name": "Susan Valdes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5d552dfc-c52d-45ec-8988-73152ebaf403"
+    },
+    {
+      "name": "Katherine Waldron",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Marie Woodson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c2e03f0c-06e4-458d-b0d0-0bb7d518e6fa"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2023-03-06; official copy, https://www.flsenate.gov/Session/Bill/2023/1513/BillText/Filed/PDF (LegiScan doc 2728144))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-1513-2023.introduced.pdf",
+      "sha256": "fb293f92af2c6f195c7702482d4f086d426848cfaba1806a6503213206c7ed51"
+    },
+    "note": "Introduced version (filed 2023-03-06); no passage vote. Quotes skip some definitions. Section 790.174 originally covered a \"loaded\" firearm; the bill strikes \"loaded\" and raises the minor age from 16 to 18."
+  },
+  "operative_text": "Section 2 (new s. 790.0653, F.S.): All persons involved in firearm sales or other transfers, in whole or in part, shall be subject to background checks unless specifically exempted by state or federal law. A person may not sell or otherwise transfer a firearm unless: (a) The person is a licensed dealer; (b) The purchaser or other transferee is a licensed dealer; or (c) The requirements of subsection (3) are met. (5) A person who violates this section commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084.\nSection 3 (s. 790.174, F.S.): (1)(a) A person who stores or leaves, on a premise under his or her control, a firearm, as defined in s. 790.001, and who knows or reasonably should know that a minor is likely to gain access to the firearm without the lawful permission of the minor's parent or the person having charge of the minor, or without the supervision required by law, shall keep the firearm in a securely locked box or container or shall secure it with a trigger lock, except when the person is carrying the firearm on his or her body or within such close proximity thereto that he or she can retrieve and use it as easily and quickly as if he or she carried it on his or her body. (b) A person who stores or leaves, on a premise under his or her control, a firearm, as defined in s. 790.001, and who knows or reasonably should know that a prohibited user is likely to gain access to the firearm, shall keep the firearm in a securely locked box or container or shall secure it with a trigger lock, except when the person is carrying the firearm on his or her body or within such close proximity thereto that he or she can retrieve and use the firearm as easily and quickly as if he or she carried it on his or her body.\nSection 4 (s. 790.175, F.S.): (1) Except as provided in subsection (2), a licensed dealer may not sell a firearm in this state unless the sale includes one of the following: (a) A commercially available trigger lock or other device designed to disable the firearm and prevent the discharge of the firearm. (b) A commercially available gun case or storage container that can be secured to prevent unauthorized access to the firearm.\nSection 5 (new s. 790.223, F.S.): (2)(a) After January 1, 2024, a person may not knowingly possess, purchase, transport, or receive an unfinished frame or receiver unless: 1. The person is a firearms importer or manufacturer; or 2. The unfinished frame or receiver is imprinted with a serial number issued by a firearms importer or manufacturer and the unfinished frame or receiver has been imprinted with the serial number pursuant to federal law. (a) A person may not to sell, offer to sell, or transfer a three-dimensional printer or computer numerical control (CNC) milling machine that has the primary or intended function of manufacturing or assembling firearms or completed or unfinished frame or receivers to any person who does not have a valid license to manufacture firearms."
+}
