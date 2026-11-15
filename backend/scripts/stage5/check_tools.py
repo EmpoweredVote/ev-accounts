@@ -370,6 +370,32 @@ def bill_table_check_needs_deciding_words_in_the_bill(t):
 
 
 @check
+def bill_table_settle_closes_a_flag_and_check_refuses_an_answer_left_in_it(t):
+    S = store(t, {'a': [('XX-HB-1-2025', 'yea', 'none')]}, {'XX-HB-1-2025': 'x', 'XX-HB-2-2025': 'y', 'XX-HB-3-2025': 'z'})
+    row = lambda flag: {'rung': None, 'deciding_words': '', 'why': 'w', 'flag': flag}
+    T = f'{t}/t.json'
+    def write(flags): json.dump({'topic_key': 'tp', 'bills': {f'XX-HB-{i + 1}-2025': row(f) for i, f in enumerate(flags)}}, open(T, 'w'))
+    # Florida, 2026-11-14: the answer was appended to the flag of every row, flagged or not.
+    write(['Is a fee cut rung 4? Best answer: yes. [Settled 2026-11-14, stop 1: as recommended.]', ' [Settled 2026-11-14, stop 1: as recommended.]', ''])
+    p = run('bill_table.py', 'check', T, '--store', S, ok=False)
+    assert p.returncode == 2 and p.stdout.count('reads as answered') == 2 and '2 flagged' in p.stdout, p.stdout
+    write(['Is a fee cut rung 4?', 'A ruling of 2026 settled permits. Does it reach renewals?', ''])
+    p = run('bill_table.py', 'check', T, '--store', S)
+    assert p.returncode == 0 and '2 flagged (open questions): the record script codes nobody' in p.stdout, p.stdout
+    before = open(T).read()
+    for bad in (['XX-HB-3-2025', '--answer', 'yes'], ['XX-HB-9-2025', '--answer', 'yes'], ['XX-HB-1-2025'], ['--all', 'XX-HB-1-2025', '--answer', 'yes'], ['--answer', 'yes']):
+        assert run('bill_table.py', 'settle', T, *bad, ok=False).returncode != 0, bad
+    assert open(T).read() == before, 'a refused settle writes nothing'
+    p = run('bill_table.py', 'settle', T, 'XX-HB-1-2025', '--answer', 'Runner, stop 1: yes.')
+    r = json.load(open(T))['bills']['XX-HB-1-2025']
+    assert (r['flag'], r['question'], r['answered']) == ('', 'Is a fee cut rung 4?', 'Runner, stop 1: yes.') and '1 still flagged' in p.stdout, (r, p.stdout)
+    p = run('bill_table.py', 'settle', T, '--all', '--answer', 'Earlier ruling R7.')
+    assert 'settled 1 bill(s); 0 still flagged' in p.stdout and json.load(open(T))['bills']['XX-HB-2-2025']['answered'] == 'Earlier ruling R7.', p.stdout
+    p = run('bill_table.py', 'check', T, '--store', S)
+    assert p.returncode == 0 and '0 flagged' in p.stdout and 'codes nobody' not in p.stdout, p.stdout
+
+
+@check
 def bill_table_questions_find_both_sides_and_skip_gated(t):
     S = store(t, {'a': [('XX-HB-1-2025', 'yea', 'none'), ('XX-HB-2-2025', 'sponsor', 'none')],
                   'b': [('XX-HB-1-2025', 'yea', 'none'), ('XX-HB-2-2025', 'yea', 'multi-subject')],

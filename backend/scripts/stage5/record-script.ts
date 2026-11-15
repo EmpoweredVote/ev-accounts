@@ -7,6 +7,8 @@
  *     --name xx-rec --out <stage5>/record-briefs-xx [--check 10] [--skip-rungs 5,2] [--seed <text>] [--store <dir>]
  *   npx tsx scripts/stage5/record-script.ts adopt --out <stage5>/record-briefs-xx --name xx-rec --codes <stage5>/record-codes
  *
+ * plan   Exit 6, with the files written but not to be used, when over half the people with a record (of 10 or more)
+ *        went to Opus for an act on a FLAGGED bill: the bill table's flags were never closed (bill_table.py settle).
  * plan   Decides each person with a record. A PLAIN case gets a script-made code in <out>/script-codes/ (a holding
  *        folder: nothing downstream reads it). Everyone else is listed for Opus with the reason:
  *          <name>-lanes.tsv        every person: script or opus, and why
@@ -160,6 +162,13 @@ function plan(flags: Map<string, string[]>): number {
   for (const [l, n] of Object.entries(laneCount).sort((a, b) => b[1] - a[1])) console.log(`  to Opus, ${n}: ${l === 'text-check' ? "the script's text did not pass the coding checks" : LANE_WORDS[l as Lane]}`);
   console.log(`standing check: ${check.length} of the script's people, seed "${seed}" (${p('check-ids.txt')})`);
   console.log(`next: coder-inputs.ts --record-only --bill-table … --ids ${p('coder-ids.txt')} (Opus lane ${opus.length} + check ${check.length}), split-codes.ts, then record-script.ts adopt`);
+  // Florida, 2026-11-14: an answer note left in every row's `flag` sent all 154 people here, and nothing said so.
+  const flagged = laneCount['flagged-bill'] ?? 0;
+  if (withRecord >= 10 && flagged * 2 > withRecord) {
+    console.error(`STOP: ${flagged} of ${withRecord} people were sent to Opus for an act on a flagged bill. A flag is an open question for the runner.`);
+    console.error('If the runner has answered, close the flags (bill_table.py settle … --answer …), see `bill_table.py check` print "0 flagged", and plan again. Do not code from this plan.');
+    return 6;
+  }
   if (script.length && !check.length) { console.error('no standing check is possible (--check 0): nothing can be adopted'); return 1; }
   return 0;
 }
