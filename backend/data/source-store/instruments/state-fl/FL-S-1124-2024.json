@@ -1,0 +1,39 @@
+{
+  "id": "FL-S-1124-2024",
+  "scope": "state:fl",
+  "title": "S1124 (2024 Regular): Mandatory Waiting Period for Handgun Purchases",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2024/1124",
+    "https://www.flsenate.gov/Session/Bill/2024/1124/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jonathan Martin",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ecaafba9-cb16-4460-aa54-592b5f5358f4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2023-12-28; official copy, https://www.flsenate.gov/Session/Bill/2024/1124/BillText/Filed/HTML (LegiScan doc 2866245))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-1124-2024.introduced.html",
+      "sha256": "17714e68b0941e50ae0f153f01da72bb3dbb8b518c9d08ce49987f7355a24d09"
+    },
+    "note": "Introduced text (filed 2023-12-28); no passage vote. Struck: firearm (replaced by handgun), the records-check expiry wording, and the rifle/shotgun exceptions (hunter safety course; officers and servicemembers)."
+  },
+  "operative_text": "Section 1 (s. 790.0655, F.S.): A mandatory 3-day waiting period, excluding weekends and legal holidays, is imposed between the purchase and delivery at retail of a handgun. “Purchase” means the transfer of money or other valuable consideration to the retailer. “Retailer” has the same meaning as in s. 212.02(13), and includes a licensed importer, licensed manufacturer, or licensed dealer engaged in the business of making firearm sales at retail or for distribution, or use, or consumption, or storage to be used or consumed in this state. (b) Records of handgun sales must be available for inspection by any law enforcement agency, as defined in s. 934.02, during normal business hours. (2) The 3-day waiting period does not apply in the following circumstances: (a) When a handgun is being purchased by a holder of a concealed weapons or concealed firearms license issued under s. 790.06. (b) To a trade-in of another handgun. (3) It is a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084: (a) For any retailer, or any employee or agent of a retailer, to deliver a handgun before the expiration of the 3-day waiting period, subject to the exceptions provided in subsection (2). (b) For a purchaser to obtain delivery of a handgun by fraud, false pretense, or false representation."
+}

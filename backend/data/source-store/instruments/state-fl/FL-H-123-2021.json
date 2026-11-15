@@ -1,0 +1,49 @@
+{
+  "id": "FL-H-123-2021",
+  "scope": "state:fl",
+  "title": "H0123 (2021 Regular): Carrying of Firearms Without Licenses",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2021/123",
+    "https://www.flsenate.gov/Session/Bill/2021/123/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Anthony Sabatini",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jason Fischer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tyler Sirois",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "937bc5a2-b2d7-4a16-ba4b-543cf9fb0054"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2020-12-28; official copy, https://www.flsenate.gov/Session/Bill/2021/123/BillText/Filed/PDF (LegiScan doc 2223380))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-123-2021.introduced.pdf",
+      "sha256": "b2a2ea46b0fc9a4192fef56148c85f1a2da7fedae8b65db82302a9586c06b041"
+    },
+    "note": "Introduced text (filed 2020-12-28); no passage vote. Struck: the requirement of a s. 790.06 licence to carry concealed; the felony penalty (now second-degree misdemeanor only when carrying into places listed in s. 790.06(12)(a)); the nonresident conditions (age 21, home-state licence); the \"other than a handgun\" limit and the bar on concealed carry on the person in a private conveyance. Sections 3, 4, 6-9 (ss. 790.06, 790.145, 30.15, 790.053, 790.251, 921.0022) conform to this; the quote omits them."
+  },
+  "operative_text": "Section 1 (s. 790.01, F.S.), subsection (2): Except as provided in subsection (3), a person who carries a concealed firearm on or about his or her person into any place described in s. 790.06(12)(a) commits a misdemeanor of the second degree, punishable as provided in s. 775.082 or, s. 775.083,\nSection 2 (s. 790.015, F.S.), subsection (1): Notwithstanding s. 790.01(1) a nonresident of Florida may carry a concealed weapon or firearm while in this state\nSection 2 (s. 790.015, F.S.), subsection (3): All valid licenses to carry concealed weapons and firearms issued by other states are hereby given full faith and credit in this state.\nSection 5 (s. 790.25, F.S.), paragraph (3)(r): A person not otherwise prohibited by law from possessing a firearm.\nSection 5 (s. 790.25, F.S.), subsection (5): Nothing herein contained prohibits the carrying of a legal firearm anywhere in a private conveyance when such firearm is being carried for a lawful use."
+}

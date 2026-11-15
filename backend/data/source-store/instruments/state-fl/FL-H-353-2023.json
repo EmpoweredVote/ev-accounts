@@ -1,0 +1,39 @@
+{
+  "id": "FL-H-353-2023",
+  "scope": "state:fl",
+  "title": "H0353 (2023 Regular): Conditions of Pretrial release",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2023/353",
+    "https://www.flsenate.gov/Session/Bill/2023/353/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kelly Skidmore",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1c56065c-29ef-4b35-a5d2-4d3ebabb7fd6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2023-01-23; official copy, https://www.flsenate.gov/Session/Bill/2023/353/BillText/Filed/PDF (LegiScan doc 2657575))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-353-2023.introduced.pdf",
+      "sha256": "bc08ca4e027f551c2fe39642aaec226661e8025ec2d754a68615048a0101d853"
+    },
+    "note": "Introduced version (filed 2023-01-23); no passage vote."
+  },
+  "operative_text": "Section 1 (s. 903.047, F.S.): 903.047 Conditions of pretrial release.— (3) If a court orders a defendant to surrender his or her firearms or ammunition or prohibits a defendant's possession of firearms or ammunition as a condition of pretrial release, it is a violation of this section for the defendant to have in his or her care, custody, possession, or control a firearm or any ammunition."
+}

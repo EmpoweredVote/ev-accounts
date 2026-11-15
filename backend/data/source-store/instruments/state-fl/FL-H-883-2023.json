@@ -1,0 +1,39 @@
+{
+  "id": "FL-H-883-2023",
+  "scope": "state:fl",
+  "title": "H0883 (2023 Regular): Machine Guns",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2023/883",
+    "https://www.flsenate.gov/Session/Bill/2023/883/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Daryl Campbell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1ba34dbe-0eac-40dc-b24e-1e206e6e5736"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2023-02-16; official copy, https://www.flsenate.gov/Session/Bill/2023/883/BillText/Filed/PDF (LegiScan doc 2702755))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-883-2023.introduced.pdf",
+      "sha256": "8a1feec8e24a78ea8d217c8cccbf96e3528e508022eb2397e48e6ae6e1dda148"
+    },
+    "note": "Introduced version (2023-02-16); no passage vote. Section 2 only reenacts s. 921.0024(1)(b) to carry the cross-reference."
+  },
+  "operative_text": "Section 1 (s. 790.001(9), F.S.): \"Machine gun\" means any firearm, as defined herein, which: (a) Shoots, or is designed to shoot, automatically more than one shot, without manually reloading, by a single function pull of the trigger; or (b) Is modified by a conversion kit, a tool, an accessory, or a device that is used to alter the rate of fire of the firearm to mimic automatic weapon fire or that is used to increase the rate of fire to a faster rate than is possible for a person to fire such firearm unassisted by a kit, a tool, an accessory, or a device by a single function pull of the trigger."
+}

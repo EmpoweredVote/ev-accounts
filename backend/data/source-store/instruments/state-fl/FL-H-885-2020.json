@@ -1,0 +1,49 @@
+{
+  "id": "FL-H-885-2020",
+  "scope": "state:fl",
+  "title": "H0885 (2020 Regular): State Preemption of Firearm and Ammunition Regulation",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2020/885",
+    "https://www.flsenate.gov/Session/Bill/2020/885/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cindy Polo",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Javier Fernandez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Carlos Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c310dbb0-d4f3-4aa1-9080-90440e46fb01"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-12-09; official copy, https://www.flsenate.gov/Session/Bill/2020/885/BillText/Filed/PDF (LegiScan doc 2072958))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-885-2020.introduced.pdf",
+      "sha256": "2f3b743d0bfe0a37dfcea2b360d0c3e123c65b759cdc0e14d607401c6b872c7c"
+    },
+    "note": "Introduced version (filed 2019-12-09); no passage vote. Paragraph (e) loses \"or\" and gains \"; or\"."
+  },
+  "operative_text": "Section 1 (s. 790.33, F.S.): (4) EXCEPTIONS.—This section does not prohibit:\nSection 1 (s. 790.33, F.S.): (f) A county, agency, municipality, district, or other entity from adopting an ordinance that regulates the sale of firearms or ammunition on property that is owned by that county, agency, municipality, district, or other entity."
+}

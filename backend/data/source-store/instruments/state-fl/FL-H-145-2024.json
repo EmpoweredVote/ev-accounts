@@ -1,0 +1,104 @@
+{
+  "id": "FL-H-145-2024",
+  "scope": "state:fl",
+  "title": "H0145 (2024 Regular): Sales of Ammunition",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2024/145",
+    "https://www.flsenate.gov/Session/Bill/2024/145/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dan Daley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "601ae676-fd42-478d-a253-bac744e5c968"
+    },
+    {
+      "name": "Dotie Joseph",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "aa573206-cf30-4782-8243-a930919c851d"
+    },
+    {
+      "name": "Kristen Arrington",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c58dc5e8-768c-47b8-ba0f-5a0434cbc060"
+    },
+    {
+      "name": "Robin Bartleman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bcbf9dd3-377d-4a72-8417-ab06d6d23ddb"
+    },
+    {
+      "name": "Joseph Casello",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Hillary Cassel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "963f0af8-db65-40f3-905e-13cfc1bb01e8"
+    },
+    {
+      "name": "Anna Eskamani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "24293096-f120-4914-ab83-d6670ad3efcd"
+    },
+    {
+      "name": "Jennifer Harris",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e78ebeb-6d16-476d-9429-5b712c0b9942"
+    },
+    {
+      "name": "Johanna Lopez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "03e7ab40-a2d6-42c0-a888-a8df7f8e9b1e"
+    },
+    {
+      "name": "Michele Rayner-Goolsby",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d89e41dc-7008-407a-a89c-398550a1691a"
+    },
+    {
+      "name": "Kelly Skidmore",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1c56065c-29ef-4b35-a5d2-4d3ebabb7fd6"
+    },
+    {
+      "name": "Marie Woodson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c2e03f0c-06e4-458d-b0d0-0bb7d518e6fa"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2023-10-11; official copy, https://www.flsenate.gov/Session/Bill/2024/145/BillText/Filed/PDF (LegiScan doc 2845392))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-145-2024.introduced.pdf",
+      "sha256": "bf21939ac9dc9c48f0f1f97204441f0695a50e4e183b88c329220de8122d8a76"
+    },
+    "note": "Introduced version (filed 2023-10-11); no passage vote. Short title 'Jaime's Law'. 'or ammunition' is underlined throughout s. 790.065; the quote shows the law as it would read, with those words kept and 'the provisions of' (struck) dropped. Quote is a selection."
+  },
+  "operative_text": "Section 2 (s. 790.065, F.S.): (1)(a) A licensed importer, licensed manufacturer, or licensed dealer may not sell or deliver from her or his inventory at her or his licensed premises any firearm or ammunition to another person, other than a licensed importer, licensed manufacturer, licensed dealer, or licensed collector, until she or he has:\nSection 2 (s. 790.065, F.S.): (c) This subsection does not apply to the purchase, trade, or transfer of a rifle or shotgun or rifle or shotgun ammunition by a resident of this state when the resident makes such purchase, trade, or transfer from a licensed importer, licensed manufacturer, or licensed dealer in another state.\nSection 2 (s. 790.065, F.S.): (d) This subsection does not apply to a transfer of ammunition if the transferor has no reason to believe that the transferee will use or intends to use the ammunition in a crime or that the transferee is prohibited from possessing ammunition under state or federal law, and the transfer takes place and the transferee's possession of the ammunition is exclusively: 1. At a shooting range or in a shooting gallery or other area designated for the purpose of target shooting; or 2. While reasonably necessary for the purposes of hunting, trapping, or fishing, if the transferor: a. Has no reason to believe that the transferee intends to use the ammunition in a place where it is illegal; b. Has reason to believe that the transferee will comply with all licensing and permit requirements for such hunting, trapping, or fishing; or c. Is the presence of the transferee.\nSection 2 (s. 790.065, F.S.): 1. Has been convicted of a felony and is prohibited from receipt or possession of a firearm or ammunition pursuant to s. 790.23; 2. Has been convicted of a misdemeanor crime of domestic violence, and therefore is prohibited from purchasing a firearm or ammunition;"
+}

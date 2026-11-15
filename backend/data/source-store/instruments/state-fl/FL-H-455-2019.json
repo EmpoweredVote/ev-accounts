@@ -1,0 +1,81 @@
+{
+  "id": "FL-H-455-2019",
+  "scope": "state:fl",
+  "title": "H0455 (2019 Regular): Assault Weapons and Large-Capacity Magazines",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2019/455",
+    "https://www.flsenate.gov/Session/Bill/2019/455/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Carlos Smith",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c310dbb0-d4f3-4aa1-9080-90440e46fb01"
+    },
+    {
+      "name": "John Cortes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Anna Eskamani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "24293096-f120-4914-ab83-d6670ad3efcd"
+    },
+    {
+      "name": "Javier Fernandez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joseph Geller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joy Goff-Marcil",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dotie Joseph",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "aa573206-cf30-4782-8243-a930919c851d"
+    },
+    {
+      "name": "Amy Mercado",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Cindy Polo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-01-22; official copy, https://www.flsenate.gov/Session/Bill/2019/455/BillText/Filed/PDF (LegiScan doc 1863368))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-455-2019.introduced.pdf",
+      "sha256": "92cd4d5cd3e284fc40f39c0434da86bf2e82fbb1e7f659ee7b281331bdf0d339"
+    },
+    "note": "Introduced text (filed 2019-01-22), effective 2019-10-01 in the text. The definition of 'assault weapon' is a long list of named models plus feature tests and is not quoted in full. Section 2 (s. 775.087) adds assault weapons and large-capacity magazines to the minimum-sentence lists for firearm use in listed felonies. No vote recorded."
+  },
+  "operative_text": "Section 1 (new s. 790.301, F.S.): Any person who, within this state, distributes, transports, or imports into the state, sells, keeps for sale, or offers or exposes for sale, or who gives any assault weapon or large-capacity ammunition magazine, in violation of this section, except as provided in paragraph (b), commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084, with a mandatory minimum term of imprisonment of 2 years.\nSection 1 (new s. 790.301, F.S.): Any person who transfers, sells, or gives any assault weapon or large-capacity ammunition magazine to a person under 18 years of age in violation of this section commits a felony of the second degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084, with a mandatory minimum term of imprisonment of 6 years.\nSection 1 (new s. 790.301, F.S.): Except as provided in subsection (5), any person who, within this state, possesses any assault weapon or large-capacity ammunition magazine, except as provided in this section or as otherwise authorized by law, commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084, with a mandatory minimum term of imprisonment of 1 year.\nSection 1 (new s. 790.301, F.S.): \"Large-capacity magazine\" means any ammunition feeding device with the capacity to accept more than 10 rounds, or any conversion kit, part, or combination of parts from which such a device can be assembled if those parts are in the possession or under the control of the same person, but does not include any of the following: 1. A feeding device that has been permanently altered so that it cannot accommodate more than 10 rounds; 2. A .22 caliber tube ammunition feeding device; or 3. A tubular magazine that is contained in a lever-action firearm."
+}

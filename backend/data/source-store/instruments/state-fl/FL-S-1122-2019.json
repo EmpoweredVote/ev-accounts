@@ -1,0 +1,39 @@
+{
+  "id": "FL-S-1122-2019",
+  "scope": "state:fl",
+  "title": "S1122 (2019 Regular): Licenses to Carry Concealed Weapons or Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2019/1122",
+    "https://www.flsenate.gov/Session/Bill/2019/1122/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jason Pizzo",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "20c6fffd-e45a-463d-b36b-531a58de253c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-02-18; official copy, https://www.flsenate.gov/Session/Bill/2019/1122/BillText/Filed/HTML (LegiScan doc 1915642))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-1122-2019.introduced.html",
+      "sha256": "8c6a752ca5ebe0cc0977eb4c8eb0b226664aa06cfcd2261dbd8d8c84066b699f"
+    },
+    "note": "Introduced version (filed 2019-02-18); no passage vote. Struck: 7 years (4 added); also struck the existing course and experience wording, which is reworked into new subparagraphs."
+  },
+  "operative_text": "Section 1 (s. 790.06, F.S.): Such licenses shall be valid throughout the state for a period of 4 years after the date of issuance. Any person in compliance with the terms of such license may carry a concealed weapon or concealed firearm notwithstanding s. 790.01. The licensee must carry the license, together with valid identification, at all times in which the licensee is in actual possession of a concealed weapon or firearm and must display both the license and proper identification upon demand by a law enforcement officer. Violations of this subsection shall constitute a noncriminal violation with a penalty of $25, payable to the clerk of the court.\nSection 1 (s. 790.06(2)(h), F.S.): b. Persons who complete an instructional course pursuant to sub-sub-subparagraph a.(I), sub-sub-subparagraph a.(II), sub sub-subparagraph a.(III), or sub-sub-subparagraph a.(V) shall demonstrate their proficiency safely handling and discharging a firearm through the completion of the following course of fire proficiency demonstration with a minimum score of 70 percent: The course of fire proficiency demonstration must be completed using live ammunition."
+}

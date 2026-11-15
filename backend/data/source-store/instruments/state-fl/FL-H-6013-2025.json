@@ -1,0 +1,57 @@
+{
+  "id": "FL-H-6013-2025",
+  "scope": "state:fl",
+  "title": "H6013 (2025 Regular): Bump-fire Stocks",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2025/6013",
+    "https://www.flsenate.gov/Session/Bill/2025/6013/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Toby Overdorf",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6de37c78-a6f2-49be-b46f-66e12cac451a"
+    },
+    {
+      "name": "Jeff Holcomb",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "bbc6796c-09f3-47dd-b0d6-28e107155ce1"
+    },
+    {
+      "name": "Michelle Salzman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6c5c3bc0-3ece-454b-8362-3b8dc88b0d0c"
+    },
+    {
+      "name": "Taylor Yarkosky",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "24354c2d-00b0-4511-b34b-6b7a8d4c1703"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-01-30; official copy, https://www.flsenate.gov/Session/Bill/2025/6013/BillText/Filed/PDF (LegiScan doc 3091504))",
+    "fetched_at": "2026-11-15T02:43:36.063765Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-6013-2025.introduced.pdf",
+      "sha256": "bb384bea0f9cf6fdebe041d4785f7f25dbdb47c4cc36a6bd520e3499c7f7f099"
+    },
+    "note": "Introduced version; no passage vote recorded. The whole repeal section is shown underlined in the print."
+  },
+  "operative_text": "Section 1 (s. 790.222, F.S.): Section 790.222, Florida Statutes, is repealed."
+}

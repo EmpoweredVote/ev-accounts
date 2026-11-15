@@ -1,0 +1,39 @@
+{
+  "id": "FL-H-489-2024",
+  "scope": "state:fl",
+  "title": "H0489 (2024 Regular): Unlawful Possession of Firearms or Weapons by a Person Adjudicated Delinquent",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2024/489",
+    "https://www.flsenate.gov/Session/Bill/2024/489/BillText/c1/PDF"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Kaylee Tuck",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "06678114-3be6-41eb-aa38-cc570082ead8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Comm Sub, 2024-01-10; official copy, https://www.flsenate.gov/Session/Bill/2024/489/BillText/c1/PDF (LegiScan doc 2880367))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-489-2024.comm-sub.pdf",
+      "sha256": "aaaad3049282bb670f823654a68e4c7983b808343ae93ba82282dbfcca6b71ad"
+    },
+    "note": "Read Comm Sub (CS/HB 489), 2024-01-10. No passage vote in the record. Struck wording: 'Found ... to have committed a delinquent act'; replaced by 'Adjudicated delinquent ... for committing'. Paragraphs (a) and (c) not shown in the bill."
+  },
+  "operative_text": "Section 1 (s. 790.23, F.S.): It is unlawful for any person to own or to have in his or her care, custody, possession, or control any firearm, ammunition, or electric weapon or device, or to carry a concealed weapon, including a tear gas gun or chemical weapon or device, if that person has been: (b) Adjudicated delinquent in the courts of this state, for committing a delinquent act that would be a felony if committed by an adult and such person is under 24 years of age; (d) Adjudicated delinquent in another state, territory, or country for committing an act that would be a felony if committed by an adult and which was punishable by imprisonment for a term exceeding 1 year and such person is under 24 years of age; or"
+}

@@ -1,0 +1,43 @@
+{
+  "id": "FL-S-1444-2025",
+  "scope": "state:fl",
+  "title": "S1444 (2025 Regular): Public Safety",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2025/1444",
+    "https://www.flsenate.gov/Session/Bill/2025/1444/BillText/c3/HTML"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Jay Collins",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ee966041-d44a-4c05-b7ae-d8d22bfb93a7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: Section 5 (s. 775.0823) — 25-year mandatory minimum for attempted murder of justice system personnel; Section 8 (s. 843.025) — offence of depriving officers of recording or restraint devices",
+        "transportation-priorities: Section 3 (new s. 316.2675) — bans vehicle kill switches",
+        "public-safety-approach: Section 11 (new s. 943.0413) — critical infrastructure mapping grants"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Comm Sub, 2025-04-24; official copy, https://www.flsenate.gov/Session/Bill/2025/1444/BillText/c3/HTML (LegiScan doc 3220788))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-1444-2025.comm-sub.html",
+      "sha256": "6af231f14f2ae50af6031cbed1fa44d4d99a767e3cacf70ac003a3a2dc7db479"
+    },
+    "note": "Committee Substitute 3 (2025-04-24) text; later amendments not in the text read. No passage vote on file. Broad public-safety bill (medals, kratom, missing persons, jail testing); only Section 6 is a gun part."
+  },
+  "operative_text": "Section 6 (s. 790.052(1)(a), F.S.): All persons holding active certifications from the Criminal Justice Standards and Training Commission as law enforcement officers or correctional officers as defined in s. 943.10(1), (2), (6), (7), (8), or (9), all judges, and all state attorneys and assistant state attorneys shall have the right to carry, on or about their persons, concealed firearms, during off-duty hours, at the discretion of their superior officers, and may perform those law enforcement functions that they normally perform during duty hours, utilizing their weapons in a manner which is reasonably expected of on-duty officers in similar situations."
+}

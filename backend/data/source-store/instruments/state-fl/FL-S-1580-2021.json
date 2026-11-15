@@ -1,0 +1,39 @@
+{
+  "id": "FL-S-1580-2021",
+  "scope": "state:fl",
+  "title": "S1580 (2021 Regular): Licenses to Carry Concealed Weapons or Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2021/1580",
+    "https://www.flsenate.gov/Session/Bill/2021/1580/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shevrin Jones",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd892637-c28b-472a-878e-f2fdf1b98935"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-02-23; official copy, https://www.flsenate.gov/Session/Bill/2021/1580/BillText/Filed/HTML (LegiScan doc 2307339))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-1580-2021.introduced.html",
+      "sha256": "d4e5a081e3b72b3626aec4a4ceeb21f564209f8fb55acc5bf9e732642f26cf7e"
+    },
+    "note": "Introduced version; no passage vote. Quote is a selection of s. 790.06; the 7-year term and $55/$45 fees are struck (5 years, $40/$35 added). Military-service competence change and renewal paperwork wording are not quoted."
+  },
+  "operative_text": "Section 1 (s. 790.06(1), F.S.): Such licenses shall be valid throughout the state for a period of 5 years from the date of issuance.\nSection 1 (s. 790.06(5)(b), F.S.): A nonrefundable license fee of up to $40 if he or she has not previously been issued a statewide license or of up to $35 for renewal of a statewide license.\nSection 1 (s. 790.06(5)(c), F.S.): Fingerprints must be retained by the statewide automated biometric identification system under s. 943.05(2)(b) and by the federal fingerprint retention system under s. 943.05(4) once the program is in effect.\nSection 1 (s. 790.06(11), F.S.): Upon each renewal, a licensee must provide proof of completion of a firearms training or safety course or class at least 8 hours in length taught by a state, county, or municipal law enforcement agency or a nationally recognized organization that promotes gun safety. Completion of the training, course, or class must occur during the 6 months immediately before the license expiration date and must include: a.Information on the statutory and case law of this state relating to handguns and to the use of deadly force. b.Information on handgun use and safety. c.Information on the proper storage practices for handguns with an emphasis on storage practices that reduce the possibility of accidental injury to a child. d.The actual firing of the handgun with ammunition, as defined in s. 790.001(19), by the licensee in the presence of the instructor."
+}

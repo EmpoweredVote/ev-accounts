@@ -1,0 +1,44 @@
+{
+  "id": "FL-H-877-2021",
+  "scope": "state:fl",
+  "title": "H0877 (2021 Regular): Concealed Carry of Firearms by First Responders",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2021/877",
+    "https://www.flsenate.gov/Session/Bill/2021/877/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Melony Bell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Stan McClain",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b9ead145-1e46-4862-ad41-42adb8008403"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-02-09; official copy, https://www.flsenate.gov/Session/Bill/2021/877/BillText/Filed/PDF (LegiScan doc 2282539))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-877-2021.introduced.pdf",
+      "sha256": "08be8f0d58460c5e64df9ced38c5f771863909305b3c15b3b612cfa716a34353"
+    },
+    "note": "As-filed text (filed 2021-02-09); no votes recorded. Subsection (2)(b)-(e) training, psychological and drug-test requirements are omitted from the quote for length."
+  },
+  "operative_text": "Section 1 (new s. 401.436, F.S.): (1) As used in this section, the term \"first responder\" means an emergency medical technician or paramedic employed by state or local government.\nSection 1 (new s. 401.436, F.S.): (2) Notwithstanding s. 790.06(12), a first responder may carry a concealed firearm, as defined in s. 790.001, while performing his or her duties if the first responder: (a) Holds a valid license issued under s. 790.06.\nSection 1 (new s. 401.436, F.S.): (4) The costs of the training and testing under this section shall be paid by the first responder's employer."
+}

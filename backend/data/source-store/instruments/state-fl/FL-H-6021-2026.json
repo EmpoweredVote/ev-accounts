@@ -1,0 +1,39 @@
+{
+  "id": "FL-H-6021-2026",
+  "scope": "state:fl",
+  "title": "H6021 (2026 Regular): Bump-fire Stocks",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2026/6021",
+    "https://www.flsenate.gov/Session/Bill/2026/6021/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Toby Overdorf",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6de37c78-a6f2-49be-b46f-66e12cac451a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2026-01-05; official copy, https://www.flsenate.gov/Session/Bill/2026/6021/BillText/Filed/PDF (LegiScan doc 3299520))",
+    "fetched_at": "2026-11-15T02:43:36.063765Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-6021-2026.introduced.pdf",
+      "sha256": "13219122662899ebef21ea42c32627a36c1d22ecdde6a40dd51dfd7fe543d7dd"
+    },
+    "note": "Introduced version; no passage vote recorded. The whole repeal section is shown underlined in the print."
+  },
+  "operative_text": "Section 1 (s. 790.222, F.S.): Section 790.222, Florida Statutes, is repealed."
+}

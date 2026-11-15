@@ -1,0 +1,57 @@
+{
+  "id": "FL-H-6049-2022",
+  "scope": "state:fl",
+  "title": "H6049 (2022 Regular): Preemption of Firearms and Ammunition",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2022/6049",
+    "https://www.flsenate.gov/Session/Bill/2022/6049/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dan Daley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "601ae676-fd42-478d-a253-bac744e5c968"
+    },
+    {
+      "name": "Kristen Arrington",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c58dc5e8-768c-47b8-ba0f-5a0434cbc060"
+    },
+    {
+      "name": "Christine Hunschofsky",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0903baf0-62dd-44f7-a4e5-2ffff94cd527"
+    },
+    {
+      "name": "Dotie Joseph",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "aa573206-cf30-4782-8243-a930919c851d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-10-14; official copy, https://www.flsenate.gov/Session/Bill/2022/6049/BillText/Filed/PDF (LegiScan doc 2437144))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-6049-2022.introduced.pdf",
+      "sha256": "277f7ae3b2b57a1ac9cc172c930d058cefff522081b3fffe8640b722705f0e2d"
+    },
+    "note": "As-filed text (filed 2021-10-14); no votes recorded. Section 2 (s. 790.251(4)) strikes only the words \"including those already prohibited from regulating firearms under the provisions of s. 790.33\", a conforming change."
+  },
+  "operative_text": "Section 1 (s. 790.33, F.S.): Section 790.33, Florida Statutes, is repealed."
+}

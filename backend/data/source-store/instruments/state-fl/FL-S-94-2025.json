@@ -1,0 +1,44 @@
+{
+  "id": "FL-S-94-2025",
+  "scope": "state:fl",
+  "title": "S0094 (2025 Regular): Sales or Transfers of Firearms to Persons Under 21 Years of Age",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2025/94",
+    "https://www.flsenate.gov/Session/Bill/2025/94/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Randy Fine",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joe Gruters",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8fdbeb73-19d0-470e-b7ed-5b4b3bef1995"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2024-12-10; official copy, https://www.flsenate.gov/Session/Bill/2025/94/BillText/Filed/HTML (LegiScan doc 3031881))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-94-2025.introduced.html",
+      "sha256": "daf90f26bb0ef3d49445aecdef1349adb3454799a40afb1fa1e7684413b4e3a4"
+    },
+    "note": "Introduced version (filed 2024-12-10); later amendments are not in the text read. All of subsection (13) is struck: the under-21 purchase ban, the dealer sale/transfer ban, the third-degree felony penalty, and the exceptions for law enforcement, correctional officers and servicemembers (rifle or shotgun). Quote is only the amending line."
+  },
+  "operative_text": "Section 1 (s. 790.065, F.S.): Subsection (13) of section 790.065, Florida Statutes, is amended to read: 790.065 Sale and delivery of firearms.—"
+}

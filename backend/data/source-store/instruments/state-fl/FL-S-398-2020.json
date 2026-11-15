@@ -1,0 +1,45 @@
+{
+  "id": "FL-S-398-2020",
+  "scope": "state:fl",
+  "title": "S0398 (2020 Regular): Concealed Weapons and Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2020/398",
+    "https://www.flsenate.gov/Session/Bill/2020/398/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lori Berman",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "daafe458-8c11-40b0-9382-22b22747b7e2"
+    },
+    {
+      "name": "Jose Rodriguez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3174b894-b4a9-41fb-8c77-b1790f9a7ec1"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-09-30; official copy, https://www.flsenate.gov/Session/Bill/2020/398/BillText/Filed/HTML (LegiScan doc 2055269))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-398-2020.introduced.html",
+      "sha256": "290f69c9de7d2ec21f201d2abc81243994a7dddab01193aebcc5ab9a023b6051"
+    },
+    "note": "Introduced version (2019-09-30). Added as new item 10 in s. 790.06(12)(a); later list items renumbered; no wording struck except numbers."
+  },
+  "operative_text": "Section 1 (s. 790.06, F.S.): A license issued under this section does not authorize any person to openly carry a handgun or carry a concealed weapon or firearm into:\nSection 1 (s. 790.06, F.S.): Any child care facility as defined in s. 402.302;"
+}

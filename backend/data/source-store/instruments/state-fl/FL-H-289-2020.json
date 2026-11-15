@@ -1,0 +1,105 @@
+{
+  "id": "FL-H-289-2020",
+  "scope": "state:fl",
+  "title": "H0289 (2020 Regular): Sales of Ammunition",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2020/289",
+    "https://www.flsenate.gov/Session/Bill/2020/289/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dan Daley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "601ae676-fd42-478d-a253-bac744e5c968"
+    },
+    {
+      "name": "John Cortes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bobby Dubose",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Anna Eskamani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "24293096-f120-4914-ab83-d6670ad3efcd"
+    },
+    {
+      "name": "Javier Fernandez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joseph Geller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael Gottlieb",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "130eca48-e5c4-4839-a154-ed07103d7988"
+    },
+    {
+      "name": "Kristin Jacobs",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Shevrin Jones",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd892637-c28b-472a-878e-f2fdf1b98935"
+    },
+    {
+      "name": "Dotie Joseph",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "aa573206-cf30-4782-8243-a930919c851d"
+    },
+    {
+      "name": "Cindy Polo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tina Polsky",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "69578e2e-7ec6-4321-ad0c-c16ba1d29641"
+    },
+    {
+      "name": "Carlos Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c310dbb0-d4f3-4aa1-9080-90440e46fb01"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-10-04; official copy, https://www.flsenate.gov/Session/Bill/2020/289/BillText/Filed/PDF (LegiScan doc 2055883))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-289-2020.introduced.pdf",
+      "sha256": "abd5d7270341604911746ff3f9c0ce9088f1c2d008500645798ecfb3c9376ef0"
+    },
+    "note": "As-filed text (filed 2019-10-04); no votes recorded. Most of the rest of s. 790.065 is existing law with \"or ammunition\" added."
+  },
+  "operative_text": "Section 1 (short title): This act may be cited as \"Jaime's Law.\"\nSection 2 (s. 790.065(1)(a), F.S.): A licensed importer, licensed manufacturer, or licensed dealer may not sell or deliver from her or his inventory at her or his licensed premises any firearm or ammunition to another person, other than a licensed importer, licensed manufacturer, licensed dealer, or licensed collector, until she or he has:\nSection 2 (s. 790.065(1)(d), F.S.): This subsection does not apply to a transfer of ammunition if the transferor has no reason to believe that the transferee will use or intends to use the ammunition in a crime or that the transferee is prohibited from possessing ammunition under state or federal law, and the transfer takes place and the transferee's possession of the ammunition is exclusively: 1. At a shooting range or in a shooting gallery or other area designated for the purpose of target shooting; or 2. While reasonably necessary for the purposes of hunting, trapping, or fishing, if the transferor: a. Has no reason to believe that the transferee intends to use the ammunition in a place where it is illegal; and b. Has reason to believe that the transferee will comply with all licensing and permit requirements for such hunting, trapping, or fishing; or c. Is the presence of the transferee.\nSection 2 (s. 790.065(12)(d), F.S.): Any person who knowingly acquires a firearm or ammunition through purchase or transfer intended for the use of a person who is prohibited by state or federal law from possessing or receiving a firearm or ammunition commits a felony of the third degree, punishable as provided in s. 775.082 or s. 775.083."
+}

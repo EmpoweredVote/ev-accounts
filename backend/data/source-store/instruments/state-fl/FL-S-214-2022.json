@@ -1,0 +1,102 @@
+{
+  "id": "FL-S-214-2022",
+  "scope": "state:fl",
+  "title": "S0214 (2022 Regular): Assault Weapons and Large-capacity Magazines",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2022/214",
+    "https://www.flsenate.gov/Session/Bill/2022/214/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Gary Farmer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lori Berman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "daafe458-8c11-40b0-9382-22b22747b7e2"
+    },
+    {
+      "name": "Shevrin Jones",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd892637-c28b-472a-878e-f2fdf1b98935"
+    },
+    {
+      "name": "Tina Polsky",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "69578e2e-7ec6-4321-ad0c-c16ba1d29641"
+    },
+    {
+      "name": "Janet Cruz",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lauren Book",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Linda Stewart",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bobby Powell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Victor Torres",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Annette Taddeo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5667ab1f-2f32-4850-9d5f-e006edeb3dcf"
+    },
+    {
+      "name": "Randolph Bracy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Audrey Gibson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Loranne Ausley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-09-14; official copy, https://www.flsenate.gov/Session/Bill/2022/214/BillText/Filed/HTML (LegiScan doc 2432815))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-214-2022.introduced.html",
+      "sha256": "55636f15b0769783a4cfd921b9a225a0e661962f745c4e7adae604fe189c57a8"
+    },
+    "note": "As filed (introduced 2021-09-14); s. 790.301 is a whole new section. The long definition of \"assault weapon\" (named models and feature tests) is not quoted for length. Section 2 (s. 775.087, F.S.) adds assault weapons and large-capacity magazines to the existing gun-possession minimum sentences."
+  },
+  "operative_text": "Section 1 (new s. 790.301, F.S.): “Large-capacity magazine” means an ammunition feeding device with the capacity to accept more than 10 rounds, or any conversion kit, part, or combination of parts from which such a device can be assembled if those parts are in the possession or under the control of the same person, but does not include any of the following: 1. A feeding device that has been permanently altered so that it cannot accommodate more than 10 rounds; 2. A .22 caliber tube ammunition feeding device; or 3. A tubular magazine that is contained in a lever-action firearm.\nSection 1 (new s. 790.301, F.S.): A person who, within this state, distributes, transports, or imports into this state, sells, keeps for sale, or offers or exposes for sale, or who gives an assault weapon or a large-capacity magazine in violation of this section, except as provided in paragraph (c), commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084, with a mandatory minimum term of imprisonment of 2 years.\nSection 1 (new s. 790.301, F.S.): Except as provided in subsection (5), a person who, within this state, possesses any assault weapon or large capacity magazine, except as provided in this section or as otherwise authorized by law, commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084, with a mandatory minimum term of imprisonment of 1 year.\nSection 1 (new s. 790.301, F.S.): A person who lawfully possesses an assault weapon or a large-capacity magazine before October 1, 2022, shall apply by October 1, 2023, or, if such person is a member of the military or naval forces of this state or of the United States and is unable to apply by October 1, 2023, because he or she is or was on official duty outside of this state, shall apply within 90 days after returning to this state, to the Department of Law Enforcement for a certificate of possession with respect to such assault weapon or large-capacity magazine."
+}

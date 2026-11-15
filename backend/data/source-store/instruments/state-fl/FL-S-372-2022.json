@@ -1,0 +1,47 @@
+{
+  "id": "FL-S-372-2022",
+  "scope": "state:fl",
+  "title": "S0372 (2022 Regular): Domestic Violence",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2022/372",
+    "https://www.flsenate.gov/Session/Bill/2022/372/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lori Berman",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "daafe458-8c11-40b0-9382-22b22747b7e2"
+    },
+    {
+      "name": "Tina Polsky",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "69578e2e-7ec6-4321-ad0c-c16ba1d29641"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: Section 1 (new s. 784.04875, F.S.) — creates a first-degree misdemeanor for any act of domestic violence or dating violence"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-09-28; official copy, https://www.flsenate.gov/Session/Bill/2022/372/BillText/Filed/HTML (LegiScan doc 2434526))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-372-2022.introduced.html",
+      "sha256": "3d0aab3644d1a37ff42f34ae7159436833d9a2a029e91b49e8de361cce559b58"
+    },
+    "note": "Introduced version; no passage vote. Quote is a selection; receipt, search warrant, return and transfer procedures in s. 790.233 are omitted."
+  },
+  "operative_text": "Section 2 (s. 790.065(2)(a)2., F.S.): 2. Has been convicted of a misdemeanor crime of domestic violence and, therefore, is prohibited from purchasing a firearm under 18 U.S.C. s. 922(d)(9) or s. 790.233;\nSection 3 (s. 790.233, F.S.): (3) A person may not have in his or her care, custody, possession, or control a firearm or any ammunition if the person: (a) Has been issued a final injunction that is currently in force and effect restraining that person from committing acts of domestic violence, as issued under s. 741.30, or from committing acts of stalking or cyberstalking, as issued under s. 784.0485; or (b)Has been convicted of a misdemeanor offense of domestic violence.\nSection 3 (s. 790.233, F.S.): (4)A person convicted of a misdemeanor offense of domestic violence must, upon conviction, surrender all firearms and ammunition in his or her possession as provided in subsection (5).\nSection 3 (s. 790.233, F.S.): (5)(a)Upon convicting a defendant of a misdemeanor offense of domestic violence under s. 784.04875, the court shall order the defendant to surrender to the local law enforcement agency having jurisdiction over the defendant all firearms and ammunition owned by the defendant which are in the defendant’s custody, control, or possession, except as provided in subsection (6), and any license to carry a concealed weapon or firearm issued to the defendant under s. 790.06.\nSection 4 (new s. 790.234, F.S.): (2)When at the scene of an alleged act of domestic violence, a law enforcement officer must remove a firearm from the scene if: (a)The law enforcement officer has probable cause to believe that an act of domestic violence has occurred; and (b)The firearm is in plain view or is discovered during a consensual or any other lawful search."
+}

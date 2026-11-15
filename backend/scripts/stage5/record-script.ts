@@ -7,6 +7,8 @@
  *     --name xx-rec --out <stage5>/record-briefs-xx [--check 10] [--skip-rungs 5,2] [--seed <text>] [--store <dir>]
  *   npx tsx scripts/stage5/record-script.ts adopt --out <stage5>/record-briefs-xx --name xx-rec --codes <stage5>/record-codes
  *
+ * plan   Exit 6, with the files written but not to be used, when over half the people with a record (of 10 or more)
+ *        went to Opus for an act on a FLAGGED bill: the bill table's flags were never closed (bill_table.py settle).
  * plan   Decides each person with a record. A PLAIN case gets a script-made code in <out>/script-codes/ (a holding
  *        folder: nothing downstream reads it). Everyone else is listed for Opus with the reason:
  *          <name>-lanes.tsv        every person: script or opus, and why
@@ -30,7 +32,7 @@
  */
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { collapseBatch, collapsedRoundTripProblems, expandCollapsed, onTopic, type RosterRow } from '../lib/stage5CoderInputs.js';
+import { collapseBatch, collapsedRoundTripProblems, expandCollapsed, isPlainRecord, onTopic, type RosterRow } from '../lib/stage5CoderInputs.js';
 import { NEEDS_STANDING_CHECK, SCRIPT_CODER, type Stage5Code } from '../lib/stage5Code.js';
 import { checkAtIngest, finalizeCode, rungTextsFromLadder } from '../lib/stage5Ingest.js';
 import { LANE_WORDS, decideRecord, namedInRulings, rulingsNameText, seededSample, standingCheckDifferences, unitSections, wordsFor, type Lane, type RuleBill, type RuleBillRow } from '../lib/stage5RecordRule.js';
@@ -107,8 +109,10 @@ function plan(flags: Map<string, string[]>): number {
     const c = collapseBatch(person, config.topic_key, config.season, (id) => index.get(id), table, kinds);
     const problems = collapsedRoundTripProblems(person, c, config.topic_key, config.season, kinds);
     if (problems.length) throw new Error(`${row.full_name}: the record does not rebuild from its lines (${problems[0]})`);
-    const plainIds = new Set(c.people[0].record.flatMap((l) => l.on.map((r) => r[0])));
     const findings = expandCollapsed(c).get(pid)!.findings;
+    // Plain = the note is only the pre-fill's fixed sentence. Not "it collapsed to a line": one roll call stored
+    // under two motion wordings cannot both collapse, and that sent 114 South Carolina people to Opus (isPlainRecord).
+    const plainIds = new Set(findings.filter(isPlainRecord).map((f) => f.id));
     const res = decideRecord({ findings, plainIds, table, bill, sides, billPrefix: prefix, office: row.office ?? '', named: namedInRulings(row.full_name, section) });
     const toOpus = (lanes: (Lane | 'text-check')[], detail = '') => {
       for (const l of lanes) laneCount[l] = (laneCount[l] ?? 0) + 1;
@@ -158,6 +162,13 @@ function plan(flags: Map<string, string[]>): number {
   for (const [l, n] of Object.entries(laneCount).sort((a, b) => b[1] - a[1])) console.log(`  to Opus, ${n}: ${l === 'text-check' ? "the script's text did not pass the coding checks" : LANE_WORDS[l as Lane]}`);
   console.log(`standing check: ${check.length} of the script's people, seed "${seed}" (${p('check-ids.txt')})`);
   console.log(`next: coder-inputs.ts --record-only --bill-table … --ids ${p('coder-ids.txt')} (Opus lane ${opus.length} + check ${check.length}), split-codes.ts, then record-script.ts adopt`);
+  // Florida, 2026-11-14: an answer note left in every row's `flag` sent all 154 people here, and nothing said so.
+  const flagged = laneCount['flagged-bill'] ?? 0;
+  if (withRecord >= 10 && flagged * 2 > withRecord) {
+    console.error(`STOP: ${flagged} of ${withRecord} people were sent to Opus for an act on a flagged bill. A flag is an open question for the runner.`);
+    console.error('If the runner has answered, close the flags (bill_table.py settle … --answer …), see `bill_table.py check` print "0 flagged", and plan again. Do not code from this plan.');
+    return 6;
+  }
   if (script.length && !check.length) { console.error('no standing check is possible (--check 0): nothing can be adopted'); return 1; }
   return 0;
 }
@@ -170,6 +181,8 @@ function adopt(flags: Map<string, string[]>): number {
   const holding = join(out, 'script-codes');
   const read = (f: string) => JSON.parse(readFileSync(f, 'utf8')) as Stage5Code;
   const scriptIds = readdirSync(holding).filter((f) => f.endsWith('.json')).map((f) => f.slice(0, -5));
+  // the script coded nobody (every person went to Opus): there is nothing to check and nothing to adopt (found in Florida, 2026-11-15)
+  if (!summary.script && !scriptIds.length) { console.log('the script coded nobody: every person has an Opus code, nothing to adopt'); return 0; }
   if (!summary.check_ids.length) { console.error('the plan drew no standing check: nothing can be adopted'); return 1; }
   const waiting = summary.check_ids.filter((p) => !existsSync(join(codes, `${p}.json`)));
   if (waiting.length) { console.log(`${waiting.length} check person(s) have no Opus code in ${codes} yet, e.g. ${waiting[0]}: code them first`); return 3; }

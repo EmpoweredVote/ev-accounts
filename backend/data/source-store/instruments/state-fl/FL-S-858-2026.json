@@ -1,0 +1,41 @@
+{
+  "id": "FL-S-858-2026",
+  "scope": "state:fl",
+  "title": "S0858 (2026 Regular): Protective Injunctions and Protection Orders",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2026/858",
+    "https://www.flsenate.gov/Session/Bill/2026/858/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tina Polsky",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "69578e2e-7ec6-4321-ad0c-c16ba1d29641"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: Section 2 (s. 741.31, F.S.) — makes a second violation of any domestic violence injunction or foreign protection order a third-degree felony, not tied to guns"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-12-10; official copy, https://www.flsenate.gov/Session/Bill/2026/858/BillText/Filed/HTML (LegiScan doc 3289739))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-858-2026.introduced.html",
+      "sha256": "8b33ca1e5bda3a54e0649d629c0c30a2308d2c73e297b4ba1407d9b2548a86d8"
+    },
+    "note": "Introduced version (filed 2025-12-10); no passage vote. Quote is a selection; receipts, search warrants and policy duties are omitted."
+  },
+  "operative_text": "Section 1 (s. 741.30(6)(g), F.S.): Upon issuance of a final judgment on injunction for protection against domestic violence, the court shall order the respondent to surrender to the local law enforcement agency all firearms and ammunition owned by the respondent in the respondent’s custody, control, or possession except as provided in paragraph (9)(g), and any license to carry a concealed weapon or firearm issued under s. 790.06, held by the respondent.\nSection 1 (new s. 741.30(9)(a), F.S.): (9)(a)Upon issuance of a final judgment on injunction for protection against domestic violence, the law enforcement officer serving the injunction for protection shall request that the respondent immediately surrender all firearms and ammunition owned by the respondent in his or her custody, control, or possession and any license to carry a concealed weapon or firearm issued under s. 790.06, held by the respondent.\nSection 1 (new s. 741.30(9)(f)1., F.S.): (f)1.If an injunction for protection against domestic violence is vacated, terminated, or otherwise rendered no longer effective by ruling of the court, a law enforcement agency holding a firearm or any ammunition owned by the respondent or a license to carry a concealed weapon or firearm issued under s. 790.06, held by the respondent, that has been surrendered or seized pursuant to this subsection must return such surrendered firearm, ammunition, or license to carry a concealed weapon or firearm issued under s. 790.06, as requested by a respondent only after confirming through a background check that the respondent is currently eligible to own or possess firearms and ammunition under federal and state law and after confirming with the court that the injunction has been vacated, terminated, or otherwise rendered no longer effective.\nSection 1 (new s. 741.30(9)(g), F.S.): (g)A respondent may elect to transfer all firearms and ammunition owned by the respondent that have been surrendered to or seized by a local law enforcement agency pursuant to paragraph (a) to another person who is willing to receive the respondent’s firearms and ammunition. The law enforcement agency must allow such a transfer only if it is determined that the chosen recipient:"
+}

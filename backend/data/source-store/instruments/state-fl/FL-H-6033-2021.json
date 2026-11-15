@@ -1,0 +1,44 @@
+{
+  "id": "FL-H-6033-2021",
+  "scope": "state:fl",
+  "title": "H6033 (2021 Regular): Preemption of Firearms and Ammunition",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2021/6033",
+    "https://www.flsenate.gov/Session/Bill/2021/6033/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dan Daley",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "601ae676-fd42-478d-a253-bac744e5c968"
+    },
+    {
+      "name": "Ben Diamond",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-01-14; official copy, https://www.flsenate.gov/Session/Bill/2021/6033/BillText/Filed/PDF (LegiScan doc 2242135))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-6033-2021.introduced.pdf",
+      "sha256": "162fd1bff6f810357cffda4b57261c3cf7aed5d04e65e8a043742e9da73f1846"
+    },
+    "note": "Introduced version (filed 2021-01-14); no passage vote on file. Section 2 (s. 790.251(4)) strikes a clause referring to s. 790.33 as a conforming change and is not quoted."
+  },
+  "operative_text": "Section 1 (s. 790.33, F.S.): Section 790.33, Florida Statutes, is repealed."
+}

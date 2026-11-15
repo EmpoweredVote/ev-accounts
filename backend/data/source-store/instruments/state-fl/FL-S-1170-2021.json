@@ -1,0 +1,44 @@
+{
+  "id": "FL-S-1170-2021",
+  "scope": "state:fl",
+  "title": "S1170 (2021 Regular): Sales of Ammunition",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2021/1170",
+    "https://www.flsenate.gov/Session/Bill/2021/1170/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lauren Book",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tina Polsky",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "69578e2e-7ec6-4321-ad0c-c16ba1d29641"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-02-09; official copy, https://www.flsenate.gov/Session/Bill/2021/1170/BillText/Filed/HTML (LegiScan doc 2282692))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-1170-2021.introduced.html",
+      "sha256": "333c900fbd171905e397298375d5d06b1a947d8af0c377a5608df4d0c510c3b6"
+    },
+    "note": "Introduced version (filed 2021-02-09); no passage vote. Mostly existing s. 790.065 text; the bill adds \"ammunition\" and the new (1)(d) exception. In the text the added words are underlined in small pieces, so quotes join them."
+  },
+  "operative_text": "Section 1 (uncodified): This act may be cited as “Jaime’s Law.”\nSection 2 (s. 790.065, F.S.): (1)(a) A licensed importer, licensed manufacturer, or licensed dealer may not sell or deliver from her or his inventory at her or his licensed premises any firearm or ammunition to another person, other than a licensed importer, licensed manufacturer, licensed dealer, or licensed collector, until she or he has:\nSection 2 (s. 790.065, F.S.): (b) However, if the person purchasing, or receiving delivery of, the firearm or ammunition is a holder of a valid concealed weapons or firearms license pursuant to s. 790.06 or holds an active certification from the Criminal Justice Standards and Training Commission as a “law enforcement officer,” a “correctional officer,” or a “correctional probation officer” as defined in s. 943.10(1), (2), (3), (6), (7), (8), or (9), this subsection does not apply.\nSection 2 (s. 790.065, F.S.): (c) This subsection does not apply to the purchase, trade, or transfer of a rifle or shotgun or rifle or shotgun ammunition by a resident of this state when the resident makes such purchase, trade, or transfer from a licensed importer, licensed manufacturer, or licensed dealer in another state.\nSection 2 (s. 790.065, F.S.): (d) This subsection does not apply to a transfer of ammunition if the transferor has no reason to believe that the transferee will use or intends to use the ammunition in a crime or that the transferee is prohibited from possessing ammunition under state or federal law, and the transfer takes place and the transferee’s possession of the ammunition is exclusively: 1. At a shooting range or in a shooting gallery or other area designated for the purpose of target shooting; or\nSection 2 (s. 790.065, F.S.): (12)(d) Any person who knowingly acquires a firearm or ammunition through purchase or transfer intended for the use of a person who is prohibited by state or federal law from possessing or receiving a firearm or ammunition commits a felony of the third degree, punishable as provided in s. 775.082 or s. 775.083."
+}

@@ -1,0 +1,49 @@
+{
+  "id": "FL-H-259-2024",
+  "scope": "state:fl",
+  "title": "H0259 (2024 Regular): Discharging a Firearm in Residential Areas",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2024/259",
+    "https://www.flsenate.gov/Session/Bill/2024/259/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Katherine Waldron",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joseph Casello",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael Gottlieb",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "130eca48-e5c4-4839-a154-ed07103d7988"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2023-10-23; official copy, https://www.flsenate.gov/Session/Bill/2024/259/BillText/Filed/PDF (LegiScan doc 2846780))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-259-2024.introduced.pdf",
+      "sha256": "1c6674fd515e4f0647cd1cb763ccd91a581e2918bf80f0bc15a3fdac2534bc46"
+    },
+    "note": "Introduced version (2023-10-23); no vote recorded. Struck: 'and that has a residential density of one or more dwelling units per acre' and former exceptions (b) no reasonably foreseeable risk and (c) accidental discharge. The stray ', ' after 'or' is as printed."
+  },
+  "operative_text": "Section 1 (s. 790.15(4)(a), F.S.): Any person who recreationally discharges a firearm outdoors, including target shooting, in an area that the person knows or reasonably should know: 1. Is primarily residential in nature; or , 2. Has a residential density of 1.25 or more acres per dwelling unit and the firearm discharge by the person does not remain within the boundaries of the property in which the discharge takes place, commits a misdemeanor of the first degree, punishable as provided in s. 775.082 or s. 775.083."
+}

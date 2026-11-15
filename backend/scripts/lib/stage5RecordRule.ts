@@ -10,6 +10,11 @@
  * Missouri 114 of 127, 114 agree. All 7 disagreements of the bare rule fall in a lane below (5 licence-rule
  * records, 1 superseded Yes, 1 person the rulings name).
  *
+ * "Plain" is `isPlainRecord` (stage5CoderInputs.ts): the note is only the pre-fill's fixed sentence. Until 2026-11-14
+ * it was "the finding collapsed to a line", which one roll call stored under two motion wordings fails. Replay with
+ * the fixed test, against the blind Opus record codes: South Carolina 98 of 168 decided here (was 9), 99 of 99 agree;
+ * Kentucky 33 of 140 (was 9), 32 of 32 agree; Tennessee 94 and Washington 83, both unchanged.
+ *
  * `decideRecord` returns either a decision (a seat at the furthest rung, or a No-votes-only blank) or the
  * LANES that send the person to Opus. Any lane wins over a decision. Pure: no files, no clock.
  */

@@ -1,0 +1,65 @@
+{
+  "id": "FL-H-6001-2021",
+  "scope": "state:fl",
+  "title": "H6001 (2021 Regular): Licenses to Carry Concealed Weapons or Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2021/6001",
+    "https://www.flsenate.gov/Session/Bill/2021/6001/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Anthony Sabatini",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jason Fischer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Stan McClain",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b9ead145-1e46-4862-ad41-42adb8008403"
+    },
+    {
+      "name": "Spencer Roach",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tyler Sirois",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "937bc5a2-b2d7-4a16-ba4b-543cf9fb0054"
+    },
+    {
+      "name": "Jayer Williamson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2020-11-30; official copy, https://www.flsenate.gov/Session/Bill/2021/6001/BillText/Filed/PDF (LegiScan doc 2217409))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-6001-2021.introduced.pdf",
+      "sha256": "e7750a4444a72a33f60a1cb5c92a033fe2c4c5ca0455575726e8b20fa6e97a2b"
+    },
+    "note": "Introduced version (filed 2020-11-30); no passage vote. Struck: item 13 (college or university facilities); later items are renumbered. The quote ends at item 12 because the renumbering marks for the airport and federal-law items run together in the text. The college item no longer appears."
+  },
+  "operative_text": "Section 1 (s. 790.06, F.S.): (12)(a) A license issued under this section does not authorize any person to openly carry a handgun or carry a concealed weapon or firearm into: 1. Any place of nuisance as defined in s. 823.05; 2. Any police, sheriff, or highway patrol station; 3. Any detention facility, prison, or jail; 4. Any courthouse; 5. Any courtroom, except that nothing in this section would preclude a judge from carrying a concealed weapon or determining who will carry a concealed weapon in his or her courtroom; 6. Any polling place; 7. Any meeting of the governing body of a county, public school district, municipality, or special district; 8. Any meeting of the Legislature or a committee thereof; 9. Any school, college, or professional athletic event not related to firearms; 10. Any elementary or secondary school facility or administration building; 11. Any career center; 12. Any portion of an establishment licensed to dispense alcoholic beverages for consumption on the premises, which portion of the establishment is primarily devoted to such purpose;"
+}

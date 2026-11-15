@@ -42,7 +42,7 @@ Exit 10 when the round itself sends a code back: run another round, under a new 
 import csv, datetime, glob, json, os, re, shutil, subprocess, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir
 from _args import opt
-from session_card import load_profile, skip_rungs
+from session_card import control_args, load_profile, skip_rungs
 
 USAGE = ('run_state.py --profile <topic-profile.json> --state xx [--from N] [--to N] [--print] [--worktree <dir>] [--tools <dir>]\n'
          '       run_state.py --profile <topic-profile.json> --state xx --round <name> [--ids <file>] [--why <file>] [--print]')
@@ -140,7 +140,7 @@ class Run:
         return 'record codes in ' + f'{S}/record-codes'
 
     def s2(self):
-        groups = ' '.join(f'--control-group {g.replace(" ", "")}' for g in self.prof['control_groups'])
+        groups = control_args(self.prof)
         _, out = self.sh(f'{self.py}/search_list.py plan --record-codes {self.S}/record-codes --roster {self.S}/batches/{self.xx}-roster.tsv {groups} --out {self.S}/search-plan-{self.xx}')
         return (out.strip().splitlines() or ['planned'])[-1]
 

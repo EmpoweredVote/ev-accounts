@@ -1,0 +1,41 @@
+{
+  "id": "FL-H-373-2024",
+  "scope": "state:fl",
+  "title": "H0373 (2024 Regular): Conditions of Pretrial Release",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2024/373",
+    "https://www.flsenate.gov/Session/Bill/2024/373/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Patt Maney",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e9e01352-463f-4c0f-9ab6-6f53a2b968c0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-bail-pretrial: Section 1 (new s. 903.047(3)) — release timing and limits on alcohol-monitor release conditions"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2023-11-08; official copy, https://www.flsenate.gov/Session/Bill/2024/373/BillText/Filed/PDF (LegiScan doc 2849256))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-373-2024.introduced.pdf",
+      "sha256": "3bfabc2ca7aa8035879cd5f9e3aaab0b57e3db6a0604424563f410b10baa358e"
+    },
+    "note": "Introduced version (2023-11-08). Only subsection (4) is a gun part; subsection (3) is a non-gun pretrial release rule."
+  },
+  "operative_text": "Section 1 (new s. 903.047(4), F.S.): Notwithstanding any other law, a defendant may not be required to surrender a license to carry a concealed weapon or concealed firearm in conjunction with a first misdemeanor offense unless it appears that the defendant would present a danger to the public if he or she were to possess the concealed weapon or concealed firearm."
+}

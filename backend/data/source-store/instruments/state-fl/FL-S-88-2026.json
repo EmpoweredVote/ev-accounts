@@ -1,0 +1,45 @@
+{
+  "id": "FL-S-88-2026",
+  "scope": "state:fl",
+  "title": "S0088 (2026 Regular): Sale or Transfer of Ammunition",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2026/88",
+    "https://www.flsenate.gov/Session/Bill/2026/88/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tina Polsky",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "69578e2e-7ec6-4321-ad0c-c16ba1d29641"
+    },
+    {
+      "name": "Carlos Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c310dbb0-d4f3-4aa1-9080-90440e46fb01"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-09-26; official copy, https://www.flsenate.gov/Session/Bill/2026/88/BillText/Filed/HTML (LegiScan doc 3270820))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-88-2026.introduced.html",
+      "sha256": "3d4573ec4e2c3b00c480b9bbf865b9f2fd8e8df50b0dee27ccf23f2d67dae4ef"
+    },
+    "note": "Introduced version (filed 2025-09-26); no passage vote. Short title in Section 1 is not quoted."
+  },
+  "operative_text": "Section 2 (s. 790.065, F.S.): A licensed importer, licensed manufacturer, or licensed dealer may not sell or deliver from her or his inventory at her or his licensed premises any firearm or ammunition to another person, other than a licensed importer, licensed manufacturer, licensed dealer, or licensed collector, until she or he has: However, if the person purchasing, or receiving delivery of, the firearm or ammunition is a holder of a valid concealed weapons or firearms license pursuant to s. 790.06 or holds an active certification from the Criminal Justice Standards and Training Commission as a “law enforcement officer,” a “correctional officer,” or a “correctional probation officer” as defined in s. 943.10(1), (2), (3), (6), (7), (8), or (9), this subsection does not apply. Any person who knowingly acquires a firearm or ammunition through purchase or transfer intended for the use of a person who is prohibited by state or federal law from possessing or receiving a firearm or ammunition commits a felony of the third degree, punishable as provided in s. 775.082 or s. 775.083."
+}

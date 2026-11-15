@@ -1,0 +1,42 @@
+{
+  "id": "FL-S-896-2026",
+  "scope": "state:fl",
+  "title": "S0896 (2026 Regular): School Safety",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2026/896",
+    "https://www.flsenate.gov/Session/Bill/2026/896/BillText/c2/HTML"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Don Gaetz",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "11dbe473-671f-4f2b-bc6f-7a2377f93375"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "education-school-police: Section 7 (new s. 1006.601(3)) — campus threat management teams, security risk assessments, response plans",
+        "healthcare: Section 7 (new s. 1006.601(3)(b)) — student mental health training and suicide-prevention signs"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Comm Sub, 2026-02-25; official copy, https://www.flsenate.gov/Session/Bill/2026/896/BillText/c2/HTML (LegiScan doc 3376490))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-896-2026.comm-sub.html",
+      "sha256": "f5f73a822f8ab56e90d0e4dc69daad9aaa53fe19ea56a39e9bd390426a064212"
+    },
+    "note": "Committee Substitute (CS for CS, 2026-02-25) text; later amendments not in the text read. No passage vote on file. The sentence on private-property exception is quoted without a final period because the printed period is struck with the old text; the words 'a felony of the second degree...' were struck from the old lead-in and re-added at the start of paragraph (d). Sections 3 and 4-6 (offense ranking chart, tip-line promotion, student-record transfer, school safety training) are not quoted."
+  },
+  "operative_text": "Section 1 (s. 30.15(1)(k), F.S.): A sheriff must also assist public postsecondary educational institutions, as described in s. 1000.04(3), in implementing a guardian program under s. 1006.601.\nSection 2 (s. 790.115(2)(d), F.S.): Discharges any weapon or firearm within 1,000 feet of a school, during school hours or during the time of a sanctioned school activity, unless discharged for lawful defense of himself or herself or another or for a lawful purpose.\nSection 2 (s. 790.115(2)(d), F.S.): This subparagraph does not apply to the discharge of a weapon or firearm on private real property within 1,000 feet of a school by the owner of such property or by a person whose presence on such property has been authorized, licensed, or invited by the owner\nSection 2 (new s. 790.115(4), F.S.): A person arrested for a violation of paragraph (2)(d) must be held in custody until brought before the court for admittance to bail in accordance with chapter 903.\nSection 7 (new s. 1006.601(2)(a), F.S.): Public postsecondary educational institutions are authorized to participate in the Chris Hixon, Coach Aaron Feis, and Coach Scott Beigel Guardian Program and may appoint certified school guardians pursuant to s. 30.15(1)(k).\nSection 7 (new s. 1006.601(2)(b), F.S.): An employee or a faculty member, who is not a student, of a public postsecondary educational institution may serve as a school guardian, in support of school-sanctioned activities for purposes of s. 790.115, upon satisfactory completion of the requirements under s. 30.15(1)(k) and certification by a sheriff."
+}

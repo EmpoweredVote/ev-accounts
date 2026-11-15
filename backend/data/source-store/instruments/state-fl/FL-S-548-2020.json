@@ -1,0 +1,45 @@
+{
+  "id": "FL-S-548-2020",
+  "scope": "state:fl",
+  "title": "S0548 (2020 Regular): Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2020/548",
+    "https://www.flsenate.gov/Session/Bill/2020/548/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jose Rodriguez",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3174b894-b4a9-41fb-8c77-b1790f9a7ec1"
+    },
+    {
+      "name": "Lori Berman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "daafe458-8c11-40b0-9382-22b22747b7e2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-10-17; official copy, https://www.flsenate.gov/Session/Bill/2020/548/BillText/Filed/HTML (LegiScan doc 2057408))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-548-2020.introduced.html",
+      "sha256": "458b14e450e93b6194da35cbbf5114658717cb15a88abbfdff4f65018e2109a0"
+    },
+    "note": "Read as filed (Introduced, 2019-10-17); no vote. Struck: subsections (3) and (10) (downtime completion and dealer exemptions), the rifle/shotgun exemption in (1)(c), and the concealed-license exemption from the buyer check. Section 2 changes a cross-reference only."
+  },
+  "operative_text": "Section 1 (s. 790.065, F.S.): If the review of records under subsection (2) indicates that the potential buyer or transferee is prohibited under state or federal law from having in her or his care, custody, possession, or control a firearm and that the potential transfer, sale, or purchase has received a nonapproval number, the Department of Law Enforcement shall send notification of the nonapproval to the federal or state correctional, law enforcement, prosecutorial, and other criminal justice agencies that have jurisdiction in the county where the transfer or purchase was attempted. If neither party to a prospective firearms sale, lease, or transfer is a licensed dealer, the parties to the transaction must complete the sale, lease, or transfer through a licensed dealer as follows: a. The seller, lessor, or transferor shall deliver the firearm to a licensed dealer, who shall process the sale, lease, or transfer as if she or he were the seller, lessor, or transferor. A person younger than 21 years of age may not purchase a firearm, and a person may not sell or transfer a firearm to a person younger than 21 years of age. The sale or transfer of a firearm to a person younger than 21 years of age may not be facilitated by any other person or entity on behalf of the person younger than 21 years of age. A person who violates this subsection commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084."
+}

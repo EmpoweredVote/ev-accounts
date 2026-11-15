@@ -1,0 +1,49 @@
+{
+  "id": "FL-S-1238-2019",
+  "scope": "state:fl",
+  "title": "S1238 (2019 Regular): Safety of Religious Institutions",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2019/1238",
+    "https://www.flsenate.gov/Session/Bill/2019/1238/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Debbie Mayfield",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fa0ce01a-e6a8-4eaf-a73c-32ad9dd3ce3c"
+    },
+    {
+      "name": "Dennis Baxley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Travis Hutson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-02-20; official copy, https://www.flsenate.gov/Session/Bill/2019/1238/BillText/Filed/HTML (LegiScan doc 1919389))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-1238-2019.introduced.html",
+      "sha256": "f51e709edaac0b15ff27b3fbb54306cde27849280af8025211a505818c5407ef"
+    },
+    "note": "Introduced version (filed 2019-02-20); later amendments are not in the text read. Also changes \"shall\" to \"may\" in s. 790.06(12)(b)."
+  },
+  "operative_text": "Section 1 (s. 790.06, F.S.): (c) Notwithstanding any other law, for the purposes of safety, security, personal protection, or other lawful purposes: 1. A church, a synagogue, or any other religious institution may authorize a person licensed under this section to carry a firearm on property owned, rented, leased, borrowed, or otherwise lawfully used by the church, synagogue, or other religious institution. 2. A private school or a religious school may designate a person to carry a firearm on the property of that school. If a private school or a religious school chooses to designate a person, the governing board or body of that school must create policies and procedures the designee must meet."
+}

@@ -1,0 +1,56 @@
+{
+  "id": "FL-H-19-2022",
+  "scope": "state:fl",
+  "title": "H0019 (2022 Regular): Firearm Restrictions Pursuant to Court Findings or Risk Protection Orders",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2022/19",
+    "https://www.flsenate.gov/Session/Bill/2022/19/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michael Gottlieb",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "130eca48-e5c4-4839-a154-ed07103d7988"
+    },
+    {
+      "name": "Christopher Benjamin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dan Daley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "601ae676-fd42-478d-a253-bac744e5c968"
+    },
+    {
+      "name": "Marie Woodson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c2e03f0c-06e4-458d-b0d0-0bb7d518e6fa"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-08-02; official copy, https://www.flsenate.gov/Session/Bill/2022/19/BillText/Filed/PDF (LegiScan doc 2429125))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-19-2022.introduced.pdf",
+      "sha256": "fe834283b67cbf2f012b828297c4d395cf7de42e133e53c34c7486bc4abb1204"
+    },
+    "note": "As-filed text (filed 2021-08-02); no votes recorded. Subparagraph 1 of the penalty (felony) is existing law, renumbered."
+  },
+  "operative_text": "Section 1 (s. 790.065(2)(a)4.c.(II), F.S.): The department must enter the record into the National Crime Information Center (NCIC) database of persons who are prohibited from purchasing a firearm. If a judge or magistrate orders the submittal of the record to the department, the record must be submitted to the department and entered into the NCIC within 24 hours.\nSection 2 (s. 790.401(11)(b)1., F.S.): A person who has in his or her custody or control a firearm or any ammunition or who purchases, possesses, or receives a firearm or any ammunition with knowledge that he or she is prohibited from doing so by an order issued under this section commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084.\nSection 2 (s. 790.401(11)(b)2., F.S.): A person who attempts to commit a violation of subparagraph 1. commits a misdemeanor of the first degree, punishable as provided in s. 775.082 or s. 775.083."
+}

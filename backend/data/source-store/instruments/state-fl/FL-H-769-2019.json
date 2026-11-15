@@ -1,0 +1,39 @@
+{
+  "id": "FL-H-769-2019",
+  "scope": "state:fl",
+  "title": "H0769 (2019 Regular): Sale and Delivery of Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2019/769",
+    "https://www.flsenate.gov/Session/Bill/2019/769/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Carlos Smith",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c310dbb0-d4f3-4aa1-9080-90440e46fb01"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-02-13; official copy, https://www.flsenate.gov/Session/Bill/2019/769/BillText/Filed/PDF (LegiScan doc 1905863))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-769-2019.introduced.pdf",
+      "sha256": "5220346408ac1761977ffd3a58f0b2316a68d4fd93a6e8f3e7167da986554d0e"
+    },
+    "note": "Introduced version (2019-02-13); no vote recorded. The quote is one list item in the background-check review; the printed item numbering '5.4.' shows renumbering. Sections 2-4 only conform cross-references."
+  },
+  "operative_text": "Section 1 (s. 790.065(2)(a)4., F.S.): Has been convicted of a misdemeanor crime that is required to be reported as a hate crime under s. 877.19 and, therefore, is prohibited from purchasing a firearm; or"
+}

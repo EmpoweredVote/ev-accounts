@@ -16,13 +16,24 @@ QMAP = str.maketrans({'‘': "'", '’': "'", '“': '"', '”': '"', '–': '-'
 norm = lambda s: re.sub(r'\s+', ' ', s.translate(QMAP)).strip().lower()
 
 
+def saved_path(root, rel):
+    """A saved-copy path under root. Store paths start '.planning/research/...'; when root already ends in those parts, drop them."""
+    p = os.path.join(root, rel)
+    if os.path.exists(p): return p
+    rp = os.path.normpath(root).split(os.sep); pp = os.path.normpath(rel).split(os.sep)
+    for k in range(min(len(rp), len(pp)), 0, -1):
+        if rp[-k:] == pp[:k]:
+            q = os.path.join(root, *pp[k:])
+            if os.path.exists(q): return q
+    return p
+
 def ins_text(iid, _c={}):
     if iid in _c: return _c[iid]
     fs = glob.glob(f'{I}/**/{iid}.json', recursive=True); t = ''
     if fs:
         d = json.load(open(fs[0])); t = d.get('operative_text') or ''
         sc = (d.get('provenance') or {}).get('saved_copy') or {}
-        p = os.path.join(SAVED, sc.get('path') or '_none_')
+        p = saved_path(SAVED, sc.get('path') or '_none_')
         if os.path.exists(p):
             raw = open(p, 'rb').read()
             if not sc.get('sha256') or hashlib.sha256(raw).hexdigest() == sc['sha256']:

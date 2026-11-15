@@ -1,0 +1,56 @@
+{
+  "id": "FL-H-1343-2021",
+  "scope": "state:fl",
+  "title": "H1343 (2021 Regular): Issuance of Licenses to Carry Concealed Weapons or Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2021/1343",
+    "https://www.flsenate.gov/Session/Bill/2021/1343/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Blaise Ingoglia",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8c7b61e3-709d-42f5-acf1-0c6a7e328f0a"
+    },
+    {
+      "name": "Alex Andrade",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4695be3f-52c2-4483-9ca7-8b150e444802"
+    },
+    {
+      "name": "Tommy Gregory",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Stan McClain",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b9ead145-1e46-4862-ad41-42adb8008403"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-02-25; official copy, https://www.flsenate.gov/Session/Bill/2021/1343/BillText/Filed/PDF (LegiScan doc 2312511))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-1343-2021.introduced.pdf",
+      "sha256": "5ba96da26be8e88b556b28cd33bfdefa8f464eff73c933280b3100efc53c9cb9"
+    },
+    "note": "Introduced version (2021-02-25); no vote recorded. Struck text: only 'the provisions of' in the department-administers sentence."
+  },
+  "operative_text": "Section 1 (s. 790.06(15)(b), F.S.): The Department of Agriculture and Consumer Services must continually maintain an online application process for the issuance of licenses provided for in this section and may not arbitrarily or subjectively restrict access to the online application process.\nSection 1 (s. 790.06(15)(c), F.S.): In a civil action to enforce any provision of this subsection, upon a finding of a violation by the Department of Agriculture and Consumer Services, the court shall award the prevailing party reasonable attorney fees and costs in addition to any other relief."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "FL-S-1310-2019",
+  "scope": "state:fl",
+  "title": "S1310 (2019 Regular): Minors Posting Firearms on Social Media",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2019/1310",
+    "https://www.flsenate.gov/Session/Bill/2019/1310/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jason Pizzo",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "20c6fffd-e45a-463d-b36b-531a58de253c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-02-22; official copy, https://www.flsenate.gov/Session/Bill/2019/1310/BillText/Filed/HTML (LegiScan doc 1924638))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-1310-2019.introduced.html",
+      "sha256": "c4ef9daa8b187afaf5cb5911b63d4026ab384f896dec1f668eabc852e2f287ae"
+    },
+    "note": "Introduced version (2019-02-22); no vote recorded. Quotes under Sections 2 and 3 are list items within longer sentences."
+  },
+  "operative_text": "Section 1 (new s. 790.111(1), F.S.): A minor who posts or publishes a picture of a firearm, a BB gun, an air or a gas-operated gun, or a device displayed to resemble a firearm to a social media page, post, profile, or account that is openly viewable to the public commits a misdemeanor of the first degree, punishable as provided in s. 775.082 or s. 775.083.\nSection 1 (new s. 790.111(3), F.S.): Any firearm that is possessed or used by a minor in violation of this section shall be promptly seized by a law enforcement officer and disposed of in accordance with s. 790.08.\nSection 2 (s. 790.174(2)(c), F.S.): On a social media page, post, profile, or account openly viewable to the public in violation of s. 790.111.\nSection 3 (s. 901.15(17), F.S.): There is probable cause to believe that the person has committed a criminal act as described in s. 790.111."
+}

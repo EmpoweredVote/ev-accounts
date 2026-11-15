@@ -30,10 +30,12 @@ for r in rows:
     while len(urls) > len(uc): uc.append(f'source_url_{len(uc) + 1}'); cols.append(uc[-1])
     for i, c in enumerate(uc): r[c] = urls[i] if i < len(urls) else ''
     for v in vs:
-        if '/rollcall/' not in v['url']: continue
+        if v['act'] not in ACT: continue  # a sponsorship; a vote is cross-checked wherever its line is cited
         for l in lines:
             if l['full_name'] == n and l['source_url'] == v['url']:
-                got = re.search(r'voted (\w+)', l['snippet']).group(1)
+                # a legislature's own roll-call page words an absence "was absent or not voting" (stateRollCallEvidence.ts)
+                got = (re.search(r'voted (\w+)\.?$', l['snippet']) or re.search(r'(?:was) (absent) or not voting\.$', l['snippet']) or [None, '?'])[1]
+                got = {'absent': 'NV'}.get(got, got)
                 cross.append({'name': n, 'legiscan': v['url'], 'official': v['official'], 'legiscan_vote': got, 'finding_act': v['act'], 'agree': got == ACT.get(v['act'])})
 for r in rows:
     for c in cols: r.setdefault(c, '')

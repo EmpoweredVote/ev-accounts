@@ -28,7 +28,7 @@ import legislature
 
 USAGE = 'session_card.py A|B|desk --profile <topic-profile.json> --state xx --state-name <Name> [--worktree <dir>] [--out <file>]'
 HERE = os.path.dirname(os.path.abspath(__file__))
-GROUP = re.compile(r'\s*(\d+(?:\s*,\s*\d+)*)\s*:\s*(\d+)\s*')
+GROUP = re.compile(r'\s*(\d+(?:\s*,\s*\d+)*)\s*:\s*(\d+)\s*(?::\s*(side)\s*)?')
 
 
 def load_profile(path):
@@ -46,7 +46,15 @@ def load_profile(path):
     if p['record_script'] and not p.get('sides'): raise SystemExit(f'{path}: "record_script" is true but "sides" is not set')
     if p['record_script'] and not groups:
         raise SystemExit(f'{path}: "record_script" is true but "control_groups" is empty: the script pass belongs to the record-first flow')
+    if any(GROUP.fullmatch(g).group(3) for g in groups) and not p.get('sides'):
+        raise SystemExit(f'{path}: a ":side" control group needs "sides"')
     return p
+
+
+def control_args(p):
+    """The `search_list.py plan` arguments for the profile's control groups (run_state.py and the cards share them)."""
+    groups = p['control_groups']
+    return ' '.join(f'--control-group {g.replace(" ", "")}' for g in groups) + (f' --sides {p["sides"]}' if any(GROUP.fullmatch(g).group(3) for g in groups) else '')
 
 
 def skip_rungs(groups):
@@ -59,7 +67,7 @@ def search_rule(groups):
     parts = []
     for g in groups:
         m = GROUP.fullmatch(g); rungs = [x.strip() for x in m.group(1).split(',')]
-        parts.append(f"rung{'s' if len(rungs) > 1 else ''} {' and '.join(rungs)} (control of {m.group(2)})")
+        parts.append(f"rung{'s' if len(rungs) > 1 else ''} {' and '.join(rungs)} (control of {m.group(2)}{'; it fails only on a change of side or outcome' if m.group(3) else ''})")
     return ('Record seats at ' + '; '.join(parts) + ' are not searched, except each control. A group with no more seats than its '
             'control is all control. Everyone else is searched, with no cap.')
 
@@ -94,7 +102,7 @@ def main():
         'PROFILE': path, 'CARD_B': f'{S}/{xx}/CARD-B.md', 'DESK': f'{S}/{xx}/desk', 'SINCE': str(p.get('since') or 2017),
         'DATE': opt('--date') or datetime.date.today().isoformat(),
         'SIDES': str(p.get('sides') or ''), 'SKIP_RUNGS': ','.join(skip_rungs(groups)),
-        'CONTROL_ARGS': ' '.join(f'--control-group {g.replace(" ", "")}' for g in groups),
+        'CONTROL_ARGS': control_args(p),
         'SEARCH_RULE': search_rule(groups) if groups else '',
         'LEG_PATH': os.path.join(legislature.folder(wt), f'{xx}.json'), 'LEG_SUMMARY': legislature.summary(lg) if lg else '',
         'RECIPE_VOTES': lg['votes']['mode'] if lg else '', 'RECIPE_HOSTS': ','.join(lg['votes']['official_hosts']) if lg else '',

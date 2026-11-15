@@ -1,0 +1,151 @@
+{
+  "id": "FL-H-219-2018",
+  "scope": "state:fl",
+  "title": "H0219 (2018 Regular): Assault Weapons and Large-Capacity Magazines",
+  "urls": [
+    "http://www.flsenate.gov/Session/Bill/2018/219",
+    "http://www.flsenate.gov/Session/Bill/2018/219/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Carlos Smith",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c310dbb0-d4f3-4aa1-9080-90440e46fb01"
+    },
+    {
+      "name": "Joseph Abruzzo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Robert Asencio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lori Berman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "daafe458-8c11-40b0-9382-22b22747b7e2"
+    },
+    {
+      "name": "Kamia Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Cortes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tracie Davis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "efbbfe32-705f-454c-b5ad-2c893a94e1d8"
+    },
+    {
+      "name": "Ben Diamond",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Nicholas Duran",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joseph Geller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Al Jacquet",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Evan Jenne",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Amy Mercado",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Wengay Newton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Richardson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Barrington Russell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sean Shaw",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Silvers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Emily Slosberg-King",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Richard Stark",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Barbara Watson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Clovis Watson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Patricia Hawkins-Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2017-10-03; official copy, http://www.flsenate.gov/Session/Bill/2018/219/BillText/Filed/PDF (LegiScan doc 1651347))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-219-2018.introduced.pdf",
+      "sha256": "165c9bf38acf54bbbba8387569e5fe44c3cdb129140943663dadeed16128c45f"
+    },
+    "note": "Introduced text (filed 2017-10-03); no passage vote. Whole s. 790.30 is new. Section 2 (s. 775.087(3)(a)) adds assault weapons and large-capacity magazines to the 15-year minimum for listed felonies committed while possessing one; not quoted. Definitions (selective-fire, named models, features) are omitted from the quote."
+  },
+  "operative_text": "Section 1 (new s. 790.30, F.S.), paragraph (2)(a): Any person who, within this state, distributes, transports, or imports into the state, sells, keeps for sale, or offers or exposes for sale, or who gives any assault weapon or large-capacity ammunition magazine, in violation of this section, except as provided in paragraph (b), commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084, with a mandatory minimum term of imprisonment of 2 years.\nSection 1 (new s. 790.30, F.S.), paragraph (2)(b): Any person who transfers, sells, or gives any assault weapon or large-capacity ammunition magazine to a person under 18 years of age in violation of this section commits a felony of the second degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084, with a mandatory minimum term of imprisonment of 6 years.\nSection 1 (new s. 790.30, F.S.), paragraph (3)(a): Except as provided in subsection (5), any person who, within this state, possesses any assault weapon or large- capacity ammunition magazine, except as provided in this section or as otherwise authorized by law, commits a felony of the third degree, punishable as provided in s. 775.082, s. 775.083, or s. 775.084, with a mandatory minimum term of imprisonment of 1 year.\nSection 1 (new s. 790.30, F.S.), paragraph (4)(a): Any person who lawfully possesses an assault weapon or large-capacity ammunition magazine prior to October 1, 2018, shall apply by October 1, 2019, or, if such person is a member of the military or naval forces of this state or of the United States and is unable to apply by October 1, 2019, because he or she is or was on official duty outside of this state, shall apply within 90 days of returning to the state to the Department of Law Enforcement, for a certificate of possession with respect to such assault weapon or large-capacity ammunition magazine.\nSection 1 (new s. 790.30, F.S.), paragraph (4)(c): An assault weapon or large-capacity ammunition magazine possessed pursuant to this section may not be sold or transferred on or after January 1, 2019, to any person within this state other than to a licensed gun dealer, as provided in subsection (5), or by a bequest or intestate succession."
+}

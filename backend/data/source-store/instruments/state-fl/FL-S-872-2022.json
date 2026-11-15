@@ -1,0 +1,39 @@
+{
+  "id": "FL-S-872-2022",
+  "scope": "state:fl",
+  "title": "S0872 (2022 Regular): Unfinished Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2022/872",
+    "https://www.flsenate.gov/Session/Bill/2022/872/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tina Polsky",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "69578e2e-7ec6-4321-ad0c-c16ba1d29641"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2021-11-08; official copy, https://www.flsenate.gov/Session/Bill/2022/872/BillText/Filed/HTML (LegiScan doc 2448363))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-872-2022.introduced.html",
+      "sha256": "209d176718d7d4a817282272c302d4f43ab56c1df59401355cfd6cb0a3f041a0"
+    },
+    "note": "Introduced version (2021-11-08); effective date October 1, 2022. Whole new section is underlined."
+  },
+  "operative_text": "Section 1 (new s. 790.223, F.S.): After January 1, 2023, a person may not possess, purchase, transport, or receive an unfinished frame or receiver, unless: 1. The person is a firearms importer or manufacturer; or 2. The unfinished frame or receiver is imprinted with a serial number issued by a firearms importer or manufacturer and the unfinished frame or receiver has been imprinted with the serial number pursuant to federal law.\nSection 1 (new s. 790.223, F.S.): A person may not sell, offer to sell, or transfer an unfinished frame or receiver unless:\nSection 1 (new s. 790.223, F.S.): A person may not manufacture or cause to be manufactured or assemble or cause to be assembled a firearm that is not imprinted with a serial number issued by a firearms importer or manufacturer in accordance with federal law and any regulations adopted thereunder unless the firearm:\nSection 1 (new s. 790.223, F.S.): After January 1, 2023, a person may not possess, sell, offer to sell, transfer, purchase, transport, or receive a firearm that is not imprinted with a serial number issued by a firearms importer or manufacturer in accordance with federal law and any regulations adopted thereunder unless:"
+}

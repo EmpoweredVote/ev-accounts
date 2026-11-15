@@ -43,10 +43,21 @@ def full_text(ins):
     """The whole operative_text, whitespace collapsed: a quote can sit in section text no quote block holds."""
     return re.sub(r'\s+', ' ', re.sub(r'\{\+|\+\}', '', ins.get('operative_text') or ''))
 
+def saved_path(root, rel):
+    """A saved-copy path under root. Store paths start '.planning/research/...'; when root already ends in those parts, drop them."""
+    p = os.path.join(root, rel)
+    if os.path.exists(p): return p
+    rp = os.path.normpath(root).split(os.sep); pp = os.path.normpath(rel).split(os.sep)
+    for k in range(min(len(rp), len(pp)), 0, -1):
+        if rp[-k:] == pp[:k]:
+            q = os.path.join(root, *pp[k:])
+            if os.path.exists(q): return q
+    return p
+
 def saved_text(ins, _c={}):
     sc = (ins.get('provenance') or {}).get('saved_copy') or {}
     if not SAVED or not sc.get('path'): return None
-    p = os.path.join(SAVED, sc['path'])
+    p = saved_path(SAVED, sc['path'])
     if p in _c: return _c[p]
     t = None
     if os.path.exists(p):

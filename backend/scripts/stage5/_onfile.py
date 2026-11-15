@@ -19,8 +19,9 @@ def onfile_env(stage5, state, env=os.environ):
 
 
 def newest_roll_call(root, state):
-    """(date of the newest roll call in the state's newest session on disk, number of sessions on disk); (None, 0)
-    when there is none."""
+    """(date of the newest roll call on disk, number of sessions on disk); (None, n) when no session holds a roll call.
+    Read from the newest year whose sessions hold any roll call: a session just opened has bills and no votes yet
+    (Florida, 2026-11-15: the 2027 session's first bills made step 7 print "newest roll call none")."""
     sess = []
     for d in glob.glob(os.path.join(root, f'{state.upper()}-*', '*', '*')):
         bills = sorted(glob.glob(os.path.join(d, 'bill', '*.json')))
@@ -28,8 +29,10 @@ def newest_roll_call(root, state):
             s = json.load(open(bills[0]))['bill']['session']
             sess.append((int(s.get('year_end') or s.get('year_start') or 0), d))
     if not sess: return None, 0
-    top = max(y for y, _ in sess); newest = ''
-    for _, d in (x for x in sess if x[0] == top):
-        for f in glob.glob(os.path.join(d, 'vote', '*.json')):
-            newest = max(newest, json.load(open(f))['roll_call'].get('date') or '')
-    return newest or None, len(sess)
+    for top in sorted({y for y, _ in sess}, reverse=True):
+        newest = ''
+        for _, d in (x for x in sess if x[0] == top):
+            for f in glob.glob(os.path.join(d, 'vote', '*.json')):
+                newest = max(newest, json.load(open(f))['roll_call'].get('date') or '')
+        if newest: return newest, len(sess)
+    return None, len(sess)

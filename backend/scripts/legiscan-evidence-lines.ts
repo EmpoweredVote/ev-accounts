@@ -7,29 +7,34 @@
  * topic_key, source_url, snippet, snippet_index), one row per canonical line the record holds for
  * that person (src/lib/legiscanEvidence.ts). A pair with no line is reported and left out.
  *
- *   npx tsx scripts/legiscan-evidence-lines.ts --in pairs.csv --out legiscan-evidence.csv
+ *   npx tsx scripts/legiscan-evidence-lines.ts --in pairs.csv --out legiscan-evidence.csv [--page-cache <dir>]
  *
- * Reads the LegiScan API (LEGISCAN_API_KEY), every call counted against the monthly cap. Nothing
- * is written to the database except that counter. The lines print no party.
+ * A source_url that is a legislature's own roll-call page (src/lib/stateRollCallEvidence.ts; a state run
+ * from Open States data cites these, having no legiscan.com page) gets its line from that page, fetched with
+ * the verifier's own fetch steps. No LegiScan call is made for it.
+ *
+ * Reads the LegiScan API (LEGISCAN_API_KEY), every call counted against the monthly cap, or the datasets
+ * on disk when LEGISCAN_DATASETS is set. Nothing is written to the database except that counter. The lines
+ * print no party.
  */
 import 'dotenv/config';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { join } from 'node:path';
 import { parseArgs } from 'node:util';
 import { pool } from '../src/lib/db.js';
 import { legiscanQuery } from '../src/lib/legiscan/client.js';
 import { createLegiscanRecordFetcher, legiscanLinesFor } from '../src/lib/legiscanEvidence.js';
 import { loadGovernorTerms } from '../src/lib/governorTerms.js';
+import { isStateRollCallUrl, parseStateRollCallRender, stateRollCallLinesFor } from '../src/lib/stateRollCallEvidence.js';
+import { createVerificationFetchSession } from '../src/lib/verificationFetch.js';
 
-const { values } = parseArgs({ options: { in: { type: 'string' }, out: { type: 'string' } } });
+const { values } = parseArgs({ options: { in: { type: 'string' }, out: { type: 'string' }, 'page-cache': { type: 'string' } } });
 if (!values.in || !values.out) {
   console.error('usage: legiscan-evidence-lines.ts --in pairs.csv --out legiscan-evidence.csv');
   process.exit(2);
 }
-const key = process.env.LEGISCAN_API_KEY;
-if (!key) {
-  console.error('LEGISCAN_API_KEY is not set');
-  process.exit(2);
-}
+const key = process.env.LEGISCAN_API_KEY ?? '';
 
 /** Minimal CSV: quoted fields with doubled quotes, no embedded newlines (the input is hand-made). */
 function parseLine(line: string): string[] {
@@ -56,7 +61,32 @@ const col = (name: string) => {
 };
 const [iName, iLast, iTopic, iUrl] = ['full_name', 'last_name', 'topic_key', 'source_url'].map(col);
 
-const records = createLegiscanRecordFetcher((op, params) => legiscanQuery(key, op, params));
+const records = createLegiscanRecordFetcher((op, params) => {
+  // Datasets on disk need no key; the live API does.
+  if (!key && !process.env.LEGISCAN_DATASETS) throw new Error('LEGISCAN_API_KEY is not set');
+  return legiscanQuery(key, op, params);
+});
+// A legislature's own roll-call page (stateRollCallEvidence.ts) is read through the verifier's own fetch
+// steps, so a line is built from exactly the text the verifier will check it against.
+// The fetch paces itself by the site's Crawl-delay (adapters/stateRollCallAdapter.ts).
+// --page-cache <dir>: keep each page's render there, so a second run fetches nothing. Only a render is kept:
+// a page the reader refused (or the site refused to serve) is asked for again next time.
+const pages = createVerificationFetchSession();
+const pageCache = values['page-cache'];
+if (pageCache) mkdirSync(pageCache, { recursive: true });
+const pageText = new Map<string, Promise<string>>();
+const fetchPage = async (url: string): Promise<string> => {
+  const file = pageCache ? join(pageCache, `${createHash('sha1').update(url).digest('hex')}.txt`) : '';
+  if (file && existsSync(file)) return readFileSync(file, 'utf8');
+  const text = await pages.fetch(url);
+  if (file && parseStateRollCallRender(text, url)) writeFileSync(file, text);
+  return text;
+};
+const page = (url: string): Promise<string> => {
+  let hit = pageText.get(url);
+  if (!hit) { hit = fetchPage(url); pageText.set(url, hit); }
+  return hit;
+};
 // A governor's signing line needs the person's dated terms as governor: names resolve to one
 // politician by exact full name (case folded); a name that matches none or several gets no terms.
 const allNames = [...new Set(lines.map((l) => (parseLine(l)[iName] ?? '').trim()))];
@@ -74,8 +104,12 @@ for (const raw of lines) {
   const [fullName, lastName, topic, url] = [f[iName], f[iLast], f[iTopic], f[iUrl]].map((s) => (s ?? '').trim());
   let found: string[] = [];
   try {
-    const id = idOf.get(fullName.toLowerCase());
-    found = legiscanLinesFor(url, await records(url), { fullName, lastName, governorTerms: id ? terms.get(id) : undefined });
+    if (isStateRollCallUrl(url)) {
+      found = stateRollCallLinesFor(url, await page(url), lastName, fullName);
+    } else {
+      const id = idOf.get(fullName.toLowerCase());
+      found = legiscanLinesFor(url, await records(url), { fullName, lastName, governorTerms: id ? terms.get(id) : undefined });
+    }
   } catch (err) {
     console.warn(`${fullName} ${url}: ${(err as Error).message}`);
   }

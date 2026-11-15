@@ -1,0 +1,39 @@
+{
+  "id": "FL-S-1532-2019",
+  "scope": "state:fl",
+  "title": "S1532 (2019 Regular): Local Regulation of Firearms and Ammunition",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2019/1532",
+    "https://www.flsenate.gov/Session/Bill/2019/1532/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Darryl Rouson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4865aa8c-9633-4076-bf9f-0fc46a10a3a4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-02-28; official copy, https://www.flsenate.gov/Session/Bill/2019/1532/BillText/Filed/HTML (LegiScan doc 1937798))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-1532-2019.introduced.html",
+      "sha256": "c20409b0e42d0bd87d2286d7791b7e04e1d1c427d6ea903e4489a1349c207461"
+    },
+    "note": "Introduced version (2019-02-28); no passage vote. Section 2 amends s. 790.251(4) only to strike the cross-reference to s. 790.33 (', including those already prohibited from regulating firearms under the provisions of s. 790.33')."
+  },
+  "operative_text": "Section 1 (s. 790.33, F.S.): Section 790.33, Florida Statutes, is repealed."
+}

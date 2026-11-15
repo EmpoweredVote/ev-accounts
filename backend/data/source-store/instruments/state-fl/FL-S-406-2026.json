@@ -1,0 +1,45 @@
+{
+  "id": "FL-S-406-2026",
+  "scope": "state:fl",
+  "title": "S0406 (2026 Regular): Carrying Weapons and Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2026/406",
+    "https://www.flsenate.gov/Session/Bill/2026/406/BillText/Filed/HTML"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tina Polsky",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "69578e2e-7ec6-4321-ad0c-c16ba1d29641"
+    },
+    {
+      "name": "Rosalind Osgood",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "81d8c7da-b56f-4b76-92e4-a5165f421c0b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2025-11-05; official copy, https://www.flsenate.gov/Session/Bill/2026/406/BillText/Filed/HTML (LegiScan doc 3283205))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-406-2026.introduced.html",
+      "sha256": "5467c976d81822adae43a7392f5dd131f707b34c3f5c5c7f6d5592c341b72966"
+    },
+    "note": "Introduced text (2026); no passage vote. Section 2 (s. 790.013, F.S.) strikes the cross-reference that applied s. 790.06(12) to unlicensed carriers; Section 3 (s. 790.06(12), F.S.) strikes the whole prohibited-places list and related paragraphs (moved to new s. 790.0135). Effective on becoming law."
+  },
+  "operative_text": "Section 1 (new s. 790.0135, F.S.): Unless otherwise authorized by law, a person may not carry a weapon or firearm into: (a) A place of nuisance as defined in s. 823.05; (b) A police, sheriff, or highway patrol station; (c) A detention facility, prison, or jail; (d) A courthouse; (e) A courtroom, except that this section does not preclude a judge from carrying a weapon or firearm or determining who will carry a weapon or firearm in his or her courtroom; (f) A polling place; (g) A meeting of the governing body of a county, public school district, municipality, or special district; (h) A meeting of the Legislature or a committee thereof; (i) A school, college, or professional athletic event not related to firearms; (j) An elementary or secondary school facility or administration building; (k) A career center; (l) A portion of an establishment licensed to dispense alcoholic beverages for consumption on the premises, which portion of the establishment is primarily devoted to such purpose; (m) A college or university facility, unless the person is a registered student, employee, or faculty member of such college or university and the weapon is a stun gun or nonlethal electric weapon or device designed solely for defensive purposes and the weapon does not fire a dart or projectile; (n) The inside of the passenger terminal and sterile area of an airport, except that a person is not prohibited from carrying a legal firearm into the terminal which is encased for shipment for purposes of checking such firearm as baggage to be lawfully transported on an aircraft; or (o) Any place where the carrying of firearms is prohibited by federal law. (2) This section does not: (a) Prohibit a person from carrying or storing a firearm in a vehicle for lawful purposes. (b) Modify the terms or conditions of s. 790.251(7). (3) A person who knowingly and willfully violates this section commits a misdemeanor of the second degree, punishable as provided in s. 775.082 or s. 775.083."
+}

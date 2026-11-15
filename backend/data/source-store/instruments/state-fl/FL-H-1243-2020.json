@@ -1,0 +1,46 @@
+{
+  "id": "FL-H-1243-2020",
+  "scope": "state:fl",
+  "title": "H1243 (2020 Regular): Domestic Violence",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2020/1243",
+    "https://www.flsenate.gov/Session/Bill/2020/1243/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kamia Brown",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Carlos Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c310dbb0-d4f3-4aa1-9080-90440e46fb01"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: Section 3 (s. 901.02, F.S.) — lets a court issue an arrest warrant for an act of domestic violence"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2020-01-09; official copy, https://www.flsenate.gov/Session/Bill/2020/1243/BillText/Filed/PDF (LegiScan doc 2089329))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-1243-2020.introduced.pdf",
+      "sha256": "42d4796e92e05c481cd9c19b2735e05e1c1314b9a0e7fdb569d116c8b6025cd4"
+    },
+    "note": "As filed (introduced 2020-01-09). Sections 4-6 only change cross-references. Section 1 also changes \"Prior to\" to \"Before\" and \"shall\" to \"must\" in s. 741.2901(3)."
+  },
+  "operative_text": "Section 1 (s. 741.2901, F.S.): If a defendant is arrested for an act of domestic violence, the court must order the defendant not to possess a firearm or any ammunition as a condition of bail if the court finds that the safety of the victim, the victim's children, or others will likely be more adequately assured.\nSection 1 (s. 741.2901, F.S.): (4) Notwithstanding subsection (3), an individual with an outstanding warrant issued pursuant to s. 901.02(3) is prohibited from possessing a firearm or any ammunition.\nSection 2 (s. 790.065, F.S.): 4. Has been arrested for an act of domestic violence and is prohibited from possessing a firearm or any ammunition under s. 741.2901(3) or has an outstanding warrant issued pursuant to s. 901.02(3) and is prohibited from possessing a firearm or any ammunition; or"
+}

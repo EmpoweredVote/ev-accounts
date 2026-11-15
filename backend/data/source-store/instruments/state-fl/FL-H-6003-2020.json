@@ -1,0 +1,55 @@
+{
+  "id": "FL-H-6003-2020",
+  "scope": "state:fl",
+  "title": "H6003 (2020 Regular): Firearms",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2020/6003",
+    "https://www.flsenate.gov/Session/Bill/2020/6003/BillText/Filed/PDF"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Walter Hill",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Byron Donalds",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "13972902-fa8a-4ebc-91f6-b451db77c7d1"
+    },
+    {
+      "name": "Stan McClain",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b9ead145-1e46-4862-ad41-42adb8008403"
+    },
+    {
+      "name": "Anthony Sabatini",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Introduced, 2019-08-09; official copy, https://www.flsenate.gov/Session/Bill/2020/6003/BillText/Filed/PDF (LegiScan doc 2051747))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-H-6003-2020.introduced.pdf",
+      "sha256": "acfea24801dd94406c84dc18b2a8f73b82bad1952e88d47294fa4b9845494942"
+    },
+    "note": "Introduced text (filed 2019-08-09); no passage vote. Operative changes are mostly deletions, so the quote is limited to the repeal clauses. Struck by the bill: s. 394.463(2)(d) (law enforcement may seize firearms when taking a person into involuntary examination); s. 790.065(13) (under-21 purchase ban and its officer/servicemember rifle exception); s. 790.0655(2)(c)-(d) (waiting-period exceptions for hunter safety course holders and officers buying rifles or shotguns). Section 2 (s. 394.4599) only conforms a cross-reference."
+  },
+  "operative_text": "Section 3 (s. 790.064, F.S.): Section 790.064, Florida Statutes, is repealed.\nSection 6 (s. 790.222, F.S.): Section 790.222, Florida Statutes, is repealed.\nSection 7 (s. 790.401, F.S.): Section 790.401, Florida Statutes, is repealed."
+}

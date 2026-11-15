@@ -1,0 +1,61 @@
+{
+  "id": "FL-S-150-2023",
+  "scope": "state:fl",
+  "title": "S0150 (2023 Regular): Public Safety",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2023/150",
+    "https://www.flsenate.gov/Session/Bill/2023/150/BillText/c1/HTML"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Jay Collins",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ee966041-d44a-4c05-b7ae-d8d22bfb93a7"
+    },
+    {
+      "name": "Joe Gruters",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8fdbeb73-19d0-470e-b7ed-5b4b3bef1995"
+    },
+    {
+      "name": "Jonathan Martin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ecaafba9-cb16-4460-aa54-592b5f5358f4"
+    },
+    {
+      "name": "Ed Hooper",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "050b0376-a153-4aa2-9c8d-f2e357163f6e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "education-school-police: Sections 1 and 20 (ss. 27.53, 1002.42) — sheriffs assist private schools with the guardian program; private schools may partner with law enforcement or security agencies and run safe-school officers",
+        "public-safety-approach: Section 17 (new s. 943.6873) — every law enforcement agency must keep an active assailant response policy",
+        "education-school-police: Sections 18, 22, 24 (ss. 1001.212, 1006.07, 1006.121) — threat management process and portal, threat management teams, school firearm-detection canine program"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "LegiScan bulk data (gun-policy Stage 5, Florida); operative text read by a Sonnet fill agent from the official Florida text (Comm Sub, 2023-03-10; official copy, https://www.flsenate.gov/Session/Bill/2023/150/BillText/c1/HTML (LegiScan doc 2737002))",
+    "fetched_at": "2026-11-15T01:04:01.759077Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/FL-S-150-2023.comm-sub.html",
+      "sha256": "96b5b57f73ae337a4a0857e0259eb46b08464a0b2cb1426d898cc5a11fc26a9e"
+    },
+    "note": "Committee Substitute 1 for SB 150 (2023-03-10), not the enrolled text; later amendments are not in the text read. Large omnibus public-safety bill. Many numbers are struck and renumbered in ss. 790.001 and 790.01; quotes show the law as it reads after the bill. The s. 790.115(2)(e) quote ends without a period in print because the struck old sentence follows it. Section 12 also strikes the older rule that licensees on school property were punished under s. 790.06(12)."
+  },
+  "operative_text": "Section 5 (s. 790.01, F.S.): A person is authorized to carry a concealed weapon or concealed firearm, as that term is defined in s. 790.06(1), if he or she: (a) Is licensed under s. 790.06; or (b) Is not licensed under s. 790.06, but otherwise satisfies the criteria for receiving and maintaining such a license under s. 790.06(2)(a)-(f) and (i)-(n), (3), and (10).\nSection 5 (s. 790.01, F.S.): In any prosecution for a violation of subsection (2) or subsection (3), the state bears the burden of proving, as an element of the offense, both that a person is not licensed under s. 790.06 and that he or she is ineligible to receive and maintain such a license under the criteria listed in s. 790.06(2)(a)-(f) and (i)-(n), (3), and (10).\nSection 6 (new s. 790.013, F.S.): A person who carries a concealed weapon or concealed firearm without a license as authorized under s. 790.01(1)(b): (1)(a) Must carry valid identification at all times when he or she is in actual possession of a concealed weapon or concealed firearm and must display such identification upon demand by a law enforcement officer. (b) A violation of this subsection is a noncriminal violation punishable by a $25 fine, payable to the clerk of the court. (2) Is subject to s. 790.06(12) in the same manner as a person who is licensed to carry a concealed weapon or concealed firearm.\nSection 7 (s. 790.015, F.S.): A nonresident of Florida may carry a concealed weapon or concealed firearm, as that term is defined in s. 790.06(1), while in this state if the nonresident is a resident of the United States who is 21 years of age or older and he or she:\nSection 9 (s. 790.053, F.S.): It is not a violation of this section for a person who carries a concealed firearm as authorized in s. 790.01(1) to briefly and openly display the firearm to the ordinary sight of another person, unless the firearm is intentionally displayed in an angry or threatening manner, not in necessary self-defense.\nSection 12 (s. 790.115, F.S.): A person who is authorized to carry a concealed weapon or concealed firearm under s. 790.01(1) and who willfully and knowingly violates paragraph (b) or subparagraph (c)1. commits a misdemeanor of the second degree, punishable as provided in s. 775.082 or s. 775.083\nSection 13 (s. 790.145, F.S.): Section 790.145, Florida Statutes, is repealed."
+}
