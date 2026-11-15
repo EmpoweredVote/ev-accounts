@@ -319,7 +319,7 @@ export function verifyLegiscanLine(
   const sameName = (p: Json) => fold(p.name ?? '') === fold(l.name);
 
   let who: Json | undefined;
-  let among: Json[] = [];
+  let among: Json[];
   if (l.kind === 'sponsor') {
     if (rec.kind !== 'bill') return { verdict: 'snippet_not_found' };
     const bill = (rec.bills ?? []).find((b: Json) => b.session_name === l.session);
