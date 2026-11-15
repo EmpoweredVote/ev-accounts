@@ -810,7 +810,14 @@ describe('validStoredSpan (I6)', () => {
     const MA_LINE = 'Massachusetts House roll call 135 (193rd General Court), H.4885 - On acceptance of the report: Kilcoyne voted Yea.';
     expect(validStoredSpan(MA_LINE, MA_LINE, MA_URL)).toBe(MA_LINE);
     expect(validStoredSpan(MA_LINE, MA_LINE, IGA_URL)).toBeNull();                  // not a Massachusetts roll call
-    const party = 'House roll call 102 (2025), H R 22, On Passage: Jack (R-GA) voted Yea.';
+    // A legislature's own roll-call page (stateRollCallEvidence.ts), the Open States path: Utah ut-01 (2026-11-15)
+    // had 48 approvals refused "no verified source" because this case was missing.
+    const UT_URL = 'https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2025GS&voteid=138&house=H';
+    const UT_LINE = 'Utah House roll call 138 (2025GS), HB 133 - 3rd Reading Final Passage (2025-02-04): Walter, N. voted Yea.';
+    expect(validStoredSpan(UT_LINE, UT_LINE, UT_URL)).toBe(UT_LINE);
+    expect(validStoredSpan(UT_LINE, UT_LINE, MA_URL)).toBeNull();                   // not a state roll-call page
+    expect(validStoredSpan(`Note: ${UT_LINE}`, UT_LINE, UT_URL)).toBeNull();        // not the whole snippet
+    const party ='House roll call 102 (2025), H R 22, On Passage: Jack (R-GA) voted Yea.';
     expect(validStoredSpan(party, party, ROLL_URL)).toBeNull();                      // not a canonical line
     expect(validStoredSpan('Jane Doe voted', 'Jane Doe voted', ROLL_URL)).toBeNull();
   });
