@@ -323,6 +323,21 @@ function sponsorParts(f: CoderFinding): { role: string; tail: string; motionTail
   return { role: m[1], tail: m[3], motionTail: f.motion?.slice(`${m[1]} sponsor`.length) };
 }
 
+/**
+ * True when a record finding says nothing beyond the pre-fill's fixed sentence: a roll call whose note is exactly
+ * its own chamber, motion, date, act, tally and gate, or a sponsorship line; no passage, no local-record mark.
+ *
+ * This is the record script's test for "nothing else was said about this act" (stage5RecordRule.ts). It is NOT
+ * "the finding collapses to a line": a collapsed batch keeps one motion wording and one subject list per bill, so
+ * the same roll call stored twice (once from the legislature's page, once from LegiScan: "Adopt conference report"
+ * and "House: Adopt Conference Report") cannot both collapse. South Carolina, 2026-11-14: that sent 114 people to
+ * Opus as "a note says more", and the script coded 9 of 168; Kentucky 11 of 133.
+ */
+export function isPlainRecord(f: CoderFinding): boolean {
+  if (f.kind !== 'record' || !f.instrument_id || !f.act || f.local_record !== undefined || f.passage !== undefined) return false;
+  return !!(voteParts(f) ?? sponsorParts(f));
+}
+
 /** One record finding, rebuilt from its line. The key order is `projectFinding`'s: the check compares JSON. */
 function rebuild(line: RecordLine, ref: VoteRef | SponsorRef, bill: CollapsedBill | undefined): CoderFinding {
   const [id, date] = ref;

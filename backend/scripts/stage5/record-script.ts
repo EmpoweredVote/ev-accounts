@@ -30,7 +30,7 @@
  */
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { collapseBatch, collapsedRoundTripProblems, expandCollapsed, onTopic, type RosterRow } from '../lib/stage5CoderInputs.js';
+import { collapseBatch, collapsedRoundTripProblems, expandCollapsed, isPlainRecord, onTopic, type RosterRow } from '../lib/stage5CoderInputs.js';
 import { NEEDS_STANDING_CHECK, SCRIPT_CODER, type Stage5Code } from '../lib/stage5Code.js';
 import { checkAtIngest, finalizeCode, rungTextsFromLadder } from '../lib/stage5Ingest.js';
 import { LANE_WORDS, decideRecord, namedInRulings, rulingsNameText, seededSample, standingCheckDifferences, unitSections, wordsFor, type Lane, type RuleBill, type RuleBillRow } from '../lib/stage5RecordRule.js';
@@ -107,8 +107,10 @@ function plan(flags: Map<string, string[]>): number {
     const c = collapseBatch(person, config.topic_key, config.season, (id) => index.get(id), table, kinds);
     const problems = collapsedRoundTripProblems(person, c, config.topic_key, config.season, kinds);
     if (problems.length) throw new Error(`${row.full_name}: the record does not rebuild from its lines (${problems[0]})`);
-    const plainIds = new Set(c.people[0].record.flatMap((l) => l.on.map((r) => r[0])));
     const findings = expandCollapsed(c).get(pid)!.findings;
+    // Plain = the note is only the pre-fill's fixed sentence. Not "it collapsed to a line": one roll call stored
+    // under two motion wordings cannot both collapse, and that sent 114 South Carolina people to Opus (isPlainRecord).
+    const plainIds = new Set(findings.filter(isPlainRecord).map((f) => f.id));
     const res = decideRecord({ findings, plainIds, table, bill, sides, billPrefix: prefix, office: row.office ?? '', named: namedInRulings(row.full_name, section) });
     const toOpus = (lanes: (Lane | 'text-check')[], detail = '') => {
       for (const l of lanes) laneCount[l] = (laneCount[l] ?? 0) + 1;
