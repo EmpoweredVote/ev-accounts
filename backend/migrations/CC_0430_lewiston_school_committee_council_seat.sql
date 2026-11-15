@@ -74,6 +74,15 @@
 -- so this file only SEATS, and seats the COUNCIL row, because the charter seats him here as the
 -- City Councilor. If the rows are later merged the seat moves with the merge.
 --
+-- @incumbency-decision: no-effect — the office this file creates is BRAND NEW and carries NO race,
+-- so there is no `race_candidates.is_incumbent` answer about this seat that a term date could
+-- restate. Measured on prod after apply, all three halves of the claim: the new office holds 0
+-- races and exactly 1 office_terms row with 0 closed terms, so `seat_officeholder` closed no
+-- predecessor (there was none to close); and Scott A. Harriman appears in 0 race_candidates rows
+-- ANYWHERE, so no cached incumbency answer about him exists to be contradicted. ⚠ When the council
+-- re-elects this seat in January 2027, that pass writes a SECOND term on an office that still
+-- carries no race — but check the race count again rather than inheriting this line.
+--
 -- Dry run: node backend/scripts/dry-run-migration.mjs backend/migrations/CC_0430_lewiston_school_committee_council_seat.sql
 
 BEGIN;
