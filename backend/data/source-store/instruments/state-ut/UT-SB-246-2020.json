@@ -1,0 +1,45 @@
+{
+  "id": "UT-SB-246-2020",
+  "scope": "state:ut",
+  "title": "SB246 (2020 General): Extreme Risk Protection Order Requirements",
+  "urls": [
+    "https://le.utah.gov/~2020/bills/static/SB0246.html",
+    "https://le.utah.gov/~2020/bills/sbillint/SB0246.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Todd Weiler",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "612392b2-ab46-4287-a2fd-c74ae0961198"
+    },
+    {
+      "name": "Mike Schultz",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8a5e17bd-54c4-405d-9cba-c62d139cc5a9"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2020/bills/sbillint/SB0246.pdf (Open States text id 90096250))",
+    "fetched_at": "2026-11-15T19:41:15.158344Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-SB-246-2020.introduced.pdf",
+      "sha256": "2e8c265367a5c26566bd71800b2f22a75a70ed862ab39e801229c7f8e9e92c62"
+    },
+    "note": "Introduced version (03-05-20); later amendments are not in the text read. Section 1 (Utah Code 53-10-208) adds these orders to the statewide warrant system; omitted as non-operative for guns."
+  },
+  "operative_text": "Section 3 (new Utah Code 78B-7-602): (3) \"Extreme risk protective order\" means an order that is in place for one year from the date of issuance that prohibits the respondent from purchasing or possessing firearms, and is issued by a district court after a hearing where the respondent had an opportunity to be heard and a finding was made that the respondent is dangerous.\nSection 4 (new Utah Code 78B-7-603): (1) Any family member of the respondent or an individual who has resided with the respondent within the previous six months may request that a law enforcement officer may seek an extreme risk protective order from the district court in the county where the respondent resides restraining the respondent from possessing any firearms.\nSection 5 (new Utah Code 78B-7-604): (4) At the hearing, the court shall determine by clear and convincing evidence whether the respondent is dangerous and: (a) issue an extreme risk protective order for not less than one year; or (b) if the court determines that the respondent is not dangerous, dismiss the petition.\nSection 6 (new Utah Code 78B-7-605): (1) A court that issued an extreme risk protective order may issue a search warrant for any firearms or ammunition possessed, or within the custody or control of the respondent if: (a) the respondent has been lawfully served and provided a hearing and failed to surrender all firearms and ammunition required by the order; or (b) the law enforcement officer exercised discretion under Subsection 78B-7-604(7) and did not receive any firearms or ammunition.\nSection 9 (new Utah Code 78B-7-608): (6) Upon vacation or expiration of an extreme risk protective order, the federal firearms licensee shall perform a background check before returning any firearms or ammunition to the respondent.\nSection 11 (new Utah Code 78B-7-610): (1) Any person who provides a firearm or ammunition to a respondent knowing that the respondent is subject to an extreme risk protective order is guilty of a third degree felony. (2) A respondent who possesses a firearm or ammunition while subject to an extreme risk protective order is guilty of a third degree felony."
+}

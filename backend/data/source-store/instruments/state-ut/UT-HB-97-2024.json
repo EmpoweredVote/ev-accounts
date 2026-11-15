@@ -1,0 +1,39 @@
+{
+  "id": "UT-HB-97-2024",
+  "scope": "state:ut",
+  "title": "HB97 (2024 General): Gun Safety Amendments",
+  "urls": [
+    "https://le.utah.gov/~2024/bills/static/HB0097.html",
+    "https://le.utah.gov/~2024/bills/hbillint/HB0097.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Andrew Stoddard",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4956e47c-d051-4adf-a558-5f29c9f7e854"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2024/bills/hbillint/HB0097.pdf (Open States text id 90102550))",
+    "fetched_at": "2026-11-15T19:41:15.158344Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-97-2024.introduced.pdf",
+      "sha256": "9e95d5277b6b9322aed7e682a6a2e7a398f691ea54c7947c2f90be5b7c8d48ce"
+    },
+    "note": "Introduced version (12-29-23); no later amendments in the text read. 'person' changed to 'actor' and 'third degree felony' wording in 76-10-527 are technical."
+  },
+  "operative_text": "Section 3 (new Utah Code 76-10-526.2): (2) Except as provided in Subsection (3), a dealer may not deliver a firearm to a purchaser before the later of: (a) five days after the day on which the firearm was purchased; or (b) the day on which the background check described in Section 76-10-526 is completed.\nSection 3 (new Utah Code 76-10-526.2): (3) The waiting period described in Subsection (2) does not apply: (a) to the trade of one firearm for another firearm; or (b) to a purchase of a firearm by: (i) an individual with a valid permit to carry a concealed firearm who is exempt from the criminal background check fee under Subsection 76-10-526(13); (ii) a law enforcement officer who is exempt from the criminal background check fee under Subsection 76-10-526(14); or (iii) a Federal Firearm Licensee.\nSection 3 (new Utah Code 76-10-526.2): (4) A violation of Subsection (2) is subject to the penalties described in Section 76-10-527.\nSection 4 (Utah Code 76-10-527): (1) A dealer is guilty of a class A misdemeanor who willfully and intentionally: (a) requests, obtains, or seeks to obtain criminal history background information under false pretenses; (b) disseminates criminal history background information; or (c) violates Section 76-10-526 or 76-10-526.2."
+}

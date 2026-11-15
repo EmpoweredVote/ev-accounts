@@ -1,0 +1,39 @@
+{
+  "id": "UT-HB-180-2026",
+  "scope": "state:ut",
+  "title": "HB180 (2026 General): Dangerous Weapons at Daycares and Schools",
+  "urls": [
+    "https://le.utah.gov/~2026/bills/static/HB0180.html",
+    "https://le.utah.gov/Session/2026/bills/introduced/HB0180S02.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Andrew Stoddard",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4956e47c-d051-4adf-a558-5f29c9f7e854"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Comm Sub, ; official copy, https://le.utah.gov/Session/2026/bills/introduced/HB0180S02.pdf (Open States text id 90112366))",
+    "fetched_at": "2026-11-15T19:41:15.158344Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-180-2026.comm-sub.pdf",
+      "sha256": "e3a3e96efcc30e160a2072ecc4214195a44fbe51483d1fdab046cfa19b6efcde"
+    },
+    "note": "Version read: 2nd Substitute (Gray) H.B. 180, dated 01-20 14:44 (listed as Comm Sub); later amendments, if any, are not in the text read. Section 1 words 'locations' struck, 'restrictions' added; subsection numbering in (2)(c) was shifted. Effective May 6, 2026."
+  },
+  "operative_text": "Section 1 (Utah Code 53-5a-102.2), Subsection (2)(c)(ii): openly carry the firearm, unless lawfully responding to an active threat in accordance with Section 76-2-402, 76-2-405, or 76-2-407: (A) on or about the premises of a public or private elementary school or secondary school as described in Section 76-11-205; or (B) on or about the premises of a daycare as described in Section 76-11-206.\nSection 2 (Utah Code 76-11-205), Subsection (4)(b): the actor is 21 years old or older and has a concealed carry permit as described in Section 53-5a-303 and is carrying the actor's dangerous weapon in a concealed manner unless lawfully responding to an active threat in accordance with Section 76-2-402, 76-2-405, or 76-2-407;\nSection 3 (Utah Code 76-11-206), Subsection (4)(b): the actor has a concealed carry permit as described in Section 53-5a-303 and is carrying the actor's dangerous weapon in a concealed manner unless lawfully responding to an active threat in accordance with Section 76-2-402, 76-2-405, or 76-2-407;"
+}

@@ -1,0 +1,39 @@
+{
+  "id": "UT-HB-83-2026",
+  "scope": "state:ut",
+  "title": "HB83 (2026 General): Imitation Firearm Amendments",
+  "urls": [
+    "https://le.utah.gov/~2026/bills/static/HB0083.html",
+    "https://le.utah.gov/Session/2026/bills/amended/HB0083.Hamd.2.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Jake Fitisemanu",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3ea1438a-880b-476f-972d-4cd8d020e376"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Amended, ; official copy, https://le.utah.gov/Session/2026/bills/amended/HB0083.Hamd.2.pdf (Open States text id 90111928))",
+    "fetched_at": "2026-11-15T19:41:15.158344Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-83-2026.amended.pdf",
+      "sha256": "f983957dbb351f0726bc3ff2437529a7c9128aaf708f66683547759dc3a4bfbb"
+    },
+    "note": "Text read is House Amendment 2 (Feb 10, 2026), not the full bill; the printed marks are garbled ('{...}' braces mixed with struck words), so the quote is rebuilt with struck words dropped and is not an exact copy of one printed line. Amendment drops 'look-alike' and changes 'possess' to 'draw or exhibit'. Not the enrolled text."
+  },
+  "operative_text": "Section (new Utah Code 53-5a-109): \"Minor\" means an individual younger than 18 years old. It is an infraction for a minor to draw or exhibit an altered toy or imitation firearm if the minor: (a) intentionally or knowingly draws or exhibits the altered toy or imitation firearm in an angry and threatening manner in a public place; (b) knows the drawn or exhibited toy or imitation firearm is an altered toy or imitation firearm; and (c) has previously received a documented warning from a law enforcement officer warning the minor that it is unlawful for the minor to draw or exhibit an altered toy or imitation firearm in an angry and threatening manner in a public place."
+}

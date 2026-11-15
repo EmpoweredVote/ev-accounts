@@ -1,0 +1,674 @@
+{
+  "id": "UT-HB-94-2019",
+  "scope": "state:ut",
+  "title": "HB94 (2019 General): Weapons Restrictions Amendments",
+  "urls": [
+    "https://le.utah.gov/~2019/bills/static/HB0094.html",
+    "http://le.utah.gov/~2019/bills/hbillenr/HB0094.pdf"
+  ],
+  "version": "enrolled",
+  "sponsors": [
+    {
+      "name": "Thurston, Norman K.",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Anderegg, Jacob L.",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2019-02-22",
+      "body": "UT House",
+      "motion": "House passed 3rd reading",
+      "kind": "roll-call",
+      "yes": 54,
+      "no": 14,
+      "absent": 7,
+      "note": "le.utah.gov roll call (Open States data) 90122026",
+      "members": [
+        {
+          "name": "Cheryl Acton",
+          "vote": "yea",
+          "politician_id": "2798f59a-89d5-4a09-8d6b-252c91ce337e"
+        },
+        {
+          "name": "Carl Albrecht",
+          "vote": "yea",
+          "politician_id": "6cbb80d7-e32b-4ea8-9073-463e0e7c918a"
+        },
+        {
+          "name": "Kyle R. Andersen",
+          "vote": "yea"
+        },
+        {
+          "name": "Melissa Ballard",
+          "vote": "yea",
+          "politician_id": "acd23e3e-ef4c-451e-b227-e9c2b0c8a4cc"
+        },
+        {
+          "name": "Stewart Barlow",
+          "vote": "yea",
+          "politician_id": "2b2cf5ad-b226-48f6-a49b-616805019c35"
+        },
+        {
+          "name": "Walt Brooks",
+          "vote": "yea",
+          "politician_id": "f496b2b2-78eb-4c58-905d-625320de5865"
+        },
+        {
+          "name": "Scott Chew",
+          "vote": "yea",
+          "politician_id": "7dc8a341-6d22-48d9-b8fe-2c75fa3a3de5"
+        },
+        {
+          "name": "Kay Christofferson",
+          "vote": "yea",
+          "politician_id": "2fa5347c-fb56-443d-8f1d-c1bff270bf9e"
+        },
+        {
+          "name": "Kim F. Coleman",
+          "vote": "yea"
+        },
+        {
+          "name": "Brad M. Daw",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Dunnigan",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Eliason",
+          "vote": "yea",
+          "politician_id": "3e569f2a-041d-43e2-a96f-e007eb7d6656"
+        },
+        {
+          "name": "Joel Ferry",
+          "vote": "yea"
+        },
+        {
+          "name": "Francis D. Gibson",
+          "vote": "yea"
+        },
+        {
+          "name": "Craig Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen G. Handy",
+          "vote": "yea"
+        },
+        {
+          "name": "Suzanne Harrison",
+          "vote": "yea"
+        },
+        {
+          "name": "Timothy D. Hawkes",
+          "vote": "yea"
+        },
+        {
+          "name": "Jon Hawkins",
+          "vote": "yea",
+          "politician_id": "8928852d-0688-431b-aad2-bf55275583fb"
+        },
+        {
+          "name": "Eric K. Hutchings",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Ivory",
+          "vote": "yea",
+          "politician_id": "f3c4cdf1-724e-43d6-ad59-70573badae75"
+        },
+        {
+          "name": "Dan Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Marsha Judkins",
+          "vote": "yea"
+        },
+        {
+          "name": "John Knotwell",
+          "vote": "yea"
+        },
+        {
+          "name": "Bradley G. Last",
+          "vote": "yea"
+        },
+        {
+          "name": "Karianne Lisonbee",
+          "vote": "yea",
+          "politician_id": "da3ae2d0-95ab-4292-9d49-51f4576fe56b"
+        },
+        {
+          "name": "Phil Lyman",
+          "vote": "yea"
+        },
+        {
+          "name": "Cory Maloy",
+          "vote": "yea",
+          "politician_id": "a42272fb-f41b-4a64-86d5-a0a0eeec5b82"
+        },
+        {
+          "name": "Mike McKell",
+          "vote": "yea",
+          "politician_id": "a7cc7fe1-b491-4498-bab5-3f3661987abb"
+        },
+        {
+          "name": "Kelly B. Miles",
+          "vote": "yea"
+        },
+        {
+          "name": "Jefferson Moss",
+          "vote": "yea"
+        },
+        {
+          "name": "Cal Musselman",
+          "vote": "yea",
+          "politician_id": "5ad69df3-3a03-45ed-9156-bcac82c93167"
+        },
+        {
+          "name": "Merrill F. Nelson",
+          "vote": "yea"
+        },
+        {
+          "name": "Doug Owens",
+          "vote": "yea",
+          "politician_id": "38aec107-ca28-454a-a7f0-d9225fcd4d8b"
+        },
+        {
+          "name": "Lee B. Perry",
+          "vote": "yea"
+        },
+        {
+          "name": "Val Peterson",
+          "vote": "yea",
+          "politician_id": "61816aa4-4de0-4e1a-a249-cea5e2a8d169"
+        },
+        {
+          "name": "Val K. Potter",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Pulsipher",
+          "vote": "yea"
+        },
+        {
+          "name": "Marc K. Roberts",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Robertson",
+          "vote": "yea"
+        },
+        {
+          "name": "Douglas V. Sagers",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Schultz",
+          "vote": "yea",
+          "politician_id": "8a5e17bd-54c4-405d-9cba-c62d139cc5a9"
+        },
+        {
+          "name": "Rex Shipp",
+          "vote": "yea",
+          "politician_id": "9dc08f3d-5bef-4291-b385-edcfecdecbbf"
+        },
+        {
+          "name": "Casey Snider",
+          "vote": "yea",
+          "politician_id": "a075db26-e31e-4d94-8a20-ddff7867725a"
+        },
+        {
+          "name": "V. Lowry Snow",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Stenquist",
+          "vote": "yea"
+        },
+        {
+          "name": "Keven Stratton",
+          "vote": "yea",
+          "politician_id": "80ec24cb-49d4-48a4-bc01-58d33caf15d7"
+        },
+        {
+          "name": "Strong M.A.",
+          "vote": "yea"
+        },
+        {
+          "name": "Norm Thurston",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Waldrip",
+          "vote": "yea"
+        },
+        {
+          "name": "Ray Ward",
+          "vote": "yea",
+          "politician_id": "9cccdb83-cf9e-48ef-97b5-6da255733f74"
+        },
+        {
+          "name": "Christine Watkins",
+          "vote": "yea",
+          "politician_id": "a3b3d1db-2305-452a-9d53-2627547d751f"
+        },
+        {
+          "name": "Logan Wilde",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Winder",
+          "vote": "yea"
+        },
+        {
+          "name": "Patrice M. Arent",
+          "vote": "nay"
+        },
+        {
+          "name": "Joel Briscoe",
+          "vote": "nay"
+        },
+        {
+          "name": "Susan Duckworth",
+          "vote": "nay"
+        },
+        {
+          "name": "Sandra Hollins",
+          "vote": "nay",
+          "politician_id": "c5d4b275-055f-4950-884e-96f63cf36bbd"
+        },
+        {
+          "name": "Brian King",
+          "vote": "nay"
+        },
+        {
+          "name": "Karen Kwan",
+          "vote": "nay",
+          "politician_id": "93376853-c225-430c-bf89-dfee26c6c964"
+        },
+        {
+          "name": "Carol Moss",
+          "vote": "nay",
+          "politician_id": "025945fe-7ea8-40aa-8ead-f7b8d5dfca29"
+        },
+        {
+          "name": "Stephanie Pitcher",
+          "vote": "nay",
+          "politician_id": "4f896b69-d922-4838-b54d-51a00a452e08"
+        },
+        {
+          "name": "Marie H. Poulson",
+          "vote": "nay"
+        },
+        {
+          "name": "Angela Romero",
+          "vote": "nay",
+          "politician_id": "00af7081-b2f4-4b2d-add0-dd1c3d3b4787"
+        },
+        {
+          "name": "Lawanna Shurtliff",
+          "vote": "nay"
+        },
+        {
+          "name": "Andrew Stoddard",
+          "vote": "nay",
+          "politician_id": "4956e47c-d051-4adf-a558-5f29c9f7e854"
+        },
+        {
+          "name": "Elizabeth Weight",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Wheatley",
+          "vote": "nay"
+        },
+        {
+          "name": "Brady Brammer",
+          "vote": "absent",
+          "politician_id": "070c1c1c-ac9d-42e0-bff2-3f4467504cba"
+        },
+        {
+          "name": "Jen Dailey-Provost",
+          "vote": "absent",
+          "politician_id": "633a3500-8458-4719-bd0e-38c161321707"
+        },
+        {
+          "name": "Tim Quinn",
+          "vote": "absent"
+        },
+        {
+          "name": "Paul Ray",
+          "vote": "absent"
+        },
+        {
+          "name": "Travis M. Seegmiller",
+          "vote": "absent"
+        },
+        {
+          "name": "Robert Spendlove",
+          "vote": "absent"
+        },
+        {
+          "name": "Brad R. Wilson",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2019-03-06",
+      "body": "UT Senate",
+      "motion": "Senate passed 2nd reading",
+      "kind": "roll-call",
+      "yes": 20,
+      "no": 2,
+      "absent": 7,
+      "note": "le.utah.gov roll call (Open States data) 90122028",
+      "members": [
+        {
+          "name": "Jacob L. Anderegg",
+          "vote": "yea"
+        },
+        {
+          "name": "Curt Bramble",
+          "vote": "yea"
+        },
+        {
+          "name": "Gregg Buxton",
+          "vote": "yea"
+        },
+        {
+          "name": "Allen M. Christensen",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirk Cullimore",
+          "vote": "yea",
+          "politician_id": "29a72e61-eb0b-44da-b535-974993a59838"
+        },
+        {
+          "name": "Gene Davis",
+          "vote": "yea"
+        },
+        {
+          "name": "Lincoln Fillmore",
+          "vote": "yea",
+          "politician_id": "c361d768-2253-4731-954d-5df8b132b42e"
+        },
+        {
+          "name": "Keith Grover",
+          "vote": "yea",
+          "politician_id": "dd75cf82-f0b2-4820-9356-28ccf0ee58f9"
+        },
+        {
+          "name": "Daniel Hemmert",
+          "vote": "yea"
+        },
+        {
+          "name": "Deidre M. Henderson",
+          "vote": "yea",
+          "politician_id": "f72689da-fe02-4bdd-977f-bb7760a42fb2"
+        },
+        {
+          "name": "Lyle W. Hillyard",
+          "vote": "yea"
+        },
+        {
+          "name": "David Hinkins",
+          "vote": "yea",
+          "politician_id": "f01f1d5b-aeca-4548-bd39-14137e552422"
+        },
+        {
+          "name": "Derek L. Kitchen",
+          "vote": "yea"
+        },
+        {
+          "name": "Karen Mayne",
+          "vote": "yea"
+        },
+        {
+          "name": "Ralph Okerlund",
+          "vote": "yea"
+        },
+        {
+          "name": "Kathleen Riebe",
+          "vote": "yea",
+          "politician_id": "497f54d5-f52e-4f0c-971d-dab4d65e8014"
+        },
+        {
+          "name": "Scott Sandall",
+          "vote": "yea",
+          "politician_id": "b93948f7-8dbd-4229-93dd-8702c2695e76"
+        },
+        {
+          "name": "Daniel Thatcher",
+          "vote": "yea"
+        },
+        {
+          "name": "Todd Weiler",
+          "vote": "yea",
+          "politician_id": "612392b2-ab46-4287-a2fd-c74ae0961198"
+        },
+        {
+          "name": "Ron Winterton",
+          "vote": "yea",
+          "politician_id": "8108dfd3-1039-4eab-b175-091d120ee213"
+        },
+        {
+          "name": "Luz Escamilla",
+          "vote": "nay",
+          "politician_id": "bccbcc1f-50fe-4d76-8d1d-528ebbf800bf"
+        },
+        {
+          "name": "Jani Iwamoto",
+          "vote": "nay"
+        },
+        {
+          "name": "Stuart Adams",
+          "vote": "absent",
+          "politician_id": "34c55402-b570-4746-b6ca-70da00eac4d3"
+        },
+        {
+          "name": "Wayne Harper",
+          "vote": "absent",
+          "politician_id": "2d53f024-b180-47c1-9035-90835bc1ab2b"
+        },
+        {
+          "name": "Don Ipson",
+          "vote": "absent",
+          "politician_id": "389df734-b0a0-4223-befd-e02105c4160b"
+        },
+        {
+          "name": "Dan McCay",
+          "vote": "absent"
+        },
+        {
+          "name": "Ann Millner",
+          "vote": "absent",
+          "politician_id": "8aeb0ff5-e0b0-4933-8e97-5be1339e4729"
+        },
+        {
+          "name": "Jerry Stevenson",
+          "vote": "absent",
+          "politician_id": "d8e92dad-6bb0-46e3-9c43-c3b7b3599d77"
+        },
+        {
+          "name": "Evan Vickers",
+          "vote": "absent",
+          "politician_id": "34fcabbb-bbc3-44fc-bd7e-32c05d7abd42"
+        }
+      ]
+    },
+    {
+      "date": "2019-03-07",
+      "body": "UT Senate",
+      "motion": "Senate passed 3rd reading",
+      "kind": "roll-call",
+      "yes": 20,
+      "no": 6,
+      "absent": 3,
+      "note": "le.utah.gov roll call (Open States data) 90122029",
+      "members": [
+        {
+          "name": "Jacob L. Anderegg",
+          "vote": "yea"
+        },
+        {
+          "name": "Curt Bramble",
+          "vote": "yea"
+        },
+        {
+          "name": "Gregg Buxton",
+          "vote": "yea"
+        },
+        {
+          "name": "Allen M. Christensen",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirk Cullimore",
+          "vote": "yea",
+          "politician_id": "29a72e61-eb0b-44da-b535-974993a59838"
+        },
+        {
+          "name": "Lincoln Fillmore",
+          "vote": "yea",
+          "politician_id": "c361d768-2253-4731-954d-5df8b132b42e"
+        },
+        {
+          "name": "Keith Grover",
+          "vote": "yea",
+          "politician_id": "dd75cf82-f0b2-4820-9356-28ccf0ee58f9"
+        },
+        {
+          "name": "Wayne Harper",
+          "vote": "yea",
+          "politician_id": "2d53f024-b180-47c1-9035-90835bc1ab2b"
+        },
+        {
+          "name": "Daniel Hemmert",
+          "vote": "yea"
+        },
+        {
+          "name": "Deidre M. Henderson",
+          "vote": "yea",
+          "politician_id": "f72689da-fe02-4bdd-977f-bb7760a42fb2"
+        },
+        {
+          "name": "Lyle W. Hillyard",
+          "vote": "yea"
+        },
+        {
+          "name": "David Hinkins",
+          "vote": "yea",
+          "politician_id": "f01f1d5b-aeca-4548-bd39-14137e552422"
+        },
+        {
+          "name": "Don Ipson",
+          "vote": "yea",
+          "politician_id": "389df734-b0a0-4223-befd-e02105c4160b"
+        },
+        {
+          "name": "Ann Millner",
+          "vote": "yea",
+          "politician_id": "8aeb0ff5-e0b0-4933-8e97-5be1339e4729"
+        },
+        {
+          "name": "Ralph Okerlund",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Sandall",
+          "vote": "yea",
+          "politician_id": "b93948f7-8dbd-4229-93dd-8702c2695e76"
+        },
+        {
+          "name": "Daniel Thatcher",
+          "vote": "yea"
+        },
+        {
+          "name": "Evan Vickers",
+          "vote": "yea",
+          "politician_id": "34fcabbb-bbc3-44fc-bd7e-32c05d7abd42"
+        },
+        {
+          "name": "Todd Weiler",
+          "vote": "yea",
+          "politician_id": "612392b2-ab46-4287-a2fd-c74ae0961198"
+        },
+        {
+          "name": "Ron Winterton",
+          "vote": "yea",
+          "politician_id": "8108dfd3-1039-4eab-b175-091d120ee213"
+        },
+        {
+          "name": "Gene Davis",
+          "vote": "nay"
+        },
+        {
+          "name": "Luz Escamilla",
+          "vote": "nay",
+          "politician_id": "bccbcc1f-50fe-4d76-8d1d-528ebbf800bf"
+        },
+        {
+          "name": "Jani Iwamoto",
+          "vote": "nay"
+        },
+        {
+          "name": "Derek L. Kitchen",
+          "vote": "nay"
+        },
+        {
+          "name": "Karen Mayne",
+          "vote": "nay"
+        },
+        {
+          "name": "Kathleen Riebe",
+          "vote": "nay",
+          "politician_id": "497f54d5-f52e-4f0c-971d-dab4d65e8014"
+        },
+        {
+          "name": "Stuart Adams",
+          "vote": "absent",
+          "politician_id": "34c55402-b570-4746-b6ca-70da00eac4d3"
+        },
+        {
+          "name": "Dan McCay",
+          "vote": "absent"
+        },
+        {
+          "name": "Jerry Stevenson",
+          "vote": "absent",
+          "politician_id": "d8e92dad-6bb0-46e3-9c43-c3b7b3599d77"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2019/bills/hbillenr/HB0094.pdf (Open States text id 90095193))",
+    "fetched_at": "2026-11-15T19:41:15.158344Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-94-2019.enrolled.pdf",
+      "sha256": "e5baf9a490c26d3b84c0a434a9a0f159776d2cb828b7837e0af757c448758103"
+    },
+    "note": "Enrolled copy. Old wording ('Any person who carries ... is guilty of a class B misdemeanor' and the 'under the influence means' definition) struck; quote ends mid-sentence because the rest of the old sentence is struck."
+  },
+  "operative_text": "Section 2 (Utah Code 76-10-528): (1) It is a class B misdemeanor for any person to carry a dangerous weapon while under the influence of: (a) alcohol as determined by the person's blood or breath alcohol concentration in accordance with Subsections 41-6a-502(1)(a) through (c); or (b) a controlled substance as defined in Section 58-37-2\nSection 2 (Utah Code 76-10-528): (2) This section does not apply to: (a) a person carrying a dangerous weapon that is either securely encased, as defined in this part, or not within such close proximity and in such a manner that it can be retrieved and used as readily as if carried on the person; (b) any person who uses or threatens to use force in compliance with Section 76-2-402; or (c) any person carrying a dangerous weapon in the person's residence or the residence of another with the consent of the individual who is lawfully in possession.\nSection 1 (Utah Code 76-10-523): (2) Notwithstanding Subsection (1), the provisions of Section 76-10-528 apply to any individual listed in Subsection (1) who is not employed by a state or federal agency or political subdivision that has adopted a policy or rule regarding the use of dangerous weapons."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "UT-HB-489-2019",
+  "scope": "state:ut",
+  "title": "HB489 (2019 General): Concealed Carry Amendments",
+  "urls": [
+    "https://le.utah.gov/~2019/bills/static/HB0489.html",
+    "http://le.utah.gov/~2019/bills/hbillint/HB0489.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karianne Lisonbee",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "da3ae2d0-95ab-4292-9d49-51f4576fe56b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2019/bills/hbillint/HB0489.pdf (Open States text id 90095414))",
+    "fetched_at": "2026-11-15T19:41:15.158344Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-489-2019.introduced.pdf",
+      "sha256": "fba6dca7294443a9d292e6570cd53aa9e56f1be74479278c0491f4af1b776456"
+    },
+    "note": "Introduced version (03-08-19); later amendments not in text read. Other edits are word changes ('person' to 'individual')."
+  },
+  "operative_text": "Section 1 (Utah Code 53-5-704): (b) (i) Within 90 days before the day on which a provisional permit holder under Section 53-5-704.5 reaches 21 years old, the provisional permit holder may apply under this section for a permit to carry a concealed firearm for lawful self defense. (ii) The bureau shall issue a permit to an applicant under Subsection (1)(b)(i) within 60 days after receiving an application, unless the bureau finds proof that the applicant is not qualified to hold a permit under Subsection (2) or (3). (iii) A permit issued under this Subsection (1)(b) is not valid until an applicant reaches 21 years of age."
+}

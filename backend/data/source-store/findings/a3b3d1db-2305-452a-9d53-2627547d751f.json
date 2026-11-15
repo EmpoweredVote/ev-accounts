@@ -29,6 +29,1721 @@
           "sha256": "9f557ddd8492473f960c9ad62cec88bd194518ed33e745e7902f5f66eb7119ea"
         }
       }
+    },
+    {
+      "id": "5a621d0841ec494849f0c0d7317c2d875669016aa02b1323756785071d2a0924",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2021/bills/static/HB0060.html",
+      "date": "2021-02-08",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-60-2021",
+      "act": "yea",
+      "motion": "House concurs with Senate amendment",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House concurs with Senate amendment, 2021-02-08: yea (tally 51–20); census gate: none.",
+      "subjects": [
+        "permitless concealed carry for adults 21 and older",
+        "half of concealed-permit fee account to suicide prevention with firearm-safety focus"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/UT_HB0060_enrolled.pdf",
+          "sha256": "9f557ddd8492473f960c9ad62cec88bd194518ed33e745e7902f5f66eb7119ea"
+        }
+      }
+    },
+    {
+      "id": "c352e6fd2c9a31233a39e2d9ed0cc27869e42a2ceb8c3ccd81159387c76062a4",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2021/bills/static/HB0060.html",
+      "date": "2021-01-26",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-60-2021",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House passed 3rd reading, 2021-01-26: yea (tally 54–19); census gate: none.",
+      "subjects": [
+        "permitless concealed carry for adults 21 and older",
+        "half of concealed-permit fee account to suicide prevention with firearm-safety focus"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/UT_HB0060_enrolled.pdf",
+          "sha256": "9f557ddd8492473f960c9ad62cec88bd194518ed33e745e7902f5f66eb7119ea"
+        }
+      }
+    },
+    {
+      "id": "e4d5c546240447cbd014a2671526fa6486157504a50eca61cc1facfc3fb163f9",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2021/bills/static/HB0101.html",
+      "date": "2021-02-18",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-101-2021",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House passed 3rd reading, 2021-02-18: yea (tally 70–2); census gate: near-unanimous.",
+      "subjects": [
+        "court notice that a conviction bars firearm possession",
+        "signed acknowledgment before a plea"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2021/bills/hbillenr/HB0101.pdf (Open States text id 90098417))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-101-2021.enrolled.pdf",
+          "sha256": "058de74d3c17332f84b03bba74891a32e377edc8da0bd8f00f7c4fd5e83d6a79"
+        }
+      }
+    },
+    {
+      "id": "f578af56e7a39876a496318645eb49192166f28178d92d0f8c702f5bd68b7f85",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2024/bills/static/HB0101.html",
+      "date": "2024-02-22",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-101-2024",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House passed 3rd reading, 2024-02-22: yea (tally 72–0); census gate: near-unanimous.",
+      "subjects": [
+        "annual report of firearms seized from prohibited persons"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Amended, ; official copy, https://le.utah.gov/~2024/bills/hbillamd/HB0101S02.pdf (Open States text id 90102405))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-101-2024.amended.pdf",
+          "sha256": "e8b45ec2902457e201667a4c8d78b1b65020c37d4c393567c341c8119a3db5bc"
+        }
+      }
+    },
+    {
+      "id": "95e5f5440d6d6f2968995598e5ace5e0bb8d8d348cef1847714a70215109d105",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2026/bills/static/HB0101.html",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-101-2026",
+      "act": "yea",
+      "motion": "House House/ concurs with Senate amendment",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House House/ concurs with Senate amendment, 2026-02-20: yea (tally 70–1); census gate: near-unanimous.",
+      "subjects": [
+        "background-check exemption for NFA firearms with recent ATF approval",
+        "federal licensees exempt from check on transfer to them"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/Session/2026/bills/enrolled/HB0101.pdf (Open States text id 90112173))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-101-2026.enrolled.pdf",
+          "sha256": "757585ce1a39dad9f4e6406bd57331f6bf3ad6df8befe5be39fd76e80a0e190e"
+        }
+      }
+    },
+    {
+      "id": "a2dce75001d6c1ba6feda80613765abd96639464c6b42fc145d6f00d10a488bb",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2023/bills/static/HB0103.html",
+      "date": "2023-02-02",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-103-2023",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House passed 3rd reading, 2023-02-02: yea (tally 74–0); census gate: near-unanimous.",
+      "subjects": [
+        "exemption for prescribed controlled substances if actor is safe with a weapon"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2023/bills/hbillenr/HB0103.pdf (Open States text id 90100657))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-103-2023.enrolled.pdf",
+          "sha256": "f49f92b15eb2010eb4db47e8849b87fa54780e78c796b4f88da21e970e7e1936"
+        }
+      }
+    },
+    {
+      "id": "c2202c4edabd206d86860de8d8f66acd5b7ad1571497b77249388bb114bba606",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2025/bills/static/HB0104.html",
+      "date": "2025-03-07",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-104-2025",
+      "act": "yea",
+      "motion": "House House Conference Committee - Final Passage",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House House Conference Committee - Final Passage, 2025-03-07: yea (tally 63–8); census gate: none.",
+      "subjects": [
+        "firearm safety classes in K-12 schools",
+        "parent opt-out"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/Session/2025/bills/enrolled/HB0104.pdf (Open States text id 90104982))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-104-2025.enrolled.pdf",
+          "sha256": "801114e90db45fb275c4899a16d013bf7af19c3283425190722c8df4ab2947d2"
+        }
+      }
+    },
+    {
+      "id": "8eb3c196a26e400a979e528405c48881ac59c33cd236054f0936bd29d1d8839e",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2023/bills/static/HB0107.html",
+      "date": "2023-02-06",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-107-2023",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House passed 3rd reading, 2023-02-06: yea (tally 57–12); census gate: none.",
+      "subjects": [
+        "concealed firearm permit fee waived for school employees"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2023/bills/hbillenr/HB0107.pdf (Open States text id 90101105))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-107-2023.enrolled.pdf",
+          "sha256": "c00b6d72d85c43fc31482e88e9802ee6c86c24319ad77462cad2d9734d95e9be"
+        }
+      }
+    },
+    {
+      "id": "dd3762939b2c9be70fbe9914b405d6ccaddd242890b0e4c027695c6dcd0afb51",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2025/bills/static/HB0128.html",
+      "date": "2025-03-06",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-128-2025",
+      "act": "yea",
+      "motion": "House House/ concurs with Senate amendment",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House House/ concurs with Senate amendment, 2025-03-06: yea (tally 67–0); census gate: near-unanimous.",
+      "subjects": [
+        "restates carry rules by age and permit status",
+        "moves weapons statutes into new titles",
+        "penalties for restricted persons with a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/Session/2025/bills/enrolled/HB0128.pdf (Open States text id 90108263))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-128-2025.enrolled.pdf",
+          "sha256": "8b43e440257699aba0fdfb142af9830305da484bbeadc4f61269e78b5b413ffe"
+        }
+      }
+    },
+    {
+      "id": "1187bf72c8ae94b575cf8a820f0a06299aec4ba9d5226d54cf4a97b9a7493b4d",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2025/bills/static/HB0133.html",
+      "date": "2025-02-04",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-133-2025",
+      "act": "yea",
+      "motion": "House House/ passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House House/ passed 3rd reading, 2025-02-04: yea (tally 56–13); census gate: none.",
+      "subjects": [
+        "handgun serial-number marking offence",
+        "background-check exemption for licensed dealers and NFA transfers",
+        "open carry at 18 and permitless concealed carry at 21 on streets, in vehicles and elsewhere",
+        "carry-ban places for permitless carriers (schools, daycares, airport secure areas, worship, secure areas)",
+        "concealed-carry offence for under-21s without a permit; vehicle-carry offence reworked",
+        "right to have a firearm at home at 18+; repeal date for private-sale information check"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (2nd Substitute as amended on the House floor 2025-01-27; le.utah.gov AV_HB0133_2025-01-27_11-07-44.pdf), the House-passed text",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-133-2025.amended-av.pdf",
+          "sha256": "ec85da0584e4c39187503dbc103983bfa76b99f870ddf3ea412a3ebf03d9853d"
+        }
+      }
+    },
+    {
+      "id": "7099ad3559cd5432f7c9387ed4c15b99a2a4caec51d036bb3c205858168fe28c",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2024/bills/static/HB0143.html",
+      "date": "2024-02-21",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-143-2024",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House passed 3rd reading, 2024-02-21: yea (tally 69–0); census gate: near-unanimous.",
+      "subjects": [
+        "shooting-range fee waivers for veterans and first responders",
+        "Public Safety ranges exempted from range rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2024/bills/hbillint/HB0143S01.pdf (Open States text id 90102312))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-143-2024.introduced.pdf",
+          "sha256": "0279159b7fa7c6ef4311abe64187f91b912327c11ec2fcc3b11407b7c0a6ed7f"
+        }
+      }
+    },
+    {
+      "id": "c0e4739ed7c0f1546a6db80af0254ce2ae901189fcded60968e22d843b43e080",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2024/bills/static/HB0015.html",
+      "date": "2024-02-01",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-15-2024",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "UT House, House passed 3rd reading, 2024-02-01: yea (tally 73–0); census gate: multi-subject.",
+      "subjects": [
+        "firearms and ammunition banned from secure areas (courts, tax commission, jails, mental health sites)",
+        "secure weapons storage at secure areas"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2024/bills/hbillint/HB0015S03.pdf (Open States text id 90103658))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-15-2024.introduced.pdf",
+          "sha256": "db80c0df62bb3f4367d679fc9ddde56efe4fa295dbda9596afc2c04eaf96db4f"
+        }
+      }
+    },
+    {
+      "id": "bf26d2d2412b1484f8bab6b8d89b7fdc6523117d54b70eebe160fd64a50506fc",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2023/bills/static/HB0165.html",
+      "date": "2023-02-06",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-165-2023",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House passed 3rd reading, 2023-02-06: yea (tally 58–11); census gate: none.",
+      "subjects": [
+        "no liability for property occupant who lets a lawful gun carrier onto the property"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2023/bills/hbillenr/HB0165.pdf (Open States text id 90101830))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-165-2023.enrolled.pdf",
+          "sha256": "aab532ed43bbac45d8d103c61b5f1d6bd3bb6477b21c97ae96c1787c4a51fcce"
+        }
+      }
+    },
+    {
+      "id": "afdd588dc602261a230fb32b4a4f86833ec976c7ccad09d73d9cb8907cab3d48",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2024/bills/static/HB0166.html",
+      "date": "2024-02-22",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-166-2024",
+      "act": "yea",
+      "motion": "House failed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House failed, 2024-02-22: yea (tally 24–48); census gate: none.",
+      "subjects": [
+        "domestic-violence convictions and protective orders make a person a top-tier restricted person",
+        "unlawfully present noncitizens moved to lower restricted tier"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Amended, ; official copy, https://le.utah.gov/~2024/bills/hbillamd/HB0166.pdf (Open States text id 90101980))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-166-2024.amended.pdf",
+          "sha256": "cc915e89c11b31fc85e764c6f2cc083729e2dc61d09e7452b21978748eabb4fa"
+        }
+      }
+    },
+    {
+      "id": "b09797b7a6f41bde0b28457335ca8c42eee265a63e2af74bd23075942ca2ea1f",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2019/bills/static/HB0017.html",
+      "date": "2019-03-14",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-17-2019",
+      "act": "yea",
+      "motion": "House concurs with Senate amendment",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "UT House, House concurs with Senate amendment, 2019-03-14: yea (tally 60–8); census gate: multi-subject.",
+      "subjects": [
+        "gun locks given free by dealers with firearm sales",
+        "firearm-safe coupons for permit applicants",
+        "safety and suicide-prevention video before permit renewal"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2019/bills/hbillenr/HB0017.pdf (Open States text id 90095036))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-17-2019.enrolled.pdf",
+          "sha256": "8689f887a6f37d2604361bd5602545ba26098b321b64e8bdf01bf9f8a7678755"
+        }
+      }
+    },
+    {
+      "id": "7a90fa5f2b0f1993731589fc7c7945f557057f544e33bbd322d6ba44ece9401a",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2025/bills/static/HB0183.html",
+      "date": "2025-02-18",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-183-2025",
+      "act": "yea",
+      "motion": "House House/ passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House House/ passed 3rd reading, 2025-02-18: yea (tally 68–0); census gate: near-unanimous.",
+      "subjects": [
+        "firearm ban for aliens with pending asylum or protected-status applications"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/Session/2025/bills/enrolled/HB0183.pdf (Open States text id 90111713))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-183-2025.enrolled.pdf",
+          "sha256": "8eb7b3a7b4890b143f2401e5ad2c06841ec32880acae1979c49ed1cd01c3a178"
+        }
+      }
+    },
+    {
+      "id": "81a60cc50f9031c71511e63a191cb053587817db0b53d8b07bca0849d62102bd",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2025/bills/static/HB0195.html",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-195-2025",
+      "act": "yea",
+      "motion": "House House/ concurs with Senate amendment",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House House/ concurs with Senate amendment, 2025-03-05: yea (tally 65–5); census gate: near-unanimous.",
+      "subjects": [
+        "no firearm forfeiture in plea deals for non-disqualifying offences",
+        "return of seized firearms to lawful owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/Session/2025/bills/enrolled/HB0195.pdf (Open States text id 90107987))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-195-2025.enrolled.pdf",
+          "sha256": "ff586d1776028b0dcd6c969e214c8ca16634e05b4fad82fad7efa6a1fcc6582f"
+        }
+      }
+    },
+    {
+      "id": "4699b61c5e95824c51abf5c23fba482c4d78a728280ca5311a24dbed84894936",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2017/bills/static/HB0198.html",
+      "date": "2017-02-21",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-198-2017",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House passed 3rd reading, 2017-02-21: yea (tally 63–12); census gate: none.",
+      "subjects": [
+        "provisional concealed carry permit for ages 18 to 20",
+        "no concealed carry on school premises under age 21"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2017/bills/hbillenr/HB0198.pdf (Open States text id 90090826))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-198-2017.enrolled.pdf",
+          "sha256": "9e7a8bb497aca5c21bc0bd28bd2d090faa6b700c1ce5673d9b8daa0890f5ab1c"
+        }
+      }
+    },
+    {
+      "id": "af414ec4fbb8d0635f76b93245463477d336968afceec7b0b757910816199d2e",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2021/bills/static/HB0200.html",
+      "date": "2021-02-19",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-200-2021",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House passed 3rd reading, 2021-02-19: yea (tally 63–4); census gate: near-unanimous.",
+      "subjects": [
+        "voluntary surrender of a firearm to police for safekeeping",
+        "return of the firearm to its owner on request"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2021/bills/hbillenr/HB0200.pdf (Open States text id 90098584))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-200-2021.enrolled.pdf",
+          "sha256": "524d4edbef1471d789331b1cdacfaf65e0459b946ca7197eaa29d47a76afacdc"
+        }
+      }
+    },
+    {
+      "id": "71abb1752c25a53f3dd2c65775212be5279c1a321ef1489f231e4b10dd8b0312",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2026/bills/static/HB0214.html",
+      "date": "2026-02-05",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-214-2026",
+      "act": "yea",
+      "motion": "House House/ passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "UT House, House House/ passed 3rd reading, 2026-02-05: yea (tally 61–12); census gate: multi-subject.",
+      "subjects": [
+        "limits on lawsuits against gun and ammunition makers and sellers",
+        "local governments preempted from imposing gun-industry liability"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/Session/2026/bills/enrolled/HB0214.pdf (Open States text id 90116910))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-214-2026.enrolled.pdf",
+          "sha256": "503735c3ec441d4624460122c4be9b7c0a7b407043d39c7980646bae68c546c4"
+        }
+      }
+    },
+    {
+      "id": "9020299f6e05a8bc16a9839ac7c5e16462dc587ce21de945337707c3647ce1b1",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2023/bills/static/HB0219.html",
+      "date": "2023-02-09",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-219-2023",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House passed 3rd reading, 2023-02-09: yea (tally 60–13); census gate: none.",
+      "subjects": [
+        "no state or local enforcement of federal firearm rules",
+        "no public funds for enforcing federal gun regulations"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2023/bills/hbillenr/HB0219.pdf (Open States text id 90101527))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-219-2023.enrolled.pdf",
+          "sha256": "8708a1ad3129705bb0ece05d5bc3c5fdffff04fc6ddfa7553e7eca73a419b3f6"
+        }
+      }
+    },
+    {
+      "id": "f59a18146e1c1e6141f8def8a7a8d595e7e636ec85fb099576a5e43144ecb004",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2024/bills/static/HB0223.html",
+      "date": "2024-02-02",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-223-2024",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House passed 3rd reading, 2024-02-02: yea (tally 72–0); census gate: near-unanimous.",
+      "subjects": [
+        "warning only for first reckless airport firearm possession",
+        "local governments barred from airport firearm rules",
+        "annual airport firearm enforcement reporting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2024/bills/hbillint/HB0223S01.pdf (Open States text id 90102772))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-223-2024.introduced.pdf",
+          "sha256": "a536b4d12ab84f25eff702ba501c98836fbe31dc6429a2d5aacec301d14c74a8"
+        }
+      }
+    },
+    {
+      "id": "527cd2b3566107b461a0f1096fb1146bc651e459026e8f0ba3bef64ccafcc24b",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2023/bills/static/HB0225.html",
+      "date": "2023-01-31",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-225-2023",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House passed 3rd reading, 2023-01-31: yea (tally 71–0); census gate: near-unanimous.",
+      "subjects": [
+        "nonimmigrant-visa holders barred from firearms except for hunting",
+        "background check before seized guns are returned",
+        "police told within 24 hours of a denied purchase",
+        "dating-partner assault convictions added to firearm bans"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2023/bills/hbillenr/HB0225.pdf (Open States text id 90101509))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-225-2023.enrolled.pdf",
+          "sha256": "1c88d40e0c959f1a4c16a232306180213326d2740d96b527d9b0d4e0ac6d2475"
+        }
+      }
+    },
+    {
+      "id": "4bf3a3a93e11b6189d52d36a2348f84c7224bf6a8b8189baf7cf3f43f794de4e",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2025/bills/static/HB0227.html",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-227-2025",
+      "act": "yea",
+      "motion": "House House/ passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House House/ passed 3rd reading, 2025-02-25: yea (tally 44–20); census gate: none.",
+      "subjects": [
+        "firearm ban extended to anyone found not guilty by reason of insanity or incompetent to stand trial for any offense"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Comm Sub, ; official copy, https://le.utah.gov/Session/2025/bills/introduced/HB0227S01.pdf (Open States text id 90104638))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-227-2025.comm-sub.pdf",
+          "sha256": "4b820c421dd10362ee52913bc7f278184d0bbb8ecd7ef5f2d0c3b0b03d4f7cb2"
+        }
+      }
+    },
+    {
+      "id": "68f0b143d58789d4e3571ed0e1ff681b9afc42a7c7da5f092ebdaedd83728b43",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2017/bills/static/HB0237.html",
+      "date": "2017-02-28",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-237-2017",
+      "act": "nay",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House passed 3rd reading, 2017-02-28: nay (tally 55–20); census gate: none.",
+      "subjects": [
+        "no permit needed for adults 21+ to carry concealed if lawful to possess",
+        "police alerted within 30 minutes when a prohibited buyer is denied",
+        "domestic-violence probation orders bar firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Amended, ; official copy, https://le.utah.gov/~2017/bills/hbillamd/HB0237.pdf (Open States text id 90091368))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-237-2017.amended.pdf",
+          "sha256": "ceded9443dd3ad7711e184106e8e2a2182ae25b71ddda1df5c96cdf441bf55d1"
+        }
+      }
+    },
+    {
+      "id": "337c7f3816c4c328ba82cd45c0334d043037da8fb6c442c56286f23b1499fc97",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2019/bills/static/HB0243.html",
+      "date": "2019-03-04",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-243-2019",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House passed 3rd reading, 2019-03-04: yea (tally 58–16); census gate: none.",
+      "subjects": [
+        "120-day carry-without-permit exemption for new protective-order holders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2019/bills/hbillenr/HB0243.pdf (Open States text id 90094168))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-243-2019.enrolled.pdf",
+          "sha256": "3a716b61ce3a671ef01cc5bad9a668b54cc1f4b33d6ec32ca636ba13775d8c2b"
+        }
+      }
+    },
+    {
+      "id": "36cbda7c98bad138ccd483bf6e82657c0929dd7ec1dd36511cb00a1197ae8260",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2021/bills/static/HB0258.html",
+      "date": "2021-02-19",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-258-2021",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "UT House, House passed 3rd reading, 2021-02-19: yea (tally 47–21); census gate: multi-subject.",
+      "subjects": [
+        "firearm safety course pilot in high schools",
+        "no live firearms at school; shooting only at ranges with an instructor"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2021/bills/hbillint/HB0258S02.pdf (Open States text id 90098307))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-258-2021.introduced.pdf",
+          "sha256": "4acab2780bf1c3f8ae9dd9e6b2994d3444b740a7a7f10b2e0a828821a10dc982"
+        }
+      }
+    },
+    {
+      "id": "ab4390582acd17d92188acc96da05294c3056317bb13d9a8c65824ea132cc15e",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2021/bills/static/HB0264.html",
+      "date": "2021-02-16",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-264-2021",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House passed 3rd reading, 2021-02-16: yea (tally 59–13); census gate: none.",
+      "subjects": [
+        "police report after pointing a firearm at a person",
+        "supervisor review of firearm-pointing reports"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2021/bills/hbillenr/HB0264.pdf (Open States text id 90098312))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-264-2021.enrolled.pdf",
+          "sha256": "33e47c5e551199ec2aff9b389f4da2d10e79d3511a5bc858a0c6332b60097637"
+        }
+      }
+    },
+    {
+      "id": "4a39b33cd4591db56df57877eeec9c081144bc9b11858ac584253fe06572d50a",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2020/bills/static/HB0267.html",
+      "date": "2020-02-25",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-267-2020",
+      "act": "nay",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House passed 3rd reading, 2020-02-25: nay (tally 67–3); census gate: near-unanimous.",
+      "subjects": [
+        "firearm surrender by convicted restricted persons",
+        "10-day deadline and affidavit of compliance"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2020/bills/hbillint/HB0267S02.pdf (Open States text id 90095834))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-267-2020.introduced.pdf",
+          "sha256": "57c23b0a74b63b9020ef3391a58541e7416fb4c1fc10b862e3f0928a9ee49661"
+        }
+      }
+    },
+    {
+      "id": "4823555286b14f6c3caa8ad79fbb973df1d3acde11feb8ece8072b488247ca39",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2021/bills/static/HB0267.html",
+      "date": "2021-02-19",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-267-2021",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House passed 3rd reading, 2021-02-19: yea (tally 66–0); census gate: near-unanimous.",
+      "subjects": [
+        "voluntary self-restriction from buying or having guns",
+        "180-day list, removal after 30 days",
+        "dealer background check checks the list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2021/bills/hbillenr/HB0267.pdf (Open States text id 90098032))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-267-2021.enrolled.pdf",
+          "sha256": "dda0d625f6037ba11e816da42cd095de1f39aa2ec5d7c136a46e811f40e77bb7"
+        }
+      }
+    },
+    {
+      "id": "d562d6c4f4d7ed784dca73e16ff0b96adf2f4fb3b6b85cc9ab1a2b79a1a575a2",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2020/bills/static/HB0271.html",
+      "date": "2020-02-28",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-271-2020",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House passed 3rd reading, 2020-02-28: yea (tally 55–15); census gate: none.",
+      "subjects": [
+        "state preemption of local gun and ammunition rules",
+        "lawsuit and damages against governments that break preemption",
+        "local limits allowed on public shooting ranges"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Amended, ; official copy, https://le.utah.gov/~2020/bills/hbillamd/HB0271S01.pdf (Open States text id 90096487))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-271-2020.amended.pdf",
+          "sha256": "66c65ea8abd813e33c8fd22aac7a8a899c3fd36815000a16b7f2019201f46fa9"
+        }
+      }
+    },
+    {
+      "id": "0ff036c135039a7faa982d02e494f29ea4c425fee0b8950f54f3f4d1271e26a5",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2024/bills/static/HB0309.html",
+      "date": "2024-02-14",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-309-2024",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House passed 3rd reading, 2024-02-14: yea (tally 70–0); census gate: near-unanimous.",
+      "subjects": [
+        "concealed carry permit number printed on driver license",
+        "license card can stand in for permit at gun purchase",
+        "five-year expiry for licenses showing permit number"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2024/bills/hbillint/HB0309S02.pdf (Open States text id 90103284))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-309-2024.introduced.pdf",
+          "sha256": "dc44abb788e18a2c01b28c984b23bbc315ed106d2876999806e6e3f41226c497"
+        }
+      }
+    },
+    {
+      "id": "c5806a1d4bb3f46d00d8c2210f310c048347c6f0273961b500376f76dab875a5",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2018/bills/static/HB0312.html",
+      "date": "2018-02-23",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-312-2018",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House passed 3rd reading, 2018-02-23: yea (tally 66–0); census gate: near-unanimous.",
+      "subjects": [
+        "concealed carry permit applied for before age 21",
+        "permit valid only at age 21"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2018/bills/hbillint/HB0312.pdf (Open States text id 90092243))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-312-2018.introduced.pdf",
+          "sha256": "c1006d70b44cc53c3ee8878ac697068c284a55bf31764ebcfe3b25d9c4d3117e"
+        }
+      }
+    },
+    {
+      "id": "8f48ade57c2e76f5b05955b025e94830a339a735d6002ae0b9d81dc0c9675dfd",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2026/bills/static/HB0314.html",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-314-2026",
+      "act": "yea",
+      "motion": "House House/ passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House House/ passed 3rd reading, 2026-02-10: yea (tally 64–4); census gate: near-unanimous.",
+      "subjects": [
+        "dealer background check before firearm sale",
+        "check records kept 30 days instead of 20",
+        "written consent form for purchase removed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/Session/2026/bills/enrolled/HB0314.pdf (Open States text id 90116483))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-314-2026.enrolled.pdf",
+          "sha256": "10c050aa0409ec2d741ddf5e11ef1ca67ea31dd2aa18483cabe7a2f9b025a68f"
+        }
+      }
+    },
+    {
+      "id": "9eb223560918f50b39da93fe3b6c6dbe148519e193274c4c566f794d6b822daf",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2024/bills/static/HB0326.html",
+      "date": "2024-02-15",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-326-2024",
+      "act": "nay",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House passed 3rd reading, 2024-02-15: nay (tally 42–26); census gate: none.",
+      "subjects": [
+        "$50 tax credit for gun locks and safes",
+        "one credit per taxpayer, ends 2027"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2024/bills/hbillint/HB0326S06.pdf (Open States text id 90103553))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-326-2024.introduced.pdf",
+          "sha256": "19a280dc55dcf2b61356e799375758c15da409a9cce7fb8fe846456e40a359e6"
+        }
+      }
+    },
+    {
+      "id": "f557cd554d6e6e5b408fed06e15aa4266913cc71ae351f96e6ea42218835e7dc",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2022/bills/static/HB0329.html",
+      "date": "2022-02-17",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-329-2022",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House passed 3rd reading, 2022-02-17: yea (tally 71–0); census gate: near-unanimous.",
+      "subjects": [
+        "carrying a weapon while intoxicated exempts prescribed ADHD medication"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2022/bills/hbillenr/HB0329.pdf (Open States text id 90099499))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-329-2022.enrolled.pdf",
+          "sha256": "0c7d5137744620fad5d88ea2bd5d9e3e2ee519635314633335f4b19b8711e969"
+        }
+      }
+    },
+    {
+      "id": "e4459010ec701ed6ab288135ab6b936d9beda792eb6ebbbfb9671291d2b326bf",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2025/bills/static/HB0354.html",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-354-2025",
+      "act": "yea",
+      "motion": "House House/ concurs with Senate amendment",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "UT House, House House/ concurs with Senate amendment, 2025-03-05: yea (tally 69–0); census gate: multi-subject.",
+      "subjects": [
+        "police report lost, stolen and untraceable guns used in crimes",
+        "report what happens to guns in police custody"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/Session/2025/bills/enrolled/HB0354.pdf (Open States text id 90107770))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-354-2025.enrolled.pdf",
+          "sha256": "534d75a844b9f6cf83cf9996de7d000feed2ea239092073fd129cf0505631620"
+        }
+      }
+    },
+    {
+      "id": "bd3bd80210c52024ceefbb3f288759721b48bce4314139e82518c90b896edd56",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2024/bills/static/HB0362.html",
+      "date": "2024-02-28",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-362-2024",
+      "act": "yea",
+      "motion": "House concurs with Senate amendment",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "UT House, House concurs with Senate amendment, 2024-02-28: yea (tally 66–4); census gate: multi-subject.",
+      "subjects": [
+        "minors may not possess dangerous weapons, with parent-permission exceptions",
+        "gun possession near schools by adults 18 and older",
+        "parent liability for minor's weapon"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2024/bills/hbillint/HB0362S03.pdf (Open States text id 90102865))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-362-2024.introduced.pdf",
+          "sha256": "756b2c6bbf524ce540651201cb2776d20c8a9d7a4f4a7b6ebd2f953b41512757"
+        }
+      }
+    },
+    {
+      "id": "a07083487199d5f5e5bef07e0381477039f4fc66293a10e2c7106ad5ca05ce12",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2024/bills/static/HB0381.html",
+      "date": "2024-02-16",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-381-2024",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House passed 3rd reading, 2024-02-16: yea (tally 71–0); census gate: near-unanimous.",
+      "subjects": [
+        "concealed-carry instructor training course may come from any nationally recognized organization"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Amended, ; official copy, https://le.utah.gov/~2024/bills/hbillamd/HB0381.pdf (Open States text id 90103313))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-381-2024.amended.pdf",
+          "sha256": "fea1ebff26abfd2f063fb5f567e64a52f17a8826eabe27b97a7601f36b81433e"
+        }
+      }
+    },
+    {
+      "id": "90d2f2e489e1936b00f2337c185aa236214a56cc9506b7c3630cfeb297c65bc7",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2024/bills/static/HB0406.html",
+      "date": "2024-02-13",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-406-2024",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House passed 3rd reading, 2024-02-13: yea (tally 68–4); census gate: near-unanimous.",
+      "subjects": [
+        "no separate payment code for gun stores",
+        "attorney general enforces against payment companies"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2024/bills/hbillenr/HB0406.pdf (Open States text id 90103097))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-406-2024.enrolled.pdf",
+          "sha256": "13b650a9c91c3da05c5df0ed43951a187813a1bd9985709be035c38b5b1e8e92"
+        }
+      }
+    },
+    {
+      "id": "0e7c9d6ca92cf640c663952bc6d8b79551d5cb29dd739a7698898dd6eb058873",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2023/bills/static/HB0461.html",
+      "date": "2023-02-24",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-461-2023",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House passed 3rd reading, 2023-02-24: yea (tally 58–14); census gate: none.",
+      "subjects": [
+        "return of firearms seized at airports",
+        "no forfeiture of lawful owner's gun",
+        "airport weapons offense revised"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2023/bills/hbillenr/HB0461.pdf (Open States text id 90101811))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-461-2023.enrolled.pdf",
+          "sha256": "e3b99814b4e4902f476fd57a3656729fd8d6c39b0ff2e66da6001ebeac0c7438"
+        }
+      }
+    },
+    {
+      "id": "560697e3ccd699b90dd9ba15fb731c41592ddcfe44dcf910cb66d58b584aa07c",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2023/bills/static/HB0481.html",
+      "date": "2023-02-28",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-481-2023",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House passed 3rd reading, 2023-02-28: yea (tally 71–0); census gate: near-unanimous.",
+      "subjects": [
+        "parents told how to limit child's access to firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2023/bills/hbillenr/HB0481.pdf (Open States text id 90100665))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-481-2023.enrolled.pdf",
+          "sha256": "a425c0e1f6bee2d47be9fcb78d99b21e9b7173d2d7c34e3e963261a4ec1d08a8"
+        }
+      }
+    },
+    {
+      "id": "ad1f1a6ae3af5bfc0b72c6ac63f7a5c738038d0adb0bdf63e5f0c73fa5f20231",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2023/bills/static/HB0485.html",
+      "date": "2023-02-27",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-485-2023",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House passed 3rd reading, 2023-02-27: yea (tally 66–5); census gate: near-unanimous.",
+      "subjects": [
+        "notice of firearm ban when served a protective order",
+        "signed acknowledgment of restricted status"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2023/bills/hbillenr/HB0485.pdf (Open States text id 90101257))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-485-2023.enrolled.pdf",
+          "sha256": "2730d5d24f01bb591557f4118c4a32a492c5d39d278473b84b05d7f922e0d5d7"
+        }
+      }
+    },
+    {
+      "id": "eac37b566f69224fdc3a3879f8a2c06c954e4a366c81fc5a0727509e50567120",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2026/bills/static/HB0534.html",
+      "date": "2026-02-24",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-534-2026",
+      "act": "yea",
+      "motion": "House House/ passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House House/ passed 3rd reading, 2026-02-24: yea (tally 60–1); census gate: near-unanimous.",
+      "subjects": [
+        "immunity for government property owners when lawful firearm carry is allowed",
+        "broader liability shield for occupants who allow lawful firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Comm Sub, ; official copy, https://le.utah.gov/Session/2026/bills/introduced/HB0534S01.pdf (Open States text id 90115706))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-534-2026.comm-sub.pdf",
+          "sha256": "5d3dc3e5b9fd0f46f5bb5656b3f24a44895e8b31b2eea317e01e83f39fde0377"
+        }
+      }
+    },
+    {
+      "id": "c1de9c8c6ff62aa2c2cc38156c3fd3e7af66f7cccf82446f034dfe9e318f5a91",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2024/bills/static/HB0068.html",
+      "date": "2024-02-28",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-68-2024",
+      "act": "yea",
+      "motion": "House concurs with Senate amendment",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "UT House, House concurs with Senate amendment, 2024-02-28: yea (tally 39–31); census gate: multi-subject.",
+      "subjects": [
+        "mandatory prison term for drug dealers who use, hold or sell a firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2024/bills/hbillenr/HB0068.pdf (Open States text id 90103446))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-68-2024.enrolled.pdf",
+          "sha256": "51e716b4fe6b5385d4012dc4307d70b0b21585ef631c84c404eeb8476904a8b3"
+        }
+      }
+    },
+    {
+      "id": "64b5b81c6f8450afc7563d458892b7678313f240d7e1236911c0d6ce05f7e91c",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2021/bills/static/HB0076.html",
+      "date": "2021-02-23",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-76-2021",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House passed 3rd reading, 2021-02-23: yea (tally 56–16); census gate: none.",
+      "subjects": [
+        "state preempts all local firearm and ammunition rules",
+        "lawsuits and damages against local governments that break preemption",
+        "no state or local enforcement of new federal gun rules",
+        "local governments may ban guns in homeless shelters"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Amended, ; official copy, https://le.utah.gov/~2021/bills/hbillamd/HB0076S01.pdf (Open States text id 90097572))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-76-2021.amended.pdf",
+          "sha256": "0de0de80759b2d8eae9323cf81ffb1784b8537d64cb2db19890aae64e34d008c"
+        }
+      }
+    },
+    {
+      "id": "0983fc542944043a29362585dfb5bac82bb6bb167a5cec21efdd8e2bd45bbe4b",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2026/bills/static/HB0084.html",
+      "date": "2026-03-07",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-84-2026",
+      "act": "yea",
+      "motion": "House House/ concurs with Senate amendment",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House House/ concurs with Senate amendment, 2026-03-07: yea (tally 58–8); census gate: none.",
+      "subjects": [
+        "concealed carry at colleges allowed for adults 21 and older without a permit",
+        "open carry at colleges and K-12 schools banned unless responding to an active threat",
+        "adults 18-20 may openly carry unloaded firearms in any public place not barred by law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/Session/2026/bills/enrolled/HB0084.pdf (Open States text id 90114314))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-84-2026.enrolled.pdf",
+          "sha256": "7ef80d744260ef16d8cd7733a5b1444aa6016c0d00984ae911ef71d8be9842b0"
+        }
+      }
+    },
+    {
+      "id": "7a0d768918c8f2f9f04c0c489b5b8c4f513cf2b12b0f1a4c4abe1c52a3a07ff1",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2023/bills/static/HB0086.html",
+      "date": "2023-02-06",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-86-2023",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House passed 3rd reading, 2023-02-06: yea (tally 64–4); census gate: near-unanimous.",
+      "subjects": [
+        "state tracks where restricted persons got recovered guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2023/bills/hbillint/HB0086.pdf (Open States text id 90101589))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-86-2023.introduced.pdf",
+          "sha256": "b783e3ee1aba1ba945ec4138c57a5496eca585a7494d9be152a315e8a4b630c0"
+        }
+      }
+    },
+    {
+      "id": "b521663f659f6b1a4acc033df38a6e921b72cb5be173d2db848944b579f0ff17",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2026/bills/static/HB0086.html",
+      "date": "2026-02-06",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-86-2026",
+      "act": "yea",
+      "motion": "House House/ passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House House/ passed 3rd reading, 2026-02-06: yea (tally 48–18); census gate: none.",
+      "subjects": [
+        "restricted-person list widened to any criminal offense (not only felonies) for insanity acquittal or incompetence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/Session/2026/bills/introduced/HB0086.pdf (Open States text id 90112745))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-86-2026.introduced.pdf",
+          "sha256": "e829c444f7271deba6f4c013f572b640b0f3633adeab5bf4f6f1e92adc1870a0"
+        }
+      }
+    },
+    {
+      "id": "59ae2fc9d64e0b541742ef0ac6bc51471f7ac5a46b75d858aed600addbe854ae",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2019/bills/static/HB0094.html",
+      "date": "2019-02-22",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-94-2019",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House passed 3rd reading, 2019-02-22: yea (tally 54–14); census gate: none.",
+      "subjects": [
+        "no carrying a weapon while drunk or on drugs",
+        "exceptions for encased weapons, self-defense, home",
+        "officers without an agency weapons policy not exempt"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2019/bills/hbillenr/HB0094.pdf (Open States text id 90095193))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-94-2019.enrolled.pdf",
+          "sha256": "e5baf9a490c26d3b84c0a434a9a0f159776d2cb828b7837e0af757c448758103"
+        }
+      }
+    },
+    {
+      "id": "f4cff978f4db6593e4cc162561ca1ab9cdf387fed3c6c174ef92416b84bd68b7",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2025/bills/static/HB0094.html",
+      "date": "2025-02-07",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-94-2025",
+      "act": "yea",
+      "motion": "House House/ passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House House/ passed 3rd reading, 2025-02-07: yea (tally 72–0); census gate: near-unanimous.",
+      "subjects": [
+        "firearm-discharge offences exempt for official duties",
+        "exemption for farm custom slaughter licensees"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/Session/2025/bills/enrolled/HB0094.pdf (Open States text id 90104620))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-94-2025.enrolled.pdf",
+          "sha256": "574d7e55b5a84f59e71936ffe33824c858e10d9d03669618c061fabbdf87a08b"
+        }
+      }
+    },
+    {
+      "id": "20cfb3da7ee11956fd052500aaad0fe5b851b76f69a12ebcfa3ce2df997507f5",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2019/bills/static/HJR007.html",
+      "date": "2019-02-14",
+      "date_precision": "day",
+      "instrument_id": "UT-HJR-7-2019",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House passed 3rd reading, 2019-02-14: yea (tally 56–16); census gate: none.",
+      "subjects": [
+        "resolution backing existing gun laws over new ones"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Amended, ; official copy, https://le.utah.gov/~2019/bills/hbillamd/HJR007.pdf (Open States text id 90094910))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HJR-7-2019.amended.pdf",
+          "sha256": "2bb6c7f701d99f3e2bc170c2dce682092db764344adb8b7d9b243487bf5dd417"
+        }
+      }
+    },
+    {
+      "id": "eee462460d656b2d65bdc20816900b2910bc291ba60f4374c883683fb1fe7e09",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2022/bills/static/SB0115.html",
+      "date": "2022-02-17",
+      "date_precision": "day",
+      "instrument_id": "UT-SB-115-2022",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT House, House passed 3rd reading, 2022-02-17: yea (tally 58–16); census gate: none.",
+      "subjects": [
+        "state preempts all local firearm rules",
+        "civil suit to void local gun rules, with damages and fees",
+        "shelters may bar guns inside if they post signs, screen and offer storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2022/bills/sbillenr/SB0115.pdf (Open States text id 90099743))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-SB-115-2022.enrolled.pdf",
+          "sha256": "5cfc313c9a035a8981ab2070d7b1a505f57392577a558fd8d915a2290ed98d98"
+        }
+      }
+    },
+    {
+      "id": "fe4457dac75ee7dace34ace6f024bbe1f0eacd8bc556b9e9edc5897d3b20c66b",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2025/bills/static/SB0014.html",
+      "date": "2025-02-06",
+      "date_precision": "day",
+      "instrument_id": "UT-SB-14-2025",
+      "act": "yea",
+      "motion": "House House/ passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House House/ passed 3rd reading, 2025-02-06: yea (tally 71–0); census gate: near-unanimous.",
+      "subjects": [
+        "keeps the private-sale firearm information check from expiring"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/Session/2025/bills/enrolled/SB0014.pdf (Open States text id 90104414))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-SB-14-2025.enrolled.pdf",
+          "sha256": "74866daa1130b4be32c9f2e29808fce68de65a728d259e8af62b0c6f7641152e"
+        }
+      }
+    },
+    {
+      "id": "3b34529876cecaed57e11348c9a4b7a712c254c033da4d110f85445bcae92a4c",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2024/bills/static/SB0015.html",
+      "date": "2024-01-31",
+      "date_precision": "day",
+      "instrument_id": "UT-SB-15-2024",
+      "act": "yea",
+      "motion": "House passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House passed 3rd reading, 2024-01-31: yea (tally 69–0); census gate: near-unanimous.",
+      "subjects": [
+        "extends sunset of concealed firearm permit review board to 2029"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/~2024/bills/sbillenr/SB0015.pdf (Open States text id 90102457))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-SB-15-2024.enrolled.pdf",
+          "sha256": "44b49c259ae33aee05a5dcc39d31a747cae96aee4f40f4a831f7d137f56c5a86"
+        }
+      }
+    },
+    {
+      "id": "d3037632c4d987bd33e8599c717232236ba3701c146573afcfd93c0723fd9187",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2026/bills/static/SB0018.html",
+      "date": "2026-01-30",
+      "date_precision": "day",
+      "instrument_id": "UT-SB-18-2026",
+      "act": "yea",
+      "motion": "House House/ passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House House/ passed 3rd reading, 2026-01-30: yea (tally 72–1); census gate: near-unanimous.",
+      "subjects": [
+        "fixes cross-reference in firearm seller liability shield",
+        "renames pistol or revolver to handgun in offense list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/Session/2026/bills/enrolled/SB0018.pdf (Open States text id 90113486))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-SB-18-2026.enrolled.pdf",
+          "sha256": "10e67fa240541e3a2129ea42e896085448ef7d9db61d1c43c183e1fc8d27968d"
+        }
+      }
+    },
+    {
+      "id": "0fe6652b8b861e73c919872e02b7ee4d2c771225e4daed3a22fb94909e2ec3ab",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2026/bills/static/SB0086.html",
+      "date": "2026-02-23",
+      "date_precision": "day",
+      "instrument_id": "UT-SB-86-2026",
+      "act": "yea",
+      "motion": "House House/ passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT House, House House/ passed 3rd reading, 2026-02-23: yea (tally 64–0); census gate: near-unanimous.",
+      "subjects": [
+        "gun safe-harbor program data reporting",
+        "safe-harbor gun records kept private"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/Session/2026/bills/enrolled/SB0086.pdf (Open States text id 90115587))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-SB-86-2026.enrolled.pdf",
+          "sha256": "bfa22c6da1b64f4da5e61fbe84d7eaa5df9caa24c39f98535162f56a6285db91"
+        }
+      }
     }
   ],
   "searches": []

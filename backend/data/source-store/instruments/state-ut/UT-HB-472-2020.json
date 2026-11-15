@@ -1,0 +1,39 @@
+{
+  "id": "UT-HB-472-2020",
+  "scope": "state:ut",
+  "title": "HB472 (2020 General): Conceal Carry Firearms Amendments",
+  "urls": [
+    "https://le.utah.gov/~2020/bills/static/HB0472.html",
+    "https://le.utah.gov/~2020/bills/hbillint/HB0472.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Walt Brooks",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f496b2b2-78eb-4c58-905d-625320de5865"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2020/bills/hbillint/HB0472.pdf (Open States text id 90096894))",
+    "fetched_at": "2026-11-15T19:41:15.158344Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-472-2020.introduced.pdf",
+      "sha256": "c0c72ced551c1440e0f1dcaff0c9a45cf61acc40117058b2cb558b63ee58c88e"
+    },
+    "note": "Introduced version (03-04-20). No later amendments considered. Section 1 only keeps the loaded-long-gun-in-vehicle ban in place against the new exemption."
+  },
+  "operative_text": "Section 2 (Utah Code 76-10-523): (5) Subsection 76-10-504(1) does not apply to a person 21 years old or older who may otherwise lawfully possess a firearm.\nSection 1 (Utah Code 76-10-505): (3) Notwithstanding Subsections (1)(a)(i) and (ii), and Subsection 76-10-523(5), a person may not possess a loaded rifle, shotgun, or muzzle-loading rifle in a vehicle."
+}

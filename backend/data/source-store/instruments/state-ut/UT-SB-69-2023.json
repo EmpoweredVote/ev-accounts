@@ -1,0 +1,39 @@
+{
+  "id": "UT-SB-69-2023",
+  "scope": "state:ut",
+  "title": "SB69 (2023 General): Firearm Identification Amendments",
+  "urls": [
+    "https://le.utah.gov/~2023/bills/static/SB0069.html",
+    "https://le.utah.gov/~2023/bills/sbillint/SB0069.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Stephanie Pitcher",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4f896b69-d922-4838-b54d-51a00a452e08"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2023/bills/sbillint/SB0069.pdf (Open States text id 90100273))",
+    "fetched_at": "2026-11-15T19:41:15.158344Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-SB-69-2023.introduced.pdf",
+      "sha256": "69c8ff3b71fcb7ec903e14af1c069aff914680702f72f3b3c38de1bb426c25d1"
+    },
+    "note": "Introduced version; later amendments are not in the text read. Section 2 (76-10-1602) only updates the 76-10-522 label in the racketeering list."
+  },
+  "operative_text": "Section 1 (Utah Code 76-10-522): (1) Any person who changes, alters, removes, or obliterates the name of the maker, the model, manufacturer's number, or other mark of identification, including any distinguishing number or mark assigned by the Department of Public Safety, on any firearm, without first having secured written permission from the Department of Public Safety to make the change, alteration, or removal, is guilty of a class A misdemeanor. (2) Any person who is found in possession of a firearm that has been altered as described in Subsection (1) is guilty of a class A misdemeanor."
+}

@@ -2,7 +2,7 @@
   "state": "ut",
   "name": "Utah",
   "verified": "2026-11-15",
-  "source": "Open States pilot (Stage 5 tools), 2026-11-15: the November 2026 Open States dump converted with scripts/stage5/openstates/, and le.utah.gov roll-call pages read with the verifier's own fetch. Texts were not read in the pilot.",
+  "source": "Open States pilot (Stage 5 tools), 2026-11-15: the November 2026 Open States dump converted with scripts/stage5/openstates/, and le.utah.gov roll-call pages read with the verifier's own fetch. Texts were not read in the pilot. Texts read 2026-11-15 in the gun-policy Stage 5 set-up session (102 bills, 2017-2026).",
   "chambers": {
     "lower": "House",
     "upper": "Senate"
@@ -31,14 +31,14 @@
     "hosts": [
       "le.utah.gov"
     ],
-    "marks": "Not read in the pilot. Session A reads one amending bill and replaces this line with how Utah prints new and deleted words.",
+    "marks": "Every text is a PDF at le.utah.gov (/~<year>/bills/{hbillint,hbillamd,hbillenr,sbillint,...}/HB0101[S0n].pdf; from 2025 /Session/<year>/bills/{introduced,amended,...}/). Words a bill adds are underlined; words it deletes are struck through AND printed inside square brackets. A section \"enacted to read\" is printed plain: all of it is new law. On a substitute or amended version some marks are drawn in purple (a change from the version before); they mean the same thing. The marks are thin filled rectangles drawn as open paths (from 2024 each ends \"Z M x y\"), not text attributes: read them from the drawing (the stage5 ut_pdf_marks.py helper) and print them as [+new+] and [-[struck]-]. Page furniture (\"- 4 - Enrolled Copy H.B. 17\", \"1st Sub. (Buff) H.B. 143 02-08-24 8:59 AM\") can sit in the middle of a sentence.",
     "note": "A bill's text versions are listed in the bulk data (texts[].state_link). The introduced text prints \"Chief Sponsor:\" and \"Senate Sponsor:\" (or \"House Sponsor:\") with full names. The bill's own page (le.utah.gov/~<year>/bills/static/<bill>.html) prints \"Bill Sponsor:\" and \"Floor Sponsor:\" through 2024; from 2025 that page is filled in by a script and our reader sees no sponsor on it."
   },
   "reader_access": {
     "le.utah.gov": "open"
   },
   "search_note": "Utah sponsorships and House and Senate floor votes for 2017 to 2026 come from the bill data on disk: skip the legislature's sponsor lists and roll-call pages, and add the place \"sponsor list: covered by bulk bill data\". For 2025 the floor votes are on disk only for the bills the run looked up on le.utah.gov. Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
-  "bill_table_note": "- Utah text marks were not read in the pilot; see the legislature profile's texts.marks once session A has filled it.\n- A bill has one chief sponsor and one floor sponsor in the other chamber. Most bills here have no co-sponsor list.\n- Floor votes kept: second and third reading passage, concurrence and final passage. A substitute bill keeps the bill's number.",
+  "bill_table_note": "- Utah texts: new words print as [+new+], struck words as [-[struck]-] (struck and bracketed in the PDF); a section \"enacted to read\" is all new law; purple marks on a substitute mean the same. Page furniture can sit mid-sentence: read across it.\n- A bill has one chief sponsor and one floor sponsor in the other chamber. Most bills here have no co-sponsor list.\n- Floor votes kept: second and third reading passage, concurrence and final passage. A substitute bill keeps the bill's number.",
   "fill_quotes": {
     "label_strips": []
   },
@@ -49,6 +49,11 @@
     "Each bill has a data file at le.utah.gov/data/<session>/<bill>.json (2025GS, HB0133): every action, each vote's number, chamber and tally, and the sponsor and floor sponsor by name. The bill page is drawn from it.",
     "The roll-call page prints a member as \"Surname, I.\"; two members of one surname get more (\"Miller, G.\", \"Miller, T.\"; \"Maloy, A. Cory\"). A label that fits two people of the roster gives no line.",
     "The link check needs hand links for members whose data name is a nickname (Jim, Mike, Tom).",
-    "The sponsor cover must match names inside this state's roster only (pass the scoped roster)."
+    "The sponsor cover must match names inside this state's roster only (pass the scoped roster).",
+    "A bill's text list (texts[].state_link) mixes full texts with floor-amendment sheets (HB0133.Hamd.2.pdf, one page) and comparison PDFs (\"CP HB0133 To HB0133S01.pdf\", AP_ ones). Do not take the last listed version as the bill: for a House-passed substitute amended on the floor, the full as-amended bill is the AV_<bill>_<date>.pdf file.",
+    "Old text links in the bulk data are http:// and fail; use https://.",
+    "Enrolled PDFs from 2024 run to 150 MB (allow a long download). Some 2024 enrolled PDFs are \"Microsoft: Print To PDF\" files with no fonts (the words are drawn as outlines), so no text can be read from them; read the last earlier version and say so.",
+    "Roll-call motions read \"House passed 2nd/3rd reading\", \"Senate passed 2nd & 3rd readings/suspension\", \"<Chamber> failed\", \"<Chamber> concurs with Senate amendment\" and \"... Conference Committee - Final Passage\"; committee votes say \"Committee:\".",
+    "A special-session bill's store id puts the session before the year (UT-SR-902-S1-2021); the store refuses UT-SR-902-2021-S1."
   ]
 }
