@@ -19,11 +19,14 @@ plan     A person whose record-only code is a record seat at one of --skip-rungs
          --control-group <rungs>:<n>, repeated, names each group of skipped rungs with its own control of n (ruling
          2026-11-13, gun-policy: `5,2:10` and `3:10`). control.tsv and skipped.tsv then carry a `group` column. A
          group with n seats or fewer is all control, so nothing in it is skipped. Not with --skip-rungs / --control.
+         `<rungs>:<n>:side` (needs --sides 1,2,3/4,5) marks a group whose control fails only on a change of outcome or
+         of side; the modes are written to <out>/control-rule.json for `control` and `adopt`.
 control  After the full search and code: compares each control person's full code in <codes> with their record-only
          code. A change of outcome or rung counts. Exit 4 when more than 1 in 20 changed: the rule is not safe here,
          so search the skipped people too. Exit 3 while a control person has no full code yet.
          With control groups each group is judged apart, and ANY change in a group fails that group (a control of 10
          cannot use the 1-in-20 bar). Exit 4 when a group failed; the groups that held are unaffected.
+         In a `:side` group a move to another rung on the same side is printed and counted, and the group holds.
 adopt    Runs `control` first and stops on its exit. Then copies each skipped person's record-only code into <codes>,
          never over an existing file, and lists what it copied.
          With control groups it adopts the groups that held, writes the failed groups' skipped people to
@@ -56,6 +59,12 @@ Why control groups: three pilot states (Missouri, California, Washington) search
 control seats at rungs 5 and 2; own words changed none of the 125. The runner ruled on 2026-11-13: rung 3 record seats
 are not searched, with a control of 10 per state, and the rung 5 and 2 control is 10. A change in the rung 3 control
 re-opens rung 3 only.
+
+Why `:side`: Florida (2026-11-14) searched 107 record seats at rung 4. The search found something for 32 and changed 2,
+both to rung 5 on their own words about carry without a permit; the permit bill itself covers a second subject, so the
+vote shows a direction only. No rung 4 search changed a side or removed a seat. The runner ruled the same day: rung 4
+record seats are not searched, with a control of 10; a change of side or outcome in that control stops the run, a move
+within the side is reported. One state's evidence: the control is what watches it.
 """
 import csv, glob, hashlib, json, os, random, re, shutil, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir
@@ -92,15 +101,26 @@ def write_tsv(path, roster, pids, extra=None, group=None):
 
 
 def control_groups():
-    """[(label, rungs, n)] from --control-group <rungs>:<n>, in the order given; no rung in two groups."""
+    """[(label, rungs, n, mode)] from --control-group <rungs>:<n>[:side], in the order given; no rung in two groups."""
     out, seen = [], set()
     for g in opts('--control-group'):
-        m = re.fullmatch(r'\s*(\d+(?:\s*,\s*\d+)*)\s*:\s*(\d+)\s*', g)
-        if not m: raise SystemExit(f'--control-group {g!r}: write it as <rungs>:<n>, e.g. 5,2:10')
+        m = re.fullmatch(r'\s*(\d+(?:\s*,\s*\d+)*)\s*:\s*(\d+)\s*(?::\s*(side)\s*)?', g)
+        if not m: raise SystemExit(f'--control-group {g!r}: write it as <rungs>:<n> or <rungs>:<n>:side, e.g. 5,2:10')
         rungs = [int(x) for x in m.group(1).split(',')]
         if seen & set(rungs): raise SystemExit(f'--control-group {g!r}: a rung is in two groups')
-        seen |= set(rungs); out.append((','.join(map(str, rungs)), set(rungs), int(m.group(2))))
+        seen |= set(rungs); out.append((','.join(map(str, rungs)), set(rungs), int(m.group(2)), m.group(3) or 'any'))
     return out
+
+
+def read_sides(text):
+    """'1,2,3/4,5' -> {1: 0, 2: 0, 3: 0, 4: 1, 5: 1}; exits on anything else."""
+    if not re.fullmatch(r'\s*\d+(\s*,\s*\d+)*\s*/\s*\d+(\s*,\s*\d+)*\s*', text or ''): raise SystemExit('a `:side` control group needs --sides, e.g. --sides 1,2,3/4,5')
+    side = {}
+    for i, part in enumerate(text.split('/')):
+        for x in part.split(','):
+            if int(x) in side: raise SystemExit(f'--sides {text!r}: rung {int(x)} is on both sides')
+            side[int(x)] = i
+    return side
 
 
 def rng(seed): return random.Random(int(hashlib.sha256(seed.encode()).hexdigest(), 16))
@@ -121,13 +141,21 @@ def plan(out):
     nocode = [p for p in roster if p not in rec]
     if groups:
         rungs, group, ctrl, lines = set(), {}, [], []
-        for name, rs, n in groups:
+        modes = {name: mode for name, _, _, mode in groups}
+        sides = opt('--sides') if 'side' in modes.values() else None
+        if sides:
+            off = sorted(r for _, rs, _, mode in groups if mode == 'side' for r in rs if r not in read_sides(sides))
+            if off: raise SystemExit(f'--sides {sides!r} does not place rung {off[0]}, which a `:side` group skips')
+        elif 'side' in modes.values(): read_sides(None)
+        json.dump({'modes': modes, 'sides': sides}, open(f'{out}/control-rule.json', 'w'), indent=1)
+        for name, rs, n, mode in groups:
             rungs |= rs
             seats = sorted(p for p in roster if p in rec and is_skip(rec[p], rs))
             mine = sorted(rng(f'{seed}|{name}').sample(seats, min(n, len(seats))))
             group.update({p: name for p in seats}); ctrl += mine
             lines.append(f'- rung {name}: {len(seats)} record seat(s), control {len(mine)}, not searched {len(seats) - len(mine)}'
-                         + (' (the whole group is control: nothing skipped)' if seats and len(mine) == len(seats) else ''))
+                         + (' (the whole group is control: nothing skipped)' if seats and len(mine) == len(seats) else '')
+                         + ('; a move within the same side is reported, a change of side or outcome fails the group' if mode == 'side' else ''))
         skip = sorted(group)
         search = sorted(p for p in roster if p not in group) + ctrl
         write_tsv(f'{out}/search.tsv', roster, search)
@@ -168,10 +196,17 @@ def control(out, failed=None):
     for p, a, b in changed: print(f'  changed {p}: record-only {a} -> full {b}')
     if rows and 'group' in rows[0]:
         moved, bad = {p for p, _, _ in changed}, []
+        rule = json.load(open(f'{out}/control-rule.json')) if os.path.exists(f'{out}/control-rule.json') else {'modes': {}, 'sides': None}
+        side = read_sides(rule['sides']) if 'side' in rule['modes'].values() else {}
+        # Within the side: seated before and after, both rungs placed, on one side. Anything else is a failure.
+        within = {p for p in moved if rec[p].get('outcome') == full[p].get('outcome') == 'seated'
+                  and side.get(rec[p].get('value')) is not None and side.get(rec[p].get('value')) == side.get(full[p].get('value'))}
         for name in dict.fromkeys(r['group'] for r in rows):
             mine = [r['politician_id'] for r in rows if r['group'] == name]; n = len(moved & set(mine))
-            if n: bad.append(name)
-            print(f'control, rung {name}: {n} of {len(mine)} changed; ' + ('search this group\'s skipped people too' if n else 'the rule holds'))
+            soft = len(within & set(mine)) if rule['modes'].get(name) == 'side' else 0
+            if n - soft: bad.append(name)
+            print(f'control, rung {name}: {n} of {len(mine)} changed; ' + ('search this group\'s skipped people too' if n - soft else
+                  f'{soft} moved within the same side and none changed side or outcome: the rule holds, REPORT the move(s)' if soft else 'the rule holds'))
         if failed is not None: failed.extend(bad)
         return 4 if bad else 0
     ok = len(changed) * 20 <= len(ctrl)
