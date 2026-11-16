@@ -347,6 +347,27 @@ def archive_fallback_when_live_page_is_refused(t):
     assert not m.live_failed(b'200', real + ' access denied ' + real), 'a marker in a long page is not a challenge'
 
 
+@check
+def evidence_rebuild_choice_reaches_step_4_and_from_research_after_step_7_is_refused(t):
+    """Utah ut-01 (2026-11-15): `run_recipe.py --from 4` could not pass --from-pre/--from-research, so step 4 was run by
+    hand; and --from-research on rows already through step 7 lost two roll-call pairings at the next step 7."""
+    os.makedirs(t); B = f'{t}/b'; os.makedirs(B)
+    rec = {'stage5': t, 'topic': 'tp', 'unit': 'state:xx', 'level': 'state', 'state': 'XX', 'roster': f'{t}/r.tsv', 'codes': f'{t}/c',
+           'saved_root': t, 'votes': 'none'}
+    json.dump(rec, open(f'{B}/recipe.json', 'w'))
+    four = lambda *a: [l for l in run('run_recipe.py', B, '--from', '4', '--to', '4', '--print', *a, ok=False).stdout.splitlines() if 'build_evidence.py' in l]
+    assert four() and all('--from-pre' not in l and '--from-research' not in l for l in four()), four()
+    assert any(l.rstrip().endswith('--from-pre') or ' --from-pre ' in l for l in four('--evidence-from', 'pre')), four('--evidence-from', 'pre')
+    assert any('--from-research' in l for l in four('--evidence-from', 'research'))
+    p = run('run_recipe.py', B, '--from', '4', '--print', '--evidence-from', 'both', ok=False); assert p.returncode != 0, 'only pre or research'
+    write_csv(f'{B}/research.csv', [{'full_name': 'A', 'value': '1'}]); write_csv(f'{B}/research-pre-evidence.csv', [{'full_name': 'A', 'value': '1'}])
+    write_csv(f'{B}/research-pre-step7.csv', [{'full_name': 'A', 'value': '1'}])
+    json.dump([], open(f'{B}/politicians.json', 'w'))
+    open(f'{t}/r.tsv', 'w').write('politician_id\tfull_name\n'); os.makedirs(f'{t}/f')
+    p = run('build_evidence.py', B, f'{t}/r.tsv', f'{t}/f', '--from-research', ok=False)
+    assert p.returncode != 0 and 'step 7' in (p.stderr + p.stdout) and os.path.exists(f'{B}/research.csv'), (p.returncode, p.stderr[-300:])
+
+
 def store(t, people, bills):
     """A source store: findings/<pid>.json from {pid: [(bill, act, gate)]}, instruments/state-xx/<bill>.json from {bill: text}."""
     os.makedirs(f'{t}/store/findings'); os.makedirs(f'{t}/store/instruments/state-xx')
@@ -1220,6 +1241,20 @@ def leg_hands_over_to_a_fresh_session_past_the_size_cap(t):
     sid, a, st = answered(60000, True); assert a[a.index('--resume') + 1] == sid and st['sessions'] == [sid] and '# Session B card' not in a[1], 'a small session is resumed: it keeps what it knows'
     sid, a, st = answered(140000, False); assert a[a.index('--resume') + 1] == sid, 'a large session that left no note is resumed: a fresh one would know nothing'
     sid, a, st = answered(140000, True, '--cap', '0'); assert a[a.index('--resume') + 1] == sid, 'with the cap off nothing is handed over'
+    # --- Utah 2026-11-15: a RESUMED session counts only this run's steps, so a hand-over a few steps after an answer is
+    # not "the cap is too low"; and an answer after a blocked hand-over goes to a fresh session, never back to the full one
+    for f in glob.glob(f'{D}/*'): os.remove(f)
+    p, calls = leg(f'STOP question {D}/QUESTION-B-1.md', which='B'); sid = json.load(open(f'{D}/leg-B.json'))['session_id']; transcript(sid, 90000)
+    open(f'{D}/CONTINUE-B-1.md', 'w').write('On step B9.\n'); open(f'{t}/ans.md', 'w').write('Leave them unread')
+    p, calls = leg(f'STOP handover {D}/CONTINUE-B-1.md\n===NEXT===\nDONE B', '--answer', f'{t}/ans.md', which='B', turns=4)
+    assert p.returncode == 0 and len(calls) == 2 and calls[0]['argv'][calls[0]['argv'].index('--resume') + 1] == sid, (p.returncode, p.stdout, len(calls))
+    assert '--resume' not in calls[1]['argv'] and 'You are continuing this leg' in calls[1]['argv'][1], 'the resumed session hands over to a fresh one'
+    for f in glob.glob(f'{D}/*'): os.remove(f)
+    open(f'{D}/CONTINUE-B-1.md', 'w').write('On B9.\n'); p, calls = leg(f'STOP handover {D}/CONTINUE-B-1.md', which='B', turns=3)
+    assert p.returncode == 12, 'a FRESH session that hands over inside MIN_TURNS steps is still blocked'
+    sid = json.load(open(f'{D}/leg-B.json'))['session_id']; transcript(sid, 90000); open(f'{t}/ans.md', 'w').write('carry on')
+    p, calls = leg('DONE B', '--answer', f'{t}/ans.md', which='B')
+    assert p.returncode == 0 and '--resume' not in calls[0]['argv'] and 'You are continuing this leg' in calls[0]['argv'][1], 'after a blocked hand-over the answer goes to a fresh session'
 
 
 @check
