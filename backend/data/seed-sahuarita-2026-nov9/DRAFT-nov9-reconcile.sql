@@ -1,5 +1,21 @@
 -- DRAFT-nov9-reconcile.sql
 -- ============================================================================
+-- ⛔ SUPERSEDED 2026-11-14 — APPLIED AS migrations/1952_sahuarita_nov9_2026_council_reconcile.sql
+-- DO NOT RUN THIS FILE. Kept for the research it carries (canvass totals, the
+-- id map, the Hundal committee trap, the inclusive-bounds trap), all of which
+-- held. Three of its assumptions did NOT, and 1952 documents each:
+--   1. The Mayor/Vice Mayor designation is NOT at the Nov-9 meeting. STC
+--      § 2.10.010 puts it at the SECOND meeting after the general election when
+--      everyone was elected at the primary — 2026-12-14. "Part B" below was
+--      unfillable, and the post-flight assertion "1 Mayor + 1 Vice Mayor seated"
+--      would have FAILED correctly.
+--   2. So there is NO Vice Mayor from 11-09 to 12-14; office f51db53e was
+--      retitled to plain 'Council Member' rather than labelling Hundal with a
+--      designation she does not hold.
+--   3. `politicians.is_incumbent` was DROPPED (CA_0378) after this was written;
+--      all three references to it would have errored.
+-- ▶ A SECOND MIGRATION IS OWED AFTER 2026-12-14 for the designation vote.
+-- ============================================================================
 -- 🔴 DRAFT. NOT A MIGRATION. NOT APPLIED. NO SLOT RESERVED.
 -- Deliberately NOT in backend/migrations/ so the numbering + reservation checks
 -- do not see it. Reserve a slot from the allocator and rename it only on the day.
