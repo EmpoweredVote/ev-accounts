@@ -46,7 +46,8 @@ last = lambda n: [x for x in _strip_degrees(n).replace(',', ' ').split() if x no
 pol = json.load(open(f'{B}/politicians.json')); pol = pol if isinstance(pol, list) else pol['politicians']
 pid = {p['full_name']: p['politician_id'] for p in pol}
 # A vote on a conference report is a floor vote, however the motion words it. South Carolina, 2026-11-14: "Adopt
-# Committee of Conference report" was read as a committee vote, and 23 senators were held for it.
+# Committee of Conference report" was read as a committee vote, and 23 senators were held for it. Washington,
+# wa-01: "House Final Passage as recommended by the Conference Committee (#22)" held five people the same way.
 # Utah, 2026-11-15: "House Conference Committee - Final Passage" is the chamber's vote on the report (63-8-4), and 90
 # votes on a bill that became law were left out as committee votes.
 FLOOR = re.compile(r'Conference Committee|Committee of Conference|Conference Report|Committee Substitute|Committee Amendment', re.I)
