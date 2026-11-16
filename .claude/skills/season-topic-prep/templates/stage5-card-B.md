@@ -108,7 +108,9 @@ its own measurement and the runner's ruling for this topic (STAGE5 "Pilot rule")
 {{/SKIP}}
 
 **B7. Bills the searchers named.** List bill ids in the new findings that have no stored bill. Fill those on the
-question; re-code only the people they touch (`run_state.py … --round <name> --ids <file>`).
+question and add their bill-table rows (settle any flag with the runner first). Then ask who can move:
+`bill_table.py affected {{S}}/bill-table-{{xx}}.json <new bill ids> --ids {{S}}/batches/{{xx}}-ids.txt --out <file>`.
+Re-code only the people it lists (`run_state.py … --round <name> --ids <file>`); when it lists none, no round.
 
 **B8. Early check.**
 

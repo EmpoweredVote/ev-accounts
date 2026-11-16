@@ -91,6 +91,11 @@ function plan(flags: Map<string, string[]>): number {
   const rungTexts = rungTextsFromLadder(config.ladder_text);
   const rungText = (r: number) => new RegExp(`^\\s*${r}\\.\\s+(.+?)\\s*$`, 'm').exec(config.ladder_text)?.[1];
   const kinds = new Set(['record'] as const);
+  // who else on this run's list shares a surname: a ruling that names "Cecil Thomas" does not name Jim Thomas
+  const surname = (n: string) => n.replace(/"[^"]*"/g, ' ').replace(/,.*$/, '').trim().split(/\s+/).filter((w) => !/^(jr|sr|ii|iii|iv)\.?$/i.test(w)).pop() ?? '';
+  const bySurname = new Map<string, string[]>();
+  for (const pid of listed) { const n = rosters.get(pid)!.full_name; bySurname.set(surname(n), [...(bySurname.get(surname(n)) ?? []), n]); }
+  const namesakes = (n: string) => (bySurname.get(surname(n)) ?? []).filter((o) => o !== n);
 
   const holding = join(out, 'script-codes');
   mkdirSync(out, { recursive: true });
@@ -100,7 +105,7 @@ function plan(flags: Map<string, string[]>): number {
   const scriptPeople: { row: RosterRow; pf: PersonFindings | undefined }[] = [];
   const seats = new Map<string, number>();
   const laneCount: Record<string, number> = {};
-  let textRefused = 0;
+  let textRefused = 0; const textWhy = new Map<string, number>();
   // People the script codes only because of the two rules of 2026-11-16 (a name beside a settled bill; a sponsorship
   // that supports no rung). The standing check draws from them first: they are the newest claim the script makes.
   const byNewRule = { named: new Set<string>(), sponsor: new Set<string>() };
@@ -117,7 +122,7 @@ function plan(flags: Map<string, string[]>): number {
     // Plain = the note is only the pre-fill's fixed sentence. Not "it collapsed to a line": one roll call stored
     // under two motion wordings cannot both collapse, and that sent 114 South Carolina people to Opus (isPlainRecord).
     const plainIds = new Set(findings.filter(isPlainRecord).map((f) => f.id));
-    const res = decideRecord({ findings, plainIds, table, bill, sides, billPrefix: prefix, office: row.office ?? '', named: namedInRulings(row.full_name, section) });
+    const res = decideRecord({ findings, plainIds, table, bill, sides, billPrefix: prefix, office: row.office ?? '', named: namedInRulings(row.full_name, section, namesakes(row.full_name)) });
     const toOpus = (lanes: (Lane | 'text-check')[], detail = '') => {
       for (const l of lanes) laneCount[l] = (laneCount[l] ?? 0) + 1;
       rows.push({ pid, name: row.full_name, by: 'opus', result: '', why: lanes.map((l) => (l === 'text-check' ? `the script's text did not pass the coding checks${detail}` : LANE_WORDS[l])).join('; ') });
@@ -135,9 +140,9 @@ function plan(flags: Map<string, string[]>): number {
       if (sweepHit(`${cand.reasoning} ${cand.open_note ?? ''}`)) lastProblems.push('the text names a party');
       if (!lastProblems.length) { code = cand; break; }
     }
-    if (!code) { textRefused++; toOpus(['text-check'], `: ${lastProblems[0]}`); continue; }
+    if (!code) { textRefused++; textWhy.set(lastProblems[0], (textWhy.get(lastProblems[0]) ?? 0) + 1); toOpus(['text-check'], `: ${lastProblems[0]}`); continue; }
     writeFileSync(join(holding, `${pid}.json`), JSON.stringify(code, null, 2) + '\n');
-    if (namedInRulings(row.full_name, rawSection)) byNewRule.named.add(pid);
+    if (namedInRulings(row.full_name, rawSection, namesakes(row.full_name))) byNewRule.named.add(pid);
     if (res.decision.sponsored?.length) byNewRule.sponsor.add(pid);
     scriptPeople.push({ row, pf });
     if (code.outcome === 'seated') seats.set(pid, code.value!);
@@ -174,6 +179,14 @@ function plan(flags: Map<string, string[]>): number {
   if (withRecord >= 10 && flagged * 2 > withRecord) {
     console.error(`STOP: ${flagged} of ${withRecord} people were sent to Opus for an act on a flagged bill. A flag is an open question for the runner.`);
     console.error('If the runner has answered, close the flags (bill_table.py settle … --answer …), see `bill_table.py check` print "0 flagged", and plan again. Do not code from this plan.');
+    return 6;
+  }
+  // Ohio, 2026-11-16: one bill-table row quoted a text the store no longer held. The script's own text failed its check
+  // for all 80 people seated on that bill, and they went to Opus for it: the dearest part of the run, for one row.
+  const [topWhy, topN] = [...textWhy.entries()].sort((a, b) => b[1] - a[1])[0] ?? ['', 0];
+  if (topN >= 5 && topN * 10 >= withRecord) {
+    console.error(`STOP: the script's text failed the coding checks for ${topN} of ${withRecord} people, all for one reason: ${topWhy}`);
+    console.error('That is a fault in one bill-table row (or one stored text), not in the people. Run `bill_table.py check`, have Opus read the row again from the stored text, and plan again. Do not code from this plan.');
     return 6;
   }
   if (script.length && !check.length) { console.error('no standing check is possible (--check 0): nothing can be adopted'); return 1; }

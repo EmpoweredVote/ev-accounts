@@ -40,7 +40,7 @@ fresh session too (Utah 2026-11-15).
 which makes the Stage 5 write tools refuse (scripts/lib/noWriteGuard.ts). The write and the approval are run by the
 desk session, on the runner's yes. That guard covers those tools only; see noWriteGuard.ts.
 """
-import datetime, glob, json, os, re, subprocess, sys, uuid
+import datetime, glob, json, os, re, subprocess, sys, uuid, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir
 from _args import opt, positional
 from session_card import load_profile
@@ -53,6 +53,7 @@ LAST = re.compile(r'^(DONE [AB]|STOP (question|write|approve|blocked|handover) .
 CODES = {'DONE': 0, 'question': 10, 'write': 11, 'approve': 11, 'blocked': 12, 'handover': 13}
 ROOTS = ['~/.claude/projects', '~/.claude-ev/projects']
 CAP, MIN_TURNS, MAX_HANDOVERS = 100000, 8, 12
+QUICK = float(os.environ.get('STAGE5_LEG_QUICK', 180))  # seconds: a session the card does not fit hands over at once; one that worked for half an hour did not
 
 
 def context(path):
@@ -164,7 +165,7 @@ def main():
     handovers = 0
     while True:
         env = dict(os.environ, STAGE5_NO_DB_WRITE='1', STAGE5_LEG_SESSION=sid, STAGE5_LEG_CAP=str(cap), STAGE5_LEG_LOG=f'{desk}/LOG-{leg}.md')
-        started = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds')
+        started = datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds'); t0 = time.monotonic()
         p = subprocess.run(cmd, cwd=os.path.join(wt, 'backend'), capture_output=True, text=True, env=env)
         try: res = json.loads(p.stdout)
         except ValueError: res = {}
@@ -177,7 +178,9 @@ def main():
             if not (os.path.exists(note) and os.path.getsize(note)): code, line = 2, f'the session handed over, but {note} is missing or empty'
             # num_turns counts this run's steps only, so a RESUMED session that hands over soon after an answer is not a
             # cap too low for the card: only a FRESH session handing over inside MIN_TURNS steps says that.
-            elif handovers >= MAX_HANDOVERS or ('--resume' not in cmd and (res.get('num_turns') or MIN_TURNS) < MIN_TURNS):
+            # Ohio 2026-11-16: num_turns came back as 1 after 28 minutes of work, because the session's last reply was a
+            # wake-up after a background task ended and only that turn was counted. So the steps must be few AND the run short.
+            elif handovers >= MAX_HANDOVERS or ('--resume' not in cmd and (res.get('num_turns') or MIN_TURNS) < MIN_TURNS and time.monotonic() - t0 < QUICK):
                 code, line = 12, (f'STOP blocked the leg handed over again after {res.get("num_turns")} steps ({handovers + 1} hand-overs this run): the cap of '
                                   f'{cap:,} is too low for this card, or the session cannot shrink. Read {note}')
         if ran:

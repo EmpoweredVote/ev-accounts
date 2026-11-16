@@ -13,14 +13,19 @@ What it does. The batch roster wins, for the ids in --ids only. Per id it compar
   - With --write: adds the missing rows and sets the differing fields, after copying the shared file to
     `<shared>.bak-sync-<xx>` (an existing backup is kept: the first one is the true original). Prints what it changed.
 A row of another state is never touched, and a column only one file has is left alone.
-Exit 0: in step (or made so). Exit 1: differences, not written. Exit 2: usage, or the check was blind: an id in --ids
+One person, one record (runner, 2026-11-16: "All politicians should only have one record for their stance"). Two ids
+of --ids whose names read as one person (same surname and suffix, and the same given name or one the other holds:
+"Allison Russo" and "C. Allison Russo") stop the run, with --write or without: Ohio coded one such person twice, on
+two records, and the write was held. Settle it in the batch roster and the id list (keep the record the votes are
+linked to), or list a real pair of namesakes in --distinct <tsv> (`<id>\t<id>\t<reason>`).
+Exit 0: in step (or made so). Exit 3: two records for one person. Exit 1: differences, not written. Exit 2: usage, or the check was blind: an id in --ids
 is not in the batch roster, an id's batch row has a blank office, or --ids is empty. It writes nothing then.
 """
 import os, sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))  # -I drops the script dir
 from _args import opt
 import csv, shutil
 
-USAGE = 'roster_sync.py --shared <roster.tsv> --batch <xx-roster.tsv> --ids <xx-ids.txt> [--write]'
+USAGE = 'roster_sync.py --shared <roster.tsv> --batch <xx-roster.tsv> --ids <xx-ids.txt> [--write] [--distinct <tsv>]'
 SHARED, BATCH, IDS = (opt(f, required=True, usage=USAGE) for f in ('--shared', '--batch', '--ids'))
 WRITE = '--write' in sys.argv
 
@@ -44,6 +49,29 @@ if off: blind(f'{len(off)} id(s) of {IDS} are not in {BATCH}: {", ".join(off[:5]
 if 'office' in bcols:
     no_office = [batch[p]['full_name'] for p in ids if not (batch[p].get('office') or '').strip()]
     if no_office: blind(f'{len(no_office)} batch roster row(s) have a blank office (rebuild the roster with topic:stage5-roster): {", ".join(no_office[:5])}')
+SUFFIX = {'jr', 'sr', 'ii', 'iii', 'iv', 'v'}
+def name_key(full):
+    w = [x.strip('.,"').lower() for x in full.replace('"', ' ').split()]
+    w = [x for x in w if x]
+    suf = ''.join(x for x in w if x in SUFFIX); w = [x for x in w if x not in SUFFIX]
+    return (w[-1] if w else '', suf), {x for x in w[:-1] if len(x) > 1}
+distinct = set()
+if opt('--distinct'):
+    for line in open(opt('--distinct')):
+        parts = line.rstrip('\n').split('\t')
+        if len(parts) >= 2 and not parts[0].startswith('#'):
+            if len(parts) < 3 or not parts[2].strip(): blind(f'--distinct line for {parts[0]} gives no reason')
+            distinct.add(frozenset(parts[:2]))
+by_last = {}
+for p in ids: by_last.setdefault((name_key(batch[p]['full_name'])[0], batch[p].get('state', '')), []).append(p)
+twice = [(a, b) for group in by_last.values() for i, a in enumerate(group) for b in group[i + 1:]
+         if name_key(batch[a]['full_name'])[1] & name_key(batch[b]['full_name'])[1] and frozenset((a, b)) not in distinct]
+if twice:
+    print(f'roster sync: {len(twice)} pair(s) of records read as ONE person. One person gets one record and one stance. Nothing was written.')
+    for a, b in twice: print(f"  {batch[a]['full_name']} ({batch[a].get('office') or '?'}) {a}\n  {batch[b]['full_name']} ({batch[b].get('office') or '?'}) {b}")
+    print('Keep the record the votes are linked to; drop the other from the batch roster and the id list (its findings join the kept record). '
+          'Two different people: list the pair in --distinct with a reason.')
+    sys.exit(3)
 cols = [c for c in scols if c in bcols and c != 'politician_id']
 shared = {}
 for r in srows: shared.setdefault(r['politician_id'], r)   # first row wins, as the readers do

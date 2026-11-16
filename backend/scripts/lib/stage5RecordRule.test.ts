@@ -209,6 +209,18 @@ describe('rulings helpers', () => {
     expect(namedInRulings('Ana Ram', ca)).toBe(false);
     expect(namedInRulings('Bob Both', ca)).toBe(false);
   });
+  it('a namesake\'s name does not name the person (Ohio 2026-11-16)', () => {
+    const j = '- J: two-sided: Cecil Thomas (XX-HB-2-2025) and Joseph A. Miller, III (XX-HB-3-2025).';
+    const thomases = ['Cecil Thomas', 'Jim Thomas', 'David Thomas'];
+    expect(namedInRulings('Cecil Thomas', j, thomases)).toBe(true);
+    expect(namedInRulings('Jim Thomas', j, thomases)).toBe(false);
+    expect(namedInRulings('Jim Thomas', j)).toBe(true);                       // no roster to tell them apart: held, as before
+    expect(namedInRulings('Kevin D. Miller', j, ['Joseph A. Miller, III', 'Kevin D. Miller'])).toBe(false);
+    expect(namedInRulings('Joseph A. Miller, III', j, ['Joseph A. Miller, III', 'Kevin D. Miller'])).toBe(true);
+    // a bare surname, or a surname after any other word, names everyone who carries it
+    expect(namedInRulings('Jim Thomas', '- K: Thomas voted on the earlier text.', thomases)).toBe(true);
+    expect(namedInRulings('Jim Thomas', `${j}\n- K: Rep. Thomas of the 9th.`, thomases)).toBe(true);
+  });
   it('drops a bill ruling\'s People list once the bill table carries the ruling, and nothing else', () => {
     const t: Record<string, RuleBillRow> = { 'XX-HB-2-2025': { rung: 2 }, 'XX-HB-3-2025': { rung: 3 }, 'XX-HB-9-2025': { rung: 4, flag: 'ask the runner' } };
     const text = (line: string) => rulingsNameText(line, t, 'XX-');

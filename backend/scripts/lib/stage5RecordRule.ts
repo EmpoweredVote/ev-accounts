@@ -279,13 +279,27 @@ export function wordsFor(d: Decision, table: Readonly<Record<string, RuleBillRow
   };
 }
 
-/** Names from the roster that the state's rulings section mentions (full name, or surname as a whole word). */
-export function namedInRulings(fullName: string, rulingsSection: string): boolean {
-  const words = fullName.replace(/"[^"]*"/g, ' ').replace(/,.*$/, '').split(/\s+/).filter((w) => w && !/^(jr|sr|ii|iii|iv)\.?$/i.test(w));
+const bareName = (fullName: string) => fullName.replace(/"[^"]*"/g, ' ').replace(/,.*$/, '').split(/\s+/).filter((w) => w && !/^(jr|sr|ii|iii|iv)\.?$/i.test(w));
+
+/**
+ * Names from the roster that the state's rulings section mentions (full name, or surname as a whole word).
+ * `sameSurname`: the full names of the OTHER roster people who share this surname. A surname that is only the end of
+ * one of their names ("Cecil Thomas") does not name this person (Jim Thomas). Ohio, 2026-11-16: 5 of the 10 people
+ * held by a name were held by a namesake's. A bare surname, or one after any other word, still names everyone who
+ * carries it.
+ */
+export function namedInRulings(fullName: string, rulingsSection: string, sameSurname: readonly string[] = []): boolean {
+  const words = bareName(fullName);
   const last = words[words.length - 1];
   if (!last) return false;
+  if (rulingsSection.includes(fullName)) return true;
   const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return rulingsSection.includes(fullName) || new RegExp(`(?<![\\w-])${esc(last)}(?![\\w-])`).test(rulingsSection);
+  const others = sameSurname.map((n) => bareName(n).join(' ')).filter((n) => n && n !== words.join(' '));
+  for (const m of rulingsSection.matchAll(new RegExp(`(?<![\\w-])${esc(last)}(?![\\w-])`, 'g'))) {
+    const upTo = rulingsSection.slice(0, m.index! + last.length);
+    if (!others.some((o) => upTo.endsWith(o))) return true;
+  }
+  return false;
 }
 
 const BILL_ID = /(?<![\w-])[A-Z]{2}(?:-[A-Z0-9]+)+-\d{4}(?![\w-])/g;
