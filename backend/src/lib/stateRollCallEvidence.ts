@@ -440,7 +440,7 @@ export function readStateRollCallDocs(bodies: string[], url: string): string | n
 export function readStateRollCallRecord(bodies: string[], url: string): StateRollCall | null {
   const oh = parseOhioVoteUrl(url);
   if (oh) {
-    let v: OhioVoteRecord | null = null;
+    let v: OhioVoteRecord | null;
     try { v = readOhio(bodies, oh); } catch { return null; }
     return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: 0, bill: v.bill, question: v.question,
       date: v.date, groups: { Yea: v.groups.Yea, Nay: v.groups.Nay, 'Absent or not voting': [] } } : null;
