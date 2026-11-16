@@ -13,7 +13,8 @@
  * The site is public; there is no key. The fetch uses the caller's honest user-agent and is placed AFTER the
  * robots.txt gate in verificationFetch.ts, like any live fetch of a public site.
  */
-import { isStateRollCallUrl, readStateRollCallHtml, renderStateRollCall, stateRollCallMinGapMs } from '../stateRollCallEvidence.js';
+import { readStateRollCallDocs, readStateRollCallHtml, renderStateRollCall, stateRollCallDocs, stateRollCallMinGapMs } from '../stateRollCallEvidence.js';
+import { fetchWithHostTrust } from './hostTrust.js';
 
 export type FetchLike = (url: string, init?: RequestInit) => Promise<Response>;
 export interface StateRollCallDeps {
@@ -38,20 +39,52 @@ const lastAsked = new Map<string, number>();
 const MAX_RETRIES = 2;
 const MAX_BACKOFF_MS = 60_000;
 
-/** Forget the pacing state (tests). */
+/**
+ * Documents of a state whose vote is read from several (Ohio: the bill's Votes page, its data, the member list),
+ * kept for a short while: the votes of one bill share all three, and a line step reads many votes of one bill.
+ */
+const kept = new Map<string, { body: string; at: number }>();
+const KEEP_MS = 15 * 60_000;
+const KEEP_MAX = 300;
+
+/** Forget the pacing state and the kept documents (tests). */
 export function resetStateRollCallPacing(): void {
   lastAsked.clear();
+  kept.clear();
 }
 
 const HTTP_TIMEOUT_MS = 20_000;
 
 /** The render of a legislature's roll-call page, or null (not one, unreachable, or unreadable). */
 export async function fetchStateRollCallText(url: string, deps: StateRollCallDeps = {}): Promise<string | null> {
-  if (!isStateRollCallUrl(url)) return null;
+  const docs = stateRollCallDocs(url);
+  if (!docs) return null;
+  const gap = stateRollCallMinGapMs(url);
+  const now = deps.now ?? Date.now;
+  const bodies: string[] = [];
+  for (const doc of docs) {
+    const several = docs.length > 1;
+    const hit = several ? kept.get(doc) : undefined;
+    if (hit && now() - hit.at < KEEP_MS) { bodies.push(hit.body); continue; }
+    const body = await fetchOne(doc, gap, deps);
+    if (body === null) return null;
+    if (several) {
+      kept.set(doc, { body, at: now() });
+      if (kept.size > KEEP_MAX) kept.delete(kept.keys().next().value as string);
+    }
+    bodies.push(body);
+  }
+  const render = readStateRollCallDocs(bodies, url);
+  if (render) return render;
+  const plain = deps.toText?.(bodies[0]).trim();
+  return plain || null;
+}
+
+/** One paced GET of one document; null when it cannot be fetched. */
+async function fetchOne(url: string, gap: number, deps: StateRollCallDeps): Promise<string | null> {
   const now = deps.now ?? Date.now;
   const sleep = deps.sleep ?? ((ms: number) => new Promise<void>((r) => setTimeout(r, ms)));
   const host = new URL(url.trim()).host;
-  const gap = stateRollCallMinGapMs(url);
   let html: string;
   try {
     let res: Response;
@@ -62,10 +95,11 @@ export async function fetchStateRollCallText(url: string, deps: StateRollCallDep
       const wait = (lastAsked.get(host) ?? -Infinity) + gap - now();
       if (wait > 0) await sleep(wait);
       lastAsked.set(host, now());
-      res = await (deps.fetchImpl ?? fetch)(url.trim(), {
+      // www.legislature.ohio.gov leaves out a middle certificate; hostTrust.ts adds it for that host only
+      res = await (deps.fetchImpl ?? fetchWithHostTrust)(url.trim(), {
         redirect: 'follow',
         signal: AbortSignal.timeout(HTTP_TIMEOUT_MS),
-        headers: { ...(deps.userAgent ? { 'user-agent': deps.userAgent } : {}), accept: 'text/html' },
+        headers: { ...(deps.userAgent ? { 'user-agent': deps.userAgent } : {}), accept: 'text/html, application/json' },
       });
       if ((res.status !== 429 && res.status !== 503) || attempt >= MAX_RETRIES) break;
       const asked = Number(res.headers.get('retry-after'));
@@ -77,10 +111,7 @@ export async function fetchStateRollCallText(url: string, deps: StateRollCallDep
   } catch {
     return null;
   }
-  const render = renderStateRollCallHtml(html, url);
-  if (render) return render;
-  const plain = deps.toText?.(html).trim();
-  return plain || null;
+  return html;
 }
 
 /** Render markup already in hand (a batch tool reads a saved copy through this). */

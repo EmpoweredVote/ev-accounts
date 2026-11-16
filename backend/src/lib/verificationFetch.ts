@@ -35,6 +35,7 @@ import { fetchCongressPageText } from './adapters/congressAdapter.js';
 import { fetchIgaPageText } from './adapters/igaAdapter.js';
 import { fetchMaRollCallText } from './adapters/maLegislatureAdapter.js';
 import { fetchStateRollCallText } from './adapters/stateRollCallAdapter.js';
+import { fetchWithHostTrust } from './adapters/hostTrust.js';
 
 /**
  * Honest user-agent. Names Empowered Vote, links a public policy page, and
@@ -356,7 +357,8 @@ export async function robotsAllows(url: string): Promise<boolean> {
 /** The parsed rules, [] when the site has no robots file (404/410), or null when it could not be read. */
 async function fetchRobotsRules(origin: string): Promise<RobotsRule[] | null> {
   try {
-    const res = await fetch(origin + '/robots.txt', {
+    // fetchWithHostTrust: the global fetch, except for a host that leaves out a middle certificate (hostTrust.ts)
+    const res = await fetchWithHostTrust(origin + '/robots.txt', {
       redirect: 'follow',
       signal: AbortSignal.timeout(ROBOTS_TIMEOUT_MS),
       headers: { 'user-agent': EMPOWERED_VOTE_UA },
@@ -374,7 +376,7 @@ async function fetchRobotsRules(origin: string): Promise<RobotsRule[] | null> {
 
 /** Tier 1 — plain HTTP fetch + strip. Throws on network error / non-2xx. */
 export async function fetchViaHttp(url: string): Promise<string> {
-  const res = await fetch(url, {
+  const res = await fetchWithHostTrust(url, {
     redirect: 'follow',
     signal: AbortSignal.timeout(HTTP_TIMEOUT_MS),
     headers: {

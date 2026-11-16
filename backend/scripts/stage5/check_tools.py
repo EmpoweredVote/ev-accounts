@@ -1483,6 +1483,96 @@ def openstates_convert_merges_roll_calls_read_from_the_legislature(t):
 
 
 @check
+def openstates_convert_cites_ohios_votes_page_and_keeps_each_vote_once(t):
+    """Ohio 2026-11-16: the dump's vote addresses (search-prod.lis.state.oh.us/solarapi/v1/...) are dead, and most
+    votes are in the dump two to four times. Each converted vote must cite the bill's Votes page with the vote named
+    after a # (day, chamber, tally), a /cmtevotes row must be a committee vote, a vote stored three times must be one
+    roll call (the copy updated last), the marker must count what was dropped, and an address of another form keeps
+    its own address."""
+    X = f'{t}/work/extracts/2026-11/oh'; os.makedirs(X)
+    def tsv(name, cols, rows):
+        open(f'{X}/{name}.tsv', 'w').write('\t'.join(cols) + '\n' + ''.join('\t'.join(r.get(c, '\\N') for c in cols) + '\n' for r in rows))
+    json.dump({'dump': '2026-11-public.pgdump', 'month': '2026-11', 'state': 'oh', 'extracted_at': 'x'}, open(f'{X}/extract.json', 'w'))
+    tsv('legislativesession', ['id', 'identifier', 'name', 'classification', 'start_date', 'end_date'],
+        [{'id': 's135', 'identifier': '135', 'name': '135th Legislature (2023-2024)', 'classification': '', 'start_date': '2023-01-02', 'end_date': '2024-12-31'}])
+    tsv('organization', ['id', 'name', 'classification', 'parent_id'], [{'id': 'leg', 'name': 'Ohio General Assembly', 'classification': 'legislature'},
+        {'id': 'up', 'name': 'Senate', 'classification': 'upper', 'parent_id': 'leg'}, {'id': 'lo', 'name': 'House', 'classification': 'lower', 'parent_id': 'leg'}])
+    tsv('post', ['id', 'label'], [])
+    tsv('person', ['id', 'name', 'given_name', 'family_name', 'image', 'primary_party', 'email'],
+        [{'id': 'p1', 'name': 'Cindy Abrams', 'given_name': 'Cindy', 'family_name': 'Abrams'}, {'id': 'p2', 'name': 'Tim Barhorst', 'given_name': 'Tim', 'family_name': 'Barhorst'}])
+    tsv('membership', ['person_id', 'organization_id', 'post_id', 'start_date', 'end_date'], [])
+    tsv('bill', ['id', 'legislative_session_id', 'identifier', 'title', 'classification', 'subject', 'from_organization_id'],
+        [{'id': 'b1', 'legislative_session_id': 's135', 'identifier': 'HB 327', 'title': 'A bill', 'classification': '{bill}', 'subject': '{}', 'from_organization_id': 'lo'}])
+    tsv('billsource', ['bill_id', 'url'], [])
+    tsv('billsponsorship', ['bill_id', 'name', 'entity_type', 'primary', 'person_id'], [])
+    # a text link of the dead form, and one of a form the rule does not know (kept as it is)
+    tsv('billversion', ['id', 'bill_id', 'note', 'date'], [{'id': 'v1', 'bill_id': 'b1', 'note': 'As Reported by House Committee', 'date': '2024-05-22'},
+                                                          {'id': 'v2', 'bill_id': 'b1', 'note': 'As Introduced', 'date': '2023-11-13'}])
+    tsv('billversionlink', ['version_id', 'url', 'media_type'], [
+        {'version_id': 'v1', 'url': 'https://search-prod.lis.state.oh.us/solarapi/v1/general_assembly_135/bills/hb327/RH/01?format=pdf', 'media_type': 'application/pdf'},
+        {'version_id': 'v2', 'url': 'https://search-prod.lis.state.oh.us/solarapi/v1/general_assembly_135/bills/hb327/IN/00/hb327_00_IN.html', 'media_type': 'text/html'}])
+    ev = lambda i, motion, cls, upd, d='2024-06-12': {'id': i, 'bill_id': 'b1', 'legislative_session_id': 's135', 'organization_id': 'lo', 'motion_text': motion,
+                                                     'motion_classification': cls, 'start_date': d, 'result': 'pass', 'order': '0', 'updated_at': upd}
+    tsv('voteevent', ['id', 'bill_id', 'legislative_session_id', 'organization_id', 'motion_text', 'motion_classification', 'start_date', 'result', 'order', 'updated_at'],
+        [ev('f1', 'Pass', '{passage}', '2024-06-13'), ev('f2', 'Pass', '{passage}', '2024-11-21'), ev('f3', 'Pass', '{passage}', '2024-07-03'),
+         ev('c1', 'Reported - Substitute', '{committee-passage}', '2024-05-23', '2024-05-22'), ev('x1', 'Pass', '{passage}', '2024-06-01', '2024-06-01')])
+    old = 'http://search-prod.lis.state.oh.us/solarapi/v1/general_assembly_135/bills/hb327'
+    tsv('votesource', ['vote_event_id', 'url'], [{'vote_event_id': 'f1', 'url': old + '/votes'}, {'vote_event_id': 'f2', 'url': old.replace('http:', 'https:') + '/votes'},
+        {'vote_event_id': 'f3', 'url': old + '/votes'}, {'vote_event_id': 'c1', 'url': old + '/cmtevotes'},
+        {'vote_event_id': 'x1', 'url': 'https://search-prod.lis.state.oh.us/solarapi/v1/general_assembly_135_special_1/bills/hb327/votes'}])
+    tsv('votecount', ['vote_event_id', 'option', 'value'], [{'vote_event_id': e, 'option': 'yes', 'value': '1'} for e in ('f1', 'f2', 'f3', 'c1', 'x1')])
+    pv = lambda e, name, pid, opt='yes': {'vote_event_id': e, 'voter_name': name, 'option': opt, 'voter_id': pid}
+    tsv('personvote', ['vote_event_id', 'voter_id', 'voter_name', 'option'],
+        [pv(e, 'Cindy Abrams', 'p1') for e in ('f1', 'f2', 'f3', 'c1', 'x1')] + [pv(e, 'Tim Barhorst', 'p2', 'no') for e in ('f1', 'f2', 'f3')])
+    run('openstates/convert.py', X, '--out', f'{t}/out', '--legiscan-root', f'{t}/none', env={'OPENSTATES_NEW_REGISTRY': '1'})
+    rcs = {r['_openstates']['vote_event_id']: r for r in (json.load(open(f))['roll_call'] for f in glob.glob(f'{t}/out/OH-*/OH/*/vote/*.json'))}
+    assert sorted(rcs) == ['c1', 'f2', 'x1'], sorted(rcs)
+    page = 'https://www.legislature.ohio.gov/legislation/135/hb327/votes#'
+    assert rcs['f2']['state_link'] == rcs['f2']['url'] == page + '2024-06-12-House-1-1', rcs['f2']['state_link']
+    assert rcs['f2']['_openstates']['committee'] is False and rcs['f2']['chamber'] == 'H'
+    assert rcs['c1']['_openstates']['committee'] is True and 'Committee' in rcs['c1']['desc'] and rcs['c1']['state_link'] == page + '2024-05-22-House-1-0', rcs['c1']
+    assert rcs['x1']['state_link'].endswith('/general_assembly_135_special_1/bills/hb327/votes'), 'an address of another form is kept'
+    mk = json.load(open(glob.glob(f'{t}/out/OH-*/.openstates.json')[0]))
+    assert mk['counts'].get('duplicate_rollcalls_dropped') == 2 and 'duplicate_rollcalls_dropped_members_differed' not in mk['counts'], mk['counts']
+    b = json.load(open(glob.glob(f'{t}/out/OH-*/OH/*/bill/HB327.json')[0]))['bill']
+    assert len(b['votes']) == 3, [v['state_link'] for v in b['votes']]
+    links = sorted(x['state_link'] for x in b['texts'])
+    assert links == ['https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb327/01_RH/pdf/',
+                     'https://search-prod.lis.state.oh.us/solarapi/v1/general_assembly_135/bills/hb327/IN/00/hb327_00_IN.html'], links
+    # From the 136th the dump's address is the bill's action list, the same for every vote: a committee vote is
+    # then told only by its motion ("Reported", classed committee-passage). A conference report the dump also
+    # classes committee-passage is the chamber's floor vote.
+    acts = 'https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb327/actions'
+    ev136 = [ev('r1', 'Reported', '{committee-passage}', '2024-05-23', '2024-05-21'), ev('r2', 'Conference report agreed to', '{committee-passage}', '2024-06-20', '2024-06-20')]
+    for name, rows_ in (('voteevent', ev136), ('votesource', [{'vote_event_id': 'r1', 'url': acts}, {'vote_event_id': 'r2', 'url': acts}]),
+                        ('votecount', [{'vote_event_id': e, 'option': 'yes', 'value': '1'} for e in ('r1', 'r2')]),
+                        ('personvote', [pv(e, 'Cindy Abrams', 'p1') for e in ('r1', 'r2')])):
+        head = open(f'{X}/{name}.tsv').read().split('\n', 1)[0].split('\t')
+        open(f'{X}/{name}.tsv', 'a').write(''.join('\t'.join(r.get(c, '\\N') for c in head) + '\n' for r in rows_))
+    run('openstates/convert.py', X, '--out', f'{t}/out', '--legiscan-root', f'{t}/none')
+    rcs = {r['_openstates']['vote_event_id']: r for r in (json.load(open(f))['roll_call'] for f in glob.glob(f'{t}/out/OH-*/OH/*/vote/*.json'))}
+    assert rcs['r1']['_openstates']['committee'] is True and rcs['r1']['state_link'] == page + '2024-05-21-House-1-0', rcs['r1']
+    assert rcs['r2']['_openstates']['committee'] is False and rcs['r2']['state_link'] == page + '2024-06-20-House-1-0', rcs['r2']
+    # Once the legislature's own record of a bill is read (supplements/OH/<GA>.json, 'checked'), it is the bill's floor
+    # votes: the dump's 136th dates are clock times, a late vote lands on the next day (136 SB 273: 2026-06-10T01:10Z for
+    # the House vote of 2026-06-09), and one dump tally is not the record's (135 SB 58, 62-29 against 63-27). A dump
+    # floor vote of that bill not on the record is dropped and counted; one on it is kept once; committee votes stay.
+    os.makedirs(f'{t}/work/supplements/OH')
+    rec = lambda d, y, n: {'url': page + f'{d}-House-{y}-{n}', 'date': d, 'motion': 'Passed', 'question': 'Passed', 'chamber': 'H',
+                           'yea': y, 'nay': n, 'absent': 0, 'passed': 1,
+                           'groups': {'Yea': ['Cindy Abrams', 'Tim Barhorst'][:y], 'Nay': ['Tim Barhorst'][:n], 'Absent or not voting': []}}
+    json.dump({'state': 'OH', 'session': '135', 'source': 'x', 'bills': {'HB327': [rec('2024-06-11', 1, 1), rec('2024-06-20', 1, 0)]},
+               'checked': {'HB327': {'floor': 2, 'read': 2}}, 'refused': {}}, open(f'{t}/work/supplements/OH/135.json', 'w'))
+    run('openstates/convert.py', X, '--out', f'{t}/out', '--legiscan-root', f'{t}/none')
+    rcs = [json.load(open(f))['roll_call'] for f in glob.glob(f'{t}/out/OH-*/OH/*/vote/*.json')]
+    floor = sorted(r['state_link'] for r in rcs if not r['_openstates']['committee'])
+    assert floor == [page + '2024-06-11-House-1-1', page + '2024-06-20-House-1-0'], floor
+    assert sorted(r['_openstates']['vote_event_id'] for r in rcs if r['_openstates']['committee']) == ['c1', 'r1']
+    mk = json.load(open(glob.glob(f'{t}/out/OH-*/.openstates.json')[0]))
+    assert mk['counts'].get('dump_floor_rollcalls_not_on_the_record_dropped') == 2, mk['counts']
+
+
+@check
 def openstates_coverage_names_a_session_with_bills_and_no_roll_calls(t):
     """Utah 2026-11-15: the dump held the 2025 session's bills and none of its roll calls, and nothing said so. The
     check must pass a full extract, name a session whose roll calls are gone, name one whose roll calls list no voter,

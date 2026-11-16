@@ -86,7 +86,12 @@ the bills under `rollcalls_from_legislature`.
 - 🔴 **Run `convert.py` for the whole state**, not `--sessions`: a session with no linked voter of its own gets its
   links from the sessions either side.
 - Committee and voice votes are counted in the supplement's `checked` block and not read.
-- Every request waits the site's crawl delay (Utah: 10 seconds), and bodies are kept in `supplements/<ST>/raw/`.
+- Every request waits the site's crawl delay (Utah: 10 seconds; Ohio states none, and the tool waits 1 second),
+  and bodies are kept in `supplements/<ST>/raw/`.
+- Ohio: once a bill's record is read, the record IS the bill's floor votes. `convert.py` adds the votes the dump
+  misses and drops a dump floor vote of that bill that is not on the record (counted in `.openstates.json` as
+  `dump_floor_rollcalls_not_on_the_record_dropped`). The 136th's dump dates are UTC clock times, so a late vote lands
+  on the next day; the record gives the session day. Run the fetch for every bill the scan finds.
 - A later dump that does hold the session is safe: a roll call whose page the dump already has is not added twice.
 - A new state is one entry in `INDEX` in that file (where a bill's vote list is, and how to read it) on top of the
   page reader below.
@@ -96,10 +101,13 @@ the bills under `rollcalls_from_legislature`.
 1. **A reader for its roll-call page**: one entry in `FORMATS` in `src/lib/stateRollCallEvidence.ts` (the address
    pattern, the site's crawl delay, and a function from the page's markup to members under Yea, Nay and absent),
    with a saved page as a fixture and the refusals tested. The reader must fail closed: refuse the page unless every
-   group holds the count its heading prints and the counts are the printed tally. Utah is the one entry so far.
+   group holds the count its heading prints and the counts are the printed tally. Utah and Ohio are the entries so
+   far; Ohio's reader reads three documents per vote (see the file's header).
 2. **Its rules in `SRC_RULES` in `convert.py`**, when its Open States rows are wrong about something the roll-call
    address states. Utah: the rows carry the bill's chamber, not the chamber that voted, and nothing marks a committee
-   vote; both are read from the address.
+   vote; both are read from the address. Ohio: the stored addresses and text links are dead (v1) and are rewritten
+   to the bill's Votes page and the live v2 text address; the 135th holds most votes two to four times (each kept
+   once); from the 136th a committee vote is told by its motion.
 
 Check the state before trusting it: per session, roll calls with member votes (a session can have none: Utah's 2025
 General Session), the share of voters linked to a person, and whether `robots.txt` lets `EmpoweredVoteBot` read the
@@ -120,6 +128,7 @@ roll-call pages.
 | Washington | 2017-18 to 2025-26 | 0 member-vote differences against LegiScan and against the Legislature's own roll calls (2026-11-13) |
 | Tennessee | 2017-18 to 2025-26 | 99.6% of LegiScan's floor roll calls found; 19 of 2.6 million member votes differ (2026-11-13) |
 | Utah | 2017 to 2026 | see the pilot report, `backend/data/legislatures/ut.json`, and the checks in `check_tools.py` (2026-11-15) |
+| Ohio | 132nd to 136th Assembly (2017-2026) | 59 floor roll calls of a 213-bill dry batch: 10 missing from the dump (read from the legislature), 0 tally and 0 of 2,912 member-vote differences; see `backend/data/legislatures/oh.json` (2026-11-16) |
 
 Washington's own sites refuse our reader (`robots.txt`), so Washington has no roll-call reader here and keeps its
 LegiScan lines.
