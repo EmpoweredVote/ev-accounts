@@ -4,6 +4,8 @@ Piece 4 of the post-election transition programme, Wisconsin slice. Read this be
 `essentials.office_swearing_in` for Wisconsin, and before seating any Wisconsin winner.
 
 **Applied to production 2026-11-16 as `CC_0445`: 123 offices, one date, four authorities.**
+**`CC_0446`, the same day: the Racine County Sheriff result, the last Wisconsin race of this
+election with no winner recorded.**
 
 🟢 **THIS IS THE FIRST STATE LEGISLATURE IN THE PROGRAMME TO CARRY SWEARING-IN DATES.**
 Measured straight after applying: **116 `STATE_LOWER`/`STATE_UPPER` offices nationwide have a
@@ -129,8 +131,12 @@ On or after that date, one migration should:
    is where `p_allow_reelection` matters.
 3. 🔴 **Clear `is_vacant` by hand on any seat that carries it.** `seat_officeholder` does NOT
    clear the flag, so a seated-and-flagged office emits a spurious all-NULL row.
-4. Set `politicians.is_incumbent = true` explicitly on every person seated. It defaults to
-   `false`, and a seated person without it is hidden from address search.
+4. 🔴 **DO NOT WRITE `politicians.is_incumbent` — THE COLUMN NO LONGER EXISTS.** `CA_0378`
+   dropped it on 2026-11-13, once every read had moved to `src/lib/incumbency.ts`, which derives
+   incumbency from `office_terms` instead of caching it. Naming it in an INSERT or UPDATE is a
+   runtime `42703`, and `check:occupancy` now fails a branch that names it — the same guard that
+   until 2026-11-13 *required* it. **Seating the person is the incumbency fact.**
+   ⚠ `race_candidates.is_incumbent` is a different column and still exists.
 5. Expect the 99 Assembly seats to need **term_end** set two years out and the 17 Senate seats
    four, per art. IV §§ 4 and 5 — but do not write a `term_end` you cannot cite.
 
@@ -138,15 +144,40 @@ On or after that date, one migration should:
 
 ## Still owed for Wisconsin
 
-- 🔴 **The Racine County Sheriff race has no result recorded.** Two candidates, Cary A. Madrigal
-  and Donald E. Vandervest, both `result = NULL`, no `result_source`. It has a swearing-in date
-  and no winner to seat. The Clerk of Circuit Court race beside it *is* recorded (Amy Vanderhoef,
-  cited to the county's own final Election Summary Report), so this is a gap in that one race,
-  not in the county.
-  ⚠ Watch the shape of the query that finds it: a `count(DISTINCT rc.politician_id) FILTER
-  (WHERE result='won')` reported **0 winners** for the whole Wisconsin county tier, which is
-  wrong — Vanderhoef won, but her row's `politician_id` is NULL, so counting distinct person ids
-  hid a recorded result. **Count the candidacy rows, not the people behind them.**
+- ✅ **The Racine County Sheriff result is recorded — `CC_0446`, applied 2026-11-16.**
+  **Donald E. Vandervest (DEM) 42,048 beat Cary A. Madrigal (REP) 39,609**, write-in 166, total
+  votes 81,657, 88 of 88 precincts, certainty `called`. Source: the county clerk's own
+  *Election Summary Report*, 2026-11-03 General Election, page 5, FINAL UNOFFICIAL — the same
+  document the Clerk of Circuit Court race was already cited to. It was the last Wisconsin
+  candidacy row of this election carrying no result; the tier now reads 265 of 265.
+  Neither candidate is the incumbent: Sheriff Christopher Schmaling did not run.
+
+  🔴 **IN THAT REPORT THE CONTEST TITLE IS PRINTED *AFTER* THE BLOCK OF CANDIDATES IT NAMES.**
+  Read it the other way round and every result attaches to the wrong contest — the sheriff's
+  numbers would have landed on Assembly District 84, which sits directly above them. The
+  extracted text gives no visual cue at all. Two checks settle it without trusting the layout:
+  the block's own arithmetic (39,609 + 42,048 = 81,657, its printed "Total Votes"), and the
+  Clerk of Circuit Court block below, whose single name is already recorded as that race's
+  winner from an earlier pass. ▶ **Find a row you already hold inside the same document and
+  check the new reading reproduces it.**
+
+  ⚠ **The report is `FINAL UNOFFICIAL`, so the certainty is `called`, not `certified`.** The
+  county has published no certified canvass for 2026-11-03 — only First, Second and FINAL
+  unofficial returns. The **August primary** rows for these same two people *are* `certified`,
+  so the two certainties sit side by side in one race's history and mean different things.
+
+  ⚠ **Watch the shape of the query that looks for a gap like this.** A
+  `count(DISTINCT rc.politician_id) FILTER (WHERE result='won')` reported **0 winners** for the
+  whole Wisconsin county tier, which was wrong — Vanderhoef had won, but her row's
+  `politician_id` is NULL, so counting distinct person ids hid a recorded result.
+  **Count the candidacy rows, not the people behind them.**
+
+- 🔴 **NEITHER RACINE COUNTY WINNER HAS A PERSON RECORD, AND THE JANUARY PASS NEEDS ONE.**
+  Both `race_candidates.politician_id` are NULL — Vandervest (Sheriff) and Vanderhoef (Clerk of
+  Circuit Court). A recorded result is not a seatable winner: `seat_officeholder` takes a
+  `politician_id`. Creating those two people is an occupancy act and is owed **before**
+  2027-01-04, not on the day. Run the collision checks first (exact name, then first+last, then
+  compass answers and images) — a duplicate person is far more expensive than a missing one.
 - **9 of the 2026 winners still have no headshot** — see
   `backend/data/wi-transition-headshots-2026/NOTES.md`.
 - **The 16 even-numbered Senate districts** are up in 2028, not now.
