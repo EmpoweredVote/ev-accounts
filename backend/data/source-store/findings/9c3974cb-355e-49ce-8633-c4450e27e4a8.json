@@ -59,7 +59,124 @@
           "sha256": "96f3d68e094e7438812650edc88a468959aa2048490e6a8299d390837cb09d12"
         }
       }
+    },
+    {
+      "id": "9ca051773d7eb94f3c13089ba676e2c9613767e13fe07f324e2ae38ab44bf3fe",
+      "kind": "own-words",
+      "url": "https://utahpolicy.com/?p=5953",
+      "date": "2015-06-11",
+      "date_precision": "day",
+      "passage": "The founding fathers recognized that the right to bear arms is fundamentally tied to self-defense. This is as true today as it was over two centuries ago when the Bill of Rights was ratified. The ATF has exploited vagaries present in federal gun law to chip away at basic rights. This legislation will slap the over-reaching hand of the federal government and restore some of the freedoms our grandparents enjoyed.",
+      "note": "Statement reprinted by a Utah political news site when he introduced H.R. 2710; he frames the bill as a check on federal agency gun rules.",
+      "subjects": [
+        "federal agency gun rules",
+        "Second Amendment self-defense",
+        "ammunition restrictions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:13:11.466Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "61ab1582b6db94d3edc6bc9ebe7dd9d16373d8b84eb8b5b069ab17004eeb1c05",
+      "kind": "record",
+      "url": "https://utahpolicy.com/?p=5953",
+      "date": "2015-06-11",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2710-2015",
+      "act": "sponsor",
+      "note": "Chief sponsor of the Lawful Purpose and Self-Defense Act of 2015, which would remove the ATF's power to bar .223 rifle ammunition and ease limits on self-defense shotguns and shells.",
+      "subjects": [
+        "federal agency gun rules",
+        "ammunition restrictions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:13:11.466Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "00937eab7cf7146656f35f446f2b75a5614fd9e95aacacd1dc8912a9960d10ff",
+      "kind": "own-words",
+      "url": "https://americas1stfreedom.org/content/congressman-introduces-measure-to-remove-sporting-purposes-clause",
+      "date": "2017-05-31",
+      "date_precision": "day",
+      "passage": "The Founding Fathers were clear when they drafted the Bill of Rights. The Second Amendment is about security and self-defense,",
+      "note": "Direct quote from his released statement on introducing H.R. 2620, as carried by a gun-rights magazine story; the story's date is the page date, his statement came about May 24, 2017. The quote continues that vagaries in today's legal code pose a real threat to the right to keep and bear arms.",
+      "subjects": [
+        "federal agency gun rules",
+        "Second Amendment self-defense"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:13:11.466Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4805f2b36a8eae0cf462f55faf6dd39ae9479f1226b31f4a67844eb355006ad3",
+      "kind": "record",
+      "url": "https://www.nraila.org/articles/20170526/rep-rob-bishop-introduces-the-lawful-purpose-and-self-defense-act",
+      "date": "2017-05-24",
+      "date_precision": "day",
+      "instrument_id": "US-HR-2620-2017",
+      "act": "sponsor",
+      "note": "Introduced the Lawful Purpose and Self Defense Act, which would end the ATF's use of the 'sporting purposes' clauses in federal firearms law and its power to reclassify rifle ammunition as armor piercing.",
+      "subjects": [
+        "federal agency gun rules",
+        "ammunition restrictions",
+        "Second Amendment self-defense"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:13:11.466Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "federal agency gun rules",
+        "sporting purposes clause",
+        "Second Amendment self-defense",
+        "ammunition restrictions",
+        "check every gun buyer",
+        "carry a gun across state lines",
+        "magazine limits",
+        "red-flag orders"
+      ],
+      "places": [
+        "scope note: the pages found describe a former U.S. House member who served 2003 to 2021 and retired; no page shows him on the 2026 ballot or in a sitting state office, so the findings below are from his congressional years",
+        "On the Record (0 appearances)",
+        "bishop.house.gov pages on 2nd Amendment rights: fetched, but they belong to a different member with the same surname (Georgia), so nothing saved",
+        "his own congressional site (robbishop.house.gov): not reviewed, defunct after he left office; own words taken from a Utah news archive reprinting his statement and a gun-rights group's story quoting him",
+        "Ballotpedia: not reviewed, no fetch",
+        "Wikipedia: reviewed, confirms service 2003 to 2021 and retirement; nothing on guns saved",
+        "one web search on name plus Second Amendment: leads only (ontheissues.org, votesmart not used as sources)",
+        "sponsor list: covered by bulk bill data",
+        "congress.gov: not reviewed, no fetch"
+      ],
+      "found": 4,
+      "at": "2026-11-15T21:13:11.466Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -1,0 +1,39 @@
+{
+  "id": "UT-SB-50-2023",
+  "scope": "state:ut",
+  "title": "SB50 (2023 General): Weapon Purchase Amendments",
+  "urls": [
+    "https://le.utah.gov/~2023/bills/static/SB0050.html",
+    "https://le.utah.gov/~2023/bills/sbillint/SB0050.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kathleen Riebe",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "497f54d5-f52e-4f0c-971d-dab4d65e8014"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2023/bills/sbillint/SB0050.pdf (Open States text id 90100541))",
+    "fetched_at": "2026-11-15T19:41:15.158344Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-SB-50-2023.introduced.pdf",
+      "sha256": "565b9a1cf6a7de158ef19420ef7b233ddadb79a06a457a23a3cbfb64c33c5db2"
+    },
+    "note": "Introduced version; later amendments are not in the text read. Section 1 (76-10-526) only adds a gun-lock timing cross-reference."
+  },
+  "operative_text": "Section 2 (new Utah Code 76-10-526.1): (2) Except as provided in Subsection (3), a dealer may not deliver an assault weapon to a purchaser until: (a) the requirements of Section 76-10-526 are met; and (b) at least ten days, not including weekends and holidays, have passed after the day on which the assault weapon was purchased. (3) The waiting period described in Subsection (2) does not apply to: (a) the trade of one assault weapon for another assault weapon; or (b) the purchase of a firearm by: (i) an individual with a valid permit to carry a concealed firearm who is exempt from the criminal background check fee under Subsection 76-10-526(13); (ii) a law enforcement officer who is exempt from the criminal background check fee under Subsection 76-10-526(14); or (iii) a Federal Firearms Licensee. (4) An actor who violates Subsection (2) is subject to the penalties described in Section 76-10-527.\nSection 3 (Utah Code 76-10-527): (1) A dealer is guilty of a class A misdemeanor who willfully and intentionally: (c) violates Section 76-10-526 or 76-10-526.1."
+}

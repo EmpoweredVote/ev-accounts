@@ -1,0 +1,39 @@
+{
+  "id": "UT-SB-68-2023",
+  "scope": "state:ut",
+  "title": "SB68 (2023 General): Restricted Person Possession Amendments",
+  "urls": [
+    "https://le.utah.gov/~2023/bills/static/SB0068.html",
+    "https://le.utah.gov/~2023/bills/sbillint/SB0068.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Stephanie Pitcher",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4f896b69-d922-4838-b54d-51a00a452e08"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2023/bills/sbillint/SB0068.pdf (Open States text id 90100480))",
+    "fetched_at": "2026-11-15T19:41:15.158344Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-SB-68-2023.introduced.pdf",
+      "sha256": "873ef4ddbb0bd413cc854df64d570349057726bf06e5d5ef30e33f4bd730c392"
+    },
+    "note": "Introduced version; later amendments are not in the text read. Sections 1 (76-3-203.5) and 3 (76-10-532) were not read for operative content beyond cross-reference renumbering (Section 3: 76-10-503(1)(b) to (1)(c))."
+  },
+  "operative_text": "Section 2 (Utah Code 76-10-503): (1)(a) \"Ammunition\" means a bullet, a cartridge case, primer, propellant powder, or other ammunition designed for use in any firearm, either as an individual component part or in a completely assembled cartridge. (2) A Category I restricted person who intentionally or knowingly agrees, consents, offers, or arranges to purchase, transfer, possess, use, or have under the person's custody or control, or who intentionally or knowingly purchases, transfers, possesses, uses, or has under the person's custody or control: (a) any firearm or ammunition is guilty of a second degree felony; (3) A Category II restricted person who intentionally or knowingly purchases, transfers, possesses, uses, or has under the person's custody or control: (a) any firearm or ammunition is guilty of a third degree felony; (8)(a) A person may not sell, transfer, or otherwise dispose of any firearm or other dangerous weapon or ammunition to any person, knowing that the recipient is a person described in Subsection (1)(b) or (c). (9)(b) A person may not knowingly solicit, persuade, encourage or entice a dealer or other person to sell, transfer or otherwise dispose of a firearm or other dangerous weapon or ammunition under circumstances which the person knows would be a violation of the law."
+}

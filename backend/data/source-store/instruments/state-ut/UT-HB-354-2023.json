@@ -1,0 +1,39 @@
+{
+  "id": "UT-HB-354-2023",
+  "scope": "state:ut",
+  "title": "HB354 (2023 General): Firearm Access Amendments",
+  "urls": [
+    "https://le.utah.gov/~2023/bills/static/HB0354.html",
+    "https://le.utah.gov/~2023/bills/hbillint/HB0354.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Andrew Stoddard",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4956e47c-d051-4adf-a558-5f29c9f7e854"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2023/bills/hbillint/HB0354.pdf (Open States text id 90101433))",
+    "fetched_at": "2026-11-15T19:41:15.158344Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-354-2023.introduced.pdf",
+      "sha256": "df436b90475ea63e166ba71fc3dada77c5a13d51887e130a0b3445bfd1ada90e"
+    },
+    "note": "As-filed (introduced) text; no votes recorded, so it apparently did not pass a chamber."
+  },
+  "operative_text": "Section 1 (new Utah Code 76-10-502.5): (2) An owner or authorized user of a firearm shall store or keep the firearm in a secured and locked container or secure the firearm by a locking device that renders the firearm inoperable by any person other than the owner or authorized user.\nSection 1 (new Utah Code 76-10-502.5): (3) An owner or authorized user of a firearm may not leave a firearm in an unattended or unlocked vehicle unless the firearm is locked in the trunk, a locked safe, a locked glove compartment, or inaccessible to anyone other than the owner or authorized user.\nSection 1 (new Utah Code 76-10-502.5): (4) If a restricted person, a minor, or an at-risk person gains access to a firearm belonging to or under the control of an owner or authorized user, and the owner or authorized user failed to secure the firearm in a locked container or by a locking device, the owner or authorized user in control of the firearm: (a) is subject to a civil fine of $1,000; or (b) if the restricted person, minor, or at-risk person commits a crime or injures another person, is subject to a civil fine of $5,000 in addition to being guilty of an offense one level below the offense charged against the restricted person, minor, or at-risk person.\nSection 1 (new Utah Code 76-10-502.5): (5) Subsection (4) does not apply if the firearm is accessed by a person and used in a lawful act of self-defense."
+}

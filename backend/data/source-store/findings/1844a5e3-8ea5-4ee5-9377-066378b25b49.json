@@ -1,0 +1,53 @@
+{
+  "politician_id": "1844a5e3-8ea5-4ee5-9377-066378b25b49",
+  "findings": [
+    {
+      "id": "ec0f40e02d849ce4d9c6966bb1f6fbbdcbb565dd0100915e7a416c9f4b620a41",
+      "kind": "own-words",
+      "url": "https://www.derekforutah.com/issues",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Protect and preserve our Second Amendment rights.",
+      "note": "Line on his attorney general campaign issues page listing Second Amendment rights as something to protect and preserve. Page is undated; campaign was 2024.",
+      "subjects": [
+        "general statement on gun rights / Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:11:26.412Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "general statement on gun rights / Second Amendment",
+        "federal agency gun rules",
+        "carry permits and permitless carry",
+        "bans on a type of firearm",
+        "check every gun buyer"
+      ],
+      "places": [
+        "scope: this Derek Brown is the sitting state Attorney General (statewide office, took office January 2025, not on the 2026 ballot); not the former House member of the same name",
+        "On the Record (0 meetings)",
+        "campaign site issues page (https://www.derekforutah.com/issues)",
+        "campaign site meet page (https://www.derekforutah.com/meet-derek): nothing on the subject",
+        "attorney general's office site, search for firearm and second amendment: gun-related releases found are from the prior office-holder's term and name that person, not Brown; nothing from Brown's term",
+        "legislature bill pages: not applicable, he is not a legislator now; sponsor list: covered by bulk bill data",
+        "Ballotpedia (https://ballotpedia.org/Derek_Brown_(Utah)): fetch returned empty, not reviewed",
+        "blocked: https://legalnewsline.com/stories/671177200-idaho-ag-leads-coalition-challenging-hawaii-s-gun-carry-ban-at-supreme-court (429); a search snippet said Brown joined a Hawaii carry-ban amicus coalition, unverified so not saved",
+        "news searches on name plus gun terms (3 searches): no Brown quote or act found beyond the campaign page",
+        "House member page (house.utleg.gov): 404, not applicable"
+      ],
+      "found": 1,
+      "at": "2026-11-15T21:11:26.412Z",
+      "by": "source-collector"
+    }
+  ]
+}

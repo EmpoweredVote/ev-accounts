@@ -1,0 +1,39 @@
+{
+  "id": "UT-HB-452-2026",
+  "scope": "state:ut",
+  "title": "HB452 (2026 General): Firearm Storage for Concealed Permit Holders on Publicly Supported Entities",
+  "urls": [
+    "https://le.utah.gov/~2026/bills/static/HB0452.html",
+    "https://le.utah.gov/Session/2026/bills/introduced/HB0452S01.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Candice Pierucci",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "99198363-2ac9-4b56-9d80-7abfe7b2a01a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Comm Sub, ; official copy, https://le.utah.gov/Session/2026/bills/introduced/HB0452S01.pdf (Open States text id 90112802))",
+    "fetched_at": "2026-11-15T19:41:15.158344Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-452-2026.comm-sub.pdf",
+      "sha256": "92472f85e79315ffa89849899020f58e362748d9309e0868b188ab81b88ec690"
+    },
+    "note": "Read version is 1st Sub. (Buff) H.B. 452 (committee substitute, 02-05 21:11); applies where entity bars guns in the Fairpark, housing-transit and capital-city zones. Not the enrolled text; any later amendments are not reflected."
+  },
+  "operative_text": "Section 1 (new Utah Code 53-5a-103.6): (b) An entity described in Subsection (2)(a): (i) shall provide a secure storage area for an individual to store the individual's handgun while the individual is on the property if the individual has a concealed carry permit; (ii) is responsible for the handguns while the handguns are stored in the secure storage area; and (iii) may not charge a fee to store the handguns in the secure storage area. (3)(a) If an individual stores a handgun with an entity that receives public funds under Subsection (2)(b)(i) and does not return within 24 hours from the time the individual stored the handgun with the entity, the entity shall notify the local law enforcement agency with jurisdiction over the property and request that the local law enforcement agency take possession of the handgun.\nSection 2 (Utah Code 53-5a-603): (9) An entity receiving public funds may use the process described in Subsection (2)(a) to validate a concealed carry permit as described in Subsection 53-5a-103.6(4)."
+}

@@ -1,0 +1,186 @@
+{
+  "politician_id": "70b5e5a8-2ae4-454e-b75e-adb200b7b91d",
+  "findings": [
+    {
+      "id": "e0eeee7a248d9f4986d8a8100d00d5bccb94a1853335ac13d128d1822d7aabd3",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2026/bills/static/HB0101.html",
+      "date": "2026-02-19",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-101-2026",
+      "act": "yea",
+      "motion": "Senate Senate/ passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT Senate, Senate Senate/ passed 3rd reading, 2026-02-19: yea (tally 24–1); census gate: near-unanimous.",
+      "subjects": [
+        "background-check exemption for NFA firearms with recent ATF approval",
+        "federal licensees exempt from check on transfer to them"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/Session/2026/bills/enrolled/HB0101.pdf (Open States text id 90112173))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-101-2026.enrolled.pdf",
+          "sha256": "757585ce1a39dad9f4e6406bd57331f6bf3ad6df8befe5be39fd76e80a0e190e"
+        }
+      }
+    },
+    {
+      "id": "1af1ff1f0c580693efc9001fb88be0d0b1a5becb4f45a4e0ea5aa346a52766e0",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2026/bills/static/HB0111.html",
+      "date": "2026-03-07",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-111-2026",
+      "act": "nay",
+      "motion": "Senate Senate/ passed 2nd & 3rd readings/ suspension",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "UT Senate, Senate Senate/ passed 2nd & 3rd readings/ suspension, 2026-03-07: nay (tally 18–5); census gate: multi-subject.",
+      "subjects": [
+        "no discharging a weapon near buildings on wildlife management areas"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/Session/2026/bills/enrolled/HB0111.pdf (Open States text id 90116664))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-111-2026.enrolled.pdf",
+          "sha256": "fbdf780604588e557400d9332f936a6acca667e340cb0d53944b7305ff35bfa1"
+        }
+      }
+    },
+    {
+      "id": "9b431dd61d2f6874c7ae7458b557a71adbe1cc2feb54ba6c8838bc1268cb63a4",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2026/bills/static/HB0214.html",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-214-2026",
+      "act": "yea",
+      "motion": "Senate Senate/ passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "UT Senate, Senate Senate/ passed 3rd reading, 2026-02-20: yea (tally 19–6); census gate: multi-subject.",
+      "subjects": [
+        "limits on lawsuits against gun and ammunition makers and sellers",
+        "local governments preempted from imposing gun-industry liability"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/Session/2026/bills/enrolled/HB0214.pdf (Open States text id 90116910))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-214-2026.enrolled.pdf",
+          "sha256": "503735c3ec441d4624460122c4be9b7c0a7b407043d39c7980646bae68c546c4"
+        }
+      }
+    },
+    {
+      "id": "f4f2f73d9b0a1437f2e2680c836e765f666678f627578602cd0275e30937e928",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2026/bills/static/HB0314.html",
+      "date": "2026-02-20",
+      "date_precision": "day",
+      "instrument_id": "UT-HB-314-2026",
+      "act": "yea",
+      "motion": "Senate Senate/ passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "UT Senate, Senate Senate/ passed 3rd reading, 2026-02-20: yea (tally 18–6); census gate: none.",
+      "subjects": [
+        "dealer background check before firearm sale",
+        "check records kept 30 days instead of 20",
+        "written consent form for purchase removed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/Session/2026/bills/enrolled/HB0314.pdf (Open States text id 90116483))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-314-2026.enrolled.pdf",
+          "sha256": "10c050aa0409ec2d741ddf5e11ef1ca67ea31dd2aa18483cabe7a2f9b025a68f"
+        }
+      }
+    },
+    {
+      "id": "d1706cc7c9d2da9f8601c6cabb4a7745b8480f7c44c8f30b45ceee025347d2e1",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2026/bills/static/SB0018.html",
+      "date": "2026-01-20",
+      "date_precision": "day",
+      "instrument_id": "UT-SB-18-2026",
+      "act": "yea",
+      "motion": "Senate Senate/ passed 2nd & 3rd readings/ suspension",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT Senate, Senate Senate/ passed 2nd & 3rd readings/ suspension, 2026-01-20: yea (tally 28–0); census gate: near-unanimous.",
+      "subjects": [
+        "fixes cross-reference in firearm seller liability shield",
+        "renames pistol or revolver to handgun in offense list"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/Session/2026/bills/enrolled/SB0018.pdf (Open States text id 90113486))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-SB-18-2026.enrolled.pdf",
+          "sha256": "10e67fa240541e3a2129ea42e896085448ef7d9db61d1c43c183e1fc8d27968d"
+        }
+      }
+    },
+    {
+      "id": "bd5218acc6d5ea3250e4ad28fdad9598b3a7c28d1f1001a04568a5b3dd7d9bdf",
+      "kind": "record",
+      "url": "https://le.utah.gov/~2026/bills/static/SB0086.html",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "UT-SB-86-2026",
+      "act": "yea",
+      "motion": "Senate Senate/ passed 3rd reading",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "UT Senate, Senate Senate/ passed 3rd reading, 2026-02-17: yea (tally 23–0); census gate: near-unanimous.",
+      "subjects": [
+        "gun safe-harbor program data reporting",
+        "safe-harbor gun records kept private"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Enrolled, ; official copy, https://le.utah.gov/Session/2026/bills/enrolled/SB0086.pdf (Open States text id 90115587))",
+        "fetched_at": "2026-11-15T19:41:15.158344Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-SB-86-2026.enrolled.pdf",
+          "sha256": "bfa22c6da1b64f4da5e61fbe84d7eaa5df9caa24c39f98535162f56a6285db91"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

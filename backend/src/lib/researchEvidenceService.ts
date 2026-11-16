@@ -11,6 +11,7 @@ import { isRollCallXmlUrl, parseRollCallLine } from './rollCallEvidence.js';
 import { isLegiscanUrl, parseLegiscanLine } from './legiscanEvidence.js';
 import { isIgaRollCallUrl, parseIgaRollCallLine } from './igaRollCallEvidence.js';
 import { isMaRollCallUrl, parseMaRollCallLine } from './maRollCallEvidence.js';
+import { isStateRollCallUrl, parseStateRollCallLine } from './stateRollCallEvidence.js';
 import { BLANK_REASONS, isBlankReason } from './blankReasons.js';
 import { namesParty } from './partyLabels.js';
 // Type-only: erased at runtime, so it does not pull db.js in before a test's mock (see below).
@@ -1023,6 +1024,8 @@ export function validStoredSpan(snippet: string, span: string | undefined, url?:
   if (url !== undefined && isLegiscanUrl(url) && parseLegiscanLine(t) && snippet.trim() === t) return t;
   if (url !== undefined && isIgaRollCallUrl(url) && parseIgaRollCallLine(t) && snippet.trim() === t) return t;
   if (url !== undefined && isMaRollCallUrl(url) && parseMaRollCallLine(t) && snippet.trim() === t) return t;
+  // A legislature's own roll-call page (le.utah.gov svotes.jsp), the Open States path.
+  if (url !== undefined && isStateRollCallUrl(url) && parseStateRollCallLine(t) && snippet.trim() === t) return t;
   // Same normalizer as the verifier, padded so the run must sit on whole words.
   const norm = (x: string) => ` ${normalizeText(x)} `;
   const words = normalizeText(t).split(' ').filter(Boolean).length;

@@ -1,6 +1,6 @@
 """Run write-recipe steps 0-12 for one batch, in order, and stop at the first step that needs a person or fails a check.
 
-usage: python3 -I scripts/stage5/run_recipe.py <batch dir> [--from N] [--to 12] [--print] [--check-only N]
+usage: python3 -I scripts/stage5/run_recipe.py <batch dir> [--from N] [--to 12] [--print] [--check-only N] [--evidence-from pre|research]
        python3 -I scripts/stage5/run_recipe.py <batch dir> --replay [--to 9] [--no-reapply] [--print]
 
 Run from a worktree's `backend/` whose `.env` is linked to ev-accounts/backend/.env (STAGE5.md "Running them").
@@ -115,6 +115,11 @@ def steps(c, b):
         votes += [f"{TSX} scripts/legiscan-evidence-lines.ts --in {b}/legiscan/pairs.csv --out {b}/legiscan/legiscan-evidence.csv",
                   f"{PY} scripts/stage5/legiscan_merge.py {b} --host {host}"]
     mx = f" --max-urls {c['max_urls']}" if c.get('max_urls') else ''
+    # --evidence-from pre|research reaches step 4's build_evidence.py as --from-pre / --from-research (Utah ut-01,
+    # 2026-11-15: without it a changed research.csv stopped `--from 4` and step 4 had to be run by hand).
+    ev = opt('--evidence-from')
+    if ev not in (None, 'pre', 'research'): raise SystemExit('--evidence-from is pre or research')
+    mx += f' --from-{ev}' if ev else ''
     return {
         0: ('dry run 0', [f"{write} 0"], None),
         1: ('quote check', [], 'agent'),

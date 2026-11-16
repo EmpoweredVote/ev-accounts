@@ -1,0 +1,376 @@
+{
+  "id": "UT-HB-237-2017",
+  "scope": "state:ut",
+  "title": "HB237 (2017 General): Firearms and Domestic Violence Modifications",
+  "urls": [
+    "https://le.utah.gov/~2017/bills/static/HB0237.html",
+    "http://le.utah.gov/~2017/bills/hbillamd/HB0237.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Perry, Lee B.",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bramble, Curtis S.",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2017-02-28",
+      "body": "UT House",
+      "motion": "House passed 3rd reading",
+      "kind": "roll-call",
+      "yes": 55,
+      "no": 20,
+      "absent": 0,
+      "note": "le.utah.gov roll call (Open States data) 90113459",
+      "members": [
+        {
+          "name": "Carl Albrecht",
+          "vote": "yea",
+          "politician_id": "6cbb80d7-e32b-4ea8-9073-463e0e7c918a"
+        },
+        {
+          "name": "Stewart Barlow",
+          "vote": "yea",
+          "politician_id": "2b2cf5ad-b226-48f6-a49b-616805019c35"
+        },
+        {
+          "name": "Walt Brooks",
+          "vote": "yea",
+          "politician_id": "f496b2b2-78eb-4c58-905d-625320de5865"
+        },
+        {
+          "name": "Scott Chew",
+          "vote": "yea",
+          "politician_id": "7dc8a341-6d22-48d9-b8fe-2c75fa3a3de5"
+        },
+        {
+          "name": "LaVar Christensen",
+          "vote": "yea"
+        },
+        {
+          "name": "Kay Christofferson",
+          "vote": "yea",
+          "politician_id": "2fa5347c-fb56-443d-8f1d-c1bff270bf9e"
+        },
+        {
+          "name": "Kim F. Coleman",
+          "vote": "yea"
+        },
+        {
+          "name": "Cutler, B. R.",
+          "vote": "yea"
+        },
+        {
+          "name": "Brad M. Daw",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Duckworth",
+          "vote": "yea"
+        },
+        {
+          "name": "Fawson, J.",
+          "vote": "yea"
+        },
+        {
+          "name": "Gage Froerer",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Gardiner",
+          "vote": "yea"
+        },
+        {
+          "name": "Francis D. Gibson",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian M. Greene",
+          "vote": "yea"
+        },
+        {
+          "name": "Grover, K.",
+          "vote": "yea"
+        },
+        {
+          "name": "Craig Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen G. Handy",
+          "vote": "yea"
+        },
+        {
+          "name": "Timothy D. Hawkes",
+          "vote": "yea"
+        },
+        {
+          "name": "Gregory H. Hughes",
+          "vote": "yea"
+        },
+        {
+          "name": "Eric K. Hutchings",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Ivory",
+          "vote": "yea",
+          "politician_id": "f3c4cdf1-724e-43d6-ad59-70573badae75"
+        },
+        {
+          "name": "Mike Kennedy",
+          "vote": "yea"
+        },
+        {
+          "name": "John Knotwell",
+          "vote": "yea"
+        },
+        {
+          "name": "Bradley G. Last",
+          "vote": "yea"
+        },
+        {
+          "name": "Karianne Lisonbee",
+          "vote": "yea",
+          "politician_id": "da3ae2d0-95ab-4292-9d49-51f4576fe56b"
+        },
+        {
+          "name": "Cory Maloy",
+          "vote": "yea",
+          "politician_id": "a42272fb-f41b-4a64-86d5-a0a0eeec5b82"
+        },
+        {
+          "name": "Dan McCay",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike McKell",
+          "vote": "yea",
+          "politician_id": "a7cc7fe1-b491-4498-bab5-3f3661987abb"
+        },
+        {
+          "name": "Jefferson Moss",
+          "vote": "yea"
+        },
+        {
+          "name": "Merrill F. Nelson",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael E. Noel",
+          "vote": "yea"
+        },
+        {
+          "name": "Doug Owens",
+          "vote": "yea",
+          "politician_id": "38aec107-ca28-454a-a7f0-d9225fcd4d8b"
+        },
+        {
+          "name": "Lee B. Perry",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeremy A. Peterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Val Peterson",
+          "vote": "yea",
+          "politician_id": "61816aa4-4de0-4e1a-a249-cea5e2a8d169"
+        },
+        {
+          "name": "Val K. Potter",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Pulsipher",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Quinn",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Ray",
+          "vote": "yea"
+        },
+        {
+          "name": "Marc K. Roberts",
+          "vote": "yea"
+        },
+        {
+          "name": "Douglas V. Sagers",
+          "vote": "yea"
+        },
+        {
+          "name": "Sandall, S.",
+          "vote": "yea"
+        },
+        {
+          "name": "Dean Sanpei",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Schultz",
+          "vote": "yea",
+          "politician_id": "8a5e17bd-54c4-405d-9cba-c62d139cc5a9"
+        },
+        {
+          "name": "V. Lowry Snow",
+          "vote": "yea"
+        },
+        {
+          "name": "Jon E. Stanard",
+          "vote": "yea"
+        },
+        {
+          "name": "Keven Stratton",
+          "vote": "yea",
+          "politician_id": "80ec24cb-49d4-48a4-bc01-58d33caf15d7"
+        },
+        {
+          "name": "Norm Thurston",
+          "vote": "yea"
+        },
+        {
+          "name": "Ray Ward",
+          "vote": "yea",
+          "politician_id": "9cccdb83-cf9e-48ef-97b5-6da255733f74"
+        },
+        {
+          "name": "Webb, R. C.",
+          "vote": "yea"
+        },
+        {
+          "name": "John R. Westwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Logan Wilde",
+          "vote": "yea"
+        },
+        {
+          "name": "Brad R. Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Winder",
+          "vote": "yea"
+        },
+        {
+          "name": "Patrice M. Arent",
+          "vote": "nay"
+        },
+        {
+          "name": "Joel Briscoe",
+          "vote": "nay"
+        },
+        {
+          "name": "Rebecca Chavez-Houck",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Dunnigan",
+          "vote": "nay"
+        },
+        {
+          "name": "Rebecca P. Edwards",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Eliason",
+          "vote": "nay",
+          "politician_id": "3e569f2a-041d-43e2-a96f-e007eb7d6656"
+        },
+        {
+          "name": "Lynn N. Hemingway",
+          "vote": "nay"
+        },
+        {
+          "name": "Sandra Hollins",
+          "vote": "nay",
+          "politician_id": "c5d4b275-055f-4950-884e-96f63cf36bbd"
+        },
+        {
+          "name": "Brian King",
+          "vote": "nay"
+        },
+        {
+          "name": "Karen Kwan",
+          "vote": "nay",
+          "politician_id": "93376853-c225-430c-bf89-dfee26c6c964"
+        },
+        {
+          "name": "Kelly B. Miles",
+          "vote": "nay"
+        },
+        {
+          "name": "Carol Moss",
+          "vote": "nay",
+          "politician_id": "025945fe-7ea8-40aa-8ead-f7b8d5dfca29"
+        },
+        {
+          "name": "Dixon M. Pitcher",
+          "vote": "nay"
+        },
+        {
+          "name": "Marie H. Poulson",
+          "vote": "nay"
+        },
+        {
+          "name": "Edward H. Redd",
+          "vote": "nay"
+        },
+        {
+          "name": "Angela Romero",
+          "vote": "nay",
+          "politician_id": "00af7081-b2f4-4b2d-add0-dd1c3d3b4787"
+        },
+        {
+          "name": "Robert Spendlove",
+          "vote": "nay"
+        },
+        {
+          "name": "Christine Watkins",
+          "vote": "nay",
+          "politician_id": "a3b3d1db-2305-452a-9d53-2627547d751f"
+        },
+        {
+          "name": "Elizabeth Weight",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Wheatley",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Amended, ; official copy, https://le.utah.gov/~2017/bills/hbillamd/HB0237.pdf (Open States text id 90091368))",
+    "fetched_at": "2026-11-15T19:41:15.158344Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-237-2017.amended.pdf",
+      "sha256": "ceded9443dd3ad7711e184106e8e2a2182ae25b71ddda1df5c96cdf441bf55d1"
+    },
+    "note": "Amended version (with House Committee Amendments 2-22-2017), not enrolled; the House passed it 2017-02-28 and later amendments are not in the text read. The print has stray amendment markers. Section 3 (77-36-1.1) adds an enhancement when the domestic violence was committed while carrying a firearm or dangerous weapon, and Section 4 (77-36-5.1) has the court require surrender of firearms and ammunition and federal-ban notice; those lines are garbled by the markers so not quoted. Section 4 also changes \"may\" to \"shall\" for the protective-order condition."
+  },
+  "operative_text": "Section 1 (Utah Code 76-10-523): (4) Subsection 76-10-504(1) does not apply to a person 21 years of age or older who may lawfully possess a firearm.\nSection 2 (Utah Code 76-10-526): (a) within 30 minutes of determining the purchaser is prohibited from purchasing, possessing, or transferring a firearm, and before informing the dealer as described in Subsection (7)(b), notify the law enforcement agency with jurisdiction where the dealer is located; and\nSection 2 (Utah Code 76-10-526): (b) inform the law enforcement agency in the jurisdiction where the individual resides.\nSection 4 (Utah Code 77-36-5.1): (a) prohibiting the perpetrator from purchasing, using, or possessing a firearm or other specified weapon;"
+}

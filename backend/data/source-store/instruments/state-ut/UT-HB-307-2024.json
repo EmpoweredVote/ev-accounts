@@ -1,0 +1,45 @@
+{
+  "id": "UT-HB-307-2024",
+  "scope": "state:ut",
+  "title": "HB307 (2024 General): H.B. 307 Firearm Data Amendments",
+  "urls": [
+    "https://le.utah.gov/~2024/bills/static/HB0307.html",
+    "https://le.utah.gov/~2024/bills/hbillamd/HB0307S01.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Sahara Hayes",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "01e8e34b-dc2e-47af-8c1b-e57e7c51da5e"
+    },
+    {
+      "name": "Todd Weiler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "612392b2-ab46-4287-a2fd-c74ae0961198"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Amended, ; official copy, https://le.utah.gov/~2024/bills/hbillamd/HB0307S01.pdf (Open States text id 90102288))",
+    "fetched_at": "2026-11-15T19:41:15.158344Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-307-2024.amended.pdf",
+      "sha256": "6a91f09a118967a5e6dc08e8c50b5b621f71123ca41757212327ece9b85a23af"
+    },
+    "note": "1st Sub. (Buff) H.B. 307, 01-31-24, with House Committee Amendments 2-27-2024 (marked in print); later amendments not in the text read. Reporting starts July 1, 2026 and is due annually April 30; wildlife-agency crimes are excluded. Quoted lines are fragments of the (2)(a) and (3) provisions as printed."
+  },
+  "operative_text": "Section 1 (new Utah Code 53-25-102): (i) the number of crimes reported to or investigated by the law enforcement agency in which the law enforcement agency determined that a lost or stolen firearm was used in the commission of the crime, separated by the type of crime; and\nSection 1 (new Utah Code 53-25-102): (ii) the number of firearms, separated by category, in the custody of the law enforcement agency that were: (A) returned to the property owner; (B) destroyed; (C) retained in evidence or other storage; (D) transferred to another governmental entity; or (E) submitted to a non-governmental entity for sale or disposal under Section 77-11a-403.\nSection 1 (new Utah Code 53-25-102): (c) annually on or before August 1, publish a report of the data described in Subsection (2) on the commission's website."
+}

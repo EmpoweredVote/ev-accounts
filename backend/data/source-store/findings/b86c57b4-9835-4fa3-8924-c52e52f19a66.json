@@ -1,0 +1,31 @@
+{
+  "politician_id": "b86c57b4-9835-4fa3-8924-c52e52f19a66",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "limits on who may have a gun"
+      ],
+      "places": [
+        "status: in scope; sitting House District 64 member since 2026-05-05, on the 2026 general-election ballot against an unaffiliated challenger (Wikipedia, Salt Lake Tribune race story via search)",
+        "On the Record (0 meetings)",
+        "official House member page https://house.utleg.gov/rep/LARSOJ/ (fetched, nothing on the subject)",
+        "campaign site: none found",
+        "blocked: https://ballotpedia.org/Jackie_Larson (403)",
+        "voter guide https://ivoterguide.com/candidate/91911/race/33796/election/1486 (gun question listed as did not answer)",
+        "Salt Lake Tribune questionnaire story: she did not respond; nothing on the subject",
+        "news search on name plus gun words: nothing on the subject",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:13:37.763Z",
+      "by": "source-collector"
+    }
+  ]
+}

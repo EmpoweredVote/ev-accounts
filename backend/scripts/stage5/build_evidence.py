@@ -27,6 +27,12 @@ SHA = f'{B}/research.built.sha256'
 _sha = lambda f: hashlib.sha256(open(f, 'rb').read()).hexdigest()
 if os.path.exists(src) and os.path.exists(f'{B}/research.csv'):
     changed = os.path.exists(SHA) and open(SHA).read().strip() != _sha(f'{B}/research.csv')
+    if '--from-research' in sys.argv and os.path.exists(f'{B}/research-pre-step7.csv') and '--force-from-research' not in sys.argv:
+        # Utah ut-01 (2026-11-15): rows already through step 7 carry its roll-call edits; rebuilt from them, the next
+        # step 7 no longer sees the page it pairs a vote on, and the vote line is lost (Walter and Fiefia, HB 84).
+        raise SystemExit('build_evidence: --from-research refused: this batch has been through step 7 (research-pre-step7.csv '
+                         'exists), and rebuilding from its research.csv loses roll-call pairings at the next step 7. Use '
+                         '--from-pre, or --force-from-research if the step-7 edits are really meant to be the new base.')
     if '--from-research' in sys.argv:
         os.replace(src, f'{B}/research-pre-evidence.prev.csv'); os.rename(f'{B}/research.csv', src)
         print('build_evidence: rebuilding from the current research.csv (old saved copy: research-pre-evidence.prev.csv)')
@@ -287,7 +293,8 @@ for r in rows:
         if i >= 0: got.append(window(t, i, i + len(sur)))
         for m in INST.finditer(r['reasoning']):
             num = m.group(2)
-            for mm in re.finditer(r'\b(H\.?\s?R\.?|S\.|SB|HB|SJR|HJR|Senate Bill|House Bill)\s?' + num + r'\b', t, re.I):
+            # Utah prints "H.B. 89" / "S.B. 50" (ut-01, 2026-11-15): [HS]\.\s?B\. first, or "S." would take the S and stop.
+            for mm in re.finditer(r'\b([HS]\.\s?B\.|H\.?\s?R\.?|S\.|SB|HB|SJR|HJR|Senate Bill|House Bill)\s?' + num + r'\b', t, re.I):
                 got.append(window(t, mm.start(), mm.end())); break
         got = [x for x in got if x]
         if not got: miss.append((r['full_name'], u, 'no anchor')); continue

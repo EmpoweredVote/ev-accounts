@@ -1,0 +1,34 @@
+{
+  "politician_id": "e79822a0-d968-4e00-b107-de54732134bf",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed in scope: a news story (https://www.sltrib.com/news/2026/06/07/former-teacher-policy-official/) names her in the House District 34 primary; search results show her as the nominee on the general-election ballot (not confirmed on an official canvass page by me)",
+        "news story candidate Q&A https://www.sltrib.com/news/2026/06/07/former-teacher-policy-official/: nothing on the subject",
+        "Ballotpedia https://ballotpedia.org/Julie_Jackson_(Utah): blocked: returned an empty page (HTTP 202)",
+        "https://goodparty.org/candidate/julie-jackson/utah-house-of-representatives-district-34: blocked: HTTP 429",
+        "https://bluevoterguide.org/fr/UT/candidate_Julie_Jackson/327017: blocked: HTTP 403",
+        "https://www.ballotready.org/people/julie-jackson-e513a6b0-503d-4a21-855a-434289e214f6: nothing on the subject",
+        "one web search on name plus gun words: nothing on the subject",
+        "campaign site: not reviewed: no campaign site address found in searches",
+        "sponsor list: covered by bulk bill data (she is not a sitting legislator)",
+        "legislature's own member page: not reviewed: not a sitting legislator"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:14:27.037Z",
+      "by": "source-collector"
+    }
+  ]
+}

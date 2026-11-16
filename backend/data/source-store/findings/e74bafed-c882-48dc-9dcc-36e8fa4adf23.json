@@ -1,0 +1,55 @@
+{
+  "politician_id": "e74bafed-c882-48dc-9dcc-36e8fa4adf23",
+  "findings": [
+    {
+      "id": "9ad795bb3b8532f4b0662ba79b47aba529540843bb99ec194ea483e30c96145e",
+      "kind": "own-words",
+      "url": "https://www.stephenforslc.com/platform",
+      "date": "2026-11-15",
+      "date_precision": "year",
+      "passage": "I believe the state should not preempt cities from creating ordinances that protect their residents. Utah currently prohibits cities from enacting reasonable rent controls, setting a higher minimum wage, designing walkable streets, and adopting gun measures better suited for cities. Issues like these are best handled locally, where leaders are closest to the people affected.",
+      "note": "Campaign platform text (undated page, fetched 2026-11-15; same text on his BallotReady page). He says the state should not block cities from passing their own ordinances and lists gun measures among those cities are barred from adopting.",
+      "subjects": [
+        "let cities pass their own gun measures",
+        "state limits on local gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-15T21:14:44.856Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "state limits on city gun measures",
+        "gun rights and Second Amendment statements",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders"
+      ],
+      "places": [
+        "scope: listed as State House District 21 candidate on https://vote.utah.gov/2026-candidate-filings/; a search summary of the state primary canvass and a Salt Lake Tribune report said he won the June 23, 2026 primary (not read directly); general-election ballot listing not directly confirmed",
+        "On the Record (0 appearances)",
+        "campaign site https://www.stephenforslc.com/ (home page nothing on the subject) and https://www.stephenforslc.com/platform (one passage saved)",
+        "BallotReady candidate page (same platform text, one passage saved)",
+        "Salt Lake Tribune June 2026 District 21 primary Q&A: nothing on the subject",
+        "KUER Jan 2026 gun story: does not mention him",
+        "sponsor list: covered by bulk bill data (he has not served in the legislature)",
+        "blocked: https://ballotpedia.org/Stephen_Otterstrom (403/empty)",
+        "blocked: https://bluevoterguide.org/UT/candidate_Stephen_Otterstrom/680401 (403)",
+        "web search: 5 searches run on name plus gun words, primary result, and campaign site; no gun-specific statement beyond the preemption passage found"
+      ],
+      "found": 1,
+      "at": "2026-11-15T21:14:44.856Z",
+      "by": "source-collector"
+    }
+  ]
+}

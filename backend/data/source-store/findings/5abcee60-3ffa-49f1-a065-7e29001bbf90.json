@@ -1,0 +1,32 @@
+{
+  "politician_id": "5abcee60-3ffa-49f1-a065-7e29001bbf90",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "candidate confirmed as a Utah House District 26 candidate on the 3 Nov 2026 ballot via https://www.sltrib.com/news/politics/2026/10/12/matt-macpherson-faces-michael/ (news Q&A with him; nothing on the subject)",
+        "https://www.ballotready.org/people/michael-e-finch (his profile; links to his site and socials, no positions; nothing on the subject)",
+        "https://ivoterguide.com/candidate/95017/race/33758/election/1486 (questionnaire on the Second Amendment shown as unanswered; nothing on the subject)",
+        "https://secure.actblue.com/donate/michael-finch-1 (his donation page; nothing on the subject; no campaign site linked)",
+        "not reviewed: his own campaign website (address not reachable from any page fetched)",
+        "not reviewed: https://ballotpedia.org/Michael_Finch (fetch returned an empty page)",
+        "one web search on name plus gun words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:11:48.702Z",
+      "by": "source-collector"
+    }
+  ]
+}

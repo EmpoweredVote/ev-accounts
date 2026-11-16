@@ -1,0 +1,31 @@
+{
+  "politician_id": "aac1ed45-ba5c-4e0c-9c51-9e5c63cdcda4",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation in general",
+        "gun rights and the Second Amendment",
+        "guns in schools and firearm safety teaching",
+        "carry permits",
+        "background checks",
+        "bans on a type of firearm"
+      ],
+      "places": [
+        "identity: the state school board member page (https://schools.utah.gov/board/members/utah/colekelley) shows Cole Kelley as a first-term State Board of Education member, elected 2024, for eastern Utah County, Wasatch, Duchesne, Daggett and Uintah counties; a school teacher; not a legislator, so no bill sponsorships or floor votes apply; not on a 2026 ballot as far as the pages show",
+        "the state school board member page: read in full, nothing on the subject",
+        "On the Record (0 appearances; extract script returned nothing)",
+        "blocked: https://ballotpedia.org/Cole_Kelley (403)",
+        "web search for name plus gun, firearm and Second Amendment words: nothing about this person",
+        "web search for name plus State Board of Education plus guns in schools: only general news on school firearm bills, none naming him",
+        "sponsor list: covered by bulk bill data",
+        "no personal campaign site found; not reviewed beyond search results"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:13:33.506Z",
+      "by": "source-collector"
+    }
+  ]
+}

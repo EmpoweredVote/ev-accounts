@@ -1,0 +1,388 @@
+{
+  "id": "UT-HB-271-2020",
+  "scope": "state:ut",
+  "title": "HB271 (2020 General): H.B. 271 Firearm Preemption Amendments",
+  "urls": [
+    "https://le.utah.gov/~2020/bills/static/HB0271.html",
+    "https://le.utah.gov/~2020/bills/hbillamd/HB0271S01.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Maloy, A. Cory",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bramble, Curtis S.",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2020-02-28",
+      "body": "UT House",
+      "motion": "House passed 3rd reading",
+      "kind": "roll-call",
+      "yes": 55,
+      "no": 15,
+      "absent": 5,
+      "note": "le.utah.gov roll call (Open States data) 90124649",
+      "members": [
+        {
+          "name": "Cheryl Acton",
+          "vote": "yea",
+          "politician_id": "2798f59a-89d5-4a09-8d6b-252c91ce337e"
+        },
+        {
+          "name": "Carl Albrecht",
+          "vote": "yea",
+          "politician_id": "6cbb80d7-e32b-4ea8-9073-463e0e7c918a"
+        },
+        {
+          "name": "Kyle R. Andersen",
+          "vote": "yea"
+        },
+        {
+          "name": "Melissa Ballard",
+          "vote": "yea",
+          "politician_id": "acd23e3e-ef4c-451e-b227-e9c2b0c8a4cc"
+        },
+        {
+          "name": "Stewart Barlow",
+          "vote": "yea",
+          "politician_id": "2b2cf5ad-b226-48f6-a49b-616805019c35"
+        },
+        {
+          "name": "Brady Brammer",
+          "vote": "yea",
+          "politician_id": "070c1c1c-ac9d-42e0-bff2-3f4467504cba"
+        },
+        {
+          "name": "Walt Brooks",
+          "vote": "yea",
+          "politician_id": "f496b2b2-78eb-4c58-905d-625320de5865"
+        },
+        {
+          "name": "Scott Chew",
+          "vote": "yea",
+          "politician_id": "7dc8a341-6d22-48d9-b8fe-2c75fa3a3de5"
+        },
+        {
+          "name": "Steve R. Christiansen",
+          "vote": "yea"
+        },
+        {
+          "name": "Kay Christofferson",
+          "vote": "yea",
+          "politician_id": "2fa5347c-fb56-443d-8f1d-c1bff270bf9e"
+        },
+        {
+          "name": "Kim F. Coleman",
+          "vote": "yea"
+        },
+        {
+          "name": "Brad M. Daw",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Duckworth",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Dunnigan",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Eliason",
+          "vote": "yea",
+          "politician_id": "3e569f2a-041d-43e2-a96f-e007eb7d6656"
+        },
+        {
+          "name": "Joel Ferry",
+          "vote": "yea"
+        },
+        {
+          "name": "Francis D. Gibson",
+          "vote": "yea"
+        },
+        {
+          "name": "Craig Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen G. Handy",
+          "vote": "yea"
+        },
+        {
+          "name": "Timothy D. Hawkes",
+          "vote": "yea"
+        },
+        {
+          "name": "Jon Hawkins",
+          "vote": "yea",
+          "politician_id": "8928852d-0688-431b-aad2-bf55275583fb"
+        },
+        {
+          "name": "Eric K. Hutchings",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Marsha Judkins",
+          "vote": "yea"
+        },
+        {
+          "name": "Karianne Lisonbee",
+          "vote": "yea",
+          "politician_id": "da3ae2d0-95ab-4292-9d49-51f4576fe56b"
+        },
+        {
+          "name": "Phil Lyman",
+          "vote": "yea"
+        },
+        {
+          "name": "Cory Maloy",
+          "vote": "yea",
+          "politician_id": "a42272fb-f41b-4a64-86d5-a0a0eeec5b82"
+        },
+        {
+          "name": "Kelly B. Miles",
+          "vote": "yea"
+        },
+        {
+          "name": "Cal Musselman",
+          "vote": "yea",
+          "politician_id": "5ad69df3-3a03-45ed-9156-bcac82c93167"
+        },
+        {
+          "name": "Merrill F. Nelson",
+          "vote": "yea"
+        },
+        {
+          "name": "Doug Owens",
+          "vote": "yea",
+          "politician_id": "38aec107-ca28-454a-a7f0-d9225fcd4d8b"
+        },
+        {
+          "name": "Lee B. Perry",
+          "vote": "yea"
+        },
+        {
+          "name": "Val Peterson",
+          "vote": "yea",
+          "politician_id": "61816aa4-4de0-4e1a-a249-cea5e2a8d169"
+        },
+        {
+          "name": "Candice Pierucci",
+          "vote": "yea",
+          "politician_id": "99198363-2ac9-4b56-9d80-7abfe7b2a01a"
+        },
+        {
+          "name": "Val K. Potter",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Pulsipher",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Ray",
+          "vote": "yea"
+        },
+        {
+          "name": "Marc K. Roberts",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Robertson",
+          "vote": "yea"
+        },
+        {
+          "name": "Douglas V. Sagers",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Schultz",
+          "vote": "yea",
+          "politician_id": "8a5e17bd-54c4-405d-9cba-c62d139cc5a9"
+        },
+        {
+          "name": "Rex Shipp",
+          "vote": "yea",
+          "politician_id": "9dc08f3d-5bef-4291-b385-edcfecdecbbf"
+        },
+        {
+          "name": "Casey Snider",
+          "vote": "yea",
+          "politician_id": "a075db26-e31e-4d94-8a20-ddff7867725a"
+        },
+        {
+          "name": "V. Lowry Snow",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Spendlove",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Stenquist",
+          "vote": "yea"
+        },
+        {
+          "name": "Keven Stratton",
+          "vote": "yea",
+          "politician_id": "80ec24cb-49d4-48a4-bc01-58d33caf15d7"
+        },
+        {
+          "name": "Mark Strong",
+          "vote": "yea",
+          "politician_id": "6b4748cf-5c32-4a6e-9476-80e2ed7d8d7d"
+        },
+        {
+          "name": "Norm Thurston",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Waldrip",
+          "vote": "yea"
+        },
+        {
+          "name": "Ray Ward",
+          "vote": "yea",
+          "politician_id": "9cccdb83-cf9e-48ef-97b5-6da255733f74"
+        },
+        {
+          "name": "Christine Watkins",
+          "vote": "yea",
+          "politician_id": "a3b3d1db-2305-452a-9d53-2627547d751f"
+        },
+        {
+          "name": "Logan Wilde",
+          "vote": "yea"
+        },
+        {
+          "name": "Brad R. Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Winder",
+          "vote": "yea"
+        },
+        {
+          "name": "Patrice M. Arent",
+          "vote": "nay"
+        },
+        {
+          "name": "Joel Briscoe",
+          "vote": "nay"
+        },
+        {
+          "name": "Jen Dailey-Provost",
+          "vote": "nay",
+          "politician_id": "633a3500-8458-4719-bd0e-38c161321707"
+        },
+        {
+          "name": "Suzanne Harrison",
+          "vote": "nay"
+        },
+        {
+          "name": "Sandra Hollins",
+          "vote": "nay",
+          "politician_id": "c5d4b275-055f-4950-884e-96f63cf36bbd"
+        },
+        {
+          "name": "Brian King",
+          "vote": "nay"
+        },
+        {
+          "name": "Karen Kwan",
+          "vote": "nay",
+          "politician_id": "93376853-c225-430c-bf89-dfee26c6c964"
+        },
+        {
+          "name": "Carol Moss",
+          "vote": "nay",
+          "politician_id": "025945fe-7ea8-40aa-8ead-f7b8d5dfca29"
+        },
+        {
+          "name": "Stephanie Pitcher",
+          "vote": "nay",
+          "politician_id": "4f896b69-d922-4838-b54d-51a00a452e08"
+        },
+        {
+          "name": "Marie H. Poulson",
+          "vote": "nay"
+        },
+        {
+          "name": "Angela Romero",
+          "vote": "nay",
+          "politician_id": "00af7081-b2f4-4b2d-add0-dd1c3d3b4787"
+        },
+        {
+          "name": "Lawanna Shurtliff",
+          "vote": "nay"
+        },
+        {
+          "name": "Andrew Stoddard",
+          "vote": "nay",
+          "politician_id": "4956e47c-d051-4adf-a558-5f29c9f7e854"
+        },
+        {
+          "name": "Elizabeth Weight",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Wheatley",
+          "vote": "nay"
+        },
+        {
+          "name": "Bradley G. Last",
+          "vote": "absent"
+        },
+        {
+          "name": "Mike McKell",
+          "vote": "absent",
+          "politician_id": "a7cc7fe1-b491-4498-bab5-3f3661987abb"
+        },
+        {
+          "name": "Jefferson Moss",
+          "vote": "absent"
+        },
+        {
+          "name": "Tim Quinn",
+          "vote": "absent"
+        },
+        {
+          "name": "Travis M. Seegmiller",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Amended, ; official copy, https://le.utah.gov/~2020/bills/hbillamd/HB0271S01.pdf (Open States text id 90096487))",
+    "fetched_at": "2026-11-15T19:41:15.158344Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-271-2020.amended.pdf",
+      "sha256": "66c65ea8abd813e33c8fd22aac7a8a899c3fd36815000a16b7f2019201f46fa9"
+    },
+    "note": "1st Sub. (Buff) H.B. 271, 02-25-20, with House Floor Amendments 2-28-2020 (marked in print); Senate or later amendments are not in the text read. Floor amendments also added a homeless-shelter section (new 53-5a-103.5) letting local governments prohibit firearms in shelters, shown in bracketed margin text, not quoted. Section 3 waives governmental immunity for suits under the new Part 22."
+  },
+  "operative_text": "Section 2 (Utah Code 53-5a-102): (2) The individual right to keep and bear arms being a constitutionally protected right under Article I, Section 6 of the Utah Constitution and the Second Amendment to the United States Constitution, the Legislature finds the need to provide uniform civil and criminal firearm laws throughout the state, and declares that the Legislature occupies the whole field of state regulation of firearms and ammunition.\nSection 2 (Utah Code 53-5a-102): (6) Unless specifically authorized by the Legislature by statute, a local authority or state agency, including organizations or vendors that contract with a local authority or state agency, may not enact, establish, or enforce any ordinance, regulation, rule, or policy pertaining to firearms that in any way inhibits or restricts the possession, transfer, or use of firearms on either public or private property.\nSection 4 (Utah Code 76-10-500): (5) Unless specifically authorized by the Legislature by statute, a local authority or state agency may not enact or enforce any ordinance, regulation, rule, or policy pertaining to firearms that in any way inhibits or restricts the possession or use of firearms, ammunition, or a firearm accessory on either public or private property.\nSection 8 (new Utah Code 78B-6-2203): (2) An ordinance, regulation, measure, directive, rule, enactment, order, or policy that violates legislative preemption is void.\nSection 9 (new Utah Code 78B-6-2204): (2) If the court determines that a local authority or state agency violated legislative preemption, the court shall: (a) order that the relevant ordinance, regulation, measure, directive, rule, enactment, order, or policy is void; (b) issue a permanent injunction against the local authority or state agency prohibiting the local authority or state agency from enforcing the void ordinance, regulation, measure, directive, rule, enactment, order, or policy; and (c) award to the prevailing party: (i) actual damages, which includes the cost of time in bringing the civil action, or defending against the action; (ii) reasonable attorney fees and costs in accordance with the laws of this state; and (iii) interest on the sums awarded pursuant to this Subsection (2) accrued at the legal rate from the date on which the suit is filed.\nSection 1 (Utah Code 47-3-303): (3) A political subdivision may enact an ordinance, rule, or resolution regarding the use of public shooting ranges, facilities, and targets, to include limits on the use of firearms and ammunition within the range design criteria.",
+  "higher_law_duty": "Legislature's finding cites Article I, Section 6 of the Utah Constitution and the Second Amendment to the United States Constitution (right to keep and bear arms) as the basis for uniform firearm law."
+}

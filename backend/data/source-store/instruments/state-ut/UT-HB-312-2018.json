@@ -1,0 +1,379 @@
+{
+  "id": "UT-HB-312-2018",
+  "scope": "state:ut",
+  "title": "HB312 (2018 General): Concealed Carry Amendments",
+  "urls": [
+    "https://le.utah.gov/~2018/bills/static/HB0312.html",
+    "http://le.utah.gov/~2018/bills/hbillint/HB0312.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Karianne Lisonbee",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "da3ae2d0-95ab-4292-9d49-51f4576fe56b"
+    },
+    {
+      "name": "Todd Weiler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "612392b2-ab46-4287-a2fd-c74ae0961198"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2018-02-23",
+      "body": "UT House",
+      "motion": "House passed 3rd reading",
+      "kind": "roll-call",
+      "yes": 66,
+      "no": 0,
+      "absent": 9,
+      "note": "le.utah.gov roll call (Open States data) 90115295",
+      "members": [
+        {
+          "name": "Cheryl Acton",
+          "vote": "yea",
+          "politician_id": "2798f59a-89d5-4a09-8d6b-252c91ce337e"
+        },
+        {
+          "name": "Carl Albrecht",
+          "vote": "yea",
+          "politician_id": "6cbb80d7-e32b-4ea8-9073-463e0e7c918a"
+        },
+        {
+          "name": "Stewart Barlow",
+          "vote": "yea",
+          "politician_id": "2b2cf5ad-b226-48f6-a49b-616805019c35"
+        },
+        {
+          "name": "Joel Briscoe",
+          "vote": "yea"
+        },
+        {
+          "name": "Walt Brooks",
+          "vote": "yea",
+          "politician_id": "f496b2b2-78eb-4c58-905d-625320de5865"
+        },
+        {
+          "name": "Rebecca Chavez-Houck",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Chew",
+          "vote": "yea",
+          "politician_id": "7dc8a341-6d22-48d9-b8fe-2c75fa3a3de5"
+        },
+        {
+          "name": "LaVar Christensen",
+          "vote": "yea"
+        },
+        {
+          "name": "Kay Christofferson",
+          "vote": "yea",
+          "politician_id": "2fa5347c-fb56-443d-8f1d-c1bff270bf9e"
+        },
+        {
+          "name": "Kim F. Coleman",
+          "vote": "yea"
+        },
+        {
+          "name": "Brad M. Daw",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Dunnigan",
+          "vote": "yea"
+        },
+        {
+          "name": "Rebecca P. Edwards",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Eliason",
+          "vote": "yea",
+          "politician_id": "3e569f2a-041d-43e2-a96f-e007eb7d6656"
+        },
+        {
+          "name": "Fawson, J.",
+          "vote": "yea"
+        },
+        {
+          "name": "Gage Froerer",
+          "vote": "yea"
+        },
+        {
+          "name": "Francis D. Gibson",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian M. Greene",
+          "vote": "yea"
+        },
+        {
+          "name": "Grover, K.",
+          "vote": "yea"
+        },
+        {
+          "name": "Craig Hall",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen G. Handy",
+          "vote": "yea"
+        },
+        {
+          "name": "Timothy D. Hawkes",
+          "vote": "yea"
+        },
+        {
+          "name": "Gregory H. Hughes",
+          "vote": "yea"
+        },
+        {
+          "name": "Eric K. Hutchings",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Ivory",
+          "vote": "yea",
+          "politician_id": "f3c4cdf1-724e-43d6-ad59-70573badae75"
+        },
+        {
+          "name": "Mike Kennedy",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian King",
+          "vote": "yea"
+        },
+        {
+          "name": "John Knotwell",
+          "vote": "yea"
+        },
+        {
+          "name": "Karen Kwan",
+          "vote": "yea",
+          "politician_id": "93376853-c225-430c-bf89-dfee26c6c964"
+        },
+        {
+          "name": "Bradley G. Last",
+          "vote": "yea"
+        },
+        {
+          "name": "Karianne Lisonbee",
+          "vote": "yea",
+          "politician_id": "da3ae2d0-95ab-4292-9d49-51f4576fe56b"
+        },
+        {
+          "name": "Cory Maloy",
+          "vote": "yea",
+          "politician_id": "a42272fb-f41b-4a64-86d5-a0a0eeec5b82"
+        },
+        {
+          "name": "Dan McCay",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike McKell",
+          "vote": "yea",
+          "politician_id": "a7cc7fe1-b491-4498-bab5-3f3661987abb"
+        },
+        {
+          "name": "Kelly B. Miles",
+          "vote": "yea"
+        },
+        {
+          "name": "Carol Moss",
+          "vote": "yea",
+          "politician_id": "025945fe-7ea8-40aa-8ead-f7b8d5dfca29"
+        },
+        {
+          "name": "Jefferson Moss",
+          "vote": "yea"
+        },
+        {
+          "name": "Merrill F. Nelson",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael E. Noel",
+          "vote": "yea"
+        },
+        {
+          "name": "Doug Owens",
+          "vote": "yea",
+          "politician_id": "38aec107-ca28-454a-a7f0-d9225fcd4d8b"
+        },
+        {
+          "name": "Lee B. Perry",
+          "vote": "yea"
+        },
+        {
+          "name": "Val Peterson",
+          "vote": "yea",
+          "politician_id": "61816aa4-4de0-4e1a-a249-cea5e2a8d169"
+        },
+        {
+          "name": "Dixon M. Pitcher",
+          "vote": "yea"
+        },
+        {
+          "name": "Val K. Potter",
+          "vote": "yea"
+        },
+        {
+          "name": "Marie H. Poulson",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Pulsipher",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Quinn",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Ray",
+          "vote": "yea"
+        },
+        {
+          "name": "Edward H. Redd",
+          "vote": "yea"
+        },
+        {
+          "name": "Adam Robertson",
+          "vote": "yea"
+        },
+        {
+          "name": "Angela Romero",
+          "vote": "yea",
+          "politician_id": "00af7081-b2f4-4b2d-add0-dd1c3d3b4787"
+        },
+        {
+          "name": "Douglas V. Sagers",
+          "vote": "yea"
+        },
+        {
+          "name": "Sandall, S.",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Schultz",
+          "vote": "yea",
+          "politician_id": "8a5e17bd-54c4-405d-9cba-c62d139cc5a9"
+        },
+        {
+          "name": "Travis M. Seegmiller",
+          "vote": "yea"
+        },
+        {
+          "name": "V. Lowry Snow",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Spendlove",
+          "vote": "yea"
+        },
+        {
+          "name": "Keven Stratton",
+          "vote": "yea",
+          "politician_id": "80ec24cb-49d4-48a4-bc01-58d33caf15d7"
+        },
+        {
+          "name": "Norm Thurston",
+          "vote": "yea"
+        },
+        {
+          "name": "Ray Ward",
+          "vote": "yea",
+          "politician_id": "9cccdb83-cf9e-48ef-97b5-6da255733f74"
+        },
+        {
+          "name": "Christine Watkins",
+          "vote": "yea",
+          "politician_id": "a3b3d1db-2305-452a-9d53-2627547d751f"
+        },
+        {
+          "name": "Webb, R. C.",
+          "vote": "yea"
+        },
+        {
+          "name": "Elizabeth Weight",
+          "vote": "yea"
+        },
+        {
+          "name": "John R. Westwood",
+          "vote": "yea"
+        },
+        {
+          "name": "Brad R. Wilson",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Winder",
+          "vote": "yea"
+        },
+        {
+          "name": "Patrice M. Arent",
+          "vote": "absent"
+        },
+        {
+          "name": "Cutler, B. R.",
+          "vote": "absent"
+        },
+        {
+          "name": "Susan Duckworth",
+          "vote": "absent"
+        },
+        {
+          "name": "Lynn N. Hemingway",
+          "vote": "absent"
+        },
+        {
+          "name": "Sandra Hollins",
+          "vote": "absent",
+          "politician_id": "c5d4b275-055f-4950-884e-96f63cf36bbd"
+        },
+        {
+          "name": "Jeremy A. Peterson",
+          "vote": "absent"
+        },
+        {
+          "name": "Marc K. Roberts",
+          "vote": "absent"
+        },
+        {
+          "name": "Mark Wheatley",
+          "vote": "absent"
+        },
+        {
+          "name": "Logan Wilde",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2018/bills/hbillint/HB0312.pdf (Open States text id 90092243))",
+    "fetched_at": "2026-11-15T19:41:15.158344Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-312-2018.introduced.pdf",
+      "sha256": "c1006d70b44cc53c3ee8878ac697068c284a55bf31764ebcfe3b25d9c4d3117e"
+    },
+    "note": "Introduced H.B. 312 (02-02-18); later amendments not in the text read. Other changes are wording swaps ('set forth' to 'described', 'person' to 'individual')."
+  },
+  "operative_text": "Section 1 (Utah Code 53-5-704): (1) (a) Except as provided in Subsection (1)(b), the bureau shall issue a permit to carry a concealed firearm for lawful self defense to an applicant who is 21 years of age or older within 60 days after receiving an application, unless the bureau finds proof that the applicant does not meet the qualifications described in Subsection (2).\nSection 1 (Utah Code 53-5-704): (b) (i) Within 90 days before the day on which a provisional permit holder under Section 53-5-704.5 reaches 21 years of age, the provisional permit holder may apply under this section for a permit to carry a concealed firearm for lawful self defense.\nSection 1 (Utah Code 53-5-704): (ii) The bureau shall issue a permit to an applicant under Subsection (1)(b)(i) within 60 days after receiving an application, unless the bureau finds proof that the applicant does not meet the qualifications described in Subsection (2).\nSection 1 (Utah Code 53-5-704): (iii) A permit issued under this Subsection (1)(b) is not valid until an applicant reaches 21 years of age."
+}

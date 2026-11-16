@@ -1,0 +1,27 @@
+{
+  "politician_id": "9dcc4b14-0d2d-4e2a-bae7-1ec9b45b0db2",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "gun rights and the Second Amendment",
+        "firearm safety instruction in schools"
+      ],
+      "places": [
+        "identity: a Rod Hall holds the Utah State Board of Education District 3 seat (elected 2024, took office January 2025); no legislator of that name turned up in House or Senate lists, so this person appears to be a school-board member, not a legislator",
+        "On the Record (0 appearances; extract returned 0 sources)",
+        "official State Board of Education member page https://schools.utah.gov/board/members/utah/rodhall.php (fetched; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Rod_Hall_(Utah) (fetched via search only; page text not retrievable by curl; nothing on the subject seen)",
+        "campaign site: not found",
+        "news search on name plus gun words: nothing on the subject",
+        "sponsor list: covered by bulk bill data (he is not a legislator, so none expected)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:13:01.006Z",
+      "by": "source-collector"
+    }
+  ]
+}

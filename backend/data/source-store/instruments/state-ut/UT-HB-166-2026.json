@@ -1,0 +1,39 @@
+{
+  "id": "UT-HB-166-2026",
+  "scope": "state:ut",
+  "title": "HB166 (2026 General): Open Carry of a Firearm Amendments",
+  "urls": [
+    "https://le.utah.gov/~2026/bills/static/HB0166.html",
+    "https://le.utah.gov/Session/2026/bills/introduced/HB0166.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Verona Mauga",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fff09fb0-57ee-479f-bea1-6548cf622167"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/Session/2026/bills/introduced/HB0166.pdf (Open States text id 90114244))",
+    "fetched_at": "2026-11-15T19:41:15.158344Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-166-2026.introduced.pdf",
+      "sha256": "8657d2b3d8dfa258d86427de632c917115cc4800b6fcdac20fe30cd43432dddc"
+    },
+    "note": "As-filed (introduced) text; no passage vote is shown. Subsection (2) elements: openly carries within 500 feet, is verbally told by an officer, then fails to conceal or move away (or carries openly again). Quote 1 begins at the added item (vii); the quote 3 is shortened to the definition."
+  },
+  "operative_text": "Section 1 (Utah Code 53-5a-102.2): within 500 feet of a large public gathering as described in Section 76-11-221;\nSection 1 (Utah Code 53-5a-102.2): open carry the firearm within 500 feet of a large public gathering as described in Section 76-11-221.\nSection 2 (new Utah Code 76-11-221): \"Large public gathering\" means a group of 200 or more individuals who are gathered together at a public place for a joint purpose to participate in, or be a spectator at: (A) a demonstration; (B) a rally; (C) a protest; (D) a picket; (E) a march; (F) a parade; (G) a vigil; or (H) another event held to allow individuals to express rights protected under the First Amendment to the United States Constitution and Utah Constitution, Article I, Section 15.\nSection 2 (new Utah Code 76-11-221): (3) A violation of Subsection (2) is a class B misdemeanor."
+}

@@ -1,0 +1,28 @@
+{
+  "politician_id": "7f68edeb-7087-4e14-a02f-7c5ebcb20f7f",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "Second Amendment",
+        "carry a gun without a permit",
+        "check every gun buyer"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://house.utleg.gov/rep/wood-leann/ (member page loads its content by script; nothing on the subject readable)",
+        "https://www.ballotready.org/people/leann-wood-e9309334-4bea-4ac1-be2c-6857343b5517 (profile lists a State Board of Education District 4 member, 2023 to present, not a legislator; scope doubtful)",
+        "web search: name plus Second Amendment/gun/firearm: nothing on the subject for this person",
+        "web search: name plus campaign site: nothing on the subject; no campaign site found",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: Ballotpedia, votesmart, news archive (no lead pointing to this person on guns)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:12:24.080Z",
+      "by": "source-collector"
+    }
+  ]
+}

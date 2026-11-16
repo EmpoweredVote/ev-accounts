@@ -1,0 +1,29 @@
+{
+  "politician_id": "89ce85bf-5c34-496c-a3b2-475333ec143a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "firearms",
+        "Second Amendment",
+        "background checks",
+        "carry permits"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Utah State Board of Education member page https://schools.utah.gov/board/members/utah/carollear.php (read; she is a District 6 board member, not a legislator; nothing on the subject)",
+        "web search on name plus gun words (no results about her on the subject)",
+        "web search on name plus legislature (no legislator by this name found)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Carol_Barlow_Lear (403 from Ballotpedia Carol_Lear fetch; page not read)",
+        "not reviewed: campaign site, none located"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:12:31.254Z",
+      "by": "source-collector"
+    }
+  ]
+}

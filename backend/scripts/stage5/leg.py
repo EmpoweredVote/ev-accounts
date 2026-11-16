@@ -32,7 +32,9 @@ is now a CHAIN of sessions. The session adds each log line with `leg.py log`, wh
 An `--answer` goes to a fresh session too when the stopped one is past the cap and left a CONTINUE file.
 `--cap N` sets the cap in tokens (default: the profile's "slim_cap", else 100,000; 0 turns it off). Replayed over
 Tennessee's two legs, a cap of 100,000 costs 43% to 45% less than the sessions as they ran. A hand-over inside
-MIN_TURNS steps of a session's start means the cap is too low for the card: the leg stops as blocked.
+MIN_TURNS steps of a FRESH session's start means the cap is too low for the card: the leg stops as blocked. A resumed
+session that hands over soon after an answer goes on to a fresh one, and an answer after a blocked hand-over goes to a
+fresh session too (Utah 2026-11-15).
 
 🔴 A slim session is unattended: nothing asks before a command runs. Every leg is started with STAGE5_NO_DB_WRITE=1,
 which makes the Stage 5 write tools refuse (scripts/lib/noWriteGuard.ts). The write and the approval are run by the
@@ -143,7 +145,10 @@ def main():
         note = max(notes, key=os.path.getmtime) if notes else None
         begun = datetime.datetime.fromisoformat(state['runs'][-1]['started']).timestamp() if state.get('runs') else 0
         size = size_of(state['session_id']) if cap and note and os.path.getmtime(note) >= begun else None
-        if size is not None and size >= cap: cmd, sid = fresh(opening() + carry_on(note) + '\n' + said(text))
+        # A leg the tool stopped as "blocked" after a hand-over left a note for a fresh session; resuming the full
+        # session only hands over again a few steps later (Utah 2026-11-15, three times).
+        blocked = (state.get('last') or '').startswith('STOP blocked the leg handed over') and note is not None
+        if blocked or (size is not None and size >= cap): cmd, sid = fresh(opening() + carry_on(note) + '\n' + said(text))
         else: cmd, sid = ['claude', '-p', said(text), '--resume', state['session_id']] + base, state['session_id']
     else:
         if state and state.get('last', '').startswith('DONE'): raise SystemExit(f'leg {leg} is already DONE for {xx} ({state_file}). Remove that file to run it again.')
@@ -170,7 +175,9 @@ def main():
         note = line.split(' ', 2)[2].strip() if code == 13 else None
         if code == 13:
             if not (os.path.exists(note) and os.path.getsize(note)): code, line = 2, f'the session handed over, but {note} is missing or empty'
-            elif handovers >= MAX_HANDOVERS or (res.get('num_turns') or MIN_TURNS) < MIN_TURNS:
+            # num_turns counts this run's steps only, so a RESUMED session that hands over soon after an answer is not a
+            # cap too low for the card: only a FRESH session handing over inside MIN_TURNS steps says that.
+            elif handovers >= MAX_HANDOVERS or ('--resume' not in cmd and (res.get('num_turns') or MIN_TURNS) < MIN_TURNS):
                 code, line = 12, (f'STOP blocked the leg handed over again after {res.get("num_turns")} steps ({handovers + 1} hand-overs this run): the cap of '
                                   f'{cap:,} is too low for this card, or the session cannot shrink. Read {note}')
         if ran:

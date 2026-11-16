@@ -29,6 +29,7 @@ import { isRollCallXmlUrl, parseRollCallLine } from '../../src/lib/rollCallEvide
 import { isLegiscanUrl, parseLegiscanLine } from '../../src/lib/legiscanEvidence.js';
 import { isIgaRollCallUrl, parseIgaRollCallLine } from '../../src/lib/igaRollCallEvidence.js';
 import { isMaRollCallUrl, parseMaRollCallLine } from '../../src/lib/maRollCallEvidence.js';
+import { isStateRollCallUrl, parseStateRollCallLine } from '../../src/lib/stateRollCallEvidence.js';
 import { isActionAgendaUrl, parseActionAgendaLine } from '../../src/lib/actionAgendaEvidence.js';
 import { appliesToLevel, type Level, type TopicApplicability } from '../../src/lib/topicApplicability.js';
 
@@ -300,6 +301,8 @@ export function checkStanceRow(
       if (isLegiscanUrl(url) && parseLegiscanLine(e.snippet)) continue;
       if (isIgaRollCallUrl(url) && parseIgaRollCallLine(e.snippet)) continue;
       if (isMaRollCallUrl(url) && parseMaRollCallLine(e.snippet)) continue;
+      // A legislature's own roll-call page (le.utah.gov svotes.jsp; stateRollCallEvidence.ts), Open States runs.
+      if (isStateRollCallUrl(url) && parseStateRollCallLine(e.snippet)) continue;
       if (isActionAgendaUrl(url) && parseActionAgendaLine(e.snippet)) continue;
       const n = wordCount(e.snippet);
       if (n < MIN_SNIPPET_WORDS) add('snippet-too-short', 'high', `snippet ${e.snippet_index} for ${url} has ${n} words (< ${MIN_SNIPPET_WORDS})`);

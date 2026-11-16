@@ -1,0 +1,31 @@
+{
+  "politician_id": "919b82e8-bac3-428f-9896-423832e4538f",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "firearm",
+        "Second Amendment",
+        "background checks",
+        "assault-style weapons",
+        "concealed carry",
+        "red flag"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "https://marlooaks.com/ (campaign site, read; site search for 'gun' returned nothing on the subject)",
+        "https://treasurer.utah.gov/about/state-treasurer-marlo-oaks (official page, read; site search for 'firearm' nothing on the subject)",
+        "https://ivoterguide.com/candidate/65302/race/16227/election/1233 (2nd Amendment questions marked 'Did not answer')",
+        "blocked: https://ballotpedia.org/Marlo_Oaks (403)",
+        "web searches: name plus gun/Second Amendment words, and name plus legislator; no gun statements found",
+        "sponsor list: not applicable; the office is State Treasurer (appointed July 2021, elected 2022 and 2024), not a legislator, so no bill sponsorships or floor votes"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:12:54.205Z",
+      "by": "source-collector"
+    }
+  ]
+}

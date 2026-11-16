@@ -1,0 +1,39 @@
+{
+  "id": "UT-HB-98-2024",
+  "scope": "state:ut",
+  "title": "HB98 (2024 General): Firearm Access Amendments",
+  "urls": [
+    "https://le.utah.gov/~2024/bills/static/HB0098.html",
+    "https://le.utah.gov/~2024/bills/hbillint/HB0098.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Andrew Stoddard",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4956e47c-d051-4adf-a558-5f29c9f7e854"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Utah) (gun-policy Stage 5, Utah); operative text read by a Sonnet fill agent from the official Utah text (Introduced, ; official copy, https://le.utah.gov/~2024/bills/hbillint/HB0098.pdf (Open States text id 90103160))",
+    "fetched_at": "2026-11-15T19:41:15.158344Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/UT-HB-98-2024.introduced.pdf",
+      "sha256": "6c5892ab22250518842dc89c345fec311137191a42877579889f29ab4009ab63"
+    },
+    "note": "Introduced version (12-29-23); no later amendments in the text read. Section enacted whole; printed with add marks."
+  },
+  "operative_text": "Section 1 (new Utah Code 76-10-502.5): (2) When an owner or authorized user is not lawfully possessing or using a firearm, the owner or authorized user shall: (a) store the firearm in a locked container; or (b) secure the firearm by a locking device that renders the firearm inoperable by an individual other than the owner or authorized user.\nSection 1 (new Utah Code 76-10-502.5): (3) If an owner or authorized user fails to comply with the requirements of Subsection (2) and a restricted person, minor, or at-risk individual accesses the firearm, the owner or authorized user: (a) is subject to a civil fine of $1,000; or (b) is subject to a civil fine of $5,000 if the restricted person, minor, or at-risk individual uses the firearm in the commission of a crime or causes an injury to an individual with the firearm.\nSection 1 (new Utah Code 76-10-502.5): (4) Subsection (3) does not apply if: (a) the firearm is accessed and used in a lawful act of self-defense; or (b) the owner or authorized user of the firearm reported the firearm as stolen to a law enforcement agency."
+}

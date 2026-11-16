@@ -1,0 +1,31 @@
+{
+  "politician_id": "606a07f8-fb2e-442f-85e7-085a25dd7c87",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and Second Amendment statements",
+        "firearm safety in schools"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "the state school board member page https://schools.utah.gov/board/members/utah/joannbrinton.php (confirms Joann Brinton as a Utah State Board of Education member, St. George; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Joann_Brinton (page read by curl; nothing on the subject; the fetch tool returned an empty page)",
+        "legislature House member page and site search https://house.utleg.gov/?s=Brinton (no legislator page for this name found; nothing on the subject)",
+        "legislature roster https://le.utah.gov/asp/roster/roster.asp?year=2026 (no entry for this name)",
+        "web search: name plus gun, firearm and Second Amendment words (no page about this person on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: a 2026 school board candidacy or campaign site (none found; identity as a sitting legislator or statewide official not confirmed, she appears to be a state school board member, term to January 2029)"
+      ],
+      "found": 0,
+      "at": "2026-11-15T21:12:00.208Z",
+      "by": "source-collector"
+    }
+  ]
+}
