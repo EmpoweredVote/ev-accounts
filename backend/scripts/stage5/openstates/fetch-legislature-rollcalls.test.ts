@@ -79,3 +79,41 @@ describe('one roll call for the supplement', () => {
     expect(p('House/ substituted')).toBe(1); // 71 yeas to 0
   });
 });
+
+// Ohio: saved 2026-11-16. 132 HB 228: two committee reports, a House passage, a Senate passage (amended), the House
+// concurrence, and both chambers' veto overrides.
+const oh = (name: string): string => readFileSync(fileURLToPath(new URL(`../../../src/lib/__fixtures__/stateRollCall/${name}`, import.meta.url)), 'utf8');
+const OH_DOCS = [oh('oh-132-hb228-votes.html'), oh('oh-132-hb228-actions.json'), oh('oh-132-legislators.json')];
+const OH_PAGE = 'https://www.legislature.ohio.gov/legislation/132/hb228/votes#';
+
+describe('the legislature\'s own vote list — Ohio', () => {
+  it('names the bill\'s action list, and no list for a special session', () => {
+    expect(INDEX.OH.billUrl('132', 'HB 228')).toBe('https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb228/actions/');
+    expect(INDEX.OH.billUrl('135', 'S.J.R. 2')).toBe('https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/sjr2/actions/');
+    expect(INDEX.OH.billUrl('135S1', 'HB 2')).toBeNull();
+    expect(INDEX.OH.billUrl('2025', 'HB 2')).toBeNull();
+  });
+
+  it('keeps the floor votes, each named on the bill\'s Votes page, and counts the committee reports', () => {
+    const bi = INDEX.OH.read(OH_DOCS[1], '132', 'HB 228');
+    expect(bi.committee).toBe(2);
+    expect(bi.floor.map((v) => v.url)).toEqual([
+      `${OH_PAGE}2018-12-27-Senate-21-11`, `${OH_PAGE}2018-12-27-House-67-22`, `${OH_PAGE}2018-12-06-House-59-22`,
+      `${OH_PAGE}2018-12-06-Senate-19-10`, `${OH_PAGE}2018-11-14-House-65-32`,
+    ]);
+    expect(bi.floor[1]).toMatchObject({ motion: 'Passed notwithstanding objections of the Governor', tally: [67, 22, 0] });
+  });
+
+  it('reads each floor vote from the page, the data and the member list together', () => {
+    const v = INDEX.OH.read(OH_DOCS[1], '132', 'HB 228').floor[1];
+    const rc = buildRollCall('HB 228', v, OH_DOCS);
+    expect(rc).toMatchObject({ url: v.url, date: '2018-12-27', chamber: 'H', yea: 67, nay: 22, absent: 0, passed: 1, question: 'Passed notwithstanding objections of the Governor' });
+    if ('groups' in rc) expect(rc.groups.Yea).toHaveLength(67);
+  });
+
+  it('refuses a vote the page does not hold as the data does, and a vote of another bill', () => {
+    const v = INDEX.OH.read(OH_DOCS[1], '132', 'HB 228').floor[1];
+    expect(buildRollCall('HB 228', v, [OH_DOCS[0].replace('Yeas: 67', 'Yeas: 66'), OH_DOCS[1], OH_DOCS[2]])).toHaveProperty('refused');
+    expect(buildRollCall('HB 229', v, OH_DOCS)).toHaveProperty('refused');
+  });
+});

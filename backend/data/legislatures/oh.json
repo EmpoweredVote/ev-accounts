@@ -1,0 +1,62 @@
+{
+  "state": "oh",
+  "name": "Ohio",
+  "verified": "2026-11-16",
+  "source": "Ohio reader session (Stage 5 tools), 2026-11-16: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 213-bill dry batch read from www.legislature.ohio.gov and search-prod.lis.state.oh.us with the verifier's own fetch, and each member's vote compared with the dump. Texts were not read in this session.",
+  "chambers": {
+    "lower": "House",
+    "upper": "Senate"
+  },
+  "sessions": "Two-year General Assemblies, numbered: the 132nd is 2017-2018, the 133rd 2019-2020, the 134th 2021-2022, the 135th 2023-2024, the 136th 2025-2026. A bill keeps its number across both years of the Assembly, and numbers start again with each Assembly (HB 1 of the 135th and HB 1 of the 136th are different bills). A special session is its own session (135S1, 2024: five bills, HB 1, HB 2, HB 271, SB 279 and SB 280 on disk). House 99 members, Senate 33.",
+  "bill_data": [
+    "No LegiScan dataset is on disk for Ohio. Bills, sponsors and roll calls come from Open States data, converted to the same folder layout (OH-900047 to OH-900052: the 132nd to 136th Assemblies and 135S1; scripts/stage5/openstates/README.md). Each folder carries a .openstates.json; its ids are ours and no legiscan.com page exists for them.",
+    "The dump holds most 135th-Assembly votes two to four times (the same vote stored again under a new key). The converter keeps the copy updated last and counts the rest in .openstates.json (duplicate_rollcalls_dropped; 1,847 for the 135th, 432 of them with a different member list).",
+    "The dump misses some floor votes (132 HB 228: five of its seven roll calls), and in the 136th it stores a vote's time of day in UTC, so a late vote falls on the next day. scripts/stage5/openstates/fetch-legislature-rollcalls.ts reads each bill's floor votes from the legislature; convert.py then takes the legislature's record as the bill's floor votes: it adds what the dump misses and drops a dump floor vote of that bill that is not on the record (counted as dump_floor_rollcalls_not_on_the_record_dropped). Run the fetch for every bill the scan finds, then convert the whole state again.",
+    "Open States holds nothing for Ohio before 2017 in the November 2026 dump."
+  ],
+  "votes": {
+    "mode": "legiscan-plan",
+    "official_hosts": [
+      "www.legislature.ohio.gov"
+    ],
+    "legiscan_args": "--session-start odd",
+    "floor_rule": "A vote is cited on the bill's Votes page, with the vote named after a #: www.legislature.ohio.gov/legislation/<Assembly>/<bill>/votes#<session day>-<House|Senate>-<yeas>-<nays> (136/sb273/votes#2026-06-09-House-95-0). The page lists every roll call of the bill with its date, chamber, result and counts, and each member's full name under Yeas or Nays; it prints no motion. The reader (src/lib/stateRollCallEvidence.ts) reads three documents together: that page, the bill's action list at search-prod.lis.state.oh.us/api/v2/general_assembly_<N>/legislation/<bill>/actions/ (the motion, the session day, and member ids under yeas and nays), and the Assembly's member list at .../general_assembly_<N>/legislators/ (id to name and chamber). A line is written only when exactly one page row and one action-list vote fit the day, chamber and counts, the result agrees, and every id maps to the name the page prints, in that chamber. Committee votes (action code crpt_, or a /cmtevotes address in older dump rows) are not mapped; a conference report is the chamber's floor vote.",
+    "gaps": [
+      "A member who did not vote is on no list: absent gives no finding, not an abstention.",
+      "A special session's votes have no Votes-page address in the dump, and the reader gives them no line (135S1: seven roll calls).",
+      "A voice vote has no member list and gives no line.",
+      "The Votes page names no motion. A day with two roll calls of one chamber and the same counts on one bill cannot be told apart, and gives no line."
+    ]
+  },
+  "texts": {
+    "hosts": [
+      "search-prod.lis.state.oh.us"
+    ],
+    "marks": "Not read yet. Before quoting an amended or substitute text, open one and record here how it shows added and struck words.",
+    "note": "The dump's text links (/solarapi/v1/.../bills/<bill>/<CODE>/<NN>?format=pdf) are dead. The converter rewrites them to the live form, search-prod.lis.state.oh.us/api/v2/general_assembly_<N>/legislation/<bill>/<NN>_<CODE>/pdf/ (CODE: IN introduced, RH/RS as reported, PH/PS as passed, EN enrolled). The live form worked for the 132nd and the 136th."
+  },
+  "reader_access": {
+    "www.legislature.ohio.gov": "open",
+    "search-prod.lis.state.oh.us": "open"
+  },
+  "search_note": "Ohio sponsorships and House and Senate floor votes for 2017 to 2026 come from the bill data on disk, checked against the legislature's own record: skip the legislature's sponsor lists and Votes pages, and add the place \"sponsor list: covered by bulk bill data\". Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
+  "bill_table_note": "- Ohio Assemblies run two years; a bill keeps its number across both years.\n- Floor votes kept: passage, concurrence, conference reports and veto overrides (\"Passed notwithstanding objections of the Governor\"). Committee reports (\"Reported\") are not floor votes.\n- A substitute bill keeps the bill's number.",
+  "fill_quotes": {
+    "label_strips": []
+  },
+  "quirks": [
+    "www.legislature.ohio.gov sends an incomplete certificate chain, so Node refuses it (UNABLE_TO_VERIFY_LEAF_SIGNATURE) though browsers and curl do not. src/lib/adapters/hostTrust.ts adds the missing public intermediate (Sectigo Public Server Authentication CA OV R36, valid to 2036) for that host only.",
+    "Neither host states a crawl delay (www.legislature.ohio.gov robots.txt allows all; search-prod has none). The reader waits one second between requests to each host.",
+    "One vote needs three documents (Votes page, action list, member list); a bill's documents are fetched once and reused for its other votes.",
+    "A roll call can be on a motion, not on the bill: the action list's code starts motion_ and the Votes page prints the action as its result. Two House votes of the 133rd read \"Informally passed\" (85-9 and 85-7). In Ohio \"informally passed\" means the bill was set aside for the day; read the House Journal for that day before treating such a vote as a vote on the bill.",
+    "The line tool took 44 seconds for 1,676 votes on 59 roll calls of 30 bills (2026-11-16): about 5 seconds for 200 votes. The time follows the number of bills, not votes: three documents a bill, one second apart per host.",
+    "Dates are session days. A vote taken after midnight carries the session day on the Votes page and in the action list (\"day153_h_20240612\"); the dump's 136th times are UTC clock times.",
+    "From 2025 the Votes page prints sitting members as links and former members as plain text; the reader takes the cell's text either way.",
+    "The Votes page prints a letter after each member's name; the line drops it.",
+    "Member names in the dump are often nicknames (Jim Hoops, Bill Blessing, Bill DeMora, Mike Dovilla, Tom Patton, Joe Miller), and one person can be split over several dump records (one per chamber or Assembly). Link each record through the Assembly member lists: in every Assembly and chamber the record voted in, exactly one member of that name.",
+    "The 132nd member list holds one member under two ids (rep_garavone_theresa_1 and rep_gavarone_theresa_1, one member number); both map to the same name.",
+    "Member ids change when a member moves chamber (rep_landis_al_1 in the 132nd, sen_landis_al_1 from the 135th), and the member number changes with them.",
+    "From the 136th the dump's vote address is the bill's action list, the same for every vote of the bill; a committee vote is then told only by its motion (\"Reported\", classed committee-passage).",
+    "Most 132nd motions in the dump are action codes (\"pass_300\"); the line takes the result from the Votes page instead."
+  ]
+}

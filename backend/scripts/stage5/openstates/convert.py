@@ -122,11 +122,70 @@ for r in rows("personvote"):
 #  - "committee": Utah's committee votes are filed under the chamber, with nothing in the motion to say so; they
 #    are the mtgvotes.jsp links.
 #  - "https": the older rows carry http:// links to a site that serves https.
-SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": re.compile(r"/mtgvotes\.jsp"), "https": True}}
+#  - "oh_votes_page" (Ohio, 2026-11-16): the rows' addresses (search-prod.lis.state.oh.us/solarapi/v1/...) are dead
+#    (404). The same record is the bill's Votes page at www.legislature.ohio.gov, which holds every vote of the bill;
+#    the address names one vote by its session day, chamber and tally after a #, and the verifier reads that vote
+#    from the page and the legislature's data (src/lib/stateRollCallEvidence.ts). Committee votes are the
+#    .../cmtevotes rows; from the 136th the address is the bill's action list for every vote, and a committee vote
+#    is told by its motion: "Reported..." classed committee-passage (a conference report is classed so too, and is
+#    the chamber's floor vote). The dump holds most Ohio votes two to four times over (the same vote scraped again under
+#    a new key: 135 HB 33's House passage, 78-19, three times): each vote is kept once.
+SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": re.compile(r"/mtgvotes\.jsp"), "https": True},
+             "OH": {"committee": re.compile(r"/cmtevotes/?$"), "committee_motion": re.compile(r"^Reported\b"), "oh_votes_page": True,
+                    "oh_text_v2": True, "record_replaces_dump": True}}
 RULES = SRC_RULES.get(ST, {})
 if RULES.get("https"):
     for eid in vsrc:
         vsrc[eid] = [re.sub(r"^http://", "https://", u) for u in vsrc[eid]]
+# The address each row came with, before any rule below rewrites it: the committee rule reads this one.
+vsrc_orig = {eid: list(us) for eid, us in vsrc.items()}
+
+
+def event_committee_link(eid):
+    """A committee's vote, by the state's rule: its address, or (Ohio) its motion and classification."""
+    if RULES.get("committee_motion") and "committee-passage" in pgarr(events[eid].get("motion_classification")) \
+            and RULES["committee_motion"].search(events[eid]["motion_text"] or ""):
+        return True
+    return bool(RULES.get("committee") and RULES["committee"].search((vsrc_orig.get(eid) or vsrc.get(eid) or [""])[0]))
+
+
+DUPES = collections.defaultdict(collections.Counter)  # session id -> counts, for .openstates.json
+OH_ADDR = re.compile(r"/general_assembly_(\d{3})/(?:bills|resolutions|legislation)/([a-z]+\d+)/(?:votes|cmtevotes|actions)/?$")
+
+
+def oh_votes_page(eid):
+    """The Votes-page address of one Ohio vote, or None (a special session's address, an address of another form)."""
+    e = events[eid]
+    m = OH_ADDR.search((vsrc.get(eid) or [""])[0])
+    org = orgs.get(e["organization_id"]) or {}
+    ch = {"lower": "House", "upper": "Senate"}.get(org.get("classification"))
+    if not m or not ch or not re.match(r"^\d{4}-\d{2}-\d{2}$", (e["start_date"] or "")[:10]):
+        return None
+    pv = pvotes.get(eid) or []
+    yes = sum(v["option"] == "yes" for v in pv) if pv else counts[eid].get("yes", 0)
+    no = sum(v["option"] == "no" for v in pv) if pv else counts[eid].get("no", 0)
+    return f"https://www.legislature.ohio.gov/legislation/{m.group(1)}/{m.group(2)}/votes#{e['start_date'][:10]}-{ch}-{yes}-{no}"
+
+
+if RULES.get("oh_votes_page"):
+    keep = {}
+    for eid in sorted(events, key=lambda x: (events[x].get("updated_at") or "", x), reverse=True):
+        page = oh_votes_page(eid)
+        if not page:
+            continue
+        k = (events[eid]["bill_id"], page, event_committee_link(eid))
+        sid = events[eid]["legislative_session_id"]
+        if k in keep:
+            # the same vote again: drop it, the copy updated last is kept; say so when the members differ
+            ours = sorted((v["voter_name"], v["option"]) for v in pvotes.get(keep[k], []))
+            DUPES[sid]["duplicate_rollcalls_dropped"] += 1
+            if sorted((v["voter_name"], v["option"]) for v in pvotes.get(eid, [])) != ours:
+                DUPES[sid]["duplicate_rollcalls_dropped_members_differed"] += 1
+            for d in (events, vsrc, pvotes, counts):
+                d.pop(eid, None)
+            continue
+        keep[k] = eid
+        vsrc[eid] = [page]
 
 # ---------------- roll calls the dump does not hold ----------------
 # A dump can hold a session's bills and none of its roll calls (Utah's 2025 General Session, 2026-11 dump: 959
@@ -150,6 +209,17 @@ for f in sorted(glob.glob(os.path.join(WORK, "supplements", ST, "*.json"))):
         bid = bill_by_key.get((sid, re.sub(r"[\s.]+", "", ident).upper()))
         if not bid:
             sys.exit(f"{f}: bill {ident!r} is not in session {sp['session']} of this extract")
+        if RULES.get("record_replaces_dump") and ident in sp.get("checked", {}):
+            # The legislature's record of this bill was read: it is the bill's floor votes. A dump floor vote of the
+            # bill that is not on it is dropped (Ohio: the 136th's dates are clock times, so a late vote lands on the
+            # next day; one tally of 135 SB 58 is not the record's). Committee votes are not on it and stay.
+            on_rec = {rc["url"] for rc in rcs}
+            for eid in [e for e, ev_ in events.items() if ev_["bill_id"] == bid and e in vsrc and not event_committee_link(e)
+                        and not e.startswith("supplement:") and vsrc[e][0] not in on_rec]:
+                DUPES[sid]["dump_floor_rollcalls_not_on_the_record_dropped"] += 1
+                have_url.discard(vsrc[eid][0])
+                for d in (events, vsrc, pvotes, counts):
+                    d.pop(eid, None)
         for n, rc in enumerate(rcs):
             if rc["url"] in have_url:
                 SUPP["already_in_dump"] += 1
@@ -196,10 +266,6 @@ def event_chamber(eid):
     """The chamber that took the vote: from the roll call's own link where the state has a rule, else the row's."""
     m = RULES["chamber"].search((vsrc.get(eid) or [""])[0]) if RULES.get("chamber") else None
     return m.group(1) if m else (events[eid].get("_chamber") or chamber_of(events[eid]["organization_id"]))
-
-
-def event_committee_link(eid):
-    return bool(RULES.get("committee") and RULES["committee"].search((vsrc.get(eid) or [""])[0]))
 
 
 def seat(pid, sess):
@@ -552,6 +618,11 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
             pdf = [l["url"] for l in ls if "pdf" in (l["media_type"] or "")]
             other = [l for l in ls if "pdf" not in (l["media_type"] or "")]
             main = pdf[0] if pdf else (other[0]["url"] if other else "")
+            if RULES.get("oh_text_v2"):
+                # Ohio, 2026-11-16: .../solarapi/v1/general_assembly_132/bills/hb228/RH/01?format=pdf is dead (404);
+                # the same PDF is .../api/v2/general_assembly_132/legislation/hb228/01_RH/pdf/. Other forms are kept.
+                main = re.sub(r"^https?://search-prod\.lis\.state\.oh\.us/solarapi/v1/general_assembly_(\d{3})/(?:bills|resolutions)/([a-z]+\d+)/([A-Z]+)/(\d+)\?format=pdf$",
+                              r"https://search-prod.lis.state.oh.us/api/v2/general_assembly_\1/legislation/\2/\4_\3/pdf/", main)
             if not main:
                 continue
             t = text_type(v["note"])
@@ -637,7 +708,7 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
     stats["people_with_legiscan_id"] = sum(1 for p in people_out if p < START["people"])
     marker = {"source": "Open States monthly dump (public domain)", "dump": meta["dump"], "extracted_at": meta["extracted_at"],
               "converted_at": now, "state": ST, "openstates_session": ident, "session_id": lsid, "synthetic_ids": True,
-              "counts": dict(stats), "name_only_voters_unmatched": dict(name_only),
+              "counts": dict(stats, **DUPES[sid]), "name_only_voters_unmatched": dict(name_only),
               "rollcalls_from_legislature": ({"count": SUPP_SESSIONS[sid]["added"], "bills": sorted(SUPP_SESSIONS[sid]["bills"]),
                                               "source": SUPP_SESSIONS[sid]["source"],
                                               "note": "The dump holds no roll call for these; each was read from the legislature's own page. "
