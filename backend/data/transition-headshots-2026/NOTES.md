@@ -508,19 +508,109 @@ the 691-byte React shell that `iga.in.gov` serves every non-browser client at HT
 two newest House members; that is the answer to the question, and the two want their *current*
 office as a source, the way the whole California batch did.
 
-# Washington — the shape of the remaining 23 (established 2026-11-16, none sourced yet)
+# Washington — 22 of 23 imported (CC_0439, 2026-11-16)
 
-Three official routes checked, and **none of them carries a 2026 winner**:
+⚠ **An earlier draft of this section concluded "Washington is 23 separate hunts". That was
+wrong, and it is left corrected rather than deleted because the reasoning that produced it is
+the trap.** Three official routes really do fail — `leg.wa.gov/legislators` lists only SITTING
+members (a sweep of its roster service confirms **0 of the 23 sit today**; positive control:
+Speaker Laurie Jinkins found, 158 members parsed), `app.leg.wa.gov/districtfinder` returns the
+**outgoing** member, and `voter.votewa.gov/CandidateList.aspx` serves **zero images**. Three
+dead ends read like "there is no source". There was one, and it covered 20 people at once.
 
-- **`leg.wa.gov/legislators`** publishes only sitting members. Photos are at
-  `leg.wa.gov/memberthumbnail/<memberId>.jpg`, 150×200.
-- **`app.leg.wa.gov/districtfinder/displaydistrict/<n>`** returns the **outgoing** members. District
-  14 still shows Mendoza and Manjarrez (R), not our winners Dimas and Morfin (D). It carries no
-  member photos at all.
-- **`voter.votewa.gov/CandidateList.aspx`** exists and lists candidates, but serves **zero images**.
+## 🟢 The source: the Secretary of State's online Voters' Guide
 
-▶ So Washington is **23 separate hunts**, each on the winner's campaign site or whatever office they
-hold today — and a majority hold none. Of the first 8 researched, only **two** have a current
-elected office, and they share one: **Vancouver City Council** (Kim D. Harless, Position 1; Diana H.
-Perez, Position 3). ⚠ Jonathan Bingle is a **former** Spokane councilmember — he lost re-election in
-2025 — so the office route is closed for him; Dimas, Morfin, Jasmin and Scott hold no elected office.
+```
+https://voter.votewa.gov/elections/voterguide.ashx?e=899&la=en&c=<county 1..39>&p=XX   # the index
+https://voter.votewa.gov/elections/candidate.ashx?e=899&r=<RaceID>&b=0&la=en&c=<county> # the photos
+```
+
+JSON. `Categories[] -> Races[] -> Candidates[]`, each candidate carrying `HasPhoto` and a
+`BallotName`; the race carries `Jurisdiction` ("Legislative District 14") and a position. The
+photographs are base64 inside the **candidate** endpoint. 217 legislative candidates, 215 with a
+photo.
+
+🔴 **`e=898` IS THE PRIMARY. `e=899` IS THE GENERAL.** Nothing in the URL says so, and sourcing
+from the primary mixes in people who lost in August. ⚠ **`config.ashx` cannot tell you which is
+which — it returns a byte-identical 33,339-byte response for EVERY election id.** That uniform
+answer is a broken detector, not a finding. `voterguide.ashx` carries the election's real `Name`
+and is what settled it. Unused ids return a 65-byte null shell, which is a clean negative control.
+
+🔴🔴 **THE RACE PAGE RENDERS EVERY CANDIDATE, LOSER FIRST.** Chelsea Dimas is the **second**
+photo on her page; the first is Gloria Mendoza, the incumbent she beat. Read "the candidate
+photo" positionally and you ship the defeated opponent under the winner's name, with every gate
+green. ▶ **Bind the photo to its `BallotName`, never to an index**, and make Mendoza the paired
+control: fetch the loser deliberately and assert her bytes never reappear under a winner.
+
+🔴 **The data URI says `data:image/png` and the bytes are JPEG** (`FF D8 FF`). The declared type
+lies; the magic number is the only answer.
+
+🔴 **`candidatephoto.ashx`, `photo.ashx` and `statement.ashx` do not exist** — they 302 to
+`error.aspx`, which answers **HTTP 200 with 9.6KB of HTML**. A guessed endpoint reports success
+on the failing path.
+
+🟢 **THE GUIDE IS ALSO THE NAMESAKE CHECK, which is why it outranks a campaign site.** Every race
+publishes the district and position, from the body that ran the election. **All 20 matched ours
+exactly — 20 for 20, no mismatches.** ⚠ And the surname sweep across the sitting roster shows why
+that matters: **April Berg** is neither Reedy nor David Berg, and **Shaun Scott** is not Jaelynn
+Scott. A full-name match is not an identity; a district-bound match from the chamber is.
+
+## 🔴 LD 18 and LD 49 are absent from the state guide — the DISTRICTS, not the candidates
+
+Checked across every county code, in **both** the primary and the general. Clark County carries
+those two districts in its **own local voters' pamphlet** instead:
+
+```
+https://clark.wa.gov/sites/default/files/media/document/2026-09/2026clarkcountygeneralvp_web.pdf
+```
+
+Its text names Knott/McClintock (18-1), Letinich/Ley (18-2) and Harless/Mittelman (49-1) under
+"State Legislative Offices", so it supplies the district binding for all three. ⚠ **But its
+photographs are unusable:** single-channel **greyscale** at ~385×477, stored with an inverted
+decode (they extract as negatives). Below our size floor and monochrome.
+▶ A county that runs its own pamphlet is a **coverage gap in the state guide, not a gap in the
+record.** Check the county before concluding a winner published nothing.
+
+## The one that got away
+
+**Randi L. Knott — LD 18 Position 1 — NOT SOURCED.** Her campaign site `electrandi.com` carries
+only an embedded **Instagram** feed (refused: social-media licence) and one two-person bookshop
+candid in which she is in profile looking down. The county pamphlet photo is greyscale and
+undersized. ▶ **Lead:** she is a Brush Prairie horse-ranch owner and a retired government-affairs
+professional, holding no current elected office, so there is no official-body route. Re-check
+`leg.wa.gov/memberthumbnail/<id>.jpg` after she is sworn in **January 2027** — that is the
+cleanest future source for her and for anyone else still missing.
+
+## 🔴 A bare CDN URL is not the original — three different hiding places in one batch
+
+| host | what it serves | what it holds | factor |
+| --- | --- | --- | --- |
+| `cityofvancouver.us` | `Kim-D.-Harless-1024x1024.jpg` | `Kim-D.-Harless.jpg` 1280×1280 | 1.6× pixels |
+| `images.squarespace-cdn.com` | `?format=500w` | `?format=2500w` | 25× pixels |
+| `static.wixstatic.com` | `/v1/fill/w_341,h_286,...` | the un-transformed base path, 4854×3238 | 160× pixels |
+
+⚠ **Squarespace and Wix content-negotiate to WebP.** A sniffer that accepts only JPEG and PNG
+throws every valid image away as "not an image" — that happened here and looked like a CDN block.
+Let the decoder decide, not a magic-number allow-list.
+
+## Outcome — 22 imported, faceless legislative winners 66 → 44
+
+18 from the state Voters' Guide, plus four sourced elsewhere:
+
+| | | |
+| --- | --- | --- |
+| Kim D. Harless | LD 49 Pos 1 | City of Vancouver council portrait, 1280×1280 — LD 49 not in the state guide |
+| Diana H. Perez | LD 17 Pos 2 | City of Vancouver council portrait, 1280×1280 — supersedes her 563×677 pamphlet photo |
+| Danica Noble | LD 32 Pos 1 | `electdanica.com`, 9504×6336 **in colour** — the pamphlet photo measured chroma **exactly 0** |
+| Deken Letinich | LD 18 Pos 2 | `electdeken.com` media gallery, 2500×1667, cropped **right-flush** — he sits right of centre |
+| Randi L. Knott | LD 18 Pos 1 | ❌ not sourced, see above |
+
+⚠ **Two ship undersized and that is deliberate** — Joshua Thompson 152×183 and Alan Nolan
+293×350, mirrored **at native size, never upscaled**. Neither has a campaign site; the small file
+is what they themselves submitted to the state. Operator approved both on the contact sheet.
+
+**Licence is `unknown` for all 22.** `voter.votewa.gov` carries "© Copyright 2023", publishes no
+grant, and its photographs are **candidate-submitted** — so they are not the State's to license
+in the first place. The three campaign/city hosts publish no photo policy on the pages that carry
+these portraits. Only **federal** work is public domain; a state or city portrait is not, and
+silence is not a grant.
