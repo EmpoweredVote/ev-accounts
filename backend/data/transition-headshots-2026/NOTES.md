@@ -464,7 +464,7 @@ roster already carries the people. Washington and Wisconsin are the bulk and are
 
 ---
 
-# Indiana — checked 2026-11-16, 1 of 3 has a portrait (not yet imported)
+# Indiana — 2 of 3 imported (CC_0442, 2026-11-16)
 
 The three Indiana winners are re-elected incumbents seated by `CA_0374`, and all three are on the
 chamber's own **2027** roster — bound by DISTRICT, which is the roster's own key: Streeter House 45,
@@ -496,17 +496,60 @@ drawn from the data under test moves with the defect.** Replaced with a member r
 (Aylesworth, House 11 — 90,383 B, a real JPEG, a different sha). The paired negative still returns
 the 691-byte React shell that `iga.in.gov` serves every non-browser client at HTTP 200.
 
-## Outcome
+## 🔴🔴 THE SECOND FAKE: Knox County illustrates its commissioners with UNSPLASH STOCK
 
-| | | |
-| --- | --- | --- |
-| Jeff Ellington | Senate 39 | ✅ real portrait, 279×419 — ships native, nothing enlarged |
-| Kellie Streeter | House 45 | ❌ no portrait published. Lead: she is a **Knox County Commissioner, District 3** until 2026-12-31 |
-| Amy Kippenbrock | House 63 | ❌ no portrait published. Current office not yet established |
+Streeter is **Commissioner for Knox County District 3** until 2026-12-31, so the county was the
+obvious place to look. `knoxcounty.in.gov/commissioners` renders a tidy card per commissioner,
+name and title beneath a portrait-shaped 640×896 image. **All four are stock photography, and the
+SAME FILE — `annika-palmari-RIt88XBR3G0-unsplash.jpg` — stands in for THREE DIFFERENT PEOPLE:**
+T.J. Brink, Tim Ellerman and Kellie Streeter.
 
-**What a body publishes is a finding, not a search failure.** IGA has not posted portraits for its
-two newest House members; that is the answer to the question, and the two want their *current*
-office as a source, the way the whole California batch did.
+▶ **Both of Indiana's fakes were caught the same way: by comparing bytes ACROSS people.** Neither
+is visible from a single record, and neither looks wrong on its own — a dome is portrait-shaped,
+and a stock headshot is an actual human face. ⚠ The county page is still worth reading: it
+**confirms her office and district**. A source can be authoritative for one field and worthless
+for another.
+
+## 🟢 The caucus sites are the Indiana route the legislature is not
+
+`indianahouserepublicans.com/members` and `indianasenaterepublicans.com/s<NN>` carry members the
+IGA roster has not caught up with. Kippenbrock's portrait is there as
+`clientuploads/directory/members/Kippenbrock_Caucus_Photo.png` — **500×500, and the filename
+carries HER NAME**, not a seat number or an opaque id.
+⚠ **The Senate side is branding, not portraits**: `/s39` serves a "SENATE DISTRICT 39" graphic
+(the dome again) at 200×300 and a 5019×3170 district *map*, and no photograph of Ellington.
+⚠ **The caucus list carries Kippenbrock and NOT Streeter** — which makes Streeter's absence a fact
+about her rather than a broken read of the page.
+
+## Outcome — 2 imported (CC_0442), faceless legislative winners 34 → 32
+
+| | | | |
+| --- | --- | --- | --- |
+| Jeff Ellington | Senate 39 | 300×419 → ships **300×375** | IGA portrait for lpid `legislator_jeff_ellington_1`. ⚠ The 2027 Senate file is a near-identical frame from the same sitting at 279×419 and only **19KB against 83KB**, so the larger, less compressed 2017–2023 file was taken. |
+| Amy Kippenbrock | House 63 | 500×500 → ships **400×500** | House Republican caucus photo. She is **Dubois County Circuit Court Clerk** until 2026-12-31, but the county clerk page does **not** name her, so nothing was taken from it. |
+| Kellie Streeter | House 45 | ❌ refused | dome placeholder from IGA; shared Unsplash stock from Knox County; not on the caucus list; no campaign site. |
+
+**Licence `unknown` for both.** `iga.in.gov` publishes **no licence language at all** — silence —
+and Indiana is a **state**, so its work is not public domain. `indianahouserepublicans.com` asserts
+"© Copyright Indiana House Republicans. All Rights Reserved." Neither silence nor a blanket
+copyright notice is a grant.
+
+## 🔴 Both ship below the floor — and that is now the pattern in FOUR states
+
+| state | what the chamber publishes |
+| --- | --- |
+| Washington | 150×200 |
+| Wisconsin | 150×200 |
+| California Assembly | 500×500 (Senate is 919×1286 once `styles/large/` is stripped) |
+| Indiana | ~300×419 |
+
+▶ **A LEGISLATURE'S OWN ROSTER PHOTO IS AN EXCELLENT IDENTITY REFERENCE AND A POOR SOURCE.** Do
+not plan a wave around "they will publish portraits once sworn in" without measuring that chamber
+first. California's Senate is so far the only one that clears 600×750.
+
+**What a body publishes is a finding, not a search failure** — but ⚠ an earlier draft of this
+section read "IGA has not posted portraits for its two newest House members", and that was too
+generous. IGA *did* post something for both; it posted a picture of a building.
 
 # Washington — 22 of 23 imported (CC_0439, 2026-11-16)
 
