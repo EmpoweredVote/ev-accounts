@@ -94,6 +94,15 @@ describe('the legislature\'s own vote list — Ohio', () => {
     expect(INDEX.OH.billUrl('2025', 'HB 2')).toBeNull();
   });
 
+  it('reads no vote on a motion (action_code motion_), and counts it (runner, 2026-11-16)', () => {
+    const data = OH_DOCS[1].replace(/"action_code": ?"msg_507"/, '"action_code": "motion_920"');
+    expect(data).not.toBe(OH_DOCS[1]);
+    const bi = INDEX.OH.read(data, '132', 'HB 228');
+    expect(bi.floor.map((v) => v.url)).not.toContain(`${OH_PAGE}2018-12-06-House-59-22`);
+    expect(bi.floor).toHaveLength(4);
+    expect(bi.motion).toBe(1);
+  });
+
   it('keeps the floor votes, each named on the bill\'s Votes page, and counts the committee reports', () => {
     const bi = INDEX.OH.read(OH_DOCS[1], '132', 'HB 228');
     expect(bi.committee).toBe(2);

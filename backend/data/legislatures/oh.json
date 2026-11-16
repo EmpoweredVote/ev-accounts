@@ -20,12 +20,13 @@
       "www.legislature.ohio.gov"
     ],
     "legiscan_args": "--session-start odd",
-    "floor_rule": "A vote is cited on the bill's Votes page, with the vote named after a #: www.legislature.ohio.gov/legislation/<Assembly>/<bill>/votes#<session day>-<House|Senate>-<yeas>-<nays> (136/sb273/votes#2026-06-09-House-95-0). The page lists every roll call of the bill with its date, chamber, result and counts, and each member's full name under Yeas or Nays; it prints no motion. The reader (src/lib/stateRollCallEvidence.ts) reads three documents together: that page, the bill's action list at search-prod.lis.state.oh.us/api/v2/general_assembly_<N>/legislation/<bill>/actions/ (the motion, the session day, and member ids under yeas and nays), and the Assembly's member list at .../general_assembly_<N>/legislators/ (id to name and chamber). A line is written only when exactly one page row and one action-list vote fit the day, chamber and counts, the result agrees, and every id maps to the name the page prints, in that chamber. Committee votes (action code crpt_, or a /cmtevotes address in older dump rows) are not mapped; a conference report is the chamber's floor vote.",
+    "floor_rule": "A vote is cited on the bill's Votes page, with the vote named after a #: www.legislature.ohio.gov/legislation/<Assembly>/<bill>/votes#<session day>-<House|Senate>-<yeas>-<nays> (136/sb273/votes#2026-06-09-House-95-0). The page lists every roll call of the bill with its date, chamber, result and counts, and each member's full name under Yeas or Nays; it prints no motion. The reader (src/lib/stateRollCallEvidence.ts) reads three documents together: that page, the bill's action list at search-prod.lis.state.oh.us/api/v2/general_assembly_<N>/legislation/<bill>/actions/ (the motion, the session day, and member ids under yeas and nays), and the Assembly's member list at .../general_assembly_<N>/legislators/ (id to name and chamber). A line is written only when exactly one page row and one action-list vote fit the day, chamber and counts, the result agrees, and every id maps to the name the page prints, in that chamber. Committee votes (action code crpt_, or a /cmtevotes address in older dump rows) and votes on a motion (motion_) are not mapped; a conference report is the chamber's floor vote.",
     "gaps": [
       "A member who did not vote is on no list: absent gives no finding, not an abstention.",
       "A special session's votes have no Votes-page address in the dump, and the reader gives them no line (135S1: seven roll calls).",
       "A voice vote has no member list and gives no line.",
-      "The Votes page names no motion. A day with two roll calls of one chamber and the same counts on one bill cannot be told apart, and gives no line."
+      "The Votes page names no motion. A day with two roll calls of one chamber and the same counts on one bill cannot be told apart, and gives no line.",
+      "A vote on a motion (action-list code motion_, such as \"Informally passed\": the bill set aside for the day) is not a vote on the bill and is not mapped (runner, 2026-11-16). Two House votes of the 133rd are such votes."
     ]
   },
   "texts": {
@@ -48,7 +49,6 @@
     "www.legislature.ohio.gov sends an incomplete certificate chain, so Node refuses it (UNABLE_TO_VERIFY_LEAF_SIGNATURE) though browsers and curl do not. src/lib/adapters/hostTrust.ts adds the missing public intermediate (Sectigo Public Server Authentication CA OV R36, valid to 2036) for that host only.",
     "Neither host states a crawl delay (www.legislature.ohio.gov robots.txt allows all; search-prod has none). The reader waits one second between requests to each host.",
     "One vote needs three documents (Votes page, action list, member list); a bill's documents are fetched once and reused for its other votes.",
-    "A roll call can be on a motion, not on the bill: the action list's code starts motion_ and the Votes page prints the action as its result. Two House votes of the 133rd read \"Informally passed\" (85-9 and 85-7). In Ohio \"informally passed\" means the bill was set aside for the day; read the House Journal for that day before treating such a vote as a vote on the bill.",
     "The line tool took 44 seconds for 1,676 votes on 59 roll calls of 30 bills (2026-11-16): about 5 seconds for 200 votes. The time follows the number of bills, not votes: three documents a bill, one second apart per host.",
     "Dates are session days. A vote taken after midnight carries the session day on the Votes page and in the action list (\"day153_h_20240612\"); the dump's 136th times are UTC clock times.",
     "From 2025 the Votes page prints sitting members as links and former members as plain text; the reader takes the cell's text either way.",

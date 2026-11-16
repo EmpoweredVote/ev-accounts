@@ -128,7 +128,7 @@ roll-call pages.
 | Washington | 2017-18 to 2025-26 | 0 member-vote differences against LegiScan and against the Legislature's own roll calls (2026-11-13) |
 | Tennessee | 2017-18 to 2025-26 | 99.6% of LegiScan's floor roll calls found; 19 of 2.6 million member votes differ (2026-11-13) |
 | Utah | 2017 to 2026 | see the pilot report, `backend/data/legislatures/ut.json`, and the checks in `check_tools.py` (2026-11-15) |
-| Ohio | 132nd to 136th Assembly (2017-2026) | 59 floor roll calls of a 213-bill dry batch: 10 missing from the dump (read from the legislature), 0 tally and 0 of 2,912 member-vote differences; see `backend/data/legislatures/oh.json` (2026-11-16) |
+| Ohio | 132nd to 136th Assembly (2017-2026) | 57 floor roll calls of a 213-bill dry batch (two votes on a motion not mapped): 10 missing from the dump (read from the legislature), 0 tally and 0 of 2,726 member-vote differences; see `backend/data/legislatures/oh.json` (2026-11-16) |
 
 Washington's own sites refuse our reader (`robots.txt`), so Washington has no roll-call reader here and keeps its
 LegiScan lines.

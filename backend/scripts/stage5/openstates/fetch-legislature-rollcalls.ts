@@ -37,7 +37,8 @@ import { isStateRollCallUrl, readStateRollCallRecord, stateRollCallDocs, stateRo
 
 /** One floor roll call as a bill's vote list gives it. */
 export interface IndexedVote { url: string; motion: string; tally: [number, number, number] }
-export interface BillIndex { floor: IndexedVote[]; committee: number; voice: number }
+/** motion: votes on a motion, not on the bill (Ohio motion_...: "Informally passed"), counted and not read. */
+export interface BillIndex { floor: IndexedVote[]; committee: number; voice: number; motion?: number }
 interface StateIndex {
   /** The least time between two requests to the site (its robots.txt Crawl-delay). */
   minGapMs: number;
@@ -66,7 +67,7 @@ function ohBill(bill: string): string | null {
 export const INDEX: Record<string, StateIndex> = {
   // search-prod.lis.state.oh.us/api/v2/general_assembly_<GA>/legislation/<bill>/actions/ (read 2026-11-16): every
   // action of the bill, newest first; a vote carries yeas and nays (member ids), the chamber and the session day
-  // (day153_h_20240612). A committee report (action_code crpt_...) is a committee's vote. Each floor vote is named on
+  // (day153_h_20240612). A committee report (action_code crpt_...) is a committee's vote, and a vote on a motion (motion_...) is not a vote on the bill. Each floor vote is named on
   // the bill's Votes page at www.legislature.ohio.gov by its day, chamber and tally (stateRollCallEvidence.ts).
   OH: {
     minGapMs: 1_000, // no crawl delay stated (www.legislature.ohio.gov robots.txt allows all; search-prod has none): one a second is ours
@@ -81,6 +82,8 @@ export const INDEX: Record<string, StateIndex> = {
       for (const a of j) {
         if (!Array.isArray(a.yeas) && !Array.isArray(a.nays)) continue;
         if (/^crpt_/.test(String(a.action_code ?? ''))) { out.committee++; continue; }
+        // a vote on a motion ("Informally passed": the bill set aside) is not a vote on the bill (runner, 2026-11-16)
+        if (/^motion_/.test(String(a.action_code ?? ''))) { out.motion = (out.motion ?? 0) + 1; continue; }
         const d = /_(\d{4})(\d{2})(\d{2})$/.exec(String(a.session_day ?? ''));
         const ch = a.chamber === 'House' || a.chamber === 'Senate' ? a.chamber : null;
         if (!d || !ch || !String(a.action ?? '').trim()) throw new Error(`a floor vote the tool cannot read: ${JSON.stringify({ ...a, yeas: undefined, nays: undefined })}`);
@@ -215,9 +218,9 @@ async function main(): Promise<void> {
     }
     if (rcs.length) out.bills[bill] = rcs; else delete out.bills[bill];
     if (refused.length) out.refused[bill] = refused; else delete out.refused[bill];
-    out.checked[bill] = { vote_list: url, floor: bi.floor.length, read: rcs.length, committee_not_read: bi.committee, voice_not_read: bi.voice };
+    out.checked[bill] = { vote_list: url, floor: bi.floor.length, read: rcs.length, committee_not_read: bi.committee, voice_not_read: bi.voice, ...(bi.motion ? { motion_not_read: bi.motion } : {}) };
     floor += rcs.length;
-    console.log(`${bill}: ${rcs.length} of ${bi.floor.length} floor roll calls read (${bi.committee} committee and ${bi.voice} voice votes not read)`);
+    console.log(`${bill}: ${rcs.length} of ${bi.floor.length} floor roll calls read (${bi.committee} committee${bi.motion ? `, ${bi.motion} motion` : ''} and ${bi.voice} voice votes not read)`);
   }
   writeFileSync(outFile, JSON.stringify({
     state: ST, session, source: `${new URL(idx.billUrl(session, bills[0])!).host}: each bill's own vote list and each roll call's own page`,
