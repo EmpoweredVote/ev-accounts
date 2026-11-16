@@ -352,3 +352,615 @@ findable by the query that looks for missing provenance; a guessed licence is no
 **68 of the 82 CA rows remain** — 50 more school boards (2026-12-11), 6 special districts,
 and 12 legislators with no swearing-in date yet. The school boards are the nearest deadline.
 🔴 **Do not reach for BallotReady for any of them** until the re-sourcing piece above is done.
+
+---
+
+# Batch 2 — applied 2026-11-16 (`CC_0438`)
+
+**7 of the 73 legislative winners who have no face.** This batch changed the scope: batch 1 worked
+the nearest *handovers* (special districts, school boards); batch 2 works the **legislative tiers**
+— `STATE_LOWER`, `STATE_UPPER`, `NATIONAL_LOWER`, `NATIONAL_UPPER`. Measured against production,
+that tier holds **73** winners with no photograph in any of the three places, against a positive
+control of **1,339** legislative winners that DO read as having one.
+
+By state: **WA 23 · WI 23 · CA 19 · IN 3 · CO 2 · UT 2 · TX 1.** All seven below are California.
+The faceless legislative count went **73 → 66**, gated as a delta inside the migration's own
+transaction.
+
+## 🔴 THESE WINNERS ARE NOT ON ANY CHAMBER ROSTER YET, SO THERE IS NO BULK SOURCE
+
+Batch 1 could lean on roster pages that yield several faces at once. This tier cannot: a winner of
+2026-11-03 does not appear on `legis.wisconsin.gov` or `leg.wa.gov` until the chamber seats them in
+January. **The source for each is the body they hold office in TODAY** — a county board, a city
+council, a school board — or their campaign site. That is one research problem per person, and it
+is why this batch is 7 and not 73.
+
+▶ The corollary: **a winner who holds no current office has only a campaign site**, and campaign
+sites are where the licence questions live.
+
+## ⚠ EVERY ONE OF THE SEVEN IS `unknown`, AND THAT IS THE FINDING
+
+Not one California publisher in this batch grants reuse. `fresno.gov` and `garcia.asmdc.org` assert
+a blanket copyright; `fresnocountyca.gov`, `rpvca.gov`, `rpcity.ca.gov` and `kerncounty.com`
+publish no photo policy at all on the pages carrying these portraits. Only **federal** US
+government work is public domain (17 USC §105) — a city, county or state portrait is not. Recorded
+`unknown`, the same disposition `CC_0383` gave the two cvwd.com rows.
+
+## 🔴🔴 A STORAGE OBJECT EXISTED FOR A PERSON THE DATABASE SAID HAD NO PHOTO
+
+The absence control before upload found `8bfb459b-…-headshot.jpg` answering **HTTP 200** while
+Robert Garcia's row carried nothing on any of the three surfaces. An orphan file nobody wired up —
+the **mirror image of the Steve Hobbs defect** `CC_0384` found, where the row pointed at a file and
+the scalar pointed at a seal. Opened and compared: the same man, an older outdoor portrait,
+600×750, sha256 `42d4f894…`. Replaced with his current Assembly studio portrait, and **his URL
+alone carries `?v=20261116`** because an `x-upsert` at an existing path returns 200 while the CDN
+serves the old bytes.
+
+▶ **The absence control is not ceremony — it is the only thing that distinguishes a fresh object
+from an overwrite, and the two need different URLs.**
+
+## 🔴 THE VERIFY CAUGHT ITSELF ASSERTING ON A URL THE MIGRATION DOES NOT STORE
+
+First verify run: Garcia **FAIL**, `cf-cache=HIT`, sha `42d4f894` — the old photograph. The script
+was fetching the un-keyed path while the migration writes the `?v=` one. Re-pointed at the exact
+stored URL it reads `MISS` and the new sha. **Verify the URL you are writing down, not the one you
+uploaded to.**
+
+## ⚠ TWO IMAGE-FINDING TRAPS, BOTH CAUGHT BY LOOKING
+
+- **`dombelza.com`'s highest-scoring portrait is Kevin Kiley's** — an endorser's headshot, sitting
+  in the candidate's own media library. A relevance score on a campaign site ranks *whoever is
+  pictured*, not the candidate.
+- **`fresno.gov` serves `pereas.jpg` with the alt text "andrew-janz".** Not used; the file taken is
+  `annalisa_perea.jpg`, whose filename and alt agree. **Where filename and alt disagree, neither is
+  evidence.**
+
+## 🔴 THE RESIZE HIDES IN THE QUERY STRING, AND IT COST 5× ON ONE FILE
+
+Fresno County serves Pacheco's portrait as `…?dimension=pageimage&w=480`. Stripping the query
+returns the native **2400×3200**. Mirroring the page's own `src` would have stored a 480px copy of
+a file five times that size.
+
+## ⚠ THREE PUBLISHERS KEY THEIR PORTRAITS ON AN ID, NOT A NAME
+
+`rpvca.gov` and `rpcity.ca.gov` (CivicPlus) serve `ImageRepository/Document?documentID=NNNN`, and
+Kern County serves `showpublishedimage/2316`. **A positional URL encodes a slot, not a person.**
+Each was bound by the alt text *and* the body's own roster entry, and every render was opened.
+
+## ⚠ WHAT THE PUBLISHER HAS IS THE ANSWER
+
+Kern County and Rohnert Park publish their members at **200×250** and nothing larger. Those two
+ship at native size. Nothing in this batch is enlarged.
+
+## ⚠ `maraelliott.com` REFUSES BOTH NODE FETCH AND CURL AT THE TLS HANDSHAKE
+
+Her source is found — a 2000×1334 campaign portrait — and could not be downloaded by either client
+(`OpenSSL unexpected eof`). Playwright reaches the page fine, so the file has to come down through
+the browser. **Deferred, not refused.**
+
+## Verification
+
+- **Before:** six of seven paths absent, Garcia's present (above), with a known-good object
+  returning 200 as the positive control.
+- **After:** all 7 re-fetched from the **exact URL written to the database** and compared by
+  sha256 to the local file — 7 of 7 byte-identical.
+- **Gates watched failing first**, three tampers, each asserted present in the file before running:
+  removing the `photo_origin_url` write → `7 of 7 do not carry the source page`; dropping one
+  person from the import set → `moved by 6 (73 -> 67)`; pointing the image row at a different
+  object → `7 of 7 ... disagrees with photo_custom_url`. ⚠ **A fourth attempt was REFUSED by the
+  tamper builder** because the edit stripped its own marker — it would have produced a file that
+  passed for the wrong reason.
+- **The rendered `<img>`, not the API:** `essentials.empowered.vote` read for Robert Garcia —
+  600×750 from our bucket at the `?v=20261116` URL, showing the studio portrait and not the
+  outdoor one it replaced.
+- **No face detector ran.** `check-headshot-faces.py` needs Python and there is none on this
+  machine. Every frame was opened and looked at. The Sunday CI sweep is their first automated check.
+
+## ▶ What is next
+
+**66 legislative winners remain** — WA 23, WI 23, CA 12, IN 3, CO 2, UT 2, TX 1. Indiana's three
+are re-elected incumbents on `iga.in.gov`, which is the one place in this cohort where a chamber
+roster already carries the people. Washington and Wisconsin are the bulk and are all new members.
+
+---
+
+# Indiana — 2 of 3 imported (CC_0442, 2026-11-16)
+
+The three Indiana winners are re-elected incumbents seated by `CA_0374`, and all three are on the
+chamber's own **2027** roster — bound by DISTRICT, which is the roster's own key: Streeter House 45,
+Kippenbrock House 63, Ellington Senate 39. ⚠ The roster says **"Jeff" Ellington** where our row says
+**"Jeffrey"**; the district binding is what confirms him, and it corroborates `CA_0374` rather than
+contradicting it.
+
+⚠ **They are NOT in `data/in-legislature-roster.json`.** That file holds the 150 members of the
+**124th** GA; these three arrived mid-term. The portrait path moved too:
+`iga.in.gov/images/legislators/**125/2027**/{house|senate}/{lpid}.jpg`.
+
+## 🔴🔴 IGA SERVES A PLACEHOLDER FOR A MEMBER WITH NO PORTRAIT, AND NOTHING ABOUT IT SAYS SO
+
+Streeter and Kippenbrock both return **HTTP 200, `content-type: image/jpeg`, 403,152 bytes** — and
+the file is the **Indiana statehouse-dome graphic on a marble background**. It is a valid image, at
+a plausible 686×886, from the chamber's own domain. It is not a face.
+
+**sha256 `cc1c59ec61c5be8315015efdd69e6ce3430068f20b5fd579977ca25f9701dba5`** — pin it.
+
+🔴 **THE COLLISION CHECK ONLY CAUGHT IT BECAUSE TWO MEMBERS IN ONE BATCH GOT IT.** `sweep-in-legislature-headshots.mjs`
+compares sha256 across the sweep, which is why two people sharing bytes stood out. **Fetch one
+legislator on their own and the dome ships as their headshot**, with every gate green: it decodes,
+it is the right shape, it comes from the right host, and `check-headshot-faces.py` is schedule-only.
+▶ **Match the placeholder by IDENTITY, not by collision.**
+
+🔴 **AND MY FIRST POSITIVE CONTROL WAS ONE OF THE TWO SUSPECTS.** I used Streeter as the known-good
+lpid — so the control certified the placeholder as "decodes fine, the fetch path works". **A control
+drawn from the data under test moves with the defect.** Replaced with a member read off the roster
+(Aylesworth, House 11 — 90,383 B, a real JPEG, a different sha). The paired negative still returns
+the 691-byte React shell that `iga.in.gov` serves every non-browser client at HTTP 200.
+
+## 🔴🔴 THE SECOND FAKE: Knox County illustrates its commissioners with UNSPLASH STOCK
+
+Streeter is **Commissioner for Knox County District 3** until 2026-12-31, so the county was the
+obvious place to look. `knoxcounty.in.gov/commissioners` renders a tidy card per commissioner,
+name and title beneath a portrait-shaped 640×896 image. **All four are stock photography, and the
+SAME FILE — `annika-palmari-RIt88XBR3G0-unsplash.jpg` — stands in for THREE DIFFERENT PEOPLE:**
+T.J. Brink, Tim Ellerman and Kellie Streeter.
+
+▶ **Both of Indiana's fakes were caught the same way: by comparing bytes ACROSS people.** Neither
+is visible from a single record, and neither looks wrong on its own — a dome is portrait-shaped,
+and a stock headshot is an actual human face. ⚠ The county page is still worth reading: it
+**confirms her office and district**. A source can be authoritative for one field and worthless
+for another.
+
+## 🟢 The caucus sites are the Indiana route the legislature is not
+
+`indianahouserepublicans.com/members` and `indianasenaterepublicans.com/s<NN>` carry members the
+IGA roster has not caught up with. Kippenbrock's portrait is there as
+`clientuploads/directory/members/Kippenbrock_Caucus_Photo.png` — **500×500, and the filename
+carries HER NAME**, not a seat number or an opaque id.
+⚠ **The Senate side is branding, not portraits**: `/s39` serves a "SENATE DISTRICT 39" graphic
+(the dome again) at 200×300 and a 5019×3170 district *map*, and no photograph of Ellington.
+⚠ **The caucus list carries Kippenbrock and NOT Streeter** — which makes Streeter's absence a fact
+about her rather than a broken read of the page.
+
+## Outcome — 2 imported (CC_0442), faceless legislative winners 34 → 32
+
+| | | | |
+| --- | --- | --- | --- |
+| Jeff Ellington | Senate 39 | 300×419 → ships **300×375** | IGA portrait for lpid `legislator_jeff_ellington_1`. ⚠ The 2027 Senate file is a near-identical frame from the same sitting at 279×419 and only **19KB against 83KB**, so the larger, less compressed 2017–2023 file was taken. |
+| Amy Kippenbrock | House 63 | 500×500 → ships **400×500** | House Republican caucus photo. She is **Dubois County Circuit Court Clerk** until 2026-12-31, but the county clerk page does **not** name her, so nothing was taken from it. |
+| Kellie Streeter | House 45 | ❌ refused | dome placeholder from IGA; shared Unsplash stock from Knox County; not on the caucus list; no campaign site. |
+
+**Licence `unknown` for both.** `iga.in.gov` publishes **no licence language at all** — silence —
+and Indiana is a **state**, so its work is not public domain. `indianahouserepublicans.com` asserts
+"© Copyright Indiana House Republicans. All Rights Reserved." Neither silence nor a blanket
+copyright notice is a grant.
+
+## 🔴 Both ship below the floor — and that is now the pattern in FOUR states
+
+| state | what the chamber publishes |
+| --- | --- |
+| Washington | 150×200 |
+| Wisconsin | 150×200 |
+| California Assembly | 500×500 (Senate is 919×1286 once `styles/large/` is stripped) |
+| Indiana | ~300×419 |
+
+▶ **A LEGISLATURE'S OWN ROSTER PHOTO IS AN EXCELLENT IDENTITY REFERENCE AND A POOR SOURCE.** Do
+not plan a wave around "they will publish portraits once sworn in" without measuring that chamber
+first. California's Senate is so far the only one that clears 600×750.
+
+**What a body publishes is a finding, not a search failure** — but ⚠ an earlier draft of this
+section read "IGA has not posted portraits for its two newest House members", and that was too
+generous. IGA *did* post something for both; it posted a picture of a building.
+
+# Washington — 22 of 23 imported (CC_0439, 2026-11-16)
+
+⚠ **An earlier draft of this section concluded "Washington is 23 separate hunts". That was
+wrong, and it is left corrected rather than deleted because the reasoning that produced it is
+the trap.** Three official routes really do fail — `leg.wa.gov/legislators` lists only SITTING
+members (a sweep of its roster service confirms **0 of the 23 sit today**; positive control:
+Speaker Laurie Jinkins found, 158 members parsed), `app.leg.wa.gov/districtfinder` returns the
+**outgoing** member, and `voter.votewa.gov/CandidateList.aspx` serves **zero images**. Three
+dead ends read like "there is no source". There was one, and it covered 20 people at once.
+
+## 🟢 The source: the Secretary of State's online Voters' Guide
+
+```
+https://voter.votewa.gov/elections/voterguide.ashx?e=899&la=en&c=<county 1..39>&p=XX   # the index
+https://voter.votewa.gov/elections/candidate.ashx?e=899&r=<RaceID>&b=0&la=en&c=<county> # the photos
+```
+
+JSON. `Categories[] -> Races[] -> Candidates[]`, each candidate carrying `HasPhoto` and a
+`BallotName`; the race carries `Jurisdiction` ("Legislative District 14") and a position. The
+photographs are base64 inside the **candidate** endpoint. 217 legislative candidates, 215 with a
+photo.
+
+🔴 **`e=898` IS THE PRIMARY. `e=899` IS THE GENERAL.** Nothing in the URL says so, and sourcing
+from the primary mixes in people who lost in August. ⚠ **`config.ashx` cannot tell you which is
+which — it returns a byte-identical 33,339-byte response for EVERY election id.** That uniform
+answer is a broken detector, not a finding. `voterguide.ashx` carries the election's real `Name`
+and is what settled it. Unused ids return a 65-byte null shell, which is a clean negative control.
+
+🔴🔴 **THE RACE PAGE RENDERS EVERY CANDIDATE, LOSER FIRST.** Chelsea Dimas is the **second**
+photo on her page; the first is Gloria Mendoza, the incumbent she beat. Read "the candidate
+photo" positionally and you ship the defeated opponent under the winner's name, with every gate
+green. ▶ **Bind the photo to its `BallotName`, never to an index**, and make Mendoza the paired
+control: fetch the loser deliberately and assert her bytes never reappear under a winner.
+
+🔴 **The data URI says `data:image/png` and the bytes are JPEG** (`FF D8 FF`). The declared type
+lies; the magic number is the only answer.
+
+🔴 **`candidatephoto.ashx`, `photo.ashx` and `statement.ashx` do not exist** — they 302 to
+`error.aspx`, which answers **HTTP 200 with 9.6KB of HTML**. A guessed endpoint reports success
+on the failing path.
+
+🟢 **THE GUIDE IS ALSO THE NAMESAKE CHECK, which is why it outranks a campaign site.** Every race
+publishes the district and position, from the body that ran the election. **All 20 matched ours
+exactly — 20 for 20, no mismatches.** ⚠ And the surname sweep across the sitting roster shows why
+that matters: **April Berg** is neither Reedy nor David Berg, and **Shaun Scott** is not Jaelynn
+Scott. A full-name match is not an identity; a district-bound match from the chamber is.
+
+## 🔴 LD 18 and LD 49 are absent from the state guide — the DISTRICTS, not the candidates
+
+Checked across every county code, in **both** the primary and the general. Clark County carries
+those two districts in its **own local voters' pamphlet** instead:
+
+```
+https://clark.wa.gov/sites/default/files/media/document/2026-09/2026clarkcountygeneralvp_web.pdf
+```
+
+Its text names Knott/McClintock (18-1), Letinich/Ley (18-2) and Harless/Mittelman (49-1) under
+"State Legislative Offices", so it supplies the district binding for all three. ⚠ **But its
+photographs are unusable:** single-channel **greyscale** at ~385×477, stored with an inverted
+decode (they extract as negatives). Below our size floor and monochrome.
+▶ A county that runs its own pamphlet is a **coverage gap in the state guide, not a gap in the
+record.** Check the county before concluding a winner published nothing.
+
+## The one that got away
+
+**Randi L. Knott — LD 18 Position 1 — NOT SOURCED.** Her campaign site `electrandi.com` carries
+only an embedded **Instagram** feed (refused: social-media licence) and one two-person bookshop
+candid in which she is in profile looking down. The county pamphlet photo is greyscale and
+undersized. ▶ **Lead:** she is a Brush Prairie horse-ranch owner and a retired government-affairs
+professional, holding no current elected office, so there is no official-body route.
+
+⚠ **CORRECTED 2026-11-16 (was: "re-check `leg.wa.gov/memberthumbnail/<id>.jpg` after she is
+sworn in January 2027 — the cleanest future source").** That endpoint serves **150×200**, which
+is a **2.85× upscale** to reach our 600×750 floor, so swearing-in does NOT solve her. Wisconsin
+proved the same thing from the other direction: `docs.legis.wisconsin.gov` publishes 150×200 for
+**all 132** of its members and holds nothing larger (the member detail pages carry the same file;
+`_large`/`@2x`/`static` variants all 404). 🔴 **A legislature's own roster photo is an excellent
+IDENTITY REFERENCE and a poor SOURCE.** Treat January 2027 as the moment her *identity* becomes
+checkable, not the moment a publishable portrait appears.
+
+## 🔴 A bare CDN URL is not the original — three different hiding places in one batch
+
+| host | what it serves | what it holds | factor |
+| --- | --- | --- | --- |
+| `cityofvancouver.us` | `Kim-D.-Harless-1024x1024.jpg` | `Kim-D.-Harless.jpg` 1280×1280 | 1.6× pixels |
+| `images.squarespace-cdn.com` | `?format=500w` | `?format=2500w` | 25× pixels |
+| `static.wixstatic.com` | `/v1/fill/w_341,h_286,...` | the un-transformed base path, 4854×3238 | 160× pixels |
+
+⚠ **Squarespace and Wix content-negotiate to WebP.** A sniffer that accepts only JPEG and PNG
+throws every valid image away as "not an image" — that happened here and looked like a CDN block.
+Let the decoder decide, not a magic-number allow-list.
+
+## Outcome — 22 imported, faceless legislative winners 66 → 44
+
+18 from the state Voters' Guide, plus four sourced elsewhere:
+
+| | | |
+| --- | --- | --- |
+| Kim D. Harless | LD 49 Pos 1 | City of Vancouver council portrait, 1280×1280 — LD 49 not in the state guide |
+| Diana H. Perez | LD 17 Pos 2 | City of Vancouver council portrait, 1280×1280 — supersedes her 563×677 pamphlet photo |
+| Danica Noble | LD 32 Pos 1 | `electdanica.com`, 9504×6336 **in colour** — the pamphlet photo measured chroma **exactly 0** |
+| Deken Letinich | LD 18 Pos 2 | `electdeken.com` media gallery, 2500×1667, cropped **right-flush** — he sits right of centre |
+| Randi L. Knott | LD 18 Pos 1 | ❌ not sourced, see above |
+
+⚠ **Two ship undersized and that is deliberate** — Joshua Thompson 152×183 and Alan Nolan
+293×350, mirrored **at native size, never upscaled**. Neither has a campaign site; the small file
+is what they themselves submitted to the state. Operator approved both on the contact sheet.
+
+**Licence is `unknown` for all 22.** `voter.votewa.gov` carries "© Copyright 2023", publishes no
+grant, and its photographs are **candidate-submitted** — so they are not the State's to license
+in the first place. The three campaign/city hosts publish no photo policy on the pages that carry
+these portraits. Only **federal** work is public domain; a state or city portrait is not, and
+silence is not a grant.
+
+# Wisconsin — 5 of 23 imported (CC_0440, 2026-11-16), 18 still open
+
+🔴🔴 **WISCONSIN IS THE OPPOSITE OF WASHINGTON. DO NOT GO LOOKING FOR A STATE GUIDE — THERE IS
+NOT ONE.** CC_0439 sourced 20 people from a single state publication. Wisconsin publishes **no
+state voters' pamphlet at all**, so every one of these is an individual hunt. Three things were
+measured before accepting that, because "there is no source" is the conclusion that is usually
+wrong:
+
+- **The legislature DOES publish official portraits — and every one is 150×200.**
+  `docs.legis.wisconsin.gov/<session>/legislators/{assembly|senate}/<id>.jpg`. That is not a
+  thumbnail in front of a larger file: the member detail page carries the same 150×200 image and
+  nothing else, and `_large`, `@2x` and `/static/leg_photos/` all 404. It is the published size
+  for **all 132 members**, control included.
+- **0 of the 23 currently sit.** Parsed from the chamber's own roster: 99 Assembly + 33 Senate,
+  exactly the chamber sizes. Positive control Speaker **Robin Vos** found; **Melissa Agard**
+  correctly absent (she left for Dane County Executive).
+- **Only 3 of the 23 ever served** (Binsfeld, Schutt, Severson), so the past-session rosters —
+  which go back to **2013** and no further; 2009 and 2011 honestly 404 — reach almost none.
+
+🟢 **SO THE 150×200 PORTRAIT IS AN IDENTITY REFERENCE, NOT A SOURCE.** It is too small to
+publish and it is an authoritative picture of the right person. That is what confirmed Binsfeld
+and Severson against their campaign photos, and it is the single most useful thing on that
+domain. ▶ Use it that way everywhere, including Washington (see the corrected Knott note above).
+
+## 🔴🔴 A campaign site carries other people, and the biggest photo is often not the candidate
+
+On **severson4senate.com** the highest-scoring portrait by size and aspect ratio is **a woman**,
+and a second man appears against a US flag. "Take the best image on the candidate's own site"
+ships a stranger under his name with every migration gate green. **ismaelluna.com** carries three
+other people; **krollforwi.com** is mostly **stock photography** (a stock doctor, stock hands
+holding a phone). ▶ **Lay every candidate image from one site side by side and look before
+picking**, and where an identity reference exists, put it in the same strip.
+
+## 🔴🔴 A Commons "Own work / CC BY-SA 4.0" claim can be false, and it is cheap to disprove
+
+The only one of the 23 with a Wikipedia lead image was Ellen Schutt:
+`commons.wikimedia.org/wiki/File:Ellen_Schutt_Official.jpg`, uploaded as **"Own work"** under
+**CC BY-SA 4.0** by a username. It is **byte-for-byte identical** to the Wisconsin Legislature's
+official portrait of her — same sha256, 150×200, 41,489 bytes. The uploader did not take that
+photograph and cannot license it.
+▶ **When a Commons file looks like an official portrait, fetch the official one and diff the
+bytes.** This repo already carries **184 rows** with an unverifiable CC BY-SA claim; this is
+exactly how they get there. Nothing in `CC_0440` records a Creative Commons licence.
+
+## 🔴 A Wikipedia article existing for a name is not evidence about that person
+
+17 of the 23 names resolved to an en.wikipedia article. Reading each intro showed **2 were
+somebody else entirely**: "Ben Gruber" is a **television producer**, and "Bernie Newman"
+redirects to a **disambiguation page** of Canadian politicians. The other 15 are genuinely these
+people and were used only as **leads** to campaign sites, never as a source. ⚠ They also settled
+two look-alikes in the legislature's *staff* lists — "Nicolas William **Nic** Cravillion"
+(a Senate staffer who won Senate 1) and "William Lee **Bill** Oemichen" — which a name match
+alone could not have done.
+
+⚠ **The Wikipedia/Commons sweep must be BATCHED.** A first attempt ran 46 separate requests, got
+**429-rate-limited after the 4th**, and printed "no page" for all 19 remaining people — a
+rate-limit rendered as a finding, with the controls already passed. The rewrite puts every title
+in **one** query and runs the control **before, inside and after** the batch.
+
+## 🔴 Portraits can be CSS background images, not `<img>` tags
+
+**trevorjung.com** returns zero `<img>` elements over 250px and is full of photographs — they are
+`background-image` on styled divs. An `<img>`-only scraper reports "no candidates" on a site full
+of faces. ⚠ That host also **refuses Node entirely**, pages *and* files, so it needs a
+browser-side download (same disposition as Mara Elliott in the CA batch).
+
+## Outcome — 5 imported, faceless legislative winners 44 → 39
+
+| | | | |
+| --- | --- | --- | --- |
+| Amy Binsfeld | Senate 9 | 8256×5504 | ✅ identity CONFIRMED vs her 2023 Assembly portrait |
+| Erik Severson | Senate 25 | 1443×2048 | ✅ identity CONFIRMED vs his 2013 Assembly portrait |
+| Ismael Luna | Assembly 8 | 960×1200 | ✅ solo portrait, recurs on his own site |
+| Amy Zimmerman | Assembly 13 | 2500×1407 | ✅ solo portrait, recurs on her own site |
+| John Kroll | Assembly 85 | 714×542 | ⚠ **undersized**, ships 434×543 at native, never upscaled |
+
+**Licence is `unknown` for all 5.** Every site carries only a **"Paid for by …"** campaign-finance
+disclaimer, which is required by law and grants nothing; two also assert "©". None publishes a
+press kit, media page or photo policy.
+
+### Refused, with the reason — re-read this before re-hunting them
+
+- **Ellen Schutt** (Senate 11) — every portrait on her site is an **endorsement advertisement**
+  with organisation branding across it (AFP Wisconsin, NRA, Turning Point Action). Publishing one
+  as her official portrait would be editorialising. Her legislature portrait is 150×200.
+- **Kevin Knoke** (Assembly 30) — one solo portrait exists, identity **not** confirmable: his site
+  mixes stock photography with couple photos and he has no reference image.
+- **Nic Cravillion** (Senate 1) — no solo portrait at all; a family group, a barn, a stock soldier.
+- **Trevor Jung** (Senate 21) — see the CSS-background note above. The City of Racine confirms him
+  as **Transit and Mobility Director** (by his `@cityofracine.org` address) but publishes **no
+  photograph** beside the listing.
+- **Ben Brist** (Assembly 61) — site reachable, renders no images to a non-browser client.
+
+### Open leads for the remaining 18
+
+- **Steve Wicklund** (Assembly 33) — **Village President of Union Grove**, already in our
+  `office_terms`. `uniongrove.net` is up but its board page 404s; find the right path.
+  ⚠ He replaces **Robin Vos**, whose seat Assembly 33 is.
+- **Daniel J. Bukiewicz** (Assembly 21) — appears to hold office in **Oak Creek**;
+  `oakcreekwi.gov` is CivicEngage and the obvious mayor paths 404.
+- **Becky Nichols, Kevin Krentz, Bryson Reyes, Jeremiah Fredrickson** — verified Wikipedia
+  articles exist but carry **no external links**, so no campaign site is known yet.
+- **Anthony W. Phillips, Bradley Petersen, Marty Ryan, Brandy Tollefson, Ben Gruber,
+  Bernie Newman** — no Wikipedia article and no campaign site found.
+
+# California — 5 of 12 imported (CC_0441, 2026-11-16), 7 still open
+
+All five ship at **600×750 with no upscaling at all** — the cleanest batch in this programme —
+because each was re-sourced at native size from the body or campaign that actually published it.
+
+## 🔴🔴 FIVE FALSE LICENCE CLAIMS IN ONE COHORT OF TWELVE
+
+Five of these people have a Wikipedia lead image. **Every one is tagged "Public domain" on
+Commons with a CITY GOVERNMENT named as the artist:**
+
+| file | artist as stated | reality |
+| --- | --- | --- |
+| `Andrae Gonzales-City Council (cropped).jpg` | City of Bakersfield | city work — **not PD** |
+| `Clarissa Cervantes-Square.jpg` | City of Riverside | city work — **not PD** |
+| `Scott Sakakihara, 2020s.jpg` | Union City Council | city work — **not PD** |
+| `Dom Belza, 2021.jpg` | Marysville City Council | city work — **not PD** |
+| `CityAttorneyMaraElliott.jpg` | "MEStaff", credit sandiego.gov | city work — **not PD** |
+
+Only **federal** US government work is public domain under 17 USC §105. This is the same defect
+`CC_0440` proved by byte-diff on a Wisconsin portrait, here at scale and in a different costume.
+▶ **A licence tag naming a city, county or state body as the author and claiming public domain is
+wrong on its face.** Record `unknown`. See [[feedback-commons-licence-claim-can-be-false]].
+
+🟢 **The credit lines are still the most useful thing on the page** — each named the official city
+page the photo came from, and that is where these were re-sourced. The Commons copies are mostly
+far smaller than the originals: Elliott 250×278, Belza 156×207, Cervantes 190×190.
+
+## 🔴🔴 "Chris Duncan" on Wikipedia is a baseball player who died in 2019 — and he has a photo
+
+Taking that lead image would have put a dead athlete on a California State Senate seat. Reading
+each article's **intro** is what caught it; "Charles Hughes" is likewise a **disambiguation page**,
+not our Assembly 34 winner. ▶ An article existing for a name is not evidence about that person.
+
+## 🔴 A departed official's URL serves their successor — caught live
+
+Mara Elliott left the San Diego City Attorney's office in **2024**. Commons credits her portrait to
+`sandiego.gov/cityattorney`, and that page **no longer names her**. Every official page in this
+batch was asserted to contain the person's surname before anything was taken from it, and that
+assertion is the only reason this did not become a wrong-person import. The same check cleared
+**Marysville** for Dom Belza — its live council page no longer names him either, and Commons
+credits an *archived* Marysville URL.
+
+## 🔴 A relative sharing a surname is the worst namesake case
+
+**Sabrina Cervantes** sits in Senate District 31. Our Assembly 58 winner is **Clarissa Cervantes —
+her sister.** The surname sweep over the sitting roster surfaced it; a full-name match never would.
+
+## 🔴 Portrait URLs that name a seat, not a person
+
+- **Union City** serves `ImageRepository/Document?documentId=NNNNN`. **10181 = Mayor Gary Singh,
+  10183 = Sakakihara, 10185 = Councilmember Jeff Wang** — adjacent odd numbers, so an off-by-one
+  ships the Mayor. Only the `alt` text binds an id to a person. ⚠ A **proximity** match on
+  surrounding text is not enough: the container holds the whole council list, so it marks Singh
+  and Wang as matches too. Confirmed by looking at the rendered card with his name beside it.
+- **California Assembly** serves `assembly_member_<DISTRICT>.jpg`. That URL is a **seat**, so it
+  will serve the new member the moment one is sworn in. ▶ Useful after December 2026; never cache
+  it as a person's photo.
+- **Bakersfield** serves a bare UUID with `alt="a file"` — no name anywhere. Opened and looked at.
+
+## Roster measurement
+
+**0 of the 12 currently sit**, against a COMPLETE roster — **80 Assembly + 40 Senate**, exactly
+the chamber sizes — with Rivas, McGuire and Wiener as positive controls.
+⚠ **An earlier parse of the same two pages also returned "0 of 12" — with a FAILED control**
+(Speaker Rivas missing). That was a broken regex, not a finding. The number only means something
+because the control now passes. The two chambers need **different parsers**: the Assembly uses
+`li.members-list__member` with `data-name="Last, First"`; the Senate uses
+`div.page-members__member` whose `data-name` is **surname only**, with the full name recoverable
+from the double-encoded portrait filename (`MCGUIRE%252C%2520MIKE%2520%2528D-02%2529`).
+
+## 🟢 Recovering a file from a host that refuses Node, without base64 through context
+
+`maraelliott.com` refuses Node entirely — pages *and* files, at the TLS handshake. Instead of
+piping base64 out of the browser:
+
+1. `browser_resize` to a viewport **larger than the image** (2100×1450 for a 2000×1334 file),
+2. navigate directly to the image URL so Chrome renders it at natural size,
+3. screenshot to disk, then `sharp(...).trim()`.
+
+The trimmed capture came back at **exactly 2000×1334** — the file's own resolution, so there is
+**no resampling**. ⚠ It is a re-encode of the original pixels, not the original bytes; say so
+rather than claiming a byte-faithful mirror. Same trick applies to `trevorjung.com` (WA) and any
+other TLS-fingerprint refusal.
+
+## Outcome — 5 imported, faceless legislative winners 39 → 34
+
+| | | | |
+| --- | --- | --- | --- |
+| Andrae Gonzales | Assembly 35 | 1500×1500 | City of Bakersfield page that names him |
+| Ayanna Davis | Assembly 65 | 6000×4000 → 1920×2400 | tightened from a classroom photo to head-and-shoulders |
+| Paula Swift | Assembly 70 | 2048×2239 | campaign studio headshot |
+| Scott Sakakihara | Senate 10 | 2043×2600 | Union City council portrait, bound by alt text |
+| Mara Elliott | Senate 40 | 2000×1334 | ⚠ **candid**, not a studio portrait; alone and face-forward |
+
+**Licence `unknown` for all 5.** bakersfieldcity.us publishes no photo policy on the portrait's
+page; unioncityca.gov refuses non-browser clients and grants nothing on the rendered page; the
+three campaign sites carry only a "Paid for by …" disclaimer, which is required by law.
+
+### Still open — 7, with the reason
+
+- **Chris Duncan** (Senate 36) — no source at all. Not sitting; the Wikipedia article of that name
+  is the late baseball player.
+- **Clarissa Cervantes** (Assembly 58) — Riverside publishes **190×190** for her while other
+  councilmembers get 477×478. ⚠ Do **not** reach for Sabrina Cervantes' portrait.
+- **Dom Belza** (Assembly 3) — no live official source; his campaign site's highest-scoring
+  portrait is **Kevin Kiley's**, an endorser, and the rest are family photographs.
+- **Charles Hughes** (Assembly 34) — a trustee of the **Antelope Valley Joint Union High School
+  District** (already in our `office_terms`), but `avhsd.org` would not resolve. Retry.
+- **Brian Goldsmith** (Senate 24) — `briangoldsmith.com` reachable, renders no images to a
+  non-browser client. Try the viewport-screenshot route above.
+- **Leila Namvar** (Assembly 47) — verified article, no campaign site among its external links.
+- **Ida S. Obeso-Martinez** (Assembly 36) — no article, no campaign site found yet.
+
+▶ **After the new members are sworn in (early December 2026)**, both chambers will carry official
+portraits for these winners. **Measured 2026-11-16, and the two chambers differ:**
+
+| chamber | URL | native | verdict |
+| --- | --- | --- | --- |
+| Assembly | `webapi.assembly.ca.gov/district-media/assets/members/assembly_member_<district>.jpg` | **500×500** | a 4:5 crop is 400×500 → **1.5× upscale**, below our floor |
+| Senate | `senate.ca.gov/sites/senate.ca.gov/files/media/<NAME (D-NN)>.jpg` | **919×1286** | ✅ **above the floor, usable** |
+
+🔴 **The Senate's `styles/large/` path is a Drupal resize that serves 343×480** — strip the
+`/styles/<name>/public/` segment and the original is 919×1286, **7.2× the pixels**.
+⚠ So swearing-in solves the **Senate** winners but not the Assembly ones: California publishes
+better portraits than Washington's or Wisconsin's 150×200, but its Assembly still falls short of
+600×750. Correcting an earlier draft of this line, which claimed the Assembly portraits were
+full-size without measuring them.
+
+# Colorado, Texas and Utah — 3 of 5 imported (CC_0443, 2026-11-16)
+
+## 🔴🔴 The twin: TX-22, and why the picture cannot settle it
+
+**Trever Nehls** (TX-22) is the **identical twin** of the sitting member **Troy Nehls**. Both are
+Nehls, both served as US Army officers, both have en.wikipedia articles **with photographs**, and
+Troy held the very seat Trever just won — so the two men are attached to the **same district**.
+
+- Looking at the picture does not settle it. **Neither does the uniform**: the name tape in the
+  photograph reads **NEHLS**, which is true of both brothers.
+- 🟢 **It was settled at the source.** The DoD caption for the original DVIDS image
+  (`dvidshub.net/image/6139335`) reads *"Brig. Gen. Howard Geck … hands **Col. Trever Nehls**,
+  civil affairs officer in charge, the 'Distinguished Member' plaque"*. It names Trever and
+  **never mentions Troy**. Both brothers' Commons files were fetched and compared, not one taken
+  on trust.
+- ⚠ **Troy's congressional portrait IS legitimately public domain** and is a clean 1536×1920 —
+  i.e. exactly the high-quality, correctly-licensed file that would have been most tempting to
+  take. **A good licence is not evidence of the right person.**
+
+## 🟢 The first genuinely public-domain photograph in this programme
+
+Across `CC_0383`, `CC_0438`–`CC_0442` **every** licence came back `unknown`, and two batches found
+Commons tags claiming "public domain" for **city** work, which is wrong. Trever Nehls' portrait is
+different in kind: taken by **Spc. Dakota Vanidestine, a US Army photographer**, published through
+DVIDS — **federal** work, so 17 USC §105 genuinely applies.
+
+▶ `CC_0443` carries a **gate 7** asserting the split is exactly 2 `unknown` + 1 `public_domain`,
+so a later edit cannot spread the claim. ⚠ Watch that gate fail properly: a first tamper appended
+`-- TAMPER_E` after the closing paren, **commented out the VALUES comma**, and produced a syntax
+error — the run failed without ever reaching gate 7, while the marker check still passed. **A
+tamper that breaks the SQL tests nothing and looks like a pass.**
+
+## Colorado — the same site serves wildly different sizes
+
+`leg.colorado.gov` serves Rails **active_storage originals**, so what a member supplied is what you
+get: **Carver 2215×3322** and **Vigil 314×432** from the same site, same template.
+▶ Do not generalise a chamber's portrait size from one member. Measure each.
+
+**Steph Vigil** was sourced from her campaign at 3628×3628 and her identity **confirmed against
+her own 314×432 official portrait** — too small to publish, authoritative about who she is. That
+is the identity-reference pattern from `CC_0440` and `CC_0441`, used a third time.
+
+## 🔴 Utah blocks us twice over — both seats still open
+
+- `le.utah.gov` answers **HTTP 200 with 247 bytes reading "Request Rejected"** — a refusal wearing
+  a success code. Judge the body, never the status.
+- `house.utleg.gov/rep/<ID>/` returns a page whose `<title>` says "Representative Page" and whose
+  **rendered body carries no name and no images**. Sotelo's and Howells' pages differ by **a single
+  byte** because they are the same empty template. ⚠ A raw-HTML surname match passes on these
+  pages (the id is echoed in a script blob) — only the **rendered text** shows the truth.
+- **Sergio Sotelo** (House 38, independent) — no campaign site resolves.
+- **Drew Howells** (House 39) — `howellsforutah.com` serves a **615-byte stub**, `drewhowells.com`
+  **114 bytes**.
+
+▶ Utah seats its legislature in January. Re-check then — but **measure the portrait size before
+planning around it**, because four states so far publish below our floor.
+
+## Outcome — faceless legislative winners 32 → 29
+
+| | | | |
+| --- | --- | --- | --- |
+| Terri Carver | Colorado Senate 9 | 2215×3322 | `unknown` — leg.colorado.gov page that names her |
+| Steph Vigil | Colorado House 16 | 3628×3628 | `unknown` — campaign, identity confirmed vs her official portrait |
+| Trever Nehls | Texas CD 22 | 1081×1442 | 🟢 `public_domain` — US Army / DVIDS |
+| Sergio Sotelo | Utah House 38 | ❌ | no source |
+| Drew Howells | Utah House 39 | ❌ | no source |
