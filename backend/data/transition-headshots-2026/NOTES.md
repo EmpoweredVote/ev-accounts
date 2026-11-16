@@ -577,9 +577,16 @@ record.** Check the county before concluding a winner published nothing.
 only an embedded **Instagram** feed (refused: social-media licence) and one two-person bookshop
 candid in which she is in profile looking down. The county pamphlet photo is greyscale and
 undersized. ▶ **Lead:** she is a Brush Prairie horse-ranch owner and a retired government-affairs
-professional, holding no current elected office, so there is no official-body route. Re-check
-`leg.wa.gov/memberthumbnail/<id>.jpg` after she is sworn in **January 2027** — that is the
-cleanest future source for her and for anyone else still missing.
+professional, holding no current elected office, so there is no official-body route.
+
+⚠ **CORRECTED 2026-11-16 (was: "re-check `leg.wa.gov/memberthumbnail/<id>.jpg` after she is
+sworn in January 2027 — the cleanest future source").** That endpoint serves **150×200**, which
+is a **2.85× upscale** to reach our 600×750 floor, so swearing-in does NOT solve her. Wisconsin
+proved the same thing from the other direction: `docs.legis.wisconsin.gov` publishes 150×200 for
+**all 132** of its members and holds nothing larger (the member detail pages carry the same file;
+`_large`/`@2x`/`static` variants all 404). 🔴 **A legislature's own roster photo is an excellent
+IDENTITY REFERENCE and a poor SOURCE.** Treat January 2027 as the moment her *identity* becomes
+checkable, not the moment a publishable portrait appears.
 
 ## 🔴 A bare CDN URL is not the original — three different hiding places in one batch
 
@@ -614,3 +621,108 @@ grant, and its photographs are **candidate-submitted** — so they are not the S
 in the first place. The three campaign/city hosts publish no photo policy on the pages that carry
 these portraits. Only **federal** work is public domain; a state or city portrait is not, and
 silence is not a grant.
+
+# Wisconsin — 5 of 23 imported (CC_0440, 2026-11-16), 18 still open
+
+🔴🔴 **WISCONSIN IS THE OPPOSITE OF WASHINGTON. DO NOT GO LOOKING FOR A STATE GUIDE — THERE IS
+NOT ONE.** CC_0439 sourced 20 people from a single state publication. Wisconsin publishes **no
+state voters' pamphlet at all**, so every one of these is an individual hunt. Three things were
+measured before accepting that, because "there is no source" is the conclusion that is usually
+wrong:
+
+- **The legislature DOES publish official portraits — and every one is 150×200.**
+  `docs.legis.wisconsin.gov/<session>/legislators/{assembly|senate}/<id>.jpg`. That is not a
+  thumbnail in front of a larger file: the member detail page carries the same 150×200 image and
+  nothing else, and `_large`, `@2x` and `/static/leg_photos/` all 404. It is the published size
+  for **all 132 members**, control included.
+- **0 of the 23 currently sit.** Parsed from the chamber's own roster: 99 Assembly + 33 Senate,
+  exactly the chamber sizes. Positive control Speaker **Robin Vos** found; **Melissa Agard**
+  correctly absent (she left for Dane County Executive).
+- **Only 3 of the 23 ever served** (Binsfeld, Schutt, Severson), so the past-session rosters —
+  which go back to **2013** and no further; 2009 and 2011 honestly 404 — reach almost none.
+
+🟢 **SO THE 150×200 PORTRAIT IS AN IDENTITY REFERENCE, NOT A SOURCE.** It is too small to
+publish and it is an authoritative picture of the right person. That is what confirmed Binsfeld
+and Severson against their campaign photos, and it is the single most useful thing on that
+domain. ▶ Use it that way everywhere, including Washington (see the corrected Knott note above).
+
+## 🔴🔴 A campaign site carries other people, and the biggest photo is often not the candidate
+
+On **severson4senate.com** the highest-scoring portrait by size and aspect ratio is **a woman**,
+and a second man appears against a US flag. "Take the best image on the candidate's own site"
+ships a stranger under his name with every migration gate green. **ismaelluna.com** carries three
+other people; **krollforwi.com** is mostly **stock photography** (a stock doctor, stock hands
+holding a phone). ▶ **Lay every candidate image from one site side by side and look before
+picking**, and where an identity reference exists, put it in the same strip.
+
+## 🔴🔴 A Commons "Own work / CC BY-SA 4.0" claim can be false, and it is cheap to disprove
+
+The only one of the 23 with a Wikipedia lead image was Ellen Schutt:
+`commons.wikimedia.org/wiki/File:Ellen_Schutt_Official.jpg`, uploaded as **"Own work"** under
+**CC BY-SA 4.0** by a username. It is **byte-for-byte identical** to the Wisconsin Legislature's
+official portrait of her — same sha256, 150×200, 41,489 bytes. The uploader did not take that
+photograph and cannot license it.
+▶ **When a Commons file looks like an official portrait, fetch the official one and diff the
+bytes.** This repo already carries **184 rows** with an unverifiable CC BY-SA claim; this is
+exactly how they get there. Nothing in `CC_0440` records a Creative Commons licence.
+
+## 🔴 A Wikipedia article existing for a name is not evidence about that person
+
+17 of the 23 names resolved to an en.wikipedia article. Reading each intro showed **2 were
+somebody else entirely**: "Ben Gruber" is a **television producer**, and "Bernie Newman"
+redirects to a **disambiguation page** of Canadian politicians. The other 15 are genuinely these
+people and were used only as **leads** to campaign sites, never as a source. ⚠ They also settled
+two look-alikes in the legislature's *staff* lists — "Nicolas William **Nic** Cravillion"
+(a Senate staffer who won Senate 1) and "William Lee **Bill** Oemichen" — which a name match
+alone could not have done.
+
+⚠ **The Wikipedia/Commons sweep must be BATCHED.** A first attempt ran 46 separate requests, got
+**429-rate-limited after the 4th**, and printed "no page" for all 19 remaining people — a
+rate-limit rendered as a finding, with the controls already passed. The rewrite puts every title
+in **one** query and runs the control **before, inside and after** the batch.
+
+## 🔴 Portraits can be CSS background images, not `<img>` tags
+
+**trevorjung.com** returns zero `<img>` elements over 250px and is full of photographs — they are
+`background-image` on styled divs. An `<img>`-only scraper reports "no candidates" on a site full
+of faces. ⚠ That host also **refuses Node entirely**, pages *and* files, so it needs a
+browser-side download (same disposition as Mara Elliott in the CA batch).
+
+## Outcome — 5 imported, faceless legislative winners 44 → 39
+
+| | | | |
+| --- | --- | --- | --- |
+| Amy Binsfeld | Senate 9 | 8256×5504 | ✅ identity CONFIRMED vs her 2023 Assembly portrait |
+| Erik Severson | Senate 25 | 1443×2048 | ✅ identity CONFIRMED vs his 2013 Assembly portrait |
+| Ismael Luna | Assembly 8 | 960×1200 | ✅ solo portrait, recurs on his own site |
+| Amy Zimmerman | Assembly 13 | 2500×1407 | ✅ solo portrait, recurs on her own site |
+| John Kroll | Assembly 85 | 714×542 | ⚠ **undersized**, ships 434×543 at native, never upscaled |
+
+**Licence is `unknown` for all 5.** Every site carries only a **"Paid for by …"** campaign-finance
+disclaimer, which is required by law and grants nothing; two also assert "©". None publishes a
+press kit, media page or photo policy.
+
+### Refused, with the reason — re-read this before re-hunting them
+
+- **Ellen Schutt** (Senate 11) — every portrait on her site is an **endorsement advertisement**
+  with organisation branding across it (AFP Wisconsin, NRA, Turning Point Action). Publishing one
+  as her official portrait would be editorialising. Her legislature portrait is 150×200.
+- **Kevin Knoke** (Assembly 30) — one solo portrait exists, identity **not** confirmable: his site
+  mixes stock photography with couple photos and he has no reference image.
+- **Nic Cravillion** (Senate 1) — no solo portrait at all; a family group, a barn, a stock soldier.
+- **Trevor Jung** (Senate 21) — see the CSS-background note above. The City of Racine confirms him
+  as **Transit and Mobility Director** (by his `@cityofracine.org` address) but publishes **no
+  photograph** beside the listing.
+- **Ben Brist** (Assembly 61) — site reachable, renders no images to a non-browser client.
+
+### Open leads for the remaining 18
+
+- **Steve Wicklund** (Assembly 33) — **Village President of Union Grove**, already in our
+  `office_terms`. `uniongrove.net` is up but its board page 404s; find the right path.
+  ⚠ He replaces **Robin Vos**, whose seat Assembly 33 is.
+- **Daniel J. Bukiewicz** (Assembly 21) — appears to hold office in **Oak Creek**;
+  `oakcreekwi.gov` is CivicEngage and the obvious mayor paths 404.
+- **Becky Nichols, Kevin Krentz, Bryson Reyes, Jeremiah Fredrickson** — verified Wikipedia
+  articles exist but carry **no external links**, so no campaign site is known yet.
+- **Anthony W. Phillips, Bradley Petersen, Marty Ryan, Brandy Tollefson, Ben Gruber,
+  Bernie Newman** — no Wikipedia article and no campaign site found.
