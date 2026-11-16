@@ -45,7 +45,7 @@ const USAGE = 'record-script.ts plan --config <json> --rulings <md> --roster <ts
 
 interface Summary {
   unit: string; name: string; people: number; no_record: number; script: number; opus: number;
-  script_seats: Record<string, number>; script_blanks: number; lanes: Record<string, number>;
+  script_seats: Record<string, number>; script_blanks: number; lanes: Record<string, number>; by_new_rule?: { named: number; sponsor: number };
   text_refused: number; check_ids: string[]; seed: string; planned_at: string;
   check?: { compared: number; agreed: number; passed: boolean; at: string; differences: string[] };
 }
@@ -68,7 +68,8 @@ function plan(flags: Map<string, string[]>): number {
   if (off.length) throw new Error(`not on any roster: ${off.join(', ')}`);
   const table = (JSON.parse(readFileSync(one('bill-table'), 'utf8')) as { bills: Record<string, RuleBillRow> }).bills;
   const prefix = unit === 'federal' ? 'US-' : `${unit.replace(/^state:/, '').toUpperCase()}-`;
-  const section = rulingsNameText(unitSections(readFileSync(one('rulings'), 'utf8'), unit), table, prefix);
+  const rawSection = unitSections(readFileSync(one('rulings'), 'utf8'), unit);
+  const section = rulingsNameText(rawSection, table, prefix);
   const seed = one('seed', `${name}|${config.topic_key}|${config.season}`);
   const index = instrumentIndex(store);
   const billCache = new Map<string, RuleBill | undefined>();
@@ -100,6 +101,9 @@ function plan(flags: Map<string, string[]>): number {
   const seats = new Map<string, number>();
   const laneCount: Record<string, number> = {};
   let textRefused = 0;
+  // People the script codes only because of the two rules of 2026-11-16 (a name beside a settled bill; a sponsorship
+  // that supports no rung). The standing check draws from them first: they are the newest claim the script makes.
+  const byNewRule = { named: new Set<string>(), sponsor: new Set<string>() };
   const now = new Date();
   for (const pid of listed) {
     const row = rosters.get(pid)!;
@@ -133,13 +137,15 @@ function plan(flags: Map<string, string[]>): number {
     }
     if (!code) { textRefused++; toOpus(['text-check'], `: ${lastProblems[0]}`); continue; }
     writeFileSync(join(holding, `${pid}.json`), JSON.stringify(code, null, 2) + '\n');
+    if (namedInRulings(row.full_name, rawSection)) byNewRule.named.add(pid);
+    if (res.decision.sponsored?.length) byNewRule.sponsor.add(pid);
     scriptPeople.push({ row, pf });
     if (code.outcome === 'seated') seats.set(pid, code.value!);
-    rows.push({ pid, name: row.full_name, by: 'script', result: code.outcome === 'seated' ? `seated ${code.value}` : 'doesnt-fit nay-only', why: 'plain case' });
+    rows.push({ pid, name: row.full_name, by: 'script', result: code.outcome === 'seated' ? `seated ${code.value}` : `doesnt-fit ${code.blank_class ?? ''}`.trim(), why: 'plain case' });
   }
   const script = rows.filter((r) => r.by === 'script').map((r) => r.pid);
   const opus = rows.filter((r) => r.by === 'opus').map((r) => r.pid);
-  const check = seededSample(script, Math.min(nCheck, script.length), seed, new Set(script.filter((p) => skipRungs.has(seats.get(p) ?? -1))));
+  const check = seededSample(script, Math.min(nCheck, script.length), seed, new Set(script.filter((p) => skipRungs.has(seats.get(p) ?? -1) || byNewRule.named.has(p) || byNewRule.sponsor.has(p))));
   const p = (f: string) => join(out, `${name}-${f}`);
   writeFileSync(p('lanes.tsv'), ['politician_id\tfull_name\tcoded_by\tscript_result\twhy', ...rows.map((r) => `${r.pid}\t${r.name}\t${r.by}\t${r.result}\t${r.why}`)].join('\n') + '\n');
   writeFileSync(p('opus-ids.txt'), opus.join('\n') + (opus.length ? '\n' : ''));
@@ -152,13 +158,14 @@ function plan(flags: Map<string, string[]>): number {
   for (const v of seats.values()) bySeat[String(v)] = (bySeat[String(v)] ?? 0) + 1;
   const summary: Summary = {
     unit, name, people: listed.length, no_record: rows.filter((r) => r.by === 'none').length, script: script.length, opus: opus.length,
-    script_seats: bySeat, script_blanks: script.length - seats.size, lanes: laneCount, text_refused: textRefused, check_ids: check, seed, planned_at: now.toISOString(),
+    script_seats: bySeat, script_blanks: script.length - seats.size, lanes: laneCount, by_new_rule: { named: byNewRule.named.size, sponsor: byNewRule.sponsor.size }, text_refused: textRefused, check_ids: check, seed, planned_at: now.toISOString(),
   };
   writeFileSync(p('script-summary.json'), JSON.stringify(summary, null, 1) + '\n');
   const withRecord = script.length + opus.length;
   console.log(`${unit}: ${listed.length} people, ${summary.no_record} with no record (search list, as before)`);
   console.log(`record pass: ${withRecord} people -> script ${script.length} (${withRecord ? Math.round((100 * script.length) / withRecord) : 0}%), Opus ${opus.length}`);
-  console.log(`  script seats by rung: ${JSON.stringify(bySeat)}; No-votes-only blanks: ${summary.script_blanks}`);
+  console.log(`  script seats by rung: ${JSON.stringify(bySeat)}; blanks: ${summary.script_blanks}`);
+  console.log(`  coded by the 2026-11-16 rules: ${byNewRule.named.size} named beside a settled bill, ${byNewRule.sponsor.size} with a sponsorship that supports no rung`);
   for (const [l, n] of Object.entries(laneCount).sort((a, b) => b[1] - a[1])) console.log(`  to Opus, ${n}: ${l === 'text-check' ? "the script's text did not pass the coding checks" : LANE_WORDS[l as Lane]}`);
   console.log(`standing check: ${check.length} of the script's people, seed "${seed}" (${p('check-ids.txt')})`);
   console.log(`next: coder-inputs.ts --record-only --bill-table … --ids ${p('coder-ids.txt')} (Opus lane ${opus.length} + check ${check.length}), split-codes.ts, then record-script.ts adopt`);

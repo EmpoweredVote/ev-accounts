@@ -28,6 +28,7 @@ const input = (findings: CoderFinding[], over: Partial<RuleInput> = {}): RuleInp
   office: 'State Representative', named: false, ...over,
 });
 
+const rungText = (r: number) => ({ 2: 'Ban a type of firearm or magazine.', 3: 'Add limits on buying a gun.', 4: 'Make carrying a gun easier.', 5: 'Repeal permit laws.' } as Record<number, string>)[r];
 describe('decideRecord: what the script may decide', () => {
   it('seats at the furthest rung on one side', () => {
     const r = decideRecord(input([vote('XX-HB-3-2025', 'yea', '2025-03-01'), vote('XX-HB-2-2025', 'yea', '2025-04-01'), vote('XX-HB-4-2025', 'nay', '2025-05-01')]));
@@ -59,8 +60,36 @@ describe('decideRecord: what it hands to Opus', () => {
     expect(lanes([vote('XX-HB-44-2021', 'nay', '2021-05-01'), vote('XX-HB-4-2025', 'yea', '2025-05-01')]).lanes).toEqual([]);
     expect(lanes([vote('XX-HB-3-2025', 'yea', '2025-03-01'), vote('XX-HB-4-2025', 'nay', '2025-05-01')]).lanes).toEqual([]);
   });
-  it('no usable rung act but a sponsorship on file', () => {
-    expect(lanes([sponsor('XX-HB-9-2025'), vote('XX-HB-4-2025', 'nay', '2025-05-01')]).lanes).toEqual(['sponsor-no-rung']);
+  it('a sponsorship that supports no rung does not stop a plain blank (ruling 2026-11-16)', () => {
+    // No votes on one side, plus a sponsorship of a no-rung bill: still a No-votes-only blank, and the sponsorship is said
+    const r = decideRecord(input([sponsor('XX-HB-9-2025'), vote('XX-HB-4-2025', 'nay', '2025-05-01')]));
+    expect(r.lanes).toEqual([]);
+    expect(r.decision).toMatchObject({ outcome: 'doesnt-fit', naySide: 1 });
+    expect(r.decision!.sponsored!.map((a) => a.bill)).toEqual(['XX-HB-9-2025']);
+    const w = wordsFor(r.decision!, table, rungText)!;
+    expect(w.blank_class).toBe('nay-only');
+    expect(w.reasoning).toContain('Also sponsored HB 9 (2025): the bill table gives HB 9 (2025) no position on the ladder.');
+    // sponsorships only: a blank of its own kind, citing the sponsorships, with the table's reason
+    const only = decideRecord(input([sponsor('XX-HB-9-2025')]));
+    expect(only.lanes).toEqual([]);
+    expect(only.decision).toMatchObject({ outcome: 'doesnt-fit', sponsorOnly: true });
+    const wo = wordsFor(only.decision!, table, rungText)!;
+    expect(wo).toMatchObject({ blank_class: 'wording' });
+    expect(wo.tags).toBeUndefined();
+    expect(wo.finding_ids).toHaveLength(1);
+    expect(wo.reasoning).toContain('Sponsored HB 9 (2025)');
+    expect(wo.reasoning).toContain('On HB 9 (2025): A dealer rule.');
+    expect(wo.open_note).toContain('None of these supports a position');
+    // a sponsorship of a rung bill that is gated (near-unanimous) is said as gated
+    const gatedBills = { ...bills, 'XX-HB-2-2025': { inStore: true, multi: false, tallies: [{ yes: 90, no: 1 }] } };
+    const g = decideRecord(input([sponsor('XX-HB-2-2025')], { bill: (id) => gatedBills[id] }));
+    expect(g.decision).toMatchObject({ outcome: 'doesnt-fit', sponsorOnly: true });
+    expect(wordsFor(g.decision!, table, rungText)!.reasoning).toContain('HB 2 (2025) is a near-unanimous or multi-subject bill');
+    // a usable sponsorship still seats; No votes on both sides beside a sponsorship still go to Opus
+    expect(decideRecord(input([sponsor('XX-HB-5-2025'), sponsor('XX-HB-9-2025')])).decision).toMatchObject({ outcome: 'seated', value: 5 });
+    expect(lanes([sponsor('XX-HB-9-2025'), vote('XX-HB-4-2025', 'nay', '2025-05-01'), vote('XX-HB-3-2025', 'nay', '2025-05-02')]).lanes).toEqual(['sponsor-no-rung']);
+    // any other lane still wins
+    expect(lanes([sponsor('XX-HB-9-2025')], { named: true }).lanes).toEqual(['named-in-rulings']);
   });
   it('a person the rulings name, a seat outside the legislature, a bill of another legislature', () => {
     const fs = [vote('XX-HB-2-2025', 'yea', '2025-04-01')];
@@ -109,7 +138,6 @@ describe('sponsorGate', () => {
 });
 
 describe('wordsFor', () => {
-  const rungText = (r: number) => ({ 2: 'Ban a type of firearm or magazine.', 3: 'Add limits on buying a gun.', 4: 'Make carrying a gun easier.', 5: 'Repeal permit laws.' } as Record<number, string>)[r];
   it('quotes the deciding words, names bills as voters would, and cites the deciding act', () => {
     const fs = [vote('XX-HB-2-2025', 'yea', '2025-04-01'), vote('XX-HB-3-2025', 'yea', '2025-03-01')];
     const w = wordsFor(decideRecord(input(fs)).decision!, table, rungText)!;
@@ -192,6 +220,15 @@ describe('rulings helpers', () => {
     const about = '- Two-sided: Ann Able (XX-HB-2-2025) keeps a rung 2 sponsorship. People: Bob Both.';
     expect(namedInRulings('Ann Able', text(about))).toBe(true);
     expect(namedInRulings('Bob Both', text(about))).toBe(false);
+    // Utah, 2026-11-15: a stop-1 answer names the sponsor in a bracket, or in a "Sponsors:" sentence. Those go too.
+    const ut = '- Q1: a ban is rung 3: XX-HB-2-2025 (sponsor Ann Able) and XX-HB-3-2025 (sponsors Bob Both, Cy Coe). Sponsors: Dee J. Dow, Eve Eck.';
+    for (const n of ['Ann Able', 'Bob Both', 'Cy Coe', 'Dee J. Dow', 'Eve Eck']) expect(namedInRulings(n, text(ut))).toBe(false);
+    expect(text(ut)).toContain('XX-HB-3-2025');
+    // …but not beside a flagged bill, not when the bracket holds the bill, and not when the name is the subject
+    expect(namedInRulings('Ann Able', text('- Q3: XX-HB-9-2025 (sponsor Ann Able) is rung 4.'))).toBe(true);
+    expect(namedInRulings('Ann Able', text('- Q7: Ann Able voted on the earlier text of XX-HB-2-2025 (rung 3 then).'))).toBe(true);
+    expect(namedInRulings('Ann Able', text('- Stubs: the stub bills stay unread (Ann Able).'))).toBe(true);
+    expect(namedInRulings('Ann Able', text('- Q8: the earlier text counts as rung 3 (Ann Able on XX-HB-2-2025).'))).toBe(true);
     // a bill the table lacks, a bill still flagged, and a list with no bill before it: the list stays
     expect(namedInRulings('Ann Able', text('- Q2: XX-HB-2-2025 and XX-HB-77-2025 are rung 3. People: Ann Able.'))).toBe(true);
     expect(namedInRulings('Ann Able', text('- Q3: XX-HB-9-2025 is rung 4. People: Ann Able.'))).toBe(true);

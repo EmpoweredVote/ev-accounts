@@ -69,7 +69,7 @@ export type Lane =
 export const LANE_WORDS: Record<Lane, string> = {
   'both-sides': 'Yes acts on both sides of the ladder (the licence rule or a two-sided record: a judgment)',
   'later-no': 'a later No on a bill at the same rung as the seat (a later vote may replace the Yes)',
-  'sponsor-no-rung': 'no usable rung act, but sponsorships on file',
+  'sponsor-no-rung': 'no usable rung act, sponsorships on file, and No votes on both sides of the ladder',
   'named-in-rulings': "the state's rulings name this person",
   'per-vote-note': 'a vote the rulings read differently from the bill table, and it could change the result',
   'other-office': 'the roster office is not a legislative seat, so the record may come from another office',
@@ -81,7 +81,7 @@ export const LANE_WORDS: Record<Lane, string> = {
   'no-record': 'no record finding on file',
 };
 
-export interface Act { id: string; bill: string; act: string; date: string; rung: number | null; tally?: string }
+export interface Act { id: string; bill: string; act: string; date: string; rung: number | null; tally?: string; gate?: string }
 
 export interface Decision {
   outcome: 'seated' | 'doesnt-fit';
@@ -95,6 +95,13 @@ export interface Decision {
   gatedYes: number;
   /** Blank only: the rungs of the bills voted against. */
   naySide?: 0 | 1;
+  /**
+   * Blank only: every sponsorship on file, none of which is a usable rung act (the bill has no rung, or the
+   * sponsorship is gated). With counted No votes on one side the blank is still No-votes-only; with none it is a
+   * sponsorships-only blank (`sponsorOnly`).
+   */
+  sponsored?: Act[];
+  sponsorOnly?: boolean;
 }
 
 export interface RuleResult { lanes: Lane[]; decision?: Decision }
@@ -118,7 +125,7 @@ function core(input: RuleInput, table: Readonly<Record<string, RuleBillRow>>): R
   const lanes = new Set<Lane>();
   const sideOf = (r: number) => (input.sides[0].includes(r) ? 0 : input.sides[1].includes(r) ? 1 : undefined);
   const yes: Act[] = []; const nays: Act[] = [];
-  let sponsorships = 0; let gatedYes = 0;
+  let sponsorships = 0; let gatedYes = 0; const sponsored: Act[] = [];
   const records = input.findings.filter((f) => f.kind === 'record');
   if (!records.length) return { lanes: ['no-record'] };
   if (!LEGISLATIVE_OFFICE.test(input.office)) lanes.add('other-office');
@@ -133,6 +140,7 @@ function core(input: RuleInput, table: Readonly<Record<string, RuleBillRow>>): R
     const isSponsor = SPONSOR.has(f.act);
     if (isSponsor) sponsorships++;
     const gate = isSponsor ? sponsorGate(bill) : f.gate ?? 'none';
+    if (isSponsor) sponsored.push({ id: f.id, bill: id, act: f.act, date: f.date, rung: row.rung, gate });
     if (gate !== 'none') { if (YES.has(f.act)) gatedYes++; continue; }
     const act: Act = { id: f.id, bill: id, act: f.act, date: f.date, rung: row.rung, tally: tallyOf(f) };
     if (f.act === 'nay') nays.push(act);
@@ -152,13 +160,19 @@ function core(input: RuleInput, table: Readonly<Record<string, RuleBillRow>>): R
     // A No on a bill at the seat's rung, later than every Yes there, may replace the Yes (Missouri, transit carry).
     if (nays.some((n) => n.rung === value && n.date > deciding[0].date)) lanes.add('later-no');
     decision = { outcome: 'seated', value, deciding, sameSide: yes.filter((a) => a.rung !== value).sort(newest), nays: nays.sort(newest), gatedYes };
-  } else if (sponsorships) lanes.add('sponsor-no-rung');
-  else {
+  } else {
+    // No usable Yes act. A sponsorship here is on a bill the table gives no rung, or it is gated: it supports no
+    // position, so it cannot change the result (ruling 2026-11-16; replay: 86 of 86 such people were coded
+    // doesn't-fit by a blind Opus coder, across UT, WA, FL, KY, SC, CA and MO). The script writes the blank when
+    // the rest of the record is plain: No votes on one side, or nothing else at all.
     const rungNays = nays.filter((n) => n.rung !== null && sideOf(n.rung) !== undefined);
     const sidesHit = new Set(rungNays.map((n) => sideOf(n.rung!)));
+    const extra = sponsored.length ? { sponsored: sponsored.sort(newest) } : {};
     if (rungNays.length && sidesHit.size === 1) {
-      decision = { outcome: 'doesnt-fit', deciding: rungNays.sort(newest), sameSide: [], nays: nays.sort(newest), gatedYes, naySide: [...sidesHit][0] as 0 | 1 };
-    } else lanes.add('blank-not-plain');
+      decision = { outcome: 'doesnt-fit', deciding: rungNays.sort(newest), sameSide: [], nays: nays.sort(newest), gatedYes, naySide: [...sidesHit][0] as 0 | 1, ...extra };
+    } else if (sponsorships && !rungNays.length) {
+      decision = { outcome: 'doesnt-fit', deciding: [], sameSide: [], nays: nays.sort(newest), gatedYes, ...extra, sponsorOnly: true };
+    } else lanes.add(sponsorships ? 'sponsor-no-rung' : 'blank-not-plain');
   }
   return { lanes: [...lanes], decision };
 }
@@ -201,7 +215,7 @@ const list = (names: string[], max = 4) => {
 const sentence = (s: string) => { const t = s.trim(); return /[.!?]$/.test(t) ? t : `${t}.`; };
 const actWords = (a: Act) => (SPONSOR.has(a.act) ? 'Sponsored' : 'Voted Yes on');
 
-export interface CodeWords { reasoning: string; open_note?: string; finding_ids: string[]; blank_class?: 'nay-only'; tags?: string[]; shows_side?: boolean }
+export interface CodeWords { reasoning: string; open_note?: string; finding_ids: string[]; blank_class?: 'nay-only' | 'wording'; tags?: string[]; shows_side?: boolean }
 
 /**
  * The reasoning (and, for a blank, the open note) for a decision, written from the bill table's deciding words
@@ -231,6 +245,26 @@ export function wordsFor(d: Decision, table: Readonly<Record<string, RuleBillRow
     if (d.gatedYes) parts.push(`${d.gatedYes} Yes ${d.gatedYes === 1 ? 'act' : 'acts'} on near-unanimous or multi-subject bills ${d.gatedYes === 1 ? 'is' : 'are'} not counted.`);
     return { reasoning: parts.join(' '), finding_ids: [...new Set(cited.map((a) => a.id))] };
   }
+  // What the sponsorships on file are, and why none of them counts: said in both kinds of blank.
+  const sp = (d.sponsored ?? []).filter((a) => billName(a.bill));
+  const noRung = sp.filter((a) => a.gate === 'none'); const gatedSp = sp.filter((a) => a.gate !== 'none');
+  const spWords = [
+    noRung.length ? `the bill table gives ${list(named(noRung))} no position on the ladder` : '',
+    gatedSp.length ? `${list(named(gatedSp))} ${new Set(gatedSp.map((a) => a.bill)).size === 1 ? 'is a near-unanimous or multi-subject bill' : 'are near-unanimous or multi-subject bills'}, which a sponsorship does not count on` : '',
+  ].filter(Boolean).join(', and ');
+  if (d.sponsorOnly) {
+    if (!sp.length || (d.sponsored ?? []).length !== sp.length) return undefined;
+    const first = noRung.find((a) => (table[a.bill].why ?? '').trim());
+    const why = withWhy && first ? ` On ${billName(first.bill)}: ${sentence(table[first.bill].why!)}` : '';
+    const gated = d.gatedYes > gatedSp.length ? ` ${d.gatedYes - gatedSp.length} Yes ${d.gatedYes - gatedSp.length === 1 ? 'vote' : 'votes'} on near-unanimous or multi-subject bills ${d.gatedYes - gatedSp.length === 1 ? 'is' : 'are'} not counted.` : '';
+    return {
+      reasoning: `The counted record holds no Yes act on a bill with a position on the ladder, and no No vote on one. Sponsored ${list(named(sp))}: ${spWords}.${why}${gated}`,
+      open_note: `Sponsored ${list(named(sp), 6)}. None of these supports a position: ${spWords}. The record has no counted vote on a bill that would.${gated}`,
+      finding_ids: [...new Set(sp.slice(0, 8).map((a) => a.id))],
+      blank_class: 'wording',
+    };
+  }
+  const also = sp.length ? ` Also sponsored ${list(named(sp))}: ${spWords}.` : '';
   const bills = named(d.deciding);
   const rungs = [...new Set(d.deciding.map((a) => a.rung!))].sort();
   const texts = rungs.map((r) => rungText(r)?.replace(/\.$/, ''));
@@ -238,8 +272,8 @@ export function wordsFor(d: Decision, table: Readonly<Record<string, RuleBillRow
   const what = texts.map((t) => `"${t}"`).join(' or ');
   const gated = d.gatedYes ? ` ${d.gatedYes} Yes ${d.gatedYes === 1 ? 'act' : 'acts'} on near-unanimous or multi-subject bills ${d.gatedYes === 1 ? 'is' : 'are'} not counted.` : '';
   return {
-    reasoning: `The counted record holds No votes only, on ${list(bills)}: bills that would ${what}. A No shows a side but names no position, and no counted Yes act supports one.${gated}`,
-    open_note: `Voted No on ${list(bills, 6)}, bills that would ${what}. That leans against those bills, but a No does not say which position the person holds, and the record has no counted Yes act on a bill that supports one.${gated}`,
+    reasoning: `The counted record holds No votes only, on ${list(bills)}: bills that would ${what}. A No shows a side but names no position, and no counted Yes act supports one.${gated}${also}`,
+    open_note: `Voted No on ${list(bills, 6)}, bills that would ${what}. That leans against those bills, but a No does not say which position the person holds, and the record has no counted Yes act on a bill that supports one.${gated}${also}`,
     finding_ids: [...new Set(d.deciding.filter((a) => billName(a.bill)).slice(0, 8).map((a) => a.id))],
     blank_class: 'nay-only', tags: ['direction-only'], shows_side: true,
   };
@@ -261,19 +295,27 @@ const BILL_ID = /(?<![\w-])[A-Z]{2}(?:-[A-Z0-9]+)+-\d{4}(?![\w-])/g;
  * "People: …", the list of everyone who holds an act on it. Once the bill table carries that ruling, the list
  * says nothing about the person: the script reads the same row a coder would. Tennessee's eleven such lists named
  * all 129 people with a record, so the script coded nobody (2026-11-14); without them it codes 94, each the same
- * as the Opus code. A list is dropped only when the text before it names at least one bill and EVERY bill it
- * names has an answered row in the table. Only the unit's own bills count (`billPrefix`): a ruling often cites
+ * as the Opus code. From 2026-11-16 the same holds for a name anywhere in such a line ("UT-HB-180-2026 (sponsor
+ * Andrew Stoddard) is rung 3"): Utah's stop-1 answers named 14 people that way. Replay over UT, FL, KY, SC, TN and
+ * CA: 85 people held only by a name, and the script's code is the blind Opus code for all 85. These forms are
+ * dropped only when the line names at least one bill and EVERY bill it names has an answered row in the table; a
+ * name outside them is the ruling's subject and still holds the person. Only the unit's own bills count (`billPrefix`): a ruling often cites
  * another state's bill as its precedent, and that bill is never in this table. Any other name stays: a ruling about a person, a list with no bill
  * before it, and a list beside a bill the table lacks or still flags.
  */
 export function rulingsNameText(rulingsSection: string, table: Record<string, RuleBillRow>, billPrefix: string): string {
   return rulingsSection.split('\n').map((line) => {
     const at = line.indexOf(' People: ');
-    if (at < 0) return line;
-    const body = line.slice(0, at);
+    const body = at < 0 ? line : line.slice(0, at);
     const bills = (body.match(BILL_ID) ?? []).filter((b) => b.startsWith(billPrefix));
     const settled = bills.length > 0 && bills.every((b) => table[b] && !(table[b].flag ?? '').trim());
-    return settled ? body : line;
+    if (!settled) return line;
+    // The line says what its bills are, and the table carries that. Three forms only say who holds an act on the
+    // bill, and are dropped: the People list, a bracket with no bill in it ("(sponsor Ann Able)", "(Ann Able, Bob
+    // Both)"), and a "Sponsors: …" list, which runs to the end of the line (a name holds a full stop: "Keven J.
+    // Stratton"). A name anywhere else is the ruling's subject and stays
+    // ("Ann Able (XX-HB-2-2025) keeps a rung 2 sponsorship").
+    return body.replace(/\(([^()]*)\)/g, (m, inner: string) => (BILL_ID.test(inner) ? (BILL_ID.lastIndex = 0, m) : '')).replace(/\b(?:Co-?)?[Ss]ponsors?: .*$/, '');
   }).join('\n');
 }
 
