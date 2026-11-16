@@ -726,3 +726,131 @@ press kit, media page or photo policy.
   articles exist but carry **no external links**, so no campaign site is known yet.
 - **Anthony W. Phillips, Bradley Petersen, Marty Ryan, Brandy Tollefson, Ben Gruber,
   Bernie Newman** — no Wikipedia article and no campaign site found.
+
+# California — 5 of 12 imported (CC_0441, 2026-11-16), 7 still open
+
+All five ship at **600×750 with no upscaling at all** — the cleanest batch in this programme —
+because each was re-sourced at native size from the body or campaign that actually published it.
+
+## 🔴🔴 FIVE FALSE LICENCE CLAIMS IN ONE COHORT OF TWELVE
+
+Five of these people have a Wikipedia lead image. **Every one is tagged "Public domain" on
+Commons with a CITY GOVERNMENT named as the artist:**
+
+| file | artist as stated | reality |
+| --- | --- | --- |
+| `Andrae Gonzales-City Council (cropped).jpg` | City of Bakersfield | city work — **not PD** |
+| `Clarissa Cervantes-Square.jpg` | City of Riverside | city work — **not PD** |
+| `Scott Sakakihara, 2020s.jpg` | Union City Council | city work — **not PD** |
+| `Dom Belza, 2021.jpg` | Marysville City Council | city work — **not PD** |
+| `CityAttorneyMaraElliott.jpg` | "MEStaff", credit sandiego.gov | city work — **not PD** |
+
+Only **federal** US government work is public domain under 17 USC §105. This is the same defect
+`CC_0440` proved by byte-diff on a Wisconsin portrait, here at scale and in a different costume.
+▶ **A licence tag naming a city, county or state body as the author and claiming public domain is
+wrong on its face.** Record `unknown`. See [[feedback-commons-licence-claim-can-be-false]].
+
+🟢 **The credit lines are still the most useful thing on the page** — each named the official city
+page the photo came from, and that is where these were re-sourced. The Commons copies are mostly
+far smaller than the originals: Elliott 250×278, Belza 156×207, Cervantes 190×190.
+
+## 🔴🔴 "Chris Duncan" on Wikipedia is a baseball player who died in 2019 — and he has a photo
+
+Taking that lead image would have put a dead athlete on a California State Senate seat. Reading
+each article's **intro** is what caught it; "Charles Hughes" is likewise a **disambiguation page**,
+not our Assembly 34 winner. ▶ An article existing for a name is not evidence about that person.
+
+## 🔴 A departed official's URL serves their successor — caught live
+
+Mara Elliott left the San Diego City Attorney's office in **2024**. Commons credits her portrait to
+`sandiego.gov/cityattorney`, and that page **no longer names her**. Every official page in this
+batch was asserted to contain the person's surname before anything was taken from it, and that
+assertion is the only reason this did not become a wrong-person import. The same check cleared
+**Marysville** for Dom Belza — its live council page no longer names him either, and Commons
+credits an *archived* Marysville URL.
+
+## 🔴 A relative sharing a surname is the worst namesake case
+
+**Sabrina Cervantes** sits in Senate District 31. Our Assembly 58 winner is **Clarissa Cervantes —
+her sister.** The surname sweep over the sitting roster surfaced it; a full-name match never would.
+
+## 🔴 Portrait URLs that name a seat, not a person
+
+- **Union City** serves `ImageRepository/Document?documentId=NNNNN`. **10181 = Mayor Gary Singh,
+  10183 = Sakakihara, 10185 = Councilmember Jeff Wang** — adjacent odd numbers, so an off-by-one
+  ships the Mayor. Only the `alt` text binds an id to a person. ⚠ A **proximity** match on
+  surrounding text is not enough: the container holds the whole council list, so it marks Singh
+  and Wang as matches too. Confirmed by looking at the rendered card with his name beside it.
+- **California Assembly** serves `assembly_member_<DISTRICT>.jpg`. That URL is a **seat**, so it
+  will serve the new member the moment one is sworn in. ▶ Useful after December 2026; never cache
+  it as a person's photo.
+- **Bakersfield** serves a bare UUID with `alt="a file"` — no name anywhere. Opened and looked at.
+
+## Roster measurement
+
+**0 of the 12 currently sit**, against a COMPLETE roster — **80 Assembly + 40 Senate**, exactly
+the chamber sizes — with Rivas, McGuire and Wiener as positive controls.
+⚠ **An earlier parse of the same two pages also returned "0 of 12" — with a FAILED control**
+(Speaker Rivas missing). That was a broken regex, not a finding. The number only means something
+because the control now passes. The two chambers need **different parsers**: the Assembly uses
+`li.members-list__member` with `data-name="Last, First"`; the Senate uses
+`div.page-members__member` whose `data-name` is **surname only**, with the full name recoverable
+from the double-encoded portrait filename (`MCGUIRE%252C%2520MIKE%2520%2528D-02%2529`).
+
+## 🟢 Recovering a file from a host that refuses Node, without base64 through context
+
+`maraelliott.com` refuses Node entirely — pages *and* files, at the TLS handshake. Instead of
+piping base64 out of the browser:
+
+1. `browser_resize` to a viewport **larger than the image** (2100×1450 for a 2000×1334 file),
+2. navigate directly to the image URL so Chrome renders it at natural size,
+3. screenshot to disk, then `sharp(...).trim()`.
+
+The trimmed capture came back at **exactly 2000×1334** — the file's own resolution, so there is
+**no resampling**. ⚠ It is a re-encode of the original pixels, not the original bytes; say so
+rather than claiming a byte-faithful mirror. Same trick applies to `trevorjung.com` (WA) and any
+other TLS-fingerprint refusal.
+
+## Outcome — 5 imported, faceless legislative winners 39 → 34
+
+| | | | |
+| --- | --- | --- | --- |
+| Andrae Gonzales | Assembly 35 | 1500×1500 | City of Bakersfield page that names him |
+| Ayanna Davis | Assembly 65 | 6000×4000 → 1920×2400 | tightened from a classroom photo to head-and-shoulders |
+| Paula Swift | Assembly 70 | 2048×2239 | campaign studio headshot |
+| Scott Sakakihara | Senate 10 | 2043×2600 | Union City council portrait, bound by alt text |
+| Mara Elliott | Senate 40 | 2000×1334 | ⚠ **candid**, not a studio portrait; alone and face-forward |
+
+**Licence `unknown` for all 5.** bakersfieldcity.us publishes no photo policy on the portrait's
+page; unioncityca.gov refuses non-browser clients and grants nothing on the rendered page; the
+three campaign sites carry only a "Paid for by …" disclaimer, which is required by law.
+
+### Still open — 7, with the reason
+
+- **Chris Duncan** (Senate 36) — no source at all. Not sitting; the Wikipedia article of that name
+  is the late baseball player.
+- **Clarissa Cervantes** (Assembly 58) — Riverside publishes **190×190** for her while other
+  councilmembers get 477×478. ⚠ Do **not** reach for Sabrina Cervantes' portrait.
+- **Dom Belza** (Assembly 3) — no live official source; his campaign site's highest-scoring
+  portrait is **Kevin Kiley's**, an endorser, and the rest are family photographs.
+- **Charles Hughes** (Assembly 34) — a trustee of the **Antelope Valley Joint Union High School
+  District** (already in our `office_terms`), but `avhsd.org` would not resolve. Retry.
+- **Brian Goldsmith** (Senate 24) — `briangoldsmith.com` reachable, renders no images to a
+  non-browser client. Try the viewport-screenshot route above.
+- **Leila Namvar** (Assembly 47) — verified article, no campaign site among its external links.
+- **Ida S. Obeso-Martinez** (Assembly 36) — no article, no campaign site found yet.
+
+▶ **After the new members are sworn in (early December 2026)**, both chambers will carry official
+portraits for these winners. **Measured 2026-11-16, and the two chambers differ:**
+
+| chamber | URL | native | verdict |
+| --- | --- | --- | --- |
+| Assembly | `webapi.assembly.ca.gov/district-media/assets/members/assembly_member_<district>.jpg` | **500×500** | a 4:5 crop is 400×500 → **1.5× upscale**, below our floor |
+| Senate | `senate.ca.gov/sites/senate.ca.gov/files/media/<NAME (D-NN)>.jpg` | **919×1286** | ✅ **above the floor, usable** |
+
+🔴 **The Senate's `styles/large/` path is a Drupal resize that serves 343×480** — strip the
+`/styles/<name>/public/` segment and the original is 919×1286, **7.2× the pixels**.
+⚠ So swearing-in solves the **Senate** winners but not the Assembly ones: California publishes
+better portraits than Washington's or Wisconsin's 150×200, but its Assembly still falls short of
+600×750. Correcting an earlier draft of this line, which claimed the Assembly portraits were
+full-size without measuring them.
