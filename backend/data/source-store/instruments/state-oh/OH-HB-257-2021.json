@@ -1,0 +1,135 @@
+{
+  "id": "OH-HB-257-2021",
+  "scope": "state:oh",
+  "title": "HB257 (134th Legislature (2021-2022)): Enact  Extreme Risk Protection Order Act",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-HB-257",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb257/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Allison Russo",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fc3e367c-5558-466d-86f7-684866c2e903"
+    },
+    {
+      "name": "Monique Smith",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bride Sweeney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f3bd9945-466a-496b-ab9a-ce3ef3864c45"
+    },
+    {
+      "name": "Janine R. Boyd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Juanita Brent",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9efe40f7-225a-411d-b9d2-3344dc35a7b5"
+    },
+    {
+      "name": "Richard Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mary Lightbody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kent Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ed114b22-4c6b-4fe3-8672-5bc3bc32a129"
+    },
+    {
+      "name": "Adam Miller, A.",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mike Skindell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michele Lepore-Hagan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Phil Robinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "dba42b9c-10a8-4c4c-9c44-8e02c1ce9eab"
+    },
+    {
+      "name": "Lisa A. Sobecki",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Casey Weinstein",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e4c7eaa-47e5-4c6f-aed0-be4107ddcfb8"
+    },
+    {
+      "name": "Michael J. O'Brien",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joe Miller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a0732be3-6345-4a83-9191-fd3f6498fdb7"
+    },
+    {
+      "name": "David Leland",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Erica C. Crawley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael Sheehy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb257/00_IN/pdf/ (Open States text id 90128897))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-257-2021.00_in.pdf",
+      "sha256": "ed2e7e583f9f192684f3c7aa86d7a7c6b9068139d8e63fd4420e93e03efa5f91"
+    },
+    "note": "As introduced (134th GA); no later version read. Also amends R.C. 109.57, 2923.125, 2923.128, 2923.1213, 2923.13 to tie licensing and disability rules to the orders. Knowingly false petition is a fifth-degree felony (penalty for the bill's own rule). Ex parte orders also created (new R.C. 2923.27)."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.26): Upon hearing a petition for an extreme risk protection order, subject to division (M)(2) of this section, if the court finds by a preponderance of the evidence that the respondent poses a significant danger of causing personal injury to self or others by having custody or control of a firearm or the ability to purchase, possess, or receive a firearm, the court shall issue an extreme risk protection order for a period of one hundred eighty days.\nSection 1 (new R.C. 2923.30): Upon issuance of any extreme risk protection order or ex parte extreme risk protection order under sections 2923.26 to 2923.30 of the Revised Code, the court shall order the respondent to surrender to the local law enforcement agency all firearms in the respondent's custody, control, or possession and any license to carry a concealed handgun issued to the respondent under section 2923.125 or 2923.1213 of the Revised Code.\nSection 1 (new R.C. 2923.99): No person shall acquire, have, carry, or use any firearm with knowledge that the person is prohibited from doing so by an order issued under this section or sections 2923.26 to 2923.30 of the Revised Code."
+}

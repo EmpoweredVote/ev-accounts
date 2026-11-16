@@ -1,0 +1,54 @@
+{
+  "id": "OH-SB-74-2021",
+  "scope": "state:oh",
+  "title": "SB74 (134th Legislature (2021-2022)): Raise the minimum age to purchase a firearm",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-SB-74",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/sb74/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cecil Thomas",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Kenny Yuko",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tina Maharath",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sandra Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/sb74/00_IN/pdf/ (Open States text id 90126339))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-74-2021.00_in.pdf",
+      "sha256": "5b29c5227d16a2433a089f6f656b3ceb06549525af8531a694864743028667d4"
+    },
+    "note": "As introduced; no later version read. Struck text: the age-18 rules for non-handguns and the word 'handgun' (replaced by 'firearm'); penalty raised from fifth to third degree. R.C. 2151.022 and 2152.02 only change cross-references to R.C. 2923.211; R.C. 2152.16 drops a division reference. Military and peace-officer exceptions in 2923.21(B) and 2923.211 are kept for ages 18-20. Quote shows the law after the bill."
+  },
+  "operative_text": "Section 1 (R.C. 2923.21): (A) No person shall do any of the following: (1) Subject to division (B) of this section, sell any firearm to a person who is under twenty-one years of age; (2) Subject to division (B) of this section, furnish any firearm to a person who is under twenty-one years of age, except for lawful hunting, sporting, or educational purposes, including, but not limited to, instruction in firearms or handgun safety, care, handling, or marksmanship under the supervision or control of a responsible adult; (C) Whoever violates this section is guilty of improperly furnishing firearms to an underage person, a felony of the third degree.\nSection 1 (R.C. 2923.211): (A) No person under twenty-one years of age shall purchase or attempt to purchase a firearm."
+}

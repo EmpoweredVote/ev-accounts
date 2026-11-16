@@ -1,0 +1,51 @@
+{
+  "id": "OH-SB-303-2025",
+  "scope": "state:oh",
+  "title": "SB303 (136th Legislature (2025-2026)): Allow 18-21 year olds to purchase a handgun from a federal dealer",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/sb303",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb303/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Terry Johnson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c55e0d6a-ead9-4e04-9b2c-7bbf611bc56d"
+    },
+    {
+      "name": "Al Cutrona",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b39f0fd8-64b8-425b-a7f6-3748b8a518d0"
+    },
+    {
+      "name": "Jane Timken",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "06746cb2-001a-4dc4-8c39-c1595d58b0de"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb303/00_IN/pdf/ (Open States text id 90138376))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-303-2025.00_in.pdf",
+      "sha256": "c0c29a8befc373021ec1c64fde4d17c61e87eb60ac20bbbe89fd0f320567e152"
+    },
+    "note": "As Introduced (00_IN), 136th G.A.; no passage vote on file. Struck: only division letters renumbered, 'council' replaced by 'commission' (Ohio peace officer training commission), and 'either' replaced by 'any'. Also amends R.C. 2151.022, 2152.02, 2152.16, 2930.01 for cross-references."
+  },
+  "operative_text": "Section 1 (R.C. 2923.21(C)(2)): Divisions (B)(2) and (3) of this section do not apply to the sale and furnishing of a handgun to a person eighteen years of age or older and under twenty-one years of age if the person selling or furnishing the handgun to the person eighteen years of age or older and under twenty-one years of age is a federally licensed firearms dealer.\nSection 1 (R.C. 2923.211(C)(2)): The person purchases or attempts to purchase a handgun from a federally licensed firearms dealer.\nSection 1 (R.C. 2923.211(C)): No person under twenty-one years of age shall purchase or attempt to purchase a handgun, provided that this division does not apply to the purchase or attempted purchase of a handgun by a person eighteen years of age or older and under twenty-one years of age if any of the following apply:"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "OH-SB-164-2023",
+  "scope": "state:oh",
+  "title": "SB164 (135th Legislature (2023-2024)): Enact the Suicide Self-Defense Act",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/135/sb164",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/sb164/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Hearcel Craig",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "05d33654-b85a-4e2f-921c-b823ee7a1c8d"
+    },
+    {
+      "name": "Nickie Antonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+    },
+    {
+      "name": "Bill DeMora",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ade41ff2-eb0c-4778-a3e7-67eb4710aee0"
+    },
+    {
+      "name": "Vernon Sykes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "civil-rights: Section 1 (new R.C. 2923.221(C)) — bars discrimination in health care, employment, education, housing, insurance, benefits and contracting based on registry status"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/sb164/00_IN/pdf/ (Open States text id 90132679))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-164-2023.00_in.pdf",
+      "sha256": "f4d81bd50321e08993512b429e81c7f64b57612b668ce61c0ab1476b6f76985f"
+    },
+    "note": "As introduced (00_IN); no vote on file. 'Suicide Self-Defense Act'. Also amends 149.43 (records exemption for registry), 2923.11, 2923.125, 2923.128, 2923.20 and adds 4731.058 (medical board rules to inform public). The civil-rights call for 2923.221(C) is a judgement; it could be read as part of the registry scheme."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.22): (B)(1) Within six months after the effective date of this section, the attorney general shall establish a do not possess firearms registry to prohibit the possession, sale, or transportation of a firearm to any person who voluntarily registers the person's self to be enrolled in the registry.\nSection 1 (new R.C. 2923.133): (A) No person who is enrolled in the do not possess firearms registry created under section 2923.22 of the Revised Code shall knowingly purchase, possess, or transport a firearm. (B) Whoever violates this section is guilty of illegally possessing, purchasing, or transporting a firearm while enrolled in the do not possess firearms registry, a misdemeanor of the first degree.\nSection 1 (new R.C. 2923.221): (D) No person or entity shall knowingly, or negligently due to failure to perform a required background check, transfer a firearm to a person enrolled in the do not possess firearms registry.\nSection 1 (new R.C. 2923.221): (C) No person shall knowingly discriminate against another person with regards to the person's receipt of health care services, employment, education, housing, insurance, governmental benefits, or contracting due to that person not being enrolled in the do not possess firearms registry, being enrolled in the registry, or previously being enrolled in the registry.\nSection 3 (uncodified): The Attorney General shall implement and manage a public awareness campaign regarding the do not possess firearms registry, which may include online materials, printed materials, and public service announcements."
+}

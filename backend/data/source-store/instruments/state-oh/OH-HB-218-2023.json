@@ -1,0 +1,119 @@
+{
+  "id": "OH-HB-218-2023",
+  "scope": "state:oh",
+  "title": "HB218 (135th Legislature (2023-2024)): Restore local authority to generally regulate firearm conduct",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/135/hb218",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb218/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Darnell Brewer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3a15886-3141-4bfe-98fe-dc1d7e8d097e"
+    },
+    {
+      "name": "Terrence Upchurch",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "032c981a-13dd-4d31-8e2e-4b9dcfa0e38a"
+    },
+    {
+      "name": "Michele Grim",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "88e8aa9b-048a-4c59-9742-ba763a554751"
+    },
+    {
+      "name": "Jessica Miranda",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Juanita Brent",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9efe40f7-225a-411d-b9d2-3344dc35a7b5"
+    },
+    {
+      "name": "Mike Skindell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Anita Somani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b424ad5b-4b36-4f9a-b884-a00c355dd88c"
+    },
+    {
+      "name": "Lauren McNally",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fd22b985-97df-447f-b532-937b3a9cbd64"
+    },
+    {
+      "name": "Phil Robinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "dba42b9c-10a8-4c4c-9c44-8e02c1ce9eab"
+    },
+    {
+      "name": "Elliot Forhan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Cecil Thomas",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Allison Russo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fc3e367c-5558-466d-86f7-684866c2e903"
+    },
+    {
+      "name": "Sean Brennan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1fe75280-5b41-44a9-b531-22a0807204eb"
+    },
+    {
+      "name": "Casey Weinstein",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e4c7eaa-47e5-4c6f-aed0-be4107ddcfb8"
+    },
+    {
+      "name": "Richard Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb218/00_IN/pdf/ (Open States text id 90133871))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-218-2023.00_in.pdf",
+      "sha256": "83df69d581383c0c6decae06ac40dca1144b1541f506aa0e3eddb676f946b411"
+    },
+    "note": "As introduced; no later version read. The whole bill is one repeal (Section 1 repeals R.C. 9.68), quoted as the operative part."
+  },
+  "operative_text": "Section 1 (R.C. 9.68, repealed): That section 9.68 of the Revised Code is hereby repealed."
+}

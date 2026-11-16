@@ -1,0 +1,74 @@
+{
+  "id": "OH-SB-78-2023",
+  "scope": "state:oh",
+  "title": "SB78 (135th Legislature (2023-2024)): Restore local authority to regulate firearms-related conduct",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/135/sb78",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/sb78/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Hearcel Craig",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "05d33654-b85a-4e2f-921c-b823ee7a1c8d"
+    },
+    {
+      "name": "Catherine Ingram",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "88d523e9-6e21-42f0-bc31-d01c4bb1f3b1"
+    },
+    {
+      "name": "Nickie Antonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+    },
+    {
+      "name": "Bill DeMora",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ade41ff2-eb0c-4778-a3e7-67eb4710aee0"
+    },
+    {
+      "name": "Vernon Sykes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Paula Hicks-Hudson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8a208c28-1273-4e27-93d4-c2c0bb5a1dbc"
+    },
+    {
+      "name": "Kent Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ed114b22-4c6b-4fe3-8672-5bc3bc32a129"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/sb78/00_IN/pdf/ (Open States text id 90132214))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-78-2023.00_in.pdf",
+      "sha256": "f4b9499a1028bffb7d3ddf43a5de79f2b0a0995f8e0efd245e41a12a8091adc1"
+    },
+    "note": "As introduced; no later version read. The whole bill is a one-line repeal; the repeal line is quoted because it is the only operative part. The text itself does not describe R.C. 9.68; the title says it restores local authority to generally regulate firearms-related conduct."
+  },
+  "operative_text": "Section 1 (R.C. 9.68): That section 9.68 of the Revised Code is hereby repealed."
+}

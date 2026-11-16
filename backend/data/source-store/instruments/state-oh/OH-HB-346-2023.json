@@ -1,0 +1,90 @@
+{
+  "id": "OH-HB-346-2023",
+  "scope": "state:oh",
+  "title": "HB346 (135th Legislature (2023-2024)): Create offense - manufacture, purchase, or sale of an auto sear",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/135/hb346",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb346/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Rick Dell'Aquila",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Anita Somani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b424ad5b-4b36-4f9a-b884-a00c355dd88c"
+    },
+    {
+      "name": "Ismail Mohamed",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "43f9a2bc-7efe-4947-a430-38181893ee9a"
+    },
+    {
+      "name": "Darnell Brewer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3a15886-3141-4bfe-98fe-dc1d7e8d097e"
+    },
+    {
+      "name": "Sean Brennan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1fe75280-5b41-44a9-b531-22a0807204eb"
+    },
+    {
+      "name": "Allison Russo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fc3e367c-5558-466d-86f7-684866c2e903"
+    },
+    {
+      "name": "Lauren McNally",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fd22b985-97df-447f-b532-937b3a9cbd64"
+    },
+    {
+      "name": "Elliot Forhan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Adam Miller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michele Grim",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "88e8aa9b-048a-4c59-9742-ba763a554751"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb346/00_IN/pdf/ (Open States text id 90134228))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-346-2023.00_in.pdf",
+      "sha256": "b547f6f779f4bbe87bd71b039d0d7273da3f394bb3ea1a1b9f22daf2f8ccbf87"
+    },
+    "note": "As introduced. Exemptions in 2923.191(B) for officers, military, licensed dealers, carriers and permit holders not quoted."
+  },
+  "operative_text": "Section 1 (R.C. 2923.11(K)(6)): Any part or combination of parts that is intended by the owner for use in converting any firearm or other device into a dangerous ordnance, including an auto sear.\nSection 1 (R.C. 2923.11(S)): \"Auto sear\" means any part or combination of parts that is designed to convert a weapon to automatically discharge more than one round without manual reloading, by a single function of the trigger.\nSection 1 (new R.C. 2923.191(A)): No person shall knowingly manufacture, purchase, sell, transfer, distribute, or import an auto sear.\nSection 1 (new R.C. 2923.191(C)): Whoever violates division (A) of this section is guilty of unlawful manufacture, purchase, or sale of an auto sear, a felony of the fifth degree."
+}

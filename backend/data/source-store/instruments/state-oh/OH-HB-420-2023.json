@@ -1,0 +1,156 @@
+{
+  "id": "OH-HB-420-2023",
+  "scope": "state:oh",
+  "title": "HB420 (135th Legislature (2023-2024)): Enact the Building Safer Communities for Ohio's Children Act",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/135/hb420",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb420/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Darnell Brewer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3a15886-3141-4bfe-98fe-dc1d7e8d097e"
+    },
+    {
+      "name": "Munira Abdullahi",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9d4f858b-8703-4806-b064-d0c4a7e54110"
+    },
+    {
+      "name": "Beryl Piccolantonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "80b114d4-7be5-4733-99f2-0487b33de7a7"
+    },
+    {
+      "name": "Cecil Thomas",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Elliot Forhan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lauren McNally",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fd22b985-97df-447f-b532-937b3a9cbd64"
+    },
+    {
+      "name": "Ismail Mohamed",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "43f9a2bc-7efe-4947-a430-38181893ee9a"
+    },
+    {
+      "name": "Phil Robinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "dba42b9c-10a8-4c4c-9c44-8e02c1ce9eab"
+    },
+    {
+      "name": "Allison Russo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fc3e367c-5558-466d-86f7-684866c2e903"
+    },
+    {
+      "name": "Mike Skindell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bride Sweeney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f3bd9945-466a-496b-ab9a-ce3ef3864c45"
+    },
+    {
+      "name": "Terrence Upchurch",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "032c981a-13dd-4d31-8e2e-4b9dcfa0e38a"
+    },
+    {
+      "name": "Josh Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "99038428-f04f-4fba-afd9-d27babb708c7"
+    },
+    {
+      "name": "Dani Isaacsohn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd927b66-84c3-4378-a91e-130b22439a9d"
+    },
+    {
+      "name": "Rachel Baker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd7b7bec-2510-4837-b0c2-7c034d4261c7"
+    },
+    {
+      "name": "Anita Somani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b424ad5b-4b36-4f9a-b884-a00c355dd88c"
+    },
+    {
+      "name": "Michele Grim",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "88e8aa9b-048a-4c59-9742-ba763a554751"
+    },
+    {
+      "name": "Casey Weinstein",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e4c7eaa-47e5-4c6f-aed0-be4107ddcfb8"
+    },
+    {
+      "name": "Richard Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Veronica Sims",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8215a745-c232-45e5-8e29-990a97029c02"
+    },
+    {
+      "name": "Beth Liston",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9706e0bb-66ae-48aa-bd7c-7d73da0118eb"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb420/00_IN/pdf/ (Open States text id 90134057))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-420-2023.00_in.pdf",
+      "sha256": "3831475efcaf59a822c86196fa69efc863676fdb9c184ed975b80ebaeb097a30"
+    },
+    "note": "As introduced (135th GA). Does not regulate guns; a gun-violence program bill. Includes a $500,000 FY2025 appropriation. Medicaid trauma-care part (5164.97) treated as part of the same program, not a separate topic."
+  },
+  "operative_text": "Section 1 (new R.C. 5180.52): (A) The office of firearm violence prevention is established within the department of children and youth. The office shall do both of the following: (1) Coordinate and administer the grant programs described in sections 5180.53 to 5180.55 of the Revised Code; (2) Provide technical assistance and training to grant recipients.\nSection 1 (new R.C. 5180.53): (A) The office of firearm violence prevention shall administer a violence prevention organization grant program in accordance with this section. Beginning six months after the effective date of this section, the office shall award grants on a competitive basis to violence prevention organizations in eligible counties.\nSection 1 (new R.C. 5180.54): (A) The office of firearm violence prevention shall administer a youth development grant program in accordance with this section. Beginning six months after the effective date of this section, the office shall award grants on a competitive basis to youth development organizations in eligible counties.\nSection 1 (new R.C. 5164.97): (A) Not later than ninety days after the effective date of this section, the medicaid director shall seek approval from the United States centers for medicare and medicaid services to establish a team-based model of care system to address trauma recovery from chronic exposure to firearm violence.\nSection 4 (uncodified): The foregoing appropriation item 830413, Firearm Violence Prevention, shall be used to support the establishment of the Office of Firearm Violence Prevention within the Department of Children and Youth, in accordance with section 5180.52 of the Revised Code."
+}

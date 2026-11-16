@@ -1,0 +1,45 @@
+{
+  "id": "OH-SB-98-2025",
+  "scope": "state:oh",
+  "title": "SB98 (136th Legislature (2025-2026)): Prohibit firearm possession - certain domestic violence offenses",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/sb98",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb98/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Hearcel Craig",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "05d33654-b85a-4e2f-921c-b823ee7a1c8d"
+    },
+    {
+      "name": "Casey Weinstein",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e4c7eaa-47e5-4c6f-aed0-be4107ddcfb8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb98/00_IN/pdf/ (Open States text id 90139027))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-98-2025.00_in.pdf",
+      "sha256": "4d40e0ec5f3e840620e7fad25c13834908e7ff388768d7ae87deb61b8299a32d"
+    },
+    "note": "Introduced version (00_IN); no later versions or votes in the record. In R.C. 2923.14(F)(4) the bill strikes 'or,' after (A)(2) and adds 'or (6)'; the quote shows the text after the bill. Existing law in 2923.13(A) (unquoted) makes it a third-degree felony to acquire, have, carry or use a firearm while under a listed disability."
+  },
+  "operative_text": "Section 1 (R.C. 2923.13): (6) The person is charged with or has been convicted of a violation of section 2919.25 of the Revised Code that is a misdemeanor of the first degree.\nSection 1 (R.C. 2923.14): Is automatically void upon commission by the applicant of any offense set forth in division (A)(2), (3), or (6) of section 2923.13 of the Revised Code, or upon the applicant's becoming one of the class of persons named in division (A)(1), (4), or (5) of that section."
+}

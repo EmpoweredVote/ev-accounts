@@ -1,0 +1,116 @@
+{
+  "id": "OH-HB-46-2025",
+  "scope": "state:oh",
+  "title": "HB46 (136th Legislature (2025-2026)): Enact the Extreme Risk Protection Order Act",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/hb46",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb46/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cecil Thomas",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Michele Grim",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "88e8aa9b-048a-4c59-9742-ba763a554751"
+    },
+    {
+      "name": "Munira Abdullahi",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9d4f858b-8703-4806-b064-d0c4a7e54110"
+    },
+    {
+      "name": "Sean Brennan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1fe75280-5b41-44a9-b531-22a0807204eb"
+    },
+    {
+      "name": "Juanita Brent",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9efe40f7-225a-411d-b9d2-3344dc35a7b5"
+    },
+    {
+      "name": "Sedrick Denson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dani Isaacsohn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd927b66-84c3-4378-a91e-130b22439a9d"
+    },
+    {
+      "name": "Ismail Mohamed",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "43f9a2bc-7efe-4947-a430-38181893ee9a"
+    },
+    {
+      "name": "Beryl Piccolantonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "80b114d4-7be5-4733-99f2-0487b33de7a7"
+    },
+    {
+      "name": "Tristan Rader",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8435eda6-cd1c-4e41-9dc9-bffbc76fc70b"
+    },
+    {
+      "name": "Allison Russo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fc3e367c-5558-466d-86f7-684866c2e903"
+    },
+    {
+      "name": "Bride Sweeney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f3bd9945-466a-496b-ab9a-ce3ef3864c45"
+    },
+    {
+      "name": "Eric Synenberg",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "da607bda-5e16-4ed9-998d-3c65dc09e651"
+    },
+    {
+      "name": "Terrence Upchurch",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "032c981a-13dd-4d31-8e2e-4b9dcfa0e38a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb46/00_IN/pdf/ (Open States text id 90139090))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-46-2025.00_in.pdf",
+      "sha256": "ee2f179e0b87be9fc069c5dbd35a2ec477f4a44e3c2c44b14ba5f8926446afe8"
+    },
+    "note": "As introduced (136th GA); text file is large and only the core parts are quoted. Also amends R.C. 109.57, 2923.125, 2923.128, 2923.1213 (license/records conforming changes; not read in detail). Includes ex parte orders (R.C. 2923.27), hearing within 14 days, return of firearms (2923.28), termination/renewal (2923.29), penalty for knowingly false petitions (2923.99(B), felony of the fifth degree)."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.26(B)(1)): Any of the following persons may seek relief under sections 2923.26 to 2923.30 of the Revised Code by filing a petition for an extreme risk protection order in the court of common pleas in the county where the petitioner resides or in the county where the respondent resides: (a) A family or household member of the respondent; (b) A law enforcement officer or law enforcement agency.\nSection 1 (new R.C. 2923.26(C)(1)): A petition for an extreme risk protection order shall include all of the following: (1) An allegation that the respondent poses a significant danger of causing personal injury to self or others by having in the respondent's custody or control, purchasing, possessing, or receiving a firearm, accompanied by an affidavit made under oath stating the specific statements, actions, or facts that give rise to a reasonable fear of future dangerous acts by the respondent;\nSection 1 (new R.C. 2923.26(M)(1)): Upon hearing a petition for an extreme risk protection order, subject to division (M)(2) of this section, if the court finds by a preponderance of the evidence that the respondent poses a significant danger of causing personal injury to self or others by having custody or control of a firearm or the ability to purchase, possess, or receive a firearm, the court shall issue an extreme risk protection order for a period of one hundred eighty days.\nSection 1 (new R.C. 2923.30(A)): Upon issuance of any extreme risk protection order or ex parte extreme risk protection order under sections 2923.26 to 2923.30 of the Revised Code, the court shall order the respondent to surrender to the local law enforcement agency all firearms in the respondent's custody, control, or possession and any license to carry a concealed handgun issued to the respondent under section 2923.125 or 2923.1213 of the Revised Code.\nSection 1 (new R.C. 2923.99(C)(1)): No person shall acquire, have, carry, or use any firearm with knowledge that the person is prohibited from doing so by an order issued under this section or sections 2923.26 to 2923.30 of the Revised Code. (2) A person who violates division (C)(1) of this section is guilty of having a firearm while under extreme risk protection order disability. Except as provided in division (C)(3) of this section, having a firearm while under extreme risk protection order disability is a misdemeanor of the third degree.\nSection 1 (new R.C. 2923.99(D)): In addition to the penalties prescribed in division (C) of this section, no person found guilty of having a firearm while under extreme risk protection order disability shall knowingly acquire, have, carry, or use any firearm or dangerous ordnance for a period of five years after the date the underlying extreme risk protection order expires.\nSection 1 (R.C. 2923.13(A)(6)): The person has been found guilty of having a firearm while under extreme risk protection order disability, and is prohibited from acquiring, having, carrying, or using a firearm under section 2923.99 of the Revised Code."
+}

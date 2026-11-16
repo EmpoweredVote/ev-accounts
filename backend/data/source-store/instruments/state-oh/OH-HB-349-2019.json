@@ -1,0 +1,146 @@
+{
+  "id": "OH-HB-349-2019",
+  "scope": "state:oh",
+  "title": "HB349 (133rd Legislature (2019-2020)): Prohibit possession of large capacity magazine",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA133-HB-349",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb349/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Casey Weinstein",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e4c7eaa-47e5-4c6f-aed0-be4107ddcfb8"
+    },
+    {
+      "name": "Kristin Boggs",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Janine Boyd",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Richard Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Erica Crawley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jeffrey Crossman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brigid Kelly",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Leland",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michele Lepore-Hagan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mary Lightbody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Beth Liston",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9706e0bb-66ae-48aa-bd7c-7d73da0118eb"
+    },
+    {
+      "name": "Adam Miller, A.",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael O'Brien",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Phillip Robinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "C. Russo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael Sheehy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael Skindell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kent Smith, K.",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lisa Sobecki",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Emilia Sykes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Terrence Upchurch",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "032c981a-13dd-4d31-8e2e-4b9dcfa0e38a"
+    },
+    {
+      "name": "Thomas West",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb349/00_IN/pdf/ (Open States text id 90125332))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-349-2019.00_in.pdf",
+      "sha256": "55d02b3311f786cb1fe617a37f2abb4beee20eab92006410bb118a92757bed63"
+    },
+    "note": "As introduced. Exemptions for officers, military, licensed dealers and carriers (2923.191(C)) not quoted."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.191(A)(1)): As used in this section, \"large capacity magazine\" means any firearm magazine, belt, drum, feed strip, or similar device that has the capacity of, or can be readily restored or converted to accept, more than ten rounds of ammunition.\nSection 1 (new R.C. 2923.191(B)): (1) No person shall knowingly possess a large capacity magazine. (2) No person shall knowingly purchase, keep for sale, offer or expose for sale, transfer, distribute, or import a large capacity magazine.\nSection 1 (new R.C. 2923.191(D)): Division (B)(1) of this section does not apply to persons who have registered or who are eligible to register a large capacity magazine with the bureau of criminal identification and investigation pursuant to section 2923.192 of the Revised Code.\nSection 1 (new R.C. 2923.191(E)): Whoever violates division (B) of this section is guilty of unlawful possession of a large capacity magazine, a felony of the fourth degree.\nSection 1 (new R.C. 2923.192(B)): The following persons may register a large capacity magazine with the bureau of criminal identification and investigation: (1) A person who resides in this state and who lawfully possesses a large capacity magazine prior to the effective date of this section; (2) A person who moves into this state who lawfully possesses a large capacity magazine prior to moving into this state.\nSection 1 (new R.C. 2923.192(C)(2)): Submitting the application to register a large capacity magazine to the bureau of criminal identification and investigation by one of the following dates: (a) If the applicant is a person described in division (B)(1) of this section, not later than one hundred eighty days after the effective date of this section; (b) If applicant is a person described in division (B)(2) of this section, not later than one hundred eighty days after the person moves into this state.\nSection 1 (new R.C. 109.5731(B)): The superintendent of the bureau of criminal identification and investigation shall establish, operate, and maintain a large capacity magazine registry."
+}

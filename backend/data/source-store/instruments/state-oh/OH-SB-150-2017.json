@@ -1,0 +1,54 @@
+{
+  "id": "OH-SB-150-2017",
+  "scope": "state:oh",
+  "title": "SB150 (132st Legislature (2017-2018)): Prohibit person liable to domestic violence from having firearm",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-SB-150",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb150/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Edna Brown",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Cecil Thomas",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Charleta B. Tavares",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joe Schiavoni",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb150/00_IN/pdf/ (Open States text id 90120339))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-150-2017.00_in.pdf",
+      "sha256": "2ea01b24df2547ab1f786ae21c5ca088e8724eb0b18fbd4dc52832b6c5ca5b63"
+    },
+    "note": "As introduced (00_IN); no vote on file. The 'Domestic Violence Survivors Protection Act'. Other marked edits (2903.13, 2919.25, 2919.26, 2923.14, 3113.31) add firearm-prohibition notices and conviction-triggered court steps tied to the same gun ban."
+  },
+  "operative_text": "Section 1 (R.C. 2923.13): (6) The person has been convicted of either domestic violence or assault when the victim is a family or household member, whether the offense is classified as a felony or misdemeanor.\nSection 1 (R.C. 2923.13): (7) The person is subject to a court order, granted after a full hearing for which the person received notice and an opportunity to be heard, that restrains the person from harassing, stalking, threatening, or engaging in other conduct that would place a family or household member in reasonable fear of bodily injury, or is subject to a temporary protection order issued under section 2919.26 of the Revised Code.\nSection 1 (new R.C. 2923.133): (1) Within twenty-four hours after being served with the court order, the offender shall transfer all firearms in the offender's possession or control to a law enforcement agency or federally licensed firearms dealer.\nSection 1 (new R.C. 2923.133): (C) An offender who recklessly violates the requirements of this section is guilty of a felony of the fifth degree.\nSection 1 (new R.C. 2923.134): (1) Within twenty-four hours after being served with the court order, the respondent shall transfer all firearms in the respondent's possession to a law enforcement agency or federally licensed firearms dealer."
+}

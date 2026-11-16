@@ -1,0 +1,81 @@
+{
+  "id": "OH-SB-62-2019",
+  "scope": "state:oh",
+  "title": "SB62 (133rd Legislature (2019-2020)): Regards items that accelerate a firearm's rate of fire",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA133-SB-62",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/sb62/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cecil Thomas",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Tina Maharath",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sandra Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Vernon Sykes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Teresa Fedor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kenny Yuko",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Eklund",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Nickie Antonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+    },
+    {
+      "name": "Hearcel Craig",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "05d33654-b85a-4e2f-921c-b823ee7a1c8d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/sb62/00_IN/pdf/ (Open States text id 90125156))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-62-2019.00_in.pdf",
+      "sha256": "017e45fbb805de6251ecfaa929aa208d02925728d8c096ca0ff8261c6bb83b77"
+    },
+    "note": "As introduced (00_IN). Also adds the new offence to the weapons-under-disability list (R.C. 2923.13) and R.C. 2923.14 relief-from-disability cross-reference (struck 'or,' and added 'or (6)'). Exempts government use (division (B))."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.133): (A) On and after the date that is one hundred eighty days after the effective date of this section, no person shall import, manufacture, sell, transfer, or possess a trigger crank, a bump-fire device, or any part, combination of parts, component, device, attachment, or accessory that is designed or functions to accelerate the rate of fire of a semi-automatic firearm but not convert the semi-automatic firearm into an automatic firearm.\nSection 1 (new R.C. 2923.133): (C) Whoever violates division (A) of this section is guilty of \"illegal rate-of-fire acceleration conduct,\" a felony of the fourth degree.\nSection 1 (R.C. 2923.13): (6) The person has been convicted of a violation of section 2923.133 of the Revised Code or has been adjudicated a delinquent child for the commission of a violation of that section."
+}

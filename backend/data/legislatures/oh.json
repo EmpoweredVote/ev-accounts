@@ -2,7 +2,7 @@
   "state": "oh",
   "name": "Ohio",
   "verified": "2026-11-16",
-  "source": "Ohio reader session (Stage 5 tools), 2026-11-16: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 213-bill dry batch read from www.legislature.ohio.gov and search-prod.lis.state.oh.us with the verifier's own fetch, and each member's vote compared with the dump. Texts were not read in this session.",
+  "source": "Ohio reader session (Stage 5 tools), 2026-11-16: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 213-bill dry batch read from www.legislature.ohio.gov and search-prod.lis.state.oh.us with the verifier's own fetch, and each member's vote compared with the dump. Texts were not read in this session. Texts: 121 bill texts of the 132nd to 136th read from search-prod.lis.state.oh.us (Stage 5 session, 2026-11-16).",
   "chambers": {
     "lower": "House",
     "upper": "Senate"
@@ -33,8 +33,8 @@
     "hosts": [
       "search-prod.lis.state.oh.us"
     ],
-    "marks": "Not read yet. Before quoting an amended or substitute text, open one and record here how it shows added and struck words.",
-    "note": "The dump's text links (/solarapi/v1/.../bills/<bill>/<CODE>/<NN>?format=pdf) are dead. The converter rewrites them to the live form, search-prod.lis.state.oh.us/api/v2/general_assembly_<N>/legislation/<bill>/<NN>_<CODE>/pdf/ (CODE: IN introduced, RH/RS as reported, PH/PS as passed, EN enrolled). The live form worked for the 132nd and the 136th."
+    "marks": "Ohio prints new words with a drawn underline and struck words with a drawn strike-through (stroked lines about 0.7 pt), not as text styles; texts were converted to [+new+] / [-struck-] by measuring each line's height in the word box (strikes sit near 0.5 of it; LibreOffice-made enrolled PDFs put the underline at about 0.80, so the split is set at 0.7). A new section is underlined whole. Enrolled acts keep the marks (changes against current law). Read 2026-11-16 on 121 texts of the 132nd to 136th.",
+    "note": "The dump's text links (/solarapi/v1/.../bills/<bill>/<CODE>/<NN>?format=pdf) are dead. The converter rewrites them to the live form, search-prod.lis.state.oh.us/api/v2/general_assembly_<N>/legislation/<bill>/<NN>_<CODE>/pdf/ (CODE: IN introduced, RH/RS as reported, PH/PS as passed, EN enrolled). The live form worked for the 132nd and the 136th. The dump types every text 'Introduced' and lists a bill's texts newest first: take the version from the <NN>_<CODE> in the link (highest NN is newest). The converter left 44 dead /solarapi/ links in the 134th and 135th; the live /api/v2 form works for those Assemblies too (checked 2026-11-16)."
   },
   "reader_access": {
     "www.legislature.ohio.gov": "open",

@@ -1,0 +1,143 @@
+{
+  "id": "OH-HB-433-2023",
+  "scope": "state:oh",
+  "title": "HB433 (135th Legislature (2023-2024)): Prohibit carrying mass casualty weapons",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/135/hb433",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb433/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Willis Blackshear",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "322bb72d-873c-41ff-b8bf-f0ec126490f7"
+    },
+    {
+      "name": "Jessica Miranda",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Elliot Forhan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michele Grim",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "88e8aa9b-048a-4c59-9742-ba763a554751"
+    },
+    {
+      "name": "Dontavius Jarrells",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3bcde814-f8ca-4ade-89d4-f661aa48b3b6"
+    },
+    {
+      "name": "Darnell Brewer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3a15886-3141-4bfe-98fe-dc1d7e8d097e"
+    },
+    {
+      "name": "Anita Somani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b424ad5b-4b36-4f9a-b884-a00c355dd88c"
+    },
+    {
+      "name": "Ismail Mohamed",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "43f9a2bc-7efe-4947-a430-38181893ee9a"
+    },
+    {
+      "name": "Richard Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lauren McNally",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fd22b985-97df-447f-b532-937b3a9cbd64"
+    },
+    {
+      "name": "Joe Miller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a0732be3-6345-4a83-9191-fd3f6498fdb7"
+    },
+    {
+      "name": "Cecil Thomas",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Allison Russo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fc3e367c-5558-466d-86f7-684866c2e903"
+    },
+    {
+      "name": "Beryl Piccolantonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "80b114d4-7be5-4733-99f2-0487b33de7a7"
+    },
+    {
+      "name": "Phil Robinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "dba42b9c-10a8-4c4c-9c44-8e02c1ce9eab"
+    },
+    {
+      "name": "Mike Skindell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sean Brennan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1fe75280-5b41-44a9-b531-22a0807204eb"
+    },
+    {
+      "name": "Dan Troy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "71cc6ae5-713f-42ae-8a0d-b37b85605f3e"
+    },
+    {
+      "name": "Bride Sweeney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f3bd9945-466a-496b-ab9a-ce3ef3864c45"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb433/00_IN/pdf/ (Open States text id 90133997))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-433-2023.00_in.pdf",
+      "sha256": "2456b57f32dcb935a4f95a796e1c6e9dcc1734a966594f56b815717b474f05d2"
+    },
+    "note": "As introduced (135th GA). Other changes are relettering and cross-reference updates (R.C. 2923.11, 2923.12)."
+  },
+  "operative_text": "Section 1 (R.C. 2923.11): \"Mass casualty weapon\" means any semi-automatic firearm designed or specially adapted to fire more than thirty-one cartridges without reloading, other than a firearm chambering only.22 caliber short, long, or long-rifle cartridges.\nSection 1 (R.C. 2923.17): (A) No person shall knowingly acquire, have, carry, or use any mass casualty weapon or dangerous ordnance. (D) Whoever violates division (A) of this section is guilty of unlawful possession of a mass casualty weapon or dangerous ordnance, a felony of the fifth degree."
+}

@@ -332,6 +332,69 @@
         "fetched_at": "2026-11-06T16:40:10.941Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "ec7219961ffd7fb077d7ee80f3b55e01ad78d9a39d758e1166e4c7250d30e560",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sb214",
+      "date": "2026-11-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-214-2025",
+      "act": "nay",
+      "motion": "House Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, House Passed, 2026-11-10: nay (tally 69–27); census gate: none.",
+      "subjects": [
+        "suppressors no longer dangerous ordnance",
+        "hunting with suppressors without federal registration condition",
+        "suppressors no longer 'dangerous ordnance'",
+        "sawed-off firearms no longer 'dangerous ordnance'",
+        "hunting with a suppressor without the registration condition"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.05_en.pdf",
+          "sha256": "6eed57a1a48cda7711b248082a5c2acf3e2f5032e752aa6170744a34da965c60"
+        }
+      }
+    },
+    {
+      "id": "320d3a4422a1889591e6595a023f56601e821ca12e776e84f1de69e90f6c2ce4",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sb273",
+      "date": "2026-06-09",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-273-2025",
+      "act": "yea",
+      "motion": "House Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "OH House, House Passed, 2026-06-09: yea (tally 95–0); census gate: near-unanimous.",
+      "subjects": [
+        "voluntary gun storage with dealers or police",
+        "civil immunity for storage holders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (07_EN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb273/07_EN/pdf/ (Open States text id 90137875))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-273-2025.07_en.pdf",
+          "sha256": "4b62c4097cf098dc326ed83b2d798e434d9a36e5498c9cf8b9cc3a0ba9d87bb7"
+        }
+      }
     }
   ],
   "searches": [
@@ -401,6 +464,58 @@
       "found": 7,
       "at": "2026-11-06T16:40:10.941Z",
       "by": "research-oh-r2-2026-11-06"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun violence prevention statements",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ohiohouse.gov/members/ashley-bryant-bailey/news/rep-bryant-bailey-condemns-east-end-mass-shooting-calls-for-action-to-prevent-gun-violence-142439 (403 on fetch; a search result shows a press release on a March 2026 East End shooting calling for action on gun violence, passage not read, not saved)",
+        "not reviewed: https://www.ohiohouse.gov/assets/people/3052/newsletters/14991.pdf",
+        "not reviewed: https://www.ohiohouse.gov/assets/people/3052/newsletters/16971.pdf",
+        "blocked: https://ballotpedia.org/Ashley_Bryant_Bailey (403)",
+        "official member page: blocked (403 on the ohiohouse.gov host); no campaign site reviewed",
+        "one web search on name plus gun words: only leads, nothing citable",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-16T03:44:59.218Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "ghost guns",
+        "gun violence prevention statements",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.ohiohouse.gov/members/ashley-bryant-bailey (403 on direct fetch; member page not read)",
+        "blocked: https://ohiohouse.gov/members/ashley-bryant-bailey/news/rep-bryant-bailey-condemns-east-end-mass-shooting-calls-for-action-to-prevent-gun-violence-142439 (403 on direct fetch; a 2026-03-05 House statement after a Cincinnati East End mass shooting, calling for fewer guns on the streets, seen only through a fetch-tool summary, so no passage saved)",
+        "blocked: https://ballotpedia.org/Ashley_Bryant_Bailey (403)",
+        "web search by name plus gun/firearm words (two searches; leads only, no gun bill sponsorship found in results)",
+        "campaign site: none found in search results",
+        "https://directory.runforsomething.net/candidate/4a17352b0505a181cf03efd8a30c57ae/bryant-bailey-ashley/ (loaded, nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: other state-legislature news pages and newsletters (ohiohouse.gov blocked)"
+      ],
+      "found": 0,
+      "at": "2026-11-16T03:49:24.492Z",
+      "by": "source-collector"
     }
   ]
 }

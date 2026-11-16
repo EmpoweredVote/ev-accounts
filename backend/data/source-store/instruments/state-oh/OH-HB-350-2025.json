@@ -1,0 +1,117 @@
+{
+  "id": "OH-HB-350-2025",
+  "scope": "state:oh",
+  "title": "HB350 (136th Legislature (2025-2026)): Prohibit certain conduct that accelerates firearm's rate of fire",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/hb350",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb350/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cecil Thomas",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Michele Grim",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "88e8aa9b-048a-4c59-9742-ba763a554751"
+    },
+    {
+      "name": "Sean Brennan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1fe75280-5b41-44a9-b531-22a0807204eb"
+    },
+    {
+      "name": "Juanita Brent",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9efe40f7-225a-411d-b9d2-3344dc35a7b5"
+    },
+    {
+      "name": "Karen Brownlee",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "490686f4-3f50-4d88-b9a6-e3ed9becd942"
+    },
+    {
+      "name": "Dontavius Jarrells",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3bcde814-f8ca-4ade-89d4-f661aa48b3b6"
+    },
+    {
+      "name": "Meredith Lawson‐Rowe",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4ff0f9fe-1320-449b-be74-b5a6575d7124"
+    },
+    {
+      "name": "Crystal Lett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "646f54af-59f5-4406-997b-36222d75c2cd"
+    },
+    {
+      "name": "Lauren McNally",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fd22b985-97df-447f-b532-937b3a9cbd64"
+    },
+    {
+      "name": "Tristan Rader",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8435eda6-cd1c-4e41-9dc9-bffbc76fc70b"
+    },
+    {
+      "name": "Allison Russo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fc3e367c-5558-466d-86f7-684866c2e903"
+    },
+    {
+      "name": "Veronica Sims",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8215a745-c232-45e5-8e29-990a97029c02"
+    },
+    {
+      "name": "Eric Synenberg",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "da607bda-5e16-4ed9-998d-3c65dc09e651"
+    },
+    {
+      "name": "Terrence Upchurch",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "032c981a-13dd-4d31-8e2e-4b9dcfa0e38a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb350/00_IN/pdf/ (Open States text id 90137959))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-350-2025.00_in.pdf",
+      "sha256": "0a341c7b99c5dacc0dd1cbc024fbe7ae2bbb6ae07858475827a5c0e5d214b9a2"
+    },
+    "note": "As introduced. R.C. 2923.14(F)(4) amended: 'or,' struck and 'or (6)' added so relief from disability is void on a new 2923.13(A)(6) offense. Government exemption in 2923.133(B) not quoted."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.133(A)): On and after the date that is one hundred eighty days after the effective date of this section, no person shall import, manufacture, sell, transfer, or possess a trigger crank, a bump-fire device, or any part, combination of parts, component, device, attachment, or accessory that is designed or functions to accelerate the rate of fire of a semi-automatic firearm but not convert the semi-automatic firearm into an automatic firearm.\nSection 1 (new R.C. 2923.133(C)): Whoever violates division (A) of this section is guilty of \"illegal rate-of-fire acceleration conduct,\" a felony of the fourth degree.\nSection 1 (R.C. 2923.13(A)(6)): The person has been convicted of a violation of section 2923.133 of the Revised Code or has been adjudicated a delinquent child for the commission of a violation of that section."
+}

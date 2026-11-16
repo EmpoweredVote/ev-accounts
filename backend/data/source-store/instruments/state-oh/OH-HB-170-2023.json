@@ -1,0 +1,170 @@
+{
+  "id": "OH-HB-170-2023",
+  "scope": "state:oh",
+  "title": "HB170 (135th Legislature (2023-2024)): Enact Extreme Risk Protection Order Act",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/135/hb170",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb170/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michele Grim",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "88e8aa9b-048a-4c59-9742-ba763a554751"
+    },
+    {
+      "name": "Cecil Thomas",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Munira Abdullahi",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9d4f858b-8703-4806-b064-d0c4a7e54110"
+    },
+    {
+      "name": "Rachel Baker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd7b7bec-2510-4837-b0c2-7c034d4261c7"
+    },
+    {
+      "name": "Sean Brennan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1fe75280-5b41-44a9-b531-22a0807204eb"
+    },
+    {
+      "name": "Juanita Brent",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9efe40f7-225a-411d-b9d2-3344dc35a7b5"
+    },
+    {
+      "name": "Darnell Brewer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3a15886-3141-4bfe-98fe-dc1d7e8d097e"
+    },
+    {
+      "name": "Richard Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Elliot Forhan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tavia Galonski",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dani Isaacsohn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd927b66-84c3-4378-a91e-130b22439a9d"
+    },
+    {
+      "name": "Mary Lightbody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Beth Liston",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9706e0bb-66ae-48aa-bd7c-7d73da0118eb"
+    },
+    {
+      "name": "Lauren McNally",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fd22b985-97df-447f-b532-937b3a9cbd64"
+    },
+    {
+      "name": "Adam Miller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joe Miller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a0732be3-6345-4a83-9191-fd3f6498fdb7"
+    },
+    {
+      "name": "Jessica Miranda",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ismail Mohamed",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "43f9a2bc-7efe-4947-a430-38181893ee9a"
+    },
+    {
+      "name": "Phil Robinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "dba42b9c-10a8-4c4c-9c44-8e02c1ce9eab"
+    },
+    {
+      "name": "Allison Russo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fc3e367c-5558-466d-86f7-684866c2e903"
+    },
+    {
+      "name": "Mike Skindell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bride Sweeney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f3bd9945-466a-496b-ab9a-ce3ef3864c45"
+    },
+    {
+      "name": "Terrence Upchurch",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "032c981a-13dd-4d31-8e2e-4b9dcfa0e38a"
+    },
+    {
+      "name": "Casey Weinstein",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e4c7eaa-47e5-4c6f-aed0-be4107ddcfb8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb170/00_IN/pdf/ (Open States text id 90131805))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-170-2023.00_in.pdf",
+      "sha256": "3ab0e916bc66d15ad0bd6db7ed22b42b9d82a4ac78c1b2ebed65a7983f6004d6"
+    },
+    "note": "As introduced; no later version read. New sections 2923.26-2923.30 and 2923.99 are wholly new law; amendments to R.C. 109.57, 2923.125, 2923.128, 2923.1213, 2923.13 are conforming and not quoted."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.26(B)(1)): (B)(1) Any of the following persons may seek relief under sections 2923.26 to 2923.30 of the Revised Code by filing a petition for an extreme risk protection order in the court of common pleas in the county where the petitioner resides or in the county where the respondent resides: (a) A family or household member of the respondent; (b) A law enforcement officer or law enforcement agency.\nSection 1 (new R.C. 2923.26(C)(1)): (1) An allegation that the respondent poses a significant danger of causing personal injury to self or others by having in the respondent's custody or control, purchasing, possessing, or receiving a firearm, accompanied by an affidavit made under oath stating the specific statements, actions, or facts that give rise to a reasonable fear of future dangerous acts by the respondent;\nSection 1 (new R.C. 2923.26(I)(1)(a)): (a) Order a hearing to be held not later than fourteen days after the date the petition is filed;\nSection 1 (new R.C. 2923.26(M)(1)): (M)(1) Upon hearing a petition for an extreme risk protection order, subject to division (M)(2) of this section, if the court finds by a preponderance of the evidence that the respondent poses a significant danger of causing personal injury to self or others by having custody or control of a firearm or the ability to purchase, possess, or receive a firearm, the court shall issue an extreme risk protection order for a period of one hundred eighty days.\nSection 1 (new R.C. 2923.27(C)): (C) If a court finds there is reasonable cause to believe that the respondent poses a significant danger of causing personal injury to self or others in the near future by having custody or control of a firearm or the ability to purchase, possess, or receive a firearm, the court shall issue an ex parte extreme risk protection order.\nSection 1 (new R.C. 2923.30(A)): (A) Upon issuance of any extreme risk protection order or ex parte extreme risk protection order under sections 2923.26 to 2923.30 of the Revised Code, the court shall order the respondent to surrender to the local law enforcement agency all firearms in the respondent's custody, control, or possession and any license to carry a concealed handgun issued to the respondent under section 2923.125 or 2923.1213 of the Revised Code.\nSection 1 (new R.C. 2923.99(B)(1)(a)): (a) File a petition for an extreme risk protection order under section 2923.26 of the Revised Code alleging that the respondent poses a significant danger of causing personal injury to self or others by having in the respondent's custody or control, purchasing, possessing, or receiving a firearm if the person knows the allegation is false;\nSection 1 (new R.C. 2923.99(C)-(D)): (C)(1) No person shall acquire, have, carry, or use any firearm with knowledge that the person is prohibited from doing so by an order issued under this section or sections 2923.26 to 2923.30 of the Revised Code. (2) A person who violates division (C)(1) of this section is guilty of having a firearm while under extreme risk protection order disability. Except as provided in division (C) (3) of this section, having a firearm while under extreme risk protection order disability is a misdemeanor of the third degree. (3) If a person found guilty of having a firearm while under extreme risk protection order disability has two or more previous convictions for such an offense, having a firearm while under extreme risk protection order disability is a felony of the fifth degree. (D) In addition to the penalties prescribed in division (C) of this section, no person found guilty of having a firearm while under extreme risk protection order disability shall knowingly acquire, have, carry, or use any firearm or dangerous ordnance for a period of five years after the date the underlying extreme risk protection order expires."
+}

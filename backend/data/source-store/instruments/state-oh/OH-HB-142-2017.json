@@ -1,0 +1,522 @@
+{
+  "id": "OH-HB-142-2017",
+  "scope": "state:oh",
+  "title": "HB142 (132st Legislature (2017-2018)): Eliminate need when stopped to notify carrying firearm",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-HB-142",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb142/02_PH/pdf/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Scott Wiggam",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "P. Lipps",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Wesley Goodman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Darrell Kick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Derek Merrin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ron Hood",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Andy Thompson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Candice Keller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Nino Vitale",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kristina Roegner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e2237324-de7c-40e0-ab79-8f86fcdaa4cb"
+    },
+    {
+      "name": "J. Koehler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tom Brinkman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Becker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bill Seitz",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bill Dean",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Margaret Conditt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2017-10-24",
+      "body": "OH House",
+      "motion": "House pass_300",
+      "kind": "roll-call",
+      "yes": 69,
+      "no": 25,
+      "absent": 0,
+      "note": "Ohio roll call (Open States data) 90142416",
+      "members": [
+        {
+          "name": "Jeffery S. Rezabek",
+          "vote": "yea"
+        },
+        {
+          "name": "Martin J. Sweeney",
+          "vote": "nay"
+        },
+        {
+          "name": "Wesley A. Goodman",
+          "vote": "yea"
+        },
+        {
+          "name": "Marlene Anielski",
+          "vote": "yea"
+        },
+        {
+          "name": "Niraj J. Antani",
+          "vote": "yea"
+        },
+        {
+          "name": "John Becker",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Blessing",
+          "vote": "yea",
+          "politician_id": "a6589da4-5d03-4d41-b0e0-f138e14d2dfb"
+        },
+        {
+          "name": "Andrew Brenner",
+          "vote": "yea",
+          "politician_id": "6defae87-5c64-41d9-88d8-08faa78d6a43"
+        },
+        {
+          "name": "Jim Butler",
+          "vote": "yea"
+        },
+        {
+          "name": "Rick Carfagna",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Cera",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert R. Cupp",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Dean",
+          "vote": "yea"
+        },
+        {
+          "name": "Jonathan Dever",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Duffey",
+          "vote": "yea"
+        },
+        {
+          "name": "Jay Edwards",
+          "vote": "yea"
+        },
+        {
+          "name": "Teresa Fedor",
+          "vote": "yea"
+        },
+        {
+          "name": "Theresa Gavarone",
+          "vote": "yea",
+          "politician_id": "118cb065-7a2e-4b3d-a2a4-47a7b71687a0"
+        },
+        {
+          "name": "Anne Gonzales",
+          "vote": "yea"
+        },
+        {
+          "name": "Doug Green",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Greenspan",
+          "vote": "yea"
+        },
+        {
+          "name": "Christina Hagan",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Henne",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Hill",
+          "vote": "yea"
+        },
+        {
+          "name": "Glenn W. Holmes",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Hood",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Householder",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Huffman",
+          "vote": "yea",
+          "politician_id": "255e97b2-9f45-4d6e-8a6c-e009280ffd0b"
+        },
+        {
+          "name": "Bernadine Kennedy Kent",
+          "vote": "yea"
+        },
+        {
+          "name": "Darrell Kick",
+          "vote": "yea"
+        },
+        {
+          "name": "J. Kyle Koehler",
+          "vote": "yea",
+          "politician_id": "1fa6c657-b1c7-44e6-9bf4-b655bdaabf89"
+        },
+        {
+          "name": "Al Landis",
+          "vote": "yea",
+          "politician_id": "b6354968-a682-4206-a07f-2a688857c155"
+        },
+        {
+          "name": "Laura Lanese",
+          "vote": "yea"
+        },
+        {
+          "name": "Sarah LaTourette",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Lipps",
+          "vote": "yea"
+        },
+        {
+          "name": "Nathan Manning",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert McColley",
+          "vote": "yea",
+          "politician_id": "0c411727-37d3-4183-bb69-b1296718e743"
+        },
+        {
+          "name": "Wes Retherford",
+          "vote": "yea"
+        },
+        {
+          "name": "Craig S. Riedel",
+          "vote": "yea"
+        },
+        {
+          "name": "Kristina Roegner",
+          "vote": "yea",
+          "politician_id": "e2237324-de7c-40e0-ab79-8f86fcdaa4cb"
+        },
+        {
+          "name": "John M. Rogers",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark J. Romanchuk",
+          "vote": "yea",
+          "politician_id": "f9fce068-9763-4bf8-9355-d4aeb9077439"
+        },
+        {
+          "name": "Kirk Schuring",
+          "vote": "yea"
+        },
+        {
+          "name": "Marilyn Slaby",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Smith",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Cole Sprague",
+          "vote": "yea",
+          "politician_id": "171effdf-cf2b-49aa-ab26-29f26c2be755"
+        },
+        {
+          "name": "Dick Stein",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas West",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Wiggam",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Zeltwanger",
+          "vote": "yea"
+        },
+        {
+          "name": "Keith Faber",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Patton",
+          "vote": "yea",
+          "politician_id": "a73f25c8-f81e-4790-8359-1e4f87bb1b47"
+        },
+        {
+          "name": "Jim Hughes",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephen D. Hambley",
+          "vote": "yea"
+        },
+        {
+          "name": "Candice Keller",
+          "vote": "yea"
+        },
+        {
+          "name": "Clifford A. Rosenberger",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Ryan",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas E. Brinkman, Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Timothy E. Ginter",
+          "vote": "yea"
+        },
+        {
+          "name": "Andy Thompson",
+          "vote": "yea"
+        },
+        {
+          "name": "A. Nino Vitale",
+          "vote": "yea"
+        },
+        {
+          "name": "Derek Merrin",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Seitz",
+          "vote": "yea"
+        },
+        {
+          "name": "Steven M. Arndt",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Schaffer",
+          "vote": "yea",
+          "politician_id": "e5023158-e69b-4dec-944d-11701ac8d910"
+        },
+        {
+          "name": "John A. Boccieri",
+          "vote": "yea"
+        },
+        {
+          "name": "Nickie Antonio",
+          "vote": "nay",
+          "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+        },
+        {
+          "name": "Michael Ashford",
+          "vote": "nay"
+        },
+        {
+          "name": "John Barnes, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Kristin Boggs",
+          "vote": "nay"
+        },
+        {
+          "name": "Janine R. Boyd",
+          "vote": "nay"
+        },
+        {
+          "name": "Kathleen Clyde",
+          "vote": "nay"
+        },
+        {
+          "name": "Hearcel Craig",
+          "vote": "nay",
+          "politician_id": "05d33654-b85a-4e2f-921c-b823ee7a1c8d"
+        },
+        {
+          "name": "Anthony DeVitis",
+          "vote": "nay"
+        },
+        {
+          "name": "Catherine Ingram",
+          "vote": "nay",
+          "politician_id": "88d523e9-6e21-42f0-bc31-d01c4bb1f3b1"
+        },
+        {
+          "name": "Brigid Kelly",
+          "vote": "nay"
+        },
+        {
+          "name": "David Leland",
+          "vote": "nay"
+        },
+        {
+          "name": "Michele Lepore-Hagan",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael J. O'Brien",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Patmon",
+          "vote": "nay"
+        },
+        {
+          "name": "John Patterson",
+          "vote": "nay"
+        },
+        {
+          "name": "Alicia Reece",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael Sheehy",
+          "vote": "nay"
+        },
+        {
+          "name": "Kent Smith",
+          "vote": "nay",
+          "politician_id": "ed114b22-4c6b-4fe3-8672-5bc3bc32a129"
+        },
+        {
+          "name": "Fred Strahorn",
+          "vote": "nay"
+        },
+        {
+          "name": "Daniel Ramos",
+          "vote": "nay"
+        },
+        {
+          "name": "Adam Miller",
+          "vote": "nay"
+        },
+        {
+          "name": "Stephanie D. Howse",
+          "vote": "nay"
+        },
+        {
+          "name": "Tavia Galonski",
+          "vote": "nay"
+        },
+        {
+          "name": "Richard Brown",
+          "vote": "nay"
+        },
+        {
+          "name": "Terry Johnson",
+          "vote": "yea",
+          "politician_id": "c55e0d6a-ead9-4e04-9b2c-7bbf611bc56d"
+        },
+        {
+          "name": "Bill Reineke",
+          "vote": "yea",
+          "politician_id": "1cc02d38-1d90-4870-a50b-85ea4ea41a27"
+        },
+        {
+          "name": "George Lang",
+          "vote": "yea",
+          "politician_id": "9d3f190d-3f98-4163-9900-0889b88438ea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the House (02_PH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb142/02_PH/pdf/ (Open States text id 90118749))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-142-2017.02_ph.pdf",
+      "sha256": "abd04c14eaa97fa9a4f1d63d3e993e996dc1df5938fdcf013845f44dcc4ee87c"
+    },
+    "note": "Read the version As Passed by the House (02_PH, Sub. H.B. 142, vote 2017-10-24); Senate amendments, if any, are not in the text read. Struck words (e.g. 'promptly', 'any', 'who approaches the person after the person has been stopped') are dropped from the quotes; the bill adds the 'if an officer requests ID' condition and the display-with-ID option."
+  },
+  "operative_text": "Section 1 (R.C. 2923.12(B)(1)): (B) No person who has been issued a concealed handgun license shall do any of the following: (1) If the person is stopped for a law enforcement purpose and is carrying a concealed handgun, and a law enforcement officer requests the person's driver's license or state identification card, fail to do both of the following: (a) Display the person's concealed handgun license with the driver's license or state identification card or orally inform the law enforcement officer, at the same time as displaying the driver's license or state identification card, that the person has been issued a concealed handgun license (b) Disclose that the person then is carrying a concealed handgun;.\nSection 1 (R.C. 2923.126(A)(4)): (4) If a licensee is stopped for a law enforcement purpose, if the licensee is carrying a concealed handgun at the time the officer approaches, and if a law enforcement officer requests the licensee's driver's license or state identification card, the licensee shall display the licensee's concealed handgun license with the driver's license or state identification card or orally inform the law enforcement officer, at the same time as displaying the driver's license or state identification card, that the licensee has been issued a concealed handgun license, and shall disclose that the licensee currently is carrying a concealed handgun;"
+}

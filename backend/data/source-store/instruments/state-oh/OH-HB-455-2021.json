@@ -1,0 +1,151 @@
+{
+  "id": "OH-HB-455-2021",
+  "scope": "state:oh",
+  "title": "HB455 (134th Legislature (2021-2022)): Avoid carrying weapon where prohibited charge if leave on request",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-HB-455",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb455/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Reggie Stoltzfus",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Thomas Hall",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fe0681af-fa31-4c17-a8de-55f227df1e8f"
+    },
+    {
+      "name": "Adam Bird",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "430705a2-4154-4a4b-b82f-3e7447242463"
+    },
+    {
+      "name": "Brett Hillyer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tom Young",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f85225e0-9e36-4f9f-91dc-50f9cc3d8201"
+    },
+    {
+      "name": "Gary Click",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f64a32db-34ba-44e2-93ce-4d3ee1f7112f"
+    },
+    {
+      "name": "Adam Holmes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1c8e4951-791e-4b76-b16f-d4e0a1c6de22"
+    },
+    {
+      "name": "Jon Cross",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mike Loychik",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Craig S. Riedel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rodney Creech",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3b2518c3-0795-426e-9368-8ea1a421be3a"
+    },
+    {
+      "name": "Jennifer Gross",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e5fa7b8f-b859-48b3-ba5e-272d1fd11bc5"
+    },
+    {
+      "name": "Jean Schmidt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "105ff597-0fa1-4e2f-a257-5ae45724a143"
+    },
+    {
+      "name": "Susan Manchester",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "12b61432-0f20-4de7-afcc-8f24fa95f3c3"
+    },
+    {
+      "name": "Darrell Kick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Marilyn John",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c05edc3f-2467-4771-8a87-0d6c75bd6554"
+    },
+    {
+      "name": "Bill Dean",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ron Ferguson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cea18cfb-b214-4147-9b21-1852ec6ffcb5"
+    },
+    {
+      "name": "Al Cutrona",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b39f0fd8-64b8-425b-a7f6-3748b8a518d0"
+    },
+    {
+      "name": "Brian Lampton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fad76358-3b86-4337-9f43-76446e6c2c2f"
+    },
+    {
+      "name": "Kris Jordan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb455/00_IN/pdf/ (Open States text id 90128640))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-455-2021.00_in.pdf",
+      "sha256": "b531a30b1a2b0ff56a6ab1183ce6baed5ce02356abda9c48b42f58802234e8d7"
+    },
+    "note": "As introduced (134th GA). Parallel removal-instead-of-charge parts also added to R.C. 2923.122 (school safety zone) and 2923.126(C)(3)(b) (posted land), not quoted for length. Also replaces 'active duty member' with 'qualified military member' and renumbers divisions."
+  },
+  "operative_text": "Section 1 (R.C. 2923.11(S)): \"Qualified military member\" means an active duty member of the armed forces of the United States who is carrying a valid military identification card and documentation of successful completion of firearms training that meets or exceeds the training requirements described in division (G)(1) of section 2923.125 of the Revised Code.\nSection 1 (R.C. 2923.12(F)(4)): A person who has a valid concealed handgun license or who is a qualified military member and who is discovered carrying a concealed deadly weapon onto land or premises in violation of division (A) of this section is subject to removal from the premises but is not guilty of carrying concealed weapons. If the person refuses or fails to leave the premises upon being requested to do so by the individual in control of the premises or by that individual's agent or employee, or returns within thirty days to the same land or premises while knowingly in possession of a deadly weapon in violation of this section, the person is guilty of criminal trespass with a deadly weapon, as described in section 2923.1215 of the Revised Code.\nSection 1 (R.C. 2923.123(D)(3)): A person who has a valid concealed handgun license or who is a qualified military member and who is discovered conveying, possessing, or controlling a deadly weapon in violation of division (A) or (B) of this section is subject to removal from the premises but is not guilty of illegal conveyance of a deadly weapon or dangerous ordnance into a courthouse or of illegal possession or control of a deadly weapon or dangerous ordnance in a courthouse, as applicable.\nSection 1 (new R.C. 2923.1215): (A) No concealed handgun licensee or qualified military member shall knowingly convey or attempt to convey a deadly weapon into any place listed in division (B) of section 2923.126 of the Revised Code or in violation of a sign posted pursuant to division (C)(3)(a) of that section, unless otherwise permitted under that section or section 2923.12, 2923.122, or 2923.123 of the Revised Code, and do either of the following: (1) Refuse or fail to leave upon being discovered and being requested to leave by the owner, lessee, or person in control of the premises or by that individual's agent or employee; (2) Return within thirty days to the same premises while knowingly in possession of a deadly weapon without privilege to do so. (B) Whoever violates division (A) of this section is guilty of criminal trespass with a deadly weapon, a misdemeanor of the fourth degree.\nSection 1 (new R.C. 2923.1215(D)): Except as permitted under division (G) of section 2923.12 of the Revised Code, no law enforcement officer shall seize or authorize the seizure of the person's deadly weapon, ammunition, or accessories upon discovering a person conveying or attempting to convey a deadly weapon into a place where the weapon is prohibited, unless the person also violates division (A) of this section."
+}

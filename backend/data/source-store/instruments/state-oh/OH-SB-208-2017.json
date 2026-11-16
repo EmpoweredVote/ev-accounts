@@ -1,0 +1,280 @@
+{
+  "id": "OH-SB-208-2017",
+  "scope": "state:oh",
+  "title": "SB208 (132st Legislature (2017-2018)): Allow on or off duty police to carry weapon on certain premises",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-SB-208",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb208/03_RH/pdf/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Lou Terhar",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bill Beagle",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jay Hottinger",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Matt Huffman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "5261b1f9-be1a-4c11-90d0-72d2d92ba4ed"
+    },
+    {
+      "name": "Kris Jordan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Cecil Thomas",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Joe Uecker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Eklund",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bob Hackett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Frank Hoagland",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Stephanie Kunze",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Robert McColley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Larry Obhof",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Scott Oelslager",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "d285a16d-746a-4192-8846-0a1a4a3d23d5"
+    },
+    {
+      "name": "Bob Peterson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a5c71a58-4c95-4859-8526-79707d6cb5fb"
+    },
+    {
+      "name": "Wes Retherford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Paul Zeltwanger",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bill Coley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2018-04-11",
+      "body": "OH Senate",
+      "motion": "Senate pass_300",
+      "kind": "roll-call",
+      "yes": 30,
+      "no": 3,
+      "absent": 0,
+      "note": "Ohio roll call (Open States data) 90142525",
+      "members": [
+        {
+          "name": "Troy Balderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Stephanie Kunze",
+          "vote": "yea"
+        },
+        {
+          "name": "Lou Terhar",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Oelslager",
+          "vote": "yea",
+          "politician_id": "d285a16d-746a-4192-8846-0a1a4a3d23d5"
+        },
+        {
+          "name": "Cecil Thomas",
+          "vote": "yea",
+          "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+        },
+        {
+          "name": "Gayle Manning",
+          "vote": "yea",
+          "politician_id": "6dbba394-a182-493f-bda9-bdaf9cbb439d"
+        },
+        {
+          "name": "Randy Gardner",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Peterson",
+          "vote": "yea",
+          "politician_id": "a5c71a58-4c95-4859-8526-79707d6cb5fb"
+        },
+        {
+          "name": "Larry Obhof",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Huffman",
+          "vote": "yea",
+          "politician_id": "5261b1f9-be1a-4c11-90d0-72d2d92ba4ed"
+        },
+        {
+          "name": "Frank Hoagland",
+          "vote": "yea"
+        },
+        {
+          "name": "Frank LaRose",
+          "vote": "yea",
+          "politician_id": "79276956-dfa1-4bca-9820-ab7c78dd57c8"
+        },
+        {
+          "name": "Kevin Bacon",
+          "vote": "yea"
+        },
+        {
+          "name": "Joe Uecker",
+          "vote": "yea"
+        },
+        {
+          "name": "Jay Hottinger",
+          "vote": "yea"
+        },
+        {
+          "name": "William P. Coley, II",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Burke",
+          "vote": "yea"
+        },
+        {
+          "name": "Kris Jordan",
+          "vote": "yea"
+        },
+        {
+          "name": "John Eklund",
+          "vote": "yea"
+        },
+        {
+          "name": "Edna Brown",
+          "vote": "yea"
+        },
+        {
+          "name": "Sandra R. Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Vernon Sykes",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Dolan",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Beagle",
+          "vote": "yea"
+        },
+        {
+          "name": "Peggy Lehner",
+          "vote": "yea"
+        },
+        {
+          "name": "Sean J. O'Brien",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Wilson",
+          "vote": "yea",
+          "politician_id": "9594003d-6ce8-4fe3-bd99-4e36a02f2afc"
+        },
+        {
+          "name": "Kenny Yuko",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Hackett",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob McColley",
+          "vote": "yea",
+          "politician_id": "0c411727-37d3-4183-bb69-b1296718e743"
+        },
+        {
+          "name": "Mike Skindell",
+          "vote": "nay"
+        },
+        {
+          "name": "Charleta B. Tavares",
+          "vote": "nay"
+        },
+        {
+          "name": "Joseph Schiavoni",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Reported by the House Federalism and Interstate Relations Committee (03_RH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb208/03_RH/pdf/ (Open States text id 90119244))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-208-2017.03_rh.pdf",
+      "sha256": "87cbc8e00a2084e83b626cfa1e9f20412745df6c8a4b823c22739af3d078d50f"
+    },
+    "note": "Version read: As Reported by the House Federalism and Interstate Relations Committee (03_RH); later amendments, and the passage votes, are not in the text read. Struck text in 2923.121 is only re-lettering."
+  },
+  "operative_text": "Section 1 (R.C. 2923.121): A law enforcement officer or investigator who is authorized to carry firearms but is not acting within the scope of the officer's or investigator's duties, as long as both of the following apply: (i) The officer or investigator is not consuming beer or intoxicating liquor or under the influence of alcohol or a drug of abuse and is carrying validating identification.\nSection 1 (R.C. 2923.126): A peace officer has the same right to carry a concealed handgun in this state as a person who was issued a concealed handgun license under section 2923.125 of the Revised Code, provided that the officer when carrying a concealed handgun under authority of this division is carrying validating identification.\nSection 1 (new R.C. 2923.1214): (A) An establishment serving the public may not prohibit or restrict a law enforcement officer or investigator who is carrying validating identification from carrying a weapon on the premises that the officer or investigator is authorized to carry, regardless of whether the officer or investigator is acting within the scope of that officer's or investigator's duties while carrying the weapon.\nSection 1 (new R.C. 2923.1214): (B) (1) Subject to division (B)(2) of this section, the owner of an establishment serving the public, the operator of an establishment serving the public, and the employer of persons employed at an establishment serving the public shall be immune from liability in a civil action for injury, death, or loss to person or property that allegedly was caused by or related to a law enforcement officer or investigator bringing a weapon into the establishment or onto the premises of the establishment."
+}

@@ -1,0 +1,65 @@
+{
+  "id": "OH-SB-236-2025",
+  "scope": "state:oh",
+  "title": "SB236 (136th Legislature (2025-2026)): Enact the Suicide Self-Defense Act",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/sb236",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb236/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Hearcel Craig",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "05d33654-b85a-4e2f-921c-b823ee7a1c8d"
+    },
+    {
+      "name": "Paula Hicks-Hudson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8a208c28-1273-4e27-93d4-c2c0bb5a1dbc"
+    },
+    {
+      "name": "Bill DeMora",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ade41ff2-eb0c-4778-a3e7-67eb4710aee0"
+    },
+    {
+      "name": "Beth Liston",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9706e0bb-66ae-48aa-bd7c-7d73da0118eb"
+    },
+    {
+      "name": "Kent Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ed114b22-4c6b-4fe3-8672-5bc3bc32a129"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "civil-rights: Section 1 (new R.C. 2923.221(C)) — bars discrimination in health care, employment, education, housing, insurance, benefits and contracting based on registry status"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb236/00_IN/pdf/ (Open States text id 90137792))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-236-2025.00_in.pdf",
+      "sha256": "f83cbaf9d9385236365646c6d8430f20c4f40a556393fd4467f86a0dc586d11d"
+    },
+    "note": "As introduced; large text read by search plus targeted reading. Also amends R.C. 149.43 (registry records exempt from public records), 2923.125 (license applicant must not be enrolled), 2923.128 (license suspension while enrolled), adds R.C. 4731.058 (medical board and mental health department rules to inform public) and uncodified Section 3 (attorney general public awareness campaign); Section 4 short title 'Suicide Self-Defense Act'. Court may remove a registrant earlier under (C)(5). Penalty R.C. 2923.221(E): fines only."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.22): (B)(1) Within six months after the effective date of this section, the attorney general shall establish a do not possess firearms registry to prohibit the possession, sale, or transportation of a firearm to any person who voluntarily registers the person's self to be enrolled in the registry. Section 1 (new R.C. 2923.22): (C)(2) The attorney general shall not remove a person enrolled in the registry from the registry until twenty-one days after the attorney general receives the person's application for removal from the registry. Section 1 (new R.C. 2923.22): (D)(1) On enrolling a person in the do not possess firearms registry, the attorney general shall forward the person's eligibility to purchase, possess, or transport a firearm to the national instant criminal background check system and shall notify the person by mail or electronic mail that the person is enrolled in the registry. Section 1 (new R.C. 2923.22): (D)(2) If a person who has enrolled in the do not possess firearms registry is found to possess, transport, or receive a firearm while enrolled in the registry, law enforcement officials shall confiscate the firearm until the person is removed or unenrolled from the registry. Section 1 (new R.C. 2923.133): (B) No person who is enrolled in the do not possess firearms registry created under section 2923.22 of the Revised Code shall knowingly purchase, possess, or transport a firearm. Section 1 (new R.C. 2923.133): (C) Whoever violates this section is subject to a civil fine of twenty-five dollars. Section 1 (R.C. 2923.20): (8) Knowingly sell, lend, give, or furnish any firearm to any person who is enrolled in the do not possess firearms registry under section 2923.22 of the Revised Code if the offender knows the person is enrolled in that registry. Section 1 (new R.C. 2923.221): (D) No person or entity shall knowingly, or negligently due to failure to perform a required background check, transfer a firearm to a person enrolled in the do not possess firearms registry. Section 1 (new R.C. 2923.221): (C) No person shall knowingly discriminate against another person with regards to the person's receipt of health care services, employment, education, housing, insurance, governmental benefits, or contracting due to that person not being enrolled in the do not possess firearms registry, being enrolled in the registry, or previously being enrolled in the registry."
+}

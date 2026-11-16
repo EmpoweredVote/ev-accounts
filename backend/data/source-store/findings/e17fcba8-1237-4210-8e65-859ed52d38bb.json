@@ -1,0 +1,146 @@
+{
+  "politician_id": "e17fcba8-1237-4210-8e65-859ed52d38bb",
+  "findings": [
+    {
+      "id": "14ebea10b489cd8c099160399acde8140363ae6d995a3e978a11945df3aaac1d",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/c-allison-russo/news/rep-russo-statement-on-anniversary-of-dayton-shooting-103659",
+      "date": "2020-08-04",
+      "date_precision": "day",
+      "passage": "Until we pass commonsense gun safety measures, gun violence will continue to take its toll on our communities.  Ohioans deserve to live with safety and security—they deserve better.",
+      "note": "Statement issued in her name on the Dayton shooting anniversary; the release lists House bills on red-flag orders (HB 316, which she co-sponsored), universal background checks, and high-capacity magazine limits.",
+      "subjects": [
+        "gun safety laws in general",
+        "red-flag orders",
+        "check every gun buyer",
+        "ban on large-capacity magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:45:31.689Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fcd23225ea37b2884c5758221928ca17d8247beff48c72dca1d29f96bc334c71",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/news/democrat/leader-russo-permitless-carry-legislation-puts-ohioans-law-enforcement-in-danger-109039",
+      "date": "2022-03-02",
+      "date_precision": "day",
+      "passage": "Once again, the Republican supermajority has passed dangerous permitless carry legislation that puts our communities at an even greater risk of gun violence than before,\" said Rep. Russo.  \"This completely flies in the face of Ohioans who have called time after time for commonsense gun safety legislation, not extreme bills that endanger the lives of our children and families.",
+      "note": "Statement opposing SB 215 (carry a concealed handgun without training or a permit); the release says amendments for red-flag orders and universal background checks were offered and rejected.",
+      "subjects": [
+        "carry a gun without a permit",
+        "red-flag orders",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:45:31.689Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59305e178118f4e0dc8574642ddfa7c6451bd7eccf4fcf759f27a9d561f019c9",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/news/democrat/leader-russo-commends-president-biden-for-taking-action-to-keep-americans-safe-from-gun-violence-111005",
+      "date": "2022-07-11",
+      "date_precision": "day",
+      "passage": "I commend President Biden's commitment to reducing gun violence. The Bipartisan Safer Communities Act makes real progress that will save innocent lives,\" said Leader Russo. \"Keeping our children and communities safe from gun violence should not be a partisan issue. I hope my Republican colleagues will take note of this bipartisan achievement and work together with House Democrats to pass the commonsense gun safety bills our caucus has introduced this General Assembly.",
+      "note": "Statement praising federal executive gun actions and the federal Safer Communities Act, and urging passage of caucus bills: universal background checks, minimum purchase age 21, bump stock ban, red-flag law, repeal of stand your ground, trigger locks.",
+      "subjects": [
+        "gun safety laws in general",
+        "check every gun buyer",
+        "red-flag orders",
+        "minimum age to buy",
+        "bump stock ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:45:31.689Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "55f58480fba13d06956eba13f352819f354ec497562970e1d93237f1bda6a546",
+      "kind": "own-words",
+      "url": "https://www.ohiohouse.gov/news/democratic/leader-russo-celebrates-gun-violence-prevention-summit-commonsense-solutions-to-keep-communities-safe-118751",
+      "date": "2024-02-15",
+      "date_precision": "day",
+      "passage": "This is not a Republican versus Democrat, urban versus rural, or gun-owner versus non-gun-owner issue,\" said Leader Russo. \"These are commonsense solutions that we know the vast majority of Ohioans support. The time is now to advocate for change and bring an end to this public health crisis plaguing our communities.",
+      "note": "Statement on a gun violence prevention summit; the release lists new caucus bills on universal background checks, tighter concealed carry rules, and a gun violence public health declaration.",
+      "subjects": [
+        "gun safety laws in general",
+        "check every gun buyer",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:45:31.689Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "356dc933803ef81fb4b4a13de684d2f369a98c636654f62bebb6b0aeadf27d74",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/ohio-lawmakers-not-likely-consider-002900428.html",
+      "date": "2025-02-06",
+      "date_precision": "day",
+      "passage": "What we do know here in the state of Ohio is we have a lot of people who get access to guns who shouldn't have access to guns and part of that has been because of some of the policies that have been passed here in the statehouse,\" Russo said. \"We know that, overwhelmingly, Ohioans support common-sense gun reform, things like expanded background checks, red flag laws.",
+      "note": "Direct quote of her in a news story (syndicated on Yahoo) after the New Albany shooting, on background checks and red-flag laws.",
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders",
+        "gun safety laws in general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:45:31.689Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "red-flag orders",
+        "permitless carry",
+        "ban on high-capacity magazines",
+        "minimum age to buy",
+        "gun safety laws in general"
+      ],
+      "places": [
+        "status: on the 2026 general-election ballot for Ohio Secretary of State (news story https://www.news5cleveland.com/news/politics/ohio-politics/allison-russo-wins-election-for-ohio-secretary-of-state-unofficial-results-show shows the race result)",
+        "On the Record (0 meetings)",
+        "official legislature member and news pages (4 statements fetched)",
+        "blocked: https://allisonrusso.com/?p=447 (403)",
+        "Ballotpedia https://ballotpedia.org/Allison_Russo (202, empty page, not usable)",
+        "news search on name plus gun words (two news stories fetched)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://www.ohiohouse.gov/members/c-allison-russo (member page not searched beyond the news items above)",
+        "not reviewed: debate or interview video for the Secretary of State race"
+      ],
+      "found": 5,
+      "at": "2026-11-16T03:45:31.689Z",
+      "by": "source-collector"
+    }
+  ]
+}

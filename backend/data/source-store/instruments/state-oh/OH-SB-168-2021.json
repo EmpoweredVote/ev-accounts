@@ -1,0 +1,246 @@
+{
+  "id": "OH-SB-168-2021",
+  "scope": "state:oh",
+  "title": "SB168 (134th Legislature (2021-2022)): Establish Ohio Mobile Training Team Program",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-SB-168",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/sb168/02_PS/pdf/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Frank Hoagland",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bob Hackett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Niraj Antani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Andrew Brenner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6defae87-5c64-41d9-88d8-08faa78d6a43"
+    },
+    {
+      "name": "Jerry Cirino",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b7281ad1-da29-4838-92d8-25f09a135c7c"
+    },
+    {
+      "name": "Terry Johnson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c55e0d6a-ead9-4e04-9b2c-7bbf611bc56d"
+    },
+    {
+      "name": "Rob McColley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0c411727-37d3-4183-bb69-b1296718e743"
+    },
+    {
+      "name": "Sandy O'Brien",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cae3594b-8480-4c78-bfc1-8a4fc9212282"
+    },
+    {
+      "name": "Tim Schaffer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e5023158-e69b-4dec-944d-11701ac8d910"
+    },
+    {
+      "name": "Steve Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9594003d-6ce8-4fe3-bd99-4e36a02f2afc"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "education-school-police: Section 1 (new R.C. 5502.70, 5502.702; R.C. 5502.01, 5502.262) — creates the Ohio mobile training team and school safety training/planning duties beyond guns"
+      ]
+    }
+  ],
+  "votes": [
+    {
+      "date": "2022-02-09",
+      "body": "OH Senate",
+      "motion": "Senate Pass",
+      "kind": "roll-call",
+      "yes": 23,
+      "no": 8,
+      "absent": 0,
+      "note": "Ohio roll call (Open States data) 90145021",
+      "members": [
+        {
+          "name": "Matt Dolan",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Hackett",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Schaffer",
+          "vote": "yea",
+          "politician_id": "e5023158-e69b-4dec-944d-11701ac8d910"
+        },
+        {
+          "name": "Steve Wilson",
+          "vote": "yea",
+          "politician_id": "9594003d-6ce8-4fe3-bd99-4e36a02f2afc"
+        },
+        {
+          "name": "Terry Johnson",
+          "vote": "yea",
+          "politician_id": "c55e0d6a-ead9-4e04-9b2c-7bbf611bc56d"
+        },
+        {
+          "name": "Michael Rulli",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrew Brenner",
+          "vote": "yea",
+          "politician_id": "6defae87-5c64-41d9-88d8-08faa78d6a43"
+        },
+        {
+          "name": "Frank Hoagland",
+          "vote": "yea"
+        },
+        {
+          "name": "Nathan Manning",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Huffman",
+          "vote": "yea",
+          "politician_id": "255e97b2-9f45-4d6e-8a6c-e009280ffd0b"
+        },
+        {
+          "name": "Stephanie Kunze",
+          "vote": "yea"
+        },
+        {
+          "name": "Theresa Gavarone",
+          "vote": "yea",
+          "politician_id": "118cb065-7a2e-4b3d-a2a4-47a7b71687a0"
+        },
+        {
+          "name": "Kristina Roegner",
+          "vote": "yea",
+          "politician_id": "e2237324-de7c-40e0-ab79-8f86fcdaa4cb"
+        },
+        {
+          "name": "Bob Peterson",
+          "vote": "yea",
+          "politician_id": "a5c71a58-4c95-4859-8526-79707d6cb5fb"
+        },
+        {
+          "name": "Matt Huffman",
+          "vote": "yea",
+          "politician_id": "5261b1f9-be1a-4c11-90d0-72d2d92ba4ed"
+        },
+        {
+          "name": "Jay Hottinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirk Schuring",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob McColley",
+          "vote": "yea",
+          "politician_id": "0c411727-37d3-4183-bb69-b1296718e743"
+        },
+        {
+          "name": "Niraj Antani",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry Cirino",
+          "vote": "yea",
+          "politician_id": "b7281ad1-da29-4838-92d8-25f09a135c7c"
+        },
+        {
+          "name": "Bill Reineke",
+          "vote": "yea",
+          "politician_id": "1cc02d38-1d90-4870-a50b-85ea4ea41a27"
+        },
+        {
+          "name": "Mark Romanchuk",
+          "vote": "yea",
+          "politician_id": "f9fce068-9763-4bf8-9355-d4aeb9077439"
+        },
+        {
+          "name": "Sandy O'Brien",
+          "vote": "yea",
+          "politician_id": "cae3594b-8480-4c78-bfc1-8a4fc9212282"
+        },
+        {
+          "name": "Kenny Yuko",
+          "vote": "nay"
+        },
+        {
+          "name": "Teresa Fedor",
+          "vote": "nay"
+        },
+        {
+          "name": "Vernon Sykes",
+          "vote": "nay"
+        },
+        {
+          "name": "Sandra R. Williams",
+          "vote": "nay"
+        },
+        {
+          "name": "Cecil Thomas",
+          "vote": "nay",
+          "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+        },
+        {
+          "name": "Nickie Antonio",
+          "vote": "nay",
+          "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+        },
+        {
+          "name": "Hearcel Craig",
+          "vote": "nay",
+          "politician_id": "05d33654-b85a-4e2f-921c-b823ee7a1c8d"
+        },
+        {
+          "name": "Tina Maharath",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/sb168/02_PS/pdf/ (Open States text id 90128440))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-168-2021.02_ps.pdf",
+      "sha256": "b8e27dbc34058cacc6341ba1e46f3fba98f1e82864fd168c395d96407c74db02"
+    },
+    "note": "Version read: As Passed by the Senate (02_PS), 23-8 on 2022-02-09; later amendments are not in the text read (the House passed Sub. H.B. 99 instead). The school-safety topic call is a judgement. The title mentions an appropriation but the text read has no appropriation section."
+  },
+  "operative_text": "Section 1 (R.C. 2923.122): (D)(1) This section does not apply to any of the following: ... provided the officer satisfies the criteria set forth in divisions (C)(1) or (2) and (D) of section 5502.701 of the Revised Code, or any other person who has written authorization from the board of education or governing body of a school to convey deadly weapons or dangerous ordnance into a school safety zone or to possess a deadly weapon or dangerous ordnance in a school safety zone and who conveys or possesses the deadly weapon or dangerous ordnance in accordance with that authorization provided the person satisfies the criteria set forth in divisions (C)(1) or (2) and (D) of section 5502.701 of the Revised Code;\nSection 1 (new R.C. 5502.701): (C) No person is eligible for appointment to the position of school safety designee unless one of the following applies: (1) The person is a school resource officer; (2) The person is in a category described in division (A)(2)(b) or (c) of this section and has successfully completed a basic firearms training program for school safety designees, as described in division (A)(18) of section 109.73 and division (B) of section 109.743 of the Revised Code.\nSection 1 (new R.C. 5502.701): (2) No person who has been appointed to serve as a school safety designee may carry a concealed weapon while serving in that capacity unless the person has a valid concealed handgun license.\nSection 1 (new R.C. 5502.701): (D)(1) No person who has been appointed to serve as the chief mobile training officer, as a regional mobile training officer, or as a school safety designee may continue to serve in that capacity unless the person, within the preceding quarterly period, has successfully completed the firearms requalification training program for the position as specified in division (A)(2) of section 109.801 of the Revised Code."
+}

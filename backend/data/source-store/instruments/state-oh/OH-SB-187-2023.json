@@ -1,0 +1,68 @@
+{
+  "id": "OH-SB-187-2023",
+  "scope": "state:oh",
+  "title": "SB187 (135th Legislature (2023-2024)): Prohibit firearm possession with a domestic violence conviction",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/135/sb187",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/sb187/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Hearcel Craig",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "05d33654-b85a-4e2f-921c-b823ee7a1c8d"
+    },
+    {
+      "name": "Vernon Sykes",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Nickie Antonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+    },
+    {
+      "name": "Kent Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ed114b22-4c6b-4fe3-8672-5bc3bc32a129"
+    },
+    {
+      "name": "Paula Hicks-Hudson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8a208c28-1273-4e27-93d4-c2c0bb5a1dbc"
+    },
+    {
+      "name": "Bill DeMora",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ade41ff2-eb0c-4778-a3e7-67eb4710aee0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/sb187/00_IN/pdf/ (Open States text id 90134229))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-187-2023.00_in.pdf",
+      "sha256": "c86b989532dd2309d945d79af30804be7cfc0d1823c63058699f59ea027cb848"
+    },
+    "note": "As introduced. In 2923.14(F)(4) the word 'or,' before (3) is struck and '(6)' added; the (F)(4) quote is the post-bill reading."
+  },
+  "operative_text": "Section 1 (R.C. 2923.13): (6) The person is charged with or has been convicted of a violation of section 2919.25 of the Revised Code that is a misdemeanor of the first degree.\nSection 1 (R.C. 2923.13): Whoever violates this section is guilty of having weapons while under disability, a felony of the third degree.\nSection 1 (R.C. 2923.14): Is automatically void upon commission by the applicant of any offense set forth in division (A)(2), (3), or (6) of section 2923.13 of the Revised Code, or upon the applicant's becoming one of the class of persons named in division (A)(1), (4), or (5) of that section."
+}

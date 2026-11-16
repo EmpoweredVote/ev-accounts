@@ -1,0 +1,74 @@
+{
+  "id": "OH-HB-248-2019",
+  "scope": "state:oh",
+  "title": "HB248 (133rd Legislature (2019-2020)): Exempt antique firearms from certain weapons control laws",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA133-HB-248",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb248/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jena Powell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jeffrey Smith, T.",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Phil Plummer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f4afc4b5-70de-49e6-9e48-768a9e3dc1ff"
+    },
+    {
+      "name": "Scott Wiggam",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Craig Riedel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Becker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bill Seitz",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Niraj Antani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb248/00_IN/pdf/ (Open States text id 90124351))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-248-2019.00_in.pdf",
+      "sha256": "bd13e37e0052cff4038e11312a78c225e79891684b7b6ae4108bfa36c7a51885"
+    },
+    "note": "As introduced; no later version read. Changes are marked additions only; nothing struck."
+  },
+  "operative_text": "Section 1 (R.C. 2923.13(C)-(D)): (C) Division (A) of this section does not prohibit any person from acquiring, having, carrying, or using an antique firearm. (D) For the purposes of this section, : (1) \"Under operation of law or legal process\" shall not itself include mere completion, termination, or expiration of a sentence imposed as a result of a criminal conviction. (2 ) \"Antique firearm\" means any of the following: (a) A firearm with a matchlock, flintlock, percussion cap, or similar type of ignition system manufactured in or before 1898. (b) A replica of a firearm described in division (D)(2)(a) of this section if the replica is not designed or redesigned for using rimfire or conventional centerfire fixed ammunition or the replica uses rimfire or conventional centerfire fixed ammunition that is no longer manufactured in the United States and is not readily available in the ordinary channels of commercial trade. (c) A muzzle loading rifle, shotgun, or pistol that is designed to use black powder, or a black powder substitute, and that cannot use fixed ammunition, other than a firearm described in division (D)(3) of this section. (3) \"Antique firearm\" does not include a weapon that incorporates a firearm frame or receiver, a firearm that is converted into a muzzle loading weapon, or a muzzle loading weapon that can be readily converted to fire fixed ammunition by replacing the barrel, bolt, breechblock, or any combination thereof.\nSection 1 (R.C. 2923.20(A)(1)): (1) Recklessly sell, lend, give, or furnish any firearm to any person prohibited by section 2923.13 or 2923.15 of the Revised Code from acquiring or using any firearm, other than an antique firearm, or recklessly sell, lend, give, or furnish any dangerous ordnance to any person prohibited by section 2923.13, 2923.15, or 2923.17 of the Revised Code from acquiring or using any dangerous ordnance;\nSection 1 (R.C. 2923.20(D)(5)): (5) \"Antique firearm\" has the same meaning as in section 2923.13 of the Revised Code."
+}

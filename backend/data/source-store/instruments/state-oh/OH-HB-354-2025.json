@@ -1,0 +1,93 @@
+{
+  "id": "OH-HB-354-2025",
+  "scope": "state:oh",
+  "title": "HB354 (136th Legislature (2025-2026)): Enact the Keeping Our Survivors Safe Act",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/hb354",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb354/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michele Grim",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "88e8aa9b-048a-4c59-9742-ba763a554751"
+    },
+    {
+      "name": "Munira Abdullahi",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9d4f858b-8703-4806-b064-d0c4a7e54110"
+    },
+    {
+      "name": "Sean Brennan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1fe75280-5b41-44a9-b531-22a0807204eb"
+    },
+    {
+      "name": "Karen Brownlee",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "490686f4-3f50-4d88-b9a6-e3ed9becd942"
+    },
+    {
+      "name": "Crystal Lett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "646f54af-59f5-4406-997b-36222d75c2cd"
+    },
+    {
+      "name": "Lauren McNally",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fd22b985-97df-447f-b532-937b3a9cbd64"
+    },
+    {
+      "name": "Beryl Piccolantonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "80b114d4-7be5-4733-99f2-0487b33de7a7"
+    },
+    {
+      "name": "Tristan Rader",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8435eda6-cd1c-4e41-9dc9-bffbc76fc70b"
+    },
+    {
+      "name": "Allison Russo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fc3e367c-5558-466d-86f7-684866c2e903"
+    },
+    {
+      "name": "Erika White",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9af4d9ab-0280-43dc-8c6f-6e235d750567"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb354/00_IN/pdf/ (Open States text id 90138908))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-354-2025.00_in.pdf",
+      "sha256": "b1fde603285e095f51a41306dffd6b898376c6fb7c6cbac4c77beb1e6d43cd1e"
+    },
+    "note": "As introduced (136th GA); no passage vote known to this text. In 2923.14(F)(4) the word 'or,' was struck and '(6)' added."
+  },
+  "operative_text": "Section 1 (R.C. 2923.13): (6) The person has been convicted of a violation of section 2919.25 of the Revised Code that is a misdemeanor of the first degree.\nSection 1 (R.C. 2923.14): Is automatically void upon commission by the applicant of any offense set forth in division (A)(2), (3), or (6) of section 2923.13 of the Revised Code, or upon the applicant's becoming one of the class of persons named in division (A)(1), (4), or (5) of that section."
+}

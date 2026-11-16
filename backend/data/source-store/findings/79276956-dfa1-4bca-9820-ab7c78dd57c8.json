@@ -447,6 +447,189 @@
         "fetched_at": "2026-11-06T16:28:34.673Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "89bc939c02a70807dcfa022c821bcc8562251d9f97beef566b85d635f6b6680f",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-HB-228",
+      "date": "2018-12-27",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-228-2017",
+      "act": "yea",
+      "motion": "Senate Passed notwithstanding objections of the Governor",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH Senate, Senate Passed notwithstanding objections of the Governor, 2018-12-27: yea (tally 21–11); census gate: none.",
+      "subjects": [
+        "state preemption of local gun rules, with damages against localities",
+        "straw-purchase and false-information offences",
+        "no duty to retreat and burden of proof on self-defense",
+        "subsidized tenants may keep firearms in their unit",
+        "straw-purchase and false-information offences in firearm sales",
+        "burden of proof on self-defense",
+        "off-duty officers may carry in bars and public establishments"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb228/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-228-2017.05_en.pdf",
+          "sha256": "eab978977ef322644e7b964a995f341c4f0217f6356c89969365aa91a9708c3f"
+        }
+      }
+    },
+    {
+      "id": "37b10555fb38365607752cbc647dd72f5df2a7bea25f598247e3b9e285de402d",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-HB-79",
+      "date": "2018-02-06",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-79-2017",
+      "act": "yea",
+      "motion": "Senate pass_300",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "OH Senate, Senate pass_300, 2018-02-06: yea (tally 31–0); census gate: near-unanimous.",
+      "subjects": [
+        "tactical medical professionals may carry firearms on duty",
+        "same concealed-carry right as a licensee for those professionals",
+        "firearms training rules for them"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb79/05_EN/pdf/ (Open States text id 90120150))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-79-2017.05_en.pdf",
+          "sha256": "0b8571da6e979c70c14c707bb9d473b876c69f5b1e3df1c91031e431d303501d"
+        }
+      }
+    },
+    {
+      "id": "8e8d45e836e53caac7b81d8681c850640eba0a7c09494b4b0312e1f0754a8280",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-SB-208",
+      "date": "2018-04-11",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-208-2017",
+      "act": "yea",
+      "motion": "Senate pass_300",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "OH Senate, Senate pass_300, 2018-04-11: yea (tally 30–3); census gate: near-unanimous.",
+      "subjects": [
+        "off-duty officers may carry in bars and public establishments",
+        "civil immunity for establishment owners"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Reported by the House Federalism and Interstate Relations Committee (03_RH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb208/03_RH/pdf/ (Open States text id 90119244))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-208-2017.03_rh.pdf",
+          "sha256": "87cbc8e00a2084e83b626cfa1e9f20412745df6c8a4b823c22739af3d078d50f"
+        }
+      }
+    },
+    {
+      "id": "6b005fda90acd6bde858856588d59d1de3bd675bdb72e60899007cf07d7fe023",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-SB-81",
+      "date": "2018-01-17",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-81-2017",
+      "act": "yea",
+      "motion": "Senate pass_300",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "OH Senate, Senate pass_300, 2018-01-17: yea (tally 31–2); census gate: near-unanimous.",
+      "subjects": [
+        "concealed handgun license fee waived for military members and veterans",
+        "military firearms training counts as competency",
+        "license renewal any time before expiry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb81/05_EN/pdf/ (Open States text id 90118973))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-81-2017.05_en.pdf",
+          "sha256": "4d5d3ae7bcb7cb37e37d6ead10ff6eca36965f39c49c317cc6d7a5b4bcb1806b"
+        }
+      }
+    },
+    {
+      "id": "9c76d94af7ee956c08aad1412539b8c63f3bf8f1f4fad957e3fcff1400a41d68",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-HB-79",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-79-2017",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-HB-79-2017 (sponsor list (prime / co-sponsor)): HB79 (132st Legislature (2017-2018)): Provide for firearms training for tactical medical professionals.",
+      "subjects": [
+        "tactical medical professionals may carry firearms on duty",
+        "same concealed-carry right as a licensee for those professionals",
+        "firearms training rules for them"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb79/05_EN/pdf/ (Open States text id 90120150))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-79-2017.05_en.pdf",
+          "sha256": "0b8571da6e979c70c14c707bb9d473b876c69f5b1e3df1c91031e431d303501d"
+        }
+      }
+    },
+    {
+      "id": "1717c41347f5cc4f2bd98e4f1059e9c2afe19b5323432c360ac60301f903fb2f",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-SB-81",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "OH-SB-81-2017",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-SB-81-2017 (sponsor list (prime / co-sponsor)): SB81 (132st Legislature (2017-2018)): Revise licensing rules for military personnel concealed carry.",
+      "subjects": [
+        "concealed handgun license fee waived for military members and veterans",
+        "military firearms training counts as competency",
+        "license renewal any time before expiry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb81/05_EN/pdf/ (Open States text id 90118973))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-81-2017.05_en.pdf",
+          "sha256": "4d5d3ae7bcb7cb37e37d6ead10ff6eca36965f39c49c317cc6d7a5b4bcb1806b"
+        }
+      }
     }
   ],
   "searches": [

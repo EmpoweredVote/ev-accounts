@@ -1,0 +1,218 @@
+{
+  "id": "OH-HB-419-2023",
+  "scope": "state:oh",
+  "title": "HB419 (135th Legislature (2023-2024)): Enact the Universal Background Checks Act",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/135/hb419",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb419/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Phil Robinson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "dba42b9c-10a8-4c4c-9c44-8e02c1ce9eab"
+    },
+    {
+      "name": "Dani Isaacsohn",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd927b66-84c3-4378-a91e-130b22439a9d"
+    },
+    {
+      "name": "Munira Abdullahi",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9d4f858b-8703-4806-b064-d0c4a7e54110"
+    },
+    {
+      "name": "Rachel Baker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd7b7bec-2510-4837-b0c2-7c034d4261c7"
+    },
+    {
+      "name": "Willis Blackshear",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "322bb72d-873c-41ff-b8bf-f0ec126490f7"
+    },
+    {
+      "name": "Sean Brennan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1fe75280-5b41-44a9-b531-22a0807204eb"
+    },
+    {
+      "name": "Juanita Brent",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9efe40f7-225a-411d-b9d2-3344dc35a7b5"
+    },
+    {
+      "name": "Darnell Brewer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3a15886-3141-4bfe-98fe-dc1d7e8d097e"
+    },
+    {
+      "name": "Richard Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rick Dell'Aquila",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sedrick Denson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Elliot Forhan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michele Grim",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "88e8aa9b-048a-4c59-9742-ba763a554751"
+    },
+    {
+      "name": "Latyna Humphrey",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "750b696e-7c32-4f8a-bb0f-7d8e317a4a17"
+    },
+    {
+      "name": "Dontavius Jarrells",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3bcde814-f8ca-4ade-89d4-f661aa48b3b6"
+    },
+    {
+      "name": "Beth Liston",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9706e0bb-66ae-48aa-bd7c-7d73da0118eb"
+    },
+    {
+      "name": "Lauren McNally",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fd22b985-97df-447f-b532-937b3a9cbd64"
+    },
+    {
+      "name": "Adam Miller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joe Miller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a0732be3-6345-4a83-9191-fd3f6498fdb7"
+    },
+    {
+      "name": "Jessica Miranda",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ismail Mohamed",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "43f9a2bc-7efe-4947-a430-38181893ee9a"
+    },
+    {
+      "name": "Beryl Piccolantonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "80b114d4-7be5-4733-99f2-0487b33de7a7"
+    },
+    {
+      "name": "Elgin Rogers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e6ed11d7-adef-48b3-9d1a-64e7fb4dd83f"
+    },
+    {
+      "name": "Allison Russo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fc3e367c-5558-466d-86f7-684866c2e903"
+    },
+    {
+      "name": "Veronica Sims",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8215a745-c232-45e5-8e29-990a97029c02"
+    },
+    {
+      "name": "Mike Skindell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Anita Somani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b424ad5b-4b36-4f9a-b884-a00c355dd88c"
+    },
+    {
+      "name": "Bride Sweeney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f3bd9945-466a-496b-ab9a-ce3ef3864c45"
+    },
+    {
+      "name": "Cecil Thomas",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Dan Troy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "71cc6ae5-713f-42ae-8a0d-b37b85605f3e"
+    },
+    {
+      "name": "Terrence Upchurch",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "032c981a-13dd-4d31-8e2e-4b9dcfa0e38a"
+    },
+    {
+      "name": "Casey Weinstein",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e4c7eaa-47e5-4c6f-aed0-be4107ddcfb8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb419/00_IN/pdf/ (Open States text id 90132738))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-419-2023.00_in.pdf",
+      "sha256": "fe91c95e0c2b4607b26e4228fb07b27fb1425a14ec629870343b4d67318ed5c9"
+    },
+    "note": "As introduced (135th GA); text is identical to OH-HB-373-2025. Operative text is a selection; the exceptions in division (G) and the law-enforcement path in division (F) are not quoted. Mental-health records check (R.C. 5122.311) and the mandatory fine rule (R.C. 2929.28) serve the same rule."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.26): (B) No federally licensed firearms dealer shall transfer a firearm to any person unless the federally licensed firearms dealer complies with the requirements of 18 U.S.C. 922(t). (C)(1) No unlicensed transferor shall transfer a firearm to an unlicensed transferee, unless both of the following apply with respect to the transfer of the firearm: (a) The firearm is transferred through a federally licensed firearms dealer under division (E) of this section, through a law enforcement agency under division (F) of this section, or in accordance with an exception described in division (G) of this section.\nSection 1 (new R.C. 2923.26): (D)(1) No unlicensed transferee shall receive a firearm from an unlicensed transferor, unless both of the following apply with respect to the transfer of the firearm: (a) The firearm is transferred through a federally licensed firearms dealer under division (E) of this section, through a law enforcement agency under division (F) of this section, or in accordance with an exception described in division (G) of this section.\nSection 1 (new R.C. 2923.26): (E) A federally licensed firearms dealer who agrees to assist in the transfer of a firearm between an unlicensed transferor and an unlicensed transferee under division (C) or (D) of this section shall do all of the following: (1) Comply with 18 U.S.C. 922(t) as if transferring the firearm from the inventory of the federally licensed firearms dealer to the unlicensed transferee, except that a federally licensed firearms dealer assisting in the transfer of a firearm under this division shall not be required to comply again with the requirements of that provision in delivering the firearm to the unlicensed transferee; (2) Conduct an incompetency records check of the unlicensed transferee by contacting the attorney general and requesting a check of the records maintained under section 5122.311 of the Revised Code, to determine if the transfer of the firearm to the unlicensed transferee or the unlicensed transferee's acquisition or possession of the firearm would violate the law of this state;\nSection 1 (new R.C. 2923.26): (H) A federally licensed firearms dealer or law enforcement agency that processes the transfer of a firearm under this section may assess and collect a fee, in an amount not to exceed ten dollars, with respect to each firearm transfer processed. (J)(1) No person shall recklessly violate division (B), (C), or (D) of this section. (2) Whoever violates division (J)(1) of this section is guilty of illegal transfer of a firearm, and shall be punished as provided in divisions (J)(2)(a) to (c) of this section.\nSection 1 (R.C. 5122.311): Records checks requested by a federally licensed firearms dealer or law enforcement agency pursuant to section 2923.26 of the Revised Code shall be conducted, and results of the checks shall be provided, immediately upon receipt of the request."
+}

@@ -1,0 +1,162 @@
+{
+  "id": "OH-HB-316-2019",
+  "scope": "state:oh",
+  "title": "HB316 (133rd Legislature (2019-2020)): Get court order temporarily restricting access to guns",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA133-HB-316",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb316/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "C. Russo",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bride Sweeney",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f3bd9945-466a-496b-ab9a-ce3ef3864c45"
+    },
+    {
+      "name": "Emilia Sykes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Erica Crawley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brigid Kelly",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Leland",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jessica Miranda",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kristin Boggs",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Casey Weinstein",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e4c7eaa-47e5-4c6f-aed0-be4107ddcfb8"
+    },
+    {
+      "name": "Terrence Upchurch",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "032c981a-13dd-4d31-8e2e-4b9dcfa0e38a"
+    },
+    {
+      "name": "Joseph Miller, J.",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael Skindell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mary Lightbody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lisa Sobecki",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jeffrey Crossman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Phillip Robinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Randi Clites",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Beth Liston",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9706e0bb-66ae-48aa-bd7c-7d73da0118eb"
+    },
+    {
+      "name": "Sedrick Denson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Richard Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Thomas West",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michele Lepore-Hagan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tavia Galonski",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kent Smith, K.",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Adam Miller, A.",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb316/00_IN/pdf/ (Open States text id 90123704))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-316-2019.00_in.pdf",
+      "sha256": "87810138c47f0a365119d585e590a0abffa169283076b7900053ddb5d7ef8377"
+    },
+    "note": "As introduced (133rd GA); no later version read. Also amends R.C. 109.57, 2923.125, 2923.128, 2923.1213 (amends 109.57, 2923.125, 2923.128, 2923.13) to tie licensing and disability rules to the orders. Knowingly false petition is a fifth-degree felony (penalty for the bill's own rule). Ex parte orders also created (new R.C. 2923.27)."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.26): Upon hearing a petition for an extreme risk protection order, if the court finds by a preponderance of the evidence that the respondent poses a significant danger of causing personal injury to self or others by having custody or control of a firearm or the ability to purchase, possess, or receive a firearm, the court shall issue an extreme risk protection order for a period of one hundred eighty days .\nSection 1 (new R.C. 2923.30): Upon issuance of any extreme risk protection order under this chapter, including an ex parte extreme risk protection order, the court shall order the respondent to surrender to the local law enforcement agency all firearms in the respondent's custody, control, or possession and any license to carry a concealed handgun issued to the respondent under section 2923.125 or 2923.1213 of the Revised Code.\nSection 1 (new R.C. 2923.99): No person shall acquire, have, carry, or use any firearm with knowledge that the person is prohibited from doing so by an order issued under this section or sections 2923.26 to 2923.30 of the Revised Code."
+}

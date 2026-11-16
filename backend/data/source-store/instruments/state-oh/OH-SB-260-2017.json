@@ -1,0 +1,69 @@
+{
+  "id": "OH-SB-260-2017",
+  "scope": "state:oh",
+  "title": "SB260 (132st Legislature (2017-2018)): Prohibit assault weapons; firearm/ammunition sale database",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-SB-260",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb260/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michael Skindell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Charleta B. Tavares",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Edna Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kenny Yuko",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Cecil Thomas",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Sandra R. Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Vernon Sykes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb260/00_IN/pdf/ (Open States text id 90120396))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-260-2017.00_in.pdf",
+      "sha256": "d5e3113c9a0bce0ce1863483bc934da2ba359259ed4369ef58e67bbb0fb0e690"
+    },
+    "note": "As introduced. R.C. 109.52 also adds 'maintain a firearm and ammunition transactions database' to the bureau's powers."
+  },
+  "operative_text": "Section 1 (new R.C. 109.67): The attorney general shall prepare for the establishment and operation of a firearm and ammunition transactions database that will be maintained by the bureau of criminal identification and investigation. Section 1 (new R.C. 2923.171): (A) No person shall knowingly possess or acquire any assault weapon. Section 1 (new R.C. 2923.171): (C) Whoever violates division (A) of this section is guilty of unlawful possession of an assault weapon, a felony of the fifth degree. Section 1 (new R.C. 2923.171): (D) As used in this section, \"assault weapon\" means an automatic firearm that has not been rendered permanently inoperable, a semi-automatic firearm capable of accepting a detachable magazine with the capacity to accept ten or more cartridges, and a semi-automatic firearm with a fixed magazine with the capacity to accept ten or more cartridges."
+}

@@ -1,0 +1,44 @@
+{
+  "id": "OH-HB-51-2023",
+  "scope": "state:oh",
+  "title": "HB51 (135th Legislature (2023-2024)): Enact the Second Amendment Preservation Act",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/135/hb51",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb51/02_RH/pdf/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Mike Loychik",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jean Schmidt",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "105ff597-0fa1-4e2f-a257-5ae45724a143"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Reported by the House Rules and Reference Committee (02_RH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb51/02_RH/pdf/ (Open States text id 90132835))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-51-2023.02_rh.pdf",
+      "sha256": "d1c7329bc2bccbde95311a8ea4815ab9177fbeb02b10712bbb0077db5d60e2ca"
+    },
+    "note": "Am. Sub. H.B. 51 as reported by the House Rules and Reference Committee (02_RH); later amendments, and the enrolled version, are not in the text read. Also edits R.C. 2923.111 (qualifying adult carry: federal 18 U.S.C. 922(g) cross-reference frozen as of the amendment's effective date), 2923.122 (school safety zone compliance cross-reference replaced by 'any applicable state or federal law'), 2923.17 (federal-law cross-references replaced by 'state or federal law'); sawed-off firearm definition drops the federal ATF-approval clause. Division (G) to (J) exceptions for federal cooperation and (F) penalties on hiring former federal agents not quoted in full. Section 3 (uncodified) short title Second Amendment Preservation Act."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.50): (B) No public office, public officer, or employee of the state or a political subdivision shall enforce, attempt to enforce, or participate in any way in the enforcement of any federal acts, executive orders, administrative orders, rules, regulations, statutes, or ordinances regarding firearms, firearm accessories, or ammunition. (C) No public office, public officer, or employee of the state or a political subdivision shall accede to a request from another to give material aid or support to the efforts of the other in the enforcement of or implementation of any federal acts, laws, executive orders, rules, regulations, or ordinances regarding firearms, firearm accessories, or ammunition. (D) Sovereign immunity shall not be an affirmative defense in any action pursuant to this section. (E)(1) Notwithstanding anything to the contrary in Chapters 2743. and 2744. of the Revised Code, if the state or a political subdivision employs a law enforcement officer who knowingly violates division (B) or (C) of this section, the state or political subdivision shall be liable to the injured party in an action at law, suit in equity, or other proper proceeding for redress, and subject to a fifty-thousand-dollar civil penalty per occurrence.\nSection 1 (R.C. 2923.11): (2) \"Handgun\" includes a handgun with an affixed brace, stabilizing device, arm brace, or pistol brace. ... (8) Any handgun with an affixed brace, stabilizing device, arm brace, or pistol brace."
+}

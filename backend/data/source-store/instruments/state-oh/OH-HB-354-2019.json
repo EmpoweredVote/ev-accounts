@@ -1,0 +1,49 @@
+{
+  "id": "OH-HB-354-2019",
+  "scope": "state:oh",
+  "title": "HB354 (133rd Legislature (2019-2020)): To improve background checks, close gaps between federal and state law, improve focus on mental health disorders and to make an appropriation.",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA133-HB-354",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb354/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Phil Plummer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f4afc4b5-70de-49e6-9e48-768a9e3dc1ff"
+    },
+    {
+      "name": "D.J. Swearingen",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "02656871-02da-4743-8dc0-57198298a805"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: Section 1 (R.C. 2151.358) — juvenile court must expunge sealed records at age 28",
+        "healthcare: Section 1 (R.C. 5122.01) — moderate or severe substance use disorder counted as mental illness for civil commitment",
+        "judicial-criminal-justice: Section 3 (uncodified) — appropriation and data-submission penalties on entities (R.C. 5502.81, 5502.82)"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb354/00_IN/pdf/ (Open States text id 90124559))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-354-2019.00_in.pdf",
+      "sha256": "523aae76d01782a8f3e1dad0530c48c9064f4783765f442fd9213c35beefcb2c"
+    },
+    "note": "As introduced; large file read by grep and section. Gun parts are mostly (A)(6)-(13) of R.C. 2923.13, with definitions in (C). Also amends R.C. 2903.214, 2919.26, 3113.31 (protection-order records into the portal), 2923.14, 2929.44, 2945.402. Section 3 is an appropriation. The (A)(13) text keeps the juvenile expungement link. Struck: old (C) opening quote marks only."
+  },
+  "operative_text": "Section 1 (R.C. 2923.13(A)(6)): The person is under indictment for or has been convicted of, pleaded guilty to, or adjudicated a delinquent child for committing an offense that is punishable by imprisonment for a term exceeding one year.\nSection 1 (R.C. 2923.13(A)(7)): The person has been convicted of, pleaded guilty to, or adjudicated a delinquent child for committing a violation of section 2919.25 of the Revised Code.\nSection 1 (R.C. 2923.13(A)(8)): The person has been discharged from the armed forces of the United States under dishonorable conditions.\nSection 1 (R.C. 2923.13(A)(9)): The person has renounced the person's United States citizenship, if applicable.\nSection 1 (R.C. 2923.13(A)(10)): The person is unlawfully present in the United States.\nSection 1 (R.C. 2923.13(A)(11)): If the person is an alien, the person has been admitted to the United States under a nonimmigrant visa, as defined in the \"Immigration and Nationality Act,\" 8 U.S.C. 1101(a)(26).\nSection 1 (R.C. 2923.13(A)(12)): The person is subject to a temporary protection order issued, after a full hearing, under section 2919.26 of the Revised Code or a protection order issued or consent agreement approved under section 3113.31 of the Revised Code.\nSection 1 (R.C. 2923.13(A)(13)): The person was adjudicated a delinquent child for a violation of any prohibition under Chapter 2907. of the Revised Code or for committing an offense of violence, until the date the juvenile court expunges the person's records in the case, if applicable, under section 2151.358 of the Revised Code.\nSection 1 (R.C. 2923.13(B)): Whoever violates this section is guilty of having weapons while under disability, a felony of the third degree.\nSection 1 (new R.C. 5502.80(A)): The director of public safety shall establish and maintain the weapons disability data portal, an electronic portal that utilizes the platform established by the office of innovateohio within the office of the governor to allow for the collection and distribution of data relevant to state and federal firearms disability status."
+}

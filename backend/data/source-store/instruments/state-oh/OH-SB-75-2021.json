@@ -1,0 +1,65 @@
+{
+  "id": "OH-SB-75-2021",
+  "scope": "state:oh",
+  "title": "SB75 (134th Legislature (2021-2022)): Regulate the transfer of firearms at a gun show",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-SB-75",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/sb75/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cecil Thomas",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Sandra Williams",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Nickie Antonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+    },
+    {
+      "name": "Teresa Fedor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kenny Yuko",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tina Maharath",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/sb75/00_IN/pdf/ (Open States text id 90126315))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-75-2021.00_in.pdf",
+      "sha256": "5a53e543a743eb71a76b882be4cb5044ebfadd7a8a601d70ddb782b0adf8e538"
+    },
+    "note": "As introduced; no later version read. New R.C. 2923.27 is entirely new law; also amends R.C. 2929.28 (fines, cross-reference) and R.C. 5122.311 (mental-health records checks for gun show transfers). Quote joins parts of divisions (B), (E), (F), (H); exemptions in (G) and the $10 fee in (D) not quoted."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.27): (2) No unlicensed transferor shall recklessly transfer a firearm to an unlicensed transferee at a gun show unless the firearm is transferred through a federally licensed firearms dealer or a point of contact agency under division (C) of this section and the federally licensed dealer or point of contact agency through which the transfer is made gives a notice described in division (C)(4)(a) of this section. (3) No unlicensed transferor shall recklessly transfer a firearm to an unlicensed transferee at a gun show if the federally licensed firearms dealer or point of contact agency through which the transfer is made under division (C) of this section gives a notice described in division (C)(4)(b) of this section. (4) No unlicensed transferee shall recklessly acquire a firearm transferred from an unlicensed transferor at a gun show if the transfer is made in violation of division (B)(2) or (3) of this section. (5) No gun show promoter shall recklessly operate a gun show unless the promoter and show satisfy divisions (E)(3) and (F) of this section. (3) A gun show promoter who wishes to operate a gun show shall apply to the sheriff with jurisdiction over the location at which the gun show will be held, using the form prescribed under division (E)(2) of this section, for a permit authorizing the operation of the gun show. (b) Ensure that all firearms that are brought into the show have been cleared of ammunition before being brought into the show and that they are tagged for identification purposes; (c) Prohibit a person under eighteen years of age from entering the gun show unless the person is accompanied by a parent, guardian, or custodian; (H)(1) Whoever violates division (B)(2) or (3) of this section shall be punished as provided in divisions (H)(1)(a) to (c) of this section: (a) Except as otherwise provided in division (H)(2) of this section, the offender is guilty of a misdemeanor and shall be fined five thousand dollars. Notwithstanding sections 2929.21 to 2929.28 of the Revised Code, no other sanction shall be imposed on the offender under any of those sections."
+}

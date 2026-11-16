@@ -1,0 +1,123 @@
+{
+  "id": "OH-HB-89-2021",
+  "scope": "state:oh",
+  "title": "HB89 (134th Legislature (2021-2022)): Revise concealed handgun licensee requirement to notify upon stop",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-HB-89",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb89/01_RH/pdf/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Scott Wiggam",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jay Edwards",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Scott Lipps",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Derek Merrin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Susan Manchester",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "12b61432-0f20-4de7-afcc-8f24fa95f3c3"
+    },
+    {
+      "name": "Bill Seitz",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "A. Nino Vitale",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Darrell Kick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Reggie Stoltzfus",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Gail Pavliga",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jena Powell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sarah Fowler Arthur",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b12ef9a8-8f4d-46f9-9fba-ac42c9027dc2"
+    },
+    {
+      "name": "Jean Schmidt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "105ff597-0fa1-4e2f-a257-5ae45724a143"
+    },
+    {
+      "name": "Jamie Callender",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3b1ba6ad-6ecd-4922-bf48-a2342ddf5601"
+    },
+    {
+      "name": "Rodney Creech",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3b2518c3-0795-426e-9368-8ea1a421be3a"
+    },
+    {
+      "name": "Bill Dean",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Timothy E. Ginter",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Reported by the House State and Local Government Committee (01_RH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb89/01_RH/pdf/ (Open States text id 90127676))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-89-2021.01_rh.pdf",
+      "sha256": "315c5030a75060099209ba13b6f997692ff1f763620f5b87eaa8c75af52a9959"
+    },
+    "note": "Version read: As Reported by the House State and Local Government Committee (01_RH), amending 2923.12, 2923.126, 2923.128, 2923.16. No passage vote on file; later amendments are not in the text read. Struck: 'promptly' and 'who approaches the person after the person has been stopped'; added: duty applies before or at the time an officer requests the license or asks about a gun. The bill also renumbers penalty divisions in 2923.12 and edits 2923.128/2923.16 to match."
+  },
+  "operative_text": "Section 1 (R.C. 2923.12): (B) No person who has been issued a concealed handgun license shall do any of the following: (1) If the person is stopped for a law enforcement purpose and is carrying a concealed handgun, before or at the time a law enforcement officer requests the person's concealed handgun license or asks if the person is carrying a concealed handgun, fail to do both of the following: (a) Display the person's concealed handgun license or orally inform the law enforcement officer that the person has been issued a concealed handgun license (b) Disclose that the person then is carrying a concealed handgun;.\nSection 1 (R.C. 2923.126): (3) If a licensee is the driver or an occupant of a commercial motor vehicle that is stopped by an employee of the motor carrier enforcement unit for the purposes defined in section 5503.34 of the Revised Code and the licensee is transporting or has a loaded handgun in the commercial motor vehicle at that time, before or at the time an employee of the motor carrier enforcement unit requests the licensee's concealed handgun license or asks if the person is carrying a concealed handgun, the licensee shall display the licensee's concealed handgun license or orally inform the employee of the unit that the licensee has been issued a concealed handgun license and disclose that the licensee currently possesses or has a loaded handgun."
+}

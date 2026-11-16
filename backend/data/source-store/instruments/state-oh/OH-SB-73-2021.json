@@ -1,0 +1,60 @@
+{
+  "id": "OH-SB-73-2021",
+  "scope": "state:oh",
+  "title": "SB73 (134th Legislature (2021-2022)): Regards firearms transfers; require background check",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-SB-73",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/sb73/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cecil Thomas",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Teresa Fedor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Nickie Antonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+    },
+    {
+      "name": "Tina Maharath",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sandra Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/sb73/00_IN/pdf/ (Open States text id 90127955))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-73-2021.00_in.pdf",
+      "sha256": "3b2a63b9d7862b30786b480372090c1f3f692b60fd9b414924052d1362551921"
+    },
+    "note": "As introduced; no later version read. New R.C. 2923.26 is entirely new law; the bill also amends R.C. 2929.28 (misdemeanor fines, cross-reference) and R.C. 5122.311 (attorney general mental-health records checks for dealers/agencies on request, answered immediately). Exceptions in division (G) and the $10 fee in (H) not quoted."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.26): (B) No federally licensed firearms dealer shall transfer a firearm to any person unless the federally licensed firearms dealer complies with the requirements of 18 U.S.C. 922(t). (C)(1) No unlicensed transferor shall transfer a firearm to an unlicensed transferee, unless both of the following apply with respect to the transfer of the firearm: (a) The firearm is transferred through a federally licensed firearms dealer under division (E) of this section, through a law enforcement agency under division (F) of this section, or in accordance with an exception described in division (G) of this section. (D)(1) No unlicensed transferee shall receive a firearm from an unlicensed transferor, unless both of the following apply with respect to the transfer of the firearm: (a) The firearm is transferred through a federally licensed firearms dealer under division (E) of this section, through a law enforcement agency under division (F) of this section, or in accordance with an exception described in division (G) of this section. (E) A federally licensed firearms dealer who agrees to assist in the transfer of a firearm between an unlicensed transferor and an unlicensed transferee under division (C) or (D) of this section shall do all of the following: (1) Comply with 18 U.S.C. 922(t) as if transferring the firearm from the inventory of the federally licensed firearms dealer to the unlicensed transferee, except that a federally licensed firearms dealer assisting in the transfer of a firearm under this division shall not be required to comply again with the requirements of that provision in delivering the firearm to the unlicensed transferee; (2) Conduct an incompetency records check of the unlicensed transferee by contacting the attorney general and requesting a check of the records maintained under section 5122.311 of the Revised Code, to determine if the transfer of the firearm to the unlicensed transferee or the unlicensed transferee's acquisition or possession of the firearm would violate the law of this state; (J)(1) No person shall recklessly violate division (B), (C), or (D) of this section. (a) Except as otherwise provided in division (J)(2)(b) or (c) of this section, illegal transfer of a firearm is a misdemeanor of the fourth degree"
+}

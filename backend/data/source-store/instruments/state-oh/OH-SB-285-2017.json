@@ -1,0 +1,74 @@
+{
+  "id": "OH-SB-285-2017",
+  "scope": "state:oh",
+  "title": "SB285 (132st Legislature (2017-2018)): Regulate firearm transfers at gun shows",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-SB-285",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb285/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cecil Thomas",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Joe Schiavoni",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael Skindell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sandra R. Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Charleta B. Tavares",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Edna Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Vernon Sykes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kenny Yuko",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb285/00_IN/pdf/ (Open States text id 90120505))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-285-2017.00_in.pdf",
+      "sha256": "f18dd5b4f43a4b19c0cc7325e95b4fad5570d257eda23ea0c14b652c4373795b"
+    },
+    "note": "As Introduced (00_IN), 132nd G.A.; no passage vote on file. Also amends R.C. 2929.28 (misdemeanor fines) and 5122.311 (records checks) for the new section. Penalty division and exceptions (G) not quoted."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.27(B)(2)): No unlicensed transferor shall recklessly transfer a firearm to an unlicensed transferee at a gun show unless the firearm is transferred through a federally licensed firearms dealer or a point of contact agency under division (C) of this section and the federally licensed dealer or point of contact agency through which the transfer is made gives a notice described in division (C)(4)(a) of this section.\nSection 1 (new R.C. 2923.27(B)(5)): No gun show promoter shall recklessly operate a gun show unless the promoter and show satisfy divisions (E)(3) and (F) of this section.\nSection 1 (new R.C. 2923.27(C)(3)): Conduct an incompetency records check of the unlicensed transferee by contacting the attorney general of this state and requesting a check of the records maintained under section 5122.311 of the Revised Code, to determine if the transfer of the firearm to the unlicensed transferee or the unlicensed transferee's acquisition or possession of the firearm would violate the law of this state;\nSection 1 (new R.C. 2923.27(D)): A federally licensed firearms dealer or point of contact agency that assists in the transfer of a firearm at a gun show under this section may assess and collect a fee, in an amount not to exceed ten dollars, with respect to each firearm transfer so assisted.\nSection 1 (new R.C. 2923.27(F)(2)(b)): Ensure that all firearms that are brought into the show have been cleared of ammunition before being brought into the show and that they are tagged for identification purposes;\nSection 1 (new R.C. 2923.27(F)(2)(c)): Prohibit a person under eighteen years of age from entering the gun show unless the person is accompanied by a parent, guardian, or custodian;"
+}

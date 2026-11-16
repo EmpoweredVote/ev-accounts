@@ -132,6 +132,436 @@
         "fetched_at": "2026-11-06T16:28:34.684Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "98b940171a8b1e5b538dd4ea95525ba896d524837bfc2607b69253225bb7aedb",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/hb272",
+      "date": "2023-12-06",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-272-2023",
+      "act": "yea",
+      "motion": "House Pass",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, House Pass, 2023-12-06: yea (tally 57–29); census gate: none.",
+      "subjects": [
+        "concealed carry in non-courthouse buildings with a courtroom",
+        "non-residents may seek relief from firearms disability"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the House (02_PH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb272/02_PH/pdf/ (Open States text id 90132717))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-272-2023.02_ph.pdf",
+          "sha256": "ed8a3d77df6e6baf92d92237de6684450c3188deecaaa1b3968926f72f1353e9"
+        }
+      }
+    },
+    {
+      "id": "e852288d19ccb612f0bd2fe985e35fa0da47741af4fbff6e789336996cdc253f",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/hb5",
+      "date": "2025-05-21",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-5-2025",
+      "act": "yea",
+      "motion": "House Passed",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "OH House, House Passed, 2025-05-21: yea (tally 71–24); census gate: multi-subject.",
+      "subjects": [
+        "longer mandatory terms for firearm specifications (5, 10, 15 years)",
+        "higher penalties for having weapons while under disability",
+        "relief from firearms disability"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the House (02_PH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb5/02_PH/pdf/ (Open States text id 90137040))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-5-2025.02_ph.pdf",
+          "sha256": "579e8f107cece2932557c7ec7b8d3b4544d5f83ae9d1b70d1093c351124dc337"
+        }
+      }
+    },
+    {
+      "id": "b67399373bd310e49ebbb0f80009dfbe4090b084b878ed7d9f1e88e2add7e842",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sb214",
+      "date": "2026-11-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-214-2025",
+      "act": "yea",
+      "motion": "House Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, House Passed, 2026-11-10: yea (tally 69–27); census gate: none.",
+      "subjects": [
+        "suppressors no longer dangerous ordnance",
+        "hunting with suppressors without federal registration condition",
+        "suppressors no longer 'dangerous ordnance'",
+        "sawed-off firearms no longer 'dangerous ordnance'",
+        "hunting with a suppressor without the registration condition"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.05_en.pdf",
+          "sha256": "6eed57a1a48cda7711b248082a5c2acf3e2f5032e752aa6170744a34da965c60"
+        }
+      }
+    },
+    {
+      "id": "320d3a4422a1889591e6595a023f56601e821ca12e776e84f1de69e90f6c2ce4",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sb273",
+      "date": "2026-06-09",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-273-2025",
+      "act": "yea",
+      "motion": "House Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "OH House, House Passed, 2026-06-09: yea (tally 95–0); census gate: near-unanimous.",
+      "subjects": [
+        "voluntary gun storage with dealers or police",
+        "civil immunity for storage holders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (07_EN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb273/07_EN/pdf/ (Open States text id 90137875))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-273-2025.07_en.pdf",
+          "sha256": "4b62c4097cf098dc326ed83b2d798e434d9a36e5498c9cf8b9cc3a0ba9d87bb7"
+        }
+      }
+    },
+    {
+      "id": "1720085a99f488117e93313308c4c7bba98b2c2f7327a230d3fb8afed44b6768",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/sb58",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-58-2023",
+      "act": "yea",
+      "motion": "House Pass",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, House Pass, 2024-12-11: yea (tally 63–27); census gate: none.",
+      "subjects": [
+        "no firearm liability insurance or possession fees",
+        "ban on government gun registries",
+        "no special card codes or declines for gun retailers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/sb58/05_EN/pdf/ (Open States text id 90134417))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-58-2023.05_en.pdf",
+          "sha256": "97af3715aa7ebbe4132c59728efaa8e015a3558e4f1e0c9c068a93b639720adb"
+        }
+      }
+    },
+    {
+      "id": "84275f67e7371d5a3a225900e28a057987abdd76ea8983580258b99039a951f7",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/hb272",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-272-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-HB-272-2023 (sponsor list (prime / co-sponsor)): HB272 (135th Legislature (2023-2024)): Allow concealed carry in certain buildings with a courtroom.",
+      "subjects": [
+        "concealed carry in non-courthouse buildings with a courtroom",
+        "non-residents may seek relief from firearms disability"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the House (02_PH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb272/02_PH/pdf/ (Open States text id 90132717))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-272-2023.02_ph.pdf",
+          "sha256": "ed8a3d77df6e6baf92d92237de6684450c3188deecaaa1b3968926f72f1353e9"
+        }
+      }
+    },
+    {
+      "id": "4d351bc9a70e4f1123a5ffe20990d4f558a46fb68fc038bfba0bad907854092e",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/hb382",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-382-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-HB-382-2025 (sponsor list (prime / co-sponsor)): HB382 (136th Legislature (2025-2026)): Enact the Second Amendment Protection Act.",
+      "subjects": [
+        "concealed carry without a license for adults 21+",
+        "state and local ban on enforcing federal gun laws",
+        "pistol braces not treated as sawed-off or dangerous ordnance"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb382/00_IN/pdf/ (Open States text id 90136697))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-382-2025.00_in.pdf",
+          "sha256": "70e2b02611420f3fe4f1f584b9593a7193ef1e3f2a25937dceebe6ab9bc288e9"
+        }
+      }
+    },
+    {
+      "id": "dd4f28052ad83d8c4d48e92f8e2b21482ca16ea3f0534431dbf4fc98c04f17b9",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/hb420",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-420-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-HB-420-2023 (sponsor list (prime / co-sponsor)): HB420 (135th Legislature (2023-2024)): Enact the Building Safer Communities for Ohio's Children Act.",
+      "subjects": [
+        "state office of firearm violence prevention",
+        "grants to community violence-prevention groups",
+        "Medicaid trauma-recovery care for firearm violence exposure"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb420/00_IN/pdf/ (Open States text id 90134057))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-420-2023.00_in.pdf",
+          "sha256": "3831475efcaf59a822c86196fa69efc863676fdb9c184ed975b80ebaeb097a30"
+        }
+      }
+    },
+    {
+      "id": "df32482160a434df1817b13a26ffaad89e762780b08bc171fbaeebab0aa240a4",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/hb495",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-495-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of OH-HB-495-2025 (sponsor list (prime / co-sponsor)): HB495 (136th Legislature (2025-2026)): Enact the Freedom to Carry Act.",
+      "subjects": [
+        "carry a concealed firearm or other deadly weapon without a license at 18+",
+        "concealed handgun license becomes concealed weapons license"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb495/00_IN/pdf/ (Open States text id 90137416))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-495-2025.00_in.pdf",
+          "sha256": "9bb54b510e2f2b5fec76560bdf195556b3c347971a26d0b023303f556b5821e4"
+        }
+      }
+    },
+    {
+      "id": "e1042164c248fa796ce29447d60fa72e980e8d17d66e8d32f34cf1341dc3b530",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/hb5",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-5-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of OH-HB-5-2025 (sponsor list (prime / co-sponsor)): HB5 (136th Legislature (2025-2026)): Enact the Repeat Offender Act.",
+      "subjects": [
+        "longer mandatory terms for firearm specifications (5, 10, 15 years)",
+        "higher penalties for having weapons while under disability",
+        "relief from firearms disability"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the House (02_PH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb5/02_PH/pdf/ (Open States text id 90137040))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-5-2025.02_ph.pdf",
+          "sha256": "579e8f107cece2932557c7ec7b8d3b4544d5f83ae9d1b70d1093c351124dc337"
+        }
+      }
+    },
+    {
+      "id": "0a4f3f19974f1ac54a0f3177bfae53b5ead41c8e2eb34f8698e346bc001a6357",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/hb522",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-522-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of OH-HB-522-2023 (sponsor list (prime / co-sponsor)): HB522 (135th Legislature (2023-2024)): Enact the Repeat Offender Act.",
+      "subjects": [
+        "higher penalties for having a gun while under disability",
+        "new 5-year add-on for discharging a firearm",
+        "10-year add-on for automatic or suppressed firearm",
+        "wider court relief from firearms disability"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb522/00_IN/pdf/ (Open States text id 90134076))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-522-2023.00_in.pdf",
+          "sha256": "14395af3597e1a112652c99c51533d4eca8edf35ab4bb622affb1967072eaf4f"
+        }
+      }
+    },
+    {
+      "id": "ec13e6aef8e8ce77205e192c3ed630e6d9f6589133c2e3f28bfedf56dc6d394d",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/hb551",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-551-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-HB-551-2023 (sponsor list (prime / co-sponsor)): HB551 (135th Legislature (2023-2024)): Prohibit firearm possession by persons unlawfully present in U.S..",
+      "subjects": [
+        "firearm ban for people unlawfully in the U.S."
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb551/00_IN/pdf/ (Open States text id 90132396))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-551-2023.00_in.pdf",
+          "sha256": "61c277d8f18470a4bdb2ff50e0479fb5688be2e5cc82c8b5ffac77fa24122558"
+        }
+      }
+    },
+    {
+      "id": "9ef6e8d558f5ff8ed0a850073499a942d193f66006a8dbc9db6e2df586ca3da4",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/sb58",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "OH-SB-58-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-SB-58-2023 (sponsor list (prime / co-sponsor)): SB58 (135th Legislature (2023-2024)): Prohibit requiring firearms liability insurance or certain fees.",
+      "subjects": [
+        "no firearm liability insurance or possession fees",
+        "ban on government gun registries",
+        "no special card codes or declines for gun retailers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/sb58/05_EN/pdf/ (Open States text id 90134417))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-58-2023.05_en.pdf",
+          "sha256": "97af3715aa7ebbe4132c59728efaa8e015a3558e4f1e0c9c068a93b639720adb"
+        }
+      }
+    },
+    {
+      "id": "58561b9e44ea3b82b448906177ac087273f4b12625a5e4d0817da34849e0f148",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/hb120",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-120-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-HB-120-2025 (sponsor list (prime / co-sponsor)): HB120 (136th Legislature (2025-2026)): Exempt from sales and use tax sales of firearm safety devices.",
+      "subjects": [
+        "sales tax exemption for gun safes and locking devices",
+        "vendor notice of the exemption at firearm sales"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb120/00_IN/pdf/ (Open States text id 90139115))",
+        "fetched_at": "2026-11-16T03:55:44.629915Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-120-2025.00_in.pdf",
+          "sha256": "21bb5691eba6173b9efea9014fd5492ccd23fbb89282fd4a860d17f497f8dff7"
+        }
+      }
+    },
+    {
+      "id": "d0ecfa4539888d2ce0ab3231a0a75931e673b4ad477010f65519f224f516c576",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/hb235",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-235-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-HB-235-2025 (sponsor list (prime / co-sponsor)): HB235 (136th Legislature (2025-2026)): Authorize tax credit for handgun training and firearms storage.",
+      "subjects": [
+        "income tax credit up to $250 for gun safes and locking devices",
+        "income tax credit up to $250 for handgun training courses"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb235/00_IN/pdf/ (Open States text id 90138639))",
+        "fetched_at": "2026-11-16T03:55:44.629915Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-235-2025.00_in.pdf",
+          "sha256": "f79c61453997014122e47f639d25e938af0ec2af22841f8100255415e577bf4c"
+        }
+      }
     }
   ],
   "searches": [

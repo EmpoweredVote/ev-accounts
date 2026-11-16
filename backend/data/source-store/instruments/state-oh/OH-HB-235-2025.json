@@ -1,0 +1,111 @@
+{
+  "id": "OH-HB-235-2025",
+  "scope": "state:oh",
+  "title": "HB235 (136th Legislature (2025-2026)): Authorize tax credit for handgun training and firearms storage",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/hb235",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb235/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Meredith Lawson‐Rowe",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4ff0f9fe-1320-449b-be74-b5a6575d7124"
+    },
+    {
+      "name": "Darnell Brewer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3a15886-3141-4bfe-98fe-dc1d7e8d097e"
+    },
+    {
+      "name": "Sean Brennan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1fe75280-5b41-44a9-b531-22a0807204eb"
+    },
+    {
+      "name": "Karen Brownlee",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "490686f4-3f50-4d88-b9a6-e3ed9becd942"
+    },
+    {
+      "name": "Crystal Lett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "646f54af-59f5-4406-997b-36222d75c2cd"
+    },
+    {
+      "name": "Lauren McNally",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fd22b985-97df-447f-b532-937b3a9cbd64"
+    },
+    {
+      "name": "Beryl Piccolantonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "80b114d4-7be5-4733-99f2-0487b33de7a7"
+    },
+    {
+      "name": "Tristan Rader",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8435eda6-cd1c-4e41-9dc9-bffbc76fc70b"
+    },
+    {
+      "name": "Allison Russo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fc3e367c-5558-466d-86f7-684866c2e903"
+    },
+    {
+      "name": "Bride Sweeney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f3bd9945-466a-496b-ab9a-ce3ef3864c45"
+    },
+    {
+      "name": "Eric Synenberg",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "da607bda-5e16-4ed9-998d-3c65dc09e651"
+    },
+    {
+      "name": "Terrence Upchurch",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "032c981a-13dd-4d31-8e2e-4b9dcfa0e38a"
+    },
+    {
+      "name": "Josh Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "99038428-f04f-4fba-afd9-d27babb708c7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb235/00_IN/pdf/ (Open States text id 90138639))",
+    "fetched_at": "2026-11-16T03:55:44.629915Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-235-2025.00_in.pdf",
+      "sha256": "f79c61453997014122e47f639d25e938af0ec2af22841f8100255415e577bf4c"
+    },
+    "note": "As introduced; no later amendments or enrolled text read. Also adds the credits to the credit lists in R.C. 5747.08 and 5747.98 (cross-reference changes only). Section 3 applies the credits to taxable years ending on or after the effective date."
+  },
+  "operative_text": "Section 1 (new R.C. 5747.87): \"Secure storage device\" means a locked safe, container, case, lock box, or other device that is designed to be, or can be, used to store a firearm provided that it can only be unlocked by means of a key, combination, biometric identifier, or other similar means.\nSection 1 (new R.C. 5747.87): There is hereby allowed a nonrefundable credit against a taxpayer's aggregate tax liability under section 5747.02 of the Revised Code for amounts spent by the taxpayer during the taxable year to purchase secure storage devices or locking devices. The amount of the credit shall equal the purchase price of each such secure storage device or locking device, provided that the total credit claimed under this section by a taxpayer for any taxable year may not exceed two hundred fifty dollars.\nSection 1 (new R.C. 5747.88): A nonrefundable tax credit against a taxpayer's aggregate tax liability under section 5747.02 of the Revised Code is allowed for the cost of a course, class, or program described in division (B)(3)(a), (b), (c), or (e) of section 2923.125 of the Revised Code. The amount of the credit shall equal the cost of the course, class, or program, but the amount of credit claimed by the taxpayer for any taxable year may not exceed two hundred fifty dollars.\nSection 1 (new R.C. 5747.88): The credit shall be claimed for the taxable year in which the taxpayer completed the course, class, or program, and in the order prescribed by section 5747.98 of the Revised Code."
+}

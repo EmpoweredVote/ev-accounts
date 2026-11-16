@@ -1,0 +1,78 @@
+{
+  "politician_id": "f30a607f-e510-4e51-8be4-ff239d733667",
+  "findings": [
+    {
+      "id": "576784df1a5d6c0383f8d384fd112cc575ed1098c348535b888960279dff0975",
+      "kind": "own-words",
+      "url": "https://www.news5cleveland.com/news/politics/ohio-politics/ohio-18-year-olds-could-buy-handguns-if-ramaswamy-gets-elected",
+      "date": "2026-10-15",
+      "date_precision": "day",
+      "passage": "What we're asking for: reasonable, reasonable measures around gun laws and gun safety, and you'll see me looking into that.",
+      "note": "Quoted by WEWS (News 5 Cleveland), said on a Thursday before the Oct 19 2026 story. She calls for reasonable gun-safety measures; the story describes her as a big supporter of the Second Amendment (reporter's words).",
+      "subjects": [
+        "gun safety laws",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:45:03.434Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "83d9bd073054f342b42c5b169721428eb43d98dcfc530ee90e82d8f0959ad493",
+      "kind": "own-words",
+      "url": "https://www.news5cleveland.com/news/politics/ohio-politics/ohio-18-year-olds-could-buy-handguns-if-ramaswamy-gets-elected",
+      "date": "2026-10-15",
+      "date_precision": "day",
+      "passage": "Eighty percent of gun owners want reasonable, reasonable measures, background checks, red flag laws, safety for keeping guns at home",
+      "note": "Quoted by WEWS (News 5 Cleveland). She cites polling and names background checks, red flag laws and safe home storage as measures gun owners want, calling them bipartisan.",
+      "subjects": [
+        "check every gun buyer",
+        "red flag orders",
+        "safe storage of guns",
+        "gun safety laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:45:03.434Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "red flag orders",
+        "Second Amendment general statement",
+        "gun safety laws",
+        "safe storage",
+        "minimum age to buy handguns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "campaign site https://www.actonforohio.com (fetched; no gun text found on the page)",
+        "campaign issues page https://actonforohio.com/issues (no gun text found)",
+        "blocked: https://ballotpedia.org/Amy_Acton (403)",
+        "blocked: https://www.newsfromthestates.com/node/437391 (403)",
+        "one web search on name plus gun subject words; one news story found with her quoted (WEWS)",
+        "https://gunsensevoter.org candidate page (lists her as a gun-sense candidate; no positions in her words; not saved)",
+        "not reviewed: debate and interview videos",
+        "not reviewed: the other URL-pattern pages (budget of searches used on this lead; no official office page as she holds no office)"
+      ],
+      "found": 2,
+      "at": "2026-11-16T03:45:03.434Z",
+      "by": "source-collector"
+    }
+  ]
+}

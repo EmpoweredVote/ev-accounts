@@ -1,0 +1,74 @@
+{
+  "id": "OH-SB-283-2017",
+  "scope": "state:oh",
+  "title": "SB283 (132st Legislature (2017-2018)): Restrict firearm transfers; require background checks",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-SB-283",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb283/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cecil Thomas",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Joe Schiavoni",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael Skindell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sandra R. Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Edna Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Charleta B. Tavares",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Vernon Sykes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kenny Yuko",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb283/00_IN/pdf/ (Open States text id 90121333))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-283-2017.00_in.pdf",
+      "sha256": "6f90d69de9f2b14e9780b184a130e55add3fdb161f658b1933c4fd0fff213ba5"
+    },
+    "note": "As Introduced (00_IN), 132nd G.A.; no passage vote on file. Division (C) and (D) prohibitions on unlicensed transfers and receipts are long and cross-reference notices, so only the shortest standalone sentences are quoted; (G) lists exceptions. Also amends R.C. 2929.28 (misdemeanor fines) only to cover the new offence."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.26(B)): No federally licensed firearms dealer shall transfer a firearm to any person unless the federally licensed firearms dealer complies with the requirements of 18 U.S.C. 922(t).\nSection 1 (new R.C. 2923.26(E)(2)): Conduct an incompetency records check of the unlicensed transferee by contacting the attorney general and requesting a check of the records maintained under section 5122.311 of the Revised Code, to determine if the transfer of the firearm to the unlicensed transferee or the unlicensed transferee's acquisition or possession of the firearm would violate the law of this state;\nSection 1 (new R.C. 2923.26(H)): A federally licensed firearms dealer or law enforcement agency that processes the transfer of a firearm under this section may assess and collect a fee, in an amount not to exceed ten dollars, with respect to each firearm transfer processed.\nSection 1 (new R.C. 2923.26(J)(1)): No person shall recklessly violate division (B), (C), or (D) of this section.\nSection 1 (R.C. 5122.311): Records checks requested by a federally licensed firearms dealer or law enforcement agency pursuant to section 2923.26 of the Revised Code shall be conducted, and results of the checks shall be provided, immediately upon receipt of the request."
+}

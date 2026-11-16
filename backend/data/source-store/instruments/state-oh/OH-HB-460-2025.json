@@ -1,0 +1,45 @@
+{
+  "id": "OH-HB-460-2025",
+  "scope": "state:oh",
+  "title": "HB460 (136th Legislature (2025-2026)): Allow specified officials to carry a handgun in a govt facility",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/hb460",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb460/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Thad Claggett",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e8335c03-107d-453c-9a52-b7a964d0674c"
+    },
+    {
+      "name": "Bernie Willis",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0bc48d95-452b-4d97-b17e-ca54a8e20f47"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb460/00_IN/pdf/ (Open States text id 90136391))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-460-2025.00_in.pdf",
+      "sha256": "00499bc0d0fff3f4bcffe4812f1da19d520eac8d798e666fc7fd65d0a37ab4ed"
+    },
+    "note": "As introduced (136th GA). 'Photographic' was struck and re-added inside the new list in the validating-identification definition."
+  },
+  "operative_text": "Section 1 (R.C. 2923.126(B)(7)): A valid license does not authorize the licensee to carry a concealed handgun into any of the following places: (7) Any building that is a government facility of this state or a political subdivision of this state and that is not a building that is used primarily as a shelter, restroom, parking facility for motor vehicles, or rest facility and is not a courthouse or other building or structure in which a courtroom is located that is subject to division (B)(3) of this section, unless either of the following applies: (a) The governing body with authority over the building has enacted a statute, ordinance, or policy that permits a licensee to carry a concealed handgun into the building; (b) All of the following apply: (i) The licensee is a person who has been issued a valid concealed handgun license under section 2923.125 or 2923.1213 of the Revised Code and not a person deemed to have been issued a valid concealed handgun license under section 2923.111 of the Revised Code. (ii) The licensee is a member of the general assembly, statewide elected official, judge, or magistrate and when carrying a concealed handgun under authority of this division is carrying validating identification and a valid concealed handgun license.\nSection 1 (R.C. 2923.126(G)(6)): \"Validating identification\" means one of the following: (a) Photographic identification issued by the agency for which an individual serves as a peace officer that identifies the individual as a peace officer of the agency; (b) Photographic identification issued by the facility in which the individual serves in the individual's capacity as a member of the general assembly, a statewide elected official, judge, or magistrate that identifies the individual as a member of the general assembly, a statewide elected official, judge, or magistrate."
+}

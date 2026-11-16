@@ -1,0 +1,69 @@
+{
+  "id": "OH-SB-286-2017",
+  "scope": "state:oh",
+  "title": "SB286 (132st Legislature (2017-2018)): Register firearms with county sheriff",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-SB-286",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb286/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cecil Thomas",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Joe Schiavoni",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael Skindell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sandra R. Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Charleta B. Tavares",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Edna Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Vernon Sykes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb286/00_IN/pdf/ (Open States text id 90120263))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-286-2017.00_in.pdf",
+      "sha256": "8ddb1c0d51738defb4488787181720a126fd10e9bf6814516fb56ca952a51b2b"
+    },
+    "note": "As Introduced (00_IN), 132nd G.A.; no passage vote on file. Antique firearms and some holders are exempt. Also amends R.C. 2923.11 (definitions) and 5502.01 (department of public safety duties) to support registration."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.22(A)): Except as otherwise provided in this section, no person shall knowingly possess a firearm in this state for more than five days unless that person has registered the firearm with the county sheriff of the county in which the person resides in accordance with this section.\nSection 1 (new R.C. 2923.22(C)): The sheriff who receives the information described in division (B) of this section shall enter the information into the law enforcement automated data system and issue the person a firearm registration certificate.\nSection 1 (new R.C. 2923.22(F)): A firearm registration certificate issued under this section is valid for five years after the date of issuance.\nSection 1 (new R.C. 2923.22(I)): Whoever violates division (A) of this section is guilty of failure to register a firearm, a misdemeanor of the fourth degree.\nSection 1 (new R.C. 2923.221(A)): No person with knowledge that a firearm registered to the person pursuant to section 2923.22 of the Revised Code has been lost, stolen, or destroyed shall fail to report the loss, theft, or destruction to the sheriff of the county in which the person resides within five days after the date the person becomes aware of the loss, theft, or destruction.\nSection 1 (new R.C. 2923.222(B)): No person shall knowingly sell a firearm in this state without providing the pamphlet described in division (A) of this section to the purchaser.\nSection 3 (uncodified): Sections 1 and 2 of this act shall take effect six months after the effective date of this section."
+}

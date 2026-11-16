@@ -1,0 +1,89 @@
+{
+  "id": "OH-HB-352-2025",
+  "scope": "state:oh",
+  "title": "HB352 (136th Legislature (2025-2026)): Expand offense of domestic violence, weapons under disability",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/hb352",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb352/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Darnell Brewer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3a15886-3141-4bfe-98fe-dc1d7e8d097e"
+    },
+    {
+      "name": "Sean Brennan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1fe75280-5b41-44a9-b531-22a0807204eb"
+    },
+    {
+      "name": "Juanita Brent",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9efe40f7-225a-411d-b9d2-3344dc35a7b5"
+    },
+    {
+      "name": "Karen Brownlee",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "490686f4-3f50-4d88-b9a6-e3ed9becd942"
+    },
+    {
+      "name": "Michele Grim",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "88e8aa9b-048a-4c59-9742-ba763a554751"
+    },
+    {
+      "name": "Ismail Mohamed",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "43f9a2bc-7efe-4947-a430-38181893ee9a"
+    },
+    {
+      "name": "Beryl Piccolantonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "80b114d4-7be5-4733-99f2-0487b33de7a7"
+    },
+    {
+      "name": "Bride Sweeney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f3bd9945-466a-496b-ab9a-ce3ef3864c45"
+    },
+    {
+      "name": "Terrence Upchurch",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "032c981a-13dd-4d31-8e2e-4b9dcfa0e38a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: Section 1 (R.C. 2919.25) — extends the domestic violence offense to people in a current or past (12-month) dating relationship, a non-gun crime change"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb352/00_IN/pdf/ (Open States text id 90135703))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-352-2025.00_in.pdf",
+      "sha256": "6fd48dcb046ff66f2f1e577a40005c48b8f3093a3fe6c08161fbeb300abe058f"
+    },
+    "note": "As introduced. Existing (A)(4) and (A)(5) are renumbered (6) and (7); renumbering shown as struck/added in the print. R.C. 2923.14(F)(4) cross-references updated."
+  },
+  "operative_text": "Section 1 (R.C. 2923.13(A)(4)): The person has been convicted of misdemeanor domestic violence under section 2919.25 of the Revised Code.\nSection 1 (R.C. 2923.13(A)(5)): The person is subject to a protection order issued or consent agreement approved pursuant to section 3113.31 of the Revised Code.\nSection 1 (R.C. 2923.13(B)): Whoever violates this section is guilty of having weapons while under disability, a felony of the third degree.\nSection 1 (R.C. 2923.14(F)(4)): Is automatically void upon commission by the applicant of any offense set forth in division (A)(2), (3), or (4) of section 2923.13 of the Revised Code, or upon the applicant's becoming one of the class of persons named in division (A)(1), (6), or (7) of that section."
+}

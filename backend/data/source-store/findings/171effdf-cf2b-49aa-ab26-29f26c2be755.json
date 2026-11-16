@@ -110,6 +110,361 @@
         "fetched_at": "2026-11-06T16:28:34.673Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "abdedf7ba96723fe048de3955f71099641a5cf672b6d180f55e0c8a5d598f915",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-HB-142",
+      "date": "2017-10-24",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-142-2017",
+      "act": "yea",
+      "motion": "House pass_300",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, House pass_300, 2017-10-24: yea (tally 69–25); census gate: none.",
+      "subjects": [
+        "concealed handgun licensee disclosure to officers at a stop",
+        "duty to inform only when ID is requested"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the House (02_PH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb142/02_PH/pdf/ (Open States text id 90118749))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-142-2017.02_ph.pdf",
+          "sha256": "abd04c14eaa97fa9a4f1d63d3e993e996dc1df5938fdcf013845f44dcc4ee87c"
+        }
+      }
+    },
+    {
+      "id": "0efdb74d9d1f75bad563fe7a8b530c6bbadd40be11167213ef721e1e6eb42e01",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-HB-228",
+      "date": "2018-12-27",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-228-2017",
+      "act": "yea",
+      "motion": "House Passed notwithstanding objections of the Governor",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, House Passed notwithstanding objections of the Governor, 2018-12-27: yea (tally 67–22); census gate: none.",
+      "subjects": [
+        "state preemption of local gun rules, with damages against localities",
+        "straw-purchase and false-information offences",
+        "no duty to retreat and burden of proof on self-defense",
+        "subsidized tenants may keep firearms in their unit",
+        "straw-purchase and false-information offences in firearm sales",
+        "burden of proof on self-defense",
+        "off-duty officers may carry in bars and public establishments"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb228/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-228-2017.05_en.pdf",
+          "sha256": "eab978977ef322644e7b964a995f341c4f0217f6356c89969365aa91a9708c3f"
+        }
+      }
+    },
+    {
+      "id": "4aa606dc4e86a7d417c567f57a5c1649e42cbb55be0b132dc8e9f449888a28ec",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-HB-233",
+      "date": "2017-07-06",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-233-2017",
+      "act": "yea",
+      "motion": "House pass_300",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, House pass_300, 2017-07-06: yea (tally 65–31); census gate: none.",
+      "subjects": [
+        "licensee carrying into a prohibited place: leave on request, no charge",
+        "new offence for refusing to leave or returning armed within 30 days"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the House (02_PH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb233/02_PH/pdf/ (Open States text id 90120157))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-233-2017.02_ph.pdf",
+          "sha256": "7c30aff1f54159b0f74f00500af88128d39b66e911dc018d2f0989c5bcb1d538"
+        }
+      }
+    },
+    {
+      "id": "056c0d11bc64348dbad1cc2825e49b6a637995b6e2a7be3872e6656951da5c3b",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-HB-79",
+      "date": "2018-02-14",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-79-2017",
+      "act": "yea",
+      "motion": "House concur_606",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "OH House, House concur_606, 2018-02-14: yea (tally 92–2); census gate: near-unanimous.",
+      "subjects": [
+        "tactical medical professionals may carry firearms on duty",
+        "same concealed-carry right as a licensee for those professionals",
+        "firearms training rules for them"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb79/05_EN/pdf/ (Open States text id 90120150))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-79-2017.05_en.pdf",
+          "sha256": "0b8571da6e979c70c14c707bb9d473b876c69f5b1e3df1c91031e431d303501d"
+        }
+      }
+    },
+    {
+      "id": "0cacae3b9dcaf1ea03f4c33829a9a2bd1e9fa6b207b1107d077cd9a4efd37b4d",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-SB-81",
+      "date": "2018-06-27",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-81-2017",
+      "act": "yea",
+      "motion": "House pass_300",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "OH House, House pass_300, 2018-06-27: yea (tally 84–7); census gate: near-unanimous.",
+      "subjects": [
+        "concealed handgun license fee waived for military members and veterans",
+        "military firearms training counts as competency",
+        "license renewal any time before expiry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb81/05_EN/pdf/ (Open States text id 90118973))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-81-2017.05_en.pdf",
+          "sha256": "4d5d3ae7bcb7cb37e37d6ead10ff6eca36965f39c49c317cc6d7a5b4bcb1806b"
+        }
+      }
+    },
+    {
+      "id": "13a1853b2b95033d8546683a65408e1b45a22291a732bbb115ae4b9a0c3298dc",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-HB-201",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-201-2017",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-HB-201-2017 (sponsor list (prime / co-sponsor)): HB201 (132st Legislature (2017-2018)): Expand right to concealed carry.",
+      "subjects": [
+        "concealed carry without a license for adults 21 and older",
+        "concealed handgun license covers all firearms",
+        "repeal of duty to notify stopped officers",
+        "expungement of past notification-duty convictions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb201/00_IN/pdf/ (Open States text id 90119129))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-201-2017.00_in.pdf",
+          "sha256": "b6f926da857f005e071c54c66e900d9d3809f65de83e3ddd7eb1e3b8e0bbd5ee"
+        }
+      }
+    },
+    {
+      "id": "eaa6444488f114c5330ef5225daf74a42b6040a73299b30420841a9902aef71a",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-HB-228",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-228-2017",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-HB-228-2017 (sponsor list (prime / co-sponsor)): HB228 (132st Legislature (2017-2018)): Regards self-defense and handling firearms.",
+      "subjects": [
+        "state preemption of local gun rules, with damages against localities",
+        "straw-purchase and false-information offences",
+        "no duty to retreat and burden of proof on self-defense",
+        "subsidized tenants may keep firearms in their unit",
+        "straw-purchase and false-information offences in firearm sales",
+        "burden of proof on self-defense",
+        "off-duty officers may carry in bars and public establishments"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb228/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-228-2017.05_en.pdf",
+          "sha256": "eab978977ef322644e7b964a995f341c4f0217f6356c89969365aa91a9708c3f"
+        }
+      }
+    },
+    {
+      "id": "e8a51f017b7f5c1288ede29e3d8fbcdac94609a38111bece283f187101b30c60",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-HB-233",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-233-2017",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-HB-233-2017 (sponsor list (prime / co-sponsor)): HB233 (132st Legislature (2017-2018)): Avoid crime if concealed carry into prohibited space and leave.",
+      "subjects": [
+        "licensee carrying into a prohibited place: leave on request, no charge",
+        "new offence for refusing to leave or returning armed within 30 days"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the House (02_PH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb233/02_PH/pdf/ (Open States text id 90120157))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-233-2017.02_ph.pdf",
+          "sha256": "7c30aff1f54159b0f74f00500af88128d39b66e911dc018d2f0989c5bcb1d538"
+        }
+      }
+    },
+    {
+      "id": "59776e96720085c7576c4970ad8de136e54e995d1f0b4aabb27bcf780c3c127d",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-HB-310",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-310-2017",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-HB-310-2017 (sponsor list (prime / co-sponsor)): HB310 (132st Legislature (2017-2018)): Permit official to conceal carry handgun in government facility.",
+      "subjects": [
+        "elected officials may carry concealed in government buildings"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb310/00_IN/pdf/ (Open States text id 90121719))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-310-2017.00_in.pdf",
+          "sha256": "9891714ecfd225f4f2c3419eadb77bde4aaa514d03cf8e27d49d4d47e3ba5899"
+        }
+      }
+    },
+    {
+      "id": "5115eb27b5ed1a0c131176a5f7d4e84727a9a0ec14639bba8a7733cefc53d6ef",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-HB-373",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-373-2017",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-HB-373-2017 (sponsor list (prime / co-sponsor)): HB373 (132st Legislature (2017-2018)): Permit concealed carry in courthouses and govt buildings.",
+      "subjects": [
+        "concealed carry allowed in courthouses",
+        "concealed carry allowed in state government buildings unless local body bans it",
+        "licensee no longer must hand handgun to courthouse officer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb373/00_IN/pdf/ (Open States text id 90121701))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-373-2017.00_in.pdf",
+          "sha256": "0eddf343fd917c93d89559394dbf059f2e5bce4bd814e8e565f7dde2c3b57681"
+        }
+      }
+    },
+    {
+      "id": "9c76d94af7ee956c08aad1412539b8c63f3bf8f1f4fad957e3fcff1400a41d68",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-HB-79",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-79-2017",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-HB-79-2017 (sponsor list (prime / co-sponsor)): HB79 (132st Legislature (2017-2018)): Provide for firearms training for tactical medical professionals.",
+      "subjects": [
+        "tactical medical professionals may carry firearms on duty",
+        "same concealed-carry right as a licensee for those professionals",
+        "firearms training rules for them"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb79/05_EN/pdf/ (Open States text id 90120150))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-79-2017.05_en.pdf",
+          "sha256": "0b8571da6e979c70c14c707bb9d473b876c69f5b1e3df1c91031e431d303501d"
+        }
+      }
+    },
+    {
+      "id": "1717c41347f5cc4f2bd98e4f1059e9c2afe19b5323432c360ac60301f903fb2f",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-SB-81",
+      "date": "2017",
+      "date_precision": "year",
+      "instrument_id": "OH-SB-81-2017",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-SB-81-2017 (sponsor list (prime / co-sponsor)): SB81 (132st Legislature (2017-2018)): Revise licensing rules for military personnel concealed carry.",
+      "subjects": [
+        "concealed handgun license fee waived for military members and veterans",
+        "military firearms training counts as competency",
+        "license renewal any time before expiry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb81/05_EN/pdf/ (Open States text id 90118973))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-81-2017.05_en.pdf",
+          "sha256": "4d5d3ae7bcb7cb37e37d6ead10ff6eca36965f39c49c317cc6d7a5b4bcb1806b"
+        }
+      }
     }
   ],
   "searches": [

@@ -1,0 +1,84 @@
+{
+  "id": "OH-HB-320-2019",
+  "scope": "state:oh",
+  "title": "HB320 (133rd Legislature (2019-2020)): Prohibit dealer transferring firearm if background check pending",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA133-HB-320",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb320/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Thomas West",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brigid Kelly",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tavia Galonski",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kristin Boggs",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kent Smith, K.",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael Sheehy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Casey Weinstein",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e4c7eaa-47e5-4c6f-aed0-be4107ddcfb8"
+    },
+    {
+      "name": "Michael Skindell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Erica Crawley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jeffrey Crossman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb320/00_IN/pdf/ (Open States text id 90125347))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-320-2019.00_in.pdf",
+      "sha256": "b8fac38f8dab5993ab5e41990f3ba1850ada8f2caf6014706ae43034f065db58"
+    },
+    "note": "As introduced (00_IN) text. Subdivision (A) is existing trigger-lock duty, relettered."
+  },
+  "operative_text": "Section 1 (R.C. 2923.25): Each federally licensed firearms dealer shall comply with the requirements of 18 U.S.C. 922(t). Notwithstanding 18 U.S.C. 922(t)(1)(B), no federally licensed firearms dealer shall transfer a firearm to any person unless one of the following applies: (1) The national instant criminal background check system has provided the federally licensed firearms dealer with a unique identification number. (2) The national instant criminal background check system has not provided the federally licensed firearms dealer with a unique identification number and thirty days have elapsed since the date the federally licensed firearms dealer contacted the national instant criminal background check system."
+}

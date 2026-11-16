@@ -1,0 +1,69 @@
+{
+  "id": "OH-HB-563-2017",
+  "scope": "state:oh",
+  "title": "HB563 (132st Legislature (2017-2018)): Prohibit transferring firearm while background check pending",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-HB-563",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb563/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Thomas West",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Richard Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Catherine Ingram",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "88d523e9-6e21-42f0-bc31-d01c4bb1f3b1"
+    },
+    {
+      "name": "Michael Ashford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Teresa Fedor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kent Smith, K",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Stephanie Howse",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb563/00_IN/pdf/ (Open States text id 90121656))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-563-2017.00_in.pdf",
+      "sha256": "256ccbcfa76128401b1894b04ffaa61bd922e2b982ead552bd75a0a321fb62cc"
+    },
+    "note": "As introduced text (00_IN). No passage vote text; existing trigger-lock sentence in R.C. 2923.25 is unchanged and not quoted."
+  },
+  "operative_text": "Section 1 (R.C. 2923.25): Each federally licensed firearms dealer shall comply with the requirements of 18 U.S.C. 922(t). Notwithstanding 18 U.S.C. 922(t)(1)(B), no federally licensed firearms dealer shall transfer a firearm to any person unless one of the following applies: (1) The national instant criminal background check system has provided the federally licensed firearms dealer with a unique identification number. (2) The national instant criminal background check system has not provided the federally licensed firearms dealer with a unique identification number and thirty days have elapsed since the date the federally licensed firearms dealer contacted the national instant criminal background check system."
+}

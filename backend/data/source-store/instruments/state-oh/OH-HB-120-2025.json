@@ -1,0 +1,105 @@
+{
+  "id": "OH-HB-120-2025",
+  "scope": "state:oh",
+  "title": "HB120 (136th Legislature (2025-2026)): Exempt from sales and use tax sales of firearm safety devices",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/hb120",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb120/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Darnell Brewer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3a15886-3141-4bfe-98fe-dc1d7e8d097e"
+    },
+    {
+      "name": "Jennifer Gross",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e5fa7b8f-b859-48b3-ba5e-272d1fd11bc5"
+    },
+    {
+      "name": "Sean Brennan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1fe75280-5b41-44a9-b531-22a0807204eb"
+    },
+    {
+      "name": "Karen Brownlee",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "490686f4-3f50-4d88-b9a6-e3ed9becd942"
+    },
+    {
+      "name": "Gary Click",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f64a32db-34ba-44e2-93ce-4d3ee1f7112f"
+    },
+    {
+      "name": "Lauren McNally",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fd22b985-97df-447f-b532-937b3a9cbd64"
+    },
+    {
+      "name": "Elgin Rogers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e6ed11d7-adef-48b3-9d1a-64e7fb4dd83f"
+    },
+    {
+      "name": "Allison Russo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fc3e367c-5558-466d-86f7-684866c2e903"
+    },
+    {
+      "name": "Veronica Sims",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8215a745-c232-45e5-8e29-990a97029c02"
+    },
+    {
+      "name": "Terrence Upchurch",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "032c981a-13dd-4d31-8e2e-4b9dcfa0e38a"
+    },
+    {
+      "name": "Josh Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "99038428-f04f-4fba-afd9-d27babb708c7"
+    },
+    {
+      "name": "Tom Young",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f85225e0-9e36-4f9f-91dc-50f9cc3d8201"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb120/00_IN/pdf/ (Open States text id 90139115))",
+    "fetched_at": "2026-11-16T03:55:44.629915Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-120-2025.00_in.pdf",
+      "sha256": "21bb5691eba6173b9efea9014fd5492ccd23fbb89282fd4a860d17f497f8dff7"
+    },
+    "note": "As introduced; no later amendments or enrolled text read. R.C. 5739.03 is amended only to add division (B)(67) to a list of exemptions needing no certificate. Section 3 applies from the first day of the first month after the effective date. Section 4 is a composite-text statement (uncodified). Section/division placement of the notice (R.C. 5739.17(H)) taken from the order of the text."
+  },
+  "operative_text": "Section 1 (R.C. 5739.01): \"Firearm safety device\" means equipment that is designed to prevent unauthorized access to, or the operation or discharge of, a firearm and that is either of the following: (1) A device that, when installed on a firearm, is designed to prevent the firearm from being operated without first deactivating the device. (2) A gun safe, gun case, lockbox, or other device that is designed to prevent access to a firearm unless an individual uses a key, a combination, biometric data, or other similar means.\nSection 1 (R.C. 5739.01): A \"firearm safety device\" does not include a glass-faced cabinet or other form of storage that is primarily designed to allow for the display of firearms.\nSection 1 (R.C. 5739.02): (67) Sales of firearm safety devices.\nSection 1 (R.C. 5739.17): (H) A vendor shall post in a conspicuous manner at all points of sale on the vendor's premises where firearms are sold a notice that says the following: \"The State of Ohio has exempted the sale of firearm safety devices from the sales and use tax imposed by this state and local governments.\" The vendor, upon the retail sale or transfer of a firearm, shall furnish such a written notice to the consumer."
+}

@@ -1,0 +1,96 @@
+{
+  "id": "OH-HB-305-2017",
+  "scope": "state:oh",
+  "title": "HB305 (132st Legislature (2017-2018)): Require transfer of firearms if prohibited from carrying firearm",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-HB-305",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb305/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nickie Antonio",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+    },
+    {
+      "name": "Janine Boyd",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kent Smith, K",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michele Lepore-Hagan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bernadine Kent",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kristin Boggs",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael Sheehy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Hearcel Craig",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "05d33654-b85a-4e2f-921c-b823ee7a1c8d"
+    },
+    {
+      "name": "Brigid Kelly",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Emilia Sykes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Nicholas Celebrezze",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Teresa Fedor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb305/00_IN/pdf/ (Open States text id 90121126))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-305-2017.00_in.pdf",
+      "sha256": "16b8b04432eccf880f524ac0f18e1e549c2607ff59142607572e3599331312a8"
+    },
+    "note": "As introduced (132nd GA); no later version read. Companion duties appear in R.C. 2903.21, 2903.214, 2919.25, 2919.26, 3113.31; respondent version of the transfer duty is new R.C. 2923.133(A) (24 hours to transfer, 48 hours to file proof). Stray spaces (' ,') are in the printed text and kept in the quotes."
+  },
+  "operative_text": "Section 1 (R.C. 2151.34): Upon the issuance of a protection order under this section, the court shall determine whether, as a result of the order, it is unlawful for the respondent to possess or purchase a firearm under division (A)(6) of section 2923.13 of the Revised Code or 18 U.S.C. 922(g)(8). If the court determines that the respondent is prohibited from possessing or purchasing a firearm, the court shall order the respondent to transfer all firearms in the respondent's possession or control, and shall ensure that the transfer is made , in accordance with section 2923.133 of the Revised Code.\nSection 1 (R.C. 2903.13): Upon a person's conviction of a violation of this section, the court shall determine whether, as a result of the violation, it is unlawful for the offender to possess or purchase a firearm under section 2923.13 of the Revised Code or 18 U.S.C. 922(g)(9). If the court determines that the offender is prohibited from possessing or purchasing a firearm, the court shall order the offender to transfer all firearms in the offender's possession or control in accordance with section 2923.133 of the Revised Code.\nSection 1 (R.C. 2923.13(A)(6)): The person is subject to a court order, granted after a full hearing for which the person received notice and an opportunity to be heard, that restrains the person from harassing, stalking, threatening, or engaging in other conduct that would place a family or household member in reasonable fear of bodily injury , or is subject to a temporary protection order issued under section 2919.26 of the Revised Code.\nSection 1 (new R.C. 2923.133(B)(1)): Within twenty-four hours after being served with the court order, the offender shall transfer all firearms in the offender's possession or control to a law enforcement agency or federally licensed firearms dealer.",
+  "higher_law_duty": "Court must check whether the person is barred under 18 U.S.C. 922(g)(8) (protection orders) or 922(g)(9) (domestic-violence convictions)."
+}

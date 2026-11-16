@@ -1,0 +1,106 @@
+{
+  "id": "OH-HB-62-2021",
+  "scope": "state:oh",
+  "title": "HB62 (134th Legislature (2021-2022)): Designate Ohio a Second Amendment Sanctuary State",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-HB-62",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb62/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mike Loychik",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Diane V. Grendell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jay Edwards",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Scott Wiggam",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Don Jones",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jena Powell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Craig S. Riedel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sarah Fowler Arthur",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b12ef9a8-8f4d-46f9-9fba-ac42c9027dc2"
+    },
+    {
+      "name": "A. Nino Vitale",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brett Hillyer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tom Young",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f85225e0-9e36-4f9f-91dc-50f9cc3d8201"
+    },
+    {
+      "name": "Jon Cross",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brian Lampton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fad76358-3b86-4337-9f43-76446e6c2c2f"
+    },
+    {
+      "name": "Derek Merrin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb62/00_IN/pdf/ (Open States text id 90127843))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-62-2021.00_in.pdf",
+      "sha256": "9b448cf4e2aa940a57629902dfca35cbaba68912a2d911b74e885d41256ffddc"
+    },
+    "note": "As introduced. Section 2 (uncodified) is the short title 'Ohio Second Amendment Safe Haven Act'. Subsection (C) lists federal measures treated as infringements (taxes, registration, bans, confiscation); (H)(1) makes federal officials who enforce them permanently ineligible as Ohio law enforcement officers; not quoted in full."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.50): (D) All federal acts, laws, executive orders, administrative orders, court orders, rules, and regulations, whether enacted before or after the enactment of this section, that infringe on the people's right to keep and bear arms as guaranteed by the Second Amendment to the United States Constitution and Section 4 of Article I, Ohio Constitution shall be invalid in this state, shall not be recognized by this state, shall be specifically rejected by this state, and shall be considered null, void, and of no effect in this state. (E) It shall be the duty of the courts and law enforcement agencies of this state to protect the rights of law-abiding citizens to keep and bear arms within the borders of this state and to protect these rights from the infringements defined under this section. (F) No person, including any public officer or employee of this state or any political subdivision of this state, shall have the authority to enforce or attempt to enforce any federal acts, laws, executive orders, administrative orders, court orders, rules, regulations, statutes, or ordinances infringing on the right to keep and bear arms as described under this section. (G)(1) Notwithstanding any other provision of the Revised Code, any entity or person who knowingly violates the provisions of this section or otherwise knowingly deprives a citizen of this state of the rights or privileges ensured by the Second Amendment to the United States Constitution or Section 4 of Article I, Ohio Constitution, while acting under the color of any state or federal law, shall be liable to the injured party in an action at law, suit in equity, or other proper proceeding for redress. (3) Sovereign, official, or qualified immunity is not an affirmative defense in such actions. (H)(2) Neither the state nor any political subdivision of the state shall employ as a law enforcement officer or supervisor of law enforcement officers any person who is ineligible to serve in such capacity under this section."
+}

@@ -1,0 +1,184 @@
+{
+  "id": "OH-HB-174-2019",
+  "scope": "state:oh",
+  "title": "HB174 (133rd Legislature (2019-2020)): Modifies weapons law, including concealed carry changes",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA133-HB-174",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb174/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Hood",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tom Brinkman",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Nino Vitale",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Candice Keller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "George Lang",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9d3f190d-3f98-4163-9900-0889b88438ea"
+    },
+    {
+      "name": "John Becker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Derek Merrin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "J. Koehler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jim Butler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Louis Blessing",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kris Jordan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Craig Riedel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tim Schaffer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e5023158-e69b-4dec-944d-11701ac8d910"
+    },
+    {
+      "name": "Bill Dean",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Susan Manchester",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "12b61432-0f20-4de7-afcc-8f24fa95f3c3"
+    },
+    {
+      "name": "Don Manning, D.",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sara Carruthers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jeffrey Smith, T.",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jon Cross",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Paul Zeltwanger",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brian Baldridge",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "P. Lipps",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ryan Smith, R.",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Scott Wiggam",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jena Powell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Shane Wilkin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c57d9ba7-f911-4419-ad4d-1a6b6c3f5352"
+    },
+    {
+      "name": "Riordan McClain",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "504c6d15-f84b-4ac6-ba61-64311b63bdfa"
+    },
+    {
+      "name": "Mark Romanchuk",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f9fce068-9763-4bf8-9355-d4aeb9077439"
+    },
+    {
+      "name": "Niraj Antani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb174/00_IN/pdf/ (Open States text id 90125527))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-174-2019.00_in.pdf",
+      "sha256": "b29ba17e3a556ce5c4ec508444c47945f0263984147a5cf0439cc4a6c03b5c7e"
+    },
+    "note": "As introduced; no later version read. Struck words are dropped from the quotes (e.g. the old notice-to-officer duty in 2923.12(B)(1) and the 'handgun license' wording). Many other sections (109.69, 311.41-.43, 1547.69, 2923.121-.1213, 2923.16, 4749.10) are conformed to the renamed 'concealed weapons license' and are not quoted."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.111(A)): (A) Notwithstanding any other Revised Code section to the contrary, subject to the limitations specified in this division and to division (C)(2) of this section, a person who is twenty-one years of age or older and is not legally prohibited from possessing or receiving a firearm under 18 U.S.C. 922(g)(1) to (9) shall not be required to obtain a concealed weapons license under section 2923.125 or 2923.1213 of the Revised Code in order to carry in this state a concealed deadly weapon that is not a restricted deadly weapon. Except as provided in divisions (B) and (C) of section 2923.126 of the Revised Code and regardless of whether the person has been issued a concealed weapons license under section 2923.125 or 2923.1213 of the Revised Code or by another state, a person who is twenty-one years of age or older and is not legally prohibited from possessing or receiving a firearm under 18 U.S.C. 922(g)(1) to (9) may carry a concealed deadly weapon that is not a restricted deadly weapon anywhere in this state. The person's right to carry a concealed deadly weapon that is not a restricted deadly weapon that is granted under this division is the same right as is granted to a person who has been issued a concealed weapons license under section 2923.125 of the Revised Code, and the person described in this division is subject to the same restrictions as apply to a person who has been issued a concealed weapons license under section 2923.125 of the Revised Code.\nSection 1 (new R.C. 2923.111(B)): (B) The mere carrying or possession of a deadly weapon that is not a restricted deadly weapon pursuant to the right described in division (A) of this section, with or without a concealed weapons license issued under section 2923.125 or 2923.1213 of the Revised Code or a concealed weapons license issued by another state, does not constitute grounds for any law enforcement officer or any agent of the state, a county, a municipal corporation, or a township to conduct any search, seizure, or detention, no matter how temporary in duration, of an otherwise law-abiding person.\nSection 1 (R.C. 2923.12(B)(1)): (1) If the person is stopped for a law enforcement purpose knowingly fail to keep the person's hands in plain sight at any time after any law enforcement officer begins approaching the person while stopped and before the law enforcement officer leaves, unless the failure is pursuant to and in accordance with directions given by a law enforcement officer;\nSection 1 (R.C. 2953.37(B)): Any person who is convicted of, was convicted of, pleads guilty to, or has pleaded guilty to a violation of division (B)(1) of section 2923.12 of the Revised Code as it existed prior to the effective date of this amendment and who is authorized by division (E)(2) of that section may apply to the sentencing court for the expungement of the record of conviction."
+}

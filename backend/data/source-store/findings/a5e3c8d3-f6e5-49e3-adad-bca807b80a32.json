@@ -44,6 +44,128 @@
         "fetched_at": "2026-11-06T16:28:34.685Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "e852288d19ccb612f0bd2fe985e35fa0da47741af4fbff6e789336996cdc253f",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/hb5",
+      "date": "2025-05-21",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-5-2025",
+      "act": "yea",
+      "motion": "House Passed",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "OH House, House Passed, 2025-05-21: yea (tally 71–24); census gate: multi-subject.",
+      "subjects": [
+        "longer mandatory terms for firearm specifications (5, 10, 15 years)",
+        "higher penalties for having weapons while under disability",
+        "relief from firearms disability"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the House (02_PH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb5/02_PH/pdf/ (Open States text id 90137040))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-5-2025.02_ph.pdf",
+          "sha256": "579e8f107cece2932557c7ec7b8d3b4544d5f83ae9d1b70d1093c351124dc337"
+        }
+      }
+    },
+    {
+      "id": "b67399373bd310e49ebbb0f80009dfbe4090b084b878ed7d9f1e88e2add7e842",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sb214",
+      "date": "2026-11-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-214-2025",
+      "act": "yea",
+      "motion": "House Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, House Passed, 2026-11-10: yea (tally 69–27); census gate: none.",
+      "subjects": [
+        "suppressors no longer dangerous ordnance",
+        "hunting with suppressors without federal registration condition",
+        "suppressors no longer 'dangerous ordnance'",
+        "sawed-off firearms no longer 'dangerous ordnance'",
+        "hunting with a suppressor without the registration condition"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.05_en.pdf",
+          "sha256": "6eed57a1a48cda7711b248082a5c2acf3e2f5032e752aa6170744a34da965c60"
+        }
+      }
+    },
+    {
+      "id": "320d3a4422a1889591e6595a023f56601e821ca12e776e84f1de69e90f6c2ce4",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sb273",
+      "date": "2026-06-09",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-273-2025",
+      "act": "yea",
+      "motion": "House Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "OH House, House Passed, 2026-06-09: yea (tally 95–0); census gate: near-unanimous.",
+      "subjects": [
+        "voluntary gun storage with dealers or police",
+        "civil immunity for storage holders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (07_EN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb273/07_EN/pdf/ (Open States text id 90137875))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-273-2025.07_en.pdf",
+          "sha256": "4b62c4097cf098dc326ed83b2d798e434d9a36e5498c9cf8b9cc3a0ba9d87bb7"
+        }
+      }
+    },
+    {
+      "id": "1521bd022634178af57a59aaa6f2f74c8da5e01124f8639d978c9e81b7a9df67",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/hb373",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-373-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-HB-373-2025 (sponsor list (prime / co-sponsor)): HB373 (136th Legislature (2025-2026)): Enact the Universal Background Checks Act.",
+      "subjects": [
+        "background check on private firearm transfers",
+        "transfers through licensed dealer or police agency",
+        "penalty for illegal firearm transfer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb373/00_IN/pdf/ (Open States text id 90135508))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-373-2025.00_in.pdf",
+          "sha256": "f95ec40861f18f0b17fcd8446e2ee86673848409284a755d95155a8437e9648b"
+        }
+      }
     }
   ],
   "searches": [
@@ -85,6 +207,33 @@
       "found": 2,
       "at": "2026-11-06T16:28:34.685Z",
       "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "waiting periods",
+        "carry a gun without a permit",
+        "safe storage",
+        "Second Amendment and gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search confirmed Chris Glassburn as Ohio House District 15 member (ohiohouse.gov, Ballotpedia, Wikipedia listings)",
+        "campaign site https://chrisglassburn.com (fetched; raw page text has no gun or firearm words; a search summary claimed a red-flag-law line and a gun-safety group endorsement but that text was not on the fetched page, so it is not saved)",
+        "blocked: https://ohiohouse.gov/members/chris-glassburn",
+        "blocked: https://www.ohiohouse.gov/members/chris-glassburn/news",
+        "blocked: https://ballotpedia.org/Chris_Glassburn",
+        "Wikipedia page (fetched, nothing on the subject)",
+        "news searches on name plus gun words (3 searches): nothing quoting him on the subject",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-16T03:45:19.799Z",
+      "by": "source-collector"
     }
   ]
 }
