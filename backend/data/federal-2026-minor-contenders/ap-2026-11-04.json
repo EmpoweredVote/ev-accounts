@@ -1,0 +1,116 @@
+{
+  "20261103LA20556": {
+    "statePostal": "LA",
+    "censusDistrict": "01",
+    "raceCallStatus": "Called",
+    "isCertified": false,
+    "raceType": "Nonpartisan Election",
+    "incumbents": [
+      {
+        "candidateID": "54369",
+        "first": "Steve",
+        "last": "Scalise",
+        "party": "GOP"
+      }
+    ],
+    "candidates": [
+      {
+        "candidateID": "54369",
+        "first": "Steve",
+        "last": "Scalise",
+        "party": "GOP",
+        "votePct": 60.71,
+        "voteCount": 159890,
+        "winner": true,
+        "calledAt": "2026-11-04T03:58:50.646Z"
+      },
+      {
+        "candidateID": "72354",
+        "first": "Lauren",
+        "last": "Jewett",
+        "party": "Dem",
+        "votePct": 33.95,
+        "voteCount": 89428,
+        "winner": false,
+        "calledAt": null
+      },
+      {
+        "candidateID": "167724",
+        "first": "Randall",
+        "last": "Arrington",
+        "party": "GOP",
+        "votePct": 3.71,
+        "voteCount": 9776,
+        "winner": false,
+        "calledAt": null
+      },
+      {
+        "candidateID": "178730",
+        "first": "E. Liddy",
+        "last": "Glass",
+        "party": "NPA",
+        "votePct": 1.62,
+        "voteCount": 4279,
+        "winner": false,
+        "calledAt": null
+      }
+    ]
+  },
+  "20261103VA47021": {
+    "statePostal": "VA",
+    "censusDistrict": "11",
+    "raceCallStatus": "Called",
+    "isCertified": false,
+    "raceType": "General",
+    "incumbents": [
+      {
+        "candidateID": "169002",
+        "first": "James",
+        "last": "Walkinshaw",
+        "party": "Dem"
+      }
+    ],
+    "candidates": [
+      {
+        "candidateID": "169002",
+        "first": "James",
+        "last": "Walkinshaw",
+        "party": "Dem",
+        "votePct": 74.08,
+        "voteCount": 247201,
+        "winner": true,
+        "calledAt": "2026-11-04T02:10:56.310Z"
+      },
+      {
+        "candidateID": "178105",
+        "first": "Arthur",
+        "last": "Purves",
+        "party": "GOP",
+        "votePct": 24.38,
+        "voteCount": 81357,
+        "winner": false,
+        "calledAt": null
+      },
+      {
+        "candidateID": "179330",
+        "first": "Dianne",
+        "last": "Blais",
+        "party": "Grn",
+        "votePct": 1.22,
+        "voteCount": 4078,
+        "winner": false,
+        "calledAt": null
+      },
+      {
+        "candidateID": "100008",
+        "first": null,
+        "last": "Total Write-ins",
+        "party": "Oth",
+        "votePct": 0.31,
+        "voteCount": 1044,
+        "winner": false,
+        "calledAt": null
+      }
+    ]
+  }
+}
