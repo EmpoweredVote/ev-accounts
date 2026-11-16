@@ -465,18 +465,21 @@
         "state preemption of local gun rules, with damages against localities",
         "straw-purchase and false-information offences",
         "no duty to retreat and burden of proof on self-defense",
-        "subsidized tenants may keep firearms in their unit"
+        "subsidized tenants may keep firearms in their unit",
+        "straw-purchase and false-information offences in firearm sales",
+        "burden of proof on self-defense",
+        "off-duty officers may carry in bars and public establishments"
       ],
       "topic_keys": [
         "gun-policy"
       ],
       "provenance": {
-        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Reported by the House Federalism and Interstate Relations Committee (01_RH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb228/01_RH/pdf/ (Open States text id 90120726))",
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb228/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
         "fetched_at": "2026-11-16T02:22:15.263179Z",
         "method": "api",
         "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-228-2017.01_rh.pdf",
-          "sha256": "035ed7a59da9c146ef1aa9376032d21468382d0cd07782a5c3be4774eff31b4e"
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-228-2017.05_en.pdf",
+          "sha256": "eab978977ef322644e7b964a995f341c4f0217f6356c89969365aa91a9708c3f"
         }
       }
     },

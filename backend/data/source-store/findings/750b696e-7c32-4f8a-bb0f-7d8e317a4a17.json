@@ -374,18 +374,21 @@
       "note": "OH House, House Passed, 2026-11-10: nay (tally 69–27); census gate: none.",
       "subjects": [
         "suppressors no longer dangerous ordnance",
-        "hunting with suppressors without federal registration condition"
+        "hunting with suppressors without federal registration condition",
+        "suppressors no longer 'dangerous ordnance'",
+        "sawed-off firearms no longer 'dangerous ordnance'",
+        "hunting with a suppressor without the registration condition"
       ],
       "topic_keys": [
         "gun-policy"
       ],
       "provenance": {
-        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/02_PS/pdf/ (Open States text id 90138616))",
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
         "fetched_at": "2026-11-16T02:22:15.263179Z",
         "method": "api",
         "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.02_ps.pdf",
-          "sha256": "9f8629a8e30d3ebc5dc3cf8a56567fb4f23739b47d72d144069ab43b9a6904ed"
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.05_en.pdf",
+          "sha256": "6eed57a1a48cda7711b248082a5c2acf3e2f5032e752aa6170744a34da965c60"
         }
       }
     },
@@ -574,6 +577,63 @@
       "found": 3,
       "at": "2026-11-06T16:40:10.941Z",
       "by": "research-oh-r2-2026-11-06"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permitless carry",
+        "check every gun buyer",
+        "gun violence and gun safety laws",
+        "concealed carry training",
+        "safe storage of guns",
+        "guns in schools"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ohiohouse.gov/members/latyna-m-humphrey/news/rep-humphrey-permitless-carry-legislation-puts-ohioans-law-enforcement-in-danger-109058 (403 on curl)",
+        "blocked: https://ohiohouse.gov/members/latyna-m-humphrey/news/rep-humphrey-condemns-recent-gun-violence-involving-2-year-old-victim-urges-for-commonsense-gun-legislation-120925 (403 on curl)",
+        "blocked: https://www.ohiohouse.gov/members/latyna-m-humphrey/news/rep-humphrey-opposes-gop-gun-bills-that-would-make-schools-and-communities-less-safe-fail-to-address-gun-violence-in-ohio-107749 (403 on curl)",
+        "blocked: https://ohiohouse.gov/members/latyna-m-humphrey/news/statehouse-republicans-ignore-ohioans-calls-for-commonsense-gun-safety-as-permitless-concealed-carry-takes-effect-110482 (403 on curl)",
+        "blocked: https://www.ohiohouse.gov/members/latyna-m-humphrey (403 on curl, official member page)",
+        "blocked: https://ballotpedia.org/Latyna_Humphrey (403 on curl)",
+        "blocked: https://www.latynahumphrey.com (no connection; campaign site not reachable)",
+        "web search: two searches run; the first surfaced about a dozen member-page press releases on gun violence and permitless carry (leads only, unread because of the 403s; e.g. releases numbered 109058, 120925, 134466, 141018, 107749, 142362, 121585, 112007, 107914, 110482, 133647, 137908); the second found no news story quoting her",
+        "not reviewed: other URL patterns, news archives, social posts (stopped after the official site, Ballotpedia and campaign site were all blocked)"
+      ],
+      "found": 0,
+      "at": "2026-11-16T03:46:36.604Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permitless carry",
+        "check every gun buyer",
+        "gun violence legislation",
+        "safe storage of firearms",
+        "stand your ground repeal",
+        "gun bills in schools"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "web search: one standard search found member-page press releases on permitless carry, gun violence and safe storage as leads only; none could be read",
+        "blocked: https://ohiohouse.gov/members/latyna-m-humphrey",
+        "blocked: https://ohiohouse.gov/members/latyna-m-humphrey/news/rep-humphrey-permitless-carry-legislation-puts-ohioans-law-enforcement-in-danger-109058",
+        "blocked: https://ohiohouse.gov/members/latyna-m-humphrey/news/rep-humphrey-condemns-recent-gun-violence-involving-2-year-old-victim-urges-for-commonsense-gun-legislation-120925",
+        "blocked: https://ohiohouse.gov/members/latyna-m-humphrey/news/rep-humphrey-opposes-gop-gun-bills-that-would-make-schools-and-communities-less-safe-fail-to-address-gun-violence-in-ohio-107749",
+        "blocked: https://ohiohouse.gov/members/latyna-m-humphrey/news/rep-humphrey-calls-for-urgent-legislative-action-following-shooting-at-columbus-metropolitan-library-mlk-branch-142362",
+        "blocked: https://ohiohouse.gov/members/latyna-m-humphrey/news/statehouse-republicans-ignore-ohioans-calls-for-commonsense-gun-safety-as-permitless-concealed-carry-takes-effect-110482",
+        "blocked: https://ballotpedia.org/Latyna_Humphrey",
+        "campaign site: https://www.latynahumphrey.com did not load (no connection)",
+        "not reviewed: other member-page press releases on gun violence (ids 112007, 107914, 121585, 133647, 134466, 141018) and newsletter PDFs, not fetched because the same site returned 403"
+      ],
+      "found": 0,
+      "at": "2026-11-16T03:49:10.591Z",
+      "by": "source-collector"
     }
   ]
 }

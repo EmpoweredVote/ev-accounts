@@ -1,0 +1,77 @@
+{
+  "politician_id": "ef91fbe1-2a1d-459d-a5cd-772025423c7b",
+  "findings": [
+    {
+      "id": "3a510e2a110311fe3b619fe95357fce3e03d566842173b4051451ac1c337c828",
+      "kind": "own-words",
+      "url": "https://www.ohioattorneygeneral.gov/Files/Briefing-Room/News-Releases/2026-10-23_Letter.aspx",
+      "date": "2026-10-23",
+      "date_precision": "day",
+      "passage": "Under current Ohio law, Ohioans wishing to own or use a short-barreled rifle, short-barreled shotgun or firearm suppressor must register those items with the federal government or face the risk of criminal prosecution. If that reflects the policy of this legislature, so be it. If, on the other hand, the legislature sees these registration requirements as archaic remnants of an overly restrictive past, it is time to eliminate them from Ohio law.",
+      "note": "Letter from the Attorney General to the Senate President and House Speaker, after the federal ATF stopped requiring NFA approval and registration of these items on Oct. 9, 2026. He lays out that Ohio law still ties legal possession to federal registration and says the legislature should drop those requirements if it sees them as outdated.",
+      "subjects": [
+        "repeal registration of suppressors and short-barreled rifles",
+        "National Firearms Act rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:45:47.800Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f81fb316978a607f98bcf290c6f68902fa7ab38dba655541e9ff02b13b703740",
+      "kind": "own-words",
+      "url": "https://www.ohioattorneygeneral.gov/Files/Briefing-Room/News-Releases/2026-10-23_Letter.aspx",
+      "date": "2026-10-23",
+      "date_precision": "day",
+      "passage": "I am concerned that this uncertainty may result in otherwise law-abiding Ohioans inadvertently engaging in what would be criminal conduct under current Ohio law.",
+      "note": "Same letter: he says the gap between the federal change and Ohio law puts law-abiding gun owners at risk of unintended crimes, and asks for the specific Ohio code sections to be amended or clarified before the General Assembly ends.",
+      "subjects": [
+        "repeal registration of suppressors and short-barreled rifles",
+        "National Firearms Act rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:45:47.800Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "repeal registration of suppressors and short-barreled rifles",
+        "National Firearms Act rules",
+        "Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders",
+        "carry a gun without a permit",
+        "ghost guns"
+      ],
+      "places": [
+        "status: Andy Wilson is the sitting Ohio Attorney General (statewide office); letters and releases on the attorney general's own site name him in that office",
+        "On the Record (0 meetings)",
+        "official site: the attorney general's news-release list and one November 2026 release read; no gun item beyond the letter below",
+        "sponsor list: covered by bulk bill data (not a legislator; no sponsorships expected)",
+        "blocked: https://ballotpedia.org/Andy_Wilson (403)",
+        "blocked: https://www.naag.org/attorney-general/andy-wilson/ (bot check)",
+        "news search on name plus gun words: found a gun-news site quoting the October 2026 letter; the original letter was fetched from the attorney general's site",
+        "campaign site: not found",
+        "nothing on the subject: background checks, assault-style weapons, red flag orders, permitless carry, ghost guns"
+      ],
+      "found": 2,
+      "at": "2026-11-16T03:45:47.800Z",
+      "by": "source-collector"
+    }
+  ]
+}

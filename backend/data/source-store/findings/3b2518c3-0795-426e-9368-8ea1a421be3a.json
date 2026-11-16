@@ -471,18 +471,21 @@
       "note": "OH House, House Passed, 2026-11-10: yea (tally 69–27); census gate: none.",
       "subjects": [
         "suppressors no longer dangerous ordnance",
-        "hunting with suppressors without federal registration condition"
+        "hunting with suppressors without federal registration condition",
+        "suppressors no longer 'dangerous ordnance'",
+        "sawed-off firearms no longer 'dangerous ordnance'",
+        "hunting with a suppressor without the registration condition"
       ],
       "topic_keys": [
         "gun-policy"
       ],
       "provenance": {
-        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/02_PS/pdf/ (Open States text id 90138616))",
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
         "fetched_at": "2026-11-16T02:22:15.263179Z",
         "method": "api",
         "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.02_ps.pdf",
-          "sha256": "9f8629a8e30d3ebc5dc3cf8a56567fb4f23739b47d72d144069ab43b9a6904ed"
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.05_en.pdf",
+          "sha256": "6eed57a1a48cda7711b248082a5c2acf3e2f5032e752aa6170744a34da965c60"
         }
       }
     },
@@ -936,6 +939,28 @@
           "sha256": "97af3715aa7ebbe4132c59728efaa8e015a3558e4f1e0c9c068a93b639720adb"
         }
       }
+    },
+    {
+      "id": "89f2b8225ce375204524da821b1c912dfeaadf0739b4d5784a73fbf3823c2c36",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/rodney-creech/news/rep-creech-votes-in-support-of-senate-bill-aligns-ohio-with-federal-gun-laws-149422",
+      "date": "2026-11-13",
+      "date_precision": "day",
+      "passage": "“This is a major victory for the Second Amendment and law-abiding gun owners across Ohio,” said Creech. “Ohioans should not be burdened by unnecessary government regulations when exercising their constitutional rights. Senate Bill 214 removes outdated restrictions, aligns Ohio law with federal standards, and reinforces our commitment to protecting the freedoms of responsible firearm owners.”",
+      "note": "Quote in his House press release on his yea vote for SB 214, which takes suppressors, short-barreled rifles and short-barreled shotguns out of Ohio's dangerous-ordnance definition and ends state registration of suppressors.",
+      "subjects": [
+        "repeal suppressor and short-barreled rifle rules",
+        "Second Amendment",
+        "gun owner rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:45:51.922Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -977,6 +1002,31 @@
       "found": 9,
       "at": "2026-11-06T16:28:34.674Z",
       "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "suppressors and short-barreled rifles",
+        "Second Amendment",
+        "concealed carry",
+        "background checks",
+        "assault-style weapons",
+        "red flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://ohiohouse.gov/members/rodney-creech (member page, read)",
+        "https://ohiohouse.gov/members/rodney-creech/news (first page of news list only, read)",
+        "sponsor list: covered by bulk bill data",
+        "Ballotpedia: returned HTTP 202 with no page content, not reviewed: https://ballotpedia.org/Rodney_Creech",
+        "one news search on name plus gun words: no own-words on the subject found",
+        "campaign site: not reviewed, none located",
+        "not reviewed: older pages of the member news list"
+      ],
+      "found": 1,
+      "at": "2026-11-16T03:45:51.922Z",
+      "by": "source-collector"
     }
   ]
 }

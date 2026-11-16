@@ -446,18 +446,21 @@
       "note": "OH House, House Passed, 2026-11-10: yea (tally 69–27); census gate: none.",
       "subjects": [
         "suppressors no longer dangerous ordnance",
-        "hunting with suppressors without federal registration condition"
+        "hunting with suppressors without federal registration condition",
+        "suppressors no longer 'dangerous ordnance'",
+        "sawed-off firearms no longer 'dangerous ordnance'",
+        "hunting with a suppressor without the registration condition"
       ],
       "topic_keys": [
         "gun-policy"
       ],
       "provenance": {
-        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/02_PS/pdf/ (Open States text id 90138616))",
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
         "fetched_at": "2026-11-16T02:22:15.263179Z",
         "method": "api",
         "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.02_ps.pdf",
-          "sha256": "9f8629a8e30d3ebc5dc3cf8a56567fb4f23739b47d72d144069ab43b9a6904ed"
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.05_en.pdf",
+          "sha256": "6eed57a1a48cda7711b248082a5c2acf3e2f5032e752aa6170744a34da965c60"
         }
       }
     },
@@ -815,6 +818,60 @@
       "found": 7,
       "at": "2026-11-06T16:28:34.678Z",
       "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "no duty to retreat law",
+        "guns in schools",
+        "gun violence prevention",
+        "general statement on gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "web search: one standard search on name plus gun words; results were leads only (snippets, not cited)",
+        "blocked: https://www.ohiohouse.gov/joseph-a-miller-iii",
+        "blocked: https://ohiohouse.gov/members/joseph-a-miller-iii/news/rep-miller-issues-statement-on-dayton-shooting-says-more-needs-to-be-done-to-keep-children-and-families-safe-100992",
+        "blocked: https://www.ohiohouse.gov/members/joseph-a-miller-iii/news/rep-miller-opposes-gop-gun-bills-that-would-make-schools-and-communities-less-safe-fail-to-address-gun-violence-in-ohio-107751",
+        "blocked: https://ohiohouse.gov/members/joseph-a-miller-iii/news/rep-miller-permitless-carry-legislation-puts-ohioans-law-enforcement-in-danger-109027",
+        "blocked: https://ohiohouse.gov/members/joseph-a-miller-iii/news/rep-miller-calls-for-repeal-of-ohios-shoot-first-law-105964",
+        "blocked: https://ballotpedia.org/Joe_Miller_(Ohio_House_District_56)",
+        "sponsor list and floor votes: covered by bulk bill data",
+        "not reviewed: other URL-pattern pages, campaign site and news pages (official site and Ballotpedia returned 403; no own page could be read, so scope and 2026 ballot status are unconfirmed)"
+      ],
+      "found": 0,
+      "at": "2026-11-16T03:45:03.052Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permitless carry",
+        "repeal of Ohio's no-duty-to-retreat law",
+        "gun bills and school safety",
+        "firearm storage",
+        "background checks",
+        "assault-style weapons",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "blocked: https://ohiohouse.gov/members/joseph-a-miller-iii/news/rep-miller-calls-for-repeal-of-ohios-shoot-first-law-105964 (403)",
+        "blocked: https://www.ohiohouse.gov/members/joseph-a-miller-iii/news/rep-miller-permitless-carry-legislation-puts-ohioans-law-enforcement-in-danger-109027 (empty/403)",
+        "blocked: https://www.ohiohouse.gov/members/joseph-a-miller-iii/news/rep-miller-opposes-gop-gun-bills-that-would-make-schools-and-communities-less-safe-fail-to-address-gun-violence-in-ohio-107751 (empty/403)",
+        "official House member page and news list: blocked (403), so none of the member's own pages could be read; search listing shows three gun-related House releases (leads only, not cited)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://ballotpedia.org/Joe_Miller_(Ohio_House_District_56)",
+        "not reviewed: campaign site, other news search, debate or interview video"
+      ],
+      "found": 0,
+      "at": "2026-11-16T03:49:05.776Z",
+      "by": "source-collector"
     }
   ]
 }

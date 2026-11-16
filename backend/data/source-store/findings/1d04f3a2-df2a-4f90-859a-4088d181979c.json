@@ -251,18 +251,21 @@
       "note": "OH House, House Passed, 2026-11-10: yea (tally 69–27); census gate: none.",
       "subjects": [
         "suppressors no longer dangerous ordnance",
-        "hunting with suppressors without federal registration condition"
+        "hunting with suppressors without federal registration condition",
+        "suppressors no longer 'dangerous ordnance'",
+        "sawed-off firearms no longer 'dangerous ordnance'",
+        "hunting with a suppressor without the registration condition"
       ],
       "topic_keys": [
         "gun-policy"
       ],
       "provenance": {
-        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/02_PS/pdf/ (Open States text id 90138616))",
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
         "fetched_at": "2026-11-16T02:22:15.263179Z",
         "method": "api",
         "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.02_ps.pdf",
-          "sha256": "9f8629a8e30d3ebc5dc3cf8a56567fb4f23739b47d72d144069ab43b9a6904ed"
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.05_en.pdf",
+          "sha256": "6eed57a1a48cda7711b248082a5c2acf3e2f5032e752aa6170744a34da965c60"
         }
       }
     },
@@ -531,6 +534,60 @@
       "found": 0,
       "at": "2026-11-06T16:41:07.900Z",
       "by": "research-oh-r2-2026-11-06"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "concealed carry in more buildings",
+        "Second Amendment general statements",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://www.ohiohouse.gov/members/adam-mathews",
+        "blocked: https://www.ohiohouse.gov/members/adam-mathews/news/ohio-house-passes-legislation-to-reaffirm-local-governments-authority-to-recognize-concealed-carry-118165",
+        "blocked: https://www.ohiohouse.gov/members/adam-mathews/news/mathews-introduces-new-legislation-to-provide-tax-relief-protect-second-amendment-rights-support-children-and-increase-transparency-116758",
+        "blocked: https://ballotpedia.org/Adam_Mathews",
+        "blocked: https://www.newsfromthestates.com/node/166335",
+        "blocked: https://www.mahoningmatters.com/news/local/article282431363.html",
+        "campaign site: not found",
+        "one web search on name plus Second Amendment: leads only; pages that might hold his own words were blocked",
+        "https://www.buckeyefirearms.org/node/15429 (advocacy group bill-status page): lists his sponsorships only, no words of his own; nothing new beyond bills on file"
+      ],
+      "found": 0,
+      "at": "2026-11-16T03:45:38.423Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "carry in public buildings",
+        "Second Amendment general statements",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "limits on who may have a gun"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "one web search on name plus subject words (results were leads only, none fetched successfully)",
+        "blocked: https://www.ohiohouse.gov/members/adam-mathews/news/ohio-house-passes-legislation-to-reaffirm-local-governments-authority-to-recognize-concealed-carry-118165 (403)",
+        "blocked: https://www.ohiohouse.gov/members/adam-mathews/news/mathews-introduces-new-legislation-to-provide-tax-relief-protect-second-amendment-rights-support-children-and-increase-transparency-116758 (403)",
+        "blocked: https://ballotpedia.org/Adam_Mathews (403)",
+        "blocked: https://www.newsfromthestates.com/node/166335 (403)",
+        "not reviewed: the official member page and its search (the House site returned 403 on its news pages; not retried)",
+        "not reviewed: campaign site, other URL-pattern pages (not attempted after the blocks)"
+      ],
+      "found": 0,
+      "at": "2026-11-16T03:49:05.255Z",
+      "by": "source-collector"
     }
   ]
 }

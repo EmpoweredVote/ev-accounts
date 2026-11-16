@@ -391,18 +391,21 @@
       "note": "OH Senate, Senate Concurred in House amendments, 2026-11-10: yea (tally 21–9); census gate: none.",
       "subjects": [
         "suppressors no longer dangerous ordnance",
-        "hunting with suppressors without federal registration condition"
+        "hunting with suppressors without federal registration condition",
+        "suppressors no longer 'dangerous ordnance'",
+        "sawed-off firearms no longer 'dangerous ordnance'",
+        "hunting with a suppressor without the registration condition"
       ],
       "topic_keys": [
         "gun-policy"
       ],
       "provenance": {
-        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/02_PS/pdf/ (Open States text id 90138616))",
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
         "fetched_at": "2026-11-16T02:22:15.263179Z",
         "method": "api",
         "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.02_ps.pdf",
-          "sha256": "9f8629a8e30d3ebc5dc3cf8a56567fb4f23739b47d72d144069ab43b9a6904ed"
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.05_en.pdf",
+          "sha256": "6eed57a1a48cda7711b248082a5c2acf3e2f5032e752aa6170744a34da965c60"
         }
       }
     },
@@ -737,18 +740,21 @@
       "note": "co sponsor of OH-SB-214-2025 (sponsor list (prime / co-sponsor)): SB214 (136th Legislature (2025-2026)): Remove firearm mufflers, suppressors as dangerous ordnance.",
       "subjects": [
         "suppressors no longer dangerous ordnance",
-        "hunting with suppressors without federal registration condition"
+        "hunting with suppressors without federal registration condition",
+        "suppressors no longer 'dangerous ordnance'",
+        "sawed-off firearms no longer 'dangerous ordnance'",
+        "hunting with a suppressor without the registration condition"
       ],
       "topic_keys": [
         "gun-policy"
       ],
       "provenance": {
-        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/02_PS/pdf/ (Open States text id 90138616))",
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
         "fetched_at": "2026-11-16T02:22:15.263179Z",
         "method": "api",
         "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.02_ps.pdf",
-          "sha256": "9f8629a8e30d3ebc5dc3cf8a56567fb4f23739b47d72d144069ab43b9a6904ed"
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.05_en.pdf",
+          "sha256": "6eed57a1a48cda7711b248082a5c2acf3e2f5032e752aa6170744a34da965c60"
         }
       }
     },
@@ -861,6 +867,92 @@
           "sha256": "8a8d840d3050b877a0a72cf854e3758dd3c737ddb3093ec13ec3e835f8dec687"
         }
       }
+    },
+    {
+      "id": "27f4643b605317fae9e24e362506106e788117184b9f34789d36965c09acf2d9",
+      "kind": "own-words",
+      "url": "https://www.morningjournalnews.com/news/local-news/2026/03/cutronas-bill-would-change-gun-laws",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "passage": "Updating state firearm laws ensures that Ohio's Second Amendment rights will continue to be among the strongest in the nation. This piece of legislation protects law-abiding citizens and their Second Amendment rights while working to modernize Ohio's gun laws and bring our state standards into harmony.",
+      "note": "Statement quoted in a news story (Morning Journal) on his Freedom to Carry Act, which lowers the carry-licence age from 21 to 18 and eases transport of long guns in vehicles.",
+      "subjects": [
+        "Second Amendment rights",
+        "carry licence minimum age",
+        "carrying guns in vehicles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:46:22.195Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "724fb49eda901b4ad02142378417eca0b848ce3a64cbcc3a36ce3747f5c91e87",
+      "kind": "own-words",
+      "url": "https://www.morningjournalnews.com/news/local-news/2026/03/cutronas-bill-would-change-gun-laws",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "passage": "The state has outdated policies on this. If you're pulled over going from one property to another to go hunting, it's a felony if you are transporting long guns in a certain way. This allows law-abiding citizens to carry them during transportation.",
+      "note": "Quoted in the Morning Journal explaining why his bill changes how rifles and shotguns may be transported in a vehicle.",
+      "subjects": [
+        "carrying guns in vehicles",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:46:22.195Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "de7cc43ca69ff0d7161bdf697e8fd601ac63500bef524faa1b83365f9a4c3ada",
+      "kind": "own-words",
+      "url": "https://www.vindy.com/news/local-news/2026/03/bill-aims-to-update-conceal-carry-law/",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "passage": "We're fixing an issue that law-abiding citizens are experiencing. We have a lot of outdated policies, and we need to get them in sync with federal laws. We're trying to avoid people unintentionally breaking the law.",
+      "note": "Quoted in the Vindicator on his Freedom to Carry Act; the story also reports he said the bill addresses federal changes on National Firearms Act weapons such as short-barrelled rifles and shotguns.",
+      "subjects": [
+        "carry licence minimum age",
+        "short-barrelled rifles and National Firearms Act rules",
+        "carrying guns in vehicles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:46:22.195Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9913fdd189dc394469adebc1f9842e414d746d83510ee616c582d3b58d817f26",
+      "kind": "own-words",
+      "url": "https://www.vindy.com/news/local-news/2025/01/cutrona-brings-bill-to-exempt-certain-guns-ammo-from-sales-tax",
+      "date": "2025-01-30",
+      "date_precision": "month",
+      "passage": "The intent behind this bill is to protect our Second Amendment and remove the burdensome nature of taxes,",
+      "note": "Quoted in the Vindicator on his bill to exempt certain guns and ammunition from sales tax. Date approximate (January 2025 per the URL).",
+      "subjects": [
+        "Second Amendment rights",
+        "sales tax on guns and ammunition"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:46:22.195Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -932,6 +1024,32 @@
       "found": 1,
       "at": "2026-11-06T16:40:47.241Z",
       "by": "research-oh-r2-2026-11-06"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "lowering the minimum age for a carry licence",
+        "carrying long guns in vehicles",
+        "short-barrelled rifles and National Firearms Act rules",
+        "Second Amendment rights",
+        "sales tax on guns and ammunition"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ohiosenate.gov/members/al-cutrona/news/cutrona-introduces-legislation-supporting-second-amendment",
+        "blocked: https://ohiohouse.gov/members/al-cutrona/news/cutrona-announces-sponsorship-of-sales-tax-exemption-for-second-amendment-goods-107495",
+        "blocked: https://ballotpedia.org/Al_Cutrona",
+        "blocked: https://wfmj.com/story/52268026/ohio-senator-cutrona-introduces-another-bill-exempting-sales-tax-on-firearms-and-ammunition",
+        "news stories quoting him (Morning Journal, Vindicator), read",
+        "sponsor list: covered by bulk bill data",
+        "campaign site: not reviewed (not found in search)",
+        "red flag, background check, assault-style weapon searches: nothing on the subject found"
+      ],
+      "found": 4,
+      "at": "2026-11-16T03:46:22.195Z",
+      "by": "source-collector"
     }
   ]
 }

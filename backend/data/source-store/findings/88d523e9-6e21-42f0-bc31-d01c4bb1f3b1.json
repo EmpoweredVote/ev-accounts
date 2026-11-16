@@ -251,18 +251,21 @@
         "state preemption of local gun rules, with damages against localities",
         "straw-purchase and false-information offences",
         "no duty to retreat and burden of proof on self-defense",
-        "subsidized tenants may keep firearms in their unit"
+        "subsidized tenants may keep firearms in their unit",
+        "straw-purchase and false-information offences in firearm sales",
+        "burden of proof on self-defense",
+        "off-duty officers may carry in bars and public establishments"
       ],
       "topic_keys": [
         "gun-policy"
       ],
       "provenance": {
-        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Reported by the House Federalism and Interstate Relations Committee (01_RH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb228/01_RH/pdf/ (Open States text id 90120726))",
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb228/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
         "fetched_at": "2026-11-16T02:22:15.263179Z",
         "method": "api",
         "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-228-2017.01_rh.pdf",
-          "sha256": "035ed7a59da9c146ef1aa9376032d21468382d0cd07782a5c3be4774eff31b4e"
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-228-2017.05_en.pdf",
+          "sha256": "eab978977ef322644e7b964a995f341c4f0217f6356c89969365aa91a9708c3f"
         }
       }
     },
@@ -525,18 +528,21 @@
       "note": "OH Senate, Senate Concurred in House amendments, 2026-11-10: nay (tally 21–9); census gate: none.",
       "subjects": [
         "suppressors no longer dangerous ordnance",
-        "hunting with suppressors without federal registration condition"
+        "hunting with suppressors without federal registration condition",
+        "suppressors no longer 'dangerous ordnance'",
+        "sawed-off firearms no longer 'dangerous ordnance'",
+        "hunting with a suppressor without the registration condition"
       ],
       "topic_keys": [
         "gun-policy"
       ],
       "provenance": {
-        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/02_PS/pdf/ (Open States text id 90138616))",
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
         "fetched_at": "2026-11-16T02:22:15.263179Z",
         "method": "api",
         "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.02_ps.pdf",
-          "sha256": "9f8629a8e30d3ebc5dc3cf8a56567fb4f23739b47d72d144069ab43b9a6904ed"
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.05_en.pdf",
+          "sha256": "6eed57a1a48cda7711b248082a5c2acf3e2f5032e752aa6170744a34da965c60"
         }
       }
     },
@@ -1013,6 +1019,57 @@
       "found": 0,
       "at": "2026-11-06T16:42:06.717Z",
       "by": "research-oh-r2-2026-11-06"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red flag orders",
+        "carry a gun without a permit",
+        "local control of gun rules",
+        "report lost or stolen guns",
+        "general gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ohiosenate.gov/members/catherine-d-ingram/news/ingram-provides-testimony-on-sb-237",
+        "blocked: https://ohiosenate.gov/members/catherine-d-ingram/news/ingram-condemns-gun-violence-in-schools-urges-action-on-commonsense-gun-legislation",
+        "blocked: https://ohiosenate.gov/members/catherine-d-ingram/news/ingram-hicks-hudson-testify-on-legislation-to-increase-penalty-for-failure-to-report-a-lost-or-stolen-firearms",
+        "blocked: https://ohiosenate.gov/members/catherine-d-ingram/news/ingram-hicks-hudson-call-for-increased-gun-safety-measures",
+        "blocked: https://ballotpedia.org/Catherine_Ingram",
+        "one web search on name plus gun words: found only snippets and leads to the blocked Senate pages (not used as sources)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: campaign site, other URL-pattern pages (stopped after the official site and Ballotpedia returned 403)"
+      ],
+      "found": 0,
+      "at": "2026-11-16T03:46:43.507Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "local control of gun rules",
+        "report lost or stolen guns",
+        "gun violence in schools",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "one web search on name plus gun words: found Senate press releases on SB 237, the lost/stolen firearm bill, gun safety measures, and gun violence in schools; a search snippet only, not saved",
+        "blocked: https://ohiosenate.gov/members/catherine-d-ingram/news/ingram-provides-testimony-on-sb-237 (403 to curl; only a page summary was readable, so no passage saved)",
+        "blocked: https://ohiosenate.gov/members/catherine-d-ingram/news/ingram-hicks-hudson-testify-on-legislation-to-increase-penalty-for-failure-to-report-a-lost-or-stolen-firearms",
+        "blocked: https://ohiosenate.gov/members/catherine-d-ingram/news/ingram-hicks-hudson-call-for-increased-gun-safety-measures",
+        "blocked: https://ohiosenate.gov/members/catherine-d-ingram/news/ingram-condemns-gun-violence-in-schools-urges-action-on-commonsense-gun-legislation",
+        "blocked: https://www.newsfromthestates.com/node/180242 (403)",
+        "not reviewed: Ballotpedia, campaign site, vote411, ontheissues (allowance spent on blocked pages)"
+      ],
+      "found": 0,
+      "at": "2026-11-16T03:49:46.162Z",
+      "by": "source-collector"
     }
   ]
 }

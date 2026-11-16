@@ -135,18 +135,21 @@
       "note": "OH House, House Passed, 2026-11-10: nay (tally 69–27); census gate: none.",
       "subjects": [
         "suppressors no longer dangerous ordnance",
-        "hunting with suppressors without federal registration condition"
+        "hunting with suppressors without federal registration condition",
+        "suppressors no longer 'dangerous ordnance'",
+        "sawed-off firearms no longer 'dangerous ordnance'",
+        "hunting with a suppressor without the registration condition"
       ],
       "topic_keys": [
         "gun-policy"
       ],
       "provenance": {
-        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/02_PS/pdf/ (Open States text id 90138616))",
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
         "fetched_at": "2026-11-16T02:22:15.263179Z",
         "method": "api",
         "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.02_ps.pdf",
-          "sha256": "9f8629a8e30d3ebc5dc3cf8a56567fb4f23739b47d72d144069ab43b9a6904ed"
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.05_en.pdf",
+          "sha256": "6eed57a1a48cda7711b248082a5c2acf3e2f5032e752aa6170744a34da965c60"
         }
       }
     },
@@ -234,6 +237,55 @@
           "sha256": "0a341c7b99c5dacc0dd1cbc024fbe7ae2bbb6ae07858475827a5c0e5d214b9a2"
         }
       }
+    },
+    {
+      "id": "ff1ba0d1df857b4d9e0baceca099d49b34b2018b1ae47ccb1973179035140a63",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/enough-enough-ohio-house-democrats-085513428.html",
+      "date": "2025-06-11",
+      "date_precision": "day",
+      "passage": "We do not seek to outlaw guns, rather, we want to offer common sense regulations and publicize safe responsible ownership of guns,",
+      "note": "Quoted in an Ohio Capital Journal story (syndicated on Yahoo) about a House caucus gun-bill press event; she describes the group's aim as regulation and safe ownership rather than outlawing guns. The story also says she co-introduced a bill for a tax credit for handgun training and firearm storage.",
+      "subjects": [
+        "common-sense gun regulation",
+        "safe gun ownership",
+        "tax credit for gun training and storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:46:21.810Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "64a2c3ad6f8c6edee3518867a9abfce7aa1c99d83a18c9fa0cfc7fcae402bde8",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/hb235",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-235-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of OH-HB-235-2025 (sponsor list (prime / co-sponsor)): HB235 (136th Legislature (2025-2026)): Authorize tax credit for handgun training and firearms storage.",
+      "subjects": [
+        "income tax credit up to $250 for gun safes and locking devices",
+        "income tax credit up to $250 for handgun training courses"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb235/00_IN/pdf/ (Open States text id 90138639))",
+        "fetched_at": "2026-11-16T03:55:44.629915Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-235-2025.00_in.pdf",
+          "sha256": "f79c61453997014122e47f639d25e938af0ec2af22841f8100255415e577bf4c"
+        }
+      }
     }
   ],
   "searches": [
@@ -278,6 +330,36 @@
       "found": 3,
       "at": "2026-11-06T16:28:34.685Z",
       "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation in general",
+        "gun safety laws",
+        "tax credit for handgun training and gun storage",
+        "waiting periods",
+        "red-flag orders",
+        "assault-style weapons",
+        "background checks",
+        "concealed carry"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ohiohouse.gov/meredith-r-lawson-rowe (member page; 403 on news pages fetched, not retried)",
+        "blocked: https://ohiohouse.gov/members/meredith-r-lawson-rowe/news/rep-meredith-lawson-rowe-votes-no-on-house-bill-5-citing-concerns-over-judicial-discretion-and-mass-incarceration-132873",
+        "blocked: https://www.ohiohouse.gov/news/democrat/ohio-house-democrats-gun-violence-prevention-caucus-host-gun-violence-prevention-press-conference-134206",
+        "blocked: https://ballotpedia.org/Meredith_Lawson-Rowe (empty bot-check response)",
+        "one news search on name plus gun words (leads only)",
+        "https://www.yahoo.com/news/enough-enough-ohio-house-democrats-085513428.html (news story, read; one quote)",
+        "https://www.buckeyefirearms.org/node/15168 (fetched; no passage from her found in the text, not used)",
+        "not reviewed: campaign site (none located)",
+        "not reviewed: ontheissues.org, vote411 (leads only)"
+      ],
+      "found": 1,
+      "at": "2026-11-16T03:46:21.810Z",
+      "by": "source-collector"
     }
   ]
 }

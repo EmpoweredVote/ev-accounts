@@ -420,18 +420,21 @@
       "note": "OH Senate, Senate Concurred in House amendments, 2026-11-10: yea (tally 21–9); census gate: none.",
       "subjects": [
         "suppressors no longer dangerous ordnance",
-        "hunting with suppressors without federal registration condition"
+        "hunting with suppressors without federal registration condition",
+        "suppressors no longer 'dangerous ordnance'",
+        "sawed-off firearms no longer 'dangerous ordnance'",
+        "hunting with a suppressor without the registration condition"
       ],
       "topic_keys": [
         "gun-policy"
       ],
       "provenance": {
-        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/02_PS/pdf/ (Open States text id 90138616))",
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
         "fetched_at": "2026-11-16T02:22:15.263179Z",
         "method": "api",
         "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.02_ps.pdf",
-          "sha256": "9f8629a8e30d3ebc5dc3cf8a56567fb4f23739b47d72d144069ab43b9a6904ed"
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.05_en.pdf",
+          "sha256": "6eed57a1a48cda7711b248082a5c2acf3e2f5032e752aa6170744a34da965c60"
         }
       }
     },
@@ -836,6 +839,27 @@
           "sha256": "8a8d840d3050b877a0a72cf854e3758dd3c737ddb3093ec13ec3e835f8dec687"
         }
       }
+    },
+    {
+      "id": "585c2da6d12abe0ae40e8e50a6d401b089a7e61468e1c3bd5603844527df7d97",
+      "kind": "own-words",
+      "url": "https://mercercountyoutlook.net/2022/03/07/manchester-supports-permit-less-carry-bill",
+      "date": "2022-03-07",
+      "date_precision": "day",
+      "passage": "“The rights of Ohioans are non-negotiable.  “I’m proud to support this legislation that will ensure law-abiding citizens are able to protect themselves.”",
+      "note": "Quote in her House release, carried by a regional news site, on her vote for SB 215 letting adults 21 and over who qualify carry a concealed handgun with no permit; the permit stays optional.",
+      "subjects": [
+        "carry a gun without a permit",
+        "gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:49:13.402Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -879,6 +903,59 @@
       "found": 5,
       "at": "2026-11-06T16:28:34.676Z",
       "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "Second Amendment general statements",
+        "gun sales tax exemption"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://ohiohouse.gov/members/susan-manchester/news/manchester-supports-permitless-carry-bill-109081 (403 on curl; fetch tool returned 500) - a search lead shows a House release on permitless carry, not read, so not saved",
+        "blocked: https://ohiosenate.gov/senators/manchester",
+        "blocked: https://ballotpedia.org/Susan_Manchester",
+        "not reviewed: https://ohiohouse.gov/members/susan-manchester/news",
+        "not reviewed: https://www.senate.state.oh.us/members/susan-manchester/legislation",
+        "one web search on name plus gun words; only leads, nothing citable",
+        "a news story (https://bgindependentmedia.org/?p=35693) fetched: about another bill, does not quote her, nothing on the subject",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-16T03:45:40.783Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "concealed carry",
+        "duty to notify police during a stop",
+        "Second Amendment",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ohiohouse.gov/members/susan-manchester/news/manchester-supports-permitless-carry-bill-109081",
+        "blocked: https://www.ohiohouse.gov/members/susan-manchester/news/manchester-supports-passage-of-duty-to-notify-legislation-103165",
+        "blocked: ohiohouse.gov member news list (403 on member pages)",
+        "not reviewed: https://ballotpedia.org/Susan_Manchester (fetch returned an empty page)",
+        "news search on name plus gun words (one search; a regional news site carried her release on permitless carry)",
+        "no campaign site or Senate site page reviewed; official member pages were blocked",
+        "nothing found on bans, background checks, red-flag orders, ghost guns"
+      ],
+      "found": 1,
+      "at": "2026-11-16T03:49:13.402Z",
+      "by": "source-collector"
     }
   ]
 }

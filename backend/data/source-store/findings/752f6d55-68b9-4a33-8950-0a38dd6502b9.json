@@ -400,18 +400,21 @@
       "note": "OH House, House Passed, 2026-11-10: yea (tally 69–27); census gate: none.",
       "subjects": [
         "suppressors no longer dangerous ordnance",
-        "hunting with suppressors without federal registration condition"
+        "hunting with suppressors without federal registration condition",
+        "suppressors no longer 'dangerous ordnance'",
+        "sawed-off firearms no longer 'dangerous ordnance'",
+        "hunting with a suppressor without the registration condition"
       ],
       "topic_keys": [
         "gun-policy"
       ],
       "provenance": {
-        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/02_PS/pdf/ (Open States text id 90138616))",
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
         "fetched_at": "2026-11-16T02:22:15.263179Z",
         "method": "api",
         "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.02_ps.pdf",
-          "sha256": "9f8629a8e30d3ebc5dc3cf8a56567fb4f23739b47d72d144069ab43b9a6904ed"
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.05_en.pdf",
+          "sha256": "6eed57a1a48cda7711b248082a5c2acf3e2f5032e752aa6170744a34da965c60"
         }
       }
     },
@@ -643,6 +646,68 @@
           "sha256": "97af3715aa7ebbe4132c59728efaa8e015a3558e4f1e0c9c068a93b639720adb"
         }
       }
+    },
+    {
+      "id": "13a2305a07128e54e2215b4c891bd4d2656a0406b0649ff5b48e6c84444e059a",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/kevin-d-miller/news/miller-votes-to-support-second-amendment-right-107763",
+      "date": "2021-11-18",
+      "date_precision": "day",
+      "passage": "“This is an important victory for self-defense and for the constitutional rights of Ohioans,” said Miller (R-Newark).",
+      "note": "Official House release quoting him on the House vote for HB 227, which lets law-abiding adults carry a concealed handgun without a permit.",
+      "subjects": [
+        "carry a gun without a permit",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:49:29.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f987d61204e30cde75ccc814f08e80caabc572ccde3097ebd6a5ab4e26f074b8",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/kevin-d-miller/news/miller-votes-to-support-second-amendment-right-107763",
+      "date": "2021-11-18",
+      "date_precision": "day",
+      "passage": "“HB 99 allows individual school districts to arm employees after they have received mandated training.  In rural school districts, like many of the communities I represent, every second counts with the response time from first responders,” added Miller.",
+      "note": "Official House release quoting him on HB 99, which lets school districts arm employees who complete concealed-carry-permit training; he ties it to slow response times in rural districts.",
+      "subjects": [
+        "guns in schools / arming school staff"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:49:29.757Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a6814cffafd7cd266177afc841e077baffb827774d0f718d1b404b356252ae0d",
+      "kind": "own-words",
+      "url": "https://ohiohouse.gov/members/kevin-d-miller/news/miller-supports-2nd-amendment-with-vote-108727",
+      "date": "2022-02-16",
+      "date_precision": "day",
+      "passage": "“It remains a top priority of mine to protect the Second Amendment rights of Ohioans and House Bill 325 is an important piece of legislation that will ensure your rights are protected,” Miller said.",
+      "note": "Official House release quoting him on HB 325, which limits use of emergency declarations against gun dealers and gun ownership.",
+      "subjects": [
+        "Second Amendment rights",
+        "emergency orders and gun dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:49:29.757Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -709,6 +774,59 @@
       "found": 0,
       "at": "2026-11-06T16:40:10.940Z",
       "by": "research-oh-r2-2026-11-06"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "Second Amendment rights",
+        "limits on emergency orders closing gun dealers",
+        "arming school employees",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://www.ohiohouse.gov/members/kevin-d-miller (403 to curl; official member page not read)",
+        "blocked: https://ohiohouse.gov/members/kevin-d-miller/news/miller-votes-to-support-second-amendment-right-107763 (403 to curl; only a fetch-tool summary seen, not usable as exact text)",
+        "blocked: https://ohiohouse.gov/members/kevin-d-miller/news/miller-supports-2nd-amendment-with-vote-108727 (403 to curl; summary only)",
+        "blocked: https://ohiohouse.gov/members/kevin-d-miller/news/miller-supports-2nd-amendment-with-house-vote-109025 (403 to curl; summary only)",
+        "blocked: https://ballotpedia.org/Kevin_Miller_(Ohio) (403)",
+        "one web search on name plus gun words: leads only to the blocked member-site releases above; no campaign site or other own-words page found or read",
+        "not reviewed: 2026 ballot status and campaign site (not confirmed, member page blocked)"
+      ],
+      "found": 0,
+      "at": "2026-11-16T03:46:15.921Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "guns in schools / arming school staff",
+        "Second Amendment rights",
+        "emergency orders and gun dealers",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "his official House member page (https://ohiohouse.gov/members/kevin-d-miller): read, confirms House District 69, Newark; recent news list has nothing on guns",
+        "his official House news releases found by search: two on the subject saved",
+        "web search on name plus gun words (2 searches): only the two official releases are his own words on the subject",
+        "nothing on the subject: no separate campaign site found",
+        "not reviewed: https://www.ballotpedia.org/Kevin_D._Miller",
+        "not reviewed: https://ohiohouse.gov/members/kevin-d-miller/news (older release list beyond page 1)"
+      ],
+      "found": 3,
+      "at": "2026-11-16T03:49:29.757Z",
+      "by": "source-collector"
     }
   ]
 }

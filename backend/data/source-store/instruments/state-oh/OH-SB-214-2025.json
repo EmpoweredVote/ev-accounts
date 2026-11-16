@@ -4,9 +4,9 @@
   "title": "SB214 (136th Legislature (2025-2026)): Remove firearm mufflers, suppressors as dangerous ordnance",
   "urls": [
     "https://www.legislature.ohio.gov/legislation/136/sb214",
-    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/02_PS/pdf/"
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/05_EN/pdf/"
   ],
-  "version": "other",
+  "version": "enrolled",
   "sponsors": [
     {
       "name": "Kyle Koehler",
@@ -945,14 +945,14 @@
     }
   ],
   "provenance": {
-    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/02_PS/pdf/ (Open States text id 90138616))",
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
     "fetched_at": "2026-11-16T02:22:15.263179Z",
     "method": "api",
     "saved_copy": {
-      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.02_ps.pdf",
-      "sha256": "9f8629a8e30d3ebc5dc3cf8a56567fb4f23739b47d72d144069ab43b9a6904ed"
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.05_en.pdf",
+      "sha256": "6eed57a1a48cda7711b248082a5c2acf3e2f5032e752aa6170744a34da965c60"
     },
-    "note": "As passed by the Senate (02_PS); votes record Senate passage 31-1 on 2026-03-25 and a House vote and Senate concurrence in House amendments on 2026-11-10, so the House changes are not in the text read. Struck in R.C. 1533.04: the proviso requiring authorization to possess and National Firearms Act registration. Struck in R.C. 2923.11(K): 'Any firearm muffler or suppressor' (old (5)); old (6) renumbered. Struck in R.C. 2923.17(C): old (8) exemption for hunting suppressors. Quote 1533.04(A) ends at a comma where the struck proviso was removed."
+    "note": "Enrolled text (Sub. S.B. 214, 136th GA, 05_EN, fetched 2026-11-16) replaces the earlier version read (02_PS, as passed by the Senate). The enrolled act ADDS removal of sawed-off firearms from dangerous ordnance (R.C. 2923.11 sawed-off definition struck; 'or sawed-off' struck in the dangerous-ordnance and sporting-weapon exception; matching cross-reference changes in R.C. 2923.12(C)(1)(c)-(d)); its long title now covers 2923.12. The enrolled act drops no part of the earlier version. Struck: in 1533.04(A) the proviso requiring lawful possession and National Firearms Act registration (the sentence's period is inside the struck run, so the quote ends at 'while hunting'); in 2923.11 the sawed-off definition, 'Any firearm muffler or suppressor' and the lettering shifts; in 2923.17(C) the exemption (8) for hunters with suppressors. Quoted dangerous-ordnance division lettering omitted because the print shows it as struck and re-lettered. Votes and sponsors as before (Open States bulk data and www.legislature.ohio.gov Votes pages)."
   },
-  "operative_text": "Section 1 (R.C. 1533.04): (A) A person who holds a valid hunting license issued under this chapter and who hunts game birds or wild quadrupeds may use a suppressor attached to a gun that is authorized to be used for hunting by section 1533.16 of the Revised Code while hunting, Section 1 (R.C. 2923.11): (K) \"Dangerous ordnance\" means any of the following, except as provided in division (L) of this section: Section 1 (R.C. 2923.11): (5) Any combination of parts that is intended by the owner for use in converting any firearm or other device into a dangerous ordnance. Section 1 (R.C. 2923.17): (A) No person shall knowingly acquire, have, carry, or use any dangerous ordnance."
+  "operative_text": "Section 1 (R.C. 1533.04(A)): A person who holds a valid hunting license issued under this chapter and who hunts game birds or wild quadrupeds may use a suppressor attached to a gun that is authorized to be used for hunting by section 1533.16 of the Revised Code while hunting\nSection 1 (R.C. 2923.11): \"Dangerous ordnance\" means any of the following, except as provided in division (K) of this section: (1) Any automatic firearm, zip-gun, or ballistic knife; (2) Any explosive device or incendiary device;\nSection 1 (R.C. 2923.11): (5) Any combination of parts that is intended by the owner for use in converting any firearm or other device into a dangerous ordnance.\nSection 1 (R.C. 2923.11): (2) Any pistol, rifle, or shotgun, designed or suitable for sporting purposes, including a military weapon as issued or as modified, and the ammunition for that weapon, unless the firearm is an automatic firearm;\nSection 1 (R.C. 2923.17(A)): No person shall knowingly acquire, have, carry, or use any dangerous ordnance.\nSection 1 (R.C. 2923.17(D)): Whoever violates division (A) of this section is guilty of unlawful possession of dangerous ordnance, a felony of the fifth degree."
 }

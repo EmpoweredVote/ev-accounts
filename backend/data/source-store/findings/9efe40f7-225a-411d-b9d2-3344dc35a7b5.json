@@ -436,18 +436,21 @@
       "note": "OH House, House Passed, 2026-11-10: nay (tally 69–27); census gate: none.",
       "subjects": [
         "suppressors no longer dangerous ordnance",
-        "hunting with suppressors without federal registration condition"
+        "hunting with suppressors without federal registration condition",
+        "suppressors no longer 'dangerous ordnance'",
+        "sawed-off firearms no longer 'dangerous ordnance'",
+        "hunting with a suppressor without the registration condition"
       ],
       "topic_keys": [
         "gun-policy"
       ],
       "provenance": {
-        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/02_PS/pdf/ (Open States text id 90138616))",
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
         "fetched_at": "2026-11-16T02:22:15.263179Z",
         "method": "api",
         "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.02_ps.pdf",
-          "sha256": "9f8629a8e30d3ebc5dc3cf8a56567fb4f23739b47d72d144069ab43b9a6904ed"
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.05_en.pdf",
+          "sha256": "6eed57a1a48cda7711b248082a5c2acf3e2f5032e752aa6170744a34da965c60"
         }
       }
     },
@@ -900,6 +903,32 @@
           "sha256": "ee2f179e0b87be9fc069c5dbd35a2ec477f4a44e3c2c44b14ba5f8926446afe8"
         }
       }
+    },
+    {
+      "id": "f2a00feff0ba9b4fc7cb9ba571fb47b616a6c036b6e48ee45c961feb41da8d97",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/hb351",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-351-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-HB-351-2025 (sponsor list (prime / co-sponsor)): HB351 (136th Legislature (2025-2026)): Establish the Ohio Task Force on Gun Violence.",
+      "subjects": [
+        "task force to study gun violence and report in one year"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb351/00_IN/pdf/ (Open States text id 90135627))",
+        "fetched_at": "2026-11-16T03:55:44.629915Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-351-2025.00_in.pdf",
+          "sha256": "6a67cb1c674b760caca09d10a2f09338cb86304e326c0b91cf22beec96fba52c"
+        }
+      }
     }
   ],
   "searches": [
@@ -916,6 +945,38 @@
       "found": 8,
       "at": "2026-11-06T16:28:34.678Z",
       "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "gun violence statements",
+        "gun safety laws general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://www.ohiohouse.gov/members/juanita-o-brent",
+        "blocked: https://www.ohiohouse.gov/members/juanita-o-brent/news/rep-brent-issues-statement-on-dayton-shooting-says-more-needs-to-be-done-to-keep-children-and-families-safe-100982",
+        "blocked: https://www.ohiohouse.gov/members/juanita-o-brent/news/rep-brent-criticizes-gov-dewines-hypocrisy-on-gun-laws-public-safety-142003",
+        "blocked: https://www.ohiohouse.gov/members/juanita-o-brent/news/rep-brent-issues-statement-after-4th-anniversary-of-stoneman-douglas-high-school-shooting-108713",
+        "blocked: https://www.ohiohouse.gov/members/juanita-o-brent/news/rep-brent-issues-statement-on-9th-anniversary-of-sandy-hook-elementary-school-shooting-108042",
+        "blocked: https://www.ohiohouse.gov/members/juanita-o-brent/news/rep-brent-votes-against-hb-99-and-hb-227-107761",
+        "blocked: https://www.ohiohouse.gov/members/juanita-o-brent/news/rep-brent-raises-awareness-for-5th-annual-national-gun-violence-survivors-week-113392",
+        "blocked: https://www.ohiohouse.gov/members/juanita-o-brent/news/cleveland-lawmakers-issue-joint-statement-on-warehouse-district-mass-shooting-115896",
+        "blocked: https://www.wvxu.org/2025-06-11/ohio-house-dems-again-push-gun-bills-that-have-been-mostly-dismissed-by-gop-supermajority (504)",
+        "blocked: https://www.yahoo.com/news/ohio-lawmakers-react-calls-gun-225554052.html (429)",
+        "blocked: https://ballotpedia.org/Juanita_Brent (403)",
+        "not found: https://theohiostar.com/tag/gun-safety/ (404)",
+        "campaign site https://www.juanitabrent.com fetched: no page naming her or the subject",
+        "web search: one search run; result titles point to several House member-page statements on gun violence (leads only, not fetchable, so no passages copied)"
+      ],
+      "found": 0,
+      "at": "2026-11-16T03:48:33.806Z",
+      "by": "source-collector"
     }
   ]
 }

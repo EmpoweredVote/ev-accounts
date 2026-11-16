@@ -445,18 +445,21 @@
       "note": "OH House, House Passed, 2026-11-10: yea (tally 69–27); census gate: none.",
       "subjects": [
         "suppressors no longer dangerous ordnance",
-        "hunting with suppressors without federal registration condition"
+        "hunting with suppressors without federal registration condition",
+        "suppressors no longer 'dangerous ordnance'",
+        "sawed-off firearms no longer 'dangerous ordnance'",
+        "hunting with a suppressor without the registration condition"
       ],
       "topic_keys": [
         "gun-policy"
       ],
       "provenance": {
-        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/02_PS/pdf/ (Open States text id 90138616))",
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
         "fetched_at": "2026-11-16T02:22:15.263179Z",
         "method": "api",
         "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.02_ps.pdf",
-          "sha256": "9f8629a8e30d3ebc5dc3cf8a56567fb4f23739b47d72d144069ab43b9a6904ed"
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.05_en.pdf",
+          "sha256": "6eed57a1a48cda7711b248082a5c2acf3e2f5032e752aa6170744a34da965c60"
         }
       }
     },
@@ -772,6 +775,48 @@
           "sha256": "dddae0081901748ede39524ddca0094c322a065fe443d8ffdbae0913c1a95fa4"
         }
       }
+    },
+    {
+      "id": "c041cb1e44a15621ec79640c90960dc8da5b589ddc7f2a27e8f12effbe91ba01",
+      "kind": "own-words",
+      "url": "https://www.news5cleveland.com/news/state/ohio-second-amendment-sanctuary-measure-cleared-for-the-house-floor",
+      "date": "2023-11-20",
+      "date_precision": "day",
+      "passage": "I anticipate we get it passed by the end of the year, certainly by the end of the General Assembly.",
+      "note": "Quoted by the Ohio Capital Journal (carried by a Cleveland TV site) after a House committee advanced the Second Amendment Preservation Act (HB 51), which removes references to federal gun statutes from state law and limits cooperation with federal officials. He says he expects the House to pass it.",
+      "subjects": [
+        "state ban on enforcing federal gun laws",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:46:13.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7ba04094e34030736361b90b28190734819123730a266cda2d48ad4efd0323d3",
+      "kind": "own-words",
+      "url": "https://www.news5cleveland.com/news/state/ohio-second-amendment-sanctuary-measure-cleared-for-the-house-floor",
+      "date": "2023-11-20",
+      "date_precision": "day",
+      "passage": "That’s part of the conversation that we’re having on this issue as far as federalism versus state power. I think that’s an interesting conversation, but I think it’s an important one for a lot of our citizens.",
+      "note": "Quoted in the same news story, answering the point that a federal judge had struck down the Missouri law the Ohio bill was modelled on; he calls the state-versus-federal power question important.",
+      "subjects": [
+        "state ban on enforcing federal gun laws",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:46:13.355Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -835,6 +880,31 @@
       "found": 0,
       "at": "2026-11-06T16:39:34.096Z",
       "by": "research-oh-r2-2026-11-06"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "state ban on enforcing federal gun laws",
+        "Second Amendment rights",
+        "ban on assault-style guns",
+        "background checks",
+        "red-flag orders",
+        "carry without a permit"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "one web search on name plus Second Amendment (confirmed as Ohio House member, Speaker in 2023, listed as 2026 incumbent candidate in District 93)",
+        "news story (Ohio Capital Journal via a Cleveland TV site, Nov 2023): read, quotes saved",
+        "news story (Ohio Capital Journal via a Cleveland TV site, Dec 2023): read, no words of his on the subject",
+        "blocked: https://www.ohiohouse.gov/members/jason-stephens",
+        "blocked: https://ohiohouse.gov/news/republican/house-committee-passes-second-amendment-preservation-act-117446",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: Ballotpedia, campaign site, other news searches (not run)"
+      ],
+      "found": 2,
+      "at": "2026-11-16T03:46:13.355Z",
+      "by": "source-collector"
     }
   ]
 }

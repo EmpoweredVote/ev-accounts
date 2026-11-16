@@ -284,18 +284,21 @@
         "state preemption of local gun rules, with damages against localities",
         "straw-purchase and false-information offences",
         "no duty to retreat and burden of proof on self-defense",
-        "subsidized tenants may keep firearms in their unit"
+        "subsidized tenants may keep firearms in their unit",
+        "straw-purchase and false-information offences in firearm sales",
+        "burden of proof on self-defense",
+        "off-duty officers may carry in bars and public establishments"
       ],
       "topic_keys": [
         "gun-policy"
       ],
       "provenance": {
-        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Reported by the House Federalism and Interstate Relations Committee (01_RH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb228/01_RH/pdf/ (Open States text id 90120726))",
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb228/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
         "fetched_at": "2026-11-16T02:22:15.263179Z",
         "method": "api",
         "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-228-2017.01_rh.pdf",
-          "sha256": "035ed7a59da9c146ef1aa9376032d21468382d0cd07782a5c3be4774eff31b4e"
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-228-2017.05_en.pdf",
+          "sha256": "eab978977ef322644e7b964a995f341c4f0217f6356c89969365aa91a9708c3f"
         }
       }
     },
@@ -590,18 +593,21 @@
       "note": "OH Senate, Senate Concurred in House amendments, 2026-11-10: nay (tally 21–9); census gate: none.",
       "subjects": [
         "suppressors no longer dangerous ordnance",
-        "hunting with suppressors without federal registration condition"
+        "hunting with suppressors without federal registration condition",
+        "suppressors no longer 'dangerous ordnance'",
+        "sawed-off firearms no longer 'dangerous ordnance'",
+        "hunting with a suppressor without the registration condition"
       ],
       "topic_keys": [
         "gun-policy"
       ],
       "provenance": {
-        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/02_PS/pdf/ (Open States text id 90138616))",
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
         "fetched_at": "2026-11-16T02:22:15.263179Z",
         "method": "api",
         "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.02_ps.pdf",
-          "sha256": "9f8629a8e30d3ebc5dc3cf8a56567fb4f23739b47d72d144069ab43b9a6904ed"
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.05_en.pdf",
+          "sha256": "6eed57a1a48cda7711b248082a5c2acf3e2f5032e752aa6170744a34da965c60"
         }
       }
     },
@@ -1077,6 +1083,61 @@
       "found": 7,
       "at": "2026-11-06T16:28:34.678Z",
       "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on bump stocks and rate-of-fire devices",
+        "gun safety laws",
+        "Second Amendment",
+        "carry a gun without a permit",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.ohiosenate.gov/members/kent-smith/news/smith-craig-testify-on-gun-safety-legislation (403; the old senate.state.oh.us address has a certificate mismatch)",
+        "blocked: https://ohiosenate.gov/members/kent-smith/news/smith-responds-to-governors-state-of-the-state-address (403)",
+        "blocked: https://www.ohiosenate.gov/members/kent-smith/news (member news list, not readable)",
+        "blocked: https://ballotpedia.org/Kent_Smith_(Ohio) (403)",
+        "campaign site: not reviewed, none found in search",
+        "sponsor list: covered by bulk bill data",
+        "one news story (Highland County Press, gun liability insurance bill) read: no words from Kent Smith in it",
+        "web searches (2): result snippets point to a bump-stock bill testimony release and a reply to the governor's address on background checks, but the pages were blocked so no passage could be copied"
+      ],
+      "found": 0,
+      "at": "2026-11-16T03:47:21.612Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on bump stocks and rapid-fire devices",
+        "check every gun buyer",
+        "safe storage of guns",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general gun safety and Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.senate.state.oh.us/members/kent-smith/news/smith-craig-testify-on-gun-safety-legislation (certificate mismatch on that host)",
+        "blocked: https://ohiosenate.gov/members/kent-smith/news/smith-craig-testify-on-gun-safety-legislation (403)",
+        "blocked: https://ohiosenate.gov/members/kent-smith/news/smith-responds-to-governors-state-of-the-state-address (403)",
+        "blocked: https://www.senate.state.oh.us/members/kent-smith/news (certificate mismatch)",
+        "blocked: https://www.senate.state.oh.us/members/kent-smith (certificate mismatch)",
+        "Ballotpedia (page returned empty; blocked: https://ballotpedia.org/Kent_Smith)",
+        "two news searches on name plus gun words: only leads to the official pages above (a Nov 2025 Senate release on testimony for SB 235, and a state-of-the-state response release mentioning background checks); no passage could be copied from page text, so none saved",
+        "campaign site: not reviewed, none found",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-16T03:49:54.343Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -249,18 +249,21 @@
       "note": "OH House, House Passed, 2026-11-10: nay (tally 69–27); census gate: none.",
       "subjects": [
         "suppressors no longer dangerous ordnance",
-        "hunting with suppressors without federal registration condition"
+        "hunting with suppressors without federal registration condition",
+        "suppressors no longer 'dangerous ordnance'",
+        "sawed-off firearms no longer 'dangerous ordnance'",
+        "hunting with a suppressor without the registration condition"
       ],
       "topic_keys": [
         "gun-policy"
       ],
       "provenance": {
-        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/02_PS/pdf/ (Open States text id 90138616))",
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN); official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/05_EN/pdf/; fetched 2026-11-16, gun-policy Stage 5 session B, replacing the earlier version read)",
         "fetched_at": "2026-11-16T02:22:15.263179Z",
         "method": "api",
         "saved_copy": {
-          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.02_ps.pdf",
-          "sha256": "9f8629a8e30d3ebc5dc3cf8a56567fb4f23739b47d72d144069ab43b9a6904ed"
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.05_en.pdf",
+          "sha256": "6eed57a1a48cda7711b248082a5c2acf3e2f5032e752aa6170744a34da965c60"
         }
       }
     },
@@ -574,6 +577,50 @@
           "sha256": "ee2f179e0b87be9fc069c5dbd35a2ec477f4a44e3c2c44b14ba5f8926446afe8"
         }
       }
+    },
+    {
+      "id": "6c6a18b50466cec953335f4f78ccc3811ba7052fd0fb8bb751cc1913337036d1",
+      "kind": "own-words",
+      "url": "https://www.wcpo.com/news/state/state-ohio/ohio-democrats-unveil-numerous-gun-safety-bills-likely-to-be-shot-down-by-gop-led-legislature",
+      "date": "2024-02-14",
+      "date_precision": "day",
+      "passage": "By limiting access to weapons for people who cannot pass basic background checks, by limiting access to concealed carry permits for people who should not and cannot qualify — we are making our communities safer,",
+      "note": "Quoted by WCPO at a House gun-violence summit where he introduced a universal background check bill and a concealed-carry permit bill; he says limiting access to guns and permits makes communities safer.",
+      "subjects": [
+        "check every gun buyer",
+        "carry permit required",
+        "gun safety laws general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:47:08.544Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d07c4ee64b2cae1327250d4a75f16095c8ef5c01050674fe4d729f98606b4d97",
+      "kind": "own-words",
+      "url": "https://www.wcpo.com/news/state/state-ohio/ohio-democrats-unveil-numerous-gun-safety-bills-likely-to-be-shot-down-by-gop-led-legislature",
+      "date": "2024-02-14",
+      "date_precision": "day",
+      "passage": "These are common-sense approaches,",
+      "note": "Quoted by WCPO, responding to the claim that his bills are unconstitutional; he said there is nothing unconstitutional about them.",
+      "subjects": [
+        "check every gun buyer",
+        "carry permit required",
+        "gun safety laws general"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-16T03:47:08.544Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -618,6 +665,30 @@
       "found": 4,
       "at": "2026-11-06T16:28:34.683Z",
       "by": "identity-oh-2026-11-06"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "concealed carry permit training",
+        "gun safety laws general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "blocked: https://www.ohiohouse.gov/members/dani-isaacsohn",
+        "blocked: https://ohiohouse.gov/members/dani-isaacsohn/news/reps-brown-isaacsohn-introduce-legislation-to-repeal-permitless-concealed-carry-118750",
+        "blocked: https://ohiohouse.gov/members/dani-isaacsohn/news/reps-robinson-isaacsohn-introduce-bill-requiring-universal-background-checks-for-all-firearms-purchases-118748",
+        "blocked: https://daytondailynews.com/local/ohio-democrats-unveil-5-gun-safety-bills-unlikely-to-pass-in-gop-led-statehouse/A4SC7X62UFEBPBV5IEOT5NEKVE",
+        "blocked: https://heartlandsignal.com/2023/09/27/firearm-industry-lobbyist-refuses-to-answer-whether-feeding-children-is-preferrable-to-subsidizing-gun-sales/",
+        "sponsor list: covered by bulk bill data",
+        "one news search on name plus gun words; one news story read (WCPO)",
+        "not reviewed: Ballotpedia, campaign site, other URL-pattern pages (official site blocked; search stopped early)"
+      ],
+      "found": 2,
+      "at": "2026-11-16T03:47:08.544Z",
+      "by": "source-collector"
     }
   ]
 }
