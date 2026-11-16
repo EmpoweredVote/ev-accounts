@@ -64,8 +64,11 @@ winner's level against the race's district type. Rebuild the roster with `topic:
 `office` column (a blank office blocks the record pass). Save `{{S}}/batches/{{xx}}-ids.txt` and a scoped roster
 `{{S}}/batches/{{xx}}-roster.tsv` (only this state's in-scope rows). Worked example: the newest
 `results_scope_*.py` under `{{S}}/*/scripts/`. Detail: STAGE5 §1.
+Leg B copies this roster over the shared one (`roster_sync.py`): never edit `roster.tsv` by hand.
 
 **A2. Bills.**
+
+Open States data: run `openstates/coverage.py <extract dir>` first; exit 1 names sessions with no roll calls.
 
 ```bash
 python3 -I scripts/stage5/scan_bills.py {{S}}/legiscan/ds {{XX}} {{S}}/legiscan/bills-{{xx}}.json --topic {{TOPIC}}

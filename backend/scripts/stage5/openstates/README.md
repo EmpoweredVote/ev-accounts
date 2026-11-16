@@ -55,6 +55,17 @@ A dump can hold a session's bills and none of its roll calls. Utah's 2025 Genera
 roll calls in the 2026-11 dump, with the sessions either side full. Count roll calls per session before a run; a
 year that has a special session can hide a missing regular one.
 
+The count is a tool, and it exits 1 when a session with 50 bills or more has no roll call, or roll calls that list no
+voter. Run it on the extract before the scan:
+
+```bash
+python3 -I scripts/stage5/openstates/coverage.py $W/extracts/2026-11/ut
+```
+
+In the 2026-11 dump it names gaps in Utah (2025), Maryland (2023), Minnesota (2020 special sessions to 2021-2022),
+North Dakota (the 66th and 67th assemblies) and Nevada (the 80th, 81st and 84th sessions). Puerto Rico's extract is
+empty. It also prints each state's roll-call addresses, which is the page a state reader has to read.
+
 `fetch-legislature-rollcalls.ts` reads the missing roll calls from the legislature's own site, **for the bills you
 name** (the ones the run's bill scan found; the tool knows no topic):
 
@@ -97,6 +108,7 @@ roll-call pages.
 ## Files
 
 - `extract.py`: the dump -> one TSV per table for one state. Reads only.
+- `coverage.py`: sessions of an extract that hold bills and no roll calls. Reads only.
 - `convert.py`: the TSVs -> dataset folders. `--work`, `--out`, `--legiscan-root` (read only, to keep a person's real
   LegiScan `people_id` when the state also has LegiScan datasets), `--sessions`.
 - `verify.py`: compare a converted session with a real LegiScan dataset of the same session, where one exists.

@@ -122,6 +122,9 @@ class Run:
     # --- the steps -----------------------------------------------------------------------------------------------
     def s1(self):
         S, xx, B = self.S, self.xx, f'{self.S}/record-briefs-{self.xx}'; name = f'{xx}-rec'; who = f'{S}/batches/{xx}-ids.txt'
+        # the record script, the coder inputs, the import and the write read the SHARED roster; the set-up leg settled
+        # the state's own. Utah 2026-11-15: a stale shared file stopped this step twice and left one person unwritten.
+        self.sh(f'{self.py}/roster_sync.py --shared {S}/roster.tsv --batch {S}/batches/{xx}-roster.tsv --ids {who} --write')
         if self.prof['record_script']:
             self.sh(f'npx tsx scripts/stage5/record-script.ts plan {self.common} --ids {who} {self.table} --sides {self.prof["sides"]} '
                     f'--skip-rungs {",".join(skip_rungs(self.prof["control_groups"]))} --name {name} --out {B}')

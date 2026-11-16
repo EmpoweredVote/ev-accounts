@@ -5,6 +5,9 @@ slim sessions that you start; you do very little, and that is the point. Every s
 session, so do not read the skill file, STAGE5.md, the runbook, the tools README, or the slim sessions' cards or
 history. Read only what this card names.
 
+🔴 **Be a fresh session.** If this session already did other work (a pilot, a review, another state), stop and ask
+the runner to start a new one with this card: Utah's desk started large and cost a fifth of the whole run.
+
 - `S` = `{{S}}` · desk folder `D` = `{{DESK}}` · batch `B` = `{{S}}/write/{{xx}}-01`
 - Tools run from `{{BACKEND}}` (its `.env` linked to the main checkout's; never print it).
 

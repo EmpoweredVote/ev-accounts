@@ -796,7 +796,7 @@ def session_card_takes_every_topic_value_from_the_profile(t):
     assert 'Trim rule: keep' in a and 'Trim rule: keep' in b, 'settled rulings are on both cards'
     assert f'"saved_root": "{t}"' in b and '"topic": "made-up-topic"' in b, 'the recipe on the card is filled from the profile'
     assert 'search_list.py plan --' not in b and 'record-script.ts' not in b and 'Search everyone' in b, 'no skip rule: no plan command'
-    assert len(a) < 14000 and len(b) < 16000, 'a card is a short page'
+    assert len(a) < 14000 and len(b) < 16000, f'a card is a short page: A {len(a)}, B {len(b)}'
     P = profile(t, sides='1,2/3', record_script=True, control_groups=['1:7', '3,2:4'])
     card('B', '--profile', P); b = open(f'{t}/card-B.md').read()
     assert '--control-group 1:7 --control-group 3,2:4' in b and '--sides 1,2/3 --skip-rungs 1,3,2' in b and '{{' not in b, b[:300]
@@ -955,7 +955,7 @@ def run_state_chains_the_steps_and_stops_only_where_a_person_is_needed(t):
     tools, bin_, C = f'{t}/tools', f'{t}/bin', f'{t}/stub'
     for d in (tools, bin_, C, f'{S}/record-briefs-zz', f'{S}/code-briefs', f'{S}/search-plan-zz'): os.makedirs(d)
     for n in ('run_state.py', 'session_card.py', 'legislature.py', '_args.py'): shutil.copy(os.path.join(TOOLS, n), tools)
-    for n in ('wave.py', 'stage5_prompts.py', 'search_list.py', 'search_effect.py'): open(f'{tools}/{n}', 'w').write(STUB)
+    for n in ('wave.py', 'stage5_prompts.py', 'search_list.py', 'search_effect.py', 'roster_sync.py'): open(f'{tools}/{n}', 'w').write(STUB)
     for n in ('npx', 'npm'):  # npx tsx scripts/stage5/<tool>.ts <args> ; npm run <script> --prefix <dir> -- <args>
         open(f'{bin_}/{n}', 'w').write(f'#!/bin/sh\nif [ "$1" = tsx ]; then shift; else shift; fi\nexec {sys.executable} -I {C}/stub.py "$@"\n'); os.chmod(f'{bin_}/{n}', 0o755)
     open(f'{C}/stub.py', 'w').write(STUB.replace("os.path.basename(sys.argv[0]) + (' ' + a[0] if a and not a[0].startswith(('-', '/')) else '')",
@@ -975,7 +975,7 @@ def run_state_chains_the_steps_and_stops_only_where_a_person_is_needed(t):
         for f in os.listdir(C):
             if f.startswith(('exit ', 'say ')): os.remove(f'{C}/{f}')
     p, calls = go()
-    want = ['record-script.ts plan', 'coder-inputs.ts', 'stage5_prompts.py coder-jobs', 'wave.py', 'split-codes.ts', 'split-codes.ts', 'record-script.ts adopt',
+    want = ['roster_sync.py', 'record-script.ts plan', 'coder-inputs.ts', 'stage5_prompts.py coder-jobs', 'wave.py', 'split-codes.ts', 'split-codes.ts', 'record-script.ts adopt',
             'search_list.py plan', 'stage5_prompts.py search-briefs', 'wave.py', 'topic:stage5-find', 'search_list.py recode',
             'stage5_prompts.py search-briefs', 'wave.py', 'topic:stage5-find', 'search_list.py recode',
             'coder-inputs.ts', 'stage5_prompts.py coder-jobs', 'wave.py', 'split-codes.ts', 'search_list.py adopt', 'search_effect.py',
@@ -1480,6 +1480,73 @@ def openstates_convert_merges_roll_calls_read_from_the_legislature(t):
     run('openstates/convert.py', Z, '--out', f'{t}/z/out', '--legiscan-root', f'{t}/none', env={'OPENSTATES_NEW_REGISTRY': '1'})
     z = [r for r in (json.load(open(f))['roll_call'] for f in glob.glob(f'{t}/z/out/ZZ-*/ZZ/2021*/vote/*.json')) if r['_openstates'].get('from_legislature')]
     assert len(z) == 1 and z[0]['chamber'] == 'H' and z[0]['desc'].startswith('House '), [(r['chamber'], r['desc']) for r in z]
+
+
+@check
+def openstates_coverage_names_a_session_with_bills_and_no_roll_calls(t):
+    """Utah 2026-11-15: the dump held the 2025 session's bills and none of its roll calls, and nothing said so. The
+    check must pass a full extract, name a session whose roll calls are gone, name one whose roll calls list no voter,
+    and give no verdict for an extract with no bills (Puerto Rico's was empty)."""
+    X = openstates_extract(t)
+    cov = lambda d, ok=True: run('openstates/coverage.py', d, '--min-bills', '1', ok=ok)
+    p = cov(X); assert p.returncode == 0 and 'no gap' in p.stdout, p.stdout[-300:]
+    assert 'le.utah.gov/DynaBill/svotes.jsp' in p.stdout, 'the roll-call address a reader must read is printed'
+    def drop(name, keep):
+        lines = open(f'{X}/{name}.tsv').read().split('\n'); head = lines[0].split('\t')
+        open(f'{X}/{name}.tsv', 'w').write('\n'.join([lines[0]] + [l for l in lines[1:] if l and keep(dict(zip(head, l.split('\t'))))]) + '\n')
+    saved = {n: open(f'{X}/{n}.tsv').read() for n in ('voteevent', 'personvote', 'bill')}
+    # 1. the 2021 session keeps its bill and loses every roll call
+    drop('voteevent', lambda r: r['legislative_session_id'] != 's21')
+    assert 's21' not in open(f'{X}/voteevent.tsv').read().split('\n', 1)[1], 'the tamper applied'
+    p = cov(X, ok=False); assert p.returncode == 1 and 'UT 2021' in p.stdout and 'no roll call' in p.stdout and 'UT 2020' not in p.stdout, p.stdout[-400:]
+    # at the default of 50 bills a one-bill session is not a gap
+    p = run('openstates/coverage.py', X); assert p.returncode == 0, p.stdout[-200:]
+    open(f'{X}/voteevent.tsv', 'w').write(saved['voteevent'])
+    # 2. the 2021 roll calls are there and list no voter
+    drop('personvote', lambda r: r['vote_event_id'] not in ('h21', 's21v'))
+    p = cov(X, ok=False); assert p.returncode == 1 and 'UT 2021' in p.stdout and 'list no voter' in p.stdout, p.stdout[-400:]
+    open(f'{X}/personvote.tsv', 'w').write(saved['personvote'])
+    # 3. no bill at all: no verdict, and a second state is still read
+    Z = openstates_extract(f'{t}/z', st='zz'); drop('bill', lambda r: False)
+    p = cov(X, ok=False); assert p.returncode == 2 and 'NO VERDICT' in p.stdout, (p.returncode, p.stdout[-300:])
+    p = run('openstates/coverage.py', X, Z, '--min-bills', '1', ok=False)
+    assert p.returncode == 2 and 'ZZ: 2 session' in p.stdout and 'NO VERDICT for UT' in p.stdout, p.stdout[-400:]
+
+
+@check
+def roster_sync_brings_the_shared_roster_into_step_and_touches_no_other_state(t):
+    """Utah 2026-11-15: the shared roster lacked a new winner, had no office on any Utah row, and kept a level the
+    runner had changed. Without --write it reports and changes nothing; with it the batch roster wins for the listed
+    ids only, a backup is kept, and a second run finds nothing. A batch row with no office gives no verdict."""
+    os.makedirs(t); cols = ['politician_id', 'full_name', 'office_id', 'level', 'state', 'scope', 'leaving', 'race_ids', 'office']
+    row = lambda pid, name, level='state', st='UT', office='State Senator': dict(zip(cols, [pid, name, 'o-' + pid, level, st, 'sitting', 'no', '', office]))
+    def tsv(path, rows): open(path, 'w').write('\t'.join(cols) + '\n' + ''.join('\t'.join(r[c] for c in cols) + '\n' for r in rows))
+    shared, batch, ids = f'{t}/roster.tsv', f'{t}/ut-roster.tsv', f'{t}/ut-ids.txt'
+    other = row('x1', 'Tex Other', st='TX', office='')
+    tsv(shared, [other, row('a', 'Ann A', office=''), row('b', 'Bea B', level='local', office='')])
+    tsv(batch, [row('a', 'Ann A'), row('b', 'Bea B'), row('c', 'Cy New')])
+    open(ids, 'w').write('a\nb\nc\n')
+    sync = lambda *a, ok=True: run('roster_sync.py', '--shared', shared, '--batch', batch, '--ids', ids, *a, ok=ok)
+    before = open(shared).read()
+    p = sync(ok=False)
+    assert p.returncode == 1 and '1 not in the shared roster' in p.stdout and "level 'local' -> 'state'" in p.stdout and 'office 2' in p.stdout, p.stdout
+    assert open(shared).read() == before, 'without --write nothing changes'
+    p = sync('--write'); assert p.returncode == 0 and '1 row(s) added' in p.stdout, p.stdout
+    got = {r['politician_id']: r for r in read_csv(shared, delimiter='\t')} if 'delimiter' in read_csv.__code__.co_varnames else None
+    lines = [l.split('\t') for l in open(shared).read().strip().split('\n')]
+    got = {l[0]: dict(zip(cols, l)) for l in lines[1:]}
+    assert got['b']['level'] == 'state' and got['a']['office'] == 'State Senator' and got['c']['full_name'] == 'Cy New', got
+    assert got['x1'] == other, 'a row of another state is not touched'
+    assert open(f'{shared}.bak-sync-ut').read() == before, 'the backup is the file as it was'
+    assert sync().returncode == 0
+    # a second sync never replaces the first backup
+    tsv(batch, [row('a', 'Ann A', office='State Representative'), row('b', 'Bea B'), row('c', 'Cy New')])
+    sync('--write'); assert open(f'{shared}.bak-sync-ut').read() == before
+    # blind: a batch row with no office, and an id the batch roster does not hold
+    tsv(batch, [row('a', 'Ann A', office=''), row('b', 'Bea B'), row('c', 'Cy New')]); mid = open(shared).read()
+    p = sync('--write', ok=False); assert p.returncode == 2 and 'blank office' in p.stdout and open(shared).read() == mid, p.stdout
+    tsv(batch, [row('a', 'Ann A'), row('b', 'Bea B')])
+    p = sync('--write', ok=False); assert p.returncode == 2 and 'not in' in p.stdout and open(shared).read() == mid, p.stdout
 
 
 fails = 0
