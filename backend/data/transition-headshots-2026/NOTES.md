@@ -461,3 +461,66 @@ the browser. **Deferred, not refused.**
 **66 legislative winners remain** — WA 23, WI 23, CA 12, IN 3, CO 2, UT 2, TX 1. Indiana's three
 are re-elected incumbents on `iga.in.gov`, which is the one place in this cohort where a chamber
 roster already carries the people. Washington and Wisconsin are the bulk and are all new members.
+
+---
+
+# Indiana — checked 2026-11-16, 1 of 3 has a portrait (not yet imported)
+
+The three Indiana winners are re-elected incumbents seated by `CA_0374`, and all three are on the
+chamber's own **2027** roster — bound by DISTRICT, which is the roster's own key: Streeter House 45,
+Kippenbrock House 63, Ellington Senate 39. ⚠ The roster says **"Jeff" Ellington** where our row says
+**"Jeffrey"**; the district binding is what confirms him, and it corroborates `CA_0374` rather than
+contradicting it.
+
+⚠ **They are NOT in `data/in-legislature-roster.json`.** That file holds the 150 members of the
+**124th** GA; these three arrived mid-term. The portrait path moved too:
+`iga.in.gov/images/legislators/**125/2027**/{house|senate}/{lpid}.jpg`.
+
+## 🔴🔴 IGA SERVES A PLACEHOLDER FOR A MEMBER WITH NO PORTRAIT, AND NOTHING ABOUT IT SAYS SO
+
+Streeter and Kippenbrock both return **HTTP 200, `content-type: image/jpeg`, 403,152 bytes** — and
+the file is the **Indiana statehouse-dome graphic on a marble background**. It is a valid image, at
+a plausible 686×886, from the chamber's own domain. It is not a face.
+
+**sha256 `cc1c59ec61c5be8315015efdd69e6ce3430068f20b5fd579977ca25f9701dba5`** — pin it.
+
+🔴 **THE COLLISION CHECK ONLY CAUGHT IT BECAUSE TWO MEMBERS IN ONE BATCH GOT IT.** `sweep-in-legislature-headshots.mjs`
+compares sha256 across the sweep, which is why two people sharing bytes stood out. **Fetch one
+legislator on their own and the dome ships as their headshot**, with every gate green: it decodes,
+it is the right shape, it comes from the right host, and `check-headshot-faces.py` is schedule-only.
+▶ **Match the placeholder by IDENTITY, not by collision.**
+
+🔴 **AND MY FIRST POSITIVE CONTROL WAS ONE OF THE TWO SUSPECTS.** I used Streeter as the known-good
+lpid — so the control certified the placeholder as "decodes fine, the fetch path works". **A control
+drawn from the data under test moves with the defect.** Replaced with a member read off the roster
+(Aylesworth, House 11 — 90,383 B, a real JPEG, a different sha). The paired negative still returns
+the 691-byte React shell that `iga.in.gov` serves every non-browser client at HTTP 200.
+
+## Outcome
+
+| | | |
+| --- | --- | --- |
+| Jeff Ellington | Senate 39 | ✅ real portrait, 279×419 — ships native, nothing enlarged |
+| Kellie Streeter | House 45 | ❌ no portrait published. Lead: she is a **Knox County Commissioner, District 3** until 2026-12-31 |
+| Amy Kippenbrock | House 63 | ❌ no portrait published. Current office not yet established |
+
+**What a body publishes is a finding, not a search failure.** IGA has not posted portraits for its
+two newest House members; that is the answer to the question, and the two want their *current*
+office as a source, the way the whole California batch did.
+
+# Washington — the shape of the remaining 23 (established 2026-11-16, none sourced yet)
+
+Three official routes checked, and **none of them carries a 2026 winner**:
+
+- **`leg.wa.gov/legislators`** publishes only sitting members. Photos are at
+  `leg.wa.gov/memberthumbnail/<memberId>.jpg`, 150×200.
+- **`app.leg.wa.gov/districtfinder/displaydistrict/<n>`** returns the **outgoing** members. District
+  14 still shows Mendoza and Manjarrez (R), not our winners Dimas and Morfin (D). It carries no
+  member photos at all.
+- **`voter.votewa.gov/CandidateList.aspx`** exists and lists candidates, but serves **zero images**.
+
+▶ So Washington is **23 separate hunts**, each on the winner's campaign site or whatever office they
+hold today — and a majority hold none. Of the first 8 researched, only **two** have a current
+elected office, and they share one: **Vancouver City Council** (Kim D. Harless, Position 1; Diana H.
+Perez, Position 3). ⚠ Jonathan Bingle is a **former** Spokane councilmember — he lost re-election in
+2025 — so the office route is closed for him; Dimas, Morfin, Jasmin and Scott hold no elected office.
