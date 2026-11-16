@@ -861,6 +861,13 @@ def close_state_measures_whole_sessions_waits_and_refuses_to_replace_hand_work(t
     assert f'{7 * step / 4:,.0f}' in md and 'Carry on?' in md and 'made-up-topic' in md and '| Gate runs | __' in md, md[:400]
     assert os.path.exists(f'{S}/zz/HANDOVER-B-skeleton.md')
     run('close_state.py', *args, '--session', A, '--session', B)  # its own page may be written again
+    # Ohio 2026-11-16: the desk's second run wiped the rows the leg had filled in. A filled row survives a re-run.
+    page = open(f'{S}/zz/MEASURES.md').read(); gate_row = next(l for l in page.split('\n') if l.startswith('| Gate runs |'))
+    assert '__' in gate_row, gate_row
+    open(f'{S}/zz/MEASURES.md', 'w').write(page.replace(gate_row, '| Gate runs | 3 (30, 18, 0) |'))
+    run('close_state.py', *args, '--session', A, '--session', B)
+    again = open(f'{S}/zz/MEASURES.md').read()
+    assert '| Gate runs | 3 (30, 18, 0) |' in again and '| Runner stops | __' in again, 'a filled row is kept; an unfilled one is still asked for'
     open(f'{S}/zz/MEASURES.md', 'w').write('# written by hand\n')
     r = run('close_state.py', *args, '--session', A, '--session', B, ok=False)
     assert r.returncode != 0 and open(f'{S}/zz/MEASURES.md').read() == '# written by hand\n', 'a hand-written page is never replaced'
@@ -955,7 +962,7 @@ def run_state_chains_the_steps_and_stops_only_where_a_person_is_needed(t):
     tools, bin_, C = f'{t}/tools', f'{t}/bin', f'{t}/stub'
     for d in (tools, bin_, C, f'{S}/record-briefs-zz', f'{S}/code-briefs', f'{S}/search-plan-zz'): os.makedirs(d)
     for n in ('run_state.py', 'session_card.py', 'legislature.py', '_args.py'): shutil.copy(os.path.join(TOOLS, n), tools)
-    for n in ('wave.py', 'stage5_prompts.py', 'search_list.py', 'search_effect.py', 'roster_sync.py'): open(f'{tools}/{n}', 'w').write(STUB)
+    for n in ('wave.py', 'stage5_prompts.py', 'search_list.py', 'search_effect.py', 'roster_sync.py', 'bill_table.py'): open(f'{tools}/{n}', 'w').write(STUB)
     for n in ('npx', 'npm'):  # npx tsx scripts/stage5/<tool>.ts <args> ; npm run <script> --prefix <dir> -- <args>
         open(f'{bin_}/{n}', 'w').write(f'#!/bin/sh\nif [ "$1" = tsx ]; then shift; else shift; fi\nexec {sys.executable} -I {C}/stub.py "$@"\n'); os.chmod(f'{bin_}/{n}', 0o755)
     open(f'{C}/stub.py', 'w').write(STUB.replace("os.path.basename(sys.argv[0]) + (' ' + a[0] if a and not a[0].startswith(('-', '/')) else '')",
@@ -975,7 +982,7 @@ def run_state_chains_the_steps_and_stops_only_where_a_person_is_needed(t):
         for f in os.listdir(C):
             if f.startswith(('exit ', 'say ')): os.remove(f'{C}/{f}')
     p, calls = go()
-    want = ['roster_sync.py', 'record-script.ts plan', 'coder-inputs.ts', 'stage5_prompts.py coder-jobs', 'wave.py', 'split-codes.ts', 'split-codes.ts', 'record-script.ts adopt',
+    want = ['roster_sync.py', 'bill_table.py check', 'record-script.ts plan', 'coder-inputs.ts', 'stage5_prompts.py coder-jobs', 'wave.py', 'split-codes.ts', 'split-codes.ts', 'record-script.ts adopt',
             'search_list.py plan', 'stage5_prompts.py search-briefs', 'wave.py', 'topic:stage5-find', 'search_list.py recode',
             'stage5_prompts.py search-briefs', 'wave.py', 'topic:stage5-find', 'search_list.py recode',
             'coder-inputs.ts', 'stage5_prompts.py coder-jobs', 'wave.py', 'split-codes.ts', 'search_list.py adopt', 'search_effect.py',
@@ -1170,7 +1177,7 @@ def leg_starts_a_slim_session_that_cannot_write_and_turns_its_last_line_into_a_s
         p, c = leg(reply, which='B'); assert p.returncode == code, (reply, p.returncode, p.stdout)
     open(f'{t}/empty.md', 'w').write('  \n'); p, c = leg('DONE B', '--answer', f'{t}/empty.md', which='B'); assert p.returncode != 0 and c is None, 'an empty answer is not sent'
     run('session_card.py', 'desk', '--profile', P, '--state', 'zz', '--state-name', 'Zedland', '--out', f'{t}/desk.md')
-    d = open(f'{t}/desk.md').read(); assert '{{' not in d and f'{D}' in d and 'write-batch.sh' in d and 'leg.py A --profile' in d and len(d) < 6000
+    d = open(f'{t}/desk.md').read(); assert '{{' not in d and f'{D}' in d and 'write-batch.sh' in d and 'leg.py A --profile' in d and 'standing_yes.py write' in d and "own chat message" in d and len(d) < 6500
     # the write script itself refuses in a slim session, before it runs the writer
     open(f'{bin_}/npx', 'w').write('#!/bin/sh\necho ran >> "$STUB_DIR/npx.txt"\n'); os.chmod(f'{bin_}/npx', 0o755); os.makedirs(f'{t}/b')
     go = lambda mode, e: subprocess.run(['zsh', os.path.join(TOOLS, 'write-batch.sh'), S, f'{t}/b', 'made-up-topic', 'state:zz', mode], capture_output=True, text=True, env=e, cwd=t)
@@ -1255,6 +1262,13 @@ def leg_hands_over_to_a_fresh_session_past_the_size_cap(t):
     sid = json.load(open(f'{D}/leg-B.json'))['session_id']; transcript(sid, 90000); open(f'{t}/ans.md', 'w').write('carry on')
     p, calls = leg('DONE B', '--answer', f'{t}/ans.md', which='B')
     assert p.returncode == 0 and '--resume' not in calls[0]['argv'] and 'You are continuing this leg' in calls[0]['argv'][1], 'after a blocked hand-over the answer goes to a fresh session'
+    # --- Ohio 2026-11-16: a session that worked for 28 minutes reported 1 step (its last reply was a wake-up after a
+    # background task). Few steps AND a short run say "the cap is too low"; few steps after a long run do not.
+    for f in glob.glob(f'{D}/*'): os.remove(f)
+    open(f'{D}/CONTINUE-B-1.md', 'w').write('On B9.\n'); env['STAGE5_LEG_QUICK'] = '0'
+    p, calls = leg(f'STOP handover {D}/CONTINUE-B-1.md\n===NEXT===\nDONE B', which='B', turns=1)
+    del env['STAGE5_LEG_QUICK']
+    assert p.returncode == 0 and len(calls) == 2 and 'You are continuing this leg' in calls[1]['argv'][1], (p.returncode, p.stdout, len(calls))
 
 
 @check
@@ -1639,12 +1653,111 @@ def roster_sync_brings_the_shared_roster_into_step_and_touches_no_other_state(t)
     p = sync('--write', ok=False); assert p.returncode == 2 and 'not in' in p.stdout and open(shared).read() == mid, p.stdout
 
 
+@check
+def bill_table_affected_lists_only_people_a_new_bill_can_move(t):
+    """Ohio 2026-11-16: three late bills, all no rung, 25 people coded again, 0 changed. Only a counted Yes act on a new
+    bill WITH a rung can move a code. A flagged bill is refused, and so is a bill the table lacks."""
+    S = f'{t}/store'; os.makedirs(f'{S}/instruments/state-xx'); os.makedirs(f'{S}/findings')
+    for b in ('XX-HB-1-2025', 'XX-HB-2-2025', 'XX-HB-3-2025'): json.dump({'instrument_id': b, 'operative_text': 'a rule'}, open(f'{S}/instruments/state-xx/{b}.json', 'w'))
+    def person(pid, *acts):
+        json.dump({'politician_id': pid, 'findings': [{'id': f'{pid}{i}', 'kind': 'record', 'topic_keys': ['tp'], 'instrument_id': b, 'act': a,
+                                                       **({'gate_by_topic': {'tp': 'near-unanimous'}} if g else {})} for i, (b, a, g) in enumerate(acts)], 'searches': []},
+                  open(f'{S}/findings/{pid}.json', 'w'))
+    person('yes', ('XX-HB-1-2025', 'yea', 0)); person('spon', ('XX-HB-1-2025', 'sponsor', 0)); person('no', ('XX-HB-1-2025', 'nay', 0))
+    person('gated', ('XX-HB-1-2025', 'yea', 1)); person('norung', ('XX-HB-2-2025', 'yea', 0)); person('none', ('XX-HB-3-2025', 'yea', 0))
+    open(f'{t}/ids.txt', 'w').write('yes\nspon\nno\ngated\nnorung\nnone\n')
+    T = f'{t}/table.json'
+    def table(flag=''): json.dump({'topic_key': 'tp', 'bills': {'XX-HB-1-2025': {'rung': 3, 'deciding_words': 'a rule', 'flag': flag},
+                                                               'XX-HB-2-2025': {'rung': None, 'why': 'off the question', 'flag': ''}}}, open(T, 'w'))
+    table()
+    aff = lambda *bills, ok=True: run('bill_table.py', 'affected', T, *bills, '--ids', f'{t}/ids.txt', '--store', S, '--out', f'{t}/again.txt', ok=ok)
+    p = aff('XX-HB-1-2025', 'XX-HB-2-2025')
+    assert open(f'{t}/again.txt').read().split() == ['spon', 'yes'], open(f'{t}/again.txt').read()
+    assert '5 of 6 people hold a finding' in p.stdout and '2 hold a counted Yes act' in p.stdout, p.stdout
+    p = aff('XX-HB-2-2025'); assert open(f'{t}/again.txt').read() == '' and 'no round is needed' in p.stdout, p.stdout
+    table(flag='rung 3 or 4?'); p = aff('XX-HB-1-2025', ok=False); assert p.returncode != 0 and 'still flagged' in (p.stderr + p.stdout)
+    table(); p = aff('XX-HB-3-2025', ok=False); assert p.returncode != 0 and 'not in the table' in (p.stderr + p.stdout)
+
+
+@check
+def roster_sync_refuses_two_records_for_one_person(t):
+    """Runner, 2026-11-16: one person, one record, one stance. Ohio coded "Allison Russo" and "C. Allison Russo" apart and
+    the write was held. Two ids that read as one person stop the sync, with --write or without; a listed pair of real
+    namesakes passes; a father and a son (a suffix apart) and two people who share only a surname are not a pair."""
+    os.makedirs(t); cols = ['politician_id', 'full_name', 'office_id', 'level', 'state', 'scope', 'leaving', 'race_ids', 'office']
+    row = lambda pid, name, office='State Representative': dict(zip(cols, [pid, name, 'o', 'state', 'OH', 'sitting', 'no', '', office]))
+    def tsv(path, rows): open(path, 'w').write('\t'.join(cols) + '\n' + ''.join('\t'.join(r[c] for c in cols) + '\n' for r in rows))
+    shared, batch, ids = f'{t}/roster.tsv', f'{t}/oh-roster.tsv', f'{t}/oh-ids.txt'
+    people = [row('r1', 'C. Allison Russo'), row('r2', 'Allison Russo', 'Secretary of State'), row('t1', 'Cecil Thomas'), row('t2', 'Jim Thomas'),
+              row('m1', 'Joseph A. Miller, III'), row('m2', 'Joseph A. Miller')]
+    tsv(shared, people); tsv(batch, people); open(ids, 'w').write('\n'.join(r['politician_id'] for r in people) + '\n')
+    sync = lambda *a, ok=True: run('roster_sync.py', '--shared', shared, '--batch', batch, '--ids', ids, *a, ok=ok)
+    before = open(shared).read()
+    for a in ((), ('--write',)):
+        p = sync(*a, ok=False)
+        assert p.returncode == 3 and 'C. Allison Russo' in p.stdout and '1 pair' in p.stdout and 'Thomas' not in p.stdout and 'Miller' not in p.stdout, p.stdout
+    assert open(shared).read() == before
+    open(f'{t}/distinct.tsv', 'w').write('r1\tr2\n'); assert sync('--distinct', f'{t}/distinct.tsv', ok=False).returncode == 2, 'a pair with no reason gives no verdict'
+    open(f'{t}/distinct.tsv', 'w').write('r1\tr2\ttwo people, checked on the House roster\n'); assert sync('--distinct', f'{t}/distinct.tsv').returncode == 0
+    open(ids, 'w').write('r1\nt1\nt2\nm1\nm2\n'); assert sync().returncode == 0
+
+
+@check
+def standing_yes_holds_only_when_every_condition_does(t):
+    """The desk may write or approve without asking only under the runner's standing yes AND when this passes. Each
+    condition is broken in turn; each must turn the answer to "ask the runner"."""
+    os.makedirs(f'{t}/legiscan')
+    J = lambda f, x: json.dump(x, open(f'{t}/{f}', 'w'))
+    W = lambda f, x: open(f'{t}/{f}', 'w').write(x)
+    def good():
+        J('recipe.json', {'stage5': t, 'topic': 'tp', 'unit': 'state:xx', 'level': 'state', 'state': 'XX', 'roster': f'{t}/r.tsv', 'codes': t, 'saved_root': t, 'votes': 'legiscan-plan'})
+        J('recipe-log.json', {**{str(n): f'2026-11-16T06:{n:02d}:00' for n in range(13)}, '8_stale': False})
+        W('party-sweep.jsonl', ''); W('party-sweep-research.jsonl', ''); W('research.csv', 'full_name,reasoning\nAnn A,voted yes\n')
+        J('legiscan/crosscheck.json', []); J('legiscan/unmapped.json', []); J('legiscan/no-line.json', [])
+        W('gate-output-final.txt', 'stance-gate: 3 rows · high=0 medium=1 · evidence rows=9\n')
+        W('verify-dry-run.txt', 'AUTO-PUSH: 0  UNCHANGED: 1  REVIEW: 2  RE-RESEARCH: 0  OUT-OF-SCOPE: 0\n')
+        W('dry-run-1.txt', 'x\noutcomes:  3 (seated 2, doesnt-fit 1, no-stance 0)\npassages:  1 (own-words 1, local-record 0)\n')
+        W('PREVIEW.md', '# preview\n'); os.utime(f'{t}/PREVIEW.md', (2e9, 2e9))
+        J('desk-check.json', {'roll_calls_compared': 3, 'member_votes_compared': 121, 'differences': 0, 'odd': []})
+        W('verify-apply.txt', 'AUTO-PUSH: 0  UNCHANGED: 1  REVIEW: 2  RE-RESEARCH: 0\nSUMMARY: pushed=0 reviewed=2 errors=0\n'); os.utime(f'{t}/verify-apply.txt', (1e9, 1e9))
+        W('readback-1.txt', 'outcomes [{"outcome":"doesnt-fit","count":1},{"outcome":"seated","count":2}]\npassages [{"count":1}]\nreview [{"batch_id":"b","status":"pending","count":2}]\n')
+    sy = lambda which, ok=True: run('standing_yes.py', which, t, ok=ok)
+    good()
+    p = sy('write'); assert p.returncode == 0 and 'every condition holds' in p.stdout and "runner's own message" in p.stdout, p.stdout + p.stderr
+    p = sy('approve'); assert p.returncode == 0, p.stdout + p.stderr
+    def broken(which, change, word, code=1):
+        good(); change(); p = sy(which, ok=False)
+        assert p.returncode == code and word in p.stdout, (which, word, p.returncode, p.stdout, p.stderr[-200:])
+    broken('write', lambda: W('gate-output-final.txt', 'stance-gate: 3 rows · high=2 medium=0 · evidence rows=9\n'), 'step 9')
+    broken('write', lambda: J('legiscan/crosscheck.json', [{'agree': False}]), 'step 7')
+    broken('write', lambda: J('legiscan/unmapped.json', [{'x': 1}]), 'step 7')
+    broken('write', lambda: W('party-sweep-research.jsonl', '{"x":1}\n'), 'step 10')
+    broken('write', lambda: J('recipe-log.json', {**{str(n): 'x' for n in range(12)}, '8_stale': False}), 'steps not run: 12')
+    broken('write', lambda: J('recipe-log.json', {**{str(n): f'2026-11-16T06:{n:02d}:00' for n in range(13)}, '8_stale': True}), 'stale')
+    broken('write', lambda: J('recipe-log.json', {**{str(n): f'2026-11-16T06:{n:02d}:00' for n in range(13)}, '4': '2026-11-16T09:00:00', '8_stale': False}), 'ran after the final gate')
+    broken('write', lambda: os.remove(f'{t}/desk-check.json'), 'desk-check.json is missing')
+    broken('write', lambda: J('desk-check.json', {'roll_calls_compared': 3, 'member_votes_compared': 121, 'differences': 1, 'odd': []}), 'differences')
+    broken('write', lambda: J('desk-check.json', {'roll_calls_compared': 3, 'member_votes_compared': 121, 'differences': 0, 'odd': ['Russo is coded twice']}), 'Russo is coded twice')
+    broken('write', lambda: J('desk-check.json', {'roll_calls_compared': 1, 'member_votes_compared': 40, 'differences': 0, 'odd': []}), 'fewer than 2')
+    broken('write', lambda: os.remove(f'{t}/PREVIEW.md'), 'PREVIEW.md is not written')
+    broken('write', lambda: os.remove(f'{t}/recipe-log.json'), 'NO VERDICT', code=2)
+    rb = lambda o, p, r: W('readback-1.txt', f'outcomes {o}\npassages [{{"count":{p}}}]\nreview {r}\n')
+    O, R = '[{"outcome":"doesnt-fit","count":1},{"outcome":"seated","count":2}]', '[{"batch_id":"b","status":"pending","count":2}]'
+    broken('approve', lambda: rb('[{"outcome":"seated","count":3}]', 1, R), 'read-back outcomes')
+    broken('approve', lambda: rb(O, 0, R), 'read-back passages')
+    broken('approve', lambda: rb(O, 1, '[{"batch_id":"b","status":"resolved","count":2}]'), 'not all pending')
+    broken('approve', lambda: rb(O, 1, '[{"batch_id":"b","status":"pending","count":1}]'), 'sent 2 to review')
+    broken('approve', lambda: W('verify-apply.txt', 'REVIEW: 2\nSUMMARY: pushed=0 reviewed=2 errors=1\n'), 'errors=1')
+    broken('approve', lambda: os.remove(f'{t}/readback-1.txt'), 'NO VERDICT', code=2)
+    broken('approve', lambda: os.utime(f'{t}/verify-apply.txt', (3e9, 3e9)), 'older than')
+
+
 fails = 0
 with tempfile.TemporaryDirectory() as root:
     for i, f in enumerate(CHECKS):
         try:
             f(os.path.join(root, str(i))); print('ok  ', f.__name__)
         except Exception:
-            fails += 1; print('FAIL', f.__name__); traceback.print_exc(limit=1)
+            fails += 1; print('FAIL', f.__name__); traceback.print_exc(limit=3)
 print(f'{len(CHECKS) - fails}/{len(CHECKS)} checks pass')
 sys.exit(1 if fails else 0)

@@ -305,6 +305,32 @@ def replay(c, b, dry, to, reapply):
     for n in range(9, to + 1): run_step(n, c, b, dry)
 
 
+def quote_repair(c, b):
+    """Step 9, before a person is asked: the two mechanical repairs for a quote the gate cannot place. First cut a
+    snippet from a page already fetched (quote_snippets.py). Then, for a RECORD row whose quote no cited page prints,
+    take the quote marks off and keep the words (unquote.py + apply_overrides.py); own words are never touched, and are
+    left for the stop. Ohio 2026-11-16: 29 such highs had one cause, were cleared by these two tools by hand, and
+    were cleared by hand again after a rebuild. Each tool logs what it did; nothing here changes a stance."""
+    out = os.path.join(b, 'gate-output-final.txt'); gate = f"npx tsx scripts/stance-gate.ts --dir {b}"
+    def highs(): return len(re.findall(r'^\s*high\s+quote-not-in-snippet', read(b, 'gate-output-final.txt'), re.M))
+    def sh(cmd):
+        print('  $', cmd); p = subprocess.run(cmd, shell=True, cwd=BACKEND, text=True)
+        if p.returncode: raise Stop(2, f'step 9 repair failed (exit {p.returncode}): {cmd[:200]}')
+    before = highs()
+    if not before: return ''
+    for f in ('research', 'evidence'): shutil.copyfile(os.path.join(b, f'{f}.csv'), os.path.join(b, f'{f}-pre-step9-repair.csv'))
+    shutil.copyfile(out, os.path.join(b, 'gate-output-before-repair.txt'))
+    sh(f"{PY} scripts/stage5/quote_snippets.py {b} {out} --topic {c['topic']}")
+    subprocess.run(f"{gate} > {out} || true", shell=True, cwd=BACKEND); mid = highs()
+    if mid:
+        sh(f"{PY} scripts/stage5/unquote.py {b} {out}")
+        sh(f"{PY} scripts/stage5/apply_overrides.py {b} --skip-changed")
+        subprocess.run(f"{gate} > {out} || true", shell=True, cwd=BACKEND)
+    after = highs()
+    json.dump({'unplaced_quotes': {'before': before, 'after_snippets': mid, 'after_unquote': after}}, open(os.path.join(b, 'step9-repair.json'), 'w'), indent=1)
+    return f'; quote repair: {before} unplaced -> {mid} after snippets -> {after} after quote marks came off (step9-repair.json, overrides.json)'
+
+
 def run_step(n, c, b, dry):
     name, cmds, kind = steps(c, b)[n]
     log = load_log(b)
@@ -334,6 +360,8 @@ def run_step(n, c, b, dry):
     # steps 2-6 rewrite the files step 7 starts from: the saved pre-step-7 copies no longer match them
     if 2 <= n <= 6 and any(os.path.exists(p) for p in pre7(b)): log['pre7_stale'] = True
     save_log(b, log)
+    extra = quote_repair(c, b) if n == 9 and '--no-repair' not in sys.argv else ''
+    if extra: print('  repair' + extra[1:])  # said before the check, which may stop on what is left
     print('  ok:', check(n, c, b))
 
 

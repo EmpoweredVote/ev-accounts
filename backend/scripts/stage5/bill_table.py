@@ -28,6 +28,9 @@ settle     closes a flag: moves `flag` to `question`, writes --answer to `answer
            or pass --all for every flagged bill (one answer that covers them all). A named bill with no flag, an
            unknown bill or an empty answer is refused (exit 2) and nothing is written. The rung is not changed: when
            the answer changes it, edit `rung`, `deciding_words` and `why` and run `check` again.
+affected   after bills joined the table late (a searcher named them): `affected <table.json> <bill id>... --ids <ids
+           file> [--out <ids file>]` lists who must be coded again: only a person with a counted Yes act on one of
+           those bills that HAS a rung. A no-rung bill moves no one. A flagged bill is refused: settle it first.
 
 Why: in Georgia the coders read the same 47 bills 204 times, and the rung each bill supports was argued afresh in
 each batch; the both-sides people were found only at the early check (review 2026-11-12, change 2).
@@ -40,7 +43,7 @@ from _args import opt, positional
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 STORE = os.path.normpath(os.path.join(HERE, '..', '..', 'data', 'source-store'))
-USAGE = 'bill_table.py check|questions|settle <table.json> [<bill id>... | --all] [--answer <text>] [--store <dir>] [--ids <file>] [--rungs 5] [--out <md>]'
+USAGE = 'bill_table.py check|questions|settle|affected <table.json> [<bill id>... | --all] [--answer <text>] [--store <dir>] [--ids <file>] [--rungs 5] [--out <md>]'
 ANSWERED = re.compile(r'\[\s*(settled|answered|resolved|ruled)\b|\bas recommended\b', re.I)  # an answer note, not a question that mentions a ruling
 YES = {'yea', 'sponsor', 'author', 'signed'}
 
@@ -114,6 +117,25 @@ def questions(table, store, ids, rungs):
     return '\n'.join(out) + '\n', len(flagged), len(both)
 
 
+def affected(table, store, ids, bills):
+    """Who must be coded again after `bills` joined the table: only a person with a counted Yes act on one of them
+    that has a rung. A bill with no rung seats no one and moves no one: a No, an absence, or any act on a no-rung bill
+    cannot change an outcome or a rung. Ohio 2026-11-16: three late bills, all no rung, 25 people coded again, 0 changed."""
+    unknown = [b for b in bills if b not in table['bills']]
+    if unknown: raise SystemExit(f'not in the table: {", ".join(unknown)}')
+    open_q = [b for b in bills if (table['bills'][b].get('flag') or '').strip()]
+    if open_q: raise SystemExit(f'still flagged, settle first (the rung is not known yet): {", ".join(open_q)}')
+    hit, touched = {}, set()
+    for pid in ids:
+        for f in person_findings(store, pid, table['topic_key']):
+            bid = f.get('instrument_id')
+            if bid not in bills: continue
+            touched.add(pid)
+            if table['bills'][bid].get('rung') is not None and f.get('act') in YES and not gated(f, table['topic_key']):
+                hit.setdefault(pid, set()).add(bid)
+    return hit, touched
+
+
 def settle(table, bills, every, answer):
     rows = table['bills']
     if not answer.strip(): raise SystemExit('settle needs --answer: the ruling, or the runner\'s words')
@@ -140,6 +162,17 @@ def main():
         nf = sum(1 for r in table['bills'].values() if (r.get('flag') or '').strip())
         print(f"{len(table['bills'])} bills, {len(p)} problem(s), {nf} flagged (open questions)" + (': the record script codes nobody with an act on a flagged bill' if nf else ''))
         sys.exit(2 if p else 0)
+    if cmd == 'affected':
+        if not ids: raise SystemExit('affected needs --ids')
+        bills = positional(3, USAGE)[2:]
+        hit, touched = affected(table, store, ids, bills)
+        dest = opt('--out')
+        if dest: open(dest, 'w').write(''.join(p + '\n' for p in sorted(hit)))
+        print(f'{len(bills)} bill(s): {len(touched)} of {len(ids)} people hold a finding on one; {len(hit)} hold a counted Yes act on one WITH a rung'
+              + (f' -> {dest}' if dest else ''))
+        for b in bills: print(f"  {b}: rung {table['bills'][b].get('rung')}; {sum(1 for v in hit.values() if b in v)} to code again")
+        print('Code again only the people listed. ' + ('None: no code can change, so no round is needed.' if not hit else 'Run them as one round (run_state.py --round …).'))
+        return
     if cmd == 'questions':
         if not ids: raise SystemExit('questions needs --ids')
         md, nf, nb = questions(table, store, ids, rungs)

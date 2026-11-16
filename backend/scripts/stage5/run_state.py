@@ -125,6 +125,11 @@ class Run:
         # the record script, the coder inputs, the import and the write read the SHARED roster; the set-up leg settled
         # the state's own. Utah 2026-11-15: a stale shared file stopped this step twice and left one person unwritten.
         self.sh(f'{self.py}/roster_sync.py --shared {S}/roster.tsv --batch {S}/batches/{xx}-roster.tsv --ids {who} --write')
+        # Ohio 2026-11-16: one row still quoted a text the store no longer held, and 80 people went to Opus for it.
+        if self.prof['record_script']:
+            rc, out = self.sh(f'{self.py}/bill_table.py check {S}/bill-table-{xx}.json', ok=(0, 2))
+            if rc: raise Stop(2, 'the bill table does not pass its check, so the record script would refuse its own text for everyone on those '
+                                 f'bills. Fix each row (a row whose words are not in the stored text is read again by Opus), then --from 1.\n' + '\n'.join(out.strip().splitlines()[-6:]))
         if self.prof['record_script']:
             self.sh(f'npx tsx scripts/stage5/record-script.ts plan {self.common} --ids {who} {self.table} --sides {self.prof["sides"]} '
                     f'--skip-rungs {",".join(skip_rungs(self.prof["control_groups"]))} --name {name} --out {B}')
@@ -134,7 +139,7 @@ class Run:
         adopt = f'npx tsx scripts/stage5/record-script.ts adopt --out {B} --name {name} --codes {S}/record-codes'
         # a send-back stops the step before the standing check: the resume must not skip it (found in Tennessee, 2026-11-14)
         self.wave('rec'); self.split(f'{S}/record-coded', B, name, f'{S}/record-codes',
-                                     then=f'; then run the standing check yourself, from backend/ (`{adopt}`; exit 4 = it failed, a runner stop)' if self.prof['record_script'] else '')
+                                     then=f'; then run the standing check yourself, from backend/ (`{adopt}`; exit 4 = it failed, a runner stop). The resume below starts AFTER it: never skip it' if self.prof['record_script'] else '')
         if self.prof['record_script']:
             rc, out = self.sh(adopt, ok=(0, 4))
             if rc == 4:
