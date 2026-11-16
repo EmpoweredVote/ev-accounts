@@ -352,3 +352,112 @@ findable by the query that looks for missing provenance; a guessed licence is no
 **68 of the 82 CA rows remain** — 50 more school boards (2026-12-11), 6 special districts,
 and 12 legislators with no swearing-in date yet. The school boards are the nearest deadline.
 🔴 **Do not reach for BallotReady for any of them** until the re-sourcing piece above is done.
+
+---
+
+# Batch 2 — applied 2026-11-16 (`CC_0438`)
+
+**7 of the 73 legislative winners who have no face.** This batch changed the scope: batch 1 worked
+the nearest *handovers* (special districts, school boards); batch 2 works the **legislative tiers**
+— `STATE_LOWER`, `STATE_UPPER`, `NATIONAL_LOWER`, `NATIONAL_UPPER`. Measured against production,
+that tier holds **73** winners with no photograph in any of the three places, against a positive
+control of **1,339** legislative winners that DO read as having one.
+
+By state: **WA 23 · WI 23 · CA 19 · IN 3 · CO 2 · UT 2 · TX 1.** All seven below are California.
+The faceless legislative count went **73 → 66**, gated as a delta inside the migration's own
+transaction.
+
+## 🔴 THESE WINNERS ARE NOT ON ANY CHAMBER ROSTER YET, SO THERE IS NO BULK SOURCE
+
+Batch 1 could lean on roster pages that yield several faces at once. This tier cannot: a winner of
+2026-11-03 does not appear on `legis.wisconsin.gov` or `leg.wa.gov` until the chamber seats them in
+January. **The source for each is the body they hold office in TODAY** — a county board, a city
+council, a school board — or their campaign site. That is one research problem per person, and it
+is why this batch is 7 and not 73.
+
+▶ The corollary: **a winner who holds no current office has only a campaign site**, and campaign
+sites are where the licence questions live.
+
+## ⚠ EVERY ONE OF THE SEVEN IS `unknown`, AND THAT IS THE FINDING
+
+Not one California publisher in this batch grants reuse. `fresno.gov` and `garcia.asmdc.org` assert
+a blanket copyright; `fresnocountyca.gov`, `rpvca.gov`, `rpcity.ca.gov` and `kerncounty.com`
+publish no photo policy at all on the pages carrying these portraits. Only **federal** US
+government work is public domain (17 USC §105) — a city, county or state portrait is not. Recorded
+`unknown`, the same disposition `CC_0383` gave the two cvwd.com rows.
+
+## 🔴🔴 A STORAGE OBJECT EXISTED FOR A PERSON THE DATABASE SAID HAD NO PHOTO
+
+The absence control before upload found `8bfb459b-…-headshot.jpg` answering **HTTP 200** while
+Robert Garcia's row carried nothing on any of the three surfaces. An orphan file nobody wired up —
+the **mirror image of the Steve Hobbs defect** `CC_0384` found, where the row pointed at a file and
+the scalar pointed at a seal. Opened and compared: the same man, an older outdoor portrait,
+600×750, sha256 `42d4f894…`. Replaced with his current Assembly studio portrait, and **his URL
+alone carries `?v=20261116`** because an `x-upsert` at an existing path returns 200 while the CDN
+serves the old bytes.
+
+▶ **The absence control is not ceremony — it is the only thing that distinguishes a fresh object
+from an overwrite, and the two need different URLs.**
+
+## 🔴 THE VERIFY CAUGHT ITSELF ASSERTING ON A URL THE MIGRATION DOES NOT STORE
+
+First verify run: Garcia **FAIL**, `cf-cache=HIT`, sha `42d4f894` — the old photograph. The script
+was fetching the un-keyed path while the migration writes the `?v=` one. Re-pointed at the exact
+stored URL it reads `MISS` and the new sha. **Verify the URL you are writing down, not the one you
+uploaded to.**
+
+## ⚠ TWO IMAGE-FINDING TRAPS, BOTH CAUGHT BY LOOKING
+
+- **`dombelza.com`'s highest-scoring portrait is Kevin Kiley's** — an endorser's headshot, sitting
+  in the candidate's own media library. A relevance score on a campaign site ranks *whoever is
+  pictured*, not the candidate.
+- **`fresno.gov` serves `pereas.jpg` with the alt text "andrew-janz".** Not used; the file taken is
+  `annalisa_perea.jpg`, whose filename and alt agree. **Where filename and alt disagree, neither is
+  evidence.**
+
+## 🔴 THE RESIZE HIDES IN THE QUERY STRING, AND IT COST 5× ON ONE FILE
+
+Fresno County serves Pacheco's portrait as `…?dimension=pageimage&w=480`. Stripping the query
+returns the native **2400×3200**. Mirroring the page's own `src` would have stored a 480px copy of
+a file five times that size.
+
+## ⚠ THREE PUBLISHERS KEY THEIR PORTRAITS ON AN ID, NOT A NAME
+
+`rpvca.gov` and `rpcity.ca.gov` (CivicPlus) serve `ImageRepository/Document?documentID=NNNN`, and
+Kern County serves `showpublishedimage/2316`. **A positional URL encodes a slot, not a person.**
+Each was bound by the alt text *and* the body's own roster entry, and every render was opened.
+
+## ⚠ WHAT THE PUBLISHER HAS IS THE ANSWER
+
+Kern County and Rohnert Park publish their members at **200×250** and nothing larger. Those two
+ship at native size. Nothing in this batch is enlarged.
+
+## ⚠ `maraelliott.com` REFUSES BOTH NODE FETCH AND CURL AT THE TLS HANDSHAKE
+
+Her source is found — a 2000×1334 campaign portrait — and could not be downloaded by either client
+(`OpenSSL unexpected eof`). Playwright reaches the page fine, so the file has to come down through
+the browser. **Deferred, not refused.**
+
+## Verification
+
+- **Before:** six of seven paths absent, Garcia's present (above), with a known-good object
+  returning 200 as the positive control.
+- **After:** all 7 re-fetched from the **exact URL written to the database** and compared by
+  sha256 to the local file — 7 of 7 byte-identical.
+- **Gates watched failing first**, three tampers, each asserted present in the file before running:
+  removing the `photo_origin_url` write → `7 of 7 do not carry the source page`; dropping one
+  person from the import set → `moved by 6 (73 -> 67)`; pointing the image row at a different
+  object → `7 of 7 ... disagrees with photo_custom_url`. ⚠ **A fourth attempt was REFUSED by the
+  tamper builder** because the edit stripped its own marker — it would have produced a file that
+  passed for the wrong reason.
+- **The rendered `<img>`, not the API:** `essentials.empowered.vote` read for Robert Garcia —
+  600×750 from our bucket at the `?v=20261116` URL, showing the studio portrait and not the
+  outdoor one it replaced.
+- **No face detector ran.** `check-headshot-faces.py` needs Python and there is none on this
+  machine. Every frame was opened and looked at. The Sunday CI sweep is their first automated check.
+
+## ▶ What is next
+
+**66 legislative winners remain** — WA 23, WI 23, CA 12, IN 3, CO 2, UT 2, TX 1. Indiana's three
+are re-elected incumbents on `iga.in.gov`, which is the one place in this cohort where a chamber
+roster already carries the people. Washington and Wisconsin are the bulk and are all new members.
