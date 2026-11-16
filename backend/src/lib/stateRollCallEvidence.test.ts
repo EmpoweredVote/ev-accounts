@@ -351,6 +351,14 @@ describe('state roll-call pages — reading Ohio', () => {
     expect(ohRender(OH135, 'https://www.legislature.ohio.gov/legislation/135/hb327/votes#2024-05-22-House-11-2')).toBeNull();
   });
 
+  it('reads no vote on a motion: "Informally passed" sets the bill aside, it is not a vote on the bill (runner, 2026-11-16)', () => {
+    // 133 HB 425, 2020-06-04: action_code motion_920, "Informally passed", 85-9. Here the passage vote of HB 327
+    // is given a motion's code: the same page row, the same members, and no line.
+    const data = OH135.data.replace('"action_code": "pass_300"', '"action_code": "motion_920"').replace('"action_code":"pass_300"', '"action_code":"motion_920"');
+    expect(data).not.toBe(OH135.data);
+    expect(ohRender({ ...OH135, data }, OH_URL)).toBeNull();
+  });
+
   it('refuses a vote the address does not name exactly: tally, chamber, day', () => {
     expect(ohRender(OH135, OH_URL.replace('85-6', '84-6'))).toBeNull();
     expect(ohRender(OH135, OH_URL.replace('House', 'Senate'))).toBeNull();

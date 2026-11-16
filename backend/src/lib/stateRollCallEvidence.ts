@@ -38,7 +38,7 @@
  * action list (search-prod.lis.state.oh.us/api/v2/general_assembly_<N>/legislation/<bill>/actions/) holds
  * the motion, the session day and member ids; the Assembly's member list maps an id to a name and chamber. A
  * vote is read only when exactly one page row and one action-list vote fit the day, chamber and tally, the
- * results agree, the vote is not a committee report, and every id maps to the name the page prints, in that
+ * results agree, the vote is not a committee report or a vote on a motion, and every id maps to the name the page prints, in that
  * chamber. Anything else gives no line. Ohio's render and line:
  *
  *   Ohio House vote of 2024-06-12 (135th General Assembly), HB 327, 85-6.
@@ -318,6 +318,9 @@ function readOhio(bodies: string[], r: OhioVoteRef): OhioVoteRecord | null {
   // A committee report ("crpt_301 Reported - Substitute") is a committee's vote: never read (runner, 2026-11-16).
   // A conference report is the chamber's floor vote (confer_712, confer_713).
   if (/^crpt_/.test(data.a.action_code ?? '')) return null;
+  // A vote on a motion ("motion_920 Informally passed": the bill set aside for the day) is not a vote on the
+  // bill: never read (runner, 2026-11-16).
+  if (/^motion_/.test(data.a.action_code ?? '')) return null;
   if (!data.a.result || squash(data.a.result) !== page.result) return null;
   const question = squash(data.a.action ?? '');
   if (!question || /\n/.test(question)) return null;
