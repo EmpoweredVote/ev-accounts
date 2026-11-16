@@ -1,0 +1,159 @@
+{
+  "id": "OH-HB-201-2017",
+  "scope": "state:oh",
+  "title": "HB201 (132st Legislature (2017-2018)): Expand right to concealed carry",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-HB-201",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb201/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Hood",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tom Brinkman",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Becker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Paul Zeltwanger",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Andrew Brenner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6defae87-5c64-41d9-88d8-08faa78d6a43"
+    },
+    {
+      "name": "Wesley Goodman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bill Dean",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Andy Thompson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Robert McColley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0c411727-37d3-4183-bb69-b1296718e743"
+    },
+    {
+      "name": "Nino Vitale",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Candice Keller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Derek Merrin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Louis Blessing",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Craig Riedel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Scott Wiggam",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "P. Lipps",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kristina Roegner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e2237324-de7c-40e0-ab79-8f86fcdaa4cb"
+    },
+    {
+      "name": "Larry Householder",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tim Schaffer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e5023158-e69b-4dec-944d-11701ac8d910"
+    },
+    {
+      "name": "Keith Faber",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "J. Koehler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Robert Sprague",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "171effdf-cf2b-49aa-ab26-29f26c2be755"
+    },
+    {
+      "name": "Terry Johnson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c55e0d6a-ead9-4e04-9b2c-7bbf611bc56d"
+    },
+    {
+      "name": "Niraj Antani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb201/00_IN/pdf/ (Open States text id 90119129))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-201-2017.00_in.pdf",
+      "sha256": "b6f926da857f005e071c54c66e900d9d3809f65de83e3ddd7eb1e3b8e0bbd5ee"
+    },
+    "note": "As introduced (HB 201, 132nd GA); no later version read. Struck words are dropped from the quotes (old 'promptly inform' notice duty removed). Conforming edits to other sections are not quoted."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.111(A)): (A) Notwithstanding any other Revised Code section to the contrary, subject to the limitations specified in this division and to division (C)(2) of this section, a person who is twenty-one years of age or older and is not legally prohibited from possessing or receiving a firearm under 18 U.S.C. 922(g)(1) to (9) shall not be required to obtain a concealed handgun license under section 2923.125 or 2923.1213 of the Revised Code in order to carry in this state a concealed firearm that is not a restricted firearm. Except as provided in divisions (B) and (C) of section 2923.126 of the Revised Code and regardless of whether the person has been issued a concealed handgun license under section 2923.125 or 2923.1213 of the Revised Code or by another state, a person who is twenty-one years of age or older and is not legally prohibited from possessing or receiving a firearm under 1 8 U.S.C. 922(g)(1) to (9) may carry a concealed firearm that is not a restricted firearm anywhere in this state. The person's right to carry a concealed firearm that is not a restricted firearm that is granted under this division is the same right as is granted to a person who is issued a concealed handgun license under section 2923.125 of the Revised Code, and the person described in this division is subject to the same restrictions as apply to a person who is issued a license under section 2923.125 of the Revised Code.\nSection 1 (new R.C. 2923.111(B)): (B) The mere carrying or possession of a firearm that is not a restricted firearm pursuant to the right described in division (A) of this section, with or without a concealed handgun license issued under section 2923.125 or 2923.1213 of the Revised Code or by another state, does not constitute grounds for any law enforcement officer or any agent of the state, a county, a municipal corporation, or a township to conduct any search, seizure, or detention, no matter how temporary in duration, of an otherwise law-abiding person.\nSection 1 (R.C. 2923.12(B)(1)): (1) If the person is stopped for a law enforcement purpose knowingly fail to keep the person's hands in plain sight at any time after any law enforcement officer begins approaching the person while stopped and before the law enforcement officer leaves, unless the failure is pursuant to and in accordance with directions given by a law enforcement officer;"
+}

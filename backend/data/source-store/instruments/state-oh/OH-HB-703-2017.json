@@ -1,0 +1,85 @@
+{
+  "id": "OH-HB-703-2017",
+  "scope": "state:oh",
+  "title": "HB703 (132st Legislature (2017-2018)): Expand concealed carry rights",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-HB-703",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb703/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "John Becker",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Thomas Patton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Andy Thompson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Wes Retherford",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "George Lang",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9d3f190d-3f98-4163-9900-0889b88438ea"
+    },
+    {
+      "name": "Bill Dean",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Craig Riedel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kristina Roegner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e2237324-de7c-40e0-ab79-8f86fcdaa4cb"
+    },
+    {
+      "name": "Michael Henne",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Niraj Antani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb703/00_IN/pdf/ (Open States text id 90120289))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-703-2017.00_in.pdf",
+      "sha256": "c3bf3650504361d8996f91c40d75fcc90d9c8201cd386f0eaee5e7985771b65e"
+    },
+    "note": "As introduced (00_IN); DEFEND-TWO Act (Section 3, uncodified short title). Struck text not quoted: R.C. 2923.126 day-care trespass and aggravated-trespass language struck and replaced by a concealment rule; 'another building or structure in which' a courtroom struck in R.C. 2923.123 and the rule-of-court permission added; R.C. 2923.1212 signage duties adjusted; R.C. 4117.10 date changed to September 29, 2015. Also adds school-entrance staffing counts for a 'secured' school safety zone (R.C. 2923.122(G)). Public-employer anti-retaliation and college-aid parts are tied to lawful carry, treated as part of the gun rule."
+  },
+  "operative_text": "Section 1 (R.C. 9.68): Except as specifically provided by the United States Constitution, Ohio Constitution, state statute, or federal law, a person, without further license, permission, restriction, delay, or process, may own, possess, purchase, sell, transfer, transport, store, or keep any firearm, part of a firearm, and its components, accessories, attachments, and ammunition.\nSection 1 (new R.C. 2923.22): (A) No person shall knowingly possess a firearm in any area of a building that is a government facility of this state or a political subdivision of this state where access is restricted by a screening checkpoint or other security measures sufficient to intercept deadly weapons or dangerous ordnance and by at least two persons authorized to carry firearms under division (B)(3) or (4) of this section at each public entrance , unless the governing body with authority over the building has enacted a statute, ordinance, or policy that permits all or certain specific persons to carry firearms into that area of the building. (C) Whoever violates this section is guilty of illegal possession of a firearm in a government facility, a misdemeanor of the fourth degree.\nSection 1 (R.C. 2923.121): (2) If the offender is carrying a valid concealed handgun license or the offender is an active duty member of the armed forces of the United States and is carrying a valid military identification card and documentation of successful completion of firearms training that meets or exceeds the training requirements described in division (G)(1) of section 2923.125 of the Revised Code, illegal possession of a firearm in a liquor permit premises is a misdemeanor of the fourth degree.\nSection 1 (R.C. 2923.122): (5) This section does not apply to a person who conveys or attempts to convey a handgun into, or possesses a handgun in, a school safety zone, including any school building, if, at the time of that conveyance, attempted conveyance, or possession of the handgun, all of the following apply: (b) The person is an active or reserve member of the armed forces of the United States , has retired from or was honorably discharged from military service, is a former law enforcement officer, or is a person who has successfully completed a firearms training program that exceeds the training requirements described in division (G)(1) of section 2923.125 of the Revised Code.\nSection 1 (R.C. 2923.126): (G) No public employer shall discharge, discipline, or otherwise discriminate against an employee or contractor with respect to hire, tenure, terms, conditions, or privileges of employment, or any matter directly or indirectly related to employment, if the person is carrying a concealed handgun in a place and manner that is permitted under this section.\nSection 1 (new R.C. 3345.90): (B) No student who is enrolled in a state institution of higher education and who possesses a valid concealed handgun license shall lose any form of financial assistance provided by that institution for educational expenses, including grants, scholarships, and fellowships, for the sole reason of carrying a concealed handgun on premises owned or leased by the institution if the student's conduct is permissible under division (B)(5) of section 2923.126 of the Revised Code."
+}

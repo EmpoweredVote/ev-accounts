@@ -1,0 +1,595 @@
+{
+  "id": "OH-HB-272-2023",
+  "scope": "state:oh",
+  "title": "HB272 (135th Legislature (2023-2024)): Allow concealed carry in certain buildings with a courtroom",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/135/hb272",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb272/02_PH/pdf/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Adam Mathews",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1d04f3a2-df2a-4f90-859a-4088d181979c"
+    },
+    {
+      "name": "Justin Pizzulli",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "beddbf6e-98f1-4172-9b17-40331a2c16f0"
+    },
+    {
+      "name": "Tim Barhorst",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6d4d7a53-c7a6-4cbd-8ed4-5a373d4bd916"
+    },
+    {
+      "name": "Sara Carruthers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Gary Click",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f64a32db-34ba-44e2-93ce-4d3ee1f7112f"
+    },
+    {
+      "name": "Rodney Creech",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3b2518c3-0795-426e-9368-8ea1a421be3a"
+    },
+    {
+      "name": "Jon Cross",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Al Cutrona",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b39f0fd8-64b8-425b-a7f6-3748b8a518d0"
+    },
+    {
+      "name": "Jay Edwards",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jennifer Gross",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e5fa7b8f-b859-48b3-ba5e-272d1fd11bc5"
+    },
+    {
+      "name": "Thomas Hall",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fe0681af-fa31-4c17-a8de-55f227df1e8f"
+    },
+    {
+      "name": "Brett Hillyer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Adam Holmes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1c8e4951-791e-4b76-b16f-d4e0a1c6de22"
+    },
+    {
+      "name": "Mark Johnson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4a83940c-1474-4f2b-883b-710756185053"
+    },
+    {
+      "name": "Don Jones",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Darrell Kick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mike Loychik",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Riordan McClain",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "504c6d15-f84b-4ac6-ba61-64311b63bdfa"
+    },
+    {
+      "name": "Kevin Miller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "752f6d55-68b9-4a33-8950-0a38dd6502b9"
+    },
+    {
+      "name": "Jean Schmidt",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "105ff597-0fa1-4e2f-a257-5ae45724a143"
+    },
+    {
+      "name": "Bill Seitz",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brian Stewart",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e390a3f6-5739-4b4e-a2e4-cc74bb4caba6"
+    },
+    {
+      "name": "D.J. Swearingen",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "02656871-02da-4743-8dc0-57198298a805"
+    },
+    {
+      "name": "Scott Wiggam",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Josh Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "99038428-f04f-4fba-afd9-d27babb708c7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2023-12-06",
+      "body": "OH House",
+      "motion": "House Pass",
+      "kind": "roll-call",
+      "yes": 57,
+      "no": 29,
+      "absent": 0,
+      "note": "Ohio roll call (Open States data) 90146799",
+      "members": [
+        {
+          "name": "Cindy Abrams",
+          "vote": "yea",
+          "politician_id": "336bb23b-d85c-4a15-a388-c5b00bd94ec7"
+        },
+        {
+          "name": "Sarah Fowler Arthur",
+          "vote": "yea",
+          "politician_id": "b12ef9a8-8f4d-46f9-9fba-ac42c9027dc2"
+        },
+        {
+          "name": "Tim Barhorst",
+          "vote": "yea",
+          "politician_id": "6d4d7a53-c7a6-4cbd-8ed4-5a373d4bd916"
+        },
+        {
+          "name": "Jay Edwards",
+          "vote": "yea"
+        },
+        {
+          "name": "Ron Ferguson",
+          "vote": "yea",
+          "politician_id": "cea18cfb-b214-4147-9b21-1852ec6ffcb5"
+        },
+        {
+          "name": "Mark Johnson",
+          "vote": "yea",
+          "politician_id": "4a83940c-1474-4f2b-883b-710756185053"
+        },
+        {
+          "name": "Don Jones",
+          "vote": "yea"
+        },
+        {
+          "name": "Roy Klopfenstein",
+          "vote": "yea",
+          "politician_id": "ea437055-f638-419b-8349-87645f960cd5"
+        },
+        {
+          "name": "Bob Peterson",
+          "vote": "yea",
+          "politician_id": "a5c71a58-4c95-4859-8526-79707d6cb5fb"
+        },
+        {
+          "name": "Jena Powell",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Thomas",
+          "vote": "yea",
+          "politician_id": "ad5feb09-ff28-4d68-b209-78bb0d796ddf"
+        },
+        {
+          "name": "Adam Holmes",
+          "vote": "yea",
+          "politician_id": "1c8e4951-791e-4b76-b16f-d4e0a1c6de22"
+        },
+        {
+          "name": "Josh Williams",
+          "vote": "yea",
+          "politician_id": "99038428-f04f-4fba-afd9-d27babb708c7"
+        },
+        {
+          "name": "Scott Wiggam",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrea White",
+          "vote": "yea",
+          "politician_id": "1156f0aa-7f15-459d-8d28-76e6269896bf"
+        },
+        {
+          "name": "Adam Bird",
+          "vote": "yea",
+          "politician_id": "430705a2-4154-4a4b-b82f-3e7447242463"
+        },
+        {
+          "name": "Jamie Callender",
+          "vote": "yea",
+          "politician_id": "3b1ba6ad-6ecd-4922-bf48-a2342ddf5601"
+        },
+        {
+          "name": "Brian Stewart",
+          "vote": "yea",
+          "politician_id": "e390a3f6-5739-4b4e-a2e4-cc74bb4caba6"
+        },
+        {
+          "name": "Sara Carruthers",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Click",
+          "vote": "yea",
+          "politician_id": "f64a32db-34ba-44e2-93ce-4d3ee1f7112f"
+        },
+        {
+          "name": "Rodney Creech",
+          "vote": "yea",
+          "politician_id": "3b2518c3-0795-426e-9368-8ea1a421be3a"
+        },
+        {
+          "name": "Jean Schmidt",
+          "vote": "yea",
+          "politician_id": "105ff597-0fa1-4e2f-a257-5ae45724a143"
+        },
+        {
+          "name": "Nick Santucci",
+          "vote": "yea",
+          "politician_id": "d110c8bd-5280-4fe0-b406-4c06192dc239"
+        },
+        {
+          "name": "Bill Roemer",
+          "vote": "yea",
+          "politician_id": "5bd68556-99b6-475b-8349-bf6c5d7f0a3d"
+        },
+        {
+          "name": "Steve Demetriou",
+          "vote": "yea",
+          "politician_id": "2dada1a9-5e23-49d9-a08b-6b1cdbe9edef"
+        },
+        {
+          "name": "Phil Plummer",
+          "vote": "yea",
+          "politician_id": "f4afc4b5-70de-49e6-9e48-768a9e3dc1ff"
+        },
+        {
+          "name": "Gail Pavliga",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Patton",
+          "vote": "yea",
+          "politician_id": "a73f25c8-f81e-4790-8359-1e4f87bb1b47"
+        },
+        {
+          "name": "Haraz Ghanbari",
+          "vote": "yea",
+          "politician_id": "32945ffa-246b-4074-bc3b-f26a38188fd0"
+        },
+        {
+          "name": "Jennifer Gross",
+          "vote": "yea",
+          "politician_id": "e5fa7b8f-b859-48b3-ba5e-272d1fd11bc5"
+        },
+        {
+          "name": "Thomas Hall",
+          "vote": "yea",
+          "politician_id": "fe0681af-fa31-4c17-a8de-55f227df1e8f"
+        },
+        {
+          "name": "Brett Hillyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Miller",
+          "vote": "yea",
+          "politician_id": "752f6d55-68b9-4a33-8950-0a38dd6502b9"
+        },
+        {
+          "name": "Melanie Miller",
+          "vote": "yea",
+          "politician_id": "19ce7a7f-bf17-45c8-893a-c83bec81a914"
+        },
+        {
+          "name": "Marilyn John",
+          "vote": "yea",
+          "politician_id": "c05edc3f-2467-4771-8a87-0d6c75bd6554"
+        },
+        {
+          "name": "Darrell Kick",
+          "vote": "yea"
+        },
+        {
+          "name": "Beth Lear",
+          "vote": "yea",
+          "politician_id": "282898d9-afd2-4857-9dfe-618aad40e51f"
+        },
+        {
+          "name": "Riordan McClain",
+          "vote": "yea",
+          "politician_id": "504c6d15-f84b-4ac6-ba61-64311b63bdfa"
+        },
+        {
+          "name": "Adam Mathews",
+          "vote": "yea",
+          "politician_id": "1d04f3a2-df2a-4f90-859a-4088d181979c"
+        },
+        {
+          "name": "Gayle Manning",
+          "vote": "yea",
+          "politician_id": "6dbba394-a182-493f-bda9-bdaf9cbb439d"
+        },
+        {
+          "name": "Susan Manchester",
+          "vote": "yea",
+          "politician_id": "12b61432-0f20-4de7-afcc-8f24fa95f3c3"
+        },
+        {
+          "name": "Jason Stephens",
+          "vote": "yea",
+          "politician_id": "8ed17ce6-9f9d-4819-b609-a063ed7b700b"
+        },
+        {
+          "name": "Derek Merrin",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Loychik",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott Oelslager",
+          "vote": "yea",
+          "politician_id": "d285a16d-746a-4192-8846-0a1a4a3d23d5"
+        },
+        {
+          "name": "Monica Blasdel",
+          "vote": "yea",
+          "politician_id": "cec84191-a2d3-4e40-a084-e4bc5b335a33"
+        },
+        {
+          "name": "D.J. Swearingen",
+          "vote": "yea",
+          "politician_id": "02656871-02da-4743-8dc0-57198298a805"
+        },
+        {
+          "name": "Angie King",
+          "vote": "yea",
+          "politician_id": "9d5de12f-be76-46c2-a30d-a75803ea1cce"
+        },
+        {
+          "name": "Thad Claggett",
+          "vote": "yea",
+          "politician_id": "e8335c03-107d-453c-9a52-b7a964d0674c"
+        },
+        {
+          "name": "Al Cutrona",
+          "vote": "yea",
+          "politician_id": "b39f0fd8-64b8-425b-a7f6-3748b8a518d0"
+        },
+        {
+          "name": "Dave Dobos",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Seitz",
+          "vote": "yea"
+        },
+        {
+          "name": "Jon Cross",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Hoops",
+          "vote": "yea",
+          "politician_id": "23306c61-416e-449f-960e-0fa8a207e3c2"
+        },
+        {
+          "name": "Sharon Ray",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Pizzulli",
+          "vote": "yea",
+          "politician_id": "beddbf6e-98f1-4172-9b17-40331a2c16f0"
+        },
+        {
+          "name": "Brian Lorenz",
+          "vote": "yea",
+          "politician_id": "ff52e094-2546-43b1-b6eb-fde2973d00e6"
+        },
+        {
+          "name": "Rachel Baker",
+          "vote": "nay",
+          "politician_id": "cd7b7bec-2510-4837-b0c2-7c034d4261c7"
+        },
+        {
+          "name": "Casey Weinstein",
+          "vote": "nay",
+          "politician_id": "2e4c7eaa-47e5-4c6f-aed0-be4107ddcfb8"
+        },
+        {
+          "name": "Willis Blackshear",
+          "vote": "nay",
+          "politician_id": "322bb72d-873c-41ff-b8bf-f0ec126490f7"
+        },
+        {
+          "name": "Sean Brennan",
+          "vote": "nay",
+          "politician_id": "1fe75280-5b41-44a9-b531-22a0807204eb"
+        },
+        {
+          "name": "Terrence Upchurch",
+          "vote": "nay",
+          "politician_id": "032c981a-13dd-4d31-8e2e-4b9dcfa0e38a"
+        },
+        {
+          "name": "Juanita Brent",
+          "vote": "nay",
+          "politician_id": "9efe40f7-225a-411d-b9d2-3344dc35a7b5"
+        },
+        {
+          "name": "Darnell Brewer",
+          "vote": "nay",
+          "politician_id": "e3a15886-3141-4bfe-98fe-dc1d7e8d097e"
+        },
+        {
+          "name": "Dan Troy",
+          "vote": "nay",
+          "politician_id": "71cc6ae5-713f-42ae-8a0d-b37b85605f3e"
+        },
+        {
+          "name": "Richard Brown",
+          "vote": "nay"
+        },
+        {
+          "name": "Cecil Thomas",
+          "vote": "nay",
+          "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+        },
+        {
+          "name": "Anita Somani",
+          "vote": "nay",
+          "politician_id": "b424ad5b-4b36-4f9a-b884-a00c355dd88c"
+        },
+        {
+          "name": "Mike Skindell",
+          "vote": "nay"
+        },
+        {
+          "name": "Rick Dell'Aquila",
+          "vote": "nay"
+        },
+        {
+          "name": "Phil Robinson",
+          "vote": "nay",
+          "politician_id": "dba42b9c-10a8-4c4c-9c44-8e02c1ce9eab"
+        },
+        {
+          "name": "Sedrick Denson",
+          "vote": "nay"
+        },
+        {
+          "name": "Elliot Forhan",
+          "vote": "nay"
+        },
+        {
+          "name": "Michele Grim",
+          "vote": "nay",
+          "politician_id": "88e8aa9b-048a-4c59-9742-ba763a554751"
+        },
+        {
+          "name": "Ismail Mohamed",
+          "vote": "nay",
+          "politician_id": "43f9a2bc-7efe-4947-a430-38181893ee9a"
+        },
+        {
+          "name": "Latyna Humphrey",
+          "vote": "nay",
+          "politician_id": "750b696e-7c32-4f8a-bb0f-7d8e317a4a17"
+        },
+        {
+          "name": "Dani Isaacsohn",
+          "vote": "nay",
+          "politician_id": "cd927b66-84c3-4378-a91e-130b22439a9d"
+        },
+        {
+          "name": "Joe Miller",
+          "vote": "nay",
+          "politician_id": "a0732be3-6345-4a83-9191-fd3f6498fdb7"
+        },
+        {
+          "name": "Mary Lightbody",
+          "vote": "nay"
+        },
+        {
+          "name": "Lauren McNally",
+          "vote": "nay",
+          "politician_id": "fd22b985-97df-447f-b532-937b3a9cbd64"
+        },
+        {
+          "name": "Beth Liston",
+          "vote": "nay",
+          "politician_id": "9706e0bb-66ae-48aa-bd7c-7d73da0118eb"
+        },
+        {
+          "name": "Allison Russo",
+          "vote": "nay",
+          "politician_id": "fc3e367c-5558-466d-86f7-684866c2e903"
+        },
+        {
+          "name": "Tavia Galonski",
+          "vote": "nay"
+        },
+        {
+          "name": "Jessica Miranda",
+          "vote": "nay"
+        },
+        {
+          "name": "Bride Sweeney",
+          "vote": "nay",
+          "politician_id": "f3bd9945-466a-496b-ab9a-ce3ef3864c45"
+        },
+        {
+          "name": "Munira Abdullahi",
+          "vote": "nay",
+          "politician_id": "9d4f858b-8703-4806-b064-d0c4a7e54110"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the House (02_PH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb272/02_PH/pdf/ (Open States text id 90132717))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-272-2023.02_ph.pdf",
+      "sha256": "ed8a3d77df6e6baf92d92237de6684450c3188deecaaa1b3968926f72f1353e9"
+    },
+    "note": "As Passed by the House (Am. H.B. 272, 135th GA, 02_PH); later Senate amendments, if any, are not in the text read. In (C)(6) 'division' is struck and 'divisions (C)(7) and' added. In 2923.14(A)(1) 'in the county in which the person resides' is struck and 'specified in this division' added; 'or guilty pleas' is added in several places."
+  },
+  "operative_text": "Section 1 (R.C. 2923.123): Except as provided in divisions (C)(7) and (E) of this section, a person who conveys or attempts to convey a handgun into a courthouse or into another building or structure in which a courtroom is located, if the person has been issued a concealed handgun license that is valid at the time of the conveyance or attempt or, at the time of the conveyance or attempt, the person is an active duty member of the armed forces of the United States and is carrying a valid military identification card and documentation of successful completion of firearms training that meets or exceeds the training requirements described in division (G)(1) of section 2923.125 of the Revised Code, and if in either case the person transfers possession of the handgun to the officer or officer's designee who has charge of the courthouse or building.\nSection 1 (R.C. 2923.123(C)(7)): A person who conveys or attempts to convey a handgun into a building or structure in which a courtroom is located or possesses or has under the person's control a handgun in a building or structure in which a courtroom is located, if the person has been issued a concealed handgun license that is valid at the time of the conveyance, attempted conveyance, possession, or control if all of the following apply: (a) The building or structure in which the courtroom is located is not a courthouse. (b) The building or structure in which the courtroom is located is a government facility of this state or a political subdivision of this state. (c) The court and the office of the clerk of the court are not in operation at the time of the conveyance, possession, or control. (d) The governing body with authority over the building or structure in which the courtroom is located has enacted a statute, ordinance, or policy that permits a concealed handgun licensee to convey, possess, or control a handgun into the building or structure in which the courtroom in located.\nSection 1 (R.C. 2923.14(A)(1)): An application for relief from the prohibition shall be filed in the court of common pleas of the county in which the person resides or, if the person is not a resident of this state and the prohibition is based on an indictment, a conviction of or plea of guilty to an offense, or a delinquent child adjudication, in the county in which the indictment was entered or in which the conviction, guilty plea, or adjudication occurred."
+}

@@ -1,0 +1,353 @@
+{
+  "id": "OH-SB-321-2025",
+  "scope": "state:oh",
+  "title": "SB321 (136th Legislature (2025-2026)): Regards carrying of firearms by certain special police officers",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/sb321",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb321/02_PS/pdf/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Tim Schaffer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e5023158-e69b-4dec-944d-11701ac8d910"
+    },
+    {
+      "name": "Nickie Antonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+    },
+    {
+      "name": "Willis Blackshear",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "322bb72d-873c-41ff-b8bf-f0ec126490f7"
+    },
+    {
+      "name": "Andrew Brenner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6defae87-5c64-41d9-88d8-08faa78d6a43"
+    },
+    {
+      "name": "Brian Chavez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9ddfcf41-53c8-4f06-8384-bfaa201fa4dd"
+    },
+    {
+      "name": "Jerry Cirino",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b7281ad1-da29-4838-92d8-25f09a135c7c"
+    },
+    {
+      "name": "Hearcel Craig",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "05d33654-b85a-4e2f-921c-b823ee7a1c8d"
+    },
+    {
+      "name": "Bill DeMora",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ade41ff2-eb0c-4778-a3e7-67eb4710aee0"
+    },
+    {
+      "name": "Theresa Gavarone",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "118cb065-7a2e-4b3d-a2a4-47a7b71687a0"
+    },
+    {
+      "name": "Paula Hicks-Hudson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8a208c28-1273-4e27-93d4-c2c0bb5a1dbc"
+    },
+    {
+      "name": "Catherine Ingram",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "88d523e9-6e21-42f0-bc31-d01c4bb1f3b1"
+    },
+    {
+      "name": "Terry Johnson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c55e0d6a-ead9-4e04-9b2c-7bbf611bc56d"
+    },
+    {
+      "name": "Kyle Koehler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1fa6c657-b1c7-44e6-9bf4-b655bdaabf89"
+    },
+    {
+      "name": "Al Landis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b6354968-a682-4206-a07f-2a688857c155"
+    },
+    {
+      "name": "Nathan Manning",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sandy O'Brien",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cae3594b-8480-4c78-bfc1-8a4fc9212282"
+    },
+    {
+      "name": "Tom Patton",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a73f25c8-f81e-4790-8359-1e4f87bb1b47"
+    },
+    {
+      "name": "Michele Reynolds",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f1adb301-026e-455c-8c0e-a378b48734cf"
+    },
+    {
+      "name": "Kristina Roegner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e2237324-de7c-40e0-ab79-8f86fcdaa4cb"
+    },
+    {
+      "name": "Mark Romanchuk",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f9fce068-9763-4bf8-9355-d4aeb9077439"
+    },
+    {
+      "name": "Jane Timken",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "06746cb2-001a-4dc4-8c39-c1595d58b0de"
+    },
+    {
+      "name": "Casey Weinstein",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e4c7eaa-47e5-4c6f-aed0-be4107ddcfb8"
+    },
+    {
+      "name": "Shane Wilkin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c57d9ba7-f911-4419-ad4d-1a6b6c3f5352"
+    },
+    {
+      "name": "Steve Wilson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9594003d-6ce8-4fe3-bd99-4e36a02f2afc"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2026-04-15",
+      "body": "OH Senate",
+      "motion": "Senate Passed",
+      "kind": "roll-call",
+      "yes": 33,
+      "no": 0,
+      "absent": 0,
+      "note": "Ohio roll call (Open States data) 90149333",
+      "members": [
+        {
+          "name": "Steve Wilson",
+          "vote": "yea",
+          "politician_id": "9594003d-6ce8-4fe3-bd99-4e36a02f2afc"
+        },
+        {
+          "name": "Rob McColley",
+          "vote": "yea",
+          "politician_id": "0c411727-37d3-4183-bb69-b1296718e743"
+        },
+        {
+          "name": "Steve Huffman",
+          "vote": "yea",
+          "politician_id": "255e97b2-9f45-4d6e-8a6c-e009280ffd0b"
+        },
+        {
+          "name": "Nathan Manning",
+          "vote": "yea"
+        },
+        {
+          "name": "Hearcel Craig",
+          "vote": "yea",
+          "politician_id": "05d33654-b85a-4e2f-921c-b823ee7a1c8d"
+        },
+        {
+          "name": "Andrew Brenner",
+          "vote": "yea",
+          "politician_id": "6defae87-5c64-41d9-88d8-08faa78d6a43"
+        },
+        {
+          "name": "Nickie Antonio",
+          "vote": "yea",
+          "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+        },
+        {
+          "name": "Kristina Roegner",
+          "vote": "yea",
+          "politician_id": "e2237324-de7c-40e0-ab79-8f86fcdaa4cb"
+        },
+        {
+          "name": "Theresa Gavarone",
+          "vote": "yea",
+          "politician_id": "118cb065-7a2e-4b3d-a2a4-47a7b71687a0"
+        },
+        {
+          "name": "Tim Schaffer",
+          "vote": "yea",
+          "politician_id": "e5023158-e69b-4dec-944d-11701ac8d910"
+        },
+        {
+          "name": "Terry Johnson",
+          "vote": "yea",
+          "politician_id": "c55e0d6a-ead9-4e04-9b2c-7bbf611bc56d"
+        },
+        {
+          "name": "Bill Blessing",
+          "vote": "yea",
+          "politician_id": "a6589da4-5d03-4d41-b0e0-f138e14d2dfb"
+        },
+        {
+          "name": "George Lang",
+          "vote": "yea",
+          "politician_id": "9d3f190d-3f98-4163-9900-0889b88438ea"
+        },
+        {
+          "name": "Jerry Cirino",
+          "vote": "yea",
+          "politician_id": "b7281ad1-da29-4838-92d8-25f09a135c7c"
+        },
+        {
+          "name": "Mark Romanchuk",
+          "vote": "yea",
+          "politician_id": "f9fce068-9763-4bf8-9355-d4aeb9077439"
+        },
+        {
+          "name": "Bill Reineke",
+          "vote": "yea",
+          "politician_id": "1cc02d38-1d90-4870-a50b-85ea4ea41a27"
+        },
+        {
+          "name": "Sandy O'Brien",
+          "vote": "yea",
+          "politician_id": "cae3594b-8480-4c78-bfc1-8a4fc9212282"
+        },
+        {
+          "name": "Paula Hicks-Hudson",
+          "vote": "yea",
+          "politician_id": "8a208c28-1273-4e27-93d4-c2c0bb5a1dbc"
+        },
+        {
+          "name": "Al Landis",
+          "vote": "yea",
+          "politician_id": "b6354968-a682-4206-a07f-2a688857c155"
+        },
+        {
+          "name": "Bill DeMora",
+          "vote": "yea",
+          "politician_id": "ade41ff2-eb0c-4778-a3e7-67eb4710aee0"
+        },
+        {
+          "name": "Kent Smith",
+          "vote": "yea",
+          "politician_id": "ed114b22-4c6b-4fe3-8672-5bc3bc32a129"
+        },
+        {
+          "name": "Shane Wilkin",
+          "vote": "yea",
+          "politician_id": "c57d9ba7-f911-4419-ad4d-1a6b6c3f5352"
+        },
+        {
+          "name": "Catherine Ingram",
+          "vote": "yea",
+          "politician_id": "88d523e9-6e21-42f0-bc31-d01c4bb1f3b1"
+        },
+        {
+          "name": "Michele Reynolds",
+          "vote": "yea",
+          "politician_id": "f1adb301-026e-455c-8c0e-a378b48734cf"
+        },
+        {
+          "name": "Brian Chavez",
+          "vote": "yea",
+          "politician_id": "9ddfcf41-53c8-4f06-8384-bfaa201fa4dd"
+        },
+        {
+          "name": "Al Cutrona",
+          "vote": "yea",
+          "politician_id": "b39f0fd8-64b8-425b-a7f6-3748b8a518d0"
+        },
+        {
+          "name": "Willis Blackshear",
+          "vote": "yea",
+          "politician_id": "322bb72d-873c-41ff-b8bf-f0ec126490f7"
+        },
+        {
+          "name": "Kyle Koehler",
+          "vote": "yea",
+          "politician_id": "1fa6c657-b1c7-44e6-9bf4-b655bdaabf89"
+        },
+        {
+          "name": "Susan Manchester",
+          "vote": "yea",
+          "politician_id": "12b61432-0f20-4de7-afcc-8f24fa95f3c3"
+        },
+        {
+          "name": "Beth Liston",
+          "vote": "yea",
+          "politician_id": "9706e0bb-66ae-48aa-bd7c-7d73da0118eb"
+        },
+        {
+          "name": "Tom Patton",
+          "vote": "yea",
+          "politician_id": "a73f25c8-f81e-4790-8359-1e4f87bb1b47"
+        },
+        {
+          "name": "Casey Weinstein",
+          "vote": "yea",
+          "politician_id": "2e4c7eaa-47e5-4c6f-aed0-be4107ddcfb8"
+        },
+        {
+          "name": "Jane Timken",
+          "vote": "yea",
+          "politician_id": "06746cb2-001a-4dc4-8c39-c1595d58b0de"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb321/02_PS/pdf/ (Open States text id 90138316))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-321-2025.02_ps.pdf",
+      "sha256": "56c06cf0c727be6e54c0974add6919b7a80c9d4974468e6d29548d4aebda5774"
+    },
+    "note": "As Passed by the Senate (02_PS), Sub. S.B. 321; no date in file. Later House amendments are not in the text read. Whole text is new law (two new sections)."
+  },
+  "operative_text": "Section 1 (new R.C. 5119.081): Subject to divisions (C), (D), and (E) of this section, the director of behavioral health shall not prohibit a special police officer, while on duty on the behalf of an institution under the jurisdiction of the department of behavioral health, from carrying or possessing a firearm in any of the following circumstances: (1) When escorting a patient outside of the institution; (2) When operating one or more of the institution's metal detectors; (3) When patrolling the institution's grounds.\nSection 1 (new R.C. 5119.081): (D) A special police officer shall not possess, carry, or discharge a firearm or possess, carry, or use ammunition while on duty on the behalf of an institution under the jurisdiction of the department unless the firearm or ammunition has been issued to the special police officer by the department or otherwise approved by the department.\nSection 1 (new R.C. 5119.081): (E) A special police officer who is under investigation for alleged violations of standards of conduct, including work rules, policies, or having pending criminal charges, is prohibited from carrying or possessing a firearm under division (B) of this section until a pending investigation is resolved or authorization is granted by the director of behavioral health.\nSection 1 (new R.C. 5123.131): Subject to divisions (C), (D), and (E) of this section, the director of developmental disabilities shall not prohibit a special police officer, while on duty on the behalf of an institution under the jurisdiction of the department of developmental disabilities, from carrying or possessing a firearm in any of the following circumstances: (1) When escorting a resident outside of the institution; (2) When operating one or more of the institution's metal detectors; (3) When patrolling the institution's grounds."
+}

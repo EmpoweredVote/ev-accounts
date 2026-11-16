@@ -1,0 +1,57 @@
+{
+  "id": "OH-SB-237-2025",
+  "scope": "state:oh",
+  "title": "SB237 (136th Legislature (2025-2026)): Restore local authority to regulate firearms and knives",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/sb237",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb237/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Hearcel Craig",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "05d33654-b85a-4e2f-921c-b823ee7a1c8d"
+    },
+    {
+      "name": "Catherine Ingram",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "88d523e9-6e21-42f0-bc31-d01c4bb1f3b1"
+    },
+    {
+      "name": "Bill DeMora",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ade41ff2-eb0c-4778-a3e7-67eb4710aee0"
+    },
+    {
+      "name": "Kent Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ed114b22-4c6b-4fe3-8672-5bc3bc32a129"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb237/00_IN/pdf/ (Open States text id 90138645))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-237-2025.00_in.pdf",
+      "sha256": "0cd6c9609b730b5040eec493bc991f0fb6647e50ec7715e6ec7dab15ec6283fa"
+    },
+    "note": "As introduced. The whole bill is a repeal line; it is quoted because it is the only operative part. Title also names knives (local authority over firearms and knives)."
+  },
+  "operative_text": "Section 1 (repeal of R.C. 9.68): That section 9.68 of the Revised Code is hereby repealed."
+}

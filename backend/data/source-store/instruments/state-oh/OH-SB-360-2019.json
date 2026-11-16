@@ -1,0 +1,298 @@
+{
+  "id": "OH-SB-360-2019",
+  "scope": "state:oh",
+  "title": "SB360 (133rd Legislature (2019-2020)): Bar prohibiting commercial sale of firearms and ammunition",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA133-SB-360",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/sb360/03_RH/pdf/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Larry Obhof",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bob Peterson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "a5c71a58-4c95-4859-8526-79707d6cb5fb"
+    },
+    {
+      "name": "Jay Hottinger",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Andrew Brenner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6defae87-5c64-41d9-88d8-08faa78d6a43"
+    },
+    {
+      "name": "Terry Johnson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c55e0d6a-ead9-4e04-9b2c-7bbf611bc56d"
+    },
+    {
+      "name": "Kristina Roegner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e2237324-de7c-40e0-ab79-8f86fcdaa4cb"
+    },
+    {
+      "name": "Michael Rulli",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tim Schaffer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e5023158-e69b-4dec-944d-11701ac8d910"
+    },
+    {
+      "name": "Dave Burke",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bill Coley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Frank Hoagland",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Louis Blessing",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Eklund",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Theresa Gavarone",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "118cb065-7a2e-4b3d-a2a4-47a7b71687a0"
+    },
+    {
+      "name": "Bob Hackett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Matt Huffman, M.",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Stephen Huffman, S.",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Robert McColley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sean O'Brien",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Scott Wiggam",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2020-09-23",
+      "body": "OH Senate",
+      "motion": "Senate Pass",
+      "kind": "roll-call",
+      "yes": 28,
+      "no": 5,
+      "absent": 0,
+      "note": "Ohio roll call (Open States data) 90143080",
+      "members": [
+        {
+          "name": "Kristina Roegner",
+          "vote": "yea",
+          "politician_id": "e2237324-de7c-40e0-ab79-8f86fcdaa4cb"
+        },
+        {
+          "name": "William P. Coley, II",
+          "vote": "yea"
+        },
+        {
+          "name": "Dave Burke",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Dolan",
+          "vote": "yea"
+        },
+        {
+          "name": "John Eklund",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Hackett",
+          "vote": "yea"
+        },
+        {
+          "name": "Vernon Sykes",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Wilson",
+          "vote": "yea",
+          "politician_id": "9594003d-6ce8-4fe3-bd99-4e36a02f2afc"
+        },
+        {
+          "name": "Frank Hoagland",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Peterson",
+          "vote": "yea",
+          "politician_id": "a5c71a58-4c95-4859-8526-79707d6cb5fb"
+        },
+        {
+          "name": "Larry Obhof",
+          "vote": "yea"
+        },
+        {
+          "name": "Sean J. O'Brien",
+          "vote": "yea"
+        },
+        {
+          "name": "Sandra R. Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Hearcel Craig",
+          "vote": "yea",
+          "politician_id": "05d33654-b85a-4e2f-921c-b823ee7a1c8d"
+        },
+        {
+          "name": "Matt Huffman",
+          "vote": "yea",
+          "politician_id": "5261b1f9-be1a-4c11-90d0-72d2d92ba4ed"
+        },
+        {
+          "name": "Jay Hottinger",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirk Schuring",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrew Brenner",
+          "vote": "yea",
+          "politician_id": "6defae87-5c64-41d9-88d8-08faa78d6a43"
+        },
+        {
+          "name": "Teresa Fedor",
+          "vote": "yea"
+        },
+        {
+          "name": "Theresa Gavarone",
+          "vote": "yea",
+          "politician_id": "118cb065-7a2e-4b3d-a2a4-47a7b71687a0"
+        },
+        {
+          "name": "Steve Huffman",
+          "vote": "yea",
+          "politician_id": "255e97b2-9f45-4d6e-8a6c-e009280ffd0b"
+        },
+        {
+          "name": "Tina Maharath",
+          "vote": "yea"
+        },
+        {
+          "name": "Nathan Manning",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob McColley",
+          "vote": "yea",
+          "politician_id": "0c411727-37d3-4183-bb69-b1296718e743"
+        },
+        {
+          "name": "Michael Rulli",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Schaffer",
+          "vote": "yea",
+          "politician_id": "e5023158-e69b-4dec-944d-11701ac8d910"
+        },
+        {
+          "name": "Terry Johnson",
+          "vote": "yea",
+          "politician_id": "c55e0d6a-ead9-4e04-9b2c-7bbf611bc56d"
+        },
+        {
+          "name": "Bill Blessing",
+          "vote": "yea",
+          "politician_id": "a6589da4-5d03-4d41-b0e0-f138e14d2dfb"
+        },
+        {
+          "name": "Peggy Lehner",
+          "vote": "nay"
+        },
+        {
+          "name": "Stephanie Kunze",
+          "vote": "nay"
+        },
+        {
+          "name": "Kenny Yuko",
+          "vote": "nay"
+        },
+        {
+          "name": "Cecil Thomas",
+          "vote": "nay",
+          "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+        },
+        {
+          "name": "Nickie Antonio",
+          "vote": "nay",
+          "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Reported by the House State and Local Government Committee (03_RH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/sb360/03_RH/pdf/ (Open States text id 90121916))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-360-2019.03_rh.pdf",
+      "sha256": "9dffb928af47d8b0e1745dab2611c6ef2017e94077ba447e6323cbc6d8939db2"
+    },
+    "note": "Sub. S.B. 360 as Reported by the House State and Local Government Committee (03_RH); no date in file. Later amendments and the final vote are not in the text read. Also amends R.C. 5502.63 to widen the definition of 'federally licensed firearms dealer' (struck 'or their', added destructive devices, firearms and ammunition for them)."
+  },
+  "operative_text": "Section 1 (new R.C. 9.71): (B) Notwithstanding any contrary provision of the Revised Code, subject to division (C) of this section, no public official shall issue an order that prohibits federally licensed firearms dealers in the state or in a geographic area of the state from engaging in the commercial sale, giving, furnishing, or transfer of firearms, firearm components, or ammunition for firearms.\nSection 1 (new R.C. 9.71): This division does not prohibit a public official from issuing an order, pursuant to the official's authority under the Revised Code or a local ordinance, that prohibits a particular federally licensed firearms dealer from engaging in the commercial sale, giving, furnishing, or transfer of firearms, firearm components, or ammunition for firearms.\nSection 1 (new R.C. 9.71): (C) Division (B) of this section does not apply to either a zoning ordinance of the type described in division (D)(1) of section 9.68 of the Revised Code or a zoning ordinance of the type described in division (D)(2) of that section."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "OH-SB-266-2021",
+  "scope": "state:oh",
+  "title": "SB266 (134th Legislature (2021-2022)): Regards civil immunity and nonprofit corporations",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-SB-266",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/sb266/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tim Schaffer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e5023158-e69b-4dec-944d-11701ac8d910"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/sb266/00_IN/pdf/ (Open States text id 90129340))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-266-2021.00_in.pdf",
+      "sha256": "853dd2ee775e750e377fe1e68363e809603d6c2480ebc510a7d492ae84dbcaa2"
+    },
+    "note": "As introduced. Only the added (C)(2)(d) paragraphs are new; the rest of R.C. 2923.126 is unchanged law. Subdivision (d)(i) label is added by the bill; first sentence of (d)(i) existing text begins 'A nonprofit corporation shall be immune...' (the quote includes the added label '(d)(i)')."
+  },
+  "operative_text": "Section 1 (R.C. 2923.126): (d)(i) A nonprofit corporation shall be immune from liability in a civil action for any injury, death, or loss to person or property that allegedly was caused by or related to a licensee bringing a handgun onto the premises of the nonprofit corporation, including any motor vehicle owned by the nonprofit corporation, or to any event organized by the nonprofit corporation, unless the nonprofit corporation acted with malicious purpose. Section 1 (R.C. 2923.126): The immunities described in division (C)(2)(d)(i) of this section apply to a for-profit corporation that leases its property to the nonprofit corporation or permits its property to be used by the nonprofit corporation for any purpose. Section 1 (R.C. 2923.126): (ii) No person shall be liable in a tort action for injury, death, or loss to person or property allegedly caused by the person's act of self-defense or defense of another when performed during the commission, or imminent commission, of an offense of violence to protect the members or guests, including the person's self, of the nonprofit corporation under division (C)(2)(d)(i) of this section against the commission, or imminent commission, of that offense of violence, unless the person's act constitutes willful or wanton misconduct."
+}

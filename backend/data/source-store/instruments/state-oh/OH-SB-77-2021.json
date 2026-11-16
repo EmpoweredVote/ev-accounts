@@ -1,0 +1,60 @@
+{
+  "id": "OH-SB-77-2021",
+  "scope": "state:oh",
+  "title": "SB77 (134th Legislature (2021-2022)): Regards certain items that increase firearms' rate of fire",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-SB-77",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/sb77/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cecil Thomas",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Nickie Antonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+    },
+    {
+      "name": "Kenny Yuko",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tina Maharath",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Teresa Fedor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/sb77/00_IN/pdf/ (Open States text id 90126329))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-77-2021.00_in.pdf",
+      "sha256": "028642a391c7d009a9466ba4c3c0b9623fd64a37fc4c4f98e9bcbad6bbf01b33"
+    },
+    "note": "As introduced; no later version read. R.C. 2923.14 change only adds a cross-reference to the new disability (relief-from-disability voided on new offense); Section 3 is a codification note."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.133): (A) On and after the date that is one hundred eighty days after the effective date of this section, no person shall import, manufacture, sell, transfer, or possess a trigger crank, a bump-fire device, or any part, combination of parts, component, device, attachment, or accessory that is designed or functions to accelerate the rate of fire of a semi-automatic firearm but not convert the semi-automatic firearm into an automatic firearm. (B) This section does not apply with respect to the importation for, manufacture for, sale to, transfer to, or possession of any item specified in division (A) of this section by or under authority of the United States or any department or agency of the United States or by this state, any other state, or a department, agency, or political subdivision of this state or any other state. (C) Whoever violates division (A) of this section is guilty of \"illegal rate-of-fire acceleration conduct,\" a felony of the fourth degree.\nSection 1 (R.C. 2923.13): (6) The person has been convicted of a violation of section 2923.133 of the Revised Code or has been adjudicated a delinquent child for the commission of a violation of that section."
+}

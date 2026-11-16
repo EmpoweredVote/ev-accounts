@@ -1,0 +1,71 @@
+{
+  "id": "OH-SB-202-2019",
+  "scope": "state:oh",
+  "title": "SB202 (133rd Legislature (2019-2020)): Restores local authority to regulate firearms-related conduct",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA133-SB-202",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/sb202/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cecil Thomas",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Hearcel Craig",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "05d33654-b85a-4e2f-921c-b823ee7a1c8d"
+    },
+    {
+      "name": "Nickie Antonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+    },
+    {
+      "name": "Sandra Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Teresa Fedor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Vernon Sykes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Peggy Lehner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/sb202/00_IN/pdf/ (Open States text id 90125328))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-202-2019.00_in.pdf",
+      "sha256": "7064d8d26ca4b6539c21269dd6f32657ab7256ddfbde72f4d8fe6217dfc177db"
+    },
+    "note": "As introduced. The text is only repeal clauses; they are quoted because the repeal is the whole operative change. Section 3 sets Section 2's effective date."
+  },
+  "operative_text": "Section 1 (R.C. 9.68): That section 9.68 of the Revised Code is hereby repealed.\nSection 2 (R.C. 9.68): That the version of section 9.68 of the Revised Code scheduled to take effect on December 28, 2019, is hereby repealed on December 28, 2019."
+}

@@ -1,0 +1,104 @@
+{
+  "id": "OH-HB-522-2023",
+  "scope": "state:oh",
+  "title": "HB522 (135th Legislature (2023-2024)): Enact the Repeat Offender Act",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/135/hb522",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb522/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bernie Willis",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0bc48d95-452b-4d97-b17e-ca54a8e20f47"
+    },
+    {
+      "name": "Josh Williams",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "99038428-f04f-4fba-afd9-d27babb708c7"
+    },
+    {
+      "name": "Kevin Miller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "752f6d55-68b9-4a33-8950-0a38dd6502b9"
+    },
+    {
+      "name": "Rick Dell'Aquila",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Don Jones",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dick Stein",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Phil Plummer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f4afc4b5-70de-49e6-9e48-768a9e3dc1ff"
+    },
+    {
+      "name": "Dave Dobos",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rodney Creech",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3b2518c3-0795-426e-9368-8ea1a421be3a"
+    },
+    {
+      "name": "Bill Seitz",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jim Hoops",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "23306c61-416e-449f-960e-0fa8a207e3c2"
+    },
+    {
+      "name": "Mark Johnson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4a83940c-1474-4f2b-883b-710756185053"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: Section 1 (R.C. 2929.01, 2929.13, 2929.14, new R.C. 2941.1427) — new 'repeat offender' classification and mandatory prison terms for repeat offenders of any felony",
+        "judicial-criminal-justice: Section 1 (new R.C. 2953.321, R.C. 2953.25, 2953.34, 2953.61) — automatic sealing of fourth- and fifth-degree felony convictions after five years",
+        "judicial-criminal-justice: Section 1 (R.C. 2151.357, 2901.08) — record-sealing and repeat-violent-offender changes for crimes generally"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb522/00_IN/pdf/ (Open States text id 90134076))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-522-2023.00_in.pdf",
+      "sha256": "14395af3597e1a112652c99c51533d4eca8edf35ab4bb622affb1967072eaf4f"
+    },
+    "note": "As introduced (00_IN); Repeat Offender Act (Section 3, uncodified). R.C. 2923.13(B): 'third' degree struck and 'fourth' added for (A)(1),(3),(4),(5) first offences (a stray ', .' appears in the print, so (B)(2) is not quoted). R.C. 2941.144: 'six-year' struck, 'ten-year' added. R.C. 2923.14 relief now also covers federal 922(g) disabilities, concealed-license bars and qualifying-adult bars; 'or guilty plea' added throughout, 'or 2941.1427' added to cross-reference list; venue text partly in print not quoted. Also touches R.C. 109.57, 109.572, 109.578, 109.579, 4723.28, 4729.16, 4729.56, 4729.57, 4729.96, 4752.09 (mostly cross-references to sealing). Section 4 (uncodified) is a harmonization finding."
+  },
+  "operative_text": "Section 1 (R.C. 2923.13): (3) Except as otherwise provided in division (B)(5) of this section, a violation of division (A)(2) of this section is a felony of the third degree and there is a presumption that a prison term shall be imposed for the offense. (4) If the offender previously has been convicted of or pleaded guilty to a violation of this section, a violation of division (A)(1), (3), (4), or (5) of this section is a felony of the third degree. (5) If the offender previously has been convicted of or pleaded guilty to a violation of this section, a violation of division (A)(2) of this section is a felony of the second degree.\nSection 1 (R.C. 2923.14): (iii) Any person who is prohibited from obtaining a concealed handgun license or a concealed handgun license on a temporary emergency basis under division (D)(1)(e), (f), or (h) of section 2923.125 of the Revised Code;\nSection 1 (R.C. 2941.144): (A) Imposition of a ten-year mandatory prison term upon an offender under division (B)(1)(a)(i) of section 2929.14 of the Revised Code is precluded unless the indictment, count in the indictment, or information charging the offense specifies that the offender had a firearm that is an automatic firearm or that was equipped with a firearm muffler or suppressor on or about the offender's person or under the offender's control while committing the offense.\nSection 1 (R.C. 2929.14): (vii) A prison term of five years if the specification is of the type described in division (A) of section 2941.1428 of the Revised Code that charges the offender with discharging a firearm while committing the offense.\nSection 1 (new R.C. 2941.1428): (A) Imposition of a five-year mandatory prison term upon an offender under division (B)(1)(a)(vii) of section 2929.14 of the Revised Code is precluded unless the indictment, count in the indictment, or information charging the offense specifies that the offender discharged a firearm while committing the offense."
+}

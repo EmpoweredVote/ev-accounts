@@ -1,0 +1,166 @@
+{
+  "id": "OH-HB-335-2019",
+  "scope": "state:oh",
+  "title": "HB335 (133rd Legislature (2019-2020)): Require subject of certain protection orders surrender firearms",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA133-HB-335",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb335/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michele Lepore-Hagan",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Janine Boyd",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tavia Galonski",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "David Leland",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Beth Liston",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9706e0bb-66ae-48aa-bd7c-7d73da0118eb"
+    },
+    {
+      "name": "Kent Smith, K.",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Stephanie Howse",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "C. Russo",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Casey Weinstein",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e4c7eaa-47e5-4c6f-aed0-be4107ddcfb8"
+    },
+    {
+      "name": "Terrence Upchurch",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "032c981a-13dd-4d31-8e2e-4b9dcfa0e38a"
+    },
+    {
+      "name": "Emilia Sykes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jeffrey Crossman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Brigid Kelly",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Patterson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Adam Miller, A.",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Lisa Sobecki",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Fred Strahorn",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kristin Boggs",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Thomas West",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mary Lightbody",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jessica Miranda",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael Sheehy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Erica Crawley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joseph Miller, J.",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sedrick Denson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael O'Brien",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb335/00_IN/pdf/ (Open States text id 90125304))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-335-2019.00_in.pdf",
+      "sha256": "9aa9df97b138ffaa7465a0cfb4edf77ec555118c0d8e67172dab9dd9ef821a67"
+    },
+    "note": "As introduced. Also adds firearm-listing lines to protection-order forms (R.C. 2919.26, 3113.31), storage fees, return of guns after expiry, work and peace-officer exemptions and use immunity (2919.261(D)-(H), 3113.311(D) on) not quoted. Large file; read by grep and section."
+  },
+  "operative_text": "Section 1 (new R.C. 2919.261(B)): A temporary order issued pursuant to section 2919.26 of the Revised Code shall prohibit the defendant from owning, possessing, purchasing, or receiving a firearm or ammunition while that order is in effect. The order shall include or be accompanied by a written notice that states the defendant's obligations under this section, including the specific date by which any firearms must be surrendered.\nSection 1 (new R.C. 2919.261(C)): A defendant who is served with an order and notice described in division (B) of this section shall promptly surrender any firearms in or subject to the defendant's immediate possession or control. If the order and notice are served by a law enforcement officer and the officer requests the surrender to the officer of any firearms, the defendant shall immediately surrender the firearms in a safe manner to the officer. If the order and notice are not served by a law enforcement officer or the officer does not request surrender to the officer of any firearms, the defendant shall surrender any firearms within twenty-four hours after service of the order and notice by surrendering the firearms in a safe manner to a law enforcement officer or by selling the firearms to a federally licensed firearms dealer. An officer or dealer who takes possession of a firearm pursuant to this section shall give a receipt for the firearm to the defendant at the time of surrender or sale.\nSection 1 (new R.C. 3113.311(B)): An ex parte protection order issued pursuant to division (D)(1) of section 3113.31 of the Revised Code shall prohibit the respondent from owning, possessing, purchasing, or receiving a firearm or ammunition while that order is in effect. The order shall include or be accompanied by a written notice that states the respondent's obligations under this section, including the specific date by which any firearms must be surrendered.\nSection 1 (new R.C. 3113.311(C)): A respondent who is served with an order and notice described in division (B) of this section shall promptly surrender any firearms in or subject to the respondent's immediate possession or control. If the order and notice are served by a law enforcement officer and the officer requests the surrender to the officer of any firearms, the respondent shall immediately surrender the firearms in a safe manner to the officer. If the order and notice are not served by a law enforcement officer or the officer does not request surrender to the officer of any firearms, the respondent shall surrender any firearms within twenty-four hours after service of the order and notice by surrendering the firearms in a safe manner to a law enforcement officer or by selling the firearms to a federally licensed firearms dealer. An officer or dealer who takes possession of a firearm pursuant to this section shall give a receipt for the firearm to the respondent at the time of surrender or sale."
+}

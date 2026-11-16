@@ -1,0 +1,69 @@
+{
+  "id": "OH-SB-278-2017",
+  "scope": "state:oh",
+  "title": "SB278 (132st Legislature (2017-2018)): Restrict access to firearms if person dangerous",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-SB-278",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb278/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sandra R. Williams",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joe Schiavoni",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Cecil Thomas",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Michael Skindell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kenny Yuko",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Edna Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Charleta B. Tavares",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb278/00_IN/pdf/ (Open States text id 90121316))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-278-2017.00_in.pdf",
+      "sha256": "10a223b4e344d31f1bad0e125d4d9b714c29be6d06ecb9dac03ca6d1b1587897"
+    },
+    "note": "As Introduced (00_IN), 132nd G.A.; no passage vote on file. Also amends R.C. 109.57 (records), 2923.125 and 2923.128 (concealed-carry licence suspension) to match. Ex parte order terms (R.C. 2923.27) not quoted for length."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.26(B)): Any of the following persons may seek relief under sections 2923.26 to 2923.30 of the Revised Code by filing a petition for an extreme risk protection order in the court of common pleas in the county where the petitioner resides or in the county where the respondent resides:\nSection 1 (new R.C. 2923.26(M)): Upon hearing a petition for an extreme risk protection order, if the court finds by a preponderance of the evidence that the respondent poses a significant danger of causing personal injury to self or others by having custody or control of a firearm or the ability to purchase, possess, or receive a firearm, the court shall issue an extreme risk protection order for a period of one year.\nSection 1 (new R.C. 2923.30(A)): Upon issuance of any extreme risk protection order under this chapter, including an ex parte extreme risk protection order, the court shall order the respondent to surrender to the local law enforcement agency all firearms in the respondent's custody, control, or possession and any license to carry a concealed handgun issued to the respondent under section 2923.125 or 2923.1213 of the Revised Code.\nSection 1 (new R.C. 2923.99(C)(1)): No person shall acquire, have, carry, or use any firearm with knowledge that the person is prohibited from doing so by an order issued under this section or sections 2923.26 to 2923.30 of the Revised Code.\nSection 1 (new R.C. 2923.99(D)): In addition to the penalties prescribed in division (C) of this section, no person found guilty of having a firearm while under extreme risk protection order disability shall knowingly acquire, have, carry, or use any firearm or dangerous ordnance for a period of five years after the date the underlying extreme risk protection order expires.\nSection 1 (R.C. 2923.13(A)(6)): The person has been found guilty of having a firearm while under extreme risk protection order disability, and is prohibited from acquiring, having, carrying, or using a firearm under section 2923.99 of the Revised Code.\nSection 3 (uncodified): Sections 2923.26 to 2923.30 and 2923.99 of the Revised Code, as enacted by this act, shall be known as the \"Extreme Risk Protection Order Act.\""
+}

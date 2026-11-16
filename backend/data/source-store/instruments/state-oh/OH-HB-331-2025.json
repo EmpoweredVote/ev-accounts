@@ -1,0 +1,45 @@
+{
+  "id": "OH-HB-331-2025",
+  "scope": "state:oh",
+  "title": "HB331 (136th Legislature (2025-2026)): Remove firearm mufflers, suppressors as dangerous ordnance",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/hb331",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb331/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kellie Deeter",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8233f792-c319-4ec6-88e9-5d50d42d47ef"
+    },
+    {
+      "name": "Tex Fischer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "988070bf-ad60-45ab-abb3-940a32ee927b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb331/00_IN/pdf/ (Open States text id 90137469))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-331-2025.00_in.pdf",
+      "sha256": "f62c9e72f784c8f7485be029981e36bf7940bc282ce3a2b9ea4a71dc36ddb4be"
+    },
+    "note": "As introduced. Struck: 'Any firearm muffler or suppressor' from the dangerous-ordnance definition (division (K)(5), old (K)(6) renumbered); the clause requiring authorization under state/federal law and NFA registration in R.C. 1533.04(A) (sentence quoted ends at the strike, a comma in the print); and R.C. 2923.17(C)(8), the hunting exemption for suppressors. 2923.17(A) is unchanged but now no longer reaches suppressors."
+  },
+  "operative_text": "Section 1 (R.C. 2923.11(K)(5)): Any combination of parts that is intended by the owner for use in converting any firearm or other device into a dangerous ordnance.\nSection 1 (R.C. 1533.04(A)): A person who holds a valid hunting license issued under this chapter and who hunts game birds or wild quadrupeds may use a suppressor attached to a gun that is authorized to be used for hunting by section 1533.16 of the Revised Code while hunting.\nSection 1 (R.C. 2923.17(A)): No person shall knowingly acquire, have, carry, or use any dangerous ordnance."
+}

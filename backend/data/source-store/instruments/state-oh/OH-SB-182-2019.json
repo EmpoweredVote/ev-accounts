@@ -1,0 +1,86 @@
+{
+  "id": "OH-SB-182-2019",
+  "scope": "state:oh",
+  "title": "SB182 (133rd Legislature (2019-2020)): Raise minimum age to purchase firearm to 21",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA133-SB-182",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/sb182/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cecil Thomas",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Peggy Lehner",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tina Maharath",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Nickie Antonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+    },
+    {
+      "name": "Teresa Fedor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sandra Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Hearcel Craig",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "05d33654-b85a-4e2f-921c-b823ee7a1c8d"
+    },
+    {
+      "name": "Stephanie Kunze",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kenny Yuko",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Vernon Sykes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/sb182/00_IN/pdf/ (Open States text id 90125199))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-182-2019.00_in.pdf",
+      "sha256": "57b966cf29dccb2685147afc892cd1c6d882715f01cfe36b2d4d28edece5ac4e"
+    },
+    "note": "As introduced. Struck: 'handgun' replaced by 'firearm'; the under-18 sale/furnish divisions folded into the 21 rule; penalty fifth degree struck, third degree added. Quotes are the post-bill reading assembled from the marked text. Juvenile-code sections 2151.022, 2152.02, 2152.16 and others only change cross-references to 2923.211."
+  },
+  "operative_text": "Section 1 (R.C. 2923.21): Subject to division (B) of this section, sell any firearm to a person who is under twenty-one years of age;\nSection 1 (R.C. 2923.21): Subject to division (B) of this section, furnish any firearm to a person who is under twenty-one years of age, except for lawful hunting, sporting, or educational purposes, including, but not limited to, instruction in firearms or handgun safety, care, handling, or marksmanship under the supervision or control of a responsible adult;\nSection 1 (R.C. 2923.21): Whoever violates this section is guilty of improperly furnishing firearms to an underage person, a felony of the third degree.\nSection 1 (R.C. 2923.211): No person under twenty-one years of age shall purchase or attempt to purchase a firearm.\nSection 1 (R.C. 2923.211): If the offender is under eighteen years of age, underage purchase of a firearm is a delinquent act that would be a felony of the fourth degree if it could be committed by an adult. If the offender is eighteen years of age or older but under twenty-one years of age, underage purchase of a firearm is a misdemeanor of the second degree."
+}

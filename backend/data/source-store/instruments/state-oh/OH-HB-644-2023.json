@@ -1,0 +1,97 @@
+{
+  "id": "OH-HB-644-2023",
+  "scope": "state:oh",
+  "title": "HB644 (135th Legislature (2023-2024)): Regards items that accelerate a firearm's rate of fire",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/135/hb644",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb644/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cecil Thomas",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Michele Grim",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "88e8aa9b-048a-4c59-9742-ba763a554751"
+    },
+    {
+      "name": "Beth Liston",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9706e0bb-66ae-48aa-bd7c-7d73da0118eb"
+    },
+    {
+      "name": "Lauren McNally",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fd22b985-97df-447f-b532-937b3a9cbd64"
+    },
+    {
+      "name": "Veronica Sims",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8215a745-c232-45e5-8e29-990a97029c02"
+    },
+    {
+      "name": "Dan Troy",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "71cc6ae5-713f-42ae-8a0d-b37b85605f3e"
+    },
+    {
+      "name": "Sedrick Denson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Richard Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sean Brennan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1fe75280-5b41-44a9-b531-22a0807204eb"
+    },
+    {
+      "name": "Rachel Baker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd7b7bec-2510-4837-b0c2-7c034d4261c7"
+    },
+    {
+      "name": "Phil Robinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "dba42b9c-10a8-4c4c-9c44-8e02c1ce9eab"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb644/00_IN/pdf/ (Open States text id 90134747))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-644-2023.00_in.pdf",
+      "sha256": "38df6fd259dbd87d05b81c56e0c5cc4b5e84ae9f12ecf13310e2a7a06105a07a"
+    },
+    "note": "As introduced. Exemption for federal, state and local government (division B) not quoted. R.C. 2923.14(F)(4): 'or,' struck, 'or (6)' added (cross-reference)."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.133): (A) On and after the date that is one hundred eighty days after the effective date of this section, no person shall import, manufacture, sell, transfer, or possess a trigger crank, a bump-fire device, or any part, combination of parts, component, device, attachment, or accessory that is designed or functions to accelerate the rate of fire of a semi-automatic firearm but not convert the semi-automatic firearm into an automatic firearm. (C) Whoever violates division (A) of this section is guilty of \"illegal rate-of-fire acceleration conduct,\" a felony of the fourth degree.\nSection 1 (R.C. 2923.13): (6) The person has been convicted of a violation of section 2923.133 of the Revised Code or has been adjudicated a delinquent child for the commission of a violation of that section."
+}

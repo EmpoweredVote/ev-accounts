@@ -1,0 +1,108 @@
+{
+  "id": "OH-HB-505-2021",
+  "scope": "state:oh",
+  "title": "HB505 (134th Legislature (2021-2022)): Allow carrying concealed deadly weapons without a license",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-HB-505",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb505/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Diane V. Grendell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jennifer Gross",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e5fa7b8f-b859-48b3-ba5e-272d1fd11bc5"
+    },
+    {
+      "name": "Bill Dean",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ron Ferguson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cea18cfb-b214-4147-9b21-1852ec6ffcb5"
+    },
+    {
+      "name": "Tom Brinkman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Reggie Stoltzfus",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Thomas Hall",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fe0681af-fa31-4c17-a8de-55f227df1e8f"
+    },
+    {
+      "name": "A. Nino Vitale",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mark Johnson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4a83940c-1474-4f2b-883b-710756185053"
+    },
+    {
+      "name": "Jon Cross",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jena Powell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jay Edwards",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Rodney Creech",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3b2518c3-0795-426e-9368-8ea1a421be3a"
+    },
+    {
+      "name": "Derek Merrin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb505/00_IN/pdf/ (Open States text id 90126561))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-505-2021.00_in.pdf",
+      "sha256": "7371e3d836dfc005833bf86fee93532967df53faea455cd56b838e51492bf53e"
+    },
+    "note": "As introduced (134th GA); very large text, key parts quoted. Division label (E)(4) for 2923.126 inferred from position after (E)(1)-(3). Also amends R.C. 9.68, 109.69, 109.731, 311.41-.43, 1547.69, 2921.13, 2923.12-.1213, 2923.16, 2953.37, 4749.10 (renaming and conforming changes), not read line by line."
+  },
+  "operative_text": "Section 1 (R.C. 2923.11(S)): \"Restricted firearm\" means a firearm that is a dangerous ordnance or that is a firearm that any law of this state or the United States prohibits the subject person from possessing, having, or carrying.\nSection 1 (R.C. 2923.11(T)): \"Restricted deadly weapon\" means a deadly weapon that is a restricted firearm or that is a deadly weapon that any law of this state or the United States prohibits the subject person from possessing, having, or carrying.\nSection 1 (R.C. 2923.126(E)(4)): A person who is at least twenty-one years of age and is not prohibited under the law of this state or the United States from possessing a deadly weapon has the same right to carry a concealed deadly weapon that is not a restricted deadly weapon in this state as a person who was issued a concealed weapons license under section 2923.125 of the Revised Code and is subject to the same restrictions as specified in this section.\nSection 1 (R.C. 2923.12(B)): No person who has been issued a concealed weapons license or who is at least twenty-one years of age and is not prohibited under the law of this state or the United States from possessing a deadly weapon, shall do any of the following."
+}

@@ -1,0 +1,116 @@
+{
+  "id": "OH-HB-764-2019",
+  "scope": "state:oh",
+  "title": "HB764 (133rd Legislature (2019-2020)): Extend valid concealed handgun licenses/renew in any county",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA133-HB-764",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb764/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Diane Grendell",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kris Jordan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Stephen Hambley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Haraz Ghanbari",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "32945ffa-246b-4074-bc3b-f26a38188fd0"
+    },
+    {
+      "name": "George Lang",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9d3f190d-3f98-4163-9900-0889b88438ea"
+    },
+    {
+      "name": "Scott Wiggam",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dick Stein",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Darrell Kick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jon Cross",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bill Dean",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Craig Riedel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Becker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sara Carruthers",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Mark Romanchuk",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f9fce068-9763-4bf8-9355-d4aeb9077439"
+    },
+    {
+      "name": "Paul Zeltwanger",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jim Butler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb764/00_IN/pdf/ (Open States text id 90122926))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-764-2019.00_in.pdf",
+      "sha256": "65417a987d7d0c5e3c0a8e0329992454bd8b94e6bd0ca784699e077a29fd4cd4"
+    },
+    "note": "As introduced (00_IN). Struck: 'the county in which the applicant resides or to the sheriff of' and the adjacent-county limit in R.C. 2923.125(B); same residence/adjacent-county limits struck in the renewal provisions (D)/(F)(4), replaced with 'a county sheriff'. In uncodified Section 11 of H.B. 197 (Section 3 of this bill), the emergency-period extension (90 days, to Dec. 31, 2020) is struck and replaced by an extension for licenses expiring between March 9, 2020 and December 31, 2021; that substitute text is split across struck and underlined fragments and is not quoted in full."
+  },
+  "operative_text": "Section 1 (R.C. 2923.125): (B) An applicant for a concealed handgun license who is a resident of this state shall submit a completed application form and all of the material and information described in divisions (B)(1) to (6) of this section to the sheriff of any county. The sheriff may designate days during which the sheriff is available to accept or provide the information described in this division only from or to county residents.\nSection 3 (Section 11 of H.B. 197 of the 133rd General Assembly, uncodified): (2) Division (E)(1) of this section applies with respect to a concealed handgun license that is described in that division even if the date of scheduled expiration of that license occurred prior to the effective date of this section, as amended."
+}

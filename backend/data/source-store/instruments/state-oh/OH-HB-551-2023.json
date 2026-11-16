@@ -1,0 +1,120 @@
+{
+  "id": "OH-HB-551-2023",
+  "scope": "state:oh",
+  "title": "HB551 (135th Legislature (2023-2024)): Prohibit firearm possession by persons unlawfully present in U.S.",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/135/hb551",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb551/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Scott Wiggam",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jack Daniels",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "24cde6cf-8ba0-49e2-96f7-ca808702a72a"
+    },
+    {
+      "name": "Darrell Kick",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bill Dean",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Jennifer Gross",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e5fa7b8f-b859-48b3-ba5e-272d1fd11bc5"
+    },
+    {
+      "name": "Mark Johnson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4a83940c-1474-4f2b-883b-710756185053"
+    },
+    {
+      "name": "Angie King",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9d5de12f-be76-46c2-a30d-a75803ea1cce"
+    },
+    {
+      "name": "Roy Klopfenstein",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ea437055-f638-419b-8349-87645f960cd5"
+    },
+    {
+      "name": "Brian Lorenz",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ff52e094-2546-43b1-b6eb-fde2973d00e6"
+    },
+    {
+      "name": "Riordan McClain",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "504c6d15-f84b-4ac6-ba61-64311b63bdfa"
+    },
+    {
+      "name": "Kevin Miller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "752f6d55-68b9-4a33-8950-0a38dd6502b9"
+    },
+    {
+      "name": "Brian Stewart",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e390a3f6-5739-4b4e-a2e4-cc74bb4caba6"
+    },
+    {
+      "name": "Josh Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "99038428-f04f-4fba-afd9-d27babb708c7"
+    },
+    {
+      "name": "Bernie Willis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0bc48d95-452b-4d97-b17e-ca54a8e20f47"
+    },
+    {
+      "name": "Tom Young",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f85225e0-9e36-4f9f-91dc-50f9cc3d8201"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/hb551/00_IN/pdf/ (Open States text id 90132396))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-551-2023.00_in.pdf",
+      "sha256": "61c277d8f18470a4bdb2ff50e0479fb5688be2e5cc82c8b5ffac77fa24122558"
+    },
+    "note": "As introduced. Existing R.C. 2923.13(A) lead-in ('no person shall knowingly acquire, have, carry, or use any firearm or dangerous ordnance, if any of the following apply') and penalty (felony of the third degree) unchanged. In 2923.14(F)(4), 'or' struck and '(5), or (6)' added."
+  },
+  "operative_text": "Section 1 (R.C. 2923.13): (6) The person is an alien and is illegally or unlawfully in the United States.\nSection 1 (R.C. 2923.14): Is automatically void upon commission by the applicant of any offense set forth in division (A)(2) or (3) of section 2923.13 of the Revised Code, or upon the applicant's becoming one of the class of persons named in division (A)(1), (4), (5), or (6) of that section."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "OH-HB-383-2021",
+  "scope": "state:oh",
+  "title": "HB383 (134th Legislature (2021-2022)): Modify penalties for certain weapons offense",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-HB-383",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb383/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kyle Koehler",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1fa6c657-b1c7-44e6-9bf4-b655bdaabf89"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb383/00_IN/pdf/ (Open States text id 90126671))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-383-2021.00_in.pdf",
+      "sha256": "ba20e64139f9c6b1e3fa2e917adc03e690081083e86801cb23e2e5c5f2a88cc6"
+    },
+    "note": "As introduced (134th GA). Penalty for the bill's own gun rule, so single subject. Section 3 (uncodified) is a composite-section finding."
+  },
+  "operative_text": "Section 1 (R.C. 2923.13): Whoever violates this section is guilty of having weapons while under disability. The penalty for the offense shall be determined as follows: (1) If the disability upon which the violation is based is a prior conviction or delinquent child adjudication specified in division (A)(2) of this section, except as otherwise provided in this division, having weapons while under disability is a felony of the second degree. If the disability upon which the violation is based is such a prior conviction or adjudication and the offender one or more times previously has been convicted of, or been adjudicated a delinquent child for committing, a violation of this section, having weapons while under disability is a felony of the first degree. (2) If division (B)(1) of this section does not apply, except as otherwise provided in this division, having firearms while under disability is a felony of the third degree. If division (B)(1) of this section does not apply and the offender one or more times previously has been convicted of, or been adjudicated a delinquent child for committing, a violation of this section, having weapons while under disability is a felony of the second degree."
+}

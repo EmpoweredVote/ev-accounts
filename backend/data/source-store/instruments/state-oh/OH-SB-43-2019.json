@@ -1,0 +1,69 @@
+{
+  "id": "OH-SB-43-2019",
+  "scope": "state:oh",
+  "title": "SB43 (133rd Legislature (2019-2020)): Revise penalty/firearm limit for domestic violence; strangulation",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA133-SB-43",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/sb43/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Stephanie Kunze",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Nickie Antonio",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+    },
+    {
+      "name": "Tina Maharath",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Cecil Thomas",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Vernon Sykes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Teresa Fedor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: R.C. 2903.13, 2919.25, 2929.13, 2929.14 — new strangulation offence and higher penalties for domestic violence and assault (not gun crimes)",
+        "judicial-criminal-justice: new R.C. 2935.082 — warrants charging domestic violence must be entered in LEADS",
+        "judicial-access-to-justice: Section 3 (uncodified) — $500,000 for domestic violence programs"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/sb43/00_IN/pdf/ (Open States text id 90124969))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-43-2019.00_in.pdf",
+      "sha256": "57b0254c944e223f6cc2df0a7ebcf015fb19c4eaaa384b11ddc9dd4441864e8c"
+    },
+    "note": "As introduced (00_IN). Also amends R.C. 2919.26 and 3113.31 so courts must decide on firearm surrender when issuing protection orders and give a changed notice. The strangulation text sits in R.C. 2903.13 (not read in full). Judge whether the appropriation fits a listed topic; no exact one."
+  },
+  "operative_text": "Section 1 (R.C. 2923.13): (6) The person has been convicted of either domestic violence or assault when the victim is a family or household member, whether the offense is classified as a felony or misdemeanor.\nSection 1 (R.C. 2923.13): (7) The person is subject to a court order, granted after a full hearing for which the person received notice and an opportunity to be heard, that restrains the person from harassing, stalking, threatening, or engaging in other conduct that would place a family or household member, or a person with whom the respondent is or was in a dating relationship, in reasonable fear of bodily injury, or is subject to a temporary protection order issued under section 2919.26 of the Revised Code.\nSection 1 (new R.C. 2923.133): (1) Within twenty-four hours after being served with the court order, the offender shall transfer all firearms in the offender's possession or control to a law enforcement agency or federally licensed firearms dealer.\nSection 1 (new R.C. 2923.133): (C) An offender who recklessly violates the requirements of this section is guilty of a felony of the fifth degree.\nSection 1 (new R.C. 2923.134): (1) Within twenty-four hours after being served with the court order, the respondent shall transfer all firearms in the respondent's possession to a law enforcement agency or federally licensed firearms dealer.\nSection 1 (new R.C. 2923.134): (B) A respondent who recklessly violates the requirements of this section is guilty of a felony of the fifth degree."
+}

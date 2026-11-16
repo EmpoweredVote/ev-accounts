@@ -1,0 +1,81 @@
+{
+  "id": "OH-SB-392-2025",
+  "scope": "state:oh",
+  "title": "SB392 (136th Legislature (2025-2026)): Regards concealed weapons license, weapon types, carry locations",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/sb392",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb392/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Al Cutrona",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b39f0fd8-64b8-425b-a7f6-3748b8a518d0"
+    },
+    {
+      "name": "Terry Johnson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c55e0d6a-ead9-4e04-9b2c-7bbf611bc56d"
+    },
+    {
+      "name": "Andrew Brenner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6defae87-5c64-41d9-88d8-08faa78d6a43"
+    },
+    {
+      "name": "Theresa Gavarone",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "118cb065-7a2e-4b3d-a2a4-47a7b71687a0"
+    },
+    {
+      "name": "Steve Huffman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "255e97b2-9f45-4d6e-8a6c-e009280ffd0b"
+    },
+    {
+      "name": "George Lang",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9d3f190d-3f98-4163-9900-0889b88438ea"
+    },
+    {
+      "name": "Susan Manchester",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "12b61432-0f20-4de7-afcc-8f24fa95f3c3"
+    },
+    {
+      "name": "Tim Schaffer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e5023158-e69b-4dec-944d-11701ac8d910"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb392/00_IN/pdf/ (Open States text id 90139543))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-392-2025.00_in.pdf",
+      "sha256": "8a8d840d3050b877a0a72cf854e3758dd3c737ddb3093ec13ec3e835f8dec687"
+    },
+    "note": "As introduced (00_IN), Freedom to Carry Act (Section 5). Quotes drop struck words: R.C. 2923.111 age 21 struck, 18 added; 2923.16 old ban on a loaded accessible firearm and the unloaded/how-carried rules struck; 'handgun' struck throughout for 'weapons'/'firearm'. Also amends R.C. 9.68, 109.69, 109.731, 311.41-311.43, 1547.69, 2921.13, 2923.121-2923.129, 2923.1210-2923.1213, 2923.17, 2953.35, 4511.19, 4749.10 (mostly renaming/cross-references); applicant may file with any county sheriff; repeals R.C. 1533.04. Large text; grep-read, not every section."
+  },
+  "operative_text": "Section 1 (R.C. 2923.111): \"Qualifying adult\" means a person who is all of the following: (a) Eighteen years of age or older; (b) Not legally prohibited from acquiring, possessing, or receiving a deadly weapon under law of this state or the United States;\nSection 1 (R.C. 2923.111): (2) \"Exclusive deadly weapon\" means a deadly weapon that is an exclusive firearm or that is a deadly weapon that any law of this state or the United States prohibits the subject person from acquiring, possessing, having, or carrying.\nSection 1 (R.C. 2923.12): (B) No person who has been issued a concealed weapons license shall do any of the following:\nSection 1 (R.C. 2923.16): (B) No person shall knowingly transport or have a firearm in a motor vehicle, unless the person may lawfully possess that firearm under applicable law of this state or the United States,\nSection 1 (R.C. 2923.16): No person shall knowingly transport or have a loaded firearm in a motor vehicle if, at the time of that transportation or possession, any of the following applies:"
+}

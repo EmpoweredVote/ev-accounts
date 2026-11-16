@@ -1,0 +1,69 @@
+{
+  "id": "OH-SB-235-2025",
+  "scope": "state:oh",
+  "title": "SB235 (136th Legislature (2025-2026)): Prohibit certain conduct that accelerates firearm's rate of fire",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/sb235",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb235/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kent Smith",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ed114b22-4c6b-4fe3-8672-5bc3bc32a129"
+    },
+    {
+      "name": "Hearcel Craig",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "05d33654-b85a-4e2f-921c-b823ee7a1c8d"
+    },
+    {
+      "name": "Nickie Antonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+    },
+    {
+      "name": "Bill DeMora",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ade41ff2-eb0c-4778-a3e7-67eb4710aee0"
+    },
+    {
+      "name": "Paula Hicks-Hudson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8a208c28-1273-4e27-93d4-c2c0bb5a1dbc"
+    },
+    {
+      "name": "Casey Weinstein",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "2e4c7eaa-47e5-4c6f-aed0-be4107ddcfb8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb235/00_IN/pdf/ (Open States text id 90138217))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-235-2025.00_in.pdf",
+      "sha256": "27ad44ea7853d34f4b6924d1cce0bb683914417500ce2d653d7f4d9607ee2f7f"
+    },
+    "note": "As introduced. R.C. 2923.14(F)(4) also adds division (A)(6) to the list that voids relief from disability (struck: 'or,' before (3))."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.133): (A) On and after the date that is one hundred eighty days after the effective date of this section, no person shall import, manufacture, sell, transfer, or possess a trigger crank, a bump-fire device, or any part, combination of parts, component, device, attachment, or accessory that is designed or functions to accelerate the rate of fire of a semi-automatic firearm but not convert the semi-automatic firearm into an automatic firearm. Section 1 (new R.C. 2923.133): (C) Whoever violates division (A) of this section is guilty of illegal rate-of-fire acceleration conduct, a felony of the fourth degree. Section 1 (R.C. 2923.13): (6) The person has been convicted of a violation of section 2923.133 of the Revised Code or has been adjudicated a delinquent child for the commission of a violation of that section."
+}

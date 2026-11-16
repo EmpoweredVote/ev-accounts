@@ -1,0 +1,296 @@
+{
+  "id": "OH-SB-148-2023",
+  "scope": "state:oh",
+  "title": "SB148 (135th Legislature (2023-2024)): Enact the Second Amendment Financial Privacy Act",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/135/sb148",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/sb148/02_PS/pdf/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Terry Johnson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c55e0d6a-ead9-4e04-9b2c-7bbf611bc56d"
+    },
+    {
+      "name": "Jerry Cirino",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b7281ad1-da29-4838-92d8-25f09a135c7c"
+    },
+    {
+      "name": "Theresa Gavarone",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "118cb065-7a2e-4b3d-a2a4-47a7b71687a0"
+    },
+    {
+      "name": "Steve Huffman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "255e97b2-9f45-4d6e-8a6c-e009280ffd0b"
+    },
+    {
+      "name": "Sandy O'Brien",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cae3594b-8480-4c78-bfc1-8a4fc9212282"
+    },
+    {
+      "name": "Tim Schaffer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e5023158-e69b-4dec-944d-11701ac8d910"
+    },
+    {
+      "name": "Shane Wilkin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c57d9ba7-f911-4419-ad4d-1a6b6c3f5352"
+    },
+    {
+      "name": "Niraj Antani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Andrew Brenner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6defae87-5c64-41d9-88d8-08faa78d6a43"
+    },
+    {
+      "name": "Brian Chavez",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9ddfcf41-53c8-4f06-8384-bfaa201fa4dd"
+    },
+    {
+      "name": "Bob Hackett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Al Landis",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b6354968-a682-4206-a07f-2a688857c155"
+    },
+    {
+      "name": "George Lang",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9d3f190d-3f98-4163-9900-0889b88438ea"
+    },
+    {
+      "name": "Rob McColley",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "0c411727-37d3-4183-bb69-b1296718e743"
+    },
+    {
+      "name": "Bill Reineke",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1cc02d38-1d90-4870-a50b-85ea4ea41a27"
+    },
+    {
+      "name": "Michael Rulli",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kirk Schuring",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2024-02-28",
+      "body": "OH Senate",
+      "motion": "Senate Pass",
+      "kind": "roll-call",
+      "yes": 25,
+      "no": 7,
+      "absent": 0,
+      "note": "Ohio roll call (Open States data) 90147829",
+      "members": [
+        {
+          "name": "Matt Dolan",
+          "vote": "yea"
+        },
+        {
+          "name": "Nathan Manning",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Reynolds",
+          "vote": "yea",
+          "politician_id": "f1adb301-026e-455c-8c0e-a378b48734cf"
+        },
+        {
+          "name": "Niraj Antani",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Blessing",
+          "vote": "yea",
+          "politician_id": "a6589da4-5d03-4d41-b0e0-f138e14d2dfb"
+        },
+        {
+          "name": "Theresa Gavarone",
+          "vote": "yea",
+          "politician_id": "118cb065-7a2e-4b3d-a2a4-47a7b71687a0"
+        },
+        {
+          "name": "George Lang",
+          "vote": "yea",
+          "politician_id": "9d3f190d-3f98-4163-9900-0889b88438ea"
+        },
+        {
+          "name": "Steve Huffman",
+          "vote": "yea",
+          "politician_id": "255e97b2-9f45-4d6e-8a6c-e009280ffd0b"
+        },
+        {
+          "name": "Terry Johnson",
+          "vote": "yea",
+          "politician_id": "c55e0d6a-ead9-4e04-9b2c-7bbf611bc56d"
+        },
+        {
+          "name": "Stephanie Kunze",
+          "vote": "yea"
+        },
+        {
+          "name": "Shane Wilkin",
+          "vote": "yea",
+          "politician_id": "c57d9ba7-f911-4419-ad4d-1a6b6c3f5352"
+        },
+        {
+          "name": "Andrew Brenner",
+          "vote": "yea",
+          "politician_id": "6defae87-5c64-41d9-88d8-08faa78d6a43"
+        },
+        {
+          "name": "Tim Schaffer",
+          "vote": "yea",
+          "politician_id": "e5023158-e69b-4dec-944d-11701ac8d910"
+        },
+        {
+          "name": "Mark Romanchuk",
+          "vote": "yea",
+          "politician_id": "f9fce068-9763-4bf8-9355-d4aeb9077439"
+        },
+        {
+          "name": "Bill Reineke",
+          "vote": "yea",
+          "politician_id": "1cc02d38-1d90-4870-a50b-85ea4ea41a27"
+        },
+        {
+          "name": "Kristina Roegner",
+          "vote": "yea",
+          "politician_id": "e2237324-de7c-40e0-ab79-8f86fcdaa4cb"
+        },
+        {
+          "name": "District 29",
+          "vote": "yea"
+        },
+        {
+          "name": "Al Landis",
+          "vote": "yea",
+          "politician_id": "b6354968-a682-4206-a07f-2a688857c155"
+        },
+        {
+          "name": "Sandy O'Brien",
+          "vote": "yea",
+          "politician_id": "cae3594b-8480-4c78-bfc1-8a4fc9212282"
+        },
+        {
+          "name": "Brian Chavez",
+          "vote": "yea",
+          "politician_id": "9ddfcf41-53c8-4f06-8384-bfaa201fa4dd"
+        },
+        {
+          "name": "Bob Hackett",
+          "vote": "yea"
+        },
+        {
+          "name": "Jerry Cirino",
+          "vote": "yea",
+          "politician_id": "b7281ad1-da29-4838-92d8-25f09a135c7c"
+        },
+        {
+          "name": "Michael Rulli",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Huffman",
+          "vote": "yea",
+          "politician_id": "5261b1f9-be1a-4c11-90d0-72d2d92ba4ed"
+        },
+        {
+          "name": "Rob McColley",
+          "vote": "yea",
+          "politician_id": "0c411727-37d3-4183-bb69-b1296718e743"
+        },
+        {
+          "name": "Hearcel Craig",
+          "vote": "nay",
+          "politician_id": "05d33654-b85a-4e2f-921c-b823ee7a1c8d"
+        },
+        {
+          "name": "Nickie Antonio",
+          "vote": "nay",
+          "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+        },
+        {
+          "name": "Bill DeMora",
+          "vote": "nay",
+          "politician_id": "ade41ff2-eb0c-4778-a3e7-67eb4710aee0"
+        },
+        {
+          "name": "Kent Smith",
+          "vote": "nay",
+          "politician_id": "ed114b22-4c6b-4fe3-8672-5bc3bc32a129"
+        },
+        {
+          "name": "Vernon Sykes",
+          "vote": "nay"
+        },
+        {
+          "name": "Paula Hicks-Hudson",
+          "vote": "nay",
+          "politician_id": "8a208c28-1273-4e27-93d4-c2c0bb5a1dbc"
+        },
+        {
+          "name": "Catherine Ingram",
+          "vote": "nay",
+          "politician_id": "88d523e9-6e21-42f0-bc31-d01c4bb1f3b1"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/sb148/02_PS/pdf/ (Open States text id 90134246))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-148-2023.02_ps.pdf",
+      "sha256": "c85d4ca077cb7193a22540748b09fce51ff4fb621a3ae12a142a6471d9949f0e"
+    },
+    "note": "Version read: Sub. S.B. 148 as passed by the Senate (02_PS), 25-7 on 2024-02-28; later House amendments are not in the text read."
+  },
+  "operative_text": "Section 1 (new R.C. 1349.85): (A) Except for those records kept during the regular course of a criminal investigation and prosecution, or as otherwise required by law, no government entity or official, and no agent or employee of a governmental entity shall knowingly keep or cause to be kept any list, record, or registry of privately owned firearms or the owners of those firearms.\nSection 1 (new R.C. 1349.85): (B) No financial institution or agent of a financial institution shall do either of the following: (1) Require the assignment of a firearms code in a way that distinguishes a firearms retailer from other retailers; (2) Subject to divisions (C) and (D) of this section, decline a payment card transaction involving a firearms retailer based solely on the assignment of a firearms code.\nSection 1 (new R.C. 1349.86): (A) The attorney general shall investigate reasonable allegations that a person or entity, including a government entity, has violated section 1349.85 of the Revised Code and, upon finding a violation, provide written notice to the person or entity believed to have committed the violation."
+}

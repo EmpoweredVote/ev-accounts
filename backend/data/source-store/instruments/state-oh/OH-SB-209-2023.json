@@ -1,0 +1,68 @@
+{
+  "id": "OH-SB-209-2023",
+  "scope": "state:oh",
+  "title": "SB209 (135th Legislature (2023-2024)): Regards lost or stolen firearms",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/135/sb209",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/sb209/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Paula Hicks-Hudson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8a208c28-1273-4e27-93d4-c2c0bb5a1dbc"
+    },
+    {
+      "name": "Catherine Ingram",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "88d523e9-6e21-42f0-bc31-d01c4bb1f3b1"
+    },
+    {
+      "name": "Nickie Antonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+    },
+    {
+      "name": "Hearcel Craig",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "05d33654-b85a-4e2f-921c-b823ee7a1c8d"
+    },
+    {
+      "name": "Kent Smith",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "ed114b22-4c6b-4fe3-8672-5bc3bc32a129"
+    },
+    {
+      "name": "Vernon Sykes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/sb209/00_IN/pdf/ (Open States text id 90133558))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-209-2023.00_in.pdf",
+      "sha256": "fd4d92683f5089e73b1384f9523b2e293d2c6cf02831cf557b85068f6e01e84f"
+    },
+    "note": "As introduced. Struck: 'Knowingly' (replaced by 'Recklessly'); 'fourth' degree (replaced by 'first'). Quoted as the bill would read; fragment of (A)(7) is a clause of the list in (A)."
+  },
+  "operative_text": "Section 1 (R.C. 2923.20): Recklessly fail to report to law enforcement authorities forthwith the loss or theft of any firearm or dangerous ordnance in the person's possession or under the person's control.\nSection 1 (R.C. 2923.20): A violation of division (A)(7) of this section is a misdemeanor of the first degree."
+}

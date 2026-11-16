@@ -1,0 +1,45 @@
+{
+  "id": "OH-SB-293-2021",
+  "scope": "state:oh",
+  "title": "SB293 (134th Legislature (2021-2022)): Prohibit requiring fees, liability insurance to possess firearms",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-SB-293",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/sb293/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Theresa Gavarone",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "118cb065-7a2e-4b3d-a2a4-47a7b71687a0"
+    },
+    {
+      "name": "Terry Johnson",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c55e0d6a-ead9-4e04-9b2c-7bbf611bc56d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/sb293/00_IN/pdf/ (Open States text id 90129544))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-293-2021.00_in.pdf",
+      "sha256": "aa44fe7f4940982c2d4737dc33da353ca4d20627b5e28b1ecc798a13a605ad11"
+    },
+    "note": "As Introduced (00_IN), 134th G.A.; no passage vote on file. New words in the quote: 'without being required to have firearm liability insurance or pay a fee ... ammunition'; the rest of the sentence is existing law."
+  },
+  "operative_text": "Section 1 (R.C. 9.68(A)): Except as specifically provided by the United States Constitution, Ohio Constitution, state law, or federal law, a person, without further license, permission, restriction, delay, or process, including by any ordinance, rule, regulation, resolution, practice, or other action or any threat of citation, prosecution, or other legal process, may own, possess, purchase, acquire, transport, store, carry, sell, transfer, manufacture, or keep any firearm, part of a firearm, its components, and its ammunition, without being required to have firearm liability insurance or pay a fee for the possession of the firearm, parts, components, or ammunition.\nSection 1 (R.C. 9.68(C)(4)): \"Firearm liability insurance\" means a policy of liability insurance covering losses resulting from the use of a firearm owned by the person covered by the policy."
+}

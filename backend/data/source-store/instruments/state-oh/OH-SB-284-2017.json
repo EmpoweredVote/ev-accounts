@@ -1,0 +1,74 @@
+{
+  "id": "OH-SB-284-2017",
+  "scope": "state:oh",
+  "title": "SB284 (132st Legislature (2017-2018)): Raise minimum age to purchase a firearm",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-SB-284",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb284/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cecil Thomas",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Joe Schiavoni",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Michael Skindell",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Sandra R. Williams",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Edna Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Charleta B. Tavares",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kenny Yuko",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Vernon Sykes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb284/00_IN/pdf/ (Open States text id 90121061))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-284-2017.00_in.pdf",
+      "sha256": "686e62df38e741770c3dca3536537c2590ddce795af639199ddc344e35d84bae"
+    },
+    "note": "As Introduced (00_IN), 132nd G.A.; no passage vote on file. Struck: age 18 for long guns and 'handgun' wording replaced by 'firearm'; fifth-degree felony raised to third degree; old R.C. 2923.211(B) (handgun, under 21) struck and folded in. Quotes are the text as it would read after the bill (struck words dropped). Also amends R.C. 2151.022, 2152.02, 2152.16 only to adjust cross-references for juvenile treatment of the purchase offence."
+  },
+  "operative_text": "Section 1 (R.C. 2923.21(A)(1)): Subject to division (B) of this section, sell any firearm to a person who is under twenty-one years of age;\nSection 1 (R.C. 2923.21(A)(2)): Subject to division (B) of this section, furnish any firearm to a person who is under twenty-one years of age, except for lawful hunting, sporting, or educational purposes, including, but not limited to, instruction in firearms or handgun safety, care, handling, or marksmanship under the supervision or control of a responsible adult;\nSection 1 (R.C. 2923.21(C)): Whoever violates this section is guilty of improperly furnishing firearms to an underage person, a felony of the third degree.\nSection 1 (R.C. 2923.211(A)): No person under twenty-one years of age shall purchase or attempt to purchase a firearm.\nSection 1 (R.C. 2923.211(B)): If the offender is under eighteen years of age, underage purchase of a firearm is a delinquent act that would be a felony of the fourth degree if it could be committed by an adult."
+}

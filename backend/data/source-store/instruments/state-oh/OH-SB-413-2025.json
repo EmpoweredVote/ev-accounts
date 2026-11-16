@@ -1,0 +1,39 @@
+{
+  "id": "OH-SB-413-2025",
+  "scope": "state:oh",
+  "title": "SB413 (136th Legislature (2025-2026)): Regards transporting a firearm in a motor vehicle",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/sb413",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb413/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tim Schaffer",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e5023158-e69b-4dec-944d-11701ac8d910"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb413/00_IN/pdf/ (Open States text id 90137078))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-413-2025.00_in.pdf",
+      "sha256": "17c191d8996984691dc9041879beb410097c84a70307b3c941235e97378540b7"
+    },
+    "note": "As introduced (00_IN). Struck from R.C. 2923.16: the old division (B) ban on a loaded firearm accessible to the operator or passengers, the 'firearm is unloaded' requirement, and division (C)(4) (long-gun carry rule). Items (1) and (3) now say 'Unloaded and in'. Remaining divisions renumbered. R.C. 1547.69 (vessels), 2953.35 (sealing of records for the repealed offence) and 4511.19 get matching cross-reference changes."
+  },
+  "operative_text": "Section 1 (R.C. 2923.16): No person shall knowingly transport or have a firearm in a motor vehicle, unless the person may lawfully possess that firearm under applicable law of this state or the United States, and the firearm is carried in one of the following ways: (1) Unloaded and in a closed package, box, or case; (2) In a compartment that can be reached only by leaving the vehicle; (3) Unloaded and in plain sight and secured in a rack or holder made for the purpose;\nSection 1 (R.C. 2923.16): No person shall knowingly transport or have a loaded handgun in a motor vehicle if, at the time of that transportation or possession, any of the following applies: (1) The person is under the influence of alcohol, a drug of abuse, or a combination of them.\nSection 1 (R.C. 1547.69): (2) \"Unloaded\" has the same meanings as in divisions (J)(5) and (6) of section 2923.16 of the Revised Code,"
+}

@@ -1,0 +1,78 @@
+{
+  "id": "OH-SB-351-2021",
+  "scope": "state:oh",
+  "title": "SB351 (134th Legislature (2021-2022)): Enact Defend Our Children Act",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-SB-351",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/sb351/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cecil Thomas",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Tina Maharath",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kenny Yuko",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Nickie Antonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "76a979da-1c4c-4c99-9fbd-bebefeb4cc06"
+    },
+    {
+      "name": "Hearcel Craig",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "05d33654-b85a-4e2f-921c-b823ee7a1c8d"
+    },
+    {
+      "name": "Vernon Sykes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Teresa Fedor",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Dale Martin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "education-equity-programs: Section 4 (uncodified) — $10,000,000 School Climate Grants for positive behavior supports and social-emotional learning (not about guns); closest listed topic, a poor fit"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/sb351/00_IN/pdf/ (Open States text id 90126387))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-351-2021.00_in.pdf",
+      "sha256": "57a53a81ae2db02036b0f9dfb4a7cbb19ce41cfaaab62c649955f3297345e9b2"
+    },
+    "note": "As introduced (00_IN), 134th G.A. R.C. 2923.211: age 18 struck, 21 added; the separate handgun age-21 rule struck and merged. Appropriation (Section 3/4) for school climate grants is not a gun part. Also amends R.C. 109.57, 5122.311 (records checks), 2151.022, 2152.02, 2152.16, 2923.125, 2923.128, 2923.1213, 2923.13, 2923.21, 2929.28. Tax credit is itself a gun tax break so not counted as a second subject."
+  },
+  "operative_text": "Section 1 (R.C. 2923.211): (A) No person under twenty-one years of age shall purchase or attempt to purchase a firearm.\nSection 1 (new R.C. 2923.251): (B) No federally licensed firearms dealer shall transfer a firearm to any person unless the federally licensed firearms dealer complies with the requirements of 18 U.S.C. 922(t) and at least seventy-two hours have elapsed since the person's request to purchase the firearm.\nSection 1 (new R.C. 2923.251): (C)(1) No unlicensed transferor shall transfer a firearm to an unlicensed transferee, unless all of the following apply with respect to the transfer of the firearm:\nSection 1 (new R.C. 2923.26): (B) Any of the following persons may seek relief under sections 2923.26 to 2923.30 of the Revised Code by filing a petition for an extreme risk protection order in the court of common pleas in the county where the petitioner resides or in the county where the respondent resides: (1) A family or household member of the respondent; (2) A law enforcement officer or law enforcement agency.\nSection 1 (new R.C. 2923.26): (M) Upon hearing a petition for an extreme risk protection order, if the court finds by a preponderance of the evidence that the respondent poses a significant danger of causing personal injury to self or others by having custody or control of a firearm or the ability to purchase, possess, or receive a firearm, the court shall issue an extreme risk protection order for a period of one year.\nSection 1 (new R.C. 2923.191): (A)(1) No person shall store or leave a firearm in a manner or location in the person's residence where the person knows or reasonably should know a minor is able to gain access to the firearm.\nSection 1 (new R.C. 5747.83): (B) There is hereby allowed a nonrefundable credit against a taxpayer's aggregate tax liability under section 5747.02 of the Revised Code for amounts spent by the taxpayer during the taxable year to purchase firearms safety storage units."
+}

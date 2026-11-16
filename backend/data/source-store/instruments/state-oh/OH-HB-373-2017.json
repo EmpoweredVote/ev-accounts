@@ -1,0 +1,132 @@
+{
+  "id": "OH-HB-373-2017",
+  "scope": "state:oh",
+  "title": "HB373 (132st Legislature (2017-2018)): Permit concealed carry in courthouses and govt buildings",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-HB-373",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb373/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nino Vitale",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "John Becker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Andrew Brenner",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "6defae87-5c64-41d9-88d8-08faa78d6a43"
+    },
+    {
+      "name": "Tom Brinkman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bill Dean",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Wesley Goodman",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Ron Hood",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Larry Householder",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Candice Keller",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "J. Koehler",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Derek Merrin",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Craig Riedel",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Bill Seitz",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Tim Schaffer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e5023158-e69b-4dec-944d-11701ac8d910"
+    },
+    {
+      "name": "Andy Thompson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Paul Zeltwanger",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Robert Sprague",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "171effdf-cf2b-49aa-ab26-29f26c2be755"
+    },
+    {
+      "name": "Terry Johnson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "c55e0d6a-ead9-4e04-9b2c-7bbf611bc56d"
+    },
+    {
+      "name": "Niraj Antani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/hb373/00_IN/pdf/ (Open States text id 90121701))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-373-2017.00_in.pdf",
+      "sha256": "0eddf343fd917c93d89559394dbf059f2e5bce4bd814e8e565f7dde2c3b57681"
+    },
+    "note": "As introduced (132nd GA); no later amendments in the text read. The (6) item in R.C. 2923.126 is rebuilt from text mixing struck and added words (it ends ';.' as printed). Struck: the ban on licensee carry into a courthouse or building with a courtroom (R.C. 2923.126(B)(3), list renumbered); 'this state or' in the government-facility ban and definitions, so state buildings are no longer barred; the handgun-handover condition in R.C. 2923.123(C); the firearm-in-vehicle rules for the capitol garage (R.C. 105.41(N)) and Riffe center garage (R.C. 123.011(B)). Courthouse limits by court rule stay in R.C. 2923.123."
+  },
+  "operative_text": "Section 1 (R.C. 2923.126): (6) Any building that is a government facility of a political subdivision of this state and that is not a building that is used primarily as a shelter, restroom, parking facility for motor vehicles, or rest facility if the governing body with authority over the building has enacted an ordinance, or policy that prohibits a licensee from carrying a concealed handgun into the building;. (7) A place in which federal law prohibits the carrying of handguns.\nSection 1 (R.C. 2923.126): (3) Any premises or open air arena for which a D permit has been issued under Chapter 4303. of the Revised Code if the licensee's carrying the concealed handgun is in violation of section 2923.121 of the Revised Code;"
+}

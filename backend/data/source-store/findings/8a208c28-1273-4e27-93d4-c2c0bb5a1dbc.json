@@ -267,6 +267,672 @@
         "fetched_at": "2026-11-06T16:42:06.717Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "da67c98d4865bfc8085de964e49c0b9e5e141e5e3c70bb93469a09f903330671",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-HB-227",
+      "date": "2021-11-17",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-227-2021",
+      "act": "nay",
+      "motion": "House Pass",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, House Pass, 2021-11-17: nay (tally 60–32); census gate: none.",
+      "subjects": [
+        "concealed carry without a license for adults 21 and older",
+        "same carry rules as licensees",
+        "duty to disclose carrying only when asked"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the House (02_PH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb227/02_PH/pdf/ (Open States text id 90127360))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-227-2021.02_ph.pdf",
+          "sha256": "1a5c4cda8f87b295cf734a259181d5ddc5431ef45e892701ba0aef59af00839f"
+        }
+      }
+    },
+    {
+      "id": "a611e8298370192ffd280b1acf2ed234dea6e5f46e36748bdaea1baf494e4982",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-HB-325",
+      "date": "2022-02-16",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-325-2021",
+      "act": "nay",
+      "motion": "House Pass",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, House Pass, 2022-02-16: nay (tally 64–35); census gate: none.",
+      "subjects": [
+        "no emergency-time limits on gun or ammunition sales and carry",
+        "concealed-handgun licenses auto-extended during emergencies",
+        "gun stores and ranges deemed essential businesses"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the House (02_PH), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb325/02_PH/pdf/ (Open States text id 90128411))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-325-2021.02_ph.pdf",
+          "sha256": "91588462e02f1830500cd2d7ddc202f155cb79a83f230a1fdcfb28a642416a06"
+        }
+      }
+    },
+    {
+      "id": "aa11d45ab5f542e985ceedd3c439a0dab728d42b9328e8e15357ce4b16f208ac",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA133-HB-425",
+      "date": "2020-06-11",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-425-2019",
+      "act": "nay",
+      "motion": "House Pass",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, House Pass, 2020-06-11: nay (tally 58–32); census gate: none.",
+      "subjects": [
+        "license holder must disclose license and gun only when asked or before officer requests license",
+        "armed school employees exempt from peace officer basic training"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Reported by the Senate Government Oversight and Reform Committee (03_RS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb425/03_RS/pdf/ (Open States text id 90121971))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-425-2019.03_rs.pdf",
+          "sha256": "5bfd75089961aa276f3a9cc7d08ddf20c95b9c7c2c89914c821606fb821f16d1"
+        }
+      }
+    },
+    {
+      "id": "b5d503f0006bf4b43ce0eadccfb62b2c37f363462de23d80ab8de78df75498d9",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA133-HB-86",
+      "date": "2019-02-27",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-86-2019",
+      "act": "nay",
+      "motion": "House Pass",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, House Pass, 2019-02-27: nay (tally 76–20); census gate: none.",
+      "subjects": [
+        "correct 'dangerous ordnance' definition",
+        "long firearms not under National Firearms Act are excluded"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb86/05_EN/pdf/ (Open States text id 90122507))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-86-2019.05_en.pdf",
+          "sha256": "b773bc91a7a3129acf16725522ed4870afc57e578dddd014b3ce862c437e3185"
+        }
+      }
+    },
+    {
+      "id": "047d8d53d150051b203fc40699a99f13171acc6116f9175b4695d0d55da096b1",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-HB-99",
+      "date": "2022-06-01",
+      "date_precision": "day",
+      "instrument_id": "OH-HB-99-2021",
+      "act": "nay",
+      "motion": "House Concurred in Senate amendments",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "OH House, House Concurred in Senate amendments, 2022-06-01: nay (tally 56–35); census gate: multi-subject.",
+      "subjects": [
+        "armed school staff must complete state firearms training",
+        "public notice required when a school authorizes armed persons",
+        "annual criminal records check for authorized armed persons"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb99/05_EN/pdf/ (Open States text id 90126513))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-99-2021.05_en.pdf",
+          "sha256": "b254755f63f83aad528693e42bd6b12777152206b72da9cb67b0a640bbfb23dc"
+        }
+      }
+    },
+    {
+      "id": "5b13e04249ee1f8393f6e496d47dc5ffe29aed7cda9c30263e2d51d945f65538",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/sb148",
+      "date": "2024-02-28",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-148-2023",
+      "act": "nay",
+      "motion": "Senate Pass",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH Senate, Senate Pass, 2024-02-28: nay (tally 25–7); census gate: none.",
+      "subjects": [
+        "ban on government registries of gun owners",
+        "no firearms merchant codes for card payments",
+        "attorney general enforcement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/sb148/02_PS/pdf/ (Open States text id 90134246))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-148-2023.02_ps.pdf",
+          "sha256": "c85d4ca077cb7193a22540748b09fce51ff4fb621a3ae12a142a6471d9949f0e"
+        }
+      }
+    },
+    {
+      "id": "38fd291607cfc213baa8b546b82eedbd1f94b441ddd7398f79f64451c81d34ea",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA133-SB-175",
+      "date": "2020-12-17",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-175-2019",
+      "act": "nay",
+      "motion": "House Pass",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, House Pass, 2020-12-17: nay (tally 52–31); census gate: none.",
+      "subjects": [
+        "civil immunity for nonprofits when licensees carry handguns",
+        "no duty to retreat anywhere lawfully present"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (06_EN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/sb175/06_EN/pdf/ (Open States text id 90124974))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-175-2019.06_en.pdf",
+          "sha256": "be7614943a011cc6baec0fd550ed681df934fcf4465b2d43313c9441c0835122"
+        }
+      }
+    },
+    {
+      "id": "6ca24e0d97f68158aaf077aaff21c0715e05e9c14bc6db59c2fe76536359ab83",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sb214",
+      "date": "2026-11-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-214-2025",
+      "act": "nay",
+      "motion": "Senate Concurred in House amendments",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH Senate, Senate Concurred in House amendments, 2026-11-10: nay (tally 21–9); census gate: none.",
+      "subjects": [
+        "suppressors no longer dangerous ordnance",
+        "hunting with suppressors without federal registration condition"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb214/02_PS/pdf/ (Open States text id 90138616))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-214-2025.02_ps.pdf",
+          "sha256": "9f8629a8e30d3ebc5dc3cf8a56567fb4f23739b47d72d144069ab43b9a6904ed"
+        }
+      }
+    },
+    {
+      "id": "d2513f0eaa261ee5fd9ef9b7b769e53d8b6133706bbbc9f354909799a6cc6203",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-SB-215",
+      "date": "2022-03-02",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-215-2021",
+      "act": "nay",
+      "motion": "House Pass",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH House, House Pass, 2022-03-02: nay (tally 58–36); census gate: none.",
+      "subjects": [
+        "permitless concealed carry for adults 21 and older",
+        "licensees need not carry license or volunteer that they carry unless asked"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (05_EN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/sb215/05_EN/pdf/ (Open States text id 90130327))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-215-2021.05_en.pdf",
+          "sha256": "dddae0081901748ede39524ddca0094c322a065fe443d8ffdbae0913c1a95fa4"
+        }
+      }
+    },
+    {
+      "id": "55520c7468b2bfbfb85e70684af98d5cd7d3a9cac3006f6912759109436af39e",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sb273",
+      "date": "2026-06-10",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-273-2025",
+      "act": "yea",
+      "motion": "Senate Concurred in House amendments",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "OH Senate, Senate Concurred in House amendments, 2026-06-10: yea (tally 32–0); census gate: near-unanimous.",
+      "subjects": [
+        "voluntary gun storage with dealers or police",
+        "civil immunity for storage holders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (07_EN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb273/07_EN/pdf/ (Open States text id 90137875))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-273-2025.07_en.pdf",
+          "sha256": "4b62c4097cf098dc326ed83b2d798e434d9a36e5498c9cf8b9cc3a0ba9d87bb7"
+        }
+      }
+    },
+    {
+      "id": "9f8e3ad35020556af8870032174ee09819b1131dfd453c0dcdbc3d05a4d85ee9",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sb278",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-278-2025",
+      "act": "nay",
+      "motion": "Senate Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "OH Senate, Senate Passed, 2026-04-15: nay (tally 24–9); census gate: none.",
+      "subjects": [
+        "punitive damages against localities that pass gun rules",
+        "state preemption of local gun regulation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb278/02_PS/pdf/ (Open States text id 90139452))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-278-2025.02_ps.pdf",
+          "sha256": "258dc802478d7e98f492a53b05b6817d9be04f1c5c5f3c1ad6fc32d45aea78e1"
+        }
+      }
+    },
+    {
+      "id": "8cf84c323a644d129cdd95d7422b853b36a95de911da98f037e4b926b0ffcabd",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sb321",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "instrument_id": "OH-SB-321-2025",
+      "act": "yea",
+      "motion": "Senate Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "OH Senate, Senate Passed, 2026-04-15: yea (tally 33–0); census gate: near-unanimous.",
+      "subjects": [
+        "special police officers at state mental health and disability institutions may carry firearms on duty",
+        "firearm certification and training conditions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb321/02_PS/pdf/ (Open States text id 90138316))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-321-2025.02_ps.pdf",
+          "sha256": "56c06cf0c727be6e54c0974add6919b7a80c9d4974468e6d29548d4aebda5774"
+        }
+      }
+    },
+    {
+      "id": "6805268167eafd8b9084c08d3bc46d1ebb97b5b2465f55c8dfdb46a648219325",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA134-HB-259",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-259-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-HB-259-2021 (sponsor list (prime / co-sponsor)): HB259 (134th Legislature (2021-2022)): Enact Protect Law Enforcement Act.",
+      "subjects": [
+        "background check on every firearm transfer",
+        "private sales through a dealer or police agency",
+        "penalty for illegal firearm transfer",
+        "immediate mental-health records checks for transfers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_134/legislation/hb259/00_IN/pdf/ (Open States text id 90129130))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-259-2021.00_in.pdf",
+          "sha256": "6faa6dbc02f07ba2fda04b652703417fda60535dd1a7c0179baba362ca1ba382"
+        }
+      }
+    },
+    {
+      "id": "ab5a9423760c506a701c8570092d497a36d664e3911da1df4a6dc9fade3523d8",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA133-HB-317",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-317-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-HB-317-2019 (sponsor list (prime / co-sponsor)): HB317 (133rd Legislature (2019-2020)): Limit how gun may be transferred and require background check.",
+      "subjects": [
+        "background check on every firearm transfer",
+        "private sales through a dealer or police agency",
+        "penalty for illegal firearm transfer",
+        "immediate mental-health records checks for transfers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb317/00_IN/pdf/ (Open States text id 90125361))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-317-2019.00_in.pdf",
+          "sha256": "d53119b0452e081187f150e4a49882d1a945dfb0470ac9b6b063d53a99de6521"
+        }
+      }
+    },
+    {
+      "id": "66fd69b1f7075df2b88ffaeef4bca1f25a81cdc5b78e1974d35892cdd60bc160",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA133-HB-319",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "OH-HB-319-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-HB-319-2019 (sponsor list (prime / co-sponsor)): HB319 (133rd Legislature (2019-2020)): Restore local authority to regulate firearm-related conduct.",
+      "subjects": [
+        "repeal of state preemption of local gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_133/legislation/hb319/00_IN/pdf/ (Open States text id 90125348))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-319-2019.00_in.pdf",
+          "sha256": "2fbdb4e60dec35281c11e2b21bedaadffe2a8d05483eab2551927bced9b5e147"
+        }
+      }
+    },
+    {
+      "id": "86d3b2147bd40b5f78a759a9f392afebaec0a53b7a27f01040a3f2003cdc2812",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/sb187",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "OH-SB-187-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-SB-187-2023 (sponsor list (prime / co-sponsor)): SB187 (135th Legislature (2023-2024)): Prohibit firearm possession with a domestic violence conviction.",
+      "subjects": [
+        "firearm ban for misdemeanor domestic violence charge or conviction"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/sb187/00_IN/pdf/ (Open States text id 90134229))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-187-2023.00_in.pdf",
+          "sha256": "c86b989532dd2309d945d79af30804be7cfc0d1823c63058699f59ea027cb848"
+        }
+      }
+    },
+    {
+      "id": "75d0aac4438d1bf700fa4589ce79a12527c5875a1c8fbebbd66535be636a917c",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/sb209",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "OH-SB-209-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of OH-SB-209-2023 (sponsor list (prime / co-sponsor)): SB209 (135th Legislature (2023-2024)): Regards lost or stolen firearms.",
+      "subjects": [
+        "duty to report lost or stolen firearms",
+        "higher penalty for failing to report"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/sb209/00_IN/pdf/ (Open States text id 90133558))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-209-2023.00_in.pdf",
+          "sha256": "fd4d92683f5089e73b1384f9523b2e293d2c6cf02831cf557b85068f6e01e84f"
+        }
+      }
+    },
+    {
+      "id": "75443324e54780d38a46cbdda42f6d94dadfd42a0e2731f49f3f6690d8e4cc27",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sb235",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OH-SB-235-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-SB-235-2025 (sponsor list (prime / co-sponsor)): SB235 (136th Legislature (2025-2026)): Prohibit certain conduct that accelerates firearm's rate of fire.",
+      "subjects": [
+        "ban on bump stocks and trigger cranks",
+        "weapons disability after conviction under the ban"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb235/00_IN/pdf/ (Open States text id 90138217))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-235-2025.00_in.pdf",
+          "sha256": "27ad44ea7853d34f4b6924d1cce0bb683914417500ce2d653d7f4d9607ee2f7f"
+        }
+      }
+    },
+    {
+      "id": "46f79f087b0f2ec7a27cfca072c34c89daa61aeb8dee077b3161a26c929dcc02",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sb236",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OH-SB-236-2025",
+      "act": "sponsor",
+      "motion": "prime sponsor, sponsor list (prime / co-sponsor)",
+      "note": "prime sponsor of OH-SB-236-2025 (sponsor list (prime / co-sponsor)): SB236 (136th Legislature (2025-2026)): Enact the Suicide Self-Defense Act.",
+      "subjects": [
+        "voluntary do-not-possess firearms registry",
+        "ban on selling firearms to registrants",
+        "surrender of firearms on enrollment",
+        "concealed handgun license suspended on enrollment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb236/00_IN/pdf/ (Open States text id 90137792))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-236-2025.00_in.pdf",
+          "sha256": "f83cbaf9d9385236365646c6d8430f20c4f40a556393fd4467f86a0dc586d11d"
+        }
+      }
+    },
+    {
+      "id": "604b37dadf3511a4442173d81c6b9bfbde0029ceb2178fc5451cf9e9ff8991c4",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sb273",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OH-SB-273-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-SB-273-2025 (sponsor list (prime / co-sponsor)): SB273 (136th Legislature (2025-2026)): Enact the Keep Them Safe Act.",
+      "subjects": [
+        "voluntary gun storage with dealers or police",
+        "civil immunity for storage holders"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Enrolled (07_EN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb273/07_EN/pdf/ (Open States text id 90137875))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-273-2025.07_en.pdf",
+          "sha256": "4b62c4097cf098dc326ed83b2d798e434d9a36e5498c9cf8b9cc3a0ba9d87bb7"
+        }
+      }
+    },
+    {
+      "id": "f8eb4bea283f551df7421ae947adb7fb3e567afa80a10aa9c8003c789473c1b1",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/sb307",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "OH-SB-307-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-SB-307-2023 (sponsor list (prime / co-sponsor)): SB307 (135th Legislature (2023-2024)): Regards items that accelerate a firearm's rate of fire.",
+      "subjects": [
+        "ban on bump stocks and trigger cranks",
+        "rate-of-fire accelerator devices",
+        "weapons disability after conviction"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/sb307/00_IN/pdf/ (Open States text id 90134833))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-307-2023.00_in.pdf",
+          "sha256": "b6e5edeb219ea3844f1f9ca4d7a24cdb8201a3671cdd4e47fa6c2ac21c070d0d"
+        }
+      }
+    },
+    {
+      "id": "5384cb845eaf5f71acdfc3d17071eea4ba8a4dac6e2c26e786086d1f06ecce87",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/136/sb321",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "OH-SB-321-2025",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-SB-321-2025 (sponsor list (prime / co-sponsor)): SB321 (136th Legislature (2025-2026)): Regards carrying of firearms by certain special police officers.",
+      "subjects": [
+        "special police officers at state mental health and disability institutions may carry firearms on duty",
+        "firearm certification and training conditions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Passed by the Senate (02_PS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sb321/02_PS/pdf/ (Open States text id 90138316))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-321-2025.02_ps.pdf",
+          "sha256": "56c06cf0c727be6e54c0974add6919b7a80c9d4974468e6d29548d4aebda5774"
+        }
+      }
+    },
+    {
+      "id": "655322e8d52bd8a4d11563c0a9e7dcc632b61a1cdaf07e196fc45b231cb6d7c9",
+      "kind": "record",
+      "url": "https://www.legislature.ohio.gov/legislation/135/sb78",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "OH-SB-78-2023",
+      "act": "sponsor",
+      "motion": "co sponsor, sponsor list (prime / co-sponsor)",
+      "note": "co sponsor of OH-SB-78-2023 (sponsor list (prime / co-sponsor)): SB78 (135th Legislature (2023-2024)): Restore local authority to regulate firearms-related conduct.",
+      "subjects": [
+        "repeal of state preemption of local gun rules",
+        "local authority to regulate firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_135/legislation/sb78/00_IN/pdf/ (Open States text id 90132214))",
+        "fetched_at": "2026-11-16T02:22:15.263179Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-78-2023.00_in.pdf",
+          "sha256": "f4b9499a1028bffb7d3ddf43a5de79f2b0a0995f8e0efd245e41a12a8091adc1"
+        }
+      }
     }
   ],
   "searches": [

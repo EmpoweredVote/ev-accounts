@@ -1,0 +1,64 @@
+{
+  "id": "OH-SB-219-2017",
+  "scope": "state:oh",
+  "title": "SB219 (132st Legislature (2017-2018)): Prohibit accelerating semi-automatic firearm's rate of fire",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/legislation-summary?id=GA132-SB-219",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb219/01_RCS/pdf/"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Cecil Thomas",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "7eb434dc-21a2-4fd9-a12e-f9002238fa0a"
+    },
+    {
+      "name": "Vernon Sykes",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Kenny Yuko",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Edna Brown",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Charleta B. Tavares",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    },
+    {
+      "name": "Joe Schiavoni",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Re-referred to the Senate Government Oversight and Reform Committee (01_RCS), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_132/legislation/sb219/01_RCS/pdf/ (Open States text id 90120889))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-SB-219-2017.01_rcs.pdf",
+      "sha256": "213113fb9d66a656b2ee1d20a33151d93e10cb5fb11227e4bf036d2aea2b58b8"
+    },
+    "note": "Version: as re-referred to the Senate Government Oversight and Reform Committee (01_RCS). No passage vote. R.C. 2923.14(F)(4) also adds division (A)(6) (struck: 'or,')."
+  },
+  "operative_text": "Section 1 (new R.C. 2923.133): (A) On and after the date that is one hundred eighty days after the effective date of this section, no person shall import, manufacture, sell, transfer, or possess a trigger crank, a bump-fire device, or any part, combination of parts, component, device, attachment, or accessory that is designed or functions to accelerate the rate of fire of a semi-automatic firearm but not convert the semi-automatic firearm into an automatic firearm. Section 1 (new R.C. 2923.133): (C) Whoever violates division (A) of this section is guilty of \"illegal rate-of-fire acceleration conduct,\" a felony of the fourth degree. Section 1 (R.C. 2923.13): (6) The person has been convicted of a violation of section 2923.133 of the Revised Code or has been adjudicated a delinquent child for the commission of a violation of that section."
+}

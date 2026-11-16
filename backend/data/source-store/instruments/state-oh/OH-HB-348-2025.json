@@ -1,0 +1,159 @@
+{
+  "id": "OH-HB-348-2025",
+  "scope": "state:oh",
+  "title": "HB348 (136th Legislature (2025-2026)): Regards duty to carry a concealed handgun license, notify police",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/hb348",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb348/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dani Isaacsohn",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd927b66-84c3-4378-a91e-130b22439a9d"
+    },
+    {
+      "name": "Meredith Lawson‐Rowe",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "4ff0f9fe-1320-449b-be74-b5a6575d7124"
+    },
+    {
+      "name": "Rachel Baker",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "cd7b7bec-2510-4837-b0c2-7c034d4261c7"
+    },
+    {
+      "name": "Sean Brennan",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1fe75280-5b41-44a9-b531-22a0807204eb"
+    },
+    {
+      "name": "Juanita Brent",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "9efe40f7-225a-411d-b9d2-3344dc35a7b5"
+    },
+    {
+      "name": "Darnell Brewer",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "e3a15886-3141-4bfe-98fe-dc1d7e8d097e"
+    },
+    {
+      "name": "Karen Brownlee",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "490686f4-3f50-4d88-b9a6-e3ed9becd942"
+    },
+    {
+      "name": "Michele Grim",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "88e8aa9b-048a-4c59-9742-ba763a554751"
+    },
+    {
+      "name": "Dontavius Jarrells",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "3bcde814-f8ca-4ade-89d4-f661aa48b3b6"
+    },
+    {
+      "name": "Crystal Lett",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "646f54af-59f5-4406-997b-36222d75c2cd"
+    },
+    {
+      "name": "Lauren McNally",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "fd22b985-97df-447f-b532-937b3a9cbd64"
+    },
+    {
+      "name": "Ismail Mohamed",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "43f9a2bc-7efe-4947-a430-38181893ee9a"
+    },
+    {
+      "name": "Beryl Piccolantonio",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "80b114d4-7be5-4733-99f2-0487b33de7a7"
+    },
+    {
+      "name": "Tristan Rader",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8435eda6-cd1c-4e41-9dc9-bffbc76fc70b"
+    },
+    {
+      "name": "Phil Robinson",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "dba42b9c-10a8-4c4c-9c44-8e02c1ce9eab"
+    },
+    {
+      "name": "Veronica Sims",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "8215a745-c232-45e5-8e29-990a97029c02"
+    },
+    {
+      "name": "Anita Somani",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "b424ad5b-4b36-4f9a-b884-a00c355dd88c"
+    },
+    {
+      "name": "Bride Sweeney",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "f3bd9945-466a-496b-ab9a-ce3ef3864c45"
+    },
+    {
+      "name": "Eric Synenberg",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "da607bda-5e16-4ed9-998d-3c65dc09e651"
+    },
+    {
+      "name": "Desireè Tims",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "63858f7f-b890-4e2c-bdc3-2ad4870ee6b5"
+    },
+    {
+      "name": "Terrence Upchurch",
+      "role": "co",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "032c981a-13dd-4d31-8e2e-4b9dcfa0e38a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb348/00_IN/pdf/ (Open States text id 90136111))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-348-2025.00_in.pdf",
+      "sha256": "efc8f1f7fce4eb373a310293141afba5bfaf85865faec3eebdce68512ca8eff4"
+    },
+    "note": "As introduced; large file read by grep and section. Struck: 'concealed handgun' (renamed 'basic competency' throughout 24 sections), the 'license is valid' wording, and the old rule that told officers only when asked. Added: duty to carry the license and inform officers. Section 3 repeals R.C. 2923.111 (named in the title as the S.B. 215 change); the repeal line is not quoted. Section 4 (uncodified) is a harmonization finding."
+  },
+  "operative_text": "Section 1 (R.C. 2923.126(A)): A licensee who has been issued a license under that section shall be granted a grace period of thirty days after the licensee's license expires during which the licensee's license remains valid. Except as provided in divisions (B) and (C) of this section, a licensee who has been issued a basic competency license under section 2923.125 or 2923.1213 of the Revised Code may carry a concealed handgun anywhere in this state if the licensee also carries a valid license when the licensee is in actual possession of a concealed handgun.\nSection 1 (R.C. 2923.126(A)): If a licensee is the driver or an occupant of a motor vehicle that is stopped as the result of a traffic stop or a stop for another law enforcement purpose and if the licensee is transporting or has a loaded handgun in the motor vehicle at that time, the licensee shall promptly inform any law enforcement officer who approaches the vehicle while stopped that the licensee has been issued a basic competency license and that the licensee currently possesses or has a loaded handgun; the licensee shall not knowingly disregard or fail to comply with lawful orders of a law enforcement officer given while the motor vehicle is stopped, knowingly fail to remain in the motor vehicle while stopped, or knowingly fail to keep the licensee's hands in plain sight after any law enforcement officer begins approaching the licensee while stopped and before the officer leaves, unless directed otherwise by a law enforcement officer; and the licensee shall not knowingly have contact with the loaded handgun by touching it with the licensee's hands or fingers, in any manner in violation of division (E) of section 2923.16 of the Revised Code, after any law enforcement officer begins approaching the licensee while stopped and before the officer leaves.\nSection 1 (R.C. 2923.126(A)): If a licensee is stopped for a law enforcement purpose and if the licensee is carrying a concealed handgun at the time the officer approaches, the licensee shall promptly inform any law enforcement officer who approaches the licensee while stopped that the licensee has been issued a basic competency license and that the licensee currently is carrying a concealed handgun; the licensee shall not knowingly disregard or fail to comply with lawful orders of a law enforcement officer given while the licensee is stopped, or knowingly fail to keep the licensee's hands in plain sight after any law enforcement officer begins approaching the licensee while stopped and before the officer leaves, unless directed otherwise by a law enforcement officer; and the licensee shall not knowingly remove, attempt to remove, grasp, or hold the loaded handgun or knowingly have contact with the loaded handgun by touching it with the licensee's hands or fingers, in any manner in violation of division (B) of section 2923.12 of the Revised Code, after any law enforcement officer begins approaching the licensee while stopped and before the officer leaves."
+}

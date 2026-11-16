@@ -1,0 +1,45 @@
+{
+  "id": "OH-HB-68-2025",
+  "scope": "state:oh",
+  "title": "HB68 (136th Legislature (2025-2026)): Regards conceal carry locations, nonresident firearms disability",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/136/hb68",
+    "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb68/00_IN/pdf/"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Adam Mathews",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "1d04f3a2-df2a-4f90-859a-4088d181979c"
+    },
+    {
+      "name": "Justin Pizzulli",
+      "role": "prime",
+      "version": "sponsor list (prime / co-sponsor)",
+      "politician_id": "beddbf6e-98f1-4172-9b17-40331a2c16f0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Ohio) (gun-policy Stage 5, Ohio); operative text read by a Sonnet fill agent from the official Ohio text (As Introduced (00_IN), ; official copy, https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/hb68/00_IN/pdf/ (Open States text id 90138772))",
+    "fetched_at": "2026-11-16T02:22:15.263179Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/OH-HB-68-2025.00_in.pdf",
+      "sha256": "5f95a672ea703aa3ddae0e5a384e595d15bdd64a65fac69843ec539a87bf64bd"
+    },
+    "note": "As introduced. In R.C. 2923.14(A)(1) 'in the county in which the person resides' is struck and replaced by 'specified in this division'; the quoted sentence is the added venue rule. Division (C)(6) cross-reference changed to 'divisions (C)(7) and (E)'; 'or guilty plea' added in several places."
+  },
+  "operative_text": "Section 1 (R.C. 2923.123): (7) A person who conveys or attempts to convey a handgun into a building or structure in which a courtroom is located or possesses or has under the person's control a handgun in a building or structure in which a courtroom is located, if the person has been issued a concealed handgun license that is valid at the time of the conveyance, attempted conveyance, possession, or control if all of the following apply: (a) The building or structure in which the courtroom is located is not a courthouse. (b) The building or structure in which the courtroom is located is a government facility of this state or a political subdivision of this state. (c) The court and the office of the clerk of the court are not in operation at the time of the conveyance, possession, or control. (d) The governing body with authority over the building or structure in which the courtroom is located has enacted a statute, ordinance, or policy that permits a concealed handgun licensee to convey, possess, or control a handgun into the building or structure in which the courtroom in located.\nSection 1 (R.C. 2923.14): An application for relief from the prohibition shall be filed in the court of common pleas of the county in which the person resides or, if the person is not a resident of this state and the prohibition is based on an indictment, a conviction of or plea of guilty to an offense, or a delinquent child adjudication, in the county in which the indictment was entered or in which the conviction, guilty plea, or adjudication occurred."
+}
