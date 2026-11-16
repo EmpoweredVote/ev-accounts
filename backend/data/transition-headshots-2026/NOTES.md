@@ -897,3 +897,70 @@ portraits for these winners. **Measured 2026-11-16, and the two chambers differ:
 better portraits than Washington's or Wisconsin's 150×200, but its Assembly still falls short of
 600×750. Correcting an earlier draft of this line, which claimed the Assembly portraits were
 full-size without measuring them.
+
+# Colorado, Texas and Utah — 3 of 5 imported (CC_0443, 2026-11-16)
+
+## 🔴🔴 The twin: TX-22, and why the picture cannot settle it
+
+**Trever Nehls** (TX-22) is the **identical twin** of the sitting member **Troy Nehls**. Both are
+Nehls, both served as US Army officers, both have en.wikipedia articles **with photographs**, and
+Troy held the very seat Trever just won — so the two men are attached to the **same district**.
+
+- Looking at the picture does not settle it. **Neither does the uniform**: the name tape in the
+  photograph reads **NEHLS**, which is true of both brothers.
+- 🟢 **It was settled at the source.** The DoD caption for the original DVIDS image
+  (`dvidshub.net/image/6139335`) reads *"Brig. Gen. Howard Geck … hands **Col. Trever Nehls**,
+  civil affairs officer in charge, the 'Distinguished Member' plaque"*. It names Trever and
+  **never mentions Troy**. Both brothers' Commons files were fetched and compared, not one taken
+  on trust.
+- ⚠ **Troy's congressional portrait IS legitimately public domain** and is a clean 1536×1920 —
+  i.e. exactly the high-quality, correctly-licensed file that would have been most tempting to
+  take. **A good licence is not evidence of the right person.**
+
+## 🟢 The first genuinely public-domain photograph in this programme
+
+Across `CC_0383`, `CC_0438`–`CC_0442` **every** licence came back `unknown`, and two batches found
+Commons tags claiming "public domain" for **city** work, which is wrong. Trever Nehls' portrait is
+different in kind: taken by **Spc. Dakota Vanidestine, a US Army photographer**, published through
+DVIDS — **federal** work, so 17 USC §105 genuinely applies.
+
+▶ `CC_0443` carries a **gate 7** asserting the split is exactly 2 `unknown` + 1 `public_domain`,
+so a later edit cannot spread the claim. ⚠ Watch that gate fail properly: a first tamper appended
+`-- TAMPER_E` after the closing paren, **commented out the VALUES comma**, and produced a syntax
+error — the run failed without ever reaching gate 7, while the marker check still passed. **A
+tamper that breaks the SQL tests nothing and looks like a pass.**
+
+## Colorado — the same site serves wildly different sizes
+
+`leg.colorado.gov` serves Rails **active_storage originals**, so what a member supplied is what you
+get: **Carver 2215×3322** and **Vigil 314×432** from the same site, same template.
+▶ Do not generalise a chamber's portrait size from one member. Measure each.
+
+**Steph Vigil** was sourced from her campaign at 3628×3628 and her identity **confirmed against
+her own 314×432 official portrait** — too small to publish, authoritative about who she is. That
+is the identity-reference pattern from `CC_0440` and `CC_0441`, used a third time.
+
+## 🔴 Utah blocks us twice over — both seats still open
+
+- `le.utah.gov` answers **HTTP 200 with 247 bytes reading "Request Rejected"** — a refusal wearing
+  a success code. Judge the body, never the status.
+- `house.utleg.gov/rep/<ID>/` returns a page whose `<title>` says "Representative Page" and whose
+  **rendered body carries no name and no images**. Sotelo's and Howells' pages differ by **a single
+  byte** because they are the same empty template. ⚠ A raw-HTML surname match passes on these
+  pages (the id is echoed in a script blob) — only the **rendered text** shows the truth.
+- **Sergio Sotelo** (House 38, independent) — no campaign site resolves.
+- **Drew Howells** (House 39) — `howellsforutah.com` serves a **615-byte stub**, `drewhowells.com`
+  **114 bytes**.
+
+▶ Utah seats its legislature in January. Re-check then — but **measure the portrait size before
+planning around it**, because four states so far publish below our floor.
+
+## Outcome — faceless legislative winners 32 → 29
+
+| | | | |
+| --- | --- | --- | --- |
+| Terri Carver | Colorado Senate 9 | 2215×3322 | `unknown` — leg.colorado.gov page that names her |
+| Steph Vigil | Colorado House 16 | 3628×3628 | `unknown` — campaign, identity confirmed vs her official portrait |
+| Trever Nehls | Texas CD 22 | 1081×1442 | 🟢 `public_domain` — US Army / DVIDS |
+| Sergio Sotelo | Utah House 38 | ❌ | no source |
+| Drew Howells | Utah House 39 | ❌ | no source |
