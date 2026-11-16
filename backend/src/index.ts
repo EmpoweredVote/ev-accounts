@@ -98,6 +98,7 @@ import { maybeResumeBackfillOnBoot } from './lib/fecBackfill.js';
 import { maybeResumeFecBurstOnBoot } from './lib/fecBurstResume.js';
 import { pool as enginePool } from './lib/db.js';
 import { pool as triviaPool } from './trivia/config/database.js';
+import robotsRouter from './routes/robots.js';
 
 const app = express();
 
@@ -105,6 +106,9 @@ const app = express();
 app.set('trust proxy', 1);
 
 app.use(helmet());
+
+// Plain-text robots.txt for both API hostnames. See routes/robots.ts.
+app.use(robotsRouter);
 
 // ⚠⚠ MOUNTED BEFORE cookieParser AND THE GLOBAL CORS ALLOWLIST, DELIBERATELY.
 // The global policy below sets `credentials: true`, and a browser REJECTS
