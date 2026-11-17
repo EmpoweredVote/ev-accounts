@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { evaluate, formatProblemLine, scheduleIntervalMinutes, type PgCronRow } from './jobHealthRules.js';
+import { evaluate, formatProblemLine, HTTP_CONFLICT_MIN_RESPONSES, scheduleIntervalMinutes, type PgCronRow } from './jobHealthRules.js';
 
 const now = new Date('2026-10-26T13:00:00Z');
 const ago = (minutes: number) => new Date(now.getTime() - minutes * 60_000);
@@ -96,6 +96,41 @@ describe('evaluate', () => {
     expect(problems.map((p) => p.what)).toEqual([
       "3 runs stuck in 'running' for over 24h",
       '72 requests answered HTTP 401',
+    ]);
+  });
+
+  it('ignores one or two HTTP 409 (already-running) answers', () => {
+    const problems = evaluate({
+      ...base,
+      http: [
+        { status_code: 409, timed_out: false, error_msg: null, responses: 1, first_seen: ago(30) },
+        { status_code: 409, timed_out: false, error_msg: null, responses: 2, first_seen: ago(30) },
+      ],
+    });
+    expect(problems).toEqual([]);
+  });
+
+  it(`reports HTTP 409 at ${HTTP_CONFLICT_MIN_RESPONSES} or more answers`, () => {
+    const problems = evaluate({
+      ...base,
+      http: [{ status_code: 409, timed_out: false, error_msg: null, responses: 3, first_seen: ago(30) }],
+    });
+    expect(problems.map((p) => p.what)).toEqual(['3 requests answered HTTP 409']);
+  });
+
+  it('still reports every other refused trigger at a count of one', () => {
+    const problems = evaluate({
+      ...base,
+      http: [
+        { status_code: 401, timed_out: false, error_msg: null, responses: 1, first_seen: ago(30) },
+        { status_code: 500, timed_out: false, error_msg: null, responses: 1, first_seen: ago(30) },
+        { status_code: null, timed_out: true, error_msg: null, responses: 1, first_seen: ago(30) },
+      ],
+    });
+    expect(problems.map((p) => p.what)).toEqual([
+      '1 request answered HTTP 401',
+      '1 request answered HTTP 500',
+      '1 request timed out',
     ]);
   });
 

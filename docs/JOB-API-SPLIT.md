@@ -68,7 +68,7 @@ the job worked — the thing to watch after Move 2.
 | Render cron — stopped running, or exits 0 having done nothing | `job-health` rule (c): the "proof it ran" column above, 48h for daily jobs, 40 days for monthly ones | `job-health` email |
 | pg_cron — a run fails | `job-health` rule (a), via `ops.pg_cron_health()` (CA_0332). Supabase has no built-in pg_cron alert | `job-health` email |
 | pg_cron — stops being scheduled | `job-health` rule (b): newest run older than 3× the job's own interval | `job-health` email |
-| pg_cron HTTP trigger refused (401, 5xx, timeout) — pg_cron still says `succeeded` | `job-health`, via `ops.http_trigger_health()` (pg_net keeps ~6h of responses; `vq-consensus` fires every 5 min, so a dead API or a rotated token shows) | `job-health` email |
+| pg_cron HTTP trigger refused (401, 5xx, timeout) — pg_cron still says `succeeded` | `job-health`, via `ops.http_trigger_health()` (pg_net keeps ~6h of responses; `vq-consensus` fires every 5 min, so a dead API or a rotated token shows). **409 (`already-running`) is reported only at 3+ responses in that window** (`HTTP_CONFLICT_MIN_RESPONSES`): one or two are one slow run skipping its next starts, the overlap guard working; 3+ means a run stuck past ~15 min or repeated overlaps. Every other status alerts at any count | `job-health` email |
 | `ingestion_runs` stuck in `running` > 24h | `job-health` rule (d) | `job-health` email |
 
 Not covered by a staleness rule, on purpose: `trivia-election-detection` (writes nothing on a
