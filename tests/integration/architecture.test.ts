@@ -31,6 +31,9 @@ const ALLOWED = [
   'lib/profileService.ts',
   'lib/xpService.ts',
   'lib/cronService.ts',
+  // Background job (LegiScan dataset archive, CA_0382): uploads a zip to Storage. No
+  // request, no caller, no user rows — a Storage write the user client cannot make.
+  'lib/legiscan/archive.ts',
   // supabaseAdmin.auth.admin.createUser — an auth-admin operation the user client
   // cannot perform, same justification as lib/authService.ts. Its own header notes it
   // lives in lib/ *because* of this rule; the author read the routes-only test and not
@@ -46,6 +49,25 @@ const ALLOWED = [
   // body. It cannot use a user client — admin_users is not readable as the caller.
   'middleware/requireCompassReviewer.ts',
   'routes/auth.ts',
+  // ── trivia/: Civic Trivia, folded into the engine (ev-cto decision 0013; this copy is
+  // canonical). Enumerated file by file for the same reason middleware is — a new trivia
+  // file that touches the service role must earn its own line. trivia/ defines its own
+  // service-role client under the same name; most trivia data goes through Drizzle (`db`),
+  // a direct Postgres connection that RLS does not apply to either.
+  // The client's definition.
+  'trivia/config/supabase.ts',
+  // requireAdmin / requireSuperAdmin / resolveAdminContext: admin_users + user_roles
+  // lookups that decide a 403 — same class as middleware/requireAdmin.ts.
+  'trivia/middleware/auth.ts',
+  // /admins endpoints, behind requireSuperAdmin: list, grant and revoke admin_users rows
+  // and resolve emails via auth.admin — auth-admin operations no user client can perform.
+  'trivia/routes/admin.ts',
+  // Public leaderboard: intentionally cross-user (top 25 by XP, pseudonymous display_name,
+  // email-shaped names stripped). A caller's user client cannot read other users' rows.
+  'trivia/routes/leaderboard.ts',
+  // GET /xp/history: get_ctc_xp_history RPC called with p_user_id = req.userId (requireAuth
+  // on the router), so it returns only the caller's own rows.
+  'trivia/routes/profile.ts',
 ];
 
 // 🔑 MIDDLEWARE IS ENUMERATED, NOT EXEMPT — the second test below scans ALL of backend/src,

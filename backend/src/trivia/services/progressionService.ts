@@ -3,7 +3,6 @@
  * Handles rewards calculation and user stats updates after game completion
  */
 
-import { supabaseAdmin } from '../config/supabase.js';
 import { db } from '../db/index.js';
 import { playerStats } from '../db/schema.js';
 import { sql } from 'drizzle-orm';
