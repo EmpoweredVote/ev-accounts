@@ -33,6 +33,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { decodeHtmlBytes, EMPOWERED_VOTE_UA } from '../../../src/lib/verificationFetch.js';
 import { fetchWithHostTrust } from '../../../src/lib/adapters/hostTrust.js';
+import { extractPdfText, looksLikePdfBytes } from '../../../src/lib/pdfText.js';
 import { isStateRollCallUrl, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
 
 /** One floor roll call as a bill's vote list gives it. */
@@ -189,6 +190,117 @@ export const INDEX: Record<string, StateIndex> = {
   },
 };
 
+// ── South Dakota sponsorships (runner, 2026-11-17: cite the introduced text) ─────────────────────────────────────
+// The bill page (/Session/Bill/<id>) is a script shell, so a sponsorship is cited on the bill's introduced text, a
+// PDF at mylrc.sdlegislature.gov/api/Documents/<DocumentId>.pdf, which prints "Introduced by: ...". The legislature's
+// data lists the sponsors (/api/Bills/<BillId>: prime "P" or co-sponsor "C") and the texts (/api/Bills/Versions/<BillId>).
+// 🔴 The 2018 and 2019 texts name every sponsor; 2020's name some; from 2021 a text names only the lead sponsor (2026
+// SB 179: "Introduced by: Senator Hohn", of five sponsors). A sponsor the text does not name has no page a person can read, so it is recorded
+// as not named and is not cited. Every name the text prints must be one member of that chamber in the session and one
+// sponsor of the record, or the bill's sponsors are refused and none is cited: nothing is guessed.
+
+export interface SdSponsor { name: string; label: string; chamber: 'H' | 'S'; type: 'P' | 'C'; on_text: boolean }
+/** A bill's sponsors as the introduced text cites them, or why they were refused (the converter then cites none). */
+export type SdSponsorship = { text: string; introduced_by: string; members: SdSponsor[] } | { refused: string };
+
+/** The one "Introduced" version's PDF address, from /api/Bills/Versions/<BillId>. Throws unless there is exactly one. */
+export function sdIntroducedText(body: string, bill: string): string {
+  const j = JSON.parse(body) as { DocumentId?: unknown; BillVersion?: unknown }[];
+  if (!Array.isArray(j)) throw new Error(`the version list of ${bill} is not a list`);
+  const v = j.filter((x) => x.BillVersion === 'Introduced');
+  if (v.length !== 1 || typeof v[0].DocumentId !== 'number' || !Number.isInteger(v[0].DocumentId)) throw new Error(`the version list of ${bill} holds ${v.length} introduced texts`);
+  return `https://mylrc.sdlegislature.gov/api/Documents/${v[0].DocumentId}.pdf`;
+}
+
+/** The record's sponsors, from /api/Bills/<BillId>. Only name, label, chamber and kind are kept. */
+export function sdRecordSponsors(body: string, billId: number, bill: string): Omit<SdSponsor, 'on_text'>[] {
+  const j = JSON.parse(body) as { BillId?: unknown; BillSponsor?: unknown };
+  if (!j || j.BillId !== billId || !Array.isArray(j.BillSponsor)) throw new Error(`the bill record of ${bill} is not bill ${billId}`);
+  return (j.BillSponsor as { MemberType?: unknown; SponsorType?: unknown; Member?: { FirstName?: unknown; LastName?: unknown; UniqueName?: unknown } }[]).map((x) => {
+    const m = x.Member;
+    const ok = (v: unknown): v is string => typeof v === 'string' && v.trim() !== '';
+    if (!m || !ok(m.FirstName) || !ok(m.LastName) || !ok(m.UniqueName) || (x.MemberType !== 'H' && x.MemberType !== 'S') || (x.SponsorType !== 'P' && x.SponsorType !== 'C')) {
+      throw new Error(`a sponsor of ${bill} the tool cannot read`);
+    }
+    return { name: `${m.FirstName.trim()} ${m.LastName.trim()}`, label: m.UniqueName.trim(), chamber: x.MemberType, type: x.SponsorType };
+  });
+}
+
+const sdKey = (s: string): string => s.toLowerCase().replace(/[^a-z()]/g, '');
+
+/**
+ * Whether a name as the text prints it is this record sponsor. The text and the record do not print a member the same
+ * way: the text writes "Kolbeck" where the record's label is "Kolbeck (Jack)", "Otten (Ernie)" where it is "Otten",
+ * and "Kevin Jensen" for "Jensen (Kevin)". So: the same label, or the same first and last name, or the same surname
+ * with any given name the text adds agreeing with the record's (its first two letters). The caller still requires
+ * exactly one sponsor in that chamber to match.
+ */
+export function sdSameMember(printed: string, r: { name: string; label: string }): boolean {
+  if (sdKey(printed) === sdKey(r.label) || sdKey(printed) === sdKey(r.name)) return true;
+  const m = /^(.*?)\s*\((.+)\)$/.exec(printed.trim());
+  const [sur, given] = m ? [m[1], m[2]] : [printed, null];
+  const recSur = r.label.replace(/\s*\(.*\)\s*$/, '');
+  if (sdKey(sur) !== sdKey(recSur)) return false;
+  return given === null || sdKey(r.name).startsWith(sdKey(given).slice(0, 2));
+}
+
+/**
+ * The members the introduced text names, as (chamber, label), from the text the verifier reads (extractPdfText):
+ * "Introduced by: Representatives Peterson (Sue), Bordeaux, ... and Rasmussen and Senators Langer, ...". Null when
+ * the text has no such line. A committee ("at the request of the Committee on ...") is not a member.
+ */
+export function sdNamedOnText(text: string): { line: string; names: { chamber: 'H' | 'S'; label: string }[] } | null {
+  const m = /Introduced by:\s*(.+?)(?=\s+(?:FOR AN ACT|Catchlines are not law|Underscores indicate|An Act|at the request of|A LEGISLATIVE COMMEMORATION|A (?:CONCURRENT |JOINT )?RESOLUTION)\b)/.exec(text);
+  if (!m) return null;
+  const line = m[1].trim();
+  const names: { chamber: 'H' | 'S'; label: string }[] = [];
+  const parts = line.split(/\b(Representatives?|Senators?)\b/).map((x) => x.trim());
+  if (parts[0] !== '' && !/^(the )?committee\b/i.test(parts[0])) return { line, names: [] };
+  for (let i = 1; i + 1 < parts.length; i += 2) {
+    const chamber = parts[i].startsWith('Rep') ? 'H' : 'S';
+    for (const raw of parts[i + 1].replace(/,?\s+and\s*$/, '').split(/,\s*(?:and\s+)?|\s+and\s+/)) {
+      const label = raw.trim();
+      if (label) names.push({ chamber, label });
+    }
+  }
+  return { line, names };
+}
+
+/** The members of a session, as the legislature lists them (/api/SessionMembers/Session/<SessionId>): name, label and chamber only. */
+export function sdSessionMembers(body: string, sessionId: number): { name: string; label: string; chamber: 'H' | 'S' }[] {
+  const j = JSON.parse(body) as unknown;
+  if (!Array.isArray(j) || j.length === 0) throw new Error(`the member list of session ${sessionId} is empty or unreadable`);
+  return (j as { SessionId?: unknown; MemberType?: unknown; FirstName?: unknown; LastName?: unknown; UniqueName?: unknown }[]).map((m) => {
+    const ok = (v: unknown): v is string => typeof v === 'string' && v.trim() !== '';
+    if (m.SessionId !== sessionId || (m.MemberType !== 'H' && m.MemberType !== 'S') || !ok(m.FirstName) || !ok(m.LastName) || !ok(m.UniqueName)) {
+      throw new Error(`a member of session ${sessionId} the tool cannot read`);
+    }
+    return { name: `${m.FirstName.trim()} ${m.LastName.trim()}`, label: m.UniqueName.trim(), chamber: m.MemberType };
+  });
+}
+
+/**
+ * Mark each record sponsor named on the text. A printed name must name exactly ONE member of that chamber in the
+ * session (the member list, so a bare "Peterson" is refused when Kent and Sue Peterson both sit), and that member must
+ * be exactly one sponsor of the record. Throws otherwise.
+ */
+export function sdSponsorsOnText(
+  record: Omit<SdSponsor, 'on_text'>[], named: { chamber: 'H' | 'S'; label: string }[], members: { name: string; label: string; chamber: 'H' | 'S' }[], bill: string,
+): SdSponsor[] {
+  const hit = new Set<number>();
+  for (const n of named) {
+    const who = `${n.chamber === 'H' ? 'Representative' : 'Senator'} ${n.label}`;
+    // the legislature's own label first: in 2018 "Sutton" is Maggie Sutton's label and "Sutton (Billie)" Billie's
+    const exact = members.filter((x) => x.chamber === n.chamber && sdKey(x.label) === sdKey(n.label));
+    const m = exact.length === 1 ? exact : members.filter((x) => x.chamber === n.chamber && sdSameMember(n.label, x));
+    if (m.length !== 1) throw new Error(`the introduced text of ${bill} names ${who}, who is ${m.length} members of the session`);
+    const i = record.flatMap((r, k) => (r.chamber === n.chamber && sdKey(r.label) === sdKey(m[0].label) && sdKey(r.name) === sdKey(m[0].name) ? [k] : []));
+    if (i.length !== 1) throw new Error(`the introduced text of ${bill} names ${who}, who is ${i.length} sponsors of the record`);
+    hit.add(i[0]);
+  }
+  return record.map((r, k) => ({ ...r, on_text: hit.has(k) }));
+}
+
 export interface SupplementRollCall {
   url: string; date: string; motion: string; question: string; chamber: 'H' | 'S';
   yea: number; nay: number; absent: number; passed: 0 | 1; groups: StateRollCall['groups'];
@@ -260,10 +372,29 @@ async function main(): Promise<void> {
     }
   }
 
+  /** A paced GET of a PDF, kept on disk as bytes; its text as the verifier reads it. */
+  async function getPdfText(url: string, gap: number): Promise<string> {
+    const file = path.join(raw, createHash('sha256').update(url).digest('hex').slice(0, 24));
+    let bytes: Uint8Array;
+    if (!refetch && existsSync(file)) bytes = new Uint8Array(readFileSync(file)); else {
+      const wait = last + gap - Date.now();
+      if (wait > 0) await new Promise((r) => setTimeout(r, wait));
+      last = Date.now();
+      asked++;
+      const res = await fetchWithHostTrust(url, { headers: { 'user-agent': EMPOWERED_VOTE_UA }, signal: AbortSignal.timeout(30_000) });
+      if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+      bytes = new Uint8Array(await res.arrayBuffer());
+      writeFileSync(file, bytes);
+    }
+    if (!looksLikePdfBytes(bytes)) throw new Error(`${url} is not a PDF`);
+    return extractPdfText(bytes);
+  }
+
   const outFile = path.join(dir, `${session}.json`);
   const out = existsSync(outFile)
-    ? JSON.parse(readFileSync(outFile, 'utf8')) as { bills: Record<string, SupplementRollCall[]>; checked: Record<string, unknown>; refused: Record<string, unknown> }
+    ? JSON.parse(readFileSync(outFile, 'utf8')) as { bills: Record<string, SupplementRollCall[]>; checked: Record<string, unknown>; refused: Record<string, unknown>; sponsors?: Record<string, SdSponsorship> }
     : { bills: {}, checked: {}, refused: {} };
+  const sponsorsOut = ((out as { sponsors?: Record<string, SdSponsorship> }).sponsors ??= {});
   let floor = 0;
   const refusedNow: string[] = [];
   for (const bill of bills) {
@@ -291,11 +422,28 @@ async function main(): Promise<void> {
     out.checked[bill] = { vote_list: url, floor: bi.floor.length, read: rcs.length, committee_not_read: bi.committee, voice_not_read: bi.voice, ...(bi.motion ? { motion_not_read: bi.motion } : {}),
       ...(bi.motions?.length ? { motions: bi.motions } : {}), ...(absentDiffers.length ? { absent_count_differs_from_vote_list: absentDiffers } : {}), ...(bi.committeeUrls?.length ? { committee_urls: bi.committeeUrls } : {}) };
     floor += rcs.length;
+    if (ST === 'SD') {
+      // the bill's sponsors and its introduced text (see sdSponsorsOnText); a fault refuses the sponsors, not the votes
+      const billId = Number(/\/ActionLog\/(\d+)$/.exec(url)?.[1]);
+      const sid = SD_SESSION_ID.get(session);
+      try {
+        if (sid === undefined) throw new Error(`session ${session} is not in SD_SESSIONS`);
+        const record = sdRecordSponsors(await get(`https://sdlegislature.gov/api/Bills/${billId}`, idx.minGapMs), billId, bill);
+        const text = sdIntroducedText(await get(`https://sdlegislature.gov/api/Bills/Versions/${billId}`, idx.minGapMs), bill);
+        const named = sdNamedOnText(await getPdfText(text, idx.minGapMs));
+        if (!named) throw new Error(`the introduced text of ${bill} has no "Introduced by:" line`);
+        sponsorsOut[bill] = { text, introduced_by: named.line, members: sdSponsorsOnText(record, named.names, sdSessionMembers(await get(`https://sdlegislature.gov/api/SessionMembers/Session/${sid}`, idx.minGapMs), sid), bill) };
+      } catch (e) {
+        // kept as a refusal, so the converter drops the dump's sponsors of this bill rather than cite the script shell
+        sponsorsOut[bill] = { refused: e instanceof Error ? e.message : String(e) };
+        refusedNow.push(`${bill} sponsors: ${e instanceof Error ? e.message : e}`);
+      }
+    }
     console.log(`${bill}: ${rcs.length} of ${bi.floor.length} floor roll calls read (${bi.committee} committee${bi.motion ? `, ${bi.motion} motion` : ''} and ${bi.voice} voice votes not read)`);
   }
   writeFileSync(outFile, JSON.stringify({
     state: ST, session, source: `${new URL(idx.billUrl(session, bills[0]) ?? idx.listUrl?.(session) ?? '')!.host}: each bill's own vote list and each roll call's own page`,
-    fetched_at: new Date().toISOString(), bills: out.bills, checked: out.checked, refused: out.refused,
+    fetched_at: new Date().toISOString(), bills: out.bills, checked: out.checked, refused: out.refused, ...(Object.keys(sponsorsOut).length ? { sponsors: sponsorsOut } : {}),
   }, null, 1));
   console.log(`${bills.length} bills, ${floor} floor roll calls read, ${refusedNow.length} refused, ${asked} requests -> ${outFile}`);
   for (const r of refusedNow) console.log(`REFUSED ${r}`);

@@ -1,0 +1,158 @@
+{
+ "BillId": 9112,
+ "BillType": "HB",
+ "BillNumber": 1209,
+ "SessionId": 32,
+ "BillSponsor": [
+  {
+   "SessionMemberId": 1270,
+   "MemberType": "S",
+   "SponsorType": "P",
+   "Member": {
+    "FirstName": "Kris",
+    "LastName": "Langer",
+    "UniqueName": "Langer"
+   }
+  },
+  {
+   "SessionMemberId": 1303,
+   "MemberType": "H",
+   "SponsorType": "P",
+   "Member": {
+    "FirstName": "Sue",
+    "LastName": "Peterson",
+    "UniqueName": "Peterson (Sue)"
+   }
+  },
+  {
+   "SessionMemberId": 1279,
+   "MemberType": "H",
+   "SponsorType": "C",
+   "Member": {
+    "FirstName": "Shawn",
+    "LastName": "Bordeaux",
+    "UniqueName": "Bordeaux"
+   }
+  },
+  {
+   "SessionMemberId": 1217,
+   "MemberType": "S",
+   "SponsorType": "C",
+   "Member": {
+    "FirstName": "R. Blake",
+    "LastName": "Curd",
+    "UniqueName": "Curd"
+   }
+  },
+  {
+   "SessionMemberId": 1219,
+   "MemberType": "S",
+   "SponsorType": "C",
+   "Member": {
+    "FirstName": "Brock",
+    "LastName": "Greenfield",
+    "UniqueName": "Greenfield (Brock)"
+   }
+  },
+  {
+   "SessionMemberId": 1283,
+   "MemberType": "H",
+   "SponsorType": "C",
+   "Member": {
+    "FirstName": "Steven",
+    "LastName": "Haugaard",
+    "UniqueName": "Haugaard"
+   }
+  },
+  {
+   "SessionMemberId": 1314,
+   "MemberType": "H",
+   "SponsorType": "C",
+   "Member": {
+    "FirstName": "Taffy",
+    "LastName": "Howard",
+    "UniqueName": "Howard"
+   }
+  },
+  {
+   "SessionMemberId": 1278,
+   "MemberType": "S",
+   "SponsorType": "C",
+   "Member": {
+    "FirstName": "Joshua",
+    "LastName": "Klumb",
+    "UniqueName": "Klumb"
+   }
+  },
+  {
+   "SessionMemberId": 1224,
+   "MemberType": "S",
+   "SponsorType": "C",
+   "Member": {
+    "FirstName": "Ryan",
+    "LastName": "Maher",
+    "UniqueName": "Maher"
+   }
+  },
+  {
+   "SessionMemberId": 1280,
+   "MemberType": "H",
+   "SponsorType": "C",
+   "Member": {
+    "FirstName": "Sam",
+    "LastName": "Marty",
+    "UniqueName": "Marty"
+   }
+  },
+  {
+   "SessionMemberId": 1263,
+   "MemberType": "H",
+   "SponsorType": "C",
+   "Member": {
+    "FirstName": "Elizabeth",
+    "LastName": "May",
+    "UniqueName": "May"
+   }
+  },
+  {
+   "SessionMemberId": 1267,
+   "MemberType": "S",
+   "SponsorType": "C",
+   "Member": {
+    "FirstName": "Jeff",
+    "LastName": "Monroe",
+    "UniqueName": "Monroe"
+   }
+  },
+  {
+   "SessionMemberId": 1239,
+   "MemberType": "S",
+   "SponsorType": "C",
+   "Member": {
+    "FirstName": "Jenna",
+    "LastName": "Netherton",
+    "UniqueName": "Netherton"
+   }
+  },
+  {
+   "SessionMemberId": 1259,
+   "MemberType": "H",
+   "SponsorType": "C",
+   "Member": {
+    "FirstName": "Lee",
+    "LastName": "Qualm",
+    "UniqueName": "Qualm"
+   }
+  },
+  {
+   "SessionMemberId": 1255,
+   "MemberType": "H",
+   "SponsorType": "C",
+   "Member": {
+    "FirstName": "Nancy",
+    "LastName": "Rasmussen",
+    "UniqueName": "Rasmussen"
+   }
+  }
+ ]
+}

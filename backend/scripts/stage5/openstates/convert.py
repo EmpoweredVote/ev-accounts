@@ -139,10 +139,16 @@ for r in rows("personvote"):
 #    copy of a record vote still teaches convert.py which person a label is (Open States links most voters from 2021).
 #    The addresses (/api/Votes/<id>, /Legislative_Session/Bills/RollCall.aspx?Vote=<id>&Session=2018) become the
 #    vote's own page, /Session/Vote/<id>, which is cited; the verifier reads /api/Votes/<id> for it.
+#  - "sd_sponsors_from_text" (South Dakota, runner 2026-11-17): the dump marks every sponsor primary, and the bill page
+#    it cites (/Session/Bill/<id>) is a script shell. For a bill whose sponsors the fetch read (supplements 'sponsors'),
+#    the bill's page becomes its introduced text (a PDF that prints "Introduced by: ..."), and its sponsors are the
+#    record's members THAT TEXT NAMES, prime or co-sponsor as the record says. From 2021 the text names only the lead
+#    sponsor (2018 and 2019 name all, 2020 some): the others have no page a person can read, and are left out and counted (sd_sponsors_not_named_on_the_text).
 SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": re.compile(r"/mtgvotes\.jsp"), "https": True},
              "OH": {"committee": re.compile(r"/cmtevotes/?$"), "committee_motion": re.compile(r"^Reported\b"), "oh_votes_page": True,
                     "oh_text_v2": True, "record_replaces_dump": True},
-             "SD": {"https": True, "sd_vote_page": True, "record_replaces_dump": True, "sd_record_is_the_floor": True}}
+             "SD": {"https": True, "sd_vote_page": True, "record_replaces_dump": True, "sd_record_is_the_floor": True,
+                    "sd_sponsors_from_text": True}}
 RULES = SRC_RULES.get(ST, {})
 if RULES.get("https"):
     for eid in vsrc:
@@ -226,6 +232,20 @@ SUPP = collections.Counter()
 SUPP_SESSIONS = collections.defaultdict(lambda: {"added": 0, "bills": set(), "source": ""})
 LEARN_ONLY = {}  # South Dakota: dump copies of votes the record replaced -> (event, person votes, chamber)
 CHECKED_BILLS = set()  # bill ids whose record was read
+def sd_same_member(printed, m):
+    """fetch-legislature-rollcalls.ts sdSameMember: the same label, the same first and last name, or the same surname
+    with any given name the printed form adds agreeing with the member's (first two letters)."""
+    k = lambda t: re.sub(r"[^a-z()]", "", t.lower())
+    if k(printed) in (k(m["label"]), k(m["name"])):
+        return True
+    g = re.match(r"^(.*?)\s*\((.+)\)$", printed.strip())
+    sur, given = (g.group(1), g.group(2)) if g else (printed, None)
+    if k(sur) != k(re.sub(r"\s*\(.*\)\s*$", "", m["label"])):
+        return False
+    return given is None or k(m["name"]).startswith(k(given)[:2])
+
+
+SD_SP = {}  # South Dakota: bill id -> the record's sponsors and the introduced text (supplements 'sponsors')
 # South Dakota votes a consent calendar as ONE roll call on many bills, and the dump files a copy under each bill: there a
 # roll call is known by (bill, address), so one bill's copy never stands in for another's.
 PER_BILL = bool(RULES.get("sd_record_is_the_floor"))
@@ -240,6 +260,12 @@ for f in sorted(glob.glob(os.path.join(WORK, "supplements", ST, "*.json"))):
     sid = sess_by_ident[sp["session"]]
     if want and sp["session"] not in want:
         continue
+    if RULES.get("sd_sponsors_from_text"):
+        for ident, spn in sp.get("sponsors", {}).items():
+            cb = bill_by_key.get((sid, re.sub(r"[\s.]+", "", ident).upper()))
+            if not cb:
+                sys.exit(f"{f}: bill {ident!r} is not in session {sp['session']} of this extract")
+            SD_SP[cb] = spn
     for ident in sp.get("checked", {}):
         cb = bill_by_key.get((sid, re.sub(r"[\s.]+", "", ident).upper()))
         if cb:
@@ -653,7 +679,30 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
         src = [r["url"] for r in ex["billsource"]]
         sponsors = []
         sp_rows = sorted(ex["billsponsorship"], key=lambda r: 0 if r["primary"] == "t" else 1)
-        for i, sp in enumerate(sp_rows, 1):
+        if bid in SD_SP and "refused" in SD_SP[bid]:
+            # South Dakota: the fetch refused this bill's sponsors (its text names someone it cannot tie to one sponsor
+            # of the record). The dump's people are not cited instead: their page is a script shell and they are all
+            # marked primary. A committee sponsor row is kept.
+            stats["sd_sponsor_rows_dropped_sponsors_refused"] += sum(1 for r in sp_rows if r["entity_type"] == "person")
+            sp_rows = [r for r in sp_rows if r["entity_type"] == "organization"]
+        elif bid in SD_SP:
+            # South Dakota: the record's sponsors the introduced text names, cited on that text (see SRC_RULES)
+            spn = SD_SP[bid]
+            src = [spn["text"]]
+            dump_people = [r for r in ex["billsponsorship"] if r["entity_type"] == "person"]
+            stats["dump_sponsor_rows_replaced_by_the_record"] += len(sp_rows)
+            sp_rows = [r for r in sp_rows if r["entity_type"] == "organization"]
+            on = sorted((m for m in spn["members"] if m["on_text"]), key=lambda m: 0 if m["type"] == "P" else 1)
+            stats["sd_sponsors_not_named_on_the_text"] += sum(1 for m in spn["members"] if not m["on_text"])
+            for i, m in enumerate(on, 1):
+                # the dump's row for this sponsor, printed as the dump prints it ("Kolbeck" for "Kolbeck (Jack)"): used
+                # only when exactly one row is that member; otherwise the label links it, as any other name does
+                rows_ = [r for r in dump_people if sd_same_member(r["name"] or "", m)]
+                row = rows_[0] if len(rows_) == 1 else None
+                pj = person_for(row["person_id"] if row else None, m["label"], m["chamber"])
+                sponsors.append(dict(pj, sponsor_type_id=1 if m["type"] == "P" else 2, sponsor_order=i, committee_sponsor=0, committee_id=0))
+                stats["sd_sponsors_named_on_the_text"] += 1
+        for i, sp in enumerate(sp_rows, len(sponsors) + 1):
             if sp["entity_type"] == "organization":
                 sponsors.append({"people_id": 0, "name": sp["name"], "first_name": "", "last_name": "",
                                  "sponsor_type_id": 1 if sp["primary"] == "t" else 2, "sponsor_order": i,

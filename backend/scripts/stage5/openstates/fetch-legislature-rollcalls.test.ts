@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { buildRollCall, INDEX, type IndexedVote } from './fetch-legislature-rollcalls.js';
+import { buildRollCall, INDEX, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote } from './fetch-legislature-rollcalls.js';
 
 // The saved Utah House page: roll call 100 of the 2025 General Session, HB 237, 71 yeas, 0 nays, 4 absent.
 const HOUSE = readFileSync(fileURLToPath(new URL('../../../src/lib/__fixtures__/stateRollCall/ut-2025GS-100-H.html', import.meta.url)), 'latin1');
@@ -191,5 +191,98 @@ describe('the legislature\'s own vote list — South Dakota', () => {
     const v = INDEX.SD.read(SD_HB1209, '2018', 'HB 1209').floor[2];
     expect(buildRollCall('HB 1209', v, SD_26828, '2019')).toEqual({ refused: 'the vote is of session 2018, not 2019' });
     expect(buildRollCall('HB 1210', v, SD_26828, '2018')).toHaveProperty('refused');
+  });
+});
+
+// South Dakota sponsorships (runner, 2026-11-17: cite the introduced text). 2018 HB 1209's record (/api/Bills/9112,
+// saved without the party field) and versions (/api/Bills/Versions/9112); the "Introduced by" passages are the text
+// extractPdfText gives for the 2018 HB 1209, 2020 HB 1093 and 2026 SB 179 introduced PDFs.
+const SD_BILL = oh('sd-2018-hb1209-bill.json');
+const SD_VERSIONS = oh('sd-2018-hb1209-versions.json');
+const TEXT_2018 = 'HOUSE BILL NO. 1209 Introduced by: Representatives Peterson (Sue), Bordeaux, Haugaard, Howard, Marty, May, Qualm, and Rasmussen and Senators Langer, Curd, Greenfield (Brock), Klumb, Maher, Monroe, and Netherton FOR AN ACT ENTITLED, An Act to require';
+const TEXT_2020 = 'House Bill 1093 Introduced by: Representative Bordeaux at the request of the Committee on State-Tribal Relations Catchlines are not law.';
+const TEXT_2026 = 'Senate Bill 179 Introduced by: Senator Hohn Underscores indicate new language. Overstrikes indicate deleted language. An Act to permit';
+
+describe('South Dakota sponsorships, cited on the introduced text', () => {
+  it('finds the one introduced text, and refuses a version list with none or two', () => {
+    expect(sdIntroducedText(SD_VERSIONS, 'HB 1209')).toBe('https://mylrc.sdlegislature.gov/api/Documents/47915.pdf');
+    const v = JSON.parse(SD_VERSIONS) as { BillVersion: string }[];
+    expect(() => sdIntroducedText(JSON.stringify(v.slice(1)), 'HB 1209')).toThrow(/0 introduced/);
+    expect(() => sdIntroducedText(JSON.stringify([v[0], v[0]]), 'HB 1209')).toThrow(/2 introduced/);
+  });
+
+  it('reads the record\'s sponsors, prime or co-sponsor, and nothing else about them', () => {
+    const r = sdRecordSponsors(SD_BILL, 9112, 'HB 1209');
+    expect(r).toHaveLength(15);
+    expect(r.slice(0, 3)).toEqual([
+      { name: 'Kris Langer', label: 'Langer', chamber: 'S', type: 'P' },
+      { name: 'Sue Peterson', label: 'Peterson (Sue)', chamber: 'H', type: 'P' },
+      { name: 'Shawn Bordeaux', label: 'Bordeaux', chamber: 'H', type: 'C' },
+    ]);
+    expect(() => sdRecordSponsors(SD_BILL, 9113, 'HB 1209')).toThrow(/not bill 9113/);
+  });
+
+  it('reads every member the 2018 text names, by chamber; the later texts name the lead sponsor only, and a committee is no member', () => {
+    const n18 = sdNamedOnText(TEXT_2018)!;
+    expect(n18.names).toHaveLength(15);
+    expect(n18.names.slice(0, 2)).toEqual([{ chamber: 'H', label: 'Peterson (Sue)' }, { chamber: 'H', label: 'Bordeaux' }]);
+    expect(n18.names.slice(7, 9)).toEqual([{ chamber: 'H', label: 'Rasmussen' }, { chamber: 'S', label: 'Langer' }]);
+    expect(n18.names.at(-1)).toEqual({ chamber: 'S', label: 'Netherton' });
+    expect(sdNamedOnText(TEXT_2020)!.names).toEqual([{ chamber: 'H', label: 'Bordeaux' }]);
+    expect(sdNamedOnText(TEXT_2026)!.names).toEqual([{ chamber: 'S', label: 'Hohn' }]);
+    expect(sdNamedOnText('An Act to revise')).toBeNull();
+  });
+
+  // the 2018 member list's people the tests need: two Petersons in the House, one Kolbeck and one Otten in the Senate
+  const MEMBERS = (rec: { name: string; label: string; chamber: 'H' | 'S' }[]) => [
+    ...rec, { name: 'Kent Peterson', label: 'Peterson (Kent)', chamber: 'H' as const },
+    { name: 'Jack Kolbeck', label: 'Kolbeck (Jack)', chamber: 'S' as const }, { name: 'Ernie Otten', label: 'Otten', chamber: 'S' as const },
+    { name: 'Herman Otten', label: 'Otten (Herman)', chamber: 'H' as const }, { name: 'Kevin Jensen', label: 'Jensen (Kevin)', chamber: 'H' as const },
+  ];
+
+  it('reads a session member list, name, label and chamber only', () => {
+    const body = JSON.stringify([{ SessionId: 32, MemberType: 'S', FirstName: 'Jack', LastName: 'Kolbeck', UniqueName: 'Kolbeck (Jack)', PersonId: 1 }]);
+    expect(sdSessionMembers(body, 32)).toEqual([{ name: 'Jack Kolbeck', label: 'Kolbeck (Jack)', chamber: 'S' }]);
+    expect(() => sdSessionMembers(body, 36)).toThrow(/cannot read/);
+    expect(() => sdSessionMembers('[]', 32)).toThrow(/empty/);
+  });
+
+  it('knows a member however the text prints the name', () => {
+    expect(sdSameMember('Kolbeck', { name: 'Jack Kolbeck', label: 'Kolbeck (Jack)' })).toBe(true);
+    expect(sdSameMember('Otten (Ernie)', { name: 'Ernie Otten', label: 'Otten' })).toBe(true);
+    expect(sdSameMember('Kevin Jensen', { name: 'Kevin Jensen', label: 'Jensen (Kevin)' })).toBe(true);
+    expect(sdSameMember('Otten (Herman)', { name: 'Ernie Otten', label: 'Otten' })).toBe(false);
+    expect(sdSameMember('Jensen', { name: 'Kevin Jensen', label: 'Jensen (Kevin)' })).toBe(true);
+    expect(sdSameMember('Jenson', { name: 'Kevin Jensen', label: 'Jensen (Kevin)' })).toBe(false);
+  });
+
+  it('marks each sponsor the text names, and only those', () => {
+    const rec = sdRecordSponsors(SD_BILL, 9112, 'HB 1209');
+    expect(sdSponsorsOnText(rec, sdNamedOnText(TEXT_2018)!.names, MEMBERS(rec), 'HB 1209').every((m) => m.on_text)).toBe(true);
+    const lead = sdSponsorsOnText(rec, [{ chamber: 'H', label: 'Peterson (Sue)' }], MEMBERS(rec), 'HB 1209');
+    expect(lead.filter((m) => m.on_text).map((m) => m.name)).toEqual(['Sue Peterson']);
+    // the text prints a member another way than the record: still that one sponsor
+    const kol = [...rec, { name: 'Jack Kolbeck', label: 'Kolbeck (Jack)', chamber: 'S' as const, type: 'C' as const }];
+    expect(sdSponsorsOnText(kol, [{ chamber: 'S', label: 'Kolbeck' }], MEMBERS(rec), 'HB 1209').filter((m) => m.on_text).map((m) => m.name)).toEqual(['Jack Kolbeck']);
+  });
+
+  it('refuses a text that names someone who is not one member of the chamber and one sponsor of the record', () => {
+    const rec = sdRecordSponsors(SD_BILL, 9112, 'HB 1209');
+    expect(() => sdSponsorsOnText(rec, [{ chamber: 'H', label: 'Hohn' }], MEMBERS(rec), 'HB 1209')).toThrow(/0 members of the session/);
+    expect(() => sdSponsorsOnText(rec, [{ chamber: 'S', label: 'Bordeaux' }], MEMBERS(rec), 'HB 1209')).toThrow(/0 members of the session/);
+    // two Petersons sit in the House: a bare surname is refused, though only Sue sponsors the bill
+    expect(() => sdSponsorsOnText(rec, [{ chamber: 'H', label: 'Peterson' }], MEMBERS(rec), 'HB 1209')).toThrow(/2 members of the session/);
+    // a bare surname that is one member's own label is that member: "Sutton" is Maggie, "Sutton (Billie)" Billie
+    const sut = [...rec, { name: 'Maggie Sutton', label: 'Sutton', chamber: 'S' as const, type: 'C' as const }];
+    const both = [...MEMBERS(rec), { name: 'Maggie Sutton', label: 'Sutton', chamber: 'S' as const }, { name: 'Billie Sutton', label: 'Sutton (Billie)', chamber: 'S' as const }];
+    expect(sdSponsorsOnText(sut, [{ chamber: 'S', label: 'Sutton' }], both, 'HB 1209').filter((m) => m.on_text).map((m) => m.name)).toEqual(['Maggie Sutton']);
+    // a member of the session who is no sponsor of the bill
+    expect(() => sdSponsorsOnText(rec, [{ chamber: 'S', label: 'Kolbeck' }], MEMBERS(rec), 'HB 1209')).toThrow(/0 sponsors of the record/);
+  });
+
+  it('ends the line of a commemoration and a resolution at its own heading', () => {
+    expect(sdNamedOnText('HOUSE COMMEMORATION NO. 1015 Introduced by: Representatives Duvall and Peterson (Kent) and Senators Kolbeck and Smith (VJ) A LEGISLATIVE COMMEMORATION, Honoring')!.names)
+      .toEqual([{ chamber: 'H', label: 'Duvall' }, { chamber: 'H', label: 'Peterson (Kent)' }, { chamber: 'S', label: 'Kolbeck' }, { chamber: 'S', label: 'Smith (VJ)' }]);
+    expect(sdNamedOnText('SENATE RESOLUTION NO. 6 Introduced by: Senator Nelson A RESOLUTION, Supporting')!.names).toEqual([{ chamber: 'S', label: 'Nelson' }]);
   });
 });

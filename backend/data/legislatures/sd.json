@@ -2,7 +2,7 @@
   "state": "sd",
   "name": "South Dakota",
   "verified": "2026-11-17",
-  "source": "South Dakota reader session (Stage 5 tools), 2026-11-17: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 102-bill dry batch read from sdlegislature.gov/api/Votes/<id> with the verifier's own fetch, and each member's vote compared with the dump. Texts were not read in this session.",
+  "source": "South Dakota reader session (Stage 5 tools), 2026-11-17: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 102-bill dry batch read from sdlegislature.gov/api/Votes/<id> with the verifier's own fetch, and each member's vote compared with the dump. The introduced texts of the dry batch's 100 bills were read for their sponsors (2026-11-17); no text was read for a fill quote.",
   "chambers": {
     "lower": "House",
     "upper": "Senate"
@@ -13,6 +13,7 @@
     "The 2017 regular session holds 0 bills in the November 2026 dump, so 2017 cannot be used. From 2018 the dump holds the sessions' bills.",
     "The dump cannot tell a committee's vote from a chamber's floor vote (a House committee's \"Do Pass\" is filed under the House, as the floor vote is), and 2018 files every vote under the whole legislature. So no South Dakota dump vote is placed. scripts/stage5/openstates/fetch-legislature-rollcalls.ts reads each bill's action log from the legislature, keeps the floor votes on the bill and reads each from /api/Votes/<id>; convert.py places only those (from_legislature) and keeps every other dump vote marked committee, with the reason in _openstates.sd_not_placed. Run the fetch for every bill the scan finds, then convert the whole state again.",
     "Open States links only 44 to 64% of voters to a person in 2018 to 2020 (96 to 100% from 2021). The record's votes are linked through the dump's own copies and, where those fail, through the legislature's member lists (below), so 2018 to 2026 are usable for every bill whose record was read.",
+    "The dump marks every sponsor primary. For each bill the fetch reads, the record's sponsors replace the dump's: prime or co-sponsor as /api/Bills/<BillId> says, kept only when the introduced text names them, and the bill's page becomes that text (fetch-legislature-rollcalls.ts reads /api/Bills/<BillId>, /api/Bills/Versions/<BillId> and the PDF; convert.py, sd_sponsors_from_text).",
     "The 2018 dump leaves some members out of some votes (three members over nine roll calls of the dry batch, each a Yea or Excused on the record). The record replaces the dump's copy, so nothing is lost; the comparison counts them."
   ],
   "votes": {
@@ -27,7 +28,7 @@
       "A consent calendar is one roll call on many bills (2020: eleven Senate bills in one House vote). Its line names every bill the vote carried, in the record's order; a line naming one of them is refused.",
       "The bill's action log sometimes counts 0 excused where the vote's own record lists excused members (13 votes on the dry batch). The fetch compares yeas and nays only, and keeps the record's list, which its own counts check.",
       "The 2027 session (SessionId 174) is not in the map yet: add it when its first votes are taken.",
-      "The legislature's bill page (/Session/Bill/<id>) is a script shell too: sponsors cannot be checked on it."
+      "A sponsorship is cited on the bill's introduced text (runner, 2026-11-17), a PDF that prints \"Introduced by: ...\". On the dry batch's 100 bills the 2018 and 2019 texts name every sponsor (159 of 159, 226 of 226); 2020 texts name 34 of 342; from 2021 a text names the lead sponsor only (59 of 922). A sponsor the text does not name has no page a person can read (the bill page is a script shell) and is left out of the data (counted in .openstates.json as sd_sponsors_not_named_on_the_text). A printed name must be exactly one member of that chamber in the session (/api/SessionMembers/Session/<id>; the legislature's own label first, so \"Sutton\" is Maggie Sutton in 2018) and one sponsor of the record, or the bill's sponsors are refused and none is cited (2018 SB 181: the text prints \"Sutton\", the record's sponsor is Billie Sutton; 2024 HC 8001: the text names Senator Stalzer, the record does not). A quote must hold 25 words: from 2021 the line is short, so the quote runs into the title."
     ]
   },
   "texts": {
@@ -35,7 +36,7 @@
       "mylrc.sdlegislature.gov"
     ],
     "marks": "Not measured: no South Dakota text was read in the reader session (2026-11-17). Measure how new and struck words are drawn before a text is read for a fill quote.",
-    "note": "Bill texts are PDFs at mylrc.sdlegislature.gov/api/Documents/<id>.pdf (8,614 links in the dump; one read 2026-11-17, HTTP 200, a PDF). The dump's older HTML links (sdlegislature.gov/Legislative_Session/Bills/Bill.aspx?File=..., 3,719) redirect to the bill's page, a script shell with no text. The dump types some amendment PDFs as \"Introduced\". An introduced text prints its sponsors after \"Introduced by:\". Texts were not read in this session."
+    "note": "Bill texts are PDFs at mylrc.sdlegislature.gov/api/Documents/<id>.pdf (8,614 links in the dump; one read 2026-11-17, HTTP 200, a PDF). The dump's older HTML links (sdlegislature.gov/Legislative_Session/Bills/Bill.aspx?File=..., 3,719) redirect to the bill's page, a script shell with no text. The dump types some amendment PDFs as \"Introduced\". An introduced text prints its sponsors after \"Introduced by:\". The introduced texts of the dry batch's 100 bills were read for their sponsors (2026-11-17); no text was read for a fill quote."
   },
   "reader_access": {
     "sdlegislature.gov": "open",
