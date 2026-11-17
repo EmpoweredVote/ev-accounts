@@ -1,0 +1,59 @@
+{
+  "state": "sd",
+  "name": "South Dakota",
+  "verified": "2026-11-17",
+  "source": "South Dakota reader session (Stage 5 tools), 2026-11-17: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 102-bill dry batch read from sdlegislature.gov/api/Votes/<id> with the verifier's own fetch, and each member's vote compared with the dump. Texts were not read in this session.",
+  "chambers": {
+    "lower": "House",
+    "upper": "Senate"
+  },
+  "sessions": "One-year sessions: a regular session each year (2018, 2019, ... 2026), about 40 legislative days from January to March, with a veto day after. Bill numbers start again each year (HB 1001 of 2025 and HB 1001 of 2026 are different bills); House bills are numbered from 1001, Senate bills from 1. A special session is its own session with its own numbers (2017s, 2018s, 2020s, 2021r and 2021i, 2025s). The site names a session by its own id (SessionId: 2018 is 32, 2026 is 71; the full map is SD_SESSIONS in src/lib/stateRollCallEvidence.ts); a session not in that map gives no vote and must be added. House 70 members, Senate 35.",
+  "bill_data": [
+    "No LegiScan dataset is on disk for South Dakota. Bills, sponsors and roll calls come from Open States data, converted to the same folder layout (SD-900053 to SD-900067; scripts/stage5/openstates/README.md). Each folder carries a .openstates.json; its ids are ours and no legiscan.com page exists for them.",
+    "The 2017 regular session holds 0 bills in the November 2026 dump, so 2017 cannot be used. From 2018 the dump holds the sessions' bills.",
+    "The dump cannot tell a committee's vote from a chamber's floor vote (a House committee's \"Do Pass\" is filed under the House, as the floor vote is), and 2018 files every vote under the whole legislature. So no South Dakota dump vote is placed. scripts/stage5/openstates/fetch-legislature-rollcalls.ts reads each bill's action log from the legislature, keeps the floor votes on the bill and reads each from /api/Votes/<id>; convert.py places only those (from_legislature) and keeps every other dump vote marked committee, with the reason in _openstates.sd_not_placed. Run the fetch for every bill the scan finds, then convert the whole state again.",
+    "Open States links only 44 to 64% of voters to a person in 2018 to 2020 (96 to 100% from 2021). The record's votes are linked through the dump's own copies and, where those fail, through the legislature's member lists (below), so 2018 to 2026 are usable for every bill whose record was read.",
+    "The 2018 dump leaves some members out of some votes (three members over nine roll calls of the dry batch, each a Yea or Excused on the record). The record replaces the dump's copy, so nothing is lost; the comparison counts them."
+  ],
+  "votes": {
+    "mode": "legiscan-plan",
+    "official_hosts": [
+      "sdlegislature.gov"
+    ],
+    "legiscan_args": null,
+    "floor_rule": "A vote is cited on its own page, sdlegislature.gov/Session/Vote/<VoteId>. That page is a script shell with no vote in it, so the reader (src/lib/stateRollCallEvidence.ts) reads the vote's data, sdlegislature.gov/api/Votes/<VoteId> (runner's standing answer 1: cite the vote's own page, verify from the data). The data names the session, the bill or bills, the chamber (actionLog.FullName: \"House of Representatives\" or \"Senate\"; anything else is a committee), the question (actionLog.StatusText), the day, the counts, and each member with a vote (Yea, Nay, Excused, Absent, Not Voting, Present, Suspended). A vote is read only when it is a chamber's floor vote, on a question that is a vote on the bill (an allowlist: Do Pass, Passed, Failed, concurrences, conference reports, veto overrides and the Governor's recommendations), every count equals the members listed under it, and no member is listed twice. A member who did not vote is written as the record lists them (\"was excused\", \"was absent\", \"did not vote\", \"voted present\", \"was suspended\"), never as a Yea or a Nay. Committee votes and votes on a motion are not mapped; a conference report is the chamber's floor vote.",
+    "gaps": [
+      "A vote on a motion is not a vote on the bill and is not mapped (runner, 2026-11-16): \"Placed on calendar pursuant to JR 6F-6\" (the smoke-out), \"Reconsidered\", \"Recalled from committee (Rule 7-7)\". 11 such votes on the dry batch's bills. A question the allowlist does not hold gives no line until it is added.",
+      "A consent calendar is one roll call on many bills (2020: eleven Senate bills in one House vote). Its line names every bill the vote carried, in the record's order; a line naming one of them is refused.",
+      "The bill's action log sometimes counts 0 excused where the vote's own record lists excused members (13 votes on the dry batch). The fetch compares yeas and nays only, and keeps the record's list, which its own counts check.",
+      "The 2027 session (SessionId 174) is not in the map yet: add it when its first votes are taken.",
+      "The legislature's bill page (/Session/Bill/<id>) is a script shell too: sponsors cannot be checked on it."
+    ]
+  },
+  "texts": {
+    "hosts": [
+      "mylrc.sdlegislature.gov"
+    ],
+    "marks": "Not measured: no South Dakota text was read in the reader session (2026-11-17). Measure how new and struck words are drawn before a text is read for a fill quote.",
+    "note": "Bill texts are PDFs at mylrc.sdlegislature.gov/api/Documents/<id>.pdf (8,614 links in the dump; one read 2026-11-17, HTTP 200, a PDF). The dump's older HTML links (sdlegislature.gov/Legislative_Session/Bills/Bill.aspx?File=..., 3,719) redirect to the bill's page, a script shell with no text. The dump types some amendment PDFs as \"Introduced\". An introduced text prints its sponsors after \"Introduced by:\". Texts were not read in this session."
+  },
+  "reader_access": {
+    "sdlegislature.gov": "open",
+    "mylrc.sdlegislature.gov": "open"
+  },
+  "search_note": "South Dakota sponsorships and House and Senate floor votes for 2018 to 2026 come from the bill data on disk, checked against the legislature's own record: skip the legislature's sponsor lists and vote pages, and add the place \"sponsor list: covered by bulk bill data\". Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
+  "bill_table_note": "- South Dakota sessions run one year; bill numbers start again each year.\n- Floor votes kept: Do Pass, passage, concurrence, conference reports and veto overrides. Committee votes (\"Do Pass\" by a committee) are not floor votes.\n- A consent calendar vote carries several bills at once; it is a vote on each of them.",
+  "fill_quotes": {
+    "label_strips": []
+  },
+  "quirks": [
+    "The vote page (/Session/Vote/<id>) and the bill page (/Session/Bill/<id>) are script shells: curl gets no vote and no text. The data is at /api/Votes/<id>, /api/Bills/ActionLog/<BillId> and /api/Bills/Session/Light/<SessionId> (the session's bills by the site's own BillId). The dump's old addresses (/Legislative_Session/Bills/RollCall.aspx?Vote=<id>&Session=2018) redirect to the vote page; the converter rewrites every vote address to /Session/Vote/<id>.",
+    "robots.txt disallows only logos and a PDF viewer and states no crawl delay; mylrc.sdlegislature.gov allows all. The reader waits one second between requests. No 403, 429 or bot check was met on 2026-11-17.",
+    "One vote is one document. The line tool took 104 seconds for 2,790 votes on 103 roll calls (2026-11-17): about 7 seconds for 200 votes. The time follows the number of roll calls.",
+    "The 2020 action logs list a consent vote twice, and the 2020 vote records list each bill twice under one BillId: each is kept once. One bill number under two BillIds is refused.",
+    "The record prints a member as a surname, with a given name added only where two members share it (\"Greenfield (Lana)\", \"Otten (Ernie)\"); the line uses the record's first and last name instead (\"Lana Greenfield\"). The dump's labels follow the same rule but not always for the same vote (\"Otten (Ernie)\" in the dump where the record prints \"Otten\").",
+    "Link dump people to roster people through the legislature's member lists: each vote names a SessionMemberId, and /api/SessionMembers/Session/<SessionId> gives its PersonId, the same for a person in every session. Do not link by surname alone: the converter tied the 2019 to 2020 labels \"Perry\" and \"Hansen\" to former members of 2011 (Tad Perry, Tom Hansen); the member lists show only Carl Perry and Jon Hansen sat then.",
+    "A senator suspended by the Senate (2023) is listed \"Suspended\" on its votes, with no count field of its own; the reader checks that group by the total.",
+    "The two 2021 special sessions are told apart by their days: 2021r (the First Special Session, SessionId 65) voted on 2021-11-08, 2021i (the Second, 66) on 2021-11-09."
+  ]
+}

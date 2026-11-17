@@ -33,9 +33,11 @@ for r in rows:
         if v['act'] not in ACT: continue  # a sponsorship; a vote is cross-checked wherever its line is cited
         for l in lines:
             if l['full_name'] == n and l['source_url'] == v['url']:
-                # a legislature's own roll-call page words an absence "was absent or not voting" (stateRollCallEvidence.ts)
-                got = (re.search(r'voted (\w+)\.?$', l['snippet']) or re.search(r'(?:was) (absent) or not voting\.$', l['snippet']) or [None, '?'])[1]
-                got = {'absent': 'NV'}.get(got, got)
+                # a legislature's own roll-call page words an absence "was absent or not voting" (Utah), and South Dakota's
+                # as its record lists it: "was excused", "was absent", "did not vote", "voted present", "was suspended"
+                # (stateRollCallEvidence.ts). Each is no Yea and no Nay.
+                got = (re.search(r'voted (Yea|Nay)\.?$', l['snippet']) or re.search(r'(?:was (absent) or not voting|was (?:excused|absent|suspended)|did not vote|voted present)\.$', l['snippet']))
+                got = ('NV' if got.group(0).startswith(('was', 'did', 'voted present')) else got.group(1)) if got else '?'
                 cross.append({'name': n, 'legiscan': v['url'], 'official': v['official'], 'legiscan_vote': got, 'finding_act': v['act'], 'agree': got == ACT.get(v['act'])})
 for r in rows:
     for c in cols: r.setdefault(c, '')

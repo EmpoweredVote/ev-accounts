@@ -1,0 +1,174 @@
+{
+ "VoteId": 83164,
+ "SessionId": 71,
+ "PresidentVote": null,
+ "Bill": [
+  {
+   "BillId": 26671,
+   "BillNumberOnly": 18,
+   "BillNumber": 18,
+   "BillType": "SB",
+   "Title": "repeal income modifications for the bank franchise tax pertaining to bad debts."
+  }
+ ],
+ "RollCalls": [
+  {
+   "FirstName": "Tim",
+   "FormattedUniqueName": "Czmowski",
+   "LastName": "Czmowski",
+   "Picture": null,
+   "SessionMemberId": 4742,
+   "UniqueName": "Czmowski",
+   "Vote": 0,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Phil",
+   "FormattedUniqueName": "Jensen (Phil)",
+   "LastName": "Jensen",
+   "Picture": "jensen_phil_2019.jpg",
+   "SessionMemberId": 4770,
+   "UniqueName": "Jensen (Phil)",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Curt",
+   "FormattedUniqueName": "Massie",
+   "LastName": "Massie",
+   "Picture": "massie, curt rep-0927 rt.jpg",
+   "SessionMemberId": 4785,
+   "UniqueName": "Massie",
+   "Vote": 2,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Will",
+   "FormattedUniqueName": "Mortenson",
+   "LastName": "Mortenson",
+   "Picture": "mortenson, will rep-2557 full rt.jpg",
+   "SessionMemberId": 4790,
+   "UniqueName": "Mortenson",
+   "Vote": 3,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Peri",
+   "FormattedUniqueName": "Pourier",
+   "LastName": "Pourier",
+   "Picture": "pourier_2019.jpg",
+   "SessionMemberId": 4804,
+   "UniqueName": "Pourier",
+   "Vote": 4,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Tony",
+   "FormattedUniqueName": "Randolph",
+   "LastName": "Randolph",
+   "Picture": "randolph_2019.jpg",
+   "SessionMemberId": 4805,
+   "UniqueName": "Randolph",
+   "Vote": 5,
+   "Vote1": "Excused",
+   "VoteVote": 3
+  },
+  {
+   "FirstName": "Rebecca",
+   "FormattedUniqueName": "Reimer",
+   "LastName": "Reimer",
+   "Picture": "rep reimer-3654 1200x960x150 color.jpg",
+   "SessionMemberId": 4809,
+   "UniqueName": "Reimer",
+   "Vote": 6,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Kent",
+   "FormattedUniqueName": "Roe",
+   "LastName": "Roe",
+   "Picture": null,
+   "SessionMemberId": 4813,
+   "UniqueName": "Roe",
+   "Vote": 7,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Tim",
+   "FormattedUniqueName": "Walburg",
+   "LastName": "Walburg",
+   "Picture": null,
+   "SessionMemberId": 4830,
+   "UniqueName": "Walburg",
+   "Vote": 8,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Keri",
+   "FormattedUniqueName": "Weems",
+   "LastName": "Weems",
+   "Picture": null,
+   "SessionMemberId": 4831,
+   "UniqueName": "Weems",
+   "Vote": 9,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Mike",
+   "FormattedUniqueName": "Weisgram",
+   "LastName": "Weisgram",
+   "Picture": "weisgram, mike rep-2753 full rt.jpg",
+   "SessionMemberId": 4832,
+   "UniqueName": "Weisgram",
+   "Vote": 10,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "John",
+   "FormattedUniqueName": "Hughes",
+   "LastName": "Hughes",
+   "Picture": null,
+   "SessionMemberId": 4764,
+   "UniqueName": "Hughes",
+   "Vote": 11,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Aaron",
+   "FormattedUniqueName": "Aylward",
+   "LastName": "Aylward",
+   "Picture": "aylward, aaron rep-2745 full rt.jpg",
+   "SessionMemberId": 4734,
+   "UniqueName": "Aylward",
+   "Vote": 12,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  }
+ ],
+ "Yeas": 12,
+ "Nays": 0,
+ "Excused": 1,
+ "Absent": 0,
+ "Present": 0,
+ "NotVoting": 0,
+ "actionLog": {
+  "ActionCommitteeId": 1273,
+  "ActionDate": "2026-02-03T07:45:00-06:00",
+  "ActionLogId": 475760,
+  "ConferenceCommitteeId": null,
+  "FullName": "House Taxation",
+  "SessionId": 71,
+  "StatusText": "Do Pass"
+ }
+}

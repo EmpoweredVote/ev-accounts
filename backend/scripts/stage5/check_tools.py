@@ -1357,7 +1357,7 @@ def legiscan_merge_cross_checks_a_vote_cited_on_a_legislature_page(t):
     """A vote line on a legislature's own roll-call page is cross-checked against the finding like a LegiScan one: a
     Yea finding with a Nay line stops the merge (exit 1). "was absent or not voting" agrees with an abstain finding."""
     def go(said, act='yea'):
-        B = batch(f'{t}/{said[-4:]}{act}', [('Ann Able', 'a')], [{'full_name': 'Ann Able', 'topic_key': 't', 'evidence_type': 'record', 'urls': ['https://leg.gov/hb1']}])
+        B = batch(f'{t}/{said.replace(" ", "-")}-{act}', [('Ann Able', 'a')], [{'full_name': 'Ann Able', 'topic_key': 't', 'evidence_type': 'record', 'urls': ['https://leg.gov/hb1']}])
         os.makedirs(f'{B}/legiscan')
         json.dump({'Ann Able': [{'url': 'https://leg.gov/votes?id=7', 'official': 'https://leg.gov/hb1', 'act': act, 'instrument': 'XX-HB-1-2025'}]}, open(f'{B}/legiscan/needs.json', 'w'))
         write_csv(f'{B}/legiscan/legiscan-evidence.csv', [{'full_name': 'Ann Able', 'topic_key': 't', 'source_url': 'https://leg.gov/votes?id=7',
@@ -1372,6 +1372,12 @@ def legiscan_merge_cross_checks_a_vote_cited_on_a_legislature_page(t):
     assert code == 0 and [c['agree'] for c in cross] == [True], (code, cross)
     code, cross, _ = go('was absent or not voting')
     assert code == 1 and [c['agree'] for c in cross] == [False], (code, cross)
+    # South Dakota words a member who did not vote as the record lists them: each agrees with an abstain finding only
+    for said in ('was excused', 'was absent', 'did not vote', 'voted present', 'was suspended'):
+        code, cross, _ = go(said, act='abstain')
+        assert code == 0 and [c['agree'] for c in cross] == [True], (said, code, cross)
+        code, cross, _ = go(said)
+        assert code == 1 and [c['agree'] for c in cross] == [False], (said, code, cross)
 
 
 def openstates_extract(t, st='ut'):
@@ -1587,6 +1593,69 @@ def openstates_convert_cites_ohios_votes_page_and_keeps_each_vote_once(t):
     assert sorted(r['_openstates']['vote_event_id'] for r in rcs if r['_openstates']['committee']) == ['c1', 'r1']
     mk = json.load(open(glob.glob(f'{t}/out/OH-*/.openstates.json')[0]))
     assert mk['counts'].get('dump_floor_rollcalls_not_on_the_record_dropped') == 2, mk['counts']
+
+
+@check
+def openstates_convert_places_a_south_dakota_vote_only_from_the_record(t):
+    """South Dakota 2026-11-17: the dump cannot tell a committee's vote from the chamber's (a House committee's "Do
+    Pass" is filed under the House, as the floor vote is), so a vote is placed only when it was read from the
+    legislature's record. The record's copy replaces the dump's; the dump's copy still teaches who a label is. Every
+    address becomes the vote's own page, /Session/Vote/<id>. A consent calendar is one vote on several bills: each
+    bill keeps its own copy. Every other dump row is kept, marked committee, with the reason it was not placed."""
+    X = f'{t}/work/extracts/2026-11/sd'; os.makedirs(X)
+    def tsv(name, cols, rows):
+        open(f'{X}/{name}.tsv', 'w').write('\t'.join(cols) + '\n' + ''.join('\t'.join(r.get(c, '\\N') for c in cols) + '\n' for r in rows))
+    json.dump({'dump': '2026-11-public.pgdump', 'month': '2026-11', 'state': 'sd', 'extracted_at': 'x'}, open(f'{X}/extract.json', 'w'))
+    tsv('legislativesession', ['id', 'identifier', 'name', 'classification', 'start_date', 'end_date'],
+        [{'id': 's18', 'identifier': '2018', 'name': '2018 Regular Session', 'classification': '', 'start_date': '2018-01-09', 'end_date': '2018-03-26'}])
+    tsv('organization', ['id', 'name', 'classification', 'parent_id'], [{'id': 'leg', 'name': 'South Dakota Legislature', 'classification': 'legislature'},
+        {'id': 'up', 'name': 'Senate', 'classification': 'upper', 'parent_id': 'leg'}, {'id': 'lo', 'name': 'House', 'classification': 'lower', 'parent_id': 'leg'}])
+    tsv('post', ['id', 'label'], [])
+    tsv('person', ['id', 'name', 'given_name', 'family_name', 'image', 'primary_party', 'email'],
+        [{'id': 'p1', 'name': 'Ann Able', 'given_name': 'Ann', 'family_name': 'Able'}])
+    tsv('membership', ['person_id', 'organization_id', 'post_id', 'start_date', 'end_date'], [])
+    bill = lambda i, ident: {'id': i, 'legislative_session_id': 's18', 'identifier': ident, 'title': 'A bill', 'classification': '{bill}', 'subject': '{}', 'from_organization_id': 'lo'}
+    tsv('bill', ['id', 'legislative_session_id', 'identifier', 'title', 'classification', 'subject', 'from_organization_id'],
+        [bill('b1', 'HB 1209'), bill('b2', 'SB 55'), bill('b3', 'HB 1001')])
+    for name, cols in (('billsource', ['bill_id', 'url']), ('billsponsorship', ['bill_id', 'name', 'entity_type', 'primary', 'person_id']),
+                       ('billversion', ['id', 'bill_id', 'note', 'date']), ('billversionlink', ['version_id', 'url', 'media_type'])):
+        tsv(name, cols, [])
+    ev = lambda i, b, upd, org='lo', motion='Do Pass': {'id': i, 'bill_id': b, 'legislative_session_id': 's18', 'organization_id': org, 'motion_text': motion,
+                                                        'motion_classification': '{passage}', 'start_date': '2018-02-05', 'result': 'pass', 'order': '0', 'updated_at': upd}
+    # f1 and f1old: the consent vote 25955 twice under HB 1209 (the copy updated last is kept); f3: its copy under HB 1001,
+    # whose record was not read (SB 55 has no copy of its own, and must still get the record's); c1: a House committee's
+    # vote, filed under the House like a floor vote; u1: a vote of HB 1001
+    tsv('voteevent', ['id', 'bill_id', 'legislative_session_id', 'organization_id', 'motion_text', 'motion_classification', 'start_date', 'result', 'order', 'updated_at'],
+        [ev('f1', 'b1', '2018-03-01'), ev('f1old', 'b1', '2018-02-06'), ev('f3', 'b3', '2018-03-01', 'leg'), ev('c1', 'b1', '2018-03-01'), ev('u1', 'b3', '2018-03-01', 'leg')])
+    old = 'http://sdlegislature.gov/Legislative_Session/Bills/RollCall.aspx?Vote={}&Session=2018'
+    tsv('votesource', ['vote_event_id', 'url'], [{'vote_event_id': e, 'url': old.format(n)} for e, n in (('f1', 25955), ('f1old', 25955), ('f3', 25955), ('u1', 99))]
+        + [{'vote_event_id': 'c1', 'url': 'https://sdlegislature.gov/api/Votes/83164'}])
+    tsv('votecount', ['vote_event_id', 'option', 'value'], [{'vote_event_id': e, 'option': 'yes', 'value': '1'} for e in ('f1', 'f1old', 'f3', 'c1', 'u1')])
+    # Open States links the voter on the dump's copy; the record names her only by her label
+    tsv('personvote', ['vote_event_id', 'voter_id', 'voter_name', 'option'],
+        [{'vote_event_id': e, 'voter_name': 'Able', 'option': 'yes', 'voter_id': 'p1'} for e in ('f1', 'f1old', 'f3', 'c1', 'u1')])
+    os.makedirs(f'{t}/work/supplements/SD')
+    page = 'https://sdlegislature.gov/Session/Vote/'
+    rec = {'url': page + '25955', 'date': '2018-02-05', 'motion': 'Do Pass', 'question': 'Do Pass', 'chamber': 'H', 'yea': 1, 'nay': 0, 'absent': 1, 'passed': 1,
+           'groups': {'Yea': ['Able'], 'Nay': [], 'Absent or not voting': ['Baker']}}
+    json.dump({'state': 'SD', 'session': '2018', 'source': 'sdlegislature.gov', 'bills': {'HB1209': [rec], 'SB55': [rec]},
+               'checked': {'HB1209': {'floor': 1, 'read': 1}, 'SB55': {'floor': 1, 'read': 1}}, 'refused': {}}, open(f'{t}/work/supplements/SD/2018.json', 'w'))
+    run('openstates/convert.py', X, '--out', f'{t}/out', '--legiscan-root', f'{t}/none', env={'OPENSTATES_NEW_REGISTRY': '1'})
+    bills_ = {json.load(open(f))['bill']['bill_id']: json.load(open(f))['bill']['bill_number'] for f in glob.glob(f'{t}/out/SD-*/SD/*/bill/*.json')}
+    rcs = [json.load(open(f))['roll_call'] for f in glob.glob(f'{t}/out/SD-*/SD/*/vote/*.json')]
+    placed = sorted((bills_[r['bill_id']], r['state_link'], r['chamber']) for r in rcs if not r['_openstates']['committee'])
+    assert placed == [('HB1209', page + '25955', 'H'), ('SB55', page + '25955', 'H')], placed
+    assert all(r['_openstates'].get('from_legislature') for r in rcs if not r['_openstates']['committee'])
+    held = {r['_openstates']['vote_event_id']: r for r in rcs if r['_openstates']['committee']}
+    assert sorted(held) == ['c1', 'f3', 'u1'], sorted(held)
+    assert held['c1']['state_link'] == page + '83164' and 'not a floor vote' in held['c1']['_openstates']['sd_not_placed'], held['c1']
+    assert held['u1']['state_link'] == page + '99' and held['u1']['_openstates']['sd_not_placed'] == "the bill's record was not read", held['u1']
+    # the record's "Able" is the person the dump's copy linked, though that copy is not placed
+    able = [v['people_id'] for r in rcs if not r['_openstates']['committee'] for v in r['votes'] if v['vote_id'] == 1]
+    people = {json.load(open(f))['person']['people_id']: json.load(open(f))['person']['name'] for f in glob.glob(f'{t}/out/SD-*/SD/*/people/*.json')}
+    assert [people.get(p) for p in able] == ['Ann Able', 'Ann Able'], (able, people)
+    mk = json.load(open(glob.glob(f'{t}/out/SD-*/.openstates.json')[0]))
+    assert mk['counts'].get('duplicate_rollcalls_dropped') == 1 and mk['counts'].get('dump_floor_rollcalls_replaced_by_the_record') == 1, mk['counts']
 
 
 @check
