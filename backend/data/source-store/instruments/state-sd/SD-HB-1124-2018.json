@@ -1,0 +1,110 @@
+{
+  "id": "SD-HB-1124-2018",
+  "scope": "state:sd",
+  "title": "HB1124 (2018 Regular): allow certain persons with a felony conviction to apply for a concealed pistol permit.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/8341",
+    "https://mylrc.sdlegislature.gov/api/Documents/47556.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Steve Livermont",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Jim Stalzer",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Thomas J Brunner",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Blaine \"Chip\" Campbell",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Michael Clark",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Drew C. Dennert",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Lynne DiSanto",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Spencer Gosch",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "85e164a2-7744-4005-9282-456f3827df65"
+    },
+    {
+      "name": "Jensen (Phil)",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Kevin Killer",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Isaac Latterell",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Elizabeth May",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Stace Nelson",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Peterson (Sue)",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Tom Pischke",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "19103966-3827-4234-8cb4-afdacb4569e7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2018-01-23; official copy, https://mylrc.sdlegislature.gov/api/Documents/47556.pdf (sdlegislature.gov DocumentId 47556, BillId 8341))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1124-2018.introduced.pdf",
+      "sha256": "f40ec9b7fbd0e557c9cea464c2c96db76c74a01b9aa7afb17748a5fdbe0f91d3"
+    },
+    "note": "Introduced text 2018-01-23. Struck: 'felony or a' from the conviction bar; later items renumbered. No vote recorded."
+  },
+  "operative_text": "Section 1 (SDCL 23-7-7.1): A temporary permit to carry a concealed pistol shall be issued within five days of application to a person if the applicant: (1) Is eighteen years of age or older; (2) Is not prohibited by South Dakota law from possessing a firearm; (3) Has never pled guilty to, nolo contendere to, or been convicted of a crime of violence as defined by subdivision 22-1-2(9); A person denied a permit may appeal to the circuit court pursuant to chapter 1-26."
+}

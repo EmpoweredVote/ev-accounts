@@ -1,0 +1,39 @@
+{
+  "id": "SD-HB-1314-2022",
+  "scope": "state:sd",
+  "title": "HB1314 (2022 Regular): prohibit the personal possession of a loaded firearm while in possession of cannabis or cannabis products and to provide a penalty therefor.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/23435",
+    "https://mylrc.sdlegislature.gov/api/Documents/232152.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kevin Jensen",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "1325f88c-f1d1-40d5-acc6-4292d983a672"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2022-02-02; official copy, https://mylrc.sdlegislature.gov/api/Documents/232152.pdf (sdlegislature.gov DocumentId 232152, BillId 23435))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1314-2022.introduced.pdf",
+      "sha256": "8c1c4acc557d3f8ae889d48624ae1ac822dbe2871fd8e56443759bae6f70dced"
+    },
+    "note": "Introduced text, 2022-02-02. Section 2 (SDCL 22-14-7) struck the old subdivision (3), loaded firearm while intoxicated, and recast the rest as a list; the intoxication offence reappears in Section 3.  The long SDCL 22-1-2 definitions in Section 1 are existing law except the new 'loaded firearm' item. No passage vote recorded."
+  },
+  "operative_text": "Section 1 (SDCL 22-1-2): \"Loaded firearm,\" any firearm that contains a cartridge, shell, or projectile in the chamber, including any chamber in the cylinder of a revolver;\nSection 3 (new section in SDCL ch. 22-14): A person is guilty of a Class 1 misdemeanor if the person is in personal possession of a loaded firearm, as defined in § 22-1-2, while: (1) Intoxicated; or (2) In possession of cannabis or cannabis products, as defined in § 34-20G-1."
+}

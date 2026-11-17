@@ -1,0 +1,885 @@
+{
+  "id": "SD-HB-1209-2018",
+  "scope": "state:sd",
+  "title": "HB1209 (2018 Regular): require a National Instant Criminal Background Check for certain concealed carry permits.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/9112",
+    "https://mylrc.sdlegislature.gov/api/Documents/50077.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Kris Langer",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Peterson (Sue)",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Shawn Bordeaux",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "R. Blake Curd",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Brock L. Greenfield",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "4a858d43-9921-46ab-95e1-530cb70697d6"
+    },
+    {
+      "name": "Steven G. Haugaard",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Taffy Howard",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "6979c638-2800-48f4-9263-dd6f04726842"
+    },
+    {
+      "name": "Josh Klumb",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Ryan Maher",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Sam Marty",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "4034d40e-6795-4413-b976-79ead3d3d7d1"
+    },
+    {
+      "name": "Elizabeth May",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Jeff Monroe",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Netherton",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Lee Qualm",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Nancy Rasmussen",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2018-02-15",
+      "body": "SD House",
+      "motion": "House Do Pass",
+      "kind": "roll-call",
+      "yes": 55,
+      "no": 0,
+      "absent": 15,
+      "note": "sdlegislature.gov /api/Votes record (read from the legislature) 90163467",
+      "members": [
+        {
+          "name": "Dan Ahlers",
+          "vote": "yea",
+          "politician_id": "522024ac-3566-410c-970d-81111e401e6a"
+        },
+        {
+          "name": "David L. Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Hugh Bartels",
+          "vote": "yea"
+        },
+        {
+          "name": "Doug J. Barthel",
+          "vote": "yea"
+        },
+        {
+          "name": "Julie Bartling",
+          "vote": "yea"
+        },
+        {
+          "name": "Arch Beal",
+          "vote": "yea",
+          "politician_id": "58f81fda-dad1-40e1-b0ca-73e5be22f8e5"
+        },
+        {
+          "name": "Thomas J Brunner",
+          "vote": "yea"
+        },
+        {
+          "name": "Lance Carson",
+          "vote": "yea"
+        },
+        {
+          "name": "Roger Chase",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Clark",
+          "vote": "yea"
+        },
+        {
+          "name": "Kristin A Conzet",
+          "vote": "yea"
+        },
+        {
+          "name": "Drew C. Dennert",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael G Diedrich",
+          "vote": "yea"
+        },
+        {
+          "name": "Lynne DiSanto",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Duvall",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Glanzer",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Goodwin",
+          "vote": "yea",
+          "politician_id": "2dfc4c6b-452b-48a5-bc92-cf1f29908e5b"
+        },
+        {
+          "name": "Lana Greenfield",
+          "vote": "yea",
+          "politician_id": "1d55919c-7451-495a-81b3-1f29921a6abe"
+        },
+        {
+          "name": "Steven G. Haugaard",
+          "vote": "yea"
+        },
+        {
+          "name": "Spencer Hawley",
+          "vote": "yea"
+        },
+        {
+          "name": "Heinemann",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas R Holmes",
+          "vote": "yea"
+        },
+        {
+          "name": "Jean M Hunhoff",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Jamison",
+          "vote": "yea",
+          "politician_id": "831308dd-ee45-4f6a-8be3-1b20d744618f"
+        },
+        {
+          "name": "Jensen (Kevin)",
+          "vote": "yea"
+        },
+        {
+          "name": "Timothy R Johns",
+          "vote": "yea"
+        },
+        {
+          "name": "David Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Kaiser",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Karr",
+          "vote": "yea",
+          "politician_id": "386debb7-ed7f-4ca0-a695-5fdbfd3b7049"
+        },
+        {
+          "name": "Jason W Kettwig",
+          "vote": "yea"
+        },
+        {
+          "name": "John A Lake",
+          "vote": "yea"
+        },
+        {
+          "name": "Isaac Latterell",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Livermont",
+          "vote": "yea"
+        },
+        {
+          "name": "Sam Marty",
+          "vote": "yea",
+          "politician_id": "4034d40e-6795-4413-b976-79ead3d3d7d1"
+        },
+        {
+          "name": "Elizabeth May",
+          "vote": "yea"
+        },
+        {
+          "name": "Steven D McCleerey",
+          "vote": "yea"
+        },
+        {
+          "name": "John Mills",
+          "vote": "yea"
+        },
+        {
+          "name": "Otten (Herman)",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent S. Peterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Peterson (Sue)",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Pischke",
+          "vote": "yea",
+          "politician_id": "19103966-3827-4234-8cb4-afdacb4569e7"
+        },
+        {
+          "name": "Lee Qualm",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Reed",
+          "vote": "yea",
+          "politician_id": "20d569c0-435f-4f24-b22a-f0479f863605"
+        },
+        {
+          "name": "Larry Rhoden",
+          "vote": "yea",
+          "politician_id": "0a283b10-918c-4251-899b-5385c9174b6d"
+        },
+        {
+          "name": "Ray Ring",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Rounds",
+          "vote": "yea"
+        },
+        {
+          "name": "Kyle Schoenfish",
+          "vote": "yea",
+          "politician_id": "e80c2c4a-3f78-4cdd-901f-58abe4bf7fda"
+        },
+        {
+          "name": "Jamie Smith",
+          "vote": "yea",
+          "politician_id": "270e2fd2-45bf-4325-ab38-9c9343a89b9e"
+        },
+        {
+          "name": "Wayne H. Steinhauer",
+          "vote": "yea"
+        },
+        {
+          "name": "Burt Tulson",
+          "vote": "yea"
+        },
+        {
+          "name": "Charles M Turbiville",
+          "vote": "yea"
+        },
+        {
+          "name": "Marli J. Wiese",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark K. Willadsen",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry P Zikmund",
+          "vote": "yea",
+          "politician_id": "3bd6b5be-33a9-4951-8472-2dcc6ed005ce"
+        },
+        {
+          "name": "G. Mark Mickelson",
+          "vote": "yea"
+        },
+        {
+          "name": "McPherson",
+          "vote": "absent"
+        },
+        {
+          "name": "James G Schaefer",
+          "vote": "absent"
+        },
+        {
+          "name": "Shawn Bordeaux",
+          "vote": "absent"
+        },
+        {
+          "name": "Blaine \"Chip\" Campbell",
+          "vote": "absent"
+        },
+        {
+          "name": "Julie Frye-Mueller",
+          "vote": "absent"
+        },
+        {
+          "name": "Spencer Gosch",
+          "vote": "absent",
+          "politician_id": "85e164a2-7744-4005-9282-456f3827df65"
+        },
+        {
+          "name": "Taffy Howard",
+          "vote": "absent",
+          "politician_id": "6979c638-2800-48f4-9263-dd6f04726842"
+        },
+        {
+          "name": "Oren Lesmeister",
+          "vote": "absent"
+        },
+        {
+          "name": "David Lust",
+          "vote": "absent"
+        },
+        {
+          "name": "Nancy Rasmussen",
+          "vote": "absent"
+        },
+        {
+          "name": "Tona Rozum",
+          "vote": "absent"
+        },
+        {
+          "name": "Karen Soli",
+          "vote": "absent"
+        },
+        {
+          "name": "Mike Stevens",
+          "vote": "absent",
+          "politician_id": "6c040c7b-81b4-4c06-879d-aaf918db2f90"
+        },
+        {
+          "name": "Susan Wismer",
+          "vote": "absent"
+        },
+        {
+          "name": "Nancy L. York",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2018-03-05",
+      "body": "SD Senate",
+      "motion": "Senate Do Pass Amended",
+      "kind": "roll-call",
+      "yes": 31,
+      "no": 1,
+      "absent": 3,
+      "note": "sdlegislature.gov /api/Votes record (read from the legislature) 90163468",
+      "members": [
+        {
+          "name": "Netherton",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Bolin",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Cammack",
+          "vote": "yea"
+        },
+        {
+          "name": "R. Blake Curd",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Ewing",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason E Frerichs",
+          "vote": "yea"
+        },
+        {
+          "name": "Brock L. Greenfield",
+          "vote": "yea",
+          "politician_id": "4a858d43-9921-46ab-95e1-530cb70697d6"
+        },
+        {
+          "name": "Terri Haverly",
+          "vote": "yea"
+        },
+        {
+          "name": "Troy E. Heinert",
+          "vote": "yea"
+        },
+        {
+          "name": "Jensen (Phil)",
+          "vote": "yea"
+        },
+        {
+          "name": "Craig Kennedy",
+          "vote": "yea"
+        },
+        {
+          "name": "Kevin Killer",
+          "vote": "yea"
+        },
+        {
+          "name": "Josh Klumb",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Kolbeck",
+          "vote": "yea",
+          "politician_id": "a84ab96c-ab1d-4020-af32-02bc5a7a7a0c"
+        },
+        {
+          "name": "Kris Langer",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Maher",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Monroe",
+          "vote": "yea"
+        },
+        {
+          "name": "Stace Nelson",
+          "vote": "yea"
+        },
+        {
+          "name": "Al Novstrup",
+          "vote": "yea",
+          "politician_id": "7c5e90ca-bd95-4d2e-a2da-e31d5a5c1f67"
+        },
+        {
+          "name": "Otten",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeffrey D Partridge",
+          "vote": "yea"
+        },
+        {
+          "name": "Deb Peters",
+          "vote": "yea"
+        },
+        {
+          "name": "Arthur L. Rusch",
+          "vote": "yea"
+        },
+        {
+          "name": "Deb Soholt",
+          "vote": "yea"
+        },
+        {
+          "name": "Alan Solano",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Stalzer",
+          "vote": "yea"
+        },
+        {
+          "name": "Sutton (Billie)",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry Tidemann",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim White",
+          "vote": "yea"
+        },
+        {
+          "name": "John Wiik",
+          "vote": "yea"
+        },
+        {
+          "name": "Jordan Youngberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Lance S Russell",
+          "vote": "nay",
+          "politician_id": "2cf0e333-838d-4235-9f0c-176347f7dfa8"
+        },
+        {
+          "name": "Justin R Cronin",
+          "vote": "absent"
+        },
+        {
+          "name": "Reynold Nesiba",
+          "vote": "absent"
+        },
+        {
+          "name": "Neal Tapio",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2018-03-07",
+      "body": "SD House",
+      "motion": "House Concurred in amendments",
+      "kind": "roll-call",
+      "yes": 62,
+      "no": 4,
+      "absent": 4,
+      "note": "sdlegislature.gov /api/Votes record (read from the legislature) 90163469",
+      "members": [
+        {
+          "name": "James G Schaefer",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Ahlers",
+          "vote": "yea",
+          "politician_id": "522024ac-3566-410c-970d-81111e401e6a"
+        },
+        {
+          "name": "David L. Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Hugh Bartels",
+          "vote": "yea"
+        },
+        {
+          "name": "Doug J. Barthel",
+          "vote": "yea"
+        },
+        {
+          "name": "Julie Bartling",
+          "vote": "yea"
+        },
+        {
+          "name": "Arch Beal",
+          "vote": "yea",
+          "politician_id": "58f81fda-dad1-40e1-b0ca-73e5be22f8e5"
+        },
+        {
+          "name": "Shawn Bordeaux",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas J Brunner",
+          "vote": "yea"
+        },
+        {
+          "name": "Blaine \"Chip\" Campbell",
+          "vote": "yea"
+        },
+        {
+          "name": "Lance Carson",
+          "vote": "yea"
+        },
+        {
+          "name": "Roger Chase",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Clark",
+          "vote": "yea"
+        },
+        {
+          "name": "Kristin A Conzet",
+          "vote": "yea"
+        },
+        {
+          "name": "Drew C. Dennert",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael G Diedrich",
+          "vote": "yea"
+        },
+        {
+          "name": "Lynne DiSanto",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Duvall",
+          "vote": "yea"
+        },
+        {
+          "name": "Julie Frye-Mueller",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Glanzer",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Goodwin",
+          "vote": "yea",
+          "politician_id": "2dfc4c6b-452b-48a5-bc92-cf1f29908e5b"
+        },
+        {
+          "name": "Lana Greenfield",
+          "vote": "yea",
+          "politician_id": "1d55919c-7451-495a-81b3-1f29921a6abe"
+        },
+        {
+          "name": "Spencer Hawley",
+          "vote": "yea"
+        },
+        {
+          "name": "Heinemann",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas R Holmes",
+          "vote": "yea"
+        },
+        {
+          "name": "Jean M Hunhoff",
+          "vote": "yea"
+        },
+        {
+          "name": "Greg Jamison",
+          "vote": "yea",
+          "politician_id": "831308dd-ee45-4f6a-8be3-1b20d744618f"
+        },
+        {
+          "name": "Jensen (Kevin)",
+          "vote": "yea"
+        },
+        {
+          "name": "Timothy R Johns",
+          "vote": "yea"
+        },
+        {
+          "name": "David Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Karr",
+          "vote": "yea",
+          "politician_id": "386debb7-ed7f-4ca0-a695-5fdbfd3b7049"
+        },
+        {
+          "name": "Jason W Kettwig",
+          "vote": "yea"
+        },
+        {
+          "name": "John A Lake",
+          "vote": "yea"
+        },
+        {
+          "name": "Isaac Latterell",
+          "vote": "yea"
+        },
+        {
+          "name": "Oren Lesmeister",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Livermont",
+          "vote": "yea"
+        },
+        {
+          "name": "David Lust",
+          "vote": "yea"
+        },
+        {
+          "name": "Sam Marty",
+          "vote": "yea",
+          "politician_id": "4034d40e-6795-4413-b976-79ead3d3d7d1"
+        },
+        {
+          "name": "Elizabeth May",
+          "vote": "yea"
+        },
+        {
+          "name": "Steven D McCleerey",
+          "vote": "yea"
+        },
+        {
+          "name": "John Mills",
+          "vote": "yea"
+        },
+        {
+          "name": "Otten (Herman)",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent S. Peterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Peterson (Sue)",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee Qualm",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Reed",
+          "vote": "yea",
+          "politician_id": "20d569c0-435f-4f24-b22a-f0479f863605"
+        },
+        {
+          "name": "Larry Rhoden",
+          "vote": "yea",
+          "politician_id": "0a283b10-918c-4251-899b-5385c9174b6d"
+        },
+        {
+          "name": "Ray Ring",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Rounds",
+          "vote": "yea"
+        },
+        {
+          "name": "Tona Rozum",
+          "vote": "yea"
+        },
+        {
+          "name": "Kyle Schoenfish",
+          "vote": "yea",
+          "politician_id": "e80c2c4a-3f78-4cdd-901f-58abe4bf7fda"
+        },
+        {
+          "name": "Jamie Smith",
+          "vote": "yea",
+          "politician_id": "270e2fd2-45bf-4325-ab38-9c9343a89b9e"
+        },
+        {
+          "name": "Wayne H. Steinhauer",
+          "vote": "yea"
+        },
+        {
+          "name": "Mike Stevens",
+          "vote": "yea",
+          "politician_id": "6c040c7b-81b4-4c06-879d-aaf918db2f90"
+        },
+        {
+          "name": "Burt Tulson",
+          "vote": "yea"
+        },
+        {
+          "name": "Charles M Turbiville",
+          "vote": "yea"
+        },
+        {
+          "name": "Marli J. Wiese",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark K. Willadsen",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Wismer",
+          "vote": "yea"
+        },
+        {
+          "name": "Nancy L. York",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry P Zikmund",
+          "vote": "yea",
+          "politician_id": "3bd6b5be-33a9-4951-8472-2dcc6ed005ce"
+        },
+        {
+          "name": "G. Mark Mickelson",
+          "vote": "yea"
+        },
+        {
+          "name": "Spencer Gosch",
+          "vote": "nay",
+          "politician_id": "85e164a2-7744-4005-9282-456f3827df65"
+        },
+        {
+          "name": "Taffy Howard",
+          "vote": "nay",
+          "politician_id": "6979c638-2800-48f4-9263-dd6f04726842"
+        },
+        {
+          "name": "Dan Kaiser",
+          "vote": "nay"
+        },
+        {
+          "name": "Tom Pischke",
+          "vote": "nay",
+          "politician_id": "19103966-3827-4234-8cb4-afdacb4569e7"
+        },
+        {
+          "name": "McPherson",
+          "vote": "absent"
+        },
+        {
+          "name": "Steven G. Haugaard",
+          "vote": "absent"
+        },
+        {
+          "name": "Nancy Rasmussen",
+          "vote": "absent"
+        },
+        {
+          "name": "Karen Soli",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Judiciary Engrossed, 2018-02-28; official copy, https://mylrc.sdlegislature.gov/api/Documents/50077.pdf (sdlegislature.gov DocumentId 50077, BillId 9112))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1209-2018.senate_judiciary_engrossed.pdf",
+      "sha256": "f01335771904fbd81c2f13f5ad44299caf0c377822c86be6da51aa4ec662717d"
+    },
+    "note": "Senate Judiciary engrossed, 2018-02-28; House passed the bill 55-0 on 2018-02-15 (do pass), earlier than this version, so later amendments are not in the text read. Section 4 (SDCL 23-7-8.12) adds the same check to military renewals; not quoted. Wording changes struck in Sections 1 and 3 (e.g. \"criminal history check\")."
+  },
+  "operative_text": "Section 1 (SDCL 23-7-7): A permit to carry a concealed pistol shall be issued to any person by the sheriff of the county in which the applicant resides. The permit shall be valid throughout the state and shall be issued pursuant to § 23-7-7.1. For purposes of verifying the qualifications of an applicant, prior to issuing a permit, the sheriff shall execute, and the applicant shall pass, a background investigation, including a computer check of available on-line records and the National Instant Criminal Background Check.\nSection 2 (SDCL 23-7-7.1): A temporary permit to carry a concealed pistol shall be issued within five days of application to a person if the applicant: (10) Is not otherwise prohibited by state law, 18 U.S.C. § 922(g) as amended to October 26, 2005, or 18 U.S.C. § 922(n) as amended to October 26, 2005, from receiving, possessing or transporting a firearm, and passes a National Instant Criminal Background Check.\nSection 3 (SDCL 23-7-8.11): The holder shall pay a ten-dollar renewal fee and pass a background investigation, including a computer check of available online records and the National Instant Criminal Background Check, required under § 23-7-7 prior to the renewal of the permit.",
+  "higher_law_duty": "Applicant must not be barred from receiving, possessing or transporting a firearm under 18 U.S.C. 922(g) or 922(n) (as amended to October 26, 2005)."
+}

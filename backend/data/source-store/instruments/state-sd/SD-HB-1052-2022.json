@@ -1,0 +1,366 @@
+{
+  "id": "SD-HB-1052-2022",
+  "scope": "state:sd",
+  "title": "HB1052 (2022 Regular): place limitations on the enforcement of federal laws and orders related to firearms, accessories, and ammunition.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/22683",
+    "https://mylrc.sdlegislature.gov/api/Documents/233500.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Aaron Aylward",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "9aaa2b94-43e9-4cee-a876-4e8b319349f8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2022-02-22",
+      "body": "SD House",
+      "motion": "House Do Pass Amended",
+      "kind": "roll-call",
+      "yes": 28,
+      "no": 39,
+      "absent": 3,
+      "note": "sdlegislature.gov /api/Votes record (read from the legislature) 90163526",
+      "members": [
+        {
+          "name": "Aaron Aylward",
+          "vote": "yea",
+          "politician_id": "9aaa2b94-43e9-4cee-a876-4e8b319349f8"
+        },
+        {
+          "name": "Arch Beal",
+          "vote": "yea",
+          "politician_id": "58f81fda-dad1-40e1-b0ca-73e5be22f8e5"
+        },
+        {
+          "name": "Drew C. Dennert",
+          "vote": "yea"
+        },
+        {
+          "name": "Caleb P. Finck",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Fitzgerald",
+          "vote": "yea",
+          "politician_id": "79c9c9f5-8689-4dd4-9394-107bffd22445"
+        },
+        {
+          "name": "Lana Greenfield",
+          "vote": "yea",
+          "politician_id": "1d55919c-7451-495a-81b3-1f29921a6abe"
+        },
+        {
+          "name": "Randy Gross",
+          "vote": "yea"
+        },
+        {
+          "name": "Jon Hansen",
+          "vote": "yea",
+          "politician_id": "19d99ac3-ad49-4ad8-9659-ac4d0a28c725"
+        },
+        {
+          "name": "Steven G. Haugaard",
+          "vote": "yea"
+        },
+        {
+          "name": "Taffy Howard",
+          "vote": "yea",
+          "politician_id": "6979c638-2800-48f4-9263-dd6f04726842"
+        },
+        {
+          "name": "Jensen (Kevin)",
+          "vote": "yea"
+        },
+        {
+          "name": "Phil Jensen",
+          "vote": "yea",
+          "politician_id": "fdaf2abe-71aa-45f0-b13f-5a29651dc993"
+        },
+        {
+          "name": "Chris Karr",
+          "vote": "yea",
+          "politician_id": "386debb7-ed7f-4ca0-a695-5fdbfd3b7049"
+        },
+        {
+          "name": "Trish Ladner",
+          "vote": "yea",
+          "politician_id": "2b617d9e-0db8-41b8-bbbb-c2b779e2271b"
+        },
+        {
+          "name": "Sam Marty",
+          "vote": "yea",
+          "politician_id": "4034d40e-6795-4413-b976-79ead3d3d7d1"
+        },
+        {
+          "name": "Liz May",
+          "vote": "yea",
+          "politician_id": "083abaa4-eed0-4dd0-9143-924f73f1925a"
+        },
+        {
+          "name": "John Mills",
+          "vote": "yea"
+        },
+        {
+          "name": "Tina Mulally",
+          "vote": "yea",
+          "politician_id": "e1d160b4-80c5-4d2d-8ed3-48bcdc4885c6"
+        },
+        {
+          "name": "Scott Odenbach",
+          "vote": "yea",
+          "politician_id": "0862eaa3-1c47-43a0-9398-b108369687a7"
+        },
+        {
+          "name": "Ernie Otten",
+          "vote": "yea",
+          "politician_id": "466d2321-f7b1-440c-8a79-a1db264a4051"
+        },
+        {
+          "name": "Marty Overweg",
+          "vote": "yea",
+          "politician_id": "c1d91b99-d727-4110-9792-c31f475d81e2"
+        },
+        {
+          "name": "Carl Perry",
+          "vote": "yea",
+          "politician_id": "65305604-d0ae-4cf9-8e6e-ad26d6982b28"
+        },
+        {
+          "name": "Peterson (Sue)",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Pischke",
+          "vote": "yea",
+          "politician_id": "19103966-3827-4234-8cb4-afdacb4569e7"
+        },
+        {
+          "name": "Tony Randolph",
+          "vote": "yea",
+          "politician_id": "0f39be61-4c8b-4f8e-8898-a5af1a84e79a"
+        },
+        {
+          "name": "Taylor Rehfeldt",
+          "vote": "yea",
+          "politician_id": "9fda0982-9faa-42fc-971b-6bd44ddab894"
+        },
+        {
+          "name": "Bethany Soye",
+          "vote": "yea",
+          "politician_id": "f05f4a91-c897-4a55-8fce-664b2a5bea4a"
+        },
+        {
+          "name": "Kaleb W. Weis",
+          "vote": "yea"
+        },
+        {
+          "name": "David L. Anderson",
+          "vote": "nay"
+        },
+        {
+          "name": "Hugh Bartels",
+          "vote": "nay"
+        },
+        {
+          "name": "Doug J. Barthel",
+          "vote": "nay"
+        },
+        {
+          "name": "Rocky Blare",
+          "vote": "nay"
+        },
+        {
+          "name": "Shawn Bordeaux",
+          "vote": "nay"
+        },
+        {
+          "name": "Kirk Chaffee",
+          "vote": "nay"
+        },
+        {
+          "name": "Roger Chase",
+          "vote": "nay"
+        },
+        {
+          "name": "Ryan D. Cwach",
+          "vote": "nay"
+        },
+        {
+          "name": "Sydney Davis",
+          "vote": "nay",
+          "politician_id": "5e84e518-91b9-41de-ae3b-370c1799462a"
+        },
+        {
+          "name": "Mike Derby",
+          "vote": "nay",
+          "politician_id": "c9ebe16c-80f1-40a3-82c2-ed3ccf2e3471"
+        },
+        {
+          "name": "Fred Deutsch",
+          "vote": "nay"
+        },
+        {
+          "name": "Becky Drury",
+          "vote": "nay"
+        },
+        {
+          "name": "Linda Duba",
+          "vote": "nay"
+        },
+        {
+          "name": "Tim Goodwin",
+          "vote": "nay",
+          "politician_id": "2dfc4c6b-452b-48a5-bc92-cf1f29908e5b"
+        },
+        {
+          "name": "Erin Healy",
+          "vote": "nay",
+          "politician_id": "1babfc4d-bbd5-44f9-ac8f-48f256c66ae7"
+        },
+        {
+          "name": "Hoffman (Charlie)",
+          "vote": "nay"
+        },
+        {
+          "name": "Greg Jamison",
+          "vote": "nay",
+          "politician_id": "831308dd-ee45-4f6a-8be3-1b20d744618f"
+        },
+        {
+          "name": "Chris P. Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Lance Koth",
+          "vote": "nay"
+        },
+        {
+          "name": "Oren Lesmeister",
+          "vote": "nay"
+        },
+        {
+          "name": "Rhonda L. Milstead",
+          "vote": "nay"
+        },
+        {
+          "name": "Paul Miskimins",
+          "vote": "nay",
+          "politician_id": "3e7cce6f-c393-4d3b-be27-f13e079fa502"
+        },
+        {
+          "name": "Will Mortenson",
+          "vote": "nay",
+          "politician_id": "003ecd80-7d79-4f73-8e47-29a506f7a407"
+        },
+        {
+          "name": "Jess M. Olson",
+          "vote": "nay"
+        },
+        {
+          "name": "Kent S. Peterson",
+          "vote": "nay"
+        },
+        {
+          "name": "Peri Pourier",
+          "vote": "nay",
+          "politician_id": "2cb67be6-dc31-452a-9f2b-51ce84a28e31"
+        },
+        {
+          "name": "Tim Reed",
+          "vote": "nay",
+          "politician_id": "20d569c0-435f-4f24-b22a-f0479f863605"
+        },
+        {
+          "name": "Rebecca Reimer",
+          "vote": "nay",
+          "politician_id": "5432c021-1820-47f8-9a05-beb82d1351bf"
+        },
+        {
+          "name": "Lynn Schneider",
+          "vote": "nay"
+        },
+        {
+          "name": "Jamie Smith",
+          "vote": "nay",
+          "politician_id": "270e2fd2-45bf-4325-ab38-9c9343a89b9e"
+        },
+        {
+          "name": "Mike Stevens",
+          "vote": "nay",
+          "politician_id": "6c040c7b-81b4-4c06-879d-aaf918db2f90"
+        },
+        {
+          "name": "Richard Thomason",
+          "vote": "nay"
+        },
+        {
+          "name": "Larry J. Tidemann",
+          "vote": "nay"
+        },
+        {
+          "name": "Richard Vasgaard",
+          "vote": "nay"
+        },
+        {
+          "name": "Mike Weisgram",
+          "vote": "nay",
+          "politician_id": "770743ba-b029-439a-9dc4-0cad030003a6"
+        },
+        {
+          "name": "Mark K. Willadsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Dean Wink",
+          "vote": "nay"
+        },
+        {
+          "name": "Nancy L. York",
+          "vote": "nay"
+        },
+        {
+          "name": "Spencer Gosch",
+          "vote": "nay",
+          "politician_id": "85e164a2-7744-4005-9282-456f3827df65"
+        },
+        {
+          "name": "Jennifer Keintz",
+          "vote": "absent"
+        },
+        {
+          "name": "Tamara St. John",
+          "vote": "absent"
+        },
+        {
+          "name": "Marli J. Wiese",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (House Judiciary Engrossed, 2022-02-14; official copy, https://mylrc.sdlegislature.gov/api/Documents/233500.pdf (sdlegislature.gov DocumentId 233500, BillId 22683))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1052-2022.house_judiciary_engrossed.pdf",
+      "sha256": "ead97cb8b9ba12c2e8e8213ee0630d92e5c1f263da44ec200d59a54e7fcbfd42"
+    },
+    "note": "House Judiciary engrossed, 2022-02-14 (hoghoused; the printed text says it may no longer match the sponsor's intent). Section 3 (courts and police shall protect the right) and Section 6 (exceptions for material aid to federal officers and prosecutors, and for seeking federal grants) are not quoted. The House vote on 2022-02-22 (Do Pass Amended) was 28-39, so it did not pass; later amendments are not in the text read."
+  },
+  "operative_text": "Section 1 (new section in SDCL title 23): For purposes of this Act, the following federal actions, whether undertaken by statute, regulation, executive order, judicial order, or administrative order, constitute federal infringements on the people's right to keep and bear arms, as guaranteed by the Second Amendment of the United States Constitution: (1) Any tax, levy, fee, or stamp imposed on firearms, firearm accessories, or ammunition, not common to other goods and services, and which might reasonably be expected to create a chilling effect on the purchase or ownership of firearms, firearm accessories, or ammunition by law-abiding citizens; (2) Any registration or tracking of firearms, firearm accessories, or ammunition, which might reasonably be expected to create a chilling effect on the purchase or ownership of firearms, firearm accessories, or ammunition by law-abiding citizens; (3) Any registration or tracking of the owners of firearms, firearm accessories, or ammunition, which might reasonably be expected to create a chilling effect on the purchase or ownership of firearms, firearm accessories, or ammunition by law-abiding citizens; (4) Any action forbidding the possession, ownership, use, or transfer of firearms, firearm accessories, or ammunition by law-abiding citizens; and (5) Any action ordering the confiscation of firearms, firearm accessories, or ammunition from law-abiding citizens.\nSection 2 (new section in SDCL title 23): Any federal action described in section 1 of this Act:\nSection 2 (new section in SDCL title 23): (1) Is invalid in this state; (2) May not be recognized in this state; (3) Must be specifically rejected by this state; and (4) Has no effect in this state.\nSection 4 (new section in SDCL title 23): No state agency, political subdivision, or any elected or appointed official or employee of this state or of a political subdivision, acting under governmental authority, may enforce or attempt to enforce any federal action described in section 1 of this Act.\nSection 5 (new section in SDCL title 23): Any political subdivision or law enforcement agency that employs a law enforcement officer who knowingly violates this Act, is liable for any injury caused to a person and is subject to imposition, by a court, of a civil penalty in the amount of fifty thousand dollars per violation."
+}

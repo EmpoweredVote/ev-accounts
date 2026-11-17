@@ -1,0 +1,39 @@
+{
+  "id": "SD-HB-1299-2018",
+  "scope": "state:sd",
+  "title": "HB1299 (2018 Regular): revise certain provisions regarding the lawful possession of firearms in certain locations.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/9224",
+    "https://mylrc.sdlegislature.gov/api/Documents/48430.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Spencer Gosch",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "85e164a2-7744-4005-9282-456f3827df65"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2018-02-01; official copy, https://mylrc.sdlegislature.gov/api/Documents/48430.pdf (sdlegislature.gov DocumentId 48430, BillId 9224))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1299-2018.introduced.pdf",
+      "sha256": "bf2f93ad85d8e5000d3d9e8fe79e628a57365c6989bf730bc283d40b9ed4a6ae"
+    },
+    "note": "Introduced text, 2018-02-01 (2018 print has no underline marks; the whole section is new). No passage vote recorded."
+  },
+  "operative_text": "Section 1 (new section in SDCL ch. 22-14): No building, structure, park, campus, or other area may be posted as a firearm-free zone unless any person entering the area is required to pass through an electronic device to detect the presence of a firearm on the body of that person or unless personnel trained by the entity or a delegate of the entity posting the area are located in the area. The provisions of this section do not apply to: (1) Any county courthouse; (2) The state capitol; or (3) Any law enforcement office or building."
+}

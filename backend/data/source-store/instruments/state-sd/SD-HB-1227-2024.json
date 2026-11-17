@@ -1,0 +1,39 @@
+{
+  "id": "SD-HB-1227-2024",
+  "scope": "state:sd",
+  "title": "HB1227 (2024 Regular): prohibit a homeowners' association from placing certain restrictions on firearms or firearm ammunition.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/25265",
+    "https://mylrc.sdlegislature.gov/api/Documents/263950.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Scott Odenbach",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "0862eaa3-1c47-43a0-9398-b108369687a7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2024-01-31; official copy, https://mylrc.sdlegislature.gov/api/Documents/263950.pdf (sdlegislature.gov DocumentId 263950, BillId 25265))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1227-2024.introduced.pdf",
+      "sha256": "60454b24b75da59a321ad46bfa859dee2f88cb11850f45f758690d174a8fd497"
+    },
+    "note": "Introduced text, 2024-01-31. Quote is cut after item (2)(b); items (c)-(e) list other lawful discharges and the section defines 'governing document' and 'homeowners' association'. No passage vote recorded."
+  },
+  "operative_text": "Section 1 (new section in SDCL ch. 11-5): A homeowner's association may not include or enforce a provision in a governing document that prohibits, restricts, or has the effect of prohibiting or restricting: (1) The lawful possession, transportation, or storage of a firearm, any part of a firearm, or firearm ammunition; or (2) The discharge of a firearm: (a) For defensive purposes, in accordance with §§ 22-18-3.1 to 22-18-4.9, inclusive; (b) To kill any dog found chasing, worrying, injuring, or killing poultry or domestic animals, as permitted by § 40-34-1;"
+}

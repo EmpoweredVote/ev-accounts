@@ -1,0 +1,39 @@
+{
+  "id": "SD-HB-1133-2026",
+  "scope": "state:sd",
+  "title": "HB1133 (2026 Regular): remove an enhanced permit as a condition of carrying a concealed pistol while on the campus of a public institution of higher education.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/26800",
+    "https://mylrc.sdlegislature.gov/api/Documents/297155.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dylan Jordan",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "62eee7ac-4406-46b4-9927-d5e92cb12027"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2026-01-25; official copy, https://mylrc.sdlegislature.gov/api/Documents/297155.pdf (sdlegislature.gov DocumentId 297155, BillId 26800))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1133-2026.introduced.pdf",
+      "sha256": "9fedfa9a17db2c14e9dc4267aac6588183841d09ca9a488ef351020d068fa6ec"
+    },
+    "note": "Introduced text, 2026-01-25; no passage vote on record. Struck in both sections: \"holding an enhanced permit, a restricted enhanced permit, or a reciprocal permit in accordance with chapter 23-7,\". Clause (1) quoted without its trailing items (stun gun, mace) which are unchanged."
+  },
+  "operative_text": "Section 1 (SDCL 13-39A-43): Except as otherwise provided in § 13-39A-44, neither the South Dakota Board of Technical Education nor any institution under the control of the board may restrict or limit the lawful carrying, possession, storage, or transportation of: (1) A concealed pistol, as defined in § 22-1-2, and compatible ammunition, by any individual within the boundaries of the institution, or while in any building or structure owned or leased by the board or the institution;\nSection 2 (SDCL 13-53-56): Except as otherwise provided in § 13-53-57, neither the Board of Regents nor any institution under the control of the board may restrict or limit the lawful carrying, possession, storage, or transportation of: (1) A concealed pistol, as defined in § 22-1-2, and compatible ammunition, by any individual within the boundaries of the institution, or while in any building or structure owned or leased by the board or the institution;"
+}

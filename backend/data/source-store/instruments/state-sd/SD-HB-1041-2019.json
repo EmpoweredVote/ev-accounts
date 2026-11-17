@@ -1,0 +1,136 @@
+{
+  "id": "SD-HB-1041-2019",
+  "scope": "state:sd",
+  "title": "HB1041 (2019 Regular): provide for the carrying of a concealed pistol without a permit.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/9724",
+    "https://mylrc.sdlegislature.gov/api/Documents/51601.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Drew C. Dennert",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Lance S Russell",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "2cf0e333-838d-4235-9f0c-176347f7dfa8"
+    },
+    {
+      "name": "Thomas J Brunner",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Lynne DiSanto",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Julie Frye-Mueller",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Tim Goodwin",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "2dfc4c6b-452b-48a5-bc92-cf1f29908e5b"
+    },
+    {
+      "name": "Brock L. Greenfield",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "4a858d43-9921-46ab-95e1-530cb70697d6"
+    },
+    {
+      "name": "Taffy Howard",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "6979c638-2800-48f4-9263-dd6f04726842"
+    },
+    {
+      "name": "Jensen (Kevin)",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Jensen (Phil)",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Isaac Latterell",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Steve Livermont",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Sam Marty",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "4034d40e-6795-4413-b976-79ead3d3d7d1"
+    },
+    {
+      "name": "Tina Mulally",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "e1d160b4-80c5-4d2d-8ed3-48bcdc4885c6"
+    },
+    {
+      "name": "Stace Nelson",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Tad Perry",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Tom Pischke",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "19103966-3827-4234-8cb4-afdacb4569e7"
+    },
+    {
+      "name": "Tony Randolph",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "0f39be61-4c8b-4f8e-8898-a5af1a84e79a"
+    },
+    {
+      "name": "Kaleb W. Weis",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2019-01-11; official copy, https://mylrc.sdlegislature.gov/api/Documents/51601.pdf (sdlegislature.gov DocumentId 51601, BillId 9724))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1041-2019.introduced.pdf",
+      "sha256": "3f30dae77627797369e8a8633baabedb5a7fcf237f9cec9f68db1e58e5c4286c"
+    },
+    "note": "As filed 2019-01-11. No passage vote recorded. Sections 6, 8-11 are conforming edits (temporary permit wording, reciprocity cross-reference, struck permit-holder carry sentence in 23-7-8.1, grace period, pistol delivery); struck text not quoted. Sections 1-4 are whole-section repeals, so only the effect is described. Repealed or struck in the text read (not quoted): Section 1 (SDCL 22-14-9): repealed (offence of carrying a concealed pistol without a permit, Class 1 misdemeanor). | Section 2 (SDCL 22-14-9.1): repealed (duty to have the permit in physical possession). | Section 3 (SDCL 22-14-10): repealed. | Section 4 (SDCL 22-14-11): repealed."
+  },
+  "operative_text": "Section 5 (SDCL 23-7-7): The issuance of a permit to carry a concealed pistol pursuant to this chapter or the recognition of nonresident permits to carry a concealed pistol under § 23-7-7.4 do not impose a general prohibition on the carry of a pistol without a permit.\nSection 7 (SDCL 23-7-7.4): Any valid permit to carry a concealed pistol, issued to a nonresident of South Dakota, is valid in South Dakota according to the terms of its issuance in the state of its issue, but only to the extent that the terms of issuance comply with any appropriate South Dakota statute or promulgated rule.\nSection 12 (new section in SDCL ch. 23-7): No person may carry a concealed pistol in any licensed on-sale malt beverage or alcoholic beverage establishment that derives over one-half of its total income from the sale of malt or alcoholic beverages."
+}

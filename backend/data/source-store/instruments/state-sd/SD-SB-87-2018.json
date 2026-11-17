@@ -1,0 +1,253 @@
+{
+  "id": "SD-SB-87-2018",
+  "scope": "state:sd",
+  "title": "SB87 (2018 Regular): revise certain provisions regarding the lawful possession of firearms in certain locations.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/8669",
+    "https://mylrc.sdlegislature.gov/api/Documents/48004.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Spencer Gosch",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "85e164a2-7744-4005-9282-456f3827df65"
+    },
+    {
+      "name": "Jeff Monroe",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Blaine \"Chip\" Campbell",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Bob Ewing",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Dan Kaiser",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Jack Kolbeck",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "a84ab96c-ab1d-4020-af32-02bc5a7a7a0c"
+    },
+    {
+      "name": "Stace Nelson",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Netherton",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Otten",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Tim Rounds",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Jordan Youngberg",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Larry P Zikmund",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "3bd6b5be-33a9-4951-8472-2dcc6ed005ce"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2018-01-31",
+      "body": "SD Senate",
+      "motion": "Senate Do Pass Amended",
+      "kind": "roll-call",
+      "yes": 16,
+      "no": 19,
+      "absent": 0,
+      "note": "sdlegislature.gov /api/Votes record (read from the legislature) 90163475",
+      "members": [
+        {
+          "name": "Netherton",
+          "vote": "yea"
+        },
+        {
+          "name": "R. Blake Curd",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Ewing",
+          "vote": "yea"
+        },
+        {
+          "name": "Brock L. Greenfield",
+          "vote": "yea",
+          "politician_id": "4a858d43-9921-46ab-95e1-530cb70697d6"
+        },
+        {
+          "name": "Jensen (Phil)",
+          "vote": "yea"
+        },
+        {
+          "name": "Josh Klumb",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Kolbeck",
+          "vote": "yea",
+          "politician_id": "a84ab96c-ab1d-4020-af32-02bc5a7a7a0c"
+        },
+        {
+          "name": "Kris Langer",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Maher",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Monroe",
+          "vote": "yea"
+        },
+        {
+          "name": "Stace Nelson",
+          "vote": "yea"
+        },
+        {
+          "name": "Otten",
+          "vote": "yea"
+        },
+        {
+          "name": "Lance S Russell",
+          "vote": "yea",
+          "politician_id": "2cf0e333-838d-4235-9f0c-176347f7dfa8"
+        },
+        {
+          "name": "Jim Stalzer",
+          "vote": "yea"
+        },
+        {
+          "name": "Neal Tapio",
+          "vote": "yea"
+        },
+        {
+          "name": "John Wiik",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Bolin",
+          "vote": "nay"
+        },
+        {
+          "name": "Gary Cammack",
+          "vote": "nay"
+        },
+        {
+          "name": "Justin R Cronin",
+          "vote": "nay"
+        },
+        {
+          "name": "Jason E Frerichs",
+          "vote": "nay"
+        },
+        {
+          "name": "Terri Haverly",
+          "vote": "nay"
+        },
+        {
+          "name": "Troy E. Heinert",
+          "vote": "nay"
+        },
+        {
+          "name": "Craig Kennedy",
+          "vote": "nay"
+        },
+        {
+          "name": "Kevin Killer",
+          "vote": "nay"
+        },
+        {
+          "name": "Reynold Nesiba",
+          "vote": "nay"
+        },
+        {
+          "name": "Al Novstrup",
+          "vote": "nay",
+          "politician_id": "7c5e90ca-bd95-4d2e-a2da-e31d5a5c1f67"
+        },
+        {
+          "name": "Jeffrey D Partridge",
+          "vote": "nay"
+        },
+        {
+          "name": "Deb Peters",
+          "vote": "nay"
+        },
+        {
+          "name": "Arthur L. Rusch",
+          "vote": "nay"
+        },
+        {
+          "name": "Deb Soholt",
+          "vote": "nay"
+        },
+        {
+          "name": "Alan Solano",
+          "vote": "nay"
+        },
+        {
+          "name": "Sutton (Billie)",
+          "vote": "nay"
+        },
+        {
+          "name": "Larry Tidemann",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim White",
+          "vote": "nay"
+        },
+        {
+          "name": "Jordan Youngberg",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Judiciary Engrossed, 2018-01-25; official copy, https://mylrc.sdlegislature.gov/api/Documents/48004.pdf (sdlegislature.gov DocumentId 48004, BillId 8669))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-87-2018.senate_judiciary_engrossed.pdf",
+      "sha256": "a3713e4e15f58be4b3f9cc207a17e251bf5df325141f150adc70cc5976f2c672"
+    },
+    "note": "Senate Judiciary engrossed, 2018-01-25 (text marked as extensively amended). Senate Do Pass Amended vote 16-19 on 2018-01-31; later amendments are not in the text read."
+  },
+  "operative_text": "Section 1 (new section in SDCL ch. 22-14): No building, structure, park, campus, or other area may be posted as a firearm-free zone unless any person entering the area is required to pass through an electronic device to detect the presence of a firearm on the body of that person or unless personnel trained by the entity or a delegate of the entity posting the area are located in the area. The provisions of this section do not apply to: (1) Any county courthouse; (2) The state capitol; or (3) Any law enforcement office or building."
+}

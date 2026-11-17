@@ -1,0 +1,39 @@
+{
+  "id": "SD-HB-1131-2023",
+  "scope": "state:sd",
+  "title": "HB1131 (2023 Regular): prevent the imposition or enforcement of extreme risk protection orders and to provide a penalty therefor.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/23708",
+    "https://mylrc.sdlegislature.gov/api/Documents/246018.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Aaron Aylward",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "9aaa2b94-43e9-4cee-a876-4e8b319349f8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2023-01-24; official copy, https://mylrc.sdlegislature.gov/api/Documents/246018.pdf (sdlegislature.gov DocumentId 246018, BillId 23708))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1131-2023.introduced.pdf",
+      "sha256": "e3ebeccad2c18508bbbc5ce8f02924ad63f7e5859eaf71486da818362ba8b979"
+    },
+    "note": "Introduced text, 2023-01-24; no passage vote on record. The section also declares federal and court orders of this kind null and void in the state (only the state-actor bar is quoted)."
+  },
+  "operative_text": "Section 1 (new section in SDCL ch. 27A-1): No state agency, political subdivision, or any elected or appointed official or employee of this state or of a political subdivision may directly or indirectly impose upon or enforce an extreme risk protection order described in this section against a resident of this state. No state agency, political subdivision, or any elected or appointed official or employee of this state or of a political subdivision may accept any federal funds that are directly or indirectly conditioned on the creation, imposition, or enforcement of an extreme risk protection order described in this section. Any violation of this section is a Class 6 felony. Nothing in this section affects the issuance of a protection order under chapter 22-19A, in cases of stalking, physical injury as a result of an assault, or crimes of violence, or the issuance of a protection order under chapter 25-10, in cases of domestic abuse."
+}

@@ -1,0 +1,86 @@
+{
+  "id": "SD-SB-104-2018",
+  "scope": "state:sd",
+  "title": "SB104 (2018 Regular): repeal and revise certain provisions relating to the requirements for a permit to carry a concealed pistol.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/8755",
+    "https://mylrc.sdlegislature.gov/api/Documents/47442.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lynne DiSanto",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Lance S Russell",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "2cf0e333-838d-4235-9f0c-176347f7dfa8"
+    },
+    {
+      "name": "Blaine \"Chip\" Campbell",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Drew C. Dennert",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Julie Frye-Mueller",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Lana Greenfield",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "1d55919c-7451-495a-81b3-1f29921a6abe"
+    },
+    {
+      "name": "Dan Kaiser",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Sam Marty",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "4034d40e-6795-4413-b976-79ead3d3d7d1"
+    },
+    {
+      "name": "Stace Nelson",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Neal Tapio",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2018-01-22; official copy, https://mylrc.sdlegislature.gov/api/Documents/47442.pdf (sdlegislature.gov DocumentId 47442, BillId 8755))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-104-2018.introduced.pdf",
+      "sha256": "92c2007a6be3568ff4e7b2afde56c47dc2e868a0fb29181066443b5144f3dde5"
+    },
+    "note": "Introduced text, 2018-01-22. Sections 1-4 repeal SDCL 22-14-9 (carry without permit, Class 1 misdemeanor), 22-14-9.1, 22-14-10 and 22-14-11; Section 9 struck the old alcohol-establishment limit, replaced by Section 12; Section 10 struck the grace-period warning-ticket language. No passage vote recorded."
+  },
+  "operative_text": "Section 5 (SDCL 23-7-7): The issuance of a permit to carry a concealed pistol pursuant to the provisions of this chapter or the recognition of nonresident permits to carry a concealed pistol under § 23-7-7.4 do not impose a general prohibition on the carrying of a pistol without a permit.\nSection 7 (SDCL 23-7-7.4): Any valid permit to carry a concealed pistol, issued to a nonresident of South Dakota, is valid in South Dakota according to the terms of its issuance in the state of its issue, but only to the extent that the terms of issuance comply with any appropriate South Dakota statute or promulgated rule.\nSection 11 (SDCL 23-7-9): Any pistol that is delivered, shall be securely wrapped and shall be unloaded. A violation of this section is a Class 1 misdemeanor.\nSection 12 (new section in SDCL ch. 23-7): No person may carry a concealed pistol in any licensed on-sale malt beverage or alcoholic beverage establishment that derives over one-half of its total income from the sale of malt or alcoholic beverages."
+}

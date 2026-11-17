@@ -1,0 +1,299 @@
+{
+  "id": "SD-SB-9-2019",
+  "scope": "state:sd",
+  "title": "SB9 (2019 Regular): provide for the Firearms Protection Act.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/9681",
+    "https://mylrc.sdlegislature.gov/api/Documents/54051.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Stace Nelson",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Tony Randolph",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "0f39be61-4c8b-4f8e-8898-a5af1a84e79a"
+    },
+    {
+      "name": "Thomas J Brunner",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "R. Blake Curd",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Drew C. Dennert",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Lynne DiSanto",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Julie Frye-Mueller",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Tim Goodwin",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "2dfc4c6b-452b-48a5-bc92-cf1f29908e5b"
+    },
+    {
+      "name": "Spencer Gosch",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "85e164a2-7744-4005-9282-456f3827df65"
+    },
+    {
+      "name": "Brock L. Greenfield",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "4a858d43-9921-46ab-95e1-530cb70697d6"
+    },
+    {
+      "name": "Taffy Howard",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "6979c638-2800-48f4-9263-dd6f04726842"
+    },
+    {
+      "name": "Jensen (Kevin)",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Jensen (Phil)",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Oren Lesmeister",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Sam Marty",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "4034d40e-6795-4413-b976-79ead3d3d7d1"
+    },
+    {
+      "name": "Jeff Monroe",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Tina Mulally",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "e1d160b4-80c5-4d2d-8ed3-48bcdc4885c6"
+    },
+    {
+      "name": "Otten",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Lance S Russell",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "2cf0e333-838d-4235-9f0c-176347f7dfa8"
+    },
+    {
+      "name": "Jim Stalzer",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2019-02-25",
+      "body": "SD Senate",
+      "motion": "Senate Do Pass Amended",
+      "kind": "roll-call",
+      "yes": 4,
+      "no": 31,
+      "absent": 0,
+      "note": "sdlegislature.gov /api/Votes record (read from the legislature) 90163489",
+      "members": [
+        {
+          "name": "Lynne DiSanto",
+          "vote": "yea"
+        },
+        {
+          "name": "Jensen (Phil)",
+          "vote": "yea"
+        },
+        {
+          "name": "Stace Nelson",
+          "vote": "yea"
+        },
+        {
+          "name": "Lance S Russell",
+          "vote": "yea",
+          "politician_id": "2cf0e333-838d-4235-9f0c-176347f7dfa8"
+        },
+        {
+          "name": "Blare",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Bolin",
+          "vote": "nay"
+        },
+        {
+          "name": "Gary Cammack",
+          "vote": "nay"
+        },
+        {
+          "name": "Justin R Cronin",
+          "vote": "nay"
+        },
+        {
+          "name": "R. Blake Curd",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Ewing",
+          "vote": "nay"
+        },
+        {
+          "name": "Red Dawn Foster",
+          "vote": "nay",
+          "politician_id": "567014f7-69e4-45e2-93b0-53eea4e592fc"
+        },
+        {
+          "name": "Brock L. Greenfield",
+          "vote": "nay",
+          "politician_id": "4a858d43-9921-46ab-95e1-530cb70697d6"
+        },
+        {
+          "name": "Troy E. Heinert",
+          "vote": "nay"
+        },
+        {
+          "name": "Craig Kennedy",
+          "vote": "nay"
+        },
+        {
+          "name": "Josh Klumb",
+          "vote": "nay"
+        },
+        {
+          "name": "Jack Kolbeck",
+          "vote": "nay",
+          "politician_id": "a84ab96c-ab1d-4020-af32-02bc5a7a7a0c"
+        },
+        {
+          "name": "Kris Langer",
+          "vote": "nay"
+        },
+        {
+          "name": "Ryan Maher",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeff Monroe",
+          "vote": "nay"
+        },
+        {
+          "name": "Reynold Nesiba",
+          "vote": "nay"
+        },
+        {
+          "name": "Al Novstrup",
+          "vote": "nay",
+          "politician_id": "7c5e90ca-bd95-4d2e-a2da-e31d5a5c1f67"
+        },
+        {
+          "name": "Otten",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeffrey D Partridge",
+          "vote": "nay"
+        },
+        {
+          "name": "Arthur L. Rusch",
+          "vote": "nay"
+        },
+        {
+          "name": "Lee Schoenbeck",
+          "vote": "nay"
+        },
+        {
+          "name": "Smith (V. J.)",
+          "vote": "nay"
+        },
+        {
+          "name": "Deb Soholt",
+          "vote": "nay"
+        },
+        {
+          "name": "Alan Solano",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Stalzer",
+          "vote": "nay"
+        },
+        {
+          "name": "Wayne H. Steinhauer",
+          "vote": "nay"
+        },
+        {
+          "name": "Maggie A. Sutton",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim White",
+          "vote": "nay"
+        },
+        {
+          "name": "John Wiik",
+          "vote": "nay"
+        },
+        {
+          "name": "Susan Wismer",
+          "vote": "nay"
+        },
+        {
+          "name": "Jordan Youngberg",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Military and Veterans Affairs Engrossed, 2019-02-21; official copy, https://mylrc.sdlegislature.gov/api/Documents/54051.pdf (sdlegislature.gov DocumentId 54051, BillId 9681))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-9-2019.senate_military_and_veterans_affairs_engrossed.pdf",
+      "sha256": "73d1a22061cda7294f838ac7098fa76c56707137da5c1f03eccfee312b1bb846"
+    },
+    "note": "Senate Military and Veterans Affairs engrossed, 2019-02-21 (text marked as extensively amended). Struck: the old rulemaking-only wording tied to chapter 23-7 licences. Senate Do Pass Amended vote 4-31 on 2019-02-25; later amendments are not in the text read."
+  },
+  "operative_text": "Section 1 (SDCL 1-26-6.10): No department, agency, institution, board, commission, or other entity of state government may restrict or prohibit by any rule, policy, standard, or other directive any person's right or privilege to carry or possess a pistol concealed. Any resident of this state may bring a declaratory judgment action in accordance with chapter 21-24 in any circuit court to enforce this section."
+}

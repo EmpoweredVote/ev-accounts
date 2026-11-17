@@ -1,0 +1,39 @@
+{
+  "id": "SD-HB-1114-2026",
+  "scope": "state:sd",
+  "title": "HB1114 (2026 Regular): require that certain mental health information be submitted to and subsequently removed from the National Instant Criminal Background Check System.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/26468",
+    "https://mylrc.sdlegislature.gov/api/Documents/296605.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Erik Muckey",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "61265798-4416-46cf-8031-2677fa81c20b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2026-01-22; official copy, https://mylrc.sdlegislature.gov/api/Documents/296605.pdf (sdlegislature.gov DocumentId 296605, BillId 26468))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1114-2026.introduced.pdf",
+      "sha256": "74cafa8378a590ec3fc8714a6214e5860fcdec4dea35e1e51380ab12af5923e2"
+    },
+    "note": "Introduced text 2026-01-22. Struck: 'within seven working days' (now two hours). Section 4 (SDCL 27A-10-24) similarly shortens the board of mental illness report to two hours and extends it to denied petitions (not quoted for length). No vote recorded."
+  },
+  "operative_text": "Section 1 (SDCL 23-7-47): The prosecuting attorney shall submit the report to the attorney general, in the manner and form prescribed by the attorney general, no later than two hours after the verdict acquitting for insanity or the adjudication of incompetency. Section 2 (SDCL 23-7-48): The attorney general shall transmit to the National Instant Criminal Background Check System administered by the Federal Bureau of Investigation the name and other identifying information of (1) Any person who is prohibited from possessing a firearm under 18 U.S.C. § 922(g)(4) (January 1, 2026), because (a) The person was acquitted of a crime by reason of insanity pursuant to § 23A-26-5, (b) The person was determined to be incompetent to stand trial pursuant to § 23A-10A-4, or (c) The person was involuntarily committed pursuant to chapter 27A-10 based on a finding that the person is a danger to self, as defined in subdivision 27A-1-1(7)(a), or a danger to others, as defined in subdivision 27A-1-1(6); and (2) Any person who is ordered apprehended under § 27A-10-2 on the basis of a petition for an involuntary commitment filed in accordance with § 27A-10-1. Section 3 (new section in SDCL ch. 23-7): The attorney general shall: (1) Transmit any information received in accordance with § 23-7-48 to the National Instant Criminal Background Check System within one working day; (2) Provide a copy of the transmitted information described in subdivision 23-7-48(2) to the individual who is the subject of the transmittal or to the individual's guardian; (3) Request that any of the transmitted information described in subdivision 23-7-48(2) be removed from the National Instant Criminal Background Check System after a period of eighteen months; and (4) Provide to the individual who is the subject of the transmitted information or to the individual's guardian, notice that the information has been removed from the National Instant Criminal Background Check System, as provided for in subdivision (3) of this section."
+}

@@ -1,0 +1,400 @@
+{
+  "id": "SD-HB-1115-2025",
+  "scope": "state:sd",
+  "title": "HB1115 (2025 Regular): establish the crime of aggravated criminal entry of a motor vehicle with the intent to steal a firearm or firearm silencer, to make offenders ineligible for presumptive probation, and to provide a penalty therefor.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/25979",
+    "https://mylrc.sdlegislature.gov/api/Documents/282766.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Mary Fitzgerald",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "79c9c9f5-8689-4dd4-9394-107bffd22445"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-02-25",
+      "body": "SD House",
+      "motion": "House Do Pass Amended",
+      "kind": "roll-call",
+      "yes": 56,
+      "no": 14,
+      "absent": 0,
+      "note": "sdlegislature.gov /api/Votes record (read from the legislature) 90163564",
+      "members": [
+        {
+          "name": "Bobbi Andera",
+          "vote": "yea",
+          "politician_id": "36f88610-2d75-4604-8c05-ef7870657239"
+        },
+        {
+          "name": "Amber Arlint",
+          "vote": "yea",
+          "politician_id": "28d373b9-2422-41bc-a165-3fc98fd2f18f"
+        },
+        {
+          "name": "Julie Auch",
+          "vote": "yea",
+          "politician_id": "dc950fc0-2665-4474-a8eb-c06504c8bc4f"
+        },
+        {
+          "name": "Jessica Bahmuller",
+          "vote": "yea",
+          "politician_id": "5a97fda6-28f3-48f1-b69b-1739ff8ed841"
+        },
+        {
+          "name": "Jeff Bathke",
+          "vote": "yea",
+          "politician_id": "0a70f3f7-f4fe-4a96-b563-924762287714"
+        },
+        {
+          "name": "Heather Baxter",
+          "vote": "yea",
+          "politician_id": "76c1003d-23ee-45f3-bf1c-a3436f6e852f"
+        },
+        {
+          "name": "Tim Czmowski",
+          "vote": "yea",
+          "politician_id": "ed3f6553-a15d-4ab0-98a1-c1d1a96f2789"
+        },
+        {
+          "name": "Roger DeGroot",
+          "vote": "yea",
+          "politician_id": "1254f42b-3ff8-4ebe-becd-4e8db17207b6"
+        },
+        {
+          "name": "Mike Derby",
+          "vote": "yea",
+          "politician_id": "c9ebe16c-80f1-40a3-82c2-ed3ccf2e3471"
+        },
+        {
+          "name": "Steve Duffy",
+          "vote": "yea",
+          "politician_id": "5b8aed98-d7e6-47d4-b9db-5e8dc5922c11"
+        },
+        {
+          "name": "Eric Emery",
+          "vote": "yea",
+          "politician_id": "56997ab9-f6ec-4f18-b2d2-1cbef66398e4"
+        },
+        {
+          "name": "Mary Fitzgerald",
+          "vote": "yea",
+          "politician_id": "79c9c9f5-8689-4dd4-9394-107bffd22445"
+        },
+        {
+          "name": "Josephine Garcia",
+          "vote": "yea",
+          "politician_id": "771cc3de-6bc2-480e-b892-6d439cdc5966"
+        },
+        {
+          "name": "Tim Goodwin",
+          "vote": "yea",
+          "politician_id": "2dfc4c6b-452b-48a5-bc92-cf1f29908e5b"
+        },
+        {
+          "name": "Spencer Gosch",
+          "vote": "yea",
+          "politician_id": "85e164a2-7744-4005-9282-456f3827df65"
+        },
+        {
+          "name": "Lana Greenfield",
+          "vote": "yea",
+          "politician_id": "1d55919c-7451-495a-81b3-1f29921a6abe"
+        },
+        {
+          "name": "Jim Halverson",
+          "vote": "yea",
+          "politician_id": "69d20ab4-17a4-4a6f-8a85-15b9eb07bdb8"
+        },
+        {
+          "name": "Mellissa Heermann",
+          "vote": "yea",
+          "politician_id": "e5f6b71d-1a5d-4a54-af9c-baf90b0bbcb8"
+        },
+        {
+          "name": "Les Heinemann",
+          "vote": "yea",
+          "politician_id": "63b5257d-b627-4316-acb8-5818c98f4bdc"
+        },
+        {
+          "name": "John Hughes",
+          "vote": "yea",
+          "politician_id": "9557fa4e-9922-4537-86a9-517e1f88f0ee"
+        },
+        {
+          "name": "Jana Hunt",
+          "vote": "yea",
+          "politician_id": "3fad3b88-7e48-4cce-ae7c-8b79de50ee0f"
+        },
+        {
+          "name": "Travis Ismay",
+          "vote": "yea",
+          "politician_id": "a946db72-9cf8-4fae-8abd-f81a58c750fc"
+        },
+        {
+          "name": "Greg Jamison",
+          "vote": "yea",
+          "politician_id": "831308dd-ee45-4f6a-8be3-1b20d744618f"
+        },
+        {
+          "name": "Terri Jorgenson",
+          "vote": "yea",
+          "politician_id": "0ecc467e-0207-4b66-ba70-4276e276553c"
+        },
+        {
+          "name": "Chris Kassin",
+          "vote": "yea",
+          "politician_id": "2bce9fe5-2b9f-45dc-8c3d-0571144876ae"
+        },
+        {
+          "name": "Tony Kayser",
+          "vote": "yea",
+          "politician_id": "027a721c-02ce-48ac-9bd6-32f72e16dbb0"
+        },
+        {
+          "name": "Jack Kolbeck",
+          "vote": "yea",
+          "politician_id": "a84ab96c-ab1d-4020-af32-02bc5a7a7a0c"
+        },
+        {
+          "name": "David Kull",
+          "vote": "yea",
+          "politician_id": "a90e0e88-5914-457e-8a13-129edec2ee0d"
+        },
+        {
+          "name": "Trish Ladner",
+          "vote": "yea",
+          "politician_id": "2b617d9e-0db8-41b8-bbbb-c2b779e2271b"
+        },
+        {
+          "name": "Karla Lems",
+          "vote": "yea",
+          "politician_id": "d2e6de1d-9319-46e5-a97e-333e94ccca15"
+        },
+        {
+          "name": "Curt Massie",
+          "vote": "yea",
+          "politician_id": "16c1d6f9-655d-45f9-9a02-5cf65e89b750"
+        },
+        {
+          "name": "Liz May",
+          "vote": "yea",
+          "politician_id": "083abaa4-eed0-4dd0-9143-924f73f1925a"
+        },
+        {
+          "name": "Scott Moore",
+          "vote": "yea",
+          "politician_id": "55b13d36-8c75-46d8-88f7-930f8542d305"
+        },
+        {
+          "name": "Tina Mulally",
+          "vote": "yea",
+          "politician_id": "e1d160b4-80c5-4d2d-8ed3-48bcdc4885c6"
+        },
+        {
+          "name": "Brian Mulder",
+          "vote": "yea",
+          "politician_id": "d7c1771b-9c9b-47b0-ad2f-9fd3c488b365"
+        },
+        {
+          "name": "Kaley Nolz",
+          "vote": "yea",
+          "politician_id": "2a9a6091-c497-47f1-bb05-5340749085af"
+        },
+        {
+          "name": "Al Novstrup",
+          "vote": "yea",
+          "politician_id": "7c5e90ca-bd95-4d2e-a2da-e31d5a5c1f67"
+        },
+        {
+          "name": "Drew Peterson",
+          "vote": "yea",
+          "politician_id": "06b990f8-dc71-4ab6-bcab-fe407ecab565"
+        },
+        {
+          "name": "Peri Pourier",
+          "vote": "yea",
+          "politician_id": "2cb67be6-dc31-452a-9f2b-51ce84a28e31"
+        },
+        {
+          "name": "Tony Randolph",
+          "vote": "yea",
+          "politician_id": "0f39be61-4c8b-4f8e-8898-a5af1a84e79a"
+        },
+        {
+          "name": "Reder",
+          "vote": "yea"
+        },
+        {
+          "name": "Taylor Rehfeldt",
+          "vote": "yea",
+          "politician_id": "9fda0982-9faa-42fc-971b-6bd44ddab894"
+        },
+        {
+          "name": "Rebecca Reimer",
+          "vote": "yea",
+          "politician_id": "5432c021-1820-47f8-9a05-beb82d1351bf"
+        },
+        {
+          "name": "Tim Reisch",
+          "vote": "yea",
+          "politician_id": "018f9754-9550-4609-a488-7d52b4817f23"
+        },
+        {
+          "name": "Kathy Rice",
+          "vote": "yea",
+          "politician_id": "23bd785c-f2f8-4df4-8045-71420a34ad67"
+        },
+        {
+          "name": "Matt Roby",
+          "vote": "yea",
+          "politician_id": "ad8fc790-8a00-4ef8-bcd5-f6e707c89f2c"
+        },
+        {
+          "name": "Kent Roe",
+          "vote": "yea",
+          "politician_id": "43eb752a-102c-4be2-a4c6-ed63d0505cec"
+        },
+        {
+          "name": "Brandei Schaefbauer",
+          "vote": "yea",
+          "politician_id": "12448b5c-a615-43e6-a2b5-a34aba39f572"
+        },
+        {
+          "name": "Tesa Schwans",
+          "vote": "yea",
+          "politician_id": "681707fe-8745-42c6-9ee4-5b70bff02061"
+        },
+        {
+          "name": "William Shorma",
+          "vote": "yea",
+          "politician_id": "d156d3a7-6383-4926-8628-713e805c5d42"
+        },
+        {
+          "name": "John Sjaarda",
+          "vote": "yea",
+          "politician_id": "5c7b92d4-5ac2-49e8-a192-84f85092c0ca"
+        },
+        {
+          "name": "Kevin Van Diepen",
+          "vote": "yea",
+          "politician_id": "9d5f9a77-cff3-4c99-95e1-f70f528d58df"
+        },
+        {
+          "name": "Richard Vasgaard",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Walburg",
+          "vote": "yea",
+          "politician_id": "f9963ac0-d88a-4cd1-9f5e-d092a31ddeb9"
+        },
+        {
+          "name": "Keri Weems",
+          "vote": "yea",
+          "politician_id": "4987fb3a-bbc3-4af1-b612-f5dc67ff617a"
+        },
+        {
+          "name": "Jon Hansen",
+          "vote": "yea",
+          "politician_id": "19d99ac3-ad49-4ad8-9659-ac4d0a28c725"
+        },
+        {
+          "name": "Aaron Aylward",
+          "vote": "nay",
+          "politician_id": "9aaa2b94-43e9-4cee-a876-4e8b319349f8"
+        },
+        {
+          "name": "Erin Healy",
+          "vote": "nay",
+          "politician_id": "1babfc4d-bbd5-44f9-ac8f-48f256c66ae7"
+        },
+        {
+          "name": "Phil Jensen",
+          "vote": "nay",
+          "politician_id": "fdaf2abe-71aa-45f0-b13f-5a29651dc993"
+        },
+        {
+          "name": "Dylan Jordan",
+          "vote": "nay",
+          "politician_id": "62eee7ac-4406-46b4-9927-d5e92cb12027"
+        },
+        {
+          "name": "Logan Manhart",
+          "vote": "nay",
+          "politician_id": "405844d0-9473-4495-996b-cc5db475c617"
+        },
+        {
+          "name": "Will Mortenson",
+          "vote": "nay",
+          "politician_id": "003ecd80-7d79-4f73-8e47-29a506f7a407"
+        },
+        {
+          "name": "Erik Muckey",
+          "vote": "nay",
+          "politician_id": "61265798-4416-46cf-8031-2677fa81c20b"
+        },
+        {
+          "name": "Scott Odenbach",
+          "vote": "nay",
+          "politician_id": "0862eaa3-1c47-43a0-9398-b108369687a7"
+        },
+        {
+          "name": "Marty Overweg",
+          "vote": "nay",
+          "politician_id": "c1d91b99-d727-4110-9792-c31f475d81e2"
+        },
+        {
+          "name": "Bethany Soye",
+          "vote": "nay",
+          "politician_id": "f05f4a91-c897-4a55-8fce-664b2a5bea4a"
+        },
+        {
+          "name": "Mike Stevens",
+          "vote": "nay",
+          "politician_id": "6c040c7b-81b4-4c06-879d-aaf918db2f90"
+        },
+        {
+          "name": "Nicole Uhre-Balk",
+          "vote": "nay",
+          "politician_id": "286085dd-ac85-4b22-bbb5-3fd23eeb3645"
+        },
+        {
+          "name": "Mike Weisgram",
+          "vote": "nay",
+          "politician_id": "770743ba-b029-439a-9dc4-0cad030003a6"
+        },
+        {
+          "name": "Kadyn Wittman",
+          "vote": "nay",
+          "politician_id": "2112cab0-4ef4-47b1-bfae-27260e001619"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (House Judiciary Engrossed, 2025-02-21; official copy, https://mylrc.sdlegislature.gov/api/Documents/282766.pdf (sdlegislature.gov DocumentId 282766, BillId 25979))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1115-2025.house_judiciary_engrossed.pdf",
+      "sha256": "94d9663466da5918217693df4d821a3a24f8d66261cabe4c00f1c50e5b5717c9"
+    },
+    "note": "House Judiciary engrossed, 2025-02-21. Only 'section 1 of this Act,' is new in 22-6-11; the quote abbreviates the existing list with '...'. A passage vote is recorded; later amendments are not in the text read."
+  },
+  "operative_text": "Section 1 (new section in SDCL ch. 22-32): Any person who enters or remains in a motor vehicle and takes or exercises control over the property of another, and that property is a firearm or a firearm silencer, regardless of value, is guilty of a Class 5 felony. Section 2 (SDCL 22-6-11): The sentencing court shall sentence an offender convicted of a Class 5 or Class 6 felony, except those convicted under §§ 22-11A-2.1, ... section 1 of this Act, 22-42-7, subdivision 24-2-14(1), 32-23-4.6, 32-34-5, and any person ineligible for probation under § 23A-27-12, to a term of probation."
+}

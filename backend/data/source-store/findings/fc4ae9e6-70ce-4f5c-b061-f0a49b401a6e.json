@@ -1,0 +1,64 @@
+{
+  "politician_id": "fc4ae9e6-70ce-4f5c-b061-f0a49b401a6e",
+  "findings": [
+    {
+      "id": "e33a59470eb045d15772d0e566a43156635f88deea0e34d1e0a35d7753329218",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/27015",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-179-2026",
+      "act": "yea",
+      "motion": "Senate Do Pass",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SD Senate, Senate Do Pass, 2026-02-17: yea (tally 28–6); census gate: none.",
+      "subjects": [
+        "juvenile commitment allowed for weapons offenses"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2026-01-29; official copy, https://mylrc.sdlegislature.gov/api/Documents/299353.pdf (sdlegislature.gov DocumentId 299353, BillId 27015))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-179-2026.introduced.pdf",
+          "sha256": "bcf1e952f357859cebf519027cf82ab916791f223fe991dbef3860176ba3171c"
+        }
+      }
+    },
+    {
+      "id": "076e3bdbcc55aa9b40a4cfbdc9b0d5e256ee643c450a1e270a07baef5455f044",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/26339",
+      "date": "2026-01-23",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-2-2026",
+      "act": "yea",
+      "motion": "Senate Do Pass Amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SD Senate, Senate Do Pass Amended, 2026-01-23: yea (tally 34–0); census gate: near-unanimous.",
+      "subjects": [
+        "firearm silencers no longer a controlled weapon"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Engrossed, 2026-01-23; official copy, https://mylrc.sdlegislature.gov/api/Documents/296986.pdf (sdlegislature.gov DocumentId 296986, BillId 26339))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-2-2026.senate_engrossed.pdf",
+          "sha256": "b18942ff9d86f7629bbd3d4395cd747092e260795bf4890f97717e491429ee29"
+        }
+      }
+    }
+  ],
+  "searches": []
+}
