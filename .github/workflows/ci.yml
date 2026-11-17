@@ -228,6 +228,17 @@ jobs:
       - name: Unit tests
         run: npm run test:unit
 
+      # The two ../tests/** files that read source text only — no database, no secrets, no app —
+      # so they can run on every PR, unlike the rest of that suite. They ride this job for its
+      # node_modules (vitest); a job of their own would pay a second `npm ci` for under a second
+      # of tests. Named by path, so a new file in ../tests/** is NOT picked up here by accident.
+      #
+      # 🔴 "supabaseAdmin exists only in expected files" was red on master from the Civic Trivia
+      # fold until #1511 (2026-11-17) and nothing noticed, because nothing ran it.
+      - name: Static architecture guards (dual-client, coordinate leakage)
+        if: ${{ !cancelled() }}
+        run: npm run test:static-guards
+
       # Rides this job because it needs node_modules (it imports pg through the check it drives)
       # but no DATABASE_URL — so unlike the live check it also runs on PRs and on forks.
       #

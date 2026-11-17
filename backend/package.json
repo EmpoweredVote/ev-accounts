@@ -20,6 +20,7 @@
     "topic:stage5-theme-prompt": "tsx scripts/topic-stage5-theme-prompt.ts",
     "topic:stage5-write": "tsx scripts/topic-stage5-write.ts",
     "test:unit": "vitest run src scripts --exclude \"**/ingest-gazetteer-places-counties.test.ts\"",
+    "test:static-guards": "vitest run tests/architecture/ tests/integration/architecture.test.ts",
     "test:watch": "vitest",
     "lint": "eslint src scripts",
     "typecheck": "tsc --noEmit",
