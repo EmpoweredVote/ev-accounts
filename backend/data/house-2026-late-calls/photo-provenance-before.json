@@ -1,0 +1,60 @@
+{
+  "why_this_file_exists": "CC_0448 overwrites politician_images.photo_license and politicians.photo_origin_url. Neither column has a history table, so the previous values exist nowhere once it commits. These are those values, read from production before the migration ran.",
+  "read_from": "production kxsdzaojfaibhuzmclfq, 2026-11-17",
+  "applied": "CC_0448, 2026-11-16",
+  "pixels_changed": "none — every image file is byte-for-byte as it was; only the record changed",
+  "the_common_fault": "Two of the three claimed press_use on the authority of a Ballotpedia page. Ballotpedia is not the licensor: its person photos are candidate-submitted or taken from campaign sites, so that copyright was never its to grant. A Ballotpedia origin is a pointer to the real source.",
+  "rows": [
+    {
+      "full_name": "Eileen Laubacher",
+      "politician_id": "09a94867-ea68-4a53-89cb-c89485119a9c",
+      "image_id": "23114ac3-693b-4b1e-a91d-49556338b9e9",
+      "before": {
+        "photo_license": "press_use",
+        "photo_origin_url": "https://ballotpedia.org/Colorado%27s_4th_Congressional_District_election,_2026"
+      },
+      "after": {
+        "photo_license": "us_government_work",
+        "photo_origin_url": "https://www.navy.mil/Leadership/Flag-Officer-Biographies/BioDisplay/Article/2236454/rear-admiral-eileen-laubacher/"
+      },
+      "evidence": "The image is the official US Navy portrait. The navy.mil flag-officer biography displays media.defense.gov VIRIN 241219-N-N0101-001 at 2400x3000; compared side by side with our 600x750 copy it is the same photograph. Licence read at https://www.war.gov/Contact/Help-Center/Article/Article/2762906/use-of-department-of-war-imagery/ : 'Department of War photographs and imagery, unless otherwise noted, are in the public domain.' Nothing on the bio page notes otherwise.",
+      "still_owed": "Our copy came via Ballotpedia and is 600x750; the federal original is 2400x3000. Re-mirroring at native size needs operator approval on a contact sheet."
+    },
+    {
+      "full_name": "Eric Jones",
+      "politician_id": "9e28793b-bb53-433c-be6f-44db5bf2e780",
+      "image_id": "586acbbe-5b78-4f26-9db7-2d62cc1d5172",
+      "before": {
+        "photo_license": "press_use",
+        "photo_origin_url": "https://ballotpedia.org/California%27s_4th_Congressional_District_election,_2026"
+      },
+      "after": {
+        "photo_license": "unknown",
+        "photo_origin_url": "https://ballotpedia.org/Eric_Jones_(California)"
+      },
+      "evidence": "Our copy is the same photograph as the file Ballotpedia publishes on his candidate page (Eric_Jones_20250923_083142.jpg), at a different crop — compared side by side. It is a candidate-submitted portrait: no author and no terms are published for it anywhere. So no licence was read, and 'unknown' is the honest record. The origin moves from the election page to the candidate page, which is where the image is actually published and which names him.",
+      "note_on_identity": "The face was checked, not assumed. 'Eric Jones' is a very common name and this database has shipped a wrong face before (Mark Harris as NC-8; Bell CA's Ali Saleh carrying a portrait of the late President of Yemen). Ballotpedia attaches this photograph to the candidate page that reports him winning CA-04, and the facial features match the man in his campaign site's own portrait.",
+      "still_owed": "His campaign site, ericjones.us, publishes a DIFFERENT portrait (a full-length shot at 2487x4070) under a footer with a press contact and no copyright notice or restriction. Switching to it would give the row a licence actually read from the publisher — but replacing a published photograph of a real person needs operator approval on a contact sheet."
+    },
+    {
+      "full_name": "Jay Obernolte",
+      "politician_id": "18db5d61-6bce-4f55-ad45-bed01f329548",
+      "image_id": "b432a95d-dfbc-4a24-8b35-534f918aa1de",
+      "before": {
+        "photo_license": null,
+        "photo_origin_url": null
+      },
+      "after": {
+        "photo_license": "public_domain",
+        "photo_origin_url": "https://unitedstates.github.io/images/congress/original/O000019.jpg"
+      },
+      "evidence": "The image is the official congressional portrait: a low-resolution crop of the file the @unitedstates project serves for bioguide O000019, confirmed side by side against the 1536x1920 original. Licence read in that project's README: 'The photos of members of Congress are from the Government Printing Office, which has assured us that all photos are public domain.'",
+      "why_public_domain_and_not_us_government_work": "All 317 other rows in this database citing unitedstates.github.io already say public_domain. Following that precedent keeps a 'show me every public domain image' query honest. Laubacher's row uses us_government_work because there was no navy.mil precedent to follow and it is the precise label. Both values say the same thing about reuse.",
+      "still_owed": "The stored file is 175x219, far below the 600x750 house standard, while the original is 1536x1920. Re-mirroring needs operator approval on a contact sheet."
+    }
+  ],
+  "unchanged_by_this_migration": [
+    {"full_name": "Paul LePage", "photo_license": "cc_by-sa_3.0", "photo_origin_url": "https://commons.wikimedia.org/wiki/File:Paul_LePage_by_Gage_Skidmore.jpg", "why": "already correct: a Commons file description page naming the author and the licence"},
+    {"full_name": "David Rouzer", "photo_license": "public_domain", "photo_origin_url": "https://unitedstates.github.io/images/congress/225x275/R000603.jpg", "why": "already correct: the same GPO collection as Obernolte's"}
+  ]
+}
