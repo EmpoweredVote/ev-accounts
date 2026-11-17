@@ -1,0 +1,62 @@
+{
+  "why_this_file_exists": "CC_0449 overwrites politician_images.url, politician_images.photo_license, politicians.photo_custom_url and politicians.photo_origin_url. None of these columns has a history table, so the previous values exist nowhere once it commits.",
+  "read_from": "production kxsdzaojfaibhuzmclfq, 2026-11-17",
+  "applied": "CC_0449, 2026-11-16",
+  "uploads": {
+    "bucket": "politician_photos",
+    "folder": "portraits-2026-11-17/",
+    "verified": "Both new objects were fetched ANONYMOUSLY from the public CDN - no credentials, what a visitor's browser gets - and returned HTTP 200, image/jpeg, 600x750, byte-for-byte identical to what was uploaded. A correct API response is not evidence that an image landed."
+  },
+  "rows": [
+    {
+      "full_name": "Eric Jones",
+      "politician_id": "9e28793b-bb53-433c-be6f-44db5bf2e780",
+      "image_id": "586acbbe-5b78-4f26-9db7-2d62cc1d5172",
+      "change": "a DIFFERENT photograph",
+      "before": {
+        "url_and_photo_custom_url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/9e28793b-bb53-433c-be6f-44db5bf2e780-headshot.jpg",
+        "photo_license": "unknown",
+        "photo_origin_url": "https://ballotpedia.org/Eric_Jones_(California)",
+        "sha256_of_the_old_file": "3093bc737dd73d6a93a89ab0e2a8220b8bf354930baf5ed266e04b6c44796939",
+        "what_it_was": "an informal outdoor portrait, candidate-submitted to Ballotpedia, with no author and no terms published anywhere"
+      },
+      "after": {
+        "url_and_photo_custom_url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/portraits-2026-11-17/9e28793b-bb53-433c-be6f-44db5bf2e780-headshot.jpg",
+        "photo_license": "press_use",
+        "photo_origin_url": "https://www.ericjones.us/",
+        "sha256": "3988f5b21034d83ac107421383f8a4a37c6529b61b36cb73d62003b346a823e1",
+        "source_file": "https://images.squarespace-cdn.com/content/v1/68b763db97b0ee4d447fcc40/6c1c0991-bb8c-46b6-a861-a2ea75f49442/Eric8.6.26-440-cropped-3.jpg (2487x4070)",
+        "crop": "head-and-shoulders 4:5 window measured from the original: head top y=456, chin y=1205, face centre x=1368, giving crop box (869, 269, 1867, 1517) then resized to 600x750 with LANCZOS at quality 90. Measured, not eyeballed, and the full-length original would have center-cropped to a torso.",
+        "why_the_licence_improves": "His campaign site's footer carries a press contact (press@ericjones.us) and publishes no copyright notice and no restriction. That is a licence read from the publisher, so press_use is supportable where it was not before. The route out of 'unknown' is a better SOURCE, not a better guess."
+      }
+    },
+    {
+      "full_name": "Jay Obernolte",
+      "politician_id": "18db5d61-6bce-4f55-ad45-bed01f329548",
+      "image_id": "b432a95d-dfbc-4a24-8b35-534f918aa1de",
+      "change": "the SAME photograph, re-mirrored at the house standard",
+      "before": {
+        "url_and_photo_custom_url": "https://kxsdzaojfaibhuzmclfq.supabase.co/storage/v1/object/public/politician_photos/18db5d61-6bce-4f55-ad45-bed01f329548/default.jpeg",
+        "photo_license": "public_domain",
+        "photo_origin_url": "https://unitedstates.github.io/images/congress/original/O000019.jpg",
+        "sha256_of_the_old_file": "259c363588fb851caec028bbe1c1be4b9313ce02eb960175573e558649155ca2",
+        "dimensions": "175x219 - far below the 600x750 house standard"
+      },
+      "after": {
+        "url_and_photo_custom_url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/portraits-2026-11-17/18db5d61-6bce-4f55-ad45-bed01f329548-headshot.jpg",
+        "photo_license": "public_domain",
+        "photo_origin_url": "https://unitedstates.github.io/images/congress/original/O000019.jpg",
+        "sha256": "6fff0f6ef8443409906d8396091915a3672d2fb857d8b59522cf0ed6579d0a43",
+        "source_file": "https://unitedstates.github.io/images/congress/original/O000019.jpg (1536x1920)",
+        "note": "licence and origin are unchanged - CC_0448 set them correctly and the photograph is the same one. Only the resolution moves. The old file also sat on the OTHER storage hostname; the new one uses the storage.supabase.co form, which is why the path check in the gate matches on the PATH and never on the host."
+      }
+    }
+  ],
+  "deliberately_not_changed": {
+    "full_name": "Eileen Laubacher",
+    "politician_id": "09a94867-ea68-4a53-89cb-c89485119a9c",
+    "finding": "She was going to be re-mirrored from the 2400x3000 navy.mil original. Rendering that original to 600x750 produced a file BYTE-IDENTICAL to the one already stored - sha256 f7de5334dc1149203174db03374ecd1b33a07807cb77a4164f088a57c8869ef8 for both. Her stored copy was already made from the federal original at full size; the Ballotpedia entry in her old origin was the route by which the photo was FOUND, not the pixels it came from.",
+    "lesson": "A WORSE-LOOKING PROVENANCE DOES NOT IMPLY WORSE PIXELS. The identical byte count was what prompted the check; it was nearly read as a file mix-up and is in fact the deterministic result of the same resize of the same source.",
+    "action_taken": "No database change. The redundant upload was deleted from storage so no orphan object is left behind, and CC_0449's gate asserts she is untouched."
+  }
+}
