@@ -51,6 +51,16 @@ export interface StrandedRow {
 /** A job is stale once its newest run is older than this many of its own intervals. */
 export const STALE_INTERVALS = 3;
 
+/**
+ * HTTP 409 from POST /internal/jobs/:name means `already-running`: the overlap guard
+ * skipped a start because the previous run of that job had not finished. One or two in
+ * the ~6 h pg_net keeps is one slow run (2026-11-17: a 10 m vq-consensus run skipped two
+ * 5-minute starts) — the guard working, not a fault. Three or more means a run is stuck
+ * past ~15 minutes or overlaps keep happening (a stuck 5-minute job makes ~12 an hour),
+ * so that still alerts. Every other status alerts at any count.
+ */
+export const HTTP_CONFLICT_MIN_RESPONSES = 3;
+
 const MINUTE = 1;
 const HOUR = 60;
 const DAY = 24 * HOUR;
@@ -158,6 +168,7 @@ export function evaluate(input: {
 
   // HTTP triggers that pg_cron recorded as 'succeeded' but the API refused or never answered.
   for (const h of input.http) {
+    if (h.status_code === 409 && h.responses < HTTP_CONFLICT_MIN_RESPONSES) continue;
     const what = h.timed_out
       ? 'timed out'
       : h.status_code === null
