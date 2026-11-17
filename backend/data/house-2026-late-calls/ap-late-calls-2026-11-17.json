@@ -1,0 +1,296 @@
+{
+  "captured_at_utc": "2026-11-17T03:00Z",
+  "source": "https://interactives.apelections.org/election-results/data-live/2026-11-03/results/national/{metadata,progress}.json",
+  "note": "AP calls only. A call is not a canvass; nothing here is certified.",
+  "races": [
+    {
+      "ap_race_id": "20261103CA5694",
+      "state": "CA",
+      "census_district": "04",
+      "geo_id": "0604",
+      "our_race_id": "eabbb909-51bc-4498-ab4f-10b0f1d83ad3",
+      "our_rc_id": "8dee76aa-6d91-4be8-99cd-a93c7298799f",
+      "our_full_name": "Eric Jones",
+      "ap_winner": {
+        "candidate_id": "172501",
+        "first": "Eric",
+        "last": "Jones",
+        "party": "Dem",
+        "vote_count": 133179,
+        "vote_pct": 52.53,
+        "called_at": "2026-11-14T01:25:15.131Z"
+      },
+      "ap_incumbent": {
+        "candidate_id": "1115",
+        "first": "Mike",
+        "last": "Thompson"
+      },
+      "winner_is_incumbent_by_id": false,
+      "surname_matches_incumbent": false,
+      "race_call_status": "Called",
+      "is_certified": false,
+      "ranked_choice": null,
+      "eevp": 97.69,
+      "first_choice_total_all_lines": 253540,
+      "ap_last_updated": "2026-11-17T01:54:47.207000Z",
+      "ranked_choice_final_round": null,
+      "all_lines": [
+        {
+          "first": "Eric",
+          "last": "Jones",
+          "party": "Dem",
+          "votes": 133179,
+          "pct": 52.53
+        },
+        {
+          "first": "Mike",
+          "last": "Thompson",
+          "party": "Dem",
+          "votes": 120361,
+          "pct": 47.47
+        }
+      ]
+    },
+    {
+      "ap_race_id": "20261103CA5713",
+      "state": "CA",
+      "census_district": "23",
+      "geo_id": "0623",
+      "our_race_id": "7740b4c3-587b-4823-a530-8c229e20debd",
+      "our_rc_id": "f2f352e9-3e8e-4026-967d-4d7b541334c3",
+      "our_full_name": "Jay Obernolte",
+      "ap_winner": {
+        "candidate_id": "67998",
+        "first": "Jay",
+        "last": "Obernolte",
+        "party": "GOP",
+        "vote_count": 109335,
+        "vote_pct": 50.83,
+        "called_at": "2026-11-17T01:29:31.253Z"
+      },
+      "ap_incumbent": {
+        "candidate_id": "67998",
+        "first": "Jay",
+        "last": "Obernolte"
+      },
+      "winner_is_incumbent_by_id": true,
+      "surname_matches_incumbent": true,
+      "race_call_status": "Called",
+      "is_certified": false,
+      "ranked_choice": null,
+      "eevp": 98.02,
+      "first_choice_total_all_lines": 215118,
+      "ap_last_updated": "2026-11-17T01:29:31.253000Z",
+      "ranked_choice_final_round": null,
+      "all_lines": [
+        {
+          "first": "Jay",
+          "last": "Obernolte",
+          "party": "GOP",
+          "votes": 109335,
+          "pct": 50.83
+        },
+        {
+          "first": "Tessa",
+          "last": "Hodge",
+          "party": "Dem",
+          "votes": 105783,
+          "pct": 49.17
+        }
+      ]
+    },
+    {
+      "ap_race_id": "20261103CO6616",
+      "state": "CO",
+      "census_district": "04",
+      "geo_id": "0804",
+      "our_race_id": "f2a99107-c9b6-4201-8b2c-6548d5969fe1",
+      "our_rc_id": "178db157-4280-4253-a74f-994364463328",
+      "our_full_name": "Eileen Laubacher",
+      "ap_winner": {
+        "candidate_id": "174618",
+        "first": "Eileen",
+        "last": "Laubacher",
+        "party": "Dem",
+        "vote_count": 187745,
+        "vote_pct": 48.8,
+        "called_at": "2026-11-13T19:53:37.315Z"
+      },
+      "ap_incumbent": {
+        "candidate_id": "68897",
+        "first": "Lauren",
+        "last": "Boebert"
+      },
+      "winner_is_incumbent_by_id": false,
+      "surname_matches_incumbent": false,
+      "race_call_status": "Called",
+      "is_certified": false,
+      "ranked_choice": null,
+      "eevp": 99.0,
+      "first_choice_total_all_lines": 384707,
+      "ap_last_updated": "2026-11-13T22:56:14.751000Z",
+      "ranked_choice_final_round": null,
+      "all_lines": [
+        {
+          "first": "Eileen",
+          "last": "Laubacher",
+          "party": "Dem",
+          "votes": 187745,
+          "pct": 48.8
+        },
+        {
+          "first": "Lauren",
+          "last": "Boebert",
+          "party": "GOP",
+          "votes": 184220,
+          "pct": 47.89
+        },
+        {
+          "first": "Douglas",
+          "last": "Mangeris",
+          "party": "Lib",
+          "votes": 12742,
+          "pct": 3.31
+        }
+      ]
+    },
+    {
+      "ap_race_id": "20261103ME20645",
+      "state": "ME",
+      "census_district": "02",
+      "geo_id": "2302",
+      "our_race_id": "aa63d55d-80b8-42b9-9aa5-0713387f65fb",
+      "our_rc_id": "c58647c9-1ac0-43a4-9682-c0c7198631b9",
+      "our_full_name": "Paul LePage",
+      "ap_winner": {
+        "candidate_id": "60414",
+        "first": "Paul",
+        "last": "LePage",
+        "party": "GOP",
+        "vote_count": 170265,
+        "vote_pct": 49.89,
+        "called_at": "2026-11-12T18:31:29.417Z"
+      },
+      "ap_incumbent": {
+        "candidate_id": "66383",
+        "first": "Jared",
+        "last": "Golden"
+      },
+      "winner_is_incumbent_by_id": false,
+      "surname_matches_incumbent": false,
+      "race_call_status": "Called",
+      "is_certified": false,
+      "ranked_choice": true,
+      "eevp": 97.83,
+      "first_choice_total_all_lines": 341256,
+      "ap_last_updated": "2026-11-13T17:53:13.218000Z",
+      "ranked_choice_final_round": [
+        {
+          "name": "LePage",
+          "votes": 170890,
+          "eliminated": false
+        },
+        {
+          "name": "Dunlap",
+          "votes": 165432,
+          "eliminated": false
+        },
+        {
+          "name": "Blank Votes",
+          "votes": 0,
+          "eliminated": true
+        },
+        {
+          "name": "Ward (write-in)",
+          "votes": 0,
+          "eliminated": true
+        }
+      ],
+      "all_lines": [
+        {
+          "first": "Paul",
+          "last": "LePage",
+          "party": "GOP",
+          "votes": 170265,
+          "pct": 49.89
+        },
+        {
+          "first": "Matthew",
+          "last": "Dunlap",
+          "party": "Dem",
+          "votes": 164845,
+          "pct": 48.31
+        },
+        {
+          "first": null,
+          "last": "Blank Votes",
+          "party": "Oth",
+          "votes": 6021,
+          "pct": 1.76
+        },
+        {
+          "first": "Gregory",
+          "last": "Ward (write-in)",
+          "party": "Ind",
+          "votes": 125,
+          "pct": 0.04
+        }
+      ]
+    },
+    {
+      "ap_race_id": "20261103NC34973",
+      "state": "NC",
+      "census_district": "07",
+      "geo_id": "3707",
+      "our_race_id": "5be80001-9052-47dd-913d-704685975bb9",
+      "our_rc_id": "fd3fb04f-9df8-41e8-9ca5-377454735364",
+      "our_full_name": "David Rouzer",
+      "ap_winner": {
+        "candidate_id": "35605",
+        "first": "David",
+        "last": "Rouzer",
+        "party": "GOP",
+        "vote_count": 160702,
+        "vote_pct": 49.87,
+        "called_at": "2026-11-16T20:54:47.014Z"
+      },
+      "ap_incumbent": {
+        "candidate_id": "35605",
+        "first": "David",
+        "last": "Rouzer"
+      },
+      "winner_is_incumbent_by_id": true,
+      "surname_matches_incumbent": true,
+      "race_call_status": "Called",
+      "is_certified": false,
+      "ranked_choice": null,
+      "eevp": 99.0,
+      "first_choice_total_all_lines": 322266,
+      "ap_last_updated": "2026-11-16T20:54:47.014000Z",
+      "ranked_choice_final_round": null,
+      "all_lines": [
+        {
+          "first": "David",
+          "last": "Rouzer",
+          "party": "GOP",
+          "votes": 160702,
+          "pct": 49.87
+        },
+        {
+          "first": "Kimberly",
+          "last": "Hardy",
+          "party": "Dem",
+          "votes": 158391,
+          "pct": 49.15
+        },
+        {
+          "first": "Maad",
+          "last": "Abu-Ghazalah",
+          "party": "Lib",
+          "votes": 3173,
+          "pct": 0.98
+        }
+      ]
+    }
+  ]
+}
