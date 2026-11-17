@@ -42,14 +42,40 @@ export async function requireNotSuspended(req: any, res: any, next: any) {
 }
 
 /**
- * requireStaff — verifies the user has role='admin' in their JWT app_metadata.
- * Reads req.jwtPayload (set by requireAuth) — faster than a DB query and correct,
- * since public.user_roles uses UUID role_id FKs, not a simple 'admin' string column.
- * Grant access via: UPDATE auth.users SET raw_app_meta_data = raw_app_meta_data || '{"role":"admin"}' WHERE email = '...'
+ * requireStaff — admits a user who has a row in public.admin_users.
+ * Must run after requireAuth, which sets req.userId to the internal user UUID for
+ * both issuers (Supabase `sub`, WorkOS `external_id`).
+ *
+ * Staff is decided from the database, not the token (ev-cto decision 0041). This used to
+ * read `req.jwtPayload.app_metadata.role === 'admin'`, but that claim exists only on
+ * Supabase-issued tokens: WorkOS AuthKit tokens (decision 0002, live since 2026-08-27)
+ * carry no app_metadata, so every staff member who signed in through WorkOS was refused.
+ * public.admin_users is the same table the platform's own requireAdmin reads
+ * (src/middleware/requireAdmin.ts) and the CTC fold's requireAdmin reads.
+ *
+ * Grant access by adding the user to public.admin_users (the admin console does this).
+ * Do NOT edit auth.users.raw_app_meta_data — nothing reads it any more.
+ *
+ * "Not staff" (403) and "could not ask" (503) are separate answers: `.maybeSingle()`
+ * returns `data: null, error: null` for zero rows, so a non-null error means the lookup
+ * itself failed. Both refuse the request.
  */
-export function requireStaff(req: any, res: any, next: any) {
-  const appMetadata = req.jwtPayload?.app_metadata as { role?: string } | undefined;
-  if (appMetadata?.role !== 'admin') {
+export async function requireStaff(req: any, res: any, next: any) {
+  if (!req.userId) {
+    return res.status(401).json({ error: 'Authentication required' });
+  }
+
+  const { data, error } = await supabaseService
+    .from('admin_users')
+    .select('user_id')
+    .eq('user_id', req.userId)
+    .maybeSingle();
+
+  if (error) {
+    console.error('[vq requireStaff] admin_users lookup failed:', error.message);
+    return res.status(503).json({ error: 'Could not verify staff access' });
+  }
+  if (!data) {
     return res.status(403).json({ error: 'Staff access required' });
   }
   next();
