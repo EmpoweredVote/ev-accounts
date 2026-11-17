@@ -1,0 +1,34 @@
+{
+  "why_this_file_exists": "A migration that overwrites a value must record the value it overwrote. There is no history table for race_candidates.result and no schema_migrations to replay from, so an UPDATE is final: the previous value exists nowhere the moment it commits. CC_0447 overwrites four columns on five rows; all four were NULL on all five, and this file is the evidence for that claim rather than the claim alone.",
+  "read_from": "production kxsdzaojfaibhuzmclfq, 2026-11-17",
+  "scope": "every race_candidates row in the five races CC_0447 touches, winners and non-winners alike",
+  "columns_captured": ["result", "result_certainty", "result_recorded_at", "result_source"],
+  "summary": {
+    "rows_in_the_five_races": 13,
+    "rows_written_by_CC_0447": 5,
+    "rows_left_untouched": 8,
+    "rows_with_a_prior_result": 0,
+    "rows_with_a_prior_result_source": 0,
+    "contrast_with_CC_0350": "51 of that pass's 377 winners already held result = 'advanced' with a state ballot-qualification citation, which it had to append rather than replace. Nothing of the kind is present here."
+  },
+  "rows": [
+    {"geo_id": "0604", "district": "CA-04", "rc_id": "8dee76aa-6d91-4be8-99cd-a93c7298799f", "full_name": "Eric Jones", "role": "WINNER, written by CC_0447", "candidate_status": "active", "result": null, "result_certainty": null, "result_recorded_at": null, "result_source": null},
+    {"geo_id": "0604", "district": "CA-04", "rc_id": "6a13b60d-fa1b-442b-b26c-bd99ab4950ae", "full_name": "Mike Thompson", "role": "incumbent, defeated — left untouched, losers are a separate pass", "candidate_status": "active", "result": null, "result_certainty": null, "result_recorded_at": null, "result_source": null},
+
+    {"geo_id": "0623", "district": "CA-23", "rc_id": "f2f352e9-3e8e-4026-967d-4d7b541334c3", "full_name": "Jay Obernolte", "role": "WINNER, written by CC_0447", "candidate_status": "active", "result": null, "result_certainty": null, "result_recorded_at": null, "result_source": null},
+    {"geo_id": "0623", "district": "CA-23", "rc_id": "b5280412-c7bd-4a0d-ba14-3e74474bb2d3", "full_name": "Tessa Lynn Hodge", "role": "defeated — left untouched", "candidate_status": "active", "result": null, "result_certainty": null, "result_recorded_at": null, "result_source": null},
+
+    {"geo_id": "0804", "district": "CO-04", "rc_id": "178db157-4280-4253-a74f-994364463328", "full_name": "Eileen Laubacher", "role": "WINNER, written by CC_0447", "candidate_status": "active", "result": null, "result_certainty": null, "result_recorded_at": null, "result_source": null},
+    {"geo_id": "0804", "district": "CO-04", "rc_id": "3adc274f-fb6f-4008-82f7-360bae9e9d94", "full_name": "Lauren Boebert", "role": "incumbent, defeated — left untouched", "candidate_status": "active", "result": null, "result_certainty": null, "result_recorded_at": null, "result_source": null},
+    {"geo_id": "0804", "district": "CO-04", "rc_id": "7948f0bf-9a41-4e57-b086-2a04b15827d9", "full_name": "Douglas Mangeris", "role": "left untouched", "candidate_status": "active", "result": null, "result_certainty": null, "result_recorded_at": null, "result_source": null},
+    {"geo_id": "0804", "district": "CO-04", "rc_id": "cd016abb-5166-4a2c-9e87-50d245bb82dd", "full_name": "Luis Galvan", "role": "left untouched — candidate_status is 'filed', NOT 'active', so whether he reached the general ballot is an open question and 'lost' would be an unevidenced claim", "candidate_status": "filed", "result": null, "result_certainty": null, "result_recorded_at": null, "result_source": null},
+
+    {"geo_id": "2302", "district": "ME-02", "rc_id": "c58647c9-1ac0-43a4-9682-c0c7198631b9", "full_name": "Paul LePage", "role": "WINNER on the ranked-choice count, written by CC_0447", "candidate_status": "active", "result": null, "result_certainty": null, "result_recorded_at": null, "result_source": null},
+    {"geo_id": "2302", "district": "ME-02", "rc_id": "9535183c-f26b-449a-ae22-632ff48658dd", "full_name": "Matthew Dunlap", "role": "incumbent-party candidate, defeated in the final RCV round — left untouched", "candidate_status": "active", "result": null, "result_certainty": null, "result_recorded_at": null, "result_source": null},
+
+    {"geo_id": "3707", "district": "NC-07", "rc_id": "fd3fb04f-9df8-41e8-9ca5-377454735364", "full_name": "David Rouzer", "role": "WINNER, written by CC_0447 — incumbent re-elected", "candidate_status": "active", "result": null, "result_certainty": null, "result_recorded_at": null, "result_source": null},
+    {"geo_id": "3707", "district": "NC-07", "rc_id": "776b8a10-3073-4f26-b9db-d7bd64de39da", "full_name": "Kimberly Hardy", "role": "defeated — left untouched", "candidate_status": "active", "result": null, "result_certainty": null, "result_recorded_at": null, "result_source": null},
+    {"geo_id": "3707", "district": "NC-07", "rc_id": "1bb83977-f10c-49a5-8c19-3195653d40a6", "full_name": "Maad Abu-Ghazalah", "role": "defeated — left untouched", "candidate_status": "active", "result": null, "result_certainty": null, "result_recorded_at": null, "result_source": null}
+  ],
+  "note_on_jared_golden": "ME-02's incumbent is Jared Golden, and our row for the losing side of that race is Matthew Dunlap. Golden is not a candidate row in this race. That is a fact about the 2026 field, not a gap: it is recorded here so a later losers pass does not read the absence as a seeding error."
+}
