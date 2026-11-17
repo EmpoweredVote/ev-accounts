@@ -1,0 +1,254 @@
+{
+  "captured_at_utc": "2026-11-17T14:26:34Z",
+  "source": "https://interactives.apelections.org/election-results/data-live/2026-11-03/results/national/{metadata,progress}.json",
+  "note": "AP's FULL ballot for the five races CC_0447 recorded winners in. A call is not a canvass; AP reports isCertified=false on all five.",
+  "races": [
+    {
+      "ap_race_id": "20261103CA5694",
+      "seat": "CA-04",
+      "state": "CA",
+      "geo_id": "0604",
+      "our_race_id": "eabbb909-51bc-4498-ab4f-10b0f1d83ad3",
+      "race_call_status": "Called",
+      "is_certified": false,
+      "eevp": 97.69,
+      "ap_last_updated": "2026-11-17T01:54:47.207000Z",
+      "total_votes_all_lines": 253540,
+      "ap_incumbent": {
+        "candidate_id": "1115",
+        "first": "Mike",
+        "last": "Thompson"
+      },
+      "all_lines": [
+        {
+          "candidate_id": "172501",
+          "first": "Eric",
+          "last": "Jones",
+          "votes": 133179,
+          "pct": 52.53,
+          "winner": true,
+          "ballot_order": 1
+        },
+        {
+          "candidate_id": "1115",
+          "first": "Mike",
+          "last": "Thompson",
+          "votes": 120361,
+          "pct": 47.47,
+          "winner": false,
+          "ballot_order": 2
+        }
+      ],
+      "ranked_choice_final_round": null
+    },
+    {
+      "ap_race_id": "20261103CA5713",
+      "seat": "CA-23",
+      "state": "CA",
+      "geo_id": "0623",
+      "our_race_id": "7740b4c3-587b-4823-a530-8c229e20debd",
+      "race_call_status": "Called",
+      "is_certified": false,
+      "eevp": 98.02,
+      "ap_last_updated": "2026-11-17T01:29:31.253000Z",
+      "total_votes_all_lines": 215118,
+      "ap_incumbent": {
+        "candidate_id": "67998",
+        "first": "Jay",
+        "last": "Obernolte"
+      },
+      "all_lines": [
+        {
+          "candidate_id": "67998",
+          "first": "Jay",
+          "last": "Obernolte",
+          "votes": 109335,
+          "pct": 50.83,
+          "winner": true,
+          "ballot_order": 2
+        },
+        {
+          "candidate_id": "172565",
+          "first": "Tessa",
+          "last": "Hodge",
+          "votes": 105783,
+          "pct": 49.17,
+          "winner": false,
+          "ballot_order": 1
+        }
+      ],
+      "ranked_choice_final_round": null
+    },
+    {
+      "ap_race_id": "20261103CO6616",
+      "seat": "CO-04",
+      "state": "CO",
+      "geo_id": "0804",
+      "our_race_id": "f2a99107-c9b6-4201-8b2c-6548d5969fe1",
+      "race_call_status": "Called",
+      "is_certified": false,
+      "eevp": 99,
+      "ap_last_updated": "2026-11-13T22:56:14.751000Z",
+      "total_votes_all_lines": 384707,
+      "ap_incumbent": {
+        "candidate_id": "68897",
+        "first": "Lauren",
+        "last": "Boebert"
+      },
+      "all_lines": [
+        {
+          "candidate_id": "174618",
+          "first": "Eileen",
+          "last": "Laubacher",
+          "votes": 187745,
+          "pct": 48.8,
+          "winner": true,
+          "ballot_order": 2
+        },
+        {
+          "candidate_id": "68897",
+          "first": "Lauren",
+          "last": "Boebert",
+          "votes": 184220,
+          "pct": 47.89,
+          "winner": false,
+          "ballot_order": 1
+        },
+        {
+          "candidate_id": "178816",
+          "first": "Douglas",
+          "last": "Mangeris",
+          "votes": 12742,
+          "pct": 3.31,
+          "winner": false,
+          "ballot_order": 3
+        }
+      ],
+      "ranked_choice_final_round": null
+    },
+    {
+      "ap_race_id": "20261103ME20645",
+      "seat": "ME-02",
+      "state": "ME",
+      "geo_id": "2302",
+      "our_race_id": "aa63d55d-80b8-42b9-9aa5-0713387f65fb",
+      "race_call_status": "Called",
+      "is_certified": false,
+      "eevp": 97.83,
+      "ap_last_updated": "2026-11-13T17:53:13.218000Z",
+      "total_votes_all_lines": 341256,
+      "ap_incumbent": {
+        "candidate_id": "66383",
+        "first": "Jared",
+        "last": "Golden"
+      },
+      "all_lines": [
+        {
+          "candidate_id": "60414",
+          "first": "Paul",
+          "last": "LePage",
+          "votes": 170265,
+          "pct": 49.89,
+          "winner": true,
+          "ballot_order": 2
+        },
+        {
+          "candidate_id": "174146",
+          "first": "Matthew",
+          "last": "Dunlap",
+          "votes": 164845,
+          "pct": 48.31,
+          "winner": false,
+          "ballot_order": 1
+        },
+        {
+          "candidate_id": "179614",
+          "first": null,
+          "last": "Blank Votes",
+          "votes": 6021,
+          "pct": 1.76,
+          "winner": false,
+          "ballot_order": 4
+        },
+        {
+          "candidate_id": "120523",
+          "first": "Gregory",
+          "last": "Ward (write-in)",
+          "votes": 125,
+          "pct": 0.04,
+          "winner": false,
+          "ballot_order": 3
+        }
+      ],
+      "ranked_choice_final_round": [
+        {
+          "name": "LePage",
+          "votes": 170890,
+          "eliminated": false
+        },
+        {
+          "name": "Dunlap",
+          "votes": 165432,
+          "eliminated": false
+        },
+        {
+          "name": "Blank Votes",
+          "votes": 0,
+          "eliminated": true
+        },
+        {
+          "name": "Ward (write-in)",
+          "votes": 0,
+          "eliminated": true
+        }
+      ]
+    },
+    {
+      "ap_race_id": "20261103NC34973",
+      "seat": "NC-07",
+      "state": "NC",
+      "geo_id": "3707",
+      "our_race_id": "5be80001-9052-47dd-913d-704685975bb9",
+      "race_call_status": "Called",
+      "is_certified": false,
+      "eevp": 99,
+      "ap_last_updated": "2026-11-16T20:54:47.014000Z",
+      "total_votes_all_lines": 322266,
+      "ap_incumbent": {
+        "candidate_id": "35605",
+        "first": "David",
+        "last": "Rouzer"
+      },
+      "all_lines": [
+        {
+          "candidate_id": "35605",
+          "first": "David",
+          "last": "Rouzer",
+          "votes": 160702,
+          "pct": 49.87,
+          "winner": true,
+          "ballot_order": 2
+        },
+        {
+          "candidate_id": "136676",
+          "first": "Kimberly",
+          "last": "Hardy",
+          "votes": 158391,
+          "pct": 49.15,
+          "winner": false,
+          "ballot_order": 3
+        },
+        {
+          "candidate_id": "175083",
+          "first": "Maad",
+          "last": "Abu-Ghazalah",
+          "votes": 3173,
+          "pct": 0.98,
+          "winner": false,
+          "ballot_order": 1
+        }
+      ],
+      "ranked_choice_final_round": null
+    }
+  ]
+}
