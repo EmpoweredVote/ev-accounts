@@ -48,6 +48,19 @@
  *
  * A member who did not vote is on no list in Ohio, so the render has no absent group and gives no finding.
  *
+ * South Dakota (2026-11-17) cites the vote's own page, sdlegislature.gov/Session/Vote/<id>, which is a script shell
+ * with no vote in it, and reads one document, the vote's data at sdlegislature.gov/api/Votes/<id> (runner's standing
+ * answer: cite a page a person can open, verify from the data). A vote is read only when it is a chamber's floor vote
+ * on a question that is a vote on the bill (sdQuestionIsOnTheBill), in a session we know, and every count equals the
+ * members listed. A consent calendar is one vote on several bills, and its render and line name them all. A member who
+ * did not vote is listed as the record lists them (Excused, Absent, Not voting, Present, Suspended):
+ *
+ *   South Dakota House vote 84688 (2026), SB 179, 2026-03-05.
+ *   Question: Do Pass
+ *   Yea 42; Nay 25; Excused 3; Absent 0; Not voting 0; Present 0; Suspended 0.
+ *   Yea (42): Bobbi Andera; …
+ *   South Dakota House vote 84688 (2026), SB 179 - Do Pass (2026-03-05): Will Mortenson voted Yea.
+ *
  * One entry of FORMATS per legislature page layout. Adding a state is adding an entry and its fixture; nothing
  * here knows a topic.
  */
@@ -392,6 +405,211 @@ function parseOhioLine(text: string): OhioVoteLine | null {
     yea: Number(m[6]), nay: Number(m[7]), name: m[8].trim(), vote: m[9] as OhioVote };
 }
 
+// ── South Dakota: the vote's own page is a script shell; the vote is read from the legislature's data ─────────
+// sdlegislature.gov/Session/Vote/<id> is the page a person opens for one roll call. It is filled in by a script, and
+// the HTML holds no vote (read 2026-11-17). The same record is sdlegislature.gov/api/Votes/<id> (JSON): the bill, the
+// action it was taken on (StatusText, the day, and the body: "House of Representatives", "Senate", or a committee),
+// the counts (Yeas, Nays, Excused, Absent, NotVoting, Present) and each member (FirstName, LastName, UniqueName,
+// SessionMemberId) with the vote (Vote1: "Yea", "Nay", "Excused", ...). The citation is the vote's own page; the
+// verifier reads the data (runner's standing answer, 2026-11-16: cite a page a person can open, verify from the data).
+//
+// A vote is read only when it is the floor vote of a chamber (a committee's vote is never read), on a question that
+// is a vote on the bill (sdQuestionIsOnTheBill: a motion to table, to defer to the 41st day, to reconsider or to
+// place on the calendar is not), the session is one we know, and every group holds exactly the count printed for it.
+// A member who did not vote is listed as the record lists them (Excused, Absent, Not voting): never as a Yea or a Nay.
+
+export const SD_VOTES = ['Yea', 'Nay', 'Excused', 'Absent', 'Not voting', 'Present', 'Suspended'] as const;
+export type SdVote = (typeof SD_VOTES)[number];
+/** Vote1 as the data prints it, and the count field that must equal the members under it. */
+const SD_VOTE_OF: Record<string, SdVote> = { Yea: 'Yea', Nay: 'Nay', Excused: 'Excused', Absent: 'Absent', 'Not Voting': 'Not voting', NotVoting: 'Not voting', Present: 'Present', Suspended: 'Suspended' };
+/**
+ * The count the data prints for each group. A suspended member (2023: one senator, suspended by the Senate, is
+ * listed "Suspended" on its votes) has no count of their own: that group is checked by the total instead.
+ */
+const SD_COUNT: Record<SdVote, string | null> = { Yea: 'Yeas', Nay: 'Nays', Excused: 'Excused', Absent: 'Absent', 'Not voting': 'NotVoting', Present: 'Present', Suspended: null };
+/**
+ * The legislature's SessionId -> the session's name in Open States (and in our dataset folders). From /api/Sessions,
+ * read 2026-11-17. The two 2021 special sessions are told apart by their votes' days: 2021r voted on 2021-11-08 (the
+ * First Special Session, 65), 2021i on 2021-11-09 (the Second, 66). A session not listed here gives no vote: add it.
+ */
+export const SD_SESSIONS: Readonly<Record<number, string>> = {
+  27: '2017', 33: '2017s', 32: '2018', 37: '2018s', 36: '2019', 43: '2020', 62: '2020s', 44: '2021', 65: '2021r', 66: '2021i',
+  64: '2022', 68: '2023', 69: '2024', 70: '2025', 173: '2025s', 71: '2026',
+};
+const SD_CHAMBER: Record<string, Chamber> = { 'House of Representatives': 'House', Senate: 'Senate' };
+const SD_SIZE: Record<Chamber, number> = { House: 70, Senate: 35 };
+const SD_URL = /^https:\/\/sdlegislature\.gov\/Session\/Vote\/([1-9]\d{0,6})$/;
+const SD_DATA = 'https://sdlegislature.gov/api/Votes/';
+/** sdlegislature.gov's robots.txt states no Crawl-delay (2026-11-17); one request a second is ours. */
+const SD_GAP_MS = 1_000;
+
+/**
+ * Is a South Dakota action (its StatusText) a vote on the bill? A motion is not (runner, 2026-11-16): to table, to defer
+ * to the 41st legislative day (the session has 40), to reconsider ("Reconsidered"), to place a bill on the calendar
+ * ("Placed on calendar pursuant to JR 6F-6", the smoke-out), to recall it from committee ("Recalled from committee
+ * (Rule 7-7)"), to lay on the table, or to amend. A concurrence, passed or failed, is a vote on the bill. Only the questions listed are read; any other wording gives no line until it is
+ * added here, so a new kind of motion can never be read as a vote on the bill.
+ */
+export function sdQuestionIsOnTheBill(statusText: string): boolean {
+  const q = squash(statusText);
+  return /^(Do Pass|Do Pass Amended|Passed|Failed|Failed to pass|Do Pass Failed|Adopt Resolution|Resolution adopted|Resolution Failed|Concurred in Resolution|Adopt Resolution as amended|Concurred in Resolution as Amended|Concurred in amendments|Do not concur|Refused to concur|Failed to concur|Failed to concur, appoint Conference Committee|Conference Committee Report adopted|Conference committee report adopted|Veto override|Veto override failed|Veto sustained|Failed to override veto|Override the Governor's veto|Concurred in Governor's specific recommendations|Governor's Specific Recommendations accepted)$/i.test(q);
+}
+
+export interface SdVoteRef { state: 'SD'; stateName: 'South Dakota'; voteId: number }
+export interface SdVoteRecord extends SdVoteRef {
+  chamber: Chamber; session: string; bill: string; question: string; date: string;
+  /** "FirstName LastName", the line's label */
+  groups: Record<SdVote, string[]>;
+  /** the same members by the data's UniqueName ("Greenfield (Lana)"), the label Open States stores */
+  unique: Record<SdVote, string[]>;
+}
+export interface SdVoteLine extends Omit<SdVoteRecord, 'groups' | 'unique'> { name: string; vote: SdVote }
+
+export function parseSouthDakotaVoteUrl(url: string): SdVoteRef | null {
+  const m = SD_URL.exec(url.trim());
+  return m ? { state: 'SD', stateName: 'South Dakota', voteId: Number(m[1]) } : null;
+}
+
+interface SdData {
+  VoteId?: unknown; SessionId?: unknown; Bill?: unknown; RollCalls?: unknown;
+  actionLog?: { ActionDate?: unknown; FullName?: unknown; StatusText?: unknown } | null;
+  [count: string]: unknown;
+}
+interface SdMember { FirstName?: unknown; LastName?: unknown; UniqueName?: unknown; SessionMemberId?: unknown; Vote1?: unknown }
+
+function readSouthDakota(bodies: string[], r: SdVoteRef): SdVoteRecord | null {
+  if (bodies.length !== 1) return null;
+  let d: SdData;
+  try { d = JSON.parse(bodies[0]); } catch { return null; }
+  if (!d || typeof d !== 'object' || d.VoteId !== r.voteId) return null;
+  const session = typeof d.SessionId === 'number' ? SD_SESSIONS[d.SessionId] : undefined;
+  if (!session) return null;
+  const a = d.actionLog;
+  const chamber = typeof a?.FullName === 'string' ? SD_CHAMBER[a.FullName] : undefined;
+  if (!a || !chamber) return null; // a committee's vote, or an action the reader cannot place
+  const question = typeof a.StatusText === 'string' ? squash(a.StatusText) : '';
+  if (!question || !sdQuestionIsOnTheBill(question)) return null;
+  const day = typeof a.ActionDate === 'string' ? /^(\d{4}-\d{2}-\d{2})T/.exec(a.ActionDate)?.[1] : undefined;
+  if (!day) return null;
+  // One roll call can carry several bills: the consent calendar is voted as one (2018 HB 1209 and SB 55, vote 25955).
+  if (!Array.isArray(d.Bill) || !d.Bill.length) return null;
+  // The 2020 consent calendars list each bill twice, under the same BillId: one bill. One number under two ids is refused.
+  const billIds = new Map<string, unknown>();
+  for (const b of d.Bill as { BillId?: unknown; BillType?: unknown; BillNumber?: unknown }[]) {
+    if (typeof b?.BillType !== 'string' || !/^[HS][A-Z]{0,3}$/.test(b.BillType) || typeof b.BillNumber !== 'number' || !Number.isInteger(b.BillNumber)) return null;
+    const k = `${b.BillType} ${b.BillNumber}`;
+    if (typeof b.BillId !== 'number' || (billIds.has(k) && billIds.get(k) !== b.BillId)) return null;
+    billIds.set(k, b.BillId);
+  }
+  const bills = [...billIds.keys()];
+  if (!Array.isArray(d.RollCalls)) return null;
+  const groups = Object.fromEntries(SD_VOTES.map((v) => [v, [] as string[]])) as Record<SdVote, string[]>;
+  const unique = Object.fromEntries(SD_VOTES.map((v) => [v, [] as string[]])) as Record<SdVote, string[]>;
+  const seenId = new Set<number>();
+  const seenName = new Set<string>();
+  const seenUnique = new Set<string>();
+  for (const m of d.RollCalls as SdMember[]) {
+    const vote = typeof m?.Vote1 === 'string' ? SD_VOTE_OF[m.Vote1] : undefined;
+    const first = typeof m?.FirstName === 'string' ? squash(m.FirstName) : '';
+    const last = typeof m?.LastName === 'string' ? squash(m.LastName) : '';
+    const uniq = typeof m?.UniqueName === 'string' ? squash(m.UniqueName) : '';
+    if (!vote || !first || !last || !uniq || typeof m.SessionMemberId !== 'number') return null;
+    const name = `${first} ${last}`;
+    if (/;/.test(name) || /;/.test(uniq)) return null;
+    // one member, one vote
+    if (seenId.has(m.SessionMemberId) || seenName.has(normalizeText(name)) || seenUnique.has(normalizeText(uniq))) return null;
+    seenId.add(m.SessionMemberId); seenName.add(normalizeText(name)); seenUnique.add(normalizeText(uniq));
+    groups[vote].push(name);
+    unique[vote].push(uniq);
+  }
+  // every printed count is the members under it, and the chamber holds them all
+  for (const v of SD_VOTES) {
+    const key = SD_COUNT[v];
+    if (key === null) continue;
+    const n = d[key];
+    if ((n ?? 0) !== groups[v].length || (n !== undefined && n !== null && typeof n !== 'number')) return null;
+  }
+  if (!groups.Yea.length && !groups.Nay.length) return null;
+  if (seenId.size > SD_SIZE[chamber]) return null;
+  return { ...r, chamber, session, bill: bills.join(', '), question, date: day, groups, unique };
+}
+
+const SD_SAID: Record<SdVote, string> = { Yea: 'voted Yea', Nay: 'voted Nay', Excused: 'was excused', Absent: 'was absent', 'Not voting': 'did not vote', Present: 'voted present', Suspended: 'was suspended' };
+
+export function renderSouthDakotaVote(v: SdVoteRecord): string {
+  return [
+    `South Dakota ${v.chamber} vote ${v.voteId} (${v.session}), ${v.bill}, ${v.date}.`,
+    `Question: ${v.question}`,
+    SD_VOTES.map((k) => `${k} ${v.groups[k].length}`).join('; ') + '.',
+    ...SD_VOTES.map((k) => `${k} (${v.groups[k].length}): ${v.groups[k].join('; ')}`.trim()),
+  ].join('\n');
+}
+
+const SD_RENDER_HEAD = /^South Dakota (House|Senate) vote (\d+) \((\d{4}[a-z]?)\), ([A-Z]+ \d+(?:, [A-Z]+ \d+)*), (\d{4}-\d{2}-\d{2})\.$/;
+
+function parseSouthDakotaRender(text: string, url: string): Omit<SdVoteRecord, 'unique'> | null {
+  const r = parseSouthDakotaVoteUrl(url);
+  const rows = text.split('\n');
+  const h = SD_RENDER_HEAD.exec(rows[0] ?? '');
+  const q = /^Question: (.+)$/.exec(rows[1] ?? '');
+  if (!r || !h || !q || rows.length !== 3 + SD_VOTES.length || Number(h[2]) !== r.voteId) return null;
+  const groups = {} as Record<SdVote, string[]>;
+  for (const [i, v] of SD_VOTES.entries()) {
+    const m = new RegExp(`^${v} \\((\\d+)\\):(.*)$`).exec(rows[3 + i]);
+    if (!m) return null;
+    groups[v] = m[2].split(';').map((x) => x.trim()).filter(Boolean);
+    if (groups[v].length !== Number(m[1])) return null;
+  }
+  if (rows[2] !== SD_VOTES.map((v) => `${v} ${groups[v].length}`).join('; ') + '.') return null;
+  return { ...r, chamber: h[1] as Chamber, session: h[3], bill: h[4], date: h[5], question: q[1], groups };
+}
+
+const SD_LINE = /^South Dakota (House|Senate) vote (\d+) \((\d{4}[a-z]?)\), ([A-Z]+ \d+(?:, [A-Z]+ \d+)*) - (.+) \((\d{4}-\d{2}-\d{2})\): (.+?) (voted Yea|voted Nay|was excused|was absent|did not vote|voted present|was suspended)\.$/;
+
+export function formatSouthDakotaVoteLine(l: SdVoteLine): string {
+  return `South Dakota ${l.chamber} vote ${l.voteId} (${l.session}), ${l.bill} - ${l.question} (${l.date}): ${l.name} ${SD_SAID[l.vote]}.`;
+}
+
+function parseSouthDakotaLine(text: string): SdVoteLine | null {
+  const m = SD_LINE.exec(text.trim());
+  const vote = m ? SD_VOTES.find((v) => SD_SAID[v] === m[8]) : undefined;
+  if (!m || !vote) return null;
+  return { state: 'SD', stateName: 'South Dakota', chamber: m[1] as Chamber, voteId: Number(m[2]), session: m[3], bill: m[4],
+    question: m[5], date: m[6], name: m[7].trim(), vote };
+}
+
+function verifySouthDakotaLine(line: string, url: string, text: string, lastName: string, fullName: string): SnippetVerdict {
+  const l = parseSouthDakotaLine(line);
+  const r = parseSouthDakotaRender(text, url);
+  if (!l || !r) return { verdict: 'snippet_not_found' };
+  // a consent calendar's roll call names every bill it carried ("HB 1209, SB 55"), and so does its line
+  if (l.voteId !== r.voteId || l.chamber !== r.chamber || l.session !== r.session || l.bill !== r.bill || l.date !== r.date) return { verdict: 'snippet_not_found' };
+  if (normalizeText(l.question) !== normalizeText(r.question)) return { verdict: 'snippet_not_found' };
+  if (!r.groups[l.vote].some((n) => sameLabel(n, l.name))) return { verdict: 'snippet_not_found' };
+  const fits = SD_VOTES.flatMap((v) => r.groups[v]).filter((n) => fullNameLabelFits(n, lastName, fullName));
+  if (fits.length !== 1 || !sameLabel(fits[0], l.name)) return { verdict: 'name_not_present' };
+  return { verdict: 'verified', matchOffset: 0 };
+}
+
+function southDakotaLinesFor(url: string, text: string, lastName: string, fullName: string): string[] {
+  const r = parseSouthDakotaRender(text, url);
+  if (!r) return [];
+  const out: string[] = [];
+  for (const vote of SD_VOTES) {
+    for (const name of r.groups[vote]) {
+      if (fullNameLabelFits(name, lastName, fullName)) out.push(formatSouthDakotaVoteLine({ ...r, name, vote }));
+    }
+  }
+  return out.length === 1 ? out : [];
+}
+
+/** The vote an address names, read from the legislature's data (the bodies of stateRollCallDocs). Null when any check fails. */
+export function readSouthDakotaVote(bodies: string[], url: string): SdVoteRecord | null {
+  const r = parseSouthDakotaVoteUrl(url);
+  if (!r) return null;
+  try { return readSouthDakota(bodies, r); } catch { return null; }
+}
+
 function formatOf(url: string): { f: Format; ref: StateRollCallRef } | null {
   for (const f of FORMATS) {
     const r = f.ref(url.trim());
@@ -407,11 +625,12 @@ export function parseStateRollCallUrl(url: string): StateRollCallRef | null {
 /** The wait to leave between two fetches of this site's roll-call pages; 0 for any other address. */
 export function stateRollCallMinGapMs(url: string): number {
   if (parseOhioVoteUrl(url)) return OH_GAP_MS;
+  if (parseSouthDakotaVoteUrl(url)) return SD_GAP_MS;
   return formatOf(url)?.f.minGapMs ?? 0;
 }
 
 export function isStateRollCallUrl(url: string): boolean {
-  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null;
+  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null;
 }
 
 /**
@@ -422,6 +641,8 @@ export function isStateRollCallUrl(url: string): boolean {
 export function stateRollCallDocs(url: string): string[] | null {
   const oh = parseOhioVoteUrl(url);
   if (oh) return ohioDocs(oh);
+  const sd = parseSouthDakotaVoteUrl(url);
+  if (sd) return [`${SD_DATA}${sd.voteId}`];
   return formatOf(url) ? [url.trim()] : null;
 }
 
@@ -430,6 +651,10 @@ export function readStateRollCallDocs(bodies: string[], url: string): string | n
   const oh = parseOhioVoteUrl(url);
   if (oh) {
     try { const v = readOhio(bodies, oh); return v ? renderOhioVote(v) : null; } catch { return null; }
+  }
+  if (parseSouthDakotaVoteUrl(url)) {
+    const v = readSouthDakotaVote(bodies, url);
+    return v ? renderSouthDakotaVote(v) : null;
   }
   if (bodies.length !== 1) return null;
   const r = readStateRollCallHtml(bodies[0], url);
@@ -447,6 +672,13 @@ export function readStateRollCallRecord(bodies: string[], url: string): StateRol
     try { v = readOhio(bodies, oh); } catch { return null; }
     return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: 0, bill: v.bill, question: v.question,
       date: v.date, groups: { Yea: v.groups.Yea, Nay: v.groups.Nay, 'Absent or not voting': [] } } : null;
+  }
+  if (parseSouthDakotaVoteUrl(url)) {
+    // South Dakota: members by the data's UniqueName, the label Open States stores for them, so convert.py links a
+    // member read here the way it links the same member in the dump. Excused, absent and not voting are one group here.
+    const v = readSouthDakotaVote(bodies, url);
+    return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: v.voteId, bill: v.bill, question: v.question,
+      date: v.date, groups: { Yea: v.unique.Yea, Nay: v.unique.Nay, 'Absent or not voting': [...v.unique.Excused, ...v.unique.Absent, ...v.unique['Not voting'], ...v.unique.Present, ...v.unique.Suspended] } } : null;
   }
   return bodies.length === 1 ? readStateRollCallHtml(bodies[0], url) : null;
 }
@@ -472,8 +704,9 @@ export function renderStateRollCall(r: StateRollCall): string {
 
 const RENDER_HEAD = /^(.+) (House|Senate) roll call (\d+) \(([A-Za-z0-9]+)\), (\d{4}-\d{2}-\d{2})\.$/;
 
-export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | null {
+export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | Omit<SdVoteRecord, 'unique'> | null {
   if (parseOhioVoteUrl(url)) return parseOhioRender(text, url);
+  if (parseSouthDakotaVoteUrl(url)) return parseSouthDakotaRender(text, url);
   return parseUtahRender(text, url);
 }
 
@@ -502,8 +735,8 @@ export function formatStateRollCallLine(l: StateRollCallLine): string {
   return `${l.stateName} ${l.chamber} roll call ${l.rollNum} (${l.session}), ${l.bill} - ${l.question} (${l.date}): ${l.name} ${SAID[l.vote]}.`;
 }
 
-export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | null {
-  return parseUtahLine(text) ?? parseOhioLine(text);
+export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | null {
+  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text);
 }
 
 function parseUtahLine(text: string): StateRollCallLine | null {
@@ -559,6 +792,7 @@ const sameLabel = (a: string, b: string): boolean => normalizeText(a) === normal
  */
 export function verifyStateRollCallLine(line: string, url: string, text: string, lastName: string, fullName: string): SnippetVerdict {
   if (parseOhioVoteUrl(url)) return verifyOhioLine(line, url, text, lastName, fullName);
+  if (parseSouthDakotaVoteUrl(url)) return verifySouthDakotaLine(line, url, text, lastName, fullName);
   const l = parseUtahLine(line);
   const r = parseUtahRender(text, url);
   if (!l || !r) return { verdict: 'snippet_not_found' };
@@ -573,6 +807,7 @@ export function verifyStateRollCallLine(line: string, url: string, text: string,
 /** The canonical line the render holds for this politician: one, or none when no label or several fit. */
 export function stateRollCallLinesFor(url: string, text: string, lastName: string, fullName: string): string[] {
   if (parseOhioVoteUrl(url)) return ohioLinesFor(url, text, lastName, fullName);
+  if (parseSouthDakotaVoteUrl(url)) return southDakotaLinesFor(url, text, lastName, fullName);
   const r = parseUtahRender(text, url);
   if (!r) return [];
   const out: string[] = [];

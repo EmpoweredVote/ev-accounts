@@ -1,0 +1,521 @@
+{
+ "VoteId": 76497,
+ "SessionId": 68,
+ "PresidentVote": null,
+ "Bill": [
+  {
+   "BillId": 24001,
+   "BillNumberOnly": 50,
+   "BillNumber": 50,
+   "BillType": "SB",
+   "Title": "revise the crime of witness tampering."
+  },
+  {
+   "BillId": 24036,
+   "BillNumberOnly": 64,
+   "BillNumber": 64,
+   "BillType": "SB",
+   "Title": "repeal provisions related to the jail mental health screening pilot program and oversight council."
+  },
+  {
+   "BillId": 23987,
+   "BillNumberOnly": 61,
+   "BillNumber": 61,
+   "BillType": "SB",
+   "Title": "revise driver's license suspensions for restricted permit holders over the age of sixteen."
+  },
+  {
+   "BillId": 23929,
+   "BillNumberOnly": 37,
+   "BillNumber": 37,
+   "BillType": "SB",
+   "Title": "revise provisions pertaining to the South Dakota School for the Deaf."
+  },
+  {
+   "BillId": 24121,
+   "BillNumberOnly": 84,
+   "BillNumber": 84,
+   "BillType": "SB",
+   "Title": "authorize compensation for water project district directors."
+  },
+  {
+   "BillId": 23808,
+   "BillNumberOnly": 72,
+   "BillNumber": 72,
+   "BillType": "SB",
+   "Title": "revise provisions related to the discharge of a defendant restored to competency."
+  },
+  {
+   "BillId": 24130,
+   "BillNumberOnly": 81,
+   "BillNumber": 81,
+   "BillType": "SB",
+   "Title": "repeal outdated sections regarding enhanced concealed carry permit requirements."
+  },
+  {
+   "BillId": 23866,
+   "BillNumberOnly": 85,
+   "BillNumber": 85,
+   "BillType": "SB",
+   "Title": "revise rebating provisions in the insurance code."
+  },
+  {
+   "BillId": 23791,
+   "BillNumberOnly": 1010,
+   "BillNumber": 1010,
+   "BillType": "HB",
+   "Title": "repeal the sunset date for provisions related to the licensure of behavior analysts."
+  },
+  {
+   "BillId": 23812,
+   "BillNumberOnly": 1015,
+   "BillNumber": 1015,
+   "BillType": "HB",
+   "Title": "update provisions related to the licensure of funeral directors and the provision of funeral services."
+  },
+  {
+   "BillId": 23842,
+   "BillNumberOnly": 1033,
+   "BillNumber": 1033,
+   "BillType": "HB",
+   "Title": "provide for the uniform administration of tobacco products taxes."
+  },
+  {
+   "BillId": 23763,
+   "BillNumberOnly": 1062,
+   "BillNumber": 1062,
+   "BillType": "HB",
+   "Title": "clarify the convening of recount boards for primary elections."
+  },
+  {
+   "BillId": 23827,
+   "BillNumberOnly": 1004,
+   "BillNumber": 1004,
+   "BillType": "HB",
+   "Title": "update a reference to the Internal Revenue Code for purposes of higher education savings plans."
+  },
+  {
+   "BillId": 23967,
+   "BillNumberOnly": 1018,
+   "BillNumber": 1018,
+   "BillType": "HB",
+   "Title": "repeal the authorized forfeiture of property used in the illegal capture of fish."
+  },
+  {
+   "BillId": 23973,
+   "BillNumberOnly": 1019,
+   "BillNumber": 1019,
+   "BillType": "HB",
+   "Title": "repeal certain requirements for Game, Fish and Parks licensing agents."
+  },
+  {
+   "BillId": 23838,
+   "BillNumberOnly": 1005,
+   "BillNumber": 1005,
+   "BillType": "HB",
+   "Title": "update certain citations to federal regulations regarding pipeline safety inspections."
+  }
+ ],
+ "RollCalls": [
+  {
+   "FirstName": "Arch",
+   "FormattedUniqueName": "Beal",
+   "LastName": "Beal",
+   "Picture": "beal_2019.jpg",
+   "SessionMemberId": 4336,
+   "UniqueName": "Beal",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Jim",
+   "FormattedUniqueName": "Bolin",
+   "LastName": "Bolin",
+   "Picture": "bolin_2019.jpg",
+   "SessionMemberId": 4338,
+   "UniqueName": "Bolin",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Shawn",
+   "FormattedUniqueName": "Bordeaux",
+   "LastName": "Bordeaux",
+   "Picture": "bordeaux_2019.jpg",
+   "SessionMemberId": 4339,
+   "UniqueName": "Bordeaux",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Bryan",
+   "FormattedUniqueName": "Breitling",
+   "LastName": "Breitling",
+   "Picture": "breitling, bryan sen-2671 full rt.jpg",
+   "SessionMemberId": 4340,
+   "UniqueName": "Breitling",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Jessica",
+   "FormattedUniqueName": "Castleberry",
+   "LastName": "Castleberry",
+   "Picture": "castleberry_2020.jpg",
+   "SessionMemberId": 4342,
+   "UniqueName": "Castleberry",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Casey",
+   "FormattedUniqueName": "Crabtree",
+   "LastName": "Crabtree",
+   "Picture": "crabtree, casey sen-3010 full rt.jpg",
+   "SessionMemberId": 4345,
+   "UniqueName": "Crabtree",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Sydney",
+   "FormattedUniqueName": "Davis",
+   "LastName": "Davis",
+   "Picture": "davis, sydney rep-2525 full rt.jpg",
+   "SessionMemberId": 4348,
+   "UniqueName": "Davis",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Randy",
+   "FormattedUniqueName": "Deibert",
+   "LastName": "Deibert",
+   "Picture": "deibert, randy sen-0705 rt.jpg",
+   "SessionMemberId": 4448,
+   "UniqueName": "Deibert",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Michael",
+   "FormattedUniqueName": "Diedrich",
+   "LastName": "Diedrich",
+   "Picture": "diedrich_2019.jpg",
+   "SessionMemberId": 4352,
+   "UniqueName": "Diedrich",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Helene",
+   "FormattedUniqueName": "Duhamel",
+   "LastName": "Duhamel",
+   "Picture": "duhamel_2020.jpg",
+   "SessionMemberId": 4355,
+   "UniqueName": "Duhamel",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Red Dawn",
+   "FormattedUniqueName": "Foster",
+   "LastName": "Foster",
+   "Picture": "foster_2019.jpg",
+   "SessionMemberId": 4359,
+   "UniqueName": "Foster",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Julie",
+   "FormattedUniqueName": "Frye-Mueller",
+   "LastName": "Frye-Mueller",
+   "Picture": "frye-mueller_2019.jpg",
+   "SessionMemberId": 4360,
+   "UniqueName": "Frye-Mueller",
+   "Vote": 1,
+   "Vote1": "Suspended",
+   "VoteVote": 14
+  },
+  {
+   "FirstName": "Brent \"B.R.\"",
+   "FormattedUniqueName": "Hoffman",
+   "LastName": "Hoffman",
+   "Picture": "hoffman, brent br sen-0417 rt.jpg",
+   "SessionMemberId": 4457,
+   "UniqueName": "Hoffman",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Jean",
+   "FormattedUniqueName": "Hunhoff",
+   "LastName": "Hunhoff",
+   "Picture": "hunhoff_2019.jpg",
+   "SessionMemberId": 4372,
+   "UniqueName": "Hunhoff",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "David",
+   "FormattedUniqueName": "Johnson",
+   "LastName": "Johnson",
+   "Picture": "johnson_david_2019.jpg",
+   "SessionMemberId": 4378,
+   "UniqueName": "Johnson",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Joshua",
+   "FormattedUniqueName": "Klumb",
+   "LastName": "Klumb",
+   "Picture": "klumb_2019.jpg",
+   "SessionMemberId": 4381,
+   "UniqueName": "Klumb",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Jack",
+   "FormattedUniqueName": "Kolbeck (Jack)",
+   "LastName": "Kolbeck",
+   "Picture": "kolbeck_2019.jpg",
+   "SessionMemberId": 4382,
+   "UniqueName": "Kolbeck (Jack)",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Steve",
+   "FormattedUniqueName": "Kolbeck (Steve)",
+   "LastName": "Kolbeck",
+   "Picture": "kolbeck, steve sen-0507 rt.jpg",
+   "SessionMemberId": 4453,
+   "UniqueName": "Kolbeck (Steve)",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Liz",
+   "FormattedUniqueName": "Larson",
+   "LastName": "Larson",
+   "Picture": "larson, liz sen-1652 rt.jpg",
+   "SessionMemberId": 4466,
+   "UniqueName": "Larson",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Ryan",
+   "FormattedUniqueName": "Maher",
+   "LastName": "Maher",
+   "Picture": "maher_2019.jpg",
+   "SessionMemberId": 4386,
+   "UniqueName": "Maher",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Jim",
+   "FormattedUniqueName": "Mehlhaff",
+   "LastName": "Mehlhaff",
+   "Picture": "mehlhaff, jim sen-0436 rt.jpg",
+   "SessionMemberId": 4460,
+   "UniqueName": "Mehlhaff",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Reynold",
+   "FormattedUniqueName": "Nesiba",
+   "LastName": "Nesiba",
+   "Picture": "nesiba_2019.jpg",
+   "SessionMemberId": 4394,
+   "UniqueName": "Nesiba",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Al",
+   "FormattedUniqueName": "Novstrup",
+   "LastName": "Novstrup",
+   "Picture": "novstrup_2019.jpg",
+   "SessionMemberId": 4395,
+   "UniqueName": "Novstrup",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Herman",
+   "FormattedUniqueName": "Otten (Herman)",
+   "LastName": "Otten",
+   "Picture": "otten_herman_2019.jpg",
+   "SessionMemberId": 4399,
+   "UniqueName": "Otten (Herman)",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Tom",
+   "FormattedUniqueName": "Pischke",
+   "LastName": "Pischke",
+   "Picture": "pischke_2019.jpg",
+   "SessionMemberId": 4404,
+   "UniqueName": "Pischke",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Tim",
+   "FormattedUniqueName": "Reed",
+   "LastName": "Reed",
+   "Picture": "reed_2019.jpg",
+   "SessionMemberId": 4407,
+   "UniqueName": "Reed",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Michael",
+   "FormattedUniqueName": "Rohl",
+   "LastName": "Rohl",
+   "Picture": "rohl, michael sen-2772 full rt.jpg",
+   "SessionMemberId": 4410,
+   "UniqueName": "Rohl",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Lee",
+   "FormattedUniqueName": "Schoenbeck",
+   "LastName": "Schoenbeck",
+   "Picture": "schoenbeck_2019.jpg",
+   "SessionMemberId": 4413,
+   "UniqueName": "Schoenbeck",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Kyle",
+   "FormattedUniqueName": "Schoenfish",
+   "LastName": "Schoenfish",
+   "Picture": "schoenfish_2019.jpg",
+   "SessionMemberId": 4414,
+   "UniqueName": "Schoenfish",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Jim",
+   "FormattedUniqueName": "Stalzer",
+   "LastName": "Stalzer",
+   "Picture": "stalzer_2019.jpg",
+   "SessionMemberId": 4419,
+   "UniqueName": "Stalzer",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Erin",
+   "FormattedUniqueName": "Tobin",
+   "LastName": "Tobin",
+   "Picture": "tobin, erin sen-2783 full rt.jpg",
+   "SessionMemberId": 4426,
+   "UniqueName": "Tobin",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "David",
+   "FormattedUniqueName": "Wheeler",
+   "LastName": "Wheeler",
+   "Picture": "wheeler, david sen-2896 full rt.jpg",
+   "SessionMemberId": 4430,
+   "UniqueName": "Wheeler",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "John",
+   "FormattedUniqueName": "Wiik",
+   "LastName": "Wiik",
+   "Picture": "wiik_2019.jpg",
+   "SessionMemberId": 4432,
+   "UniqueName": "Wiik",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Dean",
+   "FormattedUniqueName": "Wink",
+   "LastName": "Wink",
+   "Picture": "wink, dean rep-2891 full rt.jpg",
+   "SessionMemberId": 4434,
+   "UniqueName": "Wink",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  },
+  {
+   "FirstName": "Larry",
+   "FormattedUniqueName": "Zikmund",
+   "LastName": "Zikmund",
+   "Picture": "zikmund_2019.jpg",
+   "SessionMemberId": 4436,
+   "UniqueName": "Zikmund",
+   "Vote": 1,
+   "Vote1": "Yea",
+   "VoteVote": 1
+  }
+ ],
+ "Yeas": 34,
+ "Nays": 0,
+ "Excused": 0,
+ "Absent": 0,
+ "Present": 0,
+ "NotVoting": 0,
+ "actionLog": {
+  "ActionCommitteeId": 1183,
+  "ActionDate": "2023-01-30T14:00:00-06:00",
+  "ActionLogId": 445193,
+  "ConferenceCommitteeId": null,
+  "FullName": "Senate",
+  "SessionId": 68,
+  "StatusText": "Do Pass"
+ }
+}

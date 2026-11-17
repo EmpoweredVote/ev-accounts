@@ -33,12 +33,12 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { decodeHtmlBytes, EMPOWERED_VOTE_UA } from '../../../src/lib/verificationFetch.js';
 import { fetchWithHostTrust } from '../../../src/lib/adapters/hostTrust.js';
-import { isStateRollCallUrl, readStateRollCallRecord, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
+import { isStateRollCallUrl, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
 
 /** One floor roll call as a bill's vote list gives it. */
 export interface IndexedVote { url: string; motion: string; tally: [number, number, number] }
 /** motion: votes on a motion, not on the bill (Ohio motion_...: "Informally passed"), counted and not read. */
-export interface BillIndex { floor: IndexedVote[]; committee: number; voice: number; motion?: number }
+export interface BillIndex { floor: IndexedVote[]; committee: number; voice: number; motion?: number; motions?: string[]; committeeUrls?: string[] }
 interface StateIndex {
   /** The least time between two requests to the site (its robots.txt Crawl-delay). */
   minGapMs: number;
@@ -46,6 +46,12 @@ interface StateIndex {
   billUrl: (_session: string, _bill: string) => string | null;
   /** Read the vote list. Throws when the document is not the bill asked for. */
   read: (_body: string, _session: string, _bill: string) => BillIndex;
+  /**
+   * A site that names a bill's vote list by its own bill id (South Dakota): the session's bill list, read first, and
+   * the vote-list address taken from it. Throws when the list does not hold the bill exactly once.
+   */
+  listUrl?: (_session: string) => string | null;
+  billUrlFromList?: (_list: string, _session: string, _bill: string) => string;
 }
 
 const UT_BILL = /^([HS])\.?([A-Z])?\.?([A-Z])?\.?\s*0*(\d{1,4})$/i;
@@ -64,7 +70,56 @@ function ohBill(bill: string): string | null {
   return m ? `${m[1]}${m[2].replace(/[.\s]/g, '')}${m[3]}`.toLowerCase() : null;
 }
 
+const SD_BILL = /^([HS](?:B|JR|CR|C|R))\s*0*([1-9]\d{0,4})$/i;
+const SD_SESSION_ID = new Map(Object.entries(SD_SESSIONS).map(([id, name]) => [name, Number(id)]));
+
 export const INDEX: Record<string, StateIndex> = {
+  // sdlegislature.gov (read 2026-11-17). The site names a bill by its own id: /api/Bills/Session/Light/<SessionId> lists
+  // the session's bills (BillId, BillType, BillNumberOnly), and /api/Bills/ActionLog/<BillId> lists every action. An
+  // action with a Vote is a roll call: ActionCommittee.FullBody (House of Representatives, Senate) is the chamber's
+  // floor vote, anything else a committee's. A floor vote on a motion (sdQuestionIsOnTheBill: to table, to defer to the
+  // 41st day, ...) is not a vote on the bill. Each floor vote is cited on its own page, /Session/Vote/<VoteId>, and
+  // read from /api/Votes/<VoteId> (stateRollCallEvidence.ts).
+  SD: {
+    minGapMs: 1_000, // robots.txt states no Crawl-delay: one a second is ours
+    billUrl: () => null,
+    listUrl(session) {
+      const id = SD_SESSION_ID.get(session);
+      return id ? `https://sdlegislature.gov/api/Bills/Session/Light/${id}` : null;
+    },
+    billUrlFromList(list, session, bill) {
+      const m = SD_BILL.exec(bill.replace(/[\s.]+/g, ''));
+      if (!m) throw new Error(`${bill} is not a South Dakota bill number`);
+      const j = JSON.parse(list) as { BillId?: unknown; BillType?: unknown; BillNumberOnly?: unknown }[];
+      if (!Array.isArray(j)) throw new Error(`the bill list of ${session} is not a list`);
+      const hit = j.filter((b) => b.BillType === m[1].toUpperCase() && b.BillNumberOnly === Number(m[2]));
+      if (hit.length !== 1 || typeof hit[0].BillId !== 'number') throw new Error(`the bill list of ${session} holds ${bill} ${hit.length} times`);
+      return `https://sdlegislature.gov/api/Bills/ActionLog/${hit[0].BillId}`;
+    },
+    read(body, session, bill) {
+      const j = JSON.parse(body) as { StatusText?: unknown; ActionCommittee?: { FullName?: unknown; FullBody?: unknown } | null; Vote?: Record<string, unknown> | null }[];
+      if (!Array.isArray(j)) throw new Error(`the action log of ${session} ${bill} is not a list`);
+      const out: BillIndex = { floor: [], committee: 0, voice: 0, motion: 0, motions: [], committeeUrls: [] };
+      const seen = new Set<number>();
+      for (const a of j) {
+        const v = a.Vote;
+        if (!v) continue;
+        const id = v.VoteId;
+        if (typeof id !== 'number' || !Number.isInteger(id)) throw new Error(`a vote the tool cannot read: ${JSON.stringify(a)}`);
+        // the 2020 consent calendars appear twice in a bill's action log, as their bills appear twice in the vote: one vote
+        if (seen.has(id)) continue;
+        seen.add(id);
+        const url = `https://sdlegislature.gov/Session/Vote/${id}`;
+        const body_ = a.ActionCommittee?.FullName;
+        if (a.ActionCommittee?.FullBody !== true || (body_ !== 'House of Representatives' && body_ !== 'Senate')) { out.committee++; out.committeeUrls!.push(url); continue; }
+        const q = typeof a.StatusText === 'string' ? a.StatusText.trim() : '';
+        if (!sdQuestionIsOnTheBill(q)) { out.motion!++; out.motions!.push(`${url} ${q}`); continue; }
+        const n = (k: string): number => (typeof v[k] === 'number' ? v[k] as number : 0);
+        out.floor.push({ url, motion: q, tally: [n('Yeas'), n('Nays'), n('Excused') + n('Absent') + n('NotVoting') + n('Present')] });
+      }
+      return out;
+    },
+  },
   // search-prod.lis.state.oh.us/api/v2/general_assembly_<GA>/legislation/<bill>/actions/ (read 2026-11-16): every
   // action of the bill, newest first; a vote carries yeas and nays (member ids), the chamber and the session day
   // (day153_h_20240612). A committee report (action_code crpt_...) is a committee's vote, and a vote on a motion (motion_...) is not a vote on the bill. Each floor vote is named on
@@ -145,13 +200,20 @@ const norm = (b: string): string => b.replace(/[\s.]+/g, '').replace(/^([A-Z]+)0
  * One roll call for the supplement, or the reason it is refused. `passed` is the motion's own word when it has
  * one ("passed", "failed"), else whether the yeas outnumber the nays.
  */
-export function buildRollCall(bill: string, v: IndexedVote, docs: string | string[]): SupplementRollCall | { refused: string } {
+export function buildRollCall(bill: string, v: IndexedVote, docs: string | string[], session?: string): SupplementRollCall | { refused: string } {
   if (!isStateRollCallUrl(v.url)) return { refused: 'no reader knows this address' };
   const r = readStateRollCallRecord(Array.isArray(docs) ? docs : [docs], v.url);
   if (!r) return { refused: 'the page did not read as a roll call' };
-  if (norm(r.bill) !== norm(bill)) return { refused: `the page is for ${r.bill}, not ${bill}` };
+  // South Dakota's record names its session; it must be the session asked for
+  if (session !== undefined && r.state === 'SD' && r.session !== session) return { refused: `the vote is of session ${r.session}, not ${session}` };
+  // South Dakota votes a consent calendar as one roll call on several bills ("HB 1209, SB 55"): the bill must be one of them
+  if (!r.bill.split(',').some((x) => norm(x) === norm(bill))) return { refused: `the page is for ${r.bill}, not ${bill}` };
   const got: [number, number, number] = [r.groups.Yea.length, r.groups.Nay.length, r.groups['Absent or not voting'].length];
-  if (got.join() !== v.tally.join()) return { refused: `the page's tally ${got.join('-')} is not the bill file's ${v.tally.join('-')}` };
+  // South Dakota's action log counts Excused 0 on some votes whose own record lists excused members (2018 HB 1209,
+  // House concurrence: 62-4, 4 excused on the record): the yeas and nays are compared there, and the record's list,
+  // which its own counts check (stateRollCallEvidence.ts), is kept. The fetch counts each such vote.
+  const compared = r.state === 'SD' ? 2 : 3;
+  if (got.slice(0, compared).join() !== v.tally.slice(0, compared).join()) return { refused: `the page's tally ${got.join('-')} is not the bill file's ${v.tally.join('-')}` };
   const failed = /\b(fail(ed|s)?|defeated|rejected|refuse[sd]?)\b/i.test(v.motion);
   const passed = /\b(pass(ed|es)?|adopt(ed|s)?|concurs?|approved)\b/i.test(v.motion) && !failed ? 1 : failed ? 0 : got[0] > got[1] ? 1 : 0;
   return {
@@ -205,25 +267,34 @@ async function main(): Promise<void> {
   let floor = 0;
   const refusedNow: string[] = [];
   for (const bill of bills) {
-    const url = idx.billUrl(session, bill);
+    let url = idx.billUrl(session, bill);
+    if (!url && idx.listUrl && idx.billUrlFromList) {
+      const list = idx.listUrl(session);
+      if (list) url = idx.billUrlFromList(await get(list, idx.minGapMs), session, bill);
+    }
     if (!url) throw new Error(`${ST} has no vote-list address for session ${session}, bill ${bill}`);
     const bi = idx.read(await get(url, idx.minGapMs), session, bill);
     const rcs: SupplementRollCall[] = [];
     const refused: { url: string; why: string }[] = [];
+    const absentDiffers: string[] = [];
     for (const v of bi.floor) {
       const docs: string[] = [];
       for (const d of stateRollCallDocs(v.url) ?? [v.url]) docs.push(await get(d, Math.max(idx.minGapMs, stateRollCallMinGapMs(v.url))));
-      const rc = buildRollCall(bill, v, docs);
-      if ('refused' in rc) { refused.push({ url: v.url, why: rc.refused }); refusedNow.push(`${bill} ${v.url}: ${rc.refused}`); } else rcs.push(rc);
+      const rc = buildRollCall(bill, v, docs, session);
+      if ('refused' in rc) { refused.push({ url: v.url, why: rc.refused }); refusedNow.push(`${bill} ${v.url}: ${rc.refused}`); } else {
+        rcs.push(rc);
+        if (rc.absent !== v.tally[2]) absentDiffers.push(`${v.url} (vote list ${v.tally[2]}, record ${rc.absent})`);
+      }
     }
     if (rcs.length) out.bills[bill] = rcs; else delete out.bills[bill];
     if (refused.length) out.refused[bill] = refused; else delete out.refused[bill];
-    out.checked[bill] = { vote_list: url, floor: bi.floor.length, read: rcs.length, committee_not_read: bi.committee, voice_not_read: bi.voice, ...(bi.motion ? { motion_not_read: bi.motion } : {}) };
+    out.checked[bill] = { vote_list: url, floor: bi.floor.length, read: rcs.length, committee_not_read: bi.committee, voice_not_read: bi.voice, ...(bi.motion ? { motion_not_read: bi.motion } : {}),
+      ...(bi.motions?.length ? { motions: bi.motions } : {}), ...(absentDiffers.length ? { absent_count_differs_from_vote_list: absentDiffers } : {}), ...(bi.committeeUrls?.length ? { committee_urls: bi.committeeUrls } : {}) };
     floor += rcs.length;
     console.log(`${bill}: ${rcs.length} of ${bi.floor.length} floor roll calls read (${bi.committee} committee${bi.motion ? `, ${bi.motion} motion` : ''} and ${bi.voice} voice votes not read)`);
   }
   writeFileSync(outFile, JSON.stringify({
-    state: ST, session, source: `${new URL(idx.billUrl(session, bills[0])!).host}: each bill's own vote list and each roll call's own page`,
+    state: ST, session, source: `${new URL(idx.billUrl(session, bills[0]) ?? idx.listUrl?.(session) ?? '')!.host}: each bill's own vote list and each roll call's own page`,
     fetched_at: new Date().toISOString(), bills: out.bills, checked: out.checked, refused: out.refused,
   }, null, 1));
   console.log(`${bills.length} bills, ${floor} floor roll calls read, ${refusedNow.length} refused, ${asked} requests -> ${outFile}`);

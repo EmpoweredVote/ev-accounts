@@ -491,3 +491,152 @@ describe('state roll-call pages — the Ohio adapter', () => {
     resetStateRollCallPacing();
   });
 });
+
+// ── South Dakota ─────────────────────────────────────────────────────────────────────────────────────
+// Saved 2026-11-17 from sdlegislature.gov/api/Votes/<id> with the verifier's own user-agent. The cited page
+// (/Session/Vote/<id>) is a script shell with no vote in it; the data is the one document. No party in either.
+const sdFile = (id: number): string => ohFile(`sd-vote-${id}.json`);
+const SD_URL = (id: number): string => `https://sdlegislature.gov/Session/Vote/${id}`;
+const sdRender = (id: number, body = sdFile(id)): string | null => readStateRollCallDocs([body], SD_URL(id));
+/** Change one thing in the data and fail when the change did not apply. */
+const sdTamper = (id: number, edit: (d: Record<string, any>) => void): string => {
+  const d = JSON.parse(sdFile(id));
+  const before = JSON.stringify(d);
+  edit(d);
+  expect(JSON.stringify(d)).not.toBe(before);
+  return JSON.stringify(d);
+};
+const MORTENSON = 'South Dakota House vote 84688 (2026), SB 179 - Do Pass (2026-03-05): Will Mortenson voted Yea.';
+
+describe('state roll-call pages — South Dakota address', () => {
+  it('knows a vote page, and reads it from the vote\'s data, a second apart', () => {
+    expect(isStateRollCallUrl(SD_URL(84688))).toBe(true);
+    expect(stateRollCallDocs(SD_URL(84688))).toEqual(['https://sdlegislature.gov/api/Votes/84688']);
+    expect(stateRollCallMinGapMs(SD_URL(84688))).toBe(1_000);
+    // the data address itself, the old address the dump stores, a look-alike host and a zero id are not cited votes
+    for (const u of ['https://sdlegislature.gov/api/Votes/84688', 'https://sdlegislature.gov/Legislative_Session/Bills/RollCall.aspx?Vote=25365&Session=2018',
+      'https://sdlegislature.gov.example.com/Session/Vote/84688', 'http://sdlegislature.gov/Session/Vote/84688', 'https://sdlegislature.gov/Session/Vote/0']) {
+      expect(isStateRollCallUrl(u)).toBe(false);
+    }
+  });
+});
+
+describe('state roll-call pages — reading South Dakota', () => {
+  it('reads a 2026 floor vote: chamber, session, bill, question, day and every member, with no party', () => {
+    const t = sdRender(84688)!;
+    expect(t.split('\n').slice(0, 3)).toEqual([
+      'South Dakota House vote 84688 (2026), SB 179, 2026-03-05.', 'Question: Do Pass',
+      'Yea 42; Nay 25; Excused 3; Absent 0; Not voting 0; Present 0; Suspended 0.',
+    ]);
+    expect(t).toContain('Excused (3): Jeff Bathke; Tim Czmowski; Bethany Soye');
+    expect(t).not.toMatch(/\([A-Z]\)/); // no letter after a name
+    expect(parseStateRollCallRender(t, SD_URL(84688))).toMatchObject({ state: 'SD', chamber: 'House', session: '2026', bill: 'SB 179' });
+  });
+
+  it('reads a consent calendar as one vote on every bill it carried, once each, though 2020 lists each bill twice', () => {
+    expect(sdRender(34573)!.split('\n')[0]).toBe(
+      'South Dakota House vote 34573 (2020), SB 45, SB 98, SB 120, SB 124, SB 25, SB 27, SB 44, SB 89, SB 81, SB 91, SB 149, 2020-03-09.');
+    // one bill number under two ids is two bills that cannot both be that number: refused
+    expect(sdRender(34573, sdTamper(34573, (d) => { d.Bill[1].BillId = 99999; }))).toBeNull();
+  });
+
+  it('reads a 2018 concurrence, a vote on the bill', () => {
+    expect(sdRender(26828)!.split('\n').slice(0, 2)).toEqual(['South Dakota House vote 26828 (2018), HB 1209, 2018-03-07.', 'Question: Concurred in amendments']);
+  });
+
+  it('lists a suspended member as the record does, never as a Yea or a Nay', () => {
+    const t = sdRender(76497)!;
+    expect(t).toContain('Suspended (1): Julie Frye-Mueller');
+    expect(stateRollCallLinesFor(SD_URL(76497), t, 'Frye-Mueller', 'Julie Frye-Mueller')).toEqual([
+      'South Dakota Senate vote 76497 (2023), SB 50, SB 64, SB 61, SB 37, SB 84, SB 72, SB 81, SB 85, HB 1010, HB 1015, HB 1033, HB 1062, HB 1004, HB 1018, HB 1019, HB 1005 - Do Pass (2023-01-30): Julie Frye-Mueller was suspended.',
+    ]);
+  });
+
+  it('reads no committee vote, though the data files it under the House with "Do Pass" (runner, 2026-11-16)', () => {
+    expect(sdRender(83164)).toBeNull();
+  });
+
+  it('reads no vote on a motion: "Reconsidered" is not a vote on the bill (runner, 2026-11-16)', () => {
+    expect(sdRender(26132)).toBeNull();
+    // the same vote with a question on the bill reads, so the motion is what refused it
+    expect(sdRender(26132, sdTamper(26132, (d) => { d.actionLog.StatusText = 'Do Pass'; }))).not.toBeNull();
+  });
+
+  it('refuses data whose counts are not the members listed, or whose member votes twice', () => {
+    expect(sdRender(84688, sdTamper(84688, (d) => { d.Yeas = 41; }))).toBeNull();
+    expect(sdRender(84688, sdTamper(84688, (d) => { d.RollCalls[0].Vote1 = 'Nay'; }))).toBeNull();
+    expect(sdRender(84688, sdTamper(84688, (d) => { d.RollCalls[1].SessionMemberId = d.RollCalls[0].SessionMemberId; }))).toBeNull();
+    expect(sdRender(84688, sdTamper(84688, (d) => { d.RollCalls.push({ ...d.RollCalls[0], SessionMemberId: 1 }); d.Yeas += 1; }))).toBeNull();
+  });
+
+  it('refuses a session it does not know, a vote it cannot place, another vote\'s data, and a vote word it does not know', () => {
+    expect(sdRender(84688, sdTamper(84688, (d) => { d.SessionId = 174; }))).toBeNull();
+    expect(sdRender(84688, sdTamper(84688, (d) => { d.actionLog.FullName = 'Joint Committee on Appropriations'; }))).toBeNull();
+    expect(readStateRollCallDocs([sdFile(84688)], SD_URL(84689))).toBeNull();
+    expect(sdRender(84688, sdTamper(84688, (d) => { d.RollCalls[0].Vote1 = 'Paired'; }))).toBeNull();
+    expect(sdRender(84688, '<html>not data</html>')).toBeNull();
+  });
+});
+
+describe('state roll-call pages — South Dakota lines', () => {
+  const text = sdRender(84688)!;
+
+  it('builds one line for a member and verifies it', () => {
+    expect(stateRollCallLinesFor(SD_URL(84688), text, 'Mortenson', 'Will Mortenson')).toEqual([MORTENSON]);
+    expect(verifyStateRollCallLine(MORTENSON, SD_URL(84688), text, 'Mortenson', 'Will Mortenson')).toEqual({ verdict: 'verified', matchOffset: 0 });
+    expect(parseStateRollCallLine(MORTENSON)).toMatchObject({ state: 'SD', voteId: 84688, chamber: 'House', vote: 'Yea', name: 'Will Mortenson', bill: 'SB 179' });
+  });
+
+  it('gives an excused member the line "was excused", never a Yea or a Nay', () => {
+    const [l] = stateRollCallLinesFor(SD_URL(84688), text, 'Soye', 'Bethany Soye');
+    expect(l).toBe('South Dakota House vote 84688 (2026), SB 179 - Do Pass (2026-03-05): Bethany Soye was excused.');
+    expect(verifyStateRollCallLine(l.replace('was excused', 'voted Yea'), SD_URL(84688), text, 'Soye', 'Bethany Soye').verdict).toBe('snippet_not_found');
+  });
+
+  it('refuses the line with the vote flipped, given to another member, or on another bill, day or vote', () => {
+    const v = (line: string, last = 'Mortenson', full = 'Will Mortenson', url = SD_URL(84688)) => verifyStateRollCallLine(line, url, text, last, full).verdict;
+    expect(v(MORTENSON.replace('voted Yea', 'voted Nay'))).toBe('snippet_not_found');
+    expect(v(MORTENSON.replace('Will Mortenson', 'Erin Healy'))).toBe('snippet_not_found');
+    expect(v(MORTENSON, 'Healy', 'Erin Healy')).toBe('name_not_present');
+    expect(v(MORTENSON.replace('SB 179', 'SB 178'))).toBe('snippet_not_found');
+    expect(v(MORTENSON.replace('2026-03-05', '2026-03-04'))).toBe('snippet_not_found');
+    expect(v(MORTENSON.replace('Do Pass', 'Do Pass Amended'))).toBe('snippet_not_found');
+    expect(v(MORTENSON, 'Mortenson', 'Will Mortenson', SD_URL(84689))).toBe('snippet_not_found');
+  });
+
+  it('refuses a consent calendar\'s line that names one of its bills and not all of them', () => {
+    const t = sdRender(34573)!;
+    const [l] = stateRollCallLinesFor(SD_URL(34573), t, 'Randolph', 'Tony Randolph');
+    expect(verifyStateRollCallLine(l, SD_URL(34573), t, 'Randolph', 'Tony Randolph').verdict).toBe('verified');
+    expect(verifyStateRollCallLine(l.replace(/\), SB 45, .* - Do Pass/, '), SB 45 - Do Pass'), SD_URL(34573), t, 'Randolph', 'Tony Randolph').verdict).toBe('snippet_not_found');
+  });
+
+  it('gives no line when two members fit the person', () => {
+    expect(stateRollCallLinesFor(SD_URL(84688), text.replace('Erin Healy', 'Will Mortenson'), 'Mortenson', 'Will Mortenson')).toEqual([]);
+  });
+
+  it('verifyEvidence accepts the line on the render and refuses it on the page\'s script shell', async () => {
+    const run = (t: string, snippet = MORTENSON) => verifyEvidence({
+      stanceRows: [{ full_name: 'Will Mortenson', topic_key: 'a-topic', value: 2, source_urls: [SD_URL(84688)] } as StanceRow],
+      evidenceRows: [{ full_name: 'Will Mortenson', topic_key: 'a-topic', source_url: SD_URL(84688), snippet, snippet_index: 1 }],
+      fetcher: async () => ({ ok: true as const, text: t }),
+      threshold: 1,
+      politicianNames: { 'Will Mortenson': { fullName: 'Will Mortenson', lastName: 'Mortenson' } },
+    });
+    expect((await run(text)).pushable).toHaveLength(1);
+    expect((await run(text, MORTENSON.replace('voted Yea', 'voted Nay'))).pushable).toHaveLength(0);
+    expect((await run('South Dakota Legislature You need to enable JavaScript to run this app.')).pushable).toHaveLength(0);
+  });
+
+  it('the adapter reads the vote from its data address, with the caller\'s user-agent', async () => {
+    resetStateRollCallPacing();
+    const asked: { u: string; ua: string | null }[] = [];
+    const fetchImpl = async (u: string, init?: RequestInit) => {
+      asked.push({ u, ua: new Headers(init?.headers).get('user-agent') });
+      return new Response(sdFile(84688), { status: 200, headers: { 'content-type': 'application/json' } });
+    };
+    expect(await fetchStateRollCallText(SD_URL(84688), { fetchImpl, userAgent: 'EmpoweredVoteBot/test', now: () => 0, sleep: async () => {} })).toBe(text);
+    expect(asked).toEqual([{ u: 'https://sdlegislature.gov/api/Votes/84688', ua: 'EmpoweredVoteBot/test' }]);
+    resetStateRollCallPacing();
+  });
+});

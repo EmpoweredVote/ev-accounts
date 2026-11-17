@@ -130,9 +130,19 @@ for r in rows("personvote"):
 #    is told by its motion: "Reported..." classed committee-passage (a conference report is classed so too, and is
 #    the chamber's floor vote). The dump holds most Ohio votes two to four times over (the same vote scraped again under
 #    a new key: 135 HB 33's House passage, 78-19, three times): each vote is kept once.
+#  - "sd_record_is_the_floor" (South Dakota, 2026-11-17): the rows cannot tell a committee's vote from the chamber's
+#    (sdlegislature.gov/api/Votes/83164, House Taxation, is filed under the House with the motion "Do Pass", as the
+#    floor vote is), and 2018 files every vote under the whole legislature. Only the legislature's record says which
+#    vote is a floor vote, in which chamber, on what question. So a South Dakota roll call is placed only when it was
+#    read from the record (fetch-legislature-rollcalls.ts, every bill the scan finds): the record's copy replaces the
+#    dump's, and every other dump row is kept as not placed (marked committee, so no step maps it). The dump's own
+#    copy of a record vote still teaches convert.py which person a label is (Open States links most voters from 2021).
+#    The addresses (/api/Votes/<id>, /Legislative_Session/Bills/RollCall.aspx?Vote=<id>&Session=2018) become the
+#    vote's own page, /Session/Vote/<id>, which is cited; the verifier reads /api/Votes/<id> for it.
 SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": re.compile(r"/mtgvotes\.jsp"), "https": True},
              "OH": {"committee": re.compile(r"/cmtevotes/?$"), "committee_motion": re.compile(r"^Reported\b"), "oh_votes_page": True,
-                    "oh_text_v2": True, "record_replaces_dump": True}}
+                    "oh_text_v2": True, "record_replaces_dump": True},
+             "SD": {"https": True, "sd_vote_page": True, "record_replaces_dump": True, "sd_record_is_the_floor": True}}
 RULES = SRC_RULES.get(ST, {})
 if RULES.get("https"):
     for eid in vsrc:
@@ -143,6 +153,8 @@ vsrc_orig = {eid: list(us) for eid, us in vsrc.items()}
 
 def event_committee_link(eid):
     """A committee's vote, by the state's rule: its address, or (Ohio) its motion and classification."""
+    if RULES.get("sd_record_is_the_floor"):
+        return not str(eid).startswith("supplement:")  # South Dakota: only a vote read from the record is placed
     if RULES.get("committee_motion") and "committee-passage" in pgarr(events[eid].get("motion_classification")) \
             and RULES["committee_motion"].search(events[eid]["motion_text"] or ""):
         return True
@@ -187,6 +199,23 @@ if RULES.get("oh_votes_page"):
         keep[k] = eid
         vsrc[eid] = [page]
 
+SD_VOTE = re.compile(r"(?:/api/Votes/|/RollCall\.aspx\?Vote=|/Session/Vote/)(\d+)\b")
+if RULES.get("sd_vote_page"):
+    keep = {}
+    for eid in sorted(events, key=lambda x: (events[x].get("updated_at") or "", x), reverse=True):
+        m = next((SD_VOTE.search(u) for u in (vsrc.get(eid) or []) + [events[eid].get("dedupe_key") or ""] if SD_VOTE.search(u)), None)
+        if not m:
+            continue
+        page = f"https://sdlegislature.gov/Session/Vote/{m.group(1)}"
+        k = (events[eid]["bill_id"], page)
+        if k in keep:  # the same vote again: the copy updated last is kept
+            DUPES[events[eid]["legislative_session_id"]]["duplicate_rollcalls_dropped"] += 1
+            for d in (events, vsrc, pvotes, counts):
+                d.pop(eid, None)
+            continue
+        keep[k] = eid
+        vsrc[eid] = [page]
+
 # ---------------- roll calls the dump does not hold ----------------
 # A dump can hold a session's bills and none of its roll calls (Utah's 2025 General Session, 2026-11 dump: 959
 # bills, 0 roll calls). fetch-legislature-rollcalls.ts reads those roll calls from the legislature's own site into
@@ -195,7 +224,13 @@ if RULES.get("oh_votes_page"):
 SUPP_OPT = {"Yea": "yes", "Nay": "no"}  # anything else is "other", as Open States marks an absent member
 SUPP = collections.Counter()
 SUPP_SESSIONS = collections.defaultdict(lambda: {"added": 0, "bills": set(), "source": ""})
-have_url = {u for us in vsrc.values() for u in us}
+LEARN_ONLY = {}  # South Dakota: dump copies of votes the record replaced -> (event, person votes, chamber)
+CHECKED_BILLS = set()  # bill ids whose record was read
+# South Dakota votes a consent calendar as ONE roll call on many bills, and the dump files a copy under each bill: there a
+# roll call is known by (bill, address), so one bill's copy never stands in for another's.
+PER_BILL = bool(RULES.get("sd_record_is_the_floor"))
+hkey = lambda bid, u: (bid, u) if PER_BILL else u
+have_url = {hkey(events[e]["bill_id"], u) for e, us in vsrc.items() for u in us}
 sess_by_ident = {s["identifier"]: sid for sid, s in sessions.items()}
 bill_by_key = {(b["legislative_session_id"], re.sub(r"[\s.]+", "", b["identifier"]).upper()): bid for bid, b in bills.items()}
 for f in sorted(glob.glob(os.path.join(WORK, "supplements", ST, "*.json"))):
@@ -205,11 +240,26 @@ for f in sorted(glob.glob(os.path.join(WORK, "supplements", ST, "*.json"))):
     sid = sess_by_ident[sp["session"]]
     if want and sp["session"] not in want:
         continue
+    for ident in sp.get("checked", {}):
+        cb = bill_by_key.get((sid, re.sub(r"[\s.]+", "", ident).upper()))
+        if cb:
+            CHECKED_BILLS.add(cb)
     for ident, rcs in sorted(sp.get("bills", {}).items()):
         bid = bill_by_key.get((sid, re.sub(r"[\s.]+", "", ident).upper()))
         if not bid:
             sys.exit(f"{f}: bill {ident!r} is not in session {sp['session']} of this extract")
-        if RULES.get("record_replaces_dump") and ident in sp.get("checked", {}):
+        if RULES.get("sd_record_is_the_floor") and ident in sp.get("checked", {}):
+            # South Dakota: the record's copy of a floor vote replaces the dump's. The dump's copy is kept aside, only
+            # to teach which person a label is (its voters are mostly linked by Open States from 2021).
+            on_rec = {rc["url"]: rc for rc in rcs}
+            for eid in [e for e, ev_ in events.items() if ev_["bill_id"] == bid and e in vsrc and not e.startswith("supplement:")]:
+                if vsrc[eid][0] in on_rec:
+                    DUPES[sid]["dump_floor_rollcalls_replaced_by_the_record"] += 1
+                    LEARN_ONLY[eid] = (events[eid], pvotes.get(eid, []), on_rec[vsrc[eid][0]]["chamber"])
+                    have_url.discard(hkey(bid, vsrc[eid][0]))
+                    for d in (events, vsrc, pvotes, counts):
+                        d.pop(eid, None)
+        elif RULES.get("record_replaces_dump") and ident in sp.get("checked", {}):
             # The legislature's record of this bill was read: it is the bill's floor votes. A dump floor vote of the
             # bill that is not on it is dropped (Ohio: the 136th's dates are clock times, so a late vote lands on the
             # next day; one tally of 135 SB 58 is not the record's). Committee votes are not on it and stay.
@@ -217,19 +267,19 @@ for f in sorted(glob.glob(os.path.join(WORK, "supplements", ST, "*.json"))):
             for eid in [e for e, ev_ in events.items() if ev_["bill_id"] == bid and e in vsrc and not event_committee_link(e)
                         and not e.startswith("supplement:") and vsrc[e][0] not in on_rec]:
                 DUPES[sid]["dump_floor_rollcalls_not_on_the_record_dropped"] += 1
-                have_url.discard(vsrc[eid][0])
+                have_url.discard(hkey(bid, vsrc[eid][0]))
                 for d in (events, vsrc, pvotes, counts):
                     d.pop(eid, None)
         for n, rc in enumerate(rcs):
-            if rc["url"] in have_url:
+            if hkey(bid, rc["url"]) in have_url:
                 SUPP["already_in_dump"] += 1
                 continue
             groups = rc["groups"]
             tally = [len(groups.get(k, [])) for k in ("Yea", "Nay", "Absent or not voting")]
             if tally != [rc["yea"], rc["nay"], rc["absent"]] or set(groups) - {"Yea", "Nay", "Absent or not voting"}:
                 sys.exit(f"{f}: {ident} {rc['url']}: the members listed ({tally}) are not the tally ({rc['yea']}-{rc['nay']}-{rc['absent']})")
-            eid = "supplement:" + rc["url"]
-            have_url.add(rc["url"])
+            eid = "supplement:" + rc["url"] + (f"#{bid}" if PER_BILL else "")
+            have_url.add(hkey(bid, rc["url"]))
             events[eid] = {"id": eid, "bill_id": bid, "legislative_session_id": sid, "organization_id": None,
                            "motion_text": rc["motion"], "start_date": rc["date"], "order": str(n),
                            "result": "pass" if rc["passed"] else "fail", "_chamber": rc["chamber"], "_supplement": sp.get("source", "")}
@@ -302,11 +352,11 @@ learned = collections.defaultdict(collections.Counter)
 # The same printed label in the same chamber across sessions: (chamber, label) -> session -> linked people / seen.
 label_links = collections.defaultdict(lambda: collections.defaultdict(set))
 label_seen = collections.defaultdict(set)
-for eid, e in events.items():
-    if event_committee_link(eid):
+for eid, e, ch, pv in ([(x, y, None, None) for x, y in events.items()] + [(x, y[0], y[2], y[1]) for x, y in LEARN_ONLY.items()]):
+    if ch is None and event_committee_link(eid):
         continue  # a committee's members can sit in either chamber: it teaches nothing about a chamber's labels
-    ch = event_chamber(eid)
-    for v in pvotes[eid]:
+    ch = ch or event_chamber(eid)
+    for v in (pv if pv is not None else pvotes[eid]):
         label_seen[(ch, v["voter_name"])].add(e["legislative_session_id"])
         if v["voter_id"]:
             learned[(e["legislative_session_id"], ch, v["voter_name"])][v["voter_id"]] += 1
@@ -663,11 +713,17 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
             ab = tally[4] if mv else c.get("absent", 0) + c.get("excused", 0)
             desc = (f"{CH_NAME.get(ch, '')} Committee {org.get('name', '')}: " if committee and org.get("classification") == "committee"
                     else f"{CH_NAME.get(ch, '')} Committee: " if committee else f"{CH_NAME.get(ch, '')} ") + (e["motion_text"] or "")
+            sd_why = None
+            if RULES.get("sd_record_is_the_floor") and not str(eid).startswith("supplement:"):
+                # South Dakota: not read from the record, so neither its chamber nor whether it was a committee's is known
+                sd_why = "the bill's record was read and this is not a floor vote on the bill" if bid in CHECKED_BILLS else "the bill's record was not read"
+                stats["sd_dump_rollcalls_not_placed"] += 1
+                desc = f"{CH_NAME.get(ch, '')} Committee or not placed ({sd_why}): {e['motion_text'] or ''}"
             rc = {"roll_call_id": rc_id, "bill_id": bill_id, "date": (e["start_date"] or "")[:10], "desc": desc.strip(),
                   "yea": yea, "nay": nay, "nv": nv, "absent": ab, "total": yea + nay + nv + ab,
                   "passed": 1 if e["result"] == "pass" else 0, "chamber": ch or "", "chamber_id": 0,
                   "url": (vsrc[eid] or [""])[0], "state_link": (vsrc[eid] or [""])[0], "votes": mv,
-                  "_openstates": {"vote_event_id": eid, "counts": c, "committee": committee}}
+                  "_openstates": {"vote_event_id": eid, "counts": c, "committee": committee, **({"sd_not_placed": sd_why} if sd_why else {})}}
             if e.get("_supplement") is not None:
                 # not from the dump: read from the legislature's own site (see the supplement block above)
                 rc["_openstates"]["from_legislature"] = e["_supplement"] or True

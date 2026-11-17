@@ -126,3 +126,70 @@ describe('the legislature\'s own vote list — Ohio', () => {
     expect(buildRollCall('HB 229', v, OH_DOCS)).toHaveProperty('refused');
   });
 });
+
+// South Dakota (saved 2026-11-17 from sdlegislature.gov): 2018 HB 1209's action log (two committee votes, the House
+// and Senate floor votes and the House concurrence), 2018 SB 115's (a floor vote, then a vote to reconsider), and the
+// concurrence's own record, /api/Votes/26828.
+const SD_HB1209 = oh('sd-2018-hb1209-actionlog.json');
+const SD_SB115 = oh('sd-2018-sb115-actionlog.json');
+const SD_26828 = oh('sd-vote-26828.json');
+const sdList = (rows: { BillId: number; BillType: string; BillNumberOnly: number }[]): string => JSON.stringify(rows);
+
+describe('the legislature\'s own vote list — South Dakota', () => {
+  it('finds the bill in the session\'s bill list, by the site\'s own id, and knows no session it was not told', () => {
+    expect(INDEX.SD.billUrl('2018', 'HB 1209')).toBeNull();
+    expect(INDEX.SD.listUrl!('2018')).toBe('https://sdlegislature.gov/api/Bills/Session/Light/32');
+    expect(INDEX.SD.listUrl!('2021r')).toBe('https://sdlegislature.gov/api/Bills/Session/Light/65');
+    expect(INDEX.SD.listUrl!('2027')).toBeNull();
+    const list = sdList([{ BillId: 9112, BillType: 'HB', BillNumberOnly: 1209 }, { BillId: 9113, BillType: 'SB', BillNumberOnly: 1209 }]);
+    expect(INDEX.SD.billUrlFromList!(list, '2018', 'HB 1209')).toBe('https://sdlegislature.gov/api/Bills/ActionLog/9112');
+    expect(INDEX.SD.billUrlFromList!(list, '2018', 'H.B. 1209')).toBe('https://sdlegislature.gov/api/Bills/ActionLog/9112');
+  });
+
+  it('refuses a bill the list holds no times, or twice', () => {
+    const one = { BillId: 9112, BillType: 'HB', BillNumberOnly: 1209 };
+    expect(() => INDEX.SD.billUrlFromList!(sdList([]), '2018', 'HB 1209')).toThrow(/0 times/);
+    expect(() => INDEX.SD.billUrlFromList!(sdList([one, { ...one, BillId: 9999 }]), '2018', 'HB 1209')).toThrow(/2 times/);
+    expect(() => INDEX.SD.billUrlFromList!(sdList([one]), '2018', 'Bill 1209')).toThrow(/not a South Dakota bill/);
+  });
+
+  it('keeps the floor votes, and counts and lists the committee votes, each cited on its own page', () => {
+    const bi = INDEX.SD.read(SD_HB1209, '2018', 'HB 1209');
+    expect(bi.floor).toEqual([
+      { url: 'https://sdlegislature.gov/Session/Vote/25955', motion: 'Do Pass', tally: [55, 0, 15] },
+      { url: 'https://sdlegislature.gov/Session/Vote/26737', motion: 'Do Pass Amended', tally: [31, 1, 3] },
+      { url: 'https://sdlegislature.gov/Session/Vote/26828', motion: 'Concurred in amendments', tally: [62, 4, 0] },
+    ]);
+    expect(bi.committee).toBe(2);
+    expect(bi.committeeUrls).toEqual(['https://sdlegislature.gov/Session/Vote/25823', 'https://sdlegislature.gov/Session/Vote/26522']);
+    expect(bi.motion).toBe(0);
+  });
+
+  it('reads no vote on a motion: SB 115\'s vote to reconsider is counted and listed, not kept (runner, 2026-11-16)', () => {
+    const bi = INDEX.SD.read(SD_SB115, '2018', 'SB 115');
+    expect(bi.floor.map((v) => v.url)).toEqual(['https://sdlegislature.gov/Session/Vote/26041']);
+    expect(bi.motion).toBe(1);
+    expect(bi.motions).toEqual(['https://sdlegislature.gov/Session/Vote/26132 Reconsidered']);
+  });
+
+  it('keeps a vote the action log lists twice once (the 2020 consent calendars)', () => {
+    const j = JSON.parse(SD_HB1209) as unknown[];
+    const twice = JSON.stringify([...j, ...j]);
+    expect(INDEX.SD.read(twice, '2018', 'HB 1209').floor).toHaveLength(3);
+    expect(INDEX.SD.read(twice, '2018', 'HB 1209').committee).toBe(2);
+  });
+
+  it('builds the roll call from the record, comparing yeas and nays only: the action log counts 0 excused where the record lists 4', () => {
+    const v = INDEX.SD.read(SD_HB1209, '2018', 'HB 1209').floor[2];
+    expect(v.tally).toEqual([62, 4, 0]);
+    const rc = buildRollCall('HB 1209', v, SD_26828, '2018');
+    expect(rc).toMatchObject({ url: v.url, date: '2018-03-07', chamber: 'H', yea: 62, nay: 4, absent: 4, passed: 1, question: 'Concurred in amendments' });
+    expect(buildRollCall('HB 1209', { ...v, tally: [61, 5, 0] }, SD_26828, '2018')).toHaveProperty('refused');
+  });
+
+  it('refuses the record of another session, or of another bill', () => {
+    const v = INDEX.SD.read(SD_HB1209, '2018', 'HB 1209').floor[2];
+    expect(buildRollCall('HB 1209', v, SD_26828, '2019')).toEqual({ refused: 'the vote is of session 2018, not 2019' });
+    expect(buildRollCall('HB 1210', v, SD_26828, '2018')).toHaveProperty('refused');
+  });
+});
