@@ -1659,6 +1659,58 @@ def openstates_convert_places_a_south_dakota_vote_only_from_the_record(t):
 
 
 @check
+def openstates_convert_takes_south_dakota_sponsors_named_on_the_introduced_text(t):
+    """South Dakota 2026-11-17 (runner: cite the introduced text). The dump marks every sponsor primary and cites a bill
+    page that is a script shell. For a bill whose sponsors the fetch read, the bill's page is its introduced text, its
+    sponsors are the record's members that text names (prime or co-sponsor as the record says), and the rest are left
+    out and counted. A committee sponsor row is kept. A bill not read keeps the dump's sponsors."""
+    X = f'{t}/work/extracts/2026-11/sd'; os.makedirs(X)
+    def tsv(name, cols, rows):
+        open(f'{X}/{name}.tsv', 'w').write('\t'.join(cols) + '\n' + ''.join('\t'.join(r.get(c, '\\N') for c in cols) + '\n' for r in rows))
+    json.dump({'dump': '2026-11-public.pgdump', 'month': '2026-11', 'state': 'sd', 'extracted_at': 'x'}, open(f'{X}/extract.json', 'w'))
+    tsv('legislativesession', ['id', 'identifier', 'name', 'classification', 'start_date', 'end_date'],
+        [{'id': 's26', 'identifier': '2026', 'name': '2026 Regular Session', 'classification': '', 'start_date': '2026-01-13', 'end_date': '2026-03-30'}])
+    tsv('organization', ['id', 'name', 'classification', 'parent_id'], [{'id': 'leg', 'name': 'South Dakota Legislature', 'classification': 'legislature'},
+        {'id': 'up', 'name': 'Senate', 'classification': 'upper', 'parent_id': 'leg'}, {'id': 'lo', 'name': 'House', 'classification': 'lower', 'parent_id': 'leg'}])
+    tsv('post', ['id', 'label'], [])
+    tsv('person', ['id', 'name', 'given_name', 'family_name', 'image', 'primary_party', 'email'],
+        [{'id': 'p1', 'name': 'Ann Able', 'given_name': 'Ann', 'family_name': 'Able'}, {'id': 'p2', 'name': 'Bo Baker', 'given_name': 'Bo', 'family_name': 'Baker'}])
+    tsv('membership', ['person_id', 'organization_id', 'post_id', 'start_date', 'end_date'], [])
+    bill = lambda i, ident, org: {'id': i, 'legislative_session_id': 's26', 'identifier': ident, 'title': 'A bill', 'classification': '{bill}', 'subject': '{}', 'from_organization_id': org}
+    tsv('bill', ['id', 'legislative_session_id', 'identifier', 'title', 'classification', 'subject', 'from_organization_id'], [bill('b1', 'SB 179', 'up'), bill('b2', 'SB 180', 'up'), bill('b3', 'SB 181', 'up')])
+    tsv('billsource', ['bill_id', 'url'], [{'bill_id': b, 'url': f'https://sdlegislature.gov/Session/Bill/{n}'} for b, n in (('b1', 27015), ('b2', 27016), ('b3', 27017))])
+    sp = lambda b, name, pid, kind='person': {'bill_id': b, 'name': name, 'entity_type': kind, 'primary': 't', 'person_id': pid}
+    tsv('billsponsorship', ['bill_id', 'name', 'entity_type', 'primary', 'person_id'],
+        [sp('b1', 'Able', 'p1'), sp('b1', 'Baker', 'p2'), sp('b1', 'Senate Judiciary', '\\N', 'organization'), sp('b2', 'Able', 'p1'), sp('b2', 'Baker', 'p2'), sp('b3', 'Able', 'p1'), sp('b3', 'House State Affairs', '\\N', 'organization')])
+    for name, cols in (('billversion', ['id', 'bill_id', 'note', 'date']), ('billversionlink', ['version_id', 'url', 'media_type']),
+                       ('voteevent', ['id', 'bill_id', 'legislative_session_id', 'organization_id', 'motion_text', 'motion_classification', 'start_date', 'result', 'order', 'updated_at']),
+                       ('votesource', ['vote_event_id', 'url']), ('votecount', ['vote_event_id', 'option', 'value']), ('personvote', ['vote_event_id', 'voter_id', 'voter_name', 'option'])):
+        tsv(name, cols, [])
+    os.makedirs(f'{t}/work/supplements/SD')
+    text = 'https://mylrc.sdlegislature.gov/api/Documents/299353.pdf'
+    json.dump({'state': 'SD', 'session': '2026', 'source': 'sdlegislature.gov', 'bills': {}, 'checked': {}, 'refused': {},
+               'sponsors': {'SB179': {'text': text, 'introduced_by': 'Senator Able', 'members': [
+                   # the record prints her "Able (Ann)", the dump "Able": still the dump's person p1
+                   {'name': 'Ann Able', 'label': 'Able (Ann)', 'chamber': 'S', 'type': 'P', 'on_text': True},
+                   {'name': 'Bo Baker', 'label': 'Baker', 'chamber': 'S', 'type': 'C', 'on_text': False}]},
+                   'SB181': {'refused': 'the introduced text of SB181 names Senator Sutton, who is 0 sponsors of the record'}}},
+              open(f'{t}/work/supplements/SD/2026.json', 'w'))
+    run('openstates/convert.py', X, '--out', f'{t}/out', '--legiscan-root', f'{t}/none', env={'OPENSTATES_NEW_REGISTRY': '1'})
+    bs = {b['bill_number']: b for b in (json.load(open(f))['bill'] for f in glob.glob(f'{t}/out/SD-*/SD/*/bill/*.json'))}
+    b1, b2 = bs['SB179'], bs['SB180']
+    # sponsors refused: the dump's people are not cited on the script shell; the committee row stays
+    assert [(s_['name'], s_['committee_sponsor']) for s_ in bs['SB181']['sponsors']] == [('House State Affairs', 1)], bs['SB181']['sponsors']
+    assert b1['state_link'] == text, b1['state_link']
+    assert [(s_['name'], s_['sponsor_type_id'], s_['committee_sponsor']) for s_ in b1['sponsors']] == [('Ann Able', 1, 0), ('Senate Judiciary', 1, 1)], b1['sponsors']
+    assert b2['state_link'] == 'https://sdlegislature.gov/Session/Bill/27016' and len(b2['sponsors']) == 2, 'a bill not read keeps the dump\'s sponsors'
+    able = [s_['people_id'] for s_ in b2['sponsors'] if s_['name'] == 'Ann Able']
+    assert able and b1['sponsors'][0]['people_id'] == able[0], ('the record\'s "Able (Ann)" is the dump\'s "Able"', b1['sponsors'][0], b2['sponsors'])
+    mk = json.load(open(glob.glob(f'{t}/out/SD-*/.openstates.json')[0]))
+    c = mk['counts']
+    assert c.get('sd_sponsors_named_on_the_text') == 1 and c.get('sd_sponsors_not_named_on_the_text') == 1 and c.get('dump_sponsor_rows_replaced_by_the_record') == 3 and c.get('sd_sponsor_rows_dropped_sponsors_refused') == 1, c
+
+
+@check
 def openstates_coverage_names_a_session_with_bills_and_no_roll_calls(t):
     """Utah 2026-11-15: the dump held the 2025 session's bills and none of its roll calls, and nothing said so. The
     check must pass a full extract, name a session whose roll calls are gone, name one whose roll calls list no voter,

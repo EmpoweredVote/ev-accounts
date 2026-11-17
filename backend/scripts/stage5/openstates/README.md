@@ -97,6 +97,16 @@ the bills under `rollcalls_from_legislature`.
   `_openstates.sd_not_placed`. A bill the fetch did not read has no floor vote at all. The site names a bill by its
   own id, so the fetch looks it up in the session's bill list first (`listUrl`, `billUrlFromList`). The dump's copy
   of a record vote is kept aside only to teach which person a label is.
+- 🔴 South Dakota sponsorships are cited on the bill's **introduced text** (runner, 2026-11-17), a PDF that prints
+  "Introduced by: ...": the bill page is a script shell. For each bill it reads, the fetch also reads the record's
+  sponsors (`/api/Bills/<BillId>`, prime or co-sponsor), the version list and that PDF, and writes `sponsors` into
+  the supplement; `convert.py` (`sd_sponsors_from_text`) then keeps only the sponsors the text names and makes the text
+  the bill's page. The 2018 and 2019 texts name every sponsor, 2020's some, and from 2021 a text names only the lead
+  sponsor, so the rest are left out and counted (`sd_sponsors_not_named_on_the_text`). A bill whose sponsors are
+  refused cites none of them (`sd_sponsor_rows_dropped_sponsors_refused`), never the dump's. A printed name must be exactly one member of that
+  chamber in the session's member list and one sponsor of the record, or the bill's sponsors are refused: the text
+  prints "Kolbeck" for the record's "Kolbeck (Jack)" and "Kevin Jensen" for "Jensen (Kevin)", and a bare "Peterson"
+  is refused while two Petersons sit.
 - A later dump that does hold the session is safe: a roll call whose page the dump already has is not added twice.
 - A new state is one entry in `INDEX` in that file (where a bill's vote list is, and how to read it) on top of the
   page reader below.
