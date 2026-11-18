@@ -147,7 +147,9 @@ router.post('/search', optionalAuth, async (req: Request, res: Response): Promis
     res.status(200).json({
       politicians: result.politicians,
       tribal_land: result.tribal_land ?? { on_reservation: false },
-      locality: result.locality ?? { incorporated: null, place_name: null, county_name: null },
+      locality: result.locality ?? {
+        incorporated: null, place_name: null, county_name: null, county_geoid: null,
+      },
       county: result.county ?? null,
       jurisdiction: result.jurisdictionGeoIds,
     });

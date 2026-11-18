@@ -128,7 +128,7 @@ describe('POST /api/essentials/candidates/search — subset-key smoke test (LOC-
   it('response body includes all five subset keys: politicians, tribal_land, locality, county, jurisdiction', async () => {
     const fixture = makeAddressSearchResult(
       [makeRep({ id: 'local-council', district_type: 'LOCAL', full_name: 'A City Councilor' })],
-      { incorporated: false, place_name: null, county_name: 'Pima County' },
+      { incorporated: false, place_name: null, county_name: 'Pima County', county_geoid: '04019' },
     );
     mockGetRepresentativesByAddress.mockResolvedValueOnce(fixture);
 
@@ -143,11 +143,11 @@ describe('POST /api/essentials/candidates/search — subset-key smoke test (LOC-
     expect(res.body).toHaveProperty('county');
     expect(res.body).toHaveProperty('jurisdiction');
 
-    expect(res.body.locality).toEqual({ incorporated: false, place_name: null, county_name: 'Pima County' });
+    expect(res.body.locality).toEqual({ incorporated: false, place_name: null, county_name: 'Pima County', county_geoid: '04019' });
   });
 
   it('defaults locality to the null-incorporated shape when the service returns no locality field', async () => {
-    const fixture = makeAddressSearchResult([], { incorporated: null, place_name: null, county_name: null });
+    const fixture = makeAddressSearchResult([], { incorporated: null, place_name: null, county_name: null, county_geoid: null });
     // Simulate an older/partial service result missing `locality` entirely.
     delete (fixture as Partial<AddressSearchResult>).locality;
     mockGetRepresentativesByAddress.mockResolvedValueOnce(fixture);
@@ -157,7 +157,7 @@ describe('POST /api/essentials/candidates/search — subset-key smoke test (LOC-
       .send({ query: 'somewhere' });
 
     expect(res.status).toBe(200);
-    expect(res.body.locality).toEqual({ incorporated: null, place_name: null, county_name: null });
+    expect(res.body.locality).toEqual({ incorporated: null, place_name: null, county_name: null, county_geoid: null });
   });
 });
 
