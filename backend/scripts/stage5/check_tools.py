@@ -1800,6 +1800,79 @@ def openstates_convert_places_a_maryland_vote_only_from_the_record_on_its_own_pd
 
 
 @check
+def openstates_convert_places_a_kansas_vote_only_from_the_record_and_rewrites_the_old_host(t):
+    """Kansas 2026-11-18: every vote, bill and text address in the dump is the old host's (www.kslegislature.org/li/...),
+    which now redirects to a 404. A 2017-2022 vote becomes the archive's page (/li_2018/b2017_18/measures/vote_view/je_.../);
+    a 2023-24 je_ address leads nowhere and is left as it is and counted. A bill page becomes the archive's, lower case
+    (/li_2018/b2017_18/measures/hb2278/), or the current site's, upper case, with a resolution under /resolutions/
+    (/b2023_24/resolutions/HCR5020/; /bills/HCR5020/ is a 404). A text becomes the archive's documents/ address, or for
+    2023-24 the current site's download address. Only a vote read from the record is placed (record_is_the_floor), and its
+    full names (built from the member ids) link to the dump's people."""
+    X = f'{t}/work/extracts/2026-11/ks'; os.makedirs(X)
+    def tsv(name, cols, rows):
+        open(f'{X}/{name}.tsv', 'w').write('\t'.join(cols) + '\n' + ''.join('\t'.join(r.get(c, '\\N') for c in cols) + '\n' for r in rows))
+    json.dump({'dump': '2026-11-public.pgdump', 'month': '2026-11', 'state': 'ks', 'extracted_at': 'x'}, open(f'{X}/extract.json', 'w'))
+    tsv('legislativesession', ['id', 'identifier', 'name', 'classification', 'start_date', 'end_date'],
+        [{'id': 's17', 'identifier': '2017-2018', 'name': '2017-2018 Regular Session', 'classification': 'primary', 'start_date': '2017-01-09', 'end_date': '2018-04-07'},
+         {'id': 's23', 'identifier': '2023-2024', 'name': '2023-2024 Regular Session', 'classification': 'primary', 'start_date': '2023-01-09', 'end_date': '2024-05-21'}])
+    tsv('organization', ['id', 'name', 'classification', 'parent_id'], [{'id': 'leg', 'name': 'Legislature', 'classification': 'legislature'},
+        {'id': 'up', 'name': 'Senate', 'classification': 'upper', 'parent_id': 'leg'}, {'id': 'lo', 'name': 'House', 'classification': 'lower', 'parent_id': 'leg'}])
+    tsv('post', ['id', 'label'], [])
+    tsv('person', ['id', 'name', 'given_name', 'family_name', 'image', 'primary_party', 'email'],
+        [{'id': 'p-alc', 'name': 'John Alcala', 'given_name': 'John', 'family_name': 'Alcala'},
+         {'id': 'p-pai', 'name': 'Wanda Brownlee Paige', 'given_name': 'Wanda', 'family_name': 'Brownlee Paige'}])
+    tsv('membership', ['person_id', 'organization_id', 'post_id', 'start_date', 'end_date'],
+        [{'person_id': p, 'organization_id': 'lo', 'start_date': '2017-01-09', 'end_date': '2019-01-14'} for p in ('p-alc', 'p-pai')])
+    bill = lambda i, s, ident: {'id': i, 'legislative_session_id': s, 'identifier': ident, 'title': 'A bill', 'classification': '{bill}', 'subject': '{}', 'from_organization_id': 'lo'}
+    tsv('bill', ['id', 'legislative_session_id', 'identifier', 'title', 'classification', 'subject', 'from_organization_id'],
+        [bill('b1', 's17', 'HB 2278'), bill('b2', 's23', 'HCR 5020'), bill('b3', 's23', 'SB 113')])
+    old = 'http://www.kslegislature.org/li/'
+    tsv('billsource', ['bill_id', 'url'], [{'bill_id': 'b1', 'url': old + 'b2017_18/measures/HB2278/'}, {'bill_id': 'b2', 'url': old + 'b2023_24/measures/hcr5020/'},
+                                           {'bill_id': 'b3', 'url': old + 'b2023_24/measures/sb113/'}])
+    tsv('billsponsorship', ['bill_id', 'name', 'entity_type', 'primary', 'person_id'], [])
+    tsv('billversion', ['id', 'bill_id', 'note', 'date'], [{'id': 'v1', 'bill_id': 'b1', 'note': 'Introduced', 'date': '2017-01-20'},
+                                                          {'id': 'v3', 'bill_id': 'b3', 'note': 'Introduced', 'date': '2023-01-20'}])
+    tsv('billversionlink', ['version_id', 'url', 'media_type'], [{'version_id': 'v1', 'url': old + 'b2017_18/measures/documents/hb2278_00_0000.pdf', 'media_type': 'application/pdf'},
+                                                                {'version_id': 'v3', 'url': old + 'b2023_24/measures/documents/sb113_00_0000.pdf', 'media_type': 'application/pdf'}])
+    ev = lambda i, b, s, day: {'id': i, 'bill_id': b, 'legislative_session_id': s, 'organization_id': 'lo', 'motion_text': 'Final Action - Passed',
+                               'motion_classification': '{passage}', 'start_date': day, 'result': 'pass', 'order': '0', 'updated_at': day}
+    # d1: the dump's copy of the record vote; d2: a 2017 vote the record step did not keep; d3: a 2023-24 je_ address
+    tsv('voteevent', ['id', 'bill_id', 'legislative_session_id', 'organization_id', 'motion_text', 'motion_classification', 'start_date', 'result', 'order', 'updated_at'],
+        [ev('d1', 'b1', 's17', '2017-02-23'), ev('d2', 'b1', 's17', '2017-06-01'), ev('d3', 'b3', 's23', '2023-03-27')])
+    je = lambda bien, stamp: f'{old}{bien}/measures/vote_view/je_{stamp}/'
+    tsv('votesource', ['vote_event_id', 'url'], [{'vote_event_id': 'd1', 'url': je('b2017_18', '20170223110000_123456')},
+                                                 {'vote_event_id': 'd2', 'url': je('b2017_18', '20170601183913_635334')},
+                                                 {'vote_event_id': 'd3', 'url': je('b2023_24', '20230327110000_111111')}])
+    tsv('votecount', ['vote_event_id', 'option', 'value'], [{'vote_event_id': e, 'option': 'yes', 'value': '1'} for e in ('d1', 'd2', 'd3')])
+    tsv('personvote', ['vote_event_id', 'voter_id', 'voter_name', 'option'], [{'vote_event_id': e, 'voter_name': 'Alcala', 'option': 'yes'} for e in ('d1', 'd2', 'd3')])
+    os.makedirs(f'{t}/work/supplements/KS')
+    page = 'https://www.kslegislature.gov/li_2018/b2017_18/measures/vote_view/je_20170223110000_123456/'
+    rec = {'url': page, 'date': '2017-02-23', 'motion': 'Final Action - Passed', 'question': 'Final Action - Passed', 'chamber': 'H', 'yea': 2, 'nay': 0, 'absent': 0, 'passed': 1,
+           'groups': {'Yea': ['John Alcala', 'Wanda Brownlee Paige'], 'Nay': [], 'Absent or not voting': []}}
+    json.dump({'state': 'KS', 'session': '2017-2018', 'source': 'www.kslegislature.gov', 'bills': {'HB2278': [rec]},
+               'checked': {'HB2278': {'floor': 1, 'read': 1}}, 'refused': {}}, open(f'{t}/work/supplements/KS/2017-2018.json', 'w'))
+    run('openstates/convert.py', X, '--out', f'{t}/out', '--legiscan-root', f'{t}/none', env={'OPENSTATES_NEW_REGISTRY': '1'})
+    rcs = [json.load(open(f))['roll_call'] for f in glob.glob(f'{t}/out/KS-*/KS/*/vote/*.json')]
+    placed = [r for r in rcs if not r['_openstates']['committee']]
+    assert [(r['state_link'], r['chamber']) for r in placed] == [(page, 'H')], [(r['state_link'], r['chamber'], r['_openstates']['committee']) for r in rcs]
+    held = {r['_openstates']['vote_event_id']: r for r in rcs if r['_openstates']['committee']}
+    assert sorted(held) == ['d2', 'd3'], sorted(held)
+    assert held['d2']['state_link'] == 'https://www.kslegislature.gov/li_2018/b2017_18/measures/vote_view/je_20170601183913_635334/', held['d2']['state_link']
+    assert held['d3']['state_link'] == je('b2023_24', '20230327110000_111111').replace('http:', 'https:'), ('a 2023-24 je_ address is left as it is', held['d3']['state_link'])
+    people = {j['people_id']: j for j in (json.load(open(f))['person'] for f in glob.glob(f'{t}/out/KS-*/KS/*/people/*.json'))}
+    got = sorted(people[v['people_id']]['_openstates']['person_id'] for v in placed[0]['votes'])
+    assert got == ['p-alc', 'p-pai'], got
+    bills = {b['bill_number']: b for b in (json.load(open(f))['bill'] for f in glob.glob(f'{t}/out/KS-*/KS/*/bill/*.json'))}
+    assert bills['HB2278']['state_link'] == 'https://www.kslegislature.gov/li_2018/b2017_18/measures/hb2278/', bills['HB2278']['state_link']
+    assert bills['HCR5020']['state_link'] == 'https://www.kslegislature.gov/b2023_24/resolutions/HCR5020/', bills['HCR5020']['state_link']
+    assert bills['SB113']['state_link'] == 'https://www.kslegislature.gov/b2023_24/bills/SB113/', bills['SB113']['state_link']
+    assert [x['url'] for x in bills['HB2278']['texts']] == ['https://www.kslegislature.gov/li_2018/b2017_18/measures/documents/hb2278_00_0000.pdf'], bills['HB2278']['texts']
+    assert [x['url'] for x in bills['SB113']['texts']] == ['https://www.kslegislature.gov/b2023_24/bills/download/?apn=b2023_24/year2/ready_for_publication/sb_113/sb113_00_0000.pdf'], bills['SB113']['texts']
+    mks = [json.load(open(f))['counts'] for f in glob.glob(f'{t}/out/KS-*/.openstates.json')]
+    assert len(mks) == 2 and sum(c.get('ks_vote_address_not_rewritten', 0) for c in mks) == 1, mks
+
+
+@check
 def openstates_convert_links_a_maryland_record_name_to_the_one_person_whose_name_fits(t):
     """Maryland 2026-11-18. The record prints full names; the first pass linked them only among the session's roster
     (memberships and dump-linked voters). Three faults, each measured on the 2017-2026 record:

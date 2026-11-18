@@ -39,7 +39,7 @@ const NICKNAME_GROUPS: Array<[string, string]> = [
   ['kathy', 'katherine'], ['jeff', 'jeffrey'], ['steve', 'steven'], ['steve', 'stephen'],
   ['tony', 'anthony'], ['matt', 'matthew'], ['andy', 'andrew'], ['greg', 'gregory'],
   ['phil', 'philip'], ['larry', 'lawrence'], ['jerry', 'gerald'], ['terry', 'terrence'],
-  ['peggy', 'margaret'], ['chuck', 'charles'], ['charlie', 'charles'], ['jack', 'john'],
+  ['peggy', 'margaret'], ['chuck', 'charles'], ['charlie', 'charles'], ['chip', 'charles'], ['jack', 'john'],
   ['will', 'william'], ['sam', 'samuel'], ['ben', 'benjamin'], ['tim', 'timothy'],
   ['ken', 'kenneth'], ['don', 'donald'], ['dave', 'david'], ['doug', 'douglas'],
   ['al', 'albert'], ['al', 'alan'], ['alex', 'alexander'], ['nick', 'nicholas'],

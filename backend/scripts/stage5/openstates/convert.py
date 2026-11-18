@@ -161,6 +161,20 @@ for r in rows("personvote"):
 #    D.E.", "Young"), and it holds no 2023 vote at all, so only votes read from the record are placed (the fetch reads
 #    each bill's page and every floor vote on it); the dump's copy of a record vote only teaches which person a label
 #    is. The record's members are full names from the session's committee lists: ms_full_names links them.
+#  - Kansas (2026-11-18): "ks_vote_page": the rows' vote addresses are the old host's,
+#    http://www.kslegislature.org/li/b2017_18/measures/vote_view/je_.../, which now redirects to a 404. The same vote of
+#    2017-2022 and the two special sessions is in the archive, www.kslegislature.gov/li_2018/b2017_18/measures/vote_view/
+#    je_.../ (li_2020/b2019_20, li_2022/b2021_22, li_2020s/b2020s, li_2021s/b2021s). The 2023-24 rows' je_ addresses lead
+#    nowhere (that biennium moved to the current site, which names a vote by its file), so they are left as they are and
+#    counted; 2025-26's are already the current site's. "record_is_the_floor", as Maryland's: the dump holds 376 roll
+#    calls of 2019-20 and 603 of 2023-24 against 1,050 and 1,091 in the bienniums either side, so the fetch reads each
+#    scanned bill's history and every floor vote on it; the dump's copy of a record vote only teaches which person a
+#    label is. The record's members are full names built from the legislature's member ids: ms_full_names links them.
+#    "ks_bill_page": the old bill page (/li/b2019_20/measures/sb5/, and the API's /li/api/v11/rev-1/bill_status/hb2009)
+#    becomes the archive's bill page, /li_2020/b2019_20/measures/sb5/, or for 2023-24 /b2023_24/bills/SB534/.
+#    "ks_texts": the old text addresses become the archive's (/li_2022/b2021_22/measures/documents/sb13_enrolled.pdf), and
+#    2023-24's /b2023_24/bills/download/?apn=b2023_24/year2/ready_for_publication/hb_2233/hb2233_00_0000.pdf (the apn's
+#    year is not checked by the site: year1 and year2 serve the same file, read 2026-11-18).
 SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": re.compile(r"/mtgvotes\.jsp"), "https": True},
              "OH": {"committee": re.compile(r"/cmtevotes/?$"), "committee_motion": re.compile(r"^Reported\b"), "oh_votes_page": True,
                     "oh_text_v2": True, "record_replaces_dump": True},
@@ -168,7 +182,9 @@ SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": r
                     "sd_sponsors_from_text": True},
              "MS": {"https": True, "ms_vote_page": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True},
              "MD": {"https": True, "md_vote_page": True, "record_replaces_dump": True, "record_is_the_floor": True, "chamber": re.compile(r"/votes/(house|senate)/\d{4}\.(?:pdf|htm)#", re.I),
-                    "md_bill_page": True, "https_texts": True, "ms_full_names": True}}
+                    "md_bill_page": True, "https_texts": True, "ms_full_names": True},
+             "KS": {"https": True, "ks_vote_page": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True,
+                    "ks_bill_page": True, "ks_texts": True}}
 RULES = SRC_RULES.get(ST, {})
 # Only votes read from the legislature's record are placed (South Dakota's rule first; Mississippi's too).
 FLOOR_FROM_RECORD = bool(RULES.get("sd_record_is_the_floor") or RULES.get("record_is_the_floor"))
@@ -272,6 +288,45 @@ if RULES.get("md_vote_page"):
             vsrc[eid] = [f"https://mgaleg.maryland.gov/{o.group(5)}RS/votes/{'house' if o.group(3).lower() == 'h' else 'senate'}/{o.group(4)}.{ext}#{tag(o.group(5))}"]
         else:
             DUPES[events[eid]["legislative_session_id"]]["md_vote_address_not_rewritten"] += 1
+
+KS_LI = {"b2017_18": "li_2018", "b2019_20": "li_2020", "b2021_22": "li_2022", "b2020s": "li_2020s", "b2021s": "li_2021s"}
+if RULES.get("ks_vote_page"):
+    for eid in list(events):
+        u = (vsrc.get(eid) or [""])[0]
+        m = re.match(r"^https?://(?:www\.)?kslegislature\.(?:org|gov)/li(?:_20\d{2}s?)?/(b20\d{2}(?:_\d{2}|s))/measures/vote_view/(je_\d{14}_\d+)/?$", u)
+        if m and m.group(1) in KS_LI:
+            vsrc[eid] = [f"https://www.kslegislature.gov/{KS_LI[m.group(1)]}/{m.group(1)}/measures/vote_view/{m.group(2)}/"]
+        elif not re.match(r"^https://www\.kslegislature\.gov/b20\d{2}_\d{2}/vote/\?apn=", u):
+            DUPES[events[eid]["legislative_session_id"]]["ks_vote_address_not_rewritten"] += 1
+
+
+def ks_bill_page(u, sess_ident):
+    """Kansas: a bill page of the old host -> the page that serves it now (see SRC_RULES); others unchanged."""
+    m = re.match(r"^https?://(?:www\.)?kslegislature\.(?:org|gov)/li(?:_20\d{2}s?)?/(?:(b20\d{2}(?:_\d{2}|s))/(?:year[12]/)?measures/|api/v1\d/rev-1/bill_status/)([a-z]+\d+)/?$", u, re.I)
+    if not m:
+        return u
+    bien = m.group(1) or {"2017-2018": "b2017_18", "2019-2020": "b2019_20", "2021-2022": "b2021_22", "2023-2024": "b2023_24",
+                          "2025-2026": "b2025_26", "2020S1": "b2020s", "2021S1": "b2021s"}.get(sess_ident)
+    if bien in KS_LI:
+        return f"https://www.kslegislature.gov/{KS_LI[bien]}/{bien}/measures/{m.group(2).lower()}/"
+    if bien in ("b2023_24", "b2025_26"):
+        # the current site files a resolution apart from bills: /b2023_24/resolutions/HCR5020/ (bills/HCR5020/ is a 404)
+        kind = "resolutions" if re.match(r"^[HS](?:CR|R|JR)\d", m.group(2), re.I) else "bills"
+        return f"https://www.kslegislature.gov/{bien}/{kind}/{m.group(2).upper()}/"
+    return u
+
+
+def ks_text(u):
+    """Kansas: a bill text of the old host -> the address that serves it now (see SRC_RULES); others unchanged."""
+    m = re.match(r"^https?://(?:www\.)?kslegislature\.(?:org|gov)/li(?:_20\d{2}s?)?/(b20\d{2}(?:_\d{2}|s))/measures/documents/(([a-z]+)(\d+)_[A-Za-z0-9_]+\.pdf)$", u)
+    if not m:
+        return re.sub(r"^http://", "https://", u)
+    if m.group(1) in KS_LI:
+        return f"https://www.kslegislature.gov/{KS_LI[m.group(1)]}/{m.group(1)}/measures/documents/{m.group(2)}"
+    if m.group(1) == "b2023_24":
+        return f"https://www.kslegislature.gov/b2023_24/bills/download/?apn=b2023_24/year2/ready_for_publication/{m.group(3)}_{m.group(4)}/{m.group(2)}"
+    return u
+
 
 # ---------------- roll calls the dump does not hold ----------------
 RECORD_NAMES = set()  # (session, chamber, name) printed in a roll call read from the record; ms_resolve reads only these
@@ -879,6 +934,12 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
                 r["url"] = re.sub(r"^https://mgaleg\.maryland\.gov/webmga/frmMain\.aspx\?id=([HS][BJ])(\d+)&stab=\d+&pid=billpage&tab=subject\d+&ys=(20\d{2})rs$",
                                   lambda g: f"https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/{g.group(1).lower()}{int(g.group(2)):04d}?ys={g.group(3)}RS",
                                   r["url"], flags=re.I)
+        if RULES.get("ks_bill_page"):
+            for r in ex["billsource"]:
+                r["url"] = ks_bill_page(r["url"], sessions[b["legislative_session_id"]]["identifier"])
+            # the API's bill_status and the bill page are one bill page now: keep it once
+            seen_src = set()
+            ex["billsource"] = [r for r in ex["billsource"] if not (r["url"] in seen_src or seen_src.add(r["url"]))]
         bill_id = rid("bill", bid)
         body = chamber_of(b["from_organization_id"]) or (num[:1] if num[:1] in "HSA" else "")
         cls = pgarr(b["classification"])
@@ -932,6 +993,8 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
                               r"https://search-prod.lis.state.oh.us/api/v2/general_assembly_\1/legislation/\2/\4_\3/pdf/", main)
             if RULES.get("https_texts"):
                 main = re.sub(r"^http://", "https://", main)
+            if RULES.get("ks_texts"):
+                main = ks_text(main)
             if not main:
                 continue
             t = text_type(v["note"])

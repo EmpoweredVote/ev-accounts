@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { alsoVotes, buildRollCall, INDEX, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote } from './fetch-legislature-rollcalls.js';
+import { alsoVotes, buildRollCall, INDEX, KS_MOTION_ACTION, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote } from './fetch-legislature-rollcalls.js';
 
 // The saved Utah House page: roll call 100 of the 2025 General Session, HB 237, 71 yeas, 0 nays, 4 absent.
 const HOUSE = readFileSync(fileURLToPath(new URL('../../../src/lib/__fixtures__/stateRollCall/ut-2025GS-100-H.html', import.meta.url)), 'latin1');
@@ -503,5 +503,64 @@ describe('the legislature\'s own vote list — Maryland 2013, through the Procee
     // two votes that fit: never pick one
     const twice = proc61(' <dd>                 Third Reading Passed with Amendments <a href=/mgawebsite/Search/Legislation?target=/2013rs/votes/house/0897.htm> (78-61)</a>\n');
     expect(() => mdVoteFromProceedings(twice, '2013', 'SB 281', VIA)).toThrow(/2 votes on the proceedings page/);
+  });
+});
+
+// Saved 2026-11-18 from www.kslegislature.gov: the archive's bill page (2017-2022) and the current site's vote history (2023 on).
+const KS = 'https://www.kslegislature.gov/';
+const ksFixture = (name: string): string =>
+  readFileSync(fileURLToPath(new URL(`../../../src/lib/__fixtures__/stateRollCall/${name}.html`, import.meta.url)), 'utf8');
+/** Change one thing in a page, and fail the test when the change did not apply. */
+const tamper = (html: string, from: string, to: string): string => {
+  expect(html.includes(from)).toBe(true);
+  return html.replace(from, to);
+};
+const KS_HB2476 = ksFixture('ks-2018-hb2476-bill');
+const KS_SB113 = ksFixture('ks-2023-sb113-history');
+
+describe('the legislature\'s own vote list — Kansas', () => {
+  it('names the archive\'s bill page in lower case, and the current site\'s vote history', () => {
+    expect(INDEX.KS.billUrl('2019-2020', 'HB 2036')).toBe(`${KS}li_2020/b2019_20/measures/hb2036/`);
+    expect(INDEX.KS.billUrl('2020S1', 'HB 2016')).toBe(`${KS}li_2020s/b2020s/measures/hb2016/`);
+    expect(INDEX.KS.billUrl('2023-2024', 'SB 113')).toBe(`${KS}b2023_24/bills/SB113/history/?filter=votes&per_page=50`);
+    expect(INDEX.KS.billUrl('2023-2024', 'HCR 5020')).toBe(`${KS}b2023_24/resolutions/HCR5020/history/?filter=votes&per_page=50`);
+    expect(INDEX.KS.billUrl('2015-2016', 'SB 1')).toBeNull();
+  });
+
+  it('reads the archive\'s bill page: every recorded vote on the bill with its yeas and nays', () => {
+    const bi = INDEX.KS.read(KS_HB2476, '2017-2018', 'HB 2476');
+    expect(bi.floor.map((v) => [v.url.replace(`${KS}li_2018/b2017_18/measures/vote_view/`, ''), v.motion, v.tally])).toEqual([
+      ['je_20180426115004_738994/', 'Conference Committee Report was adopted', [91, 29, -1]],
+      ['je_20180407115026_982066/', 'Conference Committee Report was adopted', [39, 1, -1]],
+      ['je_20180314163449_400906/', 'Final Action - Passed as amended', [38, 2, -1]],
+      ['je_20180215112754_700284/', 'Final Action - Passed as amended', [107, 15, -1]],
+    ]);
+    // another bill's page, and a substitute of this one
+    expect(() => INDEX.KS.read(KS_HB2476, '2017-2018', 'HB 2477')).toThrow(/the bill page is not HB 2477/);
+    expect(INDEX.KS.read(tamper(KS_HB2476, '<h1>HB 2476</h1>', '<h1>S Sub for HB 2476</h1>'), '2017-2018', 'HB 2476')).toEqual(bi);
+    // an action the tool does not know stops it
+    expect(() => INDEX.KS.read(tamper(KS_HB2476, 'Final Action - Passed as amended;', 'Final Disposition;'), '2017-2018', 'HB 2476')).toThrow(/whose action the tool does not know/);
+  });
+
+  it('reads the current site\'s history: votes on the bill, and Committee of the Whole votes counted as motions', () => {
+    const bi = INDEX.KS.read(KS_SB113, '2023-2024', 'SB 113');
+    expect(bi.floor.map((v) => [v.motion, v.tally])).toEqual([
+      ['Conference Committee Report was adopted', [23, 16, -1]], ['Conference Committee Report was adopted', [83, 37, -1]],
+      ['Final Action - Substitute passed', [75, 48, -1]], ['Final Action - Passed', [38, 1, -1]]]);
+    expect(bi.floor[1].url).toBe(`${KS}b2023_24/vote/?apn=b2023_24/year1/house/legislative_days/day063_20230428/vote_records/0353_SB113.odt`);
+    expect(bi.motion).toBe(2);
+    expect(KS_MOTION_ACTION.test('Committee of the Whole - Amendment by Rep. Jason Probst was rejected')).toBe(true);
+    // a history split over pages is refused, never read in part
+    expect(() => INDEX.KS.read(tamper(KS_SB113, 'Showing 1&ndash;6 of 6 entries', 'Showing 1&ndash;6 of 7 entries'), '2023-2024', 'SB 113'))
+      .toThrow(/does not show all its votes on one page/);
+    // the page says it shows fewer than it holds, though the rows it prints happen to match the total
+    expect(() => INDEX.KS.read(tamper(KS_SB113, 'Showing 1&ndash;6 of 6 entries', 'Showing 1&ndash;5 of 6 entries'), '2023-2024', 'SB 113'))
+      .toThrow(/does not show all its votes on one page/);
+  });
+
+  it('reads a bill never voted on as no votes, and only when the page says so', () => {
+    const none = ksFixture('ks-2026-hb2104-history');
+    expect(INDEX.KS.read(none, '2025-2026', 'HB 2104')).toMatchObject({ floor: [], motion: 0 });
+    expect(() => INDEX.KS.read(tamper(none, 'No votes recorded yet.', 'Loading.'), '2025-2026', 'HB 2104')).toThrow(/does not show all its votes/);
   });
 });

@@ -86,7 +86,7 @@ the bills under `rollcalls_from_legislature`.
 - 🔴 **Run `convert.py` for the whole state**, not `--sessions`: a session with no linked voter of its own gets its
   links from the sessions either side.
 - Committee and voice votes are counted in the supplement's `checked` block and not read.
-- Every request waits the site's crawl delay (Utah: 10 seconds; Ohio, South Dakota, Mississippi and Maryland state none, and the tool waits 1 second),
+- Every request waits the site's crawl delay (Utah: 10 seconds; Ohio, South Dakota, Mississippi, Maryland and Kansas state none, and the tool waits 1 second),
   and bodies are kept in `supplements/<ST>/raw/`.
 - Ohio: once a bill's record is read, the record IS the bill's floor votes. `convert.py` adds the votes the dump
   misses and drops a dump floor vote of that bill that is not on the record (counted in `.openstates.json` as
@@ -132,6 +132,16 @@ the bills under `rollcalls_from_legislature`.
   `--also <json>` reads each one the page does not link, keeping it only if the vote file itself says it is a vote on
   this bill. A veto overridden in the next session is filed under that session and cited with the bill's year:
   `/2021RS/votes/house/0042.pdf#2020-HB4`.
+- 🔴 Kansas: **no dump vote is placed** either (`record_is_the_floor`). The dump holds far fewer roll calls for
+  2019-2020 and 2023-2024 than for the bienniums either side, and every vote address in it is the old host's
+  (`www.kslegislature.org/li/...`), which redirects to a 404. For 2017-2022 and the specials the fetch reads the
+  archive's bill page (`/li_2018/b2017_18/measures/hb2476/`, lower case) and each `vote_view/je_.../` page it links;
+  for 2023 on, the bill's history filtered to votes (`/b2023_24/bills/SB113/history/?filter=votes&per_page=50`, a
+  resolution under `/resolutions/`) and each vote page (`/b2023_24/vote/?apn=.../vote_records/<file>.odt`). It keeps
+  final action, conference reports, concurring, veto overrides and the consent calendar, counts Committee of the Whole
+  votes and other motions, accepts a substitute's title ("Sub for HB 2278"), and reads "No votes recorded yet." as no
+  votes only when the page shows no vote row or link. The record prints surnames only; the reader builds each full
+  name from the member id in the link (`rep_paige_wanda_1` printed "Brownlee Paige" is Wanda Brownlee Paige).
 - A later dump that does hold the session is safe: a roll call whose page the dump already has is not added twice.
 - A new state is one entry in `INDEX` in that file (where a bill's vote list is, and how to read it) on top of the
   page reader below.
@@ -142,9 +152,10 @@ the bills under `rollcalls_from_legislature`.
    pattern, the site's crawl delay, and a function from the page's markup to members under Yea, Nay and absent),
    with a saved page as a fixture and the refusals tested. The reader must fail closed: refuse the page unless every
    group holds the count its heading prints and the counts are the printed tally. Utah, Ohio, South Dakota,
-   Mississippi and Maryland are the entries so far; Ohio's reader reads three documents per vote, South Dakota's cites a
+   Mississippi, Maryland and Kansas are the entries so far; Ohio's reader reads three documents per vote, South Dakota's cites a
    script-shell page and reads the vote's data, Mississippi's reads a PDF with the bill's history and two member
-   lists, Maryland's reads a PDF (some printed sideways) with the chamber's committee pages (see the file's header).
+   lists, Maryland's reads a PDF (some printed sideways) with the chamber's committee pages, Kansas's reads one page in
+   two layouts and names each member from the member id in the link (see the file's header).
 2. **Its rules in `SRC_RULES` in `convert.py`**, when its Open States rows are wrong about something the roll-call
    address states. Utah: the rows carry the bill's chamber, not the chamber that voted, and nothing marks a committee
    vote; both are read from the address. Ohio: the stored addresses and text links are dead (v1) and are rewritten
@@ -169,7 +180,13 @@ the bills under `rollcalls_from_legislature`.
    (`webmga/frmMain.aspx?pid=flrvotepage&...&id=hb0760,h-0501`), rewritten to `/2017RS/votes/house/0501.htm#HB760`
    only when it names the row's bill; the chamber is read from the address (2017's rows are filed under the whole
    legislature); the old bill page becomes `/mgawebsite/Legislation/Details/hb0760?ys=2017RS`; and a record name is
-   read with its accents folded ("Peña-Melnyk").
+   read with its accents folded ("Peña-Melnyk"). Kansas (`ks_vote_page`, `ks_bill_page`, `ks_texts`,
+   `record_is_the_floor`, `ms_full_names`): a 2017-2022 or special-session vote address becomes the archive's
+   (`/li_2018/b2017_18/measures/vote_view/je_.../`); a 2023-24 `je_` address leads nowhere on either host and is left
+   as it is and counted (`ks_vote_address_not_rewritten`); the old bill page becomes the archive's
+   (`/li_2018/b2017_18/measures/hb2278/`) or the current site's (`/b2023_24/bills/SB113/`, `/b2023_24/resolutions/
+   HCR5020/`); a text becomes the archive's `measures/documents/<file>.pdf` or, for 2023-24, the current site's
+   download address.
 
 Check the state before trusting it: per session, roll calls with member votes (a session can have none: Utah's 2025
 General Session), the share of voters linked to a person, and whether `robots.txt` lets `EmpoweredVoteBot` read the
@@ -193,6 +210,7 @@ roll-call pages.
 | South Dakota | 2018 to 2026 (2017 holds no bills) | 107 floor roll calls of a 102-bill dry batch (11 votes on a motion and 153 committee votes not mapped): 14 missing from the dump (read from the legislature), 9 dump tallies short by one Yea (2018: the dump leaves three members out), 0 of 5,013 member-vote differences; see `backend/data/legislatures/sd.json` (2026-11-17) |
 | Ohio | 132nd to 136th Assembly (2017-2026) | 57 floor roll calls of a 213-bill dry batch (two votes on a motion not mapped): 10 missing from the dump (read from the legislature), 0 tally and 0 of 2,726 member-vote differences; see `backend/data/legislatures/oh.json` (2026-11-16) |
 | Maryland | 2017 to 2026 (2023 and 2021s1 hold no dump vote; regular sessions only); 2013 SB 281 only (3 floor votes, read from the record 2026-11-18) | 282 floor roll calls of a 534-bill dry batch, 24 only on the record (all 17 of 2023; four 2020 vetoes overridden in 2021; three others); 0 tally and 0 of 23,517 member-vote differences; 61 dump labels fit no record name, all the presiding officer; see `backend/data/legislatures/md.json` (2026-11-18) |
+| Kansas | 2017-2018 to 2025-2026 (the 2020 and 2021 special sessions held no scanned bill) | 55 floor roll calls of a 146-bill dry batch (38 Committee of the Whole votes and motions not mapped), all with a dump copy (2023-24's matched by bill, chamber and day); 0 tally and 0 of 4,920 member-vote differences; all 4,920 record votes linked to a person (three by hand); see `backend/data/legislatures/ks.json` (2026-11-18) |
 | Mississippi | 2018 to 2026 (2017 holds no bills; 20171E only resolutions) | 67 floor roll calls of a 289-bill dry batch, all with a dump copy: 2 dump tallies short by one vote (the name before a total that runs over a line), 8 member votes missing from the dump, 0 of 5,975 member-vote differences; 5,919 of 5,983 record votes linked to a person (four members Open States does not hold); see `backend/data/legislatures/ms.json` (2026-11-17) |
 
 Washington's own sites refuse our reader (`robots.txt`), so Washington has no roll-call reader here and keeps its

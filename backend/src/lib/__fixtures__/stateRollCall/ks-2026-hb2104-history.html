@@ -1,0 +1,38 @@
+
+
+<div class="site-table-wrap history-table">
+  <div class="site-table-toolbar">
+    <div class="site-table-tabs">
+      <a role="button" tabindex="0" class="site-table-tab history-tab history-tab--all"
+         hx-get="/b2025_26/bills/HB%202104/history/?per_page=10"
+         hx-target="#history-container" hx-swap="innerHTML"
+         hx-include="#history-search-input">All</a>
+      <a role="button" tabindex="0" class="site-table-tab history-tab history-tab--votes active"
+         hx-get="/b2025_26/bills/HB%202104/history/?per_page=10&filter=votes"
+         hx-target="#history-container" hx-swap="innerHTML"
+         hx-include="#history-search-input">Votes</a>
+      <a role="button" tabindex="0" class="site-table-tab history-tab history-tab--amendments"
+         hx-get="/b2025_26/bills/HB%202104/history/?per_page=10&filter=amendments"
+         hx-target="#history-container" hx-swap="innerHTML"
+         hx-include="#history-search-input">Amendments</a>
+      <a role="button" tabindex="0" class="site-table-tab history-tab history-tab--hearings"
+         hx-get="/b2025_26/bills/HB%202104/history/?per_page=10&filter=hearings"
+         hx-target="#history-container" hx-swap="innerHTML"
+         hx-include="#history-search-input">Hearings</a>
+    </div>
+    <div class="site-table-search">
+      <input type="text" id="history-search-input" name="q" value=""
+             placeholder="Search history&hellip;"
+             hx-get="/b2025_26/bills/HB%202104/history/?per_page=10&filter=votes"
+             hx-target="#history-container" hx-swap="innerHTML"
+             hx-trigger="input changed delay:400ms, search"
+             aria-label="Search history"
+             autocomplete="off">
+    </div>
+  </div>
+
+
+<p style="font-size:0.875rem; color:#48626e; padding: 1rem;">No votes recorded yet.</p>
+
+</div>
+
