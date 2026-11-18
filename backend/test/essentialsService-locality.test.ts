@@ -29,46 +29,51 @@ describe('buildLocality (Phase 216, LOC-01/02)', () => {
 
   it('AZ + place hit -> incorporated:true, place_name populated, county_name populated', async () => {
     const { buildLocality } = await import('../src/lib/essentialsService');
-    expect(buildLocality('AZ', [{ name: 'Tucson' }], { name: 'Pima County' })).toEqual({
+    expect(buildLocality('AZ', [{ name: 'Tucson' }], { name: 'Pima County', geo_id: '04019' })).toEqual({
       incorporated: true,
       place_name: 'Tucson',
       county_name: 'Pima County',
+      county_geoid: '04019',
     });
   });
 
   it('AZ + no place hit -> incorporated:false, place_name null, county_name populated', async () => {
     const { buildLocality } = await import('../src/lib/essentialsService');
-    expect(buildLocality('AZ', [], { name: 'Pima County' })).toEqual({
+    expect(buildLocality('AZ', [], { name: 'Pima County', geo_id: '04019' })).toEqual({
       incorporated: false,
       place_name: null,
       county_name: 'Pima County',
+      county_geoid: '04019',
     });
   });
 
   it('MO (not in gate, only 1 incidental place loaded) -> incorporated:null', async () => {
     const { buildLocality } = await import('../src/lib/essentialsService');
-    expect(buildLocality('MO', [], { name: 'X County' })).toEqual({
+    expect(buildLocality('MO', [], { name: 'X County', geo_id: '29189' })).toEqual({
       incorporated: null,
       place_name: null,
       county_name: 'X County',
+      county_geoid: '29189',
     });
   });
 
   it('null state -> incorporated:null, county_name still populated', async () => {
     const { buildLocality } = await import('../src/lib/essentialsService');
-    expect(buildLocality(null, [], { name: 'X County' })).toEqual({
+    expect(buildLocality(null, [], { name: 'X County', geo_id: '29189' })).toEqual({
       incorporated: null,
       place_name: null,
       county_name: 'X County',
+      county_geoid: '29189',
     });
   });
 
   it('lowercase state matches case-insensitively', async () => {
     const { buildLocality } = await import('../src/lib/essentialsService');
-    expect(buildLocality('az', [], { name: 'Pima County' })).toEqual({
+    expect(buildLocality('az', [], { name: 'Pima County', geo_id: '04019' })).toEqual({
       incorporated: false,
       place_name: null,
       county_name: 'Pima County',
+      county_geoid: '04019',
     });
   });
 
@@ -78,6 +83,7 @@ describe('buildLocality (Phase 216, LOC-01/02)', () => {
       incorporated: false,
       place_name: null,
       county_name: null,
+      county_geoid: null,
     });
   });
 
@@ -90,8 +96,8 @@ describe('buildLocality (Phase 216, LOC-01/02)', () => {
 
   it('never returns county_name:null when a non-null countyRow.name is supplied (MO + null-state cases)', async () => {
     const { buildLocality } = await import('../src/lib/essentialsService');
-    expect(buildLocality('MO', [], { name: 'X County' }).county_name).toBe('X County');
-    expect(buildLocality(null, [], { name: 'X County' }).county_name).toBe('X County');
+    expect(buildLocality('MO', [], { name: 'X County', geo_id: '29189' }).county_name).toBe('X County');
+    expect(buildLocality(null, [], { name: 'X County', geo_id: '29189' }).county_name).toBe('X County');
   });
 });
 
