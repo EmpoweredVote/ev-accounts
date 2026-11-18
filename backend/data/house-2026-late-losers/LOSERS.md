@@ -75,6 +75,11 @@ Ward's first name and he is reclassified as an aggregate.
 loss against a row that does not exist, and a losers pass is not where a missing contender gets
 seeded. Assertion 11 fails if this migration creates one.
 
+✅ **Closed 2026-11-17 by `CC_0451`**, which seeded him and recorded the loss. He is a **declared
+write-in** on the Maine SoS's separate register — so he is the Galvan finding reflected: a write-in
+AP's ballot holds and our data omitted, where Galvan is one our data holds and AP omits. Same
+cause, opposite direction. Write-up: `backend/data/me02-write-in-2026/WARD.md`.
+
 ## ⚠ One name is spelled differently, and ours is the longer one
 
 AP's CA-23 line reads **"Tessa Hodge"**. Our row reads **"Tessa Lynn Hodge"**. Confirmed outside
@@ -202,6 +207,6 @@ Assertion 5 fails if any row claims otherwise.
 | Item | Shape |
 |---|---|
 | **Luis Galvan** | Decide after Colorado's abstract, due on or after **2026-11-25** |
-| **Gregory Ward** | A named ME-02 write-in with 125 votes and no row of ours. Seed him, then his loss can be recorded |
+| ~~**Gregory Ward**~~ | ✅ **CLOSED 2026-11-17 by `CC_0451`** — seeded as **Gregory A. Ward** (the Maine SoS declared write-in register spells him with a middle initial) and recorded `lost`/`called`. See `backend/data/me02-write-in-2026/WARD.md` |
 | `certified` | A later pass, per state, against that state's own canvass — none of the five is certified yet |
 | Seating | These winners take office **2027-01-03**. Nothing here seats anybody |
