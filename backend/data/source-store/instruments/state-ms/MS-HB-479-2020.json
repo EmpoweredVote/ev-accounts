@@ -1,0 +1,62 @@
+{
+  "id": "MS-HB-479-2020",
+  "scope": "state:ms",
+  "title": "HB479 (2020 Regular): Firearms; prohibit discharge near petroleum.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2020/pdf/HB/0400-0499/HB0479IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2020/html/HB/0400-0499/HB0479IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Alyce G. Clarke",
+      "role": "prime",
+      "version": "introduced text (By:)"
+    },
+    {
+      "name": "Daryl Porter",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "9b4b79f8-41e3-45d5-9008-b53c897feaf1"
+    },
+    {
+      "name": "Jeffery Harness",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "22246dd9-5e63-4bd3-bf5b-43cff91e5468"
+    },
+    {
+      "name": "Kabir Karriem",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "301f2d0d-d509-41a8-a5d4-6e3f4d5e1de3"
+    },
+    {
+      "name": "Carl Mickens",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "e1c11c96-0b03-4450-ac2e-c968f7e216a2"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2020/html/HB/0400-0499/HB0479IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-479-2020.introduced.htm",
+      "sha256": "835a93f7b8b68c515a3e77c7a08c3da4c11e9b460449450e02191ef5d7481827"
+    },
+    "note": "As-filed text; no passage vote recorded. Existing sentence on discharging toward a dwelling kept, with '(1)' and 'or her' added."
+  },
+  "operative_text": "Section 1 (Miss. Code § 97-37-30): (2) A person who willfully discharges his or her firearm near any business or property that contains flammable or explosive petroleum products is guilty of a felony punishable by a fine of not more than Five Thousand Dollars ($5,000.00) or imprisonment not exceeding five (5) years in the custody of the Department of Corrections, or both."
+}

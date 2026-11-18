@@ -22,6 +22,125 @@
         "fetched_at": "2026-11-05T23:52:51.760Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "b69a8954d7b62b5f8f85c447baeb5cc3bc3beebcfc9176a253fe24058cdd4693",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/1100-1199/HB1165PS.pdf",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1165-2026",
+      "act": "yea",
+      "motion": "House Passed As Amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS House, House Passed As Amended, 2026-02-12: yea (tally 92–22); census gate: none.",
+      "subjects": [
+        "children with concealed-weapon or gun offences plus a felony tried in circuit court",
+        "longer sentences for stolen-firearm sales, especially to children",
+        "new felony for firing a gun into a group of people"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/HB/1100-1199/HB1165CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1165-2026.comm_sub.htm",
+          "sha256": "ee896a964212aab4cd52c64c513a79446331de783a7dcfdfcb80aec3d47d5c8e"
+        }
+      }
+    },
+    {
+      "id": "f89b311361e8e9878f741494a9a85724808faa5b38cf80cab002e04ee6c7a53c",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/1700-1799/HB1793SG.pdf",
+      "date": "2026-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1793-2026",
+      "act": "yea",
+      "motion": "House Conference Report Adopted",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Conference Report Adopted, 2026-03-29: yea (tally 106–6); census gate: near-unanimous.",
+      "subjects": [
+        "sales-tax holiday covers firearm safes",
+        "firearm and ammunition sales-tax exemption weekend"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/HB/1700-1799/HB1793CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1793-2026.comm_sub.htm",
+          "sha256": "513c728f74a25f905ee07e19935570768c7a35fc9a9f10efe8e7b23a8d4f38f6"
+        }
+      }
+    },
+    {
+      "id": "b44d3d8d46d28c4886955bc047186f0966c6be615025f272863ccc76a59c4c80",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/0900-0999/HB0933PS.pdf",
+      "date": "2026-02-04",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-933-2026",
+      "act": "yea",
+      "motion": "House Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Passed, 2026-02-04: yea (tally 117–1); census gate: near-unanimous.",
+      "subjects": [
+        "retired theft-bureau officers keep issued sidearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/HB/0900-0999/HB0933IN.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-933-2026.introduced.htm",
+          "sha256": "a3be81faf9d2b915ba759457c60814e28e7099a19ae5904068bcc14cd39586ac"
+        }
+      }
+    },
+    {
+      "id": "2459b9c169902af394c7ff74b1678732bcbc77cf74c7dc64e85b350cabb7fa44",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/SB/2800-2899/SB2809SG.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2809-2026",
+      "act": "yea",
+      "motion": "House Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Passed, 2026-03-04: yea (tally 116–2); census gate: near-unanimous.",
+      "subjects": [
+        "retiring state agriculture theft officers keep service sidearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/SB/2800-2899/SB2809PS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2809-2026.introduced.htm",
+          "sha256": "1267ddbf1a17bf1ac7e955f88b3343875d1522d9fb8cfe802b769ceaeef61097"
+        }
+      }
     }
   ],
   "searches": [

@@ -88,6 +88,683 @@
         "fetched_at": "2026-11-05T23:52:51.745Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "001983852148f0103fb4c834faeb99ccbb297806d2a3b7a2257099e01a757c0a",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2022/pdf/HB/1000-1099/HB1010PS.pdf",
+      "date": "2022-02-03",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1010-2022",
+      "act": "yea",
+      "motion": "House Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Passed, 2022-02-03: yea (tally 118–2); census gate: near-unanimous.",
+      "subjects": [
+        "felon firearm possession can be a misdemeanor",
+        "BB guns and air guns exempt from felon ban",
+        "definitions of firearm terms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2022/html/HB/1000-1099/HB1010CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1010-2022.comm_sub.htm",
+          "sha256": "1025f102733057ae287bc3dbe4ed60f5967cf1c0d2deb14310e47fe3b562508e"
+        }
+      }
+    },
+    {
+      "id": "7644c6e7ace2775d6b798f0f85acfa977880749693c5713890c27dba7a050728",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2023/pdf/HB/1100-1199/HB1105PS.pdf",
+      "date": "2023-02-09",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1105-2023",
+      "act": "nay",
+      "motion": "House Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS House, House Passed, 2023-02-09: nay (tally 89–21); census gate: none.",
+      "subjects": [
+        "Secretary of State enforcement employees may carry firearms on duty"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2023/html/HB/1100-1199/HB1105IN.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1105-2023.introduced.htm",
+          "sha256": "b17ad215e7076759db2507196611d48b23bc7df2f28222e70e5c2d77e8205c2e"
+        }
+      }
+    },
+    {
+      "id": "916b4815bc59f2e3817f20d70e7d6478841d052876ece911c12299792ef2d2b6",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2023/pdf/HB/1100-1199/HB1110SG.pdf",
+      "date": "2023-03-27",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1110-2023",
+      "act": "yea",
+      "motion": "House Conference Report Adopted",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Conference Report Adopted, 2023-03-27: yea (tally 115–0); census gate: near-unanimous.",
+      "subjects": [
+        "ban on firearm owner registries and records",
+        "no firearm merchant category codes for payment cards",
+        "Attorney General can enforce by injunction"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2023/html/HB/1100-1199/HB1110CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1110-2023.comm_sub.htm",
+          "sha256": "a9a0337cc97fd65ae579ad968313536831643ad61d635c24b3cee1455296bd11"
+        }
+      }
+    },
+    {
+      "id": "c6221a7a302e9f377fea832c8b02b14cb7d6fea598485f51b7b4e918ef188cf6",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2020/pdf/HB/1200-1299/HB1215PS.pdf",
+      "date": "2020-03-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1215-2020",
+      "act": "nay",
+      "motion": "House Passed As Amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS House, House Passed As Amended, 2020-03-10: nay (tally 81–36); census gate: none.",
+      "subjects": [
+        "state agencies barred from restricting gun possession or sale",
+        "bar on state agency gun buyback programs",
+        "lawsuits and official liability for violations"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2020/html/HB/1200-1299/HB1215CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1215-2020.comm_sub.htm",
+          "sha256": "4d8edb02c0050c0dcae82ff9ce775d396afc1e7f08ae1393e7c210ac674041f4"
+        }
+      }
+    },
+    {
+      "id": "b63b48e17850ed7b0c2def319bf585aa3936b048c361b32d88f16ab1ea8b4bd4",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2024/pdf/HB/1300-1399/HB1325PS.pdf",
+      "date": "2024-03-12",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1325-2024",
+      "act": "yea",
+      "motion": "House Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Passed, 2024-03-12: yea (tally 111–7); census gate: near-unanimous.",
+      "subjects": [
+        "Secretary of State investigators may carry firearms on duty",
+        "weapons training course before carrying"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2024/html/HB/1300-1399/HB1325IN.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1325-2024.introduced.htm",
+          "sha256": "6c97b222836484790ae0d24aeca1c5854e17c54e2596c1c4fb887b22bbbe5e5b"
+        }
+      }
+    },
+    {
+      "id": "d7344a18483ff53ea68d3879040b46ab9fb553365141c2c0190e966076c7847f",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2024/pdf/HB/1400-1499/HB1441PS.pdf",
+      "date": "2024-03-14",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1441-2024",
+      "act": "yea",
+      "motion": "House Passed As Amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Passed As Amended, 2024-03-14: yea (tally 114–5); census gate: near-unanimous.",
+      "subjects": [
+        "extra 20-year term for using a large-magazine firearm in a violent felony",
+        "extra 5-year term for nonviolent felony",
+        "large-capacity magazine defined as over 15 rounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2024/html/HB/1400-1499/HB1441CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1441-2024.comm_sub.htm",
+          "sha256": "58af9faae9eec59cd94bc8d4f22a469c43004a1937fce50a3bd16a2c085c7f04"
+        }
+      }
+    },
+    {
+      "id": "fe0c4127526e416c8ca5a4f801b7c65cb21a22a08b86ac1775ab5a0287119e29",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2019/pdf/HB/1500-1599/HB1581SG.pdf",
+      "date": "2019-02-13",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1581-2019",
+      "act": "yea",
+      "motion": "House Passed As Amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Passed As Amended, 2019-02-13: yea (tally 113–0); census gate: near-unanimous.",
+      "subjects": [
+        "courtroom definition for carrying in courthouses",
+        "enhanced-carry holders barred from judges' chambers, witness and jury rooms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2019/html/HB/1500-1599/HB1581CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1581-2019.comm_sub.htm",
+          "sha256": "e72a504f40bb02c49480214988001fbdf148ba6da6a58c710c649a2f25b22ebc"
+        }
+      }
+    },
+    {
+      "id": "f89b311361e8e9878f741494a9a85724808faa5b38cf80cab002e04ee6c7a53c",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/1700-1799/HB1793SG.pdf",
+      "date": "2026-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1793-2026",
+      "act": "yea",
+      "motion": "House Conference Report Adopted",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Conference Report Adopted, 2026-03-29: yea (tally 106–6); census gate: near-unanimous.",
+      "subjects": [
+        "sales-tax holiday covers firearm safes",
+        "firearm and ammunition sales-tax exemption weekend"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/HB/1700-1799/HB1793CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1793-2026.comm_sub.htm",
+          "sha256": "513c728f74a25f905ee07e19935570768c7a35fc9a9f10efe8e7b23a8d4f38f6"
+        }
+      }
+    },
+    {
+      "id": "a7c6ff50d63ae0cac390c65066fcbb5f546cd65a9117a3e2b6d810dd8c8e71b7",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2021/pdf/HB/0200-0299/HB0274PS.pdf",
+      "date": "2021-02-04",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-274-2021",
+      "act": "yea",
+      "motion": "House Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Passed, 2021-02-04: yea (tally 120–0); census gate: near-unanimous.",
+      "subjects": [
+        "off-duty officers may carry official firearm during disaster relief"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2021/html/HB/0200-0299/HB0274IN.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-274-2021.introduced.htm",
+          "sha256": "934ea011816f4bd3ebefcfb4e197ad86183b3b8bce5c772518a25fdaa6116a93"
+        }
+      }
+    },
+    {
+      "id": "a6dd074377a0b7053eaa033b5bb51858dc27a27d3604bb250516ae6cfd9c6482",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2021/pdf/HB/0600-0699/HB0634PS.pdf",
+      "date": "2021-02-09",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-634-2021",
+      "act": "nay",
+      "motion": "House Passed As Amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS House, House Passed As Amended, 2021-02-09: nay (tally 79–41); census gate: none.",
+      "subjects": [
+        "state agencies barred from restricting firearm possession or carry",
+        "cities and counties barred from notices or policies banning licensed concealed carry",
+        "Secretary of State investigators may carry weapons"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2021/html/HB/0600-0699/HB0634CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-634-2021.comm_sub.htm",
+          "sha256": "5a50fe8846ac0eb68c600c5b4c4e1fc8cfbfe7179531e28828ef3c33e3a549a3"
+        }
+      }
+    },
+    {
+      "id": "3c7d7216cd0a339bc8a99fc422dad66098ed59a0bf90918ba85d20d1bd59e3e2",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2021/pdf/HB/0800-0899/HB0886SG.pdf",
+      "date": "2021-02-03",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-886-2021",
+      "act": "yea",
+      "motion": "House Passed As Amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Passed As Amended, 2021-02-03: yea (tally 118–0); census gate: near-unanimous.",
+      "subjects": [
+        "concealed carry licence fee waiver for employed police officers",
+        "officer licence allowing carry in restricted places"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2021/html/HB/0800-0899/HB0886PS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-886-2021.introduced.htm",
+          "sha256": "8ba6b2502e43a2d4515499f7fad7eb95154213c6b6546310a68ddb842e69f02d"
+        }
+      }
+    },
+    {
+      "id": "0ff1c0833830cbb5c2f77722fac589b7e91af8f8fa752eb2973854547d7797ed",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2024/pdf/HB/0900-0999/HB0903SG.pdf",
+      "date": "2024-04-25",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-903-2024",
+      "act": "yea",
+      "motion": "House Conference Report Adopted",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS House, House Conference Report Adopted, 2024-04-25: yea (tally 97–13); census gate: none.",
+      "subjects": [
+        "felony for machine gun conversion devices (Glock switches, auto-sears)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2024/html/HB/0900-0999/HB0903CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-903-2024.comm_sub.htm",
+          "sha256": "8b424ae01670543ecd5bf76b99d7e5cde44e806c9cfadab01694d35f4f87107f"
+        }
+      }
+    },
+    {
+      "id": "577e93990defb37131c5c27f4abbcf4b681549e8b8ea32825b7826b13607ff0c",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2023/pdf/HB/0900-0999/HB0912SG.pdf",
+      "date": "2023-03-28",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-912-2023",
+      "act": "yea",
+      "motion": "House Conference Report Adopted",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS House, House Conference Report Adopted, 2023-03-28: yea (tally 87–26); census gate: none.",
+      "subjects": [
+        "Mississippi-made suppressors declared exempt from federal law",
+        "no state or local enforcement of federal suppressor rules",
+        "state suppressor crimes repealed, pending charges dismissed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2023/html/HB/0900-0999/HB0912CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-912-2023.comm_sub.htm",
+          "sha256": "fd3daeab62c13d82e82f8966d6658a7d695b0d4a95c9bf957d9e5b73733f739e"
+        }
+      }
+    },
+    {
+      "id": "b44d3d8d46d28c4886955bc047186f0966c6be615025f272863ccc76a59c4c80",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/0900-0999/HB0933PS.pdf",
+      "date": "2026-02-04",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-933-2026",
+      "act": "yea",
+      "motion": "House Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Passed, 2026-02-04: yea (tally 117–1); census gate: near-unanimous.",
+      "subjects": [
+        "retired theft-bureau officers keep issued sidearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/HB/0900-0999/HB0933IN.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-933-2026.introduced.htm",
+          "sha256": "a3be81faf9d2b915ba759457c60814e28e7099a19ae5904068bcc14cd39586ac"
+        }
+      }
+    },
+    {
+      "id": "1093cb7ea7d7f5371c96a4c310c51c8984649a984f7134ef3d3adb74b8de66d1",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2021/pdf/SB/2100-2199/SB2107PS.pdf",
+      "date": "2021-03-08",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2107-2021",
+      "act": "nay",
+      "motion": "House Passed As Amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS House, House Passed As Amended, 2021-03-08: nay (tally 82–34); census gate: none.",
+      "subjects": [
+        "state preemption of local and state-agency gun restrictions",
+        "ban on government gun buyback programs",
+        "lawsuits and personal fines against officials who restrict guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2021/html/SB/2100-2199/SB2107CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2107-2021.comm_sub.htm",
+          "sha256": "62bcb5d70f3b16f45ad74dc1ca6d3f24180a597ac956a3e4266123b37437e728"
+        }
+      }
+    },
+    {
+      "id": "0b96dc8573fa2635fc2cfa0319c12f1400b75f3f9a481dbaac3364e4dc66f9e3",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2023/pdf/SB/2100-2199/SB2120PS.pdf",
+      "date": "2023-03-07",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2120-2023",
+      "act": "yea",
+      "motion": "House Passed As Amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Passed As Amended, 2023-03-07: yea (tally 115–3); census gate: near-unanimous.",
+      "subjects": [
+        "retired officers may buy their issued sidearm at fair market value",
+        "next of kin of officers killed on duty may buy the sidearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2023/html/SB/2100-2199/SB2120CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2120-2023.comm_sub.htm",
+          "sha256": "638f6fef544a421d0d59591eb5865f90d4d62c20c2466ace01bdf5452d6edace"
+        }
+      }
+    },
+    {
+      "id": "3fb1f4db5da9c4a072046117a88cca222926d083386df8f8a511ce3f0c1c268f",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2020/pdf/SB/2200-2299/SB2225SG.pdf",
+      "date": "2020-06-16",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2225-2020",
+      "act": "yea",
+      "motion": "House Passed As Amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Passed As Amended, 2020-06-16: yea (tally 119–0); census gate: near-unanimous.",
+      "subjects": [
+        "VA health ID card is enough proof of disability for veterans seeking a carry-license exemption"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2020/html/SB/2200-2299/SB2225PS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2225-2020.introduced.htm",
+          "sha256": "b0ccdd58334cb28515196fb3fb53f1eddd46a4244928dad3f31267e20e250144"
+        }
+      }
+    },
+    {
+      "id": "90192f33a3442f96006c19f886b31227ec05edbe3256db0070a8f3a2abc542d1",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2023/pdf/SB/2200-2299/SB2239SG.pdf",
+      "date": "2023-03-27",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2239-2023",
+      "act": "nay",
+      "motion": "House Conference Report Adopted",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS House, House Conference Report Adopted, 2023-03-27: nay (tally 85–23); census gate: none.",
+      "subjects": [
+        "highway patrol officers may use official firearm off duty for private security"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2023/html/SB/2200-2299/SB2239CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2239-2023.comm_sub.htm",
+          "sha256": "531053f92147a47da57d7d0869d7365ecbe91d5853fd039d579b68c684874393"
+        }
+      }
+    },
+    {
+      "id": "ce7e9fee4daab06fe2c08fa3bd6bfbc1bc885daa9aff7a0e46aa1d9c5140753a",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2021/pdf/SB/2200-2299/SB2253SG.pdf",
+      "date": "2021-03-09",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2253-2021",
+      "act": "yea",
+      "motion": "House Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Passed, 2021-03-09: yea (tally 120–0); census gate: near-unanimous.",
+      "subjects": [
+        "concealed-carry licence shown on driver's licence or ID card"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2021/html/SB/2200-2299/SB2253PS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2253-2021.introduced.htm",
+          "sha256": "12668ccfa2e87dc92b09badc73c265547d5e8fab118ca86ab78f528d4f31c4ca"
+        }
+      }
+    },
+    {
+      "id": "2459b9c169902af394c7ff74b1678732bcbc77cf74c7dc64e85b350cabb7fa44",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/SB/2800-2899/SB2809SG.pdf",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2809-2026",
+      "act": "yea",
+      "motion": "House Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS House, House Passed, 2026-03-04: yea (tally 116–2); census gate: near-unanimous.",
+      "subjects": [
+        "retiring state agriculture theft officers keep service sidearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/SB/2800-2899/SB2809PS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2809-2026.introduced.htm",
+          "sha256": "1267ddbf1a17bf1ac7e955f88b3343875d1522d9fb8cfe802b769ceaeef61097"
+        }
+      }
+    },
+    {
+      "id": "0235a5217760856c61a4ee9c969d7e9ebb2cfaffaaab032c6ee387c368ec8497",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2019/pdf/HB/1200-1299/HB1272IN.pdf",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MS-HB-1272-2019",
+      "act": "sponsor",
+      "motion": "co sponsor, introduced text (By:)",
+      "note": "co sponsor of MS-HB-1272-2019 (introduced text (By:)): HB1272 (2019 Regular): Domestic violence; prohibit those convicted of from carrying weapons..",
+      "subjects": [
+        "firearm possession ban for domestic violence convictions"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2019/html/HB/1200-1299/HB1272IN.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1272-2019.introduced.htm",
+          "sha256": "7debd6b94143350b647b331bc2b4975423746d343fae182e534e877cf485dc0e"
+        }
+      }
+    },
+    {
+      "id": "49b5dce687759fc481c3b82328484ff650d5a793fdaabf3891148522f2a793dc",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2021/pdf/HB/0200-0299/HB0274PS.pdf",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "MS-HB-274-2021",
+      "act": "sponsor",
+      "motion": "co sponsor, introduced text (By:)",
+      "note": "co sponsor of MS-HB-274-2021 (introduced text (By:)): HB274 (2021 Regular): Law enforcement officers; allow certain use of uniform, weapon, vehicle and equipment for disaster relief when off-duty..",
+      "subjects": [
+        "off-duty officers may carry official firearm during disaster relief"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2021/html/HB/0200-0299/HB0274IN.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-274-2021.introduced.htm",
+          "sha256": "934ea011816f4bd3ebefcfb4e197ad86183b3b8bce5c772518a25fdaa6116a93"
+        }
+      }
+    },
+    {
+      "id": "4d0f0a0fffbc5bf7c13345e671936f61bb8ab32374a25bffe4117e60c31b1807",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/0400-0499/HB0435IN.pdf",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "MS-HB-435-2026",
+      "act": "sponsor",
+      "motion": "co sponsor, introduced text (By:)",
+      "note": "co sponsor of MS-HB-435-2026 (introduced text (By:)): HB435 (2026 Regular): Firearm endorsement; require to be placed on driver's license..",
+      "subjects": [
+        "concealed-carry permit marked on driver's license"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/HB/0400-0499/HB0435IN.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-435-2026.introduced.htm",
+          "sha256": "a4e649894d04df20ca0b00fab96a784ac45af3e7a1f65754f77d85ac63a15413"
+        }
+      }
     }
   ],
   "searches": [

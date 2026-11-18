@@ -1,0 +1,39 @@
+{
+  "id": "MS-SB-2632-2018",
+  "scope": "state:ms",
+  "title": "SB2632 (2018 Regular): Federal Firearm, Magazine and Register Ban Enforcement Act; create.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2018/pdf/SB/2600-2699/SB2632IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2018/html/SB/2600-2699/SB2632IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michael Watson",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "b7e0d181-ca77-4bf0-a9b0-c1e8e747e484"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2018/html/SB/2600-2699/SB2632IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2632-2018.introduced.htm",
+      "sha256": "323e3f35dffbc230b997aa5c28065024cf8a442bc510b5b7b13bb0d194f3cade"
+    },
+    "note": "Introduced text; section is unnumbered in print and shown as Section 1 (uncodified). No passage vote on record."
+  },
+  "operative_text": "Section 1 (uncodified): An official, agent or employee of the state or a political subdivision of the state shall not knowingly and willfully order enforcement of a federal executive order, agency order, law, statute, rule or regulation that is issued, enacted or promulgated on or after the effective date of this act as to a personal firearm, a firearm accessory or ammunition if the federal executive order, agency order, law, statute, rule or regulation is contrary to the provisions of Article 3, Section 12, of the Mississippi Constitution of 1890, or the Second Amendment of the Constitution of the United States. This section does not apply to compliance with an order of a court. For a first violation, an offender is liable for a civil penalty not to exceed One Thousand Dollars ($1,000.00) which shall be paid into the State General Fund. For a second or subsequent violation, the person is guilty of a misdemeanor punishable as provided in Section 99-19-31. Notwithstanding anything to the contrary contained elsewhere in this act, no private cause of action exists under this section."
+}

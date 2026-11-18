@@ -1,0 +1,39 @@
+{
+  "id": "MS-HB-247-2022",
+  "scope": "state:ms",
+  "title": "HB247 (2022 Regular): Concealed firearms; clarify prohibition for mentally incompetent.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2022/pdf/HB/0200-0299/HB0247IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2022/html/HB/0200-0299/HB0247IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Oscar Denton",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "5895afe2-6f78-4fcc-b3c7-a5dbb509c7e7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2022/html/HB/0200-0299/HB0247IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-247-2022.introduced.htm",
+      "sha256": "b249d45fb622b33c8b96e1a5610eacca7ab8110bf5414f6f7aa999be98501d59"
+    },
+    "note": "Introduced text as filed; no passage vote recorded. Section 2 also adds 'or her' in several places of § 45-9-101 (gender-neutral wording) and Section 3 brings forward § 97-37-7 without a gun change marked by the bill's title; only the added listing sentence is quoted."
+  },
+  "operative_text": "Section 1 (new section): (1) (a) If a court adjudicates a person as mentally incompetent, then the clerk of court shall notify the Department of Public Safety of such adjudication. (b) If a court orders that a person be committed to a public or private hospital, mental health treatment facility or other institution qualified to provide care and treatment for persons with mental illness, then the clerk of court shall notify the Department of Public Safety of such order. (c) If a person voluntarily commits himself or herself to a public or private hospital, mental health treatment facility or other institution qualified to provide care and treatment for persons with mental illness, then the hospital, facility or institution shall notify the Department of Public Safety of such order. (2) The notification described in subsection (1) of this section, and any information contained in the notification, shall be used by the department solely for the purpose of determining whether the person's license, or application for a license, to carry a stun gun, concealed pistol or concealed revolver should be issued, denied, suspended or revoked under the provisions of Section 45-9-101(2)(h) or (i). (3) The records of the department relating to the notifications described in subsection (1) of this section shall be exempt from the provisions of the Mississippi Public Records Act of 1983.\nSection 2 (Miss. Code § 45-9-101): (b) The department shall also maintain an automated listing of persons who are the subject of the notifications described in Section 1 of this act, and the department shall review the listing regularly and as necessary to comply with the provisions of subsection (2)(h) and (i) of this section."
+}

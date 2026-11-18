@@ -1,0 +1,39 @@
+{
+  "id": "MS-HB-298-2026",
+  "scope": "state:ms",
+  "title": "HB298 (2026 Regular): Firearms and weapons; authorize nonviolent felons to possess and use in defense of residence or motor vehicle.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/0200-0299/HB0298IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2026/html/HB/0200-0299/HB0298IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cedric Burnett",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "8b634048-d7a4-495c-bc90-14bfbac1152f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/HB/0200-0299/HB0298IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-298-2026.introduced.htm",
+      "sha256": "d426d5799a0f1d37cd1d0b74b31f1f9c4a1e57303d18356d5ec34893ca2d60c1"
+    },
+    "note": "Introduced text as filed; no passage vote. Paragraph (b) is added; the existing felon-in-possession ban in (a) now yields to it. Subsections (2)-(4), unchanged, not quoted."
+  },
+  "operative_text": "Section 1 (Miss. Code § 97-37-5): (1) (a) Except as otherwise provided in paragraph (b) of this section, it shall be unlawful for any person who has been convicted of a felony under the laws of this state, any other state, or of the United States to possess any firearm or any bowie knife, dirk knife, butcher knife, switchblade knife, metallic knuckles, blackjack, or any muffler or silencer for any firearm unless such person has received a pardon for such felony, has received a relief from disability pursuant to Section 925(c) of Title 18 of the United States Code, or has received a certificate of rehabilitation pursuant to subsection (3) of this section. (b) It shall be lawful for any person who has been convicted of a nonviolent felony under the laws of this state, any other state, or of the United States to possess and use any firearm or any bowie knife, dirk knife, butcher knife, switchblade knife, metallic knuckles, blackjack, or any muffler or silencer in defense of the person's residence or motor vehicle. The provisions of this paragraph shall only apply if the person is able to prove that he or she resides in the home or owns the motor vehicle in which the firearm, bowie knife, dirk knife, butcher knife, switchblade knife, metallic knuckles, blackjack, muffler or silencer is located."
+}

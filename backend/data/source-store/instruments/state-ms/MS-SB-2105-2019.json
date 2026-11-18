@@ -1,0 +1,39 @@
+{
+  "id": "MS-SB-2105-2019",
+  "scope": "state:ms",
+  "title": "SB2105 (2019 Regular): Concealed carry permit; revise term and fee.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2019/pdf/SB/2100-2199/SB2105IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2019/html/SB/2100-2199/SB2105IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Juan Barnett",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "f54fcea9-0805-4d0f-af21-9e41ed7a9457"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2019/html/SB/2100-2199/SB2105IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2105-2019.introduced.htm",
+      "sha256": "edb11f4bf9e8edac94a099eeb4423b23595089e41240cf38eaaf9c45c610206d"
+    },
+    "note": "Introduced text as filed; no passage vote recorded. Struck: five (5) years, $80 fee, $40 renewal, $20 senior renewal (now $30). The renewal-fee quote is a fragment of subsection (12)'s renewal sentence (quoted from its clauses (i) and (iii)); the subsection letters are not printed in the text read."
+  },
+  "operative_text": "Section 1 (Miss. Code § 45-9-101): Such licenses shall be valid throughout the state for a period of ten (10) years from the date of issuance. Any person possessing a valid license issued pursuant to this section may carry a stun gun, concealed pistol or concealed revolver.\nSection 1 (Miss. Code § 45-9-101(5)(c)): A nonrefundable license fee of One Hundred Forty Dollars ($140.00). Costs for processing the set of fingerprints as required in paragraph (d) of this subsection shall be borne by the applicant.\nSection 1 (Miss. Code § 45-9-101(12)): a renewal fee of Seventy Dollars ($70.00) shall also be submitted along with costs for processing the fingerprints; The renewal fee for a Mississippi resident aged sixty-five (65) years of age or older shall be Thirty Dollars ($30.00).\nSection 1 (Miss. Code § 45-9-101(24)): A license under this section is not required for a loaded or unloaded pistol or revolver to be carried upon the person in a pocket, sheath, belt holster or shoulder holster or in a purse, handbag, satchel, other similar bag or briefcase or fully enclosed case if the person is not engaged in criminal activity other than a misdemeanor traffic offense, is not otherwise prohibited from possessing a pistol or revolver under state or federal law, and is not in a location prohibited under subsection (13) of this section."
+}

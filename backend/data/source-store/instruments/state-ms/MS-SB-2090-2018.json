@@ -1,0 +1,39 @@
+{
+  "id": "MS-SB-2090-2018",
+  "scope": "state:ms",
+  "title": "SB2090 (2018 Regular): Gun-free zones; businesses liable for injuries.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2018/pdf/SB/2001-2099/SB2090IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2018/html/SB/2001-2099/SB2090IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Angela Hill",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "91620900-c038-451e-a704-5bd42e895248"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2018/html/SB/2001-2099/SB2090IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2090-2018.introduced.htm",
+      "sha256": "5748c4822813d8165828cf50f4d757010e7cfd4940b124b2e572d2e1fd7ed95d"
+    },
+    "note": "Introduced text as filed; no passage vote. Section 3 strikes the existing subsection (5) that shielded employers from civil liability over firearms stored in vehicles."
+  },
+  "operative_text": "Section 1 (new section): A person or entity authorized to post property pursuant to Section 45-9-101(13) or common law who elects to prohibit the possession of firearms by a person authorized to carry a handgun pursuant to Section 45-9-101, thereby assumes absolute custodial responsibility for the safety and defense of the licensee while on the posted property and while on any property the licensee is required to traverse in order to travel to and from the location where the licensee's firearm is stored. (2) The holder of a concealed-carry license under Section 45-9-101 who is injured, suffers bodily injury or death, incurs economic loss or expense, property damage or any other compensable loss as the result of conduct occurring on property that is posted pursuant to Section 45-9-101(13) or common law, shall have a cause of action against the person or entity posting. (3) Any notice or signage that property is posted pursuant to Section 45-9-101(13) or common law shall also contain language citing this section and stating that any licensee on the posted property is under the custodial responsibility of the posting person or entity.\nSection 2 (Miss. Code § 15-1-35): The statute of limitations for an action under Section 1 of this act shall be two (2) years from the date of the occurrence giving rise to the damages, loss, or injury."
+}

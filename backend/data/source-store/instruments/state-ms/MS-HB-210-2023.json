@@ -1,0 +1,44 @@
+{
+  "id": "MS-HB-210-2023",
+  "scope": "state:ms",
+  "title": "HB210 (2023 Regular): Honorably discharged veterans; exempt from concealed carry license fees.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2023/pdf/HB/0200-0299/HB0210IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2023/html/HB/0200-0299/HB0210IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tom Miles",
+      "role": "prime",
+      "version": "introduced text (By:)"
+    },
+    {
+      "name": "Jeffrey Hulum",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "3e9b6f7f-1cb8-49e9-b645-086390226f75"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2023/html/HB/0200-0299/HB0210IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-210-2023.introduced.htm",
+      "sha256": "98312e51bfd9612ad5c853d6a0764614611fdbf7bc4b628bf87d9ab3aa79435b"
+    },
+    "note": "Introduced text as filed; no passage vote recorded. Added words in (1)(c) and renewal clause: 'honorably discharged veterans,'; subsection (23)(b) is new. Quotes (1)(c) and renewal clauses begin mid-sentence."
+  },
+  "operative_text": "Section 1 (Miss. Code § 45-9-101): Honorably retired law enforcement officers, honorably discharged veterans, disabled veterans and active duty members of the Armed Forces of the United States, and law enforcement officers employed with a law enforcement agency of a municipality, county or state at the time of application for the license, shall be exempt from the payment of the license fee;\nSection 1 (Miss. Code § 45-9-101): (ii) Honorably retired law enforcement officers, honorably discharged veterans, disabled veterans, active duty members of the Armed Forces of the United States and law enforcement officers employed with a law enforcement agency of a municipality, county or state at the time of renewal, shall be exempt from the renewal fee; and\nSection 1 (Miss. Code § 45-9-101): (b) An honorably discharged veteran who seeks to qualify for an exemption under this section shall provide a letter issued by the United States Department of Veteran Affairs which states that the veteran was honorably discharged."
+}

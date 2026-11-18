@@ -1,0 +1,54 @@
+{
+  "id": "MS-SB-2757-2020",
+  "scope": "state:ms",
+  "title": "SB2757 (2020 Regular): Comprehensive Firearms Code of MS; interpose in place of any federal law confiscating firearms of law-abiding citizens.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2020/pdf/SB/2700-2799/SB2757IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2020/html/SB/2700-2799/SB2757IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Melanie Sojourner",
+      "role": "prime",
+      "version": "introduced text (By:)"
+    },
+    {
+      "name": "Neil Whaley",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "f2439435-639f-4a4b-bc13-e15813d91985"
+    },
+    {
+      "name": "Philip Moran",
+      "role": "co",
+      "version": "introduced text (By:)"
+    },
+    {
+      "name": "Gary Chism",
+      "role": "co",
+      "version": "introduced text (By:)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2020/html/SB/2700-2799/SB2757IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2757-2020.introduced.htm",
+      "sha256": "c4f4727ce1332f59ce6ba1ded8b78eed2b800bd52aed52bcfb436a5bdbf0fcba"
+    },
+    "note": "Introduced text; section unnumbered in print. No passage vote on record."
+  },
+  "operative_text": "Section 1 (uncodified): All federal acts, laws, orders, rules and regulations, whether past, present or future, which infringe on the people's right to keep and bear arms as guaranteed by the Second Amendment to the United States Constitution and Article I, Section 12 of the Mississippi Constitution of 1890 shall be invalid in this state, shall not be recognized by this state, shall be specifically rejected by this state and have no effect in this state. It shall be the duty of the courts and law enforcement agencies of this state to protect the rights of law-abiding citizens to keep and bear arms within the borders of this state and from the infringements in subsection (2) of this section. No public officer or employee of this state shall have any authority to enforce or attempt to enforce any of the infringements on the right to keep and bear arms included in subsection (2) of this section. Any official, agent, or employee of the United States government who enforces or attempts to enforce any of the infringements on the right to keep and bear arms included in subsection (2) of this section is guilty of a misdemeanor. Any Mississippi citizen who has been subject to an effort to enforce any of the infringements on the right to keep and bear arms included in subsection (2) of this section shall have a private cause of action for declaratory judgment and for damages against any person or entity attempting such enforcement."
+}

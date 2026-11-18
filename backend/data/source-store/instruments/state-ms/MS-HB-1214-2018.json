@@ -1,0 +1,39 @@
+{
+  "id": "MS-HB-1214-2018",
+  "scope": "state:ms",
+  "title": "HB1214 (2018 Regular): Firearms; authorize nonviolent felons to possess in their homes or motor vehicles.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2018/pdf/HB/1200-1299/HB1214IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2018/html/HB/1200-1299/HB1214IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cedric Burnett",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "8b634048-d7a4-495c-bc90-14bfbac1152f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2018/html/HB/1200-1299/HB1214IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1214-2018.introduced.htm",
+      "sha256": "8567e5a3fffb580cf4ca2da7d4f6894f2904e999274a57d63dc65323f0ecdbab"
+    },
+    "note": "Introduced text, as filed (billstatus.ls.state.ms.us). No passage vote is recorded for this bill. The bill adds paragraph (b) and the lead-in to (a); the penalty in (2) and the mental-health relief in (4) are existing law. Paragraph (b) also covers knives, metallic knuckles, blackjack and silencers."
+  },
+  "operative_text": "Section 1 (Miss. Code § 97-37-5): (a) Except as otherwise provided in paragraph (b) of this section, it shall be unlawful for any person who has been convicted of a felony under the laws of this state, any other state, or of the United States to possess any firearm or any bowie knife, dirk knife, butcher knife, switchblade knife, metallic knuckles, blackjack, or any muffler or silencer for any firearm unless such person has received a pardon for such felony, has received a relief from disability pursuant to Section 925(c) of Title 18 of the United States Code, or has received a certificate of rehabilitation pursuant to subsection (3) of this section.\nSection 1 (Miss. Code § 97-37-5): (b) It shall be lawful for any person who has been convicted of a nonviolent felony under the laws of this state, any other state, or of the United States to possess any firearm or any bowie knife, dirk knife, butcher knife, switchblade knife, metallic knuckles, blackjack, or any muffler or silencer in such person's residence or motor vehicle. The provisions of this paragraph shall only apply if the person is able to prove that he or she resides in the home or owns the motor vehicle in which the firearm, bowie knife, dirk knife, butcher knife, switchblade knife, metallic knuckles, blackjack, muffler or silencer is located.\nSection 1 (Miss. Code § 97-37-5): (2) Any person violating this section shall be guilty of a felony and, upon conviction thereof, shall be fined not more than Five Thousand Dollars ($5,000.00), or committed to the custody of the State Department of Corrections for not less than one (1) year nor more than ten (10) years, or both."
+}

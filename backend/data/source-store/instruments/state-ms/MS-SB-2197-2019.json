@@ -1,0 +1,42 @@
+{
+  "id": "MS-SB-2197-2019",
+  "scope": "state:ms",
+  "title": "SB2197 (2019 Regular): Youth court judges; strengthen powers and revise penalties for minors possessing weapons.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2019/pdf/SB/2100-2199/SB2197IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2019/html/SB/2100-2199/SB2197IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Joel Carter",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "180e0b3c-89e3-4d06-80b0-35ac0674f764"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: Section 5 (Miss. Code § 43-21-151) — youth court loses jurisdiction over any felony by a 17-year-old, not only gun offences",
+        "judicial-criminal-justice: Section 6 (Miss. Code § 43-21-605) — juvenile disposition and detention-length changes for delinquency cases in general"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2019/html/SB/2100-2199/SB2197IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2197-2019.introduced.htm",
+      "sha256": "e4bc3bb8f52a3113b2d601e98d1dfccc95a564d30342907612f0811979448269"
+    },
+    "note": "Introduced text as filed; no passage vote recorded. Struck in § 97-37-1: the second-conviction tier (30 days to 6 months jail plus fine); the third-conviction tier is renumbered as second. 'Slingshot' replaced by 'slungshot'. The § 97-37-14 change replaces 'an act of delinquency' with 'unlawful'. In § 97-37-17(2) knives and similar weapons were added to the list; BB, air rifles and air pistols stay in the misdemeanor tier. Section 6 text was not quoted (non-gun juvenile detention and commitment rules)."
+  },
+  "operative_text": "Section 1 (Miss. Code § 97-37-1(1)): Except as otherwise provided in Section 45-9-101, any person who carries, concealed on or about one's person, any bowie knife, dirk knife, butcher knife, switchblade knife, metallic knuckles, blackjack, slungshot, pistol, revolver, or any rifle with a barrel of less than sixteen (16) inches in length, or any shotgun with a barrel of less than eighteen (18) inches in length, machine gun or any fully automatic firearm or deadly weapon, or any muffler or silencer for any firearm, whether or not it is accompanied by a firearm, or uses or attempts to use against another person any imitation firearm, shall, upon conviction, be punished as follows: (a) By a fine of not less than One Hundred Dollars ($100.00) nor more than Five Hundred Dollars ($500.00), or by imprisonment in the county jail for not more than six (6) months, or both, in the discretion of the court, for the first conviction under this section. (b) By confinement in the custody of the Department of Corrections for not less than one (1) year nor more than five (5) years, for a second or subsequent conviction under this section.\nSection 2 (Miss. Code § 97-37-14(1)): Except as otherwise provided in this section, it is unlawful for any person who has not attained the age of eighteen (18) years knowingly to have any handgun in such person's possession. (a) A first offense under this subsection (1) is a misdemeanor. (b) A second or subsequent adjudication under this subsection (1) is deemed a felony, and any child so adjudicated may be committed to the Oakley Youth Development Center.\nSection 3 (Miss. Code § 97-37-17(2)): It shall be a felony for any person to possess or carry, whether openly or concealed, any bowie knife, dirk knife, butcher knife, dagger, slungshot, switchblade knife, blackjack, metallic knuckles, gun, rifle, pistol or other firearm of any kind, or any dynamite cartridge, bomb, grenade, mine or powerful explosive on educational property. However, this subsection does not apply to a BB gun, air rifle or air pistol.\nSection 4 (Miss. Code § 97-37-35(1)): A person commits the crime of possession of a stolen firearm if the person knowingly or intentionally possesses, receives, retains, acquires or obtains possession of, or disposes of a stolen firearm, knowing that it has been stolen or having reasonable grounds to believe that it has been stolen."
+}

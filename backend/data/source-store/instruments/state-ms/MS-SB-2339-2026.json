@@ -1,0 +1,39 @@
+{
+  "id": "MS-SB-2339-2026",
+  "scope": "state:ms",
+  "title": "SB2339 (2026 Regular): Firearms; criminalize possession of by certain persons and order removal after a hearing with a specific finding of risk.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2026/pdf/SB/2300-2399/SB2339IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2026/html/SB/2300-2399/SB2339IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Brice Wiggins",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "35347631-7879-4fb4-a26a-b208678b8637"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/SB/2300-2399/SB2339IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2339-2026.introduced.htm",
+      "sha256": "3855feb1eeb30c440a493ccf162c6ac06e38650cc0bf893551192e716b2b841b"
+    },
+    "note": "Introduced text; no passage vote on file. Section 2 quote is the new subsection (3) as printed (the source prints the cross-reference 93-21-15 with control characters in place of the hyphens; hyphens restored in the quote). Section 3 is the new items (vi)-(vii) of the temporary-order list and (x)-(xi) of the final-order list (same wording; shown once); Section 4 (Miss. Code § 93-21-25) adds a 12-hour registry-entry duty and hand delivery to the sheriff for gun-removal orders (not quoted, in note). Section 1 definitions of ammunition, antique firearm, firearm and domestic-violence misdemeanor not quoted."
+  },
+  "operative_text": "Section 1 (new section): It shall be unlawful for any person: (a) Who is subject to a court order that: (i) Was issued after a hearing of which such person received actual notice, and at which such person had an opportunity to participate; (ii) Restrains such person from harassing, stalking, or threatening an intimate partner of such person or child of such intimate partner or person, or engaging in other conduct that would place an intimate partner in reasonable fear of bodily injury to the partner or child; and (iii) 1. Includes a finding that such person represents a credible threat to the physical safety of such intimate partner or child; or 2. By its terms explicitly prohibits the use, attempted use, or threatened use of physical force against such intimate partner or child that would reasonably be expected to cause bodily injury; or (b) Who has been convicted in any court of a misdemeanor crime of domestic violence, to possess any firearm or ammunition. A person convicted of a violation of subsection (2) of this section shall be fined not more than Ten Thousand Dollars ($10,000.00) or imprisoned within the custody of the Department of Corrections for not less than two (2) years nor more than ten (10) years, or both.\nSection 2 (Miss. Code § 93-21-9): If a petitioner requests the removal of firearms or ammunition from the individual alleged to have committed abuse as relief in a domestic abuse protection order under Section 93-21-15(1) or (2), the petition shall state the facts and circumstances that merit such relief with particularity.\nSection 3 (Miss. Code § 93-21-15): Ordering law enforcement to remove a respondent's firearms and ammunition for the duration of the order where the court has made a separate finding that the respondent's continued retention of firearms and ammunition poses a risk to the health and safety of the petitioner, any minor children, or any person alleged to be incompetent; Ordering the respondent to refrain from possessing or purchasing any firearm or ammunition for the duration of the order if the court has previously ordered the removal of the respondent's firearms and ammunition.\nSection 5 (Miss. Code § 93-21-27): Any law enforcement officer removing firearms or ammunition pursuant to a protection order shall be presumed to be acting in good faith."
+}

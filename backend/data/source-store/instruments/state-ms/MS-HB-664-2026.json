@@ -1,0 +1,69 @@
+{
+  "id": "MS-HB-664-2026",
+  "scope": "state:ms",
+  "title": "HB664 (2026 Regular): Mississippi Firearms Parental Amnesty Act; create.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/0600-0699/HB0664IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2026/html/HB/0600-0699/HB0664IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeffrey Hulum",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "3e9b6f7f-1cb8-49e9-b645-086390226f75"
+    },
+    {
+      "name": "Chris Bell",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "33b6c812-0021-4a6f-914e-51a14bd68253"
+    },
+    {
+      "name": "Bryant Clark",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "4e6f9927-5942-4677-b6ee-0656197f0891"
+    },
+    {
+      "name": "Stephanie Foster",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "e38914a2-a76f-4271-a6eb-2ca4e717291b"
+    },
+    {
+      "name": "John Hines",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "8e19d0c3-66eb-4d88-97c7-581c54e1696e"
+    },
+    {
+      "name": "Solomon Osborne",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "91dd8353-d266-44c4-91d3-06c2d78364dc"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/HB/0600-0699/HB0664IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-664-2026.introduced.htm",
+      "sha256": "e2bd88dc1c9c8b749ea8c89e519f34d61e4ee25faf4faee57b1911d535808528"
+    },
+    "note": "Struck in Section 2: \"may\" (replaced by \"shall\") and \"disposed of\" (replaced by \"destroyed\"). Sections 3-4 only bring forward 97-37-1 and 97-37-3. Bill as filed (introduced; no date in text); no passage vote on record, so no later-amendment caveat."
+  },
+  "operative_text": "Section 1 (new section): (2) Any parent or legal guardian of a minor who is less than eighteen (18) years of age, and who voluntarily and peacefully delivers and abandons any firearm that was owned by or in the possession or control of the minor, regardless of whether the firearm was used in the commission of a crime or not, shall be immune from civil and criminal liability for any action taken with use of the firearm, if any.\nSection 1 (new section): (5) No person who delivers and abandons a firearm, destructive device, or ammunition under this section shall be required to furnish identification, photographs, or fingerprints.\nSection 1 (new section): (7) Whenever any firearm, destructive device, or any other ammunition is surrendered under this section, the law enforcement agency that receives such shall inquire of the District Attorney or Mississippi Office of Attorney General whether such firearm is needed as evidence; provided, that if the same is not needed as evidence, it shall be destroyed.\nSection 2 (Miss. Code § 45-9-53(6)(b)): Any ordinance enacted pursuant to this section must require that any firearm received shall be destroyed by the agency or offered for sale at auction as provided by Sections 19-3-85 and 21-39-21 to federally licensed firearms dealers, with the proceeds from such sale at auction reverting to the general operating fund of the county, municipality or other governmental body. Any firearm remaining in possession of the county, municipality or other governmental body after attempts to sell at auction shall be destroyed in a manner that the body deems appropriate."
+}

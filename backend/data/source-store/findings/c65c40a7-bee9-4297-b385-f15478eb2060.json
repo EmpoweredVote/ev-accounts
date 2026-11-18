@@ -22,6 +22,271 @@
         "fetched_at": "2026-11-05T23:52:51.760Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "3176bba0e7a4aafae2ea102094422cd215076f4a19af556af411d946aceaa754",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2024/pdf/HB/1400-1499/HB1441PS.pdf",
+      "date": "2024-04-11",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1441-2024",
+      "act": "nay",
+      "motion": "Senate Passed As Amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS Senate, Senate Passed As Amended, 2024-04-11: nay (tally 44–6); census gate: none.",
+      "subjects": [
+        "extra 20-year term for using a large-magazine firearm in a violent felony",
+        "extra 5-year term for nonviolent felony",
+        "large-capacity magazine defined as over 15 rounds"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2024/html/HB/1400-1499/HB1441CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1441-2024.comm_sub.htm",
+          "sha256": "58af9faae9eec59cd94bc8d4f22a469c43004a1937fce50a3bd16a2c085c7f04"
+        }
+      }
+    },
+    {
+      "id": "35430ea2657cdd085dabc1ab9e0da520489303d70ca3eedc26e8e91c869ff607",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/1700-1799/HB1793SG.pdf",
+      "date": "2026-03-29",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1793-2026",
+      "act": "nay",
+      "motion": "Senate Conference Report Adopted",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS Senate, Senate Conference Report Adopted, 2026-03-29: nay (tally 33–16); census gate: none.",
+      "subjects": [
+        "sales-tax holiday covers firearm safes",
+        "firearm and ammunition sales-tax exemption weekend"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/HB/1700-1799/HB1793CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1793-2026.comm_sub.htm",
+          "sha256": "513c728f74a25f905ee07e19935570768c7a35fc9a9f10efe8e7b23a8d4f38f6"
+        }
+      }
+    },
+    {
+      "id": "6040cc7399d7ff2e920e19e6a1f479723a5c06b33f7d4352232cf79ded1d3fca",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2024/pdf/HB/0900-0999/HB0903SG.pdf",
+      "date": "2024-04-24",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-903-2024",
+      "act": "yea",
+      "motion": "Senate Conference Report Adopted",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS Senate, Senate Conference Report Adopted, 2024-04-24: yea (tally 50–2); census gate: near-unanimous.",
+      "subjects": [
+        "felony for machine gun conversion devices (Glock switches, auto-sears)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2024/html/HB/0900-0999/HB0903CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-903-2024.comm_sub.htm",
+          "sha256": "8b424ae01670543ecd5bf76b99d7e5cde44e806c9cfadab01694d35f4f87107f"
+        }
+      }
+    },
+    {
+      "id": "3bffdea7de363499ead848a19713f7b0da24b8b1fc50aa121618196ce4c9b887",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2024/pdf/SB/2100-2199/SB2186PS.pdf",
+      "date": "2024-03-06",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2186-2024",
+      "act": "yea",
+      "motion": "Senate Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS Senate, Senate Passed, 2024-03-06: yea (tally 52–0); census gate: near-unanimous.",
+      "subjects": [
+        "sale of forfeited weapons to licensed dealers",
+        "sale proceeds may buy any equipment, not only bulletproof vests"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2024/html/SB/2100-2199/SB2186IN.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2186-2024.introduced.htm",
+          "sha256": "57d906a36cb30594492fb76bdeba8fe1a07aee50b26b5a94f032d139efeff04b"
+        }
+      }
+    },
+    {
+      "id": "c2df2e137754aae1f3b8f18a7cced8600f40a55ca4e17c969bebdd477dc6f8c1",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/SB/2300-2399/SB2316PS.pdf",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2316-2026",
+      "act": "yea",
+      "motion": "Senate Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS Senate, Senate Passed, 2026-02-10: yea (tally 52–0); census gate: near-unanimous.",
+      "subjects": [
+        "silencer offence tied to federal law"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/SB/2300-2399/SB2316IN.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2316-2026.introduced.htm",
+          "sha256": "9d8f7aa669472b3a538e2b20b63f79caebf550db432a0fe9480be716d3257f6a"
+        }
+      }
+    },
+    {
+      "id": "04bd4faef0c657bbced6c1a9df4089dbfe328e899222d925a310d17d01955e88",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2024/pdf/SB/2600-2699/SB2626CS.pdf",
+      "date": "2024-03-06",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2626-2024",
+      "act": "yea",
+      "motion": "Senate Failed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS Senate, Senate Failed, 2024-03-06: yea (tally 23–29); census gate: none.",
+      "subjects": [
+        "restore gun possession to nonviolent felons after sentence and restitution"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2024/html/SB/2600-2699/SB2626IN.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2626-2024.introduced.htm",
+          "sha256": "776f177bbf3024b5e674774747ec3401163a3e09b65b9aeea3fd330e82a54a88"
+        }
+      }
+    },
+    {
+      "id": "67c6c49c82212fd45f8c2aaf16e4ce7a7fe08c6eef5619b63ee667e6077d1075",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2024/pdf/SB/2600-2699/SB2627PS.pdf",
+      "date": "2024-03-06",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2627-2024",
+      "act": "yea",
+      "motion": "Senate Passed As Amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS Senate, Senate Passed As Amended, 2024-03-06: yea (tally 39–3); census gate: near-unanimous.",
+      "subjects": [
+        "felony for machine gun conversion devices",
+        "10-year first offense, 15-year repeat"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2024/html/SB/2600-2699/SB2627CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2627-2024.comm_sub.htm",
+          "sha256": "588de2922da6b68f284930577ccfb74223e64e7d14daebab11c762d72f24014d"
+        }
+      }
+    },
+    {
+      "id": "a0922df775d1e4f0f8c25b7f04f868bfb7dc6636919cbc00cc2edaf9b3f72208",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/SB/2800-2899/SB2809SG.pdf",
+      "date": "2026-02-04",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2809-2026",
+      "act": "yea",
+      "motion": "Senate Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS Senate, Senate Passed, 2026-02-04: yea (tally 52–0); census gate: near-unanimous.",
+      "subjects": [
+        "retiring state agriculture theft officers keep service sidearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/SB/2800-2899/SB2809PS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2809-2026.introduced.htm",
+          "sha256": "1267ddbf1a17bf1ac7e955f88b3343875d1522d9fb8cfe802b769ceaeef61097"
+        }
+      }
+    },
+    {
+      "id": "864164fdc09c4181afae71c3f83cc892a2f3c77978994c44d2ea25df1b83589b",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2024/pdf/SB/2300-2399/SB2363IN.pdf",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2363-2024",
+      "act": "sponsor",
+      "motion": "co sponsor, introduced text (By:)",
+      "note": "co sponsor of MS-SB-2363-2024 (introduced text (By:)): SB2363 (2024 Regular): Responsible Firearm Purchasing Act; enact..",
+      "subjects": [
+        "no gun or ammunition purchases by minors",
+        "no sales to minors",
+        "misdemeanor for minor, felony for adult violators"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2024/html/SB/2300-2399/SB2363IN.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2363-2024.introduced.htm",
+          "sha256": "358024d88a3e1ae154f7a5cbdcd66f49aa62103230f5c24fb97b14484c2fc92e"
+        }
+      }
     }
   ],
   "searches": [

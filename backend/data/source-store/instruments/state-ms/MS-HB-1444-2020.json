@@ -1,0 +1,39 @@
+{
+  "id": "MS-HB-1444-2020",
+  "scope": "state:ms",
+  "title": "HB1444 (2020 Regular): Youth possession of a firearm; revise penalties for.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2020/pdf/HB/1400-1499/HB1444IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2020/html/HB/1400-1499/HB1444IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Greg Haney",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "d84be8cc-fc8e-4695-bc24-7179ab6e71d4"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2020/html/HB/1400-1499/HB1444IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1444-2020.introduced.htm",
+      "sha256": "081248aa68061d0f3684fbca8add9f38b829cdd9344ff42b3cb31c6f537a3e2c"
+    },
+    "note": "As-filed text. Struck: 'is an act of delinquency' (replaced by 'shall be a misdemeanor'). Existing exceptions in subsection (2) and the handgun definition in (4) are unchanged and not quoted. No passage vote."
+  },
+  "operative_text": "Section 1 (Miss. Code § 97-37-14): (1) (a) Except as otherwise provided in this section, it shall be a misdemeanor for any person who has not attained the age of eighteen (18) years to knowingly have any handgun in such person's possession. (b) It shall be a felony for any person who has not attained the age of eighteen (18) years of age and has been previously convicted of a felony to knowingly possess any handgun. (3) This section shall not apply to any person who uses a handgun or other firearm to lawfully defend himself from imminent danger at his or her home or place of domicile and any such person shall not be held criminally liable for such use of a handgun or other firearm."
+}

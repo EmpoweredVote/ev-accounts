@@ -1,0 +1,45 @@
+{
+  "id": "MS-HB-435-2026",
+  "scope": "state:ms",
+  "title": "HB435 (2026 Regular): Firearm endorsement; require to be placed on driver's license.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/0400-0499/HB0435IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2026/html/HB/0400-0499/HB0435IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Daryl Porter",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "9b4b79f8-41e3-45d5-9008-b53c897feaf1"
+    },
+    {
+      "name": "Otis Anthony",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "833e9282-24aa-4c09-bdb3-b1e75e52fa2c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2026/html/HB/0400-0499/HB0435IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-435-2026.introduced.htm",
+      "sha256": "a4e649894d04df20ca0b00fab96a784ac45af3e7a1f65754f77d85ac63a15413"
+    },
+    "note": "As-filed text; no passage vote recorded."
+  },
+  "operative_text": "Section 1 (Miss. Code § 63-1-35): (7) The commissioner shall provide the new, renewal or duplicate driver's license, temporary driving permit or commercial driver's license to any licensee or permittee who is also properly licensed under Section 45-9-101 or Section 97-37-7(2) to carry a concealed firearm, and such license or permit shall exhibit the letters \"CCP\" or \"EHP\" or any other mark indicating the type of firearm endorsement and identifying the person a licensed firearm holder. The licensed firearm holder requesting the \"CCP\" or \"EHP\" endorsement designation shall present his or her firearm permit at the Mississippi Department of Public Safety Driver's License Station."
+}

@@ -1,0 +1,311 @@
+{
+  "id": "MS-SB-2627-2024",
+  "scope": "state:ms",
+  "title": "SB2627 (2024 Regular): Firearms; criminalize manufacture, possession and use of machine gun conversion devices.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2024/pdf/SB/2600-2699/SB2627PS.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2024/html/SB/2600-2699/SB2627CS.htm"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Scott DeLano",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "a9dad9dd-9977-48e8-9153-27de80d57979"
+    },
+    {
+      "name": "John Horhn",
+      "role": "co",
+      "version": "introduced text (By:)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2024-03-06",
+      "body": "MS Senate",
+      "motion": "Senate Passed As Amended",
+      "kind": "roll-call",
+      "yes": 39,
+      "no": 3,
+      "absent": 10,
+      "note": "billstatus.ls.state.ms.us vote PDF (read from the legislature) 90180429",
+      "members": [
+        {
+          "name": "Juan Barnett",
+          "vote": "yea",
+          "politician_id": "f54fcea9-0805-4d0f-af21-9e41ed7a9457"
+        },
+        {
+          "name": "Andy Berry",
+          "vote": "yea",
+          "politician_id": "22168b26-5b99-4d29-9e60-7b1bdfc79512"
+        },
+        {
+          "name": "Bradford Blackmon",
+          "vote": "yea",
+          "politician_id": "e14b8d73-d3b9-4d94-ae94-63857e9c4ecb"
+        },
+        {
+          "name": "David Blount",
+          "vote": "yea",
+          "politician_id": "a29978d9-d876-4fb3-8f9a-4c3e3421a9e3"
+        },
+        {
+          "name": "Nicole Boyd",
+          "vote": "yea",
+          "politician_id": "f1c138fa-a424-47d5-a938-691c72efc943"
+        },
+        {
+          "name": "Gary Brumfield",
+          "vote": "yea",
+          "politician_id": "c65c40a7-bee9-4297-b385-f15478eb2060"
+        },
+        {
+          "name": "Hob Bryan",
+          "vote": "yea",
+          "politician_id": "8bd09319-824c-41d2-b6e6-849ffdd62d8d"
+        },
+        {
+          "name": "Albert Butler",
+          "vote": "yea",
+          "politician_id": "ca01712f-4e00-46c2-9ff8-258d37dce586"
+        },
+        {
+          "name": "Joel Carter",
+          "vote": "yea",
+          "politician_id": "180e0b3c-89e3-4d06-80b0-35ac0674f764"
+        },
+        {
+          "name": "Lydia Chassaniol",
+          "vote": "yea",
+          "politician_id": "97423aba-2a57-474a-a6b5-6a027b3ddfa5"
+        },
+        {
+          "name": "Dennis DeBar",
+          "vote": "yea",
+          "politician_id": "e33fad93-d18b-47d3-9c4c-1fded8c01d01"
+        },
+        {
+          "name": "Scott DeLano",
+          "vote": "yea",
+          "politician_id": "a9dad9dd-9977-48e8-9153-27de80d57979"
+        },
+        {
+          "name": "Jeremy England",
+          "vote": "yea",
+          "politician_id": "3f899c1e-2da3-40cf-aca6-89a462a88eef"
+        },
+        {
+          "name": "Joey Fillingane",
+          "vote": "yea",
+          "politician_id": "7286e397-46d9-4fbc-b518-b25f898f5038"
+        },
+        {
+          "name": "Hillman Frazier",
+          "vote": "yea",
+          "politician_id": "096a9329-ae1b-4f6f-81bd-b3e675eb782b"
+        },
+        {
+          "name": "Josh Harkins",
+          "vote": "yea",
+          "politician_id": "7885ac00-e4f5-41be-8102-5e4589bcede8"
+        },
+        {
+          "name": "Rod Hickman",
+          "vote": "yea",
+          "politician_id": "9b326d1e-f19a-4fad-812a-26c411c36a89"
+        },
+        {
+          "name": "Briggs Hopson",
+          "vote": "yea",
+          "politician_id": "c126c0b3-02b3-49ed-85b6-1d5bc797c256"
+        },
+        {
+          "name": "John Horhn",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Johnson",
+          "vote": "yea",
+          "politician_id": "ca3d63d6-17c9-48ce-bc9c-786c00638cab"
+        },
+        {
+          "name": "David Jordan",
+          "vote": "yea"
+        },
+        {
+          "name": "Dean Kirby",
+          "vote": "yea",
+          "politician_id": "58152bef-1db9-4970-9e84-bb27d448cff5"
+        },
+        {
+          "name": "Tyler McCaughn",
+          "vote": "yea",
+          "politician_id": "4907fd47-4912-43c6-a1ed-d95b9ad8d1e6"
+        },
+        {
+          "name": "Walter Michel",
+          "vote": "yea",
+          "politician_id": "11e71eea-acef-4f0a-b98b-c11ce17781ca"
+        },
+        {
+          "name": "Sollie Norwood",
+          "vote": "yea",
+          "politician_id": "bb101347-67b5-4758-8efc-e531237f9b9d"
+        },
+        {
+          "name": "David Parker",
+          "vote": "yea"
+        },
+        {
+          "name": "John Polk",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Rhodes",
+          "vote": "yea",
+          "politician_id": "e8f0c423-bcfa-4094-bbb3-3fe1c0a6dcd2"
+        },
+        {
+          "name": "Robin Robinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Derrick Simmons",
+          "vote": "yea",
+          "politician_id": "0c489313-568f-46ac-ad9e-b39bed86a2ef"
+        },
+        {
+          "name": "Sarita Simmons",
+          "vote": "yea",
+          "politician_id": "9343ebd1-1d85-486b-a71f-a9a9736c0650"
+        },
+        {
+          "name": "Daniel Sparks",
+          "vote": "yea",
+          "politician_id": "2b283500-4614-47e5-8fa3-f5239c42ec46"
+        },
+        {
+          "name": "Ben Suber",
+          "vote": "yea",
+          "politician_id": "50f3fe33-f53a-46e0-9533-eca6533b11a5"
+        },
+        {
+          "name": "Joseph Thomas",
+          "vote": "yea",
+          "politician_id": "ed421efd-7aa5-464a-829a-235271b4121c"
+        },
+        {
+          "name": "Mike Thompson",
+          "vote": "yea",
+          "politician_id": "bfb6c67e-9412-4505-9e1d-4d70862a4608"
+        },
+        {
+          "name": "Angela Turner-Ford",
+          "vote": "yea",
+          "politician_id": "a295d7b7-b579-4fe0-bbdc-c65feb0db92b"
+        },
+        {
+          "name": "Brice Wiggins",
+          "vote": "yea",
+          "politician_id": "35347631-7879-4fb4-a26a-b208678b8637"
+        },
+        {
+          "name": "Bart Williams",
+          "vote": "yea",
+          "politician_id": "8bfff5cd-6347-485d-9be2-2de7b01265ed"
+        },
+        {
+          "name": "Chuck Younger",
+          "vote": "yea",
+          "politician_id": "a6991eac-bf81-4824-b807-27c127d30494"
+        },
+        {
+          "name": "Kathy Chism",
+          "vote": "nay",
+          "politician_id": "ed6a1a25-7331-4f21-a3aa-f96d8c878846"
+        },
+        {
+          "name": "Angela Hill",
+          "vote": "nay",
+          "politician_id": "91620900-c038-451e-a704-5bd42e895248"
+        },
+        {
+          "name": "Mike Seymour",
+          "vote": "nay",
+          "politician_id": "931ad6fa-6eb3-4214-bdad-702a9e7c3677"
+        },
+        {
+          "name": "Jason Barrett",
+          "vote": "absent",
+          "politician_id": "dc02b429-81fb-4618-a2ad-8df15eec1a37"
+        },
+        {
+          "name": "Kevin Blackwell",
+          "vote": "absent",
+          "politician_id": "bae7c0e9-be71-42a8-853f-c140c65db37d"
+        },
+        {
+          "name": "Jenifer Branning",
+          "vote": "absent"
+        },
+        {
+          "name": "Reginald Jackson",
+          "vote": "absent",
+          "politician_id": "0f3e06b4-a5a3-402d-b712-af1e7dd070d8"
+        },
+        {
+          "name": "Philman Ladner",
+          "vote": "absent",
+          "politician_id": "e5c00545-cb86-4b46-b14b-7988b065cc75"
+        },
+        {
+          "name": "Michael McLendon",
+          "vote": "absent",
+          "politician_id": "0aac1af3-7318-4a87-acc5-1043d870b7c6"
+        },
+        {
+          "name": "Chad McMahan",
+          "vote": "absent",
+          "politician_id": "63258275-01f9-4daf-b30f-0d1866f23540"
+        },
+        {
+          "name": "Rita Parks",
+          "vote": "absent",
+          "politician_id": "caf8fe09-14b6-464c-8820-ae28029842ce"
+        },
+        {
+          "name": "Jeff Tate",
+          "vote": "absent",
+          "politician_id": "6dc6d0e9-e26e-4376-b15e-ea831745f065"
+        },
+        {
+          "name": "Neil Whaley",
+          "vote": "absent",
+          "politician_id": "f2439435-639f-4a4b-bc13-e15813d91985"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2024/html/SB/2600-2699/SB2627CS.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2627-2024.comm_sub.htm",
+      "sha256": "588de2922da6b68f284930577ccfb74223e64e7d14daebab11c762d72f24014d"
+    },
+    "note": "Committee substitute. Senate passed as amended 2024-03-06 (39-3); later amendments are not in the text read."
+  },
+  "operative_text": "Section 1 (new, Miss. Code § 97-37-39): Any person who manufactures, possesses, or uses a machine gun conversion device and who is not otherwise authorized by federal law to manufacture, possess or use a machine gun conversion device shall be guilty of a felony. \"Machine gun conversion\" means a device that is designed, made and intended to convert a semiautomatic firearm into a machine gun. Any person convicted of a first offense in violation of this act shall be guilty of a felony, and shall be sentenced to imprisonment for a term of not more than ten (10) years, fined not more than Ten Thousand Dollars ($10,000.00), or both. A person convicted of a second or subsequent offense shall be charged with a felony under this act and shall be sentenced to imprisonment for a term of not more than fifteen (15) years, fined not more than Twenty Thousand Dollars ($20,000.00), or both."
+}

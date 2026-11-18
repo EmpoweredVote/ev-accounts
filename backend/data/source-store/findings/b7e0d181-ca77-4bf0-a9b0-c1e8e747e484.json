@@ -611,6 +611,122 @@
         "fetched_at": "2026-11-05T23:55:32.896Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "553bec8152a50424e7be7307b9a8a74b6cef89c5dae33e33e757097abe9c3bdf",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2018/pdf/HB/1000-1099/HB1083PS.pdf",
+      "date": "2018-03-07",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1083-2018",
+      "act": "nay",
+      "motion": "Senate Passed As Amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MS Senate, Senate Passed As Amended, 2018-03-07: nay (tally 27–18); census gate: none.",
+      "subjects": [
+        "enhanced carry holders may carry on public property",
+        "local limits on carry locations void",
+        "lawsuit and injunction against violating carry rules",
+        "expunged convictions and pardons for licence eligibility"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2018/html/HB/1000-1099/HB1083CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1083-2018.comm_sub.htm",
+          "sha256": "da936b875af0122a9dd425eb1dc69124ff5b5636584dc0c8af3bc7d2ac7aac8a"
+        }
+      }
+    },
+    {
+      "id": "a515305f2420adacf33e804c0a86c41d63cb309dbc664e94659349068b00882f",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2019/pdf/HB/1500-1599/HB1581SG.pdf",
+      "date": "2019-03-06",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-1581-2019",
+      "act": "yea",
+      "motion": "Senate Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MS Senate, Senate Passed, 2019-03-06: yea (tally 52–0); census gate: near-unanimous.",
+      "subjects": [
+        "courtroom definition for carrying in courthouses",
+        "enhanced-carry holders barred from judges' chambers, witness and jury rooms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Comm Sub; official copy, https://billstatus.ls.state.ms.us/documents/2019/html/HB/1500-1599/HB1581CS.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1581-2019.comm_sub.htm",
+          "sha256": "e72a504f40bb02c49480214988001fbdf148ba6da6a58c710c649a2f25b22ebc"
+        }
+      }
+    },
+    {
+      "id": "eea92611bb3ff6843c608cecfdf31ef350b365007a55f522a5422d300e0dab2d",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2019/pdf/SB/2001-2099/SB2099IN.pdf",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2099-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, introduced text (By:)",
+      "note": "prime sponsor of MS-SB-2099-2019 (introduced text (By:)): SB2099 (2019 Regular): Federal Firearm, Magazine and Register Ban Enforcement Act; create..",
+      "subjects": [
+        "state and local officials may not enforce conflicting federal gun orders",
+        "civil and misdemeanor penalties for officials"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2019/html/SB/2001-2099/SB2099IN.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2099-2019.introduced.htm",
+          "sha256": "5caadb476990bba5e4d14a46edecf4dcc50fccb8544a463bc044893acbbecb96"
+        }
+      }
+    },
+    {
+      "id": "a75d3d117f32de2d5503380517a07a321559d04f83e18dc214b773a7d6db3c35",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/documents/2018/pdf/SB/2600-2699/SB2632IN.pdf",
+      "date": "2018",
+      "date_precision": "year",
+      "instrument_id": "MS-SB-2632-2018",
+      "act": "sponsor",
+      "motion": "prime sponsor, introduced text (By:)",
+      "note": "prime sponsor of MS-SB-2632-2018 (introduced text (By:)): SB2632 (2018 Regular): Federal Firearm, Magazine and Register Ban Enforcement Act; create..",
+      "subjects": [
+        "officials barred from ordering enforcement of new federal gun rules",
+        "civil penalty then misdemeanor"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2018/html/SB/2600-2699/SB2632IN.htm)",
+        "fetched_at": "2026-11-18T02:17:26.444410Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2632-2018.introduced.htm",
+          "sha256": "323e3f35dffbc230b997aa5c28065024cf8a442bc510b5b7b13bb0d194f3cade"
+        }
+      }
     }
   ],
   "searches": [

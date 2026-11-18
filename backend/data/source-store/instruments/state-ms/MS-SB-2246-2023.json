@@ -1,0 +1,98 @@
+{
+  "id": "MS-SB-2246-2023",
+  "scope": "state:ms",
+  "title": "SB2246 (2023 Regular): Mississippi Suppressor Freedom Act; enact.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2023/pdf/SB/2200-2299/SB2246IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2023/html/SB/2200-2299/SB2246IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kevin Blackwell",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "bae7c0e9-be71-42a8-853f-c140c65db37d"
+    },
+    {
+      "name": "Jeff Tate",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "6dc6d0e9-e26e-4376-b15e-ea831745f065"
+    },
+    {
+      "name": "Chuck Younger",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "a6991eac-bf81-4824-b807-27c127d30494"
+    },
+    {
+      "name": "Philip Moran",
+      "role": "co",
+      "version": "introduced text (By:)"
+    },
+    {
+      "name": "Bart Williams",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "8bfff5cd-6347-485d-9be2-2de7b01265ed"
+    },
+    {
+      "name": "Scott DeLano",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "a9dad9dd-9977-48e8-9153-27de80d57979"
+    },
+    {
+      "name": "Mike Seymour",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "931ad6fa-6eb3-4214-bdad-702a9e7c3677"
+    },
+    {
+      "name": "Juan Barnett",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "f54fcea9-0805-4d0f-af21-9e41ed7a9457"
+    },
+    {
+      "name": "Neil Whaley",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "f2439435-639f-4a4b-bc13-e15813d91985"
+    },
+    {
+      "name": "Michael McLendon",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "0aac1af3-7318-4a87-acc5-1043d870b7c6"
+    },
+    {
+      "name": "Jason Barrett",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "dc02b429-81fb-4618-a2ad-8df15eec1a37"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2023/html/SB/2200-2299/SB2246IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2246-2023.introduced.htm",
+      "sha256": "fba19be0c01a90b42f11ae1310f17b51c737d4b4e839d36b1d936af2018212ae"
+    },
+    "note": "Introduced text; no passage vote on file. Sections 1-3 (short title, definitions, legislative findings) and 7 (complaint and mandamus remedy against entities) not quoted."
+  },
+  "operative_text": "Section 4 (new section): A firearm suppressor manufactured and sold in this state shall be stamped clearly with the words \"Made in Mississippi\".\nSection 6 (new section): The state, its political subdivisions or a governmental entity shall not adopt a rule, order, ordinance, or policy under which the entity enforces, or by consistent action allow the enforcement of, a federal statute, order, rule, or regulation that purports to regulate a firearm suppressor if the statute, order, rule, or regulation imposes a prohibition, restriction, or other regulation that does not exist under the laws of this state.\nSection 5 (new section): On written notification to the Attorney General by a resident of Mississippi who is a United States citizen of the resident's intent to manufacture a firearm suppressor in this state in compliance with this act, the Attorney General shall seek a declaratory judgment from a federal district court in this state that this act is consistent with the provisions of the United States Constitution.\nSection 8 (repeal of Miss. Code § 97-37-31): Section 97-37-31, Mississippi Code of 1972, which criminalizes the manufacture of silencers on firearms without authorization under federal law, is hereby repealed."
+}

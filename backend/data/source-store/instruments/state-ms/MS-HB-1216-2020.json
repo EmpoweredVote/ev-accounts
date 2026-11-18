@@ -1,0 +1,50 @@
+{
+  "id": "MS-HB-1216-2020",
+  "scope": "state:ms",
+  "title": "HB1216 (2020 Regular): Firearms; prohibit officials from adding requirements for licensed concealed firearm holders.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2020/pdf/HB/1200-1299/HB1216IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2020/html/HB/1200-1299/HB1216IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shane Barnett",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "7f2d5238-caa7-462d-bff2-dd9ec044f7ef"
+    },
+    {
+      "name": "Chris Brown",
+      "role": "co",
+      "version": "introduced text (By:)"
+    },
+    {
+      "name": "Fred Shanks",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "90163551-e8d4-420b-9b0a-bd4952556bed"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2020/html/HB/1200-1299/HB1216IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1216-2020.introduced.htm",
+      "sha256": "369a7c997fbb3b2a118d119ab903a56d4f893b0878df79995c9025f9d98d5929"
+    },
+    "note": "Introduced text, as filed. No passage vote is recorded for this bill. Only the sentence beginning 'No licensee shall be required' is new; the rest of paragraph (1)(b) is existing law. The title speaks of officials adding requirements; the text marks only this police-stop change."
+  },
+  "operative_text": "Section 1 (Miss. Code § 45-9-101(1)(b)): The licensee must carry the license, together with valid identification, at all times in which the licensee is carrying a stun gun, concealed pistol or revolver and must display both the license and proper identification upon demand by a law enforcement officer. No licensee shall be required to submit to any further demands unless the officer granting passage has probable cause that the licensee has or is about to commit a crime. A violation of the provisions of this paragraph (b) shall constitute a noncriminal violation with a penalty of Twenty-five Dollars ($25.00) and shall be enforceable by summons."
+}

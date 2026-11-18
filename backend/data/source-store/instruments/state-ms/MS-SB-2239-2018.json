@@ -1,0 +1,39 @@
+{
+  "id": "MS-SB-2239-2018",
+  "scope": "state:ms",
+  "title": "SB2239 (2018 Regular): Imitation firearms; prohibit sale of.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2018/pdf/SB/2200-2299/SB2239IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2018/html/SB/2200-2299/SB2239IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Juan Barnett",
+      "role": "prime",
+      "version": "introduced text (By:)",
+      "politician_id": "f54fcea9-0805-4d0f-af21-9e41ed7a9457"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2018/html/SB/2200-2299/SB2239IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-SB-2239-2018.introduced.htm",
+      "sha256": "b92b281e2b1791820c6c1d76076dd4465fec3d72ef80ba464873adc094aab4d8"
+    },
+    "note": "Introduced text as filed; no passage vote. Borderline gun_policy call: the bill regulates look-alike devices, not real firearms. Section 1 also excludes collector replicas, air guns and small decorative items (not quoted)."
+  },
+  "operative_text": "Section 1 (Miss. Code § 45-10-1): \"Imitation firearm\" means a toy firearm, look-alike firearm, or other device having the appearance, shape or configuration of a firearm.\nSection 2 (Miss. Code § 45-10-3): A person may not sell at retail, offer for retail sale or distribute for retail sale or promotion in this state a novelty lighter or imitation firearm. A person who violates this section commits a civil violation for which a fine of not more than Five Hundred Dollars ($500.00) may be imposed.\nSection 3 (Miss. Code § 45-10-5(b)): To any imitation firearm that is used only in the theatrical, movie or television industry or by the drama department of a school."
+}

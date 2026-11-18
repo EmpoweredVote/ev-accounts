@@ -1,0 +1,44 @@
+{
+  "id": "MS-HB-1012-2019",
+  "scope": "state:ms",
+  "title": "HB1012 (2019 Regular): Stun gun; remove the term from the prohibited firearms category.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/documents/2019/pdf/HB/1000-1099/HB1012IN.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2019/html/HB/1000-1099/HB1012IN.htm"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dana Criswell",
+      "role": "prime",
+      "version": "introduced text (By:)"
+    },
+    {
+      "name": "Shane Barnett",
+      "role": "co",
+      "version": "introduced text (By:)",
+      "politician_id": "7f2d5238-caa7-462d-bff2-dd9ec044f7ef"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Mississippi) (gun-policy Stage 5, Mississippi); operative text read by a Sonnet fill agent from the official Mississippi text (Introduced; official copy, https://billstatus.ls.state.ms.us/documents/2019/html/HB/1000-1099/HB1012IN.htm)",
+    "fetched_at": "2026-11-18T02:17:26.444410Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MS-HB-1012-2019.introduced.htm",
+      "sha256": "bc5316e3bdb137b667168126b7e8cd5295d6d312fa3c3135a3afc52e985ec357"
+    },
+    "note": "As-filed text (introduced); no date in text. No vote recorded. Struck: every 'stun gun' reference and subsection (21) defining 'stun gun'; later subsections renumbered. Quoted subsections are shown as they read after the bill; the bill's only change to them is the stun-gun deletions."
+  },
+  "operative_text": "Section 1 (Miss. Code § 45-9-101): (1) (a) Except as otherwise provided, the Department of Public Safety is authorized to issue licenses to carry concealed pistols or revolvers to persons qualified as provided in this section. Such licenses shall be valid throughout the state for a period of five (5) years from the date of issuance. Any person possessing a valid license issued pursuant to this section may carry a concealed pistol or concealed revolver.\nSection 1 (Miss. Code § 45-9-101): (b) The licensee must carry the license, together with valid identification, at all times in which the licensee is carrying a concealed pistol or revolver and must display both the license and proper identification upon demand by a law enforcement officer. A violation of the provisions of this paragraph (b) shall constitute a noncriminal violation with a penalty of Twenty-five Dollars ($25.00) and shall be enforceable by summons.\nSection 1 (Miss. Code § 45-9-101): (14) A law enforcement officer as defined in Section 45-6-3, chiefs of police, sheriffs and persons licensed as professional bondsmen pursuant to Chapter 39, Title 83, Mississippi Code of 1972, shall be exempt from the licensing requirements of this section. The licensing requirements of this section do not apply to the carrying by any person of a pistol or revolver, knife, or other deadly weapon that is not concealed as defined in Section 97-37-1.\nSection 1 (Miss. Code § 45-9-101): (18) Nothing in this section shall be construed to require or allow the registration, documentation or providing of serial numbers with regard to any firearm.\nSection 1 (Miss. Code § 45-9-101): (19) Any person holding a valid unrevoked and unexpired license to carry concealed pistols or revolvers issued in another state shall have such license recognized by this state to carry concealed pistols or revolvers. The Department of Public Safety is authorized to enter into a reciprocal agreement with another state if that state requires a written agreement in order to recognize licenses to carry concealed pistols or revolvers issued by this state."
+}
