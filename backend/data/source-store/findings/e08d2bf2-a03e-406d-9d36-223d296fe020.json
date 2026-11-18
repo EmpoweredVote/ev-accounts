@@ -444,7 +444,76 @@
           "sha256": "3883f8ca6dd06ee3e0fbe94e402c292e9a44243cac748834346a1e23e9ce57da"
         }
       }
+    },
+    {
+      "id": "fc31f0ac5b7ce89231c85db320aae4fd7eda5673b9f219d12365f98ce33704ae",
+      "kind": "own-words",
+      "url": "https://sdpb.org/politics/2025-02-03/senate-passes-gun-legislation-eliminating-firearm-transaction-codes",
+      "date": "2025-02-03",
+      "date_precision": "day",
+      "passage": "It protects Second Amendment and the privacy rights of South Dakotans.",
+      "note": "Quoted by SDPB in a news story on Senate passage of SB 81, which reverses use of a firearms merchant category code for gun and ammunition purchases. He is the prime sponsor and describes the bill as protecting gun rights and privacy.",
+      "subjects": [
+        "Second Amendment rights",
+        "firearm purchase privacy",
+        "no tracking of gun sales by card code"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T22:57:59.371Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5dc2b5a4ef8afc778688c292d8a7d387c82c1d57bca5315eba8895147233bd82",
+      "kind": "own-words",
+      "url": "https://sdpb.org/politics/2025-02-03/senate-passes-gun-legislation-eliminating-firearm-transaction-codes",
+      "date": "2025-02-03",
+      "date_precision": "day",
+      "passage": "Now we aren’t bringing this bill to stop a behavior that’s been going on for decades, or even just years. This is something that reared its head sometime in September of 2022 when the Internation Organization for Standardization – the ISO – approved a merchant category code specific to firearms and firearm retailers in order to record all firearm and ammunition transactions,",
+      "note": "Quoted by SDPB. He explains SB 81 as a response to the 2022 adoption of a merchant code that records firearm and ammunition purchases.",
+      "subjects": [
+        "firearm purchase privacy",
+        "no tracking of gun sales by card code"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T22:57:59.371Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm transaction codes and privacy",
+        "Second Amendment rights",
+        "carry on campus",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "https://sdpb.org/politics/2025-02-03/senate-passes-gun-legislation-eliminating-firearm-transaction-codes (news story, fetched; names him as District 24 Senator)",
+        "legislature member page https://sdlegislature.gov/Legislators/Profile/4636/Bills (fetched, page is a script-loaded shell with no readable text; bills covered by bulk bill data)",
+        "blocked: https://ballotpedia.org/Jim_Mehlhaff",
+        "one web search on name plus gun words; other results were advocacy letters and opinion columns, not his own words, not saved",
+        "not reviewed: personal campaign site and other official-page URL patterns (no own-page text found)",
+        "nothing on the subject beyond the one quote saved"
+      ],
+      "found": 2,
+      "at": "2026-11-17T22:57:59.371Z",
+      "by": "source-collector"
+    }
+  ]
 }

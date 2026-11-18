@@ -213,5 +213,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "Second Amendment",
+        "background checks",
+        "assault-style weapon bans",
+        "concealed and permitless carry",
+        "red-flag orders"
+      ],
+      "places": [
+        "status: lost the 2026-06-02 primary (a state-senate primary recap page shows the challenger winning 1,210 to 1,062 over this incumbent): https://criticalreport.substack.com/p/2026-sd-senate-primaries",
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "https://sdlegislature.gov/Legislators/Profile/4716/Bills (page loads only as a script shell; no text readable)",
+        "blocked: https://ballotpedia.org/Tamara_Grove (HTTP 202, bot challenge)",
+        "blocked: https://app.legiplex.com/profile/tamara-grove-21118/legislation?page=6 (HTTP 403)",
+        "web news search on name plus gun subject words: no own-words found on the subject",
+        "campaign site and official issue pages: not reviewed, stopped after the primary loss"
+      ],
+      "found": 0,
+      "at": "2026-11-17T23:01:58.139Z",
+      "by": "source-collector"
+    }
+  ]
 }

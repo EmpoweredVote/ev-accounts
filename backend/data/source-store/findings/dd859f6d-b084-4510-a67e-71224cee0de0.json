@@ -60,5 +60,32 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "suppressors and National Firearms Act repeal",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "scope: a news story dated 2026-06-03 reports Nick Fosness of Britton advanced from the District 1 House primary to the November ballot (https://aberdeeninsider.com/fosness-kjos-are-to-vote-getters-in-republican-primary-for-district-1/)",
+        "On the Record (0 appearances, 0 candidates)",
+        "sponsor list: covered by bulk bill data",
+        "official legislature member page: https://sdlegislature.gov/Legislators/Profile/Nick_Fosness (page loads, but it is a script-built page; no statement on the subject read)",
+        "campaign site: none found (state campaign-finance record lists a committee, no web address)",
+        "Ballotpedia: https://ballotpedia.org/Nicholas_Fosness (fetch returned an empty page; search summary showed no bills, votes or gun positions)",
+        "Marshall County Journal end-of-session interview: nothing on the subject",
+        "not reviewed: https://aberdeeninsider.com/ 2026-10-19 District 1 House candidates story (member-only, not fetched)",
+        "web searches on name plus gun words (2): nothing on the subject by this person"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:58:09.249Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -932,7 +932,77 @@
           "sha256": "73d1a22061cda7294f838ac7098fa76c56707137da5c1f03eccfee312b1bb846"
         }
       }
+    },
+    {
+      "id": "00cfec8e0282816ae6bfcd1d53a1846a4b79c774383a9d0bf3b83c99cf556ec2",
+      "kind": "own-words",
+      "url": "https://custercountychronicle.com/node/91515",
+      "date": "2025-06-04",
+      "date_precision": "day",
+      "passage": "I entered the House floor debate and basically said that if we don’t allow that we are announcing each campus as a gun-free zone. That means some lunatic can start shooting, killing and wounding with their only fear being law enforcement. All too often this has happened around the country. So, I say it’s a huge deterrent to anyone desiring to start shooting that any student or faculty could be armed to defend themselves.",
+      "note": "In his own column, he describes his floor remarks on SB100 (enhanced permit holders carrying on state university and technical college campuses), saying campuses without carry are gun-free zones and that armed students and faculty deter shooters.",
+      "subjects": [
+        "carry a gun on college campuses",
+        "gun-free zones"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:00:14.765Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "492daaeeed669576e8f8e369a3b92b3caeca781e86b4ec9c6498dfabfccbc640",
+      "kind": "own-words",
+      "url": "https://custercountychronicle.com/node/91515",
+      "date": "2025-06-04",
+      "date_precision": "day",
+      "passage": "House Bill 1218 deals with repealing “gun free” zones in restaurants and bars that serve alcohol. HB1222 allows firearms to be stored in vehicles on campus grounds by permit holders. So, yes, you can take, legally, your 870 shotgun to say SDSU to hunt pheasants and it is legal to store your shotgun in your vehicle as long as you have an enhanced permit. SB81 preventing the government from keeping record or registry of privately-owned firearms.",
+      "note": "In his column he describes HB1218 (gun-free zones in alcohol-serving places), HB1222 (firearms stored in vehicles on campus) and SB81 (no government registry of private firearms), and follows with: \"I think bills like these prove we live in the freest state in the union.\"",
+      "subjects": [
+        "gun-free zones in bars and restaurants",
+        "firearm registry ban",
+        "carry with an enhanced permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:00:14.765Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun on college campuses",
+        "gun-free zones in bars and restaurants",
+        "firearm registry ban",
+        "permitless or enhanced permit carry",
+        "general gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "vote pages: covered by bulk bill data",
+        "his own column in the Custer County Chronicle and Hill City Prevailer (read, 1 passage saved; shows he is the sitting House member for District 30)",
+        "web search on his name plus gun words (one result set, nothing further on the subject)",
+        "blocked: https://ballotpedia.org/Tim_Goodwin_(South_Dakota) (403)",
+        "blocked: https://thedakotascout.com/p/meet-the-candidate-tim-goodwin (403)",
+        "not reviewed: https://timrgoodwin.com (no connection; campaign site could not be reached)",
+        "https://custercountychronicle.com/node/93218 (candidate story, nothing on the subject)",
+        "official legislature profile page https://sdlegislature.gov/Legislators/Profile/1792 (loads, bills covered by bulk bill data)"
+      ],
+      "found": 2,
+      "at": "2026-11-17T23:00:14.765Z",
+      "by": "source-collector"
+    }
+  ]
 }

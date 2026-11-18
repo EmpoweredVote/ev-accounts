@@ -237,5 +237,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "concealed carry places and permits",
+        "suppressors and National Firearms Act",
+        "general statements on gun rights and the Second Amendment"
+      ],
+      "places": [
+        "scope: in scope; sitting Lieutenant Governor (appointed Jan 2025) named as the running mate on the 2026 general-election ticket at https://www.dakotanewsnow.com/2026/08/06/tony-venhuizen-formally-announced-gov-rhodens-running-mate/",
+        "On the Record (0 appearances for this person)",
+        "the governor's office site https://governor.sd.gov (home page read, nothing on the subject; its site search returned 404)",
+        "https://lg.sd.gov: not reachable (no response)",
+        "blocked: https://ballotpedia.org/Tony_Venhuizen (403 on direct fetch; page fetch tool returned empty)",
+        "sponsor list: covered by bulk bill data",
+        "news search on name plus gun words: only an NRA-ILA story, https://nraila.org/articles/20250324/south-dakota-governor-rhoden-signs-pro-gun-bills-into-law, whose photo caption lists him at the March 2025 bill signing; no words of his and no act by him on the subject",
+        "campaign site: not reviewed, none located",
+        "not reviewed: https://sdpb.org/politics/2025-01-29/an-interview-with-the-states-new-lieutenant-governor (interview page, not fetched)",
+        "not reviewed: https://thedakotascout.com/p/gov-rhoden-unveils-sioux-falls-lawmaker (not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:58:27.119Z",
+      "by": "source-collector"
+    }
+  ]
 }

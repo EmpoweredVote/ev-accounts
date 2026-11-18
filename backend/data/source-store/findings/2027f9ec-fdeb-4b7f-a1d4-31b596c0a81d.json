@@ -529,7 +529,57 @@
           "sha256": "b18942ff9d86f7629bbd3d4395cd747092e260795bf4890f97717e491429ee29"
         }
       }
+    },
+    {
+      "id": "0cfde1e14b03dc640997b7328cc3b5571335d6aed80ed27227b5c1f43911ed28",
+      "kind": "own-words",
+      "url": "https://drgnews.com/?p=312389",
+      "date": "2025-12-09",
+      "date_precision": "day",
+      "passage": "I’m proud of my A rating from the NRA and proud to advance legislation supporting our constitutional right to bear arms,” said Crabtree. “Thanks to President Trump and Republican Leaders, the One Big Beautiful Bill was a major win for gun owners purchasing suppressors. This session, we will update South Dakota law to reflect this Second Amendment victory.",
+      "note": "Quoted in a radio-group news story (same release also at https://dakotawarcollege.com/?p=114086). He announces draft 2026 legislation removing suppressors from the state's definition of a controlled weapon, so only federal law applies; he cites his NRA rating and the federal cut of the suppressor tax stamp from $200 to $0.",
+      "subjects": [
+        "suppressors",
+        "repeal state controlled-weapon rule for suppressors",
+        "Second Amendment rights",
+        "National Firearms Act tax stamp"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T22:55:48.998Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "suppressors and the National Firearms Act",
+        "state controlled-weapon definition",
+        "Second Amendment general statements",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry permits and permitless carry",
+        "red-flag orders"
+      ],
+      "places": [
+        "status: still a sitting state senator for District 8; he ended his run for the U.S. House in early 2026 (per a news search summary, https://dakotabroadcasting.com/state-senator-casey-crabtree-of-madison-suspends-us-house-campaign-endorses-opponent-marty-jackley/, not fetched by me); a roundup of state Senate primaries was said to show him winning renomination (not fetched), so general-election ballot status not independently confirmed",
+        "On the Record (0 appearances, 0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://sdlegislature.gov/Legislators/Profile/4487 (page did not load, needs a supported browser)",
+        "blocked: https://ballotpedia.org/Casey_Crabtree (returned an empty page, HTTP 202)",
+        "his own pages: no personal official or campaign site fetched; read his own release as carried on https://dakotawarcollege.com/?p=114086 and https://drgnews.com/?p=312389",
+        "web search for name plus Second Amendment and firearm words (one search): only the suppressor release found",
+        "nothing on the subject found elsewhere in the searches run; no debate or interview videos found"
+      ],
+      "found": 1,
+      "at": "2026-11-17T22:55:48.998Z",
+      "by": "source-collector"
+    }
+  ]
 }

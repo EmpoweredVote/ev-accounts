@@ -978,5 +978,29 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "carry a gun without a permit",
+        "Second Amendment",
+        "background checks",
+        "bans on a type of firearm"
+      ],
+      "places": [
+        "status: lost the 2026-06-02 primary (District 3 House race, finished third of four; page: https://dakotafreepress.com/2026/06/03/aberdeen-gop-picks-new-blood-boots-perry-and-novstrup-from-legislature/)",
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Al_Novstrup (403)",
+        "not reviewed: https://sdlegislature.gov/Legislators/Profile/4644 (member page is a script-built page, no text returned)",
+        "two web searches on name plus gun words: nothing on the subject by this person",
+        "sponsor list: covered by bulk bill data",
+        "stopped after confirming primary loss, so the campaign site, news and other URL patterns were not searched"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:59:39.915Z",
+      "by": "source-collector"
+    }
+  ]
 }

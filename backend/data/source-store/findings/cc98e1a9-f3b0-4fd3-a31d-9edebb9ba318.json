@@ -213,5 +213,35 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "concealed carry",
+        "Second Amendment",
+        "gun rights statements"
+      ],
+      "places": [
+        "status check: won the 2026-06-02 primary for Senate District 13 with 58.0% per https://criticalreport.substack.com/p/2026-sd-senate-primaries, so still in scope",
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "legislature member page https://sdlegislature.gov/Legislators/Profile/4651 (fetched; nothing on the subject in her own words)",
+        "Sioux Falls Chamber legislator page https://siouxfallschamber.com/officials/sue-peterson (nothing on the subject)",
+        "SDPB candidate profile https://sdpb.org/2024-08-07/meet-the-candidates-sue-peterson (nothing on the subject)",
+        "Wikipedia https://en.wikipedia.org/wiki/Sue_Peterson (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Sue_Peterson (403)",
+        "campaign site: no working address found (https://www.sue4sd.com did not connect)",
+        "two news searches on her name plus gun words: no article quoting her on the subject",
+        "not reviewed: https://sdpb.org/politics/2025-02-13/conceal-carry-on-public-campus-bill-advances (search lead only, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:58:09.318Z",
+      "by": "source-collector"
+    }
+  ]
 }

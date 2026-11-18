@@ -1107,5 +1107,53 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on firearm types or magazines",
+        "background checks",
+        "red-flag orders",
+        "carry permits and permitless carry",
+        "suppressors and short-barrelled rifles",
+        "general Second Amendment statements",
+        "firearm limits by homeowners associations",
+        "hunting safety zones"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://sdlegislature.gov/Legislators/Profile/4547/Detail (page returned only a browser-compatibility notice, no member content)",
+        "blocked: https://ballotpedia.org/Tom_Pischke (fetch returned an empty page)",
+        "blocked: https://www.yahoo.com/news/state-lawmakers-shoot-more-firearms-171746289.html (curl returned no text naming the person)",
+        "blocked: https://www.ammoland.com/2026/01/south-dakota-bill-to-allow-gun-silencers-as-un-controlled-weapons-introduced/ (curl returned no text naming the person)",
+        "blocked: https://www.yahoo.com/news/senate-panel-approves-expanding-hunting-215138554.html (curl returned no text naming the person)",
+        "not reviewed: official and campaign site (no address found by search; no own page read)",
+        "one web search on name plus subject words, two more on bills and news: only leads, no quotable passage verified; a hunting safety-zone committee remark and a 2026 suppressor-bill sponsorship were reported by search summaries but not confirmed on a fetched page, so not saved"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:58:43.596Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearms regulation",
+        "gun rights",
+        "withdrawal from 2026 election"
+      ],
+      "places": [
+        "withdrew 2026-07-29: https://www.dakotanewsnow.com/2026/07/29/dell-rapids-lawmaker-withdraws-upcoming-election/",
+        "On the Record (0 appearances)",
+        "one web search on name plus gun words",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: official legislature profile, campaign site, Ballotpedia (stopped after withdrawal found)"
+      ],
+      "found": 0,
+      "at": "2026-11-17T23:42:51.683Z",
+      "by": "source-collector"
+    }
+  ]
 }

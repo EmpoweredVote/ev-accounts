@@ -173,7 +173,185 @@
           "sha256": "08b2811db18179355efaa6ac1fc34e77d43703c1b8b6f35fd0d42330530144ef"
         }
       }
+    },
+    {
+      "id": "39275e4fe40de2a0ef9fc70d623dc6d387b19fac90022f63e0b6fdcd3b68fb5b",
+      "kind": "own-words",
+      "url": "https://sdpb.org/politics/2025-03-24/gov-rhoden-signs-three-gun-bills-into-law",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "passage": "One of my favorite things about South Dakota is how free we are – especially when it comes to the freedom to keep and bear arms. We have taken greater actions to defend our Second Amendment rights than any other state. As long as I am governor, I will continue to defend this basic constitutional freedom.",
+      "note": "Statement in his press release at the signing of three gun bills, as quoted by SDPB. The bills let permit holders keep pistols in vehicles in school lots, let city and county employees carry at work (and repeal the bar ban), and allow enhanced-permit holders to carry on college campuses.",
+      "subjects": [
+        "general statement on gun rights",
+        "carry a gun without a permit",
+        "guns on campuses and in bars"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:01:58.140Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fb696b7e58c1d6814251b92d61bcbeffc30b7f10833ea70621719d79406b259a",
+      "kind": "own-words",
+      "url": "https://www.dakotanewsnow.com/2026/02/10/south-dakota-signs-first-of-its-kind-suppressor-law/",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "passage": "South Dakota also became the first state in the nation that doesn't charge a nickel for you to exercise your Second Amendment rights in obtaining a concealed carry permit if you choose to do so,",
+      "note": "Quoted by Dakota News Now at the suppressor bill signing. He says the state charges nothing for a concealed carry permit and that, as a legislator, he carried several bills supporting the Second Amendment.",
+      "subjects": [
+        "carry permit fees",
+        "suppressor rules",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:01:58.140Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3f86317d2fb73b7ae8f856742897f8c8116855c76a125ddb653f3fa975f82c2d",
+      "kind": "own-words",
+      "url": "https://www.nssf.org/articles/nssf-profile-qa-governor-larry-rhoden-r-s-d/",
+      "date": "2026-02-04",
+      "date_precision": "day",
+      "passage": "South Dakota is the most Second Amendment-friendly state in the nation! We will keep it that way by cutting red tape and making sure companies know that we are Open for Opportunity. I’m currently working with legislators to deregulate suppressors at the state level.",
+      "note": "Written answer in an industry-group Q&A: says he is working with legislators to deregulate suppressors at the state level.",
+      "subjects": [
+        "suppressor rules",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:01:58.140Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9acb8afc912810c07a87c64dd0b075f8248d32adb5df85d0d94289619b2a0400",
+      "kind": "own-words",
+      "url": "https://www.nssf.org/articles/nssf-profile-qa-governor-larry-rhoden-r-s-d/",
+      "date": "2026-02-04",
+      "date_precision": "day",
+      "passage": "South Dakota is the freest state in a nation founded on the principle of freedom, and the Second Amendment exists to protect all our other rights.",
+      "note": "General statement on the Second Amendment from the same written Q&A.",
+      "subjects": [
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:01:58.140Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f6cc593ca3d28fc9fa3562e01c1abbdf2c1f10c599919c28473e3dff467eddd",
+      "kind": "own-words",
+      "url": "https://sdpb.org/politics/2025-03-24/rhoden-sends-letter-to-trump-asking-to-rollback-gun-restriction-rule",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "passage": "In a letter to Trump and Attorney General Pam Bondi, Rhoden called the waiting period “unnecessary” now that background checks are federally required.",
+      "note": "News story's description of his letter; only the word 'unnecessary' is his quoted wording. The letter asks the federal government to drop the seven-day waiting period before shipping firearms and accessories (27 CFR 478.96), citing the effect on a Sioux Falls suppressor maker.",
+      "subjects": [
+        "waiting periods",
+        "federal agency gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:01:58.140Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "98c97435bcfa097ad3220089d908f6a7f7c4ea2b13c8ae59e75aab3eb32c3c0f",
+      "kind": "record",
+      "url": "https://sdpb.org/politics/2025-03-24/gov-rhoden-signs-three-gun-bills-into-law",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "act": "signed",
+      "motion": "Three gun bills signed 2025-03-24 (bill numbers not stated on the page)",
+      "note": "As governor he signed three bills: permit holders may keep pistols in vehicles in school parking lots; city and county employees may carry concealed at work, with an added repeal of the ban on concealed pistols in bars; enhanced-permit holders may carry on college campuses. Bill numbers not stated on the page.",
+      "subjects": [
+        "carry a gun without a permit",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:01:58.140Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "80a0024fa7d0ece6ece1a5a268044bc5de3b33185465974148efeff796e9b530",
+      "kind": "record",
+      "url": "https://www.dakotanewsnow.com/2026/02/10/south-dakota-signs-first-of-its-kind-suppressor-law/",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "act": "signed",
+      "motion": "SB 2 (2026), the suppressor bill, as the page reports it",
+      "note": "He signed the 2026 suppressor bill (reported as SB 2) removing suppressors from the state's 'controlled weapon' definition, so no state paperwork or background checks apply; federal law still regulates them.",
+      "subjects": [
+        "suppressor rules",
+        "repealing gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:01:58.140Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "carry permit fees",
+        "guns on college campuses and in bars",
+        "suppressor rules",
+        "federal waiting period on shipped guns",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "status: in scope; won the July 28 2026 runoff for governor and is on the general-election ballot (per the statewide election page on Wikipedia)",
+        "On the Record (0 appearances)",
+        "sponsor list: covered by bulk bill data",
+        "https://governor.sd.gov/ (page loaded; the fetch tool failed to read it, news list searched by curl with no gun items found; not otherwise reviewed)",
+        "https://sdpb.org/politics/2025-03-24/gov-rhoden-signs-three-gun-bills-into-law (news story quoting a signing release)",
+        "https://sdpb.org/politics/2025-03-24/rhoden-sends-letter-to-trump-asking-to-rollback-gun-restriction-rule (news story on his letter)",
+        "https://www.dakotanewsnow.com/2026/02/10/south-dakota-signs-first-of-its-kind-suppressor-law/ (news story quoting him)",
+        "https://www.nssf.org/articles/nssf-profile-qa-governor-larry-rhoden-r-s-d/ (written Q&A with an industry group)",
+        "web search: news on his name plus Second Amendment (one search) and the waiting-period letter (one search)",
+        "not reviewed: Ballotpedia, campaign site, debate and interview video, the dakotanewsnow fee fact-check (conclusion not read)"
+      ],
+      "found": 7,
+      "at": "2026-11-17T23:01:58.140Z",
+      "by": "source-collector"
+    }
+  ]
 }

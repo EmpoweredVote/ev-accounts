@@ -1,0 +1,92 @@
+{
+  "politician_id": "4a858d43-9921-46ab-95e1-530cb70697d6",
+  "findings": [
+    {
+      "id": "248e1ea4691c29c9962d39b83985905c6eed811f8484bea191a3f32405902c3c",
+      "kind": "own-words",
+      "url": "https://www.sdpb.org/politics/2019-01-22/senate-permit-less-carry-bill-heads-to-house",
+      "date": "2019-01-22",
+      "date_precision": "day",
+      "passage": "Frankly, I do think—in fairness to some of the people who have historically opposed this bill—the tone is different this year,\" Greenfield says. \"There seems to be a desire to do something.",
+      "note": "Quoted by SDPB on his Senate Bill 47, which removes the permit requirement for carrying a concealed pistol; he says opponents' tone has shifted and expects the bill to change as session goes on.",
+      "subjects": [
+        "carry a gun without a permit",
+        "concealed carry permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T22:56:39.917Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32e56db8826ecce715b571df0ae14c067a27b148f4225362e102c410b1af447f",
+      "kind": "own-words",
+      "url": "https://www.valleynewslive.com/content/news/State-Senate-panel-advances-permitless-concealed-carry-law-504530771.html",
+      "date": "2019-01-18",
+      "date_precision": "day",
+      "passage": "We're not trying to create a situation in which South Dakota is the Wild West,\" Greenfield said. \"We're simply trying to create a situation in which we recognize that the Second Amendment is paramount and will not be infringed.",
+      "note": "Quoted in a news story on a Senate committee advancing his permitless carry bill; he describes the aim as recognizing the Second Amendment as paramount.",
+      "subjects": [
+        "carry a gun without a permit",
+        "Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T22:56:39.917Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d322148a4392fbaf885295d33200497c26df890c769b70397002d1d14ac4f5bb",
+      "kind": "own-words",
+      "url": "https://www.valleynewslive.com/content/news/State-Senate-panel-advances-permitless-concealed-carry-law-504530771.html",
+      "date": "2019-01-18",
+      "date_precision": "day",
+      "passage": "My legislative intent is to simply affect the permitting process and not create a situation in which it's somehow legal for a person to possess a firearm when in present day it's illegal for that very person to obtain a firearm and to carry concealed,\" Greenfield said.",
+      "note": "Quoted in the same news story; he says his bill changes only the permit process and would not make gun possession legal for people who are barred from having one now.",
+      "subjects": [
+        "carry a gun without a permit",
+        "limits on who may have a gun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T22:56:39.917Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "Second Amendment rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Wikipedia page confirming he is the sitting statewide School and Public Lands Commissioner since January 2023 (earlier a state senator); the 2022 election term runs to January 2027, so in scope as a sitting official",
+        "blocked: https://ballotpedia.org/Brock_Greenfield",
+        "not reviewed: https://sdlegislature.gov/Legislators/Profile/425/Bills (page loads only in a browser)",
+        "sponsor list: covered by bulk bill data",
+        "news search on name plus gun words: found 2019 permitless carry coverage (SDPB, a Valley News Live story)",
+        "official office site and campaign site: not reached, no own-site gun page found in search results",
+        "nothing on the subject from the commissioner's office"
+      ],
+      "found": 3,
+      "at": "2026-11-17T22:56:39.917Z",
+      "by": "source-collector"
+    }
+  ]
+}

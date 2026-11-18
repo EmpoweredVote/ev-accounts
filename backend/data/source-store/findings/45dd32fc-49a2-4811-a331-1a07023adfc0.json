@@ -213,5 +213,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style gun and magazine bans",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "concealed carry and campus carry",
+        "suppressors and repeal of gun laws",
+        "Second Amendment and gun rights statements"
+      ],
+      "places": [
+        "in scope: the Secretary of State 2026 candidate list (https://vip.sdsos.gov/candidatelist.aspx?eid=774) shows Glen A. Vilhauer, State Senator, District 05, on the 11/3/2026 general ballot; a primary-results roundup (https://criticalreport.substack.com/p/2026-sd-senate-primaries) says he won his primary 59.1% to 40.9%",
+        "On the Record (0 meetings found for this person)",
+        "no official or campaign site of his own found; read his 2025 reelection announcement carried by https://dakotawarcollege.com/vilhauer-announces-plans-for-senate-reelection and https://kmit.com/news/236632-south-dakota-sen-glen-vilhauer-seeks-reelection-in-district-5-seat: nothing on the subject",
+        "https://thecandidate.com/states/sd/legislature/senate/5/glen-vilhauer (profile page): nothing on the subject",
+        "https://dakotawarcollege.com/vilhauer-announces-candidacy-for-district-5-senate (2024 candidacy announcement): nothing on the subject",
+        "https://www.sdpb.org/2024-08-06/meet-the-candidates-glen-vilhauer: page text has no candidate answers, audio only; not reviewed as audio",
+        "blocked: https://ballotpedia.org/Glen_Vilhauer (403)",
+        "not reviewed: https://sdlegislature.gov/Legislators/Profile/4706 (page needs JavaScript, returned an empty shell)",
+        "sponsor list: covered by bulk bill data",
+        "news searches on his name plus gun, firearm, Second Amendment, carry and suppressor words: nothing with his own words; only roll-call lists that duplicate the votes already on file"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:56:46.294Z",
+      "by": "source-collector"
+    }
+  ]
 }

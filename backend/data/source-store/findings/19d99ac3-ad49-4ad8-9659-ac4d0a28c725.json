@@ -655,5 +655,27 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "carry a gun without a permit",
+        "gun rights"
+      ],
+      "places": [
+        "status: lost the 2026-06-02 primary (governor race; finished fourth with 21%, per https://news.ballotpedia.org/2026/07/31/incumbent-larry-rhoden-defeats-toby-doeden-in-historic-republican-primary-runoff-for-governor-of-south-dakota/)",
+        "On the Record (0 meetings)",
+        "campaign site https://www.hansenlems2026.com/ (fetched, home page only, nothing on the subject)",
+        "news profile https://www.sdnewswatch.org/jon-hansen-republican-primary-governor/ (nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Jon_Hansen (blocked: empty page)",
+        "web search on name plus gun words: nothing on the subject",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-17T23:01:58.139Z",
+      "by": "source-collector"
+    }
+  ]
 }

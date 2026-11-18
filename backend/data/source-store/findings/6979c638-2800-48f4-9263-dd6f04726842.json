@@ -955,7 +955,55 @@
           "sha256": "73d1a22061cda7294f838ac7098fa76c56707137da5c1f03eccfee312b1bb846"
         }
       }
+    },
+    {
+      "id": "3a5d2bca0f93c1711af36e10c5783d3d0c50e91b9a5040d117696df8ac956abd",
+      "kind": "own-words",
+      "url": "https://www.taffyhoward.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "A resolute supporter of the right to bear arms, Taffy is dedicated to preserving our Second Amendment freedoms while advocating for responsible gun ownership.",
+      "note": "Campaign site home page, under a 'Gun Rights Defender' heading; general statement on the right to bear arms and responsible gun ownership. Page is undated (fetched 2026-11-17), so the date is approximate.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment",
+        "responsible gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:49:24.733Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "responsible gun ownership",
+        "carry a gun without a permit",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.taffyhoward.com/ (read home page; one gun-rights statement)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Taffy_Howard",
+        "blocked: https://thedakotascout.com/p/meet-the-candidate-taffy-howard-seeks",
+        "web search on name plus Second Amendment: only an NRA-grade roundup and tracking pages, no own words; not fetched",
+        "https://news.yahoo.com/heres-every-nra-grade-issued-143400450.html: not reviewed (no usable text for this person)",
+        "official legislature profile page: not reviewed (sponsor and vote pages covered by bulk bill data)",
+        "scope: sitting state senator; campaign site names her race for the state Senate in 2026 against Jason Green"
+      ],
+      "found": 1,
+      "at": "2026-11-17T23:49:24.733Z",
+      "by": "source-collector"
+    }
+  ]
 }

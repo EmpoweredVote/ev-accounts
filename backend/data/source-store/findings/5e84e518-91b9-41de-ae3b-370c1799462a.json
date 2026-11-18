@@ -506,7 +506,60 @@
           "sha256": "3883f8ca6dd06ee3e0fbe94e402c292e9a44243cac748834346a1e23e9ce57da"
         }
       }
+    },
+    {
+      "id": "33996a85295c243af2544c9a89e48cf1adbc216d516fa07e0014be4dfc132413",
+      "kind": "own-words",
+      "url": "https://www.votesydneydavis.com/s/Senator-Sydney-Davis-2025-Week-of-March-10-13.pdf",
+      "date": "2025-03-13",
+      "date_precision": "month",
+      "passage": "This session, we strengthened Second Amendment rights and expanded personal freedoms. New laws ensure homeowners and renters can't be restricted from carrying concealed due to housing covenants, allow municipal and county employees to carry in more locations, including bars, and protect firearm privacy by preventing separate tracking of gun purchases. Additionally, college students now have the right to carry concealed on campus, ensuring equal access to self-defense.",
+      "note": "End-of-session newsletter from her campaign site. She describes the 2025 gun laws (housing covenants, carry by local government employees, no separate tracking of gun purchases, campus carry) as strengthening Second Amendment rights.",
+      "subjects": [
+        "Second Amendment protections",
+        "carry a concealed gun in more places",
+        "carry on college campuses",
+        "gun purchase privacy"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T22:57:29.037Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment protections",
+        "carry a concealed gun without limits from housing covenants",
+        "carry on college campuses",
+        "carry in more public places",
+        "gun purchase privacy",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.votesydneydavis.com (home and about pages read; confirms she is the District 17 senator seeking re-election, no gun statement on those pages)",
+        "campaign site weekly updates: 36 newsletter PDFs (2023 interim, 2025 and 2026 sessions) text-searched for gun words; one relevant, the 2025 session wrap-up",
+        "in scope: won the June 2, 2026 primary 1,944 to 596 and had no general-election challenger, per https://criticalreport.substack.com/p/2026-sd-senate-primaries",
+        "legislature member page https://sdlegislature.gov/Legislators/Profile/4595: page only showed a loading notice, not reviewed",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Sydney_Davis (403)",
+        "web searches: two news searches on name plus gun words found no other own-words statements or interviews",
+        "an undated campaign-site newsletter PDF (https://www.votesydneydavis.com/s/State-House.pdf) mentions gun laws but names no author; not used",
+        "ontheissues.org: appeared only as a lead, nothing on this person"
+      ],
+      "found": 1,
+      "at": "2026-11-17T22:57:29.037Z",
+      "by": "source-collector"
+    }
+  ]
 }

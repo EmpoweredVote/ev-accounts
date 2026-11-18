@@ -294,7 +294,54 @@
           "sha256": "9fedfa9a17db2c14e9dc4267aac6588183841d09ca9a488ef351020d068fa6ec"
         }
       }
+    },
+    {
+      "id": "4ff1ff3a4ddc0ceb020b1c80ba8d1cc58ec6433ce7570626211c5350d7781c11",
+      "kind": "own-words",
+      "url": "https://www.sdpb.org/politics/2026-02-03/gun-debate-spirals-into-frivolous-barbs-in-house-education-committee",
+      "date": "2026-02-03",
+      "date_precision": "day",
+      "passage": "They can carry almost everywhere else in South Dakota legally already. Our young adults – especially our females – on college campuses should not have to pay close to hundreds of dollars and give their fingerprints to the FBI to defend themselves.",
+      "note": "Quoted by SDPB (a news story) speaking for his campus bill in the House Education Committee, which would drop the enhanced permit needed to carry a concealed pistol on public college campuses. The story says the bill was killed in committee. Story date used; hearing date may be a day or so earlier.",
+      "subjects": [
+        "permit to carry a concealed pistol on college campuses",
+        "carry a gun without extra permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:00:20.230Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "permit to carry a concealed pistol on college campuses",
+        "carry a gun without extra permit",
+        "guns in schools",
+        "general gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 appearances for this person)",
+        "sponsor list: covered by bulk bill data",
+        "https://en.wikipedia.org/wiki/Dylan_C._Jordan (confirms sitting District 4 House member; nothing on the subject)",
+        "web search on name plus subject words (found one news story, saved)",
+        "https://www.sdpb.org/politics/2026-02-03/gun-debate-spirals-into-frivolous-barbs-in-house-education-committee (news story with direct quotes, saved)",
+        "not reviewed: https://www.theinterviewpodcast.org/the-interview-126-dylan-jordan-after-session/ (audio only, no transcript)",
+        "not reviewed: https://www.theinterviewpodcast.org/the-interview-109-dylan-jordan-a-dj-for-house/ (blocked, HTTP 429)",
+        "blocked: https://ballotpedia.org/Dylan_Jordan (HTTP 202, no page text)",
+        "blocked: https://sdlegislature.gov/Legislators/Profile/5282/Detail (browser-check page only)",
+        "no official or campaign site of their own found or read; 2026 general-election ballot status not confirmed"
+      ],
+      "found": 1,
+      "at": "2026-11-17T23:00:20.230Z",
+      "by": "source-collector"
+    }
+  ]
 }

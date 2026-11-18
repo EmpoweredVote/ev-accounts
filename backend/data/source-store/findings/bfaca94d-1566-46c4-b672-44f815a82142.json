@@ -213,5 +213,59 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "suppressors and short-barrelled rifles",
+        "Second Amendment general statements",
+        "gun rights"
+      ],
+      "places": [
+        "scope: a news roundup of the June 2 2026 South Dakota Senate primaries (https://criticalreport.substack.com/p/2026-sd-senate-primaries) says he won his District 23 primary; still in scope",
+        "On the Record (0 appearances, 0 name matches)",
+        "campaign site: blocked: https://www.lapkaforsd.com (domain does not resolve)",
+        "blocked: https://ballotpedia.org/Mark_Lapka (fetch returned an empty page)",
+        "Wikipedia page https://en.wikipedia.org/wiki/Mark_Lapka (office and term only, nothing on the subject)",
+        "official legislature member page https://sdlegislature.gov/Legislators/Profile/2253 (not reviewed: page loads by script, no readable text)",
+        "sponsor list: covered by bulk bill data",
+        "two web searches on his name plus gun, firearm and Second Amendment words: only trackers and news stories about other lawmakers; no statement by him found",
+        "not reviewed: ontheissues.org, vote411 (leads only)"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:58:08.214Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation general",
+        "campus carry / concealed carry",
+        "Second Amendment statements",
+        "background checks",
+        "assault-style weapons",
+        "red-flag orders",
+        "permitless carry"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name matches)",
+        "https://en.wikipedia.org/wiki/Mark_Lapka (confirms sitting state senator, district 23, since January 2025; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Mark_Lapka (HTTP 403)",
+        "blocked: https://lapkaforsd.com (no response)",
+        "https://sdlegislature.gov/Legislators/Profile/5025 (page loaded, nothing on the subject; may not be his profile)",
+        "sponsor list: covered by bulk bill data",
+        "two news searches on his name plus gun, campus carry and Second Amendment words: no statement of his own found",
+        "not confirmed from a page whether he is on the 2026 general-election ballot"
+      ],
+      "found": 0,
+      "at": "2026-11-17T23:02:37.388Z",
+      "by": "source-collector"
+    }
+  ]
 }

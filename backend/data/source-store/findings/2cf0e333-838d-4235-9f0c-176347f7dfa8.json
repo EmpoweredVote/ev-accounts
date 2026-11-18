@@ -1,0 +1,38 @@
+{
+  "politician_id": "2cf0e333-838d-4235-9f0c-176347f7dfa8",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of gun or magazine",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "suppressors and registration repeal",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name matches)",
+        "scope: web search results name him as the candidate for state attorney general in the Nov 3 2026 general election; the election date has already passed; no result-page was read that confirms the outcome",
+        "campaign site: not found by search; not reviewed",
+        "official site: not reviewed (no page located)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Lance_Russell (empty page returned)",
+        "not reviewed: https://www.newsfromthestates.com/node/426523 (fetched, no gun-related text found; may be a partial page)",
+        "not reviewed: https://www.newsfromthestates.com/node/421434 (empty text)",
+        "https://custercountychronicle.com/node/91677 (announcement story; nothing on the subject)",
+        "https://rapidcitypost.com/?p=34073 (page text not readable; nothing on the subject found)",
+        "https://www.plainsman.com/stories/ag-candidate-speaks-at-gop-luncheon,56438 (empty text)",
+        "https://m.washingtontimes.com/news/2018/jun/22/3-candidates-vying-to-be-republican-attorney-gener/ (empty text)",
+        "https://www.ballotready.org/people/lance-russell (nothing on the subject)",
+        "https://en.wikipedia.org/wiki/Lance_Russell_(politician) (nothing on the subject)",
+        "news search on name plus gun words: nothing by him on the subject; results were about the current office-holder, not him"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:55:50.521Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -476,7 +476,83 @@
           "sha256": "8c1c4acc557d3f8ae889d48624ae1ac822dbe2871fd8e56443759bae6f70dced"
         }
       }
+    },
+    {
+      "id": "525b585ab1cce83f6599867a4f29becc7319374c066feca1560455367b42518f",
+      "kind": "record",
+      "url": "https://www.nraila.org/articles/20250313/south-dakota-nra-congratulates-pro-gun-bill-prime-sponsors",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-100-2025",
+      "act": "sponsor",
+      "note": "A gun-rights group's release lists him first among the sponsors of Senate Bill 100, which lets enhanced permit holders carry on the campus of a state higher-education institution, and shows him in a photo with the sponsors. The release is by an outside group, not him.",
+      "subjects": [
+        "carry permits and campus carry",
+        "carry a gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T22:56:06.471Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d09c6c33208799feba93ca50c833f9757fec10123750d11ea0fb419e64167066",
+      "kind": "record",
+      "url": "https://dakotafreepress.com/2023/12/26/hb-1024-kevin-jensen-and-other-republicans-uphold-federal-gun-control-to-wag-fingers-at-medical-marijuana-users",
+      "date": "2022-01-01",
+      "date_precision": "year",
+      "instrument_id": "SD-HB-1052-2022",
+      "act": "sponsor",
+      "note": "A critical blog post states he co-sponsored and voted for House Bill 1052 (2022), which would have barred the state from helping enforce federal gun laws. This is the blogger's account, not the legislature's page, and was not checked against it.",
+      "subjects": [
+        "state help enforcing federal gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T22:56:06.471Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "carry permits and campus carry",
+        "state help enforcing federal gun laws",
+        "silencers and controlled weapons",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "legislature member bills page https://sdlegislature.gov/Legislators/Profile/4510/Bills (needs JavaScript, only a loading shell returned; not reviewed)",
+        "official/campaign site: no address found in search; the SDPB candidate page only mentions a campaign page without a readable link (not reviewed)",
+        "blocked: https://www.ammoland.com/2026/01/south-dakota-bill-to-allow-gun-silencers-as-un-controlled-weapons-introduced/ (bot check)",
+        "blocked: https://ballotpedia.org/Kevin_Jensen_(South_Dakota) (empty page)",
+        "blocked: https://www.thedakotascout.com/p/meet-the-candidate-kevin-jensen (only headline returned, article text not available)",
+        "SDPB candidate profile https://www.sdpb.org/2024-08-06/meet-the-candidates-kevin-jensen (confirms Senate District 16 run in 2024, nothing on the subject)",
+        "news story on the 2025 campus-carry bill (Yahoo/South Dakota Searchlight): does not quote him",
+        "NRA-ILA release 2025-03-13 (names him as a sponsor of SB 100)",
+        "news blog post on HB 1024 (2023) and HB 1052 (2022)",
+        "two web searches on name plus gun words; no own-words statement found",
+        "2026 ballot status not confirmed; Senate District 16 incumbent per https://wevoteproject.com/officials/kevin-jensen"
+      ],
+      "found": 2,
+      "at": "2026-11-17T22:56:06.471Z",
+      "by": "source-collector"
+    }
+  ]
 }

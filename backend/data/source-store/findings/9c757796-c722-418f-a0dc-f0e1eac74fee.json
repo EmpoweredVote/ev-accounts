@@ -213,5 +213,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "repeal of gun laws",
+        "Second Amendment and gun rights statements"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "https://laurennelsonforsenate.com/ (campaign site, read: nothing on the subject; site search for 'gun' returned no results)",
+        "https://laurennelsonforsenate.com/wp-content/uploads/2025/11/Sen-Lauren-Nelson-November-2025-Newsletter.pdf (read: nothing on the subject)",
+        "https://www.sdpb.org/2024-08-06/meet-the-candidates-lauren-nelson (2024 candidate profile: confirms Senate District 18 candidate, nothing on the subject; the audio was not reviewed)",
+        "Ballotpedia: page for this person returned no usable text, not reviewed: https://ballotpedia.org/Lauren_Nelson_(South_Dakota)",
+        "web search for name plus office: confirms sitting state senator for District 18 (Yankton area), term through January 2027; I could not confirm 2026 ballot status from a fetched page, and found no sign of a lost primary or withdrawal",
+        "web search for name plus gun/firearm words: nothing on the subject",
+        "sponsor list: covered by bulk bill data",
+        "legislature vote pages: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:57:39.246Z",
+      "by": "source-collector"
+    }
+  ]
 }

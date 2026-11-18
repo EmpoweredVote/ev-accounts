@@ -931,5 +931,56 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun on a college campus",
+        "carry permits",
+        "gun-free zones",
+        "suppressors",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "scope: sitting House member, confirmed by a news story and the NRA-ILA sponsor photo caption naming Rep. Spencer Gosch; Wikipedia (a lead only) shows him back in his House seat since the 2024 election",
+        "https://www.nraila.org/articles/20250313/south-dakota-nra-congratulates-pro-gun-bill-prime-sponsors (fetched; names him as a sponsor of SB 100, already on file; no words of his)",
+        "https://www.yahoo.com/news/concealed-guns-campus-could-become-003416161.html (a Searchlight story; the fetch tool's summary gave a campus-carry floor quote from him on 2025-03-05, but the raw page text did not contain it when checked with curl, so it is not saved; not verified)",
+        "https://southdakotasearchlight.com/2025/03/06/concealed-guns-on-campus-could-become-reality-with-south-dakota-governors-signature/ (curl returned nothing usable; original not reached)",
+        "https://bearingarms.com/camedwards/2025/03/13/south-dakota-governor-has-opportunity-to-scrap-a-gun-free-zone-n1227970 (fetched; the 'Gun-free zones don't work' quote there is from lobbyist Brian Gosch, a different person, so not saved)",
+        "official legislature member page: not reviewed in depth (profile page loaded, no own-words content on the subject)",
+        "campaign site: not reviewed, none found in search",
+        "Ballotpedia: not reviewed",
+        "web searches: 2 of 10 used; no personal statements, newsletters or questionnaires found on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:59:48.616Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "concealed handguns on college campuses",
+        "carry a gun without a permit",
+        "suppressors",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "https://sdlegislature.gov/Legislators/Profile/1759 (returned 200 but is a script-built page; no text readable, so own member page not actually read)",
+        "blocked: https://ballotpedia.org/Spencer_Gosch (empty response)",
+        "not reviewed: https://www.yahoo.com/news/concealed-guns-campus-could-become-003416161.html (empty by curl; only a fetch-tool summary available, which gave two quoted sentences from a March 2025 campus-carry floor debate, not verified against page text so not saved)",
+        "blocked: https://southdakotasearchlight.com/2025/03/05/concealed-guns-on-campus-could-become-reality-with-south-dakota-governors-signature/ (empty response)",
+        "https://www.nraila.org/articles/20250313/south-dakota-nra-congratulates-pro-gun-bill-prime-sponsors (fetched; lists Gosch as a sponsor of SB 100 of 2025, already on file as a vote; no own words)",
+        "one web search on name plus gun words; no official or campaign site found; scope (2026 ballot) not confirmed beyond a 2026 floor vote on file"
+      ],
+      "found": 0,
+      "at": "2026-11-17T23:02:38.156Z",
+      "by": "source-collector"
+    }
+  ]
 }

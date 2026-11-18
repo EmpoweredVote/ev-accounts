@@ -594,5 +594,29 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "carry permits",
+        "background checks",
+        "bans on gun types"
+      ],
+      "places": [
+        "status: lost the 2026-06-02 primary (a news story from 2026-06-03 reports the challenger won 63.5% to 36.5%): https://dakotafreepress.com/2026/06/03/aberdeen-gop-picks-new-blood-boots-perry-and-novstrup-from-legislature/",
+        "On the Record (0 meetings)",
+        "https://en.wikipedia.org/wiki/Carl_E._Perry (lists him as District 3 senator with a successor-elect)",
+        "blocked: https://sdlegislature.gov/Legislators/Profile/4543/Bills (page needs a script-capable browser, returned nothing)",
+        "blocked: https://ballotpedia.org/Carl_Perry (empty page)",
+        "campaign site https://www.carlperry.org/ (fetched, returned no text)",
+        "sponsor list: covered by bulk bill data",
+        "web search: two searches on name plus gun words found no statement by him on the subject; stopped because he is out of scope"
+      ],
+      "found": 0,
+      "at": "2026-11-17T23:49:25.155Z",
+      "by": "source-collector"
+    }
+  ]
 }

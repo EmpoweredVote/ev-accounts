@@ -213,5 +213,27 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm regulation",
+        "carry permits",
+        "background checks",
+        "Second Amendment"
+      ],
+      "places": [
+        "status: lost the 2026-06-02 primary (49%-51% to William Meirose), per https://www.sdnewswatch.org/legislature-primary-election-recap/",
+        "On the Record (0 meetings)",
+        "https://thecandidate.com/states/sd/legislature/senate/29/john-carley (nothing on the subject)",
+        "https://sdlegislature.gov/Legislators/Profile/4692 (page needs scripts, blank when fetched; sponsor list: covered by bulk bill data)",
+        "blocked: https://ballotpedia.org/John_Carley (empty 202 response)",
+        "one news search on name plus gun words (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-11-17T23:01:58.139Z",
+      "by": "source-collector"
+    }
+  ]
 }

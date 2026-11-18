@@ -885,5 +885,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on gun types or magazines",
+        "check every gun buyer",
+        "permits and carry without a permit",
+        "red-flag orders",
+        "suppressors and federal gun rules",
+        "campus carry",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "in scope: won the 2026 primary for Senate District 14 (71.9%), per https://criticalreport.substack.com/p/2026-sd-senate-primaries; the Secretary of State candidate list shows him for the 11/3/2026 general (seen in search result only)",
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Larry_P._Zikmund (empty page)",
+        "not reviewed: https://sdlegislature.gov/Legislators/Profile/492 (needs JavaScript, no text served)",
+        "https://siouxfallschamber.com/officials/larry-zikmund (fetched, no readable text on the subject)",
+        "https://goodparty.org/candidate/larry-zikmund/south-dakota-state-senate-district-14 (fetched, nothing on the subject)",
+        "blocked: https://vote.norml.org/politicians/137866 (connection refused)",
+        "news searches on name plus gun words: nothing quoting him; results were bill and advocacy-group pages that do not name him",
+        "no official or campaign site with an issues page found; nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:59:18.882Z",
+      "by": "source-collector"
+    }
+  ]
 }

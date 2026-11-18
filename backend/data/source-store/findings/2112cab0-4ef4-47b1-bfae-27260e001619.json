@@ -478,5 +478,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "suppressors and repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 appearances found for this person)",
+        "campaign site https://www.kadynforhouse.com (home page read: she describes running for re-election to the House; searched for gun, firearm and Second Amendment words, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Kadyn_Wittman (403)",
+        "sponsor list: covered by bulk bill data",
+        "legislature profile https://sdlegislature.gov/Historical/Legislator/Profile/4022 (page needs JavaScript, no readable text; not reviewed)",
+        "Wikipedia page for her (summary only; lists priorities of school meals, homelessness and agriculture, nothing on the subject)",
+        "two web news searches on her name plus gun and firearm words: nothing by or about her on the subject",
+        "not reviewed: 2026 general-election result for House District 15 (not confirmed; she is a sitting representative and her campaign site says she is running for re-election)"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:55:55.519Z",
+      "by": "source-collector"
+    }
+  ]
 }

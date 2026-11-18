@@ -1049,5 +1049,58 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans and magazine limits",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://sdpb.org/2024-08-09/meet-the-candidates-tony-randolph (2024 candidate profile: confirms the office, District 35; nothing on the subject)",
+        "https://en.wikipedia.org/wiki/Tony_Randolph (confirms the office; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Tony_Randolph (empty page)",
+        "blocked: https://ballotpedia.org/South_Dakota_House_of_Representatives_District_35 (empty page)",
+        "blocked: https://ballotpedia.org/Republican_Party_primaries_in_South_Dakota,_2026 (empty page)",
+        "not reviewed: https://criticalreport.substack.com/p/2026-sd-state-house-primaries (no text returned; 2026 primary and ballot status for this person not confirmed)",
+        "not reviewed: https://news.yahoo.com/heres-every-nra-grade-issued-143400450.html (a search lead listing a rating for this person; page text not retrieved, undated)",
+        "not reviewed: the member's own campaign page (not located)",
+        "web search on name plus gun words: nothing in their own words",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-17T23:49:20.117Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "carry permits and permitless carry",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "SDPB 2024 candidate profile https://sdpb.org/2024-08-09/meet-the-candidates-tony-randolph (fetched; nothing on the subject)",
+        "the legislature's member bill page https://sdlegislature.gov/Legislators/Profile/1674/Bills (fetched; page is a script shell, covered by bulk bill data)",
+        "blocked: https://ballotpedia.org/Tony_Randolph (403)",
+        "blocked: https://ballotpedia.org/South_Dakota_House_of_Representatives_District_35 (403)",
+        "news search on name plus firearm words (nothing of his own words on the subject)",
+        "search for 2026 ballot status: no page found that confirms or denies his 2026 candidacy; not confirmed",
+        "his own official and campaign sites: not reviewed, no page found by search"
+      ],
+      "found": 0,
+      "at": "2026-11-17T23:51:59.269Z",
+      "by": "source-collector"
+    }
+  ]
 }

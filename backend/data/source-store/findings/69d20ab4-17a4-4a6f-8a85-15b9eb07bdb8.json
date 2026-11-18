@@ -241,7 +241,99 @@
           "sha256": "3883f8ca6dd06ee3e0fbe94e402c292e9a44243cac748834346a1e23e9ce57da"
         }
       }
+    },
+    {
+      "id": "34aa3f6edb57408d665c0697bd89259fcea8a5e71251866318b05fac10b21557",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/concealed-guns-campus-could-become-003416161.html",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "passage": "I slept very little last night because I couldn't make peace with my God if I didn't stand up and speak against this bill today",
+      "note": "House floor remarks quoted by South Dakota Searchlight (via a news aggregator), speaking against the bill to let trained people carry concealed handguns on college campuses. He was the first to rise in opposition. The story says he cited his Highway Patrol time and doubted college students would secure guns as carefully as military or police.",
+      "subjects": [
+        "carry a gun on college campuses",
+        "concealed carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:02:39.533Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0c8a07d28be81bef20e20837fcb19d61f6a7fe4d2e3e5da1f145d025c41ec9f2",
+      "kind": "own-words",
+      "url": "https://www.yahoo.com/news/south-dakota-governor-signs-bills-194749508.html",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "passage": "A locked box in a dorm room just doesn't seem like a good plan",
+      "note": "Floor remark quoted by South Dakota Searchlight (via a news aggregator, story dated 2025-03-24) on the campus concealed-carry bill. It describes him as a former state trooper who raised gun-safety concerns about teenagers. The same quote appears in the 2025-03-07 story.",
+      "subjects": [
+        "carry a gun on college campuses",
+        "gun safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:02:39.533Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns and federal gun rules",
+        "carry permits and carrying without a permit",
+        "repealing gun laws",
+        "general statements on gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "House and Senate floor votes: covered by bulk bill data",
+        "https://www.sdpb.org/2024-08-14/meet-the-candidates-jim-halverson (2024 candidate profile: confirms District 21 House candidate, electrician; nothing on the subject)",
+        "https://criticalreport.substack.com/p/2026-sd-state-house-primaries (confirms he won the 2026 primary in District 21 with 30.1%, so he is in scope)",
+        "blocked: https://ballotpedia.org/Jim_Halverson_(South_Dakota) (empty page)",
+        "blocked: https://sdlegislature.gov/Legislators/Profile/21098 (page needs a script to load, no content)",
+        "not reviewed: official or campaign site (no address found in search; only a link on the SDPB profile)",
+        "web searches on his name plus gun words: no statement of his own on the subject found",
+        "https://www.yahoo.com/news/state-lawmakers-shoot-more-firearms-171746289.html (news story on firearm bills; nothing of his own)"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:57:22.005Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun on college campuses",
+        "concealed carry permits",
+        "gun safety",
+        "guns in bars"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "one web search on name plus firearm words (leads: two Searchlight stories carried by a news aggregator; both fetched and read)",
+        "blocked: https://ballotpedia.org/Jim_Halverson_(South_Dakota) (empty page; 2026 ballot status not confirmed by me)",
+        "not reviewed: official legislature member page and campaign site (not fetched; no own pages read)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://dakotawarcollege.com/?p=114057 (re-election announcement; fetch returned nothing usable)"
+      ],
+      "found": 2,
+      "at": "2026-11-17T23:02:39.533Z",
+      "by": "source-collector"
+    }
+  ]
 }

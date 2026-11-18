@@ -211,7 +211,75 @@
           "sha256": "3883f8ca6dd06ee3e0fbe94e402c292e9a44243cac748834346a1e23e9ce57da"
         }
       }
+    },
+    {
+      "id": "a654d5f9c1779247601de4bb61005008a979faa03a1b6c35ab4c11cd93a03e61",
+      "kind": "own-words",
+      "url": "https://gregblancforsenate.com",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Whether in committee or on the senate floor, my voting record proves, I am Pro-Limited Government, Pro-Fiscal Responsibility, Pro-Lower Property Taxes, Pro-Family Values, Pro-Parental Rights, Pro-Life, Pro-2nd Amendment, Pro-Law Enforcement, Pro-Military, and Pro-Education.",
+      "note": "Campaign site introduction in his own voice; he lists support for the Second Amendment among his stated commitments. General statement, no specific policy named.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T22:58:55.470Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2ee68293566fb21d43468f03e60aedc8c8455fb1805571c774360ad91c8438e6",
+      "kind": "own-words",
+      "url": "https://gregblancforsenate.com",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "A steadfast defender of the right to bear arms, Greg is committed to upholding our Second Amendment freedoms in every way, shape and form.",
+      "note": "Campaign site issues blurb titled as gun rights, written in the third person on his campaign's site. General statement, no specific policy named.",
+      "subjects": [
+        "general statement on gun rights and the Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T22:58:55.470Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "suppressors"
+      ],
+      "places": [
+        "status check: sitting state senator for District 35 (Wikipedia and the campaign site); a news search reports a June 2 2026 primary win, but only one secondary source and no official result page was fetched",
+        "On the Record (0 appearances, extract-otr run with name search)",
+        "campaign site https://gregblancforsenate.com (home page read; /issues is a 404)",
+        "blocked: https://ballotpedia.org/Greg_Blanc (403)",
+        "https://en.wikipedia.org/wiki/Greg_Blanc (identity only, nothing on the subject)",
+        "one news search on name plus gun words: nothing on the subject by this person",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://sdlegislature.gov/Legislators/Profile/4709/Bills (sponsor and vote pages covered by bulk bill data)",
+        "not reviewed: the campaign site 'Political pulse' interview link and the 2026 reelection announcement page",
+        "not reviewed: debate, forum or questionnaire answers (none found in the searches)"
+      ],
+      "found": 2,
+      "at": "2026-11-17T22:58:55.470Z",
+      "by": "source-collector"
+    }
+  ]
 }

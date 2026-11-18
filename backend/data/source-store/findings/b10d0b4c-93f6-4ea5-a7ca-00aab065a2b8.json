@@ -418,5 +418,33 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation general",
+        "assault-style weapon and magazine bans",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "suppressors and short-barrelled rifles",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://kolbeckforsouthdakota.com/ (read: home page carries a third-party gun-group rating badge, which is not his own words; the questionnaire text visible there is about employer vaccine rules, nothing on guns; the separate questionnaire page link could not be located)",
+        "Wikipedia https://en.wikipedia.org/wiki/Steve_Kolbeck (read, nothing on the subject; confirms current senator in District 2)",
+        "https://thecandidate.com/states/sd/legislature/senate/2/steve-kolbeck (read, confirms office, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Steve_Kolbeck (403)",
+        "not reviewed: https://sdlegislature.gov/Legislators/Profile/4624 (page is script-rendered, no readable text)",
+        "sponsor list: covered by bulk bill data",
+        "two news/web searches on name plus gun words: nothing on the subject",
+        "scope note: 2026 general-election ballot status not confirmed (Ballotpedia blocked); seat term ends January 2027"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:58:08.843Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -889,7 +889,57 @@
           "sha256": "1251b7134f4f6b6679a4746d23271fa95fe0cc5479d50d9dff064e78de01cb0b"
         }
       }
+    },
+    {
+      "id": "e30487c7d95a81d89fcc3235e6fe9ce6cda625bfcd4eba35a0483ed2670f62f5",
+      "kind": "own-words",
+      "url": "https://www.ballotready.org/people/rebecca-reimer",
+      "date": "2026-11-17",
+      "date_precision": "year",
+      "passage": "Representative Reimer is unapologetically pro-gun and will always defend the rights of law-abiding citizens to keep and bear arms. She opposes any attempt—state or federal—to restrict gun ownership and firmly supports policies that protect self-defense, preserve our hunting traditions, and ensure South Dakotans can exercise their constitutional rights without interference.",
+      "note": "Guns issue stance on her BallotReady candidate profile. It is written in the third person, so whether she wrote it or approved it is not confirmed; the page date is the fetch date, as no publication date is shown (2026 election cycle).",
+      "subjects": [
+        "gun rights",
+        "right to keep and bear arms",
+        "opposes limits on gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T22:59:27.159Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the right to keep and bear arms",
+        "limits on gun ownership",
+        "assault-style gun and magazine bans",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://www.rebeccareimer.com (home page read; nothing on the subject)",
+        "BallotReady profile https://www.ballotready.org/people/rebecca-reimer (confirms current House seat 26B and a 2026 general-election run for Senate District 26; has a guns issue stance)",
+        "legislature member page https://sdlegislature.gov/Legislators/Profile/1448 (page loads as an empty shell; nothing readable)",
+        "sponsor list: covered by bulk bill data",
+        "Ballotpedia https://ballotpedia.org/Rebecca_Reimer (nothing on the subject)",
+        "blocked: https://justfacts.votesmart.org/candidate/biography/180869/rebecca-reimer",
+        "thecandidate.com profile (nothing on the subject)",
+        "two web searches on name plus gun words (no statement from her found)"
+      ],
+      "found": 1,
+      "at": "2026-11-17T22:59:27.159Z",
+      "by": "source-collector"
+    }
+  ]
 }

@@ -239,7 +239,101 @@
           "sha256": "25f0a886f4e45f9769ed5194ad1b79d7a4b2573612ae42a41a68788459aed3c5"
         }
       }
+    },
+    {
+      "id": "934caf60185fda932f74e00184a9e6d4f60c5c8c70574a61098af04a1270eef2",
+      "kind": "own-words",
+      "url": "https://sdpb.org/politics/2025-02-13/conceal-carry-on-public-campus-bill-advances",
+      "date": "2025-02-13",
+      "date_precision": "day",
+      "passage": "South Dakota is a constitutional carry state, which means that a permit is not required to carry a concealed self-defense weapon across our state. There are no laws against law-abiding adults stepping foot on the campus of a higher education institution without a firearm.",
+      "note": "Quoted by SDPB News in a story on SB 100 (campus carry for enhanced permit holders); she is described as the bill's sponsor and says it strengthens concealed carry law.",
+      "subjects": [
+        "carry a gun without a permit",
+        "carry on college campuses"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:00:12.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fe15c8a1e4c1f7704ca65ea7feb512937cc254345023c45d87772224d4bb5bc6",
+      "kind": "record",
+      "url": "https://www.nraila.org/articles/20250313/south-dakota-nra-congratulates-pro-gun-bill-prime-sponsors",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "instrument_id": "SD-HB-1218-2025",
+      "act": "sponsor",
+      "note": "A gun-rights group's release lists her as Senate sponsor of HB 1218, which bars local governments from limiting concealed carry on property they own or lease for employees, officers and volunteers, and repeals gun-free zones at eateries and places serving alcohol.",
+      "subjects": [
+        "carry in bars and local government buildings",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:00:12.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f2a352a9516807293364757db1c3970db68f0b8883971721c5cb8fa747916ff3",
+      "kind": "record",
+      "url": "https://www.nraila.org/articles/20250313/south-dakota-nra-congratulates-pro-gun-bill-prime-sponsors",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "instrument_id": "SD-HB-1222-2025",
+      "act": "sponsor",
+      "note": "The same release lists her as Senate sponsor of HB 1222, which lets permit holders store firearms in vehicles on school grounds.",
+      "subjects": [
+        "guns stored in vehicles on school grounds",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:00:12.564Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "carry on college campuses",
+        "carry in bars and local government buildings",
+        "guns stored in vehicles on school grounds",
+        "general Second Amendment statements",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "extreme-risk orders"
+      ],
+      "places": [
+        "On the Record (0 meetings, no appearances)",
+        "sponsor list: covered by bulk bill data",
+        "scope confirmed: sitting District 21 state senator; won the June 2, 2026 primary 59%-41% per https://www.sdnewswatch.org/legislature-primary-election-recap/ and faces a general-election opponent",
+        "https://sdlegislature.gov/Legislators/Profile/4697 (official member page, read; no statements on the subject)",
+        "https://en.wikipedia.org/wiki/Mykala_Voita (read; lead to other sources)",
+        "blocked: https://ballotpedia.org/MyKala_Voita (403)",
+        "web search for name plus gun words (2 searches); found a radio news story and a national gun-rights group's release",
+        "official personal site / campaign site: not located in search results; not reviewed",
+        "nothing on the subject: background checks, assault-style gun or magazine bans, extreme-risk orders, ghost guns, pistol-brace rule, suppressor or short-barrelled rifle repeal"
+      ],
+      "found": 3,
+      "at": "2026-11-17T23:00:12.564Z",
+      "by": "source-collector"
+    }
+  ]
 }

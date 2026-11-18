@@ -978,5 +978,60 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "suppressors and short-barrelled rifles",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "https://sdpb.org/2024-08-06/meet-the-candidates-chris-karr (candidate profile, read: background only, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Chris_Karr (page came back empty)",
+        "not reviewed: https://sdlegislature.gov/Legislators/Profile/3959/Bills (page only showed a loading screen)",
+        "web search on name plus gun words (twice): no own-words passage on the subject found; search results suggest he is the District 11 state senator and was on the November 2026 general-election ballot, but this is from search summaries, not a page I read",
+        "not reviewed: official or campaign site (no address reached)"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:59:14.163Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "Second Amendment general statement",
+        "firearms regulation"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "sponsor list: covered by bulk bill data",
+        "web search: confirms sitting state senator for District 11 (Senate president pro tempore since Jan 2025, elected to the Senate in 2024); not a 2026 candidate in the results, so in scope as a sitting official",
+        "not reviewed: https://sdlegislature.gov/Legislators/Profile/1747 (member page loads only by script; the fetch returned a 'Loading' notice and no content)",
+        "blocked: https://ballotpedia.org/Chris_Karr (HTTP 403)",
+        "https://sdpb.org/2024-08-06/meet-the-candidates-chris-karr (a 77-word candidate video page; nothing on the subject)",
+        "news search on name plus gun words: only results about a different senator's permitless carry bill, a joint leadership statement on the Minnesota shootings (no gun content seen), and nothing quoting Karr on guns",
+        "https://sdlegislature.gov/Legislators/Profile/3959/Bills (legislature member bill page, 2022; loads, nothing on gun words read; sponsor list: covered by bulk bill data)",
+        "https://csgmidwest.org/wp-content/uploads/2025/10/sen-pro-tem-carr.pdf (interview profile; no gun, firearm or Second Amendment text)",
+        "https://siouxfallschamber.com/officials/chris-karr (chamber profile; nothing on the subject)",
+        "blocked: https://justfacts.votesmart.org/candidate/biography/121328/ (HTTP 403)",
+        "https://www.ontheissues.org/SD/Chris_Karr.htm (404, lead only anyway)",
+        "no personal or campaign site found in two further name searches; second news search found nothing on guns"
+      ],
+      "found": 0,
+      "at": "2026-11-17T23:02:55.988Z",
+      "by": "source-collector"
+    }
+  ]
 }

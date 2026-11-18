@@ -239,5 +239,36 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "Second Amendment and gun rights statements",
+        "repeal of gun laws",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://joyhohn.com/ (home page read; site search for 'gun' returned no results; home page has a 'Protecting Your CONSTITUTIONAL Rights' heading with no gun content)",
+        "campaign news post https://www.joyhohn.com/2025/12/30/joy-hohn-announces-re-election-campaign-for-district-9-senate/ (re-election announcement; covers property rights, taxes, family values, SB 115; nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Joy_Hohn (403)",
+        "blocked: https://thedakotascout.com/p/meet-the-candidate-joy-hohn (403)",
+        "web search: name plus firearms/Second Amendment terms returned only other officials; nothing on the subject by this person",
+        "web search: 2026 primary results from a secondary news summary show her winning the June 2 primary for Senate District 9 with no general-election opponent listed; not confirmed against the official canvass page (not fetched), so she is treated as in scope",
+        "not reviewed: https://sdsos.gov/about-the-office/assets/Press Releases/2026/Official Results for Election.pdf",
+        "not reviewed: https://siouxfallschamber.com/officials/joy-hohn",
+        "not reviewed: ontheissues.org, vote411 (leads only)"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:58:41.498Z",
+      "by": "source-collector"
+    }
+  ]
 }

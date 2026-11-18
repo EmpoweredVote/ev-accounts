@@ -1031,5 +1031,30 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights",
+        "carry permits",
+        "firearm limits",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://en.wikipedia.org/wiki/Jack_Kolbeck (names him as a sitting state House member; no gun content; 2026 ballot status not confirmed)",
+        "blocked: https://ballotpedia.org/Jack_Kolbeck (403)",
+        "https://sdlegislature.gov/Legislators/Profile/4172 (page loads only by script, no readable text)",
+        "https://vote.norml.org/politicians/169016 (empty page text; a search lead about a 2022 bill HB 1066 was not verified)",
+        "one web search on name plus Second Amendment/firearms (nothing in his own words)",
+        "sponsor list: covered by bulk bill data",
+        "nothing on the subject: no official or campaign site with own words found",
+        "not reviewed: further news searches and campaign site not found"
+      ],
+      "found": 0,
+      "at": "2026-11-17T23:49:06.477Z",
+      "by": "source-collector"
+    }
+  ]
 }

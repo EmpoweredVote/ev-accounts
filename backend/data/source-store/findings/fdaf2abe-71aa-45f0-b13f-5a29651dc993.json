@@ -626,5 +626,36 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "concealed carry permits and places",
+        "repeal of gun laws",
+        "federal gun rules",
+        "general statements on gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "sponsor list: covered by bulk bill data",
+        "House vote pages: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Phil_Jensen (empty page returned)",
+        "not reviewed: https://sdlegislature.gov/Legislators/Profile/4375 (page needs a script-capable browser; showed only a browser notice)",
+        "https://sdfreedomcaucus.com/?p=233221 (caucus member page naming him as District 33 House member; its bio text is written about him, not by him, so nothing saved)",
+        "https://www.nraila.org/articles/20250313/south-dakota-nra-congratulates-pro-gun-bill-prime-sponsors (mentions a Senator Jensen, who is Kevin Jensen, a different person; nothing saved)",
+        "https://en.wikipedia.org/wiki/Phil_Jensen (lead only; confirms House District 33 member since 2021)",
+        "campaign site: none found; Facebook page linked from caucus page not reviewed: https://www.facebook.com/PhilJensenSD33",
+        "web news search on name plus gun words: no own-words passage on the subject found",
+        "scope: 2026 primary coverage in a search snippet suggests he won the nomination, but I did not fetch the page or confirm the 2026 general ballot"
+      ],
+      "found": 0,
+      "at": "2026-11-17T23:01:07.034Z",
+      "by": "source-collector"
+    }
+  ]
 }

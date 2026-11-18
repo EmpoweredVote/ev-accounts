@@ -941,5 +941,31 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "Second Amendment"
+      ],
+      "places": [
+        "status: withdrew (date not given; a 2026 state Senate election page lists the District 12 incumbent as withdrawn after filing for reelection; a March 30 2026 news story had reported the filing and a primary challenger) https://en.wikipedia.org/wiki/2026_South_Dakota_Senate_election",
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Arch_Beal (403)",
+        "not reviewed: https://sdlegislature.gov/Legislators/Profile/3899 (page loads by script, no text)",
+        "https://en.wikipedia.org/wiki/Arch_Beal (read; nothing on the subject)",
+        "https://dakotafreepress.com/2026/03/30/absent-all-session-beal-files-for-reelection-to-district-12-senate-faces-primary-challenge (read; nothing on the subject)",
+        "news search on name plus gun words: nothing naming him on the subject",
+        "no personal or campaign site found; own-words search: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:59:35.652Z",
+      "by": "source-collector"
+    }
+  ]
 }

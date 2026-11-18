@@ -556,7 +556,57 @@
           "sha256": "2508f8d504ffef2135bd62ad653531d1a771dc248b2048eb830dbcc74d638bef"
         }
       }
+    },
+    {
+      "id": "74a927aacb1ff4c808b043de238bd946a7d0c8324ce80641b74c23d3ba048d2b",
+      "kind": "own-words",
+      "url": "https://sdpb.org/politics/2025-02-25/senate-committee-advances-gun-legislation-for-land-biuer",
+      "date": "2025-02-25",
+      "date_precision": "day",
+      "passage": "Last year there was an issue with an HOA, it wasn’t in the state, it was outside the state, that was banning guns. We did that proactively,\" Rohl said. \"During that process it came to light that these covenants do exist West River dating back to the 1900s in a lot of cases. That’s why the original intent of the bill was actually to break those. We hit a roadblock with that on the House side, so we figured it’s at least better to at least stop them going forward.",
+      "note": "Quoted by SDPB. He explains HB 1080 (2025), which voids land covenants that restrict firearm and ammunition possession or use, as a follow-up to his 2024 bill. Said the original aim was to break existing covenants, but the House blocked that, so the bill now covers new covenants only.",
+      "subjects": [
+        "gun covenants on land",
+        "general gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:00:22.061Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "suppressors and short-barrelled rifles",
+        "gun covenants on land",
+        "general gun rights and Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "status check: a news roundup of the 2026 state Senate primaries says he won his primary for District 1 and the general election is 2026-11-03 (https://criticalreport.substack.com/p/2026-sd-senate-primaries)",
+        "legislature member page https://sdlegislature.gov/Legislators/Profile/1730: fetched, no name or subject text in the returned page",
+        "blocked: https://ballotpedia.org/Michael_Rohl (403)",
+        "blocked: https://www.ammoland.com/2026/01/south-dakota-bill-to-allow-gun-silencers-as-un-controlled-weapons-introduced/ (bot check)",
+        "no personal campaign site or official issue page found in search",
+        "news search on name plus firearm words: one SDPB story found with his quoted words",
+        "https://www.outdoorlife.com/south-dakota-senator-challenges-gun-free-school-zones-act.md: about a different person, not used",
+        "sponsor list: covered by bulk bill data",
+        "ontheissues.org, vote411: not reviewed, lead-only sources"
+      ],
+      "found": 1,
+      "at": "2026-11-17T23:00:22.061Z",
+      "by": "source-collector"
+    }
+  ]
 }

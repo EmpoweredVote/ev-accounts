@@ -922,5 +922,40 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permits to carry",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "Second Amendment general statements",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "the legislature's member page https://sdlegislature.gov/Legislators/Profile/4656/Detail (fetched, but it is a script-loaded page that shows no text without a browser; confirms nothing on the subject)",
+        "https://en.wikipedia.org/wiki/Tim_Reed (read: former Brookings mayor, House member for District 7 from 2017, now in the Senate for District 7; nothing on the subject)",
+        "https://sdpb.org/2024-08-06/meet-the-candidates-tim-reed (read: running for re-election to Senate District 7 in 2024; nothing on the subject)",
+        "https://www.brookingsradio.com/reed-to-seek-reelection-to-district-7-state-senate/ (nothing on the subject)",
+        "https://brookingsregister.com/article/reed-wants-to-continue-public-service (nothing on the subject)",
+        "https://brookingsregister.com/article/reed-wants-to-continue-work-in-pierre (nothing on the subject)",
+        "https://dakotawarcollege.com/reed-seeks-re-election-to-district-7-senate-seat (nothing on the subject)",
+        "https://dakotawarcollege.com/?p=116648 (nothing on the subject)",
+        "https://dakotawarcollege.com/?p=90767 (nothing on the subject)",
+        "https://justfacts.votesmart.org/candidate/biography/168942/tim-reed (nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Tim_Reed_(South_Dakota): the fetch returned an empty page, so a gap; not reviewed",
+        "campaign site: guessed addresses (timreedsd.com, reedforsd.com) did not resolve; no campaign site found; not reviewed",
+        "two web searches on his name plus gun and Second Amendment words: no statement of his own on the subject",
+        "scope: search results and a booster page list him as the sitting District 7 senator until January 2027 and seeking re-election; I could not find a 2026 ballot list, so the 2026 ballot status is unconfirmed",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-17T23:00:13.947Z",
+      "by": "source-collector"
+    }
+  ]
 }

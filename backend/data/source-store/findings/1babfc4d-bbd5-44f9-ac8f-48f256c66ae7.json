@@ -891,5 +891,59 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment general statements",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "sponsor list: covered by bulk bill data",
+        "https://en.wikipedia.org/wiki/Erin_Healy (read: confirms House District 10 member and House minority leader since Jan 2025; nothing on guns)",
+        "status: sitting District 10 member, term ends Jan 2027; 2026 candidacy not confirmed by any page I could read",
+        "blocked: https://ballotpedia.org/Erin_Healy (empty page)",
+        "blocked: https://ballotpedia.org/South_Dakota_House_of_Representatives_elections,_2026 (empty page)",
+        "blocked: https://ballotpedia.org/South_Dakota_House_of_Representatives_District_10 (empty page)",
+        "blocked: https://sdpb.org/politics/2022-09-28/district-10-house-erin-healy (empty page)",
+        "not reviewed: https://sdlegislature.gov/Legislators/Profile/1000/Detail (page needs scripts, no text returned)",
+        "not reviewed: her campaign site and ActBlue page (only seen as search leads)",
+        "web news search on name plus gun words: nothing on the subject by this person"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:55:53.074Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun in bars",
+        "carry a gun without a permit",
+        "general statement on gun rights",
+        "ban on a type of firearm",
+        "check every gun buyer",
+        "red-flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Erin_Healy (page came back empty to the fetch tool and to curl; 2026 ballot status not confirmed from a page I read; a search summary says her term runs to 2027-01-12 and she is House minority leader)",
+        "blocked: https://sdlegislature.gov/Legislators/Profile/1943 (browser-not-supported page, no member content)",
+        "not reviewed: her campaign site and official caucus pages (not located in the search allowance)",
+        "news: a Yahoo-hosted story from 2025-03-15 on the concealed-carry-in-bars amendment paraphrases her view but has no direct quote of her; nothing usable as own words",
+        "news: an SDPB story of 2026-02-03 on a House committee gun debate does not mention her",
+        "web search on her name plus gun and firearm words: nothing in her own words found"
+      ],
+      "found": 0,
+      "at": "2026-11-17T23:02:49.519Z",
+      "by": "source-collector"
+    }
+  ]
 }

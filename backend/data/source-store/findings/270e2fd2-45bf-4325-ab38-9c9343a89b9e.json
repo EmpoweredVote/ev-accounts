@@ -715,7 +715,72 @@
           "sha256": "1251b7134f4f6b6679a4746d23271fa95fe0cc5479d50d9dff064e78de01cb0b"
         }
       }
+    },
+    {
+      "id": "b20b34a1937decab44f1b87064430d81016d8d9f3764a73921acca06fa850a36",
+      "kind": "own-words",
+      "url": "https://listen.sdpb.org/politics/2022-09-28/public-land-use-issues-highlighted-in-governors-race",
+      "date": "2022-09-28",
+      "date_precision": "day",
+      "passage": "My Frating with the NRA has to do with concealed carry permits and whether or not we needed to do those,\" he said. \"89% of South Dakota agreed with us when we voted on that bill. The other one has to do with whether or not we should conceal carry in the Capitol. That was a pro-law enforcement vote that I took. The highway patrol that protects us didn't want lawmakers carrying guns in the capital.",
+      "note": "Quoted by SDPB at a hunters' meeting during his 2022 run for governor. He explains his votes on permitless carry and on carrying in the Capitol, saying the first matched what most South Dakotans wanted and the second backed the highway patrol's view. Quote as printed, including the typo.",
+      "subjects": [
+        "carry a gun without a permit",
+        "guns in the state Capitol"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T22:55:51.935Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "92e0d282adbc6c64bd60ff56d3078ebf088b7bba241fb8cca1a75b4850c2866f",
+      "kind": "own-words",
+      "url": "https://listen.sdpb.org/politics/2022-09-28/public-land-use-issues-highlighted-in-governors-race",
+      "date": "2022-09-28",
+      "date_precision": "day",
+      "passage": "They said I'm the tenth most liberal Democrat in Pierre. There are 11. I could change the language on that and say I'm the second most conservative Democrat in Pierre,",
+      "note": "SDPB reports he told hunters he would protect the gun ownership rights of law-abiding citizens, then made this remark about attack ads. The first part is SDPB's paraphrase, not his words.",
+      "subjects": [
+        "gun rights of law-abiding citizens"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T22:55:51.935Z",
+        "method": "webfetch"
+      }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "guns in the state Capitol",
+        "gun rights of law-abiding citizens",
+        "gun violence prevention"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "the legislature's member page (loads by script, no readable text): https://sdlegislature.gov/Legislators/Profile/1950",
+        "blocked: https://ballotpedia.org/Jamie_Smith_(South_Dakota)",
+        "not reviewed: https://www.jamiesmithsd.com (no readable gun content found)",
+        "not reviewed: Dakota News Now story of 2022-08-05 on gun violence prevention (original not reached; only quoted on ontheissues.org, a lead)",
+        "one news search on name plus gun words; SDPB story of 2022-09-28 read and quoted",
+        "ontheissues.org (lead only)"
+      ],
+      "found": 2,
+      "at": "2026-11-17T22:55:51.935Z",
+      "by": "source-collector"
+    }
+  ]
 }

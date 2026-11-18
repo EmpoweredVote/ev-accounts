@@ -418,5 +418,61 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "guns",
+        "firearms",
+        "Second Amendment",
+        "concealed carry",
+        "suppressors",
+        "background checks",
+        "assault-style weapons",
+        "red flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "in scope: a primary-results news story (https://www.kdsj980.com/?p=20913) says he won the 2026 District 31 Senate primary; the general-election result was not found",
+        "https://www.sdpb.org/2024-08-06/meet-the-candidates-randy-deibert (public-radio candidate profile, read: nothing on the subject)",
+        "blocked: https://ballotpedia.org/Randy_Deibert (empty page returned)",
+        "https://sdlegislature.gov/Legislators/Profile/5004 (page loads only through scripts; no readable text, not reviewed)",
+        "not reviewed: his campaign site (none found in search results)",
+        "web searches on his name plus gun, Second Amendment and bill words: no statement of his own on the subject found",
+        "https://sdpb.org/politics/2025-02-03/senate-passes-gun-legislation-eliminating-firearm-transaction-codes (news story; does not name him)",
+        "https://www.ammoland.com/2026/01/south-dakota-bill-to-allow-gun-silencers-as-un-controlled-weapons-introduced/ (page text did not name him)"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:57:31.387Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on types of guns or magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "in scope: won the 2026 June primary for Senate District 31 (56.4% to 43.6%), per a news roundup https://criticalreport.substack.com/p/2026-sd-senate-primaries",
+        "On the Record (0 appearances, no name matches)",
+        "campaign site https://deibert4senate31.com/ (read, nothing on the subject)",
+        "SDPB candidate profile 2024 https://www.sdpb.org/2024-08-06/meet-the-candidates-randy-deibert (read, nothing on the subject)",
+        "Wikipedia page (read, nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Randy_Deibert (empty response, 202 with no body; not reviewed)",
+        "legislature member page https://sdlegislature.gov/Legislators/Profile/1950 (loaded, page is a script shell with no text; not reviewed)",
+        "sponsor list: covered by bulk bill data",
+        "one web search on name plus gun words: nothing on the subject by him"
+      ],
+      "found": 0,
+      "at": "2026-11-17T23:02:44.184Z",
+      "by": "source-collector"
+    }
+  ]
 }

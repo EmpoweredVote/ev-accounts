@@ -183,5 +183,36 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "carry a gun without a permit",
+        "carry permits and fees",
+        "red-flag orders",
+        "suppressors and National Firearms Act items",
+        "Second Amendment general statements",
+        "guns on campus"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "her own newsletter columns in the Custer County Chronicle (https://custercountychronicle.com/content/halfway-point-session, https://custercountychronicle.com/content/won%E2%80%99t-stop-fighting-property-tax-relief, https://custercountychronicle.com/content/five-bills-have-passed-through-senate, https://custercountychronicle.com/content/fighting-south-dakota%E2%80%99s-military-veterans): read, nothing on the subject",
+        "scope: a local news preview (https://custercountychronicle.com/node/93221) shows she faced a June 2, 2026 primary; a search summary and a secondary news story (https://criticalreport.substack.com/p/2026-sd-senate-primaries, page text not readable by me) report she won it, so she appears to be on the November ballot; not confirmed from an official results page",
+        "sponsor list: covered by bulk bill data",
+        "House and Senate floor votes: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Amber_Hulse (returned an empty/202 response)",
+        "not reviewed: https://sdlegislature.gov/Legislators/Profile/4701/Bills (covered by bulk bill data)",
+        "campaign site: none found in search results",
+        "news search on her name plus gun, firearm, Second Amendment, concealed carry words: no statement of hers found; the gun bills in the results were carried by other lawmakers",
+        "https://thedakotascout.com/p/former-miss-south-dakota-trump-staffer (2024 candidate profile): read, nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:56:31.162Z",
+      "by": "source-collector"
+    }
+  ]
 }

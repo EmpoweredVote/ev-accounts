@@ -183,5 +183,34 @@
       }
     }
   ],
-  "searches": []
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on gun types or large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum ages",
+        "red-flag orders",
+        "ghost guns and federal agency gun rules",
+        "carry permits and permitless carry",
+        "repeal of gun laws, suppressors, short-barrelled rifles",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name matches)",
+        "sponsor list: covered by bulk bill data",
+        "legislature member profile https://sdlegislature.gov/Legislators/Profile/ : page loads as an empty script shell, nothing readable on the subject",
+        "blocked: https://ballotpedia.org/Curt_Voight (bot check)",
+        "blocked: https://www.thedakotascout.com/p/meet-the-candidate-curt-voight (bot check)",
+        "https://en.wikipedia.org/wiki/Curt_Voight : confirms sitting state senator, 33rd district, in office since 2025-01-14; nothing on the subject",
+        "one web search on name plus gun words: no statement or act by this person on the subject surfaced; results were about other officials or pre-2025 bills",
+        "no campaign or personal site found; no official issue page found",
+        "not reviewed: ontheissues.org, vote411 (leads only, not searched)"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:57:38.588Z",
+      "by": "source-collector"
+    }
+  ]
 }
