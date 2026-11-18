@@ -231,17 +231,39 @@ export interface AddressSearchResult {
   } | null;
   matchedAddress: string;
   tribal_land: { on_reservation: boolean; name?: string };
-  /** User's home county (5-digit FIPS GEOID + name), or null when unresolved. */
+  /** The county this point is in (5-digit FIPS GEOID + name), or null when no county
+   *  covers it at all.
+   *  🔴 THIS IS A FACT ABOUT THE PLACE, NOT ABOUT OUR OFFICIALS COVERAGE, AND UNTIL
+   *  2026-11-18 IT WAS THE SECOND THING. It was read only out of the officials/district
+   *  rows, so it was null wherever county-level officials are not loaded — measured by
+   *  Civic Spaces across the two largest places in every state, **71 of 102 points**,
+   *  Reno, Boston, Denver, Portland, San Francisco and DC among them, every one of which
+   *  already carried a correct `locality.county_name` in the same response. It now falls
+   *  back to the nationwide G4020 probe that field has always used.
+   *  ▶ For "do we hold county officials here", read `jurisdictionGeoIds.county`, which is
+   *  still exactly that and is deliberately NOT given this fallback. The two legitimately
+   *  differ now, and the difference is the information. */
   county: { geoid: string; name: string } | null;
   /**
    * Phase 216 (LOC-01/02): incorporated-place signal, distinct from the
    * officials-joined `county` field above. `incorporated` is `null` (unknown)
    * outside PLACE_LOADED_STATES so the frontend suppresses the "Unincorporated"
    * label rather than false-positiving a real city in an un-loaded state.
-   * `county_name` is populated whenever a G4020 row covers the point,
-   * regardless of the place-loaded-state gate (D-03: county is always safe).
+   * `county_name` and `county_geoid` are populated whenever a G4020 row covers the
+   * point, regardless of the place-loaded-state gate (D-03: county is always safe).
+   * 🔴 THEY COME FROM ONE ROW OF ONE QUERY AND ARE NEVER POPULATED SEPARATELY — the
+   * name used to be surfaced without its key, which left every consumer joining on a
+   * NAME. A county name is unique within a state, so that join works, and its
+   * near-misses are real and adjacent: Richmond city (51760) shares Virginia with
+   * Richmond County (51159), Baltimore city with Baltimore County, St. Louis city with
+   * St. Louis County.
    */
-  locality: { incorporated: boolean | null; place_name: string | null; county_name: string | null };
+  locality: {
+    incorporated: boolean | null;
+    place_name: string | null;
+    county_name: string | null;
+    county_geoid: string | null;
+  };
   /**
    * Resolved jurisdiction GEOIDs (congressional/state senate/state house/county/school),
    * derived from the same covering-district rows `county` and the single-district
@@ -611,6 +633,20 @@ export function pickCountyFromDistrictRows(
   return { geoid: row.geo_id, name: row.name ?? row.district_label ?? '' };
 }
 
+/** The county from the nationwide G4020 probe — the fallback for `county` when no
+ *  county-level district row exists, which is most of the country.
+ *  🔴 IT ASSERTS THE SHAPE IT DEPENDS ON RATHER THAN TRUSTING IT. A G4020 geo_id is the
+ *  county's 5-digit FIPS, and `isCountyFips` is what says so here; a row that failed that
+ *  test would otherwise hand a consumer a key that silently matches the wrong geography,
+ *  which is the standing `(mtfcc, geo_id)` hazard wearing a different hat. A nameless or
+ *  wrongly-keyed row yields null, and null is the answer this field already had. */
+export function countyFromProbeRow(
+  row: { geo_id?: string | null; name?: string | null } | null | undefined,
+): { geoid: string; name: string } | null {
+  if (!row?.geo_id || !isCountyFips(row.geo_id)) return null;
+  return { geoid: row.geo_id, name: row.name ?? '' };
+}
+
 /** Pick the user's resolved jurisdiction GEOIDs from the geofence district rows
  *  (the same rows pickCountyFromDistrictRows reads). Each field is the geo_id of
  *  the row whose district_type maps to it, or null when no such row is present.
@@ -656,26 +692,40 @@ export const PLACE_LOADED_STATES = new Set([
  * a boolean, because "no place hit" is only meaningful signal inside a
  * place-loaded state (LOC-02).
  *
- * `county_name` is computed UNCONDITIONALLY from `countyRow` regardless of
- * the state gate (D-03: county boundaries are loaded nationwide and are
- * always safe to surface).
+ * `county_name` and `county_geoid` are computed UNCONDITIONALLY from `countyRow`
+ * regardless of the state gate (D-03: county boundaries are loaded nationwide and
+ * are always safe to surface).
+ *
+ * 🔴 THE NAME AND THE GEOID COME OUT OF THE SAME ROW AND MOVE TOGETHER. The query
+ * always selected both and this helper used to discard the geoid, so consumers were
+ * handed a name with no key and had to join on it. `countyRow.geo_id` for a G4020
+ * row IS the county's 5-digit FIPS — measured 2026-11-18 against production: 3,222
+ * G4020 rows, every one five digits, every one distinct, matching the 3,222
+ * county-equivalents in the Census gazetteer one for one, with both halves of every
+ * city/county near-miss pair present and separate.
  */
 export function buildLocality(
   state: string | null | undefined,
   placeRows: Array<{ name?: string | null }>,
-  countyRow: { name?: string | null } | null | undefined,
-): { incorporated: boolean | null; place_name: string | null; county_name: string | null } {
+  countyRow: { name?: string | null; geo_id?: string | null } | null | undefined,
+): {
+  incorporated: boolean | null;
+  place_name: string | null;
+  county_name: string | null;
+  county_geoid: string | null;
+} {
   const county_name = countyRow?.name ?? null;
+  const county_geoid = countyRow?.geo_id ?? null;
 
   if (!state || !PLACE_LOADED_STATES.has(state.toUpperCase())) {
-    return { incorporated: null, place_name: null, county_name };
+    return { incorporated: null, place_name: null, county_name, county_geoid };
   }
 
   if (placeRows.length > 0) {
-    return { incorporated: true, place_name: placeRows[0].name ?? null, county_name };
+    return { incorporated: true, place_name: placeRows[0].name ?? null, county_name, county_geoid };
   }
 
-  return { incorporated: false, place_name: null, county_name };
+  return { incorporated: false, place_name: null, county_name, county_geoid };
 }
 
 /**
@@ -760,7 +810,10 @@ function mapPoliticianRow(row: Record<string, any>): PoliticianFlatRecord {
  * truthy). `matchedAddress` is echoed into the result verbatim — callers that
  * have no reverse geocode (the coordinate path) MUST pass ''.
  */
-async function resolveOfficialsAtPoint(
+/** Exported for the test suite only. The county fallback below is a WIRING fix — the
+ *  geoid was always fetched and was discarded at the call site — so a test that only
+ *  exercised the pure helpers would pass with the defect back in place. */
+export async function resolveOfficialsAtPoint(
   point: { lng: number; lat: number },
   stateAbbrev: string,
   matchedAddress: string,
@@ -860,7 +913,11 @@ async function resolveOfficialsAtPoint(
       jurisdiction: null,
       matchedAddress,
       tribal_land: tribal_land ?? { on_reservation: false },
-      county: null,
+      // The same fallback as the main path below. A point can sit in a county and in no
+      // district we hold — that is what this early return IS — and the county is still a
+      // true fact about it. Leaving it null here would make the field's meaning depend on
+      // which branch answered, which is the bug being fixed, one layer in.
+      county: countyFromProbeRow(countyNameResult.rows[0] ?? null),
       jurisdictionGeoIds: {
         congressional: null, state_senate: null, state_house: null, county: null, school_district: null,
       },
@@ -880,9 +937,18 @@ async function resolveOfficialsAtPoint(
     mtfcc: firstRow.mtfcc ?? '',
   };
 
-  const county = pickCountyFromDistrictRows(
-    districtResult.rows.map((r) => ({ ...r, name: r.geofence_name })),
-  );
+  // 🔴 THE OFFICIALS ROWS ANSWER FIRST, THE NATIONWIDE PROBE ANSWERS WHEN THEY CANNOT.
+  // The district rows carry the county's own NAME ("Monroe County") where they carry it at
+  // all, so they stay the preferred source; `countyNameResult` is the same G4020 row
+  // `locality` is built from and needs no extra round trip. Before this fallback existed,
+  // `county` was null for roughly 70% of US points while naming the county correctly two
+  // fields away in the same response. See the type's comment for the measurement.
+  const county =
+    pickCountyFromDistrictRows(districtResult.rows.map((r) => ({ ...r, name: r.geofence_name }))) ??
+    countyFromProbeRow(countyNameResult.rows[0] ?? null);
+  // ⚠ DELIBERATELY NOT GIVEN THE SAME FALLBACK. `jurisdictionGeoIds` is a report on the
+  // districts we hold — every other field in it is — so a county filled in from a geofence
+  // would make one member of the object mean something the rest do not.
   const jurisdictionGeoIds = pickJurisdictionFromDistrictRows(districtResult.rows);
   return { politicians, jurisdiction, matchedAddress, tribal_land, county, jurisdictionGeoIds, locality };
 }

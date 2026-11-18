@@ -5,7 +5,14 @@ vi.mock('./db.js', () => ({ pool: { query: vi.fn() } }));
 vi.mock('./geocodingService.js', () => ({ geocodeAddress: vi.fn(), GeocodingError: class GeocodingError extends Error {} }));
 
 import { pool } from './db.js';
-import { getPoliticiansFlatList, pickCountyFromDistrictRows, pickJurisdictionFromDistrictRows } from './essentialsService.js';
+import {
+  getPoliticiansFlatList,
+  pickCountyFromDistrictRows,
+  pickJurisdictionFromDistrictRows,
+  countyFromProbeRow,
+  buildLocality,
+  resolveOfficialsAtPoint,
+} from './essentialsService.js';
 
 describe('pickCountyFromDistrictRows', () => {
   it('returns geoid + name from the G4020 row', () => {
@@ -216,5 +223,130 @@ describe('getPoliticiansFlatList incoming holder', () => {
     const sql = await sqlFor(false);
     expect(sql).toContain('och.office_id IS NOT NULL');
     expect(sql).not.toContain('ont.office_id IS NOT NULL');
+  });
+});
+
+// ---------------------------------------------------------------------------
+// The county geoid: reported by Civic Spaces 2026-11-18.
+// `locality.county_name` named the county for the whole country while `county`
+// was null for ~70% of US points, because `county` was read only out of the
+// officials/district rows and the name came from a nationwide G4020 probe whose
+// geo_id this code fetched and threw away.
+// ---------------------------------------------------------------------------
+describe('countyFromProbeRow', () => {
+  it('returns the geoid and name from a G4020 probe row', () => {
+    expect(countyFromProbeRow({ geo_id: '32031', name: 'Washoe County' }))
+      .toEqual({ geoid: '32031', name: 'Washoe County' });
+  });
+
+  it('keeps the two halves of a city/county near-miss apart', () => {
+    // A county name is unique within a state, so a NAME join works -- and these are
+    // the pairs it is one normalisation away from merging.
+    expect(countyFromProbeRow({ geo_id: '51760', name: 'Richmond city' })?.geoid).toBe('51760');
+    expect(countyFromProbeRow({ geo_id: '51159', name: 'Richmond County' })?.geoid).toBe('51159');
+  });
+
+  it('refuses a geo_id that is not a 5-digit county FIPS', () => {
+    // The standing (mtfcc, geo_id) hazard: a key that is not what the caller thinks
+    // silently matches the wrong geography. Null is the answer this field already had.
+    expect(countyFromProbeRow({ geo_id: 'ramsey-mn-commissioner-district-1', name: 'D1' })).toBeNull();
+    expect(countyFromProbeRow({ geo_id: '0642468', name: 'Lomita' })).toBeNull();
+  });
+
+  it('returns null for an empty, missing or absent row', () => {
+    expect(countyFromProbeRow({ geo_id: '', name: 'Nowhere' })).toBeNull();
+    expect(countyFromProbeRow({ name: 'No key' })).toBeNull();
+    expect(countyFromProbeRow(null)).toBeNull();
+    expect(countyFromProbeRow(undefined)).toBeNull();
+  });
+
+  it('still answers when the row carries no name', () => {
+    expect(countyFromProbeRow({ geo_id: '32031' })).toEqual({ geoid: '32031', name: '' });
+  });
+});
+
+describe('buildLocality carries the geoid beside the name', () => {
+
+
+  it('surfaces both outside a place-loaded state', () => {
+    // CO is not in PLACE_LOADED_STATES, so `incorporated` is null (unknown) -- and the
+    // county pair is computed anyway, which is the D-03 guarantee this rests on.
+    // Denver is one of the points the Civic Spaces measurement found returning no geoid.
+    const l = buildLocality('CO', [], { geo_id: '08031', name: 'Denver County' });
+    expect(l).toEqual({
+      incorporated: null, place_name: null, county_name: 'Denver County', county_geoid: '08031',
+    });
+  });
+
+  it('surfaces both when a place covers the point', () => {
+    const l = buildLocality('AZ', [{ name: 'Tucson city' }], { geo_id: '04019', name: 'Pima County' });
+    expect(l).toEqual({
+      incorporated: true, place_name: 'Tucson city', county_name: 'Pima County', county_geoid: '04019',
+    });
+  });
+
+  it('surfaces both when no place covers the point in a place-loaded state', () => {
+    const l = buildLocality('AZ', [], { geo_id: '04019', name: 'Pima County' });
+    expect(l).toEqual({
+      incorporated: false, place_name: null, county_name: 'Pima County', county_geoid: '04019',
+    });
+  });
+
+  it('never populates one without the other', () => {
+    for (const state of ['NV', 'AZ', null]) {
+      for (const places of [[], [{ name: 'Somewhere' }]]) {
+        const l = buildLocality(state, places, null);
+        expect(l.county_name).toBeNull();
+        expect(l.county_geoid).toBeNull();
+      }
+    }
+  });
+});
+
+describe('resolveOfficialsAtPoint — county falls back to the nationwide probe (the WIRING)', () => {
+  // Dispatch on the SQL rather than on call order: these five queries run in a
+  // Promise.all, so an order-keyed mock would pin an implementation detail.
+  const mockQueries = (opts: { districtRows?: unknown[]; countyProbe?: unknown[] }) => {
+    (pool.query as ReturnType<typeof vi.fn>).mockReset();
+    (pool.query as ReturnType<typeof vi.fn>).mockImplementation(async (text: string) => {
+      if (/mtfcc = 'G4020'/.test(text)) return { rows: opts.countyProbe ?? [] };
+      if (/mtfcc = 'X0004'/.test(text)) return { rows: [] };
+      if (/G4110/.test(text)) return { rows: [] };
+      if (/geofence_boundaries/.test(text) || /politicians/.test(text)) {
+        return { rows: opts.districtRows ?? [] };
+      }
+      return { rows: [] };
+    });
+  };
+
+  it('fills county from the G4020 probe when no county district row exists', async () => {
+    // Reno: the note's own worked example. No county officials loaded, county known.
+    mockQueries({ districtRows: [], countyProbe: [{ geo_id: '32031', name: 'Washoe County' }] });
+
+    const result = await resolveOfficialsAtPoint({ lng: -119.8, lat: 39.5 }, 'NV', '');
+
+    expect(result.county).toEqual({ geoid: '32031', name: 'Washoe County' });
+    expect(result.locality.county_geoid).toBe('32031');
+    expect(result.locality.county_name).toBe('Washoe County');
+    // The officials-coverage report is deliberately NOT given the fallback: the two
+    // fields now legitimately differ, and the difference is the information.
+    expect(result.jurisdictionGeoIds.county).toBeNull();
+  });
+
+  it('is null only when no county covers the point at all', async () => {
+    mockQueries({ districtRows: [], countyProbe: [] });
+
+    const result = await resolveOfficialsAtPoint({ lng: 0, lat: 0 }, '', '');
+
+    expect(result.county).toBeNull();
+    expect(result.locality.county_geoid).toBeNull();
+  });
+
+  it('refuses a probe row whose geo_id is not a county FIPS, rather than keying on it', async () => {
+    mockQueries({ districtRows: [], countyProbe: [{ geo_id: 'not-a-fips', name: 'Somewhere' }] });
+
+    const result = await resolveOfficialsAtPoint({ lng: -119.8, lat: 39.5 }, 'NV', '');
+
+    expect(result.county).toBeNull();
   });
 });

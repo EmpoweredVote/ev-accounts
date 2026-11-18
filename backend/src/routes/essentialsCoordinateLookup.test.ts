@@ -109,7 +109,7 @@ function makeAddressSearchResult(politicians: PoliticianFlatRecord[]): AddressSe
       county: null,
       school_district: null,
     },
-    locality: { incorporated: null, place_name: null, county_name: null },
+    locality: { incorporated: null, place_name: null, county_name: null, county_geoid: null },
   };
 }
 
