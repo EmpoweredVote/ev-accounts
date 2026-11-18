@@ -946,6 +946,387 @@ export function explainMississippiVote(bodies: string[], url: string): MsVoteRec
   try { return readMississippi(bodies, r); } catch (e) { return { refused: `the reader failed: ${e instanceof Error ? e.message : e}` }; }
 }
 
+// ── Maryland: one PDF (2018 on) or page (2017) per vote, read with the session's committee member lists ─────────────
+// mgaleg.maryland.gov/<year>RS/votes/<house|senate>/<NNNN>.pdf is the vote (2018 on); 2017's votes are pages,
+// /2017RS/votes/<house|senate>/<NNNN>.htm, one table cell per printed item. The site has no robots.txt (404, 2026-11-18).
+// Both print the same items: "SEQ NO. 1104", "Calendar Date: Apr 8, 2026 12:36 (PM)" (the day of the vote), the
+// chamber ("Maryland House of Delegates", "Senate of Maryland"), "2026 Regular Session", the bill ("SB 128"; a consent
+// calendar lists several), the calendar line, sponsor, committee, title, the question ("On Third Reading", with a
+// separate "(Emerg)"), the tally ("132 Yeas 0 Nays 6 Not Voting 0 Excused 3 Absent"; 2017 prints "0 Excused (Absent)
+// 0 Absent"), then five headings, each followed by its members: "Voting Yea - 132", "Voting Nay - 0", "Not Voting -
+// 6", "Excused from Voting - 0", "Excused (Absent) - 3". A member is printed by surname, with initials when two share
+// it ("Johnson, A."), and a star when the member changed their vote ("Cluster*"). The presiding officer is printed by
+// office ("Speaker", "Mr. President", "Speaker Busch"), and not reliably: 2022RS house vote 1322 prints "Speaker"
+// voting Yea while the Speaker, Adrienne Jones, is listed as absent. So an office label is kept as printed and gives
+// no line.
+//
+// A PDF prints one run per member, four or five to a row; joining a row's runs with spaces cannot tell "White Holland"
+// (one member) from "White" and "Holland". The reader is therefore handed the runs themselves, one row per line and
+// the runs separated by a tab (pdfCellsBody). Some PDFs are printed sideways (the 2019 consent calendars); the rows
+// are taken along the text's own direction.
+//
+// The PDF prints no member's full name. The session's member list is the union of the chamber's standing committees,
+// /mgawebsite/Committees/Details?cmte=<code>&ys=<year>RS (the Members index ignores the session): each lists its
+// members as "Surname, Given M., Jr." with the member's key. A label is the one member of that chamber's lists whose
+// surname it prints and whose given names its initials start; when several fit, a member another label of the same
+// vote already names is taken out. A label no member fits, or more than one, is kept as printed and gives no line.
+//
+// So one vote is read from the vote and its chamber's committee pages, and the address names the bill after a #:
+//   mgaleg.maryland.gov/2026RS/votes/house/1104.pdf#SB128
+// A vote is read only when the number, chamber, session and bill are the address's, the question is a vote on the
+// bill (mdQuestionIsOnTheBill), each group lists the count its heading prints, and the headings' counts are the
+// tally's, in order:
+//
+//   Maryland House vote 1104 (2026RS), SB 128, 2026-04-08.
+//   Question: On Third Reading
+//   Yea 132; Nay 0; Not voting 6; Excused 0; Absent 3.
+//   Yea (132): Gabriel Acevero; …
+//   Maryland House vote 1104 (2026RS), SB 128 - On Third Reading (2026-04-08): Gabriel Acevero voted Yea.
+
+/** A PDF handed to a reader as its runs: the marker, then one line per printed row, the row's runs separated by a tab. */
+export const PDF_CELLS_MARK = '%PDF-CELLS';
+
+/**
+ * A PDF's text runs as rows of cells: runs of one page on one baseline (within 2 units) are a row, in reading order
+ * along the text's own direction (a page printed sideways is read sideways). Each run stays a cell of its own.
+ */
+export function pdfCellsBody(items: { page: number; x: number; y: number; str: string; dir?: number }[]): string {
+  const placed = items.filter((i) => i.str.trim()).map((i) => {
+    const q = ((i.dir ?? 0) % 4 + 4) % 4;
+    const [c, s] = [[1, 0], [0, 1], [-1, 0], [0, -1]][q];
+    // u runs along the text, v across it (larger v is nearer the top of the page as read)
+    return { page: i.page, u: i.x * c + i.y * s, v: -i.x * s + i.y * c, str: squash(i.str) };
+  }).sort((a, b) => a.page - b.page || b.v - a.v || a.u - b.u);
+  const rows: { page: number; v: number; cells: { u: number; s: string }[] }[] = [];
+  for (const i of placed) {
+    const last = rows[rows.length - 1];
+    if (last && last.page === i.page && Math.abs(last.v - i.v) <= 2) last.cells.push({ u: i.u, s: i.str });
+    else rows.push({ page: i.page, v: i.v, cells: [{ u: i.u, s: i.str }] });
+  }
+  return [PDF_CELLS_MARK, ...rows.map((r) => r.cells.sort((a, b) => a.u - b.u).map((c) => c.s).join('\t'))].join('\n');
+}
+
+export const MD_VOTES = ['Yea', 'Nay', 'Not voting', 'Excused', 'Absent'] as const;
+export type MdVote = (typeof MD_VOTES)[number];
+/** The five headings, in the order the record prints them; any other order or wording refuses the vote. */
+const MD_HEADING: [RegExp, MdVote][] = [
+  [/^Voting Yea - (\d+)$/, 'Yea'],
+  [/^Voting Nay - (\d+)$/, 'Nay'],
+  [/^Not Voting - (\d+)$/, 'Not voting'],
+  [/^Excused from Voting - (\d+)$/, 'Excused'],
+  [/^Excused \(Absent\) - (\d+)$/, 'Absent'],
+];
+const MD_TALLY = /^(\d+) Yeas (\d+) Nays (\d+) Not Voting (\d+) Excused(?: \(Absent\))? (\d+) Absent$/;
+// A veto is overridden in the NEXT session, on a vote filed under that session ("SPECIAL ORDER CALENDAR - 2020 VETOED
+// HOUSE BILL"), and that session has its own bill of the same number: the address names the bill's year, #2020-HB4.
+const MD_URL = /^https:\/\/mgaleg\.maryland\.gov\/(20\d{2})RS\/votes\/(house|senate)\/(\d{4})\.(pdf|htm)#(?:(20\d{2})-)?([HS][BJ])([1-9]\d{0,3})$/;
+const MD_SITE = 'https://mgaleg.maryland.gov/';
+/** No robots.txt (404, 2026-11-18), so no Crawl-delay is stated: one request a second is ours. */
+const MD_GAP_MS = 1_000;
+const MD_SIZE: Record<Chamber, number> = { House: 141, Senate: 47 };
+const MD_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+/** The presiding officer, printed by office: kept as printed, so it gives no line. */
+const MD_OFFICE = /^(?:Mr\.|Madam) (?:Speaker|President)$|^Speaker(?: [\p{L}'-]+)?$|^President(?: [\p{L}'-]+)?$/u;
+/** A member label: a surname of one or more words, initials after a comma, a star for a changed vote. */
+const MD_LABEL = /^([\p{L}][\p{L}'’ -]*[\p{L}])(?:,\s*((?:[\p{L}]\.\s?){1,3}))?\*?$/u;
+
+/**
+ * The chamber's standing committees in a session, whose member lists together are the chamber's members. The House
+ * Environment and Transportation committee was Environment (env) through 2018; Health and Government Operations (hgo)
+ * became Health (hlt) and Government (gvc) in 2026; the Senate's Education committee was ehe through 2022 and eee
+ * from 2023 (each read 2026-11-18).
+ */
+export function mdCommittees(chamber: Chamber, year: number): string[] {
+  if (chamber === 'House') return ['app', 'ecm', year <= 2018 ? 'env' : 'ent', 'jud', 'w%26m', 'hru', ...(year <= 2025 ? ['hgo'] : ['hlt', 'gvc'])];
+  return ['b%26t', year <= 2022 ? 'ehe' : 'eee', 'fin', 'jpr', 'sru', 'exn'];
+}
+
+/**
+ * Is a Maryland question (the line above the tally, its parenthesised notes left out) a vote on the bill? A motion
+ * is not (runner, 2026-11-16): to suspend the rules, to recommit, to special order, to limit debate, the previous
+ * question, an amendment, a second-reading report. Only the questions listed are read; any other wording gives no
+ * line until it is added here. A consent calendar on third reading prints no question; its calendar line says what
+ * it is (mdConsentQuestion).
+ */
+export function mdQuestionIsOnTheBill(q: string): boolean {
+  const s = squash(q.replace(/\([^)]*\)/g, ' ')).replace(/\.$/, '');
+  return /^(?:On )?Third Reading(?: (?:and|for) Final Passage)?$|^Bill is on Third Reading for Final Passage$|^Shall the bill pass notwithstanding the objections? of the Chief Executive\?$|^Veto Override$|^Conference Committee Report - Adoption$|^Third Reading Consent Calendar$/i.test(s);
+}
+
+export interface MdVoteRef { state: 'MD'; stateName: 'Maryland'; chamber: Chamber; session: string; seq: number; ext: 'pdf' | 'htm'; billType: string; billNum: number; billYear?: number }
+export interface MdVoteRecord extends Omit<MdVoteRef, 'ext' | 'billType' | 'billNum' | 'billYear'> { bill: string; question: string; date: string; groups: Record<MdVote, string[]> }
+export interface MdVoteLine extends Omit<MdVoteRecord, 'groups'> { name: string; vote: MdVote }
+
+export function parseMarylandVoteUrl(url: string): MdVoteRef | null {
+  const m = MD_URL.exec(url.trim());
+  if (!m) return null;
+  const year = Number(m[1]);
+  // 2017's votes are pages, every later session's PDFs
+  if ((m[4] === 'htm') !== (year === 2017)) return null;
+  // a bill of another session is only the previous session's vetoed bill
+  if (m[5] && Number(m[5]) !== year - 1) return null;
+  return { state: 'MD', stateName: 'Maryland', chamber: m[2] === 'house' ? 'House' : 'Senate', session: `${m[1]}RS`, seq: Number(m[3]), ext: m[4] as 'pdf' | 'htm', billType: m[6], billNum: Number(m[7]), ...(m[5] ? { billYear: Number(m[5]) } : {}) };
+}
+
+/** The bill as a line names it: "HB 4", or "HB 4 of 2020" for the previous session's vetoed bill. */
+function mdBillName(r: MdVoteRef): string {
+  return `${r.billType} ${r.billNum}${r.billYear ? ` of ${r.billYear}` : ''}`;
+}
+
+function marylandDocs(r: MdVoteRef): string[] {
+  const year = r.session.slice(0, 4);
+  return [
+    `${MD_SITE}${r.session}/votes/${r.chamber.toLowerCase()}/${String(r.seq).padStart(4, '0')}.${r.ext}`,
+    ...mdCommittees(r.chamber, Number(year)).map((c) => `${MD_SITE}mgawebsite/Committees/Details?cmte=${c}&ys=${r.session}`),
+  ];
+}
+
+const htmlText = (s: string): string => squash(s.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&#(\d+);/g, (_m, n: string) => String.fromCodePoint(Number(n)))
+  .replace(/&#x([0-9a-f]+);/gi, (_m, n: string) => String.fromCodePoint(parseInt(n, 16))).replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&'));
+
+/** The vote's printed items as rows of cells: a PDF's rows (pdfCellsBody), or a 2017 page's table cells, one row each. */
+function mdRows(body: string, ext: 'pdf' | 'htm'): string[][] | null {
+  if (ext === 'pdf') {
+    if (!body.startsWith(PDF_CELLS_MARK + '\n')) return null;
+    return body.split('\n').slice(1).map((l) => l.split('\t').map(squash).filter(Boolean)).filter((r) => r.length);
+  }
+  if (body.startsWith('%PDF')) return null;
+  return [...body.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map((m) => [htmlText(m[1])]).filter((r) => r[0]);
+}
+
+/** A committee page's members: key -> "Surname, Given M., Jr.". Null when the page is not that session's, or lists none. */
+function mdCommitteeMembers(html: string, session: string): Map<string, string> | null {
+  const sel = /<select[^>]*id="valueSessions"[^>]*>\s*<option[^>]*>([^<]*)<\/option>\s*<\/select>/.exec(html);
+  if (!sel || squash(sel[1]) !== `${session.slice(0, 4)} Regular Session`) return null;
+  const start = html.indexOf('id="divMembership"');
+  if (start < 0) return null;
+  const next = html.indexOf('role="tabpanel"', start + 40);
+  const block = html.slice(start, next > 0 ? next : html.length);
+  const out = new Map<string, string>();
+  for (const m of block.matchAll(/<a href="\/mgawebsite\/Members\/Details\/([^"?]+)">([^<]+)<\/a>/g)) {
+    const key = decodeURIComponent(m[1]).toLowerCase();
+    const name = htmlText(m[2]);
+    if (out.has(key) && out.get(key) !== name) throw new Error(`the key ${key} names both ${out.get(key)} and ${name}`);
+    out.set(key, name);
+  }
+  return out.size ? out : null;
+}
+
+/** "Smith, William C., Jr." -> surname "smith", given ["william", "c"], full "William C. Smith Jr."; null for any other shape. */
+function mdMember(listed: string): { sur: string; given: string[]; full: string } | null {
+  const m = /^([^,]+),\s*([^,]+?)(?:,\s*(Jr\.?|Sr\.?|II|III|IV|V))?$/.exec(squash(listed));
+  if (!m) return null;
+  return { sur: fold(m[1]), given: fold(m[2].replace(/["“][^"”]*["”]/g, ' ')).split(' ').filter(Boolean), full: squash(`${m[2]} ${m[1]}${m[3] ? ` ${m[3]}` : ''}`) };
+}
+
+/** The vote, or why it was refused (the first check that failed). */
+function readMaryland(bodies: string[], r: MdVoteRef): MdVoteRecord | { refused: string } {
+  const fail = (refused: string): { refused: string } => ({ refused });
+  const committees = mdCommittees(r.chamber, Number(r.session.slice(0, 4)));
+  if (bodies.length !== 1 + committees.length) return fail('not the vote and its committee pages');
+  const rows = mdRows(bodies[0], r.ext);
+  if (!rows) return fail(`the vote is not a ${r.ext === 'pdf' ? 'PDF' : 'page'}`);
+  const year = Number(r.session.slice(0, 4));
+  // the header: everything before the first heading
+  const first = rows.findIndex((row) => MD_HEADING[0][0].test(row.join(' ')));
+  if (first < 0) return fail('the vote has no Voting Yea heading');
+  const head = rows.slice(0, first);
+  const cells = head.flat();
+  // the chamber and session may run across rows ("General Assembly of Maryland 2022 Regular" / "Session")
+  const headText = ` ${squash(cells.join(' '))} `;
+  const seq = cells.map((c) => /^SEQ NO\. (\d+)$/.exec(c)).filter(Boolean);
+  if (seq.length !== 1 || Number(seq[0]![1]) !== r.seq) return fail('the vote does not print this number');
+  if (!headText.includes(r.chamber === 'House' ? ' Maryland House of Delegates ' : ' Senate of Maryland ')) return fail('the vote does not name this chamber');
+  if (headText.includes(r.chamber === 'House' ? ' Senate of Maryland ' : ' Maryland House of Delegates ')) return fail('the vote names the other chamber');
+  // the 2024 Senate's votes print "2024 Regular Sessions"
+  if (!new RegExp(` ${year} Regular Sessions? `).test(headText)) return fail('the vote does not name this session');
+  const cal = cells.map((c) => /^Calendar Date: ([A-Z][a-z]{2}) (\d{1,2}), (\d{4})\b/.exec(c)).filter(Boolean);
+  const month = cal.length === 1 ? MD_MONTHS.indexOf(cal[0]![1]) : -1;
+  if (month < 0 || Number(cal[0]![3]) !== year) return fail('the vote has no calendar date in its session year');
+  const date = `${year}-${String(month + 1).padStart(2, '0')}-${cal[0]![2].padStart(2, '0')}`;
+  if (Number.isNaN(Date.parse(`${date}T00:00:00Z`)) || new Date(`${date}T00:00:00Z`).getUTCDate() !== Number(cal[0]![2])) return fail('the calendar date is not a real day');
+  // the bills: a cell that is a bill, or a bill and its sponsor ("SB 907 - Senator Middleton")
+  // the 2021 Senate's override calendar prints the sponsor without the dash: "HB 4 Delegate Atterbeary"
+  const billOf = (c: string): string | null => { const b = /^([HS][BJ]) 0*([1-9]\d{0,3})(?: - .+| (?:Delegates?|Senators?|Del\.|Sen\.) .+)?$/.exec(c); return b ? `${b[1]} ${Number(b[2])}` : null; };
+  const bills = cells.map(billOf).filter((b): b is string => b !== null);
+  if (!bills.includes(`${r.billType} ${r.billNum}`)) return fail('the vote does not name the bill');
+  // the previous session's vetoed bills: "SPECIAL ORDER CALENDAR - 2020 VETOED HOUSE BILL". Such a file must be cited
+  // with the bill's year, and a bill's year only on such a file.
+  const vetoed = [...headText.matchAll(/ (20\d{2}) VETOED (HOUSE|SENATE) BILLS? /gi)];
+  if (vetoed.length > 1) return fail('the vote names more than one session\'s vetoed bills');
+  if (r.billYear === undefined ? vetoed.length : !vetoed.length || Number(vetoed[0][1]) !== r.billYear || vetoed[0][2].toUpperCase() !== (r.billType[0] === 'H' ? 'HOUSE' : 'SENATE'))
+    return fail(r.billYear === undefined ? 'the vote is on a vetoed bill of another session: cite it with the bill\'s year' : 'the vote does not print this bill\'s session as vetoed');
+  const bill = mdBillName(r);
+  // the tally, and the question on the rows above it (a long question runs onto a second row)
+  const tallyAt = rows.findIndex((row) => MD_TALLY.test(row.join(' ')));
+  if (tallyAt < 0 || tallyAt >= first || rows.findIndex((row, i) => i > tallyAt && MD_TALLY.test(row.join(' '))) >= 0) return fail('the vote prints no tally, or more than one');
+  const tally = MD_TALLY.exec(rows[tallyAt].join(' '))!.slice(1).map(Number);
+  const said = (row: string[]): string => squash(row.filter((c) => !/^\(.*\)$/.test(c)).join(' '));
+  let question = '';
+  const above = rows.slice(0, tallyAt);
+  for (const n of [1, 2]) {
+    const q = squash(above.slice(-n).map(said).join(' '));
+    if (q && mdQuestionIsOnTheBill(q)) { question = q; break; }
+  }
+  if (!question) {
+    // a consent calendar prints no question: its calendar line ("Third Reading (HB) Calendar No.7", "Consent Calendar
+    // No. 9") above its list of bills
+    const last = above[above.length - 1] ?? [];
+    const joined = squash(above.map((row) => row.join(' ')).join(' '));
+    if (last.length && last.every((c) => billOf(c) !== null) && /\bThird Reading \((?:HB|SB)\) Calendar No\.\s*\d+ Consent Calendar No\.\s*\d+\b/.test(joined)) question = 'Third Reading Consent Calendar';
+    else return fail(`the question is not a vote on the bill: ${said(above[above.length - 1] ?? [])}`);
+  }
+  // the previous session's bill is voted on only to override its veto
+  if (r.billYear !== undefined && !/notwithstanding|veto override/i.test(question)) return fail(`the question is not a veto override: ${question}`);
+  // the groups
+  const labels = Object.fromEntries(MD_VOTES.map((v) => [v, [] as string[]])) as Record<MdVote, string[]>;
+  let g = -1;
+  const counts: number[] = [];
+  for (const row of rows.slice(first)) {
+    const joined = row.join(' ');
+    // a copy's stamp: "- COPY -" over the page, "(COPY)" under the last list (2018 Senate 1326)
+    if (/^(?:- COPY -|\(COPY\))$/.test(joined)) continue;
+    // the footer ends the lists: "* Indicates Vote Change", "(COPY- * indicates vote change)", "COPY - * Indicates Vote Change" (2019 House 758)
+    if (/^\(?(?:COPY ?- )?\* ?Indicates Vote Change\)?$/i.test(joined)) break;
+    const h = MD_HEADING[g + 1] ? MD_HEADING[g + 1][0].exec(joined) : null;
+    if (h) { g++; counts.push(Number(h[1])); continue; }
+    if (g < 0) return fail('names before the first heading');
+    for (const c of row) {
+      if (!MD_LABEL.test(c) && !MD_OFFICE.test(c)) return fail(`a cell the reader cannot read: ${c}`);
+      labels[MD_VOTES[g]].push(c.replace(/\*$/, ''));
+    }
+  }
+  if (g !== MD_VOTES.length - 1) return fail('the vote does not print the five headings in order');
+  for (const [i, v] of MD_VOTES.entries()) {
+    if (labels[v].length !== counts[i]) return fail(`the ${v} group lists ${labels[v].length} names and prints ${counts[i]}`);
+    if (counts[i] !== tally[i]) return fail(`the ${v} heading prints ${counts[i]} and the tally ${tally[i]}`);
+  }
+  const all = MD_VOTES.flatMap((v) => labels[v]);
+  if (all.length > MD_SIZE[r.chamber]) return fail('more members than the chamber has');
+  if (new Set(all.map(fold)).size !== all.length) return fail('a label is printed twice');
+  // the members: every committee page of the chamber, for this session
+  const members = new Map<string, { sur: string; given: string[]; full: string }>();
+  for (const [i, html] of bodies.slice(1).entries()) {
+    let list: Map<string, string> | null;
+    try { list = mdCommitteeMembers(html, r.session); } catch (e) { return fail(String(e instanceof Error ? e.message : e)); }
+    if (!list) return fail(`the committee page ${committees[i]} is not this session's, or lists no members`);
+    for (const [key, listed] of list) {
+      const m = mdMember(listed);
+      if (!m) return fail(`a member the reader cannot read: ${listed}`);
+      if (members.has(key) && members.get(key)!.full !== m.full) return fail(`the key ${key} names both ${members.get(key)!.full} and ${m.full}`);
+      members.set(key, m);
+    }
+  }
+  // each label: the members whose surname it prints and whose given names its initials start
+  const fits = new Map<string, string[]>();
+  for (const label of all) {
+    const l = MD_OFFICE.test(label) ? null : MD_LABEL.exec(label);
+    if (!l) { fits.set(label, []); continue; }
+    const sur = fold(l[1]);
+    const initials = (l[2] ?? '').replace(/\s/g, '').split('.').filter(Boolean).map((x) => fold(x));
+    fits.set(label, [...members].filter(([, m]) => m.sur === sur && initials.every((x, k) => m.given[k]?.[0] === x)).map(([key]) => key));
+  }
+  // a member another label already names is not this label's (two Davises: "Davis, D.E." and "Davis")
+  const taken = new Map<string, string>();
+  for (let changed = true; changed;) {
+    changed = false;
+    for (const [label, keys] of fits) {
+      if (taken.has(label)) continue;
+      const left = keys.filter((k) => ![...taken].some(([other, key]) => other !== label && key === k));
+      if (left.length === 1) { taken.set(label, left[0]); changed = true; }
+    }
+  }
+  if (new Set(taken.values()).size !== taken.size) return fail('two labels name one member');
+  const groups = Object.fromEntries(MD_VOTES.map((v) => [v, labels[v].map((l) => (taken.has(l) ? members.get(taken.get(l)!)!.full : l))])) as Record<MdVote, string[]>;
+  return { state: 'MD', stateName: 'Maryland', chamber: r.chamber, session: r.session, seq: r.seq, bill, question, date, groups };
+}
+
+const MD_SAID: Record<MdVote, string> = { Yea: 'voted Yea', Nay: 'voted Nay', 'Not voting': 'did not vote', Excused: 'was excused from voting', Absent: 'was absent' };
+
+export function renderMarylandVote(v: MdVoteRecord): string {
+  return [
+    `Maryland ${v.chamber} vote ${v.seq} (${v.session}), ${v.bill}, ${v.date}.`,
+    `Question: ${v.question}`,
+    MD_VOTES.map((k) => `${k} ${v.groups[k].length}`).join('; ') + '.',
+    ...MD_VOTES.map((k) => `${k} (${v.groups[k].length}): ${v.groups[k].join('; ')}`.trim()),
+  ].join('\n');
+}
+
+const MD_RENDER_HEAD = /^Maryland (House|Senate) vote (\d+) \((20\d{2}RS)\), ([HS][BJ] \d+(?: of 20\d{2})?), (\d{4}-\d{2}-\d{2})\.$/;
+
+function parseMarylandRender(text: string, url: string): MdVoteRecord | null {
+  const r = parseMarylandVoteUrl(url);
+  const rows = text.split('\n');
+  const h = MD_RENDER_HEAD.exec(rows[0] ?? '');
+  const q = /^Question: (.+)$/.exec(rows[1] ?? '');
+  if (!r || !h || !q || rows.length !== 3 + MD_VOTES.length) return null;
+  if (h[1] !== r.chamber || Number(h[2]) !== r.seq || h[3] !== r.session || h[4] !== mdBillName(r)) return null;
+  const groups = {} as Record<MdVote, string[]>;
+  for (const [i, v] of MD_VOTES.entries()) {
+    const m = new RegExp(`^${v} \\((\\d+)\\):(.*)$`).exec(rows[3 + i]);
+    if (!m) return null;
+    groups[v] = m[2].split(';').map((s) => s.trim()).filter(Boolean);
+    if (groups[v].length !== Number(m[1])) return null;
+  }
+  if (rows[2] !== MD_VOTES.map((v) => `${v} ${groups[v].length}`).join('; ') + '.') return null;
+  return { state: 'MD', stateName: 'Maryland', chamber: r.chamber, session: r.session, seq: r.seq, bill: h[4], date: h[5], question: q[1], groups };
+}
+
+const MD_LINE = /^Maryland (House|Senate) vote (\d+) \((20\d{2}RS)\), ([HS][BJ] \d+(?: of 20\d{2})?) - (.+) \((\d{4}-\d{2}-\d{2})\): (.+?) (voted Yea|voted Nay|did not vote|was excused from voting|was absent)\.$/;
+
+export function formatMarylandVoteLine(l: MdVoteLine): string {
+  return `Maryland ${l.chamber} vote ${l.seq} (${l.session}), ${l.bill} - ${l.question} (${l.date}): ${l.name} ${MD_SAID[l.vote]}.`;
+}
+
+function parseMarylandLine(text: string): MdVoteLine | null {
+  const m = MD_LINE.exec(text.trim());
+  const vote = m ? MD_VOTES.find((v) => MD_SAID[v] === m[8]) : undefined;
+  if (!m || !vote) return null;
+  return { state: 'MD', stateName: 'Maryland', chamber: m[1] as Chamber, seq: Number(m[2]), session: m[3], bill: m[4], question: m[5], date: m[6], name: m[7].trim(), vote };
+}
+
+function verifyMarylandLine(line: string, url: string, text: string, lastName: string, fullName: string): SnippetVerdict {
+  const l = parseMarylandLine(line);
+  const r = parseMarylandRender(text, url);
+  if (!l || !r) return { verdict: 'snippet_not_found' };
+  if (l.seq !== r.seq || l.chamber !== r.chamber || l.session !== r.session || l.bill !== r.bill || l.date !== r.date) return { verdict: 'snippet_not_found' };
+  if (normalizeText(l.question) !== normalizeText(r.question)) return { verdict: 'snippet_not_found' };
+  if (!r.groups[l.vote].some((n) => sameLabel(n, l.name))) return { verdict: 'snippet_not_found' };
+  const fits = MD_VOTES.flatMap((v) => r.groups[v]).filter((n) => fullNameLabelFits(n, lastName, fullName));
+  if (fits.length !== 1 || !sameLabel(fits[0], l.name)) return { verdict: 'name_not_present' };
+  return { verdict: 'verified', matchOffset: 0 };
+}
+
+function marylandLinesFor(url: string, text: string, lastName: string, fullName: string): string[] {
+  const r = parseMarylandRender(text, url);
+  if (!r) return [];
+  const out: string[] = [];
+  for (const vote of MD_VOTES) {
+    for (const name of r.groups[vote]) {
+      if (fullNameLabelFits(name, lastName, fullName)) out.push(formatMarylandVoteLine({ ...r, name, vote }));
+    }
+  }
+  return out.length === 1 ? out : [];
+}
+
+/** The vote an address names, read from its documents (stateRollCallDocs order). Null when any check fails. */
+export function readMarylandVote(bodies: string[], url: string): MdVoteRecord | null {
+  const v = explainMarylandVote(bodies, url);
+  return 'refused' in v ? null : v;
+}
+
+/** As readMarylandVote, with the reason a vote is refused: for the fetch tool's report and the tests. */
+export function explainMarylandVote(bodies: string[], url: string): MdVoteRecord | { refused: string } {
+  const r = parseMarylandVoteUrl(url);
+  if (!r) return { refused: 'not a Maryland vote address' };
+  try { return readMaryland(bodies, r); } catch (e) { return { refused: `the reader failed: ${e instanceof Error ? e.message : e}` }; }
+}
+
+/** How a fetched PDF reaches its reader: Maryland's as cells (pdfCellsBody), every other state's as lines (pdfLinesBody). */
+export function pdfBodyFor(url: string, items: { page: number; x: number; y: number; str: string; dir?: number }[]): string {
+  return /^https:\/\/mgaleg\.maryland\.gov\/20\d{2}RS\/votes\//i.test(url.trim()) ? pdfCellsBody(items) : pdfLinesBody(items);
+}
+
 function formatOf(url: string): { f: Format; ref: StateRollCallRef } | null {
   for (const f of FORMATS) {
     const r = f.ref(url.trim());
@@ -963,11 +1344,12 @@ export function stateRollCallMinGapMs(url: string): number {
   if (parseOhioVoteUrl(url)) return OH_GAP_MS;
   if (parseSouthDakotaVoteUrl(url)) return SD_GAP_MS;
   if (parseMississippiVoteUrl(url)) return MS_GAP_MS;
+  if (parseMarylandVoteUrl(url)) return MD_GAP_MS;
   return formatOf(url)?.f.minGapMs ?? 0;
 }
 
 export function isStateRollCallUrl(url: string): boolean {
-  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null || parseMississippiVoteUrl(url) !== null;
+  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null || parseMississippiVoteUrl(url) !== null || parseMarylandVoteUrl(url) !== null;
 }
 
 /**
@@ -982,6 +1364,8 @@ export function stateRollCallDocs(url: string): string[] | null {
   if (sd) return [`${SD_DATA}${sd.voteId}`];
   const ms = parseMississippiVoteUrl(url);
   if (ms) return mississippiDocs(ms);
+  const md = parseMarylandVoteUrl(url);
+  if (md) return marylandDocs(md);
   return formatOf(url) ? [url.trim()] : null;
 }
 
@@ -998,6 +1382,10 @@ export function readStateRollCallDocs(bodies: string[], url: string): string | n
   if (parseMississippiVoteUrl(url)) {
     const v = readMississippiVote(bodies, url);
     return v ? renderMississippiVote(v) : null;
+  }
+  if (parseMarylandVoteUrl(url)) {
+    const v = readMarylandVote(bodies, url);
+    return v ? renderMarylandVote(v) : null;
   }
   if (bodies.length !== 1) return null;
   const r = readStateRollCallHtml(bodies[0], url);
@@ -1029,6 +1417,13 @@ export function readStateRollCallRecord(bodies: string[], url: string): StateRol
     return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: Number(v.voteNo), bill: v.bill, question: v.question,
       date: v.date, groups: { Yea: v.groups.Yea, Nay: v.groups.Nay, 'Absent or not voting': [...v.groups['Absent or not voting'], ...v.groups.Present, ...v.groups.Paired] } } : null;
   }
+  if (parseMarylandVoteUrl(url)) {
+    // Maryland: members by their full names from the committee lists (a label no member fits, as printed). Not voting,
+    // excused and absent are one group here.
+    const v = readMarylandVote(bodies, url);
+    return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: v.seq, bill: v.bill, question: v.question,
+      date: v.date, groups: { Yea: v.groups.Yea, Nay: v.groups.Nay, 'Absent or not voting': [...v.groups['Not voting'], ...v.groups.Excused, ...v.groups.Absent] } } : null;
+  }
   return bodies.length === 1 ? readStateRollCallHtml(bodies[0], url) : null;
 }
 
@@ -1053,7 +1448,8 @@ export function renderStateRollCall(r: StateRollCall): string {
 
 const RENDER_HEAD = /^(.+) (House|Senate) roll call (\d+) \(([A-Za-z0-9]+)\), (\d{4}-\d{2}-\d{2})\.$/;
 
-export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | Omit<SdVoteRecord, 'unique'> | Omit<MsVoteRecord, 'billType' | 'billNum'> | null {
+export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | Omit<SdVoteRecord, 'unique'> | Omit<MsVoteRecord, 'billType' | 'billNum'> | MdVoteRecord | null {
+  if (parseMarylandVoteUrl(url)) return parseMarylandRender(text, url);
   if (parseOhioVoteUrl(url)) return parseOhioRender(text, url);
   if (parseSouthDakotaVoteUrl(url)) return parseSouthDakotaRender(text, url);
   if (parseMississippiVoteUrl(url)) return parseMississippiRender(text, url);
@@ -1085,8 +1481,8 @@ export function formatStateRollCallLine(l: StateRollCallLine): string {
   return `${l.stateName} ${l.chamber} roll call ${l.rollNum} (${l.session}), ${l.bill} - ${l.question} (${l.date}): ${l.name} ${SAID[l.vote]}.`;
 }
 
-export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | MsVoteLine | null {
-  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text) ?? parseMississippiLine(text);
+export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | MsVoteLine | MdVoteLine | null {
+  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text) ?? parseMississippiLine(text) ?? parseMarylandLine(text);
 }
 
 function parseUtahLine(text: string): StateRollCallLine | null {
@@ -1144,6 +1540,7 @@ export function verifyStateRollCallLine(line: string, url: string, text: string,
   if (parseOhioVoteUrl(url)) return verifyOhioLine(line, url, text, lastName, fullName);
   if (parseSouthDakotaVoteUrl(url)) return verifySouthDakotaLine(line, url, text, lastName, fullName);
   if (parseMississippiVoteUrl(url)) return verifyMississippiLine(line, url, text, lastName, fullName);
+  if (parseMarylandVoteUrl(url)) return verifyMarylandLine(line, url, text, lastName, fullName);
   const l = parseUtahLine(line);
   const r = parseUtahRender(text, url);
   if (!l || !r) return { verdict: 'snippet_not_found' };
@@ -1160,6 +1557,7 @@ export function stateRollCallLinesFor(url: string, text: string, lastName: strin
   if (parseOhioVoteUrl(url)) return ohioLinesFor(url, text, lastName, fullName);
   if (parseSouthDakotaVoteUrl(url)) return southDakotaLinesFor(url, text, lastName, fullName);
   if (parseMississippiVoteUrl(url)) return mississippiLinesFor(url, text, lastName, fullName);
+  if (parseMarylandVoteUrl(url)) return marylandLinesFor(url, text, lastName, fullName);
   const r = parseUtahRender(text, url);
   if (!r) return [];
   const out: string[] = [];

@@ -150,12 +150,25 @@ for r in rows("personvote"):
 #    misread from the PDFs' prose ("B (122nd)", "Absent or those Bell (21st)", "Yeas--Barnett"), so no dump vote is
 #    placed; only votes read from the record are. "ms_full_names": the record names each member in full, from the
 #    session's member list ("Robert L. Jackson", "Sam Creekmore IV"); ms_resolve links such a name to one person.
+#  - Maryland (2026-11-18): "md_vote_page": each vote's address becomes the form the reader reads
+#    (stateRollCallEvidence.ts), https://mgaleg.maryland.gov/<year>RS/votes/<house|senate>/<NNNN>.pdf#<bill> (a consent
+#    calendar is one vote on several bills). 2017's rows carry the old page (webmga/frmMain.aspx?pid=flrvotepage&id=
+#    hb0760,h-0501&ys=2017RS), which is gone; the same vote is /2017RS/votes/house/0501.htm. "chamber": 2017's rows are
+#    filed under the whole legislature; the address says which chamber voted. "md_bill_page": the old bill page
+#    (webmga/frmMain.aspx?id=HB22&pid=billpage&ys=2019rs) is gone; the same bill is /mgawebsite/Legislation/Details/
+#    hb0022?ys=2019RS. "https_texts": the texts are served over https too. "record_is_the_floor", as Mississippi's: the
+#    dump leaves about one member vote in twenty of 2017-2022 on a label it links to no one ("Washington, A.", "Davis,
+#    D.E.", "Young"), and it holds no 2023 vote at all, so only votes read from the record are placed (the fetch reads
+#    each bill's page and every floor vote on it); the dump's copy of a record vote only teaches which person a label
+#    is. The record's members are full names from the session's committee lists: ms_full_names links them.
 SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": re.compile(r"/mtgvotes\.jsp"), "https": True},
              "OH": {"committee": re.compile(r"/cmtevotes/?$"), "committee_motion": re.compile(r"^Reported\b"), "oh_votes_page": True,
                     "oh_text_v2": True, "record_replaces_dump": True},
              "SD": {"https": True, "sd_vote_page": True, "record_replaces_dump": True, "sd_record_is_the_floor": True,
                     "sd_sponsors_from_text": True},
-             "MS": {"https": True, "ms_vote_page": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True}}
+             "MS": {"https": True, "ms_vote_page": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True},
+             "MD": {"https": True, "md_vote_page": True, "record_replaces_dump": True, "record_is_the_floor": True, "chamber": re.compile(r"/votes/(house|senate)/\d{4}\.(?:pdf|htm)#", re.I),
+                    "md_bill_page": True, "https_texts": True, "ms_full_names": True}}
 RULES = SRC_RULES.get(ST, {})
 # Only votes read from the legislature's record are placed (South Dakota's rule first; Mississippi's too).
 FLOOR_FROM_RECORD = bool(RULES.get("sd_record_is_the_floor") or RULES.get("record_is_the_floor"))
@@ -239,6 +252,26 @@ if RULES.get("ms_vote_page"):
         if m:
             code = re.sub(r"[\s.]+", "", bills[events[eid]["bill_id"]]["identifier"]).upper()
             vsrc[eid] = [f"https://billstatus.ls.state.ms.us/{m.group(1)}/pdf/votes/{m.group(2).lower()}/{m.group(3)}.pdf#{code}"]
+
+MD_VOTE = re.compile(r"^https://mgaleg\.maryland\.gov/(20\d{2})RS/votes/(house|senate)/(\d{4})\.pdf$", re.I)
+MD_OLD_VOTE = re.compile(r"^https://mgaleg\.maryland\.gov/webmga/frmMain\.aspx\?pid=flrvotepage&tab=subject\d+&id=([hs][bj])0*(\d+),([hs])-(\d{4})&stab=\d+&ys=(20\d{2})RS$", re.I)
+if RULES.get("md_vote_page"):
+    for eid in list(events):
+        u = (vsrc.get(eid) or [""])[0]
+        code = re.sub(r"[\s.]+", "", bills[events[eid]["bill_id"]]["identifier"]).upper()
+        m, o = MD_VOTE.search(u), MD_OLD_VOTE.search(u)
+        # a veto is overridden in the next session, on a vote filed under it (2020 HB 4: /2021RS/...): the address
+        # names the bill's year, #2020-HB4, because that session has its own HB 4
+        yr = sessions[events[eid]["legislative_session_id"]]["identifier"][:4]
+        tag = lambda vote_year: f"{yr}-{code}" if vote_year == str(int(yr) + 1) else code
+        if m and m.group(1) in (yr, str(int(yr) + 1)):
+            vsrc[eid] = [f"https://mgaleg.maryland.gov/{m.group(1)}RS/votes/{m.group(2).lower()}/{m.group(3)}.{'htm' if m.group(1) == '2017' else 'pdf'}#{tag(m.group(1))}"]
+        elif o and o.group(5) in (yr, str(int(yr) + 1)) and f"{o.group(1).upper()}{int(o.group(2))}" == re.sub(r"^([A-Z]+)0+", r"\1", code):
+            # the old page names its bill: it must be the row's bill, else the address is left as it is (no reader knows it)
+            ext = "htm" if o.group(5) == "2017" else "pdf"
+            vsrc[eid] = [f"https://mgaleg.maryland.gov/{o.group(5)}RS/votes/{'house' if o.group(3).lower() == 'h' else 'senate'}/{o.group(4)}.{ext}#{tag(o.group(5))}"]
+        else:
+            DUPES[events[eid]["legislative_session_id"]]["md_vote_address_not_rewritten"] += 1
 
 # ---------------- roll calls the dump does not hold ----------------
 RECORD_NAMES = set()  # (session, chamber, name) printed in a roll call read from the record; ms_resolve reads only these
@@ -393,7 +426,7 @@ CH_NAME = {"H": "House", "A": "Assembly", "S": "Senate", "L": "Legislature"}
 def event_chamber(eid):
     """The chamber that took the vote: from the roll call's own link where the state has a rule, else the row's."""
     m = RULES["chamber"].search((vsrc.get(eid) or [""])[0]) if RULES.get("chamber") else None
-    return m.group(1) if m else (events[eid].get("_chamber") or chamber_of(events[eid]["organization_id"]))
+    return m.group(1)[0].upper() if m else (events[eid].get("_chamber") or chamber_of(events[eid]["organization_id"]))
 
 
 def seat(pid, sess):
@@ -488,14 +521,17 @@ def seated_in(pid, sid, ch):
 
 
 MS_SUFFIX = re.compile(r"[\s,]+(?:jr|sr|ii|iii|iv|v)\.?$", re.I)
+# Maryland's lists print accents ("Joseline A. Peña-Melnyk"): a word is read without them, as norm() reads a name.
+ascii_fold = lambda s: unicodedata.normalize("NFD", s or "").encode("ascii", "ignore").decode()
 
 
 MS_BY_SEAT = collections.Counter()  # (session, chamber, printed name, Open States name) -> votes linked by the seat rule
+MS_BY_NAME = collections.Counter()  # the same, linked by the name alone against a membership in the other chamber
 
 
 def ms_family_in(p, name):
     """Does person p's family name end this printed name (a suffix dropped; one part of a hyphenated name)?"""
-    w = re.findall(r"[A-Za-z][A-Za-z'\-]*", MS_SUFFIX.sub("", name or ""))
+    w = re.findall(r"[A-Za-z][A-Za-z'\-]*", MS_SUFFIX.sub("", ascii_fold(name)))
     fam = norm(MS_SUFFIX.sub("", persons[p]["family_name"] or persons[p]["name"].split()[-1]))
     parts = [norm(x) for x in (persons[p]["family_name"] or "").split("-")]
     return bool(w) and (norm(w[-1]) in [fam] + parts or norm("".join(w[-2:])) == fam)
@@ -514,30 +550,41 @@ def ms_resolve(sid, ch, name):
        the record prints only one member of that family name in that chamber that session. Every such link is counted in MS_BY_SEAT and printed at the end, to be checked by hand."""
     if (sid, ch, name) not in RECORD_NAMES:
         return None  # the dump's own labels are misread ("Absent or those Barnett"); only the record's names are linked here
-    words = re.findall(r"[A-Za-z][A-Za-z'\-]*", MS_SUFFIX.sub("", name or ""))
+    words = re.findall(r"[A-Za-z][A-Za-z'\-]*", MS_SUFFIX.sub("", ascii_fold(name)))
     if len(words) < 2 or "(" in name:
         return None
 
     def fam_fits(p, k):
         fam = norm(MS_SUFFIX.sub("", persons[p]["family_name"] or persons[p]["name"].split()[-1]))
         tail = norm("".join(words[-k:]))
-        return tail == fam or (k == 1 and tail in [norm(x) for x in (persons[p]["family_name"] or "").split("-")])
-    for ros in (roster, roster_sp):
-        cand = []
-        for p in ros.get((sid, ch), []):
-            if p not in persons:
-                continue
-            given = norm(persons[p]["given_name"] or persons[p]["name"].split()[0])
-            for k in (1, 2):
-                if len(words) > k and fam_fits(p, k):
-                    if any(f and (f == given or given.startswith(f) or (len(given) >= 3 and f.startswith(given)))
-                           for f in (norm(w) for w in words[:-k])):  # "C." / "Christopher" / "Chris"
-                        cand.append(p)
-                        break
+        # one part of a hyphenated or two-word family name: "Hobgood-Wilkes"; Maryland's record prints "Heather Bagnall"
+        # and "Jennifer White" for Open States' "Bagnall Tudball" and "White Holland"
+        return tail == fam or (k == 1 and tail in [norm(x) for x in re.split(r"[-\s]+", persons[p]["family_name"] or "")])
+    def name_fits(p, first_only=False):
+        given = norm(persons[p]["given_name"] or persons[p]["name"].split()[0])
+        fits = lambda f: f and (f == given or given.startswith(f) or (len(given) >= 3 and f.startswith(given)))  # "C." / "Chris"
+        for k in (1, 2):
+            if len(words) > k and fam_fits(p, k):
+                ws = [norm(w) for w in words[:-k]]
+                if (fits(ws[0]) and len(ws[0]) > 1) if first_only else any(fits(f) for f in ws):
+                    return True
+        return False
+    # Then every person of the state, not only the session's roster, for two Maryland faults. The dump may link none of
+    # a member's votes that session (2017 "Theodore Sophocleus", 2020 "Dana Jones"); and Open States may keep only an
+    # undated membership in the member's latest chamber, so a delegate who became a senator (Alonzo Washington, Shaneka
+    # Henson) never reads as seated in the House. Each link made here is printed. Because a person whose name fits is
+    # always found here, the seat rule below never gives a printed name to a namesake (Alice Sophocleus, or the
+    # Speaker Adrienne Jones, whom the record prints by office).
+    for i, ros in enumerate((roster, roster_sp, {(sid, ch): list(persons)})):
+        # across the whole state the FIRST given word must fit, written out: a middle initial fits too much there
+        # (Mississippi's "Robert L. Jackson" is not Lataisha Jackson)
+        cand = [p for p in ros.get((sid, ch), []) if p in persons and name_fits(p, first_only=i == 2)]
         if len(cand) > 1:
             seated = [p for p in cand if seated_in(p, sid, ch)]
             cand = seated if len(seated) == 1 else [p for p in cand if seated_in(p, sid, ch) is not False]
         if len(cand) == 1:
+            if i == 2:
+                MS_BY_NAME[(sessions[sid]["identifier"], ch, name, persons[cand[0]]["name"])] += 1
             return cand[0]
         if cand:
             return None
@@ -795,6 +842,11 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
         if RULES.get("https"):
             for r in ex["billsource"]:
                 r["url"] = re.sub(r"^http://", "https://", r["url"])
+        if RULES.get("md_bill_page"):
+            for r in ex["billsource"]:
+                r["url"] = re.sub(r"^https://mgaleg\.maryland\.gov/webmga/frmMain\.aspx\?id=([HS][BJ])(\d+)&stab=\d+&pid=billpage&tab=subject\d+&ys=(20\d{2})rs$",
+                                  lambda g: f"https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/{g.group(1).lower()}{int(g.group(2)):04d}?ys={g.group(3)}RS",
+                                  r["url"], flags=re.I)
         bill_id = rid("bill", bid)
         body = chamber_of(b["from_organization_id"]) or (num[:1] if num[:1] in "HSA" else "")
         cls = pgarr(b["classification"])
@@ -846,6 +898,8 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
                 # the same PDF is .../api/v2/general_assembly_132/legislation/hb228/01_RH/pdf/. Other forms are kept.
                 main = re.sub(r"^https?://search-prod\.lis\.state\.oh\.us/solarapi/v1/general_assembly_(\d{3})/(?:bills|resolutions)/([a-z]+\d+)/([A-Z]+)/(\d+)\?format=pdf$",
                               r"https://search-prod.lis.state.oh.us/api/v2/general_assembly_\1/legislation/\2/\4_\3/pdf/", main)
+            if RULES.get("https_texts"):
+                main = re.sub(r"^http://", "https://", main)
             if not main:
                 continue
             t = text_type(v["note"])
@@ -958,6 +1012,10 @@ json.dump(REG, open(REG_PATH, "w"), indent=0, sort_keys=True)
 if SUPP:
     print("roll calls read from the legislature's own site: " + ", ".join(f"{k} {v}" for k, v in sorted(SUPP.items())), flush=True)
 if MS_BY_SEAT:
-    print("Mississippi names linked by the seat rule (family name fits one seated member; check each by hand):")
+    print("Full names linked by the seat rule (family name fits one seated member; check each by hand):")
     for (sess, ch, printed, os_name), n in sorted(MS_BY_SEAT.items()):
+        print(f"  {sess} {ch} {printed!r} -> {os_name!r} ({n} votes)")
+if MS_BY_NAME:
+    print("Full names linked by the name alone, no membership seating the person in this chamber that session (check each by hand):")
+    for (sess, ch, printed, os_name), n in sorted(MS_BY_NAME.items()):
         print(f"  {sess} {ch} {printed!r} -> {os_name!r} ({n} votes)")

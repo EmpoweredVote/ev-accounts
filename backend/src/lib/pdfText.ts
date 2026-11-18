@@ -38,13 +38,17 @@ export async function extractPdfText(data: Uint8Array): Promise<string> {
   }
 }
 
-/** One positioned text run of a PDF page: page (from 1), left x, baseline y (PDF units, y grows upward), width. */
+/**
+ * One positioned text run of a PDF page: page (from 1), left x, baseline y (PDF units, y grows upward), width, and the
+ * direction the text runs, in quarter turns counter-clockwise from left-to-right (0; a page printed sideways is 1 or -1).
+ */
 export interface PdfTextItem {
   page: number;
   x: number;
   y: number;
   w: number;
   str: string;
+  dir?: number;
 }
 
 /**
@@ -62,7 +66,7 @@ export async function extractPdfItems(data: Uint8Array): Promise<PdfTextItem[]> 
       const tc = await (await doc.getPage(p)).getTextContent();
       for (const i of tc.items) {
         if (!('str' in i) || !i.str.trim()) continue;
-        out.push({ page: p, x: i.transform[4], y: i.transform[5], w: i.width, str: i.str });
+        out.push({ page: p, x: i.transform[4], y: i.transform[5], w: i.width, str: i.str, dir: Math.round(Math.atan2(i.transform[1], i.transform[0]) / (Math.PI / 2)) });
       }
     }
     return out;

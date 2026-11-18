@@ -5,6 +5,7 @@ import {
   isStateRollCallUrl, parseStateRollCallUrl, readStateRollCallHtml, renderStateRollCall, parseStateRollCallRender,
   parseStateRollCallLine, stateLabelFits, stateRollCallLinesFor, verifyStateRollCallLine, STATE_VOTES,
   readStateRollCallDocs, stateRollCallDocs, stateRollCallMinGapMs, fullNameLabelFits,
+  explainMarylandVote, mdQuestionIsOnTheBill, pdfCellsBody, readStateRollCallRecord,
 } from './stateRollCallEvidence.js';
 import { fetchStateRollCallText, renderStateRollCallHtml, resetStateRollCallPacing } from './adapters/stateRollCallAdapter.js';
 import { verifyEvidence, type StanceRow } from './researchVerifier.js';
@@ -774,5 +775,233 @@ describe('state roll-call pages — Mississippi lines', () => {
     };
     expect(await fetchStateRollCallText(MS_HOU_2026, { fetchImpl, now: () => 0, sleep: async () => {} })).toBe(t);
     resetStateRollCallPacing();
+  });
+});
+
+// ── Maryland ─────────────────────────────────────────────────────────────────────────────────────────
+// Saved 2026-11-18 from mgaleg.maryland.gov: three votes (2026 House, a PDF, kept as the cells the adapter hands on:
+// pdfCellsBody; 2019 Senate, a consent calendar printed sideways, kept as the PDF; 2017 Senate, a page, trimmed to its
+// table cells) and each chamber's committee pages for that session, trimmed to the session and the member links (the
+// pages print each member's party; the trim leaves it out).
+const MD = 'https://mgaleg.maryland.gov/';
+const MD_HOU_2026 = `${MD}2026RS/votes/house/1104.pdf#SB128`;
+const MD_SEN_2019 = `${MD}2019RS/votes/senate/0777.pdf#HB243`;
+const MD_SEN_2017 = `${MD}2017RS/votes/senate/1361.htm#2016-SB907`; // "Special Order Calendar 2016 Vetoed Senate Bill"
+const mdFile = (f: string, enc: BufferEncoding = 'utf8'): string => readFileSync(fileURLToPath(new URL(`./__fixtures__/stateRollCall/${f}`, import.meta.url)), enc);
+const MD_CM: Record<string, string[]> = {
+  'H-2026': ['app', 'ecm', 'ent', 'jud', 'wm', 'hru', 'hlt', 'gvc'],
+  'S-2019': ['bt', 'ehe', 'fin', 'jpr', 'sru', 'exn'],
+  'S-2017': ['bt', 'ehe', 'fin', 'jpr', 'sru', 'exn'],
+};
+const mdCm = (k: string): string[] => MD_CM[k].map((c) => mdFile(`md-cm-${k}-${c}.html`));
+const mdHou2026 = (): string[] => [mdFile('md-2026-house-1104.txt'), ...mdCm('H-2026')];
+const mdSen2017 = (): string[] => [mdFile('md-2017-senate-1361.htm'), ...mdCm('S-2017')];
+/** The render, after one change to one document; the test fails when the change did not apply. */
+const mdRender = (bodies: string[], url: string, doc = -1, from = '', to = ''): string | null => {
+  const b = [...bodies];
+  if (doc >= 0) b[doc] = tamper(b[doc], from, to);
+  return readStateRollCallDocs(b, url);
+};
+const mdWhy = (bodies: string[], url: string, doc: number, from: string, to: string): string => {
+  const b = [...bodies];
+  b[doc] = tamper(b[doc], from, to);
+  const v = explainMarylandVote(b, url);
+  return 'refused' in v ? v.refused : 'read';
+};
+const ACEVERO = 'Maryland House vote 1104 (2026RS), SB 128 - On Third Reading (2026-04-08): Gabriel Acevero voted Yea.';
+
+describe('state roll-call pages — Maryland address', () => {
+  it('knows a vote cited with its bill, and reads it with the chamber\'s committee pages, a second apart', () => {
+    expect(isStateRollCallUrl(MD_HOU_2026)).toBe(true);
+    expect(stateRollCallDocs(MD_HOU_2026)).toEqual([`${MD}2026RS/votes/house/1104.pdf`,
+      ...['app', 'ecm', 'ent', 'jud', 'w%26m', 'hru', 'hlt', 'gvc'].map((c) => `${MD}mgawebsite/Committees/Details?cmte=${c}&ys=2026RS`)]);
+    expect(stateRollCallDocs(MD_SEN_2017)!.slice(0, 2)).toEqual([`${MD}2017RS/votes/senate/1361.htm`, `${MD}mgawebsite/Committees/Details?cmte=b%26t&ys=2017RS`]);
+    expect(stateRollCallMinGapMs(MD_HOU_2026)).toBe(1_000);
+    // no bill, plain http, a 2017 PDF and a later page (2017's votes are pages, every later session's PDFs), a short
+    // vote number, a look-alike host, an unknown chamber
+    for (const u of [`${MD}2026RS/votes/house/1104.pdf`, MD_HOU_2026.replace('https', 'http'), MD_SEN_2017.replace('.htm', '.pdf'),
+      MD_HOU_2026.replace('.pdf', '.htm'), MD_HOU_2026.replace('1104', '104'), MD_HOU_2026.replace('.gov/', '.gov.example.com/'),
+      MD_HOU_2026.replace('/house/', '/joint/')]) {
+      expect(isStateRollCallUrl(u)).toBe(false);
+    }
+  });
+
+  it('keeps each run of a PDF row a cell of its own, and reads a page printed sideways along its text', () => {
+    // "White Holland" is one member; "White" and "Holland" would be two. Joined with spaces they cannot be told apart.
+    expect(pdfCellsBody([{ page: 1, x: 50, y: 500, str: 'White Holland' }, { page: 1, x: 150, y: 500.5, str: 'Wilson' }, { page: 1, x: 50, y: 520, str: 'Voting Yea - 2' }]))
+      .toBe('%PDF-CELLS\nVoting Yea - 2\nWhite Holland\tWilson');
+    // text running down the page (a quarter turn clockwise): a row is one x, read top to bottom
+    expect(pdfCellsBody([{ page: 1, x: 540, y: 456, str: 'Elfreth', dir: -1 }, { page: 1, x: 540, y: 559, str: 'Augustine', dir: -1 }, { page: 1, x: 552, y: 565, str: 'Voting Yea - 2', dir: -1 }]))
+      .toBe('%PDF-CELLS\nVoting Yea - 2\nAugustine\tElfreth');
+  });
+});
+
+describe('state roll-call pages — reading Maryland', () => {
+  it('reads the 2024 Senate\'s misprint "Regular Sessions", but only for its own year', () => {
+    const read = mdRender(mdHou2026(), MD_HOU_2026);
+    expect(mdRender(mdHou2026(), MD_HOU_2026, 0, '2026 Regular Session', '2026 Regular Sessions')).toBe(read);
+    expect(mdWhy(mdHou2026(), MD_HOU_2026, 0, '2026 Regular Session', '2025 Regular Sessions')).toBe('the vote does not name this session');
+  });
+
+  it('reads past each footer and copy stamp the site prints, and stops on a footer it does not know', () => {
+    const foot = '* Indicates Vote Change';
+    expect(mdHou2026()[0].endsWith(foot)).toBe(true);
+    const read = mdRender(mdHou2026(), MD_HOU_2026);
+    expect(read).not.toBeNull();
+    for (const f of ['(COPY- * indicates vote change)', 'COPY - * Indicates Vote Change', '(COPY)\n* Indicates Vote Change', '- COPY -\n* Indicates Vote Change']) {
+      expect(mdRender(mdHou2026(), MD_HOU_2026, 0, foot, f)).toBe(read);
+    }
+    expect(mdWhy(mdHou2026(), MD_HOU_2026, 0, foot, 'DRAFT - * Indicates Vote Change')).toMatch(/cannot read: DRAFT/);
+  });
+
+  it('reads a 2026 House vote: day, question and tally; members by full name; the presiding officer as printed', () => {
+    const t = mdRender(mdHou2026(), MD_HOU_2026)!;
+    expect(t.split('\n').slice(0, 3)).toEqual([
+      'Maryland House vote 1104 (2026RS), SB 128, 2026-04-08.', 'Question: On Third Reading',
+      'Yea 132; Nay 0; Not voting 6; Excused 0; Absent 3.',
+    ]);
+    expect(t).toMatch(/^Yea \(132\): Speaker; .*Gabriel Acevero;/m);
+    // two Johnsons and two Joneses, told apart by their initials
+    expect(t).toMatch(/^Yea .*Andre V\. Johnson Jr\.; .*Steve Johnson;.*Dana Jones;/m);
+    expect(t).toMatch(/^Absent \(3\): .*Adrienne A\. Jones/m);
+    expect(parseStateRollCallRender(t, MD_HOU_2026)).toMatchObject({ state: 'MD', chamber: 'House', session: '2026RS', seq: 1104, bill: 'SB 128' });
+    expect(readStateRollCallRecord(mdHou2026(), MD_HOU_2026)!.groups['Absent or not voting']).toHaveLength(9);
+  });
+
+  it('a bare label is the member no other label of the vote names ("Jones" beside "Jones, A.")', () => {
+    expect(mdRender(mdHou2026(), MD_HOU_2026, 0, 'Jones, D.', 'Jones')).toMatch(/^Yea .*Dana Jones;/m);
+    // with no other label to take Adrienne Jones out, a bare "Jones" is two members, and is kept as printed
+    const b = mdHou2026();
+    b[0] = tamper(tamper(b[0], 'Jones, D.', 'Jones'), 'Jones, A.', 'Jonas');
+    expect(readStateRollCallDocs(b, MD_HOU_2026)).toMatch(/^Yea .*; Jones;/m);
+  });
+
+  it('reads a 2019 Senate consent calendar printed sideways, for each bill it carries, from the PDF itself', async () => {
+    resetStateRollCallPacing();
+    const pdf = readFileSync(fileURLToPath(new URL('./__fixtures__/stateRollCall/md-2019-senate-0777.pdf', import.meta.url)));
+    for (const url of [MD_SEN_2019, MD_SEN_2019.replace('#HB243', '#HB685')]) {
+      const docs = stateRollCallDocs(url)!;
+      const cm = mdCm('S-2019');
+      const fetchImpl = async (u: string) => new Response(u === docs[0] ? pdf : cm[docs.indexOf(u) - 1], { status: 200 });
+      const t = (await fetchStateRollCallText(url, { fetchImpl, now: () => 0, sleep: async () => {} }))!;
+      expect(t.split('\n').slice(0, 3)).toEqual([`Maryland Senate vote 777 (2019RS), ${url.endsWith('243') ? 'HB 243' : 'HB 685'}, 2019-03-25.`,
+        'Question: Third Reading Consent Calendar', 'Yea 47; Nay 0; Not voting 0; Excused 0; Absent 0.']);
+      expect(t).toMatch(/^Yea \(47\): Mr\. President; Sarah K\. Elfreth;/m);
+      resetStateRollCallPacing();
+    }
+  });
+
+  it('reads a 2017 page: a veto question over two cells, and a tally printed "Excused (Absent)" ... "Absent"', () => {
+    const t = mdRender(mdSen2017(), MD_SEN_2017)!;
+    expect(t.split('\n').slice(0, 3)).toEqual(['Maryland Senate vote 1361 (2017RS), SB 907 of 2016, 2017-04-10.',
+      'Question: Shall the bill pass notwithstanding the objection of the Chief Executive?', 'Yea 0; Nay 45; Not voting 2; Excused 0; Absent 0.']);
+    expect(t).toMatch(/^Not voting \(2\): Douglas J\. J\. Peters; Andrew A\. Serafini$/m);
+  });
+
+  it('refuses a group that is not its heading\'s count, a heading that is not the tally\'s, or one out of order', () => {
+    expect(mdWhy(mdHou2026(), MD_HOU_2026, 0, 'Voting Yea - 132', 'Voting Yea - 131')).toBe('the Yea group lists 132 names and prints 131');
+    expect(mdWhy(mdHou2026(), MD_HOU_2026, 0, '132 Yeas', '131 Yeas')).toBe('the Yea heading prints 132 and the tally 131');
+    expect(mdWhy(mdHou2026(), MD_HOU_2026, 0, 'Bouchat', 'Bouchat\tBoafo')).toMatch(/^the Not voting group lists 7/);
+    expect(mdWhy(mdSen2017(), MD_SEN_2017, 0, 'Not&nbsp;Voting&nbsp;-&nbsp;2', 'Excused from Voting - 2')).toBe('a cell the reader cannot read: Excused from Voting - 2');
+  });
+
+  it('refuses another number, chamber, session, day or bill, and a label printed twice', () => {
+    expect(mdWhy(mdHou2026(), MD_HOU_2026, 0, 'SEQ NO. 1104', 'SEQ NO. 1105')).toBe('the vote does not print this number');
+    expect(mdWhy(mdHou2026(), MD_HOU_2026, 0, 'Maryland House of Delegates', 'Senate of Maryland')).toBe('the vote does not name this chamber');
+    expect(mdWhy(mdHou2026(), MD_HOU_2026, 0, '2026 Regular Session', '2025 Regular Session')).toBe('the vote does not name this session');
+    expect(mdWhy(mdHou2026(), MD_HOU_2026, 0, 'Apr 8, 2026', 'Apr 8, 2025')).toBe('the vote has no calendar date in its session year');
+    expect(mdWhy(mdHou2026(), MD_HOU_2026, 0, 'Apr 8, 2026', 'Apr 31, 2026')).toBe('the calendar date is not a real day');
+    expect(mdWhy(mdHou2026(), MD_HOU_2026, 0, '\nSB 128\n', '\nSB 129\n')).toBe('the vote does not name the bill');
+    expect(mdWhy(mdHou2026(), MD_HOU_2026, 0, 'Stinnett', 'Stewart')).toBe('a label is printed twice');
+  });
+
+  it('reads no vote on a motion: the question must be on the bill (runner, 2026-11-16)', () => {
+    expect(mdWhy(mdHou2026(), MD_HOU_2026, 0, 'On Third Reading\t(Emerg)', 'Motion to Special Order')).toBe('the question is not a vote on the bill: Motion to Special Order');
+    expect(mdQuestionIsOnTheBill('ON THIRD READING (Rules Suspended)')).toBe(true);
+    expect(mdQuestionIsOnTheBill('On Third Reading and Final Passage (Hse concurred)')).toBe(true);
+    expect(mdQuestionIsOnTheBill('Conference Committee Report - Adoption')).toBe(true);
+    expect(mdQuestionIsOnTheBill('On third reading for final passage')).toBe(true); // 2021 Senate 855
+    for (const q of ['Favorable with amendments adp - ON 2ND RDG', 'Motion To Recommit', 'Previous Question', 'Shall the Bill be Introduced?', 'FLA Del. Miller /263328/1']) {
+      expect(mdQuestionIsOnTheBill(q)).toBe(false);
+    }
+  });
+
+  it('refuses a committee page of another session or with no members, and a key that names two people', () => {
+    expect(mdWhy(mdHou2026(), MD_HOU_2026, 3, '2026 Regular Session', '2025 Regular Session')).toBe('the committee page ent is not this session\'s, or lists no members');
+    const app = mdHou2026()[1];
+    const empty = app.replace(/<a href="\/mgawebsite\/Members\/Details\/[^\n]*\n/g, '');
+    expect(empty).not.toBe(app);
+    const b = mdHou2026();
+    b[1] = empty;
+    expect(explainMarylandVote(b, MD_HOU_2026)).toEqual({ refused: 'the committee page app is not this session\'s, or lists no members' });
+    const key = /Details\/([^"]+)">([^<]+)</.exec(app)!;
+    expect(mdWhy(mdHou2026(), MD_HOU_2026, 2, '</div>', `<a href="/mgawebsite/Members/Details/${key[1]}">Someone, Else</a>\n</div>`))
+      .toBe(`the key ${key[1]} names both ${key[2].replace(/^([^,]+), (.+)$/, '$2 $1')} and Else Someone`);
+    // the same, on one page: the page itself is refused
+    expect(mdWhy(mdHou2026(), MD_HOU_2026, 1, '</div>', `<a href="/mgawebsite/Members/Details/${key[1]}">Someone, Else</a>\n</div>`))
+      .toBe(`the key ${key[1]} names both ${key[2]} and Someone, Else`);
+  });
+});
+
+describe('state roll-call pages — Maryland, a veto overridden in the next session', () => {
+  // 2021 House vote 42 overrode the veto of 2020's HB 4 ("SPECIAL ORDER CALENDAR - 2020 VETOED HOUSE BILL"); 2021 had its
+  // own HB 4. Here the 2026 vote is made into the override of a 2025 vetoed bill, one change at a time.
+  const VETO = `${MD}2026RS/votes/house/1104.pdf#2025-SB128`;
+  const veto = (cal = 'SPECIAL ORDER CALENDAR - 2025 VETOED SENATE BILL', q = 'Shall the Bill pass notwithstanding the objections\nof the Chief Executive?'): string[] => {
+    const b = mdHou2026();
+    b[0] = tamper(tamper(b[0], 'Third Reading (SB) Calendar No.17', cal), 'On Third Reading\t(Emerg)', q);
+    return b;
+  };
+  const why = (b: string[], url: string): string => { const v = explainMarylandVote(b, url); return 'refused' in v ? v.refused : 'read'; };
+
+  it('reads it cited with the bill\'s year, and names the bill so in its lines', () => {
+    const t = readStateRollCallDocs(veto(), VETO)!;
+    expect(t.split('\n')[0]).toBe('Maryland House vote 1104 (2026RS), SB 128 of 2025, 2026-04-08.');
+    const [line] = stateRollCallLinesFor(VETO, t, 'Acevero', 'Gabriel Acevero');
+    expect(line).toBe('Maryland House vote 1104 (2026RS), SB 128 of 2025 - Shall the Bill pass notwithstanding the objections of the Chief Executive? (2026-04-08): Gabriel Acevero voted Yea.');
+    expect(verifyStateRollCallLine(line, VETO, t, 'Acevero', 'Gabriel Acevero').verdict).toBe('verified');
+    expect(verifyStateRollCallLine(line.replace(' of 2025', ''), VETO, t, 'Acevero', 'Gabriel Acevero').verdict).not.toBe('verified');
+  });
+
+  it('refuses the file cited without the year, a year it does not print, the other chamber\'s bill, and a question that is no override', () => {
+    expect(why(veto(), MD_HOU_2026)).toBe('the vote is on a vetoed bill of another session: cite it with the bill\'s year');
+    expect(why(mdHou2026(), VETO)).toBe('the vote does not print this bill\'s session as vetoed');
+    expect(why(veto('SPECIAL ORDER CALENDAR - 2025 VETOED HOUSE BILL'), VETO)).toBe('the vote does not print this bill\'s session as vetoed');
+    expect(why(veto(undefined, 'On Third Reading'), VETO)).toBe('the question is not a veto override: On Third Reading');
+    // only the previous session's bill
+    expect(isStateRollCallUrl(`${MD}2026RS/votes/house/1104.pdf#2024-SB128`)).toBe(false);
+    expect(isStateRollCallUrl(VETO)).toBe(true);
+    // the 2021 Senate printed the sponsor without the dash: "HB 4 Delegate Atterbeary"; any other word after the bill is refused
+    const read = readStateRollCallDocs(veto(), VETO);
+    expect(readStateRollCallDocs(veto().map((d, i) => i ? d : tamper(d, '\nSB 128\n', '\nSB 128 Senator Hershey\n')), VETO)).toBe(read);
+    expect(why(veto().map((d, i) => i ? d : tamper(d, '\nSB 128\n', '\nSB 128 Amended\n')), VETO)).toBe('the vote does not name the bill');
+  });
+});
+
+describe('state roll-call pages — Maryland lines', () => {
+  const t = mdRender(mdHou2026(), MD_HOU_2026)!;
+
+  it('builds one line for a member and verifies it', () => {
+    expect(stateRollCallLinesFor(MD_HOU_2026, t, 'Acevero', 'Gabriel Acevero')).toEqual([ACEVERO]);
+    expect(verifyStateRollCallLine(ACEVERO, MD_HOU_2026, t, 'Acevero', 'Gabriel Acevero')).toEqual({ verdict: 'verified', matchOffset: 0 });
+    expect(parseStateRollCallLine(ACEVERO)).toMatchObject({ state: 'MD', chamber: 'House', vote: 'Yea', name: 'Gabriel Acevero', bill: 'SB 128', seq: 1104 });
+  });
+
+  it('refuses the line with the vote flipped, given to another member, or on another bill, day or vote', () => {
+    const v = (line: string, last = 'Acevero', full = 'Gabriel Acevero', url = MD_HOU_2026) => verifyStateRollCallLine(line, url, t, last, full).verdict;
+    expect(v(ACEVERO.replace('voted Yea', 'voted Nay'))).toBe('snippet_not_found');
+    expect(v(ACEVERO.replace('Gabriel Acevero', 'Vaughn Stewart'))).not.toBe('verified');
+    expect(v(ACEVERO, 'Stewart', 'Vaughn Stewart')).toBe('name_not_present');
+    expect(v(ACEVERO.replace('SB 128', 'SB 129'))).toBe('snippet_not_found');
+    expect(v(ACEVERO.replace('2026-04-08', '2026-04-07'))).toBe('snippet_not_found');
+    expect(v(ACEVERO, 'Acevero', 'Gabriel Acevero', MD_HOU_2026.replace('1104', '1105'))).toBe('snippet_not_found');
+  });
+
+  it('gives an absent member "was absent", never a Yea or a Nay, and the presiding officer no line', () => {
+    const [l] = stateRollCallLinesFor(MD_HOU_2026, t, 'Metzgar', 'Ric Metzgar');
+    expect(l).toBe('Maryland House vote 1104 (2026RS), SB 128 - On Third Reading (2026-04-08): Ric Metzgar was absent.');
+    expect(verifyStateRollCallLine(l.replace('was absent', 'voted Nay'), MD_HOU_2026, t, 'Metzgar', 'Ric Metzgar').verdict).toBe('snippet_not_found');
+    expect(stateRollCallLinesFor(MD_HOU_2026, t, 'Boafo', 'Adrian Boafo')[0]).toMatch(/Adrian Boafo did not vote\.$/);
+    expect(stateRollCallLinesFor(MD_HOU_2026, t, 'Peña-Melnyk', 'Joseline A. Peña-Melnyk')).toEqual([]);
   });
 });
