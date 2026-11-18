@@ -208,5 +208,6 @@ Assertion 5 fails if any row claims otherwise.
 |---|---|
 | **Luis Galvan** | Decide after Colorado's abstract, due on or after **2026-11-25** |
 | ~~**Gregory Ward**~~ | ✅ **CLOSED 2026-11-17 by `CC_0451`** — seeded as **Gregory A. Ward** (the Maine SoS declared write-in register spells him with a middle initial) and recorded `lost`/`called`. See `backend/data/me02-write-in-2026/WARD.md` |
+| ~~**ME-02's winner citation**~~ | ✅ **CLOSED 2026-11-17 by `CC_0452`** — `CC_0447` said LePage won "defeating incumbent Jared Golden", and Golden was not a candidate. 🔴 **AP's `incumbent` is an attribute of the SEAT, not a ballot line**, so "winner ≠ incumbent" does not mean the winner beat the incumbent: the third branch is whether the incumbent's candidate id sits on a **losing line**. In ME-02 it does not. CA-04 and CO-04 were checked and are correct. ▶ `match-losers.mjs` still owes that branch. See `backend/data/me02-open-seat-2026/OPEN-SEAT.md` |
 | `certified` | A later pass, per state, against that state's own canvass — none of the five is certified yet |
 | Seating | These winners take office **2027-01-03**. Nothing here seats anybody |
