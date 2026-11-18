@@ -1720,6 +1720,119 @@ def openstates_convert_places_a_mississippi_vote_only_from_the_record_and_links_
 
 
 @check
+def openstates_convert_places_a_maryland_vote_only_from_the_record_on_its_own_pdf(t):
+    """Maryland 2026-11-18: the dump links about one member vote in twenty of 2017-2022 to no one ("Washington, A."), and
+    holds no 2023 vote, so a vote is placed only when it was read from the record. Each address becomes the vote's own
+    file with the bill named (/<year>RS/votes/<house|senate>/<NNNN>.pdf#SB1; 2017: .htm). 2017's rows carry a page that is
+    gone (webmga/frmMain.aspx?pid=flrvotepage&...&id=hb0760,h-0501&...); it is rewritten only when it names the row's bill.
+    The old bill page becomes /mgawebsite/Legislation/Details/hb0760?ys=2017RS. A full name from the committee pages
+    links with its accents folded: the pages print "Joseline A. Peña-Melnyk", where Open States keeps "Pena-Melnyk"."""
+    X = f'{t}/work/extracts/2026-11/md'; os.makedirs(X)
+    def tsv(name, cols, rows):
+        open(f'{X}/{name}.tsv', 'w').write('\t'.join(cols) + '\n' + ''.join('\t'.join(r.get(c, '\\N') for c in cols) + '\n' for r in rows))
+    json.dump({'dump': '2026-11-public.pgdump', 'month': '2026-11', 'state': 'md', 'extracted_at': 'x'}, open(f'{X}/extract.json', 'w'))
+    tsv('legislativesession', ['id', 'identifier', 'name', 'classification', 'start_date', 'end_date'],
+        [{'id': 's16', 'identifier': '2016', 'name': '2016 Regular Session', 'classification': 'primary', 'start_date': '2016-01-13', 'end_date': '2016-04-11'},
+         {'id': 's17', 'identifier': '2017', 'name': '2017 Regular Session', 'classification': 'primary', 'start_date': '2017-01-11', 'end_date': '2017-04-10'}])
+    tsv('organization', ['id', 'name', 'classification', 'parent_id'], [{'id': 'leg', 'name': 'General Assembly', 'classification': 'legislature'},
+        {'id': 'up', 'name': 'Senate', 'classification': 'upper', 'parent_id': 'leg'}, {'id': 'lo', 'name': 'House', 'classification': 'lower', 'parent_id': 'leg'}])
+    tsv('post', ['id', 'label'], [])
+    tsv('person', ['id', 'name', 'given_name', 'family_name', 'image', 'primary_party', 'email'],
+        [{'id': 'p-pen', 'name': 'Joseline Pena-Melnyk', 'given_name': 'Joseline', 'family_name': 'Pena-Melnyk'},
+         {'id': 'p-was', 'name': 'Alonzo Washington', 'given_name': 'Alonzo', 'family_name': 'Washington'}])
+    tsv('membership', ['person_id', 'organization_id', 'post_id', 'start_date', 'end_date'],
+        [{'person_id': p, 'organization_id': 'lo', 'start_date': '2015-01-14', 'end_date': '2019-01-09'} for p in ('p-pen', 'p-was')])
+    bill = lambda i, ident: {'id': i, 'legislative_session_id': 's17', 'identifier': ident, 'title': 'A bill', 'classification': '{bill}', 'subject': '{}', 'from_organization_id': 'lo'}
+    # b16: 2016's SB 907, whose veto 2017 overrode on a vote filed under 2017 (2017 has its own SB 907)
+    tsv('bill', ['id', 'legislative_session_id', 'identifier', 'title', 'classification', 'subject', 'from_organization_id'],
+        [bill('b1', 'HB 760'), {**bill('b16', 'SB 907'), 'legislative_session_id': 's16', 'from_organization_id': 'up'}])
+    tsv('billsource', ['bill_id', 'url'], [{'bill_id': 'b1', 'url': 'http://mgaleg.maryland.gov/webmga/frmMain.aspx?id=HB0760&stab=01&pid=billpage&tab=subject3&ys=2017rs'}])
+    for name, cols in (('billsponsorship', ['bill_id', 'name', 'entity_type', 'primary', 'person_id']),
+                       ('billversion', ['id', 'bill_id', 'note', 'date']), ('billversionlink', ['version_id', 'url', 'media_type'])):
+        tsv(name, cols, [])
+    ev = lambda i: {'id': i, 'bill_id': 'b1', 'legislative_session_id': 's17', 'organization_id': 'leg', 'motion_text': 'Third Reading Passed',
+                    'motion_classification': '{passage}', 'start_date': '2017-03-17', 'result': 'pass', 'order': '0', 'updated_at': '2017-04-01'}
+    # d1: the dump's copy of the record vote; d2: a vote the record step did not keep; d3: an old page naming ANOTHER bill
+    tsv('voteevent', ['id', 'bill_id', 'legislative_session_id', 'organization_id', 'motion_text', 'motion_classification', 'start_date', 'result', 'order', 'updated_at'],
+        [ev('d1'), ev('d2'), ev('d3'), {**ev('d4'), 'bill_id': 'b16', 'legislative_session_id': 's16'}])
+    old = 'http://mgaleg.maryland.gov/webmga/frmMain.aspx?pid=flrvotepage&tab=subject7&id={},h-{}&stab=02&ys=2017RS'
+    tsv('votesource', ['vote_event_id', 'url'], [{'vote_event_id': 'd1', 'url': old.format('hb0760', '0501')}, {'vote_event_id': 'd2', 'url': old.format('hb0760', '0502')},
+                                                 {'vote_event_id': 'd3', 'url': old.format('hb0761', '0503')},
+                                                 {'vote_event_id': 'd4', 'url': old.format('sb0907', '1361').replace(',h-', ',s-')}])
+    tsv('votecount', ['vote_event_id', 'option', 'value'], [{'vote_event_id': e, 'option': 'yes', 'value': '1'} for e in ('d1', 'd2', 'd3', 'd4')])
+    tsv('personvote', ['vote_event_id', 'voter_id', 'voter_name', 'option'], [{'vote_event_id': e, 'voter_name': 'Washington, A.', 'option': 'yes'} for e in ('d1', 'd2', 'd3', 'd4')])
+    os.makedirs(f'{t}/work/supplements/MD')
+    page = 'https://mgaleg.maryland.gov/2017RS/votes/house/0501.htm#HB760'
+    rec = {'url': page, 'date': '2017-03-17', 'motion': 'Third Reading Passed', 'question': 'On Third Reading', 'chamber': 'H', 'yea': 2, 'nay': 0, 'absent': 0, 'passed': 1,
+           'groups': {'Yea': ['Joseline A. Peña-Melnyk', 'Alonzo T. Washington'], 'Nay': [], 'Absent or not voting': []}}
+    json.dump({'state': 'MD', 'session': '2017', 'source': 'mgaleg.maryland.gov', 'bills': {'HB760': [rec]},
+               'checked': {'HB760': {'floor': 1, 'read': 1}}, 'refused': {}}, open(f'{t}/work/supplements/MD/2017.json', 'w'))
+    run('openstates/convert.py', X, '--out', f'{t}/out', '--legiscan-root', f'{t}/none', env={'OPENSTATES_NEW_REGISTRY': '1'})
+    rcs = [json.load(open(f))['roll_call'] for f in glob.glob(f'{t}/out/MD-*/MD/*/vote/*.json')]
+    placed = [r for r in rcs if not r['_openstates']['committee']]
+    assert [(r['state_link'], r['chamber']) for r in placed] == [(page, 'H')], [(r['state_link'], r['chamber'], r['_openstates']['committee']) for r in rcs]
+    held = {r['_openstates']['vote_event_id']: r for r in rcs if r['_openstates']['committee']}
+    assert sorted(held) == ['d2', 'd3', 'd4'], sorted(held)
+    assert held['d4']['state_link'] == 'https://mgaleg.maryland.gov/2017RS/votes/senate/1361.htm#2016-SB907', held['d4']['state_link']
+    assert held['d2']['state_link'] == 'https://mgaleg.maryland.gov/2017RS/votes/house/0502.htm#HB760', held['d2']['state_link']
+    assert held['d3']['state_link'] == old.format('hb0761', '0503').replace('http:', 'https:'), 'an old page naming another bill is left as it is'
+    people = {j['people_id']: j for j in (json.load(open(f))['person'] for f in glob.glob(f'{t}/out/MD-*/MD/*/people/*.json'))}
+    got = sorted(people[v['people_id']]['_openstates']['person_id'] for v in placed[0]['votes'])
+    assert got == ['p-pen', 'p-was'], got
+    b = json.load(open(glob.glob(f'{t}/out/MD-*/MD/*/bill/HB760.json')[0]))['bill']
+    assert b['state_link'] == 'https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0760?ys=2017RS', b['state_link']
+    mks = [json.load(open(f))['counts'] for f in glob.glob(f'{t}/out/MD-*/.openstates.json')]
+    assert len(mks) == 2 and sum(c.get('md_vote_address_not_rewritten', 0) for c in mks) == 1, mks
+
+
+@check
+def openstates_convert_links_a_maryland_record_name_to_the_one_person_whose_name_fits(t):
+    """Maryland 2026-11-18. The record prints full names; the first pass linked them only among the session's roster
+    (memberships and dump-linked voters). Three faults, each measured on the 2017-2026 record:
+      - the dump linked none of Theodore Sophocleus's 2017 votes, so the seat rule gave his name to Alice Sophocleus,
+        seated in the House that session (and 2020 "Dana Jones" to the Speaker, Adrienne Jones);
+      - Open States keeps Alonzo Washington only as a senator, so as a delegate (2017-2022) he was linked to no one;
+      - "Heather Bagnall" is Open States' "Heather Bagnall Tudball", a two-word family name.
+    Now the one person of the state whose name fits is linked, and printed; the seat rule is never reached for her."""
+    X = f'{t}/work/extracts/2026-11/md'; os.makedirs(X)
+    def tsv(name, cols, rows):
+        open(f'{X}/{name}.tsv', 'w').write('\t'.join(cols) + '\n' + ''.join('\t'.join(r.get(c, '\\N') for c in cols) + '\n' for r in rows))
+    json.dump({'dump': '2026-11-public.pgdump', 'month': '2026-11', 'state': 'md', 'extracted_at': 'x'}, open(f'{X}/extract.json', 'w'))
+    tsv('legislativesession', ['id', 'identifier', 'name', 'classification', 'start_date', 'end_date'],
+        [{'id': 's17', 'identifier': '2017', 'name': '2017 Regular Session', 'classification': 'primary', 'start_date': '2017-01-11', 'end_date': '2017-04-10'}])
+    tsv('organization', ['id', 'name', 'classification', 'parent_id'], [{'id': 'leg', 'name': 'General Assembly', 'classification': 'legislature'},
+        {'id': 'up', 'name': 'Senate', 'classification': 'upper', 'parent_id': 'leg'}, {'id': 'lo', 'name': 'House', 'classification': 'lower', 'parent_id': 'leg'}])
+    tsv('post', ['id', 'label'], [])
+    pr = lambda i, given, fam: {'id': i, 'name': f'{given} {fam}', 'given_name': given, 'family_name': fam}
+    tsv('person', ['id', 'name', 'given_name', 'family_name', 'image', 'primary_party', 'email'],
+        [pr('p-ali', 'Alice', 'Sophocleus'), pr('p-ted', 'Theodore', 'Sophocleus'), pr('p-bag', 'Heather', 'Bagnall Tudball'),
+         pr('p-was', 'Alonzo', 'Washington'), pr('p-mwa', 'Mary', 'Washington')])
+    tsv('membership', ['person_id', 'organization_id', 'post_id', 'start_date', 'end_date'],
+        [{'person_id': 'p-ali', 'organization_id': 'lo', 'start_date': '2015-01-14', 'end_date': '2019-01-09'},
+         {'person_id': 'p-bag', 'organization_id': 'lo', 'start_date': '2015-01-14', 'end_date': '2019-01-09'},
+         {'person_id': 'p-was', 'organization_id': 'up'}, {'person_id': 'p-mwa', 'organization_id': 'up'}])
+    tsv('bill', ['id', 'legislative_session_id', 'identifier', 'title', 'classification', 'subject', 'from_organization_id'],
+        [{'id': 'b1', 'legislative_session_id': 's17', 'identifier': 'HB 760', 'title': 'A bill', 'classification': '{bill}', 'subject': '{}', 'from_organization_id': 'lo'}])
+    for name, cols in (('billsource', ['bill_id', 'url']), ('billsponsorship', ['bill_id', 'name', 'entity_type', 'primary', 'person_id']),
+                       ('billversion', ['id', 'bill_id', 'note', 'date']), ('billversionlink', ['version_id', 'url', 'media_type']),
+                       ('voteevent', ['id', 'bill_id', 'legislative_session_id', 'organization_id', 'motion_text', 'motion_classification', 'start_date', 'result', 'order', 'updated_at']),
+                       ('votesource', ['vote_event_id', 'url']), ('votecount', ['vote_event_id', 'option', 'value']), ('personvote', ['vote_event_id', 'voter_id', 'voter_name', 'option'])):
+        tsv(name, cols, [])
+    os.makedirs(f'{t}/work/supplements/MD')
+    names = ['Theodore Sophocleus', 'Heather Bagnall', 'Alonzo T. Washington']
+    rec = {'url': 'https://mgaleg.maryland.gov/2017RS/votes/house/0501.htm#HB760', 'date': '2017-03-17', 'motion': 'Third Reading Passed',
+           'question': 'On Third Reading', 'chamber': 'H', 'yea': 3, 'nay': 0, 'absent': 0, 'passed': 1, 'groups': {'Yea': names, 'Nay': [], 'Absent or not voting': []}}
+    json.dump({'state': 'MD', 'session': '2017', 'source': 'mgaleg.maryland.gov', 'bills': {'HB760': [rec]},
+               'checked': {'HB760': {'floor': 1, 'read': 1}}, 'refused': {}}, open(f'{t}/work/supplements/MD/2017.json', 'w'))
+    out = run('openstates/convert.py', X, '--out', f'{t}/out', '--legiscan-root', f'{t}/none', env={'OPENSTATES_NEW_REGISTRY': '1'}).stdout
+    people = {j['people_id']: j for j in (json.load(open(f))['person'] for f in glob.glob(f'{t}/out/MD-*/MD/*/people/*.json'))}
+    rc = [json.load(open(f))['roll_call'] for f in glob.glob(f'{t}/out/MD-*/MD/*/vote/*.json')][0]
+    got = [people[v['people_id']]['_openstates']['person_id'] for v in rc['votes']]
+    assert sorted(map(str, got)) == ['p-bag', 'p-ted', 'p-was'], [(people[v['people_id']]['name'], people[v['people_id']]['_openstates']) for v in rc['votes']]
+    assert "'Alonzo T. Washington' -> 'Alonzo Washington'" in out and "'Theodore Sophocleus' -> 'Theodore Sophocleus'" in out, out[-800:]
+
+
+@check
 def openstates_convert_takes_south_dakota_sponsors_named_on_the_introduced_text(t):
     """South Dakota 2026-11-17 (runner: cite the introduced text). The dump marks every sponsor primary and cites a bill
     page that is a script shell. For a bill whose sponsors the fetch read, the bill's page is its introduced text, its

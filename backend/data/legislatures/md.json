@@ -1,0 +1,55 @@
+{
+  "state": "md",
+  "name": "Maryland",
+  "verified": "2026-11-18",
+  "source": "Maryland reader session (Stage 5 tools), 2026-11-18: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 534-bill dry batch (282 roll calls, 25,823 member votes) read from mgaleg.maryland.gov with the verifier's own fetch, and each member's vote compared with the dump. One bill text was read (2018 HB 1302, first reader) for its marks; no text was measured in bulk.",
+  "chambers": {
+    "lower": "House of Delegates",
+    "upper": "Senate"
+  },
+  "sessions": "One regular session a year (2017, 2018, ... 2026), from the second Wednesday of January for 90 days, to early April (2020 ended on March 18). Bill numbers start again each year: House bills HB 1 up, Senate bills SB 1 up, joint resolutions HJ and SJ. A special session is its own session (2021s1: December 2021) with its own numbers; the tools read regular sessions only. The site names a session by its year and RS (2026RS). House 141 seats (47 districts, three delegates each, some in sub-districts) and Senate 47.",
+  "bill_data": [
+    "No LegiScan dataset is on disk for Maryland. Bills, sponsors and roll calls come from Open States data, converted to the same folder layout (MD-900085 to MD-900095: 2017 to 2026 and 2021s1; scripts/stage5/openstates/README.md). Each folder carries a .openstates.json; its ids are ours and no legiscan.com page exists for them.",
+    "The dump holds no roll call of the 2023 session, and none of 2021s1. It links about one member vote in twenty of 2017-2022 to no person (\"Washington, A.\", \"Davis, D.E.\", \"Young\", the presiding officer). So no Maryland dump vote is placed: scripts/stage5/openstates/fetch-legislature-rollcalls.ts reads each bill's page from the legislature, keeps the votes on the bill and reads each from its PDF; convert.py places only those (record_is_the_floor) and keeps every other dump vote marked committee, with the reason in _openstates.not_placed. Run the fetch for every bill the scan finds, then convert the whole state again.",
+    "Compared 2026-11-18, 2017-2026: 282 floor roll calls read from the record, 0 refused. 258 have a dump copy; 24 are only on the record (all 17 of 2023, which the dump lacks; four 2020 vetoes overridden in 2021; 2022 HB 1021's two override votes; 2024 HB 315 Senate vote 1078). Tally differences: 0. Member votes compared: 23,517, differences: 0. 61 dump labels fit no record name, all the presiding officer in 2026 (the dump names her or him, the record prints \"Speaker\" or \"Mr. President\"). The record wins wherever they would differ. A bill's page can leave out a vote on it (2022 SB 861, Senate vote 1377): run scripts/stage5/openstates/md_dump_votes.py for each session and pass its output to the fetch with --also; that vote was the only one in 534 bills.",
+    "The record names each member in full, from the chamber's standing committee pages for that session; convert.py links a record name to an Open States person by family name and a fitting given name, accents folded (\"Peña-Melnyk\"), as Mississippi's are (ms_full_names); failing that, to the one person of the state whose family and first given name fit (the dump links none of some members' votes in a session, and Open States keeps a delegate who became a senator only as a senator). 60 links made by name alone or by the seat rule were each checked against the legislature's own member id (the id in Open States' photo address is the id on the legislature's member link). One is by hand, in name_overrides.json: 2017-2018 House \"William G. Folden\" is Bill Folden (his Senate page says he represented District 3B in 2015-2019). Roster legislators: 188; 181 linked by name, 6 through the legislature's member id (Muse, Bagnall, Long, Rosenberg, Hutchinson, Folden), 1 with no record (Alexander M. Harlan, seated 2026-08-03).",
+    "The dump labels some votes by the calendar's stage (\"On Third Reading\") where the vote's own question, printed above its tally, is a floor amendment or the previous question (2018 HB 888 Senate 1103-1107, 2018 HB 1302 House 1484, 2019 SB 793 House 975-977). The record step reads the vote's own question, so these are counted as votes on a motion and not placed."
+  ],
+  "votes": {
+    "mode": "legiscan-plan",
+    "official_hosts": [
+      "mgaleg.maryland.gov"
+    ],
+    "legiscan_args": null,
+    "floor_rule": "A vote is cited on its own file, with the bill named after a #: mgaleg.maryland.gov/<year>RS/votes/<house|senate>/<NNNN>.pdf#<BILL> (2026RS/votes/house/1104.pdf#SB128); 2017's votes are pages, /2017RS/votes/house/0501.htm#HB760. A veto overridden in the next session is filed under that session and cited with the bill's year: /2021RS/votes/house/0042.pdf#2020-HB4 (\"HB 4 of 2020\" in the line). The file prints its number, the chamber, the session, the calendar date, the bill or bills (a consent calendar is one vote on several bills), the question, the tally (Yeas, Nays, Not Voting, Excused, Absent), and each group as a list of labels: surnames, with initials where two members share one (\"Davis, D.E.\"), and the presiding officer by office (\"Speaker\", \"Mr. President\"). It prints no full name. So the reader (src/lib/stateRollCallEvidence.ts) reads it with the chamber's standing committee pages for that session (/mgawebsite/Committees/Details?cmte=<code>&ys=<year>RS), whose members together are the chamber, to turn each label into one member's full name. A vote is read only when its question is a vote on the bill (third reading and final passage, a conference report, a veto override, a third-reading consent calendar), every printed group count equals the labels under it, the groups equal the tally, the total is not more than the chamber's seats, no label is listed twice and no two labels name one member. A label that fits no member or several, and the presiding officer, is kept as printed and gives no line. A member who did not vote is written as the file lists them (\"did not vote\", \"was excused from voting\", \"was absent\"), never as a Yea or a Nay. Committee votes are not on the bill page's vote links (they are separate files under /votes_comm/), and votes on a floor amendment or a motion are counted, not mapped.",
+    "gaps": [
+      "A vote on a floor amendment or a motion (the previous question, to recommit, to suspend the rules) is not a vote on the bill and is not mapped (runner, 2026-11-16).",
+      "The presiding officer is printed by office (\"Speaker\", \"Mr. President\", \"Speaker Busch\"): that member's vote gives no line.",
+      "A member the vote file prints by surname only (\"Love\", \"Corderman\", \"Watson, R.\", \"Davis, D.M.\") is one the session's committee pages no longer list, because they left or changed chamber after it. The reader keeps the label as printed and writes no line: 38 of 17,345 vote pairs in the dry batch (Sara Love 2024, Paul Corderman 2020, Ron Watson 2021 in the House; Adrienne Jones 2019, printed \"Jones\"; and Jennifer White Holland 2023, printed \"Jennifer White\", which is not her stored name). Special session 2021s1 is not read."
+    ]
+  },
+  "texts": {
+    "hosts": [
+      "mgaleg.maryland.gov"
+    ],
+    "marks": "Read on one text (2018 HB 1302, first reader, 2026-11-18); not measured in bulk. The text prints its own key: \"CAPITALS INDICATE MATTER ADDED TO EXISTING LAW. [Brackets] indicate matter deleted from existing law.\" How a third reader or an enrolled text marks committee and floor amendments was not checked.",
+    "note": "The dump links each text as a PDF, mgaleg.maryland.gov/<year>RS/bills/<hb|sb>/<hb1302><code>.pdf over http; the site answers https (convert.py rewrites them). The code names the version: f first reader, t third reader, e enrolled. The old bill page (webmga/frmMain.aspx?...pid=billpage...) is gone; the bill's page is /mgawebsite/Legislation/Details/hb1302?ys=2018RS."
+  },
+  "reader_access": {
+    "mgaleg.maryland.gov": "open"
+  },
+  "search_note": "Maryland sponsorships and House and Senate floor votes for 2017 to 2026 come from the bill data on disk, checked against the legislature's own record: skip the legislature's bill pages and vote files, and add the place \"sponsor list: covered by bulk bill data\". Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
+  "bill_table_note": "- Maryland sessions run one year; bill numbers start again each year.\n- Floor votes kept: third reading (final passage), conference reports, veto overrides and third-reading consent calendars. Votes on a floor amendment or a motion are not floor votes on the bill.\n- One vote can carry several bills (a consent calendar); it is a vote on each of them.\n- Bill texts print new words in CAPITALS and deleted words in [brackets].",
+  "fill_quotes": {
+    "label_strips": []
+  },
+  "quirks": [
+    "The site has no robots.txt and states no crawl delay. The reader waits one second between requests. No 403, 429 or bot check was met on 2026-11-18. The site was down for maintenance for a while that day (HTTP 500 and 503, \"Application Offline\"): wait and run again.",
+    "One vote needs the vote file and the chamber's six to nine committee pages for that session; the committee pages are fetched once a session and reused. The line tool took 235 seconds for 200 votes from an empty page cache (131 different roll calls, so most of the time is page fetches), and 33 seconds for all 17,345 vote pairs of the dry batch once the pages were cached.",
+    "Some vote PDFs are printed sideways (the 2019 Senate's consent calendars); the reader reads a page along its text.",
+    "Bill pages from 2018 write each link with a space inside the quote (href=\" /2018RS/votes/house/0390.pdf\"). The fetch stops on a vote link of any shape it does not read, rather than skipping it.",
+    "The Senate's bill-page actions say \"Third Readings Passed\" where the House says \"Third Reading Passed\"; the 2024 Senate's vote files print \"2024 Regular Sessions\".",
+    "Vote files carry a copy's stamp in several forms (\"- COPY -\", \"(COPY)\", \"(COPY- * indicates vote change)\", \"COPY - * Indicates Vote Change\"); a trailing * on a label marks a vote changed after the roll.",
+    "A label with initials (\"Washington, A.\", \"Lewis, J.\") is chosen among members of that family name by the initials; a bare label (\"Smith\") is the one member of that family name the vote does not already name another way."
+  ]
+}

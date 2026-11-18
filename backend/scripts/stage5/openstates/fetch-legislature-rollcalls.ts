@@ -34,7 +34,7 @@ import { fileURLToPath } from 'node:url';
 import { decodeHtmlBytes, EMPOWERED_VOTE_UA } from '../../../src/lib/verificationFetch.js';
 import { fetchWithHostTrust } from '../../../src/lib/adapters/hostTrust.js';
 import { extractPdfItems, extractPdfText, looksLikePdfBytes } from '../../../src/lib/pdfText.js';
-import { explainMississippiVote, isStateRollCallUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfLinesBody, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
+import { explainMarylandVote, explainMississippiVote, isStateRollCallUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
 
 /** One floor roll call as a bill's vote list gives it. */
 /** tally: null when the vote list prints none (Mississippi): the reader's own checks of the printed totals stand alone. */
@@ -78,7 +78,70 @@ const SD_SESSION_ID = new Map(Object.entries(SD_SESSIONS).map(([id, name]) => [n
 const MS_BILL = /^(HB|SB|HC|SC|HR|SR|SN|JR)\s*0*([1-9]\d{0,3})$/i;
 const MS_SITE = 'https://billstatus.ls.state.ms.us/';
 
+const MD_BILL = /^([HS][BJ])\s*0*([1-9]\d{0,3})$/i;
+/** A Maryland bill-page action that is a vote on the bill (the reader checks the vote's own question again). */
+// The Senate writes "Third Readings Passed" (2018 HB 1302). An action that is neither this nor MD_MOTION_ACTION stops the tool.
+export const MD_FLOOR_ACTION = /^(?:Third Readings? Passed|Third Readings? Failed|Conference Committee Report Adopted|Veto Overridden|Overridden|Vetoed .*Override)/i;
+/** A Maryland bill-page action that is a vote on something other than the bill: an amendment or a motion. */
+export const MD_MOTION_ACTION = /^(?:Floor Amendment\b|Motion\b|Special Order\b|Decision of the Chair\b)/i; // an appeal of the chair's ruling: "Decision of the Chair upheld" (2020)
+const mdTag = (s: string): string => s.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&#39;/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+
 export const INDEX: Record<string, StateIndex> = {
+  // mgaleg.maryland.gov (read 2026-11-18; no robots.txt). The Open States dump holds no roll call of the 2023 session.
+  // A bill's page, /mgawebsite/Legislation/Details/<sb0001>?ys=2023RS, lists every action as a block (Chamber, Calendar
+  // Date, Action), and a recorded vote as a link on its tally: "Third Reading Passed <a href=/2023RS/votes/senate/0370.pdf>
+  // (31-16)</a>" (2017: /2017RS/votes/House/0501.htm). The page prints the history twice (two layouts): each vote is read once. A vote whose action is not
+  // a vote on the bill (MD_FLOOR_ACTION: a floor amendment, the previous question, a special order) is counted, not
+  // read; Maryland's committee votes are not on the bill page. The page prints yeas and nays only. Each vote is cited
+  // on its PDF with the bill after a # and read with the chamber's committee pages (stateRollCallEvidence.ts).
+  MD: {
+    minGapMs: 1_000, // no robots.txt, so no Crawl-delay stated: one a second is ours
+    billUrl(session, bill) {
+      const m = MD_BILL.exec(bill.replace(/[\s.]+/g, ''));
+      if (!m || !/^20\d{2}$/.test(session)) return null;
+      return `https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/${m[1].toLowerCase()}${m[2].padStart(4, '0')}?ys=${session}RS`;
+    },
+    read(body, session, bill) {
+      const m = MD_BILL.exec(bill.replace(/[\s.]+/g, ''))!;
+      const tag = `${m[1].toUpperCase()}${Number(m[2])}`;
+      // the page names its bill and session in its title: "Legislation - SB0001" ... "2023 Regular Session"
+      const sel = /<select[^>]*id="valueSessions"[^>]*>\s*<option[^>]*>([^<]*)<\/option>/.exec(body)?.[1]?.trim();
+      const named = /<title>\s*Legislation - ([HS][BJ])0*(\d+)\s*<\/title>/i.exec(body);
+      if (sel !== `${session} Regular Session` || !named || `${named[1].toUpperCase()}${Number(named[2])}` !== tag) throw new Error(`the bill page is ${named?.[1]}${named?.[2]} of ${sel}, not ${bill} of ${session}`);
+      const out: BillIndex = { floor: [], committee: 0, voice: 0, motion: 0, motions: [] };
+      const seen = new Set<string>();
+      for (const blk of body.matchAll(/<dl class="row">([\s\S]*?)<\/dl>/g)) {
+        const dd = new Map([...blk[1].matchAll(/<dt[^>]*>([\s\S]*?)<\/dt>\s*<dd[^>]*>([\s\S]*?)<\/dd>/g)].map((x) => [mdTag(x[1]), x[2]]));
+        const action = dd.get('Action') ?? '';
+        // 2018 onward writes the link with a space inside the quote: href=" /2018RS/votes/house/0390.pdf"
+        const links = [...action.matchAll(/href="\s*\/(\d{4})RS\/votes\/(house|senate)\/(\d{4})\.(pdf|htm)"/gi)];
+        // a vote link of any other shape must stop the tool, not read as "no vote"
+        if ((action.match(/\/votes\//gi) ?? []).length !== links.length) throw new Error(`a vote link the tool cannot read: ${action.slice(0, 200)}`);
+        if (!links.length) continue;
+        const chamber = mdTag(dd.get('Chamber') ?? '');
+        // a veto is overridden in the next session, on a vote filed under it: 2020 HB 4, /2021RS/votes/House/0042.pdf
+        const next = links.length === 1 && links[0][1] === String(Number(session) + 1) && /^(?:Veto )?Overridden\b/i.test(mdTag(action));
+        if (links.length !== 1 || (links[0][1] !== session && !next) || links[0][2].toLowerCase() !== chamber.toLowerCase()) throw new Error(`a vote the tool cannot read: ${chamber} ${mdTag(action)}`);
+        // 2017's votes are pages (.htm), every later session's PDFs; the reader takes only that form
+        const year = links[0][1];
+        if ((links[0][4].toLowerCase() === 'htm') !== (year === '2017')) throw new Error(`a vote of an unexpected form: ${links[0][0]}`);
+        // the next session has its own bill of this number: name the bill's year (#2020-HB4)
+        const url = `https://mgaleg.maryland.gov/${year}RS/votes/${chamber.toLowerCase()}/${links[0][3]}.${links[0][4].toLowerCase()}#${next ? `${session}-` : ''}${tag}`;
+        if (seen.has(url)) continue;
+        seen.add(url);
+        const text = mdTag(action);
+        const t = /\((\d+)-(\d+)\)\s*$/.exec(text);
+        if (!t) throw new Error(`a vote with no tally: ${text}`);
+        if (!MD_FLOOR_ACTION.test(text)) {
+          if (!MD_MOTION_ACTION.test(text)) throw new Error(`a vote whose action the tool does not know: ${text}`);
+          out.motion!++; out.motions!.push(`${url} ${text}`); continue;
+        }
+        // yeas and nays only: the third figure is not printed (-1), and is not compared (buildRollCall)
+        out.floor.push({ url, motion: text.replace(/\s*\(\d+-\d+\)$/, ''), tally: [Number(t[1]), Number(t[2]), -1] });
+      }
+      return out;
+    },
+  },
   // billstatus.ls.state.ms.us (read 2026-11-17; no robots.txt). Each bill has a history, /<session>/pdf/history/<HB>/
   // <HB0001>.xml: one ACTION per step ("03/08 (H) Passed As Amended"), and an ACT_VOTE link to the vote's PDF when the
   // step was a recorded vote. Mississippi records no committee roll calls: every linked vote is a chamber's. A vote on
@@ -355,18 +418,21 @@ export function buildRollCall(bill: string, v: IndexedVote, docs: string | strin
   if (!isStateRollCallUrl(v.url)) return { refused: 'no reader knows this address' };
   const r = readStateRollCallRecord(Array.isArray(docs) ? docs : [docs], v.url);
   if (!r) {
-    const ms = parseMississippiVoteUrl(v.url) ? explainMississippiVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
+    const ms = parseMississippiVoteUrl(v.url) ? explainMississippiVote(Array.isArray(docs) ? docs : [docs], v.url)
+      : parseMarylandVoteUrl(v.url) ? explainMarylandVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
     return { refused: ms && 'refused' in ms ? `the page did not read as a roll call: ${ms.refused}` : 'the page did not read as a roll call' };
   }
   // South Dakota's record names its session; it must be the session asked for
   if (session !== undefined && r.state === 'SD' && r.session !== session) return { refused: `the vote is of session ${r.session}, not ${session}` };
   // South Dakota votes a consent calendar as one roll call on several bills ("HB 1209, SB 55"): the bill must be one of them
-  if (!r.bill.split(',').some((x) => norm(x) === norm(bill))) return { refused: `the page is for ${r.bill}, not ${bill}` };
+  // Maryland names the previous session's vetoed bill "HB 4 of 2020"; its year is in the address (#2020-HB4), checked by the reader
+  if (!r.bill.split(',').some((x) => norm(x.replace(/ of 20\d{2}$/, '')) === norm(bill))) return { refused: `the page is for ${r.bill}, not ${bill}` };
   const got: [number, number, number] = [r.groups.Yea.length, r.groups.Nay.length, r.groups['Absent or not voting'].length];
   // South Dakota's action log counts Excused 0 on some votes whose own record lists excused members (2018 HB 1209,
   // House concurrence: 62-4, 4 excused on the record): the yeas and nays are compared there, and the record's list,
   // which its own counts check (stateRollCallEvidence.ts), is kept. The fetch counts each such vote.
-  const compared = r.state === 'SD' ? 2 : 3;
+  // Maryland's bill page prints yeas and nays only.
+  const compared = r.state === 'SD' || r.state === 'MD' ? 2 : 3;
   if (v.tally && got.slice(0, compared).join() !== v.tally.slice(0, compared).join()) return { refused: `the page's tally ${got.join('-')} is not the bill file's ${v.tally.join('-')}` };
   const failed = /\b(fail(ed|s)?|defeated|rejected|refuse[sd]?)\b/i.test(v.motion);
   const passed = /\b(pass(ed|es)?|adopt(ed|s)?|concurs?|approved)\b/i.test(v.motion) && !failed ? 1 : failed ? 0 : got[0] > got[1] ? 1 : 0;
@@ -374,6 +440,14 @@ export function buildRollCall(bill: string, v: IndexedVote, docs: string | strin
     url: v.url, date: r.date, motion: v.motion, question: r.question, chamber: r.chamber === 'House' ? 'H' : 'S',
     yea: got[0], nay: got[1], absent: got[2], passed, groups: r.groups,
   };
+}
+
+/** The --also addresses of one bill that its vote list does not already hold, as votes to read without a tally. The key is the
+ * bill with its spaces removed ("SB861"); an address the page lists as a floor vote or a motion is not read twice. */
+export function alsoVotes(bill: string, bi: BillIndex, also: Record<string, string[]>): IndexedVote[] {
+  const onPage = new Set([...bi.floor.map((v) => v.url), ...(bi.motions ?? []).map((m) => m.split(' ')[0])]);
+  return [...new Set(also[bill.replace(/\s+/g, '').toUpperCase()] ?? [])].filter((u) => !onPage.has(u))
+    .map((u) => ({ url: u, motion: 'a vote the bill page does not link', tally: null }));
 }
 
 async function main(): Promise<void> {
@@ -384,6 +458,10 @@ async function main(): Promise<void> {
   const idx = INDEX[ST];
   const listed = flag('--bills-file') ? readFileSync(flag('--bills-file')!, 'utf8').split(/\r?\n/) : (flag('--bills') ?? '').split(',');
   const bills = [...new Set(listed.map((b) => b.trim()).filter(Boolean))];
+  // --also <json>: { "SB861": ["<vote address>", ...] }, votes found elsewhere (the dump) that the bill's own vote list may
+  // not link. Maryland's bill page leaves some out (2022 SB 861: the Senate's third reading after the House amended it,
+  // vote 1377). Each is read like a linked vote, without a tally to compare; one the reader refuses (a motion) is counted.
+  const also = flag('--also') ? JSON.parse(readFileSync(flag('--also')!, 'utf8')) as Record<string, string[]> : {};
   if (!idx || !session || !work || !bills.length) {
     console.error(`usage: fetch-legislature-rollcalls.ts <st> <session> <work dir> --bills "HB 1,SB 2" | --bills-file <file>\nstates with a vote list: ${Object.keys(INDEX).join(', ')}`);
     process.exit(2);
@@ -408,9 +486,9 @@ async function main(): Promise<void> {
       if ((res.status === 429 || res.status === 503) && attempt < 2) { await new Promise((r) => setTimeout(r, 30_000)); continue; }
       if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
       const bytes = new Uint8Array(await res.arrayBuffer());
-      // a PDF (Mississippi's votes) is kept as the lines the verifier's reader reads (pdfLinesBody); anything else by
+      // a PDF (Mississippi's and Maryland's votes) is kept as the verifier's reader reads it (pdfBodyFor); anything else by
       // the page's declared charset, as the verifier reads it
-      const body = looksLikePdfBytes(bytes) ? pdfLinesBody(await extractPdfItems(bytes)) : decodeHtmlBytes(bytes, res.headers.get('content-type') ?? '');
+      const body = looksLikePdfBytes(bytes) ? pdfBodyFor(url, await extractPdfItems(bytes)) : decodeHtmlBytes(bytes, res.headers.get('content-type') ?? '');
       writeFileSync(file, body);
       return body;
     }
@@ -452,19 +530,23 @@ async function main(): Promise<void> {
     const rcs: SupplementRollCall[] = [];
     const refused: { url: string; why: string }[] = [];
     const absentDiffers: string[] = [];
-    for (const v of bi.floor) {
+    const extra = alsoVotes(bill, bi, also);
+    const alsoRefused: { url: string; why: string }[] = [];
+    for (const v of [...bi.floor, ...extra]) {
+      const isExtra = !bi.floor.includes(v);
       const docs: string[] = [];
       for (const d of stateRollCallDocs(v.url) ?? [v.url]) docs.push(await get(d, Math.max(idx.minGapMs, stateRollCallMinGapMs(v.url))));
       const rc = buildRollCall(bill, v, docs, session);
+      if ('refused' in rc && isExtra) { alsoRefused.push({ url: v.url, why: rc.refused }); continue; }
       if ('refused' in rc) { refused.push({ url: v.url, why: rc.refused }); refusedNow.push(`${bill} ${v.url}: ${rc.refused}`); } else {
         rcs.push(rc);
-        if (v.tally && rc.absent !== v.tally[2]) absentDiffers.push(`${v.url} (vote list ${v.tally[2]}, record ${rc.absent})`);
+        if (v.tally && v.tally[2] >= 0 && rc.absent !== v.tally[2]) absentDiffers.push(`${v.url} (vote list ${v.tally[2]}, record ${rc.absent})`);
       }
     }
     if (rcs.length) out.bills[bill] = rcs; else delete out.bills[bill];
     if (refused.length) out.refused[bill] = refused; else delete out.refused[bill];
     out.checked[bill] = { vote_list: url, floor: bi.floor.length, read: rcs.length, committee_not_read: bi.committee, voice_not_read: bi.voice, ...(bi.motion ? { motion_not_read: bi.motion } : {}),
-      ...(bi.motions?.length ? { motions: bi.motions } : {}), ...(absentDiffers.length ? { absent_count_differs_from_vote_list: absentDiffers } : {}), ...(bi.committeeUrls?.length ? { committee_urls: bi.committeeUrls } : {}) };
+      ...(bi.motions?.length ? { motions: bi.motions } : {}), ...(extra.length ? { not_on_the_vote_list: extra.length, not_on_the_vote_list_refused: alsoRefused } : {}), ...(absentDiffers.length ? { absent_count_differs_from_vote_list: absentDiffers } : {}), ...(bi.committeeUrls?.length ? { committee_urls: bi.committeeUrls } : {}) };
     floor += rcs.length;
     if (ST === 'SD') {
       // the bill's sponsors and its introduced text (see sdSponsorsOnText); a fault refuses the sponsors, not the votes

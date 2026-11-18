@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { buildRollCall, INDEX, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote } from './fetch-legislature-rollcalls.js';
+import { alsoVotes, buildRollCall, INDEX, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote } from './fetch-legislature-rollcalls.js';
 
 // The saved Utah House page: roll call 100 of the 2025 General Session, HB 237, 71 yeas, 0 nays, 4 absent.
 const HOUSE = readFileSync(fileURLToPath(new URL('../../../src/lib/__fixtures__/stateRollCall/ut-2025GS-100-H.html', import.meta.url)), 'latin1');
@@ -334,5 +334,121 @@ describe('the legislature\'s own vote list — Mississippi', () => {
     const bad = buildRollCall('HB 1793', v, [MS_0830060[0].replace('Total--106.', 'Total--105.'), ...MS_0830060.slice(1)]);
     expect(bad).toHaveProperty('refused');
     expect((bad as { refused: string }).refused).toMatch(/^the page did not read as a roll call: /);
+  });
+});
+
+// Saved 2026-11-18 from mgaleg.maryland.gov, trimmed to what the tool reads (the title, the session, the action blocks):
+// 2023 SB 1 (8 Senate and 4 House floor amendments, a previous-question vote, three votes on the bill) and 2017 HB 760
+// (two votes on pages). The 2026 House vote and its committee pages are the reader's fixtures.
+const MD_FIX = (f: string): string => readFileSync(fileURLToPath(new URL(`../../../src/lib/__fixtures__/stateRollCall/${f}`, import.meta.url)), 'utf8');
+const MD_SB1 = MD_FIX('md-2023-sb0001-bill.html');
+const MD_HB760 = MD_FIX('md-2017-hb0760-bill.html');
+const MD_HB1302 = MD_FIX('md-2018-hb1302-bill.html');
+const MD = 'https://mgaleg.maryland.gov/';
+
+describe('the legislature\'s own vote list — Maryland', () => {
+  it('names the bill\'s page, its number padded to four, for a regular session only', () => {
+    expect(INDEX.MD.billUrl('2023', 'SB 1')).toBe(`${MD}mgawebsite/Legislation/Details/sb0001?ys=2023RS`);
+    expect(INDEX.MD.billUrl('2017', 'HB 760')).toBe(`${MD}mgawebsite/Legislation/Details/hb0760?ys=2017RS`);
+    expect(INDEX.MD.billUrl('2021s1', 'HB 6')).toBeNull();
+    expect(INDEX.MD.billUrl('2023', 'HR 1')).toBeNull();
+  });
+
+  it('keeps the votes on the bill, each cited on its PDF with the bill, and counts the motions; yeas and nays only', () => {
+    const bi = INDEX.MD.read(MD_SB1, '2023', 'SB 1');
+    expect(bi.floor).toEqual([
+      { url: `${MD}2023RS/votes/senate/0370.pdf#SB1`, motion: 'Third Reading Passed', tally: [31, 16, -1] },
+      { url: `${MD}2023RS/votes/house/1259.pdf#SB1`, motion: 'Third Reading Passed with Amendments', tally: [93, 42, -1] },
+      { url: `${MD}2023RS/votes/senate/1277.pdf#SB1`, motion: 'Third Reading Passed', tally: [31, 16, -1] },
+    ]);
+    expect(bi.motion).toBe(13);
+    expect(bi.motions!.some((m) => m.includes('house/1258.pdf#SB1 Motion Vote Previous Question'))).toBe(true);
+    // the page prints its history twice (two layouts): each vote is kept once
+    const twice = MD_SB1.replace('</body>', `${MD_SB1.slice(MD_SB1.indexOf('<dl class="row">'), MD_SB1.lastIndexOf('</dl>') + 5)}</body>`);
+    expect(twice.length).toBeGreaterThan(MD_SB1.length);
+    expect(INDEX.MD.read(twice, '2023', 'SB 1')).toEqual(bi);
+  });
+
+  it('--also adds a vote the page does not link, keyed by the bill without spaces, and never one the page holds', () => {
+    const bi = INDEX.MD.read(MD_SB1, '2023', 'SB 1');
+    const linked = `${MD}2023RS/votes/senate/0370.pdf#SB1`;
+    const motion = `${MD}2023RS/votes/house/1258.pdf#SB1`;
+    const missing = `${MD}2023RS/votes/senate/1377.pdf#SB1`;
+    expect(alsoVotes('SB 1', bi, { SB1: [linked, motion, missing, missing] }))
+      .toEqual([{ url: missing, motion: 'a vote the bill page does not link', tally: null }]);
+    expect(alsoVotes('SB 1', bi, { SB12: [missing] })).toEqual([]);
+    expect(alsoVotes('SB 1', bi, {})).toEqual([]);
+  });
+
+  it('cites a 2017 vote on its page (.htm), and refuses a PDF link in 2017', () => {
+    expect(INDEX.MD.read(MD_HB760, '2017', 'HB 760').floor.map((v) => v.url)).toEqual([`${MD}2017RS/votes/house/0501.htm#HB760`, `${MD}2017RS/votes/senate/1123.htm#HB760`]);
+    const pdf = MD_HB760.replace('/2017RS/votes/House/0501.htm', '/2017RS/votes/House/0501.pdf');
+    expect(pdf).not.toBe(MD_HB760);
+    expect(() => INDEX.MD.read(pdf, '2017', 'HB 760')).toThrow(/unexpected form/);
+  });
+
+  it('reads 2018\'s links, written with a space inside the quote, and the Senate\'s "Third Readings Passed"', () => {
+    const bi = INDEX.MD.read(MD_HB1302, '2018', 'HB 1302');
+    expect(bi.floor.map((v) => [v.url, v.tally])).toEqual([
+      [`${MD}2018RS/votes/house/0458.pdf#HB1302`, [116, 17, -1]],
+      [`${MD}2018RS/votes/senate/1208.pdf#HB1302`, [31, 13, -1]],
+      [`${MD}2018RS/votes/house/1485.pdf#HB1302`, [93, 46, -1]],
+    ]);
+    expect(bi.motion).toBe(3);
+  });
+
+  it('stops on a vote link of a shape it cannot read, and on an action it does not know, rather than skipping them', () => {
+    const bare = MD_HB1302.replaceAll('href=" /2018RS/votes/house/0458.pdf"', 'href=/2018RS/votes/house/0458.pdf');
+    expect(bare).not.toBe(MD_HB1302);
+    expect(() => INDEX.MD.read(bare, '2018', 'HB 1302')).toThrow(/vote link the tool cannot read/);
+    const odd = MD_HB1302.replaceAll('Motion Vote Previous Question', 'Reconsideration Vote');
+    expect(odd).not.toBe(MD_HB1302);
+    expect(() => INDEX.MD.read(odd, '2018', 'HB 1302')).toThrow(/action the tool does not know: Reconsideration Vote/);
+    // 2022's veto override is printed "Overridden"; 2020's appeal of a ruling "Decision of the Chair upheld", a motion
+    const pq = 'Motion Vote Previous Question  (Delegate Bromwell)  Adopted';
+    expect(MD_HB1302).toContain(pq);
+    const over = INDEX.MD.read(MD_HB1302.replaceAll(pq, 'Overridden'), '2018', 'HB 1302');
+    expect(over.floor.map((v) => v.motion)).toContain('Overridden');
+    // an override in the NEXT session is filed under it (2020 HB 4: /2021RS/votes/House/0042.pdf), cited with the bill's year
+    const nextYear = MD_HB1302.replaceAll(pq, 'Overridden').replace('/2018RS/votes/house/1484.pdf', '/2019RS/votes/House/1484.pdf');
+    expect(nextYear).not.toBe(MD_HB1302.replaceAll(pq, 'Overridden'));
+    expect(INDEX.MD.read(nextYear, '2018', 'HB 1302').floor.map((v) => v.url)).toContain(`${MD}2019RS/votes/house/1484.pdf#2018-HB1302`);
+    // ... but only for an override, and only the next session
+    expect(() => INDEX.MD.read(MD_HB1302.replace('/2018RS/votes/house/1485.pdf', '/2019RS/votes/house/1485.pdf'), '2018', 'HB 1302')).toThrow(/cannot read/);
+    expect(() => INDEX.MD.read(nextYear.replace('/2019RS/votes/House/1484.pdf', '/2020RS/votes/House/1484.pdf'), '2018', 'HB 1302')).toThrow(/cannot read/);
+    const chair = INDEX.MD.read(MD_HB1302.replaceAll(pq, 'Decision of the Chair upheld'), '2018', 'HB 1302');
+    expect(chair.motion).toBe(3);
+    expect(chair.motions!.some((m) => m.includes('Decision of the Chair upheld'))).toBe(true);
+  });
+
+  it('refuses the page of another bill or session, and a vote filed under the other chamber', () => {
+    expect(() => INDEX.MD.read(MD_SB1, '2023', 'SB 2')).toThrow();
+    expect(() => INDEX.MD.read(MD_SB1, '2024', 'SB 1')).toThrow();
+    // the page's own session, alone: its vote links still say 2023
+    const other = MD_SB1.replace('>2023 Regular Session<', '>2024 Regular Session<');
+    expect(other).not.toBe(MD_SB1);
+    expect(() => INDEX.MD.read(other, '2023', 'SB 1')).toThrow(/of 2024 Regular Session, not SB 1 of 2023/);
+    const i = MD_SB1.indexOf('votes/senate/0370.pdf');
+    const crossed = MD_SB1.slice(0, i) + 'votes/house/0370.pdf' + MD_SB1.slice(i + 'votes/senate/0370.pdf'.length);
+    expect(() => INDEX.MD.read(crossed, '2023', 'SB 1')).toThrow(/cannot read/);
+  });
+
+  it('builds the roll call of the previous session\'s vetoed bill, named with its year', () => {
+    const docs = ['md-2026-house-1104.txt', ...['app', 'ecm', 'ent', 'jud', 'wm', 'hru', 'hlt', 'gvc'].map((c) => `md-cm-H-2026-${c}.html`)].map(MD_FIX);
+    const t0 = docs[0].replace('Third Reading (SB) Calendar No.17', 'SPECIAL ORDER CALENDAR - 2025 VETOED SENATE BILL')
+      .replace('On Third Reading\t(Emerg)', 'Shall the Bill pass notwithstanding the objections\nof the Chief Executive?');
+    expect(t0).toContain('2025 VETOED');
+    const v = { url: `${MD}2026RS/votes/house/1104.pdf#2025-SB128`, motion: 'Overridden', tally: [132, 0, -1] as [number, number, number] };
+    expect(buildRollCall('SB 128', v, [t0, ...docs.slice(1)])).toMatchObject({ yea: 132, nay: 0 });
+    expect(buildRollCall('SB 129', v, [t0, ...docs.slice(1)])).toEqual({ refused: 'the page is for SB 128 of 2025, not SB 129' });
+  });
+
+  it('builds the roll call when the vote and the bill page agree on yeas and nays; the third figure is not compared', () => {
+    const docs = ['md-2026-house-1104.txt', ...['app', 'ecm', 'ent', 'jud', 'wm', 'hru', 'hlt', 'gvc'].map((c) => `md-cm-H-2026-${c}.html`)].map(MD_FIX);
+    const v = { url: `${MD}2026RS/votes/house/1104.pdf#SB128`, motion: 'Third Reading Passed', tally: [132, 0, -1] as [number, number, number] };
+    expect(buildRollCall('SB 128', v, docs)).toMatchObject({ date: '2026-04-08', chamber: 'H', yea: 132, nay: 0, absent: 9, question: 'On Third Reading', passed: 1 });
+    expect(buildRollCall('SB 128', { ...v, tally: [131, 0, -1] }, docs)).toEqual({ refused: 'the page\'s tally 132-0-9 is not the bill file\'s 131-0--1' });
+    expect(buildRollCall('SB 128', v, [docs[0].replace('SEQ NO. 1104', 'SEQ NO. 1105'), ...docs.slice(1)]))
+      .toEqual({ refused: 'the page did not read as a roll call: the vote does not print this number' });
   });
 });
