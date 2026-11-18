@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../../dtds_xslts/history.xslt"?>
+ 
+<!DOCTYPE HISTORY SYSTEM "../../dtds_xslts/history.dtd">
+ 
+<HISTORY>
+	<YEAR>2023</YEAR>
+	<SESSION>Regular Session</SESSION>
+	<SHORTTITLE>Firearm suppressors; authorizing manufacture and possession in Mississippi and prohibit enforcement of federal laws governing.</SHORTTITLE>
+	<LONGTITLE>AN ACT TO PROVIDE THAT A FIREARM SUPPRESSOR MANUFACTURED AND REMAINING IN THE STATE OF MISSISSIPPI IS NOT SUBJECT TO FEDERAL LAWS AND REGULATIONS GOVERNING FIREARM SUPPRESSORS; TO PROHIBIT STATE AND LOCAL GOVERNMENTAL AUTHORITIES FROM ENFORCING FEDERAL REGULATIONS ON SUPPRESSORS MADE IN MISSISSIPPI; TO REQUIRE STATE FUNDING TO BE WITHHELD FROM ANY GOVERNMENTAL ENTITY THAT ADOPTS A RULE OR POLICY ENFORCING THE FEDERAL LAWS GOVERNING FIREARM SUPPRESSORS; TO REQUIRE THE DISMISSAL OF CHARGES OF ILLEGALLY CARRYING A MUFFLER OR SILENCER WHICH ARE PENDING ON JULY 1, 2023; TO AMEND SECTIONS 11-1-67 AND 97-37-1, MISSISSIPPI CODE OF 1972, IN CONFORMITY TO THE PROVISIONS OF THIS ACT; TO REPEAL SECTION 97-37-31, MISSISSIPPI CODE OF 1972, WHICH CREATES THE MISDEMEANOR OFFENSE OF MAKING, MANUFACTURING, SELLING OR POSSESSING A DEVICE THAT WILL MUFFLE THE REPORT OF A FIREARM BY A PERSON NOT AUTHORIZED TO DO SUCH UNDER FEDERAL LAW; AND FOR RELATED PURPOSES.</LONGTITLE>
+	<DATETIMELASTCHG>12/07/23 at 09:15</DATETIMELASTCHG>
+ 
+	<MEASURE>
+		<MSR_HS>H</MSR_HS>
+		<MSR_TYPE>B</MSR_TYPE>
+		<MSR_NUM> 912</MSR_NUM>
+		<FORMAT_MSRID>House Bill  912</FORMAT_MSRID>
+		<SHORT_MSRID>HB 912</SHORT_MSRID>
+		<OWNER>H</OWNER>
+	</MEASURE>
+ 
+	<BACKGROUND>
+		<DISPOSITION>Law</DISPOSITION>
+		<DEADLINE>General Bill/Constitutional Amendment</DEADLINE>
+		<REVENUE>No</REVENUE>
+		<VOTETYPE>Majority</VOTETYPE>
+		<EFFECTIVEDATE>** See Text</EFFECTIVEDATE>
+		<CHAPNUM> 461</CHAPNUM>
+	</BACKGROUND>
+	<COMMITTEES>
+		<HOUSE>
+			<H_NAME>Judiciary B</H_NAME>
+			<H_INCMTE>F</H_INCMTE>
+			<H_LINK>../../House_cmtes/JB.xml</H_LINK>
+		</HOUSE>
+		<SENATE>
+			<S_NAME>Judiciary, Division B</S_NAME>
+			<S_INCMTE>F</S_INCMTE>
+			<S_LINK>../../Senate_cmtes/JB.xml</S_LINK>
+		</SENATE>
+	</COMMITTEES>
+	<AUTHORS>
+		<PRINCIPAL>
+			<P_NAME>Anderson (122nd)</P_NAME>
+			<P_LINK>../../House_authors/Anderson_(122nd).xml</P_LINK>
+		</PRINCIPAL>
+		<ADDITIONAL>
+			<CO_NAME>Arnold</CO_NAME>
+			<CO_LINK>../../House_authors/Arnold.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Bain</CO_NAME>
+			<CO_LINK>../../House_authors/Bain.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Brown (20th)</CO_NAME>
+			<CO_LINK>../../House_authors/Brown_(20th).xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Byrd</CO_NAME>
+			<CO_LINK>../../House_authors/Byrd.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Calvert</CO_NAME>
+			<CO_LINK>../../House_authors/Calvert.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Carpenter</CO_NAME>
+			<CO_LINK>../../House_authors/Carpenter.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Creekmore IV</CO_NAME>
+			<CO_LINK>../../House_authors/Creekmore_IV.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Eure</CO_NAME>
+			<CO_LINK>../../House_authors/Eure.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Gibbs</CO_NAME>
+			<CO_LINK>../../House_authors/Gibbs.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Goodin</CO_NAME>
+			<CO_LINK>../../House_authors/Goodin.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Hale</CO_NAME>
+			<CO_LINK>../../House_authors/Hale.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Hopkins</CO_NAME>
+			<CO_LINK>../../House_authors/Hopkins.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Ladner</CO_NAME>
+			<CO_LINK>../../House_authors/Ladner.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Lancaster</CO_NAME>
+			<CO_LINK>../../House_authors/Lancaster.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Mangold</CO_NAME>
+			<CO_LINK>../../House_authors/Mangold.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Massengill</CO_NAME>
+			<CO_LINK>../../House_authors/Massengill.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>McKnight</CO_NAME>
+			<CO_LINK>../../House_authors/McKnight.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Miles</CO_NAME>
+			<CO_LINK>../../House_authors/Miles.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Newman</CO_NAME>
+			<CO_LINK>../../House_authors/Newman.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Rushing</CO_NAME>
+			<CO_LINK>../../House_authors/Rushing.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Sanders</CO_NAME>
+			<CO_LINK>../../House_authors/Sanders.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Scoggin</CO_NAME>
+			<CO_LINK>../../House_authors/Scoggin.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Shanks</CO_NAME>
+			<CO_LINK>../../House_authors/Shanks.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Smith</CO_NAME>
+			<CO_LINK>../../House_authors/Smith.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Tullos</CO_NAME>
+			<CO_LINK>../../House_authors/Tullos.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Turner</CO_NAME>
+			<CO_LINK>../../House_authors/Turner.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Wallace</CO_NAME>
+			<CO_LINK>../../House_authors/Wallace.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Williamson</CO_NAME>
+			<CO_LINK>../../House_authors/Williamson.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Zuber</CO_NAME>
+			<CO_LINK>../../House_authors/Zuber.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Steverson</CO_NAME>
+			<CO_LINK>../../House_authors/Steverson.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Hood</CO_NAME>
+			<CO_LINK>../../House_authors/Hood.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Burnett</CO_NAME>
+			<CO_LINK>../../House_authors/Burnett.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Horne</CO_NAME>
+			<CO_LINK>../../House_authors/Horne.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Bounds</CO_NAME>
+			<CO_LINK>../../House_authors/Bounds.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Stamps</CO_NAME>
+			<CO_LINK>../../House_authors/Stamps.xml</CO_LINK>
+	</ADDITIONAL>
+	</AUTHORS>
+	<CODESECTIONS>
+		<AFFECT>A</AFFECT>
+		<SECTION>011-0001-0067</SECTION>
+		<SECTIONLINK>../../code_sections/011/00010067.xml</SECTIONLINK>
+	</CODESECTIONS>
+	<CODESECTIONS>
+		<AFFECT>A</AFFECT>
+		<SECTION>097-0037-0001</SECTION>
+		<SECTIONLINK>../../code_sections/097/00370001.xml</SECTIONLINK>
+	</CODESECTIONS>
+	<CODESECTIONS>
+		<AFFECT>RP</AFFECT>
+		<SECTION>097-0037-0031</SECTION>
+		<SECTIONLINK>../../code_sections/097/00370031.xml</SECTIONLINK>
+	</CODESECTIONS>
+	<ACTION>
+		<ACT_NUMBER> 1</ACT_NUMBER>
+		<ACT_DESC>01/16 (H) Referred To Judiciary B</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 2</ACT_NUMBER>
+		<ACT_DESC>01/26 (H) Title Suff Do Pass Comm Sub</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 3</ACT_NUMBER>
+		<ACT_DESC>02/08 (H) Committee Substitute Adopted</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 4</ACT_NUMBER>
+		<ACT_DESC>02/08 (H) Point of Order Raised</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 5</ACT_NUMBER>
+		<ACT_DESC>02/08 (H) Set Aside-Pend Ruling of Chair</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 6</ACT_NUMBER>
+		<ACT_DESC>02/08 (H) Point of Order Withdrawn</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 7</ACT_NUMBER>
+		<ACT_DESC>02/09 (H) Passed</ACT_DESC>
+		<ACT_VOTE>../../../../2023/pdf/votes/house/0380007.pdf</ACT_VOTE>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 8</ACT_NUMBER>
+		<ACT_DESC>02/10 (H) Transmitted To Senate</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 9</ACT_NUMBER>
+		<ACT_DESC>02/14 (S) Referred To Judiciary, Division B</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>10</ACT_NUMBER>
+		<ACT_DESC>02/28 (S) Title Suff Do Pass As Amended</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>11</ACT_NUMBER>
+		<ACT_DESC>03/08 (S) Amended</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>12</ACT_NUMBER>
+		<ACT_DESC>03/08 (S) Passed As Amended</ACT_DESC>
+		<ACT_VOTE>../../../../2023/pdf/votes/senate/0650063.pdf</ACT_VOTE>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>13</ACT_NUMBER>
+		<ACT_DESC>03/09 (S) Returned For Concurrence</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>14</ACT_NUMBER>
+		<ACT_DESC>03/14 (H) Decline to Concur/Invite Conf</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>15</ACT_NUMBER>
+		<ACT_DESC>03/21 (H) Conferees Named Bain,Barnett,Owen</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>16</ACT_NUMBER>
+		<ACT_DESC>03/22 (S) Conferees Named Fillingane,McCaughn,Thompson</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>17</ACT_NUMBER>
+		<ACT_DESC>03/27 (H) Conference Report Filed</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>18</ACT_NUMBER>
+		<ACT_DESC>03/27 (S) Conference Report Filed</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>19</ACT_NUMBER>
+		<ACT_DESC>03/28 (H) Conference Report Adopted</ACT_DESC>
+		<ACT_VOTE>../../../../2023/pdf/votes/house/0850026.pdf</ACT_VOTE>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>20</ACT_NUMBER>
+		<ACT_DESC>03/28 (S) Conference Report Adopted</ACT_DESC>
+		<ACT_VOTE>../../../../2023/pdf/votes/senate/0850042.pdf</ACT_VOTE>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>21</ACT_NUMBER>
+		<ACT_DESC>03/31 (H) Enrolled Bill Signed</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>22</ACT_NUMBER>
+		<ACT_DESC>04/03 (S) Enrolled Bill Signed</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>23</ACT_NUMBER>
+		<ACT_DESC>04/13 Approved by Governor</ACT_DESC>
+	</ACTION>
+	<DOCUMENTS>
+		<CURRENT>
+			<CURRENT_PDF>../../../../documents/2023/pdf/HB/0900-0999/HB0912SG.pdf</CURRENT_PDF>
+			<CURRENT_PDF_DT>../../../../documents/2023/dt/HB/0900-0999/HB0912SG.pdf</CURRENT_PDF_DT>
+			<CURRENT_OTHER>../../../../documents/2023/html/HB/0900-0999/HB0912SG.htm</CURRENT_OTHER>
+		</CURRENT>
+		<INTRO>
+			<INTRO_PDF>../../../../documents/2023/pdf/HB/0900-0999/HB0912IN.pdf</INTRO_PDF>
+			<INTRO_PDF_DT>../../../../documents/2023/dt/HB/0900-0999/HB0912IN.pdf</INTRO_PDF_DT>
+			<INTRO_OTHER>../../../../documents/2023/html/HB/0900-0999/HB0912IN.htm</INTRO_OTHER>
+		</INTRO>
+		<CMTESUB>
+			<CMTESUB_PDF>../../../../documents/2023/pdf/HB/0900-0999/HB0912CS.pdf</CMTESUB_PDF>
+			<CMTESUB_PDF_DT>../../../../documents/2023/dt/HB/0900-0999/HB0912CS.pdf</CMTESUB_PDF_DT>
+			<CMTESUB_OTHER>../../../../documents/2023/html/HB/0900-0999/HB0912CS.htm</CMTESUB_OTHER>
+		</CMTESUB>
+		<PASSED>
+			<PASSED_PDF>../../../../documents/2023/pdf/HB/0900-0999/HB0912PS.pdf</PASSED_PDF>
+			<PASSED_PDF_DT>../../../../documents/2023/dt/HB/0900-0999/HB0912PS.pdf</PASSED_PDF_DT>
+			<PASSED_OTHER>../../../../documents/2023/html/HB/0900-0999/HB0912PS.htm</PASSED_OTHER>
+		</PASSED>
+		<ASG>
+			<ASG_PDF>../../../../documents/2023/pdf/HB/0900-0999/HB0912SG.pdf</ASG_PDF>
+			<ASG_PDF_DT>../../../../documents/2023/dt/HB/0900-0999/HB0912SG.pdf</ASG_PDF_DT>
+			<ASG_OTHER>../../../../documents/2023/html/HB/0900-0999/HB0912SG.htm</ASG_OTHER>
+		</ASG>
+		<CONFRPTS>
+			<CR_PDF>../../../../documents/2023/pdf/cr/HB0912CR.pdf</CR_PDF>
+			<CR_PDF_DT>../../../../documents/2023/dt/cr/HB0912CR.pdf</CR_PDF_DT>
+			<CR_OTHER>../../../../documents/2023/html/cr/HB0912CR.htm</CR_OTHER>
+			<CR_DESC>Conference Report</CR_DESC>
+		</CONFRPTS>
+		<AMENDMENTS>
+			<AMRPT>
+				<AMRPT_DESC>Amendment Report for House Bill No.  912</AMRPT_DESC>
+				<AMRPT_PDF>../../../../documents/2023/pdf/sam/Amendment_Report_for_HB0912.pdf</AMRPT_PDF>
+				<AMRPT_PDF_DT>../../../../documents/2023/dt/sam/Amendment_Report_for_HB0912.pdf</AMRPT_PDF_DT>
+				<AMRPT_OTHER>../../../../../documents/2023/html/sam/Amendment_Report_for_HB0912.htm</AMRPT_OTHER>
+			</AMRPT>
+			<SAM>
+				<SAM_DESC>Committee Amendment No 1</SAM_DESC>
+				<SAM_DISP>Adopted</SAM_DISP>
+				<SAM_PDF>../../../../documents/2023/pdf/sam/HB0912_S_Cmte_Amend_01.pdf</SAM_PDF>
+				<SAM_PDF_DT>../../../../documents/2023/dt/sam/HB0912_S_Cmte_Amend_01.pdf</SAM_PDF_DT>
+				<SAM_OTHER>../../../../../documents/2023/html/sam/HB0912_S_Cmte_Amend_01.htm</SAM_OTHER>
+				<SAM_VDESC>Voice Vote</SAM_VDESC>
+			</SAM>
+		</AMENDMENTS>
+		<FISCALNOTE>
+			<FISCALNOTEFLAG>N</FISCALNOTEFLAG>
+			<FISCALNOTEPATH>../../../../documents/2023/pdf/fiscalnotes/HB0912.pdf</FISCALNOTEPATH>
+		</FISCALNOTE>
+	</DOCUMENTS>
+</HISTORY>

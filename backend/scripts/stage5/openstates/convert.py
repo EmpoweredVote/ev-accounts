@@ -144,12 +144,22 @@ for r in rows("personvote"):
 #    the bill's page becomes its introduced text (a PDF that prints "Introduced by: ..."), and its sponsors are the
 #    record's members THAT TEXT NAMES, prime or co-sponsor as the record says. From 2021 the text names only the lead
 #    sponsor (2018 and 2019 name all, 2020 some): the others have no page a person can read, and are left out and counted (sd_sponsors_not_named_on_the_text).
+#  - Mississippi (2026-11-17): "ms_vote_page": each vote's address (/<session>/pdf/votes/<house|senate>/<NNNNNNN>.pdf, a
+#    PDF a person can open) is cited with the bill after a # (one PDF can carry several bills), which is the form the
+#    reader reads (stateRollCallEvidence.ts). "record_is_the_floor", as South Dakota's: the dump's member lists are
+#    misread from the PDFs' prose ("B (122nd)", "Absent or those Bell (21st)", "Yeas--Barnett"), so no dump vote is
+#    placed; only votes read from the record are. "ms_full_names": the record names each member in full, from the
+#    session's member list ("Robert L. Jackson", "Sam Creekmore IV"); ms_resolve links such a name to one person.
 SRC_RULES = {"UT": {"chamber": re.compile(r"[?&]house=([HS])\b"), "committee": re.compile(r"/mtgvotes\.jsp"), "https": True},
              "OH": {"committee": re.compile(r"/cmtevotes/?$"), "committee_motion": re.compile(r"^Reported\b"), "oh_votes_page": True,
                     "oh_text_v2": True, "record_replaces_dump": True},
              "SD": {"https": True, "sd_vote_page": True, "record_replaces_dump": True, "sd_record_is_the_floor": True,
-                    "sd_sponsors_from_text": True}}
+                    "sd_sponsors_from_text": True},
+             "MS": {"https": True, "ms_vote_page": True, "record_replaces_dump": True, "record_is_the_floor": True, "ms_full_names": True}}
 RULES = SRC_RULES.get(ST, {})
+# Only votes read from the legislature's record are placed (South Dakota's rule first; Mississippi's too).
+FLOOR_FROM_RECORD = bool(RULES.get("sd_record_is_the_floor") or RULES.get("record_is_the_floor"))
+NP = "sd_" if RULES.get("sd_record_is_the_floor") else ""  # South Dakota's counts keep their names
 if RULES.get("https"):
     for eid in vsrc:
         vsrc[eid] = [re.sub(r"^http://", "https://", u) for u in vsrc[eid]]
@@ -159,8 +169,8 @@ vsrc_orig = {eid: list(us) for eid, us in vsrc.items()}
 
 def event_committee_link(eid):
     """A committee's vote, by the state's rule: its address, or (Ohio) its motion and classification."""
-    if RULES.get("sd_record_is_the_floor"):
-        return not str(eid).startswith("supplement:")  # South Dakota: only a vote read from the record is placed
+    if FLOOR_FROM_RECORD:
+        return not str(eid).startswith("supplement:")  # South Dakota, Mississippi: only a vote read from the record is placed
     if RULES.get("committee_motion") and "committee-passage" in pgarr(events[eid].get("motion_classification")) \
             and RULES["committee_motion"].search(events[eid]["motion_text"] or ""):
         return True
@@ -222,7 +232,16 @@ if RULES.get("sd_vote_page"):
         keep[k] = eid
         vsrc[eid] = [page]
 
+MS_VOTE = re.compile(r"/(20\d{2}(?:[1-9]E)?)/pdf/votes/(house|senate)/(\d{7})\.pdf$", re.I)
+if RULES.get("ms_vote_page"):
+    for eid in list(events):
+        m = MS_VOTE.search((vsrc.get(eid) or [""])[0])
+        if m:
+            code = re.sub(r"[\s.]+", "", bills[events[eid]["bill_id"]]["identifier"]).upper()
+            vsrc[eid] = [f"https://billstatus.ls.state.ms.us/{m.group(1)}/pdf/votes/{m.group(2).lower()}/{m.group(3)}.pdf#{code}"]
+
 # ---------------- roll calls the dump does not hold ----------------
+RECORD_NAMES = set()  # (session, chamber, name) printed in a roll call read from the record; ms_resolve reads only these
 # A dump can hold a session's bills and none of its roll calls (Utah's 2025 General Session, 2026-11 dump: 959
 # bills, 0 roll calls). fetch-legislature-rollcalls.ts reads those roll calls from the legislature's own site into
 # <work>/supplements/<ST>/<session>.json; they join here as roll calls like any other, so the same name rules link
@@ -248,7 +267,7 @@ def sd_same_member(printed, m):
 SD_SP = {}  # South Dakota: bill id -> the record's sponsors and the introduced text (supplements 'sponsors')
 # South Dakota votes a consent calendar as ONE roll call on many bills, and the dump files a copy under each bill: there a
 # roll call is known by (bill, address), so one bill's copy never stands in for another's.
-PER_BILL = bool(RULES.get("sd_record_is_the_floor"))
+PER_BILL = FLOOR_FROM_RECORD
 hkey = lambda bid, u: (bid, u) if PER_BILL else u
 have_url = {hkey(events[e]["bill_id"], u) for e, us in vsrc.items() for u in us}
 sess_by_ident = {s["identifier"]: sid for sid, s in sessions.items()}
@@ -274,7 +293,7 @@ for f in sorted(glob.glob(os.path.join(WORK, "supplements", ST, "*.json"))):
         bid = bill_by_key.get((sid, re.sub(r"[\s.]+", "", ident).upper()))
         if not bid:
             sys.exit(f"{f}: bill {ident!r} is not in session {sp['session']} of this extract")
-        if RULES.get("sd_record_is_the_floor") and ident in sp.get("checked", {}):
+        if FLOOR_FROM_RECORD and ident in sp.get("checked", {}):
             # South Dakota: the record's copy of a floor vote replaces the dump's. The dump's copy is kept aside, only
             # to teach which person a label is (its voters are mostly linked by Open States from 2021).
             on_rec = {rc["url"]: rc for rc in rcs}
@@ -313,6 +332,7 @@ for f in sorted(glob.glob(os.path.join(WORK, "supplements", ST, "*.json"))):
             vsrc[eid] = [rc["url"]]
             pvotes[eid] = [{"voter_id": None, "voter_name": name, "option": SUPP_OPT.get(k, "other")}
                            for k in ("Yea", "Nay", "Absent or not voting") for name in groups.get(k, [])]
+            RECORD_NAMES.update((sid, rc["chamber"], name) for k in groups for name in groups[k])
             SUPP["added"] += 1
             SUPP_SESSIONS[sid]["added"] += 1
             SUPP_SESSIONS[sid]["bills"].add(ident)
@@ -435,10 +455,82 @@ def seated_in(pid, sid, ch):
     return s[0] == ch
 
 
+MS_SUFFIX = re.compile(r"[\s,]+(?:jr|sr|ii|iii|iv|v)\.?$", re.I)
+
+
+MS_BY_SEAT = collections.Counter()  # (session, chamber, printed name, Open States name) -> votes linked by the seat rule
+
+
+def ms_family_in(p, name):
+    """Does person p's family name end this printed name (a suffix dropped; one part of a hyphenated name)?"""
+    w = re.findall(r"[A-Za-z][A-Za-z'\-]*", MS_SUFFIX.sub("", name or ""))
+    fam = norm(MS_SUFFIX.sub("", persons[p]["family_name"] or persons[p]["name"].split()[-1]))
+    parts = [norm(x) for x in (persons[p]["family_name"] or "").split("-")]
+    return bool(w) and (norm(w[-1]) in [fam] + parts or norm("".join(w[-2:])) == fam)
+
+
+def ms_resolve(sid, ch, name):
+    """Mississippi: a full name from the legislature's member list ("Robert L. Jackson", "Dennis DeBar, Jr.", "Sam
+    Creekmore IV", "Theresa Gillespie Isom"), printed in a roll call read from the record -> one person of this session
+    and chamber, or None.
+    1. The family name (a suffix dropped from both; one part of a hyphenated name, "Hobgood-Wilkes") is the name's
+       last word or words, and a given name is one of its other words, starts with an initial it prints, or is the
+       start of one of them ("Chris" for "Christopher", "Ed" is too short to count).
+    2. Otherwise, because Open States often stores a nickname ("Bubba Carpenter", "Hank Zuber") where the
+       legislature prints the legal name ("Lester Carpenter", "Henry Zuber III"): the family name fits exactly one
+       person in the session's roster of that chamber, a membership seats that person in it during the session, and
+       the record prints only one member of that family name in that chamber that session. Every such link is counted in MS_BY_SEAT and printed at the end, to be checked by hand."""
+    if (sid, ch, name) not in RECORD_NAMES:
+        return None  # the dump's own labels are misread ("Absent or those Barnett"); only the record's names are linked here
+    words = re.findall(r"[A-Za-z][A-Za-z'\-]*", MS_SUFFIX.sub("", name or ""))
+    if len(words) < 2 or "(" in name:
+        return None
+
+    def fam_fits(p, k):
+        fam = norm(MS_SUFFIX.sub("", persons[p]["family_name"] or persons[p]["name"].split()[-1]))
+        tail = norm("".join(words[-k:]))
+        return tail == fam or (k == 1 and tail in [norm(x) for x in (persons[p]["family_name"] or "").split("-")])
+    for ros in (roster, roster_sp):
+        cand = []
+        for p in ros.get((sid, ch), []):
+            if p not in persons:
+                continue
+            given = norm(persons[p]["given_name"] or persons[p]["name"].split()[0])
+            for k in (1, 2):
+                if len(words) > k and fam_fits(p, k):
+                    if any(f and (f == given or given.startswith(f) or (len(given) >= 3 and f.startswith(given)))
+                           for f in (norm(w) for w in words[:-k])):  # "C." / "Christopher" / "Chris"
+                        cand.append(p)
+                        break
+        if len(cand) > 1:
+            seated = [p for p in cand if seated_in(p, sid, ch)]
+            cand = seated if len(seated) == 1 else [p for p in cand if seated_in(p, sid, ch) is not False]
+        if len(cand) == 1:
+            return cand[0]
+        if cand:
+            return None
+    # Seated by a membership: the roster also takes voters the dump linked, and a dump link can name a senator in a
+    # House vote (Kevin Blackwell beside Rep. Charles "Chuck" Blackwell, 2024).
+    fam = [p for p in roster.get((sid, ch), []) if p in persons and seated_in(p, sid, ch)
+           and any(len(words) > k and fam_fits(p, k) for k in (1, 2))]
+    # The record prints every member of the chamber in each roll call, so the session's printed names stand in for
+    # the legislature's roster: two printed members of one family name ("Mac Huddleston", "Robert E. Huddleston",
+    # Districts 15 and 30 in 2018, the second unknown to Open States) means the family name settles nothing.
+    if len(fam) == 1 and sum(
+            1 for (s2, c2, n2) in RECORD_NAMES if s2 == sid and c2 == ch and ms_family_in(fam[0], n2)) == 1:
+        MS_BY_SEAT[(sessions[sid]["identifier"], ch, name, persons[fam[0]]["name"])] += 1
+        return fam[0]
+    return None
+
+
 def resolve(sid, ch, name):
     o = OVR.get(f"{ST}:{sessions[sid]['identifier']}:{ch}:{name}")
     if o:
         return o
+    if RULES.get("ms_full_names"):
+        p = ms_resolve(sid, ch, name)
+        if p:
+            return p
     c = learned.get((sid, ch, name))
     if c and len(c) == 1 and seated_in(next(iter(c)), sid, ch) is not False:
         return next(iter(c))
@@ -763,16 +855,17 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
             desc = (f"{CH_NAME.get(ch, '')} Committee {org.get('name', '')}: " if committee and org.get("classification") == "committee"
                     else f"{CH_NAME.get(ch, '')} Committee: " if committee else f"{CH_NAME.get(ch, '')} ") + (e["motion_text"] or "")
             sd_why = None
-            if RULES.get("sd_record_is_the_floor") and not str(eid).startswith("supplement:"):
-                # South Dakota: not read from the record, so neither its chamber nor whether it was a committee's is known
+            if FLOOR_FROM_RECORD and not str(eid).startswith("supplement:"):
+                # South Dakota: not read from the record, so neither its chamber nor whether it was a committee's is known.
+                # Mississippi: its member list is misread from the PDF.
                 sd_why = "the bill's record was read and this is not a floor vote on the bill" if bid in CHECKED_BILLS else "the bill's record was not read"
-                stats["sd_dump_rollcalls_not_placed"] += 1
+                stats[f"{NP}dump_rollcalls_not_placed"] += 1
                 desc = f"{CH_NAME.get(ch, '')} Committee or not placed ({sd_why}): {e['motion_text'] or ''}"
             rc = {"roll_call_id": rc_id, "bill_id": bill_id, "date": (e["start_date"] or "")[:10], "desc": desc.strip(),
                   "yea": yea, "nay": nay, "nv": nv, "absent": ab, "total": yea + nay + nv + ab,
                   "passed": 1 if e["result"] == "pass" else 0, "chamber": ch or "", "chamber_id": 0,
                   "url": (vsrc[eid] or [""])[0], "state_link": (vsrc[eid] or [""])[0], "votes": mv,
-                  "_openstates": {"vote_event_id": eid, "counts": c, "committee": committee, **({"sd_not_placed": sd_why} if sd_why else {})}}
+                  "_openstates": {"vote_event_id": eid, "counts": c, "committee": committee, **({f"{NP}not_placed": sd_why} if sd_why else {})}}
             if e.get("_supplement") is not None:
                 # not from the dump: read from the legislature's own site (see the supplement block above)
                 rc["_openstates"]["from_legislature"] = e["_supplement"] or True
@@ -831,3 +924,7 @@ for sid, bids in sorted(by_sess.items(), key=lambda kv: sessions[kv[0]]["identif
 json.dump(REG, open(REG_PATH, "w"), indent=0, sort_keys=True)
 if SUPP:
     print("roll calls read from the legislature's own site: " + ", ".join(f"{k} {v}" for k, v in sorted(SUPP.items())), flush=True)
+if MS_BY_SEAT:
+    print("Mississippi names linked by the seat rule (family name fits one seated member; check each by hand):")
+    for (sess, ch, printed, os_name), n in sorted(MS_BY_SEAT.items()):
+        print(f"  {sess} {ch} {printed!r} -> {os_name!r} ({n} votes)")

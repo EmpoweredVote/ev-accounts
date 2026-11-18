@@ -13,7 +13,8 @@
  * The site is public; there is no key. The fetch uses the caller's honest user-agent and is placed AFTER the
  * robots.txt gate in verificationFetch.ts, like any live fetch of a public site.
  */
-import { readStateRollCallDocs, readStateRollCallHtml, renderStateRollCall, stateRollCallDocs, stateRollCallMinGapMs } from '../stateRollCallEvidence.js';
+import { pdfLinesBody, readStateRollCallDocs, readStateRollCallHtml, renderStateRollCall, stateRollCallDocs, stateRollCallMinGapMs } from '../stateRollCallEvidence.js';
+import { extractPdfItems, looksLikePdfBytes } from '../pdfText.js';
 import { fetchWithHostTrust } from './hostTrust.js';
 
 export type FetchLike = (url: string, init?: RequestInit) => Promise<Response>;
@@ -99,7 +100,9 @@ async function fetchOne(url: string, gap: number, deps: StateRollCallDeps): Prom
       res = await (deps.fetchImpl ?? fetchWithHostTrust)(url.trim(), {
         redirect: 'follow',
         signal: AbortSignal.timeout(HTTP_TIMEOUT_MS),
-        headers: { ...(deps.userAgent ? { 'user-agent': deps.userAgent } : {}), accept: 'text/html, application/json' },
+        // billstatus.ls.state.ms.us answers 406 to an XML file unless text/xml is accepted (Mississippi's bill
+        // history and member lists): the vote would fall through to plain text and verify nothing
+        headers: { ...(deps.userAgent ? { 'user-agent': deps.userAgent } : {}), accept: 'text/html, application/json, application/xml, text/xml, application/pdf' },
       });
       if ((res.status !== 429 && res.status !== 503) || attempt >= MAX_RETRIES) break;
       const asked = Number(res.headers.get('retry-after'));
@@ -107,6 +110,8 @@ async function fetchOne(url: string, gap: number, deps: StateRollCallDeps): Prom
     }
     if (!res.ok) return null;
     const buf = new Uint8Array(await res.arrayBuffer());
+    // a vote printed as a PDF (Mississippi) reaches the reader as its lines, paired by position (pdfLinesBody)
+    if (looksLikePdfBytes(buf)) return pdfLinesBody(await extractPdfItems(buf));
     html = deps.decode ? deps.decode(buf, res.headers.get('content-type') ?? '') : new TextDecoder('utf-8').decode(buf);
   } catch {
     return null;

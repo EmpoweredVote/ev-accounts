@@ -1,0 +1,58 @@
+{
+  "state": "ms",
+  "name": "Mississippi",
+  "verified": "2026-11-17",
+  "source": "Mississippi reader session (Stage 5 tools), 2026-11-17: the November 2026 Open States dump converted with scripts/stage5/openstates/; every floor roll call of a 289-bill dry batch (67 roll calls, 5,975 member votes) read from billstatus.ls.state.ms.us with the verifier's own fetch, and each member's vote compared with the dump. No bill text was read in this session.",
+  "chambers": {
+    "lower": "House",
+    "upper": "Senate"
+  },
+  "sessions": "One-year regular sessions (2018, 2019, ... 2026), January to about April. Bill numbers start again each year; House bills are numbered from 1, Senate bills from 2001. An extraordinary session is its own session, named by the year and its number (20181E, 20221E, 20241E, 20242E, 20251E, 20261E), with its own numbers. The site's folders use the same names (/2026/, /20241E/). House 122 seats and Senate 52 (the 2024-2027 member lists: 120 named House members, one entry with no name, and the Speaker, who is listed apart).",
+  "bill_data": [
+    "No LegiScan dataset is on disk for Mississippi. Bills, sponsors and roll calls come from Open States data, converted to the same folder layout (MS-900068 to MS-900083: 20171E to 20261E; scripts/stage5/openstates/README.md). Each folder carries a .openstates.json; its ids are ours and no legiscan.com page exists for them.",
+    "The 2017 regular session holds 0 bills in the November 2026 dump, and 20171E holds only resolutions, so 2017 cannot be used. From 2018 the dump holds the sessions' bills.",
+    "The dump reads each vote's member list from the vote PDF and misreads it: a label running over a line break is lost or joined to the group's heading (\"Absent or those Barnett\"). So no Mississippi dump vote is placed. scripts/stage5/openstates/fetch-legislature-rollcalls.ts reads each bill's history from the legislature, keeps the votes on the bill and reads each from its PDF; convert.py places only those (from_legislature) and keeps every other dump vote marked committee, with the reason in _openstates.not_placed. Run the fetch for every bill the scan finds, then convert the whole state again.",
+    "On the dry batch all 67 record roll calls have a dump copy, and no member's vote differs. The dump drops the last name before a printed total that runs over a line (2021 HB 634: 78 yeas for 79, Speaker Gunn; 2026 HB 1793: 5 nays for 6): 8 member votes in all (6 absent, 1 Yea, 1 Nay). The record's copy replaces the dump's, so nothing is lost.",
+    "The record names each member in full, from the legislature's member lists; Open States often stores a nickname (\"Bubba Carpenter\" for Lester Carpenter, \"Hank Zuber\" for Henry Zuber III). convert.py links a record name by a family name and a fitting given name, and otherwise only when exactly one member of that family name is seated in that chamber AND the record prints only one member of it there that session (ms_resolve). Each link of the second kind is printed at the end of the run, to be checked by hand. 5,919 of 5,983 record votes linked on the dry batch; the 64 not linked are four members Open States does not hold (Edward Blackmon Jr., Barbara Blackmon, Robert L. Jackson, Robert E. Huddleston).",
+    "One 2023 House label needs a hand-checked fix: \"Bailey (23rd)\" is Perry Bailey (District 23), not Willie Bailey (District 49). It is in name_overrides.json."
+  ],
+  "votes": {
+    "mode": "legiscan-plan",
+    "official_hosts": [
+      "billstatus.ls.state.ms.us"
+    ],
+    "legiscan_args": null,
+    "floor_rule": "A vote is cited on its own PDF, with the bill named after a #: billstatus.ls.state.ms.us/<session>/pdf/votes/<house|senate>/<NNNNNNN>.pdf#<BILL> (2026/pdf/votes/house/0830060.pdf#HB1793). The PDF prints the chamber, the session, the bills voted on, and each group as a list of labels (surnames, with initials and a district where two members share one: \"Bell (65th)\") with its printed total; it prints no date and no full name. So the reader (src/lib/stateRollCallEvidence.ts) reads it with the bill's history (/<session>/pdf/history/<HB|SB>/<HB1793>.xml: the action that links this PDF gives the day and the question), the session's author list (/<session>/pdf/<h|s>_auth.xml: each label to a full name) and the current member list (/members/<hr|ss>_membs.xml, for a label the author list lacks, inside the term it prints). A vote is read only when its question is a vote on the bill (passage, concurrence, conference reports, veto overrides), every printed total equals the labels under it, no member is listed twice, and the lists agree. A member who did not vote is written as the PDF lists them (\"was absent or did not vote\", \"voted present\", \"was paired\"), never as a Yea or a Nay. \"Mr. Speaker\" is the Speaker named on the member list. Committee votes are not in the history's vote links, and votes on a motion are not mapped.",
+    "gaps": [
+      "A vote on a motion (to reconsider, to table, ...) is not a vote on the bill and is not mapped (runner, 2026-11-16).",
+      "A label no list names gives that member no line: 2023 House \"Bailey (23rd)\" (Perry Bailey, who wrote no bill that session; 5 votes on the dry batch).",
+      "The 2023 House author list misspells one member \"Joesph Tubb\"; a line for Joseph Tubb is refused (8 votes on the dry batch).",
+      "A pair is printed in prose (\"announced a pair with ...\"); both members are written \"was paired\", never as the side they would have voted.",
+      "The current member list covers only its own term (2024-2027): a label in an older session that the author list lacks gives no line."
+    ]
+  },
+  "texts": {
+    "hosts": [
+      "billstatus.ls.state.ms.us"
+    ],
+    "marks": "Not measured: no bill text was read in this session. Read the marks on a sample before any fill quote.",
+    "note": "The dump links each text as a PDF, billstatus.ls.state.ms.us/documents/<session>/pdf/<HB|SB>/<range>/<BILL><CODE>.pdf (a suffix names the version: \"SB2524IN.pdf\"), with an HTML copy at .../documents/<session>/html/.../<BILL><CODE>.htm. The links are http; the site answers https. Not read in this session."
+  },
+  "reader_access": {
+    "billstatus.ls.state.ms.us": "open"
+  },
+  "search_note": "Mississippi sponsorships and House and Senate floor votes for 2018 to 2026 come from the bill data on disk, checked against the legislature's own record: skip the legislature's author lists and vote PDFs, and add the place \"sponsor list: covered by bulk bill data\". Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
+  "bill_table_note": "- Mississippi sessions run one year; bill numbers start again each year.\n- Floor votes kept: passage (\"Passed\", \"Passed As Amended\"), concurrence, conference reports and veto overrides. Votes on a motion are not floor votes on the bill.\n- One vote PDF can carry several bills; it is a vote on each of them.",
+  "fill_quotes": {
+    "label_strips": []
+  },
+  "quirks": [
+    "billstatus.ls.state.ms.us answers 406 to an XML file unless the request accepts text/xml (the bill history and the member lists). The verifier's fetch sends it (src/lib/adapters/stateRollCallAdapter.ts).",
+    "The site has no robots.txt and states no crawl delay. The reader waits one second between requests. No 403, 429 or bot check was met on 2026-11-17.",
+    "One vote needs four documents (the PDF, the bill's history, the author list, the member list); the lists and the history are fetched once and reused. The line tool took 121 seconds for 4,688 votes on 67 roll calls (2026-11-17): about 5 seconds for 200 votes.",
+    "The vote PDF prints no date: the day comes from the history action that links the PDF.",
+    "The \"member lists\" under /<session>/pdf/ are the session's AUTHOR lists: a member who wrote no bill that session is not on them.",
+    "A member list can hold an empty entry (<M5_NAME></M5_NAME>); the reader reads each name only inside its own tags.",
+    "Open States stores nicknames (\"Doc Harris\", \"Chuck Blackwell\", \"Bubba Tubb\"); the legislature prints legal names, sometimes with a quoted nickname (W.I. \"Doc\" Harris). Link each Open States record through the legislature's member list by district, never by surname alone: two Huddlestons sat in the 2018 House (Districts 15 and 30), only one known to Open States."
+  ]
+}

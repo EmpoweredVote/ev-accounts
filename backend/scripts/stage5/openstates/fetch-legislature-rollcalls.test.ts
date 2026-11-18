@@ -286,3 +286,53 @@ describe('South Dakota sponsorships, cited on the introduced text', () => {
     expect(sdNamedOnText('SENATE RESOLUTION NO. 6 Introduced by: Senator Nelson A RESOLUTION, Supporting')!.names).toEqual([{ chamber: 'S', label: 'Nelson' }]);
   });
 });
+
+// Mississippi (saved 2026-11-17 from billstatus.ls.state.ms.us): 2026 HB 1793's history (four recorded votes, each
+// linking its PDF), and the documents of its House conference-report vote, 0830060 (the PDF as its lines).
+const MS_FIX = (f: string): string => readFileSync(fileURLToPath(new URL(`../../../src/lib/__fixtures__/stateRollCall/${f}`, import.meta.url)), 'latin1');
+const MS_HB1793 = MS_FIX('ms-2026-HB1793.xml');
+const MS_0830060 = ['ms-2026-house-0830060.txt', 'ms-2026-HB1793.xml', 'ms-2026-h_auth.xml', 'ms-members-hr_membs.xml'].map(MS_FIX);
+const MS_V = 'https://billstatus.ls.state.ms.us/2026/pdf/votes/';
+
+describe('the legislature\'s own vote list — Mississippi', () => {
+  it('names the bill\'s history, its number padded to four, for a regular or an extraordinary session', () => {
+    expect(INDEX.MS.billUrl('2026', 'HB 1793')).toBe('https://billstatus.ls.state.ms.us/2026/pdf/history/HB/HB1793.xml');
+    expect(INDEX.MS.billUrl('2023', 'HB 912')).toBe('https://billstatus.ls.state.ms.us/2023/pdf/history/HB/HB0912.xml');
+    expect(INDEX.MS.billUrl('20241E', 'SB 2001')).toBe('https://billstatus.ls.state.ms.us/20241E/pdf/history/SB/SB2001.xml');
+    expect(INDEX.MS.billUrl('2026 Regular', 'HB 1793')).toBeNull();
+  });
+
+  it('keeps every vote the history links, each cited on its PDF with the bill; the history prints no tally', () => {
+    const bi = INDEX.MS.read(MS_HB1793, '2026', 'HB 1793');
+    expect(bi.floor.map((v) => v.url)).toEqual([`${MS_V}house/0510008.pdf#HB1793`, `${MS_V}senate/0710008.pdf#HB1793`,
+      `${MS_V}house/0830060.pdf#HB1793`, `${MS_V}senate/0830093.pdf#HB1793`]);
+    expect(bi.floor[2]).toEqual({ url: `${MS_V}house/0830060.pdf#HB1793`, motion: 'Conference Report Adopted', tally: null });
+    expect(bi.motion).toBe(0);
+  });
+
+  it('reads no vote on a motion, and counts it (runner, 2026-11-16)', () => {
+    const body = MS_HB1793.replace('03/17 (S) Passed As Amended', '03/17 (S) Motion to Reconsider Tabled');
+    expect(body).not.toBe(MS_HB1793);
+    const bi = INDEX.MS.read(body, '2026', 'HB 1793');
+    expect(bi.floor).toHaveLength(3);
+    expect(bi.motion).toBe(1);
+  });
+
+  it('refuses the history of another bill or year, and a vote link to another session', () => {
+    expect(() => INDEX.MS.read(MS_HB1793, '2026', 'HB 1794')).toThrow();
+    expect(() => INDEX.MS.read(MS_HB1793, '2025', 'HB 1793')).toThrow();
+    const other = MS_HB1793.replace('../../../../2026/pdf/votes/house/0830060.pdf', '../../../../2025/pdf/votes/house/0830060.pdf');
+    expect(other).not.toBe(MS_HB1793);
+    expect(() => INDEX.MS.read(other, '2026', 'HB 1793')).toThrow();
+  });
+
+  it('builds the roll call from the PDF\'s own totals, and says why it refused one', () => {
+    const v = INDEX.MS.read(MS_HB1793, '2026', 'HB 1793').floor[2];
+    const rc = buildRollCall('HB 1793', v, MS_0830060);
+    // Present is not a Yea or a Nay: it joins the not-voting group the supplement keeps
+    expect(rc).toMatchObject({ url: v.url, date: '2026-03-29', chamber: 'H', yea: 106, nay: 6, absent: 10, passed: 1, question: 'Conference Report Adopted' });
+    const bad = buildRollCall('HB 1793', v, [MS_0830060[0].replace('Total--106.', 'Total--105.'), ...MS_0830060.slice(1)]);
+    expect(bad).toHaveProperty('refused');
+    expect((bad as { refused: string }).refused).toMatch(/^the page did not read as a roll call: /);
+  });
+});

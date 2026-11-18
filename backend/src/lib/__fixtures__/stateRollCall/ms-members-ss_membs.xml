@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="dtds_xslts/memberlist.xslt"?>
+ 
+<!DOCTYPE LEGISLATURE SYSTEM "dtds_xslts/memberlist.dtd">
+ 
+<LEGISLATURE>
+	<TITLE>Mississippi State Senate</TITLE>
+	<CHAIR>
+		<CHAIR_TITLE>President of the Senate</CHAIR_TITLE>
+		<CHAIR_NAME>Delbert Hosemann</CHAIR_NAME>
+		<CHAIR_LINK>http://ltgovhosemann.ms.gov/</CHAIR_LINK>
+	</CHAIR>
+	<PROTEMP>
+		<PROTEMP_TITLE>President Pro Tempore</PROTEMP_TITLE>
+		<PROTEMP_NAME>Dean Kirby</PROTEMP_NAME>
+		<PROTEMP_LINK>senate/Kirby.xml</PROTEMP_LINK>
+	</PROTEMP>
+	<TERM>2024-2027</TERM>
+	<MEMBER>
+		<M1_NAME>Juan Barnett</M1_NAME>
+		<M1_LINK>senate/barnett.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Dennis DeBar, Jr.</M2_NAME>
+		<M2_LINK>senate/debar.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Tyler McCaughn</M3_NAME>
+		<M3_LINK>senate/mccaughn.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Daniel H. Sparks</M4_NAME>
+		<M4_LINK>senate/sparks.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Jason Barrett</M1_NAME>
+		<M1_LINK>senate/barrett.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Scott DeLano</M2_NAME>
+		<M2_LINK>senate/delano.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>Michael McLendon</M3_NAME>
+		<M3_LINK>senate/mclendon.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Benjamin Suber</M4_NAME>
+		<M4_LINK>senate/suber.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Andy Berry</M1_NAME>
+		<M1_LINK>senate/berry.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Jeremy England</M2_NAME>
+		<M2_LINK>senate/england.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Chad McMahan</M3_NAME>
+		<M3_LINK>senate/mcmahan.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Jeff Tate</M4_NAME>
+		<M4_LINK>senate/tate.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Bradford Blackmon</M1_NAME>
+		<M1_LINK>senate/blackmon.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Joey Fillingane</M2_NAME>
+		<M2_LINK>senate/fillingane.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>J. Walter Michel</M3_NAME>
+		<M3_LINK>senate/michel.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Lane Taylor</M4_NAME>
+		<M4_LINK>senate/taylor.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Kevin Blackwell</M1_NAME>
+		<M1_LINK>senate/blackwell.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Hillman Terome Frazier</M2_NAME>
+		<M2_LINK>senate/frazier.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Sollie B. Norwood</M3_NAME>
+		<M3_LINK>senate/norwood.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Joseph Thomas</M4_NAME>
+		<M4_LINK>senate/thomas.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>David Blount</M1_NAME>
+		<M1_LINK>senate/blount.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Josh Harkins</M2_NAME>
+		<M2_LINK>senate/harkins.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>David Parker</M3_NAME>
+		<M3_LINK>senate/parker.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Mike Thompson</M4_NAME>
+		<M4_LINK>senate/thompson.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Nicole Boyd</M1_NAME>
+		<M1_LINK>senate/boyd.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Rod Hickman</M2_NAME>
+		<M2_LINK>senate/hickman.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Rita Potts Parks</M3_NAME>
+		<M3_LINK>senate/parks.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Angela Turner-Ford</M4_NAME>
+		<M4_LINK>senate/turner-ford.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Gary Brumfield</M1_NAME>
+		<M1_LINK>senate/brumfield.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Angela Burks Hill</M2_NAME>
+		<M2_LINK>senate/hill.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>John A. Polk</M3_NAME>
+		<M3_LINK>senate/polk.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Neil S. Whaley</M4_NAME>
+		<M4_LINK>senate/whaley.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Hob Bryan</M1_NAME>
+		<M1_LINK>senate/bryan.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Briggs Hopson</M2_NAME>
+		<M2_LINK>senate/hopson.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Brian Rhodes</M3_NAME>
+		<M3_LINK>senate/rhodes.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Brice Wiggins</M4_NAME>
+		<M4_LINK>senate/wiggins.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Albert Butler</M1_NAME>
+		<M1_LINK>senate/butler.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Reginald Jackson</M2_NAME>
+		<M2_LINK>senate/jackson.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>Robin Robinson</M3_NAME>
+		<M3_LINK>senate/robinson.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Bart Williams</M4_NAME>
+		<M4_LINK>senate/williams.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Joel R. Carter, Jr.</M1_NAME>
+		<M1_LINK>senate/carter.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Chris Johnson</M2_NAME>
+		<M2_LINK>senate/johnson.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Joseph M. Seymour</M3_NAME>
+		<M3_LINK>senate/seymour.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Chuck Younger</M4_NAME>
+		<M4_LINK>senate/younger.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Lydia Graves Chassaniol</M1_NAME>
+		<M1_LINK>senate/chassaniol.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Dean Kirby</M2_NAME>
+		<M2_LINK>senate/kirby.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>Derrick T. Simmons</M3_NAME>
+		<M3_LINK>senate/simmons_(12th).xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Vacancy - District 24</M4_NAME>
+		<M4_BGC>#DCDCDC</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Kathy L. Chism</M1_NAME>
+		<M1_LINK>senate/chism.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Philman Ladner</M2_NAME>
+		<M2_LINK>senate/ladner.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Sarita Simmons</M3_NAME>
+		<M3_LINK>senate/simmons_(13th).xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Vacancy - District 26</M4_NAME>
+		<M4_BGC>#DCDCDC</M4_BGC>
+	</MEMBER>
+</LEGISLATURE>

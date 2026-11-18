@@ -640,3 +640,139 @@ describe('state roll-call pages — South Dakota lines', () => {
     resetStateRollCallPacing();
   });
 });
+
+// ── Mississippi ──────────────────────────────────────────────────────────────────────────────────────
+// Saved 2026-11-17 from billstatus.ls.state.ms.us: each vote's PDF (as the adapter hands it on, its lines paired by
+// position: pdfLinesBody), the bill's history, the session's author list and the current member list. No party in
+// any of them.
+const MS = 'https://billstatus.ls.state.ms.us/';
+const MS_SEN_2018 = `${MS}2018/pdf/votes/senate/0650030.pdf#HB1083`; // pairs, "Voting Present"
+const MS_HOU_2026 = `${MS}2026/pdf/votes/house/0830060.pdf#HB1793`; // "Present", the Speaker, "Total-" / "-6"
+const MS_HOU_2023 = `${MS}2023/pdf/votes/house/0850026.pdf#HB912`; // two Baileys, one not on the 2023 lists
+const msDocs: Record<string, string[]> = {
+  [MS_SEN_2018]: ['ms-2018-senate-0650030.txt', 'ms-2018-HB1083.xml', 'ms-2018-s_auth.xml', 'ms-members-ss_membs.xml'],
+  [MS_HOU_2026]: ['ms-2026-house-0830060.txt', 'ms-2026-HB1793.xml', 'ms-2026-h_auth.xml', 'ms-members-hr_membs.xml'],
+  [MS_HOU_2023]: ['ms-2023-house-0850026.txt', 'ms-2023-HB0912.xml', 'ms-2023-h_auth.xml', 'ms-members-hr_membs.xml'],
+};
+const msBodies = (url: string): string[] => msDocs[url].map((f) => readFileSync(fileURLToPath(new URL(`./__fixtures__/stateRollCall/${f}`, import.meta.url)), 'latin1'));
+/** The render, after one change to one document; the test fails when the change did not apply. */
+const msRender = (url: string, doc = -1, from = '', to = ''): string | null => {
+  const b = msBodies(url);
+  if (doc >= 0) b[doc] = tamper(b[doc], from, to);
+  return readStateRollCallDocs(b, url);
+};
+const EURE = 'Mississippi House vote 0830060 (2026), HB 1793 - Conference Report Adopted (2026-03-29): Casey Eure voted Yea.';
+
+describe('state roll-call pages — Mississippi address', () => {
+  it('knows a vote PDF cited with its bill, and reads it from four documents, a second apart', () => {
+    expect(isStateRollCallUrl(MS_HOU_2023)).toBe(true);
+    expect(stateRollCallDocs(MS_HOU_2023)).toEqual([`${MS}2023/pdf/votes/house/0850026.pdf`, `${MS}2023/pdf/history/HB/HB0912.xml`,
+      `${MS}2023/pdf/h_auth.xml`, `${MS}members/hr_membs.xml`]);
+    expect(stateRollCallMinGapMs(MS_HOU_2023)).toBe(1_000);
+    // no bill (one PDF may carry several), plain http, a short vote number, a look-alike host, an unknown chamber
+    for (const u of [`${MS}2023/pdf/votes/house/0850026.pdf`, MS_HOU_2023.replace('https', 'http'), `${MS}2023/pdf/votes/house/085002.pdf#HB912`,
+      MS_HOU_2023.replace('ms.us/', 'ms.us.example.com/'), `${MS}2023/pdf/votes/joint/0850026.pdf#HB912`]) {
+      expect(isStateRollCallUrl(u)).toBe(false);
+    }
+  });
+});
+
+describe('state roll-call pages — reading Mississippi', () => {
+  it('reads a 2018 Senate vote: bill, question and day from the history, every member by full name, the pairs apart', () => {
+    const t = msRender(MS_SEN_2018)!;
+    expect(t.split('\n').slice(0, 3)).toEqual([
+      'Mississippi Senate vote 0650030 (2018), HB 1083, 2018-03-07.', 'Question: Passed As Amended',
+      'Yea 27; Nay 18; Absent or not voting 4; Present 1; Paired 2.',
+    ]);
+    expect(t).toMatch(/^Paired \(2\): .*Juan Barnett/m);
+    expect(t).not.toMatch(/^(Yea|Nay) .*Juan Barnett/m); // a pair is never a Yea or a Nay
+    expect(parseStateRollCallRender(t, MS_SEN_2018)).toMatchObject({ state: 'MS', chamber: 'Senate', session: '2018', bill: 'HB 1083' });
+  });
+
+  it('reads a 2026 House vote: "Present", the Speaker by name, and a total the PDF breaks over two lines', () => {
+    const t = msRender(MS_HOU_2026)!;
+    expect(t.split('\n')[2]).toBe('Yea 106; Nay 6; Absent or not voting 3; Present 7; Paired 0.');
+    expect(t).toMatch(/^Yea \(106\): .*Jason White/m);
+    expect(t).not.toContain('Speaker');
+  });
+
+  it('keeps a label the lists do not name as printed, and gives it no line; the other Bailey is still read', () => {
+    const t = msRender(MS_HOU_2023)!;
+    expect(t).toMatch(/^Yea \(87\): .*Bailey \(23rd\);/m);
+    expect(t).toMatch(/^Nay \(26\): .*Willie Bailey/m);
+    expect(stateRollCallLinesFor(MS_HOU_2023, t, 'Bailey', 'Perry Bailey')).toEqual([]);
+    // the 2023 author list has empty name slots with no link: none may run on into the next member's name
+    expect(t).not.toMatch(/[<>]/);
+  });
+
+  it('refuses a total that is not the names listed, a name listed twice, or another chamber or session', () => {
+    expect(msRender(MS_HOU_2023, 0, 'Total--87.', 'Total--88.')).toBeNull();
+    expect(msRender(MS_HOU_2023, 0, 'Yeas--Aguirre,', 'Yeas--Young,')).toBeNull();
+    expect(msRender(MS_HOU_2023, 0, 'Mississippi House of Representatives', 'Mississippi State Senate')).toBeNull();
+    expect(msRender(MS_HOU_2023, 0, '2023 Regular Session', '2023 First Extraordinary Session')).toBeNull();
+  });
+
+  it('refuses a PDF that names another bill, and a history that does not link this vote to this bill', () => {
+    expect(msRender(MS_HOU_2023, 0, 'H. B. No. 912', 'H. B. No. 913')).toBeNull();
+    expect(msRender(MS_HOU_2026, 1, 'votes/house/0830060.pdf', 'votes/house/0830061.pdf')).toBeNull();
+    expect(readStateRollCallDocs(msBodies(MS_HOU_2023), MS_HOU_2023.replace('#HB912', '#HB913'))).toBeNull();
+  });
+
+  it('reads no vote on a motion: the question must be on the bill (runner, 2026-11-16)', () => {
+    expect(msRender(MS_HOU_2026, 1, '03/29 (H) Conference Report Adopted', '03/29 (H) Motion to Reconsider Tabled')).toBeNull();
+  });
+
+  it('names no Speaker it cannot place: the member list must name the same Speaker in the years of its term', () => {
+    expect(msRender(MS_HOU_2026, 3, '<CHAIR_LINK>house/White.xml', '<CHAIR_LINK>house/Someone.xml')).toBeNull();
+  });
+});
+
+describe('state roll-call pages — Mississippi lines', () => {
+  const t = msRender(MS_HOU_2026)!;
+
+  it('builds one line for a member and verifies it', () => {
+    expect(stateRollCallLinesFor(MS_HOU_2026, t, 'Eure', 'Casey Eure')).toEqual([EURE]);
+    expect(verifyStateRollCallLine(EURE, MS_HOU_2026, t, 'Eure', 'Casey Eure')).toEqual({ verdict: 'verified', matchOffset: 0 });
+    expect(parseStateRollCallLine(EURE)).toMatchObject({ state: 'MS', chamber: 'House', vote: 'Yea', name: 'Casey Eure', bill: 'HB 1793' });
+  });
+
+  it('refuses the line with the vote flipped, given to another member, or on another bill, day or vote', () => {
+    const v = (line: string, last = 'Eure', full = 'Casey Eure', url = MS_HOU_2026) => verifyStateRollCallLine(line, url, t, last, full).verdict;
+    expect(v(EURE.replace('voted Yea', 'voted Nay'))).toBe('snippet_not_found');
+    expect(v(EURE.replace('Casey Eure', 'Jody Steverson'))).not.toBe('verified');
+    expect(v(EURE, 'Steverson', 'Jody Steverson')).toBe('name_not_present');
+    expect(v(EURE.replace('HB 1793', 'HB 1794'))).toBe('snippet_not_found');
+    expect(v(EURE.replace('2026-03-29', '2026-03-28'))).toBe('snippet_not_found');
+    expect(v(EURE, 'Eure', 'Casey Eure', MS_HOU_2026.replace('0830060', '0830061'))).toBe('snippet_not_found');
+  });
+
+  it('gives a paired member "was paired", and a member present "voted present", never a Yea or a Nay', () => {
+    const s = msRender(MS_SEN_2018)!;
+    const [l] = stateRollCallLinesFor(MS_SEN_2018, s, 'Barnett', 'Juan Barnett');
+    expect(l).toBe('Mississippi Senate vote 0650030 (2018), HB 1083 - Passed As Amended (2018-03-07): Juan Barnett was paired.');
+    expect(verifyStateRollCallLine(l.replace('was paired', 'voted Nay'), MS_SEN_2018, s, 'Barnett', 'Juan Barnett').verdict).toBe('snippet_not_found');
+    expect(stateRollCallLinesFor(MS_SEN_2018, s, 'Branning', 'Jenifer B. Branning')[0]).toMatch(/Jenifer B\. Branning voted present\.$/);
+  });
+
+  it('fits a printed name that carries a nickname in quotes to the person\'s own name (W.I. "Doc" Harris, 2026)', () => {
+    expect(fullNameLabelFits('W.I. "Doc" Harris', 'Harris', 'W. I. Harris')).toBe(true);
+    expect(fullNameLabelFits('W.I. "Doc" Harris', 'Harris', 'Doc Harris')).toBe(true);
+    expect(fullNameLabelFits('W.I. "Doc" Harris', 'Harris', 'Kevin Harris')).toBe(false);
+    expect(stateRollCallLinesFor(MS_HOU_2026, t, 'Harris', 'W. I. Harris')).toHaveLength(1);
+  });
+
+  it('the adapter asks for XML as text/xml, which the site requires (406 otherwise), and reads the vote', async () => {
+    resetStateRollCallPacing();
+    const [, ...xml] = msBodies(MS_HOU_2026);
+    // the PDF itself, as the site serves it: the adapter reads its lines (pdfLinesBody)
+    const pdf = readFileSync(fileURLToPath(new URL('./__fixtures__/stateRollCall/ms-2026-house-0830060.pdf', import.meta.url)));
+    const docs = stateRollCallDocs(MS_HOU_2026)!;
+    const fetchImpl = async (u: string, init?: RequestInit) => {
+      const i = docs.indexOf(u);
+      if (i > 0 && !/\btext\/xml\b/.test(new Headers(init?.headers).get('accept') ?? '')) return new Response('Not Acceptable', { status: 406 });
+      return new Response(i === 0 ? pdf : xml[i - 1], { status: 200 });
+    };
+    expect(await fetchStateRollCallText(MS_HOU_2026, { fetchImpl, now: () => 0, sleep: async () => {} })).toBe(t);
+    resetStateRollCallPacing();
+  });
+});

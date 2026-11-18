@@ -33,11 +33,12 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { decodeHtmlBytes, EMPOWERED_VOTE_UA } from '../../../src/lib/verificationFetch.js';
 import { fetchWithHostTrust } from '../../../src/lib/adapters/hostTrust.js';
-import { extractPdfText, looksLikePdfBytes } from '../../../src/lib/pdfText.js';
-import { isStateRollCallUrl, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
+import { extractPdfItems, extractPdfText, looksLikePdfBytes } from '../../../src/lib/pdfText.js';
+import { explainMississippiVote, isStateRollCallUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfLinesBody, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
 
 /** One floor roll call as a bill's vote list gives it. */
-export interface IndexedVote { url: string; motion: string; tally: [number, number, number] }
+/** tally: null when the vote list prints none (Mississippi): the reader's own checks of the printed totals stand alone. */
+export interface IndexedVote { url: string; motion: string; tally: [number, number, number] | null }
 /** motion: votes on a motion, not on the bill (Ohio motion_...: "Informally passed"), counted and not read. */
 export interface BillIndex { floor: IndexedVote[]; committee: number; voice: number; motion?: number; motions?: string[]; committeeUrls?: string[] }
 interface StateIndex {
@@ -74,7 +75,45 @@ function ohBill(bill: string): string | null {
 const SD_BILL = /^([HS](?:B|JR|CR|C|R))\s*0*([1-9]\d{0,4})$/i;
 const SD_SESSION_ID = new Map(Object.entries(SD_SESSIONS).map(([id, name]) => [name, Number(id)]));
 
+const MS_BILL = /^(HB|SB|HC|SC|HR|SR|SN|JR)\s*0*([1-9]\d{0,3})$/i;
+const MS_SITE = 'https://billstatus.ls.state.ms.us/';
+
 export const INDEX: Record<string, StateIndex> = {
+  // billstatus.ls.state.ms.us (read 2026-11-17; no robots.txt). Each bill has a history, /<session>/pdf/history/<HB>/
+  // <HB0001>.xml: one ACTION per step ("03/08 (H) Passed As Amended"), and an ACT_VOTE link to the vote's PDF when the
+  // step was a recorded vote. Mississippi records no committee roll calls: every linked vote is a chamber's. A vote on
+  // a motion (msQuestionIsOnTheBill: to reconsider, to table, ...) is not a vote on the bill. The history prints no
+  // tally; the PDF's own totals are checked by the reader (stateRollCallEvidence.ts). Each vote is cited on its PDF
+  // with the bill after a #.
+  MS: {
+    minGapMs: 1_000, // no robots.txt, so no Crawl-delay stated: one a second is ours
+    billUrl(session, bill) {
+      const m = MS_BILL.exec(bill.replace(/[\s.]+/g, ''));
+      if (!m || !/^20\d{2}(?:[1-9]E)?$/.test(session)) return null;
+      const t = m[1].toUpperCase();
+      return `${MS_SITE}${session}/pdf/history/${t}/${t}${m[2].padStart(4, '0')}.xml`;
+    },
+    read(body, session, bill) {
+      const m = MS_BILL.exec(bill.replace(/[\s.]+/g, ''))!;
+      const short = /<SHORT_MSRID>\s*([^<]*?)\s*<\/SHORT_MSRID>/.exec(body)?.[1];
+      const year = /<YEAR>\s*(\d{4})\s*<\/YEAR>/.exec(body)?.[1];
+      if (short !== `${m[1].toUpperCase()} ${Number(m[2])}` || year !== session.slice(0, 4)) throw new Error(`the history is for ${short} of ${year}, not ${bill} of ${session}`);
+      const out: BillIndex = { floor: [], committee: 0, voice: 0, motion: 0, motions: [] };
+      for (const act of body.matchAll(/<ACTION>([\s\S]*?)<\/ACTION>/g)) {
+        const votes = [...act[1].matchAll(/<ACT_VOTE>\s*([^<]*?)\s*<\/ACT_VOTE>/g)].map((x) => x[1]);
+        if (!votes.length) continue;
+        const desc = /<ACT_DESC>\s*([^<]*?)\s*<\/ACT_DESC>/.exec(act[1])?.[1] ?? '';
+        const d = /^\d{2}\/\d{2} \((H|S)\) (.+)$/.exec(desc);
+        if (!d || votes.length !== 1) throw new Error(`a vote the tool cannot read: ${desc} ${votes.join(' ')}`);
+        const v = new RegExp(`^(?:\\.\\./)+${session}/pdf/votes/(house|senate)/(\\d{7})\\.pdf$`, 'i').exec(votes[0]);
+        if (!v || (v[1].toLowerCase() === 'house') !== (d[1] === 'H')) throw new Error(`a vote link the tool cannot read: ${desc} ${votes[0]}`);
+        const url = `${MS_SITE}${session}/pdf/votes/${v[1].toLowerCase()}/${v[2]}.pdf#${m[1].toUpperCase()}${Number(m[2])}`;
+        if (!msQuestionIsOnTheBill(d[2])) { out.motion!++; out.motions!.push(`${url} ${d[2]}`); continue; }
+        out.floor.push({ url, motion: d[2].trim(), tally: null });
+      }
+      return out;
+    },
+  },
   // sdlegislature.gov (read 2026-11-17). The site names a bill by its own id: /api/Bills/Session/Light/<SessionId> lists
   // the session's bills (BillId, BillType, BillNumberOnly), and /api/Bills/ActionLog/<BillId> lists every action. An
   // action with a Vote is a roll call: ActionCommittee.FullBody (House of Representatives, Senate) is the chamber's
@@ -315,7 +354,10 @@ const norm = (b: string): string => b.replace(/[\s.]+/g, '').replace(/^([A-Z]+)0
 export function buildRollCall(bill: string, v: IndexedVote, docs: string | string[], session?: string): SupplementRollCall | { refused: string } {
   if (!isStateRollCallUrl(v.url)) return { refused: 'no reader knows this address' };
   const r = readStateRollCallRecord(Array.isArray(docs) ? docs : [docs], v.url);
-  if (!r) return { refused: 'the page did not read as a roll call' };
+  if (!r) {
+    const ms = parseMississippiVoteUrl(v.url) ? explainMississippiVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
+    return { refused: ms && 'refused' in ms ? `the page did not read as a roll call: ${ms.refused}` : 'the page did not read as a roll call' };
+  }
   // South Dakota's record names its session; it must be the session asked for
   if (session !== undefined && r.state === 'SD' && r.session !== session) return { refused: `the vote is of session ${r.session}, not ${session}` };
   // South Dakota votes a consent calendar as one roll call on several bills ("HB 1209, SB 55"): the bill must be one of them
@@ -325,7 +367,7 @@ export function buildRollCall(bill: string, v: IndexedVote, docs: string | strin
   // House concurrence: 62-4, 4 excused on the record): the yeas and nays are compared there, and the record's list,
   // which its own counts check (stateRollCallEvidence.ts), is kept. The fetch counts each such vote.
   const compared = r.state === 'SD' ? 2 : 3;
-  if (got.slice(0, compared).join() !== v.tally.slice(0, compared).join()) return { refused: `the page's tally ${got.join('-')} is not the bill file's ${v.tally.join('-')}` };
+  if (v.tally && got.slice(0, compared).join() !== v.tally.slice(0, compared).join()) return { refused: `the page's tally ${got.join('-')} is not the bill file's ${v.tally.join('-')}` };
   const failed = /\b(fail(ed|s)?|defeated|rejected|refuse[sd]?)\b/i.test(v.motion);
   const passed = /\b(pass(ed|es)?|adopt(ed|s)?|concurs?|approved)\b/i.test(v.motion) && !failed ? 1 : failed ? 0 : got[0] > got[1] ? 1 : 0;
   return {
@@ -365,8 +407,10 @@ async function main(): Promise<void> {
       const res = await fetchWithHostTrust(url, { headers: { 'user-agent': EMPOWERED_VOTE_UA }, signal: AbortSignal.timeout(30_000) });
       if ((res.status === 429 || res.status === 503) && attempt < 2) { await new Promise((r) => setTimeout(r, 30_000)); continue; }
       if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
-      // by the page's declared charset, as the verifier reads it
-      const body = decodeHtmlBytes(new Uint8Array(await res.arrayBuffer()), res.headers.get('content-type') ?? '');
+      const bytes = new Uint8Array(await res.arrayBuffer());
+      // a PDF (Mississippi's votes) is kept as the lines the verifier's reader reads (pdfLinesBody); anything else by
+      // the page's declared charset, as the verifier reads it
+      const body = looksLikePdfBytes(bytes) ? pdfLinesBody(await extractPdfItems(bytes)) : decodeHtmlBytes(bytes, res.headers.get('content-type') ?? '');
       writeFileSync(file, body);
       return body;
     }
@@ -414,7 +458,7 @@ async function main(): Promise<void> {
       const rc = buildRollCall(bill, v, docs, session);
       if ('refused' in rc) { refused.push({ url: v.url, why: rc.refused }); refusedNow.push(`${bill} ${v.url}: ${rc.refused}`); } else {
         rcs.push(rc);
-        if (rc.absent !== v.tally[2]) absentDiffers.push(`${v.url} (vote list ${v.tally[2]}, record ${rc.absent})`);
+        if (v.tally && rc.absent !== v.tally[2]) absentDiffers.push(`${v.url} (vote list ${v.tally[2]}, record ${rc.absent})`);
       }
     }
     if (rcs.length) out.bills[bill] = rcs; else delete out.bills[bill];
