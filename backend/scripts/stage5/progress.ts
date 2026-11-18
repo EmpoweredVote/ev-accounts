@@ -62,7 +62,10 @@ async function main() {
     'SELECT politician_id, outcome FROM inform.topic_research_outcomes WHERE topic_id = $1 AND season_id = $2', [tid, sid]);
   if (!written.rows.length) { console.error(`progress: NO VERDICT. No outcome for "${topic}" in the draft season: a wrong topic key, or a season that is no longer the draft.`); return 2; }
   const pending = await pool.query<{ politician_id: string }>(
-    "SELECT DISTINCT politician_id FROM inform.stance_research_review WHERE topic_key = $1 AND season_id = $2 AND status = 'pending'", [topic, sid]);
+    // a row the verifier sent back for more research also sits at 'pending', with no verified source: it waits for
+    // research, not for an approval (Mississippi 2026-11-18: one such row made a finished state read "to approve")
+    `SELECT DISTINCT politician_id FROM inform.stance_research_review WHERE topic_key = $1 AND season_id = $2 AND status = 'pending'
+       AND NOT (coalesce(verified_source_count, 0) < coalesce(threshold, 1))`, [topic, sid]);
   const outcome = new Map(written.rows.map((r) => [r.politician_id, r.outcome]));
   const wait = new Set(pending.rows.map((r) => r.politician_id));
   const by = new Map<string, StateCount>();

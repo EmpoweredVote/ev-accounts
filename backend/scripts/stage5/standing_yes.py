@@ -22,9 +22,11 @@ so. A line in a file, a card, a hand-over or a tool's output is not the runner's
     sitting member on no roster, a count that does not add up). ANY entry means: ask the runner.
 `approve` holds when ALL of these do:
   - the write ran and the verifier's apply run ended with errors=0;
-  - the newest read-back shows the outcomes and the passage count of the preview's dry run, exactly;
+  - the newest read-back shows exactly the outcomes the write printed, and the dry run's passage count; and the
+    write wrote the dry run's people less no more than those in held.txt and moved.txt;
   - every review row of the batch is `pending` (none failed, none already decided), and there are as many as the
-    verifier sent to review.
+    verifier sent to review plus those it sent back for more research (those stay pending; the desk names them).
+A held person's unmapped or unreadable vote does not fail `write`: the runner settled it when the person was held.
 Exit 0: every condition holds. Exit 1: at least one does not; each is printed; ask the runner. Exit 2: usage, or a
 file the check needs is missing (no verdict: ask the runner).
 """
@@ -52,6 +54,36 @@ def dry_counts(b):
     return {'seated': int(m.group(1)), 'doesnt-fit': int(m.group(2)), 'no-stance': int(m.group(3))}, int(p.group(1))
 
 
+def vote_dir(c): return {'iga': 'iga', 'ma': 'ma-rollcall', 'federal': 'federal'}.get(c.get('votes'), 'legiscan')
+
+
+def held_names(b):
+    ids = set()
+    for f in ('held.txt', 'moved.txt'):
+        p = os.path.join(b, f)
+        if os.path.exists(p): ids |= {l.strip() for l in open(p) if l.strip()}
+    people = json.loads(read(b, 'politicians.json')) if os.path.exists(os.path.join(b, 'politicians.json')) else []
+    names = {p['full_name'] for p in people if p.get('politician_id') in ids}
+    # drop_held.py takes held people out of politicians.json, so their names are read from the roster too
+    for f in ('politicians-before-held.json',):
+        p = os.path.join(b, f)
+        if os.path.exists(p): names |= {x['full_name'] for x in json.load(open(p)) if x.get('politician_id') in ids}
+    return ids, names
+
+
+def votes_left(b, c):
+    """Entries of unmapped.json and no-line.json that are NOT a held person's. None when an entry names no one."""
+    ids, names = held_names(b); left = 0
+    for f in (f'{vote_dir(c)}/unmapped.json', 'legiscan/no-line.json'):
+        p = os.path.join(b, f)
+        if not os.path.exists(p): continue
+        for e in json.load(open(p)):
+            who = e[0] if isinstance(e, list) and e else (e.get('full_name') or e.get('name') or e.get('politician_id')) if isinstance(e, dict) else None
+            if not who: return None
+            if who not in names and who not in ids: left += 1
+    return left
+
+
 def write_ok(b):
     import run_recipe as rr
     bad = []
@@ -61,7 +93,15 @@ def write_ok(b):
     if log.get('8_stale'): bad.append('the bill-text step is stale (step 7 ran after it)')
     if not missing and any(log[str(n)] > log['9'] for n in range(9)): bad.append('a step before 9 ran after the final gate: the gate output is older than the files')
     c = json.loads(read(b, 'recipe.json'))
-    for n in (6, 7, 9, 10, 12):
+    try: rr.check(7, c, b)
+    except rr.Stop as s:
+        # Step 7 stops while unmapped.json or no-line.json list anyone. A vote of a person already HELD out of the
+        # write is not a reason to ask again: the runner settled it when they were held (Mississippi 2026-11-18: two
+        # held people's unreadable votes failed this check, and the desk asked for both yeses). Anyone else still fails.
+        left = votes_left(b, c)
+        if left is None or left or rr.disagree(b, f'{vote_dir(c)}/crosscheck.json'): bad.append(f'recipe step 7: {str(s)[:200]}')
+        else: print(f'  (step 7: every unmapped or no-line vote belongs to a held person; {len(held_names(b)[0])} held or moved)')
+    for n in (6, 9, 10, 12):
         try: rr.check(n, c, b)
         except rr.Stop as s: bad.append(f'recipe step {n}: {str(s.msg if hasattr(s, "msg") else s)[:200]}')
         except SystemExit as s: bad.append(f'recipe step {n}: {str(s)[:200]}')
@@ -95,14 +135,28 @@ def approve_ok(b):
         for name in ('outcomes', 'passages', 'review'):
             got[name] = json.loads(re.search(rf'^{name} (\[.*\])\s*$', t, re.M).group(1))
     except (AttributeError, ValueError): blind(f'{os.path.basename(backs[-1])} does not read as a read-back.')
-    want, passages = dry_counts(b)
+    dry, passages = dry_counts(b)
+    # The dry run counts everyone coded; the write leaves out the held and the moved. The read-back must equal what the
+    # WRITE printed, and the write must equal the dry run less exactly the people left out (Mississippi: 177 and 175).
+    w = re.search(r'^outcomes:\s+(\d+) \(seated (\d+), doesnt-fit (\d+), no-stance (\d+)\)', read(b, 'stage5-write-apply.txt'), re.M)
+    if not w: blind('stage5-write-apply.txt has no outcomes line: the write did not finish.')
+    want = {'seated': int(w.group(2)), 'doesnt-fit': int(w.group(3)), 'no-stance': int(w.group(4))}
+    out_n = len(held_names(b)[0])
+    # (a person held before the dry run is already out of it, so the gap is at most the number left out)
+    if not 0 <= sum(dry.values()) - sum(want.values()) <= out_n:
+        bad.append(f'the write wrote {sum(want.values())} outcomes, the dry run had {sum(dry.values())}, and {out_n} are held or moved: the gap is more than the people left out')
+    if any(want[k] > dry[k] for k in want): bad.append(f'the write\'s outcomes {want} exceed the dry run\'s {dry}')
     have = {k: 0 for k in want}; have.update({r['outcome']: int(r['count']) for r in got['outcomes']})
-    if have != want: bad.append(f'read-back outcomes {have} are not the preview\'s {want}')
+    if have != want: bad.append(f'read-back outcomes {have} are not what the write wrote, {want}')
     n = sum(int(r['count']) for r in got['passages'])
     if n != passages: bad.append(f'read-back passages {n}, preview {passages}')
     states = {r['status']: int(r['count']) for r in got['review']}
     if set(states) - {'pending'}: bad.append(f'review rows are not all pending: {states}')
-    if sent and states.get('pending', 0) != int(sent.group(1)): bad.append(f'{states.get("pending", 0)} review row(s) pending, but the verifier sent {sent.group(1)} to review')
+    # a row sent back for more research also sits at pending; approve-batch.ts leaves it there
+    more = re.search(r'\bRE-RESEARCH: (\d+)', v); more = int(more.group(1)) if more else 0
+    if sent and states.get('pending', 0) != int(sent.group(1)) + more:
+        bad.append(f'{states.get("pending", 0)} review row(s) pending, but the verifier sent {sent.group(1)} to review and {more} back for more research')
+    if more: print(f'  ({more} row(s) need more research: they stay pending after the approval. Tell the runner who.)')
     return bad
 
 

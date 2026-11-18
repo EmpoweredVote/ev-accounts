@@ -173,7 +173,7 @@ runs": copy those lines in as they are, never retype them. 🛑 **Stop 3.**
 
 **B11. Write, read back, approve.** On yes: `write-batch.sh {{S}} {{S}}/write/{{xx}}-01 {{TOPIC}} state:{{xx}} apply`,
 the verifier with `--apply`, `readback.ts`. Counts must match the preview. 🛑 **Stop 4**, then `approve-batch.ts`
-and read back again. Skip own-words seats at approval unless this topic's blind check has passed
+and read back again. Skip own-words seats at approval unless this topic's blind check has passed (root CLAUDE.md lists the topics that have; check it before a PREVIEW says they are held)
 (STAGE5 §8). Detail: STAGE5 §7 steps 14 and 15.
 
 **B12. Close out, as the session's last act.**
