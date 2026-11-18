@@ -294,6 +294,34 @@
       "found": 2,
       "at": "2026-11-05T23:52:51.759Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or large magazines",
+        "check every gun buyer",
+        "waiting periods, permits, minimum age",
+        "red-flag orders",
+        "ghost guns and federal agency gun rules",
+        "carry permits and carry without a permit",
+        "repeal of gun laws",
+        "general statements on gun rights or the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "https://en.wikipedia.org/wiki/Jonathan_McMillan (read: confirms the sitting House member for District 58, in office since January 2024; no gun material)",
+        "https://ivoterguide.com/candidate/75578/race/7059/election/1024 (read: 2023 voter guide profile; the Second Amendment questions are marked as not answered)",
+        "blocked: https://ballotpedia.org/Jonathan_McMillan (empty 202 response, not retried)",
+        "not reviewed: https://www.legislature.ms.gov/legislators/house/jonathan-mcmillan/ (404, no member page found); the state House site did not load",
+        "https://billstatus.ls.state.ms.us/members/house/mcmillan.xml (returned a short page with no usable member data)",
+        "two web searches on name plus gun, firearm and Second Amendment words: nothing in his own words and no gun bill sponsored by him",
+        "sponsor list: covered by bulk bill data",
+        "no personal campaign site or official issue page found; nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:03:53.656Z",
+      "by": "source-collector"
     }
   ]
 }

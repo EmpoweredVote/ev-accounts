@@ -322,6 +322,29 @@
       "found": 2,
       "at": "2026-11-05T23:52:51.759Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general gun rights and Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Beth_Luther_Waldo (fetch returned an empty page; a search result summary shows a sitting House member, District 15, term through January 2028, so still in scope)",
+        "https://www.billsponsor.com/politicians/10906/beth-waldo (shows a sitting District 15 member with recent 2026 votes; no gun bills on the page shown)",
+        "not reviewed: legislature member page (a guessed member URL returned 404; the official member list page returned no text naming her)",
+        "campaign site: none found in two searches",
+        "news search on her name plus gun, firearm, Second Amendment and permitless carry: nothing about her on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:03:53.912Z",
+      "by": "source-collector"
     }
   ]
 }

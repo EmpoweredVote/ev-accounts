@@ -621,6 +621,49 @@
           "sha256": "1267ddbf1a17bf1ac7e955f88b3343875d1522d9fb8cfe802b769ceaeef61097"
         }
       }
+    },
+    {
+      "id": "e289f1b11d1c03ea165160e8b0a5fcc63d7f81b4df299eb4d9708076075bbf72",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/?p=86935",
+      "date": "2022-06-16",
+      "date_precision": "day",
+      "passage": "I am aware of the Second Amendment’s rights for gun ownership, but the average civilian should not be allowed to own or possess military style rifles capable of firing up to 45 rounds per minute,” Senator Turner Ford said.  “These guns often have magazines holding 30 or more bullets. Such power should be reserved for trained police and military only.",
+      "note": "Quoted in a Magnolia Tribune story on a Legislative Black Caucus release issued in her name as caucus chair; she says civilians should not own military-style rifles or large magazines.",
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "Second Amendment"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:06:43.278Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "37500d7632849bf78ae77251cc0503c84d34bfd3264d391eb1a73a6fadcf1963",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/?p=86935",
+      "date": "2022-06-16",
+      "date_precision": "day",
+      "passage": "I urge each Mississippian to call your respective U.S. Congressman or U.S. Senator and ask them to support a ban on military style and military grade weapons as they debate levels of federal gun control.",
+      "note": "Quoted in the same story; she urges people to ask their members of Congress to back a ban on military-style weapons.",
+      "subjects": [
+        "ban on assault-style guns",
+        "federal gun control"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:06:43.278Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -654,6 +697,33 @@
       "found": 1,
       "at": "2026-11-05T23:09:07.373Z",
       "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "gun safety laws",
+        "Second Amendment",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "ghost guns"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Magnolia Tribune story, June 2022 (read)",
+        "Magnolia Tribune story, March 2026 (read)",
+        "web search: Senator name plus gun terms (1 search)",
+        "blocked: https://ballotpedia.org/Angela_Turner-Ford (returned nothing usable)",
+        "not reviewed: https://mississippitoday.org/2023/02/09/armed-teachers-senate-bill/ (fetch returned no text)",
+        "official legislature member page: not found (404 on the URLs tried); no personal or campaign site located",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 2,
+      "at": "2026-11-18T03:06:43.278Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -28,6 +28,35 @@
       "found": 0,
       "at": "2026-11-05T22:40:55.405Z",
       "by": "search-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "large-capacity magazines",
+        "check every gun buyer",
+        "permits or waiting periods to buy",
+        "red-flag orders",
+        "ghost guns",
+        "pistol-brace rule",
+        "carry permits and carry without a permit",
+        "repeal of gun laws",
+        "Second Amendment general statement",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://treasury.ms.gov/about/meet-treasurer-mcrae/ confirms David McRae as State Treasurer of Mississippi (a statewide officer, not a legislator; not a 2026 ballot office)",
+        "official site search at https://treasury.ms.gov/?s=gun, ?s=firearm and ?s=second+amendment: no firearm-policy page; the one 'gun' hit is a July 4 column quoting a historical line about celebrations, nothing on the subject",
+        "legislature bill pages: not applicable, statewide officer; sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/David_McRae (returned an empty page, HTTP 202)",
+        "web searches (3): name + Second Amendment / gun / firearm, with and without the Treasurer title; results were gun-group legislative pages and bill trackers that do not name him, plus a voter-guide profile with no firearm content; nothing on the subject",
+        "not reviewed: https://ivoterguide.com/candidate/44656/race/6969/election/660 (voter-guide lead only, no own words expected)"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:06:14.849Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1025,6 +1025,34 @@
       "found": 7,
       "at": "2026-11-05T23:52:51.757Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "limits on who may have a gun",
+        "domestic abuse and guns",
+        "general statements on gun rights and gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "web search (3 searches): no own words from this person on guns found; the only lead was a news story headline about a wait-and-see answer on an assault-weapon ban",
+        "blocked: https://www.northsidesun.com/news-breaking-news/blount-mum-gun-control-position-wants-wait-see",
+        "blocked: https://ballotpedia.org/David_Blount",
+        "not reviewed: official campaign site (the address tried, www.davidblount.com, did not resolve; no other own page found)",
+        "https://billstatus.ls.state.ms.us/members/senate/blount.xml (reachable, legislature member data, no own words)",
+        "https://www.jacksonfreepress.com/news/2012/mar/19/senate-sets-sights-on-gun-laws (fetched, does not name him)",
+        "https://ourtupelo.com/national-rifle-association-successfully-lobbies-against-bill-taking-away-guns-from-abusers/ (fetched, does not name him)",
+        "https://www.nraila.org/articles/20210210/mississippi-senate-passes-strong-preemption-reform-bill-on-35-to-16-vote (fetched, does not name him)",
+        "https://www.mississippifreepress.org/where-mississippis-u-s-lawmakers-stand-on-gun-laws-rights/ (fetched, does not name him)",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:06:47.634Z",
+      "by": "source-collector"
     }
   ]
 }

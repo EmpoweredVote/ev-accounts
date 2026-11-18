@@ -323,6 +323,34 @@
       "found": 2,
       "at": "2026-11-05T23:52:51.758Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment general statements",
+        "repeal of gun laws",
+        "local gun rules preempted by state"
+      ],
+      "places": [
+        "status: sitting Mississippi House member for District 33, term runs to 2028 (not on the 2026 ballot); confirmed by search results and the legislature's 2026 House author list page https://billstatus.ls.state.ms.us/2026/pdf/House_authors/Estrada.xml",
+        "On the Record (0 meetings)",
+        "House author list page for 2026 (https://billstatus.ls.state.ms.us/2026/pdf/House_authors/Estrada.xml): fetched, no gun-subject bills seen in the text returned",
+        "sponsor list: covered by bulk bill data",
+        "a 2023 education-group candidate questionnaire (https://tpcref.org/election-2023-candidate-qa-hd033/): his answers cover schools only, nothing on the subject",
+        "blocked: https://ballotpedia.org/Jim_Estrada (403)",
+        "blocked: https://legiscan.com/MS/legislator/jim-estrada/people/ (403)",
+        "official member page on the legislature's site (mscapitol.com): reachable, not searched further for gun-subject items",
+        "campaign site: not found",
+        "news search on name plus gun words: results only point to a 2024 bill HB 1690 (Second Amendment Preservation Act) from aggregator pages; not fetched, so not saved; sponsor list is covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:10:20.323Z",
+      "by": "source-collector"
     }
   ]
 }

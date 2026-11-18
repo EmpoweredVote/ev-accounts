@@ -742,6 +742,28 @@
           "sha256": "1267ddbf1a17bf1ac7e955f88b3343875d1522d9fb8cfe802b769ceaeef61097"
         }
       }
+    },
+    {
+      "id": "2684870a1aa9565b3b00a5af11237edcbeb5fa826fc1ad4b5561854b839c3887",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2014/pdf/history/HB/HB0231.xml",
+      "date": "2014-01-01",
+      "date_precision": "year",
+      "instrument_id": "MS-HB-231-2014",
+      "act": "author",
+      "note": "Scott is the sole principal author of 2014 House Bill 231, an act to require record-keeping of sales of pistol or rifle cartridges (amends Code section 97-37-13). The bill died in committee.",
+      "subjects": [
+        "record of ammunition sales",
+        "ammunition registration"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:07:36.102Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -786,6 +808,33 @@
       "found": 5,
       "at": "2026-11-05T23:52:51.752Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ammunition sales record-keeping",
+        "ammunition registration",
+        "gun bans",
+        "background checks",
+        "carry permits and permitless carry",
+        "red-flag orders",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member page for House District 80 (https://billstatus.ls.state.ms.us/members/house/scott.xml): confirms Omeria Scott, House District 80, in office since 1993; nothing on the subject",
+        "legislature bill page for 2014 HB 231 (https://billstatus.ls.state.ms.us/2014/pdf/history/HB/HB0231.xml): names Scott as sole principal author",
+        "sponsor list 2018-2026: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Omeria_Scott (403)",
+        "one web search on name plus firearms words: only leads were a 2014 gun-group legislative summary and a 2026 taser bill (not firearms); no own words on guns found",
+        "https://www.nraila.org/articles/20140119/mississippi-2014-legislative-session-underway-pro-gun-and-anti-gun-measures-already-filed: a 2014 advocacy-group session summary naming the HB 231 sponsorship; no words from Scott",
+        "not reviewed: personal campaign site (none found in search)",
+        "nothing on the subject in own words: no statements, questionnaires or interviews found"
+      ],
+      "found": 1,
+      "at": "2026-11-18T03:07:36.102Z",
+      "by": "source-collector"
     }
   ]
 }

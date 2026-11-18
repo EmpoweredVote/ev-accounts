@@ -807,6 +807,52 @@
           "sha256": "1267ddbf1a17bf1ac7e955f88b3343875d1522d9fb8cfe802b769ceaeef61097"
         }
       }
+    },
+    {
+      "id": "bca0572a69d96c04ced4faedb833758a3731ca32097f8a89343bbd06cf2b6efe",
+      "kind": "record",
+      "url": "https://www.nraila.org/articles/20120406/mississippi-nra-backed-legislation-moves-forward-in-the-magnolia-state",
+      "date": "2012-04-06",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-455-2012",
+      "act": "other",
+      "motion": "Chaired Senate Judiciary B and managed HB 455 on the Senate floor",
+      "note": "A gun-rights group's post says Bryan, as Senate Judiciary B chair, steered HB 455 (ends the state recordkeeping requirement for licensed firearm dealers) through committee and managed it on the Senate floor. The source is a third-party post, not Bryan's own words; his vote and position are not stated.",
+      "subjects": [
+        "gun dealer sales records",
+        "repeal of gun record rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:10:33.058Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f05cf15206b2e41d8df7b8c0c0c0d72588b9ac4e92b00bcf9bfa5849aa858a27",
+      "kind": "record",
+      "url": "https://www.nraila.org/articles/20120412/mississippi-senate-passes-two-more-nra-supported-bills-this-week",
+      "date": "2012-04-12",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-353-2012",
+      "act": "other",
+      "motion": "Chaired Senate Judiciary B and handled HB 353 on the Senate floor",
+      "note": "A gun-rights group's post says Bryan, as Senate Judiciary B chair, shepherded HB 353 (makes it a crime to deceive a licensed firearm dealer when buying a gun) through committee and handled it on the Senate floor. The source is a third-party post, not Bryan's own words.",
+      "subjects": [
+        "lying to a gun dealer when buying a gun",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:10:33.058Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -854,6 +900,30 @@
       "found": 7,
       "at": "2026-11-05T23:52:51.754Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "gun dealer records",
+        "gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Hob_Bryan (403)",
+        "not reviewed: official legislature member page (the address tried returned 404); no personal official or campaign site found",
+        "web search (2 searches): found only third-party pages about his committee role in 2012",
+        "a 2012 news story from the Mississippi Free Press (about him, not his words)",
+        "two 2012 gun-group news posts thanking him as committee chair (about him, not his words)",
+        "nothing on the subject in his own words"
+      ],
+      "found": 2,
+      "at": "2026-11-18T03:10:33.058Z",
+      "by": "source-collector"
     }
   ]
 }

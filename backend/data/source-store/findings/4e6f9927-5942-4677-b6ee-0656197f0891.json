@@ -912,6 +912,33 @@
       "found": 6,
       "at": "2026-11-05T23:52:51.747Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits",
+        "repeal of gun laws",
+        "general statements on gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the legislature's own member page (https://billstatus.ls.state.ms.us/members/house/clark.xml): confirms House District 47, in office since 2004; nothing on the subject",
+        "sitting legislator, not on the 2026 ballot as a candidate; no primary loss or withdrawal found",
+        "campaign site: none found",
+        "blocked: https://ballotpedia.org/Bryant_Clark (403)",
+        "news search on name plus gun words: nothing on the subject that names him; hits were about a different person with the same surname",
+        "https://www.guns.com/news/2018/02/09/dem-produces-gun-on-statehouse-floor-to-protest-bill: about a different legislator, nothing on the subject for him",
+        "sponsor list: covered by bulk bill data",
+        "legislature vote PDFs: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:10:09.509Z",
+      "by": "source-collector"
     }
   ]
 }

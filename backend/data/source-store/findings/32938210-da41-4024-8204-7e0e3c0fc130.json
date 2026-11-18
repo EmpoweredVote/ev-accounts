@@ -146,6 +146,33 @@
       "found": 1,
       "at": "2026-11-05T23:52:51.761Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "ghost guns",
+        "repeal of gun laws",
+        "general statement on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "Mississippi Free Press candidate Q&A (https://www.mississippifreepress.org/qa-kamesha-mumford-mississippi-senate-district-26-candidate/): own words on public safety, nothing on the subject",
+        "blocked: https://ballotpedia.org/Kamesha_Mumford (403)",
+        "blocked: https://goodparty.org/candidate/kamesha-mumford/mississippi-state-senate-district-26 (429)",
+        "web search on her name plus gun words: nothing on the subject",
+        "web search confirming office: sitting state senator, District 26, took office January 2026 (confirmed via news and encyclopedia results)",
+        "not reviewed: official Mississippi Senate member page (not fetched)",
+        "no campaign site found in search results"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:04:22.057Z",
+      "by": "source-collector"
     }
   ]
 }

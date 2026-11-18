@@ -151,6 +151,32 @@
       "found": 1,
       "at": "2026-11-05T23:52:51.760Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "firearm bans",
+        "background checks",
+        "red flag orders",
+        "carry permits",
+        "permitless carry",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "candidate Q&A page for the 2025 special election: https://tpcref.org/voter-information/2025-special-election-hd22/ (education answers only, nothing on the subject)",
+        "news story on the 2025 special-election win: https://www.mississippifreepress.org/democrat-justin-crosby-flips-mississippi-house-seat-ousts-republican-incumbent/ (nothing on the subject)",
+        "campaign committee profile page: https://dlcc.org/candidates/justin-crosby (nothing on the subject)",
+        "Ballotpedia: https://ballotpedia.org/Justin_Crosby (page returned empty to fetch; search summary showed nothing on the subject)",
+        "news search on name plus gun words (nothing on the subject)",
+        "not reviewed: https://crosbyfor22.com, official House member page, ontheissues, vote411",
+        "not run: the shell blocked the combined command for the URL-patterns section of the researcher agent file"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:07:53.152Z",
+      "by": "source-collector"
     }
   ]
 }

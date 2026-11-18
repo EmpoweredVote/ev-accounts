@@ -345,6 +345,33 @@
       "found": 0,
       "at": "2026-11-05T23:55:08.229Z",
       "by": "research-ms-r2-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum ages",
+        "red-flag orders",
+        "ghost guns and federal agency gun rules",
+        "carry permits and permitless carry",
+        "repealing gun laws",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings, 0 name-matched speakers)",
+        "the legislature's own member page https://billstatus.ls.state.ms.us/members/house/lott.xml (read: confirms Steve Lott, House District 107; no statements on the subject)",
+        "blocked: https://ballotpedia.org/Steve_Lott (403 on curl; fetch tool returned an empty page)",
+        "web search: name plus gun and Second Amendment words (no statement by him on the subject found; results about a different Lott were set aside)",
+        "web search: name plus District 107 2026 (no 2026 race found; a search summary gave his term as ending January 2028, not confirmed from a page I read)",
+        "campaign site: none found; a guessed address did not resolve",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://www.nraila.org/articles/20230213/mississippi-bill-crossover-deadline-passes-anti-gun-bills-do-not (general bill coverage, does not name him in the snippet)"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:10:51.220Z",
+      "by": "source-collector"
     }
   ]
 }

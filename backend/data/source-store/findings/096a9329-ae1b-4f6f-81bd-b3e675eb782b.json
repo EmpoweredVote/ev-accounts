@@ -784,6 +784,28 @@
           "sha256": "1267ddbf1a17bf1ac7e955f88b3343875d1522d9fb8cfe802b769ceaeef61097"
         }
       }
+    },
+    {
+      "id": "a68b39917cb9c07d2a0ca5a6b6341f01a7310fc9d8f797a4b558ae1f617eeee2",
+      "kind": "own-words",
+      "url": "https://talkingpointsmemo.com/news/mississippi-senate-favors-armed-security-church",
+      "date": "2016-03-29",
+      "date_precision": "day",
+      "passage": "We don't need to pimp the church for political purposes. If you want to pass a bill liberalizing gun laws, then do that. Don't use the church.",
+      "note": "Floor remarks in the Senate debate on HB 786 (church armed security / carry changes), quoted in a wire-service news story carried by Talking Points Memo; the same first sentence is quoted by the Christian Science Monitor. He spoke holding a sheathed sword and told the story of Jesus healing a servant's ear.",
+      "subjects": [
+        "guns in churches and armed church security",
+        "carry a gun without a permit",
+        "loosening gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:04:02.477Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -827,6 +849,33 @@
       "found": 7,
       "at": "2026-11-05T23:52:51.757Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "guns in churches and armed church security",
+        "carry a gun without a permit",
+        "concealed carry permits",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "https://billstatus.ls.state.ms.us/members/senate/frazier.xml (legislature member record page: confirms the name Hillman Terome Frazier as a Senate member; no statements)",
+        "blocked: https://ballotpedia.org/Hillman_Frazier (403)",
+        "blocked: https://senate.ms.gov (no response); legislature.ms.gov member page not found (404)",
+        "no campaign site or official issue page found in search results; not reviewed",
+        "sponsor list: covered by bulk bill data",
+        "news search on name plus gun words: one on-subject floor quote found in a 2016 wire-service story (read on the Talking Points Memo page)",
+        "https://www.mississippifreepress.org/sen-hillman-frazier/ (profile page, nothing on the subject)",
+        "not reviewed: ontheissues.org, vote411, Vote Smart (leads only, not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-11-18T03:04:02.477Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -792,6 +792,33 @@
       "found": 3,
       "at": "2026-11-05T23:52:51.745Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "assault-style gun bans",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and Second Amendment statements",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site https://www.jerameyanderson.com (home page read; it names him as Rep. Jeramey Anderson, House District 110; the post list is a script-built page and its text could not be searched for gun words)",
+        "official site post https://www.jerameyanderson.com/post/rep-jeramey-anderson-votes-no-on-hb-538-mississippians-deserve-leadership-not-fear (read; not about guns, nothing on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Jeramey_Anderson (403)",
+        "blocked: https://mississippitoday.org/2018/02/08/gun-waving-lawmaker-triggers-concealed-carry-concerns/ (403)",
+        "news search on name plus gun, firearm, permitless carry, Second Amendment: no statement by him found",
+        "status: sitting House member, District 110; House seats are not on the 2026 ballot, so no ballot check applies",
+        "not reviewed: https://www.mississippifreepress.org/author/jerameymississippifreepress-com/ (search lead only)",
+        "not reviewed: https://justfacts.votesmart.org/candidate/biography/145360/ (search lead only)"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:04:41.001Z",
+      "by": "source-collector"
     }
   ]
 }

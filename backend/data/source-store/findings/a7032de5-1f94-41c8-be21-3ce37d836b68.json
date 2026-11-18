@@ -264,6 +264,55 @@
       "found": 2,
       "at": "2026-11-05T23:52:51.758Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general statements on gun rights or gun safety laws"
+      ],
+      "places": [
+        "status: sitting member of the Mississippi House, District 57, since 2024-01-02, term to January 2028 (confirmed on https://en.wikipedia.org/wiki/Lawrence_Blackmon and https://www.ballotready.org/people/lawrence-blackmon)",
+        "On the Record (0 meetings, also searched by name)",
+        "official legislature member page: not reviewed: https://www.legislature.ms.gov/legislation/members/ (returned 404)",
+        "blocked: https://ballotpedia.org/Lawrence_Blackmon (403)",
+        "https://www.ballotready.org/people/lawrence-blackmon (nothing on the subject)",
+        "https://en.wikipedia.org/wiki/Lawrence_Blackmon (nothing on the subject)",
+        "news searches on name plus gun words: nothing on the subject by this person; a Mississippi Free Press gun-in-schools story quotes Sen. Barbara Blackmon, and another item covers Edward Blackmon Jr., both different people, not saved",
+        "campaign site: not found",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: ontheissues.org, vote411 (leads only; no own-words source found)"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:07:16.165Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general statements on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://en.wikipedia.org/wiki/Lawrence_Blackmon (confirms sitting member of the Mississippi House, district 57, since January 2024; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Lawrence_Blackmon (403)",
+        "not reviewed: https://www.legislature.ms.gov/legislation/members/?member=Blackmon (404, no member page reached); no official or campaign site found",
+        "sponsor list: covered by bulk bill data",
+        "web search on name plus gun words (2 searches): results only about a different Blackmon (Edward Blackmon Jr.) or unattributed bills; nothing by this person",
+        "nothing on the subject: own-words statements, newsletters, questionnaires"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:12:19.711Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -642,6 +642,27 @@
           "sha256": "1267ddbf1a17bf1ac7e955f88b3343875d1522d9fb8cfe802b769ceaeef61097"
         }
       }
+    },
+    {
+      "id": "9e43a6411caab67c1246783f6bf5fe477ba1cadb461ed99b00d5da8247689423",
+      "kind": "own-words",
+      "url": "https://www.supertalk.fm/?p=287282",
+      "date": "2025-06-08",
+      "date_precision": "day",
+      "passage": "“As we grieve the lives lost of many in our communities and our region we must act,” Simmons said. “I commend Mayor Errick D. Simmons and the City of Greenville for their decisive leadership in declaring a state of emergency and implementing a citywide curfew aimed at curbing the rising tide of gun violence.”",
+      "note": "Quoted in a SuperTalk news story on his press release: he praises Greenville's emergency declaration and curfew as a response to gun violence and urges other Delta cities to adopt curfews. It names no firearm law.",
+      "subjects": [
+        "gun violence",
+        "curfews as a response to gun violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:04:03.924Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -684,6 +705,36 @@
       "found": 6,
       "at": "2026-11-05T23:52:51.757Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun violence",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "confirmed in office: State Senator, District 12, Senate Minority Leader (SuperTalk story, 2025-06-08)",
+        "https://www.mississippifreepress.org/derrick-simmons/ (nothing on the subject)",
+        "https://votesmart.org/candidate/biography/128785/ (nothing on the subject)",
+        "https://www.derricksimmons.com/ (a different person, a stuntman; not used)",
+        "https://legilist.com/states/mississippi/bill/2026/sb-2780 (his bill, off the subject)",
+        "web search x2: one gave a news story quoting him on gun violence and a Delta curfew; the other found nothing from him on carry, red-flag or background checks",
+        "blocked: https://ballotpedia.org/Derrick_Simmons (403)",
+        "blocked: https://legiscan.com/MS/bill/SB2123/2026 (403)",
+        "blocked: https://www.senate.ms.gov/ (no response)",
+        "nothing on the subject: https://ourtupelo.com/national-rifle-association-successfully-lobbies-against-bill-taking-away-guns-from-abusers/ (no mention of him)",
+        "not reviewed: campaign site (none found for him)"
+      ],
+      "found": 1,
+      "at": "2026-11-18T03:04:03.924Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -640,6 +640,61 @@
       "found": 3,
       "at": "2026-11-05T23:52:51.753Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits",
+        "repeal of gun laws",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Identity confirmed: sitting state senator for District 39, Brookhaven, per https://dailyleader.com/2023/01/26/sen-barrett-presents-bills-on-government-transparency-personal-safety",
+        "news story read in full (https://dailyleader.com/2023/01/26/sen-barrett-presents-bills-on-government-transparency-personal-safety): his own words are on open meetings and sex-offender bills, nothing on the subject",
+        "https://dailyleader.com/?p=245419 (hot-topics interview): fetched, no gun or firearm words found",
+        "blocked: https://ballotpedia.org/Jason_Barrett (403)",
+        "not reviewed: https://ballotpedia.org/Jason_Barrett_(Mississippi) (found by search, not fetched)",
+        "not reviewed: https://en.wikipedia.org/wiki/Jason_Barrett_(Mississippi_politician)",
+        "Senate member page: https://www.legislature.ms.gov/legislation/members/senate/ returned 404; senate.ms.gov did not resolve; no official or campaign page of his own was read",
+        "web search x2: no statement by him on guns found",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:08:44.049Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of gun or magazine",
+        "check every gun buyer",
+        "permits, waiting periods, minimum ages",
+        "red-flag orders",
+        "ghost guns and federal agency gun rules",
+        "carry a gun without a permit, carry permits",
+        "repeal of gun laws",
+        "general statements on gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings; script found no appearances)",
+        "https://en.wikipedia.org/wiki/Jason_Barrett_(Mississippi_politician): confirms a sitting state senator for District 39, elected in a 2020 special election; nothing on the subject",
+        "https://dailyleader.com/2023/01/26/sen-barrett-presents-bills-on-government-transparency-personal-safety: local news story on their 2023 bills; nothing on the subject",
+        "https://dailyleader.com/?p=245419: local news story on their views on session topics; nothing on the subject",
+        "blocked: https://ballotpedia.org/Jason_Barrett_(Mississippi) (403)",
+        "not reviewed: Mississippi Senate member page (guessed address returned 404; official site and a campaign site not located)",
+        "web search x2 on their name plus gun words: no statement of theirs on the subject surfaced",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:12:38.553Z",
+      "by": "source-collector"
     }
   ]
 }

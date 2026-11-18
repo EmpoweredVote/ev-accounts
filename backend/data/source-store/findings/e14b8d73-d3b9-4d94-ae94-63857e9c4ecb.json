@@ -377,6 +377,34 @@
       "found": 2,
       "at": "2026-11-05T23:52:51.760Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum ages",
+        "red-flag orders",
+        "ghost guns and federal agency gun rules",
+        "carry permits and carrying without a permit",
+        "repeal of gun laws",
+        "general statements on gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 appearances; extract script found no meetings)",
+        "https://en.wikipedia.org/wiki/Bradford_Blackmon (confirms sitting state senator for District 21; nothing on the subject; page is a summary-tool read, nothing copied)",
+        "blocked: https://ballotpedia.org/Bradford_Blackmon (403)",
+        "not reviewed: legislature member page; the guessed addresses https://billstatus.ls.state.ms.us/members/senate/blackmon.htm, https://billstatus.ls.state.ms.us/htms/s_mbrs/blackmon.htm and https://legislature.ms.gov/legislation/members/ returned 404",
+        "campaign site: https://www.bradfordblackmon.com did not connect; none found",
+        "news search on name plus gun words (two searches): no gun statement by him found; only an AI-regulation remark (off subject) and gun remarks by other people named Blackmon (not saved)",
+        "https://www.change.org/p/restore-lawful-gun-ownership-rights-for-responsible-citizens (lists him among petition targets; not a statement by him; not saved)",
+        "sponsor list: covered by bulk bill data",
+        "nothing on the subject beyond what is already on file"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:09:57.075Z",
+      "by": "source-collector"
     }
   ]
 }

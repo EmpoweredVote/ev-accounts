@@ -587,6 +587,26 @@
           "sha256": "696009c1c61ef6f97b3282574b436979691daa76340edcc62ba61efce35efe29"
         }
       }
+    },
+    {
+      "id": "7c9f3b47d2535f0eb1f136a1e52a46a8ce383fe5f97cd43a5c7a1a3fbf29aa15",
+      "kind": "own-words",
+      "url": "https://www.wlox.com/2026/09/27/hulum-outlines-priorities-bid-mississippis-4th-congressional-district/",
+      "date": "2026-09-27",
+      "date_precision": "day",
+      "passage": "“I believe in the Second Amendment,” Hulum said. “I believe in quality health care. I believe in strong paying jobs. I believe in strong public education.”",
+      "note": "A TV station's story quotes him in an interview during his congressional campaign. It gives a general statement of belief in the Second Amendment and names no specific gun policy.",
+      "subjects": [
+        "general statement on the Second Amendment and gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:05:00.460Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -628,6 +648,35 @@
       "found": 2,
       "at": "2026-11-05T23:52:51.759Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment (general statement)",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "scope: sitting state House member (district 119) who was on the 2026 general-election ballot for the 4th Congressional District; AP called that race for the incumbent on 2026-11-04 (a general-election result, not a primary loss); still in scope as a sitting state official",
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "https://www.wlox.com/2026/09/27/hulum-outlines-priorities-bid-mississippis-4th-congressional-district/ (read; one on-subject quote)",
+        "https://www.wlox.com/2026/10/26/meet-candidates-mississippis-4th-congressional-district-race/ (read; repeats the same quote)",
+        "https://www.mississippifreepress.org/meet-the-candidates-for-mississippis-4th-congressional-district-in-the-nov-3-elections/ (read; nothing on the subject attributable to him)",
+        "https://ivoterguide.com/candidate/77147/race/29440/election/1440 (read; the page lists the gun-restrictions question as unanswered, and its race label does not match this office, so it is not saved)",
+        "blocked: https://mississippitoday.org/2026/09/22/the-other-side-hulum-says-mississippi-country-need-leadership-unity-in-washington/ (HTTP 403)",
+        "blocked: https://ballotpedia.org/Jeffrey_Hulum_III (empty page returned)",
+        "web search: one on his name plus Second Amendment and gun words, one on his congressional campaign issues; nothing further on the subject",
+        "official legislature member page and campaign site: not reached as readable pages; nothing on the subject found there",
+        "not reviewed: https://mississippitoday.org/podcasts/the-other-side/hulum-says-mississippi-country-need-leadership-unity-in-washington/ (audio)"
+      ],
+      "found": 1,
+      "at": "2026-11-18T03:05:00.460Z",
+      "by": "source-collector"
     }
   ]
 }

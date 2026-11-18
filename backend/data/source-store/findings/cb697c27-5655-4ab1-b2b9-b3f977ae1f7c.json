@@ -302,6 +302,66 @@
           "sha256": "8f4d9bda94e27d7b46183077c0a7edcfec7d726c3f5b723ab2a3126e22237b9b"
         }
       }
+    },
+    {
+      "id": "85625814ec1795c553b226ccc8f91e69972f8362975dd74159669ca9b5009f67",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/75590/race/7039/election/1069",
+      "date": "2023-08",
+      "date_precision": "month",
+      "passage": "New restrictions on gun ownership will not protect public safety.",
+      "note": "His answer on a 2023 voter-guide questionnaire (2nd Amendment section) to what limits on gun ownership are needed for public safety. The profile cites an August 2023 issues post from him as a source; exact answer date not shown.",
+      "subjects": [
+        "no new limits on gun ownership"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:10:47.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bf642541829882dc1c487f966022d5f124b0e558f7bffcec34bde19584dc6536",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/75590/race/7039/election/1069",
+      "date": "2023-08",
+      "date_precision": "month",
+      "passage": "I believe our rights come from God. I believe that smaller government is better government. I would prefer my local government making the decisions, rather than the National government. in most cases, we don't need many new laws; we only need to enforce the ones we already have.",
+      "note": "General priorities statement from the same 2023 questionnaire; does not name guns, saved as a general statement on new laws versus enforcing existing ones.",
+      "subjects": [
+        "general statement: enforce existing laws rather than pass new ones"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:10:47.022Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0807160a6a30f9414e1090ae1eb07ae76153e19ca9f9588daf9bec7ec612cc52",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/75590/race/7039/election/1069",
+      "date": "2023-08",
+      "date_precision": "month",
+      "passage": "Victims of gun violence should be able to sue firearms dealers and manufacturers. Disagree",
+      "note": "Questionnaire item on lawsuits against gun dealers and makers; the page records his response as Disagree (the statement is the survey's, the answer is his).",
+      "subjects": [
+        "lawsuits against gun sellers and makers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:10:47.022Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -344,6 +404,34 @@
       "found": 2,
       "at": "2026-11-05T23:52:51.760Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "new limits on gun ownership",
+        "suing gun sellers and makers",
+        "general Second Amendment statements",
+        "assault-style weapon and magazine bans",
+        "background checks",
+        "red flag orders",
+        "carry permits and permitless carry",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "confirmed in scope: sitting Mississippi House member for District 105 since January 2024, per a voter-guide profile and a web search (no 2026 ballot race for this seat)",
+        "voter guide profile https://ivoterguide.com/candidate/75590/race/7039/election/1069 (2023 candidate questionnaire; read)",
+        "campaign site: https://www.elliotburch.com returned 404, nothing to read",
+        "blocked: https://ballotpedia.org/Elliot_Burch (403)",
+        "legislature bill pages: sponsor list: covered by bulk bill data",
+        "one web search on name plus gun words: nothing tying him to a gun statement beyond the voter guide",
+        "NRA-ILA 2026 session wrap-up https://www.nraila.org/articles/20260422/mississippi-legislature-adjourns-2026-session: does not name him; nothing on the subject",
+        "official House member page, news interviews, floor remarks: not reviewed, no page found in the search allowance used"
+      ],
+      "found": 3,
+      "at": "2026-11-18T03:10:47.022Z",
+      "by": "source-collector"
     }
   ]
 }

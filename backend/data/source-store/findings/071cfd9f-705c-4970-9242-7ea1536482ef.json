@@ -1007,6 +1007,36 @@
       "found": 6,
       "at": "2026-11-05T23:52:51.752Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "permit to carry a gun",
+        "carry a gun without a permit",
+        "limits on who may have a gun",
+        "suppressors and short-barrelled rifles",
+        "general statement on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings; the extract script found no appearances for this person)",
+        "official legislature member page: https://billstatus.ls.state.ms.us/2017/pdf/House_authors/Steverson.xml (fetched; confirms House District 4 member, author list only, nothing on the subject in own words)",
+        "not reviewed: https://www.legislature.ms.gov/legislation/members/ (page loaded but no per-member own-words content found)",
+        "blocked: https://ballotpedia.org/Jody_Steverson (403)",
+        "blocked: https://legiscan.com/MS/bill/HB849/2023 (bot check)",
+        "blocked: https://www.facebook.com/jodysteverson (404)",
+        "campaign site: none found",
+        "legislature bill history for 2021 HB 697 (concealed-carry mental-health proof): author is another member, not this person, so not saved",
+        "2023 HB 849 shows as an unrelated securities bill on the legislature's record, not a firearms bill",
+        "news search on name plus gun words: no own-words quote found",
+        "sponsor list: covered by bulk bill data",
+        "nothing on the subject in own words found"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:08:30.040Z",
+      "by": "source-collector"
     }
   ]
 }

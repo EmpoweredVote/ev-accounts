@@ -727,6 +727,49 @@
           "sha256": "323e3f35dffbc230b997aa5c28065024cf8a442bc510b5b7b13bb0d194f3cade"
         }
       }
+    },
+    {
+      "id": "dc128247184345927cb5372805e5749ee3e511d6e4567b4818adc74ba2ab0544",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/44654/race/6968/election/716",
+      "date": "2019",
+      "date_precision": "year",
+      "passage": "More restrictive gun control is needed to protect public safety. Strongly Disagree",
+      "note": "Answer to a 2Nd Amendment item on a voter-guide questionnaire in his 2019 Secretary of State race; the answers are marked as reported by the candidate. He answered Strongly Disagree to the statement that more restrictive gun control is needed.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "more restrictive gun control"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:07:32.166Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a43d8035f3a2011a4189dc76b087ee334902212dd06360d384cb52c1a8094b91",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2016/pdf/history/SB/SB2234.xml",
+      "date": "2016-02-05",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2234-2016",
+      "act": "sponsor",
+      "note": "He is the principal author of SB 2234, the Federal Firearm, Magazine and Register Ban Enforcement Act, which would bar public employees from enforcing federal firearm, magazine and register bans and make such laws unenforceable by state and local officials. Referred to the Rules committee on this date; the bill died there.",
+      "subjects": [
+        "state refusal to enforce federal gun rules",
+        "ban on assault-style guns and magazines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:07:32.166Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -805,6 +848,37 @@
       "found": 8,
       "at": "2026-11-05T23:55:32.896Z",
       "by": "research-ms-r2-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and magazines",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "state refusal to enforce federal gun rules",
+        "gun rights and the Second Amendment",
+        "more restrictive gun control"
+      ],
+      "places": [
+        "status: in scope; sitting Mississippi Secretary of State, announced he will not seek a third term in 2027 (https://www.mpbonline.org/blogs/news/michael-watson-says-he-wont-seek-third-term-as-secretary-of-state-pushes-unfinished-reforms/)",
+        "On the Record (0 meetings)",
+        "campaign site (https://www.michaelwatson.ms): fetched, home page only, nothing on the subject",
+        "blocked: https://sos.ms.gov/node/10",
+        "blocked: https://www.sos.ms.gov/node/55",
+        "not found: https://sos.ms.gov/sites/default/files/mw-biography.pdf (404)",
+        "blocked: https://ballotpedia.org/Michael_Watson_(Mississippi)",
+        "blocked: https://blog.tenthamendmentcenter.com/?p=25027",
+        "blocked: https://www.legiscan.com/MS/bill/SB2234/2016",
+        "unreachable: https://news.aroutfitting.com/2019/07/18/nra-ila-nra-pvf-endorses-michael-watson-for-mississippi-secretary-of-state (NRA endorsement lead; not fetched, not cited)",
+        "voter guide questionnaire (https://ivoterguide.com/candidate/44654/race/6968/election/716): candidate-reported answers, one gun item saved",
+        "legislature bill status record for 2016 SB 2234",
+        "news search on name plus gun, firearm, Second Amendment and constitutional-carry words: no statements from him on the subject; leads only",
+        "sponsor list: covered by bulk bill data (2018 to 2026)"
+      ],
+      "found": 2,
+      "at": "2026-11-18T03:07:32.166Z",
+      "by": "source-collector"
     }
   ]
 }

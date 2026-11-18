@@ -850,6 +850,29 @@
           "sha256": "e2bd88dc1c9c8b749ea8c89e519f34d61e4ee25faf4faee57b1911d535808528"
         }
       }
+    },
+    {
+      "id": "55aee3a149acd709e102f314373ba3425343f1ba7951d75d64459f00977e6388",
+      "kind": "own-words",
+      "url": "https://www.jacksonfreepress.com/news/2016/mar/09/rep-bell-sanders-too-friendly-gun-industry-clinton",
+      "date": "2016-03-09",
+      "date_precision": "day",
+      "passage": "Hillary has taken on challenges like reducing gun violence, the leading cause of death young African American men (and more deadly than the next nine causes of death combined). Hillary has been a long-time advocate for gun-control legislation, whereas Sen. Sanders has a long track record of siding with the NRA on pro-gun laws. He voted to give firearms manufacturers sweeping immunity from prosecution, and even helped create the loophole that allowed a murderer in Charleston to kill nine innocent worshipers at a church bible study group.",
+      "note": "Op-ed signed by Rep. Chris Bell in a Jackson newspaper, backing a 2016 presidential candidate. In it he credits her with working to reduce gun violence and supporting gun-control legislation, and criticises her rival for voting for legal immunity for gun makers and for a background-check loophole.",
+      "subjects": [
+        "gun-control legislation",
+        "reducing gun violence",
+        "firearm industry liability protection",
+        "check every gun buyer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:04:39.262Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -893,6 +916,32 @@
       "found": 5,
       "at": "2026-11-05T23:52:51.746Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun-control legislation",
+        "reducing gun violence",
+        "firearm industry liability protection",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "status: sitting member of the Mississippi House, 65th district, per https://en.wikipedia.org/wiki/Christopher_Bell_(Mississippi_politician); the Mississippi House seats are not on the 2026 ballot, so no primary loss applies",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Christopher_Bell_(Mississippi) (403)",
+        "not reviewed: legislature member page (the guessed addresses https://billstatus.ls.state.ms.us/members/hr/bell.xml and https://www.legislature.ms.gov/legislation/members/ returned 404); no official or campaign site of his own was found or read",
+        "web searches: two news searches on his name plus gun words; only own-words item found is a 2016 op-ed he wrote in a Jackson newspaper (https://www.jacksonfreepress.com/news/2016/mar/09/rep-bell-sanders-too-friendly-gun-industry-clinton)",
+        "nothing on the subject: Wikipedia page (identity only)"
+      ],
+      "found": 1,
+      "at": "2026-11-18T03:04:39.262Z",
+      "by": "source-collector"
     }
   ]
 }

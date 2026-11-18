@@ -300,6 +300,28 @@
           "sha256": "a3be81faf9d2b915ba759457c60814e28e7099a19ae5904068bcc14cd39586ac"
         }
       }
+    },
+    {
+      "id": "6a56cdda61aa3b9440d0f7cf6dfabb0ef93cd8f5c3075b44be960d79efb57117",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2026/pdf/history/HB/HB0828.xml",
+      "date": "2026-01-16",
+      "date_precision": "day",
+      "instrument_id": "MS-HB-828-2026",
+      "act": "author",
+      "note": "Principal author of HB 828, the Mississippi Fair Chase Act, which died in committee. A sportsmen's group's post says it would bar suppressors, thermal optics and night vision for hunting, among other hunting limits; this concerns suppressor use in hunting, not general ownership, per that post.",
+      "subjects": [
+        "suppressors",
+        "limits on gun accessories for hunting"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:11:53.834Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -339,6 +361,61 @@
       "found": 2,
       "at": "2026-11-05T23:52:51.759Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "limits on who may have a gun",
+        "suppressors",
+        "general statements on gun rights"
+      ],
+      "places": [
+        "status: in scope, sitting state House member for District 6 since January 2024 (a news story on his 2023 run and the search results name him in this office); not on the 2026 ballot",
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Justin_Keen (403)",
+        "blocked: https://www.justinkeenms.com (no response)",
+        "not reviewed: the legislature's member page (returned 404 at the guessed address)",
+        "https://desotocountynews.com/desoto-county-news/justin-keen-announces-run-for-state-representative/ (his 2023 announcement story; nothing on the subject)",
+        "https://ivoterguide.com/candidate/75445/race/7019/election/1069 (2023 voter-guide questionnaire page; the gun-restriction and gun-dealer-lawsuit questions are marked 'Did not answer', so no own words)",
+        "https://congressionalsportsmen.org/?p=19219 (a hunting group's alert about HB 828, which is about hunting practices, not gun regulation; sponsorship is covered by bulk bill data; nothing in his own words)",
+        "one news search on his name plus gun words: nothing in his own words found",
+        "own-words: nothing on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:05:25.315Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "suppressors",
+        "firearm regulation",
+        "Second Amendment",
+        "background checks",
+        "assault-style guns",
+        "carry permits",
+        "red flag orders"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://desotocountynews.com/desoto-county-news/justin-keen-announces-run-for-state-representative/ (his campaign-launch story, read; nothing on the subject)",
+        "the legislature's bill status page for HB 828 of 2026 (read; shows him as principal author)",
+        "https://congressionalsportsmen.org/?p=19219 (advocacy group post on HB 828, read)",
+        "blocked: https://ballotpedia.org/Justin_Keen (403)",
+        "official House member page and campaign site: not found in search, not reviewed",
+        "iVoterGuide 2023 profile: search snippet only, not fetched; lead only, shows no answers on gun questions",
+        "web news search: one search, nothing in his own words on the subject",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 1,
+      "at": "2026-11-18T03:11:53.834Z",
+      "by": "source-collector"
     }
   ]
 }

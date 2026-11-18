@@ -567,6 +567,55 @@
       "found": 2,
       "at": "2026-11-05T23:52:51.752Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "Second Amendment general statements"
+      ],
+      "places": [
+        "identity: a web search and Ballotpedia listing show Robert L. Sanders as the District 29 member of the Mississippi House, term through January 2028 (not a 2026 ballot race); in scope",
+        "On the Record (0 appearances, 0 sources)",
+        "blocked: https://ballotpedia.org/Robert_Sanders_(Mississippi) (empty response, HTTP 202)",
+        "not reviewed: official legislature member page https://www.legislature.ms.gov/legislators/house/robert-sanders/ (HTTP 404); no campaign or personal site found",
+        "news search on name plus gun words: nothing on the subject in his own words; a Mississippi Free Press roundup quotes him on 2024-02-29 on campus police training (HB 418), which is not about firearms, so not saved: https://www.mississippifreepress.org/machine-gun-converter-ban-closing-parchman-medicaid-expansion-msleg-roundup/",
+        "sponsor list: covered by bulk bill data",
+        "House and Senate floor votes: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:07:05.681Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "suppressors",
+        "general statement on gun rights"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: https://www.mississippifreepress.org/new-mississippi-house-member-formerly-secured-the-senate/ (news story naming him as the House District 29 member, former police chief)",
+        "legislature bill pages: sponsor list: covered by bulk bill data; the 2025 House author list for Sanders held nothing on the subject by title",
+        "legislature bill page for HB 923 (2023): it is a fish hatchery naming bill by another author, so a tracker listing of it as a suppressor bill is wrong and was not used",
+        "blocked: https://ballotpedia.org/Robert_Sanders_(Mississippi_House_of_Representatives)",
+        "https://www.mississippifreepress.org/where-mississippis-u-s-lawmakers-stand-on-gun-laws-rights/ (federal lawmakers only; nothing on him)",
+        "news searches on his name plus gun words: nothing on the subject",
+        "not reviewed: official member page and campaign site (no working page found; the legislature's member list URL returned 404)"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:12:30.318Z",
+      "by": "source-collector"
     }
   ]
 }

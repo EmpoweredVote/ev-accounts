@@ -270,6 +270,34 @@
       "found": 1,
       "at": "2026-11-05T23:52:51.761Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum age",
+        "red-flag orders and who may have a gun",
+        "ghost guns and federal gun rules",
+        "carry permits and carrying without a permit",
+        "repeal of gun laws",
+        "general statements on gun rights, the Second Amendment, gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "campaign site https://reginalddjacksonformississippi.com (home, news and about pages read; confirms Senate District 11 senator, elected Nov 4 2025 special election; nothing on the subject, only a general line on school safety)",
+        "blocked: https://ballotpedia.org/Reginald_Jackson_(Mississippi) (403)",
+        "not reviewed: https://www.senate.ms.gov/members/Pages/Reginald-Jackson.aspx (official member page did not load)",
+        "legislature member list page returned 404",
+        "sponsor list: covered by bulk bill data",
+        "two web searches on name plus gun and Second Amendment words: nothing on the subject by this person; a tracker site tags him with guns and gun violence as an issue area but shows no specific act or words",
+        "news search on 2026 floor remarks: nothing on the subject",
+        "ontheissues.org, Wikipedia: not fetched (lead-only sources, no original found)"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:04:04.770Z",
+      "by": "source-collector"
     }
   ]
 }

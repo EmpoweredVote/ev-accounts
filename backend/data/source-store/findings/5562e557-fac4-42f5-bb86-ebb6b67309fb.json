@@ -281,6 +281,28 @@
           "sha256": "2e83bf7e97a9fcdff15586d63d4f87c9c9f02bb7fdb8486c4d06a50df3db219a"
         }
       }
+    },
+    {
+      "id": "deecf1bb4907ea0884f80fe25711ba803533bd8c671bd76cfe42451c3980f5fa",
+      "kind": "own-words",
+      "url": "https://blacknews.com/?p=56806",
+      "date": "2026-04-17",
+      "date_precision": "day",
+      "passage": "We need to figure out how we’re able to get our youth into programs that can alleviate this, alternative sentence programs and things, second chance programs, those are things we can go in and find exactly what our troubled teens need, and also, holding parents and guardians accountable,",
+      "note": "Quoted in a news story (Black News) about SB 2710, which sends teens 18 and under charged with gun crimes to adult court. The story says he opposed the bill and wanted judges to keep discretion; he speaks for intervention and alternative-sentence programs. Page date is the date shown on the page when fetched, so the date of his remarks may be earlier.",
+      "subjects": [
+        "teens charged with gun crimes tried as adults",
+        "penalties for gun crimes",
+        "programs for at-risk youth"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:05:20.607Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -355,6 +377,31 @@
       "found": 0,
       "at": "2026-11-05T23:55:08.229Z",
       "by": "research-ms-r2-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "teens charged with gun crimes tried as adults",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "Second Amendment and gun rights statements",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member data page https://billstatus.ls.state.ms.us/members/house/nelson.xml (confirms House District 66; no statements)",
+        "blocked: https://ballotpedia.org/Fabian_Nelson (403)",
+        "not found: https://www.fabiannelson.com (no such host); no campaign site located",
+        "web search x2 on name plus gun, firearm, permitless carry, Second Amendment: one news story with own words; advocacy-group pages named other people",
+        "sponsor list: covered by bulk bill data",
+        "no official-site issue page or newsletter on the subject located; term runs to 2027 so no 2026 ballot race"
+      ],
+      "found": 1,
+      "at": "2026-11-18T03:05:20.607Z",
+      "by": "source-collector"
     }
   ]
 }

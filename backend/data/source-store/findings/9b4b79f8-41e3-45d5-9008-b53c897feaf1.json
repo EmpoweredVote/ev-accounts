@@ -890,6 +890,32 @@
       "found": 4,
       "at": "2026-11-05T23:52:51.751Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry a gun without a permit",
+        "firearm endorsement on driver's license",
+        "general statements on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "Wikipedia page https://en.wikipedia.org/wiki/Daryl_Porter_Jr._(politician): confirms sitting member of the Mississippi House, district 98, since 2020-01-07; nothing on the subject",
+        "legislature's own 2026 House author list https://billstatus.ls.state.ms.us/2026/pdf/House_authors/Porter.xml: read for identity and bill titles only; sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Daryl_Porter_Jr. (403)",
+        "blocked: https://house.ms.gov/members/daryl-porter (no response)",
+        "one web search on name plus gun words: no statements of his own on the subject; results were other legislators or a different person with a similar name in another state",
+        "https://www.mississippifreepress.org/where-mississippis-u-s-lawmakers-stand-on-gun-laws-rights/: does not name him; nothing on the subject",
+        "not reviewed: campaign site, newsletters, social posts, interviews (no page found within the search allowance)"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:09:34.638Z",
+      "by": "source-collector"
     }
   ]
 }

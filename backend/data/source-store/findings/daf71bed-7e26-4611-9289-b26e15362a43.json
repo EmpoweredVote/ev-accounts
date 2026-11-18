@@ -872,6 +872,31 @@
       "found": 5,
       "at": "2026-11-05T23:52:51.749Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and Second Amendment statements",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 candidates)",
+        "status: sitting member of the state House for district 11 (term shown to 2028), per https://en.wikipedia.org/wiki/Lataisha_Jackson and search results; not on a 2026 ballot as far as found",
+        "web search: name plus gun, firearm, permitless carry, Second Amendment: nothing on the subject attributed to this person (top hit was a different official in another state)",
+        "blocked: https://ballotpedia.org/Lataisha_M._Jackson (403 by curl; fetch tool returned an empty page)",
+        "not reviewed: official legislature member page (https://www.legislature.ms.gov/legislation/members/ returned 404); no personal official or campaign site found",
+        "https://en.wikipedia.org/wiki/Lataisha_Jackson: nothing on the subject",
+        "https://www.wlox.com/2026/06/11/lawmakers-weigh-response-youth-violence-mississippi/: news story on youth violence, no statement from this person found",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:09:45.004Z",
+      "by": "source-collector"
     }
   ]
 }

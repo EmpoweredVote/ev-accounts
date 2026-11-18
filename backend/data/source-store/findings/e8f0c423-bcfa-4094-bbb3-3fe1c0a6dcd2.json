@@ -369,6 +369,31 @@
       "found": 2,
       "at": "2026-11-05T23:52:51.760Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on types of guns or magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment general statements",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "in scope: sitting state senator for District 36, term to 2028 (web search results and his campaign site's Meet Brian page, https://rhodesforsenate.us/?p=377)",
+        "On the Record (0 meetings)",
+        "campaign site https://rhodesforsenate.us/?p=377 (read, nothing on the subject)",
+        "campaign site search for 'gun' https://rhodesforsenate.us/?s=gun (no results)",
+        "blocked: https://ballotpedia.org/Brian_Rhodes_(Mississippi) (403)",
+        "news/web search on name plus gun words (nothing on the subject for this person)",
+        "legislature bill pages: sponsor list: covered by bulk bill data",
+        "not reviewed: official Mississippi Senate member page"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:07:54.378Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -293,6 +293,34 @@
       "found": 2,
       "at": "2026-11-05T23:52:51.758Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment and gun rights statements",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "https://en.wikipedia.org/wiki/Justis_Gibbs (read: confirms House District 72, Jackson, in office since 2024; nothing on guns)",
+        "https://futurecaucus.org/?p=14335 (read: member profile page; nothing on the subject)",
+        "https://www.wlox.com/2026/06/24/age-gap-persists-between-mississippians-lawmaker/ (read: news story on young lawmakers; nothing on the subject)",
+        "web search: name plus gun, firearm, Second Amendment (only other people named Gibbs; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Justis_Gibbs (403)",
+        "blocked: https://www.legislature.ms.gov/legislation/members/ (404)",
+        "https://www.legislature.ms.gov/legislators/house/ (fetched; no member page content on the subject)",
+        "not reviewed: official campaign site, not located",
+        "not reviewed: questionnaires, debate and interview video, none located"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:04:21.524Z",
+      "by": "source-collector"
     }
   ]
 }

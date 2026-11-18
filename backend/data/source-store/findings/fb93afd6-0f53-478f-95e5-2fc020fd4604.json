@@ -320,6 +320,33 @@
       "found": 2,
       "at": "2026-11-05T23:52:51.759Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rules in general",
+        "Second Amendment",
+        "carry without a permit",
+        "assault-style gun bans",
+        "check every gun buyer",
+        "red-flag orders"
+      ],
+      "places": [
+        "status: sitting member of the Mississippi House, District 56, since 2024-01-02, term runs to 2028 (https://en.wikipedia.org/wiki/Clay_Mansell); no 2026 race for this seat",
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "https://ivoterguide.com/candidate/75453/race/8074/election/1069: 2023 voter-guide page; both Second Amendment questions marked unanswered, a linked social-media graphic lists a Second Amendment topic but its words are not on the page; nothing quotable",
+        "https://www.nraila.org/articles/20260422/mississippi-legislature-adjourns-2026-session: fetched, nothing naming this person",
+        "blocked: https://ballotpedia.org/Clay_Mansell (403)",
+        "not reviewed: https://www.facebook.com/claymansell (login-walled page, no readable post text)",
+        "not reviewed: official legislature member page (member URL returned 404; no personal official or campaign site found in search)",
+        "web search: two news searches on name plus gun words found no statements by him",
+        "ballotready, billsponsor: search leads only, nothing on the subject found"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:09:01.635Z",
+      "by": "source-collector"
     }
   ]
 }

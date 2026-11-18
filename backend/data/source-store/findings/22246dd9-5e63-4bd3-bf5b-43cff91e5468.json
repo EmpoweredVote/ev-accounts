@@ -996,6 +996,63 @@
       "found": 4,
       "at": "2026-11-05T23:52:51.749Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large magazines",
+        "check every gun buyer",
+        "permits and waiting periods",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 name matches)",
+        "https://en.wikipedia.org/wiki/Jeffery_Harness (fetched; confirms sitting member of the Mississippi House, District 85, re-elected 2023; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Jeffery_Harness",
+        "blocked: https://vicksburgpost.com/?p=669973",
+        "blocked: https://vicksburgnews.com/week-seven-state-house-report/",
+        "blocked: https://mississippitoday.org/2025/04/01/rep-jeffery-harness-dei-is-about-preserving-soul-of-america/",
+        "not reviewed: legislature member page (the guessed addresses returned 404; no official or campaign page of his own was found)",
+        "sponsor list: covered by bulk bill data",
+        "web search, two queries (name plus office; name plus gun words): nothing on the subject in his own words"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:09:18.801Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum ages",
+        "red-flag orders",
+        "ghost guns and federal agency gun rules",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general statements on gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract script found none)",
+        "the legislature's House member list (https://billstatus.ls.state.ms.us/members/hr_membs.xml): confirms Jeffery Harness is a sitting House member; no own-words on the subject there",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Jeffery_Harness (403)",
+        "blocked: https://vicksburgpost.com/?p=669973 (403)",
+        "blocked: https://mississippitoday.org/2025/04/01/rep-jeffery-harness-dei-is-about-preserving-soul-of-america/ (403)",
+        "news search on name plus gun and permitless-carry words: nothing on the subject by this person",
+        "web search on name and House District 85: sitting member, term runs to January 2028, no 2026 race found",
+        "official site and campaign site: no page found by search; only a fundraising page, not read; nothing on the subject",
+        "not reviewed: https://secure.actblue.com/donate/jeffery-harness-for-mississippi-1"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:12:58.815Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -271,6 +271,32 @@
       "found": 1,
       "at": "2026-11-05T23:52:51.759Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "gun rights and the Second Amendment",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in office: member of the Mississippi House, District 75, seat held since January 2024 (https://en.wikipedia.org/wiki/Celeste_Hurst); no 2026 election for this seat, so still in scope",
+        "sponsor list: covered by bulk bill data",
+        "the legislature's member page https://billstatus.ls.state.ms.us/members/house/hurst.xml: fetched, nothing on the subject",
+        "blocked: https://ballotpedia.org/Celeste_Hurst (empty page, HTTP 202)",
+        "blocked: https://onlinemadison.com/stories/hurst-speaks-for-first-time-in-house-chamber,95250 (HTTP 403)",
+        "official site / campaign site: https://www.celestehurst.com returned 404; the legislature's member page https://www.legislature.ms.gov/legislators/house/celeste-hurst/ returned 404; no own site found",
+        "Wikipedia page: nothing on the subject",
+        "news searches on her name plus gun, firearm, Second Amendment, permitless carry and red flag: nothing by her on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:10:51.082Z",
+      "by": "source-collector"
     }
   ]
 }

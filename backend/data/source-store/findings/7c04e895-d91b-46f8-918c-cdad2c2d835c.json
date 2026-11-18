@@ -1024,6 +1024,29 @@
           "sha256": "a3be81faf9d2b915ba759457c60814e28e7099a19ae5904068bcc14cd39586ac"
         }
       }
+    },
+    {
+      "id": "92cce1d68029a4464a7c03fd4388acf4a9c4736ca9393869667ac17e8fd2e205",
+      "kind": "record",
+      "url": "https://billstatus.ls.state.ms.us/2023/pdf/history/HC/HC0006.xml",
+      "date": "2023-01-10",
+      "date_precision": "day",
+      "instrument_id": "MS-HC-6-2023",
+      "act": "author",
+      "motion": "Principal author of HC 6, concurrent resolution declaring Mississippi a Second Amendment Sanctuary state; referred to Rules 01/10, died in committee 04/01",
+      "note": "He is listed as principal author of a concurrent resolution to declare the State of Mississippi a Second Amendment Sanctuary state. It was referred to the Rules committee and died there without a vote.",
+      "subjects": [
+        "Second Amendment sanctuary state",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:05:51.594Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -1067,6 +1090,32 @@
       "found": 5,
       "at": "2026-11-05T23:52:51.752Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "state declared a Second Amendment sanctuary",
+        "gun rights general statements",
+        "carry permits",
+        "background checks",
+        "bans on firearm types",
+        "red-flag orders",
+        "firearm preemption"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature member page: https://billstatus.ls.state.ms.us/members/house/scoggin.xml (confirms Donnie Scoggin, House District 89, sitting member)",
+        "legislature bill history page for HC 6 (2023): https://billstatus.ls.state.ms.us/2023/pdf/history/HC/HC0006.xml",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://ballotpedia.org/Donnie_Scoggin (403)",
+        "campaign/official site https://www.donniescoggin.com: page returned only script code with no readable text; nothing on the subject",
+        "one news/web search on name plus gun words: only advocacy-group bill pages and the bill pages; no statement by him found",
+        "own-words search: nothing found on the subject"
+      ],
+      "found": 1,
+      "at": "2026-11-18T03:05:51.594Z",
+      "by": "source-collector"
     }
   ]
 }

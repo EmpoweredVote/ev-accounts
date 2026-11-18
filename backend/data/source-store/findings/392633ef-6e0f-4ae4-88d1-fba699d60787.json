@@ -250,6 +250,56 @@
       "found": 2,
       "at": "2026-11-05T23:52:51.759Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns and large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general statements on gun rights or gun safety"
+      ],
+      "places": [
+        "in scope: sitting Mississippi House member for District 51 (page read: https://fastdemocracy.com/legislator/ms/legislators/MSL000338); no 2026 election for this seat",
+        "On the Record (0 meetings found, searched by id and by name)",
+        "blocked: https://ballotpedia.org/Timaka_James-Jones (403)",
+        "blocked: https://www.billtrack50.com/legislatordetail/29153 (403)",
+        "not reviewed: legislature's own member page (the guessed addresses returned 404, so no official page of theirs was read); no campaign site found",
+        "sponsor list: covered by bulk bill data",
+        "news search on name plus gun words (two searches): nothing of their own on the subject",
+        "a news story on lawmakers and youth violence (https://www.wlox.com/2026/06/11/lawmakers-weigh-response-youth-violence-mississippi/): nothing by this person on the subject found",
+        "nothing on the subject: no questionnaire, floor remarks, newsletter or interview found"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:04:43.136Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment and gun rights statements",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "identity confirmed: Wikipedia page names her as District 51 member of the Mississippi House since January 2024 (https://en.wikipedia.org/wiki/Timaka_James-Jones); term runs to 2028, so not on the 2026 ballot, still sitting",
+        "blocked: https://ballotpedia.org/Timaka_James-Jones (403)",
+        "blocked: https://www.billtrack50.com/legislatordetail/29153 (403)",
+        "not reviewed: official legislature member page (tried https://www.legislature.ms.gov/legislation/members/ and https://www.house.ms.gov/, 404 and no response); no campaign site found; none of her own pages could be read",
+        "news and web search on her name plus gun, firearm, Second Amendment: nothing on the subject",
+        "web search on her name plus District 51 plus firearms bill: nothing on the subject",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:11:55.175Z",
+      "by": "source-collector"
     }
   ]
 }

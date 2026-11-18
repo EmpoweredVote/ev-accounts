@@ -738,6 +738,60 @@
       "found": 3,
       "at": "2026-11-05T23:52:51.757Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum ages",
+        "red-flag orders",
+        "ghost guns and federal agency gun rules",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general statements on gun rights and the Second Amendment"
+      ],
+      "places": [
+        "status: sitting Mississippi House member for District 71 (confirmed by the Wikipedia page and web search results naming him in this office); not on the 2026 ballot, term runs to 2028",
+        "On the Record (0 appearances; extract script returned no meetings)",
+        "https://www.mississippifreepress.org/candidate-questionnaire-ronnie-crudup-jr-house-district-71/ (his own verbatim candidate questionnaire, read; nothing on the subject)",
+        "https://www.mississippifreepress.org/?p=129752 (news story on a school safety bill; does not quote him)",
+        "blocked: https://ballotpedia.org/Ronnie_Crudup_Jr. (403)",
+        "blocked: https://legiscan.com/MS/text/HB366/2024 (403)",
+        "not reviewed: https://www.legislature.ms.gov/legislation/members/ (404, no member page reached); official member page and campaign site not found",
+        "sponsor list: covered by bulk bill data",
+        "two web searches on his name plus gun, firearm and Second Amendment terms: nothing quoting him on the subject"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:09:02.038Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits",
+        "Second Amendment general statements",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "blocked: https://ballotpedia.org/Ronnie_Crudup_Jr. (403 on fetch; search result snippet only confirms House District 71, term ending January 2028)",
+        "not reviewed: official Mississippi House member page (https://www.legislature.ms.gov/legislators/house/ returned 404; https://www.mshouse.ms.gov/ did not connect)",
+        "no campaign site or personal issue page found in search",
+        "Wikipedia page fetched: nothing on the subject",
+        "two web searches on name plus gun, firearm, Second Amendment, permitless carry, red flag terms: nothing from this person on the subject",
+        "sponsor list: covered by bulk bill data",
+        "floor votes: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:12:26.298Z",
+      "by": "source-collector"
     }
   ]
 }

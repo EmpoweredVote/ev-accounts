@@ -184,6 +184,33 @@
       "found": 1,
       "at": "2026-11-05T23:52:51.760Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns and large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum ages",
+        "red-flag orders",
+        "ghost guns and federal agency gun rules",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment or gun safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.ballotready.org/people/gregory-elliott (confirms sitting House member, District 82, term to January 2028; nothing on the subject)",
+        "https://billstatus.ls.state.ms.us/members/house/elliott.xml (legislature member page, District 82; contact details only, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Gregory_Elliott (empty page returned)",
+        "one news search on name plus gun words: only results about other lawmakers; nothing on the subject",
+        "official and campaign site: no own site found; nothing on the subject",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: legislature floor vote PDFs (covered by bulk bill data)"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:03:39.582Z",
+      "by": "source-collector"
     }
   ]
 }

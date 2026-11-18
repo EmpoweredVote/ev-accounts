@@ -1036,6 +1036,27 @@
           "sha256": "0a62745bdf1eec51dcf2dff92236fc8fe216000e0e1c9873cbe1171cae8145fe"
         }
       }
+    },
+    {
+      "id": "d2407e96b757ff2be3317248f30b3f3839dd075e8c730aba29b871d415515a35",
+      "kind": "own-words",
+      "url": "https://magnoliatribune.com/2007/07/31/blackwell_nra_rates_blackwell/",
+      "date": "2007-07-31",
+      "date_precision": "day",
+      "passage": "“I appreciate the support of the NRA’s Political Victory Fund”, stated Blackwell. “As a Navy veteran, a gun owner, and avid hunter I believe in our right as individual citizens to keep and bear arms and I look forward to having the opportunity to enact legislation to further protect our Second Amendment Constitution rights.“",
+      "note": "Statement in his campaign release as a candidate for Senate District 19, issued after a gun-rights group rated his questionnaire answers an A. He says he believes in an individual right to keep and bear arms and wants to pass laws that further protect it. Published by a Mississippi news site, which reprinted the release.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "individual right to keep and bear arms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:09:16.185Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -1081,6 +1102,37 @@
       "found": 16,
       "at": "2026-11-05T23:52:51.754Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits and reciprocity",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings; extractor found no appearances)",
+        "sponsor list: covered by bulk bill data",
+        "Mississippi Senate seat: confirmed by news stories and an encyclopedia page showing him as the District 19 senator from Southaven, elected in the Nov 2025 special election, term to 2028; not on the 2026 ballot",
+        "https://magnoliatribune.com/2007/07/31/blackwell_nra_rates_blackwell/ (2007 campaign release, one finding; identity rests on same district number, Southaven area and military background, not on a page naming him as the current senator)",
+        "https://en.wikipedia.org/wiki/Kevin_Blackwell_(politician) (nothing on the subject)",
+        "https://desotocountynews.com/desoto-county-news/blackwell-highlights-child-welfare-public-safety-bills-as-senate-advances-house-measures/ (nothing on the subject)",
+        "https://desotocountynews.com/desoto-county-news/blackwell-launches-first-ad-in-senate-district-19-special-election/ (nothing on the subject)",
+        "DeSoto County News weekly legislative updates, weeks 1-4 and the DEI-ban update (nothing on the subject)",
+        "https://tpcref.org/voter-information/2025-special-election-sd19/ (candidate page, nothing on the subject)",
+        "https://mississippitoday.org/2026/05/25/gun-law-youth-firearm-crimes/ (does not mention him)",
+        "blocked: https://ballotpedia.org/Kevin_Blackwell (page returned no readable text)",
+        "not reviewed: official legislature member page (address returned 404) and any campaign site (none found)",
+        "web search: 4 searches on his name plus gun terms; only the 2007 release was his own words"
+      ],
+      "found": 1,
+      "at": "2026-11-18T03:09:16.185Z",
+      "by": "source-collector"
     }
   ]
 }

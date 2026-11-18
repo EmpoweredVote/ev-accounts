@@ -702,6 +702,32 @@
       "found": 3,
       "at": "2026-11-05T23:52:51.757Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun bans",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment general statements",
+        "gun safety laws"
+      ],
+      "places": [
+        "identity confirmed: https://en.wikipedia.org/wiki/Sarita_Simmons shows her as sitting member of the Mississippi Senate, District 13, since 2020; the seat is not on the 2026 ballot, so still in scope",
+        "On the Record (0 meetings)",
+        "blocked: https://ballotpedia.org/Sarita_Simmons (403)",
+        "not reviewed: legislature member page https://www.legislature.ms.gov/legislation/members/ (404)",
+        "not reviewed: https://billstatus.ls.state.ms.us/members/senate/simmons.xml (404)",
+        "official or campaign site: none found; https://www.saritasimmons.com did not connect",
+        "news search on name plus gun words (2 web searches): nothing on the subject in her own words; results were about other people with the same surname or other officials",
+        "sponsor list: covered by bulk bill data",
+        "floor votes: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:09:38.274Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -270,6 +270,54 @@
       "found": 1,
       "at": "2026-11-05T23:52:51.760Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment general statements",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "in scope: sitting state senator for District 46, term to January 2028, not on the 2026 ballot (https://en.wikipedia.org/wiki/Philman_Ladner)",
+        "blocked: https://ballotpedia.org/Philman_Ladner (403)",
+        "not reviewed: https://www.legislature.ms.gov/legislators/senate/ (404; no member page reached, no official or campaign site found)",
+        "https://ivoterguide.com/candidate/75762/race/7011/election/1024 (2023 voter guide: gun questions marked did not answer)",
+        "web search on name plus gun, firearm and Second Amendment words: nothing on the subject",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:07:50.183Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on assault-style guns or magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "general Second Amendment statements",
+        "gun restrictions for public safety"
+      ],
+      "places": [
+        "On the Record (0 meetings for this person)",
+        "one web search on name plus gun and Second Amendment words: only a state senate seat profile and unrelated gun-law pages, nothing by this person",
+        "https://ivoterguide.com/candidate/75762/race/7011/election/1024 (2023 primary voter guide: the gun questions are marked not answered)",
+        "blocked: https://ballotpedia.org/Philman_Ladner (empty page, no content returned)",
+        "blocked: https://www.legislature.ms.gov/legislators/senate/ (404, member page not found); no official or campaign page of this person was read",
+        "sponsor list: covered by bulk bill data",
+        "nothing on the subject: no own words found; official site, campaign site, and news search beyond the one search not reviewed (not found)"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:12:17.098Z",
+      "by": "source-collector"
     }
   ]
 }

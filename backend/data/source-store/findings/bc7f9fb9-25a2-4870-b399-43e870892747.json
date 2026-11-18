@@ -716,6 +716,27 @@
           "sha256": "47391bbf993f0c7b2e7fb0e800c1065cdf73322cb86611c4ff8f55500c098a46"
         }
       }
+    },
+    {
+      "id": "3dc93d80de312e5ace3ec6b94e73ac2ce416d7e86a208630185c487d635f5903",
+      "kind": "own-words",
+      "url": "https://www.loveblackgirls.org/post/move-mississippi-forward-the-lighthouse-q-a-with-zakiya-summers",
+      "date": "2019-11-01",
+      "date_precision": "day",
+      "passage": "I decided I wasn’t going to be put in a box when it comes to gun rights and didn’t send it. I’m an advocate for the constitution and the 2nd Amendment, but I don’t believe in a lot of stuff that the NRA says, or does or pushes.",
+      "note": "Q&A with The Lighthouse, as published on the page (date taken from the page's publish metadata). She says she got a survey from a gun-rights group, chose not to return it, and describes herself as an advocate for the Constitution and the 2nd Amendment while disagreeing with much of that group's positions.",
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:07:25.246Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -761,6 +782,30 @@
       "found": 3,
       "at": "2026-11-05T23:52:51.757Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "gun safety laws"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "campaign site https://www.zakiyasummers.com (read; nothing on the subject)",
+        "legislature member page https://billstatus.ls.state.ms.us/members/house/summers.xml (read; nothing on the subject; sponsor list: covered by bulk bill data)",
+        "blocked: https://ballotpedia.org/Zakiya_Summers",
+        "Wikipedia page (confirms sitting House District 68 member since 2020; nothing on the subject)",
+        "one news search on name plus gun words (led to the Q&A saved here)",
+        "not reviewed: URL-pattern pages beyond those listed (search allowance used on the lead above)"
+      ],
+      "found": 1,
+      "at": "2026-11-18T03:07:25.246Z",
+      "by": "source-collector"
     }
   ]
 }

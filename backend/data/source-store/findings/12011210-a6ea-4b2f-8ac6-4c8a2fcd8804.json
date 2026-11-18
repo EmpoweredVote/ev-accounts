@@ -293,6 +293,60 @@
       "found": 2,
       "at": "2026-11-05T23:52:51.758Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment general statements",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://tpcref.org/election-2023-candidate-qa-hd028/ (2023 candidate Q&A page for House District 28, names this person; nothing on the subject)",
+        "https://ivoterguide.com/candidate/75632/race/7036/election/1024 (voter guide profile confirming House District 28 candidacy; the gun questions were left unanswered, nothing on the subject)",
+        "https://desotocountynews.com/desoto-county-news/williams-im-a-conservative-fighter-running-to-represent-you/ (opponent's opinion piece, not this person's words; nothing usable)",
+        "one news search on name plus gun words: nothing from this person on the subject",
+        "blocked: https://ballotpedia.org/Doc_Harris",
+        "not reviewed: the legislature's member page and the person's own official or campaign site (not fetched)",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:03:54.794Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "carry permits and permit fees",
+        "repeal of gun laws",
+        "general statement on gun rights or the Second Amendment"
+      ],
+      "places": [
+        "identity confirmed: the legislature's member record lists W.I. Harris, House District 28 (https://billstatus.ls.state.ms.us/members/house/harris.xml); known as Doc Harris, took office January 2024, term runs to 2028 (state House seats are not on the 2026 ballot), so still in scope as a sitting official",
+        "On the Record (0 appearances for this person, none found by name)",
+        "sponsor list: covered by bulk bill data",
+        "House floor votes 2018 to 2026: covered by bulk bill data",
+        "official House member page: https://house.ms.gov/members returned an empty/error response, blocked: https://house.ms.gov/members",
+        "blocked: https://ballotpedia.org/Doc_Harris (403)",
+        "campaign site: none found in search; not reviewed: iVoterGuide profile https://ivoterguide.com/candidate/75632/race/7036/election/1024",
+        "https://tpcref.org/election-2023-candidate-qa-hd028/ (candidate Q&A, read, nothing on the subject)",
+        "https://desotocountynews.com/desoto-county-news/harris-announces-candidacy-for-house-district-28/ (announcement story, read, nothing on the subject)",
+        "https://desotocountynews.com/desoto-county-news/harris-what-it-is-like-to-be-a-first-time-legislator/ (first-term column, read, nothing on the subject)",
+        "news search on name plus gun, firearm, permitless carry and Second Amendment words: nothing on the subject by this person"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:12:08.486Z",
+      "by": "source-collector"
     }
   ]
 }

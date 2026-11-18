@@ -183,6 +183,38 @@
       "found": 1,
       "at": "2026-11-05T23:52:51.760Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns or large magazines",
+        "check every gun buyer",
+        "permits, waiting periods, minimum ages",
+        "red-flag orders",
+        "ghost guns and federal gun rules",
+        "carry a gun without a permit",
+        "repeal of gun laws",
+        "general statements on gun rights and gun safety"
+      ],
+      "places": [
+        "in scope: sitting state House member for District 26, in office since Dec 2025 after a Nov 2025 special election; seat held to Jan 2028, so not on the 2026 ballot (https://www.ballotready.org/people/otha-e-williams-iii, https://en.wikipedia.org/wiki/Otha_Williams)",
+        "On the Record (0 meetings; extract script returned no appearances)",
+        "official legislature member page: not reviewed: https://legislature.ms.gov/legislators/house/ (returned 404; no member page reached)",
+        "campaign site: none found in search",
+        "blocked: https://ballotpedia.org/Otha_Williams_III (403)",
+        "blocked: https://mississippitoday.org/guides/2025-special-election-guide/house-races/ (403)",
+        "blocked: https://www.congress.gov (403; not relevant to a state legislator)",
+        "https://thecandidate.com/states/ms/legislature/house/26/otha-williams: no positions listed, nothing on the subject",
+        "https://www.ballotready.org/people/otha-e-williams-iii: nothing on the subject",
+        "https://en.wikipedia.org/wiki/Otha_Williams: nothing on the subject",
+        "news search on name plus gun, firearm, Second Amendment, permitless carry: nothing on the subject",
+        "news search on name plus campaign issues: nothing on the subject",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:06:31.363Z",
+      "by": "source-collector"
     }
   ]
 }

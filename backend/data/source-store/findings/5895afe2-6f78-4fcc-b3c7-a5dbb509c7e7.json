@@ -1203,6 +1203,35 @@
       "found": 5,
       "at": "2026-11-05T23:52:51.747Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "permitless carry",
+        "carry permits",
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "converting guns to machine guns",
+        "federal gun rules"
+      ],
+      "places": [
+        "On the Record (0 meetings found for this person)",
+        "https://legilist.com/states/mississippi/legislator/oscar-denton--ms-house-55-denton-o/ (read: confirms sitting state House member, District 55)",
+        "no 2026 ballot check applicable: sitting House member, term runs to January 2028 per a search result, not independently confirmed from a page I read",
+        "blocked: https://ballotpedia.org/Oscar_Denton (403)",
+        "blocked: https://legiscan.com/MS/legislator/oscar-denton/id/4250 (bot check)",
+        "not reviewed: https://www.legislature.ms.gov/legislation/members/ (404 on the member path tried; no official member page read)",
+        "official or campaign site with issue pages: none found in searches",
+        "web search (2 queries) on name plus gun words: only bill-tracker listings, no statements by him",
+        "sponsor list: covered by bulk bill data",
+        "nothing on the subject in his own words"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:09:36.097Z",
+      "by": "source-collector"
     }
   ]
 }

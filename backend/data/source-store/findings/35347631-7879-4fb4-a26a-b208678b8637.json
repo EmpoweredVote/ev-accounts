@@ -844,6 +844,71 @@
           "sha256": "42f793181b002c19c13c5a4b9a373e41550c4bfedaf3f795c478efa59bec2026"
         }
       }
+    },
+    {
+      "id": "0364fa3fcb253f019b9da7b9b4ac8e1a12f1385d3af69f0682fbf6f0d4734f3d",
+      "kind": "own-words",
+      "url": "https://ourtupelo.com/national-rifle-association-successfully-lobbies-against-bill-taking-away-guns-from-abusers/",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "passage": "This bill is for and supported by domestic violence survivors, advocates and people who understand that domestic violence is an epidemic in the state of Mississippi,",
+      "note": "Quoted by Mississippi Today (republished by a local outlet, story dated 2026-03-04) from his Senate floor remarks in February 2026 on his SB 2339, which would bar gun possession by people under domestic violence protection orders. The quote is cut off by the outlet mid-sentence.",
+      "subjects": [
+        "limits on who may have a gun",
+        "domestic violence protection orders and guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:04:40.225Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "160884f51034276087eb7d955fa3ed382903a0f1098a2603aa20b160d135a3b0",
+      "kind": "own-words",
+      "url": "https://ourtupelo.com/national-rifle-association-successfully-lobbies-against-bill-taking-away-guns-from-abusers/",
+      "date": "2026-03-04",
+      "date_precision": "day",
+      "passage": "We need to have this discussion in Mississippi,” Wiggins said. “We’re going to work — at least I am – to get us something that could actually be good for the citizens of Mississippi and not violate (the Second Amendment).",
+      "note": "Quoted by Mississippi Today after SB 2339 was sent back to committee and died; he says he will keep working on a domestic-violence gun bill that respects the Second Amendment. Date is the story date; the remarks' own date is not given.",
+      "subjects": [
+        "limits on who may have a gun",
+        "Second Amendment general statement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:04:40.225Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d16a7c3375ab27fe912fdd58f103d8e3211312bdd60ac192add27d0e9e493da9",
+      "kind": "record",
+      "url": "https://ourtupelo.com/national-rifle-association-successfully-lobbies-against-bill-taking-away-guns-from-abusers/",
+      "date": "2026-02-12",
+      "date_precision": "day",
+      "instrument_id": "MS-SB-2339-2026",
+      "act": "other",
+      "motion": "Motion to recommit SB 2339 to the Senate Judiciary B Committee",
+      "note": "A news story reports he moved on the Senate floor on Feb. 12 to send his own bill back to committee, after members had received an NRA alert about it; the bill died for the session.",
+      "subjects": [
+        "limits on who may have a gun",
+        "domestic violence protection orders and guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T03:04:40.225Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -885,6 +950,34 @@
       "found": 6,
       "at": "2026-11-05T23:52:51.756Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "limits on who may have a gun (domestic violence protection orders)",
+        "Second Amendment general statement",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "ghost guns",
+        "repeal of gun laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Senate member record page on the legislature's bill-status site (read; District 52, Brice Wiggins, sitting senator; no statements on it)",
+        "blocked: https://ballotpedia.org/Brice_Wiggins (403)",
+        "official Senate member page https://legislature.ms.gov/legislation/members/ (404, not reviewed)",
+        "campaign site: none found; not a 2026 candidate that was identified",
+        "news search on name plus gun words (one story found and read, a republished Mississippi Today story on SB 2339 dated 2026-03-04)",
+        "https://www.mississippifreepress.org/?p=129752 (not reviewed: fetch failed)",
+        "sponsor list: covered by bulk bill data",
+        "nothing on the subject: other URL-pattern sources not fetched beyond the above; vote411 and ontheissues not reviewed"
+      ],
+      "found": 3,
+      "at": "2026-11-18T03:04:40.225Z",
+      "by": "source-collector"
     }
   ]
 }

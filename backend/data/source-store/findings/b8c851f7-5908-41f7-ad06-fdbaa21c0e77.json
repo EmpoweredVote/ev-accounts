@@ -930,6 +930,56 @@
       "found": 6,
       "at": "2026-11-05T23:52:51.753Z",
       "by": "identity-ms-2026-11-05"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "carry a gun without a permit",
+        "limits on who may have a gun",
+        "general statements on gun rights and the Second Amendment"
+      ],
+      "places": [
+        "On the Record (0 meetings, no appearances found)",
+        "blocked: https://ballotpedia.org/Percy_Watson (fetch returned an empty page; curl also returned nothing; 2026 ballot status not confirmed from a fetched page)",
+        "not reviewed: https://votesmart.org/candidate/3733 (404)",
+        "blocked: https://www.legislature.ms.gov/legislators/house/percy-w-watson/ (404); no official or campaign page of theirs was read",
+        "web search on name plus gun words: only leads, nothing in their own words on the subject; a Senate member surnamed Watson sponsored a different gun bill and is not this person",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:07:09.631Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or magazines",
+        "check every gun buyer",
+        "red-flag orders",
+        "ghost guns",
+        "carry permits and permitless carry",
+        "repeal of gun laws",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "sponsor list: covered by bulk bill data",
+        "web search: one search on name plus Hattiesburg and gun words; results showed a House District 103 member with no gun sponsorship and only the machine-gun conversion kit vote already on file",
+        "https://billsponsor.com/politicians/4248/percy-w-watson (sponsor page lists no firearm bills; nothing on the subject)",
+        "https://open.pluralpolicy.com/person/percy-watson-3pMpblZw1xU59Jk2IDBYp5 (redirected, not reviewed)",
+        "https://ballotpedia.org/Percy_Watson (page came back empty; blocked)",
+        "https://en.wikipedia.org/wiki/Percy_Watson (a different person, a wrestler; excluded)",
+        "blocked: https://www.legislature.ms.gov/legislation/members/ (404; no official member page read)",
+        "not reviewed: official and campaign site (none found)",
+        "no 2026 legislative election in Mississippi; treated as sitting House member, District 103"
+      ],
+      "found": 0,
+      "at": "2026-11-18T03:12:35.417Z",
+      "by": "source-collector"
     }
   ]
 }
