@@ -101,6 +101,7 @@
     "check:instrument-contradictions:selftest": "node scripts/check-instrument-rung-contradictions.mjs --selftest",
     "check:seating": "node scripts/check-seating-invariants.mjs",
     "check:seating:control": "node scripts/control-seating-invariants.mjs",
+    "check:incumbent-claims": "node scripts/check-incumbent-claims.mjs",
     "check:incumbency": "node scripts/reconcile-incumbency.mjs --check"
   },
   "overrides": {

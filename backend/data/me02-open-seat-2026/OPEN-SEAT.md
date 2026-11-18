@@ -239,9 +239,17 @@ merely a transcription somebody believed.
   in `match-losers.mjs`, not in a post-verify block. 🔴 **Assertion 3 pins the half that IS
   answerable in SQL — every "defeating incumbent X" claim repo-wide must name somebody holding a
   losing row in that same race — and that half alone would have caught `CC_0447`.**
-  ▶ **The matcher half landed on 2026-11-17** (see "Still open" below). Assertion 3 remains a
-  one-off inside `CC_0452`'s post-verify; promoting it to a standing check is still unbuilt, and
-  is the only part of this that would catch a *hand-written* citation rather than a generated one.
+  ▶ **The matcher half landed on 2026-11-17** (see "Still open" below), and ✅ **assertion 3 was
+  promoted to a standing check on 2026-11-18**: `npm run check:incumbent-claims --prefix backend`
+  (`backend/scripts/check-incumbent-claims.mjs`, verdicts in `scripts/lib/incumbent-claims.mjs`).
+  It is the half that catches a **hand-written** citation rather than a generated one.
+  🔴 **It runs on master pushes and the daily schedule, NEVER on a pull request** — a PR's SQL has
+  not touched production, and a prod-reading gate on PRs fails on the next merge and names an
+  innocent author. **A migration writing such a citation still carries the assertion in its own
+  post-verify**, exactly as this one does; that is what blocks the guilty change.
+  ⚠ **It proves the claim is self-consistent with our own ballot, not that it is TRUE.** If a
+  race's rows are themselves wrong, a claim agreeing with them passes. Only `match-losers.mjs`,
+  which reads AP's ballot, can answer that — a source outside this database.
 
 ## Files beside this one
 
