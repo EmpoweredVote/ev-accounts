@@ -1,0 +1,87 @@
+{
+  "id": "MD-HB-1306-2026",
+  "scope": "state:md",
+  "title": "HB1306 (2026 Regular): Assisted Outpatient Treatment - Surrender or Seizure of Firearms",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1306?ys=2026RS",
+    "https://mgaleg.maryland.gov/2026RS/bills/hb/hb1306f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Scott Phillips",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f"
+    },
+    {
+      "name": "Pam Guzzone",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "589ed7af-602a-4ec9-8072-448b05446772"
+    },
+    {
+      "name": "Mary Lehman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "251a2047-372b-480e-aa09-231f9a5edeca"
+    },
+    {
+      "name": "Edith Patterson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b9c61fea-fcb1-45cc-8e2c-e5b3046b7266"
+    },
+    {
+      "name": "Malcolm Ruff",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7e1dfb66-1eff-4c8d-b3fe-d39f990b99c4"
+    },
+    {
+      "name": "Sheila Ruth",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "df1a05a1-2a70-4e40-a0c6-5b3f81632c7e"
+    },
+    {
+      "name": "Deni Taveras",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a92085b6-642a-4cf6-a73e-c985a6fd09fa"
+    },
+    {
+      "name": "Kym Taylor",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9273ed81-2052-428a-b39d-849abeef270b"
+    },
+    {
+      "name": "Jennifer White Holland",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d80816fc-da1d-48f4-95c9-467f8831933c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2026RS/bills/hb/hb1306f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1306-2026.first_reader.pdf",
+      "sha256": "007d8beb3a798beedc3bfb7ada81dad254958fb4e583a200ab1305b5fea0c6b3"
+    },
+    "note": "First reader (as filed); no passage vote recorded. Effective October 1, 2026, and abrogated if the Chapter 704 (2024) termination provision takes effect."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Health – General § 10–6A–08.1(B)): (B) (1) IF A COURT ORDERS A RESPONDENT TO COMPLY WITH ASSISTED OUTPATIENT TREATMENT UNDER § 10–6A–08 OF THIS SUBTITLE, THE COURT SHALL MAKE A DETERMINATION AS TO WHETHER THE RESPONDENT IS LIKELY TO ENDANGER OR CAUSE PHYSICAL INJURY TO THE RESPONDENT OR ANOTHER IF THE RESPONDENT HAS ACCESS TO A FIREARM. (2) IF THE COURT DETERMINES THAT THE RESPONDENT IS LIKELY TO ENDANGER OR CAUSE PHYSICAL INJURY TO THE RESPONDENT OR ANOTHER IF THE RESPONDENT HAS ACCESS TO A FIREARM, THE COURT SHALL ORDER THE RESPONDENT: (I) TO SURRENDER TO LAW ENFORCEMENT AUTHORITIES ANY FIREARM IN THE RESPONDENT’S POSSESSION; AND (II) NOT TO PURCHASE OR POSSESS ANY FIREARM FOR THE DURATION OF THE ORDER REQUIRING THE RESPONDENT TO COMPLY WITH ASSISTED OUTPATIENT TREATMENT.\nSection 1 (Md. Code Ann., Health – General § 10–6A–08.1(C)(1)): (1) IN ACCORDANCE WITH THE PROVISIONS OF § 1–203 OF THE CRIMINAL PROCEDURE ARTICLE, ON APPLICATION BY A STATE’S ATTORNEY OR A LAW ENFORCEMENT OFFICER WITH PROBABLE CAUSE TO BELIEVE THAT A RESPONDENT WHO IS SUBJECT TO AN ORDER UNDER THIS SECTION POSSESSES A FIREARM AND FAILED TO SURRENDER THE FIREARM, A COURT MAY ISSUE A SEARCH WARRANT FOR THE REMOVAL OF THE FIREARM AT ANY LOCATION IDENTIFIED IN THE APPLICATION FOR THE WARRANT.\nSection 1 (Md. Code Ann., Health – General § 10–6A–08.1(H)(4)(III)): (III) SUBJECT TO SUBPARAGRAPH (II) OF THIS PARAGRAPH, ON REQUEST OF THE RESPONDENT, A LAW ENFORCEMENT AGENCY SHALL RETURN ALL FIREARMS BELONGING TO THE RESPONDENT NOT LATER THAN 48 HOURS AFTER THE EXPIRATION OF AN ORDER UNDER THIS SECTION."
+}

@@ -1,0 +1,44 @@
+{
+  "id": "MD-SB-86-2023",
+  "scope": "state:md",
+  "title": "SB86 (2023 Regular): Rifles and Shotguns – Possession – Age Requirement (Raise the Age Act of 2023)",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0086?ys=2023RS&search=True",
+    "https://mgaleg.maryland.gov/2023RS/bills/sb/sb0086f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeff Waldstreicher",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570"
+    },
+    {
+      "name": "Susan C. Lee",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2023RS/bills/sb/sb0086f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-86-2023.first_reader.pdf",
+      "sha256": "2b430377bf5cc23b95297d003cfc8ad46a8d70cb5d4d95d7d0e7115c54ebca70"
+    },
+    "note": "First reader (as filed), no date in text. No passage vote recorded. Quotes drop the words the bill deletes from existing law (bracketed in the text: \"solely designed for a regulated\"; \"transfer, or\"; \"transferee, or recipient\"). The bill also deletes the old ban on selling a non-regulated firearm or ammunition to any minor in § 5-134(d)(1)(ii), replacing it with the age-21 ammunition rule, and sets the general § 5-205 penalty \"EXCEPT AS PROVIDED IN SUBSECTION (C)\". Quote of § 5-205(c) joins text across a page break."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-134(d)(1)(i)): A person may not sell, rent, or transfer: (i) ammunition FOR A firearm to a person who is under the age of 21 years; or\nSection 1 (Md. Code Ann., Public Safety § 5-205(c)): (1) EXCEPT AS PROVIDED IN PARAGRAPH (2) OF THIS SUBSECTION, A PERSON WHO IS UNDER THE AGE OF 21 YEARS MAY NOT POSSESS A RIFLE OR SHOTGUN. (2) UNLESS A PERSON IS OTHERWISE PROHIBITED FROM POSSESSING A RIFLE OR SHOTGUN, THIS SUBSECTION DOES NOT APPLY TO: (I) THE TEMPORARY TRANSFER OR POSSESSION OF A RIFLE OR SHOTGUN IF THE PERSON IS: 1. UNDER THE SUPERVISION OF ANOTHER WHO IS AT LEAST 21 YEARS OLD AND WHO IS NOT PROHIBITED BY STATE OR FEDERAL LAW FROM POSSESSING A FIREARM; AND 2. ACTING WITH THE PERMISSION OF THE PARENT OR LEGAL GUARDIAN OF THE TRANSFEREE OR PERSON IN POSSESSION; (II) THE TRANSFER BY INHERITANCE OF TITLE, AND NOT POSSESSION, OF A RIFLE OR SHOTGUN; (III) A MEMBER OF THE ARMED FORCES OF THE UNITED STATES OR THE NATIONAL GUARD WHILE PERFORMING OFFICIAL DUTIES; (IV) THE TEMPORARY TRANSFER OR POSSESSION OF A RIFLE OR SHOTGUN IF THE PERSON IS: 1. PARTICIPATING IN MARKSMANSHIP TRAINING OF A RECOGNIZED ORGANIZATION; AND 2. UNDER THE SUPERVISION OF A QUALIFIED INSTRUCTOR; (V) A PERSON WHO IS REQUIRED TO POSSESS A RIFLE OR SHOTGUN FOR EMPLOYMENT; OR (VI) THE POSSESSION OF A FIREARM FOR SELF–DEFENSE OR THE DEFENSE OF OTHERS AGAINST A TRESPASSER INTO THE RESIDENCE OF THE PERSON IN POSSESSION OR INTO A RESIDENCE IN WHICH THE PERSON IN POSSESSION IS AN INVITED GUEST. (3) A PERSON WHO VIOLATES THIS SUBSECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 5 YEARS OR A FINE NOT EXCEEDING $10,000 OR BOTH.\nSection 1 (Md. Code Ann., Public Safety § 5-207(c)(1)): A licensee or any other person may not sell, rent, loan, OR TRANSFER a rifle or shotgun to a purchaser, lessee, BORROWER, OR TRANSFEREE who the licensee or other person knows or has reasonable cause to believe: (1) IS UNDER THE AGE OF 21 YEARS, UNLESS THE RIFLE OR SHOTGUN IS LOANED TO A BORROWER WHO MAY POSSESS THE RIFLE OR SHOTGUN UNDER § 5–205(C) OF THIS SUBTITLE;"
+}

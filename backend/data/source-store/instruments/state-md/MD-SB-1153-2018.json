@@ -1,0 +1,39 @@
+{
+  "id": "MD-SB-1153-2018",
+  "scope": "state:md",
+  "title": "SB1153 (2018 Regular): Handgun Permits - Criminal History Check - Fingerprint Submission Exception",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1153?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/sb/sb1153f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Justin Ready",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "493c5d0c-1986-40d4-9fff-3a3bc3fe62e8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/sb/sb1153f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-1153-2018.first_reader.pdf",
+      "sha256": "7c6334608ada26525720a222d735a467ba1e062900c45f671fbadcc70ec3476b"
+    },
+    "note": "First reader: the bill as filed, February 19, 2018. Only change to law is the capitalised 'UNLESS ... ON FILE' clause. No passage vote recorded."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-305(c)): (c) As part of the application for a criminal history records check, the Secretary shall submit to the Central Repository: (1) UNLESS THE APPLICANT’S FINGERPRINTS ARE ALREADY ON FILE WITH THE DEPARTMENT OF STATE POLICE, two complete sets of the applicant’s legible fingerprints taken on forms approved by the Director of the Central Repository and the Director of the Federal Bureau of Investigation;"
+}

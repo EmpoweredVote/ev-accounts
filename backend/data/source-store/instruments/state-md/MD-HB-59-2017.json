@@ -1,0 +1,39 @@
+{
+  "id": "MD-HB-59-2017",
+  "scope": "state:md",
+  "title": "HB59 (2017 Regular): Public Safety - Assault Weapons - Replacements",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0059?ys=2017RS",
+    "https://mgaleg.maryland.gov/2017RS/bills/hb/hb0059f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Seth Howard",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2fe3f655-c28e-40c3-a2f9-48ea9eb8b498"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2017RS/bills/hb/hb0059f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-59-2017.first_reader.pdf",
+      "sha256": "7e4daaca23fc589b6a6cd71c993317f4a9e17f5de987038ba95708bb3c28fe40"
+    },
+    "note": "First reader (as filed); no passage vote recorded."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Criminal Law § 4–303(c)): NOTWITHSTANDING ANY OTHER PROVISION OF LAW, A PERSON MAY REPLACE A LOST OR BROKEN ASSAULT WEAPON THAT THE PERSON LAWFULLY POSSESSED IN ACCORDANCE WITH SUBSECTION (B)(1), (2), OR (3) OF THIS SECTION IF THE REPLACEMENT IS REGISTERED WITH THE SECRETARY OF STATE POLICE."
+}

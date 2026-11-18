@@ -1,0 +1,287 @@
+{
+  "id": "MD-SB-1050-2020",
+  "scope": "state:md",
+  "title": "SB1050 (2020 Regular): Public Safety - Lost or Stolen Regulated Firearm - Reporting",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1050?ys=2020RS&search=True",
+    "https://mgaleg.maryland.gov/2020RS/bills/sb/sb1050t.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Charles Sydnor",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344"
+    },
+    {
+      "name": "Pam Beidle",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "409ad653-a4fc-41d0-bb61-a933c5bc45c7"
+    },
+    {
+      "name": "Will Smith",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc"
+    },
+    {
+      "name": "Jeff Waldstreicher",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2020-03-18",
+      "body": "MD Senate",
+      "motion": "Senate Third Reading Passed",
+      "kind": "roll-call",
+      "yes": 45,
+      "no": 0,
+      "absent": 2,
+      "note": "mgaleg.maryland.gov vote file (read from the legislature) 90202493 https://mgaleg.maryland.gov/2020RS/votes/senate/1014.pdf#SB1050",
+      "members": [
+        {
+          "name": "Mr. President",
+          "vote": "yea"
+        },
+        {
+          "name": "George C. Edwards",
+          "vote": "yea"
+        },
+        {
+          "name": "Katie Hester",
+          "vote": "yea",
+          "politician_id": "6da20195-1b0c-43f2-b1b3-7a3954326fe6"
+        },
+        {
+          "name": "Clarence Lam",
+          "vote": "yea",
+          "politician_id": "fc23b939-0dfd-4968-ab19-fc1e7745e997"
+        },
+        {
+          "name": "Andrew A. Serafini",
+          "vote": "yea"
+        },
+        {
+          "name": "Malcolm Augustine",
+          "vote": "yea",
+          "politician_id": "9d191d69-084f-4941-bc0a-c59d336f032e"
+        },
+        {
+          "name": "Sarah Elfreth",
+          "vote": "yea"
+        },
+        {
+          "name": "Shelly Hettleman",
+          "vote": "yea",
+          "politician_id": "3089c813-f0a8-46af-9a7b-1699129037e9"
+        },
+        {
+          "name": "Susan C. Lee",
+          "vote": "yea"
+        },
+        {
+          "name": "Bryan Simonaire",
+          "vote": "yea",
+          "politician_id": "4aa50ee7-aeed-48ae-96e7-142bd9ac731b"
+        },
+        {
+          "name": "Jack Bailey",
+          "vote": "yea",
+          "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f"
+        },
+        {
+          "name": "Arthur Ellis",
+          "vote": "yea",
+          "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7"
+        },
+        {
+          "name": "Michael J. Hough",
+          "vote": "yea"
+        },
+        {
+          "name": "Cory McCray",
+          "vote": "yea",
+          "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd"
+        },
+        {
+          "name": "Will Smith",
+          "vote": "yea",
+          "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc"
+        },
+        {
+          "name": "Pam Beidle",
+          "vote": "yea",
+          "politician_id": "409ad653-a4fc-41d0-bb61-a933c5bc45c7"
+        },
+        {
+          "name": "Brian Feldman",
+          "vote": "yea",
+          "politician_id": "d423151e-8477-470d-8f73-ba7d2092f714"
+        },
+        {
+          "name": "J.B. Jennings",
+          "vote": "yea",
+          "politician_id": "5927d5ab-2fd7-4454-bcc3-34e494821aac"
+        },
+        {
+          "name": "Obie Patterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Charles Sydnor",
+          "vote": "yea",
+          "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344"
+        },
+        {
+          "name": "Joanne Benson",
+          "vote": "yea",
+          "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029"
+        },
+        {
+          "name": "Jason Gallion",
+          "vote": "yea",
+          "politician_id": "e2ca1bfd-255d-417b-a9d7-424e6c10749d"
+        },
+        {
+          "name": "Cheryl Kagan",
+          "vote": "yea",
+          "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1"
+        },
+        {
+          "name": "Douglas J. J. Peters",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Waldstreicher",
+          "vote": "yea",
+          "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570"
+        },
+        {
+          "name": "Mary Beth Carozza",
+          "vote": "yea",
+          "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9"
+        },
+        {
+          "name": "Melony G. Griffith",
+          "vote": "yea"
+        },
+        {
+          "name": "Delores G. Kelley",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Ready",
+          "vote": "yea",
+          "politician_id": "493c5d0c-1986-40d4-9fff-3a3bc3fe62e8"
+        },
+        {
+          "name": "Mary Washington",
+          "vote": "yea",
+          "politician_id": "38404814-7be0-40e3-b044-062f98b2a5b0"
+        },
+        {
+          "name": "Jill Carter",
+          "vote": "yea"
+        },
+        {
+          "name": "Guy Guzzone",
+          "vote": "yea",
+          "politician_id": "f0fafa0e-3dd9-4d50-bc5e-c96315f766d7"
+        },
+        {
+          "name": "Nancy King",
+          "vote": "yea",
+          "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec"
+        },
+        {
+          "name": "Edward R. Reilly",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris West",
+          "vote": "yea",
+          "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae"
+        },
+        {
+          "name": "Robert Cassilly",
+          "vote": "yea"
+        },
+        {
+          "name": "Antonio Hayes",
+          "vote": "yea",
+          "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96"
+        },
+        {
+          "name": "Kathy Klausmeier",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Rosapepe",
+          "vote": "yea",
+          "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e"
+        },
+        {
+          "name": "Ronald N. Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Adelaide C. Eckardt",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Hershey",
+          "vote": "yea",
+          "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0"
+        },
+        {
+          "name": "Ben Kramer",
+          "vote": "yea",
+          "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33"
+        },
+        {
+          "name": "Johnny Salling",
+          "vote": "yea",
+          "politician_id": "9f8d0005-c5ff-42f8-b158-cdb6e4eee872"
+        },
+        {
+          "name": "Craig Zucker",
+          "vote": "yea",
+          "politician_id": "82145bc2-770a-421e-a2a1-0e79aae5b643"
+        },
+        {
+          "name": "Thomas V. Mike Miller, Jr.",
+          "vote": "absent"
+        },
+        {
+          "name": "Paul G. Pinsky",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (Third Reader; official copy, https://mgaleg.maryland.gov/2020RS/bills/sb/sb1050t.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-1050-2020.third_reader.pdf",
+      "sha256": "bd53bc80395a560535f7b5ffb50c2321db6385ef1ab54dcf2edfdb3dd7edf216"
+    },
+    "note": "third reader: as passed by its first chamber. Amendments made after the version read are not in the text read. The bill changes only subsection (d) penalties; the 72-hour reporting duty (§ 5–146(b)) is existing law kept. Amendments struck the first/subsequent-conviction tiers ('6' months and $1,000 for a first conviction, 1 year and $2,000 for later ones) and add a single $2,000 fine; the number of months is not clear in the text read ('MONTHS' with the figure struck), so check the PDF. The civil first-offense fine of $500 is deleted from existing law. Passed Senate 45-0."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–146): A person who knowingly and willfully violates this section is guilty of a misdemeanor and on conviction is subject to: imprisonment not exceeding MONTHS or a fine not exceeding $2,000 or both;"
+}

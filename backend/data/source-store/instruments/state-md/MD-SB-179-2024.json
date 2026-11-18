@@ -1,0 +1,53 @@
+{
+  "id": "MD-SB-179-2024",
+  "scope": "state:md",
+  "title": "SB179 (2024 Regular): Crimes and Corrections - Penalties and Procedures (Violent Firearms Offender Act of 2024)",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0179?ys=2024RS&search=True",
+    "https://mgaleg.maryland.gov/2024RS/bills/sb/sb0179f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Ron Watson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9aef8bfb-8e0c-4f00-9898-c738abe4970c"
+    },
+    {
+      "name": "Mary Beth Carozza",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9"
+    },
+    {
+      "name": "Anthony Muse",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "47823046-7dea-4a4f-a11b-0c5890539891"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: Section 1 (Md. Code Ann., Correctional Services § 9-609.2) — requires a reentry kit and Medicaid help for people released from State prisons (no gun link)"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2024RS/bills/sb/sb0179f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-179-2024.first_reader.pdf",
+      "sha256": "a6cae7c21eb2b88e8fa00fa4715e0b8157eebf21f980278482690f5d2e12142b"
+    },
+    "note": "First reader (as filed), mgaleg.maryland.gov; no date in text. Quotes drop bracketed (deleted) words and keep CAPITALS (added) words. Section 14-101(a)(14) deletes the exception for possession with intent to distribute under § 5-602(2). Section 9-609.2 (reentry kit) is not quoted because it has no gun content."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Correctional Services § 6-101(m)): “Technical violation” means a violation of a condition of probation, parole, or mandatory supervision that does not involve: ... (5) USE OR POSSESSION OF A FIREARM.\nSection 1 (Md. Code Ann., Criminal Law § 4-204): “USE A FIREARM” DOES NOT INCLUDE THE MERE POSSESSION OF A FIREARM. ... A person may not use a firearm in the commission of a crime of violence, as defined in § 5–101 of the Public Safety Article, or any felony, whether the firearm is operable or inoperable at the time of the crime. ... A person who violates this section is guilty of a FELONY and, in addition to any other penalty imposed for the crime of violence or felony, shall be sentenced to imprisonment for not less than 5 years and not exceeding 20 years.\nSection 1 (Md. Code Ann., Criminal Law § 4-306(b)): IN THIS SUBSECTION, “USES” DOES NOT INCLUDE MERE POSSESSION. ... A person who uses an assault weapon, a rapid fire trigger activator, or a magazine that has a capacity of more than 10 rounds of ammunition, in the commission of a felony or a crime of violence as defined in § 5–101 of the Public Safety Article is guilty of a FELONY and on conviction, in addition to any other sentence imposed for the felony or crime of violence, shall be sentenced under this subsection.\nSection 1 (Md. Code Ann., Criminal Law § 4-404): A person may not use or possess a machine gun in the commission or attempted commission of a FELONY OR crime of violence.\nSection 1 (Md. Code Ann., Criminal Law § 14-101(a)): use of a firearm in the commission of a felony or other crime of violence;\nSection 1 (Md. Code Ann., Public Safety § 5-133(b)): EXCEPT AS PROVIDED IN SUBSECTION (C) OF THIS SECTION, A PERSON WHO VIOLATES THIS SUBSECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO: 1. EXCEPT AS PROVIDED IN ITEM 2 OF THIS SUBPARAGRAPH, IMPRISONMENT NOT EXCEEDING 5 YEARS OR A FINE NOT EXCEEDING $10,000 OR BOTH; AND 2. SUBJECT TO PARAGRAPH (3) OF THIS SUBSECTION, FOR A SECOND OR SUBSEQUENT OFFENSE, IMPRISONMENT NOT EXCEEDING 10 YEARS OR A FINE NOT EXCEEDING $10,000 OR BOTH. ... EACH VIOLATION OF THIS SUBSECTION IS A SEPARATE CRIME."
+}

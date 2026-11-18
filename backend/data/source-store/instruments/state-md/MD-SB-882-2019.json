@@ -1,0 +1,182 @@
+{
+  "id": "MD-SB-882-2019",
+  "scope": "state:md",
+  "title": "SB882 (2019 Regular): Criminal Law – Firearms – Computer–Aided Fabrication and Serial Number\\r(3–D Printed Firearms and Ghost Guns)",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0882?ys=2019RS",
+    "https://mgaleg.maryland.gov/2019RS/bills/sb/sb0882f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Will Smith",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc"
+    },
+    {
+      "name": "Joanne Benson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029"
+    },
+    {
+      "name": "Sarah Elfreth",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Arthur Ellis",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7"
+    },
+    {
+      "name": "Brian Feldman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d423151e-8477-470d-8f73-ba7d2092f714"
+    },
+    {
+      "name": "Malcolm Augustine",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9d191d69-084f-4941-bc0a-c59d336f032e"
+    },
+    {
+      "name": "Pam Beidle",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "409ad653-a4fc-41d0-bb61-a933c5bc45c7"
+    },
+    {
+      "name": "Jill Carter",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Melony G. Griffith",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Katie Hester",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6da20195-1b0c-43f2-b1b3-7a3954326fe6"
+    },
+    {
+      "name": "Bill Ferguson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6e3c30f5-52be-48b0-b5b4-383e5d745c57"
+    },
+    {
+      "name": "Cheryl Kagan",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1"
+    },
+    {
+      "name": "Delores G. Kelley",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nancy King",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec"
+    },
+    {
+      "name": "Ben Kramer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33"
+    },
+    {
+      "name": "Thomas V. Mike Miller, Jr.",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Obie Patterson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Washington",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Pat Young",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Clarence Lam",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "fc23b939-0dfd-4968-ab19-fc1e7745e997"
+    },
+    {
+      "name": "Susan C. Lee",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bobby A. Zirkin",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Craig Zucker",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "82145bc2-770a-421e-a2a1-0e79aae5b643"
+    },
+    {
+      "name": "Guy Guzzone",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f0fafa0e-3dd9-4d50-bc5e-c96315f766d7"
+    },
+    {
+      "name": "Shirley Nathan-Pulliam",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Douglas J. J. Peters",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Paul G. Pinsky",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2019RS/bills/sb/sb0882f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-882-2019.first_reader.pdf",
+      "sha256": "79f7a39674900432cb1cfe3ad3715ccc16e9da32e7d29c54c43521c9b1020bae"
+    },
+    "note": "First reader (as filed), no date in text. No passage vote recorded. Exceptions in § 4-602 (testing authorized by State Police, federally licensed makers) are not quoted."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Criminal Law § 4-111(B)): A PERSON MAY NOT: (1) TRANSPORT INTO THE STATE A FIREARM MANUFACTURED AFTER 1968 THAT IS NOT IMPRINTED WITH A SERIAL NUMBER ISSUED BY A FEDERALLY LICENSED FIREARMS MANUFACTURER OR IMPORTER; OR (2) MANUFACTURE, POSSESS, SELL, OFFER TO SELL, TRANSFER, PURCHASE, OR RECEIVE A FIREARM MANUFACTURED AFTER 1968 THAT IS NOT IMPRINTED WITH A SERIAL NUMBER ISSUED BY A FEDERALLY LICENSED FIREARMS MANUFACTURER OR IMPORTER.\nSection 1 (Md. Code Ann., Criminal Law § 4-111(C)): A PERSON WHO VIOLATES THIS SECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 3 YEARS OR A FINE NOT EXCEEDING $5,000 OR BOTH.\nSection 1 (Md. Code Ann., Criminal Law § 4-603): (A) A PERSON MAY NOT USE A COMPUTER–AIDED FABRICATION DEVICE TO MANUFACTURE A FIREARM THAT IS NOT IMPRINTED WITH A SERIAL NUMBER ISSUED BY A FEDERALLY LICENSED FIREARMS MANUFACTURER OR IMPORTER. (B) A PERSON WHO VIOLATES THIS SECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 5 YEARS OR A FINE NOT EXCEEDING $5,000 OR BOTH.\nSection 1 (Md. Code Ann., Criminal Law § 4-604): (A) A PERSON MAY NOT POSSESS, SELL, OFFER TO SELL, TRANSFER, PURCHASE, OR RECEIVE A FIREARM MANUFACTURED USING A COMPUTER–AIDED FABRICATION DEVICE UNLESS THE FIREARM IS IMPRINTED WITH A SERIAL NUMBER ISSUED BY A FEDERALLY LICENSED FIREARMS MANUFACTURER OR IMPORTER. (B) A PERSON WHO VIOLATES THIS SECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 5 YEARS OR A FINE NOT EXCEEDING $5,000 OR BOTH."
+}

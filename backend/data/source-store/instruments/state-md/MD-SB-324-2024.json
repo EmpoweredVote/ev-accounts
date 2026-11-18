@@ -1,0 +1,39 @@
+{
+  "id": "MD-SB-324-2024",
+  "scope": "state:md",
+  "title": "SB324 (2024 Regular): Handgun Permits - Accidental Discharge and Training Requirements - Maryland State Police Gun Center (Firearm Safety Act of 2024)",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0324?ys=2024RS&search=True",
+    "https://mgaleg.maryland.gov/2024RS/bills/sb/sb0324f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cory McCray",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2024RS/bills/sb/sb0324f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-324-2024.first_reader.pdf",
+      "sha256": "d9e6e9c6580452d5586ffce3b689482c5adefb34dede984b6cc102016d2adc9e"
+    },
+    "note": "First reader: the bill as filed. The Center-tracking parts (§§ 5-802, 5-803) are quoted in part; renumbered definitions in § 5-801 not quoted. No passage vote in the record; later amendments, if any, are not in the text read."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-315): (B) IF THERE IS AN ACCIDENTAL DISCHARGE BY A PERSON WHO HOLDS A PERMIT, THE PERSON SHALL: (1) REGISTER FOR A CERTIFIED FIREARMS SAFETY TRAINING COURSE WITHIN 90 DAYS AFTER THE INCIDENT; AND (2) SUCCESSFULLY COMPLETE THE FIREARMS SAFETY TRAINING COURSE WITHIN 6 MONTHS AFTER THE INCIDENT.\nSection 1 (Md. Code Ann., Public Safety § 5-315): (D) (1) THE SECRETARY SHALL REVOKE A PERMIT OF A PERSON WHO FAILS TO SATISFY THE REQUIREMENTS OF SUBSECTION (B) OF THIS SECTION.\nSection 1 (Md. Code Ann., Public Safety § 5-315): (F) (1) A LAW ENFORCEMENT AGENCY SHALL REPORT TO THE MARYLAND STATE POLICE GUN CENTER EACH ACCIDENTAL DISCHARGE THAT IS COMMITTED IN THE JURISDICTION OF THE LAW ENFORCEMENT AGENCY. (2) THE MARYLAND STATE POLICE GUN CENTER SHALL REPORT ALL ACCIDENTAL DISCHARGES TO THE DEPARTMENT OF STATE POLICE’S LICENSING DIVISION.\nSection 1 (Md. Code Ann., Public Safety § 5-802): (3) ACCIDENTAL DISCHARGES IN THE STATE.\nSection 1 (Md. Code Ann., Public Safety § 5-803): (D) EACH LAW ENFORCEMENT AGENCY SHALL REPORT TO THE CENTER THE FOLLOWING INFORMATION ON ACCIDENTAL DISCHARGES IN THE JURISDICTION OF THE LAW ENFORCEMENT AGENCY: (1) THE NUMBER AND TYPE OF FIREARMS; (2) THE JURISDICTIONS WHERE ACCIDENTAL DISCHARGES OCCURRED; AND (3) INFORMATION REGARDING THE INDIVIDUAL WHO COMMITTED THE ACCIDENTAL DISCHARGE, INCLUDING: (I) THE INDIVIDUAL’S AGE; (II) THE INDIVIDUAL’S JURISDICTION OF RESIDENCE; AND (III) ANY OTHER INFORMATION REQUESTED BY THE CENTER."
+}

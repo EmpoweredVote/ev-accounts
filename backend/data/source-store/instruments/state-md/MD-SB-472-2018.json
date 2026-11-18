@@ -1,0 +1,81 @@
+{
+  "id": "MD-SB-472-2018",
+  "scope": "state:md",
+  "title": "SB472 (2018 Regular): Public Safety - Permit to Wear, Carry, or Transport a Handgun - Expiration and Renewal",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0472?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/sb/sb0472f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michael J. Hough",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Adelaide C. Eckardt",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "George C. Edwards",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "J.B. Jennings",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5927d5ab-2fd7-4454-bcc3-34e494821aac"
+    },
+    {
+      "name": "Norman",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bryan Simonaire",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4aa50ee7-aeed-48ae-96e7-142bd9ac731b"
+    },
+    {
+      "name": "Gail H. Bates",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Johnny Salling",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9f8d0005-c5ff-42f8-b158-cdb6e4eee872"
+    },
+    {
+      "name": "Steve Waugh",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/sb/sb0472f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-472-2018.first_reader.pdf",
+      "sha256": "a4278e43f1d9b25919bbe31638a68f76ee5bb82be3f279deec084c43a7b8123f"
+    },
+    "note": "First reader, as filed; no vote recorded. Initial term changes from 2 to 5 years, renewal from 3 to 5 years (bracketed old numbers dropped)."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–309): (a) Except as provided in subsection (d) of this section, a permit expires on the last day of the holder’s birth month following 5 years after the date the permit is issued. (b) Subject to subsection (c) of this section, a permit may be renewed for successive periods of 5 years each if, at the time of an application for renewal, the applicant possesses the qualifications for the issuance of a permit and pays the renewal fee stated in this subtitle."
+}

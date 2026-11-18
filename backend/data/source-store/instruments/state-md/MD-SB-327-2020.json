@@ -1,0 +1,112 @@
+{
+  "id": "MD-SB-327-2020",
+  "scope": "state:md",
+  "title": "SB327 (2020 Regular): Public Safety - Handgun Qualification License - Training Exemption",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0327?ys=2020RS&search=True",
+    "https://mgaleg.maryland.gov/2020RS/bills/sb/sb0327f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michael J. Hough",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jack Bailey",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f"
+    },
+    {
+      "name": "Mary Beth Carozza",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9"
+    },
+    {
+      "name": "Robert Cassilly",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Adelaide C. Eckardt",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "George C. Edwards",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jason Gallion",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e2ca1bfd-255d-417b-a9d7-424e6c10749d"
+    },
+    {
+      "name": "Steve Hershey",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0"
+    },
+    {
+      "name": "J.B. Jennings",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5927d5ab-2fd7-4454-bcc3-34e494821aac"
+    },
+    {
+      "name": "Justin Ready",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "493c5d0c-1986-40d4-9fff-3a3bc3fe62e8"
+    },
+    {
+      "name": "Edward R. Reilly",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Johnny Salling",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9f8d0005-c5ff-42f8-b158-cdb6e4eee872"
+    },
+    {
+      "name": "Bryan Simonaire",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4aa50ee7-aeed-48ae-96e7-142bd9ac731b"
+    },
+    {
+      "name": "Chris West",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2020RS/bills/sb/sb0327f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-327-2020.first_reader.pdf",
+      "sha256": "57347544e73ca9e94c37413eb104d1b602f67894cd3d495bfa4fb1ad60bdcc7c"
+    },
+    "note": "First reader: the bill as filed. Item (6) is existing law kept (only its closing punctuation changes: the bracketed period is deleted); item (7) is the new exemption. No passage vote in the record; later amendments, if any, are not in the text read."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-117.1(e)): (6) lawfully owns a regulated firearm; OR\nSection 1 (Md. Code Ann., Public Safety § 5-117.1(e)): (7) IS A LAW ENFORCEMENT OFFICER WITH A LAW ENFORCEMENT AGENCY IN DELAWARE, PENNSYLVANIA, VIRGINIA, WEST VIRGINIA, OR WASHINGTON, D.C."
+}

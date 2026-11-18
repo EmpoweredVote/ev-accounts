@@ -1,0 +1,45 @@
+{
+  "id": "MD-SB-826-2021",
+  "scope": "state:md",
+  "title": "SB826 (2021 Regular): Handgun Permits – Qualifications – High–Risk Occupations",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0826?ys=2021RS&search=True",
+    "https://mgaleg.maryland.gov/2021RS/bills/sb/sb0826f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mary Beth Carozza",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9"
+    },
+    {
+      "name": "Justin Ready",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "493c5d0c-1986-40d4-9fff-3a3bc3fe62e8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2021RS/bills/sb/sb0826f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-826-2021.first_reader.pdf",
+      "sha256": "28c5a723f162a2a090469f0742b1b1b48eeab55bde77dc8503ce5b994c5d5572"
+    },
+    "note": "First reader (as filed), no date in text. No passage vote recorded."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-306(a)): Subject to subsection (c) of this section, the Secretary shall issue a permit within a reasonable time to a person who the Secretary finds: … (ii) 1. has good and substantial reason to wear, carry, or transport a handgun, such as a finding that the permit is necessary as a reasonable precaution against apprehended danger; OR 2. IS EMPLOYED AS: A. A CORRECTIONAL OFFICER; B. A PAROLE AND PROBATION OFFICER; C. A FIREFIGHTER; D. AN EMERGENCY MEDICAL TECHNICIAN; E. A RESCUE SQUAD MEMBER; F. A SECURITY GUARD FOR A CHURCH OR RELIGIOUS ORGANIZATION; G. A PHYSICIAN; H. A PHYSICIAN’S ASSISTANT; I. A NURSE; OR J. A NURSE PRACTITIONER."
+}

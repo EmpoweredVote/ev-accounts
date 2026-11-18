@@ -1,0 +1,108 @@
+{
+  "id": "MD-SB-1180-2017",
+  "scope": "state:md",
+  "title": "SB1180 (2017 Regular): Public Safety - Handgun Permit Review Board - Repeal",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1180?ys=2017RS",
+    "https://mgaleg.maryland.gov/2017RS/bills/sb/sb1180f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Richard S. Madaleno, Jr.",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Guy Guzzone",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f0fafa0e-3dd9-4d50-bc5e-c96315f766d7"
+    },
+    {
+      "name": "Roger Manno",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nathaniel J. McFadden",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Douglas J. J. Peters",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Will Smith",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc"
+    },
+    {
+      "name": "Ulysses Currie",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bill Ferguson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6e3c30f5-52be-48b0-b5b4-383e5d745c57"
+    },
+    {
+      "name": "Cheryl Kagan",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1"
+    },
+    {
+      "name": "Edward J. Kasemeyer",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Delores G. Kelley",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nancy King",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec"
+    },
+    {
+      "name": "Susan C. Lee",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bobby A. Zirkin",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2017RS/bills/sb/sb1180f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-1180-2017.first_reader.pdf",
+      "sha256": "b8e4fd9543e9331cb151be72426b1c0295eae92a6613e5826a81b2b2910d5bdb"
+    },
+    "note": "First reader: the bill as filed. No passage vote recorded. Also repeals § 5-302 (the Board) and deletes the Board's review powers in § 5-312(b)-(d); 'Board' definition in § 5-301(b) deleted."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-312(a)): (a) (1) A person who is denied a permit or renewal of a permit or whose permit is revoked or limited may request TO APPEAL the decision of the Secretary TO THE OFFICE OF ADMINISTRATIVE HEARINGS by filing a written request with the SECRETARY within 10 days after receipt of written notice of the Secretary’s final action.\nSection 1 (Md. Code Ann., Public Safety § 5-312(a)): (2) A person whose application for a permit or renewal of a permit is not acted on by the Secretary within 90 days after submitting the application to the Secretary may request a hearing before the OFFICE OF ADMINISTRATIVE HEARINGS by filing a written request with the SECRETARY.\nSection 1 (Md. Code Ann., Public Safety § 5-312(B)): (2) Notwithstanding paragraph (1) of this subsection, a court may not order the issuance or renewal of a permit or alter a limitation on a permit pending a final determination of the proceeding."
+}

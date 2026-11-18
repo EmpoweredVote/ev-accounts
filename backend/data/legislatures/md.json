@@ -32,16 +32,17 @@
     "hosts": [
       "mgaleg.maryland.gov"
     ],
-    "marks": "Read on one text (2018 HB 1302, first reader, 2026-11-18); not measured in bulk. The text prints its own key: \"CAPITALS INDICATE MATTER ADDED TO EXISTING LAW. [Brackets] indicate matter deleted from existing law.\" How a third reader or an enrolled text marks committee and floor amendments was not checked.",
+    "marks": "Measured on 239 texts (181 first readers, 58 third readers; Stage 5 session A, 2026-11-18). Existing law: the text prints its own key, \"CAPITALS INDICATE MATTER ADDED TO EXISTING LAW. [Brackets] indicate matter deleted from existing law.\" A wholly new section is printed in capitals. Amendments: a third reader marks words a committee or floor amendment added with a drawn underline and words it struck with a strike-out line (the key at its foot names \"Underlining\" and \"Strike out\"). Plain pdftotext merges both into the text with no mark, so read third readers with a PDF library that sees the drawn lines (PyMuPDF; probe 2023 SB 1 third reader) and write them as {+added+} and [-struck-]; 0 false marks on first readers. A third reader holds the first chamber's amendments only; enrolled texts were not read. Page headers (bill number, page) can fall inside a sentence and break a quoted passage (3 of 751 quoted parts). A fill can leave out the struck law of a bill whose whole change is a repeal (two of 239: the bracketed words were missing from the stored text); check that the struck words are quoted.",
     "note": "The dump links each text as a PDF, mgaleg.maryland.gov/<year>RS/bills/<hb|sb>/<hb1302><code>.pdf over http; the site answers https (convert.py rewrites them). The code names the version: f first reader, t third reader, e enrolled. The old bill page (webmga/frmMain.aspx?...pid=billpage...) is gone; the bill's page is /mgawebsite/Legislation/Details/hb1302?ys=2018RS."
   },
   "reader_access": {
     "mgaleg.maryland.gov": "open"
   },
   "search_note": "Maryland sponsorships and House and Senate floor votes for 2017 to 2026 come from the bill data on disk, checked against the legislature's own record: skip the legislature's bill pages and vote files, and add the place \"sponsor list: covered by bulk bill data\". Spend the search on their own words (statements, campaign pages, newsletters, floor remarks, interviews, questionnaires). If any page returns 403, 429, an empty page or a bot check, record it as blocked and move on: do not retry it with a different user agent, headers or tool.",
-  "bill_table_note": "- Maryland sessions run one year; bill numbers start again each year.\n- Floor votes kept: third reading (final passage), conference reports, veto overrides and third-reading consent calendars. Votes on a floor amendment or a motion are not floor votes on the bill.\n- One vote can carry several bills (a consent calendar); it is a vote on each of them.\n- Bill texts print new words in CAPITALS and deleted words in [brackets].",
+  "bill_table_note": "- Maryland sessions run one year; bill numbers start again each year.\n- Floor votes kept: third reading (final passage), conference reports, veto overrides and third-reading consent calendars. Votes on a floor amendment or a motion are not floor votes on the bill.\n- One vote can carry several bills (a consent calendar); it is a vote on each of them.\n- Bill texts print new words in CAPITALS and deleted words in [brackets].\n- Texts: CAPITALS = added to existing law, plain [brackets] = deleted from existing law; in third readers {+...+} = added by amendment and [-...-] = struck by amendment (a word inside [-...-] is not in the bill as passed by its first chamber).",
   "fill_quotes": {
-    "label_strips": []
+    "label_strips": [],
+    "brackets_delete": true
   },
   "quirks": [
     "The site has no robots.txt and states no crawl delay. The reader waits one second between requests. No 403, 429 or bot check was met on 2026-11-18. The site was down for maintenance for a while that day (HTTP 500 and 503, \"Application Offline\"): wait and run again.",

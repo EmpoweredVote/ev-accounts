@@ -1,0 +1,52 @@
+{
+  "id": "MD-SB-1264-2018",
+  "scope": "state:md",
+  "title": "SB1264 (2018 Regular): Primary and Secondary Schools - Law Enforcement Presence (School Safety Act 2018: Deterrence)",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1264?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/sb/sb1264f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "J.B. Jennings",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5927d5ab-2fd7-4454-bcc3-34e494821aac"
+    },
+    {
+      "name": "Thomas V. Mike Miller, Jr.",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Waugh",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "education-school-police: Section 1 (Education § 7-441) — police officers placed in public schools, with screening, patrol and student-interaction duties",
+        "public-safety-approach: Section 1 (Public Safety § 3-520) — local police and schools set emergency response times"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/sb/sb1264f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-1264-2018.first_reader.pdf",
+      "sha256": "97181f3eb876cab813822463595fc67b362715ea3b8cfbd29a94d8c7fb6e00a0"
+    },
+    "note": "First reader: the bill as filed. No passage vote recorded. Borderline gun_policy call: the bill is mainly school-police staffing; the gun part is that the officers must carry firearms ('ARMED SCHOOL RESOURCE OFFICER' is defined as an officer who carries a firearm). Sub-subsection (C)(2)(II) also says the assigned State Police officer shall carry a firearm."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Education § 7-441): (B) EACH PUBLIC SCHOOL SHALL HAVE AN ARMED SCHOOL RESOURCE OFFICER PRESENT ON SCHOOL GROUNDS DURING REGULAR SCHOOL HOURS ON SCHOOL DAYS.\nSection 1 (Md. Code Ann., Education § 7-441): (C) (1) IF A PUBLIC SCHOOL IS UNABLE TO MEET THE REQUIREMENT UNDER SUBSECTION (B) OF THIS SECTION, THE DEPARTMENT OF STATE POLICE SHALL ASSIGN A STATE POLICE OFFICER TO THE PUBLIC SCHOOL.\nSection 1 (Md. Code Ann., Education § 7-441): (F) A PRIVATE SCHOOL MAY HAVE AN ARMED SCHOOL RESOURCE OFFICER PRESENT ON SCHOOL GROUNDS."
+}

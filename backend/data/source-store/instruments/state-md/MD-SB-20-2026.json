@@ -1,0 +1,39 @@
+{
+  "id": "MD-SB-20-2026",
+  "scope": "state:md",
+  "title": "SB20 (2026 Regular): Family and Law Enforcement Protection Act",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0020?ys=2026RS",
+    "https://mgaleg.maryland.gov/2026RS/bills/sb/sb0020f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shelly Hettleman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3089c813-f0a8-46af-9a7b-1699129037e9"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2026RS/bills/sb/sb0020f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-20-2026.first_reader.pdf",
+      "sha256": "13f7a84296c89b74f454765bbfeb0af800b05ac5124b962a3b82b7c1bd82dd8c"
+    },
+    "note": "Version read: first reader (bill as filed); no vote recorded, so no later amendments to account for. Section 4-505(a)(2)(viii), the old discretionary surrender provision, is in [brackets] = deleted and replaced by mandatory (a)(4). Minor non-gun part (not quoted): § 4-504.1(f)(3) has a commissioner give petitioners domestic-violence safety resources; treated as incidental to the protective-order scheme."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Family Law § 4-505(a)(4)): THE TEMPORARY PROTECTIVE ORDER SHALL ORDER THE RESPONDENT TO: (I) SURRENDER TO LAW ENFORCEMENT AUTHORITIES ANY FIREARM IN THE RESPONDENT’S POSSESSION AND ANY HANDGUN QUALIFICATION LICENSE OR PERMIT TO WEAR, CARRY, OR TRANSPORT A HANDGUN ISSUED TO THE RESPONDENT; AND (II) REFRAIN FROM PURCHASING OR POSSESSING A FIREARM FOR THE DURATION OF THE TEMPORARY PROTECTIVE ORDER.\nSection 1 (Md. Code Ann., Family Law § 4-506(f)): The final protective order shall order the respondent to surrender to law enforcement authorities any firearm in the respondent’s possession AND ANY HANDGUN QUALIFICATION LICENSE OR PERMIT TO WEAR, CARRY, OR TRANSPORT A HANDGUN ISSUED TO THE RESPONDENT, and to refrain from PURCHASING OR POSSESSING A firearm, for the duration of the protective order.\nSection 1 (Md. Code Ann., Family Law § 4-506.1(A)(1)): IF A RESPONDENT IS ORDERED TO SURRENDER A FIREARM, A HANDGUN QUALIFICATION LICENSE, OR A PERMIT TO WEAR, CARRY, OR TRANSPORT A HANDGUN UNDER THIS SUBTITLE, THE RESPONDENT SHALL SURRENDER ALL FIREARMS AND ANY HANDGUN QUALIFICATION LICENSE OR PERMIT TO WEAR, CARRY, OR TRANSPORT A HANDGUN IN THE RESPONDENT’S POSSESSION TO A LOCAL LAW ENFORCEMENT AUTHORITY WITHIN 24 HOURS AFTER A LAW ENFORCEMENT OFFICER SERVES THE ORDER ON THE RESPONDENT.\nSection 1 (Md. Code Ann., Family Law § 4-506.1(A)(2)): IF THE RESPONDENT DOES NOT POSSESS A FIREARM, THE RESPONDENT SHALL SUBMIT AN AFFIDAVIT TO THE COURT AND ANY RELEVANT LAW ENFORCEMENT AGENCY TO THAT EFFECT SIGNED UNDER PENALTY OF PERJURY WITHIN 2 BUSINESS DAYS AFTER SERVICE OF THE ORDER.\nSection 1 (Md. Code Ann., Family Law § 4-506.1(B)(1)): WITHIN 3 BUSINESS DAYS AFTER SERVICE OF THE ORDER, A LOCAL LAW ENFORCEMENT AUTHORITY SHALL DETERMINE WHETHER THE RESPONDENT HAS COMPLIED WITH SUBSECTION (A) OF THIS SECTION.\nSection 1 (Md. Code Ann., Family Law § 4-506.1(H)(2)): ON APPLICATION BY THE STATE’S ATTORNEY OR A LAW ENFORCEMENT OFFICER, BASED ON PROBABLE CAUSE TO BELIEVE THAT THE RESPONDENT HAS FAILED TO SURRENDER A FIREARM IN ACCORDANCE WITH THIS SECTION OR IS IN POSSESSION OF OTHER FIREARMS, THE COURT MAY AUTHORIZE THE EXECUTION OF A SEARCH WARRANT FOR THE REMOVAL OF A FIREARM AT ANY LOCATION AT WHICH THE COURT HAS PROBABLE CAUSE TO BELIEVE A FIREARM POSSESSED BY THE RESPONDENT IS LOCATED."
+}

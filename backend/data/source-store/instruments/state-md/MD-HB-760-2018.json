@@ -1,0 +1,77 @@
+{
+  "id": "MD-HB-760-2018",
+  "scope": "state:md",
+  "title": "HB760 (2018 Regular): Handguns - School Employees - Handgun Permits and Carrying Weapons on School Property",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0760?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/hb/hb0760f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Rick Impallaria",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jason Buckel",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5260bd6f-e70a-46f1-aa7d-49eaf22192cf"
+    },
+    {
+      "name": "Susan McComas",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07"
+    },
+    {
+      "name": "Pat McDonough",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Deborah C. Rey",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "April Rose",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5967c703-2583-466f-a438-c3ac182111d5"
+    },
+    {
+      "name": "Teresa Reilly",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "547841f2-3476-4e83-9344-0cac984d44e8"
+    },
+    {
+      "name": "Haven Shoemaker",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/hb/hb0760f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-760-2018.first_reader.pdf",
+      "sha256": "136592287d4c93ff63b36e4a3c8d9e647a7e20ede44be83f2fec59c865a17e1b"
+    },
+    "note": "First reader: bill as filed. No passage vote in the record. § 4-102(b) is existing law kept (the prohibition the new exception qualifies)."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Criminal Law § 4-102(a)(4)): A SCHOOL EMPLOYEE WHO IS AUTHORIZED TO CARRY A HANDGUN BY A COUNTY SCHOOL BOARD UNDER § 3–104(C) OF THE EDUCATION ARTICLE AND WHO HAS BEEN ISSUED A HANDGUN PERMIT UNDER § 5–306 OF THE PUBLIC SAFETY ARTICLE IF THE PERSON HAS THE WEAPON SECURED ON THE PERSON’S BODY;\nSection 1 (Md. Code Ann., Criminal Law § 4-102(b)): A person may not carry or possess a firearm, knife, or deadly weapon of any kind on public school property.\nSection 1 (Md. Code Ann., Education § 3-104(c)(1)): A COUNTY BOARD MAY AUTHORIZE SCHOOL EMPLOYEES IN THE COUNTY BOARD’S SCHOOL SYSTEM TO CARRY A HANDGUN ON SCHOOL PROPERTY.\nSection 1 (Md. Code Ann., Education § 3-104(c)(2)): A SCHOOL EMPLOYEE MAY CARRY A HANDGUN ON SCHOOL PROPERTY UNDER PARAGRAPH (1) OF THIS SUBSECTION ONLY IF THE HANDGUN IS SECURED ON THE PERSON’S BODY.\nSection 1 (Md. Code Ann., Public Safety § 5-306(a)(6)(ii)): 1. has good and substantial reason to wear, carry, or transport a handgun, such as a finding that the permit is necessary as a reasonable precaution against apprehended danger; OR 2. IS A SCHOOL EMPLOYEE IN A SCHOOL SYSTEM IN WHICH THE COUNTY SCHOOL BOARD HAS AUTHORIZED SCHOOL EMPLOYEES TO CARRY A HANDGUN UNDER § 3–104(C) OF THE EDUCATION ARTICLE."
+}

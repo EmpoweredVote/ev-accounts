@@ -1,0 +1,98 @@
+{
+  "politician_id": "21e534c8-c0c0-42f5-b52b-5eb2f246d632",
+  "findings": [
+    {
+      "id": "1c755a359d3d489ce6ad718170ece4b1704995442eeba7022ec9cd41441ebb81",
+      "kind": "own-words",
+      "url": "https://governor.maryland.gov/news/press-releases/governor-moore-proclaims-national-gun-violence-awareness-day-maryland",
+      "date": "2023-06-02",
+      "date_precision": "day",
+      "passage": "“By this time tomorrow, another two Marylanders will have died from gun violence, and here in Maryland, we’ve had enough of these senseless, preventable tragedies,” said Gov. Moore. “This year we passed common-sense legislation that will ensure you can’t bring a gun into a preschool, a hospital, or a government office—that if you have a mental illness and have a history of violent behavior, you cannot get your hands on a gun. This is what we have to do in order to keep our communities safe and I’m committed to seeing this through here in Maryland.”",
+      "note": "Quote in a governor's office release proclaiming National Gun Violence Awareness Day. He describes the 2023 laws that bar guns from certain places and from people with mental illness and a violent history, and says he is committed to this work.",
+      "subjects": [
+        "gun safety laws in general",
+        "guns in sensitive places",
+        "who may have a gun (mental illness, violent history)"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:07.067Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a8452cc5f3c6e152d814a612606a9fd9f719895346c4670a5124614eb5055d92",
+      "kind": "record",
+      "url": "https://governor.maryland.gov/news/press-releases/governor-moore-proclaims-national-gun-violence-awareness-day-maryland",
+      "date": "2023-06-02",
+      "date_precision": "day",
+      "act": "signed",
+      "motion": "Gun Safety Act of 2023 (limits on carrying a firearm in certain locations from October 1) and a 2023 law on storing firearms and ammunition where an unsupervised child can reach them",
+      "note": "The same release says the governor signed both bills in 2023. One limits where a person may wear, carry or transport a firearm. The other changes the rule on storing firearms and ammunition within reach of an unsupervised child.",
+      "subjects": [
+        "guns in sensitive places",
+        "safe storage around children"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:07.067Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fe56ea36962b7684141a281e72895b9f9d8c71953f90cd07d41d75e0c09c0026",
+      "kind": "record",
+      "url": "https://www.everytown.org/press/victory-for-gun-safety-maryland-becomes-second-state-in-the-nation-to-stop-the-sale-of-diy-machine-guns-as-governor-moore-signs-landmark-legislation/",
+      "date": "2026-05-26",
+      "date_precision": "day",
+      "instrument_id": "MD-SB-334-2026",
+      "act": "signed",
+      "note": "A gun-safety group's release, not an official page, reports that the governor signed SB 334. The bill bars the sale of handguns that can be easily converted to fully automatic fire with illegal switches. The official signing record was not fetched.",
+      "subjects": [
+        "handguns easily converted to automatic fire"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T16:46:07.067Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun safety laws in general",
+        "guns in sensitive places",
+        "who may have a gun (mental illness, violent history)",
+        "safe storage around children",
+        "handguns easily converted to automatic fire"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "the governor's office site: read one press release (2023 proclamation); site search for gun words not run",
+        "sponsor list: covered by bulk bill data",
+        "one web search on name plus gun words (leads only)",
+        "blocked: https://marylandmatters.org/2024/05/16/moore-signs-bills-to-tighten-juvenile-justice-expand-gun-safety-measures/ (bot check)",
+        "blocked: https://marylandmatters.org/2023/05/16/moore-signs-gun-bills-measures-that-bolster-responsibilities-of-the-attorney-generals-office/ (403)",
+        "not reviewed: https://ballotpedia.org/Wes_Moore",
+        "not reviewed: the campaign site",
+        "not reviewed: https://governor.maryland.gov/news/press-releases (2023 and 2024 bill-signing releases, 2026 SB 334 release)",
+        "not reviewed: interviews, speeches and debate video"
+      ],
+      "found": 3,
+      "at": "2026-11-18T16:46:07.067Z",
+      "by": "source-collector"
+    }
+  ]
+}

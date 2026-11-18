@@ -1,0 +1,99 @@
+{
+  "id": "MD-SB-948-2017",
+  "scope": "state:md",
+  "title": "SB948 (2017 Regular): Public Safety - Rifles and Shotguns - Secondary Transactions",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0948?ys=2017RS",
+    "https://mgaleg.maryland.gov/2017RS/bills/sb/sb0948f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Will Smith",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc"
+    },
+    {
+      "name": "Ulysses Currie",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Richard S. Madaleno, Jr.",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nathaniel J. McFadden",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Shirley Nathan-Pulliam",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jim Rosapepe",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e"
+    },
+    {
+      "name": "Barbara Robinson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Pat Young",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Guy Guzzone",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f0fafa0e-3dd9-4d50-bc5e-c96315f766d7"
+    },
+    {
+      "name": "Cheryl Kagan",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1"
+    },
+    {
+      "name": "Nancy King",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec"
+    },
+    {
+      "name": "Craig Zucker",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "82145bc2-770a-421e-a2a1-0e79aae5b643"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2017RS/bills/sb/sb0948f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-948-2017.first_reader.pdf",
+      "sha256": "dcb00932cb73a872aecb37cf153f81c4dfd1766fed4c17a64681b257501cbf34"
+    },
+    "note": "first reader: the bill as filed; no enrolled text was read. Section 5–204.1(A) is quoted only up to item (2); more exceptions follow. Subsection letters in (A)-(C), (E)-(G) copied as printed. No passage vote recorded."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–204.1): (B) A PERSON WHO IS NOT A LICENSEE MAY NOT COMPLETE THE TRANSFER OF A RIFLE OR SHOTGUN OTHER THAN A REGULATED FIREARM, AS A TRANSFEREE OR TRANSFEROR, UNLESS THE PERSON IS IN COMPLIANCE WITH THIS SECTION.\nSection 1 (Md. Code Ann., Public Safety § 5–204.1): (C) (1) BEFORE A TRANSFER IS CONDUCTED, THE TRANSFEROR AND TRANSFEREE SHALL MEET JOINTLY WITH A LICENSEE AND REQUEST THAT THE LICENSEE FACILITATE THE TRANSFER.\nSection 1 (Md. Code Ann., Public Safety § 5–204.1): (C)(2)(II) THE LICENSEE SHALL COMPLY WITH ALL FEDERAL AND STATE LAW THAT WOULD APPLY TO THE TRANSFER, INCLUDING ALL BACKGROUND CHECK AND RECORD–KEEPING REQUIREMENTS.\nSection 1 (Md. Code Ann., Public Safety § 5–204.1): (E) (1) THE LICENSEE OR THE TRANSFEROR MAY NOT COMPLETE THE TRANSFER TO THE TRANSFEREE IF THE RESULTS OF THE BACKGROUND CHECK INDICATE THAT THE TRANSFEREE MAY NOT POSSESS THE RIFLE OR SHOTGUN.\nSection 1 (Md. Code Ann., Public Safety § 5–204.1): (A) THIS SECTION DOES NOT APPLY TO A TRANSFER: (1) INVOLVING A LICENSEE OR A FEDERALLY LICENSED GUN MANUFACTURER, DEALER, OR IMPORTER; (2) BETWEEN IMMEDIATE FAMILY MEMBERS;\nSection 1 (Md. Code Ann., Public Safety § 5–204.1): (F) A LICENSEE MAY CHARGE A REASONABLE FEE FOR FACILITATING A TRANSFER UNDER THIS SECTION.\nSection 1 (Md. Code Ann., Public Safety § 5–204.1): (G) (1) EXCEPT AS PROVIDED IN PARAGRAPH (2) OF THIS SUBSECTION, A PERSON WHO VIOLATES THIS SECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 5 YEARS OR A FINE NOT EXCEEDING $10,000 OR BOTH. (2) A PERSON WHO PROVIDES FALSE INFORMATION WHILE CONDUCTING A TRANSACTION UNDER THIS SECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 3 YEARS OR A FINE NOT EXCEEDING $5,000 OR BOTH."
+}

@@ -1,0 +1,123 @@
+{
+  "id": "MD-HB-430-2024",
+  "scope": "state:md",
+  "title": "HB430 (2024 Regular): Firearms - Liability Insurance - Public Wearing and Carrying",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0430?ys=2024RS&search=True",
+    "https://mgaleg.maryland.gov/2024RS/bills/hb/hb0430f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Terri Hill",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f6a237a0-34ff-4a93-b05a-335ec38b6da3"
+    },
+    {
+      "name": "Kris Fair",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "dfb9ae21-4605-4c58-94e8-84b1eb1a30c1"
+    },
+    {
+      "name": "Jessica Feldmark",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fdb9f7d3-93db-4436-bd82-5d7fd853f05e"
+    },
+    {
+      "name": "Linda Foley",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b80a680a-9f79-4d56-994b-00ce24ec7ef3"
+    },
+    {
+      "name": "Michele Guyton",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bb180c23-b965-4bba-a2b9-73febd484d21"
+    },
+    {
+      "name": "Aaron Kaufman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bc703231-6af8-48c6-8ae6-4a93fc60b18f"
+    },
+    {
+      "name": "Mary Lehman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "251a2047-372b-480e-aa09-231f9a5edeca"
+    },
+    {
+      "name": "Robbyn Lewis",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9285f590-79b5-48de-a1c0-a022629e6ebb"
+    },
+    {
+      "name": "Cheryl Pasteur",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b5aee428-9b2e-4c87-9a5c-63d44f58e1d8"
+    },
+    {
+      "name": "Sheila Ruth",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "df1a05a1-2a70-4e40-a0c6-5b3f81632c7e"
+    },
+    {
+      "name": "Karen Simpson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5946ad0c-ddf5-4674-840e-6968105042cd"
+    },
+    {
+      "name": "Deni Taveras",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a92085b6-642a-4cf6-a73e-c985a6fd09fa"
+    },
+    {
+      "name": "Jen Terrasa",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f45e2178-2a05-4974-8af8-379662412060"
+    },
+    {
+      "name": "Jamila Woods",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "916afe40-4061-476f-9a54-b271b32778d2"
+    },
+    {
+      "name": "Chao Wu",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7ced90a8-39dc-447e-ba33-e3af4cd47473"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2024RS/bills/hb/hb0430f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-430-2024.first_reader.pdf",
+      "sha256": "69721de37c1b8b93313c96a3afc9baa1c8617672432a4cb7242ae85217e8c216"
+    },
+    "note": "first reader: bill as filed; no passage vote recorded. The § 5-902(b)(3) exemption (unloaded firearm) is quoted as a fragment; the other exemptions (armed forces, federal officers, signal pistols) are omitted. § 5-903 (relief from disqualification once insured) is not quoted."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-902(a)): (A) A PERSON MAY NOT WEAR OR CARRY A FIREARM UNLESS THE PERSON HAS OBTAINED AND IS COVERED BY LIABILITY INSURANCE ISSUED BY AN INSURER AUTHORIZED TO DO BUSINESS IN THE STATE UNDER THE INSURANCE ARTICLE TO COVER CLAIMS FOR PROPERTY DAMAGE, BODILY INJURY, OR DEATH ARISING FROM AN ACCIDENT RESULTING FROM THE PERSON’S USE OR STORAGE OF A FIREARM OF UP TO $300,000 FOR DAMAGES ARISING FROM THE SAME INCIDENT, IN ADDITION TO INTEREST AND COSTS.\nSection 1 (Md. Code Ann., Public Safety § 5-902(b)): (3) A FIREARM THAT IS UNLOADED;\nSection 1 (Md. Code Ann., Public Safety § 5-902(c)): (C) (1) SUBJECT TO PARAGRAPH (2) OF THIS SUBSECTION AND § 5–903 OF THIS SUBTITLE, A PERSON WHO VIOLATES THIS SECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO LOSS OF THE PERSON’S RIGHT TO POSSESS A REGULATED FIREARM, A RIFLE, AND A SHOTGUN.\nSection 1 (Md. Code Ann., Public Safety § 5-902(e)): (3) THE DISTRICT COURT SHALL SCHEDULE A TRIAL FOR AN ALLEGED VIOLATION OF THIS SECTION TO BE HELD WITHIN 30 CALENDAR DAYS AFTER THE DATE THE CITATION IS ISSUED.\nSection 1 (Md. Code Ann., Public Safety § 5-133(b)): (16) HAS BEEN CONVICTED OF FAILING TO MAINTAIN FIREARM LIABILITY INSURANCE UNDER § 5–902 OF THIS TITLE.\nSection 1 (Md. Code Ann., Public Safety § 5-205(b)): (14) SUBJECT TO § 5–903 OF THIS TITLE, HAS BEEN CONVICTED OF FAILING TO MAINTAIN FIREARM LIABILITY INSURANCE UNDER § 5–902 OF THIS TITLE."
+}

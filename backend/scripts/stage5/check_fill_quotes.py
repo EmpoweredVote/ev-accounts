@@ -41,6 +41,10 @@ def main():
         if not raws: notext += 1; print('NO TEXT', iid); continue
         bills += 1
         plain = lambda r: r.replace('{+', '').replace('+}', '')
+        if (leg.get('fill_quotes') or {}).get('brackets_delete'):
+            # The text prints words deleted from existing law in plain [brackets] (Maryland): a quote of the law after
+            # the bill leaves them out, so compare with a copy that leaves them out too.
+            raws = raws + [re.sub(r'\[(?![-+])[^\[\]]*?\]', '', r, flags=re.S) for r in raws]
         t = ' || '.join(norm(plain(r).replace('[-', '').replace('-]', '')) + ' || ' + norm(plain(re.sub(r'\[-.*?-\]', '', r, flags=re.S))) for r in raws)
         for line in (x.get('operative_text') or '').split('\n'):
             for rx in strips: line = rx.sub(' ', line, count=1)

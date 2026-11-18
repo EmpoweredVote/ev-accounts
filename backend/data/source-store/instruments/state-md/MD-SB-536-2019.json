@@ -1,0 +1,49 @@
+{
+  "id": "MD-SB-536-2019",
+  "scope": "state:md",
+  "title": "SB536 (2019 Regular): Public Safety - Education - Firearm Funding",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0536?ys=2019RS",
+    "https://mgaleg.maryland.gov/2019RS/bills/sb/sb0536f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Clarence Lam",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fc23b939-0dfd-4968-ab19-fc1e7745e997"
+    },
+    {
+      "name": "Douglas J. J. Peters",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Pat Young",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2019RS/bills/sb/sb0536f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-536-2019.first_reader.pdf",
+      "sha256": "d24ab87409fc7ffa8e4b37abde4a5ad29e0d16f3980e98d1163280a05cf48120"
+    },
+    "note": "First reader (as filed)."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Education § 7-117): (B) NOTWITHSTANDING ANY OTHER PROVISION OF LAW, A COUNTY BOARD OR PUBLIC SCHOOL MAY NOT SPEND ANY MONEY FROM ANY SOURCE, INCLUDING FROM LOCAL, STATE, FEDERAL, OR PRIVATE REVENUE SOURCES, TO DIRECTLY OR INDIRECTLY PROVIDE A TEACHER WITH A FIREARM."
+}

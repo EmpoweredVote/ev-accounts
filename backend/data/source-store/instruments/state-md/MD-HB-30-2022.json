@@ -1,0 +1,39 @@
+{
+  "id": "MD-HB-30-2022",
+  "scope": "state:md",
+  "title": "HB30 (2022 Regular): Election Law – Polling Sites – Firearms Prohibitions",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0030?ys=2022RS&search=True",
+    "https://mgaleg.maryland.gov/2022RS/bills/hb/hb0030f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shaneka Henson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2022RS/bills/hb/hb0030f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-30-2022.first_reader.pdf",
+      "sha256": "0cf7f880317898e5c12f0f92ddad88bfa0f92d8e50436a3af3d5a74b46994b06"
+    },
+    "note": "First reader (as filed). Never passed a chamber in the text read. Also adds a residence-transfer exception in § 16-904(c)(2) and changes 'gun' to 'firearm' in § 16-903(a)(3); the emergency clause is not quoted."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Election Law § 16-904(b)): EXCEPT AS PROVIDED IN SUBSECTION (C) OF THIS SECTION AND § 16–903 OF THIS SUBTITLE, A PERSON MAY NOT: (1) CARRY OR DISPLAY A FIREARM ON THE PREMISES OF A PRIVATELY OR PUBLICLY OWNED BUILDING BEING USED AS A POLLING SITE DURING AN ELECTION, INCLUDING IN A PARKING LOT; OR (2) CARRY OR POSSESS A FIREARM WITHIN 100 FEET OF A POLLING SITE DURING AN ELECTION.\nSection 1 (Md. Code Ann., Election Law § 16-904(c)): (1) AN INDIVIDUAL IS NOT IN VIOLATION OF SUBSECTION (B) OF THIS SECTION IF THE INDIVIDUAL IS: (I) A LAW ENFORCEMENT OFFICER IN THE REGULAR COURSE OF THE OFFICER’S DUTY; OR (II) AN OFF–DUTY LAW ENFORCEMENT OFFICER, IF: 1. THE OFFICER IS DISPLAYING THE OFFICER’S BADGE OR CREDENTIAL; AND 2. THE WEAPON CARRIED OR POSSESSED BY THE OFFICER IS CONCEALED.\nSection 1 (Md. Code Ann., Election Law § 16-904(d)): A PERSON WHO VIOLATES THIS SECTION IS SUBJECT TO THE CIVIL PENALTY SPECIFIED UNDER § 16–1002 OF THIS TITLE."
+}

@@ -1,0 +1,73 @@
+{
+  "id": "MD-HB-265-2020",
+  "scope": "state:md",
+  "title": "HB265 (2020 Regular): Handgun Qualification License - Training Requirement - Exemption",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0265?ys=2020RS&search=True",
+    "https://mgaleg.maryland.gov/2020RS/bills/hb/hb0265f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Teresa Reilly",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "547841f2-3476-4e83-9344-0cac984d44e8"
+    },
+    {
+      "name": "Lauren Arikan",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "6a04e5b9-d532-4e80-bbca-6677a35620e5"
+    },
+    {
+      "name": "Mike Griffith",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0c789b27-d50c-4822-95ff-409ecb7db08a"
+    },
+    {
+      "name": "Rick Impallaria",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Johnson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "dbb1c600-c87b-449c-bd3b-1c236287c00f"
+    },
+    {
+      "name": "Mary Ann Lisanti",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Susan McComas",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2020RS/bills/hb/hb0265f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-265-2020.first_reader.pdf",
+      "sha256": "aba53533b2648744fa0804980a2f72afdcbf522b396927faef889e44c93265dd"
+    },
+    "note": "First reader (as filed). Never passed a chamber in the text read. The quote joins the two added items (6) and (7) of subsection (e) to the lead-in; the existing exemptions (1)-(5) and the renumbered item (8) are unchanged law."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-117.1(e)): An applicant for a handgun qualification license is not required to complete a firearms safety training course under subsection (d) of this section if the applicant: IS A QUALIFIED RETIRED LAW ENFORCEMENT OFFICER, AS DEFINED UNDER THE LAW ENFORCEMENT OFFICERS SAFETY ACT, 18 U.S.C. § 926C; IS AN ACTIVE OR RETIRED CORRECTIONAL OFFICER, SHERIFF, OR DEPUTY SHERIFF WHO HAS SUCCESSFULLY COMPLETED AN INITIAL CORRECTIONAL OFFICER, SHERIFF, OR DEPUTY SHERIFF FIREARMS TRAINING COURSE APPROVED BY THE SECRETARY;"
+}

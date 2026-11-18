@@ -1,0 +1,83 @@
+{
+  "id": "MD-HB-1491-2017",
+  "scope": "state:md",
+  "title": "HB1491 (2017 Regular): Public Institutions of Higher Education - Events Held by Conservation Organizations",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1491?ys=2017RS",
+    "https://mgaleg.maryland.gov/2017RS/bills/hb/hb1491f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Johnny Mautz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "34c94aa4-11b7-4594-9c3e-c506f10309f6"
+    },
+    {
+      "name": "Chris Adams",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1eada938-f28c-46b9-bd21-df241656cd2b"
+    },
+    {
+      "name": "Carl Anderton",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kevin Hornberger",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "96a6d696-50fd-4393-a0f6-19e69dc15716"
+    },
+    {
+      "name": "Charles Otto",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jay Jacobs",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "8b43dd9c-26c3-48bb-ac60-d95f8a39349a"
+    },
+    {
+      "name": "Wendell R. Beitzel",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ned Carey",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Susan McComas",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2017RS/bills/hb/hb1491f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1491-2017.first_reader.pdf",
+      "sha256": "0fdbeb6e1bf27f92306a43ba25d6523906ecf54b41b26d9bc0fc1f1732937d64"
+    },
+    "note": "As filed. No vote listed."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Education § 15-121(B)): NOTWITHSTANDING A PROVISION OF LAW, REGULATION, OR POLICY THAT PROHIBITS THE CARRYING OR POSSESSION OF A FIREARM ON THE CAMPUS OF A PUBLIC INSTITUTION OF HIGHER EDUCATION, A CONSERVATION ORGANIZATION MAY HOLD AN EVENT ON THE CAMPUS OF A PUBLIC INSTITUTION OF HIGHER EDUCATION REGARDLESS OF WHETHER MEMBERS OF THE ORGANIZATION CARRY OR POSSESS FIREARMS DURING THE EVENT."
+}

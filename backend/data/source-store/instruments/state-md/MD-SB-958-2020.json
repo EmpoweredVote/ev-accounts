@@ -1,0 +1,55 @@
+{
+  "id": "MD-SB-958-2020",
+  "scope": "state:md",
+  "title": "SB958 (2020 Regular): Criminal Law - Untraceable Firearms",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0958?ys=2020RS&search=True",
+    "https://mgaleg.maryland.gov/2020RS/bills/sb/sb0958f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Susan C. Lee",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sarah Elfreth",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Will Smith",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc"
+    },
+    {
+      "name": "Jeff Waldstreicher",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2020RS/bills/sb/sb0958f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-958-2020.first_reader.pdf",
+      "sha256": "efb824206d25f15dfafa9f6cf026410ef169b990260ad2e38faa5a3f1ee732b8"
+    },
+    "note": "first reader: the bill as filed; no enrolled text was read. 4–604(B)(2) (possession, sale and transfer of unserialed firearms and frame/receiver kits) is not quoted for length. Sections 4–602 and 4–603 are quoted in part. No passage vote recorded."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Criminal Law § 4–602): (C) A PERSON MAY NOT: (1) USE A 3–DIMENSIONAL PRINTER TO MANUFACTURE, CAUSE TO BE MANUFACTURED, ASSEMBLE, OR CONSTRUCT A FIREARM; OR (2) DISTRIBUTE A COMPUTER PROGRAM DESIGNED FOR THE SPECIFIC PURPOSE OF MANUFACTURING, CAUSING TO BE MANUFACTURED, ASSEMBLING, OR CONSTRUCTING A FIREARM USING A 3–DIMENSIONAL PRINTER. (D) A PERSON MAY NOT POSSESS, SELL, OFFER TO SELL, TRANSFER, PURCHASE, OR RECEIVE A FIREARM MANUFACTURED, ASSEMBLED, OR CONSTRUCTED IN VIOLATION OF SUBSECTION (C)(1) OF THIS SECTION. (E) A PERSON WHO VIOLATES THIS SECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 2 YEARS OR A FINE NOT EXCEEDING $5,000 OR BOTH.\nSection 1 (Md. Code Ann., Criminal Law § 4–603): (B) A PERSON MAY NOT: (1) MANUFACTURE, CAUSE TO BE MANUFACTURED, ASSEMBLE, OR CONSTRUCT A COVERT FIREARM OR AN UNDETECTABLE FIREARM; OR (2) POSSESS, SELL, OFFER TO SELL, TRANSFER, PURCHASE, OR RECEIVE A COVERT FIREARM OR AN UNDETECTABLE FIREARM. (C) A PERSON WHO VIOLATES THIS SECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 2 YEARS OR A FINE NOT EXCEEDING $5,000 OR BOTH.\nSection 1 (Md. Code Ann., Criminal Law § 4–604): (B) A PERSON MAY NOT: (1) MANUFACTURE, CAUSE TO BE MANUFACTURED, ASSEMBLE, OR CONSTRUCT A FIREARM THAT IS NOT IMPRINTED WITH A SERIAL NUMBER ISSUED BY A FEDERALLY LICENSED FIREARMS MANUFACTURER OR FEDERALLY LICENSED FIREARMS IMPORTER IN COMPLIANCE WITH ALL FEDERAL LAWS AND REGULATIONS REGULATING THE MANUFACTURE AND IMPORT OF FIREARMS;\nSection 1 (Md. Code Ann., Criminal Law § 4–604): (C) A PERSON WHO VIOLATES THIS SECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 2 YEARS OR A FINE NOT EXCEEDING $5,000 OR BOTH."
+}

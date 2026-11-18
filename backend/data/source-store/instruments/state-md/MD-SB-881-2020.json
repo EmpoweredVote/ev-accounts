@@ -1,0 +1,39 @@
+{
+  "id": "MD-SB-881-2020",
+  "scope": "state:md",
+  "title": "SB881 (2020 Regular): Firearms - Handgun Qualification License - Firearms Safety Training",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0881?ys=2020RS&search=True",
+    "https://mgaleg.maryland.gov/2020RS/bills/sb/sb0881f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jack Bailey",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2020RS/bills/sb/sb0881f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-881-2020.first_reader.pdf",
+      "sha256": "3c4450003ddc372be98a6a7d15d1ef7c83be7e335d9889a06a15bbccf21ca356"
+    },
+    "note": "First reader (as filed), no date in text. No passage vote recorded. Bracketed deletion of item (iii), the firearms orientation component, is not quoted. Item (4) (not prohibited by law from owning a handgun) is unchanged; it is omitted from the quote because it follows the deleted text."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-117.1(d)): Subject to subsections (f) and (g) of this section, the Secretary shall issue a handgun qualification license to a person who the Secretary finds: (1) is at least 21 years old; (2) is a resident of the State; (3) except as provided in subsection (e) of this section, has demonstrated satisfactory completion, within 3 years prior to the submission of the application, of a firearms safety training course approved by the Secretary that includes: (i) a minimum of 4 hours of instruction by a qualified handgun instructor; AND (ii) classroom instruction on: 1. State firearm law; 2. home firearm safety; and 3. handgun mechanisms and operation; and"
+}

@@ -1,0 +1,45 @@
+{
+  "id": "MD-HB-171-2026",
+  "scope": "state:md",
+  "title": "HB171 (2026 Regular): Criminal Law - Drug Trafficking Crime - Definition",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0171?ys=2026RS",
+    "https://mgaleg.maryland.gov/2026RS/bills/hb/hb0171f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "William Valentine",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "cdf746c1-8311-416b-9ad3-2684a83b6992"
+    },
+    {
+      "name": "Gary Simmons",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "69cbeb94-6978-4f3f-b8b7-735f789c6d3c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2026RS/bills/hb/hb0171f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-171-2026.first_reader.pdf",
+      "sha256": "3deb5439e73eb418f8faa7b960c20da265963db659efa05d9092b8ad938d7b37"
+    },
+    "note": "First reader as filed; no vote on record. The firearm offence in § 5-621(b)-(c) (5-year mandatory minimum) is unchanged existing law; the bill only widens the definition it uses. Counted as one subject under the ruling on gun-act crimes."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Criminal Law § 5-621(a)(2)): “Drug trafficking crime” means: (I) a felony or a conspiracy to commit a felony involving the possession, distribution, manufacture, or importation of a controlled dangerous substance under §§ 5–602 through 5–609 and 5–614 of this subtitle; OR (II) A MISDEMEANOR OR A CONSPIRACY TO COMMIT A MISDEMEANOR IN VIOLATION OF § 5–602(B)(1) OR § 5–603(B) OF THIS SUBTITLE."
+}

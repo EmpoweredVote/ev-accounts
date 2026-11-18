@@ -1,0 +1,161 @@
+{
+  "id": "MD-HB-1189-2018",
+  "scope": "state:md",
+  "title": "HB1189 (2018 Regular): Public Safety – Handgun Permits – Protective Order and Peace Order",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1189?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/hb/hb1189f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Deborah C. Rey",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kathy Afzali",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Angela Angel",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Robin Grammer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0608cc7a-72ed-4d24-b966-3eee82075bf1"
+    },
+    {
+      "name": "Susan McComas",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07"
+    },
+    {
+      "name": "Tony McConkey",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Pat McDonough",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mike McKay",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f88cd73d-1970-4da1-9bea-2142a25999a7"
+    },
+    {
+      "name": "Matt Morgan",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c4e4d811-1e14-45fe-9335-7521f1603856"
+    },
+    {
+      "name": "April Rose",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5967c703-2583-466f-a438-c3ac182111d5"
+    },
+    {
+      "name": "Teresa Reilly",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "547841f2-3476-4e83-9344-0cac984d44e8"
+    },
+    {
+      "name": "Barrie Ciliberti",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "00a1eaeb-157c-42f8-a6e5-9a9d02decbe9"
+    },
+    {
+      "name": "Bill Folden",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4a5241b7-8737-4a58-adf2-c5335111d3c4"
+    },
+    {
+      "name": "Barbara Frush",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeff Ghrist",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "eca530ff-628d-417d-a3dc-b858dc7c2376"
+    },
+    {
+      "name": "Nic Kipke",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0e0bdc53-b5a2-4292-aeb7-341a4c5bed08"
+    },
+    {
+      "name": "Susan W. Krebs",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Michael E. Malone",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Johnny Mautz",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "34c94aa4-11b7-4594-9c3e-c506f10309f6"
+    },
+    {
+      "name": "Haven Shoemaker",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kathy Szeliga",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520"
+    },
+    {
+      "name": "David E. Vogt, III",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "William Wivell",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "df6fe96f-7795-4934-9acc-2b9f8f0aa8f7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/hb/hb1189f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1189-2018.first_reader.pdf",
+      "sha256": "8fb9bcc8f33a2c3cb67737ffbb2502015e72f0c00b64b88813cf65d5d2ab36ca"
+    },
+    "note": "first_reader: bill as filed; no vote recorded. The first quote joins separate sub-items; the first alternative is existing law."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-306(a)(6)(ii)): 1. has good and substantial reason to wear, carry, or transport a handgun, such as a finding that the permit is necessary as a reasonable precaution against apprehended danger; OR 2. IS: A. A PERSON ELIGIBLE FOR RELIEF UNDER A CURRENT CIVIL PROTECTIVE ORDER ENTERED UNDER § 4–504.1, § 4–505, OR § 4–506 OF THE FAMILY LAW ARTICLE; B. UNDER THE PROTECTION OF A CURRENT ORDER FOR PROTECTION, AS DEFINED IN § 4–508.1 OF THE FAMILY LAW ARTICLE, THAT HAS BEEN ISSUED BY A COURT OF ANOTHER STATE OR A NATIVE AMERICAN TRIBE; OR C. A PETITIONER UNDER A CURRENT PEACE ORDER ENTERED UNDER TITLE 3, SUBTITLE 15 OF THE COURTS ARTICLE.\nSection 1 (Md. Code Ann., Public Safety § 5-306(e)): THE SECRETARY SHALL ISSUE A PERMIT FOR AN APPLICANT SPECIFIED IN SUBSECTION (A)(6)(II)2 OF THIS SECTION WITHIN 10 CALENDAR DAYS AFTER RECEIPT OF THE APPLICATION.\nSection 1 (Md. Code Ann., Public Safety § 5-309(e)): A PERMIT ISSUED TO AN APPLICANT SPECIFIED IN § 5–306(A)(6)(II)2 OF THIS SUBTITLE EXPIRES 5 YEARS AFTER ISSUANCE.\nSection 1 (Md. Code Ann., Public Safety § 5-312(b)(2)): WITHIN 10 CALENDAR DAYS AFTER RECEIVING A REQUEST FROM AN APPLICANT SPECIFIED IN § 5–306(A)(6)(II)2 OF THIS SUBTITLE TO REVIEW A DECISION OF THE SECRETARY, THE BOARD SHALL: (I) REVIEW THE RECORD DEVELOPED BY THE SECRETARY; OR (II) CONDUCT A HEARING.\nSection 1 (Md. Code Ann., Public Safety § 5-312(e)): IN THE CASE OF A REQUEST FROM AN APPLICANT SPECIFIED IN § 5–306(A)(6)(II)2 OF THIS SUBTITLE TO REVIEW A DECISION OF THE SECRETARY, THE BOARD SHALL SUSTAIN, REVERSE, OR MODIFY THE DECISION OF THE SECRETARY WITHIN 5 CALENDAR DAYS AFTER REVIEWING THE RECORD OR CONDUCTING A HEARING."
+}

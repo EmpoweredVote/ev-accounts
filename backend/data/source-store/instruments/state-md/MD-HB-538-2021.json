@@ -1,0 +1,39 @@
+{
+  "id": "MD-HB-538-2021",
+  "scope": "state:md",
+  "title": "HB538 (2021 Regular): Handgun Permits – Qualifications – High–Risk Occupations",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0538?ys=2021RS&search=True",
+    "https://mgaleg.maryland.gov/2021RS/bills/hb/hb0538f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Wayne Hartman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1ff2bb96-0e55-4893-8a4c-b675dfbb79f6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2021RS/bills/hb/hb0538f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-538-2021.first_reader.pdf",
+      "sha256": "b0cbc0feabbb894f468829e3f59ed87b5167f81255683057a50b902576357938"
+    },
+    "note": "first reader: bill as filed; no passage vote recorded."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-306(a)): (a) Subject to subsection (c) of this section, the Secretary shall issue a permit within a reasonable time to a person who the Secretary finds: ... (6) based on an investigation: ... (ii) 1. has good and substantial reason to wear, carry, or transport a handgun, such as a finding that the permit is necessary as a reasonable precaution against apprehended danger; OR 2. IS EMPLOYED AS: A. A CORRECTIONAL OFFICER; B. A PAROLE AND PROBATION OFFICER; C. A FIREFIGHTER; D. AN EMERGENCY MEDICAL TECHNICIAN; E. A RESCUE SQUAD MEMBER; F. A SECURITY GUARD FOR A CHURCH OR RELIGIOUS ORGANIZATION; G. A PHYSICIAN; H. A PHYSICIAN’S ASSISTANT; I. A NURSE; OR J. A NURSE PRACTITIONER."
+}

@@ -1,0 +1,45 @@
+{
+  "id": "MD-HB-756-2023",
+  "scope": "state:md",
+  "title": "HB756 (2023 Regular): Public Safety – Handgun Permits – Expunged Conviction",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0756?ys=2023RS&search=True",
+    "https://mgaleg.maryland.gov/2023RS/bills/hb/hb0756f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Robin Grammer",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0608cc7a-72ed-4d24-b966-3eee82075bf1"
+    },
+    {
+      "name": "Chris Tomlinson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "6e5ac4b7-73fd-497d-a4e9-7d5124c3d904"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2023RS/bills/hb/hb0756f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-756-2023.first_reader.pdf",
+      "sha256": "05281669ccf224ac5667c125436733157ea346a184768dbfcc7a412cbfcae51d"
+    },
+    "note": "First reader (as filed); no enrolled text read."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-306(a)(2)(ii)): if convicted of a crime described in item (i) of this item, has been pardoned, granted relief under 18 U.S.C. § 925(c), OR GRANTED A PETITION FOR EXPUNGEMENT OF THE CONVICTION UNDER TITLE 10, SUBTITLE 1 OF THE CRIMINAL PROCEDURE ARTICLE;\nSection 1 (Md. Code Ann., Public Safety § 5-306(a)(3)): (I) has not been convicted of a crime involving the possession, use, or distribution of a controlled dangerous substance; OR (II) IF CONVICTED OF A CRIME DESCRIBED IN ITEM (I) OF THIS ITEM, HAS BEEN GRANTED A PETITION FOR EXPUNGEMENT OF THE CONVICTION UNDER TITLE 10, SUBTITLE 1 OF THE CRIMINAL PROCEDURE ARTICLE;"
+}

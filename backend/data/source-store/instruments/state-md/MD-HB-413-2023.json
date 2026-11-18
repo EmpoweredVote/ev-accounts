@@ -1,0 +1,62 @@
+{
+  "id": "MD-HB-413-2023",
+  "scope": "state:md",
+  "title": "HB413 (2023 Regular): Firearms - Right to Purchase, Possess, and Carry",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0413?ys=2023RS&search=True",
+    "https://mgaleg.maryland.gov/2023RS/bills/hb/hb0413f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Robin Grammer",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0608cc7a-72ed-4d24-b966-3eee82075bf1"
+    },
+    {
+      "name": "Carl Anderton",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lauren Arikan",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "6a04e5b9-d532-4e80-bbca-6677a35620e5"
+    },
+    {
+      "name": "Christopher Bouchat",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c12bb600-318a-4541-bcdd-8260f1ba172e"
+    },
+    {
+      "name": "Kevin Hornberger",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "96a6d696-50fd-4393-a0f6-19e69dc15716"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2023RS/bills/hb/hb0413f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-413-2023.first_reader.pdf",
+      "sha256": "a753e4407be510aeb1421f137c0b2fe61462ca39ea19b94447e113c33337dd9c"
+    },
+    "note": "first reader: bill as filed; no later version or vote was read."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–901): A PERSON MAY NOT BE DENIED THE RIGHT TO PURCHASE, POSSESS, OR CARRY A FIREARM UNDER THIS TITLE SOLELY ON THE BASIS THAT THE PERSON IS AUTHORIZED TO USE MEDICAL CANNABIS UNDER TITLE 13, SUBTITLE 33 OF THE HEALTH – GENERAL ARTICLE."
+}

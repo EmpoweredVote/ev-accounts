@@ -1,0 +1,258 @@
+{
+  "id": "MD-HB-316-2024",
+  "scope": "state:md",
+  "title": "HB316 (2024 Regular): Crimes and Corrections - Penalties and Procedures (Violent Firearms Offender Act of 2024)",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0316?ys=2024RS&search=True",
+    "https://mgaleg.maryland.gov/2024RS/bills/hb/hb0316f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "William Valentine",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "cdf746c1-8311-416b-9ad3-2684a83b6992"
+    },
+    {
+      "name": "Chris Adams",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1eada938-f28c-46b9-bd21-df241656cd2b"
+    },
+    {
+      "name": "Anderton",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Arentz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fee8a413-a3a8-4568-ad9b-db00f94f5ac2"
+    },
+    {
+      "name": "Terry Baker",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d049cf3e-6577-4f8d-ba7e-768ac2b78d66"
+    },
+    {
+      "name": "Christopher Bouchat",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c12bb600-318a-4541-bcdd-8260f1ba172e"
+    },
+    {
+      "name": "Jason Buckel",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5260bd6f-e70a-46f1-aa7d-49eaf22192cf"
+    },
+    {
+      "name": "Brian Chisholm",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "cfc704da-dd6c-40b0-97fa-0c5ece8d3976"
+    },
+    {
+      "name": "Barrie Ciliberti",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "00a1eaeb-157c-42f8-a6e5-9a9d02decbe9"
+    },
+    {
+      "name": "Mark Fisher",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "71542618-59c8-4b06-a765-e3df60cca763"
+    },
+    {
+      "name": "Jeff Ghrist",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "eca530ff-628d-417d-a3dc-b858dc7c2376"
+    },
+    {
+      "name": "Robin Grammer",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0608cc7a-72ed-4d24-b966-3eee82075bf1"
+    },
+    {
+      "name": "Mike Griffith",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0c789b27-d50c-4822-95ff-409ecb7db08a"
+    },
+    {
+      "name": "Wayne Hartman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1ff2bb96-0e55-4893-8a4c-b675dfbb79f6"
+    },
+    {
+      "name": "Jim Hinebaugh",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3817ad52-3f43-4bd3-8525-e7dcd0816153"
+    },
+    {
+      "name": "Kevin Hornberger",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "96a6d696-50fd-4393-a0f6-19e69dc15716"
+    },
+    {
+      "name": "Seth Howard",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2fe3f655-c28e-40c3-a2f9-48ea9eb8b498"
+    },
+    {
+      "name": "Tom Hutchinson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fb1fe811-b340-42d3-88ee-97b5364117cd"
+    },
+    {
+      "name": "Jay Jacobs",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8b43dd9c-26c3-48bb-ac60-d95f8a39349a"
+    },
+    {
+      "name": "Nic Kipke",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0e0bdc53-b5a2-4292-aeb7-341a4c5bed08"
+    },
+    {
+      "name": "R. Long",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nino Mangione",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Susan McComas",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07"
+    },
+    {
+      "name": "Ric Metzgar",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ba85b633-32cf-4617-923c-3a325f39894e"
+    },
+    {
+      "name": "April Miller",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b389687f-817b-4fda-8770-a888029f4629"
+    },
+    {
+      "name": "Matt Morgan",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c4e4d811-1e14-45fe-9335-7521f1603856"
+    },
+    {
+      "name": "Todd Morgan",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7d79931f-101c-415b-a6a0-b7a919f70905"
+    },
+    {
+      "name": "Rachel Muñoz",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ryan Nawrocki",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f5224e0c-0761-4ca7-a889-ed44517e2b91"
+    },
+    {
+      "name": "Charles Otto",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jesse Pippy",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ce2fc441-abd5-4d8f-9c56-114e31c4d43c"
+    },
+    {
+      "name": "Teresa Reilly",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "547841f2-3476-4e83-9344-0cac984d44e8"
+    },
+    {
+      "name": "April Rose",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5967c703-2583-466f-a438-c3ac182111d5"
+    },
+    {
+      "name": "Stuart Schmidt",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "55d9d0b6-78a3-460b-97b9-87913ffc8e85"
+    },
+    {
+      "name": "Josh Stonko",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "656a8bc9-348e-4ffc-819c-2f4611b3ddc8"
+    },
+    {
+      "name": "Kathy Szeliga",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520"
+    },
+    {
+      "name": "Chris Tomlinson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "6e5ac4b7-73fd-497d-a4e9-7d5124c3d904"
+    },
+    {
+      "name": "William Wivell",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "df6fe96f-7795-4934-9acc-2b9f8f0aa8f7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "judicial-criminal-justice: Section 2 (Correctional Services § 9-609.2) — reentry kit and Medicaid help for people leaving state prison"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2024RS/bills/hb/hb0316f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-316-2024.first_reader.pdf",
+      "sha256": "4a5bb69dbbd687d029f5b8ef25501d0396e465d36cff1768fd3b9009f75ee377"
+    },
+    "note": "First reader (as filed, January 15, 2024); no enrolled text was read. Section 1 only renumbers Public Safety § 5-134(c) and (d). Section 2 also adds Correctional Services § 9-609.2 (reentry kit), not quoted because it is not a gun part. In § 4-306(b) and § 5-133(b) the bracketed old numbering and words were left out of the quotes. No passage vote is recorded."
+  },
+  "operative_text": "Section 2 (Md. Code Ann., Correctional Services § 6-101(m)): “Technical violation” means a violation of a condition of probation, parole, or mandatory supervision that does not involve: ... (4) absconding; OR (5) USE OR POSSESSION OF A FIREARM.\nSection 2 (Md. Code Ann., Criminal Law § 4-204): “USE A FIREARM” DOES NOT INCLUDE THE MERE POSSESSION OF A FIREARM. ... A person who violates this section is guilty of a FELONY and, in addition to any other penalty imposed for the crime of violence or felony, shall be sentenced to imprisonment for not less than 5 years and not exceeding 20 years.\nSection 2 (Md. Code Ann., Criminal Law § 4-306(b)): A person who uses an assault weapon, a rapid fire trigger activator, or a magazine that has a capacity of more than 10 rounds of ammunition, in the commission of a felony or a crime of violence as defined in § 5–101 of the Public Safety Article is guilty of a FELONY and on conviction, in addition to any other sentence imposed for the felony or crime of violence, shall be sentenced under this subsection.\nSection 2 (Md. Code Ann., Criminal Law § 4-404): A person may not use or possess a machine gun in the commission or attempted commission of a FELONY OR crime of violence.\nSection 2 (Md. Code Ann., Criminal Law § 14-101(a)): use of a firearm in the commission of a felony or other crime of violence;\nSection 2 (Md. Code Ann., Public Safety § 5-133(b)(2)): EXCEPT AS PROVIDED IN SUBSECTION (C) OF THIS SECTION, A PERSON WHO VIOLATES THIS SUBSECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO: 1. EXCEPT AS PROVIDED IN ITEM 2 OF THIS SUBPARAGRAPH, IMPRISONMENT NOT EXCEEDING 5 YEARS OR A FINE NOT EXCEEDING $10,000 OR BOTH; AND 2. SUBJECT TO PARAGRAPH (3) OF THIS SUBSECTION, FOR A SECOND OR SUBSEQUENT OFFENSE, IMPRISONMENT NOT EXCEEDING 10 YEARS OR A FINE NOT EXCEEDING $10,000 OR BOTH.\nSection 2 (Md. Code Ann., Public Safety § 5-134(c)): A DEALER OR OTHER PERSON MAY NOT SELL, RENT, LOAN, OR TRANSFER A REGULATED FIREARM TO A PURCHASER, LESSEE, BORROWER, OR TRANSFEREE IF THE DEALER OR OTHER PERSON HAS ACTUAL KNOWLEDGE THAT THE PURCHASER, LESSEE, BORROWER, OR TRANSFEREE INTENDS TO USE THE REGULATED FIREARM TO: (I) COMMIT A CRIME; OR (II) CAUSE HARM TO THE PURCHASER, LESSEE, TRANSFEREE, OR RECIPIENT OR ANOTHER PERSON. ... A PERSON WHO VIOLATES THIS SUBSECTION IS GUILTY OF A FELONY AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 10 YEARS."
+}

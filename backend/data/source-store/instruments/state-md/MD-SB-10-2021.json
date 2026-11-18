@@ -1,0 +1,276 @@
+{
+  "id": "MD-SB-10-2021",
+  "scope": "state:md",
+  "title": "SB10 (2021 Regular): Election Law – Polling Sites – Firearms Prohibitions",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0010?ys=2021RS&search=True",
+    "https://mgaleg.maryland.gov/2021RS/bills/sb/sb0010t.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Jeff Waldstreicher",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570"
+    },
+    {
+      "name": "Bill Ferguson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "6e3c30f5-52be-48b0-b5b4-383e5d745c57"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2021-03-11",
+      "body": "MD Senate",
+      "motion": "Senate Third Reading Passed",
+      "kind": "roll-call",
+      "yes": 33,
+      "no": 13,
+      "absent": 1,
+      "note": "mgaleg.maryland.gov vote file (read from the legislature) 90202509 https://mgaleg.maryland.gov/2021RS/votes/senate/0385.pdf#SB10",
+      "members": [
+        {
+          "name": "Mr. President",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Feldman",
+          "vote": "yea",
+          "politician_id": "d423151e-8477-470d-8f73-ba7d2092f714"
+        },
+        {
+          "name": "Cheryl Kagan",
+          "vote": "yea",
+          "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1"
+        },
+        {
+          "name": "Obie Patterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Charles Sydnor",
+          "vote": "yea",
+          "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344"
+        },
+        {
+          "name": "Malcolm Augustine",
+          "vote": "yea",
+          "politician_id": "9d191d69-084f-4941-bc0a-c59d336f032e"
+        },
+        {
+          "name": "Melony G. Griffith",
+          "vote": "yea"
+        },
+        {
+          "name": "Delores G. Kelley",
+          "vote": "yea"
+        },
+        {
+          "name": "Douglas J. J. Peters",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Waldstreicher",
+          "vote": "yea",
+          "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570"
+        },
+        {
+          "name": "Pam Beidle",
+          "vote": "yea",
+          "politician_id": "409ad653-a4fc-41d0-bb61-a933c5bc45c7"
+        },
+        {
+          "name": "Guy Guzzone",
+          "vote": "yea",
+          "politician_id": "f0fafa0e-3dd9-4d50-bc5e-c96315f766d7"
+        },
+        {
+          "name": "Nancy King",
+          "vote": "yea",
+          "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec"
+        },
+        {
+          "name": "Paul G. Pinsky",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Washington",
+          "vote": "yea",
+          "politician_id": "38404814-7be0-40e3-b044-062f98b2a5b0"
+        },
+        {
+          "name": "Joanne Benson",
+          "vote": "yea",
+          "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029"
+        },
+        {
+          "name": "Antonio Hayes",
+          "vote": "yea",
+          "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96"
+        },
+        {
+          "name": "Ben Kramer",
+          "vote": "yea",
+          "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33"
+        },
+        {
+          "name": "Edward R. Reilly",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris West",
+          "vote": "yea",
+          "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae"
+        },
+        {
+          "name": "Jill Carter",
+          "vote": "yea"
+        },
+        {
+          "name": "Katie Hester",
+          "vote": "yea",
+          "politician_id": "6da20195-1b0c-43f2-b1b3-7a3954326fe6"
+        },
+        {
+          "name": "Clarence Lam",
+          "vote": "yea",
+          "politician_id": "fc23b939-0dfd-4968-ab19-fc1e7745e997"
+        },
+        {
+          "name": "Jim Rosapepe",
+          "vote": "yea",
+          "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e"
+        },
+        {
+          "name": "Ronald N. Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Sarah Elfreth",
+          "vote": "yea"
+        },
+        {
+          "name": "Shelly Hettleman",
+          "vote": "yea",
+          "politician_id": "3089c813-f0a8-46af-9a7b-1699129037e9"
+        },
+        {
+          "name": "Susan C. Lee",
+          "vote": "yea"
+        },
+        {
+          "name": "Will Smith",
+          "vote": "yea",
+          "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc"
+        },
+        {
+          "name": "Craig Zucker",
+          "vote": "yea",
+          "politician_id": "82145bc2-770a-421e-a2a1-0e79aae5b643"
+        },
+        {
+          "name": "Arthur Ellis",
+          "vote": "yea",
+          "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7"
+        },
+        {
+          "name": "Michael Jackson",
+          "vote": "yea"
+        },
+        {
+          "name": "Cory McCray",
+          "vote": "yea",
+          "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd"
+        },
+        {
+          "name": "Jack Bailey",
+          "vote": "nay",
+          "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f"
+        },
+        {
+          "name": "Paul Corderman",
+          "vote": "nay",
+          "politician_id": "5127f8d8-ca40-40aa-8773-4c1abad66f41"
+        },
+        {
+          "name": "Jason Gallion",
+          "vote": "nay",
+          "politician_id": "e2ca1bfd-255d-417b-a9d7-424e6c10749d"
+        },
+        {
+          "name": "Kathy Klausmeier",
+          "vote": "nay"
+        },
+        {
+          "name": "Johnny Salling",
+          "vote": "nay",
+          "politician_id": "9f8d0005-c5ff-42f8-b158-cdb6e4eee872"
+        },
+        {
+          "name": "Mary Beth Carozza",
+          "vote": "nay",
+          "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9"
+        },
+        {
+          "name": "Adelaide C. Eckardt",
+          "vote": "nay"
+        },
+        {
+          "name": "Steve Hershey",
+          "vote": "nay",
+          "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0"
+        },
+        {
+          "name": "Justin Ready",
+          "vote": "nay",
+          "politician_id": "493c5d0c-1986-40d4-9fff-3a3bc3fe62e8"
+        },
+        {
+          "name": "Bryan Simonaire",
+          "vote": "nay",
+          "politician_id": "4aa50ee7-aeed-48ae-96e7-142bd9ac731b"
+        },
+        {
+          "name": "Robert Cassilly",
+          "vote": "nay"
+        },
+        {
+          "name": "George C. Edwards",
+          "vote": "nay"
+        },
+        {
+          "name": "Michael J. Hough",
+          "vote": "nay"
+        },
+        {
+          "name": "J.B. Jennings",
+          "vote": "absent",
+          "politician_id": "5927d5ab-2fd7-4454-bcc3-34e494821aac"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (Third Reader; official copy, https://mgaleg.maryland.gov/2021RS/bills/sb/sb0010t.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-10-2021.third_reader.pdf",
+      "sha256": "d3a626ff345fd9c9022c688f1cea6ffd2548c80a2c9b65f261a0645a3db56d75"
+    },
+    "note": "third reader: as passed by its first chamber. Amendments made after the version read are not in the text read. Floor amendment replaced a single exception with several: law enforcement officers, and a resident lawfully moving a firearm to their residence or vehicle within 100 feet. Struck numbering is re-lettered in the text. § 16–903 swaps 'gun' for 'FIREARM' (word change only). Passed Senate 33-13."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Election Law § 16–904): EXCEPT AS PROVIDED IN SUBSECTION (C) OF THIS SECTION AND § 16–903 OF THIS SUBTITLE, A PERSON MAY NOT: (1) CARRY OR DISPLAY A FIREARM ON THE PREMISES OF A PRIVATELY OR PUBLICLY OWNED BUILDING BEING USED AS A POLLING SITE DURING AN ELECTION, INCLUDING IN A PARKING LOT; OR (2) CARRY OR POSSESS A FIREARM WITHIN 100 FEET OF A POLLING SITE DURING AN ELECTION. A PERSON WHO VIOLATES THIS SECTION IS SUBJECT TO THE CIVIL PENALTY SPECIFIED UNDER § 16–1002 OF THIS TITLE.\nSection 1 (Md. Code Ann., Election Law § 16–904(C)): AN INDIVIDUAL IS NOT IN VIOLATION OF SUBSECTION (B) OF THIS SECTION IF THE INDIVIDUAL IS: (I) A LAW ENFORCEMENT OFFICER IN THE REGULAR COURSE OF THE OFFICER’S DUTY; OR (II) AN OFF–DUTY LAW ENFORCEMENT OFFICER, IF: 1. THE OFFICER IS DISPLAYING THE OFFICER’S BADGE OR CREDENTIAL; AND 2. THE WEAPON CARRIED OR POSSESSED BY THE OFFICER IS CONCEALED."
+}

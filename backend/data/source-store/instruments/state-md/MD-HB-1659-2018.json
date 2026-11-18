@@ -1,0 +1,72 @@
+{
+  "id": "MD-HB-1659-2018",
+  "scope": "state:md",
+  "title": "HB1659 (2018 Regular): Public Safety - Rifles and Shotguns - Purchases",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1659?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/hb/hb1659f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Charles Otto",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Chris Adams",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1eada938-f28c-46b9-bd21-df241656cd2b"
+    },
+    {
+      "name": "Carl Anderton",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jay Jacobs",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "8b43dd9c-26c3-48bb-ac60-d95f8a39349a"
+    },
+    {
+      "name": "Wendell R. Beitzel",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mary Beth Carozza",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9"
+    },
+    {
+      "name": "Jeff Ghrist",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "eca530ff-628d-417d-a3dc-b858dc7c2376"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/hb/hb1659f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1659-2018.first_reader.pdf",
+      "sha256": "73c287e3c7c0f90e66b999049b1d459727b1e4ee435530d41ebf485cfd39cd17"
+    },
+    "note": "First reader as filed; no vote on record. Bracketed words ('adjacent' and the definition) are deleted from existing law and left out of the quote; the quote shows the law as the bill would leave it."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-204(a)): If a resident of this State is eligible to purchase a rifle or shotgun under the laws of ANOTHER state, the resident may purchase a rifle or shotgun from a federally licensed gun dealer in the OTHER state.\nSection 1 (Md. Code Ann., Public Safety § 5-204(B)): If a resident of ANOTHER state is eligible to purchase a rifle or shotgun under the laws of this State, the resident may purchase a rifle or shotgun from a federally licensed gun dealer in this State."
+}

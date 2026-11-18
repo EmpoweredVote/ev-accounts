@@ -1,0 +1,72 @@
+{
+  "id": "MD-HB-1337-2018",
+  "scope": "state:md",
+  "title": "HB1337 (2018 Regular): Public Safety - Handgun Permits - Active, Reserve, or Retired Military",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1337?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/hb/hb1337f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "April Rose",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5967c703-2583-466f-a438-c3ac182111d5"
+    },
+    {
+      "name": "Jason Buckel",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5260bd6f-e70a-46f1-aa7d-49eaf22192cf"
+    },
+    {
+      "name": "Matt Morgan",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c4e4d811-1e14-45fe-9335-7521f1603856"
+    },
+    {
+      "name": "Wendell R. Beitzel",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeff Ghrist",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "eca530ff-628d-417d-a3dc-b858dc7c2376"
+    },
+    {
+      "name": "Susan W. Krebs",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Haven Shoemaker",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/hb/hb1337f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1337-2018.first_reader.pdf",
+      "sha256": "fa0ccc7c98fc35744407c5ddf9835223fdd062695a2d464512951e945b48ed71"
+    },
+    "note": "First reader (as filed); no passage vote recorded."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–306(e)): (E) IF AN APPLICANT IS AN ACTIVE, RESERVE, OR RETIRED MEMBER OF THE ARMED FORCES OF THE UNITED STATES OR THE NATIONAL GUARD, THE APPLICANT IS PRESUMED TO HAVE A GOOD AND SUBSTANTIAL REASON TO WEAR, CARRY, OR TRANSPORT A HANDGUN."
+}

@@ -1,0 +1,61 @@
+{
+  "id": "MD-HB-402-2018",
+  "scope": "state:md",
+  "title": "HB402 (2018 Regular): Public Safety – Firearms Disqualifications – Antique Firearm\\r (Shadé’s Law)",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0402?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/hb/hb0402f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Aruna Miller",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ea9fc2d6-3b26-469a-978c-e8c846d2d49a"
+    },
+    {
+      "name": "Marc Korman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e76d0654-b0c6-43dc-9159-e929e480d070"
+    },
+    {
+      "name": "Marice Morales",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kathleen M. Dumais",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "David Fraser-Hidalgo",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ab8aa19a-42c3-445e-9632-a5c7f05458ee"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/hb/hb0402f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-402-2018.first_reader.pdf",
+      "sha256": "ca473da4718ed7190e2c94de9ceca855212f4e0e5aaa16edb3dbdbe75bee46c6"
+    },
+    "note": "First reader (as filed, January 24, 2018; \"Shadé’s Law\"); no enrolled text was read. The bill deletes the old § 5-205(a), which said the subtitle does not apply to antique rifles or shotguns, and adds a new (A) defining \"antique firearm\". No passage vote is recorded."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-205(a)): IN THIS SECTION, “ANTIQUE FIREARM” HAS THE MEANING STATED IN § 4–201 OF THE CRIMINAL LAW ARTICLE.\nSection 1 (Md. Code Ann., Public Safety § 5-205(b)): A person may not possess a rifle, A shotgun, OR AN ANTIQUE FIREARM if the person:\nSection 1 (Md. Code Ann., Public Safety § 5-205(d)): A person who violates this section is guilty of a misdemeanor and on conviction is subject to imprisonment not exceeding 3 years or a fine not exceeding $1,000 or both.\nSection 1 (Md. Code Ann., Public Safety § 5-205(e)): A person who is disqualified from owning a rifle, A shotgun, OR AN ANTIQUE FIREARM under subsection (b)(6), (7), (8), (9), (10), or (11) of this section may seek relief from the disqualification in accordance with § 5–133.3 of this title.\nSection 1 (Md. Code Ann., Public Safety § 5-133.3(b)): A person subject to a regulated firearms disqualification under § 5–133(b)(6), (7), (8), (9), (10), or (11) of this subtitle, a rifle, A shotgun, OR AN ANTIQUE FIREARM disqualification under § 5–205(b)(6), (7), (8), (9), (10), or (11) of this title, or prohibited from the shipment, transportation, possession, or receipt of a firearm by 18 U.S.C. §§ 922(d)(4) or (g)(4) as a result of an adjudication or commitment that occurred in the State may be authorized to possess a firearm if:"
+}

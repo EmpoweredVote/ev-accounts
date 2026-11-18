@@ -1,0 +1,39 @@
+{
+  "id": "MD-HB-638-2021",
+  "scope": "state:md",
+  "title": "HB638 (2021 Regular): Public Safety - Untraceable and Undetectable Firearms",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0638?ys=2021RS&search=True",
+    "https://mgaleg.maryland.gov/2021RS/bills/hb/hb0638f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lesley Lopez",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2fa68ca4-00b5-4518-a692-d12447d7fec3"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2021RS/bills/hb/hb0638f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-638-2021.first_reader.pdf",
+      "sha256": "804df25ed6b23449ec2106e261bc66d469f097cf47308662cbedb53e74e731cd"
+    },
+    "note": "First reader (as filed); no enrolled text read. Section 2 (§ 5-117.1) takes effect January 1, 2022; the rest October 1, 2021."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-704(C)(5): ON OR AFTER JANUARY 1, 2022, EXCEPT AS PROVIDED IN § 5–703 OF THIS SUBTITLE: A PERSON MAY NOT POSSESS A FIREARM OR AN UNFINISHED FRAME OR RECEIVER THAT HAS NOT BEEN MARKED IN ACCORDANCE WITH SUBSECTIONS (A) AND (B) OF THIS SECTION.\nSection 1 (Md. Code Ann., Public Safety § 5-704(C)(3)): A FEDERALLY LICENSED FIREARMS DEALER MAY NOT SELL, OFFER TO SELL, OR TRANSFER A FIREARM OR AN UNFINISHED FRAME OR RECEIVER THAT HAS NOT BEEN MARKED IN ACCORDANCE WITH SUBSECTIONS (A) AND (B) OF THIS SECTION;\nSection 1 (Md. Code Ann., Public Safety § 5-705(B)): A PERSON MAY NOT KNOWINGLY CONSPIRE, FACILITATE, AID, OR ABET THE MANUFACTURING OR ASSEMBLING OF A FIREARM OR AN UNFINISHED FRAME OR RECEIVER FOR A PERSON WHO IS PROHIBITED BY LAW FROM MANUFACTURING, ASSEMBLING, OWNING, OR POSSESSING A FIREARM.\nSection 1 (Md. Code Ann., Public Safety § 5-706(B)): A PERSON MAY NOT: (1) MANUFACTURE OR ASSEMBLE A COVERT FIREARM OR AN UNDETECTABLE FIREARM; OR (2) POSSESS, SELL, OFFER TO SELL, TRANSFER, PURCHASE, OR RECEIVE A COVERT FIREARM OR AN UNDETECTABLE FIREARM.\nSection 1 (Md. Code Ann., Public Safety § 5-707(A)): EXCEPT AS PROVIDED IN § 5–705 OF THIS SUBTITLE AND SUBSECTION (B) OF THIS SECTION, A PERSON WHO VIOLATES THIS SUBTITLE: (1) FOR A FIRST VIOLATION, IS GUILTY OF A CIVIL OFFENSE AND ON CONVICTION SHALL BE FINED NOT LESS THAN $1,000 BUT NOT EXCEEDING $2,500; AND (2) FOR A SUBSEQUENT VIOLATION, IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 2 YEARS OR A FINE NOT EXCEEDING $5,000, OR BOTH.\nSection 2 (Md. Code Ann., Public Safety § 5-117.1(C)): A dealer or any other person may not sell, rent, or transfer a handgun OR AN UNFINISHED FRAME OR RECEIVER to a purchaser, lessee, or transferee unless the purchaser, lessee, or transferee presents to the dealer or other person a valid handgun qualification license issued to the purchaser, lessee, or transferee by the Secretary under this section."
+}

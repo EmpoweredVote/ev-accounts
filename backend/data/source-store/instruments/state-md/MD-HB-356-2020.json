@@ -1,0 +1,247 @@
+{
+  "id": "MD-HB-356-2020",
+  "scope": "state:md",
+  "title": "HB356 (2020 Regular): Crimes - Firearms - Penalties and Procedures (Violent Firearms Offender Act of 2020)",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0356?ys=2020RS&search=True",
+    "https://mgaleg.maryland.gov/2020RS/bills/hb/hb0356f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Speaker",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Administration",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Chris Adams",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1eada938-f28c-46b9-bd21-df241656cd2b"
+    },
+    {
+      "name": "Carl Anderton",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Arentz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fee8a413-a3a8-4568-ad9b-db00f94f5ac2"
+    },
+    {
+      "name": "Lauren Arikan",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "6a04e5b9-d532-4e80-bbca-6677a35620e5"
+    },
+    {
+      "name": "Wendell R. Beitzel",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jason Buckel",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5260bd6f-e70a-46f1-aa7d-49eaf22192cf"
+    },
+    {
+      "name": "Brian Chisholm",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "cfc704da-dd6c-40b0-97fa-0c5ece8d3976"
+    },
+    {
+      "name": "Barrie Ciliberti",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "00a1eaeb-157c-42f8-a6e5-9a9d02decbe9"
+    },
+    {
+      "name": "Jerry Clark",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Paul Corderman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5127f8d8-ca40-40aa-8773-4c1abad66f41"
+    },
+    {
+      "name": "Daniel L. Cox",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Mark Fisher",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "71542618-59c8-4b06-a765-e3df60cca763"
+    },
+    {
+      "name": "Jeff Ghrist",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "eca530ff-628d-417d-a3dc-b858dc7c2376"
+    },
+    {
+      "name": "Robin Grammer",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0608cc7a-72ed-4d24-b966-3eee82075bf1"
+    },
+    {
+      "name": "Mike Griffith",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0c789b27-d50c-4822-95ff-409ecb7db08a"
+    },
+    {
+      "name": "Wayne Hartman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1ff2bb96-0e55-4893-8a4c-b675dfbb79f6"
+    },
+    {
+      "name": "Seth Howard",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2fe3f655-c28e-40c3-a2f9-48ea9eb8b498"
+    },
+    {
+      "name": "Jay Jacobs",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8b43dd9c-26c3-48bb-ac60-d95f8a39349a"
+    },
+    {
+      "name": "Nic Kipke",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0e0bdc53-b5a2-4292-aeb7-341a4c5bed08"
+    },
+    {
+      "name": "Trent Kittleman",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Susan W. Krebs",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bob Long",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "eadb65c9-74b6-40c3-b9e7-159c5734c59f"
+    },
+    {
+      "name": "Michael E. Malone",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nino Mangione",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Susan McComas",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07"
+    },
+    {
+      "name": "Mike McKay",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f88cd73d-1970-4da1-9bea-2142a25999a7"
+    },
+    {
+      "name": "Ric Metzgar",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ba85b633-32cf-4617-923c-3a325f39894e"
+    },
+    {
+      "name": "Matt Morgan",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c4e4d811-1e14-45fe-9335-7521f1603856"
+    },
+    {
+      "name": "Charles Otto",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Neil Parrott",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Teresa Reilly",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "547841f2-3476-4e83-9344-0cac984d44e8"
+    },
+    {
+      "name": "April Rose",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5967c703-2583-466f-a438-c3ac182111d5"
+    },
+    {
+      "name": "Sid Saab",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Haven Shoemaker",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kathy Szeliga",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520"
+    },
+    {
+      "name": "William Wivell",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "df6fe96f-7795-4934-9acc-2b9f8f0aa8f7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2020RS/bills/hb/hb0356f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-356-2020.first_reader.pdf",
+      "sha256": "1a9d6367b4d882c5418311df5ef185ab6ef5b0961a9dc612f69859593bc66c4d"
+    },
+    "note": "First reader (bill as filed); no vote recorded, no enrolled text read. Large file, read in full. Quote is selected and excerpted (items omitted inside lists); also in the bill: State appeal of excluded evidence extended to gun and Criminal Law §§ 5-621/5-622 cases (Courts § 12-302), mandatory minimums for assault weapon/large magazine and machine gun use (Criminal Law §§ 4-306, 4-404), penalty for § 5-133(b) possession, § 5-138 stolen-gun penalties, § 5-142 and § 5-144 changes, and firearm use as not a 'technical violation' (Correctional Services § 6-101). Pretrial and appeal changes apply only to gun (and violent/drug) crimes, so judged part of the gun subject."
+  },
+  "operative_text": "Section 3 (Md. Code Ann., Criminal Law § 4-204): (c) (1) (i) A person who violates this section is guilty of a FELONY and, in addition to any other penalty imposed for the crime of violence or felony, shall be sentenced: 1. FOR A FIRST OFFENSE, to imprisonment for not less than years and not exceeding 20 years; AND 2. FOR A SECOND OR SUBSEQUENT OFFENSE, TO IMPRISONMENT FOR NOT LESS THAN 10 YEARS AND NOT EXCEEDING 20 YEARS.\nSection 3 (Md. Code Ann., Criminal Law § 7-104): (H) (1) A PERSON CONVICTED OF THEFT OF A FIREARM, INCLUDING AN ANTIQUE FIREARM OR A REPLICA OF AN ANTIQUE FIREARM, IS GUILTY OF A FELONY AND: (I) 1. FOR A FIRST CONVICTION, IS SUBJECT TO IMPRISONMENT FOR NOT LESS THAN 2 YEARS AND NOT EXCEEDING 10 YEARS AND A FINE NOT EXCEEDING $2,500; AND 2. FOR A SECOND OR SUBSEQUENT CONVICTION, IS SUBJECT TO IMPRISONMENT FOR NOT LESS THAN 5 YEARS AND NOT EXCEEDING 15 YEARS AND A FINE NOT EXCEEDING $10,000;\nSection 3 (Md. Code Ann., Criminal Procedure § 5-202): (f) (1) (I) A District Court commissioner may not authorize the pretrial release of a defendant charged with A CRIME LISTED IN SUBPARAGRAPH (II) OF THIS PARAGRAPH if the defendant: 1. has previously been convicted of a crime of violence or A CRIME LISTED IN SUBPARAGRAPH (II) OF THIS PARAGRAPH; OR 2. IS ON PRETRIAL RELEASE FOR A CRIME OF VIOLENCE OR A CRIME LISTED IN SUBPARAGRAPH (II) OF THIS PARAGRAPH.\nSection 3 (Md. Code Ann., Public Safety § 5-133): (c) (1) A person may not possess a regulated firearm if the person was previously convicted of: (i) a crime of violence; (ii) a violation of § 5–602, § 5–603, § 5–604, § 5–605, § 5–612, § 5–613, § 5–614, § 5–621, § 5–622, § 9–803, § 9–804, OR § 9–805 of the Criminal Law Article;\nSection 3 (Md. Code Ann., Public Safety § 5-134): (C) (1) A DEALER OR OTHER PERSON MAY NOT SELL, RENT, LOAN, OR TRANSFER A REGULATED FIREARM TO A PURCHASER, LESSEE, BORROWER, OR TRANSFEREE IF THE DEALER OR OTHER PERSON HAS ACTUAL KNOWLEDGE THAT THE PURCHASER, LESSEE, BORROWER, OR TRANSFEREE: (I) WAS PREVIOUSLY CONVICTED OF: 1. A CRIME OF VIOLENCE; (II) INTENDS TO USE THE REGULATED FIREARM TO: 1. COMMIT A CRIME; OR 2. CAUSE HARM TO THE PURCHASER, LESSEE, TRANSFEREE, OR RECIPIENT OR ANOTHER PERSON. (2) A PERSON WHO VIOLATES THIS SUBSECTION IS GUILTY OF A FELONY AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 15 YEARS.\nSection 3 (Md. Code Ann., Public Safety § 5-141): (b) (1) A person who violates this section is guilty of a FELONY and on conviction is subject to imprisonment FOR NOT LESS THAN 5 YEARS AND not exceeding 15 years AND a fine not exceeding $25,000."
+}

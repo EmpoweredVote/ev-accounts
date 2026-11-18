@@ -1,0 +1,112 @@
+{
+  "id": "MD-HB-541-2019",
+  "scope": "state:md",
+  "title": "HB541 (2019 Regular): Public Safety - Permit to Carry, Wear, or Transport a Handgun - Qualifications",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0541?ys=2019RS",
+    "https://mgaleg.maryland.gov/2019RS/bills/hb/hb0541f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Daniel L. Cox",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lauren Arikan",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6a04e5b9-d532-4e80-bbca-6677a35620e5"
+    },
+    {
+      "name": "Kevin Hornberger",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "96a6d696-50fd-4393-a0f6-19e69dc15716"
+    },
+    {
+      "name": "Nino Mangione",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Susan McComas",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07"
+    },
+    {
+      "name": "Neil Parrott",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jesse Pippy",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ce2fc441-abd5-4d8f-9c56-114e31c4d43c"
+    },
+    {
+      "name": "Joseph C. Boteler, III",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jay Jacobs",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "8b43dd9c-26c3-48bb-ac60-d95f8a39349a"
+    },
+    {
+      "name": "Barrie Ciliberti",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "00a1eaeb-157c-42f8-a6e5-9a9d02decbe9"
+    },
+    {
+      "name": "Robin Grammer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0608cc7a-72ed-4d24-b966-3eee82075bf1"
+    },
+    {
+      "name": "Wayne Hartman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "1ff2bb96-0e55-4893-8a4c-b675dfbb79f6"
+    },
+    {
+      "name": "Susan W. Krebs",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kathy Szeliga",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2019RS/bills/hb/hb0541f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-541-2019.first_reader.pdf",
+      "sha256": "eddce505cd943844d8b565bb0cc41d84e8be2ad8f6697d4544d619661fd09fd4"
+    },
+    "note": "first reader: bill as filed; no later version or vote was read."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–306(a)): Subject to subsection (c) of this section, the Secretary shall issue a permit within a reasonable time to a person who the Secretary finds: (6) based on an investigation: (ii) has good and substantial reason to wear, carry, or transport a handgun, such as PERSONAL PROTECTION, SELF–DEFENSE, OR a finding that the permit is necessary as a reasonable precaution against apprehended danger."
+}

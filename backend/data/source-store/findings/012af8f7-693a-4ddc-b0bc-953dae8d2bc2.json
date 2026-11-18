@@ -1,0 +1,368 @@
+{
+  "politician_id": "012af8f7-693a-4ddc-b0bc-953dae8d2bc2",
+  "findings": [
+    {
+      "id": "e6e005846d0d09e30e24b80478a0c1e29265d7340ade24133e36d731297a5d84",
+      "kind": "record",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0284?ys=2026RS",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "MD-HB-284-2026",
+      "act": "yea",
+      "motion": "House Third Reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MD House, House Third Reading Passed, 2026-04-09: yea (tally 97–36); census gate: none.",
+      "subjects": [
+        "24-hour notice to State Police by gun dealers of thefts or broken security"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (Third Reader; official copy, https://mgaleg.maryland.gov/2026RS/bills/hb/hb0284t.pdf)",
+        "fetched_at": "2026-11-18T15:59:39.583605Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-284-2026.third_reader.pdf",
+          "sha256": "6f500f44a1eb0318aae8f65317687247cdec71ad840d27c5ae80fdd02ed7244f"
+        }
+      }
+    },
+    {
+      "id": "2287e844a997a7bfb706d00aa89b34ab89ae9cbcdfaf6fec86da0fac7808feb1",
+      "kind": "record",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0413?ys=2025RS&search=True",
+      "date": "2025-03-13",
+      "date_precision": "day",
+      "instrument_id": "MD-HB-413-2025",
+      "act": "yea",
+      "motion": "House Third Reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "multi-subject"
+      },
+      "note": "MD House, House Third Reading Passed, 2025-03-13: yea (tally 101–37); census gate: multi-subject.",
+      "subjects": [
+        "felony penalties for stolen regulated firearms",
+        "felony for trafficking regulated firearms into the State",
+        "felony for handgun-roster and serial-number violations"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (Third Reader; official copy, https://mgaleg.maryland.gov/2025RS/bills/hb/hb0413t.pdf)",
+        "fetched_at": "2026-11-18T15:59:39.583605Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-413-2025.third_reader.pdf",
+          "sha256": "268b045bb3b72645393bf2f8812676c5a553484a8f4e300a15a5ea8e9ae7e063"
+        }
+      }
+    },
+    {
+      "id": "49e0738ae8e1b23de5c97f45af5e3b306bce7a9a8bb5eef2f49cebc651d05ed4",
+      "kind": "record",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0577?ys=2026RS",
+      "date": "2026-04-08",
+      "date_precision": "day",
+      "instrument_id": "MD-HB-577-2026",
+      "act": "yea",
+      "motion": "House Third Reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MD House, House Third Reading Passed, 2026-04-08: yea (tally 92–39); census gate: none.",
+      "subjects": [
+        "ban on machine gun convertible pistols from 2027",
+        "exceptions for family transfers and law enforcement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (Third Reader; official copy, https://mgaleg.maryland.gov/2026RS/bills/hb/hb0577t.pdf)",
+        "fetched_at": "2026-11-18T15:59:39.583605Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-577-2026.third_reader.pdf",
+          "sha256": "912022724104b254373cfe2045655349038602da9c4579d8ee250f51413e557e"
+        }
+      }
+    },
+    {
+      "id": "c668f2fd587dbbc9c43697b7dfe7734a4b53b70bd4f4cc03f6f4ca9cd84d70c2",
+      "kind": "record",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0592?ys=2025RS&search=True",
+      "date": "2025-03-11",
+      "date_precision": "day",
+      "instrument_id": "MD-HB-592-2025",
+      "act": "yea",
+      "motion": "House Third Reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MD House, House Third Reading Passed, 2025-03-11: yea (tally 98–40); census gate: none.",
+      "subjects": [
+        "firearm possession ban for assisted outpatient treatment respondents",
+        "court reports to the federal background check index"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (Third Reader; official copy, https://mgaleg.maryland.gov/2025RS/bills/hb/hb0592t.pdf)",
+        "fetched_at": "2026-11-18T15:59:39.583605Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-592-2025.third_reader.pdf",
+          "sha256": "9c3a062c1ccb72b0a7b0988565437a170ffc3269c469898a1dc42c849af658f0"
+        }
+      }
+    },
+    {
+      "id": "e20ff2c94b6b4fb195424ea34e4d3360d10e7e6d4310c2db7699221803c67aca",
+      "kind": "record",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0083?ys=2026RS",
+      "date": "2026-03-21",
+      "date_precision": "day",
+      "instrument_id": "MD-HB-83-2026",
+      "act": "yea",
+      "motion": "House Third Reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MD House, House Third Reading Passed, 2026-03-21: yea (tally 89–32); census gate: none.",
+      "subjects": [
+        "firearm surrender in temporary and final protective orders",
+        "also surrender handgun license and carry permit",
+        "police must check compliance in 3 business days, search warrant to remove guns"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (Third Reader; official copy, https://mgaleg.maryland.gov/2026RS/bills/hb/hb0083t.pdf)",
+        "fetched_at": "2026-11-18T15:59:39.583605Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-83-2026.third_reader.pdf",
+          "sha256": "a8aac195801efd92a98a8a62e29fd2e3ebb287223682476936d672cfabd49a47"
+        }
+      }
+    },
+    {
+      "id": "5729b76c257a3cede0d3684e3609cc043be1a3422aadb4f2907bec3a73e9dc5e",
+      "kind": "record",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0875?ys=2026RS",
+      "date": "2026-03-11",
+      "date_precision": "day",
+      "instrument_id": "MD-HB-875-2026",
+      "act": "yea",
+      "motion": "House Third Reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MD House, House Third Reading Passed, 2026-03-11: yea (tally 97–37); census gate: none.",
+      "subjects": [
+        "safety literature handed out at gun and ammunition sales",
+        "civil fines for sellers who do not"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (Third Reader; official copy, https://mgaleg.maryland.gov/2026RS/bills/hb/hb0875t.pdf)",
+        "fetched_at": "2026-11-18T15:59:39.583605Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-875-2026.third_reader.pdf",
+          "sha256": "433aca4b64ded16fec89461cb5be1fe0cb27e5b89c99849f3492768ddde93bed"
+        }
+      }
+    },
+    {
+      "id": "7bb66b785348c6b93554f5cd465d6d2b4ef66080566724a76ec337e4882ed9ad",
+      "kind": "record",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0094?ys=2026RS",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "instrument_id": "MD-HB-94-2026",
+      "act": "yea",
+      "motion": "House Third Reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MD House, House Third Reading Passed, 2026-03-18: yea (tally 131–2); census gate: near-unanimous.",
+      "subjects": [
+        "5-year handgun permit term for retired officers",
+        "5-year renewals for retired officers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (Third Reader; official copy, https://mgaleg.maryland.gov/2026RS/bills/hb/hb0094t.pdf)",
+        "fetched_at": "2026-11-18T15:59:39.583605Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-94-2026.third_reader.pdf",
+          "sha256": "584b939ec87714bbc7f316863f80c2097c523ddd1566edfa90c2060c7a33d4f9"
+        }
+      }
+    },
+    {
+      "id": "db1fc3646bde47f70d350b13a94355b008d270cc4316671c28d1d02450b2f16c",
+      "kind": "record",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0160?ys=2026RS",
+      "date": "2026-04-06",
+      "date_precision": "day",
+      "instrument_id": "MD-SB-160-2026",
+      "act": "yea",
+      "motion": "House Third Reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MD House, House Third Reading Passed, 2026-04-06: yea (tally 96–33); census gate: none.",
+      "subjects": [
+        "dealer must report firearm or ammunition theft within 24 hours",
+        "dealer security-failure reports",
+        "civil penalties for dealers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (Third Reader; official copy, https://mgaleg.maryland.gov/2026RS/bills/sb/sb0160t.pdf)",
+        "fetched_at": "2026-11-18T15:59:39.583605Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-160-2026.third_reader.pdf",
+          "sha256": "4078d54414ad738293cf886f416138384ec3d28b64b23f513a19c064f309bc04"
+        }
+      }
+    },
+    {
+      "id": "b80391c89e77014c33575a4775d5e17bb2570296c695354a373400bd2f195380",
+      "kind": "record",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0331?ys=2026RS",
+      "date": "2026-04-10",
+      "date_precision": "day",
+      "instrument_id": "MD-SB-331-2026",
+      "act": "yea",
+      "motion": "House Third Reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MD House, House Third Reading Passed, 2026-04-10: yea (tally 128–2); census gate: near-unanimous.",
+      "subjects": [
+        "5-year handgun carry permits for retired police officers"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (Third Reader; official copy, https://mgaleg.maryland.gov/2026RS/bills/sb/sb0331t.pdf)",
+        "fetched_at": "2026-11-18T15:59:39.583605Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-331-2026.third_reader.pdf",
+          "sha256": "1b8a27e25da4dd39eefed0ef936e43157249e1397d22a9e0b8e6662b28224391"
+        }
+      }
+    },
+    {
+      "id": "37b8d2143340e7220eee305f3d8c4ff10f1c41a57c96dddddde7efb3ba6daa0e",
+      "kind": "record",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0334?ys=2026RS",
+      "date": "2026-04-09",
+      "date_precision": "day",
+      "instrument_id": "MD-SB-334-2026",
+      "act": "yea",
+      "motion": "House Third Reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MD House, House Third Reading Passed, 2026-04-09: yea (tally 91–40); census gate: none.",
+      "subjects": [
+        "ban on machine gun convertible pistols",
+        "exceptions for family transfers, repair, law enforcement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (Third Reader; official copy, https://mgaleg.maryland.gov/2026RS/bills/sb/sb0334t.pdf)",
+        "fetched_at": "2026-11-18T15:59:39.583605Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-334-2026.third_reader.pdf",
+          "sha256": "ab451a2cbd4c1e848de4751b22b6c361fbeaaa8d8e69df114c2d615b42b4c90b"
+        }
+      }
+    },
+    {
+      "id": "d8af77f6a74f9a4e00265ccd8539a7b71ceef4b46ca1337138bd8dce8dc6392b",
+      "kind": "record",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0443?ys=2025RS&search=True",
+      "date": "2025-04-02",
+      "date_precision": "day",
+      "instrument_id": "MD-SB-443-2025",
+      "act": "yea",
+      "motion": "House Third Reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "MD House, House Third Reading Passed, 2025-04-02: yea (tally 139–0); census gate: near-unanimous.",
+      "subjects": [
+        "firearm trafficking into the State made a felony",
+        "3-year limit to prosecute straw-sale and illegal-transfer offences"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (Third Reader; official copy, https://mgaleg.maryland.gov/2025RS/bills/sb/sb0443t.pdf)",
+        "fetched_at": "2026-11-18T15:59:39.583605Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-443-2025.third_reader.pdf",
+          "sha256": "f5c3f9968f51b38844a3e24b69ff42c70559f74fdb49d28d7353b8aaa9203819"
+        }
+      }
+    },
+    {
+      "id": "46b7e693f58f1ac10da11f8e271503c80eee97ffafa2d5843bc032044d070661",
+      "kind": "record",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0775?ys=2026RS",
+      "date": "2026-04-13",
+      "date_precision": "day",
+      "instrument_id": "MD-SB-775-2026",
+      "act": "yea",
+      "motion": "House Third Reading Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "MD House, House Third Reading Passed, 2026-04-13: yea (tally 96–36); census gate: none.",
+      "subjects": [
+        "gun buyback programs must destroy surrendered firearms",
+        "stolen or crime guns checked before destruction",
+        "fines and dealer-license revocation for violations"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (Third Reader; official copy, https://mgaleg.maryland.gov/2026RS/bills/sb/sb0775t.pdf)",
+        "fetched_at": "2026-11-18T15:59:39.583605Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-775-2026.third_reader.pdf",
+          "sha256": "4c12290d7102e775dd5c835545eb97fc83e2aaa21e31e43c18f939acda36636d"
+        }
+      }
+    }
+  ],
+  "searches": []
+}

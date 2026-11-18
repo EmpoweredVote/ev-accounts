@@ -1,0 +1,60 @@
+{
+  "id": "MD-SB-706-2019",
+  "scope": "state:md",
+  "title": "SB706 (2019 Regular): Public Safety – Assault Weapons – Replacements\\r(Legally Owned Firearms Replacement Act)",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0706?ys=2019RS",
+    "https://mgaleg.maryland.gov/2019RS/bills/sb/sb0706f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Justin Ready",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "493c5d0c-1986-40d4-9fff-3a3bc3fe62e8"
+    },
+    {
+      "name": "Adelaide C. Eckardt",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Michael J. Hough",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jack Bailey",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f"
+    },
+    {
+      "name": "Andrew A. Serafini",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2019RS/bills/sb/sb0706f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-706-2019.first_reader.pdf",
+      "sha256": "05abadf1cd565e08cc408988c9ad2d79e780ea11e1104ab5116701be3dcd45ec"
+    },
+    "note": "First reader (as filed)."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Criminal Law § 4-303(c)): (C) NOTWITHSTANDING ANY OTHER PROVISION OF LAW, A PERSON MAY REPLACE A LOST OR BROKEN ASSAULT WEAPON THAT THE PERSON LAWFULLY POSSESSED IN ACCORDANCE WITH SUBSECTION (B)(1), (2), OR (3) OF THIS SECTION IF THE REPLACEMENT IS REGISTERED WITH THE SECRETARY OF STATE POLICE."
+}

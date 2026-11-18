@@ -1,0 +1,50 @@
+{
+  "id": "MD-HB-794-2024",
+  "scope": "state:md",
+  "title": "HB794 (2024 Regular): Regulated Firearms - Maryland Voluntary Do Not Sell Firearm Process",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0794?ys=2024RS&search=True",
+    "https://mgaleg.maryland.gov/2024RS/bills/hb/hb0794f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "David Moon",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "96876928-53f8-4ed5-b2de-deab3a456d83"
+    },
+    {
+      "name": "Eric Ebersole",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "22610d7f-eaca-4802-b486-0e48544e6e7d"
+    },
+    {
+      "name": "Jazz Lewis",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2024RS/bills/hb/hb0794f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-794-2024.first_reader.pdf",
+      "sha256": "c7d6714f59b2ccf74a8549be6bde23c58be71b9125e6ff48177b339c4fbe1b16"
+    },
+    "note": "First reader: bill as filed. Called single: the discrimination ban and records-privacy parts exist only to support the registry. A reviewer may weigh the § 5-905(A)(2) anti-discrimination clause as civil-rights evidence. Section 1 also amends Tax – General § 13-203(c) (tax-data check of applicants, a cross-reference change). No passage vote in the record."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-134(b)(15)): IS REGISTERED ON THE MARYLAND VOLUNTARY DO NOT SELL FIREARM REGISTRY ESTABLISHED UNDER § 5–902 OF THIS TITLE; OR\nSection 1 (Md. Code Ann., Public Safety § 5-902): ON OR BEFORE DECEMBER 31, 2024, THE DEPARTMENT SHALL CREATE AND MAINTAIN THE MARYLAND VOLUNTARY DO NOT SELL FIREARM REGISTRY IN WHICH A PERSON MAY VOLUNTARILY ENROLL FOR THE PURPOSE OF BEING PROHIBITED FROM OBTAINING A REGULATED FIREARM.\nSection 1 (Md. Code Ann., Public Safety § 5-903(A)): A REGISTRY APPLICANT SHALL: (1) BE AT LEAST 18 YEARS OLD; AND (2) SUBMIT TO THE DEPARTMENT A REGISTRY APPLICATION ON THE FORM THAT THE SECRETARY PROVIDES.\nSection 1 (Md. Code Ann., Public Safety § 5-904(A)): TO BE REMOVED FROM THE REGISTRY, A PERSON SHALL SUBMIT TO THE DEPARTMENT A REQUEST FOR REMOVAL FROM THE REGISTRY ON THE FORM THAT THE SECRETARY PROVIDES.\nSection 1 (Md. Code Ann., Public Safety § 5-905(A)): A PERSON MAY NOT: (1) KNOWINGLY GIVE FALSE INFORMATION WITH THE INTENT OF ENROLLING OR REMOVING ANOTHER PERSON FROM THE REGISTRY; OR (2) DISCRIMINATE AGAINST ANY PERSON WITH RESPECT TO HEALTH CARE SERVICES, EMPLOYMENT, EDUCATION, HOUSING, INSURANCE, GOVERNMENTAL BENEFITS, OR CONTRACTING BECAUSE THAT PERSON IS ENROLLED ON THE REGISTRY, IS NOT ENROLLED ON THE REGISTRY, OR HAS PREVIOUSLY BEEN ENROLLED ON THE REGISTRY.\nSection 1 (Md. Code Ann., Public Safety § 5-905(B)): A PERSON WHO VIOLATES THIS SECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 1 YEAR OR A FINE NOT EXCEEDING $1,000 OR BOTH.\nSection 1 (Md. Code Ann., General Provisions § 4-325.1(B)): EXCEPT AS PROVIDED IN SUBSECTIONS (C) AND (D) OF THIS SECTION, A CUSTODIAN SHALL DENY INSPECTION OF AN APPLICATION TO BE ENROLLED INTO OR REMOVED FROM THE REGISTRY AND ANY OTHER PERSONAL IDENTIFYING INFORMATION CONTAINED IN OR RELATED TO THE REGISTRY."
+}

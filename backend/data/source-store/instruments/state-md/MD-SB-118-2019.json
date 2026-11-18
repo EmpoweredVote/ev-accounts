@@ -1,0 +1,112 @@
+{
+  "id": "MD-SB-118-2019",
+  "scope": "state:md",
+  "title": "SB118 (2019 Regular): Handgun Permits - Criminal History Records Checks - Fingerprint Submission Exception",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0118?ys=2019RS",
+    "https://mgaleg.maryland.gov/2019RS/bills/sb/sb0118f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Justin Ready",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "493c5d0c-1986-40d4-9fff-3a3bc3fe62e8"
+    },
+    {
+      "name": "Adelaide C. Eckardt",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "George C. Edwards",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Michael J. Hough",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Robert Cassilly",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Edward R. Reilly",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bryan Simonaire",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4aa50ee7-aeed-48ae-96e7-142bd9ac731b"
+    },
+    {
+      "name": "Mary Beth Carozza",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9"
+    },
+    {
+      "name": "Jason Gallion",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e2ca1bfd-255d-417b-a9d7-424e6c10749d"
+    },
+    {
+      "name": "Steve Hershey",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0"
+    },
+    {
+      "name": "Johnny Salling",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9f8d0005-c5ff-42f8-b158-cdb6e4eee872"
+    },
+    {
+      "name": "Chris West",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae"
+    },
+    {
+      "name": "J.B. Jennings",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5927d5ab-2fd7-4454-bcc3-34e494821aac"
+    },
+    {
+      "name": "Jack Bailey",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2019RS/bills/sb/sb0118f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-118-2019.first_reader.pdf",
+      "sha256": "67db9d50b2756090aea097ab493453f40555ea838e78e6b43dc57626fd7f23e4"
+    },
+    "note": "First reader: the bill as filed. Only change to law is the capitalised 'UNLESS ... ON FILE' clause. Senate third-reading passage vote is recorded; amendments made after the version read are not in the text read."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-305(c)): (c) As part of the application for a criminal history records check, the Secretary shall submit to the Central Repository: (1) UNLESS THE APPLICANT’S FINGERPRINTS ARE ALREADY ON FILE WITH THE DEPARTMENT OF STATE POLICE, two complete sets of the applicant’s legible fingerprints taken on forms approved by the Director of the Central Repository and the Director of the Federal Bureau of Investigation;"
+}

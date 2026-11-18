@@ -1,0 +1,44 @@
+{
+  "id": "MD-SB-118-2023",
+  "scope": "state:md",
+  "title": "SB118 (2023 Regular): Criminal Law – Prohibitions on Wearing, Carrying, or Transporting Firearms",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0118?ys=2023RS&search=True",
+    "https://mgaleg.maryland.gov/2023RS/bills/sb/sb0118f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Susan C. Lee",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeff Waldstreicher",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2023RS/bills/sb/sb0118f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-118-2023.first_reader.pdf",
+      "sha256": "eefd2429db4d88cb1bdba00b470e6e4a40dc6cedcabb60845807ea16a5fa327e"
+    },
+    "note": "First reader: the bill as filed. No passage vote recorded. Exempts law enforcement, retired officers, military on duty, qualified security guards and correctional officers (subsection (B))."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Criminal Law § 4-111): (C) A PERSON MAY NOT KNOWINGLY WEAR, CARRY, OR TRANSPORT A FIREARM ON PRIVATE PROPERTY OWNED BY ANOTHER UNLESS: (1) THE OWNER OF THE PROPERTY HAS GIVEN THE PERSON EXPRESS PERMISSION TO WEAR, CARRY, OR TRANSPORT THE FIREARM ON THE PROPERTY; OR (2) THE OWNER OF THE PROPERTY HAS POSTED A CLEAR AND CONSPICUOUS SIGN INDICATING THAT IT IS PERMISSIBLE TO WEAR, CARRY, OR TRANSPORT A FIREARM ON THE PROPERTY.\nSection 1 (Md. Code Ann., Criminal Law § 4-111): (D) A PERSON MAY NOT KNOWINGLY WEAR, CARRY, OR TRANSPORT A FIREARM IN OR ON PROPERTY CONTROLLED BY THE FEDERAL GOVERNMENT, THE STATE GOVERNMENT, OR A LOCAL GOVERNMENT.\nSection 1 (Md. Code Ann., Criminal Law § 4-111): (E) THERE IS A REBUTTABLE PRESUMPTION THAT A PERSON WHO VIOLATES THIS SECTION WEARS, CARRIES, OR TRANSPORTS THE FIREARM KNOWINGLY.\nSection 1 (Md. Code Ann., Criminal Law § 4-111): (F) A PERSON WHO VIOLATES THIS SECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 2 YEARS OR A FINE NOT EXCEEDING $5,000 OR BOTH."
+}

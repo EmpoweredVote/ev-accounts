@@ -1,0 +1,111 @@
+{
+  "id": "MD-HB-1301-2024",
+  "scope": "state:md",
+  "title": "HB1301 (2024 Regular): Wearing, Carrying, or Transporting Firearms – Business Sign Posting Requirements",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1301?ys=2024RS&search=True",
+    "https://mgaleg.maryland.gov/2024RS/bills/hb/hb1301f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Terry Baker",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d049cf3e-6577-4f8d-ba7e-768ac2b78d66"
+    },
+    {
+      "name": "Christopher Bouchat",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c12bb600-318a-4541-bcdd-8260f1ba172e"
+    },
+    {
+      "name": "Jason Buckel",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5260bd6f-e70a-46f1-aa7d-49eaf22192cf"
+    },
+    {
+      "name": "Mike Griffith",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0c789b27-d50c-4822-95ff-409ecb7db08a"
+    },
+    {
+      "name": "Jim Hinebaugh",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3817ad52-3f43-4bd3-8525-e7dcd0816153"
+    },
+    {
+      "name": "Kevin Hornberger",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "96a6d696-50fd-4393-a0f6-19e69dc15716"
+    },
+    {
+      "name": "Susan McComas",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07"
+    },
+    {
+      "name": "April Miller",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b389687f-817b-4fda-8770-a888029f4629"
+    },
+    {
+      "name": "Teresa Reilly",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "547841f2-3476-4e83-9344-0cac984d44e8"
+    },
+    {
+      "name": "April Rose",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5967c703-2583-466f-a438-c3ac182111d5"
+    },
+    {
+      "name": "Josh Stonko",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "656a8bc9-348e-4ffc-819c-2f4611b3ddc8"
+    },
+    {
+      "name": "William Valentine",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "cdf746c1-8311-416b-9ad3-2684a83b6992"
+    },
+    {
+      "name": "William Wivell",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "df6fe96f-7795-4934-9acc-2b9f8f0aa8f7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2024RS/bills/hb/hb1301f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1301-2024.first_reader.pdf",
+      "sha256": "621d928a2a8baaa3d2e5d9bf4ecbf7be386f71fca60bee99582dde11d9341b13"
+    },
+    "note": "First reader (as filed); no passage vote recorded. The rest of the bill renumbers existing subsections and cross-references."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Criminal Law § 4–111(f)): (F) (1) A BUSINESS THAT DOES NOT WANT FIREARMS ON THE BUSINESS’S PROPERTY SHALL POST A CLEAR AND CONSPICUOUS SIGN AT THE MAIN OR ANY SECONDARY ENTRANCE OF THE BUSINESS AT LEAST 24 INCHES FROM THE EDGE OF THE ENTRYWAY AND 4 FEET OFF THE GROUND, THAT: (I) STATES THAT IT IS NOT PERMISSIBLE TO WEAR, CARRY, OR TRANSPORT A FIREARM ON THE BUSINESS’S PROPERTY; AND (II) IS AT LEAST 12 INCHES WIDE BY 18 INCHES LONG. (2) IF THE BUSINESS IS A PRIVATE BUSINESS, THE SIGN REQUIRED UNDER PARAGRAPH (1) OF THIS SUBSECTION SHALL ALSO INCLUDE THE BUSINESS’S ADDRESS CLEARLY AND CONSPICUOUSLY ON THE FRONT OF THE SIGN.\nSection 1 (Md. Code Ann., Criminal Law § 4–111(a)(3)): “BUSINESS” MEANS AN ORGANIZATION OR ENTERPRISING ENTITY THAT ENGAGES IN PROFESSIONAL, COMMERCIAL, OR INDUSTRIAL ACTIVITIES."
+}

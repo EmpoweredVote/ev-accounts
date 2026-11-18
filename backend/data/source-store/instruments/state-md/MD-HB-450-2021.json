@@ -1,0 +1,39 @@
+{
+  "id": "MD-HB-450-2021",
+  "scope": "state:md",
+  "title": "HB450 (2021 Regular): Election Law – Polling Sites – Firearms Prohibitions",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0450?ys=2021RS&search=True",
+    "https://mgaleg.maryland.gov/2021RS/bills/hb/hb0450f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shaneka Henson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2021RS/bills/hb/hb0450f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-450-2021.first_reader.pdf",
+      "sha256": "386cbb1c63b1e2b7a02487a31cbbfe9ebfc12354bd620549ccb9e613dbf4ece5"
+    },
+    "note": "first reader: bill as filed; no later version or vote was read. In 16–903(a)(3) the word [gun] was deleted from existing law and replaced by FIREARM."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Election Law § 16–904(B)): EXCEPT AS PROVIDED IN § 16–903 OF THIS SUBTITLE, A PERSON MAY NOT: (1) CARRY OR DISPLAY A FIREARM ON THE PREMISES OF A PRIVATELY OR PUBLICLY OWNED BUILDING BEING USED AS A POLLING SITE DURING AN ELECTION, INCLUDING IN A PARKING LOT; OR (2) CARRY OR POSSESS A FIREARM WITHIN 100 FEET OF A POLLING SITE DURING AN ELECTION.\nSection 1 (Md. Code Ann., Election Law § 16–904(C)): A PERSON WHO VIOLATES THIS SECTION IS SUBJECT TO THE CIVIL PENALTY SPECIFIED UNDER § 16–1002 OF THIS TITLE.\nSection 1 (Md. Code Ann., Election Law § 16–903(a)(3)): except as required by law or by regulation adopted by the State Board in connection with ballot security activities, carrying or displaying a FIREARM, AS DEFINED IN § 16–904(A) OF THIS SUBTITLE, or badge within 100 feet of a polling site on election day.\nSection 1 (Md. Code Ann., Election Law § 16–1002): A person who violates § 16–201(a)(6) or (7), § 16–903, OR § 16–904 of this title without knowing that the act is illegal shall pay a civil penalty and have the matter adjudicated in accordance with § 13–604 of this article."
+}

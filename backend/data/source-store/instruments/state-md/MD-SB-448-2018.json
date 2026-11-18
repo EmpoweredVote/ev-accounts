@@ -1,0 +1,61 @@
+{
+  "id": "MD-SB-448-2018",
+  "scope": "state:md",
+  "title": "SB448 (2018 Regular): Public Safety - Firearms Disqualifications - Antique Firearm (Shadé's Law)",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0448?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/sb/sb0448f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Brian Feldman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d423151e-8477-470d-8f73-ba7d2092f714"
+    },
+    {
+      "name": "Guy Guzzone",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f0fafa0e-3dd9-4d50-bc5e-c96315f766d7"
+    },
+    {
+      "name": "Pat Young",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nancy King",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec"
+    },
+    {
+      "name": "Richard S. Madaleno, Jr.",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/sb/sb0448f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-448-2018.first_reader.pdf",
+      "sha256": "7099335acf80a0a9b171484040d35624b19653758ecee393057f56fcdeb79807"
+    },
+    "note": "First reader, as filed; § 5–205(a) (antique rifles/shotguns excluded) is deleted from existing law. Also conforming § 5–133.3(d) and § 4–201 definition (unchanged, reprinted). No vote recorded."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–205(A)): IN THIS SECTION, “ANTIQUE FIREARM” HAS THE MEANING STATED IN § 4–201 OF THE CRIMINAL LAW ARTICLE.\nSection 1 (Md. Code Ann., Public Safety § 5–205(b)): (b) A person may not possess a rifle, A shotgun, OR AN ANTIQUE FIREARM if the person: (1) has been convicted of a disqualifying crime as defined in § 5–101 of this title; (2) has been convicted of a violation classified as a crime under common law and received a term of imprisonment of more than 2 years; (3) is a fugitive from justice;\nSection 1 (Md. Code Ann., Public Safety § 5–205(d)): (d) A person who violates this section is guilty of a misdemeanor and on conviction is subject to imprisonment not exceeding 3 years or a fine not exceeding $1,000 or both.\nSection 1 (Md. Code Ann., Public Safety § 5–205(e)): (e) A person who is disqualified from owning a rifle, A shotgun, OR AN ANTIQUE FIREARM under subsection (b)(6), (7), (8), (9), (10), or (11) of this section may seek relief from the disqualification in accordance with § 5–133.3 of this title.\nSection 1 (Md. Code Ann., Public Safety § 5–133.3(b)): (b) A person subject to a regulated firearms disqualification under § 5–133(b)(6), (7), (8), (9), (10), or (11) of this subtitle, a rifle, A shotgun, OR AN ANTIQUE FIREARM disqualification under § 5–205(b)(6), (7), (8), (9), (10), or (11) of this title, or prohibited from the shipment, transportation, possession, or receipt of a firearm by 18 U.S.C. §§ 922(d)(4) or (g)(4) as a result of an adjudication or commitment that occurred in the State may be authorized to possess a firearm if: (1) the person is not subject to another firearms restriction under State or federal law; and (2) the Health Department, in accordance with this section, determines that the person may possess a firearm."
+}

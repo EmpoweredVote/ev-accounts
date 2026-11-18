@@ -1,0 +1,39 @@
+{
+  "id": "MD-HB-1040-2022",
+  "scope": "state:md",
+  "title": "HB1040 (2022 Regular): Firearms - Advice of Counsel Letter",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1040?ys=2022RS&search=True",
+    "https://mgaleg.maryland.gov/2022RS/bills/hb/hb1040f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sandy Rosenberg",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "36eecaff-4677-441a-b36e-a323e87d9158"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2022RS/bills/hb/hb1040f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1040-2022.first_reader.pdf",
+      "sha256": "860c063e39f46ee4808a1a41b882b97c96ca9e81d0ac0f8c505d4418639020e4"
+    },
+    "note": "First reader (as filed); no vote recorded. Borderline for gun_policy: a study/report directive with no firearm rule."
+  },
+  "operative_text": "Section 1 (uncodified): That the Office of the Attorney General shall: (1) monitor the case of New York State Rifle & Pistol Association Inc. v. Bruen argued before the United States Supreme Court on November 3, 2021; and (2) on or before September 1, 2022, submit an advice of counsel letter to the Governor and, in accordance with § 2–1257 of the State Government Article, to the Senate Judicial Proceedings Committee, the House Judiciary Committee, the President of the Senate, and the Speaker of the House on the effect of the New York State Rifle & Pistol Association Inc. v. Bruen case on State firearm laws."
+}

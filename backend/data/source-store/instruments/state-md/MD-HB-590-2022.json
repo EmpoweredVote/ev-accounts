@@ -1,0 +1,72 @@
+{
+  "id": "MD-HB-590-2022",
+  "scope": "state:md",
+  "title": "HB590 (2022 Regular): Handgun Permit Holders – Authority to Carry Handguns in State Parks and Forests",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0590?ys=2022RS&search=True",
+    "https://mgaleg.maryland.gov/2022RS/bills/hb/hb0590f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Daniel L. Cox",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kevin Hornberger",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "96a6d696-50fd-4393-a0f6-19e69dc15716"
+    },
+    {
+      "name": "Susan McComas",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07"
+    },
+    {
+      "name": "Mike McKay",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f88cd73d-1970-4da1-9bea-2142a25999a7"
+    },
+    {
+      "name": "Matt Morgan",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c4e4d811-1e14-45fe-9335-7521f1603856"
+    },
+    {
+      "name": "Charles Otto",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Neil Parrott",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2022RS/bills/hb/hb0590f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-590-2022.first_reader.pdf",
+      "sha256": "5090bf59ab259e97de67cb35b78872d12e271d22fa88a84e63c786f446a9f086"
+    },
+    "note": "First reader (as filed); no passage vote recorded."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Natural Resources § 5–209(f)): THE DEPARTMENT MAY NOT PROHIBIT AN INDIVIDUAL TO WHOM A PERMIT TO WEAR, CARRY, OR TRANSPORT A HANDGUN HAS BEEN ISSUED UNDER TITLE 5, SUBTITLE 3 OF THE PUBLIC SAFETY ARTICLE FROM WEARING, CARRYING, OR TRANSPORTING A HANDGUN IN A STATE PARK OR FOREST, SUBJECT TO ANY LIMITATIONS IMPOSED UNDER § 5–307 OF THE PUBLIC SAFETY ARTICLE. THIS SUBSECTION MAY NOT BE INTERPRETED TO AUTHORIZE AN INDIVIDUAL TO USE A HANDGUN TO HUNT WILDLIFE IN VIOLATION OF DEPARTMENT REGULATIONS."
+}

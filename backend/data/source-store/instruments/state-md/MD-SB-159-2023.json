@@ -1,0 +1,41 @@
+{
+  "id": "MD-SB-159-2023",
+  "scope": "state:md",
+  "title": "SB159 (2023 Regular): Firearms - Maryland Voluntary Do Not Sell Firearm Registry - Establishment",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0159?ys=2023RS&search=True",
+    "https://mgaleg.maryland.gov/2023RS/bills/sb/sb0159f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shelly Hettleman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3089c813-f0a8-46af-9a7b-1699129037e9"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "civil-rights: Section 1 (Public Safety § 5–905(a)(2)) — bars discrimination in health care, employment, education, housing, insurance, benefits and contracting based on registry status"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2023RS/bills/sb/sb0159f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-159-2023.first_reader.pdf",
+      "sha256": "3d2cd8114bb60f2eaed868a30fa3eff7c0170e2d0bf63df0b0a51c7249d5091a"
+    },
+    "note": "as filed (first reader); no passage vote recorded. Ellipses mark omitted existing-law items; § 5–903(b)-(d), 5–904(a) and (b)(2)-(3), 5–905(b) (misdemeanor, up to 1 year or $1,000) not quoted."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–134(b)): A dealer or other person may not sell, rent, loan, or transfer a regulated firearm to a purchaser, lessee, borrower, or transferee who the dealer or other person knows or has reasonable cause to believe: … (15) IS REGISTERED ON THE MARYLAND VOLUNTARY DO NOT SELL FIREARM REGISTRY ESTABLISHED UNDER § 5–902 OF THIS TITLE; OR\nSection 1 (Md. Code Ann., Public Safety § 5–207(c)): A licensee or any other person may not sell, rent, transfer, or loan a rifle or shotgun to a purchaser, lessee, transferee, or recipient who the licensee or other person knows or has reasonable cause to believe: … (16) IS REGISTERED ON THE MARYLAND VOLUNTARY DO NOT SELL FIREARM REGISTRY ESTABLISHED UNDER § 5–902 OF THIS TITLE; OR\nSection 1 (Md. Code Ann., Public Safety § 5–902): THE DEPARTMENT SHALL CREATE AND MAINTAIN THE MARYLAND VOLUNTARY DO NOT SELL FIREARM REGISTRY IN WHICH A PERSON MAY VOLUNTARILY ENROLL FOR THE PURPOSE OF BEING PROHIBITED FROM OBTAINING A FIREARM.\nSection 1 (Md. Code Ann., Public Safety § 5–903(a)): A REGISTRY APPLICANT SHALL: (1) BE AT LEAST 18 YEARS OLD; AND (2) SUBMIT TO THE DEPARTMENT A REGISTRY APPLICATION ON THE FORM THAT THE SECRETARY PROVIDES.\nSection 1 (Md. Code Ann., Public Safety § 5–904(b)): PROMPTLY, BUT NOT SOONER THAN 21 DAYS AFTER RECEIVING A PROPERLY COMPLETED REQUEST FOR REMOVAL FROM THE REGISTRY, THE SECRETARY SHALL: (1) APPROVE THE REQUEST;\nSection 1 (Md. Code Ann., Public Safety § 5–905): (A) A PERSON MAY NOT: (1) KNOWINGLY GIVE FALSE INFORMATION WITH THE INTENT OF ENROLLING OR REMOVING ANOTHER PERSON FROM THE REGISTRY; OR (2) DISCRIMINATE AGAINST ANY PERSON WITH RESPECT TO HEALTH CARE SERVICES, EMPLOYMENT, EDUCATION, HOUSING, INSURANCE, GOVERNMENTAL BENEFITS, OR CONTRACTING BECAUSE THAT PERSON IS ENROLLED ON THE REGISTRY, IS NOT ENROLLED ON THE REGISTRY, OR HAS PREVIOUSLY BEEN ENROLLED ON THE REGISTRY.\nSection 1 (Md. Code Ann., General Provisions § 4–325.1(b)): EXCEPT AS PROVIDED IN SUBSECTIONS (C) AND (D) OF THIS SECTION, A CUSTODIAN SHALL DENY INSPECTION OF AN APPLICATION TO BE ENROLLED INTO OR REMOVED FROM THE REGISTRY AND ANY OTHER PERSONAL IDENTIFYING INFORMATION CONTAINED IN OR RELATED TO THE REGISTRY."
+}

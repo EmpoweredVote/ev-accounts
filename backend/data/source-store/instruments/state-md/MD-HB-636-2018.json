@@ -1,0 +1,87 @@
+{
+  "id": "MD-HB-636-2018",
+  "scope": "state:md",
+  "title": "HB636 (2018 Regular): Bow Hunting - Possession of Handguns for Protection",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0636?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/hb/hb0636f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "David E. Vogt, III",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kathy Afzali",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Deborah C. Rey",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "April Rose",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5967c703-2583-466f-a438-c3ac182111d5"
+    },
+    {
+      "name": "Bill Folden",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4a5241b7-8737-4a58-adf2-c5335111d3c4"
+    },
+    {
+      "name": "Glen Glass",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Michael E. Malone",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Susan McComas",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07"
+    },
+    {
+      "name": "Haven Shoemaker",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kathy Szeliga",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/hb/hb0636f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-636-2018.first_reader.pdf",
+      "sha256": "c0112f6a862eea37c0b800a3ee930d188bbae3087c7e6c93bbb20a23be1a1d45"
+    },
+    "note": "First reader (as filed); no passage vote recorded. The bracketed words delete the limit to deer management Region A."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Natural Resources § 10–408(b)(2)): The Department may not prohibit a licensed bow hunter from openly carrying a handgun that the hunter is otherwise authorized to carry under § 4–203 of the Criminal Law Article if the bow hunter: (i) Is at least 21 years old; (ii) Is carrying the handgun for personal protection; and (iii) Does not use the handgun to kill wildlife wounded by a vertical bow or crossbow."
+}

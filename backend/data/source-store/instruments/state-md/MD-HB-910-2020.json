@@ -1,0 +1,127 @@
+{
+  "id": "MD-HB-910-2020",
+  "scope": "state:md",
+  "title": "HB910 (2020 Regular): Criminal Law - Untraceable Firearms",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0910?ys=2020RS&search=True",
+    "https://mgaleg.maryland.gov/2020RS/bills/hb/hb0910f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kathleen M. Dumais",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Lesley Lopez",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2fa68ca4-00b5-4518-a692-d12447d7fec3"
+    },
+    {
+      "name": "Vanessa Atterbeary",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ben Barnes",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "590b56b2-1473-4e86-ba96-0490e172f6ff"
+    },
+    {
+      "name": "Luke Clippinger",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ad1aaa25-0ef6-4c88-9d78-d75aec7398c7"
+    },
+    {
+      "name": "Charlotte Crutchfield",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "98d6a17e-59dc-4d11-a342-869603862f10"
+    },
+    {
+      "name": "Eric Ebersole",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "22610d7f-eaca-4802-b486-0e48544e6e7d"
+    },
+    {
+      "name": "Wanika Fisher",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Michael Jackson",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Anne Kaiser",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bfd0f15f-abb1-4d28-b1f4-e06875adce16"
+    },
+    {
+      "name": "Jazz Lewis",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Eric G. Luedtke",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Maggie McIntosh",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "David Moon",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "96876928-53f8-4ed5-b2de-deab3a456d83"
+    },
+    {
+      "name": "Joseline Peña-Melnyk",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "00cd05cc-75de-4d9a-ab23-9f53441bc186"
+    },
+    {
+      "name": "Shane E. Pendergrass",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Emily Shetty",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d1a30768-52e8-4a0d-badc-3e5f2f5792c7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2020RS/bills/hb/hb0910f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-910-2020.first_reader.pdf",
+      "sha256": "eae04b9aeafdcc8475d90498e865514bcf9e7dbc93a1f0a071434b7f62ebf007"
+    },
+    "note": "First reader (as filed). Section 4-604(b)(2) (possession and sale of unserialized guns and kits) is not quoted for length. No passage vote on file."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Criminal Law § 4-602): (C) A PERSON MAY NOT: (1) USE A 3–DIMENSIONAL PRINTER TO MANUFACTURE, CAUSE TO BE MANUFACTURED, ASSEMBLE, OR CONSTRUCT A FIREARM; OR (2) DISTRIBUTE A COMPUTER PROGRAM DESIGNED FOR THE SPECIFIC PURPOSE OF MANUFACTURING, CAUSING TO BE MANUFACTURED, ASSEMBLING, OR CONSTRUCTING A FIREARM USING A 3–DIMENSIONAL PRINTER. (D) A PERSON MAY NOT POSSESS, SELL, OFFER TO SELL, TRANSFER, PURCHASE, OR RECEIVE A FIREARM MANUFACTURED, ASSEMBLED, OR CONSTRUCTED IN VIOLATION OF SUBSECTION (C)(1) OF THIS SECTION. (E) A PERSON WHO VIOLATES THIS SECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 2 YEARS OR A FINE NOT EXCEEDING $5,000 OR BOTH.\nSection 1 (Md. Code Ann., Criminal Law § 4-603): (B) A PERSON MAY NOT: (1) MANUFACTURE, CAUSE TO BE MANUFACTURED, ASSEMBLE, OR CONSTRUCT A COVERT FIREARM OR AN UNDETECTABLE FIREARM; OR (2) POSSESS, SELL, OFFER TO SELL, TRANSFER, PURCHASE, OR RECEIVE A COVERT FIREARM OR AN UNDETECTABLE FIREARM.\nSection 1 (Md. Code Ann., Criminal Law § 4-604): (B) A PERSON MAY NOT: (1) MANUFACTURE, CAUSE TO BE MANUFACTURED, ASSEMBLE, OR CONSTRUCT A FIREARM THAT IS NOT IMPRINTED WITH A SERIAL NUMBER ISSUED BY A FEDERALLY LICENSED FIREARMS MANUFACTURER OR FEDERALLY LICENSED FIREARMS IMPORTER IN COMPLIANCE WITH ALL FEDERAL LAWS AND REGULATIONS REGULATING THE MANUFACTURE AND IMPORT OF FIREARMS; OR"
+}

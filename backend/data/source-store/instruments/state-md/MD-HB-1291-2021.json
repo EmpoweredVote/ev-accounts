@@ -1,0 +1,39 @@
+{
+  "id": "MD-HB-1291-2021",
+  "scope": "state:md",
+  "title": "HB1291 (2021 Regular): Public Safety - Untraceable Firearms",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1291?ys=2021RS&search=True",
+    "https://mgaleg.maryland.gov/2021RS/bills/hb/hb1291f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Marlon Amprey",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "62bed8b6-beb2-4c41-b234-dc6427bfc9c0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2021RS/bills/hb/hb1291f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1291-2021.first_reader.pdf",
+      "sha256": "fd623f41652b983b7a34182dee77df29cc0563c4b8d871c94e5aefa09b4f222d"
+    },
+    "note": "first_reader: bill as filed; no vote recorded. Section 5-703(a)(2) (possess, sell, transfer, buy such items) is also in the bill but omitted from the quote for length."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-101(h)): (1) “Firearm” means: (i) a weapon that expels, is designed to expel, or may readily be converted to expel a projectile by the action of an explosive; or (ii) the UNFINISHED frame or receiver, AS DEFINED IN § 5–701 OF THIS TITLE, of such a weapon.\nSection 1 (Md. Code Ann., Public Safety § 5-701(g)): (1) “UNFINISHED FRAME OR RECEIVER” MEANS A FRAME OR RECEIVER OF A FIREARM WHOSE FIRE–CONTROL CAVITY IS COMPLETELY SOLID AND UN–MACHINED, AND WHICH MAY BE READILY MADE INTO A FUNCTIONAL FRAME OR RECEIVER OF A FIREARM THROUGH MILLING, DRILLING, FILING, MOLDING, OR OTHER MEANS.\nSection 1 (Md. Code Ann., Public Safety § 5-702): THIS SUBTITLE DOES NOT APPLY TO: (1) A FIREARM THAT: (I) WAS MANUFACTURED BEFORE 1968; (II) HAS BEEN RENDERED PERMANENTLY INOPERABLE; OR (III) IS BEING TRANSFERRED OR SURRENDERED TO A LAW ENFORCEMENT AGENCY; OR (2) SALES, OFFERS TO SELL, TRANSFERS, DELIVERY, OR POSSESSION OF ANY FIREARM OR UNFINISHED FRAME OR RECEIVER BETWEEN: (I) FEDERALLY LICENSED FIREARMS MANUFACTURERS; (II) FEDERALLY LICENSED FIREARMS IMPORTERS; OR (III) FEDERALLY LICENSED FIREARMS DEALERS.\nSection 1 (Md. Code Ann., Public Safety § 5-703(a)): A PERSON MAY NOT: (1) MANUFACTURE OR ASSEMBLE A FIREARM OR AN UNFINISHED FRAME OR RECEIVER THAT IS NOT IMPRINTED WITH A SERIAL NUMBER ISSUED BY A FEDERALLY LICENSED FIREARMS MANUFACTURER OR FEDERALLY LICENSED FIREARMS IMPORTER IN COMPLIANCE WITH ALL FEDERAL LAWS AND REGULATIONS REGULATING THE MANUFACTURE AND IMPORT OF FIREARMS;\nSection 1 (Md. Code Ann., Public Safety § 5-703(b)): (1) A PERSON WHO VIOLATES THIS SECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 2 YEARS OR A FINE NOT EXCEEDING $5,000 OR BOTH. (2) EACH VIOLATION OF THIS SECTION IS A SEPARATE CRIME."
+}
