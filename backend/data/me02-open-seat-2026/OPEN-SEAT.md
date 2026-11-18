@@ -239,6 +239,9 @@ merely a transcription somebody believed.
   in `match-losers.mjs`, not in a post-verify block. 🔴 **Assertion 3 pins the half that IS
   answerable in SQL — every "defeating incumbent X" claim repo-wide must name somebody holding a
   losing row in that same race — and that half alone would have caught `CC_0447`.**
+  ▶ **The matcher half landed on 2026-11-17** (see "Still open" below). Assertion 3 remains a
+  one-off inside `CC_0452`'s post-verify; promoting it to a standing check is still unbuilt, and
+  is the only part of this that would catch a *hand-written* citation rather than a generated one.
 
 ## Files beside this one
 
@@ -253,5 +256,5 @@ merely a transcription somebody believed.
 |---|---|
 | **2026-11-23** | Maine's official tabulation is due within 20 days; then certify all 13 rows in the five races |
 | **2026-11-25** | Colorado's abstract, then decide Luis Galvan |
-| **The matcher gate** | Teach `match-losers.mjs` the third branch, so the next pass cannot repeat this |
+| ~~**The matcher gate**~~ | ✅ **CLOSED 2026-11-17.** `match-losers.mjs` carries the third branch and emits `seat-incumbency-2026-11-17.json`: the one claim about each seat's incumbent that AP's ballot supports, and nothing where it supports none. 🔴 **The branch CC_0447 got wrong turned out to be the MAJORITY of its own population** — over AP's committed 470-race federal capture, of the 96 called races where the winner was not the incumbent, **70 had no incumbent on the ballot and only 26 were a real defeat**. ⚠ It also renamed the verdict: **"not on the ballot" is not yet "open seat"**, because a primary defeat looks identical from the ballot and somebody did beat that incumbent. See `backend/data/house-2026-late-losers/LOSERS.md` §"The third branch" |
 | **Seating** | LePage takes office **2027-01-03**. Golden holds ME-02 until then. Nothing here seats or unseats anybody |

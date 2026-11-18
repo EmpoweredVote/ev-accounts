@@ -201,6 +201,120 @@ Assertion 5 fails if any row claims otherwise.
 | `our-rows-ap-omits.json` | Luis Galvan |
 | `ap-lists-we-hold-no-row-for.json` | Gregory Ward |
 | `spelling-review.json` | Tessa Lynn Hodge |
+| `seat-incumbency-2026-11-17.json` | what happened to each seat's incumbent, and the **one claim** about it the ballot supports |
+| `tamper-controls.mjs` | the fifteen controls below, so the table re-runs instead of being believed |
+
+## The third branch
+
+`CC_0447` turned AP's `incumbent` field into prose with a two-way test — winner id equal to the
+incumbent's meant *"Incumbent re-elected"*, unequal meant *"defeating incumbent X"* — and the
+second branch put **"defeating incumbent Jared Golden"** on a voter-facing page. Golden held
+ME-02 and was not a candidate. `CC_0452` corrected the row; this is the branch that stops it
+happening again.
+
+🔴 **AP's `incumbent` is an attribute of the SEAT, not a ballot line.** So the question
+`match-losers.mjs` now asks is not about the winner at all:
+
+> **Is the incumbent's AP candidate id on a LOSING ballot line?**
+> **yes** → the winner defeated the incumbent **no** → the incumbent was not on the ballot
+
+⚠ **The branch CC_0447 got wrong is the MAJORITY of its own population**, and that is the
+number that makes this worth building rather than patching. Run over AP's committed 470-race
+federal capture:
+
+```bash
+node match-losers.mjs --seats-only --ap ../federal-2026-losers/ap-ballots-2026-11-04.json
+#   311 incumbent_re_elected · 70 incumbent_not_on_ballot · 26 incumbent_defeated
+#    59 not_called · 4 no_incumbent_published
+```
+
+Of the **96** called races where the winner was not the incumbent, **70 had no incumbent on the
+ballot and 26 were a real defeat.** The two-way rule would have written **70** false claims, not
+one. ▶ **The figure is re-runnable rather than asserted** — `--seats-only` needs no rows of ours
+and no database, which is the only reason it is quoted in the file's own header.
+
+🔴 **"NOT ON THE BALLOT" IS NOT YET "OPEN SEAT", AND THE FIRST DRAFT OF THIS WORK SAID IT WAS.**
+The 470-race run is what showed why not: an incumbent is off a November ballot for four different
+reasons — retirement (Golden), **a run for another office** (NH-01's Chris Pappas, who won the
+Senate seat in the same capture), death, and **a primary defeat**. The last one matters most,
+because somebody *did* beat that incumbent, just not in this election. The ballot proves the
+absence and nothing else, so `sanctioned_claim` says only that, and `claim_still_needs` names
+what must be sourced before a citation states a reason.
+
+🔴 **The incumbent is placed by AP's CANDIDATE ID, never by name** — TX-22's winner is the
+incumbent's twin brother (`Troy Nehls` → `Trever Nehls`), which the id test gets right.
+And because an open-seat verdict is a claim that a name is **absent**, the absence gets a second
+detector: a line carrying the incumbent's **name** while the **id** is missing yields
+`incumbency_disputed` and **no claim at all**. One of the two identifiers is wrong and this file
+cannot say which.
+
+🟢 **A seat can have two incumbents, and the classifier takes them as a list.** Redistricting
+pairs them: AP gave FL-20 both Debbie Wasserman Schultz and Sheila Cherfilus-McCormick, and
+TX-37 both Greg Casar and Lloyd Doggett. This capture spells one incumbent as an object and the
+federal capture spells several as an array; both are read, so the branch ports to the
+certification pass without being rewritten.
+
+### 🔴 The verdict is checked against a system that is not AP
+
+Our own `race_candidates.is_incumbent` means *"incumbent of the seat this race is for"* (ruled
+2026-11-04) and is reconciled against our `office_terms` by `reconcile-incumbency.mjs`. It
+therefore answers AP's question from the other side, out of a different source, and the two can
+be made to disagree — so the matcher now compares them and **all five agree**:
+
+| Seat | AP's ballot says | our `is_incumbent` flags |
+|---|---|---|
+| CA-04 | `incumbent_defeated` | Mike Thompson |
+| CA-23 | `incumbent_re_elected` | Jay Obernolte |
+| CO-04 | `incumbent_defeated` | Lauren Boebert |
+| **ME-02** | `incumbent_not_on_ballot` | **nobody** |
+| NC-07 | `incumbent_re_elected` | David Rouzer |
+
+▶ **ME-02 is the row that matters**: the seat whose citation claimed a defeated incumbent is the
+one where our own data flags no incumbent candidate at all. Checking a classifier against the
+file it just classified would prove nothing; this is not that.
+
+### Controls — fifteen tampers on the INPUT, each watched going red
+
+```bash
+node tamper-controls.mjs            # all fifteen, each reported as a DIFFERENCE from the clean run
+node tamper-controls.mjs --only B   # one control, with the matcher's full output
+```
+
+The tampers edit the **inputs** — AP's ballot for A–J, our own rows for K and L — never the
+script, and each builder **refuses to write a file it did not change**: a tamper that did not
+apply proves nothing and looks exactly like a pass. Each control is printed as what it *moved*
+against an untampered baseline, so a control that moved nothing shows nothing and says so.
+
+| Control | What it changes | Verdict it moves |
+|---|---|---|
+| A | CA-04's incumbent **id** only, name kept | → `incumbency_disputed` |
+| A2 | same, where the colliding name is the **winner's** | → `incumbency_disputed` |
+| B | **Golden added to ME-02's ballot**, losing — the world CC_0447 assumed | → `incumbent_defeated` |
+| C | CA-23's winner flag moved off the incumbent | → `incumbent_defeated` |
+| D | NC-07's incumbent **deleted** | → `no_incumbent_published`, no claim |
+| E | CO-04's winner flag cleared | → `not_called`, no claim |
+| F | CO-04 given **two** winning lines | → `multiple_winner_lines`, no claim |
+| G | **no races at all** | → `0 race(s) examined` — the blank sheet |
+| H | CA-23 given a **second incumbent**, on the losing line | → `paired_incumbents` |
+| I | ME-02's incumbent in the **federal array spelling** | verdict survives the shape change |
+| I2 | same, reaching the **defeated** branch | verdict survives the shape change |
+| I3 | federal spelling with an id on **no line** | → `incumbent_not_on_ballot` |
+| J | ME-02 given **two** incumbents, both absent | claim turns plural: *"incumbents … were"* |
+| K | **our** rows flag Dunlap as ME-02's incumbent | → cross-check red: *"AP puts no incumbent on this ballot, but we flag Matthew Dunlap"* |
+| L | **our** rows stop flagging Thompson in CA-04 | → cross-check red: *"AP puts Mike Thompson on this ballot …; our rows flag nobody"* |
+
+⚠ **I and I2 hold their verdict rather than moving it**, so on their own they prove little. They
+are evidence because the verdict they hold **names data only the array could supply** — and I3
+is the negative half: change the array's id and the verdict moves.
+
+⚠ **B, H and I3 trip the cross-check as well, and that is correct, not noise.** The cross-check
+compares AP against our rows, so any tamper to AP's incumbent necessarily moves it too. Each
+still plants exactly one fault; they are the controls that show the two gates are wired to the
+same question from opposite sides.
+
+🟢 **The four existing outputs are byte-identical after this change.** The classifier is purely
+additive; it reads AP's ballot and never our rows, because the question is about AP's own two
+fields disagreeing and our table cannot adjudicate that.
 
 ## What is still open on these five races
 
@@ -208,6 +322,6 @@ Assertion 5 fails if any row claims otherwise.
 |---|---|
 | **Luis Galvan** | Decide after Colorado's abstract, due on or after **2026-11-25** |
 | ~~**Gregory Ward**~~ | ✅ **CLOSED 2026-11-17 by `CC_0451`** — seeded as **Gregory A. Ward** (the Maine SoS declared write-in register spells him with a middle initial) and recorded `lost`/`called`. See `backend/data/me02-write-in-2026/WARD.md` |
-| ~~**ME-02's winner citation**~~ | ✅ **CLOSED 2026-11-17 by `CC_0452`** — `CC_0447` said LePage won "defeating incumbent Jared Golden", and Golden was not a candidate. 🔴 **AP's `incumbent` is an attribute of the SEAT, not a ballot line**, so "winner ≠ incumbent" does not mean the winner beat the incumbent: the third branch is whether the incumbent's candidate id sits on a **losing line**. In ME-02 it does not. CA-04 and CO-04 were checked and are correct. ▶ `match-losers.mjs` still owes that branch. See `backend/data/me02-open-seat-2026/OPEN-SEAT.md` |
+| ~~**ME-02's winner citation**~~ | ✅ **CLOSED 2026-11-17 by `CC_0452`** — `CC_0447` said LePage won "defeating incumbent Jared Golden", and Golden was not a candidate. 🔴 **AP's `incumbent` is an attribute of the SEAT, not a ballot line**, so "winner ≠ incumbent" does not mean the winner beat the incumbent: the third branch is whether the incumbent's candidate id sits on a **losing line**. In ME-02 it does not. CA-04 and CO-04 were checked and are correct. ✅ **`match-losers.mjs` now carries that branch** — see §"The third branch" above, and `backend/data/me02-open-seat-2026/OPEN-SEAT.md` |
 | `certified` | A later pass, per state, against that state's own canvass — none of the five is certified yet |
 | Seating | These winners take office **2027-01-03**. Nothing here seats anybody |
