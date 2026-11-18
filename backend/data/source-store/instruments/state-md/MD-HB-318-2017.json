@@ -1,0 +1,55 @@
+{
+  "id": "MD-HB-318-2017",
+  "scope": "state:md",
+  "title": "HB318 (2017 Regular): Public Safety - Firearms Disqualifications - Antique Firearm",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0318?ys=2017RS",
+    "https://mgaleg.maryland.gov/2017RS/bills/hb/hb0318f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Aruna Miller",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ea9fc2d6-3b26-469a-978c-e8c846d2d49a"
+    },
+    {
+      "name": "Kathleen M. Dumais",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Marice Morales",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Marc Korman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e76d0654-b0c6-43dc-9159-e929e480d070"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2017RS/bills/hb/hb0318f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-318-2017.first_reader.pdf",
+      "sha256": "71b54a3e99d3fb5cc166cbbb54cd926c89cae99a12079e8960453e5169e477b2"
+    },
+    "note": "First reader (as filed, January 25, 2017); no enrolled text was read. The bill deletes § 5-205(a), which said the subtitle does not apply to antique rifles or shotguns, and re-letters the rest. No passage vote is recorded."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-205): A person may not possess a rifle, A shotgun, OR AN ANTIQUE FIREARM if the person:\nSection 1 (Md. Code Ann., Public Safety § 5-205(c)): A person who violates this section is guilty of a misdemeanor and on conviction is subject to imprisonment not exceeding 3 years or a fine not exceeding $1,000 or both.\nSection 1 (Md. Code Ann., Public Safety § 5-205(d)): A person who is disqualified from owning a rifle, A shotgun, OR AN ANTIQUE FIREARM under subsection (A)(6), (7), (8), (9), (10), or (11) of this section may seek relief from the disqualification in accordance with § 5–133.3 of this title.\nSection 1 (Md. Code Ann., Public Safety § 5-133.3(b)): A person subject to a regulated firearms disqualification under § 5–133(b)(6), (7), (8), (9), (10), or (11) of this subtitle, a rifle, A shotgun, OR AN ANTIQUE FIREARM disqualification under § 5–205(A)(6), (7), (8), (9), (10), or (11) of this title, or prohibited from the shipment, transportation, possession, or receipt of a firearm by 18 U.S.C. §§ 922(d)(4) or (g)(4) as a result of an adjudication or commitment that occurred in the State may be authorized to possess a firearm if:"
+}

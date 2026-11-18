@@ -1,0 +1,97 @@
+{
+  "id": "MD-SB-197-2018",
+  "scope": "state:md",
+  "title": "SB197 (2018 Regular): Crimes - Firearms - Penalties",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0197?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/sb/sb0197f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "The President (By Request - Administration) and Bates",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Adelaide C. Eckardt",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Hershey",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0"
+    },
+    {
+      "name": "Michael J. Hough",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "J.B. Jennings",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5927d5ab-2fd7-4454-bcc3-34e494821aac"
+    },
+    {
+      "name": "Justin Ready",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "493c5d0c-1986-40d4-9fff-3a3bc3fe62e8"
+    },
+    {
+      "name": "Robert Cassilly",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Norman",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Edward R. Reilly",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Johnny Salling",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9f8d0005-c5ff-42f8-b158-cdb6e4eee872"
+    },
+    {
+      "name": "Andrew A. Serafini",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Waugh",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/sb/sb0197f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-197-2018.first_reader.pdf",
+      "sha256": "c45da1f384433d50ed073899036fd225ba9bd699ba0a1d89b9f1ad8ddcf4f4bb"
+    },
+    "note": "Version read: first reader (bill as filed); no vote recorded, so no later amendments to account for. Emergency measure. The text for § 4–204(c)(1)(i)1 is garbled in the file (first-offense minimum number missing), so the first-offense sentence is not quoted: the bill makes the offence a felony and sets a first-offense range up to 20 years. Brackets mean deleted from existing law and are not quoted."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Criminal Law § 4-204(c)(1)(ii)2): THE COURT MAY NOT IMPOSE LESS THAN THE MINIMUM SENTENCE OF 10 YEARS FOR A SENTENCE IMPOSED UNDER ITEM (I)2 OF THIS PARAGRAPH.\nSection 1 (Md. Code Ann., Criminal Law § 4-204(c)(2)): THE sentence shall be consecutive to and not concurrent with any other sentence imposed for the crime of violence or felony.\nSection 1 (Md. Code Ann., Criminal Law § 5-621(c)(1)): In addition to the sentence provided for the drug trafficking crime, a person who violates subsection (b) of this section is guilty of a felony and on conviction is subject to: (i) for a first violation, imprisonment for not less than 5 years and not exceeding 20 years; or (ii) for each subsequent violation, imprisonment for not less than 10 years and not exceeding 40 years.\nSection 1 (Md. Code Ann., Criminal Law § 5-621(c)(3)(iii)): A sentence imposed under paragraph (1) of this subsection shall be consecutive to and not concurrent with any other sentence imposed by virtue of the commission of the drug trafficking crime.\nSection 1 (Md. Code Ann., Criminal Law § 14-101(a)(14)): use of a FIREARM in the commission of a felony or other crime of violence;\nSection 1 (Md. Code Ann., Criminal Law § 14-101(a)(15)): POSSESSING, USING, WEARING, CARRYING, OR TRANSPORTING A FIREARM DURING AND IN RELATION TO A DRUG TRAFFICKING CRIME UNDER § 5–621 OF THIS ARTICLE;\nSection 1 (Md. Code Ann., Public Safety § 5-133(c)(1)): A person may not possess a regulated firearm if the person was previously convicted of: (i) a crime of violence; (ii) a violation of § 5–602, § 5–603, § 5–604, § 5–605, § 5–612, § 5–613, § 5–614, § 5–621, OR § 5–622 of the Criminal Law Article; or (iii) an offense under the laws of another state or the United States that would constitute one of the crimes listed in item (i) or (ii) of this paragraph if committed in this State.\nSection 1 (Md. Code Ann., Public Safety § 5-133(c)(3)): EACH VIOLATION OF THIS SUBSECTION IS A SEPARATE CRIME."
+}

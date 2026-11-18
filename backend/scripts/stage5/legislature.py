@@ -19,7 +19,8 @@ bill ruling or a person. It names its source and the day it was verified, becaus
                       known BEFORE a session meets it; "not checked" tells session A to probe it.
   search_note         added to every search brief for this state (what the bulk data already covers)
   bill_table_note     added to every bill-table prompt for this state
-  fill_quotes         {"label_strips": [regex, …]}: section labels the fill quote checker removes before comparing
+  fill_quotes         {"label_strips": [regex, …], "brackets_delete": true|absent}: section labels the fill quote checker removes
+                      before comparing; brackets_delete when the texts print words deleted from law in plain [brackets]
   quirks              anything else the next session needs, one line each
 
 Readers: session_card.py (the write recipe and the quirks on both cards), stage5_prompts.py (the two notes),

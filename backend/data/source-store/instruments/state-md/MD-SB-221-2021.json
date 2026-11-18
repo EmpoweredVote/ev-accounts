@@ -1,0 +1,39 @@
+{
+  "id": "MD-SB-221-2021",
+  "scope": "state:md",
+  "title": "SB221 (2021 Regular): Handgun Qualification License - Firearms Safety Training",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0221?ys=2021RS&search=True",
+    "https://mgaleg.maryland.gov/2021RS/bills/sb/sb0221f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jack Bailey",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2021RS/bills/sb/sb0221f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-221-2021.first_reader.pdf",
+      "sha256": "8c5385c66a74f5ff36ed7116c7e80de08e41ad0c76a233aa984a10a972588d8c"
+    },
+    "note": "Version read: first reader (bill as filed); no vote recorded, so no later amendments to account for. Item (iii), the firearms orientation component, is in [brackets] = deleted from existing law; the quote omits it."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-117.1(d)(3)): except as provided in subsection (e) of this section, has demonstrated satisfactory completion, within 3 years prior to the submission of the application, of a firearms safety training course approved by the Secretary that includes: (i) a minimum of 4 hours of instruction by a qualified handgun instructor; AND (ii) classroom instruction on: 1. State firearm law; 2. home firearm safety; and 3. handgun mechanisms and operation;"
+}

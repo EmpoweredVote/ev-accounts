@@ -1,0 +1,39 @@
+{
+  "id": "MD-SB-942-2026",
+  "scope": "state:md",
+  "title": "SB942 (2026 Regular): Assisted Outpatient Treatment - Surrender or Seizure of Firearms",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0942?ys=2026RS",
+    "https://mgaleg.maryland.gov/2026RS/bills/sb/sb0942f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shaneka Henson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2026RS/bills/sb/sb0942f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-942-2026.first_reader.pdf",
+      "sha256": "b71c962e2196c29e1426d826108813e1e50fec004a2c2de42f0b73e3cd4a83d4"
+    },
+    "note": "first reader: the bill as filed; no enrolled text was read. Subsection (H)(4) is quoted from the middle of a longer paragraph. The treatment order is under the existing assisted outpatient treatment law, and a firearm order is an add-on, so this is one subject. No passage vote recorded."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Health – General § 10–6A–08.1): (B) (1) IF A COURT ORDERS A RESPONDENT TO COMPLY WITH ASSISTED OUTPATIENT TREATMENT UNDER § 10–6A–08 OF THIS SUBTITLE, THE COURT SHALL MAKE A DETERMINATION AS TO WHETHER THE RESPONDENT IS LIKELY TO ENDANGER OR CAUSE PHYSICAL INJURY TO THE RESPONDENT OR ANOTHER IF THE RESPONDENT HAS ACCESS TO A FIREARM. (2) IF THE COURT DETERMINES THAT THE RESPONDENT IS LIKELY TO ENDANGER OR CAUSE PHYSICAL INJURY TO THE RESPONDENT OR ANOTHER IF THE RESPONDENT HAS ACCESS TO A FIREARM, THE COURT SHALL ORDER THE RESPONDENT: (I) TO SURRENDER TO LAW ENFORCEMENT AUTHORITIES ANY FIREARM IN THE RESPONDENT’S POSSESSION; AND (II) NOT TO PURCHASE OR POSSESS ANY FIREARM FOR THE DURATION OF THE ORDER REQUIRING THE RESPONDENT TO COMPLY WITH ASSISTED OUTPATIENT TREATMENT.\nSection 1 (Md. Code Ann., Health – General § 10–6A–08.1): (C) (1) IN ACCORDANCE WITH THE PROVISIONS OF § 1–203 OF THE CRIMINAL PROCEDURE ARTICLE, ON APPLICATION BY A STATE’S ATTORNEY OR A LAW ENFORCEMENT OFFICER WITH PROBABLE CAUSE TO BELIEVE THAT A RESPONDENT WHO IS SUBJECT TO AN ORDER UNDER THIS SECTION POSSESSES A FIREARM AND FAILED TO SURRENDER THE FIREARM, A COURT MAY ISSUE A SEARCH WARRANT FOR THE REMOVAL OF THE FIREARM AT ANY LOCATION IDENTIFIED IN THE APPLICATION FOR THE WARRANT.\nSection 1 (Md. Code Ann., Health – General § 10–6A–08.1): (D) AN ORDER UNDER SUBSECTION (B) OF THIS SECTION SHALL EXPIRE WHEN THE RESPONDENT IS NO LONGER SUBJECT TO AN ORDER TO COMPLY WITH ASSISTED OUTPATIENT TREATMENT UNDER § 10–6A–08 OF THIS SUBTITLE.\nSection 1 (Md. Code Ann., Health – General § 10–6A–08.1): (H)(4)(II) A LAW ENFORCEMENT AGENCY SHALL RETURN A FIREARM TO A RESPONDENT ONLY AFTER THE LAW ENFORCEMENT AGENCY VERIFIES THAT THE RESPONDENT IS NOT OTHERWISE PROHIBITED FROM POSSESSING THE FIREARM."
+}

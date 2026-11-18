@@ -1,0 +1,103 @@
+{
+  "id": "MD-SB-196-2018",
+  "scope": "state:md",
+  "title": "SB196 (2018 Regular): Public Safety - Handgun Qualification License - Issuance With Permit to Carry, Wear, or Transport",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0196?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/sb/sb0196f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michael J. Hough",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Adelaide C. Eckardt",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "George C. Edwards",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Hershey",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0"
+    },
+    {
+      "name": "J.B. Jennings",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5927d5ab-2fd7-4454-bcc3-34e494821aac"
+    },
+    {
+      "name": "Justin Ready",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "493c5d0c-1986-40d4-9fff-3a3bc3fe62e8"
+    },
+    {
+      "name": "Robert Cassilly",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Norman",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bryan Simonaire",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4aa50ee7-aeed-48ae-96e7-142bd9ac731b"
+    },
+    {
+      "name": "Gail H. Bates",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Johnny Salling",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9f8d0005-c5ff-42f8-b158-cdb6e4eee872"
+    },
+    {
+      "name": "Andrew A. Serafini",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Waugh",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/sb/sb0196f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-196-2018.first_reader.pdf",
+      "sha256": "09aa350c5b4a5307dad1eb3b6738d378c82bf3d7b0d0238a4324f132cc4d64ea"
+    },
+    "note": "as filed (first reader); no passage vote recorded. 'may' deleted, 'SHALL' added."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–306(d)): The Secretary SHALL issue a handgun qualification license, without an additional application or fee, to a person who: (1) meets the requirements for issuance of a permit under this section; and (2) does not have a handgun qualification license issued under § 5–117.1 of this title."
+}

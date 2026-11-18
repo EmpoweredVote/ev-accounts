@@ -1,0 +1,82 @@
+{
+  "id": "MD-HB-1145-2018",
+  "scope": "state:md",
+  "title": "HB1145 (2018 Regular): Public Safety - Handgun Permit - Issuance and Appeal",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1145?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/hb/hb1145f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Deborah C. Rey",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kathy Afzali",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jason Buckel",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5260bd6f-e70a-46f1-aa7d-49eaf22192cf"
+    },
+    {
+      "name": "April Rose",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5967c703-2583-466f-a438-c3ac182111d5"
+    },
+    {
+      "name": "Teresa Reilly",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "547841f2-3476-4e83-9344-0cac984d44e8"
+    },
+    {
+      "name": "Susan W. Krebs",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sid Saab",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Haven Shoemaker",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kathy Szeliga",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/hb/hb1145f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1145-2018.first_reader.pdf",
+      "sha256": "9e451203d088dcb579d9383a7016b1440cf59ac3952fe1b6cbe52efb948faec3"
+    },
+    "note": "First reader (as filed); no vote recorded. Quotes drop words deleted from existing law (\"a reasonable time\", \"90 days\")."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-306(a)): (a) Subject to subsection (c) of this section, the Secretary shall issue a permit within 30 CALENDAR DAYS to a person who the Secretary finds:\nSection 1 (Md. Code Ann., Public Safety § 5-312(a)(2)): (2) A person whose application for a permit or renewal of a permit is not acted on by the Secretary within 30 CALENDAR DAYS after submitting the application to the Secretary may request a hearing before the Board by filing a written request with the Board.\nSection 1 (Md. Code Ann., Public Safety § 5-312(d)(3)): (3) IF THE DECISION OF THE BOARD DIRECTS THE SECRETARY TO ISSUE OR RENEW A PERMIT, THE SECRETARY SHALL COMPLY WITHIN 10 CALENDAR DAYS OF THE DECISION."
+}

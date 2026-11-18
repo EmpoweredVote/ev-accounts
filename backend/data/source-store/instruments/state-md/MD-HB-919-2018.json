@@ -1,0 +1,100 @@
+{
+  "id": "MD-HB-919-2018",
+  "scope": "state:md",
+  "title": "HB919 (2018 Regular): Public Safety - Handgun Permit - Renewal",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0919?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/hb/hb0919f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sid Saab",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jerry Clark",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Susan W. Krebs",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Christian Miele",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Matt Morgan",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c4e4d811-1e14-45fe-9335-7521f1603856"
+    },
+    {
+      "name": "Deborah C. Rey",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Seth Howard",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "2fe3f655-c28e-40c3-a2f9-48ea9eb8b498"
+    },
+    {
+      "name": "Jason Buckel",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5260bd6f-e70a-46f1-aa7d-49eaf22192cf"
+    },
+    {
+      "name": "Nic Kipke",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0e0bdc53-b5a2-4292-aeb7-341a4c5bed08"
+    },
+    {
+      "name": "Sheree Sample-Hughes",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a1c2b55c-df7d-487c-ad90-7f7e2c2e6951"
+    },
+    {
+      "name": "Kathy Szeliga",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520"
+    },
+    {
+      "name": "Chris West",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/hb/hb0919f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-919-2018.first_reader.pdf",
+      "sha256": "ad655c3886e23e79f3b5797667b864682a777e88767ff8819ff6b2770030846e"
+    },
+    "note": "First reader (as filed). Quotes drop bracketed (deleted) words: the renewal-training course and 'successive periods of 3 years each' are deleted. No passage vote on file."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-306(a)(5)): (5) except as provided in subsection (b) of this section, has successfully completed prior to application, a firearms training course approved by the Secretary that includes: (i) a minimum of 16 hours of instruction by a qualified handgun instructor;\nSection 1 (Md. Code Ann., Public Safety § 5-309(b)): (b) Subject to subsection (c) of this section, a permit may be renewed ONE TIME for A PERIOD OF 4 years if, at the time of THE application for renewal, the applicant possesses the qualifications for the issuance of a permit and pays the renewal fee stated in this subtitle."
+}

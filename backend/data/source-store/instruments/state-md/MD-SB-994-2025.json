@@ -1,0 +1,39 @@
+{
+  "id": "MD-SB-994-2025",
+  "scope": "state:md",
+  "title": "SB994 (2025 Regular): Firearms - Right to Purchase, Own, Possess, and Carry",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0994?ys=2025RS&search=True",
+    "https://mgaleg.maryland.gov/2025RS/bills/sb/sb0994f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Johnny Salling",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9f8d0005-c5ff-42f8-b158-cdb6e4eee872"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2025RS/bills/sb/sb0994f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-994-2025.first_reader.pdf",
+      "sha256": "75a159438f142de0bd0e31ab2c011cdcd67cba95897847ef29058797ea64eca6"
+    },
+    "note": "first reader: the bill as filed; no enrolled text was read. No passage vote recorded."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–901): A PERSON MAY NOT BE DENIED THE RIGHT TO PURCHASE, OWN, POSSESS, OR CARRY A FIREARM UNDER THIS TITLE SOLELY ON THE BASIS THAT THE PERSON IS AUTHORIZED TO USE MEDICAL CANNABIS UNDER TITLE 36, SUBTITLE 3 OF THE ALCOHOLIC BEVERAGES AND CANNABIS ARTICLE."
+}

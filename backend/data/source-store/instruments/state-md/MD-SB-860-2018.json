@@ -1,0 +1,73 @@
+{
+  "id": "MD-SB-860-2018",
+  "scope": "state:md",
+  "title": "SB860 (2018 Regular): Public Safety - Regulated Firearms - Transfer",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0860?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/sb/sb0860f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bill Ferguson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "6e3c30f5-52be-48b0-b5b4-383e5d745c57"
+    },
+    {
+      "name": "Joanne Benson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029"
+    },
+    {
+      "name": "Nancy King",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec"
+    },
+    {
+      "name": "Paul G. Pinsky",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Victor R. Ramirez",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jim Rosapepe",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e"
+    },
+    {
+      "name": "Will Smith",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/sb/sb0860f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-860-2018.first_reader.pdf",
+      "sha256": "77b880b3d954933b29ca040976281af7d05a35245e9b6e6fa8ea5b577b0f7413"
+    },
+    "note": "First reader (as filed), no date in text. No passage vote recorded. The rest of § 5-124 is only re-lettered."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-124(A)): IN THIS SECTION, “TRANSFER” INCLUDES A LOAN OTHER THAN A TEMPORARY GRATUITOUS EXCHANGE OF A REGULATED FIREARM BETWEEN TWO INDIVIDUALS WHO REMAIN IN THE SAME LOCATION FOR THE DURATION OF THE EXCHANGE.\nSection 1 (Md. Code Ann., Public Safety § 5-124(B)(1)): A person who is not a licensee may not sell, rent, transfer, or purchase a regulated firearm until after 7 days following the time a firearm application is executed by the firearm applicant, in triplicate, and the original is forwarded by a licensee to the Secretary."
+}

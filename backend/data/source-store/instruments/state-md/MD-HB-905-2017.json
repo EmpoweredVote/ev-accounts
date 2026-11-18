@@ -1,0 +1,126 @@
+{
+  "id": "MD-HB-905-2017",
+  "scope": "state:md",
+  "title": "HB905 (2017 Regular): Public Safety - Handgun Qualification License - Application Fee",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0905?ys=2017RS",
+    "https://mgaleg.maryland.gov/2017RS/bills/hb/hb0905f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michael E. Malone",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kathy Afzali",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jason Buckel",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5260bd6f-e70a-46f1-aa7d-49eaf22192cf"
+    },
+    {
+      "name": "Glen Glass",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sid Saab",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Cluster",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Trent Kittleman",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Teresa Reilly",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "547841f2-3476-4e83-9344-0cac984d44e8"
+    },
+    {
+      "name": "Brett Wilson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bill Folden",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4a5241b7-8737-4a58-adf2-c5335111d3c4"
+    },
+    {
+      "name": "Nic Kipke",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0e0bdc53-b5a2-4292-aeb7-341a4c5bed08"
+    },
+    {
+      "name": "Susan McComas",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07"
+    },
+    {
+      "name": "Ric Metzgar",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ba85b633-32cf-4617-923c-3a325f39894e"
+    },
+    {
+      "name": "Neil Parrott",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Deborah C. Rey",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kathy Szeliga",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520"
+    },
+    {
+      "name": "William Wivell",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "df6fe96f-7795-4934-9acc-2b9f8f0aa8f7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2017RS/bills/hb/hb0905f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-905-2017.first_reader.pdf",
+      "sha256": "ac585cb677e04587020a7c4834cc2a144c6cbed7cf12b21914f278eb72f780a2"
+    },
+    "note": "First reader (as filed). Subsection (b) is existing law reprinted without change; the only change is the fee cap in (g)(2). No passage vote on file."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-117.1(g)(2)): (2) a nonrefundable application fee to cover the costs to administer the program of up to $25;\nSection 1 (Md. Code Ann., Public Safety § 5-117.1(b)): (b) A dealer or any other person may not sell, rent, or transfer a handgun to a purchaser, lessee, or transferee unless the purchaser, lessee, or transferee presents to the dealer or other person a valid handgun qualification license issued to the purchaser, lessee, or transferee by the Secretary under this section."
+}

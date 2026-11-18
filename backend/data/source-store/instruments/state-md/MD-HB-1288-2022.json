@@ -1,0 +1,115 @@
+{
+  "id": "MD-HB-1288-2022",
+  "scope": "state:md",
+  "title": "HB1288 (2022 Regular): Public Safety - Handgun Permit Application Fee - Waiver for Disabled Residents",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1288?ys=2022RS&search=True",
+    "https://mgaleg.maryland.gov/2022RS/bills/hb/hb1288f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lauren Arikan",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "6a04e5b9-d532-4e80-bbca-6677a35620e5"
+    },
+    {
+      "name": "Steve Arentz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fee8a413-a3a8-4568-ad9b-db00f94f5ac2"
+    },
+    {
+      "name": "Joseph C. Boteler, III",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jason Buckel",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5260bd6f-e70a-46f1-aa7d-49eaf22192cf"
+    },
+    {
+      "name": "Robin Grammer",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0608cc7a-72ed-4d24-b966-3eee82075bf1"
+    },
+    {
+      "name": "Kevin Hornberger",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "96a6d696-50fd-4393-a0f6-19e69dc15716"
+    },
+    {
+      "name": "Seth Howard",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2fe3f655-c28e-40c3-a2f9-48ea9eb8b498"
+    },
+    {
+      "name": "Nic Kipke",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0e0bdc53-b5a2-4292-aeb7-341a4c5bed08"
+    },
+    {
+      "name": "Susan McComas",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07"
+    },
+    {
+      "name": "Matt Morgan",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c4e4d811-1e14-45fe-9335-7521f1603856"
+    },
+    {
+      "name": "Jesse Pippy",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ce2fc441-abd5-4d8f-9c56-114e31c4d43c"
+    },
+    {
+      "name": "Teresa Reilly",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "547841f2-3476-4e83-9344-0cac984d44e8"
+    },
+    {
+      "name": "April Rose",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5967c703-2583-466f-a438-c3ac182111d5"
+    },
+    {
+      "name": "Haven Shoemaker",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2022RS/bills/hb/hb1288f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1288-2022.first_reader.pdf",
+      "sha256": "25951ef24ae00770c35b932d59fa889ad366fd10e2953db075e7ad1928b69c50"
+    },
+    "note": "first_reader: bill as filed; no vote recorded. Quote drops the bracketed word 'or' after item (1)."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-301(b)): “DISABLED RESIDENT” MEANS AN INDIVIDUAL WHO: (1) HAS BEEN CERTIFIED AS DISABLED BY A UNIT OF THE STATE OR THE UNITED STATES THAT CLASSIFIES DISABLED INDIVIDUALS; AND (2) IS A RESIDENT OF THE STATE.\nSection 1 (Md. Code Ann., Public Safety § 5-304(d)): The Secretary may not charge a fee under subsection (b) of this section to: (1) a State, county, or municipal public safety employee who is required to carry, wear, or transport a handgun as a condition of governmental employment; (2) a retired law enforcement officer of the State or a county or municipal corporation of the State; OR (3) A DISABLED RESIDENT."
+}

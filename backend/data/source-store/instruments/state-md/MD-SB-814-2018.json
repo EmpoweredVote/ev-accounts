@@ -1,0 +1,60 @@
+{
+  "id": "MD-SB-814-2018",
+  "scope": "state:md",
+  "title": "SB814 (2018 Regular): Public Safety - Permit to Carry, Wear, or Transport a Handgun - Qualifications",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0814?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/sb/sb0814f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Johnny Salling",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9f8d0005-c5ff-42f8-b158-cdb6e4eee872"
+    },
+    {
+      "name": "Bryan Simonaire",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4aa50ee7-aeed-48ae-96e7-142bd9ac731b"
+    },
+    {
+      "name": "Gail H. Bates",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Adelaide C. Eckardt",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Waugh",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/sb/sb0814f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-814-2018.first_reader.pdf",
+      "sha256": "619614170428e8f814f7958745729796e472fe38ad5822b9ccc0c9156b8da9cc"
+    },
+    "note": "First reader: the bill as filed. Quote joins the lead-in with item (6)(ii); items (1)-(5) and (6)(i) are unchanged law. No passage vote in the record."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–306(a)): Subject to subsection (c) of this section, the Secretary shall issue a permit within a reasonable time to a person who the Secretary finds: (6) based on an investigation: (ii) has good and substantial reason to wear, carry, or transport a handgun, such as SELF–DEFENSE OR a finding that the permit is necessary as a reasonable precaution against apprehended danger."
+}

@@ -1,0 +1,128 @@
+{
+  "id": "MD-HB-1031-2018",
+  "scope": "state:md",
+  "title": "HB1031 (2018 Regular): Public Safety - Regulated Firearms - Transfer",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1031?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/hb/hb1031f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kathleen M. Dumais",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jim Gilchrist",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Shelly Hettleman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3089c813-f0a8-46af-9a7b-1699129037e9"
+    },
+    {
+      "name": "David Moon",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "96876928-53f8-4ed5-b2de-deab3a456d83"
+    },
+    {
+      "name": "Marice Morales",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Shane E. Pendergrass",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kirill Reznik",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Vanessa Atterbeary",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Charles Barkley",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bilal Ali",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Barbara Robinson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Pat Young",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Luke Clippinger",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ad1aaa25-0ef6-4c88-9d78-d75aec7398c7"
+    },
+    {
+      "name": "C. William Frick",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Barbara Frush",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Marc Korman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e76d0654-b0c6-43dc-9159-e929e480d070"
+    },
+    {
+      "name": "Brooke E. Lierman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b26fb5d2-90eb-4108-8ce5-838df719473d"
+    },
+    {
+      "name": "Geraldine Valentino-Smith",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/hb/hb1031f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1031-2018.first_reader.pdf",
+      "sha256": "bc04239fdfcb7a1eb3d0576548848590a04482aea20a94e5e3fbfe2b4fde692e"
+    },
+    "note": "First reader (as filed); no vote recorded."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-124(a)): (A) IN THIS SECTION, “TRANSFER” INCLUDES A LOAN OTHER THAN A TEMPORARY GRATUITOUS EXCHANGE OF A REGULATED FIREARM BETWEEN TWO INDIVIDUALS WHO REMAIN IN THE SAME LOCATION FOR THE DURATION OF THE EXCHANGE.\nSection 1 (Md. Code Ann., Public Safety § 5-124(b)(1)): (B) (1) A person who is not a licensee may not sell, rent, transfer, or purchase a regulated firearm until after 7 days following the time a firearm application is executed by the firearm applicant, in triplicate, and the original is forwarded by a licensee to the Secretary."
+}

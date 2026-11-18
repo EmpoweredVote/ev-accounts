@@ -1,0 +1,39 @@
+{
+  "id": "MD-SB-830-2026",
+  "scope": "state:md",
+  "title": "SB830 (2026 Regular): Handgun Roster Reform",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0830?ys=2026RS",
+    "https://mgaleg.maryland.gov/2026RS/bills/sb/sb0830f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeff Waldstreicher",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2026RS/bills/sb/sb0830f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-830-2026.first_reader.pdf",
+      "sha256": "3db791dd0056c117779485cf664b332cee55aa3dc4863771c55f60dd28a93a9b"
+    },
+    "note": "First reader (as filed), dated only by the bill, no date in text. No passage vote recorded. Existing § 5-406 (ban on making or selling handguns not on the roster) is reenacted unchanged. Quotes drop page headers and join sentences across page breaks. In § 5-403(L)(1) the quote stops after item (I). The Board-hearing process in old § 5-405(d)-(e) is deleted by brackets (not quoted). Bill also reshapes the Handgun Roster Board (member seat for handgun owners replacing the NRA seat, oversight role, fee recommendations), not quoted."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-403(A)(1)): THE ATTORNEY GENERAL SHALL APPROVE THE PLACEMENT OF A HANDGUN ON THE HANDGUN ROSTER UNDER § 5–405 OF THIS SUBTITLE ON THE SUCCESSFUL PETITION OF ANY PERSON, SUBJECT TO SUBSECTIONS (B) AND (C) OF THIS SECTION.\nSection 1 (Md. Code Ann., Public Safety § 5-403(B)-(C)): THE ATTORNEY GENERAL SHALL: (1) CONDUCT A LEGAL REVIEW OF EACH PETITION TO PLACE A HANDGUN ON THE HANDGUN ROSTER, AS WELL AS ANY MATERIALS AND INFORMATION PROVIDED UNDER SUBSECTION (D) OF THIS SECTION; AND (2) DETERMINE WHETHER THE HANDGUN IS LAWFUL UNDER STATE AND FEDERAL LAW FOR PLACEMENT ON THE HANDGUN ROSTER. (C) BEFORE A HANDGUN IS PLACED ON THE HANDGUN ROSTER, THE HANDGUN SHALL PASS TESTING UNDER § 5–403.1 OF THIS SUBTITLE.\nSection 1 (Md. Code Ann., Public Safety § 5-403(L)(1)(i)): THE ATTORNEY GENERAL, IN CONSULTATION WITH THE MARYLAND STATE POLICE AND THE BOARD, SHALL: (I) REEVALUATE ALL HANDGUNS THAT WERE APPROVED TO BE ON THE HANDGUN ROSTER BEFORE OCTOBER 1, 2026, TO DETERMINE WHETHER THEY ARE STILL LEGAL UNDER STATE AND FEDERAL LAW;\nSection 1 (Md. Code Ann., Public Safety § 5-403.1(D)(1)(i)): THE TESTING UNDER THIS SECTION SHALL INCLUDE: (I) FUNCTION TESTING, INCLUDING AT LEAST 500 CONTINUOUS ROUNDS OF LIVE FIRE USING COMMERCIAL FACTORY AMMUNITION THAT IS APPROPRIATE FOR THE HANDGUN, WITHOUT CLEANING OR MAINTENANCE TO CLEAR ANY MALFUNCTION DURING THE ENTIRE SEQUENCE OF LIVE FIRE;\nSection 1 (Md. Code Ann., Public Safety § 5-403.1(D)(2)-(4)): (2) A SPECIMEN SHALL FAIL THE FUNCTION TESTING UNDER PARAGRAPH (1)(I) OF THIS SUBSECTION IF THE SPECIMEN EXPERIENCES MORE THAN SIX MALFUNCTIONS DURING THE 500–ROUND TEST. (3) A SPECIMEN SHALL FAIL THE DROP AND IMPACT TESTING UNDER PARAGRAPH (1)(II) OF THIS SUBSECTION IF THE SPECIMEN DISCHARGES AS A RESULT OF THE DROP AND IMPACT TESTING. (4) ANY UNINTENDED DISCHARGE OR MECHANICAL FAILURE OF A SPECIMEN DURING ANY OF THE TESTING UNDER PARAGRAPH (1) OF THIS SUBSECTION SHALL CONSTITUTE AN AUTOMATIC FAILURE FOR THE SPECIMEN.\nSection 1 (Md. Code Ann., Public Safety § 5-403.1(H)): IF A HANDGUN FAILS TESTING UNDER THIS SECTION, THE HANDGUN MAY NOT BE PLACED ON THE HANDGUN ROSTER UNDER § 5–405 OF THIS SUBTITLE UNLESS AND UNTIL THE HANDGUN PASSES TESTING.\nSection 1 (Md. Code Ann., Public Safety § 5-403.1(J)(1)): HANDGUNS THAT ARE LISTED ON THE HANDGUN ROSTER AS OF OCTOBER 1, 2026, SHALL BE TESTED BY THE MARYLAND STATE POLICE ON OR BEFORE MARCH 31, 2028.\nSection 1 (Md. Code Ann., Public Safety § 5-405(B)(2)): WITHIN 15 DAYS AFTER RECEIPT OF A FINAL DETERMINATION BY THE ATTORNEY GENERAL UNDER § 5–403 OF THIS SUBTITLE, THE BOARD SHALL UPDATE THE HANDGUN ROSTER UNDER PARAGRAPH (1)(I) OF THIS SUBSECTION.\nSection 1 (Md. Code Ann., Public Safety § 5-405(c)(1)): The Board may NOT: (I) place a handgun on the handgun roster on its own initiative; OR (II) MAKE ANY DETERMINATION REGARDING THE LAWFULNESS, SAFETY, OR FUNCTIONALITY OF A HANDGUN."
+}

@@ -1,0 +1,63 @@
+{
+  "id": "MD-HB-1104-2020",
+  "scope": "state:md",
+  "title": "HB1104 (2020 Regular): Public Safety - Regulated Firearms - Transfer",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1104?ys=2020RS&search=True",
+    "https://mgaleg.maryland.gov/2020RS/bills/hb/hb1104f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lesley Lopez",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2fa68ca4-00b5-4518-a692-d12447d7fec3"
+    },
+    {
+      "name": "Lorig Charkoudian",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9c5e1ac7-8a39-4c6e-8b20-0788a92f8607"
+    },
+    {
+      "name": "Marc Korman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e76d0654-b0c6-43dc-9159-e929e480d070"
+    },
+    {
+      "name": "Sara Love",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806"
+    },
+    {
+      "name": "Jared Solomon",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c0bf0c64-6254-40a7-b810-8717977759dd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2020RS/bills/hb/hb1104f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1104-2020.first_reader.pdf",
+      "sha256": "de28e0ac15aede13495ed85b1be25b785e90deff358072dccf4bc466bc668c7f"
+    },
+    "note": "First reader (as filed); no vote recorded. The § 5-124(b)(1) quote drops the words \"sell, rent,\" deleted from existing law."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-124(a)): (A) (1) IN THIS SECTION, “TRANSFER” MEANS A SALE, A RENTAL, A FURNISHING, A GIFT, A LOAN, OR ANY OTHER DELIVERY, WITH OR WITHOUT CONSIDERATION. (2) “TRANSFER” DOES NOT INCLUDE: (I) A CHANGE IN POSSESSION THAT IS TEMPORARY AND OCCURS UNDER CIRCUMSTANCES IN WHICH THE TRANSFEROR HAS NO REASON TO BELIEVE THAT THE TRANSFEREE INTENDS TO USE THE REGULATED FIREARM IN THE COMMISSION OF A CRIME; OR (II) A CHANGE IN POSSESSION TO ALLOW ANOTHER PERSON TO USE THE REGULATED FIREARM EXCLUSIVELY AND IN THE ACTUAL PRESENCE OF THE TRANSFEROR.\nSection 1 (Md. Code Ann., Public Safety § 5-124(b)(1)): (B) (1) A person who is not a licensee may not transfer or purchase a regulated firearm until after 7 days following the time a firearm application is executed by the firearm applicant, in triplicate, and the original is forwarded by a licensee to the Secretary."
+}

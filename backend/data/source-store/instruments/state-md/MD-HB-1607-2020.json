@@ -1,0 +1,55 @@
+{
+  "id": "MD-HB-1607-2020",
+  "scope": "state:md",
+  "title": "HB1607 (2020 Regular): Public Safety - Permit to Carry, Wear, or Transport a Handgun - Qualifications",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1607?ys=2020RS&search=True",
+    "https://mgaleg.maryland.gov/2020RS/bills/hb/hb1607f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Daniel L. Cox",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Wayne Hartman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1ff2bb96-0e55-4893-8a4c-b675dfbb79f6"
+    },
+    {
+      "name": "Nino Mangione",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jesse Pippy",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ce2fc441-abd5-4d8f-9c56-114e31c4d43c"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2020RS/bills/hb/hb1607f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1607-2020.first_reader.pdf",
+      "sha256": "db078db43beedb266e747bad37585157bbb7d9925d76be1ae139d3c9ccbabaf5"
+    },
+    "note": "First reader as filed; no vote on record. Only the one clause at (a)(6)(ii) is changed; the rest of § 5-306(a) is existing law."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-306(a)(6)(ii)): has good and substantial reason to wear, carry, or transport a handgun, such as PERSONAL PROTECTION, SELF–DEFENSE, OR a finding that the permit is necessary as a reasonable precaution against apprehended danger."
+}

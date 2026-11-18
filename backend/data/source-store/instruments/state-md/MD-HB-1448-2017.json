@@ -1,0 +1,99 @@
+{
+  "id": "MD-HB-1448-2017",
+  "scope": "state:md",
+  "title": "HB1448 (2017 Regular): Public Safety - Rifles and Shotguns - Transactions",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1448?ys=2017RS",
+    "https://mgaleg.maryland.gov/2017RS/bills/hb/hb1448f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dereck E. Davis",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "75378a96-8886-46eb-b0c1-37cbe2579265"
+    },
+    {
+      "name": "Sheila E. Hixson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "David Moon",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "96876928-53f8-4ed5-b2de-deab3a456d83"
+    },
+    {
+      "name": "Joseline Peña-Melnyk",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "00cd05cc-75de-4d9a-ab23-9f53441bc186"
+    },
+    {
+      "name": "Andrew Platt",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ariana Kelly",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Barbara Robinson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Eric Ebersole",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "22610d7f-eaca-4802-b486-0e48544e6e7d"
+    },
+    {
+      "name": "Jim Gilchrist",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Brooke E. Lierman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b26fb5d2-90eb-4108-8ce5-838df719473d"
+    },
+    {
+      "name": "Carlo Sanchez",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeff Waldstreicher",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2017RS/bills/hb/hb1448f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1448-2017.first_reader.pdf",
+      "sha256": "b4c2ce0b6ca2595d655f7893233e29015b36e09ea5393a48ce2d17196b3443eb"
+    },
+    "note": "As filed. No vote listed."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-204.1(B)): A PERSON WHO IS NOT A LICENSEE MAY NOT COMPLETE THE TRANSFER OF A RIFLE OR SHOTGUN OTHER THAN A REGULATED FIREARM, AS A TRANSFEREE OR TRANSFEROR, UNLESS THE PERSON IS IN COMPLIANCE WITH THIS SECTION.\nSection 1 (Md. Code Ann., Public Safety § 5-204.1(C)(1)): BEFORE A TRANSFER IS CONDUCTED, THE TRANSFEROR AND TRANSFEREE SHALL MEET JOINTLY WITH A LICENSEE AND REQUEST THAT THE LICENSEE FACILITATE THE TRANSFER.\nSection 1 (Md. Code Ann., Public Safety § 5-204.1(C)(2)(II)): THE LICENSEE SHALL COMPLY WITH ALL FEDERAL AND STATE LAW THAT WOULD APPLY TO THE TRANSFER, INCLUDING ALL BACKGROUND CHECK AND RECORD–KEEPING REQUIREMENTS.\nSection 1 (Md. Code Ann., Public Safety § 5-204.1(E)(1)): THE LICENSEE OR THE TRANSFEROR MAY NOT COMPLETE THE TRANSFER TO THE TRANSFEREE IF THE RESULTS OF THE BACKGROUND CHECK INDICATE THAT THE TRANSFEREE MAY NOT POSSESS THE RIFLE OR SHOTGUN.\nSection 1 (Md. Code Ann., Public Safety § 5-204.1(G)(1)): EXCEPT AS PROVIDED IN PARAGRAPH (2) OF THIS SUBSECTION, A PERSON WHO VIOLATES THIS SECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 5 YEARS OR A FINE NOT EXCEEDING $10,000 OR BOTH."
+}

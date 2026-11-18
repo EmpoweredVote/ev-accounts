@@ -1,0 +1,71 @@
+{
+  "id": "MD-HB-875-2017",
+  "scope": "state:md",
+  "title": "HB875 (2017 Regular): Firearms - Handgun Qualification License - Firearms Safety Training",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0875?ys=2017RS",
+    "https://mgaleg.maryland.gov/2017RS/bills/hb/hb0875f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Deborah C. Rey",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kevin Hornberger",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "96a6d696-50fd-4393-a0f6-19e69dc15716"
+    },
+    {
+      "name": "Susan McComas",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07"
+    },
+    {
+      "name": "Tony McConkey",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Matt Morgan",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c4e4d811-1e14-45fe-9335-7521f1603856"
+    },
+    {
+      "name": "Trent Kittleman",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Brett Wilson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2017RS/bills/hb/hb0875f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-875-2017.first_reader.pdf",
+      "sha256": "b7002268c3dfc4a96f2df19881c7021daf6c2c34b711fc24b52729f2128029ec"
+    },
+    "note": "first reader: bill as filed; no enrolled text read; no passage vote recorded. The bill also deletes, in [brackets], the firearms orientation component (shooting demonstration) from the handgun qualification license training course in § 5-117.1(d); only the added regulation sentence is quoted."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-117.1(d)(2)): (2) THE SECRETARY SHALL ADOPT REGULATIONS THAT ALLOW AN APPLICANT TO RECEIVE ONLINE ALL NECESSARY INSTRUCTION FROM THE FIREARMS SAFETY TRAINING COURSE DESCRIBED IN PARAGRAPH (1)(III) OF THIS SUBSECTION."
+}

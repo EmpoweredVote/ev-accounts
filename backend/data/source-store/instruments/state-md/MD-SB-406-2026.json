@@ -1,0 +1,45 @@
+{
+  "id": "MD-SB-406-2026",
+  "scope": "state:md",
+  "title": "SB406 (2026 Regular): Criminal Law - Drug Trafficking Crime - Definition",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0406?ys=2026RS",
+    "https://mgaleg.maryland.gov/2026RS/bills/sb/sb0406f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dawn Gile",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ff266ecf-9ea5-4282-b729-9830cc8abfa3"
+    },
+    {
+      "name": "Dalya Attar",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fb714c92-166f-4cc1-bb6b-19988a81cefe"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2026RS/bills/sb/sb0406f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-406-2026.first_reader.pdf",
+      "sha256": "8ec3182e4d3afadb30719748357292039f684a43e0cc559a2fac76649c642ca7"
+    },
+    "note": "First reader (as filed). Second quote is existing law the bill leaves unchanged. Part of the effect is a cannabis-offence definition, but its only use is the gun offence. Amendments made after the version read are not in the text read."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Criminal Law § 5–621(a)(2)): “Drug trafficking crime” means: (I) a felony or a conspiracy to commit a felony involving the possession, distribution, manufacture, or importation of a controlled dangerous substance under §§ 5–602 through 5–609 and 5–614 of this subtitle; OR (II) A MISDEMEANOR OR A CONSPIRACY TO COMMIT A MISDEMEANOR IN VIOLATION OF § 5–602(B)(1) OR § 5–603(B) OF THIS SUBTITLE.\nSection 1 (Md. Code Ann., Criminal Law § 5–621(b), unchanged law): During and in relation to a drug trafficking crime, a person may not: (1) possess a firearm under sufficient circumstances to constitute a nexus to the drug trafficking crime; or (2) use, wear, carry, or transport a firearm."
+}

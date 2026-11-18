@@ -1,0 +1,57 @@
+{
+  "id": "MD-HB-1050-2025",
+  "scope": "state:md",
+  "title": "HB1050 (2025 Regular): Family Law - Protective Orders - Surrender of Firearms",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1050?ys=2025RS&search=True",
+    "https://mgaleg.maryland.gov/2025RS/bills/hb/hb1050f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sandy Bartlett",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7d818044-a989-47e1-b6cf-d482ebad0600"
+    },
+    {
+      "name": "Kris Fair",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "dfb9ae21-4605-4c58-94e8-84b1eb1a30c1"
+    },
+    {
+      "name": "Dana Jones",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d8eabd9b-2aa8-40de-94ce-06ce6ef167cf"
+    },
+    {
+      "name": "Karen Simpson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5946ad0c-ddf5-4674-840e-6968105042cd"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2025RS/bills/hb/hb1050f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1050-2025.first_reader.pdf",
+      "sha256": "1cc0024326c270ae6db905489cacdd8ae3cdc3926de90ba43f07bd98dc3058d8"
+    },
+    "note": "First reader (as filed); no vote recorded. Section 4-505(a)(2)(viii) (conditional surrender) is deleted by the bill and replaced by mandatory surrender. Section 2 task force is time-limited (abrogated after Nov. 30, 2025)."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Family Law § 4-504.1(d)): (D) AN INTERIM PROTECTIVE ORDER SHALL ORDER THE RESPONDENT TO SURRENDER TO LAW ENFORCEMENT AUTHORITIES ANY FIREARM IN THE RESPONDENT’S POSSESSION, AND TO REFRAIN FROM POSSESSION OF ANY FIREARM, FOR THE DURATION OF THE INTERIM PROTECTIVE ORDER.\nSection 1 (Md. Code Ann., Family Law § 4-505(a)(4)): (4) THE TEMPORARY PROTECTIVE ORDER SHALL ORDER THE RESPONDENT TO SURRENDER TO LAW ENFORCEMENT AUTHORITIES ANY FIREARM IN THE RESPONDENT’S POSSESSION, AND TO REFRAIN FROM POSSESSION OF ANY FIREARM, FOR THE DURATION OF THE TEMPORARY PROTECTIVE ORDER.\nSection 1 (Md. Code Ann., Family Law § 4-506.1(a)(1)): (A) (1) IF A RESPONDENT IS ORDERED TO SURRENDER A FIREARM UNDER THIS SUBTITLE, THE RESPONDENT SHALL: (I) SURRENDER ALL FIREARMS IN THE RESPONDENT’S POSSESSION TO LAW ENFORCEMENT AUTHORITIES WITHIN 24 HOURS AFTER THE ISSUANCE OF THE ORDER; AND (II) PROVIDE WRITTEN PROOF OF THE SURRENDER TO THE COURT AND THE LOCAL SHERIFF’S OFFICE WITHIN 2 BUSINESS DAYS AFTER THE SURRENDER.\nSection 1 (Md. Code Ann., Family Law § 4-506.1(a)(2)): (2) IF THE RESPONDENT DOES NOT POSSESS A FIREARM, THE RESPONDENT SHALL SUBMIT AN AFFIDAVIT TO THE COURT TO THAT EFFECT SIGNED UNDER PENALTY OF PERJURY WITHIN 2 BUSINESS DAYS AFTER THE SURRENDER.\nSection 1 (Md. Code Ann., Family Law § 4-506.1(g)(2)): (2) ON APPLICATION BY THE STATE’S ATTORNEY OR A LAW ENFORCEMENT OFFICER, BASED ON PROBABLE CAUSE TO BELIEVE THAT THE RESPONDENT HAS FAILED TO SURRENDER A FIREARM IN ACCORDANCE WITH THIS SECTION OR IS IN POSSESSION OF OTHER FIREARMS, THE COURT MAY AUTHORIZE THE EXECUTION OF A SEARCH WARRANT FOR THE REMOVAL OF A FIREARM AT ANY LOCATION AT WHICH THE COURT HAS PROBABLE CAUSE TO BELIEVE A FIREARM POSSESSED BY THE RESPONDENT IS LOCATED.\nSection 2 (uncodified): (a) There is a Task Force to Study the Use of Firearms in Domestic Violence Situations."
+}

@@ -1,0 +1,50 @@
+{
+  "id": "MD-SB-422-2020",
+  "scope": "state:md",
+  "title": "SB422 (2020 Regular): Firearms - Permit to Carry, Wear, or Transport - Required Courses",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0422?ys=2020RS&search=True",
+    "https://mgaleg.maryland.gov/2020RS/bills/sb/sb0422f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Pat Young",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Clarence Lam",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fc23b939-0dfd-4968-ab19-fc1e7745e997"
+    },
+    {
+      "name": "Jim Rosapepe",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2020RS/bills/sb/sb0422f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-422-2020.first_reader.pdf",
+      "sha256": "022e6353756910c227bc639828adc1f2efb76be5864e5cd6dd852944cd937c0d"
+    },
+    "note": "First reader, as filed; no vote recorded."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–306.1): (A) (1) EXCEPT AS PROVIDED IN PARAGRAPH (2) OF THIS SUBSECTION, A PERSON TO WHOM A PERMIT IS ISSUED OR RENEWED SHALL SUCCESSFULLY COMPLETE ON SEPARATE DAYS EACH CALENDAR YEAR: (I) A COURSE ON SITUATIONAL AWARENESS APPROVED BY THE SECRETARY; AND (II) A COURSE ON THE COMPETENT HANDLING OF A FIREARM APPROVED BY THE SECRETARY. (2) A PERSON TO WHOM A PERMIT IS ISSUED OR RENEWED IS NOT REQUIRED TO COMPLETE THE COURSES REQUIRED UNDER PARAGRAPH (1) OF THIS SUBSECTION IF THE PERSON IS: (I) AN ACTIVE LAW ENFORCEMENT OFFICER WITH A LAW ENFORCEMENT AGENCY OF THE UNITED STATES, THE STATE, OR ANY LOCAL LAW ENFORCEMENT AGENCY IN THE STATE; OR (II) A QUALIFIED HANDGUN INSTRUCTOR. (B) THE SECRETARY MAY ADOPT REGULATIONS NECESSARY TO CARRY OUT THIS SECTION.\nSection 1 (Md. Code Ann., Public Safety § 5–310): (a) The Secretary may revoke a permit on a finding that the holder: (1) does not meet the qualifications described in § 5–306 OR § 5–306.1 of this subtitle; or (2) violated § 5–308 of this subtitle."
+}

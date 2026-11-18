@@ -1,0 +1,44 @@
+{
+  "id": "MD-SB-102-2024",
+  "scope": "state:md",
+  "title": "SB102 (2024 Regular): Public Safety - Handgun Permits - Expiration and Renewal Periods for Retired Law Enforcement Officer",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0102?ys=2024RS&search=True",
+    "https://mgaleg.maryland.gov/2024RS/bills/sb/sb0102f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Mary Beth Carozza",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9"
+    },
+    {
+      "name": "Michael Jackson",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2024RS/bills/sb/sb0102f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-102-2024.first_reader.pdf",
+      "sha256": "8b0d54870185dd29986bbc110f74b7f1930ff4db55c2bd34fbe4ea3ffa6a853e"
+    },
+    "note": "As filed; first reader, no passage vote."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–309): A PERMIT ISSUED TO A RETIRED LAW ENFORCEMENT OFFICER WHO RETIRED IN GOOD STANDING FROM SERVICE WITH A LAW ENFORCEMENT AGENCY OF THE STATE OR A COUNTY OR MUNICIPAL CORPORATION OF THE STATE: (1) EXPIRES ON THE LAST DAY OF THE HOLDER’S BIRTH MONTH FOLLOWING 5 YEARS AFTER THE DATE THE PERMIT IS ISSUED; AND (2) SUBJECT TO SUBSECTION (C) OF THIS SECTION, MAY BE RENEWED FOR SUCCESSIVE PERIODS OF 5 YEARS EACH IF, AT THE TIME OF AN APPLICATION FOR RENEWAL, THE APPLICANT POSSESSES THE QUALIFICATIONS FOR THE ISSUANCE OF A PERMIT."
+}

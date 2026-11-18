@@ -1,0 +1,89 @@
+{
+  "id": "MD-HB-342-2019",
+  "scope": "state:md",
+  "title": "HB342 (2019 Regular): Public Safety - Permit to Carry, Wear, or Transport a Handgun - Qualifications",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0342?ys=2019RS",
+    "https://mgaleg.maryland.gov/2019RS/bills/hb/hb0342f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Teresa Reilly",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "547841f2-3476-4e83-9344-0cac984d44e8"
+    },
+    {
+      "name": "Lauren Arikan",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6a04e5b9-d532-4e80-bbca-6677a35620e5"
+    },
+    {
+      "name": "Andrew Cassilly",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jason Buckel",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5260bd6f-e70a-46f1-aa7d-49eaf22192cf"
+    },
+    {
+      "name": "Kevin Hornberger",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "96a6d696-50fd-4393-a0f6-19e69dc15716"
+    },
+    {
+      "name": "Nic Kipke",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0e0bdc53-b5a2-4292-aeb7-341a4c5bed08"
+    },
+    {
+      "name": "Neil Parrott",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "April Rose",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5967c703-2583-466f-a438-c3ac182111d5"
+    },
+    {
+      "name": "Haven Shoemaker",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nino Mangione",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2019RS/bills/hb/hb0342f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-342-2019.first_reader.pdf",
+      "sha256": "34b63205d1451b31f4ac89d26fba5163c6220a9e518d0c78dbd7b6e2c8b13431"
+    },
+    "note": "First reader (bill as filed); no vote recorded, no enrolled text read. Section 2 is a budget-intent clause tying permit revenue to school mental health programs; treated as tied to the gun-permit change, not a separate subject (reviewer may judge otherwise)."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-306): (a) Subject to subsection (c) of this section, the Secretary shall issue a permit within a reasonable time to a person who the Secretary finds: (6) based on an investigation: (i) has not exhibited a propensity for violence or instability that may reasonably render the person’s possession of a handgun a danger to the person or to another; and (ii) has good and substantial reason to wear, carry, or transport a handgun, such as PERSONAL PROTECTION, SELF–DEFENSE, OR a finding that the permit is necessary as a reasonable precaution against apprehended danger.\nSection 2 (uncodified): it is the intent of the General Assembly that the Governor include in the annual budget bill, for fiscal year 2020 and each fiscal year thereafter, an amount representing the increase in General Fund revenues realized from the increased number of permits to carry, wear, or transport a handgun issued as a result of this Act and the payment of associated fees, less increased General Fund expenditures for the Department of State Police to process additional permit applications, to fund school mental health programs administered by the Maryland Department of Health."
+}

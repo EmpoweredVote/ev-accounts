@@ -1,0 +1,44 @@
+{
+  "id": "MD-SB-1074-2020",
+  "scope": "state:md",
+  "title": "SB1074 (2020 Regular): Public Safety - Regulated Firearms - Transfer",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1074?ys=2020RS&search=True",
+    "https://mgaleg.maryland.gov/2020RS/bills/sb/sb1074f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Susan C. Lee",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Will Smith",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2020RS/bills/sb/sb1074f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-1074-2020.first_reader.pdf",
+      "sha256": "7517fd889fc591bf6944caf0dc1be48b13461c7749d68bd55cdd5e22c8dd5e6b"
+    },
+    "note": "First reader: the bill as filed, February 28, 2020. No passage vote recorded. 'Sell, rent' and 'lessor/lessee' wording is deleted from existing law and replaced by the defined term 'transfer'."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-124(A)): (A) (1) IN THIS SECTION, “TRANSFER” MEANS A SALE, A RENTAL, A FURNISHING, A GIFT, A LOAN, OR ANY OTHER DELIVERY, WITH OR WITHOUT CONSIDERATION.\nSection 1 (Md. Code Ann., Public Safety § 5-124(A)): (2) “TRANSFER” DOES NOT INCLUDE: (I) A CHANGE IN POSSESSION THAT IS TEMPORARY AND OCCURS UNDER CIRCUMSTANCES IN WHICH THE TRANSFEROR HAS NO REASON TO BELIEVE THAT THE TRANSFEREE INTENDS TO USE THE REGULATED FIREARM IN THE COMMISSION OF A CRIME; OR (II) A CHANGE IN POSSESSION TO ALLOW ANOTHER PERSON TO USE THE REGULATED FIREARM EXCLUSIVELY AND IN THE ACTUAL PRESENCE OF THE TRANSFEROR.\nSection 1 (Md. Code Ann., Public Safety § 5-124(B)): (B) (1) A person who is not a licensee may not transfer or purchase a regulated firearm until after 7 days following the time a firearm application is executed by the firearm applicant, in triplicate, and the original is forwarded by a licensee to the Secretary.\nSection 1 (Md. Code Ann., Public Safety § 5-124(D)): (D) A person shall complete the transfer of a regulated firearm within 90 days after the firearm application was stamped by the Secretary as not being disapproved."
+}

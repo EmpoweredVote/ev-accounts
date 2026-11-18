@@ -1,0 +1,121 @@
+{
+  "id": "MD-HB-952-2023",
+  "scope": "state:md",
+  "title": "HB952 (2023 Regular): Crimes – Firearms – Penalties and Procedures (Violent Firearms Offender Act of 2023)",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0952?ys=2023RS&search=True",
+    "https://mgaleg.maryland.gov/2023RS/bills/hb/hb0952f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nino Mangione",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Arentz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fee8a413-a3a8-4568-ad9b-db00f94f5ac2"
+    },
+    {
+      "name": "Terry Baker",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d049cf3e-6577-4f8d-ba7e-768ac2b78d66"
+    },
+    {
+      "name": "Jason Buckel",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5260bd6f-e70a-46f1-aa7d-49eaf22192cf"
+    },
+    {
+      "name": "Brian Chisholm",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "cfc704da-dd6c-40b0-97fa-0c5ece8d3976"
+    },
+    {
+      "name": "Jeff Ghrist",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "eca530ff-628d-417d-a3dc-b858dc7c2376"
+    },
+    {
+      "name": "Mike Griffith",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0c789b27-d50c-4822-95ff-409ecb7db08a"
+    },
+    {
+      "name": "Kevin Hornberger",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "96a6d696-50fd-4393-a0f6-19e69dc15716"
+    },
+    {
+      "name": "Susan McComas",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07"
+    },
+    {
+      "name": "Matt Morgan",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c4e4d811-1e14-45fe-9335-7521f1603856"
+    },
+    {
+      "name": "Todd Morgan",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7d79931f-101c-415b-a6a0-b7a919f70905"
+    },
+    {
+      "name": "Ryan Nawrocki",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f5224e0c-0761-4ca7-a889-ed44517e2b91"
+    },
+    {
+      "name": "Charles Otto",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Stuart Schmidt",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "55d9d0b6-78a3-460b-97b9-87913ffc8e85"
+    },
+    {
+      "name": "Kathy Szeliga",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2023RS/bills/hb/hb0952f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-952-2023.first_reader.pdf",
+      "sha256": "9911194635e0a6053ed13ce65d3e4461609c8342af3d06959bf84cca93abe76e"
+    },
+    "note": "As filed; first reader, no committee action or passage vote in the record. Quoted parts are abridged from a long bill (also covers machine-gun and assault-weapon use penalties, stolen-firearm possession, ID-mark removal, § 5–144, firearm use as non-'technical violation' of probation/parole in Correctional Services § 6–101). Bail and probation parts apply only to gun crimes, so not treated as separate topics. 'Not less than years' in § 4–204 is as extracted (number lost in text; the bill's own 5-year minimum is in the following sentence)."
+  },
+  "operative_text": "Section 3 (Md. Code Ann., Criminal Law § 4–204): A person may not use a firearm in the commission of a crime of violence, as defined in § 5–101 of the Public Safety Article, or any felony, whether the firearm is operable or inoperable at the time of the crime. A person who violates this section is guilty of a FELONY and, in addition to any other penalty imposed for the crime of violence or felony, shall be sentenced: FOR A FIRST OFFENSE, to imprisonment for not less than years and not exceeding 20 years; AND FOR A SECOND OR SUBSEQUENT OFFENSE, TO IMPRISONMENT FOR NOT LESS THAN 10 YEARS AND NOT EXCEEDING 20 YEARS.\nSection 3 (Md. Code Ann., Criminal Law § 7–104): A PERSON CONVICTED OF THEFT OF A FIREARM, INCLUDING AN ANTIQUE FIREARM OR A REPLICA OF AN ANTIQUE FIREARM, IS GUILTY OF A FELONY AND: (I) 1. FOR A FIRST CONVICTION, IS SUBJECT TO IMPRISONMENT FOR NOT LESS THAN 2 YEARS AND NOT EXCEEDING 10 YEARS AND A FINE NOT EXCEEDING $2,500; AND 2. FOR A SECOND OR SUBSEQUENT CONVICTION, IS SUBJECT TO IMPRISONMENT FOR NOT LESS THAN 5 YEARS AND NOT EXCEEDING 15 YEARS AND A FINE NOT EXCEEDING $10,000;\nSection 3 (Md. Code Ann., Criminal Procedure § 5–202): A District Court commissioner may not authorize the pretrial release of a defendant charged with A CRIME LISTED IN SUBPARAGRAPH (II) OF THIS PARAGRAPH if the defendant: has previously been convicted of a crime of violence or A CRIME LISTED IN SUBPARAGRAPH (II) OF THIS PARAGRAPH; OR IS ON PRETRIAL RELEASE FOR A CRIME OF VIOLENCE OR A CRIME LISTED IN SUBPARAGRAPH (II) OF THIS PARAGRAPH.\nSection 3 (Md. Code Ann., Public Safety § 5–134): A DEALER OR OTHER PERSON MAY NOT SELL, RENT, LOAN, OR TRANSFER A REGULATED FIREARM TO A PURCHASER, LESSEE, BORROWER, OR TRANSFEREE IF THE DEALER OR OTHER PERSON HAS ACTUAL KNOWLEDGE THAT THE PURCHASER, LESSEE, BORROWER, OR TRANSFEREE: (I) WAS PREVIOUSLY CONVICTED OF: 1. A CRIME OF VIOLENCE; (II) INTENDS TO USE THE REGULATED FIREARM TO: 1. COMMIT A CRIME; OR 2. CAUSE HARM TO THE PURCHASER, LESSEE, TRANSFEREE, OR RECIPIENT OR ANOTHER PERSON. A PERSON WHO VIOLATES THIS SUBSECTION IS GUILTY OF A FELONY AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 15 YEARS.\nSection 3 (Md. Code Ann., Public Safety § 5–133): EXCEPT AS PROVIDED IN SUBSECTION (C) OF THIS SECTION, A PERSON WHO VIOLATES THIS SUBSECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO: 1. FOR A FIRST OFFENSE, IMPRISONMENT NOT EXCEEDING 5 YEARS OR A FINE NOT EXCEEDING $10,000 OR BOTH; AND 2. FOR A SECOND OR SUBSEQUENT OFFENSE, IMPRISONMENT NOT EXCEEDING 10 YEARS OR A FINE NOT EXCEEDING $10,000 OR BOTH.\nSection 3 (Md. Code Ann., Public Safety § 5–141): A person who violates this section is guilty of a FELONY and on conviction is subject to imprisonment FOR NOT LESS THAN 5 YEARS AND not exceeding 15 years AND a fine not exceeding $25,000."
+}

@@ -1,0 +1,351 @@
+{
+  "id": "MD-SB-727-2017",
+  "scope": "state:md",
+  "title": "SB727 (2017 Regular): Criminal Procedure - Firearms - Notification",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0727?ys=2017RS",
+    "https://mgaleg.maryland.gov/2017RS/bills/sb/sb0727f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Will Smith",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc"
+    },
+    {
+      "name": "John C. Astle",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nancy King",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec"
+    },
+    {
+      "name": "Susan C. Lee",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Richard S. Madaleno, Jr.",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Roger Manno",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "C. Anthony Muse",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Douglas J. J. Peters",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Paul G. Pinsky",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Victor R. Ramirez",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jim Rosapepe",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e"
+    },
+    {
+      "name": "Brian Feldman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d423151e-8477-470d-8f73-ba7d2092f714"
+    },
+    {
+      "name": "Bill Ferguson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6e3c30f5-52be-48b0-b5b4-383e5d745c57"
+    },
+    {
+      "name": "Guy Guzzone",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f0fafa0e-3dd9-4d50-bc5e-c96315f766d7"
+    },
+    {
+      "name": "Cheryl Kagan",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1"
+    },
+    {
+      "name": "Delores G. Kelley",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Barbara Robinson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Pat Young",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Craig Zucker",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "82145bc2-770a-421e-a2a1-0e79aae5b643"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2017-04-07",
+      "body": "MD Senate",
+      "motion": "Senate Third Reading Passed",
+      "kind": "roll-call",
+      "yes": 40,
+      "no": 6,
+      "absent": 1,
+      "note": "mgaleg.maryland.gov vote file (read from the legislature) 90202377 https://mgaleg.maryland.gov/2017RS/votes/senate/1258.htm#SB727",
+      "members": [
+        {
+          "name": "Mr. President",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael J. Hough",
+          "vote": "yea"
+        },
+        {
+          "name": "Douglas J. J. Peters",
+          "vote": "yea"
+        },
+        {
+          "name": "John C. Astle",
+          "vote": "yea"
+        },
+        {
+          "name": "J.B. Jennings",
+          "vote": "yea",
+          "politician_id": "5927d5ab-2fd7-4454-bcc3-34e494821aac"
+        },
+        {
+          "name": "Paul G. Pinsky",
+          "vote": "yea"
+        },
+        {
+          "name": "Gail H. Bates",
+          "vote": "yea"
+        },
+        {
+          "name": "Cheryl Kagan",
+          "vote": "yea",
+          "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1"
+        },
+        {
+          "name": "Victor R. Ramirez",
+          "vote": "yea"
+        },
+        {
+          "name": "Joanne Benson",
+          "vote": "yea",
+          "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029"
+        },
+        {
+          "name": "Edward J. Kasemeyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Ready",
+          "vote": "yea",
+          "politician_id": "493c5d0c-1986-40d4-9fff-3a3bc3fe62e8"
+        },
+        {
+          "name": "James Brochin",
+          "vote": "yea"
+        },
+        {
+          "name": "Delores G. Kelley",
+          "vote": "yea"
+        },
+        {
+          "name": "Barbara Robinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Joan Carter Conway",
+          "vote": "yea"
+        },
+        {
+          "name": "Nancy King",
+          "vote": "yea",
+          "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec"
+        },
+        {
+          "name": "Jim Rosapepe",
+          "vote": "yea",
+          "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e"
+        },
+        {
+          "name": "Ulysses Currie",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan C. Lee",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnny Salling",
+          "vote": "yea",
+          "politician_id": "9f8d0005-c5ff-42f8-b158-cdb6e4eee872"
+        },
+        {
+          "name": "James E. DeGrange, Sr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Richard S. Madaleno, Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrew A. Serafini",
+          "vote": "yea"
+        },
+        {
+          "name": "Adelaide C. Eckardt",
+          "vote": "yea"
+        },
+        {
+          "name": "Roger Manno",
+          "vote": "yea"
+        },
+        {
+          "name": "Will Smith",
+          "vote": "yea",
+          "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc"
+        },
+        {
+          "name": "George C. Edwards",
+          "vote": "yea"
+        },
+        {
+          "name": "Nathaniel J. McFadden",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Waugh",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Feldman",
+          "vote": "yea",
+          "politician_id": "d423151e-8477-470d-8f73-ba7d2092f714"
+        },
+        {
+          "name": "Thomas M. Middleton",
+          "vote": "yea"
+        },
+        {
+          "name": "Ronald N. Young",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Ferguson",
+          "vote": "yea",
+          "politician_id": "6e3c30f5-52be-48b0-b5b4-383e5d745c57"
+        },
+        {
+          "name": "C. Anthony Muse",
+          "vote": "yea"
+        },
+        {
+          "name": "Bobby A. Zirkin",
+          "vote": "yea"
+        },
+        {
+          "name": "Guy Guzzone",
+          "vote": "yea",
+          "politician_id": "f0fafa0e-3dd9-4d50-bc5e-c96315f766d7"
+        },
+        {
+          "name": "Shirley Nathan-Pulliam",
+          "vote": "yea"
+        },
+        {
+          "name": "Craig Zucker",
+          "vote": "yea",
+          "politician_id": "82145bc2-770a-421e-a2a1-0e79aae5b643"
+        },
+        {
+          "name": "Steve Hershey",
+          "vote": "yea",
+          "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0"
+        },
+        {
+          "name": "Robert Cassilly",
+          "vote": "nay"
+        },
+        {
+          "name": "James N. Mathias, Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Edward R. Reilly",
+          "vote": "nay"
+        },
+        {
+          "name": "Kathy Klausmeier",
+          "vote": "nay"
+        },
+        {
+          "name": "H. Wayne Norman Jr.",
+          "vote": "nay"
+        },
+        {
+          "name": "Bryan Simonaire",
+          "vote": "nay",
+          "politician_id": "4aa50ee7-aeed-48ae-96e7-142bd9ac731b"
+        },
+        {
+          "name": "Nathaniel T. Oaks",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2017RS/bills/sb/sb0727f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-727-2017.first_reader.pdf",
+      "sha256": "cc9def06ce7e3300d2d666bcfd00c4ce1735332168cf7e599aadfef99a9cd678"
+    },
+    "note": "First reader: the bill as filed. The '(d)' quote is the lead-in; its items (1)-(2) are in the text. Subsection (a) of 6–234 is garbled in the source (stray '(3)' crime of violence definition). Amendments made after the version read are not in the text read (a passage vote is recorded)."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Criminal Procedure § 6–234(b)): THE COURT SHALL INFORM A PERSON CONVICTED OF A DISQUALIFYING CRIME, EITHER VERBALLY OR IN WRITING, THAT THE PERSON IS PROHIBITED FROM POSSESSING: (1) A REGULATED FIREARM UNDER § 5–133 OF THE PUBLIC SAFETY ARTICLE; AND (2) A RIFLE OR SHOTGUN UNDER § 5–205 OF THE PUBLIC SAFETY ARTICLE.\nSection 1 (Md. Code Ann., Criminal Procedure § 6–234(c)): A TRANSFER OF A FIREARM UNDER THIS SUBSECTION SHALL BE MADE WITHIN 2 DAYS AFTER THE PERSON WAS CONVICTED OF A DISQUALIFYING CRIME TO A STATE OR LOCAL LAW ENFORCEMENT OFFICIAL OR TO A FEDERALLY LICENSED FIREARMS DEALER.\nSection 1 (Md. Code Ann., Criminal Procedure § 6–234(d)): WITHIN 5 BUSINESS DAYS AFTER BEING ADVISED OF THE REQUIREMENT TO TRANSFER POSSESSION OF A FIREARM UNDER SUBSECTION (C) OF THIS SECTION, A PERSON SHALL:\nSection 1 (Md. Code Ann., Criminal Procedure § 6–234(e)): IF A PERSON TRANSFERS A FIREARM TO A LAW ENFORCEMENT AGENCY UNDER THIS SECTION, THE AGENCY MAY DISPOSE OF THE FIREARM.\nSection 1 (Md. Code Ann., Public Safety § 5–133(f)): THIS SECTION DOES NOT APPLY TO THE CARRYING OR TRANSPORTING OF A REGULATED FIREARM BY A PERSON WHO IS PROHIBITED FROM POSSESSING THE REGULATED FIREARM BECAUSE THE PERSON HAS BEEN CONVICTED OF A DISQUALIFYING CRIME, OR BY THAT PERSON’S REPRESENTATIVE, IF: (1) THE FIREARM IS UNLOADED; (2) IT IS WITHIN 2 DAYS AFTER THE PERSON WAS CONVICTED OF A DISQUALIFYING CRIME;"
+}

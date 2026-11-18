@@ -1,0 +1,39 @@
+{
+  "id": "MD-SB-509-2025",
+  "scope": "state:md",
+  "title": "SB509 (2025 Regular): Prohibited Possession of Firearms - Assisted Outpatient Treatment Respondents",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0509?ys=2025RS&search=True",
+    "https://mgaleg.maryland.gov/2025RS/bills/sb/sb0509f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shaneka Henson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2025RS/bills/sb/sb0509f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-509-2025.first_reader.pdf",
+      "sha256": "d279c803c989be50f72607d51237c6ea377a5abe3c482876fb4851b90a7c799e"
+    },
+    "note": "First reader (as filed). Health-General § 10-6A-02(b) change is only a cross-reference. Takes effect contingent on Chapter 704 of 2024."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-133(b)(16)): (16) IS CURRENTLY A RESPONDENT SUBJECT TO A COURT ORDER TO COMPLY WITH ASSISTED OUTPATIENT TREATMENT UNDER § 10–6A–08 OF THE HEALTH – GENERAL ARTICLE.\nSection 1 (Md. Code Ann., Public Safety § 5-133.2(b)(1)(iv)): (IV) ORDERS A PERSON TO COMPLY WITH ASSISTED OUTPATIENT TREATMENT UNDER § 10–6A–08 OF THE HEALTH – GENERAL ARTICLE.\nSection 1 (Md. Code Ann., Public Safety § 5-205(b)(14)): (14) IS CURRENTLY A RESPONDENT SUBJECT TO A COURT ORDER TO COMPLY WITH ASSISTED OUTPATIENT TREATMENT UNDER § 10–6A–08 OF THE HEALTH – GENERAL ARTICLE."
+}

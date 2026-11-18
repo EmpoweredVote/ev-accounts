@@ -1,0 +1,57 @@
+{
+  "id": "MD-SB-611-2024",
+  "scope": "state:md",
+  "title": "SB611 (2024 Regular): Frederick and Washington Counties – Bow Hunting – Openly Carrying Handguns",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0611?ys=2024RS&search=True",
+    "https://mgaleg.maryland.gov/2024RS/bills/sb/sb0611f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bill Folden",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4a5241b7-8737-4a58-adf2-c5335111d3c4"
+    },
+    {
+      "name": "Jack Bailey",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f"
+    },
+    {
+      "name": "Mike McKay",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f88cd73d-1970-4da1-9bea-2142a25999a7"
+    },
+    {
+      "name": "Johnny Salling",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9f8d0005-c5ff-42f8-b158-cdb6e4eee872"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2024RS/bills/sb/sb0611f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-611-2024.first_reader.pdf",
+      "sha256": "012e943e69832ef1e835bc4d80bbebf0debf68c8000dbca280c848893e0ebcbf"
+    },
+    "note": "First reader (as filed). Quote joins the existing text with the added words; the printed bracket '[deer]' was deleted, so the 'Region A' item reads 'DEER management Region A' as added in capitals. Hunting rules are the Department's own subject, not a separate topic."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Natural Resources § 10-408(b)(2)): (2) The Department may not prohibit a licensed bow hunter from openly carrying a handgun that the hunter is otherwise authorized to carry under § 4–203 of the Criminal Law Article if the bow hunter: (i) Is at least 21 years old; (ii) Is hunting in DEER management Region A as defined by the Department’s Guide to Hunting and Trapping; OR FREDERICK COUNTY OR WASHINGTON COUNTY DURING DEER HUNTING SEASON; (iii) Is carrying the handgun for personal protection; and (iv) Does not use the handgun to kill wildlife wounded by a vertical bow or crossbow."
+}

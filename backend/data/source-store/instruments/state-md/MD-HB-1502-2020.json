@@ -1,0 +1,111 @@
+{
+  "id": "MD-HB-1502-2020",
+  "scope": "state:md",
+  "title": "HB1502 (2020 Regular): Handgun Permits - Qualifications - High Risk Occupations",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1502?ys=2020RS&search=True",
+    "https://mgaleg.maryland.gov/2020RS/bills/hb/hb1502f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Wayne Hartman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1ff2bb96-0e55-4893-8a4c-b675dfbb79f6"
+    },
+    {
+      "name": "Carl Anderton",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jason Buckel",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5260bd6f-e70a-46f1-aa7d-49eaf22192cf"
+    },
+    {
+      "name": "Daniel L. Cox",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kevin Hornberger",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "96a6d696-50fd-4393-a0f6-19e69dc15716"
+    },
+    {
+      "name": "Susan W. Krebs",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bob Long",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "eadb65c9-74b6-40c3-b9e7-159c5734c59f"
+    },
+    {
+      "name": "Michael E. Malone",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Johnny Mautz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "34c94aa4-11b7-4594-9c3e-c506f10309f6"
+    },
+    {
+      "name": "Susan McComas",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07"
+    },
+    {
+      "name": "Charles Otto",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Teresa Reilly",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "547841f2-3476-4e83-9344-0cac984d44e8"
+    },
+    {
+      "name": "Sid Saab",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kathy Szeliga",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2020RS/bills/hb/hb1502f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1502-2020.first_reader.pdf",
+      "sha256": "dad03b6b43f2d46eb44783310157abd8ffae718b9c39b88a0e0ea0b4aecaa458"
+    },
+    "note": "As filed. No vote listed."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-306(a)(6)(ii)): 1. has good and substantial reason to wear, carry, or transport a handgun, such as a finding that the permit is necessary as a reasonable precaution against apprehended danger; OR 2. IS EMPLOYED AS: A. A CORRECTIONAL OFFICER; B. A PAROLE AND PROBATION OFFICER; C. A FIREFIGHTER; D. AN EMERGENCY MEDICAL TECHNICIAN; E. A RESCUE SQUAD MEMBER; F. A SECURITY GUARD FOR A CHURCH OR RELIGIOUS ORGANIZATION; G. A PHYSICIAN; H. A PHYSICIAN’S ASSISTANT; I. A NURSE; OR J. A NURSE PRACTITIONER."
+}

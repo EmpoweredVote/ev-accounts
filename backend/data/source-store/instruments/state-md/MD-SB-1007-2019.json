@@ -1,0 +1,39 @@
+{
+  "id": "MD-SB-1007-2019",
+  "scope": "state:md",
+  "title": "SB1007 (2019 Regular): Public Safety - Handgun Permit - Church or Religious Organization Property (Parishioner Protection Act of 2019)",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb1007?ys=2019RS",
+    "https://mgaleg.maryland.gov/2019RS/bills/sb/sb1007f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Johnny Salling",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9f8d0005-c5ff-42f8-b158-cdb6e4eee872"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2019RS/bills/sb/sb1007f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-1007-2019.first_reader.pdf",
+      "sha256": "4e54b6f2773fbf6628c9e39e719a3285c401f067e76aa01dfed2020e4f6f292f"
+    },
+    "note": "As filed; first reader, no passage vote. Treated as a gun carry rule, not a religious-freedom topic."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–303): EXCEPT AS PROVIDED IN SUBSECTION (B) OF THIS SECTION, A person shall have a permit issued under this subtitle before the person carries, wears, or transports a handgun. A PERSON WHO HAS THE WRITTEN CONSENT OF THE GOVERNING BOARD OF A BONA FIDE CHURCH OR RELIGIOUS ORGANIZATION TO CARRY A HANDGUN ON THE PROPERTY OF THE CHURCH OR RELIGIOUS ORGANIZATION DURING SERVICES AND GATHERINGS AND WHO HAS THE INTENT TO WEAR, CARRY, OR TRANSPORT A HANDGUN FOR PURPOSES RELATED TO SELF–PROTECTION OR THE PROTECTION OF OTHERS WHILE ON THE PROPERTY OF THE CHURCH OR RELIGIOUS ORGANIZATION MAY, WITHOUT A PERMIT: (1) CARRY A HANDGUN ON THE PROPERTY OF THE CHURCH OR RELIGIOUS ORGANIZATION DURING SERVICES AND GATHERINGS; AND (2) TRANSPORT A HANDGUN TO AND FROM SERVICES AND GATHERINGS OF THE CHURCH OR RELIGIOUS ORGANIZATION."
+}

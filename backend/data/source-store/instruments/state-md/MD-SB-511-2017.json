@@ -1,0 +1,96 @@
+{
+  "id": "MD-SB-511-2017",
+  "scope": "state:md",
+  "title": "SB511 (2017 Regular): Public Safety - Permit to Carry, Wear, or Transport a Handgun - Qualifications",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0511?ys=2017RS",
+    "https://mgaleg.maryland.gov/2017RS/bills/sb/sb0511f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Norman",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Adelaide C. Eckardt",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "George C. Edwards",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kathy Klausmeier",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "James N. Mathias, Jr.",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Justin Ready",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "493c5d0c-1986-40d4-9fff-3a3bc3fe62e8"
+    },
+    {
+      "name": "Robert Cassilly",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bryan Simonaire",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4aa50ee7-aeed-48ae-96e7-142bd9ac731b"
+    },
+    {
+      "name": "Gail H. Bates",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Michael J. Hough",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Johnny Salling",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9f8d0005-c5ff-42f8-b158-cdb6e4eee872"
+    },
+    {
+      "name": "Andrew A. Serafini",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2017RS/bills/sb/sb0511f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-511-2017.first_reader.pdf",
+      "sha256": "8961f5f827230c9b9f39b4acf3bcb34850f02851e9c521411e32f1bd3062cdd9"
+    },
+    "note": "First reader (as filed)."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-306(a)(6)(ii)): (ii) has good and substantial reason to wear, carry, or transport a handgun, such as PERSONAL PROTECTION, SELF–DEFENSE, OR a finding that the permit is necessary as a reasonable precaution against apprehended danger."
+}

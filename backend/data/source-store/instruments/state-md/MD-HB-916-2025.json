@@ -1,0 +1,39 @@
+{
+  "id": "MD-HB-916-2025",
+  "scope": "state:md",
+  "title": "HB916 (2025 Regular): Criminal Law - Weapon Crimes - Transporting Firearm in Checked Bag on Public Transportation",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0916?ys=2025RS&search=True",
+    "https://mgaleg.maryland.gov/2025RS/bills/hb/hb0916f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Marlon Amprey",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "62bed8b6-beb2-4c41-b234-dc6427bfc9c0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2025RS/bills/hb/hb0916f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-916-2025.first_reader.pdf",
+      "sha256": "c25841c8f49ab44602723e063607ce83c0a709613d35fb0ab4669a81d7c91f34"
+    },
+    "note": "First reader (as filed). The first-conviction term is missing a digit in the extracted text and is not quoted. No passage vote on file."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Criminal Law § 4-112(b)): (B) (1) THIS SUBSECTION IS AN ADDITION TO ANY EXISTING FEDERAL OR STATE LAWS RELATING TO TRANSPORTING A FIREARM. (2) A PERSON MAY NOT TRANSPORT A FIREARM IN A CHECKED BAG ON PUBLIC TRANSPORTATION IN THE STATE UNLESS THE FIREARM IS DISABLED FROM DISCHARGING BY AN EXTERNAL SAFETY LOCK.\nSection 1 (Md. Code Ann., Criminal Law § 4-112(c)): (II) FOR A SECOND CONVICTION, IMPRISONMENT NOT EXCEEDING 6 MONTHS OR A FINE NOT EXCEEDING $1,000 OR BOTH; AND (2) EACH VIOLATION OF THIS SECTION IS A SEPARATE CRIME."
+}

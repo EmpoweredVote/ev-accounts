@@ -1,0 +1,39 @@
+{
+  "id": "MD-SB-456-2022",
+  "scope": "state:md",
+  "title": "SB456 (2022 Regular): Firearms - Handgun Qualification License - Firearms Orientation Component",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0456?ys=2022RS&search=True",
+    "https://mgaleg.maryland.gov/2022RS/bills/sb/sb0456f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jack Bailey",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2022RS/bills/sb/sb0456f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-456-2022.first_reader.pdf",
+      "sha256": "0a0165f8fd8bb215512e1044e692aa4db65b76ef9a435112a2f8c4f253507553"
+    },
+    "note": "First reader, as filed; no vote recorded. Quote skips unchanged intervening items (course hours, classroom topics, background investigation), which are only renumbered."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–117.1(d)): (d) (1) Subject to subsections (f) and (g) of this section, the Secretary shall issue a handgun qualification license to a person who the Secretary finds: (I) is at least 21 years old; (II) is a resident of the State; 3. a firearms orientation component that: A. demonstrates the person’s safe operation and handling of a firearm; and B. MAY INCLUDE THE USE OF LIVE OR INERT AMMUNITION; (2) A PERSON MAY NOT BE REQUIRED TO FIRE ROUNDS OF LIVE AMMUNITION AS PART OF THE FIREARMS ORIENTATION COMPONENT UNDER PARAGRAPH (1)(III)3 OF THIS SUBSECTION."
+}

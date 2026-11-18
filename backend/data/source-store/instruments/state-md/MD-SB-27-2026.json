@@ -1,0 +1,45 @@
+{
+  "id": "MD-SB-27-2026",
+  "scope": "state:md",
+  "title": "SB27 (2026 Regular): Regulated Firearms - Seven-Day Waiting Period - Exceptions",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0027?ys=2026RS",
+    "https://mgaleg.maryland.gov/2026RS/bills/sb/sb0027f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bill Folden",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4a5241b7-8737-4a58-adf2-c5335111d3c4"
+    },
+    {
+      "name": "Mike McKay",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f88cd73d-1970-4da1-9bea-2142a25999a7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2026RS/bills/sb/sb0027f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-27-2026.first_reader.pdf",
+      "sha256": "9aad58a66e4cf10fbe965ece4a54771aa7e31c5cda0f0307303b98e8ffc94f9b"
+    },
+    "note": "First reader: the bill as filed (2026 session). Bracketed [A] before 'licensee' / 'person' is deleted from existing law and left out of the quotes. No passage vote in the record; later amendments, if any, are not in the text read."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-123): (1) SUBJECT TO PARAGRAPH (2) OF THIS SUBSECTION, A licensee may not sell, rent, or transfer a regulated firearm until after 7 days following the time a firearm application is executed by the firearm applicant, in triplicate, and the original is forwarded by the prospective seller or transferor to the Secretary.\nSection 1 (Md. Code Ann., Public Safety § 5-123): (2) THE REQUIREMENT UNDER PARAGRAPH (1) OF THIS SUBSECTION THAT THE SALE, RENTAL, OR TRANSFER OF A REGULATED FIREARM MAY NOT OCCUR UNTIL AFTER 7 DAYS FOLLOWING THE TIME AN APPLICATION IS EXECUTED DOES NOT APPLY TO A SALE, RENTAL, OR TRANSFER OF A REGULATED FIREARM IF THE INDIVIDUAL WHO PURCHASES, RENTS, OR RECEIVES THE REGULATED FIREARM IS: (I) A LAW ENFORCEMENT OFFICER; (II) AN INDIVIDUAL WHO HAS RETIRED AS A LAW ENFORCEMENT OFFICER IN GOOD STANDING FROM A LAW ENFORCEMENT AGENCY; OR (III) AN INDIVIDUAL TO WHOM A PERMIT TO WEAR, CARRY, OR TRANSPORT A HANDGUN HAS BEEN ISSUED UNDER TITLE 5, SUBTITLE 3 OF THIS ARTICLE.\nSection 1 (Md. Code Ann., Public Safety § 5-124): (1) (I) SUBJECT TO SUBPARAGRAPH (II) OF THIS PARAGRAPH, A person who is not a licensee may not sell, rent, transfer, or purchase a regulated firearm until after 7 days following the time a firearm application is executed by the firearm applicant, in triplicate, and the original is forwarded by a licensee to the Secretary.\nSection 1 (Md. Code Ann., Public Safety § 5-124): (II) THE REQUIREMENT UNDER SUBPARAGRAPH (I) OF THIS PARAGRAPH THAT A PERSON MAY NOT SELL, RENT, TRANSFER, OR PURCHASE A REGULATED FIREARM UNTIL 7 DAYS AFTER AN APPLICATION IS EXECUTED DOES NOT APPLY TO A SALE, RENTAL, OR TRANSFER OF A REGULATED FIREARM IF THE INDIVIDUAL WHO PURCHASES, RENTS, OR RECEIVES THE REGULATED FIREARM IS: 1. A LAW ENFORCEMENT OFFICER; 2. AN INDIVIDUAL WHO HAS RETIRED AS A LAW ENFORCEMENT OFFICER IN GOOD STANDING FROM A LAW ENFORCEMENT AGENCY; OR 3. AN INDIVIDUAL TO WHOM A PERMIT TO WEAR, CARRY, OR TRANSPORT A HANDGUN HAS BEEN ISSUED UNDER TITLE 5, SUBTITLE 3 OF THIS ARTICLE."
+}

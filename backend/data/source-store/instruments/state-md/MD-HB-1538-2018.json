@@ -1,0 +1,99 @@
+{
+  "id": "MD-HB-1538-2018",
+  "scope": "state:md",
+  "title": "HB1538 (2018 Regular): Public Safety - Handgun Permits - Scope",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1538?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/hb/hb1538f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Glen Glass",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Robin Grammer",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0608cc7a-72ed-4d24-b966-3eee82075bf1"
+    },
+    {
+      "name": "Kevin Hornberger",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "96a6d696-50fd-4393-a0f6-19e69dc15716"
+    },
+    {
+      "name": "Mike McKay",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f88cd73d-1970-4da1-9bea-2142a25999a7"
+    },
+    {
+      "name": "Matt Morgan",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c4e4d811-1e14-45fe-9335-7521f1603856"
+    },
+    {
+      "name": "Neil Parrott",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Deborah C. Rey",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Frank Conaway",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "94855fb3-0e08-45ac-8c67-ba668ef67c4b"
+    },
+    {
+      "name": "Michael E. Malone",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Susan McComas",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07"
+    },
+    {
+      "name": "Sid Saab",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "David E. Vogt, III",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/hb/hb1538f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1538-2018.first_reader.pdf",
+      "sha256": "b213cc86eac1d121cb2c6b5b9f453576a623374985a1276d34ae97bab136eaa5"
+    },
+    "note": "As filed. Words in [brackets] deleted from existing law: the '(a)' label and subsection (b), 'The Secretary may limit the geographic area, circumstances, or times of the day, week, month, or year in which a permit is effective.' The quote is the section as it would read. No vote listed."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-307): A permit is valid for each handgun legally in the possession of the person to whom the permit is issued.\nSection 1 (Md. Code Ann., Public Safety § 5-307(b), struck by the bill in [brackets]): [(b) The Secretary may limit the geographic area, circumstances, or times of the day, week, month, or year in which a permit is effective.]"
+}

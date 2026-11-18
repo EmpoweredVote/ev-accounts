@@ -1,0 +1,86 @@
+{
+  "id": "MD-HB-730-2018",
+  "scope": "state:md",
+  "title": "HB730 (2018 Regular): Public Safety - Transfer of Handguns",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0730?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/hb/hb0730f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nick Mosby",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Terri Hill",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f6a237a0-34ff-4a93-b05a-335ec38b6da3"
+    },
+    {
+      "name": "Marice Morales",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Andrew Platt",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bilal Ali",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jazz Lewis",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Robbyn Lewis",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9285f590-79b5-48de-a1c0-a022629e6ebb"
+    },
+    {
+      "name": "M. Washington",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "David Moon",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "96876928-53f8-4ed5-b2de-deab3a456d83"
+    },
+    {
+      "name": "Carlo Sanchez",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/hb/hb0730f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-730-2018.first_reader.pdf",
+      "sha256": "f2bdb54d55a445d40ec4971d60aa2ad8bc8ab401b1d3f88bca36b4cb285395f3"
+    },
+    "note": "First reader (as filed); no enrolled text read. Remaining lettering changes in § 5-124 only re-letter existing law."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-124(A)): IN THIS SECTION, “TRANSFER” DOES NOT INCLUDE A TEMPORARY GRATUITOUS EXCHANGE OF A HANDGUN BETWEEN TWO INDIVIDUALS WHO REMAIN IN THE SAME LOCATION FOR THE DURATION OF THE EXCHANGE."
+}

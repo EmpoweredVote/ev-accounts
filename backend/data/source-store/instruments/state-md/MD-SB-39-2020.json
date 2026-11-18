@@ -1,0 +1,39 @@
+{
+  "id": "MD-SB-39-2020",
+  "scope": "state:md",
+  "title": "SB39 (2020 Regular): Public Safety - Regulated Firearm - Definition",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0039?ys=2020RS&search=True",
+    "https://mgaleg.maryland.gov/2020RS/bills/sb/sb0039f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeff Waldstreicher",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2020RS/bills/sb/sb0039f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-39-2020.first_reader.pdf",
+      "sha256": "34d105545db4317e12660d222d6ca7c89889193811f349e0727522aad93e3684"
+    },
+    "note": "First reader (as filed), mgaleg.maryland.gov; no date in text. Other changes are only renumbering of the existing list (bracketed old numbers, capitalised new numbers)."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-101(r)): “Regulated firearm” means: (1) a handgun; or ... (2) a firearm that is any of the following specific assault weapons or their copies, regardless of which company produced and manufactured that assault weapon: ... (iv) ANDERSON MANUFACTURING .223 CALIBER AM–15 AND .300 CALIBER AM–15;"
+}

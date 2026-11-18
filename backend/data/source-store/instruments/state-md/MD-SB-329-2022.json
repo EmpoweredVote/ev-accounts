@@ -1,0 +1,45 @@
+{
+  "id": "MD-SB-329-2022",
+  "scope": "state:md",
+  "title": "SB329 (2022 Regular): Election Law - Polling Sites - Firearms Prohibitions",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0329?ys=2022RS&search=True",
+    "https://mgaleg.maryland.gov/2022RS/bills/sb/sb0329f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jeff Waldstreicher",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570"
+    },
+    {
+      "name": "Bill Ferguson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "6e3c30f5-52be-48b0-b5b4-383e5d745c57"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2022RS/bills/sb/sb0329f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-329-2022.first_reader.pdf",
+      "sha256": "305be91fe0732fe7594fdad68e4ef601dae0bc388eec8c76b940d7ec4ea518a8"
+    },
+    "note": "First reader: the bill as filed. The firearm ban is a place-of-carry rule, so it is treated as one subject. The bill is also marked an emergency measure (uncodified Section 2, not quoted). No passage vote in the record; later amendments, if any, are not in the text read."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Election Law § 16-903(a)(3)): (3) except as required by law or by regulation adopted by the State Board in connection with ballot security activities, carrying or displaying a FIREARM, AS DEFINED IN § 16–904(A) OF THIS SUBTITLE, or badge within 100 feet of a polling site on election day.\nSection 1 (Md. Code Ann., Election Law § 16-904): (B) EXCEPT AS PROVIDED IN SUBSECTION (C) OF THIS SECTION AND § 16–903 OF THIS SUBTITLE, A PERSON MAY NOT: (1) CARRY OR DISPLAY A FIREARM ON THE PREMISES OF A PRIVATELY OR PUBLICLY OWNED BUILDING BEING USED AS A POLLING SITE DURING AN ELECTION, INCLUDING IN A PARKING LOT; OR (2) CARRY OR POSSESS A FIREARM WITHIN 100 FEET OF A POLLING SITE DURING AN ELECTION.\nSection 1 (Md. Code Ann., Election Law § 16-904): (C) (1) AN INDIVIDUAL IS NOT IN VIOLATION OF SUBSECTION (B) OF THIS SECTION IF THE INDIVIDUAL IS: (I) A LAW ENFORCEMENT OFFICER IN THE REGULAR COURSE OF THE OFFICER’S DUTY; OR (II) AN OFF–DUTY LAW ENFORCEMENT OFFICER, IF: 1. THE OFFICER IS DISPLAYING THE OFFICER’S BADGE OR CREDENTIAL; AND 2. THE WEAPON CARRIED OR POSSESSED BY THE OFFICER IS CONCEALED.\nSection 1 (Md. Code Ann., Election Law § 16-904): (D) A PERSON WHO VIOLATES THIS SECTION IS SUBJECT TO THE CIVIL PENALTY SPECIFIED UNDER § 16–1002 OF THIS TITLE."
+}

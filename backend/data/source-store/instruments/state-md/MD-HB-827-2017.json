@@ -1,0 +1,85 @@
+{
+  "id": "MD-HB-827-2017",
+  "scope": "state:md",
+  "title": "HB827 (2017 Regular): Public Safety - Secretary of State Police - Temporary Firearms Training Waiver",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0827?ys=2017RS",
+    "https://mgaleg.maryland.gov/2017RS/bills/hb/hb0827f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Trent Kittleman",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Arentz",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "fee8a413-a3a8-4568-ad9b-db00f94f5ac2"
+    },
+    {
+      "name": "Neil Parrott",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "April Rose",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5967c703-2583-466f-a438-c3ac182111d5"
+    },
+    {
+      "name": "Fisher",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Warren E. Miller",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Brett Wilson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Wendell R. Beitzel",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Robert L. Flanagan",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Haven Shoemaker",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2017RS/bills/hb/hb0827f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-827-2017.first_reader.pdf",
+      "sha256": "873ce60ccdb5c1af33b17f00f5e1f658b3467825d0de115ea2e326a353e05278"
+    },
+    "note": "first reader: bill as filed; no enrolled text read; no passage vote recorded."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-306(b)(2)): (2) (I) THE SECRETARY MAY TEMPORARILY WAIVE THE REQUIREMENT TO COMPLETE A CERTIFIED FIREARMS TRAINING COURSE UNDER SUBSECTION (A) OF THIS SECTION ON A DETERMINATION THAT THE APPLICANT HAS: 1. OBTAINED A PROTECTIVE ORDER; 2. OBTAINED A PEACE ORDER; 3. DEMONSTRATED CLEAR EVIDENCE THAT THE APPLICANT HAS BEEN THE VICTIM OF SERIOUS DOMESTIC ABUSE; OR 4. DEMONSTRATED CLEAR EVIDENCE OF IMMINENT DANGER TO THE APPLICANT. (II) AN APPLICANT ISSUED A PERMIT UNDER THIS PARAGRAPH SHALL COMPLETE THE TRAINING COURSE WITHIN 60 DAYS AFTER THE ISSUANCE OF THE PERMIT."
+}

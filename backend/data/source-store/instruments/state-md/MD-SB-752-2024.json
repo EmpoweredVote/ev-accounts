@@ -1,0 +1,51 @@
+{
+  "id": "MD-SB-752-2024",
+  "scope": "state:md",
+  "title": "SB752 (2024 Regular): Regulated Firearms - Maryland Voluntary Do Not Sell Firearm Process",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0752?ys=2024RS&search=True",
+    "https://mgaleg.maryland.gov/2024RS/bills/sb/sb0752f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shelly Hettleman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "3089c813-f0a8-46af-9a7b-1699129037e9"
+    },
+    {
+      "name": "Katie Hester",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "6da20195-1b0c-43f2-b1b3-7a3954326fe6"
+    },
+    {
+      "name": "Jeff Waldstreicher",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2024RS/bills/sb/sb0752f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-752-2024.first_reader.pdf",
+      "sha256": "18449f7d10fcaca9889d646f37b215440497e4bed588c194380b55bf3683f0a2"
+    },
+    "note": "First reader: the bill as filed. The 5–904(b) quote is the lead-in to items (1)-(4). The registry records are made confidential (General Provisions § 4–325.1) and a Tax-General disclosure is added; both support the registry. No passage vote in the record."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–134(b)): A dealer or other person may not sell, rent, loan, or transfer a regulated firearm to a purchaser, lessee, borrower, or transferee who the dealer or other person knows or has reasonable cause to believe: (15) IS REGISTERED ON THE MARYLAND VOLUNTARY DO NOT SELL FIREARM REGISTRY ESTABLISHED UNDER § 5–902 OF THIS TITLE;\nSection 1 (Md. Code Ann., Public Safety § 5–902): ON OR BEFORE DECEMBER 31, 2024, THE DEPARTMENT SHALL CREATE AND MAINTAIN THE MARYLAND VOLUNTARY DO NOT SELL FIREARM REGISTRY IN WHICH A PERSON MAY VOLUNTARILY ENROLL FOR THE PURPOSE OF BEING PROHIBITED FROM OBTAINING A REGULATED FIREARM.\nSection 1 (Md. Code Ann., Public Safety § 5–903(a)): A REGISTRY APPLICANT SHALL: (1) BE AT LEAST 18 YEARS OLD; AND (2) SUBMIT TO THE DEPARTMENT A REGISTRY APPLICATION ON THE FORM THAT THE SECRETARY PROVIDES.\nSection 1 (Md. Code Ann., Public Safety § 5–904(b)): PROMPTLY, BUT NOT SOONER THAN 21 DAYS AFTER RECEIVING A PROPERLY COMPLETED REQUEST FOR REMOVAL FROM THE REGISTRY, THE SECRETARY SHALL:\nSection 1 (Md. Code Ann., Public Safety § 5–905): A PERSON WHO VIOLATES THIS SECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 1 YEAR OR A FINE NOT EXCEEDING $1,000 OR BOTH."
+}

@@ -1,0 +1,96 @@
+{
+  "id": "MD-SB-27-2021",
+  "scope": "state:md",
+  "title": "SB27 (2021 Regular): Public Safety - Permit to Carry, Wear, or Transport a Handgun - Qualifications",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0027?ys=2021RS&search=True",
+    "https://mgaleg.maryland.gov/2021RS/bills/sb/sb0027f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michael J. Hough",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jack Bailey",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f"
+    },
+    {
+      "name": "Mary Beth Carozza",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9"
+    },
+    {
+      "name": "Paul Corderman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5127f8d8-ca40-40aa-8773-4c1abad66f41"
+    },
+    {
+      "name": "Adelaide C. Eckardt",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "George C. Edwards",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jason Gallion",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e2ca1bfd-255d-417b-a9d7-424e6c10749d"
+    },
+    {
+      "name": "Steve Hershey",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0"
+    },
+    {
+      "name": "Justin Ready",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "493c5d0c-1986-40d4-9fff-3a3bc3fe62e8"
+    },
+    {
+      "name": "Johnny Salling",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9f8d0005-c5ff-42f8-b158-cdb6e4eee872"
+    },
+    {
+      "name": "Bryan Simonaire",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4aa50ee7-aeed-48ae-96e7-142bd9ac731b"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2021RS/bills/sb/sb0027f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-27-2021.first_reader.pdf",
+      "sha256": "a2ba6270be3b73066bd5043bff25d71a59538f54679865e8e6937d56f6cc3109"
+    },
+    "note": "Version read: first reader (bill as filed); no vote recorded, so no later amendments to account for."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-306(a)): Subject to subsection (c) of this section, the Secretary shall issue a permit within a reasonable time to a person who the Secretary finds:\nSection 1 (Md. Code Ann., Public Safety § 5-306(a)(6)): based on an investigation: (i) has not exhibited a propensity for violence or instability that may reasonably render the person’s possession of a handgun a danger to the person or to another; and (ii) has good and substantial reason to wear, carry, or transport a handgun, such as PERSONAL PROTECTION, SELF–DEFENSE, OR a finding that the permit is necessary as a reasonable precaution against apprehended danger."
+}

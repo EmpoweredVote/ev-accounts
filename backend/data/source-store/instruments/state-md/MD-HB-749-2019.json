@@ -1,0 +1,53 @@
+{
+  "id": "MD-HB-749-2019",
+  "scope": "state:md",
+  "title": "HB749 (2019 Regular): Firearms - Right to Purchase, Own, Possess, and Carry - Medical Cannabis (Patients' Rights Act)",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0749?ys=2019RS",
+    "https://mgaleg.maryland.gov/2019RS/bills/hb/hb0749f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Robin Grammer",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0608cc7a-72ed-4d24-b966-3eee82075bf1"
+    },
+    {
+      "name": "Lauren Arikan",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "6a04e5b9-d532-4e80-bbca-6677a35620e5"
+    },
+    {
+      "name": "Kathy Szeliga",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "multi",
+      "other_topics": [
+        "cannabis-policy: Section 1 § 5-701(G) — states the General Assembly's intent that medical cannabis be treated as legal under State law and patients not penalized for lawful use"
+      ]
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2019RS/bills/hb/hb0749f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-749-2019.first_reader.pdf",
+      "sha256": "40b3a286308c87873795364fb44d114f6c05247368a34c5ddca7293a40f4ea23"
+    },
+    "note": "First reader (as filed); no enrolled text read. Sections (A) and (G) (definition and intent) not quoted; (G) is the cannabis-policy part."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-701(B)): IN ACCORDANCE WITH § 13–3313(A) OF THE HEALTH – GENERAL ARTICLE, A PERSON MAY NOT BE DENIED THE RIGHT TO PURCHASE, OWN, POSSESS, OR CARRY A FIREARM UNDER THIS TITLE SOLELY ON THE BASIS THAT THE PERSON IS A QUALIFYING PATIENT.\nSection 1 (Md. Code Ann., Public Safety § 5-701(C)): A STATE AGENCY MAY NOT ACCESS A DATABASE CONTAINING THE IDENTITIES OF QUALIFYING PATIENTS TO OBTAIN INFORMATION FOR THE PURPOSE OF APPROVING OR DISAPPROVING A PERSON FROM PURCHASING, OWNING, POSSESSING, OR CARRYING A FIREARM.\nSection 1 (Md. Code Ann., Public Safety § 5-701(E)): A STATE AGENCY MAY NOT INQUIRE ABOUT A PERSON’S STATUS AS A QUALIFYING PATIENT FOR THE PURPOSE OF APPROVING OR DISAPPROVING THE PERSON FROM PURCHASING, OWNING, POSSESSING, OR CARRYING A FIREARM.\nSection 1 (Md. Code Ann., Public Safety § 5-701(F)): ANY FORM USED FOR THE PURPOSE OF APPROVING OR DISAPPROVING A PERSON FROM PURCHASING, OWNING, POSSESSING, OR CARRYING A FIREARM THAT INQUIRES ABOUT THE APPLICANT’S USE OF CONTROLLED DANGEROUS SUBSTANCES SHALL SPECIFICALLY AUTHORIZE A QUALIFYING PATIENT TO REFRAIN FROM REPORTING THE USE OF MEDICAL CANNABIS."
+}

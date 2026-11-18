@@ -1,0 +1,322 @@
+{
+  "id": "MD-HB-1424-2017",
+  "scope": "state:md",
+  "title": "HB1424 (2017 Regular): Criminal Procedure - Firearms - Transfer",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1424?ys=2017RS",
+    "https://mgaleg.maryland.gov/2017RS/bills/hb/hb1424f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Vanessa Atterbeary",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Curt Anderson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Alfred C. Carr, Jr.",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kathleen M. Dumais",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Eric Ebersole",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "22610d7f-eaca-4802-b486-0e48544e6e7d"
+    },
+    {
+      "name": "Ana Sol Gutierrez",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Shelly Hettleman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3089c813-f0a8-46af-9a7b-1699129037e9"
+    },
+    {
+      "name": "Terri Hill",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f6a237a0-34ff-4a93-b05a-335ec38b6da3"
+    },
+    {
+      "name": "Sheila E. Hixson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Marvin Holmes",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b8e331fa-d58e-479f-b076-8fda0b0604c5"
+    },
+    {
+      "name": "Jay Jalisi",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Adrienne Jones",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "760cd4a7-235c-472f-a0ba-fb07098dfd57"
+    },
+    {
+      "name": "Brooke E. Lierman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "b26fb5d2-90eb-4108-8ce5-838df719473d"
+    },
+    {
+      "name": "Eric G. Luedtke",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "David Moon",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "96876928-53f8-4ed5-b2de-deab3a456d83"
+    },
+    {
+      "name": "Marice Morales",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Dan K. Morhaim",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Nick Mosby",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Andrew Platt",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Pam Queen",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a11c027a-ef25-4a09-8df7-e9b7c60bea90"
+    },
+    {
+      "name": "Kirill Reznik",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sandy Rosenberg",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "36eecaff-4677-441a-b36e-a323e87d9158"
+    },
+    {
+      "name": "Charles Barkley",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bilal Ali",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Dereck E. Davis",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "75378a96-8886-46eb-b0c1-37cbe2579265"
+    },
+    {
+      "name": "Erek L. Barron",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Talmadge Branch",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ben Brooks",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a16b94b0-dd22-40a9-af91-03295ea27986"
+    },
+    {
+      "name": "Frank Conaway",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "94855fb3-0e08-45ac-8c67-ba668ef67c4b"
+    },
+    {
+      "name": "Bonnie Cullison",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "17c22fec-63a4-4f5d-8607-0c364ddffd71"
+    },
+    {
+      "name": "David Fraser-Hidalgo",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "ab8aa19a-42c3-445e-9632-a5c7f05458ee"
+    },
+    {
+      "name": "C. William Frick",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jim Gilchrist",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ariana Kelly",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kramer",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Susie Proctor",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Barbara Robinson",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Veronica Turner",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7a76712a-38cd-41de-b260-cd0127284f16"
+    },
+    {
+      "name": "C.T. Wilson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "69870c10-cea2-43c2-8cf9-bfcaf0b82265"
+    },
+    {
+      "name": "Pat Young",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Anne Kaiser",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "bfd0f15f-abb1-4d28-b1f4-e06875adce16"
+    },
+    {
+      "name": "Marc Korman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "e76d0654-b0c6-43dc-9159-e929e480d070"
+    },
+    {
+      "name": "Stephen W. Lafferty",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Clarence Lam",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "fc23b939-0dfd-4968-ab19-fc1e7745e997"
+    },
+    {
+      "name": "Sheree Sample-Hughes",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a1c2b55c-df7d-487c-ad90-7f7e2c2e6951"
+    },
+    {
+      "name": "Carlo Sanchez",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Charles Sydnor",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344"
+    },
+    {
+      "name": "Jimmy Tarlau",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kris Valderrama",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "768ac1cf-a599-4ddb-943c-c985fafb2607"
+    },
+    {
+      "name": "Geraldine Valentino-Smith",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jeff Waldstreicher",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570"
+    },
+    {
+      "name": "Jay Walker",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jheanelle Wilkins",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "cf68a5cd-f375-4296-8a87-1828d903baea"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2017RS/bills/hb/hb1424f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1424-2017.first_reader.pdf",
+      "sha256": "30053c496e6da96fcbfbfb1c88e78b02bc764708deef508e1821d6bcf1944b57"
+    },
+    "note": "First reader (as filed); no passage vote recorded. Section 5–205(c) is also amended to add the same transport exemption for rifles and shotguns."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Criminal Procedure § 6–234(B)): (B) THE COURT SHALL INFORM A PERSON CONVICTED OF A DISQUALIFYING CRIME, EITHER VERBALLY OR IN WRITING, THAT THE PERSON IS PROHIBITED FROM POSSESSING: (1) A REGULATED FIREARM UNDER § 5–133 OF THE PUBLIC SAFETY ARTICLE; AND (2) A RIFLE OR SHOTGUN UNDER § 5–205 OF THE PUBLIC SAFETY ARTICLE.\nSection 1 (Md. Code Ann., Criminal Procedure § 6–234(C)(2)): (2) (I) A TRANSFER OF A FIREARM UNDER THIS SUBSECTION SHALL BE MADE WITHIN 2 DAYS AFTER THE PERSON WAS CONVICTED OF A DISQUALIFYING CRIME TO A STATE OR LOCAL LAW ENFORCEMENT OFFICIAL OR TO A FEDERALLY LICENSED FIREARMS DEALER.\nSection 1 (Md. Code Ann., Criminal Procedure § 6–234(D)): (D) WITHIN 5 BUSINESS DAYS AFTER BEING ADVISED OF THE REQUIREMENT TO TRANSFER POSSESSION OF A FIREARM UNDER SUBSECTION (C) OF THIS SECTION, A PERSON SHALL: (1) FILE A COPY OF A WRITTEN NOTICE OF COMPLETED TRANSACTION OR PROOF OF TRANSFER WITH THE DEPARTMENT OF PUBLIC SAFETY AND CORRECTIONAL SERVICES AND ATTEST THAT ALL FIREARMS OWNED BY THE PERSON OR IN THE PERSON’S POSSESSION HAVE BEEN TRANSFERRED AND THAT THE PERSON DOES NOT OWN OR POSSESS ANY OTHER FIREARMS; OR (2) ATTEST TO THE DEPARTMENT OF PUBLIC SAFETY AND CORRECTIONAL SERVICES THAT THE PERSON DOES NOT OWN OR POSSESS A FIREARM AND DID NOT OWN OR POSSESS A FIREARM AT THE TIME OF THE ORDER.\nSection 1 (Md. Code Ann., Criminal Procedure § 6–234(E)): (E) IF A PERSON TRANSFERS A FIREARM TO A LAW ENFORCEMENT AGENCY UNDER THIS SECTION, THE AGENCY MAY DISPOSE OF THE FIREARM.\nSection 1 (Md. Code Ann., Public Safety § 5–133(f)): (F) THIS SECTION DOES NOT APPLY TO THE CARRYING OR TRANSPORTING OF A REGULATED FIREARM BY A PERSON WHO IS PROHIBITED FROM POSSESSING THE REGULATED FIREARM BECAUSE THE PERSON HAS BEEN CONVICTED OF A DISQUALIFYING CRIME, OR BY THAT PERSON’S REPRESENTATIVE, IF: (1) THE FIREARM IS UNLOADED; (2) IT IS WITHIN 2 DAYS AFTER THE PERSON WAS CONVICTED OF A DISQUALIFYING CRIME;"
+}

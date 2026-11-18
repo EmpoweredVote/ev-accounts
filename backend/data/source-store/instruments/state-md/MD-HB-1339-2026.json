@@ -1,0 +1,39 @@
+{
+  "id": "MD-HB-1339-2026",
+  "scope": "state:md",
+  "title": "HB1339 (2026 Regular): Handgun Roster Reform",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1339?ys=2026RS",
+    "https://mgaleg.maryland.gov/2026RS/bills/hb/hb1339f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Elizabeth Embry",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "03a161cf-1da8-4c34-9c08-d91bbf958987"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2026RS/bills/hb/hb1339f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1339-2026.first_reader.pdf",
+      "sha256": "aa1c6a4548a4cb8e3ea8dbed74730f6ecc6b5402225c0269276400b7681699cc"
+    },
+    "note": "First reader (as filed); no passage vote recorded. Also reshapes the Handgun Roster Board into an oversight body and changes one seat (5–404) and the fee and reporting process; these are part of the roster system. § 5–406 (sale ban for handguns not on the roster) is reprinted unchanged."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–403(A)(1)): (A) (1) THE ATTORNEY GENERAL SHALL APPROVE THE PLACEMENT OF A HANDGUN ON THE HANDGUN ROSTER UNDER § 5–405 OF THIS SUBTITLE ON THE SUCCESSFUL PETITION OF ANY PERSON, SUBJECT TO SUBSECTIONS (B) AND (C) OF THIS SECTION.\nSection 1 (Md. Code Ann., Public Safety § 5–403(B), (C)): (B) THE ATTORNEY GENERAL SHALL: (1) CONDUCT A LEGAL REVIEW OF EACH PETITION TO PLACE A HANDGUN ON THE HANDGUN ROSTER, AS WELL AS ANY MATERIALS AND INFORMATION PROVIDED UNDER SUBSECTION (D) OF THIS SECTION; AND (2) DETERMINE WHETHER THE HANDGUN IS LAWFUL UNDER STATE AND FEDERAL LAW FOR PLACEMENT ON THE HANDGUN ROSTER. (C) BEFORE A HANDGUN IS PLACED ON THE HANDGUN ROSTER, THE HANDGUN SHALL PASS TESTING UNDER § 5–403.1 OF THIS SUBTITLE.\nSection 1 (Md. Code Ann., Public Safety § 5–403(L)(1)(I)): (I) REEVALUATE ALL HANDGUNS THAT WERE APPROVED TO BE ON THE HANDGUN ROSTER BEFORE OCTOBER 1, 2026, TO DETERMINE WHETHER THEY ARE STILL LEGAL UNDER STATE AND FEDERAL LAW;\nSection 1 (Md. Code Ann., Public Safety § 5–403.1(D)): (D) (1) THE TESTING UNDER THIS SECTION SHALL INCLUDE: (I) FUNCTION TESTING, INCLUDING AT LEAST 500 CONTINUOUS ROUNDS OF LIVE FIRE USING COMMERCIAL FACTORY AMMUNITION THAT IS APPROPRIATE FOR THE HANDGUN, WITHOUT CLEANING OR MAINTENANCE TO CLEAR ANY MALFUNCTION DURING THE ENTIRE SEQUENCE OF LIVE FIRE; (2) A SPECIMEN SHALL FAIL THE FUNCTION TESTING UNDER PARAGRAPH (1)(I) OF THIS SUBSECTION IF THE SPECIMEN EXPERIENCES MORE THAN SIX MALFUNCTIONS DURING THE 500–ROUND TEST. (3) A SPECIMEN SHALL FAIL THE DROP AND IMPACT TESTING UNDER PARAGRAPH (1)(II) OF THIS SUBSECTION IF THE SPECIMEN DISCHARGES AS A RESULT OF THE DROP AND IMPACT TESTING.\nSection 1 (Md. Code Ann., Public Safety § 5–403.1(H), (J)(1)): (H) IF A HANDGUN FAILS TESTING UNDER THIS SECTION, THE HANDGUN MAY NOT BE PLACED ON THE HANDGUN ROSTER UNDER § 5–405 OF THIS SUBTITLE UNLESS AND UNTIL THE HANDGUN PASSES TESTING. (J) (1) HANDGUNS THAT ARE LISTED ON THE HANDGUN ROSTER AS OF OCTOBER 1, 2026, SHALL BE TESTED BY THE MARYLAND STATE POLICE ON OR BEFORE MARCH 31, 2028.\nSection 1 (Md. Code Ann., Public Safety § 5–405(c)(2)): (2) A HANDGUN SHALL BE PLACED ON THE HANDGUN ROSTER UNDER THIS SECTION ONLY IF: (I) THE ATTORNEY GENERAL DETERMINES THE HANDGUN IS LAWFUL TO BE PLACED ON THE HANDGUN ROSTER UNDER § 5–403 OF THIS SUBTITLE; AND (II) THE HANDGUN PASSES REQUIRED TESTING UNDER § 5–403.1 OF THIS SUBTITLE."
+}

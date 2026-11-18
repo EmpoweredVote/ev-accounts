@@ -1,0 +1,207 @@
+{
+  "id": "MD-HB-1287-2025",
+  "scope": "state:md",
+  "title": "HB1287 (2025 Regular): Criminal Law - Firearm Crimes - Convertible Pistols",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1287?ys=2025RS&search=True",
+    "https://mgaleg.maryland.gov/2025RS/bills/hb/hb1287f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Nicole Williams",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5c24446e-c9d6-4dda-9703-e3c049798315"
+    },
+    {
+      "name": "Gabriel Acevero",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e1b53b61-d4f7-4d10-bdb3-2a8dcfb12820"
+    },
+    {
+      "name": "Marlon Amprey",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "62bed8b6-beb2-4c41-b234-dc6427bfc9c0"
+    },
+    {
+      "name": "Sandy Bartlett",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7d818044-a989-47e1-b6cf-d482ebad0600"
+    },
+    {
+      "name": "Adrian Boafo",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1da26040-98b4-4eb0-aa1f-3ec05b297a29"
+    },
+    {
+      "name": "Lorig Charkoudian",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9c5e1ac7-8a39-4c6e-8b20-0788a92f8607"
+    },
+    {
+      "name": "Charlotte Crutchfield",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "98d6a17e-59dc-4d11-a342-869603862f10"
+    },
+    {
+      "name": "Elizabeth Embry",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "03a161cf-1da8-4c34-9c08-d91bbf958987"
+    },
+    {
+      "name": "Terri Hill",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f6a237a0-34ff-4a93-b05a-335ec38b6da3"
+    },
+    {
+      "name": "Aaron Kaufman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bc703231-6af8-48c6-8ae6-4a93fc60b18f"
+    },
+    {
+      "name": "Robbyn Lewis",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9285f590-79b5-48de-a1c0-a022629e6ebb"
+    },
+    {
+      "name": "Lesley Lopez",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2fa68ca4-00b5-4518-a692-d12447d7fec3"
+    },
+    {
+      "name": "Ashanti Martínez",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d8eee978-cec3-492d-9867-9d40b2a50a9d"
+    },
+    {
+      "name": "Aletheia McCaskill",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fcfa1844-032e-4dba-9ae0-c52b82447fa8"
+    },
+    {
+      "name": "Bernice Mireku-North",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8abee534-5db0-4950-a2b9-d0d1e8088cc7"
+    },
+    {
+      "name": "Cheryl Pasteur",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b5aee428-9b2e-4c87-9a5c-63d44f58e1d8"
+    },
+    {
+      "name": "Edith Patterson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b9c61fea-fcb1-45cc-8e2c-e5b3046b7266"
+    },
+    {
+      "name": "Scott Phillips",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "04eb4549-ad64-4ddc-ad53-8f90217f905f"
+    },
+    {
+      "name": "Malcolm Ruff",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7e1dfb66-1eff-4c8d-b3fe-d39f990b99c4"
+    },
+    {
+      "name": "Sheila Ruth",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "df1a05a1-2a70-4e40-a0c6-5b3f81632c7e"
+    },
+    {
+      "name": "Emily Shetty",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d1a30768-52e8-4a0d-badc-3e5f2f5792c7"
+    },
+    {
+      "name": "Karen Simpson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5946ad0c-ddf5-4674-840e-6968105042cd"
+    },
+    {
+      "name": "Kym Taylor",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9273ed81-2052-428a-b39d-849abeef270b"
+    },
+    {
+      "name": "Karen Toles",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "cd422f8c-913b-4280-987b-9383ead34e85"
+    },
+    {
+      "name": "Veronica Turner",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7a76712a-38cd-41de-b260-cd0127284f16"
+    },
+    {
+      "name": "Jheanelle Wilkins",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "cf68a5cd-f375-4296-8a87-1828d903baea"
+    },
+    {
+      "name": "Greg Wims",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b7e2aa8f-a301-4004-81e9-d1f857c81075"
+    },
+    {
+      "name": "Jamila Woods",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "916afe40-4061-476f-9a54-b271b32778d2"
+    },
+    {
+      "name": "Teresa Woorman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "36171e41-704b-4bf9-b300-755afe4ee06f"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2025RS/bills/hb/hb1287f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1287-2025.first_reader.pdf",
+      "sha256": "4aa23c6ac92fc8114ddafe2ba6b6f100ac42414612641c373cf71147b86607aa"
+    },
+    "note": "first_reader: bill as filed; no vote recorded. Violation falls under existing § 4-306(a) (misdemeanor, up to 3 years or $5,000), which is reprinted without change."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Criminal Law § 4-301(h)): “CONVERTIBLE PISTOL” MEANS ANY SEMIAUTOMATIC PISTOL THAT CAN BE CONVERTED INTO A MACHINE GUN SOLELY BY THE ATTACHMENT OF A SWITCH/AUTO–SEAR.\nSection 1 (Md. Code Ann., Criminal Law § 4-305.2): A PERSON MAY NOT MANUFACTURE, SELL, OFFER FOR SALE, PURCHASE, RECEIVE, OR TRANSFER A CONVERTIBLE PISTOL."
+}

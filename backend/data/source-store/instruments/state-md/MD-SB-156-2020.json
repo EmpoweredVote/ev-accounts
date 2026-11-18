@@ -1,0 +1,353 @@
+{
+  "id": "MD-SB-156-2020",
+  "scope": "state:md",
+  "title": "SB156 (2020 Regular): Handgun Qualification License - Training Requirement - Exemption",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0156?ys=2020RS&search=True",
+    "https://mgaleg.maryland.gov/2020RS/bills/sb/sb0156t.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Robert Cassilly",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jack Bailey",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f"
+    },
+    {
+      "name": "Mary Beth Carozza",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9"
+    },
+    {
+      "name": "Adelaide C. Eckardt",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "George C. Edwards",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jason Gallion",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e2ca1bfd-255d-417b-a9d7-424e6c10749d"
+    },
+    {
+      "name": "Steve Hershey",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0"
+    },
+    {
+      "name": "Michael J. Hough",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "J.B. Jennings",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5927d5ab-2fd7-4454-bcc3-34e494821aac"
+    },
+    {
+      "name": "Justin Ready",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "493c5d0c-1986-40d4-9fff-3a3bc3fe62e8"
+    },
+    {
+      "name": "Edward R. Reilly",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Johnny Salling",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9f8d0005-c5ff-42f8-b158-cdb6e4eee872"
+    },
+    {
+      "name": "Andrew A. Serafini",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bryan Simonaire",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4aa50ee7-aeed-48ae-96e7-142bd9ac731b"
+    },
+    {
+      "name": "Will Smith",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc"
+    },
+    {
+      "name": "Chris West",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2020-02-13",
+      "body": "MD Senate",
+      "motion": "Senate Third Reading Passed",
+      "kind": "roll-call",
+      "yes": 45,
+      "no": 0,
+      "absent": 2,
+      "note": "mgaleg.maryland.gov vote file (read from the legislature) 90202491 https://mgaleg.maryland.gov/2020RS/votes/senate/0249.pdf#SB156",
+      "members": [
+        {
+          "name": "Mr. President",
+          "vote": "yea"
+        },
+        {
+          "name": "Sarah Elfreth",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael J. Hough",
+          "vote": "yea"
+        },
+        {
+          "name": "Cory McCray",
+          "vote": "yea",
+          "politician_id": "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd"
+        },
+        {
+          "name": "Andrew A. Serafini",
+          "vote": "yea"
+        },
+        {
+          "name": "Malcolm Augustine",
+          "vote": "yea",
+          "politician_id": "9d191d69-084f-4941-bc0a-c59d336f032e"
+        },
+        {
+          "name": "Arthur Ellis",
+          "vote": "yea",
+          "politician_id": "4754dede-4a3b-4280-a8b1-7497530107f7"
+        },
+        {
+          "name": "J.B. Jennings",
+          "vote": "yea",
+          "politician_id": "5927d5ab-2fd7-4454-bcc3-34e494821aac"
+        },
+        {
+          "name": "Thomas V. Mike Miller, Jr.",
+          "vote": "yea"
+        },
+        {
+          "name": "Bryan Simonaire",
+          "vote": "yea",
+          "politician_id": "4aa50ee7-aeed-48ae-96e7-142bd9ac731b"
+        },
+        {
+          "name": "Jack Bailey",
+          "vote": "yea",
+          "politician_id": "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f"
+        },
+        {
+          "name": "Brian Feldman",
+          "vote": "yea",
+          "politician_id": "d423151e-8477-470d-8f73-ba7d2092f714"
+        },
+        {
+          "name": "Cheryl Kagan",
+          "vote": "yea",
+          "politician_id": "e35d5990-55c7-42e2-94bc-27cb1c49b5f1"
+        },
+        {
+          "name": "Obie Patterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Will Smith",
+          "vote": "yea",
+          "politician_id": "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc"
+        },
+        {
+          "name": "Pam Beidle",
+          "vote": "yea",
+          "politician_id": "409ad653-a4fc-41d0-bb61-a933c5bc45c7"
+        },
+        {
+          "name": "Jason Gallion",
+          "vote": "yea",
+          "politician_id": "e2ca1bfd-255d-417b-a9d7-424e6c10749d"
+        },
+        {
+          "name": "Delores G. Kelley",
+          "vote": "yea"
+        },
+        {
+          "name": "Douglas J. J. Peters",
+          "vote": "yea"
+        },
+        {
+          "name": "Charles Sydnor",
+          "vote": "yea",
+          "politician_id": "30f96c7e-7bf0-4270-bfbb-ee4c520a7344"
+        },
+        {
+          "name": "Joanne Benson",
+          "vote": "yea",
+          "politician_id": "4a7dc8a6-2138-4472-8197-8b878034f029"
+        },
+        {
+          "name": "Melony G. Griffith",
+          "vote": "yea"
+        },
+        {
+          "name": "Nancy King",
+          "vote": "yea",
+          "politician_id": "81b8bae9-0b0f-43de-8079-c0b605e12cec"
+        },
+        {
+          "name": "Paul G. Pinsky",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Waldstreicher",
+          "vote": "yea",
+          "politician_id": "da75c207-bb23-477e-b3c0-7c462394b570"
+        },
+        {
+          "name": "Mary Beth Carozza",
+          "vote": "yea",
+          "politician_id": "9b2fe9e6-21bf-4aee-b351-a841f3f382b9"
+        },
+        {
+          "name": "Guy Guzzone",
+          "vote": "yea",
+          "politician_id": "f0fafa0e-3dd9-4d50-bc5e-c96315f766d7"
+        },
+        {
+          "name": "Kathy Klausmeier",
+          "vote": "yea"
+        },
+        {
+          "name": "Justin Ready",
+          "vote": "yea",
+          "politician_id": "493c5d0c-1986-40d4-9fff-3a3bc3fe62e8"
+        },
+        {
+          "name": "Mary Washington",
+          "vote": "yea",
+          "politician_id": "38404814-7be0-40e3-b044-062f98b2a5b0"
+        },
+        {
+          "name": "Jill Carter",
+          "vote": "yea"
+        },
+        {
+          "name": "Antonio Hayes",
+          "vote": "yea",
+          "politician_id": "04e1a744-acf5-4453-9172-7135b6bfce96"
+        },
+        {
+          "name": "Ben Kramer",
+          "vote": "yea",
+          "politician_id": "7a2d1548-3268-4767-97a8-bb8b142d5a33"
+        },
+        {
+          "name": "Edward R. Reilly",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris West",
+          "vote": "yea",
+          "politician_id": "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae"
+        },
+        {
+          "name": "Adelaide C. Eckardt",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Hershey",
+          "vote": "yea",
+          "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0"
+        },
+        {
+          "name": "Clarence Lam",
+          "vote": "yea",
+          "politician_id": "fc23b939-0dfd-4968-ab19-fc1e7745e997"
+        },
+        {
+          "name": "Jim Rosapepe",
+          "vote": "yea",
+          "politician_id": "9c400214-f007-4a8d-92fe-5f5d23b3838e"
+        },
+        {
+          "name": "Ronald N. Young",
+          "vote": "yea"
+        },
+        {
+          "name": "George C. Edwards",
+          "vote": "yea"
+        },
+        {
+          "name": "Shelly Hettleman",
+          "vote": "yea",
+          "politician_id": "3089c813-f0a8-46af-9a7b-1699129037e9"
+        },
+        {
+          "name": "Susan C. Lee",
+          "vote": "yea"
+        },
+        {
+          "name": "Johnny Salling",
+          "vote": "yea",
+          "politician_id": "9f8d0005-c5ff-42f8-b158-cdb6e4eee872"
+        },
+        {
+          "name": "Craig Zucker",
+          "vote": "yea",
+          "politician_id": "82145bc2-770a-421e-a2a1-0e79aae5b643"
+        },
+        {
+          "name": "Robert Cassilly",
+          "vote": "absent"
+        },
+        {
+          "name": "Katie Hester",
+          "vote": "absent",
+          "politician_id": "6da20195-1b0c-43f2-b1b3-7a3954326fe6"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (Third Reader; official copy, https://mgaleg.maryland.gov/2020RS/bills/sb/sb0156t.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-156-2020.third_reader.pdf",
+      "sha256": "7c1cb8a527bd364fa7dd862b7caba63af209af3e2414baea05cf6e983751f50f"
+    },
+    "note": "third reader: as passed by its first chamber. Passed the Senate; amendments made after the version read are not in the text read. The quote joins the lead-in with items (6)-(8) using an ellipsis marker; items (1)-(5) are existing law."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–117.1(e)): An applicant for a handgun qualification license is not required to complete a firearms safety training course under subsection (d) of this section if the applicant: … (6) IS A QUALIFIED RETIRED LAW ENFORCEMENT OFFICER, AS DEFINED UNDER THE LAW ENFORCEMENT OFFICERS SAFETY ACT, 18 U.S.C. § 926C; (7) IS AN ACTIVE OR RETIRED CORRECTIONAL OFFICER, SHERIFF, OR DEPUTY SHERIFF WHO HAS SUCCESSFULLY COMPLETED AN INITIAL CORRECTIONAL OFFICER, SHERIFF, OR DEPUTY SHERIFF FIREARMS TRAINING COURSE APPROVED BY THE SECRETARY; OR (8) lawfully owns a regulated firearm."
+}

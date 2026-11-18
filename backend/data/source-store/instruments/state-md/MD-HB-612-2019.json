@@ -1,0 +1,146 @@
+{
+  "id": "MD-HB-612-2019",
+  "scope": "state:md",
+  "title": "HB612 (2019 Regular): Public Safety - Regulated Firearms - Colt AR-15 Sporter H-BAR Rifle",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0612?ys=2019RS",
+    "https://mgaleg.maryland.gov/2019RS/bills/hb/hb0612f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Julian Ivey",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "69bf6043-4546-4804-ae04-311cff54a986"
+    },
+    {
+      "name": "Ben Brooks",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a16b94b0-dd22-40a9-af91-03295ea27986"
+    },
+    {
+      "name": "Alice Cain",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Jay Jalisi",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "David Moon",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "96876928-53f8-4ed5-b2de-deab3a456d83"
+    },
+    {
+      "name": "Nick Mosby",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Joseline Peña-Melnyk",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "00cd05cc-75de-4d9a-ab23-9f53441bc186"
+    },
+    {
+      "name": "Ben Barnes",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "590b56b2-1473-4e86-ba96-0490e172f6ff"
+    },
+    {
+      "name": "Wanika Fisher",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Ariana Kelly",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sara Love",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "c5d2cd24-170a-4f87-8fde-84216fe62806"
+    },
+    {
+      "name": "Susie Proctor",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Courtney Watson",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "a4b61b58-9006-4e58-952d-abeb2521cda0"
+    },
+    {
+      "name": "Erek L. Barron",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sandy Bartlett",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "7d818044-a989-47e1-b6cf-d482ebad0600"
+    },
+    {
+      "name": "Jessica Feldmark",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "fdb9f7d3-93db-4436-bd82-5d7fd853f05e"
+    },
+    {
+      "name": "Diana Fennell",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "192e8ffb-e576-41f1-915a-dbc0c30d4769"
+    },
+    {
+      "name": "Shelly Hettleman",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "3089c813-f0a8-46af-9a7b-1699129037e9"
+    },
+    {
+      "name": "Emily Shetty",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "d1a30768-52e8-4a0d-badc-3e5f2f5792c7"
+    },
+    {
+      "name": "Jen Terrasa",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "f45e2178-2a05-4974-8af8-379662412060"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2019RS/bills/hb/hb0612f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-612-2019.first_reader.pdf",
+      "sha256": "ea6ad8b7f3d285ca7592d0bf6b1cad7fa9d18708d0a525771fc2a89e249f23e4"
+    },
+    "note": "First reader (as filed); no passage vote recorded. The only change is deleting the bracketed words 'except Colt AR–15 Sporter H–BAR rifle'."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–101(r)(2)(xv)): Colt AR–15, CAR–15, and all imitations;\nSection 1 (Md. Code Ann., Public Safety § 5–101(r)): “Regulated firearm” means: (1) a handgun; or (2) a firearm that is any of the following specific assault weapons or their copies, regardless of which company produced and manufactured that assault weapon: (existing law kept)"
+}

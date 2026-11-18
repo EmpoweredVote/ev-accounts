@@ -1,0 +1,93 @@
+{
+  "id": "MD-HB-1417-2026",
+  "scope": "state:md",
+  "title": "HB1417 (2026 Regular): Public Safety - Handgun Permit Requirement - Repeal (Maryland Constitutional Carry Act)",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1417?ys=2026RS",
+    "https://mgaleg.maryland.gov/2026RS/bills/hb/hb1417f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "William Wivell",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "df6fe96f-7795-4934-9acc-2b9f8f0aa8f7"
+    },
+    {
+      "name": "Lauren Arikan",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "6a04e5b9-d532-4e80-bbca-6677a35620e5"
+    },
+    {
+      "name": "Terry Baker",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d049cf3e-6577-4f8d-ba7e-768ac2b78d66"
+    },
+    {
+      "name": "Brian Chisholm",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "cfc704da-dd6c-40b0-97fa-0c5ece8d3976"
+    },
+    {
+      "name": "Robin Grammer",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0608cc7a-72ed-4d24-b966-3eee82075bf1"
+    },
+    {
+      "name": "Matt Morgan",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c4e4d811-1e14-45fe-9335-7521f1603856"
+    },
+    {
+      "name": "Ryan Nawrocki",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "f5224e0c-0761-4ca7-a889-ed44517e2b91"
+    },
+    {
+      "name": "Teresa Reilly",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "547841f2-3476-4e83-9344-0cac984d44e8"
+    },
+    {
+      "name": "Kathy Szeliga",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0945acd2-cb51-49ad-a22f-6043d2e61520"
+    },
+    {
+      "name": "William Valentine",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "cdf746c1-8311-416b-9ad3-2684a83b6992"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2026RS/bills/hb/hb1417f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1417-2026.first_reader.pdf",
+      "sha256": "57c0f9ce5b3b3d97e3bcb4bfce1309a29c9473fa237a175b878343dfebe0319d"
+    },
+    "note": "First reader (as filed); no passage vote recorded. Bracketed text deleted from § 4–203(a)–(b) removes the permit-holder exemption and exemptions for transport to or from purchase or repair, gun collectors, carrying on one's own property or business, supervisory employees, and carrying under a surrender order; those are not quoted as the bill's acts."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety, Title 5, Subtitle 3): That Section(s) 5–301 and 5–303 through 5–314 and the subtitle “Subtitle 3. Handgun Permits” of Article – Public Safety of the Annotated Code of Maryland be repealed.\nSection 2 (Md. Code Ann., Criminal Law § 4–203(a)(1)): (i) A PERSON UNDER THE AGE OF 21 YEARS MAY NOT wear, carry, or transport a handgun, whether concealed or open, on or about the person; (iii) A PERSON MAY NOT WEAR, CARRY, OR TRANSPORT A HANDGUN, WHETHER CONCEALED OR OPEN, ON OR ABOUT THE PERSON while on public school property in the State; (iv) A PERSON MAY NOT WEAR, CARRY, OR TRANSPORT A HANDGUN, WHETHER CONCEALED OR OPEN, ON OR ABOUT THE PERSON with the deliberate purpose of injuring or killing another person; (v) A PERSON UNDER THE AGE OF 21 YEARS MAY NOT WEAR, CARRY, OR TRANSPORT A HANDGUN, WHETHER CONCEALED OR OPEN, ON OR ABOUT THE PERSON with THE handgun loaded with ammunition.\nSection 2 (Md. Code Ann., Criminal Law § 4–207): (A) A PERSON MAY NOT WEAR, CARRY, OR TRANSPORT A HANDGUN WHILE THE PERSON IS UNDER THE INFLUENCE OF ALCOHOL OR DRUGS. (B) A PERSON WHO VIOLATES THIS SECTION IS GUILTY OF A MISDEMEANOR AND ON CONVICTION IS SUBJECT TO IMPRISONMENT NOT EXCEEDING 1 YEAR OR A FINE NOT EXCEEDING $1,000 OR BOTH."
+}

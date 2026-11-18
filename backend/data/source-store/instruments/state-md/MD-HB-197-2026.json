@@ -1,0 +1,93 @@
+{
+  "id": "MD-HB-197-2026",
+  "scope": "state:md",
+  "title": "HB197 (2026 Regular): Comprehensive Community Safety Funding Act",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0197?ys=2026RS",
+    "https://mgaleg.maryland.gov/2026RS/bills/hb/hb0197f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Bernice Mireku-North",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8abee534-5db0-4950-a2b9-d0d1e8088cc7"
+    },
+    {
+      "name": "Lorig Charkoudian",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "9c5e1ac7-8a39-4c6e-8b20-0788a92f8607"
+    },
+    {
+      "name": "Kris Fair",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "dfb9ae21-4605-4c58-94e8-84b1eb1a30c1"
+    },
+    {
+      "name": "Jessica Feldmark",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fdb9f7d3-93db-4436-bd82-5d7fd853f05e"
+    },
+    {
+      "name": "Dana Jones",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d8eabd9b-2aa8-40de-94ce-06ce6ef167cf"
+    },
+    {
+      "name": "Aaron Kaufman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "bc703231-6af8-48c6-8ae6-4a93fc60b18f"
+    },
+    {
+      "name": "Julie Palakovich Carr",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "70d58d4b-4203-4fc2-b36f-32e6231c4339"
+    },
+    {
+      "name": "Emily Shetty",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "d1a30768-52e8-4a0d-badc-3e5f2f5792c7"
+    },
+    {
+      "name": "Jared Solomon",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c0bf0c64-6254-40a7-b810-8717977759dd"
+    },
+    {
+      "name": "Caylin Young",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "92075c9b-6c7e-4763-981f-5a42a8afddf5"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2026RS/bills/hb/hb0197f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-197-2026.first_reader.pdf",
+      "sha256": "285ce8880786ead24dc710b81a05b6b54b9379b4d9afe73011028620fd8de95e"
+    },
+    "note": "First reader as filed; no vote on record. Accessories include magazines, optics, grips, silencers and body armor (§ 7.7-101(e)). The tax is a gun tax; its proceeds go to gun-violence and trauma programs, so no separate topic is counted. Conforming edits to Education § 7-447.1, Health-General § 19-130 and Tax-General administrative sections are not quoted."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Tax – General § 7.7-102(a)): EXCEPT AS PROVIDED IN SUBSECTION (B) OF THIS SECTION AND SUBJECT TO SUBSECTIONS (C) AND (D) OF THIS SECTION, AN EXCISE TAX IS IMPOSED ON THE GROSS RECEIPTS OF A FEDERALLY LICENSED FIREARMS DEALER DERIVED FROM: (1) THE RETAIL SALE OF FIREARMS, FIREARM ACCESSORIES, AND AMMUNITION IN THE STATE; AND (2) IN THE CASE OF A FEDERALLY LICENSED FIREARMS DEALER THAT IS LOCATED OUTSIDE THE STATE, THE RETAIL SALE OF FIREARMS TO RESIDENTS OF THE STATE.\nSection 1 (Md. Code Ann., Tax – General § 7.7-103): THE FIREARM, FIREARM ACCESSORY, AND AMMUNITION EXCISE TAX RATE IS 11%.\nSection 1 (Md. Code Ann., Tax – General § 7.7-102(c)): EXCEPT AS PROVIDED IN SUBSECTION (D) OF THIS SECTION, THE TAX IMPOSED UNDER SUBSECTION (A) OF THIS SECTION APPLIES TO: (1) A RETAIL SALE MADE ON OR AFTER JULY 1, 2027, BY A FEDERALLY LICENSED FIREARMS DEALER THAT IS A LARGE RETAILER; AND (2) FOR ANY OTHER FEDERALLY LICENSED FIREARMS DEALER, A RETAIL SALE MADE ON OR AFTER JULY 1, 2028.\nSection 1 (Md. Code Ann., Tax – General § 2-4B-02(a)): AFTER MAKING THE DISTRIBUTION REQUIRED UNDER § 2–4B–01 OF THIS SUBTITLE, THE COMPTROLLER SHALL DISTRIBUTE THE REMAINING FIREARM, FIREARM ACCESSORY, AND AMMUNITION EXCISE TAX REVENUE AS FOLLOWS: (1) 26% TO THE MARYLAND VIOLENCE INTERVENTION AND PREVENTION PROGRAM FUND ESTABLISHED UNDER § 4–902 OF THE PUBLIC SAFETY ARTICLE; (2) 26% TO THE CENTER FOR FIREARM VIOLENCE PREVENTION AND INTERVENTION WITHIN THE MARYLAND DEPARTMENT OF HEALTH; (3) 20% TO THE COORDINATED COMMUNITY SUPPORTS PARTNERSHIP FUND ESTABLISHED UNDER § 7–447.1 OF THE EDUCATION ARTICLE; (4) 20% TO THE SURVIVORS OF HOMICIDE VICTIMS GRANT PROGRAM WITHIN THE GOVERNOR’S OFFICE OF CRIME PREVENTION AND POLICY; (5) 4% TO THE MARYLAND TRAUMA PHYSICIAN SERVICES FUND ESTABLISHED UNDER § 19–130 OF THE HEALTH – GENERAL ARTICLE; AND (6) 4% TO THE R ADAMS COWLEY SHOCK TRAUMA CENTER AT THE UNIVERSITY OF MARYLAND MEDICAL SYSTEM.\nSection 1 (Md. Code Ann., Tax – General § 13-1001(h)): A PERSON WHO IS REQUIRED TO FILE A FIREARM, FIREARM ACCESSORY, AND AMMUNITION EXCISE TAX RETURN AND WHO WILLFULLY FAILS TO FILE THE RETURN AS REQUIRED UNDER TITLE 7.7 OF THIS ARTICLE IS GUILTY OF A MISDEMEANOR AND, ON CONVICTION, IS SUBJECT TO A FINE NOT EXCEEDING $5,000 OR IMPRISONMENT NOT EXCEEDING 5 YEARS OR BOTH."
+}

@@ -1,0 +1,102 @@
+{
+  "id": "MD-SB-908-2018",
+  "scope": "state:md",
+  "title": "SB908 (2018 Regular): Partial Repeal of Firearms Safety Act of 2013",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0908?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/sb/sb0908f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Steve Waugh",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Gail H. Bates",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Adelaide C. Eckardt",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "George C. Edwards",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Hershey",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0"
+    },
+    {
+      "name": "Michael J. Hough",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "J.B. Jennings",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5927d5ab-2fd7-4454-bcc3-34e494821aac"
+    },
+    {
+      "name": "Justin Ready",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "493c5d0c-1986-40d4-9fff-3a3bc3fe62e8"
+    },
+    {
+      "name": "Robert Cassilly",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Norman",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Kathy Klausmeier",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Johnny Salling",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9f8d0005-c5ff-42f8-b158-cdb6e4eee872"
+    },
+    {
+      "name": "Andrew A. Serafini",
+      "role": "co",
+      "version": "Open States sponsor list"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/sb/sb0908f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-908-2018.first_reader.pdf",
+      "sha256": "0f9ffdc30be837e3b71e446f4c381366d4ad8a8c2175b7d55d4617e66544aa86"
+    },
+    "note": "first reader: the bill as filed; no enrolled text was read. This is mainly a repeal bill: the bracketed (deleted) passages are not quoted. Repealed: assault long gun and copycat weapon definitions and ban (Criminal Law §§ 4–301, 4–303(b)(2)-(4)), handgun qualification license (Public Safety §§ 5–117.1, 5–118(b)(4), 5–306(d)), registration of firearms by new residents (§ 5–143 repeal list), dealer record and inspection rules, and lost/stolen reporting (§§ 5–145, 5–146). The 5–133.1 repeal is the ammunition possession ban for people barred from firearms. The only text quoted is the kept assault pistol ban with \"weapon\" replaced by \"PISTOL\". The file is large; read by search around the firearm hits. No passage vote recorded."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Criminal Law § 4–303): (a) Except as provided in subsection (b) of this section, a person may not: (1) transport an assault PISTOL into the State; or (2) possess, sell, offer to sell, transfer, purchase, or receive an assault PISTOL.\nSection 1 (Md. Code Ann., Criminal Law § 4–304): A law enforcement unit may seize as contraband and dispose of according to regulation an assault PISTOL transported, sold, transferred, purchased, received, or possessed in violation of this subtitle."
+}

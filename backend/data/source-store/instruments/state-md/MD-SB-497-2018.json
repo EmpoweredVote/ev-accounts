@@ -1,0 +1,103 @@
+{
+  "id": "MD-SB-497-2018",
+  "scope": "state:md",
+  "title": "SB497 (2018 Regular): Public Safety – Handgun Permits – Protective Order and Peace Order",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/sb0497?ys=2018RS",
+    "https://mgaleg.maryland.gov/2018RS/bills/sb/sb0497f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Justin Ready",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "493c5d0c-1986-40d4-9fff-3a3bc3fe62e8"
+    },
+    {
+      "name": "Gail H. Bates",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "George C. Edwards",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Michael J. Hough",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "J.B. Jennings",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "5927d5ab-2fd7-4454-bcc3-34e494821aac"
+    },
+    {
+      "name": "Andrew A. Serafini",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Waugh",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Robert Cassilly",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Adelaide C. Eckardt",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Steve Hershey",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "72287137-7faf-4570-8d9e-c6f8d162f4e0"
+    },
+    {
+      "name": "Norman",
+      "role": "co",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Bryan Simonaire",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "4aa50ee7-aeed-48ae-96e7-142bd9ac731b"
+    },
+    {
+      "name": "Johnny Salling",
+      "role": "co",
+      "version": "Open States sponsor list",
+      "politician_id": "9f8d0005-c5ff-42f8-b158-cdb6e4eee872"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2018RS/bills/sb/sb0497f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-SB-497-2018.first_reader.pdf",
+      "sha256": "f00c67c0033cfa7f6e4c0b03ad7e36fb520da592a10a9b1ca8fbfdf5ad578115"
+    },
+    "note": "First reader, as filed; no vote recorded. Section 5–312(b)(2)(i)-(ii) numbering shown as printed."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5–306(a)(6)(ii)): 2. IS: A. A PERSON ELIGIBLE FOR RELIEF UNDER A CURRENT CIVIL PROTECTIVE ORDER ENTERED UNDER § 4–504.1, § 4–505, OR § 4–506 OF THE FAMILY LAW ARTICLE; B. UNDER THE PROTECTION OF A CURRENT ORDER FOR PROTECTION, AS DEFINED IN § 4–508.1 OF THE FAMILY LAW ARTICLE, THAT HAS BEEN ISSUED BY A COURT OF ANOTHER STATE OR A NATIVE AMERICAN TRIBE; OR C. A PETITIONER UNDER A CURRENT PEACE ORDER ENTERED UNDER TITLE 3, SUBTITLE 15 OF THE COURTS ARTICLE.\nSection 1 (Md. Code Ann., Public Safety § 5–306(b)(2)): (2) (I) THE SECRETARY SHALL TEMPORARILY WAIVE THE REQUIREMENT TO COMPLETE A CERTIFIED FIREARMS TRAINING COURSE UNDER SUBSECTION (A) OF THIS SECTION FOR AN APPLICANT SPECIFIED IN SUBSECTION (A)(6)(II)2 OF THIS SECTION. (II) AN APPLICANT SPECIFIED IN SUBSECTION (A)(6)(II)2 OF THIS SECTION SHALL COMPLETE THE TRAINING COURSE WITHIN 30 DAYS AFTER THE ISSUANCE OF THE PERMIT.\nSection 1 (Md. Code Ann., Public Safety § 5–306(E)): (E) THE SECRETARY SHALL ISSUE A PERMIT FOR AN APPLICANT SPECIFIED IN SUBSECTION (A)(6)(II)2 OF THIS SECTION WITHIN 10 CALENDAR DAYS AFTER RECEIPT OF THE APPLICATION.\nSection 1 (Md. Code Ann., Public Safety § 5–309(E)): (E) A PERMIT ISSUED TO AN APPLICANT SPECIFIED IN § 5–306(A)(6)(II)2 OF THIS SUBTITLE EXPIRES 5 YEARS AFTER ISSUANCE.\nSection 1 (Md. Code Ann., Public Safety § 5–312(b)(2)): (2) WITHIN 10 CALENDAR DAYS AFTER RECEIVING A REQUEST FROM AN APPLICANT SPECIFIED IN § 5–306(A)(6)(II)2 OF THIS SUBTITLE TO REVIEW A DECISION OF THE SECRETARY, THE BOARD SHALL: (I) REVIEW THE RECORD DEVELOPED BY THE SECRETARY; OR (II) CONDUCT A HEARING.\nSection 1 (Md. Code Ann., Public Safety § 5–312(E)): (E) IN THE CASE OF A REQUEST FROM AN APPLICANT SPECIFIED IN § 5–306(A)(6)(II)2 OF THIS SUBTITLE TO REVIEW A DECISION OF THE SECRETARY, THE BOARD SHALL SUSTAIN, REVERSE, OR MODIFY THE DECISION OF THE SECRETARY WITHIN 5 CALENDAR DAYS AFTER REVIEWING THE RECORD OR CONDUCTING A HEARING."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "MD-HB-869-2024",
+  "scope": "state:md",
+  "title": "HB869 (2024 Regular): Public Safety – Firearm Background Checks, Victim Notification, and the Maryland State Police Gun Center",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0869?ys=2024RS&search=True",
+    "https://mgaleg.maryland.gov/2024RS/bills/hb/hb0869f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Sandy Bartlett",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7d818044-a989-47e1-b6cf-d482ebad0600"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2024RS/bills/hb/hb0869f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-869-2024.first_reader.pdf",
+      "sha256": "092abbee84624f41d95d5a737c56b0972ee6f774650faeef56121fbd3ce9faae"
+    },
+    "note": "first reader: bill as filed; no enrolled text read; no passage vote recorded."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 3-531): (B) IF A LAW ENFORCEMENT AGENCY RECEIVES A REPORT OF A PROHIBITED PERSON FAILING A BACKGROUND CHECK IN ACCORDANCE WITH 18 U.S.C. § 925B OR § 5–804(C) OF THIS ARTICLE, THE LAW ENFORCEMENT AGENCY SHALL IMMEDIATELY NOTIFY THE VICTIM IF THE PROHIBITED PERSON FAILED THE BACKGROUND CHECK BECAUSE OF: (1) A FINAL PROTECTIVE ORDER BETWEEN THE PROHIBITED PERSON AND THE VICTIM; OR (2) VIOLATING A FINAL PROTECTIVE ORDER BETWEEN THE PROHIBITED PERSON AND THE VICTIM.\nSection 1 (Md. Code Ann., Public Safety § 5-122(c)): (C) IF THE SECRETARY DISAPPROVES A FIREARM APPLICATION BECAUSE THE PROSPECTIVE PURCHASER, LESSEE, OR TRANSFEREE FAILED TO PASS A BACKGROUND CHECK, THE SECRETARY SHALL NOTIFY THE MARYLAND STATE POLICE GUN CENTER OF: (1) THE IDENTITY OF THE PROSPECTIVE PURCHASER, LESSEE, OR TRANSFEREE; (2) THE DATE AND TIME OF THE DENIAL; (3) THE LOCATION WHERE THE PROSPECTIVE PURCHASER, LESSEE, OR TRANSFEREE SOUGHT TO OBTAIN THE FIREARM; AND (4) THE REASON OR REASONS FOR THE DENIAL.\nSection 1 (Md. Code Ann., Public Safety § 5-123(e)): (E) IF A LICENSEE DOES NOT SELL OR TRANSFER A REGULATED FIREARM TO A PROSPECTIVE PURCHASER, LESSEE, OR TRANSFEREE BECAUSE THE PROSPECTIVE PURCHASER, LESSEE, OR TRANSFEREE FAILED TO PASS A BACKGROUND CHECK, THE LICENSEE SHALL NOTIFY THE MARYLAND STATE POLICE GUN CENTER OF: (1) THE IDENTITY OF THE PROSPECTIVE PURCHASER, LESSEE, OR TRANSFEREE; (2) THE DATE AND TIME OF THE DENIAL; (3) THE LOCATION WHERE THE PROSPECTIVE PURCHASER, LESSEE, OR TRANSFEREE SOUGHT TO OBTAIN THE FIREARM; AND (4) THE REASON OR REASONS FOR THE DENIAL.\nSection 1 (Md. Code Ann., Public Safety § 5-804(c)(1)): (C) (1) THE CENTER SHALL NOTIFY LOCAL LAW ENFORCEMENT AGENCIES, AS PROVIDED IN PARAGRAPH (2) OF THIS SUBSECTION, OF ALL BACKGROUND CHECK DENIALS REPORTED UNDER § 5–803(E) OF THIS SUBTITLE."
+}

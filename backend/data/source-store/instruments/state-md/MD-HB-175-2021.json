@@ -1,0 +1,39 @@
+{
+  "id": "MD-HB-175-2021",
+  "scope": "state:md",
+  "title": "HB175 (2021 Regular): Public Safety - Ammunition - Sales and Transfers",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb0175?ys=2021RS&search=True",
+    "https://mgaleg.maryland.gov/2021RS/bills/hb/hb0175f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Shaneka Henson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "05c9b5b9-cb2b-4387-ab6b-350b69553fac"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2021RS/bills/hb/hb0175f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-175-2021.first_reader.pdf",
+      "sha256": "35daf25032f95bcfd72ca018c6658c116c3d584012f1a5a105d52ecd4f0f9697"
+    },
+    "note": "First reader as filed; no vote on record. § 5-704(a) lists the record fields (date, ID number, brand, type and amount, name, address, birth date, phone, salesperson); § 5-702 exempts sales to licensed dealers, handgun qualification licence holders, gunsmiths, officers and others. Neither is quoted for length."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Public Safety § 5-703(a)): BEFORE THE SALE OR TRANSFER OF AMMUNITION, AN AMMUNITION VENDOR SHALL: (1) CONFIRM IDENTIFICATION OF THE PURCHASER OR TRANSFEREE THROUGH THE PRESENTATION OF A DRIVER’S LICENSE OR OTHER GOVERNMENT–ISSUED IDENTIFICATION; AND (2) CONDUCT A BACKGROUND CHECK ON THE PURCHASER OR TRANSFEREE THROUGH THE NICS INDEX.\nSection 1 (Md. Code Ann., Public Safety § 5-703(b)): IF THE RESULTS OF THE NICS INDEX BACKGROUND CHECK INDICATE THAT THE PURCHASER OR TRANSFEREE IS PROHIBITED FROM POSSESSING A FIREARM UNDER FEDERAL LAW, THE AMMUNITION VENDOR MAY NOT COMPLETE THE SALE OR TRANSFER.\nSection 1 (Md. Code Ann., Public Safety § 5-704(c)(1)): AN AMMUNITION VENDOR SHALL ELECTRONICALLY SUBMIT TO THE SECRETARY THE INFORMATION REQUIRED UNDER SUBSECTION (A) OF THIS SECTION FOR ALL SALES AND TRANSFERS OF AMMUNITION.\nSection 1 (Md. Code Ann., Public Safety § 5-704(c)(2)): THE SECRETARY SHALL RETAIN THE INFORMATION IN AN ELECTRONIC DATABASE THAT REMAINS CONFIDENTIAL AND MAY BE USED ONLY FOR LAW ENFORCEMENT PURPOSES.\nSection 1 (Md. Code Ann., Public Safety § 5-705(a)): A PERSON THAT VIOLATES THIS SUBTITLE IS GUILTY OF A CIVIL OFFENSE AND ON CONVICTION SHALL BE FINED NOT LESS THAN $1,000 FOR EACH VIOLATION."
+}

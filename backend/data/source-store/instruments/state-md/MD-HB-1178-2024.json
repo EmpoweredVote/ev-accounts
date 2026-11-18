@@ -1,0 +1,138 @@
+{
+  "id": "MD-HB-1178-2024",
+  "scope": "state:md",
+  "title": "HB1178 (2024 Regular): Handgun Permit Holders - Authority to Carry Handguns in State Parks and Forests",
+  "urls": [
+    "https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/hb1178?ys=2024RS&search=True",
+    "https://mgaleg.maryland.gov/2024RS/bills/hb/hb1178f.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kevin Hornberger",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "96a6d696-50fd-4393-a0f6-19e69dc15716"
+    },
+    {
+      "name": "Steve Arentz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "fee8a413-a3a8-4568-ad9b-db00f94f5ac2"
+    },
+    {
+      "name": "Jason Buckel",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5260bd6f-e70a-46f1-aa7d-49eaf22192cf"
+    },
+    {
+      "name": "Robin Grammer",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0608cc7a-72ed-4d24-b966-3eee82075bf1"
+    },
+    {
+      "name": "Mike Griffith",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0c789b27-d50c-4822-95ff-409ecb7db08a"
+    },
+    {
+      "name": "Wayne Hartman",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "1ff2bb96-0e55-4893-8a4c-b675dfbb79f6"
+    },
+    {
+      "name": "Seth Howard",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "2fe3f655-c28e-40c3-a2f9-48ea9eb8b498"
+    },
+    {
+      "name": "Jay Jacobs",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "8b43dd9c-26c3-48bb-ac60-d95f8a39349a"
+    },
+    {
+      "name": "Nic Kipke",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "0e0bdc53-b5a2-4292-aeb7-341a4c5bed08"
+    },
+    {
+      "name": "Nino Mangione",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Susan McComas",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "58d0ff82-631f-475f-889a-9a4ebb39fc07"
+    },
+    {
+      "name": "Todd Morgan",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7d79931f-101c-415b-a6a0-b7a919f70905"
+    },
+    {
+      "name": "Rachel Muñoz",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Charles Otto",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Teresa Reilly",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "547841f2-3476-4e83-9344-0cac984d44e8"
+    },
+    {
+      "name": "April Rose",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "5967c703-2583-466f-a438-c3ac182111d5"
+    },
+    {
+      "name": "Josh Stonko",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "656a8bc9-348e-4ffc-819c-2f4611b3ddc8"
+    },
+    {
+      "name": "Chris Tomlinson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "6e5ac4b7-73fd-497d-a4e9-7d5124c3d904"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Maryland) (gun-policy Stage 5, Maryland); operative text read by a Sonnet fill agent from the official Mississippi text (First Reader; official copy, https://mgaleg.maryland.gov/2024RS/bills/hb/hb1178f.pdf)",
+    "fetched_at": "2026-11-18T15:59:39.583605Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/MD-HB-1178-2024.first_reader.pdf",
+      "sha256": "fed50d15a6910b0eedfd1702094a521582519dd141fec1e5aed0644b053e600e"
+    },
+    "note": "first_reader: bill as filed; no vote recorded."
+  },
+  "operative_text": "Section 1 (Md. Code Ann., Natural Resources § 5-209(f)(1)): THE DEPARTMENT MAY NOT PROHIBIT AN INDIVIDUAL TO WHOM A PERMIT TO WEAR, CARRY, OR TRANSPORT A HANDGUN HAS BEEN ISSUED UNDER TITLE 5, SUBTITLE 3 OF THE PUBLIC SAFETY ARTICLE FROM WEARING, CARRYING, OR TRANSPORTING A HANDGUN IN A STATE PARK OR FOREST, SUBJECT TO ANY LIMITATIONS IMPOSED UNDER § 5–307 OF THE PUBLIC SAFETY ARTICLE.\nSection 1 (Md. Code Ann., Natural Resources § 5-209(f)(2)): THIS SUBSECTION MAY NOT BE INTERPRETED TO AUTHORIZE AN INDIVIDUAL TO USE A HANDGUN TO HUNT WILDLIFE IN VIOLATION OF DEPARTMENT REGULATIONS."
+}
