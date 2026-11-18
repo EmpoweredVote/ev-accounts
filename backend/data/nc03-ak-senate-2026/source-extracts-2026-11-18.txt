@@ -1,0 +1,70 @@
+Passages read on 2026-11-18 for CC_0454. Committed so the next reader need not re-fetch to check
+which line said what. (The rule, from CC_0353: a search summary once moved an occupation from one
+candidate to the next line's candidate, and only the page caught it.)
+
+================================================================================================
+1. NC-03 — the incumbent CONCEDED, eight days before AP called it
+================================================================================================
+NC Newsline, "Democratic wave in NC flips another Congressional seat as counting wraps up",
+by Laura Leslie, published 2026-11-10 20:08, updated 2026-11-11 10:39. Read 2026-11-18.
+https://ncnewsline.com/2026/11/10/democratic-wave-in-nc-flips-a-sixth-congressional-seat-as-counting-wraps-up/
+
+  Standfirst: "Republican incumbent Rep. Greg Murphy conceded the race Wednesday morning."
+
+  "After provisional and cured absentee ballots were counted Tuesday, in unofficial results,
+   Democratic former state lawmaker Raymond Smith appears to have defeated Republican U.S. Rep.
+   Greg Murphy in the race for the state's 3rd Congressional District."
+
+  "Murphy has held the 3rd District, considered a safe Republican seat, since 2019."
+
+  "The Republican incumbent conceded the race in a statement Wednesday morning, congratulating
+   Smith and thanking his staff and supporters."
+
+  "In unofficial returns on election night, Murphy held a slim lead of 233 votes over Smith."
+
+⚠ A SEARCH SUMMARY OF THIS STORY REPORTED THE MARGIN AS 293 VOTES. The NC State Board of
+Elections return and AP both say 258, and they agree to the vote on all three candidates. The
+293 figure is a mid-count number from a different moment, not a disagreement about the outcome.
+▶ Only the margin recorded below (258) comes from a primary return.
+
+================================================================================================
+2. NC-03 — the recount window, from the statute, not from a news summary
+================================================================================================
+N.C. Gen. Stat. § 163-182.7, "Ordering recounts". Read 2026-11-18.
+https://www.ncleg.gov/EnactedLegislation/Statutes/HTML/BySection/Chapter_163/GS_163-182.7.html
+
+  "(c) Mandatory Recounts for Ballot Items Within the Jurisdiction of the State Board of
+   Elections. - In a ballot item within the jurisdiction of the State Board of Elections, a
+   candidate shall have the right to demand a recount of the votes if the difference between
+   the votes for that candidate and the votes for a prevailing candidate are not more than the
+   following: (1) For a nonstatewide ballot item, one percent (1%) of the total votes cast in
+   the ballot item ... The demand for a recount must be in writing and must be received by the
+   State Board of Elections by noon on the second business day after the county canvass."
+
+A U.S. House contest is nonstatewide and within the State Board's jurisdiction, so the threshold
+is 1% of 239,614 = 2,396 votes. THE MARGIN IS 258. Murphy was entitled to demand a recount and
+the window has closed; press reporting put the deadline at noon on Tuesday 2026-11-17, and AP
+called the race at 20:45Z the same day — about four hours after noon Eastern.
+
+🔴 WHAT IS RECORDED AND WHAT IS NOT. That the deadline passed without a demand is NOT asserted
+anywhere in CC_0454: no primary source was read that says so. What is asserted is the margin,
+the threshold, the concession, and AP's call. The seat is recorded as `called`, never `certified`.
+
+================================================================================================
+3. Alaska — ranked-choice tabulation and the certification target
+================================================================================================
+Alaska Division of Elections home page, read 2026-11-18.
+https://www.elections.alaska.gov/
+
+  "Ranked choice tabulation starts November 18, for required races."
+  "Target date to certify election: November 25"
+
+▶ "FOR REQUIRED RACES" IS THE LOAD-BEARING PHRASE. A ranked-choice contest whose leader clears
+50% of first-choice votes is decided in round one and needs no transfers. Peltola clears it on
+both denominators (see ak-division-of-elections-2026-11-18.json), so the U.S. Senate contest is
+not one of the required races and no later round can change it.
+
+⚠ The same page carries "Department of Law Responds to Lawsuit from Mary Peltola Campaign"
+(2026-11-06) and "Superior Court Upholds Division of Elections' Handling of Internal Absentee
+Ballot Reports" (2026-11-11). There is active litigation around this election. Nothing read
+suggests it disturbs the count recorded here, and nothing here asserts that it does not.

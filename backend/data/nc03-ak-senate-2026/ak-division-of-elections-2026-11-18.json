@@ -1,0 +1,40 @@
+{
+  "source": "https://www.elections.alaska.gov/enr/26GENR/results/statewide.js",
+  "read": "2026-11-18",
+  "updated": "11/17/2026 6:09 PM",
+  "certified": false,
+  "ballotsCast": 290003,
+  "contestTotalExclWriteIns": 287011,
+  "precincts": "401/403",
+  "candidates": [
+    {
+      "name": "Peltola, Mary (DEM)",
+      "votes": 144302
+    },
+    {
+      "name": "Sullivan, Dan S. (REP)",
+      "votes": 131844
+    },
+    {
+      "name": "Heikes, Gerald L. (REP)",
+      "votes": 6105
+    },
+    {
+      "name": "Sullivan, Daniel J. Jr.",
+      "votes": 4760
+    }
+  ],
+  "majorityTest": {
+    "note": "A majority is a ratio, so it turns on what is under the line. Both denominators clear it.",
+    "exclWriteIns": {
+      "denom": 287011,
+      "pct": 50.2775,
+      "majority": true
+    },
+    "inclWriteIns": {
+      "denom": 287896,
+      "pct": 50.123,
+      "majority": true
+    }
+  }
+}
