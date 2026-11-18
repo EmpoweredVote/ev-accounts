@@ -34,13 +34,19 @@ import { fileURLToPath } from 'node:url';
 import { decodeHtmlBytes, EMPOWERED_VOTE_UA } from '../../../src/lib/verificationFetch.js';
 import { fetchWithHostTrust } from '../../../src/lib/adapters/hostTrust.js';
 import { extractPdfItems, extractPdfText, looksLikePdfBytes } from '../../../src/lib/pdfText.js';
-import { explainMarylandVote, explainMississippiVote, isStateRollCallUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
+import { explainMarylandVote, explainMississippiVote, isStateRollCallUrl, MD_PAGE_YEARS, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
 
 /** One floor roll call as a bill's vote list gives it. */
 /** tally: null when the vote list prints none (Mississippi): the reader's own checks of the printed totals stand alone. */
 export interface IndexedVote { url: string; motion: string; tally: [number, number, number] | null }
 /** motion: votes on a motion, not on the bill (Ohio motion_...: "Informally passed"), counted and not read. */
-export interface BillIndex { floor: IndexedVote[]; committee: number; voice: number; motion?: number; motions?: string[]; committeeUrls?: string[] }
+/**
+ * viaIndex: floor votes whose file the vote list does not link, each with the page that does (Maryland 2013: the bill
+ * page prints the action and its tally, and links the day's floor proceedings, which link the vote file). The fetch
+ * reads that page with the state's voteFromIndex and then reads the vote like a linked one, its tally compared.
+ */
+export interface BillIndex { floor: IndexedVote[]; committee: number; voice: number; motion?: number; motions?: string[]; committeeUrls?: string[]; viaIndex?: IndexedVoteVia[] }
+export interface IndexedVoteVia { index: string; chamber: 'house' | 'senate'; motion: string; tally: [number, number, number] }
 interface StateIndex {
   /** The least time between two requests to the site (its robots.txt Crawl-delay). */
   minGapMs: number;
@@ -54,6 +60,8 @@ interface StateIndex {
    */
   listUrl?: (_session: string) => string | null;
   billUrlFromList?: (_list: string, _session: string, _bill: string) => string;
+  /** The vote file's address for a viaIndex vote, read from its index page. Throws unless exactly one vote fits. */
+  voteFromIndex?: (_body: string, _session: string, _bill: string, _v: IndexedVoteVia) => string;
 }
 
 const UT_BILL = /^([HS])\.?([A-Z])?\.?([A-Z])?\.?\s*0*(\d{1,4})$/i;
@@ -83,7 +91,48 @@ const MD_BILL = /^([HS][BJ])\s*0*([1-9]\d{0,3})$/i;
 // The Senate writes "Third Readings Passed" (2018 HB 1302). An action that is neither this nor MD_MOTION_ACTION stops the tool.
 export const MD_FLOOR_ACTION = /^(?:Third Readings? Passed|Third Readings? Failed|Conference Committee Report Adopted|Veto Overridden|Overridden|Vetoed .*Override)/i;
 /** A Maryland bill-page action that is a vote on something other than the bill: an amendment or a motion. */
-export const MD_MOTION_ACTION = /^(?:Floor Amendment\b|Motion\b|Special Order\b|Decision of the Chair\b)/i; // an appeal of the chair's ruling: "Decision of the Chair upheld" (2020)
+// A chamber's vote to concur in the other's amendments ("Senate Concur - House Amendment {322711/3 (#17) Adopted (28-18)")
+// and a committee report's adoption on second reading ("Favorable with Amendments Report Adopted (28-19)") are votes on
+// an amendment or a report, not on the bill (2013 SB 281; after concurring, the Senate passed the bill on a separate
+// Third Reading vote). Both are printed with a tally only on the 2013 bill page.
+export const MD_MOTION_ACTION = /^(?:Floor Amendment\b|Motion\b|Special Order\b|Decision of the Chair\b|(?:Senate|House) Concur\b|(?:Un)?Favorable(?: with Amendments)? Report Adopted\b)/i; // an appeal of the chair's ruling: "Decision of the Chair upheld" (2020)
+/**
+ * Sessions whose bill page links no vote file (read 2026-11-18: 2013's page prints "Third Reading Passed with
+ * Amendments (78-61)" as plain text, and a "Proceedings 61" link to the day's floor proceedings,
+ * /mgawebsite/Search/FloorActions?file=%2Fpubs%2Flegislegal%2F2013RS-hse-proceed-61.htm&ys=2013rs, which links each
+ * vote file after its action: "Third Reading Passed with Amendments <a href=/mgawebsite/Search/Legislation?target=
+ * /2013rs/votes/house/0895.htm> (78-61)</a>"). Only the sessions read are listed.
+ */
+export const MD_LINKLESS_SESSIONS: readonly string[] = ['2013'];
+const MD_PROCEEDINGS = /href="(\/mgawebsite\/Search\/FloorActions\?file=%2Fpubs%2Flegislegal%2F(20\d{2})RS-(hse|sen)-proceed-[0-9A-Z]+\.htm&(?:amp;)?ys=\2rs)"/gi;
+
+/**
+ * A 2013 floor proceedings page: the address of the one vote file of `bill` whose action text ends with the bill
+ * page's motion and whose tally is the bill page's, in the chamber asked for. The page lists bills one after another,
+ * each opened by its link (<a href=/mgawebsite/Legislation/Details/SB0281?ys=2013rs> SB 281); a vote belongs to the
+ * bill whose link last precedes it. Throws unless exactly one vote fits.
+ */
+export function mdVoteFromProceedings(body: string, session: string, bill: string, v: IndexedVoteVia): string {
+  const m = MD_BILL.exec(bill.replace(/[\s.]+/g, ''));
+  if (!m) throw new Error(`not a Maryland bill: ${bill}`);
+  const tag = `${m[1].toUpperCase()}${Number(m[2])}`;
+  const marks = [...body.matchAll(/<a href=["']?\/mgawebsite\/Legislation\/Details\/([HS][BJ])0*(\d+)\?ys=(\d{4})rs["']?>/gi)];
+  const hits = new Set<string>();
+  for (const [i, mk] of marks.entries()) {
+    if (`${mk[1].toUpperCase()}${Number(mk[2])}` !== tag || mk[3] !== session) continue;
+    const seg = body.slice(mk.index! + mk[0].length, i + 1 < marks.length ? marks[i + 1].index : body.length);
+    let from = 0;
+    for (const a of seg.matchAll(/<a href=["']?\/mgawebsite\/Search\/Legislation\?target=\/(\d{4})rs\/votes\/(house|senate)\/(\d{4})\.htm["']?>\s*\((\d+)-(\d+)\)\s*<\/a>/gi)) {
+      const before = mdTag(seg.slice(from, a.index));
+      from = a.index! + a[0].length;
+      if (a[1] !== session || a[2].toLowerCase() !== v.chamber || Number(a[4]) !== v.tally[0] || Number(a[5]) !== v.tally[1]) continue;
+      if (!before.toLowerCase().endsWith(v.motion.toLowerCase())) continue;
+      hits.add(`https://mgaleg.maryland.gov/${session}RS/votes/${v.chamber}/${a[3]}.htm#${tag}`);
+    }
+  }
+  if (hits.size !== 1) throw new Error(`${hits.size} votes on the proceedings page fit ${bill} ${v.chamber} "${v.motion}" (${v.tally[0]}-${v.tally[1]}): ${v.index}`);
+  return [...hits][0];
+}
 const mdTag = (s: string): string => s.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&#39;/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 
 export const INDEX: Record<string, StateIndex> = {
@@ -110,9 +159,32 @@ export const INDEX: Record<string, StateIndex> = {
       if (sel !== `${session} Regular Session` || !named || `${named[1].toUpperCase()}${Number(named[2])}` !== tag) throw new Error(`the bill page is ${named?.[1]}${named?.[2]} of ${sel}, not ${bill} of ${session}`);
       const out: BillIndex = { floor: [], committee: 0, voice: 0, motion: 0, motions: [] };
       const seen = new Set<string>();
+      const linkless = MD_LINKLESS_SESSIONS.includes(session);
+      if (linkless) out.viaIndex = [];
       for (const blk of body.matchAll(/<dl class="row">([\s\S]*?)<\/dl>/g)) {
         const dd = new Map([...blk[1].matchAll(/<dt[^>]*>([\s\S]*?)<\/dt>\s*<dd[^>]*>([\s\S]*?)<\/dd>/g)].map((x) => [mdTag(x[1]), x[2]]));
         const action = dd.get('Action') ?? '';
+        if (linkless) {
+          // no vote file is linked: a tallied action is found through its Proceedings link (MD_LINKLESS_SESSIONS)
+          if (/\/votes\//i.test(action)) throw new Error(`a vote link on a ${session} bill page, which links none: ${action.slice(0, 200)}`);
+          const text = mdTag(action);
+          const t = /\((\d+)-(\d+)\)\s*$/.exec(text);
+          if (!t) continue;
+          const chamber = mdTag(dd.get('Chamber') ?? '').toLowerCase();
+          if (chamber !== 'house' && chamber !== 'senate') throw new Error(`a vote of no chamber: ${text}`);
+          const key = `${chamber}|${mdTag(dd.get('Calendar Date') ?? '')}|${text}`;
+          if (seen.has(key)) continue;
+          seen.add(key);
+          const procs = [...(dd.get('Proceedings') ?? '').matchAll(MD_PROCEEDINGS)].filter((p) => p[2] === session && (p[3] === 'hse') === (chamber === 'house'));
+          if (procs.length !== 1) throw new Error(`a ${session} vote with ${procs.length} proceedings links of its chamber: ${chamber} ${text}`);
+          const index = `https://mgaleg.maryland.gov${procs[0][1].replace(/&amp;/g, '&')}`;
+          if (!MD_FLOOR_ACTION.test(text)) {
+            if (!MD_MOTION_ACTION.test(text)) throw new Error(`a vote whose action the tool does not know: ${text}`);
+            out.motion!++; out.motions!.push(`${index} ${chamber} ${text}`); continue;
+          }
+          out.viaIndex!.push({ index, chamber, motion: text.replace(/\s*\(\d+-\d+\)$/, ''), tally: [Number(t[1]), Number(t[2]), -1] });
+          continue;
+        }
         // 2018 onward writes the link with a space inside the quote: href=" /2018RS/votes/house/0390.pdf"
         const links = [...action.matchAll(/href="\s*\/(\d{4})RS\/votes\/(house|senate)\/(\d{4})\.(pdf|htm)"/gi)];
         // a vote link of any other shape must stop the tool, not read as "no vote"
@@ -122,9 +194,9 @@ export const INDEX: Record<string, StateIndex> = {
         // a veto is overridden in the next session, on a vote filed under it: 2020 HB 4, /2021RS/votes/House/0042.pdf
         const next = links.length === 1 && links[0][1] === String(Number(session) + 1) && /^(?:Veto )?Overridden\b/i.test(mdTag(action));
         if (links.length !== 1 || (links[0][1] !== session && !next) || links[0][2].toLowerCase() !== chamber.toLowerCase()) throw new Error(`a vote the tool cannot read: ${chamber} ${mdTag(action)}`);
-        // 2017's votes are pages (.htm), every later session's PDFs; the reader takes only that form
+        // 2017's votes are pages (.htm), every later session's PDFs (MD_PAGE_YEARS); the reader takes only that form
         const year = links[0][1];
-        if ((links[0][4].toLowerCase() === 'htm') !== (year === '2017')) throw new Error(`a vote of an unexpected form: ${links[0][0]}`);
+        if ((links[0][4].toLowerCase() === 'htm') !== MD_PAGE_YEARS.includes(Number(year))) throw new Error(`a vote of an unexpected form: ${links[0][0]}`);
         // the next session has its own bill of this number: name the bill's year (#2020-HB4)
         const url = `https://mgaleg.maryland.gov/${year}RS/votes/${chamber.toLowerCase()}/${links[0][3]}.${links[0][4].toLowerCase()}#${next ? `${session}-` : ''}${tag}`;
         if (seen.has(url)) continue;
@@ -141,6 +213,7 @@ export const INDEX: Record<string, StateIndex> = {
       }
       return out;
     },
+    voteFromIndex: mdVoteFromProceedings,
   },
   // billstatus.ls.state.ms.us (read 2026-11-17; no robots.txt). Each bill has a history, /<session>/pdf/history/<HB>/
   // <HB0001>.xml: one ACTION per step ("03/08 (H) Passed As Amended"), and an ACT_VOTE link to the vote's PDF when the
@@ -527,6 +600,12 @@ async function main(): Promise<void> {
     }
     if (!url) throw new Error(`${ST} has no vote-list address for session ${session}, bill ${bill}`);
     const bi = idx.read(await get(url, idx.minGapMs), session, bill);
+    // a vote the list does not link: its file from the index page that does, then read like a linked vote (tally compared)
+    for (const v of bi.viaIndex ?? []) {
+      if (!idx.voteFromIndex) throw new Error(`${ST} has votes on an index page and no reader for it`);
+      const u = idx.voteFromIndex(await get(v.index, idx.minGapMs), session, bill, v);
+      if (!bi.floor.some((f) => f.url === u)) bi.floor.push({ url: u, motion: v.motion, tally: v.tally });
+    }
     const rcs: SupplementRollCall[] = [];
     const refused: { url: string; why: string }[] = [];
     const absentDiffers: string[] = [];
@@ -546,7 +625,8 @@ async function main(): Promise<void> {
     if (rcs.length) out.bills[bill] = rcs; else delete out.bills[bill];
     if (refused.length) out.refused[bill] = refused; else delete out.refused[bill];
     out.checked[bill] = { vote_list: url, floor: bi.floor.length, read: rcs.length, committee_not_read: bi.committee, voice_not_read: bi.voice, ...(bi.motion ? { motion_not_read: bi.motion } : {}),
-      ...(bi.motions?.length ? { motions: bi.motions } : {}), ...(extra.length ? { not_on_the_vote_list: extra.length, not_on_the_vote_list_refused: alsoRefused } : {}), ...(absentDiffers.length ? { absent_count_differs_from_vote_list: absentDiffers } : {}), ...(bi.committeeUrls?.length ? { committee_urls: bi.committeeUrls } : {}) };
+      ...(bi.motions?.length ? { motions: bi.motions } : {}), ...(extra.length ? { not_on_the_vote_list: extra.length, not_on_the_vote_list_refused: alsoRefused } : {}), ...(absentDiffers.length ? { absent_count_differs_from_vote_list: absentDiffers } : {}), ...(bi.committeeUrls?.length ? { committee_urls: bi.committeeUrls } : {}),
+      ...(bi.viaIndex?.length ? { vote_index_pages: [...new Set(bi.viaIndex.map((v) => v.index))] } : {}) };
     floor += rcs.length;
     if (ST === 'SD') {
       // the bill's sponsors and its introduced text (see sdSponsorsOnText); a fault refuses the sponsors, not the votes

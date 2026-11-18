@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { findStoreVote, markActs, pageDecisions, planCitations, voteKey, type PageAct, type SeatedVote } from './federalVotesPlan.js';
+import { clerkPageRoll, findStoreVote, markActs, pageDecisions, planCitations, voteKey, type PageAct, type SeatedVote } from './federalVotesPlan.js';
 import type { Vote } from '../lib/sourceStore.js';
 import type { TableRollCall } from '../lib/federalTableVotes.js';
 
@@ -113,6 +113,27 @@ describe('planCitations', () => {
   it('holds a House roll call the table gives no roll number', () => {
     const p = planCitations([seatedHouse], [roll({ rc: null, question: 'On Passage' })]);
     expect(p.unmapped[0].reason).toMatch(/no roll number/);
+  });
+  it('takes a House roll number the table lacks from the Clerk page the finding cites, for that year only', () => {
+    const r = roll({ rc: null, question: 'On Passage', external_vote_id: 'legiscan-680050' });
+    const p = planCitations([{ ...seatedHouse, cited_url: 'https://clerk.house.gov/Votes/2023252' }], [r]);
+    expect(p.house.map((h) => [h.url, h.rc, h.bill_number])).toEqual([['https://clerk.house.gov/evs/2023/roll252.xml', 252, 'HJRES 44']]);
+    expect(p.senate).toHaveLength(0);
+    // a Clerk page of another year names another roll call: the LegiScan lane as before
+    const q = planCitations([{ ...seatedHouse, cited_url: 'https://clerk.house.gov/Votes/2022252' }], [r]);
+    expect(q.house).toHaveLength(0);
+    expect(q.senate).toHaveLength(1);
+    // with no LegiScan id and no Clerk page, still held
+    expect(planCitations([seatedHouse], [roll({ rc: null, question: 'On Passage' })]).unmapped[0].reason).toMatch(/no roll number/);
+    // the table's own roll number wins over the page
+    expect(planCitations([{ ...seatedHouse, cited_url: 'https://clerk.house.gov/Votes/2023999' }], [roll252]).house[0].rc).toBe(252);
+  });
+  it('reads a Clerk vote page address, and nothing else, as a roll call', () => {
+    expect(clerkPageRoll('https://clerk.house.gov/Votes/2022410')).toEqual({ year: 2022, rc: 410 });
+    for (const u of ['https://clerk.house.gov/Votes/202241', 'https://clerk.house.gov/Votes/2022', 'http://clerk.house.gov/Votes/2022410',
+      'https://clerk.house.gov/evs/2022/roll410.xml', 'https://clerk.house.gov.example.com/Votes/2022410', 'https://clerk.house.gov/Votes/20220410']) {
+      expect(clerkPageRoll(u)).toEqual(u.endsWith('/Votes/202241') ? { year: 2022, rc: 41 } : null);
+    }
   });
   it('pairs a House roll call with no roll number at LegiScan when the table id is a LegiScan id', () => {
     const p = planCitations([seatedHouse], [roll({ rc: null, question: 'On Passage', external_vote_id: 'legiscan-680050' })]);

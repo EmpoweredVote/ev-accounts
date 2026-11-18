@@ -333,6 +333,34 @@ def ms_bill_from_history(sp, sid, ident):
     return bid
 
 
+def md_bill_from_page(sp, sid, ident):
+    """Maryland: a bill the dump does not hold (2016 and before: the 2026-11 dump has no bill before 2017; the md-02
+    batch cites 2013 SB 281). Built only from the bill page the fetch kept (supplements/MD/raw/, named by the sha256 of
+    its address): the page must name this bill ("Legislation - SB0281") and this session ("2013 Regular Session"). It
+    carries no sponsor, text or action; its roll calls are the supplement's. None when the page is not on disk or is
+    another bill."""
+    u = (sp.get("checked", {}).get(ident) or {}).get("vote_list") or ""
+    p = os.path.join(WORK, "supplements", ST, "raw", hashlib.sha256(u.encode()).hexdigest()[:24]) if u else ""
+    if not p or not os.path.exists(p):
+        return None
+    h = open(p, encoding="utf-8").read()
+    named = re.search(r"<title>\s*Legislation - ([HS][BJ])0*(\d+)\s*</title>", h, re.I)
+    sel = re.search(r'<select[^>]*id="valueSessions"[^>]*>\s*<option[^>]*>([^<]*)</option>', h)
+    if not named or f"{named.group(1).upper()}{int(named.group(2))}" != re.sub(r"[\s.]+", "", ident).upper() \
+            or not sel or sel.group(1).strip() != f"{sp['session']} Regular Session":
+        return None
+    bid = f"page:{ST}:{sp['session']}:{ident}"
+    # the page's synopsis heading: <h3 ...>Firearm Safety Act of 2013</h3> under "Title"; else the bill itself
+    t = re.search(r"<dt[^>]*>\s*Title\s*</dt>\s*<dd[^>]*>([\s\S]*?)</dd>", h)
+    title = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", t.group(1))).strip() if t else ident
+    bills[bid] = {"id": bid, "identifier": f"{named.group(1).upper()} {int(named.group(2))}", "title": title or ident,
+                  "classification": "{bill}", "subject": "{}", "from_organization_id": None, "legislative_session_id": sid}
+    by_bill[bid]["billsource"].append({"url": u})
+    bill_by_key[(sid, re.sub(r"[\s.]+", "", ident).upper())] = bid
+    RECORD_ONLY_BILLS[sid] += 1
+    return bid
+
+
 for f in sorted(glob.glob(os.path.join(WORK, "supplements", ST, "*.json"))):
     sp = json.load(open(f))
     if sp.get("state", "").upper() != ST or sp.get("session") not in sess_by_ident:
@@ -344,6 +372,10 @@ for f in sorted(glob.glob(os.path.join(WORK, "supplements", ST, "*.json"))):
         for ident in sp.get("bills", {}):
             if not bill_by_key.get((sid, re.sub(r"[\s.]+", "", ident).upper())):
                 ms_bill_from_history(sp, sid, ident)
+    if RULES.get("md_vote_page"):
+        for ident in sp.get("bills", {}):
+            if not bill_by_key.get((sid, re.sub(r"[\s.]+", "", ident).upper())):
+                md_bill_from_page(sp, sid, ident)
     if RULES.get("sd_sponsors_from_text"):
         for ident, spn in sp.get("sponsors", {}).items():
             cb = bill_by_key.get((sid, re.sub(r"[\s.]+", "", ident).upper()))

@@ -122,6 +122,11 @@ the bills under `rollcalls_from_legislature`.
   floor amendment or motion (`MD_MOTION_ACTION`), and stops on any other action or a vote link of a shape it does not
   know (2018 onward writes `href=" /2018RS/votes/..."`, with a space). The reader reads the vote's PDF (2017: a
   page, `.htm`) with the chamber's standing committee pages for that session, which give each member's full name.
+  2013 (read for SB 281, the Firearm Safety Act, 2026-11-18): the bill page links no vote file, only the day's
+  Proceedings page (`MD_LINKLESS_SESSIONS`). The fetch sends each tallied floor action to that page and takes the one
+  vote link printed under the bill with the same motion and tally (`mdVoteFromProceedings`; none or two stop it). Its
+  votes are pages, `.htm`, like 2017's (`MD_PAGE_YEARS`). The dump holds no 2013 SB 281, so convert.py titles the bill
+  from its kept bill page (`md_bill_from_page`). 2014-2016 are not read.
   A bill's page can leave out a vote on the bill (2022 SB 861: the Senate's third reading after the House amended it,
   vote 1377): `md_dump_votes.py` lists every vote address the dump holds for the scanned bills, and the fetch's
   `--also <json>` reads each one the page does not link, keeping it only if the vote file itself says it is a vote on
@@ -187,7 +192,7 @@ roll-call pages.
 | Utah | 2017 to 2026 | see the pilot report, `backend/data/legislatures/ut.json`, and the checks in `check_tools.py` (2026-11-15) |
 | South Dakota | 2018 to 2026 (2017 holds no bills) | 107 floor roll calls of a 102-bill dry batch (11 votes on a motion and 153 committee votes not mapped): 14 missing from the dump (read from the legislature), 9 dump tallies short by one Yea (2018: the dump leaves three members out), 0 of 5,013 member-vote differences; see `backend/data/legislatures/sd.json` (2026-11-17) |
 | Ohio | 132nd to 136th Assembly (2017-2026) | 57 floor roll calls of a 213-bill dry batch (two votes on a motion not mapped): 10 missing from the dump (read from the legislature), 0 tally and 0 of 2,726 member-vote differences; see `backend/data/legislatures/oh.json` (2026-11-16) |
-| Maryland | 2017 to 2026 (2023 and 2021s1 hold no dump vote; regular sessions only) | 282 floor roll calls of a 534-bill dry batch, 24 only on the record (all 17 of 2023; four 2020 vetoes overridden in 2021; three others); 0 tally and 0 of 23,517 member-vote differences; 61 dump labels fit no record name, all the presiding officer; see `backend/data/legislatures/md.json` (2026-11-18) |
+| Maryland | 2017 to 2026 (2023 and 2021s1 hold no dump vote; regular sessions only); 2013 SB 281 only (3 floor votes, read from the record 2026-11-18) | 282 floor roll calls of a 534-bill dry batch, 24 only on the record (all 17 of 2023; four 2020 vetoes overridden in 2021; three others); 0 tally and 0 of 23,517 member-vote differences; 61 dump labels fit no record name, all the presiding officer; see `backend/data/legislatures/md.json` (2026-11-18) |
 | Mississippi | 2018 to 2026 (2017 holds no bills; 20171E only resolutions) | 67 floor roll calls of a 289-bill dry batch, all with a dump copy: 2 dump tallies short by one vote (the name before a total that runs over a line), 8 member votes missing from the dump, 0 of 5,975 member-vote differences; 5,919 of 5,983 record votes linked to a person (four members Open States does not hold); see `backend/data/legislatures/ms.json` (2026-11-17) |
 
 Washington's own sites refuse our reader (`robots.txt`), so Washington has no roll-call reader here and keeps its

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { alsoVotes, buildRollCall, INDEX, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote } from './fetch-legislature-rollcalls.js';
+import { alsoVotes, buildRollCall, INDEX, mdVoteFromProceedings, sdIntroducedText, sdNamedOnText, sdRecordSponsors, sdSameMember, sdSessionMembers, sdSponsorsOnText, type IndexedVote } from './fetch-legislature-rollcalls.js';
 
 // The saved Utah House page: roll call 100 of the 2025 General Session, HB 237, 71 yeas, 0 nays, 4 absent.
 const HOUSE = readFileSync(fileURLToPath(new URL('../../../src/lib/__fixtures__/stateRollCall/ut-2025GS-100-H.html', import.meta.url)), 'latin1');
@@ -450,5 +450,58 @@ describe('the legislature\'s own vote list — Maryland', () => {
     expect(buildRollCall('SB 128', { ...v, tally: [131, 0, -1] }, docs)).toEqual({ refused: 'the page\'s tally 132-0-9 is not the bill file\'s 131-0--1' });
     expect(buildRollCall('SB 128', v, [docs[0].replace('SEQ NO. 1104', 'SEQ NO. 1105'), ...docs.slice(1)]))
       .toEqual({ refused: 'the page did not read as a roll call: the vote does not print this number' });
+  });
+});
+
+// 2013: the bill page links no vote file, only the day's Proceedings page, where the vote is a link on its tally beside
+// the motion. Shapes copied from SB 281 of 2013 (bill page and House Proceedings No. 61, read 2026-11-18), cut to one block.
+const md13Block = (chamber: string, date: string, action: string, proc: string): string => `<dl class="row">
+  <dt class="col-sm-2">Chamber</dt><dd class="col-sm-10">${chamber}</dd>
+  <dt class="col-sm-2">Calendar Date</dt><dd class="col-sm-10">${date}</dd>
+  <dt class="col-sm-2">Action</dt><dd class="col-sm-10">${action}</dd>
+  <dt class="col-sm-2">Proceedings</dt><dd class="col-sm-10"><a href="/mgawebsite/Search/FloorActions?file=%2Fpubs%2Flegislegal%2F2013RS-${proc}.htm&amp;ys=2013rs" target="_blank">61</a></dd>
+</dl>`;
+const md13Page = (...blocks: string[]): string => `<title>Legislation - SB0281</title>
+<select class="col-sm-3 form-control" disabled="disabled" id="valueSessions" name="Session"><option value="">2013 Regular Session</option></select>
+${blocks.join('\n')}`;
+const HP61 = `${MD}mgawebsite/Search/FloorActions?file=%2Fpubs%2Flegislegal%2F2013RS-hse-proceed-61.htm&ys=2013rs`;
+const proc61 = (extra = ''): string => `<dt><a href=/mgawebsite/Legislation/Details/SB0281?ys=2013rs>
+SB 281    </a>
+ <dd>                 Motion vote previous question (<a href=/mgawebsite/Members/Details/cane?ys=2013rs&activeTab=divLegislation>Delegate Cane</a>) Adopted <a href=/mgawebsite/Search/Legislation?target=/2013rs/votes/house/0894.htm> (53-83)</a>
+ <dd>                 Third Reading Passed with Amendments <a href=/mgawebsite/Search/Legislation?target=/2013rs/votes/house/0895.htm> (78-61)</a>
+${extra}<dt><a href=/mgawebsite/Legislation/Details/SB0282?ys=2013rs>
+SB 282    </a>
+ <dd>                 Third Reading Passed with Amendments <a href=/mgawebsite/Search/Legislation?target=/2013rs/votes/house/0896.htm> (78-61)</a>`;
+const VIA = { index: HP61, chamber: 'house' as const, motion: 'Third Reading Passed with Amendments', tally: [78, 61, -1] as [number, number, number] };
+
+describe('the legislature\'s own vote list — Maryland 2013, through the Proceedings page', () => {
+  it('sends a floor vote to its Proceedings page, counts a motion, and refuses a vote link 2013 never prints', () => {
+    const bi = INDEX.MD.read(md13Page(
+      md13Block('House', '4/03/2013', 'Third Reading Passed with Amendments (78-61)', 'hse-proceed-61'),
+      md13Block('House', '4/03/2013', 'Third Reading Passed with Amendments (78-61)', 'hse-proceed-61'), // printed twice: read once
+      md13Block('House', '4/03/2013', 'Motion Special Order until later today Rejected (52-85)', 'hse-proceed-61'),
+      md13Block('Senate', '2/28/2013', 'Third Reading Passed (28-19)', 'sen-proceed-30')), '2013', 'SB 281');
+    expect(bi.floor).toEqual([]);
+    expect(bi.viaIndex).toEqual([
+      { index: HP61, chamber: 'house', motion: 'Third Reading Passed with Amendments', tally: [78, 61, -1] },
+      { index: HP61.replace('hse-proceed-61', 'sen-proceed-30'), chamber: 'senate', motion: 'Third Reading Passed', tally: [28, 19, -1] }]);
+    expect(bi.motion).toBe(1);
+    expect(() => INDEX.MD.read(md13Page(md13Block('House', '4/03/2013',
+      'Third Reading Passed <a href="/2013RS/votes/house/0895.htm">(78-61)</a>', 'hse-proceed-61')), '2013', 'SB 281')).toThrow(/a vote link on a 2013 bill page/);
+    // a tallied action with no Proceedings link of its own chamber is not read as "no vote"
+    expect(() => INDEX.MD.read(md13Page(md13Block('House', '4/03/2013', 'Third Reading Passed with Amendments (78-61)', 'sen-proceed-61')), '2013', 'SB 281'))
+      .toThrow(/0 proceedings links of its chamber/);
+  });
+
+  it('finds the one vote on the Proceedings page by bill, motion and tally, and refuses anything else', () => {
+    expect(mdVoteFromProceedings(proc61(), '2013', 'SB 281', VIA)).toBe(`${MD}2013RS/votes/house/0895.htm#SB281`);
+    // the same motion and tally under the NEXT bill (SB 282, vote 896) is not this bill's
+    expect(() => mdVoteFromProceedings(proc61(), '2013', 'SB 281', { ...VIA, tally: [78, 60, -1] })).toThrow(/0 votes on the proceedings page/);
+    expect(() => mdVoteFromProceedings(proc61(), '2013', 'SB 281', { ...VIA, motion: 'Third Reading Passed' })).toThrow(/0 votes/);
+    expect(() => mdVoteFromProceedings(proc61(), '2013', 'SB 281', { ...VIA, chamber: 'senate' })).toThrow(/0 votes/);
+    expect(() => mdVoteFromProceedings(proc61(), '2014', 'SB 281', VIA)).toThrow(/0 votes/);
+    // two votes that fit: never pick one
+    const twice = proc61(' <dd>                 Third Reading Passed with Amendments <a href=/mgawebsite/Search/Legislation?target=/2013rs/votes/house/0897.htm> (78-61)</a>\n');
+    expect(() => mdVoteFromProceedings(twice, '2013', 'SB 281', VIA)).toThrow(/2 votes on the proceedings page/);
   });
 });
