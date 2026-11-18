@@ -43,9 +43,9 @@
  *   npx tsx scripts/pac-career/pac-career.ts report [--out <dir>]
  */
 import 'dotenv/config';
-import { spawn } from 'node:child_process';
+import { execFileSync, spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { createWriteStream, existsSync, mkdirSync, readFileSync, statSync, unlinkSync, writeFileSync } from 'node:fs';
+import { createWriteStream, existsSync, mkdirSync, readFileSync, renameSync, statSync, unlinkSync, writeFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { createInterface } from 'node:readline';
@@ -401,7 +401,7 @@ interface TotalsRow {
 }
 interface CycleCheck {
   cycle: number; fec_pac_total: number; itemized_pac_total: number; fec_refunds: number; itemized_refunds: number;
-  reconciled: boolean; rows: number;
+  reconciled: boolean; rows: number; source?: 'api' | 'filings';
 }
 interface PersonVerify {
   pid: string; checked_at: string; ids: string[];
@@ -414,9 +414,96 @@ interface PersonVerify {
   error?: string;
 }
 
+// ---------------------------------------------------------------------------------------------
+// Filed reports. FEC's processed itemized rows lag its totals by weeks: a Q3 report filed in
+// October is already in the cycle total but none of its gifts are in Schedule A yet. When a cycle
+// does not reconcile, read the campaign's own electronic filings (docquery .fec files) instead.
+// Only the most recent version of each report counts, because an amendment replaces the whole
+// report. Field positions are the FEC v8 layout (2011 on); an older file makes the cycle fall back
+// to the API reading, which then stays unreconciled.
+// ---------------------------------------------------------------------------------------------
+const FILINGS = join(WORK, 'filings');
+const FS = '\x1c';
+/** v8 layout: [amount, committee id, name, memo code] positions per line type. */
+export const FILED_FIELDS = { SA11C: { amt: 20, id: 25, name: 6, memo: 42 }, SB20C: { amt: 20, id: 24, name: 6, memo: 41 } } as const;
+export interface FiledRow { line: 'SA11C' | 'SB20C'; amt: number; id: string; name: string }
+
+/** Parses one .fec file's PAC gifts and refunds to committees; null when the file is not v8. */
+export function parseFiling(text: string): FiledRow[] | null {
+  const lines = text.split(/\r?\n/);
+  const hdr = (lines[0] ?? '').split(FS);
+  if (hdr[0] !== 'HDR' || !(hdr[2] ?? '').startsWith('8')) return null;
+  const out: FiledRow[] = [];
+  for (const l of lines) {
+    const f = l.split(FS);
+    const t = f[0]?.toUpperCase();
+    if (t !== 'SA11C' && t !== 'SB20C') continue;
+    const pos = FILED_FIELDS[t];
+    if ((f[pos.memo] ?? '').trim().toUpperCase() === 'X') continue;
+    out.push({ line: t, amt: Number(f[pos.amt]) || 0, id: (f[pos.id] ?? '').trim().toUpperCase(), name: (f[pos.name] ?? '').trim() });
+  }
+  return out;
+}
+
+/** The filing's text, or null when there is no electronic file (paper-era and paper filings). */
+function fetchFiling(fileNumber: number): string | null {
+  if (!(fileNumber > 0)) return null; // paper filings carry a negative file number
+  mkdirSync(FILINGS, { recursive: true });
+  const dest = join(FILINGS, `${fileNumber}.fec`);
+  if (!existsSync(dest)) {
+    const tmp = `${dest}.part`;
+    // curl, not fetch: docquery sits behind a WAF that scores Node's TLS fingerprint.
+    const status = execFileSync('curl', ['-sS', '--max-time', '300', '-A', 'Mozilla/5.0', '-o', tmp, '-w', '%{http_code}',
+      `https://docquery.fec.gov/dcdev/posted/${fileNumber}.fec`], { encoding: 'utf8' }).trim();
+    if (status === '404') { if (existsSync(tmp)) unlinkSync(tmp); return null; }
+    if (status !== '200') { if (existsSync(tmp)) unlinkSync(tmp); throw new Error(`filing ${fileNumber} -> HTTP ${status}`); }
+    const head = readFileSync(tmp, 'utf8').slice(0, 3);
+    if (head !== 'HDR') { unlinkSync(tmp); return null; } // pre-2001 or image-only: no .fec text
+    renameSync(tmp, dest);
+  }
+  return readFileSync(dest, 'utf8');
+}
+
+interface ReportRow {
+  file_number: number; most_recent: boolean;
+  other_political_committee_contributions_period: number | null;
+  refunded_other_political_committee_contributions_period: number | null;
+}
+
+/** Every PAC gift and refund in a committee's latest reports for a cycle, or null if any is unreadable. */
+async function filedRows(cmte: string, cycle: number): Promise<FiledRow[] | null> {
+  const { rows } = await allRows<ReportRow>(`/committee/${cmte}/reports/`, { cycle: String(cycle), most_recent: 'true' });
+  const out: FiledRow[] = [];
+  for (const r of rows) {
+    if (!r.most_recent) continue;
+    if (!r.other_political_committee_contributions_period && !r.refunded_other_political_committee_contributions_period) continue;
+    const text = fetchFiling(r.file_number);
+    const parsed = text === null ? null : parseFiling(text);
+    if (!parsed) return null;
+    out.push(...parsed);
+  }
+  return out;
+}
+
+/** Upper-case, punctuation to spaces, single spaces: "Ibew PAC, Inc." -> "IBEW PAC INC". */
+export const normName = (n: string | null | undefined) => (n ?? '').toUpperCase().replace(/[^A-Z0-9]+/g, ' ').trim();
+
+/** Registered name -> bucket, keeping only names whose committees all classify the same way. */
+export function namesToBuckets(rows: CmRow[]): Map<string, Bucket> {
+  const seen = new Map<string, Bucket | null>();
+  for (const r of rows) {
+    const k = normName(r.name);
+    if (!k) continue;
+    const b = classify(r);
+    const prev = seen.get(k);
+    seen.set(k, prev === undefined || prev === b ? b : null);
+  }
+  return new Map([...seen].filter((e): e is [string, Bucket] => e[1] !== null));
+}
+
 const close = (a: number, b: number) => Math.abs(a - b) <= Math.max(RECONCILE_ABS, RECONCILE_REL * Math.max(Math.abs(a), Math.abs(b)));
 
-async function verifyPerson(p: PersonScreen, cmByCycle: Map<number, Map<string, CmRow>>): Promise<PersonVerify> {
+async function verifyPerson(p: PersonScreen, cmByCycle: Map<number, Map<string, CmRow>>, cmByName: Map<string, Bucket>): Promise<PersonVerify> {
   const ids = [...p.linked_ids, ...p.inferred_ids.map((x) => x.id)];
   const zero = (): Record<Bucket, number> => ({ corporate: 0, other_pac: 0, candidate: 0, party: 0, unknown: 0 });
   const v: PersonVerify = {
@@ -434,10 +521,16 @@ async function verifyPerson(p: PersonScreen, cmByCycle: Map<number, Map<string, 
   // cycle -> FEC totals summed over this person's ids
   const totals = new Map<number, { pac: number; refunds: number }>();
   const committees = new Map<string, Set<number>>(); // committee id -> cycles it served
+  const seenTotals = new Set<string>();
   for (const id of ids) {
     const t = await fecGet<Page<TotalsRow>>(`/candidate/${id}/totals/`, { election_full: 'false', per_page: '100' });
     for (const r of t.results) {
       if (typeof r.cycle !== 'number') continue;
+      // Two candidate ids can share one campaign committee; FEC then reports the same totals under
+      // both, and summing them doubles the cycle. Count an identical totals row once.
+      const sig = [r.cycle, r.receipts, r.other_political_committee_contributions, r.refunded_other_political_committee_contributions, r.coverage_end_date].join('|');
+      if (seenTotals.has(sig)) continue;
+      seenTotals.add(sig);
       v.career.receipts += r.receipts ?? 0;
       v.career.first_cycle = Math.min(v.career.first_cycle ?? r.cycle, r.cycle);
       v.career.last_cycle = Math.max(v.career.last_cycle ?? r.cycle, r.cycle);
@@ -459,51 +552,77 @@ async function verifyPerson(p: PersonScreen, cmByCycle: Map<number, Map<string, 
     }
   }
 
-  const bucketOf = (cycle: number, ref: CmteRef | null | undefined, refId: string | null | undefined): Bucket => {
+  const bucketOf = (cycle: number, ref: CmteRef | null | undefined, refId: string | null | undefined, name?: string | null): Bucket => {
     if (ref && (ref.committee_type || ref.designation || ref.organization_type)) {
       return classify({ tp: ref.committee_type, dsgn: ref.designation, org: ref.organization_type });
     }
     const id = (refId ?? '').trim().toUpperCase();
-    if (!id) return 'unknown';
-    for (const c of [cycle, cycle + 2, cycle - 2]) {
-      const hit = cmByCycle.get(c)?.get(id);
-      if (hit) return classify(hit);
+    if (id) {
+      const near = [...cmByCycle.keys()].sort((a, b) => Math.abs(a - cycle) - Math.abs(b - cycle) || b - a);
+      for (const c of near) {
+        const hit = cmByCycle.get(c)?.get(id);
+        if (hit) return classify(hit);
+      }
     }
-    return 'unknown';
+    // No usable id: an exact registered name, only when every committee with that name classifies alike.
+    return cmByName.get(normName(name)) ?? 'unknown';
   };
+
+  // One gift (+) or refund (-) to apply once the cycle's source is chosen.
+  interface Item { refund: boolean; b: Bucket; amt: number; key: string; name: string; id: string | null }
+  const itemOf = (cycle: number, refund: boolean, ref: CmteRef | null | undefined, id: string | null, name: string | null, amt: number): Item => {
+    let b = bucketOf(cycle, ref, id, name);
+    if (b === 'unknown' && partyByName(name)) b = 'party';
+    return { refund, b, amt, key: id || name || '?', name: name ?? '', id: id || null };
+  };
+  const sums = (items: Item[]) => ({
+    pac: items.filter((i) => !i.refund).reduce((s, i) => s + i.amt, 0),
+    refunds: items.filter((i) => i.refund).reduce((s, i) => s + i.amt, 0),
+  });
 
   for (const [cycle, t] of [...totals].sort((a, b) => a[0] - b[0])) {
     if (t.pac === 0 && t.refunds === 0) continue;
-    const check: CycleCheck = { cycle, fec_pac_total: t.pac, itemized_pac_total: 0, fec_refunds: t.refunds, itemized_refunds: 0, reconciled: false, rows: 0 };
-    for (const [cmte, cys] of committees) {
-      if (cys.size && !cys.has(cycle)) continue;
+    const cmtes = [...committees].filter(([, cys]) => !cys.size || cys.has(cycle)).map(([c]) => c);
+    let items: Item[] = [];
+    for (const cmte of cmtes) {
       const a = await allRows<{ contribution_receipt_amount: number; memo_code: string | null; contributor_id: string | null; contributor_name: string | null; contributor: CmteRef | null }>(
         '/schedules/schedule_a/', { committee_id: cmte, two_year_transaction_period: String(cycle), line_number: 'F3-11C' });
       for (const r of a.rows) {
         if (r.memo_code === 'X') continue;
-        let b = bucketOf(cycle, r.contributor, r.contributor_id);
-        if (b === 'unknown' && partyByName(r.contributor_name)) b = 'party';
-        const amt = r.contribution_receipt_amount ?? 0;
-        check.itemized_pac_total += amt; check.rows++;
-        v.received[b] += amt; v.kept[b] += amt;
-        if (b === 'corporate') ledger(r.contributor_id || r.contributor_name || '?', cycle, amt);
-        if (b === 'unknown' && v.unknown_examples.length < 15) {
-          v.unknown_examples.push({ cycle, name: r.contributor_name ?? '', contributor_id: r.contributor_id, amount: amt });
-        }
+        items.push(itemOf(cycle, false, r.contributor, r.contributor_id, r.contributor_name, r.contribution_receipt_amount ?? 0));
       }
       const b20 = await allRows<{ disbursement_amount: number; memo_code: string | null; recipient_committee_id: string | null; recipient_name: string | null; recipient_committee: CmteRef | null }>(
         '/schedules/schedule_b/', { committee_id: cmte, two_year_transaction_period: String(cycle), line_number: 'F3-20C' });
       for (const r of b20.rows) {
         if (r.memo_code === 'X') continue;
-        let b = bucketOf(cycle, r.recipient_committee, r.recipient_committee_id);
-        if (b === 'unknown' && partyByName(r.recipient_name)) b = 'party';
-        const amt = r.disbursement_amount ?? 0;
-        check.itemized_refunds += amt;
-        v.refunded[b] += amt; v.kept[b] -= amt;
-        if (b === 'corporate') ledger(r.recipient_committee_id || r.recipient_name || '?', cycle, -amt);
+        items.push(itemOf(cycle, true, r.recipient_committee, r.recipient_committee_id, r.recipient_name, r.disbursement_amount ?? 0));
       }
     }
-    check.reconciled = close(check.itemized_pac_total, check.fec_pac_total) && close(check.itemized_refunds, check.fec_refunds);
+    let source: CycleCheck['source'] = 'api';
+    let s = sums(items);
+    const ok = (x: { pac: number; refunds: number }) => close(x.pac, t.pac) && close(x.refunds, t.refunds);
+    if (!ok(s)) {
+      // FEC's itemized rows lag its totals; try the campaign's own filed reports.
+      const filed: Item[] = [];
+      let readable = true;
+      for (const cmte of cmtes) {
+        const rows = await filedRows(cmte, cycle);
+        if (!rows) { readable = false; break; }
+        for (const r of rows) filed.push(itemOf(cycle, r.line === 'SB20C', null, r.id || null, r.name, r.amt));
+      }
+      if (readable && ok(sums(filed))) { items = filed; s = sums(filed); source = 'filings'; }
+    }
+    const check: CycleCheck = {
+      cycle, fec_pac_total: t.pac, itemized_pac_total: s.pac, fec_refunds: t.refunds, itemized_refunds: s.refunds,
+      reconciled: ok(s), rows: items.length, source,
+    };
+    for (const i of items) {
+      if (i.refund) { v.refunded[i.b] += i.amt; v.kept[i.b] -= i.amt; } else { v.received[i.b] += i.amt; v.kept[i.b] += i.amt; }
+      if (i.b === 'corporate') ledger(i.key, cycle, i.refund ? -i.amt : i.amt);
+      if (i.b === 'unknown' && !i.refund && v.unknown_examples.length < 15) {
+        v.unknown_examples.push({ cycle, name: i.name, contributor_id: i.id, amount: i.amt });
+      }
+    }
     if (!check.reconciled) v.unreconciled.push(cycle);
     v.cycles.push(check);
   }
@@ -536,13 +655,16 @@ async function verify(): Promise<void> {
     for await (const f of zipLines(zip)) m.set(f[0]!, { name: f[1]!, dsgn: f[8]!, tp: f[9]!, org: f[12]! });
     cmByCycle.set(c, m);
   }
+  const cmByName = namesToBuckets([...cmByCycle.values()].flatMap((m) => [...m.values()]));
 
   let n = 0;
   for (const p of queue) {
     if (n >= limit) break;
-    if (done[p.pid] && !done[p.pid]!.error && !only) continue;
+    // --redo-unreconciled: re-check only people with a cycle that did not reconcile (API reads are cached).
+    const redo = args.includes('--redo-all') || (args.includes('--redo-unreconciled') && (done[p.pid]?.unreconciled?.length ?? 0) > 0);
+    if (done[p.pid] && !done[p.pid]!.error && !only && !redo) continue;
     try {
-      done[p.pid] = await verifyPerson(p, cmByCycle);
+      done[p.pid] = await verifyPerson(p, cmByCycle, cmByName);
     } catch (e) {
       done[p.pid] = { pid: p.pid, checked_at: new Date().toISOString(), ids: [], error: (e as Error).message } as unknown as PersonVerify;
     }
@@ -595,8 +717,8 @@ function report(): void {
       tally.set('NOT_YET_CHECKED', (tally.get('NOT_YET_CHECKED') ?? 0) + 1);
     } else {
       const verdict = verdictOf(v);
-      row = [p.pid, p.name, verdict, v.error ? `error: ${v.error}` : 'campaign filings (FEC API)', p.linked_ids.join(' '), p.inferred_ids.map((x) => x.id).join(' '),
-        v.career.first_cycle ?? '', v.career.last_cycle ?? '', v.career.through, Math.round(v.career.receipts ?? 0),
+      row = [p.pid, p.name, verdict, v.error ? `error: ${v.error}` : (v.cycles ?? []).some((c) => c.source === 'filings') ? 'campaign filings (FEC API + filed reports)' : 'campaign filings (FEC API)', p.linked_ids.join(' '), p.inferred_ids.map((x) => x.id).join(' '),
+        v.career?.first_cycle ?? '', v.career?.last_cycle ?? '', v.career?.through ?? '', Math.round(v.career?.receipts ?? 0),
         Math.round(v.kept?.corporate ?? 0), Math.round(v.kept?.other_pac ?? 0), Math.round(v.kept?.candidate ?? 0), Math.round(v.kept?.unknown ?? 0),
         Math.round(v.received?.corporate ?? 0), Math.round(v.refunded?.corporate ?? 0), v.last_corporate_cycle ?? '', (v.unreconciled ?? []).join(' ')];
       tally.set(verdict, (tally.get(verdict) ?? 0) + 1);

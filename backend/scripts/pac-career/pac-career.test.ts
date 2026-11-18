@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { classify, nameKey, verdictOf } from './pac-career.js';
+import { classify, nameKey, verdictOf, parseFiling, namesToBuckets, normName } from './pac-career.js';
 
 describe('classify', () => {
   it('reads FEC committee codes into the ruled buckets', () => {
@@ -69,5 +69,43 @@ describe('partyByName', () => {
     expect(partyByName('ROBINSON & COLE, LLP')).toBe(false);
     expect(partyByName('COALITION FOR FAMILY SECURITY')).toBe(false);
     expect(partyByName('LATINO CITIZENS FOR RESPECT')).toBe(false);
+  });
+});
+
+describe('parseFiling', () => {
+  const FS = '\x1c';
+  const row = (n: number, set: Record<number, string>) => Array.from({ length: n }, (_, i) => set[i] ?? '').join(FS);
+  const sa = (amt: string, id: string, memo = '') => row(45, { 0: 'SA11C', 5: 'PAC', 6: 'ACME PAC', 20: amt, 25: id, 42: memo });
+  const sb = (amt: string, id: string) => row(44, { 0: 'SB20C', 5: 'PAC', 6: 'ACME PAC', 20: amt, 24: id });
+  const v8 = ['HDR', 'FEC', '8.5', 'X'].join(FS);
+
+  it('reads PAC gifts and refunds by their v8 positions', () => {
+    const rows = parseFiling([v8, sa('5000.00', 'c00000001'), sb('1000.00', 'C00000002'), row(45, { 0: 'SA11AI', 20: '50' })].join('\n'));
+    expect(rows).toEqual([
+      { line: 'SA11C', amt: 5000, id: 'C00000001', name: 'ACME PAC' },
+      { line: 'SB20C', amt: 1000, id: 'C00000002', name: 'ACME PAC' },
+    ]);
+  });
+
+  it('skips memo rows, which are not money received', () => {
+    expect(parseFiling([v8, sa('2500', 'C1', 'X'), sa('100', 'C2')].join('\n'))!.map((r) => r.amt)).toEqual([100]);
+  });
+
+  it('refuses a pre-v8 file rather than guessing its columns', () => {
+    expect(parseFiling(['HDR', 'FEC', '6.4'].join(FS) + '\n' + sa('5000', 'C1'))).toBeNull();
+  });
+});
+
+describe('namesToBuckets', () => {
+  it('maps a registered name to its bucket after normalising punctuation and case', () => {
+    const m = namesToBuckets([{ name: 'IBEW PAC Voluntary Fund', tp: 'Q', dsgn: 'B', org: 'L' }]);
+    expect(m.get(normName('Ibew PAC, Voluntary Fund'))).toBe('other_pac');
+  });
+  it('drops a name shared by committees of different kinds', () => {
+    const m = namesToBuckets([
+      { name: 'EUREKA PAC', tp: 'Q', dsgn: 'B', org: 'C' },
+      { name: 'Eureka PAC', tp: 'Q', dsgn: 'U', org: 'L' },
+    ]);
+    expect(m.has('EUREKA PAC')).toBe(false);
   });
 });
