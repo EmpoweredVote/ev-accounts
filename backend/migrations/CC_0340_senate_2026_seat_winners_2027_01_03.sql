@@ -53,7 +53,32 @@
 --   Peltola, 50.12%) and we hold no result for it yet, so there is no winner to seat. It needs a
 --   results migration first; 34 of 35 is the honest count today and P1's digest states it.
 --
+-- ─────────────────────────────────────────────────────────────────────────────────────────────
+-- @incumbency-decision: no-effect — every term row this writes or changes covers exactly the
+-- election days it covered before, so no cached answer can move.
+-- ─────────────────────────────────────────────────────────────────────────────────────────────
+--
+-- `race_candidates.is_incumbent` means "incumbent OF THE SEAT THIS RACE IS FOR, on the race's own
+-- election date", it is cached, and nothing recomputes it — so moving a term boundary across an
+-- election day silently restates who held that seat on it. 🔴 THIS FILE MOVES NO BOUNDARY ACROSS
+-- ONE, and the claim is checkable in two numbers rather than asserted:
+--
+--   · every predecessor is closed at 2027-01-02, AFTER the 2026-11-03 election — the latest any
+--     of these offices carries — so each one still covers that day exactly as it did;
+--   · every new term STARTS 2027-01-03, after that same day, so it covers no past election at all.
+--
+-- ▶ MEASURED, NOT REASONED: `reconcile-incumbency.mjs --check` against production after this was
+-- applied reports **0 drift rows**. That is the gate the delta template exists to anticipate,
+-- run against the real outcome.
+--
+-- ⚠ THE OPPOSITE DISPOSITION WOULD APPLY ON 2027-01-03. A pass that moved these boundaries
+-- BACKWARD, or seated anybody at a date on or before an election day, owes the gated delta gate
+-- in `_templates/office_terms_incumbency_guard.sql` and a reading of each row it moves.
+--
 -- Applied to production 2026-11-18.
+-- ⚠ The @incumbency-decision block above was added AFTER the apply, to satisfy
+-- check:office-terms-incumbency-guards. It is comment only: the SQL that ran and the SQL
+-- committed here are behaviourally identical, so no replay was needed to verify it.
 
 BEGIN;
 
