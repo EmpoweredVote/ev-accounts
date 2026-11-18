@@ -618,6 +618,27 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
+      # Rides this job for the same three reasons as the step above: same live DB, same non-PR
+      # trigger, same `npm ci` already paid for. `if: ${{ !cancelled() }}` so an earlier failure
+      # does not hide a false sentence on a voter-facing page.
+      #
+      # CC_0447 wrote that Paul LePage won ME-02 "defeating incumbent Jared Golden". Golden held
+      # the seat and was not a candidate — AP's `incumbent` describes the SEAT, not a ballot line,
+      # so "the winner is not the incumbent" does not mean "the winner beat the incumbent".
+      # CC_0452 corrected the row and match-losers.mjs now carries the missing third branch, which
+      # covers the path that writes such claims IN BULK. This covers the one that writes them any
+      # other way: by hand, in a migration, with nothing re-reading the column afterwards.
+      #
+      # 🔴 IT IS DELIBERATELY NOT A PR CHECK. A PR's SQL has not touched prod — migrations here are
+      # applied ad hoc — so there is nothing new for it to see on a PR, and a prod-reading gate on
+      # PRs fails on the NEXT merge and names an innocent author. A migration writing such a
+      # citation carries the assertion in its own post-verify instead; CC_0452 is the worked example.
+      - name: Check no citation claims an incumbent lost who did not
+        if: ${{ !cancelled() }}
+        run: npm run check:incumbent-claims
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
       # Rides this job rather than taking a tenth one of its own: same live DB, same non-PR trigger,
       # same `npm ci` already paid for (see the minutes budget at the top of this file).
       # Carries `if: ${{ !cancelled() }}` so a reachability failure above does not hide a stale map.

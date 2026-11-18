@@ -312,6 +312,40 @@ compares AP against our rows, so any tamper to AP's incumbent necessarily moves 
 still plants exactly one fault; they are the controls that show the two gates are wired to the
 same question from opposite sides.
 
+### 🟢 The other half: a standing check on the claims already in the column
+
+Added **2026-11-18**. The branch above guards the path that writes these claims **in bulk**; this
+guards the one that writes them **any other way** — by hand, in a migration, with nothing
+re-reading `result_source` afterwards:
+
+```bash
+npm run check:incumbent-claims --prefix backend            # the gate
+node backend/scripts/lib/incumbent-claims-controls.mjs      # the nine controls behind it
+```
+
+> **Every "defeating incumbent X" must name somebody holding a LOSING row in that race.**
+
+🔴 **The trap it had to be built around: two opposite grammars share these words.** Read against
+production first, **30** citations mention an incumbent and only 6 are this claim. **Twenty** are
+quoted Ballotpedia text on primary rows, in the mirror grammar, where the incumbent **won** —
+*"Incumbent Tracey Mann defeated Craig Musser in the Republican primary"*. A predicate on the two
+words catches both and **inverts the meaning of twenty true sentences**. The discriminator is word
+order, and control G pins it. ▶ **A PREDICATE READS THE SHAPE OF A VALUE, NEVER WHAT THE VALUE IS.**
+
+🔴 **The name is never parsed out of the prose.** The obvious capture —
+`/defeating incumbent ([^.]+)\./`, which is what `CC_0452`'s own post-verify used — truncates
+*"Dan S. Sullivan"* at "Dan S."; there is no reliable sentence boundary in prose containing
+initials and suffixes. Instead the gate tests whether a name **the database says lost this race**
+appears at that position. Exact, no boundary needed, and the expectation comes from somewhere the
+citation's author cannot edit.
+
+⚠ **A bare surname is admitted only where it is unambiguous in that race**, because AP and our
+rows disagree about spellings often enough to have a review file — but a bare surname everywhere
+would let a **namesake** satisfy the gate, and this repo has shipped Mark Harris as NC-8.
+
+🔴 **Not a PR check, on purpose.** A PR's SQL has not touched prod, and a prod-reading gate on PRs
+fails on the next merge and names an innocent author. It rides the non-PR `reachability` job.
+
 🟢 **The four existing outputs are byte-identical after this change.** The classifier is purely
 additive; it reads AP's ballot and never our rows, because the question is about AP's own two
 fields disagreeing and our table cannot adjudicate that.
