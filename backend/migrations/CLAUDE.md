@@ -302,8 +302,16 @@ Honesty rules that the schema enforces:
   "incumbents" with no seat, cleared by `CA_0181`-`CA_0187`), then went stale on every seeded
   handover date (Reno, 2026-11-13). Reads use `isIncumbentSql()` / `IS_INCUMBENT_SELECT_SQL` in
   `backend/src/lib/incumbency.ts`; seat someone with `seat_officeholder` and nothing else.
-  `check:occupancy` fails an INSERT that still names the column. `race_candidates.is_incumbent` is a
-  different, still-live column.
+  `check:occupancy` fails an INSERT that still names the column — 🔴 **but NOT in this directory.**
+  It exempts `backend/migrations/` deliberately, because a migration is a record of SQL that already
+  ran and one written before `CA_0378` legitimately names the column; flagging those would block
+  merging the record of work already in production (`CA_0374`, #1399). **So a NEW migration naming
+  it is caught by nothing until it fails with `42703` at apply time** — which reads as a broken
+  migration rather than a stale instruction. ⚠ Confirmed by positive control 2026-11-17: the same
+  INSERT fails the guard in `backend/scripts/` (exit 1) and passes it in `backend/migrations/`.
+  It cost a tamper control that session: the tamper never applied, the dry run printed **FAILED**,
+  and a control that fails to apply looks exactly like one that worked. ▶ **Read what the red
+  SAYS.** `race_candidates.is_incumbent` is a different, still-live column.
 - **`politicians.valid_from` / `valid_to` are DEPRECATED** — wrong entity (dates belong to a tenure,
   and people hold two offices). Don't read them in new code. `politicians.office_id` is a legacy
   point-in-time snapshot with the same flaw; prefer the view.
