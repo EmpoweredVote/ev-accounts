@@ -1,0 +1,39 @@
+{
+  "id": "KS-SB-8-2019",
+  "scope": "state:ks",
+  "title": "SB8 (2019-2020 Regular): Purchase of a firearm; three-day waiting period, background check.",
+  "urls": [
+    "https://www.kslegislature.gov/li_2020/b2019_20/measures/sb8/",
+    "https://www.kslegislature.gov/li_2020/b2019_20/measures/documents/sb8_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Oletha Faust-Goudeau",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4b6f1d1b-4409-47ab-93e8-de41ab75cd15"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Introduced; official copy, https://www.kslegislature.gov/li_2020/b2019_20/measures/documents/sb8_00_0000.pdf)",
+    "fetched_at": "2026-11-18T21:20:59.861206Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-SB-8-2019.introduced.pdf",
+      "sha256": "b3dad46b2afa3b9826488ba457900a0d84c8bb7cb0c06cf23b7756930105138f"
+    },
+    "note": "As filed (introduced); the bill has no recorded vote."
+  },
+  "operative_text": "Section 1 (new law): (a) A mandatory waiting period shall be imposed between the purchase and delivery of any firearm by a person from a retailer. The mandatory waiting period is three days, excluding weekends and legal holidays, or upon completion of the records check, whichever occurs later.\nSection 1 (new law): (b) Each purchaser of a firearm shall be subject to a national criminal history records check, which conforms to applicable federal standards, including an inquiry of the national instant criminal background check system for the purpose of verifying the identity of the applicant and whether the applicant has been convicted of any crime or has been the subject of any restraining order or any mental health-related finding that would disqualify the applicant from purchasing a firearm.\nSection 1 (new law): (d) The waiting period established under this section shall not apply to the purchase of a firearm: (1) By a law enforcement officer as defined in K.S.A. 74-5602, and amendments thereto. (2) By a purchaser who has a concealed carry handgun license or permit as provided in K.S.A. 75c-7c01 et seq., and amendments thereto.\nSection 1 (new law): (e) Any person violating this section shall be subject to a class C misdemeanor."
+}

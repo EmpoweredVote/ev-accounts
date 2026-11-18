@@ -88,6 +88,99 @@
         "fetched_at": "2026-11-04T19:13:24.933Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "3a398486248da722940ff432df4fc5a54feccb9e02a38a2b846454dd95c1f56b",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/bills/HB2052/",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2052-2025",
+      "act": "yea",
+      "motion": "House Concurred with amendments",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Concurred with amendments, 2025-03-24: yea (tally 105–17); census gate: none.",
+      "subjects": [
+        "concealed carry licence eligibility and age 21 for standard licence",
+        "provisional licence converts to standard at 21",
+        "licence card surrendered on suspension or revocation",
+        "armed off-duty officers' personal information protected"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2052/hb2052_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2052-2025.enrolled.pdf",
+          "sha256": "68e955bee99e21e34a8f5d60dee10ce28577d95fd5ddc0f6412452804aab34f6"
+        }
+      }
+    },
+    {
+      "id": "9405c00b12e4cf6711abee95b4ba3cb330fef5cb012854da4bc4dd29abe53ba2",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/bills/HB2501/",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2501-2025",
+      "act": "yea",
+      "motion": "House Conference Committee Report was adopted",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Conference Committee Report was adopted, 2026-03-26: yea (tally 99–22); census gate: none.",
+      "subjects": [
+        "civil immunity for dealers holding guns under storage agreements",
+        "local rules on gun storage agreements preempted",
+        "suppressors and short-barrel shotguns no longer crimes",
+        "longer sentence if felony committed with suppressor or short shotgun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2501/hb2501_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2501-2025.enrolled.pdf",
+          "sha256": "5671904d81be103302e3ea8c655047a95793b91683e0c8cf75236938fd0d4aa0"
+        }
+      }
+    },
+    {
+      "id": "bdde446b0f324b60bd1245cc1212f4e5af00763f7f673b434670ae92982ca1be",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/bills/SB137/",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-137-2025",
+      "act": "yea",
+      "motion": "House Emergency Final Action - Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Emergency Final Action - Passed, 2025-03-20: yea (tally 90–28); census gate: none.",
+      "subjects": [
+        "forfeited firearms may be sold or transferred to a licensed federal firearms dealer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/sb_137/sb137_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-SB-137-2025.enrolled.pdf",
+          "sha256": "94d79e6e9bf4c48efe5471404fc74d693666d58df10565f1779db42bf7327404"
+        }
+      }
     }
   ],
   "searches": [

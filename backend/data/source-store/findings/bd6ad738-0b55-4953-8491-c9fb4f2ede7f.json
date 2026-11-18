@@ -108,6 +108,142 @@
         "fetched_at": "2026-11-04T19:13:24.944Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "976a12e21c299ced74f3cedac40c11e0633ea24dac099682cc10722accf6ab63",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/bills/HB2052/",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2052-2025",
+      "act": "nay",
+      "motion": "House Concurred with amendments",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Concurred with amendments, 2025-03-24: nay (tally 105–17); census gate: none.",
+      "subjects": [
+        "concealed carry licence eligibility and age 21 for standard licence",
+        "provisional licence converts to standard at 21",
+        "licence card surrendered on suspension or revocation",
+        "armed off-duty officers' personal information protected"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2052/hb2052_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2052-2025.enrolled.pdf",
+          "sha256": "68e955bee99e21e34a8f5d60dee10ce28577d95fd5ddc0f6412452804aab34f6"
+        }
+      }
+    },
+    {
+      "id": "29421a02d558b0d7618b099cd4c8539bee78ce316a8f5843c02d84d84b7fafaa",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/bills/HB2501/",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2501-2025",
+      "act": "nay",
+      "motion": "House Conference Committee Report was adopted",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Conference Committee Report was adopted, 2026-03-26: nay (tally 99–22); census gate: none.",
+      "subjects": [
+        "civil immunity for dealers holding guns under storage agreements",
+        "local rules on gun storage agreements preempted",
+        "suppressors and short-barrel shotguns no longer crimes",
+        "longer sentence if felony committed with suppressor or short shotgun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2501/hb2501_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2501-2025.enrolled.pdf",
+          "sha256": "5671904d81be103302e3ea8c655047a95793b91683e0c8cf75236938fd0d4aa0"
+        }
+      }
+    },
+    {
+      "id": "843ba2e3667997a5b3e376cbf77fd4b7cdf9f3740717c5b7197e92c5c0f03640",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/bills/SB137/",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-137-2025",
+      "act": "nay",
+      "motion": "House Emergency Final Action - Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Emergency Final Action - Passed, 2025-03-20: nay (tally 90–28); census gate: none.",
+      "subjects": [
+        "forfeited firearms may be sold or transferred to a licensed federal firearms dealer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/sb_137/sb137_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-SB-137-2025.enrolled.pdf",
+          "sha256": "94d79e6e9bf4c48efe5471404fc74d693666d58df10565f1779db42bf7327404"
+        }
+      }
+    },
+    {
+      "id": "fd430268eda8c5c7bbaccc43e895454692656a05ae4e7bea5f4ccce1bceb0978",
+      "kind": "own-words",
+      "url": "https://brooklynnemosley.com/platform",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Kansas must prioritize comprehensive gun safety measures, including universal background checks, safe storage requirements, and responsible gun ownership education.",
+      "note": "Campaign platform page, gun safety section; lists background checks for all buyers, safe storage rules and gun ownership education as priorities. Page is undated; 2024 campaign site.",
+      "subjects": [
+        "check every gun buyer",
+        "safe storage of guns",
+        "gun ownership education",
+        "general statement on gun safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:47:46.539Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "adbdfd797ed651001d47b6057b69fb5f17fb56eae7c7da63531a339aa2674dfc",
+      "kind": "own-words",
+      "url": "https://brooklynnemosley.com/platform",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Protecting our youth from gun violence is paramount for the safety of our communities.",
+      "note": "Campaign platform page, gun safety section; general statement on protecting young people from gun violence. Page is undated.",
+      "subjects": [
+        "general statement on gun safety"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:47:46.539Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -149,6 +285,34 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.944Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "safe storage of guns",
+        "gun ownership education",
+        "ban on assault-style guns",
+        "carry a gun without a permit",
+        "red-flag orders",
+        "general statement on gun safety"
+      ],
+      "places": [
+        "status: sitting Kansas House member for District 46, unopposed in the 2026 primary (state election office vote totals), listed as a 2026 general-election candidate",
+        "On the Record (0 meetings)",
+        "campaign site https://brooklynnemosley.com/platform (read; gun safety section)",
+        "campaign site home and about pages (nothing on the subject)",
+        "news story https://lawrencekstimes.com/2024/04/30/mosley-campaign-house-46/ (nothing on the subject)",
+        "Wikipedia (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Brooklynne_Mosley (empty page, HTTP 202)",
+        "news search on name plus gun words (nothing about her on the subject)",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: legislature bill and vote pages (covered by bulk bill data)"
+      ],
+      "found": 2,
+      "at": "2026-11-18T21:47:46.539Z",
+      "by": "source-collector"
     }
   ]
 }

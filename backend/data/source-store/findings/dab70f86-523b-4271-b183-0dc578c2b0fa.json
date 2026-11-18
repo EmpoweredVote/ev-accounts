@@ -317,6 +317,92 @@
         "fetched_at": "2026-11-04T16:43:22.064Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "e3c48f23b7334001039eddda5ae7a1d4f33c9e65ad4f4e0ce8685a11df33cd9a",
+      "kind": "own-words",
+      "url": "https://kslegislature.gov/li/b2025_26/committees/ctte_h_fed_st_1/documents/testimony/20250205_01.pdf",
+      "date": "2025-02-04",
+      "date_precision": "day",
+      "passage": "As Kansas Attorney General, I have already defended the rights of Kansans to keep and bear arms by suing the Biden Administration to stop its unlawful regulation that redefines “engaged in the business” of dealing in firearms to encompass occasional selling or swapping of firearms between friends.",
+      "note": "Written testimony from the Attorney General to a House committee in support of HCR 5006; he describes his lawsuit against the federal private-sale dealer rule as defending gun rights.",
+      "subjects": [
+        "federal agency gun rules",
+        "private gun sales",
+        "right to bear arms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:48:15.051Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "373ac2feb42b58ee50efc53d426de5b4852e05426dfbc290cdc6ec52e16faa28",
+      "kind": "own-words",
+      "url": "https://kslegislature.gov/li/b2025_26/committees/ctte_h_fed_st_1/documents/testimony/20250205_01.pdf",
+      "date": "2025-02-04",
+      "date_precision": "day",
+      "passage": "The proposed constitutional amendment would make restrictions on gun rights including ammunition, firearm accessories and gun components subject to strict scrutiny.",
+      "note": "In the same testimony he urges support for a state constitutional amendment that would make any gun restriction face the strictest court review, and closes with 'I urge your support of this amendment.'",
+      "subjects": [
+        "state constitutional amendment on the right to bear arms",
+        "limits on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:48:15.051Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "de06e634967b3e379e7524f59599bf2db7e58b36c5172a5c1101410a8c4c12d2",
+      "kind": "own-words",
+      "url": "https://www.breitbart.com/2nd-amendment/2026/01/30/kansas-attorney-general-kris-kobach-trump-doj-must-end-sbr-suppressor-registration",
+      "date": "2026-01-30",
+      "date_precision": "day",
+      "passage": "The bottom line is, there is no leg for the registration of SBRs and suppressors to stand on. It’s unconstitutional.",
+      "note": "Direct quote in a Breitbart interview at SHOT Show 2026; he says federal registration of short-barrelled rifles and suppressors should end now that the $200 tax is gone, and notes Kansas is suing over it.",
+      "subjects": [
+        "repeal of suppressor and short-barrelled rifle registration",
+        "National Firearms Act"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:48:15.051Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2b8bdafb1338704a37bc14a5c75bf2e8e06b2fb656c7007bb04f2c9f406f7117",
+      "kind": "own-words",
+      "url": "https://www.thepitchkc.com/?p=812085",
+      "date": "2024-02-16",
+      "date_precision": "day",
+      "passage": "That’s one of the major reasons why we need good citizens to be armed to help because there just aren’t enough law enforcement officers to protect everybody everywhere at every time,",
+      "note": "Direct quote in a Kansas Reflector story (carried by The Pitch) the day after the Kansas City parade shooting; he says armed citizens, not gun control, are needed to stop mass shootings, and he repeated support for a state constitutional amendment protecting firearms.",
+      "subjects": [
+        "armed citizens and mass shootings",
+        "gun control",
+        "right to bear arms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:48:15.051Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -353,6 +439,34 @@
       "found": 15,
       "at": "2026-11-04T16:43:22.064Z",
       "by": "search-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "federal agency gun rules (private-sale 'engaged in the business' rule)",
+        "repeal of registration for suppressors and short-barrelled rifles (National Firearms Act)",
+        "state constitutional amendment on the right to bear arms",
+        "armed citizens and mass shootings",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "sponsor list: covered by bulk bill data",
+        "On the Record (0 meetings)",
+        "campaign site https://www.kriskobach.com/ (read; home page and news list show nothing on the subject)",
+        "blocked: https://ag.ks.gov/media-center/news-releases/2024/05/01/kobach-leads-21-state-coalition-in-defense-of-second-amendment",
+        "blocked: https://ag.ks.gov/media-center/news-releases/2023/12/07/kobach-leads-coalition-demanding-biden-drop-unconstitutional-atf-rule",
+        "blocked: https://ag.ks.gov/ (official site, 403; not retried)",
+        "blocked: https://heartlandsignal.com/2024/01/24/kansas-attorney-general-kobach-says-the-atf-is-a-threat-to-the-second-amendment/",
+        "not reviewed: https://ballotpedia.org/Kris_Kobach (returned an empty page)",
+        "web search (2 searches): news on the person plus gun words; found a January 2026 interview, a February 2024 news story, and a February 2025 committee testimony",
+        "Kansas Legislature committee testimony page for HCR 5006 (read)",
+        "not reviewed: https://kspress.com/news/2026/08/10/kobach-states-federal-court-win-means-firearm-suppressor-registration-is-no-longer (page returned an archive list, not the story)",
+        "carry permits, red-flag orders, background checks, age limits, assault-style gun bans: nothing found in own words"
+      ],
+      "found": 4,
+      "at": "2026-11-18T21:48:15.051Z",
+      "by": "source-collector"
     }
   ]
 }

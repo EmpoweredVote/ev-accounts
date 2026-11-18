@@ -1,0 +1,39 @@
+{
+  "id": "KS-HB-2636-2019",
+  "scope": "state:ks",
+  "title": "HB2636 (2019-2020 Regular): Prohibiting the possession of large capacity ammunition magazines and the carrying of handguns with large capacity ammunition magazines.",
+  "urls": [
+    "https://www.kslegislature.gov/li_2020/b2019_20/measures/hb2636/",
+    "https://www.kslegislature.gov/li_2020/b2019_20/measures/documents/hb2636_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jerry Stogsdill",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b31c8743-df30-4583-96f4-5f52564a1f13"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Introduced; official copy, https://www.kslegislature.gov/li_2020/b2019_20/measures/documents/hb2636_00_0000.pdf)",
+    "fetched_at": "2026-11-18T21:20:59.861206Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2636-2019.introduced.pdf",
+      "sha256": "14556c81e5f624fa256ab59fbbfa3b2c93d515325fd90db9e98ccf935cc333a2"
+    },
+    "note": "Introduced version (as filed); no votes recorded, no date in text. Penalty quote in Section 1 is subsection (b)(2) as it reads after the bill, printed with a missing comma after (a)(5) because of a struck 'or'; it makes (a)(19) a level 9 felony. Quotes (19) and 2(a)(6) end with a stray space before the period in the source. Lab-employee exemption also extended to (a)(19)."
+  },
+  "operative_text": "Section 1 (K.S.A. 21-6301): (19) possessing, manufacturing, causing to be manufactured, selling, offering for sale, lending, purchasing or giving away any large capacity ammunition magazine designed for use with a handgun whether the person knows or has reason to know the size of the magazine.\nSection 1 (K.S.A. 21-6301): (5) \"Large capacity ammunition magazine\" means an ammunition feeding device that physically extends below the bottom of the grip of a handgun when fully seated into such handgun.\nSection 1 (K.S.A. 21-6301): (3) \"Handgun\" means a firearm that is designed to be fired by the use of a single hand.\nSection 1 (K.S.A. 21-6301): (2) subsection (a)(4), (a)(5) (a)(6) or (a)(19) is a severity level 9, nonperson felony;\nSection 2 (K.S.A. 21-6302): (6) a handgun with a large capacity ammunition magazine whether the person knows or has reason to know the size of the magazine.\nSection 2 (K.S.A. 21-6302): (2) subsection (a)(5) or (a)(6) is a severity level 9, nonperson felony."
+}

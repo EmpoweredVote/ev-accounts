@@ -135,6 +135,67 @@
         "fetched_at": "2026-11-04T19:13:24.950Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "74427fc67d08a441ec8fe1693c97bd0077b3c2d11414197149d6307ac08f5fbb",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2018/b2017_18/measures/hb2042/",
+      "date": "2018-02-02",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2042-2017",
+      "act": "yea",
+      "motion": "House Final Action - Passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Final Action - Passed as amended, 2018-02-02: yea (tally 76–44); census gate: none.",
+      "subjects": [
+        "out-of-state concealed carry licenses recognized for non-residents",
+        "concealed carry licence records kept confidential"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Amended; official copy, https://www.kslegislature.gov/li_2018/b2017_18/measures/documents/hb2042_02_0000.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2042-2017.amended.pdf",
+          "sha256": "21206f2e2d46897b69d330030b072772138d0f66597b93c4847e3acd9aa4db2f"
+        }
+      }
+    },
+    {
+      "id": "fa368c243d3739421293cb4be5bc5029dee5147d4bffa72922512d7c70e53ea2",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2018/b2017_18/measures/hb2278/",
+      "date": "2017-06-01",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2278-2017",
+      "act": "yea",
+      "motion": "House Concurred with amendments",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Concurred with amendments, 2017-06-01: yea (tally 91–33); census gate: none.",
+      "subjects": [
+        "concealed handguns in public buildings",
+        "hospitals, mental health centers and campuses removed from the carry exemption",
+        "public employers' liability for employee carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/li_2018/b2017_18/measures/documents/hb2278_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2278-2017.enrolled.pdf",
+          "sha256": "359530c01b5c7908d31ea22eeb5f578a24f771cfce7428c52da715076a271927"
+        }
+      }
     }
   ],
   "searches": [
@@ -151,6 +212,29 @@
       "found": 5,
       "at": "2026-11-04T19:13:24.950Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun regulation",
+        "Second Amendment",
+        "carry permits",
+        "background checks",
+        "firearm bans"
+      ],
+      "places": [
+        "status: lost the 2026-08-04 primary (Kansas governor race); page: https://lawrencekstimes.com/2026/08/04/kr-masterson-holscher-gov/ shows him well behind the winner in unofficial returns",
+        "On the Record (1 meeting, 2026-07-10 governor debate): nothing on the subject",
+        "campaign site https://scottschwab.com: read; only a general line that he would protect Second Amendment rights as governor (not saved: he is out of scope)",
+        "blocked: https://ballotpedia.org/Scott_Schwab (403)",
+        "sponsor list: covered by bulk bill data",
+        "one web search on name plus gun words: no own-words gun statements found",
+        "stopped after the primary loss, other places not searched"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:47:59.681Z",
+      "by": "source-collector"
     }
   ]
 }

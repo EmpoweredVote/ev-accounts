@@ -88,6 +88,397 @@
         "fetched_at": "2026-11-04T19:13:24.943Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "3a398486248da722940ff432df4fc5a54feccb9e02a38a2b846454dd95c1f56b",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/bills/HB2052/",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2052-2025",
+      "act": "yea",
+      "motion": "House Concurred with amendments",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Concurred with amendments, 2025-03-24: yea (tally 105–17); census gate: none.",
+      "subjects": [
+        "concealed carry licence eligibility and age 21 for standard licence",
+        "provisional licence converts to standard at 21",
+        "licence card surrendered on suspension or revocation",
+        "armed off-duty officers' personal information protected"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2052/hb2052_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2052-2025.enrolled.pdf",
+          "sha256": "68e955bee99e21e34a8f5d60dee10ce28577d95fd5ddc0f6412452804aab34f6"
+        }
+      }
+    },
+    {
+      "id": "f0e3bfb3f2f6843d106f10853cdc5ff26cc144a178da44d6f097095551fe013a",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/bills/HB2056/",
+      "date": "2023-02-23",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2056-2023",
+      "act": "nay",
+      "motion": "House Final Action - Passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Final Action - Passed as amended, 2023-02-23: nay (tally 77–45); census gate: none.",
+      "subjects": [
+        "concealed carry licence disqualifiers updated",
+        "licence denied or revoked when applicant becomes ineligible",
+        "licence card surrendered on suspension or revocation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Amended; official copy, https://www.kslegislature.gov/b2023_24/bills/download/?apn=b2023_24/year2/ready_for_publication/hb_2056/hb2056_02_0000.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2056-2023.amended.pdf",
+          "sha256": "efe65c97aa52c94105719a5b9a0d3e530be3e7d7e4da61ac7d88621e46b9b3d1"
+        }
+      }
+    },
+    {
+      "id": "f36a6d03653a6ad51062ac58ba97b226c05e2a3203a28df2c571b128fdf14631",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2022/b2021_22/measures/hb2058/",
+      "date": "2021-05-03",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2058-2021",
+      "act": "nay",
+      "motion": "House Motion to override veto prevailed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Motion to override veto prevailed, 2021-05-03: nay (tally 84–39); census gate: none.",
+      "subjects": [
+        "concealed carry licence for ages 18 to 20 (provisional)",
+        "out-of-state carry licences recognized for non-residents",
+        "felon-in-possession narrowed to person felonies and recent releases",
+        "firearm rights restored on expungement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/li_2022/b2021_22/measures/documents/hb2058_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2058-2021.enrolled.pdf",
+          "sha256": "ff5398d5601f58b36eeebca7ceee08e8d1f269cfd8dda03dd927dd9e419e797e"
+        }
+      }
+    },
+    {
+      "id": "b494d3079b06d214b62aed3af83e84f0a4c10d9ce80c476356b2c417cba0c5ef",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2022/b2021_22/measures/hb2089/",
+      "date": "2021-04-08",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2089-2021",
+      "act": "nay",
+      "motion": "House Concurred with amendments",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Concurred with amendments, 2021-04-08: nay (tally 79–44); census gate: none.",
+      "subjects": [
+        "standardized firearm safety education in schools",
+        "state board sets curriculum guidelines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/li_2022/b2021_22/measures/documents/hb2089_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2089-2021.enrolled.pdf",
+          "sha256": "5b7125f6554599e8f01405efdca4fe878ea223d3ffd203bcfe0ee6902987a258"
+        }
+      }
+    },
+    {
+      "id": "e70b9c2e88dee7705f816936adbbc6e40cd1e0f0a07a9e24500bb56f0a88e9d9",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/bills/HB2304/",
+      "date": "2023-04-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2304-2023",
+      "act": "nay",
+      "motion": "House Motion to override veto failed; Veto sustained",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Motion to override veto failed; Veto sustained, 2023-04-26: nay (tally 83–41); census gate: none.",
+      "subjects": [
+        "standard firearm safety lessons in schools",
+        "state board curriculum guidelines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2023_24/bills/download/?apn=b2023_24/year2/ready_for_publication/hb_2304/hb2304_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2304-2023.enrolled.pdf",
+          "sha256": "5e13d175cb613eb049b0174629698b0005391b7ca6bb88b7c9254e96ee3369d0"
+        }
+      }
+    },
+    {
+      "id": "29421a02d558b0d7618b099cd4c8539bee78ce316a8f5843c02d84d84b7fafaa",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/bills/HB2501/",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2501-2025",
+      "act": "nay",
+      "motion": "House Conference Committee Report was adopted",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Conference Committee Report was adopted, 2026-03-26: nay (tally 99–22); census gate: none.",
+      "subjects": [
+        "civil immunity for dealers holding guns under storage agreements",
+        "local rules on gun storage agreements preempted",
+        "suppressors and short-barrel shotguns no longer crimes",
+        "longer sentence if felony committed with suppressor or short shotgun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2501/hb2501_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2501-2025.enrolled.pdf",
+          "sha256": "5671904d81be103302e3ea8c655047a95793b91683e0c8cf75236938fd0d4aa0"
+        }
+      }
+    },
+    {
+      "id": "09073a4fe22f9e3cabd868776a6b84e269a26beeba1697af62681af11cfbc453",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/bills/SB116/",
+      "date": "2023-04-05",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-116-2023",
+      "act": "nay",
+      "motion": "House Conference Committee Report was adopted",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Conference Committee Report was adopted, 2023-04-05: nay (tally 86–37); census gate: none.",
+      "subjects": [
+        "no state license or renewal fee for a concealed handgun license",
+        "sheriff fingerprint fee of $32.50 kept"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2023_24/bills/download/?apn=b2023_24/year2/ready_for_publication/sb_116/sb116_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-SB-116-2023.enrolled.pdf",
+          "sha256": "1958ab190a42268bf3a7d10b420e74974a9f56afb37d983b6cfee58b492ee8b9"
+        }
+      }
+    },
+    {
+      "id": "843ba2e3667997a5b3e376cbf77fd4b7cdf9f3740717c5b7197e92c5c0f03640",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/bills/SB137/",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-137-2025",
+      "act": "nay",
+      "motion": "House Emergency Final Action - Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Emergency Final Action - Passed, 2025-03-20: nay (tally 90–28); census gate: none.",
+      "subjects": [
+        "forfeited firearms may be sold or transferred to a licensed federal firearms dealer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/sb_137/sb137_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-SB-137-2025.enrolled.pdf",
+          "sha256": "94d79e6e9bf4c48efe5471404fc74d693666d58df10565f1779db42bf7327404"
+        }
+      }
+    },
+    {
+      "id": "60d5324874898333abe3f481a578c60d4db42790e6baa5ebadc62420362044fb",
+      "kind": "own-words",
+      "url": "https://johnsoncountypost.com/2024/03/18/capitol-update-jo-ella-hoye-gun-reform-229592",
+      "date": "2024-03-18",
+      "date_precision": "day",
+      "passage": "You have the power to disrupt the routine. No more moments of silence without change. Use your voice to convince legislators to pass common sense reforms like background checks on all gun sales and secure storage. Guns everywhere or guns nowhere is a false choice.",
+      "note": "Her own weekly column in a local news site. She urges readers to push for background checks on all gun sales and secure storage laws.",
+      "subjects": [
+        "check every gun buyer",
+        "secure storage",
+        "general gun-safety statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:46:14.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "40abec67efd072cb70a4e9f4292a0c89f7cc4f99b28a9ee88ea79310b2ab5564",
+      "kind": "own-words",
+      "url": "https://johnsoncountypost.com/2024/03/18/capitol-update-jo-ella-hoye-gun-reform-229592",
+      "date": "2024-03-18",
+      "date_precision": "day",
+      "passage": "Violent crime started rising in Kansas after permitless carry passed in 2015. In 2021, the legislature allowed 18-, 19, -and 20-year olds to carry hidden, loaded handguns and gave violent criminals their guns back sooner.",
+      "note": "In her own column she describes Kansas's permitless carry law, the 2021 lower carry age and quicker gun restoration, and links them to rising violent crime.",
+      "subjects": [
+        "carry a gun without a permit",
+        "minimum age to carry",
+        "general gun-safety statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:46:14.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b76ffb8fa0d6a7570b63c93392a322d593504e9301fce189779bae641cb042ff",
+      "kind": "own-words",
+      "url": "https://johnsoncountypost.com/2023/04/03/capitol-update-rep-jo-ella-hoye-gun-lobby-198064",
+      "date": "2023-04-03",
+      "date_precision": "day",
+      "passage": "The other bill would remove the $100 state fee for concealed carry licenses from state statute. This would require taxpayers to reimburse the Attorney General $1.2 million from the State General Fund for the Concealed Carry Licensing Unit. I have no problem making fees more affordable, but this is more appropriately done through an annual proviso so that we can adjust the fee based on the availability of funds.",
+      "note": "Her own weekly column. She objects to taking the $100 concealed carry licence fee out of statute, saying fee changes belong in an annual budget proviso.",
+      "subjects": [
+        "concealed carry licence fee"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:46:14.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9131211508683032f17a8be033d85c705bbb40a7966d92693b3c1b6f74759369",
+      "kind": "own-words",
+      "url": "https://johnsoncountypost.com/2023/04/03/capitol-update-rep-jo-ella-hoye-gun-lobby-198064",
+      "date": "2023-04-03",
+      "date_precision": "day",
+      "passage": "My hope is that people see through it. More guns in the hands of untrained and potentially dangerous people are not making our communities safer. It's not too soon to talk about our gun laws. It's too late. Again.",
+      "note": "Closing passage of her column after a school shooting. She says more guns in untrained hands do not make communities safer and calls for talking about gun laws now.",
+      "subjects": [
+        "general gun-safety statements"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:46:14.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dfcc77a50ba6a4cf422d6a560d3e4e8492f3466a7dd4427292749658e09196fe",
+      "kind": "own-words",
+      "url": "https://johnsoncountypost.com/2023/04/03/capitol-update-rep-jo-ella-hoye-gun-lobby-198064",
+      "date": "2023-04-03",
+      "date_precision": "day",
+      "passage": "The onus is on adults to protect children from unsecured firearms. We must do more to keep kids safe from gun violence, but this bill forces any public school wanting to offer firearm safety to sole-source with the NRA – the very organization responsible for weak gun laws.",
+      "note": "Her own column. She objects to a bill requiring a standardized school gun-safety curriculum based on an NRA program, and says adults must keep guns secured from children.",
+      "subjects": [
+        "school gun-safety curriculum",
+        "secure storage"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:46:14.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "51192b31dee2ebb8e5f3efb48740d899673d2dffc972c57281d9892a3788731e",
+      "kind": "own-words",
+      "url": "https://lawrencekstimes.com/?p=22396",
+      "date": "2022-03-07",
+      "date_precision": "day",
+      "passage": "“Once these individuals have been convicted, they should have to relinquish the firearms that they may already have for the time period that they are prohibited from having them.”",
+      "note": "Quoted by the Kansas Reflector (republished by The Lawrence Times) from her podcast interview. She backs Senate Bill 192, which would require people convicted of domestic violence, stalking or battery to give up guns they already own for the prohibited period.",
+      "subjects": [
+        "guns taken from people convicted of domestic violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:46:14.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f9fdd050b4b5ac33a8321465347539c01aac6ccd73b3a630623fa940121120f5",
+      "kind": "own-words",
+      "url": "https://lawrencekstimes.com/?p=22396",
+      "date": "2022-03-07",
+      "date_precision": "day",
+      "passage": "“If you don’t want to lose your firearms, don’t be a violent person,” Hoye said. “This is specifically relating to people who are not law abiding gun owners.",
+      "note": "Quoted by the Kansas Reflector (republished by The Lawrence Times). She defends SB 192's gun-relinquishment requirement as aimed at people who are not law-abiding gun owners.",
+      "subjects": [
+        "guns taken from people convicted of domestic violence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-18T21:46:14.423Z",
+        "method": "webfetch"
+      }
     }
   ],
   "searches": [
@@ -132,6 +523,33 @@
       "found": 4,
       "at": "2026-11-04T19:13:24.943Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "check every gun buyer",
+        "secure storage",
+        "guns taken from people convicted of domestic violence",
+        "carry a gun without a permit",
+        "concealed carry licence fee",
+        "minimum age to carry",
+        "school gun-safety curriculum",
+        "general gun-safety statements"
+      ],
+      "places": [
+        "On the Record (0 meetings found)",
+        "sponsor list: covered by bulk bill data",
+        "blocked: https://www.joellahoye.com/ (no response)",
+        "blocked: https://ballotpedia.org/Jo_Ella_Hoye (empty page, status 202)",
+        "blocked: https://www.newsfromthestates.com/node/226156 (bot check, 403)",
+        "web search: news search on name plus gun words; found a 2022 news story, two 2023-2024 local-paper columns written by her, and a 2017 candidacy announcement (paywalled)",
+        "scope: a web search shows her running in the 2026 general election for House District 17 (no result seen); not confirmed from a page I fetched",
+        "not reviewed: official legislature member page, campaign social posts, floor-debate video"
+      ],
+      "found": 7,
+      "at": "2026-11-18T21:46:14.423Z",
+      "by": "source-collector"
     }
   ]
 }

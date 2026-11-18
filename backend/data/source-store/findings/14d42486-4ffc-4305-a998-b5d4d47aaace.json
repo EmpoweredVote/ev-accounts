@@ -1,0 +1,33 @@
+{
+  "politician_id": "14d42486-4ffc-4305-a998-b5d4d47aaace",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "Second Amendment general statements",
+        "gun safety laws"
+      ],
+      "places": [
+        "scope: sitting Lieutenant Governor and Commerce Secretary, not a legislator and not on the 2026 ballot (said he is not seeking any office; term ends January 2027); no bills or floor votes apply",
+        "On the Record (0 appearances)",
+        "official Commerce department site search for firearm: nothing on the subject",
+        "blocked: https://governor.kansas.gov/about-the-office/lt-governor/ (403)",
+        "blocked: https://governor.kansas.gov/?s=toland+firearm (403)",
+        "blocked: https://ballotpedia.org/David_Toland (403)",
+        "Wikipedia page: nothing on the subject",
+        "three web searches on name plus gun, firearm, Second Amendment, concealed carry: nothing on the subject by him",
+        "sponsor list: covered by bulk bill data",
+        "not reviewed: https://ontheissues.org/States/KS_Gun_Control.htm (lead only; no mention of him in the search result)"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:51:17.620Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -66,6 +66,38 @@
         "fetched_at": "2026-11-04T19:13:24.951Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "29421a02d558b0d7618b099cd4c8539bee78ce316a8f5843c02d84d84b7fafaa",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/bills/HB2501/",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2501-2025",
+      "act": "nay",
+      "motion": "House Conference Committee Report was adopted",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Conference Committee Report was adopted, 2026-03-26: nay (tally 99–22); census gate: none.",
+      "subjects": [
+        "civil immunity for dealers holding guns under storage agreements",
+        "local rules on gun storage agreements preempted",
+        "suppressors and short-barrel shotguns no longer crimes",
+        "longer sentence if felony committed with suppressor or short shotgun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2501/hb2501_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2501-2025.enrolled.pdf",
+          "sha256": "5671904d81be103302e3ea8c655047a95793b91683e0c8cf75236938fd0d4aa0"
+        }
+      }
     }
   ],
   "searches": [
@@ -105,6 +137,32 @@
       "found": 3,
       "at": "2026-11-04T19:13:24.951Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "suppressors and short-barrelled rifles",
+        "general statements on gun rights or gun safety"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "member page on the legislature site (https://www.kslegislature.gov/li/b2025_26/members/rep_boatman_abi_1/): confirms Abi Boatman as a House member; nothing on the subject",
+        "sponsor list: covered by bulk bill data",
+        "campaign site: https://www.abiboatman.com returned an empty page, blocked: https://www.abiboatman.com",
+        "https://victoryfund.org/candidate/abi-boatman/: candidate page, lists a House District 86 race with 2026 primary and general dates; nothing on the subject",
+        "Ballotpedia (https://ballotpedia.org/Elle_Abigail_Boatman): fetched, nothing on the subject; the page did not settle the 2026 primary result",
+        "Wikipedia (https://en.wikipedia.org/wiki/Abi_Boatman): in the House since 2026, appointed in January to fill a vacancy; nothing on the subject",
+        "news searches on her name plus gun words: nothing on the subject",
+        "status: appointed House District 86 member; a candidate for the 2026 general election per BallotReady; primary result not confirmed from a fetched page"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:46:02.354Z",
+      "by": "source-collector"
     }
   ]
 }

@@ -1,0 +1,39 @@
+{
+  "id": "KS-HB-2222-2021",
+  "scope": "state:ks",
+  "title": "HB2222 (2021-2022 Regular): Requiring the Kansas bureau of investigation to establish a Kansas voluntary do-not-sell firearms list to prevent the purchase of firearms by any person who voluntarily registers to be placed on the list.",
+  "urls": [
+    "https://www.kslegislature.gov/li_2022/b2021_22/measures/hb2222/",
+    "https://www.kslegislature.gov/li_2022/b2021_22/measures/documents/hb2222_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jarrod Ousley",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "938dfac8-41f2-4a09-b063-dde007d9511d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Introduced; official copy, https://www.kslegislature.gov/li_2022/b2021_22/measures/documents/hb2222_00_0000.pdf)",
+    "fetched_at": "2026-11-18T21:20:59.861206Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2222-2021.introduced.pdf",
+      "sha256": "a54e869ca96b9e0786753f1b1f8e6b1d1e2b2264a895a19e7fc07228e276a3a3"
+    },
+    "note": "As filed (Introduced); no passage vote recorded. New Sec. 5(c) bars discrimination in healthcare, employment, education, housing, insurance, benefits or contracting based on list status; treated as part of the list rules, not a separate topic. List-privacy sunset (July 1, 2026) in Sec. 3(b) not quoted."
+  },
+  "operative_text": "New Sec. 3 (new law): (a) The Kansas bureau of investigation shall establish the Kansas voluntary do-not-sell firearms list to prevent the purchase of firearms by any person who voluntarily registers to be placed onto the list.\nNew Sec. 4 (new law): (a) Any person 18 years of age or older may apply in writing to the Kansas bureau of investigation to request voluntary placement onto the list and, after being placed on such list, may apply in writing to the Kansas bureau of investigation to request removal from such list. (c) Upon placing a person onto the list, the Kansas bureau of investigation shall immediately forward a person's eligibility to purchase a firearm to the national instant criminal background check system created by the federal Brady handgun violence prevention act, public law 103-159, or any successor system. (d) The Kansas bureau of investigation shall not remove any person from the list until 21 days after receipt of such person's removal request.\nNew Sec. 5 (new law): (a) It shall be unlawful for any person to inquire as to whether another person has been placed onto the list for any purpose other than to determine such person's eligibility to purchase a firearm. (d) Violation of this section is a class B nonperson misdemeanor.\nSection 6 (K.S.A. 21-6301): (a)(19) purchasing any firearm by a person who has been placed onto the Kansas voluntary do-not-sell firearms list established by section 3, and amendments thereto. (b)(3) subsection (a)(10), (a)(11) or (a)(19) is a class B nonperson select misdemeanor;"
+}

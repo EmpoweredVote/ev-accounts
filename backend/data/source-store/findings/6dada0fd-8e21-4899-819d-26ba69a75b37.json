@@ -135,6 +135,192 @@
         "fetched_at": "2026-11-04T19:13:24.950Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "74427fc67d08a441ec8fe1693c97bd0077b3c2d11414197149d6307ac08f5fbb",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2018/b2017_18/measures/hb2042/",
+      "date": "2018-02-02",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2042-2017",
+      "act": "yea",
+      "motion": "House Final Action - Passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Final Action - Passed as amended, 2018-02-02: yea (tally 76–44); census gate: none.",
+      "subjects": [
+        "out-of-state concealed carry licenses recognized for non-residents",
+        "concealed carry licence records kept confidential"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Amended; official copy, https://www.kslegislature.gov/li_2018/b2017_18/measures/documents/hb2042_02_0000.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2042-2017.amended.pdf",
+          "sha256": "21206f2e2d46897b69d330030b072772138d0f66597b93c4847e3acd9aa4db2f"
+        }
+      }
+    },
+    {
+      "id": "f3e0d3b409d11ecddeaccd9f5a75579fe9f41604799bedf7df3bb55688490c28",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2022/b2021_22/measures/hb2058/",
+      "date": "2021-05-03",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2058-2021",
+      "act": "yea",
+      "motion": "House Motion to override veto prevailed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Motion to override veto prevailed, 2021-05-03: yea (tally 84–39); census gate: none.",
+      "subjects": [
+        "concealed carry licence for ages 18 to 20 (provisional)",
+        "out-of-state carry licences recognized for non-residents",
+        "felon-in-possession narrowed to person felonies and recent releases",
+        "firearm rights restored on expungement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/li_2022/b2021_22/measures/documents/hb2058_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2058-2021.enrolled.pdf",
+          "sha256": "ff5398d5601f58b36eeebca7ceee08e8d1f269cfd8dda03dd927dd9e419e797e"
+        }
+      }
+    },
+    {
+      "id": "8cf2b2b4f65ab28a4089d8e185d5304efeed18faa694b4e590ff3dcd8ddc5430",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2022/b2021_22/measures/hb2089/",
+      "date": "2021-04-08",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2089-2021",
+      "act": "yea",
+      "motion": "House Concurred with amendments",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Concurred with amendments, 2021-04-08: yea (tally 79–44); census gate: none.",
+      "subjects": [
+        "standardized firearm safety education in schools",
+        "state board sets curriculum guidelines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/li_2022/b2021_22/measures/documents/hb2089_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2089-2021.enrolled.pdf",
+          "sha256": "5b7125f6554599e8f01405efdca4fe878ea223d3ffd203bcfe0ee6902987a258"
+        }
+      }
+    },
+    {
+      "id": "a6896ac7a699aa3bff62792cbf1defa18d14bf4e8ba52ec070b2d84ce6acc30d",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2018/b2017_18/measures/hb2145/",
+      "date": "2018-04-05",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2145-2017",
+      "act": "yea",
+      "motion": "House Concurred with amendments in conference",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "KS House, House Concurred with amendments in conference, 2018-04-05: yea (tally 113–6); census gate: near-unanimous.",
+      "subjects": [
+        "firearm ban for fugitives and unlawful aliens",
+        "firearm ban under domestic-abuse protective orders",
+        "five-year firearm ban after domestic violence misdemeanor",
+        "Kansas-made suppressors exempted"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/li_2018/b2017_18/measures/documents/hb2145_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2145-2017.enrolled.pdf",
+          "sha256": "356c28e57d31153b6a946a97a462f272c02fc759d5b75bd4f825a05099f6c6ec"
+        }
+      }
+    },
+    {
+      "id": "fa368c243d3739421293cb4be5bc5029dee5147d4bffa72922512d7c70e53ea2",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2018/b2017_18/measures/hb2278/",
+      "date": "2017-06-01",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2278-2017",
+      "act": "yea",
+      "motion": "House Concurred with amendments",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Concurred with amendments, 2017-06-01: yea (tally 91–33); census gate: none.",
+      "subjects": [
+        "concealed handguns in public buildings",
+        "hospitals, mental health centers and campuses removed from the carry exemption",
+        "public employers' liability for employee carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/li_2018/b2017_18/measures/documents/hb2278_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2278-2017.enrolled.pdf",
+          "sha256": "359530c01b5c7908d31ea22eeb5f578a24f771cfce7428c52da715076a271927"
+        }
+      }
+    },
+    {
+      "id": "ac1c83324a7bcc0b1a58ae524e9ff7d52b2ee1890da45f125ce866cf242689d9",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2020/b2019_20/measures/hb2326/",
+      "date": "2019-03-27",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2326-2019",
+      "act": "yea",
+      "motion": "House Final Action - Passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Final Action - Passed as amended, 2019-03-27: yea (tally 83–41); census gate: none.",
+      "subjects": [
+        "concealed-carry license minimum age lowered to 18",
+        "recognition of other states' carry permits for non-residents",
+        "permit holders exempt from under-21 concealed-carry offence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Amended; official copy, https://www.kslegislature.gov/li_2020/b2019_20/measures/documents/hb2326_01_0000.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2326-2019.amended.pdf",
+          "sha256": "3b949985292bb4052e0fe02a297025caf9d6737429ca3748bb75bc8b6ebf3d5e"
+        }
+      }
     }
   ],
   "searches": [
@@ -192,6 +378,33 @@
       "found": 5,
       "at": "2026-11-04T19:13:24.950Z",
       "by": "identity-ks-2026-11-04"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "gun rights and the Second Amendment",
+        "carry a gun without a permit",
+        "check every gun buyer",
+        "ban on assault-style guns",
+        "limits on who may have a gun"
+      ],
+      "places": [
+        "status: in scope; state treasurer since 2023 and the nominee for state treasurer on the 2026 general-election ballot (official primary totals at https://sos.ks.gov/elections/26elec/2026-Primary-Election-Official-Vote-Totals.pdf, member page https://www.kslegislature.gov/li/b2025_26/members/rep_johnson_steven_1/ shows House District 108, Saline County)",
+        "On the Record (0 meetings: extractor found no appearances)",
+        "the legislature's member page (read; no subject content, its bill list loads by script)",
+        "the treasurer's own site, https://kansascash.ks.gov/meet_steven.html (read; nothing on the subject)",
+        "campaign site: none found in search results",
+        "https://sunflowerstatejournal.com/johnson-announces-candidacy-for-state-treasurer/ (news story on his candidacy; nothing on the subject)",
+        "https://sunflowerstatejournal.com/kansas-treasurers-race-heats-up/ (news story; an opponent's criticism of his gun votes, which is not his own words, so not saved)",
+        "https://cdn.ymaws.com/www.lkm.org/resource/resmgr/files/2026_candidates/treas_johnson_steven.pdf (not reviewed: could not be read as text)",
+        "blocked: https://ballotpedia.org/Steven_Johnson_(Kansas) (empty response)",
+        "web news searches on his name plus gun words (4 searches): nothing own-worded on the subject",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-18T21:46:39.444Z",
+      "by": "source-collector"
     }
   ]
 }
