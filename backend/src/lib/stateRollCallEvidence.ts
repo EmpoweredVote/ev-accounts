@@ -1329,6 +1329,319 @@ export function explainMarylandVote(bodies: string[], url: string): MdVoteRecord
   try { return readMaryland(bodies, r); } catch (e) { return { refused: `the reader failed: ${e instanceof Error ? e.message : e}` }; }
 }
 
+// ── Kansas: one page per vote, in two layouts; each member is linked to the session's own member id ───────────────────
+// www.kslegislature.gov has no robots.txt (404, 2026-11-18). Two layouts, by biennium:
+//
+// 2017-2022 and the 2020 and 2021 special sessions are an archive, li_<YYYY>/b<biennium>/measures/vote_view/je_<stamp>/
+// (li_2018/b2017_18, li_2020/b2019_20, li_2022/b2021_22, li_2020s/b2020s, li_2021s/b2021s). The Open States rows carry
+// the old host's address, www.kslegislature.org/li/b2017_18/measures/vote_view/je_.../, which now redirects to a 404:
+// the same vote is the archive address (convert.py ks_vote_page). The page prints the bill (<h2><a href=".../measures/
+// HB2476/">HB 2476</a></h2>), one heading "House - Final Action - Passed as amended; - 02/15/2018" (chamber, question,
+// day), then five headings, each followed by its members: "Yea - (107):", "Nay - (15):", "Present but not Voting -
+// (0):" (the Senate: "Present and Passing"), "Absent and Not Voting - (2):", "Not Voting - (0):". Each member is a link
+// to the member's page in that session, /li_2018/b2017_18/members/rep_alcala_john_1/, whose text is the surname
+// ("Alcala, "; "L. Ruiz, " when two share it).
+//
+// 2023-2024 and 2025-2026 are the current site, b<biennium>/vote/?apn=b<biennium>/year<1|2>/<house|senate>/
+// legislative_days/day<NNN>_<YYYYMMDD>/vote_records/<file>.odt (an HTML page, despite the .odt). It prints "House Roll
+// Call", the question ("Final Action - Passed as amended;"), the day, the bill (twice: the crumbs and the hero), the
+// tally twice ("Yea 74, Nay 49, Absent 2, Not Voting 0, Present 0" and one chip per group), and one list item per
+// member, data-status yea | nay | present | absent, linked to /b2025_26/legislators/rep_anderson_avery_1/ with the text
+// "Rep. Anderson". The 2023-24 rows of the dump carry the old je_ address, which leads nowhere: those votes are read
+// from each bill's history (fetch-legislature-rollcalls.ts) and the dump's copies are not placed.
+//
+// Neither layout prints a member's given name. The member id does: rep_<surname words>_<given words>_<n>. A member is
+// rendered as the given words that follow the surname words the page prints, then the surname as printed: "Blake
+// Carpenter" (rep_carpenter_blake_1, "B. Carpenter"), "Wanda Brownlee Paige" (rep_paige_wanda_1), "Jo Ella Hoye"
+// (rep_hoye_jo_ella_1), "Kristen O'Shea" (sen_oshea_kristen_1). A member whose id does not open with a surname word
+// the page prints, or leaves no given word, or whose printed initial is not the given name's, is kept as printed and
+// gives no line (a bare surname fits no one).
+//
+//   Kansas House vote je_20180215112754_700284 (2017-2018), HB 2476, 2018-02-15.
+//   Question: Final Action - Passed as amended
+//   Yea 107; Nay 15; Present 0; Absent 2; Not voting 0.
+//   Yea (107): John Alcala; …
+//   Kansas House vote je_20180215112754_700284 (2017-2018), HB 2476 - Final Action - Passed as amended (2018-02-15): John Alcala voted Yea.
+//
+// A vote is read only when the question is a vote on the bill (ksQuestionIsOnTheBill), each group lists the count its
+// heading prints (and on the current site, the count both tallies print), and the page's chamber, day and session are
+// the address's.
+
+export const KS_VOTES = ['Yea', 'Nay', 'Present', 'Absent', 'Not voting'] as const;
+export type KsVote = (typeof KS_VOTES)[number];
+const KS_SITE = 'https://www.kslegislature.gov/';
+/** No robots.txt (404, 2026-11-18), so no Crawl-delay is stated: one request a second is ours. */
+const KS_GAP_MS = 1_000;
+const KS_SIZE: Record<Chamber, number> = { House: 125, Senate: 40 };
+/** The archive's sessions: path prefix -> the Open States session. */
+export const KS_ARCHIVE: Readonly<Record<string, string>> = {
+  'li_2018/b2017_18': '2017-2018', 'li_2020/b2019_20': '2019-2020', 'li_2020s/b2020s': '2020S1', 'li_2022/b2021_22': '2021-2022', 'li_2021s/b2021s': '2021S1',
+};
+/** The current site's sessions: biennium -> the Open States session. */
+export const KS_CURRENT: Readonly<Record<string, string>> = { b2023_24: '2023-2024', b2025_26: '2025-2026' };
+const KS_ARCHIVE_URL = /^https:\/\/www\.kslegislature\.gov\/(li_20\d{2}s?\/b20\d{2}(?:_\d{2}|s))\/measures\/vote_view\/(je_(\d{4})(\d{2})(\d{2})\d{6}_\d+)\/$/;
+const KS_CURRENT_URL = /^https:\/\/www\.kslegislature\.gov\/(b20\d{2}_\d{2})\/vote\/\?apn=\1\/year[12]\/(house|senate)\/legislative_days\/day\d{3}_(\d{4})(\d{2})(\d{2})\/vote_records\/([A-Za-z0-9_]+)\.odt$/;
+const KS_MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+/**
+ * Is a Kansas question a vote on the bill? Final action (emergency, on a substitute, any outcome), a conference
+ * committee report (adopted or not), concurring in the other chamber's amendments (Kansas then sends the bill on; no
+ * other vote follows, as in Utah), a veto override (line item too), and the consent calendar. A Committee of the Whole
+ * vote (an amendment, a motion, its own recommendation) and every other motion is not (runner, 2026-11-16).
+ */
+export function ksQuestionIsOnTheBill(q: string): boolean {
+  const s = squash(q).replace(/[;.\s]+$/, '');
+  return /^(?:Emergency )?Final Action\b|^Conference Committee Report (?:was )?(?:not )?adopted\b|^Adopt CCR$|^Concurred with amendments\b|^Concur$|^Motion to override (?:line item )?veto (?:prevailed|failed)\b|^Override$|^Consent Calendar Passed$/i.test(s);
+}
+
+export interface KsVoteRef { state: 'KS'; stateName: 'Kansas'; session: string; voteId: string; chamber: Chamber | null; day: string; layout: 'archive' | 'current'; prefix: string }
+export interface KsVoteRecord { state: 'KS'; stateName: 'Kansas'; chamber: Chamber; session: string; voteId: string; bill: string; question: string; date: string; groups: Record<KsVote, string[]> }
+export interface KsVoteLine extends Omit<KsVoteRecord, 'groups'> { name: string; vote: KsVote }
+
+export function parseKansasVoteUrl(url: string): KsVoteRef | null {
+  const u = url.trim();
+  const a = KS_ARCHIVE_URL.exec(u);
+  if (a) {
+    const session = KS_ARCHIVE[a[1]];
+    return session ? { state: 'KS', stateName: 'Kansas', session, voteId: a[2], chamber: null, day: `${a[3]}-${a[4]}-${a[5]}`, layout: 'archive', prefix: a[1] } : null;
+  }
+  const c = KS_CURRENT_URL.exec(u);
+  if (c) {
+    const session = KS_CURRENT[c[1]];
+    return session ? { state: 'KS', stateName: 'Kansas', session, voteId: c[6], chamber: c[2] === 'house' ? 'House' : 'Senate', day: `${c[3]}-${c[4]}-${c[5]}`, layout: 'current', prefix: c[1] } : null;
+  }
+  return null;
+}
+
+/** "HB2476" or "HB 2476" -> "HB 2476"; null for anything else. */
+function ksBill(s: string): string | null {
+  const m = /^([HS](?:B|CR|R|JR))\s*0*([1-9]\d{0,4})$/i.exec(squash(s));
+  return m ? `${m[1].toUpperCase()} ${Number(m[2])}` : null;
+}
+
+const ksWords = (s: string): string[] => fold(s.replace(/['’]/g, '')).split(' ').filter(Boolean);
+
+/**
+ * A member as rendered: the given words of the member id after the surname words the page prints, then the surname as
+ * printed. The label as printed (no line) when the id does not fit the label. Throws on an id that is not a member id.
+ */
+export function ksMemberName(label: string, id: string, chamber: Chamber): string {
+  const m = /^(rep|sen)_([a-z]+(?:_[a-z]+)*)_(\d+)$/.exec(id);
+  if (!m) throw new Error(`not a member id: ${id}`);
+  if ((m[1] === 'rep') !== (chamber === 'House')) throw new Error(`a ${m[1] === 'rep' ? 'House' : 'Senate'} member on a ${chamber} vote: ${id}`);
+  const printed = squash(label.replace(/^(?:Rep|Sen)\.\s+/, '').replace(/,\s*$/, ''));
+  // an initial tells two members of one family name apart, before it ("A. Smith") or, in 2019-2020, after ("Carpenter, W.")
+  const before = /^([A-Z])\.\s+(.+)$/.exec(printed);
+  const after = /^(.+?),\s*([A-Z])\.$/.exec(printed);
+  const init = before ? [before[0], before[1], before[2]] : after ? [after[0], after[2], after[1]] : null;
+  const surname = init ? init[2] : printed;
+  const surWords = new Set(ksWords(surname).flatMap((w) => [w, w.replace(/-/g, '')]).concat([fold(surname).replace(/[\s'’-]/g, '')]));
+  const tokens = m[2].split('_');
+  let k = 0;
+  while (k < tokens.length && surWords.has(tokens[k])) k++;
+  // A member who changed her family name keeps the id she was first seated under: 2023-2024 prints "Blew" for
+  // rep_arnberger_tory_1 and "Lee" for rep_leehahn_tatum_1. When the id is one family word and one given word, the
+  // given word is the id's second, and the family name is the one the page prints ("Tory Blew").
+  if (!k && tokens.length === 2 && !init && /^[A-Za-z][A-Za-z'’-]*$/.test(surname)) return `${tokens[1][0].toUpperCase()}${tokens[1].slice(1)} ${surname}`;
+  const given = tokens.slice(k);
+  if (!k || !given.length) return printed;
+  if (init && given[0][0] !== init[1].toLowerCase()) return printed;
+  return `${given.map((g) => g[0].toUpperCase() + g.slice(1)).join(' ')} ${surname}`;
+}
+
+/** The vote, or why it was refused (the first check that failed). */
+function readKansas(bodies: string[], r: KsVoteRef): KsVoteRecord | { refused: string } {
+  const fail = (refused: string): { refused: string } => ({ refused });
+  if (bodies.length !== 1) return fail('not one vote page');
+  const html = bodies[0];
+  const labels = Object.fromEntries(KS_VOTES.map((v) => [v, [] as [string, string][]])) as Record<KsVote, [string, string][]>;
+  let chamber: Chamber;
+  let bill: string;
+  let question: string;
+  let date: string;
+  const memberPath = r.layout === 'archive' ? `/${r.prefix}/members/` : `/${r.prefix}/legislators/`;
+  const memberLink = new RegExp(`^${memberPath.replace(/\//g, '\\/')}((?:rep|sen)_[a-z_]+_\\d+)\\/$`);
+  if (r.layout === 'archive') {
+    // the bill is a link to its page (<a href="/li_2018/b2017_18/measures/HB2476/">HB 2476</a>), or, in the special
+    // sessions, plain text (<h2>HB2016</h2>)
+    const bills = [...html.matchAll(/<h2>\s*(?:<a href="\/([^"]+)\/measures\/([A-Za-z]+\d+)\/">[^<]*<\/a>|([A-Z]+\d+))\s*<\/h2>/g)];
+    if (bills.length !== 1 || (bills[0][1] !== undefined && bills[0][1] !== r.prefix)) return fail('the page does not name one bill of this session');
+    const b = ksBill(bills[0][2] ?? bills[0][3]);
+    if (!b) return fail(`a bill the reader cannot read: ${bills[0][2] ?? bills[0][3]}`);
+    bill = b;
+    const h3 = [...html.matchAll(/<h3>([\s\S]*?)<\/h3>/g)].map((x) => htmlText(x[1]));
+    const head = h3.map((x) => /^(House|Senate) - (.+?) - (\d{2})\/(\d{2})\/(\d{4})$/.exec(x)).filter(Boolean);
+    if (head.length !== 1) return fail('the page has no one heading of chamber, question and day');
+    chamber = head[0]![1] as Chamber;
+    question = squash(head[0]![2]).replace(/;$/, '');
+    date = `${head[0]![5]}-${head[0]![3]}-${head[0]![4]}`;
+    if (date !== r.day) return fail(`the page's day ${date} is not the address's ${r.day}`);
+    const headings: [RegExp, KsVote][] = [
+      [/^Yea - \((\d+)\):$/, 'Yea'], [/^Nay - \((\d+)\):$/, 'Nay'], [/^Present (?:and Passing|but not Voting) - \((\d+)\):$/, 'Present'],
+      [/^Absent and Not Voting - \((\d+)\):$/, 'Absent'], [/^Not Voting - \((\d+)\):$/, 'Not voting'],
+    ];
+    const parts = html.split(/<h3>/);
+    let g = 0;
+    for (const part of parts.slice(1)) {
+      const end = part.indexOf('</h3>');
+      const heading = htmlText(part.slice(0, end));
+      if (!/ - \(\d+\):$/.test(heading)) continue;
+      if (g >= headings.length) return fail(`a sixth group: ${heading}`);
+      const h = headings[g][0].exec(heading);
+      if (!h) return fail(`the groups are not in the order the reader knows: ${heading}`);
+      // the group's members run to the next heading or the end of the content
+      const body = part.slice(end + 5).split(/<\/?div\b|<!--/)[0];
+      const links = [...body.matchAll(/<a href="([^"]*)">([^<]*)<\/a>/g)];
+      if (body.replace(/<a href="[^"]*">[^<]*<\/a>/g, '').trim()) return fail(`the ${headings[g][1]} group holds something that is not a member`);
+      for (const l of links) {
+        const id = memberLink.exec(l[1]);
+        if (!id) return fail(`a member link the reader cannot read: ${l[1]}`);
+        labels[headings[g][1]].push([htmlText(l[2]), id[1]]);
+      }
+      if (labels[headings[g][1]].length !== Number(h[1])) return fail(`the ${headings[g][1]} group lists ${labels[headings[g][1]].length} members and prints ${h[1]}`);
+      g++;
+    }
+    if (g !== headings.length) return fail('the page does not print the five groups');
+  } else {
+    const kicker = [...html.matchAll(/<span class="list-kicker">([^<]*)<\/span>/g)].map((x) => squash(x[1]));
+    if (kicker.length !== 1 || kicker[0] !== `${r.chamber} Roll Call`) return fail('the page does not name the address\'s chamber');
+    chamber = r.chamber!;
+    const sub = [...html.matchAll(/<p class="list-hero-sub">([^<]*)<\/p>/g)];
+    if (sub.length !== 1) return fail('the page prints no one question');
+    question = htmlText(sub[0][1]).replace(/;$/, '');
+    const crumbs = [...html.matchAll(/<li class="breadcrumbs-item"><a href="\/([^/"]+)\/bills\/([A-Za-z]+\d+)\/">([^<]*)<\/a>/g)];
+    const hero = [...html.matchAll(/gavel<\/span>\s*<a href="\/([^/"]+)\/bills\/([A-Za-z]+\d+)\/">([^<]*)<\/a>/g)];
+    if (crumbs.length !== 1 || hero.length !== 1 || crumbs[0][1] !== r.prefix || hero[0][1] !== r.prefix || crumbs[0][2] !== hero[0][2]) return fail('the page does not name one bill of this session');
+    const b = ksBill(crumbs[0][2]);
+    if (!b || ksBill(crumbs[0][3]) !== b || ksBill(hero[0][3]) !== b) return fail(`a bill the reader cannot read: ${crumbs[0][2]}`);
+    bill = b;
+    const days = [...html.matchAll(/event<\/span>\s*([A-Z][a-z]+) (\d{1,2}), (\d{4})\s*<\/span>/g)];
+    const month = days.length === 1 ? KS_MONTHS.indexOf(days[0][1]) : -1;
+    if (month < 0) return fail('the page prints no one day');
+    date = `${days[0][3]}-${String(month + 1).padStart(2, '0')}-${days[0][2].padStart(2, '0')}`;
+    // a late sitting runs past midnight: 2026 Senate vote_407_HB2535, legislative day 54 (2026-04-10), voted 2026-04-11
+    const gap = (Date.parse(`${date}T00:00:00Z`) - Date.parse(`${r.day}T00:00:00Z`)) / 86_400_000;
+    if (gap !== 0 && gap !== 1) return fail(`the page's day ${date} is not the address's legislative day ${r.day}`);
+    const bar = [...html.matchAll(/aria-label="Yea (\d+), Nay (\d+), Absent (\d+), Not Voting (\d+), Present (\d+)"/g)];
+    if (bar.length !== 1) return fail('the page prints no tally');
+    const tally: Record<KsVote, number> = { Yea: Number(bar[0][1]), Nay: Number(bar[0][2]), Absent: Number(bar[0][3]), 'Not voting': Number(bar[0][4]), Present: Number(bar[0][5]) };
+    const STATUS: Record<string, KsVote> = { yea: 'Yea', nay: 'Nay', present: 'Present', absent: 'Absent', not_voting: 'Not voting', 'not-voting': 'Not voting', notvoting: 'Not voting' };
+    const chips = new Map<KsVote, number>();
+    for (const c of html.matchAll(/class="tally-chip tally-([a-z_-]+)[^"]*" data-vote-filter="[^"]*">([^<]*)<\/button>/g)) {
+      if (c[1] === 'all') continue;
+      const v = STATUS[c[1]];
+      const n = /(\d+)\s*$/.exec(c[2]);
+      if (!v || !n || chips.has(v)) return fail(`a tally chip the reader cannot read: ${c[1]}`);
+      chips.set(v, Number(n[1]));
+    }
+    for (const v of KS_VOTES) if ((chips.get(v) ?? 0) !== tally[v]) return fail(`the two tallies disagree on ${v}`);
+    const grid = html.indexOf('id="vote-list"');
+    const gridEnd = html.indexOf('</ul>', grid);
+    if (grid < 0 || gridEnd < 0) return fail('the page has no member list');
+    const items = [...html.slice(grid, gridEnd).matchAll(/<li class="vote-member[^"]*"\s+data-status="([^"]*)"[\s\S]*?<span class="vote-member-name"><a href="([^"]*)">([^<]*)<\/a><\/span>[\s\S]*?<\/li>/g)];
+    if ((html.slice(grid, gridEnd).match(/<li\b/g) ?? []).length !== items.length) return fail('a member item the reader cannot read');
+    for (const it of items) {
+      const v = STATUS[it[1]];
+      const id = memberLink.exec(it[2]);
+      if (!v || !id) return fail(`a member the reader cannot read: ${it[1]} ${it[2]}`);
+      labels[v].push([htmlText(it[3]), id[1]]);
+    }
+    for (const v of KS_VOTES) if (labels[v].length !== tally[v]) return fail(`the ${v} group lists ${labels[v].length} members and prints ${tally[v]}`);
+  }
+  if (!ksQuestionIsOnTheBill(question)) return fail(`the question is not a vote on the bill: ${question}`);
+  const all = KS_VOTES.flatMap((v) => labels[v]);
+  if (all.length > KS_SIZE[chamber]) return fail('more members than the chamber has');
+  if (new Set(all.map(([, id]) => id)).size !== all.length) return fail('a member is listed twice');
+  let groups: Record<KsVote, string[]>;
+  try {
+    groups = Object.fromEntries(KS_VOTES.map((v) => [v, labels[v].map(([l, id]) => ksMemberName(l, id, chamber))])) as Record<KsVote, string[]>;
+  } catch (e) { return fail(e instanceof Error ? e.message : String(e)); }
+  const names = KS_VOTES.flatMap((v) => groups[v]).map(fold);
+  if (new Set(names).size !== names.length) return fail('two members render as one name');
+  return { state: 'KS', stateName: 'Kansas', chamber, session: r.session, voteId: r.voteId, bill, question, date, groups };
+}
+
+const KS_SAID: Record<KsVote, string> = { Yea: 'voted Yea', Nay: 'voted Nay', Present: 'was present and did not vote', Absent: 'was absent', 'Not voting': 'did not vote' };
+
+export function renderKansasVote(v: KsVoteRecord): string {
+  return [
+    `Kansas ${v.chamber} vote ${v.voteId} (${v.session}), ${v.bill}, ${v.date}.`,
+    `Question: ${v.question}`,
+    KS_VOTES.map((k) => `${k} ${v.groups[k].length}`).join('; ') + '.',
+    ...KS_VOTES.map((k) => `${k} (${v.groups[k].length}): ${v.groups[k].join('; ')}`.trim()),
+  ].join('\n');
+}
+
+const KS_RENDER_HEAD = /^Kansas (House|Senate) vote ([A-Za-z0-9_]+) \((20\d{2}(?:-20\d{2}|S1))\), ([HS](?:B|CR|R|JR) \d+), (\d{4}-\d{2}-\d{2})\.$/;
+
+function parseKansasRender(text: string, url: string): KsVoteRecord | null {
+  const r = parseKansasVoteUrl(url);
+  const rows = text.split('\n');
+  const h = KS_RENDER_HEAD.exec(rows[0] ?? '');
+  const q = /^Question: (.+)$/.exec(rows[1] ?? '');
+  if (!r || !h || !q || rows.length !== 3 + KS_VOTES.length) return null;
+  if (h[2] !== r.voteId || h[3] !== r.session || (r.chamber && h[1] !== r.chamber)) return null;
+  const groups = {} as Record<KsVote, string[]>;
+  for (const [i, v] of KS_VOTES.entries()) {
+    const m = new RegExp(`^${v} \\((\\d+)\\):(.*)$`).exec(rows[3 + i]);
+    if (!m) return null;
+    groups[v] = m[2].split(';').map((s) => s.trim()).filter(Boolean);
+    if (groups[v].length !== Number(m[1])) return null;
+  }
+  if (rows[2] !== KS_VOTES.map((v) => `${v} ${groups[v].length}`).join('; ') + '.') return null;
+  return { state: 'KS', stateName: 'Kansas', chamber: h[1] as Chamber, session: r.session, voteId: r.voteId, bill: h[4], date: h[5], question: q[1], groups };
+}
+
+const KS_LINE = /^Kansas (House|Senate) vote ([A-Za-z0-9_]+) \((20\d{2}(?:-20\d{2}|S1))\), ([HS](?:B|CR|R|JR) \d+) - (.+) \((\d{4}-\d{2}-\d{2})\): (.+?) (voted Yea|voted Nay|was present and did not vote|was absent|did not vote)\.$/;
+
+export function formatKansasVoteLine(l: KsVoteLine): string {
+  return `Kansas ${l.chamber} vote ${l.voteId} (${l.session}), ${l.bill} - ${l.question} (${l.date}): ${l.name} ${KS_SAID[l.vote]}.`;
+}
+
+function parseKansasLine(text: string): KsVoteLine | null {
+  const m = KS_LINE.exec(text.trim());
+  const vote = m ? KS_VOTES.find((v) => KS_SAID[v] === m[8]) : undefined;
+  if (!m || !vote) return null;
+  return { state: 'KS', stateName: 'Kansas', chamber: m[1] as Chamber, voteId: m[2], session: m[3], bill: m[4], question: m[5], date: m[6], name: m[7].trim(), vote };
+}
+
+function verifyKansasLine(line: string, url: string, text: string, lastName: string, fullName: string): SnippetVerdict {
+  const l = parseKansasLine(line);
+  const r = parseKansasRender(text, url);
+  if (!l || !r) return { verdict: 'snippet_not_found' };
+  if (l.voteId !== r.voteId || l.chamber !== r.chamber || l.session !== r.session || l.bill !== r.bill || l.date !== r.date) return { verdict: 'snippet_not_found' };
+  if (normalizeText(l.question) !== normalizeText(r.question)) return { verdict: 'snippet_not_found' };
+  if (!r.groups[l.vote].some((n) => sameLabel(n, l.name))) return { verdict: 'snippet_not_found' };
+  const fits = KS_VOTES.flatMap((v) => r.groups[v]).filter((n) => fullNameLabelFits(n, lastName, fullName));
+  if (fits.length !== 1 || !sameLabel(fits[0], l.name)) return { verdict: 'name_not_present' };
+  return { verdict: 'verified', matchOffset: 0 };
+}
+
+function kansasLinesFor(url: string, text: string, lastName: string, fullName: string): string[] {
+  const r = parseKansasRender(text, url);
+  if (!r) return [];
+  const out: string[] = [];
+  for (const vote of KS_VOTES) {
+    for (const name of r.groups[vote]) {
+      if (fullNameLabelFits(name, lastName, fullName)) out.push(formatKansasVoteLine({ ...r, name, vote }));
+    }
+  }
+  return out.length === 1 ? out : [];
+}
+
+/** The vote an address names, read from its page. Null when any check fails. */
+export function readKansasVote(bodies: string[], url: string): KsVoteRecord | null {
+  const v = explainKansasVote(bodies, url);
+  return 'refused' in v ? null : v;
+}
+
+/** As readKansasVote, with the reason a vote is refused: for the fetch tool's report and the tests. */
+export function explainKansasVote(bodies: string[], url: string): KsVoteRecord | { refused: string } {
+  const r = parseKansasVoteUrl(url);
+  if (!r) return { refused: 'not a Kansas vote address' };
+  try { return readKansas(bodies, r); } catch (e) { return { refused: `the reader failed: ${e instanceof Error ? e.message : e}` }; }
+}
+
 /** How a fetched PDF reaches its reader: Maryland's as cells (pdfCellsBody), every other state's as lines (pdfLinesBody). */
 export function pdfBodyFor(url: string, items: { page: number; x: number; y: number; str: string; dir?: number }[]): string {
   return /^https:\/\/mgaleg\.maryland\.gov\/20\d{2}RS\/votes\//i.test(url.trim()) ? pdfCellsBody(items) : pdfLinesBody(items);
@@ -1352,11 +1665,12 @@ export function stateRollCallMinGapMs(url: string): number {
   if (parseSouthDakotaVoteUrl(url)) return SD_GAP_MS;
   if (parseMississippiVoteUrl(url)) return MS_GAP_MS;
   if (parseMarylandVoteUrl(url)) return MD_GAP_MS;
+  if (parseKansasVoteUrl(url)) return KS_GAP_MS;
   return formatOf(url)?.f.minGapMs ?? 0;
 }
 
 export function isStateRollCallUrl(url: string): boolean {
-  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null || parseMississippiVoteUrl(url) !== null || parseMarylandVoteUrl(url) !== null;
+  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null || parseMississippiVoteUrl(url) !== null || parseMarylandVoteUrl(url) !== null || parseKansasVoteUrl(url) !== null;
 }
 
 /**
@@ -1373,6 +1687,7 @@ export function stateRollCallDocs(url: string): string[] | null {
   if (ms) return mississippiDocs(ms);
   const md = parseMarylandVoteUrl(url);
   if (md) return marylandDocs(md);
+  if (parseKansasVoteUrl(url)) return [url.trim()];
   return formatOf(url) ? [url.trim()] : null;
 }
 
@@ -1393,6 +1708,10 @@ export function readStateRollCallDocs(bodies: string[], url: string): string | n
   if (parseMarylandVoteUrl(url)) {
     const v = readMarylandVote(bodies, url);
     return v ? renderMarylandVote(v) : null;
+  }
+  if (parseKansasVoteUrl(url)) {
+    const v = readKansasVote(bodies, url);
+    return v ? renderKansasVote(v) : null;
   }
   if (bodies.length !== 1) return null;
   const r = readStateRollCallHtml(bodies[0], url);
@@ -1431,6 +1750,13 @@ export function readStateRollCallRecord(bodies: string[], url: string): StateRol
     return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: v.seq, bill: v.bill, question: v.question,
       date: v.date, groups: { Yea: v.groups.Yea, Nay: v.groups.Nay, 'Absent or not voting': [...v.groups['Not voting'], ...v.groups.Excused, ...v.groups.Absent] } } : null;
   }
+  if (parseKansasVoteUrl(url)) {
+    // Kansas: members by the names rendered from their member ids (a member whose id does not fit, as printed). Present,
+    // absent and not voting are one group here.
+    const v = readKansasVote(bodies, url);
+    return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: 0, bill: v.bill, question: v.question,
+      date: v.date, groups: { Yea: v.groups.Yea, Nay: v.groups.Nay, 'Absent or not voting': [...v.groups.Present, ...v.groups.Absent, ...v.groups['Not voting']] } } : null;
+  }
   return bodies.length === 1 ? readStateRollCallHtml(bodies[0], url) : null;
 }
 
@@ -1455,8 +1781,9 @@ export function renderStateRollCall(r: StateRollCall): string {
 
 const RENDER_HEAD = /^(.+) (House|Senate) roll call (\d+) \(([A-Za-z0-9]+)\), (\d{4}-\d{2}-\d{2})\.$/;
 
-export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | Omit<SdVoteRecord, 'unique'> | Omit<MsVoteRecord, 'billType' | 'billNum'> | MdVoteRecord | null {
+export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | Omit<SdVoteRecord, 'unique'> | Omit<MsVoteRecord, 'billType' | 'billNum'> | MdVoteRecord | KsVoteRecord | null {
   if (parseMarylandVoteUrl(url)) return parseMarylandRender(text, url);
+  if (parseKansasVoteUrl(url)) return parseKansasRender(text, url);
   if (parseOhioVoteUrl(url)) return parseOhioRender(text, url);
   if (parseSouthDakotaVoteUrl(url)) return parseSouthDakotaRender(text, url);
   if (parseMississippiVoteUrl(url)) return parseMississippiRender(text, url);
@@ -1488,8 +1815,8 @@ export function formatStateRollCallLine(l: StateRollCallLine): string {
   return `${l.stateName} ${l.chamber} roll call ${l.rollNum} (${l.session}), ${l.bill} - ${l.question} (${l.date}): ${l.name} ${SAID[l.vote]}.`;
 }
 
-export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | MsVoteLine | MdVoteLine | null {
-  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text) ?? parseMississippiLine(text) ?? parseMarylandLine(text);
+export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | MsVoteLine | MdVoteLine | KsVoteLine | null {
+  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text) ?? parseMississippiLine(text) ?? parseMarylandLine(text) ?? parseKansasLine(text);
 }
 
 function parseUtahLine(text: string): StateRollCallLine | null {
@@ -1548,6 +1875,7 @@ export function verifyStateRollCallLine(line: string, url: string, text: string,
   if (parseSouthDakotaVoteUrl(url)) return verifySouthDakotaLine(line, url, text, lastName, fullName);
   if (parseMississippiVoteUrl(url)) return verifyMississippiLine(line, url, text, lastName, fullName);
   if (parseMarylandVoteUrl(url)) return verifyMarylandLine(line, url, text, lastName, fullName);
+  if (parseKansasVoteUrl(url)) return verifyKansasLine(line, url, text, lastName, fullName);
   const l = parseUtahLine(line);
   const r = parseUtahRender(text, url);
   if (!l || !r) return { verdict: 'snippet_not_found' };
@@ -1565,6 +1893,7 @@ export function stateRollCallLinesFor(url: string, text: string, lastName: strin
   if (parseSouthDakotaVoteUrl(url)) return southDakotaLinesFor(url, text, lastName, fullName);
   if (parseMississippiVoteUrl(url)) return mississippiLinesFor(url, text, lastName, fullName);
   if (parseMarylandVoteUrl(url)) return marylandLinesFor(url, text, lastName, fullName);
+  if (parseKansasVoteUrl(url)) return kansasLinesFor(url, text, lastName, fullName);
   const r = parseUtahRender(text, url);
   if (!r) return [];
   const out: string[] = [];

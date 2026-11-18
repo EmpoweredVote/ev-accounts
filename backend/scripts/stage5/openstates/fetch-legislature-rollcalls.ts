@@ -34,7 +34,7 @@ import { fileURLToPath } from 'node:url';
 import { decodeHtmlBytes, EMPOWERED_VOTE_UA } from '../../../src/lib/verificationFetch.js';
 import { fetchWithHostTrust } from '../../../src/lib/adapters/hostTrust.js';
 import { extractPdfItems, extractPdfText, looksLikePdfBytes } from '../../../src/lib/pdfText.js';
-import { explainMarylandVote, explainMississippiVote, isStateRollCallUrl, MD_PAGE_YEARS, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
+import { explainKansasVote, explainMarylandVote, explainMississippiVote, isStateRollCallUrl, KS_ARCHIVE, KS_CURRENT, ksQuestionIsOnTheBill, MD_PAGE_YEARS, parseKansasVoteUrl, parseMarylandVoteUrl, msQuestionIsOnTheBill, parseMississippiVoteUrl, pdfBodyFor, readStateRollCallRecord, sdQuestionIsOnTheBill, SD_SESSIONS, stateRollCallDocs, stateRollCallMinGapMs, type StateRollCall } from '../../../src/lib/stateRollCallEvidence.js';
 
 /** One floor roll call as a bill's vote list gives it. */
 /** tally: null when the vote list prints none (Mississippi): the reader's own checks of the printed totals stand alone. */
@@ -135,7 +135,92 @@ export function mdVoteFromProceedings(body: string, session: string, bill: strin
 }
 const mdTag = (s: string): string => s.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&#39;/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 
+const KS_BILL = /^([HS](?:B|CR|R|JR))\s*0*([1-9]\d{0,4})$/i;
+/** A Kansas history action that is a vote on something other than the bill: the Committee of the Whole, a motion. */
+export const KS_MOTION_ACTION = /^(?:Committee of the Whole\b|Motion\b|Substitute motion\b|.*\bmotioned\b|Part \d+ was\b|Withdraw\b|Ruling of the chair\b|Point of order\b)/i;
+const ksSite = (session: string): { archive: string } | { current: string } | null => {
+  const a = Object.entries(KS_ARCHIVE).find(([, s]) => s === session);
+  if (a) return { archive: a[0] };
+  const c = Object.entries(KS_CURRENT).find(([, s]) => s === session);
+  return c ? { current: c[0] } : null;
+};
+
+/**
+ * One Kansas history row with a vote link: the address, the chamber, the action and its tally. The archive prints
+ * "Yea: 91 Nay: 29" on the link; the current site "Yea 83, Nay 37, Absent 5" (a group of 0 is not printed).
+ */
+export function ksReadHistory(body: string, session: string, bill: string): BillIndex {
+  const m = KS_BILL.exec(bill.replace(/[\s.]+/g, ''));
+  const site = ksSite(session);
+  if (!m || !site) throw new Error(`not a Kansas bill and session: ${bill} ${session}`);
+  const tag = `${m[1].toUpperCase()}${Number(m[2])}`;
+  const out: BillIndex = { floor: [], committee: 0, voice: 0, motion: 0, motions: [] };
+  const seen = new Set<string>();
+  const add = (url: string, chamber: string, action: string, yea: number, nay: number): void => {
+    if (seen.has(url)) return;
+    seen.add(url);
+    const v = parseKansasVoteUrl(url);
+    if (!v || v.session !== session || (v.chamber && v.chamber !== chamber)) throw new Error(`a vote the tool cannot read: ${chamber} ${action} ${url}`);
+    if (!ksQuestionIsOnTheBill(action)) {
+      if (!KS_MOTION_ACTION.test(action)) throw new Error(`a vote whose action the tool does not know: ${chamber} ${action}`);
+      out.motion!++; out.motions!.push(`${url} ${chamber} ${action}`); return;
+    }
+    // yeas and nays only: the third figure is not printed alike in both layouts (-1), and is not compared (buildRollCall)
+    out.floor.push({ url, motion: action, tally: [yea, nay, -1] });
+  };
+  if ('archive' in site) {
+    // the archive's bill page: "<h1>HB 2476</h1>", and one table row per action, in tabs of ten, all on the page
+    const h1 = [...body.matchAll(/<h1>\s*([^<]+?)\s*<\/h1>/g)].map((x) => x[1].replace(/\s+/g, ''));
+    // a substitute keeps its number: "<h1>S Sub for HB 2278</h1>" (2017-2018), "H Sub for Sub for SB 53"
+    if (!h1.some((x) => x.toUpperCase().replace(/^(?:[HS]SUBFOR|SUBFOR)+/, '') === tag)) throw new Error(`the bill page is not ${bill} of ${session}`);
+    for (const row of body.matchAll(/<tr>([\s\S]*?)<\/tr>/g)) {
+      if (!/vote_view/.test(row[1])) continue;
+      const cells = [...row[1].matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/g)].map((x) => x[1]);
+      const links = [...row[1].matchAll(/<a href="(\/[^"]*\/measures\/vote_view\/je_\d{14}_\d+\/)">\s*Yea: (\d+) Nay: (\d+)\s*<\/a>/g)];
+      if (links.length !== 1 || (row[1].match(/vote_view/g) ?? []).length !== 1 || cells.length < 3) throw new Error(`a vote row the tool cannot read: ${ksTag(row[1]).slice(0, 200)}`);
+      const action = ksTag(cells[2].replace(/<a href="[^"]*vote_view[\s\S]*$/, '')).replace(/;$/, '');
+      add(`https://www.kslegislature.gov${links[0][1]}`, ksTag(cells[1]), action, Number(links[0][2]), Number(links[0][3]));
+    }
+    return out;
+  }
+  // the current site's history, votes only: every vote of the bill must be on this one page
+  const shown = /Showing 1(?:&ndash;|–)(\d+) of (\d+) entries/.exec(body);
+  const rows = [...body.matchAll(/<tr class="history-row[^"]*">([\s\S]*?)<\/tr>/g)];
+  // a bill never voted on prints no table at all, only this line (2025-2026 HB 2104; 2023-2024 HCR 5020)
+  if (!shown && !rows.length && /<p[^>]*>No votes recorded yet\.<\/p>/.test(body) && !/\/vote\/\?apn=/.test(body)) return out;
+  if (!shown || shown[1] !== shown[2] || Number(shown[2]) !== rows.length) throw new Error(`the history of ${bill} does not show all its votes on one page`);
+  for (const row of rows) {
+    const chamber = /<span class="history-chamber[^"]*">(House|Senate)<\/span>/.exec(row[1]);
+    const prim = /<td class="col-primary">([\s\S]*?)<\/td>/.exec(row[1]);
+    const links = prim ? [...prim[1].matchAll(/<a href="(\/b20\d{2}_\d{2}\/vote\/\?apn=[^"]+\.odt)"[^>]*>\s*Yea (\d+), Nay (\d+)(?:, [A-Za-z ]+ \d+)*\s*<\/a>/g)] : [];
+    if (!chamber || !prim || links.length !== 1 || (prim[1].match(/\/vote\//g) ?? []).length !== 1) throw new Error(`a vote row the tool cannot read: ${ksTag(row[1]).slice(0, 200)}`);
+    const action = ksTag(prim[1].replace(/<a href="[^"]*\/vote\/[\s\S]*$/, '')).replace(/;$/, '');
+    add(`https://www.kslegislature.gov${links[0][1].replace(/&amp;/g, '&')}`, chamber[1], action, Number(links[0][2]), Number(links[0][3]));
+  }
+  return out;
+}
+const ksTag = (s: string): string => s.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&#39;/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+
 export const INDEX: Record<string, StateIndex> = {
+  // www.kslegislature.gov (read 2026-11-18; no robots.txt). 2017-2022 and the special sessions: the archive's bill page,
+  // /li_2018/b2017_18/measures/HB2476/, lists every action, and a recorded vote as a link on its tally ("Conference
+  // Committee Report was adopted; <a href="/li_2018/b2017_18/measures/vote_view/je_.../"> Yea: 91 Nay: 29</a>"). 2023
+  // on: the bill's history, /b2023_24/bills/SB113/history/?filter=votes&per_page=50, lists every vote ("Yea 83, Nay 37,
+  // Absent 5"). A Committee of the Whole vote or a motion (KS_MOTION_ACTION) is counted, not read; any other action
+  // stops the tool. Kansas records no committee roll call on the bill page. Each vote is cited on its own page
+  // (stateRollCallEvidence.ts).
+  KS: {
+    minGapMs: 1_000, // no robots.txt, so no Crawl-delay stated: one a second is ours
+    billUrl(session, bill) {
+      const m = KS_BILL.exec(bill.replace(/[\s.]+/g, ''));
+      const site = ksSite(session);
+      if (!m || !site) return null;
+      const tag = `${m[1].toUpperCase()}${Number(m[2])}`;
+      // the archive answers lower case for every session; upper case only up to 2017-2018 (2019-2020 /HB2036/ is a 404)
+      return 'archive' in site ? `https://www.kslegislature.gov/${site.archive}/measures/${tag.toLowerCase()}/` : `https://www.kslegislature.gov/${site.current}/${/R$/.test(m[1].toUpperCase()) ? 'resolutions' : 'bills'}/${tag}/history/?filter=votes&per_page=50`;
+    },
+    read: ksReadHistory,
+  },
   // mgaleg.maryland.gov (read 2026-11-18; no robots.txt). The Open States dump holds no roll call of the 2023 session.
   // A bill's page, /mgawebsite/Legislation/Details/<sb0001>?ys=2023RS, lists every action as a block (Chamber, Calendar
   // Date, Action), and a recorded vote as a link on its tally: "Third Reading Passed <a href=/2023RS/votes/senate/0370.pdf>
@@ -492,7 +577,8 @@ export function buildRollCall(bill: string, v: IndexedVote, docs: string | strin
   const r = readStateRollCallRecord(Array.isArray(docs) ? docs : [docs], v.url);
   if (!r) {
     const ms = parseMississippiVoteUrl(v.url) ? explainMississippiVote(Array.isArray(docs) ? docs : [docs], v.url)
-      : parseMarylandVoteUrl(v.url) ? explainMarylandVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
+      : parseMarylandVoteUrl(v.url) ? explainMarylandVote(Array.isArray(docs) ? docs : [docs], v.url)
+      : parseKansasVoteUrl(v.url) ? explainKansasVote(Array.isArray(docs) ? docs : [docs], v.url) : null;
     return { refused: ms && 'refused' in ms ? `the page did not read as a roll call: ${ms.refused}` : 'the page did not read as a roll call' };
   }
   // South Dakota's record names its session; it must be the session asked for
@@ -505,7 +591,8 @@ export function buildRollCall(bill: string, v: IndexedVote, docs: string | strin
   // House concurrence: 62-4, 4 excused on the record): the yeas and nays are compared there, and the record's list,
   // which its own counts check (stateRollCallEvidence.ts), is kept. The fetch counts each such vote.
   // Maryland's bill page prints yeas and nays only.
-  const compared = r.state === 'SD' || r.state === 'MD' ? 2 : 3;
+  // Kansas's history prints yeas and nays (the archive) or leaves out a group of 0 (the current site).
+  const compared = r.state === 'SD' || r.state === 'MD' || r.state === 'KS' ? 2 : 3;
   if (v.tally && got.slice(0, compared).join() !== v.tally.slice(0, compared).join()) return { refused: `the page's tally ${got.join('-')} is not the bill file's ${v.tally.join('-')}` };
   const failed = /\b(fail(ed|s)?|defeated|rejected|refuse[sd]?)\b/i.test(v.motion);
   const passed = /\b(pass(ed|es)?|adopt(ed|s)?|concurs?|approved)\b/i.test(v.motion) && !failed ? 1 : failed ? 0 : got[0] > got[1] ? 1 : 0;

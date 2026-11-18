@@ -41,6 +41,8 @@ describe('names and jurisdictions', () => {
   it('expands nicknames both ways', () => {
     expect(getNameVariants('Dave')).toEqual(expect.arrayContaining(['dave', 'david']));
     expect(getNameVariants('David')).toEqual(expect.arrayContaining(['david', 'dave']));
+    // Kansas prints Rep. Chip VanHouden as Charles (member id rep_vanhouden_charles_1)
+    expect(getNameVariants('Chip')).toEqual(expect.arrayContaining(['charles']));
     expect(getNameVariants('Zed')).toEqual(['zed']);
     // LegiScan prints NC Rep. Phil Shepard as "Phillip" (2026-11-06); "Philip" stays matched too.
     expect(getNameVariants('Phil')).toEqual(expect.arrayContaining(['phil', 'philip', 'phillip']));

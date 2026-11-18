@@ -6,6 +6,7 @@ import {
   parseStateRollCallLine, stateLabelFits, stateRollCallLinesFor, verifyStateRollCallLine, STATE_VOTES,
   readStateRollCallDocs, stateRollCallDocs, stateRollCallMinGapMs, fullNameLabelFits,
   explainMarylandVote, mdQuestionIsOnTheBill, pdfCellsBody, readStateRollCallRecord,
+  explainKansasVote, ksQuestionIsOnTheBill, ksMemberName, parseKansasVoteUrl,
 } from './stateRollCallEvidence.js';
 import { fetchStateRollCallText, renderStateRollCallHtml, resetStateRollCallPacing } from './adapters/stateRollCallAdapter.js';
 import { verifyEvidence, type StanceRow } from './researchVerifier.js';
@@ -1031,5 +1032,152 @@ describe('state roll-call pages — Maryland lines', () => {
     expect(verifyStateRollCallLine(l.replace('was absent', 'voted Nay'), MD_HOU_2026, t, 'Metzgar', 'Ric Metzgar').verdict).toBe('snippet_not_found');
     expect(stateRollCallLinesFor(MD_HOU_2026, t, 'Boafo', 'Adrian Boafo')[0]).toMatch(/Adrian Boafo did not vote\.$/);
     expect(stateRollCallLinesFor(MD_HOU_2026, t, 'Peña-Melnyk', 'Joseline A. Peña-Melnyk')).toEqual([]);
+  });
+});
+
+// Saved 2026-11-18 from www.kslegislature.gov with the verifier's own user-agent. 2017-2022 and the special sessions are
+// the archive's vote pages (li_YYYY); 2023 on, the current site's. The reader prints no party.
+const KS = 'https://www.kslegislature.gov/';
+const ksPage = (name: string): string => readFileSync(fileURLToPath(new URL(`./__fixtures__/stateRollCall/${name}.html`, import.meta.url)), 'utf8');
+const KS_H18 = `${KS}li_2018/b2017_18/measures/vote_view/je_20180329105013_233428/`;
+const KS_S17 = `${KS}li_2018/b2017_18/measures/vote_view/je_20170222110146_941423/`;
+const KS_S17_MOTION = `${KS}li_2018/b2017_18/measures/vote_view/je_20170601142214_051767/`;
+const KS_H20S = `${KS}li_2020s/b2020s/measures/vote_view/je_20200603210950_181372/`;
+const KS_H26 = `${KS}b2025_26/vote/?apn=b2025_26/year2/house/legislative_days/day054_20260410/vote_records/0426_HB2513.odt`;
+const KS_S26 = `${KS}b2025_26/vote/?apn=b2025_26/year2/senate/legislative_days/day054_20260410/vote_records/vote_407_HB2535.odt`;
+const KS_H23 = `${KS}b2023_24/vote/?apn=b2023_24/year1/house/legislative_days/day063_20230428/vote_records/0353_SB113.odt`;
+const ksRender = (url: string, html: string): string => {
+  const t = readStateRollCallDocs([html], url);
+  if (!t) throw new Error('the page did not read');
+  return t;
+};
+const ksWhy = (url: string, html: string): string => {
+  const v = explainKansasVote([html], url);
+  return 'refused' in v ? v.refused : 'read';
+};
+const KS_STEVE_ALFORD = 'Kansas House vote je_20180329105013_233428 (2017-2018), SB 328 - Final Action - Passed as amended (2018-03-29): Steve Alford voted Yea.';
+
+describe('state roll-call pages — Kansas address', () => {
+  it('knows an archive vote page and a current-site vote page, each read alone, a second apart', () => {
+    expect(parseKansasVoteUrl(KS_H18)).toMatchObject({ session: '2017-2018', voteId: 'je_20180329105013_233428', chamber: null, day: '2018-03-29', layout: 'archive' });
+    expect(parseKansasVoteUrl(KS_H20S)).toMatchObject({ session: '2020S1', layout: 'archive' });
+    expect(parseKansasVoteUrl(KS_S26)).toMatchObject({ session: '2025-2026', voteId: 'vote_407_HB2535', chamber: 'Senate', day: '2026-04-10', layout: 'current' });
+    expect(stateRollCallDocs(KS_H26)).toEqual([KS_H26]);
+    expect(stateRollCallMinGapMs(KS_H18)).toBe(1_000);
+    // the old host the dump stores, plain http, an archive prefix that is not the session's, a look-alike host, a bill page
+    for (const u of [KS_H18.replace('www.kslegislature.gov/li_2018', 'www.kslegislature.org/li'), KS_H18.replace('https', 'http'),
+      KS_H18.replace('li_2018/', 'li_2020/'), KS_H26.replace('.gov/', '.gov.example.com/'), `${KS}li_2018/b2017_18/measures/hb2476/`,
+      KS_H26.replace('.odt', '.pdf')]) {
+      expect(isStateRollCallUrl(u)).toBe(false);
+    }
+  });
+
+  it('turns a member link and its printed label into a full name, and keeps a label that does not fit as printed', () => {
+    expect(ksMemberName('Brownlee Paige', 'rep_paige_wanda_1', 'House')).toBe('Wanda Brownlee Paige');
+    expect(ksMemberName("O'Shea", 'sen_oshea_kristen_1', 'Senate')).toBe("Kristen O'Shea");
+    // an initial before the family name, or after it (2019-2020 prints both), must be the given name's
+    expect(ksMemberName('A. Smith', 'rep_smith_adam_1', 'House')).toBe('Adam Smith');
+    expect(ksMemberName('Carpenter, W.', 'rep_carpenter_will_1', 'House')).toBe('Will Carpenter');
+    expect(ksMemberName('Carpenter, B.', 'rep_carpenter_will_1', 'House')).toBe('Carpenter, B.');
+    // she was elected as Tory Arnberger; the 2023 pages print her married name, and the id keeps the first one
+    expect(ksMemberName('Blew', 'rep_arnberger_tory_1', 'House')).toBe('Tory Blew');
+    expect(ksMemberName('Lee', 'rep_leehahn_tatum_1', 'House')).toBe('Tatum Lee');
+    // an id of more words than a family and a given name is not split by guess
+    expect(ksMemberName('Smith', 'rep_jones_mary_ann_1', 'House')).toBe('Smith');
+    expect(() => ksMemberName('Alcala', 'sen_alcala_john_1', 'House')).toThrow();
+  });
+});
+
+describe('state roll-call pages — reading Kansas', () => {
+  it('reads a 2018 archive House vote: bill, question, day, tally and every member by full name', () => {
+    const t = ksRender(KS_H18, ksPage('ks-2018-house-je_20180329105013_233428'));
+    expect(t.split('\n').slice(0, 3)).toEqual([
+      'Kansas House vote je_20180329105013_233428 (2017-2018), SB 328, 2018-03-29.', 'Question: Final Action - Passed as amended',
+      'Yea 111; Nay 13; Present 0; Absent 1; Not voting 0.',
+    ]);
+    expect(t).toMatch(/^Yea \(111\): John Alcala; Steve Alford;/m);
+    expect(t).toMatch(/^Absent \(1\): Ponka We Victors$/m);
+  });
+
+  it('reads a 2017 Senate vote with members present and passing', () => {
+    const t = ksRender(KS_S17, ksPage('ks-2017-senate-je_20170222110146_941423'));
+    expect(t).toMatch(/^Present \(2\): Tom Hawk; Carolyn McGinn$/m);
+    expect(t).toMatch(/Oletha Faust-Goudeau/);
+  });
+
+  it('reads a special session\'s vote, whose page prints the bill without a link', () => {
+    expect(ksRender(KS_H20S, ksPage('ks-2020s-house-je_20200603210950_181372')).split('\n')[0])
+      .toBe('Kansas House vote je_20200603210950_181372 (2020S1), HB 2016, 2020-06-03.');
+  });
+
+  it('reads current-site votes of 2023 and 2026, a Senate vote printed the day after its legislative day', () => {
+    expect(ksRender(KS_H26, ksPage('ks-2026-house-0426_HB2513'))).toMatch(/^Nay \(35\): .*Wanda Brownlee Paige;/m);
+    const s = ksRender(KS_S26, ksPage('ks-2026-senate-vote_407_HB2535'));
+    expect(s.split('\n').slice(0, 3)).toEqual(['Kansas Senate vote vote_407_HB2535 (2025-2026), HB 2535, 2026-04-11.', 'Question: Adopt CCR',
+      'Yea 30; Nay 8; Present 1; Absent 1; Not voting 0.']);
+    // a member under a later family name than her id's
+    const h23 = ksRender(KS_H23, ksPage('ks-2023-house-0353_SB113'));
+    expect(h23).toMatch(/^Yea \(83\): .*; Tory Blew; /m);
+    expect(stateRollCallLinesFor(KS_H23, h23, 'Blew', 'Tory Marie Blew')[0]).toMatch(/: Tory Blew voted Yea\.$/);
+  });
+
+  it('refuses a vote on a motion, and knows which questions are votes on the bill', () => {
+    expect(ksWhy(KS_S17_MOTION, ksPage('ks-2017-senate-je_20170601142214_051767'))).toMatch(/^the question is not a vote on the bill/);
+    for (const q of ['Final Action - Passed as amended', 'Emergency Final Action - Not passed', 'Conference Committee Report was adopted',
+      'Adopt CCR', 'Concurred with amendments', 'Motion to override line item veto prevailed; Line item veto overridden', 'Consent Calendar Passed']) {
+      expect(ksQuestionIsOnTheBill(q)).toBe(true);
+    }
+    for (const q of ['Committee of the Whole - Amendment by Representative Highberger was rejected', 'Motion to Call the Question',
+      'Senator Olson motioned to return jointly to Committees. The motion failed.']) {
+      expect(ksQuestionIsOnTheBill(q)).toBe(false);
+    }
+  });
+
+  it('refuses a page whose counts, day, bill or member list do not hold together', () => {
+    const h = ksPage('ks-2018-house-je_20180329105013_233428');
+    expect(ksWhy(KS_H18, h)).toBe('read');
+    // the vote page's heading says another day than its address
+    expect(ksWhy(KS_H18, tamper(h, '03/29/2018', '03/28/2018'))).not.toBe('read');
+    // a group's printed count no longer equals the members under it
+    expect(ksWhy(KS_H18, tamper(h, 'Nay - (13)', 'Nay - (14)'))).not.toBe('read');
+    // a member listed twice
+    const c = ksPage('ks-2026-senate-vote_407_HB2535');
+    expect(ksWhy(KS_S26, c)).toBe('read');
+    expect(ksWhy(KS_S26, tamper(c, 'Yea 30, Nay 8', 'Yea 31, Nay 8'))).not.toBe('read');
+    // a vote printed two days after its legislative day
+    expect(ksWhy(KS_S26, tamper(c, 'April 11, 2026', 'April 12, 2026'))).not.toBe('read');
+  });
+});
+
+describe('state roll-call pages — Kansas lines', () => {
+  const t = ksRender(KS_H18, ksPage('ks-2018-house-je_20180329105013_233428'));
+
+  it('builds one line for a member and verifies it', () => {
+    expect(stateRollCallLinesFor(KS_H18, t, 'Alford', 'Steve Alford')).toEqual([KS_STEVE_ALFORD]);
+    expect(verifyStateRollCallLine(KS_STEVE_ALFORD, KS_H18, t, 'Alford', 'Steve Alford')).toEqual({ verdict: 'verified', matchOffset: 0 });
+    expect(parseStateRollCallLine(KS_STEVE_ALFORD)).toMatchObject({ state: 'KS', chamber: 'House', vote: 'Yea', name: 'Steve Alford', bill: 'SB 328' });
+  });
+
+  it('refuses the line with the vote flipped, given to another member, or on another bill, day or vote', () => {
+    const v = (line: string, last = 'Alford', full = 'Steve Alford', url = KS_H18) => verifyStateRollCallLine(line, url, t, last, full).verdict;
+    expect(v(KS_STEVE_ALFORD.replace('voted Yea', 'voted Nay'))).toBe('snippet_not_found');
+    expect(v(KS_STEVE_ALFORD.replace('Steve Alford', 'John Whitmer'))).not.toBe('verified');
+    expect(v(KS_STEVE_ALFORD, 'Whitmer', 'John Whitmer')).toBe('name_not_present');
+    expect(v(KS_STEVE_ALFORD.replace('SB 328', 'SB 329'))).toBe('snippet_not_found');
+    expect(v(KS_STEVE_ALFORD.replace('2018-03-29', '2018-03-28'))).toBe('snippet_not_found');
+    expect(v(KS_STEVE_ALFORD, 'Alford', 'Steve Alford', KS_H18.replace('233428', '233429'))).toBe('snippet_not_found');
+  });
+
+  it('gives an absent member "was absent" and a member present "was present and did not vote", never a Yea or a Nay', () => {
+    expect(stateRollCallLinesFor(KS_H18, t, 'Victors', 'Ponka We Victors')).toEqual([
+      'Kansas House vote je_20180329105013_233428 (2017-2018), SB 328 - Final Action - Passed as amended (2018-03-29): Ponka We Victors was absent.']);
+    const s = ksRender(KS_S17, ksPage('ks-2017-senate-je_20170222110146_941423'));
+    const [l] = stateRollCallLinesFor(KS_S17, s, 'Hawk', 'Tom Hawk');
+    expect(l).toMatch(/Tom Hawk was present and did not vote\.$/);
+    expect(verifyStateRollCallLine(l.replace('was present and did not vote', 'voted Yea'), KS_S17, s, 'Hawk', 'Tom Hawk').verdict).toBe('snippet_not_found');
+  });
+
+  it('reads the tally as Yea, Nay and the rest absent or not voting', () => {
+    expect(readStateRollCallRecord([ksPage('ks-2017-senate-je_20170222110146_941423')], KS_S17)).toMatchObject({ bill: 'SB 144', date: '2017-02-22', chamber: 'Senate' });
   });
 });
