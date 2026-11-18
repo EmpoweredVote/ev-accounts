@@ -13,6 +13,8 @@ from _args import opt, opts, positional
 import csv, json, re
 B = positional(1, 'legiscan_merge.py <batch dir> --host <official host>')[0]; HOST = opt('--host', required=True, usage='--host <official host>')
 lines = list(csv.DictReader(open(f'{B}/legiscan/legiscan-evidence.csv')))
+# Sponsorships cited on a bill's introduced text (state_legiscan.py, South Dakota): their lines are the text's own words.
+if os.path.exists(f'{B}/legiscan/sponsor-text-lines.csv'): lines += list(csv.DictReader(open(f'{B}/legiscan/sponsor-text-lines.csv')))
 needs = json.load(open(f'{B}/legiscan/needs.json'))
 have = {(l['full_name'], l['source_url']) for l in lines}
 rows = list(csv.DictReader(open(f'{B}/research.csv'))); cols = list(rows[0].keys()); uc = [c for c in cols if c.startswith('source_url_')]

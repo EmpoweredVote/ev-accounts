@@ -148,6 +148,9 @@ const INSTRUMENT_IDENTIFIER_PATTERNS: RegExp[] = [
   // Mississippi roll-call PDFs head each vote "On S. B. No. 2548." / "H. B. No. 586 passed" (2026-11-05);
   // canonicalizeInstrumentId drops the "no" run after the chamber prefix, so both fold to "sb2548" / "hb586".
   /\b[HS]\.\s?B\.\s?No\.\s?\d+\b/,
+  // South Dakota's 2018 and 2019 introduced texts head the bill "HOUSE BILL NO. 1041" / "SENATE BILL NO. 47" in
+  // capitals (sd-01, 2026-11-17: a sponsorship cited on that text). Folds to "hb1041" / "sb47" as above.
+  /\b(?:HOUSE|SENATE) BILL NO\.\s?\d{1,4}\b/,
   /\bS\.?L\.?\s?20\d{2}-\d{1,4}\b/,
   // The U.S. House Clerk prints "H. R. 22" (a space after each period) and "H. J. RES. 44" (2026-10-07).
   /\bH\.?\s?R\.?\s?\d+\b/,

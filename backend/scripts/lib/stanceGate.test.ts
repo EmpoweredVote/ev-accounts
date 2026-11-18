@@ -425,6 +425,16 @@ describe('instrument-not-cited: Mississippi roll-call headings (2026-11-05)', ()
     expect(ids({ ...good, reasoning: 'Voted Yea on SB 254 (2009).' }, { evidence: snip('YEAS AND NAYS On S. B. No. 2548.') })).toContain('instrument-not-cited'));
 });
 
+describe('instrument-not-cited: South Dakota 2018-2019 text headings (2026-11-17)', () => {
+  const snip = (t: string) => [{ ...ev[0], snippet: `${t} Introduced by: Representatives Dennert, Brunner and Randolph FOR AN ACT ENTITLED, An Act to provide` }];
+  it('reads "HOUSE BILL NO. 1041" / "SENATE BILL NO. 47" as HB 1041 / SB 47', () => {
+    expect(ids({ ...good, reasoning: 'Sponsored HB 1041 (2019).' }, { evidence: snip('HOUSE BILL NO. 1041') })).not.toContain('instrument-not-cited');
+    expect(ids({ ...good, reasoning: 'Sponsored SB 47 (2019).' }, { evidence: snip('SENATE BILL NO. 47') })).not.toContain('instrument-not-cited');
+  });
+  it('still tells HB 104 from "HOUSE BILL NO. 1041"', () =>
+    expect(ids({ ...good, reasoning: 'Sponsored HB 104 (2019).' }, { evidence: snip('HOUSE BILL NO. 1041') })).toContain('instrument-not-cited'));
+});
+
 describe('instrument-not-cited: Ohio bill headings (2026-11-06)', () => {
   const snip = (t: string) => [{ ...ev[0], snippet: `${t} General Assembly Regular Session 2025-2026 Representative Doe` }];
   it('reads "Sub. S. J. R. No. 10" and "(Substitute House Bill Number 458)" as SJR 10 and HB 458', () => {

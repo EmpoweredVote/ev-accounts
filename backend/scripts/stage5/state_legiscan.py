@@ -109,7 +109,46 @@ def bill_of(letters, num, year, sp=None):
     return letters + num.zfill(PAD), (year - 1 if ODD and year % 2 == 0 else year)
 
 
-VOTE = ('yea', 'nay', 'abstain'); AUTH = ('author', 'coauthor', 'sponsor', 'cosponsor', 'co-sponsor', 'chief patron', 'patron', 'copatron')
+def introduced_text_line(bill_file, cited, full_name):
+    """(the converted bill's introduced text, its "Introduced by:" line, why there is no line) for a sponsorship;
+    (None, None, None) when the bill's page is not an introduced text other than the cited page.
+    South Dakota (runner, 2026-11-17): a sponsorship is cited on the bill's introduced text, and convert.py makes that
+    PDF the bill's own page (sd_sponsors_from_text). The store's findings were written with the bill page
+    (/Session/Bill/<id>, a script shell no reader can use) as their url, so the gate found no snippet for it (sd-01,
+    44 high). The text is cited instead, and the line is the text's own words from the bill's name through
+    "Introduced by: ..." into the title, at least 25 words, read as the verifier reads a PDF (pdftotext, spaces closed).
+    The person's surname must be printed in the "Introduced by:" part, or there is no line (the person is held)."""
+    import hashlib, subprocess, time
+    b = json.load(open(bill_file))['bill']
+    tl = b.get('state_link') or ''
+    # convert.py points the bill's page at the introduced text's PDF; 2018 and 2019 bills still list the old HTML
+    # address under texts[] (sd-01: 14 bills), so the PDF page itself, not the texts list, decides.
+    has_intro = any(t.get('type') == 'Introduced' for t in b.get('texts') or [])
+    if not tl or tl == cited or not has_intro or not tl.lower().endswith('.pdf'): return None, None, None
+    f = f'{B}/pages/{hashlib.sha1(tl.encode()).hexdigest()}.txt'
+    if os.path.exists(f): t = open(f).read()
+    else:
+        time.sleep(1)
+        r = subprocess.run(['curl', '-sL', '--compressed', '--max-time', '40', '-w', '\n%{http_code}', '-A', 'Mozilla/5.0', tl], capture_output=True)
+        body, _, status = r.stdout.rpartition(b'\n')
+        if body[:5] != b'%PDF-' or not status.startswith(b'2'): return tl, None, f'the introduced text {tl} did not load (HTTP {status.decode()})'
+        t = re.sub(r'\s+', ' ', subprocess.run(['pdftotext', '-layout', '-', '-'], input=body, capture_output=True).stdout.decode('utf-8', 'replace')).strip()
+        os.makedirs(os.path.dirname(f), exist_ok=True); open(f, 'w').write(t)
+    # 2020 on prints "House Bill 1227 Introduced by: ..."; 2018 and 2019 print "HOUSE BILL NO. 1041 Introduced by: ...".
+    m = re.search(r'(?:(?:House|Senate)\s+(?:Bill|Joint Resolution|Concurrent Resolution|Commemoration|Resolution)\s+(?:No\.\s*)?\d+\s+)?Introduced by:\s*', t, re.I)
+    if not m: return tl, None, f'no "Introduced by:" line in {tl}'
+    rest = t[m.end():]
+    by = re.split(r'\s+(?:FOR AN ACT|An Act|A LEGISLATIVE|A (?:CONCURRENT|JOINT) RESOLUTION|ENTITLED)\b', rest, maxsplit=1)[0]
+    toks = [x.strip(',.') for x in full_name.split()]
+    while len(toks) > 1 and toks[-1].lower() in ('jr', 'sr', 'ii', 'iii', 'iv', 'v'): toks.pop()
+    sur = toks[-1] if toks else ''
+    if not sur or not re.search(r'\b' + re.escape(sur) + r'\b', by, re.I): return tl, None, f'{sur} is not printed after "Introduced by:" in {tl}'
+    words = t[m.start():].split(' ')
+    n = max(len(t[m.start():m.end() + len(by)].split(' ')) + 8, 25)
+    return tl, ' '.join(words[:min(n, 80)]), None
+
+
+VOTE = ('yea', 'nay', 'abstain'); AUTH =('author', 'coauthor', 'sponsor', 'cosponsor', 'co-sponsor', 'chief patron', 'patron', 'copatron')
 
 
 def key(f):
@@ -151,7 +190,7 @@ if mode == 'plan':
     json.dump(list(pages.values()), open(f'{B}/legiscan/vote-pages.json', 'w'), indent=1); print('vote pages', len(pages))
 else:
     hits = {h['url']: h for h in json.load(open(f'{B}/legiscan/rollcall-hits.json'))}
-    rmap, needs, unmapped, pairs, own_page = {}, {}, [], [], []
+    rmap, needs, unmapped, pairs, own_page, text_lines, text_why = {}, {}, [], [], [], [], []
     for r, f, u in acts():
         n, act, ins = r['full_name'], (f.get('act') or '').lower(), f.get('instrument_id') or ''
         if act in VOTE:
@@ -187,9 +226,18 @@ else:
             rmap[kid(k)] = {**hs[0], 'legiscan': ls}
         elif act in AUTH:
             m = re.match(ST + r'-([A-Z]+)-(\d+)-(?:SP(\d)-)?(\d{4})$', ins)
-            if m and openstates_bill(m.group(1), m.group(2), int(m.group(4)) + YS, m.group(3)):
+            if m and (bf := openstates_bill(m.group(1), m.group(2), int(m.group(4)) + YS, m.group(3))):
                 # A sponsorship on a bill converted from Open States data has no LegiScan page to line. It keeps the
-                # official page it is cited on, and the verifier reads that page's own words as for any source.
+                # official page it is cited on, and the verifier reads that page's own words as for any source,
+                # unless the converted bill's page is its introduced text (South Dakota): then that text is cited.
+                tl, line, why = introduced_text_line(bf, u, n)
+                if tl:
+                    e = {'url': tl, 'official': u, 'act': act, 'instrument': ins}
+                    if e not in needs.setdefault(n, []): needs[n].append(e)
+                    if line:
+                        text_lines.append({'full_name': n, 'topic_key': TOPIC, 'source_url': tl, 'snippet': line, 'snippet_index': ''})
+                    else: text_why.append([n, tl, ins, why])
+                    continue
                 own_page.append([n, u, ins, act]); continue
             # LegiScan's bill page names the session's start year (oh-01, 2026-11-06) and its own spelling of the number
             bn, yr = bill_of(m.group(1), m.group(2), int(m.group(4)) + YS, m.group(3)) if m else (None, 0)
@@ -203,6 +251,11 @@ else:
     json.dump(needs, open(f'{B}/legiscan/needs.json', 'w'), indent=1); json.dump(unmapped, open(f'{B}/legiscan/unmapped.json', 'w'), indent=1)
     json.dump(rmap, open(f'{B}/legiscan/rollcall-map.json', 'w'), indent=1)
     json.dump(own_page, open(f'{B}/legiscan/sponsor-own-page.json', 'w'), indent=1)
+    # legiscan_merge.py reads these lines with legiscan-evidence.csv; a sponsorship with no line is in no-line.json.
+    tw = csv.DictWriter(open(f'{B}/legiscan/sponsor-text-lines.csv', 'w', newline=''), fieldnames=['full_name', 'topic_key', 'source_url', 'snippet', 'snippet_index'])
+    tw.writeheader(); tw.writerows(list({(x['full_name'], x['source_url']): x for x in text_lines}.values()))
+    json.dump(text_why, open(f'{B}/legiscan/sponsor-text-no-line.json', 'w'), indent=1)
+    if text_lines or text_why: print('sponsorships cited on the introduced text', len({(x['full_name'], x['source_url']) for x in text_lines}), 'with no line', len(text_why))
     w = csv.writer(open(f'{B}/legiscan/pairs.csv', 'w', newline='')); w.writerow(['full_name', 'last_name', 'topic_key', 'source_url']); w.writerows(pairs)
     print('people', len(needs), 'pairs', len(pairs), 'unmapped', len(unmapped), 'roll calls', len(rmap),
           *(['· sponsorships left on the official page (Open States bills, no LegiScan page)', len(own_page)] if own_page else []))
