@@ -1,0 +1,288 @@
+{
+  "id": "SD-SB-79-2019",
+  "scope": "state:sd",
+  "title": "SB79 (2019 Regular): increase the penalty for theft of a firearm.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/9836",
+    "https://mylrc.sdlegislature.gov/api/Documents/52140.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jensen (Kevin)",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Stace Nelson",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "R. Blake Curd",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Lynne DiSanto",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Bob Ewing",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Tim Goodwin",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "2dfc4c6b-452b-48a5-bc92-cf1f29908e5b"
+    },
+    {
+      "name": "Taffy Howard",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "6979c638-2800-48f4-9263-dd6f04726842"
+    },
+    {
+      "name": "Jensen (Phil)",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Ryan Maher",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Sam Marty",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "4034d40e-6795-4413-b976-79ead3d3d7d1"
+    },
+    {
+      "name": "Jeff Monroe",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Tina Mulally",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "e1d160b4-80c5-4d2d-8ed3-48bcdc4885c6"
+    },
+    {
+      "name": "Otten",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Otten (Herman)",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Tom Pischke",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "19103966-3827-4234-8cb4-afdacb4569e7"
+    },
+    {
+      "name": "Tony Randolph",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "0f39be61-4c8b-4f8e-8898-a5af1a84e79a"
+    },
+    {
+      "name": "Lance S Russell",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "2cf0e333-838d-4235-9f0c-176347f7dfa8"
+    },
+    {
+      "name": "Jim Stalzer",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2019-02-25",
+      "body": "SD Senate",
+      "motion": "Senate Do Pass",
+      "kind": "roll-call",
+      "yes": 12,
+      "no": 21,
+      "absent": 2,
+      "note": "sdlegislature.gov /api/Votes record (read from the legislature) 90163487",
+      "members": [
+        {
+          "name": "Blare",
+          "vote": "yea"
+        },
+        {
+          "name": "R. Blake Curd",
+          "vote": "yea"
+        },
+        {
+          "name": "Lynne DiSanto",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Ewing",
+          "vote": "yea"
+        },
+        {
+          "name": "Jensen (Phil)",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Kolbeck",
+          "vote": "yea",
+          "politician_id": "a84ab96c-ab1d-4020-af32-02bc5a7a7a0c"
+        },
+        {
+          "name": "Ryan Maher",
+          "vote": "yea"
+        },
+        {
+          "name": "Stace Nelson",
+          "vote": "yea"
+        },
+        {
+          "name": "Otten",
+          "vote": "yea"
+        },
+        {
+          "name": "Lance S Russell",
+          "vote": "yea",
+          "politician_id": "2cf0e333-838d-4235-9f0c-176347f7dfa8"
+        },
+        {
+          "name": "Jim Stalzer",
+          "vote": "yea"
+        },
+        {
+          "name": "Maggie A. Sutton",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Bolin",
+          "vote": "nay"
+        },
+        {
+          "name": "Gary Cammack",
+          "vote": "nay"
+        },
+        {
+          "name": "Red Dawn Foster",
+          "vote": "nay",
+          "politician_id": "567014f7-69e4-45e2-93b0-53eea4e592fc"
+        },
+        {
+          "name": "Brock L. Greenfield",
+          "vote": "nay",
+          "politician_id": "4a858d43-9921-46ab-95e1-530cb70697d6"
+        },
+        {
+          "name": "Troy E. Heinert",
+          "vote": "nay"
+        },
+        {
+          "name": "Craig Kennedy",
+          "vote": "nay"
+        },
+        {
+          "name": "Josh Klumb",
+          "vote": "nay"
+        },
+        {
+          "name": "Kris Langer",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeff Monroe",
+          "vote": "nay"
+        },
+        {
+          "name": "Reynold Nesiba",
+          "vote": "nay"
+        },
+        {
+          "name": "Al Novstrup",
+          "vote": "nay",
+          "politician_id": "7c5e90ca-bd95-4d2e-a2da-e31d5a5c1f67"
+        },
+        {
+          "name": "Jeffrey D Partridge",
+          "vote": "nay"
+        },
+        {
+          "name": "Arthur L. Rusch",
+          "vote": "nay"
+        },
+        {
+          "name": "Lee Schoenbeck",
+          "vote": "nay"
+        },
+        {
+          "name": "Smith (V. J.)",
+          "vote": "nay"
+        },
+        {
+          "name": "Deb Soholt",
+          "vote": "nay"
+        },
+        {
+          "name": "Alan Solano",
+          "vote": "nay"
+        },
+        {
+          "name": "Wayne H. Steinhauer",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim White",
+          "vote": "nay"
+        },
+        {
+          "name": "Susan Wismer",
+          "vote": "nay"
+        },
+        {
+          "name": "Jordan Youngberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Justin R Cronin",
+          "vote": "absent"
+        },
+        {
+          "name": "John Wiik",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2019-01-24; official copy, https://mylrc.sdlegislature.gov/api/Documents/52140.pdf (sdlegislature.gov DocumentId 52140, BillId 9836))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-79-2019.introduced.pdf",
+      "sha256": "f93deebcd03b4227655144336203999bca83caa4529956928eb52ab3d7e2113c"
+    },
+    "note": "Introduced text, 2019-01-24 (as filed). Struck: the Class 6 felony tier for a firearm worth $2,500 or less. Senate Do Pass vote 12-21 on 2019-02-25; later amendments are not in the text read."
+  },
+  "operative_text": "Section 1 (SDCL 22-30A-17): Grand theft is a Class 4 felony if the value of the property is more than five thousand dollars but less than or equal to one hundred thousand dollars or if the property stolen is a firearm, regardless of the firearm's value."
+}

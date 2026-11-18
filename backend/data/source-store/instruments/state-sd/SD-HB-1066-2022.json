@@ -1,0 +1,39 @@
+{
+  "id": "SD-HB-1066-2022",
+  "scope": "state:sd",
+  "title": "HB1066 (2022 Regular): prohibit the personal possession of a loaded firearm while under the influence of marijuana or intoxicated.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/22758",
+    "https://mylrc.sdlegislature.gov/api/Documents/226979.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kevin Jensen",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "1325f88c-f1d1-40d5-acc6-4292d983a672"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2022-01-12; official copy, https://mylrc.sdlegislature.gov/api/Documents/226979.pdf (sdlegislature.gov DocumentId 226979, BillId 22758))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1066-2022.introduced.pdf",
+      "sha256": "0c37fef8b584b24d762ed77444ba0286b60dda56d4050db3ae01cdebfc12ae0b"
+    },
+    "note": "As filed 2022-01-12. No passage vote recorded. Section 1 (SDCL 22-14-7) moves the existing intoxicated-possession offence into the new section; struck there."
+  },
+  "operative_text": "Section 2 (new section in SDCL ch. 22-14): A person is guilty of a Class 1 misdemeanor if the person is in personal possession of a loaded firearm while: (1) Intoxicated; or (2) Under the influence of marijuana, as that term is defined in § 22-42-1.\nSection 3 (new section in SDCL ch. 22-14): For purposes of section 2 of this Act, the term, loaded firearm, means any firearm that contains a cartridge, shell, or projectile: (1) In the chamber, including any chamber in the cylinder of a revolver; (2) In a magazine that is fixed or integral to the firearm; or (3) In a detachable magazine that has been inserted into the firearm."
+}

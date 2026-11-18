@@ -29,6 +29,746 @@
           "sha256": "0466d77011414fe00091581533ef0c56b6517e871eb47c4d1e116e852eb5a663"
         }
       }
+    },
+    {
+      "id": "f816ad47538d5e2f9145b2e21903ac6bf6cf68629af3e2bb64d04d667639a92b",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/9374/51605",
+      "date": "2019-01-22",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-47-2019",
+      "act": "nay",
+      "motion": "Senate Do Pass",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SD Senate, Senate Do Pass, 2019-01-22: nay (tally 23–11); census gate: none.",
+      "subjects": [
+        "carry a concealed gun without a permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "T2 (source-collector subagent, gun-policy Stage 1, 2026-10-29)",
+        "fetched_at": "2026-10-29T23:30:09.001Z",
+        "method": "webfetch",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage1/raw/T2-docs/SD_SB47_intro_51605.pdf",
+          "sha256": "0466d77011414fe00091581533ef0c56b6517e871eb47c4d1e116e852eb5a663"
+        }
+      }
+    },
+    {
+      "id": "5f7a06bb2c49b90e2335db352a0046caa59bfd8a258e71e6e66347537589832d",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/9340",
+      "date": "2019-02-12",
+      "date_precision": "day",
+      "instrument_id": "SD-HB-1054-2019",
+      "act": "yea",
+      "motion": "Senate Do Pass",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SD Senate, Senate Do Pass, 2019-02-12: yea (tally 28–0); census gate: near-unanimous.",
+      "subjects": [
+        "firearms may be carried loaded in UTVs and similar vehicles"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2019-01-16; official copy, https://mylrc.sdlegislature.gov/api/Documents/51784.pdf (sdlegislature.gov DocumentId 51784, BillId 9340))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1054-2019.introduced.pdf",
+          "sha256": "f77b81243b1a12a067cc1b7615bc2c979013d360dc3d84f07c333860788aef11"
+        }
+      }
+    },
+    {
+      "id": "192478df5a4313092c488dc10f089eacf58c7e2d34f771ad92408c8c42595a0a",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/9319",
+      "date": "2019-02-21",
+      "date_precision": "day",
+      "instrument_id": "SD-HB-1056-2019",
+      "act": "yea",
+      "motion": "Senate Do Pass Amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SD Senate, Senate Do Pass Amended, 2019-02-21: yea (tally 31–3); census gate: near-unanimous.",
+      "subjects": [
+        "state preemption of local firearm and ammunition ordinances",
+        "attorney general enforcement and attorney's fees"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (House Engrossed, 2019-02-08; official copy, https://mylrc.sdlegislature.gov/api/Documents/53361.pdf (sdlegislature.gov DocumentId 53361, BillId 9319))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1056-2019.house_engrossed.pdf",
+          "sha256": "ba02e5e810efd1bf262e16e36ce2c4eb6ce57d0d64098e7e9aff2f5c708fbbde"
+        }
+      }
+    },
+    {
+      "id": "9e390f43af1d911461bea6daef27c17d6ea3ad620995a3f54f329a6fc0f3b803",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/22756",
+      "date": "2022-02-02",
+      "date_precision": "day",
+      "instrument_id": "SD-HB-1065-2022",
+      "act": "yea",
+      "motion": "Senate Do Pass",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SD Senate, Senate Do Pass, 2022-02-02: yea (tally 34–0); census gate: near-unanimous.",
+      "subjects": [
+        "repeal recognition of out-of-state concealed pistol permits"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2022-01-12; official copy, https://mylrc.sdlegislature.gov/api/Documents/226929.pdf (sdlegislature.gov DocumentId 226929, BillId 22756))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1065-2022.introduced.pdf",
+          "sha256": "f18d046ee4a30e7f6575b652c7622b7dc22b59bd522b48f7d9db22ed6852313f"
+        }
+      }
+    },
+    {
+      "id": "20880b1a90ab2e388e8fc896cd4b33efd4a76342b7e9fc5433e57f5a0b88fa76",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/23667",
+      "date": "2023-02-01",
+      "date_precision": "day",
+      "instrument_id": "SD-HB-1071-2023",
+      "act": "yea",
+      "motion": "Senate Do Pass",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SD Senate, Senate Do Pass, 2023-02-01: yea (tally 35–0); census gate: near-unanimous.",
+      "subjects": [
+        "use-of-force course standards for pistol instructors"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2023-01-13; official copy, https://mylrc.sdlegislature.gov/api/Documents/243546.pdf (sdlegislature.gov DocumentId 243546, BillId 23667))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1071-2023.introduced.pdf",
+          "sha256": "75f1fbeb122a78f8a5253aee5df40bd3de02247d8a7730a64f466443e351d586"
+        }
+      }
+    },
+    {
+      "id": "c7e42357e863abc2ccbd6be5735ee428d3b910bb2e442831b2486b7bc4669f6a",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/25755",
+      "date": "2025-02-26",
+      "date_precision": "day",
+      "instrument_id": "SD-HB-1080-2025",
+      "act": "yea",
+      "motion": "Senate Do Pass Amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SD Senate, Senate Do Pass Amended, 2025-02-26: yea (tally 34–0); census gate: near-unanimous.",
+      "subjects": [
+        "land covenants cannot ban firearms or ammunition",
+        "covenant provisions restricting guns are void"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (House Judiciary Engrossed, 2025-02-03; official copy, https://mylrc.sdlegislature.gov/api/Documents/279746.pdf (sdlegislature.gov DocumentId 279746, BillId 25755))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1080-2025.house_judiciary_engrossed.pdf",
+          "sha256": "175799030e5758ac07679944ae2665c2731f4fbacdc0a68a6f201b218a3d4cd6"
+        }
+      }
+    },
+    {
+      "id": "2feebab3146ff124854d9f0bc65b38688e9cfa14d3467768737f6ae18e5a35e8",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/24485",
+      "date": "2024-02-21",
+      "date_precision": "day",
+      "instrument_id": "SD-HB-1089-2024",
+      "act": "yea",
+      "motion": "Senate Do Pass Amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SD Senate, Senate Do Pass Amended, 2024-02-21: yea (tally 34–0); census gate: near-unanimous.",
+      "subjects": [
+        "no presumptive probation for firearm theft"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Judiciary Engrossed, 2024-02-15; official copy, https://mylrc.sdlegislature.gov/api/Documents/265745.pdf (sdlegislature.gov DocumentId 265745, BillId 24485))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1089-2024.senate_judiciary_engrossed.pdf",
+          "sha256": "7e2b85a044c560541455fb7e69c0c0cb5bf327b21b4aed1f1e07aa5f53045e1c"
+        }
+      }
+    },
+    {
+      "id": "d5eb0283abfeec228b172d89b719754d936469520f2f5e382e17b62b17cbf896",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/22954",
+      "date": "2022-03-02",
+      "date_precision": "day",
+      "instrument_id": "SD-HB-1162-2022",
+      "act": "yea",
+      "motion": "Senate Do Pass Amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SD Senate, Senate Do Pass Amended, 2022-03-02: yea (tally 35–0); census gate: near-unanimous.",
+      "subjects": [
+        "legal definition of a loaded firearm"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (House Agriculture and Natural Resources Engrossed, 2022-02-22; official copy, https://mylrc.sdlegislature.gov/api/Documents/234275.pdf (sdlegislature.gov DocumentId 234275, BillId 22954))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1162-2022.house_agriculture_and_natural_resources_engrossed.pdf",
+          "sha256": "d0fc72eb10fc3ec47b802b1d32221eb1aa0c5f39139c2bf64cd6b6522ff5fbca"
+        }
+      }
+    },
+    {
+      "id": "d203b4ce657416ad2372ec58771710c9394a6da64505efe989dac44d91e7698d",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/12021",
+      "date": "2020-03-03",
+      "date_precision": "day",
+      "instrument_id": "SD-HB-1182-2020",
+      "act": "yea",
+      "motion": "Senate Do Pass Amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SD Senate, Senate Do Pass Amended, 2020-03-03: yea (tally 29–6); census gate: none.",
+      "subjects": [
+        "concealed pistol permit renewal window and grace period",
+        "live-fire training proof to renew enhanced permit"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (House State Affairs Engrossed, 2020-02-20; official copy, https://mylrc.sdlegislature.gov/api/Documents/68108.pdf (sdlegislature.gov DocumentId 68108, BillId 12021))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1182-2020.house_state_affairs_engrossed.pdf",
+          "sha256": "998b1339fd0d07fd040efe8ef1c82f3e731477bb8304c821b27693fe16297a97"
+        }
+      }
+    },
+    {
+      "id": "6f562bbce83acba55eba9bab0d232326f4c65ab6a3b676d0c36c728a78b47a80",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/26037",
+      "date": "2025-03-12",
+      "date_precision": "day",
+      "instrument_id": "SD-HB-1218-2025",
+      "act": "nay",
+      "motion": "Senate Conference Committee Report adopted",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SD Senate, Senate Conference Committee Report adopted, 2025-03-12: nay (tally 32–3); census gate: near-unanimous.",
+      "subjects": [
+        "local government employees may carry concealed at work",
+        "event exception with metal detectors and armed security",
+        "repeal of concealed carry ban in bars"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Engrossed, 2025-03-11; official copy, https://mylrc.sdlegislature.gov/api/Documents/284388.pdf (sdlegislature.gov DocumentId 284388, BillId 26037))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1218-2025.senate_engrossed.pdf",
+          "sha256": "35f7ec5cad284f87e2e0c6ff2f2522f9f56055e1c881b5ce6dce22eba13b356b"
+        }
+      }
+    },
+    {
+      "id": "3efa860cff3ecb88bce2138f5b75aff5b67cbd4f038a7f228db16697653a9801",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/23664",
+      "date": "2023-02-21",
+      "date_precision": "day",
+      "instrument_id": "SD-HB-1222-2023",
+      "act": "yea",
+      "motion": "Senate Do Pass Amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SD Senate, Senate Do Pass Amended, 2023-02-21: yea (tally 34–0); census gate: near-unanimous.",
+      "subjects": [
+        "liability shield for concealed-pistol permit issuers",
+        "liability shield for certified firearm use-of-force instructors",
+        "use-of-force course every six months"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (House Judiciary Engrossed, 2023-02-06; official copy, https://mylrc.sdlegislature.gov/api/Documents/248683.pdf (sdlegislature.gov DocumentId 248683, BillId 23664))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1222-2023.house_judiciary_engrossed.pdf",
+          "sha256": "a25465b39edeba445e426bc8b04aa00fd0864cbb5c2bb219a4c1aa98e6526b07"
+        }
+      }
+    },
+    {
+      "id": "cc4c90046d76c439c6f47b4e1b7889fd7b8c846a70fc8e75292acb4799d8397e",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/26055",
+      "date": "2025-03-04",
+      "date_precision": "day",
+      "instrument_id": "SD-HB-1222-2025",
+      "act": "yea",
+      "motion": "Senate Do Pass Amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SD Senate, Senate Do Pass Amended, 2025-03-04: yea (tally 32–2); census gate: near-unanimous.",
+      "subjects": [
+        "permit holders may keep a pistol in a vehicle on school grounds",
+        "may secure or retrieve a pistol at a school vehicle"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (House Judiciary Engrossed, 2025-02-12; official copy, https://mylrc.sdlegislature.gov/api/Documents/281884.pdf (sdlegislature.gov DocumentId 281884, BillId 26055))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1222-2025.house_judiciary_engrossed.pdf",
+          "sha256": "5c76f7fda5a6cc2b06059153e47cac7af446b8d389442c61a6726013329ab859"
+        }
+      }
+    },
+    {
+      "id": "8fa3d64547e4bf6680bce01ba5afa402c92189c0aa369691b35494345a7b99dd",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/25721",
+      "date": "2025-02-12",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-100-2025",
+      "act": "yea",
+      "motion": "Senate Do Pass Amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SD Senate, Senate Do Pass Amended, 2025-02-12: yea (tally 33–2); census gate: near-unanimous.",
+      "subjects": [
+        "permit holders may carry concealed pistols on public college campuses",
+        "campus limits only for hazards, labs, security-cleared areas, special events",
+        "locked storage when not carrying"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Engrossed, 2025-02-13; official copy, https://mylrc.sdlegislature.gov/api/Documents/281957.pdf (sdlegislature.gov DocumentId 281957, BillId 25721))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-100-2025.senate_engrossed.pdf",
+          "sha256": "25f0a886f4e45f9769ed5194ad1b79d7a4b2573612ae42a41a68788459aed3c5"
+        }
+      }
+    },
+    {
+      "id": "65ac42a28d9cc637c5713cf7c2e2e0957ae95ed5d6cbe3f5c09f6bb4d04080b8",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/9797",
+      "date": "2019-02-20",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-115-2019",
+      "act": "nay",
+      "motion": "Senate Do Pass Amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SD Senate, Senate Do Pass Amended, 2019-02-20: nay (tally 20–13); census gate: none.",
+      "subjects": [
+        "ban on firearms in the state capitol",
+        "concealed carry in capitol with enhanced permit and 24-hour notice"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Judiciary Engrossed, 2019-02-14; official copy, https://mylrc.sdlegislature.gov/api/Documents/53742.pdf (sdlegislature.gov DocumentId 53742, BillId 9797))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-115-2019.senate_judiciary_engrossed.pdf",
+          "sha256": "6b9c04207c0ed7c28a9160966a528c090aaa0d8fa047660df17eee502ad0d00d"
+        }
+      }
+    },
+    {
+      "id": "0e1f4ce3b38695fe8b409978c2903bc1c3334bc7167f46cd53dbda47f2e0c702",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/9935",
+      "date": "2019-02-19",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-122-2019",
+      "act": "nay",
+      "motion": "Senate Do Pass",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SD Senate, Senate Do Pass, 2019-02-19: nay (tally 10–24); census gate: none.",
+      "subjects": [
+        "campus firearm policies preempted at public colleges"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2019-01-25; official copy, https://mylrc.sdlegislature.gov/api/Documents/52336.pdf (sdlegislature.gov DocumentId 52336, BillId 9935))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-122-2019.introduced.pdf",
+          "sha256": "7ca4ba428b3fa9de27d9802a7ac9cf88f437cc312d98778deced88c6cdbc3385"
+        }
+      }
+    },
+    {
+      "id": "be94d40c4b79ce32e1e3f621bb8829dbdc2dc85c4bfca04597e29b5255ef45a4",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/12070",
+      "date": "2020-02-25",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-169-2020",
+      "act": "nay",
+      "motion": "Senate Do Pass Amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SD Senate, Senate Do Pass Amended, 2020-02-25: nay (tally 28–7); census gate: none.",
+      "subjects": [
+        "county employees may carry firearms in courthouses",
+        "county commission can waive the employee exception"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Judiciary Engrossed, 2020-02-21; official copy, https://mylrc.sdlegislature.gov/api/Documents/68293.pdf (sdlegislature.gov DocumentId 68293, BillId 12070))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-169-2020.senate_judiciary_engrossed.pdf",
+          "sha256": "57a69d22a9fcb08800fa6ff552b90a60e3c2db7d0ae4ee70ed61dfe541a78391"
+        }
+      }
+    },
+    {
+      "id": "f6adfdc8fa31bd8c09a31318c366f09beb91a20e00f68df53c9533a48a63994e",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/27015",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-179-2026",
+      "act": "nay",
+      "motion": "Senate Do Pass",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SD Senate, Senate Do Pass, 2026-02-17: nay (tally 28–6); census gate: none.",
+      "subjects": [
+        "juvenile commitment allowed for weapons offenses"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2026-01-29; official copy, https://mylrc.sdlegislature.gov/api/Documents/299353.pdf (sdlegislature.gov DocumentId 299353, BillId 27015))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-179-2026.introduced.pdf",
+          "sha256": "bcf1e952f357859cebf519027cf82ab916791f223fe991dbef3860176ba3171c"
+        }
+      }
+    },
+    {
+      "id": "076e3bdbcc55aa9b40a4cfbdc9b0d5e256ee643c450a1e270a07baef5455f044",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/26339",
+      "date": "2026-01-23",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-2-2026",
+      "act": "yea",
+      "motion": "Senate Do Pass Amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SD Senate, Senate Do Pass Amended, 2026-01-23: yea (tally 34–0); census gate: near-unanimous.",
+      "subjects": [
+        "firearm silencers no longer a controlled weapon"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Engrossed, 2026-01-23; official copy, https://mylrc.sdlegislature.gov/api/Documents/296986.pdf (sdlegislature.gov DocumentId 296986, BillId 26339))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-2-2026.senate_engrossed.pdf",
+          "sha256": "b18942ff9d86f7629bbd3d4395cd747092e260795bf4890f97717e491429ee29"
+        }
+      }
+    },
+    {
+      "id": "70174a04746c2684e080924f87d6c69065ae287cf98ec981a5b6cc16bb23f34f",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/25032",
+      "date": "2024-02-21",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-203-2024",
+      "act": "yea",
+      "motion": "Senate Do Pass Amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SD Senate, Senate Do Pass Amended, 2024-02-21: yea (tally 31–3); census gate: near-unanimous.",
+      "subjects": [
+        "enhanced-permit holders 21+ may carry at public schools with principal's written permission"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Judiciary Engrossed, 2024-02-15; official copy, https://mylrc.sdlegislature.gov/api/Documents/265748.pdf (sdlegislature.gov DocumentId 265748, BillId 25032))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-203-2024.senate_judiciary_engrossed.pdf",
+          "sha256": "312ee15b2901e867086c9d231584321e7c3f546523544434f97fe0abe54f6225"
+        }
+      }
+    },
+    {
+      "id": "6a69453fb7699c2375e32b160435edd4fed232b0abbeb593e6c25dd2edd74027",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/24709",
+      "date": "2024-01-17",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-39-2024",
+      "act": "yea",
+      "motion": "Senate Do Pass",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SD Senate, Senate Do Pass, 2024-01-17: yea (tally 30–3); census gate: near-unanimous.",
+      "subjects": [
+        "homeowners' associations cannot restrict firearms or ammunition"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2024-01-03; official copy, https://mylrc.sdlegislature.gov/api/Documents/258078.pdf (sdlegislature.gov DocumentId 258078, BillId 24709))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-39-2024.introduced.pdf",
+          "sha256": "2508f8d504ffef2135bd62ad653531d1a771dc248b2048eb830dbcc74d638bef"
+        }
+      }
+    },
+    {
+      "id": "8ddef26cdb9b58fa921091c5abac1c31fbd72d9d71750196b80857e66167d1c5",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/9535",
+      "date": "2019-01-30",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-50-2019",
+      "act": "nay",
+      "motion": "Senate Do Pass Amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SD Senate, Senate Do Pass Amended, 2019-01-30: nay (tally 10–22); census gate: none.",
+      "subjects": [
+        "end firearm ban in the state capitol"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Judiciary Engrossed, 2019-01-17; official copy, https://mylrc.sdlegislature.gov/api/Documents/51885.pdf (sdlegislature.gov DocumentId 51885, BillId 9535))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-50-2019.senate_judiciary_engrossed.pdf",
+          "sha256": "a768b5493d59b08ad08beb4865f98fc91ae4ac04a187d97ad3136d34acb6680f"
+        }
+      }
+    },
+    {
+      "id": "b98b95851e701d95ee857047b2d370d195b2d947cadaaced604cca82bc35b4ff",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/9836",
+      "date": "2019-02-25",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-79-2019",
+      "act": "nay",
+      "motion": "Senate Do Pass",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SD Senate, Senate Do Pass, 2019-02-25: nay (tally 12–21); census gate: none.",
+      "subjects": [
+        "firearm theft is a Class 4 felony at any value"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2019-01-24; official copy, https://mylrc.sdlegislature.gov/api/Documents/52140.pdf (sdlegislature.gov DocumentId 52140, BillId 9836))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-79-2019.introduced.pdf",
+          "sha256": "f93deebcd03b4227655144336203999bca83caa4529956928eb52ab3d7e2113c"
+        }
+      }
+    },
+    {
+      "id": "ad810f42096e49746d7cc6bb4558fc773bd82dc657cad6adad8c42ea243c5235",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/25920",
+      "date": "2025-01-30",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-81-2025",
+      "act": "yea",
+      "motion": "Senate Do Pass Amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SD Senate, Senate Do Pass Amended, 2025-01-30: yea (tally 33–2); census gate: near-unanimous.",
+      "subjects": [
+        "no firearms merchant codes for card payments",
+        "ban on firearm registries",
+        "bank discrimination against gun dealers barred"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Commerce and Energy Engrossed, 2025-01-28; official copy, https://mylrc.sdlegislature.gov/api/Documents/278030.pdf (sdlegislature.gov DocumentId 278030, BillId 25920))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-81-2025.senate_commerce_and_energy_engrossed.pdf",
+          "sha256": "3883f8ca6dd06ee3e0fbe94e402c292e9a44243cac748834346a1e23e9ce57da"
+        }
+      }
+    },
+    {
+      "id": "31b021d84e628e881516096ac0876decd240ba3834fd4499375ad54e39f18fa5",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/9681",
+      "date": "2019-02-25",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-9-2019",
+      "act": "nay",
+      "motion": "Senate Do Pass Amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SD Senate, Senate Do Pass Amended, 2019-02-25: nay (tally 4–31); census gate: none.",
+      "subjects": [
+        "state bodies may not restrict concealed pistol carry",
+        "residents may sue to enforce"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Military and Veterans Affairs Engrossed, 2019-02-21; official copy, https://mylrc.sdlegislature.gov/api/Documents/54051.pdf (sdlegislature.gov DocumentId 54051, BillId 9681))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-9-2019.senate_military_and_veterans_affairs_engrossed.pdf",
+          "sha256": "73d1a22061cda7294f838ac7098fa76c56707137da5c1f03eccfee312b1bb846"
+        }
+      }
+    },
+    {
+      "id": "bc966b86781a2510d99d877d4ca3531d40bfd1a7af9420fa9af63618e9d3ab8a",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/11561",
+      "date": "2020-02-10",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-98-2020",
+      "act": "yea",
+      "motion": "Senate Do Pass Amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SD Senate, Senate Do Pass Amended, 2020-02-10: yea (tally 30–5); census gate: none.",
+      "subjects": [
+        "capitol carry notice runs to December 31 each year"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Judiciary Engrossed, 2020-02-06; official copy, https://mylrc.sdlegislature.gov/api/Documents/66883.pdf (sdlegislature.gov DocumentId 66883, BillId 11561))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-98-2020.senate_judiciary_engrossed.pdf",
+          "sha256": "1251b7134f4f6b6679a4746d23271fa95fe0cc5479d50d9dff064e78de01cb0b"
+        }
+      }
     }
   ],
   "searches": []

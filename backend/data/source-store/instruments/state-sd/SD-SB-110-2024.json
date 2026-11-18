@@ -1,0 +1,39 @@
+{
+  "id": "SD-SB-110-2024",
+  "scope": "state:sd",
+  "title": "SB110 (2024 Regular): void covenants that prohibit or restrict the possession or use of firearms and ammunition.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/25145",
+    "https://mylrc.sdlegislature.gov/api/Documents/261062.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Michael Rohl",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "460b98e7-1199-4420-8805-f17a91479dd3"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2024-01-20; official copy, https://mylrc.sdlegislature.gov/api/Documents/261062.pdf (sdlegislature.gov DocumentId 261062, BillId 25145))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-110-2024.introduced.pdf",
+      "sha256": "e019c2edba83653fc4b002824a4f175039b8a44f139386b5835bde4b361d6ea0"
+    },
+    "note": "Introduced text, 2024-01-20. No passage vote recorded."
+  },
+  "operative_text": "Section 1 (new section in SDCL ch. 43-12): A covenant running with the land may not prohibit, restrict, or have the effect of prohibiting or restricting: (1) The lawful possession, storing, or transportation of a firearm, any part of a firearm, or ammunition; or (2) The lawful discharge of a firearm. Any covenant in violation of this section, including one enacted before July 1, 2024, is void and unenforceable."
+}

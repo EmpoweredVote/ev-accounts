@@ -173,7 +173,9 @@ class Run:
 
     def s4(self):
         P = self.recode('search'); again = self.ids(f'{P}/research-again-ids.txt')
-        if again and not os.path.isdir(f'{self.S}/{self.xx}/find-2'):
+        # A resume after a half-done second search (one agent stopped by a usage limit, South Dakota 2026-11-17) must
+        # finish it: search-briefs skips anyone already searched, and the import and recode run again either way.
+        if again:
             self.search(f'{P}/research-again-ids.txt', 2); P = self.recode('search-2')
         return f'second pass {len(self.ids(P + "/recode-ids.txt"))}, searched again {len(again)}'
 

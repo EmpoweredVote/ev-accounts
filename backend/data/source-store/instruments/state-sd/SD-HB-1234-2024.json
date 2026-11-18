@@ -1,0 +1,39 @@
+{
+  "id": "SD-HB-1234-2024",
+  "scope": "state:sd",
+  "title": "HB1234 (2024 Regular): address the issuance and revocation requirements pertaining to a permit to carry a concealed weapon.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/25057",
+    "https://mylrc.sdlegislature.gov/api/Documents/264022.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tina Mulally",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "e1d160b4-80c5-4d2d-8ed3-48bcdc4885c6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2024-01-31; official copy, https://mylrc.sdlegislature.gov/api/Documents/264022.pdf (sdlegislature.gov DocumentId 264022, BillId 25057))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1234-2024.introduced.pdf",
+      "sha256": "78a312a69edfae0aee427466c997f98ce0322f00e4ab3f3f7f1520f7d3c72be8"
+    },
+    "note": "Introduced text, 2024-01-31. Section 2 also narrows permit disqualifiers (e.g. 'documented history' of intoxication or violence, ten-year and five-year look-backs, adds insanity acquittal) and updates federal-law references to January 1, 2024; Section 3 struck the show-cause procedure and added findings required for revocation. No passage vote recorded."
+  },
+  "operative_text": "Section 1 (SDCL 23-7-7): Nothing in this section requires an individual to obtain a permit as a condition of carrying a concealed pistol in this state.\nSection 2 (SDCL 23-7-7.1): If the sheriff denies an application for a permit under this section, the sheriff must, at the time of denial, provide the applicant with a copy of each document and record that the sheriff reviewed in making the determination. The standard for review of a denial under this section is clear and convincing evidence. For purposes of this section, the term \"documented history\" means substantiated facts contained in court records.\nSection 3 (SDCL 23-7-8.4): A prosecuting attorney, upon application of a certified law enforcement officer, may apply to the circuit court for an order revoking a person's permit to carry a concealed pistol or revoking a person's constitutional right to bear arms. The burden of proof under this section, which rests with the prosecuting attorney, is clear and convincing evidence. The person's right to bear arms is terminated upon the order of revocation. A revocation under this section is appealable to the Supreme Court, pursuant to chapter 15-26A."
+}

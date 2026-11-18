@@ -1,0 +1,357 @@
+{
+  "politician_id": "0a283b10-918c-4251-899b-5385c9174b6d",
+  "findings": [
+    {
+      "id": "792fc212e10583cee1add10dc17fc4fbdd1792610b51c5a42f702adb0a24d900",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/8913",
+      "date": "2018-03-07",
+      "date_precision": "day",
+      "instrument_id": "SD-HB-1083-2018",
+      "act": "yea",
+      "motion": "House Concurred in amendments",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SD House, House Concurred in amendments, 2018-03-07: yea (tally 63–3); census gate: near-unanimous.",
+      "subjects": [
+        "restricted enhanced carry permit for ages 18-20",
+        "fingerprinting at no extra charge",
+        "permit name and address updates"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Judiciary Engrossed, 2018-02-28; official copy, https://mylrc.sdlegislature.gov/api/Documents/50081.pdf (sdlegislature.gov DocumentId 50081, BillId 8913))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1083-2018.senate_judiciary_engrossed.pdf",
+          "sha256": "2eb82eaeefbe2f4669073bdc654cd44a406d7c930e73cf00e05c47fdb0acd190"
+        }
+      }
+    },
+    {
+      "id": "dd11af692376b17238cedea04dc5d840df06501aa3538442b89856c588e75294",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/9112",
+      "date": "2018-03-07",
+      "date_precision": "day",
+      "instrument_id": "SD-HB-1209-2018",
+      "act": "yea",
+      "motion": "House Concurred in amendments",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SD House, House Concurred in amendments, 2018-03-07: yea (tally 62–4); census gate: near-unanimous.",
+      "subjects": [
+        "federal instant background check for concealed pistol permits",
+        "background check on permit renewal"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Judiciary Engrossed, 2018-02-28; official copy, https://mylrc.sdlegislature.gov/api/Documents/50077.pdf (sdlegislature.gov DocumentId 50077, BillId 9112))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1209-2018.senate_judiciary_engrossed.pdf",
+          "sha256": "f01335771904fbd81c2f13f5ad44299caf0c377822c86be6da51aa4ec662717d"
+        }
+      }
+    },
+    {
+      "id": "2a30db6f86fa68144baf790cf431d047fd970a59dfb3e3278a758fa1a8ad3be0",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/9020",
+      "date": "2018-02-14",
+      "date_precision": "day",
+      "instrument_id": "SD-HB-1271-2018",
+      "act": "yea",
+      "motion": "House Do Pass",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SD House, House Do Pass, 2018-02-14: yea (tally 57–7); census gate: none.",
+      "subjects": [
+        "gun ban limited to public school premises",
+        "exemptions for nonpublic schools and churches"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2018-01-31; official copy, https://mylrc.sdlegislature.gov/api/Documents/48282.pdf (sdlegislature.gov DocumentId 48282, BillId 9020))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1271-2018.introduced.pdf",
+          "sha256": "0f315b19898430fb4c45381472e226e4f7e8d07dae285583f9900e423769030b"
+        }
+      }
+    },
+    {
+      "id": "f069729bea89bebb98ffa8d7516562f3fd130bdde7f9bbf0f59607c5f9eead77",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/8913",
+      "date": "2018",
+      "date_precision": "year",
+      "instrument_id": "SD-HB-1083-2018",
+      "act": "sponsor",
+      "motion": "prime sponsor, introduced text (Introduced by:)",
+      "note": "prime sponsor of SD-HB-1083-2018 (introduced text (Introduced by:)): HB1083 (2018 Regular): revise certain provisions regarding permits to carry a concealed pistol and to declare an emergency..",
+      "subjects": [
+        "restricted enhanced carry permit for ages 18-20",
+        "fingerprinting at no extra charge",
+        "permit name and address updates"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Judiciary Engrossed, 2018-02-28; official copy, https://mylrc.sdlegislature.gov/api/Documents/50081.pdf (sdlegislature.gov DocumentId 50081, BillId 8913))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1083-2018.senate_judiciary_engrossed.pdf",
+          "sha256": "2eb82eaeefbe2f4669073bdc654cd44a406d7c930e73cf00e05c47fdb0acd190"
+        }
+      }
+    },
+    {
+      "id": "ba042c42637640f5e600fab84fe2991d5da6c1ad972c8bd8d1ab825abd90991f",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/9020",
+      "date": "2018",
+      "date_precision": "year",
+      "instrument_id": "SD-HB-1271-2018",
+      "act": "sponsor",
+      "motion": "co sponsor, introduced text (Introduced by:)",
+      "note": "co sponsor of SD-HB-1271-2018 (introduced text (Introduced by:)): HB1271 (2018 Regular): revise certain provisions regarding the carrying of certain guns on certain premises..",
+      "subjects": [
+        "gun ban limited to public school premises",
+        "exemptions for nonpublic schools and churches"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2018-01-31; official copy, https://mylrc.sdlegislature.gov/api/Documents/48282.pdf (sdlegislature.gov DocumentId 48282, BillId 9020))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1271-2018.introduced.pdf",
+          "sha256": "0f315b19898430fb4c45381472e226e4f7e8d07dae285583f9900e423769030b"
+        }
+      }
+    },
+    {
+      "id": "85a0999eb73a8c674dd4b4ec041e9893fe823f581de75d1ee2b22eae0989f81c",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/8771",
+      "date": "2018",
+      "date_precision": "year",
+      "instrument_id": "SD-SB-175-2018",
+      "act": "sponsor",
+      "motion": "co sponsor, introduced text (Introduced by:)",
+      "note": "co sponsor of SD-SB-175-2018 (introduced text (Introduced by:)): SB175 (2018 Regular): revise certain provisions regarding the carrying of concealed pistols by certain persons..",
+      "subjects": [
+        "residents meeting permit rules may carry concealed with a driver license",
+        "repeat unpermitted concealed carry becomes a felony"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2018-01-31; official copy, https://mylrc.sdlegislature.gov/api/Documents/48220.pdf (sdlegislature.gov DocumentId 48220, BillId 8771))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-175-2018.introduced.pdf",
+          "sha256": "08b2811db18179355efaa6ac1fc34e77d43703c1b8b6f35fd0d42330530144ef"
+        }
+      }
+    },
+    {
+      "id": "39275e4fe40de2a0ef9fc70d623dc6d387b19fac90022f63e0b6fdcd3b68fb5b",
+      "kind": "own-words",
+      "url": "https://sdpb.org/politics/2025-03-24/gov-rhoden-signs-three-gun-bills-into-law",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "passage": "One of my favorite things about South Dakota is how free we are – especially when it comes to the freedom to keep and bear arms. We have taken greater actions to defend our Second Amendment rights than any other state. As long as I am governor, I will continue to defend this basic constitutional freedom.",
+      "note": "Statement in his press release at the signing of three gun bills, as quoted by SDPB. The bills let permit holders keep pistols in vehicles in school lots, let city and county employees carry at work (and repeal the bar ban), and allow enhanced-permit holders to carry on college campuses.",
+      "subjects": [
+        "general statement on gun rights",
+        "carry a gun without a permit",
+        "guns on campuses and in bars"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:01:58.140Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fb696b7e58c1d6814251b92d61bcbeffc30b7f10833ea70621719d79406b259a",
+      "kind": "own-words",
+      "url": "https://www.dakotanewsnow.com/2026/02/10/south-dakota-signs-first-of-its-kind-suppressor-law/",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "passage": "South Dakota also became the first state in the nation that doesn't charge a nickel for you to exercise your Second Amendment rights in obtaining a concealed carry permit if you choose to do so,",
+      "note": "Quoted by Dakota News Now at the suppressor bill signing. He says the state charges nothing for a concealed carry permit and that, as a legislator, he carried several bills supporting the Second Amendment.",
+      "subjects": [
+        "carry permit fees",
+        "suppressor rules",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:01:58.140Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3f86317d2fb73b7ae8f856742897f8c8116855c76a125ddb653f3fa975f82c2d",
+      "kind": "own-words",
+      "url": "https://www.nssf.org/articles/nssf-profile-qa-governor-larry-rhoden-r-s-d/",
+      "date": "2026-02-04",
+      "date_precision": "day",
+      "passage": "South Dakota is the most Second Amendment-friendly state in the nation! We will keep it that way by cutting red tape and making sure companies know that we are Open for Opportunity. I’m currently working with legislators to deregulate suppressors at the state level.",
+      "note": "Written answer in an industry-group Q&A: says he is working with legislators to deregulate suppressors at the state level.",
+      "subjects": [
+        "suppressor rules",
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:01:58.140Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9acb8afc912810c07a87c64dd0b075f8248d32adb5df85d0d94289619b2a0400",
+      "kind": "own-words",
+      "url": "https://www.nssf.org/articles/nssf-profile-qa-governor-larry-rhoden-r-s-d/",
+      "date": "2026-02-04",
+      "date_precision": "day",
+      "passage": "South Dakota is the freest state in a nation founded on the principle of freedom, and the Second Amendment exists to protect all our other rights.",
+      "note": "General statement on the Second Amendment from the same written Q&A.",
+      "subjects": [
+        "general statement on gun rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:01:58.140Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8f6cc593ca3d28fc9fa3562e01c1abbdf2c1f10c599919c28473e3dff467eddd",
+      "kind": "own-words",
+      "url": "https://sdpb.org/politics/2025-03-24/rhoden-sends-letter-to-trump-asking-to-rollback-gun-restriction-rule",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "passage": "In a letter to Trump and Attorney General Pam Bondi, Rhoden called the waiting period “unnecessary” now that background checks are federally required.",
+      "note": "News story's description of his letter; only the word 'unnecessary' is his quoted wording. The letter asks the federal government to drop the seven-day waiting period before shipping firearms and accessories (27 CFR 478.96), citing the effect on a Sioux Falls suppressor maker.",
+      "subjects": [
+        "waiting periods",
+        "federal agency gun rules"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:01:58.140Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "98c97435bcfa097ad3220089d908f6a7f7c4ea2b13c8ae59e75aab3eb32c3c0f",
+      "kind": "record",
+      "url": "https://sdpb.org/politics/2025-03-24/gov-rhoden-signs-three-gun-bills-into-law",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "act": "signed",
+      "motion": "Three gun bills signed 2025-03-24 (bill numbers not stated on the page)",
+      "note": "As governor he signed three bills: permit holders may keep pistols in vehicles in school parking lots; city and county employees may carry concealed at work, with an added repeal of the ban on concealed pistols in bars; enhanced-permit holders may carry on college campuses. Bill numbers not stated on the page.",
+      "subjects": [
+        "carry a gun without a permit",
+        "places where carry is allowed"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:01:58.140Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "80a0024fa7d0ece6ece1a5a268044bc5de3b33185465974148efeff796e9b530",
+      "kind": "record",
+      "url": "https://www.dakotanewsnow.com/2026/02/10/south-dakota-signs-first-of-its-kind-suppressor-law/",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "act": "signed",
+      "motion": "SB 2 (2026), the suppressor bill, as the page reports it",
+      "note": "He signed the 2026 suppressor bill (reported as SB 2) removing suppressors from the state's 'controlled weapon' definition, so no state paperwork or background checks apply; federal law still regulates them.",
+      "subjects": [
+        "suppressor rules",
+        "repealing gun laws"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T23:01:58.140Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "carry a gun without a permit",
+        "carry permit fees",
+        "guns on college campuses and in bars",
+        "suppressor rules",
+        "federal waiting period on shipped guns",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "status: in scope; won the July 28 2026 runoff for governor and is on the general-election ballot (per the statewide election page on Wikipedia)",
+        "On the Record (0 appearances)",
+        "sponsor list: covered by bulk bill data",
+        "https://governor.sd.gov/ (page loaded; the fetch tool failed to read it, news list searched by curl with no gun items found; not otherwise reviewed)",
+        "https://sdpb.org/politics/2025-03-24/gov-rhoden-signs-three-gun-bills-into-law (news story quoting a signing release)",
+        "https://sdpb.org/politics/2025-03-24/rhoden-sends-letter-to-trump-asking-to-rollback-gun-restriction-rule (news story on his letter)",
+        "https://www.dakotanewsnow.com/2026/02/10/south-dakota-signs-first-of-its-kind-suppressor-law/ (news story quoting him)",
+        "https://www.nssf.org/articles/nssf-profile-qa-governor-larry-rhoden-r-s-d/ (written Q&A with an industry group)",
+        "web search: news on his name plus Second Amendment (one search) and the waiting-period letter (one search)",
+        "not reviewed: Ballotpedia, campaign site, debate and interview video, the dakotanewsnow fee fact-check (conclusion not read)"
+      ],
+      "found": 7,
+      "at": "2026-11-17T23:01:58.140Z",
+      "by": "source-collector"
+    }
+  ]
+}

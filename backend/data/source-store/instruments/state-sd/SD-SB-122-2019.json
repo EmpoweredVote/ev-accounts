@@ -1,0 +1,223 @@
+{
+  "id": "SD-SB-122-2019",
+  "scope": "state:sd",
+  "title": "SB122 (2019 Regular): restrict the enactment of policies governing the possession of firearms at public institutions of higher education.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/9935",
+    "https://mylrc.sdlegislature.gov/api/Documents/52336.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lance S Russell",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "2cf0e333-838d-4235-9f0c-176347f7dfa8"
+    },
+    {
+      "name": "Kaleb W. Weis",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Drew C. Dennert",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Jensen (Kevin)",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Stace Nelson",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Tom Pischke",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "19103966-3827-4234-8cb4-afdacb4569e7"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2019-02-19",
+      "body": "SD Senate",
+      "motion": "Senate Do Pass",
+      "kind": "roll-call",
+      "yes": 10,
+      "no": 24,
+      "absent": 1,
+      "note": "sdlegislature.gov /api/Votes record (read from the legislature) 90163485",
+      "members": [
+        {
+          "name": "Lynne DiSanto",
+          "vote": "yea"
+        },
+        {
+          "name": "Brock L. Greenfield",
+          "vote": "yea",
+          "politician_id": "4a858d43-9921-46ab-95e1-530cb70697d6"
+        },
+        {
+          "name": "Jensen (Phil)",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Maher",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Monroe",
+          "vote": "yea"
+        },
+        {
+          "name": "Stace Nelson",
+          "vote": "yea"
+        },
+        {
+          "name": "Otten",
+          "vote": "yea"
+        },
+        {
+          "name": "Lance S Russell",
+          "vote": "yea",
+          "politician_id": "2cf0e333-838d-4235-9f0c-176347f7dfa8"
+        },
+        {
+          "name": "Jim Stalzer",
+          "vote": "yea"
+        },
+        {
+          "name": "Maggie A. Sutton",
+          "vote": "yea"
+        },
+        {
+          "name": "Blare",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Bolin",
+          "vote": "nay"
+        },
+        {
+          "name": "Gary Cammack",
+          "vote": "nay"
+        },
+        {
+          "name": "Justin R Cronin",
+          "vote": "nay"
+        },
+        {
+          "name": "R. Blake Curd",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Ewing",
+          "vote": "nay"
+        },
+        {
+          "name": "Red Dawn Foster",
+          "vote": "nay",
+          "politician_id": "567014f7-69e4-45e2-93b0-53eea4e592fc"
+        },
+        {
+          "name": "Troy E. Heinert",
+          "vote": "nay"
+        },
+        {
+          "name": "Craig Kennedy",
+          "vote": "nay"
+        },
+        {
+          "name": "Josh Klumb",
+          "vote": "nay"
+        },
+        {
+          "name": "Jack Kolbeck",
+          "vote": "nay",
+          "politician_id": "a84ab96c-ab1d-4020-af32-02bc5a7a7a0c"
+        },
+        {
+          "name": "Kris Langer",
+          "vote": "nay"
+        },
+        {
+          "name": "Reynold Nesiba",
+          "vote": "nay"
+        },
+        {
+          "name": "Al Novstrup",
+          "vote": "nay",
+          "politician_id": "7c5e90ca-bd95-4d2e-a2da-e31d5a5c1f67"
+        },
+        {
+          "name": "Arthur L. Rusch",
+          "vote": "nay"
+        },
+        {
+          "name": "Lee Schoenbeck",
+          "vote": "nay"
+        },
+        {
+          "name": "Smith (V. J.)",
+          "vote": "nay"
+        },
+        {
+          "name": "Deb Soholt",
+          "vote": "nay"
+        },
+        {
+          "name": "Alan Solano",
+          "vote": "nay"
+        },
+        {
+          "name": "Wayne H. Steinhauer",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim White",
+          "vote": "nay"
+        },
+        {
+          "name": "John Wiik",
+          "vote": "nay"
+        },
+        {
+          "name": "Susan Wismer",
+          "vote": "nay"
+        },
+        {
+          "name": "Jordan Youngberg",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeffrey D Partridge",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2019-01-25; official copy, https://mylrc.sdlegislature.gov/api/Documents/52336.pdf (sdlegislature.gov DocumentId 52336, BillId 9935))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-122-2019.introduced.pdf",
+      "sha256": "7ca4ba428b3fa9de27d9802a7ac9cf88f437cc312d98778deced88c6cdbc3385"
+    },
+    "note": "As filed. Senate Do Pass vote 10-24 on 2019-02-19; later amendments are not in the text read."
+  },
+  "operative_text": "Section 1 (new section in SDCL ch. 22-14): Neither the Board of Regents nor the South Dakota Board of Technical Education, nor any institution of higher education under the control of the Board of Regents or the South Dakota Board of Technical Education, may adopt any rule, regulation, policy, standard, or other directive that limits or restricts the right of a person to carry or possess a firearm within the boundaries of the institution, beyond those limitations or restrictions set forth in law."
+}

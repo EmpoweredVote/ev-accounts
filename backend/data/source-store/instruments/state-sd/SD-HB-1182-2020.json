@@ -1,0 +1,508 @@
+{
+  "id": "SD-HB-1182-2020",
+  "scope": "state:sd",
+  "title": "HB1182 (2020 Regular): provide for the renewal of an enhanced permit to carry a concealed pistol.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/12021",
+    "https://mylrc.sdlegislature.gov/api/Documents/68108.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Thomas J Brunner",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2020-02-24",
+      "body": "SD House",
+      "motion": "House Do Pass Amended",
+      "kind": "roll-call",
+      "yes": 68,
+      "no": 0,
+      "absent": 2,
+      "note": "sdlegislature.gov /api/Votes record (read from the legislature) 90163494",
+      "members": [
+        {
+          "name": "David L. Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Hugh Bartels",
+          "vote": "yea"
+        },
+        {
+          "name": "Doug J. Barthel",
+          "vote": "yea"
+        },
+        {
+          "name": "Arch Beal",
+          "vote": "yea",
+          "politician_id": "58f81fda-dad1-40e1-b0ca-73e5be22f8e5"
+        },
+        {
+          "name": "Shawn Bordeaux",
+          "vote": "yea"
+        },
+        {
+          "name": "Scyller J Borglum",
+          "vote": "yea"
+        },
+        {
+          "name": "Thomas J Brunner",
+          "vote": "yea"
+        },
+        {
+          "name": "Kirk Chaffee",
+          "vote": "yea"
+        },
+        {
+          "name": "Roger Chase",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan D. Cwach",
+          "vote": "yea"
+        },
+        {
+          "name": "Drew C. Dennert",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael G Diedrich",
+          "vote": "yea"
+        },
+        {
+          "name": "Linda Duba",
+          "vote": "yea"
+        },
+        {
+          "name": "Mary Duvall",
+          "vote": "yea"
+        },
+        {
+          "name": "Caleb P. Finck",
+          "vote": "yea"
+        },
+        {
+          "name": "Julie Frye-Mueller",
+          "vote": "yea"
+        },
+        {
+          "name": "Bob Glanzer",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Goodwin",
+          "vote": "yea",
+          "politician_id": "2dfc4c6b-452b-48a5-bc92-cf1f29908e5b"
+        },
+        {
+          "name": "Spencer Gosch",
+          "vote": "yea",
+          "politician_id": "85e164a2-7744-4005-9282-456f3827df65"
+        },
+        {
+          "name": "Lana Greenfield",
+          "vote": "yea",
+          "politician_id": "1d55919c-7451-495a-81b3-1f29921a6abe"
+        },
+        {
+          "name": "Randy Gross",
+          "vote": "yea"
+        },
+        {
+          "name": "Dayle Hammock",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Hansen",
+          "vote": "yea"
+        },
+        {
+          "name": "Erin Healy",
+          "vote": "yea",
+          "politician_id": "1babfc4d-bbd5-44f9-ac8f-48f256c66ae7"
+        },
+        {
+          "name": "Taffy Howard",
+          "vote": "yea",
+          "politician_id": "6979c638-2800-48f4-9263-dd6f04726842"
+        },
+        {
+          "name": "Jean M Hunhoff",
+          "vote": "yea"
+        },
+        {
+          "name": "Jensen (Kevin)",
+          "vote": "yea"
+        },
+        {
+          "name": "Timothy R Johns",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris P. Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "David Johnson",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Karr",
+          "vote": "yea",
+          "politician_id": "386debb7-ed7f-4ca0-a695-5fdbfd3b7049"
+        },
+        {
+          "name": "Lance Koth",
+          "vote": "yea"
+        },
+        {
+          "name": "Isaac Latterell",
+          "vote": "yea"
+        },
+        {
+          "name": "Oren Lesmeister",
+          "vote": "yea"
+        },
+        {
+          "name": "Steve Livermont",
+          "vote": "yea"
+        },
+        {
+          "name": "Sam Marty",
+          "vote": "yea",
+          "politician_id": "4034d40e-6795-4413-b976-79ead3d3d7d1"
+        },
+        {
+          "name": "John Mills",
+          "vote": "yea"
+        },
+        {
+          "name": "Rhonda L. Milstead",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Miskimins",
+          "vote": "yea",
+          "politician_id": "3e7cce6f-c393-4d3b-be27-f13e079fa502"
+        },
+        {
+          "name": "Tina Mulally",
+          "vote": "yea",
+          "politician_id": "e1d160b4-80c5-4d2d-8ed3-48bcdc4885c6"
+        },
+        {
+          "name": "Jess M. Olson",
+          "vote": "yea"
+        },
+        {
+          "name": "Otten (Herman)",
+          "vote": "yea"
+        },
+        {
+          "name": "Marty Overweg",
+          "vote": "yea",
+          "politician_id": "c1d91b99-d727-4110-9792-c31f475d81e2"
+        },
+        {
+          "name": "Tad Perry",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent S. Peterson",
+          "vote": "yea"
+        },
+        {
+          "name": "Peterson (Sue)",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Pischke",
+          "vote": "yea",
+          "politician_id": "19103966-3827-4234-8cb4-afdacb4569e7"
+        },
+        {
+          "name": "Doug Post",
+          "vote": "yea"
+        },
+        {
+          "name": "Peri Pourier",
+          "vote": "yea",
+          "politician_id": "2cb67be6-dc31-452a-9f2b-51ce84a28e31"
+        },
+        {
+          "name": "Lee Qualm",
+          "vote": "yea"
+        },
+        {
+          "name": "Tony Randolph",
+          "vote": "yea",
+          "politician_id": "0f39be61-4c8b-4f8e-8898-a5af1a84e79a"
+        },
+        {
+          "name": "Nancy Rasmussen",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Reed",
+          "vote": "yea",
+          "politician_id": "20d569c0-435f-4f24-b22a-f0479f863605"
+        },
+        {
+          "name": "Rebecca Reimer",
+          "vote": "yea",
+          "politician_id": "5432c021-1820-47f8-9a05-beb82d1351bf"
+        },
+        {
+          "name": "Ray Ring",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Rounds",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael P Saba",
+          "vote": "yea"
+        },
+        {
+          "name": "Jamie Smith",
+          "vote": "yea",
+          "politician_id": "270e2fd2-45bf-4325-ab38-9c9343a89b9e"
+        },
+        {
+          "name": "Tamara St. John",
+          "vote": "yea"
+        },
+        {
+          "name": "Manny Steele",
+          "vote": "yea"
+        },
+        {
+          "name": "Kelly Sullivan",
+          "vote": "yea"
+        },
+        {
+          "name": "Wangsness",
+          "vote": "yea"
+        },
+        {
+          "name": "Kaleb W. Weis",
+          "vote": "yea"
+        },
+        {
+          "name": "Marli J. Wiese",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark K. Willadsen",
+          "vote": "yea"
+        },
+        {
+          "name": "Nancy L. York",
+          "vote": "yea"
+        },
+        {
+          "name": "Larry P Zikmund",
+          "vote": "yea",
+          "politician_id": "3bd6b5be-33a9-4951-8472-2dcc6ed005ce"
+        },
+        {
+          "name": "Steven G. Haugaard",
+          "vote": "yea"
+        },
+        {
+          "name": "Fred E Deutsch",
+          "vote": "absent"
+        },
+        {
+          "name": "Steven D McCleerey",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2020-03-03",
+      "body": "SD Senate",
+      "motion": "Senate Do Pass Amended",
+      "kind": "roll-call",
+      "yes": 29,
+      "no": 6,
+      "absent": 0,
+      "note": "sdlegislature.gov /api/Votes record (read from the legislature) 90163495",
+      "members": [
+        {
+          "name": "Blare",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Bolin",
+          "vote": "yea"
+        },
+        {
+          "name": "Gary Cammack",
+          "vote": "yea"
+        },
+        {
+          "name": "Jessica Castleberry",
+          "vote": "yea"
+        },
+        {
+          "name": "R. Blake Curd",
+          "vote": "yea"
+        },
+        {
+          "name": "Helene Duhamel",
+          "vote": "yea",
+          "politician_id": "cc12ccca-92ba-4428-affe-6c87cdd9b16a"
+        },
+        {
+          "name": "Bob Ewing",
+          "vote": "yea"
+        },
+        {
+          "name": "Red Dawn Foster",
+          "vote": "yea",
+          "politician_id": "567014f7-69e4-45e2-93b0-53eea4e592fc"
+        },
+        {
+          "name": "Brock L. Greenfield",
+          "vote": "yea",
+          "politician_id": "4a858d43-9921-46ab-95e1-530cb70697d6"
+        },
+        {
+          "name": "Troy E. Heinert",
+          "vote": "yea"
+        },
+        {
+          "name": "Craig Kennedy",
+          "vote": "yea"
+        },
+        {
+          "name": "Josh Klumb",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Kolbeck",
+          "vote": "yea",
+          "politician_id": "a84ab96c-ab1d-4020-af32-02bc5a7a7a0c"
+        },
+        {
+          "name": "John A Lake",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Maher",
+          "vote": "yea"
+        },
+        {
+          "name": "Reynold Nesiba",
+          "vote": "yea"
+        },
+        {
+          "name": "Al Novstrup",
+          "vote": "yea",
+          "politician_id": "7c5e90ca-bd95-4d2e-a2da-e31d5a5c1f67"
+        },
+        {
+          "name": "Otten",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeffrey D Partridge",
+          "vote": "yea"
+        },
+        {
+          "name": "Arthur L. Rusch",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee Schoenbeck",
+          "vote": "yea"
+        },
+        {
+          "name": "Kyle Schoenfish",
+          "vote": "yea",
+          "politician_id": "e80c2c4a-3f78-4cdd-901f-58abe4bf7fda"
+        },
+        {
+          "name": "Smith (V. J.)",
+          "vote": "yea"
+        },
+        {
+          "name": "Deb Soholt",
+          "vote": "yea"
+        },
+        {
+          "name": "Wayne H. Steinhauer",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim White",
+          "vote": "yea"
+        },
+        {
+          "name": "John Wiik",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan Wismer",
+          "vote": "yea"
+        },
+        {
+          "name": "Jordan Youngberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Jensen (Phil)",
+          "vote": "nay"
+        },
+        {
+          "name": "Kris Langer",
+          "vote": "nay"
+        },
+        {
+          "name": "Jeff Monroe",
+          "vote": "nay"
+        },
+        {
+          "name": "Lance S Russell",
+          "vote": "nay",
+          "politician_id": "2cf0e333-838d-4235-9f0c-176347f7dfa8"
+        },
+        {
+          "name": "Jim Stalzer",
+          "vote": "nay"
+        },
+        {
+          "name": "Maggie A. Sutton",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (House State Affairs Engrossed, 2020-02-20; official copy, https://mylrc.sdlegislature.gov/api/Documents/68108.pdf (sdlegislature.gov DocumentId 68108, BillId 12021))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1182-2020.house_state_affairs_engrossed.pdf",
+      "sha256": "998b1339fd0d07fd040efe8ef1c82f3e731477bb8304c821b27693fe16297a97"
+    },
+    "note": "House State Affairs engrossed, 2020-02-20; passed House 68-0 on 2020-02-24 (do pass amended); later amendments are not in the text read. Section 1 struck \"sixty-day\", added \"thirty-day\". Section 2 rewrites the renewal period (begins one-hundred eighty days before expiry, ends thirty days after); that sentence is garbled in the print and not quoted. Items (2)-(3) and the invalid-permit sentence are reconstructed from interleaved struck/added words (a stray \"a\" in the print dropped), so wording is close but not guaranteed character-exact."
+  },
+  "operative_text": "Section 1 (SDCL 23-7-8.13): Upon the expiration of a permit to carry a concealed pistol that was issued pursuant to this chapter, the permit holder has a thirty-day grace period to renew the permit. During the grace period, the permit holder may continue to carry a concealed pistol.\nSection 2 (SDCL 23-7-56): In order to renew an enhanced permit a person shall: (1) Pay a renewal fee in the amount of fifty dollars; (2) Pay the fee for a fingerprint background check; (3) Pass a fingerprint background check and a National Instant Criminal Background Check; and (4) Present proof that during the period of renewal set forth in this section, the person: (a) Successfully completed the live fire component of a qualifying handgun course defined in § 23-7-58; (b) Received instruction regarding the use of force standards; and (c) Received instruction regarding relevant criminal statutory changes. Fifty percent of the renewal fee required by this section must be retained by the sheriff. The remaining fifty percent of the renewal fee required by this section must be forwarded to the secretary of state for use in administering the concealed carry permitting process. If a person fails to renew an enhanced permit to carry a concealed pistol during the period set forth in this section, the permit is deemed to be invalid. In order to obtain an enhanced permit thereafter, the person shall submit an application and meet all requirements set forth in § 23-7-53."
+}

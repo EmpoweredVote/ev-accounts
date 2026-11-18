@@ -1,0 +1,116 @@
+{
+  "politician_id": "fc4ae9e6-70ce-4f5c-b061-f0a49b401a6e",
+  "findings": [
+    {
+      "id": "e33a59470eb045d15772d0e566a43156635f88deea0e34d1e0a35d7753329218",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/27015",
+      "date": "2026-02-17",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-179-2026",
+      "act": "yea",
+      "motion": "Senate Do Pass",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "SD Senate, Senate Do Pass, 2026-02-17: yea (tally 28–6); census gate: none.",
+      "subjects": [
+        "juvenile commitment allowed for weapons offenses"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2026-01-29; official copy, https://mylrc.sdlegislature.gov/api/Documents/299353.pdf (sdlegislature.gov DocumentId 299353, BillId 27015))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-179-2026.introduced.pdf",
+          "sha256": "bcf1e952f357859cebf519027cf82ab916791f223fe991dbef3860176ba3171c"
+        }
+      }
+    },
+    {
+      "id": "076e3bdbcc55aa9b40a4cfbdc9b0d5e256ee643c450a1e270a07baef5455f044",
+      "kind": "record",
+      "url": "https://sdlegislature.gov/Session/Bill/26339",
+      "date": "2026-01-23",
+      "date_precision": "day",
+      "instrument_id": "SD-SB-2-2026",
+      "act": "yea",
+      "motion": "Senate Do Pass Amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "SD Senate, Senate Do Pass Amended, 2026-01-23: yea (tally 34–0); census gate: near-unanimous.",
+      "subjects": [
+        "firearm silencers no longer a controlled weapon"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Engrossed, 2026-01-23; official copy, https://mylrc.sdlegislature.gov/api/Documents/296986.pdf (sdlegislature.gov DocumentId 296986, BillId 26339))",
+        "fetched_at": "2026-11-17T21:51:15.348062Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-2-2026.senate_engrossed.pdf",
+          "sha256": "b18942ff9d86f7629bbd3d4395cd747092e260795bf4890f97717e491429ee29"
+        }
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "bans on a type of firearm or magazine",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "suppressors and the National Firearms Act",
+        "general statements on gun rights or the Second Amendment"
+      ],
+      "places": [
+        "in scope: a news roundup of the June 2026 state Senate primaries says the incumbent for District 22 won renomination (https://criticalreport.substack.com/p/2026-sd-senate-primaries); a web search lists him as appointed July 2025 to District 22",
+        "On the Record (0 meetings found)",
+        "sponsor list: covered by bulk bill data",
+        "nothing on the subject: web searches (3) on his name plus gun, firearm, Second Amendment, suppressor and concealed-carry words returned no statement by him",
+        "blocked: https://ballotpedia.org/Brandon_Wipf (fetch returned an empty page)",
+        "not reviewed: https://sdlegislature.gov/Legislators/Profile/5256 (page loads by script, no text returned; his own member page was not read)",
+        "not reviewed: his campaign site (none found in search)",
+        "not reviewed: vote411 and the other URL-pattern pages (own allowance not spent on them)",
+        "https://www.thedakotascout.com/p/gov-rhoden-puts-ag-advocate-on-south and the Yahoo appointment story: fetched, no gun content found"
+      ],
+      "found": 0,
+      "at": "2026-11-17T22:58:27.535Z",
+      "by": "source-collector"
+    },
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "ban on assault-style guns",
+        "check every gun buyer",
+        "red-flag orders",
+        "carry a gun without a permit",
+        "suppressor rules",
+        "general Second Amendment statements"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://www.ballotready.org/people/brandon-wipf (confirms current District 22 senator and 2026 general-election candidate; nothing on the subject)",
+        "https://plainsman.com/2025/07/16/get-to-know-new-district-22-senator-brandon-wipf/ (profile story on the appointment; nothing on the subject)",
+        "https://ballotpedia.org/Brandon_Wipf (page returned empty to curl and to the fetch tool; not reviewed)",
+        "https://sdlegislature.gov/Legislators/Profile/ (member page loads by script only, no readable text; not reviewed)",
+        "two web searches on name plus gun words: no statement of his own found",
+        "no personal official or campaign issue page found",
+        "sponsor list: covered by bulk bill data"
+      ],
+      "found": 0,
+      "at": "2026-11-17T23:02:45.845Z",
+      "by": "source-collector"
+    }
+  ]
+}

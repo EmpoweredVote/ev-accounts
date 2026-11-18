@@ -1,0 +1,99 @@
+{
+  "id": "SD-HB-1112-2019",
+  "scope": "state:sd",
+  "title": "HB1112 (2019 Regular): provide for certain persons to carry a concealed pistol or revolver without a permit.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/9899",
+    "https://mylrc.sdlegislature.gov/api/Documents/52301.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tim Rounds",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Alan Solano",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Blare",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Thomas J Brunner",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Justin R Cronin",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "R. Blake Curd",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Mary Duvall",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Bob Glanzer",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Troy E. Heinert",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Sam Marty",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "4034d40e-6795-4413-b976-79ead3d3d7d1"
+    },
+    {
+      "name": "Jeffrey D Partridge",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Jim White",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Mark K. Willadsen",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2019-01-25; official copy, https://mylrc.sdlegislature.gov/api/Documents/52301.pdf (sdlegislature.gov DocumentId 52301, BillId 9899))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1112-2019.introduced.pdf",
+      "sha256": "7fc116161eb3b9826be5d1eb0b92007ca2fd993213cda0f7cc0fa6172ad02bb5"
+    },
+    "note": "Introduced text 2019-01-25. Struck: 'Any', 'other than', 'who', 'his or her person', and the old closing 'is guilty of a Class 1 misdemeanor'. No vote recorded."
+  },
+  "operative_text": "Section 1 (SDCL 22-14-9): A person, is guilty of a Class 1 misdemeanor if the person is not a law enforcement officer as defined in § 22-1-2 acting under color of authority, or a person who is a resident of this state who meets the requirements of subdivisions 23-7-7.1(1) to (5), inclusive, and subdivisions 23-7-7.1(7) to (10), inclusive, and: (1) Carries a pistol or revolver, loaded or unloaded, concealed on or about the person's body without a permit as provided in chapter 23-7; or (2) Carries a pistol or revolver, loaded or unloaded, concealed in any vehicle while operating the vehicle, without a permit as provided in chapter 23-7; Section 2 (new section in SDCL ch. 23-7): A person who is a resident of a state that allows a resident of that state to carry a concealed pistol or revolver without a permit, and that allows a resident of this state to carry a concealed pistol or revolver without a permit issued by that state, may carry a concealed pistol or revolver in this state without a permit issued under this chapter."
+}

@@ -1,0 +1,243 @@
+{
+  "id": "SD-SB-115-2018",
+  "scope": "state:sd",
+  "title": "SB115 (2018 Regular): provide for the lawful concealing of a firearm while driving a motorcycle.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/9053",
+    "https://mylrc.sdlegislature.gov/api/Documents/49263.pdf"
+  ],
+  "version": "other",
+  "sponsors": [
+    {
+      "name": "Thomas J Brunner",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Stace Nelson",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Michael Clark",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Terri Haverly",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Taffy Howard",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "6979c638-2800-48f4-9263-dd6f04726842"
+    },
+    {
+      "name": "Ryan Maher",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Sam Marty",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "4034d40e-6795-4413-b976-79ead3d3d7d1"
+    },
+    {
+      "name": "Netherton",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Lance S Russell",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "2cf0e333-838d-4235-9f0c-176347f7dfa8"
+    },
+    {
+      "name": "Jim Stalzer",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2018-02-20",
+      "body": "SD Senate",
+      "motion": "Senate Do Pass Amended",
+      "kind": "roll-call",
+      "yes": 16,
+      "no": 17,
+      "absent": 2,
+      "note": "sdlegislature.gov /api/Votes record (read from the legislature) 90163476",
+      "members": [
+        {
+          "name": "Netherton",
+          "vote": "yea"
+        },
+        {
+          "name": "R. Blake Curd",
+          "vote": "yea"
+        },
+        {
+          "name": "Brock L. Greenfield",
+          "vote": "yea",
+          "politician_id": "4a858d43-9921-46ab-95e1-530cb70697d6"
+        },
+        {
+          "name": "Jensen (Phil)",
+          "vote": "yea"
+        },
+        {
+          "name": "Josh Klumb",
+          "vote": "yea"
+        },
+        {
+          "name": "Jack Kolbeck",
+          "vote": "yea",
+          "politician_id": "a84ab96c-ab1d-4020-af32-02bc5a7a7a0c"
+        },
+        {
+          "name": "Ryan Maher",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Monroe",
+          "vote": "yea"
+        },
+        {
+          "name": "Stace Nelson",
+          "vote": "yea"
+        },
+        {
+          "name": "Otten",
+          "vote": "yea"
+        },
+        {
+          "name": "Lance S Russell",
+          "vote": "yea",
+          "politician_id": "2cf0e333-838d-4235-9f0c-176347f7dfa8"
+        },
+        {
+          "name": "Jim Stalzer",
+          "vote": "yea"
+        },
+        {
+          "name": "Sutton (Billie)",
+          "vote": "yea"
+        },
+        {
+          "name": "Neal Tapio",
+          "vote": "yea"
+        },
+        {
+          "name": "John Wiik",
+          "vote": "yea"
+        },
+        {
+          "name": "Jordan Youngberg",
+          "vote": "yea"
+        },
+        {
+          "name": "Jim Bolin",
+          "vote": "nay"
+        },
+        {
+          "name": "Gary Cammack",
+          "vote": "nay"
+        },
+        {
+          "name": "Justin R Cronin",
+          "vote": "nay"
+        },
+        {
+          "name": "Bob Ewing",
+          "vote": "nay"
+        },
+        {
+          "name": "Jason E Frerichs",
+          "vote": "nay"
+        },
+        {
+          "name": "Terri Haverly",
+          "vote": "nay"
+        },
+        {
+          "name": "Troy E. Heinert",
+          "vote": "nay"
+        },
+        {
+          "name": "Craig Kennedy",
+          "vote": "nay"
+        },
+        {
+          "name": "Kris Langer",
+          "vote": "nay"
+        },
+        {
+          "name": "Reynold Nesiba",
+          "vote": "nay"
+        },
+        {
+          "name": "Al Novstrup",
+          "vote": "nay",
+          "politician_id": "7c5e90ca-bd95-4d2e-a2da-e31d5a5c1f67"
+        },
+        {
+          "name": "Jeffrey D Partridge",
+          "vote": "nay"
+        },
+        {
+          "name": "Deb Peters",
+          "vote": "nay"
+        },
+        {
+          "name": "Arthur L. Rusch",
+          "vote": "nay"
+        },
+        {
+          "name": "Alan Solano",
+          "vote": "nay"
+        },
+        {
+          "name": "Larry Tidemann",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim White",
+          "vote": "nay"
+        },
+        {
+          "name": "Kevin Killer",
+          "vote": "absent"
+        },
+        {
+          "name": "Deb Soholt",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Senate Transportation Engrossed, 2018-02-14; official copy, https://mylrc.sdlegislature.gov/api/Documents/49263.pdf (sdlegislature.gov DocumentId 49263, BillId 9053))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-115-2018.senate_transportation_engrossed.pdf",
+      "sha256": "0c56952c6b551a561fa9a9013566ea11f943f369675c46ca520a9d61dc783b41"
+    },
+    "note": "Senate Transportation engrossed, 2018-02-14. Struck: 'in his or her own:', 'house', 'or on;' (including its semicolon), 'himself or herself' and similar wording, replaced by the numbered list. Senate Do Pass Amended vote 16-17 on 2018-02-20; later amendments are not in the text read."
+  },
+  "operative_text": "Section 1 (SDCL 22-14-11): The provisions of § 22-14-9 do not apply to any person who possesses a pistol or revolver (1) In the person's dwelling or place of business (2) On land owned or rented by that person or by a member of that person's household; or (3) While driving or within ten feet of that person's motorcycle.\nSection 1 (SDCL 22-14-11): The provisions of this section do not allow a person to possess a firearm if that person is otherwise prohibited from the possession of a firearm under state or federal law."
+}

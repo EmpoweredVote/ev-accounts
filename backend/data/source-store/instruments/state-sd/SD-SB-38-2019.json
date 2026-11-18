@@ -1,0 +1,81 @@
+{
+  "id": "SD-SB-38-2019",
+  "scope": "state:sd",
+  "title": "SB38 (2019 Regular): provide for the carrying of a concealed pistol without a permit.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/9405",
+    "https://mylrc.sdlegislature.gov/api/Documents/51398.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Drew C. Dennert",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Lance S Russell",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "2cf0e333-838d-4235-9f0c-176347f7dfa8"
+    },
+    {
+      "name": "Julie Frye-Mueller",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Taffy Howard",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "6979c638-2800-48f4-9263-dd6f04726842"
+    },
+    {
+      "name": "Sam Marty",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "4034d40e-6795-4413-b976-79ead3d3d7d1"
+    },
+    {
+      "name": "Jeff Monroe",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Stace Nelson",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Jim Stalzer",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Kaleb W. Weis",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2019-01-06; official copy, https://mylrc.sdlegislature.gov/api/Documents/51398.pdf (sdlegislature.gov DocumentId 51398, BillId 9405))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-38-2019.introduced.pdf",
+      "sha256": "ec20b960d8d9bc90af5c6837d889b2536f7bf028a7dc49f2e8db4b3f9db47136"
+    },
+    "note": "As filed. Sections 1-4 repeal SDCL 22-14-9 (concealed carry without permit offence), 22-14-9.1 (must carry permit), 22-14-10 (unloaded pistol transport exception) and 22-14-11 (home/business exception); those repeals are struck text and are not quoted. Section 6 keeps the 18+ age and background check conditions for a temporary permit; Section 7 (SDCL 23-7-7.4) and Section 8 (22-14-9.2) edit nonresident and reciprocity wording; Section 9 (23-7-8.1) removes the 'carry anywhere except bars' sentence. No passage vote recorded."
+  },
+  "operative_text": "Section 5 (SDCL 23-7-7): The issuance of a permit to carry a concealed pistol pursuant to this chapter or the recognition of nonresident permits to carry a concealed pistol under § 23-7-7.4 do not impose a general prohibition on the carry of a pistol without a permit.\nSection 10 (SDCL 23-7-8.13): Upon the expiration of a permit to carry a concealed pistol that was issued pursuant to this chapter, the permit holder has a sixty-day grace period to renew the permit. During the grace period, the permit holder may continue to carry a concealed pistol\nSection 11 (SDCL 23-7-9): Any pistol that is delivered, shall be securely wrapped and shall be unloaded. A violation of this section is a Class 1 misdemeanor.\nSection 12 (new section in SDCL ch. 23-7): No person may carry a concealed pistol in any licensed on-sale malt beverage or alcoholic beverage establishment that derives over one-half of its total income from the sale of malt or alcoholic beverages."
+}

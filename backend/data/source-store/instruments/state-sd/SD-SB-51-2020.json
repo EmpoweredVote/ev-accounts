@@ -1,0 +1,39 @@
+{
+  "id": "SD-SB-51-2020",
+  "scope": "state:sd",
+  "title": "SB51 (2020 Regular): authorize the possession of a concealed pistol by employees in county courthouses.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/11505",
+    "https://mylrc.sdlegislature.gov/api/Documents/62495.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Lance S Russell",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "2cf0e333-838d-4235-9f0c-176347f7dfa8"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2020-01-16; official copy, https://mylrc.sdlegislature.gov/api/Documents/62495.pdf (sdlegislature.gov DocumentId 62495, BillId 11505))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-51-2020.introduced.pdf",
+      "sha256": "d8147445a8ed58fbcdfea38aa871cbcb17ab016455af697506167d2d595fa748"
+    },
+    "note": "Introduced text, 2020-01-16 (as filed). New subdivision (6) added to SDCL 22-14-24 (old (6) renumbered (7)); the word 'and' after (d) struck. No vote recorded."
+  },
+  "operative_text": "Section 1 (SDCL 22-14-24): The possession of a firearm or other dangerous weapon in a county courthouse by any person who is employed by the county and assigned to work in the county courthouse; and (7) The lawful carrying of a firearm or other dangerous weapon in a county courthouse incident to a hunter safety or a gun safety course or for any other lawful purposes.\nSection 2 (SDCL 22-14-28): A waiver by the county commission in accordance with this section supersedes subdivision 6 of § 22-14-24 governing county employees."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "SD-HB-1173-2023",
+  "scope": "state:sd",
+  "title": "HB1173 (2023 Regular): prevent the enforcement of federal laws and directives related to firearms, accessories, and ammunition.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/23727",
+    "https://mylrc.sdlegislature.gov/api/Documents/246806.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Tony Randolph",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "0f39be61-4c8b-4f8e-8898-a5af1a84e79a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2023-01-26; official copy, https://mylrc.sdlegislature.gov/api/Documents/246806.pdf (sdlegislature.gov DocumentId 246806, BillId 23727))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1173-2023.introduced.pdf",
+      "sha256": "5f2ab7cb3d2472cbe6849c0b4c56e0d99f5f287b2d8f1f817ba8336f38c37e92"
+    },
+    "note": "Introduced text, 2023-01-26; no passage vote on record."
+  },
+  "operative_text": "Section 1 (new section in SDCL title 23): No state agency, political subdivision, or any elected or appointed official or employee of this state or of a political subdivision may contract with or provide assistance to a federal agency or official with respect to the enforcement of a federal statute, regulation, or executive order, which imposes a prohibition, restriction, or requirement that does not exist under the laws of this state, and relates to the sale, transfer, ownership, or possession of: (1) A firearm, or any component or accessory; or (2) Ammunition, or any component or accessory.\nSection 2 (new section in SDCL title 23): Any elected or appointed official or employee of this state or of a political subdivision who knowingly violates section 1 of this Act is subject to: (1) A civil penalty in the amount of $1000 for a first violation; and (2) A Class 1 misdemeanor for a second or subsequent violation.\nSection 3 (new section in SDCL title 23): This Act does not apply to any contract requiring the provision of assistance in the enforcement of a federal statute, regulation, or executive order, if the contract was entered into before July 1, 2023."
+}

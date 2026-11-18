@@ -1,0 +1,39 @@
+{
+  "id": "SD-HB-1129-2026",
+  "scope": "state:sd",
+  "title": "HB1129 (2026 Regular): provide for the carrying of a concealed pistol by certain school district employees.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/27067",
+    "https://mylrc.sdlegislature.gov/api/Documents/297014.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Kathy Rice",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "23bd785c-f2f8-4df4-8045-71420a34ad67"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2026-01-23; official copy, https://mylrc.sdlegislature.gov/api/Documents/297014.pdf (sdlegislature.gov DocumentId 297014, BillId 27067))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1129-2026.introduced.pdf",
+      "sha256": "2f91d98b7c40e4b158e6e3dcad5ff90a9777dae1d034c66fd1132fca747d3ec3"
+    },
+    "note": "Introduced text 2026-01-23. Struck: 'person' (now 'individual') and the separate exemption for a nonpublic school on church premises. Other exemptions in 13-32-7 are renumbered and omitted here. No vote recorded."
+  },
+  "operative_text": "Section 1 (SDCL 13-32-7): Any individual who intentionally carries, possesses, stores, keeps, leaves, places, or puts into the possession of another person, any dangerous weapon, firearm, or air gun, whether or not the firearm or air gun is designed, adapted, used, or intended to be used primarily for imitative or noisemaking purposes, on or in any public elementary or secondary school premises, vehicle, or building, or on or in any premises, vehicle, or building used or leased for public elementary or secondary school functions, whether or not any person is endangered by any action under this section, is guilty of a Class 1 misdemeanor. This section does not apply to: (4) An individual who: (a) Is employed by the school district; (b) Is twenty-one years of age or older; (c) Holds an enhanced permit to carry a concealed pistol, issued in accordance with chapter 23-7; and (d) Has notified the law enforcement agency, having jurisdiction over the location of the school, that the employee intends to possess or securely store a concealed pistol, while the employee is in the school, on the grounds of the school, or in any school vehicle, during the period beginning with the date of notification and ending June thirtieth of each year; Section 2 (new section in SDCL ch. 13-32): A school district is not liable for any damages or penalties resulting from the use of a firearm by an individual described in subdivision 13-32-7(3) or (4)."
+}

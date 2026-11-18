@@ -1,0 +1,126 @@
+{
+  "id": "SD-SB-175-2018",
+  "scope": "state:sd",
+  "title": "SB175 (2018 Regular): revise certain provisions regarding the carrying of concealed pistols by certain persons.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/8771",
+    "https://mylrc.sdlegislature.gov/api/Documents/48220.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Thomas J Brunner",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Alan Solano",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Arch Beal",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "58f81fda-dad1-40e1-b0ca-73e5be22f8e5"
+    },
+    {
+      "name": "Gary Cammack",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Kristin A Conzet",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Justin R Cronin",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Jason E Frerichs",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Bob Glanzer",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Terri Haverly",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Josh Klumb",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Jack Kolbeck",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "a84ab96c-ab1d-4020-af32-02bc5a7a7a0c"
+    },
+    {
+      "name": "Ryan Maher",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Jeffrey D Partridge",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Deb Peters",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Larry Rhoden",
+      "role": "co",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "0a283b10-918c-4251-899b-5385c9174b6d"
+    },
+    {
+      "name": "Tim Rounds",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Deb Soholt",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    },
+    {
+      "name": "Jordan Youngberg",
+      "role": "co",
+      "version": "introduced text (Introduced by:)"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2018-01-31; official copy, https://mylrc.sdlegislature.gov/api/Documents/48220.pdf (sdlegislature.gov DocumentId 48220, BillId 8771))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-SB-175-2018.introduced.pdf",
+      "sha256": "08b2811db18179355efaa6ac1fc34e77d43703c1b8b6f35fd0d42330530144ef"
+    },
+    "note": "As filed. No passage vote recorded. Section 2 also rewrites the petty-offense and charge-dismissal wording; Section 4 (SDCL 23-7-8.7) only edits wording and adds a cross-reference to 22-14-9.1."
+  },
+  "operative_text": "Section 1 (SDCL 22-14-9): Any person, other than a law enforcement officer as defined in § 22-1-2 acting under color of authority, who: (1) Carries a pistol or revolver, loaded or unloaded, concealed on or about that person's body without a permit issued or recognized as valid under chapter 23-7; or (2) Carries a pistol or revolver, loaded or unloaded, concealed in any vehicle while operating the vehicle, without a permit issued or recognized as valid under chapter 23-7; is guilty of a Class 1 misdemeanor for a first offense. Any second or subsequent violation within ten years of the first violation of the provisions of this section is a Class 6 felony.\nSection 2 (SDCL 22-14-9.1): The provisions of § 22-14-9 do not apply to any person who carries a concealed pistol or revolver and also: (1) Carries on or about that person's body a valid South Dakota permit to carry a concealed pistol issued pursuant to chapter 23-7; (2) Carries on or about that person's body a permit recognized as valid pursuant to § 23-7-7.4; or (3) Is a resident of South Dakota who meets the requirements for a temporary permit under § 23-7-7.1 and carries on or about that person's body a valid South Dakota driver license or identification card issued under chapter 32-12.\nSection 3 (SDCL 23-7-7): The issuance of a permit to carry a concealed pistol pursuant to the provisions of this chapter does not impose a general prohibition on the carrying of a pistol without a permit by a resident who qualifies under subdivision 22-14-9.1(3)."
+}

@@ -1,0 +1,53 @@
+{
+  "politician_id": "6ec8a970-24da-4d61-a783-ccba65796fd2",
+  "findings": [
+    {
+      "id": "d5c52704bf1ff70aeb719584f7e2d93a1a729ca385bf0511fa805e2643f1dab4",
+      "kind": "own-words",
+      "url": "https://www.donhaggar.com",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Don Haggar served in the South Dakota House of Representatives from 2013 to 2020, advancing to Speaker Pro Tem, with a focus on fiscal conservatism, pro-life policies, and Second Amendment rights.",
+      "note": "Campaign site biography, written in the third person on his own site. It names Second Amendment rights as a focus of his legislative service; no specific policy is given.",
+      "subjects": [
+        "general statement on Second Amendment rights"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-11-17T22:57:17.783Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "gun-policy",
+      "season": 3,
+      "subjects": [
+        "Second Amendment rights",
+        "gun rights general statement",
+        "concealed carry",
+        "firearm regulation",
+        "assault-style weapons",
+        "background checks"
+      ],
+      "places": [
+        "status check: nominee for Public Utilities Commissioner on the 2026 general-election ballot (state elections office candidate list and convention results, seen in search results); former state House member 2013-2017",
+        "On the Record (0 meetings)",
+        "campaign site https://www.donhaggar.com (read; one passing line on the subject; subpages /issues and /about returned nothing)",
+        "Ballotpedia: blocked: https://ballotpedia.org/Don_Haggar (403)",
+        "sponsor list: covered by bulk bill data",
+        "news search on name plus gun words: nothing on the subject",
+        "second search on PUC race plus gun words: nothing on the subject; an interview at https://daveroetman.substack.com/p/interview-don-haggar had no gun words",
+        "https://www.ballotready.org/people/don-haggar: nothing on the subject",
+        "not reviewed: other URL-pattern pages (votesmart, vote411, ontheissues)"
+      ],
+      "found": 1,
+      "at": "2026-11-17T22:57:17.783Z",
+      "by": "source-collector"
+    }
+  ]
+}

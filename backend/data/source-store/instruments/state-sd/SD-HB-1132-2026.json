@@ -1,0 +1,39 @@
+{
+  "id": "SD-HB-1132-2026",
+  "scope": "state:sd",
+  "title": "HB1132 (2026 Regular): prohibit the use of property and personnel in the enforcement of certain federal laws pertaining to firearms.",
+  "urls": [
+    "https://sdlegislature.gov/Session/Bill/26799",
+    "https://mylrc.sdlegislature.gov/api/Documents/297154.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dylan Jordan",
+      "role": "prime",
+      "version": "introduced text (Introduced by:)",
+      "politician_id": "62eee7ac-4406-46b4-9927-d5e92cb12027"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (South Dakota) (gun-policy Stage 5, South Dakota); operative text read by a Sonnet fill agent from the official South Dakota text (Introduced, 2026-01-25; official copy, https://mylrc.sdlegislature.gov/api/Documents/297154.pdf (sdlegislature.gov DocumentId 297154, BillId 26799))",
+    "fetched_at": "2026-11-17T21:51:15.348062Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/SD-HB-1132-2026.introduced.pdf",
+      "sha256": "cee19576b9e4a661f1f9c10dc2a244da7c2b87cf573791571d13a56bd9d7321b"
+    },
+    "note": "Introduced text, 2026-01-25; no passage vote on record. Section 1 defines \"federal firearm measure\" (registries, licensing, private-sale background checks, confiscation, surrender) and \"material aid\"."
+  },
+  "operative_text": "Section 2 (new section in new chapter, title 23): No official or employee of this state, or of any political subdivision of this state, may use or authorize the use of personnel, property, or moneys, to provide material aid. No official or employee of this state, or of any political subdivision of this state, may enter into any contract, including a memorandum of understanding, which would require or authorize material aid. A violation of this section is a Class 1 misdemeanor. Each discrete act defined as material aid constitutes a separate offense.\nSection 3 (new section in new chapter, title 23): Any person may bring a civil action in a court of competent jurisdiction against this state or any political subdivision of this state, if an official or employee violates section 2 of this Act. A court may impose a civil penalty in an amount not exceeding fifty thousand dollars per violation, and may award reasonable attorney's fees and costs to a prevailing plaintiff.\nSection 4 (new section in new chapter, title 23): Any person may file a sworn complaint with the attorney general, alleging a violation of section 2 of this Act, and provide supporting facts and evidence."
+}
