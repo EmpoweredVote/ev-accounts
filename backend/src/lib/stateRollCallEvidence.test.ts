@@ -796,6 +796,10 @@ const MD_CM: Record<string, string[]> = {
 const mdCm = (k: string): string[] => MD_CM[k].map((c) => mdFile(`md-cm-${k}-${c}.html`));
 const mdHou2026 = (): string[] => [mdFile('md-2026-house-1104.txt'), ...mdCm('H-2026')];
 const mdSen2017 = (): string[] => [mdFile('md-2017-senate-1361.htm'), ...mdCm('S-2017')];
+// 2013: the House page for SB 281 (Firearm Safety Act of 2013), trimmed like 2017's, and that session's House committee pages.
+const MD_HOU_2013 = `${MD}2013RS/votes/house/0895.htm#SB281`;
+const mdHou2013 = (): string[] => [mdFile('md-2013-house-0895.htm'),
+  ...['app', 'ecm', 'env', 'jud', 'wm', 'hru', 'hgo'].map((c) => mdFile(`md-cm-H-2013-${c}.html`))];
 /** The render, after one change to one document; the test fails when the change did not apply. */
 const mdRender = (bodies: string[], url: string, doc = -1, from = '', to = ''): string | null => {
   const b = [...bodies];
@@ -896,6 +900,30 @@ describe('state roll-call pages — reading Maryland', () => {
     expect(t.split('\n').slice(0, 3)).toEqual(['Maryland Senate vote 1361 (2017RS), SB 907 of 2016, 2017-04-10.',
       'Question: Shall the bill pass notwithstanding the objection of the Chief Executive?', 'Yea 0; Nay 45; Not voting 2; Excused 0; Absent 0.']);
     expect(t).toMatch(/^Not voting \(2\): Douglas J\. J\. Peters; Andrew A\. Serafini$/m);
+  });
+
+  it('reads a 2013 page (SB 281), and only the years it has been proved on', () => {
+    expect(stateRollCallDocs(MD_HOU_2013)!.slice(0, 2)).toEqual([`${MD}2013RS/votes/house/0895.htm`, `${MD}mgawebsite/Committees/Details?cmte=app&ys=2013RS`]);
+    // 2013 votes are pages, not PDFs; 2014-2016 have not been read, so they are not addresses at all
+    for (const u of [MD_HOU_2013.replace('.htm', '.pdf'), MD_HOU_2013.replace('2013RS', '2014RS'), MD_HOU_2013.replace('2013RS', '2016RS')]) {
+      expect(isStateRollCallUrl(u)).toBe(false);
+    }
+    const t = mdRender(mdHou2013(), MD_HOU_2013)!;
+    expect(t.split('\n').slice(0, 3)).toEqual(['Maryland House vote 895 (2013RS), SB 281, 2013-04-03.',
+      'Question: On Third Reading (Amend)', 'Yea 78; Nay 61; Not voting 0; Excused 0; Absent 2.']);
+    expect(t).toMatch(/^Nay \(61\): .*; Mary-Dulany James;/m);
+    expect(t).toMatch(/^Absent \(2\): Jill P\. Carter; Joseph J\. Minnick$/m);
+    // a bare surname no 2013 House committee page lists (he had moved to the Senate) is left as printed, never guessed
+    expect(t).toMatch(/; Feldman;/);
+    expect(t).not.toMatch(/Brian J\. Feldman/);
+  });
+
+  it('refuses a 2013 page that does not add up, or whose committee pages are another session\'s', () => {
+    expect(mdWhy(mdHou2013(), MD_HOU_2013, 0, '78&nbsp;Yeas', '77&nbsp;Yeas')).toBe('the Yea heading prints 78 and the tally 77');
+    expect(mdWhy(mdHou2013(), MD_HOU_2013, 0, '2013&nbsp;Regular&nbsp;Session', '2014&nbsp;Regular&nbsp;Session')).toBe('the vote does not name this session');
+    // the member's own committee page, moved to another session: James is no longer a known member, so her name is not read
+    const t = mdRender(mdHou2013(), MD_HOU_2013, 1, '2013 Regular Session', '2012 Regular Session');
+    expect(t ?? '').not.toMatch(/Mary-Dulany James/);
   });
 
   it('refuses a group that is not its heading\'s count, a heading that is not the tally\'s, or one out of order', () => {

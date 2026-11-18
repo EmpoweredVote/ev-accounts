@@ -946,9 +946,9 @@ export function explainMississippiVote(bodies: string[], url: string): MsVoteRec
   try { return readMississippi(bodies, r); } catch (e) { return { refused: `the reader failed: ${e instanceof Error ? e.message : e}` }; }
 }
 
-// ── Maryland: one PDF (2018 on) or page (2017) per vote, read with the session's committee member lists ─────────────
-// mgaleg.maryland.gov/<year>RS/votes/<house|senate>/<NNNN>.pdf is the vote (2018 on); 2017's votes are pages,
-// /2017RS/votes/<house|senate>/<NNNN>.htm, one table cell per printed item. The site has no robots.txt (404, 2026-11-18).
+// ── Maryland: one PDF (2018 on) or page (2013, 2017) per vote, read with the session's committee member lists ───────
+// mgaleg.maryland.gov/<year>RS/votes/<house|senate>/<NNNN>.pdf is the vote (2018 on); 2013's and 2017's votes are
+// pages, /2017RS/votes/<house|senate>/<NNNN>.htm, one table cell per printed item (MD_PAGE_YEARS). The site has no robots.txt (404, 2026-11-18).
 // Both print the same items: "SEQ NO. 1104", "Calendar Date: Apr 8, 2026 12:36 (PM)" (the day of the vote), the
 // chamber ("Maryland House of Delegates", "Senate of Maryland"), "2026 Regular Session", the bill ("SB 128"; a consent
 // calendar lists several), the calendar line, sponsor, committee, title, the question ("On Third Reading", with a
@@ -1024,6 +1024,13 @@ const MD_SITE = 'https://mgaleg.maryland.gov/';
 /** No robots.txt (404, 2026-11-18), so no Crawl-delay is stated: one request a second is ours. */
 const MD_GAP_MS = 1_000;
 const MD_SIZE: Record<Chamber, number> = { House: 141, Senate: 47 };
+/**
+ * The sessions whose votes are pages (.htm), one table cell per printed item; every session from 2018 is a PDF. Only
+ * the sessions read and checked are listed: 2017, and 2013 (2013 SB 281, House vote 895, read 2026-11-18 for the
+ * md-02 batch; its page prints the same items as 2017's, with "Legislative Date" and "Presiding" lines the reader
+ * does not need). 2014-2016 are not read: add a year here only after reading one of its votes with a control.
+ */
+export const MD_PAGE_YEARS: readonly number[] = [2013, 2017];
 const MD_MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 /** The presiding officer, printed by office: kept as printed, so it gives no line. */
 const MD_OFFICE = /^(?:Mr\.|Madam) (?:Speaker|President)$|^Speaker(?: [\p{L}'-]+)?$|^President(?: [\p{L}'-]+)?$/u;
@@ -1061,8 +1068,8 @@ export function parseMarylandVoteUrl(url: string): MdVoteRef | null {
   const m = MD_URL.exec(url.trim());
   if (!m) return null;
   const year = Number(m[1]);
-  // 2017's votes are pages, every later session's PDFs
-  if ((m[4] === 'htm') !== (year === 2017)) return null;
+  // 2013's and 2017's votes are pages, every later session's PDFs (MD_PAGE_YEARS)
+  if ((m[4] === 'htm') !== MD_PAGE_YEARS.includes(year)) return null;
   // a bill of another session is only the previous session's vetoed bill
   if (m[5] && Number(m[5]) !== year - 1) return null;
   return { state: 'MD', stateName: 'Maryland', chamber: m[2] === 'house' ? 'House' : 'Senate', session: `${m[1]}RS`, seq: Number(m[3]), ext: m[4] as 'pdf' | 'htm', billType: m[6], billNum: Number(m[7]), ...(m[5] ? { billYear: Number(m[5]) } : {}) };
@@ -1084,7 +1091,7 @@ function marylandDocs(r: MdVoteRef): string[] {
 const htmlText = (s: string): string => squash(s.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&#(\d+);/g, (_m, n: string) => String.fromCodePoint(Number(n)))
   .replace(/&#x([0-9a-f]+);/gi, (_m, n: string) => String.fromCodePoint(parseInt(n, 16))).replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&'));
 
-/** The vote's printed items as rows of cells: a PDF's rows (pdfCellsBody), or a 2017 page's table cells, one row each. */
+/** The vote's printed items as rows of cells: a PDF's rows (pdfCellsBody), or a 2013 or 2017 page's table cells, one row each. */
 function mdRows(body: string, ext: 'pdf' | 'htm'): string[][] | null {
   if (ext === 'pdf') {
     if (!body.startsWith(PDF_CELLS_MARK + '\n')) return null;

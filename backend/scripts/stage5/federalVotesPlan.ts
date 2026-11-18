@@ -8,8 +8,12 @@
  *   House  (totals above 150): the Clerk XML, https://clerk.house.gov/evs/<year>/roll<NNN>.xml, from `RC# <n>`.
  *   Senate (115th Congress on): the LegiScan roll call, https://legiscan.com/US/rollcall/<bill>/id/<id>, from the
  *          table's `legiscan-<id>`; the pair goes to scripts/legiscan-evidence-lines.ts.
- *   House roll call the table gives no roll number (so no Clerk XML), when its table id is `legiscan-<id>`: the
- *          same LegiScan pair as the Senate. Any other unnumbered House roll call is held.
+ *   House roll call the table gives no roll number: when the finding cites the Clerk's own page for a roll call of
+ *          that year (https://clerk.house.gov/Votes/2022410 is roll 410 of 2022; `clerkPageRoll`), that roll number
+ *          names the Clerk XML, and federal-votes.ts still checks the XML shows the table's bill and that number
+ *          (houseRollCallIsFor) and cuts the line by bioguide id. Anthony G. Brown, md-02 (2026-11-18): the table
+ *          matched his three 2021-2022 roll calls by bill, date and totals but carried no `RC#`. Otherwise, when its
+ *          table id is `legiscan-<id>`: the same LegiScan pair as the Senate. Any other unnumbered House roll call is held.
  *
  * A vote with no single roll call, a motion that names another roll number or tally, a person with no bioguide id
  * or no table position, a Senate roll call before the 115th Congress: held in `unmapped` with the reason. A table act that differs from the seated act (a
@@ -85,6 +89,12 @@ export function motionClaimMismatch(motion: string, roll: Pick<TableRollCall, 'r
   return null;
 }
 
+/** The roll call a Clerk vote page names: https://clerk.house.gov/Votes/<year><roll> (roll unpadded). Null for any other address. */
+export function clerkPageRoll(url: string): { year: number; rc: number } | null {
+  const m = /^https:\/\/clerk\.house\.gov\/Votes\/(\d{4})([1-9]\d{0,3})$/i.exec(url.trim());
+  return m ? { year: Number(m[1]), rc: Number(m[2]) } : null;
+}
+
 /** A roll call with more than this many yes and no votes is a House roll call. */
 const HOUSE_MIN_TOTAL = 150;
 /** The first Congress whose Senate roll calls LegiScan holds. */
@@ -131,6 +141,13 @@ export function planCitations(
     // The table prints 'HJRES 44'; LegiScan names it HJR44 (S → SB, HR → HB, …).
     const lsBill = legiscanBillNumber(roll.bill_number.replace(/\s+/g, ''));
     if (roll.yes + roll.no > HOUSE_MIN_TOTAL) {
+      const page = roll.rc === null ? clerkPageRoll(s.cited_url) : null;
+      if (page && page.year === Number(roll.date.slice(0, 4))) {
+        // No roll number in the table, but the Clerk page the finding cites names one: the XML check holds it to the table's bill
+        const url = `https://clerk.house.gov/evs/${page.year}/roll${String(page.rc).padStart(3, '0')}.xml`;
+        house.push({ ...s, url, bill_number: roll.bill_number, rc: page.rc });
+        continue;
+      }
       if (roll.rc === null) {
         // No roll number, so no Clerk XML. A LegiScan table id still names the one roll call: cite it as the Senate is.
         if (!id) { hold(`house roll call with no roll number in the table (${roll.external_vote_id})`); continue; }
