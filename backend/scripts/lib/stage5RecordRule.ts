@@ -77,7 +77,7 @@ export const LANE_WORDS: Record<Lane, string> = {
   'flagged-bill': 'an act on a bill whose flag the runner has not answered',
   'note-says-more': 'a record finding whose note says more than the plain facts, or an act the rule does not read',
   'other-jurisdiction': 'an act on a bill of another legislature',
-  'blank-not-plain': 'no usable rung act, and not a plain No-votes-only record',
+  'blank-not-plain': 'no usable rung act, and not a plain blank: No votes on both sides of the ladder, or no Yes or No vote at all',
   'no-record': 'no record finding on file',
 };
 
@@ -102,6 +102,11 @@ export interface Decision {
    */
   sponsored?: Act[];
   sponsorOnly?: boolean;
+  /**
+   * Blank only (ruling 2026-11-18): the record holds Yes or No votes, and none of them counts: each is on a bill the
+   * table gives no rung, or is gated. No sponsorship, no counted No. These are those votes.
+   */
+  uncounted?: Act[];
 }
 
 export interface RuleResult { lanes: Lane[]; decision?: Decision }
@@ -125,7 +130,7 @@ function core(input: RuleInput, table: Readonly<Record<string, RuleBillRow>>): R
   const lanes = new Set<Lane>();
   const sideOf = (r: number) => (input.sides[0].includes(r) ? 0 : input.sides[1].includes(r) ? 1 : undefined);
   const yes: Act[] = []; const nays: Act[] = [];
-  let sponsorships = 0; let gatedYes = 0; const sponsored: Act[] = [];
+  let sponsorships = 0; let gatedYes = 0; const sponsored: Act[] = []; const uncounted: Act[] = [];
   const records = input.findings.filter((f) => f.kind === 'record');
   if (!records.length) return { lanes: ['no-record'] };
   if (!LEGISLATIVE_OFFICE.test(input.office)) lanes.add('other-office');
@@ -141,6 +146,8 @@ function core(input: RuleInput, table: Readonly<Record<string, RuleBillRow>>): R
     if (isSponsor) sponsorships++;
     const gate = isSponsor ? sponsorGate(bill) : f.gate ?? 'none';
     if (isSponsor) sponsored.push({ id: f.id, bill: id, act: f.act, date: f.date, rung: row.rung, gate });
+    const isVote = f.act === 'yea' || f.act === 'nay';
+    if (isVote && (gate !== 'none' || row.rung === null)) uncounted.push({ id: f.id, bill: id, act: f.act, date: f.date, rung: row.rung, gate });
     if (gate !== 'none') { if (YES.has(f.act)) gatedYes++; continue; }
     const act: Act = { id: f.id, bill: id, act: f.act, date: f.date, rung: row.rung, tally: tallyOf(f) };
     if (f.act === 'nay') nays.push(act);
@@ -172,6 +179,10 @@ function core(input: RuleInput, table: Readonly<Record<string, RuleBillRow>>): R
       decision = { outcome: 'doesnt-fit', deciding: rungNays.sort(newest), sameSide: [], nays: nays.sort(newest), gatedYes, naySide: [...sidesHit][0] as 0 | 1, ...extra };
     } else if (sponsorships && !rungNays.length) {
       decision = { outcome: 'doesnt-fit', deciding: [], sameSide: [], nays: nays.sort(newest), gatedYes, ...extra, sponsorOnly: true };
+    } else if (!sponsorships && !rungNays.length && uncounted.length) {
+      // Votes on file, none of which counts, and nothing else (ruling 2026-11-18; replay: 67 of 67 such people were
+      // coded doesn't-fit by a blind Opus coder, across SD, MS, OH, UT, WA, FL, KY, SC and CA).
+      decision = { outcome: 'doesnt-fit', deciding: [], sameSide: [], nays: nays.sort(newest), gatedYes, uncounted: uncounted.sort(newest) };
     } else lanes.add(sponsorships ? 'sponsor-no-rung' : 'blank-not-plain');
   }
   return { lanes: [...lanes], decision };
@@ -215,7 +226,7 @@ const list = (names: string[], max = 4) => {
 const sentence = (s: string) => { const t = s.trim(); return /[.!?]$/.test(t) ? t : `${t}.`; };
 const actWords = (a: Act) => (SPONSOR.has(a.act) ? 'Sponsored' : 'Voted Yes on');
 
-export interface CodeWords { reasoning: string; open_note?: string; finding_ids: string[]; blank_class?: 'nay-only' | 'wording'; tags?: string[]; shows_side?: boolean }
+export interface CodeWords { reasoning: string; open_note?: string; finding_ids: string[]; blank_class?: 'nay-only' | 'wording' | 'gate'; tags?: string[]; shows_side?: boolean }
 
 /**
  * The reasoning (and, for a blank, the open note) for a decision, written from the bill table's deciding words
@@ -262,6 +273,23 @@ export function wordsFor(d: Decision, table: Readonly<Record<string, RuleBillRow
       open_note: `Sponsored ${list(named(sp), 6)}. None of these supports a position: ${spWords}. The record has no counted vote on a bill that would.${gated}`,
       finding_ids: [...new Set(sp.slice(0, 8).map((a) => a.id))],
       blank_class: 'wording',
+    };
+  }
+  if (d.uncounted?.length && !d.deciding.length) {
+    const un = d.uncounted.filter((a) => billName(a.bill));
+    if (!un.length || un.length !== d.uncounted.length) return undefined;
+    const gatedV = un.filter((a) => a.gate !== 'none'); const noRungV = un.filter((a) => a.gate === 'none');
+    const firstWhy = noRungV.find((a) => (table[a.bill].why ?? '').trim());
+    const why = withWhy && firstWhy ? ` On ${billName(firstWhy.bill)}: ${sentence(table[firstWhy.bill].why!)}` : '';
+    const parts = [
+      noRungV.length ? `the bill table gives ${list(named(noRungV))} no position on the ladder` : '',
+      gatedV.length ? `${list(named(gatedV))} ${new Set(gatedV.map((a) => a.bill)).size === 1 ? 'is a near-unanimous or multi-subject bill' : 'are near-unanimous or multi-subject bills'}, where a vote is not counted` : '',
+    ].filter(Boolean).join(', and ');
+    return {
+      reasoning: `The record holds votes, and none of them counts toward a position. Voted on ${list(named(un))}: ${parts}.${why} There is no sponsorship, and no vote on a bill that would show a position.`,
+      open_note: `Voted on ${list(named(un), 6)}. None of these votes supports a position: ${parts}. The record has no sponsorship and no counted vote on a bill with a position on the ladder.`,
+      finding_ids: [...new Set(un.slice(0, 8).map((a) => a.id))],
+      blank_class: noRungV.length ? 'wording' : 'gate',
     };
   }
   const also = sp.length ? ` Also sponsored ${list(named(sp))}: ${spWords}.` : '';

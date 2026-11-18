@@ -1906,6 +1906,10 @@ def standing_yes_holds_only_when_every_condition_does(t):
         J('desk-check.json', {'roll_calls_compared': 3, 'member_votes_compared': 121, 'differences': 0, 'odd': []})
         W('verify-apply.txt', 'AUTO-PUSH: 0  UNCHANGED: 1  REVIEW: 2  RE-RESEARCH: 0\nSUMMARY: pushed=0 reviewed=2 errors=0\n'); os.utime(f'{t}/verify-apply.txt', (1e9, 1e9))
         W('readback-1.txt', 'outcomes [{"outcome":"doesnt-fit","count":1},{"outcome":"seated","count":2}]\npassages [{"count":1}]\nreview [{"batch_id":"b","status":"pending","count":2}]\n')
+        W('stage5-write-apply.txt', 'topic tp\noutcomes:  3 (seated 2, doesnt-fit 1, no-stance 0)\npassages:  1 (own-words 1, local-record 0)\n')
+        J('politicians.json', [{'full_name': 'Ann A', 'politician_id': 'a'}, {'full_name': 'Hal Held', 'politician_id': 'h'}])
+        for f in ('held.txt', 'moved.txt'):
+            if os.path.exists(f'{t}/{f}'): os.remove(f'{t}/{f}')
     sy = lambda which, ok=True: run('standing_yes.py', which, t, ok=ok)
     good()
     p = sy('write'); assert p.returncode == 0 and 'every condition holds' in p.stdout and "runner's own message" in p.stdout, p.stdout + p.stderr
@@ -1935,6 +1939,26 @@ def standing_yes_holds_only_when_every_condition_does(t):
     broken('approve', lambda: W('verify-apply.txt', 'REVIEW: 2\nSUMMARY: pushed=0 reviewed=2 errors=1\n'), 'errors=1')
     broken('approve', lambda: os.remove(f'{t}/readback-1.txt'), 'NO VERDICT', code=2)
     broken('approve', lambda: os.utime(f'{t}/verify-apply.txt', (3e9, 3e9)), 'older than')
+    broken('approve', lambda: os.remove(f'{t}/stage5-write-apply.txt'), 'NO VERDICT', code=2)
+    # --- Mississippi 2026-11-18: people held out of the write. Their unreadable votes are not a reason to ask again, the
+    # read-back equals what the WRITE wrote (the dry run less the held), and a row sent back for more research stays pending.
+    def held_case(extra=lambda: None):
+        good(); W('held.txt', 'h\n'); J('legiscan/no-line.json', [['Hal Held', 'https://x/v.pdf', 'yea', 'XX-HB-1-2025']]); extra()
+    held_case(); p = sy('write'); assert p.returncode == 0 and 'belongs to a held person' in p.stdout, p.stdout + p.stderr
+    held_case(lambda: J('legiscan/no-line.json', [['Hal Held', 'u', 'yea', 'b'], ['Ann A', 'u', 'yea', 'b']])); p = sy('write', ok=False); assert p.returncode == 1 and 'step 7' in p.stdout, p.stdout
+    held_case(lambda: J('legiscan/unmapped.json', [{'no': 'name'}])); p = sy('write', ok=False); assert p.returncode == 1 and 'step 7' in p.stdout, 'an entry that names no one is never excused'
+    held_case(lambda: J('legiscan/crosscheck.json', [{'agree': False}])); p = sy('write', ok=False); assert p.returncode == 1, 'a disagreement is never excused'
+    def wrote_less(dry, wrote, back, verify='REVIEW: 2\nSUMMARY: pushed=0 reviewed=2 errors=0\n', pending=2):
+        W('dry-run-1.txt', f'outcomes:  {dry} (seated {dry - 1}, doesnt-fit 1, no-stance 0)\npassages:  1 (own-words 1, local-record 0)\n')
+        W('stage5-write-apply.txt', f'outcomes:  {wrote} (seated {wrote - 1}, doesnt-fit 1, no-stance 0)\n')
+        rb(f'[{{"outcome":"doesnt-fit","count":1}},{{"outcome":"seated","count":{back - 1}}}]', 1, f'[{{"batch_id":"b","status":"pending","count":{pending}}}]')
+        W('verify-apply.txt', verify); os.utime(f'{t}/verify-apply.txt', (1e9, 1e9))
+    held_case(lambda: wrote_less(4, 3, 3)); p = sy('approve'); assert p.returncode == 0, p.stdout + p.stderr
+    held_case(lambda: wrote_less(5, 3, 3)); p = sy('approve', ok=False); assert p.returncode == 1 and 'more than the people left out' in p.stdout, p.stdout
+    held_case(lambda: wrote_less(4, 3, 4)); p = sy('approve', ok=False); assert p.returncode == 1 and 'not what the write wrote' in p.stdout, p.stdout
+    more = 'REVIEW: 2  RE-RESEARCH: 1\nSUMMARY: pushed=0 reviewed=3 errors=0\n'
+    held_case(lambda: wrote_less(4, 3, 3, more, 3)); p = sy('approve'); assert p.returncode == 0 and '1 row(s) need more research' in p.stdout, p.stdout + p.stderr
+    held_case(lambda: wrote_less(4, 3, 3, more, 2)); p = sy('approve', ok=False); assert p.returncode == 1 and 'back for more research' in p.stdout, p.stdout
 
 
 fails = 0

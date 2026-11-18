@@ -104,6 +104,21 @@ describe('importFindFile', () => {
     expect(() => importFindFile(bad, 'voting-rights', 3, { by: 'c', at: 'x' })).toThrow(new RegExp(id(1)));
   });
 
+  it('files a status key as the status place the brief asks for, and still refuses any other extra key', () => {
+    // South Dakota and Mississippi, 2026-11: six files refused for a root `status` key, each fixed by hand
+    const pf = importFindFile(file({ status: 'lost the 2026-06-02 primary' }), 'voting-rights', 3, { by: 'c', at: '2026-10-22T01:00:00Z' });
+    expect(pf.searches[0].places[0]).toBe('status: lost the 2026-06-02 primary');
+    expect(pf.searches[0].places.length).toBe(file().searched.places.length + 1);
+    // written with its own prefix, it is not doubled; when places already carry a status, the key adds nothing
+    expect(importFindFile(file({ status: 'status: resigned 2026-08-31' }), 'voting-rights', 3, { by: 'c', at: '2026-10-22T01:00:00Z' }).searches[0].places[0]).toBe('status: resigned 2026-08-31');
+    const has = file({ status: 'died 2026-06-08', searched: { ...file().searched, places: ['status: died 2026-06-08', ...file().searched.places] } });
+    expect(importFindFile(has, 'voting-rights', 3, { by: 'c', at: '2026-10-22T01:00:00Z' }).searches[0].places.filter((p) => p.startsWith('status:'))).toHaveLength(1);
+    // it is our own text: a party name in it is refused like any place
+    expect(() => importFindFile(file({ status: 'lost the Republican primary' }), 'voting-rights', 3, { by: 'c', at: 'x' })).toThrow(/party/);
+    expect(() => importFindFile(file({ value: 3 }), 'voting-rights', 3, { by: 'c', at: 'x' })).toThrow();
+    expect(() => importFindFile(file({ status: '' }), 'voting-rights', 3, { by: 'c', at: 'x' })).toThrow();
+  });
+
   it('refuses a file whose id is not its file name, or not on the roster', () => {
     const onRoster = new Set([id(1)]);
     expect(() => importFindFile(file(), 'voting-rights', 3, { by: 'c', at: 'x' }, { fileId: id(2), onRoster })).toThrow(/file name/);

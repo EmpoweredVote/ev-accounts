@@ -71,6 +71,11 @@ const CollectorFileSchema = z.object({
   politician_id: z.string().uuid(),
   searched: z.object({ subjects: z.array(z.string().min(1)).min(1), places: z.array(z.string().min(1)).min(1) }).strict(),
   findings: z.array(CollectedFindingSchema),
+  // The brief asks for a person's status ("lost the 2026-06-02 primary", "resigned 2026-08-31") as the first entry of
+  // `places`, written `status: …`. Searchers often write it as a key of its own instead, and the file was refused:
+  // six hand fixes in two states (South Dakota and Mississippi, 2026-11-17/18). It is accepted here and filed where
+  // the brief wanted it. It is our own text, so the party check below reads it like any place.
+  status: z.string().min(1).optional(),
 }).strict();
 
 export function importFindFile(
@@ -85,7 +90,10 @@ export function importFindFile(
   if (!parsed.success) {
     throw new Error(`${pid}: ${parsed.error.issues.map((i) => `${i.path.join('.') || '(root)'}: ${i.message}`).join('; ')}`);
   }
-  const file = parsed.data;
+  const { status, ...file } = parsed.data;
+  if (status && !file.searched.places.some((p) => /^status:/i.test(p.trim()))) {
+    file.searched.places = [`status: ${status.replace(/^status:\s*/i, '').trim()}`, ...file.searched.places];
+  }
   // Antipartisan rule: our own text never names a party. A verbatim passage is the person's words and is kept
   // as found; whether it may be shown is the quote check's call.
   const ours = [...file.searched.places, ...file.searched.subjects, ...file.findings.flatMap((f) => [f.note, ...f.subjects])];

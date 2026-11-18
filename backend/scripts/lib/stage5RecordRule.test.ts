@@ -60,6 +60,35 @@ describe('decideRecord: what it hands to Opus', () => {
     expect(lanes([vote('XX-HB-44-2021', 'nay', '2021-05-01'), vote('XX-HB-4-2025', 'yea', '2025-05-01')]).lanes).toEqual([]);
     expect(lanes([vote('XX-HB-3-2025', 'yea', '2025-03-01'), vote('XX-HB-4-2025', 'nay', '2025-05-01')]).lanes).toEqual([]);
   });
+  it('votes that do not count, and nothing else, make a script blank (ruling 2026-11-18)', () => {
+    // a gated Yes only: a blank, class gate, citing the vote
+    const g = decideRecord(input([vote('XX-HB-2-2025', 'yea', '2025-04-01', 'near-unanimous')]));
+    expect(g.lanes).toEqual([]);
+    expect(g.decision).toMatchObject({ outcome: 'doesnt-fit' });
+    expect(g.decision!.uncounted!.map((a) => a.bill)).toEqual(['XX-HB-2-2025']);
+    const wg = wordsFor(g.decision!, table, rungText)!;
+    expect(wg).toMatchObject({ blank_class: 'gate' });
+    expect(wg.finding_ids).toHaveLength(1);
+    expect(wg.reasoning).toContain('HB 2 (2025) is a near-unanimous or multi-subject bill, where a vote is not counted');
+    expect(wg.tags).toBeUndefined();
+    // a Yes on a no-rung bill (and a gated one beside it): class wording, with the table's reason
+    const w = decideRecord(input([vote('XX-HB-9-2025', 'yea', '2025-04-02'), vote('XX-HB-2-2025', 'nay', '2025-04-01', 'multi-subject')]));
+    expect(w.lanes).toEqual([]);
+    const ww = wordsFor(w.decision!, table, rungText)!;
+    expect(ww).toMatchObject({ blank_class: 'wording' });
+    expect(ww.reasoning).toContain('the bill table gives HB 9 (2025) no position on the ladder');
+    expect(ww.reasoning).toContain('On HB 9 (2025): A dealer rule.');
+    expect(ww.open_note).toContain('None of these votes supports a position');
+    // No votes on both sides still go to Opus; so does a record with no Yes or No vote at all
+    expect(lanes([vote('XX-HB-4-2025', 'nay', '2025-05-01'), vote('XX-HB-3-2025', 'nay', '2025-05-02')]).lanes).toEqual(['blank-not-plain']);
+    expect(lanes([vote('XX-HB-5-2025', 'abstain', '2025-04-03')]).lanes).toEqual(['blank-not-plain']);
+    expect(lanes([vote('XX-HB-4-2025', 'nay', '2025-05-01'), vote('XX-HB-3-2025', 'nay', '2025-05-02'), vote('XX-HB-9-2025', 'yea', '2025-04-02')]).lanes).toEqual(['blank-not-plain']);
+    // a counted No on one side is still the No-votes-only blank, and a counted Yes still seats
+    expect(wordsFor(decideRecord(input([vote('XX-HB-4-2025', 'nay', '2025-05-01'), vote('XX-HB-9-2025', 'yea', '2025-04-02')])).decision!, table, rungText)!.blank_class).toBe('nay-only');
+    expect(decideRecord(input([vote('XX-HB-3-2025', 'yea', '2025-03-01'), vote('XX-HB-9-2025', 'yea', '2025-04-02')])).decision).toMatchObject({ outcome: 'seated', value: 3 });
+    // any other lane still wins
+    expect(lanes([vote('XX-HB-9-2025', 'yea', '2025-04-02')], { named: true }).lanes).toEqual(['named-in-rulings']);
+  });
   it('a sponsorship that supports no rung does not stop a plain blank (ruling 2026-11-16)', () => {
     // No votes on one side, plus a sponsorship of a no-rung bill: still a No-votes-only blank, and the sponsorship is said
     const r = decideRecord(input([sponsor('XX-HB-9-2025'), vote('XX-HB-4-2025', 'nay', '2025-05-01')]));
@@ -116,10 +145,10 @@ describe('decideRecord: what it hands to Opus', () => {
     // beside a carry easing it could make the record two-sided: Opus
     expect(lanes([vote('XX-HB-4-2025', 'yea', '2025-04-01'), vote('XX-HB-7-2025', 'yea', '2025-03-01')]).lanes).toEqual(['per-vote-note']);
   });
-  it('any blank that is not plain No votes on one side', () => {
-    expect(lanes([vote('XX-HB-2-2025', 'yea', '2025-04-01', 'near-unanimous')]).lanes).toEqual(['blank-not-plain']);
+  it('a blank with No votes on both sides of the ladder', () => {
     expect(lanes([vote('XX-HB-3-2025', 'nay', '2025-04-01'), vote('XX-HB-4-2025', 'nay', '2025-04-02')]).lanes).toEqual(['blank-not-plain']);
-    expect(lanes([vote('XX-HB-9-2025', 'nay', '2025-04-01')]).lanes).toEqual(['blank-not-plain']);
+    // until 2026-11-18 a lone gated Yes, or a lone No on a no-rung bill, came here too; the script now writes that blank
+    expect(lanes([vote('XX-HB-9-2025', 'nay', '2025-04-01')]).decision).toMatchObject({ outcome: 'doesnt-fit' });
   });
 });
 
