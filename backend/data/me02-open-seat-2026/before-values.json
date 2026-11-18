@@ -1,0 +1,56 @@
+{
+  "captured_at_utc": "2026-11-17T23:59:00Z",
+  "source": "essentials.race_candidates, production kxsdzaojfaibhuzmclfq, read directly",
+  "note": "The value CC_0452 overwrites. There is no history table for this column and no schema_migrations to replay from, so once the UPDATE commits the old string exists nowhere but here and in CC_0452's header. md5_before is what CC_0452's pre-check requires before it will write anything: if the live value has drifted, the migration refuses rather than overwriting somebody else's edit.",
+  "row": {
+    "race_candidate_id": "c58647c9-1ac0-43a4-9682-c0c7198631b9",
+    "full_name": "Paul LePage",
+    "race_id": "aa63d55d-80b8-42b9-9aa5-0713387f65fb",
+    "seat": "ME-02",
+    "written_by": "CC_0447",
+    "result": "won",
+    "result_certainty": "called",
+    "result_recorded_at": "2026-11-17 06:32:46.424697+00",
+    "md5_before": "32379de0539db5d416bcbec49ba34b13",
+    "length_before": 474,
+    "md5_after": "ca7b26abeacc81967e7abdc8d0716df5",
+    "length_after": 1351,
+    "applied_at_utc": "2026-11-18T00:14Z",
+    "result_source_before": "AP race call, AP race 20261103ME20645 (ME-02), RANKED CHOICE. WINNER=Paul LePage; GOP, first-choice 170,265 votes, 49.89% of all 341,256 ballots cast, of which 6,021 were blank. No candidate cleared 50% on first choices, so Maine ran its ranked-choice tabulation; AP's final round gives LePage 170,890 to Matthew Dunlap 165,432. Called 2026-11-12T18:31:29.417Z, defeating incumbent Jared Golden. AP results feed read 2026-11-17 03:00Z. A media call is not the state canvass."
+  },
+  "the_false_clause": ", defeating incumbent Jared Golden.",
+  "why_it_is_false": "Jared Golden was ME-02's incumbent and was not a candidate. He announced on 2025-11-05 that he would not seek re-election. The Maine Secretary of State's 2026 General Candidate List - FINAL prints exactly two names for Congressional District 2 (Dunlap, Matthew G. and LePage, Paul R.) and names Golden nowhere in its 456 rows. AP's own capture names Golden as the race's incumbent, AP candidate id 66383, and that id appears on none of the four ballot lines AP publishes for the race.",
+  "what_is_NOT_wrong": "Golden still holds the seat. His office_terms row (term_start 2019-01-03, open-ended, sourced from unitedstates/congress-legislators via migration 1536) is correct and CC_0452 does not touch it. A retiring incumbent holds the office until the term ends on 2027-01-03, exactly as a defeated one does.",
+  "rows_checked_and_left_alone": [
+    {
+      "seat": "CA-04",
+      "row": "Eric Jones (won)",
+      "claim": "defeating incumbent Mike Thompson",
+      "verdict": "TRUE - Thompson is CA-04's current holder in our own office_terms AND an AP ballot line in the race, which he lost 120,361 to 133,179"
+    },
+    {
+      "seat": "CO-04",
+      "row": "Eileen Laubacher (won)",
+      "claim": "defeating incumbent Lauren Boebert",
+      "verdict": "TRUE - Boebert is CO-04's current holder in our own office_terms AND an AP ballot line in the race, which she lost 184,220 to 187,745"
+    },
+    {
+      "seat": "CA-23",
+      "row": "Jay Obernolte (won)",
+      "claim": "Incumbent re-elected; AP winner candidateID equals AP incumbent candidateID",
+      "verdict": "TRUE - and the id comparison is the namesake guard, which is the right test"
+    },
+    {
+      "seat": "NC-07",
+      "row": "David Rouzer (won)",
+      "claim": "Incumbent re-elected; AP winner candidateID equals AP incumbent candidateID",
+      "verdict": "TRUE - same guard"
+    },
+    {
+      "seat": "CA-04 / CO-04",
+      "row": "Mike Thompson (lost), Lauren Boebert (lost)",
+      "claim": "the defeated incumbent",
+      "verdict": "TRUE - each row is talking about itself, and each is its seat's current holder and a losing ballot line"
+    }
+  ]
+}
