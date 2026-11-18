@@ -571,7 +571,8 @@ export async function verifyEvidence(args: {
           // State roll-call lane (stateRollCallEvidence.ts): the same check on a legislature's own roll-call
           // page, against the party-free render the adapter made of its markup.
           if (isStateRollCallUrl(url) && parseStateRollCallLine(ev.snippet)) {
-            const v = verifyStateRollCallLine(ev.snippet, url, fetched.text, names.lastName, names.fullName);
+            const v = verifyStateRollCallLine(ev.snippet, url, fetched.text, names.lastName, names.fullName,
+              aliasesFrom(names.aliases).map((n) => ({ fullName: n, lastName: lastNameOf(n) })));
             judged.push({ snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: v,
               ...(v.verdict === 'verified' ? { matchedSpan: ev.snippet.trim() } : {}) });
             continue;

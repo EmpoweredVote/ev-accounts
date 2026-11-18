@@ -69,7 +69,9 @@ const CollectedFindingSchema = z.object({
 
 const CollectorFileSchema = z.object({
   politician_id: z.string().uuid(),
-  searched: z.object({ subjects: z.array(z.string().min(1)).min(1), places: z.array(z.string().min(1)).min(1) }).strict(),
+  searched: z.object({ subjects: z.array(z.string().min(1)).min(1), places: z.array(z.string().min(1)).min(1),
+    // the same key, written inside `searched` (Kansas, 2026-11-18: the root-only rule above still refused this file)
+    status: z.string().min(1).optional() }).strict(),
   findings: z.array(CollectedFindingSchema),
   // The brief asks for a person's status ("lost the 2026-06-02 primary", "resigned 2026-08-31") as the first entry of
   // `places`, written `status: …`. Searchers often write it as a key of its own instead, and the file was refused:
@@ -90,7 +92,10 @@ export function importFindFile(
   if (!parsed.success) {
     throw new Error(`${pid}: ${parsed.error.issues.map((i) => `${i.path.join('.') || '(root)'}: ${i.message}`).join('; ')}`);
   }
-  const { status, ...file } = parsed.data;
+  const { status: atRoot, ...rest } = parsed.data;
+  const { status: inSearched, ...searched } = rest.searched;
+  const file = { ...rest, searched };
+  const status = atRoot ?? inSearched;
   if (status && !file.searched.places.some((p) => /^status:/i.test(p.trim()))) {
     file.searched.places = [`status: ${status.replace(/^status:\s*/i, '').trim()}`, ...file.searched.places];
   }

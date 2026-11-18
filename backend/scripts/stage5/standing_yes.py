@@ -72,15 +72,15 @@ def held_names(b):
 
 
 def votes_left(b, c):
-    """Entries of unmapped.json and no-line.json that are NOT a held person's. None when an entry names no one."""
-    ids, names = held_names(b); left = 0
+    """Entries of unmapped.json and no-line.json that are NOT a held person's, as (file, person, bill or reason). None when an entry names no one."""
+    ids, names = held_names(b); left = []
     for f in (f'{vote_dir(c)}/unmapped.json', 'legiscan/no-line.json'):
         p = os.path.join(b, f)
         if not os.path.exists(p): continue
         for e in json.load(open(p)):
             who = e[0] if isinstance(e, list) and e else (e.get('full_name') or e.get('name') or e.get('politician_id')) if isinstance(e, dict) else None
             if not who: return None
-            if who not in names and who not in ids: left += 1
+            if who not in names and who not in ids: left.append((f, who, e[-1] if isinstance(e, list) and len(e) > 3 else ''))
     return left
 
 
@@ -99,7 +99,13 @@ def write_ok(b):
         # write is not a reason to ask again: the runner settled it when they were held (Mississippi 2026-11-18: two
         # held people's unreadable votes failed this check, and the desk asked for both yeses). Anyone else still fails.
         left = votes_left(b, c)
-        if left is None or left or rr.disagree(b, f'{vote_dir(c)}/crosscheck.json'): bad.append(f'recipe step 7: {str(s)[:200]}')
+        if left:
+            # Say which list and which people. The recipe's own message names the first list it meets, which may hold
+            # only held people (Maryland 2026-11-18: it named 20 held people's unmapped votes; the 2 that failed the
+            # check were other people's, in no-line.json).
+            bad.append(f'recipe step 7: {len(left)} vote(s) or sponsorship(s) of people who are NOT held have no readable line: '
+                       + '; '.join(f'{who} ({what or "?"}, {f})' for f, who, what in left[:6]) + (' …' if len(left) > 6 else ''))
+        elif left is None or rr.disagree(b, f'{vote_dir(c)}/crosscheck.json'): bad.append(f'recipe step 7: {str(s)[:200]}')
         else: print(f'  (step 7: every unmapped or no-line vote belongs to a held person; {len(held_names(b)[0])} held or moved)')
     for n in (6, 9, 10, 12):
         try: rr.check(n, c, b)

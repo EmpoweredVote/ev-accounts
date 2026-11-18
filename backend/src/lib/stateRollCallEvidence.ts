@@ -1870,7 +1870,27 @@ const sameLabel = (a: string, b: string): boolean => normalizeText(a) === normal
  * matches; `name_not_present` when the page holds the vote under a label that is not this politician's, or
  * that a second label of the roll call also fits; otherwise `snippet_not_found`.
  */
-export function verifyStateRollCallLine(line: string, url: string, text: string, lastName: string, fullName: string): SnippetVerdict {
+/** Another full name a person is published under (a former or married name), with its surname. */
+export interface OtherName { fullName: string; lastName: string }
+
+/**
+ * {@link verifyOneName} under the person's own name, then under each other name they are published under
+ * (`essentials.politicians.alternate_names`). A roll call prints the name a member held on the day: Maryland's 2023
+ * votes print "White" for the member the roster calls White Holland, and her vote got no line (md-01, 2026-11-18).
+ * Another name is tried only when the person's own name is not on the page, and it must pass the same test: exactly
+ * one label of the roll call fits it.
+ */
+export function verifyStateRollCallLine(line: string, url: string, text: string, lastName: string, fullName: string, otherNames: readonly OtherName[] = []): SnippetVerdict {
+  const first = verifyOneName(line, url, text, lastName, fullName);
+  if (first.verdict !== 'name_not_present') return first;
+  for (const o of otherNames) {
+    const v = verifyOneName(line, url, text, o.lastName, o.fullName);
+    if (v.verdict === 'verified') return v;
+  }
+  return first;
+}
+
+function verifyOneName(line: string, url: string, text: string, lastName: string, fullName: string): SnippetVerdict {
   if (parseOhioVoteUrl(url)) return verifyOhioLine(line, url, text, lastName, fullName);
   if (parseSouthDakotaVoteUrl(url)) return verifySouthDakotaLine(line, url, text, lastName, fullName);
   if (parseMississippiVoteUrl(url)) return verifyMississippiLine(line, url, text, lastName, fullName);
@@ -1888,7 +1908,15 @@ export function verifyStateRollCallLine(line: string, url: string, text: string,
 }
 
 /** The canonical line the render holds for this politician: one, or none when no label or several fit. */
-export function stateRollCallLinesFor(url: string, text: string, lastName: string, fullName: string): string[] {
+export function stateRollCallLinesFor(url: string, text: string, lastName: string, fullName: string, otherNames: readonly OtherName[] = []): string[] {
+  const own = linesForOneName(url, text, lastName, fullName);
+  if (own.length || !otherNames.length) return own;
+  // no label fits the person's own name: the names they are also published under, and only when they agree on one line
+  const other = new Set(otherNames.flatMap((o) => linesForOneName(url, text, o.lastName, o.fullName)));
+  return other.size === 1 ? [...other] : [];
+}
+
+function linesForOneName(url: string, text: string, lastName: string, fullName: string): string[] {
   if (parseOhioVoteUrl(url)) return ohioLinesFor(url, text, lastName, fullName);
   if (parseSouthDakotaVoteUrl(url)) return southDakotaLinesFor(url, text, lastName, fullName);
   if (parseMississippiVoteUrl(url)) return mississippiLinesFor(url, text, lastName, fullName);

@@ -117,6 +117,12 @@ describe('importFindFile', () => {
     expect(() => importFindFile(file({ status: 'lost the Republican primary' }), 'voting-rights', 3, { by: 'c', at: 'x' })).toThrow(/party/);
     expect(() => importFindFile(file({ value: 3 }), 'voting-rights', 3, { by: 'c', at: 'x' })).toThrow();
     expect(() => importFindFile(file({ status: '' }), 'voting-rights', 3, { by: 'c', at: 'x' })).toThrow();
+    // Kansas, 2026-11-18: the key written inside `searched` is the same thing, and any other key there is still refused
+    const inside = importFindFile(file({ searched: { ...file().searched, status: 'not a 2026 candidate' } }), 'voting-rights', 3, { by: 'c', at: '2026-10-22T01:00:00Z' });
+    expect(inside.searches[0].places[0]).toBe('status: not a 2026 candidate');
+    expect(JSON.stringify(inside.searches[0])).not.toMatch(/"status"/);
+    expect(() => importFindFile(file({ searched: { ...file().searched, state: 'x' } }), 'voting-rights', 3, { by: 'c', at: 'x' })).toThrow();
+    expect(() => importFindFile(file({ searched: { ...file().searched, status: 'lost the Democratic primary' } }), 'voting-rights', 3, { by: 'c', at: 'x' })).toThrow(/party/);
   });
 
   it('refuses a file whose id is not its file name, or not on the roster', () => {

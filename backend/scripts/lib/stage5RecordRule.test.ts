@@ -145,6 +145,38 @@ describe('decideRecord: what it hands to Opus', () => {
     // beside a carry easing it could make the record two-sided: Opus
     expect(lanes([vote('XX-HB-4-2025', 'yea', '2025-04-01'), vote('XX-HB-7-2025', 'yea', '2025-03-01')]).lanes).toEqual(['per-vote-note']);
   });
+  it('reads a vote at its own rung when the bill table gives one rung per vote (runner, 2026-11-19)', () => {
+    // Kansas 2026-11-18: one bill, a House vote on a text with no rung and a Senate vote on the rung 4 text. With the
+    // votes listed, the script reads each person's vote exactly; replay: 5 people released, 5 agree with Opus.
+    const sen = (bill: string, act: string, date: string, tally = '25–15'): CoderFinding => ({ ...vote(bill, act, date), note: `XX Senate, Final Action, ${date}: ${act} (tally ${tally}); census gate: none.` });
+    const row: RuleBillRow = { rung: 4, deciding_words: 'may carry on public transit', per_vote: { rungs: [4, null], votes: [
+      { date: '2018-02-02', chamber: 'House', tally: '60-30', rung: null }, { date: '2018-03-15', chamber: 'Senate', rung: 4 }] } };
+    const t = { ...table, 'XX-HB-6-2017': row };
+    const run = (fs: CoderFinding[]) => decideRecord(input(fs, { table: t, bill: () => ({ inStore: true, multi: false, tallies: [{ yes: 60, no: 30 }] }) }));
+    // the House member's Yes carries no rung: with a No on a carry bill it is a No-votes-only blank, by script
+    const house = run([vote('XX-HB-6-2017', 'yea', '2018-02-02'), vote('XX-HB-5-2025', 'nay', '2025-05-01')]);
+    expect(house.lanes).toEqual([]); expect(house.decision).toMatchObject({ outcome: 'doesnt-fit', naySide: 1 });
+    // the senator's Yes is rung 4: a seat, by script
+    const senate = run([sen('XX-HB-6-2017', 'yea', '2018-03-15')]);
+    expect(senate.lanes).toEqual([]); expect(senate.decision).toMatchObject({ outcome: 'seated', value: 4 });
+    // the control: the same two people with no `votes` list go to Opus, as before
+    const bare = { ...t, 'XX-HB-6-2017': { ...row, per_vote: { rungs: [4, null] } } };
+    expect(decideRecord(input([sen('XX-HB-6-2017', 'yea', '2018-03-15')], { table: bare, bill: () => ({ inStore: true, multi: false, tallies: [{ yes: 60, no: 30 }] }) })).lanes).toEqual(['per-vote-note']);
+    // a vote that fits no entry (another date), a tally that does not fit, and a sponsorship are not read exactly
+    expect(run([sen('XX-HB-6-2017', 'yea', '2018-03-16')]).lanes).toEqual(['per-vote-note']);
+    expect(run([{ ...vote('XX-HB-6-2017', 'yea', '2018-02-02'), note: 'XX House, Third Reading, 2018-02-02: yea (tally 61–29); census gate: none.' }, vote('XX-HB-5-2025', 'nay', '2025-05-01')]).lanes).toEqual(['per-vote-note']);
+    expect(run([sponsor('XX-HB-6-2017')]).lanes).toEqual(['per-vote-note']);
+    // two entries one vote fits (same day, same chamber, no tally to tell them apart): not read exactly
+    const twin = { ...t, 'XX-HB-6-2017': { ...row, per_vote: { rungs: [4, null], votes: [{ date: '2018-03-15', chamber: 'Senate' as const, rung: 4 }, { date: '2018-03-15', chamber: 'Senate' as const, rung: null }] } } };
+    expect(decideRecord(input([sen('XX-HB-6-2017', 'yea', '2018-03-15')], { table: twin, bill: () => ({ inStore: true, multi: false, tallies: [{ yes: 60, no: 30 }] }) })).lanes).toEqual(['per-vote-note']);
+    // both chambers vote on one day, on different texts (Kansas HB 2278, 2017-06-01): the chamber tells them apart
+    const sameDay = { ...t, 'XX-HB-6-2017': { ...row, per_vote: { rungs: [4, null], votes: [{ date: '2018-03-15', chamber: 'House' as const, rung: null }, { date: '2018-03-15', chamber: 'Senate' as const, rung: 4 }] } } };
+    const sd = decideRecord(input([sen('XX-HB-6-2017', 'yea', '2018-03-15')], { table: sameDay, bill: () => ({ inStore: true, multi: false, tallies: [{ yes: 60, no: 30 }] }) }));
+    expect(sd.lanes).toEqual([]); expect(sd.decision).toMatchObject({ outcome: 'seated', value: 4 });
+    // a vote read at a rung that is not the row's needs its own deciding words: Opus
+    const other = { ...t, 'XX-HB-6-2017': { ...row, per_vote: { rungs: [4, 5], votes: [{ date: '2018-03-15', chamber: 'Senate' as const, rung: 5 }] } } };
+    expect(decideRecord(input([sen('XX-HB-6-2017', 'yea', '2018-03-15')], { table: other, bill: () => ({ inStore: true, multi: false, tallies: [{ yes: 60, no: 30 }] }) })).lanes).toEqual(['per-vote-note']);
+  });
   it('a blank with No votes on both sides of the ladder', () => {
     expect(lanes([vote('XX-HB-3-2025', 'nay', '2025-04-01'), vote('XX-HB-4-2025', 'nay', '2025-04-02')]).lanes).toEqual(['blank-not-plain']);
     // until 2026-11-18 a lone gated Yes, or a lone No on a no-rung bill, came here too; the script now writes that blank

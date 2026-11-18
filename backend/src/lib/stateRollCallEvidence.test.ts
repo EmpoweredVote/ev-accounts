@@ -1181,3 +1181,32 @@ describe('state roll-call pages — Kansas lines', () => {
     expect(readStateRollCallRecord([ksPage('ks-2017-senate-je_20170222110146_941423')], KS_S17)).toMatchObject({ bill: 'SB 144', date: '2017-02-22', chamber: 'Senate' });
   });
 });
+
+describe('a name the person is also published under (md-01, 2026-11-18)', () => {
+  // A roll call prints the name a member held on the day. Maryland's 2023 votes print "White" for the member the
+  // roster calls "Jennifer White Holland": no label fit, so the vote got no line.
+  const text = sdRender(84688)!;
+  const now = { last: 'Castle', full: 'Wilma Castle' }; // a present name no label of this roll call fits
+  const was = [{ fullName: 'Will Mortenson', lastName: 'Mortenson' }];
+
+  it('gives no line under the present name alone, and the line under the other name', () => {
+    expect(stateRollCallLinesFor(SD_URL(84688), text, now.last, now.full)).toEqual([]);
+    expect(stateRollCallLinesFor(SD_URL(84688), text, now.last, now.full, was)).toEqual([MORTENSON]);
+    expect(verifyStateRollCallLine(MORTENSON, SD_URL(84688), text, now.last, now.full).verdict).toBe('name_not_present');
+    expect(verifyStateRollCallLine(MORTENSON, SD_URL(84688), text, now.last, now.full, was).verdict).toBe('verified');
+  });
+
+  it('another name that fits no member, or names that fit two members, give nothing', () => {
+    expect(stateRollCallLinesFor(SD_URL(84688), text, now.last, now.full, [{ fullName: 'Will Nobody', lastName: 'Nobody' }])).toEqual([]);
+    const two = [...was, { fullName: 'Julie Auch', lastName: 'Auch' }];
+    expect(stateRollCallLinesFor(SD_URL(84688), text, 'Auch', 'Julie Auch')).toHaveLength(1); // the control: he is on the page
+    expect(stateRollCallLinesFor(SD_URL(84688), text, now.last, now.full, two)).toEqual([]);
+    // the line of a different member is never verified through another name
+    const his = stateRollCallLinesFor(SD_URL(84688), text, 'Auch', 'Julie Auch')[0];
+    expect(verifyStateRollCallLine(his, SD_URL(84688), text, now.last, now.full, was).verdict).not.toBe('verified');
+  });
+
+  it('does not reach for another name when the person\'s own name is on the page', () => {
+    expect(stateRollCallLinesFor(SD_URL(84688), text, 'Mortenson', 'Will Mortenson', [{ fullName: 'Julie Auch', lastName: 'Auch' }])).toEqual([MORTENSON]);
+  });
+});
