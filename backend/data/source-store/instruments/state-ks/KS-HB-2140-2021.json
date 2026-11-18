@@ -1,0 +1,90 @@
+{
+  "id": "KS-HB-2140-2021",
+  "scope": "state:ks",
+  "title": "HB2140 (2021-2022 Regular): Prohibiting the carrying of a concealed handgun in the state capitol.",
+  "urls": [
+    "https://www.kslegislature.gov/li_2022/b2021_22/measures/hb2140/",
+    "https://www.kslegislature.gov/li_2022/b2021_22/measures/documents/hb2140_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Boog Highberger",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Sydney Carlin",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "7a368b44-ae66-4441-9b5b-3086a7951f55"
+    },
+    {
+      "name": "Stephanie Sawyer-Clayton",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4e794e5d-ab7d-4012-9369-f1f3f04e4dca"
+    },
+    {
+      "name": "Pam Curtis",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "b92814b1-e73e-4ab2-b102-a6b3519b9553"
+    },
+    {
+      "name": "Jennifer Day",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Linda Featherston",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "ba5c1fd3-d2c7-4805-b43f-81bd2f216c64"
+    },
+    {
+      "name": "Henry Helgerson",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "babc9749-78b9-427d-9951-76fa790b9aff"
+    },
+    {
+      "name": "Annie Kuether",
+      "role": "prime",
+      "version": "Open States sponsor list"
+    },
+    {
+      "name": "Susan Ruiz",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "4d661dbb-a3a5-4c1e-a19f-3846f7075ffc"
+    },
+    {
+      "name": "Brandon Woodard",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "45dfa64a-651b-4665-8081-94ec2d260d4e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Introduced; official copy, https://www.kslegislature.gov/li_2022/b2021_22/measures/documents/hb2140_00_0000.pdf)",
+    "fetched_at": "2026-11-18T21:20:59.861206Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2140-2021.introduced.pdf",
+      "sha256": "cfb11f2aab33749d0ce5c4c8bee3bb7a47bb7f10c724bade11bf82e86f1d8bc8"
+    },
+    "note": "As filed (Introduced); no passage vote recorded. Struck words dropped ('An individual may' and the federal/state-prohibition proviso struck from 75-7c21(a))."
+  },
+  "operative_text": "Section 2 (K.S.A. 75-7c21): (a) No individual shall carry a concealed handgun in the state capitol, except that an individual may possess a handgun in a private means of conveyance located in any structure connected to the state capitol, or any area of such structure, designated for the parking of motor vehicles. (b) This section shall not apply to: (1) A commissioned law enforcement officer; (2) a full-time salaried law enforcement officer of another state or the federal government who is carrying out official duties while in this state; (3) a law enforcement officer, as defined in K.S.A. 75-7c22, and amendments thereto, who satisfies the requirements of either K.S.A. 75-7c22(a) or (b), and amendments thereto; (4) any person summoned by any such officer to assist in making arrests or preserving the peace while actually engaged in assisting such officer; or (5) a member of the military of this state or the United States engaged in the performance of duties.\nSection 1 (K.S.A. 21-6309): (d)(4) an individual to possess a concealed handgun provided such individual is not prohibited from possessing a firearm under either federal or state law and such individual is not in possession of a concealed handgun in the state capitol in violation of K.S.A. 75-7c21, and amendments thereto."
+}

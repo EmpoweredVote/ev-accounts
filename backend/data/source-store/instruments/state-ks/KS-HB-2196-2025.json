@@ -1,0 +1,39 @@
+{
+  "id": "KS-HB-2196-2025",
+  "scope": "state:ks",
+  "title": "HB2196 (2025-2026 Regular): Providing a permanent exemption for postsecondary educational institutions from the public buildings requirements under the personal and family protection act.",
+  "urls": [
+    "https://www.kslegislature.gov/b2025_26/bills/HB2196/",
+    "https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2196/hb2196_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Barbara Ballard",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a0dd259b-8b9b-41ad-b918-56a287d68dc0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Introduced; official copy, https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2196/hb2196_00_0000.pdf)",
+    "fetched_at": "2026-11-18T21:20:59.861206Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2196-2025.introduced.pdf",
+      "sha256": "0f4b46ce8ee222fa0e23e24fec245bd6a15b7399716271b4eba1064ffb2dbe21"
+    },
+    "note": "As filed (Introduced); no passage vote recorded. The unchanged subsections (a) and (b) are quoted for context; the new law is item (6), which adds postsecondary institutions to the list of places where Sec. 75-7c20 does not apply, and strikes the expired 2017 exemption subsections (i)-(j). The sentence 'The provisions of this section shall not apply to:' is printed as '(k) The-] provisions...' after a struck passage; quoted without the stray lead word 'The'."
+  },
+  "operative_text": "Section 1 (K.S.A. 75-7c20): (a) The carrying of a concealed handgun shall not be prohibited in any public area of any state or municipal building unless such public area has adequate security measures to ensure that no weapons are permitted to be carried into such public area and the public area is conspicuously posted with either permanent or temporary signage approved by the governing body, or the chief administrative officer, if no governing body exists, in accordance with K.S.A. 75-7c10, and amendments thereto. (b) The carrying of a concealed handgun shall not be prohibited throughout any state or municipal building in its entirety unless such building has adequate security measures at all public access entrances to ensure that no weapons are permitted to be carried into such building and the building is conspicuously posted in accordance with K.S.A. 75-7c10, and amendments thereto. provisions of this section shall not apply to: ... (6) any postsecondary educational institution, as defined in K.S.A. 74-3201b, and amendments thereto; or (7) any building owned or leased by the authority created under the university of Kansas hospital authority act, any building located within the health care district, as defined in the unified government of Wyandotte county and Kansas City, Kansas City-wide master plan, Rosedale master plan and traffic study or similar master plan or comprehensive planning or zoning document approved by the unified government of Wyandotte county and Kansas City, Kansas in effect on January 12, 2017."
+}

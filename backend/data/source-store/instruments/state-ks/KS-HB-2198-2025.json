@@ -1,0 +1,39 @@
+{
+  "id": "KS-HB-2198-2025",
+  "scope": "state:ks",
+  "title": "HB2198 (2025-2026 Regular): Enacting the gun violence restraining order act to authorize the issuance of protective orders prohibiting the acquisition and possession of firearms by certain individuals.",
+  "urls": [
+    "https://www.kslegislature.gov/b2025_26/bills/HB2198/",
+    "https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2198/hb2198_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Barbara Ballard",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "a0dd259b-8b9b-41ad-b918-56a287d68dc0"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Introduced; official copy, https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2198/hb2198_00_0000.pdf)",
+    "fetched_at": "2026-11-18T21:20:59.861206Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2198-2025.introduced.pdf",
+      "sha256": "7dbcd2d5ff46f9a87996fee4d039a6d99c3457c4b458218bef16983ff7a6e318"
+    },
+    "note": "As filed (Introduced); no passage vote recorded. Order may be issued without notice (Sec. 3(c)) and extended in one-year steps (Sec. 8(a)); sections 5-7 set service and seizure procedure. Section 2's list is cut short in the quote (items 5-7 omitted)."
+  },
+  "operative_text": "Section 1 (new law): (a) Sections 1 through 8, and amendments thereto, shall be known and may be cited as the gun violence restraining order act.\nSection 3 (new law): (a) In an action under section 2, and amendments thereto, the court may issue a gun violence restraining order if the court determines that there is reasonable cause to believe that the defendant poses a significant risk of personal injury to self or others by possessing a firearm.\nSection 4 (new law): (a) If the court determines under section 3, and amendments thereto, that a gun violence restraining order is to be issued, the court shall include all of the following provisions in the order: (1) That the restrained individual shall not purchase or possess a firearm; (4) an expiration date that is not more than one year from the date of issuance. (b) In the discretion of the court, a gun violence restraining order may include an order to a law enforcement agency to seize firearms in the possession of the restrained individual.\nSection 2 (new law): (a) Any of the following individuals may file an action with the district court requesting the court to enter a gun violence restraining order pursuant to the gun violence restraining order act: (1) The spouse of the defendant; (2) a former spouse of the defendant; (3) an individual who has a child in common with the defendant; (4) an individual who has or has had a dating relationship with the defendant;\nSection 8 (new law): (b) An individual who refuses or fails to comply with a gun violence restraining order is subject to the criminal contempt powers of the court."
+}

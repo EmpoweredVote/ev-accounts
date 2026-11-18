@@ -88,6 +88,364 @@
         "fetched_at": "2026-11-04T19:13:24.945Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "3a398486248da722940ff432df4fc5a54feccb9e02a38a2b846454dd95c1f56b",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/bills/HB2052/",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2052-2025",
+      "act": "yea",
+      "motion": "House Concurred with amendments",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Concurred with amendments, 2025-03-24: yea (tally 105–17); census gate: none.",
+      "subjects": [
+        "concealed carry licence eligibility and age 21 for standard licence",
+        "provisional licence converts to standard at 21",
+        "licence card surrendered on suspension or revocation",
+        "armed off-duty officers' personal information protected"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2052/hb2052_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2052-2025.enrolled.pdf",
+          "sha256": "68e955bee99e21e34a8f5d60dee10ce28577d95fd5ddc0f6412452804aab34f6"
+        }
+      }
+    },
+    {
+      "id": "f0e3bfb3f2f6843d106f10853cdc5ff26cc144a178da44d6f097095551fe013a",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/bills/HB2056/",
+      "date": "2023-02-23",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2056-2023",
+      "act": "nay",
+      "motion": "House Final Action - Passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Final Action - Passed as amended, 2023-02-23: nay (tally 77–45); census gate: none.",
+      "subjects": [
+        "concealed carry licence disqualifiers updated",
+        "licence denied or revoked when applicant becomes ineligible",
+        "licence card surrendered on suspension or revocation"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Amended; official copy, https://www.kslegislature.gov/b2023_24/bills/download/?apn=b2023_24/year2/ready_for_publication/hb_2056/hb2056_02_0000.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2056-2023.amended.pdf",
+          "sha256": "efe65c97aa52c94105719a5b9a0d3e530be3e7d7e4da61ac7d88621e46b9b3d1"
+        }
+      }
+    },
+    {
+      "id": "f36a6d03653a6ad51062ac58ba97b226c05e2a3203a28df2c571b128fdf14631",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2022/b2021_22/measures/hb2058/",
+      "date": "2021-05-03",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2058-2021",
+      "act": "nay",
+      "motion": "House Motion to override veto prevailed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Motion to override veto prevailed, 2021-05-03: nay (tally 84–39); census gate: none.",
+      "subjects": [
+        "concealed carry licence for ages 18 to 20 (provisional)",
+        "out-of-state carry licences recognized for non-residents",
+        "felon-in-possession narrowed to person felonies and recent releases",
+        "firearm rights restored on expungement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/li_2022/b2021_22/measures/documents/hb2058_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2058-2021.enrolled.pdf",
+          "sha256": "ff5398d5601f58b36eeebca7ceee08e8d1f269cfd8dda03dd927dd9e419e797e"
+        }
+      }
+    },
+    {
+      "id": "b494d3079b06d214b62aed3af83e84f0a4c10d9ce80c476356b2c417cba0c5ef",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2022/b2021_22/measures/hb2089/",
+      "date": "2021-04-08",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2089-2021",
+      "act": "nay",
+      "motion": "House Concurred with amendments",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Concurred with amendments, 2021-04-08: nay (tally 79–44); census gate: none.",
+      "subjects": [
+        "standardized firearm safety education in schools",
+        "state board sets curriculum guidelines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/li_2022/b2021_22/measures/documents/hb2089_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2089-2021.enrolled.pdf",
+          "sha256": "5b7125f6554599e8f01405efdca4fe878ea223d3ffd203bcfe0ee6902987a258"
+        }
+      }
+    },
+    {
+      "id": "e70b9c2e88dee7705f816936adbbc6e40cd1e0f0a07a9e24500bb56f0a88e9d9",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/bills/HB2304/",
+      "date": "2023-04-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2304-2023",
+      "act": "nay",
+      "motion": "House Motion to override veto failed; Veto sustained",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Motion to override veto failed; Veto sustained, 2023-04-26: nay (tally 83–41); census gate: none.",
+      "subjects": [
+        "standard firearm safety lessons in schools",
+        "state board curriculum guidelines"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2023_24/bills/download/?apn=b2023_24/year2/ready_for_publication/hb_2304/hb2304_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2304-2023.enrolled.pdf",
+          "sha256": "5e13d175cb613eb049b0174629698b0005391b7ca6bb88b7c9254e96ee3369d0"
+        }
+      }
+    },
+    {
+      "id": "5faeb93d0be3e81824ab28a14de800ae017663f3163409ae596e9cba1d70695e",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2020/b2019_20/measures/hb2326/",
+      "date": "2019-03-27",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2326-2019",
+      "act": "nay",
+      "motion": "House Final Action - Passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Final Action - Passed as amended, 2019-03-27: nay (tally 83–41); census gate: none.",
+      "subjects": [
+        "concealed-carry license minimum age lowered to 18",
+        "recognition of other states' carry permits for non-residents",
+        "permit holders exempt from under-21 concealed-carry offence"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Amended; official copy, https://www.kslegislature.gov/li_2020/b2019_20/measures/documents/hb2326_01_0000.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2326-2019.amended.pdf",
+          "sha256": "3b949985292bb4052e0fe02a297025caf9d6737429ca3748bb75bc8b6ebf3d5e"
+        }
+      }
+    },
+    {
+      "id": "29421a02d558b0d7618b099cd4c8539bee78ce316a8f5843c02d84d84b7fafaa",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/bills/HB2501/",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2501-2025",
+      "act": "nay",
+      "motion": "House Conference Committee Report was adopted",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Conference Committee Report was adopted, 2026-03-26: nay (tally 99–22); census gate: none.",
+      "subjects": [
+        "civil immunity for dealers holding guns under storage agreements",
+        "local rules on gun storage agreements preempted",
+        "suppressors and short-barrel shotguns no longer crimes",
+        "longer sentence if felony committed with suppressor or short shotgun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2501/hb2501_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2501-2025.enrolled.pdf",
+          "sha256": "5671904d81be103302e3ea8c655047a95793b91683e0c8cf75236938fd0d4aa0"
+        }
+      }
+    },
+    {
+      "id": "09073a4fe22f9e3cabd868776a6b84e269a26beeba1697af62681af11cfbc453",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/bills/SB116/",
+      "date": "2023-04-05",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-116-2023",
+      "act": "nay",
+      "motion": "House Conference Committee Report was adopted",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Conference Committee Report was adopted, 2023-04-05: nay (tally 86–37); census gate: none.",
+      "subjects": [
+        "no state license or renewal fee for a concealed handgun license",
+        "sheriff fingerprint fee of $32.50 kept"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2023_24/bills/download/?apn=b2023_24/year2/ready_for_publication/sb_116/sb116_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-SB-116-2023.enrolled.pdf",
+          "sha256": "1958ab190a42268bf3a7d10b420e74974a9f56afb37d983b6cfee58b492ee8b9"
+        }
+      }
+    },
+    {
+      "id": "843ba2e3667997a5b3e376cbf77fd4b7cdf9f3740717c5b7197e92c5c0f03640",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/bills/SB137/",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-137-2025",
+      "act": "nay",
+      "motion": "House Emergency Final Action - Passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS House, House Emergency Final Action - Passed, 2025-03-20: nay (tally 90–28); census gate: none.",
+      "subjects": [
+        "forfeited firearms may be sold or transferred to a licensed federal firearms dealer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/sb_137/sb137_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-SB-137-2025.enrolled.pdf",
+          "sha256": "94d79e6e9bf4c48efe5471404fc74d693666d58df10565f1779db42bf7327404"
+        }
+      }
+    },
+    {
+      "id": "d111b9c77e763e80b79cada21dc1747db9bcc911fcff604c2dda0025dce99f85",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2022/b2021_22/measures/hb2140/",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "KS-HB-2140-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of KS-HB-2140-2021 (Open States sponsor list): HB2140 (2021-2022 Regular): Prohibiting the carrying of a concealed handgun in the state capitol..",
+      "subjects": [
+        "no concealed handguns in the state capitol"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Introduced; official copy, https://www.kslegislature.gov/li_2022/b2021_22/measures/documents/hb2140_00_0000.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2140-2021.introduced.pdf",
+          "sha256": "cfb11f2aab33749d0ce5c4c8bee3bb7a47bb7f10c724bade11bf82e86f1d8bc8"
+        }
+      }
+    },
+    {
+      "id": "f6bb092a7294a6d7f516bcc66289dc6a72bfe4ef6ec5d5fc8304adfe86632a4e",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2023_24/bills/HB2245/",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "KS-HB-2245-2023",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of KS-HB-2245-2023 (Open States sponsor list): HB2245 (2023-2024 Regular): Creating the gun violence restraining order act to authorize the issuance of protective orders prohibiting the acquisition and possession of firearms by certain individuals..",
+      "subjects": [
+        "extreme-risk gun violence restraining orders",
+        "bar on buying or possessing firearms for up to one year",
+        "court-ordered seizure of firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Introduced; official copy, https://www.kslegislature.gov/b2023_24/bills/download/?apn=b2023_24/year2/ready_for_publication/hb_2245/hb2245_00_0000.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2245-2023.introduced.pdf",
+          "sha256": "0782922c420341fbaaac5ccdf50c9dc5c7e5149fd7a0f2144eeb9b01c4b8f4cf"
+        }
+      }
+    },
+    {
+      "id": "eaebb0a40d405536c68c957893b8cbec0a2396b2c2f76ff5b4272b634bd27a53",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2022/b2021_22/measures/hb2610/",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "KS-HB-2610-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of KS-HB-2610-2021 (Open States sponsor list): HB2610 (2021-2022 Regular): Allowing postsecondary educational institutions to prohibit concealed carry of handguns by persons in buildings but not licensees under the personal and family protection act unless the building has adequate security measures..",
+      "subjects": [
+        "colleges may ban concealed handguns in posted buildings",
+        "licensees may carry on campus unless security screening is in place"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Introduced; official copy, https://www.kslegislature.gov/li_2022/b2021_22/measures/documents/hb2610_00_0000.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2610-2021.introduced.pdf",
+          "sha256": "09dcd9d5f538691e281f2f7c28e4d4cac29d20371d56cb9e796dc42c679148ea"
+        }
+      }
     }
   ],
   "searches": [

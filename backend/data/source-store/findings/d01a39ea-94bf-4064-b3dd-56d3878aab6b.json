@@ -116,6 +116,99 @@
         "fetched_at": "2026-11-04T19:13:24.950Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "c2d378f83969866ed5a4e53844934cea8456c5c2e080a9c0514bb03df1987171",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2018/b2017_18/measures/hb2042/",
+      "date": "2018-03-15",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2042-2017",
+      "act": "nay",
+      "motion": "Senate Emergency Final Action - Passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS Senate, Senate Emergency Final Action - Passed as amended, 2018-03-15: nay (tally 25–15); census gate: none.",
+      "subjects": [
+        "out-of-state concealed carry licenses recognized for non-residents",
+        "concealed carry licence records kept confidential"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Amended; official copy, https://www.kslegislature.gov/li_2018/b2017_18/measures/documents/hb2042_02_0000.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2042-2017.amended.pdf",
+          "sha256": "21206f2e2d46897b69d330030b072772138d0f66597b93c4847e3acd9aa4db2f"
+        }
+      }
+    },
+    {
+      "id": "00f6faa20178b0498a0799334b437d5c2aed8e2754c51a09091fb2286d6b3572",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2018/b2017_18/measures/hb2145/",
+      "date": "2018-03-15",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2145-2017",
+      "act": "yea",
+      "motion": "Senate Emergency Final Action - Passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "KS Senate, Senate Emergency Final Action - Passed as amended, 2018-03-15: yea (tally 40–0); census gate: near-unanimous.",
+      "subjects": [
+        "firearm ban for fugitives and unlawful aliens",
+        "firearm ban under domestic-abuse protective orders",
+        "five-year firearm ban after domestic violence misdemeanor",
+        "Kansas-made suppressors exempted"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/li_2018/b2017_18/measures/documents/hb2145_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2145-2017.enrolled.pdf",
+          "sha256": "356c28e57d31153b6a946a97a462f272c02fc759d5b75bd4f825a05099f6c6ec"
+        }
+      }
+    },
+    {
+      "id": "a2e4360f1d45a852523a3aaecf83e34d14bfcfa89c6ffe9cf8c61b3b775a93b7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2018/b2017_18/measures/hb2278/",
+      "date": "2017-06-01",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2278-2017",
+      "act": "yea",
+      "motion": "Senate Emergency Final Action - Substitute passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS Senate, Senate Emergency Final Action - Substitute passed, 2017-06-01: yea (tally 24–16); census gate: none.",
+      "subjects": [
+        "concealed handguns in public buildings",
+        "hospitals, mental health centers and campuses removed from the carry exemption",
+        "public employers' liability for employee carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/li_2018/b2017_18/measures/documents/hb2278_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2278-2017.enrolled.pdf",
+          "sha256": "359530c01b5c7908d31ea22eeb5f578a24f771cfce7428c52da715076a271927"
+        }
+      }
     }
   ],
   "searches": [

@@ -1,0 +1,39 @@
+{
+  "id": "KS-SB-156-2021",
+  "scope": "state:ks",
+  "title": "SB156 (2021-2022 Regular): Prohibiting the carrying of a concealed handgun in the state capitol.",
+  "urls": [
+    "https://www.kslegislature.gov/li_2022/b2021_22/measures/sb156/",
+    "https://www.kslegislature.gov/li_2022/b2021_22/measures/documents/sb156_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Cindy Holscher",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "e80123eb-87f0-4e90-a661-29da53de972a"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Introduced; official copy, https://www.kslegislature.gov/li_2022/b2021_22/measures/documents/sb156_00_0000.pdf)",
+    "fetched_at": "2026-11-18T21:20:59.861206Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-SB-156-2021.introduced.pdf",
+      "sha256": "1c93075e6f0a5ce6fd599e4df1562d7bdec86409c3a39f397db9f71a7598172b"
+    },
+    "note": "As filed (introduced); the bill has no recorded vote. Struck from K.S.A. 75-7c21(a): the existing rule that an individual may carry a concealed handgun in the state capitol if not prohibited from possessing a firearm."
+  },
+  "operative_text": "Section 2 (K.S.A. 75-7c21): (a) No individual shall carry a concealed handgun in the state capitol, except that an individual may possess a handgun in a private means of conveyance located in any structure connected to the state capitol, or any area of such structure, designated for the parking of motor vehicles.\nSection 2 (K.S.A. 75-7c21): (b) This section shall not apply to: (1) A commissioned law enforcement officer; (2) a full-time salaried law enforcement officer of another state or the federal government who is carrying out official duties while in this state; (3) a law enforcement officer, as defined in K.S.A. 75-7c22, and amendments thereto, who satisfies the requirements of either K.S.A. 75-7c22(a) or (b), and amendments thereto; (4) any person summoned by any such officer to assist in making arrests or preserving the peace while actually engaged in assisting such officer; or (5) a member of the military of this state or the United States engaged in the performance of duties.\nSection 1 (K.S.A. 2020 Supp. 21-6309): (4) an individual to possess a concealed handgun provided such individual is not prohibited from possessing a firearm under either federal or state law and such individual is not in possession of a concealed handgun in the state capitol in violation of K.S.A. 75-7c21, and amendments thereto."
+}

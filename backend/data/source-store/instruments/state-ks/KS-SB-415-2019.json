@@ -1,0 +1,39 @@
+{
+  "id": "KS-SB-415-2019",
+  "scope": "state:ks",
+  "title": "SB415 (2019-2020 Regular): Requiring relinquishment of firearms pursuant to certain court orders related to domestic violence. ",
+  "urls": [
+    "https://www.kslegislature.gov/li_2020/b2019_20/measures/sb415/",
+    "https://www.kslegislature.gov/li_2020/b2019_20/measures/documents/sb415_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Dinah Sykes",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "c73dc9ff-e265-4fff-9dfd-9344fce280b6"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Introduced; official copy, https://www.kslegislature.gov/li_2020/b2019_20/measures/documents/sb415_00_0000.pdf)",
+    "fetched_at": "2026-11-18T21:20:59.861206Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-SB-415-2019.introduced.pdf",
+      "sha256": "3e9ce385c77c6cef168437eb0cbf6bf9eca92f4e5ca0ebddb5cabc0c9b7d0ffc"
+    },
+    "note": "As filed (introduced); the bill has no recorded vote. Section 3 (K.S.A. 2019 Supp. 22-3426) adds a similar relinquishment order for domestic violence convictions and Section 5 (K.S.A. 2019 Supp. 60-31a06) for stalking, sexual assault or human trafficking orders; not all quoted. Struck words in Secs. 3-5 are only cross-reference wording."
+  },
+  "operative_text": "New Sec. 1 (new law): (a) The court shall issue an order requiring the defendant to relinquish all firearms in the defendant's custody, control or possession, and any concealed carry license issued to the defendant upon: (1) The court's issuance of a qualifying protection order against such defendant; or (2) the conviction of the defendant for domestic battery as described in K.S.A. 2019 Supp. 21-5414, and amendments thereto, or any misdemeanor for a domestic violence offense as defined in K.S.A. 2019 Supp. 21-6301, and amendments thereto.\nNew Sec. 1 (new law): (c) (1) If the defendant is physically present in court at the time a relinquishment order is entered against the defendant, the defendant shall comply with the provisions of subsection (b) within 24 hours after such relinquishment order is entered.\nNew Sec. 1 (new law): (h) At any point while a relinquishment order is in effect, the plaintiff, the district attorney or county attorney, or a law enforcement officer may file an affidavit with the court that issued the order alleging that the defendant subject to such order has a firearm in the defendant's custody, control or possession, or possesses a concealed carry license.\nNew Sec. 2 (new law): (a) It shall be unlawful for a person to possess a firearm or concealed carry license issued to such person while there is a relinquishment order issued pursuant to section 1, and amendments thereto, in effect against such person. (b) Violation of this section is a severity level 8, nonperson felony.\nSection 4 (K.S.A. 2019 Supp. 60-3107): (i) (1) Upon the issuance of a qualifying protection from abuse order against a defendant, the court shall issue a relinquishment order against such defendant pursuant to section 1, and amendments thereto."
+}

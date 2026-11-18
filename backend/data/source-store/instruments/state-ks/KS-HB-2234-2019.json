@@ -1,0 +1,39 @@
+{
+  "id": "KS-HB-2234-2019",
+  "scope": "state:ks",
+  "title": "HB2234 (2019-2020 Regular): Creating the voluntary gun safety act.",
+  "urls": [
+    "https://www.kslegislature.gov/li_2020/b2019_20/measures/hb2234/",
+    "https://www.kslegislature.gov/li_2020/b2019_20/measures/documents/hb2234_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Jarrod Ousley",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "938dfac8-41f2-4a09-b063-dde007d9511d"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Introduced; official copy, https://www.kslegislature.gov/li_2020/b2019_20/measures/documents/hb2234_00_0000.pdf)",
+    "fetched_at": "2026-11-18T21:20:59.861206Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2234-2019.introduced.pdf",
+      "sha256": "5fcf56fa2e90f0bea93da01a662800804b2ab85169ae4bcdc70aba80296e6fb1"
+    },
+    "note": "Introduced version (as filed); no votes recorded, no date in text. Section 3(d) quote stops after item (2); items (3)-(6) are procedural statements."
+  },
+  "operative_text": "Section 1 (new law): \"Gun safety protective order\" means an order issued by a court pursuant to section 3, and amendments thereto, prohibiting the petitioner from purchasing any firearms.\nSection 3 (new law): If the court finds by a preponderance of the evidence at the hearing that the petitioner poses a significant danger of personal injury to self or others by purchasing a firearm, the court shall issue a gun safety protective order.\nSection 3 (new law): A gun safety protective order shall include all of the following: (1) A statement that the petitioner may not purchase, or attempt to purchase a firearm while the order is in effect; (2) a statement that any license to carry a concealed handgun issued to the petitioner pursuant to K.S.A. 2018 Supp. 75-7c03, and amendments thereto, shall be invalid while the order is in effect and shall be surrendered to the court immediately;\nSection 4 (new law): If the court finds after the hearing that the petitioner has met the petitioner's burden, the court shall terminate the order.\nSection 5 (new law): The court shall notify the Kansas bureau of investigation no later than one day after issuing or terminating a gun safety protective order.\nSection 5 (new law): The Kansas bureau of investigation shall immediately make information about a gun safety protective order issued or terminated pursuant to the provisions of this act available to the national instant criminal background check system for the purposes of firearm purchaser background checks.\nSection 7 (new law): The provisions of this act shall not be construed to impose criminal or civil liability on any person who chooses not to seek a gun safety protective order pursuant to the provisions of this act."
+}

@@ -1,0 +1,39 @@
+{
+  "id": "KS-HB-2610-2021",
+  "scope": "state:ks",
+  "title": "HB2610 (2021-2022 Regular): Allowing postsecondary educational institutions to prohibit concealed carry of handguns by persons in buildings but not licensees under the personal and family protection act unless the building has adequate security measures.",
+  "urls": [
+    "https://www.kslegislature.gov/li_2022/b2021_22/measures/hb2610/",
+    "https://www.kslegislature.gov/li_2022/b2021_22/measures/documents/hb2610_00_0000.pdf"
+  ],
+  "version": "as-filed",
+  "sponsors": [
+    {
+      "name": "Brandon Woodard",
+      "role": "prime",
+      "version": "Open States sponsor list",
+      "politician_id": "45dfa64a-651b-4665-8081-94ec2d260d4e"
+    }
+  ],
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Introduced; official copy, https://www.kslegislature.gov/li_2022/b2021_22/measures/documents/hb2610_00_0000.pdf)",
+    "fetched_at": "2026-11-18T21:20:59.861206Z",
+    "method": "api",
+    "saved_copy": {
+      "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2610-2021.introduced.pdf",
+      "sha256": "09dcd9d5f538691e281f2f7c28e4d4cac29d20371d56cb9e796dc42c679148ea"
+    },
+    "note": "Introduced version (as filed); no votes recorded, no date in text. Struck: the old subsection (i) and the old temporary exemption for state and municipal buildings and campuses (until July 1, 2017); replaced by the new campus rule in (j)."
+  },
+  "operative_text": "Section 1 (K.S.A. 75-7c20): (1) Except as provided in paragraph (2), a postsecondary educational institution may prohibit the carrying of concealed handguns in any building of such institution, including any buildings located on the grounds of such institution and any buildings leased by such institution, or any public area thereof, provided that the building or public area thereof is conspicuously posted in accordance with K.S.A. 75-7c10, and amendments thereto.\nSection 1 (K.S.A. 75-7c20): (2) A postsecondary educational institution shall not prohibit the holder of a license issued pursuant to or recognized by this act from carrying a concealed handgun in any building of such institution or public area thereof, unless such building or public area has adequate security measures to ensure that no weapons are permitted to be carried into such building or public area and there is signage conspicuously posted in accordance with K.S.A. 75-7c10, and amendments thereto.\nSection 1 (K.S.A. 75-7c20): The term \"municipality\" does not include school districts or postsecondary educational institutions, as defined in K.S.A. 74-3201b, and amendments thereto."
+}

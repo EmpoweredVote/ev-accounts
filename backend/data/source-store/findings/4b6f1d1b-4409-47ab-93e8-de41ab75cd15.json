@@ -155,6 +155,280 @@
         "fetched_at": "2026-11-04T19:13:24.949Z",
         "method": "webfetch"
       }
+    },
+    {
+      "id": "c2d378f83969866ed5a4e53844934cea8456c5c2e080a9c0514bb03df1987171",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2018/b2017_18/measures/hb2042/",
+      "date": "2018-03-15",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2042-2017",
+      "act": "nay",
+      "motion": "Senate Emergency Final Action - Passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS Senate, Senate Emergency Final Action - Passed as amended, 2018-03-15: nay (tally 25–15); census gate: none.",
+      "subjects": [
+        "out-of-state concealed carry licenses recognized for non-residents",
+        "concealed carry licence records kept confidential"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Amended; official copy, https://www.kslegislature.gov/li_2018/b2017_18/measures/documents/hb2042_02_0000.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2042-2017.amended.pdf",
+          "sha256": "21206f2e2d46897b69d330030b072772138d0f66597b93c4847e3acd9aa4db2f"
+        }
+      }
+    },
+    {
+      "id": "724e7de4276c9b040dbcb9e2e450e65afb786557fc5cf9a9766d0c54f21363ec",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/bills/HB2052/",
+      "date": "2025-03-20",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2052-2025",
+      "act": "yea",
+      "motion": "Senate Emergency Final Action - Passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS Senate, Senate Emergency Final Action - Passed as amended, 2025-03-20: yea (tally 34–6); census gate: none.",
+      "subjects": [
+        "concealed carry licence eligibility and age 21 for standard licence",
+        "provisional licence converts to standard at 21",
+        "licence card surrendered on suspension or revocation",
+        "armed off-duty officers' personal information protected"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2052/hb2052_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2052-2025.enrolled.pdf",
+          "sha256": "68e955bee99e21e34a8f5d60dee10ce28577d95fd5ddc0f6412452804aab34f6"
+        }
+      }
+    },
+    {
+      "id": "cf406cdce438bd65a2e8c0650a8fad9d23501faed270defc22f2f6a90762b030",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2022/b2021_22/measures/hb2058/",
+      "date": "2021-05-03",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2058-2021",
+      "act": "nay",
+      "motion": "Senate Motion to override veto prevailed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS Senate, Senate Motion to override veto prevailed, 2021-05-03: nay (tally 31–8); census gate: none.",
+      "subjects": [
+        "concealed carry licence for ages 18 to 20 (provisional)",
+        "out-of-state carry licences recognized for non-residents",
+        "felon-in-possession narrowed to person felonies and recent releases",
+        "firearm rights restored on expungement"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/li_2022/b2021_22/measures/documents/hb2058_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2058-2021.enrolled.pdf",
+          "sha256": "ff5398d5601f58b36eeebca7ceee08e8d1f269cfd8dda03dd927dd9e419e797e"
+        }
+      }
+    },
+    {
+      "id": "00f6faa20178b0498a0799334b437d5c2aed8e2754c51a09091fb2286d6b3572",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2018/b2017_18/measures/hb2145/",
+      "date": "2018-03-15",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2145-2017",
+      "act": "yea",
+      "motion": "Senate Emergency Final Action - Passed as amended",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "KS Senate, Senate Emergency Final Action - Passed as amended, 2018-03-15: yea (tally 40–0); census gate: near-unanimous.",
+      "subjects": [
+        "firearm ban for fugitives and unlawful aliens",
+        "firearm ban under domestic-abuse protective orders",
+        "five-year firearm ban after domestic violence misdemeanor",
+        "Kansas-made suppressors exempted"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/li_2018/b2017_18/measures/documents/hb2145_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2145-2017.enrolled.pdf",
+          "sha256": "356c28e57d31153b6a946a97a462f272c02fc759d5b75bd4f825a05099f6c6ec"
+        }
+      }
+    },
+    {
+      "id": "a2e4360f1d45a852523a3aaecf83e34d14bfcfa89c6ffe9cf8c61b3b775a93b7",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2018/b2017_18/measures/hb2278/",
+      "date": "2017-06-01",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2278-2017",
+      "act": "yea",
+      "motion": "Senate Emergency Final Action - Substitute passed",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS Senate, Senate Emergency Final Action - Substitute passed, 2017-06-01: yea (tally 24–16); census gate: none.",
+      "subjects": [
+        "concealed handguns in public buildings",
+        "hospitals, mental health centers and campuses removed from the carry exemption",
+        "public employers' liability for employee carry"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/li_2018/b2017_18/measures/documents/hb2278_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2278-2017.enrolled.pdf",
+          "sha256": "359530c01b5c7908d31ea22eeb5f578a24f771cfce7428c52da715076a271927"
+        }
+      }
+    },
+    {
+      "id": "fac5a3aed2a4c034e984dad786ae39139358bf7150746308e953eeeff4afca8d",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/bills/HB2501/",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "KS-HB-2501-2025",
+      "act": "yea",
+      "motion": "Senate Conference Committee Report was adopted",
+      "gate_by_topic": {
+        "gun-policy": "none"
+      },
+      "note": "KS Senate, Senate Conference Committee Report was adopted, 2026-03-26: yea (tally 35–4); census gate: none.",
+      "subjects": [
+        "civil immunity for dealers holding guns under storage agreements",
+        "local rules on gun storage agreements preempted",
+        "suppressors and short-barrel shotguns no longer crimes",
+        "longer sentence if felony committed with suppressor or short shotgun"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hb_2501/hb2501_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-HB-2501-2025.enrolled.pdf",
+          "sha256": "5671904d81be103302e3ea8c655047a95793b91683e0c8cf75236938fd0d4aa0"
+        }
+      }
+    },
+    {
+      "id": "1545f0a1a7bedefac979c9be494f36acae13298a662ddd38dd397ddb0ddca056",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/b2025_26/bills/SB137/",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "KS-SB-137-2025",
+      "act": "yea",
+      "motion": "Senate Final Action - Passed",
+      "gate_by_topic": {
+        "gun-policy": "near-unanimous"
+      },
+      "note": "KS Senate, Senate Final Action - Passed, 2025-02-27: yea (tally 39–1); census gate: near-unanimous.",
+      "subjects": [
+        "forfeited firearms may be sold or transferred to a licensed federal firearms dealer"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Enrolled; official copy, https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/sb_137/sb137_enrolled.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-SB-137-2025.enrolled.pdf",
+          "sha256": "94d79e6e9bf4c48efe5471404fc74d693666d58df10565f1779db42bf7327404"
+        }
+      }
+    },
+    {
+      "id": "16971d506d774465cbbe180612073bc03f87ccc96f064604e2138cb15edfd9a2",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2022/b2021_22/measures/sb192/",
+      "date": "2021",
+      "date_precision": "year",
+      "instrument_id": "KS-SB-192-2021",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of KS-SB-192-2021 (Open States sponsor list): SB192 (2021-2022 Regular): Requiring relinquishment of firearms pursuant to certain court orders related to domestic violence..",
+      "subjects": [
+        "court-ordered relinquishment of firearms after protection orders",
+        "relinquishment after domestic violence convictions",
+        "felony to possess a firearm while under a relinquishment order",
+        "sheriff criminal-history check before returning firearms"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Introduced; official copy, https://www.kslegislature.gov/li_2022/b2021_22/measures/documents/sb192_00_0000.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-SB-192-2021.introduced.pdf",
+          "sha256": "cdbac91c7a99c37e5a23df9cfd6d959c465c98dc9d8b4aff7229c800413661c8"
+        }
+      }
+    },
+    {
+      "id": "ffbb7bfd31b05728bf3e87560db6fc8a5cfef8bccc89a3fb1f20f668ca369cce",
+      "kind": "record",
+      "url": "https://www.kslegislature.gov/li_2020/b2019_20/measures/sb8/",
+      "date": "2019",
+      "date_precision": "year",
+      "instrument_id": "KS-SB-8-2019",
+      "act": "sponsor",
+      "motion": "prime sponsor, Open States sponsor list",
+      "note": "prime sponsor of KS-SB-8-2019 (Open States sponsor list): SB8 (2019-2020 Regular): Purchase of a firearm; three-day waiting period, background check..",
+      "subjects": [
+        "three-day waiting period to buy a firearm",
+        "background check on every purchaser"
+      ],
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "provenance": {
+        "fetched_by": "Open States bulk data (Kansas) (gun-policy Stage 5, Kansas); operative text read by a Sonnet fill agent from the official Kansas text (Introduced; official copy, https://www.kslegislature.gov/li_2020/b2019_20/measures/documents/sb8_00_0000.pdf)",
+        "fetched_at": "2026-11-18T21:20:59.861206Z",
+        "method": "api",
+        "saved_copy": {
+          "path": ".planning/research/s3-prep-gun-policy/stage5/legiscan/texts/KS-SB-8-2019.introduced.pdf",
+          "sha256": "b3dad46b2afa3b9826488ba457900a0d84c8bb7cb0c06cf23b7756930105138f"
+        }
+      }
     }
   ],
   "searches": [
