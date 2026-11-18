@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../../dtds_xslts/history.xslt"?>
+ 
+<!DOCTYPE HISTORY SYSTEM "../../dtds_xslts/history.dtd">
+ 
+<HISTORY>
+	<YEAR>2026</YEAR>
+	<SESSION>Regular Session</SESSION>
+	<SHORTTITLE>Sales tax; exempt retail sales of firearm safes during annual Mississippi Second Amendment Weekend holiday.</SHORTTITLE>
+	<LONGTITLE>AN ACT TO AMEND SECTION 27-65-111, MISSISSIPPI CODE OF 1972, TO EXEMPT FROM SALES TAXATION RETAIL SALES OF FIREARM SAFES DURING THE ANNUAL MISSISSIPPI SECOND AMENDMENT WEEKEND HOLIDAY; AND FOR RELATED PURPOSES.</LONGTITLE>
+	<DATETIMELASTCHG>06/05/26 at 09:27</DATETIMELASTCHG>
+ 
+	<MEASURE>
+		<MSR_HS>H</MSR_HS>
+		<MSR_TYPE>B</MSR_TYPE>
+		<MSR_NUM>1793</MSR_NUM>
+		<FORMAT_MSRID>House Bill 1793</FORMAT_MSRID>
+		<SHORT_MSRID>HB 1793</SHORT_MSRID>
+		<OWNER>H</OWNER>
+	</MEASURE>
+ 
+	<BACKGROUND>
+		<DISPOSITION>Law</DISPOSITION>
+		<DEADLINE>Revenue</DEADLINE>
+		<REVENUE>Yes</REVENUE>
+		<VOTETYPE>Three/Fifths</VOTETYPE>
+		<EFFECTIVEDATE>July 1, 2026</EFFECTIVEDATE>
+		<CHAPNUM> 441</CHAPNUM>
+	</BACKGROUND>
+	<COMMITTEES>
+		<HOUSE>
+			<H_NAME>Ways and Means</H_NAME>
+			<H_INCMTE>F</H_INCMTE>
+			<H_LINK>../../House_cmtes/WM.xml</H_LINK>
+		</HOUSE>
+		<SENATE>
+			<S_NAME>Finance</S_NAME>
+			<S_INCMTE>F</S_INCMTE>
+			<S_LINK>../../Senate_cmtes/FI.xml</S_LINK>
+		</SENATE>
+	</COMMITTEES>
+	<AUTHORS>
+		<PRINCIPAL>
+			<P_NAME>Bounds</P_NAME>
+			<P_LINK>../../House_authors/Bounds.xml</P_LINK>
+		</PRINCIPAL>
+	</AUTHORS>
+	<CODESECTIONS>
+		<AFFECT>A</AFFECT>
+		<SECTION>027-0065-0111</SECTION>
+		<SECTIONLINK>../../code_sections/027/00650111.xml</SECTIONLINK>
+	</CODESECTIONS>
+	<ACTION>
+		<ACT_NUMBER> 1</ACT_NUMBER>
+		<ACT_DESC>01/28 (H) Referred To Ways and Means</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 2</ACT_NUMBER>
+		<ACT_DESC>02/24 (H) Title Suff Do Pass Comm Sub</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 3</ACT_NUMBER>
+		<ACT_DESC>02/25 (H) Committee Substitute Adopted</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 4</ACT_NUMBER>
+		<ACT_DESC>02/25 (H) Passed</ACT_DESC>
+		<ACT_VOTE>../../../../2026/pdf/votes/house/0510008.pdf</ACT_VOTE>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 5</ACT_NUMBER>
+		<ACT_DESC>02/26 (H) Transmitted To Senate</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 6</ACT_NUMBER>
+		<ACT_DESC>03/04 (S) Referred To Finance</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 7</ACT_NUMBER>
+		<ACT_DESC>03/10 (S) Title Suff Do Pass As Amended</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 8</ACT_NUMBER>
+		<ACT_DESC>03/17 (S) Amended</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 9</ACT_NUMBER>
+		<ACT_DESC>03/17 (S) Passed As Amended</ACT_DESC>
+		<ACT_VOTE>../../../../2026/pdf/votes/senate/0710008.pdf</ACT_VOTE>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>10</ACT_NUMBER>
+		<ACT_DESC>03/18 (S) Returned For Concurrence</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>11</ACT_NUMBER>
+		<ACT_DESC>03/19 (H) Decline to Concur/Invite Conf</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>12</ACT_NUMBER>
+		<ACT_DESC>03/23 (H) Conferees Named Lamar,Steverson,Barnett</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>13</ACT_NUMBER>
+		<ACT_DESC>03/24 (S) Conferees Named Harkins,Whaley,Younger</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>14</ACT_NUMBER>
+		<ACT_DESC>03/27 (H) Conference Report Filed</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>15</ACT_NUMBER>
+		<ACT_DESC>03/27 (S) Conference Report Filed</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>16</ACT_NUMBER>
+		<ACT_DESC>03/29 (H) Conference Report Adopted</ACT_DESC>
+		<ACT_VOTE>../../../../2026/pdf/votes/house/0830060.pdf</ACT_VOTE>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>17</ACT_NUMBER>
+		<ACT_DESC>03/29 (S) Conference Report Adopted</ACT_DESC>
+		<ACT_VOTE>../../../../2026/pdf/votes/senate/0830093.pdf</ACT_VOTE>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>18</ACT_NUMBER>
+		<ACT_DESC>03/30 (S) Motion to Reconsider Entered</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>19</ACT_NUMBER>
+		<ACT_DESC>03/31 (S) Motion to Reconsider Tabled</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>20</ACT_NUMBER>
+		<ACT_DESC>04/01 (H) Enrolled Bill Signed</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>21</ACT_NUMBER>
+		<ACT_DESC>04/01 (S) Enrolled Bill Signed</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>22</ACT_NUMBER>
+		<ACT_DESC>04/06 Approved by Governor</ACT_DESC>
+	</ACTION>
+	<DOCUMENTS>
+		<CURRENT>
+			<CURRENT_PDF>../../../../documents/2026/pdf/HB/1700-1799/HB1793SG.pdf</CURRENT_PDF>
+			<CURRENT_PDF_DT>../../../../documents/2026/dt/HB/1700-1799/HB1793SG.pdf</CURRENT_PDF_DT>
+			<CURRENT_OTHER>../../../../documents/2026/html/HB/1700-1799/HB1793SG.htm</CURRENT_OTHER>
+		</CURRENT>
+		<INTRO>
+			<INTRO_PDF>../../../../documents/2026/pdf/HB/1700-1799/HB1793IN.pdf</INTRO_PDF>
+			<INTRO_OTHER>../../../../documents/2026/html/HB/1700-1799/HB1793IN.htm</INTRO_OTHER>
+		</INTRO>
+		<CMTESUB>
+			<CMTESUB_PDF>../../../../documents/2026/pdf/HB/1700-1799/HB1793CS.pdf</CMTESUB_PDF>
+			<CMTESUB_PDF_DT>../../../../documents/2026/dt/HB/1700-1799/HB1793CS.pdf</CMTESUB_PDF_DT>
+			<CMTESUB_OTHER>../../../../documents/2026/html/HB/1700-1799/HB1793CS.htm</CMTESUB_OTHER>
+		</CMTESUB>
+		<PASSED>
+			<PASSED_PDF>../../../../documents/2026/pdf/HB/1700-1799/HB1793PS.pdf</PASSED_PDF>
+			<PASSED_PDF_DT>../../../../documents/2026/dt/HB/1700-1799/HB1793PS.pdf</PASSED_PDF_DT>
+			<PASSED_OTHER>../../../../documents/2026/html/HB/1700-1799/HB1793PS.htm</PASSED_OTHER>
+		</PASSED>
+		<ASG>
+			<ASG_PDF>../../../../documents/2026/pdf/HB/1700-1799/HB1793SG.pdf</ASG_PDF>
+			<ASG_PDF_DT>../../../../documents/2026/dt/HB/1700-1799/HB1793SG.pdf</ASG_PDF_DT>
+			<ASG_OTHER>../../../../documents/2026/html/HB/1700-1799/HB1793SG.htm</ASG_OTHER>
+		</ASG>
+		<CONFRPTS>
+			<CR_PDF>../../../../documents/2026/pdf/cr/HB1793CR.pdf</CR_PDF>
+			<CR_OTHER>../../../../documents/2026/html/cr/HB1793CR.htm</CR_OTHER>
+			<CR_DESC>Conference Report</CR_DESC>
+		</CONFRPTS>
+		<AMENDMENTS>
+			<AMRPT>
+				<AMRPT_DESC>Amendment Report for House Bill No. 1793</AMRPT_DESC>
+				<AMRPT_PDF>../../../../documents/2026/pdf/sam/Amendment_Report_for_HB1793.pdf</AMRPT_PDF>
+				<AMRPT_OTHER>../../../../../documents/2026/html/sam/Amendment_Report_for_HB1793.htm</AMRPT_OTHER>
+			</AMRPT>
+			<SAM>
+				<SAM_DESC>Committee Amendment No 1</SAM_DESC>
+				<SAM_DISP>Adopted</SAM_DISP>
+				<SAM_PDF>../../../../documents/2026/pdf/sam/HB1793_S_Cmte_Amend_01.pdf</SAM_PDF>
+				<SAM_OTHER>../../../../../documents/2026/html/sam/HB1793_S_Cmte_Amend_01.htm</SAM_OTHER>
+				<SAM_VDESC>Voice Vote</SAM_VDESC>
+			</SAM>
+		</AMENDMENTS>
+		<FISCALNOTE>
+			<FISCALNOTEFLAG>N</FISCALNOTEFLAG>
+			<FISCALNOTEPATH>../../../../documents/2026/pdf/fiscalnotes/HB1793.pdf</FISCALNOTEPATH>
+		</FISCALNOTE>
+	</DOCUMENTS>
+</HISTORY>

@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="dtds_xslts/authorlist.xslt"?>
+ 
+<!DOCTYPE LEGISLATURE SYSTEM "dtds_xslts/authorlist.dtd">
+ 
+<LEGISLATURE>
+	<TITLE>House of Representatives</TITLE>
+	<FORMATSESSION>2023 Regular Session</FORMATSESSION>
+	<MAINMENU>mainmenu.htm</MAINMENU>
+	<MEMBER>
+		<M1_NAME>Shane Aguirre</M1_NAME>
+		<M1_LINK>house_authors/aguirre.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Gary Chism</M2_NAME>
+		<M2_LINK>house_authors/chism.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Jeffrey S. Guice</M3_NAME>
+		<M3_LINK>house_authors/guice.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Missy McGee</M4_NAME>
+		<M4_LINK>house_authors/mcgee.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+		<M5_NAME>Donnie Scoggin</M5_NAME>
+		<M5_LINK>house_authors/scoggin.xml</M5_LINK>
+		<M5_BGC>#FFEFD5</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Jeramey Anderson</M1_NAME>
+		<M1_LINK>house_authors/anderson_(110th).xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Bryant W. Clark</M2_NAME>
+		<M2_LINK>house_authors/clark.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>Philip Gunn</M3_NAME>
+		<M3_LINK>house_authors/gunn.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Jay McKnight</M4_NAME>
+		<M4_LINK>house_authors/mcknight.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+		<M5_NAME>Omeria Scott</M5_NAME>
+		<M5_LINK>house_authors/scott.xml</M5_LINK>
+		<M5_BGC>#FFF5EE</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Brent Anderson</M1_NAME>
+		<M1_LINK>house_authors/anderson_(122nd).xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Alyce G. Clarke</M2_NAME>
+		<M2_LINK>house_authors/clarke.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Jeff Hale</M3_NAME>
+		<M3_LINK>house_authors/hale.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Dana McLean</M4_NAME>
+		<M4_LINK>house_authors/mclean.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+		<M5_NAME>Fred Shanks</M5_NAME>
+		<M5_LINK>house_authors/shanks.xml</M5_LINK>
+		<M5_BGC>#FFEFD5</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Otis Anthony</M1_NAME>
+		<M1_LINK>house_authors/anthony.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Angela Cockerham</M2_NAME>
+		<M2_LINK>house_authors/cockerham.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>Greg Haney</M3_NAME>
+		<M3_LINK>house_authors/haney.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Doug McLeod</M4_NAME>
+		<M4_LINK>house_authors/mcleod.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+		<M5_NAME>Troy Smith</M5_NAME>
+		<M5_LINK>house_authors/smith.xml</M5_LINK>
+		<M5_BGC>#FFF5EE</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>William Tracy Arnold</M1_NAME>
+		<M1_LINK>house_authors/arnold.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Carolyn Crawford</M2_NAME>
+		<M2_LINK>house_authors/crawford.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Jeffery Harness</M3_NAME>
+		<M3_LINK>house_authors/harness.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Carl Mickens</M4_NAME>
+		<M4_LINK>house_authors/mickens.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+		<M5_NAME>De'Keither A. Stamps</M5_NAME>
+		<M5_LINK>house_authors/stamps.xml</M5_LINK>
+		<M5_BGC>#FFEFD5</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Willie Bailey</M1_NAME>
+		<M1_LINK>house_authors/bailey.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Sam Creekmore IV</M2_NAME>
+		<M2_LINK>house_authors/creekmore_iv.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>John W. Hines, Sr.</M3_NAME>
+		<M3_LINK>house_authors/hines.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Tom Miles</M4_NAME>
+		<M4_LINK>house_authors/miles.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+		<M5_NAME>Jody Steverson</M5_NAME>
+		<M5_LINK>house_authors/steverson.xml</M5_LINK>
+		<M5_BGC>#FFF5EE</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Nick Bain</M1_NAME>
+		<M1_LINK>house_authors/bain.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Dana Criswell</M2_NAME>
+		<M2_LINK>house_authors/criswell.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Stacey Hobgood-Wilkes</M3_NAME>
+		<M3_LINK>house_authors/hobgood-wilkes.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Sam C. Mims, V</M4_NAME>
+		<M4_LINK>house_authors/mims.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+		<M5_NAME>Rufus Straughter</M5_NAME>
+		<M5_LINK>house_authors/straughter.xml</M5_LINK>
+		<M5_BGC>#FFEFD5</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Earle S. Banks</M1_NAME>
+		<M1_LINK>house_authors/banks.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Ronnie C. Crudup</M2_NAME>
+		<M2_LINK>house_authors/crudup.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>Gregory Holloway, Sr.</M3_NAME>
+		<M3_LINK>house_authors/holloway.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Ken Morgan</M4_NAME>
+		<M4_LINK>house_authors/morgan.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+		<M5_NAME>Zakiya Summers</M5_NAME>
+		<M5_LINK>house_authors/summers.xml</M5_LINK>
+		<M5_BGC>#FFF5EE</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Shane Barnett</M1_NAME>
+		<M1_LINK>house_authors/barnett.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Becky Currie</M2_NAME>
+		<M2_LINK>house_authors/currie.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Joey Hood</M3_NAME>
+		<M3_LINK>house_authors/hood.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Gene Newman</M4_NAME>
+		<M4_LINK>house_authors/newman.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+		<M5_NAME>Cheikh Taylor</M5_NAME>
+		<M5_LINK>house_authors/taylor.xml</M5_LINK>
+		<M5_BGC>#FFEFD5</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Manly Barton</M1_NAME>
+		<M1_LINK>house_authors/barton.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Jerry Darnell</M2_NAME>
+		<M2_LINK>house_authors/darnell.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>Steve Hopkins</M3_NAME>
+		<M3_LINK>house_authors/hopkins.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Karl Oliver</M4_NAME>
+		<M4_LINK>house_authors/oliver.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+		<M5_NAME>Rickey Thompson</M5_NAME>
+		<M5_LINK>house_authors/thompson.xml</M5_LINK>
+		<M5_BGC>#FFF5EE</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Donnie Bell</M1_NAME>
+		<M1_LINK>house_authors/bell_(21st).xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Oscar Denton</M2_NAME>
+		<M2_LINK>house_authors/denton.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Kevin Horan</M3_NAME>
+		<M3_LINK>house_authors/horan.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Solomon C. Osborne</M4_NAME>
+		<M4_LINK>house_authors/osborne.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+		<M5_NAME>Joesph Tubb</M5_NAME>
+		<M5_LINK>house_authors/tubb.xml</M5_LINK>
+		<M5_BGC>#FFEFD5</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Christopher M. Bell</M1_NAME>
+		<M1_LINK>house_authors/bell_(65th).xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Clay Deweese</M2_NAME>
+		<M2_LINK>house_authors/deweese.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>Stephen A. Horne</M3_NAME>
+		<M3_LINK>house_authors/horne.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Jansen Owen</M4_NAME>
+		<M4_LINK>house_authors/owen.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+		<M5_NAME>Mark Tullos</M5_NAME>
+		<M5_LINK>house_authors/tullos.xml</M5_LINK>
+		<M5_BGC>#FFF5EE</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Richard Bennett</M1_NAME>
+		<M1_LINK>house_authors/bennett.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Jarvis Dortch</M2_NAME>
+		<M2_LINK>house_authors/dortch.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Mac Huddleston</M3_NAME>
+		<M3_LINK>house_authors/huddleston.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Orlando Paden</M4_NAME>
+		<M4_LINK>house_authors/paden.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+		<M5_NAME>Jerry R. Turner</M5_NAME>
+		<M5_LINK>house_authors/turner.xml</M5_LINK>
+		<M5_BGC>#FFEFD5</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Edward Blackmon, Jr.</M1_NAME>
+		<M1_LINK>house_authors/blackmon.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Dan Eubanks</M2_NAME>
+		<M2_LINK>house_authors/eubanks.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>Jeffrey Hulum III</M3_NAME>
+		<M3_LINK>house_authors/hulum.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Randall Patterson</M4_NAME>
+		<M4_LINK>house_authors/patterson.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+		<M5_NAME>Kenneth Walker</M5_NAME>
+		<M5_LINK>house_authors/walker.xml</M5_LINK>
+		<M5_BGC>#FFF5EE</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Joel Bomgar</M1_NAME>
+		<M1_LINK>house_authors/bomgar.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Casey Eure</M2_NAME>
+		<M2_LINK>house_authors/eure.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Lataisha Jackson</M3_NAME>
+		<M3_LINK>house_authors/jackson.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Bill Pigott</M4_NAME>
+		<M4_LINK>house_authors/pigott.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+		<M5_NAME>Price Wallace</M5_NAME>
+		<M5_LINK>house_authors/wallace.xml</M5_LINK>
+		<M5_BGC>#FFEFD5</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>C. Scott Bounds</M1_NAME>
+		<M1_LINK>house_authors/bounds.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Michael T. Evans</M2_NAME>
+		<M2_LINK>house_authors/evans_(45th).xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>Robert L. Johnson III</M3_NAME>
+		<M3_LINK>house_authors/johnson.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Daryl Porter</M4_NAME>
+		<M4_LINK>house_authors/porter.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+		<M5_NAME>Percy W. Watson</M5_NAME>
+		<M5_LINK>house_authors/watson.xml</M5_LINK>
+		<M5_BGC>#FFF5EE</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Randy P. Boyd</M1_NAME>
+		<M1_LINK>house_authors/boyd_(19th).xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Bob Evans</M2_NAME>
+		<M2_LINK>house_authors/evans_(91st).xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Kabir Karriem</M3_NAME>
+		<M3_LINK>house_authors/karriem.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Brent Powell</M4_NAME>
+		<M4_LINK>house_authors/powell.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+		<M5_NAME>Tom Weathersby</M5_NAME>
+		<M5_LINK>house_authors/weathersby.xml</M5_LINK>
+		<M5_BGC>#FFEFD5</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Andy Boyd</M1_NAME>
+		<M1_LINK>house_authors/boyd_(37th).xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>John G. Faulkner</M2_NAME>
+		<M2_LINK>house_authors/faulkner.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>Bill Kinkade</M3_NAME>
+		<M3_LINK>house_authors/kinkade.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>John Read</M4_NAME>
+		<M4_LINK>house_authors/read.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+		<M5_NAME>Jason White</M5_NAME>
+		<M5_LINK>house_authors/white.xml</M5_LINK>
+		<M5_BGC>#FFF5EE</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Chris Brown</M1_NAME>
+		<M1_LINK>house_authors/brown_(20th).xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Kevin Felsher</M2_NAME>
+		<M2_LINK>house_authors/felsher.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Timmy Ladner</M3_NAME>
+		<M3_LINK>house_authors/ladner.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Thomas U. Reynolds</M4_NAME>
+		<M4_LINK>house_authors/reynolds.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+		<M5_NAME>Brady Williamson</M5_NAME>
+		<M5_LINK>house_authors/williamson.xml</M5_LINK>
+		<M5_BGC>#FFEFD5</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Bo Brown</M1_NAME>
+		<M1_LINK>house_authors/brown_(70th).xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Kevin Ford</M2_NAME>
+		<M2_LINK>house_authors/ford_(54th).xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>John Thomas "Trey" Lamar, III</M3_NAME>
+		<M3_LINK>house_authors/lamar.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Rob Roberson</M4_NAME>
+		<M4_LINK>house_authors/roberson.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+		<M5_NAME>Lee Yancey</M5_NAME>
+		<M5_LINK>house_authors/yancey.xml</M5_LINK>
+		<M5_BGC>#FFF5EE</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Cedric Burnett</M1_NAME>
+		<M1_LINK>house_authors/burnett.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Jill Ford</M2_NAME>
+		<M2_LINK>house_authors/ford_(73rd).xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Johnathan Ray Lancaster</M3_NAME>
+		<M3_LINK>house_authors/lancaster.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Robin Robinson</M4_NAME>
+		<M4_LINK>house_authors/robinson.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+		<M5_NAME>Shanda Yates</M5_NAME>
+		<M5_LINK>house_authors/yates.xml</M5_LINK>
+		<M5_BGC>#FFEFD5</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Charles Busby</M1_NAME>
+		<M1_LINK>house_authors/busby.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Stephanie Foster</M2_NAME>
+		<M2_LINK>house_authors/foster.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>Vince Mangold</M3_NAME>
+		<M3_LINK>house_authors/mangold.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Tracey T. Rosebud</M4_NAME>
+		<M4_LINK>house_authors/rosebud.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+		<M5_NAME>Charles Young, Jr.</M5_NAME>
+		<M5_LINK>house_authors/young.xml</M5_LINK>
+		<M5_BGC>#FFF5EE</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Larry Byrd</M1_NAME>
+		<M1_LINK>house_authors/byrd.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Karl Gibbs</M2_NAME>
+		<M2_LINK>house_authors/gibbs.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Steve Massengill</M3_NAME>
+		<M3_LINK>house_authors/massengill.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Randy Rushing</M4_NAME>
+		<M4_LINK>house_authors/rushing.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+		<M5_NAME>Henry Zuber III</M5_NAME>
+		<M5_LINK>house_authors/zuber.xml</M5_LINK>
+		<M5_BGC>#FFEFD5</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Billy Adam Calvert</M1_NAME>
+		<M1_LINK>house_authors/calvert.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Debra Gibbs</M2_NAME>
+		<M2_LINK>house_authors/gibbs_(72nd).xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>Kent McCarty</M3_NAME>
+		<M3_LINK>house_authors/mccarty.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Robert L. Sanders</M4_NAME>
+		<M4_LINK>house_authors/sanders.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+		<M5_NAME></M5_NAME>
+		<M5_BGC>#DCDCDC</M5_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Lester Carpenter</M1_NAME>
+		<M1_LINK>house_authors/carpenter.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Dale Goodin</M2_NAME>
+		<M2_LINK>house_authors/goodin.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Hester Jackson McCray</M3_NAME>
+		<M3_LINK>house_authors/mccray.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Noah Sanford</M4_NAME>
+		<M4_LINK>house_authors/sanford.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+		<M5_NAME></M5_NAME>
+		<M5_BGC>#DCDCDC</M5_BGC>
+	</MEMBER>
+</LEGISLATURE>

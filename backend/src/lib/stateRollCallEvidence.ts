@@ -610,6 +610,342 @@ export function readSouthDakotaVote(bodies: string[], url: string): SdVoteRecord
   try { return readSouthDakota(bodies, r); } catch { return null; }
 }
 
+// ── Mississippi: one PDF per vote, read with the bill's history and the session's member list ─────────────────────
+// billstatus.ls.state.ms.us/<session>/pdf/votes/<house|senate>/<NNNNNNN>.pdf is the vote, one PDF a person can open
+// (read 2026-11-17; the site has no robots.txt). It prints the chamber, the session, the bills voted on in prose ("S.
+// B. No. 2987, S. B. No. 2957 and S. B. No. 2959 passed by the following vote:"; one vote can carry several bills),
+// and each group as a comma list of the labels members are known by in the chamber: "Yeas--Aguirre, Arnold, Bell
+// (65th), Bell (21st), ... Mr. Speaker. Total--114." A label is a surname, with initials and the member's district
+// when two members share it ("Jackson G. (15th)"). It prints no date and no member's full name.
+//
+// So one vote is read from three documents, and the address names the bill after a #:
+//   billstatus.ls.state.ms.us/2018/pdf/votes/house/0660005.pdf#SB2987
+// 1. the PDF: chamber, session, the bills named, the groups, each group's printed total;
+// 2. the bill's history, /<session>/pdf/history/<SB>/<SB2987>.xml: the one action that links this PDF gives the day
+//    ("03/08 (H) Passed As Amended"), the chamber, and the question, which must be a vote on the bill
+//    (msQuestionIsOnTheBill); a motion to reconsider, to table, ... is not;
+// 3. the session's member list for that chamber, /<session>/pdf/<h|s>_auth.xml: each member's full name and the key
+//    the label stands for (house_authors/bell_(65th).xml, creekmore_iv.xml). It is the list of the session's AUTHORS,
+//    so a member who wrote no bill that session is not on it (2023: Perry Bailey, "Bailey (23rd)");
+// 4. the legislature's current member list, /members/<hr|ss>_membs.xml, which prints the term it covers ("2024-2027")
+//    and the Speaker. It is read for a label the session's list does not hold, and only for a session inside that
+//    term (2024 prints "Butler-Washington" and lists her as butler-washinton).
+// A label neither list holds is printed as the PDF prints it: the vote still reads, and that member gets no line,
+// because a bare label fits no politician's full name. Two lists that disagree, or a member listed twice, refuse the
+// vote. "Mr. Speaker" is the Speaker of the House, who is not printed by name (MS_SPEAKER).
+// A member who did not vote is listed as the PDF lists them: "Absent or those not voting" (one group), "Voting
+// Present" (or "Present"), or paired ("Senator Simmons W. (13th), who would have voted yea on H. B. No. 1083,
+// announced a pair with Senator Barnett, who would have voted nay."). None of these is a Yea or a Nay, and none seats
+// anyone.
+//
+//   Mississippi House vote 0660005 (2018), SB 2987, 2018-03-08.
+//   Question: Passed As Amended
+//   Yea 114; Nay 0; Absent or not voting 6; Present 0.
+//   Yea (114): Shane Aguirre; …
+//   Mississippi House vote 0660005 (2018), SB 2987 - Passed As Amended (2018-03-08): Shane Aguirre voted Yea.
+
+/** A PDF handed to a reader as text: the marker, then one line per printed line (runs of one baseline, left to right). */
+export const PDF_LINES_MARK = '%PDF-LINES';
+
+/**
+ * A PDF's text runs as lines a reader can parse: runs of one page on one baseline (within 2 units), left to right,
+ * pages and lines in reading order. A PDF stores positioned runs, not rows; pairing by position is what keeps a
+ * label on its own line (root CLAUDE.md, "PDF text has no rows").
+ */
+export function pdfLinesBody(items: { page: number; x: number; y: number; str: string }[]): string {
+  const sorted = [...items].filter((i) => i.str.trim()).sort((a, b) => a.page - b.page || b.y - a.y || a.x - b.x);
+  const lines: { page: number; y: number; runs: { x: number; s: string }[] }[] = [];
+  for (const i of sorted) {
+    const last = lines[lines.length - 1];
+    if (last && last.page === i.page && Math.abs(last.y - i.y) <= 2) last.runs.push({ x: i.x, s: i.str });
+    else lines.push({ page: i.page, y: i.y, runs: [{ x: i.x, s: i.str }] });
+  }
+  return [PDF_LINES_MARK, ...lines.map((l) => squash(l.runs.sort((a, b) => a.x - b.x).map((r) => r.s).join(' ')))].join('\n');
+}
+
+export const MS_VOTES = ['Yea', 'Nay', 'Absent or not voting', 'Present', 'Paired'] as const;
+export type MsVote = (typeof MS_VOTES)[number];
+/** Each heading the PDFs print, and the group it is. A heading not listed refuses the vote. */
+const MS_HEADING: [RegExp, MsVote][] = [
+  [/^Yeas$/i, 'Yea'],
+  [/^Nays$/i, 'Nay'],
+  [/^Absent (?:or|and) those not voting$/i, 'Absent or not voting'],
+  [/^(?:Voting )?Present$/i, 'Present'],
+];
+const MS_URL = /^https:\/\/billstatus\.ls\.state\.ms\.us\/(20\d{2}(?:[1-9]E)?)\/pdf\/votes\/(house|senate)\/(\d{7})\.pdf#([HS][A-Z]{1,2})([1-9]\d{0,3})$/;
+const MS_SITE = 'https://billstatus.ls.state.ms.us/';
+/** No robots.txt (404, 2026-11-17), so no Crawl-delay is stated: one request a second is ours. */
+const MS_GAP_MS = 1_000;
+const MS_SIZE: Record<Chamber, number> = { House: 122, Senate: 52 };
+/**
+ * Who "Mr. Speaker" is, by the session's year: the member-list key of the Speaker of the House. The PDFs never print
+ * the Speaker's name. Philip Gunn was Speaker from 2012 until the term that began in January 2024; Jason White from
+ * then (the House member list for 2024-2027, members/hr_membs.xml, names him as Speaker; read 2026-11-17). A session
+ * not covered gives no vote that prints "Mr. Speaker". The key must be exactly one member of that session's list.
+ */
+export const MS_SPEAKER: readonly { from: number; to: number; key: string }[] = [
+  { from: 2017, to: 2023, key: 'gunn' },
+  { from: 2024, to: 2027, key: 'white' },
+];
+
+/**
+ * Is a Mississippi history action (the words after the chamber: "Passed As Amended") a vote on the bill? A motion is
+ * not (runner, 2026-11-16): to reconsider, to table, to suspend the rules, to recall, to refer. Only the questions
+ * listed are read; any other wording gives no line until it is added here.
+ */
+export function msQuestionIsOnTheBill(q: string): boolean {
+  return /^(Passed|Passed As Amended|Failed|Adopted|Adopted As Amended|Failed To Adopt|Concurred in Amend From (House|Senate)|Concurred in Amendment From (House|Senate)|Decline to Concur\/Invite Conf|Conference Report Adopted|Conference Report Failed|Veto Overridden|Veto Sustained|Failed to Override Veto|Passed Notwithstanding Veto)$/i.test(squash(q));
+}
+
+export interface MsVoteRef { state: 'MS'; stateName: 'Mississippi'; chamber: Chamber; session: string; voteNo: string; billType: string; billNum: number }
+export interface MsVoteRecord extends MsVoteRef { bill: string; question: string; date: string; groups: Record<MsVote, string[]> }
+export interface MsVoteLine extends Omit<MsVoteRecord, 'groups' | 'billType' | 'billNum'> { name: string; vote: MsVote }
+
+export function parseMississippiVoteUrl(url: string): MsVoteRef | null {
+  const m = MS_URL.exec(url.trim());
+  if (!m) return null;
+  return { state: 'MS', stateName: 'Mississippi', chamber: m[2] === 'house' ? 'House' : 'Senate', session: m[1], voteNo: m[3], billType: m[4], billNum: Number(m[5]) };
+}
+
+function mississippiDocs(r: MsVoteRef): string[] {
+  const t = r.billType;
+  return [
+    `${MS_SITE}${r.session}/pdf/votes/${r.chamber.toLowerCase()}/${r.voteNo}.pdf`,
+    `${MS_SITE}${r.session}/pdf/history/${t}/${t}${String(r.billNum).padStart(4, '0')}.xml`,
+    `${MS_SITE}${r.session}/pdf/${r.chamber === 'House' ? 'h' : 's'}_auth.xml`,
+    `${MS_SITE}members/${r.chamber === 'House' ? 'hr' : 'ss'}_membs.xml`,
+  ];
+}
+
+const xmlText = (s: string): string => squash(s.replace(/<!\[CDATA\[|\]\]>/g, '').replace(/&amp;/g, '&').replace(/&apos;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>'));
+const xmlAll = (xml: string, tag: string): string[] => [...xml.matchAll(new RegExp(`<${tag}>([\\s\\S]*?)</${tag}>`, 'g'))].map((m) => xmlText(m[1]));
+/** The bills a PDF's prose names, as the history names them: "S. C. R. No. 640" -> "SC 640", "H. B. No. 1466" -> "HB 1466". */
+function msBillsNamed(prose: string): string[] {
+  return [...prose.matchAll(/\b([HS])\.\s*((?:[A-Z]\.\s*){1,2})No\.\s*(\d{1,4})\b/g)].map((m) => {
+    const t = (m[1] + m[2].replace(/[.\s]/g, '')).replace(/CR$/, 'C');
+    return `${t} ${Number(m[3])}`;
+  });
+}
+
+/**
+ * A member list: key (the link's file name, "bell_(65th)") -> full name(s). The session's author list links into
+ * house_authors/ or senate_authors/, the current member list into house/ or senate/.
+ */
+function msMembers(xml: string, chamber: Chamber, current: boolean): Map<string, string[]> | null {
+  const folder = `${chamber === 'House' ? 'house' : 'senate'}${current ? '' : '_authors'}`;
+  const out = new Map<string, string[]>();
+  for (const m of xml.matchAll(/<M(\d+)_NAME>([^<]*)<\/M\1_NAME>\s*<M\1_LINK>([^<]*)<\/M\1_LINK>/g)) {
+    // [^<]* and the shared number: an empty <M5_NAME></M5_NAME> with no link must not run on into the next member.
+    const name = xmlText(m[2]);
+    const link = /^([a-z_]+)\/(.+)\.xml$/i.exec(xmlText(m[3]));
+    if (!name || !link) return null;
+    if (link[1].toLowerCase() !== folder) return null;
+    const key = link[2].toLowerCase();
+    out.set(key, [...(out.get(key) ?? []), name]);
+  }
+  return out.size ? out : null;
+}
+
+/** "Jackson G. (15th)" -> key "jackson_(15th)" and initials ["g"]; "Gillespie Isom" -> "gillespie isom"; null for no label. */
+function msLabelKey(label: string): { key: string; initials: string[] } | null {
+  const m = /^([A-Za-z][A-Za-z'\- ]*?[A-Za-z])((?:\s+[A-Z]\.)*)(?:\s+\((\d{1,3})(?:st|nd|rd|th)\))?$/.exec(squash(label));
+  if (!m) return null;
+  const sur = m[1].toLowerCase().replace(/ /g, '_');
+  return { key: m[3] ? `${sur}_(${m[3]}${ordinal(Number(m[3])).slice(String(Number(m[3])).length)})` : sur, initials: (m[2].match(/[A-Z]/g) ?? []).map((c) => c.toLowerCase()) };
+}
+
+/** The vote, or why it was refused (the first check that failed). */
+function readMississippi(bodies: string[], r: MsVoteRef): MsVoteRecord | { refused: string } {
+  const fail = (refused: string): { refused: string } => ({ refused });
+  if (bodies.length !== 4 || !bodies[0].startsWith(PDF_LINES_MARK + '\n')) return fail("not three documents, or the first is not a PDF");
+  const year = Number(r.session.slice(0, 4));
+  // 1. the PDF
+  const lines = bodies[0].split('\n').slice(1);
+  if (lines[0] !== (r.chamber === 'House' ? 'Mississippi House of Representatives' : 'Mississippi State Senate')) return fail("the PDF does not name this chamber");
+  const sess = /^(\d{4}) (Regular|First Extraordinary|Second Extraordinary|Third Extraordinary) Session$/.exec(lines[1] ?? '');
+  if (!sess || Number(sess[1]) !== year || (sess[2] === 'Regular') !== /^\d{4}$/.test(r.session)) return fail("the PDF does not name this session");
+  const end = lines.indexOf('DISCLAIMER');
+  if (end < 0) return fail("the PDF has no disclaimer to end on");
+  // a line ending in a hyphen runs on without a space ("Total--" / "51.", "Williams-" / "Barnes")
+  const text = lines.slice(2, end).reduce((acc, l) => (acc === '' ? l : acc.endsWith('-') ? acc + l : `${acc} ${l}`), '');
+  const first = text.search(/\bYeas--/);
+  if (first < 0) return fail("the PDF has no Yeas");
+  const prose = text.slice(0, first);
+  const bill = `${r.billType} ${r.billNum}`;
+  if (!msBillsNamed(prose).includes(bill)) return fail("the PDF does not name the bill");
+  const groups = Object.fromEntries(MS_VOTES.map((v) => [v, [] as string[]])) as Record<MsVote, string[]>;
+  const labels = Object.fromEntries(MS_VOTES.map((v) => [v, [] as string[]])) as Record<MsVote, string[]>;
+  const seenGroup = new Set<MsVote>();
+  // "Heading--names. Total--N." or "Heading--None." (the Senate prints "Absent and those not voting----None."); then
+  // "Vacancies--N." is a count of empty seats, not members
+  let rest = text.slice(first);
+  const pairs: { yea: string; nay: string }[] = [];
+  while (rest) {
+    // counts that name no member: empty seats, and the votes a three-fifths bill needed
+    const count = /^(?:Vacancies|Necessary for Passage)--(\d+)\.\s*/.exec(rest);
+    if (count) { rest = rest.slice(count[0].length); continue; }
+    // a pair: two members who did not vote, each saying how they would have
+    const pair = /^(Senator|Representative) (.+?), who would have voted (yea|nay) on [^,]+, announced a pair with (?:Senator|Representative) (.+?), who would have voted (yea|nay)\.\s*/.exec(rest);
+    if (pair) {
+      if ((pair[1] === 'Senator') !== (r.chamber === 'Senate') || pair[3] === pair[5]) return fail(`a pair the reader cannot read: ${pair[0]}`);
+      pairs.push(pair[3] === 'yea' ? { yea: pair[2], nay: pair[4] } : { yea: pair[4], nay: pair[2] });
+      rest = rest.slice(pair[0].length);
+      continue;
+    }
+    if (pairs.length) return fail(`text after a pair the reader does not know: ${rest.slice(0, 60)}`);
+    const h = /^([A-Za-z][A-Za-z ]*?)-{2,4}/.exec(rest);
+    if (!h) return fail(`a heading the reader does not know: ${rest.slice(0, 60)}`);
+    const g = MS_HEADING.find(([re]) => re.test(h[1].trim()))?.[1];
+    if (!g || seenGroup.has(g)) return fail(`a heading the reader does not know, or one printed twice: ${h[1]}`);
+    seenGroup.add(g);
+    rest = rest.slice(h[0].length);
+    const none = /^None\.\s*/.exec(rest);
+    if (none) { rest = rest.slice(none[0].length); continue; }
+    const body = /^(.+?)\.\s*Total--\s*(\d+)\.\s*/.exec(rest);
+    if (!body) return fail(`a group whose names do not end in a printed total: ${rest.slice(0, 60)}`);
+    const names = body[1].split(/,\s*/).map(squash);
+    if (names.length !== Number(body[2]) || names.some((n) => !n)) return fail(`the ${g} group lists ${names.length} names and prints a total of ${body[2]}`);
+    labels[g] = names;
+    rest = rest.slice(body[0].length);
+  }
+  if (!seenGroup.has('Yea') || !seenGroup.has('Nay')) return fail('no Yeas or no Nays heading');
+  for (const p of pairs) labels.Paired.push(p.yea, p.nay);
+  // 2. the bill's history: the one action that links this PDF
+  const h = bodies[1];
+  if (xmlAll(h, 'SHORT_MSRID')[0] !== bill || Number(xmlAll(h, 'YEAR')[0]) !== year) return fail('the history is not this bill of this session');
+  const pdfPath = `/${r.session}/pdf/votes/${r.chamber.toLowerCase()}/${r.voteNo}.pdf`;
+  const acts = [...h.matchAll(/<ACTION>([\s\S]*?)<\/ACTION>/g)].map((m) => ({ desc: xmlAll(m[1], 'ACT_DESC')[0] ?? '', votes: xmlAll(m[1], 'ACT_VOTE') }))
+    .filter((a) => a.votes.some((v) => v.replace(/^(\.\.\/)+/, '/').toLowerCase() === pdfPath.toLowerCase()));
+  if (acts.length !== 1) return fail(`the history links this vote ${acts.length} times`);
+  const a = /^(\d{2})\/(\d{2}) \((H|S)\) (.+)$/.exec(acts[0].desc);
+  if (!a || (a[3] === 'H') !== (r.chamber === 'House')) return fail('the history action is not of this chamber');
+  const question = squash(a[4]);
+  if (!msQuestionIsOnTheBill(question)) return fail(`the history action is not a vote on the bill: ${question}`);
+  const date = `${year}-${a[1]}-${a[2]}`;
+  if (Number.isNaN(Date.parse(`${date}T00:00:00Z`))) return fail('the history action has no real date');
+  // 3 and 4. the member lists
+  const session = msMembers(bodies[2], r.chamber, false);
+  if (!session) return fail("the session's member list cannot be read");
+  const current = msMembers(bodies[3], r.chamber, true);
+  const term = /<TERM>\s*(\d{4})-(\d{4})\s*<\/TERM>/.exec(bodies[3]);
+  if (!current || !term) return fail('the current member list cannot be read');
+  const inTerm = year >= Number(term[1]) && year <= Number(term[2]);
+  const chair = /<CHAIR_LINK>\s*house\/([^<]+?)\.xml\s*<\/CHAIR_LINK>/i.exec(bodies[3])?.[1].toLowerCase();
+  const lookup = (key: string): string[] | undefined => session.get(key) ?? (inTerm ? current.get(key) : undefined);
+  const used = new Set<string>();
+  const printed = new Set(MS_VOTES.flatMap((v) => labels[v]).map((l) => msLabelKey(l)?.key).filter(Boolean));
+  for (const v of MS_VOTES) {
+    for (const label of labels[v]) {
+      let key: string;
+      if (/^Mr\.? Speaker$/i.test(label)) {
+        if (r.chamber !== 'House') return fail('Mr. Speaker outside the House');
+        const sp = MS_SPEAKER.find((x) => year >= x.from && year <= x.to);
+        if (!sp || printed.has(sp.key) || (inTerm && chair !== sp.key)) return fail('no Speaker for this session, the Speaker printed by name too, or not the Speaker the current list names');
+        key = sp.key;
+      } else {
+        const k = msLabelKey(label);
+        if (!k) return fail(`a label the reader cannot read: ${label}`);
+        key = k.key;
+        const name = lookup(key);
+        // a label's initials must be the first letters of the member's given names
+        if (name && name.length === 1 && k.initials.length) {
+          const given = fold(name[0]).split(' ').slice(0, -1).map((w) => w[0]);
+          if (!k.initials.every((i) => given.includes(i))) return fail(`the label ${label} has initials that are not ${name[0]}'s`);
+        }
+      }
+      if (used.has(key)) return fail(`the label ${label} (${key}) is listed twice`);
+      used.add(key);
+      const name = lookup(key);
+      if (name && name.length > 1) return fail(`the label ${label} (${key}) is ${name.length} members of the list`);
+      // a label neither list holds is kept as printed: it fits no full name, so that member gets no line
+      groups[v].push(name ? squash(name[0]) : label);
+    }
+  }
+  if (used.size > MS_SIZE[r.chamber]) return fail("more members than the chamber has");
+  return { ...r, bill, question, date, groups };
+}
+
+const MS_SAID: Record<MsVote, string> = { Yea: 'voted Yea', Nay: 'voted Nay', 'Absent or not voting': 'was absent or did not vote', Present: 'voted present', Paired: 'was paired' };
+
+export function renderMississippiVote(v: MsVoteRecord): string {
+  return [
+    `Mississippi ${v.chamber} vote ${v.voteNo} (${v.session}), ${v.bill}, ${v.date}.`,
+    `Question: ${v.question}`,
+    MS_VOTES.map((k) => `${k} ${v.groups[k].length}`).join('; ') + '.',
+    ...MS_VOTES.map((k) => `${k} (${v.groups[k].length}): ${v.groups[k].join('; ')}`.trim()),
+  ].join('\n');
+}
+
+const MS_RENDER_HEAD = /^Mississippi (House|Senate) vote (\d{7}) \((20\d{2}(?:[1-9]E)?)\), ([A-Z]{2,3} \d+), (\d{4}-\d{2}-\d{2})\.$/;
+
+function parseMississippiRender(text: string, url: string): Omit<MsVoteRecord, 'billType' | 'billNum'> | null {
+  const r = parseMississippiVoteUrl(url);
+  const rows = text.split('\n');
+  const h = MS_RENDER_HEAD.exec(rows[0] ?? '');
+  const q = /^Question: (.+)$/.exec(rows[1] ?? '');
+  if (!r || !h || !q || rows.length !== 3 + MS_VOTES.length) return null;
+  if (h[1] !== r.chamber || h[2] !== r.voteNo || h[3] !== r.session || h[4] !== `${r.billType} ${r.billNum}`) return null;
+  const groups = {} as Record<MsVote, string[]>;
+  for (const [i, v] of MS_VOTES.entries()) {
+    const m = new RegExp(`^${v} \\((\\d+)\\):(.*)$`).exec(rows[3 + i]);
+    if (!m) return null;
+    groups[v] = m[2].split(';').map((x) => x.trim()).filter(Boolean);
+    if (groups[v].length !== Number(m[1])) return null;
+  }
+  if (rows[2] !== MS_VOTES.map((v) => `${v} ${groups[v].length}`).join('; ') + '.') return null;
+  return { state: 'MS', stateName: 'Mississippi', chamber: r.chamber, session: r.session, voteNo: r.voteNo, bill: h[4], date: h[5], question: q[1], groups };
+}
+
+const MS_LINE = /^Mississippi (House|Senate) vote (\d{7}) \((20\d{2}(?:[1-9]E)?)\), ([A-Z]{2,3} \d+) - (.+) \((\d{4}-\d{2}-\d{2})\): (.+?) (voted Yea|voted Nay|was absent or did not vote|voted present|was paired)\.$/;
+
+export function formatMississippiVoteLine(l: MsVoteLine): string {
+  return `Mississippi ${l.chamber} vote ${l.voteNo} (${l.session}), ${l.bill} - ${l.question} (${l.date}): ${l.name} ${MS_SAID[l.vote]}.`;
+}
+
+function parseMississippiLine(text: string): MsVoteLine | null {
+  const m = MS_LINE.exec(text.trim());
+  const vote = m ? MS_VOTES.find((v) => MS_SAID[v] === m[8]) : undefined;
+  if (!m || !vote) return null;
+  return { state: 'MS', stateName: 'Mississippi', chamber: m[1] as Chamber, voteNo: m[2], session: m[3], bill: m[4], question: m[5], date: m[6], name: m[7].trim(), vote };
+}
+
+function verifyMississippiLine(line: string, url: string, text: string, lastName: string, fullName: string): SnippetVerdict {
+  const l = parseMississippiLine(line);
+  const r = parseMississippiRender(text, url);
+  if (!l || !r) return { verdict: 'snippet_not_found' };
+  if (l.voteNo !== r.voteNo || l.chamber !== r.chamber || l.session !== r.session || l.bill !== r.bill || l.date !== r.date) return { verdict: 'snippet_not_found' };
+  if (normalizeText(l.question) !== normalizeText(r.question)) return { verdict: 'snippet_not_found' };
+  if (!r.groups[l.vote].some((n) => sameLabel(n, l.name))) return { verdict: 'snippet_not_found' };
+  const fits = MS_VOTES.flatMap((v) => r.groups[v]).filter((n) => fullNameLabelFits(n, lastName, fullName));
+  if (fits.length !== 1 || !sameLabel(fits[0], l.name)) return { verdict: 'name_not_present' };
+  return { verdict: 'verified', matchOffset: 0 };
+}
+
+function mississippiLinesFor(url: string, text: string, lastName: string, fullName: string): string[] {
+  const r = parseMississippiRender(text, url);
+  if (!r) return [];
+  const out: string[] = [];
+  for (const vote of MS_VOTES) {
+    for (const name of r.groups[vote]) {
+      if (fullNameLabelFits(name, lastName, fullName)) out.push(formatMississippiVoteLine({ ...r, name, vote }));
+    }
+  }
+  return out.length === 1 ? out : [];
+}
+
+/** The vote an address names, read from its three documents (stateRollCallDocs order). Null when any check fails. */
+export function readMississippiVote(bodies: string[], url: string): MsVoteRecord | null {
+  const v = explainMississippiVote(bodies, url);
+  return 'refused' in v ? null : v;
+}
+
+/** As readMississippiVote, with the reason a vote is refused: for the fetch tool's report and the tests. */
+export function explainMississippiVote(bodies: string[], url: string): MsVoteRecord | { refused: string } {
+  const r = parseMississippiVoteUrl(url);
+  if (!r) return { refused: 'not a Mississippi vote address' };
+  try { return readMississippi(bodies, r); } catch (e) { return { refused: `the reader failed: ${e instanceof Error ? e.message : e}` }; }
+}
+
 function formatOf(url: string): { f: Format; ref: StateRollCallRef } | null {
   for (const f of FORMATS) {
     const r = f.ref(url.trim());
@@ -626,11 +962,12 @@ export function parseStateRollCallUrl(url: string): StateRollCallRef | null {
 export function stateRollCallMinGapMs(url: string): number {
   if (parseOhioVoteUrl(url)) return OH_GAP_MS;
   if (parseSouthDakotaVoteUrl(url)) return SD_GAP_MS;
+  if (parseMississippiVoteUrl(url)) return MS_GAP_MS;
   return formatOf(url)?.f.minGapMs ?? 0;
 }
 
 export function isStateRollCallUrl(url: string): boolean {
-  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null;
+  return formatOf(url) !== null || parseOhioVoteUrl(url) !== null || parseSouthDakotaVoteUrl(url) !== null || parseMississippiVoteUrl(url) !== null;
 }
 
 /**
@@ -643,6 +980,8 @@ export function stateRollCallDocs(url: string): string[] | null {
   if (oh) return ohioDocs(oh);
   const sd = parseSouthDakotaVoteUrl(url);
   if (sd) return [`${SD_DATA}${sd.voteId}`];
+  const ms = parseMississippiVoteUrl(url);
+  if (ms) return mississippiDocs(ms);
   return formatOf(url) ? [url.trim()] : null;
 }
 
@@ -655,6 +994,10 @@ export function readStateRollCallDocs(bodies: string[], url: string): string | n
   if (parseSouthDakotaVoteUrl(url)) {
     const v = readSouthDakotaVote(bodies, url);
     return v ? renderSouthDakotaVote(v) : null;
+  }
+  if (parseMississippiVoteUrl(url)) {
+    const v = readMississippiVote(bodies, url);
+    return v ? renderMississippiVote(v) : null;
   }
   if (bodies.length !== 1) return null;
   const r = readStateRollCallHtml(bodies[0], url);
@@ -680,6 +1023,12 @@ export function readStateRollCallRecord(bodies: string[], url: string): StateRol
     return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: v.voteId, bill: v.bill, question: v.question,
       date: v.date, groups: { Yea: v.unique.Yea, Nay: v.unique.Nay, 'Absent or not voting': [...v.unique.Excused, ...v.unique.Absent, ...v.unique['Not voting'], ...v.unique.Present, ...v.unique.Suspended] } } : null;
   }
+  if (parseMississippiVoteUrl(url)) {
+    // Mississippi: members by their full names from the session's member list. Absent and present are one group here.
+    const v = readMississippiVote(bodies, url);
+    return v ? { state: v.state, stateName: v.stateName, chamber: v.chamber, session: v.session, rollNum: Number(v.voteNo), bill: v.bill, question: v.question,
+      date: v.date, groups: { Yea: v.groups.Yea, Nay: v.groups.Nay, 'Absent or not voting': [...v.groups['Absent or not voting'], ...v.groups.Present, ...v.groups.Paired] } } : null;
+  }
   return bodies.length === 1 ? readStateRollCallHtml(bodies[0], url) : null;
 }
 
@@ -704,9 +1053,10 @@ export function renderStateRollCall(r: StateRollCall): string {
 
 const RENDER_HEAD = /^(.+) (House|Senate) roll call (\d+) \(([A-Za-z0-9]+)\), (\d{4}-\d{2}-\d{2})\.$/;
 
-export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | Omit<SdVoteRecord, 'unique'> | null {
+export function parseStateRollCallRender(text: string, url: string): StateRollCall | OhioVoteRecord | Omit<SdVoteRecord, 'unique'> | Omit<MsVoteRecord, 'billType' | 'billNum'> | null {
   if (parseOhioVoteUrl(url)) return parseOhioRender(text, url);
   if (parseSouthDakotaVoteUrl(url)) return parseSouthDakotaRender(text, url);
+  if (parseMississippiVoteUrl(url)) return parseMississippiRender(text, url);
   return parseUtahRender(text, url);
 }
 
@@ -735,8 +1085,8 @@ export function formatStateRollCallLine(l: StateRollCallLine): string {
   return `${l.stateName} ${l.chamber} roll call ${l.rollNum} (${l.session}), ${l.bill} - ${l.question} (${l.date}): ${l.name} ${SAID[l.vote]}.`;
 }
 
-export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | null {
-  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text);
+export function parseStateRollCallLine(text: string): StateRollCallLine | OhioVoteLine | SdVoteLine | MsVoteLine | null {
+  return parseUtahLine(text) ?? parseOhioLine(text) ?? parseSouthDakotaLine(text) ?? parseMississippiLine(text);
 }
 
 function parseUtahLine(text: string): StateRollCallLine | null {
@@ -793,6 +1143,7 @@ const sameLabel = (a: string, b: string): boolean => normalizeText(a) === normal
 export function verifyStateRollCallLine(line: string, url: string, text: string, lastName: string, fullName: string): SnippetVerdict {
   if (parseOhioVoteUrl(url)) return verifyOhioLine(line, url, text, lastName, fullName);
   if (parseSouthDakotaVoteUrl(url)) return verifySouthDakotaLine(line, url, text, lastName, fullName);
+  if (parseMississippiVoteUrl(url)) return verifyMississippiLine(line, url, text, lastName, fullName);
   const l = parseUtahLine(line);
   const r = parseUtahRender(text, url);
   if (!l || !r) return { verdict: 'snippet_not_found' };
@@ -808,6 +1159,7 @@ export function verifyStateRollCallLine(line: string, url: string, text: string,
 export function stateRollCallLinesFor(url: string, text: string, lastName: string, fullName: string): string[] {
   if (parseOhioVoteUrl(url)) return ohioLinesFor(url, text, lastName, fullName);
   if (parseSouthDakotaVoteUrl(url)) return southDakotaLinesFor(url, text, lastName, fullName);
+  if (parseMississippiVoteUrl(url)) return mississippiLinesFor(url, text, lastName, fullName);
   const r = parseUtahRender(text, url);
   if (!r) return [];
   const out: string[] = [];
@@ -829,7 +1181,10 @@ export function stateRollCallLinesFor(url: string, text: string, lastName: strin
  * that is none of theirs names someone else ("Kevin D. Miller" is not Melanie Miller).
  */
 export function fullNameLabelFits(printed: string, lastName: string, fullName: string): boolean {
-  const words = dropSuffix(fold(printed)).split(' ').filter(Boolean);
+  // A nickname in quotes is not a given name, on either side: Mississippi's 2026 list prints 'W.I. "Doc" Harris'
+  // for "W. I. Harris". Out of the printed words, it may still match a given name or the person's own nickname.
+  const printedQuoted = [...printed.matchAll(/["“]([^"”]+)["”]/g)].map((x) => fold(x[1])).filter(Boolean);
+  const words = dropSuffix(fold(printed.replace(/["“][^"”]*["”]/g, ' '))).split(' ').filter(Boolean);
   const quoted = [...fullName.matchAll(/["“]([^"”]+)["”]/g)].map((x) => fold(x[1])).filter(Boolean);
   const full = dropSuffix(fold(fullName.replace(/["“][^"”]*["”]/g, ' '))).split(' ').filter(Boolean);
   const surnames = [...new Set([dropSuffix(fold(lastName)), full[full.length - 1] ?? ''].filter(Boolean))];
@@ -841,11 +1196,13 @@ export function fullNameLabelFits(printed: string, lastName: string, fullName: s
     const given = [...fs, ...quoted].filter(Boolean);
     if (!given.length) continue;
     const whole = printedGiven.filter((w) => w.length > 1);
+    const fits = (w: string) => given.some((g) => g.length > 1 && (g === w || getNameVariants(g).includes(w) || getNameVariants(w).includes(g)));
+    if (printedQuoted.some(fits)) return true;
     if (whole.length) {
-      if (whole.some((w) => given.some((g) => g.length > 1 && (g === w || getNameVariants(g).includes(w) || getNameVariants(w).includes(g))))) return true;
+      if (whole.some(fits)) return true;
       continue;
     }
-    if (given.some((g) => g[0] === printedGiven[0][0])) return true;
+    if (printedGiven.length && given.some((g) => g[0] === printedGiven[0][0])) return true;
   }
   return false;
 }

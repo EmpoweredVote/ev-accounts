@@ -1659,6 +1659,67 @@ def openstates_convert_places_a_south_dakota_vote_only_from_the_record(t):
 
 
 @check
+def openstates_convert_places_a_mississippi_vote_only_from_the_record_and_links_its_full_names(t):
+    """Mississippi 2026-11-17: the dump misreads the PDF's member list ("Absent or those Barnett"), so a vote is placed
+    only when it was read from the record, and every address becomes the vote's own PDF with the bill named
+    (/<session>/pdf/votes/<house|senate>/<NNNNNNN>.pdf#HB1793). The record prints full legal names from the member
+    list, where Open States often keeps a nickname: a given name that starts the stored one links ("Chris" for
+    "Christopher"); otherwise the family name links only when one member of it is seated in that chamber AND the record
+    prints only one member of it there that session (Districts 15 and 30 were both Huddleston in 2018, the second
+    unknown to Open States). Its counts carry no "sd_" prefix."""
+    X = f'{t}/work/extracts/2026-11/ms'; os.makedirs(X)
+    def tsv(name, cols, rows):
+        open(f'{X}/{name}.tsv', 'w').write('\t'.join(cols) + '\n' + ''.join('\t'.join(r.get(c, '\\N') for c in cols) + '\n' for r in rows))
+    json.dump({'dump': '2026-11-public.pgdump', 'month': '2026-11', 'state': 'ms', 'extracted_at': 'x'}, open(f'{X}/extract.json', 'w'))
+    tsv('legislativesession', ['id', 'identifier', 'name', 'classification', 'start_date', 'end_date'],
+        [{'id': 's26', 'identifier': '2026', 'name': '2026 Regular Session', 'classification': 'primary', 'start_date': '2026-01-06', 'end_date': '2026-04-05'}])
+    tsv('organization', ['id', 'name', 'classification', 'parent_id'], [{'id': 'leg', 'name': 'Legislature', 'classification': 'legislature'},
+        {'id': 'up', 'name': 'Senate', 'classification': 'upper', 'parent_id': 'leg'}, {'id': 'lo', 'name': 'House', 'classification': 'lower', 'parent_id': 'leg'}])
+    tsv('post', ['id', 'label'], [])
+    tsv('person', ['id', 'name', 'given_name', 'family_name', 'image', 'primary_party', 'email'],
+        [{'id': 'p-car', 'name': 'Bubba Carpenter', 'given_name': 'Bubba', 'family_name': 'Carpenter'},
+         {'id': 'p-abl', 'name': 'Christopher Able', 'given_name': 'Christopher', 'family_name': 'Able'},
+         {'id': 'p-hud', 'name': 'Mac Huddleston', 'given_name': 'Mac', 'family_name': 'Huddleston'}])
+    tsv('membership', ['person_id', 'organization_id', 'post_id', 'start_date', 'end_date'],
+        [{'person_id': p, 'organization_id': 'lo', 'start_date': '2024-01-02', 'end_date': '2028-01-01'} for p in ('p-car', 'p-abl', 'p-hud')])
+    bill = lambda i, ident: {'id': i, 'legislative_session_id': 's26', 'identifier': ident, 'title': 'A bill', 'classification': '{bill}', 'subject': '{}', 'from_organization_id': 'lo'}
+    tsv('bill', ['id', 'legislative_session_id', 'identifier', 'title', 'classification', 'subject', 'from_organization_id'], [bill('b1', 'HB 1793')])
+    for name, cols in (('billsource', ['bill_id', 'url']), ('billsponsorship', ['bill_id', 'name', 'entity_type', 'primary', 'person_id']),
+                       ('billversion', ['id', 'bill_id', 'note', 'date']), ('billversionlink', ['version_id', 'url', 'media_type'])):
+        tsv(name, cols, [])
+    ev = lambda i: {'id': i, 'bill_id': 'b1', 'legislative_session_id': 's26', 'organization_id': 'lo', 'motion_text': 'Passed',
+                    'motion_classification': '{passage}', 'start_date': '2026-02-25', 'result': 'pass', 'order': '0', 'updated_at': '2026-03-01'}
+    # d1: the dump's copy of the vote the record was read for; d2: a vote the record step did not keep (a motion)
+    tsv('voteevent', ['id', 'bill_id', 'legislative_session_id', 'organization_id', 'motion_text', 'motion_classification', 'start_date', 'result', 'order', 'updated_at'], [ev('d1'), ev('d2')])
+    pdf = 'http://billstatus.ls.state.ms.us/2026/pdf/votes/house/{}.pdf'
+    tsv('votesource', ['vote_event_id', 'url'], [{'vote_event_id': 'd1', 'url': pdf.format('0510008')}, {'vote_event_id': 'd2', 'url': pdf.format('0510009')}])
+    tsv('votecount', ['vote_event_id', 'option', 'value'], [{'vote_event_id': e, 'option': 'yes', 'value': '1'} for e in ('d1', 'd2')])
+    tsv('personvote', ['vote_event_id', 'voter_id', 'voter_name', 'option'], [{'vote_event_id': e, 'voter_name': 'Absent or those Barnett', 'option': 'yes'} for e in ('d1', 'd2')])
+    os.makedirs(f'{t}/work/supplements/MS')
+    page = 'https://billstatus.ls.state.ms.us/2026/pdf/votes/house/0510008.pdf#HB1793'
+    names = ['Lester Carpenter', 'Chris Able', 'Mac Huddleston', 'Robert E. Huddleston']
+    rec = {'url': page, 'date': '2026-02-25', 'motion': 'Passed', 'question': 'Passed', 'chamber': 'H', 'yea': 4, 'nay': 0, 'absent': 0, 'passed': 1,
+           'groups': {'Yea': names, 'Nay': [], 'Absent or not voting': []}}
+    json.dump({'state': 'MS', 'session': '2026', 'source': 'billstatus.ls.state.ms.us', 'bills': {'HB1793': [rec]},
+               'checked': {'HB1793': {'floor': 1, 'read': 1}}, 'refused': {}}, open(f'{t}/work/supplements/MS/2026.json', 'w'))
+    out = run('openstates/convert.py', X, '--out', f'{t}/out', '--legiscan-root', f'{t}/none', env={'OPENSTATES_NEW_REGISTRY': '1'}).stdout
+    rcs = [json.load(open(f))['roll_call'] for f in glob.glob(f'{t}/out/MS-*/MS/*/vote/*.json')]
+    placed = [r for r in rcs if not r['_openstates']['committee']]
+    assert [(r['state_link'], r['chamber']) for r in placed] == [(page, 'H')], [(r['state_link'], r['chamber']) for r in rcs]
+    held = {r['_openstates']['vote_event_id']: r for r in rcs if r['_openstates']['committee']}
+    assert sorted(held) == ['d2'], sorted(held)
+    assert held['d2']['state_link'] == pdf.format('0510009').replace('http:', 'https:') + '#HB1793', held['d2']['state_link']
+    assert 'not a floor vote' in held['d2']['_openstates']['not_placed'] and 'sd_not_placed' not in held['d2']['_openstates'], held['d2']['_openstates']
+    people = {j['people_id']: j for j in (json.load(open(f))['person'] for f in glob.glob(f'{t}/out/MS-*/MS/*/people/*.json'))}
+    got = sorted((people[v['people_id']]['name'], people[v['people_id']]['_openstates']['person_id']) for v in placed[0]['votes'])
+    # Robert E. Huddleston is linked to no one: two Huddlestons are printed, and only one is known to Open States
+    assert got == [('Bubba Carpenter', 'p-car'), ('Christopher Able', 'p-abl'), ('Mac Huddleston', 'p-hud'), ('Robert E. Huddleston', None)], got
+    assert "'Lester Carpenter' -> 'Bubba Carpenter'" in out and 'Robert E. Huddleston' not in out.split('seat rule')[-1], out
+    mk = json.load(open(glob.glob(f'{t}/out/MS-*/.openstates.json')[0]))
+    assert mk['counts'].get('dump_rollcalls_not_placed') == 1 and not any(k.startswith('sd_') for k in mk['counts']), mk['counts']
+
+
+@check
 def openstates_convert_takes_south_dakota_sponsors_named_on_the_introduced_text(t):
     """South Dakota 2026-11-17 (runner: cite the introduced text). The dump marks every sponsor primary and cites a bill
     page that is a script shell. For a bill whose sponsors the fetch read, the bill's page is its introduced text, its

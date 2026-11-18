@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="dtds_xslts/authorlist.xslt"?>
+ 
+<!DOCTYPE LEGISLATURE SYSTEM "dtds_xslts/authorlist.dtd">
+ 
+<LEGISLATURE>
+	<TITLE>Mississippi State Senate</TITLE>
+	<FORMATSESSION>2018 Regular Session</FORMATSESSION>
+	<MAINMENU>mainmenu.htm</MAINMENU>
+	<MEMBER>
+		<M1_NAME>Juan Barnett</M1_NAME>
+		<M1_LINK>senate_authors/barnett.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Eugene S. Clarke</M2_NAME>
+		<M2_LINK>senate_authors/clarke.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Robert L. Jackson</M3_NAME>
+		<M3_LINK>senate_authors/jackson_(11th).xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Rita Potts Parks</M4_NAME>
+		<M4_LINK>senate_authors/parks.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Barbara Blackmon</M1_NAME>
+		<M1_LINK>senate_authors/blackmon.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Deborah Jeanne Dawkins</M2_NAME>
+		<M2_LINK>senate_authors/dawkins.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>Gary Jackson</M3_NAME>
+		<M3_LINK>senate_authors/jackson_(15th).xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>John A. Polk</M4_NAME>
+		<M4_LINK>senate_authors/polk.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Kevin Blackwell</M1_NAME>
+		<M1_LINK>senate_authors/blackwell.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Dennis DeBar, Jr.</M2_NAME>
+		<M2_LINK>senate_authors/debar.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Sampson Jackson II</M3_NAME>
+		<M3_LINK>senate_authors/jackson_(32nd).xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Joseph M. Seymour</M4_NAME>
+		<M4_LINK>senate_authors/seymour.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>David Blount</M1_NAME>
+		<M1_LINK>senate_authors/blount.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Bob M. Dearing</M2_NAME>
+		<M2_LINK>senate_authors/dearing.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>Russell Jolly</M3_NAME>
+		<M3_LINK>senate_authors/jolly.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Derrick T. Simmons</M4_NAME>
+		<M4_LINK>senate_authors/simmons_(12th).xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Jenifer B. Branning</M1_NAME>
+		<M1_LINK>senate_authors/branning.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Sally Doty</M2_NAME>
+		<M2_LINK>senate_authors/doty.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>David Jordan</M3_NAME>
+		<M3_LINK>senate_authors/jordan.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Willie Simmons</M4_NAME>
+		<M4_LINK>senate_authors/simmons_(13th).xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Nickey Browning</M1_NAME>
+		<M1_LINK>senate_authors/browning.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Joey Fillingane</M2_NAME>
+		<M2_LINK>senate_authors/fillingane.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>Dean Kirby</M3_NAME>
+		<M3_LINK>senate_authors/kirby.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Gray Tollison</M4_NAME>
+		<M4_LINK>senate_authors/tollison.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Hob Bryan</M1_NAME>
+		<M1_LINK>senate_authors/bryan.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Hillman Terome Frazier</M2_NAME>
+		<M2_LINK>senate_authors/frazier.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Chris Massey</M3_NAME>
+		<M3_LINK>senate_authors/massey.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Angela Turner-Ford</M4_NAME>
+		<M4_LINK>senate_authors/turner-ford.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Terry C. Burton</M1_NAME>
+		<M1_LINK>senate_authors/burton.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Tommy A. Gollott</M2_NAME>
+		<M2_LINK>senate_authors/gollott.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>Chris McDaniel</M3_NAME>
+		<M3_LINK>senate_authors/mcdaniel.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Michael Watson</M4_NAME>
+		<M4_LINK>senate_authors/watson.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Albert Butler</M1_NAME>
+		<M1_LINK>senate_authors/butler.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Josh Harkins</M2_NAME>
+		<M2_LINK>senate_authors/harkins.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Chad McMahan</M3_NAME>
+		<M3_LINK>senate_authors/mcmahan.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Neil S. Whaley</M4_NAME>
+		<M4_LINK>senate_authors/whaley.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Videt Carmichael</M1_NAME>
+		<M1_LINK>senate_authors/carmichael.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>Angela Burks Hill</M2_NAME>
+		<M2_LINK>senate_authors/hill.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>J. Walter Michel</M3_NAME>
+		<M3_LINK>senate_authors/michel.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Brice Wiggins</M4_NAME>
+		<M4_LINK>senate_authors/wiggins.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Joel R.Carter, Jr.</M1_NAME>
+		<M1_LINK>senate_authors/carter.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>W. Briggs Hopson III</M2_NAME>
+		<M2_LINK>senate_authors/hopson.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>Philip Moran</M3_NAME>
+		<M3_LINK>senate_authors/moran.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>J. P. Wilemon, Jr.</M4_NAME>
+		<M4_LINK>senate_authors/wilemon.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Chris Caughman</M1_NAME>
+		<M1_LINK>senate_authors/caughman.xml</M1_LINK>
+		<M1_BGC>#FFF5EE</M1_BGC>
+		<M2_NAME>John Horhn</M2_NAME>
+		<M2_LINK>senate_authors/horhn.xml</M2_LINK>
+		<M2_BGC>#FFEFD5</M2_BGC>
+		<M3_NAME>Sollie B. Norwood</M3_NAME>
+		<M3_LINK>senate_authors/norwood.xml</M3_LINK>
+		<M3_BGC>#FFF5EE</M3_BGC>
+		<M4_NAME>Tammy Witherspoon</M4_NAME>
+		<M4_LINK>senate_authors/witherspoon.xml</M4_LINK>
+		<M4_BGC>#FFEFD5</M4_BGC>
+	</MEMBER>
+	<MEMBER>
+		<M1_NAME>Lydia Graves Chassaniol</M1_NAME>
+		<M1_LINK>senate_authors/chassaniol.xml</M1_LINK>
+		<M1_BGC>#FFEFD5</M1_BGC>
+		<M2_NAME>Billy Hudson</M2_NAME>
+		<M2_LINK>senate_authors/hudson.xml</M2_LINK>
+		<M2_BGC>#FFF5EE</M2_BGC>
+		<M3_NAME>David Parker</M3_NAME>
+		<M3_LINK>senate_authors/parker.xml</M3_LINK>
+		<M3_BGC>#FFEFD5</M3_BGC>
+		<M4_NAME>Chuck Younger</M4_NAME>
+		<M4_LINK>senate_authors/younger.xml</M4_LINK>
+		<M4_BGC>#FFF5EE</M4_BGC>
+	</MEMBER>
+</LEGISLATURE>

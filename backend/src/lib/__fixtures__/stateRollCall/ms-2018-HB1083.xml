@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="../../dtds_xslts/history.xslt"?>
+ 
+<!DOCTYPE HISTORY SYSTEM "../../dtds_xslts/history.dtd">
+ 
+<HISTORY>
+	<YEAR>2018</YEAR>
+	<SESSION>Regular Session</SESSION>
+	<SHORTTITLE>Firearms, authorize those with enhanced carry to bring onto public property.</SHORTTITLE>
+	<LONGTITLE>AN ACT TO AMEND SECTION 97-37-7, MISSISSIPPI CODE OF 1972, TO AUTHORIZE ANY PERSON WHO HAS AN ENHANCED FIREARMS LICENSE TO CARRY SUCH FIREARM ON PUBLIC PROPERTY; TO AMEND SECTION 45-9-101, MISSISSIPPI CODE OF 1972, TO CONFORM TO THE PRECEDING AMENDMENT; TO AMEND SECTION 45-9-171, MISSISSIPPI CODE OF 1972, TO REVISE "THE MISSISSIPPI CHURCH PROTECTION ACT"; TO BRING FORWARD SECTIONS 97-37-9 AND 97-3-15, MISSISSIPPI CODE OF 1972, FOR PURPOSES OF AMENDMENT; AND FOR RELATED PURPOSES.</LONGTITLE>
+	<DATETIMELASTCHG>03/22/18 at 12:16</DATETIMELASTCHG>
+ 
+	<MEASURE>
+		<MSR_HS>H</MSR_HS>
+		<MSR_TYPE>B</MSR_TYPE>
+		<MSR_NUM>1083</MSR_NUM>
+		<FORMAT_MSRID>House Bill 1083</FORMAT_MSRID>
+		<SHORT_MSRID>HB 1083</SHORT_MSRID>
+		<OWNER>H</OWNER>
+	</MEASURE>
+ 
+	<BACKGROUND>
+		<DISPOSITION>Dead</DISPOSITION>
+		<DEADLINE>General Bill/Constitutional Amendment</DEADLINE>
+		<REVENUE>No</REVENUE>
+		<VOTETYPE>Majority</VOTETYPE>
+		<EFFECTIVEDATE>July 1, 2018</EFFECTIVEDATE>
+	</BACKGROUND>
+	<COMMITTEES>
+		<HOUSE>
+			<H_NAME>Judiciary B</H_NAME>
+			<H_INCMTE>F</H_INCMTE>
+			<H_LINK>../../House_cmtes/JB.xml</H_LINK>
+		</HOUSE>
+		<SENATE>
+			<S_NAME>Judiciary, Division A</S_NAME>
+			<S_INCMTE>F</S_INCMTE>
+			<S_LINK>../../Senate_cmtes/JA.xml</S_LINK>
+		</SENATE>
+	</COMMITTEES>
+	<AUTHORS>
+		<PRINCIPAL>
+			<P_NAME>Gipson</P_NAME>
+			<P_LINK>../../House_authors/Gipson.xml</P_LINK>
+		</PRINCIPAL>
+		<ADDITIONAL>
+			<CO_NAME>Arnold</CO_NAME>
+			<CO_LINK>../../House_authors/Arnold.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Baker</CO_NAME>
+			<CO_LINK>../../House_authors/Baker.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Barnett</CO_NAME>
+			<CO_LINK>../../House_authors/Barnett.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Beckett</CO_NAME>
+			<CO_LINK>../../House_authors/Beckett.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Bomgar</CO_NAME>
+			<CO_LINK>../../House_authors/Bomgar.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Bounds</CO_NAME>
+			<CO_LINK>../../House_authors/Bounds.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Boyd</CO_NAME>
+			<CO_LINK>../../House_authors/Boyd.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Byrd</CO_NAME>
+			<CO_LINK>../../House_authors/Byrd.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Carpenter</CO_NAME>
+			<CO_LINK>../../House_authors/Carpenter.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Chism</CO_NAME>
+			<CO_LINK>../../House_authors/Chism.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Criswell</CO_NAME>
+			<CO_LINK>../../House_authors/Criswell.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Currie</CO_NAME>
+			<CO_LINK>../../House_authors/Currie.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Gibbs (36th)</CO_NAME>
+			<CO_LINK>../../House_authors/Gibbs_(36th).xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Guice</CO_NAME>
+			<CO_LINK>../../House_authors/Guice.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Hale</CO_NAME>
+			<CO_LINK>../../House_authors/Hale.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Hopkins</CO_NAME>
+			<CO_LINK>../../House_authors/Hopkins.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Mangold</CO_NAME>
+			<CO_LINK>../../House_authors/Mangold.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Massengill</CO_NAME>
+			<CO_LINK>../../House_authors/Massengill.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>McLeod</CO_NAME>
+			<CO_LINK>../../House_authors/McLeod.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Mettetal</CO_NAME>
+			<CO_LINK>../../House_authors/Mettetal.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Oliver</CO_NAME>
+			<CO_LINK>../../House_authors/Oliver.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Roberson</CO_NAME>
+			<CO_LINK>../../House_authors/Roberson.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Rogers (14th)</CO_NAME>
+			<CO_LINK>../../House_authors/Rogers_(14th).xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Rogers (61st)</CO_NAME>
+			<CO_LINK>../../House_authors/Rogers_(61st).xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Scoggin</CO_NAME>
+			<CO_LINK>../../House_authors/Scoggin.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Staples</CO_NAME>
+			<CO_LINK>../../House_authors/Staples.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Steverson</CO_NAME>
+			<CO_LINK>../../House_authors/Steverson.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Tullos</CO_NAME>
+			<CO_LINK>../../House_authors/Tullos.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Wilson</CO_NAME>
+			<CO_LINK>../../House_authors/Wilson.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Ford</CO_NAME>
+			<CO_LINK>../../House_authors/Ford.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Horne</CO_NAME>
+			<CO_LINK>../../House_authors/Horne.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Mims</CO_NAME>
+			<CO_LINK>../../House_authors/Mims.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Shirley</CO_NAME>
+			<CO_LINK>../../House_authors/Shirley.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Patterson</CO_NAME>
+			<CO_LINK>../../House_authors/Patterson.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Crawford</CO_NAME>
+			<CO_LINK>../../House_authors/Crawford.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Morgan</CO_NAME>
+			<CO_LINK>../../House_authors/Morgan.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Brown</CO_NAME>
+			<CO_LINK>../../House_authors/Brown.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Weathersby</CO_NAME>
+			<CO_LINK>../../House_authors/Weathersby.xml</CO_LINK>
+	</ADDITIONAL>
+		<ADDITIONAL>
+			<CO_NAME>Henley</CO_NAME>
+			<CO_LINK>../../House_authors/Henley.xml</CO_LINK>
+	</ADDITIONAL>
+	</AUTHORS>
+	<CODESECTIONS>
+		<AFFECT>A</AFFECT>
+		<SECTION>097-0037-0007</SECTION>
+		<SECTIONLINK>../../code_sections/097/00370007.xml</SECTIONLINK>
+	</CODESECTIONS>
+	<CODESECTIONS>
+		<AFFECT>A</AFFECT>
+		<SECTION>045-0009-0101</SECTION>
+		<SECTIONLINK>../../code_sections/045/00090101.xml</SECTIONLINK>
+	</CODESECTIONS>
+	<CODESECTIONS>
+		<AFFECT>BF</AFFECT>
+		<SECTION>097-0037-0009</SECTION>
+		<SECTIONLINK>../../code_sections/097/00370009.xml</SECTIONLINK>
+	</CODESECTIONS>
+	<CODESECTIONS>
+		<AFFECT>BF</AFFECT>
+		<SECTION>097-0003-0015</SECTION>
+		<SECTIONLINK>../../code_sections/097/00030015.xml</SECTIONLINK>
+	</CODESECTIONS>
+	<CODESECTIONS>
+		<AFFECT>A</AFFECT>
+		<SECTION>045-0009-0171</SECTION>
+		<SECTIONLINK>../../code_sections/045/00090171.xml</SECTIONLINK>
+	</CODESECTIONS>
+	<ACTION>
+		<ACT_NUMBER> 1</ACT_NUMBER>
+		<ACT_DESC>01/15 (H) Referred To Judiciary B</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 2</ACT_NUMBER>
+		<ACT_DESC>01/25 (H) Title Suff Do Pass Comm Sub</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 3</ACT_NUMBER>
+		<ACT_DESC>02/07 (H) Committee Substitute Adopted</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 4</ACT_NUMBER>
+		<ACT_DESC>02/07 (H) Amended</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 5</ACT_NUMBER>
+		<ACT_DESC>02/07 (H) Passed As Amended</ACT_DESC>
+		<ACT_VOTE>../../../../2018/pdf/votes/house/0370002.pdf</ACT_VOTE>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 6</ACT_NUMBER>
+		<ACT_DESC>02/07 (H) Motion to Reconsider Entered (Perkins, Gipson, Bailey, Holland)</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 7</ACT_NUMBER>
+		<ACT_DESC>02/08 (H) Motion to Reconsider Tabled</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 8</ACT_NUMBER>
+		<ACT_DESC>02/12 (H) Transmitted To Senate</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER> 9</ACT_NUMBER>
+		<ACT_DESC>02/16 (S) Referred To Judiciary, Division A</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>10</ACT_NUMBER>
+		<ACT_DESC>02/27 (S) Title Suff Do Pass As Amended</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>11</ACT_NUMBER>
+		<ACT_DESC>03/07 (S) Amended</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>12</ACT_NUMBER>
+		<ACT_DESC>03/07 (S) Passed As Amended</ACT_DESC>
+		<ACT_VOTE>../../../../2018/pdf/votes/senate/0650030.pdf</ACT_VOTE>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>13</ACT_NUMBER>
+		<ACT_DESC>03/09 (S) Returned For Concurrence</ACT_DESC>
+	</ACTION>
+	<ACTION>
+		<ACT_NUMBER>14</ACT_NUMBER>
+		<ACT_DESC>03/22 (H) Died On Calendar</ACT_DESC>
+	</ACTION>
+	<DOCUMENTS>
+		<CURRENT>
+			<CURRENT_PDF>../../../../documents/2018/pdf/HB/1000-1099/HB1083PS.pdf</CURRENT_PDF>
+			<CURRENT_PDF_DT>../../../../documents/2018/dt/HB/1000-1099/HB1083PS.pdf</CURRENT_PDF_DT>
+			<CURRENT_OTHER>../../../../documents/2018/html/HB/1000-1099/HB1083PS.htm</CURRENT_OTHER>
+		</CURRENT>
+		<INTRO>
+			<INTRO_PDF>../../../../documents/2018/pdf/HB/1000-1099/HB1083IN.pdf</INTRO_PDF>
+			<INTRO_PDF_DT>../../../../documents/2018/dt/HB/1000-1099/HB1083IN.pdf</INTRO_PDF_DT>
+			<INTRO_OTHER>../../../../documents/2018/html/HB/1000-1099/HB1083IN.htm</INTRO_OTHER>
+		</INTRO>
+		<CMTESUB>
+			<CMTESUB_PDF>../../../../documents/2018/pdf/HB/1000-1099/HB1083CS.pdf</CMTESUB_PDF>
+			<CMTESUB_PDF_DT>../../../../documents/2018/dt/HB/1000-1099/HB1083CS.pdf</CMTESUB_PDF_DT>
+			<CMTESUB_OTHER>../../../../documents/2018/html/HB/1000-1099/HB1083CS.htm</CMTESUB_OTHER>
+		</CMTESUB>
+		<PASSED>
+			<PASSED_PDF>../../../../documents/2018/pdf/HB/1000-1099/HB1083PS.pdf</PASSED_PDF>
+			<PASSED_PDF_DT>../../../../documents/2018/dt/HB/1000-1099/HB1083PS.pdf</PASSED_PDF_DT>
+			<PASSED_OTHER>../../../../documents/2018/html/HB/1000-1099/HB1083PS.htm</PASSED_OTHER>
+		</PASSED>
+		<AMENDMENTS>
+			<AMRPT>
+				<AMRPT_DESC>Amendment Report for House Bill No. 1083</AMRPT_DESC>
+				<AMRPT_PDF>../../../../documents/2018/pdf/sam/Amendment_Report_for_HB1083.pdf</AMRPT_PDF>
+				<AMRPT_PDF_DT>../../../../documents/2018/dt/sam/Amendment_Report_for_HB1083.pdf</AMRPT_PDF_DT>
+				<AMRPT_OTHER>../../../../../documents/2018/html/sam/Amendment_Report_for_HB1083.htm</AMRPT_OTHER>
+			</AMRPT>
+			<HAM>
+				<HAM_DESC>Amendment No 1 (Cmte Sub)</HAM_DESC>
+				<HAM_DISP>Adopted</HAM_DISP>
+				<HAM_PDF>../../../../documents/2018/pdf/ham/HB1083_H_(Cmte_Sub)_Amend_01.htm</HAM_PDF>
+				<HAM_OTHER>../../../../../documents/2018/html/ham/HB1083_H_(Cmte_Sub)_Amend_01.htm</HAM_OTHER>
+				<HAM_VDESC>Voice Vote</HAM_VDESC>
+			</HAM>
+			<SAM>
+				<SAM_DESC>Committee Amendment No 1</SAM_DESC>
+				<SAM_DISP>Adopted</SAM_DISP>
+				<SAM_PDF>../../../../documents/2018/pdf/sam/HB1083_S_Cmte_Amend_01.pdf</SAM_PDF>
+				<SAM_PDF_DT>../../../../documents/2018/dt/sam/HB1083_S_Cmte_Amend_01.pdf</SAM_PDF_DT>
+				<SAM_OTHER>../../../../../documents/2018/html/sam/HB1083_S_Cmte_Amend_01.htm</SAM_OTHER>
+				<SAM_VDESC>Voice Vote</SAM_VDESC>
+			</SAM>
+			<SAM>
+				<SAM_DESC>Amendment No 1 to Committee Amendment No 1</SAM_DESC>
+				<SAM_DISP>Adopted</SAM_DISP>
+				<SAM_PDF>../../../../documents/2018/pdf/sam/HB1083_S_Amend_01_to_Cmte_Amend_01.pdf</SAM_PDF>
+				<SAM_OTHER>../../../../../documents/2018/html/sam/HB1083_S_Amend_01_to_Cmte_Amend_01.htm</SAM_OTHER>
+				<SAM_VDESC>Voice Vote</SAM_VDESC>
+			</SAM>
+			<SAM>
+				<SAM_DESC>Amendment No 2 to Committee Amendment No 1</SAM_DESC>
+				<SAM_DISP>Adopted</SAM_DISP>
+				<SAM_PDF>../../../../documents/2018/pdf/sam/HB1083_S_Amend_02_to_Cmte_Amend_01.pdf</SAM_PDF>
+				<SAM_OTHER>../../../../../documents/2018/html/sam/HB1083_S_Amend_02_to_Cmte_Amend_01.htm</SAM_OTHER>
+				<SAM_VDESC>Voice Vote</SAM_VDESC>
+			</SAM>
+			<SAM>
+				<SAM_DESC>Substitute No 1 for Amendment No 1 to Committee Amendment No 1</SAM_DESC>
+				<SAM_DISP>Lost</SAM_DISP>
+				<SAM_PDF>../../../../documents/2018/pdf/sam/HB1083_S_Subst_1_for_Amend_01_to_Cmte_Amend_01.pdf</SAM_PDF>
+				<SAM_OTHER>../../../../../documents/2018/html/sam/HB1083_S_Subst_1_for_Amend_01_to_Cmte_Amend_01.htm</SAM_OTHER>
+				<SAM_VDESC>Voice Vote</SAM_VDESC>
+			</SAM>
+		</AMENDMENTS>
+		<FISCALNOTE>
+			<FISCALNOTEFLAG>N</FISCALNOTEFLAG>
+			<FISCALNOTEPATH>../../../../documents/2018/pdf/fiscalnotes/HB1083.pdf</FISCALNOTEPATH>
+		</FISCALNOTE>
+	</DOCUMENTS>
+</HISTORY>
