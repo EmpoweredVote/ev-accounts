@@ -137,6 +137,17 @@
 --   who holds a row in that same race - and that half alone would have caught CC_0447.
 --
 -- =============================================================================================
+-- ⚠ TWO SQL ALIASES WERE RENAMED AFTER THIS FILE WAS APPLIED, AND THAT IS RECORDED RATHER THAN
+--   QUIETLY TIDIED. The applied text aliased a temp table and a sub-select `o`;
+--   check-office-occupancy.mjs reads `<alias>.politician_id` as the dropped
+--   essentials.offices.politician_id and failed CI on it. The guard is right - it cannot tell a
+--   temp table aliased `o` from the offices table - so the aliases are now `prev` and `opp`.
+--   Nothing else changed: no predicate, no literal, no assertion.
+--   🔴 THE FILE IS NOT RE-RUNNABLE TO PROVE THAT, because its pre-check pins the OLD md5, which
+--   is no longer live. It was verified instead by a REPLAY: a scratch copy that restores the
+--   overwritten citation inside the transaction and then runs this file unchanged. Both renamed
+--   aliases were exercised against real data, and the whole thing rolled back.
+-- =============================================================================================
 
 BEGIN;
 
@@ -295,10 +306,10 @@ BEGIN
        WHERE rc.result_source LIKE '%defeating incumbent %'
     ) q
    WHERE q.claimed IS NULL
-      OR NOT EXISTS (SELECT 1 FROM essentials.race_candidates o
-                      WHERE o.race_id = q.race_id
-                        AND o.full_name = q.claimed
-                        AND o.result = 'lost');
+      OR NOT EXISTS (SELECT 1 FROM essentials.race_candidates opp
+                      WHERE opp.race_id = q.race_id
+                        AND opp.full_name = q.claimed
+                        AND opp.result = 'lost');
   IF n <> 0 THEN
     RAISE EXCEPTION '3: % row(s) claim to have defeated an incumbent who holds no losing row in that race', n;
   END IF;
@@ -349,17 +360,21 @@ BEGIN
 
   -- 7. Nothing but the prose moved on this row.
   --    (expectation: the row's own columns, captured before the write)
+  -- NB: the alias is `prev`, not `o`. check-office-occupancy.mjs reads `<alias>.politician_id`
+  -- as a reference to the dropped essentials.offices.politician_id, and it is right to: a
+  -- static guard cannot tell a temp table aliased `o` from the offices table. Renaming the
+  -- alias is the fix; widening the guard's pattern would not be.
   SELECT count(*) INTO n
     FROM essentials.race_candidates rc
-    JOIN cc0452_row_before o ON o.id = rc.id
-   WHERE rc.full_name        IS DISTINCT FROM o.full_name
-      OR rc.result           IS DISTINCT FROM o.result
-      OR rc.result_certainty IS DISTINCT FROM o.result_certainty
-      OR rc.result_recorded_at IS DISTINCT FROM o.result_recorded_at
-      OR rc.politician_id    IS DISTINCT FROM o.politician_id
-      OR rc.is_write_in      IS DISTINCT FROM o.is_write_in
-      OR rc.candidate_status IS DISTINCT FROM o.candidate_status
-      OR rc.source           IS DISTINCT FROM o.source;
+    JOIN cc0452_row_before prev ON prev.id = rc.id
+   WHERE rc.full_name        IS DISTINCT FROM prev.full_name
+      OR rc.result           IS DISTINCT FROM prev.result
+      OR rc.result_certainty IS DISTINCT FROM prev.result_certainty
+      OR rc.result_recorded_at IS DISTINCT FROM prev.result_recorded_at
+      OR rc.politician_id    IS DISTINCT FROM prev.politician_id
+      OR rc.is_write_in      IS DISTINCT FROM prev.is_write_in
+      OR rc.candidate_status IS DISTINCT FROM prev.candidate_status
+      OR rc.source           IS DISTINCT FROM prev.source;
   IF n <> 0 THEN
     RAISE EXCEPTION '7: this file changed a column other than result_source on the ME-02 winner row';
   END IF;

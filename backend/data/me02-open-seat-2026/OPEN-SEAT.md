@@ -205,6 +205,29 @@ which is what a working control prints too. **`is_incumbent` lives on `race_cand
 (⚠ CLAUDE.md's occupancy section still instructs setting `politicians.is_incumbent` on every
 insert. The column is not there. Observed, not acted on — it is not this migration's to fix.)
 
+## ⚠ CI caught an alias, after the migration had already been applied
+
+`check-office-occupancy.mjs` failed the branch on this line:
+
+```
+reads <offices alias>.politician_id — the column no longer exists
+```
+
+It was a temp table aliased `o`, not `essentials.offices` — but **the guard is right.** A static
+text guard cannot tell a temp table aliased `o` from the offices table, and the column it is
+protecting was dropped precisely because reading it silently returns the wrong answer. The fix is
+to rename the aliases (`prev`, `opp`), not to widen the guard's pattern.
+
+🔴 **The file is not re-runnable, so it could not simply be dry-run again.** Its pre-check pins the
+**old** md5, which is no longer live — that is the gate working as intended. It was verified by a
+**replay** instead: a scratch copy that restores the overwritten citation inside the transaction
+and then runs this file unchanged. `DRY RUN OK`, both renamed aliases exercised against real data,
+rolled back.
+
+🟢 **The replay confirms `before-values.json` twice over.** The restored string is the one the
+pre-check accepts, so the recorded old value is provably the value the migration overwrote — not
+merely a transcription somebody believed.
+
 ## What this deliberately does not do
 
 - **It does not re-stamp `result_recorded_at`.** The *result* did not change; a citation did.
